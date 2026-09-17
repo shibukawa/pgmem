@@ -111,7 +111,7 @@ func F_SetDatabaseHasLoginEventTriggers(m *base.Module) {
 								if v46 != 0 {
 									return
 								} else {
-									F_sequence_close(m, v11, int32(3))
+									F_relation_close(m, v11, int32(3))
 									mBase = m.M
 									v49 = m.ExcPending
 									if v49 != 0 {
@@ -137,7 +137,7 @@ func F_SetDatabaseHasLoginEventTriggers(m *base.Module) {
 						if v46 != 0 {
 							return
 						} else {
-							F_sequence_close(m, v11, int32(3))
+							F_relation_close(m, v11, int32(3))
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {

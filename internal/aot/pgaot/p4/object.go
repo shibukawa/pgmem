@@ -122,49 +122,43 @@ func F_getObjectDescriptionOids(m *base.Module, l0 int32, l1 int32) int32 {
 func F_get_object_attnum_name(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v10 int32
-	_ = v10
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
 	var v11 int32
 	_ = v11
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
+	var v12 int32
+	_ = v12
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
-	var v29 int32
-	_ = v29
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
 	var v32 int32
 	_ = v32
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
-	var v49 int32
-	_ = v49
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
 	var v52 int32
 	_ = v52
-	var v61 int32
-	_ = v61
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
-	var v77 int32
-	_ = v77
-	var v81 int32
-	_ = v81
-	var v86 int32
-	_ = v86
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _c_F_get_object_attnum_name[0]))
-	if v10 != 0 {
+	var v62 int32
+	_ = v62
+	var v66 int32
+	_ = v66
+	var v71 int32
+	_ = v71
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	v11 = *(*int32)(unsafe.Add(mBase, _c_F_get_object_attnum_name[0]))
+	if v11 != 0 {
 		goto L3
 	} else {
 		goto L4
@@ -173,22 +167,22 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
-		goto L23
+	v62 = m.ExcPending
+	if v62 != 0 {
+		goto L20
 	} else {
-		goto L24
+		goto L21
 	}
 L2:
 	;
-	v67 = int32(*(*int16)(unsafe.Add(mBase, uint32(v64)+22)))
-	m.G0 = v7 + int32(16)
-	return v67
+	v52 = int32(*(*int16)(unsafe.Add(mBase, uint32(v48)+22)))
+	m.G0 = v8 + int32(16)
+	return v52
 L3:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
-	if v11 == l0 {
-		v64 = v10
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
+	if v12 == l0 {
+		v48 = v11
 		goto L2
 	} else {
 		goto L6
@@ -198,116 +192,107 @@ L4:
 	goto L5
 L5:
 	;
-	v16 = int32(0)
-	goto L8
+	v18 = int32(0)
+	goto L11
 L6:
 	;
 	goto L5
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_get_object_attnum_name[0])) = v61
-	v64 = v61
+	*(*int32)(unsafe.Add(mBase, _c_F_get_object_attnum_name[0])) = v45
+	v48 = v45
 	goto L2
 L8:
 	;
-	v19 = v16 * int32(40)
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_c_F_get_object_attnum_name[1])))
-	if l0 != v22 {
-		goto L10
-	} else {
-		goto L11
-	}
+	v45 = v21 + int32(_a_F_get_object_attnum_name_0)
+	goto L7
 L9:
 	;
-	v61 = v19 + int32(_a_F_get_object_attnum_name_0)
+	v45 = v21 + int32(_a_F_get_object_attnum_name_1)
 	goto L7
 L10:
 	;
-	if v16 == int32(36) {
-		goto L1
-	} else {
-		goto L13
-	}
+	v45 = v21 + int32(_a_F_get_object_attnum_name_2)
+	goto L7
 L11:
 	;
-	goto L12
+	v21 = v18 * int32(40)
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_attnum_name[1])))
+	if l0 != v22 {
+		goto L13
+	} else {
+		goto L14
+	}
 L12:
 	;
-	goto L9
+	v45 = v21 + int32(_a_F_get_object_attnum_name_3)
+	goto L7
 L13:
 	;
-	v29 = (v16 | int32(1)) * int32(40)
-	v32 = *(*int32)(unsafe.Add(mBase, uint32(v29)+uint32(_c_F_get_object_attnum_name[1])))
-	if l0 == v32 {
-		goto L14
+	if v18 == int32(36) {
+		goto L1
 	} else {
-		goto L15
+		goto L16
 	}
 L14:
 	;
-	v61 = v29 + int32(_a_F_get_object_attnum_name_0)
-	goto L7
+	goto L15
 L15:
 	;
-	goto L16
+	goto L12
 L16:
 	;
-	v39 = (v16 | int32(2)) * int32(40)
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_c_F_get_object_attnum_name[1])))
-	if l0 == v42 {
-		goto L17
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_attnum_name[2])))
+	if v28 == l0 {
+		goto L8
 	} else {
-		goto L18
+		goto L17
 	}
 L17:
 	;
-	v61 = v39 + int32(_a_F_get_object_attnum_name_0)
-	goto L7
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_attnum_name[3])))
+	if v30 == l0 {
+		goto L9
+	} else {
+		goto L18
+	}
 L18:
 	;
-	goto L19
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_attnum_name[4])))
+	if v32 == l0 {
+		goto L10
+	} else {
+		goto L19
+	}
 L19:
 	;
-	v49 = (v16 | int32(3)) * int32(40)
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(v49)+uint32(_c_F_get_object_attnum_name[1])))
-	if l0 == v52 {
-		goto L20
-	} else {
-		goto L21
-	}
+	v18 = v18 + int32(4)
+	goto L11
 L20:
 	;
-	v61 = v49 + int32(_a_F_get_object_attnum_name_0)
-	goto L7
+	return int32(0)
 L21:
 	;
-	v16 = v16 + int32(4)
-	goto L8
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
+	F_errmsg_internal(m, int32(_a_F_get_object_attnum_name_4), v8)
+	mBase = m.M
+	v66 = m.ExcPending
+	if v66 != 0 {
+		goto L20
+	} else {
+		goto L22
+	}
+L22:
+	;
+	F_errfinish(m, int32(_a_F_get_object_attnum_name_5), int32(2777), int32(_a_F_get_object_attnum_name_6))
+	mBase = m.M
+	v71 = m.ExcPending
+	if v71 != 0 {
+		goto L20
+	} else {
+		goto L23
+	}
 L23:
-	;
-	return int32(0)
-L24:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-	F_errmsg_internal(m, int32(_a_F_get_object_attnum_name_1), v7)
-	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
-		goto L23
-	} else {
-		goto L25
-	}
-L25:
-	;
-	F_errfinish(m, int32(_a_F_get_object_attnum_name_2), int32(2777), int32(_a_F_get_object_attnum_name_3))
-	mBase = m.M
-	v86 = m.ExcPending
-	if v86 != 0 {
-		goto L23
-	} else {
-		goto L26
-	}
-L26:
 	;
 	base.Wasm_trap_unreachable()
 	for {
@@ -316,49 +301,43 @@ L26:
 func F_get_object_catcache_oid(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v10 int32
-	_ = v10
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
 	var v11 int32
 	_ = v11
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
+	var v12 int32
+	_ = v12
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
-	var v29 int32
-	_ = v29
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
 	var v32 int32
 	_ = v32
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
-	var v49 int32
-	_ = v49
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
 	var v52 int32
 	_ = v52
-	var v61 int32
-	_ = v61
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
-	var v77 int32
-	_ = v77
-	var v81 int32
-	_ = v81
-	var v86 int32
-	_ = v86
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _c_F_get_object_catcache_oid[0]))
-	if v10 != 0 {
+	var v62 int32
+	_ = v62
+	var v66 int32
+	_ = v66
+	var v71 int32
+	_ = v71
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	v11 = *(*int32)(unsafe.Add(mBase, _c_F_get_object_catcache_oid[0]))
+	if v11 != 0 {
 		goto L3
 	} else {
 		goto L4
@@ -367,22 +346,22 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
-		goto L23
+	v62 = m.ExcPending
+	if v62 != 0 {
+		goto L20
 	} else {
-		goto L24
+		goto L21
 	}
 L2:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(v64)+12))
-	m.G0 = v7 + int32(16)
-	return v67
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v48)+12))
+	m.G0 = v8 + int32(16)
+	return v52
 L3:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
-	if v11 == l0 {
-		v64 = v10
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
+	if v12 == l0 {
+		v48 = v11
 		goto L2
 	} else {
 		goto L6
@@ -392,116 +371,107 @@ L4:
 	goto L5
 L5:
 	;
-	v16 = int32(0)
-	goto L8
+	v18 = int32(0)
+	goto L11
 L6:
 	;
 	goto L5
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_get_object_catcache_oid[0])) = v61
-	v64 = v61
+	*(*int32)(unsafe.Add(mBase, _c_F_get_object_catcache_oid[0])) = v45
+	v48 = v45
 	goto L2
 L8:
 	;
-	v19 = v16 * int32(40)
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_c_F_get_object_catcache_oid[1])))
-	if l0 != v22 {
-		goto L10
-	} else {
-		goto L11
-	}
+	v45 = v21 + int32(_a_F_get_object_catcache_oid_0)
+	goto L7
 L9:
 	;
-	v61 = v19 + int32(_a_F_get_object_catcache_oid_0)
+	v45 = v21 + int32(_a_F_get_object_catcache_oid_1)
 	goto L7
 L10:
 	;
-	if v16 == int32(36) {
-		goto L1
-	} else {
-		goto L13
-	}
+	v45 = v21 + int32(_a_F_get_object_catcache_oid_2)
+	goto L7
 L11:
 	;
-	goto L12
+	v21 = v18 * int32(40)
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_catcache_oid[1])))
+	if l0 != v22 {
+		goto L13
+	} else {
+		goto L14
+	}
 L12:
 	;
-	goto L9
+	v45 = v21 + int32(_a_F_get_object_catcache_oid_3)
+	goto L7
 L13:
 	;
-	v29 = (v16 | int32(1)) * int32(40)
-	v32 = *(*int32)(unsafe.Add(mBase, uint32(v29)+uint32(_c_F_get_object_catcache_oid[1])))
-	if l0 == v32 {
-		goto L14
+	if v18 == int32(36) {
+		goto L1
 	} else {
-		goto L15
+		goto L16
 	}
 L14:
 	;
-	v61 = v29 + int32(_a_F_get_object_catcache_oid_0)
-	goto L7
+	goto L15
 L15:
 	;
-	goto L16
+	goto L12
 L16:
 	;
-	v39 = (v16 | int32(2)) * int32(40)
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_c_F_get_object_catcache_oid[1])))
-	if l0 == v42 {
-		goto L17
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_catcache_oid[2])))
+	if v28 == l0 {
+		goto L8
 	} else {
-		goto L18
+		goto L17
 	}
 L17:
 	;
-	v61 = v39 + int32(_a_F_get_object_catcache_oid_0)
-	goto L7
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_catcache_oid[3])))
+	if v30 == l0 {
+		goto L9
+	} else {
+		goto L18
+	}
 L18:
 	;
-	goto L19
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_catcache_oid[4])))
+	if v32 == l0 {
+		goto L10
+	} else {
+		goto L19
+	}
 L19:
 	;
-	v49 = (v16 | int32(3)) * int32(40)
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(v49)+uint32(_c_F_get_object_catcache_oid[1])))
-	if l0 == v52 {
-		goto L20
-	} else {
-		goto L21
-	}
+	v18 = v18 + int32(4)
+	goto L11
 L20:
 	;
-	v61 = v49 + int32(_a_F_get_object_catcache_oid_0)
-	goto L7
+	return int32(0)
 L21:
 	;
-	v16 = v16 + int32(4)
-	goto L8
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
+	F_errmsg_internal(m, int32(_a_F_get_object_catcache_oid_4), v8)
+	mBase = m.M
+	v66 = m.ExcPending
+	if v66 != 0 {
+		goto L20
+	} else {
+		goto L22
+	}
+L22:
+	;
+	F_errfinish(m, int32(_a_F_get_object_catcache_oid_5), int32(2777), int32(_a_F_get_object_catcache_oid_6))
+	mBase = m.M
+	v71 = m.ExcPending
+	if v71 != 0 {
+		goto L20
+	} else {
+		goto L23
+	}
 L23:
-	;
-	return int32(0)
-L24:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-	F_errmsg_internal(m, int32(_a_F_get_object_catcache_oid_1), v7)
-	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
-		goto L23
-	} else {
-		goto L25
-	}
-L25:
-	;
-	F_errfinish(m, int32(_a_F_get_object_catcache_oid_2), int32(2777), int32(_a_F_get_object_catcache_oid_3))
-	mBase = m.M
-	v86 = m.ExcPending
-	if v86 != 0 {
-		goto L23
-	} else {
-		goto L26
-	}
-L26:
 	;
 	base.Wasm_trap_unreachable()
 	for {
@@ -510,49 +480,43 @@ L26:
 func F_get_object_oid_index(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v10 int32
-	_ = v10
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
 	var v11 int32
 	_ = v11
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
+	var v12 int32
+	_ = v12
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
-	var v29 int32
-	_ = v29
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
 	var v32 int32
 	_ = v32
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
-	var v49 int32
-	_ = v49
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
 	var v52 int32
 	_ = v52
-	var v61 int32
-	_ = v61
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
-	var v77 int32
-	_ = v77
-	var v81 int32
-	_ = v81
-	var v86 int32
-	_ = v86
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _c_F_get_object_oid_index[0]))
-	if v10 != 0 {
+	var v62 int32
+	_ = v62
+	var v66 int32
+	_ = v66
+	var v71 int32
+	_ = v71
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	v11 = *(*int32)(unsafe.Add(mBase, _c_F_get_object_oid_index[0]))
+	if v11 != 0 {
 		goto L3
 	} else {
 		goto L4
@@ -561,22 +525,22 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
-		goto L23
+	v62 = m.ExcPending
+	if v62 != 0 {
+		goto L20
 	} else {
-		goto L24
+		goto L21
 	}
 L2:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(v64)+8))
-	m.G0 = v7 + int32(16)
-	return v67
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v48)+8))
+	m.G0 = v8 + int32(16)
+	return v52
 L3:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
-	if v11 == l0 {
-		v64 = v10
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
+	if v12 == l0 {
+		v48 = v11
 		goto L2
 	} else {
 		goto L6
@@ -586,116 +550,107 @@ L4:
 	goto L5
 L5:
 	;
-	v16 = int32(0)
-	goto L8
+	v18 = int32(0)
+	goto L11
 L6:
 	;
 	goto L5
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_get_object_oid_index[0])) = v61
-	v64 = v61
+	*(*int32)(unsafe.Add(mBase, _c_F_get_object_oid_index[0])) = v45
+	v48 = v45
 	goto L2
 L8:
 	;
-	v19 = v16 * int32(40)
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_c_F_get_object_oid_index[1])))
-	if l0 != v22 {
-		goto L10
-	} else {
-		goto L11
-	}
+	v45 = v21 + int32(_a_F_get_object_oid_index_0)
+	goto L7
 L9:
 	;
-	v61 = v19 + int32(_a_F_get_object_oid_index_0)
+	v45 = v21 + int32(_a_F_get_object_oid_index_1)
 	goto L7
 L10:
 	;
-	if v16 == int32(36) {
-		goto L1
-	} else {
-		goto L13
-	}
+	v45 = v21 + int32(_a_F_get_object_oid_index_2)
+	goto L7
 L11:
 	;
-	goto L12
+	v21 = v18 * int32(40)
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_oid_index[1])))
+	if l0 != v22 {
+		goto L13
+	} else {
+		goto L14
+	}
 L12:
 	;
-	goto L9
+	v45 = v21 + int32(_a_F_get_object_oid_index_3)
+	goto L7
 L13:
 	;
-	v29 = (v16 | int32(1)) * int32(40)
-	v32 = *(*int32)(unsafe.Add(mBase, uint32(v29)+uint32(_c_F_get_object_oid_index[1])))
-	if l0 == v32 {
-		goto L14
+	if v18 == int32(36) {
+		goto L1
 	} else {
-		goto L15
+		goto L16
 	}
 L14:
 	;
-	v61 = v29 + int32(_a_F_get_object_oid_index_0)
-	goto L7
+	goto L15
 L15:
 	;
-	goto L16
+	goto L12
 L16:
 	;
-	v39 = (v16 | int32(2)) * int32(40)
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_c_F_get_object_oid_index[1])))
-	if l0 == v42 {
-		goto L17
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_oid_index[2])))
+	if v28 == l0 {
+		goto L8
 	} else {
-		goto L18
+		goto L17
 	}
 L17:
 	;
-	v61 = v39 + int32(_a_F_get_object_oid_index_0)
-	goto L7
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_oid_index[3])))
+	if v30 == l0 {
+		goto L9
+	} else {
+		goto L18
+	}
 L18:
 	;
-	goto L19
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_get_object_oid_index[4])))
+	if v32 == l0 {
+		goto L10
+	} else {
+		goto L19
+	}
 L19:
 	;
-	v49 = (v16 | int32(3)) * int32(40)
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(v49)+uint32(_c_F_get_object_oid_index[1])))
-	if l0 == v52 {
-		goto L20
-	} else {
-		goto L21
-	}
+	v18 = v18 + int32(4)
+	goto L11
 L20:
 	;
-	v61 = v49 + int32(_a_F_get_object_oid_index_0)
-	goto L7
+	return int32(0)
 L21:
 	;
-	v16 = v16 + int32(4)
-	goto L8
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
+	F_errmsg_internal(m, int32(_a_F_get_object_oid_index_4), v8)
+	mBase = m.M
+	v66 = m.ExcPending
+	if v66 != 0 {
+		goto L20
+	} else {
+		goto L22
+	}
+L22:
+	;
+	F_errfinish(m, int32(_a_F_get_object_oid_index_5), int32(2777), int32(_a_F_get_object_oid_index_6))
+	mBase = m.M
+	v71 = m.ExcPending
+	if v71 != 0 {
+		goto L20
+	} else {
+		goto L23
+	}
 L23:
-	;
-	return int32(0)
-L24:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-	F_errmsg_internal(m, int32(_a_F_get_object_oid_index_1), v7)
-	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
-		goto L23
-	} else {
-		goto L25
-	}
-L25:
-	;
-	F_errfinish(m, int32(_a_F_get_object_oid_index_2), int32(2777), int32(_a_F_get_object_oid_index_3))
-	mBase = m.M
-	v86 = m.ExcPending
-	if v86 != 0 {
-		goto L23
-	} else {
-		goto L26
-	}
-L26:
 	;
 	base.Wasm_trap_unreachable()
 	for {
@@ -762,258 +717,264 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 	_ = v90
 	var v91 int32
 	_ = v91
-	var v96 int32
-	_ = v96
-	var v98 int32
-	_ = v98
-	var v108 int32
-	_ = v108
-	var v109 int32
-	_ = v109
+	var v92 int32
+	_ = v92
+	var v99 int32
+	_ = v99
+	var v101 int32
+	_ = v101
 	var v111 int32
 	_ = v111
 	var v112 int32
 	_ = v112
+	var v114 int32
+	_ = v114
 	var v115 int32
 	_ = v115
-	var v116 int32
-	_ = v116
 	var v118 int32
 	_ = v118
 	var v119 int32
 	_ = v119
+	var v121 int32
+	_ = v121
 	var v122 int32
 	_ = v122
-	var v128 int32
-	_ = v128
+	var v125 int32
+	_ = v125
 	var v131 int32
 	_ = v131
-	var v137 int32
-	_ = v137
-	var v142 int32
-	_ = v142
-	var v143 int32
-	_ = v143
-	var v144 int32
-	_ = v144
+	var v134 int32
+	_ = v134
+	var v140 int32
+	_ = v140
 	var v145 int32
 	_ = v145
 	var v146 int32
 	_ = v146
+	var v147 int32
+	_ = v147
+	var v148 int32
+	_ = v148
 	var v149 int32
 	_ = v149
-	var v153 int32
-	_ = v153
-	var v155 int32
-	_ = v155
+	var v152 int32
+	_ = v152
 	var v156 int32
 	_ = v156
+	var v158 int32
+	_ = v158
 	var v159 int32
 	_ = v159
-	var v165 int32
-	_ = v165
+	var v162 int32
+	_ = v162
 	var v168 int32
 	_ = v168
-	var v174 int32
-	_ = v174
-	var v179 int32
-	_ = v179
-	var v180 int32
-	_ = v180
-	var v181 int32
-	_ = v181
+	var v171 int32
+	_ = v171
+	var v177 int32
+	_ = v177
+	var v182 int32
+	_ = v182
 	var v183 int32
 	_ = v183
 	var v184 int32
 	_ = v184
-	var v185 int32
-	_ = v185
+	var v186 int32
+	_ = v186
+	var v187 int32
+	_ = v187
 	var v188 int32
 	_ = v188
-	var v189 int32
-	_ = v189
-	var v190 int32
-	_ = v190
+	var v191 int32
+	_ = v191
 	var v192 int32
 	_ = v192
-	var v194 int32
-	_ = v194
+	var v193 int32
+	_ = v193
 	var v195 int32
 	_ = v195
+	var v197 int32
+	_ = v197
 	var v198 int32
 	_ = v198
-	var v204 int32
-	_ = v204
+	var v201 int32
+	_ = v201
 	var v207 int32
 	_ = v207
-	var v213 int32
-	_ = v213
-	var v218 int32
-	_ = v218
-	var v219 int32
-	_ = v219
-	var v220 int32
-	_ = v220
+	var v210 int32
+	_ = v210
+	var v216 int32
+	_ = v216
+	var v221 int32
+	_ = v221
 	var v222 int32
 	_ = v222
-	var v224 int32
-	_ = v224
+	var v223 int32
+	_ = v223
 	var v225 int32
 	_ = v225
-	var v230 int32
-	_ = v230
-	var v231 int32
-	_ = v231
-	var v232 int32
-	_ = v232
-	var v237 int32
-	_ = v237
-	var v238 int32
-	_ = v238
-	var v239 int32
-	_ = v239
+	var v227 int32
+	_ = v227
+	var v228 int32
+	_ = v228
+	var v233 int32
+	_ = v233
+	var v234 int32
+	_ = v234
+	var v235 int32
+	_ = v235
 	var v240 int32
 	_ = v240
 	var v241 int32
 	_ = v241
 	var v242 int32
 	_ = v242
-	var v244 int64
+	var v243 int32
+	_ = v243
+	var v244 int32
 	_ = v244
 	var v245 int32
 	_ = v245
-	var v250 int32
-	_ = v250
-	var v252 int32
-	_ = v252
-	var v253 int32
-	_ = v253
-	var v254 int32
-	_ = v254
-	var v255 int32
-	_ = v255
+	var v247 int64
+	_ = v247
+	var v248 int32
+	_ = v248
+	var v249 int32
+	_ = v249
 	var v256 int32
 	_ = v256
-	var v257 int32
-	_ = v257
 	var v258 int32
 	_ = v258
+	var v259 int32
+	_ = v259
+	var v260 int32
+	_ = v260
 	var v261 int32
 	_ = v261
+	var v262 int32
+	_ = v262
+	var v263 int32
+	_ = v263
+	var v264 int32
+	_ = v264
 	var v267 int32
 	_ = v267
-	var v268 int32
-	_ = v268
-	var v269 int32
-	_ = v269
+	var v273 int32
+	_ = v273
 	var v274 int32
 	_ = v274
-	var v279 int32
-	_ = v279
+	var v275 int32
+	_ = v275
 	var v280 int32
 	_ = v280
-	var v281 int32
-	_ = v281
-	var v282 int32
-	_ = v282
-	var v283 int32
-	_ = v283
-	var v284 int32
-	_ = v284
 	var v285 int32
 	_ = v285
+	var v286 int32
+	_ = v286
+	var v287 int32
+	_ = v287
 	var v288 int32
 	_ = v288
 	var v289 int32
 	_ = v289
 	var v290 int32
 	_ = v290
+	var v291 int32
+	_ = v291
 	var v294 int32
 	_ = v294
 	var v295 int32
 	_ = v295
 	var v296 int32
 	_ = v296
-	var v297 int32
-	_ = v297
-	var v298 int32
-	_ = v298
-	var v299 int32
-	_ = v299
 	var v300 int32
 	_ = v300
 	var v301 int32
 	_ = v301
-	var v303 int64
+	var v302 int32
+	_ = v302
+	var v303 int32
 	_ = v303
 	var v304 int32
 	_ = v304
-	var v309 int32
+	var v305 int32
+	_ = v305
+	var v306 int32
+	_ = v306
+	var v307 int32
+	_ = v307
+	var v309 int64
 	_ = v309
+	var v310 int32
+	_ = v310
 	var v311 int32
 	_ = v311
-	var v314 int64
-	_ = v314
+	var v318 int32
+	_ = v318
+	var v320 int32
+	_ = v320
+	var v323 int64
+	_ = v323
 	v11 = m.G0
 	v13 = v11 - int32(80)
 	m.G0 = v13
 	if l0 != int32(1247) {
 		if l0 != int32(2615) {
-			v253 = F_superuser_arg(m, l2)
+			v259 = F_superuser_arg(m, l2)
 			mBase = m.M
-			v254 = m.ExcPending
-			if v254 != 0 {
+			v260 = m.ExcPending
+			if v260 != 0 {
 				return int64(0)
 			} else {
-				if v253 != 0 {
-					v314 = l3
+				if v259 != 0 {
+					v323 = l3
 					m.G0 = v13 + int32(80)
-					return v314
+					return v323
 				} else {
-					v255 = F_get_object_catcache_oid(m, l0)
+					v261 = F_get_object_catcache_oid(m, l0)
 					mBase = m.M
-					v256 = m.ExcPending
-					if v256 != 0 {
+					v262 = m.ExcPending
+					if v262 != 0 {
 						return int64(0)
 					} else {
-						v257 = F_SearchSysCache1(m, v255, l1)
+						v263 = F_SearchSysCache1(m, v261, l1)
 						mBase = m.M
-						v258 = m.ExcPending
-						if v258 != 0 {
+						v264 = m.ExcPending
+						if v264 != 0 {
 							return int64(0)
 						} else {
-							if v257 == int32(0) {
+							if v263 == int32(0) {
 								if l4 != 0 {
-									v261 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v261)
-									v314 = int64(0)
+									v267 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v267)
+									v323 = int64(0)
 									m.G0 = v13 + int32(80)
-									return v314
+									return v323
 								} else {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v267 = m.ExcPending
-									if v267 != 0 {
+									v273 = m.ExcPending
+									if v273 != 0 {
 										return int64(0)
 									} else {
-										v268 = F_get_object_class_descr(m, l0)
+										v274 = F_get_object_class_descr(m, l0)
 										mBase = m.M
-										v269 = m.ExcPending
-										if v269 != 0 {
+										v275 = m.ExcPending
+										if v275 != 0 {
 											return int64(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = l1
-											*(*int32)(unsafe.Add(mBase, uint32(v13))) = v268
+											*(*int32)(unsafe.Add(mBase, uint32(v13))) = v274
 											F_errmsg_internal(m, int32(_a_F_object_aclmask_ext_0), v13)
 											mBase = m.M
-											v274 = m.ExcPending
-											if v274 != 0 {
+											v280 = m.ExcPending
+											if v280 != 0 {
 												return int64(0)
 											} else {
 												F_errfinish(m, int32(_a_F_object_aclmask_ext_1), int32(3107), int32(_a_F_object_aclmask_ext_2))
 												mBase = m.M
-												v279 = m.ExcPending
-												if v279 != 0 {
+												v285 = m.ExcPending
+												if v285 != 0 {
 													return int64(0)
 												} else {
 													base.Wasm_trap_unreachable()
@@ -1025,154 +986,130 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 									}
 								}
 							} else {
-								v280 = F_get_object_attnum_owner(m, l0)
+								v286 = F_get_object_attnum_owner(m, l0)
 								mBase = m.M
-								v281 = m.ExcPending
-								if v281 != 0 {
+								v287 = m.ExcPending
+								if v287 != 0 {
 									return int64(0)
 								} else {
-									v282 = F_SysCacheGetAttrNotNull(m, v255, v257, v280)
+									v288 = F_SysCacheGetAttrNotNull(m, v261, v263, v286)
 									mBase = m.M
-									v283 = m.ExcPending
-									if v283 != 0 {
+									v289 = m.ExcPending
+									if v289 != 0 {
 										return int64(0)
 									} else {
-										v284 = F_get_object_attnum_acl(m, l0)
+										v290 = F_get_object_attnum_acl(m, l0)
 										mBase = m.M
-										v285 = m.ExcPending
-										if v285 != 0 {
+										v291 = m.ExcPending
+										if v291 != 0 {
 											return int64(0)
 										} else {
-											v288 = F_SysCacheGetAttr(m, v255, v257, v284, v13+int32(79))
+											v294 = F_SysCacheGetAttr(m, v261, v263, v290, v13+int32(79))
 											mBase = m.M
-											v289 = m.ExcPending
-											if v289 != 0 {
+											v295 = m.ExcPending
+											if v295 != 0 {
 												return int64(0)
 											} else {
-												v290 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
-												if v290 == int32(1) {
-													v294 = F_get_object_type(m, l0, l1)
+												v296 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
+												if v296 == int32(1) {
+													v300 = F_get_object_type(m, l0, l1)
 													mBase = m.M
-													v295 = m.ExcPending
-													if v295 != 0 {
+													v301 = m.ExcPending
+													if v301 != 0 {
 														return int64(0)
 													} else {
-														v296 = F_acldefault(m, v294, v282)
+														v302 = F_acldefault(m, v300, v288)
 														mBase = m.M
-														v297 = m.ExcPending
-														if v297 != 0 {
+														v303 = m.ExcPending
+														if v303 != 0 {
 															return int64(0)
 														} else {
-															v300 = int32(0)
-															v301 = v296
-															v303 = F_aclmask(m, v301, l2, v282, l3, int32(1))
+															v306 = int32(0)
+															v307 = v302
+															v309 = F_aclmask(m, v307, l2, v288, l3, int32(1))
 															mBase = m.M
-															v304 = m.ExcPending
-															if v304 != 0 {
+															v310 = m.ExcPending
+															if v310 != 0 {
 																return int64(0)
 															} else {
-																if v301 == int32(0) {
-																	F_ReleaseCatCache(m, v257)
+																v311 = int32(0)
+																if base.B2i32(v307 == v311)|base.B2i32(v307 == v306) == v311 {
+																	F_pfree(m, v307)
 																	mBase = m.M
-																	v311 = m.ExcPending
-																	if v311 != 0 {
+																	v318 = m.ExcPending
+																	if v318 != 0 {
 																		return int64(0)
 																	} else {
-																		v314 = v303
-																		m.G0 = v13 + int32(80)
-																		return v314
+																		F_ReleaseCatCache(m, v263)
+																		mBase = m.M
+																		v320 = m.ExcPending
+																		if v320 != 0 {
+																			return int64(0)
+																		} else {
+																			v323 = v309
+																			m.G0 = v13 + int32(80)
+																			return v323
+																		}
 																	}
 																} else {
-																	if v301 == v300 {
-																		F_ReleaseCatCache(m, v257)
-																		mBase = m.M
-																		v311 = m.ExcPending
-																		if v311 != 0 {
-																			return int64(0)
-																		} else {
-																			v314 = v303
-																			m.G0 = v13 + int32(80)
-																			return v314
-																		}
+																	F_ReleaseCatCache(m, v263)
+																	mBase = m.M
+																	v320 = m.ExcPending
+																	if v320 != 0 {
+																		return int64(0)
 																	} else {
-																		F_pfree(m, v301)
-																		mBase = m.M
-																		v309 = m.ExcPending
-																		if v309 != 0 {
-																			return int64(0)
-																		} else {
-																			F_ReleaseCatCache(m, v257)
-																			mBase = m.M
-																			v311 = m.ExcPending
-																			if v311 != 0 {
-																				return int64(0)
-																			} else {
-																				v314 = v303
-																				m.G0 = v13 + int32(80)
-																				return v314
-																			}
-																		}
+																		v323 = v309
+																		m.G0 = v13 + int32(80)
+																		return v323
 																	}
 																}
 															}
 														}
 													}
 												} else {
-													v298 = F_pg_detoast_datum(m, v288)
+													v304 = F_pg_detoast_datum(m, v294)
 													mBase = m.M
-													v299 = m.ExcPending
-													if v299 != 0 {
+													v305 = m.ExcPending
+													if v305 != 0 {
 														return int64(0)
 													} else {
-														v300 = v288
-														v301 = v298
-														v303 = F_aclmask(m, v301, l2, v282, l3, int32(1))
+														v306 = v294
+														v307 = v304
+														v309 = F_aclmask(m, v307, l2, v288, l3, int32(1))
 														mBase = m.M
-														v304 = m.ExcPending
-														if v304 != 0 {
+														v310 = m.ExcPending
+														if v310 != 0 {
 															return int64(0)
 														} else {
-															if v301 == int32(0) {
-																F_ReleaseCatCache(m, v257)
+															v311 = int32(0)
+															if base.B2i32(v307 == v311)|base.B2i32(v307 == v306) == v311 {
+																F_pfree(m, v307)
 																mBase = m.M
-																v311 = m.ExcPending
-																if v311 != 0 {
+																v318 = m.ExcPending
+																if v318 != 0 {
 																	return int64(0)
 																} else {
-																	v314 = v303
-																	m.G0 = v13 + int32(80)
-																	return v314
+																	F_ReleaseCatCache(m, v263)
+																	mBase = m.M
+																	v320 = m.ExcPending
+																	if v320 != 0 {
+																		return int64(0)
+																	} else {
+																		v323 = v309
+																		m.G0 = v13 + int32(80)
+																		return v323
+																	}
 																}
 															} else {
-																if v301 == v300 {
-																	F_ReleaseCatCache(m, v257)
-																	mBase = m.M
-																	v311 = m.ExcPending
-																	if v311 != 0 {
-																		return int64(0)
-																	} else {
-																		v314 = v303
-																		m.G0 = v13 + int32(80)
-																		return v314
-																	}
+																F_ReleaseCatCache(m, v263)
+																mBase = m.M
+																v320 = m.ExcPending
+																if v320 != 0 {
+																	return int64(0)
 																} else {
-																	F_pfree(m, v301)
-																	mBase = m.M
-																	v309 = m.ExcPending
-																	if v309 != 0 {
-																		return int64(0)
-																	} else {
-																		F_ReleaseCatCache(m, v257)
-																		mBase = m.M
-																		v311 = m.ExcPending
-																		if v311 != 0 {
-																			return int64(0)
-																		} else {
-																			v314 = v303
-																			m.G0 = v13 + int32(80)
-																			return v314
-																		}
-																	}
+																	v323 = v309
+																	m.G0 = v13 + int32(80)
+																	return v323
 																}
 															}
 														}
@@ -1195,9 +1132,9 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 				return int64(0)
 			} else {
 				if v19 != 0 {
-					v314 = l3
+					v323 = l3
 					m.G0 = v13 + int32(80)
-					return v314
+					return v323
 				} else {
 					v25 = *(*int32)(unsafe.Add(mBase, _c_F_object_aclmask_ext[0]))
 					if base.B2i32(v25 != int32(0))&base.B2i32(l1 == v25) != 0 {
@@ -1209,12 +1146,12 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 							return int64(0)
 						} else {
 							if v34 != int64(0) {
-								v314 = l3 & int64(768)
+								v323 = l3 & int64(768)
 							} else {
-								v314 = l3 & int64(256)
+								v323 = l3 & int64(256)
 							}
 							m.G0 = v13 + int32(80)
-							return v314
+							return v323
 						}
 					} else {
 						v43 = F_SearchSysCache1(m, int32(38), l1)
@@ -1227,9 +1164,9 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 								if l4 != 0 {
 									v47 = int32(1)
 									*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v47)
-									v314 = int64(0)
+									v323 = int64(0)
 									m.G0 = v13 + int32(80)
-									return v314
+									return v323
 								} else {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
@@ -1290,47 +1227,55 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 											if v91 != 0 {
 												return int64(0)
 											} else {
-												if v88 == int32(0) {
-													F_ReleaseCatCache(m, v43)
+												v92 = int32(0)
+												if base.B2i32(v88 == v92)|base.B2i32(v88 == v87) == v92 {
+													F_pfree(m, v88)
 													mBase = m.M
-													v98 = m.ExcPending
-													if v98 != 0 {
+													v99 = m.ExcPending
+													if v99 != 0 {
 														return int64(0)
 													} else {
-														if l3&int64(256) == int64(0) {
-															v314 = v90
-															m.G0 = v13 + int32(80)
-															return v314
+														F_ReleaseCatCache(m, v43)
+														mBase = m.M
+														v101 = m.ExcPending
+														if v101 != 0 {
+															return int64(0)
 														} else {
-															if v90&int64(256) != int64(0) {
-																v314 = v90
+															if l3&int64(256) == int64(0) {
+																v323 = v90
 																m.G0 = v13 + int32(80)
-																return v314
+																return v323
 															} else {
-																v108 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
-																mBase = m.M
-																v109 = m.ExcPending
-																if v109 != 0 {
-																	return int64(0)
+																if v90&int64(256) != int64(0) {
+																	v323 = v90
+																	m.G0 = v13 + int32(80)
+																	return v323
 																} else {
-																	if v108 != 0 {
-																		v314 = v90 | int64(256)
-																		m.G0 = v13 + int32(80)
-																		return v314
+																	v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
+																	mBase = m.M
+																	v112 = m.ExcPending
+																	if v112 != 0 {
+																		return int64(0)
 																	} else {
-																		v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
-																		mBase = m.M
-																		v112 = m.ExcPending
-																		if v112 != 0 {
-																			return int64(0)
-																		} else {
-																			if v111 != 0 {
-																				v314 = v90 | int64(256)
-																			} else {
-																				v314 = v90
-																			}
+																		if v111 != 0 {
+																			v323 = v90 | int64(256)
 																			m.G0 = v13 + int32(80)
-																			return v314
+																			return v323
+																		} else {
+																			v114 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
+																			mBase = m.M
+																			v115 = m.ExcPending
+																			if v115 != 0 {
+																				return int64(0)
+																			} else {
+																				if v114 != 0 {
+																					v323 = v90 | int64(256)
+																				} else {
+																					v323 = v90
+																				}
+																				m.G0 = v13 + int32(80)
+																				return v323
+																			}
 																		}
 																	}
 																}
@@ -1338,102 +1283,46 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 														}
 													}
 												} else {
-													if v88 == v87 {
-														F_ReleaseCatCache(m, v43)
-														mBase = m.M
-														v98 = m.ExcPending
-														if v98 != 0 {
-															return int64(0)
-														} else {
-															if l3&int64(256) == int64(0) {
-																v314 = v90
-																m.G0 = v13 + int32(80)
-																return v314
-															} else {
-																if v90&int64(256) != int64(0) {
-																	v314 = v90
-																	m.G0 = v13 + int32(80)
-																	return v314
-																} else {
-																	v108 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
-																	mBase = m.M
-																	v109 = m.ExcPending
-																	if v109 != 0 {
-																		return int64(0)
-																	} else {
-																		if v108 != 0 {
-																			v314 = v90 | int64(256)
-																			m.G0 = v13 + int32(80)
-																			return v314
-																		} else {
-																			v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
-																			mBase = m.M
-																			v112 = m.ExcPending
-																			if v112 != 0 {
-																				return int64(0)
-																			} else {
-																				if v111 != 0 {
-																					v314 = v90 | int64(256)
-																				} else {
-																					v314 = v90
-																				}
-																				m.G0 = v13 + int32(80)
-																				return v314
-																			}
-																		}
-																	}
-																}
-															}
-														}
+													F_ReleaseCatCache(m, v43)
+													mBase = m.M
+													v101 = m.ExcPending
+													if v101 != 0 {
+														return int64(0)
 													} else {
-														F_pfree(m, v88)
-														mBase = m.M
-														v96 = m.ExcPending
-														if v96 != 0 {
-															return int64(0)
+														if l3&int64(256) == int64(0) {
+															v323 = v90
+															m.G0 = v13 + int32(80)
+															return v323
 														} else {
-															F_ReleaseCatCache(m, v43)
-															mBase = m.M
-															v98 = m.ExcPending
-															if v98 != 0 {
-																return int64(0)
+															if v90&int64(256) != int64(0) {
+																v323 = v90
+																m.G0 = v13 + int32(80)
+																return v323
 															} else {
-																if l3&int64(256) == int64(0) {
-																	v314 = v90
-																	m.G0 = v13 + int32(80)
-																	return v314
+																v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
+																mBase = m.M
+																v112 = m.ExcPending
+																if v112 != 0 {
+																	return int64(0)
 																} else {
-																	if v90&int64(256) != int64(0) {
-																		v314 = v90
+																	if v111 != 0 {
+																		v323 = v90 | int64(256)
 																		m.G0 = v13 + int32(80)
-																		return v314
+																		return v323
 																	} else {
-																		v108 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
+																		v114 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
 																		mBase = m.M
-																		v109 = m.ExcPending
-																		if v109 != 0 {
+																		v115 = m.ExcPending
+																		if v115 != 0 {
 																			return int64(0)
 																		} else {
-																			if v108 != 0 {
-																				v314 = v90 | int64(256)
-																				m.G0 = v13 + int32(80)
-																				return v314
+																			if v114 != 0 {
+																				v323 = v90 | int64(256)
 																			} else {
-																				v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
-																				mBase = m.M
-																				v112 = m.ExcPending
-																				if v112 != 0 {
-																					return int64(0)
-																				} else {
-																					if v111 != 0 {
-																						v314 = v90 | int64(256)
-																					} else {
-																						v314 = v90
-																					}
-																					m.G0 = v13 + int32(80)
-																					return v314
-																				}
+																				v323 = v90
 																			}
+																			m.G0 = v13 + int32(80)
+																			return v323
 																		}
 																	}
 																}
@@ -1458,47 +1347,55 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 											if v91 != 0 {
 												return int64(0)
 											} else {
-												if v88 == int32(0) {
-													F_ReleaseCatCache(m, v43)
+												v92 = int32(0)
+												if base.B2i32(v88 == v92)|base.B2i32(v88 == v87) == v92 {
+													F_pfree(m, v88)
 													mBase = m.M
-													v98 = m.ExcPending
-													if v98 != 0 {
+													v99 = m.ExcPending
+													if v99 != 0 {
 														return int64(0)
 													} else {
-														if l3&int64(256) == int64(0) {
-															v314 = v90
-															m.G0 = v13 + int32(80)
-															return v314
+														F_ReleaseCatCache(m, v43)
+														mBase = m.M
+														v101 = m.ExcPending
+														if v101 != 0 {
+															return int64(0)
 														} else {
-															if v90&int64(256) != int64(0) {
-																v314 = v90
+															if l3&int64(256) == int64(0) {
+																v323 = v90
 																m.G0 = v13 + int32(80)
-																return v314
+																return v323
 															} else {
-																v108 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
-																mBase = m.M
-																v109 = m.ExcPending
-																if v109 != 0 {
-																	return int64(0)
+																if v90&int64(256) != int64(0) {
+																	v323 = v90
+																	m.G0 = v13 + int32(80)
+																	return v323
 																} else {
-																	if v108 != 0 {
-																		v314 = v90 | int64(256)
-																		m.G0 = v13 + int32(80)
-																		return v314
+																	v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
+																	mBase = m.M
+																	v112 = m.ExcPending
+																	if v112 != 0 {
+																		return int64(0)
 																	} else {
-																		v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
-																		mBase = m.M
-																		v112 = m.ExcPending
-																		if v112 != 0 {
-																			return int64(0)
-																		} else {
-																			if v111 != 0 {
-																				v314 = v90 | int64(256)
-																			} else {
-																				v314 = v90
-																			}
+																		if v111 != 0 {
+																			v323 = v90 | int64(256)
 																			m.G0 = v13 + int32(80)
-																			return v314
+																			return v323
+																		} else {
+																			v114 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
+																			mBase = m.M
+																			v115 = m.ExcPending
+																			if v115 != 0 {
+																				return int64(0)
+																			} else {
+																				if v114 != 0 {
+																					v323 = v90 | int64(256)
+																				} else {
+																					v323 = v90
+																				}
+																				m.G0 = v13 + int32(80)
+																				return v323
+																			}
 																		}
 																	}
 																}
@@ -1506,102 +1403,46 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 														}
 													}
 												} else {
-													if v88 == v87 {
-														F_ReleaseCatCache(m, v43)
-														mBase = m.M
-														v98 = m.ExcPending
-														if v98 != 0 {
-															return int64(0)
-														} else {
-															if l3&int64(256) == int64(0) {
-																v314 = v90
-																m.G0 = v13 + int32(80)
-																return v314
-															} else {
-																if v90&int64(256) != int64(0) {
-																	v314 = v90
-																	m.G0 = v13 + int32(80)
-																	return v314
-																} else {
-																	v108 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
-																	mBase = m.M
-																	v109 = m.ExcPending
-																	if v109 != 0 {
-																		return int64(0)
-																	} else {
-																		if v108 != 0 {
-																			v314 = v90 | int64(256)
-																			m.G0 = v13 + int32(80)
-																			return v314
-																		} else {
-																			v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
-																			mBase = m.M
-																			v112 = m.ExcPending
-																			if v112 != 0 {
-																				return int64(0)
-																			} else {
-																				if v111 != 0 {
-																					v314 = v90 | int64(256)
-																				} else {
-																					v314 = v90
-																				}
-																				m.G0 = v13 + int32(80)
-																				return v314
-																			}
-																		}
-																	}
-																}
-															}
-														}
+													F_ReleaseCatCache(m, v43)
+													mBase = m.M
+													v101 = m.ExcPending
+													if v101 != 0 {
+														return int64(0)
 													} else {
-														F_pfree(m, v88)
-														mBase = m.M
-														v96 = m.ExcPending
-														if v96 != 0 {
-															return int64(0)
+														if l3&int64(256) == int64(0) {
+															v323 = v90
+															m.G0 = v13 + int32(80)
+															return v323
 														} else {
-															F_ReleaseCatCache(m, v43)
-															mBase = m.M
-															v98 = m.ExcPending
-															if v98 != 0 {
-																return int64(0)
+															if v90&int64(256) != int64(0) {
+																v323 = v90
+																m.G0 = v13 + int32(80)
+																return v323
 															} else {
-																if l3&int64(256) == int64(0) {
-																	v314 = v90
-																	m.G0 = v13 + int32(80)
-																	return v314
+																v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
+																mBase = m.M
+																v112 = m.ExcPending
+																if v112 != 0 {
+																	return int64(0)
 																} else {
-																	if v90&int64(256) != int64(0) {
-																		v314 = v90
+																	if v111 != 0 {
+																		v323 = v90 | int64(256)
 																		m.G0 = v13 + int32(80)
-																		return v314
+																		return v323
 																	} else {
-																		v108 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_5))
+																		v114 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
 																		mBase = m.M
-																		v109 = m.ExcPending
-																		if v109 != 0 {
+																		v115 = m.ExcPending
+																		if v115 != 0 {
 																			return int64(0)
 																		} else {
-																			if v108 != 0 {
-																				v314 = v90 | int64(256)
-																				m.G0 = v13 + int32(80)
-																				return v314
+																			if v114 != 0 {
+																				v323 = v90 | int64(256)
 																			} else {
-																				v111 = F_has_privs_of_role(m, l2, int32(_a_F_object_aclmask_ext_6))
-																				mBase = m.M
-																				v112 = m.ExcPending
-																				if v112 != 0 {
-																					return int64(0)
-																				} else {
-																					if v111 != 0 {
-																						v314 = v90 | int64(256)
-																					} else {
-																						v314 = v90
-																					}
-																					m.G0 = v13 + int32(80)
-																					return v314
-																				}
+																				v323 = v90
 																			}
+																			m.G0 = v13 + int32(80)
+																			return v323
 																		}
 																	}
 																}
@@ -1620,54 +1461,54 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 			}
 		}
 	} else {
-		v115 = F_superuser_arg(m, l2)
+		v118 = F_superuser_arg(m, l2)
 		mBase = m.M
-		v116 = m.ExcPending
-		if v116 != 0 {
+		v119 = m.ExcPending
+		if v119 != 0 {
 			return int64(0)
 		} else {
-			if v115 != 0 {
-				v314 = l3
+			if v118 != 0 {
+				v323 = l3
 				m.G0 = v13 + int32(80)
-				return v314
+				return v323
 			} else {
-				v118 = F_SearchSysCache1(m, int32(82), l1)
+				v121 = F_SearchSysCache1(m, int32(82), l1)
 				mBase = m.M
-				v119 = m.ExcPending
-				if v119 != 0 {
+				v122 = m.ExcPending
+				if v122 != 0 {
 					return int64(0)
 				} else {
-					if v118 == int32(0) {
+					if v121 == int32(0) {
 						if l4 != 0 {
-							v122 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v122)
-							v314 = int64(0)
+							v125 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v125)
+							v323 = int64(0)
 							m.G0 = v13 + int32(80)
-							return v314
+							return v323
 						} else {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v128 = m.ExcPending
-							if v128 != 0 {
+							v131 = m.ExcPending
+							if v131 != 0 {
 								return int64(0)
 							} else {
 								F_errcode(m, int32(67137668))
 								mBase = m.M
-								v131 = m.ExcPending
-								if v131 != 0 {
+								v134 = m.ExcPending
+								if v134 != 0 {
 									return int64(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = l1
 									F_errmsg(m, int32(_a_F_object_aclmask_ext_7), v13+int32(32))
 									mBase = m.M
-									v137 = m.ExcPending
-									if v137 != 0 {
+									v140 = m.ExcPending
+									if v140 != 0 {
 										return int64(0)
 									} else {
 										F_errfinish(m, int32(_a_F_object_aclmask_ext_1), int32(3742), int32(_a_F_object_aclmask_ext_8))
 										mBase = m.M
-										v142 = m.ExcPending
-										if v142 != 0 {
+										v145 = m.ExcPending
+										if v145 != 0 {
 											return int64(0)
 										} else {
 											base.Wasm_trap_unreachable()
@@ -1679,65 +1520,65 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 							}
 						}
 					} else {
-						v143 = *(*int32)(unsafe.Add(mBase, uint32(v118)+16))
-						v144 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v143)+22)))
-						v145 = v143 + v144
-						v146 = *(*int32)(unsafe.Add(mBase, uint32(v145)+92))
-						if v146 == int32(0) {
-							v183 = v118
-							v184 = v145
-							v185 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v184)+79)))
-							if v185 == int32(109) {
-								v188 = *(*int32)(unsafe.Add(mBase, uint32(v184)))
-								v189 = F_get_multirange_range(m, v188)
+						v146 = *(*int32)(unsafe.Add(mBase, uint32(v121)+16))
+						v147 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146)+22)))
+						v148 = v146 + v147
+						v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+92))
+						if v149 == int32(0) {
+							v186 = v121
+							v187 = v148
+							v188 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v187)+79)))
+							if v188 == int32(109) {
+								v191 = *(*int32)(unsafe.Add(mBase, uint32(v187)))
+								v192 = F_get_multirange_range(m, v191)
 								mBase = m.M
-								v190 = m.ExcPending
-								if v190 != 0 {
+								v193 = m.ExcPending
+								if v193 != 0 {
 									return int64(0)
 								} else {
-									F_ReleaseCatCache(m, v183)
+									F_ReleaseCatCache(m, v186)
 									mBase = m.M
-									v192 = m.ExcPending
-									if v192 != 0 {
+									v195 = m.ExcPending
+									if v195 != 0 {
 										return int64(0)
 									} else {
-										v194 = F_SearchSysCache1(m, int32(82), v189)
+										v197 = F_SearchSysCache1(m, int32(82), v192)
 										mBase = m.M
-										v195 = m.ExcPending
-										if v195 != 0 {
+										v198 = m.ExcPending
+										if v198 != 0 {
 											return int64(0)
 										} else {
-											if v194 == int32(0) {
+											if v197 == int32(0) {
 												if l4 != 0 {
-													v198 = int32(1)
-													*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v198)
-													v314 = int64(0)
+													v201 = int32(1)
+													*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v201)
+													v323 = int64(0)
 													m.G0 = v13 + int32(80)
-													return v314
+													return v323
 												} else {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v204 = m.ExcPending
-													if v204 != 0 {
+													v207 = m.ExcPending
+													if v207 != 0 {
 														return int64(0)
 													} else {
 														F_errcode(m, int32(67137668))
 														mBase = m.M
-														v207 = m.ExcPending
-														if v207 != 0 {
+														v210 = m.ExcPending
+														if v210 != 0 {
 															return int64(0)
 														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v13)+48)) = v189
+															*(*int32)(unsafe.Add(mBase, uint32(v13)+48)) = v192
 															F_errmsg(m, int32(_a_F_object_aclmask_ext_7), v13+int32(48))
 															mBase = m.M
-															v213 = m.ExcPending
-															if v213 != 0 {
+															v216 = m.ExcPending
+															if v216 != 0 {
 																return int64(0)
 															} else {
 																F_errfinish(m, int32(_a_F_object_aclmask_ext_1), int32(3798), int32(_a_F_object_aclmask_ext_8))
 																mBase = m.M
-																v218 = m.ExcPending
-																if v218 != 0 {
+																v221 = m.ExcPending
+																if v221 != 0 {
 																	return int64(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -1749,134 +1590,110 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 													}
 												}
 											} else {
-												v219 = *(*int32)(unsafe.Add(mBase, uint32(v194)+16))
-												v220 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v219)+22)))
-												v222 = v194
-												v224 = v219 + v220
-												v225 = *(*int32)(unsafe.Add(mBase, uint32(v224)+72))
-												v230 = F_SysCacheGetAttr(m, int32(82), v222, int32(32), v13+int32(79))
+												v222 = *(*int32)(unsafe.Add(mBase, uint32(v197)+16))
+												v223 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v222)+22)))
+												v225 = v197
+												v227 = v222 + v223
+												v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+72))
+												v233 = F_SysCacheGetAttr(m, int32(82), v225, int32(32), v13+int32(79))
 												mBase = m.M
-												v231 = m.ExcPending
-												if v231 != 0 {
+												v234 = m.ExcPending
+												if v234 != 0 {
 													return int64(0)
 												} else {
-													v232 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
-													if v232 == int32(1) {
-														v237 = F_acldefault(m, int32(49), v225)
+													v235 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
+													if v235 == int32(1) {
+														v240 = F_acldefault(m, int32(49), v228)
 														mBase = m.M
-														v238 = m.ExcPending
-														if v238 != 0 {
+														v241 = m.ExcPending
+														if v241 != 0 {
 															return int64(0)
 														} else {
-															v241 = int32(0)
-															v242 = v237
-															v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+															v244 = int32(0)
+															v245 = v240
+															v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 															mBase = m.M
-															v245 = m.ExcPending
-															if v245 != 0 {
+															v248 = m.ExcPending
+															if v248 != 0 {
 																return int64(0)
 															} else {
-																if v242 == int32(0) {
-																	F_ReleaseCatCache(m, v222)
+																v249 = int32(0)
+																if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+																	F_pfree(m, v245)
 																	mBase = m.M
-																	v252 = m.ExcPending
-																	if v252 != 0 {
+																	v256 = m.ExcPending
+																	if v256 != 0 {
 																		return int64(0)
 																	} else {
-																		v314 = v244
-																		m.G0 = v13 + int32(80)
-																		return v314
+																		F_ReleaseCatCache(m, v225)
+																		mBase = m.M
+																		v258 = m.ExcPending
+																		if v258 != 0 {
+																			return int64(0)
+																		} else {
+																			v323 = v247
+																			m.G0 = v13 + int32(80)
+																			return v323
+																		}
 																	}
 																} else {
-																	if v242 == v241 {
-																		F_ReleaseCatCache(m, v222)
-																		mBase = m.M
-																		v252 = m.ExcPending
-																		if v252 != 0 {
-																			return int64(0)
-																		} else {
-																			v314 = v244
-																			m.G0 = v13 + int32(80)
-																			return v314
-																		}
+																	F_ReleaseCatCache(m, v225)
+																	mBase = m.M
+																	v258 = m.ExcPending
+																	if v258 != 0 {
+																		return int64(0)
 																	} else {
-																		F_pfree(m, v242)
-																		mBase = m.M
-																		v250 = m.ExcPending
-																		if v250 != 0 {
-																			return int64(0)
-																		} else {
-																			F_ReleaseCatCache(m, v222)
-																			mBase = m.M
-																			v252 = m.ExcPending
-																			if v252 != 0 {
-																				return int64(0)
-																			} else {
-																				v314 = v244
-																				m.G0 = v13 + int32(80)
-																				return v314
-																			}
-																		}
+																		v323 = v247
+																		m.G0 = v13 + int32(80)
+																		return v323
 																	}
 																}
 															}
 														}
 													} else {
-														v239 = F_pg_detoast_datum(m, v230)
+														v242 = F_pg_detoast_datum(m, v233)
 														mBase = m.M
-														v240 = m.ExcPending
-														if v240 != 0 {
+														v243 = m.ExcPending
+														if v243 != 0 {
 															return int64(0)
 														} else {
-															v241 = v230
-															v242 = v239
-															v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+															v244 = v233
+															v245 = v242
+															v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 															mBase = m.M
-															v245 = m.ExcPending
-															if v245 != 0 {
+															v248 = m.ExcPending
+															if v248 != 0 {
 																return int64(0)
 															} else {
-																if v242 == int32(0) {
-																	F_ReleaseCatCache(m, v222)
+																v249 = int32(0)
+																if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+																	F_pfree(m, v245)
 																	mBase = m.M
-																	v252 = m.ExcPending
-																	if v252 != 0 {
+																	v256 = m.ExcPending
+																	if v256 != 0 {
 																		return int64(0)
 																	} else {
-																		v314 = v244
-																		m.G0 = v13 + int32(80)
-																		return v314
+																		F_ReleaseCatCache(m, v225)
+																		mBase = m.M
+																		v258 = m.ExcPending
+																		if v258 != 0 {
+																			return int64(0)
+																		} else {
+																			v323 = v247
+																			m.G0 = v13 + int32(80)
+																			return v323
+																		}
 																	}
 																} else {
-																	if v242 == v241 {
-																		F_ReleaseCatCache(m, v222)
-																		mBase = m.M
-																		v252 = m.ExcPending
-																		if v252 != 0 {
-																			return int64(0)
-																		} else {
-																			v314 = v244
-																			m.G0 = v13 + int32(80)
-																			return v314
-																		}
+																	F_ReleaseCatCache(m, v225)
+																	mBase = m.M
+																	v258 = m.ExcPending
+																	if v258 != 0 {
+																		return int64(0)
 																	} else {
-																		F_pfree(m, v242)
-																		mBase = m.M
-																		v250 = m.ExcPending
-																		if v250 != 0 {
-																			return int64(0)
-																		} else {
-																			F_ReleaseCatCache(m, v222)
-																			mBase = m.M
-																			v252 = m.ExcPending
-																			if v252 != 0 {
-																				return int64(0)
-																			} else {
-																				v314 = v244
-																				m.G0 = v13 + int32(80)
-																				return v314
-																			}
-																		}
+																		v323 = v247
+																		m.G0 = v13 + int32(80)
+																		return v323
 																	}
 																}
 															}
@@ -1888,132 +1705,108 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 									}
 								}
 							} else {
-								v222 = v183
-								v224 = v184
-								v225 = *(*int32)(unsafe.Add(mBase, uint32(v224)+72))
-								v230 = F_SysCacheGetAttr(m, int32(82), v222, int32(32), v13+int32(79))
+								v225 = v186
+								v227 = v187
+								v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+72))
+								v233 = F_SysCacheGetAttr(m, int32(82), v225, int32(32), v13+int32(79))
 								mBase = m.M
-								v231 = m.ExcPending
-								if v231 != 0 {
+								v234 = m.ExcPending
+								if v234 != 0 {
 									return int64(0)
 								} else {
-									v232 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
-									if v232 == int32(1) {
-										v237 = F_acldefault(m, int32(49), v225)
+									v235 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
+									if v235 == int32(1) {
+										v240 = F_acldefault(m, int32(49), v228)
 										mBase = m.M
-										v238 = m.ExcPending
-										if v238 != 0 {
+										v241 = m.ExcPending
+										if v241 != 0 {
 											return int64(0)
 										} else {
-											v241 = int32(0)
-											v242 = v237
-											v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+											v244 = int32(0)
+											v245 = v240
+											v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 											mBase = m.M
-											v245 = m.ExcPending
-											if v245 != 0 {
+											v248 = m.ExcPending
+											if v248 != 0 {
 												return int64(0)
 											} else {
-												if v242 == int32(0) {
-													F_ReleaseCatCache(m, v222)
+												v249 = int32(0)
+												if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+													F_pfree(m, v245)
 													mBase = m.M
-													v252 = m.ExcPending
-													if v252 != 0 {
+													v256 = m.ExcPending
+													if v256 != 0 {
 														return int64(0)
 													} else {
-														v314 = v244
-														m.G0 = v13 + int32(80)
-														return v314
+														F_ReleaseCatCache(m, v225)
+														mBase = m.M
+														v258 = m.ExcPending
+														if v258 != 0 {
+															return int64(0)
+														} else {
+															v323 = v247
+															m.G0 = v13 + int32(80)
+															return v323
+														}
 													}
 												} else {
-													if v242 == v241 {
-														F_ReleaseCatCache(m, v222)
-														mBase = m.M
-														v252 = m.ExcPending
-														if v252 != 0 {
-															return int64(0)
-														} else {
-															v314 = v244
-															m.G0 = v13 + int32(80)
-															return v314
-														}
+													F_ReleaseCatCache(m, v225)
+													mBase = m.M
+													v258 = m.ExcPending
+													if v258 != 0 {
+														return int64(0)
 													} else {
-														F_pfree(m, v242)
-														mBase = m.M
-														v250 = m.ExcPending
-														if v250 != 0 {
-															return int64(0)
-														} else {
-															F_ReleaseCatCache(m, v222)
-															mBase = m.M
-															v252 = m.ExcPending
-															if v252 != 0 {
-																return int64(0)
-															} else {
-																v314 = v244
-																m.G0 = v13 + int32(80)
-																return v314
-															}
-														}
+														v323 = v247
+														m.G0 = v13 + int32(80)
+														return v323
 													}
 												}
 											}
 										}
 									} else {
-										v239 = F_pg_detoast_datum(m, v230)
+										v242 = F_pg_detoast_datum(m, v233)
 										mBase = m.M
-										v240 = m.ExcPending
-										if v240 != 0 {
+										v243 = m.ExcPending
+										if v243 != 0 {
 											return int64(0)
 										} else {
-											v241 = v230
-											v242 = v239
-											v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+											v244 = v233
+											v245 = v242
+											v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 											mBase = m.M
-											v245 = m.ExcPending
-											if v245 != 0 {
+											v248 = m.ExcPending
+											if v248 != 0 {
 												return int64(0)
 											} else {
-												if v242 == int32(0) {
-													F_ReleaseCatCache(m, v222)
+												v249 = int32(0)
+												if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+													F_pfree(m, v245)
 													mBase = m.M
-													v252 = m.ExcPending
-													if v252 != 0 {
+													v256 = m.ExcPending
+													if v256 != 0 {
 														return int64(0)
 													} else {
-														v314 = v244
-														m.G0 = v13 + int32(80)
-														return v314
+														F_ReleaseCatCache(m, v225)
+														mBase = m.M
+														v258 = m.ExcPending
+														if v258 != 0 {
+															return int64(0)
+														} else {
+															v323 = v247
+															m.G0 = v13 + int32(80)
+															return v323
+														}
 													}
 												} else {
-													if v242 == v241 {
-														F_ReleaseCatCache(m, v222)
-														mBase = m.M
-														v252 = m.ExcPending
-														if v252 != 0 {
-															return int64(0)
-														} else {
-															v314 = v244
-															m.G0 = v13 + int32(80)
-															return v314
-														}
+													F_ReleaseCatCache(m, v225)
+													mBase = m.M
+													v258 = m.ExcPending
+													if v258 != 0 {
+														return int64(0)
 													} else {
-														F_pfree(m, v242)
-														mBase = m.M
-														v250 = m.ExcPending
-														if v250 != 0 {
-															return int64(0)
-														} else {
-															F_ReleaseCatCache(m, v222)
-															mBase = m.M
-															v252 = m.ExcPending
-															if v252 != 0 {
-																return int64(0)
-															} else {
-																v314 = v244
-																m.G0 = v13 + int32(80)
-																return v314
-															}
-														}
+														v323 = v247
+														m.G0 = v13 + int32(80)
+														return v323
 													}
 												}
 											}
@@ -2022,62 +1815,62 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 								}
 							}
 						} else {
-							v149 = *(*int32)(unsafe.Add(mBase, uint32(v145)+88))
-							if v149 != int32(_a_F_object_aclmask_ext_9) {
-								v183 = v118
-								v184 = v145
-								v185 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v184)+79)))
-								if v185 == int32(109) {
-									v188 = *(*int32)(unsafe.Add(mBase, uint32(v184)))
-									v189 = F_get_multirange_range(m, v188)
+							v152 = *(*int32)(unsafe.Add(mBase, uint32(v148)+88))
+							if v152 != int32(_a_F_object_aclmask_ext_9) {
+								v186 = v121
+								v187 = v148
+								v188 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v187)+79)))
+								if v188 == int32(109) {
+									v191 = *(*int32)(unsafe.Add(mBase, uint32(v187)))
+									v192 = F_get_multirange_range(m, v191)
 									mBase = m.M
-									v190 = m.ExcPending
-									if v190 != 0 {
+									v193 = m.ExcPending
+									if v193 != 0 {
 										return int64(0)
 									} else {
-										F_ReleaseCatCache(m, v183)
+										F_ReleaseCatCache(m, v186)
 										mBase = m.M
-										v192 = m.ExcPending
-										if v192 != 0 {
+										v195 = m.ExcPending
+										if v195 != 0 {
 											return int64(0)
 										} else {
-											v194 = F_SearchSysCache1(m, int32(82), v189)
+											v197 = F_SearchSysCache1(m, int32(82), v192)
 											mBase = m.M
-											v195 = m.ExcPending
-											if v195 != 0 {
+											v198 = m.ExcPending
+											if v198 != 0 {
 												return int64(0)
 											} else {
-												if v194 == int32(0) {
+												if v197 == int32(0) {
 													if l4 != 0 {
-														v198 = int32(1)
-														*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v198)
-														v314 = int64(0)
+														v201 = int32(1)
+														*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v201)
+														v323 = int64(0)
 														m.G0 = v13 + int32(80)
-														return v314
+														return v323
 													} else {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v204 = m.ExcPending
-														if v204 != 0 {
+														v207 = m.ExcPending
+														if v207 != 0 {
 															return int64(0)
 														} else {
 															F_errcode(m, int32(67137668))
 															mBase = m.M
-															v207 = m.ExcPending
-															if v207 != 0 {
+															v210 = m.ExcPending
+															if v210 != 0 {
 																return int64(0)
 															} else {
-																*(*int32)(unsafe.Add(mBase, uint32(v13)+48)) = v189
+																*(*int32)(unsafe.Add(mBase, uint32(v13)+48)) = v192
 																F_errmsg(m, int32(_a_F_object_aclmask_ext_7), v13+int32(48))
 																mBase = m.M
-																v213 = m.ExcPending
-																if v213 != 0 {
+																v216 = m.ExcPending
+																if v216 != 0 {
 																	return int64(0)
 																} else {
 																	F_errfinish(m, int32(_a_F_object_aclmask_ext_1), int32(3798), int32(_a_F_object_aclmask_ext_8))
 																	mBase = m.M
-																	v218 = m.ExcPending
-																	if v218 != 0 {
+																	v221 = m.ExcPending
+																	if v221 != 0 {
 																		return int64(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -2089,134 +1882,110 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 														}
 													}
 												} else {
-													v219 = *(*int32)(unsafe.Add(mBase, uint32(v194)+16))
-													v220 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v219)+22)))
-													v222 = v194
-													v224 = v219 + v220
-													v225 = *(*int32)(unsafe.Add(mBase, uint32(v224)+72))
-													v230 = F_SysCacheGetAttr(m, int32(82), v222, int32(32), v13+int32(79))
+													v222 = *(*int32)(unsafe.Add(mBase, uint32(v197)+16))
+													v223 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v222)+22)))
+													v225 = v197
+													v227 = v222 + v223
+													v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+72))
+													v233 = F_SysCacheGetAttr(m, int32(82), v225, int32(32), v13+int32(79))
 													mBase = m.M
-													v231 = m.ExcPending
-													if v231 != 0 {
+													v234 = m.ExcPending
+													if v234 != 0 {
 														return int64(0)
 													} else {
-														v232 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
-														if v232 == int32(1) {
-															v237 = F_acldefault(m, int32(49), v225)
+														v235 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
+														if v235 == int32(1) {
+															v240 = F_acldefault(m, int32(49), v228)
 															mBase = m.M
-															v238 = m.ExcPending
-															if v238 != 0 {
+															v241 = m.ExcPending
+															if v241 != 0 {
 																return int64(0)
 															} else {
-																v241 = int32(0)
-																v242 = v237
-																v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+																v244 = int32(0)
+																v245 = v240
+																v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 																mBase = m.M
-																v245 = m.ExcPending
-																if v245 != 0 {
+																v248 = m.ExcPending
+																if v248 != 0 {
 																	return int64(0)
 																} else {
-																	if v242 == int32(0) {
-																		F_ReleaseCatCache(m, v222)
+																	v249 = int32(0)
+																	if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+																		F_pfree(m, v245)
 																		mBase = m.M
-																		v252 = m.ExcPending
-																		if v252 != 0 {
+																		v256 = m.ExcPending
+																		if v256 != 0 {
 																			return int64(0)
 																		} else {
-																			v314 = v244
-																			m.G0 = v13 + int32(80)
-																			return v314
+																			F_ReleaseCatCache(m, v225)
+																			mBase = m.M
+																			v258 = m.ExcPending
+																			if v258 != 0 {
+																				return int64(0)
+																			} else {
+																				v323 = v247
+																				m.G0 = v13 + int32(80)
+																				return v323
+																			}
 																		}
 																	} else {
-																		if v242 == v241 {
-																			F_ReleaseCatCache(m, v222)
-																			mBase = m.M
-																			v252 = m.ExcPending
-																			if v252 != 0 {
-																				return int64(0)
-																			} else {
-																				v314 = v244
-																				m.G0 = v13 + int32(80)
-																				return v314
-																			}
+																		F_ReleaseCatCache(m, v225)
+																		mBase = m.M
+																		v258 = m.ExcPending
+																		if v258 != 0 {
+																			return int64(0)
 																		} else {
-																			F_pfree(m, v242)
-																			mBase = m.M
-																			v250 = m.ExcPending
-																			if v250 != 0 {
-																				return int64(0)
-																			} else {
-																				F_ReleaseCatCache(m, v222)
-																				mBase = m.M
-																				v252 = m.ExcPending
-																				if v252 != 0 {
-																					return int64(0)
-																				} else {
-																					v314 = v244
-																					m.G0 = v13 + int32(80)
-																					return v314
-																				}
-																			}
+																			v323 = v247
+																			m.G0 = v13 + int32(80)
+																			return v323
 																		}
 																	}
 																}
 															}
 														} else {
-															v239 = F_pg_detoast_datum(m, v230)
+															v242 = F_pg_detoast_datum(m, v233)
 															mBase = m.M
-															v240 = m.ExcPending
-															if v240 != 0 {
+															v243 = m.ExcPending
+															if v243 != 0 {
 																return int64(0)
 															} else {
-																v241 = v230
-																v242 = v239
-																v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+																v244 = v233
+																v245 = v242
+																v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 																mBase = m.M
-																v245 = m.ExcPending
-																if v245 != 0 {
+																v248 = m.ExcPending
+																if v248 != 0 {
 																	return int64(0)
 																} else {
-																	if v242 == int32(0) {
-																		F_ReleaseCatCache(m, v222)
+																	v249 = int32(0)
+																	if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+																		F_pfree(m, v245)
 																		mBase = m.M
-																		v252 = m.ExcPending
-																		if v252 != 0 {
+																		v256 = m.ExcPending
+																		if v256 != 0 {
 																			return int64(0)
 																		} else {
-																			v314 = v244
-																			m.G0 = v13 + int32(80)
-																			return v314
+																			F_ReleaseCatCache(m, v225)
+																			mBase = m.M
+																			v258 = m.ExcPending
+																			if v258 != 0 {
+																				return int64(0)
+																			} else {
+																				v323 = v247
+																				m.G0 = v13 + int32(80)
+																				return v323
+																			}
 																		}
 																	} else {
-																		if v242 == v241 {
-																			F_ReleaseCatCache(m, v222)
-																			mBase = m.M
-																			v252 = m.ExcPending
-																			if v252 != 0 {
-																				return int64(0)
-																			} else {
-																				v314 = v244
-																				m.G0 = v13 + int32(80)
-																				return v314
-																			}
+																		F_ReleaseCatCache(m, v225)
+																		mBase = m.M
+																		v258 = m.ExcPending
+																		if v258 != 0 {
+																			return int64(0)
 																		} else {
-																			F_pfree(m, v242)
-																			mBase = m.M
-																			v250 = m.ExcPending
-																			if v250 != 0 {
-																				return int64(0)
-																			} else {
-																				F_ReleaseCatCache(m, v222)
-																				mBase = m.M
-																				v252 = m.ExcPending
-																				if v252 != 0 {
-																					return int64(0)
-																				} else {
-																					v314 = v244
-																					m.G0 = v13 + int32(80)
-																					return v314
-																				}
-																			}
+																			v323 = v247
+																			m.G0 = v13 + int32(80)
+																			return v323
 																		}
 																	}
 																}
@@ -2228,132 +1997,108 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 										}
 									}
 								} else {
-									v222 = v183
-									v224 = v184
-									v225 = *(*int32)(unsafe.Add(mBase, uint32(v224)+72))
-									v230 = F_SysCacheGetAttr(m, int32(82), v222, int32(32), v13+int32(79))
+									v225 = v186
+									v227 = v187
+									v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+72))
+									v233 = F_SysCacheGetAttr(m, int32(82), v225, int32(32), v13+int32(79))
 									mBase = m.M
-									v231 = m.ExcPending
-									if v231 != 0 {
+									v234 = m.ExcPending
+									if v234 != 0 {
 										return int64(0)
 									} else {
-										v232 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
-										if v232 == int32(1) {
-											v237 = F_acldefault(m, int32(49), v225)
+										v235 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
+										if v235 == int32(1) {
+											v240 = F_acldefault(m, int32(49), v228)
 											mBase = m.M
-											v238 = m.ExcPending
-											if v238 != 0 {
+											v241 = m.ExcPending
+											if v241 != 0 {
 												return int64(0)
 											} else {
-												v241 = int32(0)
-												v242 = v237
-												v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+												v244 = int32(0)
+												v245 = v240
+												v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 												mBase = m.M
-												v245 = m.ExcPending
-												if v245 != 0 {
+												v248 = m.ExcPending
+												if v248 != 0 {
 													return int64(0)
 												} else {
-													if v242 == int32(0) {
-														F_ReleaseCatCache(m, v222)
+													v249 = int32(0)
+													if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+														F_pfree(m, v245)
 														mBase = m.M
-														v252 = m.ExcPending
-														if v252 != 0 {
+														v256 = m.ExcPending
+														if v256 != 0 {
 															return int64(0)
 														} else {
-															v314 = v244
-															m.G0 = v13 + int32(80)
-															return v314
+															F_ReleaseCatCache(m, v225)
+															mBase = m.M
+															v258 = m.ExcPending
+															if v258 != 0 {
+																return int64(0)
+															} else {
+																v323 = v247
+																m.G0 = v13 + int32(80)
+																return v323
+															}
 														}
 													} else {
-														if v242 == v241 {
-															F_ReleaseCatCache(m, v222)
-															mBase = m.M
-															v252 = m.ExcPending
-															if v252 != 0 {
-																return int64(0)
-															} else {
-																v314 = v244
-																m.G0 = v13 + int32(80)
-																return v314
-															}
+														F_ReleaseCatCache(m, v225)
+														mBase = m.M
+														v258 = m.ExcPending
+														if v258 != 0 {
+															return int64(0)
 														} else {
-															F_pfree(m, v242)
-															mBase = m.M
-															v250 = m.ExcPending
-															if v250 != 0 {
-																return int64(0)
-															} else {
-																F_ReleaseCatCache(m, v222)
-																mBase = m.M
-																v252 = m.ExcPending
-																if v252 != 0 {
-																	return int64(0)
-																} else {
-																	v314 = v244
-																	m.G0 = v13 + int32(80)
-																	return v314
-																}
-															}
+															v323 = v247
+															m.G0 = v13 + int32(80)
+															return v323
 														}
 													}
 												}
 											}
 										} else {
-											v239 = F_pg_detoast_datum(m, v230)
+											v242 = F_pg_detoast_datum(m, v233)
 											mBase = m.M
-											v240 = m.ExcPending
-											if v240 != 0 {
+											v243 = m.ExcPending
+											if v243 != 0 {
 												return int64(0)
 											} else {
-												v241 = v230
-												v242 = v239
-												v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+												v244 = v233
+												v245 = v242
+												v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 												mBase = m.M
-												v245 = m.ExcPending
-												if v245 != 0 {
+												v248 = m.ExcPending
+												if v248 != 0 {
 													return int64(0)
 												} else {
-													if v242 == int32(0) {
-														F_ReleaseCatCache(m, v222)
+													v249 = int32(0)
+													if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+														F_pfree(m, v245)
 														mBase = m.M
-														v252 = m.ExcPending
-														if v252 != 0 {
+														v256 = m.ExcPending
+														if v256 != 0 {
 															return int64(0)
 														} else {
-															v314 = v244
-															m.G0 = v13 + int32(80)
-															return v314
+															F_ReleaseCatCache(m, v225)
+															mBase = m.M
+															v258 = m.ExcPending
+															if v258 != 0 {
+																return int64(0)
+															} else {
+																v323 = v247
+																m.G0 = v13 + int32(80)
+																return v323
+															}
 														}
 													} else {
-														if v242 == v241 {
-															F_ReleaseCatCache(m, v222)
-															mBase = m.M
-															v252 = m.ExcPending
-															if v252 != 0 {
-																return int64(0)
-															} else {
-																v314 = v244
-																m.G0 = v13 + int32(80)
-																return v314
-															}
+														F_ReleaseCatCache(m, v225)
+														mBase = m.M
+														v258 = m.ExcPending
+														if v258 != 0 {
+															return int64(0)
 														} else {
-															F_pfree(m, v242)
-															mBase = m.M
-															v250 = m.ExcPending
-															if v250 != 0 {
-																return int64(0)
-															} else {
-																F_ReleaseCatCache(m, v222)
-																mBase = m.M
-																v252 = m.ExcPending
-																if v252 != 0 {
-																	return int64(0)
-																} else {
-																	v314 = v244
-																	m.G0 = v13 + int32(80)
-																	return v314
-																}
-															}
+															v323 = v247
+															m.G0 = v13 + int32(80)
+															return v323
 														}
 													}
 												}
@@ -2362,49 +2107,49 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 									}
 								}
 							} else {
-								F_ReleaseCatCache(m, v118)
+								F_ReleaseCatCache(m, v121)
 								mBase = m.M
-								v153 = m.ExcPending
-								if v153 != 0 {
+								v156 = m.ExcPending
+								if v156 != 0 {
 									return int64(0)
 								} else {
-									v155 = F_SearchSysCache1(m, int32(82), v146)
+									v158 = F_SearchSysCache1(m, int32(82), v149)
 									mBase = m.M
-									v156 = m.ExcPending
-									if v156 != 0 {
+									v159 = m.ExcPending
+									if v159 != 0 {
 										return int64(0)
 									} else {
-										if v155 == int32(0) {
+										if v158 == int32(0) {
 											if l4 != 0 {
-												v159 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v159)
-												v314 = int64(0)
+												v162 = int32(1)
+												*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v162)
+												v323 = int64(0)
 												m.G0 = v13 + int32(80)
-												return v314
+												return v323
 											} else {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v165 = m.ExcPending
-												if v165 != 0 {
+												v168 = m.ExcPending
+												if v168 != 0 {
 													return int64(0)
 												} else {
 													F_errcode(m, int32(67137668))
 													mBase = m.M
-													v168 = m.ExcPending
-													if v168 != 0 {
+													v171 = m.ExcPending
+													if v171 != 0 {
 														return int64(0)
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v13)+64)) = v146
+														*(*int32)(unsafe.Add(mBase, uint32(v13)+64)) = v149
 														F_errmsg(m, int32(_a_F_object_aclmask_ext_7), v13-int32(-64))
 														mBase = m.M
-														v174 = m.ExcPending
-														if v174 != 0 {
+														v177 = m.ExcPending
+														if v177 != 0 {
 															return int64(0)
 														} else {
 															F_errfinish(m, int32(_a_F_object_aclmask_ext_1), int32(3769), int32(_a_F_object_aclmask_ext_8))
 															mBase = m.M
-															v179 = m.ExcPending
-															if v179 != 0 {
+															v182 = m.ExcPending
+															if v182 != 0 {
 																return int64(0)
 															} else {
 																base.Wasm_trap_unreachable()
@@ -2416,62 +2161,62 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 												}
 											}
 										} else {
-											v180 = *(*int32)(unsafe.Add(mBase, uint32(v155)+16))
-											v181 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v180)+22)))
-											v183 = v155
-											v184 = v180 + v181
-											v185 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v184)+79)))
-											if v185 == int32(109) {
-												v188 = *(*int32)(unsafe.Add(mBase, uint32(v184)))
-												v189 = F_get_multirange_range(m, v188)
+											v183 = *(*int32)(unsafe.Add(mBase, uint32(v158)+16))
+											v184 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v183)+22)))
+											v186 = v158
+											v187 = v183 + v184
+											v188 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v187)+79)))
+											if v188 == int32(109) {
+												v191 = *(*int32)(unsafe.Add(mBase, uint32(v187)))
+												v192 = F_get_multirange_range(m, v191)
 												mBase = m.M
-												v190 = m.ExcPending
-												if v190 != 0 {
+												v193 = m.ExcPending
+												if v193 != 0 {
 													return int64(0)
 												} else {
-													F_ReleaseCatCache(m, v183)
+													F_ReleaseCatCache(m, v186)
 													mBase = m.M
-													v192 = m.ExcPending
-													if v192 != 0 {
+													v195 = m.ExcPending
+													if v195 != 0 {
 														return int64(0)
 													} else {
-														v194 = F_SearchSysCache1(m, int32(82), v189)
+														v197 = F_SearchSysCache1(m, int32(82), v192)
 														mBase = m.M
-														v195 = m.ExcPending
-														if v195 != 0 {
+														v198 = m.ExcPending
+														if v198 != 0 {
 															return int64(0)
 														} else {
-															if v194 == int32(0) {
+															if v197 == int32(0) {
 																if l4 != 0 {
-																	v198 = int32(1)
-																	*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v198)
-																	v314 = int64(0)
+																	v201 = int32(1)
+																	*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v201)
+																	v323 = int64(0)
 																	m.G0 = v13 + int32(80)
-																	return v314
+																	return v323
 																} else {
 																	F_errstart_cold(m, int32(21), int32(0))
 																	mBase = m.M
-																	v204 = m.ExcPending
-																	if v204 != 0 {
+																	v207 = m.ExcPending
+																	if v207 != 0 {
 																		return int64(0)
 																	} else {
 																		F_errcode(m, int32(67137668))
 																		mBase = m.M
-																		v207 = m.ExcPending
-																		if v207 != 0 {
+																		v210 = m.ExcPending
+																		if v210 != 0 {
 																			return int64(0)
 																		} else {
-																			*(*int32)(unsafe.Add(mBase, uint32(v13)+48)) = v189
+																			*(*int32)(unsafe.Add(mBase, uint32(v13)+48)) = v192
 																			F_errmsg(m, int32(_a_F_object_aclmask_ext_7), v13+int32(48))
 																			mBase = m.M
-																			v213 = m.ExcPending
-																			if v213 != 0 {
+																			v216 = m.ExcPending
+																			if v216 != 0 {
 																				return int64(0)
 																			} else {
 																				F_errfinish(m, int32(_a_F_object_aclmask_ext_1), int32(3798), int32(_a_F_object_aclmask_ext_8))
 																				mBase = m.M
-																				v218 = m.ExcPending
-																				if v218 != 0 {
+																				v221 = m.ExcPending
+																				if v221 != 0 {
 																					return int64(0)
 																				} else {
 																					base.Wasm_trap_unreachable()
@@ -2483,134 +2228,110 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 																	}
 																}
 															} else {
-																v219 = *(*int32)(unsafe.Add(mBase, uint32(v194)+16))
-																v220 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v219)+22)))
-																v222 = v194
-																v224 = v219 + v220
-																v225 = *(*int32)(unsafe.Add(mBase, uint32(v224)+72))
-																v230 = F_SysCacheGetAttr(m, int32(82), v222, int32(32), v13+int32(79))
+																v222 = *(*int32)(unsafe.Add(mBase, uint32(v197)+16))
+																v223 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v222)+22)))
+																v225 = v197
+																v227 = v222 + v223
+																v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+72))
+																v233 = F_SysCacheGetAttr(m, int32(82), v225, int32(32), v13+int32(79))
 																mBase = m.M
-																v231 = m.ExcPending
-																if v231 != 0 {
+																v234 = m.ExcPending
+																if v234 != 0 {
 																	return int64(0)
 																} else {
-																	v232 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
-																	if v232 == int32(1) {
-																		v237 = F_acldefault(m, int32(49), v225)
+																	v235 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
+																	if v235 == int32(1) {
+																		v240 = F_acldefault(m, int32(49), v228)
 																		mBase = m.M
-																		v238 = m.ExcPending
-																		if v238 != 0 {
+																		v241 = m.ExcPending
+																		if v241 != 0 {
 																			return int64(0)
 																		} else {
-																			v241 = int32(0)
-																			v242 = v237
-																			v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+																			v244 = int32(0)
+																			v245 = v240
+																			v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 																			mBase = m.M
-																			v245 = m.ExcPending
-																			if v245 != 0 {
+																			v248 = m.ExcPending
+																			if v248 != 0 {
 																				return int64(0)
 																			} else {
-																				if v242 == int32(0) {
-																					F_ReleaseCatCache(m, v222)
+																				v249 = int32(0)
+																				if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+																					F_pfree(m, v245)
 																					mBase = m.M
-																					v252 = m.ExcPending
-																					if v252 != 0 {
+																					v256 = m.ExcPending
+																					if v256 != 0 {
 																						return int64(0)
 																					} else {
-																						v314 = v244
-																						m.G0 = v13 + int32(80)
-																						return v314
+																						F_ReleaseCatCache(m, v225)
+																						mBase = m.M
+																						v258 = m.ExcPending
+																						if v258 != 0 {
+																							return int64(0)
+																						} else {
+																							v323 = v247
+																							m.G0 = v13 + int32(80)
+																							return v323
+																						}
 																					}
 																				} else {
-																					if v242 == v241 {
-																						F_ReleaseCatCache(m, v222)
-																						mBase = m.M
-																						v252 = m.ExcPending
-																						if v252 != 0 {
-																							return int64(0)
-																						} else {
-																							v314 = v244
-																							m.G0 = v13 + int32(80)
-																							return v314
-																						}
+																					F_ReleaseCatCache(m, v225)
+																					mBase = m.M
+																					v258 = m.ExcPending
+																					if v258 != 0 {
+																						return int64(0)
 																					} else {
-																						F_pfree(m, v242)
-																						mBase = m.M
-																						v250 = m.ExcPending
-																						if v250 != 0 {
-																							return int64(0)
-																						} else {
-																							F_ReleaseCatCache(m, v222)
-																							mBase = m.M
-																							v252 = m.ExcPending
-																							if v252 != 0 {
-																								return int64(0)
-																							} else {
-																								v314 = v244
-																								m.G0 = v13 + int32(80)
-																								return v314
-																							}
-																						}
+																						v323 = v247
+																						m.G0 = v13 + int32(80)
+																						return v323
 																					}
 																				}
 																			}
 																		}
 																	} else {
-																		v239 = F_pg_detoast_datum(m, v230)
+																		v242 = F_pg_detoast_datum(m, v233)
 																		mBase = m.M
-																		v240 = m.ExcPending
-																		if v240 != 0 {
+																		v243 = m.ExcPending
+																		if v243 != 0 {
 																			return int64(0)
 																		} else {
-																			v241 = v230
-																			v242 = v239
-																			v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+																			v244 = v233
+																			v245 = v242
+																			v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 																			mBase = m.M
-																			v245 = m.ExcPending
-																			if v245 != 0 {
+																			v248 = m.ExcPending
+																			if v248 != 0 {
 																				return int64(0)
 																			} else {
-																				if v242 == int32(0) {
-																					F_ReleaseCatCache(m, v222)
+																				v249 = int32(0)
+																				if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+																					F_pfree(m, v245)
 																					mBase = m.M
-																					v252 = m.ExcPending
-																					if v252 != 0 {
+																					v256 = m.ExcPending
+																					if v256 != 0 {
 																						return int64(0)
 																					} else {
-																						v314 = v244
-																						m.G0 = v13 + int32(80)
-																						return v314
+																						F_ReleaseCatCache(m, v225)
+																						mBase = m.M
+																						v258 = m.ExcPending
+																						if v258 != 0 {
+																							return int64(0)
+																						} else {
+																							v323 = v247
+																							m.G0 = v13 + int32(80)
+																							return v323
+																						}
 																					}
 																				} else {
-																					if v242 == v241 {
-																						F_ReleaseCatCache(m, v222)
-																						mBase = m.M
-																						v252 = m.ExcPending
-																						if v252 != 0 {
-																							return int64(0)
-																						} else {
-																							v314 = v244
-																							m.G0 = v13 + int32(80)
-																							return v314
-																						}
+																					F_ReleaseCatCache(m, v225)
+																					mBase = m.M
+																					v258 = m.ExcPending
+																					if v258 != 0 {
+																						return int64(0)
 																					} else {
-																						F_pfree(m, v242)
-																						mBase = m.M
-																						v250 = m.ExcPending
-																						if v250 != 0 {
-																							return int64(0)
-																						} else {
-																							F_ReleaseCatCache(m, v222)
-																							mBase = m.M
-																							v252 = m.ExcPending
-																							if v252 != 0 {
-																								return int64(0)
-																							} else {
-																								v314 = v244
-																								m.G0 = v13 + int32(80)
-																								return v314
-																							}
-																						}
+																						v323 = v247
+																						m.G0 = v13 + int32(80)
+																						return v323
 																					}
 																				}
 																			}
@@ -2622,132 +2343,108 @@ func F_object_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64
 													}
 												}
 											} else {
-												v222 = v183
-												v224 = v184
-												v225 = *(*int32)(unsafe.Add(mBase, uint32(v224)+72))
-												v230 = F_SysCacheGetAttr(m, int32(82), v222, int32(32), v13+int32(79))
+												v225 = v186
+												v227 = v187
+												v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+72))
+												v233 = F_SysCacheGetAttr(m, int32(82), v225, int32(32), v13+int32(79))
 												mBase = m.M
-												v231 = m.ExcPending
-												if v231 != 0 {
+												v234 = m.ExcPending
+												if v234 != 0 {
 													return int64(0)
 												} else {
-													v232 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
-													if v232 == int32(1) {
-														v237 = F_acldefault(m, int32(49), v225)
+													v235 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+79)))
+													if v235 == int32(1) {
+														v240 = F_acldefault(m, int32(49), v228)
 														mBase = m.M
-														v238 = m.ExcPending
-														if v238 != 0 {
+														v241 = m.ExcPending
+														if v241 != 0 {
 															return int64(0)
 														} else {
-															v241 = int32(0)
-															v242 = v237
-															v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+															v244 = int32(0)
+															v245 = v240
+															v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 															mBase = m.M
-															v245 = m.ExcPending
-															if v245 != 0 {
+															v248 = m.ExcPending
+															if v248 != 0 {
 																return int64(0)
 															} else {
-																if v242 == int32(0) {
-																	F_ReleaseCatCache(m, v222)
+																v249 = int32(0)
+																if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+																	F_pfree(m, v245)
 																	mBase = m.M
-																	v252 = m.ExcPending
-																	if v252 != 0 {
+																	v256 = m.ExcPending
+																	if v256 != 0 {
 																		return int64(0)
 																	} else {
-																		v314 = v244
-																		m.G0 = v13 + int32(80)
-																		return v314
+																		F_ReleaseCatCache(m, v225)
+																		mBase = m.M
+																		v258 = m.ExcPending
+																		if v258 != 0 {
+																			return int64(0)
+																		} else {
+																			v323 = v247
+																			m.G0 = v13 + int32(80)
+																			return v323
+																		}
 																	}
 																} else {
-																	if v242 == v241 {
-																		F_ReleaseCatCache(m, v222)
-																		mBase = m.M
-																		v252 = m.ExcPending
-																		if v252 != 0 {
-																			return int64(0)
-																		} else {
-																			v314 = v244
-																			m.G0 = v13 + int32(80)
-																			return v314
-																		}
+																	F_ReleaseCatCache(m, v225)
+																	mBase = m.M
+																	v258 = m.ExcPending
+																	if v258 != 0 {
+																		return int64(0)
 																	} else {
-																		F_pfree(m, v242)
-																		mBase = m.M
-																		v250 = m.ExcPending
-																		if v250 != 0 {
-																			return int64(0)
-																		} else {
-																			F_ReleaseCatCache(m, v222)
-																			mBase = m.M
-																			v252 = m.ExcPending
-																			if v252 != 0 {
-																				return int64(0)
-																			} else {
-																				v314 = v244
-																				m.G0 = v13 + int32(80)
-																				return v314
-																			}
-																		}
+																		v323 = v247
+																		m.G0 = v13 + int32(80)
+																		return v323
 																	}
 																}
 															}
 														}
 													} else {
-														v239 = F_pg_detoast_datum(m, v230)
+														v242 = F_pg_detoast_datum(m, v233)
 														mBase = m.M
-														v240 = m.ExcPending
-														if v240 != 0 {
+														v243 = m.ExcPending
+														if v243 != 0 {
 															return int64(0)
 														} else {
-															v241 = v230
-															v242 = v239
-															v244 = F_aclmask(m, v242, l2, v225, l3, int32(1))
+															v244 = v233
+															v245 = v242
+															v247 = F_aclmask(m, v245, l2, v228, l3, int32(1))
 															mBase = m.M
-															v245 = m.ExcPending
-															if v245 != 0 {
+															v248 = m.ExcPending
+															if v248 != 0 {
 																return int64(0)
 															} else {
-																if v242 == int32(0) {
-																	F_ReleaseCatCache(m, v222)
+																v249 = int32(0)
+																if base.B2i32(v245 == v249)|base.B2i32(v245 == v244) == v249 {
+																	F_pfree(m, v245)
 																	mBase = m.M
-																	v252 = m.ExcPending
-																	if v252 != 0 {
+																	v256 = m.ExcPending
+																	if v256 != 0 {
 																		return int64(0)
 																	} else {
-																		v314 = v244
-																		m.G0 = v13 + int32(80)
-																		return v314
+																		F_ReleaseCatCache(m, v225)
+																		mBase = m.M
+																		v258 = m.ExcPending
+																		if v258 != 0 {
+																			return int64(0)
+																		} else {
+																			v323 = v247
+																			m.G0 = v13 + int32(80)
+																			return v323
+																		}
 																	}
 																} else {
-																	if v242 == v241 {
-																		F_ReleaseCatCache(m, v222)
-																		mBase = m.M
-																		v252 = m.ExcPending
-																		if v252 != 0 {
-																			return int64(0)
-																		} else {
-																			v314 = v244
-																			m.G0 = v13 + int32(80)
-																			return v314
-																		}
+																	F_ReleaseCatCache(m, v225)
+																	mBase = m.M
+																	v258 = m.ExcPending
+																	if v258 != 0 {
+																		return int64(0)
 																	} else {
-																		F_pfree(m, v242)
-																		mBase = m.M
-																		v250 = m.ExcPending
-																		if v250 != 0 {
-																			return int64(0)
-																		} else {
-																			F_ReleaseCatCache(m, v222)
-																			mBase = m.M
-																			v252 = m.ExcPending
-																			if v252 != 0 {
-																				return int64(0)
-																			} else {
-																				v314 = v244
-																				m.G0 = v13 + int32(80)
-																				return v314
-																			}
-																		}
+																		v323 = v247
+																		m.G0 = v13 + int32(80)
+																		return v323
 																	}
 																}
 															}
@@ -2837,22 +2534,22 @@ func F_parse_object_field(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v67
 	var v68 int32
 	_ = v68
-	var v71 int32
-	_ = v71
-	var v74 int32
-	_ = v74
+	var v72 int32
+	_ = v72
 	var v75 int32
 	_ = v75
 	var v76 int32
 	_ = v76
-	var v79 int32
-	_ = v79
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
+	var v77 int32
+	_ = v77
+	var v80 int32
+	_ = v80
+	var v85 int32
+	_ = v85
 	var v88 int32
 	_ = v88
+	var v89 int32
+	_ = v89
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	if v8 != int32(1) {
 		goto L1
@@ -2955,16 +2652,16 @@ L15:
 	return int32(16)
 L16:
 	;
-	return v88
+	return v89
 L17:
 	;
 	F_pfree(m, v37)
 	mBase = m.M
-	v87 = m.ExcPending
-	if v87 != 0 {
+	v88 = m.ExcPending
+	if v88 != 0 {
 		goto L13
 	} else {
-		goto L56
+		goto L55
 	}
 L18:
 	;
@@ -2976,7 +2673,7 @@ L18:
 L19:
 	;
 	if v37 != 0 {
-		v84 = v38
+		v85 = v38
 		goto L17
 	} else {
 		goto L22
@@ -2994,7 +2691,7 @@ L21:
 	}
 L22:
 	;
-	v88 = v38
+	v89 = v38
 	goto L16
 L23:
 	;
@@ -3044,14 +2741,14 @@ L30:
 L31:
 	;
 	if v37 != 0 {
-		v84 = v50
+		v85 = v50
 		goto L17
 	} else {
 		goto L32
 	}
 L32:
 	;
-	v88 = v50
+	v89 = v50
 	goto L16
 L33:
 	;
@@ -3063,7 +2760,7 @@ L33:
 L34:
 	;
 	if v37 != 0 {
-		v84 = v51
+		v85 = v51
 		goto L17
 	} else {
 		goto L37
@@ -3081,15 +2778,15 @@ L36:
 	}
 L37:
 	;
-	v88 = v51
+	v89 = v51
 	goto L16
 L38:
 	;
 	if v37 == int32(0) {
-		v88 = v76
+		v89 = v77
 		goto L16
 	} else {
-		goto L54
+		goto L53
 	}
 L39:
 	;
@@ -3118,7 +2815,7 @@ L41:
 L42:
 	;
 	if v57 != 0 {
-		v76 = v57
+		v77 = v57
 		goto L38
 	} else {
 		goto L43
@@ -3128,8 +2825,8 @@ L43:
 	goto L41
 L44:
 	;
-	if v68 != 0 {
-		v76 = v68
+	if v68|base.B2i32(v22 == int32(0)) != 0 {
+		v77 = v68
 		goto L38
 	} else {
 		goto L51
@@ -3178,43 +2875,35 @@ L50:
 	goto L44
 L51:
 	;
-	if v22 == int32(0) {
-		v76 = v68
-		goto L38
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v75 = m.T0[v22].(func(*base.Module, int32, int32, int32) int32)(m, v72, v37, base.B2i32(v53 == int32(11)))
+	mBase = m.M
+	v76 = m.ExcPending
+	if v76 != 0 {
+		goto L13
 	} else {
 		goto L52
 	}
 L52:
 	;
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v74 = m.T0[v22].(func(*base.Module, int32, int32, int32) int32)(m, v71, v37, base.B2i32(v53 == int32(11)))
-	mBase = m.M
-	v75 = m.ExcPending
-	if v75 != 0 {
-		goto L13
-	} else {
-		goto L53
-	}
+	v77 = v75
+	goto L38
 L53:
 	;
-	v76 = v74
-	goto L38
-L54:
-	;
-	v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	if v79&int32(4) == int32(0) {
-		v88 = v76
+	v80 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	if v80&int32(4) == int32(0) {
+		v89 = v77
 		goto L16
 	} else {
-		goto L55
+		goto L54
 	}
+L54:
+	;
+	v85 = v77
+	goto L17
 L55:
 	;
-	v84 = v76
-	goto L17
-L56:
-	;
-	v88 = v84
+	v89 = v85
 	goto L16
 }
 func F_storeObjectDescription(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {

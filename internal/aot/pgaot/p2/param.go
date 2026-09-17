@@ -18,46 +18,48 @@ func F_bind_param_error_callback(m *base.Module, l0 int32) {
 	_ = v9
 	var v12 int32
 	_ = v12
+	var v14 int32
+	_ = v14
 	var v16 int32
 	_ = v16
+	var v17 int32
+	_ = v17
 	var v19 int32
 	_ = v19
 	var v21 int32
 	_ = v21
+	var v22 int32
+	_ = v22
 	var v23 int32
 	_ = v23
 	var v24 int32
 	_ = v24
-	var v25 int32
-	_ = v25
-	var v26 int32
-	_ = v26
-	var v29 int32
-	_ = v29
-	var v34 int32
-	_ = v34
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
 	var v35 int32
 	_ = v35
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
-	var v46 int32
-	_ = v46
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
+	var v36 int32
+	_ = v36
+	var v44 int32
+	_ = v44
+	var v51 int32
+	_ = v51
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
 	var v57 int32
 	_ = v57
-	var v59 int32
-	_ = v59
-	var v68 int32
-	_ = v68
-	var v72 int32
-	_ = v72
-	var v76 int32
-	_ = v76
+	var v66 int32
+	_ = v66
+	var v70 int32
+	_ = v70
+	var v74 int32
+	_ = v74
 	v2 = int32(0)
 	v5 = m.G0
 	v7 = v5 - int32(80)
@@ -69,56 +71,57 @@ func F_bind_param_error_callback(m *base.Module, l0 int32) {
 	} else {
 		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 		if v12 != 0 {
-			F_initStringInfo(m, v7-int32(-64))
+			v14 = v7 - int32(-64)
+			F_initStringInfo(m, v14)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return
 			} else {
-				v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-				v21 = *(*int32)(unsafe.Add(mBase, _c_F_bind_param_error_callback[0]))
-				F_appendStringInfoStringQuoted(m, v7-int32(-64), v19, v21)
+				v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+				v19 = *(*int32)(unsafe.Add(mBase, _c_F_bind_param_error_callback[0]))
+				F_appendStringInfoStringQuoted(m, v14, v17, v19)
 				mBase = m.M
-				v23 = m.ExcPending
-				if v23 != 0 {
+				v21 = m.ExcPending
+				if v21 != 0 {
 					return
 				} else {
-					v24 = *(*int32)(unsafe.Add(mBase, uint32(v7)+64))
-					v25 = v24
-					v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					if v26 == int32(0) {
+					v22 = *(*int32)(unsafe.Add(mBase, uint32(v7)+64))
+					v23 = v22
+					v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					if v24 == int32(0) {
 						F_set_errcontext_domain(m, int32(0))
 						mBase = m.M
-						v56 = m.ExcPending
-						if v56 != 0 {
+						v54 = m.ExcPending
+						if v54 != 0 {
 							return
 						} else {
-							v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-							v59 = v57 + int32(1)
-							if v25 == int32(0) {
-								*(*int32)(unsafe.Add(mBase, uint32(v7))) = v59
+							v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+							v57 = v55 + int32(1)
+							if v23 == int32(0) {
+								*(*int32)(unsafe.Add(mBase, uint32(v7))) = v57
 								F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_0), v7)
 								mBase = m.M
-								v76 = m.ExcPending
-								if v76 != 0 {
+								v74 = m.ExcPending
+								if v74 != 0 {
 									return
 								} else {
 									m.G0 = v7 + int32(80)
 									return
 								}
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v25
-								*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v59
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v23
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v57
 								F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_1), v7+int32(16))
 								mBase = m.M
-								v68 = m.ExcPending
-								if v68 != 0 {
+								v66 = m.ExcPending
+								if v66 != 0 {
 									return
 								} else {
-									F_pfree(m, v25)
+									F_pfree(m, v23)
 									mBase = m.M
-									v72 = m.ExcPending
-									if v72 != 0 {
+									v70 = m.ExcPending
+									if v70 != 0 {
 										return
 									} else {
 										m.G0 = v7 + int32(80)
@@ -128,40 +131,40 @@ func F_bind_param_error_callback(m *base.Module, l0 int32) {
 							}
 						}
 					} else {
-						v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26))))
-						if v29 == int32(0) {
+						v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24))))
+						if v27 == int32(0) {
 							F_set_errcontext_domain(m, int32(0))
 							mBase = m.M
-							v56 = m.ExcPending
-							if v56 != 0 {
+							v54 = m.ExcPending
+							if v54 != 0 {
 								return
 							} else {
-								v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-								v59 = v57 + int32(1)
-								if v25 == int32(0) {
-									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v59
+								v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+								v57 = v55 + int32(1)
+								if v23 == int32(0) {
+									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v57
 									F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_0), v7)
 									mBase = m.M
-									v76 = m.ExcPending
-									if v76 != 0 {
+									v74 = m.ExcPending
+									if v74 != 0 {
 										return
 									} else {
 										m.G0 = v7 + int32(80)
 										return
 									}
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v25
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v59
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v23
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v57
 									F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_1), v7+int32(16))
 									mBase = m.M
-									v68 = m.ExcPending
-									if v68 != 0 {
+									v66 = m.ExcPending
+									if v66 != 0 {
 										return
 									} else {
-										F_pfree(m, v25)
+										F_pfree(m, v23)
 										mBase = m.M
-										v72 = m.ExcPending
-										if v72 != 0 {
+										v70 = m.ExcPending
+										if v70 != 0 {
 											return
 										} else {
 											m.G0 = v7 + int32(80)
@@ -173,27 +176,27 @@ func F_bind_param_error_callback(m *base.Module, l0 int32) {
 						} else {
 							F_set_errcontext_domain(m, int32(0))
 							mBase = m.M
-							v34 = m.ExcPending
-							if v34 != 0 {
+							v32 = m.ExcPending
+							if v32 != 0 {
 								return
 							} else {
-								v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-								v37 = v35 + int32(1)
-								v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								if v25 != 0 {
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+56)) = v25
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+52)) = v37
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v38
+								v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+								v35 = v33 + int32(1)
+								v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								if v23 != 0 {
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+56)) = v23
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+52)) = v35
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v36
 									F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_2), v7+int32(48))
 									mBase = m.M
-									v46 = m.ExcPending
-									if v46 != 0 {
+									v44 = m.ExcPending
+									if v44 != 0 {
 										return
 									} else {
-										F_pfree(m, v25)
+										F_pfree(m, v23)
 										mBase = m.M
-										v72 = m.ExcPending
-										if v72 != 0 {
+										v70 = m.ExcPending
+										if v70 != 0 {
 											return
 										} else {
 											m.G0 = v7 + int32(80)
@@ -201,12 +204,12 @@ func F_bind_param_error_callback(m *base.Module, l0 int32) {
 										}
 									}
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = v37
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v38
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = v35
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v36
 									F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_3), v7+int32(32))
 									mBase = m.M
-									v53 = m.ExcPending
-									if v53 != 0 {
+									v51 = m.ExcPending
+									if v51 != 0 {
 										return
 									} else {
 										m.G0 = v7 + int32(80)
@@ -219,41 +222,41 @@ func F_bind_param_error_callback(m *base.Module, l0 int32) {
 				}
 			}
 		} else {
-			v25 = v2
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-			if v26 == int32(0) {
+			v23 = v2
+			v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+			if v24 == int32(0) {
 				F_set_errcontext_domain(m, int32(0))
 				mBase = m.M
-				v56 = m.ExcPending
-				if v56 != 0 {
+				v54 = m.ExcPending
+				if v54 != 0 {
 					return
 				} else {
-					v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-					v59 = v57 + int32(1)
-					if v25 == int32(0) {
-						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v59
+					v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+					v57 = v55 + int32(1)
+					if v23 == int32(0) {
+						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v57
 						F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_0), v7)
 						mBase = m.M
-						v76 = m.ExcPending
-						if v76 != 0 {
+						v74 = m.ExcPending
+						if v74 != 0 {
 							return
 						} else {
 							m.G0 = v7 + int32(80)
 							return
 						}
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v25
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v59
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v23
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v57
 						F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_1), v7+int32(16))
 						mBase = m.M
-						v68 = m.ExcPending
-						if v68 != 0 {
+						v66 = m.ExcPending
+						if v66 != 0 {
 							return
 						} else {
-							F_pfree(m, v25)
+							F_pfree(m, v23)
 							mBase = m.M
-							v72 = m.ExcPending
-							if v72 != 0 {
+							v70 = m.ExcPending
+							if v70 != 0 {
 								return
 							} else {
 								m.G0 = v7 + int32(80)
@@ -263,40 +266,40 @@ func F_bind_param_error_callback(m *base.Module, l0 int32) {
 					}
 				}
 			} else {
-				v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26))))
-				if v29 == int32(0) {
+				v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24))))
+				if v27 == int32(0) {
 					F_set_errcontext_domain(m, int32(0))
 					mBase = m.M
-					v56 = m.ExcPending
-					if v56 != 0 {
+					v54 = m.ExcPending
+					if v54 != 0 {
 						return
 					} else {
-						v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-						v59 = v57 + int32(1)
-						if v25 == int32(0) {
-							*(*int32)(unsafe.Add(mBase, uint32(v7))) = v59
+						v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+						v57 = v55 + int32(1)
+						if v23 == int32(0) {
+							*(*int32)(unsafe.Add(mBase, uint32(v7))) = v57
 							F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_0), v7)
 							mBase = m.M
-							v76 = m.ExcPending
-							if v76 != 0 {
+							v74 = m.ExcPending
+							if v74 != 0 {
 								return
 							} else {
 								m.G0 = v7 + int32(80)
 								return
 							}
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v25
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v59
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v23
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v57
 							F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_1), v7+int32(16))
 							mBase = m.M
-							v68 = m.ExcPending
-							if v68 != 0 {
+							v66 = m.ExcPending
+							if v66 != 0 {
 								return
 							} else {
-								F_pfree(m, v25)
+								F_pfree(m, v23)
 								mBase = m.M
-								v72 = m.ExcPending
-								if v72 != 0 {
+								v70 = m.ExcPending
+								if v70 != 0 {
 									return
 								} else {
 									m.G0 = v7 + int32(80)
@@ -308,27 +311,27 @@ func F_bind_param_error_callback(m *base.Module, l0 int32) {
 				} else {
 					F_set_errcontext_domain(m, int32(0))
 					mBase = m.M
-					v34 = m.ExcPending
-					if v34 != 0 {
+					v32 = m.ExcPending
+					if v32 != 0 {
 						return
 					} else {
-						v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-						v37 = v35 + int32(1)
-						v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						if v25 != 0 {
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+56)) = v25
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+52)) = v37
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v38
+						v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+						v35 = v33 + int32(1)
+						v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						if v23 != 0 {
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+56)) = v23
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+52)) = v35
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v36
 							F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_2), v7+int32(48))
 							mBase = m.M
-							v46 = m.ExcPending
-							if v46 != 0 {
+							v44 = m.ExcPending
+							if v44 != 0 {
 								return
 							} else {
-								F_pfree(m, v25)
+								F_pfree(m, v23)
 								mBase = m.M
-								v72 = m.ExcPending
-								if v72 != 0 {
+								v70 = m.ExcPending
+								if v70 != 0 {
 									return
 								} else {
 									m.G0 = v7 + int32(80)
@@ -336,12 +339,12 @@ func F_bind_param_error_callback(m *base.Module, l0 int32) {
 								}
 							}
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = v37
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v38
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = v35
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v36
 							F_errcontext_msg(m, int32(_a_F_bind_param_error_callback_3), v7+int32(32))
 							mBase = m.M
-							v53 = m.ExcPending
-							if v53 != 0 {
+							v51 = m.ExcPending
+							if v51 != 0 {
 								return
 							} else {
 								m.G0 = v7 + int32(80)

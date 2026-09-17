@@ -204,8 +204,8 @@ func F_sql_compile_callback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v238
 	var v245 int32
 	_ = v245
-	var v260 int32
-	_ = v260
+	var v259 int32
+	_ = v259
 	v6 = int32(0)
 	v12 = m.G0
 	v14 = v12 - int32(48)
@@ -256,28 +256,25 @@ L4:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+32)) = v47
 	*(*int32)(unsafe.Add(mBase, uint32(v35)+36)) = v47
-	goto L5
-L5:
-	;
 	v55 = F_get_call_result_type(m, l0, v14+int32(32), v14+int32(28))
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {
 		goto L1
 	} else {
-		goto L6
+		goto L5
 	}
-L6:
+L5:
 	;
 	v57 = *(*int32)(unsafe.Add(mBase, uint32(v14)+32))
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+48)) = v57
 	v59 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 	if v59 != 0 {
-		goto L7
+		goto L6
 	} else {
-		goto L8
+		goto L7
 	}
-L7:
+L6:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[1])) = v35
 	v62 = F_CreateTupleDescCopy(m, v59)
@@ -286,13 +283,13 @@ L7:
 	if v63 != 0 {
 		goto L1
 	} else {
-		goto L10
+		goto L9
 	}
-L8:
+L7:
 	;
 	v68 = v57
-	goto L9
-L9:
+	goto L8
+L8:
 	;
 	F_get_typlenbyval(m, v68, l3+int32(52), l3+int32(54))
 	mBase = m.M
@@ -300,16 +297,16 @@ L9:
 	if v74 != 0 {
 		goto L1
 	} else {
-		goto L11
+		goto L10
 	}
-L10:
+L9:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+60)) = v62
 	*(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[1])) = v30
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v14)+32))
 	v68 = v67
-	goto L9
-L11:
+	goto L8
+L10:
 	;
 	v75 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44)+100)))
 	*(*uint8)(unsafe.Add(mBase, uint32(l3)+55)) = uint8(v75)
@@ -327,9 +324,9 @@ L11:
 	if v89 != 0 {
 		goto L1
 	} else {
-		goto L12
+		goto L11
 	}
-L12:
+L11:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+40)) = v88
 	*(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[1])) = v30
@@ -340,27 +337,27 @@ L12:
 	if v97 != 0 {
 		goto L1
 	} else {
-		goto L13
+		goto L12
 	}
-L13:
+L12:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+44)) = v96
 	v99 = *(*int32)(unsafe.Add(mBase, uint32(l3)+40))
 	v100 = *(*int32)(unsafe.Add(mBase, uint32(v99)+4))
 	if int32(0) < v100 {
-		goto L14
+		goto L13
 	} else {
-		goto L15
+		goto L14
 	}
-L14:
+L13:
 	;
 	v103 = v99
 	v107 = v6
-	goto L17
-L15:
-	;
 	goto L16
-L16:
+L14:
+	;
+	goto L15
+L15:
 	;
 	v144 = F_SysCacheGetAttrNotNull(m, int32(47), l1, int32(26))
 	mBase = m.M
@@ -368,9 +365,9 @@ L16:
 	if v145 != 0 {
 		goto L1
 	} else {
-		goto L21
+		goto L20
 	}
-L17:
+L16:
 	;
 	v114 = *(*int32)(unsafe.Add(mBase, uint32(v103)+8))
 	v118 = *(*int32)(unsafe.Add(mBase, uint32(v114+v107<<(uint(int32(2))%32))))
@@ -380,12 +377,12 @@ L17:
 	if v120 != 0 {
 		goto L1
 	} else {
-		goto L19
+		goto L18
 	}
-L18:
+L17:
 	;
-	goto L16
-L19:
+	goto L15
+L18:
 	;
 	v121 = *(*int32)(unsafe.Add(mBase, uint32(l3)+44))
 	v122 = int32(1)
@@ -396,14 +393,14 @@ L19:
 	if v127 < v129 {
 		v103 = v128
 		v107 = v127
-		goto L17
+		goto L16
 	} else {
-		goto L20
+		goto L19
 	}
-L20:
+L19:
 	;
-	goto L18
-L21:
+	goto L17
+L20:
 	;
 	v146 = F_text_to_cstring(m, v144)
 	mBase = m.M
@@ -411,9 +408,9 @@ L21:
 	if v147 != 0 {
 		goto L1
 	} else {
-		goto L22
+		goto L21
 	}
-L22:
+L21:
 	;
 	v148 = F_MemoryContextStrdup(m, v35, v146)
 	mBase = m.M
@@ -421,9 +418,9 @@ L22:
 	if v149 != 0 {
 		goto L1
 	} else {
-		goto L23
+		goto L22
 	}
-L23:
+L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+36)) = v148
 	v155 = F_SysCacheGetAttr(m, int32(47), l1, int32(28), v14+int32(27))
@@ -432,25 +429,25 @@ L23:
 	if v156 != 0 {
 		goto L1
 	} else {
-		goto L24
+		goto L23
 	}
-L24:
+L23:
 	;
 	v157 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+27)))
 	if v157 == int32(0) {
-		goto L26
+		goto L25
 	} else {
-		goto L27
+		goto L26
 	}
-L25:
+L24:
 	;
 	*(*uint8)(unsafe.Add(mBase, uint32(l3)+72)) = uint8(v182)
 	if v184 != 0 {
-		goto L36
+		goto L35
 	} else {
-		goto L37
+		goto L36
 	}
-L26:
+L25:
 	;
 	v160 = F_text_to_cstring(m, v155)
 	mBase = m.M
@@ -458,12 +455,12 @@ L26:
 	if v161 != 0 {
 		goto L1
 	} else {
-		goto L29
+		goto L28
 	}
-L27:
+L26:
 	;
-	goto L28
-L28:
+	goto L27
+L27:
 	;
 	v179 = *(*int32)(unsafe.Add(mBase, uint32(l3)+36))
 	v180 = F_pg_parse_query(m, v179)
@@ -472,9 +469,9 @@ L28:
 	if v181 != 0 {
 		goto L1
 	} else {
-		goto L35
+		goto L34
 	}
-L29:
+L28:
 	;
 	v162 = F_stringToNode(m, v160)
 	mBase = m.M
@@ -482,27 +479,27 @@ L29:
 	if v163 != 0 {
 		goto L1
 	} else {
-		goto L30
+		goto L29
 	}
-L30:
+L29:
 	;
 	v164 = *(*int32)(unsafe.Add(mBase, uint32(v162)))
 	if v164 == int32(1) {
-		goto L31
+		goto L30
 	} else {
-		goto L32
+		goto L31
 	}
-L31:
+L30:
 	;
 	v168 = *(*int32)(unsafe.Add(mBase, uint32(v162)+12))
 	v169 = *(*int32)(unsafe.Add(mBase, uint32(v168)))
 	v182 = int32(0)
 	v184 = v169
-	goto L25
-L32:
+	goto L24
+L31:
 	;
-	goto L33
-L33:
+	goto L32
+L32:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v162
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+20)) = v162
@@ -512,36 +509,36 @@ L33:
 	if v177 != 0 {
 		goto L1
 	} else {
-		goto L34
+		goto L33
 	}
-L34:
+L33:
 	;
 	v182 = int32(0)
 	v184 = v176
-	goto L25
-L35:
+	goto L24
+L34:
 	;
 	v182 = int32(1)
 	v184 = v180
-	goto L25
-L36:
+	goto L24
+L35:
 	;
 	v186 = *(*int32)(unsafe.Add(mBase, uint32(v184)+4))
 	v188 = v186
-	goto L38
-L37:
+	goto L37
+L36:
 	;
 	v188 = int32(0)
-	goto L38
-L38:
+	goto L37
+L37:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+68)) = v188
 	if v188 != 0 {
-		goto L39
+		goto L38
 	} else {
-		goto L40
+		goto L39
 	}
-L39:
+L38:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[1])) = v41
 	v218 = F_copyObjectImpl(m, v184)
@@ -550,17 +547,17 @@ L39:
 	if v219 != 0 {
 		goto L1
 	} else {
-		goto L48
+		goto L47
 	}
-L40:
+L39:
 	;
 	v190 = *(*int32)(unsafe.Add(mBase, uint32(v14)+32))
 	if v190 == int32(2278) {
-		goto L39
+		goto L38
 	} else {
-		goto L41
+		goto L40
 	}
-L41:
+L40:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
@@ -568,9 +565,9 @@ L41:
 	if v196 != 0 {
 		goto L1
 	} else {
-		goto L42
+		goto L41
 	}
-L42:
+L41:
 	;
 	F_errcode(m, int32(50724996))
 	mBase = m.M
@@ -578,9 +575,9 @@ L42:
 	if v199 != 0 {
 		goto L1
 	} else {
-		goto L43
+		goto L42
 	}
-L43:
+L42:
 	;
 	v200 = *(*int32)(unsafe.Add(mBase, uint32(v14)+32))
 	v201 = F_format_type_be(m, v200)
@@ -589,9 +586,9 @@ L43:
 	if v202 != 0 {
 		goto L1
 	} else {
-		goto L44
+		goto L43
 	}
-L44:
+L43:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v201
 	F_errmsg(m, int32(_a_F_sql_compile_callback_4), v14)
@@ -600,9 +597,9 @@ L44:
 	if v206 != 0 {
 		goto L1
 	} else {
-		goto L45
+		goto L44
 	}
-L45:
+L44:
 	;
 	F_errdetail(m, int32(_a_F_sql_compile_callback_5), int32(0))
 	mBase = m.M
@@ -610,9 +607,9 @@ L45:
 	if v210 != 0 {
 		goto L1
 	} else {
-		goto L46
+		goto L45
 	}
-L46:
+L45:
 	;
 	F_errfinish(m, int32(_a_F_sql_compile_callback_6), int32(1187), int32(_a_F_sql_compile_callback_7))
 	mBase = m.M
@@ -620,113 +617,113 @@ L46:
 	if v215 != 0 {
 		goto L1
 	} else {
-		goto L47
+		goto L46
 	}
-L47:
+L46:
 	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L48:
+L47:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+64)) = v218
 	*(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[1])) = v30
 	v224 = *(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[2]))
 	v228 = *(*int32)(unsafe.Add(mBase, uint32(v35)+16))
 	if v228 != v224 {
-		goto L50
+		goto L49
 	} else {
-		goto L51
+		goto L50
 	}
-L49:
+L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+84)) = v35
-	v260 = *(*int32)(unsafe.Add(mBase, uint32(v14)+36))
-	*(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[0])) = v260
+	v259 = *(*int32)(unsafe.Add(mBase, uint32(v14)+36))
+	*(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[0])) = v259
 	m.G0 = v14 + int32(48)
 	return
-L50:
+L49:
 	;
 	if v228 == int32(0) {
-		goto L53
+		goto L52
 	} else {
-		goto L54
+		goto L53
 	}
+L50:
+	;
+	goto L51
 L51:
 	;
-	goto L52
+	goto L48
 L52:
 	;
-	goto L49
-L53:
-	;
 	if v224 != 0 {
-		goto L60
+		goto L59
 	} else {
-		goto L61
+		goto L60
 	}
-L54:
+L53:
 	;
 	v232 = *(*int32)(unsafe.Add(mBase, uint32(v35)+28))
 	v233 = *(*int32)(unsafe.Add(mBase, uint32(v35)+24))
 	if v233 != 0 {
-		goto L56
+		goto L55
 	} else {
-		goto L57
+		goto L56
+	}
+L54:
+	;
+	if v232 == int32(0) {
+		goto L52
+	} else {
+		goto L58
 	}
 L55:
 	;
-	if v232 == int32(0) {
-		goto L53
-	} else {
-		goto L59
-	}
+	*(*int32)(unsafe.Add(mBase, uint32(v233)+28)) = v232
+	goto L54
 L56:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v233)+28)) = v232
-	goto L55
+	goto L57
 L57:
 	;
-	goto L58
-L58:
-	;
 	*(*int32)(unsafe.Add(mBase, uint32(v228)+20)) = v232
-	goto L55
-L59:
+	goto L54
+L58:
 	;
 	v238 = *(*int32)(unsafe.Add(mBase, uint32(v35)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v232)+24)) = v238
-	goto L53
-L60:
+	goto L52
+L59:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v35)+24)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v35)+16)) = v224
 	v245 = *(*int32)(unsafe.Add(mBase, uint32(v224)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v35)+28)) = v245
 	if v245 != 0 {
-		goto L63
+		goto L62
 	} else {
-		goto L64
+		goto L63
 	}
-L61:
+L60:
 	;
-	goto L62
-L62:
+	goto L61
+L61:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v35)+24)) = int64(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v35)+16)) = int32(0)
-	goto L52
-L63:
+	goto L51
+L62:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v245)+24)) = v35
-	goto L65
+	goto L64
+L63:
+	;
+	goto L64
 L64:
 	;
-	goto L65
-L65:
-	;
 	*(*int32)(unsafe.Add(mBase, uint32(v224)+20)) = v35
-	goto L49
+	goto L48
 }
 func F_sql_function_parse_error_callback(m *base.Module, l0 int32) {
 	mBase := m.M

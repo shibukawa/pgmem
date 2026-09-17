@@ -56,8 +56,8 @@ func F_ss_report_location(m *base.Module, l0 int32, l1 int32) {
 	_ = v23
 	var v24 int32
 	_ = v24
-	var v28 int32
-	_ = v28
+	var v27 int32
+	_ = v27
 	var v32 int32
 	_ = v32
 	var v34 int32
@@ -120,20 +120,20 @@ L5:
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v23 = *(*int32)(unsafe.Add(mBase, _c_F_ss_report_location[1]))
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-	v28 = v24
+	v27 = v24
 	goto L7
 L6:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v28)+20)) = l1
+	*(*int32)(unsafe.Add(mBase, uint32(v27)+20)) = l1
 	v44 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-	if v44 != v28 {
+	if v44 != v27 {
 		goto L14
 	} else {
 		goto L15
 	}
 L7:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, uint32(v28)+16))
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+16))
 	if v32 != v19 {
 		goto L9
 	} else {
@@ -141,22 +141,22 @@ L7:
 	}
 L8:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v28)+16)) = v19
-	*(*int32)(unsafe.Add(mBase, uint32(v28)+12)) = v20
-	*(*int32)(unsafe.Add(mBase, uint32(v28)+8)) = v21
+	*(*int32)(unsafe.Add(mBase, uint32(v27)+16)) = v19
+	*(*int32)(unsafe.Add(mBase, uint32(v27)+12)) = v20
+	*(*int32)(unsafe.Add(mBase, uint32(v27)+8)) = v21
 	goto L6
 L9:
 	;
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
 	if v38 != 0 {
-		v28 = v38
+		v27 = v38
 		goto L7
 	} else {
 		goto L13
 	}
 L10:
 	;
-	v34 = *(*int32)(unsafe.Add(mBase, uint32(v28)+12))
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v27)+12))
 	if v34 != v20 {
 		goto L9
 	} else {
@@ -164,7 +164,7 @@ L10:
 	}
 L11:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v28)+8))
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(v27)+8))
 	if v36 == v21 {
 		goto L6
 	} else {
@@ -178,9 +178,9 @@ L13:
 	goto L8
 L14:
 	;
-	v46 = *(*int32)(unsafe.Add(mBase, uint32(v28)))
+	v46 = *(*int32)(unsafe.Add(mBase, uint32(v27)))
 	v47 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
-	if v47 == v28 {
+	if v47 == v27 {
 		goto L17
 	} else {
 		goto L18
@@ -208,7 +208,7 @@ L18:
 	goto L19
 L19:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
+	v50 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v46)+4)) = v50
 	if v50 != 0 {
 		goto L20
@@ -217,7 +217,7 @@ L19:
 	}
 L20:
 	;
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(v28)))
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v27)))
 	*(*int32)(unsafe.Add(mBase, uint32(v50))) = v52
 	goto L22
 L21:
@@ -225,12 +225,12 @@ L21:
 	goto L22
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v27))) = int32(0)
 	v57 = *(*int32)(unsafe.Add(mBase, _c_F_ss_report_location[1]))
 	v58 = *(*int32)(unsafe.Add(mBase, uint32(v57)))
-	*(*int32)(unsafe.Add(mBase, uint32(v28)+4)) = v58
-	*(*int32)(unsafe.Add(mBase, uint32(v58))) = v28
-	*(*int32)(unsafe.Add(mBase, uint32(v57))) = v28
+	*(*int32)(unsafe.Add(mBase, uint32(v27)+4)) = v58
+	*(*int32)(unsafe.Add(mBase, uint32(v58))) = v27
+	*(*int32)(unsafe.Add(mBase, uint32(v57))) = v27
 	goto L16
 L23:
 	;

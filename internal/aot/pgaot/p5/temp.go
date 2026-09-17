@@ -146,18 +146,16 @@ func F_check_temp_tablespaces(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	_ = v172
 	var v173 int32
 	_ = v173
-	var v180 int32
-	_ = v180
-	var v184 int32
-	_ = v184
+	var v183 int32
+	_ = v183
+	var v199 int32
+	_ = v199
 	var v200 int32
 	_ = v200
-	var v201 int32
-	_ = v201
-	var v203 int32
-	_ = v203
-	var v212 int32
-	_ = v212
+	var v202 int32
+	_ = v202
+	var v211 int32
+	_ = v211
 	v4 = int32(0)
 	v15 = m.G0
 	v17 = v15 - int32(16)
@@ -174,16 +172,16 @@ func F_check_temp_tablespaces(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 L1:
 	;
 	m.G0 = v17 + int32(16)
-	return v212
+	return v211
 L2:
 	;
 	F_pfree(m, v20)
 	mBase = m.M
-	v200 = m.ExcPending
-	if v200 != 0 {
+	v199 = m.ExcPending
+	if v199 != 0 {
 		goto L3
 	} else {
-		goto L57
+		goto L56
 	}
 L3:
 	;
@@ -499,7 +497,7 @@ L48:
 	}
 L49:
 	;
-	v212 = int32(0)
+	v211 = int32(0)
 	goto L1
 L50:
 	;
@@ -508,48 +506,44 @@ L51:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v172))) = v159
 	if v169 != 0 {
-		goto L53
+		goto L52
 	} else {
-		goto L54
+		goto L53
 	}
 L52:
+	;
+	base.MemoryCopy(m, v172+int32(4), v59, v169)
+	goto L54
+L53:
+	;
+	goto L54
+L54:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v172
 	F_pfree(m, v59)
 	mBase = m.M
-	v184 = m.ExcPending
-	if v184 != 0 {
+	v183 = m.ExcPending
+	if v183 != 0 {
 		goto L3
 	} else {
-		goto L56
+		goto L55
 	}
-L53:
-	;
-	v180 = F__emscripten_memcpy_bulkmem(m, v172+int32(4), v59, v169)
-	mBase = m.M
-	goto L55
-L54:
-	;
-	goto L55
 L55:
 	;
-	goto L52
+	goto L2
 L56:
 	;
-	goto L2
-L57:
-	;
-	v201 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
-	F_list_free(m, v201)
+	v200 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
+	F_list_free(m, v200)
 	mBase = m.M
-	v203 = m.ExcPending
-	if v203 != 0 {
+	v202 = m.ExcPending
+	if v202 != 0 {
 		goto L3
 	} else {
-		goto L58
+		goto L57
 	}
-L58:
+L57:
 	;
-	v212 = v27
+	v211 = v27
 	goto L1
 }

@@ -42,40 +42,40 @@ func F__equalOpExpr(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v31
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
+	var v37 int32
+	_ = v37
 	v3 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v6 != v7 {
-		v35 = v3
-		return v35
+		v37 = v3
+		return v37
 	} else {
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 		if v9 == int32(0) {
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 			if v17 != v18 {
-				v35 = v3
-				return v35
+				v37 = v3
+				return v37
 			} else {
 				v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 				v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
 				if v20 != v21 {
-					v35 = v3
-					return v35
+					v37 = v3
+					return v37
 				} else {
 					v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 					v24 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
 					if v23 != v24 {
-						v35 = v3
-						return v35
+						v37 = v3
+						return v37
 					} else {
 						v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 						v27 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
 						if v26 != v27 {
-							v35 = v3
-							return v35
+							v37 = v3
+							return v37
 						} else {
 							v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 							v30 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
@@ -85,8 +85,8 @@ func F__equalOpExpr(m *base.Module, l0 int32, l1 int32) int32 {
 							if v34 != 0 {
 								return int32(0)
 							} else {
-								v35 = v31
-								return v35
+								v37 = v31
+								return v37
 							}
 						}
 					}
@@ -98,26 +98,26 @@ func F__equalOpExpr(m *base.Module, l0 int32, l1 int32) int32 {
 				v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 				v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 				if v17 != v18 {
-					v35 = v3
-					return v35
+					v37 = v3
+					return v37
 				} else {
 					v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 					v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
 					if v20 != v21 {
-						v35 = v3
-						return v35
+						v37 = v3
+						return v37
 					} else {
 						v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 						v24 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
 						if v23 != v24 {
-							v35 = v3
-							return v35
+							v37 = v3
+							return v37
 						} else {
 							v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 							v27 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
 							if v26 != v27 {
-								v35 = v3
-								return v35
+								v37 = v3
+								return v37
 							} else {
 								v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 								v30 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
@@ -127,8 +127,8 @@ func F__equalOpExpr(m *base.Module, l0 int32, l1 int32) int32 {
 								if v34 != 0 {
 									return int32(0)
 								} else {
-									v35 = v31
-									return v35
+									v37 = v31
+									return v37
 								}
 							}
 						}
@@ -136,32 +136,32 @@ func F__equalOpExpr(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			} else {
 				if v9 != v12 {
-					v35 = v3
-					return v35
+					v37 = v3
+					return v37
 				} else {
 					v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 					v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					if v17 != v18 {
-						v35 = v3
-						return v35
+						v37 = v3
+						return v37
 					} else {
 						v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 						v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
 						if v20 != v21 {
-							v35 = v3
-							return v35
+							v37 = v3
+							return v37
 						} else {
 							v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 							v24 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
 							if v23 != v24 {
-								v35 = v3
-								return v35
+								v37 = v3
+								return v37
 							} else {
 								v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 								v27 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
 								if v26 != v27 {
-									v35 = v3
-									return v35
+									v37 = v3
+									return v37
 								} else {
 									v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 									v30 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
@@ -171,8 +171,8 @@ func F__equalOpExpr(m *base.Module, l0 int32, l1 int32) int32 {
 									if v34 != 0 {
 										return int32(0)
 									} else {
-										v35 = v31
-										return v35
+										v37 = v31
+										return v37
 									}
 								}
 							}
@@ -489,14 +489,14 @@ func F_getOpFamilyIdentity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	_ = v86
 	var v88 int32
 	_ = v88
-	var v101 int32
-	_ = v101
 	var v102 int32
 	_ = v102
-	var v108 int32
-	_ = v108
-	var v113 int32
-	_ = v113
+	var v103 int32
+	_ = v103
+	var v109 int32
+	_ = v109
+	var v114 int32
+	_ = v114
 	v11 = m.G0
 	v13 = v11 + int32(-64)
 	m.G0 = v13
@@ -551,22 +551,22 @@ func F_getOpFamilyIdentity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 				if v38 == int32(0) {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v101 = m.ExcPending
-					if v101 != 0 {
+					v102 = m.ExcPending
+					if v102 != 0 {
 						return
 					} else {
-						v102 = *(*int32)(unsafe.Add(mBase, uint32(v36)+4))
-						*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v102
+						v103 = *(*int32)(unsafe.Add(mBase, uint32(v36)+4))
+						*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v103
 						F_errmsg_internal(m, int32(_a_F_getOpFamilyIdentity_4), v11+int32(-48))
 						mBase = m.M
-						v108 = m.ExcPending
-						if v108 != 0 {
+						v109 = m.ExcPending
+						if v109 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_getOpFamilyIdentity_1), int32(_a_F_getOpFamilyIdentity_5), int32(_a_F_getOpFamilyIdentity_3))
 							mBase = m.M
-							v113 = m.ExcPending
-							if v113 != 0 {
+							v114 = m.ExcPending
+							if v114 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()

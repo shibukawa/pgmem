@@ -633,26 +633,29 @@ func F_InvalidateTSCacheCallBack(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v4
 	var v6 int32
 	_ = v6
+	var v9 int32
+	_ = v9
 	var v11 int32
 	_ = v11
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
-	var v23 int32
-	_ = v23
-	var v24 int32
-	_ = v24
-	var v29 int32
-	_ = v29
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
-	F_hash_seq_init(m, v6+int32(12), l0)
+	v9 = v6 + int32(12)
+	F_hash_seq_init(m, v9, l0)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -665,44 +668,44 @@ L1:
 	return
 L2:
 	;
-	v14 = F_hash_seq_search(m, v6+int32(12))
+	v12 = F_hash_seq_search(m, v9)
 	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		goto L1
 	} else {
 		goto L3
 	}
 L3:
 	;
-	if v14 != 0 {
+	if v12 != 0 {
 		goto L4
 	} else {
 		goto L5
 	}
 L4:
 	;
-	v18 = v14
+	v16 = v12
 	goto L7
 L5:
 	;
 	goto L6
 L6:
 	;
-	v29 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateTSCacheCallBack[0]))
-	if l0 == v29 {
+	v27 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateTSCacheCallBack[0]))
+	if l0 == v27 {
 		goto L11
 	} else {
 		goto L12
 	}
 L7:
 	;
-	v19 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v18)+4)) = uint8(v19)
-	v23 = F_hash_seq_search(m, v6+int32(12))
+	v17 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v16)+4)) = uint8(v17)
+	v21 = F_hash_seq_search(m, v6+int32(12))
 	mBase = m.M
-	v24 = m.ExcPending
-	if v24 != 0 {
+	v22 = m.ExcPending
+	if v22 != 0 {
 		goto L1
 	} else {
 		goto L9
@@ -712,8 +715,8 @@ L8:
 	goto L6
 L9:
 	;
-	if v23 != 0 {
-		v18 = v23
+	if v21 != 0 {
+		v16 = v21
 		goto L7
 	} else {
 		goto L10

@@ -48,40 +48,42 @@ func F_pg_ls_dir(m *base.Module, l0 int32) int32 {
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v44 int32
-	_ = v44
+	var v41 int32
+	_ = v41
 	var v47 int32
 	_ = v47
-	var v48 int32
-	_ = v48
-	var v49 int32
-	_ = v49
-	var v56 int32
-	_ = v56
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
 	var v59 int32
 	_ = v59
 	var v62 int32
 	_ = v62
 	var v65 int32
 	_ = v65
-	var v70 int32
-	_ = v70
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
+	var v68 int32
+	_ = v68
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
 	var v75 int32
 	_ = v75
-	var v76 int32
-	_ = v76
-	var v82 int32
-	_ = v82
-	var v84 int32
-	_ = v84
+	var v78 int32
+	_ = v78
+	var v79 int32
+	_ = v79
 	var v85 int32
 	_ = v85
-	var v94 int32
-	_ = v94
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v97 int32
+	_ = v97
 	v2 = int32(0)
 	v8 = m.G0
 	v10 = v8 - int32(16)
@@ -170,7 +172,7 @@ L10:
 	if v40 != 0 {
 		goto L1
 	} else {
-		goto L13
+		goto L12
 	}
 L11:
 	;
@@ -178,49 +180,46 @@ L11:
 	return int32(0)
 L12:
 	;
-	v47 = F_ReadDir(m, v39, v18)
-	mBase = m.M
-	v48 = m.ExcPending
-	if v48 != 0 {
-		goto L1
-	} else {
-		goto L17
-	}
-L13:
-	;
-	if v39 != 0 {
-		goto L12
+	v41 = int32(0)
+	if v39|base.B2i32(v34 == v41) == v41 {
+		goto L13
 	} else {
 		goto L14
 	}
-L14:
+L13:
 	;
-	if v34 == int32(0) {
-		goto L12
-	} else {
-		goto L15
-	}
-L15:
-	;
-	v44 = *(*int32)(unsafe.Add(mBase, _c_F_pg_ls_dir[0]))
-	if v44 == int32(44) {
+	v47 = *(*int32)(unsafe.Add(mBase, _c_F_pg_ls_dir[0]))
+	if v47 == int32(44) {
 		goto L11
 	} else {
 		goto L16
 	}
+L14:
+	;
+	goto L15
+L15:
+	;
+	v50 = F_ReadDir(m, v39, v18)
+	mBase = m.M
+	v51 = m.ExcPending
+	if v51 != 0 {
+		goto L1
+	} else {
+		goto L17
+	}
 L16:
 	;
-	goto L12
+	goto L15
 L17:
 	;
-	if v47 != 0 {
+	if v50 != 0 {
 		goto L18
 	} else {
 		goto L19
 	}
 L18:
 	;
-	v49 = v47
+	v52 = v50
 	goto L21
 L19:
 	;
@@ -229,8 +228,8 @@ L20:
 	;
 	F_FreeDir(m, v39)
 	mBase = m.M
-	v94 = m.ExcPending
-	if v94 != 0 {
+	v97 = m.ExcPending
+	if v97 != 0 {
 		goto L1
 	} else {
 		goto L34
@@ -247,52 +246,52 @@ L22:
 	goto L20
 L23:
 	;
-	v84 = F_ReadDir(m, v39, v18)
+	v87 = F_ReadDir(m, v39, v18)
 	mBase = m.M
-	v85 = m.ExcPending
-	if v85 != 0 {
+	v88 = m.ExcPending
+	if v88 != 0 {
 		goto L1
 	} else {
 		goto L32
 	}
 L24:
 	;
-	v70 = F_cstring_to_text(m, v49+int32(19))
+	v73 = F_cstring_to_text(m, v52+int32(19))
 	mBase = m.M
-	v71 = m.ExcPending
-	if v71 != 0 {
+	v74 = m.ExcPending
+	if v74 != 0 {
 		goto L1
 	} else {
 		goto L30
 	}
 L25:
 	;
-	v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+19)))
-	if v56 != int32(46) {
+	v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+19)))
+	if v59 != int32(46) {
 		goto L24
 	} else {
 		goto L26
 	}
 L26:
 	;
-	v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+20)))
-	if v59 == int32(0) {
+	v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+20)))
+	if v62 == int32(0) {
 		goto L23
 	} else {
 		goto L27
 	}
 L27:
 	;
-	v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+20)))
-	if v62 != int32(46) {
+	v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+20)))
+	if v65 != int32(46) {
 		goto L24
 	} else {
 		goto L28
 	}
 L28:
 	;
-	v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+21)))
-	if v65 == int32(0) {
+	v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+21)))
+	if v68 == int32(0) {
 		goto L23
 	} else {
 		goto L29
@@ -302,15 +301,15 @@ L29:
 	goto L24
 L30:
 	;
-	v72 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v10)+11)) = uint8(v72)
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+12)) = v70
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v12)+24))
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(v12)+28))
-	F_tuplestore_putvalues(m, v75, v76, v10+int32(12), v10+int32(11))
+	v75 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v10)+11)) = uint8(v75)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+12)) = v73
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(v12)+24))
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v12)+28))
+	F_tuplestore_putvalues(m, v78, v79, v10+int32(12), v10+int32(11))
 	mBase = m.M
-	v82 = m.ExcPending
-	if v82 != 0 {
+	v85 = m.ExcPending
+	if v85 != 0 {
 		goto L1
 	} else {
 		goto L31
@@ -320,8 +319,8 @@ L31:
 	goto L23
 L32:
 	;
-	if v84 != 0 {
-		v49 = v84
+	if v87 != 0 {
+		v52 = v87
 		goto L21
 	} else {
 		goto L33

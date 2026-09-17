@@ -107,60 +107,24 @@ func F_pgl_exit(m *base.Module, l0 int32) {
 		}
 	}
 }
-func F_pgl_popen(m *base.Module, l0 int32, l1 int32) int32 {
+func F_pgl_send(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v4 int32
+	_ = v4
 	var v5 int32
 	_ = v5
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
-	v5 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_popen[0]))
-	if v5 != 0 {
-		v6 = m.T0[v5].(func(*base.Module, int32, int32) int32)(m, l0, l1)
-		mBase = m.M
-		v9 = m.ExcPending
-		if v9 != 0 {
-			return int32(0)
-		} else {
-			return v6
-		}
-	} else {
-		*(*int32)(unsafe.Add(mBase, _c_F_pgl_popen[1])) = int32(52)
-		return int32(0)
-	}
-}
-func F_pgl_send(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v6 int32
-	_ = v6
-	var v7 int32
-	_ = v7
-	var v10 int32
-	_ = v10
-	v6 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_send[0]))
-	v7 = m.T0[v6].(func(*base.Module, int32, int32) int32)(m, l1, l2)
+	var v8 int32
+	_ = v8
+	v4 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_send[0]))
+	v5 = m.T0[v4].(func(*base.Module, int32, int32) int32)(m, l0, l1)
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return int32(0)
 	} else {
-		return v7
+		return v5
 	}
-}
-func F_pgl_set_pclose_fn(m *base.Module, l0 int32) {
-	mBase := m.M
-	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_set_pclose_fn[0])) = l0
-	return
-}
-func F_pgl_set_popen_fn(m *base.Module, l0 int32) {
-	mBase := m.M
-	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_set_popen_fn[0])) = l0
-	return
 }
 func F_pgl_shmget(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M

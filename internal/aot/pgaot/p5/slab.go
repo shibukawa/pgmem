@@ -36,12 +36,12 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 	_ = v53
 	var v57 int32
 	_ = v57
-	var v60 int32
-	_ = v60
-	var v63 int32
-	_ = v63
-	var v67 int32
-	_ = v67
+	var v61 int32
+	_ = v61
+	var v65 int32
+	_ = v65
+	var v69 int32
+	_ = v69
 	var v75 int32
 	_ = v75
 	var v78 int64
@@ -146,7 +146,7 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 			v42 = v32
 			for {
 				v48 = int32(1)
-				if v48 < int32(base.Ui32(v26)>>(uint(v42)%32)) {
+				if base.Ui32(v48) < base.Ui32(int32(base.Ui32(v26)>>(uint(v42)%32))) {
 					v42 = v42 + v48
 					continue
 				} else {
@@ -159,16 +159,16 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 			*(*int32)(unsafe.Add(mBase, uint32(v29)+64)) = v42
 			v57 = v29 + int32(96)
 			*(*int32)(unsafe.Add(mBase, uint32(v29)+100)) = v57
-			v60 = v29 + int32(88)
-			*(*int32)(unsafe.Add(mBase, uint32(v29)+92)) = v60
-			v63 = v29 + int32(80)
-			*(*int32)(unsafe.Add(mBase, uint32(v29)+84)) = v63
-			*(*int32)(unsafe.Add(mBase, uint32(v29)+80)) = v63
-			v67 = v29 + int32(68)
-			*(*int32)(unsafe.Add(mBase, uint32(v29)+72)) = v67
-			*(*int32)(unsafe.Add(mBase, uint32(v29)+68)) = v67
-			*(*int32)(unsafe.Add(mBase, uint32(v57))) = v57
-			*(*int32)(unsafe.Add(mBase, uint32(v60))) = v60
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+96)) = v57
+			v61 = v29 + int32(88)
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+92)) = v61
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+88)) = v61
+			v65 = v29 + int32(80)
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+84)) = v65
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+80)) = v65
+			v69 = v29 + int32(68)
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+72)) = v69
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+68)) = v69
 			*(*int32)(unsafe.Add(mBase, uint32(v29)+16)) = l0
 			v75 = int32(1)
 			*(*uint8)(unsafe.Add(mBase, uint32(v29)+4)) = uint8(v75)

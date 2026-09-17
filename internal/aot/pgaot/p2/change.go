@@ -103,56 +103,54 @@ func F_changeDependenciesOn(m *base.Module, l0 int32, l1 int32) {
 	_ = v16
 	var v17 int32
 	_ = v17
-	var v29 int32
-	_ = v29
-	var v36 int32
-	_ = v36
-	var v47 int32
-	_ = v47
-	var v54 int32
-	_ = v54
-	var v62 int32
-	_ = v62
-	var v69 int32
-	_ = v69
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
-	var v86 int32
-	_ = v86
-	var v87 int32
-	_ = v87
-	var v91 int32
-	_ = v91
+	var v32 int32
+	_ = v32
+	var v52 int32
+	_ = v52
+	var v61 int32
+	_ = v61
+	var v67 int32
+	_ = v67
+	var v74 int32
+	_ = v74
+	var v79 int32
+	_ = v79
+	var v80 int32
+	_ = v80
+	var v89 int32
+	_ = v89
+	var v90 int32
+	_ = v90
 	var v94 int32
 	_ = v94
-	var v95 int32
-	_ = v95
-	var v96 int32
-	_ = v96
 	var v97 int32
 	_ = v97
-	var v103 int32
-	_ = v103
-	var v105 int32
-	_ = v105
-	var v109 int32
-	_ = v109
+	var v98 int32
+	_ = v98
+	var v99 int32
+	_ = v99
+	var v100 int32
+	_ = v100
+	var v106 int32
+	_ = v106
+	var v108 int32
+	_ = v108
 	var v112 int32
 	_ = v112
-	var v119 int32
-	_ = v119
+	var v115 int32
+	_ = v115
 	var v122 int32
 	_ = v122
-	var v126 int32
-	_ = v126
-	var v127 int32
-	_ = v127
-	var v131 int32
-	_ = v131
-	var v136 int32
-	_ = v136
+	var v125 int32
+	_ = v125
+	var v129 int32
+	_ = v129
+	var v130 int32
+	_ = v130
+	var v134 int32
+	_ = v134
+	var v139 int32
+	_ = v139
 	v9 = m.G0
 	v11 = v9 - int32(112)
 	m.G0 = v11
@@ -173,244 +171,214 @@ L2:
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v17
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = int32(1259)
-	goto L5
+	v32 = int32(1)
+	goto L3
 L3:
 	;
-	if v36 == int32(0) {
-		goto L7
+	if base.B2i32(int32(0)|base.B2i32(base.Ui32(int32(_a_F_changeDependenciesOn_0)) < base.Ui32(l0)) == v17)&((v32|base.B2i32(l0 != int32(2200)))&v32) == int32(0) {
+		goto L4
 	} else {
-		goto L8
+		goto L5
 	}
 L4:
 	;
-	goto L3
+	v52 = int32(1)
+	goto L7
 L5:
 	;
-	if base.Ui32(int32(_a_F_changeDependenciesOn_0)) < base.Ui32(l0) {
-		v36 = v17
-		goto L4
-	} else {
-		goto L6
-	}
+	goto L6
 L6:
-	;
-	v29 = int32(1)
-	v36 = (v29 | base.B2i32(l0 != int32(2200))) & v29
-	goto L4
-L7:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = l1
-	goto L12
-L8:
-	;
-	goto L9
-L9:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v119 = m.ExcPending
-	if v119 != 0 {
+	v122 = m.ExcPending
+	if v122 != 0 {
 		goto L1
 	} else {
-		goto L32
+		goto L26
 	}
-L10:
+L7:
 	;
-	F_ScanKeyInit(m, v11+int32(16), int32(4), int32(3), int32(184), int32(1259))
+	v61 = v11 + int32(16)
+	F_ScanKeyInit(m, v61, int32(4), int32(3), int32(184), int32(1259))
 	mBase = m.M
-	v62 = m.ExcPending
-	if v62 != 0 {
+	v67 = m.ExcPending
+	if v67 != 0 {
 		goto L1
 	} else {
-		goto L14
+		goto L8
 	}
-L11:
-	;
-	goto L10
-L12:
-	;
-	if base.Ui32(int32(_a_F_changeDependenciesOn_0)) < base.Ui32(l1) {
-		v54 = int32(0)
-		goto L11
-	} else {
-		goto L13
-	}
-L13:
-	;
-	v47 = int32(1)
-	v54 = (v47 | base.B2i32(l1 != int32(2200))) & v47
-	goto L11
-L14:
+L8:
 	;
 	F_ScanKeyInit(m, v11-int32(-64), int32(5), int32(3), int32(184), l0)
 	mBase = m.M
-	v69 = m.ExcPending
-	if v69 != 0 {
+	v74 = m.ExcPending
+	if v74 != 0 {
 		goto L1
+	} else {
+		goto L9
+	}
+L9:
+	;
+	v79 = F_systable_beginscan(m, v15, int32(2674), int32(1), int32(0), int32(2), v61)
+	mBase = m.M
+	v80 = m.ExcPending
+	if v80 != 0 {
+		goto L1
+	} else {
+		goto L10
+	}
+L10:
+	;
+	goto L11
+L11:
+	;
+	v89 = F_systable_getnext(m, v79)
+	mBase = m.M
+	v90 = m.ExcPending
+	if v90 != 0 {
+		goto L1
+	} else {
+		goto L13
+	}
+L12:
+	;
+	F_systable_endscan(m, v79)
+	mBase = m.M
+	v112 = m.ExcPending
+	if v112 != 0 {
+		goto L1
+	} else {
+		goto L24
+	}
+L13:
+	;
+	if v89 != 0 {
+		goto L14
 	} else {
 		goto L15
 	}
+L14:
+	;
+	if base.B2i32(int32(0)|base.B2i32(base.Ui32(int32(_a_F_changeDependenciesOn_0)) < base.Ui32(l1)) == int32(0))&((v52|base.B2i32(l1 != int32(2200)))&v52) != 0 {
+		goto L17
+	} else {
+		goto L18
+	}
 L15:
 	;
-	v76 = F_systable_beginscan(m, v15, int32(2674), int32(1), int32(0), int32(2), v11+int32(16))
-	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
-		goto L1
-	} else {
-		goto L16
-	}
+	goto L16
 L16:
 	;
-	goto L17
+	goto L12
 L17:
 	;
-	v86 = F_systable_getnext(m, v76)
+	F_simple_heap_delete(m, v15, v89+int32(4))
 	mBase = m.M
-	v87 = m.ExcPending
-	if v87 != 0 {
+	v94 = m.ExcPending
+	if v94 != 0 {
 		goto L1
 	} else {
-		goto L19
+		goto L20
 	}
 L18:
 	;
-	F_systable_endscan(m, v76)
-	mBase = m.M
-	v109 = m.ExcPending
-	if v109 != 0 {
-		goto L1
-	} else {
-		goto L30
-	}
+	goto L19
 L19:
 	;
-	if v86 != 0 {
-		goto L20
+	v97 = F_heap_copytuple(m, v89)
+	mBase = m.M
+	v98 = m.ExcPending
+	if v98 != 0 {
+		goto L1
 	} else {
 		goto L21
 	}
 L20:
 	;
-	if v54 != 0 {
-		goto L23
-	} else {
-		goto L24
-	}
+	goto L11
 L21:
 	;
-	goto L22
-L22:
-	;
-	goto L18
-L23:
-	;
-	F_CatalogTupleDelete(m, v15, v86+int32(4))
+	v99 = *(*int32)(unsafe.Add(mBase, uint32(v97)+16))
+	v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v99)+22)))
+	*(*int32)(unsafe.Add(mBase, uint32(v99+v100)+16)) = l1
+	F_CatalogTupleUpdate(m, v15, v97+int32(4), v97)
 	mBase = m.M
-	v91 = m.ExcPending
-	if v91 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L1
 	} else {
-		goto L26
+		goto L22
 	}
+L22:
+	;
+	F_pfree(m, v97)
+	mBase = m.M
+	v108 = m.ExcPending
+	if v108 != 0 {
+		goto L1
+	} else {
+		goto L23
+	}
+L23:
+	;
+	goto L11
 L24:
 	;
-	goto L25
+	F_relation_close(m, v15, int32(3))
+	mBase = m.M
+	v115 = m.ExcPending
+	if v115 != 0 {
+		goto L1
+	} else {
+		goto L25
+	}
 L25:
 	;
-	v94 = F_heap_copytuple(m, v86)
+	m.G0 = v11 + int32(112)
+	return
+L26:
+	;
+	F_errcode(m, int32(1088))
 	mBase = m.M
-	v95 = m.ExcPending
-	if v95 != 0 {
+	v125 = m.ExcPending
+	if v125 != 0 {
 		goto L1
 	} else {
 		goto L27
 	}
-L26:
-	;
-	goto L17
 L27:
 	;
-	v96 = *(*int32)(unsafe.Add(mBase, uint32(v94)+16))
-	v97 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v96)+22)))
-	*(*int32)(unsafe.Add(mBase, uint32(v96+v97)+16)) = l1
-	F_CatalogTupleUpdate(m, v15, v94+int32(4), v94)
+	v129 = F_getObjectDescription(m, v11+int32(4), int32(0))
 	mBase = m.M
-	v103 = m.ExcPending
-	if v103 != 0 {
+	v130 = m.ExcPending
+	if v130 != 0 {
 		goto L1
 	} else {
 		goto L28
 	}
 L28:
 	;
-	F_pfree(m, v94)
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v129
+	F_errmsg(m, int32(_a_F_changeDependenciesOn_1), v11)
 	mBase = m.M
-	v105 = m.ExcPending
-	if v105 != 0 {
+	v134 = m.ExcPending
+	if v134 != 0 {
 		goto L1
 	} else {
 		goto L29
 	}
 L29:
 	;
-	goto L17
-L30:
-	;
-	F_sequence_close(m, v15, int32(3))
-	mBase = m.M
-	v112 = m.ExcPending
-	if v112 != 0 {
-		goto L1
-	} else {
-		goto L31
-	}
-L31:
-	;
-	m.G0 = v11 + int32(112)
-	return
-L32:
-	;
-	F_errcode(m, int32(1088))
-	mBase = m.M
-	v122 = m.ExcPending
-	if v122 != 0 {
-		goto L1
-	} else {
-		goto L33
-	}
-L33:
-	;
-	v126 = F_getObjectDescription(m, v11+int32(4), int32(0))
-	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
-		goto L1
-	} else {
-		goto L34
-	}
-L34:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v126
-	F_errmsg(m, int32(_a_F_changeDependenciesOn_1), v11)
-	mBase = m.M
-	v131 = m.ExcPending
-	if v131 != 0 {
-		goto L1
-	} else {
-		goto L35
-	}
-L35:
-	;
 	F_errfinish(m, int32(_a_F_changeDependenciesOn_2), int32(650), int32(_a_F_changeDependenciesOn_3))
 	mBase = m.M
-	v136 = m.ExcPending
-	if v136 != 0 {
+	v139 = m.ExcPending
+	if v139 != 0 {
 		goto L1
 	} else {
-		goto L36
+		goto L30
 	}
-L36:
+L30:
 	;
 	base.Wasm_trap_unreachable()
 	for {

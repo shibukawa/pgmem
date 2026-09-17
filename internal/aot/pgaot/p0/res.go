@@ -6,28 +6,16 @@ import (
 )
 
 func F_ResOwnerPrintFile(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
 	var v3 int32
 	_ = v3
-	var v5 int32
-	_ = v5
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
-	v3 = m.G0
-	v5 = v3 - int32(16)
-	m.G0 = v5
-	*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-	v9 = F_psprintf(m, int32(_a_F_ResOwnerPrintFile_0), v5)
-	mBase = m.M
-	v12 = m.ExcPending
-	if v12 != 0 {
+	var v6 int32
+	_ = v6
+	v3 = Fn13836(m, l0, int32(_a_F_ResOwnerPrintFile_0))
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return int32(0)
 	} else {
-		m.G0 = v5 + int32(16)
-		return v9
+		return v3
 	}
 }
 func F_ResOwnerReleaseCatCache(m *base.Module, l0 int32) {
@@ -43,52 +31,48 @@ func F_ResOwnerReleaseCatCache(m *base.Module, l0 int32) {
 	_ = v7
 	var v11 int32
 	_ = v11
-	var v14 int32
-	_ = v14
 	var v15 int32
 	_ = v15
 	var v16 int32
 	_ = v16
-	var v20 int32
-	_ = v20
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
 	v4 = l0 - int32(8)
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 	v6 = int32(1)
 	v7 = v5 - v6
 	*(*int32)(unsafe.Add(mBase, uint32(v4))) = v7
 	v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0-int32(4)))))
-	if v11 != v6 {
+	if base.B2i32(v11 != v6)|v7 != 0 {
 		return
 	} else {
-		if v7 != 0 {
-			return
-		} else {
-			v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-			if v14 != 0 {
-				v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+32))
-				if v15 != 0 {
-					return
-				} else {
-					v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-					F_CatCacheRemoveCTup(m, v16, l0-int32(40))
-					mBase = m.M
-					v20 = m.ExcPending
-					if v20 != 0 {
-						return
-					} else {
-						return
-					}
-				}
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		if v15 != 0 {
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+32))
+			if v16 != 0 {
+				return
 			} else {
-				v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-				F_CatCacheRemoveCTup(m, v16, l0-int32(40))
+				v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+				F_CatCacheRemoveCTup(m, v17, l0-int32(40))
 				mBase = m.M
-				v20 = m.ExcPending
-				if v20 != 0 {
+				v21 = m.ExcPending
+				if v21 != 0 {
 					return
 				} else {
 					return
 				}
+			}
+		} else {
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+			F_CatCacheRemoveCTup(m, v17, l0-int32(40))
+			mBase = m.M
+			v21 = m.ExcPending
+			if v21 != 0 {
+				return
+			} else {
+				return
 			}
 		}
 	}

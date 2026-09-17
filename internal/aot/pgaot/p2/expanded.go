@@ -159,12 +159,10 @@ func F_deconstruct_expanded_record(m *base.Module, l0 int32) {
 	_ = v38
 	var v40 int32
 	_ = v40
-	var v45 int32
-	_ = v45
-	var v48 int32
-	_ = v48
-	var v49 int32
-	_ = v49
+	var v42 int32
+	_ = v42
+	var v50 int32
+	_ = v50
 	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+28)))
 	if v6&int32(4) == int32(0) {
 		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
@@ -193,17 +191,22 @@ func F_deconstruct_expanded_record(m *base.Module, l0 int32) {
 							if v40 != 0 {
 								return
 							} else {
-								v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+								v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 								return
 							}
 						} else {
-							v45 = F__emscripten_memset_bulkmem(m, v33, base.I32_extend8_s(int32(0)), v17<<(uint(int32(2))%32))
-							mBase = m.M
-							v48 = F__emscripten_memset_bulkmem(m, v34, base.I32_extend8_s(int32(1)), v17)
-							mBase = m.M
-							v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+							v42 = v17 << (uint(int32(2)) % 32)
+							if v42 != 0 {
+								base.MemoryFill(m, v33, int32(0), v42)
+							} else {
+							}
+							if v17 == int32(0) {
+							} else {
+								base.MemoryFill(m, v34, int32(1), v17)
+							}
+							v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 							return
 						}
 					} else {
@@ -229,17 +232,22 @@ func F_deconstruct_expanded_record(m *base.Module, l0 int32) {
 								if v40 != 0 {
 									return
 								} else {
-									v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+									v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 									return
 								}
 							} else {
-								v45 = F__emscripten_memset_bulkmem(m, v33, base.I32_extend8_s(int32(0)), v17<<(uint(int32(2))%32))
-								mBase = m.M
-								v48 = F__emscripten_memset_bulkmem(m, v34, base.I32_extend8_s(int32(1)), v17)
-								mBase = m.M
-								v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+								v42 = v17 << (uint(int32(2)) % 32)
+								if v42 != 0 {
+									base.MemoryFill(m, v33, int32(0), v42)
+								} else {
+								}
+								if v17 == int32(0) {
+								} else {
+									base.MemoryFill(m, v34, int32(1), v17)
+								}
+								v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 								return
 							}
 						}
@@ -267,17 +275,22 @@ func F_deconstruct_expanded_record(m *base.Module, l0 int32) {
 							if v40 != 0 {
 								return
 							} else {
-								v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+								v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 								return
 							}
 						} else {
-							v45 = F__emscripten_memset_bulkmem(m, v33, base.I32_extend8_s(int32(0)), v17<<(uint(int32(2))%32))
-							mBase = m.M
-							v48 = F__emscripten_memset_bulkmem(m, v34, base.I32_extend8_s(int32(1)), v17)
-							mBase = m.M
-							v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+							v42 = v17 << (uint(int32(2)) % 32)
+							if v42 != 0 {
+								base.MemoryFill(m, v33, int32(0), v42)
+							} else {
+							}
+							if v17 == int32(0) {
+							} else {
+								base.MemoryFill(m, v34, int32(1), v17)
+							}
+							v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 							return
 						}
 					}
@@ -302,17 +315,22 @@ func F_deconstruct_expanded_record(m *base.Module, l0 int32) {
 						if v40 != 0 {
 							return
 						} else {
-							v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+							v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 							return
 						}
 					} else {
-						v45 = F__emscripten_memset_bulkmem(m, v33, base.I32_extend8_s(int32(0)), v17<<(uint(int32(2))%32))
-						mBase = m.M
-						v48 = F__emscripten_memset_bulkmem(m, v34, base.I32_extend8_s(int32(1)), v17)
-						mBase = m.M
-						v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+						v42 = v17 << (uint(int32(2)) % 32)
+						if v42 != 0 {
+							base.MemoryFill(m, v33, int32(0), v42)
+						} else {
+						}
+						if v17 == int32(0) {
+						} else {
+							base.MemoryFill(m, v34, int32(1), v17)
+						}
+						v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 						return
 					}
 				} else {
@@ -338,17 +356,22 @@ func F_deconstruct_expanded_record(m *base.Module, l0 int32) {
 							if v40 != 0 {
 								return
 							} else {
-								v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+								v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 								return
 							}
 						} else {
-							v45 = F__emscripten_memset_bulkmem(m, v33, base.I32_extend8_s(int32(0)), v17<<(uint(int32(2))%32))
-							mBase = m.M
-							v48 = F__emscripten_memset_bulkmem(m, v34, base.I32_extend8_s(int32(1)), v17)
-							mBase = m.M
-							v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+							v42 = v17 << (uint(int32(2)) % 32)
+							if v42 != 0 {
+								base.MemoryFill(m, v33, int32(0), v42)
+							} else {
+							}
+							if v17 == int32(0) {
+							} else {
+								base.MemoryFill(m, v34, int32(1), v17)
+							}
+							v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 							return
 						}
 					}
@@ -376,17 +399,22 @@ func F_deconstruct_expanded_record(m *base.Module, l0 int32) {
 						if v40 != 0 {
 							return
 						} else {
-							v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+							v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 							return
 						}
 					} else {
-						v45 = F__emscripten_memset_bulkmem(m, v33, base.I32_extend8_s(int32(0)), v17<<(uint(int32(2))%32))
-						mBase = m.M
-						v48 = F__emscripten_memset_bulkmem(m, v34, base.I32_extend8_s(int32(1)), v17)
-						mBase = m.M
-						v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49 | int32(4)
+						v42 = v17 << (uint(int32(2)) % 32)
+						if v42 != 0 {
+							base.MemoryFill(m, v33, int32(0), v42)
+						} else {
+						}
+						if v17 == int32(0) {
+						} else {
+							base.MemoryFill(m, v34, int32(1), v17)
+						}
+						v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v50 | int32(4)
 						return
 					}
 				}

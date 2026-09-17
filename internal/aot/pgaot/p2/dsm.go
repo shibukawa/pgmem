@@ -24,10 +24,10 @@ func F_dsm_postmaster_shutdown(m *base.Module, l0 int32, l1 int32) {
 	_ = v27
 	var v34 int32
 	_ = v34
+	var v39 int32
+	_ = v39
 	var v40 int32
 	_ = v40
-	var v41 int32
-	_ = v41
 	var v45 int32
 	_ = v45
 	var v46 int32
@@ -48,8 +48,8 @@ func F_dsm_postmaster_shutdown(m *base.Module, l0 int32, l1 int32) {
 	_ = v77
 	var v79 int32
 	_ = v79
-	var v81 int32
-	_ = v81
+	var v80 int32
+	_ = v80
 	var v83 int32
 	_ = v83
 	var v93 int32
@@ -141,8 +141,8 @@ L6:
 	}
 L7:
 	;
-	v40 = int32(0)
-	v41 = v22
+	v39 = int32(0)
+	v40 = v22
 	goto L10
 L8:
 	;
@@ -159,10 +159,10 @@ L9:
 	}
 L10:
 	;
-	v45 = v41 + v40*int32(24)
+	v45 = v40 + v39*int32(24)
 	v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)+16))
 	if v46 == int32(0) {
-		v81 = v41
+		v80 = v40
 		goto L12
 	} else {
 		goto L13
@@ -172,10 +172,10 @@ L11:
 	goto L9
 L12:
 	;
-	v83 = v40 + int32(1)
+	v83 = v39 + int32(1)
 	if v83 != v34 {
-		v40 = v83
-		v41 = v81
+		v39 = v83
+		v40 = v80
 		goto L10
 	} else {
 		goto L23
@@ -184,7 +184,7 @@ L13:
 	;
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(v45)+12))
 	if v49&int32(1) != 0 {
-		v81 = v41
+		v80 = v40
 		goto L12
 	} else {
 		goto L14
@@ -249,7 +249,7 @@ L21:
 L22:
 	;
 	v79 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_postmaster_shutdown[1]))
-	v81 = v79
+	v80 = v79
 	goto L12
 L23:
 	;

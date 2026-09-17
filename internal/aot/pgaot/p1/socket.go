@@ -14,63 +14,59 @@ func F_socket(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v6
 	var v8 int32
 	_ = v8
-	var v13 int32
-	_ = v13
-	var v25 int32
-	_ = v25
-	var v28 int32
-	_ = v28
-	var v38 int32
-	_ = v38
-	var v46 int32
-	_ = v46
+	var v17 int32
+	_ = v17
+	var v26 int32
+	_ = v26
+	var v29 int32
+	_ = v29
+	var v39 int32
+	_ = v39
 	var v47 int32
 	_ = v47
-	var v55 int32
-	_ = v55
+	var v48 int32
+	_ = v48
+	var v56 int32
+	_ = v56
 	v4 = int32(0)
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
-	v13 = m.Env.X__syscall_socket(m, l0, l1, l2, v4, v4, v4)
+	v17 = m.Env.X__syscall_socket(m, l0, l1, l2, v4, v4, v4)
 	mBase = m.M
-	if base.B2i32(v13 != int32(-28))&base.B2i32(v13 != int32(-66)) != 0 {
-		v47 = v13
+	if base.B2i32(l1&int32(_a_F_socket_0) == v4)|base.B2i32(v17 != int32(-28))&base.B2i32(v17 != int32(-66)) != 0 {
+		v48 = v17
 	} else {
-		if l1&int32(_a_F_socket_0) == int32(0) {
-			v47 = v13
+		v26 = int32(0)
+		v29 = m.Env.X__syscall_socket(m, l0, l1&int32(-526337), l2, v26, v26, v26)
+		mBase = m.M
+		if v29 < v26 {
+			v48 = v29
 		} else {
-			v25 = int32(0)
-			v28 = m.Env.X__syscall_socket(m, l0, l1&int32(-526337), l2, v25, v25, v25)
-			mBase = m.M
-			if v28 < v25 {
-				v47 = v28
+			if l1&int32(_a_F_socket_1) != 0 {
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = int32(1)
+				v39 = m.Env.X__syscall_fcntl64(m, v29, int32(2), v8+int32(16))
+				mBase = m.M
 			} else {
-				if l1&int32(_a_F_socket_1) != 0 {
-					*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = int64(1)
-					v38 = m.Env.X__syscall_fcntl64(m, v28, int32(2), v8+int32(16))
-					mBase = m.M
-				} else {
-				}
-				if l1&int32(2048) == int32(0) {
-					v47 = v28
-				} else {
-					*(*int64)(unsafe.Add(mBase, uint32(v8))) = int64(2048)
-					v46 = m.Env.X__syscall_fcntl64(m, v28, int32(4), v8)
-					mBase = m.M
-					v47 = v28
-				}
+			}
+			if l1&int32(2048) == int32(0) {
+				v48 = v29
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(2048)
+				v47 = m.Env.X__syscall_fcntl64(m, v29, int32(4), v8)
+				mBase = m.M
+				v48 = v29
 			}
 		}
 	}
-	if base.Ui32(int32(-4095)) <= base.Ui32(v47) {
-		*(*int32)(unsafe.Add(mBase, _c_F_socket[0])) = int32(0) - v47
-		v55 = int32(-1)
+	if base.Ui32(int32(-4095)) <= base.Ui32(v48) {
+		*(*int32)(unsafe.Add(mBase, _c_F_socket[0])) = int32(0) - v48
+		v56 = int32(-1)
 	} else {
-		v55 = v47
+		v56 = v48
 	}
 	m.G0 = v8 + int32(32)
-	return v55
+	return v56
 }
 func F_socket_flush_if_writable(m *base.Module) int32 {
 	mBase := m.M

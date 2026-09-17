@@ -35,16 +35,12 @@ func F_pq_getbytes(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v18
 	var v21 int32
 	_ = v21
+	var v26 int32
+	_ = v26
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
-	var v32 int32
-	_ = v32
-	var v37 int32
-	_ = v37
+	var v36 int32
+	_ = v36
 	if l1 == int32(0) {
 		goto L1
 	} else {
@@ -88,8 +84,8 @@ L7:
 	goto L8
 L8:
 	;
-	v28 = v14 - v16
-	if base.Ui32(v28) < base.Ui32(v10) {
+	v26 = v14 - v16
+	if base.Ui32(v26) < base.Ui32(v10) {
 		goto L12
 	} else {
 		goto L13
@@ -109,44 +105,38 @@ L11:
 	return int32(-1)
 L12:
 	;
-	v30 = v28
+	v28 = v26
 	goto L14
 L13:
 	;
-	v30 = v10
+	v28 = v10
 	goto L14
 L14:
 	;
-	if v30 != 0 {
-		goto L16
+	if v28 != 0 {
+		goto L15
 	} else {
-		goto L17
+		goto L16
 	}
 L15:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_pq_getbytes[1])) = v30 + v16
-	v37 = v10 - v30
-	if v37 != 0 {
-		v9 = v32 + v30
-		v10 = v37
-		goto L4
-	} else {
-		goto L19
-	}
+	base.MemoryCopy(m, v9, v16+int32(_a_F_pq_getbytes_0), v28)
+	goto L17
 L16:
 	;
-	v31 = F__emscripten_memcpy_bulkmem(m, v9, v16+int32(_a_F_pq_getbytes_0), v30)
-	mBase = m.M
-	v32 = v31
-	goto L18
+	goto L17
 L17:
 	;
-	v32 = v9
-	goto L18
+	*(*int32)(unsafe.Add(mBase, _c_F_pq_getbytes[1])) = v28 + v16
+	v36 = v10 - v28
+	if v36 != 0 {
+		v9 = v9 + v28
+		v10 = v36
+		goto L4
+	} else {
+		goto L18
+	}
 L18:
-	;
-	goto L15
-L19:
 	;
 	goto L5
 }
@@ -169,12 +159,8 @@ func F_pq_getmsgfloat4(m *base.Module, l0 int32) float32 {
 	_ = v27
 	var v29 int32
 	_ = v29
-	var v33 int32
-	_ = v33
 	var v35 int32
 	_ = v35
-	var v37 int32
-	_ = v37
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	if v4-v5 <= int32(3) {
@@ -213,10 +199,8 @@ func F_pq_getmsgfloat4(m *base.Module, l0 int32) float32 {
 		v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		v29 = *(*int32)(unsafe.Add(mBase, uint32(v27+v5)))
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v5 + int32(4)
-		v33 = int32(24)
-		v35 = int32(_a_F_pq_getmsgfloat4_3)
-		v37 = int32(8)
-		return base.F32_reinterpret_i32(v29<<(uint(v33)%32) | v29&v35<<(uint(v37)%32) | (int32(base.Ui32(v29)>>(uint(v37)%32))&v35 | int32(base.Ui32(v29)>>(uint(v33)%32))))
+		v35 = int32(16711935)
+		return base.F32_reinterpret_i32(base.I32_rotr(v29, int32(24))&v35 | base.I32_rotr(v29&v35, int32(8)))
 	}
 }
 func F_pq_getmsgfloat8(m *base.Module, l0 int32) float64 {

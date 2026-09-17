@@ -88,6 +88,8 @@ func F_macaddr_fast_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 func F_macaddr_gt(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v2 int32
+	_ = v2
 	var v6 int32
 	_ = v6
 	var v7 int32
@@ -112,28 +114,29 @@ func F_macaddr_gt(m *base.Module, l0 int32) int32 {
 	_ = v24
 	var v25 int32
 	_ = v25
+	var v29 int32
+	_ = v29
 	var v30 int32
 	_ = v30
 	var v31 int32
 	_ = v31
-	var v32 int32
-	_ = v32
+	var v33 int32
+	_ = v33
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
+	var v37 int32
+	_ = v37
 	var v38 int32
 	_ = v38
 	var v39 int32
 	_ = v39
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v47 int32
-	_ = v47
-	var v52 int32
-	_ = v52
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v51 int32
+	_ = v51
+	v2 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+1)))
 	v8 = int32(8)
@@ -147,29 +150,29 @@ func F_macaddr_gt(m *base.Module, l0 int32) int32 {
 	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+2)))
 	v25 = v17<<(uint(v8)%32) | v20<<(uint(v11)%32) | v24
 	if base.Ui32(v15) < base.Ui32(v25) {
-		v52 = int32(0)
+		v51 = v2
 	} else {
 		if base.Ui32(v25) < base.Ui32(v15) {
-			v52 = int32(1)
+			v51 = int32(1)
 		} else {
-			v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+5)))
-			v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+4)))
-			v32 = int32(8)
-			v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+3)))
-			v35 = int32(16)
-			v38 = v30 | (v31<<(uint(v32)%32) | v34<<(uint(v35)%32))
-			v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+5)))
-			v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+4)))
-			v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+3)))
-			v47 = v39 | (v40<<(uint(v32)%32) | v43<<(uint(v35)%32))
-			if base.Ui32(v38) < base.Ui32(v47) {
-				v52 = int32(0)
+			v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+5)))
+			v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+4)))
+			v31 = int32(8)
+			v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+3)))
+			v34 = int32(16)
+			v37 = v29 | (v30<<(uint(v31)%32) | v33<<(uint(v34)%32))
+			v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+5)))
+			v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+4)))
+			v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+3)))
+			v46 = v38 | (v39<<(uint(v31)%32) | v42<<(uint(v34)%32))
+			if base.Ui32(v37) < base.Ui32(v46) {
+				v51 = v2
 			} else {
-				v52 = base.B2i32(base.Ui32(v47) < base.Ui32(v38))
+				v51 = base.B2i32(base.Ui32(v46) < base.Ui32(v37))
 			}
 		}
 	}
-	return v52
+	return v51
 }
 func F_macaddr_le(m *base.Module, l0 int32) int32 {
 	mBase := m.M

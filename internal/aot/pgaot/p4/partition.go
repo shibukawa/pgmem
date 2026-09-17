@@ -76,7 +76,7 @@ func F_get_partition_ancestors(m *base.Module, l0 int32) int32 {
 		if v19 != 0 {
 			return int32(0)
 		} else {
-			F_sequence_close(m, v12, int32(1))
+			F_relation_close(m, v12, int32(1))
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {

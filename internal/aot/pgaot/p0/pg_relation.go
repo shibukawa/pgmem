@@ -123,7 +123,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													if v46 != 0 {
 														return int32(0)
 													} else {
-														F_sequence_close(m, v22, int32(1))
+														F_relation_close(m, v22, int32(1))
 														mBase = m.M
 														v49 = m.ExcPending
 														if v49 != 0 {
@@ -134,7 +134,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 														}
 													}
 												} else {
-													F_sequence_close(m, v22, int32(1))
+													F_relation_close(m, v22, int32(1))
 													mBase = m.M
 													v49 = m.ExcPending
 													if v49 != 0 {
@@ -161,7 +161,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 												if v46 != 0 {
 													return int32(0)
 												} else {
-													F_sequence_close(m, v22, int32(1))
+													F_relation_close(m, v22, int32(1))
 													mBase = m.M
 													v49 = m.ExcPending
 													if v49 != 0 {
@@ -172,7 +172,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													}
 												}
 											} else {
-												F_sequence_close(m, v22, int32(1))
+												F_relation_close(m, v22, int32(1))
 												mBase = m.M
 												v49 = m.ExcPending
 												if v49 != 0 {
@@ -224,7 +224,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											if v46 != 0 {
 												return int32(0)
 											} else {
-												F_sequence_close(m, v22, int32(1))
+												F_relation_close(m, v22, int32(1))
 												mBase = m.M
 												v49 = m.ExcPending
 												if v49 != 0 {
@@ -235,7 +235,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 												}
 											}
 										} else {
-											F_sequence_close(m, v22, int32(1))
+											F_relation_close(m, v22, int32(1))
 											mBase = m.M
 											v49 = m.ExcPending
 											if v49 != 0 {
@@ -262,7 +262,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										if v46 != 0 {
 											return int32(0)
 										} else {
-											F_sequence_close(m, v22, int32(1))
+											F_relation_close(m, v22, int32(1))
 											mBase = m.M
 											v49 = m.ExcPending
 											if v49 != 0 {
@@ -273,7 +273,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											}
 										}
 									} else {
-										F_sequence_close(m, v22, int32(1))
+										F_relation_close(m, v22, int32(1))
 										mBase = m.M
 										v49 = m.ExcPending
 										if v49 != 0 {

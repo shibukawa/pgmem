@@ -8,168 +8,172 @@ import (
 func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v16 int32
-	_ = v16
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
 	var v17 int32
 	_ = v17
 	var v18 int32
 	_ = v18
-	var v22 int32
-	_ = v22
+	var v19 int32
+	_ = v19
 	var v23 int32
 	_ = v23
-	var v27 int32
-	_ = v27
-	var v36 int32
-	_ = v36
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
 	var v37 int32
 	_ = v37
-	var v44 int32
-	_ = v44
+	var v38 int32
+	_ = v38
 	var v45 int32
 	_ = v45
-	var v47 int32
-	_ = v47
+	var v46 int32
+	_ = v46
 	var v48 int32
 	_ = v48
-	var v52 int32
-	_ = v52
-	var v56 int32
-	_ = v56
-	var v61 int32
-	_ = v61
-	var v67 int32
-	_ = v67
-	var v69 int32
-	_ = v69
-	var v75 int32
-	_ = v75
-	var v80 int32
-	_ = v80
-	var v82 int32
-	_ = v82
-	var v88 int32
-	_ = v88
-	var v93 int32
-	_ = v93
-	var v97 int32
-	_ = v97
-	var v99 int32
-	_ = v99
-	var v105 int32
-	_ = v105
-	var v110 int32
-	_ = v110
+	var v49 int32
+	_ = v49
+	var v53 int32
+	_ = v53
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
+	var v76 int32
+	_ = v76
+	var v81 int32
+	_ = v81
+	var v83 int32
+	_ = v83
+	var v89 int32
+	_ = v89
+	var v94 int32
+	_ = v94
+	var v98 int32
+	_ = v98
+	var v100 int32
+	_ = v100
+	var v106 int32
+	_ = v106
 	var v111 int32
 	_ = v111
-	var v116 int32
-	_ = v116
-	var v120 int32
-	_ = v120
-	var v124 int32
-	_ = v124
+	var v112 int32
+	_ = v112
+	var v117 int32
+	_ = v117
+	var v121 int32
+	_ = v121
 	var v125 int32
 	_ = v125
-	var v131 int32
-	_ = v131
-	var v133 int32
-	_ = v133
-	var v137 int32
-	_ = v137
-	var v142 int32
-	_ = v142
-	var v143 int32
-	_ = v143
-	var v149 int32
-	_ = v149
+	var v126 int32
+	_ = v126
+	var v130 int32
+	_ = v130
+	var v134 int32
+	_ = v134
+	var v136 int32
+	_ = v136
+	var v140 int32
+	_ = v140
+	var v145 int32
+	_ = v145
+	var v146 int32
+	_ = v146
 	var v153 int32
 	_ = v153
+	var v156 int32
+	_ = v156
 	var v157 int32
 	_ = v157
-	var v158 int32
-	_ = v158
-	var v162 int32
-	_ = v162
-	var v164 int32
-	_ = v164
-	var v171 int32
-	_ = v171
-	var v173 int32
-	_ = v173
-	var v179 int32
-	_ = v179
-	var v184 int32
-	_ = v184
-	var v188 int32
-	_ = v188
+	var v167 int32
+	_ = v167
+	var v170 int32
+	_ = v170
+	var v174 int32
+	_ = v174
+	var v176 int32
+	_ = v176
+	var v183 int32
+	_ = v183
+	var v185 int32
+	_ = v185
 	var v191 int32
 	_ = v191
-	var v197 int32
-	_ = v197
-	var v202 int32
-	_ = v202
-	var v206 int32
-	_ = v206
+	var v196 int32
+	_ = v196
+	var v200 int32
+	_ = v200
+	var v203 int32
+	_ = v203
 	var v209 int32
 	_ = v209
-	var v215 int32
-	_ = v215
-	var v220 int32
-	_ = v220
-	var v224 int32
-	_ = v224
-	var v226 int32
-	_ = v226
+	var v214 int32
+	_ = v214
+	var v218 int32
+	_ = v218
+	var v221 int32
+	_ = v221
+	var v227 int32
+	_ = v227
 	var v232 int32
 	_ = v232
-	var v237 int32
-	_ = v237
-	v6 = m.G0
-	v8 = v6 - int32(272)
-	m.G0 = v8
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+160)) = int32(_a_F_create_tablespace_directories_0)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+164)) = l1
-	v16 = F_psprintf(m, int32(_a_F_create_tablespace_directories_1), v8+int32(160))
+	var v236 int32
+	_ = v236
+	var v238 int32
+	_ = v238
+	var v244 int32
+	_ = v244
+	var v249 int32
+	_ = v249
+	v7 = m.G0
+	v9 = v7 - int32(272)
+	m.G0 = v9
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+160)) = int32(_a_F_create_tablespace_directories_0)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+164)) = l1
+	v17 = F_psprintf(m, int32(_a_F_create_tablespace_directories_1), v9+int32(160))
 	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v18 = m.ExcPending
+	if v18 != 0 {
 		return
 	} else {
-		v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-		if v18 == int32(0) {
-			v22 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
-			v23 = F_mkdir(m, v16, v22)
+		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+		if v19 == int32(0) {
+			v23 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
+			v24 = F_mkdir(m, v17, v23)
 			mBase = m.M
-			if v23 < int32(0) {
-				v27 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
-				if v27 != int32(20) {
+			if v24 < int32(0) {
+				v28 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
+				if v28 != int32(20) {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v97 = m.ExcPending
-					if v97 != 0 {
+					v98 = m.ExcPending
+					if v98 != 0 {
 						return
 					} else {
 						F_errcode_for_file_access(m)
 						mBase = m.M
-						v99 = m.ExcPending
-						if v99 != 0 {
+						v100 = m.ExcPending
+						if v100 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v8)+96)) = v16
-							F_errmsg(m, int32(_a_F_create_tablespace_directories_2), v8+int32(96))
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+144)) = v17
+							F_errmsg(m, int32(_a_F_create_tablespace_directories_2), v9+int32(144))
 							mBase = m.M
-							v105 = m.ExcPending
-							if v105 != 0 {
+							v106 = m.ExcPending
+							if v106 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(594), int32(_a_F_create_tablespace_directories_4))
 								mBase = m.M
-								v110 = m.ExcPending
-								if v110 != 0 {
+								v111 = m.ExcPending
+								if v111 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -180,43 +184,43 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 						}
 					}
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = int32(_a_F_create_tablespace_directories_5)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = v16
-					v36 = F_psprintf(m, int32(_a_F_create_tablespace_directories_6), v8+int32(80))
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+132)) = int32(_a_F_create_tablespace_directories_5)
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+128)) = v17
+					v37 = F_psprintf(m, int32(_a_F_create_tablespace_directories_6), v9+int32(128))
 					mBase = m.M
-					v37 = m.ExcPending
-					if v37 != 0 {
+					v38 = m.ExcPending
+					if v38 != 0 {
 						return
 					} else {
-						v111 = v36
-						v116 = F___fstatat(m, int32(-100), v111, v8+int32(176), int32(0))
+						v112 = v37
+						v117 = F___fstatat(m, int32(-100), v112, v9+int32(176), int32(0))
 						mBase = m.M
-						if v116 < int32(0) {
-							v120 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
-							if v120 != int32(44) {
+						if v117 < int32(0) {
+							v121 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
+							if v121 != int32(44) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v171 = m.ExcPending
-								if v171 != 0 {
+								v183 = m.ExcPending
+								if v183 != 0 {
 									return
 								} else {
 									F_errcode_for_file_access(m)
 									mBase = m.M
-									v173 = m.ExcPending
-									if v173 != 0 {
+									v185 = m.ExcPending
+									if v185 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v111
-										F_errmsg(m, int32(_a_F_create_tablespace_directories_7), v8+int32(32))
+										*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v112
+										F_errmsg(m, int32(_a_F_create_tablespace_directories_7), v9+int32(32))
 										mBase = m.M
-										v179 = m.ExcPending
-										if v179 != 0 {
+										v191 = m.ExcPending
+										if v191 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(634), int32(_a_F_create_tablespace_directories_4))
 											mBase = m.M
-											v184 = m.ExcPending
-											if v184 != 0 {
+											v196 = m.ExcPending
+											if v196 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -227,100 +231,46 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									}
 								}
 							} else {
-								v124 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
-								v125 = F_mkdir(m, v111, v124)
+								v125 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
+								v126 = F_mkdir(m, v112, v125)
 								mBase = m.M
-								if int32(0) <= v125 {
-									if v18 != 0 {
-										v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-										if v153 == int32(1) {
-											F_remove_tablespace_symlink(m, v16)
-											mBase = m.M
-											v157 = m.ExcPending
-											if v157 != 0 {
-												return
-											} else {
-												v158 = F_symlink(m, l0, v16)
-												mBase = m.M
-												if v158 < int32(0) {
-													F_errstart_cold(m, int32(21), int32(0))
-													mBase = m.M
-													v224 = m.ExcPending
-													if v224 != 0 {
-														return
-													} else {
-														F_errcode_for_file_access(m)
-														mBase = m.M
-														v226 = m.ExcPending
-														if v226 != 0 {
-															return
-														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-															F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
-															mBase = m.M
-															v232 = m.ExcPending
-															if v232 != 0 {
-																return
-															} else {
-																F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
-																mBase = m.M
-																v237 = m.ExcPending
-																if v237 != 0 {
-																	return
-																} else {
-																	base.Wasm_trap_unreachable()
-																	for {
-																	}
-																}
-															}
-														}
-													}
-												} else {
-													F_pfree(m, v16)
-													mBase = m.M
-													v162 = m.ExcPending
-													if v162 != 0 {
-														return
-													} else {
-														F_pfree(m, v111)
-														mBase = m.M
-														v164 = m.ExcPending
-														if v164 != 0 {
-															return
-														} else {
-															m.G0 = v8 + int32(272)
-															return
-														}
-													}
-												}
-											}
+								if int32(0) <= v126 {
+									v130 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
+									v156 = v130
+									v157 = int32(0)
+									if base.B2i32(v19 == v157)|base.B2i32(v156&int32(1) == v157) == v157 {
+										F_remove_tablespace_symlink(m, v17)
+										mBase = m.M
+										v167 = m.ExcPending
+										if v167 != 0 {
+											return
 										} else {
-											v158 = F_symlink(m, l0, v16)
+											v170 = F_symlink(m, l0, v17)
 											mBase = m.M
-											if v158 < int32(0) {
+											if v170 < int32(0) {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v224 = m.ExcPending
-												if v224 != 0 {
+												v236 = m.ExcPending
+												if v236 != 0 {
 													return
 												} else {
 													F_errcode_for_file_access(m)
 													mBase = m.M
-													v226 = m.ExcPending
-													if v226 != 0 {
+													v238 = m.ExcPending
+													if v238 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
 														mBase = m.M
-														v232 = m.ExcPending
-														if v232 != 0 {
+														v244 = m.ExcPending
+														if v244 != 0 {
 															return
 														} else {
 															F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
 															mBase = m.M
-															v237 = m.ExcPending
-															if v237 != 0 {
+															v249 = m.ExcPending
+															if v249 != 0 {
 																return
 															} else {
 																base.Wasm_trap_unreachable()
@@ -331,66 +281,122 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 													}
 												}
 											} else {
-												F_pfree(m, v16)
+												F_pfree(m, v17)
 												mBase = m.M
-												v162 = m.ExcPending
-												if v162 != 0 {
+												v174 = m.ExcPending
+												if v174 != 0 {
 													return
 												} else {
-													F_pfree(m, v111)
+													F_pfree(m, v112)
 													mBase = m.M
-													v164 = m.ExcPending
-													if v164 != 0 {
+													v176 = m.ExcPending
+													if v176 != 0 {
 														return
 													} else {
-														m.G0 = v8 + int32(272)
+														m.G0 = v9 + int32(272)
 														return
 													}
 												}
 											}
 										}
 									} else {
-										F_pfree(m, v16)
-										mBase = m.M
-										v162 = m.ExcPending
-										if v162 != 0 {
-											return
-										} else {
-											F_pfree(m, v111)
+										if v19 == int32(0) {
+											F_pfree(m, v17)
 											mBase = m.M
-											v164 = m.ExcPending
-											if v164 != 0 {
+											v174 = m.ExcPending
+											if v174 != 0 {
 												return
 											} else {
-												m.G0 = v8 + int32(272)
-												return
+												F_pfree(m, v112)
+												mBase = m.M
+												v176 = m.ExcPending
+												if v176 != 0 {
+													return
+												} else {
+													m.G0 = v9 + int32(272)
+													return
+												}
+											}
+										} else {
+											v170 = F_symlink(m, l0, v17)
+											mBase = m.M
+											if v170 < int32(0) {
+												F_errstart_cold(m, int32(21), int32(0))
+												mBase = m.M
+												v236 = m.ExcPending
+												if v236 != 0 {
+													return
+												} else {
+													F_errcode_for_file_access(m)
+													mBase = m.M
+													v238 = m.ExcPending
+													if v238 != 0 {
+														return
+													} else {
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
+														mBase = m.M
+														v244 = m.ExcPending
+														if v244 != 0 {
+															return
+														} else {
+															F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
+															mBase = m.M
+															v249 = m.ExcPending
+															if v249 != 0 {
+																return
+															} else {
+																base.Wasm_trap_unreachable()
+																for {
+																}
+															}
+														}
+													}
+												}
+											} else {
+												F_pfree(m, v17)
+												mBase = m.M
+												v174 = m.ExcPending
+												if v174 != 0 {
+													return
+												} else {
+													F_pfree(m, v112)
+													mBase = m.M
+													v176 = m.ExcPending
+													if v176 != 0 {
+														return
+													} else {
+														m.G0 = v9 + int32(272)
+														return
+													}
+												}
 											}
 										}
 									}
 								} else {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v131 = m.ExcPending
-									if v131 != 0 {
+									v134 = m.ExcPending
+									if v134 != 0 {
 										return
 									} else {
 										F_errcode_for_file_access(m)
 										mBase = m.M
-										v133 = m.ExcPending
-										if v133 != 0 {
+										v136 = m.ExcPending
+										if v136 != 0 {
 											return
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v8))) = v111
-											F_errmsg(m, int32(_a_F_create_tablespace_directories_2), v8)
+											*(*int32)(unsafe.Add(mBase, uint32(v9))) = v112
+											F_errmsg(m, int32(_a_F_create_tablespace_directories_2), v9)
 											mBase = m.M
-											v137 = m.ExcPending
-											if v137 != 0 {
+											v140 = m.ExcPending
+											if v140 != 0 {
 												return
 											} else {
 												F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(639), int32(_a_F_create_tablespace_directories_4))
 												mBase = m.M
-												v142 = m.ExcPending
-												if v142 != 0 {
+												v145 = m.ExcPending
+												if v145 != 0 {
 													return
 												} else {
 													base.Wasm_trap_unreachable()
@@ -403,31 +409,31 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v143 = *(*int32)(unsafe.Add(mBase, uint32(v8)+180))
-							if v143&int32(_a_F_create_tablespace_directories_9) != int32(_a_F_create_tablespace_directories_10) {
+							v146 = *(*int32)(unsafe.Add(mBase, uint32(v9)+180))
+							if v146&int32(_a_F_create_tablespace_directories_9) != int32(_a_F_create_tablespace_directories_10) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v188 = m.ExcPending
-								if v188 != 0 {
+								v200 = m.ExcPending
+								if v200 != 0 {
 									return
 								} else {
 									F_errcode(m, int32(151027844))
 									mBase = m.M
-									v191 = m.ExcPending
-									if v191 != 0 {
+									v203 = m.ExcPending
+									if v203 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = v111
-										F_errmsg(m, int32(_a_F_create_tablespace_directories_11), v8-int32(-64))
+										*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v112
+										F_errmsg(m, int32(_a_F_create_tablespace_directories_11), v9-int32(-64))
 										mBase = m.M
-										v197 = m.ExcPending
-										if v197 != 0 {
+										v209 = m.ExcPending
+										if v209 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(645), int32(_a_F_create_tablespace_directories_4))
 											mBase = m.M
-											v202 = m.ExcPending
-											if v202 != 0 {
+											v214 = m.ExcPending
+											if v214 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -438,31 +444,31 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									}
 								}
 							} else {
-								v149 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-								if v149 == int32(0) {
+								v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
+								if v153 == int32(0) {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v206 = m.ExcPending
-									if v206 != 0 {
+									v218 = m.ExcPending
+									if v218 != 0 {
 										return
 									} else {
 										F_errcode(m, int32(100663621))
 										mBase = m.M
-										v209 = m.ExcPending
-										if v209 != 0 {
+										v221 = m.ExcPending
+										if v221 != 0 {
 											return
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v111
-											F_errmsg(m, int32(_a_F_create_tablespace_directories_12), v8+int32(48))
+											*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = v112
+											F_errmsg(m, int32(_a_F_create_tablespace_directories_12), v9+int32(48))
 											mBase = m.M
-											v215 = m.ExcPending
-											if v215 != 0 {
+											v227 = m.ExcPending
+											if v227 != 0 {
 												return
 											} else {
 												F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(650), int32(_a_F_create_tablespace_directories_4))
 												mBase = m.M
-												v220 = m.ExcPending
-												if v220 != 0 {
+												v232 = m.ExcPending
+												if v232 != 0 {
 													return
 												} else {
 													base.Wasm_trap_unreachable()
@@ -473,96 +479,41 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 										}
 									}
 								} else {
-									if v18 != 0 {
-										v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-										if v153 == int32(1) {
-											F_remove_tablespace_symlink(m, v16)
-											mBase = m.M
-											v157 = m.ExcPending
-											if v157 != 0 {
-												return
-											} else {
-												v158 = F_symlink(m, l0, v16)
-												mBase = m.M
-												if v158 < int32(0) {
-													F_errstart_cold(m, int32(21), int32(0))
-													mBase = m.M
-													v224 = m.ExcPending
-													if v224 != 0 {
-														return
-													} else {
-														F_errcode_for_file_access(m)
-														mBase = m.M
-														v226 = m.ExcPending
-														if v226 != 0 {
-															return
-														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-															F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
-															mBase = m.M
-															v232 = m.ExcPending
-															if v232 != 0 {
-																return
-															} else {
-																F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
-																mBase = m.M
-																v237 = m.ExcPending
-																if v237 != 0 {
-																	return
-																} else {
-																	base.Wasm_trap_unreachable()
-																	for {
-																	}
-																}
-															}
-														}
-													}
-												} else {
-													F_pfree(m, v16)
-													mBase = m.M
-													v162 = m.ExcPending
-													if v162 != 0 {
-														return
-													} else {
-														F_pfree(m, v111)
-														mBase = m.M
-														v164 = m.ExcPending
-														if v164 != 0 {
-															return
-														} else {
-															m.G0 = v8 + int32(272)
-															return
-														}
-													}
-												}
-											}
+									v156 = int32(1)
+									v157 = int32(0)
+									if base.B2i32(v19 == v157)|base.B2i32(v156&int32(1) == v157) == v157 {
+										F_remove_tablespace_symlink(m, v17)
+										mBase = m.M
+										v167 = m.ExcPending
+										if v167 != 0 {
+											return
 										} else {
-											v158 = F_symlink(m, l0, v16)
+											v170 = F_symlink(m, l0, v17)
 											mBase = m.M
-											if v158 < int32(0) {
+											if v170 < int32(0) {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v224 = m.ExcPending
-												if v224 != 0 {
+												v236 = m.ExcPending
+												if v236 != 0 {
 													return
 												} else {
 													F_errcode_for_file_access(m)
 													mBase = m.M
-													v226 = m.ExcPending
-													if v226 != 0 {
+													v238 = m.ExcPending
+													if v238 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
 														mBase = m.M
-														v232 = m.ExcPending
-														if v232 != 0 {
+														v244 = m.ExcPending
+														if v244 != 0 {
 															return
 														} else {
 															F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
 															mBase = m.M
-															v237 = m.ExcPending
-															if v237 != 0 {
+															v249 = m.ExcPending
+															if v249 != 0 {
 																return
 															} else {
 																base.Wasm_trap_unreachable()
@@ -573,39 +524,95 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 													}
 												}
 											} else {
-												F_pfree(m, v16)
+												F_pfree(m, v17)
 												mBase = m.M
-												v162 = m.ExcPending
-												if v162 != 0 {
+												v174 = m.ExcPending
+												if v174 != 0 {
 													return
 												} else {
-													F_pfree(m, v111)
+													F_pfree(m, v112)
 													mBase = m.M
-													v164 = m.ExcPending
-													if v164 != 0 {
+													v176 = m.ExcPending
+													if v176 != 0 {
 														return
 													} else {
-														m.G0 = v8 + int32(272)
+														m.G0 = v9 + int32(272)
 														return
 													}
 												}
 											}
 										}
 									} else {
-										F_pfree(m, v16)
-										mBase = m.M
-										v162 = m.ExcPending
-										if v162 != 0 {
-											return
-										} else {
-											F_pfree(m, v111)
+										if v19 == int32(0) {
+											F_pfree(m, v17)
 											mBase = m.M
-											v164 = m.ExcPending
-											if v164 != 0 {
+											v174 = m.ExcPending
+											if v174 != 0 {
 												return
 											} else {
-												m.G0 = v8 + int32(272)
-												return
+												F_pfree(m, v112)
+												mBase = m.M
+												v176 = m.ExcPending
+												if v176 != 0 {
+													return
+												} else {
+													m.G0 = v9 + int32(272)
+													return
+												}
+											}
+										} else {
+											v170 = F_symlink(m, l0, v17)
+											mBase = m.M
+											if v170 < int32(0) {
+												F_errstart_cold(m, int32(21), int32(0))
+												mBase = m.M
+												v236 = m.ExcPending
+												if v236 != 0 {
+													return
+												} else {
+													F_errcode_for_file_access(m)
+													mBase = m.M
+													v238 = m.ExcPending
+													if v238 != 0 {
+														return
+													} else {
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
+														mBase = m.M
+														v244 = m.ExcPending
+														if v244 != 0 {
+															return
+														} else {
+															F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
+															mBase = m.M
+															v249 = m.ExcPending
+															if v249 != 0 {
+																return
+															} else {
+																base.Wasm_trap_unreachable()
+																for {
+																}
+															}
+														}
+													}
+												}
+											} else {
+												F_pfree(m, v17)
+												mBase = m.M
+												v174 = m.ExcPending
+												if v174 != 0 {
+													return
+												} else {
+													F_pfree(m, v112)
+													mBase = m.M
+													v176 = m.ExcPending
+													if v176 != 0 {
+														return
+													} else {
+														m.G0 = v9 + int32(272)
+														return
+													}
+												}
 											}
 										}
 									}
@@ -615,43 +622,43 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 					}
 				}
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = int32(_a_F_create_tablespace_directories_5)
-				*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = v16
-				v36 = F_psprintf(m, int32(_a_F_create_tablespace_directories_6), v8+int32(80))
+				*(*int32)(unsafe.Add(mBase, uint32(v9)+132)) = int32(_a_F_create_tablespace_directories_5)
+				*(*int32)(unsafe.Add(mBase, uint32(v9)+128)) = v17
+				v37 = F_psprintf(m, int32(_a_F_create_tablespace_directories_6), v9+int32(128))
 				mBase = m.M
-				v37 = m.ExcPending
-				if v37 != 0 {
+				v38 = m.ExcPending
+				if v38 != 0 {
 					return
 				} else {
-					v111 = v36
-					v116 = F___fstatat(m, int32(-100), v111, v8+int32(176), int32(0))
+					v112 = v37
+					v117 = F___fstatat(m, int32(-100), v112, v9+int32(176), int32(0))
 					mBase = m.M
-					if v116 < int32(0) {
-						v120 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
-						if v120 != int32(44) {
+					if v117 < int32(0) {
+						v121 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
+						if v121 != int32(44) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v171 = m.ExcPending
-							if v171 != 0 {
+							v183 = m.ExcPending
+							if v183 != 0 {
 								return
 							} else {
 								F_errcode_for_file_access(m)
 								mBase = m.M
-								v173 = m.ExcPending
-								if v173 != 0 {
+								v185 = m.ExcPending
+								if v185 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v111
-									F_errmsg(m, int32(_a_F_create_tablespace_directories_7), v8+int32(32))
+									*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v112
+									F_errmsg(m, int32(_a_F_create_tablespace_directories_7), v9+int32(32))
 									mBase = m.M
-									v179 = m.ExcPending
-									if v179 != 0 {
+									v191 = m.ExcPending
+									if v191 != 0 {
 										return
 									} else {
 										F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(634), int32(_a_F_create_tablespace_directories_4))
 										mBase = m.M
-										v184 = m.ExcPending
-										if v184 != 0 {
+										v196 = m.ExcPending
+										if v196 != 0 {
 											return
 										} else {
 											base.Wasm_trap_unreachable()
@@ -662,100 +669,46 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v124 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
-							v125 = F_mkdir(m, v111, v124)
+							v125 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
+							v126 = F_mkdir(m, v112, v125)
 							mBase = m.M
-							if int32(0) <= v125 {
-								if v18 != 0 {
-									v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-									if v153 == int32(1) {
-										F_remove_tablespace_symlink(m, v16)
-										mBase = m.M
-										v157 = m.ExcPending
-										if v157 != 0 {
-											return
-										} else {
-											v158 = F_symlink(m, l0, v16)
-											mBase = m.M
-											if v158 < int32(0) {
-												F_errstart_cold(m, int32(21), int32(0))
-												mBase = m.M
-												v224 = m.ExcPending
-												if v224 != 0 {
-													return
-												} else {
-													F_errcode_for_file_access(m)
-													mBase = m.M
-													v226 = m.ExcPending
-													if v226 != 0 {
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
-														mBase = m.M
-														v232 = m.ExcPending
-														if v232 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
-															mBase = m.M
-															v237 = m.ExcPending
-															if v237 != 0 {
-																return
-															} else {
-																base.Wasm_trap_unreachable()
-																for {
-																}
-															}
-														}
-													}
-												}
-											} else {
-												F_pfree(m, v16)
-												mBase = m.M
-												v162 = m.ExcPending
-												if v162 != 0 {
-													return
-												} else {
-													F_pfree(m, v111)
-													mBase = m.M
-													v164 = m.ExcPending
-													if v164 != 0 {
-														return
-													} else {
-														m.G0 = v8 + int32(272)
-														return
-													}
-												}
-											}
-										}
+							if int32(0) <= v126 {
+								v130 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
+								v156 = v130
+								v157 = int32(0)
+								if base.B2i32(v19 == v157)|base.B2i32(v156&int32(1) == v157) == v157 {
+									F_remove_tablespace_symlink(m, v17)
+									mBase = m.M
+									v167 = m.ExcPending
+									if v167 != 0 {
+										return
 									} else {
-										v158 = F_symlink(m, l0, v16)
+										v170 = F_symlink(m, l0, v17)
 										mBase = m.M
-										if v158 < int32(0) {
+										if v170 < int32(0) {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v224 = m.ExcPending
-											if v224 != 0 {
+											v236 = m.ExcPending
+											if v236 != 0 {
 												return
 											} else {
 												F_errcode_for_file_access(m)
 												mBase = m.M
-												v226 = m.ExcPending
-												if v226 != 0 {
+												v238 = m.ExcPending
+												if v238 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
 													mBase = m.M
-													v232 = m.ExcPending
-													if v232 != 0 {
+													v244 = m.ExcPending
+													if v244 != 0 {
 														return
 													} else {
 														F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
 														mBase = m.M
-														v237 = m.ExcPending
-														if v237 != 0 {
+														v249 = m.ExcPending
+														if v249 != 0 {
 															return
 														} else {
 															base.Wasm_trap_unreachable()
@@ -766,66 +719,122 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 												}
 											}
 										} else {
-											F_pfree(m, v16)
+											F_pfree(m, v17)
 											mBase = m.M
-											v162 = m.ExcPending
-											if v162 != 0 {
+											v174 = m.ExcPending
+											if v174 != 0 {
 												return
 											} else {
-												F_pfree(m, v111)
+												F_pfree(m, v112)
 												mBase = m.M
-												v164 = m.ExcPending
-												if v164 != 0 {
+												v176 = m.ExcPending
+												if v176 != 0 {
 													return
 												} else {
-													m.G0 = v8 + int32(272)
+													m.G0 = v9 + int32(272)
 													return
 												}
 											}
 										}
 									}
 								} else {
-									F_pfree(m, v16)
-									mBase = m.M
-									v162 = m.ExcPending
-									if v162 != 0 {
-										return
-									} else {
-										F_pfree(m, v111)
+									if v19 == int32(0) {
+										F_pfree(m, v17)
 										mBase = m.M
-										v164 = m.ExcPending
-										if v164 != 0 {
+										v174 = m.ExcPending
+										if v174 != 0 {
 											return
 										} else {
-											m.G0 = v8 + int32(272)
-											return
+											F_pfree(m, v112)
+											mBase = m.M
+											v176 = m.ExcPending
+											if v176 != 0 {
+												return
+											} else {
+												m.G0 = v9 + int32(272)
+												return
+											}
+										}
+									} else {
+										v170 = F_symlink(m, l0, v17)
+										mBase = m.M
+										if v170 < int32(0) {
+											F_errstart_cold(m, int32(21), int32(0))
+											mBase = m.M
+											v236 = m.ExcPending
+											if v236 != 0 {
+												return
+											} else {
+												F_errcode_for_file_access(m)
+												mBase = m.M
+												v238 = m.ExcPending
+												if v238 != 0 {
+													return
+												} else {
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
+													mBase = m.M
+													v244 = m.ExcPending
+													if v244 != 0 {
+														return
+													} else {
+														F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
+														mBase = m.M
+														v249 = m.ExcPending
+														if v249 != 0 {
+															return
+														} else {
+															base.Wasm_trap_unreachable()
+															for {
+															}
+														}
+													}
+												}
+											}
+										} else {
+											F_pfree(m, v17)
+											mBase = m.M
+											v174 = m.ExcPending
+											if v174 != 0 {
+												return
+											} else {
+												F_pfree(m, v112)
+												mBase = m.M
+												v176 = m.ExcPending
+												if v176 != 0 {
+													return
+												} else {
+													m.G0 = v9 + int32(272)
+													return
+												}
+											}
 										}
 									}
 								}
 							} else {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v131 = m.ExcPending
-								if v131 != 0 {
+								v134 = m.ExcPending
+								if v134 != 0 {
 									return
 								} else {
 									F_errcode_for_file_access(m)
 									mBase = m.M
-									v133 = m.ExcPending
-									if v133 != 0 {
+									v136 = m.ExcPending
+									if v136 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v111
-										F_errmsg(m, int32(_a_F_create_tablespace_directories_2), v8)
+										*(*int32)(unsafe.Add(mBase, uint32(v9))) = v112
+										F_errmsg(m, int32(_a_F_create_tablespace_directories_2), v9)
 										mBase = m.M
-										v137 = m.ExcPending
-										if v137 != 0 {
+										v140 = m.ExcPending
+										if v140 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(639), int32(_a_F_create_tablespace_directories_4))
 											mBase = m.M
-											v142 = m.ExcPending
-											if v142 != 0 {
+											v145 = m.ExcPending
+											if v145 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -838,31 +847,31 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 							}
 						}
 					} else {
-						v143 = *(*int32)(unsafe.Add(mBase, uint32(v8)+180))
-						if v143&int32(_a_F_create_tablespace_directories_9) != int32(_a_F_create_tablespace_directories_10) {
+						v146 = *(*int32)(unsafe.Add(mBase, uint32(v9)+180))
+						if v146&int32(_a_F_create_tablespace_directories_9) != int32(_a_F_create_tablespace_directories_10) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v188 = m.ExcPending
-							if v188 != 0 {
+							v200 = m.ExcPending
+							if v200 != 0 {
 								return
 							} else {
 								F_errcode(m, int32(151027844))
 								mBase = m.M
-								v191 = m.ExcPending
-								if v191 != 0 {
+								v203 = m.ExcPending
+								if v203 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = v111
-									F_errmsg(m, int32(_a_F_create_tablespace_directories_11), v8-int32(-64))
+									*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v112
+									F_errmsg(m, int32(_a_F_create_tablespace_directories_11), v9-int32(-64))
 									mBase = m.M
-									v197 = m.ExcPending
-									if v197 != 0 {
+									v209 = m.ExcPending
+									if v209 != 0 {
 										return
 									} else {
 										F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(645), int32(_a_F_create_tablespace_directories_4))
 										mBase = m.M
-										v202 = m.ExcPending
-										if v202 != 0 {
+										v214 = m.ExcPending
+										if v214 != 0 {
 											return
 										} else {
 											base.Wasm_trap_unreachable()
@@ -873,31 +882,31 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v149 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-							if v149 == int32(0) {
+							v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
+							if v153 == int32(0) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v206 = m.ExcPending
-								if v206 != 0 {
+								v218 = m.ExcPending
+								if v218 != 0 {
 									return
 								} else {
 									F_errcode(m, int32(100663621))
 									mBase = m.M
-									v209 = m.ExcPending
-									if v209 != 0 {
+									v221 = m.ExcPending
+									if v221 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v111
-										F_errmsg(m, int32(_a_F_create_tablespace_directories_12), v8+int32(48))
+										*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = v112
+										F_errmsg(m, int32(_a_F_create_tablespace_directories_12), v9+int32(48))
 										mBase = m.M
-										v215 = m.ExcPending
-										if v215 != 0 {
+										v227 = m.ExcPending
+										if v227 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(650), int32(_a_F_create_tablespace_directories_4))
 											mBase = m.M
-											v220 = m.ExcPending
-											if v220 != 0 {
+											v232 = m.ExcPending
+											if v232 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -908,96 +917,41 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									}
 								}
 							} else {
-								if v18 != 0 {
-									v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-									if v153 == int32(1) {
-										F_remove_tablespace_symlink(m, v16)
-										mBase = m.M
-										v157 = m.ExcPending
-										if v157 != 0 {
-											return
-										} else {
-											v158 = F_symlink(m, l0, v16)
-											mBase = m.M
-											if v158 < int32(0) {
-												F_errstart_cold(m, int32(21), int32(0))
-												mBase = m.M
-												v224 = m.ExcPending
-												if v224 != 0 {
-													return
-												} else {
-													F_errcode_for_file_access(m)
-													mBase = m.M
-													v226 = m.ExcPending
-													if v226 != 0 {
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
-														mBase = m.M
-														v232 = m.ExcPending
-														if v232 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
-															mBase = m.M
-															v237 = m.ExcPending
-															if v237 != 0 {
-																return
-															} else {
-																base.Wasm_trap_unreachable()
-																for {
-																}
-															}
-														}
-													}
-												}
-											} else {
-												F_pfree(m, v16)
-												mBase = m.M
-												v162 = m.ExcPending
-												if v162 != 0 {
-													return
-												} else {
-													F_pfree(m, v111)
-													mBase = m.M
-													v164 = m.ExcPending
-													if v164 != 0 {
-														return
-													} else {
-														m.G0 = v8 + int32(272)
-														return
-													}
-												}
-											}
-										}
+								v156 = int32(1)
+								v157 = int32(0)
+								if base.B2i32(v19 == v157)|base.B2i32(v156&int32(1) == v157) == v157 {
+									F_remove_tablespace_symlink(m, v17)
+									mBase = m.M
+									v167 = m.ExcPending
+									if v167 != 0 {
+										return
 									} else {
-										v158 = F_symlink(m, l0, v16)
+										v170 = F_symlink(m, l0, v17)
 										mBase = m.M
-										if v158 < int32(0) {
+										if v170 < int32(0) {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v224 = m.ExcPending
-											if v224 != 0 {
+											v236 = m.ExcPending
+											if v236 != 0 {
 												return
 											} else {
 												F_errcode_for_file_access(m)
 												mBase = m.M
-												v226 = m.ExcPending
-												if v226 != 0 {
+												v238 = m.ExcPending
+												if v238 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
 													mBase = m.M
-													v232 = m.ExcPending
-													if v232 != 0 {
+													v244 = m.ExcPending
+													if v244 != 0 {
 														return
 													} else {
 														F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
 														mBase = m.M
-														v237 = m.ExcPending
-														if v237 != 0 {
+														v249 = m.ExcPending
+														if v249 != 0 {
 															return
 														} else {
 															base.Wasm_trap_unreachable()
@@ -1008,39 +962,95 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 												}
 											}
 										} else {
-											F_pfree(m, v16)
+											F_pfree(m, v17)
 											mBase = m.M
-											v162 = m.ExcPending
-											if v162 != 0 {
+											v174 = m.ExcPending
+											if v174 != 0 {
 												return
 											} else {
-												F_pfree(m, v111)
+												F_pfree(m, v112)
 												mBase = m.M
-												v164 = m.ExcPending
-												if v164 != 0 {
+												v176 = m.ExcPending
+												if v176 != 0 {
 													return
 												} else {
-													m.G0 = v8 + int32(272)
+													m.G0 = v9 + int32(272)
 													return
 												}
 											}
 										}
 									}
 								} else {
-									F_pfree(m, v16)
-									mBase = m.M
-									v162 = m.ExcPending
-									if v162 != 0 {
-										return
-									} else {
-										F_pfree(m, v111)
+									if v19 == int32(0) {
+										F_pfree(m, v17)
 										mBase = m.M
-										v164 = m.ExcPending
-										if v164 != 0 {
+										v174 = m.ExcPending
+										if v174 != 0 {
 											return
 										} else {
-											m.G0 = v8 + int32(272)
-											return
+											F_pfree(m, v112)
+											mBase = m.M
+											v176 = m.ExcPending
+											if v176 != 0 {
+												return
+											} else {
+												m.G0 = v9 + int32(272)
+												return
+											}
+										}
+									} else {
+										v170 = F_symlink(m, l0, v17)
+										mBase = m.M
+										if v170 < int32(0) {
+											F_errstart_cold(m, int32(21), int32(0))
+											mBase = m.M
+											v236 = m.ExcPending
+											if v236 != 0 {
+												return
+											} else {
+												F_errcode_for_file_access(m)
+												mBase = m.M
+												v238 = m.ExcPending
+												if v238 != 0 {
+													return
+												} else {
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
+													mBase = m.M
+													v244 = m.ExcPending
+													if v244 != 0 {
+														return
+													} else {
+														F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
+														mBase = m.M
+														v249 = m.ExcPending
+														if v249 != 0 {
+															return
+														} else {
+															base.Wasm_trap_unreachable()
+															for {
+															}
+														}
+													}
+												}
+											}
+										} else {
+											F_pfree(m, v17)
+											mBase = m.M
+											v174 = m.ExcPending
+											if v174 != 0 {
+												return
+											} else {
+												F_pfree(m, v112)
+												mBase = m.M
+												v176 = m.ExcPending
+												if v176 != 0 {
+													return
+												} else {
+													m.G0 = v9 + int32(272)
+													return
+												}
+											}
 										}
 									}
 								}
@@ -1050,47 +1060,47 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 				}
 			}
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v8)+148)) = int32(_a_F_create_tablespace_directories_5)
-			*(*int32)(unsafe.Add(mBase, uint32(v8)+144)) = l0
-			v44 = F_psprintf(m, int32(_a_F_create_tablespace_directories_6), v8+int32(144))
+			*(*int32)(unsafe.Add(mBase, uint32(v9)+116)) = int32(_a_F_create_tablespace_directories_5)
+			*(*int32)(unsafe.Add(mBase, uint32(v9)+112)) = l0
+			v45 = F_psprintf(m, int32(_a_F_create_tablespace_directories_6), v9+int32(112))
 			mBase = m.M
-			v45 = m.ExcPending
-			if v45 != 0 {
+			v46 = m.ExcPending
+			if v46 != 0 {
 				return
 			} else {
-				v47 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
-				v48 = F_chmod(m, l0, v47)
+				v48 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
+				v49 = F_chmod(m, l0, v48)
 				mBase = m.M
-				if v48 == int32(0) {
-					v111 = v44
-					v116 = F___fstatat(m, int32(-100), v111, v8+int32(176), int32(0))
+				if v49 == int32(0) {
+					v112 = v45
+					v117 = F___fstatat(m, int32(-100), v112, v9+int32(176), int32(0))
 					mBase = m.M
-					if v116 < int32(0) {
-						v120 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
-						if v120 != int32(44) {
+					if v117 < int32(0) {
+						v121 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
+						if v121 != int32(44) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v171 = m.ExcPending
-							if v171 != 0 {
+							v183 = m.ExcPending
+							if v183 != 0 {
 								return
 							} else {
 								F_errcode_for_file_access(m)
 								mBase = m.M
-								v173 = m.ExcPending
-								if v173 != 0 {
+								v185 = m.ExcPending
+								if v185 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v111
-									F_errmsg(m, int32(_a_F_create_tablespace_directories_7), v8+int32(32))
+									*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v112
+									F_errmsg(m, int32(_a_F_create_tablespace_directories_7), v9+int32(32))
 									mBase = m.M
-									v179 = m.ExcPending
-									if v179 != 0 {
+									v191 = m.ExcPending
+									if v191 != 0 {
 										return
 									} else {
 										F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(634), int32(_a_F_create_tablespace_directories_4))
 										mBase = m.M
-										v184 = m.ExcPending
-										if v184 != 0 {
+										v196 = m.ExcPending
+										if v196 != 0 {
 											return
 										} else {
 											base.Wasm_trap_unreachable()
@@ -1101,100 +1111,46 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v124 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
-							v125 = F_mkdir(m, v111, v124)
+							v125 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[0]))
+							v126 = F_mkdir(m, v112, v125)
 							mBase = m.M
-							if int32(0) <= v125 {
-								if v18 != 0 {
-									v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-									if v153 == int32(1) {
-										F_remove_tablespace_symlink(m, v16)
-										mBase = m.M
-										v157 = m.ExcPending
-										if v157 != 0 {
-											return
-										} else {
-											v158 = F_symlink(m, l0, v16)
-											mBase = m.M
-											if v158 < int32(0) {
-												F_errstart_cold(m, int32(21), int32(0))
-												mBase = m.M
-												v224 = m.ExcPending
-												if v224 != 0 {
-													return
-												} else {
-													F_errcode_for_file_access(m)
-													mBase = m.M
-													v226 = m.ExcPending
-													if v226 != 0 {
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
-														mBase = m.M
-														v232 = m.ExcPending
-														if v232 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
-															mBase = m.M
-															v237 = m.ExcPending
-															if v237 != 0 {
-																return
-															} else {
-																base.Wasm_trap_unreachable()
-																for {
-																}
-															}
-														}
-													}
-												}
-											} else {
-												F_pfree(m, v16)
-												mBase = m.M
-												v162 = m.ExcPending
-												if v162 != 0 {
-													return
-												} else {
-													F_pfree(m, v111)
-													mBase = m.M
-													v164 = m.ExcPending
-													if v164 != 0 {
-														return
-													} else {
-														m.G0 = v8 + int32(272)
-														return
-													}
-												}
-											}
-										}
+							if int32(0) <= v126 {
+								v130 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
+								v156 = v130
+								v157 = int32(0)
+								if base.B2i32(v19 == v157)|base.B2i32(v156&int32(1) == v157) == v157 {
+									F_remove_tablespace_symlink(m, v17)
+									mBase = m.M
+									v167 = m.ExcPending
+									if v167 != 0 {
+										return
 									} else {
-										v158 = F_symlink(m, l0, v16)
+										v170 = F_symlink(m, l0, v17)
 										mBase = m.M
-										if v158 < int32(0) {
+										if v170 < int32(0) {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v224 = m.ExcPending
-											if v224 != 0 {
+											v236 = m.ExcPending
+											if v236 != 0 {
 												return
 											} else {
 												F_errcode_for_file_access(m)
 												mBase = m.M
-												v226 = m.ExcPending
-												if v226 != 0 {
+												v238 = m.ExcPending
+												if v238 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
 													mBase = m.M
-													v232 = m.ExcPending
-													if v232 != 0 {
+													v244 = m.ExcPending
+													if v244 != 0 {
 														return
 													} else {
 														F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
 														mBase = m.M
-														v237 = m.ExcPending
-														if v237 != 0 {
+														v249 = m.ExcPending
+														if v249 != 0 {
 															return
 														} else {
 															base.Wasm_trap_unreachable()
@@ -1205,66 +1161,122 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 												}
 											}
 										} else {
-											F_pfree(m, v16)
+											F_pfree(m, v17)
 											mBase = m.M
-											v162 = m.ExcPending
-											if v162 != 0 {
+											v174 = m.ExcPending
+											if v174 != 0 {
 												return
 											} else {
-												F_pfree(m, v111)
+												F_pfree(m, v112)
 												mBase = m.M
-												v164 = m.ExcPending
-												if v164 != 0 {
+												v176 = m.ExcPending
+												if v176 != 0 {
 													return
 												} else {
-													m.G0 = v8 + int32(272)
+													m.G0 = v9 + int32(272)
 													return
 												}
 											}
 										}
 									}
 								} else {
-									F_pfree(m, v16)
-									mBase = m.M
-									v162 = m.ExcPending
-									if v162 != 0 {
-										return
-									} else {
-										F_pfree(m, v111)
+									if v19 == int32(0) {
+										F_pfree(m, v17)
 										mBase = m.M
-										v164 = m.ExcPending
-										if v164 != 0 {
+										v174 = m.ExcPending
+										if v174 != 0 {
 											return
 										} else {
-											m.G0 = v8 + int32(272)
-											return
+											F_pfree(m, v112)
+											mBase = m.M
+											v176 = m.ExcPending
+											if v176 != 0 {
+												return
+											} else {
+												m.G0 = v9 + int32(272)
+												return
+											}
+										}
+									} else {
+										v170 = F_symlink(m, l0, v17)
+										mBase = m.M
+										if v170 < int32(0) {
+											F_errstart_cold(m, int32(21), int32(0))
+											mBase = m.M
+											v236 = m.ExcPending
+											if v236 != 0 {
+												return
+											} else {
+												F_errcode_for_file_access(m)
+												mBase = m.M
+												v238 = m.ExcPending
+												if v238 != 0 {
+													return
+												} else {
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
+													mBase = m.M
+													v244 = m.ExcPending
+													if v244 != 0 {
+														return
+													} else {
+														F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
+														mBase = m.M
+														v249 = m.ExcPending
+														if v249 != 0 {
+															return
+														} else {
+															base.Wasm_trap_unreachable()
+															for {
+															}
+														}
+													}
+												}
+											}
+										} else {
+											F_pfree(m, v17)
+											mBase = m.M
+											v174 = m.ExcPending
+											if v174 != 0 {
+												return
+											} else {
+												F_pfree(m, v112)
+												mBase = m.M
+												v176 = m.ExcPending
+												if v176 != 0 {
+													return
+												} else {
+													m.G0 = v9 + int32(272)
+													return
+												}
+											}
 										}
 									}
 								}
 							} else {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v131 = m.ExcPending
-								if v131 != 0 {
+								v134 = m.ExcPending
+								if v134 != 0 {
 									return
 								} else {
 									F_errcode_for_file_access(m)
 									mBase = m.M
-									v133 = m.ExcPending
-									if v133 != 0 {
+									v136 = m.ExcPending
+									if v136 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v111
-										F_errmsg(m, int32(_a_F_create_tablespace_directories_2), v8)
+										*(*int32)(unsafe.Add(mBase, uint32(v9))) = v112
+										F_errmsg(m, int32(_a_F_create_tablespace_directories_2), v9)
 										mBase = m.M
-										v137 = m.ExcPending
-										if v137 != 0 {
+										v140 = m.ExcPending
+										if v140 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(639), int32(_a_F_create_tablespace_directories_4))
 											mBase = m.M
-											v142 = m.ExcPending
-											if v142 != 0 {
+											v145 = m.ExcPending
+											if v145 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -1277,31 +1289,31 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 							}
 						}
 					} else {
-						v143 = *(*int32)(unsafe.Add(mBase, uint32(v8)+180))
-						if v143&int32(_a_F_create_tablespace_directories_9) != int32(_a_F_create_tablespace_directories_10) {
+						v146 = *(*int32)(unsafe.Add(mBase, uint32(v9)+180))
+						if v146&int32(_a_F_create_tablespace_directories_9) != int32(_a_F_create_tablespace_directories_10) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v188 = m.ExcPending
-							if v188 != 0 {
+							v200 = m.ExcPending
+							if v200 != 0 {
 								return
 							} else {
 								F_errcode(m, int32(151027844))
 								mBase = m.M
-								v191 = m.ExcPending
-								if v191 != 0 {
+								v203 = m.ExcPending
+								if v203 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = v111
-									F_errmsg(m, int32(_a_F_create_tablespace_directories_11), v8-int32(-64))
+									*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v112
+									F_errmsg(m, int32(_a_F_create_tablespace_directories_11), v9-int32(-64))
 									mBase = m.M
-									v197 = m.ExcPending
-									if v197 != 0 {
+									v209 = m.ExcPending
+									if v209 != 0 {
 										return
 									} else {
 										F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(645), int32(_a_F_create_tablespace_directories_4))
 										mBase = m.M
-										v202 = m.ExcPending
-										if v202 != 0 {
+										v214 = m.ExcPending
+										if v214 != 0 {
 											return
 										} else {
 											base.Wasm_trap_unreachable()
@@ -1312,31 +1324,31 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v149 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-							if v149 == int32(0) {
+							v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
+							if v153 == int32(0) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v206 = m.ExcPending
-								if v206 != 0 {
+								v218 = m.ExcPending
+								if v218 != 0 {
 									return
 								} else {
 									F_errcode(m, int32(100663621))
 									mBase = m.M
-									v209 = m.ExcPending
-									if v209 != 0 {
+									v221 = m.ExcPending
+									if v221 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v111
-										F_errmsg(m, int32(_a_F_create_tablespace_directories_12), v8+int32(48))
+										*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = v112
+										F_errmsg(m, int32(_a_F_create_tablespace_directories_12), v9+int32(48))
 										mBase = m.M
-										v215 = m.ExcPending
-										if v215 != 0 {
+										v227 = m.ExcPending
+										if v227 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(650), int32(_a_F_create_tablespace_directories_4))
 											mBase = m.M
-											v220 = m.ExcPending
-											if v220 != 0 {
+											v232 = m.ExcPending
+											if v232 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -1347,96 +1359,41 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									}
 								}
 							} else {
-								if v18 != 0 {
-									v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-									if v153 == int32(1) {
-										F_remove_tablespace_symlink(m, v16)
-										mBase = m.M
-										v157 = m.ExcPending
-										if v157 != 0 {
-											return
-										} else {
-											v158 = F_symlink(m, l0, v16)
-											mBase = m.M
-											if v158 < int32(0) {
-												F_errstart_cold(m, int32(21), int32(0))
-												mBase = m.M
-												v224 = m.ExcPending
-												if v224 != 0 {
-													return
-												} else {
-													F_errcode_for_file_access(m)
-													mBase = m.M
-													v226 = m.ExcPending
-													if v226 != 0 {
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
-														mBase = m.M
-														v232 = m.ExcPending
-														if v232 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
-															mBase = m.M
-															v237 = m.ExcPending
-															if v237 != 0 {
-																return
-															} else {
-																base.Wasm_trap_unreachable()
-																for {
-																}
-															}
-														}
-													}
-												}
-											} else {
-												F_pfree(m, v16)
-												mBase = m.M
-												v162 = m.ExcPending
-												if v162 != 0 {
-													return
-												} else {
-													F_pfree(m, v111)
-													mBase = m.M
-													v164 = m.ExcPending
-													if v164 != 0 {
-														return
-													} else {
-														m.G0 = v8 + int32(272)
-														return
-													}
-												}
-											}
-										}
+								v156 = int32(1)
+								v157 = int32(0)
+								if base.B2i32(v19 == v157)|base.B2i32(v156&int32(1) == v157) == v157 {
+									F_remove_tablespace_symlink(m, v17)
+									mBase = m.M
+									v167 = m.ExcPending
+									if v167 != 0 {
+										return
 									} else {
-										v158 = F_symlink(m, l0, v16)
+										v170 = F_symlink(m, l0, v17)
 										mBase = m.M
-										if v158 < int32(0) {
+										if v170 < int32(0) {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v224 = m.ExcPending
-											if v224 != 0 {
+											v236 = m.ExcPending
+											if v236 != 0 {
 												return
 											} else {
 												F_errcode_for_file_access(m)
 												mBase = m.M
-												v226 = m.ExcPending
-												if v226 != 0 {
+												v238 = m.ExcPending
+												if v238 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v8+int32(16))
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
 													mBase = m.M
-													v232 = m.ExcPending
-													if v232 != 0 {
+													v244 = m.ExcPending
+													if v244 != 0 {
 														return
 													} else {
 														F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
 														mBase = m.M
-														v237 = m.ExcPending
-														if v237 != 0 {
+														v249 = m.ExcPending
+														if v249 != 0 {
 															return
 														} else {
 															base.Wasm_trap_unreachable()
@@ -1447,39 +1404,95 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 												}
 											}
 										} else {
-											F_pfree(m, v16)
+											F_pfree(m, v17)
 											mBase = m.M
-											v162 = m.ExcPending
-											if v162 != 0 {
+											v174 = m.ExcPending
+											if v174 != 0 {
 												return
 											} else {
-												F_pfree(m, v111)
+												F_pfree(m, v112)
 												mBase = m.M
-												v164 = m.ExcPending
-												if v164 != 0 {
+												v176 = m.ExcPending
+												if v176 != 0 {
 													return
 												} else {
-													m.G0 = v8 + int32(272)
+													m.G0 = v9 + int32(272)
 													return
 												}
 											}
 										}
 									}
 								} else {
-									F_pfree(m, v16)
-									mBase = m.M
-									v162 = m.ExcPending
-									if v162 != 0 {
-										return
-									} else {
-										F_pfree(m, v111)
+									if v19 == int32(0) {
+										F_pfree(m, v17)
 										mBase = m.M
-										v164 = m.ExcPending
-										if v164 != 0 {
+										v174 = m.ExcPending
+										if v174 != 0 {
 											return
 										} else {
-											m.G0 = v8 + int32(272)
-											return
+											F_pfree(m, v112)
+											mBase = m.M
+											v176 = m.ExcPending
+											if v176 != 0 {
+												return
+											} else {
+												m.G0 = v9 + int32(272)
+												return
+											}
+										}
+									} else {
+										v170 = F_symlink(m, l0, v17)
+										mBase = m.M
+										if v170 < int32(0) {
+											F_errstart_cold(m, int32(21), int32(0))
+											mBase = m.M
+											v236 = m.ExcPending
+											if v236 != 0 {
+												return
+											} else {
+												F_errcode_for_file_access(m)
+												mBase = m.M
+												v238 = m.ExcPending
+												if v238 != 0 {
+													return
+												} else {
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
+													F_errmsg(m, int32(_a_F_create_tablespace_directories_8), v9+int32(16))
+													mBase = m.M
+													v244 = m.ExcPending
+													if v244 != 0 {
+														return
+													} else {
+														F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(665), int32(_a_F_create_tablespace_directories_4))
+														mBase = m.M
+														v249 = m.ExcPending
+														if v249 != 0 {
+															return
+														} else {
+															base.Wasm_trap_unreachable()
+															for {
+															}
+														}
+													}
+												}
+											}
+										} else {
+											F_pfree(m, v17)
+											mBase = m.M
+											v174 = m.ExcPending
+											if v174 != 0 {
+												return
+											} else {
+												F_pfree(m, v112)
+												mBase = m.M
+												v176 = m.ExcPending
+												if v176 != 0 {
+													return
+												} else {
+													m.G0 = v9 + int32(272)
+													return
+												}
+											}
 										}
 									}
 								}
@@ -1487,39 +1500,39 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 						}
 					}
 				} else {
-					v52 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
+					v53 = *(*int32)(unsafe.Add(mBase, _c_F_create_tablespace_directories[1]))
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v56 = m.ExcPending
-					if v56 != 0 {
+					v57 = m.ExcPending
+					if v57 != 0 {
 						return
 					} else {
-						if v52 == int32(44) {
+						if v53 == int32(44) {
 							F_errcode(m, int32(16908805))
 							mBase = m.M
-							v61 = m.ExcPending
-							if v61 != 0 {
+							v62 = m.ExcPending
+							if v62 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+112)) = l0
-								F_errmsg(m, int32(_a_F_create_tablespace_directories_13), v8+int32(112))
+								*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = l0
+								F_errmsg(m, int32(_a_F_create_tablespace_directories_13), v9+int32(80))
 								mBase = m.M
-								v67 = m.ExcPending
-								if v67 != 0 {
+								v68 = m.ExcPending
+								if v68 != 0 {
 									return
 								} else {
-									v69 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
-									if v69 == int32(1) {
+									v70 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_tablespace_directories[2])))
+									if v70 == int32(1) {
 										F_errhint(m, int32(_a_F_create_tablespace_directories_14), int32(0))
 										mBase = m.M
-										v75 = m.ExcPending
-										if v75 != 0 {
+										v76 = m.ExcPending
+										if v76 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(613), int32(_a_F_create_tablespace_directories_4))
 											mBase = m.M
-											v80 = m.ExcPending
-											if v80 != 0 {
+											v81 = m.ExcPending
+											if v81 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -1530,8 +1543,8 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									} else {
 										F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(613), int32(_a_F_create_tablespace_directories_4))
 										mBase = m.M
-										v80 = m.ExcPending
-										if v80 != 0 {
+										v81 = m.ExcPending
+										if v81 != 0 {
 											return
 										} else {
 											base.Wasm_trap_unreachable()
@@ -1544,21 +1557,21 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 						} else {
 							F_errcode_for_file_access(m)
 							mBase = m.M
-							v82 = m.ExcPending
-							if v82 != 0 {
+							v83 = m.ExcPending
+							if v83 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+128)) = l0
-								F_errmsg(m, int32(_a_F_create_tablespace_directories_15), v8+int32(128))
+								*(*int32)(unsafe.Add(mBase, uint32(v9)+96)) = l0
+								F_errmsg(m, int32(_a_F_create_tablespace_directories_15), v9+int32(96))
 								mBase = m.M
-								v88 = m.ExcPending
-								if v88 != 0 {
+								v89 = m.ExcPending
+								if v89 != 0 {
 									return
 								} else {
 									F_errfinish(m, int32(_a_F_create_tablespace_directories_3), int32(618), int32(_a_F_create_tablespace_directories_4))
 									mBase = m.M
-									v93 = m.ExcPending
-									if v93 != 0 {
+									v94 = m.ExcPending
+									if v94 != 0 {
 										return
 									} else {
 										base.Wasm_trap_unreachable()
@@ -1705,90 +1718,90 @@ func F_destroy_tablespace_directories(m *base.Module, l0 int32, l1 int32) int32 
 	_ = v246
 	var v247 int32
 	_ = v247
-	var v252 int32
-	_ = v252
-	var v258 int32
-	_ = v258
-	var v264 int32
-	_ = v264
-	var v268 int32
-	_ = v268
+	var v253 int32
+	_ = v253
+	var v259 int32
+	_ = v259
+	var v265 int32
+	_ = v265
 	var v269 int32
 	_ = v269
-	var v277 int32
-	_ = v277
+	var v270 int32
+	_ = v270
 	var v278 int32
 	_ = v278
-	var v288 int32
-	_ = v288
-	var v295 int32
-	_ = v295
-	var v298 int32
-	_ = v298
+	var v279 int32
+	_ = v279
+	var v289 int32
+	_ = v289
+	var v296 int32
+	_ = v296
 	var v299 int32
 	_ = v299
-	var v301 int32
-	_ = v301
+	var v300 int32
+	_ = v300
 	var v302 int32
 	_ = v302
-	var v306 int32
-	_ = v306
-	var v309 int32
-	_ = v309
-	var v311 int32
-	_ = v311
-	var v316 int32
-	_ = v316
-	var v323 int32
-	_ = v323
-	var v326 int32
-	_ = v326
+	var v303 int32
+	_ = v303
+	var v307 int32
+	_ = v307
+	var v310 int32
+	_ = v310
+	var v312 int32
+	_ = v312
+	var v317 int32
+	_ = v317
+	var v324 int32
+	_ = v324
 	var v327 int32
 	_ = v327
-	var v329 int32
-	_ = v329
+	var v328 int32
+	_ = v328
 	var v330 int32
 	_ = v330
-	var v334 int32
-	_ = v334
-	var v337 int32
-	_ = v337
-	var v344 int32
-	_ = v344
-	var v347 int32
-	_ = v347
+	var v331 int32
+	_ = v331
+	var v335 int32
+	_ = v335
+	var v338 int32
+	_ = v338
+	var v345 int32
+	_ = v345
 	var v348 int32
 	_ = v348
-	var v350 int32
-	_ = v350
+	var v349 int32
+	_ = v349
 	var v351 int32
 	_ = v351
-	var v355 int32
-	_ = v355
-	var v360 int32
-	_ = v360
-	var v362 int32
-	_ = v362
+	var v352 int32
+	_ = v352
+	var v356 int32
+	_ = v356
+	var v361 int32
+	_ = v361
 	var v363 int32
 	_ = v363
-	var v368 int32
-	_ = v368
+	var v364 int32
+	_ = v364
+	var v369 int32
+	_ = v369
 	var v372 int32
 	_ = v372
-	var v373 int32
-	_ = v373
-	var v376 int32
-	_ = v376
-	var v380 int32
-	_ = v380
-	var v384 int32
-	_ = v384
-	var v386 int32
-	_ = v386
-	var v390 int32
-	_ = v390
-	var v396 int32
-	_ = v396
+	var v374 int32
+	_ = v374
+	var v377 int32
+	_ = v377
+	var v381 int32
+	_ = v381
+	var v385 int32
+	_ = v385
+	var v387 int32
+	_ = v387
+	var v392 int32
+	_ = v392
+	var v397 int32
+	_ = v397
 	v3 = int32(0)
 	v10 = m.G0
 	v12 = v10 - int32(208)
@@ -1806,13 +1819,13 @@ func F_destroy_tablespace_directories(m *base.Module, l0 int32, l1 int32) int32 
 	}
 L1:
 	;
-	F_pfree(m, v386)
+	F_pfree(m, v387)
 	mBase = m.M
-	v396 = m.ExcPending
-	if v396 != 0 {
+	v397 = m.ExcPending
+	if v397 != 0 {
 		goto L4
 	} else {
-		goto L156
+		goto L153
 	}
 L2:
 	;
@@ -1949,8 +1962,8 @@ L18:
 	}
 L19:
 	;
-	v386 = v22
-	v390 = v3
+	v387 = v22
+	v392 = v3
 	goto L1
 L20:
 	;
@@ -1988,8 +2001,8 @@ L23:
 	}
 L24:
 	;
-	v386 = v22
-	v390 = v3
+	v387 = v22
+	v392 = v3
 	goto L1
 L25:
 	;
@@ -2218,8 +2231,8 @@ L56:
 	}
 L57:
 	;
-	v386 = v22
-	v390 = int32(0)
+	v387 = v22
+	v392 = int32(0)
 	goto L1
 L58:
 	;
@@ -2343,8 +2356,8 @@ L74:
 	}
 L75:
 	;
-	v386 = v22
-	v390 = v202
+	v387 = v22
+	v392 = v202
 	goto L1
 L76:
 	;
@@ -2382,8 +2395,8 @@ L79:
 	}
 L80:
 	;
-	v386 = v22
-	v390 = v202
+	v387 = v22
+	v392 = v202
 	goto L1
 L81:
 	;
@@ -2395,9 +2408,9 @@ L81:
 	}
 L82:
 	;
-	v288 = F___fstatat(m, int32(-100), v233, v12+int32(112), int32(256))
+	v289 = F___fstatat(m, int32(-100), v233, v12+int32(112), int32(256))
 	mBase = m.M
-	goto L109
+	goto L106
 L83:
 	;
 	v239 = F_strlen(m, v233)
@@ -2414,505 +2427,432 @@ L86:
 	;
 	v246 = v242 - int32(1)
 	v247 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v246))))
-	if v247 == int32(47) {
-		goto L88
-	} else {
-		goto L89
-	}
-L87:
-	;
-	v252 = v246
-	goto L92
-L88:
-	;
-	if base.Ui32(v233) < base.Ui32(v246) {
+	if base.B2i32(v247 == int32(47))&base.B2i32(base.Ui32(v233) < base.Ui32(v246)) != 0 {
 		v242 = v246
 		goto L86
 	} else {
-		goto L91
+		goto L88
 	}
-L89:
+L87:
 	;
-	goto L90
-L90:
+	v253 = v246
+	goto L89
+L88:
 	;
 	goto L87
+L89:
+	;
+	if base.Ui32(v233) < base.Ui32(v253) {
+		goto L91
+	} else {
+		goto L92
+	}
+L90:
+	;
+	v265 = v253
+	goto L95
 L91:
 	;
-	goto L90
+	v259 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v253))))
+	if v259 != int32(47) {
+		v253 = v253 - int32(1)
+		goto L89
+	} else {
+		goto L94
+	}
 L92:
 	;
-	if base.Ui32(v233) < base.Ui32(v252) {
-		goto L94
-	} else {
-		goto L95
-	}
+	goto L93
 L93:
 	;
-	v264 = v252
-	goto L98
+	goto L90
 L94:
 	;
-	v258 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v252))))
-	if v258 != int32(47) {
-		v252 = v252 - int32(1)
-		goto L92
-	} else {
-		goto L97
-	}
+	goto L93
 L95:
 	;
-	goto L96
+	if base.Ui32(v233) < base.Ui32(v265) {
+		goto L97
+	} else {
+		goto L98
+	}
 L96:
 	;
-	goto L93
+	if v233 == v265 {
+		goto L101
+	} else {
+		goto L102
+	}
 L97:
 	;
-	goto L96
+	v269 = v265 - int32(1)
+	v270 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v269))))
+	if v270 == int32(47) {
+		v265 = v269
+		goto L95
+	} else {
+		goto L100
+	}
 L98:
 	;
-	if base.Ui32(v233) < base.Ui32(v264) {
-		goto L100
-	} else {
-		goto L101
-	}
+	goto L99
 L99:
 	;
-	if v233 == v264 {
-		goto L104
-	} else {
-		goto L105
-	}
+	goto L96
 L100:
 	;
-	v268 = v264 - int32(1)
-	v269 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v268))))
-	if v269 == int32(47) {
-		v264 = v268
-		goto L98
-	} else {
-		goto L103
-	}
+	goto L99
 L101:
 	;
-	goto L102
+	v278 = v233 + base.B2i32(v238 == int32(47))
+	goto L103
 L102:
 	;
-	goto L99
+	v278 = v265
+	goto L103
 L103:
 	;
-	goto L102
-L104:
-	;
-	v277 = v233 + base.B2i32(v238 == int32(47))
-	goto L106
-L105:
-	;
-	v277 = v264
-	goto L106
-L106:
-	;
-	v278 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v277))) = uint8(v278)
+	v279 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v278))) = uint8(v279)
 	goto L85
-L107:
+L104:
 	;
 	F_pfree(m, v22)
 	mBase = m.M
-	v384 = m.ExcPending
-	if v384 != 0 {
+	v385 = m.ExcPending
+	if v385 != 0 {
 		goto L4
 	} else {
-		goto L155
+		goto L152
 	}
-L108:
+L105:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v233
 	F_errmsg(m, v372, v12)
 	mBase = m.M
-	v376 = m.ExcPending
-	if v376 != 0 {
+	v377 = m.ExcPending
+	if v377 != 0 {
 		goto L4
 	} else {
-		goto L153
+		goto L150
 	}
-L109:
+L106:
 	;
-	if v288 < int32(0) {
+	if v289 < int32(0) {
+		goto L107
+	} else {
+		goto L108
+	}
+L107:
+	;
+	v296 = *(*int32)(unsafe.Add(mBase, _c_F_destroy_tablespace_directories[0]))
+	if v296 == int32(44) {
 		goto L110
 	} else {
 		goto L111
 	}
+L108:
+	;
+	goto L109
+L109:
+	;
+	v310 = *(*int32)(unsafe.Add(mBase, uint32(v12)+116))
+	v312 = v310 & int32(_a_F_destroy_tablespace_directories_8)
+	if v312 != int32(_a_F_destroy_tablespace_directories_9) {
+		goto L120
+	} else {
+		goto L121
+	}
 L110:
 	;
-	v295 = *(*int32)(unsafe.Add(mBase, _c_F_destroy_tablespace_directories[0]))
-	if v295 == int32(44) {
+	v299 = int32(19)
+	goto L112
+L111:
+	;
+	v299 = int32(21)
+	goto L112
+L112:
+	;
+	if l1 != 0 {
 		goto L113
 	} else {
 		goto L114
 	}
-L111:
-	;
-	goto L112
-L112:
-	;
-	v309 = *(*int32)(unsafe.Add(mBase, uint32(v12)+116))
-	v311 = v309 & int32(_a_F_destroy_tablespace_directories_8)
-	if v311 != int32(_a_F_destroy_tablespace_directories_9) {
-		goto L123
-	} else {
-		goto L124
-	}
 L113:
 	;
-	v298 = int32(19)
+	v300 = int32(15)
 	goto L115
 L114:
 	;
-	v298 = int32(21)
+	v300 = v299
 	goto L115
 L115:
 	;
-	if l1 != 0 {
-		goto L116
+	v302 = F_errstart(m, v300, int32(0))
+	mBase = m.M
+	v303 = m.ExcPending
+	if v303 != 0 {
+		goto L4
 	} else {
-		goto L117
+		goto L116
 	}
 L116:
 	;
-	v299 = int32(15)
-	goto L118
+	if v302 == int32(0) {
+		goto L104
+	} else {
+		goto L117
+	}
 L117:
-	;
-	v299 = v298
-	goto L118
-L118:
-	;
-	v301 = F_errstart(m, v299, int32(0))
-	mBase = m.M
-	v302 = m.ExcPending
-	if v302 != 0 {
-		goto L4
-	} else {
-		goto L119
-	}
-L119:
-	;
-	if v301 == int32(0) {
-		goto L107
-	} else {
-		goto L120
-	}
-L120:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v306 = m.ExcPending
-	if v306 != 0 {
+	v307 = m.ExcPending
+	if v307 != 0 {
 		goto L4
 	} else {
-		goto L121
+		goto L118
+	}
+L118:
+	;
+	v372 = int32(_a_F_destroy_tablespace_directories_10)
+	v374 = int32(805)
+	goto L105
+L119:
+	;
+	if l1 != 0 {
+		goto L144
+	} else {
+		goto L145
+	}
+L120:
+	;
+	if v312 != int32(_a_F_destroy_tablespace_directories_11) {
+		goto L119
+	} else {
+		goto L123
 	}
 L121:
 	;
-	v372 = int32(_a_F_destroy_tablespace_directories_10)
-	v373 = int32(805)
-	goto L108
+	goto L122
 L122:
 	;
-	if l1 != 0 {
-		goto L147
+	v338 = F_unlink(m, v233)
+	mBase = m.M
+	if int32(0) <= v338 {
+		goto L104
 	} else {
-		goto L148
+		goto L134
 	}
 L123:
 	;
-	if v311 != int32(_a_F_destroy_tablespace_directories_11) {
-		goto L122
+	v317 = F_rmdir(m, v233)
+	mBase = m.M
+	if int32(0) <= v317 {
+		goto L104
 	} else {
-		goto L126
+		goto L124
 	}
 L124:
 	;
-	goto L125
+	v324 = *(*int32)(unsafe.Add(mBase, _c_F_destroy_tablespace_directories[0]))
+	if v324 == int32(44) {
+		goto L125
+	} else {
+		goto L126
+	}
 L125:
 	;
-	v337 = F_unlink(m, v233)
-	mBase = m.M
-	if int32(0) <= v337 {
-		goto L107
-	} else {
-		goto L137
-	}
+	v327 = int32(19)
+	goto L127
 L126:
 	;
-	v316 = F_rmdir(m, v233)
-	mBase = m.M
-	if int32(0) <= v316 {
-		goto L107
-	} else {
-		goto L127
-	}
+	v327 = int32(21)
+	goto L127
 L127:
 	;
-	v323 = *(*int32)(unsafe.Add(mBase, _c_F_destroy_tablespace_directories[0]))
-	if v323 == int32(44) {
+	if l1 != 0 {
 		goto L128
 	} else {
 		goto L129
 	}
 L128:
 	;
-	v326 = int32(19)
+	v328 = int32(15)
 	goto L130
 L129:
 	;
-	v326 = int32(21)
+	v328 = v327
 	goto L130
 L130:
 	;
-	if l1 != 0 {
-		goto L131
+	v330 = F_errstart(m, v328, int32(0))
+	mBase = m.M
+	v331 = m.ExcPending
+	if v331 != 0 {
+		goto L4
 	} else {
-		goto L132
+		goto L131
 	}
 L131:
 	;
-	v327 = int32(15)
-	goto L133
+	if v330 == int32(0) {
+		goto L104
+	} else {
+		goto L132
+	}
 L132:
-	;
-	v327 = v326
-	goto L133
-L133:
-	;
-	v329 = F_errstart(m, v327, int32(0))
-	mBase = m.M
-	v330 = m.ExcPending
-	if v330 != 0 {
-		goto L4
-	} else {
-		goto L134
-	}
-L134:
-	;
-	if v329 == int32(0) {
-		goto L107
-	} else {
-		goto L135
-	}
-L135:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v334 = m.ExcPending
-	if v334 != 0 {
+	v335 = m.ExcPending
+	if v335 != 0 {
 		goto L4
+	} else {
+		goto L133
+	}
+L133:
+	;
+	v372 = int32(_a_F_destroy_tablespace_directories_7)
+	v374 = int32(816)
+	goto L105
+L134:
+	;
+	v345 = *(*int32)(unsafe.Add(mBase, _c_F_destroy_tablespace_directories[0]))
+	if v345 == int32(44) {
+		goto L135
 	} else {
 		goto L136
 	}
+L135:
+	;
+	v348 = int32(19)
+	goto L137
 L136:
 	;
-	v372 = int32(_a_F_destroy_tablespace_directories_7)
-	v373 = int32(816)
-	goto L108
+	v348 = int32(21)
+	goto L137
 L137:
 	;
-	v344 = *(*int32)(unsafe.Add(mBase, _c_F_destroy_tablespace_directories[0]))
-	if v344 == int32(44) {
+	if l1 != 0 {
 		goto L138
 	} else {
 		goto L139
 	}
 L138:
 	;
-	v347 = int32(19)
+	v349 = int32(15)
 	goto L140
 L139:
 	;
-	v347 = int32(21)
+	v349 = v348
 	goto L140
 L140:
 	;
-	if l1 != 0 {
-		goto L141
+	v351 = F_errstart(m, v349, int32(0))
+	mBase = m.M
+	v352 = m.ExcPending
+	if v352 != 0 {
+		goto L4
 	} else {
-		goto L142
+		goto L141
 	}
 L141:
 	;
-	v348 = int32(15)
-	goto L143
+	if v351 == int32(0) {
+		goto L104
+	} else {
+		goto L142
+	}
 L142:
-	;
-	v348 = v347
-	goto L143
-L143:
-	;
-	v350 = F_errstart(m, v348, int32(0))
-	mBase = m.M
-	v351 = m.ExcPending
-	if v351 != 0 {
-		goto L4
-	} else {
-		goto L144
-	}
-L144:
-	;
-	if v350 == int32(0) {
-		goto L107
-	} else {
-		goto L145
-	}
-L145:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v355 = m.ExcPending
-	if v355 != 0 {
+	v356 = m.ExcPending
+	if v356 != 0 {
 		goto L4
 	} else {
-		goto L146
+		goto L143
 	}
-L146:
+L143:
 	;
 	v372 = int32(_a_F_destroy_tablespace_directories_12)
-	v373 = int32(828)
-	goto L108
-L147:
+	v374 = int32(828)
+	goto L105
+L144:
 	;
-	v360 = int32(15)
-	goto L149
-L148:
+	v361 = int32(15)
+	goto L146
+L145:
 	;
-	v360 = int32(21)
-	goto L149
-L149:
+	v361 = int32(21)
+	goto L146
+L146:
 	;
-	v362 = F_errstart(m, v360, int32(0))
+	v363 = F_errstart(m, v361, int32(0))
 	mBase = m.M
-	v363 = m.ExcPending
-	if v363 != 0 {
+	v364 = m.ExcPending
+	if v364 != 0 {
 		goto L4
 	} else {
-		goto L150
+		goto L147
 	}
+L147:
+	;
+	if v363 == int32(0) {
+		goto L104
+	} else {
+		goto L148
+	}
+L148:
+	;
+	F_errcode(m, int32(325))
+	mBase = m.M
+	v369 = m.ExcPending
+	if v369 != 0 {
+		goto L4
+	} else {
+		goto L149
+	}
+L149:
+	;
+	v372 = int32(_a_F_destroy_tablespace_directories_13)
+	v374 = int32(837)
+	goto L105
 L150:
 	;
-	if v362 == int32(0) {
-		goto L107
+	F_errfinish(m, int32(_a_F_destroy_tablespace_directories_4), v374, int32(_a_F_destroy_tablespace_directories_5))
+	mBase = m.M
+	v381 = m.ExcPending
+	if v381 != 0 {
+		goto L4
 	} else {
 		goto L151
 	}
 L151:
 	;
-	F_errcode(m, int32(325))
-	mBase = m.M
-	v368 = m.ExcPending
-	if v368 != 0 {
-		goto L4
-	} else {
-		goto L152
-	}
+	goto L104
 L152:
 	;
-	v372 = int32(_a_F_destroy_tablespace_directories_13)
-	v373 = int32(837)
-	goto L108
+	v387 = v233
+	v392 = int32(1)
+	goto L1
 L153:
 	;
-	F_errfinish(m, int32(_a_F_destroy_tablespace_directories_4), v373, int32(_a_F_destroy_tablespace_directories_5))
-	mBase = m.M
-	v380 = m.ExcPending
-	if v380 != 0 {
-		goto L4
-	} else {
-		goto L154
-	}
-L154:
-	;
-	goto L107
-L155:
-	;
-	v386 = v233
-	v390 = int32(1)
-	goto L1
-L156:
-	;
 	m.G0 = v12 + int32(208)
-	return v390
+	return v392
 }
 func F_has_tablespace_privilege_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v20 int32
-	_ = v20
-	var v22 int64
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = F_pg_detoast_datum_packed(m, v11)
-	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	v4 = Fn13913(m, l0, int32(_a_F_has_tablespace_privilege_id_0), int32(1213))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v16 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
-		v20 = *(*int32)(unsafe.Add(mBase, _c_F_has_tablespace_privilege_id[0]))
-		v22 = F_convert_any_priv_string(m, v12, int32(_a_F_has_tablespace_privilege_id_0))
-		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
-			return int32(0)
-		} else {
-			v26 = F_object_aclcheck_ext(m, int32(1213), v10, v20, v22, v8+int32(15))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)))
-				if v28 == int32(1) {
-					v31 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-					v35 = int32(0)
-				} else {
-					v35 = base.B2i32(v26 == int32(0))
-				}
-				m.G0 = v8 + int32(16)
-				return v35
-			}
-		}
+		return v4
 	}
 }
 func F_has_tablespace_privilege_name(m *base.Module, l0 int32) int32 {
@@ -2996,87 +2936,16 @@ func F_has_tablespace_privilege_name(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_has_tablespace_privilege_name_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	var v24 int64
-	_ = v24
-	var v25 int32
-	_ = v25
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
-	var v37 int32
-	_ = v37
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v14 = F_pg_detoast_datum_packed(m, v13)
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v4 = Fn13915(m, l0, int32(_a_F_has_tablespace_privilege_name_id_0), int32(1213))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v18 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v21 = F_get_role_oid_or_public(m, v12)
-		mBase = m.M
-		v22 = m.ExcPending
-		if v22 != 0 {
-			return int32(0)
-		} else {
-			v24 = F_convert_any_priv_string(m, v14, int32(_a_F_has_tablespace_privilege_name_id_0))
-			mBase = m.M
-			v25 = m.ExcPending
-			if v25 != 0 {
-				return int32(0)
-			} else {
-				v28 = F_object_aclcheck_ext(m, int32(1213), v11, v21, v24, v9+int32(15))
-				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
-					return int32(0)
-				} else {
-					v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-					if v30 == int32(1) {
-						v33 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v33)
-						v37 = int32(0)
-					} else {
-						v37 = base.B2i32(v28 == int32(0))
-					}
-					m.G0 = v9 + int32(16)
-					return v37
-				}
-			}
-		}
+		return v4
 	}
 }
 func F_has_tablespace_privilege_name_name(m *base.Module, l0 int32) int32 {

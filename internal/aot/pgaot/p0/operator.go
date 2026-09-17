@@ -556,40 +556,46 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v35
 	var v36 int32
 	_ = v36
+	var v39 int32
+	_ = v39
 	var v44 int32
 	_ = v44
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
-	var v58 int32
-	_ = v58
-	var v59 int32
-	_ = v59
-	var v67 int32
-	_ = v67
-	var v68 int32
-	_ = v68
-	var v74 int32
-	_ = v74
-	var v78 int32
-	_ = v78
-	var v79 int32
-	_ = v79
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v65 int32
+	_ = v65
+	var v66 int32
+	_ = v66
+	var v72 int32
+	_ = v72
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v81 int32
+	_ = v81
+	var v82 int32
+	_ = v82
 	var v83 int32
 	_ = v83
 	var v84 int32
 	_ = v84
 	var v85 int32
 	_ = v85
-	var v86 int32
-	_ = v86
 	var v87 int32
 	_ = v87
-	var v89 int32
-	_ = v89
+	var v95 int32
+	_ = v95
 	var v97 int32
 	_ = v97
+	var v98 int32
+	_ = v98
 	var v99 int32
 	_ = v99
 	var v100 int32
@@ -598,20 +604,16 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v101
 	var v102 int32
 	_ = v102
-	var v103 int32
-	_ = v103
-	var v104 int32
-	_ = v104
-	var v112 int32
-	_ = v112
-	var v117 int32
-	_ = v117
+	var v110 int32
+	_ = v110
+	var v115 int32
+	_ = v115
+	var v116 int32
+	_ = v116
 	var v118 int32
 	_ = v118
-	var v120 int32
-	_ = v120
-	var v123 int32
-	_ = v123
+	var v121 int32
+	_ = v121
 	v7 = m.G0
 	v9 = v7 - int32(112)
 	m.G0 = v9
@@ -644,82 +646,82 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = v20
 							F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_0), v9+int32(48))
 							mBase = m.M
-							v67 = m.ExcPending
-							if v67 != 0 {
+							v65 = m.ExcPending
+							if v65 != 0 {
 								return int32(0)
 							} else {
-								v68 = *(*int32)(unsafe.Add(mBase, uint32(v18)+80))
-								if v68 != 0 {
-									v85 = v68
-									v86 = F_format_type_be(m, v85)
+								v66 = *(*int32)(unsafe.Add(mBase, uint32(v18)+80))
+								if v66 != 0 {
+									v83 = v66
+									v84 = F_format_type_be(m, v83)
 									mBase = m.M
-									v87 = m.ExcPending
-									if v87 != 0 {
+									v85 = m.ExcPending
+									if v85 != 0 {
 										return int32(0)
 									} else {
-										v89 = v86
-										*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v89
+										v87 = v84
+										*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v87
 										F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_1), v9+int32(32))
 										mBase = m.M
-										v97 = m.ExcPending
-										if v97 != 0 {
+										v95 = m.ExcPending
+										if v95 != 0 {
 											return int32(0)
 										} else {
-											v99 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
-											if v99 != 0 {
+											v97 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
+											if v97 != 0 {
 												if v26 != 0 {
-													v100 = F_format_type_be_qualified(m, v99)
+													v98 = F_format_type_be_qualified(m, v97)
+													mBase = m.M
+													v99 = m.ExcPending
+													if v99 != 0 {
+														return int32(0)
+													} else {
+														v102 = v98
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
+														F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
+														mBase = m.M
+														v110 = m.ExcPending
+														if v110 != 0 {
+															return int32(0)
+														} else {
+															v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+															F_ReleaseCatCache(m, v12)
+															mBase = m.M
+															v118 = m.ExcPending
+															if v118 != 0 {
+																return int32(0)
+															} else {
+																v121 = v116
+																m.G0 = v9 + int32(112)
+																return v121
+															}
+														}
+													}
+												} else {
+													v100 = F_format_type_be(m, v97)
 													mBase = m.M
 													v101 = m.ExcPending
 													if v101 != 0 {
 														return int32(0)
 													} else {
-														v104 = v100
-														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
+														v102 = v100
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
 														F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
 														mBase = m.M
-														v112 = m.ExcPending
-														if v112 != 0 {
+														v110 = m.ExcPending
+														if v110 != 0 {
 															return int32(0)
 														} else {
-															v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+															v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 															F_ReleaseCatCache(m, v12)
 															mBase = m.M
-															v120 = m.ExcPending
-															if v120 != 0 {
+															v118 = m.ExcPending
+															if v118 != 0 {
 																return int32(0)
 															} else {
-																v123 = v118
+																v121 = v116
 																m.G0 = v9 + int32(112)
-																return v123
-															}
-														}
-													}
-												} else {
-													v102 = F_format_type_be(m, v99)
-													mBase = m.M
-													v103 = m.ExcPending
-													if v103 != 0 {
-														return int32(0)
-													} else {
-														v104 = v102
-														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
-														F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
-														mBase = m.M
-														v112 = m.ExcPending
-														if v112 != 0 {
-															return int32(0)
-														} else {
-															v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
-															F_ReleaseCatCache(m, v12)
-															mBase = m.M
-															v120 = m.ExcPending
-															if v120 != 0 {
-																return int32(0)
-															} else {
-																v123 = v118
-																m.G0 = v9 + int32(112)
-																return v123
+																return v121
 															}
 														}
 													}
@@ -727,20 +729,20 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 											} else {
 												F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_3))
 												mBase = m.M
-												v117 = m.ExcPending
-												if v117 != 0 {
+												v115 = m.ExcPending
+												if v115 != 0 {
 													return int32(0)
 												} else {
-													v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+													v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 													F_ReleaseCatCache(m, v12)
 													mBase = m.M
-													v120 = m.ExcPending
-													if v120 != 0 {
+													v118 = m.ExcPending
+													if v118 != 0 {
 														return int32(0)
 													} else {
-														v123 = v118
+														v121 = v116
 														m.G0 = v9 + int32(112)
-														return v123
+														return v121
 													}
 												}
 											}
@@ -749,65 +751,65 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 								} else {
 									F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_4))
 									mBase = m.M
-									v74 = m.ExcPending
-									if v74 != 0 {
+									v72 = m.ExcPending
+									if v72 != 0 {
 										return int32(0)
 									} else {
-										v99 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
-										if v99 != 0 {
+										v97 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
+										if v97 != 0 {
 											if v26 != 0 {
-												v100 = F_format_type_be_qualified(m, v99)
+												v98 = F_format_type_be_qualified(m, v97)
+												mBase = m.M
+												v99 = m.ExcPending
+												if v99 != 0 {
+													return int32(0)
+												} else {
+													v102 = v98
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
+													F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
+													mBase = m.M
+													v110 = m.ExcPending
+													if v110 != 0 {
+														return int32(0)
+													} else {
+														v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+														F_ReleaseCatCache(m, v12)
+														mBase = m.M
+														v118 = m.ExcPending
+														if v118 != 0 {
+															return int32(0)
+														} else {
+															v121 = v116
+															m.G0 = v9 + int32(112)
+															return v121
+														}
+													}
+												}
+											} else {
+												v100 = F_format_type_be(m, v97)
 												mBase = m.M
 												v101 = m.ExcPending
 												if v101 != 0 {
 													return int32(0)
 												} else {
-													v104 = v100
-													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
+													v102 = v100
+													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
 													F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
 													mBase = m.M
-													v112 = m.ExcPending
-													if v112 != 0 {
+													v110 = m.ExcPending
+													if v110 != 0 {
 														return int32(0)
 													} else {
-														v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+														v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 														F_ReleaseCatCache(m, v12)
 														mBase = m.M
-														v120 = m.ExcPending
-														if v120 != 0 {
+														v118 = m.ExcPending
+														if v118 != 0 {
 															return int32(0)
 														} else {
-															v123 = v118
+															v121 = v116
 															m.G0 = v9 + int32(112)
-															return v123
-														}
-													}
-												}
-											} else {
-												v102 = F_format_type_be(m, v99)
-												mBase = m.M
-												v103 = m.ExcPending
-												if v103 != 0 {
-													return int32(0)
-												} else {
-													v104 = v102
-													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
-													F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
-													mBase = m.M
-													v112 = m.ExcPending
-													if v112 != 0 {
-														return int32(0)
-													} else {
-														v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
-														F_ReleaseCatCache(m, v12)
-														mBase = m.M
-														v120 = m.ExcPending
-														if v120 != 0 {
-															return int32(0)
-														} else {
-															v123 = v118
-															m.G0 = v9 + int32(112)
-															return v123
+															return v121
 														}
 													}
 												}
@@ -815,20 +817,20 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 										} else {
 											F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_3))
 											mBase = m.M
-											v117 = m.ExcPending
-											if v117 != 0 {
+											v115 = m.ExcPending
+											if v115 != 0 {
 												return int32(0)
 											} else {
-												v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+												v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 												F_ReleaseCatCache(m, v12)
 												mBase = m.M
-												v120 = m.ExcPending
-												if v120 != 0 {
+												v118 = m.ExcPending
+												if v118 != 0 {
 													return int32(0)
 												} else {
-													v123 = v118
+													v121 = v116
 													m.G0 = v9 + int32(112)
-													return v123
+													return v121
 												}
 											}
 										}
@@ -850,82 +852,83 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = v35
-									F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_5), v9+int32(80))
+									v39 = v9 + int32(96)
+									F_appendStringInfo(m, v39, int32(_a_F_format_operator_extended_5), v9+int32(80))
 									mBase = m.M
 									v44 = m.ExcPending
 									if v44 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v20
-										F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_0), v9-int32(-64))
+										F_appendStringInfo(m, v39, int32(_a_F_format_operator_extended_0), v9-int32(-64))
 										mBase = m.M
-										v52 = m.ExcPending
-										if v52 != 0 {
+										v50 = m.ExcPending
+										if v50 != 0 {
 											return int32(0)
 										} else {
-											v53 = *(*int32)(unsafe.Add(mBase, uint32(v18)+80))
-											if v53 == int32(0) {
+											v51 = *(*int32)(unsafe.Add(mBase, uint32(v18)+80))
+											if v51 == int32(0) {
 												F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_4))
 												mBase = m.M
-												v74 = m.ExcPending
-												if v74 != 0 {
+												v72 = m.ExcPending
+												if v72 != 0 {
 													return int32(0)
 												} else {
-													v99 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
-													if v99 != 0 {
+													v97 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
+													if v97 != 0 {
 														if v26 != 0 {
-															v100 = F_format_type_be_qualified(m, v99)
+															v98 = F_format_type_be_qualified(m, v97)
+															mBase = m.M
+															v99 = m.ExcPending
+															if v99 != 0 {
+																return int32(0)
+															} else {
+																v102 = v98
+																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
+																F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
+																mBase = m.M
+																v110 = m.ExcPending
+																if v110 != 0 {
+																	return int32(0)
+																} else {
+																	v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																	F_ReleaseCatCache(m, v12)
+																	mBase = m.M
+																	v118 = m.ExcPending
+																	if v118 != 0 {
+																		return int32(0)
+																	} else {
+																		v121 = v116
+																		m.G0 = v9 + int32(112)
+																		return v121
+																	}
+																}
+															}
+														} else {
+															v100 = F_format_type_be(m, v97)
 															mBase = m.M
 															v101 = m.ExcPending
 															if v101 != 0 {
 																return int32(0)
 															} else {
-																v104 = v100
-																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
+																v102 = v100
+																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
 																F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
 																mBase = m.M
-																v112 = m.ExcPending
-																if v112 != 0 {
+																v110 = m.ExcPending
+																if v110 != 0 {
 																	return int32(0)
 																} else {
-																	v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																	v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 																	F_ReleaseCatCache(m, v12)
 																	mBase = m.M
-																	v120 = m.ExcPending
-																	if v120 != 0 {
+																	v118 = m.ExcPending
+																	if v118 != 0 {
 																		return int32(0)
 																	} else {
-																		v123 = v118
+																		v121 = v116
 																		m.G0 = v9 + int32(112)
-																		return v123
-																	}
-																}
-															}
-														} else {
-															v102 = F_format_type_be(m, v99)
-															mBase = m.M
-															v103 = m.ExcPending
-															if v103 != 0 {
-																return int32(0)
-															} else {
-																v104 = v102
-																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
-																F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
-																mBase = m.M
-																v112 = m.ExcPending
-																if v112 != 0 {
-																	return int32(0)
-																} else {
-																	v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
-																	F_ReleaseCatCache(m, v12)
-																	mBase = m.M
-																	v120 = m.ExcPending
-																	if v120 != 0 {
-																		return int32(0)
-																	} else {
-																		v123 = v118
-																		m.G0 = v9 + int32(112)
-																		return v123
+																		return v121
 																	}
 																}
 															}
@@ -933,96 +936,96 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 													} else {
 														F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_3))
 														mBase = m.M
-														v117 = m.ExcPending
-														if v117 != 0 {
+														v115 = m.ExcPending
+														if v115 != 0 {
 															return int32(0)
 														} else {
-															v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+															v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 															F_ReleaseCatCache(m, v12)
 															mBase = m.M
-															v120 = m.ExcPending
-															if v120 != 0 {
+															v118 = m.ExcPending
+															if v118 != 0 {
 																return int32(0)
 															} else {
-																v123 = v118
+																v121 = v116
 																m.G0 = v9 + int32(112)
-																return v123
+																return v121
 															}
 														}
 													}
 												}
 											} else {
 												if v26 == int32(0) {
-													v85 = v53
-													v86 = F_format_type_be(m, v85)
+													v83 = v51
+													v84 = F_format_type_be(m, v83)
 													mBase = m.M
-													v87 = m.ExcPending
-													if v87 != 0 {
+													v85 = m.ExcPending
+													if v85 != 0 {
 														return int32(0)
 													} else {
-														v89 = v86
-														*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v89
+														v87 = v84
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v87
 														F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_1), v9+int32(32))
 														mBase = m.M
-														v97 = m.ExcPending
-														if v97 != 0 {
+														v95 = m.ExcPending
+														if v95 != 0 {
 															return int32(0)
 														} else {
-															v99 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
-															if v99 != 0 {
+															v97 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
+															if v97 != 0 {
 																if v26 != 0 {
-																	v100 = F_format_type_be_qualified(m, v99)
+																	v98 = F_format_type_be_qualified(m, v97)
+																	mBase = m.M
+																	v99 = m.ExcPending
+																	if v99 != 0 {
+																		return int32(0)
+																	} else {
+																		v102 = v98
+																		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
+																		F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
+																		mBase = m.M
+																		v110 = m.ExcPending
+																		if v110 != 0 {
+																			return int32(0)
+																		} else {
+																			v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																			F_ReleaseCatCache(m, v12)
+																			mBase = m.M
+																			v118 = m.ExcPending
+																			if v118 != 0 {
+																				return int32(0)
+																			} else {
+																				v121 = v116
+																				m.G0 = v9 + int32(112)
+																				return v121
+																			}
+																		}
+																	}
+																} else {
+																	v100 = F_format_type_be(m, v97)
 																	mBase = m.M
 																	v101 = m.ExcPending
 																	if v101 != 0 {
 																		return int32(0)
 																	} else {
-																		v104 = v100
-																		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
+																		v102 = v100
+																		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
 																		F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
 																		mBase = m.M
-																		v112 = m.ExcPending
-																		if v112 != 0 {
+																		v110 = m.ExcPending
+																		if v110 != 0 {
 																			return int32(0)
 																		} else {
-																			v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																			v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 																			F_ReleaseCatCache(m, v12)
 																			mBase = m.M
-																			v120 = m.ExcPending
-																			if v120 != 0 {
+																			v118 = m.ExcPending
+																			if v118 != 0 {
 																				return int32(0)
 																			} else {
-																				v123 = v118
+																				v121 = v116
 																				m.G0 = v9 + int32(112)
-																				return v123
-																			}
-																		}
-																	}
-																} else {
-																	v102 = F_format_type_be(m, v99)
-																	mBase = m.M
-																	v103 = m.ExcPending
-																	if v103 != 0 {
-																		return int32(0)
-																	} else {
-																		v104 = v102
-																		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
-																		F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
-																		mBase = m.M
-																		v112 = m.ExcPending
-																		if v112 != 0 {
-																			return int32(0)
-																		} else {
-																			v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
-																			F_ReleaseCatCache(m, v12)
-																			mBase = m.M
-																			v120 = m.ExcPending
-																			if v120 != 0 {
-																				return int32(0)
-																			} else {
-																				v123 = v118
-																				m.G0 = v9 + int32(112)
-																				return v123
+																				return v121
 																			}
 																		}
 																	}
@@ -1030,95 +1033,95 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 															} else {
 																F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_3))
 																mBase = m.M
-																v117 = m.ExcPending
-																if v117 != 0 {
+																v115 = m.ExcPending
+																if v115 != 0 {
 																	return int32(0)
 																} else {
-																	v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																	v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 																	F_ReleaseCatCache(m, v12)
 																	mBase = m.M
-																	v120 = m.ExcPending
-																	if v120 != 0 {
+																	v118 = m.ExcPending
+																	if v118 != 0 {
 																		return int32(0)
 																	} else {
-																		v123 = v118
+																		v121 = v116
 																		m.G0 = v9 + int32(112)
-																		return v123
+																		return v121
 																	}
 																}
 															}
 														}
 													}
 												} else {
-													v58 = F_format_type_be_qualified(m, v53)
+													v56 = F_format_type_be_qualified(m, v51)
 													mBase = m.M
-													v59 = m.ExcPending
-													if v59 != 0 {
+													v57 = m.ExcPending
+													if v57 != 0 {
 														return int32(0)
 													} else {
-														v89 = v58
-														*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v89
+														v87 = v56
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v87
 														F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_1), v9+int32(32))
 														mBase = m.M
-														v97 = m.ExcPending
-														if v97 != 0 {
+														v95 = m.ExcPending
+														if v95 != 0 {
 															return int32(0)
 														} else {
-															v99 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
-															if v99 != 0 {
+															v97 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
+															if v97 != 0 {
 																if v26 != 0 {
-																	v100 = F_format_type_be_qualified(m, v99)
+																	v98 = F_format_type_be_qualified(m, v97)
+																	mBase = m.M
+																	v99 = m.ExcPending
+																	if v99 != 0 {
+																		return int32(0)
+																	} else {
+																		v102 = v98
+																		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
+																		F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
+																		mBase = m.M
+																		v110 = m.ExcPending
+																		if v110 != 0 {
+																			return int32(0)
+																		} else {
+																			v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																			F_ReleaseCatCache(m, v12)
+																			mBase = m.M
+																			v118 = m.ExcPending
+																			if v118 != 0 {
+																				return int32(0)
+																			} else {
+																				v121 = v116
+																				m.G0 = v9 + int32(112)
+																				return v121
+																			}
+																		}
+																	}
+																} else {
+																	v100 = F_format_type_be(m, v97)
 																	mBase = m.M
 																	v101 = m.ExcPending
 																	if v101 != 0 {
 																		return int32(0)
 																	} else {
-																		v104 = v100
-																		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
+																		v102 = v100
+																		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
 																		F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
 																		mBase = m.M
-																		v112 = m.ExcPending
-																		if v112 != 0 {
+																		v110 = m.ExcPending
+																		if v110 != 0 {
 																			return int32(0)
 																		} else {
-																			v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																			v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 																			F_ReleaseCatCache(m, v12)
 																			mBase = m.M
-																			v120 = m.ExcPending
-																			if v120 != 0 {
+																			v118 = m.ExcPending
+																			if v118 != 0 {
 																				return int32(0)
 																			} else {
-																				v123 = v118
+																				v121 = v116
 																				m.G0 = v9 + int32(112)
-																				return v123
-																			}
-																		}
-																	}
-																} else {
-																	v102 = F_format_type_be(m, v99)
-																	mBase = m.M
-																	v103 = m.ExcPending
-																	if v103 != 0 {
-																		return int32(0)
-																	} else {
-																		v104 = v102
-																		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
-																		F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
-																		mBase = m.M
-																		v112 = m.ExcPending
-																		if v112 != 0 {
-																			return int32(0)
-																		} else {
-																			v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
-																			F_ReleaseCatCache(m, v12)
-																			mBase = m.M
-																			v120 = m.ExcPending
-																			if v120 != 0 {
-																				return int32(0)
-																			} else {
-																				v123 = v118
-																				m.G0 = v9 + int32(112)
-																				return v123
+																				return v121
 																			}
 																		}
 																	}
@@ -1126,20 +1129,20 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 															} else {
 																F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_3))
 																mBase = m.M
-																v117 = m.ExcPending
-																if v117 != 0 {
+																v115 = m.ExcPending
+																if v115 != 0 {
 																	return int32(0)
 																} else {
-																	v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																	v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 																	F_ReleaseCatCache(m, v12)
 																	mBase = m.M
-																	v120 = m.ExcPending
-																	if v120 != 0 {
+																	v118 = m.ExcPending
+																	if v118 != 0 {
 																		return int32(0)
 																	} else {
-																		v123 = v118
+																		v121 = v116
 																		m.G0 = v9 + int32(112)
-																		return v123
+																		return v121
 																	}
 																}
 															}
@@ -1168,82 +1171,83 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = v35
-							F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_5), v9+int32(80))
+							v39 = v9 + int32(96)
+							F_appendStringInfo(m, v39, int32(_a_F_format_operator_extended_5), v9+int32(80))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v20
-								F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_0), v9-int32(-64))
+								F_appendStringInfo(m, v39, int32(_a_F_format_operator_extended_0), v9-int32(-64))
 								mBase = m.M
-								v52 = m.ExcPending
-								if v52 != 0 {
+								v50 = m.ExcPending
+								if v50 != 0 {
 									return int32(0)
 								} else {
-									v53 = *(*int32)(unsafe.Add(mBase, uint32(v18)+80))
-									if v53 == int32(0) {
+									v51 = *(*int32)(unsafe.Add(mBase, uint32(v18)+80))
+									if v51 == int32(0) {
 										F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_4))
 										mBase = m.M
-										v74 = m.ExcPending
-										if v74 != 0 {
+										v72 = m.ExcPending
+										if v72 != 0 {
 											return int32(0)
 										} else {
-											v99 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
-											if v99 != 0 {
+											v97 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
+											if v97 != 0 {
 												if v26 != 0 {
-													v100 = F_format_type_be_qualified(m, v99)
+													v98 = F_format_type_be_qualified(m, v97)
+													mBase = m.M
+													v99 = m.ExcPending
+													if v99 != 0 {
+														return int32(0)
+													} else {
+														v102 = v98
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
+														F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
+														mBase = m.M
+														v110 = m.ExcPending
+														if v110 != 0 {
+															return int32(0)
+														} else {
+															v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+															F_ReleaseCatCache(m, v12)
+															mBase = m.M
+															v118 = m.ExcPending
+															if v118 != 0 {
+																return int32(0)
+															} else {
+																v121 = v116
+																m.G0 = v9 + int32(112)
+																return v121
+															}
+														}
+													}
+												} else {
+													v100 = F_format_type_be(m, v97)
 													mBase = m.M
 													v101 = m.ExcPending
 													if v101 != 0 {
 														return int32(0)
 													} else {
-														v104 = v100
-														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
+														v102 = v100
+														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
 														F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
 														mBase = m.M
-														v112 = m.ExcPending
-														if v112 != 0 {
+														v110 = m.ExcPending
+														if v110 != 0 {
 															return int32(0)
 														} else {
-															v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+															v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 															F_ReleaseCatCache(m, v12)
 															mBase = m.M
-															v120 = m.ExcPending
-															if v120 != 0 {
+															v118 = m.ExcPending
+															if v118 != 0 {
 																return int32(0)
 															} else {
-																v123 = v118
+																v121 = v116
 																m.G0 = v9 + int32(112)
-																return v123
-															}
-														}
-													}
-												} else {
-													v102 = F_format_type_be(m, v99)
-													mBase = m.M
-													v103 = m.ExcPending
-													if v103 != 0 {
-														return int32(0)
-													} else {
-														v104 = v102
-														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
-														F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
-														mBase = m.M
-														v112 = m.ExcPending
-														if v112 != 0 {
-															return int32(0)
-														} else {
-															v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
-															F_ReleaseCatCache(m, v12)
-															mBase = m.M
-															v120 = m.ExcPending
-															if v120 != 0 {
-																return int32(0)
-															} else {
-																v123 = v118
-																m.G0 = v9 + int32(112)
-																return v123
+																return v121
 															}
 														}
 													}
@@ -1251,96 +1255,96 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 											} else {
 												F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_3))
 												mBase = m.M
-												v117 = m.ExcPending
-												if v117 != 0 {
+												v115 = m.ExcPending
+												if v115 != 0 {
 													return int32(0)
 												} else {
-													v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+													v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 													F_ReleaseCatCache(m, v12)
 													mBase = m.M
-													v120 = m.ExcPending
-													if v120 != 0 {
+													v118 = m.ExcPending
+													if v118 != 0 {
 														return int32(0)
 													} else {
-														v123 = v118
+														v121 = v116
 														m.G0 = v9 + int32(112)
-														return v123
+														return v121
 													}
 												}
 											}
 										}
 									} else {
 										if v26 == int32(0) {
-											v85 = v53
-											v86 = F_format_type_be(m, v85)
+											v83 = v51
+											v84 = F_format_type_be(m, v83)
 											mBase = m.M
-											v87 = m.ExcPending
-											if v87 != 0 {
+											v85 = m.ExcPending
+											if v85 != 0 {
 												return int32(0)
 											} else {
-												v89 = v86
-												*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v89
+												v87 = v84
+												*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v87
 												F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_1), v9+int32(32))
 												mBase = m.M
-												v97 = m.ExcPending
-												if v97 != 0 {
+												v95 = m.ExcPending
+												if v95 != 0 {
 													return int32(0)
 												} else {
-													v99 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
-													if v99 != 0 {
+													v97 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
+													if v97 != 0 {
 														if v26 != 0 {
-															v100 = F_format_type_be_qualified(m, v99)
+															v98 = F_format_type_be_qualified(m, v97)
+															mBase = m.M
+															v99 = m.ExcPending
+															if v99 != 0 {
+																return int32(0)
+															} else {
+																v102 = v98
+																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
+																F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
+																mBase = m.M
+																v110 = m.ExcPending
+																if v110 != 0 {
+																	return int32(0)
+																} else {
+																	v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																	F_ReleaseCatCache(m, v12)
+																	mBase = m.M
+																	v118 = m.ExcPending
+																	if v118 != 0 {
+																		return int32(0)
+																	} else {
+																		v121 = v116
+																		m.G0 = v9 + int32(112)
+																		return v121
+																	}
+																}
+															}
+														} else {
+															v100 = F_format_type_be(m, v97)
 															mBase = m.M
 															v101 = m.ExcPending
 															if v101 != 0 {
 																return int32(0)
 															} else {
-																v104 = v100
-																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
+																v102 = v100
+																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
 																F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
 																mBase = m.M
-																v112 = m.ExcPending
-																if v112 != 0 {
+																v110 = m.ExcPending
+																if v110 != 0 {
 																	return int32(0)
 																} else {
-																	v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																	v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 																	F_ReleaseCatCache(m, v12)
 																	mBase = m.M
-																	v120 = m.ExcPending
-																	if v120 != 0 {
+																	v118 = m.ExcPending
+																	if v118 != 0 {
 																		return int32(0)
 																	} else {
-																		v123 = v118
+																		v121 = v116
 																		m.G0 = v9 + int32(112)
-																		return v123
-																	}
-																}
-															}
-														} else {
-															v102 = F_format_type_be(m, v99)
-															mBase = m.M
-															v103 = m.ExcPending
-															if v103 != 0 {
-																return int32(0)
-															} else {
-																v104 = v102
-																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
-																F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
-																mBase = m.M
-																v112 = m.ExcPending
-																if v112 != 0 {
-																	return int32(0)
-																} else {
-																	v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
-																	F_ReleaseCatCache(m, v12)
-																	mBase = m.M
-																	v120 = m.ExcPending
-																	if v120 != 0 {
-																		return int32(0)
-																	} else {
-																		v123 = v118
-																		m.G0 = v9 + int32(112)
-																		return v123
+																		return v121
 																	}
 																}
 															}
@@ -1348,95 +1352,95 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 													} else {
 														F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_3))
 														mBase = m.M
-														v117 = m.ExcPending
-														if v117 != 0 {
+														v115 = m.ExcPending
+														if v115 != 0 {
 															return int32(0)
 														} else {
-															v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+															v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 															F_ReleaseCatCache(m, v12)
 															mBase = m.M
-															v120 = m.ExcPending
-															if v120 != 0 {
+															v118 = m.ExcPending
+															if v118 != 0 {
 																return int32(0)
 															} else {
-																v123 = v118
+																v121 = v116
 																m.G0 = v9 + int32(112)
-																return v123
+																return v121
 															}
 														}
 													}
 												}
 											}
 										} else {
-											v58 = F_format_type_be_qualified(m, v53)
+											v56 = F_format_type_be_qualified(m, v51)
 											mBase = m.M
-											v59 = m.ExcPending
-											if v59 != 0 {
+											v57 = m.ExcPending
+											if v57 != 0 {
 												return int32(0)
 											} else {
-												v89 = v58
-												*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v89
+												v87 = v56
+												*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v87
 												F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_1), v9+int32(32))
 												mBase = m.M
-												v97 = m.ExcPending
-												if v97 != 0 {
+												v95 = m.ExcPending
+												if v95 != 0 {
 													return int32(0)
 												} else {
-													v99 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
-													if v99 != 0 {
+													v97 = *(*int32)(unsafe.Add(mBase, uint32(v18)+84))
+													if v97 != 0 {
 														if v26 != 0 {
-															v100 = F_format_type_be_qualified(m, v99)
+															v98 = F_format_type_be_qualified(m, v97)
+															mBase = m.M
+															v99 = m.ExcPending
+															if v99 != 0 {
+																return int32(0)
+															} else {
+																v102 = v98
+																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
+																F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
+																mBase = m.M
+																v110 = m.ExcPending
+																if v110 != 0 {
+																	return int32(0)
+																} else {
+																	v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																	F_ReleaseCatCache(m, v12)
+																	mBase = m.M
+																	v118 = m.ExcPending
+																	if v118 != 0 {
+																		return int32(0)
+																	} else {
+																		v121 = v116
+																		m.G0 = v9 + int32(112)
+																		return v121
+																	}
+																}
+															}
+														} else {
+															v100 = F_format_type_be(m, v97)
 															mBase = m.M
 															v101 = m.ExcPending
 															if v101 != 0 {
 																return int32(0)
 															} else {
-																v104 = v100
-																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
+																v102 = v100
+																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v102
 																F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
 																mBase = m.M
-																v112 = m.ExcPending
-																if v112 != 0 {
+																v110 = m.ExcPending
+																if v110 != 0 {
 																	return int32(0)
 																} else {
-																	v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+																	v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 																	F_ReleaseCatCache(m, v12)
 																	mBase = m.M
-																	v120 = m.ExcPending
-																	if v120 != 0 {
+																	v118 = m.ExcPending
+																	if v118 != 0 {
 																		return int32(0)
 																	} else {
-																		v123 = v118
+																		v121 = v116
 																		m.G0 = v9 + int32(112)
-																		return v123
-																	}
-																}
-															}
-														} else {
-															v102 = F_format_type_be(m, v99)
-															mBase = m.M
-															v103 = m.ExcPending
-															if v103 != 0 {
-																return int32(0)
-															} else {
-																v104 = v102
-																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v104
-																F_appendStringInfo(m, v9+int32(96), int32(_a_F_format_operator_extended_2), v9+int32(16))
-																mBase = m.M
-																v112 = m.ExcPending
-																if v112 != 0 {
-																	return int32(0)
-																} else {
-																	v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
-																	F_ReleaseCatCache(m, v12)
-																	mBase = m.M
-																	v120 = m.ExcPending
-																	if v120 != 0 {
-																		return int32(0)
-																	} else {
-																		v123 = v118
-																		m.G0 = v9 + int32(112)
-																		return v123
+																		return v121
 																	}
 																}
 															}
@@ -1444,20 +1448,20 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 													} else {
 														F_appendStringInfoString(m, v9+int32(96), int32(_a_F_format_operator_extended_3))
 														mBase = m.M
-														v117 = m.ExcPending
-														if v117 != 0 {
+														v115 = m.ExcPending
+														if v115 != 0 {
 															return int32(0)
 														} else {
-															v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
+															v116 = *(*int32)(unsafe.Add(mBase, uint32(v9)+96))
 															F_ReleaseCatCache(m, v12)
 															mBase = m.M
-															v120 = m.ExcPending
-															if v120 != 0 {
+															v118 = m.ExcPending
+															if v118 != 0 {
 																return int32(0)
 															} else {
-																v123 = v118
+																v121 = v116
 																m.G0 = v9 + int32(112)
-																return v123
+																return v121
 															}
 														}
 													}
@@ -1473,26 +1477,26 @@ func F_format_operator_extended(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		} else {
 			if l1&int32(1) != 0 {
-				v123 = int32(0)
+				v121 = int32(0)
 				m.G0 = v9 + int32(112)
-				return v123
+				return v121
 			} else {
-				v78 = F_palloc(m, int32(64))
+				v76 = F_palloc(m, int32(64))
 				mBase = m.M
-				v79 = m.ExcPending
-				if v79 != 0 {
+				v77 = m.ExcPending
+				if v77 != 0 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-					v83 = F_pg_snprintf(m, v78, int32(64), int32(_a_F_format_operator_extended_6), v9)
+					v81 = F_pg_snprintf(m, v76, int32(64), int32(_a_F_format_operator_extended_6), v9)
 					mBase = m.M
-					v84 = m.ExcPending
-					if v84 != 0 {
+					v82 = m.ExcPending
+					if v82 != 0 {
 						return int32(0)
 					} else {
-						v123 = v78
+						v121 = v76
 						m.G0 = v9 + int32(112)
-						return v123
+						return v121
 					}
 				}
 			}
@@ -1572,26 +1576,28 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	_ = v86
 	var v87 int32
 	_ = v87
+	var v90 int32
+	_ = v90
 	var v95 int32
 	_ = v95
-	var v99 int32
-	_ = v99
-	var v104 int32
-	_ = v104
+	var v97 int32
+	_ = v97
+	var v100 int32
+	_ = v100
+	var v106 int32
+	_ = v106
 	var v110 int32
 	_ = v110
-	var v114 int32
-	_ = v114
+	var v115 int32
+	_ = v115
 	var v119 int32
 	_ = v119
 	var v123 int32
 	_ = v123
 	var v127 int32
 	_ = v127
-	var v131 int32
-	_ = v131
-	var v132 int32
-	_ = v132
+	var v128 int32
+	_ = v128
 	v9 = m.G0
 	v11 = v9 - int32(80)
 	m.G0 = v11
@@ -1643,25 +1649,25 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 									if l0 == v80 {
 										F_appendStringInfoString(m, v11-int32(-64), v26)
 										mBase = m.M
-										v123 = m.ExcPending
-										if v123 != 0 {
+										v119 = m.ExcPending
+										if v119 != 0 {
 											return int32(0)
 										} else {
 											F_ReleaseCatCache(m, v76)
 											mBase = m.M
-											v127 = m.ExcPending
-											if v127 != 0 {
+											v123 = m.ExcPending
+											if v123 != 0 {
 												return int32(0)
 											} else {
 												F_ReleaseCatCache(m, v20)
 												mBase = m.M
-												v131 = m.ExcPending
-												if v131 != 0 {
+												v127 = m.ExcPending
+												if v127 != 0 {
 													return int32(0)
 												} else {
-													v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+													v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 													m.G0 = v11 + int32(80)
-													return v132
+													return v128
 												}
 											}
 										}
@@ -1680,52 +1686,53 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 												return int32(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v86
-												F_appendStringInfo(m, v11-int32(-64), int32(_a_F_generate_operator_name_0), v11+int32(32))
+												v90 = v11 - int32(-64)
+												F_appendStringInfo(m, v90, int32(_a_F_generate_operator_name_0), v11+int32(32))
 												mBase = m.M
 												v95 = m.ExcPending
 												if v95 != 0 {
 													return int32(0)
 												} else {
-													F_appendStringInfoString(m, v11-int32(-64), v26)
+													F_appendStringInfoString(m, v90, v26)
 													mBase = m.M
-													v99 = m.ExcPending
-													if v99 != 0 {
+													v97 = m.ExcPending
+													if v97 != 0 {
 														return int32(0)
 													} else {
 														if v84 != 0 {
-															F_appendStringInfoChar(m, v11-int32(-64), int32(41))
+															F_appendStringInfoChar(m, v90, int32(41))
 															mBase = m.M
-															v104 = m.ExcPending
-															if v104 != 0 {
+															v100 = m.ExcPending
+															if v100 != 0 {
 																return int32(0)
 															} else {
 																if v76 == int32(0) {
 																	F_ReleaseCatCache(m, v20)
 																	mBase = m.M
-																	v131 = m.ExcPending
-																	if v131 != 0 {
-																		return int32(0)
-																	} else {
-																		v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
-																		m.G0 = v11 + int32(80)
-																		return v132
-																	}
-																} else {
-																	F_ReleaseCatCache(m, v76)
-																	mBase = m.M
 																	v127 = m.ExcPending
 																	if v127 != 0 {
 																		return int32(0)
 																	} else {
+																		v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																		m.G0 = v11 + int32(80)
+																		return v128
+																	}
+																} else {
+																	F_ReleaseCatCache(m, v76)
+																	mBase = m.M
+																	v123 = m.ExcPending
+																	if v123 != 0 {
+																		return int32(0)
+																	} else {
 																		F_ReleaseCatCache(m, v20)
 																		mBase = m.M
-																		v131 = m.ExcPending
-																		if v131 != 0 {
+																		v127 = m.ExcPending
+																		if v127 != 0 {
 																			return int32(0)
 																		} else {
-																			v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																			v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 																			m.G0 = v11 + int32(80)
-																			return v132
+																			return v128
 																		}
 																	}
 																}
@@ -1734,30 +1741,30 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 															if v76 == int32(0) {
 																F_ReleaseCatCache(m, v20)
 																mBase = m.M
-																v131 = m.ExcPending
-																if v131 != 0 {
-																	return int32(0)
-																} else {
-																	v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
-																	m.G0 = v11 + int32(80)
-																	return v132
-																}
-															} else {
-																F_ReleaseCatCache(m, v76)
-																mBase = m.M
 																v127 = m.ExcPending
 																if v127 != 0 {
 																	return int32(0)
 																} else {
+																	v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																	m.G0 = v11 + int32(80)
+																	return v128
+																}
+															} else {
+																F_ReleaseCatCache(m, v76)
+																mBase = m.M
+																v123 = m.ExcPending
+																if v123 != 0 {
+																	return int32(0)
+																} else {
 																	F_ReleaseCatCache(m, v20)
 																	mBase = m.M
-																	v131 = m.ExcPending
-																	if v131 != 0 {
+																	v127 = m.ExcPending
+																	if v127 != 0 {
 																		return int32(0)
 																	} else {
-																		v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																		v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 																		m.G0 = v11 + int32(80)
-																		return v132
+																		return v128
 																	}
 																}
 															}
@@ -1782,52 +1789,53 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v86
-											F_appendStringInfo(m, v11-int32(-64), int32(_a_F_generate_operator_name_0), v11+int32(32))
+											v90 = v11 - int32(-64)
+											F_appendStringInfo(m, v90, int32(_a_F_generate_operator_name_0), v11+int32(32))
 											mBase = m.M
 											v95 = m.ExcPending
 											if v95 != 0 {
 												return int32(0)
 											} else {
-												F_appendStringInfoString(m, v11-int32(-64), v26)
+												F_appendStringInfoString(m, v90, v26)
 												mBase = m.M
-												v99 = m.ExcPending
-												if v99 != 0 {
+												v97 = m.ExcPending
+												if v97 != 0 {
 													return int32(0)
 												} else {
 													if v84 != 0 {
-														F_appendStringInfoChar(m, v11-int32(-64), int32(41))
+														F_appendStringInfoChar(m, v90, int32(41))
 														mBase = m.M
-														v104 = m.ExcPending
-														if v104 != 0 {
+														v100 = m.ExcPending
+														if v100 != 0 {
 															return int32(0)
 														} else {
 															if v76 == int32(0) {
 																F_ReleaseCatCache(m, v20)
 																mBase = m.M
-																v131 = m.ExcPending
-																if v131 != 0 {
-																	return int32(0)
-																} else {
-																	v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
-																	m.G0 = v11 + int32(80)
-																	return v132
-																}
-															} else {
-																F_ReleaseCatCache(m, v76)
-																mBase = m.M
 																v127 = m.ExcPending
 																if v127 != 0 {
 																	return int32(0)
 																} else {
+																	v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																	m.G0 = v11 + int32(80)
+																	return v128
+																}
+															} else {
+																F_ReleaseCatCache(m, v76)
+																mBase = m.M
+																v123 = m.ExcPending
+																if v123 != 0 {
+																	return int32(0)
+																} else {
 																	F_ReleaseCatCache(m, v20)
 																	mBase = m.M
-																	v131 = m.ExcPending
-																	if v131 != 0 {
+																	v127 = m.ExcPending
+																	if v127 != 0 {
 																		return int32(0)
 																	} else {
-																		v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																		v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 																		m.G0 = v11 + int32(80)
-																		return v132
+																		return v128
 																	}
 																}
 															}
@@ -1836,30 +1844,30 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 														if v76 == int32(0) {
 															F_ReleaseCatCache(m, v20)
 															mBase = m.M
-															v131 = m.ExcPending
-															if v131 != 0 {
-																return int32(0)
-															} else {
-																v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
-																m.G0 = v11 + int32(80)
-																return v132
-															}
-														} else {
-															F_ReleaseCatCache(m, v76)
-															mBase = m.M
 															v127 = m.ExcPending
 															if v127 != 0 {
 																return int32(0)
 															} else {
+																v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																m.G0 = v11 + int32(80)
+																return v128
+															}
+														} else {
+															F_ReleaseCatCache(m, v76)
+															mBase = m.M
+															v123 = m.ExcPending
+															if v123 != 0 {
+																return int32(0)
+															} else {
 																F_ReleaseCatCache(m, v20)
 																mBase = m.M
-																v131 = m.ExcPending
-																if v131 != 0 {
+																v127 = m.ExcPending
+																if v127 != 0 {
 																	return int32(0)
 																} else {
-																	v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																	v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 																	m.G0 = v11 + int32(80)
-																	return v132
+																	return v128
 																}
 															}
 														}
@@ -1928,25 +1936,25 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 									if l0 == v80 {
 										F_appendStringInfoString(m, v11-int32(-64), v26)
 										mBase = m.M
-										v123 = m.ExcPending
-										if v123 != 0 {
+										v119 = m.ExcPending
+										if v119 != 0 {
 											return int32(0)
 										} else {
 											F_ReleaseCatCache(m, v76)
 											mBase = m.M
-											v127 = m.ExcPending
-											if v127 != 0 {
+											v123 = m.ExcPending
+											if v123 != 0 {
 												return int32(0)
 											} else {
 												F_ReleaseCatCache(m, v20)
 												mBase = m.M
-												v131 = m.ExcPending
-												if v131 != 0 {
+												v127 = m.ExcPending
+												if v127 != 0 {
 													return int32(0)
 												} else {
-													v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+													v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 													m.G0 = v11 + int32(80)
-													return v132
+													return v128
 												}
 											}
 										}
@@ -1965,52 +1973,53 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 												return int32(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v86
-												F_appendStringInfo(m, v11-int32(-64), int32(_a_F_generate_operator_name_0), v11+int32(32))
+												v90 = v11 - int32(-64)
+												F_appendStringInfo(m, v90, int32(_a_F_generate_operator_name_0), v11+int32(32))
 												mBase = m.M
 												v95 = m.ExcPending
 												if v95 != 0 {
 													return int32(0)
 												} else {
-													F_appendStringInfoString(m, v11-int32(-64), v26)
+													F_appendStringInfoString(m, v90, v26)
 													mBase = m.M
-													v99 = m.ExcPending
-													if v99 != 0 {
+													v97 = m.ExcPending
+													if v97 != 0 {
 														return int32(0)
 													} else {
 														if v84 != 0 {
-															F_appendStringInfoChar(m, v11-int32(-64), int32(41))
+															F_appendStringInfoChar(m, v90, int32(41))
 															mBase = m.M
-															v104 = m.ExcPending
-															if v104 != 0 {
+															v100 = m.ExcPending
+															if v100 != 0 {
 																return int32(0)
 															} else {
 																if v76 == int32(0) {
 																	F_ReleaseCatCache(m, v20)
 																	mBase = m.M
-																	v131 = m.ExcPending
-																	if v131 != 0 {
-																		return int32(0)
-																	} else {
-																		v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
-																		m.G0 = v11 + int32(80)
-																		return v132
-																	}
-																} else {
-																	F_ReleaseCatCache(m, v76)
-																	mBase = m.M
 																	v127 = m.ExcPending
 																	if v127 != 0 {
 																		return int32(0)
 																	} else {
+																		v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																		m.G0 = v11 + int32(80)
+																		return v128
+																	}
+																} else {
+																	F_ReleaseCatCache(m, v76)
+																	mBase = m.M
+																	v123 = m.ExcPending
+																	if v123 != 0 {
+																		return int32(0)
+																	} else {
 																		F_ReleaseCatCache(m, v20)
 																		mBase = m.M
-																		v131 = m.ExcPending
-																		if v131 != 0 {
+																		v127 = m.ExcPending
+																		if v127 != 0 {
 																			return int32(0)
 																		} else {
-																			v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																			v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 																			m.G0 = v11 + int32(80)
-																			return v132
+																			return v128
 																		}
 																	}
 																}
@@ -2019,30 +2028,30 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 															if v76 == int32(0) {
 																F_ReleaseCatCache(m, v20)
 																mBase = m.M
-																v131 = m.ExcPending
-																if v131 != 0 {
-																	return int32(0)
-																} else {
-																	v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
-																	m.G0 = v11 + int32(80)
-																	return v132
-																}
-															} else {
-																F_ReleaseCatCache(m, v76)
-																mBase = m.M
 																v127 = m.ExcPending
 																if v127 != 0 {
 																	return int32(0)
 																} else {
+																	v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																	m.G0 = v11 + int32(80)
+																	return v128
+																}
+															} else {
+																F_ReleaseCatCache(m, v76)
+																mBase = m.M
+																v123 = m.ExcPending
+																if v123 != 0 {
+																	return int32(0)
+																} else {
 																	F_ReleaseCatCache(m, v20)
 																	mBase = m.M
-																	v131 = m.ExcPending
-																	if v131 != 0 {
+																	v127 = m.ExcPending
+																	if v127 != 0 {
 																		return int32(0)
 																	} else {
-																		v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																		v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 																		m.G0 = v11 + int32(80)
-																		return v132
+																		return v128
 																	}
 																}
 															}
@@ -2067,52 +2076,53 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v86
-											F_appendStringInfo(m, v11-int32(-64), int32(_a_F_generate_operator_name_0), v11+int32(32))
+											v90 = v11 - int32(-64)
+											F_appendStringInfo(m, v90, int32(_a_F_generate_operator_name_0), v11+int32(32))
 											mBase = m.M
 											v95 = m.ExcPending
 											if v95 != 0 {
 												return int32(0)
 											} else {
-												F_appendStringInfoString(m, v11-int32(-64), v26)
+												F_appendStringInfoString(m, v90, v26)
 												mBase = m.M
-												v99 = m.ExcPending
-												if v99 != 0 {
+												v97 = m.ExcPending
+												if v97 != 0 {
 													return int32(0)
 												} else {
 													if v84 != 0 {
-														F_appendStringInfoChar(m, v11-int32(-64), int32(41))
+														F_appendStringInfoChar(m, v90, int32(41))
 														mBase = m.M
-														v104 = m.ExcPending
-														if v104 != 0 {
+														v100 = m.ExcPending
+														if v100 != 0 {
 															return int32(0)
 														} else {
 															if v76 == int32(0) {
 																F_ReleaseCatCache(m, v20)
 																mBase = m.M
-																v131 = m.ExcPending
-																if v131 != 0 {
-																	return int32(0)
-																} else {
-																	v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
-																	m.G0 = v11 + int32(80)
-																	return v132
-																}
-															} else {
-																F_ReleaseCatCache(m, v76)
-																mBase = m.M
 																v127 = m.ExcPending
 																if v127 != 0 {
 																	return int32(0)
 																} else {
+																	v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																	m.G0 = v11 + int32(80)
+																	return v128
+																}
+															} else {
+																F_ReleaseCatCache(m, v76)
+																mBase = m.M
+																v123 = m.ExcPending
+																if v123 != 0 {
+																	return int32(0)
+																} else {
 																	F_ReleaseCatCache(m, v20)
 																	mBase = m.M
-																	v131 = m.ExcPending
-																	if v131 != 0 {
+																	v127 = m.ExcPending
+																	if v127 != 0 {
 																		return int32(0)
 																	} else {
-																		v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																		v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 																		m.G0 = v11 + int32(80)
-																		return v132
+																		return v128
 																	}
 																}
 															}
@@ -2121,30 +2131,30 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 														if v76 == int32(0) {
 															F_ReleaseCatCache(m, v20)
 															mBase = m.M
-															v131 = m.ExcPending
-															if v131 != 0 {
-																return int32(0)
-															} else {
-																v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
-																m.G0 = v11 + int32(80)
-																return v132
-															}
-														} else {
-															F_ReleaseCatCache(m, v76)
-															mBase = m.M
 															v127 = m.ExcPending
 															if v127 != 0 {
 																return int32(0)
 															} else {
+																v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																m.G0 = v11 + int32(80)
+																return v128
+															}
+														} else {
+															F_ReleaseCatCache(m, v76)
+															mBase = m.M
+															v123 = m.ExcPending
+															if v123 != 0 {
+																return int32(0)
+															} else {
 																F_ReleaseCatCache(m, v20)
 																mBase = m.M
-																v131 = m.ExcPending
-																if v131 != 0 {
+																v127 = m.ExcPending
+																if v127 != 0 {
 																	return int32(0)
 																} else {
-																	v132 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
+																	v128 = *(*int32)(unsafe.Add(mBase, uint32(v11)+64))
 																	m.G0 = v11 + int32(80)
-																	return v132
+																	return v128
 																}
 															}
 														}
@@ -2161,21 +2171,21 @@ func F_generate_operator_name(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v110 = m.ExcPending
-				if v110 != 0 {
+				v106 = m.ExcPending
+				if v106 != 0 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v11))) = l0
 					F_errmsg_internal(m, int32(_a_F_generate_operator_name_5), v11)
 					mBase = m.M
-					v114 = m.ExcPending
-					if v114 != 0 {
+					v110 = m.ExcPending
+					if v110 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_generate_operator_name_2), int32(_a_F_generate_operator_name_6), int32(_a_F_generate_operator_name_4))
 						mBase = m.M
-						v119 = m.ExcPending
-						if v119 != 0 {
+						v115 = m.ExcPending
+						if v115 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()

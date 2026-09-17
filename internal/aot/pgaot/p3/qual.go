@@ -14,52 +14,52 @@ func F_EvalPlanQualEnd(m *base.Module, l0 int32) {
 	_ = v7
 	var v8 int32
 	_ = v8
-	var v10 int32
-	_ = v10
+	var v9 int32
+	_ = v9
 	var v11 int32
 	_ = v11
+	var v12 int32
+	_ = v12
 	var v15 int32
 	_ = v15
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
-	var v22 int32
-	_ = v22
+	var v18 int32
+	_ = v18
 	var v23 int32
 	_ = v23
-	var v25 int32
-	_ = v25
-	var v27 int32
-	_ = v27
-	var v29 int32
-	_ = v29
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
 	var v30 int32
 	_ = v30
-	var v33 int32
-	_ = v33
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
-	var v45 int32
-	_ = v45
-	var v47 int32
-	_ = v47
-	var v49 int32
-	_ = v49
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
 	var v50 int32
 	_ = v50
-	var v57 int32
-	_ = v57
-	var v60 int32
-	_ = v60
-	var v62 int32
-	_ = v62
-	var v68 int32
-	_ = v68
-	var v69 int64
+	var v51 int32
+	_ = v51
+	var v58 int32
+	_ = v58
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
+	var v69 int32
 	_ = v69
+	var v70 int64
+	_ = v70
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	if v7 != 0 {
@@ -69,149 +69,159 @@ func F_EvalPlanQualEnd(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
-	v15 = F__emscripten_memset_bulkmem(m, v8, base.I32_extend8_s(int32(0)), v11<<(uint(int32(2))%32))
-	mBase = m.M
-	goto L4
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+20))
+	v11 = v9 << (uint(int32(2)) % 32)
+	if v11 != 0 {
+		goto L4
+	} else {
+		goto L5
+	}
 L2:
 	;
 	goto L3
 L3:
 	;
 	if v6 != 0 {
+		goto L9
+	} else {
+		goto L10
+	}
+L4:
+	;
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	base.MemoryFill(m, v12, int32(0), v11)
+	goto L6
+L5:
+	;
+	goto L6
+L6:
+	;
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	F_ExecResetTupleTable(m, v15, int32(1))
+	mBase = m.M
+	v18 = m.ExcPending
+	if v18 != 0 {
 		goto L7
 	} else {
 		goto L8
 	}
-L4:
-	;
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	F_ExecResetTupleTable(m, v16, int32(1))
-	mBase = m.M
-	v19 = m.ExcPending
-	if v19 != 0 {
-		goto L5
-	} else {
-		goto L6
-	}
-L5:
+L7:
 	;
 	return
-L6:
+L8:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = int32(0)
 	goto L3
-L7:
-	;
-	v22 = int32(_a_F_EvalPlanQualEnd_0)
-	v23 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualEnd[0]))
-	v25 = *(*int32)(unsafe.Add(mBase, uint32(v6)+100))
-	*(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualEnd[0])) = v25
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	F_ExecEndNode(m, v27)
-	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
-		goto L5
-	} else {
-		goto L10
-	}
-L8:
-	;
-	goto L9
 L9:
 	;
-	return
-L10:
-	;
-	v30 = *(*int32)(unsafe.Add(mBase, uint32(v6)+144))
-	if v30 == int32(0) {
-		goto L11
+	v23 = int32(_a_F_EvalPlanQualEnd_0)
+	v24 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualEnd[0]))
+	v26 = *(*int32)(unsafe.Add(mBase, uint32(v6)+100))
+	*(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualEnd[0])) = v26
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	F_ExecEndNode(m, v28)
+	mBase = m.M
+	v30 = m.ExcPending
+	if v30 != 0 {
+		goto L7
 	} else {
 		goto L12
 	}
+L10:
+	;
+	goto L11
 L11:
 	;
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v6)+104))
-	F_ExecResetTupleTable(m, v57, int32(0))
-	mBase = m.M
-	v60 = m.ExcPending
-	if v60 != 0 {
-		goto L5
-	} else {
-		goto L18
-	}
+	return
 L12:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v30)+4))
-	if v33 <= int32(0) {
-		goto L11
-	} else {
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(v6)+144))
+	if v31 == int32(0) {
 		goto L13
+	} else {
+		goto L14
 	}
 L13:
 	;
-	v38 = int32(0)
-	goto L14
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(v6)+104))
+	F_ExecResetTupleTable(m, v58, int32(0))
+	mBase = m.M
+	v61 = m.ExcPending
+	if v61 != 0 {
+		goto L7
+	} else {
+		goto L20
+	}
 L14:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(v30)+12))
-	v45 = *(*int32)(unsafe.Add(mBase, uint32(v41+v38<<(uint(int32(2))%32))))
-	F_ExecEndNode(m, v45)
-	mBase = m.M
-	v47 = m.ExcPending
-	if v47 != 0 {
-		goto L5
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v31)+4))
+	if v34 <= int32(0) {
+		goto L13
 	} else {
-		goto L16
+		goto L15
 	}
 L15:
 	;
-	goto L11
+	v39 = int32(0)
+	goto L16
 L16:
 	;
-	v49 = v38 + int32(1)
-	v50 = *(*int32)(unsafe.Add(mBase, uint32(v30)+4))
-	if v49 < v50 {
-		v38 = v49
-		goto L14
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(v31)+12))
+	v46 = *(*int32)(unsafe.Add(mBase, uint32(v42+v39<<(uint(int32(2))%32))))
+	F_ExecEndNode(m, v46)
+	mBase = m.M
+	v48 = m.ExcPending
+	if v48 != 0 {
+		goto L7
 	} else {
-		goto L17
+		goto L18
 	}
 L17:
 	;
-	goto L15
+	goto L13
 L18:
 	;
-	F_ExecCloseResultRelations(m, v6)
-	mBase = m.M
-	v62 = m.ExcPending
-	if v62 != 0 {
-		goto L5
+	v50 = v39 + int32(1)
+	v51 = *(*int32)(unsafe.Add(mBase, uint32(v31)+4))
+	if v50 < v51 {
+		v39 = v50
+		goto L16
 	} else {
 		goto L19
 	}
 L19:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualEnd[0])) = v23
+	goto L17
+L20:
+	;
+	F_ExecCloseResultRelations(m, v6)
+	mBase = m.M
+	v63 = m.ExcPending
+	if v63 != 0 {
+		goto L7
+	} else {
+		goto L21
+	}
+L21:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualEnd[0])) = v24
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+76)) = int32(0)
 	F_FreeExecutorState(m, v6)
 	mBase = m.M
-	v68 = m.ExcPending
-	if v68 != 0 {
-		goto L5
+	v69 = m.ExcPending
+	if v69 != 0 {
+		goto L7
 	} else {
-		goto L20
+		goto L22
 	}
-L20:
+L22:
 	;
-	v69 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v69
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v69
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+28)) = v69
-	goto L9
+	v70 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v70
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v70
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+28)) = v70
+	goto L11
 }
 func F_preprocess_qual_conditions(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
@@ -230,8 +240,8 @@ func F_preprocess_qual_conditions(m *base.Module, l0 int32, l1 int32) {
 	_ = v17
 	var v20 int32
 	_ = v20
-	var v25 int32
-	_ = v25
+	var v28 int32
+	_ = v28
 	var v29 int32
 	_ = v29
 	var v33 int32
@@ -258,8 +268,8 @@ func F_preprocess_qual_conditions(m *base.Module, l0 int32, l1 int32) {
 	_ = v55
 	var v60 int32
 	_ = v60
-	var v66 int32
-	_ = v66
+	var v65 int32
+	_ = v65
 	var v67 int32
 	_ = v67
 	var v68 int32
@@ -296,7 +306,7 @@ L2:
 	}
 L3:
 	;
-	v67 = l1 + v66
+	v67 = l1 + v65
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
 	v70 = F_preprocess_expression(m, l0, v68, int32(0))
 	mBase = m.M
@@ -332,7 +342,7 @@ L6:
 	v16 = int32(8)
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v17 == int32(0) {
-		v66 = v16
+		v65 = v16
 		goto L3
 	} else {
 		goto L7
@@ -341,19 +351,19 @@ L7:
 	;
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
 	if v20 <= int32(0) {
-		v66 = v16
+		v65 = v16
 		goto L3
 	} else {
 		goto L8
 	}
 L8:
 	;
-	v25 = v3
+	v28 = v3
 	goto L9
 L9:
 	;
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v29+v25<<(uint(int32(2))%32))))
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(v29+v28<<(uint(int32(2))%32))))
 	F_preprocess_qual_conditions(m, l0, v33)
 	mBase = m.M
 	v35 = m.ExcPending
@@ -364,17 +374,17 @@ L9:
 	}
 L10:
 	;
-	v66 = v16
+	v65 = v16
 	goto L3
 L11:
 	;
 	return
 L12:
 	;
-	v37 = v25 + int32(1)
+	v37 = v28 + int32(1)
 	v38 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
 	if v37 < v38 {
-		v25 = v37
+		v28 = v37
 		goto L9
 	} else {
 		goto L13
@@ -395,7 +405,7 @@ L14:
 	}
 L15:
 	;
-	v66 = int32(28)
+	v65 = int32(28)
 	goto L3
 L16:
 	;

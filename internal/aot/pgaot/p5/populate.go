@@ -78,8 +78,8 @@ func F_populate_array_element_end(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v72
 	var v73 int32
 	_ = v73
-	var v81 int32
-	_ = v81
+	var v80 int32
+	_ = v80
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
@@ -88,9 +88,9 @@ func F_populate_array_element_end(m *base.Module, l0 int32, l1 int32) int32 {
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 	if v13 != v15 {
-		v81 = int32(0)
+		v80 = int32(0)
 		m.G0 = v9 + int32(32)
-		return v81
+		return v80
 	} else {
 		v17 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+12)) = uint8(v17)
@@ -143,9 +143,9 @@ func F_populate_array_element_end(m *base.Module, l0 int32, l1 int32) int32 {
 					v72 = v67 + v13<<(uint(int32(2))%32) - int32(4)
 					v73 = *(*int32)(unsafe.Add(mBase, uint32(v72)))
 					*(*int32)(unsafe.Add(mBase, uint32(v72))) = v73 + int32(1)
-					v81 = int32(0)
+					v80 = int32(0)
 					m.G0 = v9 + int32(32)
-					return v81
+					return v80
 				}
 			} else {
 				v55 = *(*int32)(unsafe.Add(mBase, uint32(v52)))
@@ -165,16 +165,16 @@ func F_populate_array_element_end(m *base.Module, l0 int32, l1 int32) int32 {
 						v72 = v67 + v13<<(uint(int32(2))%32) - int32(4)
 						v73 = *(*int32)(unsafe.Add(mBase, uint32(v72)))
 						*(*int32)(unsafe.Add(mBase, uint32(v72))) = v73 + int32(1)
-						v81 = int32(0)
+						v80 = int32(0)
 						m.G0 = v9 + int32(32)
-						return v81
+						return v80
 					}
 				} else {
 					v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+4)))
 					if v59 != 0 {
-						v81 = int32(23)
+						v80 = int32(23)
 						m.G0 = v9 + int32(32)
-						return v81
+						return v80
 					} else {
 						v60 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
 						v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+31)))
@@ -191,9 +191,9 @@ func F_populate_array_element_end(m *base.Module, l0 int32, l1 int32) int32 {
 							v72 = v67 + v13<<(uint(int32(2))%32) - int32(4)
 							v73 = *(*int32)(unsafe.Add(mBase, uint32(v72)))
 							*(*int32)(unsafe.Add(mBase, uint32(v72))) = v73 + int32(1)
-							v81 = int32(0)
+							v80 = int32(0)
 							m.G0 = v9 + int32(32)
-							return v81
+							return v80
 						}
 					}
 				}
@@ -230,8 +230,8 @@ func F_populate_array_object_start(m *base.Module, l0 int32) int32 {
 	_ = v29
 	var v34 int32
 	_ = v34
-	var v39 int32
-	_ = v39
+	var v40 int32
+	_ = v40
 	var v42 int32
 	_ = v42
 	var v43 int32
@@ -250,22 +250,22 @@ func F_populate_array_object_start(m *base.Module, l0 int32) int32 {
 	_ = v60
 	var v62 int32
 	_ = v62
-	var v64 int32
-	_ = v64
-	var v74 int32
-	_ = v74
-	var v75 int32
-	_ = v75
-	var v81 int32
-	_ = v81
-	var v87 int32
-	_ = v87
-	var v90 int32
-	_ = v90
-	var v94 int32
-	_ = v94
-	var v99 int32
-	_ = v99
+	var v66 int32
+	_ = v66
+	var v73 int32
+	_ = v73
+	var v76 int32
+	_ = v76
+	var v80 int32
+	_ = v80
+	var v86 int32
+	_ = v86
+	var v89 int32
+	_ = v89
+	var v102 int32
+	_ = v102
+	var v104 int32
+	_ = v104
 	v2 = int32(0)
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+32))
@@ -275,12 +275,12 @@ func F_populate_array_object_start(m *base.Module, l0 int32) int32 {
 		if v9 <= int32(0) {
 			F_populate_array_report_expected_array(m, v10, v9)
 			mBase = m.M
-			v94 = m.ExcPending
-			if v94 != 0 {
+			v102 = m.ExcPending
+			if v102 != 0 {
 				return int32(0)
 			} else {
-				v99 = int32(23)
-				return v99
+				v104 = int32(23)
+				return v104
 			}
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = v9
@@ -303,7 +303,7 @@ func F_populate_array_object_start(m *base.Module, l0 int32) int32 {
 					v29 = int32(0)
 					if base.Ui32(int32(4)) <= base.Ui32(v9) {
 						v34 = v29
-						v39 = v2
+						v40 = v2
 						for {
 							v42 = v34 << (uint(int32(2)) % 32)
 							v43 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
@@ -317,58 +317,72 @@ func F_populate_array_object_start(m *base.Module, l0 int32) int32 {
 							*(*int32)(unsafe.Add(mBase, uint32(v55+v42)+12)) = v45
 							v59 = int32(4)
 							v60 = v34 + v59
-							v62 = v39 + v59
+							v62 = v40 + v59
 							if v62 != v9&int32(2147483644) {
 								v34 = v60
-								v39 = v62
+								v40 = v62
 								continue
 							} else {
 								break
 							}
 							break
 						}
-						v64 = v60
+						if v28 == int32(0) {
+						} else {
+							v66 = v60
+							v73 = v66
+							v76 = v2
+							for {
+								v80 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
+								*(*int32)(unsafe.Add(mBase, uint32(v80+v73<<(uint(int32(2))%32)))) = int32(-1)
+								v86 = int32(1)
+								v89 = v76 + v86
+								if v89 != v28 {
+									v73 = v73 + v86
+									v76 = v89
+									continue
+								} else {
+									break
+								}
+								break
+							}
+						}
 					} else {
-						v64 = v29
-					}
-					if v28 == int32(0) {
-						v99 = v2
-					} else {
-						v74 = v64
-						v75 = int32(0)
+						v66 = v29
+						v73 = v66
+						v76 = v2
 						for {
-							v81 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
-							*(*int32)(unsafe.Add(mBase, uint32(v81+v74<<(uint(int32(2))%32)))) = int32(-1)
-							v87 = int32(1)
-							v90 = v75 + v87
-							if v90 != v28 {
-								v74 = v74 + v87
-								v75 = v90
+							v80 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
+							*(*int32)(unsafe.Add(mBase, uint32(v80+v73<<(uint(int32(2))%32)))) = int32(-1)
+							v86 = int32(1)
+							v89 = v76 + v86
+							if v89 != v28 {
+								v73 = v73 + v86
+								v76 = v89
 								continue
 							} else {
 								break
 							}
 							break
 						}
-						v99 = v2
 					}
-					return v99
+					return int32(0)
 				}
 			}
 		}
 	} else {
 		if v11 <= v9 {
-			v99 = v2
-			return v99
+			v104 = v2
+			return v104
 		} else {
 			F_populate_array_report_expected_array(m, v10, v9)
 			mBase = m.M
-			v94 = m.ExcPending
-			if v94 != 0 {
+			v102 = m.ExcPending
+			if v102 != 0 {
 				return int32(0)
 			} else {
-				v99 = int32(23)
-				return v99
+				v104 = int32(23)
+				return v104
 			}
 		}
 	}
@@ -432,24 +446,24 @@ func F_populate_record_field(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 	_ = v87
 	var v93 int32
 	_ = v93
+	var v97 int32
+	_ = v97
 	var v99 int32
 	_ = v99
-	var v105 int32
-	_ = v105
-	var v110 int32
-	_ = v110
-	var v111 int32
-	_ = v111
+	var v103 int32
+	_ = v103
+	var v108 int32
+	_ = v108
+	var v109 int32
+	_ = v109
 	var v112 int32
 	_ = v112
-	var v113 int32
-	_ = v113
-	var v115 int32
-	_ = v115
+	var v114 int32
+	_ = v114
+	var v116 int32
+	_ = v116
 	var v117 int32
 	_ = v117
-	var v118 int32
-	_ = v118
 	var v124 int32
 	_ = v124
 	var v125 int32
@@ -516,54 +530,52 @@ func F_populate_record_field(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 	_ = v190
 	var v191 int32
 	_ = v191
-	var v192 int32
-	_ = v192
-	var v193 int32
-	_ = v193
-	var v197 int32
-	_ = v197
-	var v200 int32
-	_ = v200
-	var v201 int32
-	_ = v201
-	var v206 int32
-	_ = v206
-	var v210 int32
-	_ = v210
-	var v211 int32
-	_ = v211
-	var v216 int32
-	_ = v216
+	var v195 int32
+	_ = v195
+	var v196 int32
+	_ = v196
+	var v199 int32
+	_ = v199
+	var v202 int32
+	_ = v202
+	var v203 int32
+	_ = v203
+	var v208 int32
+	_ = v208
+	var v212 int32
+	_ = v212
+	var v213 int32
+	_ = v213
 	var v218 int32
 	_ = v218
 	var v220 int32
 	_ = v220
-	var v221 int32
-	_ = v221
+	var v222 int32
+	_ = v222
 	var v223 int32
 	_ = v223
-	var v224 int32
-	_ = v224
-	var v232 int32
-	_ = v232
-	var v233 int32
-	_ = v233
-	var v236 int32
-	_ = v236
-	var v237 int32
-	_ = v237
-	var v240 int32
-	_ = v240
-	var v241 int32
-	_ = v241
+	var v225 int32
+	_ = v225
+	var v226 int32
+	_ = v226
+	var v234 int32
+	_ = v234
+	var v235 int32
+	_ = v235
+	var v238 int32
+	_ = v238
+	var v239 int32
+	_ = v239
+	var v242 int32
+	_ = v242
 	var v243 int32
 	_ = v243
-	var v244 int32
-	_ = v244
+	var v245 int32
+	_ = v245
 	var v246 int32
 	_ = v246
-	var v247 int32
-	_ = v247
+	var v248 int32
+	_ = v248
 	var v249 int32
 	_ = v249
 	var v250 int64
@@ -871,13 +883,13 @@ L29:
 	return v441
 L30:
 	;
-	v427 = F_JsonbValueToJsonb(m, v117)
+	v427 = F_JsonbValueToJsonb(m, v116)
 	mBase = m.M
 	v428 = m.ExcPending
 	if v428 != 0 {
 		goto L1
 	} else {
-		goto L142
+		goto L141
 	}
 L31:
 	;
@@ -887,7 +899,7 @@ L31:
 	if v417 != 0 {
 		goto L1
 	} else {
-		goto L139
+		goto L138
 	}
 L32:
 	;
@@ -897,7 +909,7 @@ L32:
 	if v410 != 0 {
 		goto L1
 	} else {
-		goto L137
+		goto L136
 	}
 L33:
 	;
@@ -910,15 +922,15 @@ L33:
 	if v401 != 0 {
 		goto L1
 	} else {
-		goto L136
+		goto L135
 	}
 L34:
 	;
 	v386 = l0 + int32(44)
 	if l5 == int32(0) {
-		goto L130
+		goto L129
 	} else {
-		goto L131
+		goto L130
 	}
 L35:
 	;
@@ -962,18 +974,18 @@ L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+44)) = l4
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+36)) = l0 + int32(44)
-	v216 = int32(0)
-	v218 = *(*int32)(unsafe.Add(mBase, _c_F_populate_record_field[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = v218
-	v220 = int32(1)
-	v221 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	v223 = F_initArrayResult(m, v221, v218, v220)
+	v218 = int32(0)
+	v220 = *(*int32)(unsafe.Add(mBase, _c_F_populate_record_field[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = v220
+	v222 = int32(1)
+	v223 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v225 = F_initArrayResult(m, v223, v220, v222)
 	mBase = m.M
-	v224 = m.ExcPending
-	if v224 != 0 {
+	v226 = m.ExcPending
+	if v226 != 0 {
 		goto L1
 	} else {
-		goto L97
+		goto L96
 	}
 L41:
 	;
@@ -984,20 +996,20 @@ L41:
 	}
 L42:
 	;
-	v197 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v200 = F_InputFunctionCallSafe(m, l0+int32(16), v192, v197, l2, l8, v18+int32(32))
+	v199 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v202 = F_InputFunctionCallSafe(m, l0+int32(16), v195, v199, l2, l8, v18+int32(32))
 	mBase = m.M
-	v201 = m.ExcPending
-	if v201 != 0 {
+	v203 = m.ExcPending
+	if v203 != 0 {
 		goto L1
 	} else {
-		goto L89
+		goto L88
 	}
 L43:
 	;
 	v191 = *(*int32)(unsafe.Add(mBase, uint32(v18)+68))
-	v192 = v191
-	v193 = v86
+	v195 = v191
+	v196 = v86
 	goto L42
 L44:
 	;
@@ -1007,7 +1019,7 @@ L44:
 	if v190 != 0 {
 		goto L1
 	} else {
-		goto L88
+		goto L87
 	}
 L45:
 	;
@@ -1023,12 +1035,13 @@ L46:
 	goto L47
 L47:
 	;
-	v117 = *(*int32)(unsafe.Add(mBase, uint32(l6)+4))
-	v118 = *(*int32)(unsafe.Add(mBase, uint32(v117)))
-	if l9 == int32(0) {
-		goto L62
+	v114 = int32(0)
+	v116 = *(*int32)(unsafe.Add(mBase, uint32(l6)+4))
+	v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)))
+	if base.B2i32(l9 == v114)|base.B2i32(v117 != int32(1)) == v114 {
+		goto L61
 	} else {
-		goto L63
+		goto L62
 	}
 L48:
 	;
@@ -1047,7 +1060,8 @@ L49:
 	}
 L50:
 	;
-	F_initStringInfo(m, v18+int32(68))
+	v97 = v18 + int32(68)
+	F_initStringInfo(m, v97)
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -1064,10 +1078,10 @@ L51:
 	}
 L52:
 	;
-	F_escape_json_with_len(m, v18+int32(68), v86, v87)
+	F_escape_json_with_len(m, v97, v86, v87)
 	mBase = m.M
-	v105 = m.ExcPending
-	if v105 != 0 {
+	v103 = m.ExcPending
+	if v103 != 0 {
 		goto L1
 	} else {
 		goto L53
@@ -1077,18 +1091,18 @@ L53:
 	goto L43
 L54:
 	;
-	v192 = v86
-	v193 = v86
+	v195 = v86
+	v196 = v86
 	goto L42
 L55:
 	;
 	goto L56
 L56:
 	;
-	v110 = F_palloc(m, v87+int32(1))
+	v108 = F_palloc(m, v87+int32(1))
 	mBase = m.M
-	v111 = m.ExcPending
-	if v111 != 0 {
+	v109 = m.ExcPending
+	if v109 != 0 {
 		goto L1
 	} else {
 		goto L57
@@ -1096,69 +1110,59 @@ L56:
 L57:
 	;
 	if v87 != 0 {
-		goto L59
+		goto L58
 	} else {
-		goto L60
+		goto L59
 	}
 L58:
 	;
-	v115 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v113+v87))) = uint8(v115)
-	v192 = v110
-	v193 = v86
-	goto L42
+	base.MemoryCopy(m, v108, v86, v87)
+	goto L60
 L59:
 	;
-	v112 = F__emscripten_memcpy_bulkmem(m, v110, v86, v87)
-	mBase = m.M
-	v113 = v112
-	goto L61
+	goto L60
 L60:
 	;
-	v113 = v110
-	goto L61
+	v112 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v87+v108))) = uint8(v112)
+	v195 = v108
+	v196 = v86
+	goto L42
 L61:
 	;
-	goto L58
-L62:
-	;
-	if l1 == int32(3802) {
-		goto L30
-	} else {
-		goto L66
-	}
-L63:
-	;
-	if v118 != int32(1) {
-		goto L62
-	} else {
-		goto L64
-	}
-L64:
-	;
-	v124 = *(*int32)(unsafe.Add(mBase, uint32(v117)+8))
-	v125 = *(*int32)(unsafe.Add(mBase, uint32(v117)+4))
+	v124 = *(*int32)(unsafe.Add(mBase, uint32(v116)+8))
+	v125 = *(*int32)(unsafe.Add(mBase, uint32(v116)+4))
 	v126 = F_pnstrdup(m, v124, v125)
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {
 		goto L1
 	} else {
+		goto L64
+	}
+L62:
+	;
+	goto L63
+L63:
+	;
+	if l1 == int32(3802) {
+		goto L30
+	} else {
 		goto L65
 	}
+L64:
+	;
+	v195 = v126
+	v196 = int32(0)
+	goto L42
 L65:
 	;
-	v192 = v126
-	v193 = int32(0)
-	goto L42
-L66:
-	;
 	if l1 == int32(114) {
-		goto L69
+		goto L68
 	} else {
-		goto L70
+		goto L69
 	}
-L67:
+L66:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
@@ -1166,57 +1170,57 @@ L67:
 	if v174 != 0 {
 		goto L1
 	} else {
-		goto L85
+		goto L84
 	}
-L68:
+L67:
 	;
 	v165 = int32(0)
-	v167 = *(*int32)(unsafe.Add(mBase, uint32(v117)+8))
-	v168 = *(*int32)(unsafe.Add(mBase, uint32(v117)+4))
+	v167 = *(*int32)(unsafe.Add(mBase, uint32(v116)+8))
+	v168 = *(*int32)(unsafe.Add(mBase, uint32(v116)+4))
 	v169 = F_JsonbToCString(m, v165, v167, v168)
 	mBase = m.M
 	v170 = m.ExcPending
 	if v170 != 0 {
 		goto L1
 	} else {
-		goto L84
+		goto L83
+	}
+L68:
+	;
+	if v117 == int32(18) {
+		goto L67
+	} else {
+		goto L71
 	}
 L69:
 	;
-	if v118 == int32(18) {
-		goto L68
-	} else {
-		goto L72
-	}
+	goto L70
 L70:
 	;
-	goto L71
+	switch v117 - int32(1) {
+	case 0:
+		goto L76
+	case 1:
+		goto L74
+	case 2:
+		goto L75
+	default:
+		goto L66
+	case 17:
+		goto L67
+	}
 L71:
 	;
-	switch v118 - int32(1) {
-	case 0:
-		goto L77
-	case 1:
-		goto L75
-	case 2:
-		goto L76
-	default:
-		goto L67
-	case 17:
-		goto L68
-	}
-L72:
-	;
 	v134 = int32(0)
-	v136 = F_JsonbValueToJsonb(m, v117)
+	v136 = F_JsonbValueToJsonb(m, v116)
 	mBase = m.M
 	v137 = m.ExcPending
 	if v137 != 0 {
 		goto L1
 	} else {
-		goto L73
+		goto L72
 	}
-L73:
+L72:
 	;
 	v140 = *(*int32)(unsafe.Add(mBase, uint32(v136)))
 	v143 = F_JsonbToCString(m, v134, v136+int32(4), int32(base.Ui32(v140)>>(uint(int32(2))%32)))
@@ -1225,59 +1229,59 @@ L73:
 	if v144 != 0 {
 		goto L1
 	} else {
-		goto L74
+		goto L73
 	}
+L73:
+	;
+	v195 = v143
+	v196 = v134
+	goto L42
 L74:
 	;
-	v192 = v143
-	v193 = v134
-	goto L42
-L75:
-	;
 	v159 = int32(0)
-	v162 = *(*int32)(unsafe.Add(mBase, uint32(v117)+4))
+	v162 = *(*int32)(unsafe.Add(mBase, uint32(v116)+4))
 	v163 = F_DirectFunctionCall1Coll(m, int32(618), v159, v162)
 	mBase = m.M
 	v164 = m.ExcPending
 	if v164 != 0 {
 		goto L1
 	} else {
-		goto L83
+		goto L82
+	}
+L75:
+	;
+	v155 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v116)+4)))
+	if v155 != 0 {
+		goto L78
+	} else {
+		goto L79
 	}
 L76:
 	;
-	v155 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v117)+4)))
-	if v155 != 0 {
-		goto L79
-	} else {
-		goto L80
-	}
-L77:
-	;
-	v148 = *(*int32)(unsafe.Add(mBase, uint32(v117)+8))
-	v149 = *(*int32)(unsafe.Add(mBase, uint32(v117)+4))
+	v148 = *(*int32)(unsafe.Add(mBase, uint32(v116)+8))
+	v149 = *(*int32)(unsafe.Add(mBase, uint32(v116)+4))
 	v150 = F_pnstrdup(m, v148, v149)
 	mBase = m.M
 	v151 = m.ExcPending
 	if v151 != 0 {
 		goto L1
 	} else {
-		goto L78
+		goto L77
 	}
+L77:
+	;
+	v195 = v150
+	v196 = int32(0)
+	goto L42
 L78:
 	;
-	v192 = v150
-	v193 = int32(0)
-	goto L42
+	v156 = int32(_a_F_populate_record_field_3)
+	goto L80
 L79:
 	;
-	v156 = int32(_a_F_populate_record_field_3)
-	goto L81
-L80:
-	;
 	v156 = int32(_a_F_populate_record_field_4)
-	goto L81
-L81:
+	goto L80
+L80:
 	;
 	v157 = F_pstrdup(m, v156)
 	mBase = m.M
@@ -1285,26 +1289,26 @@ L81:
 	if v158 != 0 {
 		goto L1
 	} else {
-		goto L82
+		goto L81
 	}
+L81:
+	;
+	v195 = v157
+	v196 = int32(0)
+	goto L42
 L82:
 	;
-	v192 = v157
-	v193 = int32(0)
+	v195 = v163
+	v196 = v159
 	goto L42
 L83:
 	;
-	v192 = v163
-	v193 = v159
+	v195 = v169
+	v196 = v165
 	goto L42
 L84:
 	;
-	v192 = v169
-	v193 = v165
-	goto L42
-L85:
-	;
-	v175 = *(*int32)(unsafe.Add(mBase, uint32(v117)))
+	v175 = *(*int32)(unsafe.Add(mBase, uint32(v116)))
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+16)) = v175
 	F_errmsg_internal(m, int32(_a_F_populate_record_field_5), v18+int32(16))
 	mBase = m.M
@@ -1312,9 +1316,9 @@ L85:
 	if v181 != 0 {
 		goto L1
 	} else {
-		goto L86
+		goto L85
 	}
-L86:
+L85:
 	;
 	F_errfinish(m, int32(_a_F_populate_record_field_1), int32(3199), int32(_a_F_populate_record_field_6))
 	mBase = m.M
@@ -1322,80 +1326,80 @@ L86:
 	if v186 != 0 {
 		goto L1
 	} else {
-		goto L87
+		goto L86
 	}
-L87:
+L86:
 	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L88:
+L87:
 	;
 	goto L43
+L88:
+	;
+	if v202 == int32(0) {
+		goto L89
+	} else {
+		goto L90
+	}
 L89:
 	;
-	if v200 == int32(0) {
-		goto L90
-	} else {
-		goto L91
-	}
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+32)) = int32(0)
+	v208 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l7))) = uint8(v208)
+	goto L91
 L90:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+32)) = int32(0)
-	v206 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l7))) = uint8(v206)
-	goto L92
+	goto L91
 L91:
 	;
-	goto L92
+	if v195 != v196 {
+		goto L92
+	} else {
+		goto L93
+	}
 L92:
 	;
-	if v192 != v193 {
-		goto L93
+	F_pfree(m, v195)
+	mBase = m.M
+	v212 = m.ExcPending
+	if v212 != 0 {
+		goto L1
 	} else {
-		goto L94
+		goto L95
 	}
 L93:
 	;
-	F_pfree(m, v192)
-	mBase = m.M
-	v210 = m.ExcPending
-	if v210 != 0 {
-		goto L1
-	} else {
-		goto L96
-	}
+	goto L94
 L94:
 	;
-	goto L95
+	v213 = *(*int32)(unsafe.Add(mBase, uint32(v18)+32))
+	v441 = v213
+	goto L29
 L95:
 	;
-	v211 = *(*int32)(unsafe.Add(mBase, uint32(v18)+32))
-	v441 = v211
-	goto L29
+	goto L94
 L96:
-	;
-	goto L95
-L97:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+60)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+48)) = l3
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+32)) = v223
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+32)) = v225
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+64)) = l8
 	*(*int64)(unsafe.Add(mBase, uint32(v18)+52)) = int64(0)
-	v232 = *(*int32)(unsafe.Add(mBase, uint32(l6)+4))
-	v233 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l6))))
-	if v233 == int32(1) {
-		goto L100
+	v234 = *(*int32)(unsafe.Add(mBase, uint32(l6)+4))
+	v235 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l6))))
+	if v235 == int32(1) {
+		goto L99
 	} else {
-		goto L101
+		goto L100
 	}
-L98:
+L97:
 	;
 	*(*uint8)(unsafe.Add(mBase, uint32(l7))) = uint8(v380)
 	v441 = v381
 	goto L29
-L99:
+L98:
 	;
 	v306 = *(*int32)(unsafe.Add(mBase, uint32(v18)+60))
 	v309 = F_palloc(m, v306<<(uint(int32(2))%32))
@@ -1404,99 +1408,98 @@ L99:
 	if v310 != 0 {
 		goto L1
 	} else {
-		goto L119
+		goto L118
+	}
+L99:
+	;
+	v238 = int32(0)
+	v239 = *(*int32)(unsafe.Add(mBase, uint32(l6)+8))
+	if v239 < v238 {
+		goto L102
+	} else {
+		goto L103
 	}
 L100:
 	;
-	v236 = int32(0)
-	v237 = *(*int32)(unsafe.Add(mBase, uint32(l6)+8))
-	if v237 < v236 {
-		goto L103
-	} else {
-		goto L104
-	}
+	goto L101
 L101:
 	;
-	goto L102
-L102:
-	;
-	v296 = F_populate_array_dim_jsonb(m, v18+int32(32), v232, int32(1))
+	v296 = F_populate_array_dim_jsonb(m, v18+int32(32), v234, int32(1))
 	mBase = m.M
 	v297 = m.ExcPending
 	if v297 != 0 {
 		goto L1
 	} else {
-		goto L117
+		goto L116
 	}
+L102:
+	;
+	v242 = F_strlen(m, v234)
+	mBase = m.M
+	v243 = v242
+	goto L104
 L103:
 	;
-	v240 = F_strlen(m, v232)
-	mBase = m.M
-	v241 = v240
-	goto L105
+	v243 = v239
+	goto L104
 L104:
 	;
-	v241 = v237
+	v245 = *(*int32)(unsafe.Add(mBase, _c_F_populate_record_field[1]))
+	v246 = *(*int32)(unsafe.Add(mBase, uint32(v245)+4))
 	goto L105
 L105:
 	;
-	v243 = *(*int32)(unsafe.Add(mBase, _c_F_populate_record_field[1]))
-	v244 = *(*int32)(unsafe.Add(mBase, uint32(v243)+4))
-	goto L106
+	v248 = F_makeJsonLexContextCstringLen(m, v238, v234, v243, v246, int32(1))
+	mBase = m.M
+	v249 = m.ExcPending
+	if v249 != 0 {
+		goto L1
+	} else {
+		goto L106
+	}
 L106:
 	;
-	v246 = F_makeJsonLexContextCstringLen(m, v236, v232, v241, v244, int32(1))
+	v250 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v18)+84)) = v250
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+108)) = v248
+	*(*int64)(unsafe.Add(mBase, uint32(v18)+76)) = v250
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+92)) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+104)) = int32(1359)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+100)) = int32(1360)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+96)) = int32(1361)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+72)) = int32(1362)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+84)) = int32(1363)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+112)) = v18 + int32(32)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+68)) = v18 + int32(108)
+	v275 = F_pg_parse_json(m, v248, v18+int32(68))
 	mBase = m.M
-	v247 = m.ExcPending
-	if v247 != 0 {
+	v276 = m.ExcPending
+	if v276 != 0 {
 		goto L1
 	} else {
 		goto L107
 	}
 L107:
 	;
-	v249 = v18 + int32(84)
-	v250 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v249))) = v250
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+92)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v249))) = int32(1378)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+108)) = v246
-	*(*int64)(unsafe.Add(mBase, uint32(v18)+76)) = v250
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+104)) = int32(1379)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+100)) = int32(1380)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+96)) = int32(1381)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+72)) = int32(1382)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+112)) = v18 + int32(32)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+68)) = v18 + int32(108)
-	v275 = F_pg_parse_json(m, v246, v18+int32(68))
-	mBase = m.M
-	v276 = m.ExcPending
-	if v276 != 0 {
-		goto L1
-	} else {
+	if v275 != 0 {
 		goto L108
+	} else {
+		goto L109
 	}
 L108:
 	;
-	if v275 != 0 {
-		goto L109
-	} else {
-		goto L110
-	}
-L109:
-	;
-	F_json_errsave_error(m, v275, v246, l8)
+	F_json_errsave_error(m, v275, v248, l8)
 	mBase = m.M
 	v278 = m.ExcPending
 	if v278 != 0 {
 		goto L1
 	} else {
-		goto L112
+		goto L111
 	}
-L110:
+L109:
 	;
-	goto L111
-L111:
+	goto L110
+L110:
 	;
 	v279 = *(*int32)(unsafe.Add(mBase, uint32(v18)+108))
 	F_freeJsonLexContext(m, v279)
@@ -1505,74 +1508,74 @@ L111:
 	if v281 != 0 {
 		goto L1
 	} else {
-		goto L113
+		goto L112
 	}
-L112:
+L111:
 	;
-	goto L111
-L113:
+	goto L110
+L112:
 	;
 	v282 = *(*int32)(unsafe.Add(mBase, uint32(v18)+64))
 	if v282 == int32(0) {
-		goto L99
+		goto L98
+	} else {
+		goto L113
+	}
+L113:
+	;
+	v285 = *(*int32)(unsafe.Add(mBase, uint32(v282)))
+	if v285 != int32(447) {
+		goto L98
 	} else {
 		goto L114
 	}
 L114:
 	;
-	v285 = *(*int32)(unsafe.Add(mBase, uint32(v282)))
-	if v285 != int32(447) {
-		goto L99
+	v288 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v282)+4)))
+	if v288 == int32(0) {
+		goto L98
 	} else {
 		goto L115
 	}
 L115:
 	;
-	v288 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v282)+4)))
-	if v288 == int32(0) {
-		goto L99
-	} else {
-		goto L116
-	}
-L116:
-	;
 	v291 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(l7))) = uint8(v291)
-	v441 = v216
+	v441 = v218
 	goto L29
-L117:
+L116:
 	;
 	if v296 == int32(0) {
-		v380 = v220
-		v381 = v216
-		goto L98
+		v380 = v222
+		v381 = v218
+		goto L97
 	} else {
-		goto L118
+		goto L117
 	}
-L118:
+L117:
 	;
 	v300 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
 	v301 = *(*int32)(unsafe.Add(mBase, uint32(v18)+56))
 	v302 = *(*int32)(unsafe.Add(mBase, uint32(v301)))
 	*(*int32)(unsafe.Add(mBase, uint32(v300))) = v302
-	goto L99
-L119:
+	goto L98
+L118:
 	;
 	v311 = *(*int32)(unsafe.Add(mBase, uint32(v18)+60))
 	if int32(0) < v311 {
-		goto L120
+		goto L119
 	} else {
-		goto L121
+		goto L120
 	}
-L120:
+L119:
 	;
 	v321 = int32(0)
-	goto L123
-L121:
+	goto L122
+L120:
 	;
 	v350 = v311
-	goto L122
-L122:
+	goto L121
+L121:
 	;
 	v354 = *(*int32)(unsafe.Add(mBase, uint32(v18)+32))
 	v355 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
@@ -1583,9 +1586,9 @@ L122:
 	if v359 != 0 {
 		goto L1
 	} else {
-		goto L126
+		goto L125
 	}
-L123:
+L122:
 	;
 	v333 = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v309+v321<<(uint(int32(2))%32)))) = v333
@@ -1593,18 +1596,18 @@ L123:
 	v337 = *(*int32)(unsafe.Add(mBase, uint32(v18)+60))
 	if v336 < v337 {
 		v321 = v336
-		goto L123
+		goto L122
 	} else {
-		goto L125
+		goto L124
 	}
-L124:
+L123:
 	;
 	v350 = v337
-	goto L122
-L125:
+	goto L121
+L124:
 	;
-	goto L124
-L126:
+	goto L123
+L125:
 	;
 	v360 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
 	F_pfree(m, v360)
@@ -1613,9 +1616,9 @@ L126:
 	if v362 != 0 {
 		goto L1
 	} else {
-		goto L127
+		goto L126
 	}
-L127:
+L126:
 	;
 	v363 = *(*int32)(unsafe.Add(mBase, uint32(v18)+56))
 	F_pfree(m, v363)
@@ -1624,9 +1627,9 @@ L127:
 	if v365 != 0 {
 		goto L1
 	} else {
-		goto L128
+		goto L127
 	}
-L128:
+L127:
 	;
 	F_pfree(m, v309)
 	mBase = m.M
@@ -1634,14 +1637,14 @@ L128:
 	if v367 != 0 {
 		goto L1
 	} else {
-		goto L129
+		goto L128
 	}
-L129:
+L128:
 	;
 	v380 = int32(0)
 	v381 = v358
-	goto L98
-L130:
+	goto L97
+L129:
 	;
 	v390 = F_populate_composite(m, v386, l1, l4, int32(0), l6, l7, l8)
 	mBase = m.M
@@ -1649,12 +1652,12 @@ L130:
 	if v391 != 0 {
 		goto L1
 	} else {
-		goto L133
+		goto L132
 	}
-L131:
+L130:
 	;
-	goto L132
-L132:
+	goto L131
+L131:
 	;
 	v392 = F_pg_detoast_datum(m, l5)
 	mBase = m.M
@@ -1662,13 +1665,13 @@ L132:
 	if v393 != 0 {
 		goto L1
 	} else {
-		goto L134
+		goto L133
 	}
-L133:
+L132:
 	;
 	v441 = v390
 	goto L29
-L134:
+L133:
 	;
 	v394 = F_populate_composite(m, v386, l1, l4, v392, l6, l7, l8)
 	mBase = m.M
@@ -1676,33 +1679,33 @@ L134:
 	if v395 != 0 {
 		goto L1
 	} else {
-		goto L135
+		goto L134
 	}
-L135:
+L134:
 	;
 	v441 = v394
 	goto L29
-L136:
+L135:
 	;
 	v402 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l7))))
 	v403 = v400
 	v404 = v402
 	goto L32
-L137:
+L136:
 	;
 	if v409 != 0 {
 		v441 = v403
 		goto L29
 	} else {
-		goto L138
+		goto L137
 	}
-L138:
+L137:
 	;
 	v411 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(l7))) = uint8(v411)
 	v441 = int32(0)
 	goto L29
-L139:
+L138:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v18))) = v74
 	F_errmsg_internal(m, int32(_a_F_populate_record_field_0), v18)
@@ -1711,9 +1714,9 @@ L139:
 	if v421 != 0 {
 		goto L1
 	} else {
-		goto L140
+		goto L139
 	}
-L140:
+L139:
 	;
 	F_errfinish(m, int32(_a_F_populate_record_field_1), int32(3470), int32(_a_F_populate_record_field_2))
 	mBase = m.M
@@ -1721,14 +1724,14 @@ L140:
 	if v426 != 0 {
 		goto L1
 	} else {
-		goto L141
+		goto L140
 	}
-L141:
+L140:
 	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L142:
+L141:
 	;
 	v441 = v427
 	goto L29
@@ -1808,38 +1811,36 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v77
 	var v78 int32
 	_ = v78
-	var v82 int32
-	_ = v82
-	var v84 int32
-	_ = v84
-	var v93 int32
-	_ = v93
+	var v85 int32
+	_ = v85
+	var v88 int32
+	_ = v88
+	var v95 int32
+	_ = v95
 	var v96 int32
 	_ = v96
-	var v97 int32
-	_ = v97
-	var v101 int32
-	_ = v101
-	var v107 int32
-	_ = v107
+	var v100 int32
+	_ = v100
+	var v106 int32
+	_ = v106
+	var v110 int32
+	_ = v110
 	var v111 int32
 	_ = v111
-	var v112 int32
-	_ = v112
-	var v115 int32
-	_ = v115
-	var v121 int32
-	_ = v121
-	var v131 int32
-	_ = v131
-	var v135 int32
-	_ = v135
+	var v114 int32
+	_ = v114
+	var v120 int32
+	_ = v120
+	var v130 int32
+	_ = v130
+	var v134 int32
+	_ = v134
+	var v139 int32
+	_ = v139
 	var v140 int32
 	_ = v140
-	var v141 int32
-	_ = v141
-	var v146 int32
-	_ = v146
+	var v145 int32
+	_ = v145
 	v3 = l2
 	v6 = int32(0)
 	v10 = m.G0
@@ -1894,14 +1895,14 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60)+24)))
 							if v61 == int32(1) {
 								if v57 != 0 {
-									v146 = v57
+									v145 = v57
 								} else {
 									v64 = int32(1)
 									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
-									v146 = int32(0)
+									v145 = int32(0)
 								}
 								m.G0 = v12 + int32(48)
-								return v146
+								return v145
 							} else {
 								*(*uint8)(unsafe.Add(mBase, uint32(v12)+32)) = uint8(v3)
 								v68 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
@@ -1923,69 +1924,68 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v78
 										if v75 == int32(1) {
-											v82 = int32(4)
-											v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
-											if v84&int32(254) == int32(2) {
-												v93 = v82
+											v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
+											if v85 == int32(18) {
+												v88 = int32(16)
 											} else {
-												v93 = base.B2i32(v84 == int32(18)) << (uint(v82) % 32)
+												v88 = int32(0)
 											}
-											if v84 == int32(1) {
-												v96 = v82
+											if base.Ui32((v85-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+												v95 = int32(4)
 											} else {
-												v96 = v93
+												v95 = v88
 											}
-											v107 = v96
+											v106 = v95
 										} else {
-											v97 = int32(1)
+											v96 = int32(1)
 											if v77 != 0 {
-												v107 = int32(base.Ui32(v75)>>(uint(v97)%32)) - v97
+												v106 = int32(base.Ui32(v75)>>(uint(v96)%32)) - v96
 											} else {
-												v101 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-												v107 = int32(base.Ui32(v101)>>(uint(int32(2))%32)) - int32(4)
+												v100 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
+												v106 = int32(base.Ui32(v100)>>(uint(int32(2))%32)) - int32(4)
 											}
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = int32(0)
-										*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v107
-										v131 = int32(0)
-										*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-										v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-										v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+										*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v106
+										v130 = int32(0)
+										*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+										v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+										v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 										mBase = m.M
-										v141 = m.ExcPending
-										if v141 != 0 {
+										v140 = m.ExcPending
+										if v140 != 0 {
 											return int32(0)
 										} else {
-											v146 = v140
+											v145 = v139
 											m.G0 = v12 + int32(48)
-											return v146
+											return v145
 										}
 									}
 								} else {
-									v111 = F_pg_detoast_datum(m, v68)
+									v110 = F_pg_detoast_datum(m, v68)
 									mBase = m.M
-									v112 = m.ExcPending
-									if v112 != 0 {
+									v111 = m.ExcPending
+									if v111 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(18)
-										v115 = int32(4)
-										*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v111 + v115
+										v114 = int32(4)
+										*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v110 + v114
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v12 + int32(8)
-										v121 = *(*int32)(unsafe.Add(mBase, uint32(v111)))
-										*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v121)>>(uint(int32(2))%32)) - v115
-										v131 = int32(0)
-										*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-										v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-										v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+										v120 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
+										*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v120)>>(uint(int32(2))%32)) - v114
+										v130 = int32(0)
+										*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+										v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+										v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 										mBase = m.M
-										v141 = m.ExcPending
-										if v141 != 0 {
+										v140 = m.ExcPending
+										if v140 != 0 {
 											return int32(0)
 										} else {
-											v146 = v140
+											v145 = v139
 											m.G0 = v12 + int32(48)
-											return v146
+											return v145
 										}
 									}
 								}
@@ -2000,14 +2000,14 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60)+24)))
 							if v61 == int32(1) {
 								if v57 != 0 {
-									v146 = v57
+									v145 = v57
 								} else {
 									v64 = int32(1)
 									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
-									v146 = int32(0)
+									v145 = int32(0)
 								}
 								m.G0 = v12 + int32(48)
-								return v146
+								return v145
 							} else {
 								*(*uint8)(unsafe.Add(mBase, uint32(v12)+32)) = uint8(v3)
 								v68 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
@@ -2029,69 +2029,68 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v78
 										if v75 == int32(1) {
-											v82 = int32(4)
-											v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
-											if v84&int32(254) == int32(2) {
-												v93 = v82
+											v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
+											if v85 == int32(18) {
+												v88 = int32(16)
 											} else {
-												v93 = base.B2i32(v84 == int32(18)) << (uint(v82) % 32)
+												v88 = int32(0)
 											}
-											if v84 == int32(1) {
-												v96 = v82
+											if base.Ui32((v85-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+												v95 = int32(4)
 											} else {
-												v96 = v93
+												v95 = v88
 											}
-											v107 = v96
+											v106 = v95
 										} else {
-											v97 = int32(1)
+											v96 = int32(1)
 											if v77 != 0 {
-												v107 = int32(base.Ui32(v75)>>(uint(v97)%32)) - v97
+												v106 = int32(base.Ui32(v75)>>(uint(v96)%32)) - v96
 											} else {
-												v101 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-												v107 = int32(base.Ui32(v101)>>(uint(int32(2))%32)) - int32(4)
+												v100 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
+												v106 = int32(base.Ui32(v100)>>(uint(int32(2))%32)) - int32(4)
 											}
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = int32(0)
-										*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v107
-										v131 = int32(0)
-										*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-										v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-										v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+										*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v106
+										v130 = int32(0)
+										*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+										v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+										v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 										mBase = m.M
-										v141 = m.ExcPending
-										if v141 != 0 {
+										v140 = m.ExcPending
+										if v140 != 0 {
 											return int32(0)
 										} else {
-											v146 = v140
+											v145 = v139
 											m.G0 = v12 + int32(48)
-											return v146
+											return v145
 										}
 									}
 								} else {
-									v111 = F_pg_detoast_datum(m, v68)
+									v110 = F_pg_detoast_datum(m, v68)
 									mBase = m.M
-									v112 = m.ExcPending
-									if v112 != 0 {
+									v111 = m.ExcPending
+									if v111 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(18)
-										v115 = int32(4)
-										*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v111 + v115
+										v114 = int32(4)
+										*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v110 + v114
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v12 + int32(8)
-										v121 = *(*int32)(unsafe.Add(mBase, uint32(v111)))
-										*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v121)>>(uint(int32(2))%32)) - v115
-										v131 = int32(0)
-										*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-										v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-										v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+										v120 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
+										*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v120)>>(uint(int32(2))%32)) - v114
+										v130 = int32(0)
+										*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+										v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+										v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 										mBase = m.M
-										v141 = m.ExcPending
-										if v141 != 0 {
+										v140 = m.ExcPending
+										if v140 != 0 {
 											return int32(0)
 										} else {
-											v146 = v140
+											v145 = v139
 											m.G0 = v12 + int32(48)
-											return v146
+											return v145
 										}
 									}
 								}
@@ -2109,14 +2108,14 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60)+24)))
 								if v61 == int32(1) {
 									if v57 != 0 {
-										v146 = v57
+										v145 = v57
 									} else {
 										v64 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
-										v146 = int32(0)
+										v145 = int32(0)
 									}
 									m.G0 = v12 + int32(48)
-									return v146
+									return v145
 								} else {
 									*(*uint8)(unsafe.Add(mBase, uint32(v12)+32)) = uint8(v3)
 									v68 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
@@ -2138,69 +2137,68 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 											}
 											*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v78
 											if v75 == int32(1) {
-												v82 = int32(4)
-												v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
-												if v84&int32(254) == int32(2) {
-													v93 = v82
+												v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
+												if v85 == int32(18) {
+													v88 = int32(16)
 												} else {
-													v93 = base.B2i32(v84 == int32(18)) << (uint(v82) % 32)
+													v88 = int32(0)
 												}
-												if v84 == int32(1) {
-													v96 = v82
+												if base.Ui32((v85-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+													v95 = int32(4)
 												} else {
-													v96 = v93
+													v95 = v88
 												}
-												v107 = v96
+												v106 = v95
 											} else {
-												v97 = int32(1)
+												v96 = int32(1)
 												if v77 != 0 {
-													v107 = int32(base.Ui32(v75)>>(uint(v97)%32)) - v97
+													v106 = int32(base.Ui32(v75)>>(uint(v96)%32)) - v96
 												} else {
-													v101 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-													v107 = int32(base.Ui32(v101)>>(uint(int32(2))%32)) - int32(4)
+													v100 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
+													v106 = int32(base.Ui32(v100)>>(uint(int32(2))%32)) - int32(4)
 												}
 											}
 											*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = int32(0)
-											*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v107
-											v131 = int32(0)
-											*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-											v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-											v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+											*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v106
+											v130 = int32(0)
+											*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+											v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+											v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 											mBase = m.M
-											v141 = m.ExcPending
-											if v141 != 0 {
+											v140 = m.ExcPending
+											if v140 != 0 {
 												return int32(0)
 											} else {
-												v146 = v140
+												v145 = v139
 												m.G0 = v12 + int32(48)
-												return v146
+												return v145
 											}
 										}
 									} else {
-										v111 = F_pg_detoast_datum(m, v68)
+										v110 = F_pg_detoast_datum(m, v68)
 										mBase = m.M
-										v112 = m.ExcPending
-										if v112 != 0 {
+										v111 = m.ExcPending
+										if v111 != 0 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(18)
-											v115 = int32(4)
-											*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v111 + v115
+											v114 = int32(4)
+											*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v110 + v114
 											*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v12 + int32(8)
-											v121 = *(*int32)(unsafe.Add(mBase, uint32(v111)))
-											*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v121)>>(uint(int32(2))%32)) - v115
-											v131 = int32(0)
-											*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-											v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-											v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+											v120 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
+											*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v120)>>(uint(int32(2))%32)) - v114
+											v130 = int32(0)
+											*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+											v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+											v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 											mBase = m.M
-											v141 = m.ExcPending
-											if v141 != 0 {
+											v140 = m.ExcPending
+											if v140 != 0 {
 												return int32(0)
 											} else {
-												v146 = v140
+												v145 = v139
 												m.G0 = v12 + int32(48)
-												return v146
+												return v145
 											}
 										}
 									}
@@ -2222,14 +2220,14 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60)+24)))
 					if v61 == int32(1) {
 						if v57 != 0 {
-							v146 = v57
+							v145 = v57
 						} else {
 							v64 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
-							v146 = int32(0)
+							v145 = int32(0)
 						}
 						m.G0 = v12 + int32(48)
-						return v146
+						return v145
 					} else {
 						*(*uint8)(unsafe.Add(mBase, uint32(v12)+32)) = uint8(v3)
 						v68 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
@@ -2251,69 +2249,68 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v78
 								if v75 == int32(1) {
-									v82 = int32(4)
-									v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
-									if v84&int32(254) == int32(2) {
-										v93 = v82
+									v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
+									if v85 == int32(18) {
+										v88 = int32(16)
 									} else {
-										v93 = base.B2i32(v84 == int32(18)) << (uint(v82) % 32)
+										v88 = int32(0)
 									}
-									if v84 == int32(1) {
-										v96 = v82
+									if base.Ui32((v85-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+										v95 = int32(4)
 									} else {
-										v96 = v93
+										v95 = v88
 									}
-									v107 = v96
+									v106 = v95
 								} else {
-									v97 = int32(1)
+									v96 = int32(1)
 									if v77 != 0 {
-										v107 = int32(base.Ui32(v75)>>(uint(v97)%32)) - v97
+										v106 = int32(base.Ui32(v75)>>(uint(v96)%32)) - v96
 									} else {
-										v101 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-										v107 = int32(base.Ui32(v101)>>(uint(int32(2))%32)) - int32(4)
+										v100 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
+										v106 = int32(base.Ui32(v100)>>(uint(int32(2))%32)) - int32(4)
 									}
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v107
-								v131 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-								v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-								v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+								*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v106
+								v130 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+								v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+								v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 								mBase = m.M
-								v141 = m.ExcPending
-								if v141 != 0 {
+								v140 = m.ExcPending
+								if v140 != 0 {
 									return int32(0)
 								} else {
-									v146 = v140
+									v145 = v139
 									m.G0 = v12 + int32(48)
-									return v146
+									return v145
 								}
 							}
 						} else {
-							v111 = F_pg_detoast_datum(m, v68)
+							v110 = F_pg_detoast_datum(m, v68)
 							mBase = m.M
-							v112 = m.ExcPending
-							if v112 != 0 {
+							v111 = m.ExcPending
+							if v111 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(18)
-								v115 = int32(4)
-								*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v111 + v115
+								v114 = int32(4)
+								*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v110 + v114
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v12 + int32(8)
-								v121 = *(*int32)(unsafe.Add(mBase, uint32(v111)))
-								*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v121)>>(uint(int32(2))%32)) - v115
-								v131 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-								v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-								v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+								v120 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
+								*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v120)>>(uint(int32(2))%32)) - v114
+								v130 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+								v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+								v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 								mBase = m.M
-								v141 = m.ExcPending
-								if v141 != 0 {
+								v140 = m.ExcPending
+								if v140 != 0 {
 									return int32(0)
 								} else {
-									v146 = v140
+									v145 = v139
 									m.G0 = v12 + int32(48)
-									return v146
+									return v145
 								}
 							}
 						}
@@ -2329,14 +2326,14 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60)+24)))
 			if v61 == int32(1) {
 				if v57 != 0 {
-					v146 = v57
+					v145 = v57
 				} else {
 					v64 = int32(1)
 					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
-					v146 = int32(0)
+					v145 = int32(0)
 				}
 				m.G0 = v12 + int32(48)
-				return v146
+				return v145
 			} else {
 				*(*uint8)(unsafe.Add(mBase, uint32(v12)+32)) = uint8(v3)
 				v68 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
@@ -2358,69 +2355,68 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v78
 						if v75 == int32(1) {
-							v82 = int32(4)
-							v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
-							if v84&int32(254) == int32(2) {
-								v93 = v82
+							v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
+							if v85 == int32(18) {
+								v88 = int32(16)
 							} else {
-								v93 = base.B2i32(v84 == int32(18)) << (uint(v82) % 32)
+								v88 = int32(0)
 							}
-							if v84 == int32(1) {
-								v96 = v82
+							if base.Ui32((v85-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+								v95 = int32(4)
 							} else {
-								v96 = v93
+								v95 = v88
 							}
-							v107 = v96
+							v106 = v95
 						} else {
-							v97 = int32(1)
+							v96 = int32(1)
 							if v77 != 0 {
-								v107 = int32(base.Ui32(v75)>>(uint(v97)%32)) - v97
+								v106 = int32(base.Ui32(v75)>>(uint(v96)%32)) - v96
 							} else {
-								v101 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-								v107 = int32(base.Ui32(v101)>>(uint(int32(2))%32)) - int32(4)
+								v100 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
+								v106 = int32(base.Ui32(v100)>>(uint(int32(2))%32)) - int32(4)
 							}
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v107
-						v131 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-						v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-						v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+						*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v106
+						v130 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+						v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+						v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 						mBase = m.M
-						v141 = m.ExcPending
-						if v141 != 0 {
+						v140 = m.ExcPending
+						if v140 != 0 {
 							return int32(0)
 						} else {
-							v146 = v140
+							v145 = v139
 							m.G0 = v12 + int32(48)
-							return v146
+							return v145
 						}
 					}
 				} else {
-					v111 = F_pg_detoast_datum(m, v68)
+					v110 = F_pg_detoast_datum(m, v68)
 					mBase = m.M
-					v112 = m.ExcPending
-					if v112 != 0 {
+					v111 = m.ExcPending
+					if v111 != 0 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(18)
-						v115 = int32(4)
-						*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v111 + v115
+						v114 = int32(4)
+						*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v110 + v114
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v12 + int32(8)
-						v121 = *(*int32)(unsafe.Add(mBase, uint32(v111)))
-						*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v121)>>(uint(int32(2))%32)) - v115
-						v131 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-						v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-						v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+						v120 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
+						*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v120)>>(uint(int32(2))%32)) - v114
+						v130 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+						v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+						v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 						mBase = m.M
-						v141 = m.ExcPending
-						if v141 != 0 {
+						v140 = m.ExcPending
+						if v140 != 0 {
 							return int32(0)
 						} else {
-							v146 = v140
+							v145 = v139
 							m.G0 = v12 + int32(48)
-							return v146
+							return v145
 						}
 					}
 				}
@@ -2452,14 +2448,14 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60)+24)))
 					if v61 == int32(1) {
 						if v57 != 0 {
-							v146 = v57
+							v145 = v57
 						} else {
 							v64 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
-							v146 = int32(0)
+							v145 = int32(0)
 						}
 						m.G0 = v12 + int32(48)
-						return v146
+						return v145
 					} else {
 						*(*uint8)(unsafe.Add(mBase, uint32(v12)+32)) = uint8(v3)
 						v68 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
@@ -2481,69 +2477,68 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v78
 								if v75 == int32(1) {
-									v82 = int32(4)
-									v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
-									if v84&int32(254) == int32(2) {
-										v93 = v82
+									v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
+									if v85 == int32(18) {
+										v88 = int32(16)
 									} else {
-										v93 = base.B2i32(v84 == int32(18)) << (uint(v82) % 32)
+										v88 = int32(0)
 									}
-									if v84 == int32(1) {
-										v96 = v82
+									if base.Ui32((v85-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+										v95 = int32(4)
 									} else {
-										v96 = v93
+										v95 = v88
 									}
-									v107 = v96
+									v106 = v95
 								} else {
-									v97 = int32(1)
+									v96 = int32(1)
 									if v77 != 0 {
-										v107 = int32(base.Ui32(v75)>>(uint(v97)%32)) - v97
+										v106 = int32(base.Ui32(v75)>>(uint(v96)%32)) - v96
 									} else {
-										v101 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-										v107 = int32(base.Ui32(v101)>>(uint(int32(2))%32)) - int32(4)
+										v100 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
+										v106 = int32(base.Ui32(v100)>>(uint(int32(2))%32)) - int32(4)
 									}
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v107
-								v131 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-								v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-								v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+								*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v106
+								v130 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+								v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+								v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 								mBase = m.M
-								v141 = m.ExcPending
-								if v141 != 0 {
+								v140 = m.ExcPending
+								if v140 != 0 {
 									return int32(0)
 								} else {
-									v146 = v140
+									v145 = v139
 									m.G0 = v12 + int32(48)
-									return v146
+									return v145
 								}
 							}
 						} else {
-							v111 = F_pg_detoast_datum(m, v68)
+							v110 = F_pg_detoast_datum(m, v68)
 							mBase = m.M
-							v112 = m.ExcPending
-							if v112 != 0 {
+							v111 = m.ExcPending
+							if v111 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(18)
-								v115 = int32(4)
-								*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v111 + v115
+								v114 = int32(4)
+								*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v110 + v114
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v12 + int32(8)
-								v121 = *(*int32)(unsafe.Add(mBase, uint32(v111)))
-								*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v121)>>(uint(int32(2))%32)) - v115
-								v131 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-								v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-								v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+								v120 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
+								*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v120)>>(uint(int32(2))%32)) - v114
+								v130 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+								v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+								v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 								mBase = m.M
-								v141 = m.ExcPending
-								if v141 != 0 {
+								v140 = m.ExcPending
+								if v140 != 0 {
 									return int32(0)
 								} else {
-									v146 = v140
+									v145 = v139
 									m.G0 = v12 + int32(48)
-									return v146
+									return v145
 								}
 							}
 						}
@@ -2558,14 +2553,14 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60)+24)))
 					if v61 == int32(1) {
 						if v57 != 0 {
-							v146 = v57
+							v145 = v57
 						} else {
 							v64 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
-							v146 = int32(0)
+							v145 = int32(0)
 						}
 						m.G0 = v12 + int32(48)
-						return v146
+						return v145
 					} else {
 						*(*uint8)(unsafe.Add(mBase, uint32(v12)+32)) = uint8(v3)
 						v68 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
@@ -2587,69 +2582,68 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v78
 								if v75 == int32(1) {
-									v82 = int32(4)
-									v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
-									if v84&int32(254) == int32(2) {
-										v93 = v82
+									v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
+									if v85 == int32(18) {
+										v88 = int32(16)
 									} else {
-										v93 = base.B2i32(v84 == int32(18)) << (uint(v82) % 32)
+										v88 = int32(0)
 									}
-									if v84 == int32(1) {
-										v96 = v82
+									if base.Ui32((v85-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+										v95 = int32(4)
 									} else {
-										v96 = v93
+										v95 = v88
 									}
-									v107 = v96
+									v106 = v95
 								} else {
-									v97 = int32(1)
+									v96 = int32(1)
 									if v77 != 0 {
-										v107 = int32(base.Ui32(v75)>>(uint(v97)%32)) - v97
+										v106 = int32(base.Ui32(v75)>>(uint(v96)%32)) - v96
 									} else {
-										v101 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-										v107 = int32(base.Ui32(v101)>>(uint(int32(2))%32)) - int32(4)
+										v100 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
+										v106 = int32(base.Ui32(v100)>>(uint(int32(2))%32)) - int32(4)
 									}
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v107
-								v131 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-								v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-								v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+								*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v106
+								v130 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+								v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+								v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 								mBase = m.M
-								v141 = m.ExcPending
-								if v141 != 0 {
+								v140 = m.ExcPending
+								if v140 != 0 {
 									return int32(0)
 								} else {
-									v146 = v140
+									v145 = v139
 									m.G0 = v12 + int32(48)
-									return v146
+									return v145
 								}
 							}
 						} else {
-							v111 = F_pg_detoast_datum(m, v68)
+							v110 = F_pg_detoast_datum(m, v68)
 							mBase = m.M
-							v112 = m.ExcPending
-							if v112 != 0 {
+							v111 = m.ExcPending
+							if v111 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(18)
-								v115 = int32(4)
-								*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v111 + v115
+								v114 = int32(4)
+								*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v110 + v114
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v12 + int32(8)
-								v121 = *(*int32)(unsafe.Add(mBase, uint32(v111)))
-								*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v121)>>(uint(int32(2))%32)) - v115
-								v131 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-								v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-								v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+								v120 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
+								*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v120)>>(uint(int32(2))%32)) - v114
+								v130 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+								v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+								v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 								mBase = m.M
-								v141 = m.ExcPending
-								if v141 != 0 {
+								v140 = m.ExcPending
+								if v140 != 0 {
 									return int32(0)
 								} else {
-									v146 = v140
+									v145 = v139
 									m.G0 = v12 + int32(48)
-									return v146
+									return v145
 								}
 							}
 						}
@@ -2667,14 +2661,14 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60)+24)))
 						if v61 == int32(1) {
 							if v57 != 0 {
-								v146 = v57
+								v145 = v57
 							} else {
 								v64 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
-								v146 = int32(0)
+								v145 = int32(0)
 							}
 							m.G0 = v12 + int32(48)
-							return v146
+							return v145
 						} else {
 							*(*uint8)(unsafe.Add(mBase, uint32(v12)+32)) = uint8(v3)
 							v68 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
@@ -2696,69 +2690,68 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 									}
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v78
 									if v75 == int32(1) {
-										v82 = int32(4)
-										v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
-										if v84&int32(254) == int32(2) {
-											v93 = v82
+										v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
+										if v85 == int32(18) {
+											v88 = int32(16)
 										} else {
-											v93 = base.B2i32(v84 == int32(18)) << (uint(v82) % 32)
+											v88 = int32(0)
 										}
-										if v84 == int32(1) {
-											v96 = v82
+										if base.Ui32((v85-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+											v95 = int32(4)
 										} else {
-											v96 = v93
+											v95 = v88
 										}
-										v107 = v96
+										v106 = v95
 									} else {
-										v97 = int32(1)
+										v96 = int32(1)
 										if v77 != 0 {
-											v107 = int32(base.Ui32(v75)>>(uint(v97)%32)) - v97
+											v106 = int32(base.Ui32(v75)>>(uint(v96)%32)) - v96
 										} else {
-											v101 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-											v107 = int32(base.Ui32(v101)>>(uint(int32(2))%32)) - int32(4)
+											v100 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
+											v106 = int32(base.Ui32(v100)>>(uint(int32(2))%32)) - int32(4)
 										}
 									}
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = int32(0)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v107
-									v131 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-									v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-									v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = v106
+									v130 = int32(0)
+									*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+									v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+									v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 									mBase = m.M
-									v141 = m.ExcPending
-									if v141 != 0 {
+									v140 = m.ExcPending
+									if v140 != 0 {
 										return int32(0)
 									} else {
-										v146 = v140
+										v145 = v139
 										m.G0 = v12 + int32(48)
-										return v146
+										return v145
 									}
 								}
 							} else {
-								v111 = F_pg_detoast_datum(m, v68)
+								v110 = F_pg_detoast_datum(m, v68)
 								mBase = m.M
-								v112 = m.ExcPending
-								if v112 != 0 {
+								v111 = m.ExcPending
+								if v111 != 0 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(18)
-									v115 = int32(4)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v111 + v115
+									v114 = int32(4)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v110 + v114
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v12 + int32(8)
-									v121 = *(*int32)(unsafe.Add(mBase, uint32(v111)))
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v121)>>(uint(int32(2))%32)) - v115
-									v131 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v131)
-									v135 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-									v140 = F_populate_composite(m, v56+int32(48), v135, v19, v57, v12+int32(32), v12+int32(31), l4)
+									v120 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(base.Ui32(v120)>>(uint(int32(2))%32)) - v114
+									v130 = int32(0)
+									*(*uint8)(unsafe.Add(mBase, uint32(v12)+31)) = uint8(v130)
+									v134 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+									v139 = F_populate_composite(m, v56+int32(48), v134, v19, v57, v12+int32(32), v12+int32(31), l4)
 									mBase = m.M
-									v141 = m.ExcPending
-									if v141 != 0 {
+									v140 = m.ExcPending
+									if v140 != 0 {
 										return int32(0)
 									} else {
-										v146 = v140
+										v145 = v139
 										m.G0 = v12 + int32(48)
-										return v146
+										return v145
 									}
 								}
 							}
@@ -2770,109 +2763,16 @@ func F_populate_record_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	}
 }
 func F_populate_recordset_object_field_end(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v6 int32
-	_ = v6
+	var v5 int32
+	_ = v5
 	var v8 int32
 	_ = v8
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v21 int32
-	_ = v21
-	var v24 int32
-	_ = v24
-	var v25 int32
-	_ = v25
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
-	var v34 int32
-	_ = v34
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
-	var v37 int32
-	_ = v37
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+32))
-	if int32(2) < v11 {
-		m.G0 = v8 + int32(16)
+	v5 = Fn13975(m, l0, l1, l2, int32(2))
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return int32(0)
 	} else {
-		v14 = F_strlen(m, l1)
-		mBase = m.M
-		if base.Ui32(int32(63)) < base.Ui32(v14) {
-			m.G0 = v8 + int32(16)
-			return int32(0)
-		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-			v21 = F_hash_search(m, v17, l1, int32(1), v8+int32(15))
-			mBase = m.M
-			v24 = m.ExcPending
-			if v24 != 0 {
-				return int32(0)
-			} else {
-				v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-				*(*int32)(unsafe.Add(mBase, uint32(v21)+68)) = v25
-				v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-				if v27 != 0 {
-					v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+20))
-					v30 = v29 - v27
-					v33 = F_palloc(m, v30+int32(1))
-					mBase = m.M
-					v34 = m.ExcPending
-					if v34 != 0 {
-						return int32(0)
-					} else {
-						v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-						if v30 != 0 {
-							v36 = F__emscripten_memcpy_bulkmem(m, v33, v35, v30)
-							mBase = m.M
-							v37 = v36
-						} else {
-							v37 = v33
-						}
-						v39 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, uint32(v37+v30))) = uint8(v39)
-						v42 = v33
-						*(*int32)(unsafe.Add(mBase, uint32(v21)+64)) = v42
-						m.G0 = v8 + int32(16)
-						return int32(0)
-					}
-				} else {
-					v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-					v42 = v41
-					*(*int32)(unsafe.Add(mBase, uint32(v21)+64)) = v42
-					m.G0 = v8 + int32(16)
-					return int32(0)
-				}
-			}
-		}
+		return v5
 	}
 }
 func F_populate_recordset_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
@@ -2978,166 +2878,164 @@ func F_populate_recordset_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	_ = v106
 	var v110 int32
 	_ = v110
+	var v114 int32
+	_ = v114
 	var v115 int32
 	_ = v115
 	var v116 int32
 	_ = v116
 	var v117 int32
 	_ = v117
-	var v118 int32
-	_ = v118
+	var v119 int32
+	_ = v119
 	var v120 int32
 	_ = v120
-	var v121 int32
-	_ = v121
-	var v123 int32
-	_ = v123
+	var v122 int32
+	_ = v122
+	var v129 int32
+	_ = v129
 	var v130 int32
 	_ = v130
 	var v131 int32
 	_ = v131
-	var v132 int32
-	_ = v132
+	var v138 int32
+	_ = v138
 	var v139 int32
 	_ = v139
 	var v140 int32
 	_ = v140
-	var v141 int32
-	_ = v141
+	var v142 int32
+	_ = v142
 	var v143 int32
 	_ = v143
-	var v144 int32
-	_ = v144
+	var v146 int32
+	_ = v146
 	var v147 int32
 	_ = v147
 	var v148 int32
 	_ = v148
 	var v149 int32
 	_ = v149
-	var v150 int32
-	_ = v150
-	var v153 int32
-	_ = v153
+	var v152 int32
+	_ = v152
+	var v154 int32
+	_ = v154
 	var v155 int32
 	_ = v155
-	var v156 int32
-	_ = v156
-	var v159 int32
-	_ = v159
 	var v161 int32
 	_ = v161
-	var v170 int32
-	_ = v170
-	var v173 int32
-	_ = v173
-	var v174 int32
-	_ = v174
-	var v178 int32
-	_ = v178
+	var v164 int32
+	_ = v164
+	var v171 int32
+	_ = v171
+	var v172 int32
+	_ = v172
+	var v176 int32
+	_ = v176
+	var v182 int32
+	_ = v182
 	var v184 int32
 	_ = v184
-	var v186 int32
-	_ = v186
+	var v185 int32
+	_ = v185
 	var v187 int32
 	_ = v187
-	var v189 int32
-	_ = v189
-	var v190 int32
-	_ = v190
+	var v188 int32
+	_ = v188
+	var v205 int32
+	_ = v205
 	var v207 int32
 	_ = v207
+	var v208 int32
+	_ = v208
 	var v211 int32
 	_ = v211
-	var v212 int32
-	_ = v212
-	var v217 int32
-	_ = v217
-	var v221 int32
-	_ = v221
-	var v224 int32
-	_ = v224
-	var v225 int32
-	_ = v225
-	var v226 int32
-	_ = v226
-	var v233 int32
-	_ = v233
-	var v234 int32
-	_ = v234
+	var v215 int32
+	_ = v215
+	var v218 int32
+	_ = v218
+	var v219 int32
+	_ = v219
+	var v220 int32
+	_ = v220
+	var v227 int32
+	_ = v227
+	var v228 int32
+	_ = v228
+	var v235 int32
+	_ = v235
+	var v236 int32
+	_ = v236
+	var v237 int32
+	_ = v237
+	var v240 int32
+	_ = v240
 	var v241 int32
 	_ = v241
-	var v242 int32
-	_ = v242
-	var v243 int32
-	_ = v243
-	var v246 int32
-	_ = v246
-	var v247 int32
-	_ = v247
-	var v256 int32
-	_ = v256
-	var v259 int32
-	_ = v259
-	var v263 int32
-	_ = v263
-	var v268 int32
-	_ = v268
-	var v272 int32
-	_ = v272
-	var v275 int32
-	_ = v275
-	var v279 int32
-	_ = v279
-	var v284 int32
-	_ = v284
-	var v288 int32
-	_ = v288
+	var v250 int32
+	_ = v250
+	var v253 int32
+	_ = v253
+	var v257 int32
+	_ = v257
+	var v262 int32
+	_ = v262
+	var v266 int32
+	_ = v266
+	var v269 int32
+	_ = v269
+	var v273 int32
+	_ = v273
+	var v278 int32
+	_ = v278
+	var v282 int32
+	_ = v282
+	var v285 int32
+	_ = v285
 	var v291 int32
 	_ = v291
-	var v297 int32
-	_ = v297
-	var v302 int32
-	_ = v302
-	var v304 int32
-	_ = v304
-	var v305 int32
-	_ = v305
+	var v296 int32
+	_ = v296
+	var v298 int32
+	_ = v298
+	var v299 int32
+	_ = v299
+	var v307 int32
+	_ = v307
 	var v310 int32
 	_ = v310
 	var v316 int32
 	_ = v316
-	var v322 int32
-	_ = v322
-	var v327 int32
-	_ = v327
+	var v321 int32
+	_ = v321
+	var v341 int32
+	_ = v341
+	var v342 int32
+	_ = v342
+	var v343 int32
+	_ = v343
+	var v346 int32
+	_ = v346
 	var v347 int32
 	_ = v347
-	var v348 int32
-	_ = v348
-	var v349 int32
-	_ = v349
-	var v352 int32
-	_ = v352
-	var v353 int32
-	_ = v353
-	var v375 int32
-	_ = v375
-	var v378 int32
-	_ = v378
-	var v382 int32
-	_ = v382
-	var v387 int32
-	_ = v387
-	var v401 int32
-	_ = v401
-	var v403 int32
-	_ = v403
-	var v404 int32
-	_ = v404
-	var v405 int32
-	_ = v405
-	var v420 int32
-	_ = v420
+	var v369 int32
+	_ = v369
+	var v372 int32
+	_ = v372
+	var v376 int32
+	_ = v376
+	var v381 int32
+	_ = v381
+	var v395 int32
+	_ = v395
+	var v397 int32
+	_ = v397
+	var v398 int32
+	_ = v398
+	var v399 int32
+	_ = v399
+	var v414 int32
+	_ = v414
 	v5 = int32(0)
 	v14 = m.G0
 	v16 = v14 - int32(112)
@@ -3150,19 +3048,19 @@ func F_populate_recordset_worker(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	}
 L1:
 	;
-	v420 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v420)
+	v414 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v414)
 	m.G0 = v16 + int32(112)
 	return
 L2:
 	;
-	v401 = *(*int32)(unsafe.Add(mBase, uint32(v115)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+24)) = v401
-	v403 = *(*int32)(unsafe.Add(mBase, uint32(v71)+52))
-	v404 = F_CreateTupleDescCopy(m, v403)
+	v395 = *(*int32)(unsafe.Add(mBase, uint32(v114)+24))
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+24)) = v395
+	v397 = *(*int32)(unsafe.Add(mBase, uint32(v70)+52))
+	v398 = F_CreateTupleDescCopy(m, v397)
 	mBase = m.M
-	v405 = m.ExcPending
-	if v405 != 0 {
+	v399 = m.ExcPending
+	if v399 != 0 {
 		goto L17
 	} else {
 		goto L113
@@ -3171,28 +3069,28 @@ L3:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v375 = m.ExcPending
-	if v375 != 0 {
+	v369 = m.ExcPending
+	if v369 != 0 {
 		goto L17
 	} else {
 		goto L109
 	}
 L4:
 	;
-	v310 = v305
-	v316 = v304
+	v307 = v299
+	v310 = v298
 	goto L97
 L5:
 	;
-	v304 = v5
-	v305 = int32(1)
+	v298 = v5
+	v299 = int32(1)
 	goto L4
 L6:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v288 = m.ExcPending
-	if v288 != 0 {
+	v282 = m.ExcPending
+	if v282 != 0 {
 		goto L17
 	} else {
 		goto L93
@@ -3201,8 +3099,8 @@ L7:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v272 = m.ExcPending
-	if v272 != 0 {
+	v266 = m.ExcPending
+	if v266 != 0 {
 		goto L17
 	} else {
 		goto L89
@@ -3211,8 +3109,8 @@ L8:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v256 = m.ExcPending
-	if v256 != 0 {
+	v250 = m.ExcPending
+	if v250 != 0 {
 		goto L17
 	} else {
 		goto L85
@@ -3278,8 +3176,8 @@ L15:
 L16:
 	;
 	if l3 == int32(0) {
-		v70 = v5
-		v71 = v30
+		v70 = v30
+		v71 = v5
 		goto L12
 	} else {
 		goto L24
@@ -3328,8 +3226,8 @@ L22:
 	goto L13
 L23:
 	;
-	v70 = v5
-	v71 = v38
+	v70 = v38
+	v71 = v5
 	goto L12
 L24:
 	;
@@ -3353,8 +3251,8 @@ L27:
 	;
 	v65 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
 	if v65 != int32(2249) {
-		v70 = v5
-		v71 = v51
+		v70 = v51
+		v71 = v5
 		goto L12
 	} else {
 		goto L30
@@ -3363,8 +3261,8 @@ L28:
 	;
 	v58 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
 	if v58 != int32(2249) {
-		v70 = v56
-		v71 = v51
+		v70 = v51
+		v71 = v56
 		goto L12
 	} else {
 		goto L29
@@ -3375,8 +3273,8 @@ L29:
 	*(*int32)(unsafe.Add(mBase, uint32(v51)+56)) = v61
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(v56)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v51)+60)) = v63
-	v70 = v56
-	v71 = v51
+	v70 = v51
+	v71 = v56
 	goto L12
 L30:
 	;
@@ -3390,13 +3288,13 @@ L30:
 	}
 L31:
 	;
-	v70 = v5
-	v71 = v51
+	v70 = v51
+	v71 = v5
 	goto L12
 L32:
 	;
-	v78 = *(*int32)(unsafe.Add(mBase, uint32(v71)+68))
-	v79 = *(*int32)(unsafe.Add(mBase, uint32(v71)+52))
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(v70)+68))
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v70)+52))
 	if v79 == int32(0) {
 		goto L35
 	} else {
@@ -3404,17 +3302,17 @@ L32:
 	}
 L33:
 	;
-	v115 = F_palloc0(m, int32(36))
+	v114 = F_palloc0(m, int32(36))
 	mBase = m.M
-	v116 = m.ExcPending
-	if v116 != 0 {
+	v115 = m.ExcPending
+	if v115 != 0 {
 		goto L17
 	} else {
 		goto L48
 	}
 L34:
 	;
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(v71)+60))
+	v91 = *(*int32)(unsafe.Add(mBase, uint32(v70)+60))
 	v92 = F_lookup_rowtype_tupdesc(m, v89, v91)
 	mBase = m.M
 	v93 = m.ExcPending
@@ -3425,7 +3323,7 @@ L34:
 	}
 L35:
 	;
-	v82 = *(*int32)(unsafe.Add(mBase, uint32(v71)+56))
+	v82 = *(*int32)(unsafe.Add(mBase, uint32(v70)+56))
 	v89 = v82
 	goto L34
 L36:
@@ -3434,7 +3332,7 @@ L36:
 L37:
 	;
 	v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v71)+56))
+	v84 = *(*int32)(unsafe.Add(mBase, uint32(v70)+56))
 	if v83 != v84 {
 		v89 = v84
 		goto L34
@@ -3444,7 +3342,7 @@ L37:
 L38:
 	;
 	v86 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
-	v87 = *(*int32)(unsafe.Add(mBase, uint32(v71)+60))
+	v87 = *(*int32)(unsafe.Add(mBase, uint32(v70)+60))
 	if v86 == v87 {
 		goto L33
 	} else {
@@ -3456,7 +3354,7 @@ L39:
 	goto L34
 L40:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, uint32(v71)+52))
+	v94 = *(*int32)(unsafe.Add(mBase, uint32(v70)+52))
 	if v94 != 0 {
 		goto L41
 	} else {
@@ -3493,7 +3391,7 @@ L44:
 	goto L43
 L45:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v71)+52)) = v101
+	*(*int32)(unsafe.Add(mBase, uint32(v70)+52)) = v101
 	*(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[0])) = v98
 	v106 = *(*int32)(unsafe.Add(mBase, uint32(v92)+12))
 	if v106 < int32(0) {
@@ -3516,29 +3414,29 @@ L47:
 	goto L33
 L48:
 	;
-	v117 = int32(_a_F_populate_recordset_worker_0)
-	v118 = *(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[0]))
-	v120 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
-	v121 = *(*int32)(unsafe.Add(mBase, uint32(v120)+16))
-	*(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[0])) = v121
-	v123 = *(*int32)(unsafe.Add(mBase, uint32(v18)+12))
-	v130 = *(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[1]))
-	v131 = F_tuplestore_begin_heap(m, int32(base.Ui32(v123&int32(4))>>(uint(int32(2))%32)), int32(0), v130)
+	v116 = int32(_a_F_populate_recordset_worker_0)
+	v117 = *(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[0]))
+	v119 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
+	v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+16))
+	*(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[0])) = v120
+	v122 = *(*int32)(unsafe.Add(mBase, uint32(v18)+12))
+	v129 = *(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[1]))
+	v130 = F_tuplestore_begin_heap(m, int32(base.Ui32(v122&int32(4))>>(uint(int32(2))%32)), int32(0), v129)
 	mBase = m.M
-	v132 = m.ExcPending
-	if v132 != 0 {
+	v131 = m.ExcPending
+	if v131 != 0 {
 		goto L17
 	} else {
 		goto L49
 	}
 L49:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v115)+24)) = v131
-	*(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[0])) = v118
-	*(*int32)(unsafe.Add(mBase, uint32(v115)+32)) = v71
-	*(*int32)(unsafe.Add(mBase, uint32(v115)+4)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(v115)+28)) = v70
-	v139 = *(*int32)(unsafe.Add(mBase, uint32(v74+int32(20))))
+	*(*int32)(unsafe.Add(mBase, uint32(v114)+24)) = v130
+	*(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[0])) = v117
+	*(*int32)(unsafe.Add(mBase, uint32(v114)+32)) = v70
+	*(*int32)(unsafe.Add(mBase, uint32(v114)+4)) = l1
+	*(*int32)(unsafe.Add(mBase, uint32(v114)+28)) = v71
+	v138 = *(*int32)(unsafe.Add(mBase, uint32(v74+int32(20))))
 	if l2 != 0 {
 		goto L50
 	} else {
@@ -3546,10 +3444,10 @@ L49:
 	}
 L50:
 	;
-	v140 = F_pg_detoast_datum_packed(m, v139)
+	v139 = F_pg_detoast_datum_packed(m, v138)
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v140 = m.ExcPending
+	if v140 != 0 {
 		goto L17
 	} else {
 		goto L53
@@ -3559,70 +3457,69 @@ L51:
 	goto L52
 L52:
 	;
-	v224 = F_pg_detoast_datum(m, v139)
+	v218 = F_pg_detoast_datum(m, v138)
 	mBase = m.M
-	v225 = m.ExcPending
-	if v225 != 0 {
+	v219 = m.ExcPending
+	if v219 != 0 {
 		goto L17
 	} else {
 		goto L78
 	}
 L53:
 	;
-	v143 = F_palloc0(m, int32(40))
+	v142 = F_palloc0(m, int32(40))
 	mBase = m.M
-	v144 = m.ExcPending
-	if v144 != 0 {
+	v143 = m.ExcPending
+	if v143 != 0 {
 		goto L17
 	} else {
 		goto L54
 	}
 L54:
 	;
-	v147 = F_pg_detoast_datum_packed(m, v140)
+	v146 = F_pg_detoast_datum_packed(m, v139)
 	mBase = m.M
-	v148 = m.ExcPending
-	if v148 != 0 {
+	v147 = m.ExcPending
+	if v147 != 0 {
 		goto L17
 	} else {
 		goto L55
 	}
 L55:
 	;
-	v149 = int32(1)
-	v150 = v147 + v149
-	v153 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v147))))
-	v155 = v153 & v149
-	if v155 != 0 {
+	v148 = int32(1)
+	v149 = v146 + v148
+	v152 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146))))
+	v154 = v152 & v148
+	if v154 != 0 {
 		goto L56
 	} else {
 		goto L57
 	}
 L56:
 	;
-	v156 = v150
+	v155 = v149
 	goto L58
 L57:
 	;
-	v156 = v147 + int32(4)
+	v155 = v146 + int32(4)
 	goto L58
 L58:
 	;
-	if v153 == int32(1) {
+	if v152 == int32(1) {
 		goto L60
 	} else {
 		goto L61
 	}
 L59:
 	;
-	v186 = *(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[2]))
-	v187 = *(*int32)(unsafe.Add(mBase, uint32(v186)+4))
+	v184 = *(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_worker[2]))
+	v185 = *(*int32)(unsafe.Add(mBase, uint32(v184)+4))
 	goto L70
 L60:
 	;
-	v159 = int32(4)
-	v161 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v150))))
-	if v161&int32(254) == int32(2) {
+	v161 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v149))))
+	if v161 == int32(18) {
 		goto L63
 	} else {
 		goto L64
@@ -3632,88 +3529,88 @@ L61:
 	goto L62
 L62:
 	;
-	v174 = int32(1)
-	if v155 != 0 {
-		v184 = int32(base.Ui32(v153)>>(uint(v174)%32)) - v174
+	v172 = int32(1)
+	if v154 != 0 {
+		v182 = int32(base.Ui32(v152)>>(uint(v172)%32)) - v172
 		goto L59
 	} else {
 		goto L69
 	}
 L63:
 	;
-	v170 = v159
+	v164 = int32(16)
 	goto L65
 L64:
 	;
-	v170 = base.B2i32(v161 == int32(18)) << (uint(v159) % 32)
+	v164 = int32(0)
 	goto L65
 L65:
 	;
-	if v161 == int32(1) {
+	if base.Ui32((v161-int32(1))&int32(255)) < base.Ui32(int32(3)) {
 		goto L66
 	} else {
 		goto L67
 	}
 L66:
 	;
-	v173 = v159
+	v171 = int32(4)
 	goto L68
 L67:
 	;
-	v173 = v170
+	v171 = v164
 	goto L68
 L68:
 	;
-	v184 = v173
+	v182 = v171
 	goto L59
 L69:
 	;
-	v178 = *(*int32)(unsafe.Add(mBase, uint32(v147)))
-	v184 = int32(base.Ui32(v178)>>(uint(int32(2))%32)) - int32(4)
+	v176 = *(*int32)(unsafe.Add(mBase, uint32(v146)))
+	v182 = int32(base.Ui32(v176)>>(uint(int32(2))%32)) - int32(4)
 	goto L59
 L70:
 	;
-	v189 = F_makeJsonLexContextCstringLen(m, v16+int32(44), v156, v184, v187, int32(1))
+	v187 = F_makeJsonLexContextCstringLen(m, v16+int32(44), v155, v182, v185, int32(1))
 	mBase = m.M
-	v190 = m.ExcPending
-	if v190 != 0 {
+	v188 = m.ExcPending
+	if v188 != 0 {
 		goto L17
 	} else {
 		goto L71
 	}
 L71:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+36)) = int32(1383)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+28)) = int32(1384)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+12)) = int32(1385)
-	*(*int32)(unsafe.Add(mBase, uint32(v143))) = v115
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+24)) = int32(1386)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+20)) = int32(1387)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+8)) = int32(1388)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+4)) = int32(1389)
-	v207 = v16 + int32(44)
-	*(*int32)(unsafe.Add(mBase, uint32(v115))) = v207
-	v211 = F_pg_parse_json(m, v207, v143)
+	*(*int32)(unsafe.Add(mBase, uint32(v142)+36)) = int32(1364)
+	*(*int32)(unsafe.Add(mBase, uint32(v142)+28)) = int32(1365)
+	*(*int32)(unsafe.Add(mBase, uint32(v142)+12)) = int32(1366)
+	*(*int32)(unsafe.Add(mBase, uint32(v142))) = v114
+	*(*int32)(unsafe.Add(mBase, uint32(v142)+24)) = int32(1367)
+	*(*int32)(unsafe.Add(mBase, uint32(v142)+20)) = int32(1368)
+	*(*int32)(unsafe.Add(mBase, uint32(v142)+8)) = int32(1369)
+	*(*int32)(unsafe.Add(mBase, uint32(v142)+4)) = int32(1370)
+	v205 = v16 + int32(44)
+	*(*int32)(unsafe.Add(mBase, uint32(v114))) = v205
+	v207 = F_pg_parse_json(m, v205, v142)
 	mBase = m.M
-	v212 = m.ExcPending
-	if v212 != 0 {
+	v208 = m.ExcPending
+	if v208 != 0 {
 		goto L17
 	} else {
 		goto L72
 	}
 L72:
 	;
-	if v211 != 0 {
+	if v207 != 0 {
 		goto L73
 	} else {
 		goto L74
 	}
 L73:
 	;
-	F_json_errsave_error(m, v211, v16+int32(44), int32(0))
+	F_json_errsave_error(m, v207, v205, int32(0))
 	mBase = m.M
-	v217 = m.ExcPending
-	if v217 != 0 {
+	v211 = m.ExcPending
+	if v211 != 0 {
 		goto L17
 	} else {
 		goto L76
@@ -3725,8 +3622,8 @@ L75:
 	;
 	F_freeJsonLexContext(m, v16+int32(44))
 	mBase = m.M
-	v221 = m.ExcPending
-	if v221 != 0 {
+	v215 = m.ExcPending
+	if v215 != 0 {
 		goto L17
 	} else {
 		goto L77
@@ -3736,48 +3633,48 @@ L76:
 	goto L75
 L77:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v115))) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v114))) = int32(0)
 	goto L2
 L78:
 	;
-	v226 = *(*int32)(unsafe.Add(mBase, uint32(v224)+4))
-	if v226&int32(1342177280) != int32(1073741824) {
+	v220 = *(*int32)(unsafe.Add(mBase, uint32(v218)+4))
+	if v220&int32(1342177280) != int32(1073741824) {
 		goto L6
 	} else {
 		goto L79
 	}
 L79:
 	;
-	v233 = F_JsonbIteratorInit(m, v224+int32(4))
+	v227 = F_JsonbIteratorInit(m, v218+int32(4))
 	mBase = m.M
-	v234 = m.ExcPending
-	if v234 != 0 {
+	v228 = m.ExcPending
+	if v228 != 0 {
 		goto L17
 	} else {
 		goto L80
 	}
 L80:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+40)) = v233
-	v241 = F_JsonbIteratorNext(m, v16+int32(40), v16+int32(44), int32(0))
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+40)) = v227
+	v235 = F_JsonbIteratorNext(m, v16+int32(40), v16+int32(44), int32(0))
 	mBase = m.M
-	v242 = m.ExcPending
-	if v242 != 0 {
+	v236 = m.ExcPending
+	if v236 != 0 {
 		goto L17
 	} else {
 		goto L82
 	}
 L81:
 	;
-	v243 = *(*int32)(unsafe.Add(mBase, uint32(v16)+44))
-	if v243 != int32(18) {
+	v237 = *(*int32)(unsafe.Add(mBase, uint32(v16)+44))
+	if v237 != int32(18) {
 		goto L3
 	} else {
 		goto L83
 	}
 L82:
 	;
-	switch v241 {
+	switch v235 {
 	case 0:
 		goto L2
 	default:
@@ -3787,24 +3684,24 @@ L82:
 	}
 L83:
 	;
-	v246 = *(*int32)(unsafe.Add(mBase, uint32(v16)+52))
-	v247 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v246)+3)))
-	if v247&int32(32) == int32(0) {
+	v240 = *(*int32)(unsafe.Add(mBase, uint32(v16)+52))
+	v241 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v240)+3)))
+	if v241&int32(32) == int32(0) {
 		goto L3
 	} else {
 		goto L84
 	}
 L84:
 	;
-	v304 = v246
-	v305 = int32(0)
+	v298 = v240
+	v299 = int32(0)
 	goto L4
 L85:
 	;
 	F_errcode(m, int32(1088))
 	mBase = m.M
-	v259 = m.ExcPending
-	if v259 != 0 {
+	v253 = m.ExcPending
+	if v253 != 0 {
 		goto L17
 	} else {
 		goto L86
@@ -3813,8 +3710,8 @@ L86:
 	;
 	F_errmsg(m, int32(_a_F_populate_recordset_worker_1), int32(0))
 	mBase = m.M
-	v263 = m.ExcPending
-	if v263 != 0 {
+	v257 = m.ExcPending
+	if v257 != 0 {
 		goto L17
 	} else {
 		goto L87
@@ -3823,8 +3720,8 @@ L87:
 	;
 	F_errfinish(m, int32(_a_F_populate_recordset_worker_2), int32(4056), int32(_a_F_populate_recordset_worker_3))
 	mBase = m.M
-	v268 = m.ExcPending
-	if v268 != 0 {
+	v262 = m.ExcPending
+	if v262 != 0 {
 		goto L17
 	} else {
 		goto L88
@@ -3838,8 +3735,8 @@ L89:
 	;
 	F_errcode(m, int32(1088))
 	mBase = m.M
-	v275 = m.ExcPending
-	if v275 != 0 {
+	v269 = m.ExcPending
+	if v269 != 0 {
 		goto L17
 	} else {
 		goto L90
@@ -3848,8 +3745,8 @@ L90:
 	;
 	F_errmsg(m, int32(_a_F_populate_recordset_worker_4), int32(0))
 	mBase = m.M
-	v279 = m.ExcPending
-	if v279 != 0 {
+	v273 = m.ExcPending
+	if v273 != 0 {
 		goto L17
 	} else {
 		goto L91
@@ -3858,8 +3755,8 @@ L91:
 	;
 	F_errfinish(m, int32(_a_F_populate_recordset_worker_2), int32(4061), int32(_a_F_populate_recordset_worker_3))
 	mBase = m.M
-	v284 = m.ExcPending
-	if v284 != 0 {
+	v278 = m.ExcPending
+	if v278 != 0 {
 		goto L17
 	} else {
 		goto L92
@@ -3873,8 +3770,8 @@ L93:
 	;
 	F_errcode(m, int32(50856066))
 	mBase = m.M
-	v291 = m.ExcPending
-	if v291 != 0 {
+	v285 = m.ExcPending
+	if v285 != 0 {
 		goto L17
 	} else {
 		goto L94
@@ -3884,8 +3781,8 @@ L94:
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = l1
 	F_errmsg(m, int32(_a_F_populate_recordset_worker_5), v16+int32(16))
 	mBase = m.M
-	v297 = m.ExcPending
-	if v297 != 0 {
+	v291 = m.ExcPending
+	if v291 != 0 {
 		goto L17
 	} else {
 		goto L95
@@ -3894,8 +3791,8 @@ L95:
 	;
 	F_errfinish(m, int32(_a_F_populate_recordset_worker_2), int32(_a_F_populate_recordset_worker_6), int32(_a_F_populate_recordset_worker_3))
 	mBase = m.M
-	v302 = m.ExcPending
-	if v302 != 0 {
+	v296 = m.ExcPending
+	if v296 != 0 {
 		goto L17
 	} else {
 		goto L96
@@ -3907,20 +3804,20 @@ L96:
 	}
 L97:
 	;
-	if v310 == int32(0) {
+	if v307 == int32(0) {
 		goto L99
 	} else {
 		goto L100
 	}
 L99:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+36)) = v316
-	v322 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v16)+32)) = uint8(v322)
-	F_populate_recordset_record(m, v115, v16+int32(32))
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+36)) = v310
+	v316 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v16)+32)) = uint8(v316)
+	F_populate_recordset_record(m, v114, v16+int32(32))
 	mBase = m.M
-	v327 = m.ExcPending
-	if v327 != 0 {
+	v321 = m.ExcPending
+	if v321 != 0 {
 		goto L17
 	} else {
 		goto L102
@@ -3933,22 +3830,22 @@ L101:
 	goto L103
 L102:
 	;
-	v310 = int32(1)
+	v307 = int32(1)
 	goto L97
 L103:
 	;
-	v347 = F_JsonbIteratorNext(m, v16+int32(40), v16+int32(44), int32(1))
+	v341 = F_JsonbIteratorNext(m, v16+int32(40), v16+int32(44), int32(1))
 	mBase = m.M
-	v348 = m.ExcPending
-	if v348 != 0 {
+	v342 = m.ExcPending
+	if v342 != 0 {
 		goto L17
 	} else {
 		goto L106
 	}
 L104:
 	;
-	v349 = *(*int32)(unsafe.Add(mBase, uint32(v16)+44))
-	if v349 != int32(18) {
+	v343 = *(*int32)(unsafe.Add(mBase, uint32(v16)+44))
+	if v343 != int32(18) {
 		goto L3
 	} else {
 		goto L107
@@ -3958,7 +3855,7 @@ L105:
 	goto L104
 L106:
 	;
-	switch v347 {
+	switch v341 {
 	case 0:
 		goto L2
 	default:
@@ -3968,24 +3865,24 @@ L106:
 	}
 L107:
 	;
-	v352 = *(*int32)(unsafe.Add(mBase, uint32(v16)+52))
-	v353 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v352)+3)))
-	if v353&int32(32) == int32(0) {
+	v346 = *(*int32)(unsafe.Add(mBase, uint32(v16)+52))
+	v347 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v346)+3)))
+	if v347&int32(32) == int32(0) {
 		goto L3
 	} else {
 		goto L108
 	}
 L108:
 	;
-	v310 = int32(0)
-	v316 = v352
+	v307 = int32(0)
+	v310 = v346
 	goto L97
 L109:
 	;
 	F_errcode(m, int32(50856066))
 	mBase = m.M
-	v378 = m.ExcPending
-	if v378 != 0 {
+	v372 = m.ExcPending
+	if v372 != 0 {
 		goto L17
 	} else {
 		goto L110
@@ -3995,8 +3892,8 @@ L110:
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = l1
 	F_errmsg(m, int32(_a_F_populate_recordset_worker_7), v16)
 	mBase = m.M
-	v382 = m.ExcPending
-	if v382 != 0 {
+	v376 = m.ExcPending
+	if v376 != 0 {
 		goto L17
 	} else {
 		goto L111
@@ -4005,8 +3902,8 @@ L111:
 	;
 	F_errfinish(m, int32(_a_F_populate_recordset_worker_2), int32(_a_F_populate_recordset_worker_8), int32(_a_F_populate_recordset_worker_3))
 	mBase = m.M
-	v387 = m.ExcPending
-	if v387 != 0 {
+	v381 = m.ExcPending
+	if v381 != 0 {
 		goto L17
 	} else {
 		goto L112
@@ -4018,6 +3915,6 @@ L112:
 	}
 L113:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+28)) = v404
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+28)) = v398
 	goto L1
 }

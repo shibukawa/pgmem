@@ -14,30 +14,28 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v7
 	var v15 int32
 	_ = v15
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
-	var v33 int32
-	_ = v33
-	var v39 int32
-	_ = v39
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
 	var v41 int32
 	_ = v41
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	var v61 int32
-	_ = v61
-	var v65 int32
-	_ = v65
-	var v70 int32
-	_ = v70
+	var v43 int32
+	_ = v43
+	var v45 int32
+	_ = v45
+	var v50 int32
+	_ = v50
+	var v68 int32
+	_ = v68
+	var v72 int32
+	_ = v72
+	var v77 int32
+	_ = v77
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
@@ -45,63 +43,60 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 		if int32(0) <= l1 {
 			v15 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v15)
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-			v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-			v19 = m.T0[v18].(func(*base.Module, int32, int32, int32) int32)(m, l0, l1, l2)
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+			v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+			v23 = m.T0[v22].(func(*base.Module, int32, int32, int32) int32)(m, l0, l1, l2)
 			mBase = m.M
-			v22 = m.ExcPending
-			if v22 != 0 {
+			v26 = m.ExcPending
+			if v26 != 0 {
 				return int32(0)
 			} else {
-				if l2&int32(4) == int32(0) {
+				if base.B2i32(l2&int32(4) == v15)|base.B2i32(v23 == int32(0)) != 0 {
 				} else {
-					if v19 == int32(0) {
-					} else {
-						if base.Ui32(int32(1024)) < base.Ui32(l1) {
-							v51 = F__emscripten_memset_bulkmem(m, v19, base.I32_extend8_s(int32(0)), l1)
-							mBase = m.M
+					if l1&int32(3)|base.B2i32(base.Ui32(int32(1024)) < base.Ui32(l1)) == int32(0) {
+						if l1 == int32(0) {
 						} else {
-							if l1&int32(3) != 0 {
-								v51 = F__emscripten_memset_bulkmem(m, v19, base.I32_extend8_s(int32(0)), l1)
-								mBase = m.M
+							v41 = v23 + l1
+							v43 = v23 + int32(4)
+							if base.Ui32(v43) < base.Ui32(v41) {
+								v45 = v41
 							} else {
-								v33 = v19 + l1
-								if base.Ui32(v33) <= base.Ui32(v19) {
-								} else {
-									v39 = v19 + int32(4)
-									if base.Ui32(v39) < base.Ui32(v33) {
-										v41 = v33
-									} else {
-										v41 = v39
-									}
-									v48 = F__emscripten_memset_bulkmem(m, v19, base.I32_extend8_s(int32(0)), (v19^int32(-1)+v41)&int32(-4)+int32(4))
-									mBase = m.M
-								}
+								v45 = v43
 							}
+							v50 = (v23^int32(-1)+v45)&int32(-4) + int32(4)
+							if v50 == int32(0) {
+							} else {
+								base.MemoryFill(m, v23, int32(0), v50)
+							}
+						}
+					} else {
+						if l1 == int32(0) {
+						} else {
+							base.MemoryFill(m, v23, int32(0), l1)
 						}
 					}
 				}
 				m.G0 = v7 + int32(16)
-				return v19
+				return v23
 			}
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v61 = m.ExcPending
-			if v61 != 0 {
+			v68 = m.ExcPending
+			if v68 != 0 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
 				F_errmsg_internal(m, int32(_a_F_MemoryContextAllocExtended_0), v7)
 				mBase = m.M
-				v65 = m.ExcPending
-				if v65 != 0 {
+				v72 = m.ExcPending
+				if v72 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_MemoryContextAllocExtended_1), int32(1254), int32(_a_F_MemoryContextAllocExtended_2))
 					mBase = m.M
-					v70 = m.ExcPending
-					if v70 != 0 {
+					v77 = m.ExcPending
+					if v77 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()
@@ -115,21 +110,21 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 		if base.Ui32(int32(1073741824)) <= base.Ui32(l1) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v61 = m.ExcPending
-			if v61 != 0 {
+			v68 = m.ExcPending
+			if v68 != 0 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
 				F_errmsg_internal(m, int32(_a_F_MemoryContextAllocExtended_0), v7)
 				mBase = m.M
-				v65 = m.ExcPending
-				if v65 != 0 {
+				v72 = m.ExcPending
+				if v72 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_MemoryContextAllocExtended_1), int32(1254), int32(_a_F_MemoryContextAllocExtended_2))
 					mBase = m.M
-					v70 = m.ExcPending
-					if v70 != 0 {
+					v77 = m.ExcPending
+					if v77 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()
@@ -141,44 +136,41 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 		} else {
 			v15 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v15)
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-			v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-			v19 = m.T0[v18].(func(*base.Module, int32, int32, int32) int32)(m, l0, l1, l2)
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+			v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+			v23 = m.T0[v22].(func(*base.Module, int32, int32, int32) int32)(m, l0, l1, l2)
 			mBase = m.M
-			v22 = m.ExcPending
-			if v22 != 0 {
+			v26 = m.ExcPending
+			if v26 != 0 {
 				return int32(0)
 			} else {
-				if l2&int32(4) == int32(0) {
+				if base.B2i32(l2&int32(4) == v15)|base.B2i32(v23 == int32(0)) != 0 {
 				} else {
-					if v19 == int32(0) {
-					} else {
-						if base.Ui32(int32(1024)) < base.Ui32(l1) {
-							v51 = F__emscripten_memset_bulkmem(m, v19, base.I32_extend8_s(int32(0)), l1)
-							mBase = m.M
+					if l1&int32(3)|base.B2i32(base.Ui32(int32(1024)) < base.Ui32(l1)) == int32(0) {
+						if l1 == int32(0) {
 						} else {
-							if l1&int32(3) != 0 {
-								v51 = F__emscripten_memset_bulkmem(m, v19, base.I32_extend8_s(int32(0)), l1)
-								mBase = m.M
+							v41 = v23 + l1
+							v43 = v23 + int32(4)
+							if base.Ui32(v43) < base.Ui32(v41) {
+								v45 = v41
 							} else {
-								v33 = v19 + l1
-								if base.Ui32(v33) <= base.Ui32(v19) {
-								} else {
-									v39 = v19 + int32(4)
-									if base.Ui32(v39) < base.Ui32(v33) {
-										v41 = v33
-									} else {
-										v41 = v39
-									}
-									v48 = F__emscripten_memset_bulkmem(m, v19, base.I32_extend8_s(int32(0)), (v19^int32(-1)+v41)&int32(-4)+int32(4))
-									mBase = m.M
-								}
+								v45 = v43
 							}
+							v50 = (v23^int32(-1)+v45)&int32(-4) + int32(4)
+							if v50 == int32(0) {
+							} else {
+								base.MemoryFill(m, v23, int32(0), v50)
+							}
+						}
+					} else {
+						if l1 == int32(0) {
+						} else {
+							base.MemoryFill(m, v23, int32(0), l1)
 						}
 					}
 				}
 				m.G0 = v7 + int32(16)
-				return v19
+				return v23
 			}
 		}
 	}

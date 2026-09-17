@@ -52,72 +52,72 @@ func F_extension_file_exists(m *base.Module, l0 int32) int32 {
 	_ = v74
 	var v77 int32
 	_ = v77
-	var v78 int32
-	_ = v78
-	var v82 int32
-	_ = v82
+	var v80 int32
+	_ = v80
 	var v83 int32
 	_ = v83
-	var v86 int32
-	_ = v86
+	var v84 int32
+	_ = v84
 	var v87 int32
 	_ = v87
-	var v90 int32
-	_ = v90
-	var v97 int32
-	_ = v97
+	var v88 int32
+	_ = v88
+	var v91 int32
+	_ = v91
 	var v98 int32
 	_ = v98
-	var v100 int32
-	_ = v100
+	var v99 int32
+	_ = v99
 	var v101 int32
 	_ = v101
-	var v105 int32
-	_ = v105
-	var v112 int32
-	_ = v112
-	var v114 int32
-	_ = v114
-	var v118 int32
-	_ = v118
+	var v102 int32
+	_ = v102
+	var v106 int32
+	_ = v106
+	var v113 int32
+	_ = v113
+	var v115 int32
+	_ = v115
 	var v119 int32
 	_ = v119
 	var v120 int32
 	_ = v120
-	var v124 int32
-	_ = v124
+	var v121 int32
+	_ = v121
 	var v125 int32
 	_ = v125
-	var v128 int32
-	_ = v128
-	var v131 int32
-	_ = v131
+	var v126 int32
+	_ = v126
+	var v129 int32
+	_ = v129
 	var v132 int32
 	_ = v132
-	var v136 int32
-	_ = v136
-	var v137 int32
-	_ = v137
-	var v140 int32
-	_ = v140
-	var v141 int32
-	_ = v141
-	var v144 int32
-	_ = v144
-	var v151 int32
-	_ = v151
-	var v152 int32
-	_ = v152
-	var v155 int32
-	_ = v155
-	var v159 int32
-	_ = v159
-	var v168 int32
-	_ = v168
-	var v169 int32
-	_ = v169
-	var v186 int32
-	_ = v186
+	var v135 int32
+	_ = v135
+	var v138 int32
+	_ = v138
+	var v139 int32
+	_ = v139
+	var v142 int32
+	_ = v142
+	var v143 int32
+	_ = v143
+	var v146 int32
+	_ = v146
+	var v153 int32
+	_ = v153
+	var v154 int32
+	_ = v154
+	var v157 int32
+	_ = v157
+	var v161 int32
+	_ = v161
+	var v170 int32
+	_ = v170
+	var v171 int32
+	_ = v171
+	var v188 int32
+	_ = v188
 	v8 = F_get_extension_control_directories(m)
 	mBase = m.M
 	v11 = m.ExcPending
@@ -128,7 +128,7 @@ func F_extension_file_exists(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return v186
+	return v188
 L2:
 	;
 	return int32(0)
@@ -144,7 +144,7 @@ L4:
 	v12 = int32(0)
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 	if v13 <= v12 {
-		v186 = v12
+		v188 = v12
 		goto L1
 	} else {
 		goto L7
@@ -154,7 +154,7 @@ L5:
 	goto L6
 L6:
 	;
-	v186 = int32(0)
+	v188 = int32(0)
 	goto L1
 L7:
 	;
@@ -177,13 +177,13 @@ L9:
 	goto L6
 L10:
 	;
-	v168 = v20 + int32(1)
-	v169 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-	if v168 < v169 {
-		v20 = v168
+	v170 = v20 + int32(1)
+	v171 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+	if v170 < v171 {
+		v20 = v170
 		goto L8
 	} else {
-		goto L56
+		goto L54
 	}
 L11:
 	;
@@ -213,11 +213,11 @@ L16:
 	;
 	F_FreeDir(m, v28)
 	mBase = m.M
-	v159 = m.ExcPending
-	if v159 != 0 {
+	v161 = m.ExcPending
+	if v161 != 0 {
 		goto L2
 	} else {
-		goto L55
+		goto L53
 	}
 L17:
 	;
@@ -233,11 +233,11 @@ L18:
 	;
 	F_FreeDir(m, v28)
 	mBase = m.M
-	v155 = m.ExcPending
-	if v155 != 0 {
+	v157 = m.ExcPending
+	if v157 != 0 {
 		goto L2
 	} else {
-		goto L54
+		goto L52
 	}
 L19:
 	;
@@ -293,199 +293,181 @@ L26:
 L27:
 	;
 	v74 = int32(_a_F_extension_file_exists_0)
-	v77 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_extension_file_exists[1])))
-	v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71))))
-	if v78 == int32(0) {
-		v97 = v77
-		v98 = v78
+	v77 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71))))
+	v80 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_extension_file_exists[1])))
+	if base.B2i32(v77 == int32(0))|base.B2i32(v77 != v80) != 0 {
+		v98 = v77
+		v99 = v80
 		goto L29
 	} else {
 		goto L30
 	}
 L28:
 	;
-	if v98-v97 != 0 {
+	if v98-v99 != 0 {
 		goto L17
 	} else {
-		goto L36
+		goto L35
 	}
 L29:
 	;
 	goto L28
 L30:
 	;
-	if v77 != v78 {
-		v97 = v77
-		v98 = v78
-		goto L29
-	} else {
-		goto L31
-	}
+	v83 = v71
+	v84 = v74
+	goto L31
 L31:
 	;
-	v82 = v71
-	v83 = v74
-	goto L32
+	v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v84)+1)))
+	v88 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v83)+1)))
+	if v88 == int32(0) {
+		v98 = v88
+		v99 = v87
+		goto L29
+	} else {
+		goto L33
+	}
 L32:
 	;
-	v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v83)+1)))
-	v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v82)+1)))
-	if v87 == int32(0) {
-		v97 = v86
-		v98 = v87
-		goto L29
+	v98 = v88
+	v99 = v87
+	goto L29
+L33:
+	;
+	v91 = int32(1)
+	if v88 == v87 {
+		v83 = v83 + v91
+		v84 = v84 + v91
+		goto L31
 	} else {
 		goto L34
 	}
-L33:
-	;
-	v97 = v86
-	v98 = v87
-	goto L29
 L34:
 	;
-	v90 = int32(1)
-	if v86 == v87 {
-		v82 = v82 + v90
-		v83 = v83 + v90
-		goto L32
-	} else {
-		goto L35
-	}
+	goto L32
 L35:
 	;
-	goto L33
-L36:
-	;
-	v100 = F_pstrdup(m, v48)
+	v101 = F_pstrdup(m, v48)
 	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
+	v102 = m.ExcPending
+	if v102 != 0 {
 		goto L2
 	} else {
-		goto L37
+		goto L36
 	}
+L36:
+	;
+	v106 = F_strlen(m, v101)
+	mBase = m.M
+	v113 = v106 + int32(1)
+	goto L39
 L37:
 	;
-	v105 = F_strlen(m, v100)
+	v126 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v125))) = uint8(v126)
+	v129 = F_strstr(m, v101, int32(_a_F_extension_file_exists_1))
 	mBase = m.M
-	v112 = v105 + int32(1)
-	goto L40
-L38:
-	;
-	v125 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v124))) = uint8(v125)
-	v128 = F_strstr(m, v100, int32(_a_F_extension_file_exists_1))
-	mBase = m.M
-	if v128 != 0 {
+	if v129 != 0 {
 		goto L17
 	} else {
-		goto L44
+		goto L43
 	}
+L38:
+	;
+	goto L37
 L39:
 	;
-	goto L38
+	v115 = int32(0)
+	if v113 == v115 {
+		v125 = v115
+		goto L38
+	} else {
+		goto L41
+	}
 L40:
 	;
-	v114 = int32(0)
-	if v112 == v114 {
-		v124 = v114
+	v125 = v120
+	goto L38
+L41:
+	;
+	v119 = v113 - int32(1)
+	v120 = v101 + v119
+	v121 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v120))))
+	if v121 != int32(46) {
+		v113 = v119
 		goto L39
 	} else {
 		goto L42
 	}
-L41:
-	;
-	v124 = v119
-	goto L39
 L42:
 	;
-	v118 = v112 - int32(1)
-	v119 = v100 + v118
-	v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119))))
-	if v120 != int32(46) {
-		v112 = v118
-		goto L40
-	} else {
-		goto L43
-	}
+	goto L40
 L43:
 	;
-	goto L41
+	v132 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v101))))
+	v135 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	if base.B2i32(v132 == int32(0))|base.B2i32(v132 != v135) != 0 {
+		v153 = v132
+		v154 = v135
+		goto L45
+	} else {
+		goto L46
+	}
 L44:
 	;
-	v131 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	v132 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100))))
-	if v132 == int32(0) {
-		v151 = v131
-		v152 = v132
-		goto L46
-	} else {
-		goto L47
-	}
-L45:
-	;
-	if v152-v151 != 0 {
+	if v153-v154 != 0 {
 		goto L17
-	} else {
-		goto L53
-	}
-L46:
-	;
-	goto L45
-L47:
-	;
-	if v131 != v132 {
-		v151 = v131
-		v152 = v132
-		goto L46
-	} else {
-		goto L48
-	}
-L48:
-	;
-	v136 = v100
-	v137 = l0
-	goto L49
-L49:
-	;
-	v140 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v137)+1)))
-	v141 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v136)+1)))
-	if v141 == int32(0) {
-		v151 = v140
-		v152 = v141
-		goto L46
 	} else {
 		goto L51
 	}
+L45:
+	;
+	goto L44
+L46:
+	;
+	v138 = v101
+	v139 = l0
+	goto L47
+L47:
+	;
+	v142 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v139)+1)))
+	v143 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v138)+1)))
+	if v143 == int32(0) {
+		v153 = v143
+		v154 = v142
+		goto L45
+	} else {
+		goto L49
+	}
+L48:
+	;
+	v153 = v143
+	v154 = v142
+	goto L45
+L49:
+	;
+	v146 = int32(1)
+	if v143 == v142 {
+		v138 = v138 + v146
+		v139 = v139 + v146
+		goto L47
+	} else {
+		goto L50
+	}
 L50:
 	;
-	v151 = v140
-	v152 = v141
-	goto L46
+	goto L48
 L51:
 	;
-	v144 = int32(1)
-	if v140 == v141 {
-		v136 = v136 + v144
-		v137 = v137 + v144
-		goto L49
-	} else {
-		goto L52
-	}
+	goto L18
 L52:
 	;
-	goto L50
+	return int32(1)
 L53:
 	;
-	goto L18
-L54:
-	;
-	return int32(1)
-L55:
-	;
 	goto L10
-L56:
+L54:
 	;
 	goto L9
 }
@@ -666,7 +648,7 @@ L15:
 	goto L10
 L16:
 	;
-	F_sequence_close(m, v12, int32(1))
+	F_relation_close(m, v12, int32(1))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -694,6 +676,8 @@ func F_recordExtensionInitPrivWorker(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v20
 	var v21 int32
 	_ = v21
+	var v23 int32
+	_ = v23
 	var v28 int32
 	_ = v28
 	var v35 int32
@@ -702,76 +686,76 @@ func F_recordExtensionInitPrivWorker(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v38
 	var v42 int32
 	_ = v42
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
 	var v49 int32
 	_ = v49
 	var v50 int32
 	_ = v50
-	var v51 int32
+	var v51 int64
 	_ = v51
-	var v52 int32
-	_ = v52
-	var v53 int64
-	_ = v53
-	var v57 int32
-	_ = v57
-	var v64 int32
-	_ = v64
+	var v55 int32
+	_ = v55
+	var v62 int32
+	_ = v62
+	var v65 int32
+	_ = v65
+	var v66 int32
+	_ = v66
 	var v67 int32
 	_ = v67
 	var v68 int32
 	_ = v68
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
 	var v73 int32
 	_ = v73
 	var v74 int32
 	_ = v74
-	var v75 int32
-	_ = v75
 	var v76 int32
 	_ = v76
-	var v78 int32
-	_ = v78
-	var v81 int32
-	_ = v81
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v94 int32
-	_ = v94
-	var v95 int32
-	_ = v95
-	var v99 int32
-	_ = v99
-	var v103 int32
-	_ = v103
-	var v104 int32
-	_ = v104
-	var v110 int32
-	_ = v110
-	var v119 int32
-	_ = v119
-	var v124 int32
-	_ = v124
+	var v79 int32
+	_ = v79
+	var v82 int32
+	_ = v82
+	var v85 int32
+	_ = v85
+	var v92 int32
+	_ = v92
+	var v93 int32
+	_ = v93
+	var v97 int32
+	_ = v97
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
+	var v108 int32
+	_ = v108
+	var v117 int32
+	_ = v117
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
 	var v125 int32
 	_ = v125
-	var v127 int32
-	_ = v127
-	var v128 int32
-	_ = v128
+	var v126 int32
+	_ = v126
+	var v130 int32
+	_ = v130
 	var v132 int32
 	_ = v132
-	var v134 int32
-	_ = v134
+	var v135 int32
+	_ = v135
 	var v137 int32
 	_ = v137
-	var v139 int32
-	_ = v139
-	var v142 int32
-	_ = v142
+	var v140 int32
+	_ = v140
 	v10 = m.G0
 	v12 = v10 - int32(208)
 	m.G0 = v12
@@ -787,7 +771,8 @@ func F_recordExtensionInitPrivWorker(m *base.Module, l0 int32, l1 int32, l2 int3
 		if v21 != 0 {
 			return
 		} else {
-			F_ScanKeyInit(m, v12-int32(-64), int32(1), int32(3), int32(184), l0)
+			v23 = v12 - int32(-64)
+			F_ScanKeyInit(m, v23, int32(1), int32(3), int32(184), l0)
 			mBase = m.M
 			v28 = m.ExcPending
 			if v28 != 0 {
@@ -806,76 +791,76 @@ func F_recordExtensionInitPrivWorker(m *base.Module, l0 int32, l1 int32, l2 int3
 					if v42 != 0 {
 						return
 					} else {
-						v49 = F_systable_beginscan(m, v20, int32(3395), int32(1), int32(0), int32(3), v12-int32(-64))
+						v47 = F_systable_beginscan(m, v20, int32(3395), int32(1), int32(0), int32(3), v23)
 						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
+						v48 = m.ExcPending
+						if v48 != 0 {
 							return
 						} else {
-							v51 = F_systable_getnext(m, v49)
+							v49 = F_systable_getnext(m, v47)
 							mBase = m.M
-							v52 = m.ExcPending
-							if v52 != 0 {
+							v50 = m.ExcPending
+							if v50 != 0 {
 								return
 							} else {
-								if v51 != 0 {
-									v53 = int64(0)
-									*(*int64)(unsafe.Add(mBase, uint32(v12)+40)) = v53
-									*(*int64)(unsafe.Add(mBase, uint32(v12)+32)) = v53
-									v57 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, uint32(v12)+28)) = uint8(v57)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v57
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v57
-									v64 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
-									v67 = F_heap_getattr_2(m, v51, int32(5), v64, v12+int32(15))
+								if v49 != 0 {
+									v51 = int64(0)
+									*(*int64)(unsafe.Add(mBase, uint32(v12)+40)) = v51
+									*(*int64)(unsafe.Add(mBase, uint32(v12)+32)) = v51
+									v55 = int32(0)
+									*(*uint8)(unsafe.Add(mBase, uint32(v12)+28)) = uint8(v55)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v55
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v55
+									v62 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
+									v65 = F_heap_getattr_2(m, v49, int32(5), v62, v12+int32(15))
 									mBase = m.M
-									v68 = m.ExcPending
-									if v68 != 0 {
+									v66 = m.ExcPending
+									if v66 != 0 {
 										return
 									} else {
-										v69 = F_pg_detoast_datum(m, v67)
+										v67 = F_pg_detoast_datum(m, v65)
 										mBase = m.M
-										v70 = m.ExcPending
-										if v70 != 0 {
+										v68 = m.ExcPending
+										if v68 != 0 {
 											return
 										} else {
-											v73 = F_aclmembers(m, v69, v12+int32(60))
+											v71 = F_aclmembers(m, v67, v12+int32(60))
 											mBase = m.M
-											v74 = m.ExcPending
-											if v74 != 0 {
+											v72 = m.ExcPending
+											if v72 != 0 {
 												return
 											} else {
-												v75 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-												v76 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-												F_updateInitAclDependencies(m, l1, l0, l2, v73, v75, v16, v76)
+												v73 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
+												v74 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
+												F_updateInitAclDependencies(m, l1, l0, l2, v71, v73, v16, v74)
 												mBase = m.M
-												v78 = m.ExcPending
-												if v78 != 0 {
+												v76 = m.ExcPending
+												if v76 != 0 {
 													return
 												} else {
 													if l3 == int32(0) {
-														F_CatalogTupleDelete(m, v20, v51+int32(4))
+														F_simple_heap_delete(m, v20, v49+int32(4))
 														mBase = m.M
-														v103 = m.ExcPending
-														if v103 != 0 {
+														v101 = m.ExcPending
+														if v101 != 0 {
 															return
 														} else {
-															F_systable_endscan(m, v49)
+															F_systable_endscan(m, v47)
 															mBase = m.M
-															v137 = m.ExcPending
-															if v137 != 0 {
+															v135 = m.ExcPending
+															if v135 != 0 {
 																return
 															} else {
 																F_CommandCounterIncrement(m)
 																mBase = m.M
-																v139 = m.ExcPending
-																if v139 != 0 {
+																v137 = m.ExcPending
+																if v137 != 0 {
 																	return
 																} else {
-																	F_sequence_close(m, v20, int32(3))
+																	F_relation_close(m, v20, int32(3))
 																	mBase = m.M
-																	v142 = m.ExcPending
-																	if v142 != 0 {
+																	v140 = m.ExcPending
+																	if v140 != 0 {
 																		return
 																	} else {
 																		m.G0 = v12 + int32(208)
@@ -885,30 +870,30 @@ func F_recordExtensionInitPrivWorker(m *base.Module, l0 int32, l1 int32, l2 int3
 															}
 														}
 													} else {
-														v81 = *(*int32)(unsafe.Add(mBase, uint32(l3)+16))
-														if v81 == int32(0) {
-															F_CatalogTupleDelete(m, v20, v51+int32(4))
+														v79 = *(*int32)(unsafe.Add(mBase, uint32(l3)+16))
+														if v79 == int32(0) {
+															F_simple_heap_delete(m, v20, v49+int32(4))
 															mBase = m.M
-															v103 = m.ExcPending
-															if v103 != 0 {
+															v101 = m.ExcPending
+															if v101 != 0 {
 																return
 															} else {
-																F_systable_endscan(m, v49)
+																F_systable_endscan(m, v47)
 																mBase = m.M
-																v137 = m.ExcPending
-																if v137 != 0 {
+																v135 = m.ExcPending
+																if v135 != 0 {
 																	return
 																} else {
 																	F_CommandCounterIncrement(m)
 																	mBase = m.M
-																	v139 = m.ExcPending
-																	if v139 != 0 {
+																	v137 = m.ExcPending
+																	if v137 != 0 {
 																		return
 																	} else {
-																		F_sequence_close(m, v20, int32(3))
+																		F_relation_close(m, v20, int32(3))
 																		mBase = m.M
-																		v142 = m.ExcPending
-																		if v142 != 0 {
+																		v140 = m.ExcPending
+																		if v140 != 0 {
 																			return
 																		} else {
 																			m.G0 = v12 + int32(208)
@@ -918,38 +903,38 @@ func F_recordExtensionInitPrivWorker(m *base.Module, l0 int32, l1 int32, l2 int3
 																}
 															}
 														} else {
-															v84 = int32(1)
-															*(*uint8)(unsafe.Add(mBase, uint32(v12)+20)) = uint8(v84)
+															v82 = int32(1)
+															*(*uint8)(unsafe.Add(mBase, uint32(v12)+20)) = uint8(v82)
 															*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = l3
-															v87 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
-															v94 = F_heap_modify_tuple(m, v51, v87, v12+int32(32), v12+int32(24), v12+int32(16))
+															v85 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
+															v92 = F_heap_modify_tuple(m, v49, v85, v12+int32(32), v12+int32(24), v12+int32(16))
 															mBase = m.M
-															v95 = m.ExcPending
-															if v95 != 0 {
+															v93 = m.ExcPending
+															if v93 != 0 {
 																return
 															} else {
-																F_CatalogTupleUpdate(m, v20, v94+int32(4), v94)
+																F_CatalogTupleUpdate(m, v20, v92+int32(4), v92)
 																mBase = m.M
-																v99 = m.ExcPending
-																if v99 != 0 {
+																v97 = m.ExcPending
+																if v97 != 0 {
 																	return
 																} else {
-																	F_systable_endscan(m, v49)
+																	F_systable_endscan(m, v47)
 																	mBase = m.M
-																	v137 = m.ExcPending
-																	if v137 != 0 {
+																	v135 = m.ExcPending
+																	if v135 != 0 {
 																		return
 																	} else {
 																		F_CommandCounterIncrement(m)
 																		mBase = m.M
-																		v139 = m.ExcPending
-																		if v139 != 0 {
+																		v137 = m.ExcPending
+																		if v137 != 0 {
 																			return
 																		} else {
-																			F_sequence_close(m, v20, int32(3))
+																			F_relation_close(m, v20, int32(3))
 																			mBase = m.M
-																			v142 = m.ExcPending
-																			if v142 != 0 {
+																			v140 = m.ExcPending
+																			if v140 != 0 {
 																				return
 																			} else {
 																				m.G0 = v12 + int32(208)
@@ -966,26 +951,26 @@ func F_recordExtensionInitPrivWorker(m *base.Module, l0 int32, l1 int32, l2 int3
 										}
 									}
 								} else {
-									v104 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, uint32(v12)+28)) = uint8(v104)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v104
-									if l3 == v104 {
-										F_systable_endscan(m, v49)
+									v102 = int32(0)
+									*(*uint8)(unsafe.Add(mBase, uint32(v12)+28)) = uint8(v102)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v102
+									if l3 == v102 {
+										F_systable_endscan(m, v47)
 										mBase = m.M
-										v137 = m.ExcPending
-										if v137 != 0 {
+										v135 = m.ExcPending
+										if v135 != 0 {
 											return
 										} else {
 											F_CommandCounterIncrement(m)
 											mBase = m.M
-											v139 = m.ExcPending
-											if v139 != 0 {
+											v137 = m.ExcPending
+											if v137 != 0 {
 												return
 											} else {
-												F_sequence_close(m, v20, int32(3))
+												F_relation_close(m, v20, int32(3))
 												mBase = m.M
-												v142 = m.ExcPending
-												if v142 != 0 {
+												v140 = m.ExcPending
+												if v140 != 0 {
 													return
 												} else {
 													m.G0 = v12 + int32(208)
@@ -994,24 +979,24 @@ func F_recordExtensionInitPrivWorker(m *base.Module, l0 int32, l1 int32, l2 int3
 											}
 										}
 									} else {
-										v110 = *(*int32)(unsafe.Add(mBase, uint32(l3)+16))
-										if v110 == int32(0) {
-											F_systable_endscan(m, v49)
+										v108 = *(*int32)(unsafe.Add(mBase, uint32(l3)+16))
+										if v108 == int32(0) {
+											F_systable_endscan(m, v47)
 											mBase = m.M
-											v137 = m.ExcPending
-											if v137 != 0 {
+											v135 = m.ExcPending
+											if v135 != 0 {
 												return
 											} else {
 												F_CommandCounterIncrement(m)
 												mBase = m.M
-												v139 = m.ExcPending
-												if v139 != 0 {
+												v137 = m.ExcPending
+												if v137 != 0 {
 													return
 												} else {
-													F_sequence_close(m, v20, int32(3))
+													F_relation_close(m, v20, int32(3))
 													mBase = m.M
-													v142 = m.ExcPending
-													if v142 != 0 {
+													v140 = m.ExcPending
+													if v140 != 0 {
 														return
 													} else {
 														m.G0 = v12 + int32(208)
@@ -1025,44 +1010,44 @@ func F_recordExtensionInitPrivWorker(m *base.Module, l0 int32, l1 int32, l2 int3
 											*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = l2
 											*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = l1
 											*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = l0
-											v119 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
-											v124 = F_heap_form_tuple(m, v119, v12+int32(32), v12+int32(24))
+											v117 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
+											v122 = F_heap_form_tuple(m, v117, v12+int32(32), v12+int32(24))
 											mBase = m.M
-											v125 = m.ExcPending
-											if v125 != 0 {
+											v123 = m.ExcPending
+											if v123 != 0 {
 												return
 											} else {
-												F_CatalogTupleInsert(m, v20, v124)
+												F_CatalogTupleInsert(m, v20, v122)
 												mBase = m.M
-												v127 = m.ExcPending
-												if v127 != 0 {
+												v125 = m.ExcPending
+												if v125 != 0 {
 													return
 												} else {
-													v128 = int32(0)
-													*(*int32)(unsafe.Add(mBase, uint32(v12)+60)) = v128
-													v132 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-													F_updateInitAclDependencies(m, l1, l0, l2, v128, v128, v16, v132)
+													v126 = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v12)+60)) = v126
+													v130 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
+													F_updateInitAclDependencies(m, l1, l0, l2, v126, v126, v16, v130)
 													mBase = m.M
-													v134 = m.ExcPending
-													if v134 != 0 {
+													v132 = m.ExcPending
+													if v132 != 0 {
 														return
 													} else {
-														F_systable_endscan(m, v49)
+														F_systable_endscan(m, v47)
 														mBase = m.M
-														v137 = m.ExcPending
-														if v137 != 0 {
+														v135 = m.ExcPending
+														if v135 != 0 {
 															return
 														} else {
 															F_CommandCounterIncrement(m)
 															mBase = m.M
-															v139 = m.ExcPending
-															if v139 != 0 {
+															v137 = m.ExcPending
+															if v137 != 0 {
 																return
 															} else {
-																F_sequence_close(m, v20, int32(3))
+																F_relation_close(m, v20, int32(3))
 																mBase = m.M
-																v142 = m.ExcPending
-																if v142 != 0 {
+																v140 = m.ExcPending
+																if v140 != 0 {
 																	return
 																} else {
 																	m.G0 = v12 + int32(208)

@@ -51,8 +51,8 @@ func F_SlruInternalDeleteSegment(m *base.Module, l0 int32, l1 int64) {
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v9 != int32(5) {
 		v12 = int64(0)
-		*(*int64)(unsafe.Add(mBase, uint32(v7)+56)) = v12
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+48)) = v12
+		*(*int64)(unsafe.Add(mBase, uint32(v7)+56)) = v12
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+64)) = v2
 		*(*uint16)(unsafe.Add(mBase, uint32(v7)+48)) = uint16(v9)
 		v22 = F_RegisterSyncRequest(m, v7+int32(48), int32(2), int32(1))

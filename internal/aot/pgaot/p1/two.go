@@ -24,130 +24,132 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v33
 	var v36 int64
 	_ = v36
+	var v39 int32
+	_ = v39
 	var v44 int32
 	_ = v44
 	var v45 int32
 	_ = v45
-	var v49 int32
-	_ = v49
-	var v50 int32
-	_ = v50
-	var v55 int32
-	_ = v55
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v53 int32
+	_ = v53
+	var v60 int32
+	_ = v60
 	var v62 int32
 	_ = v62
-	var v64 int32
-	_ = v64
-	var v70 int32
-	_ = v70
-	var v75 int32
-	_ = v75
-	var v81 int32
-	_ = v81
-	var v84 int32
+	var v68 int32
+	_ = v68
+	var v73 int32
+	_ = v73
+	var v79 int32
+	_ = v79
+	var v82 int32
+	_ = v82
+	var v83 int32
+	_ = v83
+	var v84 int64
 	_ = v84
-	var v85 int32
-	_ = v85
-	var v86 int64
-	_ = v86
+	var v89 int32
+	_ = v89
 	var v91 int32
 	_ = v91
-	var v93 int32
-	_ = v93
-	var v99 int32
-	_ = v99
+	var v97 int32
+	_ = v97
+	var v98 int32
+	_ = v98
 	var v100 int32
 	_ = v100
-	var v102 int32
-	_ = v102
-	var v105 int32
-	_ = v105
-	var v111 int32
-	_ = v111
-	var v123 int32
-	_ = v123
+	var v103 int32
+	_ = v103
+	var v109 int32
+	_ = v109
+	var v121 int32
+	_ = v121
+	var v126 int32
+	_ = v126
 	var v128 int32
 	_ = v128
-	var v130 int32
-	_ = v130
+	var v131 int32
+	_ = v131
+	var v132 int32
+	_ = v132
 	var v133 int32
 	_ = v133
-	var v134 int32
-	_ = v134
-	var v135 int32
-	_ = v135
-	var v138 int64
+	var v136 int64
+	_ = v136
+	var v138 int32
 	_ = v138
-	var v140 int32
-	_ = v140
+	var v139 int32
+	_ = v139
 	var v141 int32
 	_ = v141
-	var v143 int32
-	_ = v143
-	var v147 int32
-	_ = v147
+	var v145 int32
+	_ = v145
+	var v156 int32
+	_ = v156
 	var v158 int32
 	_ = v158
-	var v160 int32
-	_ = v160
-	var v168 int32
-	_ = v168
-	var v173 int32
-	_ = v173
-	var v177 int32
-	_ = v177
-	var v180 int32
-	_ = v180
-	var v191 int32
-	_ = v191
-	var v196 int32
-	_ = v196
-	var v200 int32
-	_ = v200
-	var v203 int32
-	_ = v203
-	var v211 int32
-	_ = v211
+	var v166 int32
+	_ = v166
+	var v171 int32
+	_ = v171
+	var v175 int32
+	_ = v175
+	var v178 int32
+	_ = v178
+	var v189 int32
+	_ = v189
+	var v194 int32
+	_ = v194
+	var v198 int32
+	_ = v198
+	var v201 int32
+	_ = v201
+	var v209 int32
+	_ = v209
+	var v214 int32
+	_ = v214
 	var v216 int32
 	_ = v216
-	var v218 int32
-	_ = v218
-	var v226 int32
-	_ = v226
-	var v231 int32
-	_ = v231
+	var v224 int32
+	_ = v224
+	var v229 int32
+	_ = v229
+	var v233 int32
+	_ = v233
 	var v235 int32
 	_ = v235
-	var v237 int32
-	_ = v237
-	var v245 int32
-	_ = v245
-	var v250 int32
-	_ = v250
-	var v254 int32
-	_ = v254
-	var v257 int32
-	_ = v257
-	var v265 int32
-	_ = v265
-	var v270 int32
-	_ = v270
-	var v274 int32
-	_ = v274
-	var v277 int32
-	_ = v277
-	var v285 int32
-	_ = v285
-	var v290 int32
-	_ = v290
-	var v294 int32
-	_ = v294
-	var v297 int32
-	_ = v297
-	var v305 int32
-	_ = v305
-	var v310 int32
-	_ = v310
+	var v243 int32
+	_ = v243
+	var v248 int32
+	_ = v248
+	var v252 int32
+	_ = v252
+	var v255 int32
+	_ = v255
+	var v263 int32
+	_ = v263
+	var v268 int32
+	_ = v268
+	var v272 int32
+	_ = v272
+	var v275 int32
+	_ = v275
+	var v283 int32
+	_ = v283
+	var v288 int32
+	_ = v288
+	var v292 int32
+	_ = v292
+	var v295 int32
+	_ = v295
+	var v303 int32
+	_ = v303
+	var v308 int32
+	_ = v308
 	v8 = m.G0
 	v10 = v8 - int32(1296)
 	m.G0 = v10
@@ -171,49 +173,50 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 		*(*uint32)(unsafe.Add(mBase, uint32(v10)+164)) = uint32(v33)
 		v36 = int64(base.Ui64(v33) >> (uint(int64(32)) % 64))
 		*(*uint32)(unsafe.Add(mBase, uint32(v10)+160)) = uint32(v36)
-		v44 = F_pg_snprintf(m, v10+int32(272), int32(1024), int32(_a_F_ReadTwoPhaseFile_0), v10+int32(160))
+		v39 = v10 + int32(272)
+		v44 = F_pg_snprintf(m, v39, int32(1024), int32(_a_F_ReadTwoPhaseFile_0), v10+int32(160))
 		mBase = m.M
 		v45 = m.ExcPending
 		if v45 != 0 {
 			return int32(0)
 		} else {
-			v49 = F_OpenTransientFile(m, v10+int32(272), int32(0))
+			v47 = F_OpenTransientFile(m, v39, int32(0))
 			mBase = m.M
-			v50 = m.ExcPending
-			if v50 != 0 {
+			v48 = m.ExcPending
+			if v48 != 0 {
 				return int32(0)
 			} else {
-				if v49 < int32(0) {
+				if v47 < int32(0) {
 					if l1 != 0 {
-						v55 = *(*int32)(unsafe.Add(mBase, _c_F_ReadTwoPhaseFile[0]))
-						if v55 == int32(44) {
-							v147 = int32(0)
+						v53 = *(*int32)(unsafe.Add(mBase, _c_F_ReadTwoPhaseFile[0]))
+						if v53 == int32(44) {
+							v145 = int32(0)
 							m.G0 = v10 + int32(1296)
-							return v147
+							return v145
 						} else {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v62 = m.ExcPending
-							if v62 != 0 {
+							v60 = m.ExcPending
+							if v60 != 0 {
 								return int32(0)
 							} else {
 								F_errcode_for_file_access(m)
 								mBase = m.M
-								v64 = m.ExcPending
-								if v64 != 0 {
+								v62 = m.ExcPending
+								if v62 != 0 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v10))) = v10 + int32(272)
 									F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_1), v10)
 									mBase = m.M
-									v70 = m.ExcPending
-									if v70 != 0 {
+									v68 = m.ExcPending
+									if v68 != 0 {
 										return int32(0)
 									} else {
 										F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1309), int32(_a_F_ReadTwoPhaseFile_3))
 										mBase = m.M
-										v75 = m.ExcPending
-										if v75 != 0 {
+										v73 = m.ExcPending
+										if v73 != 0 {
 											return int32(0)
 										} else {
 											base.Wasm_trap_unreachable()
@@ -227,27 +230,27 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 					} else {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v62 = m.ExcPending
-						if v62 != 0 {
+						v60 = m.ExcPending
+						if v60 != 0 {
 							return int32(0)
 						} else {
 							F_errcode_for_file_access(m)
 							mBase = m.M
-							v64 = m.ExcPending
-							if v64 != 0 {
+							v62 = m.ExcPending
+							if v62 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v10))) = v10 + int32(272)
 								F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_1), v10)
 								mBase = m.M
-								v70 = m.ExcPending
-								if v70 != 0 {
+								v68 = m.ExcPending
+								if v68 != 0 {
 									return int32(0)
 								} else {
 									F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1309), int32(_a_F_ReadTwoPhaseFile_3))
 									mBase = m.M
-									v75 = m.ExcPending
-									if v75 != 0 {
+									v73 = m.ExcPending
+									if v73 != 0 {
 										return int32(0)
 									} else {
 										base.Wasm_trap_unreachable()
@@ -259,39 +262,39 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					if v49 < int32(0) {
-						v81 = F___syscall_ret(m, int32(-8))
+					if v47 < int32(0) {
+						v79 = F___syscall_ret(m, int32(-8))
 						mBase = m.M
-						v85 = v81
+						v83 = v79
 					} else {
-						v84 = F___fstatat(m, v49, int32(_a_F_ReadTwoPhaseFile_4), v10+int32(176), int32(_a_F_ReadTwoPhaseFile_5))
+						v82 = F___fstatat(m, v47, int32(_a_F_ReadTwoPhaseFile_4), v10+int32(176), int32(_a_F_ReadTwoPhaseFile_5))
 						mBase = m.M
-						v85 = v84
+						v83 = v82
 					}
-					if v85 != 0 {
+					if v83 != 0 {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v158 = m.ExcPending
-						if v158 != 0 {
+						v156 = m.ExcPending
+						if v156 != 0 {
 							return int32(0)
 						} else {
 							F_errcode_for_file_access(m)
 							mBase = m.M
-							v160 = m.ExcPending
-							if v160 != 0 {
+							v158 = m.ExcPending
+							if v158 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v10)+144)) = v10 + int32(272)
 								F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_6), v10+int32(144))
 								mBase = m.M
-								v168 = m.ExcPending
-								if v168 != 0 {
+								v166 = m.ExcPending
+								if v166 != 0 {
 									return int32(0)
 								} else {
 									F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1321), int32(_a_F_ReadTwoPhaseFile_3))
 									mBase = m.M
-									v173 = m.ExcPending
-									if v173 != 0 {
+									v171 = m.ExcPending
+									if v171 != 0 {
 										return int32(0)
 									} else {
 										base.Wasm_trap_unreachable()
@@ -302,32 +305,32 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						}
 					} else {
-						v86 = *(*int64)(unsafe.Add(mBase, uint32(v10)+200))
-						if base.Ui64(v86-int64(1073741824)) <= base.Ui64(int64(-1073741741)) {
+						v84 = *(*int64)(unsafe.Add(mBase, uint32(v10)+200))
+						if base.Ui64(v84-int64(1073741824)) <= base.Ui64(int64(-1073741741)) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v177 = m.ExcPending
-							if v177 != 0 {
+							v175 = m.ExcPending
+							if v175 != 0 {
 								return int32(0)
 							} else {
 								F_errcode(m, int32(16779816))
 								mBase = m.M
-								v180 = m.ExcPending
-								if v180 != 0 {
+								v178 = m.ExcPending
+								if v178 != 0 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v10 + int32(272)
-									*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v86
-									F_errmsg_plural(m, int32(_a_F_ReadTwoPhaseFile_7), int32(_a_F_ReadTwoPhaseFile_8), base.I32_wrap_i64(v86), v10+int32(16))
+									*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v84
+									F_errmsg_plural(m, int32(_a_F_ReadTwoPhaseFile_7), int32(_a_F_ReadTwoPhaseFile_8), base.I32_wrap_i64(v84), v10+int32(16))
 									mBase = m.M
-									v191 = m.ExcPending
-									if v191 != 0 {
+									v189 = m.ExcPending
+									if v189 != 0 {
 										return int32(0)
 									} else {
 										F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1332), int32(_a_F_ReadTwoPhaseFile_3))
 										mBase = m.M
-										v196 = m.ExcPending
-										if v196 != 0 {
+										v194 = m.ExcPending
+										if v194 != 0 {
 											return int32(0)
 										} else {
 											base.Wasm_trap_unreachable()
@@ -338,32 +341,32 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 								}
 							}
 						} else {
-							v91 = base.I32_wrap_i64(v86)
-							v93 = v91 - int32(4)
-							if v93 != (v91+int32(3))&int32(2147483640) {
+							v89 = base.I32_wrap_i64(v84)
+							v91 = v89 - int32(4)
+							if v91 != (v89+int32(3))&int32(2147483640) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v200 = m.ExcPending
-								if v200 != 0 {
+								v198 = m.ExcPending
+								if v198 != 0 {
 									return int32(0)
 								} else {
 									F_errcode(m, int32(16779816))
 									mBase = m.M
-									v203 = m.ExcPending
-									if v203 != 0 {
+									v201 = m.ExcPending
+									if v201 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10)+128)) = v10 + int32(272)
 										F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_9), v10+int32(128))
 										mBase = m.M
-										v211 = m.ExcPending
-										if v211 != 0 {
+										v209 = m.ExcPending
+										if v209 != 0 {
 											return int32(0)
 										} else {
 											F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1339), int32(_a_F_ReadTwoPhaseFile_3))
 											mBase = m.M
-											v216 = m.ExcPending
-											if v216 != 0 {
+											v214 = m.ExcPending
+											if v214 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -374,41 +377,41 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 									}
 								}
 							} else {
-								v99 = F_palloc(m, v91)
+								v97 = F_palloc(m, v89)
 								mBase = m.M
-								v100 = m.ExcPending
-								if v100 != 0 {
+								v98 = m.ExcPending
+								if v98 != 0 {
 									return int32(0)
 								} else {
-									v102 = *(*int32)(unsafe.Add(mBase, _c_F_ReadTwoPhaseFile[1]))
-									*(*int32)(unsafe.Add(mBase, uint32(v102))) = int32(167772222)
-									v105 = F_read(m, v49, v99, v91)
+									v100 = *(*int32)(unsafe.Add(mBase, _c_F_ReadTwoPhaseFile[1]))
+									*(*int32)(unsafe.Add(mBase, uint32(v100))) = int32(167772222)
+									v103 = F_read(m, v47, v97, v89)
 									mBase = m.M
-									if base.I64_extend_i32_s(v105) != v86 {
+									if base.I64_extend_i32_s(v103) != v84 {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v111 = m.ExcPending
-										if v111 != 0 {
+										v109 = m.ExcPending
+										if v109 != 0 {
 											return int32(0)
 										} else {
-											if v105 < int32(0) {
+											if v103 < int32(0) {
 												F_errcode_for_file_access(m)
 												mBase = m.M
-												v218 = m.ExcPending
-												if v218 != 0 {
+												v216 = m.ExcPending
+												if v216 != 0 {
 													return int32(0)
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v10)+96)) = v10 + int32(272)
 													F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_10), v10+int32(96))
 													mBase = m.M
-													v226 = m.ExcPending
-													if v226 != 0 {
+													v224 = m.ExcPending
+													if v224 != 0 {
 														return int32(0)
 													} else {
 														F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1353), int32(_a_F_ReadTwoPhaseFile_3))
 														mBase = m.M
-														v231 = m.ExcPending
-														if v231 != 0 {
+														v229 = m.ExcPending
+														if v229 != 0 {
 															return int32(0)
 														} else {
 															base.Wasm_trap_unreachable()
@@ -418,19 +421,19 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 													}
 												}
 											} else {
-												*(*int64)(unsafe.Add(mBase, uint32(v10)+120)) = v86
-												*(*int32)(unsafe.Add(mBase, uint32(v10)+116)) = v105
+												*(*int64)(unsafe.Add(mBase, uint32(v10)+120)) = v84
+												*(*int32)(unsafe.Add(mBase, uint32(v10)+116)) = v103
 												*(*int32)(unsafe.Add(mBase, uint32(v10)+112)) = v10 + int32(272)
 												F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_11), v10+int32(112))
 												mBase = m.M
-												v123 = m.ExcPending
-												if v123 != 0 {
+												v121 = m.ExcPending
+												if v121 != 0 {
 													return int32(0)
 												} else {
 													F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1357), int32(_a_F_ReadTwoPhaseFile_3))
 													mBase = m.M
-													v128 = m.ExcPending
-													if v128 != 0 {
+													v126 = m.ExcPending
+													if v126 != 0 {
 														return int32(0)
 													} else {
 														base.Wasm_trap_unreachable()
@@ -441,38 +444,38 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 											}
 										}
 									} else {
-										v130 = *(*int32)(unsafe.Add(mBase, _c_F_ReadTwoPhaseFile[1]))
-										*(*int32)(unsafe.Add(mBase, uint32(v130))) = int32(0)
-										v133 = F_CloseTransientFile(m, v49)
+										v128 = *(*int32)(unsafe.Add(mBase, _c_F_ReadTwoPhaseFile[1]))
+										*(*int32)(unsafe.Add(mBase, uint32(v128))) = int32(0)
+										v131 = F_CloseTransientFile(m, v47)
 										mBase = m.M
-										v134 = m.ExcPending
-										if v134 != 0 {
+										v132 = m.ExcPending
+										if v132 != 0 {
 											return int32(0)
 										} else {
-											if v133 != 0 {
+											if v131 != 0 {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v235 = m.ExcPending
-												if v235 != 0 {
+												v233 = m.ExcPending
+												if v233 != 0 {
 													return int32(0)
 												} else {
 													F_errcode_for_file_access(m)
 													mBase = m.M
-													v237 = m.ExcPending
-													if v237 != 0 {
+													v235 = m.ExcPending
+													if v235 != 0 {
 														return int32(0)
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v10)+80)) = v10 + int32(272)
 														F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_12), v10+int32(80))
 														mBase = m.M
-														v245 = m.ExcPending
-														if v245 != 0 {
+														v243 = m.ExcPending
+														if v243 != 0 {
 															return int32(0)
 														} else {
 															F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1365), int32(_a_F_ReadTwoPhaseFile_3))
 															mBase = m.M
-															v250 = m.ExcPending
-															if v250 != 0 {
+															v248 = m.ExcPending
+															if v248 != 0 {
 																return int32(0)
 															} else {
 																base.Wasm_trap_unreachable()
@@ -483,31 +486,31 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 													}
 												}
 											} else {
-												v135 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-												if v135 != int32(1475953972) {
+												v133 = *(*int32)(unsafe.Add(mBase, uint32(v97)))
+												if v133 != int32(1475953972) {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v254 = m.ExcPending
-													if v254 != 0 {
+													v252 = m.ExcPending
+													if v252 != 0 {
 														return int32(0)
 													} else {
 														F_errcode(m, int32(16779816))
 														mBase = m.M
-														v257 = m.ExcPending
-														if v257 != 0 {
+														v255 = m.ExcPending
+														if v255 != 0 {
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v10)+64)) = v10 + int32(272)
 															F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_13), v10-int32(-64))
 															mBase = m.M
-															v265 = m.ExcPending
-															if v265 != 0 {
+															v263 = m.ExcPending
+															if v263 != 0 {
 																return int32(0)
 															} else {
 																F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1372), int32(_a_F_ReadTwoPhaseFile_3))
 																mBase = m.M
-																v270 = m.ExcPending
-																if v270 != 0 {
+																v268 = m.ExcPending
+																if v268 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -518,31 +521,31 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 														}
 													}
 												} else {
-													v138 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v99)+4)))
-													if v86 != v138 {
+													v136 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v97)+4)))
+													if v84 != v136 {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v274 = m.ExcPending
-														if v274 != 0 {
+														v272 = m.ExcPending
+														if v272 != 0 {
 															return int32(0)
 														} else {
 															F_errcode(m, int32(16779816))
 															mBase = m.M
-															v277 = m.ExcPending
-															if v277 != 0 {
+															v275 = m.ExcPending
+															if v275 != 0 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v10)+48)) = v10 + int32(272)
 																F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_14), v10+int32(48))
 																mBase = m.M
-																v285 = m.ExcPending
-																if v285 != 0 {
+																v283 = m.ExcPending
+																if v283 != 0 {
 																	return int32(0)
 																} else {
 																	F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1378), int32(_a_F_ReadTwoPhaseFile_3))
 																	mBase = m.M
-																	v290 = m.ExcPending
-																	if v290 != 0 {
+																	v288 = m.ExcPending
+																	if v288 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -553,34 +556,34 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 															}
 														}
 													} else {
-														v140 = int32(-1)
-														v141 = m.Env.Pgmem_crc32c(m, v140, v99, v93)
+														v138 = int32(-1)
+														v139 = m.Env.Pgmem_crc32c(m, v138, v97, v91)
 														mBase = m.M
-														v143 = *(*int32)(unsafe.Add(mBase, uint32(v99+v93)))
-														if v141^v143 != v140 {
+														v141 = *(*int32)(unsafe.Add(mBase, uint32(v97+v91)))
+														if v139^v141 != v138 {
 															F_errstart_cold(m, int32(21), int32(0))
 															mBase = m.M
-															v294 = m.ExcPending
-															if v294 != 0 {
+															v292 = m.ExcPending
+															if v292 != 0 {
 																return int32(0)
 															} else {
 																F_errcode(m, int32(16779816))
 																mBase = m.M
-																v297 = m.ExcPending
-																if v297 != 0 {
+																v295 = m.ExcPending
+																if v295 != 0 {
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v10 + int32(272)
 																	F_errmsg(m, int32(_a_F_ReadTwoPhaseFile_15), v10+int32(32))
 																	mBase = m.M
-																	v305 = m.ExcPending
-																	if v305 != 0 {
+																	v303 = m.ExcPending
+																	if v303 != 0 {
 																		return int32(0)
 																	} else {
 																		F_errfinish(m, int32(_a_F_ReadTwoPhaseFile_2), int32(1390), int32(_a_F_ReadTwoPhaseFile_3))
 																		mBase = m.M
-																		v310 = m.ExcPending
-																		if v310 != 0 {
+																		v308 = m.ExcPending
+																		if v308 != 0 {
 																			return int32(0)
 																		} else {
 																			base.Wasm_trap_unreachable()
@@ -591,9 +594,9 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 																}
 															}
 														} else {
-															v147 = v99
+															v145 = v97
 															m.G0 = v10 + int32(1296)
-															return v147
+															return v145
 														}
 													}
 												}
@@ -628,24 +631,26 @@ func F_RemoveTwoPhaseFile(m *base.Module, l0 int32, l1 int32) {
 	_ = v29
 	var v32 int64
 	_ = v32
+	var v35 int32
+	_ = v35
 	var v40 int32
 	_ = v40
 	var v41 int32
 	_ = v41
-	var v44 int32
-	_ = v44
-	var v50 int32
-	_ = v50
-	var v55 int32
-	_ = v55
-	var v56 int32
-	_ = v56
-	var v60 int32
-	_ = v60
-	var v66 int32
-	_ = v66
-	var v71 int32
-	_ = v71
+	var v42 int32
+	_ = v42
+	var v48 int32
+	_ = v48
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v58 int32
+	_ = v58
+	var v64 int32
+	_ = v64
+	var v69 int32
+	_ = v69
 	v6 = m.G0
 	v8 = v6 - int32(1056)
 	m.G0 = v8
@@ -669,51 +674,52 @@ func F_RemoveTwoPhaseFile(m *base.Module, l0 int32, l1 int32) {
 		*(*uint32)(unsafe.Add(mBase, uint32(v8)+20)) = uint32(v29)
 		v32 = int64(base.Ui64(v29) >> (uint(int64(32)) % 64))
 		*(*uint32)(unsafe.Add(mBase, uint32(v8)+16)) = uint32(v32)
-		v40 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(_a_F_RemoveTwoPhaseFile_0), v8+int32(16))
+		v35 = v8 + int32(32)
+		v40 = F_pg_snprintf(m, v35, int32(1024), int32(_a_F_RemoveTwoPhaseFile_0), v8+int32(16))
 		mBase = m.M
 		v41 = m.ExcPending
 		if v41 != 0 {
 			return
 		} else {
-			v44 = F_unlink(m, v8+int32(32))
+			v42 = F_unlink(m, v35)
 			mBase = m.M
-			if v44 == int32(0) {
+			if v42 == int32(0) {
 				m.G0 = v8 + int32(1056)
 				return
 			} else {
 				if l1 == int32(0) {
-					v50 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveTwoPhaseFile[0]))
-					if v50 == int32(44) {
+					v48 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveTwoPhaseFile[0]))
+					if v48 == int32(44) {
 						m.G0 = v8 + int32(1056)
 						return
 					} else {
-						v55 = F_errstart(m, int32(19), int32(0))
+						v53 = F_errstart(m, int32(19), int32(0))
 						mBase = m.M
-						v56 = m.ExcPending
-						if v56 != 0 {
+						v54 = m.ExcPending
+						if v54 != 0 {
 							return
 						} else {
-							if v55 == int32(0) {
+							if v53 == int32(0) {
 								m.G0 = v8 + int32(1056)
 								return
 							} else {
 								F_errcode_for_file_access(m)
 								mBase = m.M
-								v60 = m.ExcPending
-								if v60 != 0 {
+								v58 = m.ExcPending
+								if v58 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(32)
 									F_errmsg(m, int32(_a_F_RemoveTwoPhaseFile_1), v8)
 									mBase = m.M
-									v66 = m.ExcPending
-									if v66 != 0 {
+									v64 = m.ExcPending
+									if v64 != 0 {
 										return
 									} else {
 										F_errfinish(m, int32(_a_F_RemoveTwoPhaseFile_2), int32(1716), int32(_a_F_RemoveTwoPhaseFile_3))
 										mBase = m.M
-										v71 = m.ExcPending
-										if v71 != 0 {
+										v69 = m.ExcPending
+										if v69 != 0 {
 											return
 										} else {
 											m.G0 = v8 + int32(1056)
@@ -725,33 +731,33 @@ func F_RemoveTwoPhaseFile(m *base.Module, l0 int32, l1 int32) {
 						}
 					}
 				} else {
-					v55 = F_errstart(m, int32(19), int32(0))
+					v53 = F_errstart(m, int32(19), int32(0))
 					mBase = m.M
-					v56 = m.ExcPending
-					if v56 != 0 {
+					v54 = m.ExcPending
+					if v54 != 0 {
 						return
 					} else {
-						if v55 == int32(0) {
+						if v53 == int32(0) {
 							m.G0 = v8 + int32(1056)
 							return
 						} else {
 							F_errcode_for_file_access(m)
 							mBase = m.M
-							v60 = m.ExcPending
-							if v60 != 0 {
+							v58 = m.ExcPending
+							if v58 != 0 {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(32)
 								F_errmsg(m, int32(_a_F_RemoveTwoPhaseFile_1), v8)
 								mBase = m.M
-								v66 = m.ExcPending
-								if v66 != 0 {
+								v64 = m.ExcPending
+								if v64 != 0 {
 									return
 								} else {
 									F_errfinish(m, int32(_a_F_RemoveTwoPhaseFile_2), int32(1716), int32(_a_F_RemoveTwoPhaseFile_3))
 									mBase = m.M
-									v71 = m.ExcPending
-									if v71 != 0 {
+									v69 = m.ExcPending
+									if v69 != 0 {
 										return
 									} else {
 										m.G0 = v8 + int32(1056)
@@ -787,26 +793,26 @@ func F_UpdateTwoPhaseState(m *base.Module, l0 int32) {
 	_ = v26
 	var v31 int32
 	_ = v31
-	var v37 int32
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v37 int64
 	_ = v37
-	var v38 int32
-	_ = v38
-	var v42 int64
-	_ = v42
-	var v52 int32
-	_ = v52
-	var v54 int32
-	_ = v54
-	var v61 int32
-	_ = v61
-	var v62 int32
-	_ = v62
-	var v66 int32
-	_ = v66
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v65 int32
+	_ = v65
 	var v68 int32
 	_ = v68
-	var v71 int32
-	_ = v71
 	v5 = m.G0
 	v7 = v5 - int32(160)
 	m.G0 = v7
@@ -849,42 +855,42 @@ func F_UpdateTwoPhaseState(m *base.Module, l0 int32) {
 					}
 				}
 			} else {
-				v37 = F__emscripten_memset_bulkmem(m, v7+int32(16), base.I32_extend8_s(int32(0)), int32(72))
-				mBase = m.M
-				v38 = int32(0)
-				*(*uint16)(unsafe.Add(mBase, uint32(v7)+144)) = uint16(v38)
-				*(*uint16)(unsafe.Add(mBase, uint32(v7)+112)) = uint16(v38)
-				v42 = int64(0)
-				*(*int64)(unsafe.Add(mBase, uint32(v7)+104)) = v42
-				*(*int64)(unsafe.Add(mBase, uint32(v7)+136)) = v42
-				*(*int64)(unsafe.Add(mBase, uint32(v7)+128)) = v42
-				*(*int64)(unsafe.Add(mBase, uint32(v7)+96)) = v42
+				v33 = v7 + int32(16)
+				v34 = int32(0)
+				base.MemoryFill(m, v33, v34, int32(72))
+				v37 = int64(0)
+				*(*int64)(unsafe.Add(mBase, uint32(v7)+104)) = v37
+				*(*uint16)(unsafe.Add(mBase, uint32(v7)+144)) = uint16(v34)
+				*(*int64)(unsafe.Add(mBase, uint32(v7)+136)) = v37
+				*(*int64)(unsafe.Add(mBase, uint32(v7)+128)) = v37
+				*(*int64)(unsafe.Add(mBase, uint32(v7)+96)) = v37
+				*(*uint16)(unsafe.Add(mBase, uint32(v7)+112)) = uint16(v34)
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = int32(101)
-				v52 = int32(1)
-				*(*uint8)(unsafe.Add(mBase, uint32(v7)+104)) = uint8(v52)
-				v54 = *(*int32)(unsafe.Add(mBase, uint32(v11)+52))
-				v61 = F_heap_modify_tuple(m, v15, v54, v7+int32(16), v7+int32(128), v7+int32(96))
+				v51 = int32(1)
+				*(*uint8)(unsafe.Add(mBase, uint32(v7)+104)) = uint8(v51)
+				v53 = *(*int32)(unsafe.Add(mBase, uint32(v11)+52))
+				v58 = F_heap_modify_tuple(m, v15, v53, v33, v7+int32(128), v7+int32(96))
 				mBase = m.M
-				v62 = m.ExcPending
-				if v62 != 0 {
+				v59 = m.ExcPending
+				if v59 != 0 {
 					return
 				} else {
-					F_CatalogTupleUpdate(m, v11, v61+int32(4), v61)
+					F_CatalogTupleUpdate(m, v11, v58+int32(4), v58)
 					mBase = m.M
-					v66 = m.ExcPending
-					if v66 != 0 {
+					v63 = m.ExcPending
+					if v63 != 0 {
 						return
 					} else {
-						F_pfree(m, v61)
+						F_pfree(m, v58)
 						mBase = m.M
-						v68 = m.ExcPending
-						if v68 != 0 {
+						v65 = m.ExcPending
+						if v65 != 0 {
 							return
 						} else {
-							F_sequence_close(m, v11, int32(3))
+							F_relation_close(m, v11, int32(3))
 							mBase = m.M
-							v71 = m.ExcPending
-							if v71 != 0 {
+							v68 = m.ExcPending
+							if v68 != 0 {
 								return
 							} else {
 								m.G0 = v7 + int32(160)

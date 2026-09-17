@@ -44,18 +44,16 @@ func F_GetSchemaPublicationRelations(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v38
 	var v41 int32
 	_ = v41
-	var v46 int32
-	_ = v46
-	var v49 int32
-	_ = v49
+	var v47 int32
+	_ = v47
 	var v50 int32
 	_ = v50
-	var v55 int32
-	_ = v55
+	var v51 int32
+	_ = v51
 	var v56 int32
 	_ = v56
-	var v58 int32
-	_ = v58
+	var v57 int32
+	_ = v57
 	var v59 int32
 	_ = v59
 	var v60 int32
@@ -66,22 +64,24 @@ func F_GetSchemaPublicationRelations(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v62
 	var v63 int32
 	_ = v63
-	var v65 int32
-	_ = v65
+	var v64 int32
+	_ = v64
 	var v66 int32
 	_ = v66
-	var v69 int32
-	_ = v69
-	var v74 int32
-	_ = v74
+	var v67 int32
+	_ = v67
+	var v70 int32
+	_ = v70
 	var v75 int32
 	_ = v75
 	var v76 int32
 	_ = v76
-	var v78 int32
-	_ = v78
-	var v81 int32
-	_ = v81
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	var v82 int32
+	_ = v82
 	v3 = int32(0)
 	v8 = m.G0
 	v10 = v8 - int32(48)
@@ -142,20 +142,20 @@ L6:
 	goto L9
 L7:
 	;
-	v69 = v3
+	v70 = v3
 	goto L8
 L8:
 	;
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(v75)+12))
-	m.T0[v76].(func(*base.Module, int32))(m, v24)
+	v75 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(v75)+188))
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+	m.T0[v77].(func(*base.Module, int32))(m, v24)
 	mBase = m.M
-	v78 = m.ExcPending
-	if v78 != 0 {
+	v79 = m.ExcPending
+	if v79 != 0 {
 		goto L1
 	} else {
-		goto L25
+		goto L24
 	}
 L9:
 	;
@@ -167,22 +167,22 @@ L9:
 	case 0, 2:
 		goto L12
 	default:
-		v63 = v30
+		v64 = v30
 		goto L11
 	}
 L10:
 	;
-	v69 = v63
+	v70 = v64
 	goto L8
 L11:
 	;
-	v65 = F_heap_getnext(m, v24)
+	v66 = F_heap_getnext(m, v24)
 	mBase = m.M
-	v66 = m.ExcPending
-	if v66 != 0 {
+	v67 = m.ExcPending
+	if v67 != 0 {
 		goto L1
 	} else {
-		goto L23
+		goto L22
 	}
 L12:
 	;
@@ -190,115 +190,107 @@ L12:
 	goto L13
 L13:
 	;
-	if base.Ui32(v41) < base.Ui32(int32(_a_F_GetSchemaPublicationRelations_0)) {
-		v63 = v30
+	if base.B2i32(base.Ui32(v41) < base.Ui32(int32(_a_F_GetSchemaPublicationRelations_0)))|base.B2i32(base.Ui32(v41) < base.Ui32(int32(_a_F_GetSchemaPublicationRelations_1))) != 0 {
+		v64 = v30
 		goto L11
 	} else {
 		goto L14
 	}
 L14:
 	;
-	if base.Ui32(v41) < base.Ui32(int32(_a_F_GetSchemaPublicationRelations_1)) {
-		v63 = v30
+	v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v37)+118)))
+	if v47 != int32(112) {
+		v64 = v30
 		goto L11
 	} else {
 		goto L15
 	}
 L15:
 	;
-	v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v37)+118)))
-	if v46 != int32(112) {
-		v63 = v30
-		goto L11
+	v50 = F_get_rel_relkind(m, v41)
+	mBase = m.M
+	v51 = m.ExcPending
+	if v51 != 0 {
+		goto L1
 	} else {
-		goto L16
+		goto L18
 	}
 L16:
 	;
-	v49 = F_get_rel_relkind(m, v41)
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v37)))
+	v60 = F_GetPubPartitionOptionRelations(m, int32(0), l1, v59)
 	mBase = m.M
-	v50 = m.ExcPending
-	if v50 != 0 {
-		goto L1
-	} else {
-		goto L19
-	}
-L17:
-	;
-	v58 = *(*int32)(unsafe.Add(mBase, uint32(v37)))
-	v59 = F_GetPubPartitionOptionRelations(m, int32(0), l1, v58)
-	mBase = m.M
-	v60 = m.ExcPending
-	if v60 != 0 {
-		goto L1
-	} else {
-		goto L21
-	}
-L18:
-	;
-	v55 = F_lappend_oid(m, v30, v41)
-	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
+	v61 = m.ExcPending
+	if v61 != 0 {
 		goto L1
 	} else {
 		goto L20
 	}
-L19:
+L17:
 	;
-	switch v49&int32(255) - int32(112) {
+	v56 = F_lappend_oid(m, v30, v41)
+	mBase = m.M
+	v57 = m.ExcPending
+	if v57 != 0 {
+		goto L1
+	} else {
+		goto L19
+	}
+L18:
+	;
+	switch v50&int32(255) - int32(112) {
 	case 0:
-		goto L17
+		goto L16
 	default:
-		v63 = v30
+		v64 = v30
 		goto L11
 	case 2:
-		goto L18
+		goto L17
 	}
+L19:
+	;
+	v64 = v56
+	goto L11
 L20:
 	;
-	v63 = v55
-	goto L11
+	v62 = F_list_concat_unique_oid(m, v30, v60)
+	mBase = m.M
+	v63 = m.ExcPending
+	if v63 != 0 {
+		goto L1
+	} else {
+		goto L21
+	}
 L21:
 	;
-	v61 = F_list_concat_unique_oid(m, v30, v59)
-	mBase = m.M
-	v62 = m.ExcPending
-	if v62 != 0 {
-		goto L1
-	} else {
-		goto L22
-	}
+	v64 = v62
+	goto L11
 L22:
 	;
-	v63 = v61
-	goto L11
-L23:
-	;
-	if v65 != 0 {
-		v28 = v65
-		v30 = v63
+	if v66 != 0 {
+		v28 = v66
+		v30 = v64
 		goto L9
 	} else {
-		goto L24
+		goto L23
 	}
-L24:
+L23:
 	;
 	goto L10
-L25:
+L24:
 	;
-	F_sequence_close(m, v14, int32(1))
+	F_relation_close(m, v14, int32(1))
 	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
+	v82 = m.ExcPending
+	if v82 != 0 {
 		goto L1
 	} else {
-		goto L26
+		goto L25
 	}
-L26:
+L25:
 	;
 	m.G0 = v10 + int32(48)
-	return v69
+	return v70
 }
 func F__equalCreateSchemaStmt(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
@@ -311,44 +303,44 @@ func F__equalCreateSchemaStmt(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v12 int32
 	_ = v12
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
+	var v15 int32
+	_ = v15
 	var v18 int32
 	_ = v18
-	var v21 int32
-	_ = v21
+	var v19 int32
+	_ = v19
 	var v22 int32
 	_ = v22
-	var v25 int32
-	_ = v25
-	var v32 int32
-	_ = v32
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
 	var v33 int32
 	_ = v33
-	var v38 int32
-	_ = v38
+	var v34 int32
+	_ = v34
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v43 int32
-	_ = v43
-	var v46 int32
-	_ = v46
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
 	var v47 int32
 	_ = v47
 	var v48 int32
 	_ = v48
 	var v49 int32
 	_ = v49
-	var v52 int32
-	_ = v52
+	var v50 int32
+	_ = v50
 	var v53 int32
 	_ = v53
-	var v55 int32
-	_ = v55
+	var v54 int32
+	_ = v54
+	var v56 int32
+	_ = v56
 	v3 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
@@ -359,23 +351,23 @@ func F__equalCreateSchemaStmt(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 L1:
 	;
-	return v55
+	return v56
 L2:
 	;
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v40 = F_equal(m, v38, v39)
+	v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	v41 = F_equal(m, v39, v40)
 	mBase = m.M
-	v43 = m.ExcPending
-	if v43 != 0 {
-		goto L17
+	v44 = m.ExcPending
+	if v44 != 0 {
+		goto L16
 	} else {
-		goto L18
+		goto L17
 	}
 L3:
 	;
 	if v6 == int32(0) {
-		v55 = v3
+		v56 = v3
 		goto L1
 	} else {
 		goto L6
@@ -386,118 +378,109 @@ L4:
 L5:
 	;
 	if v6 != v7 {
-		v55 = v3
+		v56 = v3
 		goto L1
 	} else {
-		goto L16
+		goto L15
 	}
 L6:
 	;
-	v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6))))
-	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7))))
-	if v13 == int32(0) {
-		v32 = v12
-		v33 = v13
+	v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7))))
+	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6))))
+	if base.B2i32(v12 == int32(0))|base.B2i32(v12 != v15) != 0 {
+		v33 = v12
+		v34 = v15
 		goto L8
 	} else {
 		goto L9
 	}
 L7:
 	;
-	if v33-v32 == int32(0) {
+	if v33-v34 == int32(0) {
 		goto L2
 	} else {
-		goto L15
+		goto L14
 	}
 L8:
 	;
 	goto L7
 L9:
 	;
-	if v12 != v13 {
-		v32 = v12
-		v33 = v13
-		goto L8
-	} else {
-		goto L10
-	}
+	v18 = v7
+	v19 = v6
+	goto L10
 L10:
 	;
-	v17 = v7
-	v18 = v6
-	goto L11
+	v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+1)))
+	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+1)))
+	if v23 == int32(0) {
+		v33 = v23
+		v34 = v22
+		goto L8
+	} else {
+		goto L12
+	}
 L11:
 	;
-	v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+1)))
-	v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+1)))
-	if v22 == int32(0) {
-		v32 = v21
-		v33 = v22
-		goto L8
+	v33 = v23
+	v34 = v22
+	goto L8
+L12:
+	;
+	v26 = int32(1)
+	if v23 == v22 {
+		v18 = v18 + v26
+		v19 = v19 + v26
+		goto L10
 	} else {
 		goto L13
 	}
-L12:
-	;
-	v32 = v21
-	v33 = v22
-	goto L8
 L13:
 	;
-	v25 = int32(1)
-	if v21 == v22 {
-		v17 = v17 + v25
-		v18 = v18 + v25
-		goto L11
-	} else {
-		goto L14
-	}
+	goto L11
 L14:
 	;
-	goto L12
+	v56 = v3
+	goto L1
 L15:
 	;
-	v55 = v3
-	goto L1
+	goto L2
 L16:
 	;
-	goto L2
+	return int32(0)
 L17:
 	;
-	return int32(0)
+	if v41 == int32(0) {
+		v56 = v3
+		goto L1
+	} else {
+		goto L18
+	}
 L18:
 	;
-	if v40 == int32(0) {
-		v55 = v3
-		goto L1
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v48 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+	v49 = F_equal(m, v47, v48)
+	mBase = m.M
+	v50 = m.ExcPending
+	if v50 != 0 {
+		goto L16
 	} else {
 		goto L19
 	}
 L19:
 	;
-	v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-	v48 = F_equal(m, v46, v47)
-	mBase = m.M
-	v49 = m.ExcPending
-	if v49 != 0 {
-		goto L17
+	if v49 == int32(0) {
+		v56 = v3
+		goto L1
 	} else {
 		goto L20
 	}
 L20:
 	;
-	if v48 == int32(0) {
-		v55 = v3
-		goto L1
-	} else {
-		goto L21
-	}
-L21:
-	;
-	v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
-	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
-	v55 = base.B2i32(v52 == v53)
+	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
+	v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
+	v56 = base.B2i32(v53 == v54)
 	goto L1
 }
 func F_schema_to_xmlschema(m *base.Module, l0 int32) int32 {

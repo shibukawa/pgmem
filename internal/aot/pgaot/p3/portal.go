@@ -151,46 +151,46 @@ func F_PortalDrop(m *base.Module, l0 int32, l1 int32) {
 	_ = v80
 	var v82 int32
 	_ = v82
+	var v86 int32
+	_ = v86
 	var v87 int32
 	_ = v87
 	var v88 int32
 	_ = v88
-	var v89 int32
-	_ = v89
-	var v91 int32
-	_ = v91
-	var v94 int32
-	_ = v94
-	var v100 int32
-	_ = v100
+	var v90 int32
+	_ = v90
+	var v93 int32
+	_ = v93
+	var v99 int32
+	_ = v99
+	var v101 int32
+	_ = v101
 	var v102 int32
 	_ = v102
-	var v103 int32
-	_ = v103
-	var v105 int32
-	_ = v105
-	var v107 int32
-	_ = v107
-	var v114 int32
-	_ = v114
+	var v104 int32
+	_ = v104
+	var v106 int32
+	_ = v106
+	var v113 int32
+	_ = v113
+	var v116 int32
+	_ = v116
 	var v117 int32
 	_ = v117
-	var v118 int32
-	_ = v118
-	var v122 int32
-	_ = v122
-	var v127 int32
-	_ = v127
-	var v131 int32
-	_ = v131
+	var v121 int32
+	_ = v121
+	var v126 int32
+	_ = v126
+	var v130 int32
+	_ = v130
+	var v133 int32
+	_ = v133
 	var v134 int32
 	_ = v134
-	var v135 int32
-	_ = v135
-	var v141 int32
-	_ = v141
-	var v146 int32
-	_ = v146
+	var v140 int32
+	_ = v140
+	var v145 int32
+	_ = v145
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
@@ -204,8 +204,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v131 = m.ExcPending
-	if v131 != 0 {
+	v130 = m.ExcPending
+	if v130 != 0 {
 		goto L9
 	} else {
 		goto L53
@@ -225,8 +225,8 @@ L4:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v114 = m.ExcPending
-	if v114 != 0 {
+	v113 = m.ExcPending
+	if v113 != 0 {
 		goto L9
 	} else {
 		goto L49
@@ -393,8 +393,8 @@ L28:
 L29:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = int32(0)
-	v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
-	if v87 != 0 {
+	v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
+	if v86 != 0 {
 		goto L39
 	} else {
 		goto L40
@@ -425,7 +425,7 @@ L33:
 L34:
 	;
 	v66 = base.B2i32(v60 != int32(5))
-	F_ResourceOwnerRelease(m, v56, int32(1), v66, int32(0))
+	F_ResourceOwnerReleaseInternal(m, v56, int32(1), v66, int32(0))
 	mBase = m.M
 	v69 = m.ExcPending
 	if v69 != 0 {
@@ -436,7 +436,7 @@ L34:
 L35:
 	;
 	v70 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	F_ResourceOwnerRelease(m, v70, int32(2), v66, int32(0))
+	F_ResourceOwnerReleaseInternal(m, v70, int32(2), v66, int32(0))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -447,7 +447,7 @@ L35:
 L36:
 	;
 	v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	F_ResourceOwnerRelease(m, v75, int32(3), v66, int32(0))
+	F_ResourceOwnerReleaseInternal(m, v75, int32(3), v66, int32(0))
 	mBase = m.M
 	v79 = m.ExcPending
 	if v79 != 0 {
@@ -471,14 +471,14 @@ L38:
 	goto L29
 L39:
 	;
-	v88 = int32(_a_F_PortalDrop_3)
-	v89 = *(*int32)(unsafe.Add(mBase, _c_F_PortalDrop[1]))
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
-	*(*int32)(unsafe.Add(mBase, _c_F_PortalDrop[1])) = v91
-	F_tuplestore_end(m, v87)
+	v87 = int32(_a_F_PortalDrop_3)
+	v88 = *(*int32)(unsafe.Add(mBase, _c_F_PortalDrop[1]))
+	v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
+	*(*int32)(unsafe.Add(mBase, _c_F_PortalDrop[1])) = v90
+	F_tuplestore_end(m, v86)
 	mBase = m.M
-	v94 = m.ExcPending
-	if v94 != 0 {
+	v93 = m.ExcPending
+	if v93 != 0 {
 		goto L9
 	} else {
 		goto L42
@@ -488,23 +488,23 @@ L40:
 	goto L41
 L41:
 	;
-	v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
-	if v100 != 0 {
+	v99 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
+	if v99 != 0 {
 		goto L43
 	} else {
 		goto L44
 	}
 L42:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_PortalDrop[1])) = v89
+	*(*int32)(unsafe.Add(mBase, _c_F_PortalDrop[1])) = v88
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = int32(0)
 	goto L41
 L43:
 	;
-	F_MemoryContextDelete(m, v100)
+	F_MemoryContextDelete(m, v99)
 	mBase = m.M
-	v102 = m.ExcPending
-	if v102 != 0 {
+	v101 = m.ExcPending
+	if v101 != 0 {
 		goto L9
 	} else {
 		goto L46
@@ -514,11 +514,11 @@ L44:
 	goto L45
 L45:
 	;
-	v103 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	F_MemoryContextDelete(m, v103)
+	v102 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	F_MemoryContextDelete(m, v102)
 	mBase = m.M
-	v105 = m.ExcPending
-	if v105 != 0 {
+	v104 = m.ExcPending
+	if v104 != 0 {
 		goto L9
 	} else {
 		goto L47
@@ -530,8 +530,8 @@ L47:
 	;
 	F_pfree(m, l0)
 	mBase = m.M
-	v107 = m.ExcPending
-	if v107 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L9
 	} else {
 		goto L48
@@ -544,20 +544,20 @@ L49:
 	;
 	F_errcode(m, int32(258))
 	mBase = m.M
-	v117 = m.ExcPending
-	if v117 != 0 {
+	v116 = m.ExcPending
+	if v116 != 0 {
 		goto L9
 	} else {
 		goto L50
 	}
 L50:
 	;
-	v118 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v118
+	v117 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v117
 	F_errmsg(m, int32(_a_F_PortalDrop_5), v8)
 	mBase = m.M
-	v122 = m.ExcPending
-	if v122 != 0 {
+	v121 = m.ExcPending
+	if v121 != 0 {
 		goto L9
 	} else {
 		goto L51
@@ -566,8 +566,8 @@ L51:
 	;
 	F_errfinish(m, int32(_a_F_PortalDrop_1), int32(479), int32(_a_F_PortalDrop_2))
 	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
+	v126 = m.ExcPending
+	if v126 != 0 {
 		goto L9
 	} else {
 		goto L52
@@ -581,20 +581,20 @@ L53:
 	;
 	F_errcode(m, int32(258))
 	mBase = m.M
-	v134 = m.ExcPending
-	if v134 != 0 {
+	v133 = m.ExcPending
+	if v133 != 0 {
 		goto L9
 	} else {
 		goto L54
 	}
 L54:
 	;
-	v135 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v135
+	v134 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v134
 	F_errmsg(m, int32(_a_F_PortalDrop_0), v8+int32(16))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v140 = m.ExcPending
+	if v140 != 0 {
 		goto L9
 	} else {
 		goto L55
@@ -603,8 +603,8 @@ L55:
 	;
 	F_errfinish(m, int32(_a_F_PortalDrop_1), int32(487), int32(_a_F_PortalDrop_2))
 	mBase = m.M
-	v146 = m.ExcPending
-	if v146 != 0 {
+	v145 = m.ExcPending
+	if v145 != 0 {
 		goto L9
 	} else {
 		goto L56
@@ -987,8 +987,6 @@ func F_PortalRunSelect(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 func F_PortalRunUtility(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) {
 	mBase := m.M
 	_ = mBase
-	var v7 int32
-	_ = v7
 	var v10 int32
 	_ = v10
 	var v14 int32
@@ -1013,29 +1011,28 @@ func F_PortalRunUtility(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 	_ = v29
 	var v30 int32
 	_ = v30
-	var v32 int32
-	_ = v32
-	var v34 int32
-	_ = v34
+	var v33 int32
+	_ = v33
 	var v35 int32
 	_ = v35
-	var v40 int32
-	_ = v40
+	var v36 int32
+	_ = v36
 	var v41 int32
 	_ = v41
-	var v43 int32
-	_ = v43
-	var v45 int32
-	_ = v45
-	var v47 int32
-	_ = v47
-	var v51 int32
-	_ = v51
-	var v57 int32
-	_ = v57
-	v7 = int32(0)
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v52 int32
+	_ = v52
+	var v58 int32
+	_ = v58
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+88))
-	if v10 == v7 {
+	if v10 == int32(0) {
 		v18 = int32(1)
 	} else {
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
@@ -1071,34 +1068,34 @@ func F_PortalRunUtility(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 					} else {
 						v29 = *(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[0]))
 						v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)))
-						v32 = v30
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v32
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-						v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-						v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-						v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-						F_ProcessUtility(m, l1, v34, base.B2i32(v35 != int32(0)), l2^int32(1), v40, v41, l4, l5)
+						v33 = v30
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v33
+						v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+						v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+						v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+						v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+						F_ProcessUtility(m, l1, v35, base.B2i32(v36 != int32(0)), l2^int32(1), v41, v42, l4, l5)
 						mBase = m.M
-						v43 = m.ExcPending
-						if v43 != 0 {
+						v44 = m.ExcPending
+						if v44 != 0 {
 							return
 						} else {
-							v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-							*(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[1])) = v45
-							v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
-							if v47 == int32(0) {
+							v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+							*(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[1])) = v46
+							v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
+							if v48 == int32(0) {
 								*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)
 								return
 							} else {
-								v51 = *(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[0]))
-								if base.B2i32(v51 != int32(0)) == int32(0) {
+								v52 = *(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[0]))
+								if base.B2i32(v52 != int32(0)) == int32(0) {
 									*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)
 									return
 								} else {
 									F_PopActiveSnapshot(m)
 									mBase = m.M
-									v57 = m.ExcPending
-									if v57 != 0 {
+									v58 = m.ExcPending
+									if v58 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)
@@ -1120,34 +1117,34 @@ func F_PortalRunUtility(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 				} else {
 					v29 = *(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[0]))
 					v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)))
-					v32 = v30
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v32
-					v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-					v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-					v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-					F_ProcessUtility(m, l1, v34, base.B2i32(v35 != int32(0)), l2^int32(1), v40, v41, l4, l5)
+					v33 = v30
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v33
+					v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+					v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+					v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+					v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+					F_ProcessUtility(m, l1, v35, base.B2i32(v36 != int32(0)), l2^int32(1), v41, v42, l4, l5)
 					mBase = m.M
-					v43 = m.ExcPending
-					if v43 != 0 {
+					v44 = m.ExcPending
+					if v44 != 0 {
 						return
 					} else {
-						v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-						*(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[1])) = v45
-						v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
-						if v47 == int32(0) {
+						v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+						*(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[1])) = v46
+						v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
+						if v48 == int32(0) {
 							*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)
 							return
 						} else {
-							v51 = *(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[0]))
-							if base.B2i32(v51 != int32(0)) == int32(0) {
+							v52 = *(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[0]))
+							if base.B2i32(v52 != int32(0)) == int32(0) {
 								*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)
 								return
 							} else {
 								F_PopActiveSnapshot(m)
 								mBase = m.M
-								v57 = m.ExcPending
-								if v57 != 0 {
+								v58 = m.ExcPending
+								if v58 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)
@@ -1160,34 +1157,34 @@ func F_PortalRunUtility(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 			}
 		}
 	} else {
-		v32 = v7
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v32
-		v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-		v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-		v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-		v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-		F_ProcessUtility(m, l1, v34, base.B2i32(v35 != int32(0)), l2^int32(1), v40, v41, l4, l5)
+		v33 = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v33
+		v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+		v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+		v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+		v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+		F_ProcessUtility(m, l1, v35, base.B2i32(v36 != int32(0)), l2^int32(1), v41, v42, l4, l5)
 		mBase = m.M
-		v43 = m.ExcPending
-		if v43 != 0 {
+		v44 = m.ExcPending
+		if v44 != 0 {
 			return
 		} else {
-			v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-			*(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[1])) = v45
-			v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
-			if v47 == int32(0) {
+			v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+			*(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[1])) = v46
+			v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
+			if v48 == int32(0) {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)
 				return
 			} else {
-				v51 = *(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[0]))
-				if base.B2i32(v51 != int32(0)) == int32(0) {
+				v52 = *(*int32)(unsafe.Add(mBase, _c_F_PortalRunUtility[0]))
+				if base.B2i32(v52 != int32(0)) == int32(0) {
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)
 					return
 				} else {
 					F_PopActiveSnapshot(m)
 					mBase = m.M
-					v57 = m.ExcPending
-					if v57 != 0 {
+					v58 = m.ExcPending
+					if v58 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)

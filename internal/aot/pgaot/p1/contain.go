@@ -69,8 +69,8 @@ func F_contain_leaked_vars_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v42
 	var v43 int32
 	_ = v43
-	var v47 int32
-	_ = v47
+	var v46 int32
+	_ = v46
 	var v53 int32
 	_ = v53
 	var v57 int32
@@ -89,10 +89,12 @@ func F_contain_leaked_vars_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v73
 	var v76 int32
 	_ = v76
-	var v82 int32
-	_ = v82
-	var v85 int32
-	_ = v85
+	var v80 int32
+	_ = v80
+	var v84 int32
+	_ = v84
+	var v87 int32
+	_ = v87
 	var v88 int32
 	_ = v88
 	var v89 int32
@@ -101,28 +103,22 @@ func F_contain_leaked_vars_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v90
 	var v91 int32
 	_ = v91
-	var v92 int32
-	_ = v92
+	var v94 int32
+	_ = v94
 	var v95 int32
 	_ = v95
 	var v96 int32
 	_ = v96
 	var v97 int32
 	_ = v97
-	var v98 int32
-	_ = v98
-	var v99 int32
-	_ = v99
-	var v100 int32
-	_ = v100
 	var v101 int32
 	_ = v101
-	var v105 int32
-	_ = v105
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
 	var v107 int32
 	_ = v107
-	var v108 int32
-	_ = v108
 	var v109 int32
 	_ = v109
 	var v110 int32
@@ -135,32 +131,36 @@ func F_contain_leaked_vars_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v113
 	var v114 int32
 	_ = v114
-	var v121 int32
-	_ = v121
-	var v139 int32
-	_ = v139
-	var v140 int32
-	_ = v140
+	var v115 int32
+	_ = v115
+	var v116 int32
+	_ = v116
+	var v124 int32
+	_ = v124
+	var v141 int32
+	_ = v141
+	var v142 int32
+	_ = v142
 	v3 = int32(0)
 	if l0 == v3 {
-		v121 = v3
+		v124 = v3
 		goto L2
 	} else {
 		goto L3
 	}
 L1:
 	;
-	v139 = F_expression_tree_walker_impl(m, l0, int32(870), l1)
+	v141 = F_expression_tree_walker_impl(m, l0, int32(870), l1)
 	mBase = m.M
-	v140 = m.ExcPending
-	if v140 != 0 {
+	v142 = m.ExcPending
+	if v142 != 0 {
 		goto L9
 	} else {
-		goto L54
+		goto L52
 	}
 L2:
 	;
-	return v121
+	return v124
 L3:
 	;
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
@@ -178,30 +178,30 @@ L3:
 	case 38:
 		goto L5
 	case 57:
-		v121 = v3
+		v124 = v3
 		goto L2
 	}
 L4:
 	;
-	v121 = int32(1)
+	v124 = int32(1)
 	goto L2
 L5:
 	;
-	v105 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v107 = F_lookup_type_cache(m, v105, int32(8))
+	v107 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v109 = F_lookup_type_cache(m, v107, int32(8))
 	mBase = m.M
-	v108 = m.ExcPending
-	if v108 != 0 {
+	v110 = m.ExcPending
+	if v110 != 0 {
 		goto L9
 	} else {
-		goto L46
+		goto L44
 	}
 L6:
 	;
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v47 = v3
+	v46 = v3
 	goto L24
 L7:
 	;
@@ -335,7 +335,7 @@ L26:
 L27:
 	;
 	v57 = *(*int32)(unsafe.Add(mBase, uint32(v43)+4))
-	if v57 <= v47 {
+	if v57 <= v46 {
 		v63 = int32(0)
 		goto L26
 	} else {
@@ -344,7 +344,7 @@ L27:
 L28:
 	;
 	v59 = *(*int32)(unsafe.Add(mBase, uint32(v43)+12))
-	v63 = v59 + v47<<(uint(int32(2))%32)
+	v63 = v59 + v46<<(uint(int32(2))%32)
 	goto L26
 L29:
 	;
@@ -356,7 +356,7 @@ L29:
 L30:
 	;
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v42)+4))
-	if v67 <= v47 {
+	if v67 <= v46 {
 		v73 = v64
 		goto L29
 	} else {
@@ -365,171 +365,157 @@ L30:
 L31:
 	;
 	v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)+12))
-	v73 = v69 + v47<<(uint(int32(2))%32)
+	v73 = v69 + v46<<(uint(int32(2))%32)
 	goto L29
 L32:
 	;
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(v41)+4))
-	if v76 <= v47 {
+	v76 = int32(0)
+	v80 = *(*int32)(unsafe.Add(mBase, uint32(v41)+4))
+	if base.B2i32(v73 == v76)|(base.B2i32(v63 == v76)|base.B2i32(v80 <= v46)) != 0 {
 		goto L1
 	} else {
 		goto L33
 	}
 L33:
 	;
-	if v63 == int32(0) {
+	v84 = *(*int32)(unsafe.Add(mBase, uint32(v41)+12))
+	if v84 == int32(0) {
 		goto L1
 	} else {
 		goto L34
 	}
 L34:
 	;
-	if v73 == int32(0) {
-		goto L1
+	v87 = *(*int32)(unsafe.Add(mBase, uint32(v63)))
+	v88 = F_get_opcode(m, v87)
+	mBase = m.M
+	v89 = m.ExcPending
+	if v89 != 0 {
+		goto L9
 	} else {
 		goto L35
 	}
 L35:
 	;
-	v82 = *(*int32)(unsafe.Add(mBase, uint32(v41)+12))
-	v85 = v82 + v47<<(uint(int32(2))%32)
-	if v85 == int32(0) {
-		goto L1
+	v90 = F_get_func_leakproof(m, v88)
+	mBase = m.M
+	v91 = m.ExcPending
+	if v91 != 0 {
+		goto L9
 	} else {
 		goto L36
 	}
 L36:
 	;
-	v88 = *(*int32)(unsafe.Add(mBase, uint32(v63)))
-	v89 = F_get_opcode(m, v88)
-	mBase = m.M
-	v90 = m.ExcPending
-	if v90 != 0 {
-		goto L9
-	} else {
+	if v90 == int32(0) {
 		goto L37
-	}
-L37:
-	;
-	v91 = F_get_func_leakproof(m, v89)
-	mBase = m.M
-	v92 = m.ExcPending
-	if v92 != 0 {
-		goto L9
 	} else {
 		goto L38
 	}
-L38:
+L37:
 	;
-	if v91 == int32(0) {
-		goto L39
+	v94 = int32(1)
+	v95 = *(*int32)(unsafe.Add(mBase, uint32(v73)))
+	v96 = F_contain_var_clause(m, v95)
+	mBase = m.M
+	v97 = m.ExcPending
+	if v97 != 0 {
+		goto L9
 	} else {
 		goto L40
 	}
+L38:
+	;
+	goto L39
 L39:
 	;
-	v95 = int32(1)
-	v96 = *(*int32)(unsafe.Add(mBase, uint32(v73)))
-	v97 = F_contain_var_clause(m, v96)
+	v46 = v46 + int32(1)
+	goto L24
+L40:
+	;
+	if v96 != 0 {
+		v124 = v94
+		goto L2
+	} else {
+		goto L41
+	}
+L41:
+	;
+	v101 = *(*int32)(unsafe.Add(mBase, uint32(v84+v46<<(uint(int32(2))%32))))
+	v102 = F_contain_var_clause(m, v101)
 	mBase = m.M
-	v98 = m.ExcPending
-	if v98 != 0 {
+	v103 = m.ExcPending
+	if v103 != 0 {
 		goto L9
 	} else {
 		goto L42
 	}
-L40:
-	;
-	goto L41
-L41:
-	;
-	v47 = v47 + int32(1)
-	goto L24
 L42:
 	;
-	if v97 != 0 {
-		v121 = v95
+	if v102 != 0 {
+		v124 = v94
 		goto L2
 	} else {
 		goto L43
 	}
 L43:
 	;
-	v99 = *(*int32)(unsafe.Add(mBase, uint32(v85)))
-	v100 = F_contain_var_clause(m, v99)
-	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
-		goto L9
-	} else {
-		goto L44
-	}
+	goto L39
 L44:
 	;
-	if v100 != 0 {
-		v121 = v95
-		goto L2
-	} else {
+	v111 = *(*int32)(unsafe.Add(mBase, uint32(v109)+64))
+	if v111 != 0 {
 		goto L45
+	} else {
+		goto L46
 	}
 L45:
 	;
-	goto L41
-L46:
-	;
-	v109 = *(*int32)(unsafe.Add(mBase, uint32(v107)+64))
-	if v109 != 0 {
-		goto L47
+	v112 = F_get_func_leakproof(m, v111)
+	mBase = m.M
+	v113 = m.ExcPending
+	if v113 != 0 {
+		goto L9
 	} else {
 		goto L48
 	}
+L46:
+	;
+	goto L47
 L47:
 	;
-	v110 = F_get_func_leakproof(m, v109)
+	v114 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v115 = F_contain_var_clause(m, v114)
 	mBase = m.M
-	v111 = m.ExcPending
-	if v111 != 0 {
+	v116 = m.ExcPending
+	if v116 != 0 {
 		goto L9
 	} else {
 		goto L50
 	}
 L48:
 	;
-	goto L49
+	if v112 != 0 {
+		goto L1
+	} else {
+		goto L49
+	}
 L49:
 	;
-	v112 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v113 = F_contain_var_clause(m, v112)
-	mBase = m.M
-	v114 = m.ExcPending
-	if v114 != 0 {
-		goto L9
-	} else {
-		goto L52
-	}
+	goto L47
 L50:
 	;
-	if v110 != 0 {
+	if v115 == int32(0) {
 		goto L1
 	} else {
 		goto L51
 	}
 L51:
 	;
-	goto L49
+	goto L4
 L52:
 	;
-	if v113 == int32(0) {
-		goto L1
-	} else {
-		goto L53
-	}
-L53:
-	;
-	goto L4
-L54:
-	;
-	return v139
+	return v141
 }
 func F_contain_mutable_functions(m *base.Module, l0 int32) int32 {
 	var v3 int32
@@ -835,29 +821,15 @@ func F_contain_volatile_functions(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_contain_windowfuncs_walker(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v7 int32
-	_ = v7
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	if l0 == int32(0) {
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	v5 = Fn13866(m, l0, l1, int32(1045), int32(11))
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return int32(0)
 	} else {
-		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		if v7 == int32(11) {
-			return int32(1)
-		} else {
-			v13 = F_expression_tree_walker_impl(m, l0, int32(1045), l1)
-			mBase = m.M
-			v16 = m.ExcPending
-			if v16 != 0 {
-				return int32(0)
-			} else {
-				return v13
-			}
-		}
+		return v5
 	}
 }

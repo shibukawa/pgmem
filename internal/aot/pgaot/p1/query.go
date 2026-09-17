@@ -107,10 +107,8 @@ func F_query_to_xmlschema(m *base.Module, l0 int32) int32 {
 	_ = v43
 	var v44 int32
 	_ = v44
-	var v45 int32
-	_ = v45
-	var v46 int32
-	_ = v46
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
 	var v49 int32
@@ -119,20 +117,18 @@ func F_query_to_xmlschema(m *base.Module, l0 int32) int32 {
 	_ = v50
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
-	var v60 int32
-	_ = v60
-	var v64 int32
-	_ = v64
-	var v69 int32
-	_ = v69
-	var v73 int32
-	_ = v73
-	var v79 int32
-	_ = v79
-	var v84 int32
-	_ = v84
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v68 int32
+	_ = v68
+	var v72 int32
+	_ = v72
+	var v78 int32
+	_ = v78
+	var v83 int32
+	_ = v83
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
@@ -186,21 +182,21 @@ func F_query_to_xmlschema(m *base.Module, l0 int32) int32 {
 									if v30 == int32(0) {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v73 = m.ExcPending
-										if v73 != 0 {
+										v72 = m.ExcPending
+										if v72 != 0 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v15
 											F_errmsg_internal(m, int32(_a_F_query_to_xmlschema_0), v8+int32(16))
 											mBase = m.M
-											v79 = m.ExcPending
-											if v79 != 0 {
+											v78 = m.ExcPending
+											if v78 != 0 {
 												return int32(0)
 											} else {
 												F_errfinish(m, int32(_a_F_query_to_xmlschema_1), int32(3080), int32(_a_F_query_to_xmlschema_2))
 												mBase = m.M
-												v84 = m.ExcPending
-												if v84 != 0 {
+												v83 = m.ExcPending
+												if v83 != 0 {
 													return int32(0)
 												} else {
 													base.Wasm_trap_unreachable()
@@ -228,32 +224,29 @@ func F_query_to_xmlschema(m *base.Module, l0 int32) int32 {
 												return int32(0)
 											} else {
 												if v42 != 0 {
-													v45 = F__emscripten_memcpy_bulkmem(m, v43, v38, v42)
-													mBase = m.M
-													v46 = v45
+													base.MemoryCopy(m, v43, v38, v42)
 												} else {
-													v46 = v43
 												}
 												F_SPI_cursor_close(m, v30)
 												mBase = m.M
-												v48 = m.ExcPending
-												if v48 != 0 {
+												v47 = m.ExcPending
+												if v47 != 0 {
 													return int32(0)
 												} else {
-													v49 = F_SPI_finish(m)
+													v48 = F_SPI_finish(m)
 													mBase = m.M
-													v50 = m.ExcPending
-													if v50 != 0 {
+													v49 = m.ExcPending
+													if v49 != 0 {
 														return int32(0)
 													} else {
-														v51 = F_cstring_to_text(m, v46)
+														v50 = F_cstring_to_text(m, v43)
 														mBase = m.M
-														v52 = m.ExcPending
-														if v52 != 0 {
+														v51 = m.ExcPending
+														if v51 != 0 {
 															return int32(0)
 														} else {
 															m.G0 = v8 + int32(32)
-															return v51
+															return v50
 														}
 													}
 												}
@@ -264,21 +257,21 @@ func F_query_to_xmlschema(m *base.Module, l0 int32) int32 {
 							} else {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v60 = m.ExcPending
-								if v60 != 0 {
+								v59 = m.ExcPending
+								if v59 != 0 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v15
 									F_errmsg_internal(m, int32(_a_F_query_to_xmlschema_3), v8)
 									mBase = m.M
-									v64 = m.ExcPending
-									if v64 != 0 {
+									v63 = m.ExcPending
+									if v63 != 0 {
 										return int32(0)
 									} else {
 										F_errfinish(m, int32(_a_F_query_to_xmlschema_1), int32(3077), int32(_a_F_query_to_xmlschema_2))
 										mBase = m.M
-										v69 = m.ExcPending
-										if v69 != 0 {
+										v68 = m.ExcPending
+										if v68 != 0 {
 											return int32(0)
 										} else {
 											base.Wasm_trap_unreachable()

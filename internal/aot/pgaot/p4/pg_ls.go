@@ -34,12 +34,14 @@ func F_pg_ls_replslotdir(m *base.Module, l0 int32) int32 {
 	_ = v30
 	var v35 int32
 	_ = v35
+	var v40 int32
+	_ = v40
 	var v45 int32
 	_ = v45
 	var v46 int32
 	_ = v46
-	var v51 int32
-	_ = v51
+	var v49 int32
+	_ = v49
 	v4 = m.G0
 	v6 = v4 - int32(1056)
 	m.G0 = v6
@@ -98,16 +100,17 @@ func F_pg_ls_replslotdir(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = v13
 					*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(_a_F_pg_ls_replslotdir_3)
-					v45 = F_pg_snprintf(m, v6+int32(32), int32(1024), int32(_a_F_pg_ls_replslotdir_4), v6+int32(16))
+					v40 = v6 + int32(32)
+					v45 = F_pg_snprintf(m, v40, int32(1024), int32(_a_F_pg_ls_replslotdir_4), v6+int32(16))
 					mBase = m.M
 					v46 = m.ExcPending
 					if v46 != 0 {
 						return int32(0)
 					} else {
-						F_pg_ls_dir_files(m, l0, v6+int32(32), int32(0))
+						F_pg_ls_dir_files(m, l0, v40, int32(0))
 						mBase = m.M
-						v51 = m.ExcPending
-						if v51 != 0 {
+						v49 = m.ExcPending
+						if v49 != 0 {
 							return int32(0)
 						} else {
 							m.G0 = v6 + int32(1056)

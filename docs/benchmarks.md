@@ -1,15 +1,15 @@
 # Backend benchmarks (reference values)
 
-Measured 2026-09-11 on an Apple M-series laptop (arm64, 8 cores), Go 1.27,
-wasm2go fork [shibukawa/wasm2go-fork](https://github.com/shibukawa/wasm2go-fork) branch `pgmem` (pinned in `wasm/wasm2go.lock`), Emscripten 3.1.74, PostgreSQL
-18.3 (PGlite fork). Numbers are the representative value of three
-`-count=3` runs; each run stayed within about 1% of the others. Treat them
-as an indication of relative cost, not as absolute figures: amd64 was not
-measured, and the simple-query case is dominated by the TCP round trip
-and protocol handling in pgx and the bridge, not by the database engine.
+The pgmem/AOT values were rerun on 2026-09-18 on an Apple M3 laptop (arm64,
+8 cores), Go 1.27, PostgreSQL 18.3 (PGlite fork), using the export-pruned
+generated backend. The historical wazero and asm rows remain for context.
+Treat these numbers as an indication of relative cost, not as absolute
+figures: amd64 was not measured, and the simple-query case is dominated by
+the TCP round trip and protocol handling in pgx and the bridge, not by the
+database engine.
 
-Commands: `make bench`; `ASM=1 ./wasm/gen-aot.sh` / `./wasm/gen-aot.sh`
-switch the generated backend between asm and pure Go. The wazero rows
+Commands: `make bench` with `-count=3`; `ASM=1 ./wasm/gen-aot.sh` /
+`./wasm/gen-aot.sh` switch the generated backend between asm and pure Go. The wazero rows
 are historical: the wazero backend was removed from the library once the
 generated code became the only backend (wazero now only runs initdb in
 `pgmem-mkdata`).
@@ -26,15 +26,13 @@ inside the engine (hashing, sorting).
 | backend | simple SELECT (TCP) | simple SELECT (in-process `Dial`) | sort + count 200k rows |
 |---|---|---|---|
 | wazero (compiler engine, exnref EH) | 73.3 µs | | 504 ms |
-| AOT, wasm2go pure-Go backend | 26.5 µs | 8.5 µs | 95 ms |
+| AOT, wasm2go pure-Go backend | 26.9 µs | 9.4 µs | 123 ms |
 | AOT, wasm2go asm backend (arm64.s) | 27.9 µs | | 122 ms |
 
-Relative to wazero the AOT pure-Go build is about 2.8x faster on the
-round-trip-bound query and about 5.3x faster on the engine-bound query.
-The asm backend is about 28% slower than pure Go on the engine-bound
-query. A plausible reading is that gc's own optimizer produces better
-code for this memory-access-heavy C-derived code than wasm2go's
-assembly register allocator; that is a hypothesis, not a measurement.
+Relative to wazero the current AOT pure-Go build is about 2.7x faster on the
+round-trip-bound query and about 4.1x faster on the engine-bound query. The
+asm row is a historical reference and was not rerun with the export-pruned
+generated tree.
 
 ## Profile (AOT pure Go, `go test -cpuprofile`; the generated functions carry PostgreSQL's symbol names)
 
@@ -94,7 +92,7 @@ A minimal program that starts one server and prints its DSN, built with
 
 | backend | stripped binary | of which embedded assets |
 |---|---|---|
-| AOT pure Go (default) | 36.2 MB | 1.2 MB pgdata (zstd) + 0.3 MB share |
+| AOT pure Go (default) | 36.7 MB | 1.2 MB pgdata (zstd) + 0.3 MB share |
 | wazero (`-tags pgmem_wazero`) | 16.0 MB | 9.1 MB wasm + 1.2 MB pgdata + 0.3 MB share |
 
 The default build does not embed the wasm module. The initdb output is a
@@ -107,7 +105,7 @@ each other only with a large window).
 | backend | source in the repository | compile once (`go build`) |
 |---|---|---|
 | wazero | 9.6 MB wasm + 1.2 MB pgdata | seconds |
-| AOT pure Go | 104 MB Go | ~35 s |
+| AOT pure Go | 115 MB Go | ~35 s |
 | AOT asm | 281 MB (84 MB amd64.s + 84 MB arm64.s + pure fallback) | not measured separately |
 
 Generation time with the fork: pure Go about 25 s, asm about 3.3 min

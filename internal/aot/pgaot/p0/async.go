@@ -981,8 +981,8 @@ func F_asyncQueueReadAllNotifications(m *base.Module) {
 	_ = v84
 	var v88 int32
 	_ = v88
-	var v97 int32
-	_ = v97
+	var v94 int32
+	_ = v94
 	var v107 int32
 	_ = v107
 	var v108 int32
@@ -1025,48 +1025,46 @@ func F_asyncQueueReadAllNotifications(m *base.Module) {
 	_ = v144
 	var v147 int32
 	_ = v147
-	var v148 int32
-	_ = v148
 	var v149 int32
 	_ = v149
-	var v150 int32
-	_ = v150
 	var v152 int32
 	_ = v152
-	var v158 int32
-	_ = v158
+	var v157 int32
+	_ = v157
 	var v159 int32
 	_ = v159
-	var v162 int32
-	_ = v162
 	var v163 int32
 	_ = v163
-	var v165 int64
-	_ = v165
+	var v164 int32
+	_ = v164
 	var v166 int64
 	_ = v166
-	var v172 int32
-	_ = v172
-	var v177 int32
-	_ = v177
-	var v183 int32
-	_ = v183
-	var v184 int32
-	_ = v184
-	var v199 int32
-	_ = v199
+	var v167 int64
+	_ = v167
+	var v173 int32
+	_ = v173
+	var v175 int32
+	_ = v175
+	var v178 int32
+	_ = v178
+	var v179 int32
+	_ = v179
+	var v181 int32
+	_ = v181
+	var v198 int32
+	_ = v198
+	var v202 int32
+	_ = v202
 	var v203 int32
 	_ = v203
-	var v204 int32
-	_ = v204
-	var v207 int32
-	_ = v207
-	var v225 int32
-	_ = v225
-	var v228 int32
-	_ = v228
-	var v229 int32
-	_ = v229
+	var v210 int32
+	_ = v210
+	var v224 int32
+	_ = v224
+	var v227 int32
+	_ = v227
+	var v230 int32
+	_ = v230
 	var v233 int32
 	_ = v233
 	var v234 int32
@@ -1091,8 +1089,8 @@ func F_asyncQueueReadAllNotifications(m *base.Module) {
 	_ = v260
 	var v262 int32
 	_ = v262
-	var v266 int32
-	_ = v266
+	var v263 int32
+	_ = v263
 	var v279 int32
 	_ = v279
 	var v280 int32
@@ -1220,14 +1218,14 @@ L10:
 	if v313 != 0 {
 		goto L1
 	} else {
-		goto L66
+		goto L64
 	}
 L11:
 	;
 	v83 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[4]))
 	v84 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
 	v88 = *(*int32)(unsafe.Add(mBase, uint32(v84+v80<<(uint(int32(2))%32))))
-	v97 = v19 + int32(16)
+	v94 = v19 + int32(16)
 	goto L12
 L12:
 	;
@@ -1235,7 +1233,7 @@ L12:
 	v108 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
 	v110 = *(*int64)(unsafe.Add(mBase, uint32(v19)+8))
 	if base.B2i32(v40 == v108)&base.B2i32(v41 == v110) != 0 {
-		v158 = v97
+		v157 = v94
 		v159 = v107
 		goto L14
 	} else {
@@ -1243,17 +1241,17 @@ L12:
 	}
 L13:
 	;
-	v162 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[4]))
-	v163 = *(*int32)(unsafe.Add(mBase, uint32(v162)+28))
-	v165 = int64(*(*uint16)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[5])))
-	v166 = base.I64_rem_s(v75, v165)
-	F_LWLockRelease(m, v163+base.I32_wrap_i64(v166)<<(uint(int32(7))%32))
+	v163 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[4]))
+	v164 = *(*int32)(unsafe.Add(mBase, uint32(v163)+28))
+	v166 = int64(*(*uint16)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[5])))
+	v167 = base.I64_rem_s(v75, v166)
+	F_LWLockRelease(m, v164+base.I32_wrap_i64(v167)<<(uint(int32(7))%32))
 	mBase = m.M
-	v172 = m.ExcPending
-	if v172 != 0 {
+	v173 = m.ExcPending
+	if v173 != 0 {
 		goto L1
 	} else {
-		goto L33
+		goto L32
 	}
 L14:
 	;
@@ -1287,7 +1285,7 @@ L18:
 	v128 = *(*int32)(unsafe.Add(mBase, uint32(v115)+4))
 	v130 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[6]))
 	if v128 != v130 {
-		v152 = v97
+		v152 = v94
 		goto L19
 	} else {
 		goto L20
@@ -1295,10 +1293,10 @@ L18:
 L19:
 	;
 	if base.Ui32(int32(-8194)) < base.Ui32(v119) {
-		v97 = v152
+		v94 = v152
 		goto L12
 	} else {
-		goto L32
+		goto L31
 	}
 L20:
 	;
@@ -1322,7 +1320,7 @@ L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v108
 	*(*int64)(unsafe.Add(mBase, uint32(v19)+8)) = v110
-	v158 = v97
+	v157 = v94
 	v159 = int32(1)
 	goto L14
 L23:
@@ -1332,7 +1330,7 @@ L24:
 	;
 	v139 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[7]))
 	if v139 == int32(0) {
-		v152 = v97
+		v152 = v94
 		goto L19
 	} else {
 		goto L25
@@ -1351,7 +1349,7 @@ L25:
 L26:
 	;
 	if v143 == int32(0) {
-		v152 = v97
+		v152 = v94
 		goto L19
 	} else {
 		goto L27
@@ -1360,235 +1358,221 @@ L27:
 	;
 	v147 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
 	if v147 != 0 {
-		goto L29
+		goto L28
 	} else {
-		goto L30
+		goto L29
 	}
 L28:
 	;
-	v150 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
-	v152 = v149 + v150
-	goto L19
+	base.MemoryCopy(m, v94, v115, v147)
+	goto L30
 L29:
 	;
-	v148 = F__emscripten_memcpy_bulkmem(m, v97, v115, v147)
-	mBase = m.M
-	v149 = v148
-	goto L31
+	goto L30
 L30:
 	;
-	v149 = v97
-	goto L31
+	v149 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
+	v152 = v94 + v149
+	goto L19
 L31:
 	;
-	goto L28
-L32:
-	;
-	v158 = v152
+	v157 = v152
 	v159 = v107
 	goto L14
+L32:
+	;
+	v175 = v19 + int32(16)
+	if base.Ui32(v175) < base.Ui32(v157) {
+		goto L33
+	} else {
+		goto L34
+	}
 L33:
 	;
-	if base.Ui32(v19+int32(16)) < base.Ui32(v158) {
-		goto L34
-	} else {
-		goto L35
-	}
+	v178 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[7]))
+	v179 = v178
+	v181 = v175
+	goto L36
 L34:
 	;
-	v177 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[7]))
-	v183 = v177
-	v184 = v19 + int32(16)
-	goto L37
+	goto L35
 L35:
-	;
-	goto L36
-L36:
 	;
 	v298 = *(*int64)(unsafe.Add(mBase, uint32(v19)+8))
 	if v41 == v298 {
-		goto L61
+		goto L59
 	} else {
-		goto L62
+		goto L60
+	}
+L36:
+	;
+	if v179 == int32(0) {
+		goto L39
+	} else {
+		goto L40
 	}
 L37:
 	;
-	if v183 == int32(0) {
-		goto L40
-	} else {
-		goto L41
-	}
+	goto L35
 L38:
 	;
-	goto L36
+	v279 = *(*int32)(unsafe.Add(mBase, uint32(v181)))
+	v280 = v181 + v279
+	if base.Ui32(v280) < base.Ui32(v157) {
+		v179 = v263
+		v181 = v280
+		goto L36
+	} else {
+		goto L57
+	}
 L39:
 	;
-	v279 = *(*int32)(unsafe.Add(mBase, uint32(v184)))
-	v280 = v184 + v279
-	if base.Ui32(v280) < base.Ui32(v158) {
-		v183 = v266
-		v184 = v280
-		goto L37
-	} else {
-		goto L59
-	}
+	v263 = int32(0)
+	goto L38
 L40:
 	;
-	v266 = int32(0)
-	goto L39
+	goto L41
 L41:
 	;
-	goto L42
+	v198 = *(*int32)(unsafe.Add(mBase, uint32(v179)+4))
+	if v198 <= int32(0) {
+		v263 = v179
+		goto L38
+	} else {
+		goto L42
+	}
 L42:
 	;
-	v199 = *(*int32)(unsafe.Add(mBase, uint32(v183)+4))
-	if v199 <= int32(0) {
-		v266 = v183
-		goto L39
-	} else {
-		goto L43
-	}
+	v202 = v181 + int32(16)
+	v203 = *(*int32)(unsafe.Add(mBase, uint32(v179)+12))
+	v210 = int32(0)
+	goto L43
 L43:
 	;
-	v203 = v184 + int32(16)
-	v204 = *(*int32)(unsafe.Add(mBase, uint32(v183)+12))
-	v207 = int32(0)
-	goto L44
+	v224 = *(*int32)(unsafe.Add(mBase, uint32(v203+v210<<(uint(int32(2))%32))))
+	v227 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v224))))
+	v230 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v202))))
+	if base.B2i32(v227 == int32(0))|base.B2i32(v227 != v230) != 0 {
+		v248 = v227
+		v249 = v230
+		goto L46
+	} else {
+		goto L47
+	}
 L44:
 	;
-	v225 = *(*int32)(unsafe.Add(mBase, uint32(v204+v207<<(uint(int32(2))%32))))
-	v228 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v203))))
-	v229 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v225))))
-	if v229 == int32(0) {
-		v248 = v228
-		v249 = v229
-		goto L47
-	} else {
-		goto L48
-	}
-L45:
-	;
-	v254 = F_strlen(m, v203)
+	v254 = F_strlen(m, v202)
 	mBase = m.M
-	v258 = *(*int32)(unsafe.Add(mBase, uint32(v184)+12))
-	F_NotifyMyFrontEnd(m, v203, v254+v203+int32(1), v258)
+	v258 = *(*int32)(unsafe.Add(mBase, uint32(v181)+12))
+	F_NotifyMyFrontEnd(m, v202, v254+v202+int32(1), v258)
 	mBase = m.M
 	v260 = m.ExcPending
 	if v260 != 0 {
 		goto L1
 	} else {
-		goto L58
+		goto L56
+	}
+L45:
+	;
+	if v248-v249 != 0 {
+		goto L52
+	} else {
+		goto L53
 	}
 L46:
 	;
-	if v249-v248 != 0 {
-		goto L54
-	} else {
-		goto L55
-	}
+	goto L45
 L47:
 	;
-	goto L46
+	v233 = v224
+	v234 = v202
+	goto L48
 L48:
-	;
-	if v228 != v229 {
-		v248 = v228
-		v249 = v229
-		goto L47
-	} else {
-		goto L49
-	}
-L49:
-	;
-	v233 = v225
-	v234 = v203
-	goto L50
-L50:
 	;
 	v237 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v234)+1)))
 	v238 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v233)+1)))
 	if v238 == int32(0) {
-		v248 = v237
-		v249 = v238
-		goto L47
+		v248 = v238
+		v249 = v237
+		goto L46
 	} else {
-		goto L52
+		goto L50
+	}
+L49:
+	;
+	v248 = v238
+	v249 = v237
+	goto L46
+L50:
+	;
+	v241 = int32(1)
+	if v238 == v237 {
+		v233 = v233 + v241
+		v234 = v234 + v241
+		goto L48
+	} else {
+		goto L51
 	}
 L51:
 	;
-	v248 = v237
-	v249 = v238
-	goto L47
+	goto L49
 L52:
 	;
-	v241 = int32(1)
-	if v237 == v238 {
-		v233 = v233 + v241
-		v234 = v234 + v241
-		goto L50
+	v252 = v210 + int32(1)
+	if v252 != v198 {
+		v210 = v252
+		goto L43
 	} else {
-		goto L53
+		goto L55
 	}
 L53:
 	;
-	goto L51
+	goto L54
 L54:
 	;
-	v252 = v207 + int32(1)
-	if v252 != v199 {
-		v207 = v252
-		goto L44
-	} else {
-		goto L57
-	}
+	goto L44
 L55:
 	;
-	goto L56
+	v263 = v179
+	goto L38
 L56:
 	;
-	goto L45
+	v262 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[7]))
+	v263 = v262
+	goto L38
 L57:
 	;
-	v266 = v183
-	goto L39
+	goto L37
 L58:
 	;
-	v262 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[7]))
-	v266 = v262
-	goto L39
-L59:
-	;
-	goto L38
-L60:
-	;
 	goto L10
-L61:
+L59:
 	;
 	v300 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
 	if v159|base.B2i32(v300 == v40) == int32(0) {
 		v75 = v298
 		goto L9
 	} else {
-		goto L64
+		goto L62
 	}
-L62:
+L60:
 	;
-	goto L63
-L63:
+	goto L61
+L61:
 	;
 	if v159 == int32(0) {
 		v75 = v298
 		goto L9
 	} else {
-		goto L65
+		goto L63
 	}
+L62:
+	;
+	goto L58
+L63:
+	;
+	goto L58
 L64:
-	;
-	goto L60
-L65:
-	;
-	goto L60
-L66:
 	;
 	v315 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[1]))
 	v317 = *(*int32)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[2]))
@@ -1605,9 +1589,9 @@ L66:
 	if v331 != 0 {
 		goto L1
 	} else {
-		goto L67
+		goto L65
 	}
-L67:
+L65:
 	;
 	*(*uint8)(unsafe.Add(mBase, _c_F_asyncQueueReadAllNotifications[3])) = uint8(v58)
 	F_UnregisterSnapshot(m, v55)
@@ -1616,9 +1600,9 @@ L67:
 	if v335 != 0 {
 		goto L1
 	} else {
-		goto L68
+		goto L66
 	}
-L68:
+L66:
 	;
 	goto L6
 }

@@ -86,14 +86,14 @@ func F_RebuildConstraintComment(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v83
 	var v84 int32
 	_ = v84
+	var v90 int32
+	_ = v90
+	var v91 int32
+	_ = v91
 	var v92 int32
 	_ = v92
 	var v93 int32
 	_ = v93
-	var v94 int32
-	_ = v94
-	var v95 int32
-	_ = v95
 	v9 = m.G0
 	v11 = v9 - int32(48)
 	m.G0 = v11
@@ -177,15 +177,15 @@ func F_RebuildConstraintComment(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v83)+20)) = v18
 													*(*int64)(unsafe.Add(mBase, uint32(v83))) = int64(98784247955)
-													v92 = l0 + l1<<(uint(int32(2))%32) + int32(16)
-													v93 = *(*int32)(unsafe.Add(mBase, uint32(v92)))
-													v94 = F_lappend(m, v93, v83)
+													v90 = l0 + l1<<(uint(int32(2))%32)
+													v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+16))
+													v92 = F_lappend(m, v91, v83)
 													mBase = m.M
-													v95 = m.ExcPending
-													if v95 != 0 {
+													v93 = m.ExcPending
+													if v93 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v92))) = v94
+														*(*int32)(unsafe.Add(mBase, uint32(v90)+16)) = v92
 														m.G0 = v11 + int32(48)
 														return
 													}
@@ -245,15 +245,15 @@ func F_RebuildConstraintComment(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v83)+20)) = v18
 											*(*int64)(unsafe.Add(mBase, uint32(v83))) = int64(98784247955)
-											v92 = l0 + l1<<(uint(int32(2))%32) + int32(16)
-											v93 = *(*int32)(unsafe.Add(mBase, uint32(v92)))
-											v94 = F_lappend(m, v93, v83)
+											v90 = l0 + l1<<(uint(int32(2))%32)
+											v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+16))
+											v92 = F_lappend(m, v91, v83)
 											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
+											v93 = m.ExcPending
+											if v93 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v92))) = v94
+												*(*int32)(unsafe.Add(mBase, uint32(v90)+16)) = v92
 												m.G0 = v11 + int32(48)
 												return
 											}
@@ -274,8 +274,6 @@ func F_RebuildConstraintComment(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 func F_get_constraint_index(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
-	_ = v2
 	var v6 int32
 	_ = v6
 	var v9 int32
@@ -290,13 +288,14 @@ func F_get_constraint_index(m *base.Module, l0 int32) int32 {
 	_ = v17
 	var v19 int32
 	_ = v19
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
+	var v26 int32
+	_ = v26
 	var v31 int32
 	_ = v31
-	v2 = int32(0)
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
 	v6 = F_SearchSysCache1(m, int32(19), l0)
 	mBase = m.M
 	v9 = m.ExcPending
@@ -311,23 +310,20 @@ func F_get_constraint_index(m *base.Module, l0 int32) int32 {
 			v16 = v14 + v15
 			v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+72)))
 			v19 = v17 - int32(112)
-			if base.Ui32(int32(8)) < base.Ui32(v19) {
-				v29 = v2
+			v26 = int32(0)
+			if base.B2i32(base.Ui32(int32(8)) < base.Ui32(v19))|base.B2i32(int32(1)<<(uint(v19)%32)&int32(289) == v26) == v26 {
+				v31 = *(*int32)(unsafe.Add(mBase, uint32(v16)+88))
+				v32 = v31
 			} else {
-				if int32(1)<<(uint(v19)%32)&int32(289) == int32(0) {
-					v29 = v2
-				} else {
-					v28 = *(*int32)(unsafe.Add(mBase, uint32(v16)+88))
-					v29 = v28
-				}
+				v32 = int32(0)
 			}
 			F_ReleaseCatCache(m, v6)
 			mBase = m.M
-			v31 = m.ExcPending
-			if v31 != 0 {
+			v34 = m.ExcPending
+			if v34 != 0 {
 				return int32(0)
 			} else {
-				return v29
+				return v32
 			}
 		}
 	}

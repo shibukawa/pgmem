@@ -46,10 +46,10 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v48
 	var v51 int32
 	_ = v51
-	var v53 int32
-	_ = v53
-	var v54 int32
-	_ = v54
+	var v52 int32
+	_ = v52
+	var v58 int32
+	_ = v58
 	var v60 int32
 	_ = v60
 	var v71 int32
@@ -109,19 +109,19 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 						v48 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_io_acquire_nb[0]))
 						*(*int32)(unsafe.Add(mBase, uint32(v48)+16)) = v43
 						if l0 != 0 {
-							v51 = v32 + int32(12)
-							v53 = l0 + int32(352)
-							v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+356))
-							if v54 == int32(0) {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+356)) = v53
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+352)) = v53
+							v51 = l0 + int32(352)
+							v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+356))
+							if v52 == int32(0) {
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+356)) = v51
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+352)) = v51
 							} else {
 							}
-							*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v53
-							v60 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
-							*(*int32)(unsafe.Add(mBase, uint32(v51))) = v60
-							*(*int32)(unsafe.Add(mBase, uint32(v60)+4)) = v51
-							*(*int32)(unsafe.Add(mBase, uint32(v53))) = v51
+							v58 = v32 + int32(12)
+							*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v51
+							v60 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
+							*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
+							*(*int32)(unsafe.Add(mBase, uint32(v60)+4)) = v58
+							*(*int32)(unsafe.Add(mBase, uint32(v51))) = v58
 							*(*int32)(unsafe.Add(mBase, uint32(v32)+8)) = l0
 						} else {
 						}
@@ -200,19 +200,19 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 					v48 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_io_acquire_nb[0]))
 					*(*int32)(unsafe.Add(mBase, uint32(v48)+16)) = v43
 					if l0 != 0 {
-						v51 = v32 + int32(12)
-						v53 = l0 + int32(352)
-						v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+356))
-						if v54 == int32(0) {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+356)) = v53
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+352)) = v53
+						v51 = l0 + int32(352)
+						v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+356))
+						if v52 == int32(0) {
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+356)) = v51
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+352)) = v51
 						} else {
 						}
-						*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v53
-						v60 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
-						*(*int32)(unsafe.Add(mBase, uint32(v51))) = v60
-						*(*int32)(unsafe.Add(mBase, uint32(v60)+4)) = v51
-						*(*int32)(unsafe.Add(mBase, uint32(v53))) = v51
+						v58 = v32 + int32(12)
+						*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v51
+						v60 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
+						*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
+						*(*int32)(unsafe.Add(mBase, uint32(v60)+4)) = v58
+						*(*int32)(unsafe.Add(mBase, uint32(v51))) = v58
 						*(*int32)(unsafe.Add(mBase, uint32(v32)+8)) = l0
 					} else {
 					}
@@ -320,22 +320,20 @@ func F_pgaio_worker_shmem_init(m *base.Module, l0 int32) {
 	_ = v34
 	var v40 int32
 	_ = v40
-	var v42 int32
-	_ = v42
-	var v47 int32
-	_ = v47
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
 	var v50 int32
 	_ = v50
-	var v52 int32
-	_ = v52
-	var v58 int32
-	_ = v58
-	var v66 int32
-	_ = v66
-	var v74 int32
-	_ = v74
-	var v82 int32
-	_ = v82
+	var v56 int32
+	_ = v56
+	var v64 int32
+	_ = v64
+	var v72 int32
+	_ = v72
+	var v80 int32
+	_ = v80
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -362,26 +360,25 @@ func F_pgaio_worker_shmem_init(m *base.Module, l0 int32) {
 			v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
 			if v34 == int32(0) {
 				*(*int64)(unsafe.Add(mBase, uint32(v31))) = int64(0)
-				v40 = v31 + int32(12)
-				v42 = v31 + int32(8)
-				v47 = int32(0)
+				v40 = v31 + int32(8)
+				v46 = int32(0)
 				for {
-					v50 = v47 << (uint(int32(3)) % 32)
-					v52 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v42+v50))) = v52
-					*(*uint8)(unsafe.Add(mBase, uint32(v50+v40))) = uint8(v52)
-					v58 = v50 | int32(8)
-					*(*int32)(unsafe.Add(mBase, uint32(v42+v58))) = v52
-					*(*uint8)(unsafe.Add(mBase, uint32(v40+v58))) = uint8(v52)
-					v66 = v50 | int32(16)
-					*(*int32)(unsafe.Add(mBase, uint32(v42+v66))) = v52
-					*(*uint8)(unsafe.Add(mBase, uint32(v40+v66))) = uint8(v52)
-					v74 = v50 | int32(24)
-					*(*int32)(unsafe.Add(mBase, uint32(v42+v74))) = v52
-					*(*uint8)(unsafe.Add(mBase, uint32(v74+v40))) = uint8(v52)
-					v82 = v47 + int32(4)
-					if v82 != int32(32) {
-						v47 = v82
+					v48 = v46 << (uint(int32(3)) % 32)
+					v50 = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v40+v48))) = v50
+					*(*uint8)(unsafe.Add(mBase, uint32(v31+v48)+12)) = uint8(v50)
+					v56 = v48 | int32(8)
+					*(*int32)(unsafe.Add(mBase, uint32(v40+v56))) = v50
+					*(*uint8)(unsafe.Add(mBase, uint32(v31+v56)+12)) = uint8(v50)
+					v64 = v48 | int32(16)
+					*(*int32)(unsafe.Add(mBase, uint32(v40+v64))) = v50
+					*(*uint8)(unsafe.Add(mBase, uint32(v31+v64)+12)) = uint8(v50)
+					v72 = v48 | int32(24)
+					*(*int32)(unsafe.Add(mBase, uint32(v40+v72))) = v50
+					*(*uint8)(unsafe.Add(mBase, uint32(v31+v72)+12)) = uint8(v50)
+					v80 = v46 + int32(4)
+					if v80 != int32(32) {
+						v46 = v80
 						continue
 					} else {
 						break

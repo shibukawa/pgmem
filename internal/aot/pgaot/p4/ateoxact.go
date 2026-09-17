@@ -50,68 +50,70 @@ func F_AtEOXact_RelationCache(m *base.Module, l0 int32) {
 	_ = v69
 	var v74 int32
 	_ = v74
-	var v78 int32
-	_ = v78
-	var v80 int32
-	_ = v80
-	var v85 int32
-	_ = v85
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	var v82 int32
+	_ = v82
+	var v84 int32
+	_ = v84
+	var v86 int32
+	_ = v86
 	var v87 int32
 	_ = v87
-	var v90 int32
-	_ = v90
-	var v91 int32
-	_ = v91
-	var v96 int32
-	_ = v96
-	var v98 int32
-	_ = v98
-	var v102 int32
+	var v88 int32
+	_ = v88
+	var v93 int32
+	_ = v93
+	var v95 int32
+	_ = v95
+	var v99 int32
+	_ = v99
+	var v101 int32
+	_ = v101
+	var v102 int64
 	_ = v102
-	var v104 int32
-	_ = v104
-	var v105 int64
-	_ = v105
-	var v111 int32
-	_ = v111
+	var v108 int32
+	_ = v108
+	var v112 int32
+	_ = v112
 	var v115 int32
 	_ = v115
-	var v118 int32
-	_ = v118
+	var v116 int32
+	_ = v116
 	var v119 int32
 	_ = v119
-	var v122 int32
-	_ = v122
-	var v128 int32
-	_ = v128
+	var v125 int32
+	_ = v125
+	var v130 int32
+	_ = v130
 	var v133 int32
 	_ = v133
-	var v136 int32
-	_ = v136
-	var v137 int32
-	_ = v137
-	var v144 int32
-	_ = v144
-	var v148 int32
-	_ = v148
-	var v153 int32
-	_ = v153
-	var v158 int32
-	_ = v158
-	var v162 int32
-	_ = v162
-	var v164 int32
-	_ = v164
-	var v166 int32
-	_ = v166
-	var v168 int32
-	_ = v168
-	var v176 int32
-	_ = v176
-	var v178 int32
-	_ = v178
-	var v188 int32
-	_ = v188
+	var v134 int32
+	_ = v134
+	var v141 int32
+	_ = v141
+	var v145 int32
+	_ = v145
+	var v150 int32
+	_ = v150
+	var v155 int32
+	_ = v155
+	var v159 int32
+	_ = v159
+	var v161 int32
+	_ = v161
+	var v163 int32
+	_ = v163
+	var v165 int32
+	_ = v165
+	var v173 int32
+	_ = v173
+	var v175 int32
+	_ = v175
+	var v185 int32
+	_ = v185
 	v2 = int32(0)
 	v6 = m.G0
 	v8 = v6 - int32(48)
@@ -125,8 +127,8 @@ func F_AtEOXact_RelationCache(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v144 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[2]))
-	if int32(0) < v144 {
+	v141 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[2]))
+	if int32(0) < v141 {
 		goto L45
 	} else {
 		goto L46
@@ -144,11 +146,12 @@ L3:
 	goto L4
 L4:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[4]))
-	F_hash_seq_init(m, v8+int32(28), v85)
+	v82 = v8 + int32(28)
+	v84 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[4]))
+	F_hash_seq_init(m, v82, v84)
 	mBase = m.M
-	v87 = m.ExcPending
-	if v87 != 0 {
+	v86 = m.ExcPending
+	if v86 != 0 {
 		goto L12
 	} else {
 		goto L25
@@ -189,10 +192,10 @@ L10:
 	goto L1
 L11:
 	;
-	v78 = v25 + int32(1)
-	v80 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[3]))
-	if v78 < v80 {
-		v25 = v78
+	v77 = v25 + int32(1)
+	v79 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[3]))
+	if v77 < v79 {
+		v25 = v77
 		goto L9
 	} else {
 		goto L24
@@ -290,17 +293,17 @@ L24:
 	goto L10
 L25:
 	;
-	v90 = F_hash_seq_search(m, v8+int32(28))
+	v87 = F_hash_seq_search(m, v82)
 	mBase = m.M
-	v91 = m.ExcPending
-	if v91 != 0 {
+	v88 = m.ExcPending
+	if v88 != 0 {
 		goto L12
 	} else {
 		goto L26
 	}
 L26:
 	;
-	if v90 == int32(0) {
+	if v87 == int32(0) {
 		goto L1
 	} else {
 		goto L27
@@ -314,24 +317,24 @@ L27:
 	}
 L28:
 	;
-	v96 = int32(44)
+	v93 = int32(44)
 	goto L30
 L29:
 	;
-	v96 = int32(32)
+	v93 = int32(32)
 	goto L30
 L30:
 	;
-	v98 = v90
+	v95 = v87
 	goto L31
 L31:
 	;
-	v102 = *(*int32)(unsafe.Add(mBase, uint32(v98)+4))
-	v104 = *(*int32)(unsafe.Add(mBase, uint32(v102+v96)))
-	v105 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v102)+40)) = v105
-	*(*int64)(unsafe.Add(mBase, uint32(v102)+32)) = v105
-	if v104 == int32(0) {
+	v99 = *(*int32)(unsafe.Add(mBase, uint32(v95)+4))
+	v101 = *(*int32)(unsafe.Add(mBase, uint32(v99+v93)))
+	v102 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v99)+40)) = v102
+	*(*int64)(unsafe.Add(mBase, uint32(v99)+32)) = v102
+	if v101 == int32(0) {
 		goto L33
 	} else {
 		goto L34
@@ -341,28 +344,28 @@ L32:
 	goto L1
 L33:
 	;
-	v136 = F_hash_seq_search(m, v8+int32(28))
+	v133 = F_hash_seq_search(m, v8+int32(28))
 	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
+	v134 = m.ExcPending
+	if v134 != 0 {
 		goto L12
 	} else {
 		goto L43
 	}
 L34:
 	;
-	v111 = *(*int32)(unsafe.Add(mBase, uint32(v102)+16))
-	if v111 == int32(0) {
+	v108 = *(*int32)(unsafe.Add(mBase, uint32(v99)+16))
+	if v108 == int32(0) {
 		goto L35
 	} else {
 		goto L36
 	}
 L35:
 	;
-	F_RelationClearRelation(m, v102)
+	F_RelationClearRelation(m, v99)
 	mBase = m.M
-	v115 = m.ExcPending
-	if v115 != 0 {
+	v112 = m.ExcPending
+	if v112 != 0 {
 		goto L12
 	} else {
 		goto L38
@@ -372,10 +375,10 @@ L36:
 	goto L37
 L37:
 	;
-	v118 = F_errstart(m, int32(19), int32(0))
+	v115 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v119 = m.ExcPending
-	if v119 != 0 {
+	v116 = m.ExcPending
+	if v116 != 0 {
 		goto L12
 	} else {
 		goto L39
@@ -385,19 +388,19 @@ L38:
 	goto L33
 L39:
 	;
-	if v118 == int32(0) {
+	if v115 == int32(0) {
 		goto L33
 	} else {
 		goto L40
 	}
 L40:
 	;
-	v122 = *(*int32)(unsafe.Add(mBase, uint32(v102)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v122 + int32(4)
+	v119 = *(*int32)(unsafe.Add(mBase, uint32(v99)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v119 + int32(4)
 	F_errmsg_internal(m, int32(_a_F_AtEOXact_RelationCache_1), v8)
 	mBase = m.M
-	v128 = m.ExcPending
-	if v128 != 0 {
+	v125 = m.ExcPending
+	if v125 != 0 {
 		goto L12
 	} else {
 		goto L41
@@ -406,8 +409,8 @@ L41:
 	;
 	F_errfinish(m, int32(_a_F_AtEOXact_RelationCache_2), int32(3365), int32(_a_F_AtEOXact_RelationCache_3))
 	mBase = m.M
-	v133 = m.ExcPending
-	if v133 != 0 {
+	v130 = m.ExcPending
+	if v130 != 0 {
 		goto L12
 	} else {
 		goto L42
@@ -417,8 +420,8 @@ L42:
 	goto L33
 L43:
 	;
-	if v136 != 0 {
-		v98 = v136
+	if v133 != 0 {
+		v95 = v133
 		goto L31
 	} else {
 		goto L44
@@ -428,8 +431,8 @@ L44:
 	goto L32
 L45:
 	;
-	v148 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[5]))
-	if int32(0) < v148 {
+	v145 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[5]))
+	if int32(0) < v145 {
 		goto L48
 	} else {
 		goto L49
@@ -439,39 +442,39 @@ L46:
 	goto L47
 L47:
 	;
-	v188 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[1])) = uint8(v188)
-	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[3])) = v188
-	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[5])) = v188
-	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[2])) = v188
+	v185 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[1])) = uint8(v185)
+	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[3])) = v185
+	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[5])) = v185
+	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[2])) = v185
 	m.G0 = v8 + int32(48)
 	return
 L48:
 	;
-	v153 = int32(0)
+	v150 = int32(0)
 	goto L51
 L49:
 	;
 	goto L50
 L50:
 	;
-	v176 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[6]))
-	F_pfree(m, v176)
+	v173 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[6]))
+	F_pfree(m, v173)
 	mBase = m.M
-	v178 = m.ExcPending
-	if v178 != 0 {
+	v175 = m.ExcPending
+	if v175 != 0 {
 		goto L12
 	} else {
 		goto L55
 	}
 L51:
 	;
-	v158 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[6]))
-	v162 = *(*int32)(unsafe.Add(mBase, uint32(v158+v153<<(uint(int32(2))%32))))
-	F_FreeTupleDesc(m, v162)
+	v155 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[6]))
+	v159 = *(*int32)(unsafe.Add(mBase, uint32(v155+v150<<(uint(int32(2))%32))))
+	F_FreeTupleDesc(m, v159)
 	mBase = m.M
-	v164 = m.ExcPending
-	if v164 != 0 {
+	v161 = m.ExcPending
+	if v161 != 0 {
 		goto L12
 	} else {
 		goto L53
@@ -481,10 +484,10 @@ L52:
 	goto L50
 L53:
 	;
-	v166 = v153 + int32(1)
-	v168 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[5]))
-	if v166 < v168 {
-		v153 = v166
+	v163 = v150 + int32(1)
+	v165 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RelationCache[5]))
+	if v163 < v165 {
+		v150 = v163
 		goto L51
 	} else {
 		goto L54
@@ -981,8 +984,8 @@ func F_AtEOXact_TypeCache(m *base.Module) {
 	_ = v7
 	var v10 int32
 	_ = v10
-	var v14 int32
-	_ = v14
+	var v15 int32
+	_ = v15
 	var v18 int32
 	_ = v18
 	var v20 int32
@@ -1025,7 +1028,7 @@ func F_AtEOXact_TypeCache(m *base.Module) {
 	}
 L1:
 	;
-	v14 = v1
+	v15 = v1
 	goto L4
 L2:
 	;
@@ -1040,7 +1043,7 @@ L4:
 	v18 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_TypeCache[1]))
 	v20 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_TypeCache[2]))
 	v24 = int32(0)
-	v26 = F_hash_search(m, v18, v20+v14<<(uint(int32(2))%32), v24, v24)
+	v26 = F_hash_search(m, v18, v20+v15<<(uint(int32(2))%32), v24, v24)
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {
@@ -1053,10 +1056,10 @@ L5:
 	goto L3
 L6:
 	;
-	v56 = v14 + int32(1)
+	v56 = v15 + int32(1)
 	v58 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_TypeCache[0]))
 	if v56 < v58 {
-		v14 = v56
+		v15 = v56
 		goto L4
 	} else {
 		goto L16

@@ -8,129 +8,119 @@ import (
 func F__crypt_gensalt_extended_rn(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v19 int32
-	_ = v19
-	var v20 int32
-	_ = v20
-	var v26 int32
-	_ = v26
-	var v28 int32
-	_ = v28
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v29 int32
+	_ = v29
 	var v31 int32
 	_ = v31
-	var v33 int32
-	_ = v33
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v43 int32
+	_ = v43
 	var v45 int32
 	_ = v45
-	var v47 int32
-	_ = v47
-	var v48 int32
-	_ = v48
-	var v49 int32
-	_ = v49
-	var v50 int32
-	_ = v50
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
 	var v55 int32
 	_ = v55
-	var v60 int32
-	_ = v60
-	var v65 int32
-	_ = v65
-	var v72 int32
-	_ = v72
-	var v80 int32
-	_ = v80
-	var v83 int32
-	_ = v83
-	if l2 < int32(3) {
-		if int32(0) < l4 {
-			v83 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v83)
-			return v83
-		} else {
-			return int32(0)
-		}
-	} else {
-		if l4 < int32(10) {
-			if int32(0) < l4 {
-				v83 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v83)
-				return v83
+	var v56 int32
+	_ = v56
+	var v62 int32
+	_ = v62
+	var v68 int32
+	_ = v68
+	var v71 int32
+	_ = v71
+	var v81 int32
+	_ = v81
+	var v90 int32
+	_ = v90
+	var v93 int32
+	_ = v93
+	if base.B2i32(l2 < int32(3))|base.B2i32(l4 < int32(10)) == int32(0) {
+		if l0 != 0 {
+			if l0&int32(-16777215) != int32(1) {
+				v93 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v93)
+				return v93
 			} else {
-				return int32(0)
-			}
-		} else {
-			if l0 != 0 {
-				if l0&int32(-16777215) != int32(1) {
-					v83 = int32(0)
-					*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v83)
-					return v83
-				} else {
-					v19 = l0
-					v20 = int32(95)
-					*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v20)
-					v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v19)>>(uint(int32(18))%32)))+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-					*(*uint8)(unsafe.Add(mBase, uint32(l3)+4)) = uint8(v26)
-					v28 = int32(63)
-					v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-					*(*uint8)(unsafe.Add(mBase, uint32(l3)+1)) = uint8(v31)
-					v33 = int32(12)
-					v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v19)>>(uint(v33)%32))&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-					*(*uint8)(unsafe.Add(mBase, uint32(l3)+3)) = uint8(v38)
-					v40 = int32(6)
-					v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v19)>>(uint(v40)%32))&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-					*(*uint8)(unsafe.Add(mBase, uint32(l3)+2)) = uint8(v45)
-					v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
-					v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
-					v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+2)))
-					v50 = int32(0)
-					*(*uint8)(unsafe.Add(mBase, uint32(l3)+9)) = uint8(v50)
-					v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v49)>>(uint(int32(2))%32)))+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-					*(*uint8)(unsafe.Add(mBase, uint32(l3)+8)) = uint8(v55)
-					v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-					*(*uint8)(unsafe.Add(mBase, uint32(l3)+5)) = uint8(v60)
-					v65 = v47 << (uint(int32(8)) % 32)
-					v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v49<<(uint(int32(16))%32)|v65)>>(uint(v33)%32))&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-					*(*uint8)(unsafe.Add(mBase, uint32(l3)+7)) = uint8(v72)
-					v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v48|v65)>>(uint(v40)%32))&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-					*(*uint8)(unsafe.Add(mBase, uint32(l3)+6)) = uint8(v80)
-					return l3
-				}
-			} else {
-				v19 = int32(725)
-				v20 = int32(95)
-				*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v20)
-				v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v19)>>(uint(int32(18))%32)))+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-				*(*uint8)(unsafe.Add(mBase, uint32(l3)+4)) = uint8(v26)
-				v28 = int32(63)
-				v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-				*(*uint8)(unsafe.Add(mBase, uint32(l3)+1)) = uint8(v31)
-				v33 = int32(12)
-				v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v19)>>(uint(v33)%32))&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-				*(*uint8)(unsafe.Add(mBase, uint32(l3)+3)) = uint8(v38)
-				v40 = int32(6)
-				v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v19)>>(uint(v40)%32))&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-				*(*uint8)(unsafe.Add(mBase, uint32(l3)+2)) = uint8(v45)
-				v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
-				v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
-				v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+2)))
-				v50 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, uint32(l3)+9)) = uint8(v50)
-				v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v49)>>(uint(int32(2))%32)))+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-				*(*uint8)(unsafe.Add(mBase, uint32(l3)+8)) = uint8(v55)
-				v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-				*(*uint8)(unsafe.Add(mBase, uint32(l3)+5)) = uint8(v60)
-				v65 = v47 << (uint(int32(8)) % 32)
-				v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v49<<(uint(int32(16))%32)|v65)>>(uint(v33)%32))&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-				*(*uint8)(unsafe.Add(mBase, uint32(l3)+7)) = uint8(v72)
-				v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v48|v65)>>(uint(v40)%32))&v28)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
-				*(*uint8)(unsafe.Add(mBase, uint32(l3)+6)) = uint8(v80)
+				v22 = l0
+				v23 = int32(95)
+				*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v23)
+				v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v22)>>(uint(int32(18))%32)))+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+				*(*uint8)(unsafe.Add(mBase, uint32(l3)+4)) = uint8(v29)
+				v31 = int32(63)
+				v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+				*(*uint8)(unsafe.Add(mBase, uint32(l3)+1)) = uint8(v35)
+				v37 = int32(12)
+				v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v22)>>(uint(v37)%32))&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+				*(*uint8)(unsafe.Add(mBase, uint32(l3)+3)) = uint8(v43)
+				v45 = int32(6)
+				v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v22)>>(uint(v45)%32))&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+				*(*uint8)(unsafe.Add(mBase, uint32(l3)+2)) = uint8(v51)
+				v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
+				v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
+				v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+2)))
+				v56 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(l3)+9)) = uint8(v56)
+				v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v55)>>(uint(int32(2))%32)))+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+				*(*uint8)(unsafe.Add(mBase, uint32(l3)+8)) = uint8(v62)
+				v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+				*(*uint8)(unsafe.Add(mBase, uint32(l3)+5)) = uint8(v68)
+				v71 = v53 << (uint(int32(8)) % 32)
+				v81 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v71|v55<<(uint(int32(16))%32))>>(uint(v37)%32))&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+				*(*uint8)(unsafe.Add(mBase, uint32(l3)+7)) = uint8(v81)
+				v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v54|v71)>>(uint(v45)%32))&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+				*(*uint8)(unsafe.Add(mBase, uint32(l3)+6)) = uint8(v90)
 				return l3
 			}
+		} else {
+			v22 = int32(725)
+			v23 = int32(95)
+			*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v23)
+			v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v22)>>(uint(int32(18))%32)))+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+			*(*uint8)(unsafe.Add(mBase, uint32(l3)+4)) = uint8(v29)
+			v31 = int32(63)
+			v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+			*(*uint8)(unsafe.Add(mBase, uint32(l3)+1)) = uint8(v35)
+			v37 = int32(12)
+			v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v22)>>(uint(v37)%32))&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+			*(*uint8)(unsafe.Add(mBase, uint32(l3)+3)) = uint8(v43)
+			v45 = int32(6)
+			v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v22)>>(uint(v45)%32))&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+			*(*uint8)(unsafe.Add(mBase, uint32(l3)+2)) = uint8(v51)
+			v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
+			v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
+			v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+2)))
+			v56 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(l3)+9)) = uint8(v56)
+			v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v55)>>(uint(int32(2))%32)))+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+			*(*uint8)(unsafe.Add(mBase, uint32(l3)+8)) = uint8(v62)
+			v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+			*(*uint8)(unsafe.Add(mBase, uint32(l3)+5)) = uint8(v68)
+			v71 = v53 << (uint(int32(8)) % 32)
+			v81 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v71|v55<<(uint(int32(16))%32))>>(uint(v37)%32))&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+			*(*uint8)(unsafe.Add(mBase, uint32(l3)+7)) = uint8(v81)
+			v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v54|v71)>>(uint(v45)%32))&v31)+uint32(_c_F__crypt_gensalt_extended_rn[0]))))
+			*(*uint8)(unsafe.Add(mBase, uint32(l3)+6)) = uint8(v90)
+			return l3
+		}
+	} else {
+		if int32(0) < l4 {
+			v93 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v93)
+			return v93
+		} else {
+			return int32(0)
 		}
 	}
 }
@@ -139,27 +129,27 @@ func F__crypt_gensalt_sha256_rn(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = mBase
 	var v8 int32
 	_ = v8
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	v8 = F__emscripten_memset_bulkmem(m, l3, base.I32_extend8_s(int32(0)), l4)
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	if l4 != 0 {
+		base.MemoryFill(m, l3, int32(0), l4)
+	} else {
+	}
+	v8 = int32(36)
+	*(*uint8)(unsafe.Add(mBase, uint32(l3)+2)) = uint8(v8)
+	v10 = int32(_a_F__crypt_gensalt_sha256_rn_0)
+	*(*uint16)(unsafe.Add(mBase, uint32(l3))) = uint16(v10)
+	v12 = F__crypt_gensalt_sha(m, l0, l1, l2, l3, l4)
 	mBase = m.M
-	v9 = int32(36)
-	*(*uint8)(unsafe.Add(mBase, uint32(v8)+2)) = uint8(v9)
-	v11 = int32(_a_F__crypt_gensalt_sha256_rn_0)
-	*(*uint16)(unsafe.Add(mBase, uint32(v8))) = uint16(v11)
-	v13 = F__crypt_gensalt_sha(m, l0, l1, l2, v8, l4)
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v15 = m.ExcPending
+	if v15 != 0 {
 		return int32(0)
 	} else {
-		return v13
+		return v12
 	}
 }
 func F_run_crypt_des(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
@@ -205,10 +195,10 @@ func F_run_crypt_des(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 	_ = v55
 	var v56 int32
 	_ = v56
-	var v57 int32
-	_ = v57
-	var v59 int32
-	_ = v59
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
 	var v63 int32
 	_ = v63
 	var v68 int32
@@ -361,12 +351,12 @@ L20:
 	*(*int32)(unsafe.Add(mBase, uint32(v53))) = v52
 	v55 = int32(4)
 	v56 = v53 + v55
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v51)+4))
-	v59 = v51 + v55
+	v58 = v51 + v55
+	v60 = *(*int32)(unsafe.Add(mBase, uint32(v51)+4))
 	v63 = int32(-2139062144)
-	if (v57|(int32(16843008)-v57))&v63 == v63 {
-		v51 = v59
-		v52 = v57
+	if (int32(16843008)-v60|v60)&v63 == v63 {
+		v51 = v58
+		v52 = v60
 		v53 = v56
 		goto L20
 	} else {
@@ -374,8 +364,8 @@ L20:
 	}
 L21:
 	;
-	v68 = v59
-	v69 = v57
+	v68 = v58
+	v69 = v60
 	v70 = v56
 	goto L8
 L22:

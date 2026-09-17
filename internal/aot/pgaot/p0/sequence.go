@@ -54,8 +54,8 @@ func F_has_sequence_privilege_id(m *base.Module, l0 int32) int32 {
 	_ = v57
 	var v60 int32
 	_ = v60
-	var v66 int32
-	_ = v66
+	var v65 int32
+	_ = v65
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -86,9 +86,9 @@ func F_has_sequence_privilege_id(m *base.Module, l0 int32) int32 {
 					if v24&int32(255) == int32(0) {
 						v32 = int32(1)
 						*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v32)
-						v66 = int32(0)
+						v65 = int32(0)
 						m.G0 = v9 + int32(16)
-						return v66
+						return v65
 					} else {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
@@ -141,12 +141,12 @@ func F_has_sequence_privilege_id(m *base.Module, l0 int32) int32 {
 						if v57 == int32(1) {
 							v60 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v60)
-							v66 = int32(0)
+							v65 = int32(0)
 						} else {
-							v66 = base.B2i32(v55 == int32(0))
+							v65 = base.B2i32(v55 == int32(0))
 						}
 						m.G0 = v9 + int32(16)
-						return v66
+						return v65
 					}
 				}
 			}
@@ -318,16 +318,5 @@ func F_has_sequence_privilege_id_name(m *base.Module, l0 int32) int32 {
 				}
 			}
 		}
-	}
-}
-func F_sequence_close(m *base.Module, l0 int32, l1 int32) {
-	var v4 int32
-	_ = v4
-	F_relation_close(m, l0, l1)
-	v4 = m.ExcPending
-	if v4 != 0 {
-		return
-	} else {
-		return
 	}
 }

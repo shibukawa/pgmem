@@ -35,28 +35,26 @@ func F_mark_partial_aggref(m *base.Module, l0 int32, l1 int32) {
 func F_matchPartialInPendingList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v16 int32
-	_ = v16
-	var v30 int32
-	_ = v30
+	var v15 int32
+	_ = v15
+	var v29 int32
+	_ = v29
 	var v44 int32
 	_ = v44
-	var v46 int32
-	_ = v46
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
 	var v51 int32
 	_ = v51
 	var v52 int32
 	_ = v52
-	var v55 int32
-	_ = v55
-	var v56 int32
-	_ = v56
-	var v60 int32
-	_ = v60
-	var v61 int32
-	_ = v61
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
 	var v66 int32
 	_ = v66
 	var v67 int32
@@ -69,24 +67,26 @@ func F_matchPartialInPendingList(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	_ = v75
 	var v77 int32
 	_ = v77
+	var v81 int32
+	_ = v81
 	var v84 int32
 	_ = v84
 	var v85 int32
 	_ = v85
-	var v87 int32
-	_ = v87
-	var v88 int32
-	_ = v88
 	var v89 int32
 	_ = v89
 	var v90 int32
 	_ = v90
 	var v91 int32
 	_ = v91
-	var v99 int32
-	_ = v99
-	v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l4)+4)))
-	if v16 != 0 {
+	var v92 int32
+	_ = v92
+	var v93 int32
+	_ = v93
+	var v101 int32
+	_ = v101
+	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l4)+4)))
+	if v15 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -112,18 +112,16 @@ L5:
 	goto L6
 L6:
 	;
-	v30 = l2
+	v29 = l2
 	goto L7
 L7:
 	;
-	v44 = v30 - int32(1)
-	v46 = v44 << (uint(int32(2)) % 32)
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(l1+int32(24)+v46)))
-	v51 = l1 + v48&int32(_a_F_matchPartialInPendingList_0)
-	v52 = F_gintuple_get_attrnum(m, l0, v51)
+	v44 = *(*int32)(unsafe.Add(mBase, uint32(l1+int32(20)+v29<<(uint(int32(2))%32))))
+	v47 = l1 + v44&int32(_a_F_matchPartialInPendingList_0)
+	v48 = F_gintuple_get_attrnum(m, l0, v47)
 	mBase = m.M
-	v55 = m.ExcPending
-	if v55 != 0 {
+	v51 = m.ExcPending
+	if v51 != 0 {
 		goto L9
 	} else {
 		goto L10
@@ -136,8 +134,8 @@ L9:
 	return int32(0)
 L10:
 	;
-	v56 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l4)+20)))
-	if v52 != v56 {
+	v52 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l4)+20)))
+	if v48 != v52 {
 		goto L11
 	} else {
 		goto L12
@@ -150,16 +148,17 @@ L12:
 	goto L13
 L13:
 	;
-	v60 = l7 + v44
-	v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60))))
-	if v61 == int32(0) {
+	v57 = v29 - int32(1)
+	v58 = l7 + v57
+	v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v58))))
+	if v59 == int32(0) {
 		goto L14
 	} else {
 		goto L15
 	}
 L14:
 	;
-	v66 = F_gintuple_get_key(m, l0, v51, l6+v44)
+	v66 = F_gintuple_get_key(m, l0, v47, l6+v57)
 	mBase = m.M
 	v67 = m.ExcPending
 	if v67 != 0 {
@@ -172,7 +171,7 @@ L15:
 	goto L16
 L16:
 	;
-	v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l6+v44))))
+	v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l6+v57))))
 	if v72 != 0 {
 		goto L18
 	} else {
@@ -180,9 +179,9 @@ L16:
 	}
 L17:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l5+v46))) = v66
+	*(*int32)(unsafe.Add(mBase, uint32(l5+v57<<(uint(int32(2))%32)))) = v66
 	v69 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v60))) = uint8(v69)
+	*(*uint8)(unsafe.Add(mBase, uint32(v58))) = uint8(v69)
 	goto L16
 L18:
 	;
@@ -194,22 +193,23 @@ L20:
 	;
 	v75 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l4)+20)))
 	v77 = v75 - int32(1)
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(_a_F_matchPartialInPendingList_1)+v77<<(uint(int32(2))%32))))
+	v81 = int32(2)
+	v84 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(_a_F_matchPartialInPendingList_1)+v77<<(uint(v81)%32))))
 	v85 = *(*int32)(unsafe.Add(mBase, uint32(l4)))
-	v87 = *(*int32)(unsafe.Add(mBase, uint32(l5+v46)))
-	v88 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l4)+12)))
-	v89 = *(*int32)(unsafe.Add(mBase, uint32(l4)+8))
-	v90 = F_FunctionCall4Coll(m, l0+int32(_a_F_matchPartialInPendingList_2)+v77*int32(28), v84, v85, v87, v88, v89)
+	v89 = *(*int32)(unsafe.Add(mBase, uint32(l5+v57<<(uint(v81)%32))))
+	v90 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l4)+12)))
+	v91 = *(*int32)(unsafe.Add(mBase, uint32(l4)+8))
+	v92 = F_FunctionCall4Coll(m, l0+int32(_a_F_matchPartialInPendingList_2)+v77*int32(28), v84, v85, v89, v90, v91)
 	mBase = m.M
-	v91 = m.ExcPending
-	if v91 != 0 {
+	v93 = m.ExcPending
+	if v93 != 0 {
 		goto L9
 	} else {
 		goto L21
 	}
 L21:
 	;
-	if v90 == int32(0) {
+	if v92 == int32(0) {
 		goto L22
 	} else {
 		goto L23
@@ -222,16 +222,16 @@ L23:
 	goto L24
 L24:
 	;
-	if v90 <= int32(0) {
+	if v92 <= int32(0) {
 		goto L25
 	} else {
 		goto L26
 	}
 L25:
 	;
-	v99 = v30 + int32(1)
-	if v99 != l3 {
-		v30 = v99
+	v101 = v29 + int32(1)
+	if v101 != l3 {
+		v29 = v101
 		goto L7
 	} else {
 		goto L28
@@ -275,8 +275,8 @@ func F_try_partial_mergejoin_path(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v50
 	var v51 int32
 	_ = v51
-	var v55 int32
-	_ = v55
+	var v56 int32
+	_ = v56
 	var v63 int32
 	_ = v63
 	var v67 int32
@@ -285,10 +285,8 @@ func F_try_partial_mergejoin_path(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v73
 	var v77 int32
 	_ = v77
-	var v80 int32
-	_ = v80
-	var v84 int32
-	_ = v84
+	var v81 int32
+	_ = v81
 	var v85 int32
 	_ = v85
 	var v91 int32
@@ -319,10 +317,8 @@ func F_try_partial_mergejoin_path(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v138
 	var v141 int32
 	_ = v141
-	var v144 int32
-	_ = v144
-	var v149 int32
-	_ = v149
+	var v148 int32
+	_ = v148
 	var v150 int32
 	_ = v150
 	var v154 int32
@@ -347,8 +343,8 @@ func F_try_partial_mergejoin_path(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v177
 	var v180 int32
 	_ = v180
-	var v189 int32
-	_ = v189
+	var v191 int32
+	_ = v191
 	var v195 int32
 	_ = v195
 	var v199 int32
@@ -385,44 +381,42 @@ func F_try_partial_mergejoin_path(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v263
 	var v270 float64
 	_ = v270
-	var v276 int32
-	_ = v276
 	var v277 int32
 	_ = v277
-	var v278 int32
-	_ = v278
 	var v279 int32
 	_ = v279
 	var v280 int32
 	_ = v280
-	var v284 int32
-	_ = v284
+	var v281 int32
+	_ = v281
 	var v285 int32
 	_ = v285
 	var v286 int32
 	_ = v286
-	var v287 int32
-	_ = v287
-	var v290 int32
-	_ = v290
+	var v288 int32
+	_ = v288
+	var v289 int32
+	_ = v289
 	var v292 int32
 	_ = v292
-	var v293 int32
-	_ = v293
-	var v300 int32
-	_ = v300
-	var v315 int32
-	_ = v315
-	var v320 int32
-	_ = v320
+	var v294 int32
+	_ = v294
+	var v295 int32
+	_ = v295
+	var v302 int32
+	_ = v302
+	var v317 int32
+	_ = v317
 	var v322 int32
 	_ = v322
-	var v323 int32
-	_ = v323
 	var v324 int32
 	_ = v324
+	var v325 int32
+	_ = v325
 	var v326 int32
 	_ = v326
+	var v328 int32
+	_ = v328
 	v11 = int32(0)
 	v14 = m.G0
 	v16 = v14 - int32(112)
@@ -559,11 +553,11 @@ L22:
 L23:
 	;
 	v51 = *(*int32)(unsafe.Add(mBase, uint32(l6)+4))
-	v55 = v22
+	v56 = v22
 	goto L24
 L24:
 	;
-	if v55 < v51 {
+	if v56 < v51 {
 		goto L26
 	} else {
 		goto L27
@@ -571,7 +565,7 @@ L24:
 L26:
 	;
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(l6)+12))
-	v67 = v63 + v55<<(uint(int32(2))%32)
+	v67 = v63 + v56<<(uint(int32(2))%32)
 	goto L28
 L27:
 	;
@@ -579,7 +573,7 @@ L27:
 	goto L28
 L28:
 	;
-	if v55 == v50 {
+	if v56 == v50 {
 		goto L29
 	} else {
 		goto L30
@@ -602,7 +596,7 @@ L31:
 	}
 L32:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v25))) = v55
+	*(*int32)(unsafe.Add(mBase, uint32(v25))) = v56
 	v103 = v73
 	goto L9
 L33:
@@ -611,15 +605,14 @@ L33:
 L34:
 	;
 	v77 = *(*int32)(unsafe.Add(mBase, uint32(v23)+12))
-	v80 = v77 + v55<<(uint(int32(2))%32)
-	if v80 == int32(0) {
+	if v77 == int32(0) {
 		goto L35
 	} else {
 		goto L36
 	}
 L35:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v25))) = v55
+	*(*int32)(unsafe.Add(mBase, uint32(v25))) = v56
 	v103 = v73
 	goto L9
 L36:
@@ -627,21 +620,21 @@ L36:
 	goto L37
 L37:
 	;
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(v80)))
-	if v84 != v85 {
+	v81 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
+	v85 = *(*int32)(unsafe.Add(mBase, uint32(v77+v56<<(uint(int32(2))%32))))
+	if v81 != v85 {
 		goto L38
 	} else {
 		goto L39
 	}
 L38:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v25))) = v55
+	*(*int32)(unsafe.Add(mBase, uint32(v25))) = v56
 	v103 = int32(0)
 	goto L9
 L39:
 	;
-	v55 = v55 + int32(1)
+	v56 = v56 + int32(1)
 	goto L24
 L41:
 	;
@@ -765,8 +758,7 @@ L61:
 L62:
 	;
 	v141 = *(*int32)(unsafe.Add(mBase, uint32(v109)+12))
-	v144 = v141 + v118<<(uint(int32(2))%32)
-	if v144 == int32(0) {
+	if v141 == int32(0) {
 		v154 = v138
 		goto L51
 	} else {
@@ -774,9 +766,9 @@ L62:
 	}
 L63:
 	;
-	v149 = *(*int32)(unsafe.Add(mBase, uint32(v132)))
-	v150 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-	if v149 == v150 {
+	v148 = *(*int32)(unsafe.Add(mBase, uint32(v132)))
+	v150 = *(*int32)(unsafe.Add(mBase, uint32(v118<<(uint(int32(2))%32)+v141)))
+	if v148 == v150 {
 		v118 = v118 + int32(1)
 		goto L52
 	} else {
@@ -813,14 +805,14 @@ L69:
 	}
 L70:
 	;
-	if v315 == int32(0) {
+	if v317 == int32(0) {
 		goto L1
 	} else {
 		goto L111
 	}
 L71:
 	;
-	v315 = v300
+	v317 = v302
 	goto L70
 L72:
 	;
@@ -840,12 +832,12 @@ L73:
 	}
 L74:
 	;
-	v189 = v171
+	v191 = v171
 	goto L75
 L75:
 	;
 	v195 = *(*int32)(unsafe.Add(mBase, uint32(v177)+12))
-	v199 = *(*int32)(unsafe.Add(mBase, uint32(v195+v189<<(uint(int32(2))%32))))
+	v199 = *(*int32)(unsafe.Add(mBase, uint32(v195+v191<<(uint(int32(2))%32))))
 	v200 = *(*int32)(unsafe.Add(mBase, uint32(v199)+64))
 	v201 = F_compare_pathkeys(m, l4, v200)
 	mBase = m.M
@@ -859,10 +851,10 @@ L76:
 	goto L72
 L77:
 	;
-	v221 = v189 + int32(1)
+	v221 = v191 + int32(1)
 	v222 = *(*int32)(unsafe.Add(mBase, uint32(v177)+4))
 	if v221 < v222 {
-		v189 = v221
+		v191 = v221
 		goto L75
 	} else {
 		goto L82
@@ -873,7 +865,7 @@ L78:
 	v208 = int32(0)
 	v212 = base.B2i32(base.F64_gt(v170, base.F64_mul(v204, float64(1.01))) == v208) | base.B2i32(v201 == int32(1))
 	if v212 == v208 {
-		v300 = v212
+		v302 = v212
 		goto L71
 	} else {
 		goto L79
@@ -888,7 +880,7 @@ L79:
 L80:
 	;
 	if base.F64_lt(base.F64_mul(v170, float64(1.01)), v204) != 0 {
-		v300 = v212
+		v302 = v212
 		goto L71
 	} else {
 		goto L81
@@ -901,7 +893,7 @@ L82:
 	goto L76
 L83:
 	;
-	v315 = int32(1)
+	v317 = int32(1)
 	goto L70
 L84:
 	;
@@ -916,7 +908,7 @@ L85:
 	}
 L86:
 	;
-	v315 = int32(1)
+	v317 = int32(1)
 	goto L70
 L87:
 	;
@@ -938,7 +930,7 @@ L89:
 	}
 L90:
 	;
-	v300 = v290
+	v302 = v292
 	goto L71
 L91:
 	;
@@ -967,19 +959,19 @@ L94:
 	}
 L95:
 	;
-	v315 = int32(1)
+	v317 = int32(1)
 	goto L70
 L96:
 	;
-	v315 = int32(1)
+	v317 = int32(1)
 	goto L70
 L97:
 	;
-	v290 = int32(1)
-	v292 = v250 + v290
-	v293 = *(*int32)(unsafe.Add(mBase, uint32(v234)+4))
-	if v292 < v293 {
-		v250 = v292
+	v292 = int32(1)
+	v294 = v250 + v292
+	v295 = *(*int32)(unsafe.Add(mBase, uint32(v234)+4))
+	if v294 < v295 {
+		v250 = v294
 		goto L89
 	} else {
 		goto L110
@@ -997,7 +989,6 @@ L99:
 	goto L100
 L100:
 	;
-	v276 = int32(0)
 	v277 = *(*int32)(unsafe.Add(mBase, uint32(v258)+16))
 	if v277 != 0 {
 		goto L102
@@ -1009,45 +1000,45 @@ L101:
 	goto L100
 L102:
 	;
-	v279 = v276
+	v280 = int32(0)
 	goto L104
 L103:
 	;
-	v278 = *(*int32)(unsafe.Add(mBase, uint32(v258)+64))
-	v279 = v278
+	v279 = *(*int32)(unsafe.Add(mBase, uint32(v258)+64))
+	v280 = v279
 	goto L104
 L104:
 	;
-	v280 = F_compare_pathkeys(m, l4, v279)
+	v281 = F_compare_pathkeys(m, l4, v280)
 	mBase = m.M
-	if v280&int32(-3) != 0 {
+	if v281&int32(-3) != 0 {
 		goto L97
 	} else {
 		goto L105
 	}
 L105:
 	;
-	v284 = *(*int32)(unsafe.Add(mBase, uint32(v258)+16))
-	if v284 != 0 {
+	v285 = *(*int32)(unsafe.Add(mBase, uint32(v258)+16))
+	if v285 != 0 {
 		goto L106
 	} else {
 		goto L107
 	}
 L106:
 	;
-	v285 = *(*int32)(unsafe.Add(mBase, uint32(v284)+4))
-	v286 = v285
+	v286 = *(*int32)(unsafe.Add(mBase, uint32(v285)+4))
+	v288 = v286
 	goto L108
 L107:
 	;
-	v286 = v276
+	v288 = int32(0)
 	goto L108
 L108:
 	;
-	v287 = F_bms_equal(m, int32(0), v286)
+	v289 = F_bms_equal(m, int32(0), v288)
 	mBase = m.M
-	if v287 != 0 {
-		v300 = v276
+	if v289 != 0 {
+		v302 = int32(0)
 		goto L71
 	} else {
 		goto L109
@@ -1060,22 +1051,22 @@ L110:
 	goto L90
 L111:
 	;
-	v320 = *(*int32)(unsafe.Add(mBase, uint32(l9)))
-	v322 = *(*int32)(unsafe.Add(mBase, uint32(v16)+108))
-	v323 = F_create_mergejoin_path(m, l0, l1, l8, v16+int32(8), l9, l2, l3, v320, l4, int32(0), l5, v105, v165, v322)
+	v322 = *(*int32)(unsafe.Add(mBase, uint32(l9)))
+	v324 = *(*int32)(unsafe.Add(mBase, uint32(v16)+108))
+	v325 = F_create_mergejoin_path(m, l0, l1, l8, v16+int32(8), l9, l2, l3, v322, l4, int32(0), l5, v105, v165, v324)
 	mBase = m.M
-	v324 = m.ExcPending
-	if v324 != 0 {
+	v326 = m.ExcPending
+	if v326 != 0 {
 		goto L68
 	} else {
 		goto L112
 	}
 L112:
 	;
-	F_add_partial_path(m, l1, v323)
+	F_add_partial_path(m, l1, v325)
 	mBase = m.M
-	v326 = m.ExcPending
-	if v326 != 0 {
+	v328 = m.ExcPending
+	if v328 != 0 {
 		goto L68
 	} else {
 		goto L113

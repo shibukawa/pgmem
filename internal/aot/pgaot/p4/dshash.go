@@ -38,16 +38,16 @@ func F_dshash_delete_entry(m *base.Module, l0 int32, l1 int32) {
 	_ = v37
 	var v39 int32
 	_ = v39
-	var v44 int32
-	_ = v44
-	var v45 int32
-	_ = v45
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
-	var v60 int32
-	_ = v60
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v58 int32
+	_ = v58
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1-int32(4))))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
@@ -56,18 +56,18 @@ func F_dshash_delete_entry(m *base.Module, l0 int32, l1 int32) {
 	goto L3
 L1:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-	F_LWLockRelease(m, v53+v52*int32(20)+int32(8))
+	v51 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	F_LWLockRelease(m, v51+v50*int32(20)+int32(8))
 	mBase = m.M
-	v60 = m.ExcPending
-	if v60 != 0 {
+	v58 = m.ExcPending
+	if v58 != 0 {
 		goto L6
 	} else {
 		goto L10
 	}
 L2:
 	;
-	v52 = int32(base.Ui32(v9) >> (uint(int32(25)) % 32))
+	v50 = int32(base.Ui32(v9) >> (uint(int32(25)) % 32))
 	goto L1
 L3:
 	;
@@ -120,10 +120,10 @@ L9:
 	*(*int32)(unsafe.Add(mBase, uint32(v21))) = v31
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 	v39 = int32(base.Ui32(v9) >> (uint(int32(25)) % 32))
-	v44 = v37 + v39*int32(20) + int32(24)
-	v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)))
-	*(*int32)(unsafe.Add(mBase, uint32(v44))) = v45 - int32(1)
-	v52 = v39
+	v42 = v37 + v39*int32(20)
+	v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+24))
+	*(*int32)(unsafe.Add(mBase, uint32(v42)+24)) = v43 - int32(1)
+	v50 = v39
 	goto L1
 L10:
 	;

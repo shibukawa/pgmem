@@ -14,79 +14,82 @@ func F_GetForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v10
 	var v12 int32
 	_ = v12
+	var v19 int32
+	_ = v19
 	var v24 int32
 	_ = v24
 	var v26 int32
 	_ = v26
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
 	var v31 int32
 	_ = v31
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
-	var v34 int32
-	_ = v34
-	var v37 int32
-	_ = v37
+	var v35 int32
+	_ = v35
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
 	var v46 int32
 	_ = v46
 	var v47 int32
 	_ = v47
-	var v48 int32
-	_ = v48
 	var v49 int32
 	_ = v49
 	var v51 int32
 	_ = v51
 	var v53 int32
 	_ = v53
-	var v56 int32
-	_ = v56
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
 	var v63 int32
 	_ = v63
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
+	var v66 int32
+	_ = v66
 	var v70 int32
 	_ = v70
-	var v74 int32
-	_ = v74
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
 	var v76 int32
 	_ = v76
-	var v77 int32
-	_ = v77
+	var v79 int32
+	_ = v79
 	var v80 int32
 	_ = v80
-	var v83 int32
-	_ = v83
-	var v84 int32
-	_ = v84
-	var v94 int32
-	_ = v94
+	var v90 int32
+	_ = v90
+	var v91 int32
+	_ = v91
 	var v95 int32
 	_ = v95
-	var v99 int32
-	_ = v99
+	var v102 int32
+	_ = v102
 	var v106 int32
 	_ = v106
-	var v110 int32
-	_ = v110
+	var v111 int32
+	_ = v111
 	var v115 int32
 	_ = v115
-	var v119 int32
-	_ = v119
-	var v125 int32
-	_ = v125
-	var v130 int32
-	_ = v130
+	var v121 int32
+	_ = v121
+	var v126 int32
+	_ = v126
 	v7 = int32(0)
 	v10 = m.G0
 	v12 = v10 - int32(80)
 	m.G0 = v12
 	*(*int32)(unsafe.Add(mBase, uint32(l5))) = v7
 	*(*int32)(unsafe.Add(mBase, uint32(l4))) = v7
-	F_ScanKeyInit(m, v12+int32(32), int32(11), int32(3), int32(184), l1)
+	v19 = v12 + int32(32)
+	F_ScanKeyInit(m, v19, int32(11), int32(3), int32(184), l1)
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -100,50 +103,50 @@ L1:
 L2:
 	;
 	v26 = int32(1)
-	v31 = F_systable_beginscan(m, l0, int32(2699), v26, int32(0), v26, v12+int32(32))
+	v29 = F_systable_beginscan(m, l0, int32(2699), v26, int32(0), v26, v19)
 	mBase = m.M
-	v32 = m.ExcPending
-	if v32 != 0 {
+	v30 = m.ExcPending
+	if v30 != 0 {
 		goto L1
 	} else {
 		goto L4
 	}
 L3:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, uint32(l4)))
-	if v94 != 0 {
+	v90 = *(*int32)(unsafe.Add(mBase, uint32(l4)))
+	if v90 != 0 {
 		goto L29
 	} else {
 		goto L30
 	}
 L4:
 	;
-	v33 = F_systable_getnext(m, v31)
+	v31 = F_systable_getnext(m, v29)
 	mBase = m.M
-	v34 = m.ExcPending
-	if v34 != 0 {
+	v32 = m.ExcPending
+	if v32 != 0 {
 		goto L1
 	} else {
 		goto L5
 	}
 L5:
 	;
-	if v33 == int32(0) {
+	if v31 == int32(0) {
 		goto L3
 	} else {
 		goto L6
 	}
 L6:
 	;
-	v37 = v33
+	v35 = v31
 	goto L7
 L7:
 	;
-	v46 = *(*int32)(unsafe.Add(mBase, uint32(v37)+16))
-	v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46)+22)))
-	v48 = v46 + v47
-	v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)+84))
-	if v49 != l2 {
+	v44 = *(*int32)(unsafe.Add(mBase, uint32(v35)+16))
+	v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44)+22)))
+	v46 = v44 + v45
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)+84))
+	if v47 != l2 {
 		goto L9
 	} else {
 		goto L10
@@ -153,98 +156,98 @@ L8:
 	goto L3
 L9:
 	;
-	v83 = F_systable_getnext(m, v31)
+	v79 = F_systable_getnext(m, v29)
 	mBase = m.M
-	v84 = m.ExcPending
-	if v84 != 0 {
+	v80 = m.ExcPending
+	if v80 != 0 {
 		goto L1
 	} else {
 		goto L26
 	}
 L10:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
-	if v51 != l3 {
+	v49 = *(*int32)(unsafe.Add(mBase, uint32(v46)+4))
+	if v49 != l3 {
 		goto L9
 	} else {
 		goto L11
 	}
 L11:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v48)+76))
-	v56 = v53 - int32(1644)
-	if base.Ui32(v56) <= base.Ui32(int32(11)) {
+	v51 = *(*int32)(unsafe.Add(mBase, uint32(v46)+76))
+	v53 = v51 - int32(1644)
+	if base.Ui32(v53) <= base.Ui32(int32(11)) {
 		goto L13
 	} else {
 		goto L14
 	}
 L12:
 	;
-	if v64 != int32(2) {
+	if v60 != int32(2) {
 		goto L9
 	} else {
 		goto L16
 	}
 L13:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, uint32(v56<<(uint(int32(2))%32))+uint32(_c_F_GetForeignKeyCheckTriggers[0])))
-	v64 = v63
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(v53<<(uint(int32(2))%32))+uint32(_c_F_GetForeignKeyCheckTriggers[0])))
+	v60 = v58
 	goto L15
 L14:
 	;
-	v64 = int32(0)
+	v60 = int32(0)
 	goto L15
 L15:
 	;
 	goto L12
 L16:
 	;
-	v67 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v48)+80)))
-	if v67&int32(4) != 0 {
+	v63 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v46)+80)))
+	if v63&int32(4) != 0 {
 		goto L18
 	} else {
 		goto L19
 	}
 L17:
 	;
-	if v77 == int32(0) {
+	if v73 == int32(0) {
 		goto L9
 	} else {
 		goto L24
 	}
 L18:
 	;
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-	*(*int32)(unsafe.Add(mBase, uint32(l4))) = v70
-	v77 = v70
+	v66 = *(*int32)(unsafe.Add(mBase, uint32(v46)))
+	*(*int32)(unsafe.Add(mBase, uint32(l4))) = v66
+	v73 = v66
 	goto L17
 L19:
 	;
 	goto L20
 L20:
 	;
-	if v67&int32(16) != 0 {
+	if v63&int32(16) != 0 {
 		goto L21
 	} else {
 		goto L22
 	}
 L21:
 	;
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-	*(*int32)(unsafe.Add(mBase, uint32(l5))) = v74
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(v46)))
+	*(*int32)(unsafe.Add(mBase, uint32(l5))) = v70
 	goto L23
 L22:
 	;
 	goto L23
 L23:
 	;
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(l4)))
-	v77 = v76
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(l4)))
+	v73 = v72
 	goto L17
 L24:
 	;
-	v80 = *(*int32)(unsafe.Add(mBase, uint32(l5)))
-	if v80 != 0 {
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(l5)))
+	if v76 != 0 {
 		goto L3
 	} else {
 		goto L25
@@ -254,8 +257,8 @@ L25:
 	goto L9
 L26:
 	;
-	if v83 != 0 {
-		v37 = v83
+	if v79 != 0 {
+		v35 = v79
 		goto L7
 	} else {
 		goto L27
@@ -267,16 +270,16 @@ L28:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v119 = m.ExcPending
-	if v119 != 0 {
+	v115 = m.ExcPending
+	if v115 != 0 {
 		goto L1
 	} else {
 		goto L37
 	}
 L29:
 	;
-	v95 = *(*int32)(unsafe.Add(mBase, uint32(l5)))
-	if v95 == int32(0) {
+	v91 = *(*int32)(unsafe.Add(mBase, uint32(l5)))
+	if v91 == int32(0) {
 		goto L28
 	} else {
 		goto L32
@@ -288,18 +291,18 @@ L31:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v106 = m.ExcPending
-	if v106 != 0 {
+	v102 = m.ExcPending
+	if v102 != 0 {
 		goto L1
 	} else {
 		goto L34
 	}
 L32:
 	;
-	F_systable_endscan(m, v31)
+	F_systable_endscan(m, v29)
 	mBase = m.M
-	v99 = m.ExcPending
-	if v99 != 0 {
+	v95 = m.ExcPending
+	if v95 != 0 {
 		goto L1
 	} else {
 		goto L33
@@ -313,8 +316,8 @@ L34:
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
 	F_errmsg_internal(m, int32(_a_F_GetForeignKeyCheckTriggers_0), v12)
 	mBase = m.M
-	v110 = m.ExcPending
-	if v110 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L1
 	} else {
 		goto L35
@@ -323,8 +326,8 @@ L35:
 	;
 	F_errfinish(m, int32(_a_F_GetForeignKeyCheckTriggers_1), int32(_a_F_GetForeignKeyCheckTriggers_2), int32(_a_F_GetForeignKeyCheckTriggers_3))
 	mBase = m.M
-	v115 = m.ExcPending
-	if v115 != 0 {
+	v111 = m.ExcPending
+	if v111 != 0 {
 		goto L1
 	} else {
 		goto L36
@@ -339,8 +342,8 @@ L37:
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
 	F_errmsg_internal(m, int32(_a_F_GetForeignKeyCheckTriggers_4), v12+int32(16))
 	mBase = m.M
-	v125 = m.ExcPending
-	if v125 != 0 {
+	v121 = m.ExcPending
+	if v121 != 0 {
 		goto L1
 	} else {
 		goto L38
@@ -349,8 +352,8 @@ L38:
 	;
 	F_errfinish(m, int32(_a_F_GetForeignKeyCheckTriggers_1), int32(_a_F_GetForeignKeyCheckTriggers_5), int32(_a_F_GetForeignKeyCheckTriggers_3))
 	mBase = m.M
-	v130 = m.ExcPending
-	if v130 != 0 {
+	v126 = m.ExcPending
+	if v126 != 0 {
 		goto L1
 	} else {
 		goto L39
@@ -386,6 +389,8 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v42
 	var v44 int32
 	_ = v44
+	var v49 int32
+	_ = v49
 	var v53 int32
 	_ = v53
 	var v54 int32
@@ -410,12 +415,12 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v83
 	var v85 int32
 	_ = v85
-	var v94 int32
-	_ = v94
+	var v92 int32
+	_ = v92
+	var v93 int32
+	_ = v93
 	var v95 int32
 	_ = v95
-	var v97 int32
-	_ = v97
 	v13 = m.G0
 	v15 = v13 - int32(16)
 	m.G0 = v15
@@ -449,7 +454,8 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 			v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+13)))
 			*(*int32)(unsafe.Add(mBase, uint32(v18)+48)) = v32
 			*(*uint8)(unsafe.Add(mBase, uint32(v18)+45)) = uint8(v44)
-			F_CreateTrigger(m, v15+int32(4), v18, v32, l0, l1, l3, l4, l5, v38)
+			v49 = v15 + int32(4)
+			F_CreateTrigger(m, v49, v18, v32, l0, l1, l3, l4, l5, v38)
 			mBase = m.M
 			v53 = m.ExcPending
 			if v53 != 0 {
@@ -493,20 +499,20 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 							v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+13)))
 							*(*int32)(unsafe.Add(mBase, uint32(v59)+48)) = v73
 							*(*uint8)(unsafe.Add(mBase, uint32(v59)+45)) = uint8(v85)
-							F_CreateTrigger(m, v15+int32(4), v59, v73, l0, l1, l3, l4, l6, v79)
+							F_CreateTrigger(m, v49, v59, v73, l0, l1, l3, l4, l6, v79)
 							mBase = m.M
-							v94 = m.ExcPending
-							if v94 != 0 {
+							v92 = m.ExcPending
+							if v92 != 0 {
 								return
 							} else {
-								v95 = *(*int32)(unsafe.Add(mBase, uint32(v15)+8))
+								v93 = *(*int32)(unsafe.Add(mBase, uint32(v15)+8))
 								F_CommandCounterIncrement(m)
 								mBase = m.M
-								v97 = m.ExcPending
-								if v97 != 0 {
+								v95 = m.ExcPending
+								if v95 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l8))) = v95
+									*(*int32)(unsafe.Add(mBase, uint32(l8))) = v93
 									m.G0 = v15 + int32(16)
 									return
 								}
@@ -519,76 +525,16 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 	}
 }
 func F_has_foreign_data_wrapper_privilege_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v20 int32
-	_ = v20
-	var v22 int64
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = F_pg_detoast_datum_packed(m, v11)
-	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	v4 = Fn13913(m, l0, int32(_a_F_has_foreign_data_wrapper_privilege_id_0), int32(2328))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v16 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
-		v20 = *(*int32)(unsafe.Add(mBase, _c_F_has_foreign_data_wrapper_privilege_id[0]))
-		v22 = F_convert_any_priv_string(m, v12, int32(_a_F_has_foreign_data_wrapper_privilege_id_0))
-		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
-			return int32(0)
-		} else {
-			v26 = F_object_aclcheck_ext(m, int32(2328), v10, v20, v22, v8+int32(15))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)))
-				if v28 == int32(1) {
-					v31 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-					v35 = int32(0)
-				} else {
-					v35 = base.B2i32(v26 == int32(0))
-				}
-				m.G0 = v8 + int32(16)
-				return v35
-			}
-		}
+		return v4
 	}
 }
 func F_has_foreign_data_wrapper_privilege_name(m *base.Module, l0 int32) int32 {

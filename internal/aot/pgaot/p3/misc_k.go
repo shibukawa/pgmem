@@ -8,22 +8,24 @@ import (
 func F_KeepFileRestoredFromArchive(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v17 int32
-	_ = v17
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
 	var v18 int32
 	_ = v18
-	var v25 int32
-	_ = v25
-	var v29 int32
-	_ = v29
-	var v31 int32
-	_ = v31
-	var v38 int32
-	_ = v38
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
+	var v35 int32
+	_ = v35
+	var v39 int32
+	_ = v39
 	var v51 int32
 	_ = v51
 	var v52 int32
@@ -54,62 +56,62 @@ func F_KeepFileRestoredFromArchive(m *base.Module, l0 int32, l1 int32) {
 	_ = v75
 	var v78 int32
 	_ = v78
-	var v84 int32
-	_ = v84
 	var v85 int32
 	_ = v85
 	var v86 int32
 	_ = v86
-	var v89 int32
-	_ = v89
-	var v92 int32
-	_ = v92
-	var v97 int32
-	_ = v97
+	var v87 int32
+	_ = v87
+	var v90 int32
+	_ = v90
+	var v93 int32
+	_ = v93
 	var v98 int32
 	_ = v98
-	var v100 int32
-	_ = v100
-	var v102 int32
-	_ = v102
-	var v106 int32
-	_ = v106
+	var v99 int32
+	_ = v99
+	var v101 int32
+	_ = v101
+	var v103 int32
+	_ = v103
 	var v107 int32
 	_ = v107
 	var v108 int32
 	_ = v108
-	var v113 int32
-	_ = v113
+	var v109 int32
+	_ = v109
 	var v114 int32
 	_ = v114
 	var v115 int32
 	_ = v115
-	var v118 int32
-	_ = v118
+	var v116 int32
+	_ = v116
 	var v119 int32
 	_ = v119
 	var v120 int32
 	_ = v120
-	var v122 int32
-	_ = v122
-	var v126 int32
-	_ = v126
+	var v121 int32
+	_ = v121
+	var v123 int32
+	_ = v123
 	var v127 int32
 	_ = v127
-	var v129 int32
-	_ = v129
-	var v131 int32
-	_ = v131
-	var v133 int32
-	_ = v133
+	var v128 int32
+	_ = v128
+	var v130 int32
+	_ = v130
+	var v132 int32
+	_ = v132
 	var v134 int32
 	_ = v134
-	var v137 int32
-	_ = v137
-	var v144 int32
-	_ = v144
-	var v149 int32
-	_ = v149
+	var v135 int32
+	_ = v135
+	var v138 int32
+	_ = v138
+	var v145 int32
+	_ = v145
+	var v148 int32
+	_ = v148
 	var v153 int32
 	_ = v153
 	var v154 int32
@@ -124,46 +126,47 @@ func F_KeepFileRestoredFromArchive(m *base.Module, l0 int32, l1 int32) {
 	_ = v165
 	var v167 int32
 	_ = v167
-	var v173 int32
-	_ = v173
-	var v176 int32
-	_ = v176
-	var v179 int32
-	_ = v179
+	var v171 int32
+	_ = v171
+	var v177 int32
+	_ = v177
+	var v180 int32
+	_ = v180
 	var v181 int32
 	_ = v181
-	var v182 int32
-	_ = v182
-	var v189 int32
-	_ = v189
-	var v191 int32
-	_ = v191
+	var v185 int32
+	_ = v185
+	var v190 int32
+	_ = v190
 	var v192 int32
 	_ = v192
 	var v193 int32
 	_ = v193
-	var v198 int32
-	_ = v198
-	var v200 int32
-	_ = v200
-	var v215 int32
-	_ = v215
-	var v222 int32
-	_ = v222
-	var v224 int32
-	_ = v224
-	var v230 int32
-	_ = v230
-	var v235 int32
-	_ = v235
-	v6 = m.G0
-	v8 = v6 - int32(2176)
-	m.G0 = v8
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l1
-	v17 = F_pg_snprintf(m, v8+int32(1152), int32(1024), int32(_a_F_KeepFileRestoredFromArchive_0), v8+int32(16))
+	var v194 int32
+	_ = v194
+	var v199 int32
+	_ = v199
+	var v201 int32
+	_ = v201
+	var v218 int32
+	_ = v218
+	var v225 int32
+	_ = v225
+	var v227 int32
+	_ = v227
+	var v233 int32
+	_ = v233
+	var v238 int32
+	_ = v238
+	v7 = m.G0
+	v9 = v7 - int32(2176)
+	m.G0 = v9
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l1
+	v13 = v9 + int32(1152)
+	v18 = F_pg_snprintf(m, v13, int32(1024), int32(_a_F_KeepFileRestoredFromArchive_0), v9+int32(16))
 	mBase = m.M
-	v18 = m.ExcPending
-	if v18 != 0 {
+	v19 = m.ExcPending
+	if v19 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -173,56 +176,55 @@ L1:
 	return
 L2:
 	;
-	v25 = F___fstatat(m, int32(-100), v8+int32(1152), v8+int32(1056), int32(0))
+	v24 = F___fstatat(m, int32(-100), v13, v9+int32(1056), int32(0))
 	mBase = m.M
 	goto L4
 L3:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v222 = m.ExcPending
-	if v222 != 0 {
+	v225 = m.ExcPending
+	if v225 != 0 {
 		goto L1
 	} else {
-		goto L65
+		goto L64
 	}
 L4:
 	;
-	if v25 == int32(0) {
+	if v24 == int32(0) {
 		goto L5
 	} else {
 		goto L6
 	}
 L5:
 	;
-	v29 = v8 + int32(32)
-	v31 = v8 + int32(1152)
+	v28 = v9 + int32(32)
 	goto L11
 L6:
 	;
 	goto L7
 L7:
 	;
-	v153 = F_durable_rename(m, l0, v8+int32(1152), int32(21))
+	v153 = F_durable_rename(m, l0, v9+int32(1152), int32(21))
 	mBase = m.M
 	v154 = m.ExcPending
 	if v154 != 0 {
 		goto L1
 	} else {
-		goto L41
+		goto L40
 	}
 L8:
 	;
-	v149 = F_unlink(m, v8+int32(32))
+	v148 = F_unlink(m, v28)
 	mBase = m.M
-	if v149 != 0 {
+	if v148 != 0 {
 		goto L3
 	} else {
-		goto L40
+		goto L39
 	}
 L9:
 	;
-	v144 = F_strlen(m, v133)
+	v145 = F_strlen(m, v134)
 	mBase = m.M
 	goto L8
 L11:
@@ -230,44 +232,45 @@ L11:
 	goto L12
 L12:
 	;
-	v38 = int32(1023)
-	if (v29^v31)&int32(3) != 0 {
+	v35 = int32(1023)
+	if (v28^v13)&int32(3) != 0 {
 		goto L16
 	} else {
 		goto L17
 	}
 L13:
 	;
-	v137 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v134))) = uint8(v137)
+	v138 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v135))) = uint8(v138)
 	goto L9
 L14:
 	;
-	v118 = v113
 	v119 = v114
 	v120 = v115
-	goto L36
+	v121 = v116
+	goto L35
 L15:
 	;
-	if v108 == int32(0) {
-		v133 = v106
+	if v109 == int32(0) {
 		v134 = v107
+		v135 = v108
 		goto L13
 	} else {
-		goto L35
+		goto L34
 	}
 L16:
 	;
-	v106 = v31
-	v107 = v29
-	v108 = v38
+	v107 = v13
+	v108 = v28
+	v109 = v35
 	goto L15
 L17:
 	;
 	goto L18
 L18:
 	;
-	if v31&int32(3) == int32(0) {
+	v39 = int32(0)
+	if base.B2i32(v13&int32(3) == v39)|int32(0) == v39 {
 		goto L20
 	} else {
 		goto L21
@@ -275,36 +278,36 @@ L18:
 L19:
 	;
 	if v75 == int32(0) {
-		v133 = v72
-		v134 = v73
+		v134 = v72
+		v135 = v73
 		goto L13
 	} else {
 		goto L28
 	}
 L20:
 	;
-	v72 = v31
-	v73 = v29
-	v74 = v38
-	v75 = int32(1)
-	goto L19
+	v51 = v13
+	v52 = v28
+	v53 = v35
+	goto L23
 L21:
 	;
 	goto L22
 L22:
 	;
-	v51 = v31
-	v52 = v29
-	v53 = v38
-	goto L23
+	v72 = v13
+	v73 = v28
+	v74 = v35
+	v75 = int32(1)
+	goto L19
 L23:
 	;
 	v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v52))) = uint8(v55)
 	if v55 == int32(0) {
-		v113 = v51
-		v114 = v52
-		v115 = v53
+		v114 = v51
+		v115 = v52
+		v116 = v53
 		goto L14
 	} else {
 		goto L25
@@ -349,124 +352,114 @@ L27:
 L28:
 	;
 	v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72))))
-	if v78 == int32(0) {
-		v106 = v72
-		v107 = v73
-		v108 = v74
+	if base.B2i32(v78 == int32(0))|base.B2i32(base.Ui32(v74) < base.Ui32(int32(4))) != 0 {
+		v107 = v72
+		v108 = v73
+		v109 = v74
 		goto L15
 	} else {
 		goto L29
 	}
 L29:
 	;
-	if base.Ui32(v74) < base.Ui32(int32(4)) {
-		v106 = v72
-		v107 = v73
-		v108 = v74
-		goto L15
-	} else {
-		goto L30
-	}
+	v85 = v72
+	v86 = v73
+	v87 = v74
+	goto L30
 L30:
 	;
-	v84 = v72
-	v85 = v73
-	v86 = v74
-	goto L31
-L31:
-	;
-	v89 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
-	v92 = int32(-2139062144)
-	if (int32(16843008)-v89|v89)&v92 != v92 {
-		v113 = v84
+	v90 = *(*int32)(unsafe.Add(mBase, uint32(v85)))
+	v93 = int32(-2139062144)
+	if (int32(16843008)-v90|v90)&v93 != v93 {
 		v114 = v85
 		v115 = v86
+		v116 = v87
 		goto L14
+	} else {
+		goto L32
+	}
+L31:
+	;
+	v107 = v101
+	v108 = v99
+	v109 = v103
+	goto L15
+L32:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v86))) = v90
+	v98 = int32(4)
+	v99 = v86 + v98
+	v101 = v85 + v98
+	v103 = v87 - v98
+	if base.Ui32(int32(3)) < base.Ui32(v103) {
+		v85 = v101
+		v86 = v99
+		v87 = v103
+		goto L30
 	} else {
 		goto L33
 	}
-L32:
-	;
-	v106 = v100
-	v107 = v98
-	v108 = v102
-	goto L15
 L33:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v85))) = v89
-	v97 = int32(4)
-	v98 = v85 + v97
-	v100 = v84 + v97
-	v102 = v86 - v97
-	if base.Ui32(int32(3)) < base.Ui32(v102) {
-		v84 = v100
-		v85 = v98
-		v86 = v102
-		goto L31
-	} else {
-		goto L34
-	}
+	goto L31
 L34:
 	;
-	goto L32
-L35:
-	;
-	v113 = v106
 	v114 = v107
 	v115 = v108
+	v116 = v109
 	goto L14
+L35:
+	;
+	v123 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119))))
+	*(*uint8)(unsafe.Add(mBase, uint32(v120))) = uint8(v123)
+	if v123 == int32(0) {
+		v134 = v119
+		v135 = v120
+		goto L13
+	} else {
+		goto L37
+	}
 L36:
 	;
-	v122 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v118))))
-	*(*uint8)(unsafe.Add(mBase, uint32(v119))) = uint8(v122)
-	if v122 == int32(0) {
-		v133 = v118
-		v134 = v119
-		goto L13
+	v134 = v130
+	v135 = v128
+	goto L13
+L37:
+	;
+	v127 = int32(1)
+	v128 = v120 + v127
+	v130 = v119 + v127
+	v132 = v121 - v127
+	if v132 != 0 {
+		v119 = v130
+		v120 = v128
+		v121 = v132
+		goto L35
 	} else {
 		goto L38
 	}
-L37:
-	;
-	v133 = v129
-	v134 = v127
-	goto L13
 L38:
 	;
-	v126 = int32(1)
-	v127 = v119 + v126
-	v129 = v118 + v126
-	v131 = v120 - v126
-	if v131 != 0 {
-		v118 = v129
-		v119 = v127
-		v120 = v131
-		goto L36
-	} else {
-		goto L39
-	}
+	goto L36
 L39:
 	;
-	goto L37
-L40:
-	;
 	goto L7
-L41:
+L40:
 	;
 	v156 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[0]))
 	if v156 != int32(2) {
-		goto L43
+		goto L42
 	} else {
-		goto L44
+		goto L43
+	}
+L41:
+	;
+	if v24 == int32(0) {
+		goto L47
+	} else {
+		goto L48
 	}
 L42:
-	;
-	if v25 == int32(0) {
-		goto L48
-	} else {
-		goto L49
-	}
-L43:
 	;
 	F_XLogArchiveForceDone(m, l1)
 	mBase = m.M
@@ -474,12 +467,12 @@ L43:
 	if v160 != 0 {
 		goto L1
 	} else {
-		goto L46
+		goto L45
 	}
-L44:
+L43:
 	;
-	goto L45
-L45:
+	goto L44
+L44:
 	;
 	F_XLogArchiveNotify(m, l1)
 	mBase = m.M
@@ -487,144 +480,144 @@ L45:
 	if v162 != 0 {
 		goto L1
 	} else {
-		goto L47
+		goto L46
 	}
+L45:
+	;
+	goto L41
 L46:
 	;
-	goto L42
+	goto L41
 L47:
-	;
-	goto L42
-L48:
 	;
 	v165 = int32(0)
 	v167 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[1]))
 	if v165 < v167 {
-		goto L51
+		goto L50
 	} else {
-		goto L52
+		goto L51
 	}
-L49:
+L48:
 	;
-	goto L50
-L50:
+	goto L49
+L49:
 	;
 	F_WalSndWakeup(m, int32(1), int32(0))
 	mBase = m.M
-	v215 = m.ExcPending
-	if v215 != 0 {
+	v218 = m.ExcPending
+	if v218 != 0 {
 		goto L1
-	} else {
-		goto L64
-	}
-L51:
-	;
-	v173 = v165
-	goto L54
-L52:
-	;
-	goto L53
-L53:
-	;
-	goto L50
-L54:
-	;
-	v176 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[2]))
-	v179 = v176 + v173*int32(96)
-	v181 = v179 + int32(164)
-	v182 = *(*int32)(unsafe.Add(mBase, uint32(v181)))
-	*(*int32)(unsafe.Add(mBase, uint32(v181))) = int32(1)
-	if v182 != 0 {
-		goto L56
-	} else {
-		goto L57
-	}
-L55:
-	;
-	goto L53
-L56:
-	;
-	F_s_lock(m, v181, int32(_a_F_KeepFileRestoredFromArchive_1), int32(3596), int32(_a_F_KeepFileRestoredFromArchive_2))
-	mBase = m.M
-	v189 = m.ExcPending
-	if v189 != 0 {
-		goto L1
-	} else {
-		goto L59
-	}
-L57:
-	;
-	goto L58
-L58:
-	;
-	v191 = v179 + int32(88)
-	v192 = *(*int32)(unsafe.Add(mBase, uint32(v191)))
-	if v192 != 0 {
-		goto L60
-	} else {
-		goto L61
-	}
-L59:
-	;
-	goto L58
-L60:
-	;
-	v193 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v191)+16)) = uint8(v193)
-	goto L62
-L61:
-	;
-	goto L62
-L62:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v181))) = int32(0)
-	v198 = v173 + int32(1)
-	v200 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[1]))
-	if v198 < v200 {
-		v173 = v198
-		goto L54
 	} else {
 		goto L63
 	}
+L50:
+	;
+	v171 = v165
+	goto L53
+L51:
+	;
+	goto L52
+L52:
+	;
+	goto L49
+L53:
+	;
+	v177 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[2]))
+	v180 = v177 + v171*int32(96)
+	v181 = *(*int32)(unsafe.Add(mBase, uint32(v180)+164))
+	*(*int32)(unsafe.Add(mBase, uint32(v180)+164)) = int32(1)
+	v185 = v180 + int32(164)
+	if v181 != 0 {
+		goto L55
+	} else {
+		goto L56
+	}
+L54:
+	;
+	goto L52
+L55:
+	;
+	F_s_lock(m, v185, int32(_a_F_KeepFileRestoredFromArchive_1), int32(3596), int32(_a_F_KeepFileRestoredFromArchive_2))
+	mBase = m.M
+	v190 = m.ExcPending
+	if v190 != 0 {
+		goto L1
+	} else {
+		goto L58
+	}
+L56:
+	;
+	goto L57
+L57:
+	;
+	v192 = v180 + int32(88)
+	v193 = *(*int32)(unsafe.Add(mBase, uint32(v192)))
+	if v193 != 0 {
+		goto L59
+	} else {
+		goto L60
+	}
+L58:
+	;
+	goto L57
+L59:
+	;
+	v194 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v192)+16)) = uint8(v194)
+	goto L61
+L60:
+	;
+	goto L61
+L61:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v185))) = int32(0)
+	v199 = v171 + int32(1)
+	v201 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[1]))
+	if v199 < v201 {
+		v171 = v199
+		goto L53
+	} else {
+		goto L62
+	}
+L62:
+	;
+	goto L54
 L63:
 	;
-	goto L55
-L64:
-	;
-	m.G0 = v8 + int32(2176)
+	m.G0 = v9 + int32(2176)
 	return
-L65:
+L64:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v224 = m.ExcPending
-	if v224 != 0 {
+	v227 = m.ExcPending
+	if v227 != 0 {
+		goto L1
+	} else {
+		goto L65
+	}
+L65:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(1152)
+	F_errmsg(m, int32(_a_F_KeepFileRestoredFromArchive_3), v9)
+	mBase = m.M
+	v233 = m.ExcPending
+	if v233 != 0 {
 		goto L1
 	} else {
 		goto L66
 	}
 L66:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(1152)
-	F_errmsg(m, int32(_a_F_KeepFileRestoredFromArchive_3), v8)
+	F_errfinish(m, int32(_a_F_KeepFileRestoredFromArchive_4), int32(400), int32(_a_F_KeepFileRestoredFromArchive_5))
 	mBase = m.M
-	v230 = m.ExcPending
-	if v230 != 0 {
+	v238 = m.ExcPending
+	if v238 != 0 {
 		goto L1
 	} else {
 		goto L67
 	}
 L67:
-	;
-	F_errfinish(m, int32(_a_F_KeepFileRestoredFromArchive_4), int32(400), int32(_a_F_KeepFileRestoredFromArchive_5))
-	mBase = m.M
-	v235 = m.ExcPending
-	if v235 != 0 {
-		goto L1
-	} else {
-		goto L68
-	}
-L68:
 	;
 	base.Wasm_trap_unreachable()
 	for {
@@ -669,18 +662,16 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 	_ = v73
 	var v74 int32
 	_ = v74
-	var v76 int32
-	_ = v76
+	var v77 int32
+	_ = v77
 	var v79 int32
 	_ = v79
-	var v81 int32
-	_ = v81
 	var v88 int32
 	_ = v88
 	var v90 int32
 	_ = v90
-	var v93 int32
-	_ = v93
+	var v92 int32
+	_ = v92
 	var v100 int32
 	_ = v100
 	var v103 int32
@@ -711,10 +702,10 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 	_ = v138
 	var v140 int32
 	_ = v140
-	var v142 int32
-	_ = v142
 	var v144 int32
 	_ = v144
+	var v146 int32
+	_ = v146
 	var v156 int32
 	_ = v156
 	var v159 int32
@@ -760,70 +751,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 					if v14 <= v15 {
 						v172 = v74
 					} else {
-						v76 = int32(1)
-						v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-						v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-						if v15+v76 != v14 {
+						v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+						v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+						if v15+int32(1) != v14 {
 							v88 = v74
 							v90 = v15
-							v93 = int32(0)
+							v92 = int32(0)
 							for {
-								v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+								v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 								if v100 == int32(1) {
 									v103 = int32(2)
-									v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+									v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 									v112 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+									*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 									v116 = v88 + v112
 								} else {
 									v116 = v88
 								}
 								v117 = int32(1)
 								v118 = v90 + v117
-								v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+								v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 								if v120 == v117 {
 									v123 = int32(2)
-									v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+									v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 									v132 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+									*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 									v136 = v116 + v132
 								} else {
 									v136 = v116
 								}
 								v137 = int32(2)
 								v138 = v90 + v137
-								v140 = v93 + v137
+								v140 = v92 + v137
 								if v140 != v16&int32(-2) {
 									v88 = v136
 									v90 = v138
-									v93 = v140
+									v92 = v140
 									continue
 								} else {
 									break
 								}
 								break
 							}
-							v142 = v136
-							v144 = v138
+							if v16&int32(1) == int32(0) {
+								v172 = v136
+							} else {
+								v144 = v136
+								v146 = v138
+								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+								if v156 != int32(1) {
+									v172 = v144
+								} else {
+									v159 = int32(2)
+									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+									v168 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+									v172 = v144 + v168
+								}
+							}
 						} else {
-							v142 = v74
-							v144 = v15
-						}
-						if v16&v76 == int32(0) {
-							v172 = v142
-						} else {
-							v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+							v144 = v74
+							v146 = v15
+							v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 							if v156 != int32(1) {
-								v172 = v142
+								v172 = v144
 							} else {
 								v159 = int32(2)
-								v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-								*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+								v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+								*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 								v168 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-								v172 = v142 + v168
+								*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+								v172 = v144 + v168
 							}
 						}
 					}
@@ -842,7 +843,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v199 = int32(16)
 							v200 = v198 - v199
 							m.G0 = v200
-							F___gettimeofday(m, v200)
+							F_gettimeofday(m, v200)
 							mBase = m.M
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -855,7 +856,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						v199 = int32(16)
 						v200 = v198 - v199
 						m.G0 = v200
-						F___gettimeofday(m, v200)
+						F_gettimeofday(m, v200)
 						mBase = m.M
 						v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 						v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -869,70 +870,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 				if v14 <= v15 {
 					v172 = v74
 				} else {
-					v76 = int32(1)
-					v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-					v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-					if v15+v76 != v14 {
+					v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+					v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+					if v15+int32(1) != v14 {
 						v88 = v74
 						v90 = v15
-						v93 = int32(0)
+						v92 = int32(0)
 						for {
-							v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+							v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 							if v100 == int32(1) {
 								v103 = int32(2)
-								v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-								*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+								v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+								*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 								v112 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+								*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 								v116 = v88 + v112
 							} else {
 								v116 = v88
 							}
 							v117 = int32(1)
 							v118 = v90 + v117
-							v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+							v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 							if v120 == v117 {
 								v123 = int32(2)
-								v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-								*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+								v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+								*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 								v132 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+								*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 								v136 = v116 + v132
 							} else {
 								v136 = v116
 							}
 							v137 = int32(2)
 							v138 = v90 + v137
-							v140 = v93 + v137
+							v140 = v92 + v137
 							if v140 != v16&int32(-2) {
 								v88 = v136
 								v90 = v138
-								v93 = v140
+								v92 = v140
 								continue
 							} else {
 								break
 							}
 							break
 						}
-						v142 = v136
-						v144 = v138
+						if v16&int32(1) == int32(0) {
+							v172 = v136
+						} else {
+							v144 = v136
+							v146 = v138
+							v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+							if v156 != int32(1) {
+								v172 = v144
+							} else {
+								v159 = int32(2)
+								v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+								*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+								v168 = int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+								v172 = v144 + v168
+							}
+						}
 					} else {
-						v142 = v74
-						v144 = v15
-					}
-					if v16&v76 == int32(0) {
-						v172 = v142
-					} else {
-						v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+						v144 = v74
+						v146 = v15
+						v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 						if v156 != int32(1) {
-							v172 = v142
+							v172 = v144
 						} else {
 							v159 = int32(2)
-							v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-							*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+							v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+							*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 							v168 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-							v172 = v142 + v168
+							*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+							v172 = v144 + v168
 						}
 					}
 				}
@@ -951,7 +962,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						v199 = int32(16)
 						v200 = v198 - v199
 						m.G0 = v200
-						F___gettimeofday(m, v200)
+						F_gettimeofday(m, v200)
 						mBase = m.M
 						v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 						v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -964,7 +975,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 					v199 = int32(16)
 					v200 = v198 - v199
 					m.G0 = v200
-					F___gettimeofday(m, v200)
+					F_gettimeofday(m, v200)
 					mBase = m.M
 					v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 					v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -998,70 +1009,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							if v14 <= v15 {
 								v172 = v74
 							} else {
-								v76 = int32(1)
-								v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-								v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-								if v15+v76 != v14 {
+								v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+								if v15+int32(1) != v14 {
 									v88 = v74
 									v90 = v15
-									v93 = int32(0)
+									v92 = int32(0)
 									for {
-										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 										if v100 == int32(1) {
 											v103 = int32(2)
-											v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+											v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 											v112 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+											*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 											v116 = v88 + v112
 										} else {
 											v116 = v88
 										}
 										v117 = int32(1)
 										v118 = v90 + v117
-										v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+										v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 										if v120 == v117 {
 											v123 = int32(2)
-											v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+											v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 											v132 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+											*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 											v136 = v116 + v132
 										} else {
 											v136 = v116
 										}
 										v137 = int32(2)
 										v138 = v90 + v137
-										v140 = v93 + v137
+										v140 = v92 + v137
 										if v140 != v16&int32(-2) {
 											v88 = v136
 											v90 = v138
-											v93 = v140
+											v92 = v140
 											continue
 										} else {
 											break
 										}
 										break
 									}
-									v142 = v136
-									v144 = v138
+									if v16&int32(1) == int32(0) {
+										v172 = v136
+									} else {
+										v144 = v136
+										v146 = v138
+										v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+										if v156 != int32(1) {
+											v172 = v144
+										} else {
+											v159 = int32(2)
+											v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+											v168 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+											v172 = v144 + v168
+										}
+									}
 								} else {
-									v142 = v74
-									v144 = v15
-								}
-								if v16&v76 == int32(0) {
-									v172 = v142
-								} else {
-									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+									v144 = v74
+									v146 = v15
+									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 									if v156 != int32(1) {
-										v172 = v142
+										v172 = v144
 									} else {
 										v159 = int32(2)
-										v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 										v168 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-										v172 = v142 + v168
+										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+										v172 = v144 + v168
 									}
 								}
 							}
@@ -1080,7 +1101,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 									v199 = int32(16)
 									v200 = v198 - v199
 									m.G0 = v200
-									F___gettimeofday(m, v200)
+									F_gettimeofday(m, v200)
 									mBase = m.M
 									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1093,7 +1114,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v199 = int32(16)
 								v200 = v198 - v199
 								m.G0 = v200
-								F___gettimeofday(m, v200)
+								F_gettimeofday(m, v200)
 								mBase = m.M
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1107,70 +1128,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						if v14 <= v15 {
 							v172 = v74
 						} else {
-							v76 = int32(1)
-							v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-							v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-							if v15+v76 != v14 {
+							v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+							v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+							if v15+int32(1) != v14 {
 								v88 = v74
 								v90 = v15
-								v93 = int32(0)
+								v92 = int32(0)
 								for {
-									v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+									v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 									if v100 == int32(1) {
 										v103 = int32(2)
-										v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+										v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 										v112 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+										*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 										v116 = v88 + v112
 									} else {
 										v116 = v88
 									}
 									v117 = int32(1)
 									v118 = v90 + v117
-									v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+									v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 									if v120 == v117 {
 										v123 = int32(2)
-										v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+										v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 										v132 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+										*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 										v136 = v116 + v132
 									} else {
 										v136 = v116
 									}
 									v137 = int32(2)
 									v138 = v90 + v137
-									v140 = v93 + v137
+									v140 = v92 + v137
 									if v140 != v16&int32(-2) {
 										v88 = v136
 										v90 = v138
-										v93 = v140
+										v92 = v140
 										continue
 									} else {
 										break
 									}
 									break
 								}
-								v142 = v136
-								v144 = v138
+								if v16&int32(1) == int32(0) {
+									v172 = v136
+								} else {
+									v144 = v136
+									v146 = v138
+									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+									if v156 != int32(1) {
+										v172 = v144
+									} else {
+										v159 = int32(2)
+										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+										v168 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+										v172 = v144 + v168
+									}
+								}
 							} else {
-								v142 = v74
-								v144 = v15
-							}
-							if v16&v76 == int32(0) {
-								v172 = v142
-							} else {
-								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+								v144 = v74
+								v146 = v15
+								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 								if v156 != int32(1) {
-									v172 = v142
+									v172 = v144
 								} else {
 									v159 = int32(2)
-									v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 									v168 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-									v172 = v142 + v168
+									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+									v172 = v144 + v168
 								}
 							}
 						}
@@ -1189,7 +1220,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v199 = int32(16)
 								v200 = v198 - v199
 								m.G0 = v200
-								F___gettimeofday(m, v200)
+								F_gettimeofday(m, v200)
 								mBase = m.M
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1202,7 +1233,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v199 = int32(16)
 							v200 = v198 - v199
 							m.G0 = v200
-							F___gettimeofday(m, v200)
+							F_gettimeofday(m, v200)
 							mBase = m.M
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1229,70 +1260,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						if v14 <= v15 {
 							v172 = v74
 						} else {
-							v76 = int32(1)
-							v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-							v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-							if v15+v76 != v14 {
+							v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+							v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+							if v15+int32(1) != v14 {
 								v88 = v74
 								v90 = v15
-								v93 = int32(0)
+								v92 = int32(0)
 								for {
-									v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+									v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 									if v100 == int32(1) {
 										v103 = int32(2)
-										v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+										v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 										v112 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+										*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 										v116 = v88 + v112
 									} else {
 										v116 = v88
 									}
 									v117 = int32(1)
 									v118 = v90 + v117
-									v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+									v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 									if v120 == v117 {
 										v123 = int32(2)
-										v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+										v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 										v132 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+										*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 										v136 = v116 + v132
 									} else {
 										v136 = v116
 									}
 									v137 = int32(2)
 									v138 = v90 + v137
-									v140 = v93 + v137
+									v140 = v92 + v137
 									if v140 != v16&int32(-2) {
 										v88 = v136
 										v90 = v138
-										v93 = v140
+										v92 = v140
 										continue
 									} else {
 										break
 									}
 									break
 								}
-								v142 = v136
-								v144 = v138
+								if v16&int32(1) == int32(0) {
+									v172 = v136
+								} else {
+									v144 = v136
+									v146 = v138
+									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+									if v156 != int32(1) {
+										v172 = v144
+									} else {
+										v159 = int32(2)
+										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+										v168 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+										v172 = v144 + v168
+									}
+								}
 							} else {
-								v142 = v74
-								v144 = v15
-							}
-							if v16&v76 == int32(0) {
-								v172 = v142
-							} else {
-								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+								v144 = v74
+								v146 = v15
+								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 								if v156 != int32(1) {
-									v172 = v142
+									v172 = v144
 								} else {
 									v159 = int32(2)
-									v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 									v168 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-									v172 = v142 + v168
+									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+									v172 = v144 + v168
 								}
 							}
 						}
@@ -1311,7 +1352,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v199 = int32(16)
 								v200 = v198 - v199
 								m.G0 = v200
-								F___gettimeofday(m, v200)
+								F_gettimeofday(m, v200)
 								mBase = m.M
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1324,7 +1365,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v199 = int32(16)
 							v200 = v198 - v199
 							m.G0 = v200
-							F___gettimeofday(m, v200)
+							F_gettimeofday(m, v200)
 							mBase = m.M
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1338,70 +1379,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 					if v14 <= v15 {
 						v172 = v74
 					} else {
-						v76 = int32(1)
-						v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-						v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-						if v15+v76 != v14 {
+						v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+						v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+						if v15+int32(1) != v14 {
 							v88 = v74
 							v90 = v15
-							v93 = int32(0)
+							v92 = int32(0)
 							for {
-								v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+								v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 								if v100 == int32(1) {
 									v103 = int32(2)
-									v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+									v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 									v112 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+									*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 									v116 = v88 + v112
 								} else {
 									v116 = v88
 								}
 								v117 = int32(1)
 								v118 = v90 + v117
-								v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+								v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 								if v120 == v117 {
 									v123 = int32(2)
-									v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+									v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 									v132 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+									*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 									v136 = v116 + v132
 								} else {
 									v136 = v116
 								}
 								v137 = int32(2)
 								v138 = v90 + v137
-								v140 = v93 + v137
+								v140 = v92 + v137
 								if v140 != v16&int32(-2) {
 									v88 = v136
 									v90 = v138
-									v93 = v140
+									v92 = v140
 									continue
 								} else {
 									break
 								}
 								break
 							}
-							v142 = v136
-							v144 = v138
+							if v16&int32(1) == int32(0) {
+								v172 = v136
+							} else {
+								v144 = v136
+								v146 = v138
+								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+								if v156 != int32(1) {
+									v172 = v144
+								} else {
+									v159 = int32(2)
+									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+									v168 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+									v172 = v144 + v168
+								}
+							}
 						} else {
-							v142 = v74
-							v144 = v15
-						}
-						if v16&v76 == int32(0) {
-							v172 = v142
-						} else {
-							v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+							v144 = v74
+							v146 = v15
+							v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 							if v156 != int32(1) {
-								v172 = v142
+								v172 = v144
 							} else {
 								v159 = int32(2)
-								v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-								*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+								v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+								*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 								v168 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-								v172 = v142 + v168
+								*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+								v172 = v144 + v168
 							}
 						}
 					}
@@ -1420,7 +1471,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v199 = int32(16)
 							v200 = v198 - v199
 							m.G0 = v200
-							F___gettimeofday(m, v200)
+							F_gettimeofday(m, v200)
 							mBase = m.M
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1433,7 +1484,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						v199 = int32(16)
 						v200 = v198 - v199
 						m.G0 = v200
-						F___gettimeofday(m, v200)
+						F_gettimeofday(m, v200)
 						mBase = m.M
 						v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 						v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1457,70 +1508,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							if v14 <= v15 {
 								v172 = v74
 							} else {
-								v76 = int32(1)
-								v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-								v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-								if v15+v76 != v14 {
+								v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+								if v15+int32(1) != v14 {
 									v88 = v74
 									v90 = v15
-									v93 = int32(0)
+									v92 = int32(0)
 									for {
-										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 										if v100 == int32(1) {
 											v103 = int32(2)
-											v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+											v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 											v112 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+											*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 											v116 = v88 + v112
 										} else {
 											v116 = v88
 										}
 										v117 = int32(1)
 										v118 = v90 + v117
-										v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+										v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 										if v120 == v117 {
 											v123 = int32(2)
-											v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+											v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 											v132 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+											*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 											v136 = v116 + v132
 										} else {
 											v136 = v116
 										}
 										v137 = int32(2)
 										v138 = v90 + v137
-										v140 = v93 + v137
+										v140 = v92 + v137
 										if v140 != v16&int32(-2) {
 											v88 = v136
 											v90 = v138
-											v93 = v140
+											v92 = v140
 											continue
 										} else {
 											break
 										}
 										break
 									}
-									v142 = v136
-									v144 = v138
+									if v16&int32(1) == int32(0) {
+										v172 = v136
+									} else {
+										v144 = v136
+										v146 = v138
+										v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+										if v156 != int32(1) {
+											v172 = v144
+										} else {
+											v159 = int32(2)
+											v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+											v168 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+											v172 = v144 + v168
+										}
+									}
 								} else {
-									v142 = v74
-									v144 = v15
-								}
-								if v16&v76 == int32(0) {
-									v172 = v142
-								} else {
-									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+									v144 = v74
+									v146 = v15
+									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 									if v156 != int32(1) {
-										v172 = v142
+										v172 = v144
 									} else {
 										v159 = int32(2)
-										v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 										v168 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-										v172 = v142 + v168
+										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+										v172 = v144 + v168
 									}
 								}
 							}
@@ -1539,7 +1600,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 									v199 = int32(16)
 									v200 = v198 - v199
 									m.G0 = v200
-									F___gettimeofday(m, v200)
+									F_gettimeofday(m, v200)
 									mBase = m.M
 									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1552,7 +1613,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v199 = int32(16)
 								v200 = v198 - v199
 								m.G0 = v200
-								F___gettimeofday(m, v200)
+								F_gettimeofday(m, v200)
 								mBase = m.M
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1566,70 +1627,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						if v14 <= v15 {
 							v172 = v74
 						} else {
-							v76 = int32(1)
-							v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-							v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-							if v15+v76 != v14 {
+							v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+							v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+							if v15+int32(1) != v14 {
 								v88 = v74
 								v90 = v15
-								v93 = int32(0)
+								v92 = int32(0)
 								for {
-									v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+									v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 									if v100 == int32(1) {
 										v103 = int32(2)
-										v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+										v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 										v112 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+										*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 										v116 = v88 + v112
 									} else {
 										v116 = v88
 									}
 									v117 = int32(1)
 									v118 = v90 + v117
-									v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+									v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 									if v120 == v117 {
 										v123 = int32(2)
-										v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+										v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 										v132 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+										*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 										v136 = v116 + v132
 									} else {
 										v136 = v116
 									}
 									v137 = int32(2)
 									v138 = v90 + v137
-									v140 = v93 + v137
+									v140 = v92 + v137
 									if v140 != v16&int32(-2) {
 										v88 = v136
 										v90 = v138
-										v93 = v140
+										v92 = v140
 										continue
 									} else {
 										break
 									}
 									break
 								}
-								v142 = v136
-								v144 = v138
+								if v16&int32(1) == int32(0) {
+									v172 = v136
+								} else {
+									v144 = v136
+									v146 = v138
+									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+									if v156 != int32(1) {
+										v172 = v144
+									} else {
+										v159 = int32(2)
+										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+										v168 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+										v172 = v144 + v168
+									}
+								}
 							} else {
-								v142 = v74
-								v144 = v15
-							}
-							if v16&v76 == int32(0) {
-								v172 = v142
-							} else {
-								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+								v144 = v74
+								v146 = v15
+								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 								if v156 != int32(1) {
-									v172 = v142
+									v172 = v144
 								} else {
 									v159 = int32(2)
-									v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 									v168 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-									v172 = v142 + v168
+									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+									v172 = v144 + v168
 								}
 							}
 						}
@@ -1648,7 +1719,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v199 = int32(16)
 								v200 = v198 - v199
 								m.G0 = v200
-								F___gettimeofday(m, v200)
+								F_gettimeofday(m, v200)
 								mBase = m.M
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1661,7 +1732,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v199 = int32(16)
 							v200 = v198 - v199
 							m.G0 = v200
-							F___gettimeofday(m, v200)
+							F_gettimeofday(m, v200)
 							mBase = m.M
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1675,7 +1746,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 					v46 = int32(16)
 					v47 = v45 - v46
 					m.G0 = v47
-					F___gettimeofday(m, v47)
+					F_gettimeofday(m, v47)
 					mBase = m.M
 					v50 = *(*int64)(unsafe.Add(mBase, uint32(v47)))
 					v51 = int64(*(*int32)(unsafe.Add(mBase, uint32(v47)+8)))
@@ -1695,70 +1766,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								if v14 <= v15 {
 									v172 = v74
 								} else {
-									v76 = int32(1)
-									v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-									v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-									if v15+v76 != v14 {
+									v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+									v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+									if v15+int32(1) != v14 {
 										v88 = v74
 										v90 = v15
-										v93 = int32(0)
+										v92 = int32(0)
 										for {
-											v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+											v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 											if v100 == int32(1) {
 												v103 = int32(2)
-												v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-												*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+												v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+												*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 												v112 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+												*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 												v116 = v88 + v112
 											} else {
 												v116 = v88
 											}
 											v117 = int32(1)
 											v118 = v90 + v117
-											v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+											v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 											if v120 == v117 {
 												v123 = int32(2)
-												v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-												*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+												v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+												*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 												v132 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+												*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 												v136 = v116 + v132
 											} else {
 												v136 = v116
 											}
 											v137 = int32(2)
 											v138 = v90 + v137
-											v140 = v93 + v137
+											v140 = v92 + v137
 											if v140 != v16&int32(-2) {
 												v88 = v136
 												v90 = v138
-												v93 = v140
+												v92 = v140
 												continue
 											} else {
 												break
 											}
 											break
 										}
-										v142 = v136
-										v144 = v138
+										if v16&int32(1) == int32(0) {
+											v172 = v136
+										} else {
+											v144 = v136
+											v146 = v138
+											v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+											if v156 != int32(1) {
+												v172 = v144
+											} else {
+												v159 = int32(2)
+												v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+												*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+												v168 = int32(1)
+												*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+												v172 = v144 + v168
+											}
+										}
 									} else {
-										v142 = v74
-										v144 = v15
-									}
-									if v16&v76 == int32(0) {
-										v172 = v142
-									} else {
-										v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+										v144 = v74
+										v146 = v15
+										v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 										if v156 != int32(1) {
-											v172 = v142
+											v172 = v144
 										} else {
 											v159 = int32(2)
-											v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+											v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 											v168 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-											v172 = v142 + v168
+											*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+											v172 = v144 + v168
 										}
 									}
 								}
@@ -1777,7 +1858,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 										v199 = int32(16)
 										v200 = v198 - v199
 										m.G0 = v200
-										F___gettimeofday(m, v200)
+										F_gettimeofday(m, v200)
 										mBase = m.M
 										v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 										v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1790,7 +1871,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 									v199 = int32(16)
 									v200 = v198 - v199
 									m.G0 = v200
-									F___gettimeofday(m, v200)
+									F_gettimeofday(m, v200)
 									mBase = m.M
 									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1804,70 +1885,80 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							if v14 <= v15 {
 								v172 = v74
 							} else {
-								v76 = int32(1)
-								v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-								v81 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-								if v15+v76 != v14 {
+								v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+								if v15+int32(1) != v14 {
 									v88 = v74
 									v90 = v15
-									v93 = int32(0)
+									v92 = int32(0)
 									for {
-										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v81))))
+										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
 										if v100 == int32(1) {
 											v103 = int32(2)
-											v109 = *(*int32)(unsafe.Add(mBase, uint32(v79+v90<<(uint(v103)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v88<<(uint(v103)%32)))) = v109
+											v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
 											v112 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v88+v81))) = uint8(v112)
+											*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
 											v116 = v88 + v112
 										} else {
 											v116 = v88
 										}
 										v117 = int32(1)
 										v118 = v90 + v117
-										v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81+v118))))
+										v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
 										if v120 == v117 {
 											v123 = int32(2)
-											v129 = *(*int32)(unsafe.Add(mBase, uint32(v79+v118<<(uint(v123)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v116<<(uint(v123)%32)))) = v129
+											v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
 											v132 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v116+v81))) = uint8(v132)
+											*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
 											v136 = v116 + v132
 										} else {
 											v136 = v116
 										}
 										v137 = int32(2)
 										v138 = v90 + v137
-										v140 = v93 + v137
+										v140 = v92 + v137
 										if v140 != v16&int32(-2) {
 											v88 = v136
 											v90 = v138
-											v93 = v140
+											v92 = v140
 											continue
 										} else {
 											break
 										}
 										break
 									}
-									v142 = v136
-									v144 = v138
+									if v16&int32(1) == int32(0) {
+										v172 = v136
+									} else {
+										v144 = v136
+										v146 = v138
+										v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
+										if v156 != int32(1) {
+											v172 = v144
+										} else {
+											v159 = int32(2)
+											v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
+											v168 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+											v172 = v144 + v168
+										}
+									}
 								} else {
-									v142 = v74
-									v144 = v15
-								}
-								if v16&v76 == int32(0) {
-									v172 = v142
-								} else {
-									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144+v81))))
+									v144 = v74
+									v146 = v15
+									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
 									if v156 != int32(1) {
-										v172 = v142
+										v172 = v144
 									} else {
 										v159 = int32(2)
-										v165 = *(*int32)(unsafe.Add(mBase, uint32(v79+v144<<(uint(v159)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v142<<(uint(v159)%32)))) = v165
+										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
 										v168 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v142+v81))) = uint8(v168)
-										v172 = v142 + v168
+										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
+										v172 = v144 + v168
 									}
 								}
 							}
@@ -1886,7 +1977,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 									v199 = int32(16)
 									v200 = v198 - v199
 									m.G0 = v200
-									F___gettimeofday(m, v200)
+									F_gettimeofday(m, v200)
 									mBase = m.M
 									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1899,7 +1990,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v199 = int32(16)
 								v200 = v198 - v199
 								m.G0 = v200
-								F___gettimeofday(m, v200)
+								F_gettimeofday(m, v200)
 								mBase = m.M
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
@@ -1915,45 +2006,15 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 	}
 }
 func F_koi8r_to_iso(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
 	var v5 int32
 	_ = v5
-	var v6 int32
-	_ = v6
-	var v7 int32
-	_ = v7
 	var v8 int32
 	_ = v8
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v16 int32
-	_ = v16
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	F_check_encoding_conversion_args(m, v8, v9, v10, int32(22), int32(25))
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v5 = Fn13936(m, l0, int32(_a_F_koi8r_to_iso_0), int32(25), int32(22))
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(25), int32(_a_F_koi8r_to_iso_0), base.B2i32(v7 != int32(0)))
-		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
-			return int32(0)
-		} else {
-			return v22
-		}
+		return v5
 	}
 }

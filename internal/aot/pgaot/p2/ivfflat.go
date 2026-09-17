@@ -215,7 +215,7 @@ func F_IvfflatParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 										if v58 != 0 {
 											return
 										} else {
-											F_sequence_close(m, v27, v26)
+											F_relation_close(m, v27, v26)
 											mBase = m.M
 											v60 = m.ExcPending
 											if v60 != 0 {

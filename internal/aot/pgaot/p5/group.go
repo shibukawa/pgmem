@@ -62,43 +62,43 @@ func F_assignSortGroupRef(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v66
 	var v68 int32
 	_ = v68
-	var v72 int32
-	_ = v72
-	var v73 int32
-	_ = v73
-	var v81 int32
-	_ = v81
+	var v74 int32
+	_ = v74
+	var v76 int32
+	_ = v76
 	var v83 int32
 	_ = v83
 	var v85 int32
 	_ = v85
-	var v86 int32
-	_ = v86
-	var v97 int32
-	_ = v97
-	var v98 int32
-	_ = v98
+	var v87 int32
+	_ = v87
+	var v89 int32
+	_ = v89
+	var v99 int32
+	_ = v99
 	var v100 int32
 	_ = v100
-	var v101 int32
-	_ = v101
-	var v104 int32
-	_ = v104
-	var v108 int32
-	_ = v108
-	var v130 int32
-	_ = v130
-	var v134 int32
-	_ = v134
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
+	var v106 int32
+	_ = v106
+	var v110 int32
+	_ = v110
+	var v132 int32
+	_ = v132
+	var v136 int32
+	_ = v136
 	v3 = int32(0)
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	if v12 == v3 {
 		if l1 == int32(0) {
-			v130 = int32(1)
+			v132 = int32(1)
 		} else {
 			v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			if v19 <= int32(0) {
-				v130 = int32(1)
+				v132 = int32(1)
 			} else {
 				v22 = int32(0)
 				if v22 < v19 {
@@ -111,10 +111,10 @@ func F_assignSortGroupRef(m *base.Module, l0 int32, l1 int32) int32 {
 				if int32(4) <= v19 {
 					v33 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					v37 = v28
-					v38 = v3
-					v39 = int32(0)
+					v38 = int32(0)
+					v39 = v3
 					for {
-						v48 = v33 + v38<<(uint(int32(2))%32)
+						v48 = v33 + v39<<(uint(int32(2))%32)
 						v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)+12))
 						v50 = *(*int32)(unsafe.Add(mBase, uint32(v49)+16))
 						v51 = *(*int32)(unsafe.Add(mBase, uint32(v48)+8))
@@ -144,60 +144,85 @@ func F_assignSortGroupRef(m *base.Module, l0 int32, l1 int32) int32 {
 							v64 = v62
 						}
 						v65 = int32(4)
-						v66 = v38 + v65
-						v68 = v39 + v65
+						v66 = v39 + v65
+						v68 = v38 + v65
 						if v68 != v25&int32(2147483644) {
 							v37 = v64
-							v38 = v66
-							v39 = v68
+							v38 = v68
+							v39 = v66
 							continue
 						} else {
 							break
 						}
 						break
 					}
-					v72 = v64
-					v73 = v66
+					if v27 == int32(0) {
+						v110 = v64
+					} else {
+						v74 = v64
+						v76 = v66
+						v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+						v85 = int32(0)
+						v87 = v74
+						v89 = v76
+						for {
+							v99 = *(*int32)(unsafe.Add(mBase, uint32(v83+v89<<(uint(int32(2))%32))))
+							v100 = *(*int32)(unsafe.Add(mBase, uint32(v99)+16))
+							if base.Ui32(v87) < base.Ui32(v100) {
+								v102 = v100
+							} else {
+								v102 = v87
+							}
+							v103 = int32(1)
+							v106 = v85 + v103
+							if v106 != v27 {
+								v85 = v106
+								v87 = v102
+								v89 = v89 + v103
+								continue
+							} else {
+								break
+							}
+							break
+						}
+						v110 = v102
+					}
 				} else {
-					v72 = v28
-					v73 = v3
-				}
-				if v27 != 0 {
-					v81 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-					v83 = int32(0)
-					v85 = v72
-					v86 = v73
+					v74 = v28
+					v76 = v3
+					v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+					v85 = int32(0)
+					v87 = v74
+					v89 = v76
 					for {
-						v97 = *(*int32)(unsafe.Add(mBase, uint32(v81+v86<<(uint(int32(2))%32))))
-						v98 = *(*int32)(unsafe.Add(mBase, uint32(v97)+16))
-						if base.Ui32(v85) < base.Ui32(v98) {
-							v100 = v98
+						v99 = *(*int32)(unsafe.Add(mBase, uint32(v83+v89<<(uint(int32(2))%32))))
+						v100 = *(*int32)(unsafe.Add(mBase, uint32(v99)+16))
+						if base.Ui32(v87) < base.Ui32(v100) {
+							v102 = v100
 						} else {
-							v100 = v85
+							v102 = v87
 						}
-						v101 = int32(1)
-						v104 = v83 + v101
-						if v104 != v27 {
-							v83 = v104
-							v85 = v100
-							v86 = v86 + v101
+						v103 = int32(1)
+						v106 = v85 + v103
+						if v106 != v27 {
+							v85 = v106
+							v87 = v102
+							v89 = v89 + v103
 							continue
 						} else {
 							break
 						}
 						break
 					}
-					v108 = v100
-				} else {
-					v108 = v72
+					v110 = v102
 				}
-				v130 = v108 + int32(1)
+				v132 = v110 + int32(1)
 			}
 		}
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v130
-		v134 = v130
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v132
+		v136 = v132
 	} else {
-		v134 = v12
+		v136 = v12
 	}
-	return v134
+	return v136
 }

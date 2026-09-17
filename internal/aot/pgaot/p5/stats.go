@@ -442,8 +442,8 @@ func F_transformStatsStmt(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v31
 	var v34 int32
 	_ = v34
-	var v41 int32
-	_ = v41
+	var v42 int32
+	_ = v42
 	var v44 int32
 	_ = v44
 	var v48 int32
@@ -574,12 +574,12 @@ L11:
 	}
 L12:
 	;
-	v41 = v4
+	v42 = v4
 	goto L13
 L13:
 	;
 	v44 = *(*int32)(unsafe.Add(mBase, uint32(v31)+12))
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v44+v41<<(uint(int32(2))%32))))
+	v48 = *(*int32)(unsafe.Add(mBase, uint32(v44+v42<<(uint(int32(2))%32))))
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)+8))
 	if v49 != 0 {
 		goto L15
@@ -604,10 +604,10 @@ L16:
 	goto L17
 L17:
 	;
-	v58 = v41 + int32(1)
+	v58 = v42 + int32(1)
 	v59 = *(*int32)(unsafe.Add(mBase, uint32(v31)+4))
 	if v58 < v59 {
-		v41 = v58
+		v42 = v58
 		goto L13
 	} else {
 		goto L20
@@ -649,7 +649,7 @@ L22:
 	}
 L23:
 	;
-	F_sequence_close(m, v18, int32(0))
+	F_relation_close(m, v18, int32(0))
 	mBase = m.M
 	v78 = m.ExcPending
 	if v78 != 0 {

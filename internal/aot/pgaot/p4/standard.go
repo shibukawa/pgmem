@@ -94,32 +94,32 @@ func F_standard_ExecutorRun(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	_ = v111
 	var v116 int64
 	_ = v116
-	var v121 int64
-	_ = v121
-	var v128 int32
-	_ = v128
-	var v134 int32
-	_ = v134
+	var v123 int64
+	_ = v123
+	var v129 int32
+	_ = v129
 	var v135 int32
 	_ = v135
-	var v140 int32
-	_ = v140
+	var v136 int32
+	_ = v136
 	var v141 int32
 	_ = v141
-	var v158 int64
-	_ = v158
+	var v142 int32
+	_ = v142
 	var v159 int64
 	_ = v159
-	var v162 int32
-	_ = v162
-	var v164 int32
-	_ = v164
+	var v160 int64
+	_ = v160
+	var v163 int32
+	_ = v163
 	var v165 int32
 	_ = v165
-	var v166 int64
+	var v166 int32
 	_ = v166
-	var v169 int32
-	_ = v169
+	var v167 int64
+	_ = v167
+	var v170 int32
+	_ = v170
 	v14 = int32(_a_F_standard_ExecutorRun_0)
 	v15 = *(*int32)(unsafe.Add(mBase, _c_F_standard_ExecutorRun[0]))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
@@ -201,13 +201,13 @@ L11:
 	goto L6
 L12:
 	;
-	v158 = *(*int64)(unsafe.Add(mBase, uint32(v17)+120))
-	v159 = *(*int64)(unsafe.Add(mBase, uint32(v17)+112))
-	*(*int64)(unsafe.Add(mBase, uint32(v17)+120)) = v158 + v159
+	v159 = *(*int64)(unsafe.Add(mBase, uint32(v17)+120))
+	v160 = *(*int64)(unsafe.Add(mBase, uint32(v17)+112))
+	*(*int64)(unsafe.Add(mBase, uint32(v17)+120)) = v159 + v160
 	if v39 != 0 {
-		goto L56
+		goto L55
 	} else {
-		goto L57
+		goto L56
 	}
 L13:
 	;
@@ -278,11 +278,11 @@ L22:
 	}
 L23:
 	;
-	v128 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43)+128)))
-	if v128&int32(8) == int32(0) {
-		goto L50
+	v129 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43)+128)))
+	if v129&int32(8) == int32(0) {
+		goto L49
 	} else {
-		goto L51
+		goto L50
 	}
 L24:
 	;
@@ -428,100 +428,92 @@ L46:
 	goto L47
 L47:
 	;
-	v121 = v89 + int64(1)
-	if l2 == int64(0) {
-		v89 = v121
+	v123 = v89 + int64(1)
+	if base.B2i32(l2 == int64(0))|base.B2i32(v123 != l2) != 0 {
+		v89 = v123
 		goto L22
 	} else {
 		goto L48
 	}
 L48:
 	;
-	if l2 != v121 {
-		v89 = v121
-		goto L22
-	} else {
-		goto L49
-	}
+	goto L32
 L49:
 	;
-	goto L32
-L50:
-	;
-	v134 = F_ExecShutdownNode_walker(m, v42, int32(0))
+	v135 = F_ExecShutdownNode_walker(m, v42, int32(0))
 	mBase = m.M
-	v135 = m.ExcPending
-	if v135 != 0 {
+	v136 = m.ExcPending
+	if v136 != 0 {
 		goto L4
 	} else {
-		goto L53
+		goto L52
 	}
-L51:
+L50:
 	;
-	goto L52
-L52:
+	goto L51
+L51:
 	;
 	if v74 == int32(0) {
 		goto L12
 	} else {
-		goto L54
+		goto L53
 	}
+L52:
+	;
+	goto L51
 L53:
 	;
-	goto L52
+	v141 = *(*int32)(unsafe.Add(mBase, _c_F_standard_ExecutorRun[1]))
+	v142 = *(*int32)(unsafe.Add(mBase, uint32(v141)+72))
+	*(*int32)(unsafe.Add(mBase, uint32(v141)+72)) = v142 - int32(1)
+	goto L54
 L54:
 	;
-	v140 = *(*int32)(unsafe.Add(mBase, _c_F_standard_ExecutorRun[1]))
-	v141 = *(*int32)(unsafe.Add(mBase, uint32(v140)+72))
-	*(*int32)(unsafe.Add(mBase, uint32(v140)+72)) = v141 - int32(1)
-	goto L55
+	goto L12
 L55:
 	;
-	goto L12
+	v163 = *(*int32)(unsafe.Add(mBase, uint32(v23)+8))
+	m.T0[v163].(func(*base.Module, int32))(m, v23)
+	mBase = m.M
+	v165 = m.ExcPending
+	if v165 != 0 {
+		goto L4
+	} else {
+		goto L58
+	}
 L56:
 	;
-	v162 = *(*int32)(unsafe.Add(mBase, uint32(v23)+8))
-	m.T0[v162].(func(*base.Module, int32))(m, v23)
-	mBase = m.M
-	v164 = m.ExcPending
-	if v164 != 0 {
-		goto L4
-	} else {
-		goto L59
-	}
+	goto L57
 L57:
 	;
-	goto L58
+	v166 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+	if v166 != 0 {
+		goto L59
+	} else {
+		goto L60
+	}
 L58:
 	;
-	v165 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	if v165 != 0 {
-		goto L60
-	} else {
-		goto L61
-	}
+	goto L57
 L59:
 	;
-	goto L58
-L60:
-	;
-	v166 = *(*int64)(unsafe.Add(mBase, uint32(v17)+112))
-	F_InstrStopNode(m, v165, base.F64_convert_i64_u(v166))
+	v167 = *(*int64)(unsafe.Add(mBase, uint32(v17)+112))
+	F_InstrStopNode(m, v166, base.F64_convert_i64_u(v167))
 	mBase = m.M
-	v169 = m.ExcPending
-	if v169 != 0 {
+	v170 = m.ExcPending
+	if v170 != 0 {
 		goto L4
 	} else {
-		goto L63
+		goto L62
 	}
-L61:
+L60:
 	;
-	goto L62
-L62:
+	goto L61
+L61:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_standard_ExecutorRun[0])) = v15
 	return
-L63:
+L62:
 	;
-	goto L62
+	goto L61
 }

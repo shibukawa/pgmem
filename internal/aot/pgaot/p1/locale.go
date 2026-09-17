@@ -14,89 +14,89 @@ func F_assign_locale_messages(m *base.Module, l0 int32, l1 int32) {
 	_ = v12
 	var v75 int32
 	_ = v75
-	var v87 int32
-	_ = v87
+	var v83 int32
+	_ = v83
+	var v84 int32
+	_ = v84
 	var v88 int32
 	_ = v88
-	var v92 int32
-	_ = v92
-	var v144 int32
-	_ = v144
-	var v152 int32
-	_ = v152
-	var v160 int32
-	_ = v160
-	var v162 int32
-	_ = v162
-	var v164 int32
-	_ = v164
-	var v175 int32
-	_ = v175
+	var v138 int32
+	_ = v138
+	var v146 int32
+	_ = v146
+	var v153 int32
+	_ = v153
+	var v155 int32
+	_ = v155
+	var v157 int32
+	_ = v157
+	var v168 int32
+	_ = v168
+	var v172 int32
+	_ = v172
+	var v177 int32
+	_ = v177
+	var v178 int32
+	_ = v178
 	var v179 int32
 	_ = v179
-	var v184 int32
-	_ = v184
+	var v181 int32
+	_ = v181
 	var v185 int32
 	_ = v185
-	var v186 int32
-	_ = v186
-	var v188 int32
-	_ = v188
+	var v187 int32
+	_ = v187
+	var v191 int32
+	_ = v191
 	var v192 int32
 	_ = v192
-	var v194 int32
-	_ = v194
 	var v198 int32
 	_ = v198
 	var v199 int32
 	_ = v199
-	var v208 int32
-	_ = v208
-	var v209 int32
-	_ = v209
-	var v210 int32
-	_ = v210
+	var v202 int32
+	_ = v202
+	var v203 int32
+	_ = v203
+	var v206 int32
+	_ = v206
 	var v211 int32
 	_ = v211
-	var v214 int32
-	_ = v214
-	var v219 int32
-	_ = v219
-	var v220 int32
-	_ = v220
-	var v224 int32
-	_ = v224
-	var v228 int32
-	_ = v228
+	var v212 int32
+	_ = v212
+	var v216 int32
+	_ = v216
+	var v217 int32
+	_ = v217
+	var v218 int32
+	_ = v218
+	var v223 int32
+	_ = v223
+	var v225 int32
+	_ = v225
+	var v227 int32
+	_ = v227
 	var v229 int32
 	_ = v229
-	var v232 int32
-	_ = v232
+	var v230 int32
+	_ = v230
 	var v234 int32
 	_ = v234
-	var v236 int32
-	_ = v236
-	var v238 int32
-	_ = v238
+	var v235 int32
+	_ = v235
+	var v237 int32
+	_ = v237
 	var v239 int32
 	_ = v239
-	var v243 int32
-	_ = v243
-	var v244 int32
-	_ = v244
-	var v246 int32
-	_ = v246
-	var v248 int32
-	_ = v248
-	var v251 int32
-	_ = v251
+	var v242 int32
+	_ = v242
 	v10 = m.G0
 	v12 = v10 - int32(48)
 	m.G0 = v12
 	goto L3
 L1:
 	;
-	if v144 != 0 {
+	if v138 != 0 {
 		goto L37
 	} else {
 		goto L38
@@ -120,7 +120,7 @@ L7:
 	}
 L20:
 	;
-	if v88 != 0 {
+	if v84 != 0 {
 		goto L25
 	} else {
 		goto L26
@@ -130,7 +130,7 @@ L21:
 	v75 = F___get_locale(m, int32(5), l0)
 	mBase = m.M
 	if v75 == int32(-1) {
-		v144 = int32(0)
+		v138 = int32(0)
 		goto L2
 	} else {
 		goto L24
@@ -140,29 +140,29 @@ L22:
 	goto L23
 L23:
 	;
-	v87 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[0]))
-	v88 = v87
+	v83 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[0]))
+	v84 = v83
 	goto L20
 L24:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[0])) = v75
-	v88 = v75
+	v84 = v75
 	goto L20
 L25:
 	;
-	v92 = v88 + int32(8)
+	v88 = v84 + int32(8)
 	goto L27
 L26:
 	;
-	v92 = int32(_a_F_assign_locale_messages_0)
+	v88 = int32(_a_F_assign_locale_messages_0)
 	goto L27
 L27:
 	;
-	v144 = v92
+	v138 = v88
 	goto L2
 L37:
 	;
-	v152 = int32(_a_F_assign_locale_messages_1)
+	v146 = int32(_a_F_assign_locale_messages_1)
 	goto L45
 L38:
 	;
@@ -175,16 +175,16 @@ L40:
 	goto L39
 L41:
 	;
-	v184 = F___memcpy(m, v179, v152, v162)
+	v177 = F___memcpy(m, v172, v146, v155)
 	mBase = m.M
-	v185 = v179 + v162
-	v186 = int32(61)
-	*(*uint8)(unsafe.Add(mBase, uint32(v185))) = uint8(v186)
-	v188 = int32(1)
-	v192 = F___memcpy(m, v185+v188, v144, v175+v188)
+	v178 = v172 + v155
+	v179 = int32(61)
+	*(*uint8)(unsafe.Add(mBase, uint32(v178))) = uint8(v179)
+	v181 = int32(1)
+	v185 = F___memcpy(m, v178+v181, v138, v168+v181)
 	mBase = m.M
-	v194 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[1]))
-	if v194 == int32(0) {
+	v187 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[1]))
+	if v187 == int32(0) {
 		goto L56
 	} else {
 		goto L57
@@ -201,18 +201,18 @@ L44:
 	goto L42
 L45:
 	;
-	v160 = F___strchrnul(m, v152, int32(61))
+	v153 = F___strchrnul(m, v146, int32(61))
 	mBase = m.M
-	if v160 == v152 {
+	if v153 == v146 {
 		goto L44
 	} else {
 		goto L46
 	}
 L46:
 	;
-	v162 = v160 - v152
-	v164 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v162)+uint32(_c_F_assign_locale_messages[3]))))
-	if v164 == int32(0) {
+	v155 = v153 - v146
+	v157 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v155)+uint32(_c_F_assign_locale_messages[3]))))
+	if v157 == int32(0) {
 		goto L43
 	} else {
 		goto L47
@@ -222,11 +222,11 @@ L47:
 	goto L44
 L48:
 	;
-	v175 = F_strlen(m, v144)
+	v168 = F_strlen(m, v138)
 	mBase = m.M
-	v179 = F_emscripten_builtin_malloc(m, v162+v175+int32(2))
+	v172 = F_emscripten_builtin_malloc(m, v155+v168+int32(2))
 	mBase = m.M
-	if v179 != 0 {
+	if v172 != 0 {
 		goto L41
 	} else {
 		goto L51
@@ -239,64 +239,64 @@ L52:
 	goto L40
 L53:
 	;
-	v232 = v228 << (uint(int32(2)) % 32)
-	v234 = v232 + int32(8)
-	v236 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[4]))
-	if v236 == v229 {
+	v223 = v218 << (uint(int32(2)) % 32)
+	v225 = v223 + int32(8)
+	v227 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[4]))
+	if v217 == v227 {
 		goto L68
 	} else {
 		goto L69
 	}
 L54:
 	;
-	v208 = int32(0)
-	v209 = v194
-	v210 = v198
+	v198 = v187
+	v199 = int32(0)
+	v202 = v191
 	goto L60
 L55:
 	;
-	v228 = int32(0)
-	v229 = v199
+	v217 = v192
+	v218 = int32(0)
 	goto L53
 L56:
 	;
-	v199 = int32(0)
+	v192 = int32(0)
 	goto L55
 L57:
 	;
 	goto L58
 L58:
 	;
-	v198 = *(*int32)(unsafe.Add(mBase, uint32(v194)))
-	if v198 != 0 {
+	v191 = *(*int32)(unsafe.Add(mBase, uint32(v187)))
+	if v191 != 0 {
 		goto L54
 	} else {
 		goto L59
 	}
 L59:
 	;
-	v199 = v194
+	v192 = v187
 	goto L55
 L60:
 	;
-	v211 = F_strncmp(m, v179, v210, v162+int32(1))
+	v203 = F_strncmp(m, v172, v202, v155+int32(1))
 	mBase = m.M
-	if v211 == int32(0) {
+	if v203 == int32(0) {
 		goto L62
 	} else {
 		goto L63
 	}
 L61:
 	;
-	v224 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[1]))
-	v228 = v219
-	v229 = v224
+	v216 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[1]))
+	v217 = v216
+	v218 = v211
 	goto L53
 L62:
 	;
-	v214 = *(*int32)(unsafe.Add(mBase, uint32(v209)))
-	*(*int32)(unsafe.Add(mBase, uint32(v209))) = v179
-	F___env_rm_add(m, v214, v179)
+	v206 = *(*int32)(unsafe.Add(mBase, uint32(v198)))
+	*(*int32)(unsafe.Add(mBase, uint32(v198))) = v172
+	F___env_rm_add(m, v206, v172)
 	mBase = m.M
 	goto L52
 L63:
@@ -304,12 +304,12 @@ L63:
 	goto L64
 L64:
 	;
-	v219 = v208 + int32(1)
-	v220 = *(*int32)(unsafe.Add(mBase, uint32(v209)+4))
-	if v220 != 0 {
-		v208 = v219
-		v209 = v209 + int32(4)
-		v210 = v220
+	v211 = v199 + int32(1)
+	v212 = *(*int32)(unsafe.Add(mBase, uint32(v198)+4))
+	if v212 != 0 {
+		v198 = v198 + int32(4)
+		v199 = v211
+		v202 = v212
 		goto L60
 	} else {
 		goto L65
@@ -319,27 +319,27 @@ L65:
 	goto L61
 L66:
 	;
-	F_emscripten_builtin_free(m, v179)
+	F_emscripten_builtin_free(m, v172)
 	mBase = m.M
 	goto L52
 L67:
 	;
-	v251 = v248 + v228<<(uint(int32(2))%32)
-	*(*int32)(unsafe.Add(mBase, uint32(v251))) = v179
-	*(*int32)(unsafe.Add(mBase, uint32(v251)+4)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[1])) = v248
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[4])) = v248
-	if v179 != 0 {
+	v242 = v239 + v218<<(uint(int32(2))%32)
+	*(*int32)(unsafe.Add(mBase, uint32(v242))) = v172
+	*(*int32)(unsafe.Add(mBase, uint32(v242)+4)) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[1])) = v239
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[4])) = v239
+	if v172 != 0 {
 		goto L76
 	} else {
 		goto L77
 	}
 L68:
 	;
-	v238 = F_emscripten_builtin_realloc(m, v236, v234)
+	v229 = F_emscripten_builtin_realloc(m, v227, v225)
 	mBase = m.M
-	if v238 != 0 {
-		v248 = v238
+	if v229 != 0 {
+		v239 = v229
 		goto L67
 	} else {
 		goto L71
@@ -349,9 +349,9 @@ L69:
 	goto L70
 L70:
 	;
-	v239 = F_emscripten_builtin_malloc(m, v234)
+	v230 = F_emscripten_builtin_malloc(m, v225)
 	mBase = m.M
-	if v239 == int32(0) {
+	if v230 == int32(0) {
 		goto L66
 	} else {
 		goto L72
@@ -361,15 +361,15 @@ L71:
 	goto L66
 L72:
 	;
-	if v228 != 0 {
+	if v218 != 0 {
 		goto L73
 	} else {
 		goto L74
 	}
 L73:
 	;
-	v243 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[1]))
-	v244 = F___memcpy(m, v239, v243, v232)
+	v234 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[1]))
+	v235 = F___memcpy(m, v230, v234, v223)
 	mBase = m.M
 	goto L75
 L74:
@@ -377,14 +377,14 @@ L74:
 	goto L75
 L75:
 	;
-	v246 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[4]))
-	F_emscripten_builtin_free(m, v246)
+	v237 = *(*int32)(unsafe.Add(mBase, _c_F_assign_locale_messages[4]))
+	F_emscripten_builtin_free(m, v237)
 	mBase = m.M
-	v248 = v239
+	v239 = v230
 	goto L67
 L76:
 	;
-	F___env_rm_add(m, int32(0), v179)
+	F___env_rm_add(m, int32(0), v172)
 	mBase = m.M
 	goto L78
 L77:

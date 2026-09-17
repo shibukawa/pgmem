@@ -62,10 +62,10 @@ func F_queue_listen(m *base.Module, l0 int32, l1 int32) {
 	_ = v67
 	var v68 int32
 	_ = v68
-	var v69 int32
-	_ = v69
-	var v71 int32
-	_ = v71
+	var v70 int32
+	_ = v70
+	var v72 int32
+	_ = v72
 	var v75 int32
 	_ = v75
 	var v80 int32
@@ -240,12 +240,12 @@ L18:
 	*(*int32)(unsafe.Add(mBase, uint32(v65))) = v64
 	v67 = int32(4)
 	v68 = v65 + v67
-	v69 = *(*int32)(unsafe.Add(mBase, uint32(v63)+4))
-	v71 = v63 + v67
+	v70 = v63 + v67
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(v63)+4))
 	v75 = int32(-2139062144)
-	if (v69|(int32(16843008)-v69))&v75 == v75 {
-		v63 = v71
-		v64 = v69
+	if (int32(16843008)-v72|v72)&v75 == v75 {
+		v63 = v70
+		v64 = v72
 		v65 = v68
 		goto L18
 	} else {
@@ -253,8 +253,8 @@ L18:
 	}
 L19:
 	;
-	v80 = v71
-	v81 = v69
+	v80 = v70
+	v81 = v72
 	v82 = v68
 	goto L6
 L20:
@@ -604,84 +604,87 @@ func F_quickdie(m *base.Module, l0 int32) {
 func F_quote_qualified_identifier(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
-	var v13 int32
-	_ = v13
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
 	var v14 int32
 	_ = v14
 	var v15 int32
 	_ = v15
-	var v21 int32
-	_ = v21
+	var v16 int32
+	_ = v16
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
 	var v24 int32
 	_ = v24
-	var v25 int32
-	_ = v25
+	var v26 int32
+	_ = v26
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
-	v4 = m.G0
-	v6 = v4 - int32(32)
-	m.G0 = v6
-	F_initStringInfo(m, v6+int32(16))
+	v5 = m.G0
+	v7 = v5 - int32(32)
+	m.G0 = v7
+	v10 = v7 + int32(16)
+	F_initStringInfo(m, v10)
 	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	v14 = m.ExcPending
+	if v14 != 0 {
 		return int32(0)
 	} else {
 		if l0 != 0 {
-			v14 = F_quote_identifier(m, l0)
+			v15 = F_quote_identifier(m, l0)
 			mBase = m.M
-			v15 = m.ExcPending
-			if v15 != 0 {
+			v16 = m.ExcPending
+			if v16 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v14
-				F_appendStringInfo(m, v6+int32(16), int32(_a_F_quote_qualified_identifier_0), v6)
+				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v15
+				F_appendStringInfo(m, v10, int32(_a_F_quote_qualified_identifier_0), v7)
 				mBase = m.M
-				v21 = m.ExcPending
-				if v21 != 0 {
+				v20 = m.ExcPending
+				if v20 != 0 {
 					return int32(0)
 				} else {
-					v24 = F_quote_identifier(m, l1)
+					v23 = F_quote_identifier(m, l1)
 					mBase = m.M
-					v25 = m.ExcPending
-					if v25 != 0 {
+					v24 = m.ExcPending
+					if v24 != 0 {
 						return int32(0)
 					} else {
-						F_appendStringInfoString(m, v6+int32(16), v24)
+						F_appendStringInfoString(m, v7+int32(16), v23)
 						mBase = m.M
-						v27 = m.ExcPending
-						if v27 != 0 {
+						v26 = m.ExcPending
+						if v26 != 0 {
 							return int32(0)
 						} else {
-							v28 = *(*int32)(unsafe.Add(mBase, uint32(v6)+16))
-							m.G0 = v6 + int32(32)
-							return v28
+							v27 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+							m.G0 = v7 + int32(32)
+							return v27
 						}
 					}
 				}
 			}
 		} else {
-			v24 = F_quote_identifier(m, l1)
+			v23 = F_quote_identifier(m, l1)
 			mBase = m.M
-			v25 = m.ExcPending
-			if v25 != 0 {
+			v24 = m.ExcPending
+			if v24 != 0 {
 				return int32(0)
 			} else {
-				F_appendStringInfoString(m, v6+int32(16), v24)
+				F_appendStringInfoString(m, v7+int32(16), v23)
 				mBase = m.M
-				v27 = m.ExcPending
-				if v27 != 0 {
+				v26 = m.ExcPending
+				if v26 != 0 {
 					return int32(0)
 				} else {
-					v28 = *(*int32)(unsafe.Add(mBase, uint32(v6)+16))
-					m.G0 = v6 + int32(32)
-					return v28
+					v27 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+					m.G0 = v7 + int32(32)
+					return v27
 				}
 			}
 		}

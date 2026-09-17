@@ -8,38 +8,38 @@ import (
 func F_pgaio_io_get_op_name(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
-	if base.Ui32(v3) <= base.Ui32(int32(2)) {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(v3<<(uint(int32(2))%32))+uint32(_c_F_pgaio_io_get_op_name[0])))
-		v11 = v10
+	var v2 int32
+	_ = v2
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	v2 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
+	if base.Ui32(v2) <= base.Ui32(int32(2)) {
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(v2<<(uint(int32(2))%32))+uint32(_c_F_pgaio_io_get_op_name[0])))
+		v9 = v7
 	} else {
-		v11 = int32(0)
+		v9 = int32(0)
 	}
-	return v11
+	return v9
 }
 func F_pgaio_io_get_state_name(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if base.Ui32(v3) <= base.Ui32(int32(7)) {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(v3<<(uint(int32(2))%32))+uint32(_c_F_pgaio_io_get_state_name[0])))
-		v11 = v10
+	var v2 int32
+	_ = v2
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	v2 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	if base.Ui32(v2) <= base.Ui32(int32(7)) {
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(v2<<(uint(int32(2))%32))+uint32(_c_F_pgaio_io_get_state_name[0])))
+		v9 = v7
 	} else {
-		v11 = int32(0)
+		v9 = int32(0)
 	}
-	return v11
+	return v9
 }
 func F_pgaio_submit_staged(m *base.Module) {
 	mBase := m.M

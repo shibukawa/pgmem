@@ -36,26 +36,26 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 	_ = v39
 	var v46 int32
 	_ = v46
-	var v60 int32
-	_ = v60
-	var v62 int32
-	_ = v62
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
-	var v69 int32
-	_ = v69
-	var v72 int32
-	_ = v72
-	var v76 int32
-	_ = v76
-	var v81 int32
-	_ = v81
-	var v85 int32
-	_ = v85
-	var v90 int32
-	_ = v90
+	var v59 int32
+	_ = v59
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v68 int32
+	_ = v68
+	var v71 int32
+	_ = v71
+	var v75 int32
+	_ = v75
+	var v80 int32
+	_ = v80
+	var v84 int32
+	_ = v84
+	var v89 int32
+	_ = v89
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+92)))
 	if v4 != int32(1) {
 		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
@@ -95,23 +95,23 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 				}
 			} else {
 			}
-			v60 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1]))
-			if v60 != 0 {
-				v62 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2]))
-				v67 = v62
+			v59 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1]))
+			if v59 != 0 {
+				v61 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2]))
+				v66 = v61
 			} else {
-				v64 = int32(_a_F_SaveCachedPlan_0)
-				*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1])) = v64
-				v67 = v64
+				v63 = int32(_a_F_SaveCachedPlan_0)
+				*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1])) = v63
+				v66 = v63
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v67
-			v69 = int32(_a_F_SaveCachedPlan_0)
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v69
-			v72 = l0 + int32(100)
-			*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = v72
-			*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2])) = v72
-			v76 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(l0)+94)) = uint8(v76)
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v66
+			v68 = int32(_a_F_SaveCachedPlan_0)
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v68
+			v71 = l0 + int32(100)
+			*(*int32)(unsafe.Add(mBase, uint32(v66)+4)) = v71
+			*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2])) = v71
+			v75 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(l0)+94)) = uint8(v75)
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+88)) = int32(0)
@@ -154,23 +154,23 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 					}
 				} else {
 				}
-				v60 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1]))
-				if v60 != 0 {
-					v62 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2]))
-					v67 = v62
+				v59 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1]))
+				if v59 != 0 {
+					v61 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2]))
+					v66 = v61
 				} else {
-					v64 = int32(_a_F_SaveCachedPlan_0)
-					*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1])) = v64
-					v67 = v64
+					v63 = int32(_a_F_SaveCachedPlan_0)
+					*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1])) = v63
+					v66 = v63
 				}
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v67
-				v69 = int32(_a_F_SaveCachedPlan_0)
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v69
-				v72 = l0 + int32(100)
-				*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = v72
-				*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2])) = v72
-				v76 = int32(1)
-				*(*uint8)(unsafe.Add(mBase, uint32(l0)+94)) = uint8(v76)
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v66
+				v68 = int32(_a_F_SaveCachedPlan_0)
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v68
+				v71 = l0 + int32(100)
+				*(*int32)(unsafe.Add(mBase, uint32(v66)+4)) = v71
+				*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2])) = v71
+				v75 = int32(1)
+				*(*uint8)(unsafe.Add(mBase, uint32(l0)+94)) = uint8(v75)
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(0)
@@ -211,23 +211,23 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 						}
 					} else {
 					}
-					v60 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1]))
-					if v60 != 0 {
-						v62 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2]))
-						v67 = v62
+					v59 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1]))
+					if v59 != 0 {
+						v61 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2]))
+						v66 = v61
 					} else {
-						v64 = int32(_a_F_SaveCachedPlan_0)
-						*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1])) = v64
-						v67 = v64
+						v63 = int32(_a_F_SaveCachedPlan_0)
+						*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1])) = v63
+						v66 = v63
 					}
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v67
-					v69 = int32(_a_F_SaveCachedPlan_0)
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v69
-					v72 = l0 + int32(100)
-					*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = v72
-					*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2])) = v72
-					v76 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+94)) = uint8(v76)
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v66
+					v68 = int32(_a_F_SaveCachedPlan_0)
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v68
+					v71 = l0 + int32(100)
+					*(*int32)(unsafe.Add(mBase, uint32(v66)+4)) = v71
+					*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2])) = v71
+					v75 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(l0)+94)) = uint8(v75)
 					return
 				} else {
 					v19 = *(*int32)(unsafe.Add(mBase, uint32(v7)+32))
@@ -272,23 +272,23 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 							}
 						} else {
 						}
-						v60 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1]))
-						if v60 != 0 {
-							v62 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2]))
-							v67 = v62
+						v59 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1]))
+						if v59 != 0 {
+							v61 = *(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2]))
+							v66 = v61
 						} else {
-							v64 = int32(_a_F_SaveCachedPlan_0)
-							*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1])) = v64
-							v67 = v64
+							v63 = int32(_a_F_SaveCachedPlan_0)
+							*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[1])) = v63
+							v66 = v63
 						}
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v67
-						v69 = int32(_a_F_SaveCachedPlan_0)
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v69
-						v72 = l0 + int32(100)
-						*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = v72
-						*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2])) = v72
-						v76 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(l0)+94)) = uint8(v76)
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v66
+						v68 = int32(_a_F_SaveCachedPlan_0)
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v68
+						v71 = l0 + int32(100)
+						*(*int32)(unsafe.Add(mBase, uint32(v66)+4)) = v71
+						*(*int32)(unsafe.Add(mBase, _c_F_SaveCachedPlan[2])) = v71
+						v75 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(l0)+94)) = uint8(v75)
 						return
 					}
 				}
@@ -297,20 +297,20 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v81 = m.ExcPending
-		if v81 != 0 {
+		v80 = m.ExcPending
+		if v80 != 0 {
 			return
 		} else {
 			F_errmsg_internal(m, int32(_a_F_SaveCachedPlan_1), int32(0))
 			mBase = m.M
-			v85 = m.ExcPending
-			if v85 != 0 {
+			v84 = m.ExcPending
+			if v84 != 0 {
 				return
 			} else {
 				F_errfinish(m, int32(_a_F_SaveCachedPlan_2), int32(539), int32(_a_F_SaveCachedPlan_3))
 				mBase = m.M
-				v90 = m.ExcPending
-				if v90 != 0 {
+				v89 = m.ExcPending
+				if v89 != 0 {
 					return
 				} else {
 					base.Wasm_trap_unreachable()

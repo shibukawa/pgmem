@@ -132,52 +132,52 @@ func F_ExecJustHashOuterVarStrict(m *base.Module, l0 int32, l1 int32, l2 int32) 
 func F_ExecJustInnerVar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v5 int32
+	_ = v5
 	var v6 int32
 	_ = v6
-	var v7 int32
-	_ = v7
+	var v8 int32
+	_ = v8
 	var v9 int32
 	_ = v9
 	var v10 int32
 	_ = v10
-	var v11 int32
-	_ = v11
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
-	var v17 int32
-	_ = v17
-	var v19 int32
-	_ = v19
-	var v21 int32
-	_ = v21
-	var v25 int32
-	_ = v25
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+56))
-	v9 = v7 + int32(1)
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v11 = int32(*(*int16)(unsafe.Add(mBase, uint32(v10)+6)))
-	if v11 < v9 {
-		F_slot_getsomeattrs_int(m, v10, v9)
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v24 int32
+	_ = v24
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)+56))
+	v8 = v6 + int32(1)
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	v10 = int32(*(*int16)(unsafe.Add(mBase, uint32(v9)+6)))
+	if v10 < v8 {
+		F_slot_getsomeattrs_int(m, v9, v8)
 		mBase = m.M
-		v16 = m.ExcPending
-		if v16 != 0 {
+		v15 = m.ExcPending
+		if v15 != 0 {
 			return int32(0)
 		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
-			v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17+v7))))
-			*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v19)
-			v21 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-			v25 = *(*int32)(unsafe.Add(mBase, uint32(v21+v7<<(uint(int32(2))%32))))
-			return v25
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v9)+20))
+			v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16+v6))))
+			*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v18)
+			v20 = *(*int32)(unsafe.Add(mBase, uint32(v9)+16))
+			v24 = *(*int32)(unsafe.Add(mBase, uint32(v20+v6<<(uint(int32(2))%32))))
+			return v24
 		}
 	} else {
-		v17 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
-		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17+v7))))
-		*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v19)
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-		v25 = *(*int32)(unsafe.Add(mBase, uint32(v21+v7<<(uint(int32(2))%32))))
-		return v25
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(v9)+20))
+		v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16+v6))))
+		*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v18)
+		v20 = *(*int32)(unsafe.Add(mBase, uint32(v9)+16))
+		v24 = *(*int32)(unsafe.Add(mBase, uint32(v20+v6<<(uint(int32(2))%32))))
+		return v24
 	}
 }
 func F_ExecJustScanVarVirt(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

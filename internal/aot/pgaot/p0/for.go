@@ -242,8 +242,8 @@ func F_WaitForParallelWorkersToFinish(m *base.Module, l0 int32) {
 	_ = v27
 	var v30 int32
 	_ = v30
-	var v33 int32
-	_ = v33
+	var v32 int32
+	_ = v32
 	var v39 int32
 	_ = v39
 	var v44 int32
@@ -377,7 +377,7 @@ L10:
 	v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	v27 = int32(0)
 	v30 = v27
-	v33 = v27
+	v32 = v27
 	goto L12
 L11:
 	;
@@ -410,14 +410,14 @@ L14:
 	v49 = v30 + int32(1)
 	if v49 != v23 {
 		v30 = v49
-		v33 = v47
+		v32 = v47
 		goto L12
 	} else {
 		goto L19
 	}
 L15:
 	;
-	v47 = v33 + int32(1)
+	v47 = v32 + int32(1)
 	goto L14
 L16:
 	;
@@ -433,7 +433,7 @@ L17:
 	}
 L18:
 	;
-	v47 = v33
+	v47 = v32
 	goto L14
 L19:
 	;

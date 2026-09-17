@@ -5,18 +5,12 @@ import (
 	"unsafe"
 )
 
-func F_GetCommandTagNameAndLen(m *base.Module, l0 int32, l1 int32) int32 {
+func F_GetCommandTagNameAndLen(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v7 int32
-	_ = v7
-	var v11 int32
-	_ = v11
-	v4 = l0 << (uint(int32(3)) % 32)
-	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+uint32(_c_F_GetCommandTagNameAndLen[0]))))
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v7
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v4)+uint32(_c_F_GetCommandTagNameAndLen[1])))
-	return v11
+	var v5 int32
+	_ = v5
+	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0<<(uint(int32(3))%32))+uint32(_c_F_GetCommandTagNameAndLen[0]))))
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v5
+	return
 }

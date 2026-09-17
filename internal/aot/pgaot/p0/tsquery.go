@@ -8,57 +8,55 @@ import (
 func F_tsquery_requires_match(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
-	var v11 int32
-	_ = v11
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
 	var v12 int32
 	_ = v12
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v32 int32
-	_ = v32
-	var v36 int32
-	_ = v36
-	var v37 int32
-	_ = v37
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
 	var v44 int32
 	_ = v44
 	var v45 int32
 	_ = v45
-	var v49 int32
-	_ = v49
-	var v58 int32
-	_ = v58
-	var v59 int32
-	_ = v59
-	var v63 int32
-	_ = v63
-	var v68 int32
-	_ = v68
-	v4 = m.G0
-	v6 = v4 - int32(16)
-	m.G0 = v6
+	var v51 int32
+	_ = v51
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v66 int32
+	_ = v66
+	var v71 int32
+	_ = v71
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
 	F_check_stack_depth(m)
 	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
+	v12 = m.ExcPending
+	if v12 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -68,8 +66,8 @@ L1:
 	return int32(0)
 L2:
 	;
-	v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v12 == int32(1) {
+	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	if v13 == int32(1) {
 		goto L5
 	} else {
 		goto L6
@@ -78,34 +76,34 @@ L3:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v58 = m.ExcPending
-	if v58 != 0 {
+	v61 = m.ExcPending
+	if v61 != 0 {
 		goto L1
 	} else {
 		goto L19
 	}
 L4:
 	;
-	m.G0 = v6 + int32(16)
-	return v49
+	m.G0 = v7 + int32(16)
+	return v51
 L5:
 	;
-	v49 = int32(1)
+	v51 = int32(1)
 	goto L4
 L6:
 	;
 	goto L7
 L7:
 	;
-	v16 = l0
+	v17 = l0
 	goto L8
 L8:
 	;
-	v19 = int32(0)
-	v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+1)))
-	switch v20 - int32(1) {
+	v21 = int32(0)
+	v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+1)))
+	switch v22 - int32(1) {
 	case 0:
-		v49 = v19
+		v51 = v21
 		goto L4
 	case 1, 3:
 		goto L12
@@ -116,55 +114,55 @@ L8:
 	}
 L9:
 	;
-	v49 = v42
+	v51 = v45
 	goto L4
 L10:
 	;
 	F_check_stack_depth(m)
 	mBase = m.M
-	v41 = m.ExcPending
-	if v41 != 0 {
+	v43 = m.ExcPending
+	if v43 != 0 {
 		goto L1
 	} else {
 		goto L17
 	}
 L11:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
-	v36 = F_tsquery_requires_match(m, v16+v32*int32(12))
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	v38 = F_tsquery_requires_match(m, v17+v34*int32(12))
 	mBase = m.M
-	v37 = m.ExcPending
-	if v37 != 0 {
+	v39 = m.ExcPending
+	if v39 != 0 {
 		goto L1
 	} else {
 		goto L15
 	}
 L12:
 	;
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
-	v27 = F_tsquery_requires_match(m, v16+v23*int32(12))
+	v25 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	v29 = F_tsquery_requires_match(m, v17+v25*int32(12))
 	mBase = m.M
-	v28 = m.ExcPending
-	if v28 != 0 {
+	v30 = m.ExcPending
+	if v30 != 0 {
 		goto L1
 	} else {
 		goto L13
 	}
 L13:
 	;
-	if v27 == int32(0) {
+	if v29 == int32(0) {
 		goto L10
 	} else {
 		goto L14
 	}
 L14:
 	;
-	v49 = int32(1)
+	v51 = int32(1)
 	goto L4
 L15:
 	;
-	if v36 == int32(0) {
-		v49 = v19
+	if v38 == int32(0) {
+		v51 = v21
 		goto L4
 	} else {
 		goto L16
@@ -174,11 +172,10 @@ L16:
 	goto L10
 L17:
 	;
-	v42 = int32(1)
-	v44 = v16 + int32(12)
-	v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44))))
-	if v45 != v42 {
-		v16 = v44
+	v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+12)))
+	v45 = int32(1)
+	if v44 != v45 {
+		v17 = v17 + int32(12)
 		goto L8
 	} else {
 		goto L18
@@ -188,12 +185,12 @@ L18:
 	goto L9
 L19:
 	;
-	v59 = int32(*(*int8)(unsafe.Add(mBase, uint32(v16)+1)))
-	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v59
-	F_errmsg_internal(m, int32(_a_F_tsquery_requires_match_0), v6)
+	v62 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+1)))
+	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v62
+	F_errmsg_internal(m, int32(_a_F_tsquery_requires_match_0), v7)
 	mBase = m.M
-	v63 = m.ExcPending
-	if v63 != 0 {
+	v66 = m.ExcPending
+	if v66 != 0 {
 		goto L1
 	} else {
 		goto L20
@@ -202,8 +199,8 @@ L20:
 	;
 	F_errfinish(m, int32(_a_F_tsquery_requires_match_1), int32(2195), int32(_a_F_tsquery_requires_match_2))
 	mBase = m.M
-	v68 = m.ExcPending
-	if v68 != 0 {
+	v71 = m.ExcPending
+	if v71 != 0 {
 		goto L1
 	} else {
 		goto L21

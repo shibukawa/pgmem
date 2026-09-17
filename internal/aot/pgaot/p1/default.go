@@ -240,12 +240,12 @@ func F_SetDefaultACL(m *base.Module, l0 int32) {
 	_ = v335
 	var v339 int32
 	_ = v339
-	var v350 int32
-	_ = v350
-	var v357 int32
-	_ = v357
-	var v359 int32
-	_ = v359
+	var v352 int32
+	_ = v352
+	var v360 int32
+	_ = v360
+	var v362 int32
+	_ = v362
 	v12 = m.G0
 	v14 = v12 - int32(112)
 	m.G0 = v14
@@ -663,10 +663,10 @@ L51:
 	}
 L52:
 	;
-	F_sequence_close(m, v19, int32(3))
+	F_relation_close(m, v19, int32(3))
 	mBase = m.M
-	v357 = m.ExcPending
-	if v357 != 0 {
+	v360 = m.ExcPending
+	if v360 != 0 {
 		goto L1
 	} else {
 		goto L101
@@ -675,8 +675,8 @@ L53:
 	;
 	F_ReleaseCatCache(m, v122)
 	mBase = m.M
-	v350 = m.ExcPending
-	if v350 != 0 {
+	v352 = m.ExcPending
+	if v352 != 0 {
 		goto L1
 	} else {
 		goto L100
@@ -1044,8 +1044,8 @@ L101:
 	;
 	F_CommandCounterIncrement(m)
 	mBase = m.M
-	v359 = m.ExcPending
-	if v359 != 0 {
+	v362 = m.ExcPending
+	if v362 != 0 {
 		goto L1
 	} else {
 		goto L102

@@ -843,12 +843,12 @@ func F_SlruSelectLRUPage(m *base.Module, l0 int32, l1 int64) int32 {
 	_ = v90
 	var v93 int32
 	_ = v93
+	var v94 int32
+	_ = v94
 	var v95 int32
 	_ = v95
-	var v96 int32
-	_ = v96
-	var v99 int32
-	_ = v99
+	var v98 int32
+	_ = v98
 	var v102 int64
 	_ = v102
 	var v103 int64
@@ -948,9 +948,9 @@ L5:
 	v84 = int32(0)
 	v90 = v84
 	v93 = v40
+	v94 = v83
 	v95 = v83
-	v96 = v83
-	v99 = v84
+	v98 = v84
 	v102 = v82
 	v103 = v82
 	goto L11
@@ -1034,9 +1034,9 @@ L18:
 	*(*int64)(unsafe.Add(mBase, uint32(v18)+48)) = v126
 	if v125 == v126 {
 		v146 = v90
-		v147 = v95
-		v148 = v96
-		v149 = v99
+		v147 = v94
+		v148 = v95
+		v149 = v98
 		v150 = v102
 		v151 = v103
 		goto L19
@@ -1049,9 +1049,9 @@ L19:
 	if v153 < v42 {
 		v90 = v146
 		v93 = v153
-		v95 = v147
-		v96 = v148
-		v99 = v149
+		v94 = v147
+		v95 = v148
+		v98 = v149
 		v102 = v150
 		v103 = v151
 		goto L11
@@ -1069,7 +1069,7 @@ L20:
 	}
 L21:
 	;
-	if v120 <= v95 {
+	if v120 <= v94 {
 		goto L24
 	} else {
 		goto L25
@@ -1079,18 +1079,18 @@ L22:
 	goto L23
 L23:
 	;
-	if v120 <= v96 {
+	if v120 <= v95 {
 		goto L29
 	} else {
 		goto L30
 	}
 L24:
 	;
-	if v120 != v95 {
+	if v120 != v94 {
 		v146 = v90
-		v147 = v95
-		v148 = v96
-		v149 = v99
+		v147 = v94
+		v148 = v95
+		v149 = v98
 		v150 = v102
 		v151 = v103
 		goto L19
@@ -1104,8 +1104,8 @@ L26:
 	;
 	v146 = v93
 	v147 = v120
-	v148 = v96
-	v149 = v99
+	v148 = v95
+	v149 = v98
 	v150 = v125
 	v151 = v103
 	goto L19
@@ -1116,9 +1116,9 @@ L27:
 	mBase = m.M
 	if v137 == int32(0) {
 		v146 = v90
-		v147 = v95
-		v148 = v96
-		v149 = v99
+		v147 = v94
+		v148 = v95
+		v149 = v98
 		v150 = v102
 		v151 = v103
 		goto L19
@@ -1130,11 +1130,11 @@ L28:
 	goto L26
 L29:
 	;
-	if v120 != v96 {
+	if v120 != v95 {
 		v146 = v90
-		v147 = v95
-		v148 = v96
-		v149 = v99
+		v147 = v94
+		v148 = v95
+		v149 = v98
 		v150 = v102
 		v151 = v103
 		goto L19
@@ -1147,7 +1147,7 @@ L30:
 L31:
 	;
 	v146 = v90
-	v147 = v95
+	v147 = v94
 	v148 = v120
 	v149 = v93
 	v150 = v102
@@ -1160,9 +1160,9 @@ L32:
 	mBase = m.M
 	if v143 == int32(0) {
 		v146 = v90
-		v147 = v95
-		v148 = v96
-		v149 = v99
+		v147 = v94
+		v148 = v95
+		v149 = v98
 		v150 = v102
 		v151 = v103
 		goto L19

@@ -12,8 +12,8 @@ func F_AcquireExecutorLocks(m *base.Module, l0 int32, l1 int32) {
 	_ = v3
 	var v10 int32
 	_ = v10
-	var v17 int32
-	_ = v17
+	var v18 int32
+	_ = v18
 	var v20 int32
 	_ = v20
 	var v24 int32
@@ -54,8 +54,8 @@ func F_AcquireExecutorLocks(m *base.Module, l0 int32, l1 int32) {
 	_ = v62
 	var v63 int32
 	_ = v63
-	var v68 int32
-	_ = v68
+	var v70 int32
+	_ = v70
 	var v73 int32
 	_ = v73
 	var v77 int32
@@ -99,12 +99,12 @@ L2:
 	}
 L3:
 	;
-	v17 = v3
+	v18 = v3
 	goto L4
 L4:
 	;
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(v20+v17<<(uint(int32(2))%32))))
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(v20+v18<<(uint(int32(2))%32))))
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)+4))
 	if v25 == int32(6) {
 		goto L7
@@ -116,10 +116,10 @@ L5:
 	goto L1
 L6:
 	;
-	v102 = v17 + int32(1)
+	v102 = v18 + int32(1)
 	v103 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if v102 < v103 {
-		v17 = v102
+		v18 = v102
 		goto L4
 	} else {
 		goto L41
@@ -250,12 +250,12 @@ L27:
 	}
 L28:
 	;
-	v68 = v62
+	v70 = v62
 	goto L29
 L29:
 	;
 	v73 = *(*int32)(unsafe.Add(mBase, uint32(v59)+12))
-	v77 = *(*int32)(unsafe.Add(mBase, uint32(v73+v68<<(uint(int32(2))%32))))
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(v73+v70<<(uint(int32(2))%32))))
 	v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+12))
 	switch v78 {
 	case 0:
@@ -270,10 +270,10 @@ L30:
 	goto L6
 L31:
 	;
-	v91 = v68 + int32(1)
+	v91 = v70 + int32(1)
 	v92 = *(*int32)(unsafe.Add(mBase, uint32(v59)+4))
 	if v91 < v92 {
-		v68 = v91
+		v70 = v91
 		goto L29
 	} else {
 		goto L40
@@ -345,54 +345,54 @@ func F_ExecutorStart(m *base.Module, l0 int32, l1 int32) {
 	_ = v9
 	var v13 int32
 	_ = v13
-	var v18 int64
-	_ = v18
-	var v22 int32
-	_ = v22
+	var v20 int64
+	_ = v20
 	var v24 int32
 	_ = v24
-	var v25 int32
-	_ = v25
-	var v28 int32
-	_ = v28
-	var v39 int32
-	_ = v39
-	var v44 int32
-	_ = v44
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v41 int32
+	_ = v41
 	var v46 int32
 	_ = v46
 	var v48 int32
 	_ = v48
+	var v50 int32
+	_ = v50
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v5 = *(*int64)(unsafe.Add(mBase, uint32(v4)+8))
 	v9 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[0]))
 	if v9 == int32(0) {
 	} else {
 		v13 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ExecutorStart[1])))
-		if v13 != int32(1) {
+		if v13&int32(1) == int32(0) {
 		} else {
-			v18 = *(*int64)(unsafe.Add(mBase, uint32(v9)+392))
-			if int32(1)&base.B2i32(v18 != int64(0)) != 0 {
+			v20 = *(*int64)(unsafe.Add(mBase, uint32(v9)+392))
+			if int32(1)&base.B2i32(v20 != int64(0)) != 0 {
 			} else {
-				v22 = int32(_a_F_ExecutorStart_0)
-				v24 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2]))
-				v25 = int32(1)
-				*(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2])) = v24 + v25
-				v28 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
-				*(*int32)(unsafe.Add(mBase, uint32(v9))) = v28 + v25
+				v24 = int32(_a_F_ExecutorStart_0)
+				v26 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2]))
+				v27 = int32(1)
+				*(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2])) = v26 + v27
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
+				*(*int32)(unsafe.Add(mBase, uint32(v9))) = v30 + v27
 				*(*int64)(unsafe.Add(mBase, uint32(v9)+392)) = v5
-				*(*int32)(unsafe.Add(mBase, uint32(v9))) = v28 + int32(2)
-				v39 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2]))
-				*(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2])) = v39 - v25
+				*(*int32)(unsafe.Add(mBase, uint32(v9))) = v30 + int32(2)
+				v41 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2]))
+				*(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2])) = v41 - v27
 			}
 		}
 	}
-	v44 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[3]))
-	if v44 != 0 {
-		m.T0[v44].(func(*base.Module, int32, int32))(m, l0, l1)
+	v46 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[3]))
+	if v46 != 0 {
+		m.T0[v46].(func(*base.Module, int32, int32))(m, l0, l1)
 		mBase = m.M
-		v46 = m.ExcPending
-		if v46 != 0 {
+		v48 = m.ExcPending
+		if v48 != 0 {
 			return
 		} else {
 			return
@@ -400,8 +400,8 @@ func F_ExecutorStart(m *base.Module, l0 int32, l1 int32) {
 	} else {
 		F_standard_ExecutorStart(m, l0, l1)
 		mBase = m.M
-		v48 = m.ExcPending
-		if v48 != 0 {
+		v50 = m.ExcPending
+		if v50 != 0 {
 			return
 		} else {
 			return

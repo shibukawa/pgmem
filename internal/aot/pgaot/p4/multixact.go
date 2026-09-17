@@ -21,17 +21,17 @@ func F_check_multixact_offset_buffers(m *base.Module, l0 int32, l1 int32, l2 int
 func F_multixact_identify(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
 	if base.Ui32(l0) <= base.Ui32(int32(63)) {
-		v11 = *(*int32)(unsafe.Add(mBase, uint32(int32(base.Ui32(l0)>>(uint(int32(2))%32))&int32(60))+uint32(_c_F_multixact_identify[0])))
-		v12 = v11
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(int32(base.Ui32(l0)>>(uint(int32(2))%32))&int32(60))+uint32(_c_F_multixact_identify[0])))
+		v10 = v8
 	} else {
-		v12 = int32(0)
+		v10 = int32(0)
 	}
-	return v12
+	return v10
 }
 func F_multixact_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M

@@ -187,7 +187,7 @@ L16:
 	goto L11
 L17:
 	;
-	F_sequence_close(m, v14, int32(3))
+	F_relation_close(m, v14, int32(3))
 	mBase = m.M
 	v72 = m.ExcPending
 	if v72 != 0 {

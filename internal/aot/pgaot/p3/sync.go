@@ -10,90 +10,88 @@ func F_SyncRepGetCandidateStandbys(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
-	var v22 int32
-	_ = v22
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v27 int32
+	_ = v27
 	var v28 int32
 	_ = v28
-	var v29 int32
-	_ = v29
-	var v33 int32
-	_ = v33
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
 	var v36 int32
 	_ = v36
-	var v38 int32
-	_ = v38
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
 	var v45 int32
 	_ = v45
-	var v47 int32
-	_ = v47
-	var v52 int32
-	_ = v52
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
 	var v53 int32
 	_ = v53
-	var v55 int32
-	_ = v55
+	var v54 int64
+	_ = v54
 	var v56 int64
 	_ = v56
 	var v58 int64
 	_ = v58
-	var v60 int64
+	var v60 int32
 	_ = v60
 	var v62 int32
 	_ = v62
 	var v64 int32
 	_ = v64
-	var v66 int32
-	_ = v66
-	var v73 int32
-	_ = v73
-	var v76 int64
-	_ = v76
-	var v81 int32
-	_ = v81
-	var v86 int32
-	_ = v86
-	var v88 int32
-	_ = v88
-	var v90 int32
-	_ = v90
-	var v93 int32
-	_ = v93
-	var v95 int32
-	_ = v95
-	var v97 int32
-	_ = v97
-	var v101 int32
-	_ = v101
+	var v72 int32
+	_ = v72
+	var v75 int64
+	_ = v75
+	var v80 int32
+	_ = v80
+	var v85 int32
+	_ = v85
+	var v87 int32
+	_ = v87
+	var v89 int32
+	_ = v89
+	var v92 int32
+	_ = v92
+	var v94 int32
+	_ = v94
+	var v96 int32
+	_ = v96
+	var v99 int32
+	_ = v99
+	var v100 int32
+	_ = v100
 	var v102 int32
 	_ = v102
-	var v104 int32
-	_ = v104
+	var v106 int32
+	_ = v106
 	var v108 int32
 	_ = v108
-	var v110 int32
-	_ = v110
-	var v111 int32
-	_ = v111
-	var v115 int32
-	_ = v115
+	var v109 int32
+	_ = v109
+	var v113 int32
+	_ = v113
 	v2 = int32(0)
-	v9 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[0]))
-	v12 = F_palloc(m, v9*int32(48))
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[0]))
+	v11 = F_palloc(m, v8*int32(48))
 	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	v14 = m.ExcPending
+	if v14 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -103,177 +101,165 @@ L1:
 	return int32(0)
 L2:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v12
-	v18 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[1]))
-	if v18 == int32(0) {
-		v115 = v2
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v11
+	v17 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[1]))
+	if v17 == int32(0) {
+		v113 = v2
 		goto L3
 	} else {
 		goto L4
 	}
 L3:
 	;
-	return v115
+	return v113
 L4:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[0]))
-	if v22 <= int32(0) {
-		goto L6
+	v21 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[0]))
+	if int32(0) < v21 {
+		goto L5
 	} else {
-		goto L7
+		goto L6
 	}
 L5:
 	;
-	v101 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v95)+8)))
-	if v101 != 0 {
-		v115 = v97
-		goto L3
-	} else {
-		goto L21
-	}
+	v27 = v2
+	v28 = v2
+	goto L8
 L6:
 	;
-	v95 = v18
-	v97 = v2
-	goto L5
+	v94 = v17
+	v96 = v2
+	goto L7
 L7:
 	;
-	goto L8
+	v99 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v94)+8)))
+	if v99 != 0 {
+		v113 = v96
+		goto L3
+	} else {
+		goto L19
+	}
 L8:
 	;
-	v28 = v2
-	v29 = v2
-	goto L9
+	v31 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[2]))
+	v34 = v31 + v28*int32(96)
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)+164))
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	*(*int32)(unsafe.Add(mBase, uint32(v34)+164)) = int32(1)
+	if v35 != 0 {
+		goto L10
+	} else {
+		goto L11
+	}
 L9:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[2]))
-	v36 = v33 + v29*int32(96)
-	v38 = v36 + int32(164)
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)))
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v38))) = int32(1)
-	v45 = v40 + v28*int32(48)
-	v47 = v36 + int32(88)
-	if v39 != 0 {
-		goto L11
-	} else {
-		goto L12
-	}
+	v92 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[1]))
+	v94 = v92
+	v96 = v85
+	goto L7
 L10:
 	;
-	v93 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[1]))
-	v95 = v93
-	v97 = v86
-	goto L5
-L11:
-	;
-	F_s_lock(m, v38, int32(_a_F_SyncRepGetCandidateStandbys_0), int32(779), int32(_a_F_SyncRepGetCandidateStandbys_1))
+	F_s_lock(m, v34+int32(164), int32(_a_F_SyncRepGetCandidateStandbys_0), int32(779), int32(_a_F_SyncRepGetCandidateStandbys_1))
 	mBase = m.M
-	v52 = m.ExcPending
-	if v52 != 0 {
+	v45 = m.ExcPending
+	if v45 != 0 {
 		goto L1
 	} else {
-		goto L14
+		goto L13
 	}
+L11:
+	;
+	goto L12
 L12:
 	;
-	goto L13
+	v48 = v36 + v27*int32(48)
+	v50 = v34 + int32(88)
+	v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
+	*(*int32)(unsafe.Add(mBase, uint32(v48))) = v51
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(v50)+4))
+	v54 = *(*int64)(unsafe.Add(mBase, uint32(v50)+24))
+	*(*int64)(unsafe.Add(mBase, uint32(v48)+8)) = v54
+	v56 = *(*int64)(unsafe.Add(mBase, uint32(v50)+32))
+	*(*int64)(unsafe.Add(mBase, uint32(v48)+16)) = v56
+	v58 = *(*int64)(unsafe.Add(mBase, uint32(v50)+40))
+	*(*int64)(unsafe.Add(mBase, uint32(v48)+24)) = v58
+	v60 = *(*int32)(unsafe.Add(mBase, uint32(v50)+72))
+	*(*int32)(unsafe.Add(mBase, uint32(v48)+32)) = v60
+	v62 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v50)+76)) = v62
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
+	if base.B2i32(v64 == v62)|base.B2i32(base.Ui32(v53-int32(5)) < base.Ui32(int32(-2))) != 0 {
+		v85 = v27
+		goto L14
+	} else {
+		goto L15
+	}
 L13:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
-	*(*int32)(unsafe.Add(mBase, uint32(v45))) = v53
-	v55 = *(*int32)(unsafe.Add(mBase, uint32(v47)+4))
-	v56 = *(*int64)(unsafe.Add(mBase, uint32(v47)+24))
-	*(*int64)(unsafe.Add(mBase, uint32(v45)+8)) = v56
-	v58 = *(*int64)(unsafe.Add(mBase, uint32(v47)+32))
-	*(*int64)(unsafe.Add(mBase, uint32(v45)+16)) = v58
-	v60 = *(*int64)(unsafe.Add(mBase, uint32(v47)+40))
-	*(*int64)(unsafe.Add(mBase, uint32(v45)+24)) = v60
-	v62 = *(*int32)(unsafe.Add(mBase, uint32(v47)+72))
-	*(*int32)(unsafe.Add(mBase, uint32(v45)+32)) = v62
-	v64 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v47)+76)) = v64
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(v45)))
-	if v66 == v64 {
-		v86 = v28
-		goto L15
+	goto L12
+L14:
+	;
+	v87 = v28 + int32(1)
+	v89 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[0]))
+	if v87 < v89 {
+		v27 = v85
+		v28 = v87
+		goto L8
+	} else {
+		goto L18
+	}
+L15:
+	;
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(v48)+32))
+	if v72 == int32(0) {
+		v85 = v27
+		goto L14
 	} else {
 		goto L16
 	}
-L14:
-	;
-	goto L13
-L15:
-	;
-	v88 = v29 + int32(1)
-	v90 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[0]))
-	if v88 < v90 {
-		v28 = v86
-		v29 = v88
-		goto L9
-	} else {
-		goto L20
-	}
 L16:
 	;
-	if base.Ui32(v55-int32(5)) < base.Ui32(int32(-2)) {
-		v86 = v28
-		goto L15
+	v75 = *(*int64)(unsafe.Add(mBase, uint32(v48)+16))
+	if v75 == int64(0) {
+		v85 = v27
+		goto L14
 	} else {
 		goto L17
 	}
 L17:
 	;
-	v73 = *(*int32)(unsafe.Add(mBase, uint32(v45)+32))
-	if v73 == int32(0) {
-		v86 = v28
-		goto L15
-	} else {
-		goto L18
-	}
+	*(*int32)(unsafe.Add(mBase, uint32(v48)+36)) = v28
+	v80 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[3]))
+	*(*uint8)(unsafe.Add(mBase, uint32(v48)+40)) = uint8(base.B2i32(v50 == v80))
+	v85 = v27 + int32(1)
+	goto L14
 L18:
 	;
-	v76 = *(*int64)(unsafe.Add(mBase, uint32(v45)+16))
-	if v76 == int64(0) {
-		v86 = v28
-		goto L15
-	} else {
-		goto L19
-	}
+	goto L9
 L19:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v45)+36)) = v29
-	v81 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[3]))
-	*(*uint8)(unsafe.Add(mBase, uint32(v45)+40)) = uint8(base.B2i32(v47 == v81))
-	v86 = v28 + int32(1)
-	goto L15
-L20:
-	;
-	goto L10
-L21:
-	;
-	v102 = *(*int32)(unsafe.Add(mBase, uint32(v95)+4))
-	if v97 <= v102 {
-		v115 = v97
+	v100 = *(*int32)(unsafe.Add(mBase, uint32(v94)+4))
+	if v96 <= v100 {
+		v113 = v96
 		goto L3
 	} else {
-		goto L22
+		goto L20
 	}
-L22:
+L20:
 	;
-	v104 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	F_pg_qsort(m, v104, v97, int32(48), int32(1028))
+	v102 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	F_pg_qsort(m, v102, v96, int32(48), int32(1028))
 	mBase = m.M
-	v108 = m.ExcPending
-	if v108 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L1
 	} else {
-		goto L23
+		goto L21
 	}
-L23:
+L21:
 	;
-	v110 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[1]))
-	v111 = *(*int32)(unsafe.Add(mBase, uint32(v110)+4))
-	v115 = v111
+	v108 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepGetCandidateStandbys[1]))
+	v109 = *(*int32)(unsafe.Add(mBase, uint32(v108)+4))
+	v113 = v109
 	goto L3
 }

@@ -26,32 +26,32 @@ func F_byteaSetBit(m *base.Module, l0 int32) int32 {
 	_ = v25
 	var v26 int64
 	_ = v26
-	var v30 int32
-	_ = v30
-	var v38 int32
-	_ = v38
+	var v33 int32
+	_ = v33
 	var v39 int32
 	_ = v39
-	var v43 int32
-	_ = v43
-	var v49 int32
-	_ = v49
-	var v58 int32
-	_ = v58
-	var v61 int32
-	_ = v61
-	var v68 int32
-	_ = v68
-	var v73 int32
-	_ = v73
-	var v77 int32
-	_ = v77
-	var v80 int32
-	_ = v80
-	var v84 int32
-	_ = v84
-	var v89 int32
-	_ = v89
+	var v40 int32
+	_ = v40
+	var v44 int32
+	_ = v44
+	var v50 int32
+	_ = v50
+	var v59 int32
+	_ = v59
+	var v62 int32
+	_ = v62
+	var v69 int32
+	_ = v69
+	var v74 int32
+	_ = v74
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v85 int32
+	_ = v85
+	var v90 int32
+	_ = v90
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
@@ -66,66 +66,31 @@ func F_byteaSetBit(m *base.Module, l0 int32) int32 {
 		v24 = base.I64_extend_i32_u(int32(base.Ui32(v17)>>(uint(int32(2))%32)))<<(uint(int64(3))%64) - int64(32)
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v26 = *(*int64)(unsafe.Add(mBase, uint32(v25)))
-		if v26 < int64(0) {
-			F_errstart_cold(m, int32(21), int32(0))
-			mBase = m.M
-			v58 = m.ExcPending
-			if v58 != 0 {
-				return int32(0)
-			} else {
-				F_errcode(m, int32(352845954))
-				mBase = m.M
-				v61 = m.ExcPending
-				if v61 != 0 {
-					return int32(0)
-				} else {
-					*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = v24 - int64(1)
-					*(*int64)(unsafe.Add(mBase, uint32(v10))) = v26
-					F_errmsg(m, int32(_a_F_byteaSetBit_0), v10)
-					mBase = m.M
-					v68 = m.ExcPending
-					if v68 != 0 {
-						return int32(0)
-					} else {
-						F_errfinish(m, int32(_a_F_byteaSetBit_1), int32(3428), int32(_a_F_byteaSetBit_2))
-						mBase = m.M
-						v73 = m.ExcPending
-						if v73 != 0 {
-							return int32(0)
-						} else {
-							base.Wasm_trap_unreachable()
-							for {
-							}
-						}
-					}
-				}
-			}
-		} else {
-			if v24 <= v26 {
+		if base.B2i32(v26 < int64(0))|base.B2i32(v24 <= v26) == int32(0) {
+			v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+			if base.Ui32(int32(2)) <= base.Ui32(v33) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v58 = m.ExcPending
-				if v58 != 0 {
+				v78 = m.ExcPending
+				if v78 != 0 {
 					return int32(0)
 				} else {
-					F_errcode(m, int32(352845954))
+					F_errcode(m, int32(50856066))
 					mBase = m.M
-					v61 = m.ExcPending
-					if v61 != 0 {
+					v81 = m.ExcPending
+					if v81 != 0 {
 						return int32(0)
 					} else {
-						*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = v24 - int64(1)
-						*(*int64)(unsafe.Add(mBase, uint32(v10))) = v26
-						F_errmsg(m, int32(_a_F_byteaSetBit_0), v10)
+						F_errmsg(m, int32(_a_F_byteaSetBit_0), int32(0))
 						mBase = m.M
-						v68 = m.ExcPending
-						if v68 != 0 {
+						v85 = m.ExcPending
+						if v85 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_byteaSetBit_1), int32(3428), int32(_a_F_byteaSetBit_2))
+							F_errfinish(m, int32(_a_F_byteaSetBit_1), int32(3440), int32(_a_F_byteaSetBit_2))
 							mBase = m.M
-							v73 = m.ExcPending
-							if v73 != 0 {
+							v90 = m.ExcPending
+							if v90 != 0 {
 								return int32(0)
 							} else {
 								base.Wasm_trap_unreachable()
@@ -136,51 +101,50 @@ func F_byteaSetBit(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-				if base.Ui32(int32(2)) <= base.Ui32(v30) {
-					F_errstart_cold(m, int32(21), int32(0))
+				v39 = v13 + base.I32_wrap_i64(int64(base.Ui64(v26)>>(uint(int64(3))%64)))
+				v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39)+4)))
+				v44 = base.I32_wrap_i64(v26) & int32(7)
+				if v33 != 0 {
+					v50 = v40 | int32(1)<<(uint(v44)%32)
+				} else {
+					v50 = v40 & base.I32_rotl(int32(-2), v44)
+				}
+				*(*uint8)(unsafe.Add(mBase, uint32(v39)+4)) = uint8(v50)
+				m.G0 = v10 + int32(16)
+				return v13
+			}
+		} else {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v59 = m.ExcPending
+			if v59 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(352845954))
+				mBase = m.M
+				v62 = m.ExcPending
+				if v62 != 0 {
+					return int32(0)
+				} else {
+					*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = v24 - int64(1)
+					*(*int64)(unsafe.Add(mBase, uint32(v10))) = v26
+					F_errmsg(m, int32(_a_F_byteaSetBit_3), v10)
 					mBase = m.M
-					v77 = m.ExcPending
-					if v77 != 0 {
+					v69 = m.ExcPending
+					if v69 != 0 {
 						return int32(0)
 					} else {
-						F_errcode(m, int32(50856066))
+						F_errfinish(m, int32(_a_F_byteaSetBit_1), int32(3428), int32(_a_F_byteaSetBit_2))
 						mBase = m.M
-						v80 = m.ExcPending
-						if v80 != 0 {
+						v74 = m.ExcPending
+						if v74 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(_a_F_byteaSetBit_3), int32(0))
-							mBase = m.M
-							v84 = m.ExcPending
-							if v84 != 0 {
-								return int32(0)
-							} else {
-								F_errfinish(m, int32(_a_F_byteaSetBit_1), int32(3440), int32(_a_F_byteaSetBit_2))
-								mBase = m.M
-								v89 = m.ExcPending
-								if v89 != 0 {
-									return int32(0)
-								} else {
-									base.Wasm_trap_unreachable()
-									for {
-									}
-								}
+							base.Wasm_trap_unreachable()
+							for {
 							}
 						}
 					}
-				} else {
-					v38 = v13 + base.I32_wrap_i64(int64(base.Ui64(v26)>>(uint(int64(3))%64))) + int32(4)
-					v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v38))))
-					v43 = base.I32_wrap_i64(v26) & int32(7)
-					if v30 != 0 {
-						v49 = v39 | int32(1)<<(uint(v43)%32)
-					} else {
-						v49 = v39 & base.I32_rotl(int32(-2), v43)
-					}
-					*(*uint8)(unsafe.Add(mBase, uint32(v38))) = uint8(v49)
-					m.G0 = v10 + int32(16)
-					return v13
 				}
 			}
 		}
@@ -205,25 +169,27 @@ func F_bytea_string_agg_finalfn(m *base.Module, l0 int32) int32 {
 	_ = v14
 	var v17 int32
 	_ = v17
-	var v23 int32
-	_ = v23
-	var v24 int32
-	_ = v24
+	var v25 int32
+	_ = v25
 	var v26 int32
 	_ = v26
-	var v30 int32
-	_ = v30
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
 	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
 	if v5 != 0 {
-		v30 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v30)
-		return int32(0)
+		v31 = int32(1)
+		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
+		v34 = int32(0)
+		return v34
 	} else {
 		v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		if v6 == int32(0) {
-			v30 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v30)
-			return int32(0)
+			v31 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
+			v34 = int32(0)
+			return v34
 		} else {
 			v9 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
 			v10 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
@@ -236,14 +202,15 @@ func F_bytea_string_agg_finalfn(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v14))) = v13 << (uint(int32(2)) % 32)
-				v23 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-				v24 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
-				if v11 != 0 {
-					v26 = F__emscripten_memcpy_bulkmem(m, v14+int32(4), v23+v24, v11)
-					mBase = m.M
+				if v11 == int32(0) {
+					v34 = v14
+					return v34
 				} else {
+					v25 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+					v26 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+					base.MemoryCopy(m, v14+int32(4), v25+v26, v11)
+					return v14
 				}
-				return v14
 			}
 		}
 	}

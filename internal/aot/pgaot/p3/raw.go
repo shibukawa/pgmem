@@ -38,18 +38,22 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v31
 	var v32 int32
 	_ = v32
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
 	var v40 int32
 	_ = v40
-	var v41 int32
-	_ = v41
 	var v42 int32
 	_ = v42
-	var v44 int32
-	_ = v44
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
+	var v54 int32
+	_ = v54
 	var v55 int32
 	_ = v55
 	var v58 int32
@@ -58,58 +62,52 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v59
 	var v62 int32
 	_ = v62
-	var v63 int32
-	_ = v63
-	var v66 int32
-	_ = v66
+	var v64 int32
+	_ = v64
+	var v65 int32
+	_ = v65
 	var v68 int32
 	_ = v68
-	var v69 int32
-	_ = v69
-	var v72 int32
-	_ = v72
-	var v78 int32
-	_ = v78
-	var v84 int32
-	_ = v84
-	var v86 int32
-	_ = v86
-	var v92 int32
-	_ = v92
-	var v94 int32
-	_ = v94
+	var v74 int32
+	_ = v74
+	var v80 int32
+	_ = v80
+	var v82 int32
+	_ = v82
+	var v88 int32
+	_ = v88
+	var v93 int32
+	_ = v93
+	var v95 int32
+	_ = v95
 	var v98 int32
 	_ = v98
-	var v100 int32
-	_ = v100
-	var v103 int32
-	_ = v103
-	var v111 int32
-	_ = v111
-	var v114 int32
-	_ = v114
-	var v120 int32
-	_ = v120
-	var v127 int32
-	_ = v127
-	var v131 int32
-	_ = v131
+	var v106 int32
+	_ = v106
+	var v109 int32
+	_ = v109
+	var v113 int32
+	_ = v113
+	var v118 int32
+	_ = v118
+	var v122 int32
+	_ = v122
+	var v125 int32
+	_ = v125
+	var v129 int32
+	_ = v129
 	var v134 int32
 	_ = v134
-	var v140 int32
-	_ = v140
-	var v147 int32
-	_ = v147
+	var v138 int32
+	_ = v138
+	var v141 int32
+	_ = v141
+	var v142 int32
+	_ = v142
 	var v151 int32
 	_ = v151
-	var v154 int32
-	_ = v154
-	var v155 int32
-	_ = v155
-	var v166 int32
-	_ = v166
-	var v173 int32
-	_ = v173
+	var v156 int32
+	_ = v156
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
@@ -142,32 +140,32 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 						v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21)+119)))
 						switch v22 - int32(83) {
 						case 0, 22, 26, 31, 33:
-							v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21)+118)))
-							if v52 == int32(116) {
-								v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+24)))
-								if v55 == int32(0) {
+							v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21)+118)))
+							if v48 == int32(116) {
+								v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+24)))
+								if v51 == int32(0) {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v131 = m.ExcPending
-									if v131 != 0 {
+									v122 = m.ExcPending
+									if v122 != 0 {
 										return int32(0)
 									} else {
 										F_errcode(m, int32(1088))
 										mBase = m.M
-										v134 = m.ExcPending
-										if v134 != 0 {
+										v125 = m.ExcPending
+										if v125 != 0 {
 											return int32(0)
 										} else {
 											F_errmsg(m, int32(_a_F_get_raw_page_internal_0), int32(0))
 											mBase = m.M
-											v140 = m.ExcPending
-											if v140 != 0 {
+											v129 = m.ExcPending
+											if v129 != 0 {
 												return int32(0)
 											} else {
 												F_errfinish(m, int32(_a_F_get_raw_page_internal_1), int32(176), int32(_a_F_get_raw_page_internal_2))
 												mBase = m.M
-												v147 = m.ExcPending
-												if v147 != 0 {
+												v134 = m.ExcPending
+												if v134 != 0 {
 													return int32(0)
 												} else {
 													base.Wasm_trap_unreachable()
@@ -178,38 +176,38 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 										}
 									}
 								} else {
-									v58 = F_RelationGetNumberOfBlocksInFork(m, v19, l1)
+									v54 = F_RelationGetNumberOfBlocksInFork(m, v19, l1)
 									mBase = m.M
-									v59 = m.ExcPending
-									if v59 != 0 {
+									v55 = m.ExcPending
+									if v55 != 0 {
 										return int32(0)
 									} else {
-										if base.Ui32(v58) <= base.Ui32(l2) {
+										if base.Ui32(v54) <= base.Ui32(l2) {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v151 = m.ExcPending
-											if v151 != 0 {
+											v138 = m.ExcPending
+											if v138 != 0 {
 												return int32(0)
 											} else {
 												F_errcode(m, int32(50856066))
 												mBase = m.M
-												v154 = m.ExcPending
-												if v154 != 0 {
+												v141 = m.ExcPending
+												if v141 != 0 {
 													return int32(0)
 												} else {
-													v155 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
+													v142 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
 													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l2
-													*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v155 + int32(4)
+													*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v142 + int32(4)
 													F_errmsg(m, int32(_a_F_get_raw_page_internal_3), v8+int32(16))
 													mBase = m.M
-													v166 = m.ExcPending
-													if v166 != 0 {
+													v151 = m.ExcPending
+													if v151 != 0 {
 														return int32(0)
 													} else {
 														F_errfinish(m, int32(_a_F_get_raw_page_internal_1), int32(182), int32(_a_F_get_raw_page_internal_2))
 														mBase = m.M
-														v173 = m.ExcPending
-														if v173 != 0 {
+														v156 = m.ExcPending
+														if v156 != 0 {
 															return int32(0)
 														} else {
 															base.Wasm_trap_unreachable()
@@ -220,56 +218,55 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 												}
 											}
 										} else {
-											v62 = F_palloc(m, int32(_a_F_get_raw_page_internal_4))
+											v58 = F_palloc(m, int32(_a_F_get_raw_page_internal_4))
 											mBase = m.M
-											v63 = m.ExcPending
-											if v63 != 0 {
+											v59 = m.ExcPending
+											if v59 != 0 {
 												return int32(0)
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v62))) = int32(_a_F_get_raw_page_internal_5)
-												v66 = int32(0)
-												v68 = F_ReadBufferExtended(m, v19, l1, l2, v66, v66)
+												*(*int32)(unsafe.Add(mBase, uint32(v58))) = int32(_a_F_get_raw_page_internal_5)
+												v62 = int32(0)
+												v64 = F_ReadBufferExtended(m, v19, l1, l2, v62, v62)
 												mBase = m.M
-												v69 = m.ExcPending
-												if v69 != 0 {
+												v65 = m.ExcPending
+												if v65 != 0 {
 													return int32(0)
 												} else {
-													F_LockBuffer(m, v68, int32(1))
+													F_LockBuffer(m, v64, int32(1))
 													mBase = m.M
-													v72 = m.ExcPending
-													if v72 != 0 {
+													v68 = m.ExcPending
+													if v68 != 0 {
 														return int32(0)
 													} else {
-														if v68 < int32(0) {
-															v78 = *(*int32)(unsafe.Add(mBase, _c_F_get_raw_page_internal[0]))
-															v84 = *(*int32)(unsafe.Add(mBase, uint32(v78+(v68^int32(-1))<<(uint(int32(2))%32))))
-															v92 = v84
+														if v64 < int32(0) {
+															v74 = *(*int32)(unsafe.Add(mBase, _c_F_get_raw_page_internal[0]))
+															v80 = *(*int32)(unsafe.Add(mBase, uint32(v74+(v64^int32(-1))<<(uint(int32(2))%32))))
+															v88 = v80
 														} else {
-															v86 = *(*int32)(unsafe.Add(mBase, _c_F_get_raw_page_internal[1]))
-															v92 = v86 + v68<<(uint(int32(13))%32) + int32(-8192)
+															v82 = *(*int32)(unsafe.Add(mBase, _c_F_get_raw_page_internal[1]))
+															v88 = v82 + v64<<(uint(int32(13))%32) + int32(-8192)
 														}
-														v94 = F__emscripten_memcpy_bulkmem(m, v62+int32(4), v92, int32(_a_F_get_raw_page_internal_6))
+														base.MemoryCopy(m, v58+int32(4), v88, int32(_a_F_get_raw_page_internal_6))
+														F_LockBuffer(m, v64, int32(0))
 														mBase = m.M
-														F_LockBuffer(m, v68, int32(0))
-														mBase = m.M
-														v98 = m.ExcPending
-														if v98 != 0 {
+														v93 = m.ExcPending
+														if v93 != 0 {
 															return int32(0)
 														} else {
-															F_ReleaseBuffer(m, v68)
+															F_ReleaseBuffer(m, v64)
 															mBase = m.M
-															v100 = m.ExcPending
-															if v100 != 0 {
+															v95 = m.ExcPending
+															if v95 != 0 {
 																return int32(0)
 															} else {
 																F_relation_close(m, v19, int32(1))
 																mBase = m.M
-																v103 = m.ExcPending
-																if v103 != 0 {
+																v98 = m.ExcPending
+																if v98 != 0 {
 																	return int32(0)
 																} else {
 																	m.G0 = v8 + int32(32)
-																	return v62
+																	return v58
 																}
 															}
 														}
@@ -280,38 +277,38 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 									}
 								}
 							} else {
-								v58 = F_RelationGetNumberOfBlocksInFork(m, v19, l1)
+								v54 = F_RelationGetNumberOfBlocksInFork(m, v19, l1)
 								mBase = m.M
-								v59 = m.ExcPending
-								if v59 != 0 {
+								v55 = m.ExcPending
+								if v55 != 0 {
 									return int32(0)
 								} else {
-									if base.Ui32(v58) <= base.Ui32(l2) {
+									if base.Ui32(v54) <= base.Ui32(l2) {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v151 = m.ExcPending
-										if v151 != 0 {
+										v138 = m.ExcPending
+										if v138 != 0 {
 											return int32(0)
 										} else {
 											F_errcode(m, int32(50856066))
 											mBase = m.M
-											v154 = m.ExcPending
-											if v154 != 0 {
+											v141 = m.ExcPending
+											if v141 != 0 {
 												return int32(0)
 											} else {
-												v155 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
+												v142 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
 												*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l2
-												*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v155 + int32(4)
+												*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v142 + int32(4)
 												F_errmsg(m, int32(_a_F_get_raw_page_internal_3), v8+int32(16))
 												mBase = m.M
-												v166 = m.ExcPending
-												if v166 != 0 {
+												v151 = m.ExcPending
+												if v151 != 0 {
 													return int32(0)
 												} else {
 													F_errfinish(m, int32(_a_F_get_raw_page_internal_1), int32(182), int32(_a_F_get_raw_page_internal_2))
 													mBase = m.M
-													v173 = m.ExcPending
-													if v173 != 0 {
+													v156 = m.ExcPending
+													if v156 != 0 {
 														return int32(0)
 													} else {
 														base.Wasm_trap_unreachable()
@@ -322,56 +319,55 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 											}
 										}
 									} else {
-										v62 = F_palloc(m, int32(_a_F_get_raw_page_internal_4))
+										v58 = F_palloc(m, int32(_a_F_get_raw_page_internal_4))
 										mBase = m.M
-										v63 = m.ExcPending
-										if v63 != 0 {
+										v59 = m.ExcPending
+										if v59 != 0 {
 											return int32(0)
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v62))) = int32(_a_F_get_raw_page_internal_5)
-											v66 = int32(0)
-											v68 = F_ReadBufferExtended(m, v19, l1, l2, v66, v66)
+											*(*int32)(unsafe.Add(mBase, uint32(v58))) = int32(_a_F_get_raw_page_internal_5)
+											v62 = int32(0)
+											v64 = F_ReadBufferExtended(m, v19, l1, l2, v62, v62)
 											mBase = m.M
-											v69 = m.ExcPending
-											if v69 != 0 {
+											v65 = m.ExcPending
+											if v65 != 0 {
 												return int32(0)
 											} else {
-												F_LockBuffer(m, v68, int32(1))
+												F_LockBuffer(m, v64, int32(1))
 												mBase = m.M
-												v72 = m.ExcPending
-												if v72 != 0 {
+												v68 = m.ExcPending
+												if v68 != 0 {
 													return int32(0)
 												} else {
-													if v68 < int32(0) {
-														v78 = *(*int32)(unsafe.Add(mBase, _c_F_get_raw_page_internal[0]))
-														v84 = *(*int32)(unsafe.Add(mBase, uint32(v78+(v68^int32(-1))<<(uint(int32(2))%32))))
-														v92 = v84
+													if v64 < int32(0) {
+														v74 = *(*int32)(unsafe.Add(mBase, _c_F_get_raw_page_internal[0]))
+														v80 = *(*int32)(unsafe.Add(mBase, uint32(v74+(v64^int32(-1))<<(uint(int32(2))%32))))
+														v88 = v80
 													} else {
-														v86 = *(*int32)(unsafe.Add(mBase, _c_F_get_raw_page_internal[1]))
-														v92 = v86 + v68<<(uint(int32(13))%32) + int32(-8192)
+														v82 = *(*int32)(unsafe.Add(mBase, _c_F_get_raw_page_internal[1]))
+														v88 = v82 + v64<<(uint(int32(13))%32) + int32(-8192)
 													}
-													v94 = F__emscripten_memcpy_bulkmem(m, v62+int32(4), v92, int32(_a_F_get_raw_page_internal_6))
+													base.MemoryCopy(m, v58+int32(4), v88, int32(_a_F_get_raw_page_internal_6))
+													F_LockBuffer(m, v64, int32(0))
 													mBase = m.M
-													F_LockBuffer(m, v68, int32(0))
-													mBase = m.M
-													v98 = m.ExcPending
-													if v98 != 0 {
+													v93 = m.ExcPending
+													if v93 != 0 {
 														return int32(0)
 													} else {
-														F_ReleaseBuffer(m, v68)
+														F_ReleaseBuffer(m, v64)
 														mBase = m.M
-														v100 = m.ExcPending
-														if v100 != 0 {
+														v95 = m.ExcPending
+														if v95 != 0 {
 															return int32(0)
 														} else {
 															F_relation_close(m, v19, int32(1))
 															mBase = m.M
-															v103 = m.ExcPending
-															if v103 != 0 {
+															v98 = m.ExcPending
+															if v98 != 0 {
 																return int32(0)
 															} else {
 																m.G0 = v8 + int32(32)
-																return v62
+																return v58
 															}
 														}
 													}
@@ -398,22 +394,22 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v32 + int32(4)
 									F_errmsg(m, int32(_a_F_get_raw_page_internal_7), v8)
 									mBase = m.M
-									v40 = m.ExcPending
-									if v40 != 0 {
+									v38 = m.ExcPending
+									if v38 != 0 {
 										return int32(0)
 									} else {
-										v41 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
-										v42 = int32(*(*int8)(unsafe.Add(mBase, uint32(v41)+119)))
-										F_errdetail_relkind_not_supported(m, v42)
+										v39 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
+										v40 = int32(*(*int8)(unsafe.Add(mBase, uint32(v39)+119)))
+										F_errdetail_relkind_not_supported(m, v40)
 										mBase = m.M
-										v44 = m.ExcPending
-										if v44 != 0 {
+										v42 = m.ExcPending
+										if v42 != 0 {
 											return int32(0)
 										} else {
 											F_errfinish(m, int32(_a_F_get_raw_page_internal_1), int32(166), int32(_a_F_get_raw_page_internal_2))
 											mBase = m.M
-											v51 = m.ExcPending
-											if v51 != 0 {
+											v47 = m.ExcPending
+											if v47 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -431,26 +427,26 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v111 = m.ExcPending
-			if v111 != 0 {
+			v106 = m.ExcPending
+			if v106 != 0 {
 				return int32(0)
 			} else {
 				F_errcode(m, int32(16797828))
 				mBase = m.M
-				v114 = m.ExcPending
-				if v114 != 0 {
+				v109 = m.ExcPending
+				if v109 != 0 {
 					return int32(0)
 				} else {
 					F_errmsg(m, int32(_a_F_get_raw_page_internal_8), int32(0))
 					mBase = m.M
-					v120 = m.ExcPending
-					if v120 != 0 {
+					v113 = m.ExcPending
+					if v113 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_get_raw_page_internal_1), int32(156), int32(_a_F_get_raw_page_internal_2))
 						mBase = m.M
-						v127 = m.ExcPending
-						if v127 != 0 {
+						v118 = m.ExcPending
+						if v118 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()

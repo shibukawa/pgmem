@@ -133,7 +133,7 @@ L5:
 	}
 L6:
 	;
-	v141 = *(*int64)(unsafe.Add(mBase, uint32(v18<<(uint(int32(3))%32)+v20-int32(8))))
+	v141 = *(*int64)(unsafe.Add(mBase, uint32(v20+v18<<(uint(int32(3))%32)-int32(8))))
 	*(*int64)(unsafe.Add(mBase, uint32(v35))) = v141
 	v143 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+19)))
 	v145 = v143 - int32(1)
@@ -321,17 +321,6 @@ L33:
 	;
 	base.Wasm_trap_unreachable()
 	for {
-	}
-}
-func F_ResourceOwnerRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
-	var v6 int32
-	_ = v6
-	F_ResourceOwnerReleaseInternal(m, l0, l1, l2, l3)
-	v6 = m.ExcPending
-	if v6 != 0 {
-		return
-	} else {
-		return
 	}
 }
 func F_ResourceOwnerRemember(m *base.Module, l0 int32, l1 int32, l2 int32) {

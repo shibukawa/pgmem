@@ -22,8 +22,8 @@ func F_AfterTriggerEndQuery(m *base.Module, l0 int32) {
 	_ = v22
 	var v23 int32
 	_ = v23
-	var v28 int32
-	_ = v28
+	var v27 int32
+	_ = v27
 	var v34 int32
 	_ = v34
 	var v36 int32
@@ -42,16 +42,16 @@ func F_AfterTriggerEndQuery(m *base.Module, l0 int32) {
 	_ = v50
 	var v51 int32
 	_ = v51
-	var v56 int32
-	_ = v56
+	var v55 int32
+	_ = v55
 	var v61 int32
 	_ = v61
 	var v64 int32
 	_ = v64
 	var v65 int32
 	_ = v65
-	var v69 int32
-	_ = v69
+	var v72 int32
+	_ = v72
 	var v75 int32
 	_ = v75
 	var v76 int32
@@ -140,15 +140,15 @@ L6:
 	}
 L7:
 	;
-	v28 = v19
+	v27 = v19
 	goto L8
 L8:
 	;
 	v34 = int32(_a_F_AfterTriggerEndQuery_2)
 	v36 = *(*int32)(unsafe.Add(mBase, _c_F_AfterTriggerEndQuery[3]))
 	*(*int32)(unsafe.Add(mBase, _c_F_AfterTriggerEndQuery[3])) = v36 + int32(1)
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
-	v42 = F_afterTriggerInvokeEvents(m, v28, v36, l0, int32(0))
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
+	v42 = F_afterTriggerInvokeEvents(m, v27, v36, l0, int32(0))
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -179,7 +179,7 @@ L11:
 	}
 L12:
 	;
-	v56 = v51
+	v55 = v51
 	goto L15
 L13:
 	;
@@ -207,9 +207,9 @@ L16:
 	goto L14
 L17:
 	;
-	v103 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+	v103 = *(*int32)(unsafe.Add(mBase, uint32(v55)))
 	*(*int32)(unsafe.Add(mBase, uint32(v50))) = v103
-	F_pfree(m, v56)
+	F_pfree(m, v55)
 	mBase = m.M
 	v106 = m.ExcPending
 	if v106 != 0 {
@@ -228,13 +228,13 @@ L18:
 	}
 L19:
 	;
-	v69 = v64
+	v72 = v64
 	v75 = v65
 	goto L20
 L20:
 	;
 	v76 = *(*int32)(unsafe.Add(mBase, uint32(v61)+12))
-	v80 = *(*int32)(unsafe.Add(mBase, uint32(v76+v69<<(uint(int32(2))%32))))
+	v80 = *(*int32)(unsafe.Add(mBase, uint32(v76+v72<<(uint(int32(2))%32))))
 	v81 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v80)+10)))
 	if v81 != int32(1) {
 		v91 = v75
@@ -247,9 +247,9 @@ L21:
 	goto L17
 L22:
 	;
-	v93 = v69 + int32(1)
+	v93 = v72 + int32(1)
 	if v93 < v91 {
-		v69 = v93
+		v72 = v93
 		v75 = v91
 		goto L20
 	} else {
@@ -258,7 +258,7 @@ L22:
 L23:
 	;
 	v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+16))
-	if v84 != v56 {
+	if v84 != v55 {
 		v91 = v75
 		goto L22
 	} else {
@@ -278,7 +278,7 @@ L26:
 	;
 	v107 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
 	if v107 != v40 {
-		v56 = v107
+		v55 = v107
 		goto L15
 	} else {
 		goto L27
@@ -289,7 +289,7 @@ L27:
 L28:
 	;
 	if v119 != 0 {
-		v28 = v50
+		v27 = v50
 		goto L8
 	} else {
 		goto L29

@@ -16,9 +16,9 @@ func F_pa_set_fileset_state(m *base.Module, l0 int32) {
 	_ = v14
 	var v15 int32
 	_ = v15
-	var v16 int64
+	var v16 int32
 	_ = v16
-	var v18 int32
+	var v18 int64
 	_ = v18
 	var v20 int64
 	_ = v20
@@ -40,18 +40,18 @@ func F_pa_set_fileset_state(m *base.Module, l0 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = int32(2)
 			v14 = *(*int32)(unsafe.Add(mBase, _c_F_pa_set_fileset_state[0]))
 			v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+60))
-			v16 = *(*int64)(unsafe.Add(mBase, uint32(v15)))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v16
-			v18 = *(*int32)(unsafe.Add(mBase, uint32(v15)+40))
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v18
-			v20 = *(*int64)(unsafe.Add(mBase, uint32(v15)+32))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+68)) = v20
-			v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+24))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+60)) = v22
-			v24 = *(*int64)(unsafe.Add(mBase, uint32(v15)+16))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+52)) = v24
-			v26 = *(*int64)(unsafe.Add(mBase, uint32(v15)+8))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v26
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+40))
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v16
+			v18 = *(*int64)(unsafe.Add(mBase, uint32(v15)+32))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+68)) = v18
+			v20 = *(*int64)(unsafe.Add(mBase, uint32(v15)+24))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+60)) = v20
+			v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+16))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+52)) = v22
+			v24 = *(*int64)(unsafe.Add(mBase, uint32(v15)+8))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v24
+			v26 = *(*int64)(unsafe.Add(mBase, uint32(v15)))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v26
 			*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(0)
 			return
 		}
@@ -59,18 +59,18 @@ func F_pa_set_fileset_state(m *base.Module, l0 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = int32(2)
 		v14 = *(*int32)(unsafe.Add(mBase, _c_F_pa_set_fileset_state[0]))
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+60))
-		v16 = *(*int64)(unsafe.Add(mBase, uint32(v15)))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v16
-		v18 = *(*int32)(unsafe.Add(mBase, uint32(v15)+40))
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v18
-		v20 = *(*int64)(unsafe.Add(mBase, uint32(v15)+32))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+68)) = v20
-		v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+24))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+60)) = v22
-		v24 = *(*int64)(unsafe.Add(mBase, uint32(v15)+16))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+52)) = v24
-		v26 = *(*int64)(unsafe.Add(mBase, uint32(v15)+8))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v26
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+40))
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v16
+		v18 = *(*int64)(unsafe.Add(mBase, uint32(v15)+32))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+68)) = v18
+		v20 = *(*int64)(unsafe.Add(mBase, uint32(v15)+24))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+60)) = v20
+		v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+16))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+52)) = v22
+		v24 = *(*int64)(unsafe.Add(mBase, uint32(v15)+8))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v24
+		v26 = *(*int64)(unsafe.Add(mBase, uint32(v15)))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v26
 		*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(0)
 		return
 	}

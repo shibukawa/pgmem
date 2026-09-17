@@ -45,79 +45,82 @@ func F_get_tablespace_maintenance_io_concurrency(m *base.Module, l0 int32) int32
 func F_sendTablespace(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
-	var v32 int32
-	_ = v32
-	var v34 int32
-	_ = v34
-	var v40 int32
-	_ = v40
-	var v42 int32
-	_ = v42
-	var v48 int32
-	_ = v48
-	var v53 int32
-	_ = v53
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v18 int32
+	_ = v18
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	var v50 int32
+	_ = v50
+	var v56 int32
+	_ = v56
 	var v59 int32
 	_ = v59
-	var v62 int32
+	var v62 int64
 	_ = v62
-	var v65 int64
-	_ = v65
-	var v66 int32
+	var v63 int32
+	_ = v63
+	var v66 int64
 	_ = v66
-	var v69 int64
-	_ = v69
-	v9 = m.G0
-	v11 = v9 - int32(1152)
-	m.G0 = v11
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = int32(_a_F_sendTablespace_0)
-	v22 = F_pg_snprintf(m, v11+int32(128), int32(1024), int32(_a_F_sendTablespace_1), v11+int32(16))
+	v10 = m.G0
+	v12 = v10 - int32(1152)
+	m.G0 = v12
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = int32(_a_F_sendTablespace_0)
+	v18 = v12 + int32(128)
+	v23 = F_pg_snprintf(m, v18, int32(1024), int32(_a_F_sendTablespace_1), v12+int32(16))
 	mBase = m.M
-	v25 = m.ExcPending
-	if v25 != 0 {
+	v26 = m.ExcPending
+	if v26 != 0 {
 		return int64(0)
 	} else {
-		v32 = F___fstatat(m, int32(-100), v11+int32(128), v11+int32(32), int32(256))
+		v31 = F___fstatat(m, int32(-100), v18, v12+int32(32), int32(256))
 		mBase = m.M
-		if v32 != 0 {
-			v34 = *(*int32)(unsafe.Add(mBase, _c_F_sendTablespace[0]))
-			if v34 == int32(44) {
-				v69 = int64(0)
-				m.G0 = v11 + int32(1152)
-				return v69
+		if v31 != 0 {
+			v33 = *(*int32)(unsafe.Add(mBase, _c_F_sendTablespace[0]))
+			if v33 == int32(44) {
+				v66 = int64(0)
+				m.G0 = v12 + int32(1152)
+				return v66
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v40 = m.ExcPending
-				if v40 != 0 {
+				v39 = m.ExcPending
+				if v39 != 0 {
 					return int64(0)
 				} else {
 					F_errcode_for_file_access(m)
 					mBase = m.M
-					v42 = m.ExcPending
-					if v42 != 0 {
+					v41 = m.ExcPending
+					if v41 != 0 {
 						return int64(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v11))) = v11 + int32(128)
-						F_errmsg(m, int32(_a_F_sendTablespace_2), v11)
+						*(*int32)(unsafe.Add(mBase, uint32(v12))) = v18
+						F_errmsg(m, int32(_a_F_sendTablespace_2), v12)
 						mBase = m.M
-						v48 = m.ExcPending
-						if v48 != 0 {
+						v45 = m.ExcPending
+						if v45 != 0 {
 							return int64(0)
 						} else {
 							F_errfinish(m, int32(_a_F_sendTablespace_3), int32(1160), int32(_a_F_sendTablespace_4))
 							mBase = m.M
-							v53 = m.ExcPending
-							if v53 != 0 {
+							v50 = m.ExcPending
+							if v50 != 0 {
 								return int64(0)
 							} else {
 								base.Wasm_trap_unreachable()
@@ -129,23 +132,23 @@ func F_sendTablespace(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 				}
 			}
 		} else {
-			F__tarWriteHeader(m, l0, int32(_a_F_sendTablespace_0), int32(0), v11+int32(32), l3)
+			F__tarWriteHeader(m, l0, int32(_a_F_sendTablespace_0), int32(0), v12+int32(32), l3)
 			mBase = m.M
-			v59 = m.ExcPending
-			if v59 != 0 {
+			v56 = m.ExcPending
+			if v56 != 0 {
 				return int64(0)
 			} else {
-				v62 = F_strlen(m, l1)
+				v59 = F_strlen(m, l1)
 				mBase = m.M
-				v65 = F_sendDir(m, l0, v11+int32(128), v62, l3, int32(0), int32(1), l4, l2, l5)
+				v62 = F_sendDir(m, l0, v12+int32(128), v59, l3, int32(0), int32(1), l4, l2, l5)
 				mBase = m.M
-				v66 = m.ExcPending
-				if v66 != 0 {
+				v63 = m.ExcPending
+				if v63 != 0 {
 					return int64(0)
 				} else {
-					v69 = v65 + int64(512)
-					m.G0 = v11 + int32(1152)
-					return v69
+					v66 = v62 + int64(512)
+					m.G0 = v12 + int32(1152)
+					return v66
 				}
 			}
 		}

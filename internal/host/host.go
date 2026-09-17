@@ -490,11 +490,11 @@ var table = []Fn{
 		m.Write(u32(a[3]), []byte("UTC\x00"))
 		return 0
 	}},
-	{"env", "_gmtime_js", "ji", "", func(h *Host, m Memory, a []uint64) uint64 {
+	{"env", "_gmtime_js", "ji", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		writeTm(m, u32(a[1]), time.Unix(i64(a[0]), 0).UTC())
 		return 0
 	}},
-	{"env", "_localtime_js", "ji", "", func(h *Host, m Memory, a []uint64) uint64 {
+	{"env", "_localtime_js", "ji", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		writeTm(m, u32(a[1]), time.Unix(i64(a[0]), 0).UTC())
 		return 0
 	}},
@@ -692,6 +692,9 @@ var table = []Fn{
 	{"env", "__syscall_truncate64", "ij", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		return errno(h.FS.Truncate(h.str(m, u32(a[0])), i64(a[1])))
 	}},
+	{"env", "__syscall_umask", "i", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		return 0
+	}},
 	{"env", "__syscall_ftruncate64", "ij", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		return errno(h.FS.Ftruncate(i32(a[0]), i64(a[1])))
 	}},
@@ -723,6 +726,11 @@ var table = []Fn{
 		}
 		m.Write(buf, append([]byte(cwd), 0))
 		return ret32(int32(len(cwd) + 1))
+	}},
+	// Emscripten 6 emits this identity query for a few libc paths. The
+	// in-memory runtime has no guest identity separation, so root is correct.
+	{"env", "__syscall_getegid32", "", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		return 0
 	}},
 	{"env", "__syscall_getdents64", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		fd, dirp, count := i32(a[0]), u32(a[1]), u32(a[2])
@@ -808,6 +816,22 @@ var table = []Fn{
 		r, w := h.FS.Pipe()
 		wrI32(m, p, r)
 		wrI32(m, p+4, w)
+		return 0
+	}},
+	{"env", "__syscall_pipe2", "ii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		p := u32(a[0])
+		if p == 0 {
+			return errno(vfs.EFAULT)
+		}
+		r, w := h.FS.Pipe()
+		wrI32(m, p, r)
+		wrI32(m, p+4, w)
+		return 0
+	}},
+	{"env", "__syscall_poll", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		// The pgmem bridge owns the actual client wire. For libc poll calls,
+		// preserve the timeout behavior and report no filesystem readiness.
+		h.sleep(i32(a[2]))
 		return 0
 	}},
 	{"env", "__syscall_fdatasync", "i", "i", func(h *Host, m Memory, a []uint64) uint64 {

@@ -307,19 +307,21 @@ func F_sql_fn_param_ref(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v32
 	var v35 int32
 	_ = v35
-	var v43 int32
-	_ = v43
+	var v36 int32
+	_ = v36
+	var v44 int32
+	_ = v44
 	v3 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v6 <= v3 {
-		v43 = v3
-		return v43
+		v44 = v3
+		return v44
 	} else {
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 		if v10 < v6 {
-			v43 = v3
-			return v43
+			v44 = v3
+			return v44
 		} else {
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 			v14 = F_palloc0(m, int32(28))
@@ -343,17 +345,14 @@ func F_sql_fn_param_ref(m *base.Module, l0 int32, l1 int32) int32 {
 					*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v12
 					*(*int32)(unsafe.Add(mBase, uint32(v14)+20)) = v31
 					v35 = *(*int32)(unsafe.Add(mBase, uint32(v9)+16))
-					if v35 == int32(0) {
-						v43 = v14
+					v36 = int32(0)
+					if base.B2i32(v35 == v36)|base.B2i32(v31 == v36) != 0 {
+						v44 = v14
 					} else {
-						if v31 == int32(0) {
-							v43 = v14
-						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v14)+20)) = v35
-							v43 = v14
-						}
+						*(*int32)(unsafe.Add(mBase, uint32(v14)+20)) = v35
+						v44 = v14
 					}
-					return v43
+					return v44
 				}
 			}
 		}

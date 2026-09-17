@@ -20,8 +20,8 @@ func F_jointree_contains_lateral_outer_refs(m *base.Module, l0 int32, l1 int32, 
 	_ = v18
 	var v21 int32
 	_ = v21
-	var v28 int32
-	_ = v28
+	var v30 int32
+	_ = v30
 	var v32 int32
 	_ = v32
 	var v36 int32
@@ -66,8 +66,8 @@ func F_jointree_contains_lateral_outer_refs(m *base.Module, l0 int32, l1 int32, 
 	_ = v95
 	var v97 int32
 	_ = v97
-	var v102 int32
-	_ = v102
+	var v104 int32
+	_ = v104
 	var v111 int32
 	_ = v111
 	var v114 int32
@@ -122,8 +122,8 @@ func F_jointree_contains_lateral_outer_refs(m *base.Module, l0 int32, l1 int32, 
 	_ = v168
 	var v170 int32
 	_ = v170
-	var v175 int32
-	_ = v175
+	var v177 int32
+	_ = v177
 	var v184 int32
 	_ = v184
 	var v201 int32
@@ -215,12 +215,12 @@ L8:
 	}
 L9:
 	;
-	v28 = v5
+	v30 = v5
 	goto L10
 L10:
 	;
 	v32 = *(*int32)(unsafe.Add(mBase, uint32(v18)+12))
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v32+v28<<(uint(int32(2))%32))))
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(v32+v30<<(uint(int32(2))%32))))
 	v37 = F_jointree_contains_lateral_outer_refs(m, l0, v36, l2, l3)
 	mBase = m.M
 	v40 = m.ExcPending
@@ -244,10 +244,10 @@ L13:
 	}
 L14:
 	;
-	v42 = v28 + int32(1)
+	v42 = v30 + int32(1)
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
 	if v42 < v43 {
-		v28 = v42
+		v30 = v42
 		goto L10
 	} else {
 		goto L15
@@ -291,21 +291,21 @@ L20:
 L21:
 	;
 	if l3 == int32(0) {
-		v102 = v58
+		v104 = v58
 		goto L22
 	} else {
 		goto L23
 	}
 L22:
 	;
-	v111 = v102
+	v111 = v104
 	goto L18
 L23:
 	;
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v56)+4))
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(l3)+4))
 	if v68 < v67 {
-		v102 = v58
+		v104 = v58
 		goto L22
 	} else {
 		goto L24
@@ -335,18 +335,18 @@ L28:
 	;
 	v86 = v79 << (uint(int32(2)) % 32)
 	v88 = *(*int32)(unsafe.Add(mBase, uint32(v56+v74+v86)))
-	v90 = *(*int32)(unsafe.Add(mBase, uint32(v86+(l3+v74))))
+	v90 = *(*int32)(unsafe.Add(mBase, uint32(l3+v74+v86)))
 	v93 = v88 & (v90 ^ int32(-1))
 	v95 = base.B2i32(v93 == int32(0))
 	if v93 != 0 {
-		v102 = v95
+		v104 = v95
 		goto L22
 	} else {
 		goto L30
 	}
 L29:
 	;
-	v102 = v95
+	v104 = v95
 	goto L22
 L30:
 	;
@@ -452,21 +452,21 @@ L44:
 L45:
 	;
 	if v120 == int32(0) {
-		v175 = v131
+		v177 = v131
 		goto L46
 	} else {
 		goto L47
 	}
 L46:
 	;
-	v184 = v175
+	v184 = v177
 	goto L42
 L47:
 	;
 	v140 = *(*int32)(unsafe.Add(mBase, uint32(v129)+4))
 	v141 = *(*int32)(unsafe.Add(mBase, uint32(v120)+4))
 	if v141 < v140 {
-		v175 = v131
+		v177 = v131
 		goto L46
 	} else {
 		goto L48
@@ -496,18 +496,18 @@ L52:
 	;
 	v159 = v152 << (uint(int32(2)) % 32)
 	v161 = *(*int32)(unsafe.Add(mBase, uint32(v129+v147+v159)))
-	v163 = *(*int32)(unsafe.Add(mBase, uint32(v159+(v120+v147))))
+	v163 = *(*int32)(unsafe.Add(mBase, uint32(v120+v147+v159)))
 	v166 = v161 & (v163 ^ int32(-1))
 	v168 = base.B2i32(v166 == int32(0))
 	if v166 != 0 {
-		v175 = v168
+		v177 = v168
 		goto L46
 	} else {
 		goto L54
 	}
 L53:
 	;
-	v175 = v168
+	v177 = v168
 	goto L46
 L54:
 	;

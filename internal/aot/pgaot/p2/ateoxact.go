@@ -20,75 +20,73 @@ func F_AtEOXact_ComboCid(m *base.Module) {
 func F_AtEOXact_Inval(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
-	var v11 int32
-	_ = v11
-	var v15 int32
-	_ = v15
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
 	var v17 int32
 	_ = v17
 	var v18 int32
 	_ = v18
-	var v19 int32
-	_ = v19
-	var v23 int32
-	_ = v23
+	var v21 int32
+	_ = v21
 	var v24 int32
 	_ = v24
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v32 int32
-	_ = v32
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
 	var v37 int32
 	_ = v37
 	var v38 int32
 	_ = v38
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
-	var v41 int32
-	_ = v41
-	var v45 int32
-	_ = v45
+	var v42 int32
+	_ = v42
+	var v47 int32
+	_ = v47
+	var v49 int32
+	_ = v49
 	var v50 int32
 	_ = v50
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
-	var v57 int32
-	_ = v57
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
 	var v58 int32
 	_ = v58
-	var v59 int32
-	_ = v59
-	var v61 int32
-	_ = v61
-	var v67 int32
-	_ = v67
-	var v72 int32
-	_ = v72
-	var v74 int32
-	_ = v74
-	var v81 int32
-	_ = v81
-	var v82 int32
-	_ = v82
+	var v63 int32
+	_ = v63
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
 	var v84 int32
 	_ = v84
-	var v90 int32
-	_ = v90
-	var v95 int32
-	_ = v95
-	var v97 int32
-	_ = v97
+	var v89 int32
+	_ = v89
+	var v91 int32
+	_ = v91
 	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[0])) = int32(0)
-	v10 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[1]))
-	if v10 != 0 {
+	v9 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[1]))
+	if v9 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -112,8 +110,8 @@ L4:
 	goto L3
 L5:
 	;
-	v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+16)))
-	if v11 == int32(1) {
+	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+16)))
+	if v10 == int32(1) {
 		goto L8
 	} else {
 		goto L9
@@ -123,9 +121,9 @@ L6:
 	goto L7
 L7:
 	;
-	v58 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
-	if v58 < v59 {
+	v55 = *(*int32)(unsafe.Add(mBase, uint32(v9)+20))
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(v9)+28))
+	if v55 < v56 {
 		goto L23
 	} else {
 		goto L24
@@ -134,28 +132,27 @@ L8:
 	;
 	F_RelationCacheInitFilePreInvalidate(m)
 	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	v14 = m.ExcPending
+	if v14 != 0 {
 		goto L11
 	} else {
 		goto L12
 	}
 L9:
 	;
-	v18 = v10
+	v17 = v9
 	goto L10
 L10:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+28)) = v19
-	*(*int32)(unsafe.Add(mBase, uint32(v18))) = v19
-	v23 = v18 + int32(32)
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(v18)+12))
-	*(*int32)(unsafe.Add(mBase, uint32(v23))) = v24
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = v24
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(v18)+20))
-	v28 = v19 - v27
-	if int32(0) < v28 {
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+28)) = v18
+	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v18
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+32)) = v21
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v21
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(v17)+20))
+	v25 = v18 - v24
+	if int32(0) < v25 {
 		goto L13
 	} else {
 		goto L14
@@ -165,45 +162,45 @@ L11:
 	return
 L12:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[1]))
-	v18 = v17
+	v16 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[1]))
+	v17 = v16
 	goto L10
 L13:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[2]))
-	F_SendSharedInvalidMessages(m, v32+v27<<(uint(int32(4))%32), v28)
+	v29 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[2]))
+	F_SIInsertDataEntries(m, v29+v24<<(uint(int32(4))%32), v25)
 	mBase = m.M
-	v37 = m.ExcPending
-	if v37 != 0 {
+	v34 = m.ExcPending
+	if v34 != 0 {
 		goto L11
 	} else {
 		goto L16
 	}
 L14:
 	;
-	v39 = v24
+	v36 = v21
 	goto L15
 L15:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v18)+24))
-	v41 = v39 - v40
-	if int32(0) < v41 {
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(v17)+24))
+	v38 = v36 - v37
+	if int32(0) < v38 {
 		goto L17
 	} else {
 		goto L18
 	}
 L16:
 	;
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-	v39 = v38
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v17)+32))
+	v36 = v35
 	goto L15
 L17:
 	;
-	v45 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[3]))
-	F_SendSharedInvalidMessages(m, v45+v40<<(uint(int32(4))%32), v41)
+	v42 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[3]))
+	F_SIInsertDataEntries(m, v42+v37<<(uint(int32(4))%32), v38)
 	mBase = m.M
-	v50 = m.ExcPending
-	if v50 != 0 {
+	v47 = m.ExcPending
+	if v47 != 0 {
 		goto L11
 	} else {
 		goto L20
@@ -213,9 +210,9 @@ L18:
 	goto L19
 L19:
 	;
-	v52 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[1]))
-	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+16)))
-	if v53 != int32(1) {
+	v49 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[1]))
+	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+16)))
+	if v50 != int32(1) {
 		goto L4
 	} else {
 		goto L21
@@ -227,8 +224,8 @@ L21:
 	;
 	F_RelationCacheInitFilePostInvalidate(m)
 	mBase = m.M
-	v57 = m.ExcPending
-	if v57 != 0 {
+	v54 = m.ExcPending
+	if v54 != 0 {
 		goto L11
 	} else {
 		goto L22
@@ -238,27 +235,27 @@ L22:
 	goto L4
 L23:
 	;
-	v61 = v58
+	v58 = v55
 	goto L26
 L24:
 	;
 	goto L25
 L25:
 	;
-	v81 = *(*int32)(unsafe.Add(mBase, uint32(v10)+24))
-	v82 = *(*int32)(unsafe.Add(mBase, uint32(v10)+32))
-	if v82 <= v81 {
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(v9)+24))
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(v9)+32))
+	if v77 <= v76 {
 		goto L4
 	} else {
 		goto L30
 	}
 L26:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[2]))
-	F_LocalExecuteInvalidationMessage(m, v67+v61<<(uint(int32(4))%32))
+	v63 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[2]))
+	F_LocalExecuteInvalidationMessage(m, v63+v58<<(uint(int32(4))%32))
 	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
+	v68 = m.ExcPending
+	if v68 != 0 {
 		goto L11
 	} else {
 		goto L28
@@ -268,9 +265,9 @@ L27:
 	goto L25
 L28:
 	;
-	v74 = v61 + int32(1)
-	if v74 != v59 {
-		v61 = v74
+	v70 = v58 + int32(1)
+	if v70 != v56 {
+		v58 = v70
 		goto L26
 	} else {
 		goto L29
@@ -280,15 +277,15 @@ L29:
 	goto L27
 L30:
 	;
-	v84 = v81
+	v79 = v76
 	goto L31
 L31:
 	;
-	v90 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[3]))
-	F_LocalExecuteInvalidationMessage(m, v90+v84<<(uint(int32(4))%32))
+	v84 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Inval[3]))
+	F_LocalExecuteInvalidationMessage(m, v84+v79<<(uint(int32(4))%32))
 	mBase = m.M
-	v95 = m.ExcPending
-	if v95 != 0 {
+	v89 = m.ExcPending
+	if v89 != 0 {
 		goto L11
 	} else {
 		goto L33
@@ -298,9 +295,9 @@ L32:
 	goto L4
 L33:
 	;
-	v97 = v84 + int32(1)
-	if v97 != v82 {
-		v84 = v97
+	v91 = v79 + int32(1)
+	if v91 != v77 {
+		v79 = v91
 		goto L31
 	} else {
 		goto L34
@@ -416,12 +413,12 @@ L6:
 	;
 	v16 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_LargeObject[2]))
 	v18 = v12
-	v19 = int32(0)
-	v20 = v16
+	v19 = v16
+	v20 = int32(0)
 	goto L7
 L7:
 	;
-	v25 = v20 + v19<<(uint(int32(2))%32)
+	v25 = v19 + v20<<(uint(int32(2))%32)
 	v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
 	if v26 != 0 {
 		goto L9
@@ -443,15 +440,15 @@ L9:
 L10:
 	;
 	v40 = v18
-	v41 = v20
+	v41 = v19
 	goto L11
 L11:
 	;
-	v43 = v19 + int32(1)
+	v43 = v20 + int32(1)
 	if v43 < v40 {
 		v18 = v40
-		v19 = v43
-		v20 = v41
+		v19 = v41
+		v20 = v43
 		goto L7
 	} else {
 		goto L18
@@ -585,7 +582,7 @@ L32:
 	goto L31
 L33:
 	;
-	F_sequence_close(m, v80, int32(0))
+	F_relation_close(m, v80, int32(0))
 	mBase = m.M
 	v83 = m.ExcPending
 	if v83 != 0 {

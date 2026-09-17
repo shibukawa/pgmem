@@ -1071,47 +1071,16 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 	}
 }
 func F_window_lead(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
+	var v3 int32
+	_ = v3
 	var v6 int32
 	_ = v6
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
-	v4 = m.G0
-	v6 = v4 - int32(16)
-	m.G0 = v6
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v9 = int32(1)
-	v15 = F_WinGetFuncArgInPartition(m, v8, v9, v9, v6+int32(15), v6+int32(14))
-	mBase = m.M
-	v18 = m.ExcPending
-	if v18 != 0 {
+	v3 = Fn14018(m, l0, int32(1))
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return int32(0)
 	} else {
-		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+15)))
-		if v19 == int32(1) {
-			v22 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v22)
-			v25 = int32(0)
-		} else {
-			v25 = v15
-		}
-		m.G0 = v6 + int32(16)
-		return v25
+		return v3
 	}
 }
 func F_window_row_number(m *base.Module, l0 int32) int32 {

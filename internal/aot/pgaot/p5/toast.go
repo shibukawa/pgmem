@@ -140,10 +140,10 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v171
 	var v172 int64
 	_ = v172
-	var v178 int32
-	_ = v178
-	var v180 int32
-	_ = v180
+	var v182 int32
+	_ = v182
+	var v186 int32
+	_ = v186
 	var v195 int32
 	_ = v195
 	var v203 int32
@@ -184,42 +184,44 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v258
 	var v264 int32
 	_ = v264
+	var v266 int32
+	_ = v266
 	var v271 int32
 	_ = v271
-	var v280 int32
-	_ = v280
-	var v281 int32
-	_ = v281
-	var v284 int32
-	_ = v284
-	var v285 int32
-	_ = v285
-	var v288 int32
-	_ = v288
+	var v278 int32
+	_ = v278
+	var v279 int32
+	_ = v279
+	var v282 int32
+	_ = v282
+	var v283 int32
+	_ = v283
+	var v286 int32
+	_ = v286
+	var v287 int32
+	_ = v287
 	var v289 int32
 	_ = v289
+	var v290 int32
+	_ = v290
 	var v291 int32
 	_ = v291
-	var v292 int32
-	_ = v292
-	var v293 int32
-	_ = v293
-	var v296 int32
-	_ = v296
+	var v294 int32
+	_ = v294
+	var v297 int32
+	_ = v297
 	var v299 int32
 	_ = v299
-	var v301 int32
-	_ = v301
-	var v302 int32
-	_ = v302
-	var v305 int32
-	_ = v305
+	var v300 int32
+	_ = v300
+	var v303 int32
+	_ = v303
+	var v316 int32
+	_ = v316
 	var v318 int32
 	_ = v318
-	var v320 int32
-	_ = v320
-	var v326 int32
-	_ = v326
+	var v328 int32
+	_ = v328
 	var v337 int32
 	_ = v337
 	var v341 int32
@@ -245,34 +247,34 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+112))
 	if v18 != 0 {
-		v326 = v8
+		v328 = v8
 		m.G0 = v15 + int32(304)
-		return v326
+		return v328
 	} else {
 		v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v21 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_create_toast_table[0])))
 		if v21 == int32(0) {
 			v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+119)))
 			if v24 == int32(112) {
-				v326 = v8
+				v328 = v8
 				m.G0 = v15 + int32(304)
-				return v326
+				return v328
 			} else {
 				v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+117)))
 				if v27 == int32(1) {
 					v31 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
 					if v31 != 0 {
-						v326 = v8
+						v328 = v8
 						m.G0 = v15 + int32(304)
-						return v326
+						return v328
 					} else {
 						v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 						if base.Ui32(v32) < base.Ui32(int32(_a_F_create_toast_table_0)) {
 							v36 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
 							if v36 != 0 {
-								v326 = v8
+								v328 = v8
 								m.G0 = v15 + int32(304)
-								return v326
+								return v328
 							} else {
 								v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
 								v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+152))
@@ -442,21 +444,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																						*(*int64)(unsafe.Add(mBase, uint32(v170)+76)) = v172
 																						*(*int64)(unsafe.Add(mBase, uint32(v170)+8)) = int64(562954248388610)
 																						*(*int64)(unsafe.Add(mBase, uint32(v170))) = int64(8589934973)
-																						v178 = int32(0)
-																						*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v178
-																						v180 = int32(1)
-																						*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v180)
-																						*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v180)
-																						*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
-																						*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v178
 																						*(*int64)(unsafe.Add(mBase, uint32(v170)+84)) = v172
 																						*(*int64)(unsafe.Add(mBase, uint32(v170)+92)) = v172
-																						*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v178
+																						v182 = int32(0)
+																						*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v182
+																						*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v182
+																						v186 = int32(1)
+																						*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v186)
+																						*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v186)
+																						*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
+																						*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v182
 																						v195 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[4]))
 																						*(*int32)(unsafe.Add(mBase, uint32(v170)+140)) = v195
 																						*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																						*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
-																						*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
+																						*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v182
 																						v203 = int32(_a_F_create_toast_table_6)
 																						*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
 																						v205 = int32(_a_F_create_toast_table_7)
@@ -473,13 +475,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																							v224 = *(*int32)(unsafe.Add(mBase, uint32(v223)+92))
 																							v229 = int32(0)
 																							v234 = int32(1)
-																							v239 = F_index_create(m, v167, v15+int32(160), l2, v178, v178, v178, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
+																							v239 = F_index_create(m, v167, v15+int32(160), l2, v182, v182, v182, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
 																							mBase = m.M
 																							v240 = m.ExcPending
 																							if v240 != 0 {
 																								return int32(0)
 																							} else {
-																								F_sequence_close(m, v167, int32(0))
+																								F_relation_close(m, v167, int32(0))
 																								mBase = m.M
 																								v243 = m.ExcPending
 																								if v243 != 0 {
@@ -536,56 +538,56 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																													if v264 != 0 {
 																														return int32(0)
 																													} else {
-																														v293 = v252
-																														F_pfree(m, v293)
+																														v291 = v252
+																														F_pfree(m, v291)
 																														mBase = m.M
-																														v296 = m.ExcPending
-																														if v296 != 0 {
+																														v294 = m.ExcPending
+																														if v294 != 0 {
 																															return int32(0)
 																														} else {
-																															F_sequence_close(m, v246, int32(3))
+																															F_relation_close(m, v246, int32(3))
 																															mBase = m.M
-																															v299 = m.ExcPending
-																															if v299 != 0 {
+																															v297 = m.ExcPending
+																															if v297 != 0 {
 																																return int32(0)
 																															} else {
-																																v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																																if v301 != 0 {
-																																	v302 = int32(0)
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																																v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																																if v299 != 0 {
+																																	v300 = int32(0)
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																																	v305 = int32(1259)
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																																	v303 = int32(1259)
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																																	F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																																	mBase = m.M
-																																	v318 = m.ExcPending
-																																	if v318 != 0 {
+																																	v316 = m.ExcPending
+																																	if v316 != 0 {
 																																		return int32(0)
 																																	} else {
 																																		F_CommandCounterIncrement(m)
 																																		mBase = m.M
-																																		v320 = m.ExcPending
-																																		if v320 != 0 {
+																																		v318 = m.ExcPending
+																																		if v318 != 0 {
 																																			return int32(0)
 																																		} else {
-																																			v326 = int32(1)
+																																			v328 = int32(1)
 																																			m.G0 = v15 + int32(304)
-																																			return v326
+																																			return v328
 																																		}
 																																	}
 																																} else {
 																																	F_CommandCounterIncrement(m)
 																																	mBase = m.M
-																																	v320 = m.ExcPending
-																																	if v320 != 0 {
+																																	v318 = m.ExcPending
+																																	if v318 != 0 {
 																																		return int32(0)
 																																	} else {
-																																		v326 = int32(1)
+																																		v328 = int32(1)
 																																		m.G0 = v15 + int32(304)
-																																		return v326
+																																		return v328
 																																	}
 																																}
 																															}
@@ -594,20 +596,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																												}
 																											}
 																										} else {
-																											F_ScanKeyInit(m, v15-int32(-64), int32(1), int32(3), int32(184), v19)
+																											v266 = v15 - int32(-64)
+																											F_ScanKeyInit(m, v266, int32(1), int32(3), int32(184), v19)
 																											mBase = m.M
 																											v271 = m.ExcPending
 																											if v271 != 0 {
 																												return int32(0)
 																											} else {
-																												F_systable_inplace_update_begin(m, v246, int32(2662), v15-int32(-64), v15+int32(300), v15+int32(128))
+																												F_systable_inplace_update_begin(m, v246, int32(2662), v266, v15+int32(300), v15+int32(128))
 																												mBase = m.M
-																												v280 = m.ExcPending
-																												if v280 != 0 {
+																												v278 = m.ExcPending
+																												if v278 != 0 {
 																													return int32(0)
 																												} else {
-																													v281 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																													if v281 == int32(0) {
+																													v279 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																													if v279 == int32(0) {
 																														F_errstart_cold(m, int32(21), int32(0))
 																														mBase = m.M
 																														v365 = m.ExcPending
@@ -634,68 +637,68 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																															}
 																														}
 																													} else {
-																														v284 = *(*int32)(unsafe.Add(mBase, uint32(v281)+16))
-																														v285 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v284)+22)))
-																														*(*int32)(unsafe.Add(mBase, uint32(v284+v285)+112)) = v162
-																														v288 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
-																														v289 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																														F_systable_inplace_update_finish(m, v288, v289)
+																														v282 = *(*int32)(unsafe.Add(mBase, uint32(v279)+16))
+																														v283 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v282)+22)))
+																														*(*int32)(unsafe.Add(mBase, uint32(v282+v283)+112)) = v162
+																														v286 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
+																														v287 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																														F_systable_inplace_update_finish(m, v286, v287)
 																														mBase = m.M
-																														v291 = m.ExcPending
-																														if v291 != 0 {
+																														v289 = m.ExcPending
+																														if v289 != 0 {
 																															return int32(0)
 																														} else {
-																															v292 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																															v293 = v292
-																															F_pfree(m, v293)
+																															v290 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																															v291 = v290
+																															F_pfree(m, v291)
 																															mBase = m.M
-																															v296 = m.ExcPending
-																															if v296 != 0 {
+																															v294 = m.ExcPending
+																															if v294 != 0 {
 																																return int32(0)
 																															} else {
-																																F_sequence_close(m, v246, int32(3))
+																																F_relation_close(m, v246, int32(3))
 																																mBase = m.M
-																																v299 = m.ExcPending
-																																if v299 != 0 {
+																																v297 = m.ExcPending
+																																if v297 != 0 {
 																																	return int32(0)
 																																} else {
-																																	v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																																	if v301 != 0 {
-																																		v302 = int32(0)
-																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																																	v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																																	if v299 != 0 {
+																																		v300 = int32(0)
+																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																																		v305 = int32(1259)
-																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																																		v303 = int32(1259)
+																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																																		*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																																		F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																																		mBase = m.M
-																																		v318 = m.ExcPending
-																																		if v318 != 0 {
+																																		v316 = m.ExcPending
+																																		if v316 != 0 {
 																																			return int32(0)
 																																		} else {
 																																			F_CommandCounterIncrement(m)
 																																			mBase = m.M
-																																			v320 = m.ExcPending
-																																			if v320 != 0 {
+																																			v318 = m.ExcPending
+																																			if v318 != 0 {
 																																				return int32(0)
 																																			} else {
-																																				v326 = int32(1)
+																																				v328 = int32(1)
 																																				m.G0 = v15 + int32(304)
-																																				return v326
+																																				return v328
 																																			}
 																																		}
 																																	} else {
 																																		F_CommandCounterIncrement(m)
 																																		mBase = m.M
-																																		v320 = m.ExcPending
-																																		if v320 != 0 {
+																																		v318 = m.ExcPending
+																																		if v318 != 0 {
 																																			return int32(0)
 																																		} else {
-																																			v326 = int32(1)
+																																			v328 = int32(1)
 																																			m.G0 = v15 + int32(304)
-																																			return v326
+																																			return v328
 																																		}
 																																	}
 																																}
@@ -722,9 +725,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 											}
 										}
 									} else {
-										v326 = v8
+										v328 = v8
 										m.G0 = v15 + int32(304)
-										return v326
+										return v328
 									}
 								}
 							}
@@ -897,21 +900,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																					*(*int64)(unsafe.Add(mBase, uint32(v170)+76)) = v172
 																					*(*int64)(unsafe.Add(mBase, uint32(v170)+8)) = int64(562954248388610)
 																					*(*int64)(unsafe.Add(mBase, uint32(v170))) = int64(8589934973)
-																					v178 = int32(0)
-																					*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v178
-																					v180 = int32(1)
-																					*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v180)
-																					*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v180)
-																					*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
-																					*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v178
 																					*(*int64)(unsafe.Add(mBase, uint32(v170)+84)) = v172
 																					*(*int64)(unsafe.Add(mBase, uint32(v170)+92)) = v172
-																					*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v178
+																					v182 = int32(0)
+																					*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v182
+																					*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v182
+																					v186 = int32(1)
+																					*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v186)
+																					*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v186)
+																					*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
+																					*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v182
 																					v195 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[4]))
 																					*(*int32)(unsafe.Add(mBase, uint32(v170)+140)) = v195
 																					*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																					*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
-																					*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
+																					*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v182
 																					v203 = int32(_a_F_create_toast_table_6)
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
 																					v205 = int32(_a_F_create_toast_table_7)
@@ -928,13 +931,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																						v224 = *(*int32)(unsafe.Add(mBase, uint32(v223)+92))
 																						v229 = int32(0)
 																						v234 = int32(1)
-																						v239 = F_index_create(m, v167, v15+int32(160), l2, v178, v178, v178, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
+																						v239 = F_index_create(m, v167, v15+int32(160), l2, v182, v182, v182, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
 																						mBase = m.M
 																						v240 = m.ExcPending
 																						if v240 != 0 {
 																							return int32(0)
 																						} else {
-																							F_sequence_close(m, v167, int32(0))
+																							F_relation_close(m, v167, int32(0))
 																							mBase = m.M
 																							v243 = m.ExcPending
 																							if v243 != 0 {
@@ -991,56 +994,56 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																												if v264 != 0 {
 																													return int32(0)
 																												} else {
-																													v293 = v252
-																													F_pfree(m, v293)
+																													v291 = v252
+																													F_pfree(m, v291)
 																													mBase = m.M
-																													v296 = m.ExcPending
-																													if v296 != 0 {
+																													v294 = m.ExcPending
+																													if v294 != 0 {
 																														return int32(0)
 																													} else {
-																														F_sequence_close(m, v246, int32(3))
+																														F_relation_close(m, v246, int32(3))
 																														mBase = m.M
-																														v299 = m.ExcPending
-																														if v299 != 0 {
+																														v297 = m.ExcPending
+																														if v297 != 0 {
 																															return int32(0)
 																														} else {
-																															v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																															if v301 != 0 {
-																																v302 = int32(0)
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																															v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																															if v299 != 0 {
+																																v300 = int32(0)
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																																*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																																v305 = int32(1259)
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																																v303 = int32(1259)
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																																*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																																F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																																mBase = m.M
-																																v318 = m.ExcPending
-																																if v318 != 0 {
+																																v316 = m.ExcPending
+																																if v316 != 0 {
 																																	return int32(0)
 																																} else {
 																																	F_CommandCounterIncrement(m)
 																																	mBase = m.M
-																																	v320 = m.ExcPending
-																																	if v320 != 0 {
+																																	v318 = m.ExcPending
+																																	if v318 != 0 {
 																																		return int32(0)
 																																	} else {
-																																		v326 = int32(1)
+																																		v328 = int32(1)
 																																		m.G0 = v15 + int32(304)
-																																		return v326
+																																		return v328
 																																	}
 																																}
 																															} else {
 																																F_CommandCounterIncrement(m)
 																																mBase = m.M
-																																v320 = m.ExcPending
-																																if v320 != 0 {
+																																v318 = m.ExcPending
+																																if v318 != 0 {
 																																	return int32(0)
 																																} else {
-																																	v326 = int32(1)
+																																	v328 = int32(1)
 																																	m.G0 = v15 + int32(304)
-																																	return v326
+																																	return v328
 																																}
 																															}
 																														}
@@ -1049,20 +1052,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																											}
 																										}
 																									} else {
-																										F_ScanKeyInit(m, v15-int32(-64), int32(1), int32(3), int32(184), v19)
+																										v266 = v15 - int32(-64)
+																										F_ScanKeyInit(m, v266, int32(1), int32(3), int32(184), v19)
 																										mBase = m.M
 																										v271 = m.ExcPending
 																										if v271 != 0 {
 																											return int32(0)
 																										} else {
-																											F_systable_inplace_update_begin(m, v246, int32(2662), v15-int32(-64), v15+int32(300), v15+int32(128))
+																											F_systable_inplace_update_begin(m, v246, int32(2662), v266, v15+int32(300), v15+int32(128))
 																											mBase = m.M
-																											v280 = m.ExcPending
-																											if v280 != 0 {
+																											v278 = m.ExcPending
+																											if v278 != 0 {
 																												return int32(0)
 																											} else {
-																												v281 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																												if v281 == int32(0) {
+																												v279 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																												if v279 == int32(0) {
 																													F_errstart_cold(m, int32(21), int32(0))
 																													mBase = m.M
 																													v365 = m.ExcPending
@@ -1089,68 +1093,68 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																														}
 																													}
 																												} else {
-																													v284 = *(*int32)(unsafe.Add(mBase, uint32(v281)+16))
-																													v285 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v284)+22)))
-																													*(*int32)(unsafe.Add(mBase, uint32(v284+v285)+112)) = v162
-																													v288 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
-																													v289 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																													F_systable_inplace_update_finish(m, v288, v289)
+																													v282 = *(*int32)(unsafe.Add(mBase, uint32(v279)+16))
+																													v283 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v282)+22)))
+																													*(*int32)(unsafe.Add(mBase, uint32(v282+v283)+112)) = v162
+																													v286 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
+																													v287 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																													F_systable_inplace_update_finish(m, v286, v287)
 																													mBase = m.M
-																													v291 = m.ExcPending
-																													if v291 != 0 {
+																													v289 = m.ExcPending
+																													if v289 != 0 {
 																														return int32(0)
 																													} else {
-																														v292 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																														v293 = v292
-																														F_pfree(m, v293)
+																														v290 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																														v291 = v290
+																														F_pfree(m, v291)
 																														mBase = m.M
-																														v296 = m.ExcPending
-																														if v296 != 0 {
+																														v294 = m.ExcPending
+																														if v294 != 0 {
 																															return int32(0)
 																														} else {
-																															F_sequence_close(m, v246, int32(3))
+																															F_relation_close(m, v246, int32(3))
 																															mBase = m.M
-																															v299 = m.ExcPending
-																															if v299 != 0 {
+																															v297 = m.ExcPending
+																															if v297 != 0 {
 																																return int32(0)
 																															} else {
-																																v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																																if v301 != 0 {
-																																	v302 = int32(0)
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																																v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																																if v299 != 0 {
+																																	v300 = int32(0)
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																																	v305 = int32(1259)
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																																	v303 = int32(1259)
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																																	F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																																	mBase = m.M
-																																	v318 = m.ExcPending
-																																	if v318 != 0 {
+																																	v316 = m.ExcPending
+																																	if v316 != 0 {
 																																		return int32(0)
 																																	} else {
 																																		F_CommandCounterIncrement(m)
 																																		mBase = m.M
-																																		v320 = m.ExcPending
-																																		if v320 != 0 {
+																																		v318 = m.ExcPending
+																																		if v318 != 0 {
 																																			return int32(0)
 																																		} else {
-																																			v326 = int32(1)
+																																			v328 = int32(1)
 																																			m.G0 = v15 + int32(304)
-																																			return v326
+																																			return v328
 																																		}
 																																	}
 																																} else {
 																																	F_CommandCounterIncrement(m)
 																																	mBase = m.M
-																																	v320 = m.ExcPending
-																																	if v320 != 0 {
+																																	v318 = m.ExcPending
+																																	if v318 != 0 {
 																																		return int32(0)
 																																	} else {
-																																		v326 = int32(1)
+																																		v328 = int32(1)
 																																		m.G0 = v15 + int32(304)
-																																		return v326
+																																		return v328
 																																	}
 																																}
 																															}
@@ -1177,9 +1181,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										}
 									}
 								} else {
-									v326 = v8
+									v328 = v8
 									m.G0 = v15 + int32(304)
-									return v326
+									return v328
 								}
 							}
 						}
@@ -1189,9 +1193,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					if base.Ui32(v32) < base.Ui32(int32(_a_F_create_toast_table_0)) {
 						v36 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
 						if v36 != 0 {
-							v326 = v8
+							v328 = v8
 							m.G0 = v15 + int32(304)
-							return v326
+							return v328
 						} else {
 							v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
 							v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+152))
@@ -1361,21 +1365,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																					*(*int64)(unsafe.Add(mBase, uint32(v170)+76)) = v172
 																					*(*int64)(unsafe.Add(mBase, uint32(v170)+8)) = int64(562954248388610)
 																					*(*int64)(unsafe.Add(mBase, uint32(v170))) = int64(8589934973)
-																					v178 = int32(0)
-																					*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v178
-																					v180 = int32(1)
-																					*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v180)
-																					*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v180)
-																					*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
-																					*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v178
 																					*(*int64)(unsafe.Add(mBase, uint32(v170)+84)) = v172
 																					*(*int64)(unsafe.Add(mBase, uint32(v170)+92)) = v172
-																					*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v178
+																					v182 = int32(0)
+																					*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v182
+																					*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v182
+																					v186 = int32(1)
+																					*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v186)
+																					*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v186)
+																					*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
+																					*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v182
 																					v195 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[4]))
 																					*(*int32)(unsafe.Add(mBase, uint32(v170)+140)) = v195
 																					*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																					*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
-																					*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
+																					*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v182
 																					v203 = int32(_a_F_create_toast_table_6)
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
 																					v205 = int32(_a_F_create_toast_table_7)
@@ -1392,13 +1396,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																						v224 = *(*int32)(unsafe.Add(mBase, uint32(v223)+92))
 																						v229 = int32(0)
 																						v234 = int32(1)
-																						v239 = F_index_create(m, v167, v15+int32(160), l2, v178, v178, v178, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
+																						v239 = F_index_create(m, v167, v15+int32(160), l2, v182, v182, v182, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
 																						mBase = m.M
 																						v240 = m.ExcPending
 																						if v240 != 0 {
 																							return int32(0)
 																						} else {
-																							F_sequence_close(m, v167, int32(0))
+																							F_relation_close(m, v167, int32(0))
 																							mBase = m.M
 																							v243 = m.ExcPending
 																							if v243 != 0 {
@@ -1455,56 +1459,56 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																												if v264 != 0 {
 																													return int32(0)
 																												} else {
-																													v293 = v252
-																													F_pfree(m, v293)
+																													v291 = v252
+																													F_pfree(m, v291)
 																													mBase = m.M
-																													v296 = m.ExcPending
-																													if v296 != 0 {
+																													v294 = m.ExcPending
+																													if v294 != 0 {
 																														return int32(0)
 																													} else {
-																														F_sequence_close(m, v246, int32(3))
+																														F_relation_close(m, v246, int32(3))
 																														mBase = m.M
-																														v299 = m.ExcPending
-																														if v299 != 0 {
+																														v297 = m.ExcPending
+																														if v297 != 0 {
 																															return int32(0)
 																														} else {
-																															v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																															if v301 != 0 {
-																																v302 = int32(0)
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																															v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																															if v299 != 0 {
+																																v300 = int32(0)
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																																*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																																v305 = int32(1259)
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																																v303 = int32(1259)
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																																*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																																F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																																mBase = m.M
-																																v318 = m.ExcPending
-																																if v318 != 0 {
+																																v316 = m.ExcPending
+																																if v316 != 0 {
 																																	return int32(0)
 																																} else {
 																																	F_CommandCounterIncrement(m)
 																																	mBase = m.M
-																																	v320 = m.ExcPending
-																																	if v320 != 0 {
+																																	v318 = m.ExcPending
+																																	if v318 != 0 {
 																																		return int32(0)
 																																	} else {
-																																		v326 = int32(1)
+																																		v328 = int32(1)
 																																		m.G0 = v15 + int32(304)
-																																		return v326
+																																		return v328
 																																	}
 																																}
 																															} else {
 																																F_CommandCounterIncrement(m)
 																																mBase = m.M
-																																v320 = m.ExcPending
-																																if v320 != 0 {
+																																v318 = m.ExcPending
+																																if v318 != 0 {
 																																	return int32(0)
 																																} else {
-																																	v326 = int32(1)
+																																	v328 = int32(1)
 																																	m.G0 = v15 + int32(304)
-																																	return v326
+																																	return v328
 																																}
 																															}
 																														}
@@ -1513,20 +1517,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																											}
 																										}
 																									} else {
-																										F_ScanKeyInit(m, v15-int32(-64), int32(1), int32(3), int32(184), v19)
+																										v266 = v15 - int32(-64)
+																										F_ScanKeyInit(m, v266, int32(1), int32(3), int32(184), v19)
 																										mBase = m.M
 																										v271 = m.ExcPending
 																										if v271 != 0 {
 																											return int32(0)
 																										} else {
-																											F_systable_inplace_update_begin(m, v246, int32(2662), v15-int32(-64), v15+int32(300), v15+int32(128))
+																											F_systable_inplace_update_begin(m, v246, int32(2662), v266, v15+int32(300), v15+int32(128))
 																											mBase = m.M
-																											v280 = m.ExcPending
-																											if v280 != 0 {
+																											v278 = m.ExcPending
+																											if v278 != 0 {
 																												return int32(0)
 																											} else {
-																												v281 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																												if v281 == int32(0) {
+																												v279 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																												if v279 == int32(0) {
 																													F_errstart_cold(m, int32(21), int32(0))
 																													mBase = m.M
 																													v365 = m.ExcPending
@@ -1553,68 +1558,68 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																														}
 																													}
 																												} else {
-																													v284 = *(*int32)(unsafe.Add(mBase, uint32(v281)+16))
-																													v285 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v284)+22)))
-																													*(*int32)(unsafe.Add(mBase, uint32(v284+v285)+112)) = v162
-																													v288 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
-																													v289 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																													F_systable_inplace_update_finish(m, v288, v289)
+																													v282 = *(*int32)(unsafe.Add(mBase, uint32(v279)+16))
+																													v283 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v282)+22)))
+																													*(*int32)(unsafe.Add(mBase, uint32(v282+v283)+112)) = v162
+																													v286 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
+																													v287 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																													F_systable_inplace_update_finish(m, v286, v287)
 																													mBase = m.M
-																													v291 = m.ExcPending
-																													if v291 != 0 {
+																													v289 = m.ExcPending
+																													if v289 != 0 {
 																														return int32(0)
 																													} else {
-																														v292 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																														v293 = v292
-																														F_pfree(m, v293)
+																														v290 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																														v291 = v290
+																														F_pfree(m, v291)
 																														mBase = m.M
-																														v296 = m.ExcPending
-																														if v296 != 0 {
+																														v294 = m.ExcPending
+																														if v294 != 0 {
 																															return int32(0)
 																														} else {
-																															F_sequence_close(m, v246, int32(3))
+																															F_relation_close(m, v246, int32(3))
 																															mBase = m.M
-																															v299 = m.ExcPending
-																															if v299 != 0 {
+																															v297 = m.ExcPending
+																															if v297 != 0 {
 																																return int32(0)
 																															} else {
-																																v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																																if v301 != 0 {
-																																	v302 = int32(0)
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																																v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																																if v299 != 0 {
+																																	v300 = int32(0)
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																																	v305 = int32(1259)
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																																	v303 = int32(1259)
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																																	*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																																	F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																																	mBase = m.M
-																																	v318 = m.ExcPending
-																																	if v318 != 0 {
+																																	v316 = m.ExcPending
+																																	if v316 != 0 {
 																																		return int32(0)
 																																	} else {
 																																		F_CommandCounterIncrement(m)
 																																		mBase = m.M
-																																		v320 = m.ExcPending
-																																		if v320 != 0 {
+																																		v318 = m.ExcPending
+																																		if v318 != 0 {
 																																			return int32(0)
 																																		} else {
-																																			v326 = int32(1)
+																																			v328 = int32(1)
 																																			m.G0 = v15 + int32(304)
-																																			return v326
+																																			return v328
 																																		}
 																																	}
 																																} else {
 																																	F_CommandCounterIncrement(m)
 																																	mBase = m.M
-																																	v320 = m.ExcPending
-																																	if v320 != 0 {
+																																	v318 = m.ExcPending
+																																	if v318 != 0 {
 																																		return int32(0)
 																																	} else {
-																																		v326 = int32(1)
+																																		v328 = int32(1)
 																																		m.G0 = v15 + int32(304)
-																																		return v326
+																																		return v328
 																																	}
 																																}
 																															}
@@ -1641,9 +1646,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										}
 									}
 								} else {
-									v326 = v8
+									v328 = v8
 									m.G0 = v15 + int32(304)
-									return v326
+									return v328
 								}
 							}
 						}
@@ -1816,21 +1821,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																				*(*int64)(unsafe.Add(mBase, uint32(v170)+76)) = v172
 																				*(*int64)(unsafe.Add(mBase, uint32(v170)+8)) = int64(562954248388610)
 																				*(*int64)(unsafe.Add(mBase, uint32(v170))) = int64(8589934973)
-																				v178 = int32(0)
-																				*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v178
-																				v180 = int32(1)
-																				*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v180)
-																				*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v180)
-																				*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
-																				*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v178
 																				*(*int64)(unsafe.Add(mBase, uint32(v170)+84)) = v172
 																				*(*int64)(unsafe.Add(mBase, uint32(v170)+92)) = v172
-																				*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v178
+																				v182 = int32(0)
+																				*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v182
+																				*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v182
+																				v186 = int32(1)
+																				*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v186)
+																				*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v186)
+																				*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
+																				*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v182
 																				v195 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[4]))
 																				*(*int32)(unsafe.Add(mBase, uint32(v170)+140)) = v195
 																				*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																				*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
-																				*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
+																				*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v182
 																				v203 = int32(_a_F_create_toast_table_6)
 																				*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
 																				v205 = int32(_a_F_create_toast_table_7)
@@ -1847,13 +1852,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																					v224 = *(*int32)(unsafe.Add(mBase, uint32(v223)+92))
 																					v229 = int32(0)
 																					v234 = int32(1)
-																					v239 = F_index_create(m, v167, v15+int32(160), l2, v178, v178, v178, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
+																					v239 = F_index_create(m, v167, v15+int32(160), l2, v182, v182, v182, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
 																					mBase = m.M
 																					v240 = m.ExcPending
 																					if v240 != 0 {
 																						return int32(0)
 																					} else {
-																						F_sequence_close(m, v167, int32(0))
+																						F_relation_close(m, v167, int32(0))
 																						mBase = m.M
 																						v243 = m.ExcPending
 																						if v243 != 0 {
@@ -1910,56 +1915,56 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																											if v264 != 0 {
 																												return int32(0)
 																											} else {
-																												v293 = v252
-																												F_pfree(m, v293)
+																												v291 = v252
+																												F_pfree(m, v291)
 																												mBase = m.M
-																												v296 = m.ExcPending
-																												if v296 != 0 {
+																												v294 = m.ExcPending
+																												if v294 != 0 {
 																													return int32(0)
 																												} else {
-																													F_sequence_close(m, v246, int32(3))
+																													F_relation_close(m, v246, int32(3))
 																													mBase = m.M
-																													v299 = m.ExcPending
-																													if v299 != 0 {
+																													v297 = m.ExcPending
+																													if v297 != 0 {
 																														return int32(0)
 																													} else {
-																														v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																														if v301 != 0 {
-																															v302 = int32(0)
-																															*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																														v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																														if v299 != 0 {
+																															v300 = int32(0)
+																															*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																															*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																															v305 = int32(1259)
-																															*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																															*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																															v303 = int32(1259)
+																															*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																															*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																															*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																															*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																															*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																															F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																															mBase = m.M
-																															v318 = m.ExcPending
-																															if v318 != 0 {
+																															v316 = m.ExcPending
+																															if v316 != 0 {
 																																return int32(0)
 																															} else {
 																																F_CommandCounterIncrement(m)
 																																mBase = m.M
-																																v320 = m.ExcPending
-																																if v320 != 0 {
+																																v318 = m.ExcPending
+																																if v318 != 0 {
 																																	return int32(0)
 																																} else {
-																																	v326 = int32(1)
+																																	v328 = int32(1)
 																																	m.G0 = v15 + int32(304)
-																																	return v326
+																																	return v328
 																																}
 																															}
 																														} else {
 																															F_CommandCounterIncrement(m)
 																															mBase = m.M
-																															v320 = m.ExcPending
-																															if v320 != 0 {
+																															v318 = m.ExcPending
+																															if v318 != 0 {
 																																return int32(0)
 																															} else {
-																																v326 = int32(1)
+																																v328 = int32(1)
 																																m.G0 = v15 + int32(304)
-																																return v326
+																																return v328
 																															}
 																														}
 																													}
@@ -1968,20 +1973,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																										}
 																									}
 																								} else {
-																									F_ScanKeyInit(m, v15-int32(-64), int32(1), int32(3), int32(184), v19)
+																									v266 = v15 - int32(-64)
+																									F_ScanKeyInit(m, v266, int32(1), int32(3), int32(184), v19)
 																									mBase = m.M
 																									v271 = m.ExcPending
 																									if v271 != 0 {
 																										return int32(0)
 																									} else {
-																										F_systable_inplace_update_begin(m, v246, int32(2662), v15-int32(-64), v15+int32(300), v15+int32(128))
+																										F_systable_inplace_update_begin(m, v246, int32(2662), v266, v15+int32(300), v15+int32(128))
 																										mBase = m.M
-																										v280 = m.ExcPending
-																										if v280 != 0 {
+																										v278 = m.ExcPending
+																										if v278 != 0 {
 																											return int32(0)
 																										} else {
-																											v281 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																											if v281 == int32(0) {
+																											v279 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																											if v279 == int32(0) {
 																												F_errstart_cold(m, int32(21), int32(0))
 																												mBase = m.M
 																												v365 = m.ExcPending
@@ -2008,68 +2014,68 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																													}
 																												}
 																											} else {
-																												v284 = *(*int32)(unsafe.Add(mBase, uint32(v281)+16))
-																												v285 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v284)+22)))
-																												*(*int32)(unsafe.Add(mBase, uint32(v284+v285)+112)) = v162
-																												v288 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
-																												v289 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																												F_systable_inplace_update_finish(m, v288, v289)
+																												v282 = *(*int32)(unsafe.Add(mBase, uint32(v279)+16))
+																												v283 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v282)+22)))
+																												*(*int32)(unsafe.Add(mBase, uint32(v282+v283)+112)) = v162
+																												v286 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
+																												v287 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																												F_systable_inplace_update_finish(m, v286, v287)
 																												mBase = m.M
-																												v291 = m.ExcPending
-																												if v291 != 0 {
+																												v289 = m.ExcPending
+																												if v289 != 0 {
 																													return int32(0)
 																												} else {
-																													v292 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																													v293 = v292
-																													F_pfree(m, v293)
+																													v290 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																													v291 = v290
+																													F_pfree(m, v291)
 																													mBase = m.M
-																													v296 = m.ExcPending
-																													if v296 != 0 {
+																													v294 = m.ExcPending
+																													if v294 != 0 {
 																														return int32(0)
 																													} else {
-																														F_sequence_close(m, v246, int32(3))
+																														F_relation_close(m, v246, int32(3))
 																														mBase = m.M
-																														v299 = m.ExcPending
-																														if v299 != 0 {
+																														v297 = m.ExcPending
+																														if v297 != 0 {
 																															return int32(0)
 																														} else {
-																															v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																															if v301 != 0 {
-																																v302 = int32(0)
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																															v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																															if v299 != 0 {
+																																v300 = int32(0)
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																																*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																																v305 = int32(1259)
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																																v303 = int32(1259)
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																																*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																																*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																																*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																																F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																																mBase = m.M
-																																v318 = m.ExcPending
-																																if v318 != 0 {
+																																v316 = m.ExcPending
+																																if v316 != 0 {
 																																	return int32(0)
 																																} else {
 																																	F_CommandCounterIncrement(m)
 																																	mBase = m.M
-																																	v320 = m.ExcPending
-																																	if v320 != 0 {
+																																	v318 = m.ExcPending
+																																	if v318 != 0 {
 																																		return int32(0)
 																																	} else {
-																																		v326 = int32(1)
+																																		v328 = int32(1)
 																																		m.G0 = v15 + int32(304)
-																																		return v326
+																																		return v328
 																																	}
 																																}
 																															} else {
 																																F_CommandCounterIncrement(m)
 																																mBase = m.M
-																																v320 = m.ExcPending
-																																if v320 != 0 {
+																																v318 = m.ExcPending
+																																if v318 != 0 {
 																																	return int32(0)
 																																} else {
-																																	v326 = int32(1)
+																																	v328 = int32(1)
 																																	m.G0 = v15 + int32(304)
-																																	return v326
+																																	return v328
 																																}
 																															}
 																														}
@@ -2096,9 +2102,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 									}
 								}
 							} else {
-								v326 = v8
+								v328 = v8
 								m.G0 = v15 + int32(304)
-								return v326
+								return v328
 							}
 						}
 					}
@@ -2107,9 +2113,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 		} else {
 			v44 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[5]))
 			if v44 == int32(0) {
-				v326 = v8
+				v328 = v8
 				m.G0 = v15 + int32(304)
-				return v326
+				return v328
 			} else {
 				if l4 != int32(8) {
 					v50 = l5
@@ -2270,21 +2276,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																*(*int64)(unsafe.Add(mBase, uint32(v170)+76)) = v172
 																*(*int64)(unsafe.Add(mBase, uint32(v170)+8)) = int64(562954248388610)
 																*(*int64)(unsafe.Add(mBase, uint32(v170))) = int64(8589934973)
-																v178 = int32(0)
-																*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v178
-																v180 = int32(1)
-																*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v180)
-																*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v180)
-																*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
-																*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v178
 																*(*int64)(unsafe.Add(mBase, uint32(v170)+84)) = v172
 																*(*int64)(unsafe.Add(mBase, uint32(v170)+92)) = v172
-																*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v178
+																v182 = int32(0)
+																*(*int32)(unsafe.Add(mBase, uint32(v170)+100)) = v182
+																*(*int32)(unsafe.Add(mBase, uint32(v170)+128)) = v182
+																v186 = int32(1)
+																*(*uint8)(unsafe.Add(mBase, uint32(v170)+118)) = uint8(v186)
+																*(*uint16)(unsafe.Add(mBase, uint32(v170)+116)) = uint16(v186)
+																*(*int64)(unsafe.Add(mBase, uint32(v170)+132)) = int64(403)
+																*(*int32)(unsafe.Add(mBase, uint32(v170)+119)) = v182
 																v195 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[4]))
 																*(*int32)(unsafe.Add(mBase, uint32(v170)+140)) = v195
 																*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
-																*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
+																*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v182
 																v203 = int32(_a_F_create_toast_table_6)
 																*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
 																v205 = int32(_a_F_create_toast_table_7)
@@ -2301,13 +2307,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																	v224 = *(*int32)(unsafe.Add(mBase, uint32(v223)+92))
 																	v229 = int32(0)
 																	v234 = int32(1)
-																	v239 = F_index_create(m, v167, v15+int32(160), l2, v178, v178, v178, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
+																	v239 = F_index_create(m, v167, v15+int32(160), l2, v182, v182, v182, v170, v220, int32(403), v224, v15+int32(152), v15+int32(144), v229, v15+int32(140), v229, v229, v234, v229, v234, v234, v229)
 																	mBase = m.M
 																	v240 = m.ExcPending
 																	if v240 != 0 {
 																		return int32(0)
 																	} else {
-																		F_sequence_close(m, v167, int32(0))
+																		F_relation_close(m, v167, int32(0))
 																		mBase = m.M
 																		v243 = m.ExcPending
 																		if v243 != 0 {
@@ -2364,56 +2370,56 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																							if v264 != 0 {
 																								return int32(0)
 																							} else {
-																								v293 = v252
-																								F_pfree(m, v293)
+																								v291 = v252
+																								F_pfree(m, v291)
 																								mBase = m.M
-																								v296 = m.ExcPending
-																								if v296 != 0 {
+																								v294 = m.ExcPending
+																								if v294 != 0 {
 																									return int32(0)
 																								} else {
-																									F_sequence_close(m, v246, int32(3))
+																									F_relation_close(m, v246, int32(3))
 																									mBase = m.M
-																									v299 = m.ExcPending
-																									if v299 != 0 {
+																									v297 = m.ExcPending
+																									if v297 != 0 {
 																										return int32(0)
 																									} else {
-																										v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																										if v301 != 0 {
-																											v302 = int32(0)
-																											*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																										v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																										if v299 != 0 {
+																											v300 = int32(0)
+																											*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																											*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																											v305 = int32(1259)
-																											*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																											*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																											v303 = int32(1259)
+																											*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																											*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																											*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																											*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																											*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																											F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																											mBase = m.M
-																											v318 = m.ExcPending
-																											if v318 != 0 {
+																											v316 = m.ExcPending
+																											if v316 != 0 {
 																												return int32(0)
 																											} else {
 																												F_CommandCounterIncrement(m)
 																												mBase = m.M
-																												v320 = m.ExcPending
-																												if v320 != 0 {
+																												v318 = m.ExcPending
+																												if v318 != 0 {
 																													return int32(0)
 																												} else {
-																													v326 = int32(1)
+																													v328 = int32(1)
 																													m.G0 = v15 + int32(304)
-																													return v326
+																													return v328
 																												}
 																											}
 																										} else {
 																											F_CommandCounterIncrement(m)
 																											mBase = m.M
-																											v320 = m.ExcPending
-																											if v320 != 0 {
+																											v318 = m.ExcPending
+																											if v318 != 0 {
 																												return int32(0)
 																											} else {
-																												v326 = int32(1)
+																												v328 = int32(1)
 																												m.G0 = v15 + int32(304)
-																												return v326
+																												return v328
 																											}
 																										}
 																									}
@@ -2422,20 +2428,21 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																						}
 																					}
 																				} else {
-																					F_ScanKeyInit(m, v15-int32(-64), int32(1), int32(3), int32(184), v19)
+																					v266 = v15 - int32(-64)
+																					F_ScanKeyInit(m, v266, int32(1), int32(3), int32(184), v19)
 																					mBase = m.M
 																					v271 = m.ExcPending
 																					if v271 != 0 {
 																						return int32(0)
 																					} else {
-																						F_systable_inplace_update_begin(m, v246, int32(2662), v15-int32(-64), v15+int32(300), v15+int32(128))
+																						F_systable_inplace_update_begin(m, v246, int32(2662), v266, v15+int32(300), v15+int32(128))
 																						mBase = m.M
-																						v280 = m.ExcPending
-																						if v280 != 0 {
+																						v278 = m.ExcPending
+																						if v278 != 0 {
 																							return int32(0)
 																						} else {
-																							v281 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																							if v281 == int32(0) {
+																							v279 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																							if v279 == int32(0) {
 																								F_errstart_cold(m, int32(21), int32(0))
 																								mBase = m.M
 																								v365 = m.ExcPending
@@ -2462,68 +2469,68 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																									}
 																								}
 																							} else {
-																								v284 = *(*int32)(unsafe.Add(mBase, uint32(v281)+16))
-																								v285 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v284)+22)))
-																								*(*int32)(unsafe.Add(mBase, uint32(v284+v285)+112)) = v162
-																								v288 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
-																								v289 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																								F_systable_inplace_update_finish(m, v288, v289)
+																								v282 = *(*int32)(unsafe.Add(mBase, uint32(v279)+16))
+																								v283 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v282)+22)))
+																								*(*int32)(unsafe.Add(mBase, uint32(v282+v283)+112)) = v162
+																								v286 = *(*int32)(unsafe.Add(mBase, uint32(v15)+128))
+																								v287 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																								F_systable_inplace_update_finish(m, v286, v287)
 																								mBase = m.M
-																								v291 = m.ExcPending
-																								if v291 != 0 {
+																								v289 = m.ExcPending
+																								if v289 != 0 {
 																									return int32(0)
 																								} else {
-																									v292 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
-																									v293 = v292
-																									F_pfree(m, v293)
+																									v290 = *(*int32)(unsafe.Add(mBase, uint32(v15)+300))
+																									v291 = v290
+																									F_pfree(m, v291)
 																									mBase = m.M
-																									v296 = m.ExcPending
-																									if v296 != 0 {
+																									v294 = m.ExcPending
+																									if v294 != 0 {
 																										return int32(0)
 																									} else {
-																										F_sequence_close(m, v246, int32(3))
+																										F_relation_close(m, v246, int32(3))
 																										mBase = m.M
-																										v299 = m.ExcPending
-																										if v299 != 0 {
+																										v297 = m.ExcPending
+																										if v297 != 0 {
 																											return int32(0)
 																										} else {
-																											v301 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
-																											if v301 != 0 {
-																												v302 = int32(0)
-																												*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v302
+																											v299 = *(*int32)(unsafe.Add(mBase, _c_F_create_toast_table[1]))
+																											if v299 != 0 {
+																												v300 = int32(0)
+																												*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = v300
 																												*(*int32)(unsafe.Add(mBase, uint32(v15)+68)) = v19
-																												v305 = int32(1259)
-																												*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v305
-																												*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v302
+																												v303 = int32(1259)
+																												*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v303
+																												*(*int32)(unsafe.Add(mBase, uint32(v15)+136)) = v300
 																												*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v162
-																												*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v305
+																												*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v303
 																												F_recordDependencyOn(m, v15+int32(128), v15-int32(-64), int32(105))
 																												mBase = m.M
-																												v318 = m.ExcPending
-																												if v318 != 0 {
+																												v316 = m.ExcPending
+																												if v316 != 0 {
 																													return int32(0)
 																												} else {
 																													F_CommandCounterIncrement(m)
 																													mBase = m.M
-																													v320 = m.ExcPending
-																													if v320 != 0 {
+																													v318 = m.ExcPending
+																													if v318 != 0 {
 																														return int32(0)
 																													} else {
-																														v326 = int32(1)
+																														v328 = int32(1)
 																														m.G0 = v15 + int32(304)
-																														return v326
+																														return v328
 																													}
 																												}
 																											} else {
 																												F_CommandCounterIncrement(m)
 																												mBase = m.M
-																												v320 = m.ExcPending
-																												if v320 != 0 {
+																												v318 = m.ExcPending
+																												if v318 != 0 {
 																													return int32(0)
 																												} else {
-																													v326 = int32(1)
+																													v328 = int32(1)
 																													m.G0 = v15 + int32(304)
-																													return v326
+																													return v328
 																												}
 																											}
 																										}
@@ -2740,7 +2747,7 @@ func F_toast_fetch_datum_slice(m *base.Module, l0 int32, l1 int32, l2 int32) int
 						if v60 != 0 {
 							return int32(0)
 						} else {
-							F_sequence_close(m, v55, int32(1))
+							F_relation_close(m, v55, int32(1))
 							mBase = m.M
 							v63 = m.ExcPending
 							if v63 != 0 {

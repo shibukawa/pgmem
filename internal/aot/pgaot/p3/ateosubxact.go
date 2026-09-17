@@ -10,24 +10,24 @@ func F_AtEOSubXact_Parallel(m *base.Module, l0 int32, l1 int32) {
 	_ = mBase
 	var v5 int32
 	_ = v5
-	var v12 int32
-	_ = v12
 	var v13 int32
 	_ = v13
-	var v19 int32
-	_ = v19
+	var v14 int32
+	_ = v14
 	var v20 int32
 	_ = v20
-	var v26 int32
-	_ = v26
-	var v31 int32
-	_ = v31
-	var v33 int32
-	_ = v33
-	var v35 int32
-	_ = v35
+	var v21 int32
+	_ = v21
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
 	v5 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Parallel[0]))
-	if v5 == int32(0) {
+	if base.B2i32(v5 == int32(0))|base.B2i32(v5 == int32(_a_F_AtEOSubXact_Parallel_0)) != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -37,103 +37,96 @@ L1:
 	return
 L2:
 	;
-	if v5 == int32(_a_F_AtEOSubXact_Parallel_0) {
-		goto L1
-	} else {
-		goto L3
-	}
+	v13 = v5
+	goto L3
 L3:
 	;
-	v12 = v5
-	goto L4
-L4:
-	;
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+8))
-	if v13 != l1 {
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
+	if v14 != l1 {
 		goto L1
 	} else {
-		goto L6
+		goto L5
 	}
-L5:
+L4:
 	;
 	goto L1
-L6:
+L5:
 	;
 	if l0 == int32(0) {
-		goto L7
+		goto L6
 	} else {
+		goto L7
+	}
+L6:
+	;
+	F_DestroyParallelContext(m, v13)
+	mBase = m.M
+	v34 = m.ExcPending
+	if v34 != 0 {
 		goto L8
+	} else {
+		goto L13
 	}
 L7:
 	;
-	F_DestroyParallelContext(m, v12)
+	v20 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v33 = m.ExcPending
-	if v33 != 0 {
-		goto L9
+	v21 = m.ExcPending
+	if v21 != 0 {
+		goto L8
 	} else {
-		goto L14
+		goto L9
 	}
 L8:
 	;
-	v19 = F_errstart(m, int32(19), int32(0))
-	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
-		goto L9
+	return
+L9:
+	;
+	if v20 == int32(0) {
+		goto L6
 	} else {
 		goto L10
 	}
-L9:
-	;
-	return
 L10:
 	;
-	if v19 == int32(0) {
-		goto L7
+	F_errmsg_internal(m, int32(_a_F_AtEOSubXact_Parallel_1), int32(0))
+	mBase = m.M
+	v27 = m.ExcPending
+	if v27 != 0 {
+		goto L8
 	} else {
 		goto L11
 	}
 L11:
 	;
-	F_errmsg_internal(m, int32(_a_F_AtEOSubXact_Parallel_1), int32(0))
+	F_errfinish(m, int32(_a_F_AtEOSubXact_Parallel_2), int32(1271), int32(_a_F_AtEOSubXact_Parallel_3))
 	mBase = m.M
-	v26 = m.ExcPending
-	if v26 != 0 {
-		goto L9
+	v32 = m.ExcPending
+	if v32 != 0 {
+		goto L8
 	} else {
 		goto L12
 	}
 L12:
 	;
-	F_errfinish(m, int32(_a_F_AtEOSubXact_Parallel_2), int32(1271), int32(_a_F_AtEOSubXact_Parallel_3))
-	mBase = m.M
-	v31 = m.ExcPending
-	if v31 != 0 {
-		goto L9
-	} else {
-		goto L13
-	}
+	goto L6
 L13:
 	;
-	goto L7
+	v36 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Parallel[0]))
+	if v36 == int32(0) {
+		goto L1
+	} else {
+		goto L14
+	}
 L14:
 	;
-	v35 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Parallel[0]))
-	if v35 == int32(0) {
-		goto L1
+	if v36 != int32(_a_F_AtEOSubXact_Parallel_0) {
+		v13 = v36
+		goto L3
 	} else {
 		goto L15
 	}
 L15:
 	;
-	if v35 != int32(_a_F_AtEOSubXact_Parallel_0) {
-		v12 = v35
-		goto L4
-	} else {
-		goto L16
-	}
-L16:
-	;
-	goto L5
+	goto L4
 }

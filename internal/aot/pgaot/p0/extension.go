@@ -58,8 +58,8 @@ func F_InsertExtensionTuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v86
 	var v89 int32
 	_ = v89
-	var v102 int32
-	_ = v102
+	var v94 int32
+	_ = v94
 	var v104 int32
 	_ = v104
 	var v108 int32
@@ -205,7 +205,7 @@ L15:
 	}
 L16:
 	;
-	F_sequence_close(m, v19, int32(3))
+	F_relation_close(m, v19, int32(3))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {
@@ -277,12 +277,12 @@ L22:
 	}
 L23:
 	;
-	v102 = int32(0)
+	v94 = int32(0)
 	goto L24
 L24:
 	;
 	v104 = *(*int32)(unsafe.Add(mBase, uint32(l8)+12))
-	v108 = *(*int32)(unsafe.Add(mBase, uint32(v104+v102<<(uint(int32(2))%32))))
+	v108 = *(*int32)(unsafe.Add(mBase, uint32(v104+v94<<(uint(int32(2))%32))))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v108
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = int32(3079)
@@ -299,10 +299,10 @@ L25:
 	goto L21
 L26:
 	;
-	v117 = v102 + int32(1)
+	v117 = v94 + int32(1)
 	v118 = *(*int32)(unsafe.Add(mBase, uint32(l8)+4))
 	if v117 < v118 {
-		v102 = v117
+		v94 = v117
 		goto L24
 	} else {
 		goto L27

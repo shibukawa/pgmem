@@ -80,8 +80,8 @@ func F_tuplesort_begin_index_btree(m *base.Module, l0 int32, l1 int32, l2 int32,
 	_ = v107
 	var v108 int32
 	_ = v108
-	var v120 int32
-	_ = v120
+	var v116 int32
+	_ = v116
 	var v123 int32
 	_ = v123
 	var v126 int32
@@ -152,15 +152,15 @@ L4:
 	;
 	v53 = *(*int32)(unsafe.Add(mBase, uint32(l1)+192))
 	v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(v53)+10)))
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(1850)
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(1831)
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+40)) = v54
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v26
 	v59 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v16)+36)) = uint8(v59)
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(1851)
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(1852)
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(1853)
-	*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1854)
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(1832)
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(1833)
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(1834)
+	*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1835)
 	*(*uint8)(unsafe.Add(mBase, uint32(v26)+9)) = uint8(v4)
 	*(*uint8)(unsafe.Add(mBase, uint32(v26)+8)) = uint8(v3)
 	*(*int32)(unsafe.Add(mBase, uint32(v26)+4)) = l1
@@ -294,15 +294,15 @@ L17:
 	}
 L18:
 	;
-	v120 = v90
+	v116 = v90
 	goto L19
 L19:
 	;
 	v123 = *(*int32)(unsafe.Add(mBase, uint32(v16)+44))
-	v126 = v123 + v120*int32(36)
+	v126 = v123 + v116*int32(36)
 	v128 = *(*int32)(unsafe.Add(mBase, _c_F_tuplesort_begin_index_btree[0]))
 	*(*int32)(unsafe.Add(mBase, uint32(v126))) = v128
-	v132 = v74 + int32(16) + v120*int32(48)
+	v132 = v74 + int32(16) + v116*int32(48)
 	v133 = *(*int32)(unsafe.Add(mBase, uint32(v132)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v126)+4)) = v133
 	v135 = *(*int32)(unsafe.Add(mBase, uint32(v132)))
@@ -326,10 +326,10 @@ L20:
 	goto L15
 L21:
 	;
-	v153 = v120 + int32(1)
+	v153 = v116 + int32(1)
 	v154 = *(*int32)(unsafe.Add(mBase, uint32(v16)+40))
 	if v153 < v154 {
-		v120 = v153
+		v116 = v153
 		goto L19
 	} else {
 		goto L22

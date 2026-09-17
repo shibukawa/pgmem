@@ -157,46 +157,13 @@ func F_fill_seq_with_data(m *base.Module, l0 int32, l1 int32) {
 	}
 }
 func F_seq_desc(m *base.Module, l0 int32, l1 int32) {
-	mBase := m.M
-	_ = mBase
 	var v5 int32
 	_ = v5
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v14 int64
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v20 int32
-	_ = v20
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)+96))
-	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+48)))
-	if base.Ui32(v10) <= base.Ui32(int32(15)) {
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(v9)+64))
-		v14 = *(*int64)(unsafe.Add(mBase, uint32(v13)))
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
-		*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v15
-		*(*int64)(unsafe.Add(mBase, uint32(v7))) = v14
-		F_appendStringInfo(m, l0, int32(_a_F_seq_desc_0), v7)
-		mBase = m.M
-		v20 = m.ExcPending
-		if v20 != 0 {
-			return
-		} else {
-			m.G0 = v7 + int32(16)
-			return
-		}
+	Fn13990(m, l0, l1, int32(_a_F_seq_desc_0))
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return
 	} else {
-		m.G0 = v7 + int32(16)
 		return
 	}
 }

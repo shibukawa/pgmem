@@ -8,22 +8,24 @@ import (
 func F_AbortOutOfAnyTransaction(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	var v8 int32
-	_ = v8
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
-	var v11 int32
-	_ = v11
+	var v13 int32
+	_ = v13
 	var v14 int32
 	_ = v14
 	var v15 int32
 	_ = v15
 	var v16 int32
 	_ = v16
-	var v17 int32
-	_ = v17
-	var v21 int32
-	_ = v21
+	var v19 int32
+	_ = v19
+	var v23 int32
+	_ = v23
 	var v25 int32
 	_ = v25
 	var v27 int32
@@ -32,56 +34,54 @@ func F_AbortOutOfAnyTransaction(m *base.Module) {
 	_ = v29
 	var v31 int32
 	_ = v31
-	var v33 int32
-	_ = v33
-	var v34 int32
-	_ = v34
-	var v37 int32
-	_ = v37
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
 	var v38 int32
 	_ = v38
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
+	var v40 int32
+	_ = v40
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
 	var v49 int32
 	_ = v49
-	var v51 int32
-	_ = v51
-	var v53 int32
-	_ = v53
+	var v52 int32
+	_ = v52
 	var v56 int32
 	_ = v56
-	var v61 int32
-	_ = v61
-	var v64 int32
-	_ = v64
-	v8 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[0]))
-	v10 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[1]))
-	if v8 != 0 {
+	var v59 int32
+	_ = v59
+	v7 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[0]))
+	v9 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[1]))
+	if v7 != 0 {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	v11 = v8
+	v10 = v7
 	goto L3
 L2:
 	;
-	v11 = v10
+	v10 = v9
 	goto L3
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[2])) = v11
-	v14 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[3]))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+24))
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[2])) = v10
+	v13 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[3]))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+24))
+	v15 = v13
 	v16 = v14
-	v17 = v15
 	goto L4
 L4:
 	;
-	switch v17 {
+	switch v16 {
 	case 0:
 		goto L13
 	case 1, 2, 3, 4, 5, 6, 9, 10:
@@ -93,20 +93,20 @@ L4:
 	case 15, 16, 19:
 		goto L9
 	default:
-		v56 = v16
+		v52 = v15
 		goto L6
 	}
 L5:
 	;
-	v64 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[1]))
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[2])) = v64
+	v59 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[1]))
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[2])) = v59
 	return
 L6:
 	;
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v56)+24))
-	if v61 != 0 {
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(v52)+24))
+	if v56 != 0 {
+		v15 = v52
 		v16 = v56
-		v17 = v61
 		goto L4
 	} else {
 		goto L26
@@ -115,8 +115,8 @@ L7:
 	;
 	F_CleanupTransaction(m)
 	mBase = m.M
-	v53 = m.ExcPending
-	if v53 != 0 {
+	v49 = m.ExcPending
+	if v49 != 0 {
 		goto L16
 	} else {
 		goto L25
@@ -125,16 +125,16 @@ L8:
 	;
 	F_CleanupSubTransaction(m)
 	mBase = m.M
-	v49 = m.ExcPending
-	if v49 != 0 {
+	v45 = m.ExcPending
+	if v45 != 0 {
 		goto L16
 	} else {
 		goto L24
 	}
 L9:
 	;
-	v34 = *(*int32)(unsafe.Add(mBase, uint32(v16)+40))
-	if v34 == int32(0) {
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v15)+40))
+	if v32 == int32(0) {
 		goto L8
 	} else {
 		goto L22
@@ -143,8 +143,8 @@ L10:
 	;
 	F_AbortSubTransaction(m)
 	mBase = m.M
-	v33 = m.ExcPending
-	if v33 != 0 {
+	v31 = m.ExcPending
+	if v31 != 0 {
 		goto L16
 	} else {
 		goto L21
@@ -153,8 +153,8 @@ L11:
 	;
 	F_AtAbort_Portals(m)
 	mBase = m.M
-	v31 = m.ExcPending
-	if v31 != 0 {
+	v29 = m.ExcPending
+	if v29 != 0 {
 		goto L16
 	} else {
 		goto L20
@@ -163,18 +163,18 @@ L12:
 	;
 	F_AbortTransaction(m)
 	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
+	v27 = m.ExcPending
+	if v27 != 0 {
 		goto L16
 	} else {
 		goto L19
 	}
 L13:
 	;
-	v21 = *(*int32)(unsafe.Add(mBase, uint32(v16)+20))
-	switch v21 {
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
+	switch v19 {
 	case 0:
-		v56 = v16
+		v52 = v15
 		goto L6
 	case 1:
 		goto L15
@@ -185,15 +185,15 @@ L14:
 	;
 	F_AbortTransaction(m)
 	mBase = m.M
-	v25 = m.ExcPending
-	if v25 != 0 {
+	v23 = m.ExcPending
+	if v23 != 0 {
 		goto L16
 	} else {
 		goto L17
 	}
 L15:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = int32(2)
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = int32(2)
 	goto L14
 L16:
 	;
@@ -202,15 +202,15 @@ L17:
 	;
 	F_CleanupTransaction(m)
 	mBase = m.M
-	v27 = m.ExcPending
-	if v27 != 0 {
+	v25 = m.ExcPending
+	if v25 != 0 {
 		goto L16
 	} else {
 		goto L18
 	}
 L18:
 	;
-	v56 = v16
+	v52 = v15
 	goto L6
 L19:
 	;
@@ -223,13 +223,13 @@ L21:
 	goto L8
 L22:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(v16)+8))
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v16)+80))
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)+8))
-	F_AtSubAbort_Portals(m, v37, v39, v34)
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v15)+80))
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+8))
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(v15)+8))
+	F_AtSubAbort_Portals(m, v38, v36, v32)
 	mBase = m.M
-	v42 = m.ExcPending
-	if v42 != 0 {
+	v40 = m.ExcPending
+	if v40 != 0 {
 		goto L16
 	} else {
 		goto L23
@@ -239,13 +239,13 @@ L23:
 	goto L8
 L24:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[3]))
-	v56 = v51
+	v47 = *(*int32)(unsafe.Add(mBase, _c_F_AbortOutOfAnyTransaction[3]))
+	v52 = v47
 	goto L6
 L25:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+24)) = int32(0)
-	v56 = v16
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = int32(0)
+	v52 = v15
 	goto L6
 L26:
 	;
@@ -548,30 +548,30 @@ func F_outToken(m *base.Module, l0 int32, l1 int32) {
 	_ = mBase
 	var v8 int32
 	_ = v8
-	var v25 int32
-	_ = v25
-	var v39 int32
-	_ = v39
+	var v27 int32
+	_ = v27
 	var v41 int32
 	_ = v41
-	var v42 int32
-	_ = v42
 	var v43 int32
 	_ = v43
-	var v48 int32
-	_ = v48
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
 	var v50 int32
 	_ = v50
-	var v57 int32
-	_ = v57
-	var v58 int32
-	_ = v58
+	var v52 int32
+	_ = v52
 	var v59 int32
 	_ = v59
-	var v63 int32
-	_ = v63
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
 	var v65 int32
 	_ = v65
+	var v67 int32
+	_ = v67
 	if l1 == int32(0) {
 		goto L3
 	} else {
@@ -582,17 +582,17 @@ L1:
 	return
 L2:
 	;
-	F_appendStringInfoString(m, l0, v63)
+	F_appendStringInfoString(m, l0, v65)
 	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
-		goto L23
+	v67 = m.ExcPending
+	if v67 != 0 {
+		goto L21
 	} else {
-		goto L31
+		goto L29
 	}
 L3:
 	;
-	v63 = int32(_a_F_outToken_0)
+	v65 = int32(_a_F_outToken_0)
 	goto L2
 L4:
 	;
@@ -607,157 +607,143 @@ L5:
 	}
 L6:
 	;
-	v63 = int32(_a_F_outToken_1)
+	v65 = int32(_a_F_outToken_1)
 	goto L2
 L7:
 	;
 	goto L8
 L8:
 	;
-	if v8 == int32(34) {
+	if base.B2i32(v8 == int32(34))|base.B2i32(v8 == int32(60))|base.B2i32(base.Ui32((v8-int32(48))&int32(255)) < base.Ui32(int32(10))) != 0 {
 		goto L11
 	} else {
 		goto L12
 	}
 L9:
 	;
-	v41 = l1
-	v42 = v39
-	v43 = int32(92)
-	goto L18
+	v43 = l1
+	v44 = v41
+	v45 = int32(92)
+	goto L16
 L10:
 	;
-	v39 = int32(1)
+	v41 = int32(1)
 	goto L9
 L11:
 	;
-	v39 = int32(0)
+	v41 = int32(0)
 	goto L9
 L12:
 	;
-	if v8 == int32(60) {
-		goto L11
-	} else {
+	switch v8 - int32(43) {
+	case 0, 2:
 		goto L13
+	default:
+		goto L10
 	}
 L13:
 	;
-	if base.Ui32((v8-int32(48))&int32(255)) < base.Ui32(int32(10)) {
+	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
+	if v27 == int32(46) {
 		goto L11
 	} else {
 		goto L14
 	}
 L14:
 	;
-	switch v8 - int32(43) {
-	case 0, 2:
-		goto L15
-	default:
+	if base.Ui32(int32(9)) < base.Ui32((v27-int32(48))&int32(255)) {
 		goto L10
+	} else {
+		goto L15
 	}
 L15:
 	;
-	v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
-	if v25 == int32(46) {
-		goto L11
-	} else {
-		goto L16
-	}
+	goto L11
 L16:
 	;
-	if base.Ui32(int32(9)) < base.Ui32((v25-int32(48))&int32(255)) {
-		goto L10
+	if v44 == int32(0) {
+		goto L18
 	} else {
-		goto L17
+		goto L19
 	}
-L17:
-	;
-	goto L11
 L18:
 	;
-	if v42 == int32(0) {
-		goto L20
-	} else {
+	F_appendStringInfoChar(m, l0, base.I32_extend8_s(v45))
+	mBase = m.M
+	v50 = m.ExcPending
+	if v50 != 0 {
 		goto L21
+	} else {
+		goto L22
 	}
+L19:
+	;
+	goto L20
 L20:
 	;
-	F_appendStringInfoChar(m, l0, base.I32_extend8_s(v43))
-	mBase = m.M
-	v48 = m.ExcPending
-	if v48 != 0 {
-		goto L23
-	} else {
-		goto L24
-	}
-L21:
-	;
-	goto L22
-L22:
-	;
-	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41))))
-	switch v50 {
+	v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43))))
+	switch v52 {
 	case 0:
 		goto L1
 	case 1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39:
-		v59 = v50
-		goto L25
+		v61 = v52
+		goto L23
 	case 9, 10, 32, 40, 41:
-		goto L26
+		goto L24
 	default:
-		goto L27
+		goto L25
 	}
-L23:
+L21:
 	;
 	return
+L22:
+	;
+	v44 = int32(1)
+	goto L16
+L23:
+	;
+	v43 = v43 + int32(1)
+	v44 = int32(0)
+	v45 = v61
+	goto L16
 L24:
-	;
-	v42 = int32(1)
-	goto L18
-L25:
-	;
-	v41 = v41 + int32(1)
-	v42 = int32(0)
-	v43 = v59
-	goto L18
-L26:
 	;
 	F_appendStringInfoChar(m, l0, int32(92))
 	mBase = m.M
-	v57 = m.ExcPending
-	if v57 != 0 {
+	v59 = m.ExcPending
+	if v59 != 0 {
+		goto L21
+	} else {
+		goto L28
+	}
+L25:
+	;
+	switch v52 - int32(123) {
+	case 0, 2:
+		goto L24
+	case 1:
+		v61 = v52
+		goto L23
+	default:
+		goto L26
+	}
+L26:
+	;
+	if v52 != int32(92) {
+		v61 = v52
 		goto L23
 	} else {
-		goto L30
+		goto L27
 	}
 L27:
 	;
-	switch v50 - int32(123) {
-	case 0, 2:
-		goto L26
-	case 1:
-		v59 = v50
-		goto L25
-	default:
-		goto L28
-	}
+	goto L24
 L28:
 	;
-	if v50 != int32(92) {
-		v59 = v50
-		goto L25
-	} else {
-		goto L29
-	}
+	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43))))
+	v61 = v60
+	goto L23
 L29:
-	;
-	goto L26
-L30:
-	;
-	v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41))))
-	v59 = v58
-	goto L25
-L31:
 	;
 	goto L1
 }

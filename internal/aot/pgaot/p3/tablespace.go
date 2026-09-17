@@ -92,7 +92,7 @@ func F_get_tablespace_name(m *base.Module, l0 int32) int32 {
 							if v39 != 0 {
 								return int32(0)
 							} else {
-								F_sequence_close(m, v11, int32(1))
+								F_relation_close(m, v11, int32(1))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -114,7 +114,7 @@ func F_get_tablespace_name(m *base.Module, l0 int32) int32 {
 						if v39 != 0 {
 							return int32(0)
 						} else {
-							F_sequence_close(m, v11, int32(1))
+							F_relation_close(m, v11, int32(1))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {

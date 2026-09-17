@@ -46,20 +46,22 @@ func F_WaitIO(m *base.Module, l0 int32) {
 	_ = v75
 	var v82 int32
 	_ = v82
-	var v84 int32
+	var v84 int64
 	_ = v84
-	var v86 int64
+	var v86 int32
 	_ = v86
+	var v94 int32
+	_ = v94
 	var v95 int32
 	_ = v95
+	var v99 int32
+	_ = v99
 	var v101 int32
 	_ = v101
-	var v103 int32
-	_ = v103
+	var v104 int32
+	_ = v104
 	var v106 int32
 	_ = v106
-	var v108 int32
-	_ = v108
 	v6 = m.G0
 	v8 = v6 - int32(48)
 	m.G0 = v8
@@ -100,8 +102,8 @@ L4:
 	;
 	F_ConditionVariableCancelSleep(m)
 	mBase = m.M
-	v108 = m.ExcPending
-	if v108 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L1
 	} else {
 		goto L33
@@ -152,10 +154,10 @@ L11:
 	goto L9
 L12:
 	;
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v19)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v84
-	v86 = *(*int64)(unsafe.Add(mBase, uint32(v19)))
-	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = v86
+	v84 = *(*int64)(unsafe.Add(mBase, uint32(v19)))
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = v84
+	v86 = *(*int32)(unsafe.Add(mBase, uint32(v19)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v86
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v58 & int32(-4194305)
 	if v58&int32(67108864) != 0 {
 		goto L23
@@ -212,7 +214,8 @@ L22:
 	goto L14
 L23:
 	;
-	v95 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))))
+	v94 = v8 + int32(8)
+	v95 = *(*int32)(unsafe.Add(mBase, uint32(v94)))
 	goto L26
 L24:
 	;
@@ -229,10 +232,10 @@ L26:
 	}
 L27:
 	;
-	F_pgaio_wref_wait(m, v8+int32(8))
+	F_pgaio_wref_wait(m, v94)
 	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
+	v99 = m.ExcPending
+	if v99 != 0 {
 		goto L1
 	} else {
 		goto L30
@@ -244,8 +247,8 @@ L29:
 	;
 	F_ConditionVariableSleep(m, v15, int32(134217736))
 	mBase = m.M
-	v106 = m.ExcPending
-	if v106 != 0 {
+	v104 = m.ExcPending
+	if v104 != 0 {
 		goto L1
 	} else {
 		goto L32
@@ -254,8 +257,8 @@ L30:
 	;
 	F_ConditionVariablePrepareToSleep(m, v15)
 	mBase = m.M
-	v103 = m.ExcPending
-	if v103 != 0 {
+	v101 = m.ExcPending
+	if v101 != 0 {
 		goto L1
 	} else {
 		goto L31
@@ -319,7 +322,7 @@ func F_WaitLatchOrSocket(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 			return int32(0)
 		} else {
 			v23 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_WaitLatchOrSocket[1])))
-			if v23 == int32(1) {
+			if v23&int32(1) != 0 {
 				F_AddWaitEventToSet(m, v14, int32(32), int32(-1), int32(0))
 				mBase = m.M
 				v30 = m.ExcPending
@@ -393,16 +396,16 @@ func F_WaitLatchOrSocket(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 func F___wasm_setjmp_test(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
 	var v7 int32
 	_ = v7
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	if l1 == v4 {
-		v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		v7 = v6
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if l1 == v3 {
+		v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+		v7 = v5
 	} else {
 		v7 = int32(0)
 	}
@@ -591,59 +594,62 @@ func F_write(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 func F_writetup_index(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
 	var v10 int32
 	_ = v10
-	var v13 int32
-	_ = v13
-	var v20 int32
-	_ = v20
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
 	var v21 int32
 	_ = v21
-	var v25 int32
-	_ = v25
+	var v22 int32
+	_ = v22
 	var v26 int32
 	_ = v26
-	var v33 int32
-	_ = v33
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	v10 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v9)+6)))
-	v13 = int32(4)
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = v10&int32(_a_F_writetup_index_0) + v13
-	F_LogicalTapeWrite(m, l1, v7+int32(12), v13)
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+	v11 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10)+6)))
+	v14 = int32(4)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v11&int32(_a_F_writetup_index_0) + v14
+	v18 = v8 + int32(12)
+	F_LogicalTapeWrite(m, l1, v18, v14)
 	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
+	v21 = m.ExcPending
+	if v21 != 0 {
 		return
 	} else {
-		v21 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v9)+6)))
-		F_LogicalTapeWrite(m, l1, v9, v21&int32(_a_F_writetup_index_0))
+		v22 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10)+6)))
+		F_LogicalTapeWrite(m, l1, v10, v22&int32(_a_F_writetup_index_0))
 		mBase = m.M
-		v25 = m.ExcPending
-		if v25 != 0 {
+		v26 = m.ExcPending
+		if v26 != 0 {
 			return
 		} else {
-			v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)))
-			if v26&int32(1) != 0 {
-				F_LogicalTapeWrite(m, l1, v7+int32(12), int32(4))
+			v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)))
+			if v27&int32(1) != 0 {
+				F_LogicalTapeWrite(m, l1, v18, int32(4))
 				mBase = m.M
-				v33 = m.ExcPending
-				if v33 != 0 {
+				v32 = m.ExcPending
+				if v32 != 0 {
 					return
 				} else {
-					m.G0 = v7 + int32(16)
+					m.G0 = v8 + int32(16)
 					return
 				}
 			} else {
-				m.G0 = v7 + int32(16)
+				m.G0 = v8 + int32(16)
 				return
 			}
 		}

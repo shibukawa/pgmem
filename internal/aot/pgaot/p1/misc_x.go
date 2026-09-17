@@ -381,18 +381,18 @@ L49:
 func F_xmin_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v4 int32
+	_ = v4
 	var v5 int32
 	_ = v5
 	var v6 int32
 	_ = v6
-	var v7 int32
-	_ = v7
+	var v8 int32
+	_ = v8
 	var v9 int32
 	_ = v9
-	var v10 int32
-	_ = v10
-	var v22 int32
-	_ = v22
+	var v21 int32
+	_ = v21
 	var v23 int32
 	_ = v23
 	var v24 int32
@@ -403,22 +403,22 @@ func F_xmin_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v37
 	var v39 int32
 	_ = v39
-	v5 = int32(48)
-	v6 = l0 - v5
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-	v9 = l1 - v5
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
-	if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v10))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v7)) == int32(0) {
-		v22 = base.B2i32(base.Ui32(v7) < base.Ui32(v10))
+	v4 = int32(48)
+	v5 = l0 - v4
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
+	v8 = l1 - v4
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+	if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v9))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v6)) == int32(0) {
+		v21 = base.B2i32(base.Ui32(v6) < base.Ui32(v9))
 	} else {
-		v22 = int32(base.Ui32(v7-v10) >> (uint(int32(31)) % 32))
+		v21 = int32(base.Ui32(v6-v9) >> (uint(int32(31)) % 32))
 	}
-	if v22 != 0 {
+	if v21 != 0 {
 		v39 = int32(1)
 	} else {
 		v23 = int32(0)
-		v24 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-		v25 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
+		v24 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
+		v25 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
 		if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v25))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v24)) == v23 {
 			v37 = base.B2i32(base.Ui32(v25) < base.Ui32(v24))
 		} else {

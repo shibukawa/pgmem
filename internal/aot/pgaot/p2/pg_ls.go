@@ -43,60 +43,62 @@ func F_pg_ls_tmpdir(m *base.Module, l0 int32, l1 int32) {
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
-	var v12 int32
-	_ = v12
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
 	var v13 int32
 	_ = v13
-	var v19 int32
-	_ = v19
-	var v22 int32
-	_ = v22
-	var v26 int32
-	_ = v26
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	var v40 int32
-	_ = v40
+	var v14 int32
+	_ = v14
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
 	v3 = int32(0)
-	v4 = m.G0
-	v6 = v4 - int32(1040)
-	m.G0 = v6
-	v12 = F_SearchSysCacheExists(m, int32(69), l1, v3, v3, v3)
+	v5 = m.G0
+	v7 = v5 - int32(1040)
+	m.G0 = v7
+	v13 = F_SearchSysCacheExists(m, int32(69), l1, v3, v3, v3)
 	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	v14 = m.ExcPending
+	if v14 != 0 {
 		return
 	} else {
-		if v12 == int32(0) {
+		if v13 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v19 = m.ExcPending
-			if v19 != 0 {
+			v20 = m.ExcPending
+			if v20 != 0 {
 				return
 			} else {
 				F_errcode(m, int32(67137668))
 				mBase = m.M
-				v22 = m.ExcPending
-				if v22 != 0 {
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v6))) = l1
-					F_errmsg(m, int32(_a_F_pg_ls_tmpdir_0), v6)
+					*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
+					F_errmsg(m, int32(_a_F_pg_ls_tmpdir_0), v7)
 					mBase = m.M
-					v26 = m.ExcPending
-					if v26 != 0 {
+					v27 = m.ExcPending
+					if v27 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_pg_ls_tmpdir_1), int32(657), int32(_a_F_pg_ls_tmpdir_2))
 						mBase = m.M
-						v31 = m.ExcPending
-						if v31 != 0 {
+						v32 = m.ExcPending
+						if v32 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -107,19 +109,20 @@ func F_pg_ls_tmpdir(m *base.Module, l0 int32, l1 int32) {
 				}
 			}
 		} else {
-			F_TempTablespacePath(m, v6+int32(16), l1)
+			v34 = v7 + int32(16)
+			F_TempTablespacePath(m, v34, l1)
 			mBase = m.M
-			v35 = m.ExcPending
-			if v35 != 0 {
+			v36 = m.ExcPending
+			if v36 != 0 {
 				return
 			} else {
-				F_pg_ls_dir_files(m, l0, v6+int32(16), int32(1))
+				F_pg_ls_dir_files(m, l0, v34, int32(1))
 				mBase = m.M
-				v40 = m.ExcPending
-				if v40 != 0 {
+				v39 = m.ExcPending
+				if v39 != 0 {
 					return
 				} else {
-					m.G0 = v6 + int32(1040)
+					m.G0 = v7 + int32(1040)
 					return
 				}
 			}

@@ -44,10 +44,10 @@ func F_sts_initialize(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 	_ = v57
 	var v58 int32
 	_ = v58
-	var v59 int32
-	_ = v59
-	var v61 int32
-	_ = v61
+	var v60 int32
+	_ = v60
+	var v62 int32
+	_ = v62
 	var v65 int32
 	_ = v65
 	var v70 int32
@@ -214,12 +214,12 @@ L18:
 	*(*int32)(unsafe.Add(mBase, uint32(v55))) = v54
 	v57 = int32(4)
 	v58 = v55 + v57
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v53)+4))
-	v61 = v53 + v57
+	v60 = v53 + v57
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v53)+4))
 	v65 = int32(-2139062144)
-	if (v59|(int32(16843008)-v59))&v65 == v65 {
-		v53 = v61
-		v54 = v59
+	if (int32(16843008)-v62|v62)&v65 == v65 {
+		v53 = v60
+		v54 = v62
 		v55 = v58
 		goto L18
 	} else {
@@ -227,8 +227,8 @@ L18:
 	}
 L19:
 	;
-	v70 = v61
-	v71 = v59
+	v70 = v60
+	v71 = v62
 	v72 = v58
 	goto L6
 L20:

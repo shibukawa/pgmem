@@ -407,7 +407,7 @@ L35:
 	if v107 != 0 {
 		goto L4
 	} else {
-		goto L40
+		goto L39
 	}
 L36:
 	;
@@ -423,9 +423,6 @@ L36:
 L37:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v93)+36)) = v96
-	goto L38
-L38:
-	;
 	*(*int32)(unsafe.Add(mBase, _c_F_BuildCachedPlan[0])) = v93
 	v101 = F_copyObjectImpl(m, v81)
 	mBase = m.M
@@ -433,14 +430,14 @@ L38:
 	if v102 != 0 {
 		goto L4
 	} else {
-		goto L39
+		goto L38
 	}
-L39:
+L38:
 	;
 	v103 = v101
 	v104 = v93
 	goto L35
-L40:
+L39:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+4)) = v103
 	*(*int32)(unsafe.Add(mBase, uint32(v106))) = int32(953717834)
@@ -449,23 +446,23 @@ L40:
 	v114 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+85)))
 	*(*uint8)(unsafe.Add(mBase, uint32(v106)+16)) = uint8(v114)
 	if v103 != 0 {
-		goto L41
+		goto L40
 	} else {
-		goto L42
+		goto L41
 	}
-L41:
+L40:
 	;
 	v116 = *(*int32)(unsafe.Add(mBase, uint32(v103)+4))
 	if int32(0) < v116 {
-		goto L44
+		goto L43
 	} else {
-		goto L45
+		goto L44
 	}
-L42:
+L41:
 	;
 	v162 = v83
-	goto L43
-L43:
+	goto L42
+L42:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+32)) = v104
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+28)) = int32(0)
@@ -480,81 +477,81 @@ L43:
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+24)) = v179
 	*(*int32)(unsafe.Add(mBase, _c_F_BuildCachedPlan[0])) = v10
 	return v106
-L44:
+L43:
 	;
 	v120 = v83
 	v125 = v5
-	goto L47
-L45:
+	goto L46
+L44:
 	;
 	v153 = v5
-	goto L46
-L46:
+	goto L45
+L45:
 	;
 	v156 = *(*int32)(unsafe.Add(mBase, _c_F_BuildCachedPlan[3]))
 	if v153&int32(1) != 0 {
-		goto L53
+		goto L52
 	} else {
-		goto L54
+		goto L53
 	}
-L47:
+L46:
 	;
 	v127 = *(*int32)(unsafe.Add(mBase, uint32(v103)+12))
 	v131 = *(*int32)(unsafe.Add(mBase, uint32(v127+v120<<(uint(int32(2))%32))))
 	v132 = *(*int32)(unsafe.Add(mBase, uint32(v131)+4))
 	if v132 == int32(6) {
 		v142 = v125
-		goto L49
+		goto L48
 	} else {
-		goto L50
+		goto L49
 	}
-L48:
+L47:
 	;
 	v153 = v142
-	goto L46
-L49:
+	goto L45
+L48:
 	;
 	v144 = v120 + int32(1)
 	v145 = *(*int32)(unsafe.Add(mBase, uint32(v103)+4))
 	if v144 < v145 {
 		v120 = v144
 		v125 = v142
-		goto L47
+		goto L46
 	} else {
-		goto L52
+		goto L51
 	}
-L50:
+L49:
 	;
 	v135 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v131)+27)))
 	v136 = v135 | v125
 	v137 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v131)+28)))
 	if v137 != int32(1) {
 		v142 = v136
-		goto L49
+		goto L48
 	} else {
-		goto L51
+		goto L50
 	}
-L51:
+L50:
 	;
 	v140 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v106)+16)) = uint8(v140)
 	v142 = v136
-	goto L49
+	goto L48
+L51:
+	;
+	goto L47
 L52:
 	;
-	goto L48
+	v160 = v156
+	goto L54
 L53:
 	;
-	v160 = v156
-	goto L55
+	v160 = int32(0)
+	goto L54
 L54:
 	;
-	v160 = int32(0)
-	goto L55
-L55:
-	;
 	v162 = v160
-	goto L43
+	goto L42
 }
 func F_CachedPlanAllowsSimpleValidityCheck(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
@@ -605,8 +602,8 @@ func F_CachedPlanAllowsSimpleValidityCheck(m *base.Module, l0 int32, l1 int32, l
 	_ = v66
 	var v67 int32
 	_ = v67
-	var v74 int32
-	_ = v74
+	var v73 int32
+	_ = v73
 	var v81 int32
 	_ = v81
 	var v82 int32
@@ -813,11 +810,11 @@ L23:
 L24:
 	;
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v57)+12))
-	v74 = int32(0)
+	v73 = int32(0)
 	goto L25
 L25:
 	;
-	v81 = *(*int32)(unsafe.Add(mBase, uint32(v67+v74<<(uint(int32(2))%32))))
+	v81 = *(*int32)(unsafe.Add(mBase, uint32(v67+v73<<(uint(int32(2))%32))))
 	v82 = *(*int32)(unsafe.Add(mBase, uint32(v81)+4))
 	if v82 == int32(6) {
 		goto L27
@@ -843,9 +840,9 @@ L29:
 	}
 L30:
 	;
-	v129 = v74 + int32(1)
+	v129 = v73 + int32(1)
 	if v129 != v66 {
-		v74 = v129
+		v73 = v129
 		goto L25
 	} else {
 		goto L40

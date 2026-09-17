@@ -40,28 +40,26 @@ func F_TidNext(m *base.Module, l0 int32) int32 {
 	_ = v43
 	var v46 int32
 	_ = v46
-	var v51 int32
-	_ = v51
-	var v55 int32
-	_ = v55
-	var v57 int32
-	_ = v57
-	var v68 int32
-	_ = v68
+	var v52 int32
+	_ = v52
+	var v56 int32
+	_ = v56
+	var v58 int32
+	_ = v58
 	var v69 int32
 	_ = v69
-	var v71 int32
-	_ = v71
-	var v73 int32
-	_ = v73
-	var v79 int32
-	_ = v79
-	var v81 int32
-	_ = v81
-	var v83 int32
-	_ = v83
-	var v90 int32
-	_ = v90
+	var v70 int32
+	_ = v70
+	var v72 int32
+	_ = v72
+	var v74 int32
+	_ = v74
+	var v80 int32
+	_ = v80
+	var v82 int32
+	_ = v82
+	var v84 int32
+	_ = v84
 	var v91 int32
 	_ = v91
 	var v92 int32
@@ -72,26 +70,28 @@ func F_TidNext(m *base.Module, l0 int32) int32 {
 	_ = v94
 	var v95 int32
 	_ = v95
-	var v98 int32
-	_ = v98
-	var v100 int32
-	_ = v100
+	var v96 int32
+	_ = v96
+	var v99 int32
+	_ = v99
 	var v101 int32
 	_ = v101
 	var v102 int32
 	_ = v102
-	var v116 int32
-	_ = v116
+	var v103 int32
+	_ = v103
 	var v117 int32
 	_ = v117
-	var v119 int32
-	_ = v119
-	var v137 int32
-	_ = v137
-	var v141 int32
-	_ = v141
-	var v146 int32
-	_ = v146
+	var v118 int32
+	_ = v118
+	var v120 int32
+	_ = v120
+	var v138 int32
+	_ = v138
+	var v142 int32
+	_ = v142
+	var v147 int32
+	_ = v147
 	v11 = m.G0
 	v13 = v11 - int32(16)
 	m.G0 = v13
@@ -141,7 +141,7 @@ L5:
 L6:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+128)) = v46
-	if v46 < int32(0) {
+	if base.B2i32(v46 < int32(0))|base.B2i32(v30 <= v46) != 0 {
 		goto L16
 	} else {
 		goto L17
@@ -184,11 +184,11 @@ L14:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
+	v138 = m.ExcPending
+	if v138 != 0 {
 		goto L4
 	} else {
-		goto L41
+		goto L40
 	}
 L15:
 	;
@@ -196,188 +196,181 @@ L15:
 	return v15
 L16:
 	;
-	v116 = *(*int32)(unsafe.Add(mBase, uint32(v15)+8))
-	v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+12))
-	m.T0[v117].(func(*base.Module, int32))(m, v15)
+	v117 = *(*int32)(unsafe.Add(mBase, uint32(v15)+8))
+	v118 = *(*int32)(unsafe.Add(mBase, uint32(v117)+12))
+	m.T0[v118].(func(*base.Module, int32))(m, v15)
 	mBase = m.M
-	v119 = m.ExcPending
-	if v119 != 0 {
+	v120 = m.ExcPending
+	if v120 != 0 {
 		goto L4
-	} else {
-		goto L40
-	}
-L17:
-	;
-	if v30 <= v46 {
-		goto L16
-	} else {
-		goto L18
-	}
-L18:
-	;
-	v51 = int32(-1)
-	if v19 == v51 {
-		goto L19
-	} else {
-		goto L20
-	}
-L19:
-	;
-	v55 = v51
-	goto L21
-L20:
-	;
-	v55 = int32(1)
-	goto L21
-L21:
-	;
-	v57 = v46
-	goto L22
-L22:
-	;
-	v68 = v28 + v57*int32(6)
-	v69 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v68)+4)))
-	*(*uint16)(unsafe.Add(mBase, uint32(v13)+12)) = uint16(v69)
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(v68)))
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v71
-	v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+120)))
-	if v73 == int32(1) {
-		goto L24
-	} else {
-		goto L25
-	}
-L23:
-	;
-	goto L16
-L24:
-	;
-	F_table_tuple_get_latest_tid(m, v31, v13+int32(8))
-	mBase = m.M
-	v79 = m.ExcPending
-	if v79 != 0 {
-		goto L4
-	} else {
-		goto L27
-	}
-L25:
-	;
-	goto L26
-L26:
-	;
-	v81 = *(*int32)(unsafe.Add(mBase, _c_F_TidNext[0]))
-	if v81 != 0 {
-		goto L28
-	} else {
-		goto L29
-	}
-L27:
-	;
-	goto L26
-L28:
-	;
-	v83 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_TidNext[1])))
-	if v83&int32(1) == int32(0) {
-		goto L14
-	} else {
-		goto L31
-	}
-L29:
-	;
-	goto L30
-L30:
-	;
-	v90 = *(*int32)(unsafe.Add(mBase, uint32(v16)+188))
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+60))
-	v92 = m.T0[v91].(func(*base.Module, int32, int32, int32, int32) int32)(m, v16, v13+int32(8), v18, v15)
-	mBase = m.M
-	v93 = m.ExcPending
-	if v93 != 0 {
-		goto L4
-	} else {
-		goto L32
-	}
-L31:
-	;
-	goto L30
-L32:
-	;
-	if v92 != 0 {
-		goto L15
-	} else {
-		goto L33
-	}
-L33:
-	;
-	v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+128))
-	v95 = v94 + v55
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+128)) = v95
-	v98 = *(*int32)(unsafe.Add(mBase, _c_F_TidNext[2]))
-	if v98 != 0 {
-		goto L34
-	} else {
-		goto L35
-	}
-L34:
-	;
-	F_ProcessInterrupts(m)
-	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
-		goto L4
-	} else {
-		goto L37
-	}
-L35:
-	;
-	v102 = v95
-	goto L36
-L36:
-	;
-	if v102 < int32(0) {
-		goto L16
-	} else {
-		goto L38
-	}
-L37:
-	;
-	v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)+128))
-	v102 = v101
-	goto L36
-L38:
-	;
-	if v102 < v30 {
-		v57 = v102
-		goto L22
 	} else {
 		goto L39
 	}
+L17:
+	;
+	v52 = int32(-1)
+	if v19 == v52 {
+		goto L18
+	} else {
+		goto L19
+	}
+L18:
+	;
+	v56 = v52
+	goto L20
+L19:
+	;
+	v56 = int32(1)
+	goto L20
+L20:
+	;
+	v58 = v46
+	goto L21
+L21:
+	;
+	v69 = v28 + v58*int32(6)
+	v70 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v69)+4)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v13)+12)) = uint16(v70)
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v72
+	v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+120)))
+	if v74 == int32(1) {
+		goto L23
+	} else {
+		goto L24
+	}
+L22:
+	;
+	goto L16
+L23:
+	;
+	F_table_tuple_get_latest_tid(m, v31, v13+int32(8))
+	mBase = m.M
+	v80 = m.ExcPending
+	if v80 != 0 {
+		goto L4
+	} else {
+		goto L26
+	}
+L24:
+	;
+	goto L25
+L25:
+	;
+	v82 = *(*int32)(unsafe.Add(mBase, _c_F_TidNext[0]))
+	if v82 != 0 {
+		goto L27
+	} else {
+		goto L28
+	}
+L26:
+	;
+	goto L25
+L27:
+	;
+	v84 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_TidNext[1])))
+	if v84&int32(1) == int32(0) {
+		goto L14
+	} else {
+		goto L30
+	}
+L28:
+	;
+	goto L29
+L29:
+	;
+	v91 = *(*int32)(unsafe.Add(mBase, uint32(v16)+188))
+	v92 = *(*int32)(unsafe.Add(mBase, uint32(v91)+60))
+	v93 = m.T0[v92].(func(*base.Module, int32, int32, int32, int32) int32)(m, v16, v13+int32(8), v18, v15)
+	mBase = m.M
+	v94 = m.ExcPending
+	if v94 != 0 {
+		goto L4
+	} else {
+		goto L31
+	}
+L30:
+	;
+	goto L29
+L31:
+	;
+	if v93 != 0 {
+		goto L15
+	} else {
+		goto L32
+	}
+L32:
+	;
+	v95 = *(*int32)(unsafe.Add(mBase, uint32(l0)+128))
+	v96 = v95 + v56
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+128)) = v96
+	v99 = *(*int32)(unsafe.Add(mBase, _c_F_TidNext[2]))
+	if v99 != 0 {
+		goto L33
+	} else {
+		goto L34
+	}
+L33:
+	;
+	F_ProcessInterrupts(m)
+	mBase = m.M
+	v101 = m.ExcPending
+	if v101 != 0 {
+		goto L4
+	} else {
+		goto L36
+	}
+L34:
+	;
+	v103 = v96
+	goto L35
+L35:
+	;
+	if v103 < int32(0) {
+		goto L16
+	} else {
+		goto L37
+	}
+L36:
+	;
+	v102 = *(*int32)(unsafe.Add(mBase, uint32(l0)+128))
+	v103 = v102
+	goto L35
+L37:
+	;
+	if v103 < v30 {
+		v58 = v103
+		goto L21
+	} else {
+		goto L38
+	}
+L38:
+	;
+	goto L22
 L39:
 	;
-	goto L23
-L40:
-	;
 	goto L15
-L41:
+L40:
 	;
 	F_errmsg_internal(m, int32(_a_F_TidNext_0), int32(0))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v142 = m.ExcPending
+	if v142 != 0 {
+		goto L4
+	} else {
+		goto L41
+	}
+L41:
+	;
+	F_errfinish(m, int32(_a_F_TidNext_1), int32(1264), int32(_a_F_TidNext_2))
+	mBase = m.M
+	v147 = m.ExcPending
+	if v147 != 0 {
 		goto L4
 	} else {
 		goto L42
 	}
 L42:
-	;
-	F_errfinish(m, int32(_a_F_TidNext_1), int32(1264), int32(_a_F_TidNext_2))
-	mBase = m.M
-	v146 = m.ExcPending
-	if v146 != 0 {
-		goto L4
-	} else {
-		goto L43
-	}
-L43:
 	;
 	base.Wasm_trap_unreachable()
 	for {
@@ -386,60 +379,60 @@ L43:
 func F_TidRecheck(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v8 int32
-	_ = v8
+	var v3 int32
+	_ = v3
+	var v7 int32
+	_ = v7
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
 	var v13 int32
 	_ = v13
 	var v14 int32
 	_ = v14
-	var v15 int32
-	_ = v15
+	var v17 int32
+	_ = v17
 	var v18 int32
 	_ = v18
-	var v19 int32
-	_ = v19
-	var v23 int32
-	_ = v23
-	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+120)))
-	if v5 != 0 {
-		v23 = int32(1)
-		return v23
+	var v22 int32
+	_ = v22
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+120)))
+	if v3 != 0 {
+		v22 = int32(1)
+		return v22
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
-		if v8 != 0 {
-			v14 = v8
-			v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
-			v18 = F_bsearch(m, l1+int32(28), v14, v15, int32(6), int32(770))
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
+		if v7 != 0 {
+			v13 = v7
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
+			v17 = F_bsearch(m, l1+int32(28), v13, v14, int32(6), int32(770))
 			mBase = m.M
-			v19 = m.ExcPending
-			if v19 != 0 {
+			v18 = m.ExcPending
+			if v18 != 0 {
 				return int32(0)
 			} else {
-				v23 = base.B2i32(v18 != int32(0))
-				return v23
+				v22 = base.B2i32(v17 != int32(0))
+				return v22
 			}
 		} else {
 			F_TidListEval(m, l0)
 			mBase = m.M
-			v12 = m.ExcPending
-			if v12 != 0 {
+			v11 = m.ExcPending
+			if v11 != 0 {
 				return int32(0)
 			} else {
-				v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
-				v14 = v13
-				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
-				v18 = F_bsearch(m, l1+int32(28), v14, v15, int32(6), int32(770))
+				v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
+				v13 = v12
+				v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
+				v17 = F_bsearch(m, l1+int32(28), v13, v14, int32(6), int32(770))
 				mBase = m.M
-				v19 = m.ExcPending
-				if v19 != 0 {
+				v18 = m.ExcPending
+				if v18 != 0 {
 					return int32(0)
 				} else {
-					v23 = base.B2i32(v18 != int32(0))
-					return v23
+					v22 = base.B2i32(v17 != int32(0))
+					return v22
 				}
 			}
 		}

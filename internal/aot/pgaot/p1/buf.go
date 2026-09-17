@@ -152,32 +152,34 @@ func F_BufFileCreateFileSet(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v34
 	var v36 int32
 	_ = v36
+	var v41 int32
+	_ = v41
 	var v46 int32
 	_ = v46
 	var v47 int32
 	_ = v47
 	var v48 int32
 	_ = v48
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
 	var v61 int32
 	_ = v61
 	var v62 int32
 	_ = v62
-	var v63 int32
-	_ = v63
-	var v66 int32
-	_ = v66
-	var v67 int32
-	_ = v67
-	var v68 int32
-	_ = v68
-	var v70 int32
-	_ = v70
+	var v64 int32
+	_ = v64
 	v6 = m.G0
 	v8 = v6 - int32(1056)
 	m.G0 = v8
@@ -214,39 +216,40 @@ func F_BufFileCreateFileSet(m *base.Module, l0 int32, l1 int32) int32 {
 				v36 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(1)
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v36
-				v46 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(_a_F_BufFileCreateFileSet_1), v8+int32(16))
+				v41 = v8 + int32(32)
+				v46 = F_pg_snprintf(m, v41, int32(1024), int32(_a_F_BufFileCreateFileSet_1), v8+int32(16))
 				mBase = m.M
 				v47 = m.ExcPending
 				if v47 != 0 {
 					return int32(0)
 				} else {
 					v48 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-					v51 = F_FileSetDelete(m, v48, v8+int32(32))
+					v49 = F_FileSetDelete(m, v48, v41)
 					mBase = m.M
-					v52 = m.ExcPending
-					if v52 != 0 {
+					v50 = m.ExcPending
+					if v50 != 0 {
 						return int32(0)
 					} else {
-						v53 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
+						v51 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v53
-						v61 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(_a_F_BufFileCreateFileSet_1), v8)
+						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v51
+						v57 = F_pg_snprintf(m, v41, int32(1024), int32(_a_F_BufFileCreateFileSet_1), v8)
 						mBase = m.M
-						v62 = m.ExcPending
-						if v62 != 0 {
+						v58 = m.ExcPending
+						if v58 != 0 {
 							return int32(0)
 						} else {
-							v63 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-							v66 = F_FileSetCreate(m, v63, v8+int32(32))
+							v59 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+							v60 = F_FileSetCreate(m, v59, v41)
 							mBase = m.M
-							v67 = m.ExcPending
-							if v67 != 0 {
+							v61 = m.ExcPending
+							if v61 != 0 {
 								return int32(0)
 							} else {
-								v68 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
-								*(*int32)(unsafe.Add(mBase, uint32(v68))) = v66
-								v70 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v11)+10)) = uint8(v70)
+								v62 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
+								*(*int32)(unsafe.Add(mBase, uint32(v62))) = v60
+								v64 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v11)+10)) = uint8(v64)
 								m.G0 = v8 + int32(1056)
 								return v11
 							}
@@ -255,19 +258,6 @@ func F_BufFileCreateFileSet(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		}
-	}
-}
-func F_BufFileReadMaybeEOF(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
-	var v5 int32
-	_ = v5
-	var v8 int32
-	_ = v8
-	v5 = F_BufFileReadCommon(m, l0, l1, l2, l3)
-	v8 = m.ExcPending
-	if v8 != 0 {
-		return int32(0)
-	} else {
-		return v5
 	}
 }
 func F_BufFileSeek(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) int32 {

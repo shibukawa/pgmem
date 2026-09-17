@@ -12,8 +12,8 @@ func F_DirectInputFunctionCallSafe(m *base.Module, l0 int32, l1 int32, l2 int32,
 	_ = v7
 	var v9 int32
 	_ = v9
-	var v16 int32
-	_ = v16
+	var v19 int32
+	_ = v19
 	var v33 int32
 	_ = v33
 	var v37 int32
@@ -45,16 +45,16 @@ func F_DirectInputFunctionCallSafe(m *base.Module, l0 int32, l1 int32, l2 int32,
 		m.G0 = v9 + int32(48)
 		return v67
 	} else {
-		v16 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+20)) = uint8(v16)
 		*(*int64)(unsafe.Add(mBase, uint32(v9)+12)) = int64(0)
 		*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = l3
-		*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v16
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+44)) = uint8(v16)
+		v19 = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v19
+		*(*uint8)(unsafe.Add(mBase, uint32(v9)+20)) = uint8(v19)
+		*(*uint8)(unsafe.Add(mBase, uint32(v9)+44)) = uint8(v19)
 		*(*int32)(unsafe.Add(mBase, uint32(v9)+40)) = l2
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+36)) = uint8(v16)
-		*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v16
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+28)) = uint8(v16)
+		*(*uint8)(unsafe.Add(mBase, uint32(v9)+36)) = uint8(v19)
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v19
+		*(*uint8)(unsafe.Add(mBase, uint32(v9)+28)) = uint8(v19)
 		*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = l1
 		v33 = int32(3)
 		*(*uint16)(unsafe.Add(mBase, uint32(v9)+22)) = uint16(v33)

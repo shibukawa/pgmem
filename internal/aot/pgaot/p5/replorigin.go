@@ -18,55 +18,59 @@ func F_replorigin_desc(m *base.Module, l0 int32, l1 int32) {
 	_ = v11
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
-	var v16 int64
-	_ = v16
+	var v14 int32
+	_ = v14
 	var v17 int32
 	_ = v17
-	var v22 int64
-	_ = v22
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v33 int32
-	_ = v33
+	var v18 int64
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v24 int64
+	_ = v24
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v35 int32
+	_ = v35
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+96))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+64))
 	v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+48)))
-	switch v12 & int32(240) {
-	case 0:
-		v15 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+8)))
-		v16 = *(*int64)(unsafe.Add(mBase, uint32(v11)))
-		v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+10)))
-		*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v17
-		*(*uint32)(unsafe.Add(mBase, uint32(v8)+8)) = uint32(v16)
-		*(*int32)(unsafe.Add(mBase, uint32(v8))) = v15
-		v22 = int64(base.Ui64(v16) >> (uint(int64(32)) % 64))
-		*(*uint32)(unsafe.Add(mBase, uint32(v8)+4)) = uint32(v22)
-		F_appendStringInfo(m, l0, int32(_a_F_replorigin_desc_0), v8)
-		mBase = m.M
-		v26 = m.ExcPending
-		if v26 != 0 {
-			return
+	v14 = v12 & int32(240)
+	if v14 != 0 {
+		if v14 == int32(16) {
+			v29 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11))))
+			*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v29
+			F_appendStringInfo(m, l0, int32(_a_F_replorigin_desc_0), v8+int32(16))
+			mBase = m.M
+			v35 = m.ExcPending
+			if v35 != 0 {
+				return
+			} else {
+				m.G0 = v8 + int32(32)
+				return
+			}
 		} else {
 			m.G0 = v8 + int32(32)
 			return
 		}
-	default:
-		m.G0 = v8 + int32(32)
-		return
-	case 16:
-		v27 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11))))
-		*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v27
-		F_appendStringInfo(m, l0, int32(_a_F_replorigin_desc_1), v8+int32(16))
+	} else {
+		v17 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+8)))
+		v18 = *(*int64)(unsafe.Add(mBase, uint32(v11)))
+		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+10)))
+		*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v19
+		*(*uint32)(unsafe.Add(mBase, uint32(v8)+8)) = uint32(v18)
+		*(*int32)(unsafe.Add(mBase, uint32(v8))) = v17
+		v24 = int64(base.Ui64(v18) >> (uint(int64(32)) % 64))
+		*(*uint32)(unsafe.Add(mBase, uint32(v8)+4)) = uint32(v24)
+		F_appendStringInfo(m, l0, int32(_a_F_replorigin_desc_1), v8)
 		mBase = m.M
-		v33 = m.ExcPending
-		if v33 != 0 {
+		v28 = m.ExcPending
+		if v28 != 0 {
 			return
 		} else {
 			m.G0 = v8 + int32(32)
@@ -277,7 +281,7 @@ L11:
 	}
 L12:
 	;
-	F_sequence_close(m, v16, int32(3))
+	F_relation_close(m, v16, int32(3))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -508,7 +512,7 @@ L41:
 	}
 L42:
 	;
-	F_CatalogTupleDelete(m, v16, v25+int32(4))
+	F_simple_heap_delete(m, v16, v25+int32(4))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {
@@ -538,7 +542,7 @@ L44:
 	}
 L45:
 	;
-	F_sequence_close(m, v16, int32(0))
+	F_relation_close(m, v16, int32(0))
 	mBase = m.M
 	v169 = m.ExcPending
 	if v169 != 0 {

@@ -91,90 +91,29 @@ func F_xid_age(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_xidout(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
 	var v4 int32
 	_ = v4
-	var v5 int32
-	_ = v5
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	v4 = m.G0
-	v5 = int32(16)
-	v6 = v4 - v5
-	m.G0 = v6
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v10 = F_palloc(m, v5)
-	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
-		return int32(0)
-	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v6))) = v8
-		v17 = F_pg_snprintf(m, v10, int32(16), int32(_a_F_xidout_0), v6)
-		mBase = m.M
-		v18 = m.ExcPending
-		if v18 != 0 {
-			return int32(0)
-		} else {
-			m.G0 = v6 + int32(16)
-			return v10
-		}
-	}
-}
-func F_xmlexists(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
-	var v10 int32
-	_ = v10
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
-	var v23 int32
-	_ = v23
-	F_errstart_cold(m, int32(21), int32(0))
+	v4 = Fn13952(m, l0, int32(_a_F_xidout_0), int32(16))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errcode(m, int32(1088))
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return int32(0)
-		} else {
-			F_errmsg(m, int32(_a_F_xmlexists_0), int32(0))
-			v14 = m.ExcPending
-			if v14 != 0 {
-				return int32(0)
-			} else {
-				F_errdetail(m, int32(_a_F_xmlexists_1), int32(0))
-				v18 = m.ExcPending
-				if v18 != 0 {
-					return int32(0)
-				} else {
-					F_errfinish(m, int32(_a_F_xmlexists_2), int32(_a_F_xmlexists_3), int32(_a_F_xmlexists_4))
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
-			}
-		}
+		return v4
+	}
+}
+func F_xmlexists(m *base.Module, l0 int32) int32 {
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	v4 = Fn13840(m, l0, int32(_a_F_xmlexists_0), int32(_a_F_xmlexists_1))
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		return v4
 	}
 }
 func F_xmlvalidate(m *base.Module, l0 int32) int32 {
@@ -215,47 +154,15 @@ func F_xmlvalidate(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_xpath(m *base.Module, l0 int32) int32 {
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v10 int32
-	_ = v10
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
-	var v23 int32
-	_ = v23
-	F_errstart_cold(m, int32(21), int32(0))
+	v4 = Fn13840(m, l0, int32(_a_F_xpath_0), int32(_a_F_xpath_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errcode(m, int32(1088))
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return int32(0)
-		} else {
-			F_errmsg(m, int32(_a_F_xpath_0), int32(0))
-			v14 = m.ExcPending
-			if v14 != 0 {
-				return int32(0)
-			} else {
-				F_errdetail(m, int32(_a_F_xpath_1), int32(0))
-				v18 = m.ExcPending
-				if v18 != 0 {
-					return int32(0)
-				} else {
-					F_errfinish(m, int32(_a_F_xpath_2), int32(_a_F_xpath_3), int32(_a_F_xpath_4))
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
-			}
-		}
+		return v4
 	}
 }

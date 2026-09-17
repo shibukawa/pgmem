@@ -18,8 +18,8 @@ func F_pointerhash_delete(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v21
 	var v22 int32
 	_ = v22
-	var v25 int32
-	_ = v25
+	var v27 int32
+	_ = v27
 	var v30 int32
 	_ = v30
 	var v33 int32
@@ -42,14 +42,14 @@ func F_pointerhash_delete(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v52
 	var __phi52 int32
 	_ = __phi52
-	var v53 int32
-	_ = v53
-	var __phi53 int32
-	_ = __phi53
 	var v54 int32
 	_ = v54
 	var __phi54 int32
 	_ = __phi54
+	var v55 int32
+	_ = v55
+	var __phi55 int32
+	_ = __phi55
 	var v56 int32
 	_ = v56
 	var __phi56 int32
@@ -76,8 +76,8 @@ func F_pointerhash_delete(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v83
 	var v84 int32
 	_ = v84
-	var v91 int32
-	_ = v91
+	var v89 int32
+	_ = v89
 	var v94 int32
 	_ = v94
 	var v102 int32
@@ -87,11 +87,11 @@ func F_pointerhash_delete(m *base.Module, l0 int32, l1 int32) int32 {
 	v17 = (int32(base.Ui32(v12)>>(uint(int32(13))%32)) ^ v12) * int32(-1028477387)
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v25 = int32(base.Ui32(v17)>>(uint(v8)%32)) ^ v17
+	v27 = int32(base.Ui32(v17)>>(uint(v8)%32)) ^ v17
 	goto L1
 L1:
 	;
-	v30 = v25 & v22
+	v30 = v27 & v22
 	v33 = v21 + v30<<(uint(int32(3))%32)
 	v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v33)+4)))
 	switch v34 {
@@ -105,7 +105,7 @@ L1:
 	}
 L3:
 	;
-	v25 = v30 + int32(1)
+	v27 = v30 + int32(1)
 	goto L1
 L4:
 	;
@@ -134,12 +134,12 @@ L6:
 L7:
 	;
 	v94 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v91)+4)) = uint8(v94)
+	*(*uint8)(unsafe.Add(mBase, uint32(v89)+4)) = uint8(v94)
 	v102 = v38
 	goto L4
 L8:
 	;
-	v91 = v33
+	v89 = v33
 	goto L7
 L9:
 	;
@@ -147,12 +147,12 @@ L9:
 L10:
 	;
 	__phi52 = v44
-	__phi53 = v33
 	__phi54 = v47
+	__phi55 = v33
 	__phi56 = v22
 	v52 = __phi52
-	v53 = __phi53
 	v54 = __phi54
+	v55 = __phi55
 	v56 = __phi56
 	goto L11
 L11:
@@ -168,11 +168,11 @@ L11:
 	}
 L12:
 	;
-	v91 = v54
+	v89 = v54
 	goto L7
 L13:
 	;
-	v91 = v53
+	v89 = v55
 	goto L7
 L14:
 	;
@@ -180,7 +180,7 @@ L14:
 L15:
 	;
 	v74 = *(*int64)(unsafe.Add(mBase, uint32(v54)))
-	*(*int64)(unsafe.Add(mBase, uint32(v53))) = v74
+	*(*int64)(unsafe.Add(mBase, uint32(v55))) = v74
 	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v78 = int32(1)
@@ -189,12 +189,12 @@ L15:
 	v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v83)+4)))
 	if v84 == v78 {
 		__phi52 = v80
-		__phi53 = v54
 		__phi54 = v83
+		__phi55 = v54
 		__phi56 = v77
 		v52 = __phi52
-		v53 = __phi53
 		v54 = __phi54
+		v55 = __phi55
 		v56 = __phi56
 		goto L11
 	} else {

@@ -108,16 +108,16 @@ func F_ExecSimpleRelationUpdate(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v153
 	var v154 int32
 	_ = v154
-	var v161 int32
-	_ = v161
+	var v159 int32
+	_ = v159
+	var v160 int32
+	_ = v160
 	var v162 int32
 	_ = v162
-	var v164 int32
-	_ = v164
+	var v168 int32
+	_ = v168
 	var v170 int32
 	_ = v170
-	var v172 int32
-	_ = v172
 	v11 = m.G0
 	v13 = v11 - int32(16)
 	m.G0 = v13
@@ -311,7 +311,7 @@ L25:
 	v137 = int32(0)
 	v138 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	if v138 <= v137 {
-		v162 = v137
+		v160 = v137
 		goto L42
 	} else {
 		goto L43
@@ -459,11 +459,11 @@ L41:
 	}
 L42:
 	;
-	v164 = int32(0)
-	F_ExecARUpdateTriggers(m, l1, l0, v164, v164, v20, v164, l4, v162, v164, v164)
+	v162 = int32(0)
+	F_ExecARUpdateTriggers(m, l1, l0, v162, v162, v20, v162, l4, v160, v162, v162)
 	mBase = m.M
-	v170 = m.ExcPending
-	if v170 != 0 {
+	v168 = m.ExcPending
+	if v168 != 0 {
 		goto L1
 	} else {
 		goto L48
@@ -472,7 +472,7 @@ L43:
 	;
 	v141 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
 	if v141 == int32(0) {
-		v162 = v137
+		v160 = v137
 		goto L42
 	} else {
 		goto L44
@@ -491,8 +491,8 @@ L44:
 L45:
 	;
 	v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+11)))
-	if v154&int32(1) == int32(0) {
-		v162 = v152
+	if v154 != int32(1) {
+		v160 = v152
 		goto L42
 	} else {
 		goto L46
@@ -501,22 +501,22 @@ L46:
 	;
 	F_CheckAndReportConflict(m, l0, l1, int32(2), v152, l3, l4)
 	mBase = m.M
-	v161 = m.ExcPending
-	if v161 != 0 {
+	v159 = m.ExcPending
+	if v159 != 0 {
 		goto L1
 	} else {
 		goto L47
 	}
 L47:
 	;
-	v162 = v152
+	v160 = v152
 	goto L42
 L48:
 	;
-	F_list_free(m, v162)
+	F_list_free(m, v160)
 	mBase = m.M
-	v172 = m.ExcPending
-	if v172 != 0 {
+	v170 = m.ExcPending
+	if v170 != 0 {
 		goto L1
 	} else {
 		goto L49
@@ -530,20 +530,20 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v8 int32
-	_ = v8
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
 	var v11 int32
 	_ = v11
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v22 int32
+	_ = v22
 	var v23 int32
 	_ = v23
-	var v24 int32
-	_ = v24
 	var v25 int32
 	_ = v25
 	var v26 int32
@@ -552,55 +552,55 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = v28
 	var v29 int32
 	_ = v29
-	var v32 int32
-	_ = v32
-	var v36 int32
-	_ = v36
+	var v33 int32
+	_ = v33
 	var v37 int32
 	_ = v37
+	var v38 int32
+	_ = v38
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v43 int32
-	_ = v43
+	var v42 int32
+	_ = v42
+	var v45 int32
+	_ = v45
 	var v46 int32
 	_ = v46
 	var v47 int32
 	_ = v47
-	var v48 int32
-	_ = v48
+	var v50 int32
+	_ = v50
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
-	var v55 int32
-	_ = v55
-	var v59 int32
-	_ = v59
-	var v61 int32
-	_ = v61
-	var v63 int32
-	_ = v63
+	var v54 int32
+	_ = v54
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
+	var v62 int32
+	_ = v62
 	v4 = l3
 	if v4 != 0 {
 		v39 = l2
 		v40 = l4
-		v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
-		if v43 != int32(1) {
+		v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
+		if v42 != int32(1) {
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)) = uint8(v40)
 			*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)) = uint8(v4)
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+40)) = v39
 			return
 		} else {
-			v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
-			if v46 != 0 {
-				v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-				F_pfree(m, v61)
+			v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
+			if v45 != 0 {
+				v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+				F_pfree(m, v60)
 				mBase = m.M
-				v63 = m.ExcPending
-				if v63 != 0 {
+				v62 = m.ExcPending
+				if v62 != 0 {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -610,14 +610,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 					return
 				}
 			} else {
-				v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-				v48 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+12)))
-				if v48 != int32(_a_F_assign_simple_var_0) {
-					v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-					F_pfree(m, v61)
+				v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+				v47 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v46)+12)))
+				if v47 != int32(_a_F_assign_simple_var_0) {
+					v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+					F_pfree(m, v60)
 					mBase = m.M
-					v63 = m.ExcPending
-					if v63 != 0 {
+					v62 = m.ExcPending
+					if v62 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -627,14 +627,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 						return
 					}
 				} else {
-					v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-					v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-					if v52 != int32(1) {
-						v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-						F_pfree(m, v61)
+					v50 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+					v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50))))
+					if v51 != int32(1) {
+						v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+						F_pfree(m, v60)
 						mBase = m.M
-						v63 = m.ExcPending
-						if v63 != 0 {
+						v62 = m.ExcPending
+						if v62 != 0 {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -644,13 +644,13 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 							return
 						}
 					} else {
-						v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+1)))
-						if v55 != int32(3) {
-							v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-							F_pfree(m, v61)
+						v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50)+1)))
+						if v54 != int32(3) {
+							v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+							F_pfree(m, v60)
 							mBase = m.M
-							v63 = m.ExcPending
-							if v63 != 0 {
+							v62 = m.ExcPending
+							if v62 != 0 {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -660,10 +660,10 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 								return
 							}
 						} else {
-							F_DeleteExpandedObject(m, v51)
+							F_DeleteExpandedObject(m, v50)
 							mBase = m.M
-							v59 = m.ExcPending
-							if v59 != 0 {
+							v58 = m.ExcPending
+							if v58 != 0 {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -678,25 +678,25 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 			}
 		}
 	} else {
-		v8 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+31)))
-		if v8&int32(1) != 0 {
+		v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+31)))
+		if v7&int32(1) != 0 {
 			v39 = l2
 			v40 = l4
-			v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
-			if v43 != int32(1) {
+			v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
+			if v42 != int32(1) {
 				*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)) = uint8(v40)
 				*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)) = uint8(v4)
 				*(*int32)(unsafe.Add(mBase, uint32(l1)+40)) = v39
 				return
 			} else {
-				v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
-				if v46 != 0 {
-					v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-					F_pfree(m, v61)
+				v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
+				if v45 != 0 {
+					v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+					F_pfree(m, v60)
 					mBase = m.M
-					v63 = m.ExcPending
-					if v63 != 0 {
+					v62 = m.ExcPending
+					if v62 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -706,14 +706,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 						return
 					}
 				} else {
-					v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-					v48 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+12)))
-					if v48 != int32(_a_F_assign_simple_var_0) {
-						v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-						F_pfree(m, v61)
+					v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+					v47 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v46)+12)))
+					if v47 != int32(_a_F_assign_simple_var_0) {
+						v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+						F_pfree(m, v60)
 						mBase = m.M
-						v63 = m.ExcPending
-						if v63 != 0 {
+						v62 = m.ExcPending
+						if v62 != 0 {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -723,14 +723,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 							return
 						}
 					} else {
-						v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-						v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-						if v52 != int32(1) {
-							v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-							F_pfree(m, v61)
+						v50 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+						v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50))))
+						if v51 != int32(1) {
+							v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+							F_pfree(m, v60)
 							mBase = m.M
-							v63 = m.ExcPending
-							if v63 != 0 {
+							v62 = m.ExcPending
+							if v62 != 0 {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -740,13 +740,13 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 								return
 							}
 						} else {
-							v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+1)))
-							if v55 != int32(3) {
-								v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-								F_pfree(m, v61)
+							v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50)+1)))
+							if v54 != int32(3) {
+								v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+								F_pfree(m, v60)
 								mBase = m.M
-								v63 = m.ExcPending
-								if v63 != 0 {
+								v62 = m.ExcPending
+								if v62 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -756,10 +756,10 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 									return
 								}
 							} else {
-								F_DeleteExpandedObject(m, v51)
+								F_DeleteExpandedObject(m, v50)
 								mBase = m.M
-								v59 = m.ExcPending
-								if v59 != 0 {
+								v58 = m.ExcPending
+								if v58 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -774,26 +774,26 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 				}
 			}
 		} else {
-			v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-			v12 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+12)))
-			if v12 != int32(_a_F_assign_simple_var_0) {
+			v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+			v11 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10)+12)))
+			if v11 != int32(_a_F_assign_simple_var_0) {
 				v39 = l2
 				v40 = l4
-				v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
-				if v43 != int32(1) {
+				v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
+				if v42 != int32(1) {
 					*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
 					*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)) = uint8(v40)
 					*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)) = uint8(v4)
 					*(*int32)(unsafe.Add(mBase, uint32(l1)+40)) = v39
 					return
 				} else {
-					v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
-					if v46 != 0 {
-						v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-						F_pfree(m, v61)
+					v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
+					if v45 != 0 {
+						v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+						F_pfree(m, v60)
 						mBase = m.M
-						v63 = m.ExcPending
-						if v63 != 0 {
+						v62 = m.ExcPending
+						if v62 != 0 {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -803,14 +803,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 							return
 						}
 					} else {
-						v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-						v48 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+12)))
-						if v48 != int32(_a_F_assign_simple_var_0) {
-							v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-							F_pfree(m, v61)
+						v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+						v47 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v46)+12)))
+						if v47 != int32(_a_F_assign_simple_var_0) {
+							v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+							F_pfree(m, v60)
 							mBase = m.M
-							v63 = m.ExcPending
-							if v63 != 0 {
+							v62 = m.ExcPending
+							if v62 != 0 {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -820,14 +820,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 								return
 							}
 						} else {
-							v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-							v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-							if v52 != int32(1) {
-								v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-								F_pfree(m, v61)
+							v50 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+							v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50))))
+							if v51 != int32(1) {
+								v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+								F_pfree(m, v60)
 								mBase = m.M
-								v63 = m.ExcPending
-								if v63 != 0 {
+								v62 = m.ExcPending
+								if v62 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -837,13 +837,13 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 									return
 								}
 							} else {
-								v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+1)))
-								if v55 != int32(3) {
-									v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-									F_pfree(m, v61)
+								v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50)+1)))
+								if v54 != int32(3) {
+									v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+									F_pfree(m, v60)
 									mBase = m.M
-									v63 = m.ExcPending
-									if v63 != 0 {
+									v62 = m.ExcPending
+									if v62 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -853,10 +853,10 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 										return
 									}
 								} else {
-									F_DeleteExpandedObject(m, v51)
+									F_DeleteExpandedObject(m, v50)
 									mBase = m.M
-									v59 = m.ExcPending
-									if v59 != 0 {
+									v58 = m.ExcPending
+									if v58 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -871,25 +871,25 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 					}
 				}
 			} else {
-				v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2))))
-				if v15 != int32(1) {
+				v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2))))
+				if v14 != int32(1) {
 					v39 = l2
 					v40 = l4
-					v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
-					if v43 != int32(1) {
+					v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
+					if v42 != int32(1) {
 						*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
 						*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)) = uint8(v40)
 						*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)) = uint8(v4)
 						*(*int32)(unsafe.Add(mBase, uint32(l1)+40)) = v39
 						return
 					} else {
-						v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
-						if v46 != 0 {
-							v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-							F_pfree(m, v61)
+						v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
+						if v45 != 0 {
+							v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+							F_pfree(m, v60)
 							mBase = m.M
-							v63 = m.ExcPending
-							if v63 != 0 {
+							v62 = m.ExcPending
+							if v62 != 0 {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -899,14 +899,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 								return
 							}
 						} else {
-							v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-							v48 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+12)))
-							if v48 != int32(_a_F_assign_simple_var_0) {
-								v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-								F_pfree(m, v61)
+							v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+							v47 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v46)+12)))
+							if v47 != int32(_a_F_assign_simple_var_0) {
+								v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+								F_pfree(m, v60)
 								mBase = m.M
-								v63 = m.ExcPending
-								if v63 != 0 {
+								v62 = m.ExcPending
+								if v62 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -916,14 +916,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 									return
 								}
 							} else {
-								v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-								v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-								if v52 != int32(1) {
-									v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-									F_pfree(m, v61)
+								v50 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+								v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50))))
+								if v51 != int32(1) {
+									v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+									F_pfree(m, v60)
 									mBase = m.M
-									v63 = m.ExcPending
-									if v63 != 0 {
+									v62 = m.ExcPending
+									if v62 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -933,13 +933,13 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 										return
 									}
 								} else {
-									v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+1)))
-									if v55 != int32(3) {
-										v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-										F_pfree(m, v61)
+									v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50)+1)))
+									if v54 != int32(3) {
+										v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+										F_pfree(m, v60)
 										mBase = m.M
-										v63 = m.ExcPending
-										if v63 != 0 {
+										v62 = m.ExcPending
+										if v62 != 0 {
 											return
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -949,10 +949,10 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 											return
 										}
 									} else {
-										F_DeleteExpandedObject(m, v51)
+										F_DeleteExpandedObject(m, v50)
 										mBase = m.M
-										v59 = m.ExcPending
-										if v59 != 0 {
+										v58 = m.ExcPending
+										if v58 != 0 {
 											return
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -967,25 +967,25 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 						}
 					}
 				} else {
-					v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+1)))
-					if v18&int32(254) == int32(2) {
+					v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+1)))
+					if v17&int32(254) == int32(2) {
 						v39 = l2
 						v40 = l4
-						v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
-						if v43 != int32(1) {
+						v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
+						if v42 != int32(1) {
 							*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
 							*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)) = uint8(v40)
 							*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)) = uint8(v4)
 							*(*int32)(unsafe.Add(mBase, uint32(l1)+40)) = v39
 							return
 						} else {
-							v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
-							if v46 != 0 {
-								v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-								F_pfree(m, v61)
+							v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
+							if v45 != 0 {
+								v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+								F_pfree(m, v60)
 								mBase = m.M
-								v63 = m.ExcPending
-								if v63 != 0 {
+								v62 = m.ExcPending
+								if v62 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -995,14 +995,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 									return
 								}
 							} else {
-								v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-								v48 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+12)))
-								if v48 != int32(_a_F_assign_simple_var_0) {
-									v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-									F_pfree(m, v61)
+								v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+								v47 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v46)+12)))
+								if v47 != int32(_a_F_assign_simple_var_0) {
+									v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+									F_pfree(m, v60)
 									mBase = m.M
-									v63 = m.ExcPending
-									if v63 != 0 {
+									v62 = m.ExcPending
+									if v62 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1012,14 +1012,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 										return
 									}
 								} else {
-									v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-									v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-									if v52 != int32(1) {
-										v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-										F_pfree(m, v61)
+									v50 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+									v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50))))
+									if v51 != int32(1) {
+										v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+										F_pfree(m, v60)
 										mBase = m.M
-										v63 = m.ExcPending
-										if v63 != 0 {
+										v62 = m.ExcPending
+										if v62 != 0 {
 											return
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1029,13 +1029,13 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 											return
 										}
 									} else {
-										v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+1)))
-										if v55 != int32(3) {
-											v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-											F_pfree(m, v61)
+										v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50)+1)))
+										if v54 != int32(3) {
+											v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+											F_pfree(m, v60)
 											mBase = m.M
-											v63 = m.ExcPending
-											if v63 != 0 {
+											v62 = m.ExcPending
+											if v62 != 0 {
 												return
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1045,10 +1045,10 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 												return
 											}
 										} else {
-											F_DeleteExpandedObject(m, v51)
+											F_DeleteExpandedObject(m, v50)
 											mBase = m.M
-											v59 = m.ExcPending
-											if v59 != 0 {
+											v58 = m.ExcPending
+											if v58 != 0 {
 												return
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1063,8 +1063,8 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 							}
 						}
 					} else {
-						v23 = int32(_a_F_assign_simple_var_1)
-						v24 = *(*int32)(unsafe.Add(mBase, _c_F_assign_simple_var[0]))
+						v22 = int32(_a_F_assign_simple_var_1)
+						v23 = *(*int32)(unsafe.Add(mBase, _c_F_assign_simple_var[0]))
 						v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
 						v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+20))
 						*(*int32)(unsafe.Add(mBase, _c_F_assign_simple_var[0])) = v26
@@ -1074,37 +1074,37 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 						if v29 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, _c_F_assign_simple_var[0])) = v24
+							*(*int32)(unsafe.Add(mBase, _c_F_assign_simple_var[0])) = v23
 							if l4 != 0 {
 								F_pfree(m, l2)
 								mBase = m.M
-								v32 = m.ExcPending
-								if v32 != 0 {
+								v33 = m.ExcPending
+								if v33 != 0 {
 									return
 								} else {
-									v36 = F_datumCopy(m, v28, int32(0), int32(-1))
+									v37 = F_datumCopy(m, v28, int32(0), int32(-1))
 									mBase = m.M
-									v37 = m.ExcPending
-									if v37 != 0 {
+									v38 = m.ExcPending
+									if v38 != 0 {
 										return
 									} else {
-										v39 = v36
+										v39 = v37
 										v40 = int32(1)
-										v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
-										if v43 != int32(1) {
+										v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
+										if v42 != int32(1) {
 											*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
 											*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)) = uint8(v40)
 											*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)) = uint8(v4)
 											*(*int32)(unsafe.Add(mBase, uint32(l1)+40)) = v39
 											return
 										} else {
-											v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
-											if v46 != 0 {
-												v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-												F_pfree(m, v61)
+											v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
+											if v45 != 0 {
+												v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+												F_pfree(m, v60)
 												mBase = m.M
-												v63 = m.ExcPending
-												if v63 != 0 {
+												v62 = m.ExcPending
+												if v62 != 0 {
 													return
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1114,14 +1114,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 													return
 												}
 											} else {
-												v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-												v48 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+12)))
-												if v48 != int32(_a_F_assign_simple_var_0) {
-													v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-													F_pfree(m, v61)
+												v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+												v47 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v46)+12)))
+												if v47 != int32(_a_F_assign_simple_var_0) {
+													v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+													F_pfree(m, v60)
 													mBase = m.M
-													v63 = m.ExcPending
-													if v63 != 0 {
+													v62 = m.ExcPending
+													if v62 != 0 {
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1131,14 +1131,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 														return
 													}
 												} else {
-													v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-													v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-													if v52 != int32(1) {
-														v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-														F_pfree(m, v61)
+													v50 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+													v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50))))
+													if v51 != int32(1) {
+														v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+														F_pfree(m, v60)
 														mBase = m.M
-														v63 = m.ExcPending
-														if v63 != 0 {
+														v62 = m.ExcPending
+														if v62 != 0 {
 															return
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1148,13 +1148,13 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 															return
 														}
 													} else {
-														v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+1)))
-														if v55 != int32(3) {
-															v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-															F_pfree(m, v61)
+														v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50)+1)))
+														if v54 != int32(3) {
+															v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+															F_pfree(m, v60)
 															mBase = m.M
-															v63 = m.ExcPending
-															if v63 != 0 {
+															v62 = m.ExcPending
+															if v62 != 0 {
 																return
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1164,10 +1164,10 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 																return
 															}
 														} else {
-															F_DeleteExpandedObject(m, v51)
+															F_DeleteExpandedObject(m, v50)
 															mBase = m.M
-															v59 = m.ExcPending
-															if v59 != 0 {
+															v58 = m.ExcPending
+															if v58 != 0 {
 																return
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1184,29 +1184,29 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 									}
 								}
 							} else {
-								v36 = F_datumCopy(m, v28, int32(0), int32(-1))
+								v37 = F_datumCopy(m, v28, int32(0), int32(-1))
 								mBase = m.M
-								v37 = m.ExcPending
-								if v37 != 0 {
+								v38 = m.ExcPending
+								if v38 != 0 {
 									return
 								} else {
-									v39 = v36
+									v39 = v37
 									v40 = int32(1)
-									v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
-									if v43 != int32(1) {
+									v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)))
+									if v42 != int32(1) {
 										*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
 										*(*uint8)(unsafe.Add(mBase, uint32(l1)+45)) = uint8(v40)
 										*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)) = uint8(v4)
 										*(*int32)(unsafe.Add(mBase, uint32(l1)+40)) = v39
 										return
 									} else {
-										v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
-										if v46 != 0 {
-											v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-											F_pfree(m, v61)
+										v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+44)))
+										if v45 != 0 {
+											v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+											F_pfree(m, v60)
 											mBase = m.M
-											v63 = m.ExcPending
-											if v63 != 0 {
+											v62 = m.ExcPending
+											if v62 != 0 {
 												return
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1216,14 +1216,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 												return
 											}
 										} else {
-											v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-											v48 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+12)))
-											if v48 != int32(_a_F_assign_simple_var_0) {
-												v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-												F_pfree(m, v61)
+											v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+											v47 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v46)+12)))
+											if v47 != int32(_a_F_assign_simple_var_0) {
+												v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+												F_pfree(m, v60)
 												mBase = m.M
-												v63 = m.ExcPending
-												if v63 != 0 {
+												v62 = m.ExcPending
+												if v62 != 0 {
 													return
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1233,14 +1233,14 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 													return
 												}
 											} else {
-												v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-												v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-												if v52 != int32(1) {
-													v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-													F_pfree(m, v61)
+												v50 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+												v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50))))
+												if v51 != int32(1) {
+													v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+													F_pfree(m, v60)
 													mBase = m.M
-													v63 = m.ExcPending
-													if v63 != 0 {
+													v62 = m.ExcPending
+													if v62 != 0 {
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1250,13 +1250,13 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 														return
 													}
 												} else {
-													v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+1)))
-													if v55 != int32(3) {
-														v61 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-														F_pfree(m, v61)
+													v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50)+1)))
+													if v54 != int32(3) {
+														v60 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+														F_pfree(m, v60)
 														mBase = m.M
-														v63 = m.ExcPending
-														if v63 != 0 {
+														v62 = m.ExcPending
+														if v62 != 0 {
 															return
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1266,10 +1266,10 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 															return
 														}
 													} else {
-														F_DeleteExpandedObject(m, v51)
+														F_DeleteExpandedObject(m, v50)
 														mBase = m.M
-														v59 = m.ExcPending
-														if v59 != 0 {
+														v58 = m.ExcPending
+														if v58 != 0 {
 															return
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = int32(0)
@@ -1535,14 +1535,14 @@ func F_exec_save_simple_expr(m *base.Module, l0 int32, l1 int32) {
 	_ = v48
 	var v49 int32
 	_ = v49
-	var v59 int32
-	_ = v59
-	var v60 int32
-	_ = v60
-	var v65 int32
-	_ = v65
-	var v72 int32
-	_ = v72
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v62 int32
+	_ = v62
+	var v67 int32
+	_ = v67
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
@@ -1555,8 +1555,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(_a_F_exec_save_simple_expr_0))
 	mBase = m.M
-	v59 = m.ExcPending
-	if v59 != 0 {
+	v57 = m.ExcPending
+	if v57 != 0 {
 		goto L9
 	} else {
 		goto L13
@@ -1649,12 +1649,12 @@ L12:
 	return
 L13:
 	;
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v60
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v58
 	F_errmsg_internal(m, int32(_a_F_exec_save_simple_expr_1), v8)
 	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
+	v62 = m.ExcPending
+	if v62 != 0 {
 		goto L9
 	} else {
 		goto L14
@@ -1663,8 +1663,8 @@ L14:
 	;
 	F_errfinish(m, int32(_a_F_exec_save_simple_expr_2), int32(_a_F_exec_save_simple_expr_3), int32(_a_F_exec_save_simple_expr_4))
 	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
+	v67 = m.ExcPending
+	if v67 != 0 {
 		goto L9
 	} else {
 		goto L15
@@ -1718,30 +1718,32 @@ func F_isSimpleNode(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v63
 	var v70 int64
 	_ = v70
-	var v85 int32
-	_ = v85
+	var v79 int64
+	_ = v79
 	var v86 int32
 	_ = v86
 	var v87 int32
 	_ = v87
-	var v90 int32
-	_ = v90
+	var v88 int32
+	_ = v88
 	var v91 int32
 	_ = v91
-	var v95 int32
-	_ = v95
-	var v102 int32
-	_ = v102
-	var v109 int32
-	_ = v109
+	var v92 int32
+	_ = v92
+	var v96 int32
+	_ = v96
+	var v103 int32
+	_ = v103
 	var v110 int32
 	_ = v110
 	var v111 int32
 	_ = v111
-	var v122 int32
-	_ = v122
-	var v128 int32
-	_ = v128
+	var v112 int32
+	_ = v112
+	var v125 int32
+	_ = v125
+	var v133 int32
+	_ = v133
 	v4 = int32(0)
 	if l0 == v4 {
 		goto L1
@@ -1760,44 +1762,44 @@ L2:
 	goto L9
 L3:
 	;
-	return v128
+	return v133
 L4:
 	;
-	v122 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
-	v128 = base.B2i32(base.Ui32(v122-int32(4)) < base.Ui32(int32(-3)))
+	v125 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
+	v133 = base.B2i32(base.Ui32(v125-int32(4)) < base.Ui32(int32(-3)))
 	goto L3
 L5:
 	;
 	return int32(1)
 L6:
 	;
-	v102 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
-	switch v102 - int32(9) {
+	v103 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
+	switch v103 - int32(9) {
 	case 0, 1, 2, 5, 10, 23, 26, 27, 29, 30, 32, 39:
-		v128 = int32(1)
+		v133 = int32(1)
 		goto L3
 	default:
 		goto L1
 	case 6:
 		goto L4
 	case 12:
-		goto L34
+		goto L31
 	}
 L7:
 	;
-	switch v91 - int32(9) {
+	switch v92 - int32(9) {
 	case 0, 1, 2, 5, 10, 12, 23, 26, 27, 29, 30, 32:
-		v128 = int32(1)
+		v133 = int32(1)
 		goto L3
 	default:
 		goto L1
 	case 6:
-		goto L33
+		goto L30
 	}
 L8:
 	;
-	v90 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
-	v91 = v90
+	v91 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
+	v92 = v91
 	goto L7
 L9:
 	;
@@ -1806,7 +1808,7 @@ L9:
 	case 0, 1, 2, 3, 4, 5, 7, 8, 9, 13, 26, 29, 30, 32, 33, 34, 35, 39, 42, 50, 51, 52, 53:
 		goto L5
 	default:
-		v128 = v4
+		v133 = v4
 		goto L3
 	case 11:
 		goto L11
@@ -1865,7 +1867,7 @@ L17:
 	;
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 	if v37 != int32(17) {
-		v91 = v37
+		v92 = v37
 		goto L7
 	} else {
 		goto L18
@@ -1949,76 +1951,64 @@ L27:
 	}
 L28:
 	;
-	if v50&int64(43980465111041) != int64(0) {
-		goto L29
+	v79 = int64(0)
+	if base.B2i32(v50&int64(43980465111041) != v79)&base.B2i32(v63&int64(145272973819905) != v79) != 0 {
+		v133 = v4
+		goto L3
 	} else {
-		goto L30
+		goto L29
 	}
 L29:
 	;
-	if v63&int64(145272973819905) != int64(0) {
-		v128 = v4
-		goto L3
-	} else {
-		goto L32
-	}
+	v86 = *(*int32)(unsafe.Add(mBase, uint32(v11)+28))
+	v87 = *(*int32)(unsafe.Add(mBase, uint32(v86)+12))
+	v88 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+	return base.B2i32(v10 == v88)
 L30:
 	;
-	goto L31
+	v96 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
+	return base.B2i32(base.Ui32(v96-int32(4)) < base.Ui32(int32(-3)))
 L31:
-	;
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(v11)+28))
-	v86 = *(*int32)(unsafe.Add(mBase, uint32(v85)+12))
-	v87 = *(*int32)(unsafe.Add(mBase, uint32(v86)))
-	return base.B2i32(v10 == v87)
-L32:
-	;
-	goto L31
-L33:
-	;
-	v95 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
-	return base.B2i32(base.Ui32(v95-int32(4)) < base.Ui32(int32(-3)))
-L34:
 	;
 	if l2&int32(1) == int32(0) {
 		goto L1
+	} else {
+		goto L32
+	}
+L32:
+	;
+	v110 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
+	v111 = int32(0)
+	v112 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+	switch v112 {
+	case 0, 2:
+		goto L34
+	case 1:
+		goto L33
+	default:
+		v133 = v111
+		goto L3
+	}
+L33:
+	;
+	if v110 != int32(1) {
+		v133 = v111
+		goto L3
+	} else {
+		goto L36
+	}
+L34:
+	;
+	if base.Ui32(v110) < base.Ui32(int32(2)) {
+		goto L5
 	} else {
 		goto L35
 	}
 L35:
 	;
-	v109 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
-	v110 = int32(0)
-	v111 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
-	switch v111 {
-	case 0, 2:
-		goto L37
-	case 1:
-		goto L36
-	default:
-		v128 = v110
-		goto L3
-	}
-L36:
-	;
-	if v109 != int32(1) {
-		v128 = v110
-		goto L3
-	} else {
-		goto L39
-	}
-L37:
-	;
-	if base.Ui32(v109) < base.Ui32(int32(2)) {
-		goto L5
-	} else {
-		goto L38
-	}
-L38:
-	;
-	v128 = v110
+	v133 = v111
 	goto L3
-L39:
+L36:
 	;
 	goto L5
 }
@@ -2113,8 +2103,8 @@ func F_is_simple_subquery(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v88
 	var v90 int32
 	_ = v90
-	var v95 int32
-	_ = v95
+	var v97 int32
+	_ = v97
 	var v104 int32
 	_ = v104
 	var v108 int32
@@ -2407,21 +2397,21 @@ L33:
 L34:
 	;
 	if v42 == int32(0) {
-		v95 = v51
+		v97 = v51
 		goto L35
 	} else {
 		goto L36
 	}
 L35:
 	;
-	v104 = v95
+	v104 = v97
 	goto L31
 L36:
 	;
 	v60 = *(*int32)(unsafe.Add(mBase, uint32(v49)+4))
 	v61 = *(*int32)(unsafe.Add(mBase, uint32(v42)+4))
 	if v61 < v60 {
-		v95 = v51
+		v97 = v51
 		goto L35
 	} else {
 		goto L37
@@ -2451,18 +2441,18 @@ L41:
 	;
 	v79 = v72 << (uint(int32(2)) % 32)
 	v81 = *(*int32)(unsafe.Add(mBase, uint32(v49+v67+v79)))
-	v83 = *(*int32)(unsafe.Add(mBase, uint32(v79+(v42+v67))))
+	v83 = *(*int32)(unsafe.Add(mBase, uint32(v42+v67+v79)))
 	v86 = v81 & (v83 ^ int32(-1))
 	v88 = base.B2i32(v86 == int32(0))
 	if v86 != 0 {
-		v95 = v88
+		v97 = v88
 		goto L35
 	} else {
 		goto L43
 	}
 L42:
 	;
-	v95 = v88
+	v97 = v88
 	goto L35
 L43:
 	;

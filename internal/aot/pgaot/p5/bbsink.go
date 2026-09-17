@@ -46,58 +46,56 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 	_ = v46
 	var v48 int64
 	_ = v48
-	var v51 int32
-	_ = v51
 	var v54 int64
 	_ = v54
-	var v62 int64
-	_ = v62
-	var v65 int32
-	_ = v65
-	var v68 int64
-	_ = v68
-	var v73 int32
-	_ = v73
-	var v76 int32
-	_ = v76
+	var v63 int64
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v69 int64
+	_ = v69
+	var v74 int32
+	_ = v74
 	var v77 int32
 	_ = v77
 	var v78 int32
 	_ = v78
-	var v80 int32
-	_ = v80
-	var v85 int64
-	_ = v85
-	var v88 int32
-	_ = v88
+	var v79 int32
+	_ = v79
+	var v81 int32
+	_ = v81
+	var v86 int64
+	_ = v86
 	var v89 int32
 	_ = v89
 	var v90 int32
 	_ = v90
-	var v92 int64
-	_ = v92
-	var v94 int64
-	_ = v94
-	var v96 int64
-	_ = v96
-	var v99 int64
-	_ = v99
-	var v101 int64
-	_ = v101
-	var v103 int64
-	_ = v103
-	var v105 int64
-	_ = v105
-	var v132 int32
-	_ = v132
-	var v134 int32
-	_ = v134
+	var v91 int32
+	_ = v91
+	var v93 int64
+	_ = v93
+	var v95 int64
+	_ = v95
+	var v97 int64
+	_ = v97
+	var v100 int64
+	_ = v100
+	var v102 int64
+	_ = v102
+	var v104 int64
+	_ = v104
+	var v106 int64
+	_ = v106
+	var v133 int32
+	_ = v133
 	var v135 int32
 	_ = v135
 	var v136 int32
 	_ = v136
 	var v137 int32
 	_ = v137
+	var v138 int32
+	_ = v138
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
@@ -123,7 +121,7 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 				v32 = int32(16)
 				v33 = v31 - v32
 				m.G0 = v33
-				F___gettimeofday(m, v33)
+				F_gettimeofday(m, v33)
 				mBase = m.M
 				v36 = *(*int64)(unsafe.Add(mBase, uint32(v33)))
 				v37 = int64(*(*int32)(unsafe.Add(mBase, uint32(v33)+8)))
@@ -133,75 +131,70 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 				*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = v46
 				v48 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 				if v45 <= v48 {
-					v65 = int32(0)
+					v66 = int32(0)
 				} else {
-					v51 = int32(2147483647)
 					v54 = v45 - v48
-					if base.B2i32(int64(0) < v48)^base.B2i32(v54 < v45) != 0 {
-						v65 = v51
+					if base.B2i32(int64(0) < v48)^base.B2i32(v54 < v45)|base.B2i32(int64(2147483646000) < v54) != 0 {
+						v66 = int32(2147483647)
 					} else {
-						if int64(2147483646000) < v54 {
-							v65 = v51
-						} else {
-							v62 = base.I64_div_s(v54+int64(999), int64(1000))
-							v65 = base.I32_wrap_i64(v62)
-						}
+						v63 = base.I64_div_s(v54+int64(999), int64(1000))
+						v66 = base.I32_wrap_i64(v63)
 					}
 				}
-				if v65 <= int32(999) {
-					v68 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
-					if v68 <= v45 {
+				if v66 <= int32(999) {
+					v69 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
+					if v69 <= v45 {
 						m.G0 = v8 + int32(16)
 						return
 					} else {
 						*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v45
 						F_pq_beginmessage(m, v8, int32(100))
 						mBase = m.M
-						v73 = m.ExcPending
-						if v73 != 0 {
+						v74 = m.ExcPending
+						if v74 != 0 {
 							return
 						} else {
 							F_enlargeStringInfo(m, v8, int32(1))
 							mBase = m.M
-							v76 = m.ExcPending
-							if v76 != 0 {
+							v77 = m.ExcPending
+							if v77 != 0 {
 								return
 							} else {
-								v77 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-								v78 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-								v80 = int32(112)
-								*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))) = uint8(v80)
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v77 + int32(1)
-								v85 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
+								v78 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+								v79 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+								v81 = int32(112)
+								*(*uint8)(unsafe.Add(mBase, uint32(v78+v79))) = uint8(v81)
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v78 + int32(1)
+								v86 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
 								F_enlargeStringInfo(m, v8, int32(8))
 								mBase = m.M
-								v88 = m.ExcPending
-								if v88 != 0 {
+								v89 = m.ExcPending
+								if v89 != 0 {
 									return
 								} else {
-									v89 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-									v90 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-									v92 = int64(56)
-									v94 = int64(65280)
-									v96 = int64(40)
-									v99 = int64(16711680)
-									v101 = int64(24)
-									v103 = int64(4278190080)
-									v105 = int64(8)
-									*(*int64)(unsafe.Add(mBase, uint32(v89+v90))) = v85<<(uint(v92)%64) | v85&v94<<(uint(v96)%64) | (v85&v99<<(uint(v101)%64) | v85&v103<<(uint(v105)%64)) | (int64(base.Ui64(v85)>>(uint(v105)%64))&v103 | int64(base.Ui64(v85)>>(uint(v101)%64))&v99 | (int64(base.Ui64(v85)>>(uint(v96)%64))&v94 | int64(base.Ui64(v85)>>(uint(v92)%64))))
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v89 + int32(8)
+									v90 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+									v91 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+									v93 = int64(56)
+									v95 = int64(65280)
+									v97 = int64(40)
+									v100 = int64(16711680)
+									v102 = int64(24)
+									v104 = int64(4278190080)
+									v106 = int64(8)
+									*(*int64)(unsafe.Add(mBase, uint32(v90+v91))) = v86<<(uint(v93)%64) | v86&v95<<(uint(v97)%64) | (v86&v100<<(uint(v102)%64) | v86&v104<<(uint(v106)%64)) | (int64(base.Ui64(v86)>>(uint(v106)%64))&v104 | int64(base.Ui64(v86)>>(uint(v102)%64))&v100 | (int64(base.Ui64(v86)>>(uint(v97)%64))&v95 | int64(base.Ui64(v86)>>(uint(v93)%64))))
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v90 + int32(8)
 									F_pq_endmessage(m, v8)
 									mBase = m.M
-									v132 = m.ExcPending
-									if v132 != 0 {
+									v133 = m.ExcPending
+									if v133 != 0 {
 										return
 									} else {
-										v134 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_copystream_archive_contents[0]))
-										v135 = *(*int32)(unsafe.Add(mBase, uint32(v134)+8))
-										v136 = m.T0[v135].(func(*base.Module) int32)(m)
+										v135 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_copystream_archive_contents[0]))
+										v136 = *(*int32)(unsafe.Add(mBase, uint32(v135)+8))
+										v137 = m.T0[v136].(func(*base.Module) int32)(m)
 										mBase = m.M
-										v137 = m.ExcPending
-										if v137 != 0 {
+										v138 = m.ExcPending
+										if v138 != 0 {
 											return
 										} else {
 											m.G0 = v8 + int32(16)
@@ -216,51 +209,51 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 					*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v45
 					F_pq_beginmessage(m, v8, int32(100))
 					mBase = m.M
-					v73 = m.ExcPending
-					if v73 != 0 {
+					v74 = m.ExcPending
+					if v74 != 0 {
 						return
 					} else {
 						F_enlargeStringInfo(m, v8, int32(1))
 						mBase = m.M
-						v76 = m.ExcPending
-						if v76 != 0 {
+						v77 = m.ExcPending
+						if v77 != 0 {
 							return
 						} else {
-							v77 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-							v78 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-							v80 = int32(112)
-							*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))) = uint8(v80)
-							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v77 + int32(1)
-							v85 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
+							v78 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+							v79 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+							v81 = int32(112)
+							*(*uint8)(unsafe.Add(mBase, uint32(v78+v79))) = uint8(v81)
+							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v78 + int32(1)
+							v86 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
 							F_enlargeStringInfo(m, v8, int32(8))
 							mBase = m.M
-							v88 = m.ExcPending
-							if v88 != 0 {
+							v89 = m.ExcPending
+							if v89 != 0 {
 								return
 							} else {
-								v89 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-								v90 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-								v92 = int64(56)
-								v94 = int64(65280)
-								v96 = int64(40)
-								v99 = int64(16711680)
-								v101 = int64(24)
-								v103 = int64(4278190080)
-								v105 = int64(8)
-								*(*int64)(unsafe.Add(mBase, uint32(v89+v90))) = v85<<(uint(v92)%64) | v85&v94<<(uint(v96)%64) | (v85&v99<<(uint(v101)%64) | v85&v103<<(uint(v105)%64)) | (int64(base.Ui64(v85)>>(uint(v105)%64))&v103 | int64(base.Ui64(v85)>>(uint(v101)%64))&v99 | (int64(base.Ui64(v85)>>(uint(v96)%64))&v94 | int64(base.Ui64(v85)>>(uint(v92)%64))))
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v89 + int32(8)
+								v90 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+								v91 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+								v93 = int64(56)
+								v95 = int64(65280)
+								v97 = int64(40)
+								v100 = int64(16711680)
+								v102 = int64(24)
+								v104 = int64(4278190080)
+								v106 = int64(8)
+								*(*int64)(unsafe.Add(mBase, uint32(v90+v91))) = v86<<(uint(v93)%64) | v86&v95<<(uint(v97)%64) | (v86&v100<<(uint(v102)%64) | v86&v104<<(uint(v106)%64)) | (int64(base.Ui64(v86)>>(uint(v106)%64))&v104 | int64(base.Ui64(v86)>>(uint(v102)%64))&v100 | (int64(base.Ui64(v86)>>(uint(v97)%64))&v95 | int64(base.Ui64(v86)>>(uint(v93)%64))))
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v90 + int32(8)
 								F_pq_endmessage(m, v8)
 								mBase = m.M
-								v132 = m.ExcPending
-								if v132 != 0 {
+								v133 = m.ExcPending
+								if v133 != 0 {
 									return
 								} else {
-									v134 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_copystream_archive_contents[0]))
-									v135 = *(*int32)(unsafe.Add(mBase, uint32(v134)+8))
-									v136 = m.T0[v135].(func(*base.Module) int32)(m)
+									v135 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_copystream_archive_contents[0]))
+									v136 = *(*int32)(unsafe.Add(mBase, uint32(v135)+8))
+									v137 = m.T0[v136].(func(*base.Module) int32)(m)
 									mBase = m.M
-									v137 = m.ExcPending
-									if v137 != 0 {
+									v138 = m.ExcPending
+									if v138 != 0 {
 										return
 									} else {
 										m.G0 = v8 + int32(16)
@@ -284,7 +277,7 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 			v32 = int32(16)
 			v33 = v31 - v32
 			m.G0 = v33
-			F___gettimeofday(m, v33)
+			F_gettimeofday(m, v33)
 			mBase = m.M
 			v36 = *(*int64)(unsafe.Add(mBase, uint32(v33)))
 			v37 = int64(*(*int32)(unsafe.Add(mBase, uint32(v33)+8)))
@@ -294,75 +287,70 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 			*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = v46
 			v48 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 			if v45 <= v48 {
-				v65 = int32(0)
+				v66 = int32(0)
 			} else {
-				v51 = int32(2147483647)
 				v54 = v45 - v48
-				if base.B2i32(int64(0) < v48)^base.B2i32(v54 < v45) != 0 {
-					v65 = v51
+				if base.B2i32(int64(0) < v48)^base.B2i32(v54 < v45)|base.B2i32(int64(2147483646000) < v54) != 0 {
+					v66 = int32(2147483647)
 				} else {
-					if int64(2147483646000) < v54 {
-						v65 = v51
-					} else {
-						v62 = base.I64_div_s(v54+int64(999), int64(1000))
-						v65 = base.I32_wrap_i64(v62)
-					}
+					v63 = base.I64_div_s(v54+int64(999), int64(1000))
+					v66 = base.I32_wrap_i64(v63)
 				}
 			}
-			if v65 <= int32(999) {
-				v68 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
-				if v68 <= v45 {
+			if v66 <= int32(999) {
+				v69 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
+				if v69 <= v45 {
 					m.G0 = v8 + int32(16)
 					return
 				} else {
 					*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v45
 					F_pq_beginmessage(m, v8, int32(100))
 					mBase = m.M
-					v73 = m.ExcPending
-					if v73 != 0 {
+					v74 = m.ExcPending
+					if v74 != 0 {
 						return
 					} else {
 						F_enlargeStringInfo(m, v8, int32(1))
 						mBase = m.M
-						v76 = m.ExcPending
-						if v76 != 0 {
+						v77 = m.ExcPending
+						if v77 != 0 {
 							return
 						} else {
-							v77 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-							v78 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-							v80 = int32(112)
-							*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))) = uint8(v80)
-							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v77 + int32(1)
-							v85 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
+							v78 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+							v79 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+							v81 = int32(112)
+							*(*uint8)(unsafe.Add(mBase, uint32(v78+v79))) = uint8(v81)
+							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v78 + int32(1)
+							v86 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
 							F_enlargeStringInfo(m, v8, int32(8))
 							mBase = m.M
-							v88 = m.ExcPending
-							if v88 != 0 {
+							v89 = m.ExcPending
+							if v89 != 0 {
 								return
 							} else {
-								v89 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-								v90 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-								v92 = int64(56)
-								v94 = int64(65280)
-								v96 = int64(40)
-								v99 = int64(16711680)
-								v101 = int64(24)
-								v103 = int64(4278190080)
-								v105 = int64(8)
-								*(*int64)(unsafe.Add(mBase, uint32(v89+v90))) = v85<<(uint(v92)%64) | v85&v94<<(uint(v96)%64) | (v85&v99<<(uint(v101)%64) | v85&v103<<(uint(v105)%64)) | (int64(base.Ui64(v85)>>(uint(v105)%64))&v103 | int64(base.Ui64(v85)>>(uint(v101)%64))&v99 | (int64(base.Ui64(v85)>>(uint(v96)%64))&v94 | int64(base.Ui64(v85)>>(uint(v92)%64))))
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v89 + int32(8)
+								v90 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+								v91 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+								v93 = int64(56)
+								v95 = int64(65280)
+								v97 = int64(40)
+								v100 = int64(16711680)
+								v102 = int64(24)
+								v104 = int64(4278190080)
+								v106 = int64(8)
+								*(*int64)(unsafe.Add(mBase, uint32(v90+v91))) = v86<<(uint(v93)%64) | v86&v95<<(uint(v97)%64) | (v86&v100<<(uint(v102)%64) | v86&v104<<(uint(v106)%64)) | (int64(base.Ui64(v86)>>(uint(v106)%64))&v104 | int64(base.Ui64(v86)>>(uint(v102)%64))&v100 | (int64(base.Ui64(v86)>>(uint(v97)%64))&v95 | int64(base.Ui64(v86)>>(uint(v93)%64))))
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v90 + int32(8)
 								F_pq_endmessage(m, v8)
 								mBase = m.M
-								v132 = m.ExcPending
-								if v132 != 0 {
+								v133 = m.ExcPending
+								if v133 != 0 {
 									return
 								} else {
-									v134 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_copystream_archive_contents[0]))
-									v135 = *(*int32)(unsafe.Add(mBase, uint32(v134)+8))
-									v136 = m.T0[v135].(func(*base.Module) int32)(m)
+									v135 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_copystream_archive_contents[0]))
+									v136 = *(*int32)(unsafe.Add(mBase, uint32(v135)+8))
+									v137 = m.T0[v136].(func(*base.Module) int32)(m)
 									mBase = m.M
-									v137 = m.ExcPending
-									if v137 != 0 {
+									v138 = m.ExcPending
+									if v138 != 0 {
 										return
 									} else {
 										m.G0 = v8 + int32(16)
@@ -377,51 +365,51 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 				*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v45
 				F_pq_beginmessage(m, v8, int32(100))
 				mBase = m.M
-				v73 = m.ExcPending
-				if v73 != 0 {
+				v74 = m.ExcPending
+				if v74 != 0 {
 					return
 				} else {
 					F_enlargeStringInfo(m, v8, int32(1))
 					mBase = m.M
-					v76 = m.ExcPending
-					if v76 != 0 {
+					v77 = m.ExcPending
+					if v77 != 0 {
 						return
 					} else {
-						v77 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-						v78 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-						v80 = int32(112)
-						*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))) = uint8(v80)
-						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v77 + int32(1)
-						v85 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
+						v78 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+						v79 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+						v81 = int32(112)
+						*(*uint8)(unsafe.Add(mBase, uint32(v78+v79))) = uint8(v81)
+						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v78 + int32(1)
+						v86 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
 						F_enlargeStringInfo(m, v8, int32(8))
 						mBase = m.M
-						v88 = m.ExcPending
-						if v88 != 0 {
+						v89 = m.ExcPending
+						if v89 != 0 {
 							return
 						} else {
-							v89 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-							v90 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-							v92 = int64(56)
-							v94 = int64(65280)
-							v96 = int64(40)
-							v99 = int64(16711680)
-							v101 = int64(24)
-							v103 = int64(4278190080)
-							v105 = int64(8)
-							*(*int64)(unsafe.Add(mBase, uint32(v89+v90))) = v85<<(uint(v92)%64) | v85&v94<<(uint(v96)%64) | (v85&v99<<(uint(v101)%64) | v85&v103<<(uint(v105)%64)) | (int64(base.Ui64(v85)>>(uint(v105)%64))&v103 | int64(base.Ui64(v85)>>(uint(v101)%64))&v99 | (int64(base.Ui64(v85)>>(uint(v96)%64))&v94 | int64(base.Ui64(v85)>>(uint(v92)%64))))
-							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v89 + int32(8)
+							v90 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+							v91 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+							v93 = int64(56)
+							v95 = int64(65280)
+							v97 = int64(40)
+							v100 = int64(16711680)
+							v102 = int64(24)
+							v104 = int64(4278190080)
+							v106 = int64(8)
+							*(*int64)(unsafe.Add(mBase, uint32(v90+v91))) = v86<<(uint(v93)%64) | v86&v95<<(uint(v97)%64) | (v86&v100<<(uint(v102)%64) | v86&v104<<(uint(v106)%64)) | (int64(base.Ui64(v86)>>(uint(v106)%64))&v104 | int64(base.Ui64(v86)>>(uint(v102)%64))&v100 | (int64(base.Ui64(v86)>>(uint(v97)%64))&v95 | int64(base.Ui64(v86)>>(uint(v93)%64))))
+							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v90 + int32(8)
 							F_pq_endmessage(m, v8)
 							mBase = m.M
-							v132 = m.ExcPending
-							if v132 != 0 {
+							v133 = m.ExcPending
+							if v133 != 0 {
 								return
 							} else {
-								v134 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_copystream_archive_contents[0]))
-								v135 = *(*int32)(unsafe.Add(mBase, uint32(v134)+8))
-								v136 = m.T0[v135].(func(*base.Module) int32)(m)
+								v135 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_copystream_archive_contents[0]))
+								v136 = *(*int32)(unsafe.Add(mBase, uint32(v135)+8))
+								v137 = m.T0[v136].(func(*base.Module) int32)(m)
 								mBase = m.M
-								v137 = m.ExcPending
-								if v137 != 0 {
+								v138 = m.ExcPending
+								if v138 != 0 {
 									return
 								} else {
 									m.G0 = v8 + int32(16)
@@ -506,7 +494,7 @@ func F_bbsink_throttle_begin_backup(m *base.Module, l0 int32) {
 		v8 = int32(16)
 		v9 = v7 - v8
 		m.G0 = v9
-		F___gettimeofday(m, v9)
+		F_gettimeofday(m, v9)
 		mBase = m.M
 		v12 = *(*int64)(unsafe.Add(mBase, uint32(v9)))
 		v13 = int64(*(*int32)(unsafe.Add(mBase, uint32(v9)+8)))

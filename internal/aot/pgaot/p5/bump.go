@@ -18,8 +18,8 @@ func F_BumpContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v14
 	var v26 int32
 	_ = v26
-	var v29 int32
-	_ = v29
+	var v30 int32
+	_ = v30
 	var v33 int32
 	_ = v33
 	var v36 int32
@@ -64,10 +64,10 @@ func F_BumpContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+80)) = v13 + int32(88)
 		v26 = v13 + int32(60)
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+76)) = v26
-		v29 = v13 + int32(72)
-		*(*int32)(unsafe.Add(mBase, uint32(v29))) = v26
-		*(*int32)(unsafe.Add(mBase, uint32(v13)+64)) = v29
-		*(*int32)(unsafe.Add(mBase, uint32(v13)+60)) = v29
+		*(*int32)(unsafe.Add(mBase, uint32(v13)+72)) = v26
+		v30 = v13 + int32(72)
+		*(*int32)(unsafe.Add(mBase, uint32(v13)+64)) = v30
+		*(*int32)(unsafe.Add(mBase, uint32(v13)+60)) = v30
 		v33 = int32(1073741823)
 		if base.Ui32(v33) <= base.Ui32(l2) {
 			v36 = v33

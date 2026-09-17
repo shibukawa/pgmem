@@ -5,12 +5,6 @@ import (
 	"unsafe"
 )
 
-func F_shm_mq_set_handle(m *base.Module, l0 int32, l1 int32) {
-	mBase := m.M
-	_ = mBase
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = l1
-	return
-}
 func F_shm_toc_allocate(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -18,8 +12,8 @@ func F_shm_toc_allocate(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v12 int32
 	_ = v12
-	var v16 int32
-	_ = v16
+	var v19 int32
+	_ = v19
 	var v23 int32
 	_ = v23
 	var v24 int32
@@ -47,18 +41,18 @@ func F_shm_toc_allocate(m *base.Module, l0 int32, l1 int32) int32 {
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(1)
 	v12 = l0 + int32(8)
-	v16 = (l1 + int32(31)) & int32(-32)
 	if v8 != 0 {
 		F_s_lock(m, v12, int32(_a_F_shm_toc_allocate_0), int32(104), int32(_a_F_shm_toc_allocate_1))
 		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
+		v19 = m.ExcPending
+		if v19 != 0 {
 			return int32(0)
 		} else {
+			v23 = (l1 + int32(31)) & int32(-32)
 			v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 			v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 			v30 = v24 + v25<<(uint(int32(4))%32) + int32(24)
-			v31 = v30 + v16
+			v31 = v23 + v30
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 			if base.B2i32(base.Ui32(v31) <= base.Ui32(v32))&base.B2i32(base.Ui32(v30) <= base.Ui32(v31)) == int32(0) {
 				v38 = int32(0)
@@ -97,15 +91,16 @@ func F_shm_toc_allocate(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(0)
 				v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v58 + v16
-				return l0 + (v32 - (v16 + v24))
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v58 + v23
+				return l0 + (v32 - (v23 + v24))
 			}
 		}
 	} else {
+		v23 = (l1 + int32(31)) & int32(-32)
 		v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v30 = v24 + v25<<(uint(int32(4))%32) + int32(24)
-		v31 = v30 + v16
+		v31 = v23 + v30
 		v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 		if base.B2i32(base.Ui32(v31) <= base.Ui32(v32))&base.B2i32(base.Ui32(v30) <= base.Ui32(v31)) == int32(0) {
 			v38 = int32(0)
@@ -144,8 +139,8 @@ func F_shm_toc_allocate(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(0)
 			v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v58 + v16
-			return l0 + (v32 - (v16 + v24))
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v58 + v23
+			return l0 + (v32 - (v23 + v24))
 		}
 	}
 }

@@ -150,135 +150,131 @@ func F_tts_heap_clear(m *base.Module, l0 int32) {
 func F_tts_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
+	var v4 int32
+	_ = v4
 	var v5 int32
 	_ = v5
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
 	var v11 int32
 	_ = v11
 	var v12 int32
 	_ = v12
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
-	var v22 int32
-	_ = v22
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
 	var v24 int32
 	_ = v24
 	var v25 int32
 	_ = v25
 	var v26 int32
 	_ = v26
-	var v29 int32
-	_ = v29
-	var v35 int32
-	_ = v35
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
 	var v43 int32
 	_ = v43
-	var v46 int32
-	_ = v46
-	var v48 int32
-	_ = v48
-	var v53 int32
-	_ = v53
-	var v57 int32
-	_ = v57
-	var v62 int32
-	_ = v62
-	v5 = int32(_a_F_tts_heap_copyslot_0)
-	v6 = *(*int32)(unsafe.Add(mBase, _c_F_tts_heap_copyslot[0]))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	*(*int32)(unsafe.Add(mBase, _c_F_tts_heap_copyslot[0])) = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+44))
-	v12 = m.T0[v11].(func(*base.Module, int32) int32)(m, l1)
+	var v45 int32
+	_ = v45
+	var v50 int32
+	_ = v50
+	var v54 int32
+	_ = v54
+	var v59 int32
+	_ = v59
+	v4 = int32(_a_F_tts_heap_copyslot_0)
+	v5 = *(*int32)(unsafe.Add(mBase, _c_F_tts_heap_copyslot[0]))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	*(*int32)(unsafe.Add(mBase, _c_F_tts_heap_copyslot[0])) = v7
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+44))
+	v11 = m.T0[v10].(func(*base.Module, int32) int32)(m, l1)
 	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	v12 = m.ExcPending
+	if v12 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, _c_F_tts_heap_copyslot[0])) = v6
-		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-		if v16 == int32(_a_F_tts_heap_copyslot_1) {
-			v19 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
-			if v19&int32(4) != 0 {
-				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-				F_pfree(m, v22)
+		*(*int32)(unsafe.Add(mBase, _c_F_tts_heap_copyslot[0])) = v5
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+		if v15 == int32(_a_F_tts_heap_copyslot_1) {
+			v18 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
+			if v18&int32(4) != 0 {
+				v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+				F_pfree(m, v21)
 				mBase = m.M
-				v24 = m.ExcPending
-				if v24 != 0 {
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return
 				} else {
-					v25 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
-					v26 = v25
+					v24 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
+					v25 = v24
+					v26 = int32(0)
+					*(*uint16)(unsafe.Add(mBase, uint32(l0)+32)) = uint16(v26)
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(-1)
-					v29 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v29
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v12
-					*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)) = uint16(v29)
-					v35 = l0 + int32(32)
-					*(*uint16)(unsafe.Add(mBase, uint32(v35))) = uint16(v29)
-					v39 = v26 & int32(-7)
-					*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v39)
-					v41 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v12)+8)))
-					*(*uint16)(unsafe.Add(mBase, uint32(v35))) = uint16(v41)
-					v43 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v43
-					v46 = v39 | int32(4)
-					*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v46)
-					v48 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = v48
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v26
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v11
+					*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)) = uint16(v26)
+					v36 = v25 & int32(-7)
+					*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v36)
+					v38 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+8)))
+					*(*uint16)(unsafe.Add(mBase, uint32(l0)+32)) = uint16(v38)
+					v40 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v40
+					v43 = v36 | int32(4)
+					*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v43)
+					v45 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = v45
 					return
 				}
 			} else {
-				v26 = v19
+				v25 = v18
+				v26 = int32(0)
+				*(*uint16)(unsafe.Add(mBase, uint32(l0)+32)) = uint16(v26)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(-1)
-				v29 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v29
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v12
-				*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)) = uint16(v29)
-				v35 = l0 + int32(32)
-				*(*uint16)(unsafe.Add(mBase, uint32(v35))) = uint16(v29)
-				v39 = v26 & int32(-7)
-				*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v39)
-				v41 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v12)+8)))
-				*(*uint16)(unsafe.Add(mBase, uint32(v35))) = uint16(v41)
-				v43 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v43
-				v46 = v39 | int32(4)
-				*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v46)
-				v48 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = v48
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v26
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v11
+				*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)) = uint16(v26)
+				v36 = v25 & int32(-7)
+				*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v36)
+				v38 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+8)))
+				*(*uint16)(unsafe.Add(mBase, uint32(l0)+32)) = uint16(v38)
+				v40 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v40
+				v43 = v36 | int32(4)
+				*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v43)
+				v45 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = v45
 				return
 			}
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v53 = m.ExcPending
-			if v53 != 0 {
+			v50 = m.ExcPending
+			if v50 != 0 {
 				return
 			} else {
 				F_errmsg_internal(m, int32(_a_F_tts_heap_copyslot_2), int32(0))
 				mBase = m.M
-				v57 = m.ExcPending
-				if v57 != 0 {
+				v54 = m.ExcPending
+				if v54 != 0 {
 					return
 				} else {
 					F_errfinish(m, int32(_a_F_tts_heap_copyslot_3), int32(1553), int32(_a_F_tts_heap_copyslot_4))
 					mBase = m.M
-					v62 = m.ExcPending
-					if v62 != 0 {
+					v59 = m.ExcPending
+					if v59 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()

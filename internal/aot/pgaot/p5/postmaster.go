@@ -40,38 +40,36 @@ func F_InitPostmasterChildSlots(m *base.Module) {
 	_ = v86
 	var v91 int32
 	_ = v91
-	var v95 int32
-	_ = v95
-	var v103 int32
-	_ = v103
-	var v106 int32
-	_ = v106
-	var v111 int32
-	_ = v111
-	var v114 int32
-	_ = v114
+	var v96 int32
+	_ = v96
+	var v99 int32
+	_ = v99
+	var v107 int32
+	_ = v107
+	var v110 int32
+	_ = v110
+	var v115 int32
+	_ = v115
 	var v119 int32
 	_ = v119
-	var v123 int32
-	_ = v123
+	var v121 int32
+	_ = v121
 	var v125 int32
 	_ = v125
-	var v129 int32
-	_ = v129
-	var v137 int32
-	_ = v137
+	var v133 int32
+	_ = v133
+	var v136 int32
+	_ = v136
 	var v140 int32
 	_ = v140
-	var v144 int32
-	_ = v144
+	var v141 int32
+	_ = v141
 	var v145 int32
 	_ = v145
-	var v149 int32
-	_ = v149
+	var v152 int32
+	_ = v152
 	var v156 int32
 	_ = v156
-	var v160 int32
-	_ = v160
 	*(*int32)(unsafe.Add(mBase, _c_F_InitPostmasterChildSlots[0])) = int32(32)
 	v13 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _c_F_InitPostmasterChildSlots[1])) = v13
@@ -108,63 +106,62 @@ func F_InitPostmasterChildSlots(m *base.Module) {
 		v86 = int32(0)
 		for {
 			v91 = v86 << (uint(int32(4)) % 32)
-			v95 = v91 + int32(_a_F_InitPostmasterChildSlots_0)
-			*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[23]))) = v95
-			*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[24]))) = v84 + int32(1)
-			*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[25]))) = v95
-			v103 = int32(0)
-			v106 = *(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[21])))
-			if v103 < v106 {
-				v111 = v84
-				v114 = v103
+			*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[23]))) = v84 + int32(1)
+			v96 = v91 + int32(_a_F_InitPostmasterChildSlots_0)
+			*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[24]))) = v96
+			*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[25]))) = v96
+			v99 = *(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[21])))
+			if int32(0) < v99 {
+				v107 = v84
+				v110 = int32(0)
 				for {
-					v119 = v79 + v111*int32(28)
-					*(*int64)(unsafe.Add(mBase, uint32(v119)+8)) = int64(0)
-					v123 = v111 + int32(1)
-					*(*int32)(unsafe.Add(mBase, uint32(v119)+4)) = v123
-					v125 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v119))) = v125
-					*(*uint8)(unsafe.Add(mBase, uint32(v119)+16)) = uint8(v125)
-					v129 = *(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[23])))
-					if v129 == v125 {
-						*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[23]))) = v95
+					v115 = v79 + v107*int32(28)
+					*(*int64)(unsafe.Add(mBase, uint32(v115)+8)) = int64(0)
+					v119 = v107 + int32(1)
+					*(*int32)(unsafe.Add(mBase, uint32(v115)+4)) = v119
+					v121 = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v115))) = v121
+					*(*uint8)(unsafe.Add(mBase, uint32(v115)+16)) = uint8(v121)
+					v125 = *(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[24])))
+					if v125 == v121 {
+						*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[24]))) = v96
 						*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[25]))) = v91 + int32(_a_F_InitPostmasterChildSlots_0)
 					} else {
 					}
-					*(*int32)(unsafe.Add(mBase, uint32(v119)+24)) = v95
-					v137 = *(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[25])))
-					*(*int32)(unsafe.Add(mBase, uint32(v119)+20)) = v137
-					v140 = v119 + int32(20)
-					*(*int32)(unsafe.Add(mBase, uint32(v137)+4)) = v140
-					*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[25]))) = v140
-					v144 = v114 + int32(1)
-					v145 = *(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[21])))
-					if v144 < v145 {
-						v111 = v123
-						v114 = v144
+					*(*int32)(unsafe.Add(mBase, uint32(v115)+24)) = v96
+					v133 = *(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[25])))
+					*(*int32)(unsafe.Add(mBase, uint32(v115)+20)) = v133
+					v136 = v115 + int32(20)
+					*(*int32)(unsafe.Add(mBase, uint32(v133)+4)) = v136
+					*(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[25]))) = v136
+					v140 = v110 + int32(1)
+					v141 = *(*int32)(unsafe.Add(mBase, uint32(v91)+uint32(_c_F_InitPostmasterChildSlots[21])))
+					if v140 < v141 {
+						v107 = v119
+						v110 = v140
 						continue
 					} else {
 						break
 					}
 					break
 				}
-				v149 = v123
+				v145 = v119
 			} else {
-				v149 = v84
+				v145 = v84
 			}
-			v156 = v86 + int32(1)
-			if v156 != int32(18) {
-				v84 = v149
-				v86 = v156
+			v152 = v86 + int32(1)
+			if v152 != int32(18) {
+				v84 = v145
+				v86 = v152
 				continue
 			} else {
 				break
 			}
 			break
 		}
-		v160 = int32(_a_F_InitPostmasterChildSlots_1)
-		*(*int32)(unsafe.Add(mBase, _c_F_InitPostmasterChildSlots[26])) = v160
-		*(*int32)(unsafe.Add(mBase, _c_F_InitPostmasterChildSlots[27])) = v160
+		v156 = int32(_a_F_InitPostmasterChildSlots_1)
+		*(*int32)(unsafe.Add(mBase, _c_F_InitPostmasterChildSlots[26])) = v156
+		*(*int32)(unsafe.Add(mBase, _c_F_InitPostmasterChildSlots[27])) = v156
 		return
 	}
 }
@@ -487,68 +484,71 @@ func F_ReleasePostmasterChildSlot(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_postmaster_child_launch(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+func F_postmaster_child_launch(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
-	var v20 int64
-	_ = v20
-	var v21 int64
-	_ = v21
-	var v31 int32
-	_ = v31
-	var v33 int32
-	_ = v33
-	var v36 int32
-	_ = v36
-	var v39 int32
-	_ = v39
-	var v44 int32
-	_ = v44
-	var v52 int32
-	_ = v52
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int64
+	_ = v13
+	var v14 int64
+	_ = v14
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v43 int32
+	_ = v43
 	switch l0 - int32(1) {
 	case 0, 5:
-		v15 = m.G0
-		v16 = int32(16)
-		v17 = v15 - v16
-		m.G0 = v17
-		F___gettimeofday(m, v17)
+		v8 = m.G0
+		v9 = int32(16)
+		v10 = v8 - v9
+		m.G0 = v10
+		F_gettimeofday(m, v10)
 		mBase = m.M
-		v20 = *(*int64)(unsafe.Add(mBase, uint32(v17)))
-		v21 = int64(*(*int32)(unsafe.Add(mBase, uint32(v17)+8)))
-		m.G0 = v17 + v16
-		*(*int64)(unsafe.Add(mBase, uint32(l2)+16)) = v21 + v20*int64(1000000) - int64(946684800000000)
+		v13 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
+		v14 = int64(*(*int32)(unsafe.Add(mBase, uint32(v10)+8)))
+		m.G0 = v10 + v9
+		*(*int64)(unsafe.Add(mBase, uint32(l1)+16)) = v14 + v13*int64(1000000) - int64(946684800000000)
 	default:
 	}
-	v31 = m.G0
-	v33 = v31 - int32(144)
-	m.G0 = v33
-	v36 = F_fflush(m, int32(0))
+	v24 = m.G0
+	v26 = v24 - int32(16)
+	m.G0 = v26
+	v29 = F_fflush(m, int32(0))
 	mBase = m.M
-	v39 = m.ExcPending
-	if v39 != 0 {
+	v32 = m.ExcPending
+	if v32 != 0 {
 		return int32(0)
 	} else {
-		F_sigprocmask(m, int32(_a_F_postmaster_child_launch_0), v33+int32(16))
+		v35 = v26 + int32(8)
+		F_sigprocmask(m, int32(_a_F_postmaster_child_launch_0), v35)
 		mBase = m.M
-		v44 = m.ExcPending
-		if v44 != 0 {
+		v37 = m.ExcPending
+		if v37 != 0 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, _c_F_postmaster_child_launch[0])) = int32(52)
-			F_sigprocmask(m, v33+int32(16), int32(0))
+			F_sigprocmask(m, v35, int32(0))
 			mBase = m.M
-			v52 = m.ExcPending
-			if v52 != 0 {
+			v43 = m.ExcPending
+			if v43 != 0 {
 				return int32(0)
 			} else {
-				m.G0 = v33 + int32(144)
+				m.G0 = v26 + int32(16)
 				return int32(-1)
 			}
 		}

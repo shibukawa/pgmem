@@ -68,34 +68,28 @@ func F_datumCopy(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v26
 	var v30 int32
 	_ = v30
-	var v33 int32
-	_ = v33
-	var v34 int32
-	_ = v34
+	var v37 int32
+	_ = v37
 	var v38 int32
 	_ = v38
 	var v42 int32
 	_ = v42
-	var v43 int32
-	_ = v43
-	var v44 int32
-	_ = v44
-	var v45 int32
-	_ = v45
 	var v46 int32
 	_ = v46
-	var v49 int32
-	_ = v49
-	var v50 int32
-	_ = v50
-	var v51 int32
-	_ = v51
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
 	var v54 int32
 	_ = v54
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v61 int32
+	_ = v61
 	if l1 != 0 {
 		return l0
 	} else {
@@ -134,73 +128,70 @@ func F_datumCopy(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					} else {
 						v30 = int32(2)
 					}
-					if v10 == int32(1) {
-						v33 = int32(6)
+					if base.Ui32((v10-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+						v37 = int32(6)
 					} else {
-						v33 = v30
+						v37 = v30
 					}
-					v42 = v33
-					v43 = F_palloc(m, v42)
+					v46 = v37
+					v47 = F_palloc(m, v46)
 					mBase = m.M
-					v44 = m.ExcPending
-					if v44 != 0 {
+					v48 = m.ExcPending
+					if v48 != 0 {
 						return int32(0)
 					} else {
-						if v42 != 0 {
-							v45 = F__emscripten_memcpy_bulkmem(m, v43, l0, v42)
-							mBase = m.M
-							v46 = v45
+						if v46 == int32(0) {
+							v61 = v47
+							return v61
 						} else {
-							v46 = v43
+							base.MemoryCopy(m, v47, l0, v46)
+							return v47
 						}
-						return v46
 					}
 				}
 			} else {
-				v34 = int32(1)
-				if v7&v34 != 0 {
-					v42 = int32(base.Ui32(v7) >> (uint(v34) % 32))
+				v38 = int32(1)
+				if v7&v38 != 0 {
+					v46 = int32(base.Ui32(v7) >> (uint(v38) % 32))
 				} else {
-					v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					v42 = int32(base.Ui32(v38) >> (uint(int32(2)) % 32))
+					v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v46 = int32(base.Ui32(v42) >> (uint(int32(2)) % 32))
 				}
-				v43 = F_palloc(m, v42)
+				v47 = F_palloc(m, v46)
 				mBase = m.M
-				v44 = m.ExcPending
-				if v44 != 0 {
+				v48 = m.ExcPending
+				if v48 != 0 {
 					return int32(0)
 				} else {
-					if v42 != 0 {
-						v45 = F__emscripten_memcpy_bulkmem(m, v43, l0, v42)
-						mBase = m.M
-						v46 = v45
+					if v46 == int32(0) {
+						v61 = v47
+						return v61
 					} else {
-						v46 = v43
+						base.MemoryCopy(m, v47, l0, v46)
+						return v47
 					}
-					return v46
 				}
 			}
 		} else {
-			v49 = F_datumGetSize(m, l0, int32(0), l2)
+			v54 = F_datumGetSize(m, l0, int32(0), l2)
 			mBase = m.M
-			v50 = m.ExcPending
-			if v50 != 0 {
+			v55 = m.ExcPending
+			if v55 != 0 {
 				return int32(0)
 			} else {
-				v51 = F_palloc(m, v49)
+				v56 = F_palloc(m, v54)
 				mBase = m.M
-				v52 = m.ExcPending
-				if v52 != 0 {
+				v57 = m.ExcPending
+				if v57 != 0 {
 					return int32(0)
 				} else {
-					if v49 != 0 {
-						v53 = F__emscripten_memcpy_bulkmem(m, v51, l0, v49)
-						mBase = m.M
-						v54 = v53
+					if v54 == int32(0) {
+						v61 = v56
 					} else {
-						v54 = v51
+						base.MemoryCopy(m, v56, l0, v54)
+						v61 = v56
 					}
-					return v54
+					return v61
 				}
 			}
 		}

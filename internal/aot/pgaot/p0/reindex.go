@@ -66,56 +66,58 @@ func F_ReindexMultipleInternal(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v75
 	var v76 int32
 	_ = v76
-	var v83 int64
-	_ = v83
-	var v91 int32
-	_ = v91
-	var v92 int32
-	_ = v92
+	var v79 int32
+	_ = v79
+	var v86 int64
+	_ = v86
 	var v94 int32
 	_ = v94
-	var v99 int64
-	_ = v99
-	var v109 int32
-	_ = v109
-	var v110 int64
-	_ = v110
-	var v119 int32
-	_ = v119
-	var v120 int32
-	_ = v120
+	var v95 int32
+	_ = v95
+	var v97 int32
+	_ = v97
+	var v102 int64
+	_ = v102
+	var v112 int32
+	_ = v112
+	var v113 int64
+	_ = v113
+	var v122 int32
+	_ = v122
 	var v123 int32
 	_ = v123
-	var v130 int32
-	_ = v130
-	var v131 int32
-	_ = v131
+	var v126 int32
+	_ = v126
+	var v133 int32
+	_ = v133
 	var v134 int32
 	_ = v134
-	var v135 int32
-	_ = v135
-	var v136 int32
-	_ = v136
 	var v137 int32
 	_ = v137
 	var v138 int32
 	_ = v138
 	var v139 int32
 	_ = v139
-	var v144 int32
-	_ = v144
-	var v149 int32
-	_ = v149
-	var v154 int32
-	_ = v154
-	var v159 int32
-	_ = v159
-	var v161 int32
-	_ = v161
+	var v140 int32
+	_ = v140
+	var v141 int32
+	_ = v141
+	var v142 int32
+	_ = v142
+	var v147 int32
+	_ = v147
+	var v152 int32
+	_ = v152
+	var v156 int32
+	_ = v156
+	var v160 int32
+	_ = v160
 	var v162 int32
 	_ = v162
-	var v174 int32
-	_ = v174
+	var v163 int32
+	_ = v163
+	var v175 int32
+	_ = v175
 	v10 = m.G0
 	v12 = v10 - int32(16)
 	m.G0 = v12
@@ -151,8 +153,8 @@ L4:
 	;
 	F_StartTransactionCommand(m)
 	mBase = m.M
-	v174 = m.ExcPending
-	if v174 != 0 {
+	v175 = m.ExcPending
+	if v175 != 0 {
 		goto L1
 	} else {
 		goto L48
@@ -219,8 +221,8 @@ L12:
 	;
 	F_CommitTransactionCommand(m)
 	mBase = m.M
-	v159 = m.ExcPending
-	if v159 != 0 {
+	v160 = m.ExcPending
+	if v160 != 0 {
 		goto L1
 	} else {
 		goto L46
@@ -229,8 +231,8 @@ L13:
 	;
 	F_PopActiveSnapshot(m)
 	mBase = m.M
-	v154 = m.ExcPending
-	if v154 != 0 {
+	v156 = m.ExcPending
+	if v156 != 0 {
 		goto L1
 	} else {
 		goto L45
@@ -323,45 +325,42 @@ L23:
 L24:
 	;
 	v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2))))
-	if v76&int32(8) == int32(0) {
+	v79 = int32(0)
+	if base.B2i32(v76&int32(8) == v79)|base.B2i32(v74 == int32(116)) == v79 {
 		goto L25
 	} else {
 		goto L26
 	}
 L25:
 	;
+	v86 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
+	*(*int64)(unsafe.Add(mBase, uint32(v12)+8)) = v86
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = base.I32_wrap_i64(v86) | int32(4)
+	v94 = F_ReindexRelationConcurrently(m, l0, v36, v12+int32(8))
+	mBase = m.M
+	v95 = m.ExcPending
+	if v95 != 0 {
+		goto L1
+	} else {
+		goto L28
+	}
+L26:
+	;
+	goto L27
+L27:
+	;
 	if v72 == int32(105) {
 		goto L31
 	} else {
 		goto L32
 	}
-L26:
-	;
-	if v74 == int32(116) {
-		goto L25
-	} else {
-		goto L27
-	}
-L27:
-	;
-	v83 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+8)) = v83
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = base.I32_wrap_i64(v83) | int32(4)
-	v91 = F_ReindexRelationConcurrently(m, l0, v36, v12+int32(8))
-	mBase = m.M
-	v92 = m.ExcPending
-	if v92 != 0 {
-		goto L1
-	} else {
-		goto L28
-	}
 L28:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, _c_F_ReindexMultipleInternal[2]))
+	v97 = *(*int32)(unsafe.Add(mBase, _c_F_ReindexMultipleInternal[2]))
 	goto L29
 L29:
 	;
-	if v94 != int32(0) {
+	if v97 != int32(0) {
 		goto L13
 	} else {
 		goto L30
@@ -371,13 +370,13 @@ L30:
 	goto L12
 L31:
 	;
-	v99 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+8)) = v99
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = base.I32_wrap_i64(v99) | int32(6)
+	v102 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
+	*(*int64)(unsafe.Add(mBase, uint32(v12)+8)) = v102
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = base.I32_wrap_i64(v102) | int32(6)
 	F_reindex_index(m, l0, v36, int32(0), v74, v12+int32(8))
 	mBase = m.M
-	v109 = m.ExcPending
-	if v109 != 0 {
+	v112 = m.ExcPending
+	if v112 != 0 {
 		goto L1
 	} else {
 		goto L34
@@ -387,13 +386,13 @@ L32:
 	goto L33
 L33:
 	;
-	v110 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+8)) = v110
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = base.I32_wrap_i64(v110) | int32(6)
-	v119 = F_reindex_relation(m, l0, v36, int32(5), v12+int32(8))
+	v113 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
+	*(*int64)(unsafe.Add(mBase, uint32(v12)+8)) = v113
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = base.I32_wrap_i64(v113) | int32(6)
+	v122 = F_reindex_relation(m, l0, v36, int32(5), v12+int32(8))
 	mBase = m.M
-	v120 = m.ExcPending
-	if v120 != 0 {
+	v123 = m.ExcPending
+	if v123 != 0 {
 		goto L1
 	} else {
 		goto L35
@@ -403,74 +402,74 @@ L34:
 	goto L13
 L35:
 	;
-	if v119 == int32(0) {
+	if v122 == int32(0) {
 		goto L13
 	} else {
 		goto L36
 	}
 L36:
 	;
-	v123 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2))))
-	if v123&int32(1) == int32(0) {
+	v126 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2))))
+	if v126&int32(1) == int32(0) {
 		goto L13
 	} else {
 		goto L37
 	}
 L37:
 	;
-	v130 = F_errstart(m, int32(17), int32(0))
+	v133 = F_errstart(m, int32(17), int32(0))
 	mBase = m.M
-	v131 = m.ExcPending
-	if v131 != 0 {
+	v134 = m.ExcPending
+	if v134 != 0 {
 		goto L1
 	} else {
 		goto L38
 	}
 L38:
 	;
-	if v130 == int32(0) {
+	if v133 == int32(0) {
 		goto L13
 	} else {
 		goto L39
 	}
 L39:
 	;
-	v134 = F_get_rel_namespace(m, v36)
+	v137 = F_get_rel_namespace(m, v36)
 	mBase = m.M
-	v135 = m.ExcPending
-	if v135 != 0 {
+	v138 = m.ExcPending
+	if v138 != 0 {
 		goto L1
 	} else {
 		goto L40
 	}
 L40:
 	;
-	v136 = F_get_namespace_name(m, v134)
+	v139 = F_get_namespace_name(m, v137)
 	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
+	v140 = m.ExcPending
+	if v140 != 0 {
 		goto L1
 	} else {
 		goto L41
 	}
 L41:
 	;
-	v138 = F_get_rel_name(m, v36)
+	v141 = F_get_rel_name(m, v36)
 	mBase = m.M
-	v139 = m.ExcPending
-	if v139 != 0 {
+	v142 = m.ExcPending
+	if v142 != 0 {
 		goto L1
 	} else {
 		goto L42
 	}
 L42:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v138
-	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v136
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v141
+	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v139
 	F_errmsg(m, int32(_a_F_ReindexMultipleInternal_0), v12)
 	mBase = m.M
-	v144 = m.ExcPending
-	if v144 != 0 {
+	v147 = m.ExcPending
+	if v147 != 0 {
 		goto L1
 	} else {
 		goto L43
@@ -479,8 +478,8 @@ L43:
 	;
 	F_errfinish(m, int32(_a_F_ReindexMultipleInternal_1), int32(3532), int32(_a_F_ReindexMultipleInternal_2))
 	mBase = m.M
-	v149 = m.ExcPending
-	if v149 != 0 {
+	v152 = m.ExcPending
+	if v152 != 0 {
 		goto L1
 	} else {
 		goto L44
@@ -493,10 +492,10 @@ L45:
 	goto L12
 L46:
 	;
-	v161 = v29 + int32(1)
-	v162 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	if v161 < v162 {
-		v29 = v161
+	v162 = v29 + int32(1)
+	v163 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	if v162 < v163 {
+		v29 = v162
 		goto L7
 	} else {
 		goto L47

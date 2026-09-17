@@ -16,27 +16,27 @@ func F_BitHammingDistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	_ = v18
 	var v24 int32
 	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
 	var v27 int64
 	_ = v27
 	var v28 int32
 	_ = v28
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
 	var v33 int32
 	_ = v33
 	var v34 int32
 	_ = v34
-	var v35 int64
-	_ = v35
-	var v36 int64
+	var v36 int32
 	_ = v36
+	var v38 int32
+	_ = v38
 	var v39 int64
 	_ = v39
-	var v41 int32
-	_ = v41
-	var v43 int32
+	var v40 int64
+	_ = v40
+	var v43 int64
 	_ = v43
 	var v45 int32
 	_ = v45
@@ -92,48 +92,46 @@ func F_BitHammingDistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	_ = v98
 	var v106 int32
 	_ = v106
-	var v113 int32
-	_ = v113
-	var v115 int32
-	_ = v115
-	var v118 int64
+	var v114 int32
+	_ = v114
+	var v117 int64
+	_ = v117
+	var v118 int32
 	_ = v118
-	var v119 int32
-	_ = v119
-	var v125 int32
-	_ = v125
-	var v127 int32
-	_ = v127
-	var v129 int32
-	_ = v129
-	var v133 int64
-	_ = v133
-	var v135 int32
-	_ = v135
-	var v137 int32
-	_ = v137
-	var v141 int64
-	_ = v141
-	var v143 int64
-	_ = v143
-	var v144 int32
-	_ = v144
-	var v145 int32
-	_ = v145
-	var v147 int32
-	_ = v147
-	var v149 int32
+	var v124 int32
+	_ = v124
+	var v126 int32
+	_ = v126
+	var v128 int32
+	_ = v128
+	var v130 int64
+	_ = v130
+	var v132 int32
+	_ = v132
+	var v134 int32
+	_ = v134
+	var v136 int64
+	_ = v136
+	var v138 int64
+	_ = v138
+	var v139 int32
+	_ = v139
+	var v140 int32
+	_ = v140
+	var v142 int32
+	_ = v142
+	var v149 int64
 	_ = v149
-	var v152 int64
-	_ = v152
-	var v161 int32
-	_ = v161
-	var v163 int32
-	_ = v163
-	var v167 int64
-	_ = v167
-	var v172 int64
-	_ = v172
+	var v150 int32
+	_ = v150
+	var v156 int32
+	_ = v156
+	var v158 int32
+	_ = v158
+	var v160 int64
+	_ = v160
+	var v165 int64
+	_ = v165
 	if base.Ui32(l0) < base.Ui32(int32(8)) {
 		v95 = l0
 		v96 = l1
@@ -145,25 +143,25 @@ func F_BitHammingDistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l
 		if v13&v14 != v14 {
 			v18 = int32(3)
 			v24 = l0
+			v25 = l1
+			v26 = l2
 			v27 = l3
-			v28 = l1
-			v29 = l2
-			v30 = int32(0)
+			v28 = int32(0)
 			for {
 				v33 = int32(8)
 				v34 = v24 - v33
-				v35 = *(*int64)(unsafe.Add(mBase, uint32(v29)))
-				v36 = *(*int64)(unsafe.Add(mBase, uint32(v28)))
-				v39 = base.I64_popcnt(v35^v36) + v27
-				v41 = v28 + v33
-				v43 = v29 + v33
-				v45 = v30 + int32(1)
+				v36 = v26 + v33
+				v38 = v25 + v33
+				v39 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
+				v40 = *(*int64)(unsafe.Add(mBase, uint32(v25)))
+				v43 = base.I64_popcnt(v39^v40) + v27
+				v45 = v28 + int32(1)
 				if v45 != (int32(base.Ui32(v13)>>(uint(v18)%32))+int32(1))&v18 {
 					v24 = v34
-					v27 = v39
-					v28 = v41
-					v29 = v43
-					v30 = v45
+					v25 = v38
+					v26 = v36
+					v27 = v43
+					v28 = v45
 					continue
 				} else {
 					break
@@ -171,9 +169,9 @@ func F_BitHammingDistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l
 				break
 			}
 			v47 = v34
-			v48 = v41
-			v49 = v43
-			v50 = v39
+			v48 = v38
+			v49 = v36
+			v50 = v43
 		} else {
 			v47 = l0
 			v48 = l1
@@ -222,52 +220,55 @@ func F_BitHammingDistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l
 		}
 	}
 	if v95 == int32(0) {
-		v172 = v98
+		v165 = v98
 	} else {
-		v106 = int32(1)
-		if v95 == v106 {
-			v149 = int32(0)
-			v152 = v98
-		} else {
-			v113 = int32(0)
-			v115 = v113
-			v118 = v98
-			v119 = v113
+		v106 = int32(0)
+		if v95 != int32(1) {
+			v114 = int32(0)
+			v117 = v98
+			v118 = v106
 			for {
-				v125 = v115 | int32(1)
-				v127 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97+v125))))
-				v129 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v96+v125))))
-				v133 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v127^v129)+uint32(_c_F_BitHammingDistanceDefault[0]))))
-				v135 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v115+v97))))
-				v137 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v115+v96))))
-				v141 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v135^v137)+uint32(_c_F_BitHammingDistanceDefault[0]))))
-				v143 = v133 + (v118 + v141)
-				v144 = int32(2)
-				v145 = v115 + v144
-				v147 = v119 + v144
-				if v147 != v95&int32(-2) {
-					v115 = v145
-					v118 = v143
-					v119 = v147
+				v124 = v118 | int32(1)
+				v126 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97+v124))))
+				v128 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v96+v124))))
+				v130 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v126^v128)+uint32(_c_F_BitHammingDistanceDefault[0]))))
+				v132 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97+v118))))
+				v134 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v96+v118))))
+				v136 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v132^v134)+uint32(_c_F_BitHammingDistanceDefault[0]))))
+				v138 = v130 + (v117 + v136)
+				v139 = int32(2)
+				v140 = v118 + v139
+				v142 = v114 + v139
+				if v142 != v95&int32(-2) {
+					v114 = v142
+					v117 = v138
+					v118 = v140
 					continue
 				} else {
 					break
 				}
 				break
 			}
-			v149 = v145
-			v152 = v143
-		}
-		if v95&v106 == int32(0) {
-			v172 = v152
+			if v95&int32(1) == int32(0) {
+				v165 = v138
+			} else {
+				v149 = v138
+				v150 = v140
+				v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97+v150))))
+				v158 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v96+v150))))
+				v160 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v156^v158)+uint32(_c_F_BitHammingDistanceDefault[0]))))
+				v165 = v149 + v160
+			}
 		} else {
-			v161 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v149+v97))))
-			v163 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v149+v96))))
-			v167 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v161^v163)+uint32(_c_F_BitHammingDistanceDefault[0]))))
-			v172 = v152 + v167
+			v149 = v98
+			v150 = v106
+			v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97+v150))))
+			v158 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v96+v150))))
+			v160 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v156^v158)+uint32(_c_F_BitHammingDistanceDefault[0]))))
+			v165 = v149 + v160
 		}
 	}
-	return v172
+	return v165
 }
 func F_InitBitVector(m *base.Module, l0 int32) int32 {
 	mBase := m.M

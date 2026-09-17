@@ -30,12 +30,12 @@ func F_show_tcp_keepalives_idle(m *base.Module) int32 {
 	_ = v20
 	var v26 int32
 	_ = v26
-	var v28 int32
-	_ = v28
-	var v36 int32
-	_ = v36
-	var v39 int32
-	_ = v39
+	var v27 int32
+	_ = v27
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
 	v1 = int32(0)
 	v2 = m.G0
 	v3 = int32(16)
@@ -46,33 +46,33 @@ func F_show_tcp_keepalives_idle(m *base.Module) int32 {
 	v12 = v10 - v3
 	m.G0 = v12
 	if v7 == v1 {
-		v28 = v1
+		v27 = v1
 	} else {
 		v16 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v7)+12)))
 		if v16 == int32(1) {
-			v28 = v1
+			v27 = v1
 		} else {
 			v19 = *(*int32)(unsafe.Add(mBase, uint32(v7)+400))
 			if v19 != 0 {
-				v28 = v19
+				v27 = v19
 			} else {
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(v7)+384))
 				if v20 != 0 {
-					v28 = v20
+					v27 = v20
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(4)
 					v26 = *(*int32)(unsafe.Add(mBase, uint32(v7+int32(384))))
-					v28 = v26
+					v27 = v26
 				}
 			}
 		}
 	}
 	m.G0 = v12 + int32(16)
-	*(*int32)(unsafe.Add(mBase, uint32(v4))) = v28
-	v36 = F_pg_snprintf(m, int32(_a_F_show_tcp_keepalives_idle_0), int32(16), int32(_a_F_show_tcp_keepalives_idle_1), v4)
+	*(*int32)(unsafe.Add(mBase, uint32(v4))) = v27
+	v35 = F_pg_snprintf(m, int32(_a_F_show_tcp_keepalives_idle_0), int32(16), int32(_a_F_show_tcp_keepalives_idle_1), v4)
 	mBase = m.M
-	v39 = m.ExcPending
-	if v39 != 0 {
+	v38 = m.ExcPending
+	if v38 != 0 {
 		return int32(0)
 	} else {
 		m.G0 = v4 + int32(16)

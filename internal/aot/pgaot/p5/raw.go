@@ -18,18 +18,18 @@ func F_get_raw_page(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v14 int32
 	_ = v14
-	var v20 int32
-	_ = v20
-	var v25 int32
-	_ = v25
-	var v32 int32
-	_ = v32
-	var v34 int32
-	_ = v34
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
+	var v18 int32
+	_ = v18
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v4 = F_pg_detoast_datum_packed(m, v3)
 	mBase = m.M
@@ -47,20 +47,20 @@ func F_get_raw_page(m *base.Module, l0 int32) int32 {
 			} else {
 				F_errmsg(m, int32(_a_F_get_raw_page_0), int32(0))
 				mBase = m.M
-				v20 = m.ExcPending
-				if v20 != 0 {
+				v18 = m.ExcPending
+				if v18 != 0 {
 					return int32(0)
 				} else {
 					F_errhint(m, int32(_a_F_get_raw_page_1), int32(0))
 					mBase = m.M
-					v25 = m.ExcPending
-					if v25 != 0 {
+					v22 = m.ExcPending
+					if v22 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_get_raw_page_2), int32(85), int32(_a_F_get_raw_page_3))
 						mBase = m.M
-						v32 = m.ExcPending
-						if v32 != 0 {
+						v27 = m.ExcPending
+						if v27 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
@@ -71,14 +71,14 @@ func F_get_raw_page(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-			v35 = F_get_raw_page_internal(m, v4, int32(0), v34)
+			v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v30 = F_get_raw_page_internal(m, v4, int32(0), v29)
 			mBase = m.M
-			v36 = m.ExcPending
-			if v36 != 0 {
+			v31 = m.ExcPending
+			if v31 != 0 {
 				return int32(0)
 			} else {
-				return v35
+				return v30
 			}
 		}
 	}
@@ -100,14 +100,14 @@ func F_get_raw_page_1_9(m *base.Module, l0 int32) int32 {
 	_ = v16
 	var v19 int32
 	_ = v19
-	var v25 int32
-	_ = v25
+	var v23 int32
+	_ = v23
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
 	var v32 int32
 	_ = v32
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = F_pg_detoast_datum_packed(m, v4)
 	mBase = m.M
@@ -132,14 +132,14 @@ func F_get_raw_page_1_9(m *base.Module, l0 int32) int32 {
 				} else {
 					F_errmsg(m, int32(_a_F_get_raw_page_1_9_0), int32(0))
 					mBase = m.M
-					v25 = m.ExcPending
-					if v25 != 0 {
+					v23 = m.ExcPending
+					if v23 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_get_raw_page_1_9_1), int32(58), int32(_a_F_get_raw_page_1_9_2))
 						mBase = m.M
-						v32 = m.ExcPending
-						if v32 != 0 {
+						v28 = m.ExcPending
+						if v28 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
@@ -150,13 +150,13 @@ func F_get_raw_page_1_9(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v35 = F_get_raw_page_internal(m, v5, int32(0), base.I32_wrap_i64(v10))
+			v31 = F_get_raw_page_internal(m, v5, int32(0), base.I32_wrap_i64(v10))
 			mBase = m.M
-			v36 = m.ExcPending
-			if v36 != 0 {
+			v32 = m.ExcPending
+			if v32 != 0 {
 				return int32(0)
 			} else {
-				return v35
+				return v31
 			}
 		}
 	}

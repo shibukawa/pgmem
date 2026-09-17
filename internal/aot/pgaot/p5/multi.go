@@ -16,12 +16,14 @@ func F_MultiXactMemberFreezeThreshold(m *base.Module) int32 {
 	_ = mBase
 	var v1 int32
 	_ = v1
-	var v9 int32
-	_ = v9
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
+	var v8 int32
+	_ = v8
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
 	var v18 int32
 	_ = v18
 	var v19 int32
@@ -32,83 +34,71 @@ func F_MultiXactMemberFreezeThreshold(m *base.Module) int32 {
 	_ = v21
 	var v22 int32
 	_ = v22
-	var v23 int32
-	_ = v23
-	var v25 int32
-	_ = v25
-	var v29 int32
-	_ = v29
-	var v32 int32
-	_ = v32
-	var v36 int32
-	_ = v36
-	var v43 int32
-	_ = v43
-	var v45 float64
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v45 int32
 	_ = v45
+	var v47 int32
+	_ = v47
+	var v49 int32
+	_ = v49
 	var v51 int32
 	_ = v51
-	var v53 int32
-	_ = v53
-	var v55 int32
-	_ = v55
-	var v57 int32
-	_ = v57
-	var v59 int32
-	_ = v59
-	var v61 int32
-	_ = v61
+	var v54 int32
+	_ = v54
 	v1 = int32(0)
-	v9 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[0]))
-	v13 = F_LWLockAcquire(m, v9+int32(1664), int32(1))
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[0]))
+	v12 = F_LWLockAcquire(m, v8+int32(1664), int32(1))
 	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v15 = m.ExcPending
+	if v15 != 0 {
 		return int32(0)
 	} else {
-		v18 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[1]))
-		v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+20))
-		v20 = *(*int32)(unsafe.Add(mBase, uint32(v18)))
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)+12))
-		v22 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
-		v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+24)))
-		v25 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[0]))
-		F_LWLockRelease(m, v25+int32(1664))
+		v17 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[1]))
+		v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+20))
+		v19 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+		v20 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+		v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+24)))
+		v24 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[0]))
+		F_LWLockRelease(m, v24+int32(1664))
 		mBase = m.M
-		v29 = m.ExcPending
-		if v29 != 0 {
+		v28 = m.ExcPending
+		if v28 != 0 {
 			return int32(0)
 		} else {
-			if v23 != int32(1) {
-				v61 = v1
-				return v61
+			if v22 != int32(1) {
+				v54 = v1
+				return v54
 			} else {
-				v32 = v22 - v19
-				if int32(0) <= v32 {
-					v36 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[2]))
-					return v36
+				v31 = v21 - v18
+				if int32(0) <= v31 {
+					v35 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[2]))
+					return v35
 				} else {
-					v43 = v20 - v21
-					v45 = base.F64_mul(base.F64_div(base.F64_convert_i32_u(v32-int32(2147483647)), float64(1.073741825e+09)), base.F64_convert_i32_u(v43))
-					if base.F64_lt(v45, float64(4.294967296e+09))&base.F64_ge(v45, float64(0)) != 0 {
-						v51 = base.I32_trunc_f64_u(v45)
-						v53 = v51
+					v37 = v19 - v20
+					v45 = base.I32_trunc_sat_f64_u(base.F64_mul(base.F64_div(base.F64_convert_i32_u(v31-int32(2147483647)), float64(1.073741825e+09)), base.F64_convert_i32_u(v37)))
+					if base.Ui32(v37) < base.Ui32(v45) {
+						v54 = v1
 					} else {
-						v53 = int32(0)
-					}
-					if base.Ui32(v43) < base.Ui32(v53) {
-						v61 = v1
-					} else {
-						v55 = v43 - v53
-						v57 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[2]))
-						if v55 < v57 {
-							v59 = v55
+						v47 = v37 - v45
+						v49 = *(*int32)(unsafe.Add(mBase, _c_F_MultiXactMemberFreezeThreshold[2]))
+						if v47 < v49 {
+							v51 = v47
 						} else {
-							v59 = v57
+							v51 = v49
 						}
-						v61 = v59
+						v54 = v51
 					}
-					return v61
+					return v54
 				}
 			}
 		}

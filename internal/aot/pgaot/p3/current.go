@@ -20,300 +20,210 @@ func F_AbortCurrentTransaction(m *base.Module) {
 	_ = v12
 	var v14 int32
 	_ = v14
-	var v16 int32
-	_ = v16
-	var v20 int32
-	_ = v20
-	var v24 int32
-	_ = v24
+	var v18 int32
+	_ = v18
+	var v22 int32
+	_ = v22
 	var v26 int32
 	_ = v26
+	var v28 int32
+	_ = v28
 	var v30 int32
 	_ = v30
-	var v34 int32
-	_ = v34
+	var v32 int32
+	_ = v32
 	var v36 int32
 	_ = v36
-	var v40 int32
-	_ = v40
-	var v42 int32
-	_ = v42
-	var v46 int32
-	_ = v46
-	var v50 int32
-	_ = v50
-	var v52 int32
-	_ = v52
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
-	goto L2
+	var v38 int32
+	_ = v38
+	goto L3
 L1:
 	;
-	return
+	F_AbortTransaction(m)
+	mBase = m.M
+	v36 = m.ExcPending
+	if v36 != 0 {
+		goto L14
+	} else {
+		goto L24
+	}
 L2:
+	;
+	return
+L3:
 	;
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_AbortCurrentTransaction[0]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+24))
 	switch v5 {
 	case 0:
-		goto L14
-	case 1, 4:
-		goto L4
-	case 2:
-		goto L13
-	case 3, 5:
-		goto L12
-	case 6:
 		goto L11
-	default:
-		goto L1
-	case 8:
-		goto L10
-	case 9:
-		goto L9
-	case 10:
-		goto L8
-	case 11, 13, 14, 17, 18:
-		goto L6
-	case 12:
-		goto L7
-	case 16, 19:
+	case 1, 4:
 		goto L5
-	}
-L3:
-	;
-	F_AbortTransaction(m)
-	mBase = m.M
-	v54 = m.ExcPending
-	if v54 != 0 {
-		goto L17
-	} else {
-		goto L33
+	case 2, 6, 9, 10:
+		goto L1
+	case 3, 5:
+		goto L10
+	default:
+		goto L2
+	case 8:
+		goto L9
+	case 11, 13, 14, 17, 18:
+		goto L7
+	case 12:
+		goto L8
+	case 16, 19:
+		goto L6
 	}
 L4:
 	;
-	goto L3
+	F_AbortTransaction(m)
+	mBase = m.M
+	v30 = m.ExcPending
+	if v30 != 0 {
+		goto L14
+	} else {
+		goto L22
+	}
 L5:
+	;
+	goto L4
+L6:
 	;
 	F_CleanupSubTransaction(m)
 	mBase = m.M
-	v52 = m.ExcPending
-	if v52 != 0 {
-		goto L17
+	v28 = m.ExcPending
+	if v28 != 0 {
+		goto L14
 	} else {
-		goto L32
-	}
-L6:
-	;
-	F_AbortSubTransaction(m)
-	mBase = m.M
-	v50 = m.ExcPending
-	if v50 != 0 {
-		goto L17
-	} else {
-		goto L31
+		goto L21
 	}
 L7:
 	;
 	F_AbortSubTransaction(m)
 	mBase = m.M
-	v46 = m.ExcPending
-	if v46 != 0 {
-		goto L17
+	v26 = m.ExcPending
+	if v26 != 0 {
+		goto L14
 	} else {
-		goto L30
+		goto L20
 	}
 L8:
 	;
-	F_AbortTransaction(m)
+	F_AbortSubTransaction(m)
 	mBase = m.M
-	v40 = m.ExcPending
-	if v40 != 0 {
-		goto L17
+	v22 = m.ExcPending
+	if v22 != 0 {
+		goto L14
 	} else {
-		goto L28
+		goto L19
 	}
 L9:
 	;
-	F_AbortTransaction(m)
-	mBase = m.M
-	v34 = m.ExcPending
-	if v34 != 0 {
-		goto L17
-	} else {
-		goto L26
-	}
-L10:
-	;
 	F_CleanupTransaction(m)
 	mBase = m.M
-	v30 = m.ExcPending
-	if v30 != 0 {
-		goto L17
+	v18 = m.ExcPending
+	if v18 != 0 {
+		goto L14
 	} else {
-		goto L25
+		goto L18
 	}
-L11:
-	;
-	F_AbortTransaction(m)
-	mBase = m.M
-	v24 = m.ExcPending
-	if v24 != 0 {
-		goto L17
-	} else {
-		goto L23
-	}
-L12:
-	;
-	F_AbortTransaction(m)
-	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
-		goto L17
-	} else {
-		goto L22
-	}
-L13:
+L10:
 	;
 	F_AbortTransaction(m)
 	mBase = m.M
 	v14 = m.ExcPending
 	if v14 != 0 {
-		goto L17
+		goto L14
 	} else {
-		goto L20
+		goto L17
 	}
-L14:
+L11:
 	;
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(v4)+20))
 	switch v6 {
 	case 0:
-		goto L1
+		goto L2
 	case 1:
-		goto L16
+		goto L13
 	default:
-		goto L15
+		goto L12
 	}
-L15:
+L12:
 	;
 	F_AbortTransaction(m)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
-		goto L17
+		goto L14
 	} else {
-		goto L18
+		goto L15
 	}
-L16:
+L13:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+20)) = int32(2)
-	goto L15
-L17:
+	goto L12
+L14:
 	;
 	return
-L18:
+L15:
 	;
 	F_CleanupTransaction(m)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
-		goto L17
+		goto L14
 	} else {
-		goto L19
+		goto L16
 	}
-L19:
+L16:
 	;
 	return
-L20:
-	;
-	F_CleanupTransaction(m)
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
-		goto L17
-	} else {
-		goto L21
-	}
-L21:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(0)
-	return
-L22:
+L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(7)
 	return
-L23:
-	;
-	F_CleanupTransaction(m)
-	mBase = m.M
-	v26 = m.ExcPending
-	if v26 != 0 {
-		goto L17
-	} else {
-		goto L24
-	}
-L24:
+L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(0)
 	return
+L19:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(15)
+	return
+L20:
+	;
+	goto L6
+L21:
+	;
+	goto L3
+L22:
+	;
+	F_CleanupTransaction(m)
+	mBase = m.M
+	v32 = m.ExcPending
+	if v32 != 0 {
+		goto L14
+	} else {
+		goto L23
+	}
+L23:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(0)
+	goto L2
+L24:
+	;
+	F_CleanupTransaction(m)
+	mBase = m.M
+	v38 = m.ExcPending
+	if v38 != 0 {
+		goto L14
+	} else {
+		goto L25
+	}
 L25:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(0)
 	return
-L26:
-	;
-	F_CleanupTransaction(m)
-	mBase = m.M
-	v36 = m.ExcPending
-	if v36 != 0 {
-		goto L17
-	} else {
-		goto L27
-	}
-L27:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(0)
-	return
-L28:
-	;
-	F_CleanupTransaction(m)
-	mBase = m.M
-	v42 = m.ExcPending
-	if v42 != 0 {
-		goto L17
-	} else {
-		goto L29
-	}
-L29:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(0)
-	return
-L30:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(15)
-	return
-L31:
-	;
-	goto L5
-L32:
-	;
-	goto L2
-L33:
-	;
-	F_CleanupTransaction(m)
-	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
-		goto L17
-	} else {
-		goto L34
-	}
-L34:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(0)
-	goto L1
 }
 func F_GetCurrentTimestamp(m *base.Module) int64 {
 	mBase := m.M
@@ -332,7 +242,7 @@ func F_GetCurrentTimestamp(m *base.Module) int64 {
 	v5 = int32(16)
 	v6 = v4 - v5
 	m.G0 = v6
-	F___gettimeofday(m, v6)
+	F_gettimeofday(m, v6)
 	mBase = m.M
 	v9 = *(*int64)(unsafe.Add(mBase, uint32(v6)))
 	v10 = int64(*(*int32)(unsafe.Add(mBase, uint32(v6)+8)))
@@ -375,7 +285,7 @@ func F_GetCurrentTransactionStopTimestamp(m *base.Module) int64 {
 		v11 = int32(16)
 		v12 = v10 - v11
 		m.G0 = v12
-		F___gettimeofday(m, v12)
+		F_gettimeofday(m, v12)
 		mBase = m.M
 		v15 = *(*int64)(unsafe.Add(mBase, uint32(v12)))
 		v16 = int64(*(*int32)(unsafe.Add(mBase, uint32(v12)+8)))

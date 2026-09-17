@@ -33,70 +33,64 @@ func F_copy_read_data(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v18
 	var v20 int32
 	_ = v20
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v25 int32
-	_ = v25
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
 	var v29 int32
 	_ = v29
-	var v30 int32
-	_ = v30
-	var v35 int32
-	_ = v35
-	var v37 int32
-	_ = v37
-	var v39 int32
-	_ = v39
-	var v47 int32
-	_ = v47
-	var v49 int32
-	_ = v49
-	var v51 int32
-	_ = v51
-	var v56 int32
-	_ = v56
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
+	var v55 int32
+	_ = v55
+	var v61 int32
+	_ = v61
 	var v62 int32
 	_ = v62
 	var v63 int32
 	_ = v63
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
-	var v69 int32
-	_ = v69
-	var v71 int32
-	_ = v71
-	var v74 int32
-	_ = v74
-	var v76 int32
-	_ = v76
-	var v82 int32
-	_ = v82
+	var v66 int32
+	_ = v66
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
+	var v73 int32
+	_ = v73
+	var v75 int32
+	_ = v75
+	var v81 int32
+	_ = v81
 	var v83 int32
 	_ = v83
-	var v84 int32
-	_ = v84
-	var v85 int32
-	_ = v85
-	var v88 int32
-	_ = v88
-	var v89 int32
-	_ = v89
-	var v95 int32
-	_ = v95
-	var v96 int32
-	_ = v96
-	var v99 int32
-	_ = v99
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v93 int32
+	_ = v93
+	var v94 int32
+	_ = v94
+	var v97 int32
+	_ = v97
+	var v98 int32
+	_ = v98
 	var v100 int32
 	_ = v100
-	var v102 int32
-	_ = v102
-	var v110 int32
-	_ = v110
+	var v108 int32
+	_ = v108
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
@@ -110,244 +104,226 @@ func F_copy_read_data(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	}
 L1:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
-	v20 = v15 - v16
-	if v20 < l2 {
+	v18 = v15 - v16
+	if v18 < l2 {
 		goto L4
 	} else {
 		goto L5
 	}
 L2:
 	;
-	v29 = l2
-	v30 = int32(0)
+	v28 = l2
+	v29 = int32(0)
 	goto L3
 L3:
 	;
-	if v29 <= int32(0) {
-		v110 = v30
-		goto L11
+	if base.B2i32(v28 <= int32(0))|base.B2i32(l1 <= v29) != 0 {
+		v108 = v29
+		goto L10
 	} else {
-		goto L12
+		goto L11
 	}
 L4:
 	;
-	v22 = v20
+	v20 = v18
 	goto L6
 L5:
 	;
-	v22 = l2
+	v20 = l2
 	goto L6
 L6:
 	;
-	if v22 != 0 {
-		goto L8
+	if v20 != 0 {
+		goto L7
 	} else {
-		goto L9
+		goto L8
 	}
 L7:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, uint32(v14)+12))
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v25 + v22
-	v29 = l2 - v22
-	v30 = v22
-	goto L3
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
+	base.MemoryCopy(m, l0, v21+v16, v20)
+	goto L9
 L8:
 	;
-	v23 = F__emscripten_memcpy_bulkmem(m, l0, v18+v16, v22)
-	mBase = m.M
-	goto L10
+	goto L9
 L9:
 	;
-	goto L10
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(v14)+12))
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v24 + v20
+	v28 = l2 - v20
+	v29 = v20
+	goto L3
 L10:
 	;
-	goto L7
+	m.G0 = v11 + int32(16)
+	return v108
 L11:
 	;
-	m.G0 = v11 + int32(16)
-	return v110
+	v34 = l0
+	v36 = v28
+	v38 = v29
+	goto L12
 L12:
-	;
-	if l1 <= v30 {
-		v110 = v30
-		goto L11
-	} else {
-		goto L13
-	}
-L13:
-	;
-	v35 = l0
-	v37 = v29
-	v39 = v30
-	goto L14
-L14:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = int32(-1)
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = int32(0)
-	v47 = v35
-	v49 = v37
-	v51 = v39
-	goto L16
+	v46 = v34
+	v48 = v36
+	v50 = v38
+	goto L14
+L13:
+	;
+	v108 = v50
+	goto L10
+L14:
+	;
+	v55 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[1]))
+	v61 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[2]))
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v61)+40))
+	v63 = m.T0[v62].(func(*base.Module, int32, int32, int32) int32)(m, v55, v11+int32(8), v11+int32(12))
+	mBase = m.M
+	v66 = m.ExcPending
+	if v66 != 0 {
+		goto L16
+	} else {
+		goto L17
+	}
 L15:
 	;
-	v110 = v51
-	goto L11
+	v93 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[3]))
+	v94 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+	v97 = F_WaitLatchOrSocket(m, v93, v94, int32(1000), int32(134217759))
+	mBase = m.M
+	v98 = m.ExcPending
+	if v98 != 0 {
+		goto L16
+	} else {
+		goto L34
+	}
 L16:
 	;
-	v56 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[1]))
-	v62 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[2]))
-	v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+40))
-	v64 = m.T0[v63].(func(*base.Module, int32, int32, int32) int32)(m, v56, v11+int32(8), v11+int32(12))
-	mBase = m.M
-	v67 = m.ExcPending
-	if v67 != 0 {
+	return int32(0)
+L17:
+	;
+	v68 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[4]))
+	if v68 != 0 {
 		goto L18
 	} else {
 		goto L19
 	}
-L17:
-	;
-	v95 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[3]))
-	v96 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-	v99 = F_WaitLatchOrSocket(m, v95, v96, int32(1000), int32(134217759))
-	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
-		goto L18
-	} else {
-		goto L37
-	}
 L18:
-	;
-	return int32(0)
-L19:
-	;
-	v69 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[4]))
-	if v69 != 0 {
-		goto L20
-	} else {
-		goto L21
-	}
-L20:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v71 = m.ExcPending
-	if v71 != 0 {
-		goto L18
+	v70 = m.ExcPending
+	if v70 != 0 {
+		goto L16
+	} else {
+		goto L21
+	}
+L19:
+	;
+	goto L20
+L20:
+	;
+	if v63 != 0 {
+		goto L22
 	} else {
 		goto L23
 	}
 L21:
 	;
-	goto L22
+	goto L20
 L22:
 	;
-	if v64 != 0 {
-		goto L24
+	if v63 < int32(0) {
+		v108 = v50
+		goto L10
 	} else {
 		goto L25
 	}
 L23:
 	;
-	goto L22
+	goto L24
 L24:
 	;
-	if v64 < int32(0) {
-		v110 = v51
-		goto L11
+	goto L15
+L25:
+	;
+	v73 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
+	v75 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v75)+12)) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v75)+4)) = v63
+	*(*int32)(unsafe.Add(mBase, uint32(v75))) = v73
+	if v63 < v48 {
+		goto L26
 	} else {
 		goto L27
 	}
-L25:
-	;
-	goto L26
 L26:
 	;
-	goto L17
+	v81 = v63
+	goto L28
 L27:
 	;
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
-	v76 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v76)+12)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v76)+4)) = v64
-	*(*int32)(unsafe.Add(mBase, uint32(v76))) = v74
-	if v64 < v49 {
-		goto L28
-	} else {
-		goto L29
-	}
+	v81 = v48
+	goto L28
 L28:
 	;
-	v82 = v64
-	goto L30
+	if v81 != 0 {
+		goto L29
+	} else {
+		goto L30
+	}
 L29:
 	;
-	v82 = v49
-	goto L30
+	base.MemoryCopy(m, v46, v73, v81)
+	goto L31
 L30:
 	;
-	if v82 != 0 {
-		goto L32
-	} else {
-		goto L33
-	}
+	goto L31
 L31:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
-	*(*int32)(unsafe.Add(mBase, uint32(v76)+12)) = v85 + v82
-	v88 = v82 + v51
-	v89 = v49 - v82
-	if v89 <= int32(0) {
-		v110 = v88
-		goto L11
+	v83 = *(*int32)(unsafe.Add(mBase, uint32(v75)+12))
+	*(*int32)(unsafe.Add(mBase, uint32(v75)+12)) = v83 + v81
+	v86 = v81 + v50
+	v87 = v48 - v81
+	if v87 <= int32(0) {
+		v108 = v86
+		goto L10
 	} else {
-		goto L35
+		goto L32
 	}
 L32:
 	;
-	v83 = F__emscripten_memcpy_bulkmem(m, v47, v74, v82)
-	mBase = m.M
-	v84 = v83
-	goto L34
+	if v86 < l1 {
+		v46 = v46 + v81
+		v48 = v87
+		v50 = v86
+		goto L14
+	} else {
+		goto L33
+	}
 L33:
 	;
-	v84 = v47
-	goto L34
+	v108 = v86
+	goto L10
 L34:
 	;
-	goto L31
+	v100 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[3]))
+	*(*int32)(unsafe.Add(mBase, uint32(v100))) = int32(0)
+	goto L35
 L35:
 	;
-	if v88 < l1 {
-		v47 = v82 + v84
-		v49 = v89
-		v51 = v88
-		goto L16
+	if v50 < l1 {
+		v34 = v46
+		v36 = v48
+		v38 = v50
+		goto L12
 	} else {
 		goto L36
 	}
 L36:
 	;
-	v110 = v88
-	goto L11
-L37:
-	;
-	v102 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[3]))
-	*(*int32)(unsafe.Add(mBase, uint32(v102))) = int32(0)
-	goto L38
-L38:
-	;
-	if v51 < l1 {
-		v35 = v47
-		v37 = v49
-		v39 = v51
-		goto L14
-	} else {
-		goto L39
-	}
-L39:
-	;
-	goto L15
+	goto L13
 }

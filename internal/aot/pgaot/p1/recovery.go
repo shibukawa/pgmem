@@ -28,56 +28,56 @@ func F_ExecuteRecoveryCommand(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v28
 	var v31 int64
 	_ = v31
+	var v34 int32
+	_ = v34
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v47 int32
-	_ = v47
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	var v52 int32
-	_ = v52
-	var v59 int32
-	_ = v59
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
 	var v64 int32
 	_ = v64
-	var v66 int32
-	_ = v66
+	var v65 int32
+	_ = v65
 	var v67 int32
 	_ = v67
 	var v69 int32
 	_ = v69
-	var v71 int32
-	_ = v71
+	var v70 int32
+	_ = v70
 	var v72 int32
 	_ = v72
-	var v74 int32
-	_ = v74
-	var v78 int32
-	_ = v78
-	var v85 int32
-	_ = v85
+	var v76 int32
+	_ = v76
+	var v89 int32
+	_ = v89
+	var v101 int32
+	_ = v101
 	var v103 int32
 	_ = v103
-	var v104 int32
-	_ = v104
 	var v105 int32
 	_ = v105
-	var v107 int32
-	_ = v107
-	var v108 int32
-	_ = v108
-	var v111 int32
-	_ = v111
-	var v112 int32
-	_ = v112
-	var v118 int32
-	_ = v118
-	var v123 int32
-	_ = v123
+	var v106 int32
+	_ = v106
+	var v109 int32
+	_ = v109
+	var v110 int32
+	_ = v110
+	var v116 int32
+	_ = v116
+	var v121 int32
+	_ = v121
 	v10 = m.G0
 	v12 = v10 - int32(1104)
 	m.G0 = v12
@@ -97,119 +97,107 @@ func F_ExecuteRecoveryCommand(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 		*(*uint32)(unsafe.Add(mBase, uint32(v12)+52)) = uint32(v28)
 		v31 = v25 - v27*v28
 		*(*uint32)(unsafe.Add(mBase, uint32(v12)+56)) = uint32(v31)
-		v39 = F_pg_snprintf(m, v12+int32(80), int32(64), int32(_a_F_ExecuteRecoveryCommand_0), v12+int32(48))
+		v34 = v12 + int32(80)
+		v39 = F_pg_snprintf(m, v34, int32(64), int32(_a_F_ExecuteRecoveryCommand_0), v12+int32(48))
 		mBase = m.M
 		v40 = m.ExcPending
 		if v40 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v12 + int32(80)
-			v47 = F_replace_percent_placeholders(m, l0, l1, int32(_a_F_ExecuteRecoveryCommand_1), v12+int32(32))
+			*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v34
+			v45 = F_replace_percent_placeholders(m, l0, l1, int32(_a_F_ExecuteRecoveryCommand_1), v12+int32(32))
 			mBase = m.M
-			v48 = m.ExcPending
-			if v48 != 0 {
+			v46 = m.ExcPending
+			if v46 != 0 {
 				return
 			} else {
-				v51 = F_errstart(m, int32(12), int32(0))
+				v49 = F_errstart(m, int32(12), int32(0))
 				mBase = m.M
-				v52 = m.ExcPending
-				if v52 != 0 {
+				v50 = m.ExcPending
+				if v50 != 0 {
 					return
 				} else {
-					if v51 != 0 {
+					if v49 != 0 {
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = l0
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
 						F_errmsg_internal(m, int32(_a_F_ExecuteRecoveryCommand_2), v12+int32(16))
 						mBase = m.M
-						v59 = m.ExcPending
-						if v59 != 0 {
+						v57 = m.ExcPending
+						if v57 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_ExecuteRecoveryCommand_3), int32(323), int32(_a_F_ExecuteRecoveryCommand_4))
 							mBase = m.M
-							v64 = m.ExcPending
-							if v64 != 0 {
+							v62 = m.ExcPending
+							if v62 != 0 {
 								return
 							} else {
-								v66 = F_fflush(m, int32(0))
+								v64 = F_fflush(m, int32(0))
 								mBase = m.M
-								v67 = m.ExcPending
-								if v67 != 0 {
+								v65 = m.ExcPending
+								if v65 != 0 {
 									return
 								} else {
-									v69 = *(*int32)(unsafe.Add(mBase, _c_F_ExecuteRecoveryCommand[1]))
-									*(*int32)(unsafe.Add(mBase, uint32(v69))) = l3
-									v71 = F_pgl_system(m, v47)
+									v67 = *(*int32)(unsafe.Add(mBase, _c_F_ExecuteRecoveryCommand[1]))
+									*(*int32)(unsafe.Add(mBase, uint32(v67))) = l3
+									v69 = F_pgl_system(m, v45)
 									mBase = m.M
-									v72 = m.ExcPending
-									if v72 != 0 {
+									v70 = m.ExcPending
+									if v70 != 0 {
 										return
 									} else {
-										v74 = *(*int32)(unsafe.Add(mBase, _c_F_ExecuteRecoveryCommand[1]))
-										*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
-										F_pfree(m, v47)
+										v72 = *(*int32)(unsafe.Add(mBase, _c_F_ExecuteRecoveryCommand[1]))
+										*(*int32)(unsafe.Add(mBase, uint32(v72))) = int32(0)
+										F_pfree(m, v45)
 										mBase = m.M
-										v78 = m.ExcPending
-										if v78 != 0 {
+										v76 = m.ExcPending
+										if v76 != 0 {
 											return
 										} else {
-											if v71 == int32(0) {
+											if v69 == int32(0) {
 												m.G0 = v12 + int32(1104)
 												return
 											} else {
 												if l2 != 0 {
-													v85 = int32(1)
-													if base.Ui32(v71&int32(_a_F_ExecuteRecoveryCommand_5)-v85) < base.Ui32(int32(255)) {
-														v103 = v85
+													v89 = int32(255)
+													if base.B2i32(v69&int32(127) == int32(0))&base.B2i32(base.Ui32(int32(125)) < base.Ui32(int32(base.Ui32(v69)>>(uint(int32(8))%32))&v89))|base.B2i32(base.Ui32(v69&int32(_a_F_ExecuteRecoveryCommand_5)-int32(1)) < base.Ui32(v89)) != 0 {
+														v101 = int32(22)
 													} else {
-														if v71&int32(127) == int32(0) {
-															if base.Ui32(int32(125)) < base.Ui32(int32(base.Ui32(v71)>>(uint(int32(8))%32))&int32(255)) {
-																v103 = v85
-															} else {
-																v103 = int32(0)
-															}
-														} else {
-															v103 = int32(0)
-														}
+														v101 = int32(19)
 													}
-													if v103 != 0 {
-														v104 = int32(22)
-													} else {
-														v104 = int32(19)
-													}
-													v105 = v104
+													v103 = v101
 												} else {
-													v105 = int32(19)
+													v103 = int32(19)
 												}
-												v107 = F_errstart(m, v105, int32(0))
+												v105 = F_errstart(m, v103, int32(0))
 												mBase = m.M
-												v108 = m.ExcPending
-												if v108 != 0 {
+												v106 = m.ExcPending
+												if v106 != 0 {
 													return
 												} else {
-													if v107 == int32(0) {
+													if v105 == int32(0) {
 														m.G0 = v12 + int32(1104)
 														return
 													} else {
-														v111 = F_wait_result_to_str(m, v71)
+														v109 = F_wait_result_to_str(m, v69)
 														mBase = m.M
-														v112 = m.ExcPending
-														if v112 != 0 {
+														v110 = m.ExcPending
+														if v110 != 0 {
 															return
 														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v111
+															*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v109
 															*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = l0
 															*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
 															F_errmsg(m, int32(_a_F_ExecuteRecoveryCommand_6), v12)
 															mBase = m.M
-															v118 = m.ExcPending
-															if v118 != 0 {
+															v116 = m.ExcPending
+															if v116 != 0 {
 																return
 															} else {
 																F_errfinish(m, int32(_a_F_ExecuteRecoveryCommand_3), int32(347), int32(_a_F_ExecuteRecoveryCommand_4))
 																mBase = m.M
-																v123 = m.ExcPending
-																if v123 != 0 {
+																v121 = m.ExcPending
+																if v121 != 0 {
 																	return
 																} else {
 																	m.G0 = v12 + int32(1104)
@@ -226,85 +214,72 @@ func F_ExecuteRecoveryCommand(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							}
 						}
 					} else {
-						v66 = F_fflush(m, int32(0))
+						v64 = F_fflush(m, int32(0))
 						mBase = m.M
-						v67 = m.ExcPending
-						if v67 != 0 {
+						v65 = m.ExcPending
+						if v65 != 0 {
 							return
 						} else {
-							v69 = *(*int32)(unsafe.Add(mBase, _c_F_ExecuteRecoveryCommand[1]))
-							*(*int32)(unsafe.Add(mBase, uint32(v69))) = l3
-							v71 = F_pgl_system(m, v47)
+							v67 = *(*int32)(unsafe.Add(mBase, _c_F_ExecuteRecoveryCommand[1]))
+							*(*int32)(unsafe.Add(mBase, uint32(v67))) = l3
+							v69 = F_pgl_system(m, v45)
 							mBase = m.M
-							v72 = m.ExcPending
-							if v72 != 0 {
+							v70 = m.ExcPending
+							if v70 != 0 {
 								return
 							} else {
-								v74 = *(*int32)(unsafe.Add(mBase, _c_F_ExecuteRecoveryCommand[1]))
-								*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
-								F_pfree(m, v47)
+								v72 = *(*int32)(unsafe.Add(mBase, _c_F_ExecuteRecoveryCommand[1]))
+								*(*int32)(unsafe.Add(mBase, uint32(v72))) = int32(0)
+								F_pfree(m, v45)
 								mBase = m.M
-								v78 = m.ExcPending
-								if v78 != 0 {
+								v76 = m.ExcPending
+								if v76 != 0 {
 									return
 								} else {
-									if v71 == int32(0) {
+									if v69 == int32(0) {
 										m.G0 = v12 + int32(1104)
 										return
 									} else {
 										if l2 != 0 {
-											v85 = int32(1)
-											if base.Ui32(v71&int32(_a_F_ExecuteRecoveryCommand_5)-v85) < base.Ui32(int32(255)) {
-												v103 = v85
+											v89 = int32(255)
+											if base.B2i32(v69&int32(127) == int32(0))&base.B2i32(base.Ui32(int32(125)) < base.Ui32(int32(base.Ui32(v69)>>(uint(int32(8))%32))&v89))|base.B2i32(base.Ui32(v69&int32(_a_F_ExecuteRecoveryCommand_5)-int32(1)) < base.Ui32(v89)) != 0 {
+												v101 = int32(22)
 											} else {
-												if v71&int32(127) == int32(0) {
-													if base.Ui32(int32(125)) < base.Ui32(int32(base.Ui32(v71)>>(uint(int32(8))%32))&int32(255)) {
-														v103 = v85
-													} else {
-														v103 = int32(0)
-													}
-												} else {
-													v103 = int32(0)
-												}
+												v101 = int32(19)
 											}
-											if v103 != 0 {
-												v104 = int32(22)
-											} else {
-												v104 = int32(19)
-											}
-											v105 = v104
+											v103 = v101
 										} else {
-											v105 = int32(19)
+											v103 = int32(19)
 										}
-										v107 = F_errstart(m, v105, int32(0))
+										v105 = F_errstart(m, v103, int32(0))
 										mBase = m.M
-										v108 = m.ExcPending
-										if v108 != 0 {
+										v106 = m.ExcPending
+										if v106 != 0 {
 											return
 										} else {
-											if v107 == int32(0) {
+											if v105 == int32(0) {
 												m.G0 = v12 + int32(1104)
 												return
 											} else {
-												v111 = F_wait_result_to_str(m, v71)
+												v109 = F_wait_result_to_str(m, v69)
 												mBase = m.M
-												v112 = m.ExcPending
-												if v112 != 0 {
+												v110 = m.ExcPending
+												if v110 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v111
+													*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v109
 													*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = l0
 													*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
 													F_errmsg(m, int32(_a_F_ExecuteRecoveryCommand_6), v12)
 													mBase = m.M
-													v118 = m.ExcPending
-													if v118 != 0 {
+													v116 = m.ExcPending
+													if v116 != 0 {
 														return
 													} else {
 														F_errfinish(m, int32(_a_F_ExecuteRecoveryCommand_3), int32(347), int32(_a_F_ExecuteRecoveryCommand_4))
 														mBase = m.M
-														v123 = m.ExcPending
-														if v123 != 0 {
+														v121 = m.ExcPending
+														if v121 != 0 {
 															return
 														} else {
 															m.G0 = v12 + int32(1104)
@@ -359,8 +334,8 @@ func F_RecoveryRequiresIntParameter(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v59
 	var v64 int32
 	_ = v64
-	var v70 int32
-	_ = v70
+	var v71 int32
+	_ = v71
 	var v73 int32
 	_ = v73
 	var v74 int32
@@ -574,7 +549,7 @@ L19:
 	goto L20
 L20:
 	;
-	v70 = int32(0)
+	v71 = int32(0)
 	goto L25
 L21:
 	;
@@ -694,14 +669,14 @@ L35:
 	}
 L36:
 	;
-	if (v93^int32(-1)|v70)&int32(1) != 0 {
+	if (v93^int32(-1)|v71)&int32(1) != 0 {
 		goto L37
 	} else {
 		goto L38
 	}
 L37:
 	;
-	v132 = v93 | v70
+	v132 = v93 | v71
 	goto L35
 L38:
 	;
@@ -828,7 +803,7 @@ L53:
 	}
 L54:
 	;
-	v70 = v132
+	v71 = v132
 	goto L25
 L55:
 	;

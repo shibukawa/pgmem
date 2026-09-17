@@ -52,10 +52,10 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 	_ = v62
 	var v63 int32
 	_ = v63
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
+	var v68 int32
+	_ = v68
+	var v72 int32
+	_ = v72
 	var v73 int32
 	_ = v73
 	var v83 int32
@@ -90,10 +90,10 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 	_ = v116
 	var v117 int32
 	_ = v117
-	var v123 int32
-	_ = v123
-	var v124 int32
-	_ = v124
+	var v122 int32
+	_ = v122
+	var v126 int32
+	_ = v126
 	var v127 int32
 	_ = v127
 	var v137 int32
@@ -154,10 +154,10 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 	_ = v210
 	var v211 int32
 	_ = v211
-	var v217 int32
-	_ = v217
-	var v218 int32
-	_ = v218
+	var v216 int32
+	_ = v216
+	var v220 int32
+	_ = v220
 	var v221 int32
 	_ = v221
 	var v231 int32
@@ -249,16 +249,16 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 				if v117 < v113 {
 					v139 = v113
 				} else {
-					v123 = v116 + int32(76)
-					v124 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v123))))
-					if v124 != int32(1) {
+					v122 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v116+int32(0))+76)))
+					if v122 != int32(1) {
 						v139 = v113
 					} else {
-						v127 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v123)+43)))
+						v126 = v116 + int32(76)
+						v127 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v126)+43)))
 						if v127 == int32(0) {
 							v139 = v113
 						} else {
-							v137 = *(*int32)(unsafe.Add(mBase, uint32(v123)+44))
+							v137 = *(*int32)(unsafe.Add(mBase, uint32(v126)+44))
 							v139 = v137
 						}
 					}
@@ -356,16 +356,16 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 				if v63 < v59 {
 					v85 = v59
 				} else {
-					v69 = v62 + int32(76)
-					v70 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v69))))
-					if v70 != int32(1) {
+					v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v62+int32(0))+76)))
+					if v68 != int32(1) {
 						v85 = v59
 					} else {
-						v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v69)+43)))
+						v72 = v62 + int32(76)
+						v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72)+43)))
 						if v73 == int32(0) {
 							v85 = v59
 						} else {
-							v83 = *(*int32)(unsafe.Add(mBase, uint32(v69)+44))
+							v83 = *(*int32)(unsafe.Add(mBase, uint32(v72)+44))
 							v85 = v83
 						}
 					}
@@ -415,16 +415,16 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 		if v211 < v207 {
 			v233 = v207
 		} else {
-			v217 = v210 + int32(76)
-			v218 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v217))))
-			if v218 != int32(1) {
+			v216 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v210+int32(0))+76)))
+			if v216 != int32(1) {
 				v233 = v207
 			} else {
-				v221 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v217)+43)))
+				v220 = v210 + int32(76)
+				v221 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v220)+43)))
 				if v221 == int32(0) {
 					v233 = v207
 				} else {
-					v231 = *(*int32)(unsafe.Add(mBase, uint32(v217)+44))
+					v231 = *(*int32)(unsafe.Add(mBase, uint32(v220)+44))
 					v233 = v231
 				}
 			}

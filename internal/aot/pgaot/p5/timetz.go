@@ -21,148 +21,154 @@ func F_extract_timetz(m *base.Module, l0 int32) int32 {
 func F_timetz_in(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v10 int32
-	_ = v10
 	var v12 int32
 	_ = v12
 	var v14 int32
 	_ = v14
-	var v15 int32
-	_ = v15
 	var v16 int32
 	_ = v16
-	var v26 int32
-	_ = v26
-	var v33 int32
-	_ = v33
-	var v44 int32
-	_ = v44
-	var v47 int32
-	_ = v47
-	var v50 int32
-	_ = v50
-	var v55 int32
-	_ = v55
-	var v56 int32
-	_ = v56
-	var v60 int32
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
+	var v42 int32
+	_ = v42
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v60 int64
 	_ = v60
 	var v61 int32
 	_ = v61
-	var v62 int64
+	var v62 int32
 	_ = v62
 	var v63 int32
 	_ = v63
 	var v64 int32
 	_ = v64
-	var v65 int32
-	_ = v65
 	var v66 int32
 	_ = v66
-	var v68 int32
-	_ = v68
-	var v77 int64
-	_ = v77
-	var v82 int32
+	var v75 int64
+	_ = v75
+	var v80 int32
+	_ = v80
+	var v81 int64
+	_ = v81
+	var v82 int64
 	_ = v82
 	var v85 int64
 	_ = v85
+	var v86 int64
+	_ = v86
 	var v88 int64
 	_ = v88
-	var v91 int64
-	_ = v91
+	var v89 int64
+	_ = v89
 	var v92 int64
 	_ = v92
-	var v94 int64
+	var v94 int32
 	_ = v94
-	var v95 int64
-	_ = v95
-	var v98 int64
-	_ = v98
-	var v100 int32
-	_ = v100
-	v10 = m.G0
-	v12 = v10 - int32(432)
-	m.G0 = v12
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v26 = F_ParseDateTime(m, v16, v12+int32(240), int32(129), v12+int32(128), v12+int32(16), v12+int32(376))
+	v12 = m.G0
+	v14 = v12 - int32(432)
+	m.G0 = v14
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v23 = v14 + int32(128)
+	v25 = v14 + int32(16)
+	v28 = F_ParseDateTime(m, v18, v14+int32(240), int32(129), v23, v25, v14+int32(376))
 	mBase = m.M
-	if v26 == int32(0) {
-		v33 = *(*int32)(unsafe.Add(mBase, uint32(v12)+376))
-		v44 = F_DecodeTimeOnly(m, v12+int32(128), v12+int32(16), v33, v12+int32(124), v12+int32(384), v12+int32(428), v12+int32(380), v12+int32(8))
+	if v28 == int32(0) {
+		v31 = *(*int32)(unsafe.Add(mBase, uint32(v14)+376))
+		v42 = F_DecodeTimeOnly(m, v23, v25, v31, v14+int32(124), v14+int32(384), v14+int32(428), v14+int32(380), v14+int32(8))
 		mBase = m.M
-		v47 = m.ExcPending
-		if v47 != 0 {
+		v45 = m.ExcPending
+		if v45 != 0 {
 			return int32(0)
 		} else {
-			if v44 == int32(0) {
-				v60 = F_palloc(m, int32(16))
+			if v42 == int32(0) {
+				v58 = F_palloc(m, int32(16))
 				mBase = m.M
-				v61 = m.ExcPending
-				if v61 != 0 {
+				v59 = m.ExcPending
+				if v59 != 0 {
 					return int32(0)
 				} else {
-					v62 = int64(*(*int32)(unsafe.Add(mBase, uint32(v12)+428)))
-					v63 = *(*int32)(unsafe.Add(mBase, uint32(v12)+384))
-					v64 = *(*int32)(unsafe.Add(mBase, uint32(v12)+388))
-					v65 = *(*int32)(unsafe.Add(mBase, uint32(v12)+392))
-					v66 = *(*int32)(unsafe.Add(mBase, uint32(v12)+380))
-					*(*int32)(unsafe.Add(mBase, uint32(v60)+8)) = v66
-					v68 = int32(60)
-					v77 = v62 + base.I64_extend_i32_s(v63+(v64+v65*v68)*v68)*int64(1000000)
-					*(*int64)(unsafe.Add(mBase, uint32(v60))) = v77
-					if base.Ui32(int32(6)) < base.Ui32(v14) {
-						v100 = v60
+					v60 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+428)))
+					v61 = *(*int32)(unsafe.Add(mBase, uint32(v14)+384))
+					v62 = *(*int32)(unsafe.Add(mBase, uint32(v14)+388))
+					v63 = *(*int32)(unsafe.Add(mBase, uint32(v14)+392))
+					v64 = *(*int32)(unsafe.Add(mBase, uint32(v14)+380))
+					*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v64
+					v66 = int32(60)
+					v75 = v60 + base.I64_extend_i32_s(v61+(v62+v63*v66)*v66)*int64(1000000)
+					*(*int64)(unsafe.Add(mBase, uint32(v58))) = v75
+					if base.Ui32(int32(6)) < base.Ui32(v17) {
+						v94 = v58
 					} else {
-						v82 = v14 << (uint(int32(3)) % 32)
-						v85 = *(*int64)(unsafe.Add(mBase, uint32(v82)+uint32(_c_F_timetz_in[0])))
-						v88 = *(*int64)(unsafe.Add(mBase, uint32(v82)+uint32(_c_F_timetz_in[1])))
-						if int64(0) <= v77 {
-							v91 = v77 + v88
-							v92 = base.I64_rem_s(v91, v85)
-							v98 = v91 - v92
+						v80 = v17 << (uint(int32(3)) % 32)
+						v81 = *(*int64)(unsafe.Add(mBase, uint32(v80)+uint32(_c_F_timetz_in[0])))
+						v82 = *(*int64)(unsafe.Add(mBase, uint32(v80)+uint32(_c_F_timetz_in[1])))
+						if int64(0) <= v75 {
+							v85 = v75 + v82
+							v86 = base.I64_rem_s(v85, v81)
+							v92 = v85 - v86
 						} else {
-							v94 = v88 - v77
-							v95 = base.I64_rem_s(v94, v85)
-							v98 = v95 - v94
+							v88 = v82 - v75
+							v89 = base.I64_rem_s(v88, v81)
+							v92 = v89 - v88
 						}
-						*(*int64)(unsafe.Add(mBase, uint32(v60))) = v98
-						v100 = v60
+						*(*int64)(unsafe.Add(mBase, uint32(v58))) = v92
+						v94 = v58
 					}
-					m.G0 = v12 + int32(432)
-					return v100
+					m.G0 = v14 + int32(432)
+					return v94
 				}
 			} else {
-				v50 = v44
-				F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(_a_F_timetz_in_0), v15)
+				v48 = v42
+				F_DateTimeParseError(m, v48, v14+int32(8), v18, int32(_a_F_timetz_in_0), v16)
 				mBase = m.M
-				v55 = m.ExcPending
-				if v55 != 0 {
+				v53 = m.ExcPending
+				if v53 != 0 {
 					return int32(0)
 				} else {
-					v56 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v56)
-					v100 = int32(0)
-					m.G0 = v12 + int32(432)
-					return v100
+					v54 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v54)
+					v94 = int32(0)
+					m.G0 = v14 + int32(432)
+					return v94
 				}
 			}
 		}
 	} else {
-		v50 = v26
-		F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(_a_F_timetz_in_0), v15)
+		v48 = v28
+		F_DateTimeParseError(m, v48, v14+int32(8), v18, int32(_a_F_timetz_in_0), v16)
 		mBase = m.M
-		v55 = m.ExcPending
-		if v55 != 0 {
+		v53 = m.ExcPending
+		if v53 != 0 {
 			return int32(0)
 		} else {
-			v56 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v56)
-			v100 = int32(0)
-			m.G0 = v12 + int32(432)
-			return v100
+			v54 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v54)
+			v94 = int32(0)
+			m.G0 = v14 + int32(432)
+			return v94
 		}
 	}
 }
@@ -269,7 +275,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 					if v63 != 0 {
 						return int32(0)
 					} else {
-						v66 = F_DirectFunctionCall1Coll(m, int32(1292), int32(0), v12)
+						v66 = F_DirectFunctionCall1Coll(m, int32(1273), int32(0), v12)
 						mBase = m.M
 						v67 = m.ExcPending
 						if v67 != 0 {
@@ -311,7 +317,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							v66 = F_DirectFunctionCall1Coll(m, int32(1292), int32(0), v12)
+							v66 = F_DirectFunctionCall1Coll(m, int32(1273), int32(0), v12)
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
@@ -353,7 +359,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 							if v38 != 0 {
 								return int32(0)
 							} else {
-								v41 = F_DirectFunctionCall1Coll(m, int32(1292), int32(0), v12)
+								v41 = F_DirectFunctionCall1Coll(m, int32(1273), int32(0), v12)
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -393,7 +399,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 							if v63 != 0 {
 								return int32(0)
 							} else {
-								v66 = F_DirectFunctionCall1Coll(m, int32(1292), int32(0), v12)
+								v66 = F_DirectFunctionCall1Coll(m, int32(1273), int32(0), v12)
 								mBase = m.M
 								v67 = m.ExcPending
 								if v67 != 0 {
@@ -438,7 +444,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 					if v63 != 0 {
 						return int32(0)
 					} else {
-						v66 = F_DirectFunctionCall1Coll(m, int32(1292), int32(0), v12)
+						v66 = F_DirectFunctionCall1Coll(m, int32(1273), int32(0), v12)
 						mBase = m.M
 						v67 = m.ExcPending
 						if v67 != 0 {
@@ -480,7 +486,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							v66 = F_DirectFunctionCall1Coll(m, int32(1292), int32(0), v12)
+							v66 = F_DirectFunctionCall1Coll(m, int32(1273), int32(0), v12)
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
@@ -520,7 +526,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 						if v38 != 0 {
 							return int32(0)
 						} else {
-							v41 = F_DirectFunctionCall1Coll(m, int32(1292), int32(0), v12)
+							v41 = F_DirectFunctionCall1Coll(m, int32(1273), int32(0), v12)
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {
@@ -602,7 +608,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 				if v63 != 0 {
 					return int32(0)
 				} else {
-					v66 = F_DirectFunctionCall1Coll(m, int32(1292), int32(0), v12)
+					v66 = F_DirectFunctionCall1Coll(m, int32(1273), int32(0), v12)
 					mBase = m.M
 					v67 = m.ExcPending
 					if v67 != 0 {

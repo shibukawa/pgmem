@@ -76,8 +76,8 @@ func F_int8_accum(m *base.Module, l0 int32) int32 {
 	_ = v98
 	var v101 int32
 	_ = v101
-	var v103 int32
-	_ = v103
+	var v105 int32
+	_ = v105
 	var v108 int64
 	_ = v108
 	var v111 int32
@@ -134,17 +134,17 @@ func F_int8_accum(m *base.Module, l0 int32) int32 {
 						*(*int64)(unsafe.Add(mBase, uint32(v12)+16)) = int64(16384)
 						v98 = int64(0) - v75
 						v101 = v82
-						v103 = v79 + int32(12)
+						v105 = v79 + int32(12)
 						v108 = v98
 						for {
-							v111 = v103 - int32(2)
+							v111 = v105 - int32(2)
 							v113 = base.I64_div_u_s(v108, int64(10000))
 							v116 = v113*int64(55536) + v108
 							*(*uint16)(unsafe.Add(mBase, uint32(v111))) = uint16(v116)
 							v119 = v101 + int32(1)
 							if base.Ui64(int64(9999)) < base.Ui64(v108) {
 								v101 = v119
-								v103 = v111
+								v105 = v111
 								v108 = v113
 								continue
 							} else {
@@ -164,17 +164,17 @@ func F_int8_accum(m *base.Module, l0 int32) int32 {
 						} else {
 							v98 = v75
 							v101 = v82
-							v103 = v79 + int32(12)
+							v105 = v79 + int32(12)
 							v108 = v98
 							for {
-								v111 = v103 - int32(2)
+								v111 = v105 - int32(2)
 								v113 = base.I64_div_u_s(v108, int64(10000))
 								v116 = v113*int64(55536) + v108
 								*(*uint16)(unsafe.Add(mBase, uint32(v111))) = uint16(v116)
 								v119 = v101 + int32(1)
 								if base.Ui64(int64(9999)) < base.Ui64(v108) {
 									v101 = v119
-									v103 = v111
+									v105 = v111
 									v108 = v113
 									continue
 								} else {
@@ -332,17 +332,17 @@ func F_int8_accum(m *base.Module, l0 int32) int32 {
 								*(*int64)(unsafe.Add(mBase, uint32(v12)+16)) = int64(16384)
 								v98 = int64(0) - v75
 								v101 = v82
-								v103 = v79 + int32(12)
+								v105 = v79 + int32(12)
 								v108 = v98
 								for {
-									v111 = v103 - int32(2)
+									v111 = v105 - int32(2)
 									v113 = base.I64_div_u_s(v108, int64(10000))
 									v116 = v113*int64(55536) + v108
 									*(*uint16)(unsafe.Add(mBase, uint32(v111))) = uint16(v116)
 									v119 = v101 + int32(1)
 									if base.Ui64(int64(9999)) < base.Ui64(v108) {
 										v101 = v119
-										v103 = v111
+										v105 = v111
 										v108 = v113
 										continue
 									} else {
@@ -362,17 +362,17 @@ func F_int8_accum(m *base.Module, l0 int32) int32 {
 								} else {
 									v98 = v75
 									v101 = v82
-									v103 = v79 + int32(12)
+									v105 = v79 + int32(12)
 									v108 = v98
 									for {
-										v111 = v103 - int32(2)
+										v111 = v105 - int32(2)
 										v113 = base.I64_div_u_s(v108, int64(10000))
 										v116 = v113*int64(55536) + v108
 										*(*uint16)(unsafe.Add(mBase, uint32(v111))) = uint16(v116)
 										v119 = v101 + int32(1)
 										if base.Ui64(int64(9999)) < base.Ui64(v108) {
 											v101 = v119
-											v103 = v111
+											v105 = v111
 											v108 = v113
 											continue
 										} else {
@@ -533,17 +533,17 @@ func F_int8_accum(m *base.Module, l0 int32) int32 {
 							*(*int64)(unsafe.Add(mBase, uint32(v12)+16)) = int64(16384)
 							v98 = int64(0) - v75
 							v101 = v82
-							v103 = v79 + int32(12)
+							v105 = v79 + int32(12)
 							v108 = v98
 							for {
-								v111 = v103 - int32(2)
+								v111 = v105 - int32(2)
 								v113 = base.I64_div_u_s(v108, int64(10000))
 								v116 = v113*int64(55536) + v108
 								*(*uint16)(unsafe.Add(mBase, uint32(v111))) = uint16(v116)
 								v119 = v101 + int32(1)
 								if base.Ui64(int64(9999)) < base.Ui64(v108) {
 									v101 = v119
-									v103 = v111
+									v105 = v111
 									v108 = v113
 									continue
 								} else {
@@ -563,17 +563,17 @@ func F_int8_accum(m *base.Module, l0 int32) int32 {
 							} else {
 								v98 = v75
 								v101 = v82
-								v103 = v79 + int32(12)
+								v105 = v79 + int32(12)
 								v108 = v98
 								for {
-									v111 = v103 - int32(2)
+									v111 = v105 - int32(2)
 									v113 = base.I64_div_u_s(v108, int64(10000))
 									v116 = v113*int64(55536) + v108
 									*(*uint16)(unsafe.Add(mBase, uint32(v111))) = uint16(v116)
 									v119 = v101 + int32(1)
 									if base.Ui64(int64(9999)) < base.Ui64(v108) {
 										v101 = v119
-										v103 = v111
+										v105 = v111
 										v108 = v113
 										continue
 									} else {
@@ -650,26 +650,30 @@ func F_int8_cash(m *base.Module, l0 int32) int32 {
 	_ = v17
 	var v18 int32
 	_ = v18
-	var v29 int32
+	var v22 int64
+	_ = v22
+	var v28 int32
+	_ = v28
+	var v29 int64
 	_ = v29
-	var v30 int64
-	_ = v30
-	var v36 int64
-	_ = v36
-	var v38 int32
-	_ = v38
-	var v41 int64
-	_ = v41
-	var v53 int32
+	var v35 int64
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v44 int64
+	_ = v44
+	var v52 int32
+	_ = v52
+	var v53 int64
 	_ = v53
-	var v54 int64
-	_ = v54
-	var v60 int64
-	_ = v60
-	var v62 int32
-	_ = v62
-	var v65 int64
-	_ = v65
+	var v59 int64
+	_ = v59
+	var v61 int32
+	_ = v61
+	var v64 int64
+	_ = v64
+	var v71 int32
+	_ = v71
 	var v72 int32
 	_ = v72
 	var v73 int32
@@ -680,14 +684,12 @@ func F_int8_cash(m *base.Module, l0 int32) int32 {
 	_ = v75
 	var v76 int32
 	_ = v76
-	var v77 int32
+	var v77 int64
 	_ = v77
-	var v78 int64
+	var v78 int32
 	_ = v78
 	var v79 int32
 	_ = v79
-	var v80 int32
-	_ = v80
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v8 = *(*int64)(unsafe.Add(mBase, uint32(v7)))
 	v10 = F_PGLC_localeconv(m)
@@ -704,73 +706,89 @@ func F_int8_cash(m *base.Module, l0 int32) int32 {
 		}
 		v18 = base.I32_extend8_s(v17)
 		if v18 <= int32(0) {
-			v65 = int64(1)
+			v64 = int64(1)
 		} else {
-			if base.Ui32(v17) < base.Ui32(int32(8)) {
-				v41 = int64(1)
-			} else {
-				v29 = int32(0)
-				v30 = int64(1)
+			v22 = int64(1)
+			if base.Ui32(int32(8)) <= base.Ui32(v17) {
+				v28 = int32(0)
+				v29 = v22
 				for {
-					v36 = v30 * int64(100000000)
-					v38 = v29 + int32(8)
-					if v38 != v18&int32(120) {
-						v29 = v38
-						v30 = v36
+					v35 = v29 * int64(100000000)
+					v37 = v28 + int32(8)
+					if v37 != v18&int32(120) {
+						v28 = v37
+						v29 = v35
 						continue
 					} else {
 						break
 					}
 					break
 				}
-				v41 = v36
-			}
-			if v17&int32(7) == int32(0) {
-				v65 = v41
+				if v17&int32(7) == int32(0) {
+					v64 = v35
+				} else {
+					v44 = v35
+					v52 = int32(0)
+					v53 = v44
+					for {
+						v59 = v53 * int64(10)
+						v61 = v52 + int32(1)
+						if v61 != v18&int32(7) {
+							v52 = v61
+							v53 = v59
+							continue
+						} else {
+							break
+						}
+						break
+					}
+					v64 = v59
+				}
 			} else {
-				v53 = int32(0)
-				v54 = v41
+				v44 = v22
+				v52 = int32(0)
+				v53 = v44
 				for {
-					v60 = v54 * int64(10)
-					v62 = v53 + int32(1)
-					if v62 != v18&int32(7) {
-						v53 = v62
-						v54 = v60
+					v59 = v53 * int64(10)
+					v61 = v52 + int32(1)
+					if v61 != v18&int32(7) {
+						v52 = v61
+						v53 = v59
 						continue
 					} else {
 						break
 					}
 					break
 				}
-				v65 = v60
+				v64 = v59
 			}
 		}
-		v72 = F_Int64GetDatum(m, v8)
+		v71 = F_Int64GetDatum(m, v8)
 		mBase = m.M
-		v73 = m.ExcPending
-		if v73 != 0 {
+		v72 = m.ExcPending
+		if v72 != 0 {
 			return int32(0)
 		} else {
-			v74 = F_Int64GetDatum(m, v65)
+			v73 = F_Int64GetDatum(m, v64)
 			mBase = m.M
-			v75 = m.ExcPending
-			if v75 != 0 {
+			v74 = m.ExcPending
+			if v74 != 0 {
 				return int32(0)
 			} else {
-				v76 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v72, v74)
+				v75 = F_DirectFunctionCall2Coll(m, int32(1263), int32(0), v71, v73)
 				mBase = m.M
-				v77 = m.ExcPending
-				if v77 != 0 {
+				v76 = m.ExcPending
+				if v76 != 0 {
 					return int32(0)
 				} else {
-					v78 = *(*int64)(unsafe.Add(mBase, uint32(v76)))
-					v79 = F_Int64GetDatum(m, v78)
+					v77 = *(*int64)(unsafe.Add(mBase, uint32(v75)))
+					v78 = F_Int64GetDatum(m, v77)
 					mBase = m.M
-					v80 = m.ExcPending
-					if v80 != 0 {
+					v79 = m.ExcPending
+					if v79 != 0 {
 						return int32(0)
 					} else {
-						return v79
+						return v78
 					}
 				}
 			}

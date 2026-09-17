@@ -10,76 +10,71 @@ func F_get_subscription_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v21 int32
-	_ = v21
-	var v24 int32
-	_ = v24
-	var v28 int32
-	_ = v28
-	var v33 int32
-	_ = v33
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v30 int32
+	_ = v30
+	var v35 int32
+	_ = v35
 	v3 = int32(0)
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v11 = *(*int32)(unsafe.Add(mBase, _c_F_get_subscription_oid[0]))
-	v14 = F_GetSysCacheOid(m, int32(66), v11, l0, v3, v3)
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v10 = *(*int32)(unsafe.Add(mBase, _c_F_get_subscription_oid[0]))
+	v13 = F_GetSysCacheOid(m, int32(66), v10, l0, v3, v3)
 	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v16 = m.ExcPending
+	if v16 != 0 {
 		return int32(0)
 	} else {
-		if l1 != 0 {
-			m.G0 = v7 + int32(16)
-			return v14
-		} else {
-			if v14 != 0 {
-				m.G0 = v7 + int32(16)
-				return v14
+		if l1|v13 == int32(0) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v23 = m.ExcPending
+			if v23 != 0 {
+				return int32(0)
 			} else {
-				F_errstart_cold(m, int32(21), int32(0))
+				F_errcode(m, int32(67137668))
 				mBase = m.M
-				v21 = m.ExcPending
-				if v21 != 0 {
+				v26 = m.ExcPending
+				if v26 != 0 {
 					return int32(0)
 				} else {
-					F_errcode(m, int32(67137668))
+					*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
+					F_errmsg(m, int32(_a_F_get_subscription_oid_0), v6)
 					mBase = m.M
-					v24 = m.ExcPending
-					if v24 != 0 {
+					v30 = m.ExcPending
+					if v30 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(_a_F_get_subscription_oid_0), v7)
+						F_errfinish(m, int32(_a_F_get_subscription_oid_1), int32(3824), int32(_a_F_get_subscription_oid_2))
 						mBase = m.M
-						v28 = m.ExcPending
-						if v28 != 0 {
+						v35 = m.ExcPending
+						if v35 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_get_subscription_oid_1), int32(3824), int32(_a_F_get_subscription_oid_2))
-							mBase = m.M
-							v33 = m.ExcPending
-							if v33 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
+							base.Wasm_trap_unreachable()
+							for {
 							}
 						}
 					}
 				}
 			}
+		} else {
+			m.G0 = v6 + int32(16)
+			return v13
 		}
 	}
 }

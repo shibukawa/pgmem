@@ -8,6 +8,8 @@ import (
 func F_PrepareTempTablespaces(m *base.Module) {
 	mBase := m.M
 	_ = mBase
+	var v1 int32
+	_ = v1
 	var v9 int32
 	_ = v9
 	var v11 int32
@@ -44,12 +46,12 @@ func F_PrepareTempTablespaces(m *base.Module) {
 	_ = v65
 	var v66 int32
 	_ = v66
-	var v67 int32
-	_ = v67
-	var v72 int32
-	_ = v72
-	var v78 int32
-	_ = v78
+	var v69 int32
+	_ = v69
+	var v74 int32
+	_ = v74
+	var v77 int32
+	_ = v77
 	var v80 int32
 	_ = v80
 	var v84 int32
@@ -70,16 +72,16 @@ func F_PrepareTempTablespaces(m *base.Module) {
 	_ = v103
 	var v104 int32
 	_ = v104
-	var v112 int32
-	_ = v112
+	var v113 int32
+	_ = v113
 	var v116 int32
 	_ = v116
 	var v117 int32
 	_ = v117
-	var v119 int32
-	_ = v119
-	var v140 int64
-	_ = v140
+	var v121 int32
+	_ = v121
+	var v139 int64
+	_ = v139
 	var v142 int32
 	_ = v142
 	var v153 int32
@@ -88,6 +90,7 @@ func F_PrepareTempTablespaces(m *base.Module) {
 	_ = v154
 	var v156 int32
 	_ = v156
+	v1 = int32(0)
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
@@ -132,7 +135,7 @@ L5:
 	if v153 != 0 {
 		goto L6
 	} else {
-		goto L43
+		goto L42
 	}
 L6:
 	;
@@ -180,7 +183,7 @@ L14:
 	goto L15
 L15:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_PrepareTempTablespaces[5])) = v37
+	*(*int32)(unsafe.Add(mBase, _c_F_PrepareTempTablespaces[5])) = int32(0)
 	goto L12
 L16:
 	;
@@ -204,81 +207,79 @@ L18:
 L19:
 	;
 	v66 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-	if v66 != 0 {
-		goto L22
+	if v66 == int32(0) {
+		goto L21
 	} else {
-		goto L23
+		goto L22
 	}
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_PrepareTempTablespaces[0])) = v119
+	*(*int32)(unsafe.Add(mBase, _c_F_PrepareTempTablespaces[0])) = v121
 	*(*int32)(unsafe.Add(mBase, _c_F_PrepareTempTablespaces[3])) = v64
-	if int32(2) <= v119 {
-		goto L40
+	if int32(2) <= v121 {
+		goto L39
 	} else {
-		goto L41
+		goto L40
 	}
 L21:
 	;
-	v72 = int32(0)
-	v78 = int32(0)
-	goto L26
+	v121 = v1
+	goto L20
 L22:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(v66)+4))
-	if int32(0) < v67 {
-		goto L21
-	} else {
-		goto L25
-	}
+	goto L23
 L23:
 	;
-	goto L24
+	v69 = *(*int32)(unsafe.Add(mBase, uint32(v66)+4))
+	if v69 <= int32(0) {
+		v121 = v1
+		goto L20
+	} else {
+		goto L24
+	}
 L24:
 	;
-	v119 = int32(0)
-	goto L20
+	v74 = v1
+	v77 = v1
+	goto L25
 L25:
 	;
-	goto L24
-L26:
-	;
 	v80 = *(*int32)(unsafe.Add(mBase, uint32(v66)+12))
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v80+v78<<(uint(int32(2))%32))))
+	v84 = *(*int32)(unsafe.Add(mBase, uint32(v80+v77<<(uint(int32(2))%32))))
 	v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v84))))
 	if v85 == int32(0) {
-		goto L30
+		goto L29
 	} else {
-		goto L31
+		goto L30
 	}
+L26:
+	;
+	v121 = v113
+	goto L20
 L27:
 	;
-	v119 = v112
-	goto L20
-L28:
-	;
-	v116 = v78 + int32(1)
+	v116 = v77 + int32(1)
 	v117 = *(*int32)(unsafe.Add(mBase, uint32(v66)+4))
 	if v116 < v117 {
-		v72 = v112
-		v78 = v116
-		goto L26
+		v74 = v113
+		v77 = v116
+		goto L25
 	} else {
-		goto L38
+		goto L37
 	}
+L28:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v64+v74<<(uint(int32(2))%32)))) = v104
+	v113 = v74 + int32(1)
+	goto L27
 L29:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v64+v72<<(uint(int32(2))%32)))) = v104
-	v112 = v72 + int32(1)
+	v104 = int32(0)
 	goto L28
 L30:
 	;
-	v104 = int32(0)
-	goto L29
+	goto L31
 L31:
-	;
-	goto L32
-L32:
 	;
 	v90 = F_get_tablespace_oid(m, v84, int32(1))
 	mBase = m.M
@@ -286,26 +287,26 @@ L32:
 	if v91 != 0 {
 		goto L6
 	} else {
+		goto L32
+	}
+L32:
+	;
+	if v90 == int32(0) {
+		v113 = v74
+		goto L27
+	} else {
 		goto L33
 	}
 L33:
 	;
-	if v90 == int32(0) {
-		v112 = v72
+	v96 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareTempTablespaces[6]))
+	if v90 == v96 {
+		v104 = int32(0)
 		goto L28
 	} else {
 		goto L34
 	}
 L34:
-	;
-	v96 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareTempTablespaces[6]))
-	if v90 == v96 {
-		v104 = int32(0)
-		goto L29
-	} else {
-		goto L35
-	}
-L35:
 	;
 	v100 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareTempTablespaces[7]))
 	v102 = F_object_aclcheck(m, int32(1213), v90, v100, int64(512))
@@ -314,41 +315,41 @@ L35:
 	if v103 != 0 {
 		goto L6
 	} else {
+		goto L35
+	}
+L35:
+	;
+	if v102 != 0 {
+		v113 = v74
+		goto L27
+	} else {
 		goto L36
 	}
 L36:
 	;
-	if v102 != 0 {
-		v112 = v72
-		goto L28
-	} else {
-		goto L37
-	}
+	v104 = v90
+	goto L28
 L37:
 	;
-	v104 = v90
-	goto L29
+	goto L26
 L38:
 	;
-	goto L27
+	goto L5
 L39:
 	;
-	goto L5
+	v139 = F_pg_prng_uint64_range(m, int32(_a_F_PrepareTempTablespaces_0), int64(0), base.I64_extend_i32_u(v121-int32(1)))
+	mBase = m.M
+	v142 = base.I32_wrap_i64(v139)
+	goto L41
 L40:
 	;
-	v140 = F_pg_prng_uint64_range(m, int32(_a_F_PrepareTempTablespaces_0), int64(0), base.I64_extend_i32_u(v119-int32(1)))
-	mBase = m.M
-	v142 = base.I32_wrap_i64(v140)
-	goto L42
+	v142 = int32(0)
+	goto L41
 L41:
 	;
-	v142 = int32(0)
-	goto L42
-L42:
-	;
 	*(*int32)(unsafe.Add(mBase, _c_F_PrepareTempTablespaces[5])) = v142
-	goto L39
-L43:
+	goto L38
+L42:
 	;
 	v154 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
 	F_list_free(m, v154)
@@ -357,9 +358,9 @@ L43:
 	if v156 != 0 {
 		goto L6
 	} else {
-		goto L44
+		goto L43
 	}
-L44:
+L43:
 	;
 	goto L1
 }

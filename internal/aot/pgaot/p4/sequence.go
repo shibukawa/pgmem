@@ -90,7 +90,7 @@ func F_SequenceChangePersistence(m *base.Module, l0 int32, l1 int32) {
 							if v40 != 0 {
 								return
 							} else {
-								F_sequence_close(m, v17, int32(0))
+								F_relation_close(m, v17, int32(0))
 								mBase = m.M
 								v43 = m.ExcPending
 								if v43 != 0 {
@@ -133,7 +133,7 @@ func F_SequenceChangePersistence(m *base.Module, l0 int32, l1 int32) {
 									if v40 != 0 {
 										return
 									} else {
-										F_sequence_close(m, v17, int32(0))
+										F_relation_close(m, v17, int32(0))
 										mBase = m.M
 										v43 = m.ExcPending
 										if v43 != 0 {
@@ -174,7 +174,7 @@ func F_SequenceChangePersistence(m *base.Module, l0 int32, l1 int32) {
 										if v40 != 0 {
 											return
 										} else {
-											F_sequence_close(m, v17, int32(0))
+											F_relation_close(m, v17, int32(0))
 											mBase = m.M
 											v43 = m.ExcPending
 											if v43 != 0 {
@@ -219,7 +219,7 @@ func F_SequenceChangePersistence(m *base.Module, l0 int32, l1 int32) {
 											if v40 != 0 {
 												return
 											} else {
-												F_sequence_close(m, v17, int32(0))
+												F_relation_close(m, v17, int32(0))
 												mBase = m.M
 												v43 = m.ExcPending
 												if v43 != 0 {
@@ -267,7 +267,7 @@ func F_SequenceChangePersistence(m *base.Module, l0 int32, l1 int32) {
 									if v40 != 0 {
 										return
 									} else {
-										F_sequence_close(m, v17, int32(0))
+										F_relation_close(m, v17, int32(0))
 										mBase = m.M
 										v43 = m.ExcPending
 										if v43 != 0 {
@@ -498,8 +498,8 @@ func F_sequenceIsOwned(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	_ = v65
 	var v66 int32
 	_ = v66
-	var v73 int32
-	_ = v73
+	var v74 int32
+	_ = v74
 	var v76 int32
 	_ = v76
 	var v79 int32
@@ -572,7 +572,7 @@ L6:
 L7:
 	;
 	if v38 == int32(0) {
-		v73 = v5
+		v74 = v5
 		goto L5
 	} else {
 		goto L8
@@ -594,7 +594,7 @@ L9:
 	}
 L10:
 	;
-	v73 = v5
+	v74 = v5
 	goto L5
 L11:
 	;
@@ -620,7 +620,7 @@ L13:
 	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v60
 	v62 = *(*int32)(unsafe.Add(mBase, uint32(v54)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(l3))) = v62
-	v73 = int32(1)
+	v74 = int32(1)
 	goto L5
 L14:
 	;
@@ -635,7 +635,7 @@ L15:
 	goto L10
 L16:
 	;
-	F_sequence_close(m, v15, int32(1))
+	F_relation_close(m, v15, int32(1))
 	mBase = m.M
 	v79 = m.ExcPending
 	if v79 != 0 {
@@ -646,5 +646,5 @@ L16:
 L17:
 	;
 	m.G0 = v11 + int32(96)
-	return v73
+	return v74
 }

@@ -18,7 +18,7 @@ func F_dsa_attach_in_place(m *base.Module, l0 int32, l1 int32) int32 {
 		return int32(0)
 	} else {
 		if l1 != 0 {
-			F_on_dsm_detach(m, l1, int32(1789), l0)
+			F_on_dsm_detach(m, l1, int32(1770), l0)
 			v11 = m.ExcPending
 			if v11 != 0 {
 				return int32(0)

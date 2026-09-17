@@ -69,14 +69,16 @@ func F_pg_lsn_out(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int64
 	_ = v12
+	var v15 int32
+	_ = v15
 	var v18 int32
 	_ = v18
 	var v21 int32
 	_ = v21
-	var v24 int32
-	_ = v24
-	var v25 int32
-	_ = v25
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
 	v4 = m.G0
 	v6 = v4 - int32(48)
 	m.G0 = v6
@@ -85,20 +87,21 @@ func F_pg_lsn_out(m *base.Module, l0 int32) int32 {
 	*(*uint32)(unsafe.Add(mBase, uint32(v6)+4)) = uint32(v9)
 	v12 = int64(base.Ui64(v9) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v6))) = uint32(v12)
-	v18 = F_pg_snprintf(m, v6+int32(16), int32(18), int32(_a_F_pg_lsn_out_0), v6)
+	v15 = v6 + int32(16)
+	v18 = F_pg_snprintf(m, v15, int32(18), int32(_a_F_pg_lsn_out_0), v6)
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
 		return int32(0)
 	} else {
-		v24 = F_pstrdup(m, v6+int32(16))
+		v22 = F_pstrdup(m, v15)
 		mBase = m.M
-		v25 = m.ExcPending
-		if v25 != 0 {
+		v23 = m.ExcPending
+		if v23 != 0 {
 			return int32(0)
 		} else {
 			m.G0 = v6 + int32(48)
-			return v24
+			return v22
 		}
 	}
 }

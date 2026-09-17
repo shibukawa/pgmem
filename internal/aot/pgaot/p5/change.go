@@ -28,26 +28,26 @@ func F_ChangeVarNodesExtended(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v34
 	var v37 int32
 	_ = v37
-	var v46 int32
-	_ = v46
-	var v48 int32
-	_ = v48
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
+	var v51 int32
+	_ = v51
 	var v52 int32
 	_ = v52
-	var v53 int32
-	_ = v53
+	var v56 int32
+	_ = v56
 	var v57 int32
 	_ = v57
-	var v58 int32
-	_ = v58
+	var v68 int32
+	_ = v68
 	var v69 int32
 	_ = v69
 	var v70 int32
 	_ = v70
 	var v71 int32
 	_ = v71
-	var v72 int32
-	_ = v72
 	v5 = int32(0)
 	v8 = m.G0
 	v10 = v8 - int32(16)
@@ -57,10 +57,10 @@ func F_ChangeVarNodesExtended(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
 	if l0 == v5 {
-		v71 = F_ChangeVarNodes_walker(m, l0, v10)
+		v70 = F_ChangeVarNodes_walker(m, l0, v10)
 		mBase = m.M
-		v72 = m.ExcPending
-		if v72 != 0 {
+		v71 = m.ExcPending
+		if v71 != 0 {
 			return
 		} else {
 			m.G0 = v10 + int32(16)
@@ -69,10 +69,10 @@ func F_ChangeVarNodesExtended(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	} else {
 		v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		if v19 != int32(67) {
-			v71 = F_ChangeVarNodes_walker(m, l0, v10)
+			v70 = F_ChangeVarNodes_walker(m, l0, v10)
 			mBase = m.M
-			v72 = m.ExcPending
-			if v72 != 0 {
+			v71 = m.ExcPending
+			if v71 != 0 {
 				return
 			} else {
 				m.G0 = v10 + int32(16)
@@ -104,19 +104,19 @@ func F_ChangeVarNodesExtended(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				v37 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
 				if v37 <= int32(0) {
 				} else {
-					v46 = int32(0)
+					v45 = v5
 					for {
-						v48 = *(*int32)(unsafe.Add(mBase, uint32(v34)+12))
-						v52 = *(*int32)(unsafe.Add(mBase, uint32(v48+v46<<(uint(int32(2))%32))))
-						v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+4))
-						if l1 == v53 {
-							*(*int32)(unsafe.Add(mBase, uint32(v52)+4)) = l2
+						v47 = *(*int32)(unsafe.Add(mBase, uint32(v34)+12))
+						v51 = *(*int32)(unsafe.Add(mBase, uint32(v47+v45<<(uint(int32(2))%32))))
+						v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+4))
+						if l1 == v52 {
+							*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = l2
 						} else {
 						}
-						v57 = v46 + int32(1)
-						v58 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
-						if v57 < v58 {
-							v46 = v57
+						v56 = v45 + int32(1)
+						v57 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
+						if v56 < v57 {
+							v45 = v56
 							continue
 						} else {
 							break
@@ -125,10 +125,10 @@ func F_ChangeVarNodesExtended(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					}
 				}
 			}
-			v69 = F_query_tree_walker_impl(m, l0, int32(1049), v10, int32(0))
+			v68 = F_query_tree_walker_impl(m, l0, int32(1049), v10, int32(0))
 			mBase = m.M
-			v70 = m.ExcPending
-			if v70 != 0 {
+			v69 = m.ExcPending
+			if v69 != 0 {
 				return
 			} else {
 				m.G0 = v10 + int32(16)
@@ -163,7 +163,7 @@ func F_changeDependencyOnOwner(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v18 != 0 {
 				return
 			} else {
-				F_sequence_close(m, v7, int32(3))
+				F_relation_close(m, v7, int32(3))
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return

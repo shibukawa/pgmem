@@ -8,102 +8,102 @@ import (
 func F_plpgsql_build_recfield(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v19 int32
-	_ = v19
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
 	var v24 int32
 	_ = v24
+	var v27 int32
+	_ = v27
 	var v28 int32
 	_ = v28
-	var v29 int32
-	_ = v29
+	var v31 int32
+	_ = v31
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
-	var v36 int32
-	_ = v36
+	var v35 int32
+	_ = v35
+	var v42 int32
+	_ = v42
 	var v43 int32
 	_ = v43
-	var v44 int32
-	_ = v44
-	var v48 int32
-	_ = v48
-	var v57 int32
-	_ = v57
-	var v60 int32
-	_ = v60
-	var v63 int32
-	_ = v63
+	var v47 int32
+	_ = v47
+	var v55 int32
+	_ = v55
+	var v58 int32
+	_ = v58
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
 	var v64 int32
 	_ = v64
-	var v66 int32
-	_ = v66
+	var v69 int32
+	_ = v69
+	var v71 int32
+	_ = v71
 	var v73 int32
 	_ = v73
-	var v76 int32
-	_ = v76
-	var v79 int32
-	_ = v79
-	var v91 int32
-	_ = v91
-	var v92 int32
-	_ = v92
-	var v96 int32
-	_ = v96
-	var v97 int32
-	_ = v97
+	var v82 int32
+	_ = v82
+	var v83 int32
+	_ = v83
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
 	var v98 int32
 	_ = v98
-	var v108 int32
-	_ = v108
-	var v113 int32
-	_ = v113
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-	if int32(0) <= v6 {
+	var v103 int32
+	_ = v103
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	if int32(0) <= v5 {
 		goto L2
 	} else {
 		goto L3
 	}
 L1:
 	;
-	return v113
+	return v103
 L2:
 	;
-	v10 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[0]))
-	v13 = v6
+	v9 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[0]))
+	v12 = v5
 	goto L5
 L3:
 	;
 	goto L4
 L4:
 	;
-	v57 = F_palloc0(m, int32(48))
+	v55 = F_palloc0(m, int32(48))
 	mBase = m.M
-	v60 = m.ExcPending
-	if v60 != 0 {
-		goto L17
+	v58 = m.ExcPending
+	if v58 != 0 {
+		goto L16
 	} else {
-		goto L18
+		goto L17
 	}
 L5:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(v10+v13<<(uint(int32(2))%32))))
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+8))
-	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
-	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20))))
-	if v24 == int32(0) {
-		v43 = v23
-		v44 = v24
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(v9+v12<<(uint(int32(2))%32))))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+8))
+	v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18))))
+	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
+	if base.B2i32(v21 == int32(0))|base.B2i32(v21 != v24) != 0 {
+		v42 = v21
+		v43 = v24
 		goto L8
 	} else {
 		goto L9
@@ -113,131 +113,122 @@ L6:
 	goto L4
 L7:
 	;
-	if v44-v43 == int32(0) {
-		v113 = v19
+	if v42-v43 == int32(0) {
+		v103 = v17
 		goto L1
 	} else {
-		goto L15
+		goto L14
 	}
 L8:
 	;
 	goto L7
 L9:
 	;
-	if v23 != v24 {
-		v43 = v23
-		v44 = v24
-		goto L8
-	} else {
-		goto L10
-	}
+	v27 = v18
+	v28 = l1
+	goto L10
 L10:
 	;
-	v28 = v20
-	v29 = l1
-	goto L11
+	v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+1)))
+	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v27)+1)))
+	if v32 == int32(0) {
+		v42 = v32
+		v43 = v31
+		goto L8
+	} else {
+		goto L12
+	}
 L11:
 	;
-	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29)+1)))
-	v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+1)))
-	if v33 == int32(0) {
-		v43 = v32
-		v44 = v33
-		goto L8
+	v42 = v32
+	v43 = v31
+	goto L8
+L12:
+	;
+	v35 = int32(1)
+	if v32 == v31 {
+		v27 = v27 + v35
+		v28 = v28 + v35
+		goto L10
 	} else {
 		goto L13
 	}
-L12:
-	;
-	v43 = v32
-	v44 = v33
-	goto L8
 L13:
 	;
-	v36 = int32(1)
-	if v32 == v33 {
-		v28 = v28 + v36
-		v29 = v29 + v36
-		goto L11
-	} else {
-		goto L14
-	}
+	goto L11
 L14:
 	;
-	goto L12
-L15:
-	;
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v19)+16))
-	if int32(0) <= v48 {
-		v13 = v48
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(v17)+16))
+	if int32(0) <= v47 {
+		v12 = v47
 		goto L5
 	} else {
-		goto L16
+		goto L15
 	}
-L16:
+L15:
 	;
 	goto L6
-L17:
+L16:
 	;
 	return int32(0)
+L17:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v55))) = int32(3)
+	v61 = F_pstrdup(m, l1)
+	mBase = m.M
+	v62 = m.ExcPending
+	if v62 != 0 {
+		goto L16
+	} else {
+		goto L18
+	}
 L18:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v57))) = int32(3)
-	v63 = F_pstrdup(m, l1)
-	mBase = m.M
-	v64 = m.ExcPending
-	if v64 != 0 {
-		goto L17
-	} else {
+	*(*int32)(unsafe.Add(mBase, uint32(v55)+8)) = v61
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	*(*int64)(unsafe.Add(mBase, uint32(v55)+24)) = int64(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v55)+12)) = v64
+	v69 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[0]))
+	v71 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[1]))
+	v73 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[2]))
+	if v71 == v73 {
 		goto L19
+	} else {
+		goto L20
 	}
 L19:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v57)+8)) = v63
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	*(*int64)(unsafe.Add(mBase, uint32(v57)+24)) = int64(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v57)+12)) = v66
-	v73 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[0]))
-	v76 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[1]))
-	v79 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[2]))
-	if v76 == v79 {
-		goto L20
+	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[2])) = v71 << (uint(int32(1)) % 32)
+	v82 = F_repalloc(m, v69, v71<<(uint(int32(3))%32))
+	mBase = m.M
+	v83 = m.ExcPending
+	if v83 != 0 {
+		goto L16
 	} else {
-		goto L21
+		goto L22
 	}
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[2])) = v76 << (uint(int32(1)) % 32)
-	v91 = F_repalloc(m, v73, v76<<(uint(int32(3))%32))
-	mBase = m.M
-	v92 = m.ExcPending
-	if v92 != 0 {
-		goto L17
-	} else {
-		goto L23
-	}
+	v87 = v71
+	v88 = v69
+	goto L21
 L21:
 	;
-	v97 = v76
-	v98 = v73
-	goto L22
+	*(*int32)(unsafe.Add(mBase, uint32(v55)+4)) = v87
+	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[1])) = v87 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v88+v87<<(uint(int32(2))%32)))) = v55
+	v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	*(*int32)(unsafe.Add(mBase, uint32(v55)+16)) = v98
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v87
+	v103 = v55
+	goto L1
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v57)+4)) = v97
-	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[1])) = v97 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v98+v97<<(uint(int32(2))%32)))) = v57
-	v108 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-	*(*int32)(unsafe.Add(mBase, uint32(v57)+16)) = v108
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v97
-	v113 = v57
-	goto L1
-L23:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[0])) = v91
-	v96 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[1]))
-	v97 = v96
-	v98 = v91
-	goto L22
+	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[0])) = v82
+	v86 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_build_recfield[1]))
+	v87 = v86
+	v88 = v82
+	goto L21
 }
 func F_plpgsql_compile(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
@@ -268,68 +259,68 @@ func F_plpgsql_compile(m *base.Module, l0 int32, l1 int32) int32 {
 func F_plpgsql_create_econtext(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v9 int32
-	_ = v9
+	var v4 int32
+	_ = v4
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
-	var v13 int32
-	_ = v13
 	var v15 int32
 	_ = v15
 	var v17 int32
 	_ = v17
 	var v18 int32
 	_ = v18
-	var v22 int32
-	_ = v22
+	var v23 int32
+	_ = v23
 	var v26 int32
 	_ = v26
-	var v29 int32
-	_ = v29
-	var v33 int32
-	_ = v33
+	var v28 int32
+	_ = v28
+	var v32 int32
+	_ = v32
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
 	var v40 int32
 	_ = v40
+	var v42 int32
+	_ = v42
 	var v43 int32
 	_ = v43
 	var v44 int32
 	_ = v44
 	var v46 int32
 	_ = v46
-	var v47 int32
-	_ = v47
 	var v48 int32
 	_ = v48
-	var v50 int32
-	_ = v50
+	var v49 int32
+	_ = v49
 	var v52 int32
 	_ = v52
-	var v53 int32
-	_ = v53
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
 	var v56 int32
 	_ = v56
-	var v58 int32
-	_ = v58
 	var v59 int32
 	_ = v59
 	var v60 int32
 	_ = v60
+	var v62 int32
+	_ = v62
 	var v63 int32
 	_ = v63
-	var v64 int32
-	_ = v64
-	var v66 int32
-	_ = v66
-	var v67 int32
-	_ = v67
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
-	if v5 == int32(0) {
-		v9 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[0]))
-		if v9 == int32(0) {
-			v12 = int32(_a_F_plpgsql_create_econtext_0)
-			v13 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[1]))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
+	if v4 == int32(0) {
+		v8 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[0]))
+		if v8 == int32(0) {
+			v11 = int32(_a_F_plpgsql_create_econtext_0)
+			v12 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[1]))
 			v15 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
 			*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[1])) = v15
 			v17 = F_CreateExecutorState(m)
@@ -338,330 +329,330 @@ func F_plpgsql_create_econtext(m *base.Module, l0 int32) {
 			if v18 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[1])) = v13
+				*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[1])) = v12
 				*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[0])) = v17
-				v22 = v17
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+80)) = v22
-				v26 = v22
-				v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+84))
-				if v29 == int32(0) {
-					v33 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3]))
-					if v33 == int32(0) {
-						v40 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[4]))
-						v43 = F_ResourceOwnerCreate(m, v40, int32(_a_F_plpgsql_create_econtext_1))
+				v23 = v17
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+80)) = v23
+				v26 = v23
+				v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+84))
+				if v28 == int32(0) {
+					v32 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3]))
+					if v32 == int32(0) {
+						v37 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[4]))
+						v39 = F_ResourceOwnerCreate(m, v37, int32(_a_F_plpgsql_create_econtext_1))
 						mBase = m.M
-						v44 = m.ExcPending
-						if v44 != 0 {
+						v40 = m.ExcPending
+						if v40 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3])) = v43
-							v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
-							v47 = v46
-							v48 = v43
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v48
-							v50 = v47
-							v52 = F_CreateExprContext(m, v50)
+							*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3])) = v39
+							v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
+							v43 = v42
+							v44 = v39
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v44
+							v46 = v43
+							v48 = F_CreateExprContext(m, v46)
 							mBase = m.M
-							v53 = m.ExcPending
-							if v53 != 0 {
+							v49 = m.ExcPending
+							if v49 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v52
-								v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
-								v58 = F_MemoryContextAlloc(m, v56, int32(12))
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v48
+								v52 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
+								v54 = F_MemoryContextAlloc(m, v52, int32(12))
 								mBase = m.M
-								v59 = m.ExcPending
-								if v59 != 0 {
+								v55 = m.ExcPending
+								if v55 != 0 {
 									return
 								} else {
-									v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-									*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
-									v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
-									v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v64
-									v66 = int32(_a_F_plpgsql_create_econtext_2)
-									v67 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
-									*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v67
-									*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v58
+									v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+									*(*int32)(unsafe.Add(mBase, uint32(v54))) = v56
+									v59 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
+									v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v54)+4)) = v60
+									v62 = int32(_a_F_plpgsql_create_econtext_2)
+									v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
+									*(*int32)(unsafe.Add(mBase, uint32(v54)+8)) = v63
+									*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v54
 									return
 								}
 							}
 						}
 					} else {
-						v47 = v26
-						v48 = v33
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v48
-						v50 = v47
-						v52 = F_CreateExprContext(m, v50)
+						v43 = v26
+						v44 = v32
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v44
+						v46 = v43
+						v48 = F_CreateExprContext(m, v46)
 						mBase = m.M
-						v53 = m.ExcPending
-						if v53 != 0 {
+						v49 = m.ExcPending
+						if v49 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v52
-							v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
-							v58 = F_MemoryContextAlloc(m, v56, int32(12))
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v48
+							v52 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
+							v54 = F_MemoryContextAlloc(m, v52, int32(12))
 							mBase = m.M
-							v59 = m.ExcPending
-							if v59 != 0 {
+							v55 = m.ExcPending
+							if v55 != 0 {
 								return
 							} else {
-								v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-								*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
-								v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
-								v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v64
-								v66 = int32(_a_F_plpgsql_create_econtext_2)
-								v67 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
-								*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v67
-								*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v58
+								v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+								*(*int32)(unsafe.Add(mBase, uint32(v54))) = v56
+								v59 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
+								v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v54)+4)) = v60
+								v62 = int32(_a_F_plpgsql_create_econtext_2)
+								v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
+								*(*int32)(unsafe.Add(mBase, uint32(v54)+8)) = v63
+								*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v54
 								return
 							}
 						}
 					}
 				} else {
-					v50 = v26
-					v52 = F_CreateExprContext(m, v50)
+					v46 = v26
+					v48 = F_CreateExprContext(m, v46)
 					mBase = m.M
-					v53 = m.ExcPending
-					if v53 != 0 {
+					v49 = m.ExcPending
+					if v49 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v52
-						v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
-						v58 = F_MemoryContextAlloc(m, v56, int32(12))
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v48
+						v52 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
+						v54 = F_MemoryContextAlloc(m, v52, int32(12))
 						mBase = m.M
-						v59 = m.ExcPending
-						if v59 != 0 {
+						v55 = m.ExcPending
+						if v55 != 0 {
 							return
 						} else {
-							v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-							*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
-							v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
-							v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
-							*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v64
-							v66 = int32(_a_F_plpgsql_create_econtext_2)
-							v67 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
-							*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v67
-							*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v58
+							v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+							*(*int32)(unsafe.Add(mBase, uint32(v54))) = v56
+							v59 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
+							v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+							*(*int32)(unsafe.Add(mBase, uint32(v54)+4)) = v60
+							v62 = int32(_a_F_plpgsql_create_econtext_2)
+							v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
+							*(*int32)(unsafe.Add(mBase, uint32(v54)+8)) = v63
+							*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v54
 							return
 						}
 					}
 				}
 			}
 		} else {
-			v22 = v9
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+80)) = v22
-			v26 = v22
-			v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+84))
-			if v29 == int32(0) {
-				v33 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3]))
-				if v33 == int32(0) {
-					v40 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[4]))
-					v43 = F_ResourceOwnerCreate(m, v40, int32(_a_F_plpgsql_create_econtext_1))
+			v23 = v8
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+80)) = v23
+			v26 = v23
+			v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+84))
+			if v28 == int32(0) {
+				v32 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3]))
+				if v32 == int32(0) {
+					v37 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[4]))
+					v39 = F_ResourceOwnerCreate(m, v37, int32(_a_F_plpgsql_create_econtext_1))
 					mBase = m.M
-					v44 = m.ExcPending
-					if v44 != 0 {
+					v40 = m.ExcPending
+					if v40 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3])) = v43
-						v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
-						v47 = v46
-						v48 = v43
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v48
-						v50 = v47
-						v52 = F_CreateExprContext(m, v50)
+						*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3])) = v39
+						v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
+						v43 = v42
+						v44 = v39
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v44
+						v46 = v43
+						v48 = F_CreateExprContext(m, v46)
 						mBase = m.M
-						v53 = m.ExcPending
-						if v53 != 0 {
+						v49 = m.ExcPending
+						if v49 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v52
-							v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
-							v58 = F_MemoryContextAlloc(m, v56, int32(12))
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v48
+							v52 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
+							v54 = F_MemoryContextAlloc(m, v52, int32(12))
 							mBase = m.M
-							v59 = m.ExcPending
-							if v59 != 0 {
+							v55 = m.ExcPending
+							if v55 != 0 {
 								return
 							} else {
-								v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-								*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
-								v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
-								v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v64
-								v66 = int32(_a_F_plpgsql_create_econtext_2)
-								v67 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
-								*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v67
-								*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v58
+								v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+								*(*int32)(unsafe.Add(mBase, uint32(v54))) = v56
+								v59 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
+								v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v54)+4)) = v60
+								v62 = int32(_a_F_plpgsql_create_econtext_2)
+								v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
+								*(*int32)(unsafe.Add(mBase, uint32(v54)+8)) = v63
+								*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v54
 								return
 							}
 						}
 					}
 				} else {
-					v47 = v26
-					v48 = v33
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v48
-					v50 = v47
-					v52 = F_CreateExprContext(m, v50)
+					v43 = v26
+					v44 = v32
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v44
+					v46 = v43
+					v48 = F_CreateExprContext(m, v46)
 					mBase = m.M
-					v53 = m.ExcPending
-					if v53 != 0 {
+					v49 = m.ExcPending
+					if v49 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v52
-						v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
-						v58 = F_MemoryContextAlloc(m, v56, int32(12))
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v48
+						v52 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
+						v54 = F_MemoryContextAlloc(m, v52, int32(12))
 						mBase = m.M
-						v59 = m.ExcPending
-						if v59 != 0 {
+						v55 = m.ExcPending
+						if v55 != 0 {
 							return
 						} else {
-							v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-							*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
-							v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
-							v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
-							*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v64
-							v66 = int32(_a_F_plpgsql_create_econtext_2)
-							v67 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
-							*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v67
-							*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v58
+							v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+							*(*int32)(unsafe.Add(mBase, uint32(v54))) = v56
+							v59 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
+							v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+							*(*int32)(unsafe.Add(mBase, uint32(v54)+4)) = v60
+							v62 = int32(_a_F_plpgsql_create_econtext_2)
+							v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
+							*(*int32)(unsafe.Add(mBase, uint32(v54)+8)) = v63
+							*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v54
 							return
 						}
 					}
 				}
 			} else {
-				v50 = v26
-				v52 = F_CreateExprContext(m, v50)
+				v46 = v26
+				v48 = F_CreateExprContext(m, v46)
 				mBase = m.M
-				v53 = m.ExcPending
-				if v53 != 0 {
+				v49 = m.ExcPending
+				if v49 != 0 {
 					return
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v52
-					v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
-					v58 = F_MemoryContextAlloc(m, v56, int32(12))
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v48
+					v52 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
+					v54 = F_MemoryContextAlloc(m, v52, int32(12))
 					mBase = m.M
-					v59 = m.ExcPending
-					if v59 != 0 {
+					v55 = m.ExcPending
+					if v55 != 0 {
 						return
 					} else {
-						v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-						*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
-						v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
-						v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v64
-						v66 = int32(_a_F_plpgsql_create_econtext_2)
-						v67 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
-						*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v67
-						*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v58
+						v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+						*(*int32)(unsafe.Add(mBase, uint32(v54))) = v56
+						v59 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
+						v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+						*(*int32)(unsafe.Add(mBase, uint32(v54)+4)) = v60
+						v62 = int32(_a_F_plpgsql_create_econtext_2)
+						v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
+						*(*int32)(unsafe.Add(mBase, uint32(v54)+8)) = v63
+						*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v54
 						return
 					}
 				}
 			}
 		}
 	} else {
-		v26 = v5
-		v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+84))
-		if v29 == int32(0) {
-			v33 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3]))
-			if v33 == int32(0) {
-				v40 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[4]))
-				v43 = F_ResourceOwnerCreate(m, v40, int32(_a_F_plpgsql_create_econtext_1))
+		v26 = v4
+		v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+84))
+		if v28 == int32(0) {
+			v32 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3]))
+			if v32 == int32(0) {
+				v37 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[4]))
+				v39 = F_ResourceOwnerCreate(m, v37, int32(_a_F_plpgsql_create_econtext_1))
 				mBase = m.M
-				v44 = m.ExcPending
-				if v44 != 0 {
+				v40 = m.ExcPending
+				if v40 != 0 {
 					return
 				} else {
-					*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3])) = v43
-					v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
-					v47 = v46
-					v48 = v43
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v48
-					v50 = v47
-					v52 = F_CreateExprContext(m, v50)
+					*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[3])) = v39
+					v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
+					v43 = v42
+					v44 = v39
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v44
+					v46 = v43
+					v48 = F_CreateExprContext(m, v46)
 					mBase = m.M
-					v53 = m.ExcPending
-					if v53 != 0 {
+					v49 = m.ExcPending
+					if v49 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v52
-						v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
-						v58 = F_MemoryContextAlloc(m, v56, int32(12))
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v48
+						v52 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
+						v54 = F_MemoryContextAlloc(m, v52, int32(12))
 						mBase = m.M
-						v59 = m.ExcPending
-						if v59 != 0 {
+						v55 = m.ExcPending
+						if v55 != 0 {
 							return
 						} else {
-							v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-							*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
-							v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
-							v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
-							*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v64
-							v66 = int32(_a_F_plpgsql_create_econtext_2)
-							v67 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
-							*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v67
-							*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v58
+							v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+							*(*int32)(unsafe.Add(mBase, uint32(v54))) = v56
+							v59 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
+							v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+							*(*int32)(unsafe.Add(mBase, uint32(v54)+4)) = v60
+							v62 = int32(_a_F_plpgsql_create_econtext_2)
+							v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
+							*(*int32)(unsafe.Add(mBase, uint32(v54)+8)) = v63
+							*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v54
 							return
 						}
 					}
 				}
 			} else {
-				v47 = v26
-				v48 = v33
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v48
-				v50 = v47
-				v52 = F_CreateExprContext(m, v50)
+				v43 = v26
+				v44 = v32
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v44
+				v46 = v43
+				v48 = F_CreateExprContext(m, v46)
 				mBase = m.M
-				v53 = m.ExcPending
-				if v53 != 0 {
+				v49 = m.ExcPending
+				if v49 != 0 {
 					return
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v52
-					v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
-					v58 = F_MemoryContextAlloc(m, v56, int32(12))
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v48
+					v52 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
+					v54 = F_MemoryContextAlloc(m, v52, int32(12))
 					mBase = m.M
-					v59 = m.ExcPending
-					if v59 != 0 {
+					v55 = m.ExcPending
+					if v55 != 0 {
 						return
 					} else {
-						v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-						*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
-						v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
-						v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v64
-						v66 = int32(_a_F_plpgsql_create_econtext_2)
-						v67 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
-						*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v67
-						*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v58
+						v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+						*(*int32)(unsafe.Add(mBase, uint32(v54))) = v56
+						v59 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
+						v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+						*(*int32)(unsafe.Add(mBase, uint32(v54)+4)) = v60
+						v62 = int32(_a_F_plpgsql_create_econtext_2)
+						v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
+						*(*int32)(unsafe.Add(mBase, uint32(v54)+8)) = v63
+						*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v54
 						return
 					}
 				}
 			}
 		} else {
-			v50 = v26
-			v52 = F_CreateExprContext(m, v50)
+			v46 = v26
+			v48 = F_CreateExprContext(m, v46)
 			mBase = m.M
-			v53 = m.ExcPending
-			if v53 != 0 {
+			v49 = m.ExcPending
+			if v49 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v52
-				v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
-				v58 = F_MemoryContextAlloc(m, v56, int32(12))
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = v48
+				v52 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[2]))
+				v54 = F_MemoryContextAlloc(m, v52, int32(12))
 				mBase = m.M
-				v59 = m.ExcPending
-				if v59 != 0 {
+				v55 = m.ExcPending
+				if v55 != 0 {
 					return
 				} else {
-					v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-					*(*int32)(unsafe.Add(mBase, uint32(v58))) = v60
-					v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
-					v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v64
-					v66 = int32(_a_F_plpgsql_create_econtext_2)
-					v67 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
-					*(*int32)(unsafe.Add(mBase, uint32(v58)+8)) = v67
-					*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v58
+					v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+					*(*int32)(unsafe.Add(mBase, uint32(v54))) = v56
+					v59 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[5]))
+					v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+					*(*int32)(unsafe.Add(mBase, uint32(v54)+4)) = v60
+					v62 = int32(_a_F_plpgsql_create_econtext_2)
+					v63 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6]))
+					*(*int32)(unsafe.Add(mBase, uint32(v54)+8)) = v63
+					*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_create_econtext[6])) = v54
 					return
 				}
 			}
@@ -673,46 +664,48 @@ func F_plpgsql_exec_event_trigger(m *base.Module, l0 int32, l1 int32) {
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v16 int32
-	_ = v16
-	var v22 int32
-	_ = v22
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v17 int32
+	_ = v17
 	var v23 int32
 	_ = v23
-	var v29 int32
-	_ = v29
+	var v24 int32
+	_ = v24
+	var v32 int32
+	_ = v32
 	var v34 int32
 	_ = v34
-	var v36 int32
-	_ = v36
-	var v37 int32
-	_ = v37
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
 	var v42 int32
 	_ = v42
-	var v44 int32
-	_ = v44
-	var v49 int32
-	_ = v49
+	var v47 int32
+	_ = v47
+	var v52 int32
+	_ = v52
 	var v54 int32
 	_ = v54
+	var v55 int32
+	_ = v55
 	var v56 int32
 	_ = v56
-	var v57 int32
-	_ = v57
 	var v58 int32
 	_ = v58
-	var v60 int32
-	_ = v60
+	var v62 int32
+	_ = v62
+	var v63 int32
+	_ = v63
 	var v64 int32
 	_ = v64
-	var v65 int32
-	_ = v65
-	var v66 int32
-	_ = v66
+	var v70 int32
+	_ = v70
 	var v72 int32
 	_ = v72
 	var v74 int32
@@ -721,70 +714,69 @@ func F_plpgsql_exec_event_trigger(m *base.Module, l0 int32, l1 int32) {
 	_ = v76
 	var v78 int32
 	_ = v78
+	var v79 int32
+	_ = v79
+	var v80 int32
+	_ = v80
 	var v82 int32
 	_ = v82
 	var v83 int32
 	_ = v83
-	var v84 int32
-	_ = v84
-	var v85 int32
-	_ = v85
-	var v88 int32
-	_ = v88
-	var v94 int32
-	_ = v94
+	var v86 int32
+	_ = v86
+	var v90 int32
+	_ = v90
+	var v99 int32
+	_ = v99
+	var v100 int32
+	_ = v100
 	var v103 int32
 	_ = v103
-	var v104 int32
-	_ = v104
-	var v107 int32
-	_ = v107
+	var v109 int32
+	_ = v109
+	var v112 int32
+	_ = v112
 	var v113 int32
 	_ = v113
 	var v115 int32
 	_ = v115
-	var v116 int32
-	_ = v116
-	var v117 int32
-	_ = v117
-	var v119 int32
-	_ = v119
+	var v118 int32
+	_ = v118
 	var v121 int32
 	_ = v121
+	var v122 int32
+	_ = v122
 	var v124 int32
 	_ = v124
-	var v125 int32
-	_ = v125
-	var v127 int32
-	_ = v127
+	var v128 int32
+	_ = v128
+	var v129 int32
+	_ = v129
 	var v131 int32
 	_ = v131
-	var v132 int32
-	_ = v132
 	var v134 int32
 	_ = v134
-	var v137 int32
-	_ = v137
+	var v136 int32
+	_ = v136
 	var v139 int32
 	_ = v139
-	var v142 int32
-	_ = v142
-	var v154 int32
-	_ = v154
-	var v157 int32
-	_ = v157
-	var v162 int32
-	_ = v162
-	var v169 int32
-	_ = v169
+	var v149 int32
+	_ = v149
+	var v152 int32
+	_ = v152
+	var v156 int32
+	_ = v156
+	var v161 int32
+	_ = v161
 	v3 = int32(0)
-	v6 = m.G0
-	v8 = v6 - int32(160)
-	m.G0 = v8
-	F_plpgsql_estate_setup(m, v8+int32(16), l0, v3, v3, v3)
+	v7 = m.G0
+	v9 = v7 - int32(160)
+	m.G0 = v9
+	v12 = v9 + int32(16)
+	F_plpgsql_estate_setup(m, v12, l0, v3, v3, v3)
 	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v17 = m.ExcPending
+	if v17 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -794,127 +786,126 @@ L1:
 	return
 L2:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(_a_F_plpgsql_exec_event_trigger_0)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+148)) = int32(_a_F_plpgsql_exec_event_trigger_1)
-	v22 = int32(_a_F_plpgsql_exec_event_trigger_2)
-	v23 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[0]))
-	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[0])) = v8 + int32(4)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v23
-	v29 = v8 + int32(16)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v29
-	F_copy_plpgsql_datums(m, v29, l0)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(_a_F_plpgsql_exec_event_trigger_0)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = l1
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+148)) = int32(_a_F_plpgsql_exec_event_trigger_1)
+	v23 = int32(_a_F_plpgsql_exec_event_trigger_2)
+	v24 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[0]))
+	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[0])) = v9 + int32(4)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v24
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = v12
+	F_copy_plpgsql_datums(m, v12, l0)
 	mBase = m.M
-	v34 = m.ExcPending
-	if v34 != 0 {
+	v32 = m.ExcPending
+	if v32 != 0 {
 		goto L1
 	} else {
 		goto L3
 	}
 L3:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[1]))
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(v36)))
-	if v37 == int32(0) {
+	v34 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[1]))
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
+	if v35 == int32(0) {
 		goto L5
 	} else {
 		goto L6
 	}
 L4:
 	;
-	v76 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[2]))
-	if v76 != 0 {
+	v74 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[2]))
+	if v74 != 0 {
 		goto L16
 	} else {
 		goto L17
 	}
 L5:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+148)) = int32(0)
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+140)) = v42
-	v74 = v42
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+148)) = int32(0)
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+140)) = v40
+	v72 = v40
 	goto L4
 L6:
 	;
 	goto L7
 L7:
 	;
-	v44 = *(*int32)(unsafe.Add(mBase, uint32(v37)+4))
-	if v44 == int32(0) {
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
+	if v42 == int32(0) {
 		goto L9
 	} else {
 		goto L10
 	}
 L8:
 	;
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(v64)+12))
-	if v66 == int32(0) {
-		v74 = v65
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(v62)+12))
+	if v64 == int32(0) {
+		v72 = v63
 		goto L4
 	} else {
 		goto L14
 	}
 L9:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+148)) = int32(0)
-	v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+140)) = v49
-	v64 = v37
-	v65 = v49
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+148)) = int32(0)
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+140)) = v47
+	v62 = v35
+	v63 = v47
 	goto L8
 L10:
 	;
 	goto L11
 L11:
 	;
-	m.T0[v44].(func(*base.Module, int32, int32))(m, v8+int32(16), l0)
+	m.T0[v42].(func(*base.Module, int32, int32))(m, v9+int32(16), l0)
 	mBase = m.M
-	v54 = m.ExcPending
-	if v54 != 0 {
+	v52 = m.ExcPending
+	if v52 != 0 {
 		goto L1
 	} else {
 		goto L12
 	}
 L12:
 	;
-	v56 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[1]))
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-	v58 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+148)) = v58
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+140)) = v60
-	if v57 == v58 {
-		v74 = v60
+	v54 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[1]))
+	v55 = *(*int32)(unsafe.Add(mBase, uint32(v54)))
+	v56 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+148)) = v56
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+140)) = v58
+	if v55 == v56 {
+		v72 = v58
 		goto L4
 	} else {
 		goto L13
 	}
 L13:
 	;
-	v64 = v57
-	v65 = v60
+	v62 = v55
+	v63 = v58
 	goto L8
 L14:
 	;
-	m.T0[v66].(func(*base.Module, int32, int32))(m, v8+int32(16), v65)
+	m.T0[v64].(func(*base.Module, int32, int32))(m, v9+int32(16), v63)
 	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
+	v70 = m.ExcPending
+	if v70 != 0 {
 		goto L1
 	} else {
 		goto L15
 	}
 L15:
 	;
-	v74 = v65
+	v72 = v63
 	goto L4
 L16:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v78 = m.ExcPending
-	if v78 != 0 {
+	v76 = m.ExcPending
+	if v76 != 0 {
 		goto L1
 	} else {
 		goto L19
@@ -924,10 +915,11 @@ L17:
 	goto L18
 L18:
 	;
-	v82 = F_exec_stmt_block(m, v8+int32(16), v74)
+	v78 = v9 + int32(16)
+	v79 = F_exec_stmt_block(m, v78, v72)
 	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
+	v80 = m.ExcPending
+	if v80 != 0 {
 		goto L1
 	} else {
 		goto L20
@@ -937,35 +929,35 @@ L19:
 	goto L18
 L20:
 	;
-	v84 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[1]))
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
-	if v85 == int32(0) {
+	v82 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[1]))
+	v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)))
+	if v83 == int32(0) {
 		goto L21
 	} else {
 		goto L22
 	}
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+140)) = int32(0)
-	if v82 == int32(2) {
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+140)) = int32(0)
+	if v79 == int32(2) {
 		goto L25
 	} else {
 		goto L26
 	}
 L22:
 	;
-	v88 = *(*int32)(unsafe.Add(mBase, uint32(v85)+16))
-	if v88 == int32(0) {
+	v86 = *(*int32)(unsafe.Add(mBase, uint32(v83)+16))
+	if v86 == int32(0) {
 		goto L21
 	} else {
 		goto L23
 	}
 L23:
 	;
-	m.T0[v88].(func(*base.Module, int32, int32))(m, v8+int32(16), v74)
+	m.T0[v86].(func(*base.Module, int32, int32))(m, v78, v72)
 	mBase = m.M
-	v94 = m.ExcPending
-	if v94 != 0 {
+	v90 = m.ExcPending
+	if v90 != 0 {
 		goto L1
 	} else {
 		goto L24
@@ -975,10 +967,10 @@ L24:
 	goto L21
 L25:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+148)) = int32(_a_F_plpgsql_exec_event_trigger_3)
-	v103 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[1]))
-	v104 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
-	if v104 == int32(0) {
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+148)) = int32(_a_F_plpgsql_exec_event_trigger_3)
+	v99 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[1]))
+	v100 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
+	if v100 == int32(0) {
 		goto L28
 	} else {
 		goto L29
@@ -988,42 +980,41 @@ L26:
 	goto L27
 L27:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+148)) = int32(0)
-	F_errstart_cold(m, int32(21), int32(_a_F_plpgsql_exec_event_trigger_5))
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+148)) = int32(0)
+	F_errstart_cold(m, int32(21), int32(_a_F_plpgsql_exec_event_trigger_4))
 	mBase = m.M
-	v154 = m.ExcPending
-	if v154 != 0 {
+	v149 = m.ExcPending
+	if v149 != 0 {
 		goto L1
 	} else {
 		goto L39
 	}
 L28:
 	;
-	v115 = int32(_a_F_plpgsql_exec_event_trigger_4)
-	v116 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[3]))
-	v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+8))
-	F_pfree(m, v116)
+	v112 = *(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[3]))
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+8))
+	F_pfree(m, v112)
 	mBase = m.M
-	v119 = m.ExcPending
-	if v119 != 0 {
+	v115 = m.ExcPending
+	if v115 != 0 {
 		goto L1
 	} else {
 		goto L32
 	}
 L29:
 	;
-	v107 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
-	if v107 == int32(0) {
+	v103 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
+	if v103 == int32(0) {
 		goto L28
 	} else {
 		goto L30
 	}
 L30:
 	;
-	m.T0[v107].(func(*base.Module, int32, int32))(m, v8+int32(16), l0)
+	m.T0[v103].(func(*base.Module, int32, int32))(m, v9+int32(16), l0)
 	mBase = m.M
-	v113 = m.ExcPending
-	if v113 != 0 {
+	v109 = m.ExcPending
+	if v109 != 0 {
 		goto L1
 	} else {
 		goto L31
@@ -1033,59 +1024,59 @@ L31:
 	goto L28
 L32:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[3])) = v117
-	v121 = *(*int32)(unsafe.Add(mBase, uint32(v8)+136))
-	F_FreeExprContext(m, v121, int32(1))
+	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[3])) = v113
+	v118 = *(*int32)(unsafe.Add(mBase, uint32(v9)+136))
+	F_FreeExprContext(m, v118, int32(1))
 	mBase = m.M
-	v124 = m.ExcPending
-	if v124 != 0 {
+	v121 = m.ExcPending
+	if v121 != 0 {
 		goto L1
 	} else {
 		goto L33
 	}
 L33:
 	;
-	v125 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+136)) = v125
-	v127 = *(*int32)(unsafe.Add(mBase, uint32(v8)+120))
-	if v127 == v125 {
+	v122 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+136)) = v122
+	v124 = *(*int32)(unsafe.Add(mBase, uint32(v9)+120))
+	if v124 == v122 {
 		goto L34
 	} else {
 		goto L35
 	}
 L34:
 	;
-	v142 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[0])) = v142
-	m.G0 = v8 + int32(160)
+	v139 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
+	*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_exec_event_trigger[0])) = v139
+	m.G0 = v9 + int32(160)
 	return
 L35:
 	;
-	F_SPI_freetuptable(m, v127)
+	F_SPI_freetuptable(m, v124)
 	mBase = m.M
-	v131 = m.ExcPending
-	if v131 != 0 {
+	v128 = m.ExcPending
+	if v128 != 0 {
 		goto L1
 	} else {
 		goto L36
 	}
 L36:
 	;
-	v132 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+120)) = v132
-	v134 = *(*int32)(unsafe.Add(mBase, uint32(v8)+136))
-	if v134 == v132 {
+	v129 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+120)) = v129
+	v131 = *(*int32)(unsafe.Add(mBase, uint32(v9)+136))
+	if v131 == v129 {
 		goto L34
 	} else {
 		goto L37
 	}
 L37:
 	;
-	v137 = *(*int32)(unsafe.Add(mBase, uint32(v134)+20))
-	F_MemoryContextReset(m, v137)
+	v134 = *(*int32)(unsafe.Add(mBase, uint32(v131)+20))
+	F_MemoryContextReset(m, v134)
 	mBase = m.M
-	v139 = m.ExcPending
-	if v139 != 0 {
+	v136 = m.ExcPending
+	if v136 != 0 {
 		goto L1
 	} else {
 		goto L38
@@ -1097,28 +1088,28 @@ L39:
 	;
 	F_errcode(m, int32(83887490))
 	mBase = m.M
-	v157 = m.ExcPending
-	if v157 != 0 {
+	v152 = m.ExcPending
+	if v152 != 0 {
 		goto L1
 	} else {
 		goto L40
 	}
 L40:
 	;
-	F_errmsg(m, int32(_a_F_plpgsql_exec_event_trigger_6), int32(0))
+	F_errmsg(m, int32(_a_F_plpgsql_exec_event_trigger_5), int32(0))
 	mBase = m.M
-	v162 = m.ExcPending
-	if v162 != 0 {
+	v156 = m.ExcPending
+	if v156 != 0 {
 		goto L1
 	} else {
 		goto L41
 	}
 L41:
 	;
-	F_errfinish(m, int32(_a_F_plpgsql_exec_event_trigger_7), int32(1217), int32(_a_F_plpgsql_exec_event_trigger_8))
+	F_errfinish(m, int32(_a_F_plpgsql_exec_event_trigger_6), int32(1217), int32(_a_F_plpgsql_exec_event_trigger_7))
 	mBase = m.M
-	v169 = m.ExcPending
-	if v169 != 0 {
+	v161 = m.ExcPending
+	if v161 != 0 {
 		goto L1
 	} else {
 		goto L42
@@ -2230,8 +2221,8 @@ func F_plpgsql_free_function_memory(m *base.Module, l0 int32) {
 	_ = v9
 	var v11 int32
 	_ = v11
-	var v16 int32
-	_ = v16
+	var v18 int32
+	_ = v18
 	var v20 int32
 	_ = v20
 	var v24 int32
@@ -2268,14 +2259,14 @@ func F_plpgsql_free_function_memory(m *base.Module, l0 int32) {
 	_ = v77
 	var v79 int32
 	_ = v79
-	var v90 int32
-	_ = v90
-	var v91 int32
-	_ = v91
-	var v96 int32
-	_ = v96
-	var v103 int32
-	_ = v103
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
+	var v93 int32
+	_ = v93
+	var v98 int32
+	_ = v98
 	v2 = int32(0)
 	v7 = m.G0
 	v9 = v7 - int32(16)
@@ -2290,15 +2281,15 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(_a_F_plpgsql_free_function_memory_0))
 	mBase = m.M
-	v90 = m.ExcPending
-	if v90 != 0 {
+	v88 = m.ExcPending
+	if v88 != 0 {
 		goto L13
 	} else {
 		goto L27
 	}
 L2:
 	;
-	v16 = v2
+	v18 = v2
 	goto L5
 L3:
 	;
@@ -2318,7 +2309,7 @@ L4:
 L5:
 	;
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+508))
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(v20+v16<<(uint(int32(2))%32))))
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(v20+v18<<(uint(int32(2))%32))))
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
 	switch v25 {
 	case 0, 4:
@@ -2335,10 +2326,10 @@ L6:
 	goto L4
 L7:
 	;
-	v61 = v16 + int32(1)
+	v61 = v18 + int32(1)
 	v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+504))
 	if v61 < v62 {
-		v16 = v61
+		v18 = v61
 		goto L5
 	} else {
 		goto L21
@@ -2471,12 +2462,12 @@ L26:
 	goto L25
 L27:
 	;
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v91
+	v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v89
 	F_errmsg_internal(m, int32(_a_F_plpgsql_free_function_memory_1), v9)
 	mBase = m.M
-	v96 = m.ExcPending
-	if v96 != 0 {
+	v93 = m.ExcPending
+	if v93 != 0 {
 		goto L13
 	} else {
 		goto L28
@@ -2485,8 +2476,8 @@ L28:
 	;
 	F_errfinish(m, int32(_a_F_plpgsql_free_function_memory_2), int32(751), int32(_a_F_plpgsql_free_function_memory_3))
 	mBase = m.M
-	v103 = m.ExcPending
-	if v103 != 0 {
+	v98 = m.ExcPending
+	if v98 != 0 {
 		goto L13
 	} else {
 		goto L29
@@ -2642,16 +2633,14 @@ func F_plpgsql_param_eval_var_check(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v148
 	var v149 int32
 	_ = v149
-	var v150 int32
-	_ = v150
-	var v153 int32
-	_ = v153
-	var v156 int32
-	_ = v156
-	var v159 int32
-	_ = v159
-	var v162 int32
-	_ = v162
+	var v151 int32
+	_ = v151
+	var v154 int32
+	_ = v154
+	var v157 int32
+	_ = v157
+	var v160 int32
+	_ = v160
 	var v163 int32
 	_ = v163
 	var v164 int32
@@ -2660,50 +2649,50 @@ func F_plpgsql_param_eval_var_check(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v165
 	var v166 int32
 	_ = v166
-	var v168 int32
-	_ = v168
-	var v172 int32
-	_ = v172
+	var v167 int32
+	_ = v167
+	var v169 int32
+	_ = v169
 	var v173 int32
 	_ = v173
 	var v174 int32
 	_ = v174
 	var v175 int32
 	_ = v175
-	var v181 int32
-	_ = v181
+	var v176 int32
+	_ = v176
 	var v182 int32
 	_ = v182
 	var v183 int32
 	_ = v183
 	var v184 int32
 	_ = v184
-	var v187 int32
-	_ = v187
-	var v190 int32
-	_ = v190
+	var v185 int32
+	_ = v185
+	var v188 int32
+	_ = v188
 	var v191 int32
 	_ = v191
 	var v192 int32
 	_ = v192
 	var v193 int32
 	_ = v193
-	var v197 int32
-	_ = v197
-	var v199 int32
-	_ = v199
+	var v194 int32
+	_ = v194
+	var v198 int32
+	_ = v198
 	var v200 int32
 	_ = v200
-	var v202 int32
-	_ = v202
-	var v206 int32
-	_ = v206
-	var v208 int32
-	_ = v208
-	var v210 int32
-	_ = v210
-	var v214 int32
-	_ = v214
+	var v201 int32
+	_ = v201
+	var v203 int32
+	_ = v203
+	var v207 int32
+	_ = v207
+	var v209 int32
+	_ = v209
+	var v211 int32
+	_ = v211
 	var v215 int32
 	_ = v215
 	var v216 int32
@@ -2712,40 +2701,42 @@ func F_plpgsql_param_eval_var_check(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v217
 	var v218 int32
 	_ = v218
-	var v224 int32
-	_ = v224
+	var v219 int32
+	_ = v219
 	var v225 int32
 	_ = v225
-	var v227 int32
-	_ = v227
+	var v226 int32
+	_ = v226
 	var v228 int32
 	_ = v228
-	var v233 int32
-	_ = v233
+	var v229 int32
+	_ = v229
 	var v234 int32
 	_ = v234
 	var v235 int32
 	_ = v235
 	var v236 int32
 	_ = v236
-	var v242 int32
-	_ = v242
+	var v237 int32
+	_ = v237
 	var v243 int32
 	_ = v243
 	var v244 int32
 	_ = v244
-	var v247 int32
-	_ = v247
-	var v248 int32
-	_ = v248
+	var v246 int32
+	_ = v246
 	var v249 int32
 	_ = v249
 	var v250 int32
 	_ = v250
 	var v251 int32
 	_ = v251
+	var v252 int32
+	_ = v252
 	var v253 int32
 	_ = v253
+	var v255 int32
+	_ = v255
 	v10 = m.G0
 	v12 = v10 - int32(32)
 	m.G0 = v12
@@ -3051,8 +3042,8 @@ L38:
 	goto L3
 L39:
 	;
-	v210 = *(*int32)(unsafe.Add(mBase, uint32(v33)+52))
-	if v210 == v32 {
+	v211 = *(*int32)(unsafe.Add(mBase, uint32(v33)+52))
+	if v211 == v32 {
 		goto L54
 	} else {
 		goto L55
@@ -3060,14 +3051,14 @@ L39:
 L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(_a_F_plpgsql_param_eval_var_check_1)
-	v172 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-	v173 = *(*int32)(unsafe.Add(mBase, uint32(v172)+4))
-	v174 = *(*int32)(unsafe.Add(mBase, uint32(v173)+68))
-	v175 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
-	v181 = *(*int32)(unsafe.Add(mBase, uint32(v174+v175<<(uint(int32(2))%32)-int32(4))))
-	v182 = *(*int32)(unsafe.Add(mBase, uint32(v181)+40))
-	v183 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v181)+44)))
-	if v183 != 0 {
+	v173 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+	v174 = *(*int32)(unsafe.Add(mBase, uint32(v173)+4))
+	v175 = *(*int32)(unsafe.Add(mBase, uint32(v174)+68))
+	v176 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
+	v182 = *(*int32)(unsafe.Add(mBase, uint32(v175+v176<<(uint(int32(2))%32)-int32(4))))
+	v183 = *(*int32)(unsafe.Add(mBase, uint32(v182)+40))
+	v184 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v182)+44)))
+	if v184 != 0 {
 		goto L49
 	} else {
 		goto L50
@@ -3081,113 +3072,113 @@ L41:
 	v142 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v148 = *(*int32)(unsafe.Add(mBase, uint32(v141+v142<<(uint(int32(2))%32)-int32(4))))
 	v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+40))
-	v150 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v148)+44)))
-	if v150 == int32(0) {
+	v151 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v148)+44)))
+	if v151 == int32(0) {
 		goto L42
 	} else {
 		goto L43
 	}
 L42:
 	;
-	v153 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v149))))
-	if v153 != int32(1) {
-		v162 = v149
+	v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v149))))
+	if v154 != int32(1) {
+		v163 = v149
 		goto L46
 	} else {
 		goto L47
 	}
 L43:
 	;
-	v164 = v150
 	v165 = v149
+	v166 = int32(1)
 	goto L44
 L44:
 	;
-	v166 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v166))) = v165
-	v168 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	*(*uint8)(unsafe.Add(mBase, uint32(v168))) = uint8(v164)
+	v167 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v167))) = v165
+	v169 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	*(*uint8)(unsafe.Add(mBase, uint32(v169))) = uint8(v166)
 	goto L1
 L45:
 	;
-	v163 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v148)+44)))
-	v164 = v163
-	v165 = v162
+	v164 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v148)+44)))
+	v165 = v163
+	v166 = v164
 	goto L44
 L46:
 	;
 	goto L45
 L47:
 	;
-	v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v149)+1)))
-	if v156 != int32(3) {
-		v162 = v149
+	v157 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v149)+1)))
+	if v157 != int32(3) {
+		v163 = v149
 		goto L46
 	} else {
 		goto L48
 	}
 L48:
 	;
-	v159 = *(*int32)(unsafe.Add(mBase, uint32(v149)+2))
-	v162 = v159 + int32(18)
+	v160 = *(*int32)(unsafe.Add(mBase, uint32(v149)+2))
+	v163 = v160 + int32(18)
 	goto L46
 L49:
 	;
-	v206 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v206))) = v182
-	v208 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	*(*uint8)(unsafe.Add(mBase, uint32(v208))) = uint8(v183)
+	v207 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v207))) = v183
+	v209 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	*(*uint8)(unsafe.Add(mBase, uint32(v209))) = uint8(v184)
 	goto L1
 L50:
 	;
-	v184 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v182))))
-	if v184 != int32(1) {
+	v185 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v183))))
+	if v185 != int32(1) {
 		goto L49
 	} else {
 		goto L51
 	}
 L51:
 	;
-	v187 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v182)+1)))
-	if v187 != int32(3) {
+	v188 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v183)+1)))
+	if v188 != int32(3) {
 		goto L49
 	} else {
 		goto L52
 	}
 L52:
 	;
-	v190 = *(*int32)(unsafe.Add(mBase, uint32(v173)+120))
-	v191 = *(*int32)(unsafe.Add(mBase, uint32(v190)+20))
-	v192 = *(*int32)(unsafe.Add(mBase, uint32(v182)+2))
-	v193 = *(*int32)(unsafe.Add(mBase, uint32(v192)+8))
-	F_MemoryContextSetParent(m, v193, v191)
+	v191 = *(*int32)(unsafe.Add(mBase, uint32(v174)+120))
+	v192 = *(*int32)(unsafe.Add(mBase, uint32(v191)+20))
+	v193 = *(*int32)(unsafe.Add(mBase, uint32(v183)+2))
+	v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+8))
+	F_MemoryContextSetParent(m, v194, v192)
 	mBase = m.M
 	goto L53
 L53:
 	;
-	v197 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v197))) = v192 + int32(12)
-	v199 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v200 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v199))) = uint8(v200)
-	v202 = int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(v181)+44)) = uint16(v202)
-	*(*int32)(unsafe.Add(mBase, uint32(v181)+40)) = v200
+	v198 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v198))) = v193 + int32(12)
+	v200 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	v201 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v200))) = uint8(v201)
+	v203 = int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(v182)+44)) = uint16(v203)
+	*(*int32)(unsafe.Add(mBase, uint32(v182)+40)) = v201
 	goto L1
 L54:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(_a_F_plpgsql_param_eval_var_check_2)
-	v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	v215 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-	v216 = *(*int32)(unsafe.Add(mBase, uint32(v215)+4))
-	v217 = *(*int32)(unsafe.Add(mBase, uint32(v216)+68))
-	v218 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
-	v224 = *(*int32)(unsafe.Add(mBase, uint32(v217+v218<<(uint(int32(2))%32)-int32(4))))
-	v225 = *(*int32)(unsafe.Add(mBase, uint32(v224)+40))
-	*(*int32)(unsafe.Add(mBase, uint32(v214))) = v225
-	v227 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v228 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v224)+44)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v227))) = uint8(v228)
+	v215 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	v216 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+	v217 = *(*int32)(unsafe.Add(mBase, uint32(v216)+4))
+	v218 = *(*int32)(unsafe.Add(mBase, uint32(v217)+68))
+	v219 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
+	v225 = *(*int32)(unsafe.Add(mBase, uint32(v218+v219<<(uint(int32(2))%32)-int32(4))))
+	v226 = *(*int32)(unsafe.Add(mBase, uint32(v225)+40))
+	*(*int32)(unsafe.Add(mBase, uint32(v215))) = v226
+	v228 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	v229 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v225)+44)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v228))) = uint8(v229)
 	goto L1
 L55:
 	;
@@ -3195,14 +3186,14 @@ L55:
 L56:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(_a_F_plpgsql_param_eval_var_check_0)
-	v233 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-	v234 = *(*int32)(unsafe.Add(mBase, uint32(v233)+4))
-	v235 = *(*int32)(unsafe.Add(mBase, uint32(v234)+68))
-	v236 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
-	v242 = *(*int32)(unsafe.Add(mBase, uint32(v235+v236<<(uint(int32(2))%32)-int32(4))))
-	v243 = *(*int32)(unsafe.Add(mBase, uint32(v242)+40))
-	v244 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v242)+44)))
-	if v244 == int32(0) {
+	v234 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+	v235 = *(*int32)(unsafe.Add(mBase, uint32(v234)+4))
+	v236 = *(*int32)(unsafe.Add(mBase, uint32(v235)+68))
+	v237 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
+	v243 = *(*int32)(unsafe.Add(mBase, uint32(v236+v237<<(uint(int32(2))%32)-int32(4))))
+	v244 = *(*int32)(unsafe.Add(mBase, uint32(v243)+40))
+	v246 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v243)+44)))
+	if v246 == int32(0) {
 		goto L58
 	} else {
 		goto L59
@@ -3212,81 +3203,81 @@ L57:
 	goto L1
 L58:
 	;
-	v247 = F_MakeExpandedObjectReadOnlyInternal(m, v243)
+	v249 = F_MakeExpandedObjectReadOnlyInternal(m, v244)
 	mBase = m.M
-	v248 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v242)+44)))
-	v249 = v247
-	v250 = v248
+	v250 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v243)+44)))
+	v251 = v249
+	v252 = v250
 	goto L60
 L59:
 	;
-	v249 = v243
-	v250 = v244
+	v251 = v244
+	v252 = int32(1)
 	goto L60
 L60:
 	;
-	v251 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v251))) = v249
-	v253 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	*(*uint8)(unsafe.Add(mBase, uint32(v253))) = uint8(v250)
+	v253 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v253))) = v251
+	v255 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	*(*uint8)(unsafe.Add(mBase, uint32(v255))) = uint8(v252)
 	goto L57
 }
 func F_plpgsql_scanner_init(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
-	var v14 int32
-	_ = v14
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
 	var v15 int32
 	_ = v15
 	var v19 int32
 	_ = v19
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v27 int32
+	_ = v27
 	var v31 int32
 	_ = v31
-	var v35 int32
-	_ = v35
-	v6 = F_palloc0(m, int32(200))
+	v5 = F_palloc0(m, int32(200))
 	mBase = m.M
-	v9 = m.ExcPending
-	if v9 != 0 {
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return int32(0)
 	} else {
-		v14 = F_scanner_init(m, l0, v6, int32(_a_F_plpgsql_scanner_init_0), int32(_a_F_plpgsql_scanner_init_1))
+		v11 = F_scanner_init(m, l0, v5, int32(_a_F_plpgsql_scanner_init_0), int32(_a_F_plpgsql_scanner_init_1))
 		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+60)) = l0
-			v19 = int32(0)
-			*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_scanner_init[0])) = v19
-			*(*int64)(unsafe.Add(mBase, uint32(v6)+68)) = int64(0)
-			v23 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
-			*(*int32)(unsafe.Add(mBase, uint32(v23)+196)) = int32(1)
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(v23)+60))
-			*(*int32)(unsafe.Add(mBase, uint32(v23)+188)) = v26
-			v28 = int32(10)
-			v29 = F___strchrnul(m, v26, v28)
+			*(*int32)(unsafe.Add(mBase, uint32(v5)+60)) = l0
+			v15 = int32(0)
+			*(*int32)(unsafe.Add(mBase, _c_F_plpgsql_scanner_init[0])) = v15
+			*(*int64)(unsafe.Add(mBase, uint32(v5)+68)) = int64(0)
+			v19 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
+			*(*int32)(unsafe.Add(mBase, uint32(v19)+196)) = int32(1)
+			v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+60))
+			*(*int32)(unsafe.Add(mBase, uint32(v19)+188)) = v22
+			v24 = int32(10)
+			v25 = F___strchrnul(m, v22, v24)
 			mBase = m.M
-			v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29))))
-			if v31 == v28 {
-				v35 = v29
+			v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25))))
+			if v27 == v24 {
+				v31 = v25
 			} else {
-				v35 = v19
+				v31 = v15
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v23)+192)) = v35
-			return v14
+			*(*int32)(unsafe.Add(mBase, uint32(v19)+192)) = v31
+			return v11
 		}
 	}
 }

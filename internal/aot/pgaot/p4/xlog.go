@@ -30,44 +30,48 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 	_ = v37
 	var v38 int32
 	_ = v38
-	var v41 int32
-	_ = v41
-	var v48 int32
+	var v40 int32
+	_ = v40
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v47 int64
+	_ = v47
+	var v48 int64
 	_ = v48
-	var v49 int32
+	var v49 int64
 	_ = v49
 	var v50 int64
 	_ = v50
-	var v51 int64
+	var v51 int32
 	_ = v51
-	var v52 int64
+	var v52 int32
 	_ = v52
 	var v53 int64
 	_ = v53
-	var v54 int32
-	_ = v54
-	var v55 int32
-	_ = v55
-	var v56 int64
-	_ = v56
-	var v64 int32
-	_ = v64
-	var v71 int64
-	_ = v71
-	var v81 int32
-	_ = v81
-	var v82 int32
-	_ = v82
-	var v88 int32
-	_ = v88
-	var v92 int32
-	_ = v92
-	var v93 int32
-	_ = v93
-	var v100 int64
-	_ = v100
-	var v103 int64
-	_ = v103
+	var v61 int32
+	_ = v61
+	var v68 int64
+	_ = v68
+	var v78 int32
+	_ = v78
+	var v79 int32
+	_ = v79
+	var v85 int32
+	_ = v85
+	var v89 int32
+	_ = v89
+	var v90 int32
+	_ = v90
+	var v96 int32
+	_ = v96
+	var v99 int64
+	_ = v99
+	var v102 int64
+	_ = v102
+	var v108 int32
+	_ = v108
 	var v109 int32
 	_ = v109
 	var v110 int32
@@ -84,62 +88,60 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 	_ = v115
 	var v116 int32
 	_ = v116
-	var v118 int32
-	_ = v118
-	var v125 int32
-	_ = v125
-	var v126 int32
-	_ = v126
-	var v133 int32
-	_ = v133
-	var v139 int32
-	_ = v139
-	var v149 int32
-	_ = v149
+	var v121 int32
+	_ = v121
+	var v123 int32
+	_ = v123
+	var v130 int32
+	_ = v130
+	var v136 int32
+	_ = v136
+	var v146 int32
+	_ = v146
+	var v151 int32
+	_ = v151
 	var v154 int32
 	_ = v154
-	var v157 int32
-	_ = v157
-	var v159 int32
-	_ = v159
-	var v164 int32
+	var v156 int32
+	_ = v156
+	var v161 int32
+	_ = v161
+	var v162 int32
+	_ = v162
+	var v163 int32
+	_ = v163
+	var v164 int64
 	_ = v164
 	var v165 int32
 	_ = v165
 	var v166 int32
 	_ = v166
-	var v168 int64
-	_ = v168
-	var v169 int32
-	_ = v169
-	var v170 int32
-	_ = v170
-	var v177 int32
-	_ = v177
-	var v178 int32
-	_ = v178
-	var v185 int32
-	_ = v185
-	var v186 int64
-	_ = v186
-	var v187 int64
-	_ = v187
-	var v188 int32
+	var v171 int32
+	_ = v171
+	var v173 int32
+	_ = v173
+	var v180 int32
+	_ = v180
+	var v181 int64
+	_ = v181
+	var v182 int64
+	_ = v182
+	var v183 int32
+	_ = v183
+	var v184 int32
+	_ = v184
+	var v188 int64
 	_ = v188
-	var v189 int32
-	_ = v189
-	var v193 int64
-	_ = v193
-	var v199 int32
-	_ = v199
-	var v201 int32
-	_ = v201
+	var v194 int32
+	_ = v194
+	var v195 int32
+	_ = v195
+	var v200 int32
+	_ = v200
+	var v202 int32
+	_ = v202
 	var v208 int32
 	_ = v208
-	var v209 int32
-	_ = v209
-	var v215 int32
-	_ = v215
 	v18 = m.G0
 	v20 = v18 - int32(192)
 	m.G0 = v20
@@ -158,209 +160,211 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 		v33 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
 		v37 = *(*int32)(unsafe.Add(mBase, uint32(v26)+12))
 		v38 = *(*int32)(unsafe.Add(mBase, uint32(v26)+8))
-		v41 = *(*int32)(unsafe.Add(mBase, uint32(v26)+20))
-		if base.Ui32(v41) <= base.Ui32(int32(2)) {
-			v48 = *(*int32)(unsafe.Add(mBase, uint32(v41<<(uint(int32(2))%32))+uint32(_c_F_xlog_desc[0])))
-			v49 = v48
+		v40 = *(*int32)(unsafe.Add(mBase, uint32(v26)+20))
+		if base.Ui32(v40) <= base.Ui32(int32(2)) {
+			v45 = *(*int32)(unsafe.Add(mBase, uint32(v40<<(uint(int32(2))%32))+uint32(_c_F_xlog_desc[0])))
+			v46 = v45
 		} else {
-			v49 = int32(_a_F_xlog_desc_2)
+			v46 = int32(_a_F_xlog_desc_2)
 		}
-		v50 = *(*int64)(unsafe.Add(mBase, uint32(v26)+32))
-		v51 = *(*int64)(unsafe.Add(mBase, uint32(v26)+40))
-		v52 = *(*int64)(unsafe.Add(mBase, uint32(v26)+48))
-		v53 = *(*int64)(unsafe.Add(mBase, uint32(v26)+76))
-		v54 = *(*int32)(unsafe.Add(mBase, uint32(v26)+72))
-		v55 = *(*int32)(unsafe.Add(mBase, uint32(v26)+56))
-		v56 = *(*int64)(unsafe.Add(mBase, uint32(v26)+24))
+		v47 = *(*int64)(unsafe.Add(mBase, uint32(v26)+32))
+		v48 = *(*int64)(unsafe.Add(mBase, uint32(v26)+40))
+		v49 = *(*int64)(unsafe.Add(mBase, uint32(v26)+48))
+		v50 = *(*int64)(unsafe.Add(mBase, uint32(v26)+76))
+		v51 = *(*int32)(unsafe.Add(mBase, uint32(v26)+72))
+		v52 = *(*int32)(unsafe.Add(mBase, uint32(v26)+56))
+		v53 = *(*int64)(unsafe.Add(mBase, uint32(v26)+24))
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+112)) = v32
-		*(*int32)(unsafe.Add(mBase, uint32(v20)+116)) = v49
-		*(*uint32)(unsafe.Add(mBase, uint32(v20)+124)) = uint32(v56)
-		*(*int32)(unsafe.Add(mBase, uint32(v20)+152)) = v55
-		*(*int32)(unsafe.Add(mBase, uint32(v20)+156)) = v54
+		*(*int32)(unsafe.Add(mBase, uint32(v20)+116)) = v46
+		*(*uint32)(unsafe.Add(mBase, uint32(v20)+124)) = uint32(v53)
+		*(*int32)(unsafe.Add(mBase, uint32(v20)+152)) = v52
+		*(*int32)(unsafe.Add(mBase, uint32(v20)+156)) = v51
 		if v25 != 0 {
-			v64 = int32(_a_F_xlog_desc_3)
+			v61 = int32(_a_F_xlog_desc_3)
 		} else {
-			v64 = int32(_a_F_xlog_desc_4)
+			v61 = int32(_a_F_xlog_desc_4)
 		}
-		*(*int32)(unsafe.Add(mBase, uint32(v20)+168)) = v64
-		*(*int64)(unsafe.Add(mBase, uint32(v20)+160)) = v53
-		*(*int64)(unsafe.Add(mBase, uint32(v20)+144)) = v52
-		*(*int64)(unsafe.Add(mBase, uint32(v20)+136)) = v51
-		*(*int64)(unsafe.Add(mBase, uint32(v20)+128)) = v50
-		v71 = int64(base.Ui64(v56) >> (uint(int64(32)) % 64))
-		*(*uint32)(unsafe.Add(mBase, uint32(v20)+120)) = uint32(v71)
-		*(*int32)(unsafe.Add(mBase, uint32(v20)+100)) = base.I32_wrap_i64(v33)
+		*(*int32)(unsafe.Add(mBase, uint32(v20)+168)) = v61
+		*(*int64)(unsafe.Add(mBase, uint32(v20)+160)) = v50
+		*(*int64)(unsafe.Add(mBase, uint32(v20)+144)) = v49
+		*(*int64)(unsafe.Add(mBase, uint32(v20)+136)) = v48
+		*(*int64)(unsafe.Add(mBase, uint32(v20)+128)) = v47
+		v68 = int64(base.Ui64(v53) >> (uint(int64(32)) % 64))
+		*(*uint32)(unsafe.Add(mBase, uint32(v20)+120)) = uint32(v68)
+		*(*uint32)(unsafe.Add(mBase, uint32(v20)+100)) = uint32(v33)
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+104)) = v38
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+108)) = v37
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+96)) = base.I32_wrap_i64(int64(base.Ui64(v33) >> (uint(int64(32)) % 64)))
 		F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_5), v20+int32(96))
 		mBase = m.M
-		v81 = m.ExcPending
-		if v81 != 0 {
+		v78 = m.ExcPending
+		if v78 != 0 {
 			return
 		} else {
 			m.G0 = v20 + int32(192)
 			return
 		}
 	default:
-		v93 = base.I32_extend8_s(v23)
-		if v93&int32(-32) == int32(-96) {
+		v90 = base.I32_extend8_s(v23)
+		if v90&int32(-32) == int32(-96) {
 			m.G0 = v20 + int32(192)
 			return
 		} else {
-			switch v25 - int32(80) {
-			case 0:
-				v100 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
-				*(*uint32)(unsafe.Add(mBase, uint32(v20)+52)) = uint32(v100)
-				v103 = int64(base.Ui64(v100) >> (uint(int64(32)) % 64))
-				*(*uint32)(unsafe.Add(mBase, uint32(v20)+48)) = uint32(v103)
-				F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_6), v20+int32(48))
-				mBase = m.M
-				v109 = m.ExcPending
-				if v109 != 0 {
-					return
-				} else {
-					m.G0 = v20 + int32(192)
-					return
-				}
-			default:
-				if v93 <= int32(-113) {
-					v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26))))
-					if v154&int32(1) != 0 {
-						v157 = int32(_a_F_xlog_desc_0)
+			v96 = v25 - int32(80)
+			if v96 != 0 {
+				if v96 == int32(16) {
+					v109 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+25)))
+					v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+24)))
+					v111 = *(*int32)(unsafe.Add(mBase, uint32(v26)+16))
+					v112 = *(*int32)(unsafe.Add(mBase, uint32(v26)+12))
+					v113 = *(*int32)(unsafe.Add(mBase, uint32(v26)+8))
+					v114 = *(*int32)(unsafe.Add(mBase, uint32(v26)+4))
+					v115 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+					v116 = *(*int32)(unsafe.Add(mBase, uint32(v26)+20))
+					if base.Ui32(v116) <= base.Ui32(int32(2)) {
+						v121 = *(*int32)(unsafe.Add(mBase, uint32(v116<<(uint(int32(2))%32))+uint32(_c_F_xlog_desc[0])))
+						v123 = v121
 					} else {
-						v157 = int32(_a_F_xlog_desc_1)
+						v123 = int32(_a_F_xlog_desc_2)
 					}
-					F_appendStringInfoString(m, l0, v157)
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+84)) = v123
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+80)) = v111
+					if v109&int32(1) != 0 {
+						v130 = int32(_a_F_xlog_desc_6)
+					} else {
+						v130 = int32(_a_F_xlog_desc_7)
+					}
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+92)) = v130
+					if v110&int32(1) != 0 {
+						v136 = int32(_a_F_xlog_desc_6)
+					} else {
+						v136 = int32(_a_F_xlog_desc_7)
+					}
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+88)) = v136
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+76)) = v112
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+72)) = v113
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+68)) = v114
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+64)) = v115
+					F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_8), v20-int32(-64))
 					mBase = m.M
-					v159 = m.ExcPending
-					if v159 != 0 {
+					v146 = m.ExcPending
+					if v146 != 0 {
 						return
 					} else {
 						m.G0 = v20 + int32(192)
 						return
 					}
 				} else {
-					switch v25 - int32(208) {
-					case 0:
-						v186 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
-						v187 = *(*int64)(unsafe.Add(mBase, uint32(v26)+8))
-						v188 = F_timestamptz_to_str(m, v187)
-						mBase = m.M
-						v189 = m.ExcPending
-						if v189 != 0 {
-							return
+					if v90 <= int32(-113) {
+						v151 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26))))
+						if v151&int32(1) != 0 {
+							v154 = int32(_a_F_xlog_desc_0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v20)+24)) = v188
-							*(*uint32)(unsafe.Add(mBase, uint32(v20)+20)) = uint32(v186)
-							v193 = int64(base.Ui64(v186) >> (uint(int64(32)) % 64))
-							*(*uint32)(unsafe.Add(mBase, uint32(v20)+16)) = uint32(v193)
-							F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_7), v20+int32(16))
-							mBase = m.M
-							v199 = m.ExcPending
-							if v199 != 0 {
-								return
-							} else {
-								m.G0 = v20 + int32(192)
-								return
-							}
+							v154 = int32(_a_F_xlog_desc_1)
 						}
-					case 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15:
-						m.G0 = v20 + int32(192)
-						return
-					case 16:
-						v201 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
-						if base.Ui32(v201) <= base.Ui32(int32(2)) {
-							v208 = *(*int32)(unsafe.Add(mBase, uint32(v201<<(uint(int32(2))%32))+uint32(_c_F_xlog_desc[0])))
-							v209 = v208
-						} else {
-							v209 = int32(_a_F_xlog_desc_2)
-						}
-						*(*int32)(unsafe.Add(mBase, uint32(v20)+32)) = v209
-						F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_8), v20+int32(32))
+						F_appendStringInfoString(m, l0, v154)
 						mBase = m.M
-						v215 = m.ExcPending
-						if v215 != 0 {
+						v156 = m.ExcPending
+						if v156 != 0 {
 							return
 						} else {
 							m.G0 = v20 + int32(192)
 							return
 						}
-					default:
-						if v25 != int32(144) {
-							m.G0 = v20 + int32(192)
-							return
-						} else {
-							v164 = *(*int32)(unsafe.Add(mBase, uint32(v26)+16))
-							v165 = *(*int32)(unsafe.Add(mBase, uint32(v26)+12))
-							v166 = *(*int32)(unsafe.Add(mBase, uint32(v26)+8))
-							v168 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
-							v169 = F_timestamptz_to_str(m, v168)
+					} else {
+						switch v25 - int32(208) {
+						case 0:
+							v181 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
+							v182 = *(*int64)(unsafe.Add(mBase, uint32(v26)+8))
+							v183 = F_timestamptz_to_str(m, v182)
 							mBase = m.M
-							v170 = m.ExcPending
-							if v170 != 0 {
+							v184 = m.ExcPending
+							if v184 != 0 {
 								return
 							} else {
-								if base.Ui32(v164) <= base.Ui32(int32(2)) {
-									v177 = *(*int32)(unsafe.Add(mBase, uint32(v164<<(uint(int32(2))%32))+uint32(_c_F_xlog_desc[0])))
-									v178 = v177
-								} else {
-									v178 = int32(_a_F_xlog_desc_2)
-								}
-								*(*int32)(unsafe.Add(mBase, uint32(v20)+12)) = v178
-								*(*int32)(unsafe.Add(mBase, uint32(v20)+8)) = v169
-								*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v165
-								*(*int32)(unsafe.Add(mBase, uint32(v20))) = v166
-								F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_9), v20)
+								*(*int32)(unsafe.Add(mBase, uint32(v20)+24)) = v183
+								*(*uint32)(unsafe.Add(mBase, uint32(v20)+20)) = uint32(v181)
+								v188 = int64(base.Ui64(v181) >> (uint(int64(32)) % 64))
+								*(*uint32)(unsafe.Add(mBase, uint32(v20)+16)) = uint32(v188)
+								F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_9), v20+int32(16))
 								mBase = m.M
-								v185 = m.ExcPending
-								if v185 != 0 {
+								v194 = m.ExcPending
+								if v194 != 0 {
 									return
 								} else {
 									m.G0 = v20 + int32(192)
 									return
 								}
 							}
+						case 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15:
+							m.G0 = v20 + int32(192)
+							return
+						case 16:
+							v195 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+							if base.Ui32(v195) <= base.Ui32(int32(2)) {
+								v200 = *(*int32)(unsafe.Add(mBase, uint32(v195<<(uint(int32(2))%32))+uint32(_c_F_xlog_desc[0])))
+								v202 = v200
+							} else {
+								v202 = int32(_a_F_xlog_desc_2)
+							}
+							*(*int32)(unsafe.Add(mBase, uint32(v20)+32)) = v202
+							F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_10), v20+int32(32))
+							mBase = m.M
+							v208 = m.ExcPending
+							if v208 != 0 {
+								return
+							} else {
+								m.G0 = v20 + int32(192)
+								return
+							}
+						default:
+							if v25 != int32(144) {
+								m.G0 = v20 + int32(192)
+								return
+							} else {
+								v161 = *(*int32)(unsafe.Add(mBase, uint32(v26)+16))
+								v162 = *(*int32)(unsafe.Add(mBase, uint32(v26)+12))
+								v163 = *(*int32)(unsafe.Add(mBase, uint32(v26)+8))
+								v164 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
+								v165 = F_timestamptz_to_str(m, v164)
+								mBase = m.M
+								v166 = m.ExcPending
+								if v166 != 0 {
+									return
+								} else {
+									if base.Ui32(v161) <= base.Ui32(int32(2)) {
+										v171 = *(*int32)(unsafe.Add(mBase, uint32(v161<<(uint(int32(2))%32))+uint32(_c_F_xlog_desc[0])))
+										v173 = v171
+									} else {
+										v173 = int32(_a_F_xlog_desc_2)
+									}
+									*(*int32)(unsafe.Add(mBase, uint32(v20)+12)) = v173
+									*(*int32)(unsafe.Add(mBase, uint32(v20)+8)) = v165
+									*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v162
+									*(*int32)(unsafe.Add(mBase, uint32(v20))) = v163
+									F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_11), v20)
+									mBase = m.M
+									v180 = m.ExcPending
+									if v180 != 0 {
+										return
+									} else {
+										m.G0 = v20 + int32(192)
+										return
+									}
+								}
+							}
 						}
 					}
 				}
-			case 16:
-				v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+25)))
-				v111 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+24)))
-				v112 = *(*int32)(unsafe.Add(mBase, uint32(v26)+16))
-				v113 = *(*int32)(unsafe.Add(mBase, uint32(v26)+12))
-				v114 = *(*int32)(unsafe.Add(mBase, uint32(v26)+8))
-				v115 = *(*int32)(unsafe.Add(mBase, uint32(v26)+4))
-				v116 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
-				v118 = *(*int32)(unsafe.Add(mBase, uint32(v26)+20))
-				if base.Ui32(v118) <= base.Ui32(int32(2)) {
-					v125 = *(*int32)(unsafe.Add(mBase, uint32(v118<<(uint(int32(2))%32))+uint32(_c_F_xlog_desc[0])))
-					v126 = v125
-				} else {
-					v126 = int32(_a_F_xlog_desc_2)
-				}
-				*(*int32)(unsafe.Add(mBase, uint32(v20)+84)) = v126
-				*(*int32)(unsafe.Add(mBase, uint32(v20)+80)) = v112
-				if v110&int32(1) != 0 {
-					v133 = int32(_a_F_xlog_desc_10)
-				} else {
-					v133 = int32(_a_F_xlog_desc_11)
-				}
-				*(*int32)(unsafe.Add(mBase, uint32(v20)+92)) = v133
-				if v111&int32(1) != 0 {
-					v139 = int32(_a_F_xlog_desc_10)
-				} else {
-					v139 = int32(_a_F_xlog_desc_11)
-				}
-				*(*int32)(unsafe.Add(mBase, uint32(v20)+88)) = v139
-				*(*int32)(unsafe.Add(mBase, uint32(v20)+76)) = v113
-				*(*int32)(unsafe.Add(mBase, uint32(v20)+72)) = v114
-				*(*int32)(unsafe.Add(mBase, uint32(v20)+68)) = v115
-				*(*int32)(unsafe.Add(mBase, uint32(v20)+64)) = v116
-				F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_12), v20-int32(-64))
+			} else {
+				v99 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
+				*(*uint32)(unsafe.Add(mBase, uint32(v20)+52)) = uint32(v99)
+				v102 = int64(base.Ui64(v99) >> (uint(int64(32)) % 64))
+				*(*uint32)(unsafe.Add(mBase, uint32(v20)+48)) = uint32(v102)
+				F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_12), v20+int32(48))
 				mBase = m.M
-				v149 = m.ExcPending
-				if v149 != 0 {
+				v108 = m.ExcPending
+				if v108 != 0 {
 					return
 				} else {
 					m.G0 = v20 + int32(192)
@@ -369,12 +373,12 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 			}
 		}
 	case 3:
-		v82 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
-		*(*int32)(unsafe.Add(mBase, uint32(v20)+176)) = v82
+		v79 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+		*(*int32)(unsafe.Add(mBase, uint32(v20)+176)) = v79
 		F_appendStringInfo(m, l0, int32(_a_F_xlog_desc_13), v20+int32(176))
 		mBase = m.M
-		v88 = m.ExcPending
-		if v88 != 0 {
+		v85 = m.ExcPending
+		if v85 != 0 {
 			return
 		} else {
 			m.G0 = v20 + int32(192)
@@ -383,8 +387,8 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 	case 7:
 		F_appendStringInfoString(m, l0, v26+int32(8))
 		mBase = m.M
-		v92 = m.ExcPending
-		if v92 != 0 {
+		v89 = m.ExcPending
+		if v89 != 0 {
 			return
 		} else {
 			m.G0 = v20 + int32(192)

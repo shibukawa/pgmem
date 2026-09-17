@@ -70,26 +70,24 @@ func F_be_lo_from_bytea(m *base.Module, l0 int32) int32 {
 	_ = v32
 	var v33 int32
 	_ = v33
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
-	var v47 int32
-	_ = v47
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v49 int32
+	_ = v49
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
-	var v55 int32
-	_ = v55
+	var v54 int32
+	_ = v54
+	var v60 int32
+	_ = v60
 	var v61 int32
 	_ = v61
 	var v62 int32
 	_ = v62
-	var v63 int32
-	_ = v63
-	var v65 int32
-	_ = v65
+	var v64 int32
+	_ = v64
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v9 = F_pg_detoast_datum_packed(m, v8)
@@ -128,38 +126,37 @@ func F_be_lo_from_bytea(m *base.Module, l0 int32) int32 {
 						v33 = v9 + int32(4)
 					}
 					if v30 == int32(1) {
-						v36 = int32(4)
-						v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20))))
-						if v38&int32(254) == int32(2) {
-							v47 = v36
+						v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20))))
+						if v39 == int32(18) {
+							v42 = int32(16)
 						} else {
-							v47 = base.B2i32(v38 == int32(18)) << (uint(v36) % 32)
+							v42 = int32(0)
 						}
-						if v38 == int32(1) {
-							v50 = v36
+						if base.Ui32((v39-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+							v49 = int32(4)
 						} else {
-							v50 = v47
+							v49 = v42
 						}
-						v61 = v50
+						v60 = v49
 					} else {
-						v51 = int32(1)
+						v50 = int32(1)
 						if v32 != 0 {
-							v61 = int32(base.Ui32(v30)>>(uint(v51)%32)) - v51
+							v60 = int32(base.Ui32(v30)>>(uint(v50)%32)) - v50
 						} else {
-							v55 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
-							v61 = int32(base.Ui32(v55)>>(uint(int32(2))%32)) - int32(4)
+							v54 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
+							v60 = int32(base.Ui32(v54)>>(uint(int32(2))%32)) - int32(4)
 						}
 					}
-					v62 = F_inv_write(m, v26, v33, v61)
+					v61 = F_inv_write(m, v26, v33, v60)
 					mBase = m.M
-					v63 = m.ExcPending
-					if v63 != 0 {
+					v62 = m.ExcPending
+					if v62 != 0 {
 						return int32(0)
 					} else {
 						F_pfree(m, v26)
 						mBase = m.M
-						v65 = m.ExcPending
-						if v65 != 0 {
+						v64 = m.ExcPending
+						if v64 != 0 {
 							return int32(0)
 						} else {
 							return v21
@@ -419,29 +416,29 @@ func F_be_lo_truncate(m *base.Module, l0 int32) int32 {
 func F_be_lo_truncate64(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v4 int64
+	var v4 int32
 	_ = v4
 	var v5 int32
 	_ = v5
-	var v10 int32
-	_ = v10
-	var v12 int32
-	_ = v12
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v4 = *(*int64)(unsafe.Add(mBase, uint32(v3)))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	var v6 int64
+	_ = v6
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v6 = *(*int64)(unsafe.Add(mBase, uint32(v5)))
 	F_PreventCommandIfReadOnly(m, int32(_a_F_be_lo_truncate64_0))
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v11 = m.ExcPending
+	if v11 != 0 {
 		return int32(0)
 	} else {
-		F_lo_truncate_internal(m, v5, v4)
+		F_lo_truncate_internal(m, v4, v6)
 		mBase = m.M
-		v12 = m.ExcPending
-		if v12 != 0 {
+		v13 = m.ExcPending
+		if v13 != 0 {
 			return int32(0)
 		} else {
 			return int32(0)

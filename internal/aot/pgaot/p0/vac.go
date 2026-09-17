@@ -160,186 +160,183 @@ func F_vac_open_indexes(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 	_ = v16
 	var v17 int32
 	_ = v17
-	var v18 int32
-	_ = v18
-	var v20 int32
-	_ = v20
-	var v27 int32
-	_ = v27
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v30 int32
+	_ = v30
 	var v31 int32
 	_ = v31
-	var v34 int32
-	_ = v34
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
 	var v38 int32
 	_ = v38
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	var v45 int32
-	_ = v45
-	var v53 int32
-	_ = v53
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
-	var v57 int32
-	_ = v57
-	var v63 int32
-	_ = v63
-	var v68 int32
-	_ = v68
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v62 int32
+	_ = v62
+	var v65 int32
+	_ = v65
 	v5 = int32(0)
 	v8 = F_RelationGetIndexList(m, l0)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		goto L3
+		goto L2
 	} else {
-		goto L4
+		goto L3
 	}
 L1:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v63
+	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v62
 	F_list_free(m, v8)
 	mBase = m.M
-	v68 = m.ExcPending
-	if v68 != 0 {
-		goto L3
+	v65 = m.ExcPending
+	if v65 != 0 {
+		goto L2
 	} else {
-		goto L22
+		goto L21
 	}
 L2:
 	;
-	v27 = v10
-	v31 = int32(0)
-	goto L13
+	return
 L3:
 	;
-	return
-L4:
-	;
 	if v8 != 0 {
-		goto L5
+		goto L4
 	} else {
-		goto L6
+		goto L5
 	}
-L5:
+L4:
 	;
 	v10 = int32(0)
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 	if v10 < v11 {
-		goto L8
+		goto L7
 	} else {
-		goto L9
+		goto L8
 	}
+L5:
+	;
+	goto L6
 L6:
 	;
-	goto L7
-L7:
-	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3))) = int32(0)
-	v63 = v5
+	v62 = v5
 	goto L1
-L8:
+L7:
 	;
 	v16 = F_palloc(m, v11<<(uint(int32(2))%32))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
-		goto L3
+		goto L2
+	} else {
+		goto L10
+	}
+L8:
+	;
+	v19 = int32(0)
+	goto L9
+L9:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(l3))) = v19
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+	if v21 <= int32(0) {
+		v62 = v5
+		goto L1
 	} else {
 		goto L11
 	}
-L9:
-	;
-	v18 = v5
-	goto L10
 L10:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l3))) = v18
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-	if int32(0) < v20 {
-		goto L2
-	} else {
-		goto L12
-	}
+	v19 = v16
+	goto L9
 L11:
 	;
-	v18 = v16
-	goto L10
+	v24 = v10
+	v30 = v5
+	goto L12
 L12:
 	;
-	v63 = int32(0)
-	goto L1
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v31+v24<<(uint(int32(2))%32))))
+	v36 = F_index_open(m, v35, l1)
+	mBase = m.M
+	v37 = m.ExcPending
+	if v37 != 0 {
+		goto L2
+	} else {
+		goto L15
+	}
 L13:
 	;
-	v34 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v34+v27<<(uint(int32(2))%32))))
-	v39 = F_index_open(m, v38, l1)
-	mBase = m.M
-	v40 = m.ExcPending
-	if v40 != 0 {
-		goto L3
-	} else {
-		goto L16
-	}
+	v62 = v49
+	goto L1
 L14:
 	;
-	v63 = v54
-	goto L1
-L15:
-	;
-	v56 = v27 + int32(1)
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-	if v56 < v57 {
-		v27 = v56
-		v31 = v54
-		goto L13
-	} else {
-		goto L21
-	}
-L16:
-	;
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(v39)+192))
-	v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+20)))
-	if v42 == int32(1) {
-		goto L17
-	} else {
-		goto L18
-	}
-L17:
-	;
-	v45 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-	*(*int32)(unsafe.Add(mBase, uint32(v45+v31<<(uint(int32(2))%32)))) = v39
-	v54 = v31 + int32(1)
-	goto L15
-L18:
-	;
-	goto L19
-L19:
-	;
-	F_relation_close(m, v39, l1)
-	mBase = m.M
-	v53 = m.ExcPending
-	if v53 != 0 {
-		goto L3
+	v51 = v24 + int32(1)
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+	if v51 < v52 {
+		v24 = v51
+		v30 = v49
+		goto L12
 	} else {
 		goto L20
 	}
+L15:
+	;
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(v36)+192))
+	v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v38)+20)))
+	if v39 != 0 {
+		goto L16
+	} else {
+		goto L17
+	}
+L16:
+	;
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
+	*(*int32)(unsafe.Add(mBase, uint32(v40+v30<<(uint(int32(2))%32)))) = v36
+	v49 = v30 + int32(1)
+	goto L14
+L17:
+	;
+	goto L18
+L18:
+	;
+	F_relation_close(m, v36, l1)
+	mBase = m.M
+	v48 = m.ExcPending
+	if v48 != 0 {
+		goto L2
+	} else {
+		goto L19
+	}
+L19:
+	;
+	v49 = v30
+	goto L14
 L20:
 	;
-	v54 = v31
-	goto L15
+	goto L13
 L21:
-	;
-	goto L14
-L22:
 	;
 	return
 }

@@ -19,10 +19,10 @@ func F_IsPostmasterChildWalSender(m *base.Module, l0 int32) int32 {
 func F_PostmasterChildName(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(12))+uint32(_c_F_PostmasterChildName[0])))
-	return v6
+	var v4 int32
+	_ = v4
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(12))+uint32(_c_F_PostmasterChildName[0])))
+	return v4
 }
 func F_RegisterPostmasterChildActive(m *base.Module) {
 	mBase := m.M

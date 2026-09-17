@@ -24,54 +24,54 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 	_ = v26
 	var v29 int64
 	_ = v29
-	var v34 int32
-	_ = v34
-	var v36 int64
-	_ = v36
-	var v38 int32
-	_ = v38
-	var v42 int32
-	_ = v42
-	var v44 int32
-	_ = v44
-	var v45 int32
-	_ = v45
-	var v46 int64
-	_ = v46
-	var v50 int64
-	_ = v50
-	var v52 int64
-	_ = v52
-	var v55 int32
+	var v35 int32
+	_ = v35
+	var v37 int64
+	_ = v37
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v49 int64
+	_ = v49
+	var v53 int64
+	_ = v53
+	var v55 int64
 	_ = v55
-	var v57 int64
-	_ = v57
 	var v58 int32
 	_ = v58
-	var v62 int64
-	_ = v62
-	var v63 int64
-	_ = v63
+	var v60 int64
+	_ = v60
+	var v61 int32
+	_ = v61
 	var v65 int64
 	_ = v65
-	var v67 int64
-	_ = v67
-	var v69 int32
-	_ = v69
-	var v73 int32
-	_ = v73
-	var v75 int32
-	_ = v75
+	var v66 int64
+	_ = v66
+	var v68 int64
+	_ = v68
+	var v70 int64
+	_ = v70
+	var v72 int32
+	_ = v72
 	var v76 int32
 	_ = v76
-	var v77 int64
-	_ = v77
-	var v83 int64
-	_ = v83
-	var v85 int64
-	_ = v85
+	var v78 int32
+	_ = v78
+	var v79 int32
+	_ = v79
+	var v80 int64
+	_ = v80
 	var v86 int64
 	_ = v86
+	var v88 int64
+	_ = v88
+	var v89 int64
+	_ = v89
 	v9 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[0]))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+440))
 	v12 = int64(*(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1])))
@@ -88,76 +88,72 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 			v26 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[0]))
 			*(*int32)(unsafe.Add(mBase, uint32(v26)+440)) = int32(0)
 			v29 = *(*int64)(unsafe.Add(mBase, uint32(v26)+224))
-			if v29 == int64(0) {
-				v52 = v15
+			if base.B2i32(v29 == int64(0))|base.B2i32(base.Ui64(l0) <= base.Ui64(v29)) != 0 {
+				v55 = v15
 			} else {
-				if base.Ui64(l0) <= base.Ui64(v29) {
-					v52 = v15
+				v35 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1]))
+				v37 = base.I64_div_u_s(v29, base.I64_extend_i32_s(v35))
+				v39 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[2]))
+				if v39 < int32(0) {
+					v55 = v37
 				} else {
-					v34 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1]))
-					v36 = base.I64_div_u_s(v29, base.I64_extend_i32_s(v34))
-					v38 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[2]))
-					if v38 < int32(0) {
-						v52 = v36
+					v43 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_KeepLogSeg[3])))
+					if v43&int32(1) != 0 {
+						v55 = v37
 					} else {
-						v42 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_KeepLogSeg[3])))
-						if v42 != 0 {
-							v52 = v36
+						v47 = base.I32_div_s(v35, int32(_a_F_KeepLogSeg_2))
+						v48 = base.I32_div_s(v39, v47)
+						v49 = base.I64_extend_i32_s(v48)
+						if base.Ui64(v49) < base.Ui64(v15-v37) {
+							v53 = v15 - v49
 						} else {
-							v44 = base.I32_div_s(v34, int32(_a_F_KeepLogSeg_2))
-							v45 = base.I32_div_s(v38, v44)
-							v46 = base.I64_extend_i32_s(v45)
-							if base.Ui64(v46) < base.Ui64(v15-v36) {
-								v50 = v15 - v46
-							} else {
-								v50 = v36
-							}
-							v52 = v50
+							v53 = v37
 						}
+						v55 = v53
 					}
 				}
 			}
-			v55 = int32(0)
-			v57 = F_GetOldestUnsummarizedLSN(m, v55, v55)
+			v58 = int32(0)
+			v60 = F_GetOldestUnsummarizedLSN(m, v58, v58)
 			mBase = m.M
-			v58 = m.ExcPending
-			if v58 != 0 {
+			v61 = m.ExcPending
+			if v61 != 0 {
 				return
 			} else {
-				if v57 != int64(0) {
-					v62 = int64(*(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1])))
-					v63 = base.I64_div_u_s(v57, v62)
-					if base.Ui64(v63) < base.Ui64(v52) {
-						v65 = v63
+				if v60 != int64(0) {
+					v65 = int64(*(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1])))
+					v66 = base.I64_div_u_s(v60, v65)
+					if base.Ui64(v66) < base.Ui64(v55) {
+						v68 = v66
 					} else {
-						v65 = v52
+						v68 = v55
 					}
-					v67 = v65
+					v70 = v68
 				} else {
-					v67 = v52
+					v70 = v55
 				}
-				v69 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[4]))
-				if v69 <= int32(0) {
-					v85 = v67
+				v72 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[4]))
+				if v72 <= int32(0) {
+					v88 = v70
 				} else {
-					v73 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1]))
-					v75 = base.I32_div_s(v73, int32(_a_F_KeepLogSeg_2))
-					v76 = base.I32_div_s(v69, v75)
-					v77 = base.I64_extend_i32_s(v76)
-					if base.Ui64(v77) <= base.Ui64(v15-v67) {
-						v85 = v67
+					v76 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1]))
+					v78 = base.I32_div_s(v76, int32(_a_F_KeepLogSeg_2))
+					v79 = base.I32_div_s(v72, v78)
+					v80 = base.I64_extend_i32_s(v79)
+					if base.Ui64(v80) <= base.Ui64(v15-v70) {
+						v88 = v70
 					} else {
-						if base.Ui64(v15) <= base.Ui64(v77) {
-							v83 = int64(1)
+						if base.Ui64(v15) <= base.Ui64(v80) {
+							v86 = int64(1)
 						} else {
-							v83 = v15 - v77
+							v86 = v15 - v80
 						}
-						v85 = v83
+						v88 = v86
 					}
 				}
-				v86 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
-				if base.Ui64(v85) < base.Ui64(v86) {
-					*(*int64)(unsafe.Add(mBase, uint32(l1))) = v85
+				v89 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
+				if base.Ui64(v88) < base.Ui64(v89) {
+					*(*int64)(unsafe.Add(mBase, uint32(l1))) = v88
 				} else {
 				}
 				return
@@ -167,76 +163,72 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 		v26 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[0]))
 		*(*int32)(unsafe.Add(mBase, uint32(v26)+440)) = int32(0)
 		v29 = *(*int64)(unsafe.Add(mBase, uint32(v26)+224))
-		if v29 == int64(0) {
-			v52 = v15
+		if base.B2i32(v29 == int64(0))|base.B2i32(base.Ui64(l0) <= base.Ui64(v29)) != 0 {
+			v55 = v15
 		} else {
-			if base.Ui64(l0) <= base.Ui64(v29) {
-				v52 = v15
+			v35 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1]))
+			v37 = base.I64_div_u_s(v29, base.I64_extend_i32_s(v35))
+			v39 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[2]))
+			if v39 < int32(0) {
+				v55 = v37
 			} else {
-				v34 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1]))
-				v36 = base.I64_div_u_s(v29, base.I64_extend_i32_s(v34))
-				v38 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[2]))
-				if v38 < int32(0) {
-					v52 = v36
+				v43 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_KeepLogSeg[3])))
+				if v43&int32(1) != 0 {
+					v55 = v37
 				} else {
-					v42 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_KeepLogSeg[3])))
-					if v42 != 0 {
-						v52 = v36
+					v47 = base.I32_div_s(v35, int32(_a_F_KeepLogSeg_2))
+					v48 = base.I32_div_s(v39, v47)
+					v49 = base.I64_extend_i32_s(v48)
+					if base.Ui64(v49) < base.Ui64(v15-v37) {
+						v53 = v15 - v49
 					} else {
-						v44 = base.I32_div_s(v34, int32(_a_F_KeepLogSeg_2))
-						v45 = base.I32_div_s(v38, v44)
-						v46 = base.I64_extend_i32_s(v45)
-						if base.Ui64(v46) < base.Ui64(v15-v36) {
-							v50 = v15 - v46
-						} else {
-							v50 = v36
-						}
-						v52 = v50
+						v53 = v37
 					}
+					v55 = v53
 				}
 			}
 		}
-		v55 = int32(0)
-		v57 = F_GetOldestUnsummarizedLSN(m, v55, v55)
+		v58 = int32(0)
+		v60 = F_GetOldestUnsummarizedLSN(m, v58, v58)
 		mBase = m.M
-		v58 = m.ExcPending
-		if v58 != 0 {
+		v61 = m.ExcPending
+		if v61 != 0 {
 			return
 		} else {
-			if v57 != int64(0) {
-				v62 = int64(*(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1])))
-				v63 = base.I64_div_u_s(v57, v62)
-				if base.Ui64(v63) < base.Ui64(v52) {
-					v65 = v63
+			if v60 != int64(0) {
+				v65 = int64(*(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1])))
+				v66 = base.I64_div_u_s(v60, v65)
+				if base.Ui64(v66) < base.Ui64(v55) {
+					v68 = v66
 				} else {
-					v65 = v52
+					v68 = v55
 				}
-				v67 = v65
+				v70 = v68
 			} else {
-				v67 = v52
+				v70 = v55
 			}
-			v69 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[4]))
-			if v69 <= int32(0) {
-				v85 = v67
+			v72 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[4]))
+			if v72 <= int32(0) {
+				v88 = v70
 			} else {
-				v73 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1]))
-				v75 = base.I32_div_s(v73, int32(_a_F_KeepLogSeg_2))
-				v76 = base.I32_div_s(v69, v75)
-				v77 = base.I64_extend_i32_s(v76)
-				if base.Ui64(v77) <= base.Ui64(v15-v67) {
-					v85 = v67
+				v76 = *(*int32)(unsafe.Add(mBase, _c_F_KeepLogSeg[1]))
+				v78 = base.I32_div_s(v76, int32(_a_F_KeepLogSeg_2))
+				v79 = base.I32_div_s(v72, v78)
+				v80 = base.I64_extend_i32_s(v79)
+				if base.Ui64(v80) <= base.Ui64(v15-v70) {
+					v88 = v70
 				} else {
-					if base.Ui64(v15) <= base.Ui64(v77) {
-						v83 = int64(1)
+					if base.Ui64(v15) <= base.Ui64(v80) {
+						v86 = int64(1)
 					} else {
-						v83 = v15 - v77
+						v86 = v15 - v80
 					}
-					v85 = v83
+					v88 = v86
 				}
 			}
-			v86 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
-			if base.Ui64(v85) < base.Ui64(v86) {
-				*(*int64)(unsafe.Add(mBase, uint32(l1))) = v85
+			v89 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
+			if base.Ui64(v88) < base.Ui64(v89) {
+				*(*int64)(unsafe.Add(mBase, uint32(l1))) = v88
 			} else {
 			}
 			return

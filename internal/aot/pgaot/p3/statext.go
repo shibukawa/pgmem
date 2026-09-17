@@ -188,8 +188,8 @@ func F_statext_is_compatible_clause_internal(m *base.Module, l0 int32, l1 int32,
 	_ = v190
 	var v191 int32
 	_ = v191
-	var v204 int32
-	_ = v204
+	var v205 int32
+	_ = v205
 	v6 = int32(0)
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v11 = l0
@@ -197,10 +197,10 @@ func F_statext_is_compatible_clause_internal(m *base.Module, l0 int32, l1 int32,
 	goto L4
 L1:
 	;
-	return v204
+	return v205
 L2:
 	;
-	v204 = int32(1)
+	v205 = int32(1)
 	goto L1
 L3:
 	;
@@ -286,7 +286,7 @@ L12:
 	;
 	v96 = *(*int32)(unsafe.Add(mBase, uint32(v25)+28))
 	if v96 == int32(0) {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L42
@@ -295,7 +295,7 @@ L13:
 	;
 	v40 = *(*int32)(unsafe.Add(mBase, uint32(v25)+28))
 	if v40 == int32(0) {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L20
@@ -304,7 +304,7 @@ L14:
 	;
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
 	if v28 != l1 {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L15
@@ -313,7 +313,7 @@ L15:
 	;
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v25)+28))
 	if v30 != 0 {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L16
@@ -322,7 +322,7 @@ L16:
 	;
 	v31 = int32(*(*int16)(unsafe.Add(mBase, uint32(v25)+8)))
 	if v31 <= int32(0) {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L17
@@ -349,7 +349,7 @@ L20:
 	;
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(v40)+4))
 	if v43 != int32(2) {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L21
@@ -423,7 +423,7 @@ L31:
 	;
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
 	if v63 != int32(7) {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L32
@@ -435,7 +435,7 @@ L32:
 L33:
 	;
 	if base.B2i32(base.Ui32(int32(4)) <= base.Ui32(v68-int32(101)))&base.B2i32(base.Ui32(int32(1)) < base.Ui32(v68-int32(336))) != 0 {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L34
@@ -506,7 +506,7 @@ L42:
 	;
 	v99 = *(*int32)(unsafe.Add(mBase, uint32(v96)+4))
 	if v99 != int32(2) {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L43
@@ -552,7 +552,7 @@ L48:
 L49:
 	;
 	if v115 != int32(7) {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L50
@@ -571,7 +571,7 @@ L50:
 L51:
 	;
 	if base.B2i32(base.Ui32(int32(4)) <= base.Ui32(v119-int32(101)))&base.B2i32(base.Ui32(int32(1)) < base.Ui32(v119-int32(336))) != 0 {
-		v204 = v6
+		v205 = v6
 		goto L1
 	} else {
 		goto L52
@@ -643,7 +643,7 @@ L60:
 	v150 = int32(1)
 	v151 = *(*int32)(unsafe.Add(mBase, uint32(v25)+8))
 	if v151 == int32(0) {
-		v204 = v150
+		v205 = v150
 		goto L1
 	} else {
 		goto L61
@@ -653,7 +653,7 @@ L61:
 	v154 = int32(0)
 	v155 = *(*int32)(unsafe.Add(mBase, uint32(v151)+4))
 	if v155 <= v154 {
-		v204 = v150
+		v205 = v150
 		goto L1
 	} else {
 		goto L62
@@ -676,12 +676,12 @@ L63:
 	}
 L64:
 	;
-	v204 = v172
+	v205 = v172
 	goto L1
 L65:
 	;
 	if v172 == int32(0) {
-		v204 = v172
+		v205 = v172
 		goto L1
 	} else {
 		goto L66

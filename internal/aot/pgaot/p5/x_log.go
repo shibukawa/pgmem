@@ -94,10 +94,12 @@ func F_XLogRecGetBlockData(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v5
 	var v6 int32
 	_ = v6
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
 	var v21 int32
@@ -115,13 +117,14 @@ func F_XLogRecGetBlockData(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		v29 = v4
 		return v29
 	} else {
-		v12 = v5 + l1*int32(52) + int32(76)
-		v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12))))
-		if v13 != int32(1) {
+		v10 = v5 + l1*int32(52)
+		v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+76)))
+		if v11 != int32(1) {
 			v29 = v4
 			return v29
 		} else {
-			v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+43)))
+			v15 = v10 + int32(76)
+			v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+43)))
 			if v16 == int32(0) {
 				if l2 == int32(0) {
 					v29 = v4
@@ -133,11 +136,11 @@ func F_XLogRecGetBlockData(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				}
 			} else {
 				if l2 != 0 {
-					v25 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v12)+48)))
+					v25 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v15)+48)))
 					*(*int32)(unsafe.Add(mBase, uint32(l2))) = v25
 				} else {
 				}
-				v27 = *(*int32)(unsafe.Add(mBase, uint32(v12)+44))
+				v27 = *(*int32)(unsafe.Add(mBase, uint32(v15)+44))
 				v29 = v27
 				return v29
 			}
@@ -155,13 +158,15 @@ func F_XLogRecGetBlockTag(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v11
 	var v12 int32
 	_ = v12
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
-	var v22 int64
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v22 int32
 	_ = v22
-	var v24 int32
+	var v24 int64
 	_ = v24
 	var v26 int32
 	_ = v26
@@ -205,9 +210,9 @@ func F_XLogRecGetBlockTag(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			}
 		}
 	} else {
-		v18 = v11 + l1*int32(52) + int32(76)
-		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18))))
-		if v19 != int32(1) {
+		v16 = v11 + l1*int32(52)
+		v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+76)))
+		if v17 != int32(1) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
 			v37 = m.ExcPending
@@ -234,20 +239,21 @@ func F_XLogRecGetBlockTag(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				}
 			}
 		} else {
+			v21 = v16 + int32(76)
 			if l2 != 0 {
-				v22 = *(*int64)(unsafe.Add(mBase, uint32(v18)+4))
-				*(*int64)(unsafe.Add(mBase, uint32(l2))) = v22
-				v24 = *(*int32)(unsafe.Add(mBase, uint32(v18)+12))
-				*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v24
+				v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+12))
+				*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v22
+				v24 = *(*int64)(unsafe.Add(mBase, uint32(v21)+4))
+				*(*int64)(unsafe.Add(mBase, uint32(l2))) = v24
 			} else {
 			}
 			if l3 != 0 {
-				v26 = *(*int32)(unsafe.Add(mBase, uint32(v18)+16))
+				v26 = *(*int32)(unsafe.Add(mBase, uint32(v21)+16))
 				*(*int32)(unsafe.Add(mBase, uint32(l3))) = v26
 			} else {
 			}
 			if l4 != 0 {
-				v28 = *(*int32)(unsafe.Add(mBase, uint32(v18)+20))
+				v28 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
 				*(*int32)(unsafe.Add(mBase, uint32(l4))) = v28
 			} else {
 			}
@@ -370,6 +376,8 @@ func F_XLogWalRcvClose(m *base.Module, l0 int32) {
 	_ = v22
 	var v25 int64
 	_ = v25
+	var v28 int32
+	_ = v28
 	var v33 int32
 	_ = v33
 	var v34 int32
@@ -380,18 +388,18 @@ func F_XLogWalRcvClose(m *base.Module, l0 int32) {
 	_ = v37
 	var v41 int32
 	_ = v41
-	var v47 int32
-	_ = v47
-	var v51 int32
-	_ = v51
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
+	var v59 int32
+	_ = v59
 	var v61 int32
 	_ = v61
-	var v63 int32
-	_ = v63
-	var v69 int32
-	_ = v69
-	var v74 int32
-	_ = v74
+	var v67 int32
+	_ = v67
+	var v72 int32
+	_ = v72
 	v6 = m.G0
 	v8 = v6 - int32(96)
 	m.G0 = v8
@@ -410,7 +418,8 @@ func F_XLogWalRcvClose(m *base.Module, l0 int32) {
 		*(*uint32)(unsafe.Add(mBase, uint32(v8)+20)) = uint32(v22)
 		v25 = v17 - v21*v22
 		*(*uint32)(unsafe.Add(mBase, uint32(v8)+24)) = uint32(v25)
-		v33 = F_pg_snprintf(m, v8+int32(32), int32(64), int32(_a_F_XLogWalRcvClose_0), v8+int32(16))
+		v28 = v8 + int32(32)
+		v33 = F_pg_snprintf(m, v28, int32(64), int32(_a_F_XLogWalRcvClose_0), v8+int32(16))
 		mBase = m.M
 		v34 = m.ExcPending
 		if v34 != 0 {
@@ -422,10 +431,10 @@ func F_XLogWalRcvClose(m *base.Module, l0 int32) {
 			if v37 == int32(0) {
 				v41 = *(*int32)(unsafe.Add(mBase, _c_F_XLogWalRcvClose[4]))
 				if v41 != int32(2) {
-					F_XLogArchiveForceDone(m, v8+int32(32))
+					F_XLogArchiveForceDone(m, v28)
 					mBase = m.M
-					v47 = m.ExcPending
-					if v47 != 0 {
+					v45 = m.ExcPending
+					if v45 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, _c_F_XLogWalRcvClose[3])) = int32(-1)
@@ -435,8 +444,8 @@ func F_XLogWalRcvClose(m *base.Module, l0 int32) {
 				} else {
 					F_XLogArchiveNotify(m, v8+int32(32))
 					mBase = m.M
-					v51 = m.ExcPending
-					if v51 != 0 {
+					v49 = m.ExcPending
+					if v49 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, _c_F_XLogWalRcvClose[3])) = int32(-1)
@@ -447,27 +456,27 @@ func F_XLogWalRcvClose(m *base.Module, l0 int32) {
 			} else {
 				F_errstart_cold(m, int32(23), int32(0))
 				mBase = m.M
-				v61 = m.ExcPending
-				if v61 != 0 {
+				v59 = m.ExcPending
+				if v59 != 0 {
 					return
 				} else {
 					F_errcode_for_file_access(m)
 					mBase = m.M
-					v63 = m.ExcPending
-					if v63 != 0 {
+					v61 = m.ExcPending
+					if v61 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(32)
 						F_errmsg(m, int32(_a_F_XLogWalRcvClose_1), v8)
 						mBase = m.M
-						v69 = m.ExcPending
-						if v69 != 0 {
+						v67 = m.ExcPending
+						if v67 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_XLogWalRcvClose_2), int32(1064), int32(_a_F_XLogWalRcvClose_3))
 							mBase = m.M
-							v74 = m.ExcPending
-							if v74 != 0 {
+							v72 = m.ExcPending
+							if v72 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()

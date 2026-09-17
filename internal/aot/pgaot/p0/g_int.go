@@ -78,18 +78,18 @@ func F_g_int_same(m *base.Module, l0 int32) int32 {
 	_ = v90
 	var v93 int32
 	_ = v93
-	var v99 int32
-	_ = v99
+	var v97 int32
+	_ = v97
+	var v102 int32
+	_ = v102
 	var v106 int32
 	_ = v106
-	var v110 int32
-	_ = v110
+	var v109 int32
+	_ = v109
 	var v113 int32
 	_ = v113
-	var v119 int32
-	_ = v119
-	var v126 int32
-	_ = v126
+	var v118 int32
+	_ = v118
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v8 = F_pg_detoast_datum(m, v7)
 	mBase = m.M
@@ -117,7 +117,7 @@ L3:
 	;
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-	v19 = F_ArrayGetNItems(m, v16, v8+int32(16))
+	v19 = F_ArrayGetNItemsSafe(m, v16, v8+int32(16))
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {
@@ -137,8 +137,8 @@ L5:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v110 = m.ExcPending
-	if v110 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L1
 	} else {
 		goto L36
@@ -200,7 +200,7 @@ L13:
 L14:
 	;
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
-	v30 = F_ArrayGetNItems(m, v27, v13+int32(16))
+	v30 = F_ArrayGetNItemsSafe(m, v27, v13+int32(16))
 	mBase = m.M
 	v31 = m.ExcPending
 	if v31 != 0 {
@@ -318,8 +318,8 @@ L33:
 	;
 	F_errmsg(m, int32(_a_F_g_int_same_0), int32(0))
 	mBase = m.M
-	v99 = m.ExcPending
-	if v99 != 0 {
+	v97 = m.ExcPending
+	if v97 != 0 {
 		goto L1
 	} else {
 		goto L34
@@ -328,8 +328,8 @@ L34:
 	;
 	F_errfinish(m, int32(_a_F_g_int_same_1), int32(395), int32(_a_F_g_int_same_2))
 	mBase = m.M
-	v106 = m.ExcPending
-	if v106 != 0 {
+	v102 = m.ExcPending
+	if v102 != 0 {
 		goto L1
 	} else {
 		goto L35
@@ -343,8 +343,8 @@ L36:
 	;
 	F_errcode(m, int32(67108994))
 	mBase = m.M
-	v113 = m.ExcPending
-	if v113 != 0 {
+	v109 = m.ExcPending
+	if v109 != 0 {
 		goto L1
 	} else {
 		goto L37
@@ -353,8 +353,8 @@ L37:
 	;
 	F_errmsg(m, int32(_a_F_g_int_same_0), int32(0))
 	mBase = m.M
-	v119 = m.ExcPending
-	if v119 != 0 {
+	v113 = m.ExcPending
+	if v113 != 0 {
 		goto L1
 	} else {
 		goto L38
@@ -363,8 +363,8 @@ L38:
 	;
 	F_errfinish(m, int32(_a_F_g_int_same_1), int32(396), int32(_a_F_g_int_same_2))
 	mBase = m.M
-	v126 = m.ExcPending
-	if v126 != 0 {
+	v118 = m.ExcPending
+	if v118 != 0 {
 		goto L1
 	} else {
 		goto L39

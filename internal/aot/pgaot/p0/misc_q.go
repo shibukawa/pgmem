@@ -167,8 +167,8 @@ func F_QueueFKConstraintValidation(m *base.Module, l0 int32, l1 int32, l2 int32,
 	_ = v56
 	var v59 int32
 	_ = v59
-	var v68 int32
-	_ = v68
+	var v70 int32
+	_ = v70
 	var v78 int32
 	_ = v78
 	var v79 int32
@@ -425,11 +425,11 @@ L14:
 L15:
 	;
 	v59 = *(*int32)(unsafe.Add(mBase, uint32(v53)+12))
-	v68 = int32(0)
+	v70 = int32(0)
 	goto L16
 L16:
 	;
-	v78 = *(*int32)(unsafe.Add(mBase, uint32(v59+v68<<(uint(int32(2))%32))))
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(v59+v70<<(uint(int32(2))%32))))
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(v78)))
 	if v79 == v52 {
 		v127 = v78
@@ -442,9 +442,9 @@ L17:
 	goto L13
 L18:
 	;
-	v82 = v68 + int32(1)
+	v82 = v70 + int32(1)
 	if v56 != v82 {
-		v68 = v82
+		v70 = v82
 		goto L16
 	} else {
 		goto L19
@@ -591,7 +591,7 @@ L36:
 	}
 L37:
 	;
-	F_sequence_close(m, v226, int32(0))
+	F_relation_close(m, v226, int32(0))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -663,23 +663,23 @@ L46:
 func F_querytree(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
-	var v13 int32
-	_ = v13
-	var v20 int32
-	_ = v20
+	var v11 int32
+	_ = v11
+	var v16 int32
+	_ = v16
 	F_errstart_cold(m, int32(21), int32(0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
 	} else {
 		F_errmsg_internal(m, int32(_a_F_querytree_0), int32(0))
-		v13 = m.ExcPending
-		if v13 != 0 {
+		v11 = m.ExcPending
+		if v11 != 0 {
 			return int32(0)
 		} else {
 			F_errfinish(m, int32(_a_F_querytree_1), int32(667), int32(_a_F_querytree_2))
-			v20 = m.ExcPending
-			if v20 != 0 {
+			v16 = m.ExcPending
+			if v16 != 0 {
 				return int32(0)
 			} else {
 				base.Wasm_trap_unreachable()
@@ -704,26 +704,26 @@ func F_quote_identifier(m *base.Module, l0 int32) int32 {
 	_ = v21
 	var v22 int32
 	_ = v22
+	var v29 int32
+	_ = v29
 	var v30 int32
 	_ = v30
-	var v44 int32
-	_ = v44
 	var v45 int32
 	_ = v45
-	var v47 int32
-	_ = v47
-	var v48 int32
-	_ = v48
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
 	var v57 int32
 	_ = v57
-	var v58 int32
-	_ = v58
-	var v60 int32
-	_ = v60
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
+	var v59 int32
+	_ = v59
+	var v61 int32
+	_ = v61
+	var v66 int32
+	_ = v66
+	var v69 int32
+	_ = v69
 	var v73 int32
 	_ = v73
 	var v76 int32
@@ -751,34 +751,29 @@ func F_quote_identifier(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		v18 = v7
 		v19 = l0
-		v21 = int32(0)
-		v22 = v16
+		v21 = v16
+		v22 = int32(0)
 		for {
 			if base.Ui32((v18-int32(97))&int32(255)) < base.Ui32(int32(26)) {
-				v44 = v21
-				v45 = v22
+				v45 = v21
+				v46 = v22
 			} else {
-				v30 = v18 & int32(255)
-				if v30 == int32(95) {
-					v44 = v21
-					v45 = v22
+				v29 = int32(255)
+				v30 = v18 & v29
+				if base.B2i32(v30 == int32(95))|base.B2i32(base.Ui32((v18-int32(48))&v29) < base.Ui32(int32(10))) != 0 {
+					v45 = v21
+					v46 = v22
 				} else {
-					if base.Ui32((v18-int32(48))&int32(255)) < base.Ui32(int32(10)) {
-						v44 = v21
-						v45 = v22
-					} else {
-						v44 = v21 + base.B2i32(v30 == int32(34))
-						v45 = int32(0)
-					}
+					v45 = int32(0)
+					v46 = v22 + base.B2i32(v30 == int32(34))
 				}
 			}
-			v47 = v19 + int32(1)
-			v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47))))
-			if v48 != 0 {
-				v18 = v48
-				v19 = v47
-				v21 = v44
-				v22 = v45
+			v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+1)))
+			if v49 != 0 {
+				v18 = v49
+				v19 = v19 + int32(1)
+				v21 = v45
+				v22 = v46
 				continue
 			} else {
 				break
@@ -786,16 +781,16 @@ func F_quote_identifier(m *base.Module, l0 int32) int32 {
 			break
 		}
 		v57 = v45
-		v58 = v44 + int32(3)
+		v59 = v46 + int32(3)
 	} else {
 		v57 = v16
-		v58 = int32(3)
+		v59 = int32(3)
 	}
-	v60 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_quote_identifier[0])))
-	if v60 != 0 {
+	v61 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_quote_identifier[0])))
+	if v61|base.B2i32(v57 == int32(0)) != 0 {
 		v76 = F_strlen(m, l0)
 		mBase = m.M
-		v78 = F_palloc(m, v76+v58)
+		v78 = F_palloc(m, v76+v59)
 		mBase = m.M
 		v79 = m.ExcPending
 		if v79 != 0 {
@@ -833,100 +828,58 @@ func F_quote_identifier(m *base.Module, l0 int32) int32 {
 			return v78
 		}
 	} else {
-		if v57 == int32(0) {
-			v76 = F_strlen(m, l0)
-			mBase = m.M
-			v78 = F_palloc(m, v76+v58)
-			mBase = m.M
-			v79 = m.ExcPending
-			if v79 != 0 {
-				return int32(0)
-			} else {
-				v80 = int32(34)
-				*(*uint8)(unsafe.Add(mBase, uint32(v78))) = uint8(v80)
-				v82 = l0
-				v83 = v78
-				for {
-					v88 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v82))))
-					if v88 != int32(34) {
-					} else {
-						v95 = int32(34)
-						*(*uint8)(unsafe.Add(mBase, uint32(v83)+1)) = uint8(v95)
-						v99 = v83 + int32(2)
-						*(*uint8)(unsafe.Add(mBase, uint32(v99))) = uint8(v88)
-						v82 = v82 + int32(1)
-						v83 = v99
-						continue
-					}
-					if v88 == int32(0) {
-						break
-					} else {
-						v99 = v83 + int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(v99))) = uint8(v88)
-						v82 = v82 + int32(1)
-						v83 = v99
-						continue
-					}
-					break
-				}
-				v103 = int32(34)
-				*(*uint16)(unsafe.Add(mBase, uint32(v83)+1)) = uint16(v103)
-				return v78
-			}
+		v66 = F_ScanKeywordLookup(m, l0, int32(_a_F_quote_identifier_0))
+		mBase = m.M
+		v69 = m.ExcPending
+		if v69 != 0 {
+			return int32(0)
 		} else {
-			v64 = F_ScanKeywordLookup(m, l0, int32(_a_F_quote_identifier_0))
-			mBase = m.M
-			v67 = m.ExcPending
-			if v67 != 0 {
-				return int32(0)
+			if v66 < int32(0) {
+				return l0
 			} else {
-				if v64 < int32(0) {
-					return l0
-				} else {
-					v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64)+uint32(_c_F_quote_identifier[1]))))
-					if v73 != 0 {
-						v76 = F_strlen(m, l0)
-						mBase = m.M
-						v78 = F_palloc(m, v76+v58)
-						mBase = m.M
-						v79 = m.ExcPending
-						if v79 != 0 {
-							return int32(0)
-						} else {
-							v80 = int32(34)
-							*(*uint8)(unsafe.Add(mBase, uint32(v78))) = uint8(v80)
-							v82 = l0
-							v83 = v78
-							for {
-								v88 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v82))))
-								if v88 != int32(34) {
-								} else {
-									v95 = int32(34)
-									*(*uint8)(unsafe.Add(mBase, uint32(v83)+1)) = uint8(v95)
-									v99 = v83 + int32(2)
-									*(*uint8)(unsafe.Add(mBase, uint32(v99))) = uint8(v88)
-									v82 = v82 + int32(1)
-									v83 = v99
-									continue
-								}
-								if v88 == int32(0) {
-									break
-								} else {
-									v99 = v83 + int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v99))) = uint8(v88)
-									v82 = v82 + int32(1)
-									v83 = v99
-									continue
-								}
-								break
-							}
-							v103 = int32(34)
-							*(*uint16)(unsafe.Add(mBase, uint32(v83)+1)) = uint16(v103)
-							return v78
-						}
+				v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v66)+uint32(_c_F_quote_identifier[1]))))
+				if v73 != 0 {
+					v76 = F_strlen(m, l0)
+					mBase = m.M
+					v78 = F_palloc(m, v76+v59)
+					mBase = m.M
+					v79 = m.ExcPending
+					if v79 != 0 {
+						return int32(0)
 					} else {
-						return l0
+						v80 = int32(34)
+						*(*uint8)(unsafe.Add(mBase, uint32(v78))) = uint8(v80)
+						v82 = l0
+						v83 = v78
+						for {
+							v88 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v82))))
+							if v88 != int32(34) {
+							} else {
+								v95 = int32(34)
+								*(*uint8)(unsafe.Add(mBase, uint32(v83)+1)) = uint8(v95)
+								v99 = v83 + int32(2)
+								*(*uint8)(unsafe.Add(mBase, uint32(v99))) = uint8(v88)
+								v82 = v82 + int32(1)
+								v83 = v99
+								continue
+							}
+							if v88 == int32(0) {
+								break
+							} else {
+								v99 = v83 + int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(v99))) = uint8(v88)
+								v82 = v82 + int32(1)
+								v83 = v99
+								continue
+							}
+							break
+						}
+						v103 = int32(34)
+						*(*uint16)(unsafe.Add(mBase, uint32(v83)+1)) = uint16(v103)
+						return v78
 					}
+				} else {
+					return l0
 				}
 			}
 		}
@@ -959,7 +912,7 @@ func F_quote_nullable(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		v14 = F_DirectFunctionCall1Coll(m, int32(1486), int32(0), v13)
+		v14 = F_DirectFunctionCall1Coll(m, int32(1467), int32(0), v13)
 		mBase = m.M
 		v15 = m.ExcPending
 		if v15 != 0 {

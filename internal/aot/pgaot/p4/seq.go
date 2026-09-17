@@ -270,24 +270,22 @@ func F_SeqNext(m *base.Module, l0 int32) int32 {
 	_ = v20
 	var v23 int32
 	_ = v23
-	var v25 int32
-	_ = v25
 	var v26 int32
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v30 int32
-	_ = v30
-	var v34 int32
-	_ = v34
-	var v40 int32
-	_ = v40
-	var v44 int32
-	_ = v44
-	var v49 int32
-	_ = v49
-	var v51 int32
-	_ = v51
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	var v50 int32
+	_ = v50
 	var v52 int32
 	_ = v52
 	var v53 int32
@@ -298,6 +296,8 @@ func F_SeqNext(m *base.Module, l0 int32) int32 {
 	_ = v55
 	var v56 int32
 	_ = v56
+	var v57 int32
+	_ = v57
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
@@ -315,64 +315,64 @@ func F_SeqNext(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = v20
-			v25 = v20
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
-			v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+56))
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = v27
-			v30 = *(*int32)(unsafe.Add(mBase, _c_F_SeqNext[0]))
-			if v30 == int32(0) {
-				v51 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
-				v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+188))
-				v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+20))
-				v54 = m.T0[v53].(func(*base.Module, int32, int32, int32) int32)(m, v25, v8, v6)
+			v26 = v20
+			v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+			v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+56))
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = v28
+			v31 = *(*int32)(unsafe.Add(mBase, _c_F_SeqNext[0]))
+			if v31 == int32(0) {
+				v52 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+				v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+188))
+				v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+				v55 = m.T0[v54].(func(*base.Module, int32, int32, int32) int32)(m, v26, v8, v6)
 				mBase = m.M
-				v55 = m.ExcPending
-				if v55 != 0 {
+				v56 = m.ExcPending
+				if v56 != 0 {
 					return int32(0)
 				} else {
-					if v54 != 0 {
-						v56 = v6
+					if v55 != 0 {
+						v57 = v6
 					} else {
-						v56 = int32(0)
+						v57 = int32(0)
 					}
-					return v56
+					return v57
 				}
 			} else {
-				v34 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SeqNext[1])))
-				if v34&int32(1) != 0 {
-					v51 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
-					v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+188))
-					v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+20))
-					v54 = m.T0[v53].(func(*base.Module, int32, int32, int32) int32)(m, v25, v8, v6)
+				v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SeqNext[1])))
+				if v35&int32(1) != 0 {
+					v52 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+					v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+188))
+					v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+					v55 = m.T0[v54].(func(*base.Module, int32, int32, int32) int32)(m, v26, v8, v6)
 					mBase = m.M
-					v55 = m.ExcPending
-					if v55 != 0 {
+					v56 = m.ExcPending
+					if v56 != 0 {
 						return int32(0)
 					} else {
-						if v54 != 0 {
-							v56 = v6
+						if v55 != 0 {
+							v57 = v6
 						} else {
-							v56 = int32(0)
+							v57 = int32(0)
 						}
-						return v56
+						return v57
 					}
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v40 = m.ExcPending
-					if v40 != 0 {
+					v41 = m.ExcPending
+					if v41 != 0 {
 						return int32(0)
 					} else {
 						F_errmsg_internal(m, int32(_a_F_SeqNext_0), int32(0))
 						mBase = m.M
-						v44 = m.ExcPending
-						if v44 != 0 {
+						v45 = m.ExcPending
+						if v45 != 0 {
 							return int32(0)
 						} else {
 							F_errfinish(m, int32(_a_F_SeqNext_1), int32(1034), int32(_a_F_SeqNext_2))
 							mBase = m.M
-							v49 = m.ExcPending
-							if v49 != 0 {
+							v50 = m.ExcPending
+							if v50 != 0 {
 								return int32(0)
 							} else {
 								base.Wasm_trap_unreachable()
@@ -385,64 +385,64 @@ func F_SeqNext(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v25 = v9
-		v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
-		v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+56))
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = v27
-		v30 = *(*int32)(unsafe.Add(mBase, _c_F_SeqNext[0]))
-		if v30 == int32(0) {
-			v51 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
-			v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+188))
-			v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+20))
-			v54 = m.T0[v53].(func(*base.Module, int32, int32, int32) int32)(m, v25, v8, v6)
+		v26 = v9
+		v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+		v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+56))
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = v28
+		v31 = *(*int32)(unsafe.Add(mBase, _c_F_SeqNext[0]))
+		if v31 == int32(0) {
+			v52 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+			v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+188))
+			v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+			v55 = m.T0[v54].(func(*base.Module, int32, int32, int32) int32)(m, v26, v8, v6)
 			mBase = m.M
-			v55 = m.ExcPending
-			if v55 != 0 {
+			v56 = m.ExcPending
+			if v56 != 0 {
 				return int32(0)
 			} else {
-				if v54 != 0 {
-					v56 = v6
+				if v55 != 0 {
+					v57 = v6
 				} else {
-					v56 = int32(0)
+					v57 = int32(0)
 				}
-				return v56
+				return v57
 			}
 		} else {
-			v34 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SeqNext[1])))
-			if v34&int32(1) != 0 {
-				v51 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
-				v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+188))
-				v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+20))
-				v54 = m.T0[v53].(func(*base.Module, int32, int32, int32) int32)(m, v25, v8, v6)
+			v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SeqNext[1])))
+			if v35&int32(1) != 0 {
+				v52 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+				v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+188))
+				v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+				v55 = m.T0[v54].(func(*base.Module, int32, int32, int32) int32)(m, v26, v8, v6)
 				mBase = m.M
-				v55 = m.ExcPending
-				if v55 != 0 {
+				v56 = m.ExcPending
+				if v56 != 0 {
 					return int32(0)
 				} else {
-					if v54 != 0 {
-						v56 = v6
+					if v55 != 0 {
+						v57 = v6
 					} else {
-						v56 = int32(0)
+						v57 = int32(0)
 					}
-					return v56
+					return v57
 				}
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v40 = m.ExcPending
-				if v40 != 0 {
+				v41 = m.ExcPending
+				if v41 != 0 {
 					return int32(0)
 				} else {
 					F_errmsg_internal(m, int32(_a_F_SeqNext_0), int32(0))
 					mBase = m.M
-					v44 = m.ExcPending
-					if v44 != 0 {
+					v45 = m.ExcPending
+					if v45 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_SeqNext_1), int32(1034), int32(_a_F_SeqNext_2))
 						mBase = m.M
-						v49 = m.ExcPending
-						if v49 != 0 {
+						v50 = m.ExcPending
+						if v50 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()

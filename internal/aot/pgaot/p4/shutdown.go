@@ -32,12 +32,10 @@ func F_ShutdownXLOG(m *base.Module, l0 int32, l1 int32) {
 	_ = v36
 	var v39 int32
 	_ = v39
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	var v46 int32
-	_ = v46
+	var v40 int32
+	_ = v40
+	var v49 int32
+	_ = v49
 	var v51 int32
 	_ = v51
 	var v54 int32
@@ -60,28 +58,28 @@ func F_ShutdownXLOG(m *base.Module, l0 int32, l1 int32) {
 	_ = v78
 	var v81 int32
 	_ = v81
-	var v83 int32
-	_ = v83
-	var v84 int32
-	_ = v84
+	var v82 int32
+	_ = v82
+	var v86 int32
+	_ = v86
 	var v91 int32
 	_ = v91
 	var v93 int32
 	_ = v93
 	var v94 int32
 	_ = v94
-	var v97 int32
-	_ = v97
-	var v100 int32
-	_ = v100
+	var v101 int32
+	_ = v101
 	var v105 int32
 	_ = v105
 	var v107 int32
 	_ = v107
-	var v113 int32
-	_ = v113
-	var v115 int32
-	_ = v115
+	var v111 int32
+	_ = v111
+	var v112 int32
+	_ = v112
+	var v114 int32
+	_ = v114
 	var v122 int32
 	_ = v122
 	var v127 int32
@@ -197,11 +195,9 @@ L14:
 	;
 	v36 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownXLOG[4]))
 	v39 = v36 + v32*int32(96)
-	v41 = v39 + int32(164)
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-	*(*int32)(unsafe.Add(mBase, uint32(v41))) = int32(1)
-	v46 = v39 + int32(88)
-	if v42 != 0 {
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+164))
+	*(*int32)(unsafe.Add(mBase, uint32(v39)+164)) = int32(1)
+	if v40 != 0 {
 		goto L16
 	} else {
 		goto L17
@@ -211,10 +207,10 @@ L15:
 	goto L13
 L16:
 	;
-	F_s_lock(m, v41, int32(_a_F_ShutdownXLOG_4), int32(3805), int32(_a_F_ShutdownXLOG_5))
+	F_s_lock(m, v39+int32(164), int32(_a_F_ShutdownXLOG_4), int32(3805), int32(_a_F_ShutdownXLOG_5))
 	mBase = m.M
-	v51 = m.ExcPending
-	if v51 != 0 {
+	v49 = m.ExcPending
+	if v49 != 0 {
 		goto L4
 	} else {
 		goto L19
@@ -224,8 +220,9 @@ L17:
 	goto L18
 L18:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v46)+76)) = int32(0)
-	v54 = *(*int32)(unsafe.Add(mBase, uint32(v46)))
+	v51 = v39 + int32(88)
+	*(*int32)(unsafe.Add(mBase, uint32(v51)+76)) = int32(0)
+	v54 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
 	if v54 != 0 {
 		goto L20
 	} else {
@@ -267,9 +264,9 @@ L25:
 	;
 	v122 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ShutdownXLOG[5])))
 	if v122 != int32(1) {
-		goto L39
+		goto L42
 	} else {
-		goto L40
+		goto L43
 	}
 L26:
 	;
@@ -279,10 +276,10 @@ L27:
 	;
 	v78 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownXLOG[4]))
 	v81 = v78 + v74*int32(96)
-	v83 = v81 + int32(164)
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v83)))
-	*(*int32)(unsafe.Add(mBase, uint32(v83))) = int32(1)
-	if v84 != 0 {
+	v82 = *(*int32)(unsafe.Add(mBase, uint32(v81)+164))
+	*(*int32)(unsafe.Add(mBase, uint32(v81)+164)) = int32(1)
+	v86 = v81 + int32(164)
+	if v82 != 0 {
 		goto L29
 	} else {
 		goto L30
@@ -292,7 +289,7 @@ L28:
 	goto L25
 L29:
 	;
-	F_s_lock(m, v83, int32(_a_F_ShutdownXLOG_4), int32(3833), int32(_a_F_ShutdownXLOG_6))
+	F_s_lock(m, v86, int32(_a_F_ShutdownXLOG_4), int32(3833), int32(_a_F_ShutdownXLOG_6))
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -308,79 +305,88 @@ L31:
 	v93 = v81 + int32(88)
 	v94 = *(*int32)(unsafe.Add(mBase, uint32(v93)))
 	if v94 == int32(0) {
-		goto L33
+		goto L35
 	} else {
-		goto L34
+		goto L36
 	}
 L32:
 	;
 	goto L31
 L33:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v83))) = int32(0)
-	v113 = v74 + int32(1)
-	v115 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownXLOG[3]))
-	if v113 < v115 {
-		v74 = v113
-		goto L27
+	F_pg_usleep(m, int32(_a_F_ShutdownXLOG_7))
+	mBase = m.M
+	v111 = m.ExcPending
+	if v111 != 0 {
+		goto L4
 	} else {
-		goto L38
+		goto L40
 	}
 L34:
 	;
-	v97 = *(*int32)(unsafe.Add(mBase, uint32(v93)+4))
-	if v97 == int32(4) {
-		goto L33
+	v105 = v74 + int32(1)
+	v107 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownXLOG[3]))
+	if v105 < v107 {
+		v74 = v105
+		goto L27
 	} else {
-		goto L35
+		goto L39
 	}
 L35:
 	;
-	v100 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v83))) = v100
-	F_pg_usleep(m, int32(_a_F_ShutdownXLOG_7))
-	mBase = m.M
-	v105 = m.ExcPending
-	if v105 != 0 {
-		goto L4
-	} else {
-		goto L36
-	}
+	*(*int32)(unsafe.Add(mBase, uint32(v86))) = int32(0)
+	goto L34
 L36:
 	;
-	v107 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownXLOG[3]))
-	if int32(0) < v107 {
-		v74 = v100
-		goto L27
-	} else {
-		goto L37
-	}
+	goto L37
 L37:
 	;
-	goto L25
+	*(*int32)(unsafe.Add(mBase, uint32(v93)+76)) = int32(0)
+	v101 = *(*int32)(unsafe.Add(mBase, uint32(v93)+4))
+	if v101 != int32(4) {
+		goto L33
+	} else {
+		goto L38
+	}
 L38:
 	;
-	goto L28
+	goto L34
 L39:
+	;
+	goto L25
+L40:
+	;
+	v112 = int32(0)
+	v114 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownXLOG[3]))
+	if v112 < v114 {
+		v74 = v112
+		goto L27
+	} else {
+		goto L41
+	}
+L41:
+	;
+	goto L28
+L42:
 	;
 	v139 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownXLOG[6]))
 	if int32(0) < v139 {
-		goto L43
+		goto L46
 	} else {
-		goto L44
+		goto L47
 	}
-L40:
+L43:
 	;
 	v127 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownXLOG[7]))
 	v128 = *(*int32)(unsafe.Add(mBase, uint32(v127)+316))
 	v129 = int32(2)
 	*(*uint8)(unsafe.Add(mBase, _c_F_ShutdownXLOG[5])) = uint8(base.B2i32(v128 != v129))
 	if v128 == v129 {
-		goto L39
+		goto L42
 	} else {
-		goto L41
+		goto L44
 	}
-L41:
+L44:
 	;
 	v135 = F_CreateRestartPoint(m, int32(5))
 	mBase = m.M
@@ -388,12 +394,12 @@ L41:
 	if v136 != 0 {
 		goto L4
 	} else {
-		goto L42
+		goto L45
 	}
-L42:
+L45:
 	;
 	return
-L43:
+L46:
 	;
 	F_XLogBeginInsert(m)
 	mBase = m.M
@@ -401,12 +407,12 @@ L43:
 	if v143 != 0 {
 		goto L4
 	} else {
-		goto L46
+		goto L49
 	}
-L44:
+L47:
 	;
-	goto L45
-L45:
+	goto L48
+L48:
 	;
 	v149 = F_CreateCheckPoint(m, int32(5))
 	mBase = m.M
@@ -414,9 +420,9 @@ L45:
 	if v150 != 0 {
 		goto L4
 	} else {
-		goto L48
+		goto L51
 	}
-L46:
+L49:
 	;
 	v146 = F_XLogInsert(m, int32(0), int32(64))
 	mBase = m.M
@@ -424,12 +430,12 @@ L46:
 	if v147 != 0 {
 		goto L4
 	} else {
-		goto L47
+		goto L50
 	}
-L47:
+L50:
 	;
-	goto L45
-L48:
+	goto L48
+L51:
 	;
 	return
 }

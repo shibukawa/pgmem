@@ -50,12 +50,14 @@ func F_SlabFree(m *base.Module, l0 int32) {
 	_ = v55
 	var v57 int32
 	_ = v57
-	var v62 int32
-	_ = v62
-	var v69 int32
-	_ = v69
-	var v71 int32
-	_ = v71
+	var v64 int32
+	_ = v64
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
+	var v72 int32
+	_ = v72
 	var v76 int32
 	_ = v76
 	var v77 int32
@@ -70,34 +72,36 @@ func F_SlabFree(m *base.Module, l0 int32) {
 	_ = v84
 	var v88 int32
 	_ = v88
-	var v90 int32
-	_ = v90
-	var v91 int32
-	_ = v91
+	var v89 int32
+	_ = v89
+	var v95 int32
+	_ = v95
 	var v99 int32
 	_ = v99
-	var v104 int32
-	_ = v104
-	var v109 int32
-	_ = v109
-	var v110 int32
-	_ = v110
-	var v116 int32
-	_ = v116
-	var v122 int32
-	_ = v122
+	var v102 int32
+	_ = v102
+	var v107 int32
+	_ = v107
+	var v108 int32
+	_ = v108
+	var v113 int32
+	_ = v113
+	var v119 int32
+	_ = v119
+	var v120 int32
+	_ = v120
 	var v123 int32
 	_ = v123
-	var v126 int32
-	_ = v126
-	var v127 int32
-	_ = v127
-	var v132 int32
-	_ = v132
+	var v124 int32
+	_ = v124
+	var v131 int32
+	_ = v131
+	var v135 int32
+	_ = v135
+	var v137 int32
+	_ = v137
 	var v139 int32
 	_ = v139
-	var v141 int32
-	_ = v141
 	v2 = int32(0)
 	v8 = l0 - int32(8)
 	v9 = *(*int64)(unsafe.Add(mBase, uint32(v8)))
@@ -139,26 +143,36 @@ func F_SlabFree(m *base.Module, l0 int32) {
 			v57 = *(*int32)(unsafe.Add(mBase, uint32(v16)+92))
 			if v57 != 0 {
 				if v57 != v16+int32(88) {
-					v71 = int32(1)
+					v72 = int32(1)
 				} else {
-					v62 = *(*int32)(unsafe.Add(mBase, uint32(v16)+100))
-					if v62 != 0 {
-						v69 = base.B2i32(v62 != v16+int32(96)) << (uint(int32(1)) % 32)
+					v64 = *(*int32)(unsafe.Add(mBase, uint32(v16)+100))
+					if v64 != v16+int32(96) {
+						v68 = int32(2)
 					} else {
-						v69 = int32(0)
+						v68 = int32(0)
 					}
-					v71 = v69
+					if v64 != 0 {
+						v70 = v68
+					} else {
+						v70 = int32(0)
+					}
+					v72 = v70
 				}
 			} else {
-				v62 = *(*int32)(unsafe.Add(mBase, uint32(v16)+100))
-				if v62 != 0 {
-					v69 = base.B2i32(v62 != v16+int32(96)) << (uint(int32(1)) % 32)
+				v64 = *(*int32)(unsafe.Add(mBase, uint32(v16)+100))
+				if v64 != v16+int32(96) {
+					v68 = int32(2)
 				} else {
-					v69 = int32(0)
+					v68 = int32(0)
 				}
-				v71 = v69
+				if v64 != 0 {
+					v70 = v68
+				} else {
+					v70 = int32(0)
+				}
+				v72 = v70
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v71
+			*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v72
 		}
 	}
 	v76 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
@@ -173,63 +187,73 @@ func F_SlabFree(m *base.Module, l0 int32) {
 		v84 = *(*int32)(unsafe.Add(mBase, uint32(v16)+76))
 		if base.Ui32(v84) <= base.Ui32(int32(9)) {
 			v88 = v16 + int32(68)
-			v90 = v15 + int32(20)
-			v91 = *(*int32)(unsafe.Add(mBase, uint32(v16)+72))
-			if v91 == int32(0) {
+			v89 = *(*int32)(unsafe.Add(mBase, uint32(v16)+72))
+			if v89 == int32(0) {
 				*(*int32)(unsafe.Add(mBase, uint32(v16)+76)) = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+68)) = v16 + int32(68)
-				v99 = v88
+				*(*int32)(unsafe.Add(mBase, uint32(v16)+68)) = v88
+				v95 = v88
 			} else {
-				v99 = v91
+				v95 = v89
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v88
-			*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v99
-			*(*int32)(unsafe.Add(mBase, uint32(v99))) = v90
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+72)) = v90
-			v104 = *(*int32)(unsafe.Add(mBase, uint32(v16)+76))
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+76)) = v104 + int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v95
+			v99 = v15 + int32(20)
+			*(*int32)(unsafe.Add(mBase, uint32(v95))) = v99
+			*(*int32)(unsafe.Add(mBase, uint32(v16)+72)) = v99
+			v102 = *(*int32)(unsafe.Add(mBase, uint32(v16)+76))
+			*(*int32)(unsafe.Add(mBase, uint32(v16)+76)) = v102 + int32(1)
 		} else {
 			F_emscripten_builtin_free(m, v15)
 			mBase = m.M
-			v109 = *(*int32)(unsafe.Add(mBase, uint32(v16)+8))
-			v110 = *(*int32)(unsafe.Add(mBase, uint32(v16)+52))
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = v109 - v110
+			v107 = *(*int32)(unsafe.Add(mBase, uint32(v16)+8))
+			v108 = *(*int32)(unsafe.Add(mBase, uint32(v16)+52))
+			*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = v107 - v108
 		}
-		v116 = *(*int32)(unsafe.Add(mBase, uint32(v16)+60))
-		if v116 != v27 {
+		v113 = *(*int32)(unsafe.Add(mBase, uint32(v16)+60))
+		if v113 != v27 {
 		} else {
-			v122 = v16 + v27<<(uint(int32(3))%32) + int32(80)
-			v123 = *(*int32)(unsafe.Add(mBase, uint32(v122)+4))
-			if v123 != v122 {
-				v126 = v123
+			v119 = v16 + v27<<(uint(int32(3))%32) + int32(80)
+			v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+4))
+			if v119 != v120 {
+				v123 = v120
 			} else {
-				v126 = int32(0)
+				v123 = int32(0)
 			}
-			if v126 != 0 {
+			if v123 != 0 {
 			} else {
-				v127 = *(*int32)(unsafe.Add(mBase, uint32(v16)+92))
-				if v127 != 0 {
-					if v127 != v16+int32(88) {
-						v141 = int32(1)
+				v124 = *(*int32)(unsafe.Add(mBase, uint32(v16)+92))
+				if v124 != 0 {
+					if v124 != v16+int32(88) {
+						v139 = int32(1)
 					} else {
-						v132 = *(*int32)(unsafe.Add(mBase, uint32(v16)+100))
-						if v132 != 0 {
-							v139 = base.B2i32(v132 != v16+int32(96)) << (uint(int32(1)) % 32)
+						v131 = *(*int32)(unsafe.Add(mBase, uint32(v16)+100))
+						if v131 != v16+int32(96) {
+							v135 = int32(2)
 						} else {
-							v139 = int32(0)
+							v135 = int32(0)
 						}
-						v141 = v139
+						if v131 != 0 {
+							v137 = v135
+						} else {
+							v137 = int32(0)
+						}
+						v139 = v137
 					}
 				} else {
-					v132 = *(*int32)(unsafe.Add(mBase, uint32(v16)+100))
-					if v132 != 0 {
-						v139 = base.B2i32(v132 != v16+int32(96)) << (uint(int32(1)) % 32)
+					v131 = *(*int32)(unsafe.Add(mBase, uint32(v16)+100))
+					if v131 != v16+int32(96) {
+						v135 = int32(2)
 					} else {
-						v139 = int32(0)
+						v135 = int32(0)
 					}
-					v141 = v139
+					if v131 != 0 {
+						v137 = v135
+					} else {
+						v137 = int32(0)
+					}
+					v139 = v137
 				}
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v141
+				*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v139
 			}
 		}
 	}

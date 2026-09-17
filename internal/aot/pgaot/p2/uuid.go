@@ -10,28 +10,31 @@ func F_uuid_generate_v4(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v5 int32
 	_ = v5
+	var v9 int32
+	_ = v9
 	var v13 int32
 	_ = v13
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
 	v3 = m.G0
 	v5 = v3 + int32(-64)
 	m.G0 = v5
 	F_uuid_generate_random(m, v5)
-	F_uuid_unparse(m, v5, v3+int32(-48))
+	v9 = v3 + int32(-48)
+	F_uuid_unparse(m, v5, v9)
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return int32(0)
 	} else {
-		v18 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v3+int32(-48))
-		v19 = m.ExcPending
-		if v19 != 0 {
+		v16 = F_DirectFunctionCall1Coll(m, int32(3376), int32(0), v9)
+		v17 = m.ExcPending
+		if v17 != 0 {
 			return int32(0)
 		} else {
 			m.G0 = v5 - int32(-64)
-			return v18
+			return v16
 		}
 	}
 }
@@ -763,10 +766,10 @@ func F_uuid_recv(m *base.Module, l0 int32) int32 {
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			v12 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
-			*(*int64)(unsafe.Add(mBase, uint32(v5))) = v12
-			v14 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
-			*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v14
+			v12 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
+			*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v12
+			v14 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
+			*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
 			return v5
 		}
 	}
@@ -798,7 +801,7 @@ func F_uuid_send(m *base.Module, l0 int32) int32 {
 	if v11 != 0 {
 		return int32(0)
 	} else {
-		F_pq_sendbytes(m, v5, v7, int32(16))
+		F_appendBinaryStringInfo(m, v5, v7, int32(16))
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {

@@ -168,8 +168,8 @@ func F_pa_send_data(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = mBase
 	var v8 int32
 	_ = v8
-	var v15 int64
-	_ = v15
+	var v16 int64
+	_ = v16
 	var v17 int32
 	_ = v17
 	var v18 int32
@@ -224,7 +224,7 @@ L1:
 	return v94
 L2:
 	;
-	v15 = int64(0)
+	v16 = int64(0)
 	goto L3
 L3:
 	;
@@ -318,7 +318,7 @@ L13:
 	v66 = int32(16)
 	v67 = v65 - v66
 	m.G0 = v67
-	F___gettimeofday(m, v67)
+	F_gettimeofday(m, v67)
 	mBase = m.M
 	v70 = *(*int64)(unsafe.Add(mBase, uint32(v67)))
 	v71 = int64(*(*int32)(unsafe.Add(mBase, uint32(v67)+8)))
@@ -360,14 +360,14 @@ L18:
 	goto L13
 L19:
 	;
-	if v15 == int64(0) {
+	if v16 == int64(0) {
 		goto L20
 	} else {
 		goto L21
 	}
 L20:
 	;
-	v15 = v79
+	v16 = v79
 	goto L3
 L21:
 	;
@@ -377,7 +377,7 @@ L22:
 	goto L23
 L23:
 	;
-	if base.B2i32(base.I64_extend_i32_s(int32(_a_F_pa_send_data_3))*int64(1000) <= v79-v15) == int32(0) {
+	if base.B2i32(base.I64_extend_i32_s(int32(_a_F_pa_send_data_3))*int64(1000) <= v79-v16) == int32(0) {
 		goto L3
 	} else {
 		goto L24

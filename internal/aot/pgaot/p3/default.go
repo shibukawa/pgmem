@@ -271,7 +271,7 @@ func F_update_default_partition_oid(m *base.Module, l0 int32, l1 int32) {
 					if v42 != 0 {
 						return
 					} else {
-						F_sequence_close(m, v12, int32(3))
+						F_relation_close(m, v12, int32(3))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {

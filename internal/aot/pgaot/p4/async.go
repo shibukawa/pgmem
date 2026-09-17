@@ -52,8 +52,8 @@ func F_ExecAppendAsyncEventWait(m *base.Module, l0 int32) {
 	_ = v72
 	var v85 int32
 	_ = v85
-	var v91 int32
-	_ = v91
+	var v90 int32
+	_ = v90
 	var v97 int32
 	_ = v97
 	var v101 int32
@@ -154,8 +154,8 @@ func F_ExecAppendAsyncEventWait(m *base.Module, l0 int32) {
 	_ = v246
 	var v247 int32
 	_ = v247
-	var v254 int32
-	_ = v254
+	var v253 int32
+	_ = v253
 	var v262 int32
 	_ = v262
 	var v263 int32
@@ -354,7 +354,7 @@ L14:
 	goto L12
 L15:
 	;
-	v91 = v85
+	v90 = v85
 	goto L18
 L16:
 	;
@@ -371,7 +371,7 @@ L17:
 L18:
 	;
 	v97 = *(*int32)(unsafe.Add(mBase, uint32(l0)+128))
-	v101 = *(*int32)(unsafe.Add(mBase, uint32(v97+v91<<(uint(int32(2))%32))))
+	v101 = *(*int32)(unsafe.Add(mBase, uint32(v97+v90<<(uint(int32(2))%32))))
 	v102 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v101)+12)))
 	if v102 == int32(1) {
 		goto L20
@@ -520,7 +520,7 @@ L38:
 L39:
 	;
 	if int32(0) <= v206 {
-		v91 = v206
+		v90 = v206
 		goto L18
 	} else {
 		goto L50
@@ -535,7 +535,7 @@ L41:
 	goto L39
 L42:
 	;
-	v157 = v91 + int32(1)
+	v157 = v90 + int32(1)
 	v159 = base.I32_div_s(v157, int32(32))
 	v160 = *(*int32)(unsafe.Add(mBase, uint32(v150)+4))
 	if v160 <= v159 {
@@ -676,11 +676,11 @@ L61:
 	}
 L62:
 	;
-	v254 = int32(0)
+	v253 = int32(0)
 	goto L63
 L63:
 	;
-	v262 = v12 + v254<<(uint(int32(4))%32)
+	v262 = v12 + v253<<(uint(int32(4))%32)
 	v263 = *(*int32)(unsafe.Add(mBase, uint32(v262)+4))
 	if v263&int32(2) == int32(0) {
 		v348 = v263
@@ -931,9 +931,9 @@ L96:
 	}
 L97:
 	;
-	v367 = v254 + int32(1)
+	v367 = v253 + int32(1)
 	if v367 != v242 {
-		v254 = v367
+		v253 = v367
 		goto L63
 	} else {
 		goto L102

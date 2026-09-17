@@ -43,10 +43,10 @@ func F_generate_operator_clause(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v22
 	var v24 int32
 	_ = v24
-	var v27 int32
-	_ = v27
-	var v30 int32
-	_ = v30
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
 	var v31 int32
 	_ = v31
 	var v32 int32
@@ -95,12 +95,12 @@ func F_generate_operator_clause(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 				if v24 != 0 {
 					return
 				} else {
-					v27 = *(*int32)(unsafe.Add(mBase, uint32(v19)+80))
-					if l2 != v27 {
-						F_add_cast_to(m, l0, v27)
+					v25 = *(*int32)(unsafe.Add(mBase, uint32(v19)+80))
+					if l2 != v25 {
+						F_add_cast_to(m, l0, v25)
 						mBase = m.M
-						v30 = m.ExcPending
-						if v30 != 0 {
+						v28 = m.ExcPending
+						if v28 != 0 {
 							return
 						} else {
 							v31 = F_quote_identifier(m, v21)

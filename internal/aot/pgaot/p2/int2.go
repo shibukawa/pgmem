@@ -426,12 +426,12 @@ func F_int2_dist(m *base.Module, l0 int32) int32 {
 	_ = v20
 	var v23 int32
 	_ = v23
-	var v29 int32
-	_ = v29
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
 	v3 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+20)))
 	v4 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+28)))
 	v5 = v3 - v4
@@ -451,14 +451,14 @@ func F_int2_dist(m *base.Module, l0 int32) int32 {
 			} else {
 				F_errmsg(m, int32(_a_F_int2_dist_2), int32(0))
 				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
+				v27 = m.ExcPending
+				if v27 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_int2_dist_3), int32(107), int32(_a_F_int2_dist_4))
 					mBase = m.M
-					v36 = m.ExcPending
-					if v36 != 0 {
+					v32 = m.ExcPending
+					if v32 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()
@@ -469,8 +469,8 @@ func F_int2_dist(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v38 = v6 >> (uint(int32(31)) % 32)
-		return v6 ^ v38 - v38
+		v34 = v6 >> (uint(int32(31)) % 32)
+		return v6 ^ v34 - v34
 	}
 }
 func F_int2_mul_cash(m *base.Module, l0 int32) int32 {

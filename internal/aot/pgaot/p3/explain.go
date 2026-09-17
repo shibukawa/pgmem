@@ -16,24 +16,22 @@ func F_ExplainBeginOutput(m *base.Module, l0 int32) {
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v13 int32
-	_ = v13
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
-	var v18 int32
-	_ = v18
 	var v19 int32
 	_ = v19
 	var v20 int32
 	_ = v20
-	var v22 int32
-	_ = v22
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	switch v2 - int32(1) {
 	case 0:
@@ -44,40 +42,40 @@ func F_ExplainBeginOutput(m *base.Module, l0 int32) {
 		if v8 != 0 {
 			return
 		} else {
-			v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v9 + int32(1)
+			v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v23 + int32(1)
 			return
 		}
 	case 1:
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		F_appendStringInfoChar(m, v13, int32(91))
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		F_appendStringInfoChar(m, v9, int32(91))
 		mBase = m.M
-		v16 = m.ExcPending
-		if v16 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return
 		} else {
-			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-			v19 = F_lcons_int(m, int32(0), v18)
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v15 = F_lcons_int(m, int32(0), v14)
 			mBase = m.M
-			v20 = m.ExcPending
-			if v20 != 0 {
+			v16 = m.ExcPending
+			if v16 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v19
-				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v22 + int32(1)
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v15
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v23 + int32(1)
 				return
 			}
 		}
 	case 2:
-		v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v28 = F_lcons_int(m, int32(0), v27)
+		v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v20 = F_lcons_int(m, int32(0), v19)
 		mBase = m.M
-		v29 = m.ExcPending
-		if v29 != 0 {
+		v21 = m.ExcPending
+		if v21 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v28
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v20
 			return
 		}
 	default:
@@ -159,8 +157,8 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 	_ = v82
 	var v86 int32
 	_ = v86
-	var v88 int32
-	_ = v88
+	var v87 int32
+	_ = v87
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -216,15 +214,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 									if v86 != 0 {
 										return
 									} else {
-										v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-										*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+										v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+										*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 										m.G0 = v9 + int32(16)
 										return
 									}
 								}
 							} else {
-								v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+								v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 								m.G0 = v9 + int32(16)
 								return
 							}
@@ -256,15 +254,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 								if v86 != 0 {
 									return
 								} else {
-									v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-									*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+									v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+									*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 									m.G0 = v9 + int32(16)
 									return
 								}
 							}
 						} else {
-							v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-							*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+							v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+							*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 							m.G0 = v9 + int32(16)
 							return
 						}
@@ -314,15 +312,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 										if v86 != 0 {
 											return
 										} else {
-											v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-											*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+											v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+											*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 											m.G0 = v9 + int32(16)
 											return
 										}
 									}
 								} else {
-									v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-									*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+									v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+									*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 									m.G0 = v9 + int32(16)
 									return
 								}
@@ -354,15 +352,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 									if v86 != 0 {
 										return
 									} else {
-										v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-										*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+										v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+										*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 										m.G0 = v9 + int32(16)
 										return
 									}
 								}
 							} else {
-								v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+								v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 								m.G0 = v9 + int32(16)
 								return
 							}
@@ -413,15 +411,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 										if v86 != 0 {
 											return
 										} else {
-											v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-											*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+											v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+											*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 											m.G0 = v9 + int32(16)
 											return
 										}
 									}
 								} else {
-									v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-									*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+									v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+									*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 									m.G0 = v9 + int32(16)
 									return
 								}
@@ -453,15 +451,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 									if v86 != 0 {
 										return
 									} else {
-										v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-										*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+										v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+										*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 										m.G0 = v9 + int32(16)
 										return
 									}
 								}
 							} else {
-								v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+								v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 								m.G0 = v9 + int32(16)
 								return
 							}
@@ -502,15 +500,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 									if v86 != 0 {
 										return
 									} else {
-										v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-										*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+										v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+										*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 										m.G0 = v9 + int32(16)
 										return
 									}
 								}
 							} else {
-								v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+								v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 								m.G0 = v9 + int32(16)
 								return
 							}
@@ -542,15 +540,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 								if v86 != 0 {
 									return
 								} else {
-									v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-									*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+									v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+									*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 									m.G0 = v9 + int32(16)
 									return
 								}
 							}
 						} else {
-							v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-							*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+							v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+							*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 							m.G0 = v9 + int32(16)
 							return
 						}
@@ -588,15 +586,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 						if v86 != 0 {
 							return
 						} else {
-							v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-							*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+							v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+							*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 							m.G0 = v9 + int32(16)
 							return
 						}
 					}
 				} else {
-					v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-					*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+					v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+					*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 					m.G0 = v9 + int32(16)
 					return
 				}
@@ -635,15 +633,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 							if v86 != 0 {
 								return
 							} else {
-								v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+								v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+								*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 								m.G0 = v9 + int32(16)
 								return
 							}
 						}
 					} else {
-						v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-						*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+						v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+						*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 						m.G0 = v9 + int32(16)
 						return
 					}
@@ -672,15 +670,15 @@ func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 						if v86 != 0 {
 							return
 						} else {
-							v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-							*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+							v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+							*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 							m.G0 = v9 + int32(16)
 							return
 						}
 					}
 				} else {
-					v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-					*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v88 + int32(1)
+					v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+					*(*int32)(unsafe.Add(mBase, uint32(l1)+24)) = v87 + int32(1)
 					m.G0 = v9 + int32(16)
 					return
 				}
@@ -976,37 +974,14 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 }
 func F_ExplainPropertyUInteger(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) {
-	mBase := m.M
-	_ = mBase
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v21 int32
-	_ = v21
-	v6 = m.G0
-	v8 = v6 - int32(48)
-	m.G0 = v8
-	*(*int64)(unsafe.Add(mBase, uint32(v8))) = l2
-	v15 = F_pg_snprintf(m, v8+int32(16), int32(32), int32(_a_F_ExplainPropertyUInteger_0), v8)
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	var v7 int32
+	_ = v7
+	Fn13827(m, l0, l1, l2, l3, int32(_a_F_ExplainPropertyUInteger_0))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return
 	} else {
-		F_ExplainProperty(m, l0, l1, v8+int32(16), int32(1), l3)
-		mBase = m.M
-		v21 = m.ExcPending
-		if v21 != 0 {
-			return
-		} else {
-			m.G0 = v8 + int32(48)
-			return
-		}
+		return
 	}
 }
 func F_ExplainSubPlans(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
@@ -1018,8 +993,8 @@ func F_ExplainSubPlans(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	_ = v8
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
+	var v16 int32
+	_ = v16
 	var v18 int32
 	_ = v18
 	var v22 int32
@@ -1072,7 +1047,7 @@ func F_ExplainSubPlans(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 L1:
 	;
 	v12 = l1
-	v15 = v5
+	v16 = v5
 	goto L4
 L2:
 	;
@@ -1083,7 +1058,7 @@ L3:
 L4:
 	;
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v18+v15<<(uint(int32(2))%32))))
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v18+v16<<(uint(int32(2))%32))))
 	v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+16))
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(l3)+48))
@@ -1126,11 +1101,11 @@ L9:
 	goto L10
 L10:
 	;
-	v45 = v15 + int32(1)
+	v45 = v16 + int32(1)
 	v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if v45 < v46 {
 		v12 = v43
-		v15 = v45
+		v16 = v45
 		goto L4
 	} else {
 		goto L15

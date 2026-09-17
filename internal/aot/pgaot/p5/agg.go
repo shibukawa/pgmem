@@ -8,54 +8,54 @@ import (
 func F_finalize_agg_primnode(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
 	var v7 int32
 	_ = v7
-	var v8 int32
-	_ = v8
+	var v10 int32
+	_ = v10
 	var v11 int32
 	_ = v11
 	var v12 int32
 	_ = v12
 	var v13 int32
 	_ = v13
-	var v14 int32
-	_ = v14
+	var v17 int32
+	_ = v17
 	var v18 int32
 	_ = v18
-	var v19 int32
-	_ = v19
 	var v20 int32
 	_ = v20
 	if l0 != 0 {
-		v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		if v4 == int32(9) {
-			v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-			v8 = F_finalize_primnode(m, v7, l1)
+		v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		if v3 == int32(9) {
+			v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+			v7 = F_finalize_primnode(m, v6, l1)
 			mBase = m.M
-			v11 = m.ExcPending
-			if v11 != 0 {
+			v10 = m.ExcPending
+			if v10 != 0 {
 				return int32(0)
 			} else {
-				v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-				v13 = F_finalize_primnode(m, v12, l1)
+				v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+				v12 = F_finalize_primnode(m, v11, l1)
 				mBase = m.M
-				v14 = m.ExcPending
-				if v14 != 0 {
+				v13 = m.ExcPending
+				if v13 != 0 {
 					return int32(0)
 				} else {
 					return int32(0)
 				}
 			}
 		} else {
-			v18 = F_expression_tree_walker_impl(m, l0, int32(849), l1)
+			v17 = F_expression_tree_walker_impl(m, l0, int32(849), l1)
 			mBase = m.M
-			v19 = m.ExcPending
-			if v19 != 0 {
+			v18 = m.ExcPending
+			if v18 != 0 {
 				return int32(0)
 			} else {
-				v20 = v18
+				v20 = v17
 				return v20
 			}
 		}

@@ -524,132 +524,42 @@ L29:
 	goto L8
 }
 func F_mic_to_iso(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
 	var v5 int32
 	_ = v5
-	var v6 int32
-	_ = v6
-	var v7 int32
-	_ = v7
 	var v8 int32
 	_ = v8
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v16 int32
-	_ = v16
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	F_check_encoding_conversion_args(m, v8, v9, v10, int32(7), int32(25))
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v5 = Fn13945(m, l0, int32(_a_F_mic_to_iso_0), int32(25), int32(139))
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_mic2latin_with_table(m, v6, v5, v10, int32(139), int32(25), int32(_a_F_mic_to_iso_0), base.B2i32(v7 != int32(0)))
-		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
-			return int32(0)
-		} else {
-			return v22
-		}
+		return v5
 	}
 }
 func F_mic_to_koi8r(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v5 int32
-	_ = v5
-	var v6 int32
-	_ = v6
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v16 int32
-	_ = v16
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	F_check_encoding_conversion_args(m, v8, v9, v10, int32(7), int32(22))
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v4 = Fn13946(m, l0, int32(22), int32(139))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v21 = F_mic2latin(m, v6, v5, v10, int32(139), int32(22), base.B2i32(v7 != int32(0)))
-		mBase = m.M
-		v22 = m.ExcPending
-		if v22 != 0 {
-			return int32(0)
-		} else {
-			return v21
-		}
+		return v4
 	}
 }
 func F_mic_to_latin3(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v5 int32
-	_ = v5
-	var v6 int32
-	_ = v6
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v16 int32
-	_ = v16
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	F_check_encoding_conversion_args(m, v8, v9, v10, int32(7), int32(10))
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v4 = Fn13946(m, l0, int32(10), int32(131))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v21 = F_mic2latin(m, v6, v5, v10, int32(131), int32(10), base.B2i32(v7 != int32(0)))
-		mBase = m.M
-		v22 = m.ExcPending
-		if v22 != 0 {
-			return int32(0)
-		} else {
-			return v21
-		}
+		return v4
 	}
 }
 func F_mic_to_sjis(m *base.Module, l0 int32) int32 {
@@ -671,10 +581,10 @@ func F_mic_to_sjis(m *base.Module, l0 int32) int32 {
 	_ = v22
 	var v25 int32
 	_ = v25
-	var v26 int32
-	_ = v26
-	var v28 int32
-	_ = v28
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
 	var v35 int32
 	_ = v35
 	var v36 int32
@@ -705,32 +615,38 @@ func F_mic_to_sjis(m *base.Module, l0 int32) int32 {
 	_ = v97
 	var v98 int32
 	_ = v98
-	var v102 int32
-	_ = v102
 	var v103 int32
 	_ = v103
-	var v106 int32
-	_ = v106
-	var v120 int32
-	_ = v120
+	var v104 int32
+	_ = v104
+	var v107 int32
+	_ = v107
+	var v115 int32
+	_ = v115
+	var v121 int32
+	_ = v121
+	var v125 int32
+	_ = v125
 	var v126 int32
 	_ = v126
-	var v130 int32
-	_ = v130
-	var v131 int32
-	_ = v131
-	var v137 int32
-	_ = v137
-	var v146 int32
-	_ = v146
+	var v135 int32
+	_ = v135
+	var v141 int32
+	_ = v141
+	var v144 int32
+	_ = v144
 	var v148 int32
 	_ = v148
-	var v151 int32
-	_ = v151
-	var v154 int32
-	_ = v154
-	var v165 int32
-	_ = v165
+	var v150 int32
+	_ = v150
+	var v152 int32
+	_ = v152
+	var v155 int32
+	_ = v155
+	var v158 int32
+	_ = v158
+	var v168 int32
+	_ = v168
 	var v169 int32
 	_ = v169
 	var v170 int32
@@ -743,16 +659,16 @@ func F_mic_to_sjis(m *base.Module, l0 int32) int32 {
 	_ = v182
 	var v196 int32
 	_ = v196
-	var v200 int32
-	_ = v200
-	var v202 int32
-	_ = v202
+	var v201 int32
+	_ = v201
+	var v203 int32
+	_ = v203
 	var v209 int32
 	_ = v209
 	var v212 int32
 	_ = v212
-	var v213 int32
-	_ = v213
+	var v214 int32
+	_ = v214
 	var v222 int32
 	_ = v222
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
@@ -782,12 +698,12 @@ L2:
 L3:
 	;
 	v222 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v213))) = uint8(v222)
+	*(*uint8)(unsafe.Add(mBase, uint32(v214))) = uint8(v222)
 	return v212 - v13
 L4:
 	;
 	v212 = v13
-	v213 = v12
+	v214 = v12
 	goto L3
 L5:
 	;
@@ -795,8 +711,8 @@ L5:
 L6:
 	;
 	v25 = v13
-	v26 = v12
-	v28 = v16
+	v27 = v12
+	v29 = v16
 	goto L7
 L7:
 	;
@@ -810,17 +726,17 @@ L7:
 L8:
 	;
 	v212 = v209
-	v213 = v200
+	v214 = v201
 	goto L3
 L9:
 	;
-	if int32(0) < v202 {
+	if int32(0) < v203 {
 		v25 = v209
-		v26 = v200
-		v28 = v202
+		v27 = v201
+		v29 = v203
 		goto L7
 	} else {
-		goto L62
+		goto L64
 	}
 L10:
 	;
@@ -834,7 +750,7 @@ L11:
 	goto L12
 L12:
 	;
-	v52 = F_pg_encoding_verifymbchar(m, int32(7), v25, v28)
+	v52 = F_pg_encoding_verifymbchar(m, int32(7), v25, v29)
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -846,7 +762,7 @@ L13:
 	;
 	if v11 != 0 {
 		v212 = v25
-		v213 = v26
+		v214 = v27
 		goto L3
 	} else {
 		goto L16
@@ -856,15 +772,15 @@ L14:
 	goto L15
 L15:
 	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v26))) = uint8(v36)
+	*(*uint8)(unsafe.Add(mBase, uint32(v27))) = uint8(v36)
 	v45 = int32(1)
-	v200 = v26 + v45
-	v202 = v28 - v45
+	v201 = v27 + v45
+	v203 = v29 - v45
 	v209 = v25 + v45
 	goto L9
 L16:
 	;
-	F_report_invalid_encoding(m, int32(7), v25, v28)
+	F_report_invalid_encoding(m, int32(7), v25, v29)
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -888,7 +804,7 @@ L19:
 	;
 	if v11 != 0 {
 		v212 = v25
-		v213 = v26
+		v214 = v27
 		goto L3
 	} else {
 		goto L22
@@ -910,7 +826,7 @@ L21:
 	}
 L22:
 	;
-	F_report_invalid_encoding(m, int32(7), v25, v28)
+	F_report_invalid_encoding(m, int32(7), v25, v29)
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -925,47 +841,47 @@ L23:
 	}
 L24:
 	;
-	v200 = v196
-	v202 = v28 - v52
+	v201 = v196
+	v203 = v29 - v52
 	v209 = v25 + v52
 	goto L9
 L25:
 	;
 	v182 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+1)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v26))) = uint8(v182)
-	v196 = v26 + int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v27))) = uint8(v182)
+	v196 = v27 + int32(1)
 	goto L24
 L26:
 	;
 	if v11 != 0 {
 		v212 = v25
-		v213 = v26
+		v214 = v27
 		goto L3
 	} else {
-		goto L60
+		goto L62
 	}
 L27:
 	;
-	v102 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+2)))
-	v103 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+1)))
-	v106 = v102 | v103<<(uint(int32(8))%32)
-	if base.Ui32(v106) <= base.Ui32(int32(_a_F_mic_to_sjis_0)) {
-		goto L44
+	v103 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+2)))
+	v104 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+1)))
+	v107 = v103 | v104<<(uint(int32(8))%32)
+	if base.Ui32(int32(_a_F_mic_to_sjis_0)) <= base.Ui32(v107) {
+		goto L42
 	} else {
-		goto L45
+		goto L43
 	}
 L28:
 	;
 	v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+2)))
 	v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+1)))
-	if base.Ui32(int32(_a_F_mic_to_sjis_1)) <= base.Ui32(v61|v62<<(uint(int32(8))%32)) {
+	if base.Ui32(int32(_a_F_mic_to_sjis_0)) <= base.Ui32(v61|v62<<(uint(int32(8))%32)) {
 		goto L30
 	} else {
 		goto L31
 	}
 L29:
 	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v26))) = uint8(v86)
+	*(*uint8)(unsafe.Add(mBase, uint32(v27))) = uint8(v86)
 	if base.Ui32(v61) < base.Ui32(int32(224)) {
 		goto L36
 	} else {
@@ -1025,123 +941,142 @@ L40:
 L41:
 	;
 	v98 = v97 + v61
-	*(*uint8)(unsafe.Add(mBase, uint32(v26)+1)) = uint8(v98)
-	v196 = v26 + int32(2)
+	*(*uint8)(unsafe.Add(mBase, uint32(v27)+1)) = uint8(v98)
+	v196 = v27 + int32(2)
 	goto L24
 L42:
 	;
-	v169 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v165)+2)))
-	v170 = int32(8)
-	v174 = v169<<(uint(v170)%32) | int32(base.Ui32(v169)>>(uint(v170)%32))
-	*(*uint16)(unsafe.Add(mBase, uint32(v26))) = uint16(v174)
-	v196 = v26 + int32(2)
-	goto L24
+	v115 = int32(base.Ui32(v104+int32(267))>>(uint(int32(1))%32)) - int32(11)
+	*(*uint8)(unsafe.Add(mBase, uint32(v27))) = uint8(v115)
+	if base.Ui32(v103) < base.Ui32(int32(224)) {
+		goto L45
+	} else {
+		goto L46
+	}
 L43:
 	;
-	v137 = int32(0)
-	goto L54
+	goto L44
 L44:
 	;
-	if v106 != int32(_a_F_mic_to_sjis_2) {
-		goto L43
-	} else {
-		goto L47
-	}
+	v135 = int32(0)
+	goto L55
 L45:
 	;
-	goto L46
+	v121 = int32(-97)
+	goto L47
 L46:
 	;
-	v120 = int32(base.Ui32(v103+int32(267))>>(uint(int32(1))%32)) - int32(11)
-	*(*uint8)(unsafe.Add(mBase, uint32(v26))) = uint8(v120)
-	if base.Ui32(v102) < base.Ui32(int32(224)) {
+	v121 = int32(-96)
+	goto L47
+L47:
+	;
+	if v104&int32(1) != 0 {
 		goto L48
 	} else {
 		goto L49
 	}
-L47:
-	;
-	v165 = int32(_a_F_mic_to_sjis_3)
-	goto L42
 L48:
 	;
-	v126 = int32(-97)
+	v125 = v121
 	goto L50
 L49:
 	;
-	v126 = int32(-96)
+	v125 = int32(-2)
 	goto L50
 L50:
 	;
-	if v103&int32(1) != 0 {
-		goto L51
-	} else {
-		goto L52
-	}
+	v126 = v125 + v103
+	*(*uint8)(unsafe.Add(mBase, uint32(v27)+1)) = uint8(v126)
+	v196 = v27 + int32(2)
+	goto L24
 L51:
 	;
-	v130 = v126
-	goto L53
+	v169 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v168)+2)))
+	v170 = int32(8)
+	v174 = v169<<(uint(v170)%32) | int32(base.Ui32(v169)>>(uint(v170)%32))
+	*(*uint16)(unsafe.Add(mBase, uint32(v27))) = uint16(v174)
+	v196 = v27 + int32(2)
+	goto L24
 L52:
 	;
-	v130 = int32(-2)
-	goto L53
+	v168 = v141 + int32(_a_F_mic_to_sjis_1)
+	goto L51
 L53:
 	;
-	v131 = v130 + v102
-	*(*uint8)(unsafe.Add(mBase, uint32(v26)+1)) = uint8(v131)
-	v196 = v26 + int32(2)
-	goto L24
+	v168 = v141 + int32(_a_F_mic_to_sjis_2)
+	goto L51
 L54:
 	;
-	v146 = v137 + int32(1)
-	v148 = v146 << (uint(int32(3)) % 32)
-	v151 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v148)+uint32(_c_F_mic_to_sjis[0]))))
-	if v151 == int32(_a_F_mic_to_sjis_4) {
-		goto L56
+	v168 = v141 + int32(_a_F_mic_to_sjis_3)
+	goto L51
+L55:
+	;
+	v141 = v135 << (uint(int32(3)) % 32)
+	v144 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v141)+uint32(_c_F_mic_to_sjis[0]))))
+	if v144 == v107 {
+		v168 = v141 + int32(_a_F_mic_to_sjis_4)
+		goto L51
 	} else {
 		goto L57
 	}
-L55:
-	;
-	v165 = v148 + int32(_a_F_mic_to_sjis_3)
-	goto L42
 L56:
 	;
-	v154 = int32(_a_F_mic_to_sjis_5)
-	*(*uint16)(unsafe.Add(mBase, uint32(v26))) = uint16(v154)
-	v196 = v26 + int32(2)
+	v158 = int32(_a_F_mic_to_sjis_5)
+	*(*uint16)(unsafe.Add(mBase, uint32(v27))) = uint16(v158)
+	v196 = v27 + int32(2)
 	goto L24
 L57:
 	;
-	goto L58
+	v148 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v141)+uint32(_c_F_mic_to_sjis[1]))))
+	if v148 == v107 {
+		goto L52
+	} else {
+		goto L58
+	}
 L58:
 	;
-	if v151 != v106 {
-		v137 = v146
-		goto L54
+	v150 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v141)+uint32(_c_F_mic_to_sjis[2]))))
+	if v150 == v107 {
+		goto L53
 	} else {
 		goto L59
 	}
 L59:
 	;
-	goto L55
+	v152 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v141)+uint32(_c_F_mic_to_sjis[3]))))
+	if v152 == v107 {
+		goto L54
+	} else {
+		goto L60
+	}
 L60:
 	;
-	F_report_untranslatable_char(m, int32(7), int32(35), v25, v28)
-	mBase = m.M
-	v181 = m.ExcPending
-	if v181 != 0 {
-		goto L1
+	v155 = v135 + int32(4)
+	if v155 != int32(388) {
+		v135 = v155
+		goto L55
 	} else {
 		goto L61
 	}
 L61:
 	;
+	goto L56
+L62:
+	;
+	F_report_untranslatable_char(m, int32(7), int32(35), v25, v29)
+	mBase = m.M
+	v181 = m.ExcPending
+	if v181 != 0 {
+		goto L1
+	} else {
+		goto L63
+	}
+L63:
+	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L62:
+L64:
 	;
 	goto L8
 }

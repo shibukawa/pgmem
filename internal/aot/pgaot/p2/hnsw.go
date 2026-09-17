@@ -298,14 +298,10 @@ func F_HnswLoadNeighborTids(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v53
 	var v54 int32
 	_ = v54
-	var v55 int32
-	_ = v55
-	var v61 int32
-	_ = v61
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
 	var v67 int32
 	_ = v67
 	var v69 int32
@@ -367,16 +363,14 @@ func F_HnswLoadNeighborTids(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 					if v54 != 0 {
 						return int32(0)
 					} else {
-						v55 = int32(6)
-						v61 = F_mul_size(m, v55, l4)
+						v56 = F_mul_size(m, int32(6), l4)
 						mBase = m.M
-						v62 = m.ExcPending
-						if v62 != 0 {
+						v57 = m.ExcPending
+						if v57 != 0 {
 							return int32(0)
 						} else {
-							if v61 != 0 {
-								v63 = F__emscripten_memcpy_bulkmem(m, l1, v42+v53*v55+int32(4), v61)
-								mBase = m.M
+							if v56 != 0 {
+								base.MemoryCopy(m, l1, v42+v53*int32(6)+int32(4), v56)
 							} else {
 							}
 							v67 = int32(1)

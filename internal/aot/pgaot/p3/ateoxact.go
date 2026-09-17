@@ -126,22 +126,22 @@ func F_AtEOXact_Parallel(m *base.Module, l0 int32) {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v10 int32
-	_ = v10
-	var v15 int32
-	_ = v15
+	var v11 int32
+	_ = v11
 	var v16 int32
 	_ = v16
-	var v22 int32
-	_ = v22
-	var v27 int32
-	_ = v27
-	var v29 int32
-	_ = v29
-	var v31 int32
-	_ = v31
+	var v17 int32
+	_ = v17
+	var v23 int32
+	_ = v23
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Parallel[0]))
-	if v4 == int32(0) {
+	if base.B2i32(v4 == int32(0))|base.B2i32(v4 == int32(_a_F_AtEOXact_Parallel_0)) != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -151,97 +151,90 @@ L1:
 	return
 L2:
 	;
-	if v4 == int32(_a_F_AtEOXact_Parallel_0) {
-		goto L1
-	} else {
-		goto L3
-	}
+	v11 = v4
+	goto L3
 L3:
 	;
-	v10 = v4
-	goto L4
+	if l0 == int32(0) {
+		goto L5
+	} else {
+		goto L6
+	}
 L4:
 	;
-	if l0 == int32(0) {
-		goto L6
-	} else {
-		goto L7
-	}
+	goto L1
 L5:
 	;
-	goto L1
+	F_DestroyParallelContext(m, v11)
+	mBase = m.M
+	v30 = m.ExcPending
+	if v30 != 0 {
+		goto L7
+	} else {
+		goto L12
+	}
 L6:
 	;
-	F_DestroyParallelContext(m, v10)
+	v16 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
-		goto L8
+	v17 = m.ExcPending
+	if v17 != 0 {
+		goto L7
 	} else {
-		goto L13
+		goto L8
 	}
 L7:
 	;
-	v15 = F_errstart(m, int32(19), int32(0))
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
-		goto L8
+	return
+L8:
+	;
+	if v16 == int32(0) {
+		goto L5
 	} else {
 		goto L9
 	}
-L8:
-	;
-	return
 L9:
 	;
-	if v15 == int32(0) {
-		goto L6
+	F_errmsg_internal(m, int32(_a_F_AtEOXact_Parallel_1), int32(0))
+	mBase = m.M
+	v23 = m.ExcPending
+	if v23 != 0 {
+		goto L7
 	} else {
 		goto L10
 	}
 L10:
 	;
-	F_errmsg_internal(m, int32(_a_F_AtEOXact_Parallel_1), int32(0))
+	F_errfinish(m, int32(_a_F_AtEOXact_Parallel_2), int32(1290), int32(_a_F_AtEOXact_Parallel_3))
 	mBase = m.M
-	v22 = m.ExcPending
-	if v22 != 0 {
-		goto L8
+	v28 = m.ExcPending
+	if v28 != 0 {
+		goto L7
 	} else {
 		goto L11
 	}
 L11:
 	;
-	F_errfinish(m, int32(_a_F_AtEOXact_Parallel_2), int32(1290), int32(_a_F_AtEOXact_Parallel_3))
-	mBase = m.M
-	v27 = m.ExcPending
-	if v27 != 0 {
-		goto L8
-	} else {
-		goto L12
-	}
+	goto L5
 L12:
 	;
-	goto L6
+	v32 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Parallel[0]))
+	if v32 == int32(0) {
+		goto L1
+	} else {
+		goto L13
+	}
 L13:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Parallel[0]))
-	if v31 == int32(0) {
-		goto L1
+	if v32 != int32(_a_F_AtEOXact_Parallel_0) {
+		v11 = v32
+		goto L3
 	} else {
 		goto L14
 	}
 L14:
 	;
-	if v31 != int32(_a_F_AtEOXact_Parallel_0) {
-		v10 = v31
-		goto L4
-	} else {
-		goto L15
-	}
-L15:
-	;
-	goto L5
+	goto L4
 }
 func F_AtEOXact_PgStat(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
@@ -543,8 +536,8 @@ L24:
 	;
 	v65 = v45 + int32(88)
 	v66 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v65))) = v66
 	*(*int64)(unsafe.Add(mBase, uint32(v65)+8)) = v66
+	*(*int64)(unsafe.Add(mBase, uint32(v65))) = v66
 	v73 = v66
 	v74 = v66
 	goto L21
@@ -722,13 +715,13 @@ L1:
 	return
 L2:
 	;
-	v10 = v2
-	v11 = v6
+	v10 = v6
+	v11 = v2
 	goto L3
 L3:
 	;
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
-	if v13 <= v10 {
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+	if v13 <= v11 {
 		goto L1
 	} else {
 		goto L5
@@ -738,8 +731,8 @@ L4:
 	goto L1
 L5:
 	;
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(v15+v10<<(uint(int32(2))%32))))
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v15+v11<<(uint(int32(2))%32))))
 	if l0 != 0 {
 		goto L8
 	} else {
@@ -748,8 +741,8 @@ L5:
 L6:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v19)+8)) = int64(0)
-	if v11 != 0 {
-		v10 = v10 + int32(1)
+	if v10 != 0 {
+		v11 = v11 + int32(1)
 		goto L3
 	} else {
 		goto L17
@@ -758,7 +751,7 @@ L7:
 	;
 	v24 = int32(_a_F_AtEOXact_on_commit_actions_0)
 	v26 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_on_commit_actions[0]))
-	v27 = F_list_delete_nth_cell(m, v26, v10)
+	v27 = F_list_delete_nth_cell(m, v26, v11)
 	mBase = m.M
 	v28 = m.ExcPending
 	if v28 != 0 {
@@ -808,7 +801,7 @@ L14:
 L15:
 	;
 	if v27 != 0 {
-		v11 = v27
+		v10 = v27
 		goto L3
 	} else {
 		goto L16

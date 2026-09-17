@@ -101,12 +101,12 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 	_ = v91
 	var v92 int32
 	_ = v92
-	var v95 int32
-	_ = v95
-	var v97 int32
-	_ = v97
-	var v100 int32
-	_ = v100
+	var v94 int32
+	_ = v94
+	var v96 int32
+	_ = v96
+	var v99 int32
+	_ = v99
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
@@ -119,16 +119,16 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 	} else {
 		v18 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
 		if v18 == int32(0) {
-			v100 = v14
+			v99 = v14
 			m.G0 = v11 + int32(16)
-			return v100
+			return v99
 		} else {
 			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 			v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
 			if v22 == int32(0) {
-				v100 = v14
+				v99 = v14
 				m.G0 = v11 + int32(16)
-				return v100
+				return v99
 			} else {
 				v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 				v27 = v14 + int32(8)
@@ -210,41 +210,41 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 																	} else {
 																		v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																		if v25 != v76 {
-																			v95 = v14
+																			v94 = v14
 																			F_pfree(m, v25)
 																			mBase = m.M
-																			v97 = m.ExcPending
-																			if v97 != 0 {
+																			v96 = m.ExcPending
+																			if v96 != 0 {
 																				return int32(0)
 																			} else {
-																				v100 = v95
+																				v99 = v94
 																				m.G0 = v11 + int32(16)
-																				return v100
+																				return v99
 																			}
 																		} else {
-																			v100 = v14
+																			v99 = v14
 																			m.G0 = v11 + int32(16)
-																			return v100
+																			return v99
 																		}
 																	}
 																} else {
 																	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																	if v25 != v76 {
-																		v95 = v14
+																		v94 = v14
 																		F_pfree(m, v25)
 																		mBase = m.M
-																		v97 = m.ExcPending
-																		if v97 != 0 {
+																		v96 = m.ExcPending
+																		if v96 != 0 {
 																			return int32(0)
 																		} else {
-																			v100 = v95
+																			v99 = v94
 																			m.G0 = v11 + int32(16)
-																			return v100
+																			return v99
 																		}
 																	} else {
-																		v100 = v14
+																		v99 = v14
 																		m.G0 = v11 + int32(16)
-																		return v100
+																		return v99
 																	}
 																}
 															} else {
@@ -284,40 +284,40 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 																						} else {
 																							v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																							if v25 == v92 {
-																								v100 = v80
+																								v99 = v80
 																								m.G0 = v11 + int32(16)
-																								return v100
+																								return v99
 																							} else {
-																								v95 = v80
+																								v94 = v80
 																								F_pfree(m, v25)
 																								mBase = m.M
-																								v97 = m.ExcPending
-																								if v97 != 0 {
+																								v96 = m.ExcPending
+																								if v96 != 0 {
 																									return int32(0)
 																								} else {
-																									v100 = v95
+																									v99 = v94
 																									m.G0 = v11 + int32(16)
-																									return v100
+																									return v99
 																								}
 																							}
 																						}
 																					} else {
 																						v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																						if v25 == v92 {
-																							v100 = v80
+																							v99 = v80
 																							m.G0 = v11 + int32(16)
-																							return v100
+																							return v99
 																						} else {
-																							v95 = v80
+																							v94 = v80
 																							F_pfree(m, v25)
 																							mBase = m.M
-																							v97 = m.ExcPending
-																							if v97 != 0 {
+																							v96 = m.ExcPending
+																							if v96 != 0 {
 																								return int32(0)
 																							} else {
-																								v100 = v95
+																								v99 = v94
 																								m.G0 = v11 + int32(16)
-																								return v100
+																								return v99
 																							}
 																						}
 																					}
@@ -333,40 +333,40 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 																					} else {
 																						v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																						if v25 == v92 {
-																							v100 = v80
+																							v99 = v80
 																							m.G0 = v11 + int32(16)
-																							return v100
+																							return v99
 																						} else {
-																							v95 = v80
+																							v94 = v80
 																							F_pfree(m, v25)
 																							mBase = m.M
-																							v97 = m.ExcPending
-																							if v97 != 0 {
+																							v96 = m.ExcPending
+																							if v96 != 0 {
 																								return int32(0)
 																							} else {
-																								v100 = v95
+																								v99 = v94
 																								m.G0 = v11 + int32(16)
-																								return v100
+																								return v99
 																							}
 																						}
 																					}
 																				} else {
 																					v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																					if v25 == v92 {
-																						v100 = v80
+																						v99 = v80
 																						m.G0 = v11 + int32(16)
-																						return v100
+																						return v99
 																					} else {
-																						v95 = v80
+																						v94 = v80
 																						F_pfree(m, v25)
 																						mBase = m.M
-																						v97 = m.ExcPending
-																						if v97 != 0 {
+																						v96 = m.ExcPending
+																						if v96 != 0 {
 																							return int32(0)
 																						} else {
-																							v100 = v95
+																							v99 = v94
 																							m.G0 = v11 + int32(16)
-																							return v100
+																							return v99
 																						}
 																					}
 																				}
@@ -411,41 +411,41 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 																} else {
 																	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																	if v25 != v76 {
-																		v95 = v14
+																		v94 = v14
 																		F_pfree(m, v25)
 																		mBase = m.M
-																		v97 = m.ExcPending
-																		if v97 != 0 {
+																		v96 = m.ExcPending
+																		if v96 != 0 {
 																			return int32(0)
 																		} else {
-																			v100 = v95
+																			v99 = v94
 																			m.G0 = v11 + int32(16)
-																			return v100
+																			return v99
 																		}
 																	} else {
-																		v100 = v14
+																		v99 = v14
 																		m.G0 = v11 + int32(16)
-																		return v100
+																		return v99
 																	}
 																}
 															} else {
 																v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																if v25 != v76 {
-																	v95 = v14
+																	v94 = v14
 																	F_pfree(m, v25)
 																	mBase = m.M
-																	v97 = m.ExcPending
-																	if v97 != 0 {
+																	v96 = m.ExcPending
+																	if v96 != 0 {
 																		return int32(0)
 																	} else {
-																		v100 = v95
+																		v99 = v94
 																		m.G0 = v11 + int32(16)
-																		return v100
+																		return v99
 																	}
 																} else {
-																	v100 = v14
+																	v99 = v14
 																	m.G0 = v11 + int32(16)
-																	return v100
+																	return v99
 																}
 															}
 														} else {
@@ -485,40 +485,40 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 																					} else {
 																						v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																						if v25 == v92 {
-																							v100 = v80
+																							v99 = v80
 																							m.G0 = v11 + int32(16)
-																							return v100
+																							return v99
 																						} else {
-																							v95 = v80
+																							v94 = v80
 																							F_pfree(m, v25)
 																							mBase = m.M
-																							v97 = m.ExcPending
-																							if v97 != 0 {
+																							v96 = m.ExcPending
+																							if v96 != 0 {
 																								return int32(0)
 																							} else {
-																								v100 = v95
+																								v99 = v94
 																								m.G0 = v11 + int32(16)
-																								return v100
+																								return v99
 																							}
 																						}
 																					}
 																				} else {
 																					v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																					if v25 == v92 {
-																						v100 = v80
+																						v99 = v80
 																						m.G0 = v11 + int32(16)
-																						return v100
+																						return v99
 																					} else {
-																						v95 = v80
+																						v94 = v80
 																						F_pfree(m, v25)
 																						mBase = m.M
-																						v97 = m.ExcPending
-																						if v97 != 0 {
+																						v96 = m.ExcPending
+																						if v96 != 0 {
 																							return int32(0)
 																						} else {
-																							v100 = v95
+																							v99 = v94
 																							m.G0 = v11 + int32(16)
-																							return v100
+																							return v99
 																						}
 																					}
 																				}
@@ -534,40 +534,40 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 																				} else {
 																					v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																					if v25 == v92 {
-																						v100 = v80
+																						v99 = v80
 																						m.G0 = v11 + int32(16)
-																						return v100
+																						return v99
 																					} else {
-																						v95 = v80
+																						v94 = v80
 																						F_pfree(m, v25)
 																						mBase = m.M
-																						v97 = m.ExcPending
-																						if v97 != 0 {
+																						v96 = m.ExcPending
+																						if v96 != 0 {
 																							return int32(0)
 																						} else {
-																							v100 = v95
+																							v99 = v94
 																							m.G0 = v11 + int32(16)
-																							return v100
+																							return v99
 																						}
 																					}
 																				}
 																			} else {
 																				v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 																				if v25 == v92 {
-																					v100 = v80
+																					v99 = v80
 																					m.G0 = v11 + int32(16)
-																					return v100
+																					return v99
 																				} else {
-																					v95 = v80
+																					v94 = v80
 																					F_pfree(m, v25)
 																					mBase = m.M
-																					v97 = m.ExcPending
-																					if v97 != 0 {
+																					v96 = m.ExcPending
+																					if v96 != 0 {
 																						return int32(0)
 																					} else {
-																						v100 = v95
+																						v99 = v94
 																						m.G0 = v11 + int32(16)
-																						return v100
+																						return v99
 																					}
 																				}
 																			}

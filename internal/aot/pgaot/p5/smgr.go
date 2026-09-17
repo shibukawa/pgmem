@@ -28,8 +28,8 @@ func F_smgrDoPendingDeletes(m *base.Module, l0 int32) {
 	_ = v25
 	var v26 int32
 	_ = v26
-	var v28 int32
-	_ = v28
+	var v30 int32
+	_ = v30
 	var v32 int32
 	_ = v32
 	var v33 int32
@@ -72,8 +72,8 @@ func F_smgrDoPendingDeletes(m *base.Module, l0 int32) {
 	_ = v75
 	var v76 int32
 	_ = v76
-	var v77 int32
-	_ = v77
+	var v78 int32
+	_ = v78
 	var v81 int32
 	_ = v81
 	var v84 int32
@@ -113,7 +113,7 @@ L3:
 	v24 = v2
 	v25 = v2
 	v26 = v2
-	v28 = v2
+	v30 = v2
 	goto L4
 L4:
 	;
@@ -138,7 +138,7 @@ L6:
 		v24 = v74
 		v25 = v75
 		v26 = v76
-		v28 = v77
+		v30 = v78
 		goto L4
 	} else {
 		goto L27
@@ -148,14 +148,14 @@ L7:
 	v74 = v24
 	v75 = v25
 	v76 = v26
-	v77 = v23
+	v78 = v23
 	goto L6
 L8:
 	;
 	goto L9
 L9:
 	;
-	if v28 != 0 {
+	if v30 != 0 {
 		goto L11
 	} else {
 		goto L12
@@ -170,7 +170,7 @@ L10:
 	}
 L11:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v28)+24)) = v32
+	*(*int32)(unsafe.Add(mBase, uint32(v30)+24)) = v32
 	goto L10
 L12:
 	;
@@ -274,7 +274,7 @@ L26:
 	v74 = v68
 	v75 = v69
 	v76 = v70
-	v77 = v28
+	v78 = v30
 	goto L6
 L27:
 	;
@@ -340,12 +340,12 @@ func F_smgr_aio_reopen(m *base.Module, l0 int32) {
 	_ = v8
 	var v11 int32
 	_ = v11
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
 	var v20 int32
 	_ = v20
 	var v22 int64
@@ -360,32 +360,44 @@ func F_smgr_aio_reopen(m *base.Module, l0 int32) {
 	_ = v27
 	var v31 int32
 	_ = v31
-	var v32 int32
-	_ = v32
-	var v35 int32
-	_ = v35
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
 	var v40 int32
 	_ = v40
 	var v41 int32
 	_ = v41
-	var v42 int32
-	_ = v42
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v54 int32
+	_ = v54
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
 	v11 = l0 + int32(104)
-	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+21)))
-	if v15&int32(1) != 0 {
-		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-		v19 = v18
+	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+21)))
+	if v13&int32(1) != 0 {
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+		v17 = v16
 	} else {
-		v19 = int32(-1)
+		v17 = int32(-1)
 	}
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v20
 	v22 = *(*int64)(unsafe.Add(mBase, uint32(v11)))
 	*(*int64)(unsafe.Add(mBase, uint32(v8))) = v22
-	v24 = F_smgropen(m, v8, v19)
+	v24 = F_smgropen(m, v8, v17)
 	mBase = m.M
 	v25 = m.ExcPending
 	if v25 != 0 {
@@ -394,19 +406,40 @@ func F_smgr_aio_reopen(m *base.Module, l0 int32) {
 		v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
 		v27 = int32(1)
 		if base.Ui32(v26-v27) <= base.Ui32(v27) {
-			v31 = int32(*(*int8)(unsafe.Add(mBase, uint32(v11)+20)))
-			v32 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-			v35 = *(*int32)(unsafe.Add(mBase, uint32(v24)+36))
-			v40 = *(*int32)(unsafe.Add(mBase, uint32(v35*int32(80))+uint32(_c_F_smgr_aio_reopen[0])))
-			v41 = m.T0[v40].(func(*base.Module, int32, int32, int32, int32) int32)(m, v24, v31, v32, v8+int32(12))
+			v31 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+			v34 = int32(*(*int8)(unsafe.Add(mBase, uint32(v11)+20)))
+			v36 = F_mdopenfork(m, v24, v34, int32(1))
 			mBase = m.M
-			v42 = m.ExcPending
-			if v42 != 0 {
+			v37 = m.ExcPending
+			if v37 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(l0+int32(88)))) = v41
-				m.G0 = v8 + int32(16)
-				return
+				v40 = F__mdfd_getseg(m, v24, v34, v31, int32(0), int32(1))
+				mBase = m.M
+				v41 = m.ExcPending
+				if v41 != 0 {
+					return
+				} else {
+					*(*int32)(unsafe.Add(mBase, uint32(v8+int32(12)))) = v31 << (uint(int32(13)) % 32) & int32(1073733632)
+					v47 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
+					v48 = F_FileAccess(m, v47)
+					mBase = m.M
+					v49 = m.ExcPending
+					if v49 != 0 {
+						return
+					} else {
+						if v48 < int32(0) {
+							v59 = int32(-1)
+						} else {
+							v54 = *(*int32)(unsafe.Add(mBase, _c_F_smgr_aio_reopen[0]))
+							v58 = *(*int32)(unsafe.Add(mBase, uint32(v54+v47*int32(48))))
+							v59 = v58
+						}
+						*(*int32)(unsafe.Add(mBase, uint32(l0+int32(88)))) = v59
+						m.G0 = v8 + int32(16)
+						return
+					}
+				}
 			}
 		} else {
 			m.G0 = v8 + int32(16)

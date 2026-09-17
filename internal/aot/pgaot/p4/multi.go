@@ -12,10 +12,10 @@ func F_multi_sort_compare(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v4
 	var v9 int32
 	_ = v9
+	var v17 int32
+	_ = v17
 	var v18 int32
 	_ = v18
-	var v20 int32
-	_ = v20
 	var v24 int32
 	_ = v24
 	var v25 int32
@@ -56,12 +56,12 @@ func F_multi_sort_compare(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v67
 	var v68 int32
 	_ = v68
-	var v70 int32
-	_ = v70
-	var v72 int32
-	_ = v72
-	var v86 int32
-	_ = v86
+	var v69 int32
+	_ = v69
+	var v71 int32
+	_ = v71
+	var v85 int32
+	_ = v85
 	v4 = int32(0)
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	if v4 < v9 {
@@ -74,18 +74,18 @@ L1:
 	return int32(1)
 L2:
 	;
-	return v86
+	return v85
 L3:
 	;
+	v17 = v9
 	v18 = v4
-	v20 = v9
 	goto L6
 L4:
 	;
 	goto L5
 L5:
 	;
-	v86 = int32(0)
+	v85 = int32(0)
 	goto L2
 L6:
 	;
@@ -104,10 +104,10 @@ L7:
 	goto L5
 L8:
 	;
-	v72 = v18 + int32(1)
-	if v72 < v70 {
-		v18 = v72
-		v20 = v70
+	v71 = v18 + int32(1)
+	if v71 < v69 {
+		v17 = v69
+		v18 = v71
 		goto L6
 	} else {
 		goto L29
@@ -115,7 +115,7 @@ L8:
 L9:
 	;
 	if v27&int32(1) != 0 {
-		v70 = v20
+		v69 = v17
 		goto L8
 	} else {
 		goto L12
@@ -212,7 +212,7 @@ L25:
 L26:
 	;
 	if v67 != 0 {
-		v86 = v67
+		v85 = v67
 		goto L2
 	} else {
 		goto L28
@@ -224,7 +224,7 @@ L27:
 L28:
 	;
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	v70 = v68
+	v69 = v68
 	goto L8
 L29:
 	;

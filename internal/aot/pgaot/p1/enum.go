@@ -102,7 +102,7 @@ func F_enum_endpoint(m *base.Module, l0 int32, l1 int32) int32 {
 									if v44 != 0 {
 										return int32(0)
 									} else {
-										F_sequence_close(m, v21, int32(1))
+										F_relation_close(m, v21, int32(1))
 										mBase = m.M
 										v47 = m.ExcPending
 										if v47 != 0 {
@@ -128,7 +128,7 @@ func F_enum_endpoint(m *base.Module, l0 int32, l1 int32) int32 {
 								if v44 != 0 {
 									return int32(0)
 								} else {
-									F_sequence_close(m, v21, int32(1))
+									F_relation_close(m, v21, int32(1))
 									mBase = m.M
 									v47 = m.ExcPending
 									if v47 != 0 {

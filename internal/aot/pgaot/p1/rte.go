@@ -16,8 +16,8 @@ func F_GetRTEByRangeTablePosn(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	_ = v13
 	var v16 int32
 	_ = v16
-	var v17 int32
-	_ = v17
+	var v18 int32
+	_ = v18
 	var v19 int32
 	_ = v19
 	var v20 int32
@@ -34,6 +34,8 @@ func F_GetRTEByRangeTablePosn(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	_ = v33
 	var v36 int32
 	_ = v36
+	var v39 int32
+	_ = v39
 	var v41 int32
 	_ = v41
 	var v42 int32
@@ -50,17 +52,17 @@ func F_GetRTEByRangeTablePosn(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	_ = v47
 	var v48 int32
 	_ = v48
-	var v53 int32
-	_ = v53
-	var v59 int32
-	_ = v59
-	var v60 int32
-	_ = v60
-	var v66 int32
-	_ = v66
+	var v51 int32
+	_ = v51
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v64 int32
+	_ = v64
 	v4 = int32(0)
 	if l2 <= v4 {
-		v53 = l0
+		v51 = l0
 	} else {
 		v10 = l2 & int32(7)
 		if v10 == int32(0) {
@@ -69,16 +71,16 @@ func F_GetRTEByRangeTablePosn(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 		} else {
 			v13 = l0
 			v16 = l2
-			v17 = v4
+			v18 = v4
 			for {
 				v19 = int32(1)
 				v20 = v16 - v19
 				v21 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-				v23 = v17 + v19
+				v23 = v18 + v19
 				if v23 != v10 {
 					v13 = v21
 					v16 = v20
-					v17 = v23
+					v18 = v23
 					continue
 				} else {
 					break
@@ -89,11 +91,12 @@ func F_GetRTEByRangeTablePosn(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 			v28 = v20
 		}
 		if base.Ui32(l2) < base.Ui32(int32(8)) {
-			v53 = v25
+			v51 = v25
 		} else {
 			v33 = v25
 			v36 = v28
 			for {
+				v39 = int32(8)
 				v41 = *(*int32)(unsafe.Add(mBase, uint32(v33)))
 				v42 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 				v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
@@ -102,22 +105,22 @@ func F_GetRTEByRangeTablePosn(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 				v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)))
 				v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)))
 				v48 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
-				if base.Ui32(v36-int32(9)) < base.Ui32(int32(-2)) {
+				if v39 < v36 {
 					v33 = v48
-					v36 = v36 - int32(8)
+					v36 = v36 - v39
 					continue
 				} else {
 					break
 				}
 				break
 			}
-			v53 = v48
+			v51 = v48
 		}
 	}
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v53)+8))
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+12))
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(v60+l1<<(uint(int32(2))%32)-int32(4))))
-	return v66
+	v57 = *(*int32)(unsafe.Add(mBase, uint32(v51)+8))
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(v57)+12))
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(v58+l1<<(uint(int32(2))%32)-int32(4))))
+	return v64
 }
 func F_addRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M

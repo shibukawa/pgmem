@@ -54,24 +54,24 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 	_ = v80
 	var v82 int32
 	_ = v82
-	var v91 int64
-	_ = v91
-	var v92 int32
-	_ = v92
-	var v93 int32
-	_ = v93
-	var v98 int32
-	_ = v98
-	var v106 int32
-	_ = v106
-	var v111 int32
-	_ = v111
-	var v119 int64
-	_ = v119
-	var v123 int32
-	_ = v123
+	var v94 int64
+	_ = v94
+	var v95 int32
+	_ = v95
+	var v96 int32
+	_ = v96
+	var v101 int32
+	_ = v101
+	var v109 int32
+	_ = v109
+	var v114 int32
+	_ = v114
+	var v120 int64
+	_ = v120
 	var v124 int32
 	_ = v124
+	var v125 int32
+	_ = v125
 	v2 = int32(0)
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
@@ -99,15 +99,15 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					if v56 == int32(0) {
-						v119 = v55
+						v120 = v55
 						m.G0 = v11 + int32(48)
-						v123 = F_Int64GetDatum(m, v119)
+						v124 = F_Int64GetDatum(m, v120)
 						mBase = m.M
-						v124 = m.ExcPending
-						if v124 != 0 {
+						v125 = m.ExcPending
+						if v125 != 0 {
 							return int32(0)
 						} else {
-							return v123
+							return v124
 						}
 					} else {
 						F_errcode(m, int32(50331778))
@@ -130,15 +130,15 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 								if v75 != 0 {
 									return int32(0)
 								} else {
-									v119 = v55
+									v120 = v55
 									m.G0 = v11 + int32(48)
-									v123 = F_Int64GetDatum(m, v119)
+									v124 = F_Int64GetDatum(m, v120)
 									mBase = m.M
-									v124 = m.ExcPending
-									if v124 != 0 {
+									v125 = m.ExcPending
+									if v125 != 0 {
 										return int32(0)
 									} else {
-										return v123
+										return v124
 									}
 								}
 							}
@@ -149,12 +149,7 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 				v80 = v29
 				for {
 					v82 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v80))))
-					if base.Ui32(v82-int32(9)) < base.Ui32(int32(5)) {
-						v80 = v80 + int32(1)
-						continue
-					} else {
-					}
-					if v82 == int32(32) {
+					if base.B2i32(base.Ui32(v82-int32(9)) < base.Ui32(int32(5)))|base.B2i32(v82 == int32(32)) != 0 {
 						v80 = v80 + int32(1)
 						continue
 					} else {
@@ -163,65 +158,65 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 					break
 				}
 				if v82 == int32(0) {
-					v119 = v20
+					v120 = v20
 					m.G0 = v11 + int32(48)
-					v123 = F_Int64GetDatum(m, v119)
+					v124 = F_Int64GetDatum(m, v120)
 					mBase = m.M
-					v124 = m.ExcPending
-					if v124 != 0 {
+					v125 = m.ExcPending
+					if v125 != 0 {
 						return int32(0)
 					} else {
-						return v123
+						return v124
 					}
 				} else {
-					v91 = int64(0)
-					v92 = F_errsave_start(m, v8)
+					v94 = int64(0)
+					v95 = F_errsave_start(m, v8)
 					mBase = m.M
-					v93 = m.ExcPending
-					if v93 != 0 {
+					v96 = m.ExcPending
+					if v96 != 0 {
 						return int32(0)
 					} else {
-						if v92 == int32(0) {
-							v119 = v91
+						if v95 == int32(0) {
+							v120 = v94
 							m.G0 = v11 + int32(48)
-							v123 = F_Int64GetDatum(m, v119)
+							v124 = F_Int64GetDatum(m, v120)
 							mBase = m.M
-							v124 = m.ExcPending
-							if v124 != 0 {
+							v125 = m.ExcPending
+							if v125 != 0 {
 								return int32(0)
 							} else {
-								return v123
+								return v124
 							}
 						} else {
 							F_errcode(m, int32(33685634))
 							mBase = m.M
-							v98 = m.ExcPending
-							if v98 != 0 {
+							v101 = m.ExcPending
+							if v101 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v7
 								*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = int32(_a_F_xid8in_0)
 								F_errmsg(m, int32(_a_F_xid8in_4), v11+int32(32))
 								mBase = m.M
-								v106 = m.ExcPending
-								if v106 != 0 {
+								v109 = m.ExcPending
+								if v109 != 0 {
 									return int32(0)
 								} else {
 									F_errsave_finish(m, v8, int32(_a_F_xid8in_2), int32(1026), int32(_a_F_xid8in_3))
 									mBase = m.M
-									v111 = m.ExcPending
-									if v111 != 0 {
+									v114 = m.ExcPending
+									if v114 != 0 {
 										return int32(0)
 									} else {
-										v119 = v91
+										v120 = v94
 										m.G0 = v11 + int32(48)
-										v123 = F_Int64GetDatum(m, v119)
+										v124 = F_Int64GetDatum(m, v120)
 										mBase = m.M
-										v124 = m.ExcPending
-										if v124 != 0 {
+										v125 = m.ExcPending
+										if v125 != 0 {
 											return int32(0)
 										} else {
-											return v123
+											return v124
 										}
 									}
 								}
@@ -239,15 +234,15 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				if v33 == int32(0) {
-					v119 = v32
+					v120 = v32
 					m.G0 = v11 + int32(48)
-					v123 = F_Int64GetDatum(m, v119)
+					v124 = F_Int64GetDatum(m, v120)
 					mBase = m.M
-					v124 = m.ExcPending
-					if v124 != 0 {
+					v125 = m.ExcPending
+					if v125 != 0 {
 						return int32(0)
 					} else {
-						return v123
+						return v124
 					}
 				} else {
 					F_errcode(m, int32(33685634))
@@ -270,15 +265,15 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 							if v52 != 0 {
 								return int32(0)
 							} else {
-								v119 = v32
+								v120 = v32
 								m.G0 = v11 + int32(48)
-								v123 = F_Int64GetDatum(m, v119)
+								v124 = F_Int64GetDatum(m, v120)
 								mBase = m.M
-								v124 = m.ExcPending
-								if v124 != 0 {
+								v125 = m.ExcPending
+								if v125 != 0 {
 									return int32(0)
 								} else {
-									return v123
+									return v124
 								}
 							}
 						}
@@ -295,15 +290,15 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			if v33 == int32(0) {
-				v119 = v32
+				v120 = v32
 				m.G0 = v11 + int32(48)
-				v123 = F_Int64GetDatum(m, v119)
+				v124 = F_Int64GetDatum(m, v120)
 				mBase = m.M
-				v124 = m.ExcPending
-				if v124 != 0 {
+				v125 = m.ExcPending
+				if v125 != 0 {
 					return int32(0)
 				} else {
-					return v123
+					return v124
 				}
 			} else {
 				F_errcode(m, int32(33685634))
@@ -326,15 +321,15 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 						if v52 != 0 {
 							return int32(0)
 						} else {
-							v119 = v32
+							v120 = v32
 							m.G0 = v11 + int32(48)
-							v123 = F_Int64GetDatum(m, v119)
+							v124 = F_Int64GetDatum(m, v120)
 							mBase = m.M
-							v124 = m.ExcPending
-							if v124 != 0 {
+							v125 = m.ExcPending
+							if v125 != 0 {
 								return int32(0)
 							} else {
-								return v123
+								return v124
 							}
 						}
 					}
@@ -389,92 +384,28 @@ func F_xmlparse(m *base.Module) int32 {
 	}
 }
 func F_xmltext(m *base.Module, l0 int32) int32 {
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v10 int32
-	_ = v10
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
-	var v23 int32
-	_ = v23
-	F_errstart_cold(m, int32(21), int32(0))
+	v4 = Fn13840(m, l0, int32(_a_F_xmltext_0), int32(542))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errcode(m, int32(1088))
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return int32(0)
-		} else {
-			F_errmsg(m, int32(_a_F_xmltext_0), int32(0))
-			v14 = m.ExcPending
-			if v14 != 0 {
-				return int32(0)
-			} else {
-				F_errdetail(m, int32(_a_F_xmltext_1), int32(0))
-				v18 = m.ExcPending
-				if v18 != 0 {
-					return int32(0)
-				} else {
-					F_errfinish(m, int32(_a_F_xmltext_2), int32(542), int32(_a_F_xmltext_3))
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
-			}
-		}
+		return v4
 	}
 }
 func F_xpath_exists(m *base.Module, l0 int32) int32 {
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v10 int32
-	_ = v10
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
-	var v23 int32
-	_ = v23
-	F_errstart_cold(m, int32(21), int32(0))
+	v4 = Fn13840(m, l0, int32(_a_F_xpath_exists_0), int32(_a_F_xpath_exists_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errcode(m, int32(1088))
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return int32(0)
-		} else {
-			F_errmsg(m, int32(_a_F_xpath_exists_0), int32(0))
-			v14 = m.ExcPending
-			if v14 != 0 {
-				return int32(0)
-			} else {
-				F_errdetail(m, int32(_a_F_xpath_exists_1), int32(0))
-				v18 = m.ExcPending
-				if v18 != 0 {
-					return int32(0)
-				} else {
-					F_errfinish(m, int32(_a_F_xpath_exists_2), int32(_a_F_xpath_exists_3), int32(_a_F_xpath_exists_4))
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
-			}
-		}
+		return v4
 	}
 }

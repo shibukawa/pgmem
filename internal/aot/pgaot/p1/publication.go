@@ -48,62 +48,66 @@ func F_GetPublicationRelations(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v47
 	var v50 int32
 	_ = v50
-	var v62 int32
-	_ = v62
+	var v51 int32
+	_ = v51
+	var v61 int32
+	_ = v61
+	var v64 int32
+	_ = v64
 	var v65 int32
 	_ = v65
-	var v67 int32
-	_ = v67
-	var v70 int32
-	_ = v70
-	var v78 int32
-	_ = v78
-	var v81 int32
-	_ = v81
-	var v83 int32
-	_ = v83
-	var v84 int32
-	_ = v84
-	var v90 int32
-	_ = v90
-	var v91 int32
-	_ = v91
-	var v93 int32
-	_ = v93
-	var v97 int32
-	_ = v97
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v74 int32
+	_ = v74
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	var v80 int32
+	_ = v80
+	var v85 int32
+	_ = v85
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v92 int32
+	_ = v92
+	var v95 int32
+	_ = v95
 	var v100 int32
 	_ = v100
+	var v101 int32
+	_ = v101
 	var v105 int32
 	_ = v105
-	var v107 int32
-	_ = v107
-	var v111 int32
-	_ = v111
+	var v108 int32
+	_ = v108
+	var v113 int32
+	_ = v113
 	var v114 int32
 	_ = v114
-	var v119 int32
-	_ = v119
-	var v120 int32
-	_ = v120
-	var v121 int32
-	_ = v121
-	var v123 int32
-	_ = v123
-	var v126 int32
-	_ = v126
-	var v128 int32
-	_ = v128
+	var v115 int32
+	_ = v115
+	var v117 int32
+	_ = v117
+	var v122 int32
+	_ = v122
+	var v124 int32
+	_ = v124
+	var v130 int32
+	_ = v130
+	var v133 int32
+	_ = v133
 	var v137 int32
 	_ = v137
 	var v140 int32
 	_ = v140
-	var v144 int32
-	_ = v144
-	var v147 int32
-	_ = v147
-	var v152 int32
-	_ = v152
+	var v146 int32
+	_ = v146
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
@@ -196,7 +200,7 @@ L11:
 	goto L5
 L12:
 	;
-	F_sequence_close(m, v13, int32(1))
+	F_relation_close(m, v13, int32(1))
 	mBase = m.M
 	v47 = m.ExcPending
 	if v47 != 0 {
@@ -216,7 +220,8 @@ L13:
 	}
 L14:
 	;
-	if v29 == int32(0) {
+	v51 = int32(0)
+	if v29 == v51 {
 		goto L16
 	} else {
 		goto L17
@@ -230,99 +235,107 @@ L16:
 	goto L15
 L17:
 	;
-	v62 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
-	if v62 < int32(2) {
+	v61 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
+	if v61 < int32(2) {
 		goto L16
 	} else {
 		goto L18
 	}
 L18:
 	;
-	v65 = int32(1)
-	v67 = v62 - v65
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
-	if v62 == int32(2) {
+	v64 = int32(1)
+	v65 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
+	if v61 != int32(2) {
 		goto L20
 	} else {
 		goto L21
 	}
 L19:
 	;
-	if v67&v65 == int32(0) {
-		v152 = v126
-		goto L32
-	} else {
-		goto L33
-	}
+	*(*int32)(unsafe.Add(mBase, uint32(v29)+4)) = v146 + int32(1)
+	goto L16
 L20:
 	;
-	v126 = int32(0)
-	v128 = v65
-	goto L19
+	v68 = int32(1)
+	v69 = v61 - v68
+	v74 = int32(0)
+	v77 = v74
+	v79 = v64
+	v80 = v74
+	goto L23
 L21:
 	;
+	v122 = v51
+	v124 = v64
 	goto L22
 L22:
 	;
-	v78 = int32(0)
-	v81 = v78
-	v83 = v65
-	v84 = v78
-	goto L23
+	v130 = int32(2)
+	v133 = *(*int32)(unsafe.Add(mBase, uint32(v65+v124<<(uint(v130)%32))))
+	v137 = *(*int32)(unsafe.Add(mBase, uint32(v65+v122<<(uint(v130)%32))))
+	if v133 == v137 {
+		v146 = v122
+		goto L19
+	} else {
+		goto L33
+	}
 L23:
 	;
-	v90 = int32(2)
-	v91 = v83 << (uint(v90) % 32)
-	v93 = *(*int32)(unsafe.Add(mBase, uint32(v70+v91)))
-	v97 = *(*int32)(unsafe.Add(mBase, uint32(v70+v81<<(uint(v90)%32))))
-	if v93 != v97 {
+	v85 = int32(2)
+	v87 = v65 + v79<<(uint(v85)%32)
+	v88 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+	v92 = *(*int32)(unsafe.Add(mBase, uint32(v65+v77<<(uint(v85)%32))))
+	if v88 != v92 {
 		goto L25
 	} else {
 		goto L26
 	}
 L24:
 	;
-	v126 = v119
-	v128 = v121
-	goto L19
+	if v69&v68 == int32(0) {
+		v146 = v113
+		goto L19
+	} else {
+		goto L32
+	}
 L25:
 	;
-	v100 = v81 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v70+v100<<(uint(int32(2))%32)))) = v93
-	v105 = v100
+	v95 = v77 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v65+v95<<(uint(int32(2))%32)))) = v88
+	v100 = v95
 	goto L27
 L26:
 	;
-	v105 = v81
+	v100 = v77
 	goto L27
 L27:
 	;
-	v107 = *(*int32)(unsafe.Add(mBase, uint32(v91+(v70+int32(4)))))
-	v111 = *(*int32)(unsafe.Add(mBase, uint32(v70+v105<<(uint(int32(2))%32))))
-	if v107 != v111 {
+	v101 = *(*int32)(unsafe.Add(mBase, uint32(v87)+4))
+	v105 = *(*int32)(unsafe.Add(mBase, uint32(v65+v100<<(uint(int32(2))%32))))
+	if v101 != v105 {
 		goto L28
 	} else {
 		goto L29
 	}
 L28:
 	;
-	v114 = v105 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v70+v114<<(uint(int32(2))%32)))) = v107
-	v119 = v114
+	v108 = v100 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v65+v108<<(uint(int32(2))%32)))) = v101
+	v113 = v108
 	goto L30
 L29:
 	;
-	v119 = v105
+	v113 = v100
 	goto L30
 L30:
 	;
-	v120 = int32(2)
-	v121 = v83 + v120
-	v123 = v84 + v120
-	if v123 != v67&int32(-2) {
-		v81 = v119
-		v83 = v121
-		v84 = v123
+	v114 = int32(2)
+	v115 = v79 + v114
+	v117 = v80 + v114
+	if v117 != v69&int32(-2) {
+		v77 = v113
+		v79 = v115
+		v80 = v117
 		goto L23
 	} else {
 		goto L31
@@ -332,25 +345,15 @@ L31:
 	goto L24
 L32:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v29)+4)) = v152 + int32(1)
-	goto L16
+	v122 = v113
+	v124 = v115
+	goto L22
 L33:
 	;
-	v137 = int32(2)
-	v140 = *(*int32)(unsafe.Add(mBase, uint32(v70+v128<<(uint(v137)%32))))
-	v144 = *(*int32)(unsafe.Add(mBase, uint32(v70+v126<<(uint(v137)%32))))
-	if v140 == v144 {
-		v152 = v126
-		goto L32
-	} else {
-		goto L34
-	}
-L34:
-	;
-	v147 = v126 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v70+v147<<(uint(int32(2))%32)))) = v140
-	v152 = v147
-	goto L32
+	v140 = v122 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v65+v140<<(uint(int32(2))%32)))) = v133
+	v146 = v140
+	goto L19
 }
 func F_getPublicationSchemaInfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
@@ -551,95 +554,15 @@ func F_getPublicationSchemaInfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	}
 }
 func F_get_publication_name(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v6 int32
-	_ = v6
 	var v8 int32
 	_ = v8
 	var v11 int32
 	_ = v11
-	var v14 int32
-	_ = v14
-	var v20 int32
-	_ = v20
-	var v24 int32
-	_ = v24
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
-	v11 = F_SearchSysCache1(m, int32(51), l0)
-	mBase = m.M
-	v14 = m.ExcPending
-	if v14 != 0 {
+	v8 = Fn13902(m, l0, l1, int32(4), int32(_a_F_get_publication_name_0), int32(3796), int32(_a_F_get_publication_name_1), int32(51))
+	v11 = m.ExcPending
+	if v11 != 0 {
 		return int32(0)
 	} else {
-		if v11 == int32(0) {
-			if l1 != 0 {
-				v40 = int32(0)
-				m.G0 = v8 + int32(16)
-				return v40
-			} else {
-				F_errstart_cold(m, int32(21), int32(0))
-				mBase = m.M
-				v20 = m.ExcPending
-				if v20 != 0 {
-					return int32(0)
-				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-					F_errmsg_internal(m, int32(_a_F_get_publication_name_0), v8)
-					mBase = m.M
-					v24 = m.ExcPending
-					if v24 != 0 {
-						return int32(0)
-					} else {
-						F_errfinish(m, int32(_a_F_get_publication_name_1), int32(3796), int32(_a_F_get_publication_name_2))
-						mBase = m.M
-						v29 = m.ExcPending
-						if v29 != 0 {
-							return int32(0)
-						} else {
-							base.Wasm_trap_unreachable()
-							for {
-							}
-						}
-					}
-				}
-			}
-		} else {
-			v30 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
-			v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+22)))
-			v35 = F_pstrdup(m, v30+v31+int32(4))
-			mBase = m.M
-			v36 = m.ExcPending
-			if v36 != 0 {
-				return int32(0)
-			} else {
-				F_ReleaseCatCache(m, v11)
-				mBase = m.M
-				v38 = m.ExcPending
-				if v38 != 0 {
-					return int32(0)
-				} else {
-					v40 = v35
-					m.G0 = v8 + int32(16)
-					return v40
-				}
-			}
-		}
+		return v8
 	}
 }

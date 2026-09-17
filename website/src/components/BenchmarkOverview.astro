@@ -8,10 +8,11 @@ interface Props {
 const { lang = 'en' } = Astro.props;
 const t = data.targets as Record<string, Record<string, number>>;
 const s = data.sizes as Record<string, number>;
+const comparisonAt = data.comparison_measured_at ?? data.measured_at;
 
 const labels = {
 	en: {
-		intro: (runs: number, memoryRuns: number) => `Medians from ${runs} runs on one machine. Docker and Testcontainers memory uses ${memoryRuns} fresh OrbStack runs. Bars scale to the largest value in each card; lower is better.`,
+		intro: (runs: number, memoryRuns: number, measuredAt: string, comparisonAt: string) => `pgmem values are medians from ${runs} runs on ${measuredAt}; the Docker, Testcontainers and devbox comparison baselines are from ${comparisonAt}. Docker and Testcontainers memory uses ${memoryRuns} fresh OrbStack runs. Bars scale to the largest value in each card; lower is better.`,
 		startup: 'Start to first query',
 		startupNote: 'From command start to TCP SELECT 1; downloads are excluded and Devbox uses an initialized cluster.',
 		isolation: 'Fresh copy per test',
@@ -30,7 +31,7 @@ const labels = {
 		devbox: 'devbox · services up',
 	},
 	ja: {
-		intro: (runs: number, memoryRuns: number) => `${runs} 回計測した中央値です。Docker と Testcontainers のメモリは OrbStack を再起動して ${memoryRuns} 回測定しました。バーは各カード内の最大値を基準にし、短いほど値が小さくなります。`,
+		intro: (runs: number, memoryRuns: number, measuredAt: string, comparisonAt: string) => `pgmem の値は ${measuredAt} に ${runs} 回計測した中央値です。Docker、Testcontainers、devbox の比較値は ${comparisonAt} の基準値を引き継いでいます。Docker と Testcontainers のメモリは OrbStack を再起動して ${memoryRuns} 回測定しました。バーは各カード内の最大値を基準にし、短いほど値が小さくなります。`,
 		startup: '起動から最初のクエリまで',
 		startupNote: '起動コマンドから TCP SELECT 1 まで。取得時間は除外し、Devbox は初期化済みクラスタを使います。',
 		isolation: 'テストごとの複製',
@@ -96,7 +97,7 @@ const metrics = [
 ---
 
 <div class="overview" role="group" aria-label={lang === 'ja' ? 'ベンチマークの比較グラフ' : 'Benchmark comparison charts'}>
-	<p class="intro">{labels.intro(t.pgmem.runs, t.docker.mem_runs)}</p>
+	<p class="intro">{labels.intro(t.pgmem.runs, t.docker.mem_runs, data.measured_at, comparisonAt)}</p>
 	<div class="metric-grid">
 		{metrics.map((metric) => {
 			const maxValue = Math.max(...metric.rows.map((row) => row.value));

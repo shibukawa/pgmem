@@ -484,18 +484,16 @@ func F_ExecAggCopyTransValue(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 func F_create_agg_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 float64) int32 {
 	mBase := m.M
 	_ = mBase
-	var v11 int32
-	_ = v11
-	var v16 int32
-	_ = v16
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
 	var v19 int32
 	_ = v19
-	var v20 int32
-	_ = v20
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
 	var v32 int32
 	_ = v32
 	var v33 int32
@@ -516,8 +514,8 @@ func F_create_agg_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 	_ = v46
 	var v47 int32
 	_ = v47
-	var v48 int32
-	_ = v48
+	var v49 int32
+	_ = v49
 	var v55 int64
 	_ = v55
 	var v57 int64
@@ -552,47 +550,46 @@ func F_create_agg_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 	_ = v79
 	var v81 float64
 	_ = v81
-	v11 = int32(0)
-	v16 = F_palloc0(m, int32(112))
+	v15 = F_palloc0(m, int32(112))
 	mBase = m.M
-	v19 = m.ExcPending
-	if v19 != 0 {
+	v18 = m.ExcPending
+	if v18 != 0 {
 		return int32(0)
 	} else {
-		v20 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v16)+20)) = uint8(v20)
-		*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v20
-		*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = l3
-		*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = l1
-		*(*int64)(unsafe.Add(mBase, uint32(v16))) = int64(1567663063347)
-		v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+26)))
-		if v28 == int32(1) {
-			v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+21)))
-			v32 = v31
+		v19 = int32(0)
+		*(*uint8)(unsafe.Add(mBase, uint32(v15)+20)) = uint8(v19)
+		*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v19
+		*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = l3
+		*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = l1
+		*(*int64)(unsafe.Add(mBase, uint32(v15))) = int64(1567663063347)
+		v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+26)))
+		if v27 == int32(1) {
+			v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+21)))
+			v32 = v30
 		} else {
-			v32 = v11
+			v32 = int32(0)
 		}
 		v33 = int32(1)
 		v34 = v32 & v33
-		*(*uint8)(unsafe.Add(mBase, uint32(v16)+21)) = uint8(v34)
+		*(*uint8)(unsafe.Add(mBase, uint32(v15)+21)) = uint8(v34)
 		v36 = *(*int32)(unsafe.Add(mBase, uint32(l2)+24))
-		*(*int32)(unsafe.Add(mBase, uint32(v16)+24)) = v36
+		*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v36
 		if l4 != v33 {
-			v48 = v11
-			*(*float64)(unsafe.Add(mBase, uint32(v16)+88)) = l9
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+80)) = l5
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+76)) = l4
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+72)) = l2
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+64)) = v48
+			v49 = int32(0)
+			*(*float64)(unsafe.Add(mBase, uint32(v15)+88)) = l9
+			*(*int32)(unsafe.Add(mBase, uint32(v15)+80)) = l5
+			*(*int32)(unsafe.Add(mBase, uint32(v15)+76)) = l4
+			*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = l2
+			*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v49
 			if l8 != 0 {
 				v55 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l8)+32)))
 				v57 = v55
 			} else {
 				v57 = int64(0)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+108)) = l7
-			*(*int32)(unsafe.Add(mBase, uint32(v16)+104)) = l6
-			*(*int64)(unsafe.Add(mBase, uint32(v16)+96)) = v57
+			*(*int32)(unsafe.Add(mBase, uint32(v15)+108)) = l7
+			*(*int32)(unsafe.Add(mBase, uint32(v15)+104)) = l6
+			*(*int64)(unsafe.Add(mBase, uint32(v15)+96)) = v57
 			if l6 != 0 {
 				v61 = *(*int32)(unsafe.Add(mBase, uint32(l6)+4))
 				v63 = v61
@@ -605,21 +602,21 @@ func F_create_agg_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 			v67 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
 			v68 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
 			v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+32))
-			F_cost_agg(m, v16, l0, l4, l8, v63, l9, l7, v64, v65, v66, v67, base.F64_convert_i32_s(v69))
+			F_cost_agg(m, v15, l0, l4, l8, v63, l9, l7, v64, v65, v66, v67, base.F64_convert_i32_s(v69))
 			mBase = m.M
 			v72 = m.ExcPending
 			if v72 != 0 {
 				return int32(0)
 			} else {
 				v73 = *(*float64)(unsafe.Add(mBase, uint32(l3)+16))
-				v74 = *(*float64)(unsafe.Add(mBase, uint32(v16)+48))
-				*(*float64)(unsafe.Add(mBase, uint32(v16)+48)) = base.F64_add(v73, v74)
-				v77 = *(*float64)(unsafe.Add(mBase, uint32(v16)+56))
+				v74 = *(*float64)(unsafe.Add(mBase, uint32(v15)+48))
+				*(*float64)(unsafe.Add(mBase, uint32(v15)+48)) = base.F64_add(v73, v74)
+				v77 = *(*float64)(unsafe.Add(mBase, uint32(v15)+56))
 				v78 = *(*float64)(unsafe.Add(mBase, uint32(l3)+24))
-				v79 = *(*float64)(unsafe.Add(mBase, uint32(v16)+32))
+				v79 = *(*float64)(unsafe.Add(mBase, uint32(v15)+32))
 				v81 = *(*float64)(unsafe.Add(mBase, uint32(l3)+16))
-				*(*float64)(unsafe.Add(mBase, uint32(v16)+56)) = base.F64_add(v77, base.F64_add(base.F64_mul(v78, v79), v81))
-				return v16
+				*(*float64)(unsafe.Add(mBase, uint32(v15)+56)) = base.F64_add(v77, base.F64_add(base.F64_mul(v78, v79), v81))
+				return v15
 			}
 		} else {
 			v40 = *(*int32)(unsafe.Add(mBase, uint32(l2)+64))
@@ -631,21 +628,21 @@ func F_create_agg_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 			}
 			v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+164))
 			if v43 <= v44 {
-				v48 = v40
-				*(*float64)(unsafe.Add(mBase, uint32(v16)+88)) = l9
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+80)) = l5
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+76)) = l4
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+72)) = l2
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+64)) = v48
+				v49 = v40
+				*(*float64)(unsafe.Add(mBase, uint32(v15)+88)) = l9
+				*(*int32)(unsafe.Add(mBase, uint32(v15)+80)) = l5
+				*(*int32)(unsafe.Add(mBase, uint32(v15)+76)) = l4
+				*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = l2
+				*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v49
 				if l8 != 0 {
 					v55 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l8)+32)))
 					v57 = v55
 				} else {
 					v57 = int64(0)
 				}
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+108)) = l7
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+104)) = l6
-				*(*int64)(unsafe.Add(mBase, uint32(v16)+96)) = v57
+				*(*int32)(unsafe.Add(mBase, uint32(v15)+108)) = l7
+				*(*int32)(unsafe.Add(mBase, uint32(v15)+104)) = l6
+				*(*int64)(unsafe.Add(mBase, uint32(v15)+96)) = v57
 				if l6 != 0 {
 					v61 = *(*int32)(unsafe.Add(mBase, uint32(l6)+4))
 					v63 = v61
@@ -658,21 +655,21 @@ func F_create_agg_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 				v67 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
 				v68 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
 				v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+32))
-				F_cost_agg(m, v16, l0, l4, l8, v63, l9, l7, v64, v65, v66, v67, base.F64_convert_i32_s(v69))
+				F_cost_agg(m, v15, l0, l4, l8, v63, l9, l7, v64, v65, v66, v67, base.F64_convert_i32_s(v69))
 				mBase = m.M
 				v72 = m.ExcPending
 				if v72 != 0 {
 					return int32(0)
 				} else {
 					v73 = *(*float64)(unsafe.Add(mBase, uint32(l3)+16))
-					v74 = *(*float64)(unsafe.Add(mBase, uint32(v16)+48))
-					*(*float64)(unsafe.Add(mBase, uint32(v16)+48)) = base.F64_add(v73, v74)
-					v77 = *(*float64)(unsafe.Add(mBase, uint32(v16)+56))
+					v74 = *(*float64)(unsafe.Add(mBase, uint32(v15)+48))
+					*(*float64)(unsafe.Add(mBase, uint32(v15)+48)) = base.F64_add(v73, v74)
+					v77 = *(*float64)(unsafe.Add(mBase, uint32(v15)+56))
 					v78 = *(*float64)(unsafe.Add(mBase, uint32(l3)+24))
-					v79 = *(*float64)(unsafe.Add(mBase, uint32(v16)+32))
+					v79 = *(*float64)(unsafe.Add(mBase, uint32(v15)+32))
 					v81 = *(*float64)(unsafe.Add(mBase, uint32(l3)+16))
-					*(*float64)(unsafe.Add(mBase, uint32(v16)+56)) = base.F64_add(v77, base.F64_add(base.F64_mul(v78, v79), v81))
-					return v16
+					*(*float64)(unsafe.Add(mBase, uint32(v15)+56)) = base.F64_add(v77, base.F64_add(base.F64_mul(v78, v79), v81))
+					return v15
 				}
 			} else {
 				v46 = F_list_copy_head(m, v40, v44)
@@ -681,21 +678,21 @@ func F_create_agg_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 				if v47 != 0 {
 					return int32(0)
 				} else {
-					v48 = v46
-					*(*float64)(unsafe.Add(mBase, uint32(v16)+88)) = l9
-					*(*int32)(unsafe.Add(mBase, uint32(v16)+80)) = l5
-					*(*int32)(unsafe.Add(mBase, uint32(v16)+76)) = l4
-					*(*int32)(unsafe.Add(mBase, uint32(v16)+72)) = l2
-					*(*int32)(unsafe.Add(mBase, uint32(v16)+64)) = v48
+					v49 = v46
+					*(*float64)(unsafe.Add(mBase, uint32(v15)+88)) = l9
+					*(*int32)(unsafe.Add(mBase, uint32(v15)+80)) = l5
+					*(*int32)(unsafe.Add(mBase, uint32(v15)+76)) = l4
+					*(*int32)(unsafe.Add(mBase, uint32(v15)+72)) = l2
+					*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v49
 					if l8 != 0 {
 						v55 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l8)+32)))
 						v57 = v55
 					} else {
 						v57 = int64(0)
 					}
-					*(*int32)(unsafe.Add(mBase, uint32(v16)+108)) = l7
-					*(*int32)(unsafe.Add(mBase, uint32(v16)+104)) = l6
-					*(*int64)(unsafe.Add(mBase, uint32(v16)+96)) = v57
+					*(*int32)(unsafe.Add(mBase, uint32(v15)+108)) = l7
+					*(*int32)(unsafe.Add(mBase, uint32(v15)+104)) = l6
+					*(*int64)(unsafe.Add(mBase, uint32(v15)+96)) = v57
 					if l6 != 0 {
 						v61 = *(*int32)(unsafe.Add(mBase, uint32(l6)+4))
 						v63 = v61
@@ -708,21 +705,21 @@ func F_create_agg_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 					v67 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
 					v68 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
 					v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+32))
-					F_cost_agg(m, v16, l0, l4, l8, v63, l9, l7, v64, v65, v66, v67, base.F64_convert_i32_s(v69))
+					F_cost_agg(m, v15, l0, l4, l8, v63, l9, l7, v64, v65, v66, v67, base.F64_convert_i32_s(v69))
 					mBase = m.M
 					v72 = m.ExcPending
 					if v72 != 0 {
 						return int32(0)
 					} else {
 						v73 = *(*float64)(unsafe.Add(mBase, uint32(l3)+16))
-						v74 = *(*float64)(unsafe.Add(mBase, uint32(v16)+48))
-						*(*float64)(unsafe.Add(mBase, uint32(v16)+48)) = base.F64_add(v73, v74)
-						v77 = *(*float64)(unsafe.Add(mBase, uint32(v16)+56))
+						v74 = *(*float64)(unsafe.Add(mBase, uint32(v15)+48))
+						*(*float64)(unsafe.Add(mBase, uint32(v15)+48)) = base.F64_add(v73, v74)
+						v77 = *(*float64)(unsafe.Add(mBase, uint32(v15)+56))
 						v78 = *(*float64)(unsafe.Add(mBase, uint32(l3)+24))
-						v79 = *(*float64)(unsafe.Add(mBase, uint32(v16)+32))
+						v79 = *(*float64)(unsafe.Add(mBase, uint32(v15)+32))
 						v81 = *(*float64)(unsafe.Add(mBase, uint32(l3)+16))
-						*(*float64)(unsafe.Add(mBase, uint32(v16)+56)) = base.F64_add(v77, base.F64_add(base.F64_mul(v78, v79), v81))
-						return v16
+						*(*float64)(unsafe.Add(mBase, uint32(v15)+56)) = base.F64_add(v77, base.F64_add(base.F64_mul(v78, v79), v81))
+						return v15
 					}
 				}
 			}

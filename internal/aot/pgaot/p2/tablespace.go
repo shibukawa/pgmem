@@ -16,8 +16,14 @@ func F_get_tablespace_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v13
 	var v16 int32
 	_ = v16
+	var v18 int32
+	_ = v18
 	var v23 int32
 	_ = v23
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
 	var v27 int32
 	_ = v27
 	var v28 int32
@@ -26,32 +32,28 @@ func F_get_tablespace_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v29
 	var v30 int32
 	_ = v30
-	var v31 int32
-	_ = v31
 	var v32 int32
 	_ = v32
-	var v34 int32
-	_ = v34
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
 	var v37 int32
 	_ = v37
 	var v38 int32
 	_ = v38
-	var v39 int32
-	_ = v39
 	var v40 int32
 	_ = v40
-	var v42 int32
-	_ = v42
-	var v45 int32
-	_ = v45
-	var v49 int32
-	_ = v49
-	var v52 int32
-	_ = v52
-	var v56 int32
-	_ = v56
-	var v61 int32
-	_ = v61
+	var v43 int32
+	_ = v43
+	var v50 int32
+	_ = v50
+	var v53 int32
+	_ = v53
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
 	v7 = m.G0
 	v9 = v7 + int32(-64)
 	m.G0 = v9
@@ -61,88 +63,84 @@ func F_get_tablespace_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		F_ScanKeyInit(m, v7+int32(-48), int32(2), int32(3), int32(62), l0)
+		v18 = v7 + int32(-48)
+		F_ScanKeyInit(m, v18, int32(2), int32(3), int32(62), l0)
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
 			return int32(0)
 		} else {
-			v27 = F_table_beginscan_catalog(m, v13, int32(1), v7+int32(-48))
+			v25 = F_table_beginscan_catalog(m, v13, int32(1), v18)
 			mBase = m.M
-			v28 = m.ExcPending
-			if v28 != 0 {
+			v26 = m.ExcPending
+			if v26 != 0 {
 				return int32(0)
 			} else {
-				v29 = F_heap_getnext(m, v27)
+				v27 = F_heap_getnext(m, v25)
 				mBase = m.M
-				v30 = m.ExcPending
-				if v30 != 0 {
+				v28 = m.ExcPending
+				if v28 != 0 {
 					return int32(0)
 				} else {
-					if v29 != 0 {
-						v31 = *(*int32)(unsafe.Add(mBase, uint32(v29)+16))
-						v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+22)))
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(v31+v32)))
-						v37 = v34
+					if v27 != 0 {
+						v29 = *(*int32)(unsafe.Add(mBase, uint32(v27)+16))
+						v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29)+22)))
+						v32 = *(*int32)(unsafe.Add(mBase, uint32(v29+v30)))
+						v35 = v32
 					} else {
-						v37 = int32(0)
+						v35 = int32(0)
 					}
-					v38 = *(*int32)(unsafe.Add(mBase, uint32(v27)))
-					v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)+188))
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+12))
-					m.T0[v40].(func(*base.Module, int32))(m, v27)
+					v36 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
+					v37 = *(*int32)(unsafe.Add(mBase, uint32(v36)+188))
+					v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+12))
+					m.T0[v38].(func(*base.Module, int32))(m, v25)
 					mBase = m.M
-					v42 = m.ExcPending
-					if v42 != 0 {
+					v40 = m.ExcPending
+					if v40 != 0 {
 						return int32(0)
 					} else {
-						F_sequence_close(m, v13, int32(1))
+						F_relation_close(m, v13, int32(1))
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v43 = m.ExcPending
+						if v43 != 0 {
 							return int32(0)
 						} else {
-							if l1 != 0 {
-								m.G0 = v9 - int32(-64)
-								return v37
-							} else {
-								if v37 != 0 {
-									m.G0 = v9 - int32(-64)
-									return v37
+							if l1|v35 == int32(0) {
+								F_errstart_cold(m, int32(21), int32(0))
+								mBase = m.M
+								v50 = m.ExcPending
+								if v50 != 0 {
+									return int32(0)
 								} else {
-									F_errstart_cold(m, int32(21), int32(0))
+									F_errcode(m, int32(67137668))
 									mBase = m.M
-									v49 = m.ExcPending
-									if v49 != 0 {
+									v53 = m.ExcPending
+									if v53 != 0 {
 										return int32(0)
 									} else {
-										F_errcode(m, int32(67137668))
+										*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
+										F_errmsg(m, int32(_a_F_get_tablespace_oid_0), v9)
 										mBase = m.M
-										v52 = m.ExcPending
-										if v52 != 0 {
+										v57 = m.ExcPending
+										if v57 != 0 {
 											return int32(0)
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-											F_errmsg(m, int32(_a_F_get_tablespace_oid_0), v9)
+											F_errfinish(m, int32(_a_F_get_tablespace_oid_1), int32(1461), int32(_a_F_get_tablespace_oid_2))
 											mBase = m.M
-											v56 = m.ExcPending
-											if v56 != 0 {
+											v62 = m.ExcPending
+											if v62 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_get_tablespace_oid_1), int32(1461), int32(_a_F_get_tablespace_oid_2))
-												mBase = m.M
-												v61 = m.ExcPending
-												if v61 != 0 {
-													return int32(0)
-												} else {
-													base.Wasm_trap_unreachable()
-													for {
-													}
+												base.Wasm_trap_unreachable()
+												for {
 												}
 											}
 										}
 									}
 								}
+							} else {
+								m.G0 = v9 - int32(-64)
+								return v35
 							}
 						}
 					}

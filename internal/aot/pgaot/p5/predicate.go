@@ -90,184 +90,150 @@ func F_PredicateLockPage(m *base.Module, l0 int32, l1 int32, l2 int32) {
 func F_PredicateLockPageSplit(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
 	var v19 int32
 	_ = v19
-	var v20 int32
-	_ = v20
+	var v22 int32
+	_ = v22
 	var v23 int32
 	_ = v23
-	var v25 int32
-	_ = v25
-	var v28 int32
-	_ = v28
-	var v30 int32
-	_ = v30
+	var v34 int32
+	_ = v34
+	var v38 int32
+	_ = v38
 	var v39 int32
 	_ = v39
-	var v43 int32
-	_ = v43
-	var v44 int32
+	var v40 int64
+	_ = v40
+	var v42 int64
+	_ = v42
+	var v44 int64
 	_ = v44
-	var v45 int64
-	_ = v45
-	var v47 int64
-	_ = v47
-	var v49 int64
-	_ = v49
-	var v51 int64
-	_ = v51
-	var v58 int32
-	_ = v58
-	var v59 int32
-	_ = v59
-	var v62 int32
-	_ = v62
-	var v65 int32
+	var v46 int64
+	_ = v46
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v63 int64
+	_ = v63
+	var v65 int64
 	_ = v65
-	var v66 int32
-	_ = v66
+	var v67 int64
+	_ = v67
 	var v69 int64
 	_ = v69
-	var v71 int64
-	_ = v71
-	var v73 int32
-	_ = v73
 	var v74 int32
 	_ = v74
-	var v79 int64
-	_ = v79
-	var v81 int64
+	var v75 int32
+	_ = v75
+	var v77 int32
+	_ = v77
+	var v81 int32
 	_ = v81
-	var v83 int64
-	_ = v83
-	var v85 int64
-	_ = v85
-	var v90 int32
-	_ = v90
-	var v91 int32
-	_ = v91
-	var v94 int32
-	_ = v94
-	var v98 int32
-	_ = v98
-	v7 = m.G0
-	v9 = v7 - int32(96)
-	m.G0 = v9
-	v12 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockPageSplit[0]))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
-	if v13 == int32(0) {
-		m.G0 = v9 + int32(96)
+	v6 = m.G0
+	v8 = v6 - int32(96)
+	m.G0 = v8
+	v11 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockPageSplit[0]))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
+	if v12 == int32(0) {
+		m.G0 = v8 + int32(96)
 		return
 	} else {
-		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-		if base.Ui32(v16) < base.Ui32(int32(_a_F_PredicateLockPageSplit_0)) {
-			m.G0 = v9 + int32(96)
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+		if base.Ui32(v15) < base.Ui32(int32(_a_F_PredicateLockPageSplit_0)) {
+			m.G0 = v8 + int32(96)
 			return
 		} else {
-			v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-			v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+118)))
-			if v20 == int32(116) {
-				m.G0 = v9 + int32(96)
+			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+			v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+118)))
+			if v19 == int32(116) {
+				m.G0 = v8 + int32(96)
 				return
 			} else {
-				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-				v25 = v9 + int32(88)
-				*(*int32)(unsafe.Add(mBase, uint32(v25))) = l1
-				v28 = v9 + int32(72)
-				*(*int32)(unsafe.Add(mBase, uint32(v28))) = l2
-				v30 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v9)+92)) = v30
-				*(*int32)(unsafe.Add(mBase, uint32(v9)+84)) = v16
-				*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = v23
-				*(*int32)(unsafe.Add(mBase, uint32(v9)+76)) = v30
-				*(*int32)(unsafe.Add(mBase, uint32(v9)+68)) = v16
-				*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v23
-				v39 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockPageSplit[1]))
-				v43 = F_LWLockAcquire(m, v39+int32(3840), v30)
+				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+				v23 = int32(0)
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+92)) = v23
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+88)) = l1
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = v15
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = v22
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+76)) = v23
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+72)) = l2
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v15
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = v22
+				v34 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockPageSplit[1]))
+				v38 = F_LWLockAcquire(m, v34+int32(3840), v23)
 				mBase = m.M
-				v44 = m.ExcPending
-				if v44 != 0 {
+				v39 = m.ExcPending
+				if v39 != 0 {
 					return
 				} else {
-					v45 = *(*int64)(unsafe.Add(mBase, uint32(v25)))
-					*(*int64)(unsafe.Add(mBase, uint32(v9)+56)) = v45
-					v47 = *(*int64)(unsafe.Add(mBase, uint32(v28)))
-					*(*int64)(unsafe.Add(mBase, uint32(v9)+40)) = v47
-					v49 = *(*int64)(unsafe.Add(mBase, uint32(v9)+80))
-					*(*int64)(unsafe.Add(mBase, uint32(v9)+48)) = v49
-					v51 = *(*int64)(unsafe.Add(mBase, uint32(v9)+64))
-					*(*int64)(unsafe.Add(mBase, uint32(v9)+32)) = v51
-					v58 = F_TransferPredicateLocksToNewTarget(m, v9+int32(48), v9+int32(32), int32(0))
+					v40 = *(*int64)(unsafe.Add(mBase, uint32(v8)+88))
+					*(*int64)(unsafe.Add(mBase, uint32(v8)+56)) = v40
+					v42 = *(*int64)(unsafe.Add(mBase, uint32(v8)+80))
+					*(*int64)(unsafe.Add(mBase, uint32(v8)+48)) = v42
+					v44 = *(*int64)(unsafe.Add(mBase, uint32(v8)+64))
+					*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = v44
+					v46 = *(*int64)(unsafe.Add(mBase, uint32(v8)+72))
+					*(*int64)(unsafe.Add(mBase, uint32(v8)+40)) = v46
+					v53 = F_TransferPredicateLocksToNewTarget(m, v8+int32(48), v8+int32(32), int32(0))
 					mBase = m.M
-					v59 = m.ExcPending
-					if v59 != 0 {
+					v54 = m.ExcPending
+					if v54 != 0 {
 						return
 					} else {
-						if v58 == int32(0) {
-							v62 = *(*int32)(unsafe.Add(mBase, uint32(v9)+92))
-							if v62 == int32(0) {
-								v65 = int32(-1)
-								v66 = *(*int32)(unsafe.Add(mBase, uint32(v9)+88))
-								if v66 == v65 {
-								} else {
-									v69 = *(*int64)(unsafe.Add(mBase, uint32(v9)+80))
-									*(*int64)(unsafe.Add(mBase, uint32(v9)+64)) = v69
-									v74 = v65
-									*(*int32)(unsafe.Add(mBase, uint32(v9)+76)) = int32(0)
-									*(*int32)(unsafe.Add(mBase, uint32(v9)+72)) = v74
-								}
+						if v53 == int32(0) {
+							if l1 != int32(-1) {
+								*(*int64)(unsafe.Add(mBase, uint32(v8)+72)) = int64(4294967295)
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v15
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = v22
 							} else {
-								v71 = *(*int64)(unsafe.Add(mBase, uint32(v9)+80))
-								*(*int64)(unsafe.Add(mBase, uint32(v9)+64)) = v71
-								v73 = *(*int32)(unsafe.Add(mBase, uint32(v9)+88))
-								v74 = v73
-								*(*int32)(unsafe.Add(mBase, uint32(v9)+76)) = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v9)+72)) = v74
 							}
-							v79 = *(*int64)(unsafe.Add(mBase, uint32(v9)+88))
-							*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = v79
-							v81 = *(*int64)(unsafe.Add(mBase, uint32(v9)+72))
-							*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = v81
-							v83 = *(*int64)(unsafe.Add(mBase, uint32(v9)+80))
-							*(*int64)(unsafe.Add(mBase, uint32(v9)+16)) = v83
-							v85 = *(*int64)(unsafe.Add(mBase, uint32(v9)+64))
-							*(*int64)(unsafe.Add(mBase, uint32(v9))) = v85
-							v90 = F_TransferPredicateLocksToNewTarget(m, v9+int32(16), v9, int32(1))
+							v63 = *(*int64)(unsafe.Add(mBase, uint32(v8)+88))
+							*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = v63
+							v65 = *(*int64)(unsafe.Add(mBase, uint32(v8)+80))
+							*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = v65
+							v67 = *(*int64)(unsafe.Add(mBase, uint32(v8)+64))
+							*(*int64)(unsafe.Add(mBase, uint32(v8))) = v67
+							v69 = *(*int64)(unsafe.Add(mBase, uint32(v8)+72))
+							*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = v69
+							v74 = F_TransferPredicateLocksToNewTarget(m, v8+int32(16), v8, int32(1))
 							mBase = m.M
-							v91 = m.ExcPending
-							if v91 != 0 {
+							v75 = m.ExcPending
+							if v75 != 0 {
 								return
 							} else {
-								v94 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockPageSplit[1]))
-								F_LWLockRelease(m, v94+int32(3840))
+								v77 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockPageSplit[1]))
+								F_LWLockRelease(m, v77+int32(3840))
 								mBase = m.M
-								v98 = m.ExcPending
-								if v98 != 0 {
+								v81 = m.ExcPending
+								if v81 != 0 {
 									return
 								} else {
-									m.G0 = v9 + int32(96)
+									m.G0 = v8 + int32(96)
 									return
 								}
 							}
 						} else {
-							v94 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockPageSplit[1]))
-							F_LWLockRelease(m, v94+int32(3840))
+							v77 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockPageSplit[1]))
+							F_LWLockRelease(m, v77+int32(3840))
 							mBase = m.M
-							v98 = m.ExcPending
-							if v98 != 0 {
+							v81 = m.ExcPending
+							if v81 != 0 {
 								return
 							} else {
-								m.G0 = v9 + int32(96)
+								m.G0 = v8 + int32(96)
 								return
 							}
 						}

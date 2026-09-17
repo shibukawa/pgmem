@@ -76,12 +76,12 @@ func F_VectorUpdateCenter(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v65
 	var v67 int32
 	_ = v67
-	var v69 int32
-	_ = v69
+	var v71 int32
+	_ = v71
 	var v80 int32
 	_ = v80
-	var v86 int32
-	_ = v86
+	var v88 int32
+	_ = v88
 	var v90 int32
 	_ = v90
 	var v93 float32
@@ -139,23 +139,40 @@ func F_VectorUpdateCenter(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						}
 						break
 					}
-					v69 = v65
+					if v23 == int32(0) {
+					} else {
+						v71 = v65
+						v80 = v71
+						v88 = v4
+						for {
+							v90 = v80 << (uint(int32(2)) % 32)
+							v93 = *(*float32)(unsafe.Add(mBase, uint32(v90+l2)))
+							*(*float32)(unsafe.Add(mBase, uint32(v25+v90))) = v93
+							v95 = int32(1)
+							v98 = v88 + v95
+							if v98 != v23 {
+								v80 = v80 + v95
+								v88 = v98
+								continue
+							} else {
+								break
+							}
+							break
+						}
+					}
 				} else {
-					v69 = v26
-				}
-				if v23 == int32(0) {
-				} else {
-					v80 = v69
-					v86 = v4
+					v71 = v26
+					v80 = v71
+					v88 = v4
 					for {
 						v90 = v80 << (uint(int32(2)) % 32)
 						v93 = *(*float32)(unsafe.Add(mBase, uint32(v90+l2)))
 						*(*float32)(unsafe.Add(mBase, uint32(v25+v90))) = v93
 						v95 = int32(1)
-						v98 = v86 + v95
+						v98 = v88 + v95
 						if v98 != v23 {
 							v80 = v80 + v95
-							v86 = v98
+							v88 = v98
 							continue
 						} else {
 							break
@@ -169,85 +186,16 @@ func F_VectorUpdateCenter(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	}
 }
 func F_vector(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v5 int32
-	_ = v5
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
-	var v30 int32
-	_ = v30
-	var v35 int32
-	_ = v35
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v10 = F_pg_detoast_datum(m, v9)
-	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	v4 = Fn13910(m, l0, int32(88), int32(_a_F_vector_0))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		if v14 == int32(-1) {
-			m.G0 = v7 + int32(16)
-			return v10
-		} else {
-			v17 = int32(*(*int16)(unsafe.Add(mBase, uint32(v10)+4)))
-			if v14 == v17 {
-				m.G0 = v7 + int32(16)
-				return v10
-			} else {
-				F_errstart_cold(m, int32(21), int32(0))
-				mBase = m.M
-				v22 = m.ExcPending
-				if v22 != 0 {
-					return int32(0)
-				} else {
-					F_errcode(m, int32(130))
-					mBase = m.M
-					v25 = m.ExcPending
-					if v25 != 0 {
-						return int32(0)
-					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v17
-						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v14
-						F_errmsg(m, int32(_a_F_vector_0), v7)
-						mBase = m.M
-						v30 = m.ExcPending
-						if v30 != 0 {
-							return int32(0)
-						} else {
-							F_errfinish(m, int32(_a_F_vector_1), int32(88), int32(_a_F_vector_2))
-							mBase = m.M
-							v35 = m.ExcPending
-							if v35 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		return v4
 	}
 }
 func F_vector_accum(m *base.Module, l0 int32) int32 {
@@ -569,7 +517,7 @@ L26:
 L27:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v49+v71<<(uint(int32(2))%32)))) = v86
-	if v71 != v38 {
+	if v38 != v71 {
 		v60 = v71
 		goto L24
 	} else {
@@ -1241,7 +1189,7 @@ L47:
 	v152 = v141 + int32(1)
 	v154 = v152 << (uint(int32(3)) % 32)
 	v156 = *(*float64)(unsafe.Add(mBase, uint32(v44+v154)))
-	v158 = *(*float64)(unsafe.Add(mBase, uint32(v154+v47)))
+	v158 = *(*float64)(unsafe.Add(mBase, uint32(v47+v154)))
 	v159 = base.F64_add(v156, v158)
 	if base.F64_eq(base.F64_abs(v159), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
 		goto L4

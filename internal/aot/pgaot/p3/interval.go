@@ -177,19 +177,19 @@ func F_interval_larger(m *base.Module, l0 int32) int32 {
 	v99 = v87*v79 + v92&v84
 	*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v69*int64(0) + v69>>(uint(int64(63))%64)*int64(86400000000) + v79*v81 + int64(base.Ui64(v92)>>(uint(v78)%64)) + int64(base.Ui64(v99)>>(uint(v78)%64))
 	*(*int64)(unsafe.Add(mBase, uint32(v14))) = v88&v84 | v99<<(uint(v78)%64)
-	v110 = *(*int64)(unsafe.Add(mBase, uint32(v18)))
-	v111 = *(*int64)(unsafe.Add(mBase, uint32(v14)+24))
-	v112 = *(*int64)(unsafe.Add(mBase, uint32(v14)+16))
-	v113 = *(*int64)(unsafe.Add(mBase, uint32(v64)))
-	v114 = *(*int64)(unsafe.Add(mBase, uint32(v14)+8))
-	v115 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
+	v110 = *(*int64)(unsafe.Add(mBase, uint32(v64)))
+	v111 = *(*int64)(unsafe.Add(mBase, uint32(v14)+8))
+	v112 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
+	v113 = *(*int64)(unsafe.Add(mBase, uint32(v18)))
+	v114 = *(*int64)(unsafe.Add(mBase, uint32(v14)+24))
+	v115 = *(*int64)(unsafe.Add(mBase, uint32(v14)+16))
 	m.G0 = v14 + int32(32)
-	v119 = v110 + v112
-	v120 = v113 + v115
+	v119 = v113 + v115
+	v120 = v110 + v112
 	v124 = int64(63)
-	v127 = base.I64_extend_i32_u(base.B2i32(base.Ui64(v119) < base.Ui64(v112))) + (v111 + v110>>(uint(v124)%64))
-	v133 = base.I64_extend_i32_u(base.B2i32(base.Ui64(v120) < base.Ui64(v115))) + (v114 + v113>>(uint(v124)%64))
-	if v127 == v133 {
+	v127 = base.I64_extend_i32_u(base.B2i32(base.Ui64(v119) < base.Ui64(v115))) + (v114 + v113>>(uint(v124)%64))
+	v133 = base.I64_extend_i32_u(base.B2i32(base.Ui64(v120) < base.Ui64(v112))) + (v111 + v110>>(uint(v124)%64))
+	if v133 == v127 {
 		v136 = base.B2i32(base.Ui64(v120) < base.Ui64(v119))
 	} else {
 		v136 = base.B2i32(v133 < v127)

@@ -71,76 +71,16 @@ func F_GetDatabasePath(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 }
 func F_has_database_privilege_id_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v22 int64
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v14 = F_pg_detoast_datum_packed(m, v13)
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v4 = Fn13914(m, l0, int32(_a_F_has_database_privilege_id_id_0), int32(1262))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v18 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(_a_F_has_database_privilege_id_id_0))
-		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
-			return int32(0)
-		} else {
-			v26 = F_object_aclcheck_ext(m, int32(1262), v11, v12, v22, v9+int32(15))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-				if v28 == int32(1) {
-					v31 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-					v35 = int32(0)
-				} else {
-					v35 = base.B2i32(v26 == int32(0))
-				}
-				m.G0 = v9 + int32(16)
-				return v35
-			}
-		}
+		return v4
 	}
 }
 func F_has_database_privilege_id_name(m *base.Module, l0 int32) int32 {
@@ -319,230 +259,224 @@ func F_rebuild_database_list(m *base.Module, l0 int32) {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v17 int32
-	_ = v17
-	var v19 int32
-	_ = v19
-	var v23 int32
-	_ = v23
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v20 int32
+	_ = v20
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
-	var v37 int32
-	_ = v37
-	var v48 int32
-	_ = v48
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
 	var v49 int32
 	_ = v49
-	var v52 int32
-	_ = v52
+	var v50 int32
+	_ = v50
 	var v53 int32
 	_ = v53
-	var v56 int32
-	_ = v56
-	var v61 int32
-	_ = v61
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
 	var v62 int32
 	_ = v62
+	var v64 int32
+	_ = v64
 	var v65 int32
 	_ = v65
-	var v67 int32
-	_ = v67
 	var v72 int32
 	_ = v72
-	var v74 int32
-	_ = v74
+	var v73 int32
+	_ = v73
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
 	var v89 int32
 	_ = v89
-	var v90 int32
-	_ = v90
-	var v91 int32
-	_ = v91
-	var v92 int32
-	_ = v92
-	var v98 int32
-	_ = v98
-	var v99 int32
-	_ = v99
-	var v100 int32
-	_ = v100
-	var v105 int32
-	_ = v105
+	var v95 int32
+	_ = v95
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
 	var v106 int32
 	_ = v106
-	var v111 int32
-	_ = v111
-	var v125 int32
-	_ = v125
+	var v118 int32
+	_ = v118
+	var v119 int32
+	_ = v119
+	var v122 int32
+	_ = v122
 	var v126 int32
 	_ = v126
-	var v129 int32
-	_ = v129
-	var v130 int32
-	_ = v130
-	var v133 int32
-	_ = v133
-	var v135 int32
-	_ = v135
-	var v149 int32
-	_ = v149
+	var v127 int32
+	_ = v127
+	var v139 int32
+	_ = v139
+	var v143 int32
+	_ = v143
+	var v144 int32
+	_ = v144
+	var v145 int32
+	_ = v145
+	var v146 int32
+	_ = v146
+	var v152 int32
+	_ = v152
 	var v153 int32
 	_ = v153
 	var v154 int32
 	_ = v154
-	var v155 int32
-	_ = v155
-	var v156 int32
-	_ = v156
-	var v162 int32
-	_ = v162
-	var v163 int32
-	_ = v163
+	var v158 int32
+	_ = v158
+	var v160 int32
+	_ = v160
+	var v161 int32
+	_ = v161
 	var v164 int32
 	_ = v164
-	var v168 int32
-	_ = v168
-	var v171 int32
-	_ = v171
-	var v172 int32
-	_ = v172
-	var v176 int32
-	_ = v176
+	var v177 int32
+	_ = v177
+	var v188 int32
+	_ = v188
+	var v189 int32
+	_ = v189
 	var v191 int32
 	_ = v191
-	var v202 int32
-	_ = v202
-	var v203 int32
-	_ = v203
-	var v207 int32
-	_ = v207
-	var v210 int32
-	_ = v210
-	var v211 int32
-	_ = v211
-	var v213 int32
+	var v193 int32
+	_ = v193
+	var v194 int32
+	_ = v194
+	var v195 int32
+	_ = v195
+	var v197 int32
+	_ = v197
+	var v199 int32
+	_ = v199
+	var v212 int32
+	_ = v212
+	var v213 int64
 	_ = v213
-	var v216 int32
-	_ = v216
-	var v231 int32
-	_ = v231
-	var v232 int64
-	_ = v232
-	var v234 int64
-	_ = v234
-	var v236 int64
-	_ = v236
-	var v238 int64
-	_ = v238
-	var v244 int32
-	_ = v244
-	var v245 int32
-	_ = v245
-	var v265 int32
-	_ = v265
-	var v266 int32
-	_ = v266
-	var v269 int32
-	_ = v269
-	var v274 float64
-	_ = v274
-	var v278 int32
-	_ = v278
-	var v280 int32
-	_ = v280
-	var v283 int32
-	_ = v283
-	var v286 int64
-	_ = v286
-	var v287 int32
-	_ = v287
-	var v290 int32
-	_ = v290
-	var v296 int32
-	_ = v296
-	var v297 int32
+	var v215 int64
+	_ = v215
+	var v217 int64
+	_ = v217
+	var v219 int64
+	_ = v219
+	var v225 int32
+	_ = v225
+	var v226 int32
+	_ = v226
+	var v243 int32
+	_ = v243
+	var v246 int32
+	_ = v246
+	var v252 int32
+	_ = v252
+	var v255 int32
+	_ = v255
+	var v258 int64
+	_ = v258
+	var v262 int32
+	_ = v262
+	var v263 int32
+	_ = v263
+	var v264 int32
+	_ = v264
+	var v267 int64
+	_ = v267
+	var v268 int64
+	_ = v268
+	var v276 int64
+	_ = v276
+	var v284 int32
+	_ = v284
+	var v288 int32
+	_ = v288
+	var v291 int32
+	_ = v291
+	var v297 int64
 	_ = v297
-	var v298 int32
-	_ = v298
-	var v301 int64
+	var v301 int32
 	_ = v301
 	var v302 int64
 	_ = v302
-	var v310 int64
-	_ = v310
-	var v320 int32
-	_ = v320
-	var v322 int32
-	_ = v322
-	var v330 int64
-	_ = v330
-	var v335 int32
-	_ = v335
-	var v339 int32
-	_ = v339
+	var v305 int32
+	_ = v305
+	var v308 int32
+	_ = v308
+	var v312 int32
+	_ = v312
+	var v317 int32
+	_ = v317
+	var v319 int32
+	_ = v319
+	var v321 int64
+	_ = v321
+	var v324 int32
+	_ = v324
+	var v327 int32
+	_ = v327
+	var v331 int32
+	_ = v331
+	var v336 int32
+	_ = v336
+	var v340 int32
+	_ = v340
 	var v341 int32
 	_ = v341
-	var v344 int32
-	_ = v344
-	var v348 int32
-	_ = v348
-	var v353 int32
-	_ = v353
-	var v355 int64
-	_ = v355
-	var v358 int32
+	var v343 int32
+	_ = v343
+	var v349 int32
+	_ = v349
+	var v358 int64
 	_ = v358
-	var v360 int32
-	_ = v360
 	var v362 int32
 	_ = v362
-	var v365 int32
-	_ = v365
+	var v366 int32
+	_ = v366
 	var v369 int32
 	_ = v369
-	var v376 int32
-	_ = v376
-	var v377 int32
-	_ = v377
-	var v379 int32
-	_ = v379
-	var v384 int32
-	_ = v384
-	var v394 int64
-	_ = v394
-	var v401 int32
-	_ = v401
-	var v405 int32
-	_ = v405
-	var v407 int32
-	_ = v407
-	var v410 int32
-	_ = v410
-	var v414 int32
-	_ = v414
-	var v438 int32
-	_ = v438
-	var v440 int32
-	_ = v440
-	var v442 int32
-	_ = v442
+	var v373 int32
+	_ = v373
+	var v378 int32
+	_ = v378
+	var v396 int32
+	_ = v396
+	var v398 int32
+	_ = v398
+	var v400 int32
+	_ = v400
 	v2 = int32(0)
-	v17 = m.G0
-	v19 = v17 - int32(80)
-	m.G0 = v19
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+76)) = l0
-	v23 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[0]))
-	v28 = F_AllocSetContextCreateInternal(m, v23, int32(_a_F_rebuild_database_list_0), v2, int32(_a_F_rebuild_database_list_1), int32(_a_F_rebuild_database_list_2))
+	v14 = m.G0
+	v16 = v14 - int32(80)
+	m.G0 = v16
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+76)) = l0
+	v20 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[0]))
+	v25 = F_AllocSetContextCreateInternal(m, v20, int32(_a_F_rebuild_database_list_0), v2, int32(_a_F_rebuild_database_list_1), int32(_a_F_rebuild_database_list_2))
 	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
+	v26 = m.ExcPending
+	if v26 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -552,25 +486,25 @@ L1:
 	return
 L2:
 	;
-	v34 = F_AllocSetContextCreateInternal(m, v28, int32(_a_F_rebuild_database_list_3), int32(0), int32(_a_F_rebuild_database_list_1), int32(_a_F_rebuild_database_list_2))
+	v31 = F_AllocSetContextCreateInternal(m, v25, int32(_a_F_rebuild_database_list_3), int32(0), int32(_a_F_rebuild_database_list_1), int32(_a_F_rebuild_database_list_2))
 	mBase = m.M
-	v35 = m.ExcPending
-	if v35 != 0 {
+	v32 = m.ExcPending
+	if v32 != 0 {
 		goto L1
 	} else {
 		goto L3
 	}
 L3:
 	;
-	v36 = int32(_a_F_rebuild_database_list_4)
-	v37 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1]))
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1])) = v34
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+68)) = v34
-	*(*int64)(unsafe.Add(mBase, uint32(v19)+44)) = int64(137438953476)
-	v48 = F_hash_create(m, int32(_a_F_rebuild_database_list_5), int32(20), v19+int32(28), int32(1064))
+	v33 = int32(_a_F_rebuild_database_list_4)
+	v34 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1]))
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1])) = v31
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+68)) = v31
+	*(*int64)(unsafe.Add(mBase, uint32(v16)+44)) = int64(137438953476)
+	v45 = F_hash_create(m, int32(_a_F_rebuild_database_list_5), int32(20), v16+int32(28), int32(1064))
 	mBase = m.M
-	v49 = m.ExcPending
-	if v49 != 0 {
+	v46 = m.ExcPending
+	if v46 != 0 {
 		goto L1
 	} else {
 		goto L4
@@ -578,313 +512,309 @@ L3:
 L4:
 	;
 	if l0 == int32(0) {
-		v65 = v2
+		v62 = v2
 		goto L5
 	} else {
 		goto L6
 	}
 L5:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2]))
-	if v67 == int32(0) {
-		v111 = v65
+	v64 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2]))
+	v65 = int32(0)
+	if base.B2i32(v64 == v65)|base.B2i32(v64 == int32(_a_F_rebuild_database_list_6)) == v65 {
 		goto L10
 	} else {
 		goto L11
 	}
 L6:
 	;
-	v52 = F_pgstat_fetch_stat_dbentry(m, l0)
+	v49 = F_pgstat_fetch_stat_dbentry(m, l0)
 	mBase = m.M
-	v53 = m.ExcPending
-	if v53 != 0 {
+	v50 = m.ExcPending
+	if v50 != 0 {
 		goto L1
 	} else {
 		goto L7
 	}
 L7:
 	;
-	if v52 == int32(0) {
-		v65 = v2
+	if v49 == int32(0) {
+		v62 = v2
 		goto L5
 	} else {
 		goto L8
 	}
 L8:
 	;
-	v56 = int32(1)
-	v61 = F_hash_search(m, v48, v19+int32(76), v56, int32(0))
+	v53 = int32(1)
+	v58 = F_hash_search(m, v45, v16+int32(76), v53, int32(0))
 	mBase = m.M
-	v62 = m.ExcPending
-	if v62 != 0 {
+	v59 = m.ExcPending
+	if v59 != 0 {
 		goto L1
 	} else {
 		goto L9
 	}
 L9:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v61)+16)) = int32(0)
-	v65 = v56
+	*(*int32)(unsafe.Add(mBase, uint32(v58)+16)) = int32(0)
+	v62 = v53
 	goto L5
 L10:
 	;
-	v125 = F_get_database_list(m)
+	v72 = v64
+	v73 = v62
+	goto L13
+L11:
+	;
+	v106 = v62
+	goto L12
+L12:
+	;
+	v118 = F_get_database_list(m)
 	mBase = m.M
-	v126 = m.ExcPending
-	if v126 != 0 {
+	v119 = m.ExcPending
+	if v119 != 0 {
 		goto L1
 	} else {
 		goto L22
 	}
-L11:
-	;
-	if v67 == int32(_a_F_rebuild_database_list_6) {
-		v111 = v65
-		goto L10
-	} else {
-		goto L12
-	}
-L12:
-	;
-	v72 = v67
-	v74 = v65
-	goto L13
 L13:
 	;
-	v89 = v72 - int32(20)
-	v90 = *(*int32)(unsafe.Add(mBase, uint32(v89)))
-	v91 = F_pgstat_fetch_stat_dbentry(m, v90)
+	v86 = v72 - int32(20)
+	v87 = *(*int32)(unsafe.Add(mBase, uint32(v86)))
+	v88 = F_pgstat_fetch_stat_dbentry(m, v87)
 	mBase = m.M
-	v92 = m.ExcPending
-	if v92 != 0 {
+	v89 = m.ExcPending
+	if v89 != 0 {
 		goto L1
 	} else {
 		goto L16
 	}
 L14:
 	;
-	v111 = v105
-	goto L10
+	v106 = v101
+	goto L12
 L15:
 	;
-	v106 = *(*int32)(unsafe.Add(mBase, uint32(v72)+4))
-	if v106 != int32(_a_F_rebuild_database_list_6) {
-		v72 = v106
-		v74 = v105
+	v102 = *(*int32)(unsafe.Add(mBase, uint32(v72)+4))
+	if v102 != int32(_a_F_rebuild_database_list_6) {
+		v72 = v102
+		v73 = v101
 		goto L13
 	} else {
 		goto L20
 	}
 L16:
 	;
-	if v91 == int32(0) {
-		v105 = v74
+	if v88 == int32(0) {
+		v101 = v73
 		goto L15
 	} else {
 		goto L17
 	}
 L17:
 	;
-	v98 = F_hash_search(m, v48, v89, int32(1), v19+int32(8))
+	v95 = F_hash_search(m, v45, v86, int32(1), v16+int32(8))
 	mBase = m.M
-	v99 = m.ExcPending
-	if v99 != 0 {
+	v96 = m.ExcPending
+	if v96 != 0 {
 		goto L1
 	} else {
 		goto L18
 	}
 L18:
 	;
-	v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+8)))
-	if v100 != 0 {
-		v105 = v74
+	v97 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+8)))
+	if v97 != 0 {
+		v101 = v73
 		goto L15
 	} else {
 		goto L19
 	}
 L19:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v98)+16)) = v74
-	v105 = v74 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v95)+16)) = v73
+	v101 = v73 + int32(1)
 	goto L15
 L20:
 	;
 	goto L14
 L21:
 	;
-	v191 = int32(_a_F_rebuild_database_list_6)
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2])) = v191
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[3])) = v191
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1])) = v28
-	if v176 <= int32(0) {
+	v177 = int32(_a_F_rebuild_database_list_6)
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2])) = v177
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[3])) = v177
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1])) = v25
+	if v164 <= int32(0) {
 		goto L33
 	} else {
 		goto L34
 	}
 L22:
 	;
-	if v125 == int32(0) {
-		v176 = v111
+	if v118 == int32(0) {
+		v164 = v106
 		goto L21
 	} else {
 		goto L23
 	}
 L23:
 	;
-	v129 = int32(0)
-	v130 = *(*int32)(unsafe.Add(mBase, uint32(v125)+4))
-	if v130 <= v129 {
-		v176 = v111
+	v122 = *(*int32)(unsafe.Add(mBase, uint32(v118)+4))
+	if v122 <= int32(0) {
+		v164 = v106
 		goto L21
 	} else {
 		goto L24
 	}
 L24:
 	;
-	v133 = v129
-	v135 = v111
+	v126 = int32(0)
+	v127 = v106
 	goto L25
 L25:
 	;
-	v149 = *(*int32)(unsafe.Add(mBase, uint32(v125)+12))
-	v153 = *(*int32)(unsafe.Add(mBase, uint32(v149+v133<<(uint(int32(2))%32))))
-	v154 = *(*int32)(unsafe.Add(mBase, uint32(v153)))
-	v155 = F_pgstat_fetch_stat_dbentry(m, v154)
+	v139 = *(*int32)(unsafe.Add(mBase, uint32(v118)+12))
+	v143 = *(*int32)(unsafe.Add(mBase, uint32(v139+v126<<(uint(int32(2))%32))))
+	v144 = *(*int32)(unsafe.Add(mBase, uint32(v143)))
+	v145 = F_pgstat_fetch_stat_dbentry(m, v144)
 	mBase = m.M
-	v156 = m.ExcPending
-	if v156 != 0 {
+	v146 = m.ExcPending
+	if v146 != 0 {
 		goto L1
 	} else {
 		goto L28
 	}
 L26:
 	;
-	v176 = v168
+	v164 = v158
 	goto L21
 L27:
 	;
-	v171 = v133 + int32(1)
-	v172 = *(*int32)(unsafe.Add(mBase, uint32(v125)+4))
-	if v171 < v172 {
-		v133 = v171
-		v135 = v168
+	v160 = v126 + int32(1)
+	v161 = *(*int32)(unsafe.Add(mBase, uint32(v118)+4))
+	if v160 < v161 {
+		v126 = v160
+		v127 = v158
 		goto L25
 	} else {
 		goto L32
 	}
 L28:
 	;
-	if v155 == int32(0) {
-		v168 = v135
+	if v145 == int32(0) {
+		v158 = v127
 		goto L27
 	} else {
 		goto L29
 	}
 L29:
 	;
-	v162 = F_hash_search(m, v48, v153, int32(1), v19+int32(8))
+	v152 = F_hash_search(m, v45, v143, int32(1), v16+int32(8))
 	mBase = m.M
-	v163 = m.ExcPending
-	if v163 != 0 {
+	v153 = m.ExcPending
+	if v153 != 0 {
 		goto L1
 	} else {
 		goto L30
 	}
 L30:
 	;
-	v164 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+8)))
-	if v164 != 0 {
-		v168 = v135
+	v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+8)))
+	if v154 != 0 {
+		v158 = v127
 		goto L27
 	} else {
 		goto L31
 	}
 L31:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v162)+16)) = v135
-	v168 = v135 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v152)+16)) = v127
+	v158 = v127 + int32(1)
 	goto L27
 L32:
 	;
 	goto L26
 L33:
 	;
-	v438 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[4]))
-	if v438 != 0 {
-		goto L73
+	v396 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[4]))
+	if v396 != 0 {
+		goto L67
 	} else {
-		goto L74
+		goto L68
 	}
 L34:
 	;
-	v202 = F_palloc(m, v176<<(uint(int32(5))%32))
+	v188 = F_palloc(m, v164<<(uint(int32(5))%32))
 	mBase = m.M
-	v203 = m.ExcPending
-	if v203 != 0 {
+	v189 = m.ExcPending
+	if v189 != 0 {
 		goto L1
 	} else {
 		goto L35
 	}
 L35:
 	;
-	F_hash_seq_init(m, v19+int32(8), v48)
+	v191 = v16 + int32(8)
+	F_hash_seq_init(m, v191, v45)
 	mBase = m.M
-	v207 = m.ExcPending
-	if v207 != 0 {
+	v193 = m.ExcPending
+	if v193 != 0 {
 		goto L1
 	} else {
 		goto L36
 	}
 L36:
 	;
-	v210 = F_hash_seq_search(m, v19+int32(8))
+	v194 = F_hash_seq_search(m, v191)
 	mBase = m.M
-	v211 = m.ExcPending
-	if v211 != 0 {
+	v195 = m.ExcPending
+	if v195 != 0 {
 		goto L1
 	} else {
 		goto L37
 	}
 L37:
 	;
-	if v210 != 0 {
+	if v194 != 0 {
 		goto L38
 	} else {
 		goto L39
 	}
 L38:
 	;
-	v213 = v210
-	v216 = int32(0)
+	v197 = v194
+	v199 = int32(0)
 	goto L41
 L39:
 	;
 	goto L40
 L40:
 	;
-	F_pg_qsort(m, v202, v176, int32(32), int32(920))
+	F_pg_qsort(m, v188, v164, int32(32), int32(920))
 	mBase = m.M
-	v265 = m.ExcPending
-	if v265 != 0 {
+	v243 = m.ExcPending
+	if v243 != 0 {
 		goto L1
 	} else {
 		goto L45
 	}
 L41:
 	;
-	v231 = v202 + v216<<(uint(int32(5))%32)
-	v232 = *(*int64)(unsafe.Add(mBase, uint32(v213)))
-	*(*int64)(unsafe.Add(mBase, uint32(v231))) = v232
-	v234 = *(*int64)(unsafe.Add(mBase, uint32(v213)+24))
-	*(*int64)(unsafe.Add(mBase, uint32(v231)+24)) = v234
-	v236 = *(*int64)(unsafe.Add(mBase, uint32(v213)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v231)+16)) = v236
-	v238 = *(*int64)(unsafe.Add(mBase, uint32(v213)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v231)+8)) = v238
-	v244 = F_hash_seq_search(m, v19+int32(8))
+	v212 = v188 + v199<<(uint(int32(5))%32)
+	v213 = *(*int64)(unsafe.Add(mBase, uint32(v197)+24))
+	*(*int64)(unsafe.Add(mBase, uint32(v212)+24)) = v213
+	v215 = *(*int64)(unsafe.Add(mBase, uint32(v197)+16))
+	*(*int64)(unsafe.Add(mBase, uint32(v212)+16)) = v215
+	v217 = *(*int64)(unsafe.Add(mBase, uint32(v197)+8))
+	*(*int64)(unsafe.Add(mBase, uint32(v212)+8)) = v217
+	v219 = *(*int64)(unsafe.Add(mBase, uint32(v197)))
+	*(*int64)(unsafe.Add(mBase, uint32(v212))) = v219
+	v225 = F_hash_seq_search(m, v16+int32(8))
 	mBase = m.M
-	v245 = m.ExcPending
-	if v245 != 0 {
+	v226 = m.ExcPending
+	if v226 != 0 {
 		goto L1
 	} else {
 		goto L43
@@ -894,9 +824,9 @@ L42:
 	goto L40
 L43:
 	;
-	if v244 != 0 {
-		v213 = v244
-		v216 = v216 + int32(1)
+	if v225 != 0 {
+		v197 = v225
+		v199 = v199 + int32(1)
 		goto L41
 	} else {
 		goto L44
@@ -906,227 +836,195 @@ L44:
 	goto L42
 L45:
 	;
-	v266 = int32(0)
-	v269 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[5]))
-	v274 = base.F64_div(base.F64_mul(base.F64_convert_i32_s(v269), float64(1000)), base.F64_convert_i32_u(v176))
-	if base.F64_lt(base.F64_abs(v274), float64(2.147483648e+09)) != 0 {
-		goto L47
+	v246 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[5]))
+	v252 = base.I32_trunc_sat_f64_s(base.F64_div(base.F64_mul(base.F64_convert_i32_s(v246), float64(1000)), base.F64_convert_i32_u(v164)))
+	if v252 < int32(101) {
+		goto L46
 	} else {
-		goto L48
+		goto L47
 	}
 L46:
 	;
-	if v280 < int32(101) {
-		goto L50
-	} else {
-		goto L51
-	}
+	v255 = int32(110)
+	goto L48
 L47:
 	;
-	v278 = base.I32_trunc_f64_s(v274)
-	v280 = v278
-	goto L46
+	v255 = v252
+	goto L48
 L48:
 	;
+	v258 = base.I64_extend_i32_u(v255) * int64(1000)
+	v262 = m.G0
+	v263 = int32(16)
+	v264 = v262 - v263
+	m.G0 = v264
+	F_gettimeofday(m, v264)
+	mBase = m.M
+	v267 = *(*int64)(unsafe.Add(mBase, uint32(v264)))
+	v268 = int64(*(*int32)(unsafe.Add(mBase, uint32(v264)+8)))
+	m.G0 = v264 + v263
+	v276 = v268 + v267*int64(1000000) - int64(946684800000000)
 	goto L49
 L49:
 	;
-	v280 = int32(-2147483648)
-	goto L46
+	if v164 == int32(1) {
+		goto L51
+	} else {
+		goto L52
+	}
 L50:
 	;
-	v283 = int32(110)
-	goto L52
+	v362 = v188 + v349<<(uint(int32(5))%32)
+	*(*int64)(unsafe.Add(mBase, uint32(v362)+8)) = v358 + v258
+	v366 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2]))
+	if v366 == int32(0) {
+		goto L64
+	} else {
+		goto L65
+	}
 L51:
 	;
-	v283 = v280
-	goto L52
+	v349 = int32(0)
+	v358 = v276
+	goto L50
 L52:
 	;
-	v286 = base.I64_extend_i32_u(v283) * int64(1000)
-	v287 = int32(1)
-	if v176 <= v287 {
-		goto L53
-	} else {
-		goto L54
-	}
+	goto L53
 L53:
 	;
-	v290 = v287
-	goto L55
+	v284 = int32(0)
+	v288 = v284
+	v291 = v284
+	v297 = v276
+	goto L54
 L54:
 	;
-	v290 = v176
-	goto L55
+	v301 = v188 + v288<<(uint(int32(5))%32)
+	v302 = v297 + v258
+	*(*int64)(unsafe.Add(mBase, uint32(v301)+8)) = v302
+	v305 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2]))
+	if v305 == int32(0) {
+		goto L56
+	} else {
+		goto L57
+	}
 L55:
 	;
-	v296 = m.G0
-	v297 = int32(16)
-	v298 = v296 - v297
-	m.G0 = v298
-	F___gettimeofday(m, v298)
-	mBase = m.M
-	v301 = *(*int64)(unsafe.Add(mBase, uint32(v298)))
-	v302 = int64(*(*int32)(unsafe.Add(mBase, uint32(v298)+8)))
-	m.G0 = v298 + v297
-	v310 = v302 + v301*int64(1000000) - int64(946684800000000)
-	goto L56
-L56:
-	;
-	if v176 != int32(1) {
-		goto L57
-	} else {
-		goto L58
-	}
-L57:
-	;
-	v320 = v266
-	v322 = int32(0)
-	v330 = v310
-	goto L60
-L58:
-	;
-	v384 = v266
-	v394 = v310
-	goto L59
-L59:
-	;
-	if v290&int32(1) == int32(0) {
+	if v164&int32(1) == int32(0) {
 		goto L33
-	} else {
-		goto L69
-	}
-L60:
-	;
-	v335 = v202 + v320<<(uint(int32(5))%32)
-	*(*int64)(unsafe.Add(mBase, uint32(v335)+8)) = v286 + v330
-	v339 = v335 + int32(20)
-	v341 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2]))
-	if v341 == int32(0) {
-		goto L62
 	} else {
 		goto L63
 	}
+L56:
+	;
+	v308 = int32(_a_F_rebuild_database_list_6)
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[3])) = v308
+	v312 = v308
+	goto L58
+L57:
+	;
+	v312 = v305
+	goto L58
+L58:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v301)+20)) = int32(_a_F_rebuild_database_list_6)
+	*(*int32)(unsafe.Add(mBase, uint32(v301)+24)) = v312
+	v317 = v301 + int32(20)
+	*(*int32)(unsafe.Add(mBase, uint32(v312))) = v317
+	v319 = int32(_a_F_rebuild_database_list_7)
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2])) = v317
+	v321 = v302 + v258
+	*(*int64)(unsafe.Add(mBase, uint32(v301)+40)) = v321
+	v324 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2]))
+	if v324 == int32(0) {
+		goto L59
+	} else {
+		goto L60
+	}
+L59:
+	;
+	v327 = int32(_a_F_rebuild_database_list_6)
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[3])) = v327
+	v331 = v327
+	goto L61
+L60:
+	;
+	v331 = v324
+	goto L61
 L61:
 	;
-	v384 = v377
-	v394 = v355
-	goto L59
+	*(*int32)(unsafe.Add(mBase, uint32(v301)+52)) = int32(_a_F_rebuild_database_list_6)
+	*(*int32)(unsafe.Add(mBase, uint32(v301)+56)) = v331
+	v336 = v301 + int32(52)
+	*(*int32)(unsafe.Add(mBase, uint32(v331))) = v336
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2])) = v336
+	v340 = int32(2)
+	v341 = v288 + v340
+	v343 = v291 + v340
+	if v343 != v164&int32(2147483646) {
+		v288 = v341
+		v291 = v343
+		v297 = v321
+		goto L54
+	} else {
+		goto L62
+	}
 L62:
 	;
-	v344 = int32(_a_F_rebuild_database_list_6)
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[3])) = v344
-	v348 = v344
-	goto L64
+	goto L55
 L63:
 	;
-	v348 = v341
-	goto L64
+	v349 = v341
+	v358 = v321
+	goto L50
 L64:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v335)+20)) = int32(_a_F_rebuild_database_list_6)
-	*(*int32)(unsafe.Add(mBase, uint32(v335)+24)) = v348
-	*(*int32)(unsafe.Add(mBase, uint32(v348))) = v339
-	v353 = int32(_a_F_rebuild_database_list_7)
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2])) = v339
-	v355 = v330 + (v286 + v286)
-	*(*int64)(unsafe.Add(mBase, uint32(v335)+40)) = v355
-	v358 = v335 + int32(52)
-	v360 = v335 + int32(32)
-	v362 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2]))
-	if v362 == int32(0) {
-		goto L65
-	} else {
-		goto L66
-	}
+	v369 = int32(_a_F_rebuild_database_list_6)
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[3])) = v369
+	v373 = v369
+	goto L66
 L65:
 	;
-	v365 = int32(_a_F_rebuild_database_list_6)
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[3])) = v365
-	v369 = v365
-	goto L67
+	v373 = v366
+	goto L66
 L66:
 	;
-	v369 = v362
-	goto L67
+	*(*int32)(unsafe.Add(mBase, uint32(v362)+20)) = int32(_a_F_rebuild_database_list_6)
+	*(*int32)(unsafe.Add(mBase, uint32(v362)+24)) = v373
+	v378 = v362 + int32(20)
+	*(*int32)(unsafe.Add(mBase, uint32(v373))) = v378
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2])) = v378
+	goto L33
 L67:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = int32(_a_F_rebuild_database_list_6)
-	*(*int32)(unsafe.Add(mBase, uint32(v360)+24)) = v369
-	*(*int32)(unsafe.Add(mBase, uint32(v369))) = v358
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2])) = v358
-	v376 = int32(2)
-	v377 = v320 + v376
-	v379 = v322 + v376
-	if v379 != v290&int32(2147483646) {
-		v320 = v377
-		v322 = v379
-		v330 = v355
-		goto L60
+	F_MemoryContextDelete(m, v396)
+	mBase = m.M
+	v398 = m.ExcPending
+	if v398 != 0 {
+		goto L1
 	} else {
-		goto L68
+		goto L70
 	}
 L68:
 	;
-	goto L61
+	goto L69
 L69:
 	;
-	v401 = v202 + v384<<(uint(int32(5))%32)
-	*(*int64)(unsafe.Add(mBase, uint32(v401)+8)) = v286 + v394
-	v405 = v401 + int32(20)
-	v407 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2]))
-	if v407 == int32(0) {
-		goto L70
+	F_MemoryContextDelete(m, v31)
+	mBase = m.M
+	v400 = m.ExcPending
+	if v400 != 0 {
+		goto L1
 	} else {
 		goto L71
 	}
 L70:
 	;
-	v410 = int32(_a_F_rebuild_database_list_6)
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[3])) = v410
-	v414 = v410
-	goto L72
+	goto L69
 L71:
 	;
-	v414 = v407
-	goto L72
-L72:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v401)+20)) = int32(_a_F_rebuild_database_list_6)
-	*(*int32)(unsafe.Add(mBase, uint32(v401)+24)) = v414
-	*(*int32)(unsafe.Add(mBase, uint32(v414))) = v405
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[2])) = v405
-	goto L33
-L73:
-	;
-	F_MemoryContextDelete(m, v438)
-	mBase = m.M
-	v440 = m.ExcPending
-	if v440 != 0 {
-		goto L1
-	} else {
-		goto L76
-	}
-L74:
-	;
-	goto L75
-L75:
-	;
-	F_MemoryContextDelete(m, v34)
-	mBase = m.M
-	v442 = m.ExcPending
-	if v442 != 0 {
-		goto L1
-	} else {
-		goto L77
-	}
-L76:
-	;
-	goto L75
-L77:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1])) = v37
-	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[4])) = v28
-	m.G0 = v19 + int32(80)
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1])) = v34
+	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[4])) = v25
+	m.G0 = v16 + int32(80)
 	return
 }

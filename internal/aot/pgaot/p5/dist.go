@@ -143,14 +143,14 @@ func F_dist_ppoly_internal(m *base.Module, l0 int32, l1 int32) float64 {
 	_ = v71
 	var v78 float64
 	_ = v78
-	var v83 float64
-	_ = v83
 	var v84 float64
 	_ = v84
-	var v85 int32
+	var v85 float64
 	_ = v85
-	var v95 float64
-	_ = v95
+	var v86 int32
+	_ = v86
+	var v96 float64
+	_ = v96
 	v9 = m.G0
 	v11 = v9 - int32(32)
 	m.G0 = v11
@@ -167,14 +167,14 @@ func F_dist_ppoly_internal(m *base.Module, l0 int32, l1 int32) float64 {
 L1:
 	;
 	m.G0 = v11 + int32(32)
-	return v95
+	return v96
 L2:
 	;
 	return float64(0)
 L3:
 	;
 	if v16 != 0 {
-		v95 = float64(0)
+		v96 = float64(0)
 		goto L1
 	} else {
 		goto L4
@@ -204,7 +204,7 @@ L5:
 	;
 	v40 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v40-int32(1) <= int32(0) {
-		v95 = v38
+		v96 = v38
 		goto L1
 	} else {
 		goto L6
@@ -238,7 +238,7 @@ L7:
 	}
 L8:
 	;
-	v95 = v84
+	v96 = v85
 	goto L1
 L9:
 	;
@@ -256,14 +256,14 @@ L10:
 	}
 L11:
 	;
-	v84 = v51
+	v85 = v51
 	goto L12
 L12:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	if v61 < v85-int32(1) {
+	v86 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	if v61 < v86-int32(1) {
 		v48 = v61
-		v51 = v84
+		v51 = v85
 		goto L7
 	} else {
 		goto L19
@@ -278,22 +278,22 @@ L14:
 	goto L15
 L15:
 	;
-	if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(base.F64_abs(v51))) {
+	if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v51)&int64(9223372036854775807)) {
 		goto L16
 	} else {
 		goto L17
 	}
 L16:
 	;
-	v83 = v70
+	v84 = v70
 	goto L18
 L17:
 	;
-	v83 = v78
+	v84 = v78
 	goto L18
 L18:
 	;
-	v84 = v83
+	v85 = v84
 	goto L12
 L19:
 	;

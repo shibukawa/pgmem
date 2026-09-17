@@ -24,34 +24,34 @@ func F_read_stream_reset(m *base.Module, l0 int32) {
 	_ = v28
 	var v30 int32
 	_ = v30
-	var v35 int32
-	_ = v35
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
 	var v38 int32
 	_ = v38
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
-	var v44 int32
-	_ = v44
-	var v47 int32
-	_ = v47
-	var v50 int32
-	_ = v50
-	var v54 int32
-	_ = v54
-	var v62 int32
-	_ = v62
-	var v64 int32
-	_ = v64
+	var v41 int32
+	_ = v41
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v53 int32
+	_ = v53
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
+	var v67 int32
+	_ = v67
 	var v68 int32
 	_ = v68
 	var v69 int32
 	_ = v69
-	var v70 int32
-	_ = v70
-	var v78 int32
-	_ = v78
+	var v77 int32
+	_ = v77
 	v2 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+72)) = uint8(v2)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(-1)
@@ -107,8 +107,8 @@ L8:
 	goto L1
 L9:
 	;
-	v78 = int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+14)) = uint16(v78)
+	v77 = int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+14)) = uint16(v77)
 	return
 L10:
 	;
@@ -117,10 +117,10 @@ L10:
 	goto L11
 L11:
 	;
-	v35 = base.I32_extend16_s(v30)
-	v38 = v28 + v35<<(uint(int32(2))%32)
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)))
-	if v39 == int32(0) {
+	v36 = v30 << (uint(int32(2)) % 32)
+	v37 = v28 + v36
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)))
+	if v38 == int32(0) {
 		goto L9
 	} else {
 		goto L13
@@ -130,57 +130,57 @@ L12:
 	goto L9
 L13:
 	;
-	v42 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+10)))
-	v44 = v42 - int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+10)) = uint16(v44)
-	F_ReleaseBuffer(m, v39)
+	v41 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+10)))
+	v43 = v41 - int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+10)) = uint16(v43)
+	F_ReleaseBuffer(m, v38)
 	mBase = m.M
-	v47 = m.ExcPending
-	if v47 != 0 {
+	v46 = m.ExcPending
+	if v46 != 0 {
 		goto L3
 	} else {
 		goto L14
 	}
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v38))) = int32(0)
-	v50 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+2)))
-	if v35 < v50-int32(1) {
+	*(*int32)(unsafe.Add(mBase, uint32(v37))) = int32(0)
+	v49 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+2)))
+	if v30 < v49-int32(1) {
 		goto L15
 	} else {
 		goto L16
 	}
 L15:
 	;
-	v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+6)))
-	*(*int32)(unsafe.Add(mBase, uint32(v28+(v54+v35)<<(uint(int32(2))%32)))) = int32(0)
+	v53 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+6)))
+	*(*int32)(unsafe.Add(mBase, uint32(v28+v53<<(uint(int32(2))%32)+v36))) = int32(0)
 	goto L17
 L16:
 	;
 	goto L17
 L17:
 	;
-	v62 = v30 + int32(1)
-	v64 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)))
-	if v64 != v62&int32(_a_F_read_stream_reset_0) {
+	v61 = v30 + int32(1)
+	v63 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)))
+	if v63 != v61&int32(_a_F_read_stream_reset_0) {
 		goto L18
 	} else {
 		goto L19
 	}
 L18:
 	;
-	v68 = v62
+	v67 = v61
 	goto L20
 L19:
 	;
-	v68 = int32(0)
+	v67 = int32(0)
 	goto L20
 L20:
 	;
-	v69 = base.I32_extend16_s(v68)
-	v70 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+16)))
-	if v69 < v70 {
-		v30 = v69
+	v68 = base.I32_extend16_s(v67)
+	v69 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+16)))
+	if v68 < v69 {
+		v30 = v68
 		goto L11
 	} else {
 		goto L21
@@ -264,56 +264,58 @@ func F_read_stream_start_pending_read(m *base.Module, l0 int32) int32 {
 	_ = v113
 	var v116 int32
 	_ = v116
-	var v120 int32
-	_ = v120
+	var v121 int32
+	_ = v121
+	var v122 int32
+	_ = v122
 	var v123 int32
 	_ = v123
 	var v124 int32
 	_ = v124
 	var v125 int32
 	_ = v125
-	var v126 int32
-	_ = v126
-	var v131 int32
-	_ = v131
-	var v157 int32
-	_ = v157
-	var v164 int32
-	_ = v164
+	var v130 int32
+	_ = v130
+	var v156 int32
+	_ = v156
+	var v163 int32
+	_ = v163
+	var v192 int32
+	_ = v192
 	var v193 int32
 	_ = v193
 	var v194 int32
 	_ = v194
-	var v195 int32
-	_ = v195
-	var v197 int32
-	_ = v197
-	var v199 int32
-	_ = v199
+	var v196 int32
+	_ = v196
+	var v198 int32
+	_ = v198
+	var v201 int32
+	_ = v201
 	var v202 int32
 	_ = v202
 	var v203 int32
 	_ = v203
 	var v204 int32
 	_ = v204
-	var v205 int32
-	_ = v205
-	var v207 int32
-	_ = v207
+	var v206 int32
+	_ = v206
+	var v209 int32
+	_ = v209
 	var v210 int32
 	_ = v210
-	var v211 int32
-	_ = v211
-	var v215 int32
-	_ = v215
-	var v222 int32
-	_ = v222
+	var v214 int32
+	_ = v214
+	var v218 int32
+	_ = v218
+	var v241 int32
+	_ = v241
 	var v242 int32
 	_ = v242
-	var v243 int32
-	_ = v243
-	var v247 int32
-	_ = v247
+	var v246 int32
+	_ = v246
+	var v252 int32
+	_ = v252
 	var v253 int32
 	_ = v253
 	var v254 int32
@@ -322,350 +324,336 @@ func F_read_stream_start_pending_read(m *base.Module, l0 int32) int32 {
 	_ = v255
 	var v256 int32
 	_ = v256
-	var v257 int32
-	_ = v257
-	var v260 int32
-	_ = v260
-	var v263 int32
-	_ = v263
+	var v259 int32
+	_ = v259
+	var v262 int32
+	_ = v262
+	var v265 int32
+	_ = v265
 	var v266 int32
 	_ = v266
-	var v267 int32
-	_ = v267
 	var v268 int32
 	_ = v268
 	var v271 int32
 	_ = v271
 	var v273 int64
 	_ = v273
-	var v277 int32
-	_ = v277
 	var v278 int32
 	_ = v278
 	var v279 int32
 	_ = v279
-	var v281 int32
-	_ = v281
-	var v283 int32
-	_ = v283
-	var v285 int32
-	_ = v285
+	var v280 int32
+	_ = v280
+	var v282 int32
+	_ = v282
+	var v284 int32
+	_ = v284
 	var v286 int32
 	_ = v286
-	var v288 int32
-	_ = v288
-	var v290 int32
-	_ = v290
+	var v287 int32
+	_ = v287
+	var v289 int32
+	_ = v289
+	var v291 int32
+	_ = v291
 	var v296 int32
 	_ = v296
 	var v297 int32
 	_ = v297
-	var v299 int32
-	_ = v299
-	var v306 int32
-	_ = v306
-	var v308 int32
-	_ = v308
+	var v298 int32
+	_ = v298
+	var v300 int32
+	_ = v300
+	var v307 int32
+	_ = v307
 	var v309 int32
 	_ = v309
+	var v310 int32
+	_ = v310
+	var v311 int32
+	_ = v311
 	var v312 int32
 	_ = v312
-	var v313 int32
-	_ = v313
-	var v318 int32
-	_ = v318
+	var v317 int32
+	_ = v317
+	var v320 int32
+	_ = v320
 	var v321 int32
 	_ = v321
 	var v322 int32
 	_ = v322
-	var v323 int32
-	_ = v323
-	var v325 int32
-	_ = v325
+	var v324 int32
+	_ = v324
+	var v328 int32
+	_ = v328
 	var v329 int32
 	_ = v329
 	var v330 int32
 	_ = v330
-	var v331 int32
-	_ = v331
-	var v333 int32
-	_ = v333
+	var v332 int32
+	_ = v332
+	var v334 int32
+	_ = v334
 	var v335 int32
 	_ = v335
-	var v336 int32
-	_ = v336
-	var v339 int32
-	_ = v339
-	var v341 int32
-	_ = v341
+	var v338 int32
+	_ = v338
+	var v340 int32
+	_ = v340
+	var v344 int32
+	_ = v344
 	var v345 int32
 	_ = v345
 	var v346 int32
 	_ = v346
 	var v347 int32
 	_ = v347
-	var v348 int32
-	_ = v348
+	var v361 int32
+	_ = v361
 	var v362 int32
 	_ = v362
 	var v363 int32
 	_ = v363
-	var v364 int32
-	_ = v364
+	var v397 int32
+	_ = v397
 	var v398 int32
 	_ = v398
 	var v399 int32
 	_ = v399
-	var v400 int32
-	_ = v400
 	var v411 int32
 	_ = v411
+	var v433 int32
+	_ = v433
 	var v434 int32
 	_ = v434
-	var v435 int32
-	_ = v435
-	var v437 int32
-	_ = v437
-	var v442 int32
-	_ = v442
-	var v445 int32
-	_ = v445
-	var v452 int32
-	_ = v452
-	var v454 int64
-	_ = v454
-	var v456 int32
-	_ = v456
-	var v458 int64
-	_ = v458
-	var v462 int32
-	_ = v462
-	var v467 int32
-	_ = v467
-	var v470 int32
-	_ = v470
+	var v436 int32
+	_ = v436
+	var v441 int32
+	_ = v441
+	var v444 int32
+	_ = v444
+	var v451 int32
+	_ = v451
+	var v453 int32
+	_ = v453
+	var v455 int64
+	_ = v455
+	var v457 int64
+	_ = v457
+	var v461 int32
+	_ = v461
+	var v466 int32
+	_ = v466
+	var v469 int32
+	_ = v469
+	var v473 int32
+	_ = v473
 	var v474 int32
 	_ = v474
-	var v475 int32
-	_ = v475
+	var v480 int32
+	_ = v480
 	var v481 int32
 	_ = v481
-	var v482 int32
-	_ = v482
-	var v487 int32
-	_ = v487
-	var v489 int32
-	_ = v489
-	var v491 int32
-	_ = v491
-	var v493 int32
-	_ = v493
+	var v486 int32
+	_ = v486
+	var v488 int32
+	_ = v488
+	var v490 int32
+	_ = v490
+	var v492 int32
+	_ = v492
+	var v495 int32
+	_ = v495
 	var v496 int32
 	_ = v496
 	var v497 int32
 	_ = v497
-	var v498 int32
-	_ = v498
-	var v500 int32
-	_ = v500
-	var v503 int32
-	_ = v503
-	var v510 int32
-	_ = v510
-	var v512 int64
-	_ = v512
-	var v519 int32
-	_ = v519
-	var v521 int32
-	_ = v521
-	var v528 int32
-	_ = v528
-	var v537 int32
-	_ = v537
-	var v543 int32
-	_ = v543
-	var v546 int32
-	_ = v546
+	var v499 int32
+	_ = v499
+	var v502 int32
+	_ = v502
+	var v509 int32
+	_ = v509
+	var v511 int64
+	_ = v511
+	var v518 int32
+	_ = v518
+	var v520 int32
+	_ = v520
+	var v526 int32
+	_ = v526
+	var v535 int32
+	_ = v535
+	var v542 int32
+	_ = v542
+	var v545 int32
+	_ = v545
+	var v549 int32
+	_ = v549
 	var v550 int32
 	_ = v550
 	var v551 int32
 	_ = v551
-	var v552 int32
+	var v552 int64
 	_ = v552
-	var v553 int64
-	_ = v553
-	var v559 int64
-	_ = v559
-	var v567 int32
-	_ = v567
-	var v568 int64
+	var v556 int64
+	_ = v556
+	var v563 int32
+	_ = v563
+	var v564 int64
+	_ = v564
+	var v568 int32
 	_ = v568
 	var v572 int32
 	_ = v572
-	var v576 int32
-	_ = v576
-	var v577 int32
-	_ = v577
-	var v578 int32
-	_ = v578
-	var v579 int64
-	_ = v579
-	var v597 int32
-	_ = v597
-	var v603 int64
-	_ = v603
-	var v609 int64
-	_ = v609
-	var v611 int32
-	_ = v611
-	var v621 int32
-	_ = v621
-	var v624 int32
-	_ = v624
-	var v626 int32
-	_ = v626
-	var v628 int32
-	_ = v628
-	var v634 int32
-	_ = v634
+	var v573 int32
+	_ = v573
+	var v574 int32
+	_ = v574
+	var v575 int64
+	_ = v575
+	var v590 int32
+	_ = v590
+	var v594 int64
+	_ = v594
+	var v598 int64
+	_ = v598
+	var v600 int32
+	_ = v600
+	var v610 int32
+	_ = v610
+	var v613 int32
+	_ = v613
+	var v615 int32
+	_ = v615
+	var v617 int32
+	_ = v617
+	var v623 int32
+	_ = v623
+	var v627 int32
+	_ = v627
+	var v629 int32
+	_ = v629
 	var v635 int32
 	_ = v635
-	var v638 int32
-	_ = v638
-	var v642 int32
-	_ = v642
-	var v648 int32
-	_ = v648
-	var v649 int32
-	_ = v649
-	var v653 int32
-	_ = v653
-	var v714 int32
-	_ = v714
-	var v715 int32
-	_ = v715
-	var v716 int32
-	_ = v716
-	var v718 int32
-	_ = v718
-	var v722 int32
-	_ = v722
-	var v727 int32
-	_ = v727
-	var v728 int32
-	_ = v728
-	var v729 int32
-	_ = v729
+	var v636 int32
+	_ = v636
+	var v640 int32
+	_ = v640
+	var v704 int32
+	_ = v704
+	var v706 int32
+	_ = v706
+	var v707 int32
+	_ = v707
+	var v708 int32
+	_ = v708
+	var v719 int32
+	_ = v719
+	var v723 int32
+	_ = v723
+	var v724 int32
+	_ = v724
 	var v730 int32
 	_ = v730
-	var v732 int32
-	_ = v732
+	var v735 int32
+	_ = v735
+	var v736 int32
+	_ = v736
 	var v739 int32
 	_ = v739
-	var v740 int32
-	_ = v740
-	var v746 int32
-	_ = v746
-	var v751 int32
-	_ = v751
-	var v752 int32
-	_ = v752
-	var v756 int32
-	_ = v756
-	var v759 int32
-	_ = v759
-	var v785 int32
-	_ = v785
+	var v742 int32
+	_ = v742
+	var v768 int32
+	_ = v768
+	var v779 int32
+	_ = v779
+	var v780 int32
+	_ = v780
+	var v781 int32
+	_ = v781
+	var v782 int32
+	_ = v782
+	var v784 int32
+	_ = v784
+	var v788 int32
+	_ = v788
+	var v793 int32
+	_ = v793
+	var v794 int32
+	_ = v794
+	var v795 int32
+	_ = v795
 	var v796 int32
 	_ = v796
-	var v797 int32
-	_ = v797
-	var v798 int32
-	_ = v798
-	var v799 int32
-	_ = v799
-	var v801 int32
-	_ = v801
-	var v805 int32
-	_ = v805
-	var v810 int32
-	_ = v810
-	var v811 int32
-	_ = v811
-	var v812 int32
-	_ = v812
-	var v813 int32
-	_ = v813
-	var v822 int32
-	_ = v822
+	var v802 int32
+	_ = v802
+	var v826 int32
+	_ = v826
+	var v827 int32
+	_ = v827
+	var v828 int32
+	_ = v828
+	var v832 int32
+	_ = v832
+	var v836 int32
+	_ = v836
+	var v838 int32
+	_ = v838
+	var v841 int32
+	_ = v841
+	var v842 int32
+	_ = v842
 	var v843 int32
 	_ = v843
-	var v844 int32
-	_ = v844
 	var v845 int32
 	_ = v845
+	var v847 int32
+	_ = v847
 	var v849 int32
 	_ = v849
 	var v853 int32
 	_ = v853
 	var v855 int32
 	_ = v855
-	var v858 int32
-	_ = v858
-	var v859 int32
-	_ = v859
+	var v856 int32
+	_ = v856
 	var v860 int32
 	_ = v860
-	var v862 int32
-	_ = v862
-	var v864 int32
-	_ = v864
-	var v866 int32
-	_ = v866
-	var v870 int32
-	_ = v870
-	var v872 int32
-	_ = v872
-	var v873 int32
-	_ = v873
-	var v877 int32
-	_ = v877
-	var v878 int32
-	_ = v878
-	var v879 int32
-	_ = v879
-	var v881 int32
-	_ = v881
-	var v883 int32
-	_ = v883
-	var v912 int32
-	_ = v912
-	var v916 int32
-	_ = v916
-	var v919 int32
-	_ = v919
-	var v948 int32
-	_ = v948
-	var v950 int32
-	_ = v950
+	var v861 int32
+	_ = v861
+	var v863 int32
+	_ = v863
+	var v869 int32
+	_ = v869
+	var v871 int32
+	_ = v871
+	var v899 int32
+	_ = v899
+	var v903 int32
+	_ = v903
+	var v906 int32
+	_ = v906
+	var v935 int32
+	_ = v935
+	var v937 int32
+	_ = v937
+	var v941 int32
+	_ = v941
+	var v949 int32
+	_ = v949
+	var v952 int32
+	_ = v952
 	var v953 int32
 	_ = v953
-	var v957 int32
-	_ = v957
-	var v958 int32
-	_ = v958
+	var v955 int32
+	_ = v955
+	var v959 int32
+	_ = v959
 	var v960 int32
 	_ = v960
-	var v963 int32
-	_ = v963
-	var v964 int32
-	_ = v964
-	var v969 int32
-	_ = v969
-	var v970 int32
-	_ = v970
-	var v981 int32
-	_ = v981
+	var v967 int32
+	_ = v967
 	v27 = m.G0
 	v29 = v27 - int32(16)
 	m.G0 = v29
@@ -866,7 +854,7 @@ L34:
 L35:
 	;
 	m.G0 = v29 + int32(16)
-	return v981
+	return v967
 L36:
 	;
 	v110 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+12)))
@@ -879,15 +867,15 @@ L36:
 	}
 L37:
 	;
-	v120 = v107
+	v121 = v107
 	goto L38
 L38:
 	;
-	v123 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+70)))
-	v124 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+76)))
-	v125 = v120 + v124
-	v126 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+16)))
-	if v126 < v125 {
+	v122 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+70)))
+	v123 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+76)))
+	v124 = v121 + v123
+	v125 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+16)))
+	if v125 < v124 {
 		goto L43
 	} else {
 		goto L44
@@ -903,7 +891,7 @@ L41:
 	;
 	v116 = int32(0)
 	if v116 < v110 {
-		v981 = v116
+		v967 = v116
 		goto L35
 	} else {
 		goto L42
@@ -911,44 +899,44 @@ L41:
 L42:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v29)+12)) = v106
-	v120 = v106
+	v121 = v106
 	goto L38
 L43:
 	;
-	v131 = v126
+	v130 = v125
 	goto L46
 L44:
 	;
 	goto L45
 L45:
 	;
-	v193 = v123 * int32(84)
-	v194 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-	v195 = v193 + v194
-	v197 = v195 + int32(4)
-	v199 = l0 + int32(80)
-	v202 = v199 + v124<<(uint(int32(2))%32)
-	v203 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	v204 = int32(0)
-	v205 = m.G0
-	v207 = v205 + int32(-64)
-	m.G0 = v207
-	v210 = v29 + int32(12)
-	v211 = *(*int32)(unsafe.Add(mBase, uint32(v210)))
-	if v211 <= v204 {
-		v759 = v211
+	v192 = v122 * int32(84)
+	v193 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	v194 = v192 + v193
+	v196 = v194 + int32(4)
+	v198 = l0 + int32(80)
+	v201 = v198 + v123<<(uint(int32(2))%32)
+	v202 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v203 = int32(0)
+	v204 = m.G0
+	v206 = v204 + int32(-64)
+	m.G0 = v206
+	v209 = v29 + int32(12)
+	v210 = *(*int32)(unsafe.Add(mBase, uint32(v209)))
+	if v210 <= v203 {
+		v742 = v210
 		goto L50
 	} else {
 		goto L51
 	}
 L46:
 	;
-	v157 = v131 + int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+16)) = uint16(v157)
-	*(*int32)(unsafe.Add(mBase, uint32(l0+int32(80)+v131<<(uint(int32(2))%32)))) = int32(0)
-	v164 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+16)))
-	if v164 < v125 {
-		v131 = v164
+	v156 = v130 + int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+16)) = uint16(v156)
+	*(*int32)(unsafe.Add(mBase, uint32(l0+int32(80)+v130<<(uint(int32(2))%32)))) = int32(0)
+	v163 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+16)))
+	if v163 < v124 {
+		v130 = v163
 		goto L46
 	} else {
 		goto L48
@@ -961,78 +949,78 @@ L48:
 	goto L47
 L49:
 	;
-	m.G0 = v207 - int32(-64)
-	v843 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
-	v844 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+12)))
-	v845 = v843 + v844
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+12)) = uint16(v845)
-	if v822 == int32(0) {
-		goto L168
+	m.G0 = v206 - int32(-64)
+	v826 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
+	v827 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+12)))
+	v828 = v826 + v827
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+12)) = uint16(v828)
+	if v802 == int32(0) {
+		goto L166
 	} else {
-		goto L169
+		goto L167
 	}
 L50:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v210))) = v759
-	v785 = int32(0)
-	*(*uint16)(unsafe.Add(mBase, uint32(v197)+34)) = uint16(v785)
-	*(*uint16)(unsafe.Add(mBase, uint32(v197)+32)) = uint16(v759)
-	*(*int32)(unsafe.Add(mBase, uint32(v197)+28)) = v52
-	*(*int32)(unsafe.Add(mBase, uint32(v197)+24)) = v203
-	*(*int32)(unsafe.Add(mBase, uint32(v197)+20)) = v202
-	*(*int32)(unsafe.Add(mBase, uint32(v195+int32(40)))) = int32(-1)
-	goto L160
+	*(*int32)(unsafe.Add(mBase, uint32(v209))) = v742
+	v768 = int32(0)
+	*(*uint16)(unsafe.Add(mBase, uint32(v196)+34)) = uint16(v768)
+	*(*uint16)(unsafe.Add(mBase, uint32(v196)+32)) = uint16(v742)
+	*(*int32)(unsafe.Add(mBase, uint32(v196)+28)) = v52
+	*(*int32)(unsafe.Add(mBase, uint32(v196)+24)) = v202
+	*(*int32)(unsafe.Add(mBase, uint32(v196)+20)) = v201
+	*(*int32)(unsafe.Add(mBase, uint32(v194+int32(40)))) = int32(-1)
+	goto L158
 L51:
 	;
-	v215 = v211
-	v222 = v204
+	v214 = v210
+	v218 = v203
 	goto L52
 L52:
 	;
-	v242 = v202 + v222<<(uint(int32(2))%32)
-	v243 = *(*int32)(unsafe.Add(mBase, uint32(v242)))
-	if v243 != 0 {
+	v241 = v201 + v218<<(uint(int32(2))%32)
+	v242 = *(*int32)(unsafe.Add(mBase, uint32(v241)))
+	if v242 != 0 {
 		goto L58
 	} else {
 		goto L59
 	}
 L53:
 	;
-	v759 = v752
+	v742 = v736
 	goto L50
 L54:
 	;
-	if v215 < int32(2) {
-		v752 = v215
+	if base.B2i32(v214 < int32(2))|v218 != 0 {
+		v736 = v214
 		goto L148
 	} else {
 		goto L149
 	}
 L55:
 	;
-	if v222 != 0 {
+	if v218 != 0 {
 		goto L145
 	} else {
 		goto L146
 	}
 L56:
 	;
-	v649 = *(*int32)(unsafe.Add(mBase, uint32(v648)+24))
-	v653 = int32(base.Ui32(v649)>>(uint(int32(24))%32)) & int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v207)+19)) = uint8(v653)
-	if v653 == int32(0) {
+	v636 = *(*int32)(unsafe.Add(mBase, uint32(v635)+24))
+	v640 = int32(base.Ui32(v636)>>(uint(int32(24))%32)) & int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v206)+19)) = uint8(v640)
+	if v640 == int32(0) {
 		goto L54
 	} else {
 		goto L144
 	}
 L57:
 	;
-	v642 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[4]))
-	v648 = v642 + v243<<(uint(int32(6))%32) + int32(-64)
+	v629 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[4]))
+	v635 = v629 + v242<<(uint(int32(6))%32) + int32(-64)
 	goto L56
 L58:
 	;
-	if int32(0) <= v243 {
+	if int32(0) <= v242 {
 		goto L57
 	} else {
 		goto L61
@@ -1042,35 +1030,35 @@ L59:
 	goto L60
 L60:
 	;
-	v253 = v222 + v203
-	v254 = *(*int32)(unsafe.Add(mBase, uint32(v197)+12))
-	v255 = *(*int32)(unsafe.Add(mBase, uint32(v197)+4))
-	v256 = *(*int32)(unsafe.Add(mBase, uint32(v197)))
-	v257 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v197)+8)))
-	if v257 == int32(116) {
+	v252 = v218 + v202
+	v253 = *(*int32)(unsafe.Add(mBase, uint32(v196)+12))
+	v254 = *(*int32)(unsafe.Add(mBase, uint32(v196)+4))
+	v255 = *(*int32)(unsafe.Add(mBase, uint32(v196)))
+	v256 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v196)+8)))
+	if v256 == int32(116) {
 		goto L63
 	} else {
 		goto L64
 	}
 L61:
 	;
-	v247 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[5]))
-	v648 = v247 + (v243^int32(-1))<<(uint(int32(6))%32)
+	v246 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[5]))
+	v635 = v246 + (v242^int32(-1))<<(uint(int32(6))%32)
 	goto L56
 L62:
 	;
-	if v256 != 0 {
+	if v255 != 0 {
 		goto L122
 	} else {
 		goto L123
 	}
 L63:
 	;
-	v260 = int32(1)
-	v263 = F_LocalBufferAlloc(m, v255, v254, v253, v205+int32(-45))
+	v259 = int32(1)
+	v262 = F_LocalBufferAlloc(m, v254, v253, v252, v204+int32(-45))
 	mBase = m.M
-	v266 = m.ExcPending
-	if v266 != 0 {
+	v265 = m.ExcPending
+	if v265 != 0 {
 		goto L66
 	} else {
 		goto L67
@@ -1080,11 +1068,11 @@ L64:
 	goto L65
 L65:
 	;
-	v277 = *(*int32)(unsafe.Add(mBase, uint32(v197)+16))
-	v278 = F_IOContextForStrategy(m, v277)
+	v278 = *(*int32)(unsafe.Add(mBase, uint32(v196)+16))
+	v279 = F_IOContextForStrategy(m, v278)
 	mBase = m.M
-	v279 = m.ExcPending
-	if v279 != 0 {
+	v280 = m.ExcPending
+	if v280 != 0 {
 		goto L66
 	} else {
 		goto L69
@@ -1094,13 +1082,13 @@ L66:
 	return int32(0)
 L67:
 	;
-	v267 = int32(3)
-	v268 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v207)+19)))
+	v266 = int32(3)
+	v268 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v206)+19)))
 	if v268 != int32(1) {
-		v519 = v263
-		v521 = v268
-		v528 = v260
-		v537 = v267
+		v518 = v262
+		v520 = int32(0)
+		v526 = v259
+		v535 = v266
 		goto L62
 	} else {
 		goto L68
@@ -1110,18 +1098,18 @@ L68:
 	v271 = int32(_a_F_read_stream_start_pending_read_2)
 	v273 = *(*int64)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[6]))
 	*(*int64)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[6])) = v273 + int64(1)
-	v519 = v263
-	v521 = v268
-	v528 = v260
-	v537 = v267
+	v518 = v262
+	v520 = int32(1)
+	v526 = v259
+	v535 = v266
 	goto L62
 L69:
 	;
-	v281 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[7]))
-	F_ResourceOwnerEnlarge(m, v281)
+	v282 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[7]))
+	F_ResourceOwnerEnlarge(m, v282)
 	mBase = m.M
-	v283 = m.ExcPending
-	if v283 != 0 {
+	v284 = m.ExcPending
+	if v284 != 0 {
 		goto L66
 	} else {
 		goto L70
@@ -1130,77 +1118,78 @@ L70:
 	;
 	F_ReservePrivateRefCountEntry(m)
 	mBase = m.M
-	v285 = m.ExcPending
-	if v285 != 0 {
+	v286 = m.ExcPending
+	if v286 != 0 {
 		goto L66
 	} else {
 		goto L71
 	}
 L71:
 	;
-	v286 = *(*int32)(unsafe.Add(mBase, uint32(v255)))
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+20)) = v286
-	v288 = *(*int32)(unsafe.Add(mBase, uint32(v255)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+24)) = v288
-	v290 = *(*int32)(unsafe.Add(mBase, uint32(v255)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+36)) = v253
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+32)) = v254
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+28)) = v290
-	v296 = F_BufTableHashCode(m, v205+int32(-44))
+	v287 = *(*int32)(unsafe.Add(mBase, uint32(v254)))
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+20)) = v287
+	v289 = *(*int32)(unsafe.Add(mBase, uint32(v254)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+24)) = v289
+	v291 = *(*int32)(unsafe.Add(mBase, uint32(v254)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+36)) = v252
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+32)) = v253
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+28)) = v291
+	v296 = v204 + int32(-44)
+	v297 = F_BufTableHashCode(m, v296)
 	mBase = m.M
-	v297 = m.ExcPending
-	if v297 != 0 {
+	v298 = m.ExcPending
+	if v298 != 0 {
 		goto L66
 	} else {
 		goto L72
 	}
 L72:
 	;
-	v299 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[8]))
-	v306 = v299 + v296&int32(127)<<(uint(int32(7))%32) + int32(_a_F_read_stream_start_pending_read_3)
-	v308 = F_LWLockAcquire(m, v306, int32(1))
+	v300 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[8]))
+	v307 = v300 + v297&int32(127)<<(uint(int32(7))%32) + int32(_a_F_read_stream_start_pending_read_3)
+	v309 = F_LWLockAcquire(m, v307, int32(1))
 	mBase = m.M
-	v309 = m.ExcPending
-	if v309 != 0 {
+	v310 = m.ExcPending
+	if v310 != 0 {
 		goto L66
 	} else {
 		goto L73
 	}
 L73:
 	;
-	v312 = F_BufTableLookup(m, v205+int32(-44), v296)
+	v311 = F_BufTableLookup(m, v296, v297)
 	mBase = m.M
-	v313 = m.ExcPending
-	if v313 != 0 {
+	v312 = m.ExcPending
+	if v312 != 0 {
 		goto L66
 	} else {
 		goto L75
 	}
 L74:
 	;
-	v510 = int32(_a_F_read_stream_start_pending_read_4)
-	v512 = *(*int64)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[9]))
-	*(*int64)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[9])) = v512 + int64(1)
-	v519 = v503
-	v521 = int32(1)
-	v528 = int32(0)
-	v537 = v278
+	v509 = int32(_a_F_read_stream_start_pending_read_4)
+	v511 = *(*int64)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[9]))
+	*(*int64)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[9])) = v511 + int64(1)
+	v518 = v502
+	v520 = int32(1)
+	v526 = int32(0)
+	v535 = v279
 	goto L62
 L75:
 	;
-	if int32(0) <= v312 {
+	if int32(0) <= v311 {
 		goto L76
 	} else {
 		goto L77
 	}
 L76:
 	;
-	v318 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[4]))
-	v321 = v318 + v312<<(uint(int32(6))%32)
-	v322 = F_PinBuffer(m, v321, v277)
+	v317 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[4]))
+	v320 = v317 + v311<<(uint(int32(6))%32)
+	v321 = F_PinBuffer(m, v320, v278)
 	mBase = m.M
-	v323 = m.ExcPending
-	if v323 != 0 {
+	v322 = m.ExcPending
+	if v322 != 0 {
 		goto L66
 	} else {
 		goto L79
@@ -1210,94 +1199,94 @@ L77:
 	goto L78
 L78:
 	;
-	F_LWLockRelease(m, v306)
+	F_LWLockRelease(m, v307)
 	mBase = m.M
-	v329 = m.ExcPending
-	if v329 != 0 {
+	v328 = m.ExcPending
+	if v328 != 0 {
 		goto L66
 	} else {
 		goto L82
 	}
 L79:
 	;
-	F_LWLockRelease(m, v306)
+	F_LWLockRelease(m, v307)
 	mBase = m.M
-	v325 = m.ExcPending
-	if v325 != 0 {
+	v324 = m.ExcPending
+	if v324 != 0 {
 		goto L66
 	} else {
 		goto L80
 	}
 L80:
 	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v207)+19)) = uint8(v322)
-	if v322 != 0 {
-		v503 = v321
+	*(*uint8)(unsafe.Add(mBase, uint32(v206)+19)) = uint8(v321)
+	if v321 != 0 {
+		v502 = v320
 		goto L74
 	} else {
 		goto L81
 	}
 L81:
 	;
-	v519 = v321
-	v521 = int32(0)
-	v528 = int32(0)
-	v537 = v278
+	v518 = v320
+	v520 = int32(0)
+	v526 = int32(0)
+	v535 = v279
 	goto L62
 L82:
 	;
-	v330 = F_GetVictimBuffer(m, v277, v278)
+	v329 = F_GetVictimBuffer(m, v278, v279)
 	mBase = m.M
-	v331 = m.ExcPending
-	if v331 != 0 {
+	v330 = m.ExcPending
+	if v330 != 0 {
 		goto L66
 	} else {
 		goto L83
 	}
 L83:
 	;
-	v333 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[4]))
-	v335 = F_LWLockAcquire(m, v306, int32(0))
+	v332 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[4]))
+	v334 = F_LWLockAcquire(m, v307, int32(0))
 	mBase = m.M
-	v336 = m.ExcPending
-	if v336 != 0 {
+	v335 = m.ExcPending
+	if v335 != 0 {
 		goto L66
 	} else {
 		goto L84
 	}
 L84:
 	;
-	v339 = v333 + v330<<(uint(int32(6))%32)
-	v341 = v339 + int32(-64)
-	v345 = v339 - int32(44)
-	v346 = *(*int32)(unsafe.Add(mBase, uint32(v345)))
-	v347 = F_BufTableInsert(m, v205+int32(-44), v296, v346)
+	v338 = v332 + v329<<(uint(int32(6))%32)
+	v340 = v338 + int32(-64)
+	v344 = v338 - int32(44)
+	v345 = *(*int32)(unsafe.Add(mBase, uint32(v344)))
+	v346 = F_BufTableInsert(m, v204+int32(-44), v297, v345)
 	mBase = m.M
-	v348 = m.ExcPending
-	if v348 != 0 {
+	v347 = m.ExcPending
+	if v347 != 0 {
 		goto L66
 	} else {
 		goto L85
 	}
 L85:
 	;
-	if v347 < int32(0) {
+	if v346 < int32(0) {
 		goto L86
 	} else {
 		goto L87
 	}
 L86:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+60)) = int32(_a_F_read_stream_start_pending_read_5)
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+56)) = int32(_a_F_read_stream_start_pending_read_6)
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+52)) = int32(_a_F_read_stream_start_pending_read_7)
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+48)) = int32(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v207)+40)) = int64(0)
-	v362 = v339 - int32(40)
-	v363 = *(*int32)(unsafe.Add(mBase, uint32(v362)))
-	v364 = int32(_a_F_read_stream_start_pending_read_8)
-	*(*int32)(unsafe.Add(mBase, uint32(v362))) = v363 | v364
-	if v363&v364 != 0 {
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+60)) = int32(_a_F_read_stream_start_pending_read_5)
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+56)) = int32(_a_F_read_stream_start_pending_read_6)
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+52)) = int32(_a_F_read_stream_start_pending_read_7)
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+48)) = int32(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v206)+40)) = int64(0)
+	v361 = v338 - int32(40)
+	v362 = *(*int32)(unsafe.Add(mBase, uint32(v361)))
+	v363 = int32(_a_F_read_stream_start_pending_read_8)
+	*(*int32)(unsafe.Add(mBase, uint32(v361))) = v362 | v363
+	if v362&v363 != 0 {
 		goto L89
 	} else {
 		goto L90
@@ -1307,12 +1296,12 @@ L87:
 	goto L88
 L88:
 	;
-	v481 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[7]))
-	v482 = *(*int32)(unsafe.Add(mBase, uint32(v345)))
-	F_ResourceOwnerForget(m, v481, v482+int32(1), int32(_a_F_read_stream_start_pending_read_9))
+	v480 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[7]))
+	v481 = *(*int32)(unsafe.Add(mBase, uint32(v344)))
+	F_ResourceOwnerForget(m, v480, v481+int32(1), int32(_a_F_read_stream_start_pending_read_9))
 	mBase = m.M
-	v487 = m.ExcPending
-	if v487 != 0 {
+	v486 = m.ExcPending
+	if v486 != 0 {
 		goto L66
 	} else {
 		goto L114
@@ -1322,38 +1311,38 @@ L89:
 	goto L92
 L90:
 	;
-	v411 = v363
+	v411 = v362
 	goto L91
 L91:
 	;
-	v434 = int32(_a_F_read_stream_start_pending_read_10)
-	v435 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[10]))
-	v437 = *(*int32)(unsafe.Add(mBase, uint32(v205+int32(-24))+8))
-	if v437 == int32(0) {
+	v433 = int32(_a_F_read_stream_start_pending_read_10)
+	v434 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[10]))
+	v436 = *(*int32)(unsafe.Add(mBase, uint32(v204+int32(-24))+8))
+	if v436 == int32(0) {
 		goto L99
 	} else {
 		goto L100
 	}
 L92:
 	;
-	F_perform_spin_delay(m, v205+int32(-24))
+	F_perform_spin_delay(m, v204+int32(-24))
 	mBase = m.M
-	v398 = m.ExcPending
-	if v398 != 0 {
+	v397 = m.ExcPending
+	if v397 != 0 {
 		goto L66
 	} else {
 		goto L94
 	}
 L93:
 	;
-	v411 = v399
+	v411 = v398
 	goto L91
 L94:
 	;
-	v399 = *(*int32)(unsafe.Add(mBase, uint32(v362)))
-	v400 = int32(_a_F_read_stream_start_pending_read_8)
-	*(*int32)(unsafe.Add(mBase, uint32(v362))) = v399 | v400
-	if v399&v400 != 0 {
+	v398 = *(*int32)(unsafe.Add(mBase, uint32(v361)))
+	v399 = int32(_a_F_read_stream_start_pending_read_8)
+	*(*int32)(unsafe.Add(mBase, uint32(v361))) = v398 | v399
+	if v398&v399 != 0 {
 		goto L92
 	} else {
 		goto L95
@@ -1363,14 +1352,14 @@ L95:
 	goto L93
 L96:
 	;
-	v454 = *(*int64)(unsafe.Add(mBase, uint32(v207)+20))
-	*(*int64)(unsafe.Add(mBase, uint32(v341))) = v454
-	v456 = *(*int32)(unsafe.Add(mBase, uint32(v207)+36))
-	*(*int32)(unsafe.Add(mBase, uint32(v341)+16)) = v456
-	v458 = *(*int64)(unsafe.Add(mBase, uint32(v207)+28))
-	*(*int64)(unsafe.Add(mBase, uint32(v341)+8)) = v458
-	v462 = int32(-2113667072)
-	if v254 == int32(3) {
+	v453 = *(*int32)(unsafe.Add(mBase, uint32(v206)+36))
+	*(*int32)(unsafe.Add(mBase, uint32(v340)+16)) = v453
+	v455 = *(*int64)(unsafe.Add(mBase, uint32(v206)+28))
+	*(*int64)(unsafe.Add(mBase, uint32(v340)+8)) = v455
+	v457 = *(*int64)(unsafe.Add(mBase, uint32(v206)+20))
+	*(*int64)(unsafe.Add(mBase, uint32(v340))) = v457
+	v461 = int32(-2113667072)
+	if v253 == int32(3) {
 		goto L107
 	} else {
 		goto L108
@@ -1380,11 +1369,11 @@ L97:
 	goto L96
 L98:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[10])) = v452
+	*(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[10])) = v451
 	goto L97
 L99:
 	;
-	if int32(999) < v435 {
+	if int32(999) < v434 {
 		goto L97
 	} else {
 		goto L102
@@ -1394,164 +1383,163 @@ L100:
 	goto L101
 L101:
 	;
-	if v435 < int32(11) {
+	if v434 < int32(11) {
 		goto L97
 	} else {
 		goto L106
 	}
 L102:
 	;
-	v442 = int32(900)
-	if v442 <= v435 {
+	v441 = int32(900)
+	if v441 <= v434 {
 		goto L103
 	} else {
 		goto L104
 	}
 L103:
 	;
-	v445 = v442
+	v444 = v441
 	goto L105
 L104:
 	;
-	v445 = v435
+	v444 = v434
 	goto L105
 L105:
 	;
-	v452 = v445 + int32(100)
+	v451 = v444 + int32(100)
 	goto L98
 L106:
 	;
-	v452 = v435 - int32(1)
+	v451 = v434 - int32(1)
 	goto L98
 L107:
 	;
-	v467 = v462
+	v466 = v461
 	goto L109
 L108:
 	;
-	v467 = int32(33816576)
+	v466 = int32(33816576)
 	goto L109
 L109:
 	;
-	if v257 == int32(112) {
+	if v256 == int32(112) {
 		goto L110
 	} else {
 		goto L111
 	}
 L110:
 	;
-	v470 = v462
+	v469 = v461
 	goto L112
 L111:
 	;
-	v470 = v467
+	v469 = v466
 	goto L112
 L112:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v362))) = v411&int32(-38010881) | v470
-	F_LWLockRelease(m, v306)
+	*(*int32)(unsafe.Add(mBase, uint32(v361))) = v411&int32(-38010881) | v469
+	F_LWLockRelease(m, v307)
 	mBase = m.M
-	v474 = m.ExcPending
-	if v474 != 0 {
+	v473 = m.ExcPending
+	if v473 != 0 {
 		goto L66
 	} else {
 		goto L113
 	}
 L113:
 	;
-	v475 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v207)+19)) = uint8(v475)
-	v519 = v341
-	v521 = v475
-	v528 = v475
-	v537 = v278
+	v474 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v206)+19)) = uint8(v474)
+	v518 = v340
+	v520 = v474
+	v526 = v474
+	v535 = v279
 	goto L62
 L114:
 	;
-	F_UnpinBufferNoOwner(m, v341)
+	F_UnpinBufferNoOwner(m, v340)
 	mBase = m.M
-	v489 = m.ExcPending
-	if v489 != 0 {
+	v488 = m.ExcPending
+	if v488 != 0 {
 		goto L66
 	} else {
 		goto L115
 	}
 L115:
 	;
-	F_StrategyFreeBuffer(m, v341)
+	F_StrategyFreeBuffer(m, v340)
 	mBase = m.M
-	v491 = m.ExcPending
-	if v491 != 0 {
+	v490 = m.ExcPending
+	if v490 != 0 {
 		goto L66
 	} else {
 		goto L116
 	}
 L116:
 	;
-	v493 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[4]))
-	v496 = v493 + v347<<(uint(int32(6))%32)
-	v497 = F_PinBuffer(m, v496, v277)
+	v492 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[4]))
+	v495 = v492 + v346<<(uint(int32(6))%32)
+	v496 = F_PinBuffer(m, v495, v278)
 	mBase = m.M
-	v498 = m.ExcPending
-	if v498 != 0 {
+	v497 = m.ExcPending
+	if v497 != 0 {
 		goto L66
 	} else {
 		goto L117
 	}
 L117:
 	;
-	F_LWLockRelease(m, v306)
+	F_LWLockRelease(m, v307)
 	mBase = m.M
-	v500 = m.ExcPending
-	if v500 != 0 {
+	v499 = m.ExcPending
+	if v499 != 0 {
 		goto L66
 	} else {
 		goto L118
 	}
 L118:
 	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v207)+19)) = uint8(v497)
-	if v497 != 0 {
-		v503 = v496
+	*(*uint8)(unsafe.Add(mBase, uint32(v206)+19)) = uint8(v496)
+	if v496 != 0 {
+		v502 = v495
 		goto L74
 	} else {
 		goto L119
 	}
 L119:
 	;
-	v519 = v496
-	v521 = int32(0)
-	v528 = int32(0)
-	v537 = v278
+	v518 = v495
+	v520 = int32(0)
+	v526 = int32(0)
+	v535 = v279
 	goto L62
 L120:
 	;
-	v634 = *(*int32)(unsafe.Add(mBase, uint32(v519)+20))
-	v635 = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v242))) = v634 + v635
-	v638 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v207)+19)))
-	if v638&v635 != 0 {
+	v623 = *(*int32)(unsafe.Add(mBase, uint32(v518)+20))
+	*(*int32)(unsafe.Add(mBase, uint32(v241))) = v623 + int32(1)
+	v627 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v206)+19)))
+	if v627 != 0 {
 		goto L55
 	} else {
 		goto L143
 	}
 L121:
 	;
-	v597 = v528*int32(320) + v537<<(uint(int32(6))%32)
-	v603 = *(*int64)(unsafe.Add(mBase, uint32(v597)+uint32(_c_F_read_stream_start_pending_read[11])))
-	*(*int64)(unsafe.Add(mBase, uint32(v597)+uint32(_c_F_read_stream_start_pending_read[11]))) = v603 + int64(1)
-	v609 = *(*int64)(unsafe.Add(mBase, uint32(v597)+uint32(_c_F_read_stream_start_pending_read[12])))
-	*(*int64)(unsafe.Add(mBase, uint32(v597)+uint32(_c_F_read_stream_start_pending_read[12]))) = v609
-	v611 = int32(1)
-	F_pgstat_count_backend_io_op(m, v528, v537, int32(2), v611, int64(0))
+	v590 = v526*int32(320) + v535<<(uint(int32(6))%32)
+	v594 = *(*int64)(unsafe.Add(mBase, uint32(v590)+uint32(_c_F_read_stream_start_pending_read[11])))
+	*(*int64)(unsafe.Add(mBase, uint32(v590)+uint32(_c_F_read_stream_start_pending_read[11]))) = v594 + int64(1)
+	v598 = *(*int64)(unsafe.Add(mBase, uint32(v590)+uint32(_c_F_read_stream_start_pending_read[12])))
+	*(*int64)(unsafe.Add(mBase, uint32(v590)+uint32(_c_F_read_stream_start_pending_read[12]))) = v598
+	v600 = int32(1)
+	F_pgstat_count_backend_io_op(m, v526, v535, int32(2), v600, int64(0))
 	mBase = m.M
-	*(*uint8)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[13])) = uint8(v611)
-	*(*uint8)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[14])) = uint8(v611)
+	*(*uint8)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[13])) = uint8(v600)
+	*(*uint8)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[14])) = uint8(v600)
 	goto L141
 L122:
 	;
-	v543 = *(*int32)(unsafe.Add(mBase, uint32(v256)+272))
-	if v543 == int32(0) {
+	v542 = *(*int32)(unsafe.Add(mBase, uint32(v255)+272))
+	if v542 == int32(0) {
 		goto L127
 	} else {
 		goto L128
@@ -1561,30 +1549,30 @@ L123:
 	goto L124
 L124:
 	;
-	if v521 == int32(0) {
+	if v520 == int32(0) {
 		goto L120
 	} else {
 		goto L140
 	}
 L125:
 	;
-	v567 = *(*int32)(unsafe.Add(mBase, uint32(v256)+272))
-	if v567 != 0 {
+	v563 = *(*int32)(unsafe.Add(mBase, uint32(v255)+272))
+	if v563 != 0 {
 		goto L134
 	} else {
 		goto L135
 	}
 L126:
 	;
-	if v521 == int32(0) {
+	if v520 == int32(0) {
 		goto L120
 	} else {
 		goto L133
 	}
 L127:
 	;
-	v546 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v256)+268)))
-	if v546 != int32(1) {
+	v545 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v255)+268)))
+	if v545 != int32(1) {
 		goto L126
 	} else {
 		goto L130
@@ -1594,26 +1582,26 @@ L128:
 	goto L129
 L129:
 	;
-	v559 = *(*int64)(unsafe.Add(mBase, uint32(v543)+112))
-	*(*int64)(unsafe.Add(mBase, uint32(v543)+112)) = v559 + int64(1)
+	v556 = *(*int64)(unsafe.Add(mBase, uint32(v542)+112))
+	*(*int64)(unsafe.Add(mBase, uint32(v542)+112)) = v556 + int64(1)
 	goto L126
 L130:
 	;
-	F_pgstat_assoc_relation(m, v256)
+	F_pgstat_assoc_relation(m, v255)
 	mBase = m.M
-	v550 = m.ExcPending
-	if v550 != 0 {
+	v549 = m.ExcPending
+	if v549 != 0 {
 		goto L66
 	} else {
 		goto L131
 	}
 L131:
 	;
-	v551 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v207)+19)))
-	v552 = *(*int32)(unsafe.Add(mBase, uint32(v256)+272))
-	v553 = *(*int64)(unsafe.Add(mBase, uint32(v552)+112))
-	*(*int64)(unsafe.Add(mBase, uint32(v552)+112)) = v553 + int64(1)
-	if v551&int32(1) != 0 {
+	v550 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v206)+19)))
+	v551 = *(*int32)(unsafe.Add(mBase, uint32(v255)+272))
+	v552 = *(*int64)(unsafe.Add(mBase, uint32(v551)+112))
+	*(*int64)(unsafe.Add(mBase, uint32(v551)+112)) = v552 + int64(1)
+	if v550 != 0 {
 		goto L125
 	} else {
 		goto L132
@@ -1626,37 +1614,37 @@ L133:
 	goto L125
 L134:
 	;
-	v568 = *(*int64)(unsafe.Add(mBase, uint32(v567)+120))
-	*(*int64)(unsafe.Add(mBase, uint32(v567)+120)) = v568 + int64(1)
+	v564 = *(*int64)(unsafe.Add(mBase, uint32(v563)+120))
+	*(*int64)(unsafe.Add(mBase, uint32(v563)+120)) = v564 + int64(1)
 	goto L121
 L135:
 	;
 	goto L136
 L136:
 	;
-	v572 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v256)+268)))
-	if v572 != int32(1) {
+	v568 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v255)+268)))
+	if v568 != int32(1) {
 		goto L121
 	} else {
 		goto L137
 	}
 L137:
 	;
-	F_pgstat_assoc_relation(m, v256)
+	F_pgstat_assoc_relation(m, v255)
 	mBase = m.M
-	v576 = m.ExcPending
-	if v576 != 0 {
+	v572 = m.ExcPending
+	if v572 != 0 {
 		goto L66
 	} else {
 		goto L138
 	}
 L138:
 	;
-	v577 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v207)+19)))
-	v578 = *(*int32)(unsafe.Add(mBase, uint32(v256)+272))
-	v579 = *(*int64)(unsafe.Add(mBase, uint32(v578)+120))
-	*(*int64)(unsafe.Add(mBase, uint32(v578)+120)) = v579 + int64(1)
-	if v577&int32(1) != 0 {
+	v573 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v206)+19)))
+	v574 = *(*int32)(unsafe.Add(mBase, uint32(v255)+272))
+	v575 = *(*int64)(unsafe.Add(mBase, uint32(v574)+120))
+	*(*int64)(unsafe.Add(mBase, uint32(v574)+120)) = v575 + int64(1)
+	if v573 != 0 {
 		goto L121
 	} else {
 		goto L139
@@ -1669,18 +1657,18 @@ L140:
 	goto L121
 L141:
 	;
-	v621 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[15])))
-	if v621 != int32(1) {
+	v610 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[15])))
+	if v610 != int32(1) {
 		goto L120
 	} else {
 		goto L142
 	}
 L142:
 	;
-	v624 = int32(_a_F_read_stream_start_pending_read_11)
-	v626 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[16]))
-	v628 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[17]))
-	*(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[16])) = v626 + v628
+	v613 = int32(_a_F_read_stream_start_pending_read_11)
+	v615 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[16]))
+	v617 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[17]))
+	*(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[16])) = v615 + v617
 	goto L120
 L143:
 	;
@@ -1690,385 +1678,354 @@ L144:
 	goto L55
 L145:
 	;
-	v759 = v222
+	v742 = v218
 	goto L50
 L146:
 	;
 	goto L147
 L147:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v210))) = int32(1)
-	v822 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v209))) = int32(1)
+	v802 = int32(0)
 	goto L49
 L148:
 	;
-	v756 = v222 + int32(1)
-	if v756 < v752 {
-		v215 = v752
-		v222 = v756
+	v739 = v218 + int32(1)
+	if v739 < v736 {
+		v214 = v736
+		v218 = v739
 		goto L52
 	} else {
-		goto L159
+		goto L157
 	}
 L149:
 	;
-	if v222 != 0 {
-		v752 = v215
+	v704 = int32(_a_F_read_stream_start_pending_read_12)
+	v706 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[18]))
+	v707 = int32(1)
+	v708 = v706 + v707
+	*(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[18])) = v708
+	*(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[18])) = v708 - v707
+	v719 = int32(_a_F_read_stream_start_pending_read_13) - v202&int32(_a_F_read_stream_start_pending_read_14)
+	if v214 <= v719 {
+		v736 = v214
 		goto L148
 	} else {
 		goto L150
 	}
 L150:
 	;
-	v714 = *(*int32)(unsafe.Add(mBase, uint32(v197)+4))
-	v715 = *(*int32)(unsafe.Add(mBase, uint32(v197)+12))
-	v716 = int32(_a_F_read_stream_start_pending_read_12)
-	v718 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[18]))
-	*(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[18])) = v718 + int32(1)
-	v722 = *(*int32)(unsafe.Add(mBase, uint32(v714)+36))
-	v727 = *(*int32)(unsafe.Add(mBase, uint32(v722*int32(80))+uint32(_c_F_read_stream_start_pending_read[19])))
-	v728 = m.T0[v727].(func(*base.Module, int32, int32, int32) int32)(m, v714, v715, v203)
+	v723 = F_errstart(m, int32(13), int32(0))
 	mBase = m.M
-	v729 = m.ExcPending
-	if v729 != 0 {
+	v724 = m.ExcPending
+	if v724 != 0 {
 		goto L66
 	} else {
 		goto L151
 	}
 L151:
 	;
-	v730 = int32(_a_F_read_stream_start_pending_read_12)
-	v732 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[18]))
-	*(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[18])) = v732 - int32(1)
-	if v215 <= v728 {
-		v752 = v215
-		goto L148
-	} else {
+	if v723 != 0 {
 		goto L152
-	}
-L152:
-	;
-	v739 = F_errstart(m, int32(13), int32(0))
-	mBase = m.M
-	v740 = m.ExcPending
-	if v740 != 0 {
-		goto L66
 	} else {
 		goto L153
 	}
-L153:
+L152:
 	;
-	if v739 != 0 {
-		goto L154
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+8)) = v719
+	*(*int32)(unsafe.Add(mBase, uint32(v206)+4)) = v214
+	*(*int32)(unsafe.Add(mBase, uint32(v206))) = v202
+	F_errmsg_internal(m, int32(_a_F_read_stream_start_pending_read_15), v206)
+	mBase = m.M
+	v730 = m.ExcPending
+	if v730 != 0 {
+		goto L66
 	} else {
 		goto L155
 	}
+L153:
+	;
+	goto L154
 L154:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+8)) = v728
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+4)) = v215
-	*(*int32)(unsafe.Add(mBase, uint32(v207))) = v203
-	F_errmsg_internal(m, int32(_a_F_read_stream_start_pending_read_13), v207)
-	mBase = m.M
-	v746 = m.ExcPending
-	if v746 != 0 {
-		goto L66
-	} else {
-		goto L157
-	}
+	v736 = v719
+	goto L148
 L155:
 	;
-	goto L156
-L156:
-	;
-	v752 = v728
-	goto L148
-L157:
-	;
-	F_errfinish(m, int32(_a_F_read_stream_start_pending_read_7), int32(1382), int32(_a_F_read_stream_start_pending_read_14))
+	F_errfinish(m, int32(_a_F_read_stream_start_pending_read_7), int32(1382), int32(_a_F_read_stream_start_pending_read_16))
 	mBase = m.M
-	v751 = m.ExcPending
-	if v751 != 0 {
+	v735 = m.ExcPending
+	if v735 != 0 {
 		goto L66
 	} else {
-		goto L158
+		goto L156
 	}
-L158:
+L156:
 	;
-	goto L156
-L159:
+	goto L154
+L157:
 	;
 	goto L53
-L160:
+L158:
 	;
-	v796 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[20]))
-	if v796 != 0 {
-		goto L161
+	v779 = *(*int32)(unsafe.Add(mBase, _c_F_read_stream_start_pending_read[19]))
+	if v779 != 0 {
+		goto L159
+	} else {
+		goto L160
+	}
+L159:
+	;
+	v780 = F_AsyncReadBuffers(m, v196, v209)
+	mBase = m.M
+	v781 = m.ExcPending
+	if v781 != 0 {
+		goto L66
 	} else {
 		goto L162
 	}
+L160:
+	;
+	goto L161
 L161:
 	;
-	v797 = F_AsyncReadBuffers(m, v197, v210)
+	v784 = *(*int32)(unsafe.Add(mBase, uint32(v196)+28))
+	*(*int32)(unsafe.Add(mBase, uint32(v196)+28)) = v784 | int32(8)
+	v788 = int32(1)
+	if v52&int32(2) == int32(0) {
+		v802 = v788
+		goto L49
+	} else {
+		goto L163
+	}
+L162:
+	;
+	v782 = *(*int32)(unsafe.Add(mBase, uint32(v209)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v196)+32)) = uint16(v782)
+	v802 = v780
+	goto L49
+L163:
+	;
+	v793 = *(*int32)(unsafe.Add(mBase, uint32(v196)+4))
+	v794 = *(*int32)(unsafe.Add(mBase, uint32(v196)+12))
+	v795 = F_smgrprefetch(m, v793, v794, v202, v742)
 	mBase = m.M
-	v798 = m.ExcPending
-	if v798 != 0 {
+	v796 = m.ExcPending
+	if v796 != 0 {
 		goto L66
 	} else {
 		goto L164
 	}
-L162:
-	;
-	goto L163
-L163:
-	;
-	v801 = *(*int32)(unsafe.Add(mBase, uint32(v197)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(v197)+28)) = v801 | int32(8)
-	v805 = int32(1)
-	if v52&int32(2) == int32(0) {
-		v822 = v805
-		goto L49
-	} else {
-		goto L165
-	}
 L164:
 	;
-	v799 = *(*int32)(unsafe.Add(mBase, uint32(v210)))
-	*(*uint16)(unsafe.Add(mBase, uint32(v197)+32)) = uint16(v799)
-	v822 = v797
+	v802 = v788
 	goto L49
 L165:
 	;
-	v810 = *(*int32)(unsafe.Add(mBase, uint32(v197)+4))
-	v811 = *(*int32)(unsafe.Add(mBase, uint32(v197)+12))
-	v812 = F_smgrprefetch(m, v810, v811, v203, v759)
-	mBase = m.M
-	v813 = m.ExcPending
-	if v813 != 0 {
-		goto L66
+	v861 = int32(0)
+	if v121 <= v860 {
+		v906 = v861
+		goto L173
 	} else {
-		goto L166
+		goto L174
 	}
 L166:
 	;
-	v822 = v805
-	goto L49
+	v832 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+14)))
+	if v832 < int32(2) {
+		v860 = v826
+		goto L165
+	} else {
+		goto L169
+	}
 L167:
 	;
-	v878 = v877 + v124
-	v879 = int32(0)
-	if v120 <= v877 {
-		v919 = v879
-		goto L175
-	} else {
-		goto L176
-	}
+	goto L168
 L168:
 	;
-	v849 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+14)))
-	if v849 < int32(2) {
-		v877 = v843
-		goto L167
+	v838 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	*(*uint16)(unsafe.Add(mBase, uint32(v838+v192))) = uint16(v123)
+	v841 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
+	v842 = int32(1)
+	v843 = v841 + v842
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v843)
+	v845 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+70)))
+	v847 = v845 + v842
+	v849 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0))))
+	if v849 != v847&int32(_a_F_read_stream_start_pending_read_17) {
+		goto L170
 	} else {
 		goto L171
 	}
 L169:
 	;
-	goto L170
+	v836 = v832 - int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+14)) = uint16(v836)
+	v860 = v826
+	goto L165
 L170:
 	;
-	v855 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-	*(*uint16)(unsafe.Add(mBase, uint32(v855+v193))) = uint16(v124)
-	v858 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
-	v859 = int32(1)
-	v860 = v858 + v859
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v860)
-	v862 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+70)))
-	v864 = v862 + v859
-	v866 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0))))
-	if v866 != v864&int32(_a_F_read_stream_start_pending_read_15) {
-		goto L172
-	} else {
-		goto L173
-	}
+	v853 = v847
+	goto L172
 L171:
 	;
-	v853 = v849 - int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+14)) = uint16(v853)
-	v877 = v843
-	goto L167
+	v853 = int32(0)
+	goto L172
 L172:
 	;
-	v870 = v864
-	goto L174
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+70)) = uint16(v853)
+	v855 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
+	v856 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v855 + v856
+	v860 = v855
+	goto L165
 L173:
 	;
-	v870 = int32(0)
-	goto L174
-L174:
-	;
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+70)) = uint16(v870)
-	v872 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
-	v873 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v872 + v873
-	v877 = v872
-	goto L167
-L175:
-	;
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+10)) = uint16(v919)
-	v948 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+6)))
-	v950 = base.I32_extend16_s(v124 + (v919 + v877) - v948)
-	if int32(0) < v950 {
-		goto L181
-	} else {
-		goto L182
-	}
-L176:
-	;
-	v881 = v120 - v877
-	v883 = v879
-	goto L177
-L177:
-	;
-	v912 = *(*int32)(unsafe.Add(mBase, uint32(v199+(v883+v878)<<(uint(int32(2))%32))))
-	if v912 == int32(0) {
-		v919 = v883
-		goto L175
-	} else {
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+10)) = uint16(v906)
+	v935 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+6)))
+	v937 = base.I32_extend16_s(v123 + (v906 + v860) - v935)
+	if v937 <= int32(0) {
 		goto L179
-	}
-L178:
-	;
-	v919 = v881
-	goto L175
-L179:
-	;
-	v916 = v883 + int32(1)
-	if v916 != v881 {
-		v883 = v916
-		goto L177
 	} else {
 		goto L180
 	}
+L174:
+	;
+	v863 = int32(2)
+	v869 = v121 - v860
+	v871 = v861
+	goto L175
+L175:
+	;
+	v899 = *(*int32)(unsafe.Add(mBase, uint32(v198+v860<<(uint(v863)%32)+v123<<(uint(v863)%32)+v871<<(uint(int32(2))%32))))
+	if v899 == int32(0) {
+		v906 = v871
+		goto L173
+	} else {
+		goto L177
+	}
+L176:
+	;
+	v906 = v869
+	goto L173
+L177:
+	;
+	v903 = v871 + int32(1)
+	if v903 != v869 {
+		v871 = v903
+		goto L175
+	} else {
+		goto L178
+	}
+L178:
+	;
+	goto L176
+L179:
+	;
+	v949 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+48)) = v949 + v860
+	v952 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+52)))
+	v953 = v952 - v860
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+52)) = uint16(v953)
+	v955 = v860 + v123
+	if v935 <= base.I32_extend16_s(v955) {
+		goto L182
+	} else {
+		goto L183
+	}
 L180:
 	;
-	goto L178
+	v941 = v937 << (uint(int32(2)) % 32)
+	if v941 == int32(0) {
+		goto L179
+	} else {
+		goto L181
+	}
 L181:
 	;
-	v953 = int32(2)
-	v957 = v950 << (uint(v953) % 32)
-	if v957 != 0 {
-		goto L185
-	} else {
-		goto L186
-	}
+	base.MemoryCopy(m, v198, v198+v935<<(uint(int32(2))%32), v941)
+	goto L179
 L182:
 	;
-	goto L183
+	v959 = v935
+	goto L184
 L183:
 	;
-	v960 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+48)) = v960 + v877
-	v963 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+52)))
-	v964 = v963 - v877
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+52)) = uint16(v964)
-	if v948 <= base.I32_extend16_s(v878) {
-		goto L188
-	} else {
-		goto L189
-	}
+	v959 = int32(0)
+	goto L184
 L184:
 	;
-	goto L183
-L185:
-	;
-	v958 = F__emscripten_memcpy_bulkmem(m, v199, v199+v948<<(uint(v953)%32), v957)
-	mBase = m.M
-	goto L187
-L186:
-	;
-	goto L187
-L187:
-	;
-	goto L184
-L188:
-	;
-	v969 = v948
-	goto L190
-L189:
-	;
-	v969 = int32(0)
-	goto L190
-L190:
-	;
-	v970 = v878 - v969
-	*(*uint16)(unsafe.Add(mBase, uint32(l0)+76)) = uint16(v970)
-	v981 = int32(1)
+	v960 = v955 - v959
+	*(*uint16)(unsafe.Add(mBase, uint32(l0)+76)) = uint16(v960)
+	v967 = int32(1)
 	goto L35
 }
 func F_stream_cleanup_files(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
-	var v16 int32
-	_ = v16
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v12 int32
+	_ = v12
 	var v17 int32
 	_ = v17
-	var v19 int32
-	_ = v19
+	var v18 int32
+	_ = v18
 	var v20 int32
 	_ = v20
-	var v25 int32
-	_ = v25
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
 	var v32 int32
 	_ = v32
 	var v33 int32
 	_ = v33
-	var v35 int32
-	_ = v35
 	var v36 int32
 	_ = v36
-	var v41 int32
-	_ = v41
-	v4 = m.G0
-	v6 = v4 - int32(1056)
-	m.G0 = v6
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = l1
-	v16 = F_pg_snprintf(m, v6+int32(32), int32(1024), int32(_a_F_stream_cleanup_files_0), v6+int32(16))
+	v5 = m.G0
+	v7 = v5 - int32(1056)
+	m.G0 = v7
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = l0
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = l1
+	v12 = v7 + int32(32)
+	v17 = F_pg_snprintf(m, v12, int32(1024), int32(_a_F_stream_cleanup_files_0), v7+int32(16))
 	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v18 = m.ExcPending
+	if v18 != 0 {
 		return
 	} else {
-		v19 = *(*int32)(unsafe.Add(mBase, _c_F_stream_cleanup_files[0]))
-		v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+60))
-		F_BufFileDeleteFileSet(m, v20, v6+int32(32), int32(0))
+		v20 = *(*int32)(unsafe.Add(mBase, _c_F_stream_cleanup_files[0]))
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+60))
+		F_BufFileDeleteFileSet(m, v21, v12, int32(0))
 		mBase = m.M
-		v25 = m.ExcPending
-		if v25 != 0 {
+		v24 = m.ExcPending
+		if v24 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = l1
-			*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-			v32 = F_pg_snprintf(m, v6+int32(32), int32(1024), int32(_a_F_stream_cleanup_files_1), v6)
+			*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l1
+			*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
+			v29 = F_pg_snprintf(m, v12, int32(1024), int32(_a_F_stream_cleanup_files_1), v7)
 			mBase = m.M
-			v33 = m.ExcPending
-			if v33 != 0 {
+			v30 = m.ExcPending
+			if v30 != 0 {
 				return
 			} else {
-				v35 = *(*int32)(unsafe.Add(mBase, _c_F_stream_cleanup_files[0]))
-				v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+60))
-				F_BufFileDeleteFileSet(m, v36, v6+int32(32), int32(1))
+				v32 = *(*int32)(unsafe.Add(mBase, _c_F_stream_cleanup_files[0]))
+				v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+60))
+				F_BufFileDeleteFileSet(m, v33, v12, int32(1))
 				mBase = m.M
-				v41 = m.ExcPending
-				if v41 != 0 {
+				v36 = m.ExcPending
+				if v36 != 0 {
 					return
 				} else {
-					m.G0 = v6 + int32(1056)
+					m.G0 = v7 + int32(1056)
 					return
 				}
 			}
@@ -2122,6 +2079,8 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 	_ = v56
 	var v57 int32
 	_ = v57
+	var v61 int32
+	_ = v61
 	var v66 int32
 	_ = v66
 	var v67 int32
@@ -2130,42 +2089,42 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 	_ = v70
 	var v71 int32
 	_ = v71
-	var v77 int32
-	_ = v77
+	var v75 int32
+	_ = v75
+	var v80 int32
+	_ = v80
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
-	var v83 int32
-	_ = v83
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v90 int32
-	_ = v90
-	var v91 int32
-	_ = v91
-	var v94 int32
-	_ = v94
-	var v95 int32
-	_ = v95
-	var v105 int32
-	_ = v105
-	var v106 int32
-	_ = v106
-	var v111 int32
-	_ = v111
-	var v112 int32
-	_ = v112
-	var v116 int32
-	_ = v116
+	var v85 int32
+	_ = v85
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
+	var v92 int32
+	_ = v92
+	var v93 int32
+	_ = v93
+	var v103 int32
+	_ = v103
+	var v104 int32
+	_ = v104
+	var v109 int32
+	_ = v109
+	var v110 int32
+	_ = v110
+	var v114 int32
+	_ = v114
+	var v115 int32
+	_ = v115
 	var v117 int32
 	_ = v117
-	var v119 int32
-	_ = v119
+	var v121 int32
+	_ = v121
 	var v123 int32
 	_ = v123
-	var v125 int32
-	_ = v125
 	v6 = m.G0
 	v8 = v6 - int32(1056)
 	m.G0 = v8
@@ -2212,7 +2171,8 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 							v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+32))
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v57
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l0
-							v66 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(_a_F_stream_start_internal_0), v8+int32(16))
+							v61 = v8 + int32(32)
+							v66 = F_pg_snprintf(m, v61, int32(1024), int32(_a_F_stream_start_internal_0), v8+int32(16))
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
@@ -2225,44 +2185,44 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 									return
 								} else {
 									if v70 != 0 {
-										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(32)
+										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v61
 										F_errmsg_internal(m, int32(_a_F_stream_start_internal_1), v8)
 										mBase = m.M
-										v77 = m.ExcPending
-										if v77 != 0 {
+										v75 = m.ExcPending
+										if v75 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_stream_start_internal_2), int32(_a_F_stream_start_internal_3), int32(_a_F_stream_start_internal_4))
 											mBase = m.M
-											v82 = m.ExcPending
-											if v82 != 0 {
+											v80 = m.ExcPending
+											if v80 != 0 {
 												return
 											} else {
-												v83 = int32(_a_F_stream_start_internal_5)
-												v84 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
-												v87 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v87
-												v90 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-												v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+60))
+												v81 = int32(_a_F_stream_start_internal_5)
+												v82 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
+												v85 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v85
+												v88 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+												v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+60))
 												if l1 != 0 {
-													v94 = F_BufFileCreateFileSet(m, v91, v8+int32(32))
+													v92 = F_BufFileCreateFileSet(m, v89, v8+int32(32))
 													mBase = m.M
-													v95 = m.ExcPending
-													if v95 != 0 {
+													v93 = m.ExcPending
+													if v93 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v94
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v92
 														F_PopActiveSnapshot(m)
 														mBase = m.M
-														v123 = m.ExcPending
-														if v123 != 0 {
+														v121 = m.ExcPending
+														if v121 != 0 {
 															return
 														} else {
 															F_CommandCounterIncrement(m)
 															mBase = m.M
-															v125 = m.ExcPending
-															if v125 != 0 {
+															v123 = m.ExcPending
+															if v123 != 0 {
 																return
 															} else {
 																m.G0 = v8 + int32(1056)
@@ -2271,38 +2231,38 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 														}
 													}
 												} else {
-													v105 = F_BufFileOpenFileSet(m, v91, v8+int32(32), int32(2), int32(0))
+													v103 = F_BufFileOpenFileSet(m, v89, v8+int32(32), int32(2), int32(0))
 													mBase = m.M
-													v106 = m.ExcPending
-													if v106 != 0 {
+													v104 = m.ExcPending
+													if v104 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v105
-														v111 = F_BufFileSeek(m, v105, int32(0), int64(0), int32(2))
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v103
+														v109 = F_BufFileSeek(m, v103, int32(0), int64(0), int32(2))
 														mBase = m.M
-														v112 = m.ExcPending
-														if v112 != 0 {
+														v110 = m.ExcPending
+														if v110 != 0 {
 															return
 														} else {
-															*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-															v116 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-															v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+32))
-															F_subxact_info_read(m, v117, l0)
+															*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+															v114 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+															v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+32))
+															F_subxact_info_read(m, v115, l0)
 															mBase = m.M
-															v119 = m.ExcPending
-															if v119 != 0 {
+															v117 = m.ExcPending
+															if v117 != 0 {
 																return
 															} else {
 																F_PopActiveSnapshot(m)
 																mBase = m.M
-																v123 = m.ExcPending
-																if v123 != 0 {
+																v121 = m.ExcPending
+																if v121 != 0 {
 																	return
 																} else {
 																	F_CommandCounterIncrement(m)
 																	mBase = m.M
-																	v125 = m.ExcPending
-																	if v125 != 0 {
+																	v123 = m.ExcPending
+																	if v123 != 0 {
 																		return
 																	} else {
 																		m.G0 = v8 + int32(1056)
@@ -2316,31 +2276,31 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 											}
 										}
 									} else {
-										v83 = int32(_a_F_stream_start_internal_5)
-										v84 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
-										v87 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
-										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v87
-										v90 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-										v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+60))
+										v81 = int32(_a_F_stream_start_internal_5)
+										v82 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
+										v85 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
+										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v85
+										v88 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+										v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+60))
 										if l1 != 0 {
-											v94 = F_BufFileCreateFileSet(m, v91, v8+int32(32))
+											v92 = F_BufFileCreateFileSet(m, v89, v8+int32(32))
 											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
+											v93 = m.ExcPending
+											if v93 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v94
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v92
 												F_PopActiveSnapshot(m)
 												mBase = m.M
-												v123 = m.ExcPending
-												if v123 != 0 {
+												v121 = m.ExcPending
+												if v121 != 0 {
 													return
 												} else {
 													F_CommandCounterIncrement(m)
 													mBase = m.M
-													v125 = m.ExcPending
-													if v125 != 0 {
+													v123 = m.ExcPending
+													if v123 != 0 {
 														return
 													} else {
 														m.G0 = v8 + int32(1056)
@@ -2349,38 +2309,38 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 												}
 											}
 										} else {
-											v105 = F_BufFileOpenFileSet(m, v91, v8+int32(32), int32(2), int32(0))
+											v103 = F_BufFileOpenFileSet(m, v89, v8+int32(32), int32(2), int32(0))
 											mBase = m.M
-											v106 = m.ExcPending
-											if v106 != 0 {
+											v104 = m.ExcPending
+											if v104 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v105
-												v111 = F_BufFileSeek(m, v105, int32(0), int64(0), int32(2))
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v103
+												v109 = F_BufFileSeek(m, v103, int32(0), int64(0), int32(2))
 												mBase = m.M
-												v112 = m.ExcPending
-												if v112 != 0 {
+												v110 = m.ExcPending
+												if v110 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-													v116 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-													v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+32))
-													F_subxact_info_read(m, v117, l0)
+													*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+													v114 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+													v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+32))
+													F_subxact_info_read(m, v115, l0)
 													mBase = m.M
-													v119 = m.ExcPending
-													if v119 != 0 {
+													v117 = m.ExcPending
+													if v117 != 0 {
 														return
 													} else {
 														F_PopActiveSnapshot(m)
 														mBase = m.M
-														v123 = m.ExcPending
-														if v123 != 0 {
+														v121 = m.ExcPending
+														if v121 != 0 {
 															return
 														} else {
 															F_CommandCounterIncrement(m)
 															mBase = m.M
-															v125 = m.ExcPending
-															if v125 != 0 {
+															v123 = m.ExcPending
+															if v123 != 0 {
 																return
 															} else {
 																m.G0 = v8 + int32(1056)
@@ -2417,7 +2377,8 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 									v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+32))
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v57
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l0
-									v66 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(_a_F_stream_start_internal_0), v8+int32(16))
+									v61 = v8 + int32(32)
+									v66 = F_pg_snprintf(m, v61, int32(1024), int32(_a_F_stream_start_internal_0), v8+int32(16))
 									mBase = m.M
 									v67 = m.ExcPending
 									if v67 != 0 {
@@ -2430,44 +2391,44 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 											return
 										} else {
 											if v70 != 0 {
-												*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(32)
+												*(*int32)(unsafe.Add(mBase, uint32(v8))) = v61
 												F_errmsg_internal(m, int32(_a_F_stream_start_internal_1), v8)
 												mBase = m.M
-												v77 = m.ExcPending
-												if v77 != 0 {
+												v75 = m.ExcPending
+												if v75 != 0 {
 													return
 												} else {
 													F_errfinish(m, int32(_a_F_stream_start_internal_2), int32(_a_F_stream_start_internal_3), int32(_a_F_stream_start_internal_4))
 													mBase = m.M
-													v82 = m.ExcPending
-													if v82 != 0 {
+													v80 = m.ExcPending
+													if v80 != 0 {
 														return
 													} else {
-														v83 = int32(_a_F_stream_start_internal_5)
-														v84 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
-														v87 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v87
-														v90 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-														v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+60))
+														v81 = int32(_a_F_stream_start_internal_5)
+														v82 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
+														v85 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v85
+														v88 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+														v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+60))
 														if l1 != 0 {
-															v94 = F_BufFileCreateFileSet(m, v91, v8+int32(32))
+															v92 = F_BufFileCreateFileSet(m, v89, v8+int32(32))
 															mBase = m.M
-															v95 = m.ExcPending
-															if v95 != 0 {
+															v93 = m.ExcPending
+															if v93 != 0 {
 																return
 															} else {
-																*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-																*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v94
+																*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+																*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v92
 																F_PopActiveSnapshot(m)
 																mBase = m.M
-																v123 = m.ExcPending
-																if v123 != 0 {
+																v121 = m.ExcPending
+																if v121 != 0 {
 																	return
 																} else {
 																	F_CommandCounterIncrement(m)
 																	mBase = m.M
-																	v125 = m.ExcPending
-																	if v125 != 0 {
+																	v123 = m.ExcPending
+																	if v123 != 0 {
 																		return
 																	} else {
 																		m.G0 = v8 + int32(1056)
@@ -2476,38 +2437,38 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 																}
 															}
 														} else {
-															v105 = F_BufFileOpenFileSet(m, v91, v8+int32(32), int32(2), int32(0))
+															v103 = F_BufFileOpenFileSet(m, v89, v8+int32(32), int32(2), int32(0))
 															mBase = m.M
-															v106 = m.ExcPending
-															if v106 != 0 {
+															v104 = m.ExcPending
+															if v104 != 0 {
 																return
 															} else {
-																*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v105
-																v111 = F_BufFileSeek(m, v105, int32(0), int64(0), int32(2))
+																*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v103
+																v109 = F_BufFileSeek(m, v103, int32(0), int64(0), int32(2))
 																mBase = m.M
-																v112 = m.ExcPending
-																if v112 != 0 {
+																v110 = m.ExcPending
+																if v110 != 0 {
 																	return
 																} else {
-																	*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-																	v116 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-																	v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+32))
-																	F_subxact_info_read(m, v117, l0)
+																	*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+																	v114 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+																	v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+32))
+																	F_subxact_info_read(m, v115, l0)
 																	mBase = m.M
-																	v119 = m.ExcPending
-																	if v119 != 0 {
+																	v117 = m.ExcPending
+																	if v117 != 0 {
 																		return
 																	} else {
 																		F_PopActiveSnapshot(m)
 																		mBase = m.M
-																		v123 = m.ExcPending
-																		if v123 != 0 {
+																		v121 = m.ExcPending
+																		if v121 != 0 {
 																			return
 																		} else {
 																			F_CommandCounterIncrement(m)
 																			mBase = m.M
-																			v125 = m.ExcPending
-																			if v125 != 0 {
+																			v123 = m.ExcPending
+																			if v123 != 0 {
 																				return
 																			} else {
 																				m.G0 = v8 + int32(1056)
@@ -2521,31 +2482,31 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 													}
 												}
 											} else {
-												v83 = int32(_a_F_stream_start_internal_5)
-												v84 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
-												v87 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v87
-												v90 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-												v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+60))
+												v81 = int32(_a_F_stream_start_internal_5)
+												v82 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
+												v85 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v85
+												v88 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+												v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+60))
 												if l1 != 0 {
-													v94 = F_BufFileCreateFileSet(m, v91, v8+int32(32))
+													v92 = F_BufFileCreateFileSet(m, v89, v8+int32(32))
 													mBase = m.M
-													v95 = m.ExcPending
-													if v95 != 0 {
+													v93 = m.ExcPending
+													if v93 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v94
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v92
 														F_PopActiveSnapshot(m)
 														mBase = m.M
-														v123 = m.ExcPending
-														if v123 != 0 {
+														v121 = m.ExcPending
+														if v121 != 0 {
 															return
 														} else {
 															F_CommandCounterIncrement(m)
 															mBase = m.M
-															v125 = m.ExcPending
-															if v125 != 0 {
+															v123 = m.ExcPending
+															if v123 != 0 {
 																return
 															} else {
 																m.G0 = v8 + int32(1056)
@@ -2554,38 +2515,38 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 														}
 													}
 												} else {
-													v105 = F_BufFileOpenFileSet(m, v91, v8+int32(32), int32(2), int32(0))
+													v103 = F_BufFileOpenFileSet(m, v89, v8+int32(32), int32(2), int32(0))
 													mBase = m.M
-													v106 = m.ExcPending
-													if v106 != 0 {
+													v104 = m.ExcPending
+													if v104 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v105
-														v111 = F_BufFileSeek(m, v105, int32(0), int64(0), int32(2))
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v103
+														v109 = F_BufFileSeek(m, v103, int32(0), int64(0), int32(2))
 														mBase = m.M
-														v112 = m.ExcPending
-														if v112 != 0 {
+														v110 = m.ExcPending
+														if v110 != 0 {
 															return
 														} else {
-															*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-															v116 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-															v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+32))
-															F_subxact_info_read(m, v117, l0)
+															*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+															v114 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+															v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+32))
+															F_subxact_info_read(m, v115, l0)
 															mBase = m.M
-															v119 = m.ExcPending
-															if v119 != 0 {
+															v117 = m.ExcPending
+															if v117 != 0 {
 																return
 															} else {
 																F_PopActiveSnapshot(m)
 																mBase = m.M
-																v123 = m.ExcPending
-																if v123 != 0 {
+																v121 = m.ExcPending
+																if v121 != 0 {
 																	return
 																} else {
 																	F_CommandCounterIncrement(m)
 																	mBase = m.M
-																	v125 = m.ExcPending
-																	if v125 != 0 {
+																	v123 = m.ExcPending
+																	if v123 != 0 {
 																		return
 																	} else {
 																		m.G0 = v8 + int32(1056)
@@ -2628,7 +2589,8 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 					v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+32))
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v57
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l0
-					v66 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(_a_F_stream_start_internal_0), v8+int32(16))
+					v61 = v8 + int32(32)
+					v66 = F_pg_snprintf(m, v61, int32(1024), int32(_a_F_stream_start_internal_0), v8+int32(16))
 					mBase = m.M
 					v67 = m.ExcPending
 					if v67 != 0 {
@@ -2641,44 +2603,44 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 							return
 						} else {
 							if v70 != 0 {
-								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(32)
+								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v61
 								F_errmsg_internal(m, int32(_a_F_stream_start_internal_1), v8)
 								mBase = m.M
-								v77 = m.ExcPending
-								if v77 != 0 {
+								v75 = m.ExcPending
+								if v75 != 0 {
 									return
 								} else {
 									F_errfinish(m, int32(_a_F_stream_start_internal_2), int32(_a_F_stream_start_internal_3), int32(_a_F_stream_start_internal_4))
 									mBase = m.M
-									v82 = m.ExcPending
-									if v82 != 0 {
+									v80 = m.ExcPending
+									if v80 != 0 {
 										return
 									} else {
-										v83 = int32(_a_F_stream_start_internal_5)
-										v84 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
-										v87 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
-										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v87
-										v90 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-										v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+60))
+										v81 = int32(_a_F_stream_start_internal_5)
+										v82 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
+										v85 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
+										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v85
+										v88 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+										v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+60))
 										if l1 != 0 {
-											v94 = F_BufFileCreateFileSet(m, v91, v8+int32(32))
+											v92 = F_BufFileCreateFileSet(m, v89, v8+int32(32))
 											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
+											v93 = m.ExcPending
+											if v93 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v94
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v92
 												F_PopActiveSnapshot(m)
 												mBase = m.M
-												v123 = m.ExcPending
-												if v123 != 0 {
+												v121 = m.ExcPending
+												if v121 != 0 {
 													return
 												} else {
 													F_CommandCounterIncrement(m)
 													mBase = m.M
-													v125 = m.ExcPending
-													if v125 != 0 {
+													v123 = m.ExcPending
+													if v123 != 0 {
 														return
 													} else {
 														m.G0 = v8 + int32(1056)
@@ -2687,38 +2649,38 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 												}
 											}
 										} else {
-											v105 = F_BufFileOpenFileSet(m, v91, v8+int32(32), int32(2), int32(0))
+											v103 = F_BufFileOpenFileSet(m, v89, v8+int32(32), int32(2), int32(0))
 											mBase = m.M
-											v106 = m.ExcPending
-											if v106 != 0 {
+											v104 = m.ExcPending
+											if v104 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v105
-												v111 = F_BufFileSeek(m, v105, int32(0), int64(0), int32(2))
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v103
+												v109 = F_BufFileSeek(m, v103, int32(0), int64(0), int32(2))
 												mBase = m.M
-												v112 = m.ExcPending
-												if v112 != 0 {
+												v110 = m.ExcPending
+												if v110 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-													v116 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-													v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+32))
-													F_subxact_info_read(m, v117, l0)
+													*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+													v114 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+													v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+32))
+													F_subxact_info_read(m, v115, l0)
 													mBase = m.M
-													v119 = m.ExcPending
-													if v119 != 0 {
+													v117 = m.ExcPending
+													if v117 != 0 {
 														return
 													} else {
 														F_PopActiveSnapshot(m)
 														mBase = m.M
-														v123 = m.ExcPending
-														if v123 != 0 {
+														v121 = m.ExcPending
+														if v121 != 0 {
 															return
 														} else {
 															F_CommandCounterIncrement(m)
 															mBase = m.M
-															v125 = m.ExcPending
-															if v125 != 0 {
+															v123 = m.ExcPending
+															if v123 != 0 {
 																return
 															} else {
 																m.G0 = v8 + int32(1056)
@@ -2732,31 +2694,31 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 									}
 								}
 							} else {
-								v83 = int32(_a_F_stream_start_internal_5)
-								v84 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
-								v87 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
-								*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v87
-								v90 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-								v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+60))
+								v81 = int32(_a_F_stream_start_internal_5)
+								v82 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
+								v85 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
+								*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v85
+								v88 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+								v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+60))
 								if l1 != 0 {
-									v94 = F_BufFileCreateFileSet(m, v91, v8+int32(32))
+									v92 = F_BufFileCreateFileSet(m, v89, v8+int32(32))
 									mBase = m.M
-									v95 = m.ExcPending
-									if v95 != 0 {
+									v93 = m.ExcPending
+									if v93 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v94
+										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v92
 										F_PopActiveSnapshot(m)
 										mBase = m.M
-										v123 = m.ExcPending
-										if v123 != 0 {
+										v121 = m.ExcPending
+										if v121 != 0 {
 											return
 										} else {
 											F_CommandCounterIncrement(m)
 											mBase = m.M
-											v125 = m.ExcPending
-											if v125 != 0 {
+											v123 = m.ExcPending
+											if v123 != 0 {
 												return
 											} else {
 												m.G0 = v8 + int32(1056)
@@ -2765,38 +2727,38 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 										}
 									}
 								} else {
-									v105 = F_BufFileOpenFileSet(m, v91, v8+int32(32), int32(2), int32(0))
+									v103 = F_BufFileOpenFileSet(m, v89, v8+int32(32), int32(2), int32(0))
 									mBase = m.M
-									v106 = m.ExcPending
-									if v106 != 0 {
+									v104 = m.ExcPending
+									if v104 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v105
-										v111 = F_BufFileSeek(m, v105, int32(0), int64(0), int32(2))
+										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v103
+										v109 = F_BufFileSeek(m, v103, int32(0), int64(0), int32(2))
 										mBase = m.M
-										v112 = m.ExcPending
-										if v112 != 0 {
+										v110 = m.ExcPending
+										if v110 != 0 {
 											return
 										} else {
-											*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-											v116 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-											v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+32))
-											F_subxact_info_read(m, v117, l0)
+											*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+											v114 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+											v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+32))
+											F_subxact_info_read(m, v115, l0)
 											mBase = m.M
-											v119 = m.ExcPending
-											if v119 != 0 {
+											v117 = m.ExcPending
+											if v117 != 0 {
 												return
 											} else {
 												F_PopActiveSnapshot(m)
 												mBase = m.M
-												v123 = m.ExcPending
-												if v123 != 0 {
+												v121 = m.ExcPending
+												if v121 != 0 {
 													return
 												} else {
 													F_CommandCounterIncrement(m)
 													mBase = m.M
-													v125 = m.ExcPending
-													if v125 != 0 {
+													v123 = m.ExcPending
+													if v123 != 0 {
 														return
 													} else {
 														m.G0 = v8 + int32(1056)
@@ -2833,7 +2795,8 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 							v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+32))
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v57
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l0
-							v66 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(_a_F_stream_start_internal_0), v8+int32(16))
+							v61 = v8 + int32(32)
+							v66 = F_pg_snprintf(m, v61, int32(1024), int32(_a_F_stream_start_internal_0), v8+int32(16))
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
@@ -2846,44 +2809,44 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 									return
 								} else {
 									if v70 != 0 {
-										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(32)
+										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v61
 										F_errmsg_internal(m, int32(_a_F_stream_start_internal_1), v8)
 										mBase = m.M
-										v77 = m.ExcPending
-										if v77 != 0 {
+										v75 = m.ExcPending
+										if v75 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_stream_start_internal_2), int32(_a_F_stream_start_internal_3), int32(_a_F_stream_start_internal_4))
 											mBase = m.M
-											v82 = m.ExcPending
-											if v82 != 0 {
+											v80 = m.ExcPending
+											if v80 != 0 {
 												return
 											} else {
-												v83 = int32(_a_F_stream_start_internal_5)
-												v84 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
-												v87 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v87
-												v90 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-												v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+60))
+												v81 = int32(_a_F_stream_start_internal_5)
+												v82 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
+												v85 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v85
+												v88 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+												v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+60))
 												if l1 != 0 {
-													v94 = F_BufFileCreateFileSet(m, v91, v8+int32(32))
+													v92 = F_BufFileCreateFileSet(m, v89, v8+int32(32))
 													mBase = m.M
-													v95 = m.ExcPending
-													if v95 != 0 {
+													v93 = m.ExcPending
+													if v93 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v94
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v92
 														F_PopActiveSnapshot(m)
 														mBase = m.M
-														v123 = m.ExcPending
-														if v123 != 0 {
+														v121 = m.ExcPending
+														if v121 != 0 {
 															return
 														} else {
 															F_CommandCounterIncrement(m)
 															mBase = m.M
-															v125 = m.ExcPending
-															if v125 != 0 {
+															v123 = m.ExcPending
+															if v123 != 0 {
 																return
 															} else {
 																m.G0 = v8 + int32(1056)
@@ -2892,38 +2855,38 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 														}
 													}
 												} else {
-													v105 = F_BufFileOpenFileSet(m, v91, v8+int32(32), int32(2), int32(0))
+													v103 = F_BufFileOpenFileSet(m, v89, v8+int32(32), int32(2), int32(0))
 													mBase = m.M
-													v106 = m.ExcPending
-													if v106 != 0 {
+													v104 = m.ExcPending
+													if v104 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v105
-														v111 = F_BufFileSeek(m, v105, int32(0), int64(0), int32(2))
+														*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v103
+														v109 = F_BufFileSeek(m, v103, int32(0), int64(0), int32(2))
 														mBase = m.M
-														v112 = m.ExcPending
-														if v112 != 0 {
+														v110 = m.ExcPending
+														if v110 != 0 {
 															return
 														} else {
-															*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-															v116 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-															v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+32))
-															F_subxact_info_read(m, v117, l0)
+															*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+															v114 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+															v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+32))
+															F_subxact_info_read(m, v115, l0)
 															mBase = m.M
-															v119 = m.ExcPending
-															if v119 != 0 {
+															v117 = m.ExcPending
+															if v117 != 0 {
 																return
 															} else {
 																F_PopActiveSnapshot(m)
 																mBase = m.M
-																v123 = m.ExcPending
-																if v123 != 0 {
+																v121 = m.ExcPending
+																if v121 != 0 {
 																	return
 																} else {
 																	F_CommandCounterIncrement(m)
 																	mBase = m.M
-																	v125 = m.ExcPending
-																	if v125 != 0 {
+																	v123 = m.ExcPending
+																	if v123 != 0 {
 																		return
 																	} else {
 																		m.G0 = v8 + int32(1056)
@@ -2937,31 +2900,31 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 											}
 										}
 									} else {
-										v83 = int32(_a_F_stream_start_internal_5)
-										v84 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
-										v87 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
-										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v87
-										v90 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-										v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+60))
+										v81 = int32(_a_F_stream_start_internal_5)
+										v82 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4]))
+										v85 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[6]))
+										*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v85
+										v88 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+										v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+60))
 										if l1 != 0 {
-											v94 = F_BufFileCreateFileSet(m, v91, v8+int32(32))
+											v92 = F_BufFileCreateFileSet(m, v89, v8+int32(32))
 											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
+											v93 = m.ExcPending
+											if v93 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v94
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v92
 												F_PopActiveSnapshot(m)
 												mBase = m.M
-												v123 = m.ExcPending
-												if v123 != 0 {
+												v121 = m.ExcPending
+												if v121 != 0 {
 													return
 												} else {
 													F_CommandCounterIncrement(m)
 													mBase = m.M
-													v125 = m.ExcPending
-													if v125 != 0 {
+													v123 = m.ExcPending
+													if v123 != 0 {
 														return
 													} else {
 														m.G0 = v8 + int32(1056)
@@ -2970,38 +2933,38 @@ func F_stream_start_internal(m *base.Module, l0 int32, l1 int32) {
 												}
 											}
 										} else {
-											v105 = F_BufFileOpenFileSet(m, v91, v8+int32(32), int32(2), int32(0))
+											v103 = F_BufFileOpenFileSet(m, v89, v8+int32(32), int32(2), int32(0))
 											mBase = m.M
-											v106 = m.ExcPending
-											if v106 != 0 {
+											v104 = m.ExcPending
+											if v104 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v105
-												v111 = F_BufFileSeek(m, v105, int32(0), int64(0), int32(2))
+												*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[7])) = v103
+												v109 = F_BufFileSeek(m, v103, int32(0), int64(0), int32(2))
 												mBase = m.M
-												v112 = m.ExcPending
-												if v112 != 0 {
+												v110 = m.ExcPending
+												if v110 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v84
-													v116 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
-													v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+32))
-													F_subxact_info_read(m, v117, l0)
+													*(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[4])) = v82
+													v114 = *(*int32)(unsafe.Add(mBase, _c_F_stream_start_internal[5]))
+													v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+32))
+													F_subxact_info_read(m, v115, l0)
 													mBase = m.M
-													v119 = m.ExcPending
-													if v119 != 0 {
+													v117 = m.ExcPending
+													if v117 != 0 {
 														return
 													} else {
 														F_PopActiveSnapshot(m)
 														mBase = m.M
-														v123 = m.ExcPending
-														if v123 != 0 {
+														v121 = m.ExcPending
+														if v121 != 0 {
 															return
 														} else {
 															F_CommandCounterIncrement(m)
 															mBase = m.M
-															v125 = m.ExcPending
-															if v125 != 0 {
+															v123 = m.ExcPending
+															if v123 != 0 {
 																return
 															} else {
 																m.G0 = v8 + int32(1056)

@@ -63,12 +63,16 @@ func F_poly_center(m *base.Module, l0 int32) int32 {
 func F_poly_overlap(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v5 int32
+	_ = v5
 	var v6 int32
 	_ = v6
-	var v7 int32
-	_ = v7
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
 	var v13 int32
@@ -77,74 +81,67 @@ func F_poly_overlap(m *base.Module, l0 int32) int32 {
 	_ = v14
 	var v15 int32
 	_ = v15
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
 	var v18 int32
 	_ = v18
-	var v21 int32
-	_ = v21
+	var v19 int32
+	_ = v19
 	var v22 int32
 	_ = v22
-	var v25 int32
-	_ = v25
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v7 = F_pg_detoast_datum(m, v6)
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = F_pg_detoast_datum(m, v5)
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v9 = m.ExcPending
+	if v9 != 0 {
 		return int32(0)
 	} else {
-		v12 = l0 + int32(28)
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-		v14 = F_pg_detoast_datum(m, v13)
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v11 = F_pg_detoast_datum(m, v10)
 		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return int32(0)
 		} else {
-			v16 = F_poly_overlap_internal(m, v7, v14)
+			v13 = F_poly_overlap_internal(m, v6, v11)
 			mBase = m.M
-			v17 = m.ExcPending
-			if v17 != 0 {
+			v14 = m.ExcPending
+			if v14 != 0 {
 				return int32(0)
 			} else {
-				v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-				if v18 != v7 {
-					F_pfree(m, v7)
+				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				if v15 != v6 {
+					F_pfree(m, v6)
 					mBase = m.M
-					v21 = m.ExcPending
-					if v21 != 0 {
+					v18 = m.ExcPending
+					if v18 != 0 {
 						return int32(0)
 					} else {
-						v22 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-						if v22 != v14 {
-							F_pfree(m, v14)
+						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						if v19 != v11 {
+							F_pfree(m, v11)
 							mBase = m.M
-							v25 = m.ExcPending
-							if v25 != 0 {
+							v22 = m.ExcPending
+							if v22 != 0 {
 								return int32(0)
 							} else {
-								return v16
+								return v13
 							}
 						} else {
-							return v16
+							return v13
 						}
 					}
 				} else {
-					v22 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-					if v22 != v14 {
-						F_pfree(m, v14)
+					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					if v19 != v11 {
+						F_pfree(m, v11)
 						mBase = m.M
-						v25 = m.ExcPending
-						if v25 != 0 {
+						v22 = m.ExcPending
+						if v22 != 0 {
 							return int32(0)
 						} else {
-							return v16
+							return v13
 						}
 					} else {
-						return v16
+						return v13
 					}
 				}
 			}

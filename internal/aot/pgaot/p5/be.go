@@ -77,26 +77,24 @@ func F_be_lo_put(m *base.Module, l0 int32) int32 {
 	_ = v35
 	var v36 int32
 	_ = v36
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
-	var v50 int32
-	_ = v50
+	var v42 int32
+	_ = v42
+	var v45 int32
+	_ = v45
+	var v52 int32
+	_ = v52
 	var v53 int32
 	_ = v53
-	var v54 int32
-	_ = v54
-	var v58 int32
-	_ = v58
+	var v57 int32
+	_ = v57
+	var v63 int32
+	_ = v63
 	var v64 int32
 	_ = v64
 	var v65 int32
 	_ = v65
-	var v66 int32
-	_ = v66
-	var v68 int32
-	_ = v68
+	var v67 int32
+	_ = v67
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v8 = *(*int64)(unsafe.Add(mBase, uint32(v7)))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
@@ -138,38 +136,37 @@ func F_be_lo_put(m *base.Module, l0 int32) int32 {
 						v36 = v11 + int32(4)
 					}
 					if v33 == int32(1) {
-						v39 = int32(4)
-						v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30))))
-						if v41&int32(254) == int32(2) {
-							v50 = v39
+						v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30))))
+						if v42 == int32(18) {
+							v45 = int32(16)
 						} else {
-							v50 = base.B2i32(v41 == int32(18)) << (uint(v39) % 32)
+							v45 = int32(0)
 						}
-						if v41 == int32(1) {
-							v53 = v39
+						if base.Ui32((v42-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+							v52 = int32(4)
 						} else {
-							v53 = v50
+							v52 = v45
 						}
-						v64 = v53
+						v63 = v52
 					} else {
-						v54 = int32(1)
+						v53 = int32(1)
 						if v35 != 0 {
-							v64 = int32(base.Ui32(v33)>>(uint(v54)%32)) - v54
+							v63 = int32(base.Ui32(v33)>>(uint(v53)%32)) - v53
 						} else {
-							v58 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
-							v64 = int32(base.Ui32(v58)>>(uint(int32(2))%32)) - int32(4)
+							v57 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
+							v63 = int32(base.Ui32(v57)>>(uint(int32(2))%32)) - int32(4)
 						}
 					}
-					v65 = F_inv_write(m, v24, v36, v64)
+					v64 = F_inv_write(m, v24, v36, v63)
 					mBase = m.M
-					v66 = m.ExcPending
-					if v66 != 0 {
+					v65 = m.ExcPending
+					if v65 != 0 {
 						return int32(0)
 					} else {
 						F_pfree(m, v24)
 						mBase = m.M
-						v68 = m.ExcPending
-						if v68 != 0 {
+						v67 = m.ExcPending
+						if v67 != 0 {
 							return int32(0)
 						} else {
 							return int32(0)

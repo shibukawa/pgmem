@@ -34,19 +34,19 @@ func F_checkcondition_arr_2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	_ = v30
 	var v31 int32
 	_ = v31
-	var v37 int32
-	_ = v37
+	var v38 int32
+	_ = v38
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if base.Ui32(v8) <= base.Ui32(v7) {
-		v37 = int32(0)
+		v38 = int32(0)
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	return v37
+	return v38
 L2:
 	;
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
@@ -61,14 +61,14 @@ L3:
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
 	v26 = base.B2i32(v25 == v10)
 	if v25 == v10 {
-		v37 = v26
+		v38 = v26
 		goto L1
 	} else {
 		goto L5
 	}
 L4:
 	;
-	v37 = v26
+	v38 = v26
 	goto L1
 L5:
 	;

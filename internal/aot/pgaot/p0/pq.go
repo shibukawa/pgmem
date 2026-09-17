@@ -552,36 +552,36 @@ func F_pq_getkeepalivescount(m *base.Module, l0 int32) int32 {
 	_ = v14
 	var v20 int32
 	_ = v20
-	var v22 int32
-	_ = v22
+	var v21 int32
+	_ = v21
 	v2 = int32(0)
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
 	if l0 == v2 {
-		v22 = v2
+		v21 = v2
 	} else {
 		v10 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+12)))
 		if v10 == int32(1) {
-			v22 = v2
+			v21 = v2
 		} else {
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+408))
 			if v13 != 0 {
-				v22 = v13
+				v21 = v13
 			} else {
 				v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+392))
 				if v14 != 0 {
-					v22 = v14
+					v21 = v14
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = int32(4)
 					v20 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(392))))
-					v22 = v20
+					v21 = v20
 				}
 			}
 		}
 	}
 	m.G0 = v6 + int32(16)
-	return v22
+	return v21
 }
 func F_pq_getmsgend(m *base.Module, l0 int32) {
 	mBase := m.M
@@ -716,10 +716,6 @@ func F_pq_sendfloat4(m *base.Module, l0 int32, l1 float32) {
 	_ = v11
 	var v12 int32
 	_ = v12
-	var v14 int32
-	_ = v14
-	var v16 int32
-	_ = v16
 	F_enlargeStringInfo(m, l0, int32(4))
 	mBase = m.M
 	v7 = m.ExcPending
@@ -729,10 +725,8 @@ func F_pq_sendfloat4(m *base.Module, l0 int32, l1 float32) {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		v11 = base.I32_reinterpret_f32(l1)
-		v12 = int32(24)
-		v14 = int32(_a_F_pq_sendfloat4_0)
-		v16 = int32(8)
-		*(*int32)(unsafe.Add(mBase, uint32(v8+v9))) = v11<<(uint(v12)%32) | v11&v14<<(uint(v16)%32) | (int32(base.Ui32(v11)>>(uint(v16)%32))&v14 | int32(base.Ui32(v11)>>(uint(v12)%32)))
+		v12 = int32(16711935)
+		*(*int32)(unsafe.Add(mBase, uint32(v8+v9))) = base.I32_rotr(v11&v12, int32(8)) | base.I32_rotr(v11, int32(24))&v12
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v8 + int32(4)
 		return
 	}
@@ -817,12 +811,12 @@ func F_pq_setkeepalivesinterval(m *base.Module, l0 int32, l1 int32) {
 	_ = v31
 	var v37 int32
 	_ = v37
-	var v39 int32
-	_ = v39
-	var v47 int32
-	_ = v47
-	var v50 int32
-	_ = v50
+	var v38 int32
+	_ = v38
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
@@ -838,48 +832,48 @@ func F_pq_setkeepalivesinterval(m *base.Module, l0 int32, l1 int32) {
 				v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)+388))
 				if int32(0) < v16 {
 					if l0 == int32(0) {
-						v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+388))
-						*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v47
+						v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+388))
+						*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v46
 					} else {
 					}
-					v50 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
-					*(*int32)(unsafe.Add(mBase, uint32(l1)+404)) = v50
+					v49 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+					*(*int32)(unsafe.Add(mBase, uint32(l1)+404)) = v49
 				} else {
 					v19 = int32(0)
 					v21 = m.G0
 					v23 = v21 - int32(16)
 					m.G0 = v23
 					if l1 == v19 {
-						v39 = v19
+						v38 = v19
 					} else {
 						v27 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+12)))
 						if v27 == int32(1) {
-							v39 = v19
+							v38 = v19
 						} else {
 							v30 = *(*int32)(unsafe.Add(mBase, uint32(l1)+404))
 							if v30 != 0 {
-								v39 = v30
+								v38 = v30
 							} else {
 								v31 = *(*int32)(unsafe.Add(mBase, uint32(l1)+388))
 								if v31 != 0 {
-									v39 = v31
+									v38 = v31
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v23)+12)) = int32(4)
 									v37 = *(*int32)(unsafe.Add(mBase, uint32(l1+int32(388))))
-									v39 = v37
+									v38 = v37
 								}
 							}
 						}
 					}
 					m.G0 = v23 + int32(16)
-					if int32(0) <= v39 {
+					if int32(0) <= v38 {
 						if l0 == int32(0) {
-							v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+388))
-							*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v47
+							v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+388))
+							*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v46
 						} else {
 						}
-						v50 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
-						*(*int32)(unsafe.Add(mBase, uint32(l1)+404)) = v50
+						v49 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+						*(*int32)(unsafe.Add(mBase, uint32(l1)+404)) = v49
 					} else {
 					}
 				}

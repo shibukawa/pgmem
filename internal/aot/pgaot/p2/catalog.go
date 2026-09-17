@@ -8,46 +8,48 @@ import (
 func F_CatalogIndexInsert(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
-	var v12 int32
-	_ = v12
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
 	var v19 int32
 	_ = v19
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
 	var v26 int32
 	_ = v26
 	var v27 int32
 	_ = v27
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
+	var v29 int32
+	_ = v29
 	var v31 int32
 	_ = v31
-	var v33 int32
-	_ = v33
+	var v32 int32
+	_ = v32
 	var v34 int32
 	_ = v34
-	var v40 int32
-	_ = v40
-	var v52 int32
-	_ = v52
+	var v35 int32
+	_ = v35
+	var v41 int32
+	_ = v41
 	var v54 int32
 	_ = v54
-	var v55 int32
-	_ = v55
-	var v59 int32
-	_ = v59
-	var v62 int32
-	_ = v62
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v61 int32
+	_ = v61
+	var v64 int32
+	_ = v64
 	var v69 int32
 	_ = v69
+	var v71 int32
+	_ = v71
 	var v72 int32
 	_ = v72
 	var v73 int32
@@ -56,13 +58,13 @@ func F_CatalogIndexInsert(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v75
 	var v76 int32
 	_ = v76
-	var v79 int32
-	_ = v79
-	var v93 int32
-	_ = v93
-	v12 = m.G0
-	v14 = v12 - int32(160)
-	m.G0 = v14
+	var v80 int32
+	_ = v80
+	var v95 int32
+	_ = v95
+	v13 = m.G0
+	v15 = v13 - int32(160)
+	m.G0 = v15
 	if l2 != int32(2) {
 		goto L2
 	} else {
@@ -70,13 +72,13 @@ func F_CatalogIndexInsert(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	}
 L1:
 	;
-	m.G0 = v14 + int32(160)
+	m.G0 = v15 + int32(160)
 	return
 L2:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v19 = int32(*(*int16)(unsafe.Add(mBase, uint32(v18)+18)))
-	if v19 < int32(0) {
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	v20 = int32(*(*int16)(unsafe.Add(mBase, uint32(v19)+18)))
+	if v20 < int32(0) {
 		goto L1
 	} else {
 		goto L5
@@ -86,8 +88,8 @@ L3:
 	goto L4
 L4:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	if v22 == int32(0) {
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	if v23 == int32(0) {
 		goto L1
 	} else {
 		goto L6
@@ -97,14 +99,14 @@ L5:
 	goto L4
 L6:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+52))
-	v30 = F_MakeSingleTupleTableSlot(m, v28, int32(_a_F_CatalogIndexInsert_0))
+	v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+52))
+	v31 = F_MakeTupleTableSlot(m, v29, int32(_a_F_CatalogIndexInsert_0))
 	mBase = m.M
-	v31 = m.ExcPending
-	if v31 != 0 {
+	v32 = m.ExcPending
+	if v32 != 0 {
 		goto L7
 	} else {
 		goto L8
@@ -114,44 +116,44 @@ L7:
 	return
 L8:
 	;
-	v33 = F_ExecStoreHeapTuple(m, l1, v30, int32(0))
+	v34 = F_ExecStoreHeapTuple(m, l1, v31, int32(0))
 	mBase = m.M
-	v34 = m.ExcPending
-	if v34 != 0 {
+	v35 = m.ExcPending
+	if v35 != 0 {
 		goto L7
 	} else {
 		goto L9
 	}
 L9:
 	;
-	if int32(0) < v22 {
+	if int32(0) < v23 {
 		goto L10
 	} else {
 		goto L11
 	}
 L10:
 	;
-	v40 = int32(0)
+	v41 = int32(0)
 	goto L13
 L11:
 	;
 	goto L12
 L12:
 	;
-	F_ExecDropSingleTupleTableSlot(m, v30)
+	F_ExecDropSingleTupleTableSlot(m, v31)
 	mBase = m.M
-	v93 = m.ExcPending
-	if v93 != 0 {
+	v95 = m.ExcPending
+	if v95 != 0 {
 		goto L7
 	} else {
 		goto L24
 	}
 L13:
 	;
-	v52 = v40 << (uint(int32(2)) % 32)
-	v54 = *(*int32)(unsafe.Add(mBase, uint32(v25+v52)))
-	v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54)+118)))
-	if v55 != int32(1) {
+	v54 = v41 << (uint(int32(2)) % 32)
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(v26+v54)))
+	v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56)+118)))
+	if v57 != int32(1) {
 		goto L15
 	} else {
 		goto L16
@@ -161,16 +163,16 @@ L14:
 	goto L12
 L15:
 	;
-	v79 = v40 + int32(1)
-	if v79 != v22 {
-		v40 = v79
+	v80 = v41 + int32(1)
+	if v80 != v23 {
+		v41 = v80
 		goto L13
 	} else {
 		goto L23
 	}
 L16:
 	;
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v52+v26)))
+	v61 = *(*int32)(unsafe.Add(mBase, uint32(v54+v27)))
 	if l2 == int32(2) {
 		goto L17
 	} else {
@@ -178,8 +180,8 @@ L16:
 	}
 L17:
 	;
-	v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54)+123)))
-	if v62 != int32(1) {
+	v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56)+123)))
+	if v64 != int32(1) {
 		goto L15
 	} else {
 		goto L20
@@ -189,10 +191,11 @@ L18:
 	goto L19
 L19:
 	;
-	F_FormIndexDatum(m, v54, v30, int32(0), v14+int32(32), v14)
+	v69 = v15 + int32(32)
+	F_FormIndexDatum(m, v56, v31, int32(0), v69, v15)
 	mBase = m.M
-	v69 = m.ExcPending
-	if v69 != 0 {
+	v71 = m.ExcPending
+	if v71 != 0 {
 		goto L7
 	} else {
 		goto L21
@@ -202,9 +205,9 @@ L20:
 	goto L19
 L21:
 	;
-	v72 = *(*int32)(unsafe.Add(mBase, uint32(v59)+192))
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(v61)+192))
 	v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v72)+12)))
-	v75 = F_index_insert(m, v59, v14+int32(32), v14, l1+int32(4), v27, v73, int32(0), v54)
+	v75 = F_index_insert(m, v61, v69, v15, l1+int32(4), v28, v73, int32(0), v56)
 	mBase = m.M
 	v76 = m.ExcPending
 	if v76 != 0 {

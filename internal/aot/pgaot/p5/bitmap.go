@@ -10,36 +10,33 @@ func F_ExecBitmapIndexScanRetrieveInstrumentation(m *base.Module, l0 int32) {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v5 int32
-	_ = v5
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
+	var v7 int32
+	_ = v7
 	var v11 int32
 	_ = v11
+	var v12 int32
+	_ = v12
 	var v13 int32
 	_ = v13
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+168))
-	if v4 != 0 {
-		v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
-		v9 = v5<<(uint(int32(3))%32) + int32(8)
-		v10 = F_palloc(m, v9)
+	if v4 == int32(0) {
+		return
+	} else {
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
+		v11 = v7<<(uint(int32(3))%32) + int32(8)
+		v12 = F_palloc(m, v11)
 		mBase = m.M
-		v11 = m.ExcPending
-		if v11 != 0 {
+		v13 = m.ExcPending
+		if v13 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+168)) = v10
-			if v9 != 0 {
-				v13 = F__emscripten_memcpy_bulkmem(m, v10, v4, v9)
-				mBase = m.M
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+168)) = v12
+			if v11 == int32(0) {
 			} else {
+				base.MemoryCopy(m, v12, v4, v11)
 			}
 			return
 		}
-	} else {
-		return
 	}
 }
 func F_ExecBitmapOr(m *base.Module, l0 int32) int32 {
@@ -80,38 +77,35 @@ func F_bitmap_match(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v12 int32
-	_ = v12
-	var v18 int32
-	_ = v18
 	var v19 int32
 	_ = v19
-	var v21 int32
-	_ = v21
-	var v24 int32
-	_ = v24
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
 	var v25 int32
 	_ = v25
-	var v30 int32
-	_ = v30
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
-	var v42 int32
-	_ = v42
+	var v26 int32
+	_ = v26
+	var v31 int32
+	_ = v31
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
 	var v43 int32
 	_ = v43
-	var v46 int32
-	_ = v46
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
 	var v51 int32
 	_ = v51
 	v4 = int32(0)
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v12 = base.B2i32(v8|v9 == v4)
-	if v8 == v4 {
-		v51 = v12
+	if base.B2i32(v8 == v4)|base.B2i32(v9 == v4) != 0 {
+		v51 = base.B2i32(v8|v9 == v4)
 		goto L1
 	} else {
 		goto L2
@@ -121,69 +115,61 @@ L1:
 	return base.B2i32(v51 == int32(0))
 L2:
 	;
-	if v9 == int32(0) {
-		v51 = v12
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
+	if v19 != v20 {
+		v51 = int32(0)
 		goto L1
 	} else {
 		goto L3
 	}
 L3:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
-	if v18 != v19 {
-		v51 = int32(0)
-		goto L1
-	} else {
+	v22 = int32(1)
+	if v19 <= v22 {
 		goto L4
+	} else {
+		goto L5
 	}
 L4:
 	;
-	v21 = int32(1)
-	if v18 <= v21 {
-		goto L5
-	} else {
-		goto L6
-	}
+	v25 = v22
+	goto L6
 L5:
 	;
-	v24 = v21
-	goto L7
+	v25 = v19
+	goto L6
 L6:
 	;
-	v24 = v18
+	v26 = int32(8)
+	v31 = int32(0)
 	goto L7
 L7:
 	;
-	v25 = int32(8)
-	v30 = int32(0)
-	goto L8
+	v39 = v31 << (uint(int32(2)) % 32)
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v8+v26+v39)))
+	v43 = *(*int32)(unsafe.Add(mBase, uint32(v9+v26+v39)))
+	v44 = base.B2i32(v41 == v43)
+	if v41 != v43 {
+		v51 = v44
+		goto L1
+	} else {
+		goto L9
+	}
 L8:
 	;
-	v38 = v30 << (uint(int32(2)) % 32)
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v8+v25+v38)))
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v38+(v9+v25))))
-	v43 = base.B2i32(v40 == v42)
-	if v42 != v40 {
-		v51 = v43
-		goto L1
+	v51 = v44
+	goto L1
+L9:
+	;
+	v47 = v31 + int32(1)
+	if v47 != v25 {
+		v31 = v47
+		goto L7
 	} else {
 		goto L10
 	}
-L9:
-	;
-	v51 = v43
-	goto L1
 L10:
 	;
-	v46 = v30 + int32(1)
-	if v46 != v24 {
-		v30 = v46
-		goto L8
-	} else {
-		goto L11
-	}
-L11:
-	;
-	goto L9
+	goto L8
 }

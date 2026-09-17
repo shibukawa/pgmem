@@ -97,23 +97,23 @@ func F_pgmem_module_name(m *base.Module, l0 int32) int32 {
 	_ = v2
 	var v6 int32
 	_ = v6
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
 	v2 = int32(0)
 	if l0 < v2 {
-		v13 = v2
+		v11 = v2
 	} else {
 		v6 = *(*int32)(unsafe.Add(mBase, _c_F_pgmem_module_name[0]))
 		if v6 <= l0 {
-			v13 = v2
+			v11 = v2
 		} else {
-			v12 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(12))+uint32(_c_F_pgmem_module_name[1])))
-			v13 = v12
+			v10 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(12))+uint32(_c_F_pgmem_module_name[1])))
+			v11 = v10
 		}
 	}
-	return v13
+	return v11
 }
 func F_pgmem_reset_session(m *base.Module, l0 int32) {
 	mBase := m.M

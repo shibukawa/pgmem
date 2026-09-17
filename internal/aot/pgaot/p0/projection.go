@@ -12,14 +12,14 @@ func F_ExecAssignScanProjectionInfo(m *base.Module, l0 int32) {
 	_ = v4
 	var v5 int32
 	_ = v5
-	var v9 int32
-	_ = v9
+	var v7 int32
+	_ = v7
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
 	F_ExecConditionalAssignProjectionInfo(m, l0, v5)
 	mBase = m.M
-	v9 = m.ExcPending
-	if v9 != 0 {
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return
 	} else {
 		return

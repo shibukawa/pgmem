@@ -38,40 +38,40 @@ func F_get_opclass_oid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v36
 	var v38 int32
 	_ = v38
-	var v40 int32
-	_ = v40
-	var v41 int32
-	_ = v41
-	var v45 int32
-	_ = v45
-	var v50 int32
-	_ = v50
-	var v51 int32
-	_ = v51
-	var v52 int32
-	_ = v52
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v48 int32
+	_ = v48
 	var v53 int32
 	_ = v53
 	var v54 int32
 	_ = v54
-	var v64 int32
-	_ = v64
-	var v69 int32
-	_ = v69
-	var v73 int32
-	_ = v73
-	var v74 int32
-	_ = v74
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v67 int32
+	_ = v67
+	var v72 int32
+	_ = v72
 	var v76 int32
 	_ = v76
-	var v78 int32
-	_ = v78
+	var v77 int32
+	_ = v77
 	var v79 int32
 	_ = v79
-	var v87 int32
-	_ = v87
-	var v92 int32
-	_ = v92
+	var v81 int32
+	_ = v81
+	var v83 int32
+	_ = v83
+	var v91 int32
+	_ = v91
+	var v96 int32
+	_ = v96
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
@@ -91,117 +91,95 @@ func F_get_opclass_oid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			} else {
 				if v20 == int32(0) {
 					v38 = int32(0)
-					if l2 != 0 {
-						if v38 == int32(0) {
-							v79 = int32(0)
-							m.G0 = v8 + int32(32)
-							return v79
+					if l2|v38 == int32(0) {
+						v43 = F_SearchSysCache1(m, int32(2), l0)
+						mBase = m.M
+						v44 = m.ExcPending
+						if v44 != 0 {
+							return int32(0)
 						} else {
-							v73 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
-							v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73)+22)))
-							v76 = *(*int32)(unsafe.Add(mBase, uint32(v73+v74)))
-							F_ReleaseCatCache(m, v38)
+							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v78 = m.ExcPending
-							if v78 != 0 {
+							v48 = m.ExcPending
+							if v48 != 0 {
 								return int32(0)
 							} else {
-								v79 = v76
-								m.G0 = v8 + int32(32)
-								return v79
-							}
-						}
-					} else {
-						if v38 != 0 {
-							if v38 == int32(0) {
-								v79 = int32(0)
-								m.G0 = v8 + int32(32)
-								return v79
-							} else {
-								v73 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
-								v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73)+22)))
-								v76 = *(*int32)(unsafe.Add(mBase, uint32(v73+v74)))
-								F_ReleaseCatCache(m, v38)
-								mBase = m.M
-								v78 = m.ExcPending
-								if v78 != 0 {
-									return int32(0)
-								} else {
-									v79 = v76
-									m.G0 = v8 + int32(32)
-									return v79
-								}
-							}
-						} else {
-							v40 = F_SearchSysCache1(m, int32(2), l0)
-							mBase = m.M
-							v41 = m.ExcPending
-							if v41 != 0 {
-								return int32(0)
-							} else {
-								F_errstart_cold(m, int32(21), int32(0))
-								mBase = m.M
-								v45 = m.ExcPending
-								if v45 != 0 {
-									return int32(0)
-								} else {
-									if v40 == int32(0) {
-										*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-										F_errmsg_internal(m, int32(_a_F_get_opclass_oid_0), v8)
+								if v43 == int32(0) {
+									*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
+									F_errmsg_internal(m, int32(_a_F_get_opclass_oid_0), v8)
+									mBase = m.M
+									v91 = m.ExcPending
+									if v91 != 0 {
+										return int32(0)
+									} else {
+										F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(202), int32(_a_F_get_opclass_oid_2))
 										mBase = m.M
-										v87 = m.ExcPending
-										if v87 != 0 {
+										v96 = m.ExcPending
+										if v96 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(202), int32(_a_F_get_opclass_oid_2))
-											mBase = m.M
-											v92 = m.ExcPending
-											if v92 != 0 {
-												return int32(0)
-											} else {
-												base.Wasm_trap_unreachable()
-												for {
-												}
+											base.Wasm_trap_unreachable()
+											for {
 											}
 										}
+									}
+								} else {
+									F_errcode(m, int32(67137668))
+									mBase = m.M
+									v53 = m.ExcPending
+									if v53 != 0 {
+										return int32(0)
 									} else {
-										F_errcode(m, int32(67137668))
+										v54 = F_NameListToString(m, l1)
 										mBase = m.M
-										v50 = m.ExcPending
-										if v50 != 0 {
+										v55 = m.ExcPending
+										if v55 != 0 {
 											return int32(0)
 										} else {
-											v51 = F_NameListToString(m, l1)
+											v56 = *(*int32)(unsafe.Add(mBase, uint32(v43)+16))
+											v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56)+22)))
+											*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v54
+											*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v56 + v57 + int32(4)
+											F_errmsg(m, int32(_a_F_get_opclass_oid_3), v8+int32(16))
 											mBase = m.M
-											v52 = m.ExcPending
-											if v52 != 0 {
+											v67 = m.ExcPending
+											if v67 != 0 {
 												return int32(0)
 											} else {
-												v53 = *(*int32)(unsafe.Add(mBase, uint32(v40)+16))
-												v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+22)))
-												*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v51
-												*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v54 + v53 + int32(4)
-												F_errmsg(m, int32(_a_F_get_opclass_oid_3), v8+int32(16))
+												F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(207), int32(_a_F_get_opclass_oid_2))
 												mBase = m.M
-												v64 = m.ExcPending
-												if v64 != 0 {
+												v72 = m.ExcPending
+												if v72 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(207), int32(_a_F_get_opclass_oid_2))
-													mBase = m.M
-													v69 = m.ExcPending
-													if v69 != 0 {
-														return int32(0)
-													} else {
-														base.Wasm_trap_unreachable()
-														for {
-														}
+													base.Wasm_trap_unreachable()
+													for {
 													}
 												}
 											}
 										}
 									}
 								}
+							}
+						}
+					} else {
+						if v38 == int32(0) {
+							v83 = int32(0)
+							m.G0 = v8 + int32(32)
+							return v83
+						} else {
+							v76 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
+							v77 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v76)+22)))
+							v79 = *(*int32)(unsafe.Add(mBase, uint32(v76+v77)))
+							F_ReleaseCatCache(m, v38)
+							mBase = m.M
+							v81 = m.ExcPending
+							if v81 != 0 {
+								return int32(0)
+							} else {
+								v83 = v79
+								m.G0 = v8 + int32(32)
+								return v83
 							}
 						}
 					}
@@ -214,117 +192,95 @@ func F_get_opclass_oid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return int32(0)
 					} else {
 						v38 = v26
-						if l2 != 0 {
-							if v38 == int32(0) {
-								v79 = int32(0)
-								m.G0 = v8 + int32(32)
-								return v79
+						if l2|v38 == int32(0) {
+							v43 = F_SearchSysCache1(m, int32(2), l0)
+							mBase = m.M
+							v44 = m.ExcPending
+							if v44 != 0 {
+								return int32(0)
 							} else {
-								v73 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
-								v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73)+22)))
-								v76 = *(*int32)(unsafe.Add(mBase, uint32(v73+v74)))
-								F_ReleaseCatCache(m, v38)
+								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v78 = m.ExcPending
-								if v78 != 0 {
+								v48 = m.ExcPending
+								if v48 != 0 {
 									return int32(0)
 								} else {
-									v79 = v76
-									m.G0 = v8 + int32(32)
-									return v79
-								}
-							}
-						} else {
-							if v38 != 0 {
-								if v38 == int32(0) {
-									v79 = int32(0)
-									m.G0 = v8 + int32(32)
-									return v79
-								} else {
-									v73 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
-									v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73)+22)))
-									v76 = *(*int32)(unsafe.Add(mBase, uint32(v73+v74)))
-									F_ReleaseCatCache(m, v38)
-									mBase = m.M
-									v78 = m.ExcPending
-									if v78 != 0 {
-										return int32(0)
-									} else {
-										v79 = v76
-										m.G0 = v8 + int32(32)
-										return v79
-									}
-								}
-							} else {
-								v40 = F_SearchSysCache1(m, int32(2), l0)
-								mBase = m.M
-								v41 = m.ExcPending
-								if v41 != 0 {
-									return int32(0)
-								} else {
-									F_errstart_cold(m, int32(21), int32(0))
-									mBase = m.M
-									v45 = m.ExcPending
-									if v45 != 0 {
-										return int32(0)
-									} else {
-										if v40 == int32(0) {
-											*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-											F_errmsg_internal(m, int32(_a_F_get_opclass_oid_0), v8)
+									if v43 == int32(0) {
+										*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
+										F_errmsg_internal(m, int32(_a_F_get_opclass_oid_0), v8)
+										mBase = m.M
+										v91 = m.ExcPending
+										if v91 != 0 {
+											return int32(0)
+										} else {
+											F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(202), int32(_a_F_get_opclass_oid_2))
 											mBase = m.M
-											v87 = m.ExcPending
-											if v87 != 0 {
+											v96 = m.ExcPending
+											if v96 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(202), int32(_a_F_get_opclass_oid_2))
-												mBase = m.M
-												v92 = m.ExcPending
-												if v92 != 0 {
-													return int32(0)
-												} else {
-													base.Wasm_trap_unreachable()
-													for {
-													}
+												base.Wasm_trap_unreachable()
+												for {
 												}
 											}
+										}
+									} else {
+										F_errcode(m, int32(67137668))
+										mBase = m.M
+										v53 = m.ExcPending
+										if v53 != 0 {
+											return int32(0)
 										} else {
-											F_errcode(m, int32(67137668))
+											v54 = F_NameListToString(m, l1)
 											mBase = m.M
-											v50 = m.ExcPending
-											if v50 != 0 {
+											v55 = m.ExcPending
+											if v55 != 0 {
 												return int32(0)
 											} else {
-												v51 = F_NameListToString(m, l1)
+												v56 = *(*int32)(unsafe.Add(mBase, uint32(v43)+16))
+												v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56)+22)))
+												*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v54
+												*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v56 + v57 + int32(4)
+												F_errmsg(m, int32(_a_F_get_opclass_oid_3), v8+int32(16))
 												mBase = m.M
-												v52 = m.ExcPending
-												if v52 != 0 {
+												v67 = m.ExcPending
+												if v67 != 0 {
 													return int32(0)
 												} else {
-													v53 = *(*int32)(unsafe.Add(mBase, uint32(v40)+16))
-													v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+22)))
-													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v51
-													*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v54 + v53 + int32(4)
-													F_errmsg(m, int32(_a_F_get_opclass_oid_3), v8+int32(16))
+													F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(207), int32(_a_F_get_opclass_oid_2))
 													mBase = m.M
-													v64 = m.ExcPending
-													if v64 != 0 {
+													v72 = m.ExcPending
+													if v72 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(207), int32(_a_F_get_opclass_oid_2))
-														mBase = m.M
-														v69 = m.ExcPending
-														if v69 != 0 {
-															return int32(0)
-														} else {
-															base.Wasm_trap_unreachable()
-															for {
-															}
+														base.Wasm_trap_unreachable()
+														for {
 														}
 													}
 												}
 											}
 										}
 									}
+								}
+							}
+						} else {
+							if v38 == int32(0) {
+								v83 = int32(0)
+								m.G0 = v8 + int32(32)
+								return v83
+							} else {
+								v76 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
+								v77 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v76)+22)))
+								v79 = *(*int32)(unsafe.Add(mBase, uint32(v76+v77)))
+								F_ReleaseCatCache(m, v38)
+								mBase = m.M
+								v81 = m.ExcPending
+								if v81 != 0 {
+									return int32(0)
+								} else {
+									v83 = v79
+									m.G0 = v8 + int32(32)
+									return v83
 								}
 							}
 						}
@@ -341,72 +297,131 @@ func F_get_opclass_oid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			} else {
 				if v30 == int32(0) {
 					v38 = int32(0)
-					if l2 != 0 {
-						if v38 == int32(0) {
-							v79 = int32(0)
-							m.G0 = v8 + int32(32)
-							return v79
+					if l2|v38 == int32(0) {
+						v43 = F_SearchSysCache1(m, int32(2), l0)
+						mBase = m.M
+						v44 = m.ExcPending
+						if v44 != 0 {
+							return int32(0)
 						} else {
-							v73 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
-							v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73)+22)))
-							v76 = *(*int32)(unsafe.Add(mBase, uint32(v73+v74)))
-							F_ReleaseCatCache(m, v38)
+							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v78 = m.ExcPending
-							if v78 != 0 {
+							v48 = m.ExcPending
+							if v48 != 0 {
 								return int32(0)
 							} else {
-								v79 = v76
-								m.G0 = v8 + int32(32)
-								return v79
+								if v43 == int32(0) {
+									*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
+									F_errmsg_internal(m, int32(_a_F_get_opclass_oid_0), v8)
+									mBase = m.M
+									v91 = m.ExcPending
+									if v91 != 0 {
+										return int32(0)
+									} else {
+										F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(202), int32(_a_F_get_opclass_oid_2))
+										mBase = m.M
+										v96 = m.ExcPending
+										if v96 != 0 {
+											return int32(0)
+										} else {
+											base.Wasm_trap_unreachable()
+											for {
+											}
+										}
+									}
+								} else {
+									F_errcode(m, int32(67137668))
+									mBase = m.M
+									v53 = m.ExcPending
+									if v53 != 0 {
+										return int32(0)
+									} else {
+										v54 = F_NameListToString(m, l1)
+										mBase = m.M
+										v55 = m.ExcPending
+										if v55 != 0 {
+											return int32(0)
+										} else {
+											v56 = *(*int32)(unsafe.Add(mBase, uint32(v43)+16))
+											v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56)+22)))
+											*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v54
+											*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v56 + v57 + int32(4)
+											F_errmsg(m, int32(_a_F_get_opclass_oid_3), v8+int32(16))
+											mBase = m.M
+											v67 = m.ExcPending
+											if v67 != 0 {
+												return int32(0)
+											} else {
+												F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(207), int32(_a_F_get_opclass_oid_2))
+												mBase = m.M
+												v72 = m.ExcPending
+												if v72 != 0 {
+													return int32(0)
+												} else {
+													base.Wasm_trap_unreachable()
+													for {
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					} else {
-						if v38 != 0 {
-							if v38 == int32(0) {
-								v79 = int32(0)
-								m.G0 = v8 + int32(32)
-								return v79
-							} else {
-								v73 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
-								v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73)+22)))
-								v76 = *(*int32)(unsafe.Add(mBase, uint32(v73+v74)))
-								F_ReleaseCatCache(m, v38)
-								mBase = m.M
-								v78 = m.ExcPending
-								if v78 != 0 {
-									return int32(0)
-								} else {
-									v79 = v76
-									m.G0 = v8 + int32(32)
-									return v79
-								}
-							}
+						if v38 == int32(0) {
+							v83 = int32(0)
+							m.G0 = v8 + int32(32)
+							return v83
 						} else {
-							v40 = F_SearchSysCache1(m, int32(2), l0)
+							v76 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
+							v77 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v76)+22)))
+							v79 = *(*int32)(unsafe.Add(mBase, uint32(v76+v77)))
+							F_ReleaseCatCache(m, v38)
 							mBase = m.M
-							v41 = m.ExcPending
-							if v41 != 0 {
+							v81 = m.ExcPending
+							if v81 != 0 {
+								return int32(0)
+							} else {
+								v83 = v79
+								m.G0 = v8 + int32(32)
+								return v83
+							}
+						}
+					}
+				} else {
+					v35 = F_SearchSysCache1(m, int32(14), v30)
+					mBase = m.M
+					v36 = m.ExcPending
+					if v36 != 0 {
+						return int32(0)
+					} else {
+						v38 = v35
+						if l2|v38 == int32(0) {
+							v43 = F_SearchSysCache1(m, int32(2), l0)
+							mBase = m.M
+							v44 = m.ExcPending
+							if v44 != 0 {
 								return int32(0)
 							} else {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v45 = m.ExcPending
-								if v45 != 0 {
+								v48 = m.ExcPending
+								if v48 != 0 {
 									return int32(0)
 								} else {
-									if v40 == int32(0) {
+									if v43 == int32(0) {
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
 										F_errmsg_internal(m, int32(_a_F_get_opclass_oid_0), v8)
 										mBase = m.M
-										v87 = m.ExcPending
-										if v87 != 0 {
+										v91 = m.ExcPending
+										if v91 != 0 {
 											return int32(0)
 										} else {
 											F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(202), int32(_a_F_get_opclass_oid_2))
 											mBase = m.M
-											v92 = m.ExcPending
-											if v92 != 0 {
+											v96 = m.ExcPending
+											if v96 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -417,30 +432,30 @@ func F_get_opclass_oid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									} else {
 										F_errcode(m, int32(67137668))
 										mBase = m.M
-										v50 = m.ExcPending
-										if v50 != 0 {
+										v53 = m.ExcPending
+										if v53 != 0 {
 											return int32(0)
 										} else {
-											v51 = F_NameListToString(m, l1)
+											v54 = F_NameListToString(m, l1)
 											mBase = m.M
-											v52 = m.ExcPending
-											if v52 != 0 {
+											v55 = m.ExcPending
+											if v55 != 0 {
 												return int32(0)
 											} else {
-												v53 = *(*int32)(unsafe.Add(mBase, uint32(v40)+16))
-												v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+22)))
-												*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v51
-												*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v54 + v53 + int32(4)
+												v56 = *(*int32)(unsafe.Add(mBase, uint32(v43)+16))
+												v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56)+22)))
+												*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v54
+												*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v56 + v57 + int32(4)
 												F_errmsg(m, int32(_a_F_get_opclass_oid_3), v8+int32(16))
 												mBase = m.M
-												v64 = m.ExcPending
-												if v64 != 0 {
+												v67 = m.ExcPending
+												if v67 != 0 {
 													return int32(0)
 												} else {
 													F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(207), int32(_a_F_get_opclass_oid_2))
 													mBase = m.M
-													v69 = m.ExcPending
-													if v69 != 0 {
+													v72 = m.ExcPending
+													if v72 != 0 {
 														return int32(0)
 													} else {
 														base.Wasm_trap_unreachable()
@@ -453,127 +468,24 @@ func F_get_opclass_oid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									}
 								}
 							}
-						}
-					}
-				} else {
-					v35 = F_SearchSysCache1(m, int32(14), v30)
-					mBase = m.M
-					v36 = m.ExcPending
-					if v36 != 0 {
-						return int32(0)
-					} else {
-						v38 = v35
-						if l2 != 0 {
+						} else {
 							if v38 == int32(0) {
-								v79 = int32(0)
+								v83 = int32(0)
 								m.G0 = v8 + int32(32)
-								return v79
+								return v83
 							} else {
-								v73 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
-								v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73)+22)))
-								v76 = *(*int32)(unsafe.Add(mBase, uint32(v73+v74)))
+								v76 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
+								v77 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v76)+22)))
+								v79 = *(*int32)(unsafe.Add(mBase, uint32(v76+v77)))
 								F_ReleaseCatCache(m, v38)
 								mBase = m.M
-								v78 = m.ExcPending
-								if v78 != 0 {
+								v81 = m.ExcPending
+								if v81 != 0 {
 									return int32(0)
 								} else {
-									v79 = v76
+									v83 = v79
 									m.G0 = v8 + int32(32)
-									return v79
-								}
-							}
-						} else {
-							if v38 != 0 {
-								if v38 == int32(0) {
-									v79 = int32(0)
-									m.G0 = v8 + int32(32)
-									return v79
-								} else {
-									v73 = *(*int32)(unsafe.Add(mBase, uint32(v38)+16))
-									v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73)+22)))
-									v76 = *(*int32)(unsafe.Add(mBase, uint32(v73+v74)))
-									F_ReleaseCatCache(m, v38)
-									mBase = m.M
-									v78 = m.ExcPending
-									if v78 != 0 {
-										return int32(0)
-									} else {
-										v79 = v76
-										m.G0 = v8 + int32(32)
-										return v79
-									}
-								}
-							} else {
-								v40 = F_SearchSysCache1(m, int32(2), l0)
-								mBase = m.M
-								v41 = m.ExcPending
-								if v41 != 0 {
-									return int32(0)
-								} else {
-									F_errstart_cold(m, int32(21), int32(0))
-									mBase = m.M
-									v45 = m.ExcPending
-									if v45 != 0 {
-										return int32(0)
-									} else {
-										if v40 == int32(0) {
-											*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-											F_errmsg_internal(m, int32(_a_F_get_opclass_oid_0), v8)
-											mBase = m.M
-											v87 = m.ExcPending
-											if v87 != 0 {
-												return int32(0)
-											} else {
-												F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(202), int32(_a_F_get_opclass_oid_2))
-												mBase = m.M
-												v92 = m.ExcPending
-												if v92 != 0 {
-													return int32(0)
-												} else {
-													base.Wasm_trap_unreachable()
-													for {
-													}
-												}
-											}
-										} else {
-											F_errcode(m, int32(67137668))
-											mBase = m.M
-											v50 = m.ExcPending
-											if v50 != 0 {
-												return int32(0)
-											} else {
-												v51 = F_NameListToString(m, l1)
-												mBase = m.M
-												v52 = m.ExcPending
-												if v52 != 0 {
-													return int32(0)
-												} else {
-													v53 = *(*int32)(unsafe.Add(mBase, uint32(v40)+16))
-													v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+22)))
-													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v51
-													*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v54 + v53 + int32(4)
-													F_errmsg(m, int32(_a_F_get_opclass_oid_3), v8+int32(16))
-													mBase = m.M
-													v64 = m.ExcPending
-													if v64 != 0 {
-														return int32(0)
-													} else {
-														F_errfinish(m, int32(_a_F_get_opclass_oid_1), int32(207), int32(_a_F_get_opclass_oid_2))
-														mBase = m.M
-														v69 = m.ExcPending
-														if v69 != 0 {
-															return int32(0)
-														} else {
-															base.Wasm_trap_unreachable()
-															for {
-															}
-														}
-													}
-												}
-											}
-										}
-									}
+									return v83
 								}
 							}
 						}
@@ -594,8 +506,8 @@ func F_opclass_for_family_datatype(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v15
 	var v16 int32
 	_ = v16
-	var v24 int32
-	_ = v24
+	var v25 int32
+	_ = v25
 	var v31 int32
 	_ = v31
 	var v32 int32
@@ -614,10 +526,8 @@ func F_opclass_for_family_datatype(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v41
 	var v44 int32
 	_ = v44
-	var v50 int32
-	_ = v50
-	var v55 int32
-	_ = v55
+	var v54 int32
+	_ = v54
 	v4 = int32(0)
 	v12 = F_SearchSysCacheList(m, int32(13), int32(1), l0, v4, v4)
 	mBase = m.M
@@ -640,25 +550,24 @@ L2:
 	}
 L3:
 	;
-	v24 = v4
+	v25 = v4
 	goto L6
 L4:
 	;
-	v50 = v4
 	goto L5
 L5:
 	;
 	F_ReleaseCatCacheList(m, v12)
 	mBase = m.M
-	v55 = m.ExcPending
-	if v55 != 0 {
+	v54 = m.ExcPending
+	if v54 != 0 {
 		goto L1
 	} else {
 		goto L13
 	}
 L6:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(v12+int32(48)+v24<<(uint(int32(2))%32))))
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(v12+int32(48)+v25<<(uint(int32(2))%32))))
 	v32 = *(*int32)(unsafe.Add(mBase, uint32(v31)+56))
 	v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v32)+22)))
 	v34 = v32 + v33
@@ -670,13 +579,12 @@ L6:
 	}
 L7:
 	;
-	v50 = int32(0)
 	goto L5
 L8:
 	;
-	v44 = v24 + int32(1)
+	v44 = v25 + int32(1)
 	if v44 != v16 {
-		v24 = v44
+		v25 = v44
 		goto L6
 	} else {
 		goto L12
@@ -708,5 +616,5 @@ L12:
 	goto L7
 L13:
 	;
-	return v50
+	return int32(0)
 }

@@ -1,0 +1,34 @@
+# Supported host-facing exports for the AOT backend.
+#
+# Keep this list limited to names called by internal/engine, internal/host,
+# and internal/aot itself.  It is also passed to wasm2go -entry-exports so
+# these are the only export roots for whole-function DCE.
+
+__wasm_call_ctors
+malloc
+free
+emscripten_stack_get_current
+_emscripten_stack_restore
+emscripten_builtin_memalign
+_emscripten_timeout
+
+pgmem_init
+pgmem_main
+pgmem_call_sighandler
+pgmem_module_name
+pgmem_reset_session
+
+pgl_freopen
+pgl_run_atexit_funcs
+pgl_setPGliteExitStatus
+pgl_setPGliteActive
+
+PostgresMainLoopOnce
+PostgresMainLongJmp
+PostgresSendReadyForQueryIfNecessary
+ProcessStartupPacket
+pgl_getMyProcPort
+pgl_sendConnData
+pgl_pq_flush
+pgl_startPGlite
+pq_buffer_remaining_data

@@ -288,8 +288,8 @@ func F_validateDomainCheckConstraint(m *base.Module, l0 int32, l1 int32) {
 	_ = v36
 	var v39 int32
 	_ = v39
-	var v50 int32
-	_ = v50
+	var v56 int32
+	_ = v56
 	var v60 int32
 	_ = v60
 	var v64 int32
@@ -342,8 +342,8 @@ func F_validateDomainCheckConstraint(m *base.Module, l0 int32, l1 int32) {
 	_ = v119
 	var v120 int32
 	_ = v120
-	var v128 int32
-	_ = v128
+	var v131 int32
+	_ = v131
 	var v141 int32
 	_ = v141
 	var v145 int32
@@ -541,12 +541,12 @@ L12:
 	}
 L13:
 	;
-	v50 = int32(0)
+	v56 = int32(0)
 	goto L14
 L14:
 	;
 	v60 = *(*int32)(unsafe.Add(mBase, uint32(v35)+12))
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(v60+v50<<(uint(int32(2))%32))))
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(v60+v56<<(uint(int32(2))%32))))
 	v65 = *(*int32)(unsafe.Add(mBase, uint32(v64)))
 	v66 = *(*int32)(unsafe.Add(mBase, uint32(v65)+52))
 	v67 = F_GetLatestSnapshot(m)
@@ -675,7 +675,7 @@ L29:
 	}
 L30:
 	;
-	v128 = v119
+	v131 = v119
 	goto L33
 L31:
 	;
@@ -694,7 +694,7 @@ L32:
 L33:
 	;
 	v141 = *(*int32)(unsafe.Add(mBase, uint32(v64)+8))
-	v145 = *(*int32)(unsafe.Add(mBase, uint32(v141+v128<<(uint(int32(2))%32))))
+	v145 = *(*int32)(unsafe.Add(mBase, uint32(v141+v131<<(uint(int32(2))%32))))
 	v147 = v145 - int32(1)
 	v148 = *(*int32)(unsafe.Add(mBase, uint32(v66)))
 	v149 = int32(*(*int16)(unsafe.Add(mBase, uint32(v80)+6)))
@@ -755,10 +755,10 @@ L39:
 	}
 L40:
 	;
-	v181 = v128 + int32(1)
+	v181 = v131 + int32(1)
 	v182 = *(*int32)(unsafe.Add(mBase, uint32(v64)+4))
 	if v181 < v182 {
-		v128 = v181
+		v131 = v181
 		goto L33
 	} else {
 		goto L41
@@ -838,7 +838,7 @@ L49:
 	}
 L50:
 	;
-	F_sequence_close(m, v65, int32(0))
+	F_relation_close(m, v65, int32(0))
 	mBase = m.M
 	v258 = m.ExcPending
 	if v258 != 0 {
@@ -848,10 +848,10 @@ L50:
 	}
 L51:
 	;
-	v260 = v50 + int32(1)
+	v260 = v56 + int32(1)
 	v261 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
 	if v260 < v261 {
-		v50 = v260
+		v56 = v260
 		goto L14
 	} else {
 		goto L52

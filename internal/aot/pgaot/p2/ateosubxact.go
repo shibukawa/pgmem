@@ -26,58 +26,54 @@ func F_AtEOSubXact_Inval(m *base.Module, l0 int32) {
 	_ = v25
 	var v29 int32
 	_ = v29
-	var v34 int32
-	_ = v34
-	var v35 int32
-	_ = v35
-	var v39 int32
-	_ = v39
+	var v33 int32
+	_ = v33
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
 	var v40 int32
 	_ = v40
 	var v42 int32
 	_ = v42
-	var v44 int32
-	_ = v44
+	var v43 int32
+	_ = v43
 	var v45 int32
 	_ = v45
 	var v47 int32
 	_ = v47
-	var v49 int32
-	_ = v49
-	var v52 int32
-	_ = v52
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
 	var v53 int32
 	_ = v53
+	var v54 int32
+	_ = v54
 	var v56 int32
 	_ = v56
-	var v58 int32
-	_ = v58
-	var v59 int32
-	_ = v59
-	var v61 int32
-	_ = v61
+	var v60 int32
+	_ = v60
 	var v65 int32
 	_ = v65
-	var v70 int32
-	_ = v70
+	var v67 int32
+	_ = v67
 	var v72 int32
 	_ = v72
-	var v77 int32
-	_ = v77
-	var v78 int32
-	_ = v78
-	var v80 int32
-	_ = v80
+	var v73 int32
+	_ = v73
+	var v75 int32
+	_ = v75
+	var v79 int32
+	_ = v79
 	var v84 int32
 	_ = v84
-	var v89 int32
-	_ = v89
-	var v91 int32
-	_ = v91
-	var v97 int32
-	_ = v97
-	var v103 int32
-	_ = v103
+	var v86 int32
+	_ = v86
+	var v95 int32
+	_ = v95
+	var v98 int32
+	_ = v98
 	if l0 == int32(0) {
 		goto L1
 	} else {
@@ -123,10 +119,12 @@ L7:
 	}
 L8:
 	;
+	v95 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
+	*(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Inval[1])) = v95
 	F_pfree(m, v10)
 	mBase = m.M
-	v103 = m.ExcPending
-	if v103 != 0 {
+	v98 = m.ExcPending
+	if v98 != 0 {
 		goto L12
 	} else {
 		goto L36
@@ -146,9 +144,9 @@ L10:
 	goto L11
 L11:
 	;
-	v58 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
-	if v58 < v59 {
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
+	v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
+	if v53 < v54 {
 		goto L22
 	} else {
 		goto L23
@@ -170,23 +168,22 @@ L14:
 	*(*int32)(unsafe.Add(mBase, uint32(v20)+28)) = v29
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v29
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = v29
-	v34 = v10 + int32(32)
-	v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-	*(*int32)(unsafe.Add(mBase, uint32(v20)+32)) = v35
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = v35
-	*(*int32)(unsafe.Add(mBase, uint32(v34))) = v35
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(v39)+8)) = v40
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(v10)+32))
+	*(*int32)(unsafe.Add(mBase, uint32(v20)+32)) = v33
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = v33
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v33
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+28))
+	*(*int32)(unsafe.Add(mBase, uint32(v37)+8)) = v38
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
+	*(*int32)(unsafe.Add(mBase, uint32(v40))) = v38
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
-	*(*int32)(unsafe.Add(mBase, uint32(v42))) = v40
-	v44 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
-	v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+32))
-	*(*int32)(unsafe.Add(mBase, uint32(v44)+12)) = v45
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
-	*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v45
-	v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+16)))
-	if v49 == int32(1) {
+	v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+32))
+	*(*int32)(unsafe.Add(mBase, uint32(v42)+12)) = v43
+	v45 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
+	*(*int32)(unsafe.Add(mBase, uint32(v45)+4)) = v43
+	v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+16)))
+	if v47 == int32(1) {
 		goto L19
 	} else {
 		goto L20
@@ -212,41 +209,39 @@ L18:
 	goto L17
 L19:
 	;
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
-	v53 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v52)+16)) = uint8(v53)
+	v50 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
+	v51 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v50)+16)) = uint8(v51)
 	goto L21
 L20:
 	;
 	goto L21
 L21:
 	;
-	v56 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
-	*(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Inval[1])) = v56
 	goto L8
 L22:
 	;
-	v61 = v58
+	v56 = v53
 	goto L25
 L23:
 	;
 	goto L24
 L24:
 	;
-	v77 = *(*int32)(unsafe.Add(mBase, uint32(v10)+24))
-	v78 = *(*int32)(unsafe.Add(mBase, uint32(v10)+32))
-	if v77 < v78 {
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(v10)+24))
+	v73 = *(*int32)(unsafe.Add(mBase, uint32(v10)+32))
+	if v72 < v73 {
 		goto L29
 	} else {
 		goto L30
 	}
 L25:
 	;
-	v65 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Inval[3]))
-	F_LocalExecuteInvalidationMessage(m, v65+v61<<(uint(int32(4))%32))
+	v60 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Inval[3]))
+	F_LocalExecuteInvalidationMessage(m, v60+v56<<(uint(int32(4))%32))
 	mBase = m.M
-	v70 = m.ExcPending
-	if v70 != 0 {
+	v65 = m.ExcPending
+	if v65 != 0 {
 		goto L12
 	} else {
 		goto L27
@@ -256,9 +251,9 @@ L26:
 	goto L24
 L27:
 	;
-	v72 = v61 + int32(1)
-	if v72 != v59 {
-		v61 = v72
+	v67 = v56 + int32(1)
+	if v67 != v54 {
+		v56 = v67
 		goto L25
 	} else {
 		goto L28
@@ -268,23 +263,21 @@ L28:
 	goto L26
 L29:
 	;
-	v80 = v77
+	v75 = v72
 	goto L32
 L30:
 	;
 	goto L31
 L31:
 	;
-	v97 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
-	*(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Inval[1])) = v97
 	goto L8
 L32:
 	;
-	v84 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Inval[4]))
-	F_LocalExecuteInvalidationMessage(m, v84+v80<<(uint(int32(4))%32))
+	v79 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Inval[4]))
+	F_LocalExecuteInvalidationMessage(m, v79+v75<<(uint(int32(4))%32))
 	mBase = m.M
-	v89 = m.ExcPending
-	if v89 != 0 {
+	v84 = m.ExcPending
+	if v84 != 0 {
 		goto L12
 	} else {
 		goto L34
@@ -294,9 +287,9 @@ L33:
 	goto L31
 L34:
 	;
-	v91 = v80 + int32(1)
-	if v91 != v78 {
-		v80 = v91
+	v86 = v75 + int32(1)
+	if v86 != v73 {
+		v75 = v86
 		goto L32
 	} else {
 		goto L35
@@ -339,24 +332,26 @@ func F_AtEOSubXact_RelationCache(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v42
 	var v44 int32
 	_ = v44
+	var v47 int32
+	_ = v47
 	var v49 int32
 	_ = v49
 	var v51 int32
 	_ = v51
-	var v54 int32
-	_ = v54
-	var v55 int32
-	_ = v55
-	var v61 int32
-	_ = v61
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v59 int32
+	_ = v59
+	var v62 int32
+	_ = v62
 	var v64 int32
 	_ = v64
-	var v66 int32
-	_ = v66
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
+	var v67 int32
+	_ = v67
+	var v68 int32
+	_ = v68
 	v4 = int32(0)
 	v7 = m.G0
 	v9 = v7 - int32(32)
@@ -385,8 +380,9 @@ L3:
 	goto L4
 L4:
 	;
+	v47 = v9 + int32(12)
 	v49 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_RelationCache[3]))
-	F_hash_seq_init(m, v9+int32(12), v49)
+	F_hash_seq_init(m, v47, v49)
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -455,32 +451,32 @@ L14:
 	goto L7
 L15:
 	;
-	v54 = F_hash_seq_search(m, v9+int32(12))
+	v52 = F_hash_seq_search(m, v47)
 	mBase = m.M
-	v55 = m.ExcPending
-	if v55 != 0 {
+	v53 = m.ExcPending
+	if v53 != 0 {
 		goto L8
 	} else {
 		goto L16
 	}
 L16:
 	;
-	if v54 == int32(0) {
+	if v52 == int32(0) {
 		goto L1
 	} else {
 		goto L17
 	}
 L17:
 	;
-	v61 = v54
+	v59 = v52
 	goto L18
 L18:
 	;
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(v61)+4))
-	F_AtEOSubXact_cleanup(m, v64, l0, l1, l2)
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v59)+4))
+	F_AtEOSubXact_cleanup(m, v62, l0, l1, l2)
 	mBase = m.M
-	v66 = m.ExcPending
-	if v66 != 0 {
+	v64 = m.ExcPending
+	if v64 != 0 {
 		goto L8
 	} else {
 		goto L20
@@ -490,18 +486,18 @@ L19:
 	goto L1
 L20:
 	;
-	v69 = F_hash_seq_search(m, v9+int32(12))
+	v67 = F_hash_seq_search(m, v9+int32(12))
 	mBase = m.M
-	v70 = m.ExcPending
-	if v70 != 0 {
+	v68 = m.ExcPending
+	if v68 != 0 {
 		goto L8
 	} else {
 		goto L21
 	}
 L21:
 	;
-	if v69 != 0 {
-		v61 = v69
+	if v67 != 0 {
+		v59 = v67
 		goto L18
 	} else {
 		goto L22
@@ -541,24 +537,20 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	_ = v45
 	var v47 int32
 	_ = v47
-	var v54 int32
-	_ = v54
+	var v52 int32
+	_ = v52
 	var v59 int32
 	_ = v59
-	var v62 int32
-	_ = v62
-	var v68 int32
-	_ = v68
-	var v73 int32
-	_ = v73
-	var v77 int32
-	_ = v77
-	var v80 int32
-	_ = v80
+	var v63 int32
+	_ = v63
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
+	var v78 int32
+	_ = v78
 	var v84 int32
 	_ = v84
-	var v90 int32
-	_ = v90
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -566,40 +558,39 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	if v11 != l2 {
 		v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 		if v47 != l2 {
-			v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-			if v62 != l2 {
-				v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-				if v77 != l2 {
+			v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+			if v59 != l2 {
+				v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+				if v71 != l2 {
 				} else {
-					v80 = l0 + int32(44)
+					v74 = l0 + int32(44)
 					if l1 != 0 {
-						v90 = v80
-						*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+						v84 = v74
+						*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 					}
 				}
 			} else {
 				if l1 != 0 {
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-					v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-					if v84 != l2 {
+					v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+					if v78 != l2 {
 					} else {
-						v90 = l0 + int32(44)
-						*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+						v84 = l0 + int32(44)
+						*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 					}
 				} else {
-					v73 = l0 + int32(40)
-					*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-					v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-					if v77 != l2 {
+					*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+					v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+					if v71 != l2 {
 					} else {
-						v80 = l0 + int32(44)
+						v74 = l0 + int32(44)
 						if l1 != 0 {
-							v90 = v80
-							*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+							v84 = v74
+							*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 						}
 					}
 				}
@@ -607,60 +598,57 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 		} else {
 			if l1 == int32(0) {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(0)
-				v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-				if v68 != l2 {
+				v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+				if v63 != l2 {
 				} else {
-					v73 = l0 + int32(40)
-					*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
 				}
-				v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-				if v77 != l2 {
+				v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+				if v71 != l2 {
 				} else {
-					v80 = l0 + int32(44)
+					v74 = l0 + int32(44)
 					if l1 != 0 {
-						v90 = v80
-						*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+						v84 = v74
+						*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 					}
 				}
 			} else {
-				v59 = l0 + int32(36)
-				*(*int32)(unsafe.Add(mBase, uint32(v59))) = l3
-				v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-				if v62 != l2 {
-					v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-					if v77 != l2 {
+				*(*int32)(unsafe.Add(mBase, uint32(l0+int32(36)))) = l3
+				v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+				if v59 != l2 {
+					v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+					if v71 != l2 {
 					} else {
-						v80 = l0 + int32(44)
+						v74 = l0 + int32(44)
 						if l1 != 0 {
-							v90 = v80
-							*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+							v84 = v74
+							*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 						}
 					}
 				} else {
 					if l1 != 0 {
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-						v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-						if v84 != l2 {
+						v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+						if v78 != l2 {
 						} else {
-							v90 = l0 + int32(44)
-							*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+							v84 = l0 + int32(44)
+							*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 						}
 					} else {
-						v73 = l0 + int32(40)
-						*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-						v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-						if v77 != l2 {
+						*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+						v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+						if v71 != l2 {
 						} else {
-							v80 = l0 + int32(44)
+							v74 = l0 + int32(44)
 							if l1 != 0 {
-								v90 = v80
-								*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+								v84 = v74
+								*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+								*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 							}
 						}
 					}
@@ -674,46 +662,44 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 			if v13 == int32(0) {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = l3
-				v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-				if v54 != l2 {
+				v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+				if v52 != l2 {
 				} else {
-					v59 = l0 + int32(36)
-					*(*int32)(unsafe.Add(mBase, uint32(v59))) = l3
+					*(*int32)(unsafe.Add(mBase, uint32(l0+int32(36)))) = l3
 				}
-				v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-				if v62 != l2 {
-					v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-					if v77 != l2 {
+				v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+				if v59 != l2 {
+					v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+					if v71 != l2 {
 					} else {
-						v80 = l0 + int32(44)
+						v74 = l0 + int32(44)
 						if l1 != 0 {
-							v90 = v80
-							*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+							v84 = v74
+							*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 						}
 					}
 				} else {
 					if l1 != 0 {
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-						v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-						if v84 != l2 {
+						v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+						if v78 != l2 {
 						} else {
-							v90 = l0 + int32(44)
-							*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+							v84 = l0 + int32(44)
+							*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 						}
 					} else {
-						v73 = l0 + int32(40)
-						*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-						v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-						if v77 != l2 {
+						*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+						v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+						if v71 != l2 {
 						} else {
-							v80 = l0 + int32(44)
+							v74 = l0 + int32(44)
 							if l1 != 0 {
-								v90 = v80
-								*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+								v84 = v74
+								*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+								*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 							}
 						}
 					}
@@ -725,8 +711,8 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 				v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 				if v18 == int32(0) {
 					v21 = int64(0)
-					*(*int64)(unsafe.Add(mBase, uint32(v17))) = v21
 					*(*int64)(unsafe.Add(mBase, uint32(v17)+8)) = v21
+					*(*int64)(unsafe.Add(mBase, uint32(v17))) = v21
 					F_RelationClearRelation(m, l0)
 					mBase = m.M
 					v26 = m.ExcPending
@@ -747,40 +733,39 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						if v30 == int32(0) {
 							v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 							if v47 != l2 {
-								v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-								if v62 != l2 {
-									v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-									if v77 != l2 {
+								v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+								if v59 != l2 {
+									v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+									if v71 != l2 {
 									} else {
-										v80 = l0 + int32(44)
+										v74 = l0 + int32(44)
 										if l1 != 0 {
-											v90 = v80
-											*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+											v84 = v74
+											*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 										}
 									}
 								} else {
 									if l1 != 0 {
 										*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-										v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-										if v84 != l2 {
+										v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+										if v78 != l2 {
 										} else {
-											v90 = l0 + int32(44)
-											*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+											v84 = l0 + int32(44)
+											*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 										}
 									} else {
-										v73 = l0 + int32(40)
-										*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-										v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-										if v77 != l2 {
+										*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+										v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+										if v71 != l2 {
 										} else {
-											v80 = l0 + int32(44)
+											v74 = l0 + int32(44)
 											if l1 != 0 {
-												v90 = v80
-												*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+												v84 = v74
+												*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 											}
 										}
 									}
@@ -788,60 +773,57 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							} else {
 								if l1 == int32(0) {
 									*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(0)
-									v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-									if v68 != l2 {
+									v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+									if v63 != l2 {
 									} else {
-										v73 = l0 + int32(40)
-										*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
 									}
-									v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-									if v77 != l2 {
+									v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+									if v71 != l2 {
 									} else {
-										v80 = l0 + int32(44)
+										v74 = l0 + int32(44)
 										if l1 != 0 {
-											v90 = v80
-											*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+											v84 = v74
+											*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 										}
 									}
 								} else {
-									v59 = l0 + int32(36)
-									*(*int32)(unsafe.Add(mBase, uint32(v59))) = l3
-									v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-									if v62 != l2 {
-										v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-										if v77 != l2 {
+									*(*int32)(unsafe.Add(mBase, uint32(l0+int32(36)))) = l3
+									v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+									if v59 != l2 {
+										v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+										if v71 != l2 {
 										} else {
-											v80 = l0 + int32(44)
+											v74 = l0 + int32(44)
 											if l1 != 0 {
-												v90 = v80
-												*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+												v84 = v74
+												*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 											}
 										}
 									} else {
 										if l1 != 0 {
 											*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-											v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-											if v84 != l2 {
+											v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+											if v78 != l2 {
 											} else {
-												v90 = l0 + int32(44)
-												*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+												v84 = l0 + int32(44)
+												*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 											}
 										} else {
-											v73 = l0 + int32(40)
-											*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-											v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-											if v77 != l2 {
+											*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+											if v71 != l2 {
 											} else {
-												v80 = l0 + int32(44)
+												v74 = l0 + int32(44)
 												if l1 != 0 {
-													v90 = v80
-													*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+													v84 = v74
+													*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 												}
 											}
 										}
@@ -867,40 +849,39 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 								} else {
 									v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 									if v47 != l2 {
-										v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-										if v62 != l2 {
-											v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-											if v77 != l2 {
+										v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+										if v59 != l2 {
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+											if v71 != l2 {
 											} else {
-												v80 = l0 + int32(44)
+												v74 = l0 + int32(44)
 												if l1 != 0 {
-													v90 = v80
-													*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+													v84 = v74
+													*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 												}
 											}
 										} else {
 											if l1 != 0 {
 												*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-												v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-												if v84 != l2 {
+												v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+												if v78 != l2 {
 												} else {
-													v90 = l0 + int32(44)
-													*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+													v84 = l0 + int32(44)
+													*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 												}
 											} else {
-												v73 = l0 + int32(40)
-												*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-												v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-												if v77 != l2 {
+												*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+												v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+												if v71 != l2 {
 												} else {
-													v80 = l0 + int32(44)
+													v74 = l0 + int32(44)
 													if l1 != 0 {
-														v90 = v80
-														*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+														v84 = v74
+														*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+														*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 													}
 												}
 											}
@@ -908,60 +889,57 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 									} else {
 										if l1 == int32(0) {
 											*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(0)
-											v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-											if v68 != l2 {
+											v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+											if v63 != l2 {
 											} else {
-												v73 = l0 + int32(40)
-												*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
 											}
-											v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-											if v77 != l2 {
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+											if v71 != l2 {
 											} else {
-												v80 = l0 + int32(44)
+												v74 = l0 + int32(44)
 												if l1 != 0 {
-													v90 = v80
-													*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+													v84 = v74
+													*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 												}
 											}
 										} else {
-											v59 = l0 + int32(36)
-											*(*int32)(unsafe.Add(mBase, uint32(v59))) = l3
-											v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-											if v62 != l2 {
-												v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-												if v77 != l2 {
+											*(*int32)(unsafe.Add(mBase, uint32(l0+int32(36)))) = l3
+											v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+											if v59 != l2 {
+												v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+												if v71 != l2 {
 												} else {
-													v80 = l0 + int32(44)
+													v74 = l0 + int32(44)
 													if l1 != 0 {
-														v90 = v80
-														*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+														v84 = v74
+														*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+														*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 													}
 												}
 											} else {
 												if l1 != 0 {
 													*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-													v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-													if v84 != l2 {
+													v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+													if v78 != l2 {
 													} else {
-														v90 = l0 + int32(44)
-														*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+														v84 = l0 + int32(44)
+														*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 													}
 												} else {
-													v73 = l0 + int32(40)
-													*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-													v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-													if v77 != l2 {
+													*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+													v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+													if v71 != l2 {
 													} else {
-														v80 = l0 + int32(44)
+														v74 = l0 + int32(44)
 														if l1 != 0 {
-															v90 = v80
-															*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+															v84 = v74
+															*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+															*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 														}
 													}
 												}
@@ -981,8 +959,8 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 			if v18 == int32(0) {
 				v21 = int64(0)
-				*(*int64)(unsafe.Add(mBase, uint32(v17))) = v21
 				*(*int64)(unsafe.Add(mBase, uint32(v17)+8)) = v21
+				*(*int64)(unsafe.Add(mBase, uint32(v17))) = v21
 				F_RelationClearRelation(m, l0)
 				mBase = m.M
 				v26 = m.ExcPending
@@ -1003,40 +981,39 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					if v30 == int32(0) {
 						v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 						if v47 != l2 {
-							v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-							if v62 != l2 {
-								v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-								if v77 != l2 {
+							v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+							if v59 != l2 {
+								v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+								if v71 != l2 {
 								} else {
-									v80 = l0 + int32(44)
+									v74 = l0 + int32(44)
 									if l1 != 0 {
-										v90 = v80
-										*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+										v84 = v74
+										*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 									}
 								}
 							} else {
 								if l1 != 0 {
 									*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-									v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-									if v84 != l2 {
+									v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+									if v78 != l2 {
 									} else {
-										v90 = l0 + int32(44)
-										*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+										v84 = l0 + int32(44)
+										*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 									}
 								} else {
-									v73 = l0 + int32(40)
-									*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-									v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-									if v77 != l2 {
+									*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+									v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+									if v71 != l2 {
 									} else {
-										v80 = l0 + int32(44)
+										v74 = l0 + int32(44)
 										if l1 != 0 {
-											v90 = v80
-											*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+											v84 = v74
+											*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 										}
 									}
 								}
@@ -1044,60 +1021,57 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						} else {
 							if l1 == int32(0) {
 								*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(0)
-								v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-								if v68 != l2 {
+								v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+								if v63 != l2 {
 								} else {
-									v73 = l0 + int32(40)
-									*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
 								}
-								v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-								if v77 != l2 {
+								v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+								if v71 != l2 {
 								} else {
-									v80 = l0 + int32(44)
+									v74 = l0 + int32(44)
 									if l1 != 0 {
-										v90 = v80
-										*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+										v84 = v74
+										*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 									}
 								}
 							} else {
-								v59 = l0 + int32(36)
-								*(*int32)(unsafe.Add(mBase, uint32(v59))) = l3
-								v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-								if v62 != l2 {
-									v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-									if v77 != l2 {
+								*(*int32)(unsafe.Add(mBase, uint32(l0+int32(36)))) = l3
+								v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+								if v59 != l2 {
+									v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+									if v71 != l2 {
 									} else {
-										v80 = l0 + int32(44)
+										v74 = l0 + int32(44)
 										if l1 != 0 {
-											v90 = v80
-											*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+											v84 = v74
+											*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 										}
 									}
 								} else {
 									if l1 != 0 {
 										*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-										v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-										if v84 != l2 {
+										v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+										if v78 != l2 {
 										} else {
-											v90 = l0 + int32(44)
-											*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+											v84 = l0 + int32(44)
+											*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 										}
 									} else {
-										v73 = l0 + int32(40)
-										*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-										v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-										if v77 != l2 {
+										*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+										v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+										if v71 != l2 {
 										} else {
-											v80 = l0 + int32(44)
+											v74 = l0 + int32(44)
 											if l1 != 0 {
-												v90 = v80
-												*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+												v84 = v74
+												*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 											}
 										}
 									}
@@ -1123,40 +1097,39 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							} else {
 								v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 								if v47 != l2 {
-									v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-									if v62 != l2 {
-										v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-										if v77 != l2 {
+									v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+									if v59 != l2 {
+										v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+										if v71 != l2 {
 										} else {
-											v80 = l0 + int32(44)
+											v74 = l0 + int32(44)
 											if l1 != 0 {
-												v90 = v80
-												*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+												v84 = v74
+												*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 											}
 										}
 									} else {
 										if l1 != 0 {
 											*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-											v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-											if v84 != l2 {
+											v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+											if v78 != l2 {
 											} else {
-												v90 = l0 + int32(44)
-												*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+												v84 = l0 + int32(44)
+												*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 											}
 										} else {
-											v73 = l0 + int32(40)
-											*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-											v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-											if v77 != l2 {
+											*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+											if v71 != l2 {
 											} else {
-												v80 = l0 + int32(44)
+												v74 = l0 + int32(44)
 												if l1 != 0 {
-													v90 = v80
-													*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+													v84 = v74
+													*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 												}
 											}
 										}
@@ -1164,60 +1137,57 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 								} else {
 									if l1 == int32(0) {
 										*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(0)
-										v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-										if v68 != l2 {
+										v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+										if v63 != l2 {
 										} else {
-											v73 = l0 + int32(40)
-											*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
 										}
-										v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-										if v77 != l2 {
+										v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+										if v71 != l2 {
 										} else {
-											v80 = l0 + int32(44)
+											v74 = l0 + int32(44)
 											if l1 != 0 {
-												v90 = v80
-												*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+												v84 = v74
+												*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 											}
 										}
 									} else {
-										v59 = l0 + int32(36)
-										*(*int32)(unsafe.Add(mBase, uint32(v59))) = l3
-										v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-										if v62 != l2 {
-											v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-											if v77 != l2 {
+										*(*int32)(unsafe.Add(mBase, uint32(l0+int32(36)))) = l3
+										v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+										if v59 != l2 {
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+											if v71 != l2 {
 											} else {
-												v80 = l0 + int32(44)
+												v74 = l0 + int32(44)
 												if l1 != 0 {
-													v90 = v80
-													*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+													v84 = v74
+													*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 												}
 											}
 										} else {
 											if l1 != 0 {
 												*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l3
-												v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-												if v84 != l2 {
+												v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+												if v78 != l2 {
 												} else {
-													v90 = l0 + int32(44)
-													*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+													v84 = l0 + int32(44)
+													*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 												}
 											} else {
-												v73 = l0 + int32(40)
-												*(*int32)(unsafe.Add(mBase, uint32(v73))) = int32(0)
-												v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-												if v77 != l2 {
+												*(*int32)(unsafe.Add(mBase, uint32(l0+int32(40)))) = int32(0)
+												v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+												if v71 != l2 {
 												} else {
-													v80 = l0 + int32(44)
+													v74 = l0 + int32(44)
 													if l1 != 0 {
-														v90 = v80
-														*(*int32)(unsafe.Add(mBase, uint32(v90))) = l3
+														v84 = v74
+														*(*int32)(unsafe.Add(mBase, uint32(v84))) = l3
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+														*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
 													}
 												}
 											}

@@ -28,8 +28,6 @@ func F_get_rule_list_toplevel(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
 	var v35 int32
 	_ = v35
 	var v36 int32
@@ -93,9 +91,8 @@ L5:
 	}
 L6:
 	;
-	v27 = int32(1)
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v28 <= v27 {
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v27 < int32(2) {
 		goto L1
 	} else {
 		goto L12
@@ -136,7 +133,7 @@ L11:
 	goto L6
 L12:
 	;
-	v35 = v27
+	v35 = int32(1)
 	goto L13
 L13:
 	;

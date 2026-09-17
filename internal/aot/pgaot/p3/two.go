@@ -106,10 +106,8 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v107
 	var v108 int32
 	_ = v108
-	var v110 int32
-	_ = v110
-	var v112 int32
-	_ = v112
+	var v111 int32
+	_ = v111
 	v1 = l0
 	v10 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[0]))
 	if base.Ui32(int32(8)) <= base.Ui32(v10) {
@@ -138,19 +136,18 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			v69 = (l2 + int32(7)) & int32(-8)
 			if base.Ui32(v69) <= base.Ui32(v58) {
 				v71 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
-				v104 = v64
+				v104 = v54
 				v105 = v43
 				v106 = v58
 				v107 = v71
-				v108 = v54
+				v108 = v64
 				if l2 != 0 {
-					v110 = F__emscripten_memcpy_bulkmem(m, v107+v108, l1, l2)
-					mBase = m.M
+					base.MemoryCopy(m, v104+v107, l1, l2)
 				} else {
 				}
-				v112 = *(*int32)(unsafe.Add(mBase, uint32(v105)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = v112 + v69
-				*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2])) = v104 + v69
+				v111 = *(*int32)(unsafe.Add(mBase, uint32(v105)+4))
+				*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = v111 + v69
+				*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2])) = v69 + v108
 				*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[0])) = v106 - v69
 				return
 			} else {
@@ -186,19 +183,18 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						v99 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 						v101 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2]))
 						v103 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[0]))
-						v104 = v101
+						v104 = v99
 						v105 = v97
 						v106 = v103
 						v107 = v94
-						v108 = v99
+						v108 = v101
 						if l2 != 0 {
-							v110 = F__emscripten_memcpy_bulkmem(m, v107+v108, l1, l2)
-							mBase = m.M
+							base.MemoryCopy(m, v104+v107, l1, l2)
 						} else {
 						}
-						v112 = *(*int32)(unsafe.Add(mBase, uint32(v105)+4))
-						*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = v112 + v69
-						*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2])) = v104 + v69
+						v111 = *(*int32)(unsafe.Add(mBase, uint32(v105)+4))
+						*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = v111 + v69
+						*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2])) = v69 + v108
 						*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[0])) = v106 - v69
 						return
 					}
@@ -256,19 +252,18 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					v69 = (l2 + int32(7)) & int32(-8)
 					if base.Ui32(v69) <= base.Ui32(v58) {
 						v71 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
-						v104 = v64
+						v104 = v54
 						v105 = v43
 						v106 = v58
 						v107 = v71
-						v108 = v54
+						v108 = v64
 						if l2 != 0 {
-							v110 = F__emscripten_memcpy_bulkmem(m, v107+v108, l1, l2)
-							mBase = m.M
+							base.MemoryCopy(m, v104+v107, l1, l2)
 						} else {
 						}
-						v112 = *(*int32)(unsafe.Add(mBase, uint32(v105)+4))
-						*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = v112 + v69
-						*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2])) = v104 + v69
+						v111 = *(*int32)(unsafe.Add(mBase, uint32(v105)+4))
+						*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = v111 + v69
+						*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2])) = v69 + v108
 						*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[0])) = v106 - v69
 						return
 					} else {
@@ -304,19 +299,18 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								v99 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 								v101 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2]))
 								v103 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[0]))
-								v104 = v101
+								v104 = v99
 								v105 = v97
 								v106 = v103
 								v107 = v94
-								v108 = v99
+								v108 = v101
 								if l2 != 0 {
-									v110 = F__emscripten_memcpy_bulkmem(m, v107+v108, l1, l2)
-									mBase = m.M
+									base.MemoryCopy(m, v104+v107, l1, l2)
 								} else {
 								}
-								v112 = *(*int32)(unsafe.Add(mBase, uint32(v105)+4))
-								*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = v112 + v69
-								*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2])) = v104 + v69
+								v111 = *(*int32)(unsafe.Add(mBase, uint32(v105)+4))
+								*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = v111 + v69
+								*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[2])) = v69 + v108
 								*(*int32)(unsafe.Add(mBase, _c_F_RegisterTwoPhaseRecord[0])) = v106 - v69
 								return
 							}

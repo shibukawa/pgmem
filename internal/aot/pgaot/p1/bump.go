@@ -12,6 +12,8 @@ func F_BumpAlloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v11
 	var v12 int32
 	_ = v12
+	var v16 int32
+	_ = v16
 	var v27 int32
 	_ = v27
 	var v28 int32
@@ -79,70 +81,9 @@ func F_BumpAlloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v11 = (l1 + int32(7)) & int32(-8)
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	if base.Ui32(v12) < base.Ui32(v11) {
-		if base.Ui32(int32(1073741824)) <= base.Ui32(l1) {
-			if l1 < int32(0) {
-				F_MemoryContextSizeFailure(m, l1)
-				mBase = m.M
-				v54 = m.ExcPending
-				if v54 != 0 {
-					return int32(0)
-				} else {
-					base.Wasm_trap_unreachable()
-					for {
-					}
-				}
-			} else {
-				if l2&int32(1) == int32(0) {
-					F_MemoryContextSizeFailure(m, l1)
-					mBase = m.M
-					v54 = m.ExcPending
-					if v54 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				} else {
-					v27 = (l1+int32(7))&int32(-8) + int32(16)
-					v28 = F_emscripten_builtin_malloc(m, v27)
-					mBase = m.M
-					if v28 == int32(0) {
-						v31 = F_MemoryContextAllocationFailure(m, l0, l1, l2)
-						mBase = m.M
-						v34 = m.ExcPending
-						if v34 != 0 {
-							return int32(0)
-						} else {
-							v57 = v31
-							return v57
-						}
-					} else {
-						v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v35 + v27
-						v38 = v28 + v27
-						*(*int32)(unsafe.Add(mBase, uint32(v28)+8)) = v38
-						*(*int32)(unsafe.Add(mBase, uint32(v28)+12)) = v38
-						v42 = l0 + int32(60)
-						v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-						if v43 != 0 {
-							v44 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-							v46 = v44
-						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v42
-							v46 = v42
-						}
-						*(*int32)(unsafe.Add(mBase, uint32(v28))) = v46
-						*(*int32)(unsafe.Add(mBase, uint32(v28)+4)) = v42
-						*(*int32)(unsafe.Add(mBase, uint32(v46)+4)) = v28
-						*(*int32)(unsafe.Add(mBase, uint32(v42))) = v28
-						v57 = v28 + int32(16)
-						return v57
-					}
-				}
-			}
-		} else {
-			v27 = (l1+int32(7))&int32(-8) + int32(16)
+		v16 = int32(0)
+		if (base.B2i32(l2&int32(1) == v16)|base.B2i32(l1 < v16))&base.B2i32(base.Ui32(int32(1073741824)) <= base.Ui32(l1)) == v16 {
+			v27 = v11 + int32(16)
 			v28 = F_emscripten_builtin_malloc(m, v27)
 			mBase = m.M
 			if v28 == int32(0) {
@@ -158,7 +99,7 @@ func F_BumpAlloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			} else {
 				v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v35 + v27
-				v38 = v28 + v27
+				v38 = v27 + v28
 				*(*int32)(unsafe.Add(mBase, uint32(v28)+8)) = v38
 				*(*int32)(unsafe.Add(mBase, uint32(v28)+12)) = v38
 				v42 = l0 + int32(60)
@@ -176,6 +117,17 @@ func F_BumpAlloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v42))) = v28
 				v57 = v28 + int32(16)
 				return v57
+			}
+		} else {
+			F_MemoryContextSizeFailure(m, l1)
+			mBase = m.M
+			v54 = m.ExcPending
+			if v54 != 0 {
+				return int32(0)
+			} else {
+				base.Wasm_trap_unreachable()
+				for {
+				}
 			}
 		}
 	} else {
@@ -239,7 +191,7 @@ func F_BumpAlloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				return v114
 			}
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v59)+8)) = v11 + v61
+			*(*int32)(unsafe.Add(mBase, uint32(v59)+8)) = v61 + v11
 			return v61
 		}
 	}
@@ -369,8 +321,8 @@ func F_BumpStats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 	_ = v17
 	var v21 int32
 	_ = v21
-	var v29 int32
-	_ = v29
+	var v28 int32
+	_ = v28
 	var v30 int32
 	_ = v30
 	var v31 int32
@@ -389,53 +341,55 @@ func F_BumpStats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 	_ = v42
 	var v43 int32
 	_ = v43
+	var v52 int32
+	_ = v52
 	var v53 int32
 	_ = v53
 	var v54 int32
 	_ = v54
-	var v55 int32
-	_ = v55
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
 	var v67 int32
 	_ = v67
-	var v68 int32
-	_ = v68
-	var v72 int32
-	_ = v72
-	var v73 int32
-	_ = v73
-	var v76 int32
-	_ = v76
-	var v79 int32
-	_ = v79
+	var v69 int32
+	_ = v69
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
+	var v77 int32
+	_ = v77
 	v6 = int32(0)
 	v13 = m.G0
 	v15 = v13 - int32(224)
 	m.G0 = v15
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 	if v17 == v6 {
+		v52 = v6
 		v53 = v6
 		v54 = v6
-		v55 = v6
 	} else {
 		v21 = l0 + int32(60)
 		if v17 == v21 {
+			v52 = v6
 			v53 = v6
 			v54 = v6
-			v55 = v6
 		} else {
-			v29 = v17
+			v28 = v17
 			v30 = v6
 			v31 = v6
 			v32 = v6
 			for {
 				v36 = v32 + int32(1)
-				v37 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
-				v39 = v37 + (v30 - v29)
-				v41 = *(*int32)(unsafe.Add(mBase, uint32(v29)+8))
+				v37 = *(*int32)(unsafe.Add(mBase, uint32(v28)+12))
+				v39 = v37 + (v30 - v28)
+				v41 = *(*int32)(unsafe.Add(mBase, uint32(v28)+8))
 				v42 = v31 + v37 - v41
-				v43 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
+				v43 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
 				if v43 != v21 {
-					v29 = v43
+					v28 = v43
 					v30 = v39
 					v31 = v42
 					v32 = v36
@@ -445,35 +399,36 @@ func F_BumpStats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 				}
 				break
 			}
-			v53 = v39
-			v54 = v42
-			v55 = v36
+			v52 = v39
+			v53 = v42
+			v54 = v36
 		}
 	}
 	if l1 != 0 {
-		*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v55
-		*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v54
-		*(*int32)(unsafe.Add(mBase, uint32(v15))) = v53
-		*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v53 - v54
-		v67 = F_pg_snprintf(m, v15+int32(16), int32(200), int32(_a_F_BumpStats_0), v15)
+		*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v54
+		*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v53
+		*(*int32)(unsafe.Add(mBase, uint32(v15))) = v52
+		*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v52 - v53
+		v63 = v15 + int32(16)
+		v66 = F_pg_snprintf(m, v63, int32(200), int32(_a_F_BumpStats_0), v15)
 		mBase = m.M
-		v68 = m.ExcPending
-		if v68 != 0 {
+		v67 = m.ExcPending
+		if v67 != 0 {
 			return
 		} else {
-			m.T0[l1].(func(*base.Module, int32, int32, int32, int32))(m, l0, l2, v15+int32(16), l4)
+			m.T0[l1].(func(*base.Module, int32, int32, int32, int32))(m, l0, l2, v63, l4)
 			mBase = m.M
-			v72 = m.ExcPending
-			if v72 != 0 {
+			v69 = m.ExcPending
+			if v69 != 0 {
 				return
 			} else {
 				if l3 != 0 {
-					v73 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-					*(*int32)(unsafe.Add(mBase, uint32(l3))) = v73 + v55
-					v76 = *(*int32)(unsafe.Add(mBase, uint32(l3)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v76 + v53
-					v79 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
-					*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = v79 + v54
+					v71 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
+					*(*int32)(unsafe.Add(mBase, uint32(l3))) = v71 + v54
+					v74 = *(*int32)(unsafe.Add(mBase, uint32(l3)+8))
+					*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v74 + v52
+					v77 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
+					*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = v77 + v53
 				} else {
 				}
 				m.G0 = v15 + int32(224)
@@ -482,12 +437,12 @@ func F_BumpStats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 		}
 	} else {
 		if l3 != 0 {
-			v73 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-			*(*int32)(unsafe.Add(mBase, uint32(l3))) = v73 + v55
-			v76 = *(*int32)(unsafe.Add(mBase, uint32(l3)+8))
-			*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v76 + v53
-			v79 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
-			*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = v79 + v54
+			v71 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
+			*(*int32)(unsafe.Add(mBase, uint32(l3))) = v71 + v54
+			v74 = *(*int32)(unsafe.Add(mBase, uint32(l3)+8))
+			*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v74 + v52
+			v77 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
+			*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = v77 + v53
 		} else {
 		}
 		m.G0 = v15 + int32(224)

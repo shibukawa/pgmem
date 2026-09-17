@@ -39,16 +39,16 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 	_ = v29
 	var v32 int32
 	_ = v32
+	var v33 int32
+	_ = v33
 	var v35 int32
 	_ = v35
 	var v37 int32
 	_ = v37
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
-	var v44 int32
-	_ = v44
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
 	var v50 int32
 	_ = v50
 	var v53 int32
@@ -137,8 +137,8 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 				return
 			} else {
 				v32 = v22 + v13<<(uint(int32(4))%32)
-				v35 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_c_F_SharedInvalBackendInit[4])))
-				if v35 != 0 {
+				v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_c_F_SharedInvalBackendInit[4])))
+				if v33 != 0 {
 					v110 = *(*int32)(unsafe.Add(mBase, _c_F_SharedInvalBackendInit[3]))
 					F_LWLockRelease(m, v110+int32(768))
 					mBase = m.M
@@ -152,7 +152,7 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 						if v118 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v35
+							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v33
 							v121 = *(*int32)(unsafe.Add(mBase, _c_F_SharedInvalBackendInit[0]))
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = v121
 							F_errmsg_internal(m, int32(_a_F_SharedInvalBackendInit_3), v10)
@@ -175,12 +175,12 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 						}
 					}
 				} else {
-					v37 = *(*int32)(unsafe.Add(mBase, _c_F_SharedInvalBackendInit[0]))
-					v39 = *(*int32)(unsafe.Add(mBase, _c_F_SharedInvalBackendInit[2]))
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_c_F_SharedInvalBackendInit[5])))
-					*(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_c_F_SharedInvalBackendInit[5]))) = v40 + int32(1)
-					v44 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_c_F_SharedInvalBackendInit[6])))
-					*(*int32)(unsafe.Add(mBase, uint32(v44+v40<<(uint(int32(2))%32)))) = v37
+					v35 = *(*int32)(unsafe.Add(mBase, _c_F_SharedInvalBackendInit[0]))
+					v37 = *(*int32)(unsafe.Add(mBase, _c_F_SharedInvalBackendInit[2]))
+					v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+uint32(_c_F_SharedInvalBackendInit[5])))
+					*(*int32)(unsafe.Add(mBase, uint32(v37)+uint32(_c_F_SharedInvalBackendInit[5]))) = v38 + int32(1)
+					v42 = *(*int32)(unsafe.Add(mBase, uint32(v37)+uint32(_c_F_SharedInvalBackendInit[6])))
+					*(*int32)(unsafe.Add(mBase, uint32(v42+v38<<(uint(int32(2))%32)))) = v35
 					v50 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_c_F_SharedInvalBackendInit[7])))
 					*(*int32)(unsafe.Add(mBase, _c_F_SharedInvalBackendInit[8])) = v50
 					v53 = *(*int32)(unsafe.Add(mBase, _c_F_SharedInvalBackendInit[9]))
@@ -307,35 +307,32 @@ func F_shared_buffer_readv_complete_local(m *base.Module, l0 int32, l1 int32, l2
 	_ = mBase
 	var v5 int32
 	_ = v5
-	var v16 int32
-	_ = v16
-	var v22 int32
-	_ = v22
-	var v23 int64
-	_ = v23
+	var v12 int32
+	_ = v12
+	var v19 int32
+	_ = v19
+	var v25 int32
+	_ = v25
+	var v26 int64
+	_ = v26
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	if v5&int32(448) == int32(64) {
-		v23 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
-		*(*int64)(unsafe.Add(mBase, uint32(l0))) = v23
-		return
-	} else {
-		if v5&int32(33292288) == int32(0) {
-			v23 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
-			*(*int64)(unsafe.Add(mBase, uint32(l0))) = v23
+	v12 = int32(0)
+	if base.B2i32(v5&int32(448) == int32(64))|base.B2i32(v5&int32(33292288) == v12) == v12 {
+		v19 = *(*int32)(unsafe.Add(mBase, uint32(l1+int32(104))+4))
+		F_pgstat_report_checksum_failures_in_db(m, v19, int32(base.Ui32(v5)>>(uint(int32(18))%32))&int32(127))
+		mBase = m.M
+		v25 = m.ExcPending
+		if v25 != 0 {
 			return
 		} else {
-			v16 = *(*int32)(unsafe.Add(mBase, uint32(l1+int32(104))+4))
-			F_pgstat_report_checksum_failures_in_db(m, v16, int32(base.Ui32(v5)>>(uint(int32(18))%32))&int32(127))
-			mBase = m.M
-			v22 = m.ExcPending
-			if v22 != 0 {
-				return
-			} else {
-				v23 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
-				*(*int64)(unsafe.Add(mBase, uint32(l0))) = v23
-				return
-			}
+			v26 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
+			*(*int64)(unsafe.Add(mBase, uint32(l0))) = v26
+			return
 		}
+	} else {
+		v26 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
+		*(*int64)(unsafe.Add(mBase, uint32(l0))) = v26
+		return
 	}
 }
 func F_shared_record_typmod_registry_detach(m *base.Module, l0 int32, l1 int32) {
@@ -433,8 +430,8 @@ func F_shared_ts_extend_down(m *base.Module, l0 int32, l1 int32, l2 int64, l3 in
 	_ = v17
 	var v22 int32
 	_ = v22
-	var v31 int32
-	_ = v31
+	var v30 int32
+	_ = v30
 	var v32 int64
 	_ = v32
 	var v33 int32
@@ -455,8 +452,8 @@ func F_shared_ts_extend_down(m *base.Module, l0 int32, l1 int32, l2 int64, l3 in
 	_ = v46
 	var v48 int64
 	_ = v48
-	var v53 int32
-	_ = v53
+	var v56 int32
+	_ = v56
 	var v59 int32
 	_ = v59
 	v3 = l2
@@ -488,30 +485,27 @@ L3:
 	*(*int64)(unsafe.Add(mBase, uint32(v16))) = int64(1024)
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v11
 	v22 = l3 - int32(8)
-	if v22 <= int32(0) {
-		goto L5
+	if int32(0) < v22 {
+		goto L4
 	} else {
-		goto L6
+		goto L5
 	}
 L4:
 	;
-	v59 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v53)+2)) = uint8(v59)
-	*(*uint8)(unsafe.Add(mBase, uint32(v53)+3)) = uint8(v3)
-	return v53 + int32(8)
+	v30 = v16
+	v32 = base.I64_extend_i32_u(v22)
+	goto L7
 L5:
 	;
-	v53 = v16
-	goto L4
+	v56 = v16
+	goto L6
 L6:
 	;
-	goto L7
+	v59 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v56)+2)) = uint8(v59)
+	*(*uint8)(unsafe.Add(mBase, uint32(v56)+3)) = uint8(v3)
+	return v56 + int32(8)
 L7:
-	;
-	v31 = v16
-	v32 = base.I64_extend_i32_u(v22)
-	goto L8
-L8:
 	;
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v36 = F_dsa_allocate_extended(m, v33, int32(24), int32(0))
@@ -520,13 +514,13 @@ L8:
 	if v37 != 0 {
 		goto L1
 	} else {
-		goto L10
+		goto L9
 	}
-L9:
+L8:
 	;
-	v53 = v39
-	goto L4
-L10:
+	v56 = v39
+	goto L6
+L9:
 	;
 	v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v39 = F_dsa_get_address(m, v38, v36)
@@ -535,25 +529,25 @@ L10:
 	if v40 != 0 {
 		goto L1
 	} else {
+		goto L10
+	}
+L10:
+	;
+	*(*int64)(unsafe.Add(mBase, uint32(v39))) = int64(1024)
+	*(*int32)(unsafe.Add(mBase, uint32(v30)+8)) = v36
+	v44 = int64(base.Ui64(v3) >> (uint(v32) % 64))
+	*(*uint8)(unsafe.Add(mBase, uint32(v30)+3)) = uint8(v44)
+	v46 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v30)+2)) = uint8(v46)
+	v48 = int64(8)
+	if base.Ui64(v48) < base.Ui64(v32) {
+		v30 = v39
+		v32 = v32 - v48
+		goto L7
+	} else {
 		goto L11
 	}
 L11:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(v39))) = int64(1024)
-	*(*int32)(unsafe.Add(mBase, uint32(v31)+8)) = v36
-	v44 = int64(base.Ui64(v3) >> (uint(v32) % 64))
-	*(*uint8)(unsafe.Add(mBase, uint32(v31)+3)) = uint8(v44)
-	v46 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v31)+2)) = uint8(v46)
-	v48 = int64(8)
-	if base.Ui64(v48) < base.Ui64(v32) {
-		v31 = v39
-		v32 = v32 - v48
-		goto L8
-	} else {
-		goto L12
-	}
-L12:
-	;
-	goto L9
+	goto L8
 }

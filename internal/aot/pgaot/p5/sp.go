@@ -65,54 +65,54 @@ func F_SpGistPageAddNewItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v66
 	var v73 int32
 	_ = v73
-	var v79 int32
-	_ = v79
-	var v83 int32
-	_ = v83
-	var v84 int32
-	_ = v84
-	var v89 int32
-	_ = v89
-	var v105 int32
-	_ = v105
-	var v108 int32
-	_ = v108
-	var v111 int32
-	_ = v111
+	var v77 int32
+	_ = v77
+	var v81 int32
+	_ = v81
+	var v82 int32
+	_ = v82
+	var v87 int32
+	_ = v87
+	var v103 int32
+	_ = v103
+	var v106 int32
+	_ = v106
+	var v109 int32
+	_ = v109
+	var v113 int32
+	_ = v113
 	var v115 int32
 	_ = v115
+	var v116 int32
+	_ = v116
 	var v117 int32
 	_ = v117
-	var v118 int32
-	_ = v118
 	var v119 int32
 	_ = v119
-	var v121 int32
-	_ = v121
-	var v126 int32
-	_ = v126
-	var v131 int32
-	_ = v131
-	var v137 int32
-	_ = v137
-	var v142 int32
-	_ = v142
-	var v143 int32
-	_ = v143
+	var v124 int32
+	_ = v124
+	var v129 int32
+	_ = v129
+	var v135 int32
+	_ = v135
+	var v140 int32
+	_ = v140
+	var v141 int32
+	_ = v141
+	var v153 int32
+	_ = v153
 	var v155 int32
 	_ = v155
-	var v157 int32
-	_ = v157
-	var v158 int32
-	_ = v158
-	var v162 int32
-	_ = v162
-	var v166 int32
-	_ = v166
-	var v171 int32
-	_ = v171
-	var v176 int32
-	_ = v176
+	var v156 int32
+	_ = v156
+	var v160 int32
+	_ = v160
+	var v164 int32
+	_ = v164
+	var v169 int32
+	_ = v169
+	var v174 int32
+	_ = v174
 	v11 = m.G0
 	v13 = v11 - int32(32)
 	m.G0 = v13
@@ -127,14 +127,14 @@ func F_SpGistPageAddNewItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 L1:
 	;
 	m.G0 = v13 + int32(32)
-	return v176
+	return v174
 L2:
 	;
-	v155 = int32(0)
-	v157 = F_PageAddItemExtended(m, l0, l1, l2, v155, v155)
+	v153 = int32(0)
+	v155 = F_PageAddItemExtended(m, l0, l1, l2, v153, v153)
 	mBase = m.M
-	v158 = m.ExcPending
-	if v158 != 0 {
+	v156 = m.ExcPending
+	if v156 != 0 {
 		goto L32
 	} else {
 		goto L42
@@ -190,8 +190,8 @@ L11:
 	goto L13
 L12:
 	;
-	v143 = int32(0)
-	*(*uint16)(unsafe.Add(mBase, uint32(v16)+4)) = uint16(v143)
+	v141 = int32(0)
+	*(*uint16)(unsafe.Add(mBase, uint32(v16)+4)) = uint16(v141)
 	goto L2
 L13:
 	;
@@ -202,11 +202,11 @@ L13:
 	}
 L14:
 	;
-	v111 = v66 & int32(_a_F_SpGistPageAddNewItem_1)
-	F_PageIndexTupleDelete(m, l0, v111)
+	v109 = v66 & int32(_a_F_SpGistPageAddNewItem_1)
+	F_PageIndexTupleDelete(m, l0, v109)
 	mBase = m.M
-	v115 = m.ExcPending
-	if v115 != 0 {
+	v113 = m.ExcPending
+	if v113 != 0 {
 		goto L32
 	} else {
 		goto L33
@@ -254,10 +254,10 @@ L22:
 L23:
 	;
 	v73 = v66 & int32(_a_F_SpGistPageAddNewItem_1)
-	v79 = *(*int32)(unsafe.Add(mBase, uint32(v73<<(uint(int32(2))%32)+(l0+int32(24))-int32(4))))
-	v83 = *(*int32)(unsafe.Add(mBase, uint32(l0+v79&int32(_a_F_SpGistPageAddNewItem_2))))
-	v84 = int32(3)
-	if v83&v84 != v84 {
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(20)+v73<<(uint(int32(2))%32))))
+	v81 = *(*int32)(unsafe.Add(mBase, uint32(l0+v77&int32(_a_F_SpGistPageAddNewItem_2))))
+	v82 = int32(3)
+	if v81&v82 != v82 {
 		goto L25
 	} else {
 		goto L26
@@ -271,9 +271,9 @@ L24:
 	}
 L25:
 	;
-	v89 = v66 + int32(1)
-	if base.Ui32(v89&int32(_a_F_SpGistPageAddNewItem_1)) <= base.Ui32(v46) {
-		v66 = v89
+	v87 = v66 + int32(1)
+	if base.Ui32(v87&int32(_a_F_SpGistPageAddNewItem_1)) <= base.Ui32(v46) {
+		v66 = v87
 		goto L23
 	} else {
 		goto L28
@@ -292,44 +292,44 @@ L29:
 	goto L21
 L30:
 	;
-	v105 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l3))))
-	if v105 == int32(0) {
+	v103 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l3))))
+	if v103 == int32(0) {
 		goto L12
 	} else {
 		goto L31
 	}
 L31:
 	;
-	v108 = int32(0)
-	*(*uint16)(unsafe.Add(mBase, uint32(l3))) = uint16(v108)
+	v106 = int32(0)
+	*(*uint16)(unsafe.Add(mBase, uint32(l3))) = uint16(v106)
 	goto L13
 L32:
 	;
 	return int32(0)
 L33:
 	;
-	v117 = F_PageAddItemExtended(m, l0, l1, l2, v111, int32(0))
+	v115 = F_PageAddItemExtended(m, l0, l1, l2, v109, int32(0))
 	mBase = m.M
-	v118 = m.ExcPending
-	if v118 != 0 {
+	v116 = m.ExcPending
+	if v116 != 0 {
 		goto L32
 	} else {
 		goto L34
 	}
 L34:
 	;
-	if v117 != 0 {
+	if v115 != 0 {
 		goto L35
 	} else {
 		goto L36
 	}
 L35:
 	;
-	v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v16)+4)))
-	v121 = v119 - int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(v16)+4)) = uint16(v121)
+	v117 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v16)+4)))
+	v119 = v117 - int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(v16)+4)) = uint16(v119)
 	if l3 == int32(0) {
-		v176 = v117
+		v174 = v115
 		goto L1
 	} else {
 		goto L38
@@ -341,25 +341,25 @@ L37:
 	;
 	F_errstart_cold(m, int32(23), int32(0))
 	mBase = m.M
-	v131 = m.ExcPending
-	if v131 != 0 {
+	v129 = m.ExcPending
+	if v129 != 0 {
 		goto L32
 	} else {
 		goto L39
 	}
 L38:
 	;
-	v126 = v117 + int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(l3))) = uint16(v126)
-	v176 = v117
+	v124 = v115 + int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(l3))) = uint16(v124)
+	v174 = v115
 	goto L1
 L39:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = l2
 	F_errmsg_internal(m, int32(_a_F_SpGistPageAddNewItem_3), v13+int32(16))
 	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
+	v135 = m.ExcPending
+	if v135 != 0 {
 		goto L32
 	} else {
 		goto L40
@@ -368,8 +368,8 @@ L40:
 	;
 	F_errfinish(m, int32(_a_F_SpGistPageAddNewItem_4), int32(1274), int32(_a_F_SpGistPageAddNewItem_5))
 	mBase = m.M
-	v142 = m.ExcPending
-	if v142 != 0 {
+	v140 = m.ExcPending
+	if v140 != 0 {
 		goto L32
 	} else {
 		goto L41
@@ -381,8 +381,8 @@ L41:
 	}
 L42:
 	;
-	if v157 != 0 {
-		v176 = v157
+	if v155 != 0 {
+		v174 = v155
 		goto L1
 	} else {
 		goto L43
@@ -391,8 +391,8 @@ L43:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v162 = m.ExcPending
-	if v162 != 0 {
+	v160 = m.ExcPending
+	if v160 != 0 {
 		goto L32
 	} else {
 		goto L44
@@ -402,8 +402,8 @@ L44:
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = l2
 	F_errmsg_internal(m, int32(_a_F_SpGistPageAddNewItem_3), v13)
 	mBase = m.M
-	v166 = m.ExcPending
-	if v166 != 0 {
+	v164 = m.ExcPending
+	if v164 != 0 {
 		goto L32
 	} else {
 		goto L45
@@ -412,8 +412,8 @@ L45:
 	;
 	F_errfinish(m, int32(_a_F_SpGistPageAddNewItem_4), int32(1286), int32(_a_F_SpGistPageAddNewItem_5))
 	mBase = m.M
-	v171 = m.ExcPending
-	if v171 != 0 {
+	v169 = m.ExcPending
+	if v169 != 0 {
 		goto L32
 	} else {
 		goto L46

@@ -42,14 +42,14 @@ func F_get_opfamily_member_for_cmptype(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = v38
 	var v40 int32
 	_ = v40
-	var v42 int32
-	_ = v42
-	var v50 int32
-	_ = v50
-	var v54 int32
-	_ = v54
-	var v59 int32
-	_ = v59
+	var v43 int32
+	_ = v43
+	var v51 int32
+	_ = v51
+	var v55 int32
+	_ = v55
+	var v60 int32
+	_ = v60
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
@@ -77,9 +77,9 @@ func F_get_opfamily_member_for_cmptype(m *base.Module, l0 int32, l1 int32, l2 in
 					return int32(0)
 				} else {
 					if v25 == int32(0) {
-						v42 = v23
+						v43 = v23
 						m.G0 = v10 + int32(16)
-						return v42
+						return v43
 					} else {
 						v31 = F_SearchSysCache4(m, int32(4), l0, l1, l2, base.I32_extend16_s(v25))
 						mBase = m.M
@@ -88,9 +88,9 @@ func F_get_opfamily_member_for_cmptype(m *base.Module, l0 int32, l1 int32, l2 in
 							return int32(0)
 						} else {
 							if v31 == int32(0) {
-								v42 = v23
+								v43 = v23
 								m.G0 = v10 + int32(16)
-								return v42
+								return v43
 							} else {
 								v35 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
 								v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+22)))
@@ -101,9 +101,9 @@ func F_get_opfamily_member_for_cmptype(m *base.Module, l0 int32, l1 int32, l2 in
 								if v40 != 0 {
 									return int32(0)
 								} else {
-									v42 = v38
+									v43 = v38
 									m.G0 = v10 + int32(16)
-									return v42
+									return v43
 								}
 							}
 						}
@@ -113,21 +113,21 @@ func F_get_opfamily_member_for_cmptype(m *base.Module, l0 int32, l1 int32, l2 in
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v50 = m.ExcPending
-			if v50 != 0 {
+			v51 = m.ExcPending
+			if v51 != 0 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
 				F_errmsg_internal(m, int32(_a_F_get_opfamily_member_for_cmptype_0), v10)
 				mBase = m.M
-				v54 = m.ExcPending
-				if v54 != 0 {
+				v55 = m.ExcPending
+				if v55 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_get_opfamily_member_for_cmptype_1), int32(1384), int32(_a_F_get_opfamily_member_for_cmptype_2))
 					mBase = m.M
-					v59 = m.ExcPending
-					if v59 != 0 {
+					v60 = m.ExcPending
+					if v60 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()

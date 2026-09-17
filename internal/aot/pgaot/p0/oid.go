@@ -12,6 +12,8 @@ func F_OidFunctionCall6Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v9
 	var v11 int32
 	_ = v11
+	var v14 int32
+	_ = v14
 	var v16 int32
 	_ = v16
 	var v21 int32
@@ -20,27 +22,28 @@ func F_OidFunctionCall6Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v22
 	var v40 int32
 	_ = v40
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
 	var v53 int32
 	_ = v53
 	var v54 int32
 	_ = v54
-	var v55 int32
-	_ = v55
-	var v56 int32
-	_ = v56
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
-	var v67 int32
-	_ = v67
-	var v72 int32
-	_ = v72
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v65 int32
+	_ = v65
+	var v70 int32
+	_ = v70
 	v9 = m.G0
 	v11 = v9 - int32(112)
 	m.G0 = v11
+	v14 = v11 + int32(16)
 	v16 = *(*int32)(unsafe.Add(mBase, _c_F_OidFunctionCall6Coll[0]))
-	F_fmgr_info_cxt_security(m, l0, v11+int32(16), v16, int32(0))
+	F_fmgr_info_cxt_security(m, l0, v14, v16, int32(0))
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
@@ -64,34 +67,34 @@ func F_OidFunctionCall6Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 		*(*uint8)(unsafe.Add(mBase, uint32(v11)+60)) = uint8(v22)
 		*(*int32)(unsafe.Add(mBase, uint32(v11)+56)) = v22
 		*(*int64)(unsafe.Add(mBase, uint32(v11)+48)) = int64(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+44)) = v11 + int32(16)
-		v53 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
-		v54 = m.T0[v53].(func(*base.Module, int32) int32)(m, v11+int32(44))
+		*(*int32)(unsafe.Add(mBase, uint32(v11)+44)) = v14
+		v51 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
+		v52 = m.T0[v51].(func(*base.Module, int32) int32)(m, v11+int32(44))
 		mBase = m.M
-		v55 = m.ExcPending
-		if v55 != 0 {
+		v53 = m.ExcPending
+		if v53 != 0 {
 			return int32(0)
 		} else {
-			v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+60)))
-			if v56 == int32(1) {
+			v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+60)))
+			if v54 == int32(1) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v62 = m.ExcPending
-				if v62 != 0 {
+				v60 = m.ExcPending
+				if v60 != 0 {
 					return int32(0)
 				} else {
-					v63 = *(*int32)(unsafe.Add(mBase, uint32(v11)+20))
-					*(*int32)(unsafe.Add(mBase, uint32(v11))) = v63
+					v61 = *(*int32)(unsafe.Add(mBase, uint32(v11)+20))
+					*(*int32)(unsafe.Add(mBase, uint32(v11))) = v61
 					F_errmsg_internal(m, int32(_a_F_OidFunctionCall6Coll_0), v11)
 					mBase = m.M
-					v67 = m.ExcPending
-					if v67 != 0 {
+					v65 = m.ExcPending
+					if v65 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_OidFunctionCall6Coll_1), int32(1278), int32(_a_F_OidFunctionCall6Coll_2))
 						mBase = m.M
-						v72 = m.ExcPending
-						if v72 != 0 {
+						v70 = m.ExcPending
+						if v70 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
@@ -102,7 +105,7 @@ func F_OidFunctionCall6Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 				}
 			} else {
 				m.G0 = v11 + int32(112)
-				return v54
+				return v52
 			}
 		}
 	}

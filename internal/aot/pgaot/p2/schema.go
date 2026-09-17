@@ -16,8 +16,8 @@ func F_LockSchemaList(m *base.Module, l0 int32) {
 	_ = v7
 	var v11 int32
 	_ = v11
-	var v16 int32
-	_ = v16
+	var v17 int32
+	_ = v17
 	var v18 int32
 	_ = v18
 	var v22 int32
@@ -69,12 +69,12 @@ L2:
 	}
 L3:
 	;
-	v16 = v2
+	v17 = v2
 	goto L4
 L4:
 	;
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v18+v16<<(uint(int32(2))%32))))
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v18+v17<<(uint(int32(2))%32))))
 	v24 = *(*int32)(unsafe.Add(mBase, _c_F_LockSchemaList[0]))
 	if v24 != 0 {
 		goto L6
@@ -140,7 +140,7 @@ L12:
 	}
 L13:
 	;
-	v38 = v16 + int32(1)
+	v38 = v17 + int32(1)
 	v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if v39 <= v38 {
 		goto L1
@@ -155,7 +155,7 @@ L15:
 	goto L5
 L16:
 	;
-	v16 = v38
+	v17 = v38
 	goto L4
 L17:
 	;
@@ -195,76 +195,16 @@ L20:
 	}
 }
 func F_has_schema_privilege_id_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v22 int64
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v14 = F_pg_detoast_datum_packed(m, v13)
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v4 = Fn13914(m, l0, int32(_a_F_has_schema_privilege_id_id_0), int32(2615))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v18 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(_a_F_has_schema_privilege_id_id_0))
-		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
-			return int32(0)
-		} else {
-			v26 = F_object_aclcheck_ext(m, int32(2615), v11, v12, v22, v9+int32(15))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-				if v28 == int32(1) {
-					v31 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-					v35 = int32(0)
-				} else {
-					v35 = base.B2i32(v26 == int32(0))
-				}
-				m.G0 = v9 + int32(16)
-				return v35
-			}
-		}
+		return v4
 	}
 }
 func F_has_schema_privilege_id_name(m *base.Module, l0 int32) int32 {

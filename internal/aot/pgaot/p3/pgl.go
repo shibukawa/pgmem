@@ -5,84 +5,66 @@ import (
 	"unsafe"
 )
 
-func F_pgl_geteuid(m *base.Module) int32 {
-	return int32(123)
-}
-func F_pgl_getpwuid(m *base.Module, l0 int32) int32 {
+func F_pgl_longjmp(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	var v18 int32
-	_ = v18
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_getpwuid[0])) = int32(_a_F_pgl_getpwuid_0)
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_getpwuid[1])) = int32(_a_F_pgl_getpwuid_1)
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_getpwuid[2])) = int32(_a_F_pgl_getpwuid_2)
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_getpwuid[3])) = l0
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_getpwuid[4])) = l0
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_getpwuid[5])) = int32(_a_F_pgl_getpwuid_3)
-	v18 = int32(_a_F_pgl_getpwuid_4)
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_getpwuid[6])) = int32(_a_F_pgl_getpwuid_5)
-	return v18
-}
-func F_pgl_longjmp(m *base.Module, l0 int32, l1 int32) {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
 	var v7 int32
 	_ = v7
-	var v8 int32
-	_ = v8
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
 	var v17 int32
 	_ = v17
-	var v18 int32
-	_ = v18
+	var v20 int32
+	_ = v20
 	var v21 int32
 	_ = v21
-	var v22 int32
-	_ = v22
+	var v23 int32
+	_ = v23
 	var v24 int32
 	_ = v24
-	var v25 int32
-	_ = v25
-	var v27 int32
-	_ = v27
-	var v29 int32
-	_ = v29
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v38 int32
+	_ = v38
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v41 int32
-	_ = v41
+	var v43 int32
+	_ = v43
 	var v44 int32
 	_ = v44
 	var v45 int32
 	_ = v45
-	var v46 int32
-	_ = v46
+	var v48 int32
+	_ = v48
 	var v49 int32
 	_ = v49
-	var v50 int32
-	_ = v50
-	var v52 int32
-	_ = v52
-	var v57 int32
-	_ = v57
-	var v70 int32
-	_ = v70
+	var v51 int32
+	_ = v51
+	var v56 int32
+	_ = v56
+	var v69 int32
+	_ = v69
 	var v76 int32
 	_ = v76
-	v4 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_longjmp[0]))
-	if v4 == int32(0) {
+	v3 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_longjmp[0]))
+	if v3 == int32(0) {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	F___wasm_longjmp(m, l0, l1)
+	F___wasm_longjmp(m, l0, int32(1))
 	mBase = m.M
 	v76 = m.ExcPending
 	if v76 != 0 {
@@ -92,57 +74,57 @@ L1:
 	}
 L2:
 	;
-	v7 = int32(_a_F_pgl_longjmp_0)
-	v8 = int32(156)
+	v6 = int32(_a_F_pgl_longjmp_0)
+	v7 = int32(156)
 	goto L6
 L3:
 	;
-	if v70 != 0 {
+	if v69 != 0 {
 		goto L1
 	} else {
 		goto L21
 	}
 L4:
 	;
-	v70 = int32(0)
+	v69 = int32(0)
 	goto L3
 L5:
 	;
+	v43 = v38
 	v44 = v39
 	v45 = v40
-	v46 = v41
 	goto L15
 L6:
 	;
-	if (l0|v7)&int32(3) != 0 {
-		v39 = l0
+	if (l0|v6)&int32(3) != 0 {
+		v38 = l0
+		v39 = v6
 		v40 = v7
-		v41 = v8
 		goto L5
 	} else {
 		goto L9
 	}
 L8:
 	;
-	if v29 == int32(0) {
+	if v28 == int32(0) {
 		goto L4
 	} else {
 		goto L14
 	}
 L9:
 	;
-	v16 = l0
+	v15 = l0
+	v16 = v6
 	v17 = v7
-	v18 = v8
 	goto L10
 L10:
 	;
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-	if v21 != v22 {
+	if v20 != v21 {
+		v38 = v15
 		v39 = v16
 		v40 = v17
-		v41 = v18
 		goto L5
 	} else {
 		goto L12
@@ -152,14 +134,14 @@ L11:
 	goto L8
 L12:
 	;
-	v24 = int32(4)
-	v25 = v17 + v24
-	v27 = v16 + v24
-	v29 = v18 - v24
-	if base.Ui32(int32(3)) < base.Ui32(v29) {
-		v16 = v27
-		v17 = v25
-		v18 = v29
+	v23 = int32(4)
+	v24 = v16 + v23
+	v26 = v15 + v23
+	v28 = v17 - v23
+	if base.Ui32(int32(3)) < base.Ui32(v28) {
+		v15 = v26
+		v16 = v24
+		v17 = v28
 		goto L10
 	} else {
 		goto L13
@@ -169,31 +151,31 @@ L13:
 	goto L11
 L14:
 	;
-	v39 = v27
-	v40 = v25
-	v41 = v29
+	v38 = v26
+	v39 = v24
+	v40 = v28
 	goto L5
 L15:
 	;
+	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43))))
 	v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44))))
-	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45))))
-	if v49 == v50 {
+	if v48 == v49 {
 		goto L17
 	} else {
 		goto L18
 	}
 L16:
 	;
-	v70 = v49 - v50
+	v69 = v48 - v49
 	goto L3
 L17:
 	;
-	v52 = int32(1)
-	v57 = v46 - v52
-	if v57 != 0 {
-		v44 = v44 + v52
-		v45 = v45 + v52
-		v46 = v57
+	v51 = int32(1)
+	v56 = v45 - v51
+	if v56 != 0 {
+		v43 = v43 + v51
+		v44 = v44 + v51
+		v45 = v56
 		goto L15
 	} else {
 		goto L20
@@ -270,28 +252,28 @@ func F_pgl_setPGliteExitStatus(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, _c_F_pgl_setPGliteExitStatus[0])) = l0
 	return v4
 }
-func F_pgl_shmat(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_pgl_shmat(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
 	var v7 int32
 	_ = v7
 	var v9 int32
 	_ = v9
 	var v11 int32
 	_ = v11
-	var v13 int32
-	_ = v13
-	v5 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_shmat[0]))
-	if v5 != 0 {
+	v4 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_shmat[0]))
+	if v4 != 0 {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	v7 = v5
+	v6 = v4
 	goto L4
 L2:
 	;
@@ -302,8 +284,8 @@ L3:
 	return int32(-1)
 L4:
 	;
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-	if l0 == v9 {
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	if l0 == v7 {
 		goto L6
 	} else {
 		goto L7
@@ -313,16 +295,16 @@ L5:
 	goto L3
 L6:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
-	return v11
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+	return v9
 L7:
 	;
 	goto L8
 L8:
 	;
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(v7)+20))
-	if v13 != 0 {
-		v7 = v13
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v6)+20))
+	if v11 != 0 {
+		v6 = v11
 		goto L4
 	} else {
 		goto L9

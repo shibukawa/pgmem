@@ -10,103 +10,105 @@ func F_GetConfigOption(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
 	var v19 int32
 	_ = v19
 	var v20 int32
 	_ = v20
-	var v22 int32
-	_ = v22
-	var v26 int32
-	_ = v26
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
 	var v27 int32
 	_ = v27
 	var v28 int32
 	_ = v28
-	var v29 float64
+	var v29 int32
 	_ = v29
-	var v31 int32
-	_ = v31
-	var v37 int32
-	_ = v37
+	var v30 float64
+	_ = v30
+	var v32 int32
+	_ = v32
 	var v38 int32
 	_ = v38
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v42 int32
-	_ = v42
+	var v41 int32
+	_ = v41
 	var v43 int32
 	_ = v43
 	var v44 int32
 	_ = v44
 	var v45 int32
 	_ = v45
-	var v48 int32
-	_ = v48
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v59 int32
-	_ = v59
-	var v68 int32
-	_ = v68
-	var v69 int32
-	_ = v69
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v60 int32
+	_ = v60
+	var v63 int32
+	_ = v63
 	var v76 int32
 	_ = v76
-	var v81 int32
-	_ = v81
+	var v77 int32
+	_ = v77
 	var v84 int32
 	_ = v84
-	var v85 int32
-	_ = v85
-	var v86 int32
-	_ = v86
-	var v91 int32
-	_ = v91
+	var v89 int32
+	_ = v89
+	var v92 int32
+	_ = v92
+	var v93 int32
+	_ = v93
+	var v94 int32
+	_ = v94
+	var v98 int32
+	_ = v98
 	v3 = int32(0)
-	v6 = m.G0
-	v8 = v6 - int32(80)
-	m.G0 = v8
-	v12 = F_find_option(m, l0, v3, l1, int32(21))
+	v7 = m.G0
+	v9 = v7 - int32(80)
+	m.G0 = v9
+	v13 = F_find_option(m, l0, v3, l1, int32(21))
 	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	v16 = m.ExcPending
+	if v16 != 0 {
 		goto L2
 	} else {
 		goto L3
 	}
 L1:
 	;
-	m.G0 = v8 + int32(80)
-	return v91
+	m.G0 = v9 + int32(80)
+	return v98
 L2:
 	;
 	return int32(0)
 L3:
 	;
-	if v12 == int32(0) {
-		v91 = v3
+	if v13 == int32(0) {
+		v98 = v3
 		goto L1
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(v12)+24))
-	switch v18 {
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v13)+24))
+	switch v19 {
 	case 0:
 		goto L5
 	case 1:
@@ -118,137 +120,88 @@ L4:
 	case 4:
 		goto L6
 	default:
-		v91 = v3
+		v98 = v3
 		goto L1
 	}
 L5:
 	;
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v12)+92))
-	v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v84))))
-	if v85 != 0 {
-		goto L25
-	} else {
+	v92 = *(*int32)(unsafe.Add(mBase, uint32(v13)+92))
+	v93 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v92))))
+	if v93 != 0 {
 		goto L26
+	} else {
+		goto L27
 	}
 L6:
 	;
-	v43 = *(*int32)(unsafe.Add(mBase, uint32(v12)+92))
-	v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
-	v45 = *(*int32)(unsafe.Add(mBase, uint32(v12)+100))
-	if v45 == int32(0) {
+	v44 = *(*int32)(unsafe.Add(mBase, uint32(v13)+92))
+	v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)))
+	v46 = *(*int32)(unsafe.Add(mBase, uint32(v13)+100))
+	if v46 == int32(0) {
 		goto L15
 	} else {
 		goto L16
 	}
 L7:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(v12)+92))
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)))
-	if v40 != 0 {
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v13)+92))
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
+	if v41 != 0 {
 		goto L12
 	} else {
 		goto L13
 	}
 L8:
 	;
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(v12)+92))
-	v29 = *(*float64)(unsafe.Add(mBase, uint32(v28)))
-	*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v29
-	v31 = int32(_a_F_GetConfigOption_0)
-	v37 = F_pg_snprintf(m, v31, int32(256), int32(_a_F_GetConfigOption_1), v8+int32(16))
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v13)+92))
+	v30 = *(*float64)(unsafe.Add(mBase, uint32(v29)))
+	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v30
+	v32 = int32(_a_F_GetConfigOption_0)
+	v38 = F_pg_snprintf(m, v32, int32(256), int32(_a_F_GetConfigOption_1), v9+int32(16))
 	mBase = m.M
-	v38 = m.ExcPending
-	if v38 != 0 {
+	v39 = m.ExcPending
+	if v39 != 0 {
 		goto L2
 	} else {
 		goto L11
 	}
 L9:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(v12)+92))
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v20
-	v22 = int32(_a_F_GetConfigOption_0)
-	v26 = F_pg_snprintf(m, v22, int32(256), int32(_a_F_GetConfigOption_2), v8)
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v13)+92))
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v21
+	v23 = int32(_a_F_GetConfigOption_0)
+	v27 = F_pg_snprintf(m, v23, int32(256), int32(_a_F_GetConfigOption_2), v9)
 	mBase = m.M
-	v27 = m.ExcPending
-	if v27 != 0 {
+	v28 = m.ExcPending
+	if v28 != 0 {
 		goto L2
 	} else {
 		goto L10
 	}
 L10:
 	;
-	v91 = v22
+	v98 = v23
 	goto L1
 L11:
 	;
-	v91 = v31
+	v98 = v32
 	goto L1
 L12:
 	;
-	v42 = v40
+	v43 = v41
 	goto L14
 L13:
 	;
-	v42 = int32(_a_F_GetConfigOption_3)
+	v43 = int32(_a_F_GetConfigOption_3)
 	goto L14
 L14:
 	;
-	v91 = v42
+	v98 = v43
 	goto L1
 L15:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v68 = m.ExcPending
-	if v68 != 0 {
-		goto L2
-	} else {
-		goto L22
-	}
-L16:
-	;
-	v48 = v45
-	goto L17
-L17:
-	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-	if v53 == int32(0) {
-		goto L15
-	} else {
-		goto L19
-	}
-L18:
-	;
-	goto L15
-L19:
-	;
-	v56 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
-	if v56 == v44 {
-		v91 = v53
-		goto L1
-	} else {
-		goto L20
-	}
-L20:
-	;
-	v59 = v48 + int32(12)
-	if v59 != 0 {
-		v48 = v59
-		goto L17
-	} else {
-		goto L21
-	}
-L21:
-	;
-	goto L18
-L22:
-	;
-	v69 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = v69
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v44
-	F_errmsg_internal(m, int32(_a_F_GetConfigOption_4), v8+int32(32))
 	mBase = m.M
 	v76 = m.ExcPending
 	if v76 != 0 {
@@ -256,32 +209,90 @@ L22:
 	} else {
 		goto L23
 	}
+L16:
+	;
+	v49 = *(*int32)(unsafe.Add(mBase, uint32(v46)))
+	if v49 == int32(0) {
+		goto L15
+	} else {
+		goto L17
+	}
+L17:
+	;
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v46)+4))
+	if v52 == v45 {
+		v98 = v49
+		goto L1
+	} else {
+		goto L18
+	}
+L18:
+	;
+	v54 = v46
+	goto L19
+L19:
+	;
+	v60 = *(*int32)(unsafe.Add(mBase, uint32(v54)+12))
+	if v60 == int32(0) {
+		goto L15
+	} else {
+		goto L21
+	}
+L20:
+	;
+	v98 = v60
+	goto L1
+L21:
+	;
+	v63 = *(*int32)(unsafe.Add(mBase, uint32(v54)+16))
+	if v45 != v63 {
+		v54 = v54 + int32(12)
+		goto L19
+	} else {
+		goto L22
+	}
+L22:
+	;
+	goto L20
 L23:
 	;
-	F_errfinish(m, int32(_a_F_GetConfigOption_5), int32(3036), int32(_a_F_GetConfigOption_6))
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v77
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v45
+	F_errmsg_internal(m, int32(_a_F_GetConfigOption_4), v9+int32(32))
 	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
+	v84 = m.ExcPending
+	if v84 != 0 {
 		goto L2
 	} else {
 		goto L24
 	}
 L24:
 	;
-	base.Wasm_trap_unreachable()
-	for {
+	F_errfinish(m, int32(_a_F_GetConfigOption_5), int32(3036), int32(_a_F_GetConfigOption_6))
+	mBase = m.M
+	v89 = m.ExcPending
+	if v89 != 0 {
+		goto L2
+	} else {
+		goto L25
 	}
 L25:
 	;
-	v86 = int32(_a_F_GetConfigOption_7)
-	goto L27
+	base.Wasm_trap_unreachable()
+	for {
+	}
 L26:
 	;
-	v86 = int32(_a_F_GetConfigOption_8)
-	goto L27
+	v94 = int32(_a_F_GetConfigOption_7)
+	goto L28
 L27:
 	;
-	v91 = v86
+	v94 = int32(_a_F_GetConfigOption_8)
+	goto L28
+L28:
+	;
+	v98 = v94
 	goto L1
 }
 func F_ProcessConfigFile(m *base.Module, l0 int32) {
@@ -378,8 +389,8 @@ func F_SelectConfigFiles(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v39
 	var v43 int32
 	_ = v43
-	var v51 int32
-	_ = v51
+	var v52 int32
+	_ = v52
 	var v58 int32
 	_ = v58
 	var v59 int32
@@ -406,62 +417,66 @@ func F_SelectConfigFiles(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v92
 	var v93 int32
 	_ = v93
-	var v97 int32
-	_ = v97
-	var v100 int32
-	_ = v100
+	var v95 int32
+	_ = v95
+	var v98 int32
+	_ = v98
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
 	var v104 int32
 	_ = v104
-	var v109 int32
-	_ = v109
+	var v106 int32
+	_ = v106
+	var v110 int32
+	_ = v110
 	var v111 int32
 	_ = v111
-	var v114 int32
-	_ = v114
-	var v117 int32
-	_ = v117
-	var v118 int32
-	_ = v118
 	var v119 int32
 	_ = v119
 	var v120 int32
 	_ = v120
 	var v122 int32
 	_ = v122
-	var v126 int32
-	_ = v126
-	var v127 int32
-	_ = v127
-	var v135 int32
-	_ = v135
+	var v123 int32
+	_ = v123
+	var v124 int32
+	_ = v124
+	var v130 int32
+	_ = v130
+	var v131 int32
+	_ = v131
+	var v133 int32
+	_ = v133
 	var v136 int32
 	_ = v136
 	var v138 int32
 	_ = v138
-	var v139 int32
-	_ = v139
-	var v140 int32
-	_ = v140
+	var v143 int32
+	_ = v143
 	var v146 int32
 	_ = v146
-	var v147 int32
-	_ = v147
-	var v149 int32
-	_ = v149
 	var v152 int32
 	_ = v152
-	var v154 int32
-	_ = v154
-	var v159 int32
-	_ = v159
+	var v156 int32
+	_ = v156
+	var v158 int32
+	_ = v158
+	var v161 int32
+	_ = v161
 	var v162 int32
 	_ = v162
-	var v168 int32
-	_ = v168
-	var v172 int32
-	_ = v172
-	var v174 int32
-	_ = v174
+	var v163 int32
+	_ = v163
+	var v164 int32
+	_ = v164
+	var v170 int32
+	_ = v170
+	var v176 int32
+	_ = v176
 	var v177 int32
 	_ = v177
 	var v178 int32
@@ -470,358 +485,348 @@ func F_SelectConfigFiles(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v179
 	var v180 int32
 	_ = v180
+	var v181 int32
+	_ = v181
 	var v186 int32
 	_ = v186
-	var v192 int32
-	_ = v192
-	var v193 int32
-	_ = v193
-	var v194 int32
-	_ = v194
-	var v195 int32
-	_ = v195
+	var v189 int32
+	_ = v189
+	var v190 int32
+	_ = v190
 	var v196 int32
 	_ = v196
 	var v197 int32
 	_ = v197
+	var v200 int32
+	_ = v200
 	var v202 int32
 	_ = v202
-	var v205 int32
-	_ = v205
-	var v206 int32
-	_ = v206
+	var v204 int32
+	_ = v204
+	var v211 int32
+	_ = v211
 	var v212 int32
 	_ = v212
-	var v213 int32
-	_ = v213
-	var v216 int32
-	_ = v216
+	var v214 int32
+	_ = v214
 	var v218 int32
 	_ = v218
-	var v220 int32
-	_ = v220
-	var v227 int32
-	_ = v227
+	var v219 int32
+	_ = v219
+	var v223 int32
+	_ = v223
+	var v224 int32
+	_ = v224
 	var v228 int32
 	_ = v228
-	var v230 int32
-	_ = v230
 	var v234 int32
 	_ = v234
-	var v235 int32
-	_ = v235
-	var v239 int32
-	_ = v239
-	var v240 int32
-	_ = v240
+	var v241 int32
+	_ = v241
+	var v242 int32
+	_ = v242
 	var v244 int32
 	_ = v244
-	var v247 int32
-	_ = v247
-	var v251 int32
-	_ = v251
-	var v256 int32
-	_ = v256
-	var v260 int32
-	_ = v260
-	var v266 int32
-	_ = v266
-	var v273 int32
-	_ = v273
-	var v274 int32
-	_ = v274
-	var v276 int32
-	_ = v276
-	var v277 int32
-	_ = v277
-	var v278 int32
-	_ = v278
+	var v245 int32
+	_ = v245
+	var v246 int32
+	_ = v246
+	var v252 int32
+	_ = v252
+	var v253 int32
+	_ = v253
+	var v255 int32
+	_ = v255
+	var v257 int32
+	_ = v257
+	var v262 int32
+	_ = v262
+	var v263 int32
+	_ = v263
+	var v264 int32
+	_ = v264
+	var v265 int32
+	_ = v265
+	var v267 int32
+	_ = v267
+	var v271 int32
+	_ = v271
+	var v272 int32
+	_ = v272
+	var v275 int32
+	_ = v275
+	var v279 int32
+	_ = v279
+	var v282 int32
+	_ = v282
+	var v283 int32
+	_ = v283
 	var v284 int32
 	_ = v284
 	var v285 int32
 	_ = v285
 	var v287 int32
 	_ = v287
-	var v289 int32
-	_ = v289
-	var v294 int32
-	_ = v294
-	var v295 int32
-	_ = v295
-	var v296 int32
-	_ = v296
-	var v297 int32
-	_ = v297
+	var v291 int32
+	_ = v291
+	var v292 int32
+	_ = v292
 	var v299 int32
 	_ = v299
-	var v303 int32
-	_ = v303
+	var v300 int32
+	_ = v300
 	var v304 int32
 	_ = v304
-	var v307 int32
-	_ = v307
-	var v310 int32
-	_ = v310
-	var v313 int32
-	_ = v313
-	var v314 int32
-	_ = v314
+	var v305 int32
+	_ = v305
+	var v309 int32
+	_ = v309
 	var v315 int32
 	_ = v315
-	var v316 int32
-	_ = v316
-	var v318 int32
-	_ = v318
-	var v322 int32
-	_ = v322
+	var v320 int32
+	_ = v320
+	var v321 int32
+	_ = v321
 	var v323 int32
 	_ = v323
-	var v329 int32
-	_ = v329
-	var v330 int32
-	_ = v330
+	var v324 int32
+	_ = v324
+	var v325 int32
+	_ = v325
+	var v331 int32
+	_ = v331
+	var v332 int32
+	_ = v332
 	var v334 int32
 	_ = v334
-	var v335 int32
-	_ = v335
-	var v339 int32
-	_ = v339
-	var v342 int32
-	_ = v342
+	var v344 int32
+	_ = v344
 	var v346 int32
 	_ = v346
-	var v351 int32
-	_ = v351
-	var v355 int32
-	_ = v355
+	var v358 int32
+	_ = v358
 	var v361 int32
 	_ = v361
-	var v366 int32
-	_ = v366
-	var v367 int32
-	_ = v367
-	var v369 int32
-	_ = v369
+	var v365 int32
+	_ = v365
 	var v370 int32
 	_ = v370
-	var v371 int32
-	_ = v371
-	var v377 int32
-	_ = v377
-	var v378 int32
-	_ = v378
-	var v380 int32
-	_ = v380
-	var v389 int32
-	_ = v389
-	var v390 int32
-	_ = v390
 	v3 = int32(0)
 	v6 = m.G0
 	v8 = v6 - int32(240)
 	m.G0 = v8
 	if l0 != 0 {
-		goto L6
-	} else {
 		goto L7
+	} else {
+		goto L8
 	}
 L1:
 	;
-	m.G0 = v8 + int32(240)
-	return v390
+	F_errstart_cold(m, int32(22), int32(0))
+	mBase = m.M
+	v358 = m.ExcPending
+	if v358 != 0 {
+		goto L26
+	} else {
+		goto L98
+	}
 L2:
+	;
+	m.G0 = v8 + int32(240)
+	return v346
+L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+128)) = l1
 	F_write_stderr(m, int32(_a_F_SelectConfigFiles_0), v8+int32(128))
 	mBase = m.M
-	v389 = m.ExcPending
-	if v389 != 0 {
-		goto L25
+	v344 = m.ExcPending
+	if v344 != 0 {
+		goto L26
 	} else {
-		goto L108
+		goto L97
 	}
-L3:
-	;
-	v152 = int32(0)
-	v154 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
-	v159 = F___fstatat(m, int32(-100), v154, v8+int32(144), v152)
-	mBase = m.M
-	goto L50
 L4:
+	;
+	v136 = int32(0)
+	v138 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
+	v143 = F___fstatat(m, int32(-100), v138, v8+int32(144), v136)
+	mBase = m.M
+	goto L47
+L5:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+100)) = int32(_a_F_SelectConfigFiles_1)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+96)) = v60
-	v135 = F_pg_sprintf(m, v92, int32(_a_F_SelectConfigFiles_2), v8+int32(96))
+	v119 = F_pg_sprintf(m, v92, int32(_a_F_SelectConfigFiles_2), v8+int32(96))
 	mBase = m.M
-	v136 = m.ExcPending
-	if v136 != 0 {
-		goto L25
+	v120 = m.ExcPending
+	if v120 != 0 {
+		goto L26
 	} else {
-		goto L47
-	}
-L5:
-	;
-	v117 = F_make_absolute_path(m, v114)
-	mBase = m.M
-	v118 = m.ExcPending
-	if v118 != 0 {
-		goto L25
-	} else {
-		goto L45
+		goto L44
 	}
 L6:
 	;
-	v59 = l0
-	goto L8
+	v101 = F_make_absolute_path(m, v98)
+	mBase = m.M
+	v102 = m.ExcPending
+	if v102 != 0 {
+		goto L26
+	} else {
+		goto L42
+	}
 L7:
+	;
+	v59 = l0
+	goto L9
+L8:
 	;
 	v10 = int32(_a_F_SelectConfigFiles_3)
 	v11 = int32(0)
 	v16 = F___strchrnul(m, v10, int32(61))
 	mBase = m.M
 	if v10 == v16 {
-		goto L10
-	} else {
 		goto L11
+	} else {
+		goto L12
 	}
-L8:
+L9:
 	;
 	v60 = F_make_absolute_path(m, v59)
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {
-		goto L25
-	} else {
 		goto L26
+	} else {
+		goto L27
 	}
-L9:
-	;
-	v59 = v58
-	goto L8
 L10:
 	;
-	v58 = int32(0)
+	v59 = v58
 	goto L9
 L11:
 	;
-	goto L12
+	v58 = int32(0)
+	goto L10
 L12:
+	;
+	goto L13
+L13:
 	;
 	v19 = v16 - v10
 	v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+uint32(_c_F_SelectConfigFiles[1]))))
 	if v21 != 0 {
-		v51 = v11
-		goto L13
-	} else {
+		v52 = v11
 		goto L14
-	}
-L13:
-	;
-	v58 = v51
-	goto L9
-L14:
-	;
-	v23 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[2]))
-	if v23 == int32(0) {
-		v51 = v11
-		goto L13
 	} else {
 		goto L15
 	}
+L14:
+	;
+	v58 = v52
+	goto L10
 L15:
 	;
-	v26 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-	if v26 == int32(0) {
-		v51 = v11
-		goto L13
+	v23 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[2]))
+	if v23 == int32(0) {
+		v52 = v11
+		goto L14
 	} else {
 		goto L16
 	}
 L16:
 	;
+	v26 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
+	if v26 == int32(0) {
+		v52 = v11
+		goto L14
+	} else {
+		goto L17
+	}
+L17:
+	;
 	v30 = v23
 	v31 = v26
-	goto L17
-L17:
+	goto L18
+L18:
 	;
 	v34 = F_strncmp(m, v10, v31, v19)
 	mBase = m.M
 	if v34 == int32(0) {
-		goto L20
-	} else {
 		goto L21
+	} else {
+		goto L22
 	}
-L18:
-	;
-	v51 = v38 + int32(1)
-	goto L13
 L19:
 	;
-	goto L18
+	v52 = v38 + int32(1)
+	goto L14
 L20:
+	;
+	goto L19
+L21:
 	;
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
 	v38 = v37 + v19
 	v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v38))))
 	if v39 == int32(61) {
-		goto L19
+		goto L20
 	} else {
-		goto L23
+		goto L24
 	}
-L21:
-	;
-	goto L22
 L22:
+	;
+	goto L23
+L23:
 	;
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(v30)+4))
 	if v43 != 0 {
 		v30 = v30 + int32(4)
 		v31 = v43
-		goto L17
+		goto L18
 	} else {
-		goto L24
+		goto L25
 	}
-L23:
-	;
-	goto L22
 L24:
 	;
-	v51 = v11
-	goto L13
+	goto L23
 L25:
 	;
-	return int32(0)
+	v52 = v11
+	goto L14
 L26:
 	;
-	if v60 != 0 {
-		goto L27
-	} else {
-		goto L28
-	}
+	return int32(0)
 L27:
+	;
+	if v60 != 0 {
+		goto L28
+	} else {
+		goto L29
+	}
+L28:
 	;
 	v68 = F___fstatat(m, int32(-100), v60, v8+int32(144), int32(0))
 	mBase = m.M
-	goto L30
-L28:
-	;
-	goto L29
+	goto L31
 L29:
 	;
-	v111 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
-	if v111 == int32(0) {
-		goto L2
-	} else {
-		goto L44
-	}
+	goto L30
 L30:
 	;
-	if v68 != 0 {
-		goto L31
+	v95 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
+	if v95 == int32(0) {
+		goto L3
 	} else {
-		goto L32
+		goto L41
 	}
 L31:
+	;
+	if v68 != 0 {
+		goto L32
+	} else {
+		goto L33
+	}
+L32:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+116)) = v60
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+112)) = l1
@@ -829,46 +834,46 @@ L31:
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
-		goto L25
-	} else {
-		goto L34
-	}
-L32:
-	;
-	goto L33
-L33:
-	;
-	v85 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
-	if v85 != 0 {
-		v114 = v85
-		goto L5
-	} else {
-		goto L37
-	}
-L34:
-	;
-	v77 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[3]))
-	if v77 != int32(44) {
-		v390 = v3
-		goto L1
+		goto L26
 	} else {
 		goto L35
 	}
+L33:
+	;
+	goto L34
+L34:
+	;
+	v85 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
+	if v85 != 0 {
+		v98 = v85
+		goto L6
+	} else {
+		goto L38
+	}
 L35:
 	;
-	F_write_stderr(m, int32(_a_F_SelectConfigFiles_5), int32(0))
-	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
-		goto L25
+	v77 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[3]))
+	if v77 != int32(44) {
+		v346 = v3
+		goto L2
 	} else {
 		goto L36
 	}
 L36:
 	;
-	v390 = v3
-	goto L1
+	F_write_stderr(m, int32(_a_F_SelectConfigFiles_5), int32(0))
+	mBase = m.M
+	v83 = m.ExcPending
+	if v83 != 0 {
+		goto L26
+	} else {
+		goto L37
+	}
 L37:
+	;
+	v346 = v3
+	goto L2
+L38:
 	;
 	v87 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[4]))
 	v88 = F_strlen(m, v60)
@@ -877,609 +882,518 @@ L37:
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {
-		goto L25
-	} else {
-		goto L38
-	}
-L38:
-	;
-	if v92 != 0 {
-		goto L4
+		goto L26
 	} else {
 		goto L39
 	}
 L39:
 	;
-	F_errstart_cold(m, int32(22), int32(0))
-	mBase = m.M
-	v97 = m.ExcPending
-	if v97 != 0 {
-		goto L25
+	if v92 != 0 {
+		goto L5
 	} else {
 		goto L40
 	}
 L40:
 	;
-	F_errcode(m, int32(_a_F_SelectConfigFiles_6))
-	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
-		goto L25
-	} else {
-		goto L41
-	}
+	goto L1
 L41:
 	;
-	F_errmsg(m, int32(_a_F_SelectConfigFiles_7), int32(0))
-	mBase = m.M
-	v104 = m.ExcPending
-	if v104 != 0 {
-		goto L25
-	} else {
-		goto L42
-	}
+	v98 = v95
+	goto L6
 L42:
 	;
-	F_errfinish(m, int32(_a_F_SelectConfigFiles_8), int32(647), int32(_a_F_SelectConfigFiles_9))
+	v103 = int32(1)
+	v104 = int32(10)
+	v106 = int32(0)
+	v110 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_6), int32(0), v101, v103, v104, v104, v106, v103, v106, v106)
 	mBase = m.M
-	v109 = m.ExcPending
-	if v109 != 0 {
-		goto L25
+	v111 = m.ExcPending
+	if v111 != 0 {
+		goto L26
 	} else {
 		goto L43
 	}
 L43:
 	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
+	F_emscripten_builtin_free(m, v101)
+	mBase = m.M
+	goto L4
 L44:
 	;
-	v114 = v111
-	goto L5
+	v122 = int32(0)
+	v123 = int32(1)
+	v124 = int32(10)
+	v130 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_6), v122, v92, v123, v124, v124, v122, v123, v122, v122)
+	mBase = m.M
+	v131 = m.ExcPending
+	if v131 != 0 {
+		goto L26
+	} else {
+		goto L45
+	}
 L45:
 	;
-	v119 = int32(1)
-	v120 = int32(10)
-	v122 = int32(0)
-	v126 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_10), int32(0), v117, v119, v120, v120, v122, v119, v122, v122)
+	F_pfree(m, v92)
 	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
-		goto L25
+	v133 = m.ExcPending
+	if v133 != 0 {
+		goto L26
 	} else {
 		goto L46
 	}
 L46:
 	;
-	F_emscripten_builtin_free(m, v117)
-	mBase = m.M
-	goto L3
+	goto L4
 L47:
 	;
-	v138 = int32(0)
-	v139 = int32(1)
-	v140 = int32(10)
-	v146 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_10), v138, v92, v139, v140, v140, v138, v139, v138, v138)
-	mBase = m.M
-	v147 = m.ExcPending
-	if v147 != 0 {
-		goto L25
-	} else {
+	if v143 != 0 {
 		goto L48
-	}
-L48:
-	;
-	F_pfree(m, v92)
-	mBase = m.M
-	v149 = m.ExcPending
-	if v149 != 0 {
-		goto L25
 	} else {
 		goto L49
 	}
+L48:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = l1
+	v146 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = v146
+	F_write_stderr(m, int32(_a_F_SelectConfigFiles_7), v8+int32(80))
+	mBase = m.M
+	v152 = m.ExcPending
+	if v152 != 0 {
+		goto L26
+	} else {
+		goto L51
+	}
 L49:
 	;
-	goto L3
+	goto L50
 L50:
 	;
-	if v159 != 0 {
-		goto L51
+	F_ProcessConfigFile(m, int32(1))
+	mBase = m.M
+	v156 = m.ExcPending
+	if v156 != 0 {
+		goto L26
 	} else {
 		goto L52
 	}
 L51:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = l1
-	v162 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = v162
-	F_write_stderr(m, int32(_a_F_SelectConfigFiles_11), v8+int32(80))
+	F_emscripten_builtin_free(m, v60)
 	mBase = m.M
-	v168 = m.ExcPending
-	if v168 != 0 {
-		goto L25
-	} else {
-		goto L54
-	}
+	v346 = v136
+	goto L2
 L52:
 	;
-	goto L53
+	v158 = int32(0)
+	v161 = F_find_option(m, int32(_a_F_SelectConfigFiles_8), v158, v158, int32(23))
+	mBase = m.M
+	v162 = m.ExcPending
+	if v162 != 0 {
+		goto L26
+	} else {
+		goto L53
+	}
 L53:
 	;
-	F_ProcessConfigFile(m, int32(1))
-	mBase = m.M
-	v172 = m.ExcPending
-	if v172 != 0 {
-		goto L25
+	v163 = *(*int32)(unsafe.Add(mBase, uint32(v161)+92))
+	v164 = *(*int32)(unsafe.Add(mBase, uint32(v163)))
+	if v164|v60 == int32(0) {
+		goto L54
 	} else {
 		goto L55
 	}
 L54:
 	;
-	F_emscripten_builtin_free(m, v60)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = l1
+	v170 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v170
+	F_write_stderr(m, int32(_a_F_SelectConfigFiles_9), v8-int32(-64))
 	mBase = m.M
-	v390 = v152
-	goto L1
+	v176 = m.ExcPending
+	if v176 != 0 {
+		goto L26
+	} else {
+		goto L57
+	}
 L55:
 	;
-	v174 = int32(0)
-	v177 = F_find_option(m, int32(_a_F_SelectConfigFiles_12), v174, v174, int32(23))
-	mBase = m.M
-	v178 = m.ExcPending
-	if v178 != 0 {
-		goto L25
-	} else {
-		goto L56
-	}
+	goto L56
 L56:
 	;
-	v179 = *(*int32)(unsafe.Add(mBase, uint32(v177)+92))
-	v180 = *(*int32)(unsafe.Add(mBase, uint32(v179)))
-	if v180|v60 == int32(0) {
-		goto L57
-	} else {
+	if v164 != 0 {
 		goto L58
+	} else {
+		goto L59
 	}
 L57:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = l1
-	v186 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v186
-	F_write_stderr(m, int32(_a_F_SelectConfigFiles_13), v8-int32(-64))
-	mBase = m.M
-	v192 = m.ExcPending
-	if v192 != 0 {
-		goto L25
-	} else {
-		goto L60
-	}
+	v346 = v136
+	goto L2
 L58:
 	;
-	goto L59
+	v177 = v164
+	goto L60
 L59:
 	;
-	if v180 != 0 {
+	v177 = v60
+	goto L60
+L60:
+	;
+	v178 = F_make_absolute_path(m, v177)
+	mBase = m.M
+	v179 = m.ExcPending
+	if v179 != 0 {
+		goto L26
+	} else {
 		goto L61
+	}
+L61:
+	;
+	v180 = int32(_a_F_SelectConfigFiles_10)
+	v181 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[5]))
+	F_emscripten_builtin_free(m, v181)
+	mBase = m.M
+	*(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[5])) = v178
+	v186 = int32(0)
+	v189 = int32(1)
+	v190 = int32(10)
+	v196 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_8), v186, v178, v189, v190, v190, v186, v189, v186, v186)
+	mBase = m.M
+	v197 = m.ExcPending
+	if v197 != 0 {
+		goto L26
 	} else {
 		goto L62
 	}
-L60:
-	;
-	v390 = v152
-	goto L1
-L61:
-	;
-	v193 = v180
-	goto L63
 L62:
 	;
-	v193 = v60
-	goto L63
+	F_ProcessConfigFile(m, int32(1))
+	mBase = m.M
+	v200 = m.ExcPending
+	if v200 != 0 {
+		goto L26
+	} else {
+		goto L63
+	}
 L63:
 	;
-	v194 = F_make_absolute_path(m, v193)
+	v202 = int32(0)
+	v204 = int32(1)
+	v211 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_11), v202, int32(_a_F_SelectConfigFiles_12), v204, v204, int32(10), v202, v204, v202, v202)
 	mBase = m.M
-	v195 = m.ExcPending
-	if v195 != 0 {
-		goto L25
+	v212 = m.ExcPending
+	if v212 != 0 {
+		goto L26
 	} else {
 		goto L64
 	}
 L64:
 	;
-	v196 = int32(_a_F_SelectConfigFiles_14)
-	v197 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[5]))
-	F_emscripten_builtin_free(m, v197)
-	mBase = m.M
-	*(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[5])) = v194
-	v202 = int32(0)
-	v205 = int32(1)
-	v206 = int32(10)
-	v212 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_12), v202, v194, v205, v206, v206, v202, v205, v202, v202)
-	mBase = m.M
-	v213 = m.ExcPending
-	if v213 != 0 {
-		goto L25
+	v214 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[6]))
+	if v214 == int32(0) {
+		goto L71
 	} else {
-		goto L65
+		goto L72
 	}
 L65:
 	;
-	F_ProcessConfigFile(m, int32(1))
+	F_emscripten_builtin_free(m, v60)
 	mBase = m.M
-	v216 = m.ExcPending
-	if v216 != 0 {
-		goto L25
-	} else {
-		goto L66
-	}
+	v346 = int32(1)
+	goto L2
 L66:
 	;
-	v218 = int32(0)
-	v220 = int32(1)
-	v227 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_15), v218, int32(_a_F_SelectConfigFiles_16), v220, v220, int32(10), v218, v220, v218, v218)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = int32(_a_F_SelectConfigFiles_13)
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v60
+	v320 = F_pg_sprintf(m, v304, int32(_a_F_SelectConfigFiles_2), v8)
 	mBase = m.M
-	v228 = m.ExcPending
-	if v228 != 0 {
-		goto L25
+	v321 = m.ExcPending
+	if v321 != 0 {
+		goto L26
 	} else {
-		goto L67
+		goto L94
 	}
 L67:
 	;
-	v230 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[6]))
-	if v230 == int32(0) {
-		goto L74
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = l1
+	v309 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = v309
+	F_write_stderr(m, int32(_a_F_SelectConfigFiles_14), v8+int32(48))
+	mBase = m.M
+	v315 = m.ExcPending
+	if v315 != 0 {
+		goto L26
 	} else {
-		goto L75
+		goto L93
 	}
 L68:
 	;
-	F_emscripten_builtin_free(m, v60)
+	v299 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[4]))
+	v300 = F_strlen(m, v60)
 	mBase = m.M
-	v390 = int32(1)
-	goto L1
+	v304 = F_MemoryContextAllocExtended(m, v299, v300+int32(15), int32(2))
+	mBase = m.M
+	v305 = m.ExcPending
+	if v305 != 0 {
+		goto L26
+	} else {
+		goto L91
+	}
 L69:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = int32(_a_F_SelectConfigFiles_17)
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v60
-	v366 = F_pg_sprintf(m, v334, int32(_a_F_SelectConfigFiles_2), v8)
-	mBase = m.M
-	v367 = m.ExcPending
-	if v367 != 0 {
-		goto L25
+	if v60 == int32(0) {
+		goto L67
 	} else {
-		goto L105
+		goto L90
 	}
 L70:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = l1
-	v355 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = v355
-	F_write_stderr(m, int32(_a_F_SelectConfigFiles_18), v8+int32(48))
+	v282 = F_make_absolute_path(m, v279)
 	mBase = m.M
-	v361 = m.ExcPending
-	if v361 != 0 {
-		goto L25
-	} else {
-		goto L104
-	}
-L71:
-	;
-	v329 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[4]))
-	v330 = F_strlen(m, v60)
-	mBase = m.M
-	v334 = F_MemoryContextAllocExtended(m, v329, v330+int32(15), int32(2))
-	mBase = m.M
-	v335 = m.ExcPending
-	if v335 != 0 {
-		goto L25
-	} else {
-		goto L98
-	}
-L72:
-	;
-	if v60 == int32(0) {
-		goto L70
-	} else {
-		goto L97
-	}
-L73:
-	;
-	v313 = F_make_absolute_path(m, v310)
-	mBase = m.M
-	v314 = m.ExcPending
-	if v314 != 0 {
-		goto L25
-	} else {
-		goto L95
-	}
-L74:
-	;
-	if v60 != 0 {
-		goto L78
-	} else {
-		goto L79
-	}
-L75:
-	;
-	goto L76
-L76:
-	;
-	v294 = F_make_absolute_path(m, v230)
-	mBase = m.M
-	v295 = m.ExcPending
-	if v295 != 0 {
-		goto L25
-	} else {
-		goto L92
-	}
-L77:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_SelectConfigFiles_19)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v60
-	v273 = F_pg_sprintf(m, v239, int32(_a_F_SelectConfigFiles_2), v8+int32(16))
-	mBase = m.M
-	v274 = m.ExcPending
-	if v274 != 0 {
-		goto L25
+	v283 = m.ExcPending
+	if v283 != 0 {
+		goto L26
 	} else {
 		goto L88
 	}
-L78:
+L71:
 	;
-	v234 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[4]))
-	v235 = F_strlen(m, v60)
+	if v60 != 0 {
+		goto L75
+	} else {
+		goto L76
+	}
+L72:
+	;
+	goto L73
+L73:
+	;
+	v262 = F_make_absolute_path(m, v214)
 	mBase = m.M
-	v239 = F_MemoryContextAllocExtended(m, v234, v235+int32(13), int32(2))
+	v263 = m.ExcPending
+	if v263 != 0 {
+		goto L26
+	} else {
+		goto L85
+	}
+L74:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_SelectConfigFiles_15)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v60
+	v241 = F_pg_sprintf(m, v223, int32(_a_F_SelectConfigFiles_2), v8+int32(16))
 	mBase = m.M
-	v240 = m.ExcPending
-	if v240 != 0 {
-		goto L25
+	v242 = m.ExcPending
+	if v242 != 0 {
+		goto L26
 	} else {
 		goto L81
 	}
-L79:
+L75:
 	;
-	goto L80
-L80:
+	v218 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[4]))
+	v219 = F_strlen(m, v60)
+	mBase = m.M
+	v223 = F_MemoryContextAllocExtended(m, v218, v219+int32(13), int32(2))
+	mBase = m.M
+	v224 = m.ExcPending
+	if v224 != 0 {
+		goto L26
+	} else {
+		goto L78
+	}
+L76:
+	;
+	goto L77
+L77:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = l1
-	v260 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = v260
-	F_write_stderr(m, int32(_a_F_SelectConfigFiles_20), v8+int32(32))
+	v228 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = v228
+	F_write_stderr(m, int32(_a_F_SelectConfigFiles_16), v8+int32(32))
 	mBase = m.M
-	v266 = m.ExcPending
-	if v266 != 0 {
-		goto L25
+	v234 = m.ExcPending
+	if v234 != 0 {
+		goto L26
 	} else {
-		goto L87
+		goto L80
 	}
+L78:
+	;
+	if v223 != 0 {
+		goto L74
+	} else {
+		goto L79
+	}
+L79:
+	;
+	goto L1
+L80:
+	;
+	v346 = int32(0)
+	goto L2
 L81:
 	;
-	if v239 != 0 {
-		goto L77
+	v244 = int32(0)
+	v245 = int32(1)
+	v246 = int32(10)
+	v252 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_17), v244, v223, v245, v246, v246, v244, v245, v244, v244)
+	mBase = m.M
+	v253 = m.ExcPending
+	if v253 != 0 {
+		goto L26
 	} else {
 		goto L82
 	}
 L82:
 	;
-	F_errstart_cold(m, int32(22), int32(0))
+	F_pfree(m, v223)
 	mBase = m.M
-	v244 = m.ExcPending
-	if v244 != 0 {
-		goto L25
+	v255 = m.ExcPending
+	if v255 != 0 {
+		goto L26
 	} else {
 		goto L83
 	}
 L83:
 	;
-	F_errcode(m, int32(_a_F_SelectConfigFiles_6))
-	mBase = m.M
-	v247 = m.ExcPending
-	if v247 != 0 {
-		goto L25
+	v257 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[7]))
+	if v257 == int32(0) {
+		goto L68
 	} else {
 		goto L84
 	}
 L84:
 	;
-	F_errmsg(m, int32(_a_F_SelectConfigFiles_7), int32(0))
-	mBase = m.M
-	v251 = m.ExcPending
-	if v251 != 0 {
-		goto L25
-	} else {
-		goto L85
-	}
+	v279 = v257
+	goto L70
 L85:
 	;
-	F_errfinish(m, int32(_a_F_SelectConfigFiles_8), int32(647), int32(_a_F_SelectConfigFiles_9))
+	v264 = int32(1)
+	v265 = int32(10)
+	v267 = int32(0)
+	v271 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_17), int32(0), v262, v264, v265, v265, v267, v264, v267, v267)
 	mBase = m.M
-	v256 = m.ExcPending
-	if v256 != 0 {
-		goto L25
+	v272 = m.ExcPending
+	if v272 != 0 {
+		goto L26
 	} else {
 		goto L86
 	}
 L86:
 	;
-	base.Wasm_trap_unreachable()
-	for {
+	F_emscripten_builtin_free(m, v262)
+	mBase = m.M
+	v275 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[7]))
+	if v275 == int32(0) {
+		goto L69
+	} else {
+		goto L87
 	}
 L87:
 	;
-	v390 = int32(0)
-	goto L1
+	v279 = v275
+	goto L70
 L88:
 	;
-	v276 = int32(0)
-	v277 = int32(1)
-	v278 = int32(10)
-	v284 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_21), v276, v239, v277, v278, v278, v276, v277, v276, v276)
+	v284 = int32(1)
+	v285 = int32(10)
+	v287 = int32(0)
+	v291 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_18), int32(0), v282, v284, v285, v285, v287, v284, v287, v287)
 	mBase = m.M
-	v285 = m.ExcPending
-	if v285 != 0 {
-		goto L25
+	v292 = m.ExcPending
+	if v292 != 0 {
+		goto L26
 	} else {
 		goto L89
 	}
 L89:
 	;
-	F_pfree(m, v239)
+	F_emscripten_builtin_free(m, v282)
 	mBase = m.M
-	v287 = m.ExcPending
-	if v287 != 0 {
-		goto L25
-	} else {
-		goto L90
-	}
+	goto L65
 L90:
 	;
-	v289 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[7]))
-	if v289 == int32(0) {
-		goto L71
-	} else {
-		goto L91
-	}
+	goto L68
 L91:
 	;
-	v310 = v289
-	goto L73
+	if v304 != 0 {
+		goto L66
+	} else {
+		goto L92
+	}
 L92:
 	;
-	v296 = int32(1)
-	v297 = int32(10)
-	v299 = int32(0)
-	v303 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_21), int32(0), v294, v296, v297, v297, v299, v296, v299, v299)
-	mBase = m.M
-	v304 = m.ExcPending
-	if v304 != 0 {
-		goto L25
-	} else {
-		goto L93
-	}
+	goto L1
 L93:
 	;
-	F_emscripten_builtin_free(m, v294)
-	mBase = m.M
-	v307 = *(*int32)(unsafe.Add(mBase, _c_F_SelectConfigFiles[7]))
-	if v307 == int32(0) {
-		goto L72
-	} else {
-		goto L94
-	}
+	v346 = int32(0)
+	goto L2
 L94:
 	;
-	v310 = v307
-	goto L73
+	v323 = int32(0)
+	v324 = int32(1)
+	v325 = int32(10)
+	v331 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_18), v323, v304, v324, v325, v325, v323, v324, v323, v323)
+	mBase = m.M
+	v332 = m.ExcPending
+	if v332 != 0 {
+		goto L26
+	} else {
+		goto L95
+	}
 L95:
 	;
-	v315 = int32(1)
-	v316 = int32(10)
-	v318 = int32(0)
-	v322 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_22), int32(0), v313, v315, v316, v316, v318, v315, v318, v318)
+	F_pfree(m, v304)
 	mBase = m.M
-	v323 = m.ExcPending
-	if v323 != 0 {
-		goto L25
+	v334 = m.ExcPending
+	if v334 != 0 {
+		goto L26
 	} else {
 		goto L96
 	}
 L96:
 	;
-	F_emscripten_builtin_free(m, v313)
-	mBase = m.M
-	goto L68
+	goto L65
 L97:
 	;
-	goto L71
+	v346 = v3
+	goto L2
 L98:
 	;
-	if v334 != 0 {
-		goto L69
+	F_errcode(m, int32(_a_F_SelectConfigFiles_19))
+	mBase = m.M
+	v361 = m.ExcPending
+	if v361 != 0 {
+		goto L26
 	} else {
 		goto L99
 	}
 L99:
 	;
-	F_errstart_cold(m, int32(22), int32(0))
+	F_errmsg(m, int32(_a_F_SelectConfigFiles_20), int32(0))
 	mBase = m.M
-	v339 = m.ExcPending
-	if v339 != 0 {
-		goto L25
+	v365 = m.ExcPending
+	if v365 != 0 {
+		goto L26
 	} else {
 		goto L100
 	}
 L100:
 	;
-	F_errcode(m, int32(_a_F_SelectConfigFiles_6))
+	F_errfinish(m, int32(_a_F_SelectConfigFiles_21), int32(647), int32(_a_F_SelectConfigFiles_22))
 	mBase = m.M
-	v342 = m.ExcPending
-	if v342 != 0 {
-		goto L25
+	v370 = m.ExcPending
+	if v370 != 0 {
+		goto L26
 	} else {
 		goto L101
 	}
 L101:
 	;
-	F_errmsg(m, int32(_a_F_SelectConfigFiles_7), int32(0))
-	mBase = m.M
-	v346 = m.ExcPending
-	if v346 != 0 {
-		goto L25
-	} else {
-		goto L102
-	}
-L102:
-	;
-	F_errfinish(m, int32(_a_F_SelectConfigFiles_8), int32(647), int32(_a_F_SelectConfigFiles_9))
-	mBase = m.M
-	v351 = m.ExcPending
-	if v351 != 0 {
-		goto L25
-	} else {
-		goto L103
-	}
-L103:
-	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L104:
-	;
-	v390 = int32(0)
-	goto L1
-L105:
-	;
-	v369 = int32(0)
-	v370 = int32(1)
-	v371 = int32(10)
-	v377 = F_set_config_with_handle(m, int32(_a_F_SelectConfigFiles_22), v369, v334, v370, v371, v371, v369, v370, v369, v369)
-	mBase = m.M
-	v378 = m.ExcPending
-	if v378 != 0 {
-		goto L25
-	} else {
-		goto L106
-	}
-L106:
-	;
-	F_pfree(m, v334)
-	mBase = m.M
-	v380 = m.ExcPending
-	if v380 != 0 {
-		goto L25
-	} else {
-		goto L107
-	}
-L107:
-	;
-	goto L68
-L108:
-	;
-	v390 = v3
-	goto L1
 }
 func F_set_config_option(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) {
 	mBase := m.M

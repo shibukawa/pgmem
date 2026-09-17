@@ -1,9 +1,6 @@
 package p2
 
-import (
-	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
-	"unsafe"
-)
+import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
 func F_get_collation_actual_version(m *base.Module, l0 int32, l1 int32) int32 {
 	var v6 int32
@@ -45,48 +42,15 @@ func F_get_collation_actual_version(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 }
 func F_get_collation_name(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
-	var v7 int32
-	_ = v7
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v20 int32
-	_ = v20
-	v4 = F_SearchSysCache1(m, int32(16), l0)
-	mBase = m.M
-	v7 = m.ExcPending
-	if v7 != 0 {
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = Fn13895(m, l0, int32(16))
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return int32(0)
 	} else {
-		if v4 == int32(0) {
-			return int32(0)
-		} else {
-			v12 = *(*int32)(unsafe.Add(mBase, uint32(v4)+16))
-			v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+22)))
-			v17 = F_pstrdup(m, v12+v13+int32(4))
-			mBase = m.M
-			v18 = m.ExcPending
-			if v18 != 0 {
-				return int32(0)
-			} else {
-				F_ReleaseCatCache(m, v4)
-				mBase = m.M
-				v20 = m.ExcPending
-				if v20 != 0 {
-					return int32(0)
-				} else {
-					return v17
-				}
-			}
-		}
+		return v3
 	}
 }

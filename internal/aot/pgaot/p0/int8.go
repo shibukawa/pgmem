@@ -24,58 +24,58 @@ func F_int8_avg_deserialize(m *base.Module, l0 int32) int32 {
 	_ = v42
 	var v45 int32
 	_ = v45
-	var v46 int64
-	_ = v46
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
 	var v52 int32
 	_ = v52
-	var v53 int32
-	_ = v53
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
-	var v59 int32
-	_ = v59
+	var v58 int32
+	_ = v58
 	var v61 int32
 	_ = v61
-	var v70 int32
-	_ = v70
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
 	var v73 int32
 	_ = v73
-	var v74 int32
-	_ = v74
-	var v78 int32
-	_ = v78
-	var v84 int32
-	_ = v84
+	var v79 int32
+	_ = v79
+	var v85 int32
+	_ = v85
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
 	var v90 int32
 	_ = v90
 	var v93 int32
 	_ = v93
-	var v94 int32
+	var v94 int64
 	_ = v94
 	var v95 int32
 	_ = v95
-	var v99 int64
-	_ = v99
+	var v98 int32
+	_ = v98
 	var v100 int32
 	_ = v100
+	var v104 int32
+	_ = v104
+	var v106 int32
+	_ = v106
 	var v107 int32
 	_ = v107
-	var v113 int32
-	_ = v113
+	var v109 int32
+	_ = v109
 	var v117 int32
 	_ = v117
-	var v118 int32
-	_ = v118
-	var v120 int32
-	_ = v120
-	var v128 int32
-	_ = v128
-	var v132 int32
-	_ = v132
-	var v137 int32
-	_ = v137
+	var v121 int32
+	_ = v121
+	var v126 int32
+	_ = v126
 	v6 = m.G0
 	v8 = v6 - int32(48)
 	m.G0 = v8
@@ -101,92 +101,90 @@ func F_int8_avg_deserialize(m *base.Module, l0 int32) int32 {
 		if v45 != 0 {
 			return int32(0)
 		} else {
-			v46 = int64(0)
-			*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = v46
-			*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = v46
-			*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = v46
-			v52 = int32(1)
-			v53 = v42 + v52
-			v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42))))
-			v56 = v54 & v52
-			if v54 == v52 {
-				v59 = int32(4)
-				v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53))))
-				if v61&int32(254) == int32(2) {
-					v70 = v59
+			*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = int64(0)
+			v48 = int32(1)
+			v49 = v42 + v48
+			v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42))))
+			v52 = v50 & v48
+			if v50 == v48 {
+				v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49))))
+				if v58 == int32(18) {
+					v61 = int32(16)
 				} else {
-					v70 = base.B2i32(v61 == int32(18)) << (uint(v59) % 32)
+					v61 = int32(0)
 				}
-				if v61 == int32(1) {
-					v73 = v59
+				if base.Ui32((v58-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+					v68 = int32(4)
 				} else {
-					v73 = v70
+					v68 = v61
 				}
-				v84 = v73
+				v79 = v68
 			} else {
-				v74 = int32(1)
-				if v56 != 0 {
-					v84 = int32(base.Ui32(v54)>>(uint(v74)%32)) - v74
+				v69 = int32(1)
+				if v52 != 0 {
+					v79 = int32(base.Ui32(v50)>>(uint(v69)%32)) - v69
 				} else {
-					v78 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-					v84 = int32(base.Ui32(v78)>>(uint(int32(2))%32)) - int32(4)
+					v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+					v79 = int32(base.Ui32(v73)>>(uint(int32(2))%32)) - int32(4)
 				}
 			}
 			*(*int64)(unsafe.Add(mBase, uint32(v8)+40)) = int64(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = v84
-			if v56 != 0 {
-				v90 = v53
+			*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = v79
+			if v52 != 0 {
+				v85 = v49
 			} else {
-				v90 = v42 + int32(4)
+				v85 = v42 + int32(4)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v90
-			v93 = F_palloc0(m, int32(48))
+			*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v85
+			v88 = F_palloc0(m, int32(48))
 			mBase = m.M
-			v94 = m.ExcPending
-			if v94 != 0 {
+			v89 = m.ExcPending
+			if v89 != 0 {
 				return int32(0)
 			} else {
-				v95 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, uint32(v93))) = uint8(v95)
-				v99 = F_pq_getmsgint64(m, v8+int32(32))
+				v90 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v88))) = uint8(v90)
+				v93 = v8 + int32(32)
+				v94 = F_pq_getmsgint64(m, v93)
 				mBase = m.M
-				v100 = m.ExcPending
-				if v100 != 0 {
+				v95 = m.ExcPending
+				if v95 != 0 {
 					return int32(0)
 				} else {
-					*(*int64)(unsafe.Add(mBase, uint32(v93)+8)) = v99
-					F_numericvar_deserialize(m, v8+int32(32), v8+int32(8))
+					*(*int64)(unsafe.Add(mBase, uint32(v88)+8)) = v94
+					v98 = v8 + int32(8)
+					F_numericvar_deserialize(m, v93, v98)
 					mBase = m.M
-					v107 = m.ExcPending
-					if v107 != 0 {
+					v100 = m.ExcPending
+					if v100 != 0 {
 						return int32(0)
 					} else {
-						F_numericvar_to_int128(m, v8+int32(8), v93+int32(16))
+						F_numericvar_to_int128(m, v98, v88+int32(16))
 						mBase = m.M
-						v113 = m.ExcPending
-						if v113 != 0 {
+						v104 = m.ExcPending
+						if v104 != 0 {
 							return int32(0)
 						} else {
-							F_pq_getmsgend(m, v8+int32(32))
+							F_pq_getmsgend(m, v93)
 							mBase = m.M
-							v117 = m.ExcPending
-							if v117 != 0 {
+							v106 = m.ExcPending
+							if v106 != 0 {
 								return int32(0)
 							} else {
-								v118 = *(*int32)(unsafe.Add(mBase, uint32(v8)+24))
-								if v118 != 0 {
-									F_pfree(m, v118)
+								v107 = *(*int32)(unsafe.Add(mBase, uint32(v8)+24))
+								if v107 != 0 {
+									F_pfree(m, v107)
 									mBase = m.M
-									v120 = m.ExcPending
-									if v120 != 0 {
+									v109 = m.ExcPending
+									if v109 != 0 {
 										return int32(0)
 									} else {
 										m.G0 = v8 + int32(48)
-										return v93
+										return v88
 									}
 								} else {
 									m.G0 = v8 + int32(48)
-									return v93
+									return v88
 								}
 							}
 						}
@@ -197,20 +195,20 @@ func F_int8_avg_deserialize(m *base.Module, l0 int32) int32 {
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v128 = m.ExcPending
-		if v128 != 0 {
+		v117 = m.ExcPending
+		if v117 != 0 {
 			return int32(0)
 		} else {
 			F_errmsg_internal(m, int32(_a_F_int8_avg_deserialize_0), int32(0))
 			mBase = m.M
-			v132 = m.ExcPending
-			if v132 != 0 {
+			v121 = m.ExcPending
+			if v121 != 0 {
 				return int32(0)
 			} else {
 				F_errfinish(m, int32(_a_F_int8_avg_deserialize_1), int32(_a_F_int8_avg_deserialize_2), int32(_a_F_int8_avg_deserialize_3))
 				mBase = m.M
-				v137 = m.ExcPending
-				if v137 != 0 {
+				v126 = m.ExcPending
+				if v126 != 0 {
 					return int32(0)
 				} else {
 					base.Wasm_trap_unreachable()

@@ -68,38 +68,40 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 	_ = v59
 	var v63 int32
 	_ = v63
-	var v68 int32
-	_ = v68
-	var v71 int32
-	_ = v71
-	var v75 int32
-	_ = v75
-	var v83 float64
-	_ = v83
-	var v84 int32
+	var v64 int32
+	_ = v64
+	var v69 int32
+	_ = v69
+	var v72 int32
+	_ = v72
+	var v76 int32
+	_ = v76
+	var v84 float64
 	_ = v84
-	var v86 int32
-	_ = v86
-	var v96 float64
-	_ = v96
-	var v99 int32
-	_ = v99
+	var v85 int32
+	_ = v85
+	var v87 int32
+	_ = v87
+	var v97 float64
+	_ = v97
+	var v100 int32
+	_ = v100
 	v2 = int32(0)
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
 	if v10 != int32(460) {
-		v99 = v2
-		return v99
+		v100 = v2
+		return v100
 	} else {
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
 		if v13 == int32(0) {
-			v99 = v2
-			return v99
+			v100 = v2
+			return v100
 		} else {
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
 			if v16 != int32(15) {
-				v99 = v2
-				return v99
+				v100 = v2
+				return v100
 			} else {
 				v19 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(v13)+28))
@@ -140,27 +142,24 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 											v56 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 											if v56 != int32(7) {
 												v63 = int32(0)
-												if v42 != int32(7) {
-													v99 = v63
+												v64 = int32(7)
+												if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+													v100 = v63
 												} else {
-													if v49 != int32(7) {
-														v99 = v63
+													v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+													if v69 != int32(7) {
+														v100 = v63
 													} else {
-														v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-														if v68 != int32(7) {
-															v99 = v63
+														v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+														if v72 == int32(0) {
+															v100 = v63
 														} else {
-															v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-															if v71 == int32(0) {
-																v99 = v63
-															} else {
-																v83 = base.F64_convert_i32_s(v71)
-																v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																v99 = v9
-															}
+															v84 = base.F64_convert_i32_s(v72)
+															v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+															v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+															*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+															v100 = v9
 														}
 													}
 												}
@@ -168,50 +167,47 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 												v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+24)))
 												if v59 == int32(0) {
 													v63 = int32(0)
-													if v42 != int32(7) {
-														v99 = v63
+													v64 = int32(7)
+													if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+														v100 = v63
 													} else {
-														if v49 != int32(7) {
-															v99 = v63
+														v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+														if v69 != int32(7) {
+															v100 = v63
 														} else {
-															v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-															if v68 != int32(7) {
-																v99 = v63
+															v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+															if v72 == int32(0) {
+																v100 = v63
 															} else {
-																v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																if v71 == int32(0) {
-																	v99 = v63
-																} else {
-																	v83 = base.F64_convert_i32_s(v71)
-																	v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																	v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																	v99 = v9
-																}
+																v84 = base.F64_convert_i32_s(v72)
+																v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																v100 = v9
 															}
 														}
 													}
 												} else {
-													v96 = float64(0)
-													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-													v99 = v9
+													v97 = float64(0)
+													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+													v100 = v9
 												}
 											}
 										} else {
-											v75 = int32(0)
+											v76 = int32(0)
 											if v42 != int32(7) {
-												v99 = v75
+												v100 = v76
 											} else {
 												if v49 != int32(7) {
-													v99 = v75
+													v100 = v76
 												} else {
-													v83 = float64(1)
-													v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-													v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-													v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-													v99 = v9
+													v84 = float64(1)
+													v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+													v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+													v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+													v100 = v9
 												}
 											}
 										}
@@ -222,27 +218,24 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 												v56 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 												if v56 != int32(7) {
 													v63 = int32(0)
-													if v42 != int32(7) {
-														v99 = v63
+													v64 = int32(7)
+													if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+														v100 = v63
 													} else {
-														if v49 != int32(7) {
-															v99 = v63
+														v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+														if v69 != int32(7) {
+															v100 = v63
 														} else {
-															v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-															if v68 != int32(7) {
-																v99 = v63
+															v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+															if v72 == int32(0) {
+																v100 = v63
 															} else {
-																v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																if v71 == int32(0) {
-																	v99 = v63
-																} else {
-																	v83 = base.F64_convert_i32_s(v71)
-																	v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																	v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																	v99 = v9
-																}
+																v84 = base.F64_convert_i32_s(v72)
+																v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																v100 = v9
 															}
 														}
 													}
@@ -250,57 +243,54 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 													v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+24)))
 													if v59 == int32(0) {
 														v63 = int32(0)
-														if v42 != int32(7) {
-															v99 = v63
+														v64 = int32(7)
+														if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+															v100 = v63
 														} else {
-															if v49 != int32(7) {
-																v99 = v63
+															v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+															if v69 != int32(7) {
+																v100 = v63
 															} else {
-																v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-																if v68 != int32(7) {
-																	v99 = v63
+																v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+																if v72 == int32(0) {
+																	v100 = v63
 																} else {
-																	v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																	if v71 == int32(0) {
-																		v99 = v63
-																	} else {
-																		v83 = base.F64_convert_i32_s(v71)
-																		v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																		v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																		v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																		*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																		v99 = v9
-																	}
+																	v84 = base.F64_convert_i32_s(v72)
+																	v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																	v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																	v100 = v9
 																}
 															}
 														}
 													} else {
-														v96 = float64(0)
-														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-														v99 = v9
+														v97 = float64(0)
+														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+														v100 = v9
 													}
 												}
 											} else {
-												v75 = int32(0)
+												v76 = int32(0)
 												if v42 != int32(7) {
-													v99 = v75
+													v100 = v76
 												} else {
 													if v49 != int32(7) {
-														v99 = v75
+														v100 = v76
 													} else {
-														v83 = float64(1)
-														v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-														v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-														v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-														v99 = v9
+														v84 = float64(1)
+														v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+														v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+														v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+														v100 = v9
 													}
 												}
 											}
 										} else {
-											v96 = float64(0)
-											*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-											v99 = v9
+											v97 = float64(0)
+											*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+											v100 = v9
 										}
 									}
 								} else {
@@ -312,27 +302,24 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 												v56 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 												if v56 != int32(7) {
 													v63 = int32(0)
-													if v42 != int32(7) {
-														v99 = v63
+													v64 = int32(7)
+													if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+														v100 = v63
 													} else {
-														if v49 != int32(7) {
-															v99 = v63
+														v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+														if v69 != int32(7) {
+															v100 = v63
 														} else {
-															v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-															if v68 != int32(7) {
-																v99 = v63
+															v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+															if v72 == int32(0) {
+																v100 = v63
 															} else {
-																v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																if v71 == int32(0) {
-																	v99 = v63
-																} else {
-																	v83 = base.F64_convert_i32_s(v71)
-																	v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																	v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																	v99 = v9
-																}
+																v84 = base.F64_convert_i32_s(v72)
+																v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																v100 = v9
 															}
 														}
 													}
@@ -340,50 +327,47 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 													v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+24)))
 													if v59 == int32(0) {
 														v63 = int32(0)
-														if v42 != int32(7) {
-															v99 = v63
+														v64 = int32(7)
+														if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+															v100 = v63
 														} else {
-															if v49 != int32(7) {
-																v99 = v63
+															v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+															if v69 != int32(7) {
+																v100 = v63
 															} else {
-																v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-																if v68 != int32(7) {
-																	v99 = v63
+																v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+																if v72 == int32(0) {
+																	v100 = v63
 																} else {
-																	v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																	if v71 == int32(0) {
-																		v99 = v63
-																	} else {
-																		v83 = base.F64_convert_i32_s(v71)
-																		v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																		v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																		v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																		*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																		v99 = v9
-																	}
+																	v84 = base.F64_convert_i32_s(v72)
+																	v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																	v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																	v100 = v9
 																}
 															}
 														}
 													} else {
-														v96 = float64(0)
-														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-														v99 = v9
+														v97 = float64(0)
+														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+														v100 = v9
 													}
 												}
 											} else {
-												v75 = int32(0)
+												v76 = int32(0)
 												if v42 != int32(7) {
-													v99 = v75
+													v100 = v76
 												} else {
 													if v49 != int32(7) {
-														v99 = v75
+														v100 = v76
 													} else {
-														v83 = float64(1)
-														v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-														v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-														v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-														v99 = v9
+														v84 = float64(1)
+														v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+														v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+														v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+														v100 = v9
 													}
 												}
 											}
@@ -394,27 +378,24 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 													v56 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 													if v56 != int32(7) {
 														v63 = int32(0)
-														if v42 != int32(7) {
-															v99 = v63
+														v64 = int32(7)
+														if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+															v100 = v63
 														} else {
-															if v49 != int32(7) {
-																v99 = v63
+															v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+															if v69 != int32(7) {
+																v100 = v63
 															} else {
-																v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-																if v68 != int32(7) {
-																	v99 = v63
+																v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+																if v72 == int32(0) {
+																	v100 = v63
 																} else {
-																	v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																	if v71 == int32(0) {
-																		v99 = v63
-																	} else {
-																		v83 = base.F64_convert_i32_s(v71)
-																		v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																		v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																		v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																		*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																		v99 = v9
-																	}
+																	v84 = base.F64_convert_i32_s(v72)
+																	v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																	v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																	v100 = v9
 																}
 															}
 														}
@@ -422,66 +403,63 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 														v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+24)))
 														if v59 == int32(0) {
 															v63 = int32(0)
-															if v42 != int32(7) {
-																v99 = v63
+															v64 = int32(7)
+															if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+																v100 = v63
 															} else {
-																if v49 != int32(7) {
-																	v99 = v63
+																v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+																if v69 != int32(7) {
+																	v100 = v63
 																} else {
-																	v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-																	if v68 != int32(7) {
-																		v99 = v63
+																	v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+																	if v72 == int32(0) {
+																		v100 = v63
 																	} else {
-																		v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																		if v71 == int32(0) {
-																			v99 = v63
-																		} else {
-																			v83 = base.F64_convert_i32_s(v71)
-																			v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																			v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																			v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																			*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																			v99 = v9
-																		}
+																		v84 = base.F64_convert_i32_s(v72)
+																		v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																		v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																		v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																		*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																		v100 = v9
 																	}
 																}
 															}
 														} else {
-															v96 = float64(0)
-															*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-															v99 = v9
+															v97 = float64(0)
+															*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+															v100 = v9
 														}
 													}
 												} else {
-													v75 = int32(0)
+													v76 = int32(0)
 													if v42 != int32(7) {
-														v99 = v75
+														v100 = v76
 													} else {
 														if v49 != int32(7) {
-															v99 = v75
+															v100 = v76
 														} else {
-															v83 = float64(1)
-															v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-															v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-															v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-															*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-															v99 = v9
+															v84 = float64(1)
+															v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+															v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+															*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+															v100 = v9
 														}
 													}
 												}
 											} else {
-												v96 = float64(0)
-												*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-												v99 = v9
+												v97 = float64(0)
+												*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+												v100 = v9
 											}
 										}
 									} else {
-										v96 = float64(0)
-										*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-										v99 = v9
+										v97 = float64(0)
+										*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+										v100 = v9
 									}
 								}
-								return v99
+								return v100
 							}
 						} else {
 							v41 = int32(0)
@@ -493,27 +471,24 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 										v56 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 										if v56 != int32(7) {
 											v63 = int32(0)
-											if v42 != int32(7) {
-												v99 = v63
+											v64 = int32(7)
+											if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+												v100 = v63
 											} else {
-												if v49 != int32(7) {
-													v99 = v63
+												v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+												if v69 != int32(7) {
+													v100 = v63
 												} else {
-													v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-													if v68 != int32(7) {
-														v99 = v63
+													v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+													if v72 == int32(0) {
+														v100 = v63
 													} else {
-														v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-														if v71 == int32(0) {
-															v99 = v63
-														} else {
-															v83 = base.F64_convert_i32_s(v71)
-															v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-															v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-															v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-															*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-															v99 = v9
-														}
+														v84 = base.F64_convert_i32_s(v72)
+														v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+														v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+														v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+														v100 = v9
 													}
 												}
 											}
@@ -521,50 +496,47 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 											v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+24)))
 											if v59 == int32(0) {
 												v63 = int32(0)
-												if v42 != int32(7) {
-													v99 = v63
+												v64 = int32(7)
+												if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+													v100 = v63
 												} else {
-													if v49 != int32(7) {
-														v99 = v63
+													v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+													if v69 != int32(7) {
+														v100 = v63
 													} else {
-														v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-														if v68 != int32(7) {
-															v99 = v63
+														v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+														if v72 == int32(0) {
+															v100 = v63
 														} else {
-															v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-															if v71 == int32(0) {
-																v99 = v63
-															} else {
-																v83 = base.F64_convert_i32_s(v71)
-																v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																v99 = v9
-															}
+															v84 = base.F64_convert_i32_s(v72)
+															v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+															v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+															*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+															v100 = v9
 														}
 													}
 												}
 											} else {
-												v96 = float64(0)
-												*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-												v99 = v9
+												v97 = float64(0)
+												*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+												v100 = v9
 											}
 										}
 									} else {
-										v75 = int32(0)
+										v76 = int32(0)
 										if v42 != int32(7) {
-											v99 = v75
+											v100 = v76
 										} else {
 											if v49 != int32(7) {
-												v99 = v75
+												v100 = v76
 											} else {
-												v83 = float64(1)
-												v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-												v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-												v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-												*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-												v99 = v9
+												v84 = float64(1)
+												v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+												v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+												v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+												*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+												v100 = v9
 											}
 										}
 									}
@@ -575,27 +547,24 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 											v56 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 											if v56 != int32(7) {
 												v63 = int32(0)
-												if v42 != int32(7) {
-													v99 = v63
+												v64 = int32(7)
+												if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+													v100 = v63
 												} else {
-													if v49 != int32(7) {
-														v99 = v63
+													v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+													if v69 != int32(7) {
+														v100 = v63
 													} else {
-														v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-														if v68 != int32(7) {
-															v99 = v63
+														v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+														if v72 == int32(0) {
+															v100 = v63
 														} else {
-															v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-															if v71 == int32(0) {
-																v99 = v63
-															} else {
-																v83 = base.F64_convert_i32_s(v71)
-																v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																v99 = v9
-															}
+															v84 = base.F64_convert_i32_s(v72)
+															v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+															v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+															*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+															v100 = v9
 														}
 													}
 												}
@@ -603,57 +572,54 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 												v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+24)))
 												if v59 == int32(0) {
 													v63 = int32(0)
-													if v42 != int32(7) {
-														v99 = v63
+													v64 = int32(7)
+													if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+														v100 = v63
 													} else {
-														if v49 != int32(7) {
-															v99 = v63
+														v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+														if v69 != int32(7) {
+															v100 = v63
 														} else {
-															v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-															if v68 != int32(7) {
-																v99 = v63
+															v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+															if v72 == int32(0) {
+																v100 = v63
 															} else {
-																v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																if v71 == int32(0) {
-																	v99 = v63
-																} else {
-																	v83 = base.F64_convert_i32_s(v71)
-																	v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																	v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																	v99 = v9
-																}
+																v84 = base.F64_convert_i32_s(v72)
+																v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																v100 = v9
 															}
 														}
 													}
 												} else {
-													v96 = float64(0)
-													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-													v99 = v9
+													v97 = float64(0)
+													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+													v100 = v9
 												}
 											}
 										} else {
-											v75 = int32(0)
+											v76 = int32(0)
 											if v42 != int32(7) {
-												v99 = v75
+												v100 = v76
 											} else {
 												if v49 != int32(7) {
-													v99 = v75
+													v100 = v76
 												} else {
-													v83 = float64(1)
-													v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-													v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-													v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-													v99 = v9
+													v84 = float64(1)
+													v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+													v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+													v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+													v100 = v9
 												}
 											}
 										}
 									} else {
-										v96 = float64(0)
-										*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-										v99 = v9
+										v97 = float64(0)
+										*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+										v100 = v9
 									}
 								}
 							} else {
@@ -665,27 +631,24 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 											v56 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 											if v56 != int32(7) {
 												v63 = int32(0)
-												if v42 != int32(7) {
-													v99 = v63
+												v64 = int32(7)
+												if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+													v100 = v63
 												} else {
-													if v49 != int32(7) {
-														v99 = v63
+													v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+													if v69 != int32(7) {
+														v100 = v63
 													} else {
-														v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-														if v68 != int32(7) {
-															v99 = v63
+														v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+														if v72 == int32(0) {
+															v100 = v63
 														} else {
-															v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-															if v71 == int32(0) {
-																v99 = v63
-															} else {
-																v83 = base.F64_convert_i32_s(v71)
-																v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																v99 = v9
-															}
+															v84 = base.F64_convert_i32_s(v72)
+															v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+															v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+															*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+															v100 = v9
 														}
 													}
 												}
@@ -693,50 +656,47 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 												v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+24)))
 												if v59 == int32(0) {
 													v63 = int32(0)
-													if v42 != int32(7) {
-														v99 = v63
+													v64 = int32(7)
+													if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+														v100 = v63
 													} else {
-														if v49 != int32(7) {
-															v99 = v63
+														v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+														if v69 != int32(7) {
+															v100 = v63
 														} else {
-															v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-															if v68 != int32(7) {
-																v99 = v63
+															v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+															if v72 == int32(0) {
+																v100 = v63
 															} else {
-																v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																if v71 == int32(0) {
-																	v99 = v63
-																} else {
-																	v83 = base.F64_convert_i32_s(v71)
-																	v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																	v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																	v99 = v9
-																}
+																v84 = base.F64_convert_i32_s(v72)
+																v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																v100 = v9
 															}
 														}
 													}
 												} else {
-													v96 = float64(0)
-													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-													v99 = v9
+													v97 = float64(0)
+													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+													v100 = v9
 												}
 											}
 										} else {
-											v75 = int32(0)
+											v76 = int32(0)
 											if v42 != int32(7) {
-												v99 = v75
+												v100 = v76
 											} else {
 												if v49 != int32(7) {
-													v99 = v75
+													v100 = v76
 												} else {
-													v83 = float64(1)
-													v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-													v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-													v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-													v99 = v9
+													v84 = float64(1)
+													v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+													v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+													v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+													*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+													v100 = v9
 												}
 											}
 										}
@@ -747,27 +707,24 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 												v56 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 												if v56 != int32(7) {
 													v63 = int32(0)
-													if v42 != int32(7) {
-														v99 = v63
+													v64 = int32(7)
+													if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+														v100 = v63
 													} else {
-														if v49 != int32(7) {
-															v99 = v63
+														v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+														if v69 != int32(7) {
+															v100 = v63
 														} else {
-															v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-															if v68 != int32(7) {
-																v99 = v63
+															v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+															if v72 == int32(0) {
+																v100 = v63
 															} else {
-																v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																if v71 == int32(0) {
-																	v99 = v63
-																} else {
-																	v83 = base.F64_convert_i32_s(v71)
-																	v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																	v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																	v99 = v9
-																}
+																v84 = base.F64_convert_i32_s(v72)
+																v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																v100 = v9
 															}
 														}
 													}
@@ -775,66 +732,63 @@ func F_generate_series_int4_support(m *base.Module, l0 int32) int32 {
 													v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+24)))
 													if v59 == int32(0) {
 														v63 = int32(0)
-														if v42 != int32(7) {
-															v99 = v63
+														v64 = int32(7)
+														if base.B2i32(v42 != v64)|base.B2i32(v49 != v64) != 0 {
+															v100 = v63
 														} else {
-															if v49 != int32(7) {
-																v99 = v63
+															v69 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+															if v69 != int32(7) {
+																v100 = v63
 															} else {
-																v68 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-																if v68 != int32(7) {
-																	v99 = v63
+																v72 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
+																if v72 == int32(0) {
+																	v100 = v63
 																} else {
-																	v71 = *(*int32)(unsafe.Add(mBase, uint32(v41)+20))
-																	if v71 == int32(0) {
-																		v99 = v63
-																	} else {
-																		v83 = base.F64_convert_i32_s(v71)
-																		v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-																		v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-																		v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-																		*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-																		v99 = v9
-																	}
+																	v84 = base.F64_convert_i32_s(v72)
+																	v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+																	v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+																	*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+																	v100 = v9
 																}
 															}
 														}
 													} else {
-														v96 = float64(0)
-														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-														v99 = v9
+														v97 = float64(0)
+														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+														v100 = v9
 													}
 												}
 											} else {
-												v75 = int32(0)
+												v76 = int32(0)
 												if v42 != int32(7) {
-													v99 = v75
+													v100 = v76
 												} else {
 													if v49 != int32(7) {
-														v99 = v75
+														v100 = v76
 													} else {
-														v83 = float64(1)
-														v84 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-														v86 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-														v96 = base.F64_floor(base.F64_div(base.F64_add(v83, base.F64_sub(base.F64_convert_i32_s(v84), base.F64_convert_i32_s(v86))), v83))
-														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-														v99 = v9
+														v84 = float64(1)
+														v85 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
+														v87 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
+														v97 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i32_s(v85), base.F64_convert_i32_s(v87))), v84))
+														*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+														v100 = v9
 													}
 												}
 											}
 										} else {
-											v96 = float64(0)
-											*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-											v99 = v9
+											v97 = float64(0)
+											*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+											v100 = v9
 										}
 									}
 								} else {
-									v96 = float64(0)
-									*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v96
-									v99 = v9
+									v97 = float64(0)
+									*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v97
+									v100 = v9
 								}
 							}
-							return v99
+							return v100
 						}
 					}
 				}
@@ -905,44 +859,46 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 	_ = v60
 	var v64 int32
 	_ = v64
-	var v69 int32
-	_ = v69
-	var v72 int32
-	_ = v72
-	var v73 int64
+	var v65 int32
+	_ = v65
+	var v70 int32
+	_ = v70
+	var v73 int32
 	_ = v73
-	var v77 int32
-	_ = v77
-	var v84 float64
-	_ = v84
-	var v86 int32
-	_ = v86
-	var v87 int64
+	var v74 int64
+	_ = v74
+	var v78 int32
+	_ = v78
+	var v85 float64
+	_ = v85
+	var v87 int32
 	_ = v87
-	var v89 int32
-	_ = v89
-	var v90 int64
+	var v88 int64
+	_ = v88
+	var v90 int32
 	_ = v90
-	var v100 float64
-	_ = v100
-	var v103 int32
-	_ = v103
+	var v91 int64
+	_ = v91
+	var v101 float64
+	_ = v101
+	var v104 int32
+	_ = v104
 	v2 = int32(0)
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
 	if v11 != int32(460) {
-		v103 = v2
-		return v103
+		v104 = v2
+		return v104
 	} else {
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
 		if v14 == int32(0) {
-			v103 = v2
-			return v103
+			v104 = v2
+			return v104
 		} else {
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
 			if v17 != int32(15) {
-				v103 = v2
-				return v103
+				v104 = v2
+				return v104
 			} else {
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
 				v21 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
@@ -983,30 +939,27 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 											v57 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 											if v57 != int32(7) {
 												v64 = int32(0)
-												if v43 != int32(7) {
-													v103 = v64
+												v65 = int32(7)
+												if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+													v104 = v64
 												} else {
-													if v50 != int32(7) {
-														v103 = v64
+													v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+													if v70 != int32(7) {
+														v104 = v64
 													} else {
-														v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-														if v69 != int32(7) {
-															v103 = v64
+														v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+														v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+														if v74 == int64(0) {
+															v104 = v64
 														} else {
-															v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-															v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-															if v73 == int64(0) {
-																v103 = v64
-															} else {
-																v84 = base.F64_convert_i64_s(v73)
-																v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																v103 = v10
-															}
+															v85 = base.F64_convert_i64_s(v74)
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+															v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+															v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+															v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+															v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+															*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+															v104 = v10
 														}
 													}
 												}
@@ -1014,55 +967,52 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 												v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+24)))
 												if v60 == int32(0) {
 													v64 = int32(0)
-													if v43 != int32(7) {
-														v103 = v64
+													v65 = int32(7)
+													if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+														v104 = v64
 													} else {
-														if v50 != int32(7) {
-															v103 = v64
+														v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+														if v70 != int32(7) {
+															v104 = v64
 														} else {
-															v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-															if v69 != int32(7) {
-																v103 = v64
+															v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+															v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+															if v74 == int64(0) {
+																v104 = v64
 															} else {
-																v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																if v73 == int64(0) {
-																	v103 = v64
-																} else {
-																	v84 = base.F64_convert_i64_s(v73)
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																	v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																	v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																	v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																	v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																	v103 = v10
-																}
+																v85 = base.F64_convert_i64_s(v74)
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																v104 = v10
 															}
 														}
 													}
 												} else {
-													v100 = float64(0)
-													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-													v103 = v10
+													v101 = float64(0)
+													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+													v104 = v10
 												}
 											}
 										} else {
-											v77 = int32(0)
+											v78 = int32(0)
 											if v43 != int32(7) {
-												v103 = v77
+												v104 = v78
 											} else {
 												if v50 != int32(7) {
-													v103 = v77
+													v104 = v78
 												} else {
-													v84 = float64(1)
-													v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-													v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-													v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-													v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-													v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-													v103 = v10
+													v85 = float64(1)
+													v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+													v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+													v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+													v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+													v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+													v104 = v10
 												}
 											}
 										}
@@ -1073,30 +1023,27 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 												v57 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 												if v57 != int32(7) {
 													v64 = int32(0)
-													if v43 != int32(7) {
-														v103 = v64
+													v65 = int32(7)
+													if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+														v104 = v64
 													} else {
-														if v50 != int32(7) {
-															v103 = v64
+														v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+														if v70 != int32(7) {
+															v104 = v64
 														} else {
-															v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-															if v69 != int32(7) {
-																v103 = v64
+															v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+															v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+															if v74 == int64(0) {
+																v104 = v64
 															} else {
-																v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																if v73 == int64(0) {
-																	v103 = v64
-																} else {
-																	v84 = base.F64_convert_i64_s(v73)
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																	v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																	v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																	v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																	v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																	v103 = v10
-																}
+																v85 = base.F64_convert_i64_s(v74)
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																v104 = v10
 															}
 														}
 													}
@@ -1104,62 +1051,59 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 													v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+24)))
 													if v60 == int32(0) {
 														v64 = int32(0)
-														if v43 != int32(7) {
-															v103 = v64
+														v65 = int32(7)
+														if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+															v104 = v64
 														} else {
-															if v50 != int32(7) {
-																v103 = v64
+															v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+															if v70 != int32(7) {
+																v104 = v64
 															} else {
-																v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-																if v69 != int32(7) {
-																	v103 = v64
+																v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+																v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+																if v74 == int64(0) {
+																	v104 = v64
 																} else {
-																	v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																	v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																	if v73 == int64(0) {
-																		v103 = v64
-																	} else {
-																		v84 = base.F64_convert_i64_s(v73)
-																		v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																		v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																		v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																		v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																		v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																		*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																		v103 = v10
-																	}
+																	v85 = base.F64_convert_i64_s(v74)
+																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																	v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																	v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																	v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																	v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																	v104 = v10
 																}
 															}
 														}
 													} else {
-														v100 = float64(0)
-														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-														v103 = v10
+														v101 = float64(0)
+														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+														v104 = v10
 													}
 												}
 											} else {
-												v77 = int32(0)
+												v78 = int32(0)
 												if v43 != int32(7) {
-													v103 = v77
+													v104 = v78
 												} else {
 													if v50 != int32(7) {
-														v103 = v77
+														v104 = v78
 													} else {
-														v84 = float64(1)
-														v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-														v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-														v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-														v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-														v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-														v103 = v10
+														v85 = float64(1)
+														v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+														v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+														v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+														v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+														v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+														v104 = v10
 													}
 												}
 											}
 										} else {
-											v100 = float64(0)
-											*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-											v103 = v10
+											v101 = float64(0)
+											*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+											v104 = v10
 										}
 									}
 								} else {
@@ -1171,30 +1115,27 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 												v57 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 												if v57 != int32(7) {
 													v64 = int32(0)
-													if v43 != int32(7) {
-														v103 = v64
+													v65 = int32(7)
+													if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+														v104 = v64
 													} else {
-														if v50 != int32(7) {
-															v103 = v64
+														v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+														if v70 != int32(7) {
+															v104 = v64
 														} else {
-															v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-															if v69 != int32(7) {
-																v103 = v64
+															v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+															v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+															if v74 == int64(0) {
+																v104 = v64
 															} else {
-																v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																if v73 == int64(0) {
-																	v103 = v64
-																} else {
-																	v84 = base.F64_convert_i64_s(v73)
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																	v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																	v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																	v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																	v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																	v103 = v10
-																}
+																v85 = base.F64_convert_i64_s(v74)
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																v104 = v10
 															}
 														}
 													}
@@ -1202,55 +1143,52 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 													v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+24)))
 													if v60 == int32(0) {
 														v64 = int32(0)
-														if v43 != int32(7) {
-															v103 = v64
+														v65 = int32(7)
+														if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+															v104 = v64
 														} else {
-															if v50 != int32(7) {
-																v103 = v64
+															v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+															if v70 != int32(7) {
+																v104 = v64
 															} else {
-																v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-																if v69 != int32(7) {
-																	v103 = v64
+																v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+																v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+																if v74 == int64(0) {
+																	v104 = v64
 																} else {
-																	v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																	v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																	if v73 == int64(0) {
-																		v103 = v64
-																	} else {
-																		v84 = base.F64_convert_i64_s(v73)
-																		v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																		v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																		v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																		v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																		v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																		*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																		v103 = v10
-																	}
+																	v85 = base.F64_convert_i64_s(v74)
+																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																	v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																	v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																	v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																	v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																	v104 = v10
 																}
 															}
 														}
 													} else {
-														v100 = float64(0)
-														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-														v103 = v10
+														v101 = float64(0)
+														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+														v104 = v10
 													}
 												}
 											} else {
-												v77 = int32(0)
+												v78 = int32(0)
 												if v43 != int32(7) {
-													v103 = v77
+													v104 = v78
 												} else {
 													if v50 != int32(7) {
-														v103 = v77
+														v104 = v78
 													} else {
-														v84 = float64(1)
-														v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-														v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-														v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-														v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-														v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-														v103 = v10
+														v85 = float64(1)
+														v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+														v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+														v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+														v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+														v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+														v104 = v10
 													}
 												}
 											}
@@ -1261,30 +1199,27 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 													v57 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 													if v57 != int32(7) {
 														v64 = int32(0)
-														if v43 != int32(7) {
-															v103 = v64
+														v65 = int32(7)
+														if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+															v104 = v64
 														} else {
-															if v50 != int32(7) {
-																v103 = v64
+															v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+															if v70 != int32(7) {
+																v104 = v64
 															} else {
-																v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-																if v69 != int32(7) {
-																	v103 = v64
+																v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+																v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+																if v74 == int64(0) {
+																	v104 = v64
 																} else {
-																	v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																	v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																	if v73 == int64(0) {
-																		v103 = v64
-																	} else {
-																		v84 = base.F64_convert_i64_s(v73)
-																		v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																		v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																		v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																		v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																		v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																		*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																		v103 = v10
-																	}
+																	v85 = base.F64_convert_i64_s(v74)
+																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																	v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																	v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																	v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																	v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																	v104 = v10
 																}
 															}
 														}
@@ -1292,71 +1227,68 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 														v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+24)))
 														if v60 == int32(0) {
 															v64 = int32(0)
-															if v43 != int32(7) {
-																v103 = v64
+															v65 = int32(7)
+															if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+																v104 = v64
 															} else {
-																if v50 != int32(7) {
-																	v103 = v64
+																v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+																if v70 != int32(7) {
+																	v104 = v64
 																} else {
-																	v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-																	if v69 != int32(7) {
-																		v103 = v64
+																	v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+																	v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+																	if v74 == int64(0) {
+																		v104 = v64
 																	} else {
-																		v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																		v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																		if v73 == int64(0) {
-																			v103 = v64
-																		} else {
-																			v84 = base.F64_convert_i64_s(v73)
-																			v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																			v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																			v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																			v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																			v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																			*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																			v103 = v10
-																		}
+																		v85 = base.F64_convert_i64_s(v74)
+																		v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																		v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																		v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																		v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																		v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																		*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																		v104 = v10
 																	}
 																}
 															}
 														} else {
-															v100 = float64(0)
-															*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-															v103 = v10
+															v101 = float64(0)
+															*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+															v104 = v10
 														}
 													}
 												} else {
-													v77 = int32(0)
+													v78 = int32(0)
 													if v43 != int32(7) {
-														v103 = v77
+														v104 = v78
 													} else {
 														if v50 != int32(7) {
-															v103 = v77
+															v104 = v78
 														} else {
-															v84 = float64(1)
-															v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-															v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-															v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-															v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-															v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-															*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-															v103 = v10
+															v85 = float64(1)
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+															v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+															v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+															v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+															v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+															*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+															v104 = v10
 														}
 													}
 												}
 											} else {
-												v100 = float64(0)
-												*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-												v103 = v10
+												v101 = float64(0)
+												*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+												v104 = v10
 											}
 										}
 									} else {
-										v100 = float64(0)
-										*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-										v103 = v10
+										v101 = float64(0)
+										*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+										v104 = v10
 									}
 								}
-								return v103
+								return v104
 							}
 						} else {
 							v42 = int32(0)
@@ -1368,30 +1300,27 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 										v57 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 										if v57 != int32(7) {
 											v64 = int32(0)
-											if v43 != int32(7) {
-												v103 = v64
+											v65 = int32(7)
+											if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+												v104 = v64
 											} else {
-												if v50 != int32(7) {
-													v103 = v64
+												v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+												if v70 != int32(7) {
+													v104 = v64
 												} else {
-													v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-													if v69 != int32(7) {
-														v103 = v64
+													v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+													v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+													if v74 == int64(0) {
+														v104 = v64
 													} else {
-														v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-														v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-														if v73 == int64(0) {
-															v103 = v64
-														} else {
-															v84 = base.F64_convert_i64_s(v73)
-															v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-															v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-															v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-															v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-															v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-															*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-															v103 = v10
-														}
+														v85 = base.F64_convert_i64_s(v74)
+														v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+														v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+														v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+														v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+														v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+														v104 = v10
 													}
 												}
 											}
@@ -1399,55 +1328,52 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 											v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+24)))
 											if v60 == int32(0) {
 												v64 = int32(0)
-												if v43 != int32(7) {
-													v103 = v64
+												v65 = int32(7)
+												if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+													v104 = v64
 												} else {
-													if v50 != int32(7) {
-														v103 = v64
+													v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+													if v70 != int32(7) {
+														v104 = v64
 													} else {
-														v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-														if v69 != int32(7) {
-															v103 = v64
+														v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+														v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+														if v74 == int64(0) {
+															v104 = v64
 														} else {
-															v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-															v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-															if v73 == int64(0) {
-																v103 = v64
-															} else {
-																v84 = base.F64_convert_i64_s(v73)
-																v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																v103 = v10
-															}
+															v85 = base.F64_convert_i64_s(v74)
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+															v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+															v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+															v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+															v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+															*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+															v104 = v10
 														}
 													}
 												}
 											} else {
-												v100 = float64(0)
-												*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-												v103 = v10
+												v101 = float64(0)
+												*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+												v104 = v10
 											}
 										}
 									} else {
-										v77 = int32(0)
+										v78 = int32(0)
 										if v43 != int32(7) {
-											v103 = v77
+											v104 = v78
 										} else {
 											if v50 != int32(7) {
-												v103 = v77
+												v104 = v78
 											} else {
-												v84 = float64(1)
-												v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-												v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-												v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-												v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-												v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-												*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-												v103 = v10
+												v85 = float64(1)
+												v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+												v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+												v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+												v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+												v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+												*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+												v104 = v10
 											}
 										}
 									}
@@ -1458,30 +1384,27 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 											v57 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 											if v57 != int32(7) {
 												v64 = int32(0)
-												if v43 != int32(7) {
-													v103 = v64
+												v65 = int32(7)
+												if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+													v104 = v64
 												} else {
-													if v50 != int32(7) {
-														v103 = v64
+													v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+													if v70 != int32(7) {
+														v104 = v64
 													} else {
-														v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-														if v69 != int32(7) {
-															v103 = v64
+														v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+														v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+														if v74 == int64(0) {
+															v104 = v64
 														} else {
-															v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-															v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-															if v73 == int64(0) {
-																v103 = v64
-															} else {
-																v84 = base.F64_convert_i64_s(v73)
-																v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																v103 = v10
-															}
+															v85 = base.F64_convert_i64_s(v74)
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+															v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+															v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+															v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+															v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+															*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+															v104 = v10
 														}
 													}
 												}
@@ -1489,62 +1412,59 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 												v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+24)))
 												if v60 == int32(0) {
 													v64 = int32(0)
-													if v43 != int32(7) {
-														v103 = v64
+													v65 = int32(7)
+													if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+														v104 = v64
 													} else {
-														if v50 != int32(7) {
-															v103 = v64
+														v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+														if v70 != int32(7) {
+															v104 = v64
 														} else {
-															v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-															if v69 != int32(7) {
-																v103 = v64
+															v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+															v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+															if v74 == int64(0) {
+																v104 = v64
 															} else {
-																v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																if v73 == int64(0) {
-																	v103 = v64
-																} else {
-																	v84 = base.F64_convert_i64_s(v73)
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																	v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																	v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																	v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																	v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																	v103 = v10
-																}
+																v85 = base.F64_convert_i64_s(v74)
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																v104 = v10
 															}
 														}
 													}
 												} else {
-													v100 = float64(0)
-													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-													v103 = v10
+													v101 = float64(0)
+													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+													v104 = v10
 												}
 											}
 										} else {
-											v77 = int32(0)
+											v78 = int32(0)
 											if v43 != int32(7) {
-												v103 = v77
+												v104 = v78
 											} else {
 												if v50 != int32(7) {
-													v103 = v77
+													v104 = v78
 												} else {
-													v84 = float64(1)
-													v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-													v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-													v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-													v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-													v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-													v103 = v10
+													v85 = float64(1)
+													v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+													v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+													v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+													v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+													v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+													v104 = v10
 												}
 											}
 										}
 									} else {
-										v100 = float64(0)
-										*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-										v103 = v10
+										v101 = float64(0)
+										*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+										v104 = v10
 									}
 								}
 							} else {
@@ -1556,30 +1476,27 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 											v57 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 											if v57 != int32(7) {
 												v64 = int32(0)
-												if v43 != int32(7) {
-													v103 = v64
+												v65 = int32(7)
+												if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+													v104 = v64
 												} else {
-													if v50 != int32(7) {
-														v103 = v64
+													v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+													if v70 != int32(7) {
+														v104 = v64
 													} else {
-														v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-														if v69 != int32(7) {
-															v103 = v64
+														v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+														v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+														if v74 == int64(0) {
+															v104 = v64
 														} else {
-															v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-															v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-															if v73 == int64(0) {
-																v103 = v64
-															} else {
-																v84 = base.F64_convert_i64_s(v73)
-																v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																v103 = v10
-															}
+															v85 = base.F64_convert_i64_s(v74)
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+															v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+															v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+															v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+															v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+															*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+															v104 = v10
 														}
 													}
 												}
@@ -1587,55 +1504,52 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 												v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+24)))
 												if v60 == int32(0) {
 													v64 = int32(0)
-													if v43 != int32(7) {
-														v103 = v64
+													v65 = int32(7)
+													if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+														v104 = v64
 													} else {
-														if v50 != int32(7) {
-															v103 = v64
+														v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+														if v70 != int32(7) {
+															v104 = v64
 														} else {
-															v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-															if v69 != int32(7) {
-																v103 = v64
+															v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+															v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+															if v74 == int64(0) {
+																v104 = v64
 															} else {
-																v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																if v73 == int64(0) {
-																	v103 = v64
-																} else {
-																	v84 = base.F64_convert_i64_s(v73)
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																	v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																	v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																	v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																	v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																	v103 = v10
-																}
+																v85 = base.F64_convert_i64_s(v74)
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																v104 = v10
 															}
 														}
 													}
 												} else {
-													v100 = float64(0)
-													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-													v103 = v10
+													v101 = float64(0)
+													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+													v104 = v10
 												}
 											}
 										} else {
-											v77 = int32(0)
+											v78 = int32(0)
 											if v43 != int32(7) {
-												v103 = v77
+												v104 = v78
 											} else {
 												if v50 != int32(7) {
-													v103 = v77
+													v104 = v78
 												} else {
-													v84 = float64(1)
-													v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-													v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-													v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-													v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-													v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-													v103 = v10
+													v85 = float64(1)
+													v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+													v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+													v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+													v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+													v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+													*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+													v104 = v10
 												}
 											}
 										}
@@ -1646,30 +1560,27 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 												v57 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 												if v57 != int32(7) {
 													v64 = int32(0)
-													if v43 != int32(7) {
-														v103 = v64
+													v65 = int32(7)
+													if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+														v104 = v64
 													} else {
-														if v50 != int32(7) {
-															v103 = v64
+														v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+														if v70 != int32(7) {
+															v104 = v64
 														} else {
-															v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-															if v69 != int32(7) {
-																v103 = v64
+															v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+															v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+															if v74 == int64(0) {
+																v104 = v64
 															} else {
-																v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																if v73 == int64(0) {
-																	v103 = v64
-																} else {
-																	v84 = base.F64_convert_i64_s(v73)
-																	v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																	v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																	v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																	v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																	v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																	v103 = v10
-																}
+																v85 = base.F64_convert_i64_s(v74)
+																v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																v104 = v10
 															}
 														}
 													}
@@ -1677,71 +1588,68 @@ func F_generate_series_int8_support(m *base.Module, l0 int32) int32 {
 													v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+24)))
 													if v60 == int32(0) {
 														v64 = int32(0)
-														if v43 != int32(7) {
-															v103 = v64
+														v65 = int32(7)
+														if base.B2i32(v43 != v65)|base.B2i32(v50 != v65) != 0 {
+															v104 = v64
 														} else {
-															if v50 != int32(7) {
-																v103 = v64
+															v70 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+															if v70 != int32(7) {
+																v104 = v64
 															} else {
-																v69 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-																if v69 != int32(7) {
-																	v103 = v64
+																v73 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
+																v74 = *(*int64)(unsafe.Add(mBase, uint32(v73)))
+																if v74 == int64(0) {
+																	v104 = v64
 																} else {
-																	v72 = *(*int32)(unsafe.Add(mBase, uint32(v42)+20))
-																	v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
-																	if v73 == int64(0) {
-																		v103 = v64
-																	} else {
-																		v84 = base.F64_convert_i64_s(v73)
-																		v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-																		v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-																		v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-																		v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-																		v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-																		*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-																		v103 = v10
-																	}
+																	v85 = base.F64_convert_i64_s(v74)
+																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+																	v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+																	v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+																	v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+																	v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+																	*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+																	v104 = v10
 																}
 															}
 														}
 													} else {
-														v100 = float64(0)
-														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-														v103 = v10
+														v101 = float64(0)
+														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+														v104 = v10
 													}
 												}
 											} else {
-												v77 = int32(0)
+												v78 = int32(0)
 												if v43 != int32(7) {
-													v103 = v77
+													v104 = v78
 												} else {
 													if v50 != int32(7) {
-														v103 = v77
+														v104 = v78
 													} else {
-														v84 = float64(1)
-														v86 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
-														v87 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
-														v89 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-														v90 = *(*int64)(unsafe.Add(mBase, uint32(v89)))
-														v100 = base.F64_floor(base.F64_div(base.F64_add(v84, base.F64_sub(base.F64_convert_i64_s(v87), base.F64_convert_i64_s(v90))), v84))
-														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-														v103 = v10
+														v85 = float64(1)
+														v87 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+														v88 = *(*int64)(unsafe.Add(mBase, uint32(v87)))
+														v90 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+														v91 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
+														v101 = base.F64_floor(base.F64_div(base.F64_add(v85, base.F64_sub(base.F64_convert_i64_s(v88), base.F64_convert_i64_s(v91))), v85))
+														*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+														v104 = v10
 													}
 												}
 											}
 										} else {
-											v100 = float64(0)
-											*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-											v103 = v10
+											v101 = float64(0)
+											*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+											v104 = v10
 										}
 									}
 								} else {
-									v100 = float64(0)
-									*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v100
-									v103 = v10
+									v101 = float64(0)
+									*(*float64)(unsafe.Add(mBase, uint32(v10)+16)) = v101
+									v104 = v10
 								}
 							}
-							return v103
+							return v104
 						}
 					}
 				}

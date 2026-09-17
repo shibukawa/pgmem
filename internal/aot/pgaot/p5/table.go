@@ -520,12 +520,18 @@ func F_table_to_xml_and_xmlschema(m *base.Module, l0 int32) int32 {
 	_ = v27
 	var v30 int32
 	_ = v30
+	var v32 int32
+	_ = v32
 	var v34 int32
 	_ = v34
 	var v37 int32
 	_ = v37
 	var v38 int32
 	_ = v38
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
 	var v44 int32
 	_ = v44
 	var v45 int32
@@ -542,10 +548,6 @@ func F_table_to_xml_and_xmlschema(m *base.Module, l0 int32) int32 {
 	_ = v50
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
@@ -578,54 +580,55 @@ func F_table_to_xml_and_xmlschema(m *base.Module, l0 int32) int32 {
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_sequence_close(m, v21, int32(0))
+					F_relation_close(m, v21, int32(0))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
 						return int32(0)
 					} else {
-						F_initStringInfo(m, v9+int32(16))
+						v32 = v9 + int32(16)
+						F_initStringInfo(m, v32)
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
 							return int32(0)
 						} else {
-							v37 = F_DirectFunctionCall1Coll(m, int32(1566), int32(0), v12)
+							v37 = F_DirectFunctionCall1Coll(m, int32(1547), int32(0), v12)
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = v37
-								F_appendStringInfo(m, v9+int32(16), int32(_a_F_table_to_xml_and_xmlschema_0), v9)
+								F_appendStringInfo(m, v32, int32(_a_F_table_to_xml_and_xmlschema_0), v9)
 								mBase = m.M
-								v44 = m.ExcPending
-								if v44 != 0 {
+								v42 = m.ExcPending
+								if v42 != 0 {
 									return int32(0)
 								} else {
-									v45 = *(*int32)(unsafe.Add(mBase, uint32(v9)+16))
-									v46 = F_get_rel_name(m, v12)
+									v43 = *(*int32)(unsafe.Add(mBase, uint32(v9)+16))
+									v44 = F_get_rel_name(m, v12)
 									mBase = m.M
-									v47 = m.ExcPending
-									if v47 != 0 {
+									v45 = m.ExcPending
+									if v45 != 0 {
 										return int32(0)
 									} else {
-										v48 = F_query_to_xml_internal(m, v45, v46, v26, v25, v18)
+										v46 = F_query_to_xml_internal(m, v43, v44, v26, v25, v18)
 										mBase = m.M
-										v49 = m.ExcPending
-										if v49 != 0 {
+										v47 = m.ExcPending
+										if v47 != 0 {
 											return int32(0)
 										} else {
-											v50 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-											v51 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
-											v52 = F_cstring_to_text_with_len(m, v50, v51)
+											v48 = *(*int32)(unsafe.Add(mBase, uint32(v46)))
+											v49 = *(*int32)(unsafe.Add(mBase, uint32(v46)+4))
+											v50 = F_cstring_to_text_with_len(m, v48, v49)
 											mBase = m.M
-											v53 = m.ExcPending
-											if v53 != 0 {
+											v51 = m.ExcPending
+											if v51 != 0 {
 												return int32(0)
 											} else {
 												m.G0 = v9 + int32(32)
-												return v52
+												return v50
 											}
 										}
 									}
@@ -699,7 +702,7 @@ func F_table_to_xmlschema(m *base.Module, l0 int32) int32 {
 				if v21 != 0 {
 					return int32(0)
 				} else {
-					F_sequence_close(m, v15, int32(0))
+					F_relation_close(m, v15, int32(0))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {

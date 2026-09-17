@@ -32,18 +32,18 @@ func F_point_eq(m *base.Module, l0 int32) int32 {
 	_ = v39
 	var v44 float64
 	_ = v44
-	var v61 int32
-	_ = v61
-	var v67 float64
-	_ = v67
-	var v71 int64
-	_ = v71
-	var v72 float64
-	_ = v72
-	var v75 int64
-	_ = v75
-	var v92 int32
-	_ = v92
+	var v62 int32
+	_ = v62
+	var v69 float64
+	_ = v69
+	var v73 int64
+	_ = v73
+	var v74 float64
+	_ = v74
+	var v77 int64
+	_ = v77
+	var v94 int32
+	_ = v94
 	v8 = int32(0)
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
@@ -55,62 +55,48 @@ func F_point_eq(m *base.Module, l0 int32) int32 {
 		v22 = *(*float64)(unsafe.Add(mBase, uint32(v11)+8))
 		v25 = base.I64_reinterpret_f64(v22) & v20
 		if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v25) {
-			v61 = base.B2i32(base.Ui64(v21) < base.Ui64(int64(9218868437227405313)))
-			if base.F64_ne(v12, v18) != 0 {
-				v92 = v8
-				return v92
+			v62 = base.B2i32(base.Ui64(v21) < base.Ui64(int64(9218868437227405313)))
+			if base.B2i32(v62 == int32(0))|base.F64_ne(v12, v18) != 0 {
+				v94 = v8
+				return v94
 			} else {
-				if v61 == int32(0) {
-					v92 = v8
-					return v92
+				v69 = v22
+				v73 = v25
+				v74 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
+				v77 = base.I64_reinterpret_f64(v74) & int64(9223372036854775807)
+				if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v73) {
+					return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v77))
 				} else {
-					v67 = v22
-					v71 = v25
-					v72 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
-					v75 = base.I64_reinterpret_f64(v72) & int64(9223372036854775807)
-					if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v71) {
-						return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v75))
-					} else {
-						return base.B2i32(base.Ui64(v75) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v72, v67)
-					}
+					return base.B2i32(base.Ui64(v77) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v74, v69)
 				}
 			}
 		} else {
 			if base.Ui64(int64(9218868437227405312)) < base.Ui64(v21) {
-				v92 = v8
-				return v92
+				v94 = v8
+				return v94
 			} else {
 				v32 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
 				if base.Ui64(base.I64_reinterpret_f64(v32)&int64(9223372036854775807)) <= base.Ui64(int64(9218868437227405312)) {
-					if base.F64_ne(v12, v18) != 0 {
-						if base.F64_le(base.F64_abs(base.F64_sub(v12, v18)), float64(1e-06)) == int32(0) {
-							v92 = v8
-						} else {
-							v92 = base.F64_eq(v22, v32) | base.F64_le(base.F64_abs(base.F64_sub(v22, v32)), float64(1e-06))
-						}
+					if base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v12, v18)), float64(1e-06)) == int32(0))&base.F64_ne(v12, v18) != 0 {
+						v94 = v8
 					} else {
-						v92 = base.F64_eq(v22, v32) | base.F64_le(base.F64_abs(base.F64_sub(v22, v32)), float64(1e-06))
+						v94 = base.F64_eq(v22, v32) | base.F64_le(base.F64_abs(base.F64_sub(v22, v32)), float64(1e-06))
 					}
-					return v92
+					return v94
 				} else {
-					v61 = int32(1)
-					if base.F64_ne(v12, v18) != 0 {
-						v92 = v8
-						return v92
+					v62 = int32(1)
+					if base.B2i32(v62 == int32(0))|base.F64_ne(v12, v18) != 0 {
+						v94 = v8
+						return v94
 					} else {
-						if v61 == int32(0) {
-							v92 = v8
-							return v92
+						v69 = v22
+						v73 = v25
+						v74 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
+						v77 = base.I64_reinterpret_f64(v74) & int64(9223372036854775807)
+						if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v73) {
+							return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v77))
 						} else {
-							v67 = v22
-							v71 = v25
-							v72 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
-							v75 = base.I64_reinterpret_f64(v72) & int64(9223372036854775807)
-							if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v71) {
-								return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v75))
-							} else {
-								return base.B2i32(base.Ui64(v75) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v72, v67)
-							}
+							return base.B2i32(base.Ui64(v77) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v74, v69)
 						}
 					}
 				}
@@ -119,18 +105,18 @@ func F_point_eq(m *base.Module, l0 int32) int32 {
 	} else {
 		v39 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
 		if base.Ui64(v39&int64(9223372036854775807)) < base.Ui64(int64(9218868437227405313)) {
-			v92 = v8
-			return v92
+			v94 = v8
+			return v94
 		} else {
 			v44 = *(*float64)(unsafe.Add(mBase, uint32(v11)+8))
-			v67 = v44
-			v71 = base.I64_reinterpret_f64(v44) & int64(9223372036854775807)
-			v72 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
-			v75 = base.I64_reinterpret_f64(v72) & int64(9223372036854775807)
-			if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v71) {
-				return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v75))
+			v69 = v44
+			v73 = base.I64_reinterpret_f64(v44) & int64(9223372036854775807)
+			v74 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
+			v77 = base.I64_reinterpret_f64(v74) & int64(9223372036854775807)
+			if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v73) {
+				return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v77))
 			} else {
-				return base.B2i32(base.Ui64(v75) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v72, v67)
+				return base.B2i32(base.Ui64(v77) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v74, v69)
 			}
 		}
 	}

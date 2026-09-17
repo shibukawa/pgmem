@@ -44,20 +44,18 @@ func F_CollationGetCollid(m *base.Module, l0 int32) int32 {
 	_ = v47
 	var v48 int32
 	_ = v48
-	var v61 int32
-	_ = v61
+	var v62 int32
+	_ = v62
 	var v63 int32
 	_ = v63
-	var v64 int32
-	_ = v64
-	var v66 int32
-	_ = v66
+	var v65 int32
+	_ = v65
+	var v69 int32
+	_ = v69
 	var v70 int32
 	_ = v70
-	var v71 int32
-	_ = v71
-	var v81 int32
-	_ = v81
+	var v80 int32
+	_ = v80
 	v2 = int32(0)
 	v8 = *(*int32)(unsafe.Add(mBase, _c_F_CollationGetCollid[0]))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
@@ -79,14 +77,14 @@ L3:
 	;
 	v15 = *(*int32)(unsafe.Add(mBase, _c_F_CollationGetCollid[1]))
 	if v15 == int32(0) {
-		v81 = v2
+		v80 = v2
 		goto L4
 	} else {
 		goto L5
 	}
 L4:
 	;
-	return v81
+	return v80
 L5:
 	;
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
@@ -104,7 +102,7 @@ L7:
 	goto L8
 L8:
 	;
-	v81 = int32(0)
+	v80 = int32(0)
 	goto L4
 L9:
 	;
@@ -121,13 +119,13 @@ L10:
 	goto L8
 L11:
 	;
-	v70 = v26 + int32(1)
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
-	if v70 < v71 {
-		v26 = v70
+	v69 = v26 + int32(1)
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
+	if v69 < v70 {
+		v26 = v69
 		goto L9
 	} else {
-		goto L27
+		goto L24
 	}
 L12:
 	;
@@ -142,7 +140,7 @@ L12:
 L13:
 	;
 	if v37 != 0 {
-		v81 = v37
+		v80 = v37
 		goto L4
 	} else {
 		goto L14
@@ -177,65 +175,50 @@ L16:
 	}
 L17:
 	;
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
+	v63 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
 	F_ReleaseCatCache(m, v41)
 	mBase = m.M
-	v66 = m.ExcPending
-	if v66 != 0 {
+	v65 = m.ExcPending
+	if v65 != 0 {
 		goto L2
 	} else {
-		goto L25
+		goto L22
 	}
 L18:
 	;
-	if base.Ui32(v9) < base.Ui32(int32(35)) {
-		goto L20
-	} else {
-		goto L21
-	}
+	goto L19
 L19:
 	;
-	if v61 != 0 {
+	if base.B2i32(base.Ui32(v9) < base.Ui32(int32(35)))&base.B2i32(int64(1)<<(uint(base.I64_extend_i32_u(v9))%64)&int64(34357509982) != int64(0)) != 0 {
 		goto L17
 	} else {
-		goto L23
+		goto L20
 	}
 L20:
 	;
-	v61 = base.B2i32(int64(1)<<(uint(base.I64_extend_i32_u(v9))%64)&int64(34357509982) != int64(0))
-	goto L22
-L21:
-	;
-	v61 = int32(0)
-	goto L22
-L22:
-	;
-	goto L19
-L23:
-	;
 	F_ReleaseCatCache(m, v41)
 	mBase = m.M
-	v63 = m.ExcPending
-	if v63 != 0 {
+	v62 = m.ExcPending
+	if v62 != 0 {
 		goto L2
 	} else {
-		goto L24
+		goto L21
 	}
-L24:
+L21:
 	;
 	goto L11
-L25:
+L22:
 	;
-	if v64 != 0 {
-		v81 = v64
+	if v63 != 0 {
+		v80 = v63
 		goto L4
 	} else {
-		goto L26
+		goto L23
 	}
-L26:
+L23:
 	;
 	goto L11
-L27:
+L24:
 	;
 	goto L10
 }
@@ -254,50 +237,50 @@ func F_get_collation_actual_version_builtin(m *base.Module, l0 int32) int32 {
 	_ = v13
 	var v16 int32
 	_ = v16
-	var v17 int32
-	_ = v17
-	var v21 int32
-	_ = v21
+	var v19 int32
+	_ = v19
 	var v22 int32
 	_ = v22
-	var v25 int32
-	_ = v25
+	var v23 int32
+	_ = v23
 	var v26 int32
 	_ = v26
-	var v29 int32
-	_ = v29
-	var v36 int32
-	_ = v36
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
 	var v37 int32
 	_ = v37
-	var v41 int32
-	_ = v41
-	var v44 int32
-	_ = v44
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
 	var v45 int32
 	_ = v45
-	var v49 int32
-	_ = v49
-	var v50 int32
-	_ = v50
-	var v53 int32
-	_ = v53
-	var v54 int32
-	_ = v54
-	var v57 int32
-	_ = v57
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v74 int32
-	_ = v74
-	var v77 int32
-	_ = v77
-	var v81 int32
-	_ = v81
-	var v86 int32
-	_ = v86
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v59 int32
+	_ = v59
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v76 int32
+	_ = v76
+	var v79 int32
+	_ = v79
+	var v83 int32
+	_ = v83
+	var v88 int32
+	_ = v88
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
@@ -325,11 +308,11 @@ L3:
 L4:
 	;
 	v13 = int32(_a_F_get_collation_actual_version_builtin_1)
-	v16 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_get_collation_actual_version_builtin[0])))
-	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v17 == int32(0) {
-		v36 = v16
-		v37 = v17
+	v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	v19 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_get_collation_actual_version_builtin[0])))
+	if base.B2i32(v16 == int32(0))|base.B2i32(v16 != v19) != 0 {
+		v37 = v16
+		v38 = v19
 		goto L7
 	} else {
 		goto L8
@@ -339,167 +322,149 @@ L5:
 	goto L4
 L6:
 	;
-	if v37-v36 == int32(0) {
+	if v37-v38 == int32(0) {
 		goto L1
 	} else {
-		goto L14
+		goto L13
 	}
 L7:
 	;
 	goto L6
 L8:
 	;
-	if v16 != v17 {
-		v36 = v16
-		v37 = v17
-		goto L7
-	} else {
-		goto L9
-	}
+	v22 = l0
+	v23 = v13
+	goto L9
 L9:
 	;
-	v21 = l0
-	v22 = v13
-	goto L10
+	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+1)))
+	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22)+1)))
+	if v27 == int32(0) {
+		v37 = v27
+		v38 = v26
+		goto L7
+	} else {
+		goto L11
+	}
 L10:
 	;
-	v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22)+1)))
-	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21)+1)))
-	if v26 == int32(0) {
-		v36 = v25
-		v37 = v26
-		goto L7
+	v37 = v27
+	v38 = v26
+	goto L7
+L11:
+	;
+	v30 = int32(1)
+	if v27 == v26 {
+		v22 = v22 + v30
+		v23 = v23 + v30
+		goto L9
 	} else {
 		goto L12
 	}
-L11:
-	;
-	v36 = v25
-	v37 = v26
-	goto L7
 L12:
 	;
-	v29 = int32(1)
-	if v25 == v26 {
-		v21 = v21 + v29
-		v22 = v22 + v29
-		goto L10
-	} else {
-		goto L13
-	}
+	goto L10
 L13:
 	;
-	goto L11
+	v42 = int32(_a_F_get_collation_actual_version_builtin_2)
+	v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	v48 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_get_collation_actual_version_builtin[1])))
+	if base.B2i32(v45 == int32(0))|base.B2i32(v45 != v48) != 0 {
+		v66 = v45
+		v67 = v48
+		goto L15
+	} else {
+		goto L16
+	}
 L14:
 	;
-	v41 = int32(_a_F_get_collation_actual_version_builtin_2)
-	v44 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_get_collation_actual_version_builtin[1])))
-	v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v45 == int32(0) {
-		v64 = v44
-		v65 = v45
-		goto L16
-	} else {
-		goto L17
-	}
-L15:
-	;
-	if v65-v64 == int32(0) {
+	if v66-v67 == int32(0) {
 		goto L1
-	} else {
-		goto L23
-	}
-L16:
-	;
-	goto L15
-L17:
-	;
-	if v44 != v45 {
-		v64 = v44
-		v65 = v45
-		goto L16
-	} else {
-		goto L18
-	}
-L18:
-	;
-	v49 = l0
-	v50 = v41
-	goto L19
-L19:
-	;
-	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50)+1)))
-	v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+1)))
-	if v54 == int32(0) {
-		v64 = v53
-		v65 = v54
-		goto L16
 	} else {
 		goto L21
 	}
+L15:
+	;
+	goto L14
+L16:
+	;
+	v51 = l0
+	v52 = v42
+	goto L17
+L17:
+	;
+	v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+1)))
+	v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+1)))
+	if v56 == int32(0) {
+		v66 = v56
+		v67 = v55
+		goto L15
+	} else {
+		goto L19
+	}
+L18:
+	;
+	v66 = v56
+	v67 = v55
+	goto L15
+L19:
+	;
+	v59 = int32(1)
+	if v56 == v55 {
+		v51 = v51 + v59
+		v52 = v52 + v59
+		goto L17
+	} else {
+		goto L20
+	}
 L20:
 	;
-	v64 = v53
-	v65 = v54
-	goto L16
+	goto L18
 L21:
-	;
-	v57 = int32(1)
-	if v53 == v54 {
-		v49 = v49 + v57
-		v50 = v50 + v57
-		goto L19
-	} else {
-		goto L22
-	}
-L22:
-	;
-	goto L20
-L23:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v74 = m.ExcPending
-	if v74 != 0 {
-		goto L24
+	v76 = m.ExcPending
+	if v76 != 0 {
+		goto L22
 	} else {
-		goto L25
+		goto L23
 	}
-L24:
+L22:
 	;
 	return int32(0)
-L25:
+L23:
 	;
 	F_errcode(m, int32(151027844))
 	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
-		goto L24
+	v79 = m.ExcPending
+	if v79 != 0 {
+		goto L22
 	} else {
-		goto L26
+		goto L24
 	}
-L26:
+L24:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
 	F_errmsg(m, int32(_a_F_get_collation_actual_version_builtin_3), v5)
 	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
-		goto L24
+	v83 = m.ExcPending
+	if v83 != 0 {
+		goto L22
 	} else {
-		goto L27
+		goto L25
 	}
-L27:
+L25:
 	;
 	F_errfinish(m, int32(_a_F_get_collation_actual_version_builtin_4), int32(189), int32(_a_F_get_collation_actual_version_builtin_5))
 	mBase = m.M
-	v86 = m.ExcPending
-	if v86 != 0 {
-		goto L24
+	v88 = m.ExcPending
+	if v88 != 0 {
+		goto L22
 	} else {
-		goto L28
+		goto L26
 	}
-L28:
+L26:
 	;
 	base.Wasm_trap_unreachable()
 	for {

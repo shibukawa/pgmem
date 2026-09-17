@@ -6,155 +6,15 @@ import (
 )
 
 func F_DeleteSharedComments(m *base.Module, l0 int32, l1 int32) {
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v13 int32
-	_ = v13
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
-	var v24 int32
-	_ = v24
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
-	var v32 int32
-	_ = v32
-	var v33 int32
-	_ = v33
-	var v40 int32
-	_ = v40
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	v5 = m.G0
-	v7 = v5 - int32(96)
-	m.G0 = v7
-	F_ScanKeyInit(m, v7, int32(1), int32(3), int32(184), l0)
-	v13 = m.ExcPending
-	if v13 != 0 {
-		goto L1
+	var v6 int32
+	_ = v6
+	Fn13826(m, l0, l1, int32(2397), int32(2396))
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return
 	} else {
-		goto L2
+		return
 	}
-L1:
-	;
-	return
-L2:
-	;
-	F_ScanKeyInit(m, v7+int32(48), int32(2), int32(3), int32(184), l1)
-	v20 = m.ExcPending
-	if v20 != 0 {
-		goto L1
-	} else {
-		goto L3
-	}
-L3:
-	;
-	v23 = F_table_open(m, int32(2396), int32(3))
-	v24 = m.ExcPending
-	if v24 != 0 {
-		goto L1
-	} else {
-		goto L4
-	}
-L4:
-	;
-	v29 = F_systable_beginscan(m, v23, int32(2397), int32(1), int32(0), int32(2), v7)
-	v30 = m.ExcPending
-	if v30 != 0 {
-		goto L1
-	} else {
-		goto L5
-	}
-L5:
-	;
-	v31 = F_systable_getnext(m, v29)
-	v32 = m.ExcPending
-	if v32 != 0 {
-		goto L1
-	} else {
-		goto L6
-	}
-L6:
-	;
-	if v31 != 0 {
-		goto L7
-	} else {
-		goto L8
-	}
-L7:
-	;
-	v33 = v31
-	goto L10
-L8:
-	;
-	goto L9
-L9:
-	;
-	F_systable_endscan(m, v29)
-	v48 = m.ExcPending
-	if v48 != 0 {
-		goto L1
-	} else {
-		goto L15
-	}
-L10:
-	;
-	F_CatalogTupleDelete(m, v23, v33+int32(4))
-	v40 = m.ExcPending
-	if v40 != 0 {
-		goto L1
-	} else {
-		goto L12
-	}
-L11:
-	;
-	goto L9
-L12:
-	;
-	v41 = F_systable_getnext(m, v29)
-	v42 = m.ExcPending
-	if v42 != 0 {
-		goto L1
-	} else {
-		goto L13
-	}
-L13:
-	;
-	if v41 != 0 {
-		v33 = v41
-		goto L10
-	} else {
-		goto L14
-	}
-L14:
-	;
-	goto L11
-L15:
-	;
-	F_sequence_close(m, v23, int32(3))
-	v51 = m.ExcPending
-	if v51 != 0 {
-		goto L1
-	} else {
-		goto L16
-	}
-L16:
-	;
-	m.G0 = v7 + int32(96)
-	return
 }
 func F_LockSharedObjectForSession(m *base.Module, l0 int32) {
 	mBase := m.M
@@ -379,7 +239,7 @@ func F_deleteSharedDependencyRecordsFor(m *base.Module, l0 int32, l1 int32, l2 i
 		if v15 != 0 {
 			return
 		} else {
-			F_sequence_close(m, v7, int32(3))
+			F_relation_close(m, v7, int32(3))
 			v18 = m.ExcPending
 			if v18 != 0 {
 				return

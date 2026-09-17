@@ -24,8 +24,8 @@ func F_CreateExecutorState(m *base.Module) int32 {
 	_ = v20
 	var v21 int64
 	_ = v21
-	var v31 int32
-	_ = v31
+	var v33 int32
+	_ = v33
 	v5 = *(*int32)(unsafe.Add(mBase, _c_F_CreateExecutorState[0]))
 	v10 = F_AllocSetContextCreateInternal(m, v5, int32(_a_F_CreateExecutorState_0), int32(0), int32(_a_F_CreateExecutorState_1), int32(_a_F_CreateExecutorState_2))
 	mBase = m.M
@@ -46,23 +46,23 @@ func F_CreateExecutorState(m *base.Module) int32 {
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+188)) = v21
 			*(*int64)(unsafe.Add(mBase, uint32(v19))) = int64(4294967685)
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+8)) = v21
-			*(*int64)(unsafe.Add(mBase, uint32(v19)+60)) = v21
-			*(*int64)(unsafe.Add(mBase, uint32(v19)+80)) = v21
-			v31 = int32(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v19)+104)) = v31
-			*(*int32)(unsafe.Add(mBase, uint32(v19)+100)) = v10
-			*(*int64)(unsafe.Add(mBase, uint32(v19)+176)) = v21
-			*(*int64)(unsafe.Add(mBase, uint32(v19)+164)) = v21
-			*(*uint8)(unsafe.Add(mBase, uint32(v19)+160)) = uint8(v31)
-			*(*int32)(unsafe.Add(mBase, uint32(v19)+56)) = v31
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+16)) = v21
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+24)) = v21
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+32)) = v21
-			*(*int32)(unsafe.Add(mBase, uint32(v19)+40)) = v31
+			v33 = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v19)+40)) = v33
+			*(*int64)(unsafe.Add(mBase, uint32(v19)+60)) = v21
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+68)) = v21
+			*(*int64)(unsafe.Add(mBase, uint32(v19)+80)) = v21
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+88)) = v21
-			*(*int32)(unsafe.Add(mBase, uint32(v19)+96)) = v31
-			*(*uint8)(unsafe.Add(mBase, uint32(v19)+136)) = uint8(v31)
+			*(*int32)(unsafe.Add(mBase, uint32(v19)+96)) = v33
+			*(*int32)(unsafe.Add(mBase, uint32(v19)+104)) = v33
+			*(*int32)(unsafe.Add(mBase, uint32(v19)+100)) = v10
+			*(*int64)(unsafe.Add(mBase, uint32(v19)+176)) = v21
+			*(*int64)(unsafe.Add(mBase, uint32(v19)+164)) = v21
+			*(*uint8)(unsafe.Add(mBase, uint32(v19)+160)) = uint8(v33)
+			*(*int32)(unsafe.Add(mBase, uint32(v19)+56)) = v33
+			*(*uint8)(unsafe.Add(mBase, uint32(v19)+136)) = uint8(v33)
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+128)) = v21
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+120)) = v21
 			*(*int64)(unsafe.Add(mBase, uint32(v19)+112)) = v21

@@ -16,50 +16,48 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v11
 	var v12 int64
 	_ = v12
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
-	var v24 int32
-	_ = v24
-	var v27 int32
-	_ = v27
-	var v34 int32
-	_ = v34
-	var v38 int32
-	_ = v38
-	var v43 int32
-	_ = v43
-	var v48 int32
-	_ = v48
-	var v52 int32
-	_ = v52
-	var v57 int32
-	_ = v57
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v32 int32
+	_ = v32
+	var v36 int32
+	_ = v36
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
+	var v54 int32
+	_ = v54
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
 	v11 = l0 - int32(8)
 	v12 = *(*int64)(unsafe.Add(mBase, uint32(v11)))
-	v18 = v11 - base.I32_wrap_i64(int64(base.Ui64(v12)>>(uint(int64(34))%64)))&int32(1073741822)
-	if v18 == int32(0) {
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v11-base.I32_wrap_i64(int64(base.Ui64(v12)>>(uint(int64(34))%64)))&int32(1073741822))))
+	if v19 == int32(0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v48 = m.ExcPending
-		if v48 != 0 {
+		v45 = m.ExcPending
+		if v45 != 0 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
 			F_errmsg_internal(m, int32(_a_F_SlabRealloc_0), v8)
 			mBase = m.M
-			v52 = m.ExcPending
-			if v52 != 0 {
+			v49 = m.ExcPending
+			if v49 != 0 {
 				return int32(0)
 			} else {
 				F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(847), int32(_a_F_SlabRealloc_2))
 				mBase = m.M
-				v57 = m.ExcPending
-				if v57 != 0 {
+				v54 = m.ExcPending
+				if v54 != 0 {
 					return int32(0)
 				} else {
 					base.Wasm_trap_unreachable()
@@ -69,25 +67,25 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			}
 		}
 	} else {
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)))
-		if v21 == int32(0) {
+		v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
+		if v22 != int32(476) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v48 = m.ExcPending
-			if v48 != 0 {
+			v45 = m.ExcPending
+			if v45 != 0 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
 				F_errmsg_internal(m, int32(_a_F_SlabRealloc_0), v8)
 				mBase = m.M
-				v52 = m.ExcPending
-				if v52 != 0 {
+				v49 = m.ExcPending
+				if v49 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(847), int32(_a_F_SlabRealloc_2))
 					mBase = m.M
-					v57 = m.ExcPending
-					if v57 != 0 {
+					v54 = m.ExcPending
+					if v54 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()
@@ -97,60 +95,31 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				}
 			}
 		} else {
-			v24 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
-			if v24 != int32(476) {
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(v19)+44))
+			if l1 == v25 {
+				m.G0 = v8 + int32(16)
+				return l0
+			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v48 = m.ExcPending
-				if v48 != 0 {
+				v32 = m.ExcPending
+				if v32 != 0 {
 					return int32(0)
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
-					F_errmsg_internal(m, int32(_a_F_SlabRealloc_0), v8)
+					F_errmsg_internal(m, int32(_a_F_SlabRealloc_3), int32(0))
 					mBase = m.M
-					v52 = m.ExcPending
-					if v52 != 0 {
+					v36 = m.ExcPending
+					if v36 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(847), int32(_a_F_SlabRealloc_2))
+						F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(854), int32(_a_F_SlabRealloc_2))
 						mBase = m.M
-						v57 = m.ExcPending
-						if v57 != 0 {
+						v41 = m.ExcPending
+						if v41 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {
-							}
-						}
-					}
-				}
-			} else {
-				v27 = *(*int32)(unsafe.Add(mBase, uint32(v21)+44))
-				if l1 == v27 {
-					m.G0 = v8 + int32(16)
-					return l0
-				} else {
-					F_errstart_cold(m, int32(21), int32(0))
-					mBase = m.M
-					v34 = m.ExcPending
-					if v34 != 0 {
-						return int32(0)
-					} else {
-						F_errmsg_internal(m, int32(_a_F_SlabRealloc_3), int32(0))
-						mBase = m.M
-						v38 = m.ExcPending
-						if v38 != 0 {
-							return int32(0)
-						} else {
-							F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(854), int32(_a_F_SlabRealloc_2))
-							mBase = m.M
-							v43 = m.ExcPending
-							if v43 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
 							}
 						}
 					}
