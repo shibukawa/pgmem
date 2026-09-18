@@ -31,7 +31,7 @@ const L = {
 			docker: { name: 'docker run, one shared server', sub: 'official image; writing tests take turns after a reset' },
 		},
 		kinds: {
-			boot: 'Boot database', import: 'Import schema + seed master data', snapshot: 'Snapshot', fork: 'Fork',
+			boot: 'Boot database', import: 'Import schema + seed master data', snapshot: 'Snapshot', fork: 'Fork (a writing test\'s own copy)',
 			sample: 'Input sample data', reset: 'Reset data', read: 'Test that queries data', write: 'Test that modifies a table',
 		},
 		lanes: { setup: 'TestMain', shared: 'Shared database (read tests)' },
@@ -49,6 +49,7 @@ const L = {
 		wall: 'Wall clock (boot + test binary)',
 		intro: (p: Model) => `The same ${p.tests.read + p.tests.write} tests (${p.tests.read} read-only, ${p.tests.write} writing) on the same schema, migrations and seed data, run with go test at parallelism ${p.parallel}. Each timeline is the run whose total was the median of ${p.runs} runs on ${m.cpu} (${m.cores} cores). Bars are the nodes of each execution model; lower and to the left is faster.`,
 		range: (x: Model) => `${fmt(x.total_min_ms)}–${fmt(x.total_max_ms)} ms over ${x.runs} runs`,
+		copies: (forks: number, writes: number, reads: number) => forks > 0 ? `${forks} forks, one per writing test (${writes}); the ${reads} read tests use the template database without a fork.` : `no copies: the ${reads} read tests and the ${writes} writing tests share one database.`,
 	},
 	ja: {
 		models: {
@@ -57,7 +58,7 @@ const L = {
 			docker: { name: 'docker run 共有サーバー 1 台', sub: '公式イメージ。書き込みテストはリセットを挟んで順番に走る' },
 		},
 		kinds: {
-			boot: 'DB 起動', import: 'スキーマ投入 + マスタデータ投入', snapshot: 'スナップショット', fork: 'フォーク',
+			boot: 'DB 起動', import: 'スキーマ投入 + マスタデータ投入', snapshot: 'スナップショット', fork: 'フォーク（更新テスト専用のコピー）',
 			sample: 'サンプルデータ投入', reset: 'データのリセット', read: '参照テスト', write: '更新テスト',
 		},
 		lanes: { setup: 'TestMain', shared: '共有データベース（参照テスト）' },
@@ -75,6 +76,7 @@ const L = {
 		wall: '実時間（起動 + テストバイナリ）',
 		intro: (p: Model) => `同じ ${p.tests.read + p.tests.write} 本のテスト（参照 ${p.tests.read}、更新 ${p.tests.write}）を、同じスキーマ・マイグレーション・シードデータで、go test の並列度 ${p.parallel} で実行しました。各タイムラインは ${m.cpu}（${m.cores} コア）で ${p.runs} 回走らせたうち合計時間が中央値だった実行です。バーは各実行モデルのノードで、左に短くまとまっているほど速いことを表します。`,
 		range: (x: Model) => `${x.runs} 回の範囲 ${fmt(x.total_min_ms)}〜${fmt(x.total_max_ms)} ms`,
+		copies: (forks: number, writes: number, reads: number) => forks > 0 ? `フォークは ${forks} 本で、更新テスト（${writes} 本）1 本につき 1 本です。参照テスト ${reads} 本はフォークせず、テンプレートのデータベースをそのまま使います。` : `コピーはなく、参照テスト ${reads} 本と更新テスト ${writes} 本が 1 つのデータベースを共有します。`,
 	},
 }[lang];
 
@@ -189,6 +191,7 @@ const stepRows = kindOrder.filter((k) => totalsShown.some((key) => models[key].s
 				<figcaption>
 					<strong>{label.name}</strong> <span class="total">{fmtMs(model.total_ms)} {L.total}</span>
 					<span class="sub">{label.sub}{own ? ` ${L.ownAxis}` : ''}</span>
+					<span class="sub">{L.copies(model.spans.filter((s) => s.kind === 'fork').length, model.tests.write, model.tests.read)}</span>
 				</figcaption>
 				<div class="scroll">
 					<svg viewBox={`0 0 ${W} ${lay.height}`} role="img" aria-labelledby={`${id}-title`}>
