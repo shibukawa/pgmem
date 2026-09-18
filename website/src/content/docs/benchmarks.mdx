@@ -5,6 +5,79 @@ description: Startup, per-test isolation, query latency, memory and download siz
 
 import BenchmarkTable from '../../components/BenchmarkTable.astro';
 import MemoryChart from '../../components/MemoryChart.astro';
+import ModelCaseChart from '../../components/ModelCaseChart.astro';
+
+## Model-case suite: one test suite, two execution models
+
+[`bench/modelcase`](https://github.com/shibukawa/pgmem/tree/main/bench/modelcase)
+is a small but ordinary Go project: the data layer of a shop
+(`database/sql`, five SQL migrations with a trigger and a view, 20
+categories, 500 products and 1,000 users as master data), and 70 tests
+against it, as tables of cases. Five read-only scenarios with ten cases
+each (order lists per user, order detail, top products, a product search,
+revenue by category) make 50 tests that only query; five writing scenarios
+with four cases each (create, cancel and ship an order, delete a user with
+its orders, apply a discount) make 20 tests that modify tables and check
+the rows afterwards. Every test starts from the same 40 sample orders. The
+same test functions run on both models; only the fixture behind them
+changes.
+
+- **pgmem**: `TestMain` boots a server in the test process, imports the
+  schema and master data, and takes one snapshot. The read-only tests need
+  no copy: they share the template server itself, loaded with the sample
+  data once after the snapshot. Every writing test forks its own copy of
+  the snapshot and loads the sample data into it. All 70 tests call
+  `t.Parallel()`, so everything after the snapshot runs at once, as many
+  at a time as `-parallel` allows.
+- **One shared server** (native PostgreSQL 18 from devbox, or the official
+  image with `docker run`): the driver starts the server, then the test
+  binary imports the schema and master data into the shared database. The
+  read-only tests still run in parallel, on the shared database, but a
+  writing test cannot: it truncates the transactional tables, restores
+  stock and prices, loads the sample data and runs, and the next writer
+  waits its turn. That is what a suite on one server has to do to stay
+  deterministic.
+
+<ModelCaseChart lang="en" variant="full" />
+
+Every bar is one node of the execution model, timed inside the test binary
+(`MODELCASE_TRACE`); the driver times the external server boot until
+`SELECT 1` succeeds on the app database, and the wall clock of the test
+binary. The total is boot plus test binary; the binary's own start-up and
+exit are the few milliseconds the nodes do not cover. Each timeline is the
+run whose total was the median; the first execution of a freshly built
+binary is a warm-up and not recorded. `go test` runs with `-parallel` at
+`GOMAXPROCS`, its default.
+
+What to read from it:
+
+- **The shared server pays per writing test.** Reset plus sample data costs
+  about the same as a pgmem fork plus sample data, but the shared server
+  runs them one after another and the forks run them side by side.
+- **pgmem's fixed cost is the boot and the snapshot**, and both are
+  smaller than starting a native server, let alone a container.
+- **Forks contend.** One fork alone takes about 15 ms; with eight in
+  flight they take about 30–40 ms each, because each is a copy of the data
+  directory plus a backend start. They still overlap: 20 forks with their
+  sample data fit in about 150 ms of wall clock.
+- **Read-only tests on one shared server serialize at transaction
+  boundaries** (one backend session per pgmem server), so on pgmem they
+  are a little slower one by one than on a multi-process server. They are
+  short either way.
+
+```sh
+cd bench/modelcase
+RUNS=5 ./run.sh                    # pgmem, devbox and docker
+TARGETS="pgmem devbox" ./run.sh    # without Docker
+```
+
+The script compiles the test binary once, runs the driver for each target
+and writes `results/raw.jsonl` (every run with its spans),
+`results/summary.json` and `website/src/data/modelcase.json`, which this
+page renders. `go test ./...` in that directory runs the suite on pgmem the
+ordinary way, without any tracing.
+
+## Startup, isolation, queries and memory
 
 <BenchmarkTable lang="en" />
 

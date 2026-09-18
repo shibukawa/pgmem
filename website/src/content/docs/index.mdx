@@ -24,18 +24,22 @@ hero:
 
 import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
 import BenchmarkOverview from '../../components/BenchmarkOverview.astro';
+import ModelCaseChart from '../../components/ModelCaseChart.astro';
 
-## Compared with the usual options
+## One test suite, two execution models
 
-The same schema, queries and per-test isolation, measured on one machine against the official image with `docker run`, Testcontainers, and a devbox-installed PostgreSQL.
+A small shop's data layer with 70 tests: 50 that only read, 20 that
+write. On a shared PostgreSQL server the writing tests have to wait for
+each other, each behind a reset of the shared data. With pgmem the suite
+takes one snapshot after the migrations and seed data; the read-only tests
+share that database and every writing test forks its own copy, so
+everything after the snapshot runs in parallel.
 
-<BenchmarkOverview lang="en" />
+<ModelCaseChart lang="en" variant="hero" />
 
-The current stripped darwin/arm64 pgmem binary is 36.7 MB, including the
-export-pruned AOT backend. The benchmark page records the latest pgmem-only
-rerun and keeps the comparison baselines reproducible.
-
-Query latency, methodology and how to reproduce are on the [benchmarks page](/pgmem/benchmarks/).
+The suite, the harness and every node's timing are described on the
+[benchmarks page](/pgmem/benchmarks/); the project is in
+[`bench/modelcase`](https://github.com/shibukawa/pgmem/tree/main/bench/modelcase).
 
 <CardGrid>
 	<Card title="The real thing" icon="approve-check">
@@ -100,3 +104,15 @@ const client = new pg.Client({ connectionString: server.url });
 
 </TabItem>
 </Tabs>
+
+## Compared with the usual options
+
+The same schema, queries and per-test isolation, measured on one machine against the official image with `docker run`, Testcontainers, and a devbox-installed PostgreSQL.
+
+<BenchmarkOverview lang="en" />
+
+The current stripped darwin/arm64 pgmem binary is 36.7 MB, including the
+export-pruned AOT backend. The benchmark page records the latest pgmem-only
+rerun and keeps the comparison baselines reproducible.
+
+Query latency, methodology and how to reproduce are on the [benchmarks page](/pgmem/benchmarks/).

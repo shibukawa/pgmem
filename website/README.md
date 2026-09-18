@@ -17,6 +17,13 @@ cd ../bench/alternatives
 RUNS=5 ./run.sh   # needs a Docker daemon and devbox
 ```
 
+The execution-model comparison on the top page (`ModelCaseChart.astro`) reads `src/data/modelcase.json`, written by the model-case suite:
+
+```sh
+cd ../bench/modelcase
+RUNS=5 ./run.sh   # pgmem, devbox PostgreSQL and docker run
+```
+
 ## Source of truth
 
 Facts on these pages are organized in the `.knowledge` catalog at the repository root. Update the catalog when behaviour changes, then the pages.

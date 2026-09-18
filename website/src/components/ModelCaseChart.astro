@@ -1,0 +1,310 @@
+---
+// Renders bench/modelcase/results/summary.json (copied to src/data by
+// bench/modelcase/run.sh): the same test suite run on pgmem and on a
+// shared PostgreSQL server, every node of each execution model on a
+// time axis, plus the totals.
+import data from '../data/modelcase.json';
+
+interface Props {
+	lang?: 'en' | 'ja';
+	/** hero: totals + the pgmem and native-server timelines (top page);
+	 *  full: every model, plus the per-step table (benchmarks page) */
+	variant?: 'hero' | 'full';
+}
+const { lang = 'en', variant = 'full' } = Astro.props;
+
+type Span = { name: string; kind: string; lane: string; start_ms: number; end_ms: number };
+type Model = {
+	runs: number; parallel: number; postgres: string;
+	total_ms: number; total_min_ms: number; total_max_ms: number; boot_ms: number; process_ms: number;
+	tests: { read: number; write: number };
+	steps: Record<string, number>; lanes: string[]; spans: Span[];
+};
+const models = data.models as Record<string, Model>;
+const m = data.machine;
+
+const L = {
+	en: {
+		models: {
+			pgmem: { name: 'pgmem', sub: 'in the test process; read tests share the template, each writing test forks the snapshot, all in parallel' },
+			devbox: { name: 'PostgreSQL, one shared server', sub: 'native PostgreSQL (devbox); writing tests take turns after a reset' },
+			docker: { name: 'docker run, one shared server', sub: 'official image; writing tests take turns after a reset' },
+		},
+		kinds: {
+			boot: 'Boot database', import: 'Import schema + seed master data', snapshot: 'Snapshot', fork: 'Fork',
+			sample: 'Input sample data', reset: 'Reset data', read: 'Test that queries data', write: 'Test that modifies a table',
+		},
+		lanes: { setup: 'TestMain', shared: 'Shared database (read tests)' },
+		slot: (n: number) => `parallel slot ${n}`,
+		slotsNote: (n: number) => `Tests are drawn in the ${n} slots of go test -parallel; a slot shows the tests that ran in it one after another.`,
+		totals: 'Whole suite, wall clock',
+		total: 'total',
+		timeline: 'Timeline of the representative run',
+		axis: 'ms since the suite started',
+		ownAxis: '(own time axis)',
+		ms: 'ms',
+		stepsTitle: 'Time per node',
+		step: 'Node',
+		sum: 'Sums over every copy or test; on pgmem the copies overlap in time, so the sums exceed the wall clock.',
+		wall: 'Wall clock (boot + test binary)',
+		intro: (p: Model) => `The same ${p.tests.read + p.tests.write} tests (${p.tests.read} read-only, ${p.tests.write} writing) on the same schema, migrations and seed data, run with go test at parallelism ${p.parallel}. Each timeline is the run whose total was the median of ${p.runs} runs on ${m.cpu} (${m.cores} cores). Bars are the nodes of each execution model; lower and to the left is faster.`,
+		range: (x: Model) => `${fmt(x.total_min_ms)}–${fmt(x.total_max_ms)} ms over ${x.runs} runs`,
+	},
+	ja: {
+		models: {
+			pgmem: { name: 'pgmem', sub: 'テストプロセス内。参照テストはテンプレートを共用し、更新テストはスナップショットからフォークして、すべて並列に走る' },
+			devbox: { name: 'PostgreSQL 共有サーバー 1 台', sub: 'ネイティブの PostgreSQL（devbox）。書き込みテストはリセットを挟んで順番に走る' },
+			docker: { name: 'docker run 共有サーバー 1 台', sub: '公式イメージ。書き込みテストはリセットを挟んで順番に走る' },
+		},
+		kinds: {
+			boot: 'DB 起動', import: 'スキーマ投入 + マスタデータ投入', snapshot: 'スナップショット', fork: 'フォーク',
+			sample: 'サンプルデータ投入', reset: 'データのリセット', read: '参照テスト', write: '更新テスト',
+		},
+		lanes: { setup: 'TestMain', shared: '共有データベース（参照テスト）' },
+		slot: (n: number) => `並列枠 ${n}`,
+		slotsNote: (n: number) => `テストは go test -parallel の ${n} 枠に描いています。1 つの枠には、そこで順に走ったテストが並びます。`,
+		totals: 'スイート全体の実時間',
+		total: '合計',
+		timeline: '代表実行のタイムライン',
+		axis: 'スイート開始からのミリ秒',
+		ownAxis: '（時間軸は独自）',
+		ms: 'ms',
+		stepsTitle: 'ノードごとの時間',
+		step: 'ノード',
+		sum: 'コピーやテストごとの値を合算しています。pgmem では各コピーが同時に走るため、合算値は実時間を超えます。',
+		wall: '実時間（起動 + テストバイナリ）',
+		intro: (p: Model) => `同じ ${p.tests.read + p.tests.write} 本のテスト（参照 ${p.tests.read}、更新 ${p.tests.write}）を、同じスキーマ・マイグレーション・シードデータで、go test の並列度 ${p.parallel} で実行しました。各タイムラインは ${m.cpu}（${m.cores} コア）で ${p.runs} 回走らせたうち合計時間が中央値だった実行です。バーは各実行モデルのノードで、左に短くまとまっているほど速いことを表します。`,
+		range: (x: Model) => `${x.runs} 回の範囲 ${fmt(x.total_min_ms)}〜${fmt(x.total_max_ms)} ms`,
+	},
+}[lang];
+
+const colors: Record<string, string> = {
+	boot: '#8a6d3b', import: '#3b5bdb', snapshot: '#0ca678', fork: '#40c057',
+	sample: '#f59f00', reset: '#e8590c', read: '#748ffc', write: '#f06595',
+};
+const kindOrder = ['boot', 'import', 'snapshot', 'fork', 'sample', 'reset', 'read', 'write'];
+
+function fmt(ms: number) {
+	return ms >= 1000 ? (ms / 1000).toFixed(2).replace(/\.?0+$/, '') + ' s' : ms.toFixed(ms < 10 ? 1 : 0);
+}
+function fmtMs(ms: number) {
+	return ms >= 1000 ? `${(ms / 1000).toFixed(2)} s` : `${ms.toFixed(ms < 10 ? 1 : 0)} ms`;
+}
+function niceTick(total: number) {
+	const raw = total / 6;
+	const pow = Math.pow(10, Math.floor(Math.log10(raw)));
+	for (const f of [1, 2, 2.5, 5, 10]) if (f * pow >= raw) return f * pow;
+	return 10 * pow;
+}
+function laneLabel(lane: string) {
+	return (L.lanes as Record<string, string>)[lane] ?? lane.replace(/^Test/, '');
+}
+
+const shown = (variant === 'hero' ? ['pgmem', 'devbox'] : ['pgmem', 'devbox', 'docker']).filter((k) => models[k]);
+const totalsShown = ['pgmem', 'devbox', 'docker'].filter((k) => models[k]);
+const maxTotal = Math.max(...totalsShown.map((k) => models[k].total_ms));
+const legendKinds = kindOrder.filter((k) => shown.some((key) => models[key].spans.some((s) => s.kind === k)));
+
+// Models within 3x of the fastest share one time axis, so the bars are
+// comparable at a glance; a much slower one (docker) gets its own axis.
+const minTotal = Math.min(...shown.map((k) => models[k].total_ms));
+const sharedAxis = Math.max(...shown.map((k) => models[k].total_ms).filter((t) => t <= minTotal * 3));
+const ownAxis = (key: string) => models[key].total_ms > minTotal * 3;
+
+// Rows of one timeline: TestMain and the shared database keep their own
+// rows; every test (its fork, sample load, reset and body) goes into the
+// first parallel slot that is free when it starts, so a suite of any size
+// fits in -parallel rows and the rows show how much ran side by side.
+type Row = { label: string; setup: boolean; spans: Span[] };
+function rows(model: Model): Row[] {
+	const fixed = ['setup', 'shared'].filter((l) => model.lanes.includes(l));
+	const out: Row[] = fixed.map((l) => ({ label: laneLabel(l), setup: true, spans: model.spans.filter((s) => s.lane === l) }));
+	const tests = model.lanes.filter((l) => !fixed.includes(l)).map((l) => {
+		const spans = model.spans.filter((s) => s.lane === l);
+		return { lane: l, spans, start: Math.min(...spans.map((s) => s.start_ms)), end: Math.max(...spans.map((s) => s.end_ms)) };
+	}).sort((a, b) => a.start - b.start);
+	const slots: { end: number; spans: Span[] }[] = [];
+	for (const t of tests) {
+		let slot = slots.find((sl) => sl.end <= t.start + 0.05);
+		if (!slot) {
+			slot = { end: 0, spans: [] };
+			slots.push(slot);
+		}
+		slot.end = t.end;
+		slot.spans.push(...t.spans);
+	}
+	slots.forEach((sl, i) => out.push({ label: L.slot(i + 1), setup: false, spans: sl.spans }));
+	return out;
+}
+
+// Layout of one timeline, in viewBox units.
+const W = 1000, labelW = 200, padR = 70, rowH = 22, barH = 14, top = 34, bottom = 42;
+function layout(rowCount: number, axisMax: number) {
+	const tick = niceTick(axisMax);
+	const ticks: number[] = [];
+	for (let v = 0; v <= axisMax; v += tick) ticks.push(v);
+	const plotW = W - labelW - padR;
+	const x = (ms: number) => labelW + (ms / axisMax) * plotW;
+	const height = top + rowCount * rowH + bottom;
+	return { axisMax, ticks, x, height, plotW };
+}
+const stepRows = kindOrder.filter((k) => totalsShown.some((key) => models[key].steps[k]));
+---
+
+<div class="modelcase not-content" role="group" aria-label={lang === 'ja' ? '実行モデルの比較' : 'Execution model comparison'}>
+	<p class="intro">{L.intro(models.pgmem)}</p>
+
+	<section class="totals" aria-labelledby="modelcase-totals">
+		<h3 id="modelcase-totals">{L.totals}</h3>
+		<ul>
+			{totalsShown.map((key) => {
+				const x = models[key];
+				return (
+					<li class:list={{ highlight: key === 'pgmem' }}>
+						<div class="row-label"><span>{L.models[key as keyof typeof L.models].name}</span><strong>{fmtMs(x.total_ms)}</strong></div>
+						<div class="track" aria-hidden="true"><span class="bar" style={`width:${(x.total_ms / maxTotal) * 100}%`}></span></div>
+						<div class="range">{L.range(x)}</div>
+					</li>
+				);
+			})}
+		</ul>
+	</section>
+
+	<p class="intro">{L.slotsNote(models.pgmem.parallel)}</p>
+	<ul class="legend" aria-label="legend">
+		{legendKinds.map((k) => (
+			<li><span class="swatch" style={`background:${colors[k]}`}></span>{L.kinds[k as keyof typeof L.kinds]}</li>
+		))}
+	</ul>
+
+	{shown.map((key) => {
+		const model = models[key];
+		const own = ownAxis(key);
+		const rs = rows(model);
+		const lay = layout(rs.length, own ? model.total_ms : sharedAxis);
+		const label = L.models[key as keyof typeof L.models];
+		const id = `modelcase-${key}`;
+		return (
+			<figure class="timeline">
+				<figcaption>
+					<strong>{label.name}</strong> <span class="total">{fmtMs(model.total_ms)} {L.total}</span>
+					<span class="sub">{label.sub}{own ? ` ${L.ownAxis}` : ''}</span>
+				</figcaption>
+				<div class="scroll">
+					<svg viewBox={`0 0 ${W} ${lay.height}`} role="img" aria-labelledby={`${id}-title`}>
+						<title id={`${id}-title`}>{label.name}: {L.timeline}, {fmtMs(model.total_ms)}</title>
+						<rect width={W} height={lay.height} rx="14" class="panel" />
+						{lay.ticks.map((v) => (
+							<g>
+								<line x1={lay.x(v)} y1={top - 8} x2={lay.x(v)} y2={lay.height - bottom + 6} class="grid" />
+								<text x={lay.x(v)} y={lay.height - bottom + 20} text-anchor="middle" class="tick">{v}</text>
+							</g>
+						))}
+						<line x1={lay.x(model.total_ms)} y1={top - 12} x2={lay.x(model.total_ms)} y2={lay.height - bottom + 6} class="totalline" />
+						<text x={lay.x(model.total_ms)} y={top - 16} text-anchor="end" class="totallabel">{L.total} {fmtMs(model.total_ms)}</text>
+						{rs.map((row, i) => {
+							const y = top + i * rowH;
+							return (
+								<g>
+									<text x={labelW - 10} y={y + barH - 3} text-anchor="end" class:list={['lane', { setup: row.setup }]}>{row.label}</text>
+									{row.spans.map((s) => {
+										const x0 = lay.x(s.start_ms), w = Math.max(1.5, lay.x(s.end_ms) - x0);
+										const d = s.end_ms - s.start_ms;
+										const text = `${fmt(d)}`;
+										const inside = w >= text.length * 7 + 8;
+										return (
+											<g>
+												<rect x={x0} y={y} width={w} height={barH} rx="3" fill={colors[s.kind]}>
+													<title>{laneLabel(s.lane)} · {L.kinds[s.kind as keyof typeof L.kinds]}: {fmtMs(d)} ({fmt(s.start_ms)} → {fmt(s.end_ms)} ms)</title>
+												</rect>
+												{inside && <text x={x0 + w / 2} y={y + barH - 3.5} text-anchor="middle" class="inbar">{text}</text>}
+											</g>
+										);
+									})}
+								</g>
+							);
+						})}
+						<text x={labelW + lay.plotW / 2} y={lay.height - 8} text-anchor="middle" class="axis">{L.axis}</text>
+					</svg>
+				</div>
+			</figure>
+		);
+	})}
+
+	{variant === 'full' && (
+		<section class="steps" aria-labelledby="modelcase-steps">
+			<h3 id="modelcase-steps">{L.stepsTitle}</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>{L.step}</th>
+						{totalsShown.map((key) => <th>{L.models[key as keyof typeof L.models].name}</th>)}
+					</tr>
+				</thead>
+				<tbody>
+					{stepRows.map((k) => (
+						<tr>
+							<th scope="row"><span class="swatch" style={`background:${colors[k]}`}></span>{L.kinds[k as keyof typeof L.kinds]}</th>
+							{totalsShown.map((key) => <td>{models[key].steps[k] ? fmtMs(models[key].steps[k]) : '—'}</td>)}
+						</tr>
+					))}
+					<tr class="wall">
+						<th scope="row">{L.wall}</th>
+						{totalsShown.map((key) => <td>{fmtMs(models[key].total_ms)}</td>)}
+					</tr>
+				</tbody>
+			</table>
+			<p class="note">{L.sum}</p>
+		</section>
+	)}
+</div>
+
+<style>
+	.modelcase { container-type: inline-size; margin: 1.25rem 0 2rem; }
+	.intro { color: var(--sl-color-gray-2); margin: 0 0 1rem; }
+	h3 { font-size: 1.1rem; margin: 0 0 0.6rem; }
+	.totals {
+		background: var(--sl-color-gray-6);
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 14px;
+		padding: 1rem 1rem 0.5rem;
+		margin-bottom: 1rem;
+	}
+	.totals ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem 1.5rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.totals li { margin: 0 0 0.5rem; --bar-color: #5c7080; }
+	.totals li.highlight { --bar-color: #70d13d; }
+	.row-label { align-items: baseline; display: flex; gap: 1rem; justify-content: space-between; line-height: 1.5; }
+	.row-label strong { font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 1.15rem; }
+	.track { background: var(--sl-color-gray-5); border-radius: 999px; height: 0.6rem; margin-top: 0.3rem; overflow: hidden; }
+	.bar { background: var(--bar-color); border-radius: inherit; display: block; height: 100%; min-width: 0.25rem; }
+	.range { color: var(--sl-color-gray-3); font-size: var(--sl-text-xs); margin-top: 0.25rem; }
+	.legend { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; list-style: none; margin: 0 0 0.75rem; padding: 0; font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); }
+	.legend li { display: inline-flex; align-items: center; gap: 0.4rem; }
+	.swatch { display: inline-block; width: 0.75rem; height: 0.75rem; border-radius: 3px; margin-right: 0.4rem; vertical-align: -1px; }
+	.legend .swatch { margin-right: 0; }
+	.timeline { margin: 0 0 1.25rem; }
+	.timeline figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; margin: 0 0 0.4rem; line-height: 1.5; }
+	.timeline .total { font-variant-numeric: tabular-nums; color: var(--sl-color-text-accent); font-weight: 650; }
+	.timeline .sub { color: var(--sl-color-gray-3); font-size: var(--sl-text-sm); flex-basis: 100%; }
+	.scroll { overflow-x: auto; border-radius: 14px; }
+	svg { display: block; width: 100%; min-width: 640px; height: auto; }
+	.panel { fill: var(--sl-color-gray-6); stroke: var(--sl-color-gray-5); }
+	.grid { stroke: var(--sl-color-gray-5); stroke-width: 1; }
+	.totalline { stroke: var(--sl-color-text); stroke-width: 1; stroke-dasharray: 4 3; }
+	.lane, .tick, .axis, .inbar, .totallabel { font-family: system-ui, sans-serif; }
+	.lane { fill: var(--sl-color-text); font-size: 12px; }
+	.lane.setup { font-weight: 650; }
+	.tick, .axis { fill: var(--sl-color-gray-2); font-size: 11px; }
+	.totallabel { fill: var(--sl-color-text); font-size: 11px; font-weight: 650; }
+	.inbar { fill: #fff; font-size: 10.5px; font-weight: 600; paint-order: stroke; stroke: rgba(0, 0, 0, 0.35); stroke-width: 2px; }
+	.steps { margin-top: 1.5rem; overflow-x: auto; }
+	table { border-collapse: collapse; width: 100%; font-size: var(--sl-text-sm); font-variant-numeric: tabular-nums; }
+	th, td { padding: 0.45rem 0.75rem; border-bottom: 1px solid var(--sl-color-gray-5); text-align: left; white-space: nowrap; }
+	thead th { color: var(--sl-color-gray-2); font-weight: 600; }
+	tbody th { font-weight: 500; color: var(--sl-color-text); }
+	tr.wall th, tr.wall td { font-weight: 700; color: var(--sl-color-white); }
+	.note { color: var(--sl-color-gray-3); font-size: var(--sl-text-xs); margin-top: 0.5rem; }
+	@container (max-width: 44rem) {
+		.totals ul { grid-template-columns: 1fr; }
+	}
+</style>

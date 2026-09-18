@@ -24,18 +24,15 @@ hero:
 
 import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
 import BenchmarkOverview from '../../../components/BenchmarkOverview.astro';
+import ModelCaseChart from '../../../components/ModelCaseChart.astro';
 
-## よくある選択肢との比較
+## 同じテストスイート、2 つの実行モデル
 
-同じスキーマ、同じクエリ、同じテスト単位の分離を、同じマシンで計測しました。比較相手は公式イメージを使った `docker run`、Testcontainers、devbox で入れた PostgreSQL です。
+小さなショップのデータ層に 70 本のテスト（参照のみ 50 本、更新 20 本）を書きました。共有の PostgreSQL サーバー 1 台では、更新テストは共有データのリセットを挟んで 1 本ずつ順番に走るしかありません。pgmem ではマイグレーションとシードデータの投入後にスナップショットを 1 回取り、参照テストはそのデータベースを共用し、更新テストだけが自分のコピーをフォークするので、スナップショット以降はすべて並列に走ります。
 
-<BenchmarkOverview lang="ja" />
+<ModelCaseChart lang="ja" variant="hero" />
 
-現在の darwin/arm64 向け strip 済み pgmem バイナリは、エクスポートを絞った
-AOT バックエンドを含めて 36.7 MB です。ベンチマークページには pgmem だけを
-再計測した最新値を記録し、比較対象は再現可能な基準値として残しています。
-
-クエリ性能、計測方法、再現手順は[ベンチマーク](/pgmem/ja/benchmarks/)のページにあります。
+スイートの中身、計測ハーネス、各ノードの時間は[ベンチマーク](/pgmem/ja/benchmarks/)のページで説明しています。プロジェクトは [`bench/modelcase`](https://github.com/shibukawa/pgmem/tree/main/bench/modelcase) にあります。
 
 <CardGrid>
 	<Card title="本物の PostgreSQL" icon="approve-check">
@@ -100,3 +97,15 @@ const client = new pg.Client({ connectionString: server.url });
 
 </TabItem>
 </Tabs>
+
+## よくある選択肢との比較
+
+同じスキーマ、同じクエリ、同じテスト単位の分離を、同じマシンで計測しました。比較相手は公式イメージを使った `docker run`、Testcontainers、devbox で入れた PostgreSQL です。
+
+<BenchmarkOverview lang="ja" />
+
+現在の darwin/arm64 向け strip 済み pgmem バイナリは、エクスポートを絞った
+AOT バックエンドを含めて 36.7 MB です。ベンチマークページには pgmem だけを
+再計測した最新値を記録し、比較対象は再現可能な基準値として残しています。
+
+クエリ性能、計測方法、再現手順は[ベンチマーク](/pgmem/ja/benchmarks/)のページにあります。

@@ -168,3 +168,13 @@ into `misc_<letters>.go`, a function over 128 KiB alone in
 out as about 1,800 files, most under 100 KB, so a diff is reviewable
 file by file. Every split derives from names, so a rebuild keeps the
 files it does not touch.
+
+## Model-case suite
+
+`bench/modelcase` runs one ordinary test suite (ten tests on a shop's data
+layer) on pgmem and on a shared PostgreSQL server (native via devbox, and
+`docker run`), and records every node of each execution model as a span:
+boot, import, snapshot, fork, sample data, reset and each test. The website
+renders the representative run as timelines on the top page and the
+benchmarks page. `RUNS=5 ./run.sh` there regenerates
+`website/src/data/modelcase.json`; see its README.
