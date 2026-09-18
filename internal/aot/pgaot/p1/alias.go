@@ -4052,8 +4052,6 @@ func F_memchr(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_memcmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___gmtime_r github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F___gmtime_r
 func F___gmtime_r(m *base.Module, l0 int32, l1 int32) int32
-//go:linkname F___mmap github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___mmap
-func F___mmap(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___get_locale github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___get_locale
 func F___get_locale(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F___loc_is_allocated github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F___loc_is_allocated
@@ -4120,6 +4118,8 @@ func F_wcrtomb(m *base.Module, l0 int32, l1 int32) int32
 func F_emscripten_builtin_malloc(m *base.Module, l0 int32) int32
 //go:linkname F_emscripten_builtin_realloc github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_emscripten_builtin_realloc
 func F_emscripten_builtin_realloc(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_sbrk github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_sbrk
+func F_sbrk(m *base.Module, l0 int32) int32
 //go:linkname F___wasm_longjmp github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F___wasm_longjmp
 func F___wasm_longjmp(m *base.Module, l0 int32, l1 int32)
 //go:linkname F___multf3 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F___multf3

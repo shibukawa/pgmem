@@ -5048,8 +5048,6 @@ func F_write(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_emscripten_builtin_free(m *base.Module, l0 int32)
 //go:linkname F_emscripten_builtin_realloc github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_emscripten_builtin_realloc
 func F_emscripten_builtin_realloc(m *base.Module, l0 int32, l1 int32) int32
-//go:linkname F_dispose_chunk github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_dispose_chunk
-func F_dispose_chunk(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_sbrk github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_sbrk
 func F_sbrk(m *base.Module, l0 int32) int32
 //go:linkname F___addtf3 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F___addtf3

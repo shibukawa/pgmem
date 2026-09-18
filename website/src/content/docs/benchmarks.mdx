@@ -56,10 +56,12 @@ What to read from it:
   runs them one after another and the forks run them side by side.
 - **pgmem's fixed cost is the boot and the snapshot**, and both are
   smaller than starting a native server, let alone a container.
-- **Forks contend.** One fork alone takes about 15 ms; with eight in
-  flight they take about 30–40 ms each, because each is a copy of the data
-  directory plus a backend start. They still overlap: 20 forks with their
-  sample data fit in about 150 ms of wall clock.
+- **Forks are cheap and overlap.** A fork clones the data directory
+  copy-on-write (the tree is copied, file contents are shared until
+  written) and starts a backend whose shared memory is no longer zeroed
+  twice, so one fork alone takes about 6 ms. With eight in flight they
+  still contend for page faults and take about 10 ms each, and the 20
+  forks with their sample data fit in about 120 ms of wall clock.
 - **Read-only tests on one shared server serialize at transaction
   boundaries** (one backend session per pgmem server), so on pgmem they
   are a little slower one by one than on a multi-process server. They are

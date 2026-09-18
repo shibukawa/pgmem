@@ -281,7 +281,7 @@ if err != nil {
 defer fork.Close()
 ```
 
-A snapshot checkpoints the server and copies its data directory. A fork copies it again and starts a new backend. Commit or close every connection to `s` before `Snapshot`, because it waits for open transactions.
+A snapshot checkpoints the server and clones its data directory. A fork clones the snapshot and starts a new backend; the clones share file contents until a file is written, so a fork costs milliseconds and the memory of the files it changes. Commit or close every connection to `s` before `Snapshot`, because it waits for open transactions.
 
 Use `Restore` to replace a live server's state with a different snapshot of the same database and user. It keeps the fork's port and client connections, so a captured DSN or pool remains valid:
 

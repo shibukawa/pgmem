@@ -178,3 +178,22 @@ boot, import, snapshot, fork, sample data, reset and each test. The website
 renders the representative run as timelines on the top page and the
 benchmarks page. `RUNS=5 ./run.sh` there regenerates
 `website/src/data/modelcase.json`; see its README.
+
+## Fork cost (2026-09-19)
+
+A fork clones the snapshot's data directory copy-on-write (the node tree is
+copied, file contents are shared until one side writes them) and starts a
+backend whose anonymous shared-memory mmap no longer zero-fills memory
+that is fresh from `memory.grow` (`wasm/pgmem_shim.c`). Measured with the
+small model-case schema (2,100 files, 50 MB) on the M3:
+
+| | before | after |
+|---|---|---|
+| vfs clone, one fork | 5–9 ms | 0.15 ms |
+| backend start, one fork | 7–9 ms | 6 ms |
+| 8 forks at once, wall clock | 86 ms | 40 ms |
+| model-case suite (70 tests), pgmem total | 312 ms | 209 ms |
+
+What remains per fork is PostgreSQL's own startup, the copy of the files
+startup writes (the 16 MB WAL segment, about 1 ms) and page faults on the
+fresh linear memory, which still serialize when many forks start at once.

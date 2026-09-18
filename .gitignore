@@ -22,3 +22,6 @@
 /packages/python/.pytest_cache/
 /packages/node/platforms/*/bin/
 /packages/node/**/node_modules/
+
+# devbox environment (devbox.json)
+/.devbox/

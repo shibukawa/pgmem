@@ -37,7 +37,7 @@ pgmem is PostgreSQL 18.3 compiled to WebAssembly once, translated to Go ahead of
 
 A **snapshot** runs `CHECKPOINT` on a prepared server and deep-copies its in-memory data directory. A **fork** copies that image again, starts a new backend on the copy and listens on a new port. A **reset** does the same for a running server in place: the port and client connections stay, so a URL an application captured at import time remains valid. Startup replays almost no WAL, so a fork takes milliseconds, and the loaded engine code is shared by every server in the process.
 
-Forks are full backends. They are independent of each other, so tests that write can run in parallel, and each one holds its own buffer cache and data directory copy. `MaxForks` bounds how many exist at once; asking for another blocks until one is closed.
+Forks are full backends. They are independent of each other, so tests that write can run in parallel, and each one holds its own buffer cache and its own view of the data directory, shared with the snapshot until a file is written (copy on write). `MaxForks` bounds how many exist at once; asking for another blocks until one is closed.
 
 ## Other languages
 

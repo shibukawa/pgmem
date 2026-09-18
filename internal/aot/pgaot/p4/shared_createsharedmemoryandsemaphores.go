@@ -3566,7 +3566,7 @@ L31:
 	;
 	v93 = v92 + v23
 	v94 = int32(-1)
-	v95 = F___mmap(m, v93, v88, v94)
+	v95 = F_mmap(m, v93, v88, v94)
 	mBase = m.M
 	v97 = *(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[7]))
 	v99 = *(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[4]))
@@ -3674,7 +3674,7 @@ L42:
 	}
 L43:
 	;
-	v144 = F___mmap(m, v23, int32(33), int32(-1))
+	v144 = F_mmap(m, v23, int32(33), int32(-1))
 	mBase = m.M
 	v146 = *(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[7]))
 	v147 = v23

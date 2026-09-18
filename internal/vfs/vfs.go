@@ -7,6 +7,7 @@
 package vfs
 
 import (
+	"bytes"
 	"crypto/rand"
 	"errors"
 	"strings"
@@ -144,9 +145,12 @@ type Node struct {
 	parent   *Node
 	children map[string]*Node
 	data     []byte
-	target   string // symlink target
-	mtime    time.Time
-	pipe     *pipeBuf
+	// shared: data's backing array belongs to this node and to a node in
+	// another tree (see Clone); it is copied before the first write.
+	shared bool
+	target string // symlink target
+	mtime  time.Time
+	pipe   *pipeBuf
 }
 
 type pipeBuf struct {
@@ -404,7 +408,11 @@ func (fs *FS) Openat(dirfd int32, p string, flags int32, mode uint32) (int32, Er
 		return -1, EISDIR
 	}
 	if flags&O_TRUNC != 0 && node.kind == KindReg {
-		node.data = node.data[:0]
+		if node.shared {
+			node.data, node.shared = nil, false
+		} else {
+			node.data = node.data[:0]
+		}
 		node.mtime = fs.now()
 	}
 	f := &File{node: node, flags: flags}
@@ -564,15 +572,36 @@ func (fs *FS) Write(fd int32, buf []byte) (int, Errno) {
 func writeAt(n *Node, pos int64, buf []byte) {
 	end := pos + int64(len(buf))
 	if end > int64(len(n.data)) {
-		if end > int64(cap(n.data)) {
-			nd := make([]byte, end, growCap(int64(cap(n.data)), end))
+		// Growing: a shared slice must not be extended in place even
+		// within its capacity (the other tree may extend it too), so a
+		// shared file gets a private, larger array; an owned one grows
+		// only when its capacity runs out.
+		if n.shared || end > int64(cap(n.data)) {
+			cur := int64(cap(n.data))
+			if n.shared {
+				cur = int64(len(n.data))
+			}
+			nd := make([]byte, end, growCap(cur, end))
 			copy(nd, n.data)
-			n.data = nd
+			n.data, n.shared = nd, false
 		} else {
 			n.data = n.data[:end]
 		}
+	} else {
+		n.own()
 	}
 	copy(n.data[pos:], buf)
+}
+
+// own gives n a private copy of its data before an in-place write. After
+// Clone the bytes of a file are shared by both trees until one of them
+// writes it, so a fork costs the tree, not the data, and a file the guest
+// never writes is never copied.
+func (n *Node) own() {
+	if n.shared {
+		n.data = bytes.Clone(n.data)
+		n.shared = false
+	}
 }
 
 func growCap(cur, need int64) int64 {
@@ -1055,7 +1084,7 @@ func (fs *FS) WriteFile(p string, data []byte, perm uint32) Errno {
 	} else if n.kind != KindReg {
 		return EISDIR
 	}
-	n.data = append([]byte(nil), data...)
+	n.data, n.shared = bytes.Clone(data), false
 	n.mtime = fs.now()
 	return OK
 }
@@ -1080,7 +1109,7 @@ func (fs *FS) PutFile(p string, data []byte, perm uint32) Errno {
 	} else if n.kind != KindReg {
 		return EISDIR
 	}
-	n.data = data
+	n.data, n.shared = data, false
 	n.mtime = fs.now()
 	return OK
 }
@@ -1172,8 +1201,11 @@ func (fs *FS) RemoveAll(p string) Errno {
 	return OK
 }
 
-// Clone returns a deep copy of the filesystem tree with a fresh fd table.
-// Used to fork a pristine data directory for each test database.
+// Clone returns a copy of the filesystem tree with a fresh fd table. Used
+// to fork a pristine data directory for each test database. The tree is
+// copied; file contents are shared with the source until either side
+// writes a file (copy on write, see Node.own), so cloning a data
+// directory costs its node count, not its size.
 func (fs *FS) Clone() *FS {
 	nfs := New()
 	nfs.Stdout, nfs.Stderr, nfs.Stdin = fs.Stdout, fs.Stderr, fs.Stdin
@@ -1194,7 +1226,13 @@ func cloneNode(n *Node, parent *Node) *Node {
 	c := *n
 	c.parent = parent
 	if n.data != nil {
-		c.data = append(make([]byte, 0, len(n.data)), n.data...)
+		// The source is only written to when it is not already shared,
+		// so a snapshot that many forks clone at once is read, not
+		// written, here.
+		if !n.shared {
+			n.shared = true
+		}
+		c.shared = true
 	}
 	if n.pipe != nil {
 		c.pipe = &pipeBuf{buf: append([]byte(nil), n.pipe.buf...)}

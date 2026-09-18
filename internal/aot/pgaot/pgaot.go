@@ -260,11 +260,11 @@ func PgmemMain(m *base.Module, l0 int32, l1 int32) int32 {
 func PgmemCallSighandler(m *base.Module, l0 int32, l1 int32) {
 	F_pgmem_call_sighandler(m, l0, l1)
 }
-func PgmemModuleName(m *base.Module, l0 int32) int32 {
-	return F_pgmem_module_name(m, l0)
-}
 func EmscriptenBuiltinMemalign(m *base.Module, l0 int32, l1 int32) int32 {
 	return F_emscripten_builtin_memalign(m, l0, l1)
+}
+func PgmemModuleName(m *base.Module, l0 int32) int32 {
+	return F_pgmem_module_name(m, l0)
 }
 func EmscriptenTimeout(m *base.Module, l0 int32, l1 float64) {
 	F__emscripten_timeout(m, l0, l1)

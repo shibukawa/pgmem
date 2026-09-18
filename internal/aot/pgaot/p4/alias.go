@@ -3948,6 +3948,8 @@ func F_pgl_pclose(m *base.Module, l0 int32) int32
 func F_pgl_exit(m *base.Module, l0 int32)
 //go:linkname F_pgl_shmctl github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgl_shmctl
 func F_pgl_shmctl(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_mmap github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_mmap
+func F_mmap(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_build_datatype github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_build_datatype
 func F_build_datatype(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_resolve_column_ref github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_resolve_column_ref
@@ -4246,8 +4248,6 @@ func F_memcmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_mkdir(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_do_tzset github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_do_tzset
 func F_do_tzset(m *base.Module)
-//go:linkname F___mmap github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___mmap
-func F___mmap(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___get_locale github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___get_locale
 func F___get_locale(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F___loc_is_allocated github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F___loc_is_allocated

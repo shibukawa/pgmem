@@ -134,17 +134,17 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		pgaot.PgmemCallSighandler(m, int32(uint32(a[0])), int32(uint32(a[1])))
 		return nil, true
-	case "pgmem_module_name":
-		if len(a) != 1 {
-			panic("aot: pgmem_module_name: want 1 args")
-		}
-		r := pgaot.PgmemModuleName(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
 	case "emscripten_builtin_memalign":
 		if len(a) != 2 {
 			panic("aot: emscripten_builtin_memalign: want 2 args")
 		}
 		r := pgaot.EmscriptenBuiltinMemalign(m, int32(uint32(a[0])), int32(uint32(a[1])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgmem_module_name":
+		if len(a) != 1 {
+			panic("aot: pgmem_module_name: want 1 args")
+		}
+		r := pgaot.PgmemModuleName(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_timeout":
 		if len(a) != 2 {

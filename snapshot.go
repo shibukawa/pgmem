@@ -17,7 +17,8 @@ import (
 type SnapshotOptions struct {
 	// MaxForks caps the number of forks alive at once; Fork blocks until a
 	// fork is closed when the cap is reached. Each fork is a full backend
-	// (its own buffer cache and data directory copy), so this bounds
+	// (its own buffer cache and a copy-on-write view of the data
+	// directory), so this bounds
 	// memory. 0 means runtime.GOMAXPROCS(0), which matches the default
 	// parallelism of go test.
 	MaxForks int
@@ -35,7 +36,8 @@ type Snapshot struct {
 	forks  sync.WaitGroup
 }
 
-// Snapshot checkpoints the server and copies its data directory. The
+// Snapshot checkpoints the server and clones its data directory (file
+// contents are shared copy-on-write, so this is cheap). The
 // server keeps running and later writes to it do not affect the snapshot.
 func (s *Server) Snapshot(ctx context.Context, opts SnapshotOptions) (*Snapshot, error) {
 	if s.closed.Load() {

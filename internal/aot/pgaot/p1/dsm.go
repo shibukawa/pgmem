@@ -1080,7 +1080,7 @@ L68:
 L69:
 	;
 	v398 = int32(1)
-	v400 = F___mmap(m, v387, v398, v164)
+	v400 = F_mmap(m, v387, v398, v164)
 	mBase = m.M
 	if v400 == int32(-1) {
 		goto L120
@@ -2776,7 +2776,7 @@ L324:
 L325:
 	;
 	v1115 = int32(1)
-	v1117 = F___mmap(m, v1104, v1115, v924)
+	v1117 = F_mmap(m, v1104, v1115, v924)
 	mBase = m.M
 	if v1117 == int32(-1) {
 		goto L376

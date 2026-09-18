@@ -137,3 +137,48 @@ PGMEM_EXPORT void pgmem_call_sighandler(int fp, int sig)
 {
 	((void (*)(int)) fp)(sig);
 }
+
+/* ---- anonymous mmap without the zero fill ----
+ *
+ * PostgreSQL maps its shared memory (shared_buffers and the rest, about
+ * 40 MB) with one anonymous mmap while a backend starts. Emscripten's
+ * mmap takes that block from dlmalloc and memsets all of it, which is the
+ * largest single cost of starting a backend, so of every fork, although
+ * the memory is fresh from memory.grow and already zero.
+ *
+ * dlmalloc in Emscripten is built with MORECORE_CANNOT_TRIM, so the
+ * program break only ever grows: every byte at or above it has never been
+ * handed out and is still zero, and only the part of a block below the
+ * old break (the tail of dlmalloc's top chunk, or a recycled chunk) can
+ * hold old data. That part is cleared, the rest is used as is.
+ *
+ * munmap is pgl_munmap in the PostgreSQL objects (-Dmunmap in build.sh),
+ * which frees nothing, so nothing has to find these blocks again; file
+ * mappings keep going through the libc implementation.
+ */
+#include <errno.h>
+#include <stdint.h>
+#include <sys/mman.h>
+#include <emscripten/heap.h>
+
+extern void *__mmap(void *addr, size_t len, int prot, int flags, int fd, off_t off);
+
+void *mmap(void *addr, size_t len, int prot, int flags, int fd, off_t off)
+{
+	if (!(flags & MAP_ANONYMOUS) || addr != NULL)
+		return __mmap(addr, len, prot, flags, fd, off);
+	uintptr_t brk = (uintptr_t) sbrk(0);
+	size_t alloc = (len + 0xFFFF) & ~(size_t) 0xFFFF;
+	char *p = emscripten_builtin_memalign(65536, alloc);
+	if (p == NULL) {
+		errno = ENOMEM;
+		return MAP_FAILED;
+	}
+	if ((uintptr_t) p < brk) {
+		size_t dirty = brk - (uintptr_t) p;
+		if (dirty > alloc)
+			dirty = alloc;
+		memset(p, 0, dirty);
+	}
+	return p;
+}
