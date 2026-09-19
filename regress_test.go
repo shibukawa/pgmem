@@ -643,7 +643,9 @@ func stripComments(s string) string {
 	return b.String()
 }
 
-var rightAligned = map[uint32]bool{20: true, 21: true, 23: true, 26: true, 700: true, 701: true, 790: true, 1700: true}
+// rightAligned is psql's column_type_alignment: the types it prints
+// right-aligned (int2/4/8, oid, xid, xid8, float4/8, money, numeric).
+var rightAligned = map[uint32]bool{20: true, 21: true, 23: true, 26: true, 28: true, 700: true, 701: true, 790: true, 1700: true, 5069: true}
 
 func runStatement(ctx context.Context, conn *pgx.Conn, ps *psqlState, stmt string, gset bool, prefix string) string {
 	// The raw simple-query path: the text goes to the server untouched
