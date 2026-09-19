@@ -5,7 +5,7 @@ description: How PostgreSQL 18 ends up running in memory inside a Go process, an
 
 import ArchitectureDiagrams from '../../components/ArchitectureDiagrams.astro';
 
-pgmem is PostgreSQL 18.3 compiled to WebAssembly once, translated to Go ahead of time, and run in single-user mode against an in-memory file system. A small bridge exposes it on a loopback TCP port.
+pgmem is PostgreSQL 18.3 compiled to WebAssembly once, translated to Go ahead of time, and run as a real cluster (a postmaster and a process per connection, each a WebAssembly instance) against an in-memory file system. A small bridge exposes it on a loopback TCP port.
 
 ## Runtime at a glance
 
@@ -20,24 +20,24 @@ pgmem is PostgreSQL 18.3 compiled to WebAssembly once, translated to Go ahead of
 | Generated Go | wasm2go translates the module into the pure-Go package `internal/aot/pgaot`. The `.wasm` file is a build intermediate; only Go ships, so there is no wasm runtime and no cgo. |
 | Host | `internal/host` implements the system calls, clock, memory growth and exit unwinding the module imports. Entropy, CRC-32C, hashes and pgcrypto's ciphers run on Go's `crypto` and `hash` packages. |
 | File system | `internal/vfs` is an in-memory POSIX-like file system holding the data directory, WAL and share files. Nothing is written to the host disk. |
-| Engine | `internal/engine` runs `postgres --single` the way PGlite does: protocol bytes flow through in-memory buffers, and `ereport(ERROR)` unwinds are handled without a postmaster. |
-| Bridge | `pgmem.go` accepts TCP connections on `127.0.0.1` (or an in-process `net.Pipe`), multiplexes them onto the single session at transaction boundaries, and routes `NOTIFY` to the connections that listen. |
+| Engine | `internal/engine` runs the postmaster and its processes. PostgreSQL is built with `EXEC_BACKEND`, so every process is a fresh module instance on its own goroutine; `internal/host` is the kernel they share: pids and signals, System V shared memory mapped at the same address into every instance, semaphores, and the sockets that carry connections to the postmaster. |
+| Bridge | `pgmem.go` accepts TCP connections on `127.0.0.1` (or an in-process `net.Pipe`) and hands each one to the postmaster. It remembers a session's startup packet, prepared statements and `LISTEN` set so that a reset, which restarts the cluster, leaves client connections working. |
 | Embedded data | `internal/pgdata/pgdata.tar.zst` is the output of `initdb`, produced at build time. Unpacking it into the file system is why a server starts in about a tenth of a second. |
 
 ## A query's path
 
 1. A driver connects over loopback TCP using the DSN, or a Go in-process dialer connects through `net.Pipe`.
-2. The bridge reads the startup packet from either transport. When it names another database of the server, the backend is restarted on that database first; a database that does not exist is refused with SQLSTATE 3D000.
-3. The connection takes the backend for one message batch, or for the whole transaction after `BEGIN`.
-4. The bytes are fed to PostgreSQL's main loop in generated Go.
+2. The bridge hands the connection to the postmaster, which starts a backend process for it; the backend reads the startup packet and authenticates as a server would.
+3. The bytes flow to that backend's socket and PostgreSQL's main loop runs in generated Go.
+4. Locks, notifications and the other sessions are PostgreSQL's own, through the shared memory.
 5. Page reads and WAL writes hit the in-memory file system.
 6. Responses are copied back through the same connection.
 
 ## Snapshots and forks
 
-A **snapshot** runs `CHECKPOINT` on a prepared server and deep-copies its in-memory data directory. A **fork** copies that image again, starts a new backend on the copy and listens on a new port. A **reset** does the same for a running server in place: the port and client connections stay, so a URL an application captured at import time remains valid. Startup replays almost no WAL, so a fork takes milliseconds, and the loaded engine code is shared by every server in the process.
+A **snapshot** stops a prepared server cleanly, deep-copies its in-memory data directory and starts it again. A **fork** copies that image again, starts a new cluster on the copy and listens on a new port. A **reset** does the same for a running server in place: the port and client connections stay, so a URL an application captured at import time remains valid. Startup replays almost no WAL, so a fork takes milliseconds, and the loaded engine code is shared by every server in the process.
 
-Forks are full backends. They are independent of each other, so tests that write can run in parallel, and each one holds its own buffer cache and its own view of the data directory, shared with the snapshot until a file is written (copy on write). `MaxForks` bounds how many exist at once; asking for another blocks until one is closed.
+Forks are full clusters. They are independent of each other, so tests that write can run in parallel, and each one holds its own buffer cache and its own view of the data directory, shared with the snapshot until a file is written (copy on write). `MaxForks` bounds how many exist at once; asking for another blocks until one is closed.
 
 ## Other languages
 

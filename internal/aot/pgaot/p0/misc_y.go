@@ -39,7 +39,7 @@ func F_y_cmp(m *base.Module, l0 int32, l1 int32) int32 {
 func F_yy_fatal_error_3(m *base.Module, l0 int32) {
 	var v7 int32
 	_ = v7
-	Fn14046(m, l0, int32(_a_F_yy_fatal_error_3_0), int32(38), int32(_a_F_yy_fatal_error_3_1), int32(_a_F_yy_fatal_error_3_2))
+	Fn14026(m, l0, int32(_a_F_yy_fatal_error_3_0), int32(38), int32(_a_F_yy_fatal_error_3_1), int32(_a_F_yy_fatal_error_3_2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return

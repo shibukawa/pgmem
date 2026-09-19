@@ -10,7 +10,7 @@ func F_tts_buffer_heap_getsysattr(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn14031(m, l0, l1, l2, int32(_a_F_tts_buffer_heap_getsysattr_0), int32(774))
+	v6 = Fn14011(m, l0, l1, l2, int32(_a_F_tts_buffer_heap_getsysattr_0), int32(774))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

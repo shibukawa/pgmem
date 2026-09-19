@@ -13239,7 +13239,7 @@ func F_regexeqsel(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14010(m, l0, int32(2))
+	v3 = Fn13990(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -13679,7 +13679,7 @@ L35:
 func F_relmap_desc(m *base.Module, l0 int32, l1 int32) {
 	var v5 int32
 	_ = v5
-	Fn14012(m, l0, l1, int32(_a_F_relmap_desc_0))
+	Fn13992(m, l0, l1, int32(_a_F_relmap_desc_0))
 	v5 = m.ExcPending
 	if v5 != 0 {
 		return

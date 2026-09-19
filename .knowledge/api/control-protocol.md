@@ -26,7 +26,7 @@ api:
   ordering: rule:non-blocking-control-channel
   error_codes: [unknown_op, unknown_id, snapshot_closed, pool_timeout, busy, protocol, unauthorized, forbidden, internal]
   transports: stdin/stdout for the spawning process; api:control-socket with -control for other processes (added 2026-09-13)
-  busy: a client connection idle in a transaction blocks snapshot forever (rule:single-session-per-backend); wrappers default timeout_ms to 30000 and tell the user to commit or close connections first
+  busy: a client connection idle in a transaction blocks snapshot (rule:process-per-connection: the cluster must stop between transactions); wrappers default timeout_ms to 30000 and tell the user to commit or close connections first
   malformed_line: response with id null and code protocol; the process keeps running
   events_without_id: ready, fatal (written before an abnormal exit)
   legacy: the ready line stays the first stdout line so pre-protocol wrappers keep working (concept:server-process)

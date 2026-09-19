@@ -165,5 +165,5 @@ def pgmem_fork(pgmem_snapshot):
 `max_forks` applies to this snapshot. `fork(timeout=...)` limits only the wait for a free slot and raises `ProtocolError` with code `pool_timeout`; omitting the timeout waits indefinitely. The `timeout` passed to `snapshot()` instead bounds its wait for open transactions to finish. See [limits](../../../limits/) for the other timeout settings.
 
 <Aside>
-A fork is one PostgreSQL session. A connection pool on one fork works, but its connections serialize at transaction boundaries. Commit or close connections to the template before `snapshot()`, or it fails with `busy` after 30 seconds.
+A fork is a PostgreSQL cluster of its own, so a connection pool on one fork works as on a server. Commit or close connections to the template before `snapshot()`, or it fails with `busy` after 30 seconds.
 </Aside>

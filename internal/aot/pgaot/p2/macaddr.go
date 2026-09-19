@@ -10,7 +10,7 @@ func F_macaddr_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v11
 	var v14 int32
 	_ = v14
-	v11 = Fn13962(m, l0, l1, int32(_a_F_macaddr_abbrev_abort_0), int32(462), int32(_a_F_macaddr_abbrev_abort_1), int32(_a_F_macaddr_abbrev_abort_2), int32(455), int32(_a_F_macaddr_abbrev_abort_3), int32(437), int32(_a_F_macaddr_abbrev_abort_4))
+	v11 = Fn13942(m, l0, l1, int32(_a_F_macaddr_abbrev_abort_0), int32(462), int32(_a_F_macaddr_abbrev_abort_1), int32(_a_F_macaddr_abbrev_abort_2), int32(455), int32(_a_F_macaddr_abbrev_abort_3), int32(437), int32(_a_F_macaddr_abbrev_abort_4))
 	v14 = m.ExcPending
 	if v14 != 0 {
 		return int32(0)

@@ -95,7 +95,7 @@ func F_xidout(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13974(m, l0, int32(_a_F_xidout_0), int32(16))
+	v4 = Fn13954(m, l0, int32(_a_F_xidout_0), int32(16))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -108,7 +108,7 @@ func F_xmlexists(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13862(m, l0, int32(_a_F_xmlexists_0), int32(_a_F_xmlexists_1))
+	v4 = Fn13842(m, l0, int32(_a_F_xmlexists_0), int32(_a_F_xmlexists_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -158,7 +158,7 @@ func F_xpath(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13862(m, l0, int32(_a_F_xpath_0), int32(_a_F_xpath_1))
+	v4 = Fn13842(m, l0, int32(_a_F_xpath_0), int32(_a_F_xpath_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

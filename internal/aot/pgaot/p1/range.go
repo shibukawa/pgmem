@@ -9273,7 +9273,7 @@ func F_range_union(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14009(m, l0, int32(1))
+	v3 = Fn13989(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -10815,7 +10815,7 @@ func F_range_upper_inc(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14007(m, l0, int32(2))
+	v3 = Fn13987(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

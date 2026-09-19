@@ -13,7 +13,7 @@ system:
     sqlalchemy: takes the URL, postgresql+psycopg://
   java:
     pgjdbc: 'jdbc:postgresql://host:port/db?user=..'; no built-in uds (junixsocket socketFactory needed); DriverManager or PGSimpleDataSource
-    hikaricp: one pool per fork is fine (rule:single-session-per-backend serializes at transaction boundaries)
+    hikaricp: one pool per fork is fine (rule:process-per-connection: a backend per connection)
   auth: trust, no password; URLs need sslmode=disable because the build has no TLS
   implication: loopback TCP is the only transport every listed driver supports without extra dependencies
 ```

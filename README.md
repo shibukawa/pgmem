@@ -167,15 +167,8 @@ is still executed as wasm, under [wazero](https://wazero.io), but only by
   so spinlocks and `pg_atomic_*` are real atomic instructions. Every
   instance's memory starts as a copy-on-write view of one shared image of
   the module's data segments, so a new process costs no copying.
-  In single-user mode the engine drives one backend the way PGlite's
-  TypeScript does: the backend runs `postgres --single`, the
-  frontend/backend protocol goes through in-memory buffers, and
-  `ereport(ERROR)` unwinds are handled with PGlite's exit trick. One
-  PGlite detail is patched (`wasm/patches.py`): its longjmp shim decided
-  whether to send ReadyForQuery before the recovery block had set
-  `ignore_till_sync`, so an error inside an extended-protocol batch was
-  followed by two ReadyForQuery messages; pgx read the stray one as the
-  reply to its statement-cache `Close` and dropped the connection.
+  The setup step that creates the database and user still runs a
+  throwaway `postgres --single` child the way initdb does.
 - `pgmem.go` bridges TCP connections to that backend.
 
 Startup is fast because `internal/pgdata/pgdata.tar.zst` contains a data
@@ -237,7 +230,7 @@ on this memory-bound code (arm64; amd64 not measured).
 
 ## Limits
 
-- **Process model.** PostgreSQL runs as it does in production: a
+- **Process model.** PostgreSQL runs as it does on a server: a
   postmaster starts a backend process for every connection plus its
   auxiliary processes (checkpointer, background writer, WAL writer,
   autovacuum launcher), and they share memory. Every process is a module
@@ -252,34 +245,6 @@ on this memory-bound code (arm64; amd64 not measured).
   `LISTEN` registrations re-created (a backend PostgreSQL itself ends, with
   a FATAL, ends the connection as it would anywhere). Query cancellation of
   a statement that never makes a system call waits until it does.
-- **Single-user mode** (`Options.SingleUser`, `pgmem -single`) is the
-  pre-0.2 model, kept for those who want the last bit of speed: one backend
-  session in single-user mode that every TCP connection shares. pgmem
-  multiplexes connections onto it the way a transaction-mode pooler does:
-  a connection owns the backend from `BEGIN` (or an unsynced pipelined
-  message, or `COPY FROM STDIN`) until the transaction ends, and other
-  connections wait. Pools of any size work, but they serialize instead of
-  running in parallel, and:
-  - Session state (`SET`, temp tables, advisory locks) is shared between
-    live connections. Use `SET LOCAL`; prepared statements are fine (their
-    names are prefixed per connection and dropped when it ends). When a
-    connection starts and no other is alive, the session is reset to what
-    a new backend would give it (everything `DISCARD ALL` does, and no
-    temp namespace).
-  - `LISTEN`/`NOTIFY` work per connection: the backend reports its listen
-    set to pgmem at commit time and notifications are routed to the
-    connections that listen on the channel.
-  - A connection cannot run while another is inside a transaction. When
-    the holder stays idle in its transaction while another connection
-    waits, the waiting connection is ended after `Options.WaitTimeout`
-    (default 2 s) with SQLSTATE 55P03 and a message naming the holder,
-    instead of waiting forever. There is no deadlock detection.
-  - A backend serves one database at a time: a connection to another
-    database restarts the backend on it (well under 10 ms).
-  - Parallel query and parallel index builds are off
-    (`max_parallel_workers=0`): no postmaster would start the workers.
-  On Windows, where the shared memory mapping is not implemented yet,
-  single-user mode is what runs.
 - `Close` does not drop client connections: each stays open until its
   client closes it, sends a message (answered with SQLSTATE 57P01) or 30 s
   pass, because pools such as node-postgres's raise an unhandled error

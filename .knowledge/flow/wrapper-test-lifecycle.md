@@ -24,7 +24,7 @@ flow:
     action: op fork returns an endpoint; blocks under policy:fork-pool-limit (rule:non-blocking-control-channel)
   - step: exercise
     actor: test
-    action: connect with the DSN or JDBC URL; pools allowed (rule:single-session-per-backend)
+    action: connect with the DSN or JDBC URL; pools allowed (rule:process-per-connection)
   - step: release
     actor: per-test fixture teardown
     action: op close on the fork (decision:fork-release-detection)

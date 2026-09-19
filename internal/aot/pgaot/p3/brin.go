@@ -1191,7 +1191,7 @@ func F_brin_bloom_summary_recv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_brin_bloom_summary_recv_0), int32(826), int32(_a_F_brin_bloom_summary_recv_1), int32(_a_F_brin_bloom_summary_recv_2), int32(_a_F_brin_bloom_summary_recv_3))
+	v7 = Fn13854(m, l0, int32(_a_F_brin_bloom_summary_recv_0), int32(826), int32(_a_F_brin_bloom_summary_recv_1), int32(_a_F_brin_bloom_summary_recv_2), int32(_a_F_brin_bloom_summary_recv_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

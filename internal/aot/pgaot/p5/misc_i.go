@@ -180,7 +180,7 @@ L2:
 	}
 L3:
 	;
-	v141 = Fn13986(m, int64(32))
+	v141 = Fn13966(m, int64(32))
 	mBase = m.M
 	goto L26
 L4:
@@ -1591,7 +1591,7 @@ func F_icnlikesel(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14011(m, l0, int32(1))
+	v3 = Fn13991(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -8286,7 +8286,7 @@ func F_int84mul(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13883(m, l0, int32(_a_F_int84mul_0), int32(927), int32(_a_F_int84mul_1), int32(_a_F_int84mul_2))
+	v6 = Fn13863(m, l0, int32(_a_F_int84mul_0), int32(927), int32(_a_F_int84mul_1), int32(_a_F_int84mul_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -8582,7 +8582,7 @@ func F_int8mul(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13884(m, l0, int32(_a_F_int8mul_0), int32(499), int32(_a_F_int8mul_1), int32(_a_F_int8mul_2))
+	v6 = Fn13864(m, l0, int32(_a_F_int8mul_0), int32(499), int32(_a_F_int8mul_1), int32(_a_F_int8mul_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -10165,7 +10165,7 @@ func F_ismn_cast_from_ean13(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13948(m, l0, int32(4))
+	v3 = Fn13928(m, l0, int32(4))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -11929,7 +11929,7 @@ func F_issn_in(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13891(m, l0, int32(5))
+	v3 = Fn13871(m, l0, int32(5))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

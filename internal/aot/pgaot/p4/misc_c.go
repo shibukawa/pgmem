@@ -10,7 +10,7 @@ import (
 func F_CheckElement_3(m *base.Module, l0 float32) {
 	var v8 int32
 	_ = v8
-	Fn13845(m, l0, int32(122), int32(_a_F_CheckElement_3_0), int32(_a_F_CheckElement_3_1), int32(117), int32(_a_F_CheckElement_3_2))
+	Fn13825(m, l0, int32(122), int32(_a_F_CheckElement_3_0), int32(_a_F_CheckElement_3_1), int32(117), int32(_a_F_CheckElement_3_2))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return
@@ -1524,7 +1524,7 @@ L93:
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+204)) = v378
 	*(*uint8)(unsafe.Add(mBase, uint32(v17)+203)) = uint8(v525)
 	*(*uint8)(unsafe.Add(mBase, uint32(v17)+202)) = uint8(v522)
-	F_errfinish(m, int32(_a_F_CheckpointerMain_6), int32(1402), int32(_a_F_CheckpointerMain_10))
+	F_errfinish(m, int32(_a_F_CheckpointerMain_6), int32(1390), int32(_a_F_CheckpointerMain_10))
 	mBase = m.M
 	v562 = m.ExcPending
 	if v562 != 0 {

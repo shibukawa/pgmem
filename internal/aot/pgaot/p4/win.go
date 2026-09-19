@@ -283,7 +283,7 @@ func F_win_to_utf8(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v13 int32
 	_ = v13
-	v10 = Fn13950(m, l0, int32(_a_F_win_to_utf8_0), int32(_a_F_win_to_utf8_1), int32(114), int32(_a_F_win_to_utf8_2), int32(_a_F_win_to_utf8_3), int32(_a_F_win_to_utf8_4), int32(15), int32(18))
+	v10 = Fn13930(m, l0, int32(_a_F_win_to_utf8_0), int32(_a_F_win_to_utf8_1), int32(114), int32(_a_F_win_to_utf8_2), int32(_a_F_win_to_utf8_3), int32(_a_F_win_to_utf8_4), int32(15), int32(18))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return int32(0)

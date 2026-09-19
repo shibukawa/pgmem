@@ -6996,7 +6996,7 @@ func F_pg_ddl_command_recv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_ddl_command_recv_0), int32(359), int32(_a_F_pg_ddl_command_recv_1), int32(_a_F_pg_ddl_command_recv_2), int32(_a_F_pg_ddl_command_recv_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_ddl_command_recv_0), int32(359), int32(_a_F_pg_ddl_command_recv_1), int32(_a_F_pg_ddl_command_recv_2), int32(_a_F_pg_ddl_command_recv_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -13522,7 +13522,7 @@ func F_pg_get_function_identity_arguments(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13983(m, l0, int32(0))
+	v3 = Fn13963(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -20270,7 +20270,7 @@ func F_pg_mcv_list_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_mcv_list_in_0), int32(1480), int32(_a_F_pg_mcv_list_in_1), int32(_a_F_pg_mcv_list_in_2), int32(_a_F_pg_mcv_list_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_mcv_list_in_0), int32(1480), int32(_a_F_pg_mcv_list_in_1), int32(_a_F_pg_mcv_list_in_2), int32(_a_F_pg_mcv_list_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

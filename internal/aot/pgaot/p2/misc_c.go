@@ -3077,7 +3077,7 @@ L298:
 func F_CheckDim_1(m *base.Module, l0 int32) {
 	var v10 int32
 	_ = v10
-	Fn13844(m, l0, int32(109), int32(_a_F_CheckDim_1_0), int32(_a_F_CheckDim_1_1), int32(_a_F_CheckDim_1_2), int32(104), int32(_a_F_CheckDim_1_3), int32(_a_F_CheckDim_1_4))
+	Fn13824(m, l0, int32(109), int32(_a_F_CheckDim_1_0), int32(_a_F_CheckDim_1_1), int32(_a_F_CheckDim_1_2), int32(104), int32(_a_F_CheckDim_1_3), int32(_a_F_CheckDim_1_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return
@@ -9560,7 +9560,7 @@ func F_checkExprHasSubLink_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13888(m, l0, l1, int32(1047), int32(22))
+	v5 = Fn13868(m, l0, l1, int32(1047), int32(22))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

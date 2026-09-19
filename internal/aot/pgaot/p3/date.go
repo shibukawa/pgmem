@@ -362,7 +362,7 @@ func F_date_mi_interval(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13889(m, l0, int32(1268))
+	v3 = Fn13869(m, l0, int32(1268))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

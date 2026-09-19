@@ -9,7 +9,7 @@ import (
 func F_PGSemaphoreLock(m *base.Module, l0 int32) {
 	var v7 int32
 	_ = v7
-	Fn13857(m, l0, int32(_a_F_PGSemaphoreLock_0), int32(335), int32(_a_F_PGSemaphoreLock_1), int32(2))
+	Fn13837(m, l0, int32(_a_F_PGSemaphoreLock_0), int32(335), int32(_a_F_PGSemaphoreLock_1), int32(2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return
@@ -4698,7 +4698,7 @@ func F_pg_get_statisticsobjdef(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13984(m, l0, int32(0))
+	v3 = Fn13964(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -4711,7 +4711,7 @@ func F_pg_get_statisticsobjdef_columns(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13984(m, l0, int32(1))
+	v3 = Fn13964(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -12918,7 +12918,7 @@ func F_pg_ndistinct_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_ndistinct_in_0), int32(343), int32(_a_F_pg_ndistinct_in_1), int32(_a_F_pg_ndistinct_in_2), int32(_a_F_pg_ndistinct_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_ndistinct_in_0), int32(343), int32(_a_F_pg_ndistinct_in_1), int32(_a_F_pg_ndistinct_in_2), int32(_a_F_pg_ndistinct_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -12931,7 +12931,7 @@ func F_pg_node_tree_recv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_node_tree_recv_0), int32(335), int32(_a_F_pg_node_tree_recv_1), int32(_a_F_pg_node_tree_recv_2), int32(_a_F_pg_node_tree_recv_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_node_tree_recv_0), int32(335), int32(_a_F_pg_node_tree_recv_1), int32(_a_F_pg_node_tree_recv_2), int32(_a_F_pg_node_tree_recv_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -16766,7 +16766,7 @@ L274:
 	}
 L275:
 	;
-	v930 = Fn13991(m, l1, int32(5), int32(32), int32(_a_F_pg_reg_getcolor_13), int32(_a_F_pg_reg_getcolor_14), int32(10))
+	v930 = Fn13971(m, l1, int32(5), int32(32), int32(_a_F_pg_reg_getcolor_13), int32(_a_F_pg_reg_getcolor_14), int32(10))
 	mBase = m.M
 	goto L278
 L276:
@@ -16928,7 +16928,7 @@ L304:
 	goto L308
 L305:
 	;
-	v1001 = Fn13990(m, l1, int32(97), int32(_a_F_pg_reg_getcolor_16), int32(_a_F_pg_reg_getcolor_17), int32(689))
+	v1001 = Fn13970(m, l1, int32(97), int32(_a_F_pg_reg_getcolor_16), int32(_a_F_pg_reg_getcolor_17), int32(689))
 	mBase = m.M
 	goto L306
 L306:
@@ -17020,7 +17020,7 @@ L319:
 	goto L323
 L320:
 	;
-	v1034 = Fn13990(m, l1, int32(65), int32(_a_F_pg_reg_getcolor_18), int32(_a_F_pg_reg_getcolor_19), int32(655))
+	v1034 = Fn13970(m, l1, int32(65), int32(_a_F_pg_reg_getcolor_18), int32(_a_F_pg_reg_getcolor_19), int32(655))
 	mBase = m.M
 	goto L321
 L321:

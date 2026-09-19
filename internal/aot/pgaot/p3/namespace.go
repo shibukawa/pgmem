@@ -763,7 +763,7 @@ func F_get_namespace_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13921(m, l0, l1, int32(_a_F_get_namespace_oid_0), int32(3547), int32(_a_F_get_namespace_oid_1), int32(_a_F_get_namespace_oid_2), int32(1411), int32(37))
+	v9 = Fn13901(m, l0, l1, int32(_a_F_get_namespace_oid_0), int32(3547), int32(_a_F_get_namespace_oid_1), int32(_a_F_get_namespace_oid_2), int32(1411), int32(37))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)

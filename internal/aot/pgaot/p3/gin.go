@@ -2892,7 +2892,7 @@ func F_gin_extract_query_anyenum(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13927(m, l0, int32(0), int32(_a_F_gin_extract_query_anyenum_0))
+	v4 = Fn13907(m, l0, int32(0), int32(_a_F_gin_extract_query_anyenum_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2918,7 +2918,7 @@ func F_gin_extract_query_int4(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13927(m, l0, int32(-2147483648), int32(2097))
+	v4 = Fn13907(m, l0, int32(-2147483648), int32(2097))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2931,7 +2931,7 @@ func F_gin_extract_query_time(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13928(m, l0, int64(0), int32(1429))
+	v4 = Fn13908(m, l0, int64(0), int32(1429))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

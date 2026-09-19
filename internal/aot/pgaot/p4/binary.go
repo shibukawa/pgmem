@@ -936,7 +936,7 @@ func F_binary_upgrade_set_next_heap_relfilenode(m *base.Module, l0 int32) int32 
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13871(m, l0, int32(_a_F_binary_upgrade_set_next_heap_relfilenode_0), int32(_a_F_binary_upgrade_set_next_heap_relfilenode_1), int32(112))
+	v5 = Fn13851(m, l0, int32(_a_F_binary_upgrade_set_next_heap_relfilenode_0), int32(_a_F_binary_upgrade_set_next_heap_relfilenode_1), int32(112))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -949,7 +949,7 @@ func F_binary_upgrade_set_next_index_pg_class_oid(m *base.Module, l0 int32) int3
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13871(m, l0, int32(_a_F_binary_upgrade_set_next_index_pg_class_oid_0), int32(_a_F_binary_upgrade_set_next_index_pg_class_oid_1), int32(123))
+	v5 = Fn13851(m, l0, int32(_a_F_binary_upgrade_set_next_index_pg_class_oid_0), int32(_a_F_binary_upgrade_set_next_index_pg_class_oid_1), int32(123))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -962,7 +962,7 @@ func F_binary_upgrade_set_next_multirange_array_pg_type_oid(m *base.Module, l0 i
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13871(m, l0, int32(_a_F_binary_upgrade_set_next_multirange_array_pg_type_oid_0), int32(_a_F_binary_upgrade_set_next_multirange_array_pg_type_oid_1), int32(90))
+	v5 = Fn13851(m, l0, int32(_a_F_binary_upgrade_set_next_multirange_array_pg_type_oid_0), int32(_a_F_binary_upgrade_set_next_multirange_array_pg_type_oid_1), int32(90))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

@@ -372,8 +372,12 @@ func F_pgmem_main(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v751
 	var v752 int32
 	_ = v752
-	var v755 int32
-	_ = v755
+	var v764 int32
+	_ = v764
+	var v769 int32
+	_ = v769
+	var v775 int32
+	_ = v775
 	var v784 int32
 	_ = v784
 	var v787 int32
@@ -400,6 +404,8 @@ func F_pgmem_main(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v831
 	var v833 int32
 	_ = v833
+	var v841 int32
+	_ = v841
 	var v855 int32
 	_ = v855
 	var v858 int32
@@ -6710,7 +6716,6 @@ L188:
 	goto L189
 L189:
 	;
-	v755 = int32(_a_F_pgmem_main_13)
 	goto L198
 L190:
 	;
@@ -6739,7 +6744,7 @@ L193:
 	}
 L194:
 	;
-	if v831 != int32(_a_F_pgmem_main_13) {
+	if v841 != int32(_a_F_pgmem_main_13) {
 		goto L217
 	} else {
 		goto L218
@@ -6757,23 +6762,48 @@ L197:
 	goto L196
 L198:
 	;
-	goto L202
-L202:
+	goto L201
+L201:
 	;
-	goto L203
+	v764 = int32(_a_F_pgmem_main_13)
+	goto L204
 L203:
 	;
-	v784 = *(*int32)(unsafe.Add(mBase, _c_F_pgmem_main[20]))
+	v784 = *(*int32)(unsafe.Add(mBase, uint32(v775)))
 	v787 = int32(-2139062144)
 	if (int32(16843008)-v784|v784)&v787 != v787 {
-		v818 = v755
+		v818 = v775
 		goto L197
 	} else {
 		goto L208
 	}
+L204:
+	;
+	v769 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v764))))
+	if base.B2i32(v769 == int32(0))|base.B2i32(int32(61) == v769) != 0 {
+		v841 = v764
+		goto L195
+	} else {
+		goto L206
+	}
+L205:
+	;
+	goto L203
+L206:
+	;
+	v775 = v764 + int32(1)
+	if v775&int32(3) != 0 {
+		v764 = v775
+		goto L204
+	} else {
+		goto L207
+	}
+L207:
+	;
+	goto L205
 L208:
 	;
-	v793 = v755
+	v793 = v775
 	v795 = v784
 	goto L209
 L209:
@@ -6809,12 +6839,14 @@ L213:
 	;
 	v833 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v831))))
 	if v833 == int32(0) {
+		v841 = v831
 		goto L195
 	} else {
 		goto L215
 	}
 L214:
 	;
+	v841 = v831
 	goto L195
 L215:
 	;
@@ -6829,7 +6861,7 @@ L216:
 	goto L214
 L217:
 	;
-	v855 = v831 - int32(_a_F_pgmem_main_13)
+	v855 = v841 - int32(_a_F_pgmem_main_13)
 	v858 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v855)+uint32(_c_F_pgmem_main[20]))))
 	if v858 == int32(0) {
 		goto L193
@@ -24843,7 +24875,7 @@ L2727:
 	}
 L2728:
 	;
-	F_errfinish(m, int32(_a_F_pgmem_main_364), int32(1738), int32(_a_F_pgmem_main_365))
+	F_errfinish(m, int32(_a_F_pgmem_main_364), int32(1721), int32(_a_F_pgmem_main_365))
 	mBase = m.M
 	v10914 = m.ExcPending
 	if v10914 != 0 {
@@ -24878,7 +24910,7 @@ L2731:
 	}
 L2732:
 	;
-	F_errfinish(m, int32(_a_F_pgmem_main_364), int32(1745), int32(_a_F_pgmem_main_365))
+	F_errfinish(m, int32(_a_F_pgmem_main_364), int32(1728), int32(_a_F_pgmem_main_365))
 	mBase = m.M
 	v10929 = m.ExcPending
 	if v10929 != 0 {
@@ -24951,7 +24983,7 @@ L2741:
 	}
 L2742:
 	;
-	F_errfinish(m, int32(_a_F_pgmem_main_364), int32(1757), int32(_a_F_pgmem_main_365))
+	F_errfinish(m, int32(_a_F_pgmem_main_364), int32(1740), int32(_a_F_pgmem_main_365))
 	mBase = m.M
 	v10961 = m.ExcPending
 	if v10961 != 0 {
@@ -25112,7 +25144,7 @@ L2764:
 	goto L2719
 L2765:
 	;
-	F_errfinish(m, int32(_a_F_pgmem_main_364), int32(1770), int32(_a_F_pgmem_main_365))
+	F_errfinish(m, int32(_a_F_pgmem_main_364), int32(1753), int32(_a_F_pgmem_main_365))
 	mBase = m.M
 	v11039 = m.ExcPending
 	if v11039 != 0 {

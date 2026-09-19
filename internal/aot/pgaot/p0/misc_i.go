@@ -707,7 +707,7 @@ func F_InitHalfVector(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13853(m, l0, int32(2))
+	v3 = Fn13833(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -9433,7 +9433,7 @@ func F_int2vectorrecv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13947(m, l0, int32(_a_F_int2vectorrecv_0), int32(292), int32(_a_F_int2vectorrecv_1), int32(_a_F_int2vectorrecv_2), int32(21))
+	v7 = Fn13927(m, l0, int32(_a_F_int2vectorrecv_0), int32(292), int32(_a_F_int2vectorrecv_1), int32(_a_F_int2vectorrecv_2), int32(21))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

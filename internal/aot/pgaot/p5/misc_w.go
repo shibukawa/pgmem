@@ -104,7 +104,7 @@ func F_websearch_to_tsquery_byid(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14028(m, l0, int32(2), int32(4))
+	v4 = Fn14008(m, l0, int32(2), int32(4))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

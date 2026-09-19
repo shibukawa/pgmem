@@ -36,8 +36,8 @@ export interface StartOptions {
   /** Serve the control socket other processes fork through. Default true. */
   control?: boolean;
   /**
-   * End a connection that has waited this long behind another connection's
-   * idle transaction, with SQLSTATE 55P03. Default 2000; negative waits forever.
+   * @deprecated Ignored. Every connection has its own backend process, so
+   * connections no longer wait for each other's transactions.
    */
   waitTimeoutMs?: number;
   /** Pass the server log through to stderr. */

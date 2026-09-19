@@ -3051,7 +3051,7 @@ func F_gin_extract_query_bool(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13927(m, l0, int32(0), int32(2708))
+	v4 = Fn13907(m, l0, int32(0), int32(2708))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -3064,7 +3064,7 @@ func F_gin_extract_query_char(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13927(m, l0, int32(0), int32(2102))
+	v4 = Fn13907(m, l0, int32(0), int32(2102))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -3077,7 +3077,7 @@ func F_gin_extract_query_float4(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13927(m, l0, int32(-8388608), int32(2098))
+	v4 = Fn13907(m, l0, int32(-8388608), int32(2098))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -3243,7 +3243,7 @@ func F_gin_extract_query_macaddr8(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13929(m, l0, int32(8), int32(_a_F_gin_extract_query_macaddr8_0))
+	v4 = Fn13909(m, l0, int32(8), int32(_a_F_gin_extract_query_macaddr8_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -3256,7 +3256,7 @@ func F_gin_extract_query_timestamp(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13928(m, l0, int64(-9223372036854775807-1), int32(1430))
+	v4 = Fn13908(m, l0, int64(-9223372036854775807-1), int32(1430))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

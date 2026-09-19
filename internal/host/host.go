@@ -81,11 +81,6 @@ type Host struct {
 	Env   []string // "KEY=VALUE"
 	Guest Guest
 
-	// Recv is called by pgmem_recv: copy up to len(buf) bytes of pending
-	// client data into buf and return the count (0 = no more data).
-	Recv func(buf []byte) int
-	// Send is called by pgmem_send with backend output.
-	Send func(b []byte) int
 	// Run is called by pgmem_run to execute "postgres ..." as a child
 	// (initdb support). It returns the exit code.
 	Run func(cmd, stdinPath, stdoutPath string) int
@@ -97,8 +92,9 @@ type Host struct {
 	Listen func(channel string, op int)
 
 	// Process identity in the multi-process model (see cluster.go). Sys
-	// is nil for a single-user backend, where the process calls are
-	// answered with ENOSYS or served locally.
+	// is nil for a standalone process (initdb's children, the setup
+	// child), whose process calls are answered with ENOSYS or served
+	// locally (single.go).
 	Pid  int32
 	Sys  *Cluster
 	proc *Process
@@ -317,9 +313,7 @@ const direntSize = 280
 
 var table = []Fn{
 	// ===== pgmem bridge =====
-	// recv/send on a socket fd. A single-user backend has one client and
-	// no real sockets: the fd is ignored and the bytes go through
-	// Host.Recv/Send. In a cluster the fd names a ConnSock.
+	// recv/send on a socket fd (a ConnSock of the cluster).
 	{"env", "pgmem_sock_recv", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		fd, ptr, n := i32(a[0]), u32(a[1]), u32(a[2])
 		dst, ok := m.Read(ptr, n)
@@ -327,10 +321,7 @@ var table = []Fn{
 			return errno(vfs.EFAULT)
 		}
 		if h.Sys == nil {
-			if h.Recv == nil {
-				return 0
-			}
-			return ret32(int32(h.Recv(dst)))
+			return errno(vfs.ENOTSOCK)
 		}
 		s, err := h.connSock(fd)
 		if err != vfs.OK {
@@ -345,10 +336,7 @@ var table = []Fn{
 			return errno(vfs.EFAULT)
 		}
 		if h.Sys == nil {
-			if h.Send == nil {
-				return ret32(int32(n))
-			}
-			return ret32(int32(h.Send(b)))
+			return errno(vfs.ENOTSOCK)
 		}
 		s, err := h.connSock(fd)
 		if err != vfs.OK {
@@ -365,7 +353,7 @@ var table = []Fn{
 	{"env", "pgmem_kill", "ii", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		pid, sig := i32(a[0]), i32(a[1])
 		if h.Sys == nil {
-			// single user: only oneself exists (SetLatch sends SIGURG)
+			// standalone: only oneself exists (SetLatch sends SIGURG)
 			if pid != 42 && pid != h.Pid {
 				return errno(vfs.ESRCH)
 			}
@@ -459,7 +447,7 @@ var table = []Fn{
 	{"env", "pgmem_poll", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		fds, nfds, timeout := u32(a[0]), i32(a[1]), i32(a[2])
 		if h.Sys == nil {
-			// single user: nothing can become ready; sleep for the timeout
+			// standalone: nothing can become ready; sleep for the timeout
 			for i := int32(0); i < nfds; i++ {
 				m.Write(fds+uint32(i)*8+6, []byte{0, 0})
 			}

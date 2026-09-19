@@ -159,13 +159,9 @@ or commit what it opens: the snapshot waits for open transactions.
 
 ## Things to know
 
-- A fork is one PostgreSQL session shared by all its connections, the way
-  a transaction-mode pooler shares one: pools work, but `SET`, temp tables
-  and advisory locks are shared (use `SET LOCAL`).
-- Inside a transaction callback, query through the transaction handle. A
-  query on another pooled connection would wait for the transaction to end;
-  pgmem ends that wait after `waitTimeoutMs` (default 2 s) with SQLSTATE
-  55P03 and a message naming both connections.
+- A fork is a PostgreSQL cluster of its own: every connection gets its
+  own backend process, so pools, locks between connections and deadlock
+  detection behave as on a server.
 - `reset` waits for open transactions and fails with code `busy` after
   `timeoutMs` (default 5 s).
 - Keep `sslmode=disable` in the URL: `pg` treats `prefer` and `require` as
@@ -182,7 +178,7 @@ or commit what it opens: the snapshot waits for open transactions.
 
 | | |
 |---|---|
-| `PgmemServer.start(options)` | `database`, `user`, `params`, `prepare`, `maxForks`, `waitTimeoutMs`, `log`, `binary` |
+| `PgmemServer.start(options)` | `database`, `user`, `params`, `prepare`, `maxForks`, `log`, `binary` |
 | `server.url`, `server.template`, `server.snapshot` | the prepared template and its snapshot |
 | `server.env()` | `{ PGMEM_CONTROL, PGMEM_SNAPSHOT }` for test processes |
 | `server.fork()`, `server.withFork(fn)`, `server.close()` | |

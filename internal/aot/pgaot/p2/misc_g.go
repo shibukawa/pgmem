@@ -6358,7 +6358,7 @@ func F_gbk_to_utf8(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v3 = int32(0)
-	v7 = Fn13870(m, l0, int32(37), v3, v3, v3, int32(_a_F_gbk_to_utf8_0))
+	v7 = Fn13850(m, l0, int32(37), v3, v3, v3, int32(_a_F_gbk_to_utf8_0))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -22109,7 +22109,7 @@ L321:
 func F_ginadjustmembers(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	var v13 int32
 	_ = v13
-	Fn13930(m, l0, l1, l2, l3, int32(_a_F_ginadjustmembers_0), int32(324), int32(_a_F_ginadjustmembers_1), int32(_a_F_ginadjustmembers_2), int32(12), int32(242), int32(7))
+	Fn13910(m, l0, l1, l2, l3, int32(_a_F_ginadjustmembers_0), int32(324), int32(_a_F_ginadjustmembers_1), int32(_a_F_ginadjustmembers_2), int32(12), int32(242), int32(7))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return
@@ -24174,7 +24174,7 @@ func F_gistbulkdelete(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 func F_gistcheckpage(m *base.Module, l0 int32, l1 int32) {
 	var v8 int32
 	_ = v8
-	Fn13931(m, l0, l1, int32(_a_F_gistcheckpage_0), int32(812), int32(_a_F_gistcheckpage_1), int32(801))
+	Fn13911(m, l0, l1, int32(_a_F_gistcheckpage_0), int32(812), int32(_a_F_gistcheckpage_1), int32(801))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return
@@ -27976,7 +27976,7 @@ func F_gtsvectorin(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_gtsvectorin_0), int32(94), int32(_a_F_gtsvectorin_1), int32(_a_F_gtsvectorin_2), int32(_a_F_gtsvectorin_3))
+	v7 = Fn13854(m, l0, int32(_a_F_gtsvectorin_0), int32(94), int32(_a_F_gtsvectorin_1), int32(_a_F_gtsvectorin_2), int32(_a_F_gtsvectorin_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

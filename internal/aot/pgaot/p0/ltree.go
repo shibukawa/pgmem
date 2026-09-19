@@ -10,7 +10,7 @@ func F__ltree_risparent(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13865(m, l0, int32(_a_F__ltree_risparent_0))
+	v3 = Fn13845(m, l0, int32(_a_F__ltree_risparent_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -433,7 +433,7 @@ func F_ltree_gist_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_ltree_gist_in_0), int32(26), int32(_a_F_ltree_gist_in_1), int32(_a_F_ltree_gist_in_2), int32(_a_F_ltree_gist_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_ltree_gist_in_0), int32(26), int32(_a_F_ltree_gist_in_1), int32(_a_F_ltree_gist_in_2), int32(_a_F_ltree_gist_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

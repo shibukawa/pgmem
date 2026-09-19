@@ -246,7 +246,7 @@ class PgmemServer {
     const params = Object.entries(options.params ?? {}).map(([k, v]) => `${k}=${v}`);
     if (params.length) args.push(`-params=${params.join(",")}`);
     if (options.control !== false) args.push("-control=127.0.0.1:0");
-    if (options.waitTimeoutMs !== undefined) args.push(`-wait-timeout=${options.waitTimeoutMs}ms`);
+    // waitTimeoutMs is accepted for compatibility: connections no longer share a session
     if (options.log) args.push("-log");
     const child = spawn(bin, args, { stdio: ["pipe", "pipe", "inherit"], windowsHide: true });
     const lines = createInterface({ input: child.stdout });

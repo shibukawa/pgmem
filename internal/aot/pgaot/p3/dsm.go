@@ -629,7 +629,7 @@ L27:
 	goto L21
 L28:
 	;
-	v120 = Fn13986(m, int64(32))
+	v120 = Fn13966(m, int64(32))
 	mBase = m.M
 	goto L30
 L29:
@@ -739,7 +739,7 @@ L44:
 	}
 L45:
 	;
-	v176 = Fn13986(m, int64(32))
+	v176 = Fn13966(m, int64(32))
 	mBase = m.M
 	goto L48
 L46:
@@ -935,7 +935,7 @@ L70:
 	}
 L71:
 	;
-	v280 = Fn13986(m, int64(32))
+	v280 = Fn13966(m, int64(32))
 	mBase = m.M
 	goto L74
 L72:

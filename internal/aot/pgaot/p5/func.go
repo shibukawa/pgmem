@@ -3664,7 +3664,7 @@ func F_get_func_name(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13917(m, l0, int32(47))
+	v3 = Fn13897(m, l0, int32(47))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

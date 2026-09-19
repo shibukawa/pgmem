@@ -476,7 +476,7 @@ L3:
 	}
 L4:
 	;
-	v18 = Fn13991(m, l0, int32(5), int32(32), int32(_a_F_pg_wc_isspace_0), int32(_a_F_pg_wc_isspace_1), int32(10))
+	v18 = Fn13971(m, l0, int32(5), int32(32), int32(_a_F_pg_wc_isspace_0), int32(_a_F_pg_wc_isspace_1), int32(10))
 	mBase = m.M
 	goto L7
 L5:

@@ -129,7 +129,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 								if v94 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1810), int32(_a_F_ValidatePgVersion_6))
+									F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1793), int32(_a_F_ValidatePgVersion_6))
 									mBase = m.M
 									v99 = m.ExcPending
 									if v99 != 0 {
@@ -156,7 +156,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 							if v48 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1814), int32(_a_F_ValidatePgVersion_6))
+								F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1797), int32(_a_F_ValidatePgVersion_6))
 								mBase = m.M
 								v53 = m.ExcPending
 								if v53 != 0 {
@@ -216,7 +216,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 										if v124 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1828), int32(_a_F_ValidatePgVersion_6))
+											F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1811), int32(_a_F_ValidatePgVersion_6))
 											mBase = m.M
 											v129 = m.ExcPending
 											if v129 != 0 {
@@ -266,7 +266,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 											if v124 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1828), int32(_a_F_ValidatePgVersion_6))
+												F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1811), int32(_a_F_ValidatePgVersion_6))
 												mBase = m.M
 												v129 = m.ExcPending
 												if v129 != 0 {
@@ -315,7 +315,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 												if v150 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1838), int32(_a_F_ValidatePgVersion_6))
+													F_errfinish(m, int32(_a_F_ValidatePgVersion_5), int32(1821), int32(_a_F_ValidatePgVersion_6))
 													mBase = m.M
 													v155 = m.ExcPending
 													if v155 != 0 {
@@ -4641,7 +4641,7 @@ func F_pg_check_frozen(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13981(m, l0, int32(1), int32(0))
+	v4 = Fn13961(m, l0, int32(1), int32(0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -5138,7 +5138,7 @@ func F_pg_ddl_command_out(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_ddl_command_out_0), int32(358), int32(_a_F_pg_ddl_command_out_1), int32(_a_F_pg_ddl_command_out_2), int32(_a_F_pg_ddl_command_out_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_ddl_command_out_0), int32(358), int32(_a_F_pg_ddl_command_out_1), int32(_a_F_pg_ddl_command_out_2), int32(_a_F_pg_ddl_command_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -5151,7 +5151,7 @@ func F_pg_dependencies_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_dependencies_in_0), int32(661), int32(_a_F_pg_dependencies_in_1), int32(_a_F_pg_dependencies_in_2), int32(_a_F_pg_dependencies_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_dependencies_in_0), int32(661), int32(_a_F_pg_dependencies_in_1), int32(_a_F_pg_dependencies_in_2), int32(_a_F_pg_dependencies_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -12038,7 +12038,7 @@ func F_pg_ndistinct_recv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_ndistinct_recv_0), int32(396), int32(_a_F_pg_ndistinct_recv_1), int32(_a_F_pg_ndistinct_recv_2), int32(_a_F_pg_ndistinct_recv_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_ndistinct_recv_0), int32(396), int32(_a_F_pg_ndistinct_recv_1), int32(_a_F_pg_ndistinct_recv_2), int32(_a_F_pg_ndistinct_recv_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

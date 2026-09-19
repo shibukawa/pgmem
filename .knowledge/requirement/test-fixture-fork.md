@@ -11,6 +11,6 @@ summary:
   per_test: api:clone gives an isolated database handle
   isolation: writes in one test never reach the template or other tests
   cleanup: automatic; a test must not be able to leak a fork (decision:clone-release-style)
-  parallel: forks are independent backends so t.Parallel() is safe (rule:single-session-per-backend)
+  parallel: forks are independent clusters so t.Parallel() is safe (rule:process-per-connection)
   budget: api:clone blocks instead of over-allocating (policy:fork-pool-limit)
 ```

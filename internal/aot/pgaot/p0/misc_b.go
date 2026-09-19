@@ -5,206 +5,6 @@ import (
 	"unsafe"
 )
 
-func F_BeginReportingGUCOptions(m *base.Module) {
-	mBase := m.M
-	_ = mBase
-	var v3 int32
-	_ = v3
-	var v5 int32
-	_ = v5
-	var v8 int32
-	_ = v8
-	var v12 int32
-	_ = v12
-	var v16 int32
-	_ = v16
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	var v24 int32
-	_ = v24
-	var v26 int32
-	_ = v26
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
-	var v42 int32
-	_ = v42
-	var v44 int32
-	_ = v44
-	var v45 int32
-	_ = v45
-	var v46 int32
-	_ = v46
-	var v49 int32
-	_ = v49
-	var v51 int32
-	_ = v51
-	var v52 int32
-	_ = v52
-	var v56 int32
-	_ = v56
-	var v59 int32
-	_ = v59
-	var v60 int32
-	_ = v60
-	v3 = m.G0
-	v5 = v3 - int32(32)
-	m.G0 = v5
-	v8 = *(*int32)(unsafe.Add(mBase, _c_F_BeginReportingGUCOptions[0]))
-	if v8 != int32(2) {
-		goto L1
-	} else {
-		goto L2
-	}
-L1:
-	;
-	m.G0 = v5 + int32(32)
-	return
-L2:
-	;
-	v12 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _c_F_BeginReportingGUCOptions[1])) = uint8(v12)
-	v16 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_BeginReportingGUCOptions[2])))
-	if v16 == v12 {
-		goto L4
-	} else {
-		goto L5
-	}
-L3:
-	;
-	if v26 != 0 {
-		goto L7
-	} else {
-		goto L8
-	}
-L4:
-	;
-	v21 = *(*int32)(unsafe.Add(mBase, _c_F_BeginReportingGUCOptions[3]))
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+316))
-	v24 = base.B2i32(v22 != int32(2))
-	*(*uint8)(unsafe.Add(mBase, _c_F_BeginReportingGUCOptions[2])) = uint8(v24)
-	v26 = v24
-	goto L6
-L5:
-	;
-	v26 = int32(0)
-	goto L6
-L6:
-	;
-	goto L3
-L7:
-	;
-	v28 = int32(0)
-	v31 = int32(10)
-	v37 = F_set_config_with_handle(m, int32(_a_F_BeginReportingGUCOptions_0), v28, int32(_a_F_BeginReportingGUCOptions_1), v28, v31, v31, v28, int32(1), v28, v28)
-	mBase = m.M
-	v38 = m.ExcPending
-	if v38 != 0 {
-		goto L10
-	} else {
-		goto L11
-	}
-L8:
-	;
-	goto L9
-L9:
-	;
-	v40 = v5 + int32(12)
-	v42 = *(*int32)(unsafe.Add(mBase, _c_F_BeginReportingGUCOptions[4]))
-	F_hash_seq_init(m, v40, v42)
-	mBase = m.M
-	v44 = m.ExcPending
-	if v44 != 0 {
-		goto L10
-	} else {
-		goto L12
-	}
-L10:
-	;
-	return
-L11:
-	;
-	goto L9
-L12:
-	;
-	v45 = F_hash_seq_search(m, v40)
-	mBase = m.M
-	v46 = m.ExcPending
-	if v46 != 0 {
-		goto L10
-	} else {
-		goto L13
-	}
-L13:
-	;
-	if v45 == int32(0) {
-		goto L1
-	} else {
-		goto L14
-	}
-L14:
-	;
-	v49 = v45
-	goto L15
-L15:
-	;
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(v49)+4))
-	v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+20)))
-	if v52&int32(64) != 0 {
-		goto L17
-	} else {
-		goto L18
-	}
-L16:
-	;
-	goto L1
-L17:
-	;
-	F_ReportGUCOption(m, v51)
-	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
-		goto L10
-	} else {
-		goto L20
-	}
-L18:
-	;
-	goto L19
-L19:
-	;
-	v59 = F_hash_seq_search(m, v5+int32(12))
-	mBase = m.M
-	v60 = m.ExcPending
-	if v60 != 0 {
-		goto L10
-	} else {
-		goto L21
-	}
-L20:
-	;
-	goto L19
-L21:
-	;
-	if v59 != 0 {
-		v49 = v59
-		goto L15
-	} else {
-		goto L22
-	}
-L22:
-	;
-	goto L16
-}
 func F_BlockSampler_Init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -13876,7 +13676,7 @@ func F_btrim(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = int32(1)
-	v4 = Fn13877(m, l0, v2, v2)
+	v4 = Fn13857(m, l0, v2, v2)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -13889,7 +13689,7 @@ func F_bttextsortsupport(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13876(m, l0, int32(25))
+	v3 = Fn13856(m, l0, int32(25))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

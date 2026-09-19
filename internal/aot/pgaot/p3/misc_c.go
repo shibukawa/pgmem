@@ -976,7 +976,7 @@ func F_CheckBuiltinCryptoMode(m *base.Module) {
 func F_CheckElement_2(m *base.Module, l0 float32) {
 	var v8 int32
 	_ = v8
-	Fn13845(m, l0, int32(147), int32(_a_F_CheckElement_2_0), int32(_a_F_CheckElement_2_1), int32(142), int32(_a_F_CheckElement_2_2))
+	Fn13825(m, l0, int32(147), int32(_a_F_CheckElement_2_0), int32(_a_F_CheckElement_2_1), int32(142), int32(_a_F_CheckElement_2_2))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return

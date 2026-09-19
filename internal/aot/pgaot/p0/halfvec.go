@@ -3588,7 +3588,7 @@ func F_halfvec_l2_squared_distance(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13933(m, l0, int32(_a_F_halfvec_l2_squared_distance_0))
+	v3 = Fn13913(m, l0, int32(_a_F_halfvec_l2_squared_distance_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

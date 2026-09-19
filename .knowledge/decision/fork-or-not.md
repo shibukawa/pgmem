@@ -22,7 +22,7 @@ decision:
     shared_server_rollback:
       cost: no fork; one BEGIN and ROLLBACK per test
       pros: [lowest memory, no snapshot needed]
-      cons: [code under test must not COMMIT or open a second connection; sequential only because the session is one (rule:single-session-per-backend); sequences and DDL side effects survive rollback]
+      cons: [code under test must not COMMIT or open a second connection; sequential only because one transaction is one connection; sequences and DDL side effects survive rollback]
       how: open a transaction on the template DSN in the test setup and roll back in teardown
     shared_server_truncate:
       cost: TRUNCATE ... RESTART IDENTITY CASCADE between tests

@@ -183,13 +183,13 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1645328])
-	copy(m.Memory[1650656:], wasm2goData_data_bin[1645328:1645337])
-	copy(m.Memory[1652704:], wasm2goData_data_bin[1645337:1658265])
-	copy(m.Memory[1675268:], wasm2goData_data_bin[1658265:1751474])
-	copy(m.Memory[1769504:], wasm2goData_data_bin[1751474:1863114])
-	copy(m.Memory[1892408:], wasm2goData_data_bin[1863114:4127072])
-	copy(m.Memory[4163856:], wasm2goData_data_bin[4127072:4416847])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1645120])
+	copy(m.Memory[1650448:], wasm2goData_data_bin[1645120:1645129])
+	copy(m.Memory[1652496:], wasm2goData_data_bin[1645129:1658057])
+	copy(m.Memory[1675268:], wasm2goData_data_bin[1658057:1751266])
+	copy(m.Memory[1769504:], wasm2goData_data_bin[1751266:1862906])
+	copy(m.Memory[1892408:], wasm2goData_data_bin[1862906:4126864])
+	copy(m.Memory[4163856:], wasm2goData_data_bin[4126864:4416639])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -200,9 +200,6 @@ func WasmCallCtors(m *base.Module) {
 func Fflush(m *base.Module, l0 int32) int32 {
 	return F_fflush(m, l0)
 }
-func PqBufferRemainingData(m *base.Module) int32 {
-	return F_pq_buffer_remaining_data(m)
-}
 func Malloc(m *base.Module, l0 int32) int32 {
 	return F_emscripten_builtin_malloc(m, l0)
 }
@@ -211,39 +208,6 @@ func Free(m *base.Module, l0 int32) {
 }
 func ProcessStartupPacket(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F_ProcessStartupPacket(m, l0, l1, l2)
-}
-func PglStartPGlite(m *base.Module) {
-	F_pgl_startPGlite(m)
-}
-func PglPqFlush(m *base.Module) {
-	F_pgl_pq_flush(m)
-}
-func PglGetMyProcPort(m *base.Module) int32 {
-	return F_pgl_getMyProcPort(m)
-}
-func PglSendConnData(m *base.Module) {
-	F_pgl_sendConnData(m)
-}
-func PostgresMainLongJmp(m *base.Module) {
-	F_PostgresMainLongJmp(m)
-}
-func PostgresMainLoopOnce(m *base.Module) {
-	F_PostgresMainLoopOnce(m)
-}
-func PostgresSendReadyForQueryIfNecessary(m *base.Module) {
-	F_PostgresSendReadyForQueryIfNecessary(m)
-}
-func PgmemResetSession(m *base.Module, l0 int32) {
-	F_pgmem_reset_session(m, l0)
-}
-func PglSetPGliteExitStatus(m *base.Module, l0 int32) int32 {
-	return F_pgl_setPGliteExitStatus(m, l0)
-}
-func PglSetPGliteActive(m *base.Module, l0 int32) int32 {
-	return F_pgl_setPGliteActive(m, l0)
-}
-func PglRunAtexitFuncs(m *base.Module) {
-	F_pgl_run_atexit_funcs(m)
 }
 func PglFreopen(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F_pgl_freopen(m, l0, l1, l2)

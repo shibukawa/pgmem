@@ -8,7 +8,7 @@ import (
 func F_DeleteSharedSecurityLabel(m *base.Module, l0 int32, l1 int32) {
 	var v6 int32
 	_ = v6
-	Fn13847(m, l0, l1, int32(3593), int32(3592))
+	Fn13827(m, l0, l1, int32(3593), int32(3592))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return

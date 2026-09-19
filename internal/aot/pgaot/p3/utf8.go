@@ -144,7 +144,7 @@ func F_utf8_to_big5(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v3 = int32(0)
-	v7 = Fn14035(m, l0, int32(36), v3, v3, v3, int32(_a_F_utf8_to_big5_0))
+	v7 = Fn14015(m, l0, int32(36), v3, v3, v3, int32(_a_F_utf8_to_big5_0))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -157,7 +157,7 @@ func F_utf8_to_euc_jis_2004(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14035(m, l0, int32(5), int32(0), int32(25), int32(_a_F_utf8_to_euc_jis_2004_0), int32(_a_F_utf8_to_euc_jis_2004_1))
+	v7 = Fn14015(m, l0, int32(5), int32(0), int32(25), int32(_a_F_utf8_to_euc_jis_2004_0), int32(_a_F_utf8_to_euc_jis_2004_1))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -173,7 +173,7 @@ func F_utf8_to_euc_kr(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v3 = int32(0)
-	v7 = Fn14035(m, l0, int32(3), v3, v3, v3, int32(_a_F_utf8_to_euc_kr_0))
+	v7 = Fn14015(m, l0, int32(3), v3, v3, v3, int32(_a_F_utf8_to_euc_kr_0))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -186,7 +186,7 @@ func F_utf8_to_iso8859_1(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v13 int32
 	_ = v13
-	v10 = Fn14036(m, l0, int32(_a_F_utf8_to_iso8859_1_0), int32(_a_F_utf8_to_iso8859_1_1), int32(169), int32(_a_F_utf8_to_iso8859_1_2), int32(_a_F_utf8_to_iso8859_1_3), int32(_a_F_utf8_to_iso8859_1_4), int32(19), int32(9))
+	v10 = Fn14016(m, l0, int32(_a_F_utf8_to_iso8859_1_0), int32(_a_F_utf8_to_iso8859_1_1), int32(169), int32(_a_F_utf8_to_iso8859_1_2), int32(_a_F_utf8_to_iso8859_1_3), int32(_a_F_utf8_to_iso8859_1_4), int32(19), int32(9))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return int32(0)
@@ -202,7 +202,7 @@ func F_utf8_to_koi8r(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v3 = int32(0)
-	v7 = Fn14035(m, l0, int32(22), v3, v3, v3, int32(_a_F_utf8_to_koi8r_0))
+	v7 = Fn14015(m, l0, int32(22), v3, v3, v3, int32(_a_F_utf8_to_koi8r_0))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

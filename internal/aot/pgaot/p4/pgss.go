@@ -282,7 +282,7 @@ func F_pgss_ExecutorEnd(m *base.Module, l0 int32) {
 func F_pgss_ExecutorRun(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	var v7 int32
 	_ = v7
-	Fn13994(m, l0, l1, l2, int32(_a_F_pgss_ExecutorRun_0), int32(_a_F_pgss_ExecutorRun_1))
+	Fn13974(m, l0, l1, l2, int32(_a_F_pgss_ExecutorRun_0), int32(_a_F_pgss_ExecutorRun_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return

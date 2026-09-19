@@ -10606,7 +10606,7 @@ func F_anycompatiblearray_recv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_anycompatiblearray_recv_0), int32(175), int32(_a_F_anycompatiblearray_recv_1), int32(_a_F_anycompatiblearray_recv_2), int32(_a_F_anycompatiblearray_recv_3))
+	v7 = Fn13854(m, l0, int32(_a_F_anycompatiblearray_recv_0), int32(175), int32(_a_F_anycompatiblearray_recv_1), int32(_a_F_anycompatiblearray_recv_2), int32(_a_F_anycompatiblearray_recv_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -10619,7 +10619,7 @@ func F_anytime_typmod_check(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13867(m, l0, l1, int32(_a_F_anytime_typmod_check_0), int32(78), int32(_a_F_anytime_typmod_check_1), int32(_a_F_anytime_typmod_check_2), int32(85), int32(_a_F_anytime_typmod_check_3))
+	v9 = Fn13847(m, l0, l1, int32(_a_F_anytime_typmod_check_0), int32(78), int32(_a_F_anytime_typmod_check_1), int32(_a_F_anytime_typmod_check_2), int32(85), int32(_a_F_anytime_typmod_check_3))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)

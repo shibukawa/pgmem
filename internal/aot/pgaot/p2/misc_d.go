@@ -14643,7 +14643,7 @@ func F_dtoi2(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13890(m, l0, int32(_a_F_dtoi2_0), int32(1254), int32(_a_F_dtoi2_1), float64(32768), float64(-32768))
+	v7 = Fn13870(m, l0, int32(_a_F_dtoi2_0), int32(1254), int32(_a_F_dtoi2_1), float64(32768), float64(-32768))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -14656,7 +14656,7 @@ func F_dtoi4(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13890(m, l0, int32(_a_F_dtoi4_0), int32(1229), int32(_a_F_dtoi4_1), float64(2.147483648e+09), float64(-2.147483648e+09))
+	v7 = Fn13870(m, l0, int32(_a_F_dtoi4_0), int32(1229), int32(_a_F_dtoi4_1), float64(2.147483648e+09), float64(-2.147483648e+09))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

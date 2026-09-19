@@ -311,11 +311,10 @@ await pg.withFork(async (fork) => {
 }, { timeoutMs: 30_000 });
 ```
 
-Each fork adds a separate data-directory copy and buffer cache. See [limits](../../../limits/) for the distinction between fork-slot, snapshot, reset and connection-wait timeouts.
+Each fork adds a separate data-directory copy and buffer cache. See [limits](../../../limits/) for the distinction between fork-slot, snapshot and reset timeouts.
 
 ## Things to know
 
-- **A fork is one PostgreSQL session** shared by all its connections, the way a transaction-mode pooler shares one. Pools work, but `SET`, temp tables and advisory locks are shared; use `SET LOCAL`.
-- **Query through the transaction handle** inside a transaction callback. A query on another pooled connection would wait for the transaction to end; pgmem ends that wait after `waitTimeoutMs` (default 2 s) with SQLSTATE 55P03 and a message naming both connections.
+- **A fork is a PostgreSQL cluster of its own**: every connection gets a backend process, so pools, locks between connections and deadlock detection behave as on a server.
 - **`reset` waits for open transactions** and fails with code `busy` after `timeoutMs` (default 5 s).
 - **Forks belong to the process that made them** through `@pgmem/core/register`, `fork()` or `withFork()`, and close when it exits.

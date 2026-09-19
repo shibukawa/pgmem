@@ -200,11 +200,12 @@ fresh linear memory, which still serialize when many forks start at once.
 
 ## Process model
 
-Default (postmaster and a backend process per connection) against
-single-user mode (`Options.SingleUser`), same machine, medians of 30
+The multi-process model (postmaster and a backend process per
+connection) against the single-user model it replaced (one shared
+session, removed after this comparison), same machine, medians of 30
 runs, 2026-09-19:
 
-| | default | single-user |
+| | multi-process | single-user (removed) |
 |---|---|---|
 | simple indexed `SELECT` via pgx over TCP | 30.2 µs | 30.3 µs |
 | same, in-process via `Server.Dial` | 8.6 µs | 8.8 µs |

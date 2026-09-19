@@ -12,7 +12,7 @@ summary:
     - internal/engine Engine.Start(fs, opts) boots a backend on any vfs
     - internal/engine Tar/Untar for optional export of a snapshot
   snapshot_steps:
-    - issue CHECKPOINT on template backend (single-user mode runs it synchronously)
+    - stop the template cluster cleanly (the shutdown checkpoint), clone, start it again; sessions re-attach (rule:process-per-connection)
     - FS.Clone() the vfs; keep the copy as immutable template image
   fork_steps:
     - FS.Clone() the template image
@@ -23,5 +23,5 @@ summary:
   cow_race_note: many Forks clone the same snapshot fs concurrently; cloneNode marks the source node shared only when it is not already, and every data node of a snapshot (itself a clone) already is, so the snapshot tree is only read
   anonymous_mmap: wasm/pgmem_shim.c overrides mmap for MAP_ANONYMOUS so PostgreSQL's ~37 MB shared-memory block is not memset when it comes from fresh sbrk memory (dlmalloc never trims, so bytes at or above the old break are zero); only the part below the old break is cleared (2026-09-19)
   gotcha: io_method must be sync; PGlite sets IsUnderPostmaster so worker AIO waits forever on batched read_stream reads (pgmem.go withDefaults)
-  rejected: PostgreSQL CREATE DATABASE TEMPLATE per test (the command works in a live session since io_method=sync, and concept:database-switching serves the copy, but every alternation between databases restarts the backend and forks run in parallel while databases do not)
+  rejected: PostgreSQL CREATE DATABASE TEMPLATE per test (the command works in a live session since io_method=sync, but a fork is a whole cluster with its own buffer cache and processes, and forks are what the fixtures hand out)
 ```

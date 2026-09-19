@@ -2094,43 +2094,6 @@ func F_pgstat_report_checksum_failures_in_db(m *base.Module, l0 int32, l1 int32)
 		}
 	}
 }
-func F_pgstat_report_connect(m *base.Module) {
-	mBase := m.M
-	_ = mBase
-	var v3 int32
-	_ = v3
-	var v8 int64
-	_ = v8
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
-	var v18 int64
-	_ = v18
-	v3 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_connect[0]))
-	if v3 == int32(1) {
-		v8 = *(*int64)(unsafe.Add(mBase, _c_F_pgstat_report_connect[1]))
-		*(*int64)(unsafe.Add(mBase, _c_F_pgstat_report_connect[2])) = v8
-		v12 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_connect[3]))
-		v15 = F_pgstat_prep_pending_entry(m, int32(1), v12, int64(0), int32(0))
-		mBase = m.M
-		v16 = m.ExcPending
-		if v16 != 0 {
-			return
-		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(v15)+12))
-			v18 = *(*int64)(unsafe.Add(mBase, uint32(v17)+184))
-			*(*int64)(unsafe.Add(mBase, uint32(v17)+184)) = v18 + int64(1)
-			return
-		}
-	} else {
-		return
-	}
-}
 func F_pgstat_report_recovery_conflict(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase

@@ -528,7 +528,7 @@ func F_mic_to_iso(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13967(m, l0, int32(_a_F_mic_to_iso_0), int32(25), int32(139))
+	v5 = Fn13947(m, l0, int32(_a_F_mic_to_iso_0), int32(25), int32(139))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -541,7 +541,7 @@ func F_mic_to_koi8r(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13968(m, l0, int32(22), int32(139))
+	v4 = Fn13948(m, l0, int32(22), int32(139))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -554,7 +554,7 @@ func F_mic_to_latin3(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13968(m, l0, int32(10), int32(131))
+	v4 = Fn13948(m, l0, int32(10), int32(131))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

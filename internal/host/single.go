@@ -2,7 +2,8 @@ package host
 
 import "github.com/shibukawa/pgmem/internal/vfs"
 
-// Single-user mode has one process and no cluster, but the same
+// A standalone process (initdb's bootstrap and single-user children, the
+// setup child that creates the database) has no cluster, but the same
 // PostgreSQL build: with EXEC_BACKEND its shared memory is System V
 // (shmget) and its semaphores are POSIX ones, so serve both from the
 // process's own heap, the way PGlite's shims did.

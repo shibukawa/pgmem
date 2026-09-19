@@ -4068,7 +4068,7 @@ func F_fastgetattr_5(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13897(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_5_0))
+	v6 = Fn13877(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_5_0))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -4081,7 +4081,7 @@ func F_fdw_handler_out(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_fdw_handler_out_0), int32(369), int32(_a_F_fdw_handler_out_1), int32(_a_F_fdw_handler_out_2), int32(_a_F_fdw_handler_out_3))
+	v7 = Fn13854(m, l0, int32(_a_F_fdw_handler_out_0), int32(369), int32(_a_F_fdw_handler_out_1), int32(_a_F_fdw_handler_out_2), int32(_a_F_fdw_handler_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

@@ -139,7 +139,7 @@ The classifiers are `linux-x86_64`, `linux-arm64`, `darwin-arm64`, `windows-x86_
    </TabItem>
    </Tabs>
 
-   A HikariCP pool on the URL works too; its connections serialize at transaction boundaries.
+   A HikariCP pool on the URL works too; every connection gets its own backend process.
 
 </Steps>
 

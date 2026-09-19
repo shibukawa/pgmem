@@ -509,7 +509,7 @@ func F_SearchSysCacheCopyAttNum(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13859(m, l0, l1, int32(_a_F_SearchSysCacheCopyAttNum_0))
+	v4 = Fn13839(m, l0, l1, int32(_a_F_SearchSysCacheCopyAttNum_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

@@ -740,7 +740,7 @@ func F_has_function_privilege_id_name(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13938(m, l0, int32(_a_F_has_function_privilege_id_name_0), int32(1255), int32(_a_F_has_function_privilege_id_name_1), int32(3565), int32(_a_F_has_function_privilege_id_name_2), int32(52461700), int32(1237))
+	v9 = Fn13918(m, l0, int32(_a_F_has_function_privilege_id_name_0), int32(1255), int32(_a_F_has_function_privilege_id_name_1), int32(3565), int32(_a_F_has_function_privilege_id_name_2), int32(52461700), int32(1237))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
@@ -753,7 +753,7 @@ func F_has_function_privilege_name_id(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13937(m, l0, int32(_a_F_has_function_privilege_name_id_0), int32(1255))
+	v4 = Fn13917(m, l0, int32(_a_F_has_function_privilege_name_id_0), int32(1255))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

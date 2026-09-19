@@ -4541,7 +4541,7 @@ func F__ltq_extract_regex(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13864(m, l0, int32(_a_F__ltq_extract_regex_0))
+	v3 = Fn13844(m, l0, int32(_a_F__ltq_extract_regex_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -4554,7 +4554,7 @@ func F_lappend_int(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13959(m, l0, l1, int64(4294967767))
+	v4 = Fn13939(m, l0, l1, int64(4294967767))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -11070,7 +11070,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(_a_F_load_libraries_1), int32(1889), int32(_a_F_load_libraries_2))
+	F_errfinish(m, int32(_a_F_load_libraries_1), int32(1872), int32(_a_F_load_libraries_2))
 	mBase = m.M
 	v49 = m.ExcPending
 	if v49 != 0 {
@@ -11142,7 +11142,7 @@ L25:
 	}
 L26:
 	;
-	v71 = Fn13900(m, v65, int32(47))
+	v71 = Fn13880(m, v65, int32(47))
 	mBase = m.M
 	goto L27
 L27:
@@ -11210,7 +11210,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(_a_F_load_libraries_1), int32(1907), int32(_a_F_load_libraries_2))
+	F_errfinish(m, int32(_a_F_load_libraries_1), int32(1890), int32(_a_F_load_libraries_2))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -12301,7 +12301,7 @@ func F_ltrim(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13877(m, l0, int32(0), int32(1))
+	v4 = Fn13857(m, l0, int32(0), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

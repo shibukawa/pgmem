@@ -103,7 +103,7 @@ func F_has_language_privilege_id_id(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13936(m, l0, int32(_a_F_has_language_privilege_id_id_0), int32(2612))
+	v4 = Fn13916(m, l0, int32(_a_F_has_language_privilege_id_id_0), int32(2612))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -196,7 +196,7 @@ func F_language_handler_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_language_handler_in_0), int32(368), int32(_a_F_language_handler_in_1), int32(_a_F_language_handler_in_2), int32(_a_F_language_handler_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_language_handler_in_0), int32(368), int32(_a_F_language_handler_in_1), int32(_a_F_language_handler_in_2), int32(_a_F_language_handler_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

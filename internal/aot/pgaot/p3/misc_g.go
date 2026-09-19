@@ -1837,7 +1837,7 @@ func F_GetUserNameFromId(m *base.Module, l0 int32, l1 int32) int32 {
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_GetUserNameFromId_1), int32(1067), int32(_a_F_GetUserNameFromId_2))
+							F_errfinish(m, int32(_a_F_GetUserNameFromId_1), int32(1050), int32(_a_F_GetUserNameFromId_2))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
@@ -2032,14 +2032,14 @@ func F_g_intbig_penalty(m *base.Module, l0 int32) int32 {
 		} else {
 			v33 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
 			v35 = v33
-			v37 = Fn13945(m, v5, v7, v35, int32(4))
+			v37 = Fn13925(m, v5, v7, v35, int32(4))
 			mBase = m.M
 			*(*float32)(unsafe.Add(mBase, uint32(v3))) = base.F32_convert_i32_s(v37)
 			return v3
 		}
 	} else {
 		v35 = int32(252)
-		v37 = Fn13945(m, v5, v7, v35, int32(4))
+		v37 = Fn13925(m, v5, v7, v35, int32(4))
 		mBase = m.M
 		*(*float32)(unsafe.Add(mBase, uint32(v3))) = base.F32_convert_i32_s(v37)
 		return v3
@@ -8165,7 +8165,7 @@ func F_get_am_name(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13917(m, l0, int32(2))
+	v3 = Fn13897(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

@@ -18,7 +18,7 @@ metric:
     docker_run_total_ms: 2471   # boot 1601 (disk-backed, fresh container), rest as devbox but slower over the VM
   observations:
     - a fork alone is ~6 ms (was 15); with eight in flight ~10 ms each (was 30-40): see metric:fork-cost (vfs clone + backend start contend) but overlap
-    - read tests on one shared fork serialize at transaction boundaries (rule:single-session-per-backend); they are short either way
+    - read tests on one shared fork each get a backend process (rule:process-per-connection); they are short either way
     - the first execution of a freshly built test binary is several hundred ms slower (page-in, code signing): driver warms up once, untimed
   chart: tests drawn in go test -parallel slots (first free slot), not one row per test, so 70 tests fit in 8 rows; every timeline shares one time axis (user, 2026-09-19); hero variant = pgmem vs Testcontainers, full = pgmem, Testcontainers, devbox, docker run
   outputs: bench/modelcase/results/{raw.jsonl,summary.json}; website/src/data/modelcase.json rendered by ModelCaseChart.astro (hero variant on index, full with per-node table on benchmarks)

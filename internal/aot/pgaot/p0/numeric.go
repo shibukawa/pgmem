@@ -4809,7 +4809,7 @@ func F_numeric_stddev_pop(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = int32(0)
-	v4 = Fn13973(m, l0, v2, v2)
+	v4 = Fn13953(m, l0, v2, v2)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

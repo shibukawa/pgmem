@@ -1161,7 +1161,7 @@ func F_binary_upgrade_set_next_toast_pg_class_oid(m *base.Module, l0 int32) int3
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13871(m, l0, int32(_a_F_binary_upgrade_set_next_toast_pg_class_oid_0), int32(_a_F_binary_upgrade_set_next_toast_pg_class_oid_1), int32(145))
+	v5 = Fn13851(m, l0, int32(_a_F_binary_upgrade_set_next_toast_pg_class_oid_0), int32(_a_F_binary_upgrade_set_next_toast_pg_class_oid_1), int32(145))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

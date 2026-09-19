@@ -4415,7 +4415,7 @@ func F_sampler_random_init_state(m *base.Module, l0 int32, l1 int32) {
 func F_sanitize_char_2(m *base.Module, l0 int32) {
 	var v4 int32
 	_ = v4
-	Fn14013(m, l0, int32(_a_F_sanitize_char_2_0))
+	Fn13993(m, l0, int32(_a_F_sanitize_char_2_0))
 	v4 = m.ExcPending
 	if v4 != 0 {
 		return
@@ -7133,7 +7133,7 @@ func F_show_unix_socket_permissions(m *base.Module) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14014(m, int32(_a_F_show_unix_socket_permissions_0), int32(_a_F_show_unix_socket_permissions_1))
+	v3 = Fn13994(m, int32(_a_F_show_unix_socket_permissions_0), int32(_a_F_show_unix_socket_permissions_1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -18709,7 +18709,7 @@ func F_strict_word_similarity_dist_commutator_op(m *base.Module, l0 int32) int32
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14043(m, l0, int32(2))
+	v3 = Fn14023(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

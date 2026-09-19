@@ -23,7 +23,7 @@ summary:
     server_per_test: pgmem.Start inside the test for schema-per-test cases
     guidance: decision:fork-or-not
   parallel: t.Parallel() is safe with forks; MaxForks defaults to a memory budget and Fork blocks when full (policy:fork-pool-limit)
-  pools: pgxpool on a fork works; connections serialize at transaction boundaries (rule:single-session-per-backend)
+  pools: pgxpool on a fork works as on a server (rule:process-per-connection)
   speed: Fixture.DB uses api:in-process-dialer; ~3x faster small queries than TCP
   logging: Options.Log or pgmemtest stderr forwarding; PGMEM_TRACE=1 for host calls
   limits: concept:limits

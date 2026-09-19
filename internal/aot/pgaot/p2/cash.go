@@ -159,7 +159,7 @@ func F_cash_mi(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13881(m, l0, int32(_a_F_cash_mi_0), int32(111), int32(_a_F_cash_mi_1), int32(_a_F_cash_mi_2))
+	v6 = Fn13861(m, l0, int32(_a_F_cash_mi_0), int32(111), int32(_a_F_cash_mi_1), int32(_a_F_cash_mi_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -172,7 +172,7 @@ func F_cash_mul_int2(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13882(m, l0, int32(_a_F_cash_mul_int2_0), int32(150), int32(_a_F_cash_mul_int2_1), int32(_a_F_cash_mul_int2_2))
+	v6 = Fn13862(m, l0, int32(_a_F_cash_mul_int2_0), int32(150), int32(_a_F_cash_mul_int2_1), int32(_a_F_cash_mul_int2_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -185,7 +185,7 @@ func F_cash_mul_int8(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13884(m, l0, int32(_a_F_cash_mul_int8_0), int32(150), int32(_a_F_cash_mul_int8_1), int32(_a_F_cash_mul_int8_2))
+	v6 = Fn13864(m, l0, int32(_a_F_cash_mul_int8_0), int32(150), int32(_a_F_cash_mul_int8_1), int32(_a_F_cash_mul_int8_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -741,7 +741,7 @@ func F_cash_pl(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13885(m, l0, int32(_a_F_cash_pl_0), int32(98), int32(_a_F_cash_pl_1), int32(_a_F_cash_pl_2))
+	v6 = Fn13865(m, l0, int32(_a_F_cash_pl_0), int32(98), int32(_a_F_cash_pl_1), int32(_a_F_cash_pl_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

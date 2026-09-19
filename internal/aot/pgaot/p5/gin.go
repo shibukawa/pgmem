@@ -7207,7 +7207,7 @@ func F_gin_extract_query_name(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13929(m, l0, int32(64), int32(2103))
+	v4 = Fn13909(m, l0, int32(64), int32(2103))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

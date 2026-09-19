@@ -1143,7 +1143,7 @@ func F_get_func_namespace(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13920(m, l0, int32(47))
+	v3 = Fn13900(m, l0, int32(47))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1156,7 +1156,7 @@ func F_get_func_support(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13918(m, l0, int32(47))
+	v3 = Fn13898(m, l0, int32(47))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

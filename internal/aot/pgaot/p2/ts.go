@@ -10,7 +10,7 @@ func F_TSConfigIsVisibleExt(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v8 = Fn13860(m, l0, l1, int32(73), int32(_a_F_TSConfigIsVisibleExt_0), int32(3241), int32(_a_F_TSConfigIsVisibleExt_1), int32(74))
+	v8 = Fn13840(m, l0, l1, int32(73), int32(_a_F_TSConfigIsVisibleExt_0), int32(3241), int32(_a_F_TSConfigIsVisibleExt_1), int32(74))
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int32(0)
@@ -23,7 +23,7 @@ func F_TSTemplateIsVisibleExt(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v8 = Fn13860(m, l0, l1, int32(79), int32(_a_F_TSTemplateIsVisibleExt_0), int32(3095), int32(_a_F_TSTemplateIsVisibleExt_1), int32(80))
+	v8 = Fn13840(m, l0, l1, int32(79), int32(_a_F_TSTemplateIsVisibleExt_0), int32(3095), int32(_a_F_TSTemplateIsVisibleExt_1), int32(80))
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int32(0)

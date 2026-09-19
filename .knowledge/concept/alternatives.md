@@ -10,7 +10,7 @@ summary:
   pgmem:
     shape: real PostgreSQL 18 in the test process (Go) or in one child process (other languages); no daemon, no disk, no download (policy:binary-distribution)
     strengths: [start ~0.1 s, fork ~20 ms with prepared schema and seed (api:clone), works on any CI runner including ones without Docker, one dependency, same wire protocol so every driver and ORM works]
-    weaknesses: [one session per fork with transaction-mode multiplexing (rule:single-session-per-backend), extensions limited to the bundled set, no background workers or PostGIS (policy:bundled-extensions), ~150 MB resident per process, ~36 MB binary]
+    weaknesses: [extensions limited to the bundled set, no background workers or PostGIS (policy:bundled-extensions), ~150 MB resident per process, ~36 MB binary]
   testcontainers_docker:
     shape: Docker daemon runs the official postgres image; the test framework starts and stops containers
     strengths: [exact production image and version, any extension including PostGIS and pg_cron, real multi-session server, mature ecosystem in every language]

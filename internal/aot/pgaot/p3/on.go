@@ -8,7 +8,7 @@ import (
 func F_on_shmem_exit(m *base.Module, l0 int32, l1 int32) {
 	var v10 int32
 	_ = v10
-	Fn13869(m, l0, l1, int32(_a_F_on_shmem_exit_0), int32(377), int32(_a_F_on_shmem_exit_1), int32(_a_F_on_shmem_exit_2), int32(_a_F_on_shmem_exit_3), int32(_a_F_on_shmem_exit_4))
+	Fn13849(m, l0, l1, int32(_a_F_on_shmem_exit_0), int32(377), int32(_a_F_on_shmem_exit_1), int32(_a_F_on_shmem_exit_2), int32(_a_F_on_shmem_exit_3), int32(_a_F_on_shmem_exit_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return

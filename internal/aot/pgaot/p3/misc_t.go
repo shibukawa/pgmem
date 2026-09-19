@@ -2252,7 +2252,7 @@ func F_textregexne(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14018(m, l0, int32(19))
+	v3 = Fn13998(m, l0, int32(19))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -4846,7 +4846,7 @@ func F_timetztypmodin(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14023(m, l0, int32(1))
+	v3 = Fn14003(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -9041,7 +9041,7 @@ func F_tsm_system_time_handler(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn14029(m, l0, int32(0), int32(_a_F_tsm_system_time_handler_0), int32(_a_F_tsm_system_time_handler_1), int32(_a_F_tsm_system_time_handler_2), int32(_a_F_tsm_system_time_handler_3), int32(_a_F_tsm_system_time_handler_4), int32(701))
+	v9 = Fn14009(m, l0, int32(0), int32(_a_F_tsm_system_time_handler_0), int32(_a_F_tsm_system_time_handler_1), int32(_a_F_tsm_system_time_handler_2), int32(_a_F_tsm_system_time_handler_3), int32(_a_F_tsm_system_time_handler_4), int32(701))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)

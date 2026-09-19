@@ -226,8 +226,8 @@ Every live fork holds its own data-directory copy and buffer cache. `MaxForks` l
 pgmemtest.Options{MaxForks: 4, /* ... */}
 ```
 
-When the cap is full, `Fork(ctx)` waits until a fork closes. Its context can cancel or deadline that wait; the `pgmemtest` helpers use the test's context. With server logging enabled, a wait longer than five seconds is logged. See [limits](../../../limits/) for how this differs from snapshot, reset and connection-wait timeouts.
+When the cap is full, `Fork(ctx)` waits until a fork closes. Its context can cancel or deadline that wait; the `pgmemtest` helpers use the test's context. With server logging enabled, a wait longer than five seconds is logged. See [limits](../../../limits/) for how this differs from snapshot and reset timeouts.
 
 <Aside>
-Connection pools on one fork work, but queries on the same fork serialize at transaction boundaries. Run independent tests in parallel on separate forks instead. See [limits](../../../limits/).
+Connection pools on one fork work as on a server: every connection is its own backend process. Independent tests still get the best isolation on separate forks. See [limits](../../../limits/).
 </Aside>

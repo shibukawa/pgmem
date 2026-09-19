@@ -19,14 +19,14 @@ summary:
     alembic: 'cfg = Config("alembic.ini"); cfg.set_main_option("sqlalchemy.url", dsn); command.upgrade(cfg, "head")  # inside the overridden pgmem_snapshot fixture'
     sqlalchemy: 'Base.metadata.create_all(create_engine(dsn))'
     yoyo: 'backend = get_backend(dsn); backend.apply_migrations(backend.to_apply(read_migrations("migrations")))'
-    django: 'call_command("migrate") with DATABASES pointing at the template; the test runner''s own test_<name> database is servable since concept:database-switching but untested with Django'
+    django: 'call_command("migrate") with DATABASES pointing at the template; the test runner''s own test_<name> database is servable (every database of a server can be connected to) but untested with Django'
   java:
     flyway: 'Flyway.configure().dataSource(url, user, null).load().migrate()  # inside PgmemExtension.builder().prepare(t -> ...)'
     liquibase: 'new CommandScope("update").addArgumentValue("url", url).addArgumentValue("username", user).addArgumentValue("changelogFile", "db/changelog.xml").execute()'
     hibernate: 'hibernate.hbm2ddl.auto=create against the template, or Flyway under Spring Boot once auto-configuration exists (api:java-wrapper later)'
   nodejs: 'api:node-wrapper prepare({url}): prisma migrate deploy or db push with DATABASE_URL in the child env; prisma migrate dev works (shadow database on the same server); Drizzle migrate(db, {migrationsFolder}); TypeORM runMigrations; knex.migrate.latest'
   gotchas:
-    - tools that open a second connection inside a transaction (advisory-lock based locking in golang-migrate and Flyway) work because the lock and the migration run on the same connection; a tool that waits on another connection would hang (rule:single-session-per-backend)
+    - tools that open a second connection inside a transaction (advisory-lock based locking in golang-migrate and Flyway) work because the lock and the migration run on the same connection; a tool that waits on another connection works too since rule:process-per-connection (2026-09-19)
     - CREATE EXTENSION works for the bundled set only (policy:bundled-extensions); pgvector is available as vector
     - migration history tables are part of the snapshot, so forks report the schema as up to date
 ```

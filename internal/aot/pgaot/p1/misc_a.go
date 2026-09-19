@@ -2579,7 +2579,7 @@ L2:
 L3:
 	;
 	v37 = v22 + int32(80)
-	v39 = Fn13986(m, int64(32))
+	v39 = Fn13966(m, int64(32))
 	mBase = m.M
 	goto L4
 L4:
@@ -8824,7 +8824,7 @@ func F_anyarray_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_anyarray_in_0), int32(154), int32(_a_F_anyarray_in_1), int32(_a_F_anyarray_in_2), int32(_a_F_anyarray_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_anyarray_in_0), int32(154), int32(_a_F_anyarray_in_1), int32(_a_F_anyarray_in_2), int32(_a_F_anyarray_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -8837,7 +8837,7 @@ func F_anycompatiblearray_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_anycompatiblearray_in_0), int32(174), int32(_a_F_anycompatiblearray_in_1), int32(_a_F_anycompatiblearray_in_2), int32(_a_F_anycompatiblearray_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_anycompatiblearray_in_0), int32(174), int32(_a_F_anycompatiblearray_in_1), int32(_a_F_anycompatiblearray_in_2), int32(_a_F_anycompatiblearray_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -8850,7 +8850,7 @@ func F_anycompatiblenonarray_out(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_anycompatiblenonarray_out_0), int32(377), int32(_a_F_anycompatiblenonarray_out_1), int32(_a_F_anycompatiblenonarray_out_2), int32(_a_F_anycompatiblenonarray_out_3))
+	v7 = Fn13854(m, l0, int32(_a_F_anycompatiblenonarray_out_0), int32(377), int32(_a_F_anycompatiblenonarray_out_1), int32(_a_F_anycompatiblenonarray_out_2), int32(_a_F_anycompatiblenonarray_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -8863,7 +8863,7 @@ func F_anycompatiblerange_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_anycompatiblerange_in_0), int32(220), int32(_a_F_anycompatiblerange_in_1), int32(_a_F_anycompatiblerange_in_2), int32(_a_F_anycompatiblerange_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_anycompatiblerange_in_0), int32(220), int32(_a_F_anycompatiblerange_in_1), int32(_a_F_anycompatiblerange_in_2), int32(_a_F_anycompatiblerange_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -8889,7 +8889,7 @@ func F_anynonarray_out(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_anynonarray_out_0), int32(375), int32(_a_F_anynonarray_out_1), int32(_a_F_anynonarray_out_2), int32(_a_F_anynonarray_out_3))
+	v7 = Fn13854(m, l0, int32(_a_F_anynonarray_out_0), int32(375), int32(_a_F_anynonarray_out_1), int32(_a_F_anynonarray_out_2), int32(_a_F_anynonarray_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -8902,7 +8902,7 @@ func F_anytimestamp_typmod_check(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13867(m, l0, l1, int32(_a_F_anytimestamp_typmod_check_0), int32(131), int32(_a_F_anytimestamp_typmod_check_1), int32(_a_F_anytimestamp_typmod_check_2), int32(138), int32(_a_F_anytimestamp_typmod_check_3))
+	v9 = Fn13847(m, l0, l1, int32(_a_F_anytimestamp_typmod_check_0), int32(131), int32(_a_F_anytimestamp_typmod_check_1), int32(_a_F_anytimestamp_typmod_check_2), int32(138), int32(_a_F_anytimestamp_typmod_check_3))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
