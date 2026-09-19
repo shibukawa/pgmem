@@ -10,6 +10,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/shibukawa/pgmem/internal/guest"
 	"github.com/shibukawa/pgmem/internal/host"
 	"github.com/shibukawa/pgmem/internal/vfs"
 )
@@ -100,7 +101,15 @@ func (cl *Cluster) exec(p *host.Process) {
 	go func() {
 		e := cl.e
 		status := int32(0)
-		defer func() { p.Exit(status) }()
+		var mod guest.Instance
+		defer func() {
+			// Exit first: a Kill waiting for every process need not wait
+			// for the unmapping of 2 GiB of address space per process
+			p.Exit(status)
+			if mod != nil {
+				mod.Close(e.ctx)
+			}
+		}()
 		// LISTEN/UNLISTEN at commit go to the client connection's owner
 		p.H.Listen = func(channel string, op int) {
 			if cs := p.H.ClientSock(); cs != nil && cs.Listen != nil {
@@ -110,6 +119,27 @@ func (cl *Cluster) exec(p *host.Process) {
 		// popen/system from a process (the postmaster runs "postgres -V"
 		// to check the executable): a throwaway single-user child
 		p.H.Run = func(cmd, stdinPath, stdoutPath string) int {
+			// "postgres -V" is the same answer every time: run it once
+			if strings.HasSuffix(strings.TrimSpace(cmd), " -V") && stdoutPath != "" {
+				e.versionMu.Lock()
+				defer e.versionMu.Unlock()
+				if e.versionOut == nil {
+					var stderr bytes.Buffer
+					if code := e.runChild(p.FS, p.H.Env, cmd, stdinPath, stdoutPath, &stderr); code != 0 {
+						return code
+					}
+					out, err := p.FS.ReadFile(stdoutPath)
+					if err != vfs.OK {
+						return 1
+					}
+					e.versionOut = out
+					return 0
+				}
+				if err := p.FS.WriteFile(stdoutPath, e.versionOut, 0o644); err != vfs.OK {
+					return 1
+				}
+				return 0
+			}
 			var stderr bytes.Buffer
 			code := e.runChild(p.FS, p.H.Env, cmd, stdinPath, stdoutPath, &stderr)
 			if stderr.Len() > 0 {
@@ -117,13 +147,13 @@ func (cl *Cluster) exec(p *host.Process) {
 			}
 			return code
 		}
-		mod, err := e.postgres.Instantiate(e.ctx, p.H)
+		m, err := e.postgres.Instantiate(e.ctx, p.H)
 		if err != nil {
 			e.logf("process %d: instantiate: %v", p.Pid, err)
 			status = 127 << 8
 			return
 		}
-		defer mod.Close(e.ctx)
+		mod = m
 		if _, err := mod.Call("pgmem_init"); err != nil {
 			e.logf("process %d: pgmem_init: %v", p.Pid, err)
 			status = 127 << 8
@@ -179,6 +209,27 @@ func (cl *Cluster) Connect(w io.Writer, onClose func()) (*host.ConnSock, error) 
 // Dead reports whether the postmaster has exited.
 func (cl *Cluster) Dead() bool { return cl.c.Dead() }
 
+// Kill ends every process at once, without a shutdown: for a data
+// directory that is discarded anyway (Close, Restore), the checkpoint and
+// the orderly exits of a fast shutdown would be wasted work. Every process
+// exits at its next host call (the blocked ones wake), so this takes well
+// under a millisecond unless a process is deep in a computation.
+func (cl *Cluster) Kill() {
+	c := cl.c
+	c.KillAll(host.SIGKILL)
+	deadline := time.After(5 * time.Second)
+	for _, p := range c.Processes() {
+		select {
+		case <-p.Done:
+		case <-deadline:
+			cl.e.logf("pgmem: process %d did not exit after SIGKILL", p.Pid)
+		}
+	}
+	// releasing the segment files (tens of MB of pages) takes a few
+	// milliseconds the caller need not wait for
+	go c.Close()
+}
+
 // Shutdown stops the cluster: a fast shutdown (SIGINT), then an immediate
 // one, then SIGKILL, waiting for every process to exit.
 func (cl *Cluster) Shutdown(ctx context.Context) error {
@@ -219,6 +270,6 @@ func (cl *Cluster) Shutdown(ctx context.Context) error {
 			}
 		}
 	}
-	c.Close()
+	go c.Close()
 	return err
 }

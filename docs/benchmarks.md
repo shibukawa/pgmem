@@ -201,20 +201,27 @@ fresh linear memory, which still serialize when many forks start at once.
 ## Process model
 
 Default (postmaster and a backend process per connection) against
-single-user mode (`Options.SingleUser`), same machine and suite,
-2026-09-19:
+single-user mode (`Options.SingleUser`), same machine, medians of 30
+runs, 2026-09-19:
 
 | | default | single-user |
 |---|---|---|
 | simple indexed `SELECT` via pgx over TCP | 30.2 µs | 30.3 µs |
 | same, in-process via `Server.Dial` | 8.6 µs | 8.8 µs |
 | sort + count over 200k generated rows | 117 ms | 116 ms |
-| `Start` | ~40 ms | ~37 ms |
-| `Snapshot.Fork` | ~6 ms | ~6 ms |
-| `Reset` (stop, copy, start, re-attach sessions) | ~15 ms | ~7 ms |
+| `Start` | ~42 ms | ~42 ms |
+| `Snapshot.Fork` | 3.8 ms | 5.0 ms |
+| first connection to a fork, with one query | 2.4 ms | 0.6 ms |
+| a further connection, with one query | 1.0 ms | 0.4 ms |
+| `Close` of a fork | 0.1 ms | 0.2 ms |
+| one test: fork, two connections, close | 7.7 ms | 6.2 ms |
 
-Query cost is the backend's own work either way. The cluster pays for
-its extra processes (five auxiliary processes plus one per connection,
-each a module instance whose memory is touched on demand) at start-up and
-in resident memory, and a `Reset` restarts the cluster instead of one
-backend.
+Query cost is the backend's own work either way. What the cluster pays
+for is a process per connection: a backend is a new module instance (its
+memory a copy-on-write view of one shared image of the data segments) that
+runs PostgreSQL's own backend start-up, about 1 ms, plus the first
+connection's cold caches. `Close` of a fork does not shut the cluster down
+(the data directory is discarded): every process is ended at its next host
+call and the address space is released off the caller's path. `Start` is
+dominated by unpacking the data directory and the setup child, the same in
+both models.

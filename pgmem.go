@@ -296,10 +296,12 @@ func (s *Server) startCluster(fs *vfs.FS) (*engine.Cluster, error) {
 	return s.e.StartCluster(context.Background(), fs, engine.StartOptions{User: s.opts.User, Database: s.opts.Database, Params: s.opts.Params}, stderr)
 }
 
-// stopEngine shuts the backend or the cluster down.
+// stopEngine shuts the backend or the cluster down. The cluster is killed
+// rather than shut down: its data directory is not used again.
 func (s *Server) stopEngine() error {
 	if s.cl != nil {
-		return s.cl.Shutdown(context.Background())
+		s.cl.Kill()
+		return nil
 	}
 	if s.b != nil {
 		return s.b.Close()

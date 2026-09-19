@@ -610,9 +610,7 @@ func (s *Server) restartCluster(ctx context.Context, fs *vfs.FS) error {
 		return errServerClosed
 	}
 	s.muteSessions()
-	if err := s.cl.Shutdown(ctx); err != nil {
-		s.logf("pgmem: shutdown: %v", err)
-	}
+	s.cl.Kill() // the old data directory is discarded: no shutdown needed
 	cl, err := s.startCluster(fs)
 	if err != nil {
 		return fmt.Errorf("pgmem: restart: %w", err)
