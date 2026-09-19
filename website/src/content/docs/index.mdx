@@ -29,8 +29,9 @@ import ModelCaseChart from '../../components/ModelCaseChart.astro';
 ## One test suite, two execution models
 
 A small shop's data layer with 70 tests: 50 that only read, 20 that
-write. On a shared PostgreSQL server the writing tests have to wait for
-each other, each behind a reset of the shared data. With pgmem the suite
+write. On a shared PostgreSQL server, here one started with
+Testcontainers, the writing tests have to wait for each other, each
+behind a reset of the shared data. With pgmem the suite
 takes one snapshot after the migrations and seed data; the read-only tests
 share that database and every writing test forks its own copy, so
 everything after the snapshot runs in parallel.

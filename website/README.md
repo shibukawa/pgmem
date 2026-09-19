@@ -21,7 +21,7 @@ The execution-model comparison on the top page (`ModelCaseChart.astro`) reads `s
 
 ```sh
 cd ../bench/modelcase
-RUNS=5 ./run.sh   # pgmem, devbox PostgreSQL and docker run
+RUNS=5 ./run.sh   # pgmem, Testcontainers, devbox PostgreSQL and docker run
 ```
 
 ## Source of truth

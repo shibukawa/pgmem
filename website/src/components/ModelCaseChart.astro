@@ -7,8 +7,9 @@ import data from '../data/modelcase.json';
 
 interface Props {
 	lang?: 'en' | 'ja';
-	/** hero: totals + the pgmem and native-server timelines (top page);
-	 *  full: every model, plus the per-step table (benchmarks page) */
+	/** hero: totals + the pgmem and Testcontainers timelines (top page);
+	 *  full: every model, plus the per-step table (benchmarks page).
+	 *  Every timeline shown uses the same time axis. */
 	variant?: 'hero' | 'full';
 }
 const { lang = 'en', variant = 'full' } = Astro.props;
@@ -27,6 +28,7 @@ const L = {
 	en: {
 		models: {
 			pgmem: { name: 'pgmem', sub: 'in the test process; read tests share the template, each writing test forks the snapshot, all in parallel' },
+			testcontainers: { name: 'Testcontainers, one shared server', sub: 'testcontainers-go postgres module on the official image, in memory (tmpfs, no fsync); writing tests take turns after a reset' },
 			devbox: { name: 'PostgreSQL, one shared server', sub: 'native PostgreSQL (devbox); writing tests take turns after a reset' },
 			docker: { name: 'docker run, one shared server', sub: 'official image; writing tests take turns after a reset' },
 		},
@@ -41,19 +43,20 @@ const L = {
 		total: 'total',
 		timeline: 'Timeline of the representative run',
 		axis: 'ms since the suite started',
-		ownAxis: '(own time axis)',
+		sameAxis: 'All timelines share one time axis.',
 		ms: 'ms',
 		stepsTitle: 'Time per node',
 		step: 'Node',
 		sum: 'Sums over every copy or test; on pgmem the copies overlap in time, so the sums exceed the wall clock.',
 		wall: 'Wall clock (boot + test binary)',
 		intro: (p: Model) => `The same ${p.tests.read + p.tests.write} tests (${p.tests.read} read-only, ${p.tests.write} writing) on the same schema, migrations and seed data, run with go test at parallelism ${p.parallel}. Each timeline is the run whose total was the median of ${p.runs} runs on ${m.cpu} (${m.cores} cores). Bars are the nodes of each execution model; lower and to the left is faster.`,
-		range: (x: Model) => `${fmt(x.total_min_ms)}–${fmt(x.total_max_ms)} ms over ${x.runs} runs`,
+		range: (x: Model) => `${fmtMs(x.total_min_ms)}–${fmtMs(x.total_max_ms)} over ${x.runs} runs`,
 		copies: (forks: number, writes: number, reads: number) => forks > 0 ? `${forks} forks, one per writing test (${writes}); the ${reads} read tests use the template database without a fork.` : `no copies: the ${reads} read tests and the ${writes} writing tests share one database.`,
 	},
 	ja: {
 		models: {
 			pgmem: { name: 'pgmem', sub: 'テストプロセス内。参照テストはテンプレートを共用し、更新テストはスナップショットからフォークして、すべて並列に走る' },
+			testcontainers: { name: 'Testcontainers 共有サーバー 1 台', sub: '公式イメージを testcontainers-go の postgres モジュールでオンメモリ起動（tmpfs、fsync なし）。更新テストはリセットを挟んで順番に走る' },
 			devbox: { name: 'PostgreSQL 共有サーバー 1 台', sub: 'ネイティブの PostgreSQL（devbox）。書き込みテストはリセットを挟んで順番に走る' },
 			docker: { name: 'docker run 共有サーバー 1 台', sub: '公式イメージ。書き込みテストはリセットを挟んで順番に走る' },
 		},
@@ -68,14 +71,14 @@ const L = {
 		total: '合計',
 		timeline: '代表実行のタイムライン',
 		axis: 'スイート開始からのミリ秒',
-		ownAxis: '（時間軸は独自）',
+		sameAxis: 'タイムラインはすべて同じ時間軸です。',
 		ms: 'ms',
 		stepsTitle: 'ノードごとの時間',
 		step: 'ノード',
 		sum: 'コピーやテストごとの値を合算しています。pgmem では各コピーが同時に走るため、合算値は実時間を超えます。',
 		wall: '実時間（起動 + テストバイナリ）',
 		intro: (p: Model) => `同じ ${p.tests.read + p.tests.write} 本のテスト（参照 ${p.tests.read}、更新 ${p.tests.write}）を、同じスキーマ・マイグレーション・シードデータで、go test の並列度 ${p.parallel} で実行しました。各タイムラインは ${m.cpu}（${m.cores} コア）で ${p.runs} 回走らせたうち合計時間が中央値だった実行です。バーは各実行モデルのノードで、左に短くまとまっているほど速いことを表します。`,
-		range: (x: Model) => `${x.runs} 回の範囲 ${fmt(x.total_min_ms)}〜${fmt(x.total_max_ms)} ms`,
+		range: (x: Model) => `${x.runs} 回の範囲 ${fmtMs(x.total_min_ms)}〜${fmtMs(x.total_max_ms)}`,
 		copies: (forks: number, writes: number, reads: number) => forks > 0 ? `フォークは ${forks} 本で、更新テスト（${writes} 本）1 本につき 1 本です。参照テスト ${reads} 本はフォークせず、テンプレートのデータベースをそのまま使います。` : `コピーはなく、参照テスト ${reads} 本と更新テスト ${writes} 本が 1 つのデータベースを共有します。`,
 	},
 }[lang];
@@ -102,16 +105,14 @@ function laneLabel(lane: string) {
 	return (L.lanes as Record<string, string>)[lane] ?? lane.replace(/^Test/, '');
 }
 
-const shown = (variant === 'hero' ? ['pgmem', 'devbox'] : ['pgmem', 'devbox', 'docker']).filter((k) => models[k]);
-const totalsShown = ['pgmem', 'devbox', 'docker'].filter((k) => models[k]);
+const order = ['pgmem', 'testcontainers', 'devbox', 'docker'];
+const shown = (variant === 'hero' ? ['pgmem', models.testcontainers ? 'testcontainers' : 'devbox'] : order).filter((k) => models[k]);
+const totalsShown = order.filter((k) => models[k]);
 const maxTotal = Math.max(...totalsShown.map((k) => models[k].total_ms));
 const legendKinds = kindOrder.filter((k) => shown.some((key) => models[key].spans.some((s) => s.kind === k)));
 
-// Models within 3x of the fastest share one time axis, so the bars are
-// comparable at a glance; a much slower one (docker) gets its own axis.
-const minTotal = Math.min(...shown.map((k) => models[k].total_ms));
-const sharedAxis = Math.max(...shown.map((k) => models[k].total_ms).filter((t) => t <= minTotal * 3));
-const ownAxis = (key: string) => models[key].total_ms > minTotal * 3;
+// One time axis for every timeline shown, so the bars line up.
+const sharedAxis = Math.max(...shown.map((k) => models[k].total_ms));
 
 // Rows of one timeline: TestMain and the shared database keep their own
 // rows; every test (its fork, sample load, reset and body) goes into the
@@ -172,7 +173,7 @@ const stepRows = kindOrder.filter((k) => totalsShown.some((key) => models[key].s
 		</ul>
 	</section>
 
-	<p class="intro">{L.slotsNote(models.pgmem.parallel)}</p>
+	<p class="intro">{L.slotsNote(models.pgmem.parallel)} {L.sameAxis}</p>
 	<ul class="legend" aria-label="legend">
 		{legendKinds.map((k) => (
 			<li><span class="swatch" style={`background:${colors[k]}`}></span>{L.kinds[k as keyof typeof L.kinds]}</li>
@@ -181,16 +182,15 @@ const stepRows = kindOrder.filter((k) => totalsShown.some((key) => models[key].s
 
 	{shown.map((key) => {
 		const model = models[key];
-		const own = ownAxis(key);
 		const rs = rows(model);
-		const lay = layout(rs.length, own ? model.total_ms : sharedAxis);
+		const lay = layout(rs.length, sharedAxis);
 		const label = L.models[key as keyof typeof L.models];
 		const id = `modelcase-${key}`;
 		return (
 			<figure class="timeline">
 				<figcaption>
 					<strong>{label.name}</strong> <span class="total">{fmtMs(model.total_ms)} {L.total}</span>
-					<span class="sub">{label.sub}{own ? ` ${L.ownAxis}` : ''}</span>
+					<span class="sub">{label.sub}</span>
 					<span class="sub">{L.copies(model.spans.filter((s) => s.kind === 'fork').length, model.tests.write, model.tests.read)}</span>
 				</figcaption>
 				<div class="scroll">

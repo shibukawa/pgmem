@@ -23,12 +23,12 @@ orders. `go test ./...` runs it on pgmem like any other suite.
 
 `MODELCASE_TRACE=path` makes TestMain write every node as a span
 (`internal/trace`). `cmd/driver` starts the external server for the
-devbox and docker targets, times its boot until `SELECT 1` succeeds, runs
+testcontainers, devbox and docker targets, times its boot until `SELECT 1` succeeds, runs
 the compiled test binary, and prints one JSON line per run with the boot
 time, the binary's wall clock and the spans. `run.sh` ties it together:
 
 ```sh
-RUNS=5 ./run.sh                    # pgmem, devbox and docker
+RUNS=5 ./run.sh                    # pgmem, Testcontainers, devbox and docker
 TARGETS="pgmem devbox" ./run.sh    # without Docker
 ```
 
@@ -39,7 +39,9 @@ and copies the summary to `website/src/data/modelcase.json`, which
 each target is an untimed warm-up: the first execution of a freshly built
 binary pays for page-in and code signing.
 
-devbox uses `bench/alternatives/devbox` (PostgreSQL 18 from nix) run
+testcontainers uses testcontainers-go's postgres module on
+`postgres:18-alpine` in memory (PGDATA on tmpfs, fsync off), one driver process per run so
+every run starts Ryuk as a fresh test process would; devbox uses `bench/alternatives/devbox` (PostgreSQL 18 from nix) run
 directly with `pg_ctl` on a cluster initialized once before timing; docker
 uses `postgres:18-alpine` with `docker run`, disk-backed like
 `bench/alternatives`.

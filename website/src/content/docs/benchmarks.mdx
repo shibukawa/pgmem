@@ -29,9 +29,12 @@ changes.
   the snapshot and loads the sample data into it. All 70 tests call
   `t.Parallel()`, so everything after the snapshot runs at once, as many
   at a time as `-parallel` allows.
-- **One shared server** (native PostgreSQL 18 from devbox, or the official
-  image with `docker run`): the driver starts the server, then the test
-  binary imports the schema and master data into the shared database. The
+- **One shared server**: the official image through testcontainers-go's
+  PostgreSQL module in memory (PGDATA on tmpfs, `fsync`, `synchronous_commit`
+  and `full_page_writes` off, plus the Ryuk reaper a fresh test process
+  starts), native PostgreSQL 18 from devbox, or the official image
+  with `docker run`. The driver starts the server, then the test binary
+  imports the schema and master data into the shared database. The
   read-only tests still run in parallel, on the shared database, but a
   writing test cannot: it truncates the transactional tables, restores
   stock and prices, loads the sample data and runs, and the next writer
@@ -47,7 +50,7 @@ binary. The total is boot plus test binary; the binary's own start-up and
 exit are the few milliseconds the nodes do not cover. Each timeline is the
 run whose total was the median; the first execution of a freshly built
 binary is a warm-up and not recorded. `go test` runs with `-parallel` at
-`GOMAXPROCS`, its default.
+`GOMAXPROCS`, its default. Every timeline shares one time axis.
 
 What to read from it:
 
@@ -69,7 +72,7 @@ What to read from it:
 
 ```sh
 cd bench/modelcase
-RUNS=5 ./run.sh                    # pgmem, devbox and docker
+RUNS=5 ./run.sh                    # pgmem, Testcontainers, devbox and docker
 TARGETS="pgmem devbox" ./run.sh    # without Docker
 ```
 

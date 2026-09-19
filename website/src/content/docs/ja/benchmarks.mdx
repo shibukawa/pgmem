@@ -27,9 +27,12 @@ import ModelCaseChart from '../../../components/ModelCaseChart.astro';
   それぞれスナップショットから自分のフォークを作り、サンプルデータを
   投入します。70 本すべてが `t.Parallel()` を呼ぶので、スナップショット
   以降は `-parallel` の枠いっぱいで一斉に走ります。
-- **共有サーバー 1 台**（devbox のネイティブ PostgreSQL 18、または公式
-  イメージの `docker run`）：ドライバがサーバーを起動し、テストバイナリが
-  共有データベースにスキーマとマスタデータを投入します。参照テストは共有
+- **共有サーバー 1 台**：testcontainers-go の PostgreSQL モジュールで起動した
+  公式イメージをオンメモリで動かしたもの（PGDATA は tmpfs、`fsync`、
+  `synchronous_commit`、`full_page_writes` はオフ、新しいテストプロセスが
+  起動する Ryuk も含む）、devbox のネイティブ PostgreSQL 18、公式イメージの `docker run` の
+  3 種類です。ドライバがサーバーを起動し、テストバイナリが共有データベースに
+  スキーマとマスタデータを投入します。参照テストは共有
   データベース上で並列に走れますが、更新テストはそうはいきません。
   トランザクション系テーブルを TRUNCATE し、在庫と価格を戻し、サンプル
   データを投入してから走り、次の更新テストは順番を待ちます。1 台のサーバー
@@ -43,7 +46,7 @@ import ModelCaseChart from '../../../components/ModelCaseChart.astro';
 テストバイナリの和で、ノードに含まれない数ミリ秒はバイナリ自身の起動と
 終了です。各タイムラインは合計時間が中央値だった実行で、ビルド直後の
 初回実行はウォームアップとして記録しません。`go test` の `-parallel` は
-既定の `GOMAXPROCS` です。
+既定の `GOMAXPROCS` です。タイムラインはすべて同じ時間軸です。
 
 読み取れること：
 
@@ -65,7 +68,7 @@ import ModelCaseChart from '../../../components/ModelCaseChart.astro';
 
 ```sh
 cd bench/modelcase
-RUNS=5 ./run.sh                    # pgmem、devbox、docker
+RUNS=5 ./run.sh                    # pgmem、Testcontainers、devbox、docker
 TARGETS="pgmem devbox" ./run.sh    # Docker なし
 ```
 

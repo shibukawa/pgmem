@@ -2,12 +2,16 @@
 // and prints one JSON line per run: the server boot time it measured, the
 // test binary's wall-clock time, and the trace the binary wrote.
 //
-//	driver -backend pgmem|devbox|docker -runs 5 -testbin bin/store.test
+//	driver -backend pgmem|testcontainers|devbox|docker -runs 5 -testbin bin/store.test
 //
 // pgmem boots inside the test binary, so there is no external boot span.
+// testcontainers starts the official image through testcontainers-go's
+// postgres module the way a Go test suite does (run it once per process:
+// the Ryuk reaper a fresh test process starts is part of the first boot),
 // devbox starts a nix-installed PostgreSQL on an initialized cluster with
-// pg_ctl, docker starts the official image; both are timed until SELECT 1
-// succeeds on the app database, then the test binary runs against it.
+// pg_ctl, docker starts the official image with docker run; all are timed
+// until SELECT 1 succeeds on the app database, then the test binary runs
+// against it.
 package main
 
 import (
@@ -25,6 +29,10 @@ import (
 	"time"
 
 	"github.com/jackc/pgx/v5"
+	_ "github.com/jackc/pgx/v5/stdlib" // the postgres module's SQL driver
+	"github.com/testcontainers/testcontainers-go"
+	"github.com/testcontainers/testcontainers-go/modules/postgres"
+	"github.com/testcontainers/testcontainers-go/wait"
 
 	"github.com/shibukawa/pgmem/bench/modelcase/internal/trace"
 )
@@ -48,12 +56,12 @@ type server interface {
 }
 
 func main() {
-	backend := flag.String("backend", "pgmem", "pgmem | devbox | docker")
+	backend := flag.String("backend", "pgmem", "pgmem | testcontainers | devbox | docker")
 	runs := flag.Int("runs", 5, "how many times to run the suite")
 	warmup := flag.Int("warmup", 1, "untimed runs first: the first execution of a fresh binary pays for page-in and code signing")
 	testbin := flag.String("testbin", "bin/store.test", "the compiled test binary (go test -c ./store)")
 	parallel := flag.Int("parallel", runtime.GOMAXPROCS(0), "-test.parallel for the binary")
-	image := flag.String("image", "postgres:18-alpine", "image for docker")
+	image := flag.String("image", "postgres:18-alpine", "image for testcontainers and docker")
 	devboxDir := flag.String("devbox", "../alternatives/devbox", "directory with devbox.json")
 	flag.Parse()
 
@@ -73,6 +81,8 @@ func main() {
 		s = d
 	case "docker":
 		s = &dockerServer{image: *image}
+	case "testcontainers":
+		s = &tcServer{image: *image}
 	default:
 		fatal(fmt.Errorf("unknown backend %q", *backend))
 	}
@@ -176,6 +186,49 @@ func (d *dockerServer) stop(ctx context.Context) {
 	if d.id != "" {
 		run(ctx, "docker", "rm", "-f", d.id)
 		d.id = ""
+	}
+}
+
+// tcServer: the testcontainers-go postgres module with the wait strategy
+// its documentation recommends, in memory (PGDATA on tmpfs, no fsync). A
+// fresh process also starts the Ryuk reaper container, which a test
+// binary pays for once.
+type tcServer struct {
+	image string
+	c     *postgres.PostgresContainer
+}
+
+func (t *tcServer) start(ctx context.Context) (string, error) {
+	var err error
+	t.c, err = postgres.Run(ctx, t.image,
+		postgres.WithDatabase("app"),
+		postgres.WithUsername("postgres"),
+		postgres.WithPassword("postgres"),
+		postgres.WithSQLDriver("pgx"),
+		testcontainers.WithWaitStrategy(
+			wait.ForLog("database system is ready to accept connections").
+				WithOccurrence(2).WithStartupTimeout(time.Minute)),
+		// In-memory mode: postgres:18 keeps PGDATA under
+		// /var/lib/postgresql/18/docker, mounted as tmpfs, and the server
+		// runs without fsync, synchronous commit and full-page writes,
+		// the usual settings for a throwaway test database.
+		testcontainers.WithTmpfs(map[string]string{"/var/lib/postgresql/18/docker": "rw"}),
+		testcontainers.WithCmdArgs("-c", "fsync=off", "-c", "synchronous_commit=off", "-c", "full_page_writes=off"),
+	)
+	if err != nil {
+		return "", err
+	}
+	dsn, err := t.c.ConnectionString(ctx, "sslmode=disable")
+	if err != nil {
+		return "", err
+	}
+	return dsn, waitReady(ctx, dsn)
+}
+
+func (t *tcServer) stop(ctx context.Context) {
+	if t.c != nil {
+		testcontainers.TerminateContainer(t.c)
+		t.c = nil
 	}
 }
 
