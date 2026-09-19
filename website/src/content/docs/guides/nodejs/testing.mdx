@@ -260,6 +260,43 @@ test.concurrent('imports a file', async () => {
 });
 ```
 
+#### Share the template across read-only files
+
+In most suites, half the files or more only read. Those files need no fork at all: point them at the template server and keep `@pgmem/core/register` for the files that write. Read-only files then take no fork slot, and the pool serves only the writing files.
+
+The template is one PostgreSQL session, multiplexed the way a transaction-mode pooler does: autocommit statements from several files interleave one statement at a time, and a test that awaits something else in between does not hold the session. Only an explicit transaction (`BEGIN`, `$transaction`) holds it; queries from other files then wait for it to end and fail with SQLSTATE 55P03 after `waitTimeoutMs`. Keep read-only tests out of explicit transactions.
+
+With Vitest, split the files into two projects. The global setup exports the template URL next to `server.env()`:
+
+```ts title="test/global-setup.ts"
+Object.assign(process.env, pg.env());
+process.env.PGMEM_TEMPLATE_URL = pg.url;
+```
+
+```ts title="vitest.config.ts"
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    globalSetup: ['./test/global-setup.ts'],
+    projects: [
+      { test: { name: 'read', include: ['test/read/**/*.test.ts'], setupFiles: ['./test/use-template.ts'] } },
+      { test: { name: 'write', include: ['test/write/**/*.test.ts'], setupFiles: ['@pgmem/core/register'] } },
+    ],
+  },
+});
+```
+
+```ts title="test/use-template.ts"
+process.env.DATABASE_URL = process.env.PGMEM_TEMPLATE_URL;
+```
+
+Jest's `projects` with `testMatch` and `setupFiles` work the same way. With node:test, run the two directories as two commands and pass `--import @pgmem/core/register` only to the writing one.
+
+<Aside type="caution">
+A write from a file in the read project stays in the template and is visible to every other read-only file for the rest of the run; forks are unaffected, they start from the snapshot. A writing file sorted into the read directory breaks other files' tests rather than its own, so keep the split by directory strict.
+</Aside>
+
 ## Fork capacity and waiting
 
 `maxForks` on `PgmemServer.start()` caps the default snapshot's live forks; the default comes from memory: a quarter of the server process's memory limit divided by a fork's cost (`shared_buffers` plus about 32 MB), 28 on a 7 GB CI runner. Every registered test file takes a slot because `@pgmem/core/register` creates one fork before import. If the pool is full, registration waits until another file's fork closes. That automatic wait has no deadline.

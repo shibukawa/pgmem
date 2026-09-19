@@ -260,6 +260,43 @@ test.concurrent('ファイルを取り込む', async () => {
 });
 ```
 
+#### 読み取り専用ファイルでテンプレートを共有する
+
+多くのスイートでは、ファイルの半分以上が読むだけです。そうしたファイルにはフォークそのものが要りません。テンプレートサーバーに直接向け、`@pgmem/core/register` は書き込むファイルにだけ使います。読み取り専用ファイルはフォーク枠を消費しなくなり、プールは書き込みファイルだけが使います。
+
+テンプレートは 1 つの PostgreSQL セッションで、トランザクションモードのプーラーと同じように多重化されます。複数ファイルからの autocommit の文は 1 文ずつ交互に実行され、文と文の間で別のものを待っているテストはセッションを握りません。セッションを握るのは明示的なトランザクション（`BEGIN`、`$transaction`）だけで、その間ほかのファイルのクエリは終了を待ち、`waitTimeoutMs` を超えると SQLSTATE 55P03 で失敗します。読み取り専用テストでは明示的なトランザクションを使わないでください。
+
+Vitest ではファイルを 2 つの project に分けます。グローバルセットアップで `server.env()` に加えてテンプレートの URL も export します。
+
+```ts title="test/global-setup.ts"
+Object.assign(process.env, pg.env());
+process.env.PGMEM_TEMPLATE_URL = pg.url;
+```
+
+```ts title="vitest.config.ts"
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    globalSetup: ['./test/global-setup.ts'],
+    projects: [
+      { test: { name: 'read', include: ['test/read/**/*.test.ts'], setupFiles: ['./test/use-template.ts'] } },
+      { test: { name: 'write', include: ['test/write/**/*.test.ts'], setupFiles: ['@pgmem/core/register'] } },
+    ],
+  },
+});
+```
+
+```ts title="test/use-template.ts"
+process.env.DATABASE_URL = process.env.PGMEM_TEMPLATE_URL;
+```
+
+Jest でも `projects` の `testMatch` と `setupFiles` で同じ分け方ができます。node:test では 2 つのディレクトリを別コマンドで実行し、書き込み側にだけ `--import @pgmem/core/register` を渡してください。
+
+<Aside type="caution">
+read 側のファイルからの書き込みはテンプレートに残り、その実行の残りの間、ほかの読み取り専用ファイル全部に見えます。フォークはスナップショットから始まるので影響を受けません。書き込むファイルを read 側のディレクトリに置くと、壊れるのは自分ではなくほかのファイルのテストなので、ディレクトリによる分離は厳密に守ってください。
+</Aside>
+
 ## フォーク数と待機
 
 `PgmemServer.start()` の `maxForks` は既定のスナップショットから作るフォーク数を制限します。既定値はメモリから決まり、サーバープロセスのメモリ上限の 4 分の 1 をフォーク 1 個のコスト（`shared_buffers` + 約 32MB）で割った値で、7GB の CI ランナーなら 28 です。`@pgmem/core/register` は各テストファイルの import 前に 1 つフォークするため、すべてのファイルが枠を使います。プールが満杯なら、ほかのファイルのフォークが閉じるまで register が待ちます。この自動待機に期限はありません。
