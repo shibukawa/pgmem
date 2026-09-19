@@ -111,7 +111,7 @@ python3 "$HERE/compress-aot-data.py" \
   "$ROOT/internal/aot/pgaot/data.bin" \
   "$ROOT/internal/aot/pgaot/data.bin.tmp"
 mv "$ROOT/internal/aot/pgaot/data.bin.tmp" "$ROOT/internal/aot/pgaot/data.bin"
-cp "$HERE/aot-data.go" "$ROOT/internal/aot/pgaot/data_compressed.go"
+cp "$HERE/aot-data.go.txt" "$ROOT/internal/aot/pgaot/data_compressed.go"
 gofmt -w "$ROOT/internal/aot"/*_gen.go
 (cd "$ROOT" && go build ./internal/aot)
 echo "== done: $(du -sh "$ROOT/internal/aot/pgaot" | cut -f1) of generated Go"
