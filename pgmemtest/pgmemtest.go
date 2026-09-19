@@ -128,7 +128,7 @@ func (f *Fixture) Fork(t testing.TB) *pgmem.Server {
 
 // DB returns a database/sql handle (pgx driver, in-process connection) on
 // a fresh fork. Both are closed when t ends. Pools of any size are fine:
-// connections serialize at transaction boundaries.
+// every connection is its own backend process.
 func (f *Fixture) DB(t testing.TB) *sql.DB {
 	t.Helper()
 	db := openDB(f.Fork(t))

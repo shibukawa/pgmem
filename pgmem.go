@@ -3,13 +3,11 @@
 // TCP port. Any PostgreSQL driver can connect to it.
 //
 // The server is PostgreSQL (the PGlite fork) compiled to WebAssembly and then
-// translated to Go ahead of time, running on an in-memory filesystem. It is a
-// single-user, single-session backend: every TCP connection shares one
-// backend session. Connections are multiplexed onto it the way a
-// transaction-mode pooler does: a connection owns the backend for the
-// duration of a transaction block, and others wait. Pools of any size work,
-// but they serialize rather than run in parallel, and session-level state
-// (SET, temp tables) is shared between live connections.
+// translated to Go ahead of time, running on an in-memory filesystem. It
+// runs PostgreSQL's own process model: a postmaster starts a backend process
+// for every connection plus its auxiliary processes, each a module instance
+// on its own goroutine, sharing memory. Sessions, locks and their
+// interactions are PostgreSQL's own.
 package pgmem
 
 import (
@@ -116,8 +114,8 @@ func Start(ctx context.Context, opts Options) (*Server, error) {
 	if err != nil {
 		return nil, fmt.Errorf("unpack pgdata: %w", err)
 	}
-	// A live single-user session cannot run CREATE DATABASE, so extra
-	// setup goes through one standalone child, the way initdb does it.
+	// The role and database are created before the cluster starts, by
+	// one standalone child, the way initdb does it.
 	var setup []string
 	if opts.User != "postgres" {
 		setup = append(setup, "CREATE ROLE "+quoteIdent(opts.User)+" SUPERUSER LOGIN;")

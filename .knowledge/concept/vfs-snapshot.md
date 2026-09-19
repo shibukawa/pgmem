@@ -3,7 +3,7 @@ id: concept:vfs-snapshot
 type: concept
 title: VFS Snapshot Mechanism
 ---
-A fork is a copy-on-write clone of the in-memory vfs data directory (the tree is copied, file bytes are shared until written) plus a fresh single-user backend instance started on that clone.
+A fork is a copy-on-write clone of the in-memory vfs data directory (the tree is copied, file bytes are shared until written) plus a fresh cluster (postmaster and its processes) started on that clone.
 
 ```yaml
 summary:
