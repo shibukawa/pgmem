@@ -37,7 +37,7 @@ ui:
           - {kind: page, id: guides/nodejs/testing, target: decision:node-test-integration, children: [api:node-wrapper, api:reset, api:control-socket, system:node-test-runners]}
   guide_story:  # every language, in this order
     basics: [install with the official client, start, register schema (raw SQL then popular migration tools), seed data (raw SQL, COPY, dbtestify / DbUnit / factory_boy / ORM seeders), connect with official drivers, snapshot and fork by hand]
-    testing: [fresh server per test, prepare once and share with read-only tests (class or file scope), fork or reset per test for writing tests, several templates, parallelism]
+    testing: [fresh server per test, prepare once and share with read-only tests (class or file scope), fork or reset per test for writing tests, read-only files on the template with forks only for writing files (Node: vitest projects split), several templates, parallelism]
   tabs:
     syncKey: lang (Go, Python, Java, Node.js on the top page)
     jvm-build: [Gradle (Kotlin DSL), Gradle (Groovy DSL), Maven]
