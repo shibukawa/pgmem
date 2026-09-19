@@ -264,7 +264,7 @@ test.concurrent('imports a file', async () => {
 
 In most suites, half the files or more only read. Those files need no fork at all: point them at the template server and keep `@pgmem/core/register` for the files that write. Read-only files then take no fork slot, and the pool serves only the writing files.
 
-The template is one PostgreSQL session, multiplexed the way a transaction-mode pooler does: autocommit statements from several files interleave one statement at a time, and a test that awaits something else in between does not hold the session. Only an explicit transaction (`BEGIN`, `$transaction`) holds it; queries from other files then wait for it to end and fail with SQLSTATE 55P03 after `waitTimeoutMs`. Keep read-only tests out of explicit transactions.
+The template is a PostgreSQL cluster like any fork: every connection from every file gets its own backend process, so read-only files run against it in parallel, as they would against a server. Only a file that writes needs a fork of its own.
 
 With Vitest, split the files into two projects. The global setup exports the template URL next to `server.env()`:
 
