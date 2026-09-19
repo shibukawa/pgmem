@@ -18,9 +18,13 @@ type SnapshotOptions struct {
 	// MaxForks caps the number of forks alive at once; Fork blocks until a
 	// fork is closed when the cap is reached. Each fork is a full backend
 	// (its own buffer cache and a copy-on-write view of the data
-	// directory), so this bounds
-	// memory. 0 means runtime.GOMAXPROCS(0), which matches the default
-	// parallelism of go test.
+	// directory), so this bounds memory. 0 derives the cap from memory: a
+	// quarter of the process's memory limit (GOMEMLIMIT, the cgroup limit
+	// or the physical memory, whichever is smallest) divided by the cost
+	// of one fork (shared_buffers plus about 32 MB), which is 28 on a 7 GB
+	// CI runner with the default shared_buffers. A slot costs nothing until
+	// a fork occupies it, so this is a ceiling, not a reservation. When the
+	// memory cannot be determined the cap is runtime.GOMAXPROCS(0).
 	MaxForks int
 }
 
@@ -44,7 +48,7 @@ func (s *Server) Snapshot(ctx context.Context, opts SnapshotOptions) (*Snapshot,
 		return nil, errors.New("pgmem: server is closed")
 	}
 	if opts.MaxForks <= 0 {
-		opts.MaxForks = runtime.GOMAXPROCS(0)
+		opts.MaxForks = defaultMaxForks(s.opts.Params, memoryLimit(), runtime.GOMAXPROCS(0))
 	}
 	// acquire waits for any open transaction to end, so the copy is taken
 	// between transactions; CHECKPOINT then flushes every dirty page. A
@@ -122,6 +126,10 @@ func (sn *Snapshot) Close() error {
 
 // Wait blocks until every fork has been closed.
 func (sn *Snapshot) Wait() { sn.forks.Wait() }
+
+// MaxForks is the cap on forks alive at once: SnapshotOptions.MaxForks, or
+// the memory-derived default when it was 0.
+func (sn *Snapshot) MaxForks() int { return cap(sn.slots) }
 
 func (sn *Snapshot) logf(format string, args ...any) {
 	if sn.opts.Log != nil {

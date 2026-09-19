@@ -207,7 +207,7 @@ void auditTrail(@PgmemFork("audit") DataSource audit) { /* ... */ }
 
 ## Parallel runs
 
-JUnit's parallel execution works; forks are independent. `maxForks(n)` caps live forks per template (default: available processors). When all slots are occupied, a new fork waits. `forkTimeout(Duration)` makes that wait fail with `pool_timeout`; without it, the wait has no deadline.
+JUnit's parallel execution works; forks are independent. `maxForks(n)` caps live forks per template (default: a quarter of the server's memory limit divided by a fork's cost, 28 on a 7 GB CI runner). When all slots are occupied, a new fork waits. `forkTimeout(Duration)` makes that wait fail with `pool_timeout`; without it, the wait has no deadline.
 
 ```java
 import java.time.Duration;

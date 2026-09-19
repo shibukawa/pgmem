@@ -46,8 +46,11 @@ type Options struct {
 	// in-process; dsn is for tools that need a connection string.
 	Prepare func(ctx context.Context, db *sql.DB, dsn string) error
 	// MaxForks caps the forks alive at once; Fork and the handle helpers
-	// block until one is closed when the cap is reached. 0 means
-	// runtime.GOMAXPROCS(0), the default parallelism of go test.
+	// block until one is closed when the cap is reached. 0 means the pgmem
+	// default, a quarter of the memory limit divided by a fork's cost (see
+	// pgmem.SnapshotOptions). go test itself runs at most -parallel tests
+	// at once (default GOMAXPROCS), so raise that too when tests wait on
+	// something other than the CPU.
 	MaxForks int
 }
 

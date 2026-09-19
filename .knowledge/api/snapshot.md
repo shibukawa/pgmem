@@ -18,7 +18,7 @@ api:
     - Close(): rejects new forks; live forks keep their own copies
     - Wait(): blocks until every fork is closed
   options:
-    - MaxForks int (0 = GOMAXPROCS)
+    - MaxForks int (0 = memory limit / 4 / (shared_buffers + 32 MB); GOMAXPROCS when memory is unknown)
   measured: snapshot ~10ms, fork ~20ms (metric:fork-cost)
   wrappers: exposed as op snapshot in api:control-protocol
   later: Export(w io.Writer) tar for cross-process reuse; Prewarm

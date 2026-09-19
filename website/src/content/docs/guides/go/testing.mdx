@@ -220,7 +220,7 @@ func TestCancelOrder(t *testing.T) {
 
 ## Parallelism and memory
 
-Every live fork holds its own data-directory copy and buffer cache. `MaxForks` limits forks from one snapshot and defaults to `GOMAXPROCS`, which usually matches `go test`'s default parallelism. Set it on `pgmemtest.Options` or `SnapshotOptions` to trade memory for parallelism.
+Every live fork holds its own data-directory copy and buffer cache. `MaxForks` limits forks from one snapshot; the default is a quarter of the available memory divided by a fork's cost (`shared_buffers` plus about 32 MB), 28 on a 7 GB CI runner. `go test` itself runs at most `-parallel` tests at once (default `GOMAXPROCS`), so raise that too when tests wait on something other than the CPU. Set it on `pgmemtest.Options` or `SnapshotOptions` to trade memory for parallelism.
 
 ```go
 pgmemtest.Options{MaxForks: 4, /* ... */}

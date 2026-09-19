@@ -262,7 +262,7 @@ test.concurrent('imports a file', async () => {
 
 ## Fork capacity and waiting
 
-`maxForks` on `PgmemServer.start()` caps the default snapshot's live forks; the default is the available CPU count. Every registered test file takes a slot because `@pgmem/core/register` creates one fork before import. If the pool is full, registration waits until another file's fork closes. That automatic wait has no deadline.
+`maxForks` on `PgmemServer.start()` caps the default snapshot's live forks; the default comes from memory: a quarter of the server process's memory limit divided by a fork's cost (`shared_buffers` plus about 32 MB), 28 on a 7 GB CI runner. Every registered test file takes a slot because `@pgmem/core/register` creates one fork before import. If the pool is full, registration waits until another file's fork closes. That automatic wait has no deadline.
 
 Explicit `fork()` and `withFork()` calls accept `timeoutMs`; if the slot does not open in time, they fail with `PgmemError` code `pool_timeout`.
 

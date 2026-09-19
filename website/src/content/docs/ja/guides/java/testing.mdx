@@ -207,7 +207,7 @@ void auditTrail(@PgmemFork("audit") DataSource audit) { /* ... */ }
 
 ## 並列実行
 
-JUnit の並列実行はそのまま使えます。フォーク同士は独立しています。`maxForks(n)` はテンプレートごとの同時フォーク数を制限し（既定は利用可能なプロセッサ数）、枠が埋まると新しいフォークは待ちます。`forkTimeout(Duration)` を指定すると、待機時間が期限を超えたとき `pool_timeout` で失敗します。省略した場合、待機に期限はありません。
+JUnit の並列実行はそのまま使えます。フォーク同士は独立しています。`maxForks(n)` はテンプレートごとの同時フォーク数を制限し（既定はサーバーのメモリ上限の 4 分の 1 をフォーク 1 個のコストで割った値で、7GB の CI ランナーなら 28）、枠が埋まると新しいフォークは待ちます。`forkTimeout(Duration)` を指定すると、待機時間が期限を超えたとき `pool_timeout` で失敗します。省略した場合、待機に期限はありません。
 
 ```java
 import java.time.Duration;

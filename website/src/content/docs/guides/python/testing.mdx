@@ -147,7 +147,7 @@ def audit_dsn(audit_snapshot):
 
 ## Parallel runs
 
-With pytest-xdist, every worker is its own process and starts its own pgmem binary, so each worker prepares its own template and gets its own fork pool. Within a worker, `max_forks` on the session snapshot caps live forks; the default is the available CPU count. Forks hold separate data-directory copies and buffer caches, so raising both the xdist worker count and `max_forks` raises memory use.
+With pytest-xdist, every worker is its own process and starts its own pgmem binary, so each worker prepares its own template and gets its own fork pool. Within a worker, `max_forks` on the session snapshot caps live forks; the default comes from memory: a quarter of the server process's memory limit divided by a fork's cost (`shared_buffers` plus about 32 MB), 28 on a 7 GB CI runner. Forks hold separate data-directory copies and buffer caches, so raising both the xdist worker count and `max_forks` raises memory use.
 
 The built-in fixture waits indefinitely when the pool is full. To set a limit and a deadline, override `pgmem_snapshot` and `pgmem_fork` in `conftest.py`:
 

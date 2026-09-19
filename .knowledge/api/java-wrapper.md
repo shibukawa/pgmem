@@ -31,7 +31,7 @@ api:
     store_gotcha: ExtensionContext.Store lookups fall through to parent contexts, so fork sets are keyed by the scope context's unique id, never by a shared class key
     registration_rule: static @RegisterExtension (or @ExtendWith for defaults); nested classes reuse the outer process and only the owner class's afterAll stops it
     injection: ParameterResolver for Fork, DataSource and String jdbcUrl; pg.fork() for manual use
-    parallel: safe with junit.jupiter.execution.parallel; forks are independent (policy:fork-pool-limit, default availableProcessors)
+    parallel: safe with junit.jupiter.execution.parallel; forks are independent (policy:fork-pool-limit, default from the server's memory budget)
     forked_jvms: each test JVM (Gradle maxParallelForks, surefire forkCount) spawns its own concept:server-process
   threads: one daemon reader thread; CompletableFuture per request id (rule:non-blocking-control-channel)
   later: Spring Boot test auto-configuration (zonky style), Testcontainers JdbcDatabaseContainer adapter
