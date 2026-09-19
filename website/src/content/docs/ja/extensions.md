@@ -36,7 +36,34 @@ Snowball のステミング辞書と、すべてのエンコーディング変�
 
 ## 拡張の追加手順
 
-選定基準は単純です。主要なマネージドサービス（Amazon RDS、Google Cloud SQL）と PGlite の多くが提供している拡張を、ORM から使われるものを優先して入れます。
+選定基準は単純です。主要なマネージドサービス（Amazon RDS、Google Cloud SQL）と PGlite の多くが提供している拡張を、ORM から使われるものを優先して入れます。リリースに入っていない拡張を入れた独自ビルドの pgmem も、同じ手順で作れます。
+
+### エージェントに任せる
+
+リポジトリには、コーディングエージェントにこの手順を一通り実行させるスキル `add-pgmem-extension` が入っています。pgmem のチェックアウト内では Claude Code が `/add-pgmem-extension` として自動で見つけます。他のエージェントやフォークで使うときは、リポジトリからインストールします。
+
+```bash
+npx skills add shibukawa/pgmem --skill add-pgmem-extension
+```
+
+あとは contrib モジュールの名前を挙げて、普通の言葉で頼みます。
+
+> pgmem に pg_surgery を追加して。
+
+スキルはエージェントにドライバースクリプト `skills/add-pgmem-extension/add-extension.sh` を示し、エージェントは次のことをします。
+
+1. `add-extension.sh status` で、同梱済みの拡張と、上流に回帰テストが残っている未同梱の contrib モジュールを一覧します。ピン留めされた PostgreSQL のソースが `wasm/out/src` になければダウンロードします。
+2. `add-extension.sh add <name>` で、`wasm/build.sh` の `CONTRIB_MODULES` に名前を追加し、`contrib/<name>/sql`、`expected`、`data` を `testdata/regress/<name>` にコピーし、Makefile の `REGRESS` の並びを `regress_test.go` に登録します。回帰テストランナーが再現できない psql コマンド、写す必要のある上流の `REGRESS_OPTS`、モジュールがリンクするホストのライブラリがあれば報告します。
+3. エージェントが拡張の一覧を手で編集します。`README.md`、`.knowledge/policy/bundled-extensions.md`、そしてこのページの両言語版です。
+4. `add-extension.sh build` で `wasm/build.sh`（Devbox 経由の Emscripten で `postgres.wasm` と `internal/assets/share.tar.gz` を生成）と `wasm/gen-aot.sh`（wasm2go のフォークで `internal/aot/pgaot` を再生成）を実行します。数分かかり、wasm ツールチェーンが必要なのはこのステップだけです。
+5. `add-extension.sh smoke <name>` で pgmem を起動して `CREATE EXTENSION` を実行し、インストールされたオブジェクトを表示します。`add-extension.sh test <name>` で取り込んだ回帰テストを再生し、上流の期待出力と突き合わせます。
+6. 1 拡張につき 1 コミット、`pgmem: bundle <name>` でコミットします。
+
+PostgreSQL のソースツリー外の拡張は pgvector の形式に従います。リポジトリ・バージョン・チェックサムを書いたロックファイルと、`build.sh` 内の専用のコンパイル手順です。スキルはこの形式を説明しますが、ドライバーは自動化していません。
+
+### 手作業で
+
+ドライバーを使わない場合の同じ手順です。
 
 1. `wasm/build.sh` の `CONTRIB_MODULES` に contrib の名前を追加します。control ファイル、SQL、データファイルは、モジュールと一緒に配布される share ツリーにコピーされます。
 2. PostgreSQL のソースツリー外の拡張は、pgvector と同じように、リポジトリ・バージョン・チェックサムを書いたロックファイルと、`build.sh` のコンパイル手順を追加します。
