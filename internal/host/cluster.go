@@ -441,14 +441,9 @@ func (c *Cluster) shmget(key int32, size uint32, flags int32) int32 {
 	if !ok {
 		return -int32(vfs.ENOMEM)
 	}
-	f, err := os.CreateTemp("", "pgmem-shm-")
+	f, err := newSegmentFile(rounded)
 	if err != nil {
-		c.freeShm(addr, rounded)
-		return -int32(vfs.ENOMEM)
-	}
-	os.Remove(f.Name())
-	if err := f.Truncate(int64(rounded)); err != nil {
-		f.Close()
+		c.logf("shmget: %v", err)
 		c.freeShm(addr, rounded)
 		return -int32(vfs.ENOMEM)
 	}
