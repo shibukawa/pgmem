@@ -16,7 +16,7 @@ import (
 // their files mapped into it at fixed addresses (MapViewOfFile3 with
 // MEM_REPLACE_PLACEHOLDER), which is what mmap(MAP_FIXED) does on Unix.
 // The bookkeeping of the pieces is in placeholder.go; these are the calls.
-// Needs Windows 10 1803 / Server 2019 or later.
+// Needs Windows 10 1803 / Server 2016 or later.
 
 const (
 	memCoalescePlaceholders = 0x00000001
@@ -91,7 +91,14 @@ func (w winOps) toHolder(addr, size uint64, kind pieceKind) error {
 	if kind == pieceView {
 		return unmapViewOfFile2(w.base+uintptr(addr), memPreservePlaceholder)
 	}
-	if err := windows.VirtualFree(w.base+uintptr(addr), uintptr(size), windows.MEM_RELEASE|memPreservePlaceholder); err != nil {
+	// "Frees an allocation back to a placeholder": the documentation does
+	// not say whether dwSize is the allocation's size (as for a split) or
+	// 0 (as for MEM_RELEASE); accept either answer.
+	err := windows.VirtualFree(w.base+uintptr(addr), uintptr(size), windows.MEM_RELEASE|memPreservePlaceholder)
+	if err != nil {
+		err = windows.VirtualFree(w.base+uintptr(addr), 0, windows.MEM_RELEASE|memPreservePlaceholder)
+	}
+	if err != nil {
 		return fmt.Errorf("release to placeholder at %#x+%#x: %w", addr, size, err)
 	}
 	return nil

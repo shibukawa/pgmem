@@ -36,8 +36,8 @@ type piece struct {
 // pageOps are the system calls the bookkeeping drives; addresses are
 // offsets into the region.
 type pageOps interface {
-	// split turns [addr, addr+size), inside one placeholder, into a
-	// placeholder of its own.
+	// split divides the placeholder starting at addr: its first size
+	// bytes stay, the rest becomes a placeholder of its own.
 	split(addr, size uint64) error
 	// coalesce merges the adjacent placeholders that exactly cover
 	// [addr, addr+size) into one.
@@ -162,21 +162,16 @@ func (r *region) makeHolder(start, end uint64) error {
 		}
 		r.pieces[k].kind = pieceHolder
 	}
-	// trim the edges: a placeholder that extends past an edge is split there
+	// trim the edges. VirtualFree(MEM_PRESERVE_PLACEHOLDER) splits a
+	// placeholder from its start: the first size bytes stay, the rest
+	// becomes a placeholder of its own. So a piece that begins before start
+	// is split at start, and then the piece that begins at start (or the
+	// last one) is split at end.
 	if p := r.pieces[i]; p.start < start {
-		cut := end
-		if p.end < cut {
-			cut = p.end
-		}
-		// one call carves [start, cut) out; when the piece also runs past
-		// end, that is the whole range and the far edge is cut too
-		if err := r.ops.split(start, cut-start); err != nil {
+		if err := r.ops.split(p.start, start-p.start); err != nil {
 			return err
 		}
 		r.splitAt(start)
-		if p.end > end {
-			r.splitAt(end)
-		}
 		i, j = r.overlapping(start, end)
 	}
 	if p := r.pieces[j-1]; p.end > end {

@@ -16,5 +16,5 @@ rule:
   standalone: initdb's children and the setup child still run postgres --single with local shm/semaphores (internal/host/single.go)
   cancel: a statement that makes no system call is cancelled at its next one
   cost: metric:fork-cost (fork 3.8 ms, first connection 2.4 ms, close 0.1 ms; one test 7.7 ms against 6.2 ms in the removed single-user model)
-  windows: the reservation is a placeholder (VirtualAlloc2 MEM_RESERVE_PLACEHOLDER); heap pieces are committed and segment views mapped with MEM_REPLACE_PLACEHOLDER (MapViewOfFile3), pieces tracked in internal/aot/placeholder.go (tested with a fake); segment files are delete-on-close; Windows 10 1803 / Server 2019 or later
+  windows: the reservation is a placeholder (VirtualAlloc2 MEM_RESERVE_PLACEHOLDER); heap pieces are committed and segment views mapped with MEM_REPLACE_PLACEHOLDER (MapViewOfFile3), pieces tracked in internal/aot/placeholder.go (tested with a fake); segment files are delete-on-close; Windows 10 1803 / Server 2016 or later
 ```
