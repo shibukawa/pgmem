@@ -287,7 +287,7 @@ L27:
 func F_yy_fatal_error_5(m *base.Module, l0 int32) {
 	var v7 int32
 	_ = v7
-	Fn14046(m, l0, int32(_a_F_yy_fatal_error_5_0), int32(51), int32(_a_F_yy_fatal_error_5_1), int32(_a_F_yy_fatal_error_5_2))
+	Fn14026(m, l0, int32(_a_F_yy_fatal_error_5_0), int32(51), int32(_a_F_yy_fatal_error_5_1), int32(_a_F_yy_fatal_error_5_2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return

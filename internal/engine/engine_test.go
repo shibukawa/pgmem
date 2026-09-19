@@ -1,9 +1,7 @@
 package engine
 
 import (
-	"bytes"
 	"context"
-	"encoding/binary"
 	"os"
 	"testing"
 
@@ -54,31 +52,6 @@ func newEngine(t *testing.T) *Engine {
 	return e
 }
 
-func startupPacket(params map[string]string) []byte {
-	var body bytes.Buffer
-	binary.Write(&body, binary.BigEndian, uint32(196608)) // protocol 3.0
-	for k, v := range params {
-		body.WriteString(k)
-		body.WriteByte(0)
-		body.WriteString(v)
-		body.WriteByte(0)
-	}
-	body.WriteByte(0)
-	var pkt bytes.Buffer
-	binary.Write(&pkt, binary.BigEndian, uint32(body.Len()+4))
-	pkt.Write(body.Bytes())
-	return pkt.Bytes()
-}
-
-func simpleQuery(q string) []byte {
-	var pkt bytes.Buffer
-	pkt.WriteByte('Q')
-	binary.Write(&pkt, binary.BigEndian, uint32(len(q)+1+4))
-	pkt.WriteString(q)
-	pkt.WriteByte(0)
-	return pkt.Bytes()
-}
-
 func TestInitdbAndQuery(t *testing.T) {
 	e := newEngine(t)
 	fs, err := e.BaseFS()
@@ -91,39 +64,20 @@ func TestInitdbAndQuery(t *testing.T) {
 	if !fs.Exists(PGData + "/PG_VERSION") {
 		t.Fatal("PG_VERSION missing after initdb")
 	}
-	b, err := e.Start(fs, StartOptions{})
+	// a standalone child, the way the setup step creates databases
+	if err := e.ExecStandalone(fs, "postgres", "CREATE TABLE t(id int, name text);\n\nINSERT INTO t VALUES (1,'a'),(2,'b');\n"); err != nil {
+		t.Fatalf("standalone: %v", err)
+	}
+	// the postmaster and its processes come up on the same directory
+	cl, err := e.StartCluster(context.Background(), fs, StartOptions{}, nil)
 	if err != nil {
-		t.Fatal(err)
+		t.Fatalf("cluster: %v", err)
 	}
-	defer b.Close()
-	resp, err := b.Startup(startupPacket(map[string]string{"user": "postgres", "database": "postgres"}))
-	if err != nil {
-		t.Fatalf("startup: %v", err)
+	if cl.Dead() {
+		t.Fatal("postmaster exited")
 	}
-	if len(resp) == 0 || resp[0] != 'R' {
-		t.Fatalf("unexpected startup response %q\nlog: %s", resp, b.Log())
+	cl.Kill()
+	if !cl.Dead() {
+		t.Fatalf("postmaster still alive after Kill\n%s", cl.Log())
 	}
-	out, err := b.Exec(simpleQuery("SELECT 1+1 AS two, version()"))
-	if err != nil {
-		t.Fatalf("exec: %v", err)
-	}
-	if !bytes.Contains(out, []byte("PostgreSQL")) || out[0] != 'T' {
-		t.Fatalf("unexpected response %q\nlog: %s", out, b.Log())
-	}
-	// An error must not kill the session.
-	out, err = b.Exec(simpleQuery("SELECT * FROM no_such_table"))
-	if err != nil {
-		t.Fatalf("exec error query: %v", err)
-	}
-	if out[0] != 'E' {
-		t.Fatalf("expected ErrorResponse, got %q", out)
-	}
-	out, err = b.Exec(simpleQuery("CREATE TABLE t(id int, name text); INSERT INTO t VALUES (1,'a'),(2,'b'); SELECT count(*) FROM t"))
-	if err != nil {
-		t.Fatalf("exec ddl: %v", err)
-	}
-	if !bytes.Contains(out, []byte("2")) || bytes.Contains(out, []byte{'E', 0, 0}) {
-		t.Fatalf("unexpected ddl response %q\nlog: %s", out, b.Log())
-	}
-	t.Logf("server log:\n%s", b.Log())
 }

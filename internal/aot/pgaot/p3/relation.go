@@ -10,7 +10,7 @@ func F_GetRelationPublications(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13850(m, l0, int32(53))
+	v3 = Fn13830(m, l0, int32(53))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

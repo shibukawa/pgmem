@@ -239,7 +239,7 @@ func F_bloom_get_procinfo(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13872(m, l0, l1, int32(_a_F_bloom_get_procinfo_0), int32(739), int32(_a_F_bloom_get_procinfo_1))
+	v6 = Fn13852(m, l0, l1, int32(_a_F_bloom_get_procinfo_0), int32(739), int32(_a_F_bloom_get_procinfo_1))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

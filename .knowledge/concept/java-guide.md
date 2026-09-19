@@ -27,7 +27,7 @@ summary:
     named_templates: 'builder().template("audit", t -> ...) and @PgmemFork("audit")'
     guidance: decision:fork-or-not
   parallel: junit.jupiter.execution.parallel works; maxForks bounds live forks and forkTimeout turns a full pool into a failure (policy:fork-pool-limit); Gradle maxParallelForks JVMs each start their own binary (concept:server-process)
-  pools: HikariCP on a fork works; connections serialize at transaction boundaries (rule:single-session-per-backend); close connections before snapshot or it fails with busy after 30 s
+  pools: HikariCP on a fork works as on a server (rule:process-per-connection); close connections before snapshot or it fails with busy after 30 s
   spring_boot: auto-configuration is planned; today set spring.datasource.url from a fork's jdbcUrl in a DynamicPropertySource
   limits: concept:limits
 ```

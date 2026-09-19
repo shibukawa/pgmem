@@ -2298,7 +2298,7 @@ L149:
 L150:
 	;
 	v882 = *(*int32)(unsafe.Add(mBase, _c_F_BackgroundWriterMain[42]))
-	F_s_lock(m, v882+int32(4), int32(_a_F_BackgroundWriterMain_20), int32(1416), int32(_a_F_BackgroundWriterMain_21))
+	F_s_lock(m, v882+int32(4), int32(_a_F_BackgroundWriterMain_20), int32(1404), int32(_a_F_BackgroundWriterMain_21))
 	mBase = m.M
 	v889 = m.ExcPending
 	if v889 != 0 {
@@ -2712,7 +2712,7 @@ func F_BogusGetChunkContext(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13842(m, l0, int32(_a_F_BogusGetChunkContext_0), int32(307), int32(_a_F_BogusGetChunkContext_1))
+	v5 = Fn13822(m, l0, int32(_a_F_BogusGetChunkContext_0), int32(307), int32(_a_F_BogusGetChunkContext_1))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -10896,7 +10896,7 @@ L64:
 func F_btadjustmembers(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	var v7 int32
 	_ = v7
-	Fn13943(m, l0, l1, l2, l3, int32(403))
+	Fn13923(m, l0, l1, l2, l3, int32(403))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return
@@ -11608,7 +11608,7 @@ func F_bttext_pattern_sortsupport(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13875(m, l0, int32(25))
+	v3 = Fn13855(m, l0, int32(25))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

@@ -1111,7 +1111,7 @@ func F_bpchar_sortsupport(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13876(m, l0, int32(1042))
+	v3 = Fn13856(m, l0, int32(1042))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

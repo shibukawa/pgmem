@@ -22,7 +22,7 @@ Ready-made wrappers live in this repository:
 
 ```
 pgmem [-port N] [-database NAME] [-user NAME] [-params k=v,k=v] [-log] [-no-stdin]
-      [-control ADDR] [-wait-timeout D] [-single]
+      [-control ADDR]
 ```
 
 Build it with `go build -ldflags="-s -w" ./cmd/pgmem` (about 37 MB, pure
@@ -56,13 +56,8 @@ Behaviour that a wrapper can rely on:
 - `-control 127.0.0.1:0` also serves the control protocol on a loopback
   socket (see [Control socket](#control-socket)); the ready line then
   carries `"control":{"addr":"127.0.0.1:54400","token":"<hex>","url":"pgmem-control://<hex>@127.0.0.1:54400"}`.
-- `-wait-timeout 2s` is how long a connection may wait behind another
-  connection's idle transaction before it is ended with SQLSTATE 55P03
-  (negative waits forever).
-
-- `-single` runs PostgreSQL in single-user mode (one shared session, see
-  "Limits" in the README) instead of the default postmaster with a backend
-  process per connection.
+- `-wait-timeout` is accepted and ignored (connections used to share one
+  session; each has its own backend process now).
 
 One process hosts the template, its snapshots and every fork; a fork is a
 full PostgreSQL cluster (postmaster, auxiliary processes, a backend per
@@ -176,10 +171,7 @@ proc.getOutputStream().close();   // closes the child's stdin: server exits
 ```
 
 Connection pools of any size work: every connection is its own backend
-process, as on a real server. With `-single` each server is one session
-and connections are serialized at transaction boundaries the way a
-transaction-mode pooler does (see "Limits" in the README for what that
-means for `SET` and temp tables).
+process, as on a real server.
 
 ## Shipping the binary
 

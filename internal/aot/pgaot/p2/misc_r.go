@@ -7746,7 +7746,7 @@ func F_r_remove_second_order_prefix_1(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14005(m, l0, int32(_a_F_r_remove_second_order_prefix_1_0), int32(_a_F_r_remove_second_order_prefix_1_1), int32(_a_F_r_remove_second_order_prefix_1_2))
+	v5 = Fn13985(m, l0, int32(_a_F_r_remove_second_order_prefix_1_0), int32(_a_F_r_remove_second_order_prefix_1_1), int32(_a_F_r_remove_second_order_prefix_1_2))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

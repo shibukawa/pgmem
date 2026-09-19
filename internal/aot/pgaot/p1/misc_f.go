@@ -2237,7 +2237,7 @@ func F_fastgetattr_3(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13898(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_3_0))
+	v6 = Fn13878(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_3_0))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

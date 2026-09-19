@@ -558,7 +558,7 @@ func F_get_publication_name(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v8 = Fn13924(m, l0, l1, int32(4), int32(_a_F_get_publication_name_0), int32(3796), int32(_a_F_get_publication_name_1), int32(51))
+	v8 = Fn13904(m, l0, l1, int32(4), int32(_a_F_get_publication_name_0), int32(3796), int32(_a_F_get_publication_name_1), int32(51))
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int32(0)

@@ -2526,7 +2526,7 @@ func F_lappend_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13959(m, l0, l1, int64(4294967768))
+	v4 = Fn13939(m, l0, l1, int64(4294967768))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2539,7 +2539,7 @@ func F_latin2_to_win1250(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13958(m, l0, int32(_a_F_latin2_to_win1250_0), int32(29), int32(9))
+	v5 = Fn13938(m, l0, int32(_a_F_latin2_to_win1250_0), int32(29), int32(9))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -3399,7 +3399,7 @@ func F_likesel(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14010(m, l0, int32(0))
+	v3 = Fn13990(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -4264,7 +4264,7 @@ L14:
 L15:
 	;
 	v59 = l0 + int32(8)
-	v61 = Fn13900(m, v59, int32(47))
+	v61 = Fn13880(m, v59, int32(47))
 	mBase = m.M
 	goto L17
 L16:
@@ -4675,7 +4675,7 @@ func F_locate_agg_of_level(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14000(m, l0, l1, int32(1044), int32(-1))
+	v5 = Fn13980(m, l0, l1, int32(1044), int32(-1))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -4688,7 +4688,7 @@ func F_locate_var_of_level(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14000(m, l0, l1, int32(902), int32(-1))
+	v5 = Fn13980(m, l0, l1, int32(902), int32(-1))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -6085,7 +6085,7 @@ func F_ltrim1(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13878(m, l0, int32(0), int32(1))
+	v4 = Fn13858(m, l0, int32(0), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

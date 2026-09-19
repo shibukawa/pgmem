@@ -2617,7 +2617,7 @@ func F_timetypmodin(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14023(m, l0, int32(0))
+	v3 = Fn14003(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -6086,7 +6086,7 @@ func F_tsm_handler_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_tsm_handler_in_0), int32(372), int32(_a_F_tsm_handler_in_1), int32(_a_F_tsm_handler_in_2), int32(_a_F_tsm_handler_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_tsm_handler_in_0), int32(372), int32(_a_F_tsm_handler_in_1), int32(_a_F_tsm_handler_in_2), int32(_a_F_tsm_handler_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -6099,7 +6099,7 @@ func F_tsm_system_handler(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn14029(m, l0, int32(257), int32(286), int32(285), int32(284), int32(283), int32(282), int32(700))
+	v9 = Fn14009(m, l0, int32(257), int32(286), int32(285), int32(284), int32(283), int32(282), int32(700))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
@@ -8760,7 +8760,7 @@ L92:
 	}
 L93:
 	;
-	v360 = Fn14003(m, l0, int32(121))
+	v360 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L94
 L94:
@@ -8804,7 +8804,7 @@ L98:
 	}
 L99:
 	;
-	v376 = Fn14003(m, l0, int32(121))
+	v376 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L100
 L100:
@@ -8859,7 +8859,7 @@ L105:
 	}
 L106:
 	;
-	v405 = Fn14003(m, l0, int32(121))
+	v405 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L107
 L107:
@@ -8900,7 +8900,7 @@ L112:
 	goto L110
 L113:
 	;
-	v427 = Fn14003(m, l0, int32(121))
+	v427 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L116
 L114:
@@ -9127,7 +9127,7 @@ L139:
 	}
 L140:
 	;
-	v513 = Fn14003(m, l0, int32(121))
+	v513 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L141
 L141:
@@ -9208,7 +9208,7 @@ L150:
 	}
 L151:
 	;
-	v552 = Fn14003(m, l0, int32(121))
+	v552 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L152
 L152:
@@ -9385,7 +9385,7 @@ L171:
 	}
 L172:
 	;
-	v622 = Fn14003(m, l0, int32(121))
+	v622 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L173
 L173:
@@ -9518,7 +9518,7 @@ L187:
 	}
 L188:
 	;
-	v678 = Fn14003(m, l0, int32(121))
+	v678 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L189
 L189:
@@ -9658,7 +9658,7 @@ L204:
 	}
 L205:
 	;
-	v729 = Fn14003(m, l0, int32(121))
+	v729 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L206
 L206:
@@ -9762,7 +9762,7 @@ L218:
 	}
 L219:
 	;
-	v775 = Fn14003(m, l0, int32(121))
+	v775 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L220
 L220:
@@ -10199,7 +10199,7 @@ L269:
 	}
 L270:
 	;
-	v954 = Fn14003(m, l0, int32(110))
+	v954 = Fn13983(m, l0, int32(110))
 	mBase = m.M
 	goto L271
 L271:
@@ -11798,7 +11798,7 @@ L481:
 	}
 L482:
 	;
-	v1622 = Fn14003(m, l0, int32(110))
+	v1622 = Fn13983(m, l0, int32(110))
 	mBase = m.M
 	goto L483
 L483:
@@ -11903,7 +11903,7 @@ L493:
 	}
 L494:
 	;
-	v1650 = Fn14003(m, l0, int32(121))
+	v1650 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L495
 L495:
@@ -12637,7 +12637,7 @@ L596:
 	goto L598
 L597:
 	;
-	v2008 = Fn14003(m, l0, int32(121))
+	v2008 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L599
 L598:
@@ -12709,7 +12709,7 @@ L605:
 	}
 L606:
 	;
-	v2035 = Fn14003(m, l0, int32(121))
+	v2035 = Fn13983(m, l0, int32(121))
 	mBase = m.M
 	goto L607
 L607:
@@ -13846,7 +13846,7 @@ func F_typeidTypeRelid(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14034(m, l0, int32(_a_F_typeidTypeRelid_0), int32(676), int32(_a_F_typeidTypeRelid_1), int32(_a_F_typeidTypeRelid_2), int32(82))
+	v7 = Fn14014(m, l0, int32(_a_F_typeidTypeRelid_0), int32(676), int32(_a_F_typeidTypeRelid_1), int32(_a_F_typeidTypeRelid_2), int32(82))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

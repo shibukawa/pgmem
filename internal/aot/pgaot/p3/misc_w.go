@@ -118,7 +118,7 @@ func F_win1250_to_latin2(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13958(m, l0, int32(_a_F_win1250_to_latin2_0), int32(9), int32(29))
+	v5 = Fn13938(m, l0, int32(_a_F_win1250_to_latin2_0), int32(9), int32(29))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -131,7 +131,7 @@ func F_win1251_to_iso(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13958(m, l0, int32(_a_F_win1251_to_iso_0), int32(25), int32(23))
+	v5 = Fn13938(m, l0, int32(_a_F_win1251_to_iso_0), int32(25), int32(23))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -144,7 +144,7 @@ func F_win1251_to_koi8r(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13958(m, l0, int32(_a_F_win1251_to_koi8r_0), int32(22), int32(23))
+	v5 = Fn13938(m, l0, int32(_a_F_win1251_to_koi8r_0), int32(22), int32(23))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -157,7 +157,7 @@ func F_win1251_to_mic(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13951(m, l0, int32(_a_F_win1251_to_mic_0), int32(23), int32(139))
+	v5 = Fn13931(m, l0, int32(_a_F_win1251_to_mic_0), int32(23), int32(139))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

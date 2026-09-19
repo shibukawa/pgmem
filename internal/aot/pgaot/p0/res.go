@@ -10,7 +10,7 @@ func F_ResOwnerPrintFile(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13858(m, l0, int32(_a_F_ResOwnerPrintFile_0))
+	v3 = Fn13838(m, l0, int32(_a_F_ResOwnerPrintFile_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

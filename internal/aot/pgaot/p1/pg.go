@@ -9,7 +9,7 @@ import (
 func F_PGSemaphoreUnlock(m *base.Module, l0 int32) {
 	var v7 int32
 	_ = v7
-	Fn13857(m, l0, int32(_a_F_PGSemaphoreUnlock_0), int32(360), int32(_a_F_PGSemaphoreUnlock_1), int32(4))
+	Fn13837(m, l0, int32(_a_F_PGSemaphoreUnlock_0), int32(360), int32(_a_F_PGSemaphoreUnlock_1), int32(4))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return
@@ -4280,7 +4280,7 @@ func F_pg_check_visible(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13981(m, l0, int32(0), int32(1))
+	v4 = Fn13961(m, l0, int32(0), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -6773,7 +6773,7 @@ func F_pg_ddl_command_send(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_ddl_command_send_0), int32(359), int32(_a_F_pg_ddl_command_send_1), int32(_a_F_pg_ddl_command_send_2), int32(_a_F_pg_ddl_command_send_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_ddl_command_send_0), int32(359), int32(_a_F_pg_ddl_command_send_1), int32(_a_F_pg_ddl_command_send_2), int32(_a_F_pg_ddl_command_send_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -15413,7 +15413,7 @@ func F_pg_node_tree_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_node_tree_in_0), int32(334), int32(_a_F_pg_node_tree_in_1), int32(_a_F_pg_node_tree_in_2), int32(_a_F_pg_node_tree_in_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_node_tree_in_0), int32(334), int32(_a_F_pg_node_tree_in_1), int32(_a_F_pg_node_tree_in_2), int32(_a_F_pg_node_tree_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

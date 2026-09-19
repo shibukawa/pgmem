@@ -173,7 +173,7 @@ L8:
 func F_pointerhash_stat(m *base.Module, l0 int32) {
 	var v4 int32
 	_ = v4
-	Fn13996(m, l0, int32(_a_F_pointerhash_stat_0))
+	Fn13976(m, l0, int32(_a_F_pointerhash_stat_0))
 	v4 = m.ExcPending
 	if v4 != 0 {
 		return

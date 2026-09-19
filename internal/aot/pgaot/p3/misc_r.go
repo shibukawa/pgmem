@@ -6808,7 +6808,7 @@ func F_r_remove_second_order_prefix_2(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14005(m, l0, int32(_a_F_r_remove_second_order_prefix_2_0), int32(_a_F_r_remove_second_order_prefix_2_1), int32(_a_F_r_remove_second_order_prefix_2_2))
+	v5 = Fn13985(m, l0, int32(_a_F_r_remove_second_order_prefix_2_0), int32(_a_F_r_remove_second_order_prefix_2_1), int32(_a_F_r_remove_second_order_prefix_2_2))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -21552,7 +21552,7 @@ func F_reservoir_init_selection_state(m *base.Module, l0 int32, l1 int32) {
 	var v79 float64
 	_ = v79
 	v6 = l0 + int32(8)
-	v8 = Fn13986(m, int64(32))
+	v8 = Fn13966(m, int64(32))
 	mBase = m.M
 	v9 = base.I64_extend_i32_u(v8)
 	v12 = v9 + int64(4354685564936845354)

@@ -15215,7 +15215,7 @@ func F_pg_mcv_list_recv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_pg_mcv_list_recv_0), int32(1511), int32(_a_F_pg_mcv_list_recv_1), int32(_a_F_pg_mcv_list_recv_2), int32(_a_F_pg_mcv_list_recv_3))
+	v7 = Fn13854(m, l0, int32(_a_F_pg_mcv_list_recv_0), int32(1511), int32(_a_F_pg_mcv_list_recv_1), int32(_a_F_pg_mcv_list_recv_2), int32(_a_F_pg_mcv_list_recv_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -23078,7 +23078,7 @@ func F_pg_strlower(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 in
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13987(m, l0, l1, l2, l3, l4, int32(0), int32(_a_F_pg_strlower_0), int32(1284))
+	v9 = Fn13967(m, l0, l1, l2, l3, l4, int32(0), int32(_a_F_pg_strlower_0), int32(1284))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
@@ -24131,7 +24131,7 @@ L17:
 L18:
 	;
 	v49 = int32(0)
-	if int32(0)|base.B2i32(v45 == v49) == v49 {
+	if int32(1)|base.B2i32(v45 == v49) == v49 {
 		goto L20
 	} else {
 		goto L21

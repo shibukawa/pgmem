@@ -40,9 +40,10 @@ type Snapshot struct {
 	forks  sync.WaitGroup
 }
 
-// Snapshot checkpoints the server and clones its data directory (file
-// contents are shared copy-on-write, so this is cheap). The
-// server keeps running and later writes to it do not affect the snapshot.
+// Snapshot stops the server, clones its data directory (file contents are
+// shared copy-on-write, so this is cheap) and starts it again; client
+// connections keep working. Later writes to the server do not affect the
+// snapshot.
 func (s *Server) Snapshot(ctx context.Context, opts SnapshotOptions) (*Snapshot, error) {
 	if s.closed.Load() {
 		return nil, errors.New("pgmem: server is closed")
@@ -52,38 +53,15 @@ func (s *Server) Snapshot(ctx context.Context, opts SnapshotOptions) (*Snapshot,
 	}
 	fsOpts := s.opts
 	fsOpts.Port = 0
-	if s.cl != nil {
-		// A postmaster's data directory is only consistent when it is shut
-		// down: stop the cluster (a fast shutdown checkpoints), copy the
-		// directory and start it again. Client sessions get a new backend
-		// on their next message (see cluster.go).
-		fs, err := s.cloneStopped(ctx)
-		if err != nil {
-			return nil, err
-		}
-		return &Snapshot{e: s.e, opts: fsOpts, fs: fs, slots: make(chan struct{}, opts.MaxForks)}, nil
-	}
-	// acquire waits for any open transaction to end, so the copy is taken
-	// between transactions; CHECKPOINT then flushes every dirty page. A
-	// connection left idle in a transaction would block this forever, so
-	// ctx bounds the wait.
-	if err := s.acquire(ctx, 0, false); err != nil {
-		return nil, fmt.Errorf("pgmem: snapshot waited for an open transaction to end (commit or close every connection first): %w", err)
-	}
-	defer s.release()
-	out, err := s.b.Exec(simpleQuery("CHECKPOINT"))
+	// A postmaster's data directory is only consistent when it is shut
+	// down: stop the cluster (a fast shutdown checkpoints), copy the
+	// directory and start it again. Client sessions get a new backend on
+	// their next message (see cluster.go).
+	fs, err := s.cloneStopped(ctx)
 	if err != nil {
-		return nil, fmt.Errorf("checkpoint: %w", err)
+		return nil, err
 	}
-	if err := checkNoError(out); err != nil {
-		return nil, fmt.Errorf("checkpoint: %w", err)
-	}
-	return &Snapshot{
-		e:     s.e,
-		opts:  fsOpts,
-		fs:    s.fs.Clone(),
-		slots: make(chan struct{}, opts.MaxForks),
-	}, nil
+	return &Snapshot{e: s.e, opts: fsOpts, fs: fs, slots: make(chan struct{}, opts.MaxForks)}, nil
 }
 
 // forkWarnAfter is how long Fork waits for a free slot before logging.

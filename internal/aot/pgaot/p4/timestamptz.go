@@ -23,7 +23,7 @@ func F_timestamptz_bin(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v13 int32
 	_ = v13
-	v10 = Fn14020(m, l0, int32(_a_F_timestamptz_bin_0), int32(_a_F_timestamptz_bin_1), int32(_a_F_timestamptz_bin_2), int32(_a_F_timestamptz_bin_3), int32(_a_F_timestamptz_bin_4), int32(_a_F_timestamptz_bin_5), int32(_a_F_timestamptz_bin_6), int32(_a_F_timestamptz_bin_7))
+	v10 = Fn14000(m, l0, int32(_a_F_timestamptz_bin_0), int32(_a_F_timestamptz_bin_1), int32(_a_F_timestamptz_bin_2), int32(_a_F_timestamptz_bin_3), int32(_a_F_timestamptz_bin_4), int32(_a_F_timestamptz_bin_5), int32(_a_F_timestamptz_bin_6), int32(_a_F_timestamptz_bin_7))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return int32(0)
@@ -1354,7 +1354,7 @@ func F_timestamptz_izone(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14021(m, l0, int32(_a_F_timestamptz_izone_0), int32(_a_F_timestamptz_izone_1), int32(_a_F_timestamptz_izone_2), int64(-1000000), int32(_a_F_timestamptz_izone_3))
+	v7 = Fn14001(m, l0, int32(_a_F_timestamptz_izone_0), int32(_a_F_timestamptz_izone_1), int32(_a_F_timestamptz_izone_2), int64(-1000000), int32(_a_F_timestamptz_izone_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -2034,10 +2034,10 @@ func F_timestamptz_part_common(m *base.Module, l0 int32, l1 int32) int32 {
 			return int32(0)
 		} else {
 			v62 = v14 + int32(88)
-			v66 = Fn13846(m, v59, v62, int32(_a_F_timestamptz_part_common_0), int32(_a_F_timestamptz_part_common_1), int32(_a_F_timestamptz_part_common_2))
+			v66 = Fn13826(m, v59, v62, int32(_a_F_timestamptz_part_common_0), int32(_a_F_timestamptz_part_common_1), int32(_a_F_timestamptz_part_common_2))
 			mBase = m.M
 			if v66 == int32(31) {
-				v72 = Fn13846(m, v59, v62, int32(_a_F_timestamptz_part_common_3), int32(_a_F_timestamptz_part_common_4), int32(_a_F_timestamptz_part_common_5))
+				v72 = Fn13826(m, v59, v62, int32(_a_F_timestamptz_part_common_3), int32(_a_F_timestamptz_part_common_4), int32(_a_F_timestamptz_part_common_5))
 				mBase = m.M
 				v73 = v72
 			} else {

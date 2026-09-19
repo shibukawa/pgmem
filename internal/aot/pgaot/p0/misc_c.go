@@ -2170,7 +2170,7 @@ L162:
 func F_CheckDim_3(m *base.Module, l0 int32) {
 	var v10 int32
 	_ = v10
-	Fn13844(m, l0, int32(105), int32(_a_F_CheckDim_3_0), int32(_a_F_CheckDim_3_1), int32(_a_F_CheckDim_3_2), int32(100), int32(_a_F_CheckDim_3_3), int32(_a_F_CheckDim_3_4))
+	Fn13824(m, l0, int32(105), int32(_a_F_CheckDim_3_0), int32(_a_F_CheckDim_3_1), int32(_a_F_CheckDim_3_2), int32(100), int32(_a_F_CheckDim_3_3), int32(_a_F_CheckDim_3_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return
@@ -33567,7 +33567,7 @@ L112:
 	}
 L113:
 	;
-	v390 = Fn13991(m, v384, int32(4), int32(16), int32(_a_F_convert_case_29), int32(_a_F_convert_case_30), int32(505))
+	v390 = Fn13971(m, v384, int32(4), int32(16), int32(_a_F_convert_case_29), int32(_a_F_convert_case_30), int32(505))
 	mBase = m.M
 	goto L123
 L114:
@@ -33895,7 +33895,7 @@ L170:
 	}
 L171:
 	;
-	v620 = Fn13991(m, v614, int32(4), int32(16), int32(_a_F_convert_case_29), int32(_a_F_convert_case_30), int32(505))
+	v620 = Fn13971(m, v614, int32(4), int32(16), int32(_a_F_convert_case_29), int32(_a_F_convert_case_30), int32(505))
 	mBase = m.M
 	goto L181
 L172:

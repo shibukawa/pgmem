@@ -494,7 +494,7 @@ func F_icregexnesel(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14011(m, l0, int32(3))
+	v3 = Fn13991(m, l0, int32(3))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -12263,7 +12263,7 @@ func F_isbn_cast_from_ean13(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13948(m, l0, int32(3))
+	v3 = Fn13928(m, l0, int32(3))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -12276,7 +12276,7 @@ func F_isbn_in(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13891(m, l0, int32(3))
+	v3 = Fn13871(m, l0, int32(3))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -12746,7 +12746,7 @@ func F_ivfflathandler(m *base.Module, l0 int32) int32 {
 	_ = v16
 	var v19 int32
 	_ = v19
-	v16 = Fn13946(m, l0, int32(_a_F_ivfflathandler_0), int32(_a_F_ivfflathandler_1), int32(_a_F_ivfflathandler_2), int32(_a_F_ivfflathandler_3), int32(_a_F_ivfflathandler_4), int32(_a_F_ivfflathandler_5), int32(_a_F_ivfflathandler_6), int32(_a_F_ivfflathandler_7), int32(_a_F_ivfflathandler_8), int32(_a_F_ivfflathandler_9), int32(_a_F_ivfflathandler_10), int32(_a_F_ivfflathandler_11), int32(_a_F_ivfflathandler_12), int64(72057594038255616))
+	v16 = Fn13926(m, l0, int32(_a_F_ivfflathandler_0), int32(_a_F_ivfflathandler_1), int32(_a_F_ivfflathandler_2), int32(_a_F_ivfflathandler_3), int32(_a_F_ivfflathandler_4), int32(_a_F_ivfflathandler_5), int32(_a_F_ivfflathandler_6), int32(_a_F_ivfflathandler_7), int32(_a_F_ivfflathandler_8), int32(_a_F_ivfflathandler_9), int32(_a_F_ivfflathandler_10), int32(_a_F_ivfflathandler_11), int32(_a_F_ivfflathandler_12), int64(72057594038255616))
 	v19 = m.ExcPending
 	if v19 != 0 {
 		return int32(0)

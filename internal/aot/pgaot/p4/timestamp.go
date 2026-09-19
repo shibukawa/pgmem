@@ -1754,10 +1754,10 @@ func F_timestamp_part_common(m *base.Module, l0 int32, l1 int32) int32 {
 			return int32(0)
 		} else {
 			v63 = v15 + int32(92)
-			v67 = Fn13846(m, v60, v63, int32(_a_F_timestamp_part_common_0), int32(_a_F_timestamp_part_common_1), int32(_a_F_timestamp_part_common_2))
+			v67 = Fn13826(m, v60, v63, int32(_a_F_timestamp_part_common_0), int32(_a_F_timestamp_part_common_1), int32(_a_F_timestamp_part_common_2))
 			mBase = m.M
 			if v67 == int32(31) {
-				v73 = Fn13846(m, v60, v63, int32(_a_F_timestamp_part_common_3), int32(_a_F_timestamp_part_common_4), int32(_a_F_timestamp_part_common_5))
+				v73 = Fn13826(m, v60, v63, int32(_a_F_timestamp_part_common_3), int32(_a_F_timestamp_part_common_4), int32(_a_F_timestamp_part_common_5))
 				mBase = m.M
 				v74 = v73
 			} else {

@@ -545,7 +545,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 func F_ExplainPropertyInteger(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) {
 	var v7 int32
 	_ = v7
-	Fn13848(m, l0, l1, l2, l3, int32(_a_F_ExplainPropertyInteger_0))
+	Fn13828(m, l0, l1, l2, l3, int32(_a_F_ExplainPropertyInteger_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return

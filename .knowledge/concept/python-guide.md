@@ -25,6 +25,6 @@ summary:
   drivers: psycopg, asyncpg, pg8000, SQLAlchemy all take the DSN (system:postgres-drivers); build a per-driver fixture on pgmem_dsn
   async: asyncpg works against the DSN; the client itself is sync and runs in a thread from asyncio fixtures
   parallel: pytest-xdist workers each spawn their own binary (concept:server-process); inside one worker forks are independent
-  pools: SQLAlchemy pools serialize at transaction boundaries (rule:single-session-per-backend); commit or close before snapshot() or it fails with busy after 30 s
+  pools: SQLAlchemy pools work as on a server (rule:process-per-connection); commit or close before snapshot() or it fails with busy after 30 s
   limits: concept:limits
 ```

@@ -1918,7 +1918,7 @@ func F_latin1_to_mic(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13957(m, l0, int32(8), int32(129))
+	v4 = Fn13937(m, l0, int32(8), int32(129))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2102,7 +2102,7 @@ func F_latin3_to_mic(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13957(m, l0, int32(10), int32(131))
+	v4 = Fn13937(m, l0, int32(10), int32(131))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

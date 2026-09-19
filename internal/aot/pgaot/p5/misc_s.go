@@ -4064,148 +4064,190 @@ func F_scanner_init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int3
 func F_schedule_alarm(m *base.Module, l0 int64) {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
+	var v9 int32
+	_ = v9
 	var v11 int32
 	_ = v11
-	var v14 int64
+	var v14 int32
 	_ = v14
-	var v23 int32
-	_ = v23
-	var v27 int64
-	_ = v27
-	var v35 int32
-	_ = v35
-	var v36 int64
-	_ = v36
+	var v17 int64
+	_ = v17
+	var v26 int32
+	_ = v26
+	var v30 int64
+	_ = v30
 	var v38 int32
 	_ = v38
-	var v49 int64
-	_ = v49
-	var v53 int64
-	_ = v53
-	var v54 int64
-	_ = v54
-	var v61 int32
-	_ = v61
-	var v62 int32
-	_ = v62
+	var v39 int64
+	_ = v39
+	var v41 int32
+	_ = v41
+	var v52 int64
+	_ = v52
+	var v56 int64
+	_ = v56
+	var v57 int64
+	_ = v57
+	var v64 int32
+	_ = v64
 	var v65 int32
 	_ = v65
-	var v66 int32
-	_ = v66
-	var v70 int32
-	_ = v70
-	var v74 int32
-	_ = v74
-	var v75 int32
-	_ = v75
-	var v83 int32
-	_ = v83
-	var v85 int64
-	_ = v85
-	var v94 int32
-	_ = v94
-	var v102 int32
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v73 int32
+	_ = v73
+	var v77 int32
+	_ = v77
+	var v78 int32
+	_ = v78
+	var v86 int32
+	_ = v86
+	var v88 int64
+	_ = v88
+	var v96 int32
+	_ = v96
+	var v97 float64
+	_ = v97
+	var v98 int32
+	_ = v98
+	var v102 int64
 	_ = v102
-	var v107 int32
-	_ = v107
-	var v111 int32
-	_ = v111
-	var v116 int32
-	_ = v116
-	v6 = m.G0
-	v8 = v6 - int32(48)
-	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[0]))
-	if v11 <= int32(0) {
-		m.G0 = v8 + int32(48)
+	var v106 float64
+	_ = v106
+	var v113 int32
+	_ = v113
+	var v117 int64
+	_ = v117
+	var v123 float64
+	_ = v123
+	var v124 float64
+	_ = v124
+	var v129 int32
+	_ = v129
+	var v141 int32
+	_ = v141
+	var v146 int32
+	_ = v146
+	var v150 int32
+	_ = v150
+	var v155 int32
+	_ = v155
+	v9 = m.G0
+	v11 = v9 - int32(48)
+	m.G0 = v11
+	v14 = *(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[0]))
+	if v14 <= int32(0) {
+		m.G0 = v11 + int32(48)
 		return
 	} else {
-		v14 = int64(0)
-		*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = v14
-		*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = v14
-		*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = v14
-		*(*int64)(unsafe.Add(mBase, uint32(v8)+40)) = v14
-		v23 = *(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1]))
-		if v23 == int32(0) {
+		v17 = int64(0)
+		*(*int64)(unsafe.Add(mBase, uint32(v11)+16)) = v17
+		*(*int64)(unsafe.Add(mBase, uint32(v11)+24)) = v17
+		*(*int64)(unsafe.Add(mBase, uint32(v11)+32)) = v17
+		*(*int64)(unsafe.Add(mBase, uint32(v11)+40)) = v17
+		v26 = *(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1]))
+		if v26 == int32(0) {
 		} else {
-			v27 = *(*int64)(unsafe.Add(mBase, _c_F_schedule_alarm[2]))
-			if l0 <= v27+int64(10000) {
+			v30 = *(*int64)(unsafe.Add(mBase, _c_F_schedule_alarm[2]))
+			if l0 <= v30+int64(10000) {
 			} else {
 				*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1])) = int32(0)
 			}
 		}
-		v35 = *(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[3]))
-		v36 = *(*int64)(unsafe.Add(mBase, uint32(v35)+24))
-		if v36 < l0 {
-			v38 = int32(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v38
-			*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1])) = v38
-			v70 = int32(1)
-			*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v70
-			v74 = int32(0)
-			v75 = v70
+		v38 = *(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[3]))
+		v39 = *(*int64)(unsafe.Add(mBase, uint32(v38)+24))
+		if v39 < l0 {
+			v41 = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v41
+			*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1])) = v41
+			v73 = int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v73
+			v77 = int32(0)
+			v78 = v73
 		} else {
-			v49 = v36 - l0
-			if v49 <= int64(0) {
-				v61 = int32(0)
-				v62 = int32(0)
+			v52 = v39 - l0
+			if v52 <= int64(0) {
+				v64 = int32(0)
+				v65 = int32(0)
 			} else {
-				v53 = int64(1000000)
-				v54 = base.I64_div_u_s(v49, v53)
-				v61 = base.I32_wrap_i64(v54)
-				v62 = base.I32_wrap_i64(v49 - v54*v53)
+				v56 = int64(1000000)
+				v57 = base.I64_div_u_s(v52, v56)
+				v64 = base.I32_wrap_i64(v57)
+				v65 = base.I32_wrap_i64(v52 - v57*v56)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v8+int32(12)))) = v61
-			*(*int32)(unsafe.Add(mBase, uint32(v8+int32(8)))) = v62
-			v65 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
-			v66 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
-			if v65|v66 != 0 {
-				v74 = v65
-				v75 = v66
+			*(*int32)(unsafe.Add(mBase, uint32(v11+int32(12)))) = v64
+			*(*int32)(unsafe.Add(mBase, uint32(v11+int32(8)))) = v65
+			v68 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+			v69 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
+			if v68|v69 != 0 {
+				v77 = v68
+				v78 = v69
 			} else {
-				v70 = int32(1)
-				*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v70
-				v74 = int32(0)
-				v75 = v70
+				v73 = int32(1)
+				*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v73
+				v77 = int32(0)
+				v78 = v73
 			}
 		}
 		*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[4])) = int32(1)
-		*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = v75
-		*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = base.I64_extend_i32_s(v74)
-		v83 = *(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1]))
-		if v83 != 0 {
-			v85 = *(*int64)(unsafe.Add(mBase, _c_F_schedule_alarm[2]))
-			if v85 <= v36 {
-				m.G0 = v8 + int32(48)
+		*(*int32)(unsafe.Add(mBase, uint32(v11)+40)) = v78
+		*(*int64)(unsafe.Add(mBase, uint32(v11)+32)) = base.I64_extend_i32_s(v77)
+		v86 = *(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1]))
+		if v86 != 0 {
+			v88 = *(*int64)(unsafe.Add(mBase, _c_F_schedule_alarm[2]))
+			if v88 <= v39 {
+				m.G0 = v11 + int32(48)
 				return
 			} else {
-				*(*int64)(unsafe.Add(mBase, _c_F_schedule_alarm[2])) = v36
+				*(*int64)(unsafe.Add(mBase, _c_F_schedule_alarm[2])) = v39
 				*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1])) = int32(1)
-				v94 = F_setitimer(m, v8+int32(16))
+				v96 = v11 + int32(16)
+				v97 = m.Env.Emscripten_get_now(m)
 				mBase = m.M
-				if v94 != 0 {
-					v102 = int32(0)
-					*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1])) = v102
-					F_errstart_cold(m, int32(22), v102)
+				v98 = *(*int32)(unsafe.Add(mBase, uint32(v96)+24))
+				v102 = *(*int64)(unsafe.Add(mBase, uint32(v96)+16))
+				v106 = base.F64_add(base.F64_div(base.F64_convert_i32_s(v98), float64(1000)), base.F64_convert_i64_s(v102*int64(1000)))
+				if v102 == int64(0) {
+					if v98 == int32(0) {
+						v123 = float64(0)
+						v124 = float64(0)
+					} else {
+						v113 = *(*int32)(unsafe.Add(mBase, uint32(v96)+8))
+						v117 = *(*int64)(unsafe.Add(mBase, uint32(v96)))
+						v123 = base.F64_add(base.F64_div(base.F64_convert_i32_s(v113), float64(1000)), base.F64_convert_i64_s(v117*int64(1000)))
+						v124 = base.F64_add(v97, v106)
+					}
+				} else {
+					v113 = *(*int32)(unsafe.Add(mBase, uint32(v96)+8))
+					v117 = *(*int64)(unsafe.Add(mBase, uint32(v96)))
+					v123 = base.F64_add(base.F64_div(base.F64_convert_i32_s(v113), float64(1000)), base.F64_convert_i64_s(v117*int64(1000)))
+					v124 = base.F64_add(v97, v106)
+				}
+				*(*float64)(unsafe.Add(mBase, _c_F_schedule_alarm[5])) = v124
+				*(*float64)(unsafe.Add(mBase, _c_F_schedule_alarm[6])) = v123
+				v129 = m.Env.X_setitimer_js(m, int32(0), v106)
+				mBase = m.M
+				if v129 != 0 {
+					v141 = int32(0)
+					*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1])) = v141
+					F_errstart_cold(m, int32(22), v141)
 					mBase = m.M
-					v107 = m.ExcPending
-					if v107 != 0 {
+					v146 = m.ExcPending
+					if v146 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_schedule_alarm_0), int32(0))
 						mBase = m.M
-						v111 = m.ExcPending
-						if v111 != 0 {
+						v150 = m.ExcPending
+						if v150 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_schedule_alarm_1), int32(347), int32(_a_F_schedule_alarm_2))
 							mBase = m.M
-							v116 = m.ExcPending
-							if v116 != 0 {
+							v155 = m.ExcPending
+							if v155 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -4215,34 +4257,58 @@ func F_schedule_alarm(m *base.Module, l0 int64) {
 						}
 					}
 				} else {
-					m.G0 = v8 + int32(48)
+					m.G0 = v11 + int32(48)
 					return
 				}
 			}
 		} else {
-			*(*int64)(unsafe.Add(mBase, _c_F_schedule_alarm[2])) = v36
+			*(*int64)(unsafe.Add(mBase, _c_F_schedule_alarm[2])) = v39
 			*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1])) = int32(1)
-			v94 = F_setitimer(m, v8+int32(16))
+			v96 = v11 + int32(16)
+			v97 = m.Env.Emscripten_get_now(m)
 			mBase = m.M
-			if v94 != 0 {
-				v102 = int32(0)
-				*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1])) = v102
-				F_errstart_cold(m, int32(22), v102)
+			v98 = *(*int32)(unsafe.Add(mBase, uint32(v96)+24))
+			v102 = *(*int64)(unsafe.Add(mBase, uint32(v96)+16))
+			v106 = base.F64_add(base.F64_div(base.F64_convert_i32_s(v98), float64(1000)), base.F64_convert_i64_s(v102*int64(1000)))
+			if v102 == int64(0) {
+				if v98 == int32(0) {
+					v123 = float64(0)
+					v124 = float64(0)
+				} else {
+					v113 = *(*int32)(unsafe.Add(mBase, uint32(v96)+8))
+					v117 = *(*int64)(unsafe.Add(mBase, uint32(v96)))
+					v123 = base.F64_add(base.F64_div(base.F64_convert_i32_s(v113), float64(1000)), base.F64_convert_i64_s(v117*int64(1000)))
+					v124 = base.F64_add(v97, v106)
+				}
+			} else {
+				v113 = *(*int32)(unsafe.Add(mBase, uint32(v96)+8))
+				v117 = *(*int64)(unsafe.Add(mBase, uint32(v96)))
+				v123 = base.F64_add(base.F64_div(base.F64_convert_i32_s(v113), float64(1000)), base.F64_convert_i64_s(v117*int64(1000)))
+				v124 = base.F64_add(v97, v106)
+			}
+			*(*float64)(unsafe.Add(mBase, _c_F_schedule_alarm[5])) = v124
+			*(*float64)(unsafe.Add(mBase, _c_F_schedule_alarm[6])) = v123
+			v129 = m.Env.X_setitimer_js(m, int32(0), v106)
+			mBase = m.M
+			if v129 != 0 {
+				v141 = int32(0)
+				*(*int32)(unsafe.Add(mBase, _c_F_schedule_alarm[1])) = v141
+				F_errstart_cold(m, int32(22), v141)
 				mBase = m.M
-				v107 = m.ExcPending
-				if v107 != 0 {
+				v146 = m.ExcPending
+				if v146 != 0 {
 					return
 				} else {
 					F_errmsg_internal(m, int32(_a_F_schedule_alarm_0), int32(0))
 					mBase = m.M
-					v111 = m.ExcPending
-					if v111 != 0 {
+					v150 = m.ExcPending
+					if v150 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_schedule_alarm_1), int32(347), int32(_a_F_schedule_alarm_2))
 						mBase = m.M
-						v116 = m.ExcPending
-						if v116 != 0 {
+						v155 = m.ExcPending
+						if v155 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -4252,7 +4318,7 @@ func F_schedule_alarm(m *base.Module, l0 int64) {
 					}
 				}
 			} else {
-				m.G0 = v8 + int32(48)
+				m.G0 = v11 + int32(48)
 				return
 			}
 		}
@@ -17054,7 +17120,7 @@ func F_strict_word_similarity_dist_op(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14044(m, l0, int32(2))
+	v3 = Fn14024(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

@@ -215,7 +215,7 @@ func F_timestamp_izone(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14021(m, l0, int32(_a_F_timestamp_izone_0), int32(_a_F_timestamp_izone_1), int32(_a_F_timestamp_izone_2), int64(1000000), int32(_a_F_timestamp_izone_3))
+	v7 = Fn14001(m, l0, int32(_a_F_timestamp_izone_0), int32(_a_F_timestamp_izone_1), int32(_a_F_timestamp_izone_2), int64(1000000), int32(_a_F_timestamp_izone_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

@@ -4128,7 +4128,7 @@ func F_to_bin64(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14026(m, l0, int64(1), int64(2), int32(1))
+	v5 = Fn14006(m, l0, int64(1), int64(2), int32(1))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -4141,7 +4141,7 @@ func F_to_oct32(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14025(m, l0, int64(3), int64(8), int32(7))
+	v5 = Fn14005(m, l0, int64(3), int64(8), int32(7))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

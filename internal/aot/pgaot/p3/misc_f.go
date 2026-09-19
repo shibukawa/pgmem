@@ -617,7 +617,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(_a_F_ForwardSyncRequest_2), int32(1326), int32(_a_F_ForwardSyncRequest_0))
+	F_errfinish(m, int32(_a_F_ForwardSyncRequest_2), int32(1314), int32(_a_F_ForwardSyncRequest_0))
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -770,7 +770,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(_a_F_ForwardSyncRequest_2), int32(1176), int32(_a_F_ForwardSyncRequest_4))
+	F_errfinish(m, int32(_a_F_ForwardSyncRequest_2), int32(1164), int32(_a_F_ForwardSyncRequest_4))
 	mBase = m.M
 	v333 = m.ExcPending
 	if v333 != 0 {
@@ -949,7 +949,7 @@ func F_fastgetattr_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13897(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_1_0))
+	v6 = Fn13877(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_1_0))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

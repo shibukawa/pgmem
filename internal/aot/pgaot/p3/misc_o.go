@@ -4760,7 +4760,7 @@ func F_oidvectorrecv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13947(m, l0, int32(_a_F_oidvectorrecv_0), int32(245), int32(_a_F_oidvectorrecv_1), int32(_a_F_oidvectorrecv_2), int32(26))
+	v7 = Fn13927(m, l0, int32(_a_F_oidvectorrecv_0), int32(245), int32(_a_F_oidvectorrecv_1), int32(_a_F_oidvectorrecv_2), int32(26))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

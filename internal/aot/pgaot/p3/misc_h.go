@@ -8095,7 +8095,7 @@ L67:
 func F_hemdist_2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	var v5 int32
 	_ = v5
-	v5 = Fn13945(m, l0, l1, l2, int32(2))
+	v5 = Fn13925(m, l0, l1, l2, int32(2))
 	return v5
 }
 func F_hemdistcache_2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

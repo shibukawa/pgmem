@@ -10108,7 +10108,7 @@ func F_ean13_in(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13891(m, l0, int32(2))
+	v3 = Fn13871(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -11531,7 +11531,7 @@ L79:
 func F_errhint(m *base.Module, l0 int32, l1 int32) {
 	var v6 int32
 	_ = v6
-	Fn13895(m, l0, l1, int32(_a_F_errhint_0), int32(1324))
+	Fn13875(m, l0, l1, int32(_a_F_errhint_0), int32(1324))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return
@@ -20166,7 +20166,7 @@ func F_expand_dynamic_library_name(m *base.Module, l0 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
-	v10 = Fn13900(m, l0, int32(47))
+	v10 = Fn13880(m, l0, int32(47))
 	mBase = m.M
 	if v10 == int32(0) {
 		v14 = *(*int32)(unsafe.Add(mBase, _c_F_expand_dynamic_library_name[0]))

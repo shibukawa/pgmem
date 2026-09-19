@@ -7067,7 +7067,7 @@ func F_heap2_desc(m *base.Module, l0 int32, l1 int32) {
 func F_hemdist_3(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	var v5 int32
 	_ = v5
-	v5 = Fn13945(m, l0, l1, l2, int32(4))
+	v5 = Fn13925(m, l0, l1, l2, int32(4))
 	return v5
 }
 func F_hex_decode(m *base.Module, l0 int32, l1 int32, l2 int32) int64 {

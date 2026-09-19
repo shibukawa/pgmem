@@ -1640,7 +1640,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(_a_F_get_collation_oid_1), int32(4033), int32(_a_F_get_collation_oid_2))
+	F_errfinish(m, int32(_a_F_get_collation_oid_1), int32(4020), int32(_a_F_get_collation_oid_2))
 	mBase = m.M
 	v191 = m.ExcPending
 	if v191 != 0 {

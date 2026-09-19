@@ -1855,7 +1855,7 @@ func F_get_foreign_server_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13921(m, l0, l1, int32(_a_F_get_foreign_server_oid_0), int32(714), int32(_a_F_get_foreign_server_oid_1), int32(_a_F_get_foreign_server_oid_2), int32(67137668), int32(31))
+	v9 = Fn13901(m, l0, l1, int32(_a_F_get_foreign_server_oid_0), int32(714), int32(_a_F_get_foreign_server_oid_1), int32(_a_F_get_foreign_server_oid_2), int32(67137668), int32(31))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
@@ -1868,7 +1868,7 @@ func F_has_foreign_data_wrapper_privilege_id_id(m *base.Module, l0 int32) int32 
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13936(m, l0, int32(_a_F_has_foreign_data_wrapper_privilege_id_id_0), int32(2328))
+	v4 = Fn13916(m, l0, int32(_a_F_has_foreign_data_wrapper_privilege_id_id_0), int32(2328))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1961,7 +1961,7 @@ func F_has_foreign_data_wrapper_privilege_name_id(m *base.Module, l0 int32) int3
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13937(m, l0, int32(_a_F_has_foreign_data_wrapper_privilege_name_id_0), int32(2328))
+	v4 = Fn13917(m, l0, int32(_a_F_has_foreign_data_wrapper_privilege_name_id_0), int32(2328))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

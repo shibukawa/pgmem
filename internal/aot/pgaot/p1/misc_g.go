@@ -1579,7 +1579,7 @@ func F_gbtreekey_out(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13874(m, l0, int32(_a_F_gbtreekey_out_0), int32(45), int32(_a_F_gbtreekey_out_1), int32(_a_F_gbtreekey_out_2), int32(_a_F_gbtreekey_out_3))
+	v7 = Fn13854(m, l0, int32(_a_F_gbtreekey_out_0), int32(45), int32(_a_F_gbtreekey_out_1), int32(_a_F_gbtreekey_out_2), int32(_a_F_gbtreekey_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -10935,7 +10935,7 @@ func F_get_negator(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13922(m, l0, int32(40))
+	v3 = Fn13902(m, l0, int32(40))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -10948,7 +10948,7 @@ func F_get_opname(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13917(m, l0, int32(40))
+	v3 = Fn13897(m, l0, int32(40))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -13390,7 +13390,7 @@ func F_get_statistics_object_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13925(m, l0, l1, int32(_a_F_get_statistics_object_oid_0), int32(2620), int32(_a_F_get_statistics_object_oid_1), int32(63))
+	v7 = Fn13905(m, l0, l1, int32(_a_F_get_statistics_object_oid_0), int32(2620), int32(_a_F_get_statistics_object_oid_1), int32(63))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

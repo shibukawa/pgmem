@@ -7,17 +7,14 @@ Op that returns a running server to a snapshot while keeping its port and client
 
 ```yaml
 api:
-  status: implemented 2026-09-13 (reset.go; reset_test.go, reset_internal_test.go; op reset tested by cmd/pgmem TestResetOp)
+  status: implemented 2026-09-13 (reset.go; reset_test.go; op reset tested by cmd/pgmem TestResetOp); on the cluster model since 2026-09-19
   op: 'reset in {"server":"f1","snapshot":"s1"?,"timeout_ms":N?} out {}; snapshot defaults to the one the fork came from'
   steps:
-    - acquire the backend; wait for open transactions; busy after timeout (rule:single-session-per-backend)
-    - clone the snapshot vfs, start a new backend, run startup for the configured user and database
-    - keep client TCP connections and their statement-name prefixes
-    - re-issue LISTEN for registered channels
-    - replay recorded Parse messages of each connection's named prepared statements (node-postgres never re-sends Parse for a name it parsed on that connection)
+    - wait until no session is inside a transaction or a batch; busy after timeout
+    - mute the backends, kill the cluster (the old directory is discarded), start one on a clone of the snapshot
+    - every session re-attaches at once: startup packet replayed on a new backend, LISTEN re-issued, recorded Parse messages of named prepared statements replayed (node-postgres never re-sends Parse for a name it parsed on that connection) (rule:process-per-connection)
   lost: session SET values, temp tables, portals; same as a fresh session
-  cost: close to api:clone (metric:fork-cost)
-  skip: no restart when nothing ran since the last reset
+  cost: ~15 ms (metric:fork-cost)
   go: Server.Reset(ctx) to the origin snapshot, Server.Restore(ctx, snap) to any snapshot
   rejected: dropping every client connection on reset, because pools without an 'error' listener crash the test process (system:node-orms)
 ```

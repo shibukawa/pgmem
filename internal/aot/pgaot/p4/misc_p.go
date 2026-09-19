@@ -3096,7 +3096,7 @@ func F_ProcessCheckpointerInterrupts(m *base.Module) {
 									if v28 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_ProcessCheckpointerInterrupts_1), int32(1402), int32(_a_F_ProcessCheckpointerInterrupts_2))
+										F_errfinish(m, int32(_a_F_ProcessCheckpointerInterrupts_1), int32(1390), int32(_a_F_ProcessCheckpointerInterrupts_2))
 										mBase = m.M
 										v33 = m.ExcPending
 										if v33 != 0 {
@@ -3187,7 +3187,7 @@ func F_ProcessCheckpointerInterrupts(m *base.Module) {
 								if v28 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_ProcessCheckpointerInterrupts_1), int32(1402), int32(_a_F_ProcessCheckpointerInterrupts_2))
+									F_errfinish(m, int32(_a_F_ProcessCheckpointerInterrupts_1), int32(1390), int32(_a_F_ProcessCheckpointerInterrupts_2))
 									mBase = m.M
 									v33 = m.ExcPending
 									if v33 != 0 {
@@ -4293,12 +4293,22 @@ func F_ProcessCopyOptions(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v1728
 	var v1732 int32
 	_ = v1732
-	var v1735 int32
-	_ = v1735
 	var v1736 int32
 	_ = v1736
-	var v1737 int32
-	_ = v1737
+	var v1751 int32
+	_ = v1751
+	var v1753 int32
+	_ = v1753
+	var v1756 int32
+	_ = v1756
+	var v1758 int32
+	_ = v1758
+	var v1759 int32
+	_ = v1759
+	var v1760 int32
+	_ = v1760
+	var v1763 int32
+	_ = v1763
 	var v1776 int32
 	_ = v1776
 	var v1777 int32
@@ -8908,10 +8918,8 @@ L596:
 	goto L586
 L597:
 	;
-	v1735 = int32(_a_F_ProcessCopyOptions_53)
 	v1736 = int32(*(*int8)(unsafe.Add(mBase, uint32(v1632))))
-	v1737 = int32(39)
-	goto L603
+	goto L604
 L598:
 	;
 	goto L599
@@ -8940,25 +8948,70 @@ L602:
 	goto L619
 L603:
 	;
-	goto L610
+	if base.B2i32(v1759 != v1760) == int32(0) {
+		goto L601
+	} else {
+		goto L610
+	}
+L604:
+	;
+	v1751 = int32(_a_F_ProcessCopyOptions_53)
+	v1753 = int32(39)
+	goto L605
+L605:
+	;
+	v1756 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1751))))
+	if v1756 == v1736&int32(255) {
+		v1813 = v1751
+		v1815 = v1753
+		goto L602
+	} else {
+		goto L607
+	}
+L606:
+	;
+	goto L603
+L607:
+	;
+	v1758 = int32(1)
+	v1759 = v1753 - v1758
+	v1760 = int32(0)
+	v1763 = v1751 + v1758
+	if v1763&int32(3) == v1760 {
+		goto L603
+	} else {
+		goto L608
+	}
+L608:
+	;
+	if v1759 != 0 {
+		v1751 = v1763
+		v1753 = v1759
+		goto L605
+	} else {
+		goto L609
+	}
+L609:
+	;
+	goto L606
 L610:
 	;
 	v1776 = v1736 & int32(255)
-	v1777 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessCopyOptions[19])))
-	if base.B2i32(v1776 == v1777)|int32(0) == int32(0) {
+	v1777 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1763))))
+	if base.B2i32(v1776 == v1777)|base.B2i32(base.Ui32(v1759) < base.Ui32(int32(4))) == int32(0) {
 		goto L611
 	} else {
 		goto L612
 	}
 L611:
 	;
-	v1786 = v1735
-	v1788 = v1737
+	v1786 = v1763
+	v1788 = v1759
 	goto L614
 L612:
 	;
-	v1806 = v1735
-	v1808 = v1737
+	v1806 = v1763
+	v1808 = v1759
 	goto L613
 L613:
 	;
@@ -15191,7 +15244,7 @@ func F_plainto_tsquery_byid(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14028(m, l0, int32(1), int32(2))
+	v4 = Fn14008(m, l0, int32(1), int32(2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

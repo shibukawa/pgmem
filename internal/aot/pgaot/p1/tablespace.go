@@ -481,7 +481,7 @@ func F_has_tablespace_privilege_id_id(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13936(m, l0, int32(_a_F_has_tablespace_privilege_id_id_0), int32(1213))
+	v4 = Fn13916(m, l0, int32(_a_F_has_tablespace_privilege_id_id_0), int32(1213))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

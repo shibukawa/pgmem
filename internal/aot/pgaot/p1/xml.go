@@ -10,7 +10,7 @@ func F_XmlTableFetchRow(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13862(m, l0, int32(_a_F_XmlTableFetchRow_0), int32(_a_F_XmlTableFetchRow_1))
+	v4 = Fn13842(m, l0, int32(_a_F_XmlTableFetchRow_0), int32(_a_F_XmlTableFetchRow_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -21,7 +21,7 @@ func F_XmlTableFetchRow(m *base.Module, l0 int32) int32 {
 func F_XmlTableSetRowFilter(m *base.Module, l0 int32, l1 int32) {
 	var v6 int32
 	_ = v6
-	Fn13863(m, l0, l1, int32(_a_F_XmlTableSetRowFilter_0), int32(_a_F_XmlTableSetRowFilter_1))
+	Fn13843(m, l0, l1, int32(_a_F_XmlTableSetRowFilter_0), int32(_a_F_XmlTableSetRowFilter_1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return
@@ -265,7 +265,7 @@ func F_xml_is_well_formed_document(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13862(m, l0, int32(_a_F_xml_is_well_formed_document_0), int32(_a_F_xml_is_well_formed_document_1))
+	v4 = Fn13842(m, l0, int32(_a_F_xml_is_well_formed_document_0), int32(_a_F_xml_is_well_formed_document_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

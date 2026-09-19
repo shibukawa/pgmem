@@ -13,6 +13,6 @@ summary:
     - Python, Java and Node.js packages bundling the binary (requirement:multi-language-wrapper, api:node-wrapper per decision:node-test-integration)
   positioning: concept:alternatives
   constraints:
-    - rule:single-session-per-backend
+    - rule:process-per-connection
     - concept:limits
 ```

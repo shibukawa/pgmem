@@ -11,7 +11,7 @@ func F_InitVector(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13853(m, l0, int32(4))
+	v3 = Fn13833(m, l0, int32(4))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1211,7 +1211,7 @@ func F_vector_typmod_in(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v14 int32
 	_ = v14
-	v11 = Fn13934(m, l0, int32(_a_F_vector_typmod_in_0), int32(366), int32(_a_F_vector_typmod_in_1), int32(_a_F_vector_typmod_in_2), int32(_a_F_vector_typmod_in_3), int32(361), int32(_a_F_vector_typmod_in_4), int32(356), int32(_a_F_vector_typmod_in_5))
+	v11 = Fn13914(m, l0, int32(_a_F_vector_typmod_in_0), int32(366), int32(_a_F_vector_typmod_in_1), int32(_a_F_vector_typmod_in_2), int32(_a_F_vector_typmod_in_3), int32(361), int32(_a_F_vector_typmod_in_4), int32(356), int32(_a_F_vector_typmod_in_5))
 	v14 = m.ExcPending
 	if v14 != 0 {
 		return int32(0)

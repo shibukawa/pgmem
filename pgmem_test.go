@@ -24,9 +24,6 @@ func startServer(t *testing.T, opts pgmem.Options) *pgmem.Server {
 	if os.Getenv("PGMEM_DEBUG") != "" {
 		opts.Log = t.Logf
 	}
-	if os.Getenv("PGMEM_SINGLE") != "" {
-		opts.SingleUser = true // compare the two models with the same suite
-	}
 	start := time.Now()
 	s, err := pgmem.Start(context.Background(), opts)
 	if err != nil {
@@ -180,7 +177,7 @@ func TestDatabaseSQL(t *testing.T) {
 }
 
 func BenchmarkSimpleQueries(b *testing.B) {
-	s, err := pgmem.Start(context.Background(), pgmem.Options{SingleUser: os.Getenv("PGMEM_SINGLE") != ""})
+	s, err := pgmem.Start(context.Background(), pgmem.Options{})
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -204,7 +201,7 @@ func BenchmarkSimpleQueries(b *testing.B) {
 }
 
 func BenchmarkSimpleQueriesInProcess(b *testing.B) {
-	s, err := pgmem.Start(context.Background(), pgmem.Options{SingleUser: os.Getenv("PGMEM_SINGLE") != ""})
+	s, err := pgmem.Start(context.Background(), pgmem.Options{})
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -252,7 +249,7 @@ func TestDialInProcess(t *testing.T) {
 }
 
 func BenchmarkCPUHeavyQuery(b *testing.B) {
-	s, err := pgmem.Start(context.Background(), pgmem.Options{SingleUser: os.Getenv("PGMEM_SINGLE") != ""})
+	s, err := pgmem.Start(context.Background(), pgmem.Options{})
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -369,64 +366,6 @@ func TestCryptoHashes(t *testing.T) {
 	var big string
 	if err := conn.QueryRow(ctx, `SELECT md5(repeat('x', 1000000))`).Scan(&big); err != nil || big != "ec78dbd963d2fc01e51176ed4dec299e" {
 		t.Fatalf("md5(repeat x 1e6) = %s, %v", big, err)
-	}
-}
-
-// Two connections used at the same time must not share a transaction: the
-// second one's statement waits until the first transaction ends, instead of
-// being executed inside it.
-func TestTransactionsDoNotInterleave(t *testing.T) {
-	s := startServer(t, pgmem.Options{SingleUser: true})
-	ctx := context.Background()
-	c1, err := pgx.Connect(ctx, s.DSN())
-	if err != nil {
-		t.Fatal(err)
-	}
-	defer c1.Close(ctx)
-	c2, err := pgx.Connect(ctx, s.DSN())
-	if err != nil {
-		t.Fatal(err)
-	}
-	defer c2.Close(ctx)
-	if _, err := c1.Exec(ctx, `CREATE TABLE t(v int)`); err != nil {
-		t.Fatal(err)
-	}
-	if _, err := c1.Exec(ctx, `BEGIN; INSERT INTO t VALUES (1)`); err != nil {
-		t.Fatal(err)
-	}
-	done := make(chan error, 1)
-	go func() {
-		_, err := c2.Exec(ctx, `INSERT INTO t VALUES (2)`)
-		done <- err
-	}()
-	select {
-	case err := <-done:
-		t.Fatalf("second connection ran inside the first transaction (err=%v)", err)
-	case <-time.After(300 * time.Millisecond):
-	}
-	if _, err := c1.Exec(ctx, `ROLLBACK`); err != nil {
-		t.Fatal(err)
-	}
-	select {
-	case err := <-done:
-		if err != nil {
-			t.Fatal(err)
-		}
-	case <-time.After(10 * time.Second):
-		t.Fatal("second connection still blocked after ROLLBACK")
-	}
-	var rows []int
-	r, err := c1.Query(ctx, `SELECT v FROM t ORDER BY v`)
-	if err != nil {
-		t.Fatal(err)
-	}
-	for r.Next() {
-		var v int
-		r.Scan(&v)
-		rows = append(rows, v)
-	}
-	if len(rows) != 1 || rows[0] != 2 {
-		t.Fatalf("rows = %v, want [2]", rows)
 	}
 }
 
@@ -991,10 +930,10 @@ func TestTimezoneAliasesLoad(t *testing.T) {
 	}
 }
 
-// A parallel index build or query registers background workers that no
-// postmaster will start; the leader used to wait for them to attach
-// forever. With max_parallel_workers=0 both fall back to the leader.
-func TestParallelWorkRunsInLeader(t *testing.T) {
+// A parallel index build or query registers background workers; the
+// postmaster starts them as processes of the cluster (through dynamic
+// shared memory) and the leader gets its results.
+func TestParallelWorkCompletes(t *testing.T) {
 	ctx := context.Background()
 	s := startServer(t, pgmem.Options{})
 	conn, err := pgx.Connect(ctx, s.DSN())
@@ -1034,10 +973,9 @@ func TestParallelWorkRunsInLeader(t *testing.T) {
 	}
 }
 
-// Single-user mode never gives the session_authorization GUC its reset
-// value, so RESET SESSION AUTHORIZATION and SET SESSION AUTHORIZATION
-// DEFAULT did nothing, and DISCARD ALL between connections left a client's
-// SET SESSION AUTHORIZATION in place for the next one.
+// RESET SESSION AUTHORIZATION and SET SESSION AUTHORIZATION DEFAULT go
+// back to the connecting user, and a session authorization left set does
+// not reach the next connection.
 func TestSessionAuthorizationResets(t *testing.T) {
 	ctx := context.Background()
 	s := startServer(t, pgmem.Options{})
@@ -1081,10 +1019,10 @@ func TestSessionAuthorizationResets(t *testing.T) {
 	}
 }
 
-// The cleanup between connections used to be "ROLLBACK; DISCARD ALL" as
-// statements, so pg_stat_statements counted them and log_statement showed
-// them, the way a pooler's reset query does. It is a C call now: the next
-// connection still gets a fresh session, and no statement is logged.
+// Every connection is its own backend: a client that leaves settings, a
+// temp table, a prepared statement and an open transaction behind shares
+// none of it with the next connection, and no housekeeping statement
+// (ROLLBACK, DISCARD ALL) is run or logged on its behalf.
 func TestSessionResetIsNotAStatement(t *testing.T) {
 	ctx := context.Background()
 	var mu sync.Mutex

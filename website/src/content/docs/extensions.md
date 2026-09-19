@@ -27,7 +27,7 @@ Snowball stemming dictionaries and every encoding conversion are linked in as we
 
 Extensions outside that list fail with `module is not linked into this pgmem build`. Some are out of scope by design:
 
-- background workers, such as `pg_cron` and `pg_partman`'s worker, because single-user mode has no postmaster to start them;
+- extensions with their own background worker, such as `pg_cron` and `pg_partman`'s worker (the postmaster could start them now; none is bundled yet);
 - outbound network access, such as `dblink` and `postgres_fdw`;
 - other language runtimes, such as `plv8`, `plperl` and `plpython`;
 - PostGIS, for its size and its dependency chain.

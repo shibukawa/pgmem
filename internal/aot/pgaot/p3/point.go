@@ -4347,7 +4347,7 @@ L397:
 	goto L390
 L398:
 	;
-	F_errfinish(m, int32(_a_F_CheckPointGuts_48), int32(1402), int32(_a_F_CheckPointGuts_49))
+	F_errfinish(m, int32(_a_F_CheckPointGuts_48), int32(1390), int32(_a_F_CheckPointGuts_49))
 	mBase = m.M
 	v1607 = m.ExcPending
 	if v1607 != 0 {

@@ -38,12 +38,13 @@ func main() {
 		verbose  = flag.Bool("log", false, "print the server log to stderr")
 		noStdin  = flag.Bool("no-stdin", false, "do not read control requests from stdin and do not exit when it is closed")
 		control  = flag.String("control", "", "also serve the control protocol on this loopback address (e.g. 127.0.0.1:0) for other processes")
-		wait     = flag.Duration("wait-timeout", 0, "end a connection that waits this long behind another connection's idle transaction (0 = 2s, negative = wait forever)")
-		single   = flag.Bool("single", false, "run PostgreSQL in single-user mode (one shared session, faster forks; no concurrent sessions or deadlock detection)")
 	)
+	// accepted for wrappers that still pass it: connections no longer share
+	// a session, so there is no wait to bound
+	flag.Duration("wait-timeout", 0, "deprecated; ignored")
 	flag.Parse()
 
-	base := pgmem.Options{WaitTimeout: *wait, SingleUser: *single}
+	base := pgmem.Options{}
 	for _, p := range strings.Split(*params, ",") {
 		if p = strings.TrimSpace(p); p != "" {
 			base.Params = append(base.Params, "-c", p)

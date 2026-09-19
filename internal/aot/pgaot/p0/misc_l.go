@@ -2522,7 +2522,7 @@ func F__ltq_regex(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13865(m, l0, int32(_a_F__ltq_regex_0))
+	v3 = Fn13845(m, l0, int32(_a_F__ltq_regex_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -2915,7 +2915,7 @@ func F_lappend(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13959(m, l0, l1, int64(4294967297))
+	v4 = Fn13939(m, l0, l1, int64(4294967297))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2928,7 +2928,7 @@ func F_lappend_xid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13959(m, l0, l1, int64(4294967769))
+	v4 = Fn13939(m, l0, l1, int64(4294967769))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2975,7 +2975,7 @@ func F_latin2_to_mic(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13957(m, l0, int32(9), int32(130))
+	v4 = Fn13937(m, l0, int32(9), int32(130))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

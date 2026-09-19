@@ -793,736 +793,6 @@ func F_PopActiveSnapshot(m *base.Module) {
 		}
 	}
 }
-func F_PostgresSendReadyForQueryIfNecessary(m *base.Module) {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
-	var v17 int32
-	_ = v17
-	var v20 int32
-	_ = v20
-	var v24 int32
-	_ = v24
-	var v27 int32
-	_ = v27
-	var v29 int32
-	_ = v29
-	var v33 int32
-	_ = v33
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v47 int32
-	_ = v47
-	var v50 int32
-	_ = v50
-	var v52 int32
-	_ = v52
-	var v56 int32
-	_ = v56
-	var v58 int32
-	_ = v58
-	var v61 int32
-	_ = v61
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v68 int32
-	_ = v68
-	var v73 int32
-	_ = v73
-	var v78 int32
-	_ = v78
-	var v80 int32
-	_ = v80
-	var v83 int32
-	_ = v83
-	var v87 int32
-	_ = v87
-	var v91 int32
-	_ = v91
-	var v95 int32
-	_ = v95
-	var v97 int32
-	_ = v97
-	var v99 int32
-	_ = v99
-	var v101 int32
-	_ = v101
-	v4 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])))
-	if v4 == int32(1) {
-		v8 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[1]))
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+24))
-		if (v9-int32(7))&int32(-9) == int32(0) {
-			v17 = int32(0)
-			F_pgstat_report_activity(m, int32(6), v17)
-			mBase = m.M
-			v20 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[2]))
-			if v20 <= v17 {
-				F_ReportChangedGUCOptions(m)
-				mBase = m.M
-				v95 = m.ExcPending
-				if v95 != 0 {
-					return
-				} else {
-					v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-					F_ReadyForQuery(m, v97)
-					mBase = m.M
-					v99 = m.ExcPending
-					if v99 != 0 {
-						return
-					} else {
-						v101 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-						return
-					}
-				}
-			} else {
-				v24 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[4]))
-				if v24 != 0 {
-					v27 = base.B2i32(v24 <= v20)
-				} else {
-					v27 = int32(0)
-				}
-				if v27 != 0 {
-					F_ReportChangedGUCOptions(m)
-					mBase = m.M
-					v95 = m.ExcPending
-					if v95 != 0 {
-						return
-					} else {
-						v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-						F_ReadyForQuery(m, v97)
-						mBase = m.M
-						v99 = m.ExcPending
-						if v99 != 0 {
-							return
-						} else {
-							v101 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-							return
-						}
-					}
-				} else {
-					v29 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[5])) = uint8(v29)
-					F_enable_timeout_after(m, int32(7), v20)
-					mBase = m.M
-					v33 = m.ExcPending
-					if v33 != 0 {
-						return
-					} else {
-						F_ReportChangedGUCOptions(m)
-						mBase = m.M
-						v95 = m.ExcPending
-						if v95 != 0 {
-							return
-						} else {
-							v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-							F_ReadyForQuery(m, v97)
-							mBase = m.M
-							v99 = m.ExcPending
-							if v99 != 0 {
-								return
-							} else {
-								v101 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-								return
-							}
-						}
-					}
-				}
-			}
-		} else {
-			v35 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[1]))
-			v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+24))
-			if v36 != int32(0) {
-				v40 = int32(0)
-				F_pgstat_report_activity(m, int32(4), v40)
-				mBase = m.M
-				v43 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[2]))
-				if v43 <= v40 {
-					F_ReportChangedGUCOptions(m)
-					mBase = m.M
-					v95 = m.ExcPending
-					if v95 != 0 {
-						return
-					} else {
-						v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-						F_ReadyForQuery(m, v97)
-						mBase = m.M
-						v99 = m.ExcPending
-						if v99 != 0 {
-							return
-						} else {
-							v101 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-							return
-						}
-					}
-				} else {
-					v47 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[4]))
-					if v47 != 0 {
-						v50 = base.B2i32(v47 <= v43)
-					} else {
-						v50 = int32(0)
-					}
-					if v50 != 0 {
-						F_ReportChangedGUCOptions(m)
-						mBase = m.M
-						v95 = m.ExcPending
-						if v95 != 0 {
-							return
-						} else {
-							v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-							F_ReadyForQuery(m, v97)
-							mBase = m.M
-							v99 = m.ExcPending
-							if v99 != 0 {
-								return
-							} else {
-								v101 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-								return
-							}
-						}
-					} else {
-						v52 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[5])) = uint8(v52)
-						F_enable_timeout_after(m, int32(7), v43)
-						mBase = m.M
-						v56 = m.ExcPending
-						if v56 != 0 {
-							return
-						} else {
-							F_ReportChangedGUCOptions(m)
-							mBase = m.M
-							v95 = m.ExcPending
-							if v95 != 0 {
-								return
-							} else {
-								v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-								F_ReadyForQuery(m, v97)
-								mBase = m.M
-								v99 = m.ExcPending
-								if v99 != 0 {
-									return
-								} else {
-									v101 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-									return
-								}
-							}
-						}
-					}
-				}
-			} else {
-				v58 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[6]))
-				if v58 != 0 {
-					F_ProcessNotifyInterrupt(m, int32(0))
-					mBase = m.M
-					v61 = m.ExcPending
-					if v61 != 0 {
-						return
-					} else {
-						v63 = F_pgstat_report_stat(m, int32(0))
-						mBase = m.M
-						v64 = m.ExcPending
-						if v64 != 0 {
-							return
-						} else {
-							v68 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[7])))
-							if int32(0) < v63 {
-								if v68 != 0 {
-									v80 = int32(0)
-									F_pgstat_report_activity(m, int32(2), v80)
-									mBase = m.M
-									v83 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[8]))
-									if v83 <= v80 {
-										F_ReportChangedGUCOptions(m)
-										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
-											return
-										} else {
-											v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-											F_ReadyForQuery(m, v97)
-											mBase = m.M
-											v99 = m.ExcPending
-											if v99 != 0 {
-												return
-											} else {
-												v101 = int32(0)
-												*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-												return
-											}
-										}
-									} else {
-										v87 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[9])) = uint8(v87)
-										F_enable_timeout_after(m, int32(9), v83)
-										mBase = m.M
-										v91 = m.ExcPending
-										if v91 != 0 {
-											return
-										} else {
-											F_ReportChangedGUCOptions(m)
-											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
-												return
-											} else {
-												v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-												F_ReadyForQuery(m, v97)
-												mBase = m.M
-												v99 = m.ExcPending
-												if v99 != 0 {
-													return
-												} else {
-													v101 = int32(0)
-													*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-													return
-												}
-											}
-										}
-									}
-								} else {
-									F_enable_timeout_after(m, int32(10), v63)
-									mBase = m.M
-									v73 = m.ExcPending
-									if v73 != 0 {
-										return
-									} else {
-										v80 = int32(0)
-										F_pgstat_report_activity(m, int32(2), v80)
-										mBase = m.M
-										v83 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[8]))
-										if v83 <= v80 {
-											F_ReportChangedGUCOptions(m)
-											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
-												return
-											} else {
-												v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-												F_ReadyForQuery(m, v97)
-												mBase = m.M
-												v99 = m.ExcPending
-												if v99 != 0 {
-													return
-												} else {
-													v101 = int32(0)
-													*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-													return
-												}
-											}
-										} else {
-											v87 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[9])) = uint8(v87)
-											F_enable_timeout_after(m, int32(9), v83)
-											mBase = m.M
-											v91 = m.ExcPending
-											if v91 != 0 {
-												return
-											} else {
-												F_ReportChangedGUCOptions(m)
-												mBase = m.M
-												v95 = m.ExcPending
-												if v95 != 0 {
-													return
-												} else {
-													v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-													F_ReadyForQuery(m, v97)
-													mBase = m.M
-													v99 = m.ExcPending
-													if v99 != 0 {
-														return
-													} else {
-														v101 = int32(0)
-														*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-														return
-													}
-												}
-											}
-										}
-									}
-								}
-							} else {
-								if v68 == int32(0) {
-									v80 = int32(0)
-									F_pgstat_report_activity(m, int32(2), v80)
-									mBase = m.M
-									v83 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[8]))
-									if v83 <= v80 {
-										F_ReportChangedGUCOptions(m)
-										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
-											return
-										} else {
-											v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-											F_ReadyForQuery(m, v97)
-											mBase = m.M
-											v99 = m.ExcPending
-											if v99 != 0 {
-												return
-											} else {
-												v101 = int32(0)
-												*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-												return
-											}
-										}
-									} else {
-										v87 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[9])) = uint8(v87)
-										F_enable_timeout_after(m, int32(9), v83)
-										mBase = m.M
-										v91 = m.ExcPending
-										if v91 != 0 {
-											return
-										} else {
-											F_ReportChangedGUCOptions(m)
-											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
-												return
-											} else {
-												v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-												F_ReadyForQuery(m, v97)
-												mBase = m.M
-												v99 = m.ExcPending
-												if v99 != 0 {
-													return
-												} else {
-													v101 = int32(0)
-													*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-													return
-												}
-											}
-										}
-									}
-								} else {
-									F_disable_timeout(m, int32(10))
-									mBase = m.M
-									v78 = m.ExcPending
-									if v78 != 0 {
-										return
-									} else {
-										v80 = int32(0)
-										F_pgstat_report_activity(m, int32(2), v80)
-										mBase = m.M
-										v83 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[8]))
-										if v83 <= v80 {
-											F_ReportChangedGUCOptions(m)
-											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
-												return
-											} else {
-												v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-												F_ReadyForQuery(m, v97)
-												mBase = m.M
-												v99 = m.ExcPending
-												if v99 != 0 {
-													return
-												} else {
-													v101 = int32(0)
-													*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-													return
-												}
-											}
-										} else {
-											v87 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[9])) = uint8(v87)
-											F_enable_timeout_after(m, int32(9), v83)
-											mBase = m.M
-											v91 = m.ExcPending
-											if v91 != 0 {
-												return
-											} else {
-												F_ReportChangedGUCOptions(m)
-												mBase = m.M
-												v95 = m.ExcPending
-												if v95 != 0 {
-													return
-												} else {
-													v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-													F_ReadyForQuery(m, v97)
-													mBase = m.M
-													v99 = m.ExcPending
-													if v99 != 0 {
-														return
-													} else {
-														v101 = int32(0)
-														*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-														return
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				} else {
-					v63 = F_pgstat_report_stat(m, int32(0))
-					mBase = m.M
-					v64 = m.ExcPending
-					if v64 != 0 {
-						return
-					} else {
-						v68 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[7])))
-						if int32(0) < v63 {
-							if v68 != 0 {
-								v80 = int32(0)
-								F_pgstat_report_activity(m, int32(2), v80)
-								mBase = m.M
-								v83 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[8]))
-								if v83 <= v80 {
-									F_ReportChangedGUCOptions(m)
-									mBase = m.M
-									v95 = m.ExcPending
-									if v95 != 0 {
-										return
-									} else {
-										v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-										F_ReadyForQuery(m, v97)
-										mBase = m.M
-										v99 = m.ExcPending
-										if v99 != 0 {
-											return
-										} else {
-											v101 = int32(0)
-											*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-											return
-										}
-									}
-								} else {
-									v87 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[9])) = uint8(v87)
-									F_enable_timeout_after(m, int32(9), v83)
-									mBase = m.M
-									v91 = m.ExcPending
-									if v91 != 0 {
-										return
-									} else {
-										F_ReportChangedGUCOptions(m)
-										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
-											return
-										} else {
-											v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-											F_ReadyForQuery(m, v97)
-											mBase = m.M
-											v99 = m.ExcPending
-											if v99 != 0 {
-												return
-											} else {
-												v101 = int32(0)
-												*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-												return
-											}
-										}
-									}
-								}
-							} else {
-								F_enable_timeout_after(m, int32(10), v63)
-								mBase = m.M
-								v73 = m.ExcPending
-								if v73 != 0 {
-									return
-								} else {
-									v80 = int32(0)
-									F_pgstat_report_activity(m, int32(2), v80)
-									mBase = m.M
-									v83 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[8]))
-									if v83 <= v80 {
-										F_ReportChangedGUCOptions(m)
-										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
-											return
-										} else {
-											v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-											F_ReadyForQuery(m, v97)
-											mBase = m.M
-											v99 = m.ExcPending
-											if v99 != 0 {
-												return
-											} else {
-												v101 = int32(0)
-												*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-												return
-											}
-										}
-									} else {
-										v87 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[9])) = uint8(v87)
-										F_enable_timeout_after(m, int32(9), v83)
-										mBase = m.M
-										v91 = m.ExcPending
-										if v91 != 0 {
-											return
-										} else {
-											F_ReportChangedGUCOptions(m)
-											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
-												return
-											} else {
-												v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-												F_ReadyForQuery(m, v97)
-												mBase = m.M
-												v99 = m.ExcPending
-												if v99 != 0 {
-													return
-												} else {
-													v101 = int32(0)
-													*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-													return
-												}
-											}
-										}
-									}
-								}
-							}
-						} else {
-							if v68 == int32(0) {
-								v80 = int32(0)
-								F_pgstat_report_activity(m, int32(2), v80)
-								mBase = m.M
-								v83 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[8]))
-								if v83 <= v80 {
-									F_ReportChangedGUCOptions(m)
-									mBase = m.M
-									v95 = m.ExcPending
-									if v95 != 0 {
-										return
-									} else {
-										v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-										F_ReadyForQuery(m, v97)
-										mBase = m.M
-										v99 = m.ExcPending
-										if v99 != 0 {
-											return
-										} else {
-											v101 = int32(0)
-											*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-											return
-										}
-									}
-								} else {
-									v87 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[9])) = uint8(v87)
-									F_enable_timeout_after(m, int32(9), v83)
-									mBase = m.M
-									v91 = m.ExcPending
-									if v91 != 0 {
-										return
-									} else {
-										F_ReportChangedGUCOptions(m)
-										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
-											return
-										} else {
-											v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-											F_ReadyForQuery(m, v97)
-											mBase = m.M
-											v99 = m.ExcPending
-											if v99 != 0 {
-												return
-											} else {
-												v101 = int32(0)
-												*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-												return
-											}
-										}
-									}
-								}
-							} else {
-								F_disable_timeout(m, int32(10))
-								mBase = m.M
-								v78 = m.ExcPending
-								if v78 != 0 {
-									return
-								} else {
-									v80 = int32(0)
-									F_pgstat_report_activity(m, int32(2), v80)
-									mBase = m.M
-									v83 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[8]))
-									if v83 <= v80 {
-										F_ReportChangedGUCOptions(m)
-										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
-											return
-										} else {
-											v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-											F_ReadyForQuery(m, v97)
-											mBase = m.M
-											v99 = m.ExcPending
-											if v99 != 0 {
-												return
-											} else {
-												v101 = int32(0)
-												*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-												return
-											}
-										}
-									} else {
-										v87 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[9])) = uint8(v87)
-										F_enable_timeout_after(m, int32(9), v83)
-										mBase = m.M
-										v91 = m.ExcPending
-										if v91 != 0 {
-											return
-										} else {
-											F_ReportChangedGUCOptions(m)
-											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
-												return
-											} else {
-												v97 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[3]))
-												F_ReadyForQuery(m, v97)
-												mBase = m.M
-												v99 = m.ExcPending
-												if v99 != 0 {
-													return
-												} else {
-													v101 = int32(0)
-													*(*uint8)(unsafe.Add(mBase, _c_F_PostgresSendReadyForQueryIfNecessary[0])) = uint8(v101)
-													return
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	} else {
-		return
-	}
-}
 func F_PreventCommandDuringRecovery(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
@@ -12162,6 +11432,81 @@ L14:
 	;
 	goto L12
 }
+func F_pgl_atexit(m *base.Module) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	v3 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_atexit[0]))
+	if v3 <= int32(31) {
+		*(*int32)(unsafe.Add(mBase, _c_F_pgl_atexit[0])) = v3 + int32(1)
+		*(*int32)(unsafe.Add(mBase, uint32(v3<<(uint(int32(2))%32))+uint32(_c_F_pgl_atexit[1]))) = int32(1103)
+	} else {
+	}
+	return
+}
+func F_pgl_freopen(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	switch l2 {
+	case 0:
+		v7 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_freopen[0]))
+		v8 = F_freopen(m, l0, l1, v7)
+		mBase = m.M
+		v11 = m.ExcPending
+		if v11 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, _c_F_pgl_freopen[1])) = v8
+			return v8
+		}
+	case 1:
+		v16 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_freopen[2]))
+		v17 = F_freopen(m, l0, l1, v16)
+		mBase = m.M
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, _c_F_pgl_freopen[3])) = v17
+			return v17
+		}
+	case 2:
+		v22 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_freopen[4]))
+		v23 = F_freopen(m, l0, l1, v22)
+		mBase = m.M
+		v24 = m.ExcPending
+		if v24 != 0 {
+			return int32(0)
+		} else {
+			v25 = v23
+			return v25
+		}
+	default:
+		v25 = int32(0)
+		return v25
+	}
+}
 func F_pglz_decompress_datum(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -19011,7 +18356,7 @@ func F_pullf_create_mbuf_reader(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14001(m, l0, l1, int32(_a_F_pullf_create_mbuf_reader_0))
+	v4 = Fn13981(m, l0, l1, int32(_a_F_pullf_create_mbuf_reader_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

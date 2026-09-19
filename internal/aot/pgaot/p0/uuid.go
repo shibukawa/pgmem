@@ -248,7 +248,7 @@ func F_uuid_ns_oid(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14038(m, l0, int32(_a_F_uuid_ns_oid_0), int32(_a_F_uuid_ns_oid_1), int32(_a_F_uuid_ns_oid_2), int32(_a_F_uuid_ns_oid_3), int32(_a_F_uuid_ns_oid_4))
+	v7 = Fn14018(m, l0, int32(_a_F_uuid_ns_oid_0), int32(_a_F_uuid_ns_oid_1), int32(_a_F_uuid_ns_oid_2), int32(_a_F_uuid_ns_oid_3), int32(_a_F_uuid_ns_oid_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

@@ -103,7 +103,7 @@ func F_tts_heap_is_current_xact_tuple(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14032(m, l0, int32(_a_F_tts_heap_is_current_xact_tuple_0), int32(391))
+	v4 = Fn14012(m, l0, int32(_a_F_tts_heap_is_current_xact_tuple_0), int32(391))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

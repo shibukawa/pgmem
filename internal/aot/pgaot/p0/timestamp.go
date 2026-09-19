@@ -1125,7 +1125,7 @@ func F_timestamp_bin(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v13 int32
 	_ = v13
-	v10 = Fn14020(m, l0, int32(_a_F_timestamp_bin_0), int32(_a_F_timestamp_bin_1), int32(_a_F_timestamp_bin_2), int32(_a_F_timestamp_bin_3), int32(_a_F_timestamp_bin_4), int32(_a_F_timestamp_bin_5), int32(_a_F_timestamp_bin_6), int32(_a_F_timestamp_bin_7))
+	v10 = Fn14000(m, l0, int32(_a_F_timestamp_bin_0), int32(_a_F_timestamp_bin_1), int32(_a_F_timestamp_bin_2), int32(_a_F_timestamp_bin_3), int32(_a_F_timestamp_bin_4), int32(_a_F_timestamp_bin_5), int32(_a_F_timestamp_bin_6), int32(_a_F_timestamp_bin_7))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return int32(0)

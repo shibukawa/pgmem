@@ -2683,7 +2683,7 @@ L270:
 	goto L268
 L271:
 	;
-	v1153 = Fn13986(m, int64(32))
+	v1153 = Fn13966(m, int64(32))
 	mBase = m.M
 	goto L273
 L272:
@@ -2857,7 +2857,7 @@ L293:
 func F_DeleteSharedComments(m *base.Module, l0 int32, l1 int32) {
 	var v6 int32
 	_ = v6
-	Fn13847(m, l0, l1, int32(2397), int32(2396))
+	Fn13827(m, l0, l1, int32(2397), int32(2396))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return

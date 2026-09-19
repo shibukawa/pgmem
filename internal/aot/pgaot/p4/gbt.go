@@ -446,7 +446,7 @@ func F_gbt_float4_union(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int32(_a_F_gbt_float4_union_0), int32(8))
+	v4 = Fn13886(m, l0, int32(_a_F_gbt_float4_union_0), int32(8))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1820,7 +1820,7 @@ func F_gbt_numeric_consistent(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13907(m, l0, int32(_a_F_gbt_numeric_consistent_0))
+	v3 = Fn13887(m, l0, int32(_a_F_gbt_numeric_consistent_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1846,7 +1846,7 @@ func F_gbt_numeric_ssup_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13904(m, l0, l1, l2, int32(1327))
+	v5 = Fn13884(m, l0, l1, l2, int32(1327))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -1859,7 +1859,7 @@ func F_gbt_oid_distance(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13911(m, l0, int32(_a_F_gbt_oid_distance_0))
+	v3 = Fn13891(m, l0, int32(_a_F_gbt_oid_distance_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1932,7 +1932,7 @@ func F_gbt_text_ssup_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13916(m, l0, l1, l2, int32(2104))
+	v5 = Fn13896(m, l0, l1, l2, int32(2104))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -2095,7 +2095,7 @@ func F_gbt_uuid_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13905(m, l0, int32(_a_F_gbt_uuid_same_0))
+	v3 = Fn13885(m, l0, int32(_a_F_gbt_uuid_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

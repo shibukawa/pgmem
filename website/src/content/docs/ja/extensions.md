@@ -27,7 +27,7 @@ Snowball のステミング辞書と、すべてのエンコーディング変�
 
 表にない拡張は `module is not linked into this pgmem build` というエラーになります。次のものは設計上の対象外です。
 
-- `pg_cron` や `pg_partman` のワーカーのようなバックグラウンドワーカー。シングルユーザーモードには起動役のポストマスターがいないためです。
+- `pg_cron` や `pg_partman` のワーカーのように独自のバックグラウンドワーカーを持つ拡張。postmaster が起動できるようにはなりましたが、まだ同梱していません。
 - `dblink` や `postgres_fdw` のような外部ネットワークへの接続。
 - `plv8`、`plperl`、`plpython` のような別言語のランタイム。
 - PostGIS。サイズと依存関係の重さのためです。

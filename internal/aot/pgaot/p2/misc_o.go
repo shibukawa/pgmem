@@ -242,7 +242,7 @@ func F_offsethash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14019(m, l0, l1, l2, int32(_a_F_offsethash_create_0))
+	v5 = Fn13999(m, l0, l1, l2, int32(_a_F_offsethash_create_0))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -676,7 +676,7 @@ func F_oidout(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13974(m, l0, int32(_a_F_oidout_0), int32(12))
+	v4 = Fn13954(m, l0, int32(_a_F_oidout_0), int32(12))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1770,7 +1770,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13975(m, l0, int32(1272), int32(1271))
+	v4 = Fn13955(m, l0, int32(1272), int32(1271))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

@@ -654,7 +654,7 @@ L39:
 func F_MemoryContextSizeFailure(m *base.Module, l0 int32) {
 	var v7 int32
 	_ = v7
-	Fn14046(m, l0, int32(_a_F_MemoryContextSizeFailure_0), int32(1177), int32(_a_F_MemoryContextSizeFailure_1), int32(_a_F_MemoryContextSizeFailure_2))
+	Fn14026(m, l0, int32(_a_F_MemoryContextSizeFailure_0), int32(1177), int32(_a_F_MemoryContextSizeFailure_1), int32(_a_F_MemoryContextSizeFailure_2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return

@@ -12,5 +12,5 @@ api:
   database_sql: 'stdlib.RegisterConnConfig(cfg) then sql.Open("pgx", name); pgmemtest Fixture.DB uses this'
   gain: simple SELECT 8.5 us versus 26.5 us over TCP (metric:server-footprint); a TCP query spends ~5% in PostgreSQL and the rest in syscalls, poller and goroutine wake-ups
   scope: Go only; wrappers in other languages use TCP (decision:data-plane-transport)
-  same_semantics: still one session per backend (rule:single-session-per-backend)
+  same_semantics: the connection gets its own backend process like a TCP one (rule:process-per-connection)
 ```

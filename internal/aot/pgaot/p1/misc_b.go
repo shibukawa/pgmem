@@ -385,16 +385,10 @@ func F_BlockSampler_HasMore(m *base.Module, l0 int32) int32 {
 	}
 	return v9
 }
-func F___bswap_32(m *base.Module, l0 int32) int32 {
-	var v4 int32
-	_ = v4
-	v4 = int32(16711935)
-	return base.I32_rotr(l0, int32(24))&v4 | base.I32_rotr(l0&v4, int32(8))
-}
 func F_before_shmem_exit(m *base.Module, l0 int32, l1 int32) {
 	var v10 int32
 	_ = v10
-	Fn13869(m, l0, l1, int32(_a_F_before_shmem_exit_0), int32(349), int32(_a_F_before_shmem_exit_1), int32(_a_F_before_shmem_exit_2), int32(_a_F_before_shmem_exit_3), int32(_a_F_before_shmem_exit_4))
+	Fn13849(m, l0, l1, int32(_a_F_before_shmem_exit_0), int32(349), int32(_a_F_before_shmem_exit_1), int32(_a_F_before_shmem_exit_2), int32(_a_F_before_shmem_exit_3), int32(_a_F_before_shmem_exit_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return
@@ -844,7 +838,7 @@ func F_big5_to_utf8(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v3 = int32(0)
-	v7 = Fn13870(m, l0, int32(36), v3, v3, v3, int32(_a_F_big5_to_utf8_0))
+	v7 = Fn13850(m, l0, int32(36), v3, v3, v3, int32(_a_F_big5_to_utf8_0))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -7932,7 +7926,7 @@ func F_btrim1(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = int32(1)
-	v4 = Fn13878(m, l0, v2, v2)
+	v4 = Fn13858(m, l0, v2, v2)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

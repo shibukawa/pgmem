@@ -20,12 +20,6 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		pgaot.WasmCallCtors(m)
 		return nil, true
-	case "pq_buffer_remaining_data":
-		if len(a) != 0 {
-			panic("aot: pq_buffer_remaining_data: want 0 args")
-		}
-		r := pgaot.PqBufferRemainingData(m)
-		return []uint64{uint64(uint32(r))}, true
 	case "malloc":
 		if len(a) != 1 {
 			panic("aot: malloc: want 1 args")
@@ -37,78 +31,6 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 			panic("aot: free: want 1 args")
 		}
 		pgaot.Free(m, int32(uint32(a[0])))
-		return nil, true
-	case "ProcessStartupPacket":
-		if len(a) != 3 {
-			panic("aot: ProcessStartupPacket: want 3 args")
-		}
-		r := pgaot.ProcessStartupPacket(m, int32(uint32(a[0])), int32(uint32(a[1])), int32(uint32(a[2])))
-		return []uint64{uint64(uint32(r))}, true
-	case "pgl_startPGlite":
-		if len(a) != 0 {
-			panic("aot: pgl_startPGlite: want 0 args")
-		}
-		pgaot.PglStartPGlite(m)
-		return nil, true
-	case "pgl_pq_flush":
-		if len(a) != 0 {
-			panic("aot: pgl_pq_flush: want 0 args")
-		}
-		pgaot.PglPqFlush(m)
-		return nil, true
-	case "pgl_getMyProcPort":
-		if len(a) != 0 {
-			panic("aot: pgl_getMyProcPort: want 0 args")
-		}
-		r := pgaot.PglGetMyProcPort(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "pgl_sendConnData":
-		if len(a) != 0 {
-			panic("aot: pgl_sendConnData: want 0 args")
-		}
-		pgaot.PglSendConnData(m)
-		return nil, true
-	case "PostgresMainLongJmp":
-		if len(a) != 0 {
-			panic("aot: PostgresMainLongJmp: want 0 args")
-		}
-		pgaot.PostgresMainLongJmp(m)
-		return nil, true
-	case "PostgresMainLoopOnce":
-		if len(a) != 0 {
-			panic("aot: PostgresMainLoopOnce: want 0 args")
-		}
-		pgaot.PostgresMainLoopOnce(m)
-		return nil, true
-	case "PostgresSendReadyForQueryIfNecessary":
-		if len(a) != 0 {
-			panic("aot: PostgresSendReadyForQueryIfNecessary: want 0 args")
-		}
-		pgaot.PostgresSendReadyForQueryIfNecessary(m)
-		return nil, true
-	case "pgmem_reset_session":
-		if len(a) != 1 {
-			panic("aot: pgmem_reset_session: want 1 args")
-		}
-		pgaot.PgmemResetSession(m, int32(uint32(a[0])))
-		return nil, true
-	case "pgl_setPGliteExitStatus":
-		if len(a) != 1 {
-			panic("aot: pgl_setPGliteExitStatus: want 1 args")
-		}
-		r := pgaot.PglSetPGliteExitStatus(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "pgl_setPGliteActive":
-		if len(a) != 1 {
-			panic("aot: pgl_setPGliteActive: want 1 args")
-		}
-		r := pgaot.PglSetPGliteActive(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "pgl_run_atexit_funcs":
-		if len(a) != 0 {
-			panic("aot: pgl_run_atexit_funcs: want 0 args")
-		}
-		pgaot.PglRunAtexitFuncs(m)
 		return nil, true
 	case "pgl_freopen":
 		if len(a) != 3 {

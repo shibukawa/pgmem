@@ -1988,7 +1988,7 @@ func F_SwitchToUntrustedUser(m *base.Module, l0 int32, l1 int32) {
 func F_sanitize_char_1(m *base.Module, l0 int32) {
 	var v4 int32
 	_ = v4
-	Fn14013(m, l0, int32(_a_F_sanitize_char_1_0))
+	Fn13993(m, l0, int32(_a_F_sanitize_char_1_0))
 	v4 = m.ExcPending
 	if v4 != 0 {
 		return
@@ -24953,7 +24953,7 @@ func F_strict_word_similarity_commutator_op(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14042(m, l0, int32(_a_F_strict_word_similarity_commutator_op_0), int32(3))
+	v4 = Fn14022(m, l0, int32(_a_F_strict_word_similarity_commutator_op_0), int32(3))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

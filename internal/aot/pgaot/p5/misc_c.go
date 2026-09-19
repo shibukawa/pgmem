@@ -562,7 +562,7 @@ L14:
 func F_CheckDim_2(m *base.Module, l0 int32) {
 	var v10 int32
 	_ = v10
-	Fn13844(m, l0, int32(79), int32(_a_F_CheckDim_2_0), int32(_a_F_CheckDim_2_1), int32(1000000000), int32(74), int32(_a_F_CheckDim_2_2), int32(1000000001))
+	Fn13824(m, l0, int32(79), int32(_a_F_CheckDim_2_0), int32(_a_F_CheckDim_2_1), int32(1000000000), int32(74), int32(_a_F_CheckDim_2_2), int32(1000000001))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return

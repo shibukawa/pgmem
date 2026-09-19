@@ -66,10 +66,8 @@ extern int pgmem_random_bytes(void *buf, size_t len)
 'pgmem_random_bytes')
 
 # LISTEN/NOTIFY: report changes to the session's listen set to the host at
-# commit time (op 1 = LISTEN, 0 = UNLISTEN, 2 = UNLISTEN *). The single
-# backend session is shared by every client connection; pgmem keeps a
-# per-connection registry from these calls and routes NotifyResponse
-# messages to the connections that actually listen.
+# commit time (op 1 = LISTEN, 0 = UNLISTEN, 2 = UNLISTEN *). pgmem re-issues
+# a session's LISTENs on the new backend it gets after a Restore.
 patch('src/backend/commands/async.c',
 '''static void
 Exec_ListenCommit(const char *channel)
@@ -154,19 +152,6 @@ patch('pglite/src/pglitec/pglitec.c',
 ''',
 'Keep the pgmem ABI explicit')
 
-patch('pglite/src/pglitec/pglitec.c',
-"""        // reset this as it is expected
-        if (!ignore_till_sync)
-		    send_ready_for_query = true;	/* initially, or after error */
-""",
-"""#ifndef __PGMEM__
-        // reset this as it is expected
-        if (!ignore_till_sync)
-		    send_ready_for_query = true;	/* initially, or after error */
-#endif
-""",
-'#ifndef __PGMEM__\n        // reset this as it is expected')
-
 patch('src/backend/tcop/postgres.c',
 """		/* Now we can allow interrupts again */
 		RESUME_INTERRUPTS();
@@ -183,113 +168,6 @@ patch('src/backend/tcop/postgres.c',
 }
 """,
 'decided after ignore_till_sync is set')
-
-# Session authorization: single-user mode never gives the
-# session_authorization GUC its reset value (upstream says so in the
-# comment), so RESET SESSION AUTHORIZATION, SET ... DEFAULT and the DISCARD
-# ALL pgmem runs between connections left a SET SESSION AUTHORIZATION in
-# place for the next client of the shared backend. Set it like
-# InitializeSessionUserId() does.
-patch('src/backend/utils/init/miscinit.c',
-"""	SetSessionAuthorization(BOOTSTRAP_SUPERUSERID, true);
-
-	/* We could do SetConfigOption("role"), but let's be consistent */
-	SetCurrentRoleId(InvalidOid, false);
-}
-""",
-"""	SetSessionAuthorization(BOOTSTRAP_SUPERUSERID, true);
-
-#ifdef __PGMEM__
-	/*
-	 * pgmem: every client shares this session, and RESET SESSION
-	 * AUTHORIZATION (also DISCARD ALL between clients) must bring it back
-	 * to the superuser, so give the GUC its reset value after all. Not in
-	 * bootstrap mode (initdb): no catalog to read the name from yet.
-	 */
-	if (!IsBootstrapProcessingMode())
-	{
-		char	   *rname = GetUserNameFromId(BOOTSTRAP_SUPERUSERID, true);
-
-		if (rname != NULL)
-			SetConfigOption("session_authorization", rname,
-							PGC_BACKEND, PGC_S_OVERRIDE);
-	}
-#endif
-
-	/* We could do SetConfigOption("role"), but let's be consistent */
-	SetCurrentRoleId(InvalidOid, false);
-}
-""",
-'give the GUC its reset value after all')
-
-# Session cleanup between clients: pgmem used to run "ROLLBACK; DISCARD ALL"
-# as SQL when a new connection found the backend free, which showed up in
-# pg_stat_statements (like a pooler's server_reset_query does) and in the
-# log. pgmem_reset_session does the same work as C calls, so nothing is
-# executed as a statement.
-patch('src/backend/tcop/postgres.c',
-"""void PostgresMainLoopOnce() {
-""",
-"""#ifdef __PGMEM__
-#include "commands/discard.h"
-
-/*
- * pgmem_reset_session: what a client expects from a fresh session, done
- * without running a statement (so pg_stat_statements does not count it):
- * abort anything left open, then, with discard, everything DISCARD ALL
- * does plus forgetting the temp namespace.
- */
-extern void pgmem_forget_temp_namespace(void);
-
-void
-pgmem_reset_session(int discard)
-{
-	DiscardStmt stmt;
-
-	AbortOutOfAnyTransaction();
-	if (!discard)
-		return;
-	StartTransactionCommand();
-	stmt.type = T_DiscardStmt;
-	stmt.target = DISCARD_ALL;
-	DiscardCommand(&stmt, true);
-	CommitTransactionCommand();
-	/* DISCARD TEMP emptied it; a new client starts without one, like a new backend */
-	pgmem_forget_temp_namespace();
-}
-#endif
-
-void PostgresMainLoopOnce() {
-""",
-'pgmem_reset_session')
-
-# Temp namespace: DISCARD TEMP empties the session's pg_temp_N but the
-# session keeps it assigned, so a later client's first CREATE TEMP TABLE
-# does not change the effective search_path the way it does in a new
-# backend (which is what revalidates cached plans). Forgetting it makes
-# the next client start like a new backend; pg_temp_N is found and
-# cleaned again on first use.
-patch('src/backend/catalog/namespace.c',
-"""/*
- * GetTempToastNamespace - get the OID of my temporary-toast-table namespace,
-""",
-"""#ifdef __PGMEM__
-void
-pgmem_forget_temp_namespace(void)
-{
-	myTempNamespace = InvalidOid;
-	myTempToastNamespace = InvalidOid;
-	myTempNamespaceSubID = InvalidSubTransactionId;
-	/* the cached search paths still carry the old pg_temp_N */
-	baseSearchPathValid = false;
-	searchPathCacheValid = false;
-}
-#endif
-
-/*
- * GetTempToastNamespace - get the OID of my temporary-toast-table namespace,
-""",
-'pgmem_forget_temp_namespace')
 
 # ---- multi-process model (EXEC_BACKEND on the pgmem host) ----
 
@@ -366,9 +244,8 @@ patch('src/port/pgsleep.c',
 # ReadyForQuery at session start: PGlite split PostgresMain's loop body
 # into PostgresMainLoopOnce, which reads the global send_ready_for_query
 # (pglitec.c, initially false), while PostgresMain still declares a local
-# of the same name and sets that. In single mode the host sends the first
-# ReadyForQuery; a real backend must set the global or the client never
-# gets one.
+# of the same name and sets that; the client would never get its first
+# ReadyForQuery.
 patch('src/backend/tcop/postgres.c',
 '''	/* these must be volatile to ensure state is preserved across longjmp: */
 	volatile bool send_ready_for_query = true;
@@ -390,8 +267,8 @@ patch('src/backend/tcop/postgres.c',
 	 * Non-error queries loop here.
 ''',
 '''#ifdef __PGMEM__
-	/* the global PostgresMainLoopOnce reads; in single mode the host sends it */
-	if (!ignore_till_sync && !is_pglite_active)
+	/* the global that PostgresMainLoopOnce reads */
+	if (!ignore_till_sync)
 		send_ready_for_query = true;
 #else
 	if (!ignore_till_sync)
@@ -401,7 +278,7 @@ patch('src/backend/tcop/postgres.c',
 	/*
 	 * Non-error queries loop here.
 ''',
-'in single mode the host sends it')
+'the global that PostgresMainLoopOnce reads')
 
 # 32-bit EXEC_BACKEND: internal_forkexec writes SizeOfBackendParameters(len)
 # bytes (offsetof the flexible startup_data member plus the data), but the
@@ -431,29 +308,18 @@ patch('src/backend/postmaster/launch_backend.c',
 # Checkpoints in a cluster: PGlite made RequestCheckpoint run the checkpoint
 # in the calling backend (single-user mode has no checkpointer). A backend
 # of a cluster must ask the checkpointer instead (a backend cannot process
-# sync requests). Keep the local checkpoint for the shared single session.
+# sync requests); a standalone process (the setup child) still does it
+# itself, as upstream does.
 patch('src/backend/postmaster/checkpointer.c',
 '''#ifndef __PGLITE__	
 	if (!IsPostmasterEnvironment)
 #endif
 	{''',
-'''#if defined(__PGMEM__)
-	{
-		extern int is_pglite_active;
-
-		if (!IsPostmasterEnvironment || is_pglite_active)
-		{
-			CreateCheckPoint(flags | CHECKPOINT_IMMEDIATE);
-			smgrdestroyall();
-			return;
-		}
-	}
-	if (false)
-#elif !defined(__PGLITE__)
+'''#if !defined(__PGLITE__) || defined(__PGMEM__)
 	if (!IsPostmasterEnvironment)
 #endif
 	{''',
-'!IsPostmasterEnvironment || is_pglite_active')
+'#if !defined(__PGLITE__) || defined(__PGMEM__)\n\tif (!IsPostmasterEnvironment)')
 
 # WAL-driven checkpoints: PGlite disabled the checkpoint request on a WAL
 # segment switch; a cluster has a checkpointer to take it.

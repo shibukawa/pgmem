@@ -3472,7 +3472,7 @@ L70:
 func F__bt_checkpage(m *base.Module, l0 int32, l1 int32) {
 	var v8 int32
 	_ = v8
-	Fn13931(m, l0, l1, int32(_a_F__bt_checkpage_0), int32(824), int32(_a_F__bt_checkpage_1), int32(813))
+	Fn13911(m, l0, l1, int32(_a_F__bt_checkpage_0), int32(824), int32(_a_F__bt_checkpage_1), int32(813))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return

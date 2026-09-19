@@ -5147,7 +5147,7 @@ func F_g_intbig_same(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13926(m, l0, int32(2), int32(4), int32(252))
+	v5 = Fn13906(m, l0, int32(2), int32(4), int32(252))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -13723,7 +13723,7 @@ func F_get_commutator(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13918(m, l0, int32(40))
+	v3 = Fn13898(m, l0, int32(40))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

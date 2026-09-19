@@ -2904,7 +2904,7 @@ func F_numeric_poly_var_pop(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13972(m, l0, int32(0), int32(1))
+	v4 = Fn13952(m, l0, int32(0), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

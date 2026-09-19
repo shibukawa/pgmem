@@ -979,7 +979,7 @@ func F_lcons(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13960(m, l0, l1, int64(4294967297))
+	v4 = Fn13940(m, l0, l1, int64(4294967297))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -992,7 +992,7 @@ func F_lcons_int(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13960(m, l0, l1, int64(4294967767))
+	v4 = Fn13940(m, l0, l1, int64(4294967767))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

@@ -4016,54 +4016,6 @@ L54:
 	m.G0 = v19 + int32(32)
 	return
 }
-func F_setitimer(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v7 float64
-	_ = v7
-	var v8 int32
-	_ = v8
-	var v12 int64
-	_ = v12
-	var v16 float64
-	_ = v16
-	var v23 int32
-	_ = v23
-	var v27 int64
-	_ = v27
-	var v33 float64
-	_ = v33
-	var v34 float64
-	_ = v34
-	var v39 int32
-	_ = v39
-	v7 = m.Env.Emscripten_get_now(m)
-	mBase = m.M
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	v12 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-	v16 = base.F64_add(base.F64_div(base.F64_convert_i32_s(v8), float64(1000)), base.F64_convert_i64_s(v12*int64(1000)))
-	if v12 == int64(0) {
-		if v8 == int32(0) {
-			v33 = float64(0)
-			v34 = float64(0)
-		} else {
-			v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-			v27 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-			v33 = base.F64_add(base.F64_div(base.F64_convert_i32_s(v23), float64(1000)), base.F64_convert_i64_s(v27*int64(1000)))
-			v34 = base.F64_add(v7, v16)
-		}
-	} else {
-		v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-		v27 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-		v33 = base.F64_add(base.F64_div(base.F64_convert_i32_s(v23), float64(1000)), base.F64_convert_i64_s(v27*int64(1000)))
-		v34 = base.F64_add(v7, v16)
-	}
-	*(*float64)(unsafe.Add(mBase, _c_F_setitimer[0])) = v34
-	*(*float64)(unsafe.Add(mBase, _c_F_setitimer[1])) = v33
-	v39 = m.Env.X_setitimer_js(m, int32(0), v16)
-	mBase = m.M
-	return v39
-}
 func F_setup_parser_errposition_callback(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
@@ -5528,7 +5480,7 @@ func F_shift_jis_2004_to_utf8(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13870(m, l0, int32(41), int32(0), int32(25), int32(_a_F_shift_jis_2004_to_utf8_0), int32(_a_F_shift_jis_2004_to_utf8_1))
+	v7 = Fn13850(m, l0, int32(41), int32(0), int32(25), int32(_a_F_shift_jis_2004_to_utf8_0), int32(_a_F_shift_jis_2004_to_utf8_1))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -10169,7 +10121,7 @@ func F_sort_asc(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14016(m, l0, int32(_a_F_sort_asc_0), int32(234), int32(1))
+	v5 = Fn13996(m, l0, int32(_a_F_sort_asc_0), int32(234), int32(1))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -13338,7 +13290,7 @@ func F_sort_desc(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14016(m, l0, int32(_a_F_sort_desc_0), int32(244), int32(0))
+	v5 = Fn13996(m, l0, int32(_a_F_sort_desc_0), int32(244), int32(0))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

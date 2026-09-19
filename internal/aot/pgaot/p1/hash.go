@@ -11084,7 +11084,7 @@ func F_hash_array_start(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13892(m, l0, int32(_a_F_hash_array_start_0), int32(3937), int32(_a_F_hash_array_start_1))
+	v5 = Fn13872(m, l0, int32(_a_F_hash_array_start_0), int32(3937), int32(_a_F_hash_array_start_1))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

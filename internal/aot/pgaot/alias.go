@@ -6,32 +6,8 @@ import (
 )
 //go:linkname F___wasm_call_ctors github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___wasm_call_ctors
 func F___wasm_call_ctors(m *base.Module)
-//go:linkname F_pq_buffer_remaining_data github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pq_buffer_remaining_data
-func F_pq_buffer_remaining_data(m *base.Module) int32
 //go:linkname F_ProcessStartupPacket github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ProcessStartupPacket
 func F_ProcessStartupPacket(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-//go:linkname F_pgl_startPGlite github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgl_startPGlite
-func F_pgl_startPGlite(m *base.Module)
-//go:linkname F_pgl_pq_flush github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pgl_pq_flush
-func F_pgl_pq_flush(m *base.Module)
-//go:linkname F_pgl_getMyProcPort github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgl_getMyProcPort
-func F_pgl_getMyProcPort(m *base.Module) int32
-//go:linkname F_pgl_sendConnData github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pgl_sendConnData
-func F_pgl_sendConnData(m *base.Module)
-//go:linkname F_PostgresMainLongJmp github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_PostgresMainLongJmp
-func F_PostgresMainLongJmp(m *base.Module)
-//go:linkname F_PostgresMainLoopOnce github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_PostgresMainLoopOnce
-func F_PostgresMainLoopOnce(m *base.Module)
-//go:linkname F_PostgresSendReadyForQueryIfNecessary github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_PostgresSendReadyForQueryIfNecessary
-func F_PostgresSendReadyForQueryIfNecessary(m *base.Module)
-//go:linkname F_pgmem_reset_session github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgmem_reset_session
-func F_pgmem_reset_session(m *base.Module, l0 int32)
-//go:linkname F_pgl_setPGliteActive github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgl_setPGliteActive
-func F_pgl_setPGliteActive(m *base.Module, l0 int32) int32
-//go:linkname F_pgl_setPGliteExitStatus github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgl_setPGliteExitStatus
-func F_pgl_setPGliteExitStatus(m *base.Module, l0 int32) int32
-//go:linkname F_pgl_run_atexit_funcs github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgl_run_atexit_funcs
-func F_pgl_run_atexit_funcs(m *base.Module)
 //go:linkname F_pgl_freopen github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgl_freopen
 func F_pgl_freopen(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_pgmem_raise github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgmem_raise

@@ -17,19 +17,6 @@ pgmem_main
 pgmem_call_sighandler
 pgmem_raise
 pgmem_module_name
-pgmem_reset_session
 
 pgl_freopen
-pgl_run_atexit_funcs
-pgl_setPGliteExitStatus
-pgl_setPGliteActive
 
-PostgresMainLoopOnce
-PostgresMainLongJmp
-PostgresSendReadyForQueryIfNecessary
-ProcessStartupPacket
-pgl_getMyProcPort
-pgl_sendConnData
-pgl_pq_flush
-pgl_startPGlite
-pq_buffer_remaining_data

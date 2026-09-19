@@ -74,7 +74,7 @@ PG_CFLAGS="$BASE_CFLAGS \
 -Ddlopen=pgmem_dlopen -Ddlsym=pgmem_dlsym -Ddlclose=pgmem_dlclose -Ddlerror=pgmem_dlerror"
 
 # Symbols every executable (initdb, postgres) exports to the host.
-EXPORTS_COMMON=_main,_pgmem_init,_pgmem_main,_pgmem_call_sighandler,_pgmem_raise,_pgl_freopen,_pgl_run_atexit_funcs,_pgl_getPGliteExitStatus,_pgl_setPGliteExitStatus,_pgl_setPGliteActive,_malloc,_free,_fflush,___errno_location,_strerror,_emscripten_stack_get_current,__emscripten_stack_restore,_emscripten_builtin_memalign,_emscripten_builtin_free,__emscripten_timeout
+EXPORTS_COMMON=_main,_pgmem_init,_pgmem_main,_pgmem_call_sighandler,_pgmem_raise,_pgl_freopen,_malloc,_free,_fflush,___errno_location,_strerror,_emscripten_stack_get_current,__emscripten_stack_restore,_emscripten_builtin_memalign,_emscripten_builtin_free,__emscripten_timeout
 
 LDFLAGS="-sWASM_BIGINT -sUSE_PTHREADS=0 -sSUPPORT_LONGJMP=$SJLJ -Wl,--no-check-features"
 LDFLAGS_EX="-sINITIAL_MEMORY=64MB -sALLOW_MEMORY_GROWTH=1 -sSTACK_SIZE=8MB \

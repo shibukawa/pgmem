@@ -23,7 +23,7 @@ func F_TSParserIsVisibleExt(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v8 = Fn13860(m, l0, l1, int32(77), int32(_a_F_TSParserIsVisibleExt_0), int32(2804), int32(_a_F_TSParserIsVisibleExt_1), int32(78))
+	v8 = Fn13840(m, l0, l1, int32(77), int32(_a_F_TSParserIsVisibleExt_0), int32(2804), int32(_a_F_TSParserIsVisibleExt_1), int32(78))
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int32(0)
@@ -62,7 +62,7 @@ func F_get_ts_parser_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13925(m, l0, l1, int32(_a_F_get_ts_parser_oid_0), int32(2765), int32(_a_F_get_ts_parser_oid_1), int32(77))
+	v7 = Fn13905(m, l0, l1, int32(_a_F_get_ts_parser_oid_0), int32(2765), int32(_a_F_get_ts_parser_oid_1), int32(77))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

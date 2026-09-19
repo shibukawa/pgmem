@@ -96,7 +96,7 @@ func F_gbt_bytea_picksplit(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13902(m, l0, int32(_a_F_gbt_bytea_picksplit_0))
+	v3 = Fn13882(m, l0, int32(_a_F_gbt_bytea_picksplit_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -122,7 +122,7 @@ func F_gbt_cash_distance(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13909(m, l0, int32(_a_F_gbt_cash_distance_0))
+	v3 = Fn13889(m, l0, int32(_a_F_gbt_cash_distance_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -195,7 +195,7 @@ func F_gbt_cash_union(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int32(_a_F_gbt_cash_union_0), int32(16))
+	v4 = Fn13886(m, l0, int32(_a_F_gbt_cash_union_0), int32(16))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -241,7 +241,7 @@ func F_gbt_date_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13905(m, l0, int32(_a_F_gbt_date_same_0))
+	v3 = Fn13885(m, l0, int32(_a_F_gbt_date_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -488,7 +488,7 @@ func F_gbt_int2_union(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int32(_a_F_gbt_int2_union_0), int32(4))
+	v4 = Fn13886(m, l0, int32(_a_F_gbt_int2_union_0), int32(4))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -501,7 +501,7 @@ func F_gbt_int4_distance(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13911(m, l0, int32(_a_F_gbt_int4_distance_0))
+	v3 = Fn13891(m, l0, int32(_a_F_gbt_int4_distance_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -523,7 +523,7 @@ func F_gbt_int8_union(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int32(_a_F_gbt_int8_union_0), int32(16))
+	v4 = Fn13886(m, l0, int32(_a_F_gbt_int8_union_0), int32(16))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -676,7 +676,7 @@ func F_gbt_intvkey_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13913(m, l0, l1, l2, int32(16), int32(2524))
+	v6 = Fn13893(m, l0, l1, l2, int32(16), int32(2524))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -702,7 +702,7 @@ func F_gbt_macad8_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13905(m, l0, int32(_a_F_gbt_macad8_same_0))
+	v3 = Fn13885(m, l0, int32(_a_F_gbt_macad8_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1311,7 +1311,7 @@ func F_gbt_numeric_picksplit(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13902(m, l0, int32(_a_F_gbt_numeric_picksplit_0))
+	v3 = Fn13882(m, l0, int32(_a_F_gbt_numeric_picksplit_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1377,7 +1377,7 @@ func F_gbt_text_picksplit(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13902(m, l0, int32(_a_F_gbt_text_picksplit_0))
+	v3 = Fn13882(m, l0, int32(_a_F_gbt_text_picksplit_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1442,7 +1442,7 @@ func F_gbt_time_distance(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13909(m, l0, int32(_a_F_gbt_time_distance_0))
+	v3 = Fn13889(m, l0, int32(_a_F_gbt_time_distance_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1480,7 +1480,7 @@ func F_gbt_time_union(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int32(_a_F_gbt_time_union_0), int32(16))
+	v4 = Fn13886(m, l0, int32(_a_F_gbt_time_union_0), int32(16))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1506,7 +1506,7 @@ func F_gbt_ts_distance(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13909(m, l0, int32(_a_F_gbt_ts_distance_0))
+	v3 = Fn13889(m, l0, int32(_a_F_gbt_ts_distance_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1600,7 +1600,7 @@ func F_gbt_ts_union(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int32(_a_F_gbt_ts_union_0), int32(16))
+	v4 = Fn13886(m, l0, int32(_a_F_gbt_ts_union_0), int32(16))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1651,7 +1651,7 @@ func F_gbt_uuid_union(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int32(_a_F_gbt_uuid_union_0), int32(32))
+	v4 = Fn13886(m, l0, int32(_a_F_gbt_uuid_union_0), int32(32))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

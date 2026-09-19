@@ -273,7 +273,7 @@ func F_get_ts_config_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13925(m, l0, l1, int32(_a_F_get_ts_config_oid_0), int32(3201), int32(_a_F_get_ts_config_oid_1), int32(73))
+	v7 = Fn13905(m, l0, l1, int32(_a_F_get_ts_config_oid_0), int32(3201), int32(_a_F_get_ts_config_oid_1), int32(73))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -286,7 +286,7 @@ func F_get_ts_template_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13925(m, l0, l1, int32(_a_F_get_ts_template_oid_0), int32(3056), int32(_a_F_get_ts_template_oid_1), int32(79))
+	v7 = Fn13905(m, l0, l1, int32(_a_F_get_ts_template_oid_0), int32(3056), int32(_a_F_get_ts_template_oid_1), int32(79))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

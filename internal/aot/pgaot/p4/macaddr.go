@@ -553,7 +553,7 @@ func F_macaddr_sortsupport(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13964(m, l0, int32(1441), int32(1440), int32(1439))
+	v5 = Fn13944(m, l0, int32(1441), int32(1440), int32(1439))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

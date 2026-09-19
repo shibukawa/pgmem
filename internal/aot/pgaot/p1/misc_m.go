@@ -11134,7 +11134,7 @@ func F_member_can_set_role(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13941(m, l0, l1, int32(2))
+	v4 = Fn13921(m, l0, l1, int32(2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
