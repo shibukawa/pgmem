@@ -164,7 +164,9 @@ is still executed as wasm, under [wazero](https://wazero.io), but only by
   with `MAP_FIXED` at the same address into every instance's reserved
   linear memory), POSIX semaphores, and the sockets that carry client
   connections to the postmaster. The module is compiled with `-matomics`
-  so spinlocks and `pg_atomic_*` are real atomic instructions.
+  so spinlocks and `pg_atomic_*` are real atomic instructions. Every
+  instance's memory starts as a copy-on-write view of one shared image of
+  the module's data segments, so a new process costs no copying.
   In single-user mode the engine drives one backend the way PGlite's
   TypeScript does: the backend runs `postgres --single`, the
   frontend/backend protocol goes through in-memory buffers, and

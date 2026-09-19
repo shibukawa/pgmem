@@ -8,5 +8,5 @@ import (
 // initdb's postgres children run on the default (ahead-of-time) backend;
 // initdb itself always runs under wazero.
 func init() {
-	engine.PostgresFactory = aot.Factory{}
+	engine.PostgresFactory = &aot.Factory{}
 }

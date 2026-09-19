@@ -42,6 +42,10 @@ type Engine struct {
 	modules  []string // statically linked loadable modules
 	// Log receives host diagnostics (nil = silent).
 	Log func(format string, args ...any)
+
+	// versionOut caches the output of "postgres -V" (see Cluster.exec).
+	versionMu  sync.Mutex
+	versionOut []byte
 }
 
 // PostgresFactory must be set before New; the root package sets it to the

@@ -17,6 +17,7 @@ import (
 	"github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 	"github.com/shibukawa/pgmem/internal/guest"
 	"github.com/shibukawa/pgmem/internal/host"
+	"github.com/shibukawa/pgmem/internal/vfs"
 )
 
 // memoryMax is the linear-memory address space reserved per instance
@@ -33,12 +34,57 @@ func mustLookup(module, name string) host.Fn {
 }
 
 // Factory creates instances of the generated module.
-type Factory struct{}
+//
+// Where mmap is available, every instance starts from one shared image of
+// the module's data segments (4.4 MB), mapped copy-on-write: nothing is
+// copied per instance and the pages a process never writes stay shared.
+// The constructors still run per instance: they initialize the C
+// environment from the process's own variables, so a snapshot taken
+// after them would fix one process's environment for all. Elsewhere each
+// instance is built from scratch.
+type Factory struct {
+	once sync.Once
+	img  *base.SharedImage
+}
+
+// image builds the shared snapshot on first use.
+func (f *Factory) image() *base.SharedImage {
+	f.once.Do(func() {
+		f.img = base.NewSharedImageInPlace(memoryMax, func(mem []byte) (*base.Module, error) {
+			h := host.New(vfs.New())
+			inst := &instance{h: h}
+			imp := &imports{h: h, mem: inst}
+			inst.m = pgaot.NewWithMemory(imp, imp, mem, pgaot.InitialMemoryBytes)
+			pgaot.InitData(inst.m)
+			return inst.m, nil
+		})
+	})
+	return f.img
+}
 
 // Instantiate implements guest.Factory.
-func (Factory) Instantiate(ctx context.Context, h *host.Host) (guest.Instance, error) {
+func (f *Factory) Instantiate(ctx context.Context, h *host.Host) (guest.Instance, error) {
 	inst := &instance{h: h}
 	imp := &imports{h: h, mem: inst}
+	if img := f.image(); img.Err() == nil {
+		// Linear memory is a private copy-on-write view of the image, with
+		// the data segments in place and zero pages above, sparse up to
+		// the whole growable range; Close unmaps it.
+		mem, err := img.Memory(memoryMax)
+		if err != nil {
+			return nil, fmt.Errorf("aot: map the data image: %w", err)
+		}
+		inst.release = func() { base.UnmapMemory(mem) }
+		inst.m = pgaot.NewWithMemory(imp, imp, mem, img.Size())
+		if h.Sys != nil {
+			base.ForceContendedAtomics(inst.m)
+		}
+		h.Guest = inst
+		if err := inst.callVoid(func() { pgaot.WasmCallCtors(inst.m) }); err != nil {
+			return nil, fmt.Errorf("aot: __wasm_call_ctors: %w", err)
+		}
+		return inst, nil
+	}
 	// Linear memory lives outside the Go heap: the whole growable range is
 	// mapped up front and materialized lazily, growth is a bookkeeping
 	// change, and Close unmaps it immediately instead of waiting for the GC.
