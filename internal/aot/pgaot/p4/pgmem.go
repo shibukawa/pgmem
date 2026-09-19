@@ -51,3 +51,30 @@ func F_pgmem_des_init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 		return int32(0)
 	}
 }
+func F_pgmem_shmat(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	v3 = int32(0)
+	v4 = m.Env.Pgmem_shmat(m, l0, l1, v3)
+	mBase = m.M
+	if v4 <= v3 {
+		if v4 != 0 {
+			v11 = int32(0) - v4
+		} else {
+			v11 = int32(28)
+		}
+		*(*int32)(unsafe.Add(mBase, _c_F_pgmem_shmat[0])) = v11
+		v14 = int32(-1)
+	} else {
+		v14 = v4
+	}
+	return v14
+}

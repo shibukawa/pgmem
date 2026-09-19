@@ -86,7 +86,7 @@ func F_win866_to_win1251(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13936(m, l0, int32(_a_F_win866_to_win1251_0), int32(23), int32(20))
+	v5 = Fn13958(m, l0, int32(_a_F_win866_to_win1251_0), int32(23), int32(20))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -200,6 +200,8 @@ func F_wrapper_handler(m *base.Module, l0 int32) {
 	_ = v4
 	var v6 int32
 	_ = v6
+	var v7 int32
+	_ = v7
 	var v9 int32
 	_ = v9
 	var v11 int32
@@ -210,27 +212,19 @@ func F_wrapper_handler(m *base.Module, l0 int32) {
 	_ = v23
 	var v32 int32
 	_ = v32
-	var v35 int32
-	_ = v35
+	var v37 int32
+	_ = v37
 	var v42 int32
 	_ = v42
-	var v43 int32
-	_ = v43
-	var v45 int64
-	_ = v45
-	var v47 int64
+	var v47 int32
 	_ = v47
-	var v54 int32
-	_ = v54
-	var v55 int32
-	_ = v55
-	var v60 int32
-	_ = v60
-	var v62 int32
-	_ = v62
+	var v49 int32
+	_ = v49
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_wrapper_handler[0]))
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_wrapper_handler[1]))
-	if v6 != int32(42) {
+	v7 = m.Env.Pgmem_getpid(m)
+	mBase = m.M
+	if v6 != v7 {
 		v9 = int32(0)
 		v11 = m.G0
 		v13 = v11 - int32(32)
@@ -251,36 +245,23 @@ func F_wrapper_handler(m *base.Module, l0 int32) {
 			v32 = int32(268435456)
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = v32
-		v35 = v13 + int32(12)
-		if base.Ui32(int32(65)) <= base.Ui32(l0) {
-			*(*int32)(unsafe.Add(mBase, _c_F_wrapper_handler[0])) = int32(28)
-		} else {
-			if v35 != 0 {
-				v42 = l0 * int32(20)
-				v43 = *(*int32)(unsafe.Add(mBase, uint32(v35)+16))
-				*(*int32)(unsafe.Add(mBase, uint32(v42)+uint32(_c_F_wrapper_handler[3]))) = v43
-				v45 = *(*int64)(unsafe.Add(mBase, uint32(v35)+8))
-				*(*int64)(unsafe.Add(mBase, uint32(v42)+uint32(_c_F_wrapper_handler[4]))) = v45
-				v47 = *(*int64)(unsafe.Add(mBase, uint32(v35)))
-				*(*int64)(unsafe.Add(mBase, uint32(v42)+uint32(_c_F_wrapper_handler[5]))) = v47
-			} else {
-			}
-		}
-		m.G0 = v13 + int32(32)
-		v54 = F_raise(m, l0)
+		v37 = F___sigaction(m, l0, v13+int32(12), int32(0))
 		mBase = m.M
-		v55 = m.ExcPending
-		if v55 != 0 {
+		m.G0 = v13 + int32(32)
+		F_raise(m, l0)
+		mBase = m.M
+		v42 = m.ExcPending
+		if v42 != 0 {
 			return
 		} else {
 			return
 		}
 	} else {
-		v60 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_c_F_wrapper_handler[2])))
-		m.T0[v60].(func(*base.Module, int32))(m, l0)
+		v47 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_c_F_wrapper_handler[2])))
+		m.T0[v47].(func(*base.Module, int32))(m, l0)
 		mBase = m.M
-		v62 = m.ExcPending
-		if v62 != 0 {
+		v49 = m.ExcPending
+		if v49 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, _c_F_wrapper_handler[0])) = v4

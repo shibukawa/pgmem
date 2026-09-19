@@ -3,6 +3,7 @@ package p3
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 	"math"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -975,7 +976,7 @@ func F_CheckBuiltinCryptoMode(m *base.Module) {
 func F_CheckElement_2(m *base.Module, l0 float32) {
 	var v8 int32
 	_ = v8
-	Fn13824(m, l0, int32(147), int32(_a_F_CheckElement_2_0), int32(_a_F_CheckElement_2_1), int32(142), int32(_a_F_CheckElement_2_2))
+	Fn13845(m, l0, int32(147), int32(_a_F_CheckElement_2_0), int32(_a_F_CheckElement_2_1), int32(142), int32(_a_F_CheckElement_2_2))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return
@@ -2003,8 +2004,8 @@ func F_ConditionVariableTimedSleep(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v52
 	var v54 int32
 	_ = v54
-	var v57 int32
-	_ = v57
+	var v59 int32
+	_ = v59
 	var v64 int32
 	_ = v64
 	var v65 int32
@@ -2029,24 +2030,26 @@ func F_ConditionVariableTimedSleep(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v85
 	var v94 int32
 	_ = v94
-	var v98 int32
-	_ = v98
-	var v100 int32
-	_ = v100
-	var v102 int32
-	_ = v102
-	var v104 int32
-	_ = v104
-	var v108 int32
-	_ = v108
-	var v111 int64
-	_ = v111
+	var v95 int32
+	_ = v95
+	var v99 int32
+	_ = v99
+	var v101 int32
+	_ = v101
+	var v103 int32
+	_ = v103
+	var v105 int32
+	_ = v105
+	var v109 int32
+	_ = v109
 	var v112 int64
 	_ = v112
-	var v121 int32
-	_ = v121
-	var v130 int32
-	_ = v130
+	var v113 int64
+	_ = v113
+	var v122 int32
+	_ = v122
+	var v131 int32
+	_ = v131
 	v12 = m.G0
 	v14 = v12 - int32(16)
 	m.G0 = v14
@@ -2059,7 +2062,7 @@ func F_ConditionVariableTimedSleep(m *base.Module, l0 int32, l1 int32, l2 int32)
 L1:
 	;
 	m.G0 = v14 + int32(16)
-	return v130
+	return v131
 L2:
 	;
 	F_ConditionVariablePrepareToSleep(m, l0)
@@ -2086,7 +2089,7 @@ L5:
 	return int32(0)
 L6:
 	;
-	v130 = int32(0)
+	v131 = int32(0)
 	goto L1
 L7:
 	;
@@ -2124,7 +2127,7 @@ L11:
 	}
 L12:
 	;
-	v130 = int32(0)
+	v131 = int32(0)
 	goto L1
 L13:
 	;
@@ -2133,9 +2136,8 @@ L13:
 	goto L14
 L14:
 	;
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(1)
-	if v57 != 0 {
+	v59 = base.AtomicRmwXchg32(m, l0, int32(0), int32(1))
+	if v59 != 0 {
 		goto L15
 	} else {
 		goto L16
@@ -2172,9 +2174,10 @@ L18:
 	goto L17
 L19:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(0)
-	v98 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[4]))
-	if v98 != 0 {
+	v95 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v95))
+	v99 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[4]))
+	if v99 != 0 {
 		goto L26
 	} else {
 		goto L27
@@ -2221,8 +2224,8 @@ L26:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
+	v101 = m.ExcPending
+	if v101 != 0 {
 		goto L5
 	} else {
 		goto L29
@@ -2232,9 +2235,9 @@ L27:
 	goto L28
 L28:
 	;
-	v102 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[0]))
-	v104 = v94 | base.B2i32(l0 != v102)
-	if v104|v24 == int32(0) {
+	v103 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[0]))
+	v105 = v94 | base.B2i32(l0 != v103)
+	if v105|v24 == int32(0) {
 		goto L30
 	} else {
 		goto L31
@@ -2244,14 +2247,14 @@ L29:
 	goto L28
 L30:
 	;
-	v108 = int32(1)
-	F___clock_gettime(m, v108, v14)
+	v109 = int32(1)
+	F___clock_gettime(m, v109, v14)
 	mBase = m.M
-	v111 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+8)))
-	v112 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
-	v121 = l1 - base.I32_trunc_sat_f64_s(base.F64_div(base.F64_convert_i64_s(v111+(v112*int64(1000000000)+v36)), float64(1e+06)))
-	if int32(0) < v121 {
-		v46 = v121
+	v112 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+8)))
+	v113 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
+	v122 = l1 - base.I32_trunc_sat_f64_s(base.F64_div(base.F64_convert_i64_s(v112+(v113*int64(1000000000)+v36)), float64(1e+06)))
+	if int32(0) < v122 {
+		v46 = v122
 		goto L11
 	} else {
 		goto L33
@@ -2261,14 +2264,14 @@ L31:
 	goto L32
 L32:
 	;
-	if v104 == int32(0) {
+	if v105 == int32(0) {
 		goto L11
 	} else {
 		goto L34
 	}
 L33:
 	;
-	v130 = v108
+	v131 = v109
 	goto L1
 L34:
 	;

@@ -2,6 +2,7 @@ package p0
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -29,22 +30,23 @@ func F_GetCurrentReplayRecPtr(m *base.Module, l0 int32) int64 {
 	_ = mBase
 	var v6 int32
 	_ = v6
-	var v7 int32
-	_ = v7
+	var v9 int32
+	_ = v9
 	var v11 int32
 	_ = v11
 	var v20 int32
 	_ = v20
 	var v22 int32
 	_ = v22
-	var v25 int64
+	var v23 int32
+	_ = v23
+	var v24 int64
+	_ = v24
+	var v25 int32
 	_ = v25
-	var v26 int32
-	_ = v26
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_GetCurrentReplayRecPtr[0]))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+96))
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+96)) = int32(1)
-	if v7 != 0 {
+	v9 = base.AtomicRmwXchg32(m, v6, int32(96), int32(1))
+	if v9 != 0 {
 		v11 = *(*int32)(unsafe.Add(mBase, _c_F_GetCurrentReplayRecPtr[0]))
 		F_s_lock(m, v11+int32(96), int32(_a_F_GetCurrentReplayRecPtr_0), int32(_a_F_GetCurrentReplayRecPtr_1), int32(_a_F_GetCurrentReplayRecPtr_2))
 		mBase = m.M
@@ -53,25 +55,27 @@ func F_GetCurrentReplayRecPtr(m *base.Module, l0 int32) int64 {
 			return int64(0)
 		} else {
 			v22 = *(*int32)(unsafe.Add(mBase, _c_F_GetCurrentReplayRecPtr[0]))
-			*(*int32)(unsafe.Add(mBase, uint32(v22)+96)) = int32(0)
-			v25 = *(*int64)(unsafe.Add(mBase, uint32(v22)+48))
+			v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+56))
+			v24 = *(*int64)(unsafe.Add(mBase, uint32(v22)+48))
+			v25 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v22)+96)), uint32(v25))
 			if l0 != 0 {
-				v26 = *(*int32)(unsafe.Add(mBase, uint32(v22)+56))
-				*(*int32)(unsafe.Add(mBase, uint32(l0))) = v26
+				*(*int32)(unsafe.Add(mBase, uint32(l0))) = v23
 			} else {
 			}
-			return v25
+			return v24
 		}
 	} else {
 		v22 = *(*int32)(unsafe.Add(mBase, _c_F_GetCurrentReplayRecPtr[0]))
-		*(*int32)(unsafe.Add(mBase, uint32(v22)+96)) = int32(0)
-		v25 = *(*int64)(unsafe.Add(mBase, uint32(v22)+48))
+		v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+56))
+		v24 = *(*int64)(unsafe.Add(mBase, uint32(v22)+48))
+		v25 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v22)+96)), uint32(v25))
 		if l0 != 0 {
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(v22)+56))
-			*(*int32)(unsafe.Add(mBase, uint32(l0))) = v26
+			*(*int32)(unsafe.Add(mBase, uint32(l0))) = v23
 		} else {
 		}
-		return v25
+		return v24
 	}
 }
 func F_GetCurrentRoleId(m *base.Module) int32 {

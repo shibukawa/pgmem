@@ -16,6 +16,31 @@ func F_DataChecksumsEnabled(m *base.Module) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)+252))
 	return base.B2i32(v3 != int32(0))
 }
+func F_SetDataDir(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	v2 = F_make_absolute_path(m, l0)
+	mBase = m.M
+	v3 = m.ExcPending
+	if v3 != 0 {
+		return
+	} else {
+		v4 = int32(_a_F_SetDataDir_0)
+		v5 = *(*int32)(unsafe.Add(mBase, _c_F_SetDataDir[0]))
+		F_emscripten_builtin_free(m, v5)
+		mBase = m.M
+		*(*int32)(unsafe.Add(mBase, _c_F_SetDataDir[0])) = v2
+		return
+	}
+}
 func F_copy_read_data(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase

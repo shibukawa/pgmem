@@ -180,30 +180,145 @@ func F_handle_pm_shutdown_request_signal(m *base.Module, l0 int32) {
 	_ = v7
 	var v16 int32
 	_ = v16
-	var v18 int32
-	_ = v18
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
+	var v57 int32
+	_ = v57
 	switch l0 - int32(2) {
 	case 0:
 		v7 = int32(_a_F_handle_pm_shutdown_request_signal_0)
-		*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(1)
-		*(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[0])) = int32(1)
+		goto L3
 	case 1:
-		v7 = int32(_a_F_handle_pm_shutdown_request_signal_1)
-		*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(1)
-		*(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[0])) = int32(1)
+		goto L4
 	default:
+		goto L1
 	case 13:
-		*(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[0])) = int32(1)
+		goto L2
 	}
-	v16 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[1]))
-	F_SetLatch(m, v16)
-	mBase = m.M
-	v18 = m.ExcPending
-	if v18 != 0 {
-		return
+L1:
+	;
+	v16 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[0]))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+	if v17 != 0 {
+		goto L6
 	} else {
-		return
+		goto L7
 	}
+L2:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[1])) = int32(1)
+	goto L1
+L3:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(1)
+	goto L2
+L4:
+	;
+	v7 = int32(_a_F_handle_pm_shutdown_request_signal_1)
+	goto L3
+L5:
+	;
+	return
+L6:
+	;
+	goto L5
+L7:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1)
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
+	if v20 == int32(0) {
+		goto L6
+	} else {
+		goto L8
+	}
+L8:
+	;
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(v16)+12))
+	if v23 == int32(0) {
+		goto L6
+	} else {
+		goto L9
+	}
+L9:
+	;
+	v27 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[2]))
+	if v27 == v23 {
+		goto L10
+	} else {
+		goto L11
+	}
+L10:
+	;
+	v29 = m.G0
+	v31 = v29 - int32(16)
+	m.G0 = v31
+	v34 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[3]))
+	if v34 == int32(0) {
+		goto L13
+	} else {
+		goto L14
+	}
+L11:
+	;
+	goto L12
+L12:
+	;
+	v57 = F_pgmem_kill(m, v23, int32(23))
+	mBase = m.M
+	goto L6
+L13:
+	;
+	m.G0 = v31 + int32(16)
+	goto L5
+L14:
+	;
+	v37 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v31)+15)) = uint8(v37)
+	goto L15
+L15:
+	;
+	v41 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[4]))
+	v45 = F_write(m, v41, v31+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v45 {
+		goto L13
+	} else {
+		goto L17
+	}
+L16:
+	;
+	goto L13
+L17:
+	;
+	v49 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[5]))
+	if v49 == int32(27) {
+		goto L15
+	} else {
+		goto L18
+	}
+L18:
+	;
+	goto L16
 }
 func F_has_bypassrls_privilege(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -267,7 +382,7 @@ func F_has_superclass(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13920(m, l0, int32(2680), int32(1), int32(2611))
+	v5 = Fn13942(m, l0, int32(2680), int32(1), int32(2611))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -278,7 +393,7 @@ func F_has_superclass(m *base.Module, l0 int32) int32 {
 func F_hashadjustmembers(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	var v7 int32
 	_ = v7
-	Fn13921(m, l0, l1, l2, l3, int32(405))
+	Fn13943(m, l0, l1, l2, l3, int32(405))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return
@@ -11933,7 +12048,7 @@ func F_hnswhandler(m *base.Module, l0 int32) int32 {
 	_ = v16
 	var v19 int32
 	_ = v19
-	v16 = Fn13924(m, l0, int32(_a_F_hnswhandler_0), int32(_a_F_hnswhandler_1), int32(_a_F_hnswhandler_2), int32(_a_F_hnswhandler_3), int32(_a_F_hnswhandler_4), int32(_a_F_hnswhandler_5), int32(_a_F_hnswhandler_6), int32(_a_F_hnswhandler_7), int32(_a_F_hnswhandler_8), int32(_a_F_hnswhandler_9), int32(_a_F_hnswhandler_10), int32(_a_F_hnswhandler_11), int32(_a_F_hnswhandler_12), int64(72057594038124544))
+	v16 = Fn13946(m, l0, int32(_a_F_hnswhandler_0), int32(_a_F_hnswhandler_1), int32(_a_F_hnswhandler_2), int32(_a_F_hnswhandler_3), int32(_a_F_hnswhandler_4), int32(_a_F_hnswhandler_5), int32(_a_F_hnswhandler_6), int32(_a_F_hnswhandler_7), int32(_a_F_hnswhandler_8), int32(_a_F_hnswhandler_9), int32(_a_F_hnswhandler_10), int32(_a_F_hnswhandler_11), int32(_a_F_hnswhandler_12), int64(72057594038124544))
 	v19 = m.ExcPending
 	if v19 != 0 {
 		return int32(0)

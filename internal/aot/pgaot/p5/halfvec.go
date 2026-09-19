@@ -1847,7 +1847,7 @@ func F_halfvec_typmod_in(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v14 int32
 	_ = v14
-	v11 = Fn13912(m, l0, int32(_a_F_halfvec_typmod_in_0), int32(363), int32(_a_F_halfvec_typmod_in_1), int32(_a_F_halfvec_typmod_in_2), int32(_a_F_halfvec_typmod_in_3), int32(358), int32(_a_F_halfvec_typmod_in_4), int32(353), int32(_a_F_halfvec_typmod_in_5))
+	v11 = Fn13934(m, l0, int32(_a_F_halfvec_typmod_in_0), int32(363), int32(_a_F_halfvec_typmod_in_1), int32(_a_F_halfvec_typmod_in_2), int32(_a_F_halfvec_typmod_in_3), int32(358), int32(_a_F_halfvec_typmod_in_4), int32(353), int32(_a_F_halfvec_typmod_in_5))
 	v14 = m.ExcPending
 	if v14 != 0 {
 		return int32(0)

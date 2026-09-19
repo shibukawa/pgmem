@@ -28388,7 +28388,7 @@ func F_errhidecontext(m *base.Module) {
 func F_errmsg_internal(m *base.Module, l0 int32, l1 int32) {
 	var v6 int32
 	_ = v6
-	Fn13874(m, l0, l1, int32(_a_F_errmsg_internal_0), int32(1164))
+	Fn13896(m, l0, l1, int32(_a_F_errmsg_internal_0), int32(1164))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return

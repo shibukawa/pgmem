@@ -1449,7 +1449,7 @@ func F_parseIntFromText(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13954(m, l0, l1, l2, int32(_a_F_parseIntFromText_0), int32(1324), int32(1319), int32(1314), int32(_a_F_parseIntFromText_1))
+	v9 = Fn13976(m, l0, l1, l2, int32(_a_F_parseIntFromText_0), int32(1324), int32(1319), int32(1314), int32(_a_F_parseIntFromText_1))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)

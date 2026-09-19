@@ -15,6 +15,7 @@ _emscripten_timeout
 pgmem_init
 pgmem_main
 pgmem_call_sighandler
+pgmem_raise
 pgmem_module_name
 pgmem_reset_session
 

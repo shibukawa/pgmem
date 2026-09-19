@@ -2323,7 +2323,7 @@ func F_to_oct64(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14004(m, l0, int64(3), int64(8), int32(7))
+	v5 = Fn14026(m, l0, int64(3), int64(8), int32(7))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -2336,7 +2336,7 @@ func F_to_regclass(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14005(m, l0, int32(1481))
+	v3 = Fn14027(m, l0, int32(1481))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -2349,7 +2349,7 @@ func F_to_regtype(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14005(m, l0, int32(1238))
+	v3 = Fn14027(m, l0, int32(1238))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -2362,7 +2362,7 @@ func F_to_tsquery_byid(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14006(m, l0, int32(0), int32(4))
+	v4 = Fn14028(m, l0, int32(0), int32(4))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

@@ -122,22 +122,14 @@ func F_SendPostmasterSignal(m *base.Module, l0 int32) {
 	_ = v14
 	var v16 int32
 	_ = v16
-	var v17 int32
-	_ = v17
 	v3 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SendPostmasterSignal[0])))
 	if v3 == int32(1) {
 		v7 = *(*int32)(unsafe.Add(mBase, _c_F_SendPostmasterSignal[1]))
 		*(*int32)(unsafe.Add(mBase, uint32(v7+l0<<(uint(int32(2))%32)))) = int32(1)
 		v14 = *(*int32)(unsafe.Add(mBase, _c_F_SendPostmasterSignal[2]))
-		v16 = F_kill(m, v14, int32(10))
+		v16 = F_pgmem_kill(m, v14, int32(10))
 		mBase = m.M
-		v17 = m.ExcPending
-		if v17 != 0 {
-			return
-		} else {
-			return
-		}
 	} else {
-		return
 	}
+	return
 }

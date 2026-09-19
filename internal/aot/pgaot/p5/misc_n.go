@@ -3045,7 +3045,7 @@ func F_nlikesel(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13989(m, l0, int32(0))
+	v3 = Fn14011(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

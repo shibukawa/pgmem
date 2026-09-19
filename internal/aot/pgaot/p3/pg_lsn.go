@@ -506,7 +506,7 @@ func F_pg_lsn_mii(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13963(m, l0, int32(18), int32(_a_F_pg_lsn_mii_0), int32(296), int32(_a_F_pg_lsn_mii_1))
+	v6 = Fn13985(m, l0, int32(18), int32(_a_F_pg_lsn_mii_0), int32(296), int32(_a_F_pg_lsn_mii_1))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -519,7 +519,7 @@ func F_pg_lsn_pli(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13963(m, l0, int32(1278), int32(_a_F_pg_lsn_pli_0), int32(262), int32(_a_F_pg_lsn_pli_1))
+	v6 = Fn13985(m, l0, int32(1278), int32(_a_F_pg_lsn_pli_0), int32(262), int32(_a_F_pg_lsn_pli_1))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

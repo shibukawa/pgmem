@@ -2,63 +2,65 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
 func F_table_block_parallelscan_initialize(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v5 int32
-	_ = v5
-	var v7 int64
-	_ = v7
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
+	var v4 int32
+	_ = v4
+	var v6 int64
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
 	var v16 int32
 	_ = v16
-	var v19 int32
-	_ = v19
 	var v20 int32
 	_ = v20
-	var v24 int32
-	_ = v24
-	var v26 int32
-	_ = v26
-	var v28 int32
-	_ = v28
-	v3 = int32(0)
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v5
-	v7 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-	*(*int64)(unsafe.Add(mBase, uint32(l1))) = v7
-	v10 = F_RelationGetNumberOfBlocksInFork(m, l0, v3)
+	var v21 int32
+	_ = v21
+	var v25 int32
+	_ = v25
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v4
+	v6 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
+	*(*int64)(unsafe.Add(mBase, uint32(l1))) = v6
+	v9 = F_RelationGetNumberOfBlocksInFork(m, l0, int32(0))
 	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	v12 = m.ExcPending
+	if v12 != 0 {
 		return int32(0)
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(l1)+20)) = v10
+		*(*int32)(unsafe.Add(mBase, uint32(l1)+20)) = v9
 		v16 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_table_block_parallelscan_initialize[0])))
 		if v16 != int32(1) {
-			v28 = v3
+			v29 = int32(0)
 		} else {
-			v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-			v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+118)))
-			if v20 == int32(116) {
-				v28 = v3
+			v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+			v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+118)))
+			if v21 == int32(116) {
+				v29 = int32(0)
 			} else {
-				v24 = *(*int32)(unsafe.Add(mBase, _c_F_table_block_parallelscan_initialize[1]))
-				v26 = base.I32_div_s(v24, int32(4))
-				v28 = base.B2i32(base.Ui32(v26) < base.Ui32(v10))
+				v25 = *(*int32)(unsafe.Add(mBase, _c_F_table_block_parallelscan_initialize[1]))
+				v27 = base.I32_div_s(v25, int32(4))
+				v29 = base.B2i32(base.Ui32(v27) < base.Ui32(v9))
 			}
 		}
+		*(*uint8)(unsafe.Add(mBase, uint32(l1)+12)) = uint8(v29)
+		v31 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+24)), uint32(v31))
 		*(*int64)(unsafe.Add(mBase, uint32(l1)+32)) = int64(0)
-		*(*int64)(unsafe.Add(mBase, uint32(l1)+24)) = int64(-4294967296)
-		*(*uint8)(unsafe.Add(mBase, uint32(l1)+12)) = uint8(v28)
+		*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = int32(-1)
 		return int32(40)
 	}
 }
@@ -79,43 +81,43 @@ func F_table_block_parallelscan_nextpage(m *base.Module, l0 int32, l1 int32, l2 
 	_ = v23
 	var v25 int32
 	_ = v25
-	var v26 int64
-	_ = v26
-	var v30 int32
-	_ = v30
-	var v32 int32
+	var v28 int64
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
+	var v32 int64
 	_ = v32
-	var v33 int64
-	_ = v33
-	var v35 int32
-	_ = v35
-	var v39 int64
-	_ = v39
-	var v41 int64
-	_ = v41
-	var v43 int64
+	var v34 int32
+	_ = v34
+	var v38 int64
+	_ = v38
+	var v40 int64
+	_ = v40
+	var v42 int64
+	_ = v42
+	var v43 int32
 	_ = v43
 	var v44 int32
 	_ = v44
-	var v45 int32
-	_ = v45
-	var v47 int32
-	_ = v47
-	var v52 int32
-	_ = v52
+	var v46 int32
+	_ = v46
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
 	var v54 int32
 	_ = v54
-	var v55 int32
-	_ = v55
+	var v58 int32
+	_ = v58
 	var v59 int32
 	_ = v59
-	var v60 int32
-	_ = v60
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	if v8 != 0 {
 		v9 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
-		v32 = v8
-		v33 = v9 + int64(1)
+		v31 = v8
+		v32 = v9 + int64(1)
 	} else {
 		v12 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 		if base.Ui32(v12) < base.Ui32(int32(2)) {
@@ -131,58 +133,57 @@ func F_table_block_parallelscan_nextpage(m *base.Module, l0 int32, l1 int32, l2 
 				v25 = v23
 			}
 		}
-		v26 = *(*int64)(unsafe.Add(mBase, uint32(l2)+32))
-		*(*int64)(unsafe.Add(mBase, uint32(l2)+32)) = v26 + base.I64_extend_i32_u(v25)
-		v30 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-		v32 = v30
-		v33 = v26
+		v28 = base.AtomicRmwAdd64(m, l2, int32(32), base.I64_extend_i32_u(v25))
+		v29 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+		v31 = v29
+		v32 = v28
 	}
-	*(*int64)(unsafe.Add(mBase, uint32(l1))) = v33
-	v35 = int32(-1)
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v32 - int32(1)
-	v39 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l2)+20)))
-	if base.Ui64(v33) < base.Ui64(v39) {
-		v41 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l2)+28)))
-		v43 = base.I64_rem_u_s(v33+v41, v39)
-		v44 = base.I32_wrap_i64(v43)
-		v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+12)))
-		if v45 != 0 {
-			v54 = v44
-			v55 = v44
-			F_ss_report_location(m, l0, v54)
+	*(*int64)(unsafe.Add(mBase, uint32(l1))) = v32
+	v34 = int32(-1)
+	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v31 - int32(1)
+	v38 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l2)+20)))
+	if base.Ui64(v32) < base.Ui64(v38) {
+		v40 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l2)+28)))
+		v42 = base.I64_rem_u_s(v32+v40, v38)
+		v43 = base.I32_wrap_i64(v42)
+		v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+12)))
+		if v44 != 0 {
+			v53 = v43
+			v54 = v43
+			F_ss_report_location(m, l0, v53)
 			mBase = m.M
-			v59 = m.ExcPending
-			if v59 != 0 {
+			v58 = m.ExcPending
+			if v58 != 0 {
 				return int32(0)
 			} else {
-				v60 = v55
-				return v60
+				v59 = v54
+				return v59
 			}
 		} else {
-			v60 = v44
-			return v60
+			v59 = v43
+			return v59
 		}
 	} else {
-		if v33 != v39 {
-			v60 = v35
-			return v60
+		if v32 != v38 {
+			v59 = v34
+			return v59
 		} else {
-			v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+12)))
-			if v47&int32(1) == int32(0) {
-				v60 = v35
-				return v60
+			v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+12)))
+			if v46&int32(1) == int32(0) {
+				v59 = v34
+				return v59
 			} else {
-				v52 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-				v54 = v52
-				v55 = int32(-1)
-				F_ss_report_location(m, l0, v54)
+				v51 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+				v53 = v51
+				v54 = int32(-1)
+				F_ss_report_location(m, l0, v53)
 				mBase = m.M
-				v59 = m.ExcPending
-				if v59 != 0 {
+				v58 = m.ExcPending
+				if v58 != 0 {
 					return int32(0)
 				} else {
-					v60 = v55
-					return v60
+					v59 = v54
+					return v59
 				}
 			}
 		}

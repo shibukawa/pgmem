@@ -126,7 +126,7 @@ func F_gbt_bit_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13881(m, l0, int32(_a_F_gbt_bit_same_0))
+	v3 = Fn13903(m, l0, int32(_a_F_gbt_bit_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -139,7 +139,7 @@ func F_gbt_bit_ssup_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13882(m, l0, l1, l2, int32(2847))
+	v5 = Fn13904(m, l0, l1, l2, int32(2847))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -321,7 +321,7 @@ func F_gbt_bytea_consistent(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13885(m, l0, int32(_a_F_gbt_bytea_consistent_0))
+	v3 = Fn13907(m, l0, int32(_a_F_gbt_bytea_consistent_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -334,7 +334,7 @@ func F_gbt_bytea_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13881(m, l0, int32(_a_F_gbt_bytea_same_0))
+	v3 = Fn13903(m, l0, int32(_a_F_gbt_bytea_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -472,7 +472,7 @@ func F_gbt_enum_consistent(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13888(m, l0, int32(_a_F_gbt_enum_consistent_0))
+	v3 = Fn13910(m, l0, int32(_a_F_gbt_enum_consistent_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -504,7 +504,7 @@ func F_gbt_enum_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13883(m, l0, int32(_a_F_gbt_enum_same_0))
+	v3 = Fn13905(m, l0, int32(_a_F_gbt_enum_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -624,7 +624,7 @@ func F_gbt_inet_union(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13884(m, l0, int32(_a_F_gbt_inet_union_0), int32(16))
+	v4 = Fn13906(m, l0, int32(_a_F_gbt_inet_union_0), int32(16))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -670,7 +670,7 @@ func F_gbt_int4_consistent(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13888(m, l0, int32(_a_F_gbt_int4_consistent_0))
+	v3 = Fn13910(m, l0, int32(_a_F_gbt_int4_consistent_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -683,7 +683,7 @@ func F_gbt_int4_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13883(m, l0, int32(_a_F_gbt_int4_same_0))
+	v3 = Fn13905(m, l0, int32(_a_F_gbt_int4_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -696,7 +696,7 @@ func F_gbt_intv_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13883(m, l0, int32(_a_F_gbt_intv_same_0))
+	v3 = Fn13905(m, l0, int32(_a_F_gbt_intv_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -722,7 +722,7 @@ func F_gbt_macad8_union(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13892(m, l0, int32(_a_F_gbt_macad8_union_0))
+	v3 = Fn13914(m, l0, int32(_a_F_gbt_macad8_union_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -748,7 +748,7 @@ func F_gbt_macad8key_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13891(m, l0, l1, l2, int32(8), int32(_a_F_gbt_macad8key_cmp_0))
+	v6 = Fn13913(m, l0, l1, l2, int32(8), int32(_a_F_gbt_macad8key_cmp_0))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -984,7 +984,7 @@ func F_gbt_text_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13881(m, l0, int32(_a_F_gbt_text_same_0))
+	v3 = Fn13903(m, l0, int32(_a_F_gbt_text_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1010,7 +1010,7 @@ func F_gbt_time_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13883(m, l0, int32(_a_F_gbt_time_same_0))
+	v3 = Fn13905(m, l0, int32(_a_F_gbt_time_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1172,7 +1172,7 @@ func F_gbt_ts_consistent(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13886(m, l0, int32(_a_F_gbt_ts_consistent_0))
+	v3 = Fn13908(m, l0, int32(_a_F_gbt_ts_consistent_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1204,7 +1204,7 @@ func F_gbt_ts_same(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13883(m, l0, int32(_a_F_gbt_ts_same_0))
+	v3 = Fn13905(m, l0, int32(_a_F_gbt_ts_same_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1279,7 +1279,7 @@ func F_gbt_uuid_consistent(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13890(m, l0, int32(_a_F_gbt_uuid_consistent_0), int32(16))
+	v4 = Fn13912(m, l0, int32(_a_F_gbt_uuid_consistent_0), int32(16))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

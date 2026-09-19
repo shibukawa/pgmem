@@ -28,6 +28,12 @@ func (a *imports) Getaddrinfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	return int32(uint32(fn_env_getaddrinfo.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3))})))
 }
 
+var fn_env_pgmem_spawn = mustLookup("env", "pgmem_spawn")
+
+func (a *imports) Pgmem_spawn(m *base.Module, l0 int32, l1 int32) int32 {
+	return int32(uint32(fn_env_pgmem_spawn.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1))})))
+}
+
 var fn_env_emscripten_exit_with_live_runtime = mustLookup("env", "emscripten_exit_with_live_runtime")
 
 func (a *imports) Emscripten_exit_with_live_runtime(m *base.Module) {
@@ -82,28 +88,82 @@ func (a *imports) Pgmem_hash_free(m *base.Module, l0 int32) {
 	fn_env_pgmem_hash_free.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})
 }
 
+var fn_env_pgmem_usleep = mustLookup("env", "pgmem_usleep")
+
+func (a *imports) Pgmem_usleep(m *base.Module, l0 int32) {
+	fn_env_pgmem_usleep.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})
+}
+
 var fn_env_exit = mustLookup("env", "exit")
 
 func (a *imports) Exit(m *base.Module, l0 int32) {
 	fn_env_exit.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})
 }
 
+var fn_env_pgmem_getpid = mustLookup("env", "pgmem_getpid")
+
+func (a *imports) Pgmem_getpid(m *base.Module) int32 {
+	return int32(uint32(fn_env_pgmem_getpid.Call(a.h, a.mem, []uint64{})))
+}
+
+var fn_env_pgmem_kill = mustLookup("env", "pgmem_kill")
+
+func (a *imports) Pgmem_kill(m *base.Module, l0 int32, l1 int32) int32 {
+	return int32(uint32(fn_env_pgmem_kill.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1))})))
+}
+
+var fn_env_pgmem_waitpid = mustLookup("env", "pgmem_waitpid")
+
+func (a *imports) Pgmem_waitpid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_waitpid.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_pgmem_shmget = mustLookup("env", "pgmem_shmget")
+
+func (a *imports) Pgmem_shmget(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_shmget.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_pgmem_shmat = mustLookup("env", "pgmem_shmat")
+
+func (a *imports) Pgmem_shmat(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_shmat.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_pgmem_shmdt = mustLookup("env", "pgmem_shmdt")
+
+func (a *imports) Pgmem_shmdt(m *base.Module, l0 int32) int32 {
+	return int32(uint32(fn_env_pgmem_shmdt.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
+}
+
+var fn_env_pgmem_shmctl = mustLookup("env", "pgmem_shmctl")
+
+func (a *imports) Pgmem_shmctl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	return int32(uint32(fn_env_pgmem_shmctl.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3))})))
+}
+
+var fn_env_pgmem_sem = mustLookup("env", "pgmem_sem")
+
+func (a *imports) Pgmem_sem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_sem.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_pgmem_sock_recv = mustLookup("env", "pgmem_sock_recv")
+
+func (a *imports) Pgmem_sock_recv(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_sock_recv.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_pgmem_sock_send = mustLookup("env", "pgmem_sock_send")
+
+func (a *imports) Pgmem_sock_send(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_sock_send.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
 var fn_env_pgmem_poll = mustLookup("env", "pgmem_poll")
 
-func (a *imports) Pgmem_poll(m *base.Module, l0 int32) int32 {
-	return int32(uint32(fn_env_pgmem_poll.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
-}
-
-var fn_env_pgmem_recv = mustLookup("env", "pgmem_recv")
-
-func (a *imports) Pgmem_recv(m *base.Module, l0 int32, l1 int32) int32 {
-	return int32(uint32(fn_env_pgmem_recv.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1))})))
-}
-
-var fn_env_pgmem_send = mustLookup("env", "pgmem_send")
-
-func (a *imports) Pgmem_send(m *base.Module, l0 int32, l1 int32) int32 {
-	return int32(uint32(fn_env_pgmem_send.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1))})))
+func (a *imports) Pgmem_poll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_poll.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
 }
 
 var fn_env_pgmem_run = mustLookup("env", "pgmem_run")
@@ -196,6 +256,36 @@ func (a *imports) Environ_get(m *base.Module, l0 int32, l1 int32) int32 {
 	return int32(uint32(fn_wasi_snapshot_preview1_environ_get.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1))})))
 }
 
+var fn_env___syscall_fcntl64 = mustLookup("env", "__syscall_fcntl64")
+
+func (a *imports) X__syscall_fcntl64(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env___syscall_fcntl64.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env___syscall_ioctl = mustLookup("env", "__syscall_ioctl")
+
+func (a *imports) X__syscall_ioctl(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env___syscall_ioctl.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_wasi_snapshot_preview1_fd_close = mustLookup("wasi_snapshot_preview1", "fd_close")
+
+func (a *imports) Fd_close(m *base.Module, l0 int32) int32 {
+	return int32(uint32(fn_wasi_snapshot_preview1_fd_close.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
+}
+
+var fn_wasi_snapshot_preview1_fd_read = mustLookup("wasi_snapshot_preview1", "fd_read")
+
+func (a *imports) Fd_read(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	return int32(uint32(fn_wasi_snapshot_preview1_fd_read.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3))})))
+}
+
+var fn_wasi_snapshot_preview1_fd_write = mustLookup("wasi_snapshot_preview1", "fd_write")
+
+func (a *imports) Fd_write(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	return int32(uint32(fn_wasi_snapshot_preview1_fd_write.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3))})))
+}
+
 var fn_wasi_snapshot_preview1_proc_exit = mustLookup("wasi_snapshot_preview1", "proc_exit")
 
 func (a *imports) Proc_exit(m *base.Module, l0 int32) {
@@ -238,12 +328,6 @@ func (a *imports) Clock_time_get(m *base.Module, l0 int32, l1 int64, l2 int32) i
 	return int32(uint32(fn_wasi_snapshot_preview1_clock_time_get.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(l1), uint64(uint32(l2))})))
 }
 
-var fn_wasi_snapshot_preview1_fd_close = mustLookup("wasi_snapshot_preview1", "fd_close")
-
-func (a *imports) Fd_close(m *base.Module, l0 int32) int32 {
-	return int32(uint32(fn_wasi_snapshot_preview1_fd_close.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
-}
-
 var fn_env___syscall_dup = mustLookup("env", "__syscall_dup")
 
 func (a *imports) X__syscall_dup(m *base.Module, l0 int32) int32 {
@@ -272,30 +356,6 @@ var fn_env___syscall_openat = mustLookup("env", "__syscall_openat")
 
 func (a *imports) X__syscall_openat(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	return int32(uint32(fn_env___syscall_openat.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3))})))
-}
-
-var fn_env___syscall_fcntl64 = mustLookup("env", "__syscall_fcntl64")
-
-func (a *imports) X__syscall_fcntl64(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
-	return int32(uint32(fn_env___syscall_fcntl64.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
-}
-
-var fn_env___syscall_ioctl = mustLookup("env", "__syscall_ioctl")
-
-func (a *imports) X__syscall_ioctl(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
-	return int32(uint32(fn_env___syscall_ioctl.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
-}
-
-var fn_wasi_snapshot_preview1_fd_write = mustLookup("wasi_snapshot_preview1", "fd_write")
-
-func (a *imports) Fd_write(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
-	return int32(uint32(fn_wasi_snapshot_preview1_fd_write.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3))})))
-}
-
-var fn_wasi_snapshot_preview1_fd_read = mustLookup("wasi_snapshot_preview1", "fd_read")
-
-func (a *imports) Fd_read(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
-	return int32(uint32(fn_wasi_snapshot_preview1_fd_read.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3))})))
 }
 
 var fn_env___syscall_fstat64 = mustLookup("env", "__syscall_fstat64")

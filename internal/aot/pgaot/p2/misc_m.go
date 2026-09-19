@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -12970,36 +12971,38 @@ func F_mergeruns(m *base.Module, l0 int32) {
 	_ = v754
 	var v758 int32
 	_ = v758
-	var v759 int32
-	_ = v759
+	var v761 int32
+	_ = v761
 	var v766 int32
 	_ = v766
 	var v767 int32
 	_ = v767
 	var v771 int64
 	_ = v771
-	var v775 int32
-	_ = v775
-	var v781 int32
-	_ = v781
-	var v786 int32
-	_ = v786
-	var v797 int32
-	_ = v797
-	var v801 int32
-	_ = v801
-	var v803 int32
-	_ = v803
-	var v805 int32
-	_ = v805
+	var v773 int32
+	_ = v773
+	var v777 int32
+	_ = v777
+	var v782 int32
+	_ = v782
+	var v787 int32
+	_ = v787
+	var v798 int32
+	_ = v798
+	var v802 int32
+	_ = v802
+	var v804 int32
+	_ = v804
 	var v806 int32
 	_ = v806
-	var v826 int32
-	_ = v826
-	var v830 int32
-	_ = v830
-	var v835 int32
-	_ = v835
+	var v807 int32
+	_ = v807
+	var v827 int32
+	_ = v827
+	var v831 int32
+	_ = v831
+	var v836 int32
+	_ = v836
 	v13 = m.G0
 	v15 = v13 + int32(-64)
 	m.G0 = v15
@@ -13294,8 +13297,8 @@ L36:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v826 = m.ExcPending
-	if v826 != 0 {
+	v827 = m.ExcPending
+	if v827 != 0 {
 		goto L4
 	} else {
 		goto L168
@@ -14126,8 +14129,8 @@ L149:
 L150:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = int32(4)
-	v781 = *(*int32)(unsafe.Add(mBase, uint32(l0)+176))
-	if v781 <= int32(0) {
+	v782 = *(*int32)(unsafe.Add(mBase, uint32(l0)+176))
+	if v782 <= int32(0) {
 		goto L37
 	} else {
 		goto L163
@@ -14186,9 +14189,8 @@ L157:
 	}
 L158:
 	;
-	v759 = *(*int32)(unsafe.Add(mBase, uint32(v740)))
-	*(*int32)(unsafe.Add(mBase, uint32(v740))) = int32(1)
-	if v759 != 0 {
+	v761 = base.AtomicRmwXchg32(m, v740, int32(0), int32(1))
+	if v761 != 0 {
 		goto L159
 	} else {
 		goto L160
@@ -14211,25 +14213,26 @@ L161:
 	v767 = *(*int32)(unsafe.Add(mBase, uint32(l0)+232))
 	v771 = *(*int64)(unsafe.Add(mBase, uint32(v15)+48))
 	*(*int64)(unsafe.Add(mBase, uint32(v740+v767<<(uint(int32(3))%32))+72)) = v771
-	*(*int32)(unsafe.Add(mBase, uint32(v740))) = int32(0)
-	v775 = *(*int32)(unsafe.Add(mBase, uint32(v740)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v740)+8)) = v775 + int32(1)
+	v773 = *(*int32)(unsafe.Add(mBase, uint32(v740)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v740)+8)) = v773 + int32(1)
+	v777 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v740))), uint32(v777))
 	goto L150
 L162:
 	;
 	goto L161
 L163:
 	;
-	v786 = int32(0)
+	v787 = int32(0)
 	goto L164
 L164:
 	;
-	v797 = *(*int32)(unsafe.Add(mBase, uint32(l0)+172))
-	v801 = *(*int32)(unsafe.Add(mBase, uint32(v797+v786<<(uint(int32(2))%32))))
-	F_LogicalTapeClose(m, v801)
+	v798 = *(*int32)(unsafe.Add(mBase, uint32(l0)+172))
+	v802 = *(*int32)(unsafe.Add(mBase, uint32(v798+v787<<(uint(int32(2))%32))))
+	F_LogicalTapeClose(m, v802)
 	mBase = m.M
-	v803 = m.ExcPending
-	if v803 != 0 {
+	v804 = m.ExcPending
+	if v804 != 0 {
 		goto L4
 	} else {
 		goto L166
@@ -14239,10 +14242,10 @@ L165:
 	goto L37
 L166:
 	;
-	v805 = v786 + int32(1)
-	v806 = *(*int32)(unsafe.Add(mBase, uint32(l0)+176))
-	if v805 < v806 {
-		v786 = v805
+	v806 = v787 + int32(1)
+	v807 = *(*int32)(unsafe.Add(mBase, uint32(l0)+176))
+	if v806 < v807 {
+		v787 = v806
 		goto L164
 	} else {
 		goto L167
@@ -14254,8 +14257,8 @@ L168:
 	;
 	F_errmsg_internal(m, int32(_a_F_mergeruns_9), int32(0))
 	mBase = m.M
-	v830 = m.ExcPending
-	if v830 != 0 {
+	v831 = m.ExcPending
+	if v831 != 0 {
 		goto L4
 	} else {
 		goto L169
@@ -14264,8 +14267,8 @@ L169:
 	;
 	F_errfinish(m, int32(_a_F_mergeruns_5), int32(2862), int32(_a_F_mergeruns_10))
 	mBase = m.M
-	v835 = m.ExcPending
-	if v835 != 0 {
+	v836 = m.ExcPending
+	if v836 != 0 {
 		goto L4
 	} else {
 		goto L170

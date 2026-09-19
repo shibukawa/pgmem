@@ -28,22 +28,24 @@ func F_pg_current_wal_flush_lsn(m *base.Module, l0 int32) int32 {
 	_ = v31
 	var v36 int32
 	_ = v36
+	var v39 int32
+	_ = v39
 	var v40 int32
 	_ = v40
-	var v41 int32
+	var v41 int64
 	_ = v41
-	var v42 int64
-	_ = v42
-	var v47 int32
-	_ = v47
-	var v48 int64
+	var v44 int64
+	_ = v44
+	var v48 int32
 	_ = v48
-	var v57 int64
-	_ = v57
-	var v58 int32
-	_ = v58
-	var v59 int32
+	var v52 int64
+	_ = v52
+	var v59 int64
 	_ = v59
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[0])))
 	if v4 == int32(1) {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[1]))
@@ -94,23 +96,22 @@ func F_pg_current_wal_flush_lsn(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v40 = int32(_a_F_pg_current_wal_flush_lsn_4)
-		v41 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[1]))
-		v42 = *(*int64)(unsafe.Add(mBase, uint32(v41)+280))
-		*(*int64)(unsafe.Add(mBase, uint32(v41)+280)) = v42
-		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[2])) = v42
-		v47 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[1]))
-		v48 = *(*int64)(unsafe.Add(mBase, uint32(v47)+272))
-		*(*int64)(unsafe.Add(mBase, uint32(v47)+272)) = v48
-		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[3])) = v48
-		v57 = *(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[2]))
-		v58 = F_Int64GetDatum(m, v57)
+		v39 = int32(_a_F_pg_current_wal_flush_lsn_4)
+		v40 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[1]))
+		v41 = int64(0)
+		v44 = base.AtomicRmwCmpxchg64(m, v40, int32(280), v41, v41)
+		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[2])) = v44
+		v48 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[1]))
+		v52 = base.AtomicRmwCmpxchg64(m, v48, int32(272), v41, v41)
+		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[3])) = v52
+		v59 = *(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_flush_lsn[2]))
+		v60 = F_Int64GetDatum(m, v59)
 		mBase = m.M
-		v59 = m.ExcPending
-		if v59 != 0 {
+		v61 = m.ExcPending
+		if v61 != 0 {
 			return int32(0)
 		} else {
-			return v58
+			return v60
 		}
 	}
 }

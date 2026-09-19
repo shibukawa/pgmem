@@ -617,7 +617,7 @@ func F_findTypeTypmodinFunction(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v14 int32
 	_ = v14
-	v11 = Fn13877(m, l0, int32(_a_F_findTypeTypmodinFunction_0), int32(2199), int32(_a_F_findTypeTypmodinFunction_1), int32(_a_F_findTypeTypmodinFunction_2), int32(2193), int32(2206), int32(_a_F_findTypeTypmodinFunction_3), int32(23), int32(1263))
+	v11 = Fn13899(m, l0, int32(_a_F_findTypeTypmodinFunction_0), int32(2199), int32(_a_F_findTypeTypmodinFunction_1), int32(_a_F_findTypeTypmodinFunction_2), int32(2193), int32(2206), int32(_a_F_findTypeTypmodinFunction_3), int32(23), int32(1263))
 	v14 = m.ExcPending
 	if v14 != 0 {
 		return int32(0)
@@ -1024,7 +1024,7 @@ func F_has_type_privilege_id(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13913(m, l0, int32(_a_F_has_type_privilege_id_0), int32(1247))
+	v4 = Fn13935(m, l0, int32(_a_F_has_type_privilege_id_0), int32(1247))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1037,7 +1037,7 @@ func F_has_type_privilege_id_id(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13914(m, l0, int32(_a_F_has_type_privilege_id_id_0), int32(1247))
+	v4 = Fn13936(m, l0, int32(_a_F_has_type_privilege_id_id_0), int32(1247))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1050,7 +1050,7 @@ func F_has_type_privilege_id_name(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13916(m, l0, int32(_a_F_has_type_privilege_id_name_0), int32(1247), int32(_a_F_has_type_privilege_id_name_1), int32(_a_F_has_type_privilege_id_name_2), int32(_a_F_has_type_privilege_id_name_3), int32(67137668), int32(1238))
+	v9 = Fn13938(m, l0, int32(_a_F_has_type_privilege_id_name_0), int32(1247), int32(_a_F_has_type_privilege_id_name_1), int32(_a_F_has_type_privilege_id_name_2), int32(_a_F_has_type_privilege_id_name_3), int32(67137668), int32(1238))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
@@ -1063,7 +1063,7 @@ func F_has_type_privilege_name_id(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13915(m, l0, int32(_a_F_has_type_privilege_name_id_0), int32(1247))
+	v4 = Fn13937(m, l0, int32(_a_F_has_type_privilege_name_id_0), int32(1247))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1076,7 +1076,7 @@ func F_has_type_privilege_name_name(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13918(m, l0, int32(_a_F_has_type_privilege_name_name_0), int32(1247), int32(_a_F_has_type_privilege_name_name_1), int32(_a_F_has_type_privilege_name_name_2), int32(_a_F_has_type_privilege_name_name_3), int32(67137668), int32(1238))
+	v9 = Fn13940(m, l0, int32(_a_F_has_type_privilege_name_name_0), int32(1247), int32(_a_F_has_type_privilege_name_name_1), int32(_a_F_has_type_privilege_name_name_2), int32(_a_F_has_type_privilege_name_name_3), int32(67137668), int32(1238))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
@@ -1227,7 +1227,7 @@ func F_type_is_enum(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14011(m, l0, int32(101))
+	v3 = Fn14033(m, l0, int32(101))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1240,7 +1240,7 @@ func F_type_is_range(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14011(m, l0, int32(114))
+	v3 = Fn14033(m, l0, int32(114))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

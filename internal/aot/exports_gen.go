@@ -116,6 +116,12 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PglFreopen(m, int32(uint32(a[0])), int32(uint32(a[1])), int32(uint32(a[2])))
 		return []uint64{uint64(uint32(r))}, true
+	case "pgmem_raise":
+		if len(a) != 1 {
+			panic("aot: pgmem_raise: want 1 args")
+		}
+		pgaot.PgmemRaise(m, int32(uint32(a[0])))
+		return nil, true
 	case "pgmem_init":
 		if len(a) != 0 {
 			panic("aot: pgmem_init: want 0 args")

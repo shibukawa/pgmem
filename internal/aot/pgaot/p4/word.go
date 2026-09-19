@@ -135,7 +135,7 @@ func F_word_similarity(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14019(m, l0, int32(0))
+	v3 = Fn14041(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -148,7 +148,7 @@ func F_word_similarity_commutator_op(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14020(m, l0, int32(_a_F_word_similarity_commutator_op_0), int32(1))
+	v4 = Fn14042(m, l0, int32(_a_F_word_similarity_commutator_op_0), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -161,7 +161,7 @@ func F_word_similarity_op(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14023(m, l0, int32(_a_F_word_similarity_op_0), int32(1))
+	v4 = Fn14045(m, l0, int32(_a_F_word_similarity_op_0), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

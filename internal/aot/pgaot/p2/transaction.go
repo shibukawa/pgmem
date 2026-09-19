@@ -962,36 +962,42 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 	_ = v100
 	var v105 int32
 	_ = v105
-	var v117 int32
-	_ = v117
-	var v121 int32
-	_ = v121
-	var v125 int32
-	_ = v125
-	var v126 int32
-	_ = v126
-	var v131 int32
-	_ = v131
-	var v132 int32
-	_ = v132
-	var v137 int32
-	_ = v137
+	var v109 int32
+	_ = v109
+	var v116 int32
+	_ = v116
+	var v118 int32
+	_ = v118
+	var v130 int32
+	_ = v130
+	var v134 int32
+	_ = v134
 	var v138 int32
 	_ = v138
-	var v148 int32
-	_ = v148
-	var v153 int32
-	_ = v153
-	var v154 int32
-	_ = v154
-	var v162 int32
-	_ = v162
-	var v165 int32
-	_ = v165
-	var v169 int32
-	_ = v169
-	var v173 int32
-	_ = v173
+	var v139 int32
+	_ = v139
+	var v144 int32
+	_ = v144
+	var v145 int32
+	_ = v145
+	var v150 int32
+	_ = v150
+	var v151 int32
+	_ = v151
+	var v161 int32
+	_ = v161
+	var v166 int32
+	_ = v166
+	var v167 int32
+	_ = v167
+	var v175 int32
+	_ = v175
+	var v178 int32
+	_ = v178
+	var v182 int32
+	_ = v182
+	var v186 int32
+	_ = v186
 	v8 = m.G0
 	v10 = v8 - int32(48)
 	m.G0 = v10
@@ -1070,178 +1076,95 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 								v90 = base.B2i32(int32(0) <= v56-v37)
 							}
 							if v90 == int32(0) {
-								if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
-									v117 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
+							} else {
+								v94 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
+								if v94&int32(1) == int32(0) {
 								} else {
-									v117 = base.B2i32(int32(0) <= v56-v54)
+									v100 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4])))
+									if v100&int32(1) != 0 {
+									} else {
+										v105 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
+										if v105 == int32(1) {
+											v109 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[5]))
+											*(*int32)(unsafe.Add(mBase, uint32(v109+int32(16)))) = int32(1)
+											v116 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[6]))
+											v118 = F_pgmem_kill(m, v116, int32(10))
+											mBase = m.M
+										} else {
+										}
+									}
 								}
-								if v117 == int32(0) {
+							}
+							if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
+								v130 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
+							} else {
+								v130 = base.B2i32(int32(0) <= v56-v54)
+							}
+							if v130 == int32(0) {
+								m.G0 = v10 + int32(48)
+								return
+							} else {
+								v134 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4])))
+								if v134&int32(1) != 0 {
 									m.G0 = v10 + int32(48)
 									return
 								} else {
-									v121 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-									if v121&int32(1) != 0 {
-										m.G0 = v10 + int32(48)
-										return
-									} else {
-										v125 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4]))
-										v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+20))
-										if base.B2i32(v126 == int32(2)) == int32(0) {
-											v153 = F_errstart(m, int32(19), int32(0))
-											mBase = m.M
-											v154 = m.ExcPending
-											if v154 != 0 {
+									v138 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[7]))
+									v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+20))
+									if base.B2i32(v139 == int32(2)) == int32(0) {
+										v166 = F_errstart(m, int32(19), int32(0))
+										mBase = m.M
+										v167 = m.ExcPending
+										if v167 != 0 {
+											return
+										} else {
+											if v166 == int32(0) {
+												m.G0 = v10 + int32(48)
 												return
 											} else {
-												if v153 == int32(0) {
-													m.G0 = v10 + int32(48)
+												*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
+												*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
+												F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
+												mBase = m.M
+												v175 = m.ExcPending
+												if v175 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-													*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-													F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
+													v178 = int32(501)
+													F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
 													mBase = m.M
-													v162 = m.ExcPending
-													if v162 != 0 {
+													v182 = m.ExcPending
+													if v182 != 0 {
 														return
 													} else {
-														v165 = int32(501)
-														F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
+														F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v178, int32(_a_F_SetTransactionIdLimit_4))
 														mBase = m.M
-														v169 = m.ExcPending
-														if v169 != 0 {
+														v186 = m.ExcPending
+														if v186 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-															mBase = m.M
-															v173 = m.ExcPending
-															if v173 != 0 {
-																return
-															} else {
-																m.G0 = v10 + int32(48)
-																return
-															}
-														}
-													}
-												}
-											}
-										} else {
-											v131 = F_get_database_name(m, l1)
-											mBase = m.M
-											v132 = m.ExcPending
-											if v132 != 0 {
-												return
-											} else {
-												if v131 == int32(0) {
-													v153 = F_errstart(m, int32(19), int32(0))
-													mBase = m.M
-													v154 = m.ExcPending
-													if v154 != 0 {
-														return
-													} else {
-														if v153 == int32(0) {
 															m.G0 = v10 + int32(48)
 															return
-														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-															*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-															F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-															mBase = m.M
-															v162 = m.ExcPending
-															if v162 != 0 {
-																return
-															} else {
-																v165 = int32(501)
-																F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																mBase = m.M
-																v169 = m.ExcPending
-																if v169 != 0 {
-																	return
-																} else {
-																	F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																	mBase = m.M
-																	v173 = m.ExcPending
-																	if v173 != 0 {
-																		return
-																	} else {
-																		m.G0 = v10 + int32(48)
-																		return
-																	}
-																}
-															}
-														}
-													}
-												} else {
-													v137 = F_errstart(m, int32(19), int32(0))
-													mBase = m.M
-													v138 = m.ExcPending
-													if v138 != 0 {
-														return
-													} else {
-														if v137 == int32(0) {
-															m.G0 = v10 + int32(48)
-															return
-														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v131
-															*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
-															F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
-															mBase = m.M
-															v148 = m.ExcPending
-															if v148 != 0 {
-																return
-															} else {
-																v165 = int32(494)
-																F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																mBase = m.M
-																v169 = m.ExcPending
-																if v169 != 0 {
-																	return
-																} else {
-																	F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																	mBase = m.M
-																	v173 = m.ExcPending
-																	if v173 != 0 {
-																		return
-																	} else {
-																		m.G0 = v10 + int32(48)
-																		return
-																	}
-																}
-															}
 														}
 													}
 												}
 											}
 										}
-									}
-								}
-							} else {
-								v94 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[5])))
-								if v94&int32(1) == int32(0) {
-									if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
-										v117 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
 									} else {
-										v117 = base.B2i32(int32(0) <= v56-v54)
-									}
-									if v117 == int32(0) {
-										m.G0 = v10 + int32(48)
-										return
-									} else {
-										v121 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-										if v121&int32(1) != 0 {
-											m.G0 = v10 + int32(48)
+										v144 = F_get_database_name(m, l1)
+										mBase = m.M
+										v145 = m.ExcPending
+										if v145 != 0 {
 											return
 										} else {
-											v125 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4]))
-											v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+20))
-											if base.B2i32(v126 == int32(2)) == int32(0) {
-												v153 = F_errstart(m, int32(19), int32(0))
+											if v144 == int32(0) {
+												v166 = F_errstart(m, int32(19), int32(0))
 												mBase = m.M
-												v154 = m.ExcPending
-												if v154 != 0 {
+												v167 = m.ExcPending
+												if v167 != 0 {
 													return
 												} else {
-													if v153 == int32(0) {
+													if v166 == int32(0) {
 														m.G0 = v10 + int32(48)
 														return
 													} else {
@@ -1249,21 +1172,21 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 														*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
 														F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
 														mBase = m.M
-														v162 = m.ExcPending
-														if v162 != 0 {
+														v175 = m.ExcPending
+														if v175 != 0 {
 															return
 														} else {
-															v165 = int32(501)
+															v178 = int32(501)
 															F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
 															mBase = m.M
-															v169 = m.ExcPending
-															if v169 != 0 {
+															v182 = m.ExcPending
+															if v182 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
+																F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v178, int32(_a_F_SetTransactionIdLimit_4))
 																mBase = m.M
-																v173 = m.ExcPending
-																if v173 != 0 {
+																v186 = m.ExcPending
+																if v186 != 0 {
 																	return
 																} else {
 																	m.G0 = v10 + int32(48)
@@ -1274,389 +1197,39 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 													}
 												}
 											} else {
-												v131 = F_get_database_name(m, l1)
+												v150 = F_errstart(m, int32(19), int32(0))
 												mBase = m.M
-												v132 = m.ExcPending
-												if v132 != 0 {
+												v151 = m.ExcPending
+												if v151 != 0 {
 													return
 												} else {
-													if v131 == int32(0) {
-														v153 = F_errstart(m, int32(19), int32(0))
-														mBase = m.M
-														v154 = m.ExcPending
-														if v154 != 0 {
-															return
-														} else {
-															if v153 == int32(0) {
-																m.G0 = v10 + int32(48)
-																return
-															} else {
-																*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-																*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-																F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-																mBase = m.M
-																v162 = m.ExcPending
-																if v162 != 0 {
-																	return
-																} else {
-																	v165 = int32(501)
-																	F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																	mBase = m.M
-																	v169 = m.ExcPending
-																	if v169 != 0 {
-																		return
-																	} else {
-																		F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																		mBase = m.M
-																		v173 = m.ExcPending
-																		if v173 != 0 {
-																			return
-																		} else {
-																			m.G0 = v10 + int32(48)
-																			return
-																		}
-																	}
-																}
-															}
-														}
-													} else {
-														v137 = F_errstart(m, int32(19), int32(0))
-														mBase = m.M
-														v138 = m.ExcPending
-														if v138 != 0 {
-															return
-														} else {
-															if v137 == int32(0) {
-																m.G0 = v10 + int32(48)
-																return
-															} else {
-																*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v131
-																*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
-																F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
-																mBase = m.M
-																v148 = m.ExcPending
-																if v148 != 0 {
-																	return
-																} else {
-																	v165 = int32(494)
-																	F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																	mBase = m.M
-																	v169 = m.ExcPending
-																	if v169 != 0 {
-																		return
-																	} else {
-																		F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																		mBase = m.M
-																		v173 = m.ExcPending
-																		if v173 != 0 {
-																			return
-																		} else {
-																			m.G0 = v10 + int32(48)
-																			return
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								} else {
-									v100 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-									if v100&int32(1) != 0 {
-										if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
-											v117 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
-										} else {
-											v117 = base.B2i32(int32(0) <= v56-v54)
-										}
-										if v117 == int32(0) {
-											m.G0 = v10 + int32(48)
-											return
-										} else {
-											v121 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-											if v121&int32(1) != 0 {
-												m.G0 = v10 + int32(48)
-												return
-											} else {
-												v125 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4]))
-												v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+20))
-												if base.B2i32(v126 == int32(2)) == int32(0) {
-													v153 = F_errstart(m, int32(19), int32(0))
-													mBase = m.M
-													v154 = m.ExcPending
-													if v154 != 0 {
+													if v150 == int32(0) {
+														m.G0 = v10 + int32(48)
 														return
 													} else {
-														if v153 == int32(0) {
-															m.G0 = v10 + int32(48)
+														*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v144
+														*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
+														F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
+														mBase = m.M
+														v161 = m.ExcPending
+														if v161 != 0 {
 															return
 														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-															*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-															F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
+															v178 = int32(494)
+															F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
 															mBase = m.M
-															v162 = m.ExcPending
-															if v162 != 0 {
+															v182 = m.ExcPending
+															if v182 != 0 {
 																return
 															} else {
-																v165 = int32(501)
-																F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
+																F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v178, int32(_a_F_SetTransactionIdLimit_4))
 																mBase = m.M
-																v169 = m.ExcPending
-																if v169 != 0 {
+																v186 = m.ExcPending
+																if v186 != 0 {
 																	return
 																} else {
-																	F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																	mBase = m.M
-																	v173 = m.ExcPending
-																	if v173 != 0 {
-																		return
-																	} else {
-																		m.G0 = v10 + int32(48)
-																		return
-																	}
-																}
-															}
-														}
-													}
-												} else {
-													v131 = F_get_database_name(m, l1)
-													mBase = m.M
-													v132 = m.ExcPending
-													if v132 != 0 {
-														return
-													} else {
-														if v131 == int32(0) {
-															v153 = F_errstart(m, int32(19), int32(0))
-															mBase = m.M
-															v154 = m.ExcPending
-															if v154 != 0 {
-																return
-															} else {
-																if v153 == int32(0) {
 																	m.G0 = v10 + int32(48)
 																	return
-																} else {
-																	*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-																	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-																	F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-																	mBase = m.M
-																	v162 = m.ExcPending
-																	if v162 != 0 {
-																		return
-																	} else {
-																		v165 = int32(501)
-																		F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																		mBase = m.M
-																		v169 = m.ExcPending
-																		if v169 != 0 {
-																			return
-																		} else {
-																			F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																			mBase = m.M
-																			v173 = m.ExcPending
-																			if v173 != 0 {
-																				return
-																			} else {
-																				m.G0 = v10 + int32(48)
-																				return
-																			}
-																		}
-																	}
-																}
-															}
-														} else {
-															v137 = F_errstart(m, int32(19), int32(0))
-															mBase = m.M
-															v138 = m.ExcPending
-															if v138 != 0 {
-																return
-															} else {
-																if v137 == int32(0) {
-																	m.G0 = v10 + int32(48)
-																	return
-																} else {
-																	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v131
-																	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
-																	F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
-																	mBase = m.M
-																	v148 = m.ExcPending
-																	if v148 != 0 {
-																		return
-																	} else {
-																		v165 = int32(494)
-																		F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																		mBase = m.M
-																		v169 = m.ExcPending
-																		if v169 != 0 {
-																			return
-																		} else {
-																			F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																			mBase = m.M
-																			v173 = m.ExcPending
-																			if v173 != 0 {
-																				return
-																			} else {
-																				m.G0 = v10 + int32(48)
-																				return
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									} else {
-										F_SendPostmasterSignal(m, int32(4))
-										mBase = m.M
-										v105 = m.ExcPending
-										if v105 != 0 {
-											return
-										} else {
-											if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
-												v117 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
-											} else {
-												v117 = base.B2i32(int32(0) <= v56-v54)
-											}
-											if v117 == int32(0) {
-												m.G0 = v10 + int32(48)
-												return
-											} else {
-												v121 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-												if v121&int32(1) != 0 {
-													m.G0 = v10 + int32(48)
-													return
-												} else {
-													v125 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4]))
-													v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+20))
-													if base.B2i32(v126 == int32(2)) == int32(0) {
-														v153 = F_errstart(m, int32(19), int32(0))
-														mBase = m.M
-														v154 = m.ExcPending
-														if v154 != 0 {
-															return
-														} else {
-															if v153 == int32(0) {
-																m.G0 = v10 + int32(48)
-																return
-															} else {
-																*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-																*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-																F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-																mBase = m.M
-																v162 = m.ExcPending
-																if v162 != 0 {
-																	return
-																} else {
-																	v165 = int32(501)
-																	F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																	mBase = m.M
-																	v169 = m.ExcPending
-																	if v169 != 0 {
-																		return
-																	} else {
-																		F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																		mBase = m.M
-																		v173 = m.ExcPending
-																		if v173 != 0 {
-																			return
-																		} else {
-																			m.G0 = v10 + int32(48)
-																			return
-																		}
-																	}
-																}
-															}
-														}
-													} else {
-														v131 = F_get_database_name(m, l1)
-														mBase = m.M
-														v132 = m.ExcPending
-														if v132 != 0 {
-															return
-														} else {
-															if v131 == int32(0) {
-																v153 = F_errstart(m, int32(19), int32(0))
-																mBase = m.M
-																v154 = m.ExcPending
-																if v154 != 0 {
-																	return
-																} else {
-																	if v153 == int32(0) {
-																		m.G0 = v10 + int32(48)
-																		return
-																	} else {
-																		*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-																		*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-																		F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-																		mBase = m.M
-																		v162 = m.ExcPending
-																		if v162 != 0 {
-																			return
-																		} else {
-																			v165 = int32(501)
-																			F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																			mBase = m.M
-																			v169 = m.ExcPending
-																			if v169 != 0 {
-																				return
-																			} else {
-																				F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																				mBase = m.M
-																				v173 = m.ExcPending
-																				if v173 != 0 {
-																					return
-																				} else {
-																					m.G0 = v10 + int32(48)
-																					return
-																				}
-																			}
-																		}
-																	}
-																}
-															} else {
-																v137 = F_errstart(m, int32(19), int32(0))
-																mBase = m.M
-																v138 = m.ExcPending
-																if v138 != 0 {
-																	return
-																} else {
-																	if v137 == int32(0) {
-																		m.G0 = v10 + int32(48)
-																		return
-																	} else {
-																		*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v131
-																		*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
-																		F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
-																		mBase = m.M
-																		v148 = m.ExcPending
-																		if v148 != 0 {
-																			return
-																		} else {
-																			v165 = int32(494)
-																			F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																			mBase = m.M
-																			v169 = m.ExcPending
-																			if v169 != 0 {
-																				return
-																			} else {
-																				F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																				mBase = m.M
-																				v173 = m.ExcPending
-																				if v173 != 0 {
-																					return
-																				} else {
-																					m.G0 = v10 + int32(48)
-																					return
-																				}
-																			}
-																		}
-																	}
 																}
 															}
 														}
@@ -1676,178 +1249,95 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 						v90 = base.B2i32(int32(0) <= v56-v37)
 					}
 					if v90 == int32(0) {
-						if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
-							v117 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
+					} else {
+						v94 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
+						if v94&int32(1) == int32(0) {
 						} else {
-							v117 = base.B2i32(int32(0) <= v56-v54)
+							v100 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4])))
+							if v100&int32(1) != 0 {
+							} else {
+								v105 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
+								if v105 == int32(1) {
+									v109 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[5]))
+									*(*int32)(unsafe.Add(mBase, uint32(v109+int32(16)))) = int32(1)
+									v116 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[6]))
+									v118 = F_pgmem_kill(m, v116, int32(10))
+									mBase = m.M
+								} else {
+								}
+							}
 						}
-						if v117 == int32(0) {
+					}
+					if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
+						v130 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
+					} else {
+						v130 = base.B2i32(int32(0) <= v56-v54)
+					}
+					if v130 == int32(0) {
+						m.G0 = v10 + int32(48)
+						return
+					} else {
+						v134 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4])))
+						if v134&int32(1) != 0 {
 							m.G0 = v10 + int32(48)
 							return
 						} else {
-							v121 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-							if v121&int32(1) != 0 {
-								m.G0 = v10 + int32(48)
-								return
-							} else {
-								v125 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4]))
-								v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+20))
-								if base.B2i32(v126 == int32(2)) == int32(0) {
-									v153 = F_errstart(m, int32(19), int32(0))
-									mBase = m.M
-									v154 = m.ExcPending
-									if v154 != 0 {
+							v138 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[7]))
+							v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+20))
+							if base.B2i32(v139 == int32(2)) == int32(0) {
+								v166 = F_errstart(m, int32(19), int32(0))
+								mBase = m.M
+								v167 = m.ExcPending
+								if v167 != 0 {
+									return
+								} else {
+									if v166 == int32(0) {
+										m.G0 = v10 + int32(48)
 										return
 									} else {
-										if v153 == int32(0) {
-											m.G0 = v10 + int32(48)
+										*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
+										*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
+										F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
+										mBase = m.M
+										v175 = m.ExcPending
+										if v175 != 0 {
 											return
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-											*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-											F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
+											v178 = int32(501)
+											F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
 											mBase = m.M
-											v162 = m.ExcPending
-											if v162 != 0 {
+											v182 = m.ExcPending
+											if v182 != 0 {
 												return
 											} else {
-												v165 = int32(501)
-												F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
+												F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v178, int32(_a_F_SetTransactionIdLimit_4))
 												mBase = m.M
-												v169 = m.ExcPending
-												if v169 != 0 {
+												v186 = m.ExcPending
+												if v186 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-													mBase = m.M
-													v173 = m.ExcPending
-													if v173 != 0 {
-														return
-													} else {
-														m.G0 = v10 + int32(48)
-														return
-													}
-												}
-											}
-										}
-									}
-								} else {
-									v131 = F_get_database_name(m, l1)
-									mBase = m.M
-									v132 = m.ExcPending
-									if v132 != 0 {
-										return
-									} else {
-										if v131 == int32(0) {
-											v153 = F_errstart(m, int32(19), int32(0))
-											mBase = m.M
-											v154 = m.ExcPending
-											if v154 != 0 {
-												return
-											} else {
-												if v153 == int32(0) {
 													m.G0 = v10 + int32(48)
 													return
-												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-													*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-													F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-													mBase = m.M
-													v162 = m.ExcPending
-													if v162 != 0 {
-														return
-													} else {
-														v165 = int32(501)
-														F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-														mBase = m.M
-														v169 = m.ExcPending
-														if v169 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-															mBase = m.M
-															v173 = m.ExcPending
-															if v173 != 0 {
-																return
-															} else {
-																m.G0 = v10 + int32(48)
-																return
-															}
-														}
-													}
-												}
-											}
-										} else {
-											v137 = F_errstart(m, int32(19), int32(0))
-											mBase = m.M
-											v138 = m.ExcPending
-											if v138 != 0 {
-												return
-											} else {
-												if v137 == int32(0) {
-													m.G0 = v10 + int32(48)
-													return
-												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v131
-													*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
-													F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
-													mBase = m.M
-													v148 = m.ExcPending
-													if v148 != 0 {
-														return
-													} else {
-														v165 = int32(494)
-														F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-														mBase = m.M
-														v169 = m.ExcPending
-														if v169 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-															mBase = m.M
-															v173 = m.ExcPending
-															if v173 != 0 {
-																return
-															} else {
-																m.G0 = v10 + int32(48)
-																return
-															}
-														}
-													}
 												}
 											}
 										}
 									}
 								}
-							}
-						}
-					} else {
-						v94 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[5])))
-						if v94&int32(1) == int32(0) {
-							if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
-								v117 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
 							} else {
-								v117 = base.B2i32(int32(0) <= v56-v54)
-							}
-							if v117 == int32(0) {
-								m.G0 = v10 + int32(48)
-								return
-							} else {
-								v121 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-								if v121&int32(1) != 0 {
-									m.G0 = v10 + int32(48)
+								v144 = F_get_database_name(m, l1)
+								mBase = m.M
+								v145 = m.ExcPending
+								if v145 != 0 {
 									return
 								} else {
-									v125 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4]))
-									v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+20))
-									if base.B2i32(v126 == int32(2)) == int32(0) {
-										v153 = F_errstart(m, int32(19), int32(0))
+									if v144 == int32(0) {
+										v166 = F_errstart(m, int32(19), int32(0))
 										mBase = m.M
-										v154 = m.ExcPending
-										if v154 != 0 {
+										v167 = m.ExcPending
+										if v167 != 0 {
 											return
 										} else {
-											if v153 == int32(0) {
+											if v166 == int32(0) {
 												m.G0 = v10 + int32(48)
 												return
 											} else {
@@ -1855,21 +1345,21 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 												*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
 												F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
 												mBase = m.M
-												v162 = m.ExcPending
-												if v162 != 0 {
+												v175 = m.ExcPending
+												if v175 != 0 {
 													return
 												} else {
-													v165 = int32(501)
+													v178 = int32(501)
 													F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
 													mBase = m.M
-													v169 = m.ExcPending
-													if v169 != 0 {
+													v182 = m.ExcPending
+													if v182 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
+														F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v178, int32(_a_F_SetTransactionIdLimit_4))
 														mBase = m.M
-														v173 = m.ExcPending
-														if v173 != 0 {
+														v186 = m.ExcPending
+														if v186 != 0 {
 															return
 														} else {
 															m.G0 = v10 + int32(48)
@@ -1880,389 +1370,39 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 											}
 										}
 									} else {
-										v131 = F_get_database_name(m, l1)
+										v150 = F_errstart(m, int32(19), int32(0))
 										mBase = m.M
-										v132 = m.ExcPending
-										if v132 != 0 {
+										v151 = m.ExcPending
+										if v151 != 0 {
 											return
 										} else {
-											if v131 == int32(0) {
-												v153 = F_errstart(m, int32(19), int32(0))
-												mBase = m.M
-												v154 = m.ExcPending
-												if v154 != 0 {
-													return
-												} else {
-													if v153 == int32(0) {
-														m.G0 = v10 + int32(48)
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-														*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-														F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-														mBase = m.M
-														v162 = m.ExcPending
-														if v162 != 0 {
-															return
-														} else {
-															v165 = int32(501)
-															F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-															mBase = m.M
-															v169 = m.ExcPending
-															if v169 != 0 {
-																return
-															} else {
-																F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																mBase = m.M
-																v173 = m.ExcPending
-																if v173 != 0 {
-																	return
-																} else {
-																	m.G0 = v10 + int32(48)
-																	return
-																}
-															}
-														}
-													}
-												}
-											} else {
-												v137 = F_errstart(m, int32(19), int32(0))
-												mBase = m.M
-												v138 = m.ExcPending
-												if v138 != 0 {
-													return
-												} else {
-													if v137 == int32(0) {
-														m.G0 = v10 + int32(48)
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v131
-														*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
-														F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
-														mBase = m.M
-														v148 = m.ExcPending
-														if v148 != 0 {
-															return
-														} else {
-															v165 = int32(494)
-															F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-															mBase = m.M
-															v169 = m.ExcPending
-															if v169 != 0 {
-																return
-															} else {
-																F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																mBase = m.M
-																v173 = m.ExcPending
-																if v173 != 0 {
-																	return
-																} else {
-																	m.G0 = v10 + int32(48)
-																	return
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						} else {
-							v100 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-							if v100&int32(1) != 0 {
-								if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
-									v117 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
-								} else {
-									v117 = base.B2i32(int32(0) <= v56-v54)
-								}
-								if v117 == int32(0) {
-									m.G0 = v10 + int32(48)
-									return
-								} else {
-									v121 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-									if v121&int32(1) != 0 {
-										m.G0 = v10 + int32(48)
-										return
-									} else {
-										v125 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4]))
-										v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+20))
-										if base.B2i32(v126 == int32(2)) == int32(0) {
-											v153 = F_errstart(m, int32(19), int32(0))
-											mBase = m.M
-											v154 = m.ExcPending
-											if v154 != 0 {
+											if v150 == int32(0) {
+												m.G0 = v10 + int32(48)
 												return
 											} else {
-												if v153 == int32(0) {
-													m.G0 = v10 + int32(48)
+												*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v144
+												*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
+												F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
+												mBase = m.M
+												v161 = m.ExcPending
+												if v161 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-													*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-													F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
+													v178 = int32(494)
+													F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
 													mBase = m.M
-													v162 = m.ExcPending
-													if v162 != 0 {
+													v182 = m.ExcPending
+													if v182 != 0 {
 														return
 													} else {
-														v165 = int32(501)
-														F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
+														F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v178, int32(_a_F_SetTransactionIdLimit_4))
 														mBase = m.M
-														v169 = m.ExcPending
-														if v169 != 0 {
+														v186 = m.ExcPending
+														if v186 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-															mBase = m.M
-															v173 = m.ExcPending
-															if v173 != 0 {
-																return
-															} else {
-																m.G0 = v10 + int32(48)
-																return
-															}
-														}
-													}
-												}
-											}
-										} else {
-											v131 = F_get_database_name(m, l1)
-											mBase = m.M
-											v132 = m.ExcPending
-											if v132 != 0 {
-												return
-											} else {
-												if v131 == int32(0) {
-													v153 = F_errstart(m, int32(19), int32(0))
-													mBase = m.M
-													v154 = m.ExcPending
-													if v154 != 0 {
-														return
-													} else {
-														if v153 == int32(0) {
 															m.G0 = v10 + int32(48)
 															return
-														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-															*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-															F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-															mBase = m.M
-															v162 = m.ExcPending
-															if v162 != 0 {
-																return
-															} else {
-																v165 = int32(501)
-																F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																mBase = m.M
-																v169 = m.ExcPending
-																if v169 != 0 {
-																	return
-																} else {
-																	F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																	mBase = m.M
-																	v173 = m.ExcPending
-																	if v173 != 0 {
-																		return
-																	} else {
-																		m.G0 = v10 + int32(48)
-																		return
-																	}
-																}
-															}
-														}
-													}
-												} else {
-													v137 = F_errstart(m, int32(19), int32(0))
-													mBase = m.M
-													v138 = m.ExcPending
-													if v138 != 0 {
-														return
-													} else {
-														if v137 == int32(0) {
-															m.G0 = v10 + int32(48)
-															return
-														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v131
-															*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
-															F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
-															mBase = m.M
-															v148 = m.ExcPending
-															if v148 != 0 {
-																return
-															} else {
-																v165 = int32(494)
-																F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																mBase = m.M
-																v169 = m.ExcPending
-																if v169 != 0 {
-																	return
-																} else {
-																	F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																	mBase = m.M
-																	v173 = m.ExcPending
-																	if v173 != 0 {
-																		return
-																	} else {
-																		m.G0 = v10 + int32(48)
-																		return
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							} else {
-								F_SendPostmasterSignal(m, int32(4))
-								mBase = m.M
-								v105 = m.ExcPending
-								if v105 != 0 {
-									return
-								} else {
-									if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v54))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v56)) == int32(0) {
-										v117 = base.B2i32(base.Ui32(v54) <= base.Ui32(v56))
-									} else {
-										v117 = base.B2i32(int32(0) <= v56-v54)
-									}
-									if v117 == int32(0) {
-										m.G0 = v10 + int32(48)
-										return
-									} else {
-										v121 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[3])))
-										if v121&int32(1) != 0 {
-											m.G0 = v10 + int32(48)
-											return
-										} else {
-											v125 = *(*int32)(unsafe.Add(mBase, _c_F_SetTransactionIdLimit[4]))
-											v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+20))
-											if base.B2i32(v126 == int32(2)) == int32(0) {
-												v153 = F_errstart(m, int32(19), int32(0))
-												mBase = m.M
-												v154 = m.ExcPending
-												if v154 != 0 {
-													return
-												} else {
-													if v153 == int32(0) {
-														m.G0 = v10 + int32(48)
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-														*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-														F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-														mBase = m.M
-														v162 = m.ExcPending
-														if v162 != 0 {
-															return
-														} else {
-															v165 = int32(501)
-															F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-															mBase = m.M
-															v169 = m.ExcPending
-															if v169 != 0 {
-																return
-															} else {
-																F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																mBase = m.M
-																v173 = m.ExcPending
-																if v173 != 0 {
-																	return
-																} else {
-																	m.G0 = v10 + int32(48)
-																	return
-																}
-															}
-														}
-													}
-												}
-											} else {
-												v131 = F_get_database_name(m, l1)
-												mBase = m.M
-												v132 = m.ExcPending
-												if v132 != 0 {
-													return
-												} else {
-													if v131 == int32(0) {
-														v153 = F_errstart(m, int32(19), int32(0))
-														mBase = m.M
-														v154 = m.ExcPending
-														if v154 != 0 {
-															return
-														} else {
-															if v153 == int32(0) {
-																m.G0 = v10 + int32(48)
-																return
-															} else {
-																*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-																*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v30 - v56
-																F_errmsg(m, int32(_a_F_SetTransactionIdLimit_5), v10)
-																mBase = m.M
-																v162 = m.ExcPending
-																if v162 != 0 {
-																	return
-																} else {
-																	v165 = int32(501)
-																	F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																	mBase = m.M
-																	v169 = m.ExcPending
-																	if v169 != 0 {
-																		return
-																	} else {
-																		F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																		mBase = m.M
-																		v173 = m.ExcPending
-																		if v173 != 0 {
-																			return
-																		} else {
-																			m.G0 = v10 + int32(48)
-																			return
-																		}
-																	}
-																}
-															}
-														}
-													} else {
-														v137 = F_errstart(m, int32(19), int32(0))
-														mBase = m.M
-														v138 = m.ExcPending
-														if v138 != 0 {
-															return
-														} else {
-															if v137 == int32(0) {
-																m.G0 = v10 + int32(48)
-																return
-															} else {
-																*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v131
-																*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v30 - v56
-																F_errmsg(m, int32(_a_F_SetTransactionIdLimit_7), v10+int32(16))
-																mBase = m.M
-																v148 = m.ExcPending
-																if v148 != 0 {
-																	return
-																} else {
-																	v165 = int32(494)
-																	F_errhint(m, int32(_a_F_SetTransactionIdLimit_6), int32(0))
-																	mBase = m.M
-																	v169 = m.ExcPending
-																	if v169 != 0 {
-																		return
-																	} else {
-																		F_errfinish(m, int32(_a_F_SetTransactionIdLimit_3), v165, int32(_a_F_SetTransactionIdLimit_4))
-																		mBase = m.M
-																		v173 = m.ExcPending
-																		if v173 != 0 {
-																			return
-																		} else {
-																			m.G0 = v10 + int32(48)
-																			return
-																		}
-																	}
-																}
-															}
 														}
 													}
 												}

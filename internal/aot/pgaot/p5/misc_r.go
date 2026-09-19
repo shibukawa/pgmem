@@ -2,6 +2,7 @@ package p5
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -2010,34 +2011,36 @@ func F_ReadRecord(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 
 	_ = v883
 	var v885 int32
 	_ = v885
-	var v886 int32
-	_ = v886
+	var v888 int32
+	_ = v888
 	var v890 int32
 	_ = v890
 	var v897 int32
 	_ = v897
 	var v899 int32
 	_ = v899
-	var v905 int32
-	_ = v905
-	var v909 int32
-	_ = v909
-	var v910 int64
+	var v902 int32
+	_ = v902
+	var v906 int32
+	_ = v906
+	var v910 int32
 	_ = v910
-	var v916 int32
-	_ = v916
-	var v918 int32
-	_ = v918
-	var v923 int32
-	_ = v923
-	var v925 int32
-	_ = v925
-	var v928 int32
-	_ = v928
+	var v911 int64
+	_ = v911
+	var v917 int32
+	_ = v917
+	var v919 int32
+	_ = v919
+	var v924 int32
+	_ = v924
+	var v926 int32
+	_ = v926
 	var v929 int32
 	_ = v929
-	var v932 int32
-	_ = v932
+	var v930 int32
+	_ = v930
+	var v933 int32
+	_ = v933
 	v3 = l2
 	v5 = int32(0)
 	v19 = m.G0
@@ -2065,7 +2068,7 @@ L1:
 L2:
 	;
 	m.G0 = v21 + int32(144)
-	return v932
+	return v933
 L3:
 	;
 	goto L2
@@ -3046,7 +3049,7 @@ L147:
 L148:
 	;
 	if v749 != 0 {
-		v932 = v653
+		v933 = v653
 		goto L3
 	} else {
 		goto L161
@@ -3222,10 +3225,10 @@ L170:
 	goto L4
 L171:
 	;
-	v923 = int32(0)
-	v925 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ReadRecord[13])))
-	if v925 != int32(1) {
-		v932 = v923
+	v924 = int32(0)
+	v926 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ReadRecord[13])))
+	if v926 != int32(1) {
+		v933 = v924
 		goto L3
 	} else {
 		goto L196
@@ -3366,9 +3369,8 @@ L188:
 L189:
 	;
 	v885 = *(*int32)(unsafe.Add(mBase, _c_F_ReadRecord[21]))
-	v886 = *(*int32)(unsafe.Add(mBase, uint32(v885)+440))
-	*(*int32)(unsafe.Add(mBase, uint32(v885)+440)) = int32(1)
-	if v886 != 0 {
+	v888 = base.AtomicRmwXchg32(m, v885, int32(440), int32(1))
+	if v888 != 0 {
 		goto L190
 	} else {
 		goto L191
@@ -3390,13 +3392,14 @@ L191:
 L192:
 	;
 	v899 = *(*int32)(unsafe.Add(mBase, _c_F_ReadRecord[21]))
-	*(*int32)(unsafe.Add(mBase, uint32(v899)+440)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v899)+316)) = int32(1)
-	v905 = *(*int32)(unsafe.Add(mBase, _c_F_ReadRecord[16]))
-	F_LWLockRelease(m, v905+int32(1152))
+	v902 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v899)+440)), uint32(v902))
+	v906 = *(*int32)(unsafe.Add(mBase, _c_F_ReadRecord[16]))
+	F_LWLockRelease(m, v906+int32(1152))
 	mBase = m.M
-	v909 = m.ExcPending
-	if v909 != 0 {
+	v910 = m.ExcPending
+	if v910 != 0 {
 		goto L12
 	} else {
 		goto L194
@@ -3406,43 +3409,43 @@ L193:
 	goto L192
 L194:
 	;
-	v910 = *(*int64)(unsafe.Add(mBase, uint32(v23)+40))
+	v911 = *(*int64)(unsafe.Add(mBase, uint32(v23)+40))
 	*(*int32)(unsafe.Add(mBase, _c_F_ReadRecord[22])) = l3
-	*(*int64)(unsafe.Add(mBase, _c_F_ReadRecord[23])) = v910
+	*(*int64)(unsafe.Add(mBase, _c_F_ReadRecord[23])) = v911
 	F_CheckRecoveryConsistency(m)
 	mBase = m.M
-	v916 = m.ExcPending
-	if v916 != 0 {
+	v917 = m.ExcPending
+	if v917 != 0 {
 		goto L12
 	} else {
 		goto L195
 	}
 L195:
 	;
-	v918 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_ReadRecord[24])) = v918
-	*(*uint8)(unsafe.Add(mBase, _c_F_ReadRecord[0])) = uint8(v918)
+	v919 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_ReadRecord[24])) = v919
+	*(*uint8)(unsafe.Add(mBase, _c_F_ReadRecord[0])) = uint8(v919)
 	goto L1
 L196:
 	;
-	v928 = F_CheckForStandbyTrigger(m)
+	v929 = F_CheckForStandbyTrigger(m)
 	mBase = m.M
-	v929 = m.ExcPending
-	if v929 != 0 {
+	v930 = m.ExcPending
+	if v930 != 0 {
 		goto L12
 	} else {
 		goto L197
 	}
 L197:
 	;
-	if v928 == int32(0) {
+	if v929 == int32(0) {
 		goto L1
 	} else {
 		goto L198
 	}
 L198:
 	;
-	v932 = v923
+	v933 = v924
 	goto L3
 }
 func F_RegisterSnapshotOnOwner(m *base.Module, l0 int32, l1 int32) int32 {
@@ -13236,7 +13239,7 @@ func F_regexeqsel(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13988(m, l0, int32(2))
+	v3 = Fn14010(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -13676,7 +13679,7 @@ L35:
 func F_relmap_desc(m *base.Module, l0 int32, l1 int32) {
 	var v5 int32
 	_ = v5
-	Fn13990(m, l0, l1, int32(_a_F_relmap_desc_0))
+	Fn14012(m, l0, l1, int32(_a_F_relmap_desc_0))
 	v5 = m.ExcPending
 	if v5 != 0 {
 		return

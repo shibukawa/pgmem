@@ -307,6 +307,24 @@ func (m *Module) Memalign(align, size uint32) (uint32, error) {
 	return uint32(res[0]), nil
 }
 
+// Raise implements host.Guest.
+func (m *Module) Raise(sig int32) error {
+	fn := m.mod.ExportedFunction("pgmem_raise")
+	if fn == nil {
+		return errors.New("wzr: pgmem_raise not exported")
+	}
+	_, err := fn.Call(m.ctx, uint64(uint32(sig)))
+	return err
+}
+
+// MapShared implements host.Guest; wazero instances (initdb) never share memory.
+func (m *Module) MapShared(off uint32, f *os.File, size uint32) error {
+	return errors.New("wzr: shared memory is not supported under wazero")
+}
+
+// UnmapShared implements host.Guest.
+func (m *Module) UnmapShared(off, size uint32) error { return nil }
+
 // Timeout implements host.Guest.
 func (m *Module) Timeout(which int32, now float64) error {
 	fn := m.mod.ExportedFunction("_emscripten_timeout")

@@ -10,7 +10,7 @@ func F_OpclassIsVisibleExt(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v8 = Fn13835(m, l0, l1, int32(13), int32(_a_F_OpclassIsVisibleExt_0), int32(2181), int32(_a_F_OpclassIsVisibleExt_1), int32(14))
+	v8 = Fn13856(m, l0, l1, int32(13), int32(_a_F_OpclassIsVisibleExt_0), int32(2181), int32(_a_F_OpclassIsVisibleExt_1), int32(14))
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int32(0)

@@ -14,13 +14,31 @@
 #define PGMEM_IMPORT(name) __attribute__((import_module("env"), import_name(name)))
 #define PGMEM_EXPORT __attribute__((used, visibility("default")))
 
-/* ---- host imports ---- */
-PGMEM_IMPORT("pgmem_recv") extern int pgmem_host_recv(void *buf, int max_len);
-PGMEM_IMPORT("pgmem_send") extern int pgmem_host_send(const void *buf, int len);
+/* ---- host imports ----
+ *
+ * Every call that touches another process, the shared memory or a socket
+ * goes to the host: the process model is emulated there (one module
+ * instance per PostgreSQL process, one goroutine each). Results follow
+ * the kernel convention: a negative value is -errno.
+ */
 /* Run "postgres ..." as a child. stdin_path/stdout_path may be "" (inherit). Returns exit code. */
 PGMEM_IMPORT("pgmem_run") extern int pgmem_host_run(const char *cmd, const char *stdin_path, const char *stdout_path);
-/* Sleep for timeout_ms (-1 = "forever", the host decides how long). */
-PGMEM_IMPORT("pgmem_poll") extern int pgmem_host_poll(int timeout_ms);
+PGMEM_IMPORT("pgmem_getpid") extern int pgmem_host_getpid(void);
+PGMEM_IMPORT("pgmem_kill") extern int pgmem_host_kill(int pid, int sig);
+PGMEM_IMPORT("pgmem_waitpid") extern int pgmem_host_waitpid(int pid, int *status, int options);
+/* Sleep for us microseconds; returns early when a signal is delivered. */
+PGMEM_IMPORT("pgmem_usleep") extern void pgmem_host_usleep(int us);
+PGMEM_IMPORT("pgmem_shmget") extern int pgmem_host_shmget(int key, int size, int flags);
+/* Returns the address the segment is mapped at (always below 2 GiB). */
+PGMEM_IMPORT("pgmem_shmat") extern int pgmem_host_shmat(int id, int addr, int flags);
+PGMEM_IMPORT("pgmem_shmdt") extern int pgmem_host_shmdt(int addr);
+PGMEM_IMPORT("pgmem_shmctl") extern int pgmem_host_shmctl(int id, int cmd, int *segsz, int *nattch);
+/* op: 0 init(value) 1 destroy 2 wait 3 trywait 4 post; sem is the sem_t address. */
+PGMEM_IMPORT("pgmem_sem") extern int pgmem_host_sem(int op, int sem, int arg);
+PGMEM_IMPORT("pgmem_sock_recv") extern int pgmem_host_sock_recv(int fd, void *buf, int n);
+PGMEM_IMPORT("pgmem_sock_send") extern int pgmem_host_sock_send(int fd, const void *buf, int n);
+/* poll(2) over an array of struct pollfd; returns the ready count. */
+PGMEM_IMPORT("pgmem_poll") extern int pgmem_host_poll(void *fds, int nfds, int timeout);
 
 /* ---- pglitec.c hooks ---- */
 typedef ssize_t (*pgl_read_t)(void *buffer, size_t max_length);
@@ -36,8 +54,6 @@ extern void pgl_set_pclose_fn(pglite_pclose_t pclose_fn);
 #define PGMEM_STDIN_PATH "/pgmem/pgstdin"
 #define PGMEM_STDOUT_PATH "/pgmem/pgstdout"
 
-static ssize_t shim_read(void *buf, size_t n) { return pgmem_host_recv(buf, (int) n); }
-static ssize_t shim_write(void *buf, size_t n) { return pgmem_host_send(buf, (int) n); }
 /* popen/system report a wait(2) status: exit code in bits 8..15. */
 static int wait_status(int rc) { return (rc & 0xff) << 8; }
 static ssize_t shim_system(const char *cmd) { return wait_status(pgmem_host_run(cmd, "", "")); }
@@ -79,32 +95,173 @@ static int shim_pclose(FILE *f)
 	return popen_last_rc;
 }
 
-/*
- * poll(2) replacement. In single-user mode the only pollers are latch
- * waits (pg_sleep, timeouts); no fd can ever become ready, so sleep for
- * the timeout on the host and report a timeout. PostgreSQL's WaitLatch
- * loops re-check their conditions, so a shorter host sleep is also fine.
+/* ---- process model bridge ----
+ *
+ * PostgreSQL objects are compiled with -Dkill=pgmem_kill and friends
+ * (build.sh), so these wrappers see the same prototypes the libc ones
+ * have. This file is compiled without the -D overrides and can use the
+ * real libc names (raise, sigprocmask).
  */
-struct pgmem_pollfd
-{
-	int			fd;
-	short		events;
-	short		revents;
-};
+#include <errno.h>
+#include <poll.h>
+#include <semaphore.h>
+#include <signal.h>
+#include <stdint.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <time.h>
 
-PGMEM_EXPORT int pgmem_poll(struct pgmem_pollfd *fds, unsigned long nfds, int timeout)
+static int host_ret(int r)
 {
-	unsigned long i;
+	if (r < 0)
+	{
+		errno = -r;
+		return -1;
+	}
+	return r;
+}
 
-	for (i = 0; i < nfds; i++)
-		fds[i].revents = 0;
-	pgmem_host_poll(timeout);
+pid_t pgmem_getpid(void) { return pgmem_host_getpid(); }
+
+int pgmem_kill(pid_t pid, int sig) { return host_ret(pgmem_host_kill((int) pid, sig)); }
+
+pid_t pgmem_waitpid(pid_t pid, int *status, int options)
+{
+	int			st = 0;
+	int			r = pgmem_host_waitpid((int) pid, &st, options);
+
+	if (status)
+		*status = st;
+	return host_ret(r);
+}
+
+int pgmem_nanosleep(const struct timespec *req, struct timespec *rem)
+{
+	long		us = req->tv_sec * 1000000L + req->tv_nsec / 1000;
+
+	pgmem_host_usleep((int) us);
+	if (rem)
+	{
+		rem->tv_sec = 0;
+		rem->tv_nsec = 0;
+	}
 	return 0;
+}
+
+int pgmem_shmget(key_t key, size_t size, int flags)
+{
+	return host_ret(pgmem_host_shmget((int) key, (int) size, flags));
+}
+
+void *pgmem_shmat(int id, const void *addr, int flags)
+{
+	int			r = pgmem_host_shmat(id, (int) (uintptr_t) addr, flags);
+
+	if (r <= 0)
+	{
+		errno = r < 0 ? -r : EINVAL;
+		return (void *) -1;
+	}
+	return (void *) (uintptr_t) r;
+}
+
+int pgmem_shmdt(const void *addr) { return host_ret(pgmem_host_shmdt((int) (uintptr_t) addr)); }
+
+int pgmem_shmctl(int id, int cmd, struct shmid_ds *buf)
+{
+	int			segsz = 0, nattch = 0;
+	int			r = pgmem_host_shmctl(id, cmd, &segsz, &nattch);
+
+	if (r < 0)
+		return host_ret(r);
+	if (cmd == IPC_STAT && buf != NULL)
+	{
+		memset(buf, 0, sizeof(*buf));
+		buf->shm_segsz = (size_t) segsz;
+		buf->shm_nattch = (unsigned long) nattch;
+	}
+	return 0;
+}
+
+int pgmem_sem_init(sem_t *s, int pshared, unsigned value)
+{
+	return host_ret(pgmem_host_sem(0, (int) (uintptr_t) s, (int) value));
+}
+int pgmem_sem_destroy(sem_t *s) { return host_ret(pgmem_host_sem(1, (int) (uintptr_t) s, 0)); }
+int pgmem_sem_wait(sem_t *s) { return host_ret(pgmem_host_sem(2, (int) (uintptr_t) s, 0)); }
+int pgmem_sem_trywait(sem_t *s) { return host_ret(pgmem_host_sem(3, (int) (uintptr_t) s, 0)); }
+int pgmem_sem_post(sem_t *s) { return host_ret(pgmem_host_sem(4, (int) (uintptr_t) s, 0)); }
+
+ssize_t pgmem_recv(int fd, void *buf, size_t n, int flags)
+{
+	return host_ret(pgmem_host_sock_recv(fd, buf, (int) n));
+}
+
+ssize_t pgmem_send(int fd, const void *buf, size_t n, int flags)
+{
+	return host_ret(pgmem_host_sock_send(fd, buf, (int) n));
+}
+
+/*
+ * poll(2): the host knows which fds are pipes, sockets and files (this is
+ * where a process blocks, so it is also where the host delivers signals
+ * and timer expiries before returning EINTR).
+ */
+int pgmem_poll(struct pollfd *fds, nfds_t nfds, int timeout)
+{
+	return host_ret(pgmem_host_poll(fds, (int) nfds, timeout));
+}
+
+/*
+ * Signal delivery. The host calls pgmem_raise(sig) on the target instance
+ * at a point where it is inside a host call, which is when a real kernel
+ * would run the handler too. raise() applies the process's signal mask
+ * (sigprocmask is emulated by Emscripten's libc: a blocked signal stays
+ * pending until it is unblocked).
+ *
+ * A signal that arrives before the process has installed its handler
+ * would take the default action, which for SIGUSR1 or SIGTERM is to
+ * terminate. A real child inherits the postmaster's blocked mask across
+ * exec and gets the signal once it unblocks, after installing handlers;
+ * a fresh module instance starts with an empty mask, so hold such signals
+ * here and re-raise them at the next sigprocmask call, which is how
+ * PostgreSQL unblocks signals once its handlers are in place.
+ */
+static unsigned early_pending;
+
+PGMEM_EXPORT void pgmem_raise(int sig)
+{
+	struct sigaction sa;
+
+	if (sig <= 0 || sig >= 32)
+		return;
+	if (sigaction(sig, NULL, &sa) == 0 && !(sa.sa_flags & SA_SIGINFO) && sa.sa_handler == SIG_DFL)
+	{
+		early_pending |= 1u << sig;
+		return;
+	}
+	raise(sig);
+}
+
+int pgmem_sigprocmask(int how, const sigset_t *set, sigset_t *old)
+{
+	int			r = sigprocmask(how, set, old);
+	unsigned	p = early_pending;
+
+	early_pending = 0;
+	for (int sig = 1; sig < 32 && p != 0; sig++)
+	{
+		if (p & (1u << sig))
+		{
+			p &= ~(1u << sig);
+			pgmem_raise(sig);
+		}
+	}
+	return r;
 }
 
 PGMEM_EXPORT void pgmem_init(void)
 {
-	pgl_set_rw_cbs(shim_read, shim_write);
 	pgl_set_system_fn(shim_system);
 	pgl_set_popen_fn(shim_popen);
 	pgl_set_pclose_fn(shim_pclose);

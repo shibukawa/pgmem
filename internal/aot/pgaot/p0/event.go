@@ -2245,22 +2245,14 @@ func F_InitializeWaitEventSupport(m *base.Module) {
 	_ = v77
 	var v87 int32
 	_ = v87
-	var v99 int32
-	_ = v99
-	var v106 int32
-	_ = v106
-	var v107 int32
-	_ = v107
-	var v109 int64
-	_ = v109
-	var v111 int64
+	var v101 int32
+	_ = v101
+	var v111 int32
 	_ = v111
-	var v124 int32
-	_ = v124
-	var v128 int32
-	_ = v128
-	var v133 int32
-	_ = v133
+	var v115 int32
+	_ = v115
+	var v120 int32
+	_ = v120
 	v2 = m.G0
 	v4 = v2 + int32(-64)
 	m.G0 = v4
@@ -2332,17 +2324,8 @@ func F_InitializeWaitEventSupport(m *base.Module) {
 				F_sigemptyset(m, v77+int32(16))
 				mBase = m.M
 				*(*int32)(unsafe.Add(mBase, uint32(v77)+24)) = int32(268435456)
-				v99 = v77 + int32(12)
-				if v99 != 0 {
-					v106 = int32(460)
-					v107 = *(*int32)(unsafe.Add(mBase, uint32(v99)+16))
-					*(*int32)(unsafe.Add(mBase, _c_F_InitializeWaitEventSupport[7])) = v107
-					v109 = *(*int64)(unsafe.Add(mBase, uint32(v99)+8))
-					*(*int64)(unsafe.Add(mBase, _c_F_InitializeWaitEventSupport[8])) = v109
-					v111 = *(*int64)(unsafe.Add(mBase, uint32(v99)))
-					*(*int64)(unsafe.Add(mBase, _c_F_InitializeWaitEventSupport[9])) = v111
-				} else {
-				}
+				v101 = F___sigaction(m, int32(23), v77+int32(12), int32(0))
+				mBase = m.M
 				m.G0 = v77 + int32(32)
 				m.G0 = v4 - int32(-64)
 				return
@@ -2351,20 +2334,20 @@ func F_InitializeWaitEventSupport(m *base.Module) {
 	} else {
 		F_errstart_cold(m, int32(22), int32(0))
 		mBase = m.M
-		v124 = m.ExcPending
-		if v124 != 0 {
+		v111 = m.ExcPending
+		if v111 != 0 {
 			return
 		} else {
 			F_errmsg_internal(m, int32(_a_F_InitializeWaitEventSupport_4), int32(0))
 			mBase = m.M
-			v128 = m.ExcPending
-			if v128 != 0 {
+			v115 = m.ExcPending
+			if v115 != 0 {
 				return
 			} else {
 				F_errfinish(m, int32(_a_F_InitializeWaitEventSupport_5), int32(296), int32(_a_F_InitializeWaitEventSupport_6))
 				mBase = m.M
-				v133 = m.ExcPending
-				if v133 != 0 {
+				v120 = m.ExcPending
+				if v120 != 0 {
 					return
 				} else {
 					base.Wasm_trap_unreachable()

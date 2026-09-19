@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -1068,110 +1069,106 @@ func F_pgss_shmem_startup(m *base.Module) {
 	_ = v127
 	var v132 int32
 	_ = v132
-	var v133 int64
-	_ = v133
-	var v147 int32
-	_ = v147
-	var v148 int32
-	_ = v148
-	var v149 int32
-	_ = v149
-	var v152 int64
+	var v138 int32
+	_ = v138
+	var v141 int64
+	_ = v141
+	var v150 int32
+	_ = v150
+	var v151 int32
+	_ = v151
+	var v152 int32
 	_ = v152
-	var v153 int64
-	_ = v153
-	var v163 int32
-	_ = v163
-	var v182 int32
-	_ = v182
-	var v186 int32
-	_ = v186
-	var v187 int32
-	_ = v187
+	var v155 int64
+	_ = v155
+	var v156 int64
+	_ = v156
+	var v166 int32
+	_ = v166
+	var v185 int32
+	_ = v185
+	var v189 int32
+	_ = v189
 	var v190 int32
 	_ = v190
-	var v194 int32
-	_ = v194
-	var v196 int32
-	_ = v196
-	var v202 int32
-	_ = v202
-	var v203 int32
-	_ = v203
-	var v204 int32
-	_ = v204
+	var v193 int32
+	_ = v193
+	var v197 int32
+	_ = v197
+	var v199 int32
+	_ = v199
 	var v205 int32
 	_ = v205
 	var v206 int32
 	_ = v206
-	var v211 int32
-	_ = v211
-	var v212 int32
-	_ = v212
-	var v216 int32
-	_ = v216
+	var v207 int32
+	_ = v207
+	var v208 int32
+	_ = v208
+	var v209 int32
+	_ = v209
+	var v214 int32
+	_ = v214
+	var v215 int32
+	_ = v215
 	var v219 int32
 	_ = v219
-	var v220 int32
-	_ = v220
+	var v222 int32
+	_ = v222
 	var v223 int32
 	_ = v223
-	var v224 int32
-	_ = v224
-	var v228 int32
-	_ = v228
+	var v226 int32
+	_ = v226
+	var v227 int32
+	_ = v227
 	var v231 int32
 	_ = v231
-	var v232 int32
-	_ = v232
 	var v234 int32
 	_ = v234
 	var v235 int32
 	_ = v235
-	var v240 int32
-	_ = v240
-	var v241 int32
-	_ = v241
-	var v248 int32
-	_ = v248
-	var v249 int32
-	_ = v249
-	var v256 int32
-	_ = v256
-	var v257 int32
-	_ = v257
+	var v237 int32
+	_ = v237
+	var v238 int32
+	_ = v238
+	var v243 int32
+	_ = v243
+	var v244 int32
+	_ = v244
+	var v251 int32
+	_ = v251
+	var v252 int32
+	_ = v252
+	var v259 int32
+	_ = v259
 	var v260 int32
 	_ = v260
 	var v263 int32
 	_ = v263
 	var v266 int32
 	_ = v266
-	var v275 int32
-	_ = v275
-	var v277 int32
-	_ = v277
-	var v282 int32
-	_ = v282
-	var v288 int32
-	_ = v288
-	var v289 int32
-	_ = v289
+	var v269 int32
+	_ = v269
+	var v278 int32
+	_ = v278
+	var v280 int32
+	_ = v280
+	var v285 int32
+	_ = v285
+	var v291 int32
+	_ = v291
 	var v292 int32
 	_ = v292
 	var v295 int32
 	_ = v295
-	var v297 int32
-	_ = v297
 	var v298 int32
 	_ = v298
 	var v300 int32
 	_ = v300
-	var v302 int32
-	_ = v302
+	var v301 int32
+	_ = v301
 	var v303 int32
 	_ = v303
-	var v304 int32
-	_ = v304
 	var v305 int32
 	_ = v305
 	var v306 int32
@@ -1182,126 +1179,132 @@ func F_pgss_shmem_startup(m *base.Module) {
 	_ = v308
 	var v309 int32
 	_ = v309
+	var v310 int32
+	_ = v310
+	var v311 int32
+	_ = v311
 	var v312 int32
 	_ = v312
-	var v313 int32
-	_ = v313
-	var v314 int32
-	_ = v314
-	var v319 int32
-	_ = v319
-	var v321 int64
-	_ = v321
-	var v323 int64
-	_ = v323
-	var v327 int32
-	_ = v327
-	var v328 int32
-	_ = v328
-	var v329 int32
-	_ = v329
+	var v315 int32
+	_ = v315
+	var v316 int32
+	_ = v316
+	var v317 int32
+	_ = v317
+	var v322 int32
+	_ = v322
+	var v324 int64
+	_ = v324
+	var v326 int64
+	_ = v326
 	var v330 int32
 	_ = v330
+	var v331 int32
+	_ = v331
+	var v332 int32
+	_ = v332
 	var v333 int32
 	_ = v333
-	var v334 int32
-	_ = v334
-	var v335 int32
-	_ = v335
-	var v340 int32
-	_ = v340
-	var v341 int32
-	_ = v341
-	var v346 int32
-	_ = v346
-	var v348 int32
-	_ = v348
+	var v336 int32
+	_ = v336
+	var v337 int32
+	_ = v337
+	var v338 int32
+	_ = v338
+	var v343 int32
+	_ = v343
+	var v344 int32
+	_ = v344
 	var v349 int32
 	_ = v349
-	var v354 int64
-	_ = v354
-	var v356 int64
-	_ = v356
-	var v363 int32
-	_ = v363
-	var v364 int32
-	_ = v364
-	var v369 int32
-	_ = v369
-	var v379 int32
-	_ = v379
-	var v384 int32
-	_ = v384
-	var v385 int32
-	_ = v385
-	var v389 int32
-	_ = v389
-	var v390 int32
-	_ = v390
-	var v391 int32
-	_ = v391
+	var v351 int32
+	_ = v351
+	var v352 int32
+	_ = v352
+	var v357 int64
+	_ = v357
+	var v359 int64
+	_ = v359
+	var v366 int32
+	_ = v366
+	var v367 int32
+	_ = v367
+	var v372 int32
+	_ = v372
+	var v382 int32
+	_ = v382
+	var v387 int32
+	_ = v387
+	var v388 int32
+	_ = v388
 	var v392 int32
 	_ = v392
 	var v393 int32
 	_ = v393
+	var v394 int32
+	_ = v394
 	var v395 int32
 	_ = v395
-	var v399 int32
-	_ = v399
-	var v410 int32
-	_ = v410
-	var v411 int32
-	_ = v411
-	var v415 int32
-	_ = v415
-	var v422 int32
-	_ = v422
-	var v427 int32
-	_ = v427
-	var v438 int32
-	_ = v438
-	var v439 int32
-	_ = v439
-	var v444 int32
-	_ = v444
-	var v451 int32
-	_ = v451
+	var v396 int32
+	_ = v396
+	var v398 int32
+	_ = v398
+	var v402 int32
+	_ = v402
+	var v413 int32
+	_ = v413
+	var v414 int32
+	_ = v414
+	var v418 int32
+	_ = v418
+	var v425 int32
+	_ = v425
+	var v430 int32
+	_ = v430
+	var v441 int32
+	_ = v441
+	var v442 int32
+	_ = v442
+	var v447 int32
+	_ = v447
 	var v454 int32
 	_ = v454
-	var v456 int32
-	_ = v456
-	var v467 int32
-	_ = v467
-	var v468 int32
-	_ = v468
-	var v472 int32
-	_ = v472
-	var v477 int32
-	_ = v477
+	var v457 int32
+	_ = v457
+	var v459 int32
+	_ = v459
+	var v470 int32
+	_ = v470
+	var v471 int32
+	_ = v471
+	var v475 int32
+	_ = v475
 	var v480 int32
 	_ = v480
-	var v482 int32
-	_ = v482
-	var v491 int32
-	_ = v491
+	var v483 int32
+	_ = v483
+	var v485 int32
+	_ = v485
 	var v494 int32
 	_ = v494
-	var v496 int32
-	_ = v496
-	var v498 int32
-	_ = v498
-	var v508 int32
-	_ = v508
-	var v509 int32
-	_ = v509
-	var v510 int32
-	_ = v510
+	var v497 int32
+	_ = v497
+	var v499 int32
+	_ = v499
+	var v501 int32
+	_ = v501
 	var v511 int32
 	_ = v511
 	var v512 int32
 	_ = v512
+	var v513 int32
+	_ = v513
 	var v514 int32
 	_ = v514
+	var v515 int32
+	_ = v515
+	var v517 int32
+	_ = v517
 	v1 = int32(0)
 	v13 = m.G0
 	v15 = v13 - int32(544)
@@ -1378,11 +1381,11 @@ L9:
 L10:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v15)+508)) = int64(1855425871896)
-	v182 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[5]))
-	v186 = F_ShmemInitHash(m, int32(_a_F_pgss_shmem_startup_1), v182, v182, v15+int32(492), int32(40))
+	v185 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[5]))
+	v189 = F_ShmemInitHash(m, int32(_a_F_pgss_shmem_startup_1), v185, v185, v15+int32(492), int32(40))
 	mBase = m.M
-	v187 = m.ExcPending
-	if v187 != 0 {
+	v190 = m.ExcPending
+	if v190 != 0 {
 		goto L4
 	} else {
 		goto L30
@@ -1391,22 +1394,24 @@ L11:
 	;
 	v127 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[3]))
 	v132 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[2]))
-	v133 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v132)+40)) = v133
-	*(*int32)(unsafe.Add(mBase, uint32(v132)+32)) = int32(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v132)+24)) = v133
-	*(*int64)(unsafe.Add(mBase, uint32(v132)+16)) = int64(1024)
+	*(*int32)(unsafe.Add(mBase, uint32(v132)+16)) = int32(1024)
 	*(*int64)(unsafe.Add(mBase, uint32(v132)+8)) = int64(4621819117588971520)
 	*(*int32)(unsafe.Add(mBase, uint32(v132))) = v127 + v53<<(uint(int32(7))%32)
-	v147 = m.G0
-	v148 = int32(16)
-	v149 = v147 - v148
-	m.G0 = v149
-	F_gettimeofday(m, v149)
+	v138 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v132)+20)), uint32(v138))
+	v141 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v132)+40)) = v141
+	*(*int32)(unsafe.Add(mBase, uint32(v132)+32)) = v138
+	*(*int64)(unsafe.Add(mBase, uint32(v132)+24)) = v141
+	v150 = m.G0
+	v151 = int32(16)
+	v152 = v150 - v151
+	m.G0 = v152
+	F_gettimeofday(m, v152)
 	mBase = m.M
-	v152 = *(*int64)(unsafe.Add(mBase, uint32(v149)))
-	v153 = int64(*(*int32)(unsafe.Add(mBase, uint32(v149)+8)))
-	m.G0 = v149 + v148
+	v155 = *(*int64)(unsafe.Add(mBase, uint32(v152)))
+	v156 = int64(*(*int32)(unsafe.Add(mBase, uint32(v152)+8)))
+	m.G0 = v152 + v151
 	goto L29
 L12:
 	;
@@ -1528,25 +1533,25 @@ L28:
 	}
 L29:
 	;
-	v163 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[2]))
-	*(*int64)(unsafe.Add(mBase, uint32(v163)+48)) = v153 + v152*int64(1000000) - int64(946684800000000)
+	v166 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[2]))
+	*(*int64)(unsafe.Add(mBase, uint32(v166)+48)) = v156 + v155*int64(1000000) - int64(946684800000000)
 	goto L10
 L30:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[1])) = v186
-	v190 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[3]))
-	F_LWLockRelease(m, v190+int32(2688))
+	*(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[1])) = v189
+	v193 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[3]))
+	F_LWLockRelease(m, v193+int32(2688))
 	mBase = m.M
-	v194 = m.ExcPending
-	if v194 != 0 {
+	v197 = m.ExcPending
+	if v197 != 0 {
 		goto L4
 	} else {
 		goto L31
 	}
 L31:
 	;
-	v196 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[8])))
-	if v196 == int32(0) {
+	v199 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[8])))
+	if v199 == int32(0) {
 		goto L32
 	} else {
 		goto L33
@@ -1555,8 +1560,8 @@ L32:
 	;
 	F_on_shmem_exit(m, int32(_a_F_pgss_shmem_startup_5), int32(0))
 	mBase = m.M
-	v202 = m.ExcPending
-	if v202 != 0 {
+	v205 = m.ExcPending
+	if v205 != 0 {
 		goto L4
 	} else {
 		goto L35
@@ -1566,8 +1571,8 @@ L33:
 	goto L34
 L34:
 	;
-	v203 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+543)))
-	if v203 != 0 {
+	v206 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+543)))
+	if v206 != 0 {
 		goto L36
 	} else {
 		goto L37
@@ -1581,68 +1586,68 @@ L36:
 	return
 L37:
 	;
-	v204 = int32(_a_F_pgss_shmem_startup_6)
-	v205 = F_unlink(m, v204)
+	v207 = int32(_a_F_pgss_shmem_startup_6)
+	v208 = F_unlink(m, v207)
 	mBase = m.M
-	v206 = int32(0)
-	v211 = F_AllocateFile(m, v204, int32(_a_F_pgss_shmem_startup_7))
+	v209 = int32(0)
+	v214 = F_AllocateFile(m, v207, int32(_a_F_pgss_shmem_startup_7))
 	mBase = m.M
-	v212 = m.ExcPending
-	if v212 != 0 {
+	v215 = m.ExcPending
+	if v215 != 0 {
 		goto L4
 	} else {
 		goto L41
 	}
 L38:
 	;
-	if v498 != 0 {
+	if v501 != 0 {
 		goto L106
 	} else {
 		goto L107
 	}
 L39:
 	;
-	F_errfinish(m, int32(_a_F_pgss_shmem_startup_8), v491, int32(_a_F_pgss_shmem_startup_9))
+	F_errfinish(m, int32(_a_F_pgss_shmem_startup_8), v494, int32(_a_F_pgss_shmem_startup_9))
 	mBase = m.M
-	v494 = m.ExcPending
-	if v494 != 0 {
+	v497 = m.ExcPending
+	if v497 != 0 {
 		goto L4
 	} else {
 		goto L105
 	}
 L40:
 	;
-	v467 = F_errstart(m, int32(15), int32(0))
+	v470 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v468 = m.ExcPending
-	if v468 != 0 {
+	v471 = m.ExcPending
+	if v471 != 0 {
 		goto L4
 	} else {
 		goto L101
 	}
 L41:
 	;
-	if v211 == int32(0) {
-		v454 = v206
-		v456 = v206
+	if v214 == int32(0) {
+		v457 = v209
+		v459 = v209
 		goto L40
 	} else {
 		goto L42
 	}
 L42:
 	;
-	v216 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[9])))
-	if v216 == int32(0) {
+	v219 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[9])))
+	if v219 == int32(0) {
 		goto L43
 	} else {
 		goto L44
 	}
 L43:
 	;
-	v219 = F_FreeFile(m, v211)
+	v222 = F_FreeFile(m, v214)
 	mBase = m.M
-	v220 = m.ExcPending
-	if v220 != 0 {
+	v223 = m.ExcPending
+	if v223 != 0 {
 		goto L4
 	} else {
 		goto L46
@@ -1652,10 +1657,10 @@ L44:
 	goto L45
 L45:
 	;
-	v223 = F_AllocateFile(m, int32(_a_F_pgss_shmem_startup_10), int32(_a_F_pgss_shmem_startup_11))
+	v226 = F_AllocateFile(m, int32(_a_F_pgss_shmem_startup_10), int32(_a_F_pgss_shmem_startup_11))
 	mBase = m.M
-	v224 = m.ExcPending
-	if v224 != 0 {
+	v227 = m.ExcPending
+	if v227 != 0 {
 		goto L4
 	} else {
 		goto L49
@@ -1665,36 +1670,36 @@ L46:
 	goto L36
 L47:
 	;
-	v438 = F_errstart(m, int32(15), int32(0))
+	v441 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v439 = m.ExcPending
-	if v439 != 0 {
+	v442 = m.ExcPending
+	if v442 != 0 {
 		goto L4
 	} else {
 		goto L97
 	}
 L48:
 	;
-	v410 = F_errstart(m, int32(15), int32(0))
+	v413 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v411 = m.ExcPending
-	if v411 != 0 {
+	v414 = m.ExcPending
+	if v414 != 0 {
 		goto L4
 	} else {
 		goto L93
 	}
 L49:
 	;
-	if v223 == int32(0) {
+	if v226 == int32(0) {
 		goto L50
 	} else {
 		goto L51
 	}
 L50:
 	;
-	v228 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[10]))
-	if v228 != int32(44) {
-		v399 = v206
+	v231 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[10]))
+	if v231 != int32(44) {
+		v402 = v209
 		goto L48
 	} else {
 		goto L53
@@ -1704,20 +1709,20 @@ L51:
 	goto L52
 L52:
 	;
-	v234 = F_palloc(m, int32(2048))
+	v237 = F_palloc(m, int32(2048))
 	mBase = m.M
-	v235 = m.ExcPending
-	if v235 != 0 {
+	v238 = m.ExcPending
+	if v238 != 0 {
 		goto L4
 	} else {
 		goto L55
 	}
 L53:
 	;
-	v231 = F_FreeFile(m, v211)
+	v234 = F_FreeFile(m, v214)
 	mBase = m.M
-	v232 = m.ExcPending
-	if v232 != 0 {
+	v235 = m.ExcPending
+	if v235 != 0 {
 		goto L4
 	} else {
 		goto L54
@@ -1727,226 +1732,226 @@ L54:
 	goto L36
 L55:
 	;
-	v240 = F_fread(m, v15+int32(488), int32(4), int32(1), v223)
+	v243 = F_fread(m, v15+int32(488), int32(4), int32(1), v226)
 	mBase = m.M
-	v241 = m.ExcPending
-	if v241 != 0 {
+	v244 = m.ExcPending
+	if v244 != 0 {
 		goto L4
 	} else {
 		goto L56
 	}
 L56:
 	;
-	if v240 != int32(1) {
-		v399 = v234
+	if v243 != int32(1) {
+		v402 = v237
 		goto L48
 	} else {
 		goto L57
 	}
 L57:
 	;
-	v248 = F_fread(m, v15+int32(480), int32(4), int32(1), v223)
+	v251 = F_fread(m, v15+int32(480), int32(4), int32(1), v226)
 	mBase = m.M
-	v249 = m.ExcPending
-	if v249 != 0 {
+	v252 = m.ExcPending
+	if v252 != 0 {
 		goto L4
 	} else {
 		goto L58
 	}
 L58:
 	;
-	if v248 != int32(1) {
-		v399 = v234
+	if v251 != int32(1) {
+		v402 = v237
 		goto L48
 	} else {
 		goto L59
 	}
 L59:
 	;
-	v256 = F_fread(m, v15+int32(484), int32(4), int32(1), v223)
+	v259 = F_fread(m, v15+int32(484), int32(4), int32(1), v226)
 	mBase = m.M
-	v257 = m.ExcPending
-	if v257 != 0 {
+	v260 = m.ExcPending
+	if v260 != 0 {
 		goto L4
 	} else {
 		goto L60
 	}
 L60:
 	;
-	if v256 != int32(1) {
-		v399 = v234
+	if v259 != int32(1) {
+		v402 = v237
 		goto L48
 	} else {
 		goto L61
 	}
 L61:
 	;
-	v260 = *(*int32)(unsafe.Add(mBase, uint32(v15)+488))
-	if v260 != int32(539100168) {
-		v427 = v234
+	v263 = *(*int32)(unsafe.Add(mBase, uint32(v15)+488))
+	if v263 != int32(539100168) {
+		v430 = v237
 		goto L47
 	} else {
 		goto L62
 	}
 L62:
 	;
-	v263 = *(*int32)(unsafe.Add(mBase, uint32(v15)+480))
-	if v263 != int32(1800) {
-		v427 = v234
+	v266 = *(*int32)(unsafe.Add(mBase, uint32(v15)+480))
+	if v266 != int32(1800) {
+		v430 = v237
 		goto L47
 	} else {
 		goto L63
 	}
 L63:
 	;
-	v266 = *(*int32)(unsafe.Add(mBase, uint32(v15)+484))
-	if int32(0) < v266 {
+	v269 = *(*int32)(unsafe.Add(mBase, uint32(v15)+484))
+	if int32(0) < v269 {
 		goto L64
 	} else {
 		goto L65
 	}
 L64:
 	;
-	v275 = v234
-	v277 = int32(2048)
-	v282 = v1
+	v278 = v237
+	v280 = int32(2048)
+	v285 = v1
 	goto L67
 L65:
 	;
-	v369 = v234
+	v372 = v237
 	goto L66
 L66:
 	;
-	v379 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[2]))
-	v384 = F_fread(m, v379+int32(40), int32(16), int32(1), v223)
+	v382 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[2]))
+	v387 = F_fread(m, v382+int32(40), int32(16), int32(1), v226)
 	mBase = m.M
-	v385 = m.ExcPending
-	if v385 != 0 {
+	v388 = m.ExcPending
+	if v388 != 0 {
 		goto L4
 	} else {
 		goto L88
 	}
 L67:
 	;
-	v288 = F_fread(m, v15+int32(48), int32(432), int32(1), v223)
+	v291 = F_fread(m, v15+int32(48), int32(432), int32(1), v226)
 	mBase = m.M
-	v289 = m.ExcPending
-	if v289 != 0 {
+	v292 = m.ExcPending
+	if v292 != 0 {
 		goto L4
 	} else {
 		goto L69
 	}
 L68:
 	;
-	v369 = v307
+	v372 = v310
 	goto L66
 L69:
 	;
-	if v288 != int32(1) {
-		v399 = v275
+	if v291 != int32(1) {
+		v402 = v278
 		goto L48
 	} else {
 		goto L70
 	}
 L70:
 	;
-	v292 = *(*int32)(unsafe.Add(mBase, uint32(v15)+448))
-	if base.Ui32(int32(35)) <= base.Ui32(v292) {
-		v427 = v275
+	v295 = *(*int32)(unsafe.Add(mBase, uint32(v15)+448))
+	if base.Ui32(int32(35)) <= base.Ui32(v295) {
+		v430 = v278
 		goto L47
 	} else {
 		goto L71
 	}
 L71:
 	;
-	v295 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
-	if v277 <= v295 {
+	v298 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
+	if v280 <= v298 {
 		goto L72
 	} else {
 		goto L73
 	}
 L72:
 	;
-	v297 = int32(1)
-	v298 = v277 << (uint(v297) % 32)
-	v300 = v295 + v297
-	if v300 < v298 {
+	v300 = int32(1)
+	v301 = v280 << (uint(v300) % 32)
+	v303 = v298 + v300
+	if v303 < v301 {
 		goto L75
 	} else {
 		goto L76
 	}
 L73:
 	;
-	v306 = v295
-	v307 = v275
-	v308 = v277
+	v309 = v298
+	v310 = v278
+	v311 = v280
 	goto L74
 L74:
 	;
-	v309 = int32(1)
-	v312 = F_fread(m, v307, v309, v306+v309, v223)
+	v312 = int32(1)
+	v315 = F_fread(m, v310, v312, v309+v312, v226)
 	mBase = m.M
-	v313 = m.ExcPending
-	if v313 != 0 {
+	v316 = m.ExcPending
+	if v316 != 0 {
 		goto L4
 	} else {
 		goto L79
 	}
 L75:
 	;
-	v302 = v298
+	v305 = v301
 	goto L77
 L76:
 	;
-	v302 = v300
+	v305 = v303
 	goto L77
 L77:
 	;
-	v303 = F_repalloc(m, v275, v302)
+	v306 = F_repalloc(m, v278, v305)
 	mBase = m.M
-	v304 = m.ExcPending
-	if v304 != 0 {
+	v307 = m.ExcPending
+	if v307 != 0 {
 		goto L4
 	} else {
 		goto L78
 	}
 L78:
 	;
-	v305 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
-	v306 = v305
-	v307 = v303
-	v308 = v302
+	v308 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
+	v309 = v308
+	v310 = v306
+	v311 = v305
 	goto L74
 L79:
 	;
-	v314 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
-	if v312 != v314+int32(1) {
-		v399 = v307
+	v317 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
+	if v315 != v317+int32(1) {
+		v402 = v310
 		goto L48
 	} else {
 		goto L80
 	}
 L80:
 	;
-	v319 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v314+v307))) = uint8(v319)
-	v321 = *(*int64)(unsafe.Add(mBase, uint32(v15)+72))
-	v323 = *(*int64)(unsafe.Add(mBase, uint32(v15)+80))
-	if v321 != int64(0)-v323 {
+	v322 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v317+v310))) = uint8(v322)
+	v324 = *(*int64)(unsafe.Add(mBase, uint32(v15)+72))
+	v326 = *(*int64)(unsafe.Add(mBase, uint32(v15)+80))
+	if v324 != int64(0)-v326 {
 		goto L81
 	} else {
 		goto L82
 	}
 L81:
 	;
-	v327 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[2]))
-	v328 = *(*int32)(unsafe.Add(mBase, uint32(v327)+24))
-	v329 = int32(1)
-	v330 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
-	v333 = F_fwrite(m, v307, v329, v330+v329, v211)
+	v330 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[2]))
+	v331 = *(*int32)(unsafe.Add(mBase, uint32(v330)+24))
+	v332 = int32(1)
+	v333 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
+	v336 = F_fwrite(m, v310, v332, v333+v332, v214)
 	mBase = m.M
-	v334 = m.ExcPending
-	if v334 != 0 {
+	v337 = m.ExcPending
+	if v337 != 0 {
 		goto L4
 	} else {
 		goto L84
@@ -1956,99 +1961,99 @@ L82:
 	goto L83
 L83:
 	;
-	v363 = v282 + int32(1)
-	v364 = *(*int32)(unsafe.Add(mBase, uint32(v15)+484))
-	if v363 < v364 {
-		v275 = v307
-		v277 = v308
-		v282 = v363
+	v366 = v285 + int32(1)
+	v367 = *(*int32)(unsafe.Add(mBase, uint32(v15)+484))
+	if v366 < v367 {
+		v278 = v310
+		v280 = v311
+		v285 = v366
 		goto L67
 	} else {
 		goto L87
 	}
 L84:
 	;
-	v335 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
-	if v333 != v335+int32(1) {
-		v454 = v223
-		v456 = v307
+	v338 = *(*int32)(unsafe.Add(mBase, uint32(v15)+444))
+	if v336 != v338+int32(1) {
+		v457 = v226
+		v459 = v310
 		goto L40
 	} else {
 		goto L85
 	}
 L85:
 	;
-	v340 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[2]))
-	v341 = *(*int32)(unsafe.Add(mBase, uint32(v340)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(v340)+24)) = v341 + v333
-	v346 = *(*int32)(unsafe.Add(mBase, uint32(v15)+448))
-	v348 = F_entry_alloc(m, v15+int32(48), v328, v335, v346, int32(0))
+	v343 = *(*int32)(unsafe.Add(mBase, _c_F_pgss_shmem_startup[2]))
+	v344 = *(*int32)(unsafe.Add(mBase, uint32(v343)+24))
+	*(*int32)(unsafe.Add(mBase, uint32(v343)+24)) = v344 + v336
+	v349 = *(*int32)(unsafe.Add(mBase, uint32(v15)+448))
+	v351 = F_entry_alloc(m, v15+int32(48), v331, v338, v349, int32(0))
 	mBase = m.M
-	v349 = m.ExcPending
-	if v349 != 0 {
+	v352 = m.ExcPending
+	if v352 != 0 {
 		goto L4
 	} else {
 		goto L86
 	}
 L86:
 	;
-	base.MemoryCopy(m, v348+int32(24), v15+int32(72), int32(368))
-	v354 = *(*int64)(unsafe.Add(mBase, uint32(v15)+456))
-	*(*int64)(unsafe.Add(mBase, uint32(v348)+408)) = v354
-	v356 = *(*int64)(unsafe.Add(mBase, uint32(v15)+464))
-	*(*int64)(unsafe.Add(mBase, uint32(v348)+416)) = v356
+	base.MemoryCopy(m, v351+int32(24), v15+int32(72), int32(368))
+	v357 = *(*int64)(unsafe.Add(mBase, uint32(v15)+456))
+	*(*int64)(unsafe.Add(mBase, uint32(v351)+408)) = v357
+	v359 = *(*int64)(unsafe.Add(mBase, uint32(v15)+464))
+	*(*int64)(unsafe.Add(mBase, uint32(v351)+416)) = v359
 	goto L83
 L87:
 	;
 	goto L68
 L88:
 	;
-	if v384 != int32(1) {
-		v399 = v369
+	if v387 != int32(1) {
+		v402 = v372
 		goto L48
 	} else {
 		goto L89
 	}
 L89:
 	;
-	F_pfree(m, v369)
+	F_pfree(m, v372)
 	mBase = m.M
-	v389 = m.ExcPending
-	if v389 != 0 {
+	v392 = m.ExcPending
+	if v392 != 0 {
 		goto L4
 	} else {
 		goto L90
 	}
 L90:
 	;
-	v390 = F_FreeFile(m, v223)
+	v393 = F_FreeFile(m, v226)
 	mBase = m.M
-	v391 = m.ExcPending
-	if v391 != 0 {
+	v394 = m.ExcPending
+	if v394 != 0 {
 		goto L4
 	} else {
 		goto L91
 	}
 L91:
 	;
-	v392 = F_FreeFile(m, v211)
+	v395 = F_FreeFile(m, v214)
 	mBase = m.M
-	v393 = m.ExcPending
-	if v393 != 0 {
+	v396 = m.ExcPending
+	if v396 != 0 {
 		goto L4
 	} else {
 		goto L92
 	}
 L92:
 	;
-	v395 = F_unlink(m, int32(_a_F_pgss_shmem_startup_10))
+	v398 = F_unlink(m, int32(_a_F_pgss_shmem_startup_10))
 	mBase = m.M
 	goto L36
 L93:
 	;
-	if v410 == int32(0) {
-		v496 = v223
-		v498 = v399
+	if v413 == int32(0) {
+		v499 = v226
+		v501 = v402
 		goto L38
 	} else {
 		goto L94
@@ -2057,8 +2062,8 @@ L94:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v415 = m.ExcPending
-	if v415 != 0 {
+	v418 = m.ExcPending
+	if v418 != 0 {
 		goto L4
 	} else {
 		goto L95
@@ -2068,23 +2073,23 @@ L95:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = int32(_a_F_pgss_shmem_startup_10)
 	F_errmsg(m, int32(_a_F_pgss_shmem_startup_12), v15+int32(16))
 	mBase = m.M
-	v422 = m.ExcPending
-	if v422 != 0 {
+	v425 = m.ExcPending
+	if v425 != 0 {
 		goto L4
 	} else {
 		goto L96
 	}
 L96:
 	;
-	v480 = v223
-	v482 = v399
-	v491 = int32(701)
+	v483 = v226
+	v485 = v402
+	v494 = int32(701)
 	goto L39
 L97:
 	;
-	if v438 == int32(0) {
-		v496 = v223
-		v498 = v427
+	if v441 == int32(0) {
+		v499 = v226
+		v501 = v430
 		goto L38
 	} else {
 		goto L98
@@ -2093,8 +2098,8 @@ L98:
 	;
 	F_errcode(m, int32(50856066))
 	mBase = m.M
-	v444 = m.ExcPending
-	if v444 != 0 {
+	v447 = m.ExcPending
+	if v447 != 0 {
 		goto L4
 	} else {
 		goto L99
@@ -2104,23 +2109,23 @@ L99:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = int32(_a_F_pgss_shmem_startup_10)
 	F_errmsg(m, int32(_a_F_pgss_shmem_startup_13), v15+int32(32))
 	mBase = m.M
-	v451 = m.ExcPending
-	if v451 != 0 {
+	v454 = m.ExcPending
+	if v454 != 0 {
 		goto L4
 	} else {
 		goto L100
 	}
 L100:
 	;
-	v480 = v223
-	v482 = v427
-	v491 = int32(707)
+	v483 = v226
+	v485 = v430
+	v494 = int32(707)
 	goto L39
 L101:
 	;
-	if v467 == int32(0) {
-		v496 = v454
-		v498 = v456
+	if v470 == int32(0) {
+		v499 = v457
+		v501 = v459
 		goto L38
 	} else {
 		goto L102
@@ -2129,8 +2134,8 @@ L102:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v472 = m.ExcPending
-	if v472 != 0 {
+	v475 = m.ExcPending
+	if v475 != 0 {
 		goto L4
 	} else {
 		goto L103
@@ -2140,29 +2145,29 @@ L103:
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = int32(_a_F_pgss_shmem_startup_6)
 	F_errmsg(m, int32(_a_F_pgss_shmem_startup_14), v15)
 	mBase = m.M
-	v477 = m.ExcPending
-	if v477 != 0 {
+	v480 = m.ExcPending
+	if v480 != 0 {
 		goto L4
 	} else {
 		goto L104
 	}
 L104:
 	;
-	v480 = v454
-	v482 = v456
-	v491 = int32(713)
+	v483 = v457
+	v485 = v459
+	v494 = int32(713)
 	goto L39
 L105:
 	;
-	v496 = v480
-	v498 = v482
+	v499 = v483
+	v501 = v485
 	goto L38
 L106:
 	;
-	F_pfree(m, v498)
+	F_pfree(m, v501)
 	mBase = m.M
-	v508 = m.ExcPending
-	if v508 != 0 {
+	v511 = m.ExcPending
+	if v511 != 0 {
 		goto L4
 	} else {
 		goto L109
@@ -2172,7 +2177,7 @@ L107:
 	goto L108
 L108:
 	;
-	if v496 != 0 {
+	if v499 != 0 {
 		goto L110
 	} else {
 		goto L111
@@ -2182,10 +2187,10 @@ L109:
 	goto L108
 L110:
 	;
-	v509 = F_FreeFile(m, v496)
+	v512 = F_FreeFile(m, v499)
 	mBase = m.M
-	v510 = m.ExcPending
-	if v510 != 0 {
+	v513 = m.ExcPending
+	if v513 != 0 {
 		goto L4
 	} else {
 		goto L113
@@ -2195,7 +2200,7 @@ L111:
 	goto L112
 L112:
 	;
-	if v211 != 0 {
+	if v214 != 0 {
 		goto L114
 	} else {
 		goto L115
@@ -2205,10 +2210,10 @@ L113:
 	goto L112
 L114:
 	;
-	v511 = F_FreeFile(m, v211)
+	v514 = F_FreeFile(m, v214)
 	mBase = m.M
-	v512 = m.ExcPending
-	if v512 != 0 {
+	v515 = m.ExcPending
+	if v515 != 0 {
 		goto L4
 	} else {
 		goto L117
@@ -2218,7 +2223,7 @@ L115:
 	goto L116
 L116:
 	;
-	v514 = F_unlink(m, int32(_a_F_pgss_shmem_startup_10))
+	v517 = F_unlink(m, int32(_a_F_pgss_shmem_startup_10))
 	mBase = m.M
 	goto L36
 L117:

@@ -707,7 +707,7 @@ func F_InitHalfVector(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13832(m, l0, int32(2))
+	v3 = Fn13853(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1103,174 +1103,162 @@ func F_InitMaterializedSRF(m *base.Module, l0 int32, l1 int32) {
 func F_InitStandaloneProcess(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
+	var v3 int32
+	_ = v3
 	var v4 int32
 	_ = v4
 	var v5 int32
 	_ = v5
-	var v6 int32
-	_ = v6
-	var v16 int64
-	_ = v16
-	var v19 int64
-	_ = v19
-	var v23 int32
-	_ = v23
-	var v25 int32
-	_ = v25
-	var v28 int64
-	_ = v28
-	var v30 int64
-	_ = v30
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
-	var v45 int32
-	_ = v45
-	var v48 int32
-	_ = v48
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v59 int32
-	_ = v59
-	var v62 int32
-	_ = v62
-	var v67 int64
+	var v15 int64
+	_ = v15
+	var v18 int64
+	_ = v18
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v27 int64
+	_ = v27
+	var v29 int64
+	_ = v29
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	var v58 int32
+	_ = v58
+	var v61 int32
+	_ = v61
+	var v66 int64
+	_ = v66
+	var v67 int32
 	_ = v67
-	var v68 int32
-	_ = v68
-	var v77 int64
-	_ = v77
-	var v79 int64
-	_ = v79
-	var v82 int32
-	_ = v82
-	var v88 int32
-	_ = v88
-	var v97 int32
-	_ = v97
-	var v99 int32
-	_ = v99
-	var v101 int32
-	_ = v101
-	var v106 int32
-	_ = v106
+	var v76 int64
+	_ = v76
+	var v78 int64
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v87 int32
+	_ = v87
+	var v96 int32
+	_ = v96
+	var v98 int32
+	_ = v98
+	var v100 int32
+	_ = v100
+	var v105 int32
+	_ = v105
+	var v112 int32
+	_ = v112
 	var v115 int32
 	_ = v115
-	var v116 int32
-	_ = v116
-	var v121 int32
-	_ = v121
-	var v123 int32
-	_ = v123
-	var v125 int32
-	_ = v125
-	var v129 int32
-	_ = v129
-	var v134 int32
-	_ = v134
-	var v137 int32
-	_ = v137
-	var v139 int32
-	_ = v139
-	var v142 int32
-	_ = v142
-	var v148 int32
-	_ = v148
-	var v154 int32
-	_ = v154
-	var v160 int32
-	_ = v160
-	var v166 int32
-	_ = v166
-	var v172 int32
-	_ = v172
-	var v178 int32
-	_ = v178
-	var v184 int32
-	_ = v184
-	var v201 int32
-	_ = v201
-	var v203 int32
-	_ = v203
-	var v207 int32
-	_ = v207
-	var v208 int32
-	_ = v208
-	var v212 int32
-	_ = v212
-	var v217 int32
-	_ = v217
-	var v224 int32
-	_ = v224
-	var v228 int32
-	_ = v228
-	var v233 int32
-	_ = v233
-	v4 = m.G0
-	v5 = int32(16)
-	v6 = v4 - v5
-	m.G0 = v6
+	var v117 int32
+	_ = v117
+	var v120 int32
+	_ = v120
+	var v126 int32
+	_ = v126
+	var v132 int32
+	_ = v132
+	var v138 int32
+	_ = v138
+	var v144 int32
+	_ = v144
+	var v150 int32
+	_ = v150
+	var v156 int32
+	_ = v156
+	var v162 int32
+	_ = v162
+	var v179 int32
+	_ = v179
+	var v181 int32
+	_ = v181
+	var v185 int32
+	_ = v185
+	var v186 int32
+	_ = v186
+	var v190 int32
+	_ = v190
+	var v195 int32
+	_ = v195
+	var v202 int32
+	_ = v202
+	var v206 int32
+	_ = v206
+	var v211 int32
+	_ = v211
+	v3 = m.G0
+	v4 = int32(16)
+	v5 = v3 - v4
+	m.G0 = v5
 	*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[0])) = int32(8)
-	v16 = F_GetCurrentTimestamp(m)
+	v15 = F_GetCurrentTimestamp(m)
 	mBase = m.M
-	*(*int64)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[1])) = v16
-	v19 = F_timestamptz_to_time_t(m, v16)
+	*(*int64)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[1])) = v15
+	v18 = F_timestamptz_to_time_t(m, v15)
 	mBase = m.M
-	*(*int64)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[2])) = v19
-	v23 = F_pg_strong_random(m, int32(_a_F_InitStandaloneProcess_0), v5)
+	*(*int64)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[2])) = v18
+	v22 = F_pg_strong_random(m, int32(_a_F_InitStandaloneProcess_0), v4)
 	mBase = m.M
-	if v23 != 0 {
-		v25 = F_pg_prng_seed_check(m, int32(_a_F_InitStandaloneProcess_0))
+	if v22 != 0 {
+		v24 = F_pg_prng_seed_check(m, int32(_a_F_InitStandaloneProcess_0))
 		mBase = m.M
-		if v25 != 0 {
+		if v24 != 0 {
 		} else {
-			v28 = int64(*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[3])))
-			v30 = *(*int64)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[1]))
-			F_pg_prng_seed(m, int32(_a_F_InitStandaloneProcess_0), v28^v30<<(uint(int64(12))%64)^int64(base.Ui64(v30)>>(uint(int64(20))%64)))
+			v27 = int64(*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[3])))
+			v29 = *(*int64)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[1]))
+			F_pg_prng_seed(m, int32(_a_F_InitStandaloneProcess_0), v27^v29<<(uint(int64(12))%64)^int64(base.Ui64(v29)>>(uint(int64(20))%64)))
 			mBase = m.M
 		}
 	} else {
-		v28 = int64(*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[3])))
-		v30 = *(*int64)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[1]))
-		F_pg_prng_seed(m, int32(_a_F_InitStandaloneProcess_0), v28^v30<<(uint(int64(12))%64)^int64(base.Ui64(v30)>>(uint(int64(20))%64)))
+		v27 = int64(*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[3])))
+		v29 = *(*int64)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[1]))
+		F_pg_prng_seed(m, int32(_a_F_InitStandaloneProcess_0), v27^v29<<(uint(int64(12))%64)^int64(base.Ui64(v29)>>(uint(int64(20))%64)))
 		mBase = m.M
 	}
-	v39 = F_pg_prng_uint32(m)
+	v38 = F_pg_prng_uint32(m)
 	mBase = m.M
-	v41 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[4]))
-	if v41 == int32(0) {
-		v45 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[5]))
-		*(*int32)(unsafe.Add(mBase, uint32(v45))) = v39
+	v40 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[4]))
+	if v40 == int32(0) {
+		v44 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[5]))
+		*(*int32)(unsafe.Add(mBase, uint32(v44))) = v38
 	} else {
-		v48 = int32(3)
-		if v41 == int32(7) {
-			v53 = v48
+		v47 = int32(3)
+		if v40 == int32(7) {
+			v52 = v47
 		} else {
-			v53 = int32(1)
+			v52 = int32(1)
 		}
-		if v41 == int32(31) {
-			v56 = v48
+		if v40 == int32(31) {
+			v55 = v47
 		} else {
-			v56 = v53
+			v55 = v52
 		}
-		*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[6])) = v56
-		v59 = int32(0)
-		*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[7])) = v59
-		v62 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[5]))
-		if v59 < v41 {
-			v67 = base.I64_extend_i32_u(v39)
-			v68 = int32(0)
+		*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[6])) = v55
+		v58 = int32(0)
+		*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[7])) = v58
+		v61 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[5]))
+		if v58 < v40 {
+			v66 = base.I64_extend_i32_u(v38)
+			v67 = int32(0)
 			for {
-				v77 = v67*int64(6364136223846793005) + int64(1)
-				v79 = int64(base.Ui64(v77) >> (uint(int64(32)) % 64))
-				*(*uint32)(unsafe.Add(mBase, uint32(v62+v68<<(uint(int32(2))%32)))) = uint32(v79)
-				v82 = v68 + int32(1)
-				if v82 != v41 {
-					v67 = v77
-					v68 = v82
+				v76 = v66*int64(6364136223846793005) + int64(1)
+				v78 = int64(base.Ui64(v76) >> (uint(int64(32)) % 64))
+				*(*uint32)(unsafe.Add(mBase, uint32(v61+v67<<(uint(int32(2))%32)))) = uint32(v78)
+				v81 = v67 + int32(1)
+				if v81 != v40 {
+					v66 = v76
+					v67 = v81
 					continue
 				} else {
 					break
@@ -1279,306 +1267,155 @@ func F_InitStandaloneProcess(m *base.Module, l0 int32) {
 			}
 		} else {
 		}
-		v88 = *(*int32)(unsafe.Add(mBase, uint32(v62)))
-		*(*int32)(unsafe.Add(mBase, uint32(v62))) = v88 | int32(1)
+		v87 = *(*int32)(unsafe.Add(mBase, uint32(v61)))
+		*(*int32)(unsafe.Add(mBase, uint32(v61))) = v87 | int32(1)
 	}
 	F_InitializeWaitEventSupport(m)
 	mBase = m.M
-	v97 = m.ExcPending
-	if v97 != 0 {
+	v96 = m.ExcPending
+	if v96 != 0 {
 		return
 	} else {
-		v99 = int32(_a_F_InitStandaloneProcess_1)
-		*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[8])) = v99
-		v101 = int32(0)
+		v98 = int32(_a_F_InitStandaloneProcess_1)
+		*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[8])) = v98
+		v100 = int32(0)
 		*(*int64)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[9])) = int64(0)
-		v106 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[3]))
-		*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[10])) = uint8(v101)
-		*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[11])) = v106
-		v115 = F_CreateWaitEventSet(m, int32(0), int32(2))
+		v105 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[3]))
+		*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[10])) = uint8(v100)
+		*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[11])) = v105
+		F_InitializeLatchWaitSet(m)
 		mBase = m.M
-		v116 = m.ExcPending
-		if v116 != 0 {
+		v112 = m.ExcPending
+		if v112 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[12])) = v115
-			v121 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[8]))
-			F_AddWaitEventToSet(m, v115, int32(1), int32(-1), v121)
+			F_sigemptyset(m, int32(_a_F_InitStandaloneProcess_2))
 			mBase = m.M
-			v123 = m.ExcPending
-			if v123 != 0 {
+			v115 = int32(_a_F_InitStandaloneProcess_3)
+			F_sigfillset(m, v115)
+			mBase = m.M
+			v117 = int32(_a_F_InitStandaloneProcess_4)
+			F_sigfillset(m, v117)
+			mBase = m.M
+			v120 = int32(5)
+			F_sigdelset(m, v115, v120)
+			mBase = m.M
+			F_sigdelset(m, v117, v120)
+			mBase = m.M
+			v126 = int32(6)
+			F_sigdelset(m, v115, v126)
+			mBase = m.M
+			F_sigdelset(m, v117, v126)
+			mBase = m.M
+			v132 = int32(4)
+			F_sigdelset(m, v115, v132)
+			mBase = m.M
+			F_sigdelset(m, v117, v132)
+			mBase = m.M
+			v138 = int32(8)
+			F_sigdelset(m, v115, v138)
+			mBase = m.M
+			F_sigdelset(m, v117, v138)
+			mBase = m.M
+			v144 = int32(11)
+			F_sigdelset(m, v115, v144)
+			mBase = m.M
+			F_sigdelset(m, v117, v144)
+			mBase = m.M
+			v150 = int32(7)
+			F_sigdelset(m, v115, v150)
+			mBase = m.M
+			F_sigdelset(m, v117, v150)
+			mBase = m.M
+			v156 = int32(31)
+			F_sigdelset(m, v115, v156)
+			mBase = m.M
+			F_sigdelset(m, v117, v156)
+			mBase = m.M
+			v162 = int32(18)
+			F_sigdelset(m, v115, v162)
+			mBase = m.M
+			F_sigdelset(m, v117, v162)
+			mBase = m.M
+			F_sigdelset(m, v117, int32(3))
+			mBase = m.M
+			F_sigdelset(m, v117, int32(15))
+			mBase = m.M
+			F_sigdelset(m, v117, int32(14))
+			mBase = m.M
+			F_pgmem_sigprocmask(m, int32(_a_F_InitStandaloneProcess_3), int32(0))
+			mBase = m.M
+			v179 = m.ExcPending
+			if v179 != 0 {
 				return
 			} else {
-				v125 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[13])))
-				if v125 == int32(1) {
-					v129 = *(*int32)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[12]))
-					F_AddWaitEventToSet(m, v129, int32(32), int32(-1), int32(0))
+				v181 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[12])))
+				if v181 == int32(0) {
+					v185 = F_find_my_exec(m, l0, int32(_a_F_InitStandaloneProcess_5))
 					mBase = m.M
-					v134 = m.ExcPending
-					if v134 != 0 {
+					v186 = m.ExcPending
+					if v186 != 0 {
 						return
 					} else {
-						F_sigemptyset(m, int32(_a_F_InitStandaloneProcess_2))
-						mBase = m.M
-						v137 = int32(_a_F_InitStandaloneProcess_3)
-						F_sigfillset(m, v137)
-						mBase = m.M
-						v139 = int32(_a_F_InitStandaloneProcess_4)
-						F_sigfillset(m, v139)
-						mBase = m.M
-						v142 = int32(5)
-						F_sigdelset(m, v137, v142)
-						mBase = m.M
-						F_sigdelset(m, v139, v142)
-						mBase = m.M
-						v148 = int32(6)
-						F_sigdelset(m, v137, v148)
-						mBase = m.M
-						F_sigdelset(m, v139, v148)
-						mBase = m.M
-						v154 = int32(4)
-						F_sigdelset(m, v137, v154)
-						mBase = m.M
-						F_sigdelset(m, v139, v154)
-						mBase = m.M
-						v160 = int32(8)
-						F_sigdelset(m, v137, v160)
-						mBase = m.M
-						F_sigdelset(m, v139, v160)
-						mBase = m.M
-						v166 = int32(11)
-						F_sigdelset(m, v137, v166)
-						mBase = m.M
-						F_sigdelset(m, v139, v166)
-						mBase = m.M
-						v172 = int32(7)
-						F_sigdelset(m, v137, v172)
-						mBase = m.M
-						F_sigdelset(m, v139, v172)
-						mBase = m.M
-						v178 = int32(31)
-						F_sigdelset(m, v137, v178)
-						mBase = m.M
-						F_sigdelset(m, v139, v178)
-						mBase = m.M
-						v184 = int32(18)
-						F_sigdelset(m, v137, v184)
-						mBase = m.M
-						F_sigdelset(m, v139, v184)
-						mBase = m.M
-						F_sigdelset(m, v139, int32(3))
-						mBase = m.M
-						F_sigdelset(m, v139, int32(15))
-						mBase = m.M
-						F_sigdelset(m, v139, int32(14))
-						mBase = m.M
-						F_sigprocmask(m, int32(_a_F_InitStandaloneProcess_3), int32(0))
-						mBase = m.M
-						v201 = m.ExcPending
-						if v201 != 0 {
-							return
-						} else {
-							v203 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[14])))
-							if v203 == int32(0) {
-								v207 = F_find_my_exec(m, l0, int32(_a_F_InitStandaloneProcess_5))
+						if v185 < int32(0) {
+							F_errstart_cold(m, int32(22), int32(0))
+							mBase = m.M
+							v202 = m.ExcPending
+							if v202 != 0 {
+								return
+							} else {
+								*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
+								F_errmsg_internal(m, int32(_a_F_InitStandaloneProcess_6), v5)
 								mBase = m.M
-								v208 = m.ExcPending
-								if v208 != 0 {
+								v206 = m.ExcPending
+								if v206 != 0 {
 									return
 								} else {
-									if v207 < int32(0) {
-										F_errstart_cold(m, int32(22), int32(0))
-										mBase = m.M
-										v224 = m.ExcPending
-										if v224 != 0 {
-											return
-										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-											F_errmsg_internal(m, int32(_a_F_InitStandaloneProcess_6), v6)
-											mBase = m.M
-											v228 = m.ExcPending
-											if v228 != 0 {
-												return
-											} else {
-												F_errfinish(m, int32(_a_F_InitStandaloneProcess_7), int32(207), int32(_a_F_InitStandaloneProcess_8))
-												mBase = m.M
-												v233 = m.ExcPending
-												if v233 != 0 {
-													return
-												} else {
-													base.Wasm_trap_unreachable()
-													for {
-													}
-												}
-											}
-										}
+									F_errfinish(m, int32(_a_F_InitStandaloneProcess_7), int32(207), int32(_a_F_InitStandaloneProcess_8))
+									mBase = m.M
+									v211 = m.ExcPending
+									if v211 != 0 {
+										return
 									} else {
-										v212 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[15])))
-										if v212 == int32(0) {
-											F_get_pkglib_path(m, int32(_a_F_InitStandaloneProcess_9))
-											mBase = m.M
-											v217 = m.ExcPending
-											if v217 != 0 {
-												return
-											} else {
-												m.G0 = v6 + int32(16)
-												return
-											}
-										} else {
-											m.G0 = v6 + int32(16)
-											return
+										base.Wasm_trap_unreachable()
+										for {
 										}
 									}
+								}
+							}
+						} else {
+							v190 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[13])))
+							if v190 == int32(0) {
+								F_get_pkglib_path(m, int32(_a_F_InitStandaloneProcess_9))
+								mBase = m.M
+								v195 = m.ExcPending
+								if v195 != 0 {
+									return
+								} else {
+									m.G0 = v5 + int32(16)
+									return
 								}
 							} else {
-								v212 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[15])))
-								if v212 == int32(0) {
-									F_get_pkglib_path(m, int32(_a_F_InitStandaloneProcess_9))
-									mBase = m.M
-									v217 = m.ExcPending
-									if v217 != 0 {
-										return
-									} else {
-										m.G0 = v6 + int32(16)
-										return
-									}
-								} else {
-									m.G0 = v6 + int32(16)
-									return
-								}
+								m.G0 = v5 + int32(16)
+								return
 							}
 						}
 					}
 				} else {
-					F_sigemptyset(m, int32(_a_F_InitStandaloneProcess_2))
-					mBase = m.M
-					v137 = int32(_a_F_InitStandaloneProcess_3)
-					F_sigfillset(m, v137)
-					mBase = m.M
-					v139 = int32(_a_F_InitStandaloneProcess_4)
-					F_sigfillset(m, v139)
-					mBase = m.M
-					v142 = int32(5)
-					F_sigdelset(m, v137, v142)
-					mBase = m.M
-					F_sigdelset(m, v139, v142)
-					mBase = m.M
-					v148 = int32(6)
-					F_sigdelset(m, v137, v148)
-					mBase = m.M
-					F_sigdelset(m, v139, v148)
-					mBase = m.M
-					v154 = int32(4)
-					F_sigdelset(m, v137, v154)
-					mBase = m.M
-					F_sigdelset(m, v139, v154)
-					mBase = m.M
-					v160 = int32(8)
-					F_sigdelset(m, v137, v160)
-					mBase = m.M
-					F_sigdelset(m, v139, v160)
-					mBase = m.M
-					v166 = int32(11)
-					F_sigdelset(m, v137, v166)
-					mBase = m.M
-					F_sigdelset(m, v139, v166)
-					mBase = m.M
-					v172 = int32(7)
-					F_sigdelset(m, v137, v172)
-					mBase = m.M
-					F_sigdelset(m, v139, v172)
-					mBase = m.M
-					v178 = int32(31)
-					F_sigdelset(m, v137, v178)
-					mBase = m.M
-					F_sigdelset(m, v139, v178)
-					mBase = m.M
-					v184 = int32(18)
-					F_sigdelset(m, v137, v184)
-					mBase = m.M
-					F_sigdelset(m, v139, v184)
-					mBase = m.M
-					F_sigdelset(m, v139, int32(3))
-					mBase = m.M
-					F_sigdelset(m, v139, int32(15))
-					mBase = m.M
-					F_sigdelset(m, v139, int32(14))
-					mBase = m.M
-					F_sigprocmask(m, int32(_a_F_InitStandaloneProcess_3), int32(0))
-					mBase = m.M
-					v201 = m.ExcPending
-					if v201 != 0 {
-						return
-					} else {
-						v203 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[14])))
-						if v203 == int32(0) {
-							v207 = F_find_my_exec(m, l0, int32(_a_F_InitStandaloneProcess_5))
-							mBase = m.M
-							v208 = m.ExcPending
-							if v208 != 0 {
-								return
-							} else {
-								if v207 < int32(0) {
-									F_errstart_cold(m, int32(22), int32(0))
-									mBase = m.M
-									v224 = m.ExcPending
-									if v224 != 0 {
-										return
-									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-										F_errmsg_internal(m, int32(_a_F_InitStandaloneProcess_6), v6)
-										mBase = m.M
-										v228 = m.ExcPending
-										if v228 != 0 {
-											return
-										} else {
-											F_errfinish(m, int32(_a_F_InitStandaloneProcess_7), int32(207), int32(_a_F_InitStandaloneProcess_8))
-											mBase = m.M
-											v233 = m.ExcPending
-											if v233 != 0 {
-												return
-											} else {
-												base.Wasm_trap_unreachable()
-												for {
-												}
-											}
-										}
-									}
-								} else {
-									v212 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[15])))
-									if v212 == int32(0) {
-										F_get_pkglib_path(m, int32(_a_F_InitStandaloneProcess_9))
-										mBase = m.M
-										v217 = m.ExcPending
-										if v217 != 0 {
-											return
-										} else {
-											m.G0 = v6 + int32(16)
-											return
-										}
-									} else {
-										m.G0 = v6 + int32(16)
-										return
-									}
-								}
-							}
+					v190 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[13])))
+					if v190 == int32(0) {
+						F_get_pkglib_path(m, int32(_a_F_InitStandaloneProcess_9))
+						mBase = m.M
+						v195 = m.ExcPending
+						if v195 != 0 {
+							return
 						} else {
-							v212 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitStandaloneProcess[15])))
-							if v212 == int32(0) {
-								F_get_pkglib_path(m, int32(_a_F_InitStandaloneProcess_9))
-								mBase = m.M
-								v217 = m.ExcPending
-								if v217 != 0 {
-									return
-								} else {
-									m.G0 = v6 + int32(16)
-									return
-								}
-							} else {
-								m.G0 = v6 + int32(16)
-								return
-							}
+							m.G0 = v5 + int32(16)
+							return
 						}
+					} else {
+						m.G0 = v5 + int32(16)
+						return
 					}
 				}
 			}
@@ -3379,175 +3216,6 @@ func F_InitializeSessionUserId(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	} else {
 		m.G0 = v17 - int32(-64)
 		return
-	}
-}
-func F_InitializeShmemGUCs(m *base.Module) {
-	mBase := m.M
-	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v20 int32
-	_ = v20
-	var v24 int32
-	_ = v24
-	var v25 int32
-	_ = v25
-	var v30 int32
-	_ = v30
-	var v32 int32
-	_ = v32
-	var v36 int32
-	_ = v36
-	var v49 int32
-	_ = v49
-	var v51 int32
-	_ = v51
-	var v52 int32
-	_ = v52
-	var v54 int32
-	_ = v54
-	var v55 int32
-	_ = v55
-	var v58 int32
-	_ = v58
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
-	var v68 int32
-	_ = v68
-	var v70 int32
-	_ = v70
-	var v73 int32
-	_ = v73
-	var v75 int32
-	_ = v75
-	var v76 int32
-	_ = v76
-	var v81 int32
-	_ = v81
-	v5 = m.G0
-	v7 = v5 - int32(112)
-	m.G0 = v7
-	v11 = F_CalculateShmemSize(m, v7+int32(40))
-	mBase = m.M
-	v12 = m.ExcPending
-	if v12 != 0 {
-		return
-	} else {
-		v14 = F_add_size(m, v11, int32(_a_F_InitializeShmemGUCs_0))
-		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
-			return
-		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = int32(base.Ui32(v14) >> (uint(int32(20)) % 32))
-			v20 = v7 + int32(48)
-			v24 = F_pg_sprintf(m, v20, int32(_a_F_InitializeShmemGUCs_1), v7+int32(32))
-			mBase = m.M
-			v25 = m.ExcPending
-			if v25 != 0 {
-				return
-			} else {
-				F_SetConfigOption(m, int32(_a_F_InitializeShmemGUCs_2), v20, int32(0), int32(1))
-				mBase = m.M
-				v30 = m.ExcPending
-				if v30 != 0 {
-					return
-				} else {
-					v32 = *(*int32)(unsafe.Add(mBase, _c_F_InitializeShmemGUCs[0]))
-					if v32 != 0 {
-						v36 = v32 << (uint(int32(10)) % 32)
-					} else {
-						v36 = int32(_a_F_InitializeShmemGUCs_3)
-					}
-					if v36 != 0 {
-					} else {
-					}
-					v49 = v7 + int32(44)
-					if v49 != 0 {
-						*(*int32)(unsafe.Add(mBase, uint32(v49))) = v36
-					} else {
-					}
-					v51 = *(*int32)(unsafe.Add(mBase, uint32(v7)+44))
-					if v51 != 0 {
-						v52 = base.I32_div_u_s(v11, v51)
-						v54 = F_add_size(m, v52, int32(1))
-						mBase = m.M
-						v55 = m.ExcPending
-						if v55 != 0 {
-							return
-						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v54
-							v58 = v7 + int32(48)
-							v62 = F_pg_sprintf(m, v58, int32(_a_F_InitializeShmemGUCs_1), v7+int32(16))
-							mBase = m.M
-							v63 = m.ExcPending
-							if v63 != 0 {
-								return
-							} else {
-								F_SetConfigOption(m, int32(_a_F_InitializeShmemGUCs_4), v58, int32(0), int32(1))
-								mBase = m.M
-								v68 = m.ExcPending
-								if v68 != 0 {
-									return
-								} else {
-									v70 = *(*int32)(unsafe.Add(mBase, uint32(v7)+40))
-									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v70
-									v73 = v7 + int32(48)
-									v75 = F_pg_sprintf(m, v73, int32(_a_F_InitializeShmemGUCs_5), v7)
-									mBase = m.M
-									v76 = m.ExcPending
-									if v76 != 0 {
-										return
-									} else {
-										F_SetConfigOption(m, int32(_a_F_InitializeShmemGUCs_6), v73, int32(0), int32(1))
-										mBase = m.M
-										v81 = m.ExcPending
-										if v81 != 0 {
-											return
-										} else {
-											m.G0 = v7 + int32(112)
-											return
-										}
-									}
-								}
-							}
-						}
-					} else {
-						v70 = *(*int32)(unsafe.Add(mBase, uint32(v7)+40))
-						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v70
-						v73 = v7 + int32(48)
-						v75 = F_pg_sprintf(m, v73, int32(_a_F_InitializeShmemGUCs_5), v7)
-						mBase = m.M
-						v76 = m.ExcPending
-						if v76 != 0 {
-							return
-						} else {
-							F_SetConfigOption(m, int32(_a_F_InitializeShmemGUCs_6), v73, int32(0), int32(1))
-							mBase = m.M
-							v81 = m.ExcPending
-							if v81 != 0 {
-								return
-							} else {
-								m.G0 = v7 + int32(112)
-								return
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 }
 func F_Int64GetDatum(m *base.Module, l0 int64) int32 {
@@ -9765,7 +9433,7 @@ func F_int2vectorrecv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13925(m, l0, int32(_a_F_int2vectorrecv_0), int32(292), int32(_a_F_int2vectorrecv_1), int32(_a_F_int2vectorrecv_2), int32(21))
+	v7 = Fn13947(m, l0, int32(_a_F_int2vectorrecv_0), int32(292), int32(_a_F_int2vectorrecv_1), int32(_a_F_int2vectorrecv_2), int32(21))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

@@ -1767,7 +1767,7 @@ func F_texticregexeq(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13995(m, l0, int32(27))
+	v3 = Fn14017(m, l0, int32(27))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -3562,7 +3562,7 @@ func F_timetztypmodout(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14002(m, l0, int32(_a_F_timetztypmodout_0))
+	v3 = Fn14024(m, l0, int32(_a_F_timetztypmodout_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -6869,7 +6869,7 @@ func F_tsm_bernoulli_handler(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn14007(m, l0, int32(257), int32(281), int32(280), int32(279), int32(0), int32(278), int32(700))
+	v9 = Fn14029(m, l0, int32(257), int32(281), int32(280), int32(279), int32(0), int32(278), int32(700))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
@@ -9523,7 +9523,7 @@ L21:
 L22:
 	;
 	v73 = int32(0)
-	if int32(1)|base.B2i32(v69 == v73) == v73 {
+	if int32(0)|base.B2i32(v69 == v73) == v73 {
 		goto L24
 	} else {
 		goto L25

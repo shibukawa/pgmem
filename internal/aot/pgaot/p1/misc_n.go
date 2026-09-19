@@ -719,7 +719,7 @@ func F_nameicregexne(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13948(m, l0, int32(27))
+	v3 = Fn13970(m, l0, int32(27))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1193,7 +1193,7 @@ func F_nameregexne(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13948(m, l0, int32(19))
+	v3 = Fn13970(m, l0, int32(19))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

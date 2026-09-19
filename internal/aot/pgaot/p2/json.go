@@ -3023,10 +3023,20 @@ func F_json_lex(m *base.Module, l0 int32) int32 {
 	_ = v1233
 	var v1236 int32
 	_ = v1236
-	var v1239 int32
-	_ = v1239
-	var v1240 int32
-	_ = v1240
+	var v1254 int32
+	_ = v1254
+	var v1256 int32
+	_ = v1256
+	var v1259 int32
+	_ = v1259
+	var v1261 int32
+	_ = v1261
+	var v1262 int32
+	_ = v1262
+	var v1263 int32
+	_ = v1263
+	var v1266 int32
+	_ = v1266
 	var v1279 int32
 	_ = v1279
 	var v1280 int32
@@ -4944,9 +4954,7 @@ L267:
 	goto L268
 L268:
 	;
-	v1239 = int32(_a_F_json_lex_7)
-	v1240 = int32(9)
-	goto L298
+	goto L299
 L269:
 	;
 	v1193 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
@@ -5147,25 +5155,70 @@ L297:
 	goto L314
 L298:
 	;
-	goto L305
+	if base.B2i32(v1262 != v1263) == int32(0) {
+		goto L296
+	} else {
+		goto L305
+	}
+L299:
+	;
+	v1254 = int32(_a_F_json_lex_7)
+	v1256 = int32(9)
+	goto L300
+L300:
+	;
+	v1259 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1254))))
+	if v1259 == v1187&int32(255) {
+		v1316 = v1254
+		v1318 = v1256
+		goto L297
+	} else {
+		goto L302
+	}
+L301:
+	;
+	goto L298
+L302:
+	;
+	v1261 = int32(1)
+	v1262 = v1256 - v1261
+	v1263 = int32(0)
+	v1266 = v1254 + v1261
+	if v1266&int32(3) == v1263 {
+		goto L298
+	} else {
+		goto L303
+	}
+L303:
+	;
+	if v1262 != 0 {
+		v1254 = v1266
+		v1256 = v1262
+		goto L300
+	} else {
+		goto L304
+	}
+L304:
+	;
+	goto L301
 L305:
 	;
 	v1279 = v1187 & int32(255)
-	v1280 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_json_lex[0])))
-	if base.B2i32(v1279 == v1280)|int32(0) == int32(0) {
+	v1280 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1266))))
+	if base.B2i32(v1279 == v1280)|base.B2i32(base.Ui32(v1262) < base.Ui32(int32(4))) == int32(0) {
 		goto L306
 	} else {
 		goto L307
 	}
 L306:
 	;
-	v1289 = v1239
-	v1291 = v1240
+	v1289 = v1266
+	v1291 = v1262
 	goto L309
 L307:
 	;
-	v1309 = v1239
-	v1311 = v1240
+	v1309 = v1266
+	v1311 = v1262
 	goto L308
 L308:
 	;

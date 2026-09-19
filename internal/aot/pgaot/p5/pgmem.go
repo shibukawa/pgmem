@@ -191,7 +191,47 @@ func F_pgmem_init(m *base.Module) {
 	*(*int32)(unsafe.Add(mBase, _c_F_pgmem_init[0])) = int32(_a_F_pgmem_init_0)
 	*(*int32)(unsafe.Add(mBase, _c_F_pgmem_init[1])) = int32(_a_F_pgmem_init_1)
 	*(*int32)(unsafe.Add(mBase, _c_F_pgmem_init[2])) = int32(_a_F_pgmem_init_2)
-	*(*int32)(unsafe.Add(mBase, _c_F_pgmem_init[3])) = int32(_a_F_pgmem_init_3)
-	*(*int32)(unsafe.Add(mBase, _c_F_pgmem_init[4])) = int32(_a_F_pgmem_init_4)
 	return
+}
+func F_pgmem_recv(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	v4 = m.Env.Pgmem_sock_recv(m, l0, l1, l2)
+	mBase = m.M
+	if int32(0) <= v4 {
+		return v4
+	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_pgmem_recv[0])) = int32(0) - v4
+		return int32(-1)
+	}
+}
+func F_pgmem_send(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	v4 = m.Env.Pgmem_sock_send(m, l0, l1, l2)
+	mBase = m.M
+	if int32(0) <= v4 {
+		return v4
+	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_pgmem_send[0])) = int32(0) - v4
+		return int32(-1)
+	}
+}
+func F_pgmem_shmdt(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	v2 = m.Env.Pgmem_shmdt(m, l0)
+	mBase = m.M
+	if int32(0) <= v2 {
+		return v2
+	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_pgmem_shmdt[0])) = int32(0) - v2
+		return int32(-1)
+	}
 }

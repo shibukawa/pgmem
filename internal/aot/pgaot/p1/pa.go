@@ -2,6 +2,7 @@ package p1
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -12,26 +13,28 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 	_ = v4
 	var v5 int32
 	_ = v5
-	var v8 int32
-	_ = v8
+	var v10 int32
+	_ = v10
 	var v12 int32
 	_ = v12
 	var v17 int32
 	_ = v17
 	var v19 int32
 	_ = v19
-	var v22 int32
-	_ = v22
-	var v26 int32
-	_ = v26
-	var v30 int32
-	_ = v30
-	var v35 int32
-	_ = v35
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v27 int32
+	_ = v27
+	var v31 int32
+	_ = v31
 	var v36 int32
 	_ = v36
 	var v37 int32
 	_ = v37
+	var v39 int32
+	_ = v39
 	var v43 int32
 	_ = v43
 	var v44 int32
@@ -55,9 +58,8 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+20))
 	if v5 == int32(0) {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
-		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(1)
-		if v8 != 0 {
+		v10 = base.AtomicRmwXchg32(m, v4, int32(0), int32(1))
+		if v10 != 0 {
 			v12 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
 			F_s_lock(m, v12, int32(_a_F_pa_decr_and_wait_stream_block_0), int32(1531), int32(_a_F_pa_decr_and_wait_stream_block_1))
 			mBase = m.M
@@ -66,27 +68,28 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 				return
 			} else {
 				v19 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
-				*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(0)
-				v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+32))
-				if v22 != 0 {
+				v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+32))
+				v21 = int32(0)
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v19))), uint32(v21))
+				if v20 != 0 {
 					return
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v26 = m.ExcPending
-					if v26 != 0 {
+					v27 = m.ExcPending
+					if v27 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_pa_decr_and_wait_stream_block_2), int32(0))
 						mBase = m.M
-						v30 = m.ExcPending
-						if v30 != 0 {
+						v31 = m.ExcPending
+						if v31 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_pa_decr_and_wait_stream_block_0), int32(1611), int32(_a_F_pa_decr_and_wait_stream_block_3))
 							mBase = m.M
-							v35 = m.ExcPending
-							if v35 != 0 {
+							v36 = m.ExcPending
+							if v36 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -99,27 +102,28 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 			}
 		} else {
 			v19 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
-			*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(0)
-			v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+32))
-			if v22 != 0 {
+			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+32))
+			v21 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v19))), uint32(v21))
+			if v20 != 0 {
 				return
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v26 = m.ExcPending
-				if v26 != 0 {
+				v27 = m.ExcPending
+				if v27 != 0 {
 					return
 				} else {
 					F_errmsg_internal(m, int32(_a_F_pa_decr_and_wait_stream_block_2), int32(0))
 					mBase = m.M
-					v30 = m.ExcPending
-					if v30 != 0 {
+					v31 = m.ExcPending
+					if v31 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_pa_decr_and_wait_stream_block_0), int32(1611), int32(_a_F_pa_decr_and_wait_stream_block_3))
 						mBase = m.M
-						v35 = m.ExcPending
-						if v35 != 0 {
+						v36 = m.ExcPending
+						if v36 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -131,10 +135,9 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 			}
 		}
 	} else {
-		v36 = *(*int32)(unsafe.Add(mBase, uint32(v4)+20))
 		v37 = int32(1)
-		*(*int32)(unsafe.Add(mBase, uint32(v4)+20)) = v36 - v37
-		if v36 != v37 {
+		v39 = base.AtomicRmwSub32(m, v4, int32(20), v37)
+		if v39 != v37 {
 			return
 		} else {
 			v43 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[1]))

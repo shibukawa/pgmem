@@ -862,7 +862,7 @@ func F_uhc_to_utf8(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v3 = int32(0)
-	v7 = Fn13848(m, l0, int32(38), v3, v3, v3, int32(_a_F_uhc_to_utf8_0))
+	v7 = Fn13870(m, l0, int32(38), v3, v3, v3, int32(_a_F_uhc_to_utf8_0))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

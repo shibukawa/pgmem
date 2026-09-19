@@ -90,6 +90,20 @@ func F_gen_pgmem_key_size(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+16))
 	return v4
 }
+func F_pgmem_kill(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	v3 = m.Env.Pgmem_kill(m, l0, l1)
+	mBase = m.M
+	if int32(0) <= v3 {
+		return v3
+	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_pgmem_kill[0])) = int32(0) - v3
+		return int32(-1)
+	}
+}
 func F_pgmem_module_name(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -114,6 +128,107 @@ func F_pgmem_module_name(m *base.Module, l0 int32) int32 {
 		}
 	}
 	return v11
+}
+func F_pgmem_raise(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v13 int32
+	_ = v13
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v25 int64
+	_ = v25
+	var v27 int64
+	_ = v27
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	v3 = m.G0
+	v4 = int32(32)
+	v5 = v3 - v4
+	m.G0 = v5
+	if base.Ui32(l0-v4) < base.Ui32(int32(-31)) {
+		m.G0 = v5 + int32(32)
+		return
+	} else {
+		v13 = v5 + int32(12)
+		if base.Ui32(int32(65)) <= base.Ui32(l0) {
+			*(*int32)(unsafe.Add(mBase, _c_F_pgmem_raise[0])) = int32(28)
+			v42 = int32(-1)
+		} else {
+			if v13 != 0 {
+				v22 = l0 * int32(20)
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+uint32(_c_F_pgmem_raise[1])))
+				*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v23
+				v25 = *(*int64)(unsafe.Add(mBase, uint32(v22)+uint32(_c_F_pgmem_raise[2])))
+				*(*int64)(unsafe.Add(mBase, uint32(v13)+8)) = v25
+				v27 = *(*int64)(unsafe.Add(mBase, uint32(v22)+uint32(_c_F_pgmem_raise[3])))
+				*(*int64)(unsafe.Add(mBase, uint32(v13))) = v27
+			} else {
+			}
+			v42 = int32(0)
+		}
+		if v42 != 0 {
+			F_raise(m, l0)
+			mBase = m.M
+			v55 = m.ExcPending
+			if v55 != 0 {
+				return
+			} else {
+				m.G0 = v5 + int32(32)
+				return
+			}
+		} else {
+			v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5)+24)))
+			if v43&int32(4) != 0 {
+				F_raise(m, l0)
+				mBase = m.M
+				v55 = m.ExcPending
+				if v55 != 0 {
+					return
+				} else {
+					m.G0 = v5 + int32(32)
+					return
+				}
+			} else {
+				v46 = *(*int32)(unsafe.Add(mBase, uint32(v5)+12))
+				if v46 != 0 {
+					F_raise(m, l0)
+					mBase = m.M
+					v55 = m.ExcPending
+					if v55 != 0 {
+						return
+					} else {
+						m.G0 = v5 + int32(32)
+						return
+					}
+				} else {
+					v47 = int32(_a_F_pgmem_raise_0)
+					v49 = *(*int32)(unsafe.Add(mBase, _c_F_pgmem_raise[4]))
+					*(*int32)(unsafe.Add(mBase, _c_F_pgmem_raise[4])) = v49 | int32(1)<<(uint(l0)%32)
+					m.G0 = v5 + int32(32)
+					return
+				}
+			}
+		}
+	}
 }
 func F_pgmem_reset_session(m *base.Module, l0 int32) {
 	mBase := m.M

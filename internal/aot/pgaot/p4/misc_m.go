@@ -5899,7 +5899,7 @@ func F_md5_text(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13944(m, l0, int32(_a_F_md5_text_0), int32(49))
+	v4 = Fn13966(m, l0, int32(_a_F_md5_text_0), int32(49))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

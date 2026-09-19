@@ -3,6 +3,7 @@ package p2
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 	"math"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -877,8 +878,8 @@ func F__gin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v379
 	var v380 float64
 	_ = v380
-	var v383 int32
-	_ = v383
+	var v385 int32
+	_ = v385
 	var v392 int32
 	_ = v392
 	var v393 int32
@@ -889,14 +890,16 @@ func F__gin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v398
 	var v401 float64
 	_ = v401
-	var v404 float64
-	_ = v404
-	var v410 int32
-	_ = v410
+	var v402 float64
+	_ = v402
+	var v405 int32
+	_ = v405
 	var v411 int32
 	_ = v411
-	var v413 int32
-	_ = v413
+	var v412 int32
+	_ = v412
+	var v414 int32
+	_ = v414
 	v13 = m.G0
 	v15 = v13 - int32(16)
 	m.G0 = v15
@@ -1657,9 +1660,8 @@ L91:
 	;
 	v380 = *(*float64)(unsafe.Add(mBase, uint32(l0)+uint32(_c_F__gin_parallel_scan_and_build[9])))
 	*(*float64)(unsafe.Add(mBase, uint32(l0)+uint32(_c_F__gin_parallel_scan_and_build[9]))) = base.F64_add(v53, v380)
-	v383 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = int32(1)
-	if v383 != 0 {
+	v385 = base.AtomicRmwXchg32(m, l1, int32(28), int32(1))
+	if v385 != 0 {
 		goto L92
 	} else {
 		goto L93
@@ -1685,13 +1687,14 @@ L94:
 	v398 = *(*float64)(unsafe.Add(mBase, uint32(l1)+40))
 	*(*float64)(unsafe.Add(mBase, uint32(l1)+40)) = base.F64_add(v397, v398)
 	v401 = *(*float64)(unsafe.Add(mBase, uint32(l0)+uint32(_c_F__gin_parallel_scan_and_build[5])))
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = int32(0)
-	v404 = *(*float64)(unsafe.Add(mBase, uint32(l1)+48))
-	*(*float64)(unsafe.Add(mBase, uint32(l1)+48)) = base.F64_add(v401, v404)
+	v402 = *(*float64)(unsafe.Add(mBase, uint32(l1)+48))
+	*(*float64)(unsafe.Add(mBase, uint32(l1)+48)) = base.F64_add(v401, v402)
+	v405 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+28)), uint32(v405))
 	F_ConditionVariableSignal(m, l1+int32(16))
 	mBase = m.M
-	v410 = m.ExcPending
-	if v410 != 0 {
+	v411 = m.ExcPending
+	if v411 != 0 {
 		goto L1
 	} else {
 		goto L96
@@ -1701,11 +1704,11 @@ L95:
 	goto L94
 L96:
 	;
-	v411 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_c_F__gin_parallel_scan_and_build[2])))
-	F_tuplesort_end(m, v411)
+	v412 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_c_F__gin_parallel_scan_and_build[2])))
+	F_tuplesort_end(m, v412)
 	mBase = m.M
-	v413 = m.ExcPending
-	if v413 != 0 {
+	v414 = m.ExcPending
+	if v414 != 0 {
 		goto L1
 	} else {
 		goto L97
@@ -3048,7 +3051,7 @@ func F_gin_extract_query_bool(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13905(m, l0, int32(0), int32(2708))
+	v4 = Fn13927(m, l0, int32(0), int32(2708))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -3061,7 +3064,7 @@ func F_gin_extract_query_char(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13905(m, l0, int32(0), int32(2102))
+	v4 = Fn13927(m, l0, int32(0), int32(2102))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -3074,7 +3077,7 @@ func F_gin_extract_query_float4(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13905(m, l0, int32(-8388608), int32(2098))
+	v4 = Fn13927(m, l0, int32(-8388608), int32(2098))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -3240,7 +3243,7 @@ func F_gin_extract_query_macaddr8(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13907(m, l0, int32(8), int32(_a_F_gin_extract_query_macaddr8_0))
+	v4 = Fn13929(m, l0, int32(8), int32(_a_F_gin_extract_query_macaddr8_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -3253,7 +3256,7 @@ func F_gin_extract_query_timestamp(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int64(-9223372036854775807-1), int32(1430))
+	v4 = Fn13928(m, l0, int64(-9223372036854775807-1), int32(1430))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

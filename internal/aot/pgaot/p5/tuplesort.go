@@ -2,6 +2,7 @@ package p5
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -1687,25 +1688,28 @@ func F_tuplesort_gettupleslot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 func F_tuplesort_initialize_shared(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
-	var v11 int32
-	_ = v11
-	var v16 int32
-	_ = v16
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(0)
-	*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(0)
+	var v4 int32
+	_ = v4
+	var v12 int32
+	_ = v12
+	var v17 int32
+	_ = v17
+	v4 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v4))
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+4)) = int64(0)
 	F_SharedFileSetInit(m, l0+int32(12), l2)
 	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
+	v12 = m.ExcPending
+	if v12 != 0 {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = l1
 		if l1 <= int32(0) {
 		} else {
-			v16 = l1 << (uint(int32(3)) % 32)
-			if v16 == int32(0) {
+			v17 = l1 << (uint(int32(3)) % 32)
+			if v17 == int32(0) {
 			} else {
-				base.MemoryFill(m, l0+int32(72), int32(0), v16)
+				base.MemoryFill(m, l0+int32(72), int32(0), v17)
 			}
 		}
 		return

@@ -8086,8 +8086,6 @@ func F_maybe_adjust_io_workers(m *base.Module) {
 	_ = v98
 	var v100 int32
 	_ = v100
-	var v101 int32
-	_ = v101
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_maybe_adjust_io_workers[0]))
 	if v6 != int32(1) {
 		goto L1
@@ -8274,14 +8272,9 @@ L25:
 L26:
 	;
 	v98 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
-	v100 = F_kill(m, v98, int32(12))
+	v100 = F_pgmem_kill(m, v98, int32(12))
 	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
-		goto L17
-	} else {
-		goto L33
-	}
+	goto L1
 L27:
 	;
 	goto L26
@@ -8322,9 +8315,6 @@ L31:
 		goto L32
 	}
 L32:
-	;
-	goto L1
-L33:
 	;
 	goto L1
 }
@@ -11144,7 +11134,7 @@ func F_member_can_set_role(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13919(m, l0, l1, int32(2))
+	v4 = Fn13941(m, l0, l1, int32(2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

@@ -290,3 +290,176 @@ pgmem_forget_temp_namespace(void)
  * GetTempToastNamespace - get the OID of my temporary-toast-table namespace,
 """,
 'pgmem_forget_temp_namespace')
+
+# ---- multi-process model (EXEC_BACKEND on the pgmem host) ----
+
+# Process creation: EXEC_BACKEND's internal_forkexec has written the
+# child's variables to a file; instead of fork()+execv() the host starts a
+# new module instance running "postgres --forkchild=<kind> <file>" and
+# returns its pid.
+patch('src/backend/postmaster/launch_backend.c',
+'''	/* Fire off execv in child */
+	if ((pid = fork_process()) == 0)
+	{
+		if (execv(postgres_exec_path, argv) < 0)
+		{
+			ereport(LOG,
+					(errmsg("could not execute server process \\"%s\\": %m",
+							postgres_exec_path)));
+			/* We're already in the child process here, can't return */
+			exit(1);
+		}
+	}
+
+	return pid;					/* Parent returns pid, or -1 on fork failure */
+''',
+'''#ifdef __PGMEM__
+	{
+		extern int pgmem_spawn(const char *forkarg, const char *paramfile)
+			__attribute__((import_module("env"), import_name("pgmem_spawn")));
+
+		pid = pgmem_spawn(argv[1], argv[2]);
+		if (pid < 0)
+		{
+			errno = -pid;
+			pid = -1;
+		}
+	}
+#else
+	/* Fire off execv in child */
+	if ((pid = fork_process()) == 0)
+	{
+		if (execv(postgres_exec_path, argv) < 0)
+		{
+			ereport(LOG,
+					(errmsg("could not execute server process \\"%s\\": %m",
+							postgres_exec_path)));
+			/* We're already in the child process here, can't return */
+			exit(1);
+		}
+	}
+#endif
+
+	return pid;					/* Parent returns pid, or -1 on fork failure */
+''',
+'pgmem_spawn')
+
+# pg_usleep: Emscripten's nanosleep spins on the clock; sleep on the host
+# instead, waking early when a signal arrives like nanosleep does.
+patch('src/port/pgsleep.c',
+'''		(void) nanosleep(&delay, NULL);
+''',
+'''#ifdef __PGMEM__
+		{
+			extern void pgmem_usleep(int us)
+				__attribute__((import_module("env"), import_name("pgmem_usleep")));
+
+			(void) delay;
+			pgmem_usleep((int) microsec);
+		}
+#else
+		(void) nanosleep(&delay, NULL);
+#endif
+''',
+'pgmem_usleep')
+
+# ReadyForQuery at session start: PGlite split PostgresMain's loop body
+# into PostgresMainLoopOnce, which reads the global send_ready_for_query
+# (pglitec.c, initially false), while PostgresMain still declares a local
+# of the same name and sets that. In single mode the host sends the first
+# ReadyForQuery; a real backend must set the global or the client never
+# gets one.
+patch('src/backend/tcop/postgres.c',
+'''	/* these must be volatile to ensure state is preserved across longjmp: */
+	volatile bool send_ready_for_query = true;
+	volatile bool idle_in_transaction_timeout_enabled = false;
+''',
+'''	/* these must be volatile to ensure state is preserved across longjmp: */
+#ifndef __PGMEM__
+	volatile bool send_ready_for_query = true;
+#endif
+	volatile bool idle_in_transaction_timeout_enabled = false;
+''',
+'#ifndef __PGMEM__\n\tvolatile bool send_ready_for_query = true;')
+
+patch('src/backend/tcop/postgres.c',
+'''	if (!ignore_till_sync)
+		send_ready_for_query = true;	/* initially, or after error */
+
+	/*
+	 * Non-error queries loop here.
+''',
+'''#ifdef __PGMEM__
+	/* the global PostgresMainLoopOnce reads; in single mode the host sends it */
+	if (!ignore_till_sync && !is_pglite_active)
+		send_ready_for_query = true;
+#else
+	if (!ignore_till_sync)
+		send_ready_for_query = true;	/* initially, or after error */
+#endif
+
+	/*
+	 * Non-error queries loop here.
+''',
+'in single mode the host sends it')
+
+# 32-bit EXEC_BACKEND: internal_forkexec writes SizeOfBackendParameters(len)
+# bytes (offsetof the flexible startup_data member plus the data), but the
+# reader asks for sizeof(BackendParameters), which on wasm32 is 4 bytes more
+# than the offset (the struct is padded to its 8-byte alignment after a
+# 4-byte size_t). A child without startup data then reads short and dies.
+patch('src/backend/postmaster/launch_backend.c',
+'''	if (fread(&param, sizeof(param), 1, fp) != 1)
+	{
+		write_stderr("could not read from backend variables file \\"%s\\": %m\\n", id);
+		exit(1);
+	}
+''',
+'''#ifdef __PGMEM__
+	/* what the writer wrote: up to the flexible member, not the padded sizeof */
+	if (fread(&param, offsetof(BackendParameters, startup_data), 1, fp) != 1)
+#else
+	if (fread(&param, sizeof(param), 1, fp) != 1)
+#endif
+	{
+		write_stderr("could not read from backend variables file \\"%s\\": %m\\n", id);
+		exit(1);
+	}
+''',
+'not the padded sizeof')
+
+# Checkpoints in a cluster: PGlite made RequestCheckpoint run the checkpoint
+# in the calling backend (single-user mode has no checkpointer). A backend
+# of a cluster must ask the checkpointer instead (a backend cannot process
+# sync requests). Keep the local checkpoint for the shared single session.
+patch('src/backend/postmaster/checkpointer.c',
+'''#ifndef __PGLITE__	
+	if (!IsPostmasterEnvironment)
+#endif
+	{''',
+'''#if defined(__PGMEM__)
+	{
+		extern int is_pglite_active;
+
+		if (!IsPostmasterEnvironment || is_pglite_active)
+		{
+			CreateCheckPoint(flags | CHECKPOINT_IMMEDIATE);
+			smgrdestroyall();
+			return;
+		}
+	}
+	if (false)
+#elif !defined(__PGLITE__)
+	if (!IsPostmasterEnvironment)
+#endif
+	{''',
+'!IsPostmasterEnvironment || is_pglite_active')
+
+# WAL-driven checkpoints: PGlite disabled the checkpoint request on a WAL
+# segment switch; a cluster has a checkpointer to take it.
+patch('src/backend/access/transam/xlog.c',
+'''#ifndef __PGLITE__					
+				if (IsUnderPostmaster && XLogCheckpointNeeded(openLogSegNo))''',
+'''#if !defined(__PGLITE__) || defined(__PGMEM__)
+				if (IsUnderPostmaster && XLogCheckpointNeeded(openLogSegNo))''',
+'#if !defined(__PGLITE__) || defined(__PGMEM__)\n\t\t\t\tif (IsUnderPostmaster && XLogCheckpointNeeded')

@@ -1186,7 +1186,7 @@ func F_tsquery_and(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14008(m, l0, int32(2))
+	v3 = Fn14030(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

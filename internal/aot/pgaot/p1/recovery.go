@@ -2,6 +2,7 @@ package p1
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -334,74 +335,78 @@ func F_RecoveryRequiresIntParameter(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v59
 	var v64 int32
 	_ = v64
-	var v71 int32
-	_ = v71
+	var v70 int32
+	_ = v70
 	var v73 int32
 	_ = v73
-	var v74 int32
-	_ = v74
+	var v76 int32
+	_ = v76
 	var v78 int32
 	_ = v78
 	var v85 int32
 	_ = v85
 	var v87 int32
 	_ = v87
-	var v90 int32
-	_ = v90
-	var v92 int32
-	_ = v92
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
 	var v93 int32
 	_ = v93
 	var v94 int32
 	_ = v94
-	var v101 int32
-	_ = v101
-	var v104 int32
-	_ = v104
+	var v95 int32
+	_ = v95
+	var v102 int32
+	_ = v102
 	var v105 int32
 	_ = v105
-	var v110 int32
-	_ = v110
-	var v114 int32
-	_ = v114
-	var v122 int32
-	_ = v122
-	var v126 int32
-	_ = v126
-	var v131 int32
-	_ = v131
+	var v106 int32
+	_ = v106
+	var v111 int32
+	_ = v111
+	var v115 int32
+	_ = v115
+	var v123 int32
+	_ = v123
+	var v127 int32
+	_ = v127
 	var v132 int32
 	_ = v132
-	var v134 int32
-	_ = v134
+	var v133 int32
+	_ = v133
 	var v135 int32
 	_ = v135
-	var v139 int32
-	_ = v139
-	var v146 int32
-	_ = v146
-	var v148 int32
-	_ = v148
+	var v138 int32
+	_ = v138
+	var v140 int32
+	_ = v140
+	var v147 int32
+	_ = v147
 	var v149 int32
 	_ = v149
-	var v160 int32
-	_ = v160
-	var v161 int32
-	_ = v161
+	var v150 int32
+	_ = v150
+	var v155 int32
+	_ = v155
+	var v162 int32
+	_ = v162
 	var v163 int32
 	_ = v163
-	var v174 int32
-	_ = v174
-	var v177 int32
-	_ = v177
-	var v181 int32
-	_ = v181
-	var v187 int32
-	_ = v187
-	var v191 int32
-	_ = v191
-	var v196 int32
-	_ = v196
+	var v165 int32
+	_ = v165
+	var v176 int32
+	_ = v176
+	var v179 int32
+	_ = v179
+	var v183 int32
+	_ = v183
+	var v189 int32
+	_ = v189
+	var v193 int32
+	_ = v193
+	var v198 int32
+	_ = v198
 	v8 = m.G0
 	v10 = v8 - int32(48)
 	m.G0 = v10
@@ -442,8 +447,8 @@ L6:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v174 = m.ExcPending
-	if v174 != 0 {
+	v176 = m.ExcPending
+	if v176 != 0 {
 		goto L7
 	} else {
 		goto L56
@@ -549,7 +554,7 @@ L19:
 	goto L20
 L20:
 	;
-	v71 = int32(0)
+	v70 = int32(0)
 	goto L25
 L21:
 	;
@@ -587,9 +592,8 @@ L24:
 L25:
 	;
 	v73 = *(*int32)(unsafe.Add(mBase, _c_F_RecoveryRequiresIntParameter[1]))
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(v73)+96))
-	*(*int32)(unsafe.Add(mBase, uint32(v73)+96)) = int32(1)
-	if v74 != 0 {
+	v76 = base.AtomicRmwXchg32(m, v73, int32(96), int32(1))
+	if v76 != 0 {
 		goto L27
 	} else {
 		goto L28
@@ -598,8 +602,8 @@ L26:
 	;
 	F_ConditionVariableCancelSleep(m)
 	mBase = m.M
-	v163 = m.ExcPending
-	if v163 != 0 {
+	v165 = m.ExcPending
+	if v165 != 0 {
 		goto L7
 	} else {
 		goto L55
@@ -621,9 +625,10 @@ L28:
 L29:
 	;
 	v87 = *(*int32)(unsafe.Add(mBase, _c_F_RecoveryRequiresIntParameter[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v87)+96)) = int32(0)
-	v90 = *(*int32)(unsafe.Add(mBase, uint32(v87)+80))
-	if v90 != 0 {
+	v88 = *(*int32)(unsafe.Add(mBase, uint32(v87)+80))
+	v89 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v87)+96)), uint32(v89))
+	if v88 != 0 {
 		goto L31
 	} else {
 		goto L32
@@ -635,8 +640,8 @@ L31:
 	;
 	F_ProcessStartupProcInterrupts(m)
 	mBase = m.M
-	v92 = m.ExcPending
-	if v92 != 0 {
+	v93 = m.ExcPending
+	if v93 != 0 {
 		goto L7
 	} else {
 		goto L34
@@ -649,53 +654,52 @@ L33:
 	goto L26
 L34:
 	;
-	v93 = F_CheckForStandbyTrigger(m)
+	v94 = F_CheckForStandbyTrigger(m)
 	mBase = m.M
-	v94 = m.ExcPending
-	if v94 != 0 {
+	v95 = m.ExcPending
+	if v95 != 0 {
 		goto L7
 	} else {
 		goto L36
 	}
 L35:
 	;
-	v134 = *(*int32)(unsafe.Add(mBase, _c_F_RecoveryRequiresIntParameter[1]))
-	v135 = *(*int32)(unsafe.Add(mBase, uint32(v134)+96))
-	*(*int32)(unsafe.Add(mBase, uint32(v134)+96)) = int32(1)
-	if v135 != 0 {
+	v135 = *(*int32)(unsafe.Add(mBase, _c_F_RecoveryRequiresIntParameter[1]))
+	v138 = base.AtomicRmwXchg32(m, v135, int32(96), int32(1))
+	if v138 != 0 {
 		goto L47
 	} else {
 		goto L48
 	}
 L36:
 	;
-	if (v93^int32(-1)|v71)&int32(1) != 0 {
+	if (v94^int32(-1)|v70)&int32(1) != 0 {
 		goto L37
 	} else {
 		goto L38
 	}
 L37:
 	;
-	v132 = v93 | v71
+	v133 = v94 | v70
 	goto L35
 L38:
 	;
 	goto L39
 L39:
 	;
-	v101 = int32(1)
-	v104 = F_errstart(m, int32(19), int32(0))
+	v102 = int32(1)
+	v105 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v105 = m.ExcPending
-	if v105 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L7
 	} else {
 		goto L40
 	}
 L40:
 	;
-	if v104 == int32(0) {
-		v132 = v101
+	if v105 == int32(0) {
+		v133 = v102
 		goto L35
 	} else {
 		goto L41
@@ -704,8 +708,8 @@ L41:
 	;
 	F_errcode(m, int32(50856066))
 	mBase = m.M
-	v110 = m.ExcPending
-	if v110 != 0 {
+	v111 = m.ExcPending
+	if v111 != 0 {
 		goto L7
 	} else {
 		goto L42
@@ -714,8 +718,8 @@ L42:
 	;
 	F_errmsg(m, int32(_a_F_RecoveryRequiresIntParameter_10), int32(0))
 	mBase = m.M
-	v114 = m.ExcPending
-	if v114 != 0 {
+	v115 = m.ExcPending
+	if v115 != 0 {
 		goto L7
 	} else {
 		goto L43
@@ -727,8 +731,8 @@ L43:
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = l0
 	F_errdetail(m, int32(_a_F_RecoveryRequiresIntParameter_1), v10+int32(16))
 	mBase = m.M
-	v122 = m.ExcPending
-	if v122 != 0 {
+	v123 = m.ExcPending
+	if v123 != 0 {
 		goto L7
 	} else {
 		goto L44
@@ -737,8 +741,8 @@ L44:
 	;
 	F_errhint(m, int32(_a_F_RecoveryRequiresIntParameter_11), int32(0))
 	mBase = m.M
-	v126 = m.ExcPending
-	if v126 != 0 {
+	v127 = m.ExcPending
+	if v127 != 0 {
 		goto L7
 	} else {
 		goto L45
@@ -747,23 +751,23 @@ L45:
 	;
 	F_errfinish(m, int32(_a_F_RecoveryRequiresIntParameter_2), int32(_a_F_RecoveryRequiresIntParameter_12), int32(_a_F_RecoveryRequiresIntParameter_4))
 	mBase = m.M
-	v131 = m.ExcPending
-	if v131 != 0 {
+	v132 = m.ExcPending
+	if v132 != 0 {
 		goto L7
 	} else {
 		goto L46
 	}
 L46:
 	;
-	v132 = v101
+	v133 = v102
 	goto L35
 L47:
 	;
-	v139 = *(*int32)(unsafe.Add(mBase, _c_F_RecoveryRequiresIntParameter[1]))
-	F_s_lock(m, v139+int32(96), int32(_a_F_RecoveryRequiresIntParameter_2), int32(3135), int32(_a_F_RecoveryRequiresIntParameter_13))
+	v140 = *(*int32)(unsafe.Add(mBase, _c_F_RecoveryRequiresIntParameter[1]))
+	F_s_lock(m, v140+int32(96), int32(_a_F_RecoveryRequiresIntParameter_2), int32(3135), int32(_a_F_RecoveryRequiresIntParameter_13))
 	mBase = m.M
-	v146 = m.ExcPending
-	if v146 != 0 {
+	v147 = m.ExcPending
+	if v147 != 0 {
 		goto L7
 	} else {
 		goto L50
@@ -773,9 +777,9 @@ L48:
 	goto L49
 L49:
 	;
-	v148 = *(*int32)(unsafe.Add(mBase, _c_F_RecoveryRequiresIntParameter[1]))
-	v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+80))
-	if v149 == int32(1) {
+	v149 = *(*int32)(unsafe.Add(mBase, _c_F_RecoveryRequiresIntParameter[1]))
+	v150 = *(*int32)(unsafe.Add(mBase, uint32(v149)+80))
+	if v150 == int32(1) {
 		goto L51
 	} else {
 		goto L52
@@ -785,25 +789,26 @@ L50:
 	goto L49
 L51:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v148)+80)) = int32(2)
+	*(*int32)(unsafe.Add(mBase, uint32(v149)+80)) = int32(2)
 	goto L53
 L52:
 	;
 	goto L53
 L53:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v148)+96)) = int32(0)
-	v160 = F_ConditionVariableTimedSleep(m, v148+int32(84), int32(1000), int32(134217775))
+	v155 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v149)+96)), uint32(v155))
+	v162 = F_ConditionVariableTimedSleep(m, v149+int32(84), int32(1000), int32(134217775))
 	mBase = m.M
-	v161 = m.ExcPending
-	if v161 != 0 {
+	v163 = m.ExcPending
+	if v163 != 0 {
 		goto L7
 	} else {
 		goto L54
 	}
 L54:
 	;
-	v71 = v132
+	v70 = v133
 	goto L25
 L55:
 	;
@@ -812,8 +817,8 @@ L56:
 	;
 	F_errcode(m, int32(50856066))
 	mBase = m.M
-	v177 = m.ExcPending
-	if v177 != 0 {
+	v179 = m.ExcPending
+	if v179 != 0 {
 		goto L7
 	} else {
 		goto L57
@@ -822,8 +827,8 @@ L57:
 	;
 	F_errmsg(m, int32(_a_F_RecoveryRequiresIntParameter_14), int32(0))
 	mBase = m.M
-	v181 = m.ExcPending
-	if v181 != 0 {
+	v183 = m.ExcPending
+	if v183 != 0 {
 		goto L7
 	} else {
 		goto L58
@@ -835,8 +840,8 @@ L58:
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
 	F_errdetail(m, int32(_a_F_RecoveryRequiresIntParameter_1), v10)
 	mBase = m.M
-	v187 = m.ExcPending
-	if v187 != 0 {
+	v189 = m.ExcPending
+	if v189 != 0 {
 		goto L7
 	} else {
 		goto L59
@@ -845,8 +850,8 @@ L59:
 	;
 	F_errhint(m, int32(_a_F_RecoveryRequiresIntParameter_15), int32(0))
 	mBase = m.M
-	v191 = m.ExcPending
-	if v191 != 0 {
+	v193 = m.ExcPending
+	if v193 != 0 {
 		goto L7
 	} else {
 		goto L60
@@ -855,8 +860,8 @@ L60:
 	;
 	F_errfinish(m, int32(_a_F_RecoveryRequiresIntParameter_2), int32(_a_F_RecoveryRequiresIntParameter_16), int32(_a_F_RecoveryRequiresIntParameter_4))
 	mBase = m.M
-	v196 = m.ExcPending
-	if v196 != 0 {
+	v198 = m.ExcPending
+	if v198 != 0 {
 		goto L7
 	} else {
 		goto L61

@@ -701,15 +701,19 @@ func F_TransactionIdSetPageStatusInternal(m *base.Module, l0 int32, l1 int32, l2
 	}
 }
 func F_TransactionTimeoutHandler(m *base.Module) {
-	var v3 int32
-	_ = v3
-	Fn13831(m, int32(_a_F_TransactionTimeoutHandler_0))
-	v3 = m.ExcPending
-	if v3 != 0 {
-		return
-	} else {
-		return
-	}
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v8 int32
+	_ = v8
+	v2 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_TransactionTimeoutHandler[0])) = v2
+	*(*int32)(unsafe.Add(mBase, _c_F_TransactionTimeoutHandler[1])) = v2
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionTimeoutHandler[2]))
+	F_SetLatch(m, v8)
+	mBase = m.M
+	return
 }
 func F_UnlockApplyTransactionForSession(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M

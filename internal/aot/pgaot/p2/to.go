@@ -1630,7 +1630,7 @@ func F_to_hex32(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14003(m, l0, int64(4), int64(16), int32(15))
+	v5 = Fn14025(m, l0, int64(4), int64(16), int32(15))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -1885,7 +1885,7 @@ func F_to_regproc(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14005(m, l0, int32(1478))
+	v3 = Fn14027(m, l0, int32(1478))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

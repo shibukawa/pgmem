@@ -3667,7 +3667,7 @@ func F_show_data_directory_mode(m *base.Module) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13992(m, int32(_a_F_show_data_directory_mode_0), int32(_a_F_show_data_directory_mode_1))
+	v3 = Fn14014(m, int32(_a_F_show_data_directory_mode_0), int32(_a_F_show_data_directory_mode_1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

@@ -50,6 +50,19 @@ func (s *Server) Snapshot(ctx context.Context, opts SnapshotOptions) (*Snapshot,
 	if opts.MaxForks <= 0 {
 		opts.MaxForks = defaultMaxForks(s.opts.Params, memoryLimit(), runtime.GOMAXPROCS(0))
 	}
+	fsOpts := s.opts
+	fsOpts.Port = 0
+	if s.cl != nil {
+		// A postmaster's data directory is only consistent when it is shut
+		// down: stop the cluster (a fast shutdown checkpoints), copy the
+		// directory and start it again. Client sessions get a new backend
+		// on their next message (see cluster.go).
+		fs, err := s.cloneStopped(ctx)
+		if err != nil {
+			return nil, err
+		}
+		return &Snapshot{e: s.e, opts: fsOpts, fs: fs, slots: make(chan struct{}, opts.MaxForks)}, nil
+	}
 	// acquire waits for any open transaction to end, so the copy is taken
 	// between transactions; CHECKPOINT then flushes every dirty page. A
 	// connection left idle in a transaction would block this forever, so
@@ -65,8 +78,6 @@ func (s *Server) Snapshot(ctx context.Context, opts SnapshotOptions) (*Snapshot,
 	if err := checkNoError(out); err != nil {
 		return nil, fmt.Errorf("checkpoint: %w", err)
 	}
-	fsOpts := s.opts
-	fsOpts.Port = 0
 	return &Snapshot{
 		e:     s.e,
 		opts:  fsOpts,
@@ -135,4 +146,29 @@ func (sn *Snapshot) logf(format string, args ...any) {
 	if sn.opts.Log != nil {
 		sn.opts.Log(format, args...)
 	}
+}
+
+// cloneStopped stops the cluster, copies its data directory and starts the
+// cluster again on the original. Runs under bmu.
+func (s *Server) cloneStopped(ctx context.Context) (*vfs.FS, error) {
+	if err := s.waitSessionsIdle(ctx); err != nil {
+		return nil, fmt.Errorf("pgmem: snapshot waited for an open transaction to end (commit or close every connection first): %w", err)
+	}
+	s.bmu.Lock()
+	defer s.bmu.Unlock()
+	if s.closed.Load() {
+		return nil, errServerClosed
+	}
+	s.muteSessions()
+	if err := s.cl.Shutdown(ctx); err != nil {
+		s.logf("pgmem: shutdown: %v", err)
+	}
+	fs := s.fs.Clone()
+	cl, err := s.startCluster(s.fs)
+	if err != nil {
+		return nil, fmt.Errorf("pgmem: restart after snapshot: %w", err)
+	}
+	s.cl = cl
+	s.reattachSessions()
+	return fs, nil
 }

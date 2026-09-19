@@ -239,7 +239,7 @@ func F_r_mark_yUm(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13982(m, l0, int32(_a_F_r_mark_yUm_0), int32(109))
+	v4 = Fn14004(m, l0, int32(_a_F_r_mark_yUm_0), int32(109))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -298,7 +298,7 @@ func F_r_mark_ymUs_(m *base.Module, l0 int32) int32 {
 					if v21 == int32(0) {
 						v30 = v2
 					} else {
-						v28 = Fn13981(m, l0, int32(121))
+						v28 = Fn14003(m, l0, int32(121))
 						mBase = m.M
 						v30 = v28
 					}
@@ -354,7 +354,7 @@ func F_r_mark_ysA(m *base.Module, l0 int32) int32 {
 				if v25 == int32(0) {
 					v34 = v2
 				} else {
-					v32 = Fn13981(m, l0, int32(121))
+					v32 = Fn14003(m, l0, int32(121))
 					mBase = m.M
 					v34 = v32
 				}

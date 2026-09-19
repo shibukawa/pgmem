@@ -8,35 +8,27 @@ import (
 func F_LockTimeoutHandler(m *base.Module) {
 	mBase := m.M
 	_ = mBase
+	var v2 int32
+	_ = v2
 	var v3 int32
 	_ = v3
+	var v5 int32
+	_ = v5
 	var v6 int32
 	_ = v6
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	v2 = int32(_a_F_LockTimeoutHandler_0)
 	v3 = *(*int32)(unsafe.Add(mBase, _c_F_LockTimeoutHandler[0]))
-	v6 = F_kill(m, int32(0)-v3, int32(2))
+	v5 = int32(2)
+	v6 = F_pgmem_kill(m, int32(0)-v3, v5)
 	mBase = m.M
-	v7 = m.ExcPending
-	if v7 != 0 {
-		return
-	} else {
-		v9 = *(*int32)(unsafe.Add(mBase, _c_F_LockTimeoutHandler[0]))
-		v11 = F_kill(m, v9, int32(2))
-		mBase = m.M
-		v12 = m.ExcPending
-		if v12 != 0 {
-			return
-		} else {
-			return
-		}
-	}
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_LockTimeoutHandler[0]))
+	v10 = F_pgmem_kill(m, v8, v5)
+	mBase = m.M
+	return
 }
 func F_get_timeout_finish_time(m *base.Module, l0 int32) int64 {
 	mBase := m.M

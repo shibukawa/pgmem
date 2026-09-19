@@ -28,11 +28,11 @@ import (
 type Wasi_snapshot_preview1Imports interface {
 	Environ_sizes_get(m *Module, l0 int32, l1 int32) int32
 	Environ_get(m *Module, l0 int32, l1 int32) int32
+	Fd_close(m *Module, l0 int32) int32
+	Fd_read(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+	Fd_write(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	Proc_exit(m *Module, l0 int32)
 	Clock_time_get(m *Module, l0 int32, l1 int64, l2 int32) int32
-	Fd_close(m *Module, l0 int32) int32
-	Fd_write(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-	Fd_read(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	Fd_sync(m *Module, l0 int32) int32
 	Fd_fdstat_get(m *Module, l0 int32, l1 int32) int32
 	Fd_seek(m *Module, l0 int32, l1 int64, l2 int32, l3 int32) int32
@@ -43,6 +43,7 @@ type EnvImports interface {
 	Pgmem_crc32c(m *Module, l0 int32, l1 int32, l2 int32) int32
 	Pgmem_listen(m *Module, l0 int32, l1 int32)
 	Getaddrinfo(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+	Pgmem_spawn(m *Module, l0 int32, l1 int32) int32
 	Emscripten_exit_with_live_runtime(m *Module)
 	X__assert_fail(m *Module, l0 int32, l1 int32, l2 int32, l3 int32)
 	Pgmem_random_bytes(m *Module, l0 int32, l1 int32) int32
@@ -52,10 +53,19 @@ type EnvImports interface {
 	Pgmem_hash_update(m *Module, l0 int32, l1 int32, l2 int32) int32
 	Pgmem_hash_final(m *Module, l0 int32, l1 int32, l2 int32) int32
 	Pgmem_hash_free(m *Module, l0 int32)
+	Pgmem_usleep(m *Module, l0 int32)
 	Exit(m *Module, l0 int32)
-	Pgmem_poll(m *Module, l0 int32) int32
-	Pgmem_recv(m *Module, l0 int32, l1 int32) int32
-	Pgmem_send(m *Module, l0 int32, l1 int32) int32
+	Pgmem_getpid(m *Module) int32
+	Pgmem_kill(m *Module, l0 int32, l1 int32) int32
+	Pgmem_waitpid(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_shmget(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_shmat(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_shmdt(m *Module, l0 int32) int32
+	Pgmem_shmctl(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+	Pgmem_sem(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_sock_recv(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_sock_send(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_poll(m *Module, l0 int32, l1 int32, l2 int32) int32
 	Pgmem_run(m *Module, l0 int32, l1 int32, l2 int32) int32
 	Pgmem_hash_info(m *Module, l0 int32) int32
 	Pgmem_cipher_free(m *Module, l0 int32)
@@ -69,6 +79,8 @@ type EnvImports interface {
 	Pgmem_inflate_all(m *Module, l0 int32, l1 int32, l2 int32) int32
 	Pgmem_bn_rand(m *Module, l0 int32, l1 int32, l2 int32) int32
 	Pgmem_bn_op(m *Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
+	X__syscall_fcntl64(m *Module, l0 int32, l1 int32, l2 int32) int32
+	X__syscall_ioctl(m *Module, l0 int32, l1 int32, l2 int32) int32
 	X_abort_js(m *Module)
 	X__syscall_faccessat(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	X__syscall_chdir(m *Module, l0 int32) int32
@@ -79,8 +91,6 @@ type EnvImports interface {
 	Emscripten_date_now(m *Module) float64
 	X__syscall_fdatasync(m *Module, l0 int32) int32
 	X__syscall_openat(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-	X__syscall_fcntl64(m *Module, l0 int32, l1 int32, l2 int32) int32
-	X__syscall_ioctl(m *Module, l0 int32, l1 int32, l2 int32) int32
 	X__syscall_fstat64(m *Module, l0 int32, l1 int32) int32
 	X__syscall_stat64(m *Module, l0 int32, l1 int32) int32
 	X__syscall_newfstatat(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
@@ -576,7 +586,7 @@ func MemoryFill(m *Module, dst int32, val int32, n int32) {
 		return
 	}
 	end := uint64(uint32(dst)) + uint64(uint32(n))
-	if end > m.MemSize.Load() {
+	if end > MemBound(m) {
 		Wasm_trap_memfill_oob()
 	}
 	b := m.Memory[uint32(dst):uint32(end)]
@@ -600,10 +610,275 @@ func MemoryCopy(m *Module, dst int32, src int32, n int32) {
 	}
 	srcEnd := uint64(uint32(src)) + uint64(uint32(n))
 	dstEnd := uint64(uint32(dst)) + uint64(uint32(n))
-	if size := m.MemSize.Load(); srcEnd > size || dstEnd > size {
+	if size := MemBound(m); srcEnd > size || dstEnd > size {
 		Wasm_trap_memcopy_oob()
 	}
 	copy(m.Memory[uint32(dst):uint32(dstEnd)], m.Memory[uint32(src):uint32(srcEnd)])
+}
+
+//go:noinline
+func Wasm_trap_atomic_oob() { panic("wasm: atomic access out of bounds") }
+
+//go:noinline
+func Wasm_trap_atomic_unaligned() { panic("wasm: unaligned atomic access") }
+
+// memBound is the highest address a bounds-checked bulk or atomic access
+// may reach. A shared memory's slice spans the whole declared maximum from
+// the start, so only memSize says how much of it the guest may touch (and
+// reading it atomically keeps growth race-free without a lock). Otherwise
+// the slice is the truth: an embedder that maps the whole growable range
+// up front and aliases shared segments above the guest-visible size into
+// it keeps every byte of the slice addressable, exactly as the unchecked
+// load/store paths do.
+func MemBound(m *Module) uint64 {
+	if m.MemShared {
+		return m.MemSize.Load()
+	}
+	return uint64(len(m.Memory))
+}
+
+// atomicEA bounds- and alignment-checks an atomic access and returns the
+// effective address.
+// Atomic and thread helpers are all //go:noinline: several take func-literal
+// operands (the subword CAS loops, the RMW families), and if the compiler
+// inlines such a helper into a gcasm-transformed generated function the
+// closure becomes a cross-package symbol ("pN.FnX.AtomicRmwOr32.func4") the
+// asm bundler cannot represent. Out-of-line, the closure stays homed in base.
+//
+//go:noinline
+func AtomicEA(m *Module, addr int32, offset int32, size uint64) uint64 {
+	ea := uint64(uint32(addr)) + uint64(uint32(offset))
+	if ea+size > MemBound(m) {
+		Wasm_trap_atomic_oob()
+	}
+	if ea&(size-1) != 0 {
+		Wasm_trap_atomic_unaligned()
+	}
+	return ea
+}
+
+// atomicPtr32At / atomicPtr64At turn a CHECKED effective address into a
+// pointer into linear memory. The caller went through atomicEA/atomicEA64,
+// which already bounds-checked ea against memSize, so index off the raw
+// base pointer to skip Go's redundant slice bounds check — the same deal
+// the plain load/store path gets. m.M tracks m.memory's data pointer (New
+// sets it; a shared memory never relocates, and the non-shared reallocate
+// path refreshes it).
+//
+//go:noinline
+func AtomicPtr32At(m *Module, ea uint64) *uint32 {
+	return (*uint32)(unsafe.Add(m.M, uintptr(ea)))
+}
+
+//go:noinline
+func AtomicPtr64At(m *Module, ea uint64) *uint64 {
+	return (*uint64)(unsafe.Add(m.M, uintptr(ea)))
+}
+
+// atomicsContended reports whether more than the main agent can touch the
+// memory — i.e. at least one wasi thread has been spawned. Until that happens
+// the engine's own atomic ops (interrupt-flag reads, GC bookkeeping) have no
+// peer to race, so store/RMW helpers take an ordinary read-modify-write
+// instead of a LOCKed one. The 0->1 transition happens inside threadSpawn on
+// the sole agent, and the `go` statement that starts the child publishes
+// every prior non-atomic write to it, so the fast path is race-free.
+func AtomicsContended(m *Module) bool {
+	return m.Threads != nil && m.Threads.nextTID.Load() != 0
+}
+
+// forceContendedAtomics makes every atomic helper of m take its LOCKed
+// path from now on, as if a wasi thread had been spawned. For an embedder
+// that shares part of m's linear memory with OTHER instances (several
+// single-threaded modules aliasing one segment, the way processes share
+// System V memory): no thread of m ever exists, yet the atomics in the
+// shared range race with those instances' goroutines. Host-facing API;
+// nothing in the generated code calls it.
+func ForceContendedAtomics(m *Module) {
+	if m.Threads == nil {
+		m.Threads = &ThreadPool{}
+	}
+	if m.Threads.nextTID.Load() == 0 {
+		m.Threads.nextTID.Store(1)
+	}
+}
+
+//go:noinline
+func AtomicRmw32At(m *Module, ea uint64, op func(old uint32) uint32) int32 {
+	p := AtomicPtr32At(m, ea)
+	if !AtomicsContended(m) {
+		cur := *p
+		*p = op(cur)
+		return int32(cur)
+	}
+	for {
+		cur := atomic.LoadUint32(p)
+		if atomic.CompareAndSwapUint32(p, cur, op(cur)) {
+			return int32(cur)
+		}
+	}
+}
+
+//go:noinline
+func AtomicRmw64At(m *Module, ea uint64, op func(old uint64) uint64) int64 {
+	p := AtomicPtr64At(m, ea)
+	if !AtomicsContended(m) {
+		cur := *p
+		*p = op(cur)
+		return int64(cur)
+	}
+	for {
+		cur := atomic.LoadUint64(p)
+		if atomic.CompareAndSwapUint64(p, cur, op(cur)) {
+			return int64(cur)
+		}
+	}
+}
+
+//go:noinline
+func AtomicRmwAdd32At(m *Module, ea uint64, v int32) int32 {
+	p := AtomicPtr32At(m, ea)
+	if !AtomicsContended(m) {
+		old := *p
+		*p = old + uint32(v)
+		return int32(old)
+	}
+	return int32(atomic.AddUint32(p, uint32(v)) - uint32(v))
+}
+
+//go:noinline
+func AtomicRmwSub32At(m *Module, ea uint64, v int32) int32 {
+	p := AtomicPtr32At(m, ea)
+	if !AtomicsContended(m) {
+		old := *p
+		*p = old - uint32(v)
+		return int32(old)
+	}
+	return int32(atomic.AddUint32(p, -uint32(v)) + uint32(v))
+}
+
+//go:noinline
+func AtomicRmwXchg32At(m *Module, ea uint64, v int32) int32 {
+	p := AtomicPtr32At(m, ea)
+	if !AtomicsContended(m) {
+		old := *p
+		*p = uint32(v)
+		return int32(old)
+	}
+	return int32(atomic.SwapUint32(p, uint32(v)))
+}
+
+//go:noinline
+func AtomicRmwCmpxchg32At(m *Module, ea uint64, expected, replacement int32) int32 {
+	p := AtomicPtr32At(m, ea)
+	if !AtomicsContended(m) {
+		cur := *p
+		if cur == uint32(expected) {
+			*p = uint32(replacement)
+		}
+		return int32(cur)
+	}
+	for {
+		cur := atomic.LoadUint32(p)
+		if cur != uint32(expected) {
+			return int32(cur)
+		}
+		if atomic.CompareAndSwapUint32(p, cur, uint32(replacement)) {
+			return int32(cur)
+		}
+	}
+}
+
+//go:noinline
+func AtomicRmwAdd64At(m *Module, ea uint64, v int64) int64 {
+	p := AtomicPtr64At(m, ea)
+	if !AtomicsContended(m) {
+		old := *p
+		*p = old + uint64(v)
+		return int64(old)
+	}
+	return int64(atomic.AddUint64(p, uint64(v)) - uint64(v))
+}
+
+//go:noinline
+func AtomicRmwXchg64At(m *Module, ea uint64, v int64) int64 {
+	p := AtomicPtr64At(m, ea)
+	if !AtomicsContended(m) {
+		old := *p
+		*p = uint64(v)
+		return int64(old)
+	}
+	return int64(atomic.SwapUint64(p, uint64(v)))
+}
+
+//go:noinline
+func AtomicRmwCmpxchg64At(m *Module, ea uint64, expected, replacement int64) int64 {
+	p := AtomicPtr64At(m, ea)
+	if !AtomicsContended(m) {
+		cur := *p
+		if cur == uint64(expected) {
+			*p = uint64(replacement)
+		}
+		return int64(cur)
+	}
+	for {
+		cur := atomic.LoadUint64(p)
+		if cur != uint64(expected) {
+			return int64(cur)
+		}
+		if atomic.CompareAndSwapUint64(p, cur, uint64(replacement)) {
+			return int64(cur)
+		}
+	}
+}
+
+//go:noinline
+func AtomicRmwAdd32(m *Module, addr, offset, v int32) int32 {
+	return AtomicRmwAdd32At(m, AtomicEA(m, addr, offset, 4), v)
+}
+
+//go:noinline
+func AtomicRmwSub32(m *Module, addr, offset, v int32) int32 {
+	return AtomicRmwSub32At(m, AtomicEA(m, addr, offset, 4), v)
+}
+
+//go:noinline
+func AtomicRmwAnd32(m *Module, addr, offset, v int32) int32 {
+	return AtomicRmw32At(m, AtomicEA(m, addr, offset, 4), func(o uint32) uint32 { return o & uint32(v) })
+}
+
+//go:noinline
+func AtomicRmwOr32(m *Module, addr, offset, v int32) int32 {
+	return AtomicRmw32At(m, AtomicEA(m, addr, offset, 4), func(o uint32) uint32 { return o | uint32(v) })
+}
+
+//go:noinline
+func AtomicRmwXchg32(m *Module, addr, offset, v int32) int32 {
+	return AtomicRmwXchg32At(m, AtomicEA(m, addr, offset, 4), v)
+}
+
+//go:noinline
+func AtomicRmwCmpxchg32(m *Module, addr, offset, expected, replacement int32) int32 {
+	return AtomicRmwCmpxchg32At(m, AtomicEA(m, addr, offset, 4), expected, replacement)
+}
+
+//go:noinline
+func AtomicRmwAdd64(m *Module, addr, offset int32, v int64) int64 {
+	return AtomicRmwAdd64At(m, AtomicEA(m, addr, offset, 8), v)
+}
+
+//go:noinline
+func AtomicRmwOr64(m *Module, addr, offset int32, v int64) int64 {
+	return AtomicRmw64At(m, AtomicEA(m, addr, offset, 8), func(o uint64) uint64 { return o | uint64(v) })
+}
+
+//go:noinline
+func AtomicRmwXchg64(m *Module, addr, offset int32, v int64) int64 {
+	return AtomicRmwXchg64At(m, AtomicEA(m, addr, offset, 8), v)
+}
+
+//go:noinline
+func AtomicRmwCmpxchg64(m *Module, addr, offset int32, expected, replacement int64) int64 {
+	return AtomicRmwCmpxchg64At(m, AtomicEA(m, addr, offset, 8), expected, replacement)
 }
 
 var spinAgents int32

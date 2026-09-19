@@ -16,41 +16,25 @@ func F_AtEOXact_ApplyLauncher(m *base.Module, l0 int32) {
 	_ = v12
 	var v16 int32
 	_ = v16
-	var v17 int32
-	_ = v17
-	var v20 int32
-	_ = v20
+	var v19 int32
+	_ = v19
 	if l0 == int32(0) {
-		v20 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, _c_F_AtEOXact_ApplyLauncher[0])) = uint8(v20)
-		return
 	} else {
 		v5 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_AtEOXact_ApplyLauncher[0])))
 		if v5&int32(1) == int32(0) {
-			v20 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, _c_F_AtEOXact_ApplyLauncher[0])) = uint8(v20)
-			return
 		} else {
 			v11 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_ApplyLauncher[1]))
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 			if v12 == int32(0) {
-				v20 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, _c_F_AtEOXact_ApplyLauncher[0])) = uint8(v20)
-				return
 			} else {
-				v16 = F_kill(m, v12, int32(10))
+				v16 = F_pgmem_kill(m, v12, int32(10))
 				mBase = m.M
-				v17 = m.ExcPending
-				if v17 != 0 {
-					return
-				} else {
-					v20 = int32(0)
-					*(*uint8)(unsafe.Add(mBase, _c_F_AtEOXact_ApplyLauncher[0])) = uint8(v20)
-					return
-				}
 			}
 		}
 	}
+	v19 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, _c_F_AtEOXact_ApplyLauncher[0])) = uint8(v19)
+	return
 }
 func F_AtEOXact_RelationMap(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M

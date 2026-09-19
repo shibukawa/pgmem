@@ -24,6 +24,9 @@ func startServer(t *testing.T, opts pgmem.Options) *pgmem.Server {
 	if os.Getenv("PGMEM_DEBUG") != "" {
 		opts.Log = t.Logf
 	}
+	if os.Getenv("PGMEM_SINGLE") != "" {
+		opts.SingleUser = true // compare the two models with the same suite
+	}
 	start := time.Now()
 	s, err := pgmem.Start(context.Background(), opts)
 	if err != nil {
@@ -177,7 +180,7 @@ func TestDatabaseSQL(t *testing.T) {
 }
 
 func BenchmarkSimpleQueries(b *testing.B) {
-	s, err := pgmem.Start(context.Background(), pgmem.Options{})
+	s, err := pgmem.Start(context.Background(), pgmem.Options{SingleUser: os.Getenv("PGMEM_SINGLE") != ""})
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -201,7 +204,7 @@ func BenchmarkSimpleQueries(b *testing.B) {
 }
 
 func BenchmarkSimpleQueriesInProcess(b *testing.B) {
-	s, err := pgmem.Start(context.Background(), pgmem.Options{})
+	s, err := pgmem.Start(context.Background(), pgmem.Options{SingleUser: os.Getenv("PGMEM_SINGLE") != ""})
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -249,7 +252,7 @@ func TestDialInProcess(t *testing.T) {
 }
 
 func BenchmarkCPUHeavyQuery(b *testing.B) {
-	s, err := pgmem.Start(context.Background(), pgmem.Options{})
+	s, err := pgmem.Start(context.Background(), pgmem.Options{SingleUser: os.Getenv("PGMEM_SINGLE") != ""})
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -373,7 +376,7 @@ func TestCryptoHashes(t *testing.T) {
 // second one's statement waits until the first transaction ends, instead of
 // being executed inside it.
 func TestTransactionsDoNotInterleave(t *testing.T) {
-	s := startServer(t, pgmem.Options{})
+	s := startServer(t, pgmem.Options{SingleUser: true})
 	ctx := context.Background()
 	c1, err := pgx.Connect(ctx, s.DSN())
 	if err != nil {
@@ -801,8 +804,10 @@ func TestOtherDatabases(t *testing.T) {
 	if _, err := app.Exec(ctx, "DROP DATABASE shadow WITH (FORCE)"); err != nil {
 		t.Fatalf("DROP DATABASE: %v", err)
 	}
-	if _, err := shadow.Exec(ctx, "SELECT 1"); !errors.As(err, &pgErr) || pgErr.Code != "3D000" {
-		t.Fatalf("query on a dropped database: %v, want 3D000", err)
+	// the terminated session reports 57P01 like PostgreSQL does (single
+	// mode reconnects for the client and gets 3D000)
+	if _, err := shadow.Exec(ctx, "SELECT 1"); !errors.As(err, &pgErr) || (pgErr.Code != "3D000" && pgErr.Code != "57P01") {
+		t.Fatalf("query on a dropped database: %v, want 3D000 or 57P01", err)
 	}
 	var n int
 	if err := app.QueryRow(ctx, "count_t").Scan(&n); err != nil || n != 1 {

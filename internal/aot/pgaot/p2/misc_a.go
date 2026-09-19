@@ -6498,7 +6498,7 @@ func F_anycompatible_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F_anycompatible_in_0), int32(376), int32(_a_F_anycompatible_in_1), int32(_a_F_anycompatible_in_2), int32(_a_F_anycompatible_in_3))
+	v7 = Fn13874(m, l0, int32(_a_F_anycompatible_in_0), int32(376), int32(_a_F_anycompatible_in_1), int32(_a_F_anycompatible_in_2), int32(_a_F_anycompatible_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -6511,7 +6511,7 @@ func F_anycompatiblenonarray_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F_anycompatiblenonarray_in_0), int32(377), int32(_a_F_anycompatiblenonarray_in_1), int32(_a_F_anycompatiblenonarray_in_2), int32(_a_F_anycompatiblenonarray_in_3))
+	v7 = Fn13874(m, l0, int32(_a_F_anycompatiblenonarray_in_0), int32(377), int32(_a_F_anycompatiblenonarray_in_1), int32(_a_F_anycompatiblenonarray_in_2), int32(_a_F_anycompatiblenonarray_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -6524,7 +6524,7 @@ func F_anyelement_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F_anyelement_in_0), int32(374), int32(_a_F_anyelement_in_1), int32(_a_F_anyelement_in_2), int32(_a_F_anyelement_in_3))
+	v7 = Fn13874(m, l0, int32(_a_F_anyelement_in_0), int32(374), int32(_a_F_anyelement_in_1), int32(_a_F_anyelement_in_2), int32(_a_F_anyelement_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -6537,7 +6537,7 @@ func F_anymultirange_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F_anymultirange_in_0), int32(233), int32(_a_F_anymultirange_in_1), int32(_a_F_anymultirange_in_2), int32(_a_F_anymultirange_in_3))
+	v7 = Fn13874(m, l0, int32(_a_F_anymultirange_in_0), int32(233), int32(_a_F_anymultirange_in_1), int32(_a_F_anymultirange_in_2), int32(_a_F_anymultirange_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -6550,7 +6550,7 @@ func F_anynonarray_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F_anynonarray_in_0), int32(375), int32(_a_F_anynonarray_in_1), int32(_a_F_anynonarray_in_2), int32(_a_F_anynonarray_in_3))
+	v7 = Fn13874(m, l0, int32(_a_F_anynonarray_in_0), int32(375), int32(_a_F_anynonarray_in_1), int32(_a_F_anynonarray_in_2), int32(_a_F_anynonarray_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -8697,7 +8697,7 @@ func F_arraycontained(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13846(m, l0, int32(1))
+	v3 = Fn13868(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -9573,16 +9573,119 @@ func F_avl_sigusr2_handler(m *base.Module, l0 int32) {
 	_ = mBase
 	var v6 int32
 	_ = v6
-	var v8 int32
-	_ = v8
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v39 int32
+	_ = v39
+	var v47 int32
+	_ = v47
 	*(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[0])) = int32(1)
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[1]))
-	F_SetLatch(m, v6)
-	mBase = m.M
-	v8 = m.ExcPending
-	if v8 != 0 {
-		return
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	if v7 != 0 {
+		goto L2
 	} else {
-		return
+		goto L3
 	}
+L1:
+	;
+	return
+L2:
+	;
+	goto L1
+L3:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(1)
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+	if v10 == int32(0) {
+		goto L2
+	} else {
+		goto L4
+	}
+L4:
+	;
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+	if v13 == int32(0) {
+		goto L2
+	} else {
+		goto L5
+	}
+L5:
+	;
+	v17 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[2]))
+	if v17 == v13 {
+		goto L6
+	} else {
+		goto L7
+	}
+L6:
+	;
+	v19 = m.G0
+	v21 = v19 - int32(16)
+	m.G0 = v21
+	v24 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[3]))
+	if v24 == int32(0) {
+		goto L9
+	} else {
+		goto L10
+	}
+L7:
+	;
+	goto L8
+L8:
+	;
+	v47 = F_pgmem_kill(m, v13, int32(23))
+	mBase = m.M
+	goto L2
+L9:
+	;
+	m.G0 = v21 + int32(16)
+	goto L1
+L10:
+	;
+	v27 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v21)+15)) = uint8(v27)
+	goto L11
+L11:
+	;
+	v31 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[4]))
+	v35 = F_write(m, v31, v21+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v35 {
+		goto L9
+	} else {
+		goto L13
+	}
+L12:
+	;
+	goto L9
+L13:
+	;
+	v39 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[5]))
+	if v39 == int32(27) {
+		goto L11
+	} else {
+		goto L14
+	}
+L14:
+	;
+	goto L12
 }

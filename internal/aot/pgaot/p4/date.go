@@ -2622,10 +2622,10 @@ func F_extract_date(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			v59 = v12 + int32(76)
-			v63 = Fn13825(m, v56, v59, int32(_a_F_extract_date_0), int32(_a_F_extract_date_1), int32(_a_F_extract_date_2))
+			v63 = Fn13846(m, v56, v59, int32(_a_F_extract_date_0), int32(_a_F_extract_date_1), int32(_a_F_extract_date_2))
 			mBase = m.M
 			if v63 == int32(31) {
-				v69 = Fn13825(m, v56, v59, int32(_a_F_extract_date_3), int32(_a_F_extract_date_4), int32(_a_F_extract_date_5))
+				v69 = Fn13846(m, v56, v59, int32(_a_F_extract_date_3), int32(_a_F_extract_date_4), int32(_a_F_extract_date_5))
 				mBase = m.M
 				v70 = v69
 			} else {

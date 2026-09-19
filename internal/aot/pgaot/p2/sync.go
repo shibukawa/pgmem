@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -26,8 +27,8 @@ func F_SyncRepInitConfig(m *base.Module) {
 	_ = v22
 	var v28 int32
 	_ = v28
-	var v29 int32
-	_ = v29
+	var v30 int32
+	_ = v30
 	var v33 int32
 	_ = v33
 	var v36 int32
@@ -74,26 +75,26 @@ func F_SyncRepInitConfig(m *base.Module) {
 	_ = v103
 	var v104 int32
 	_ = v104
-	var v106 int32
-	_ = v106
+	var v108 int32
+	_ = v108
 	var v110 int32
 	_ = v110
 	var v117 int32
 	_ = v117
 	var v119 int32
 	_ = v119
-	var v120 int32
-	_ = v120
-	var v125 int32
-	_ = v125
+	var v121 int32
+	_ = v121
 	var v126 int32
 	_ = v126
-	var v131 int32
-	_ = v131
-	var v135 int32
-	_ = v135
-	var v140 int32
-	_ = v140
+	var v127 int32
+	_ = v127
+	var v132 int32
+	_ = v132
+	var v136 int32
+	_ = v136
+	var v141 int32
+	_ = v141
 	v1 = int32(0)
 	v5 = m.G0
 	v7 = v5 - int32(16)
@@ -153,7 +154,7 @@ L5:
 L6:
 	;
 	v28 = v19 + int32(16)
-	v29 = int32(1)
+	v30 = int32(1)
 	goto L7
 L7:
 	;
@@ -273,12 +274,12 @@ L26:
 	v83 = F_strlen(m, v28)
 	mBase = m.M
 	v85 = int32(1)
-	v88 = v29 + v85
+	v88 = v30 + v85
 	v90 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[3]))
 	v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+12))
 	if v88 <= v91 {
 		v28 = v83 + v28 + v85
-		v29 = v88
+		v30 = v88
 		goto L7
 	} else {
 		goto L28
@@ -296,7 +297,7 @@ L29:
 	goto L31
 L30:
 	;
-	v97 = v29
+	v97 = v30
 	goto L31
 L31:
 	;
@@ -308,9 +309,8 @@ L32:
 	return
 L33:
 	;
-	v106 = *(*int32)(unsafe.Add(mBase, uint32(v103)+76))
-	*(*int32)(unsafe.Add(mBase, uint32(v103)+76)) = int32(1)
-	if v106 != 0 {
+	v108 = base.AtomicRmwXchg32(m, v103, int32(76), int32(1))
+	if v108 != 0 {
 		goto L34
 	} else {
 		goto L35
@@ -332,13 +332,13 @@ L35:
 L36:
 	;
 	v119 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[1]))
-	v120 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v119)+76)) = v120
 	*(*int32)(unsafe.Add(mBase, uint32(v119)+72)) = v101
-	v125 = F_errstart(m, int32(14), v120)
+	v121 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v119)+76)), uint32(v121))
+	v126 = F_errstart(m, int32(14), v121)
 	mBase = m.M
-	v126 = m.ExcPending
-	if v126 != 0 {
+	v127 = m.ExcPending
+	if v127 != 0 {
 		goto L37
 	} else {
 		goto L39
@@ -351,7 +351,7 @@ L38:
 	goto L36
 L39:
 	;
-	if v125 == int32(0) {
+	if v126 == int32(0) {
 		goto L32
 	} else {
 		goto L40
@@ -359,12 +359,12 @@ L39:
 L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v101
-	v131 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[4]))
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v131
+	v132 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[4]))
+	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v132
 	F_errmsg_internal(m, int32(_a_F_SyncRepInitConfig_2), v7)
 	mBase = m.M
-	v135 = m.ExcPending
-	if v135 != 0 {
+	v136 = m.ExcPending
+	if v136 != 0 {
 		goto L37
 	} else {
 		goto L41
@@ -373,8 +373,8 @@ L41:
 	;
 	F_errfinish(m, int32(_a_F_SyncRepInitConfig_0), int32(462), int32(_a_F_SyncRepInitConfig_1))
 	mBase = m.M
-	v140 = m.ExcPending
-	if v140 != 0 {
+	v141 = m.ExcPending
+	if v141 != 0 {
 		goto L37
 	} else {
 		goto L42

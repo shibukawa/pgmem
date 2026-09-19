@@ -2,62 +2,181 @@ package p0
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
 func F_shm_mq_set_sender(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v11 int32
-	_ = v11
-	var v15 int32
-	_ = v15
-	var v19 int32
-	_ = v19
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(1)
-	if v4 != 0 {
-		F_s_lock(m, l0, int32(_a_F_shm_mq_set_sender_0), int32(228), int32(_a_F_shm_mq_set_sender_1))
-		mBase = m.M
-		v11 = m.ExcPending
-		if v11 != 0 {
-			return
-		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = l1
-			*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(0)
-			v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-			if v15 != 0 {
-				F_SetLatch(m, v15+int32(20))
-				mBase = m.M
-				v19 = m.ExcPending
-				if v19 != 0 {
-					return
-				} else {
-					return
-				}
-			} else {
-				return
-			}
-		}
+	var v5 int32
+	_ = v5
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v50 int32
+	_ = v50
+	var v58 int32
+	_ = v58
+	v5 = base.AtomicRmwXchg32(m, l0, int32(0), int32(1))
+	if v5 != 0 {
+		goto L1
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = l1
-		*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(0)
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		if v15 != 0 {
-			F_SetLatch(m, v15+int32(20))
-			mBase = m.M
-			v19 = m.ExcPending
-			if v19 != 0 {
-				return
-			} else {
-				return
-			}
-		} else {
-			return
-		}
+		goto L2
 	}
+L1:
+	;
+	F_s_lock(m, l0, int32(_a_F_shm_mq_set_sender_0), int32(228), int32(_a_F_shm_mq_set_sender_1))
+	mBase = m.M
+	v10 = m.ExcPending
+	if v10 != 0 {
+		goto L4
+	} else {
+		goto L5
+	}
+L2:
+	;
+	goto L3
+L3:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = l1
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v13 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v13))
+	if v12 != 0 {
+		goto L6
+	} else {
+		goto L7
+	}
+L4:
+	;
+	return
+L5:
+	;
+	goto L3
+L6:
+	;
+	v17 = v12 + int32(20)
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+	if v18 != 0 {
+		goto L10
+	} else {
+		goto L11
+	}
+L7:
+	;
+	goto L8
+L8:
+	;
+	return
+L9:
+	;
+	goto L8
+L10:
+	;
+	goto L9
+L11:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(1)
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	if v21 == int32(0) {
+		goto L10
+	} else {
+		goto L12
+	}
+L12:
+	;
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
+	if v24 == int32(0) {
+		goto L10
+	} else {
+		goto L13
+	}
+L13:
+	;
+	v28 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[0]))
+	if v28 == v24 {
+		goto L14
+	} else {
+		goto L15
+	}
+L14:
+	;
+	v30 = m.G0
+	v32 = v30 - int32(16)
+	m.G0 = v32
+	v35 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[1]))
+	if v35 == int32(0) {
+		goto L17
+	} else {
+		goto L18
+	}
+L15:
+	;
+	goto L16
+L16:
+	;
+	v58 = F_pgmem_kill(m, v24, int32(23))
+	mBase = m.M
+	goto L10
+L17:
+	;
+	m.G0 = v32 + int32(16)
+	goto L9
+L18:
+	;
+	v38 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v32)+15)) = uint8(v38)
+	goto L19
+L19:
+	;
+	v42 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[2]))
+	v46 = F_write(m, v42, v32+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v46 {
+		goto L17
+	} else {
+		goto L21
+	}
+L20:
+	;
+	goto L17
+L21:
+	;
+	v50 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[3]))
+	if v50 == int32(27) {
+		goto L19
+	} else {
+		goto L22
+	}
+L22:
+	;
+	goto L20
 }
 func F_shm_toc_lookup(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 	mBase := m.M

@@ -289,7 +289,7 @@ func F_koi8r_to_mic(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13935(m, l0, int32(22), int32(139))
+	v4 = Fn13957(m, l0, int32(22), int32(139))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

@@ -3,6 +3,7 @@ package p1
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 	"math"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -227,8 +228,8 @@ func F_DecodingContextFindStartpoint(m *base.Module, l0 int32) {
 	_ = v86
 	var v91 int32
 	_ = v91
-	var v92 int32
-	_ = v92
+	var v94 int32
+	_ = v94
 	var v99 int32
 	_ = v99
 	var v100 int32
@@ -241,12 +242,14 @@ func F_DecodingContextFindStartpoint(m *base.Module, l0 int32) {
 	_ = v106
 	var v107 int64
 	_ = v107
-	var v117 int32
-	_ = v117
-	var v121 int32
-	_ = v121
-	var v126 int32
-	_ = v126
+	var v109 int32
+	_ = v109
+	var v118 int32
+	_ = v118
+	var v122 int32
+	_ = v122
+	var v127 int32
+	_ = v127
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
@@ -335,17 +338,16 @@ L10:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v117 = m.ExcPending
-	if v117 != 0 {
+	v118 = m.ExcPending
+	if v118 != 0 {
 		goto L1
 	} else {
 		goto L36
 	}
 L11:
 	;
-	v92 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(1)
-	if v92 != 0 {
+	v94 = base.AtomicRmwXchg32(m, v11, int32(0), int32(1))
+	if v94 != 0 {
 		goto L29
 	} else {
 		goto L30
@@ -510,15 +512,16 @@ L34:
 	goto L35
 L35:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(0)
+	v109 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v11))), uint32(v109))
 	m.G0 = v8 + int32(32)
 	return
 L36:
 	;
 	F_errmsg_internal(m, int32(_a_F_DecodingContextFindStartpoint_4), int32(0))
 	mBase = m.M
-	v121 = m.ExcPending
-	if v121 != 0 {
+	v122 = m.ExcPending
+	if v122 != 0 {
 		goto L1
 	} else {
 		goto L37
@@ -527,8 +530,8 @@ L37:
 	;
 	F_errfinish(m, int32(_a_F_DecodingContextFindStartpoint_1), int32(656), int32(_a_F_DecodingContextFindStartpoint_2))
 	mBase = m.M
-	v126 = m.ExcPending
-	if v126 != 0 {
+	v127 = m.ExcPending
+	if v127 != 0 {
 		goto L1
 	} else {
 		goto L38
@@ -9829,18 +9832,24 @@ func F_do_start_worker(m *base.Module) int32 {
 	_ = v357
 	var v360 int32
 	_ = v360
-	var v361 int32
-	_ = v361
-	var v362 int32
-	_ = v362
-	var v367 int32
-	_ = v367
+	var v364 int32
+	_ = v364
+	var v371 int32
+	_ = v371
 	var v373 int32
 	_ = v373
-	var v384 int32
-	_ = v384
-	var v390 int32
-	_ = v390
+	var v374 int32
+	_ = v374
+	var v375 int32
+	_ = v375
+	var v380 int32
+	_ = v380
+	var v386 int32
+	_ = v386
+	var v397 int32
+	_ = v397
+	var v403 int32
+	_ = v403
 	v1 = int32(0)
 	v15 = *(*int32)(unsafe.Add(mBase, _c_F_do_start_worker[0]))
 	v19 = F_LWLockAcquire(m, v15+int32(2816), int32(1))
@@ -9906,11 +9915,11 @@ L7:
 	}
 L8:
 	;
-	v390 = v1
+	v403 = v1
 	goto L9
 L9:
 	;
-	return v390
+	return v403
 L10:
 	;
 	v50 = int32(_a_F_do_start_worker_3)
@@ -9974,7 +9983,7 @@ L14:
 L15:
 	;
 	if v54 == int32(0) {
-		v373 = v1
+		v386 = v1
 		goto L16
 	} else {
 		goto L17
@@ -9984,11 +9993,11 @@ L16:
 	*(*int32)(unsafe.Add(mBase, _c_F_do_start_worker[4])) = v51
 	F_MemoryContextDelete(m, v48)
 	mBase = m.M
-	v384 = m.ExcPending
-	if v384 != 0 {
+	v397 = m.ExcPending
+	if v397 != 0 {
 		goto L1
 	} else {
-		goto L86
+		goto L89
 	}
 L17:
 	;
@@ -10375,12 +10384,12 @@ L78:
 	goto L79
 L79:
 	;
-	v362 = int32(0)
-	if v302 == v362 {
-		v373 = v362
+	v375 = int32(0)
+	if v302 == v375 {
+		v386 = v375
 		goto L16
 	} else {
-		goto L84
+		goto L87
 	}
 L80:
 	;
@@ -10422,36 +10431,48 @@ L81:
 	}
 L82:
 	;
-	F_SendPostmasterSignal(m, int32(5))
-	mBase = m.M
-	v360 = m.ExcPending
-	if v360 != 0 {
-		goto L1
-	} else {
-		goto L83
-	}
-L83:
-	;
-	v361 = *(*int32)(unsafe.Add(mBase, uint32(v295)))
-	v373 = v361
-	goto L16
-L84:
-	;
-	F_rebuild_database_list(m, int32(0))
-	mBase = m.M
-	v367 = m.ExcPending
-	if v367 != 0 {
-		goto L1
+	v360 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_do_start_worker[10])))
+	if v360 == int32(1) {
+		goto L84
 	} else {
 		goto L85
 	}
+L83:
+	;
+	v374 = *(*int32)(unsafe.Add(mBase, uint32(v295)))
+	v386 = v374
+	goto L16
+L84:
+	;
+	v364 = *(*int32)(unsafe.Add(mBase, _c_F_do_start_worker[11]))
+	*(*int32)(unsafe.Add(mBase, uint32(v364+int32(20)))) = int32(1)
+	v371 = *(*int32)(unsafe.Add(mBase, _c_F_do_start_worker[12]))
+	v373 = F_pgmem_kill(m, v371, int32(10))
+	mBase = m.M
+	goto L86
 L85:
 	;
-	v373 = v362
-	goto L16
+	goto L86
 L86:
 	;
-	v390 = v373
+	goto L83
+L87:
+	;
+	F_rebuild_database_list(m, int32(0))
+	mBase = m.M
+	v380 = m.ExcPending
+	if v380 != 0 {
+		goto L1
+	} else {
+		goto L88
+	}
+L88:
+	;
+	v386 = v375
+	goto L16
+L89:
+	;
+	v403 = v386
 	goto L9
 }
 func F_do_tup_output(m *base.Module, l0 int32, l1 int32, l2 int32) {

@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -42,22 +43,24 @@ func F_tuplesort_begin_common(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	_ = v73
 	var v74 int32
 	_ = v74
-	var v78 int32
-	_ = v78
+	var v80 int32
+	_ = v80
 	var v85 int32
 	_ = v85
-	var v88 int32
-	_ = v88
-	var v96 int32
-	_ = v96
-	var v98 int32
-	_ = v98
-	var v106 int32
-	_ = v106
-	var v110 int32
-	_ = v110
-	var v115 int32
-	_ = v115
+	var v86 int32
+	_ = v86
+	var v90 int32
+	_ = v90
+	var v97 int32
+	_ = v97
+	var v100 int32
+	_ = v100
+	var v108 int32
+	_ = v108
+	var v112 int32
+	_ = v112
+	var v117 int32
+	_ = v117
 	if l2&int32(1) != 0 {
 		v11 = l1
 	} else {
@@ -117,8 +120,8 @@ func F_tuplesort_begin_common(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 					} else {
 						if l1 == int32(0) {
 							*(*int64)(unsafe.Add(mBase, uint32(v35)+232)) = int64(4294967295)
-							v98 = int32(-1)
-							*(*int32)(unsafe.Add(mBase, uint32(v35)+240)) = v98
+							v100 = int32(-1)
+							*(*int32)(unsafe.Add(mBase, uint32(v35)+240)) = v100
 							*(*int32)(unsafe.Add(mBase, _c_F_tuplesort_begin_common[0])) = v31
 							return v35
 						} else {
@@ -126,39 +129,40 @@ func F_tuplesort_begin_common(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 							v74 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 							*(*int32)(unsafe.Add(mBase, uint32(v35)+236)) = v74
 							if v73 == int32(1) {
-								v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)))
-								*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(1)
-								if v78 != 0 {
+								v80 = base.AtomicRmwXchg32(m, v74, int32(0), int32(1))
+								if v80 != 0 {
 									F_s_lock(m, v74, int32(_a_F_tuplesort_begin_common_5), int32(2988), int32(_a_F_tuplesort_begin_common_6))
 									mBase = m.M
 									v85 = m.ExcPending
 									if v85 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
-										v88 = *(*int32)(unsafe.Add(mBase, uint32(v74)+4))
-										*(*int32)(unsafe.Add(mBase, uint32(v74)+4)) = v88 + int32(1)
-										*(*int32)(unsafe.Add(mBase, uint32(v35)+232)) = v88
-										v98 = int32(-1)
-										*(*int32)(unsafe.Add(mBase, uint32(v35)+240)) = v98
+										v86 = *(*int32)(unsafe.Add(mBase, uint32(v74)+4))
+										*(*int32)(unsafe.Add(mBase, uint32(v74)+4)) = v86 + int32(1)
+										v90 = int32(0)
+										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74))), uint32(v90))
+										*(*int32)(unsafe.Add(mBase, uint32(v35)+232)) = v86
+										v100 = int32(-1)
+										*(*int32)(unsafe.Add(mBase, uint32(v35)+240)) = v100
 										*(*int32)(unsafe.Add(mBase, _c_F_tuplesort_begin_common[0])) = v31
 										return v35
 									}
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(0)
-									v88 = *(*int32)(unsafe.Add(mBase, uint32(v74)+4))
-									*(*int32)(unsafe.Add(mBase, uint32(v74)+4)) = v88 + int32(1)
-									*(*int32)(unsafe.Add(mBase, uint32(v35)+232)) = v88
-									v98 = int32(-1)
-									*(*int32)(unsafe.Add(mBase, uint32(v35)+240)) = v98
+									v86 = *(*int32)(unsafe.Add(mBase, uint32(v74)+4))
+									*(*int32)(unsafe.Add(mBase, uint32(v74)+4)) = v86 + int32(1)
+									v90 = int32(0)
+									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74))), uint32(v90))
+									*(*int32)(unsafe.Add(mBase, uint32(v35)+232)) = v86
+									v100 = int32(-1)
+									*(*int32)(unsafe.Add(mBase, uint32(v35)+240)) = v100
 									*(*int32)(unsafe.Add(mBase, _c_F_tuplesort_begin_common[0])) = v31
 									return v35
 								}
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v35)+232)) = int32(-1)
-								v96 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-								v98 = v96
-								*(*int32)(unsafe.Add(mBase, uint32(v35)+240)) = v98
+								v97 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+								v100 = v97
+								*(*int32)(unsafe.Add(mBase, uint32(v35)+240)) = v100
 								*(*int32)(unsafe.Add(mBase, _c_F_tuplesort_begin_common[0])) = v31
 								return v35
 							}
@@ -170,20 +174,20 @@ func F_tuplesort_begin_common(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v106 = m.ExcPending
-		if v106 != 0 {
+		v108 = m.ExcPending
+		if v108 != 0 {
 			return int32(0)
 		} else {
 			F_errmsg_internal(m, int32(_a_F_tuplesort_begin_common_7), int32(0))
 			mBase = m.M
-			v110 = m.ExcPending
-			if v110 != 0 {
+			v112 = m.ExcPending
+			if v112 != 0 {
 				return int32(0)
 			} else {
 				F_errfinish(m, int32(_a_F_tuplesort_begin_common_5), int32(651), int32(_a_F_tuplesort_begin_common_8))
 				mBase = m.M
-				v115 = m.ExcPending
-				if v115 != 0 {
+				v117 = m.ExcPending
+				if v117 != 0 {
 					return int32(0)
 				} else {
 					base.Wasm_trap_unreachable()

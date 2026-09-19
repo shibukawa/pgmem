@@ -2,6 +2,7 @@ package p0
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -2005,38 +2006,38 @@ func F_HnswParallelScanAndInsert(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	_ = v41
 	var v42 int32
 	_ = v42
-	var v43 int32
-	_ = v43
+	var v45 int32
+	_ = v45
 	var v52 int32
 	_ = v52
 	var v53 int32
 	_ = v53
-	var v55 int32
-	_ = v55
-	var v59 float64
-	_ = v59
-	var v64 int32
-	_ = v64
+	var v57 float64
+	_ = v57
+	var v60 int32
+	_ = v60
 	var v65 int32
 	_ = v65
-	var v70 int32
-	_ = v70
-	var v72 int32
-	_ = v72
-	var v76 int32
-	_ = v76
-	var v79 int32
-	_ = v79
-	var v83 int32
-	_ = v83
+	var v66 int32
+	_ = v66
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	var v77 int32
+	_ = v77
+	var v80 int32
+	_ = v80
 	var v84 int32
 	_ = v84
-	var v86 int32
-	_ = v86
+	var v85 int32
+	_ = v85
 	var v87 int32
 	_ = v87
-	var v89 int32
-	_ = v89
+	var v88 int32
+	_ = v88
+	var v90 int32
+	_ = v90
 	v10 = m.G0
 	v12 = v10 - int32(224)
 	m.G0 = v12
@@ -2074,69 +2075,68 @@ func F_HnswParallelScanAndInsert(m *base.Module, l0 int32, l1 int32, l2 int32, l
 				if v42 != 0 {
 					return
 				} else {
-					v43 = *(*int32)(unsafe.Add(mBase, uint32(l2)+24))
-					*(*int32)(unsafe.Add(mBase, uint32(l2)+24)) = int32(1)
-					if v43 != 0 {
+					v45 = base.AtomicRmwXchg32(m, l2, int32(24), int32(1))
+					if v45 != 0 {
 						F_s_lock(m, l2+int32(24), int32(_a_F_HnswParallelScanAndInsert_2), int32(818), int32(_a_F_HnswParallelScanAndInsert_3))
 						mBase = m.M
 						v52 = m.ExcPending
 						if v52 != 0 {
 							return
 						} else {
-							v53 = int32(0)
-							*(*int32)(unsafe.Add(mBase, uint32(l2)+24)) = v53
-							v55 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-							*(*int32)(unsafe.Add(mBase, uint32(l2)+28)) = v55 + int32(1)
-							v59 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
-							*(*float64)(unsafe.Add(mBase, uint32(l2)+32)) = base.F64_add(v59, v41)
-							v64 = F_errstart(m, int32(14), v53)
+							v53 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+							*(*int32)(unsafe.Add(mBase, uint32(l2)+28)) = v53 + int32(1)
+							v57 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
+							*(*float64)(unsafe.Add(mBase, uint32(l2)+32)) = base.F64_add(v57, v41)
+							v60 = int32(0)
+							atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+24)), uint32(v60))
+							v65 = F_errstart(m, int32(14), v60)
 							mBase = m.M
-							v65 = m.ExcPending
-							if v65 != 0 {
+							v66 = m.ExcPending
+							if v66 != 0 {
 								return
 							} else {
-								if v64 != 0 {
+								if v65 != 0 {
 									*(*int64)(unsafe.Add(mBase, uint32(v12))) = base.I64_trunc_sat_f64_s(v41)
 									if l4 != 0 {
-										v70 = int32(_a_F_HnswParallelScanAndInsert_4)
+										v71 = int32(_a_F_HnswParallelScanAndInsert_4)
 									} else {
-										v70 = int32(_a_F_HnswParallelScanAndInsert_5)
+										v71 = int32(_a_F_HnswParallelScanAndInsert_5)
 									}
-									F_errmsg(m, v70, v12)
+									F_errmsg(m, v71, v12)
 									mBase = m.M
-									v72 = m.ExcPending
-									if v72 != 0 {
+									v73 = m.ExcPending
+									if v73 != 0 {
 										return
 									} else {
 										if l4 != 0 {
-											v76 = int32(825)
+											v77 = int32(825)
 										} else {
-											v76 = int32(827)
+											v77 = int32(827)
 										}
-										F_errfinish(m, int32(_a_F_HnswParallelScanAndInsert_2), v76, int32(_a_F_HnswParallelScanAndInsert_3))
+										F_errfinish(m, int32(_a_F_HnswParallelScanAndInsert_2), v77, int32(_a_F_HnswParallelScanAndInsert_3))
 										mBase = m.M
-										v79 = m.ExcPending
-										if v79 != 0 {
+										v80 = m.ExcPending
+										if v80 != 0 {
 											return
 										} else {
 											F_ConditionVariableSignal(m, l2+int32(12))
 											mBase = m.M
-											v83 = m.ExcPending
-											if v83 != 0 {
+											v84 = m.ExcPending
+											if v84 != 0 {
 												return
 											} else {
-												v84 = *(*int32)(unsafe.Add(mBase, uint32(v12)+196))
-												F_MemoryContextDelete(m, v84)
+												v85 = *(*int32)(unsafe.Add(mBase, uint32(v12)+196))
+												F_MemoryContextDelete(m, v85)
 												mBase = m.M
-												v86 = m.ExcPending
-												if v86 != 0 {
+												v87 = m.ExcPending
+												if v87 != 0 {
 													return
 												} else {
-													v87 = *(*int32)(unsafe.Add(mBase, uint32(v12)+200))
-													F_MemoryContextDelete(m, v87)
+													v88 = *(*int32)(unsafe.Add(mBase, uint32(v12)+200))
+													F_MemoryContextDelete(m, v88)
 													mBase = m.M
-													v89 = m.ExcPending
-													if v89 != 0 {
+													v90 = m.ExcPending
+													if v90 != 0 {
 														return
 													} else {
 														m.G0 = v12 + int32(224)
@@ -2149,22 +2149,22 @@ func F_HnswParallelScanAndInsert(m *base.Module, l0 int32, l1 int32, l2 int32, l
 								} else {
 									F_ConditionVariableSignal(m, l2+int32(12))
 									mBase = m.M
-									v83 = m.ExcPending
-									if v83 != 0 {
+									v84 = m.ExcPending
+									if v84 != 0 {
 										return
 									} else {
-										v84 = *(*int32)(unsafe.Add(mBase, uint32(v12)+196))
-										F_MemoryContextDelete(m, v84)
+										v85 = *(*int32)(unsafe.Add(mBase, uint32(v12)+196))
+										F_MemoryContextDelete(m, v85)
 										mBase = m.M
-										v86 = m.ExcPending
-										if v86 != 0 {
+										v87 = m.ExcPending
+										if v87 != 0 {
 											return
 										} else {
-											v87 = *(*int32)(unsafe.Add(mBase, uint32(v12)+200))
-											F_MemoryContextDelete(m, v87)
+											v88 = *(*int32)(unsafe.Add(mBase, uint32(v12)+200))
+											F_MemoryContextDelete(m, v88)
 											mBase = m.M
-											v89 = m.ExcPending
-											if v89 != 0 {
+											v90 = m.ExcPending
+											if v90 != 0 {
 												return
 											} else {
 												m.G0 = v12 + int32(224)
@@ -2176,60 +2176,60 @@ func F_HnswParallelScanAndInsert(m *base.Module, l0 int32, l1 int32, l2 int32, l
 							}
 						}
 					} else {
-						v53 = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(l2)+24)) = v53
-						v55 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-						*(*int32)(unsafe.Add(mBase, uint32(l2)+28)) = v55 + int32(1)
-						v59 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
-						*(*float64)(unsafe.Add(mBase, uint32(l2)+32)) = base.F64_add(v59, v41)
-						v64 = F_errstart(m, int32(14), v53)
+						v53 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+						*(*int32)(unsafe.Add(mBase, uint32(l2)+28)) = v53 + int32(1)
+						v57 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
+						*(*float64)(unsafe.Add(mBase, uint32(l2)+32)) = base.F64_add(v57, v41)
+						v60 = int32(0)
+						atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+24)), uint32(v60))
+						v65 = F_errstart(m, int32(14), v60)
 						mBase = m.M
-						v65 = m.ExcPending
-						if v65 != 0 {
+						v66 = m.ExcPending
+						if v66 != 0 {
 							return
 						} else {
-							if v64 != 0 {
+							if v65 != 0 {
 								*(*int64)(unsafe.Add(mBase, uint32(v12))) = base.I64_trunc_sat_f64_s(v41)
 								if l4 != 0 {
-									v70 = int32(_a_F_HnswParallelScanAndInsert_4)
+									v71 = int32(_a_F_HnswParallelScanAndInsert_4)
 								} else {
-									v70 = int32(_a_F_HnswParallelScanAndInsert_5)
+									v71 = int32(_a_F_HnswParallelScanAndInsert_5)
 								}
-								F_errmsg(m, v70, v12)
+								F_errmsg(m, v71, v12)
 								mBase = m.M
-								v72 = m.ExcPending
-								if v72 != 0 {
+								v73 = m.ExcPending
+								if v73 != 0 {
 									return
 								} else {
 									if l4 != 0 {
-										v76 = int32(825)
+										v77 = int32(825)
 									} else {
-										v76 = int32(827)
+										v77 = int32(827)
 									}
-									F_errfinish(m, int32(_a_F_HnswParallelScanAndInsert_2), v76, int32(_a_F_HnswParallelScanAndInsert_3))
+									F_errfinish(m, int32(_a_F_HnswParallelScanAndInsert_2), v77, int32(_a_F_HnswParallelScanAndInsert_3))
 									mBase = m.M
-									v79 = m.ExcPending
-									if v79 != 0 {
+									v80 = m.ExcPending
+									if v80 != 0 {
 										return
 									} else {
 										F_ConditionVariableSignal(m, l2+int32(12))
 										mBase = m.M
-										v83 = m.ExcPending
-										if v83 != 0 {
+										v84 = m.ExcPending
+										if v84 != 0 {
 											return
 										} else {
-											v84 = *(*int32)(unsafe.Add(mBase, uint32(v12)+196))
-											F_MemoryContextDelete(m, v84)
+											v85 = *(*int32)(unsafe.Add(mBase, uint32(v12)+196))
+											F_MemoryContextDelete(m, v85)
 											mBase = m.M
-											v86 = m.ExcPending
-											if v86 != 0 {
+											v87 = m.ExcPending
+											if v87 != 0 {
 												return
 											} else {
-												v87 = *(*int32)(unsafe.Add(mBase, uint32(v12)+200))
-												F_MemoryContextDelete(m, v87)
+												v88 = *(*int32)(unsafe.Add(mBase, uint32(v12)+200))
+												F_MemoryContextDelete(m, v88)
 												mBase = m.M
-												v89 = m.ExcPending
-												if v89 != 0 {
+												v90 = m.ExcPending
+												if v90 != 0 {
 													return
 												} else {
 													m.G0 = v12 + int32(224)
@@ -2242,22 +2242,22 @@ func F_HnswParallelScanAndInsert(m *base.Module, l0 int32, l1 int32, l2 int32, l
 							} else {
 								F_ConditionVariableSignal(m, l2+int32(12))
 								mBase = m.M
-								v83 = m.ExcPending
-								if v83 != 0 {
+								v84 = m.ExcPending
+								if v84 != 0 {
 									return
 								} else {
-									v84 = *(*int32)(unsafe.Add(mBase, uint32(v12)+196))
-									F_MemoryContextDelete(m, v84)
+									v85 = *(*int32)(unsafe.Add(mBase, uint32(v12)+196))
+									F_MemoryContextDelete(m, v85)
 									mBase = m.M
-									v86 = m.ExcPending
-									if v86 != 0 {
+									v87 = m.ExcPending
+									if v87 != 0 {
 										return
 									} else {
-										v87 = *(*int32)(unsafe.Add(mBase, uint32(v12)+200))
-										F_MemoryContextDelete(m, v87)
+										v88 = *(*int32)(unsafe.Add(mBase, uint32(v12)+200))
+										F_MemoryContextDelete(m, v88)
 										mBase = m.M
-										v89 = m.ExcPending
-										if v89 != 0 {
+										v90 = m.ExcPending
+										if v90 != 0 {
 											return
 										} else {
 											m.G0 = v12 + int32(224)

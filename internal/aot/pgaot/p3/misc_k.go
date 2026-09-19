@@ -2,6 +2,7 @@ package p3
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -134,6 +135,8 @@ func F_KeepFileRestoredFromArchive(m *base.Module, l0 int32, l1 int32) {
 	_ = v180
 	var v181 int32
 	_ = v181
+	var v182 int32
+	_ = v182
 	var v185 int32
 	_ = v185
 	var v190 int32
@@ -144,20 +147,22 @@ func F_KeepFileRestoredFromArchive(m *base.Module, l0 int32, l1 int32) {
 	_ = v193
 	var v194 int32
 	_ = v194
-	var v199 int32
-	_ = v199
-	var v201 int32
-	_ = v201
-	var v218 int32
-	_ = v218
-	var v225 int32
-	_ = v225
-	var v227 int32
-	_ = v227
-	var v233 int32
-	_ = v233
-	var v238 int32
-	_ = v238
+	var v196 int32
+	_ = v196
+	var v200 int32
+	_ = v200
+	var v202 int32
+	_ = v202
+	var v219 int32
+	_ = v219
+	var v226 int32
+	_ = v226
+	var v228 int32
+	_ = v228
+	var v234 int32
+	_ = v234
+	var v239 int32
+	_ = v239
 	v7 = m.G0
 	v9 = v7 - int32(2176)
 	m.G0 = v9
@@ -183,8 +188,8 @@ L3:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v225 = m.ExcPending
-	if v225 != 0 {
+	v226 = m.ExcPending
+	if v226 != 0 {
 		goto L1
 	} else {
 		goto L64
@@ -504,8 +509,8 @@ L49:
 	;
 	F_WalSndWakeup(m, int32(1), int32(0))
 	mBase = m.M
-	v218 = m.ExcPending
-	if v218 != 0 {
+	v219 = m.ExcPending
+	if v219 != 0 {
 		goto L1
 	} else {
 		goto L63
@@ -524,10 +529,10 @@ L53:
 	;
 	v177 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[2]))
 	v180 = v177 + v171*int32(96)
-	v181 = *(*int32)(unsafe.Add(mBase, uint32(v180)+164))
-	*(*int32)(unsafe.Add(mBase, uint32(v180)+164)) = int32(1)
-	v185 = v180 + int32(164)
-	if v181 != 0 {
+	v181 = int32(164)
+	v182 = v180 + v181
+	v185 = base.AtomicRmwXchg32(m, v180, v181, int32(1))
+	if v185 != 0 {
 		goto L55
 	} else {
 		goto L56
@@ -537,7 +542,7 @@ L54:
 	goto L52
 L55:
 	;
-	F_s_lock(m, v185, int32(_a_F_KeepFileRestoredFromArchive_1), int32(3596), int32(_a_F_KeepFileRestoredFromArchive_2))
+	F_s_lock(m, v182, int32(_a_F_KeepFileRestoredFromArchive_1), int32(3596), int32(_a_F_KeepFileRestoredFromArchive_2))
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -570,11 +575,12 @@ L60:
 	goto L61
 L61:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v185))) = int32(0)
-	v199 = v171 + int32(1)
-	v201 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[1]))
-	if v199 < v201 {
-		v171 = v199
+	v196 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v182))), uint32(v196))
+	v200 = v171 + int32(1)
+	v202 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[1]))
+	if v200 < v202 {
+		v171 = v200
 		goto L53
 	} else {
 		goto L62
@@ -590,8 +596,8 @@ L64:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v227 = m.ExcPending
-	if v227 != 0 {
+	v228 = m.ExcPending
+	if v228 != 0 {
 		goto L1
 	} else {
 		goto L65
@@ -601,8 +607,8 @@ L65:
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(1152)
 	F_errmsg(m, int32(_a_F_KeepFileRestoredFromArchive_3), v9)
 	mBase = m.M
-	v233 = m.ExcPending
-	if v233 != 0 {
+	v234 = m.ExcPending
+	if v234 != 0 {
 		goto L1
 	} else {
 		goto L66
@@ -611,8 +617,8 @@ L66:
 	;
 	F_errfinish(m, int32(_a_F_KeepFileRestoredFromArchive_4), int32(400), int32(_a_F_KeepFileRestoredFromArchive_5))
 	mBase = m.M
-	v238 = m.ExcPending
-	if v238 != 0 {
+	v239 = m.ExcPending
+	if v239 != 0 {
 		goto L1
 	} else {
 		goto L67
@@ -2010,7 +2016,7 @@ func F_koi8r_to_iso(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13936(m, l0, int32(_a_F_koi8r_to_iso_0), int32(25), int32(22))
+	v5 = Fn13958(m, l0, int32(_a_F_koi8r_to_iso_0), int32(25), int32(22))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

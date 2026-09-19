@@ -82,14 +82,14 @@ func F__ltree_penalty(m *base.Module, l0 int32) int32 {
 		} else {
 			v33 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
 			v35 = v33
-			v37 = Fn13923(m, v5, v7, v35, int32(2))
+			v37 = Fn13945(m, v5, v7, v35, int32(2))
 			mBase = m.M
 			*(*float32)(unsafe.Add(mBase, uint32(v3))) = base.F32_convert_i32_s(v37)
 			return v3
 		}
 	} else {
 		v35 = int32(28)
-		v37 = Fn13923(m, v5, v7, v35, int32(2))
+		v37 = Fn13945(m, v5, v7, v35, int32(2))
 		mBase = m.M
 		*(*float32)(unsafe.Add(mBase, uint32(v3))) = base.F32_convert_i32_s(v37)
 		return v3
@@ -530,7 +530,7 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 							v119 = v89
 							for {
 								v133 = *(*int32)(unsafe.Add(mBase, uint32(v73+v114<<(uint(int32(4))%32))))
-								v135 = Fn13923(m, v103, v133, v54, int32(2))
+								v135 = Fn13945(m, v103, v133, v54, int32(2))
 								mBase = m.M
 								v136 = base.B2i32(v107 < v135)
 								if v107 < v135 {
@@ -651,9 +651,9 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 										*(*uint16)(unsafe.Add(mBase, uint32(v269-int32(8)))) = uint16(v244)
 										v273 = int32(4)
 										v278 = *(*int32)(unsafe.Add(mBase, uint32(v177+v243<<(uint(v273)%32))))
-										v280 = Fn13923(m, v204, v278, v54, int32(2))
+										v280 = Fn13945(m, v204, v278, v54, int32(2))
 										mBase = m.M
-										v282 = Fn13923(m, v223, v278, v54, int32(2))
+										v282 = Fn13945(m, v223, v278, v54, int32(2))
 										mBase = m.M
 										v283 = v280 - v282
 										v285 = v283 >> (uint(int32(31)) % 32)
@@ -707,9 +707,9 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 													v751 = v327 + int32(2)
 												} else {
 													v358 = *(*int32)(unsafe.Add(mBase, uint32(v177+v342<<(uint(int32(4))%32))))
-													v360 = Fn13923(m, v204, v358, v54, int32(2))
+													v360 = Fn13945(m, v204, v358, v54, int32(2))
 													mBase = m.M
-													v363 = Fn13923(m, v223, v358, v54, int32(2))
+													v363 = Fn13945(m, v223, v358, v54, int32(2))
 													mBase = m.M
 													v365 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
 													v366 = *(*int32)(unsafe.Add(mBase, uint32(v25)+20))
@@ -993,7 +993,7 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 						v119 = v89
 						for {
 							v133 = *(*int32)(unsafe.Add(mBase, uint32(v73+v114<<(uint(int32(4))%32))))
-							v135 = Fn13923(m, v103, v133, v54, int32(2))
+							v135 = Fn13945(m, v103, v133, v54, int32(2))
 							mBase = m.M
 							v136 = base.B2i32(v107 < v135)
 							if v107 < v135 {
@@ -1114,9 +1114,9 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 									*(*uint16)(unsafe.Add(mBase, uint32(v269-int32(8)))) = uint16(v244)
 									v273 = int32(4)
 									v278 = *(*int32)(unsafe.Add(mBase, uint32(v177+v243<<(uint(v273)%32))))
-									v280 = Fn13923(m, v204, v278, v54, int32(2))
+									v280 = Fn13945(m, v204, v278, v54, int32(2))
 									mBase = m.M
-									v282 = Fn13923(m, v223, v278, v54, int32(2))
+									v282 = Fn13945(m, v223, v278, v54, int32(2))
 									mBase = m.M
 									v283 = v280 - v282
 									v285 = v283 >> (uint(int32(31)) % 32)
@@ -1170,9 +1170,9 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 												v751 = v327 + int32(2)
 											} else {
 												v358 = *(*int32)(unsafe.Add(mBase, uint32(v177+v342<<(uint(int32(4))%32))))
-												v360 = Fn13923(m, v204, v358, v54, int32(2))
+												v360 = Fn13945(m, v204, v358, v54, int32(2))
 												mBase = m.M
-												v363 = Fn13923(m, v223, v358, v54, int32(2))
+												v363 = Fn13945(m, v223, v358, v54, int32(2))
 												mBase = m.M
 												v365 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
 												v366 = *(*int32)(unsafe.Add(mBase, uint32(v25)+20))
@@ -7598,7 +7598,7 @@ func F_ltree_gist_out(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F_ltree_gist_out_0), int32(36), int32(_a_F_ltree_gist_out_1), int32(_a_F_ltree_gist_out_2), int32(_a_F_ltree_gist_out_3))
+	v7 = Fn13874(m, l0, int32(_a_F_ltree_gist_out_0), int32(36), int32(_a_F_ltree_gist_out_1), int32(_a_F_ltree_gist_out_2), int32(_a_F_ltree_gist_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

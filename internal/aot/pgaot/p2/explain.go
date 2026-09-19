@@ -545,7 +545,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 func F_ExplainPropertyInteger(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) {
 	var v7 int32
 	_ = v7
-	Fn13827(m, l0, l1, l2, l3, int32(_a_F_ExplainPropertyInteger_0))
+	Fn13848(m, l0, l1, l2, l3, int32(_a_F_ExplainPropertyInteger_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return
@@ -614,12 +614,22 @@ func F_ExplainXMLTag(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v70
 	var v72 int32
 	_ = v72
-	var v74 int32
-	_ = v74
 	var v75 int32
 	_ = v75
-	var v76 int32
-	_ = v76
+	var v90 int32
+	_ = v90
+	var v92 int32
+	_ = v92
+	var v95 int32
+	_ = v95
+	var v97 int32
+	_ = v97
+	var v98 int32
+	_ = v98
+	var v99 int32
+	_ = v99
+	var v102 int32
+	_ = v102
 	var v115 int32
 	_ = v115
 	var v116 int32
@@ -851,10 +861,8 @@ L19:
 L20:
 	;
 	v72 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	v74 = int32(_a_F_ExplainXMLTag_0)
 	v75 = base.I32_extend8_s(v70)
-	v76 = int32(66)
-	goto L25
+	goto L26
 L21:
 	;
 	goto L19
@@ -876,25 +884,70 @@ L24:
 	goto L41
 L25:
 	;
-	goto L32
+	if base.B2i32(v98 != v99) == int32(0) {
+		goto L23
+	} else {
+		goto L32
+	}
+L26:
+	;
+	v90 = int32(_a_F_ExplainXMLTag_0)
+	v92 = int32(66)
+	goto L27
+L27:
+	;
+	v95 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90))))
+	if v95 == v75&int32(255) {
+		v152 = v90
+		v154 = v92
+		goto L24
+	} else {
+		goto L29
+	}
+L28:
+	;
+	goto L25
+L29:
+	;
+	v97 = int32(1)
+	v98 = v92 - v97
+	v99 = int32(0)
+	v102 = v90 + v97
+	if v102&int32(3) == v99 {
+		goto L25
+	} else {
+		goto L30
+	}
+L30:
+	;
+	if v98 != 0 {
+		v90 = v102
+		v92 = v98
+		goto L27
+	} else {
+		goto L31
+	}
+L31:
+	;
+	goto L28
 L32:
 	;
 	v115 = v75 & int32(255)
-	v116 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ExplainXMLTag[0])))
-	if base.B2i32(v115 == v116)|int32(0) == int32(0) {
+	v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102))))
+	if base.B2i32(v115 == v116)|base.B2i32(base.Ui32(v98) < base.Ui32(int32(4))) == int32(0) {
 		goto L33
 	} else {
 		goto L34
 	}
 L33:
 	;
-	v125 = v74
-	v127 = v76
+	v125 = v102
+	v127 = v98
 	goto L36
 L34:
 	;
-	v145 = v74
-	v147 = v76
+	v145 = v102
+	v147 = v98
 	goto L35
 L35:
 	;

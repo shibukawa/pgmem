@@ -4005,7 +4005,7 @@ func F_gin_extract_query_date(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13905(m, l0, int32(-2147483648), int32(1428))
+	v4 = Fn13927(m, l0, int32(-2147483648), int32(1428))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -4031,7 +4031,7 @@ func F_gin_extract_query_macaddr(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13907(m, l0, int32(6), int32(2266))
+	v4 = Fn13929(m, l0, int32(6), int32(2266))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -4044,7 +4044,7 @@ func F_gin_extract_query_money(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int64(-9223372036854775807-1), int32(2119))
+	v4 = Fn13928(m, l0, int64(-9223372036854775807-1), int32(2119))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -4057,7 +4057,7 @@ func F_gin_extract_query_oid(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13905(m, l0, int32(0), int32(2100))
+	v4 = Fn13927(m, l0, int32(0), int32(2100))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

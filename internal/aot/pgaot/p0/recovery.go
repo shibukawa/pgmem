@@ -2,6 +2,7 @@ package p0
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -41,40 +42,44 @@ func F_recoveryPausesHere(m *base.Module, l0 int32) {
 	_ = v33
 	var v37 int32
 	_ = v37
-	var v38 int32
-	_ = v38
+	var v40 int32
+	_ = v40
 	var v42 int32
 	_ = v42
 	var v49 int32
 	_ = v49
 	var v51 int32
 	_ = v51
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
 	var v57 int32
 	_ = v57
 	var v58 int32
 	_ = v58
-	var v60 int32
-	_ = v60
+	var v59 int32
+	_ = v59
 	var v61 int32
 	_ = v61
-	var v65 int32
-	_ = v65
-	var v72 int32
-	_ = v72
-	var v74 int32
-	_ = v74
+	var v64 int32
+	_ = v64
+	var v66 int32
+	_ = v66
+	var v73 int32
+	_ = v73
 	var v75 int32
 	_ = v75
-	var v86 int32
-	_ = v86
-	var v87 int32
-	_ = v87
+	var v76 int32
+	_ = v76
+	var v81 int32
+	_ = v81
+	var v88 int32
+	_ = v88
 	var v89 int32
 	_ = v89
+	var v91 int32
+	_ = v91
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_recoveryPausesHere[0])))
 	if v4 != int32(1) {
 		goto L1
@@ -199,9 +204,8 @@ L20:
 L21:
 	;
 	v37 = *(*int32)(unsafe.Add(mBase, _c_F_recoveryPausesHere[2]))
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+96))
-	*(*int32)(unsafe.Add(mBase, uint32(v37)+96)) = int32(1)
-	if v38 != 0 {
+	v40 = base.AtomicRmwXchg32(m, v37, int32(96), int32(1))
+	if v40 != 0 {
 		goto L23
 	} else {
 		goto L24
@@ -210,8 +214,8 @@ L22:
 	;
 	F_ConditionVariableCancelSleep(m)
 	mBase = m.M
-	v89 = m.ExcPending
-	if v89 != 0 {
+	v91 = m.ExcPending
+	if v91 != 0 {
 		goto L4
 	} else {
 		goto L41
@@ -233,9 +237,10 @@ L24:
 L25:
 	;
 	v51 = *(*int32)(unsafe.Add(mBase, _c_F_recoveryPausesHere[2]))
-	*(*int32)(unsafe.Add(mBase, uint32(v51)+96)) = int32(0)
-	v54 = *(*int32)(unsafe.Add(mBase, uint32(v51)+80))
-	if v54 != 0 {
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+80))
+	v53 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v51)+96)), uint32(v53))
+	if v52 != 0 {
 		goto L27
 	} else {
 		goto L28
@@ -247,8 +252,8 @@ L27:
 	;
 	F_ProcessStartupProcInterrupts(m)
 	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
+	v57 = m.ExcPending
+	if v57 != 0 {
 		goto L4
 	} else {
 		goto L30
@@ -261,38 +266,37 @@ L29:
 	goto L22
 L30:
 	;
-	v57 = F_CheckForStandbyTrigger(m)
+	v58 = F_CheckForStandbyTrigger(m)
 	mBase = m.M
-	v58 = m.ExcPending
-	if v58 != 0 {
+	v59 = m.ExcPending
+	if v59 != 0 {
 		goto L4
 	} else {
 		goto L31
 	}
 L31:
 	;
-	if v57 != 0 {
+	if v58 != 0 {
 		goto L1
 	} else {
 		goto L32
 	}
 L32:
 	;
-	v60 = *(*int32)(unsafe.Add(mBase, _c_F_recoveryPausesHere[2]))
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v60)+96))
-	*(*int32)(unsafe.Add(mBase, uint32(v60)+96)) = int32(1)
-	if v61 != 0 {
+	v61 = *(*int32)(unsafe.Add(mBase, _c_F_recoveryPausesHere[2]))
+	v64 = base.AtomicRmwXchg32(m, v61, int32(96), int32(1))
+	if v64 != 0 {
 		goto L33
 	} else {
 		goto L34
 	}
 L33:
 	;
-	v65 = *(*int32)(unsafe.Add(mBase, _c_F_recoveryPausesHere[2]))
-	F_s_lock(m, v65+int32(96), int32(_a_F_recoveryPausesHere_4), int32(3135), int32(_a_F_recoveryPausesHere_7))
+	v66 = *(*int32)(unsafe.Add(mBase, _c_F_recoveryPausesHere[2]))
+	F_s_lock(m, v66+int32(96), int32(_a_F_recoveryPausesHere_4), int32(3135), int32(_a_F_recoveryPausesHere_7))
 	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
+	v73 = m.ExcPending
+	if v73 != 0 {
 		goto L4
 	} else {
 		goto L36
@@ -302,9 +306,9 @@ L34:
 	goto L35
 L35:
 	;
-	v74 = *(*int32)(unsafe.Add(mBase, _c_F_recoveryPausesHere[2]))
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+80))
-	if v75 == int32(1) {
+	v75 = *(*int32)(unsafe.Add(mBase, _c_F_recoveryPausesHere[2]))
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(v75)+80))
+	if v76 == int32(1) {
 		goto L37
 	} else {
 		goto L38
@@ -314,18 +318,19 @@ L36:
 	goto L35
 L37:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v74)+80)) = int32(2)
+	*(*int32)(unsafe.Add(mBase, uint32(v75)+80)) = int32(2)
 	goto L39
 L38:
 	;
 	goto L39
 L39:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v74)+96)) = int32(0)
-	v86 = F_ConditionVariableTimedSleep(m, v74+int32(84), int32(1000), int32(134217775))
+	v81 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v75)+96)), uint32(v81))
+	v88 = F_ConditionVariableTimedSleep(m, v75+int32(84), int32(1000), int32(134217775))
 	mBase = m.M
-	v87 = m.ExcPending
-	if v87 != 0 {
+	v89 = m.ExcPending
+	if v89 != 0 {
 		goto L4
 	} else {
 		goto L40

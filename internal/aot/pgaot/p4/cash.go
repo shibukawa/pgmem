@@ -10,7 +10,7 @@ func F_cash_dist(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13858(m, l0, int32(_a_F_cash_dist_0), int32(_a_F_cash_dist_1), int32(_a_F_cash_dist_2))
+	v5 = Fn13880(m, l0, int32(_a_F_cash_dist_0), int32(_a_F_cash_dist_1), int32(_a_F_cash_dist_2))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -57,7 +57,7 @@ func F_cash_mul_int4(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13861(m, l0, int32(_a_F_cash_mul_int4_0), int32(150), int32(_a_F_cash_mul_int4_1), int32(_a_F_cash_mul_int4_2))
+	v6 = Fn13883(m, l0, int32(_a_F_cash_mul_int4_0), int32(150), int32(_a_F_cash_mul_int4_1), int32(_a_F_cash_mul_int4_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

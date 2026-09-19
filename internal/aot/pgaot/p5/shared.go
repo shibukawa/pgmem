@@ -2,6 +2,7 @@ package p5
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -98,22 +99,22 @@ func F_ReceiveSharedInvalidMessages(m *base.Module) {
 	_ = v100
 	var v103 int32
 	_ = v103
-	var v105 int32
-	_ = v105
+	var v107 int32
+	_ = v107
 	var v114 int32
 	_ = v114
 	var v115 int32
 	_ = v115
-	var v117 int32
-	_ = v117
-	var v118 int32
-	_ = v118
-	var v121 int32
-	_ = v121
+	var v116 int32
+	_ = v116
+	var v119 int32
+	_ = v119
 	var v122 int32
 	_ = v122
-	var v129 int32
-	_ = v129
+	var v123 int32
+	_ = v123
+	var v131 int32
+	_ = v131
 	var v133 int32
 	_ = v133
 	var v139 int32
@@ -144,14 +145,14 @@ func F_ReceiveSharedInvalidMessages(m *base.Module) {
 	_ = v165
 	var v167 int32
 	_ = v167
-	var v169 int32
-	_ = v169
+	var v171 int32
+	_ = v171
 	var v179 int32
 	_ = v179
 	var v183 int32
 	_ = v183
-	var v184 int32
-	_ = v184
+	var v186 int32
+	_ = v186
 	var v197 int32
 	_ = v197
 	var v198 int32
@@ -304,11 +305,11 @@ L12:
 	}
 L13:
 	;
-	v184 = v76
+	v186 = v76
 	goto L14
 L14:
 	;
-	if v184 < int32(0) {
+	if v186 < int32(0) {
 		goto L34
 	} else {
 		goto L35
@@ -317,9 +318,8 @@ L15:
 	;
 	v103 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[7]))) = uint8(v103)
-	v105 = *(*int32)(unsafe.Add(mBase, uint32(v83)+12))
-	*(*int32)(unsafe.Add(mBase, uint32(v83)+12)) = int32(1)
-	if v105 != 0 {
+	v107 = base.AtomicRmwXchg32(m, v83, int32(12), int32(1))
+	if v107 != 0 {
 		goto L16
 	} else {
 		goto L17
@@ -339,11 +339,11 @@ L17:
 	goto L18
 L18:
 	;
-	v115 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v83)+12)) = v115
-	v117 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
-	v118 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[10]))))
-	if v118 == v115 {
+	v115 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
+	v116 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v83)+12)), uint32(v116))
+	v119 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[10]))))
+	if v119 == v116 {
 		goto L22
 	} else {
 		goto L23
@@ -364,34 +364,34 @@ L20:
 	}
 L21:
 	;
-	v129 = int32(0)
-	v133 = v121
+	v131 = v76
+	v133 = v122
 	goto L26
 L22:
 	;
-	v121 = *(*int32)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[11])))
+	v122 = *(*int32)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[11])))
 	goto L21
 L23:
 	;
 	goto L24
 L24:
 	;
-	v122 = int32(0)
-	*(*uint16)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[10]))) = uint16(v122)
-	*(*int32)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[11]))) = v117
-	v169 = int32(-1)
+	v123 = int32(0)
+	*(*uint16)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[10]))) = uint16(v123)
+	*(*int32)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[11]))) = v115
+	v171 = int32(-1)
 	goto L20
 L25:
 	;
-	if v117 <= v162 {
+	if v115 <= v162 {
 		goto L30
 	} else {
 		goto L31
 	}
 L26:
 	;
-	if v117 <= v133 {
-		v161 = v129
+	if v115 <= v133 {
+		v161 = v131
 		v162 = v133
 		goto L25
 	} else {
@@ -405,7 +405,7 @@ L27:
 L28:
 	;
 	v139 = int32(4)
-	v140 = v129 << (uint(v139) % 32)
+	v140 = v131 << (uint(v139) % 32)
 	v144 = base.I32_rem_s(v133, int32(_a_F_ReceiveSharedInvalidMessages_4))
 	v147 = v83 + int32(16) + v144<<(uint(v139)%32)
 	v148 = *(*int64)(unsafe.Add(mBase, uint32(v147)+8))
@@ -416,9 +416,9 @@ L28:
 	v153 = int32(1)
 	v154 = v152 + v153
 	*(*int32)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[11]))) = v154
-	v157 = v129 + v153
+	v157 = v131 + v153
 	if v157 != int32(32) {
-		v129 = v157
+		v131 = v157
 		v133 = v154
 		goto L26
 	} else {
@@ -431,7 +431,7 @@ L30:
 	;
 	v165 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[12]))) = uint8(v165)
-	v169 = v161
+	v171 = v161
 	goto L20
 L31:
 	;
@@ -440,11 +440,11 @@ L32:
 	;
 	v167 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v88)+uint32(_c_F_ReceiveSharedInvalidMessages[7]))) = uint8(v167)
-	v169 = v161
+	v171 = v161
 	goto L20
 L33:
 	;
-	v184 = v169
+	v186 = v171
 	goto L14
 L34:
 	;
@@ -463,9 +463,9 @@ L36:
 	;
 	v216 = int32(_a_F_ReceiveSharedInvalidMessages_0)
 	*(*int32)(unsafe.Add(mBase, _c_F_ReceiveSharedInvalidMessages[0])) = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_ReceiveSharedInvalidMessages[1])) = v184
+	*(*int32)(unsafe.Add(mBase, _c_F_ReceiveSharedInvalidMessages[1])) = v186
 	v222 = *(*int32)(unsafe.Add(mBase, _c_F_ReceiveSharedInvalidMessages[0]))
-	if v222 < v184 {
+	if v222 < v186 {
 		goto L44
 	} else {
 		goto L45
@@ -642,22 +642,26 @@ L61:
 func F_SharedFileSetInit(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
+	var v3 int32
+	_ = v3
 	var v9 int32
 	_ = v9
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = int64(4294967296)
+	var v12 int32
+	_ = v12
+	v3 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0)+44)), uint32(v3))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+48)) = int32(1)
 	F_FileSetInit(m, l0)
 	mBase = m.M
-	v6 = m.ExcPending
-	if v6 != 0 {
+	v9 = m.ExcPending
+	if v9 != 0 {
 		return
 	} else {
 		if l1 != 0 {
 			F_on_dsm_detach(m, l1, int32(1096), l0)
 			mBase = m.M
-			v9 = m.ExcPending
-			if v9 != 0 {
+			v12 = m.ExcPending
+			if v12 != 0 {
 				return
 			} else {
 				return
@@ -670,8 +674,8 @@ func F_SharedFileSetInit(m *base.Module, l0 int32, l1 int32) {
 func F_SharedFileSetOnDetach(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
+	var v5 int32
+	_ = v5
 	var v12 int32
 	_ = v12
 	var v13 int32
@@ -680,27 +684,26 @@ func F_SharedFileSetOnDetach(m *base.Module, l0 int32, l1 int32) {
 	_ = v15
 	var v17 int32
 	_ = v17
-	var v22 int32
-	_ = v22
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l1)+44))
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = int32(1)
-	if v3 != 0 {
+	var v23 int32
+	_ = v23
+	v5 = base.AtomicRmwXchg32(m, l1, int32(44), int32(1))
+	if v5 != 0 {
 		F_s_lock(m, l1+int32(44), int32(_a_F_SharedFileSetOnDetach_0), int32(101), int32(_a_F_SharedFileSetOnDetach_1))
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
 			return
 		} else {
-			v13 = int32(0)
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = v13
-			v15 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
-			v17 = v15 - int32(1)
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = v17
-			if v17 == v13 {
+			v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
+			v15 = v13 - int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = v15
+			v17 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+44)), uint32(v17))
+			if v15 == v17 {
 				F_FileSetDeleteAll(m, l1)
 				mBase = m.M
-				v22 = m.ExcPending
-				if v22 != 0 {
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return
 				} else {
 					return
@@ -710,16 +713,16 @@ func F_SharedFileSetOnDetach(m *base.Module, l0 int32, l1 int32) {
 			}
 		}
 	} else {
-		v13 = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = v13
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
-		v17 = v15 - int32(1)
-		*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = v17
-		if v17 == v13 {
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
+		v15 = v13 - int32(1)
+		*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = v15
+		v17 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+44)), uint32(v17))
+		if v15 == v17 {
 			F_FileSetDeleteAll(m, l1)
 			mBase = m.M
-			v22 = m.ExcPending
-			if v22 != 0 {
+			v23 = m.ExcPending
+			if v23 != 0 {
 				return
 			} else {
 				return

@@ -2,6 +2,7 @@ package p4
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -423,84 +424,88 @@ L36:
 func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
+	var v6 int32
+	_ = v6
 	var v7 int32
 	_ = v7
 	var v8 int32
 	_ = v8
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
-	var v13 int32
-	_ = v13
-	var v15 int32
-	_ = v15
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
 	var v19 int32
 	_ = v19
-	var v20 int32
-	_ = v20
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
 	var v23 int32
 	_ = v23
-	var v24 int32
-	_ = v24
-	var v26 int32
-	_ = v26
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
+	var v25 int32
+	_ = v25
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
 	var v43 int32
 	_ = v43
-	var v44 int32
-	_ = v44
-	var v46 int32
-	_ = v46
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
-	var v49 int32
-	_ = v49
-	var v52 int32
-	_ = v52
-	var v54 int32
-	_ = v54
-	var v59 int32
-	_ = v59
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
 	var v61 int32
 	_ = v61
-	var v62 int32
-	_ = v62
+	var v63 int32
+	_ = v63
 	var v64 int32
 	_ = v64
 	var v65 int32
 	_ = v65
-	var v66 int32
-	_ = v66
-	var v68 int32
-	_ = v68
-	var v70 int32
-	_ = v70
-	var v75 int32
-	_ = v75
-	var v81 int32
-	_ = v81
-	var v83 int32
-	_ = v83
-	var v85 int32
-	_ = v85
-	var v86 int32
-	_ = v86
-	var v90 int32
-	_ = v90
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
+	var v74 int32
+	_ = v74
+	var v80 int32
+	_ = v80
+	var v82 int32
+	_ = v82
+	var v84 int32
+	_ = v84
+	var v87 int32
+	_ = v87
+	var v89 int32
+	_ = v89
+	var v94 int32
+	_ = v94
 	var v95 int32
 	_ = v95
-	var v96 int32
-	_ = v96
-	var v100 int32
-	_ = v100
+	var v99 int32
+	_ = v99
+	var v105 int32
+	_ = v105
 	var v106 int32
 	_ = v106
 	var v110 int32
@@ -515,12 +520,14 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 	_ = v130
 	var v132 int32
 	_ = v132
+	var v140 int32
+	_ = v140
 	var v142 int32
 	_ = v142
 	var v144 int32
 	_ = v144
-	var v145 int32
-	_ = v145
+	var v147 int32
+	_ = v147
 	var v149 int32
 	_ = v149
 	var v154 int32
@@ -543,10 +550,10 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 	_ = v180
 	var v183 int32
 	_ = v183
-	var v187 int32
-	_ = v187
-	var v189 int32
-	_ = v189
+	var v184 int32
+	_ = v184
+	var v188 int32
+	_ = v188
 	var v190 int32
 	_ = v190
 	var v194 int32
@@ -555,80 +562,82 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 	_ = v198
 	var v203 int32
 	_ = v203
-	v7 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+44))
-	if v8 == int32(42) {
-		v12 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+144))
-		if v13 != 0 {
-			v15 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[1]))
-			v19 = F_LWLockAcquire(m, v15+int32(_a_F_ProcKill_0), int32(0))
+	v6 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+44))
+	v8 = m.Env.Pgmem_getpid(m)
+	mBase = m.M
+	if v7 == v8 {
+		v11 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+144))
+		if v12 != 0 {
+			v14 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[1]))
+			v18 = F_LWLockAcquire(m, v14+int32(_a_F_ProcKill_0), int32(0))
 			mBase = m.M
-			v20 = m.ExcPending
-			if v20 != 0 {
+			v19 = m.ExcPending
+			if v19 != 0 {
 				return
 			} else {
-				v22 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-				v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+144))
-				if v23 != 0 {
-					v24 = *(*int32)(unsafe.Add(mBase, uint32(v22)+140))
-					*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v23
-					v26 = *(*int32)(unsafe.Add(mBase, uint32(v22)+140))
-					*(*int32)(unsafe.Add(mBase, uint32(v23))) = v26
-					*(*int64)(unsafe.Add(mBase, uint32(v22)+140)) = int64(0)
+				v21 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
+				v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+144))
+				if v22 != 0 {
+					v23 = *(*int32)(unsafe.Add(mBase, uint32(v21)+140))
+					*(*int32)(unsafe.Add(mBase, uint32(v23)+4)) = v22
+					v25 = *(*int32)(unsafe.Add(mBase, uint32(v21)+140))
+					*(*int32)(unsafe.Add(mBase, uint32(v22))) = v25
+					*(*int64)(unsafe.Add(mBase, uint32(v21)+140)) = int64(0)
 				} else {
 				}
-				v31 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[1]))
-				F_LWLockRelease(m, v31+int32(_a_F_ProcKill_0))
+				v30 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[1]))
+				F_LWLockRelease(m, v30+int32(_a_F_ProcKill_0))
 				mBase = m.M
-				v35 = m.ExcPending
-				if v35 != 0 {
+				v34 = m.ExcPending
+				if v34 != 0 {
 					return
 				} else {
 					F_LWLockReleaseAll(m)
 					mBase = m.M
-					v39 = m.ExcPending
-					if v39 != 0 {
+					v38 = m.ExcPending
+					if v38 != 0 {
 						return
 					} else {
 						F_ConditionVariableCancelSleep(m)
 						mBase = m.M
-						v41 = m.ExcPending
-						if v41 != 0 {
+						v40 = m.ExcPending
+						if v40 != 0 {
 							return
 						} else {
-							v43 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-							v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+616))
-							if v44 != 0 {
-								v46 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[1]))
-								v48 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
-								v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-								v52 = base.I32_div_s(v44-v49, int32(640))
-								v54 = base.I32_rem_s(v52, int32(16))
-								v59 = v46 + v54<<(uint(int32(7))%32) + int32(_a_F_ProcKill_1)
-								v61 = F_LWLockAcquire(m, v59, int32(0))
+							v42 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
+							v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+616))
+							if v43 != 0 {
+								v45 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[1]))
+								v47 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
+								v48 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
+								v51 = base.I32_div_s(v43-v48, int32(640))
+								v53 = base.I32_rem_s(v51, int32(16))
+								v58 = v45 + v53<<(uint(int32(7))%32) + int32(_a_F_ProcKill_1)
+								v60 = F_LWLockAcquire(m, v58, int32(0))
 								mBase = m.M
-								v62 = m.ExcPending
-								if v62 != 0 {
+								v61 = m.ExcPending
+								if v61 != 0 {
 									return
 								} else {
-									v64 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-									v65 = *(*int32)(unsafe.Add(mBase, uint32(v64)+628))
-									v66 = *(*int32)(unsafe.Add(mBase, uint32(v64)+632))
-									*(*int32)(unsafe.Add(mBase, uint32(v65)+4)) = v66
-									v68 = *(*int32)(unsafe.Add(mBase, uint32(v64)+628))
-									*(*int32)(unsafe.Add(mBase, uint32(v66))) = v68
-									v70 = *(*int32)(unsafe.Add(mBase, uint32(v44)+624))
-									if v70 != v44+int32(620) {
-										v75 = v70
+									v63 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
+									v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+628))
+									v65 = *(*int32)(unsafe.Add(mBase, uint32(v63)+632))
+									*(*int32)(unsafe.Add(mBase, uint32(v64)+4)) = v65
+									v67 = *(*int32)(unsafe.Add(mBase, uint32(v63)+628))
+									*(*int32)(unsafe.Add(mBase, uint32(v65))) = v67
+									v69 = *(*int32)(unsafe.Add(mBase, uint32(v43)+624))
+									if v69 != v43+int32(620) {
+										v74 = v69
 									} else {
-										v75 = int32(0)
+										v74 = int32(0)
 									}
-									if v75 == int32(0) {
-										*(*int32)(unsafe.Add(mBase, uint32(v44)+616)) = int32(0)
-										v81 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-										if v44 == v81 {
-											F_LWLockRelease(m, v59)
+									if v74 == int32(0) {
+										*(*int32)(unsafe.Add(mBase, uint32(v43)+616)) = int32(0)
+										v80 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
+										if v43 == v80 {
+											F_LWLockRelease(m, v58)
 											mBase = m.M
 											v117 = m.ExcPending
 											if v117 != 0 {
@@ -648,12 +657,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 													*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 													*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 													*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-													*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+													v140 = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 													v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 													v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-													v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-													*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-													if v145 != 0 {
+													v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+													if v147 != 0 {
 														v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 														F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 														mBase = m.M
@@ -683,20 +692,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 															v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 															*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 															v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-															*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-															v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-															if v187 != 0 {
-																v189 = F_kill(m, v187, int32(12))
+															v184 = int32(0)
+															atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+															v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+															if v188 != 0 {
+																v190 = F_pgmem_kill(m, v188, int32(12))
 																mBase = m.M
-																v190 = m.ExcPending
-																if v190 != 0 {
-																	return
-																} else {
-																	return
-																}
 															} else {
-																return
 															}
+															return
 														}
 													} else {
 														v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -721,50 +725,45 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 														v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 														*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 														v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-														*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-														v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-														if v187 != 0 {
-															v189 = F_kill(m, v187, int32(12))
+														v184 = int32(0)
+														atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+														v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+														if v188 != 0 {
+															v190 = F_pgmem_kill(m, v188, int32(12))
 															mBase = m.M
-															v190 = m.ExcPending
-															if v190 != 0 {
-																return
-															} else {
-																return
-															}
 														} else {
-															return
 														}
+														return
 													}
 												}
 											}
 										} else {
-											v83 = *(*int32)(unsafe.Add(mBase, uint32(v44)+8))
-											v85 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-											v86 = *(*int32)(unsafe.Add(mBase, uint32(v85)))
-											*(*int32)(unsafe.Add(mBase, uint32(v85))) = int32(1)
-											if v86 != 0 {
-												v90 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-												F_s_lock(m, v90, int32(_a_F_ProcKill_4), int32(975), int32(_a_F_ProcKill_5))
+											v82 = *(*int32)(unsafe.Add(mBase, uint32(v43)+8))
+											v84 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
+											v87 = base.AtomicRmwXchg32(m, v84, int32(0), int32(1))
+											if v87 != 0 {
+												v89 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
+												F_s_lock(m, v89, int32(_a_F_ProcKill_4), int32(975), int32(_a_F_ProcKill_5))
 												mBase = m.M
-												v95 = m.ExcPending
-												if v95 != 0 {
+												v94 = m.ExcPending
+												if v94 != 0 {
 													return
 												} else {
-													v96 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
-													if v96 == int32(0) {
-														*(*int32)(unsafe.Add(mBase, uint32(v83))) = v83
-														v100 = v83
+													v95 = *(*int32)(unsafe.Add(mBase, uint32(v82)+4))
+													if v95 == int32(0) {
+														*(*int32)(unsafe.Add(mBase, uint32(v82))) = v82
+														v99 = v82
 													} else {
-														v100 = v96
+														v99 = v95
 													}
-													*(*int32)(unsafe.Add(mBase, uint32(v44))) = v83
-													*(*int32)(unsafe.Add(mBase, uint32(v44)+4)) = v100
-													*(*int32)(unsafe.Add(mBase, uint32(v100))) = v44
-													*(*int32)(unsafe.Add(mBase, uint32(v83)+4)) = v44
-													v106 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-													*(*int32)(unsafe.Add(mBase, uint32(v106))) = int32(0)
-													F_LWLockRelease(m, v59)
+													*(*int32)(unsafe.Add(mBase, uint32(v43))) = v82
+													*(*int32)(unsafe.Add(mBase, uint32(v43)+4)) = v99
+													*(*int32)(unsafe.Add(mBase, uint32(v99))) = v43
+													*(*int32)(unsafe.Add(mBase, uint32(v82)+4)) = v43
+													v105 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
+													v106 = int32(0)
+													atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v105))), uint32(v106))
+													F_LWLockRelease(m, v58)
 													mBase = m.M
 													v117 = m.ExcPending
 													if v117 != 0 {
@@ -784,12 +783,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 															*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 															*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 															*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-															*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+															v140 = int32(0)
+															*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 															v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 															v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-															v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-															*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-															if v145 != 0 {
+															v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+															if v147 != 0 {
 																v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 																F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 																mBase = m.M
@@ -819,20 +818,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 																	v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 																	*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 																	v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-																	*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-																	v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-																	if v187 != 0 {
-																		v189 = F_kill(m, v187, int32(12))
+																	v184 = int32(0)
+																	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+																	v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+																	if v188 != 0 {
+																		v190 = F_pgmem_kill(m, v188, int32(12))
 																		mBase = m.M
-																		v190 = m.ExcPending
-																		if v190 != 0 {
-																			return
-																		} else {
-																			return
-																		}
 																	} else {
-																		return
 																	}
+																	return
 																}
 															} else {
 																v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -857,39 +851,35 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 																v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 																*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 																v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-																*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-																v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-																if v187 != 0 {
-																	v189 = F_kill(m, v187, int32(12))
+																v184 = int32(0)
+																atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+																v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+																if v188 != 0 {
+																	v190 = F_pgmem_kill(m, v188, int32(12))
 																	mBase = m.M
-																	v190 = m.ExcPending
-																	if v190 != 0 {
-																		return
-																	} else {
-																		return
-																	}
 																} else {
-																	return
 																}
+																return
 															}
 														}
 													}
 												}
 											} else {
-												v96 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
-												if v96 == int32(0) {
-													*(*int32)(unsafe.Add(mBase, uint32(v83))) = v83
-													v100 = v83
+												v95 = *(*int32)(unsafe.Add(mBase, uint32(v82)+4))
+												if v95 == int32(0) {
+													*(*int32)(unsafe.Add(mBase, uint32(v82))) = v82
+													v99 = v82
 												} else {
-													v100 = v96
+													v99 = v95
 												}
-												*(*int32)(unsafe.Add(mBase, uint32(v44))) = v83
-												*(*int32)(unsafe.Add(mBase, uint32(v44)+4)) = v100
-												*(*int32)(unsafe.Add(mBase, uint32(v100))) = v44
-												*(*int32)(unsafe.Add(mBase, uint32(v83)+4)) = v44
-												v106 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-												*(*int32)(unsafe.Add(mBase, uint32(v106))) = int32(0)
-												F_LWLockRelease(m, v59)
+												*(*int32)(unsafe.Add(mBase, uint32(v43))) = v82
+												*(*int32)(unsafe.Add(mBase, uint32(v43)+4)) = v99
+												*(*int32)(unsafe.Add(mBase, uint32(v99))) = v43
+												*(*int32)(unsafe.Add(mBase, uint32(v82)+4)) = v43
+												v105 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
+												v106 = int32(0)
+												atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v105))), uint32(v106))
+												F_LWLockRelease(m, v58)
 												mBase = m.M
 												v117 = m.ExcPending
 												if v117 != 0 {
@@ -909,12 +899,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 														*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 														*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 														*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-														*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+														v140 = int32(0)
+														*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 														v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 														v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-														v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-														*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-														if v145 != 0 {
+														v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+														if v147 != 0 {
 															v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 															F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 															mBase = m.M
@@ -944,20 +934,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 																v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 																*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 																v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-																*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-																v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-																if v187 != 0 {
-																	v189 = F_kill(m, v187, int32(12))
+																v184 = int32(0)
+																atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+																v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+																if v188 != 0 {
+																	v190 = F_pgmem_kill(m, v188, int32(12))
 																	mBase = m.M
-																	v190 = m.ExcPending
-																	if v190 != 0 {
-																		return
-																	} else {
-																		return
-																	}
 																} else {
-																	return
 																}
+																return
 															}
 														} else {
 															v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -982,20 +967,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 															v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 															*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 															v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-															*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-															v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-															if v187 != 0 {
-																v189 = F_kill(m, v187, int32(12))
+															v184 = int32(0)
+															atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+															v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+															if v188 != 0 {
+																v190 = F_pgmem_kill(m, v188, int32(12))
 																mBase = m.M
-																v190 = m.ExcPending
-																if v190 != 0 {
-																	return
-																} else {
-																	return
-																}
 															} else {
-																return
 															}
+															return
 														}
 													}
 												}
@@ -1003,11 +983,11 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 										}
 									} else {
 										v110 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-										if v44 == v110 {
+										if v43 == v110 {
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v110)+616)) = int32(0)
 										}
-										F_LWLockRelease(m, v59)
+										F_LWLockRelease(m, v58)
 										mBase = m.M
 										v117 = m.ExcPending
 										if v117 != 0 {
@@ -1027,12 +1007,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 												*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 												*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 												*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-												*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+												v140 = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 												v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 												v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-												v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-												*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-												if v145 != 0 {
+												v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+												if v147 != 0 {
 													v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 													F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 													mBase = m.M
@@ -1062,20 +1042,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 														v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 														*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 														v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-														*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-														v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-														if v187 != 0 {
-															v189 = F_kill(m, v187, int32(12))
+														v184 = int32(0)
+														atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+														v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+														if v188 != 0 {
+															v190 = F_pgmem_kill(m, v188, int32(12))
 															mBase = m.M
-															v190 = m.ExcPending
-															if v190 != 0 {
-																return
-															} else {
-																return
-															}
 														} else {
-															return
 														}
+														return
 													}
 												} else {
 													v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -1100,20 +1075,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 													v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 													*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 													v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-													*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-													v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-													if v187 != 0 {
-														v189 = F_kill(m, v187, int32(12))
+													v184 = int32(0)
+													atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+													v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+													if v188 != 0 {
+														v190 = F_pgmem_kill(m, v188, int32(12))
 														mBase = m.M
-														v190 = m.ExcPending
-														if v190 != 0 {
-															return
-														} else {
-															return
-														}
 													} else {
-														return
 													}
+													return
 												}
 											}
 										}
@@ -1134,12 +1104,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 									*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 									*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 									*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-									*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+									v140 = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 									v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 									v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-									v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-									*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-									if v145 != 0 {
+									v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+									if v147 != 0 {
 										v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 										F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 										mBase = m.M
@@ -1169,20 +1139,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 											v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 											*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 											v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-											*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-											v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-											if v187 != 0 {
-												v189 = F_kill(m, v187, int32(12))
+											v184 = int32(0)
+											atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+											v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+											if v188 != 0 {
+												v190 = F_pgmem_kill(m, v188, int32(12))
 												mBase = m.M
-												v190 = m.ExcPending
-												if v190 != 0 {
-													return
-												} else {
-													return
-												}
 											} else {
-												return
 											}
+											return
 										}
 									} else {
 										v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -1207,20 +1172,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 										v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 										*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 										v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-										*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-										v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-										if v187 != 0 {
-											v189 = F_kill(m, v187, int32(12))
+										v184 = int32(0)
+										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+										v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+										if v188 != 0 {
+											v190 = F_pgmem_kill(m, v188, int32(12))
 											mBase = m.M
-											v190 = m.ExcPending
-											if v190 != 0 {
-												return
-											} else {
-												return
-											}
 										} else {
-											return
 										}
+										return
 									}
 								}
 							}
@@ -1231,48 +1191,48 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 		} else {
 			F_LWLockReleaseAll(m)
 			mBase = m.M
-			v39 = m.ExcPending
-			if v39 != 0 {
+			v38 = m.ExcPending
+			if v38 != 0 {
 				return
 			} else {
 				F_ConditionVariableCancelSleep(m)
 				mBase = m.M
-				v41 = m.ExcPending
-				if v41 != 0 {
+				v40 = m.ExcPending
+				if v40 != 0 {
 					return
 				} else {
-					v43 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-					v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+616))
-					if v44 != 0 {
-						v46 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[1]))
-						v48 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
-						v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-						v52 = base.I32_div_s(v44-v49, int32(640))
-						v54 = base.I32_rem_s(v52, int32(16))
-						v59 = v46 + v54<<(uint(int32(7))%32) + int32(_a_F_ProcKill_1)
-						v61 = F_LWLockAcquire(m, v59, int32(0))
+					v42 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
+					v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+616))
+					if v43 != 0 {
+						v45 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[1]))
+						v47 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
+						v48 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
+						v51 = base.I32_div_s(v43-v48, int32(640))
+						v53 = base.I32_rem_s(v51, int32(16))
+						v58 = v45 + v53<<(uint(int32(7))%32) + int32(_a_F_ProcKill_1)
+						v60 = F_LWLockAcquire(m, v58, int32(0))
 						mBase = m.M
-						v62 = m.ExcPending
-						if v62 != 0 {
+						v61 = m.ExcPending
+						if v61 != 0 {
 							return
 						} else {
-							v64 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-							v65 = *(*int32)(unsafe.Add(mBase, uint32(v64)+628))
-							v66 = *(*int32)(unsafe.Add(mBase, uint32(v64)+632))
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+4)) = v66
-							v68 = *(*int32)(unsafe.Add(mBase, uint32(v64)+628))
-							*(*int32)(unsafe.Add(mBase, uint32(v66))) = v68
-							v70 = *(*int32)(unsafe.Add(mBase, uint32(v44)+624))
-							if v70 != v44+int32(620) {
-								v75 = v70
+							v63 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
+							v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+628))
+							v65 = *(*int32)(unsafe.Add(mBase, uint32(v63)+632))
+							*(*int32)(unsafe.Add(mBase, uint32(v64)+4)) = v65
+							v67 = *(*int32)(unsafe.Add(mBase, uint32(v63)+628))
+							*(*int32)(unsafe.Add(mBase, uint32(v65))) = v67
+							v69 = *(*int32)(unsafe.Add(mBase, uint32(v43)+624))
+							if v69 != v43+int32(620) {
+								v74 = v69
 							} else {
-								v75 = int32(0)
+								v74 = int32(0)
 							}
-							if v75 == int32(0) {
-								*(*int32)(unsafe.Add(mBase, uint32(v44)+616)) = int32(0)
-								v81 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-								if v44 == v81 {
-									F_LWLockRelease(m, v59)
+							if v74 == int32(0) {
+								*(*int32)(unsafe.Add(mBase, uint32(v43)+616)) = int32(0)
+								v80 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
+								if v43 == v80 {
+									F_LWLockRelease(m, v58)
 									mBase = m.M
 									v117 = m.ExcPending
 									if v117 != 0 {
@@ -1292,12 +1252,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 											*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 											*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 											*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-											*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+											v140 = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 											v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 											v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-											v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-											*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-											if v145 != 0 {
+											v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+											if v147 != 0 {
 												v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 												F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 												mBase = m.M
@@ -1327,20 +1287,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 													v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 													*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 													v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-													*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-													v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-													if v187 != 0 {
-														v189 = F_kill(m, v187, int32(12))
+													v184 = int32(0)
+													atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+													v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+													if v188 != 0 {
+														v190 = F_pgmem_kill(m, v188, int32(12))
 														mBase = m.M
-														v190 = m.ExcPending
-														if v190 != 0 {
-															return
-														} else {
-															return
-														}
 													} else {
-														return
 													}
+													return
 												}
 											} else {
 												v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -1365,50 +1320,45 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 												v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 												*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 												v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-												*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-												v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-												if v187 != 0 {
-													v189 = F_kill(m, v187, int32(12))
+												v184 = int32(0)
+												atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+												v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+												if v188 != 0 {
+													v190 = F_pgmem_kill(m, v188, int32(12))
 													mBase = m.M
-													v190 = m.ExcPending
-													if v190 != 0 {
-														return
-													} else {
-														return
-													}
 												} else {
-													return
 												}
+												return
 											}
 										}
 									}
 								} else {
-									v83 = *(*int32)(unsafe.Add(mBase, uint32(v44)+8))
-									v85 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-									v86 = *(*int32)(unsafe.Add(mBase, uint32(v85)))
-									*(*int32)(unsafe.Add(mBase, uint32(v85))) = int32(1)
-									if v86 != 0 {
-										v90 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-										F_s_lock(m, v90, int32(_a_F_ProcKill_4), int32(975), int32(_a_F_ProcKill_5))
+									v82 = *(*int32)(unsafe.Add(mBase, uint32(v43)+8))
+									v84 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
+									v87 = base.AtomicRmwXchg32(m, v84, int32(0), int32(1))
+									if v87 != 0 {
+										v89 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
+										F_s_lock(m, v89, int32(_a_F_ProcKill_4), int32(975), int32(_a_F_ProcKill_5))
 										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
+										v94 = m.ExcPending
+										if v94 != 0 {
 											return
 										} else {
-											v96 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
-											if v96 == int32(0) {
-												*(*int32)(unsafe.Add(mBase, uint32(v83))) = v83
-												v100 = v83
+											v95 = *(*int32)(unsafe.Add(mBase, uint32(v82)+4))
+											if v95 == int32(0) {
+												*(*int32)(unsafe.Add(mBase, uint32(v82))) = v82
+												v99 = v82
 											} else {
-												v100 = v96
+												v99 = v95
 											}
-											*(*int32)(unsafe.Add(mBase, uint32(v44))) = v83
-											*(*int32)(unsafe.Add(mBase, uint32(v44)+4)) = v100
-											*(*int32)(unsafe.Add(mBase, uint32(v100))) = v44
-											*(*int32)(unsafe.Add(mBase, uint32(v83)+4)) = v44
-											v106 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-											*(*int32)(unsafe.Add(mBase, uint32(v106))) = int32(0)
-											F_LWLockRelease(m, v59)
+											*(*int32)(unsafe.Add(mBase, uint32(v43))) = v82
+											*(*int32)(unsafe.Add(mBase, uint32(v43)+4)) = v99
+											*(*int32)(unsafe.Add(mBase, uint32(v99))) = v43
+											*(*int32)(unsafe.Add(mBase, uint32(v82)+4)) = v43
+											v105 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
+											v106 = int32(0)
+											atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v105))), uint32(v106))
+											F_LWLockRelease(m, v58)
 											mBase = m.M
 											v117 = m.ExcPending
 											if v117 != 0 {
@@ -1428,12 +1378,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 													*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 													*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 													*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-													*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+													v140 = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 													v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 													v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-													v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-													*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-													if v145 != 0 {
+													v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+													if v147 != 0 {
 														v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 														F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 														mBase = m.M
@@ -1463,20 +1413,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 															v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 															*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 															v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-															*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-															v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-															if v187 != 0 {
-																v189 = F_kill(m, v187, int32(12))
+															v184 = int32(0)
+															atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+															v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+															if v188 != 0 {
+																v190 = F_pgmem_kill(m, v188, int32(12))
 																mBase = m.M
-																v190 = m.ExcPending
-																if v190 != 0 {
-																	return
-																} else {
-																	return
-																}
 															} else {
-																return
 															}
+															return
 														}
 													} else {
 														v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -1501,39 +1446,35 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 														v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 														*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 														v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-														*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-														v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-														if v187 != 0 {
-															v189 = F_kill(m, v187, int32(12))
+														v184 = int32(0)
+														atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+														v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+														if v188 != 0 {
+															v190 = F_pgmem_kill(m, v188, int32(12))
 															mBase = m.M
-															v190 = m.ExcPending
-															if v190 != 0 {
-																return
-															} else {
-																return
-															}
 														} else {
-															return
 														}
+														return
 													}
 												}
 											}
 										}
 									} else {
-										v96 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
-										if v96 == int32(0) {
-											*(*int32)(unsafe.Add(mBase, uint32(v83))) = v83
-											v100 = v83
+										v95 = *(*int32)(unsafe.Add(mBase, uint32(v82)+4))
+										if v95 == int32(0) {
+											*(*int32)(unsafe.Add(mBase, uint32(v82))) = v82
+											v99 = v82
 										} else {
-											v100 = v96
+											v99 = v95
 										}
-										*(*int32)(unsafe.Add(mBase, uint32(v44))) = v83
-										*(*int32)(unsafe.Add(mBase, uint32(v44)+4)) = v100
-										*(*int32)(unsafe.Add(mBase, uint32(v100))) = v44
-										*(*int32)(unsafe.Add(mBase, uint32(v83)+4)) = v44
-										v106 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-										*(*int32)(unsafe.Add(mBase, uint32(v106))) = int32(0)
-										F_LWLockRelease(m, v59)
+										*(*int32)(unsafe.Add(mBase, uint32(v43))) = v82
+										*(*int32)(unsafe.Add(mBase, uint32(v43)+4)) = v99
+										*(*int32)(unsafe.Add(mBase, uint32(v99))) = v43
+										*(*int32)(unsafe.Add(mBase, uint32(v82)+4)) = v43
+										v105 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
+										v106 = int32(0)
+										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v105))), uint32(v106))
+										F_LWLockRelease(m, v58)
 										mBase = m.M
 										v117 = m.ExcPending
 										if v117 != 0 {
@@ -1553,12 +1494,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 												*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 												*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 												*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-												*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+												v140 = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 												v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 												v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-												v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-												*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-												if v145 != 0 {
+												v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+												if v147 != 0 {
 													v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 													F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 													mBase = m.M
@@ -1588,20 +1529,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 														v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 														*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 														v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-														*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-														v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-														if v187 != 0 {
-															v189 = F_kill(m, v187, int32(12))
+														v184 = int32(0)
+														atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+														v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+														if v188 != 0 {
+															v190 = F_pgmem_kill(m, v188, int32(12))
 															mBase = m.M
-															v190 = m.ExcPending
-															if v190 != 0 {
-																return
-															} else {
-																return
-															}
 														} else {
-															return
 														}
+														return
 													}
 												} else {
 													v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -1626,20 +1562,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 													v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 													*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 													v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-													*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-													v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-													if v187 != 0 {
-														v189 = F_kill(m, v187, int32(12))
+													v184 = int32(0)
+													atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+													v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+													if v188 != 0 {
+														v190 = F_pgmem_kill(m, v188, int32(12))
 														mBase = m.M
-														v190 = m.ExcPending
-														if v190 != 0 {
-															return
-														} else {
-															return
-														}
 													} else {
-														return
 													}
+													return
 												}
 											}
 										}
@@ -1647,11 +1578,11 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 								}
 							} else {
 								v110 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0]))
-								if v44 == v110 {
+								if v43 == v110 {
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v110)+616)) = int32(0)
 								}
-								F_LWLockRelease(m, v59)
+								F_LWLockRelease(m, v58)
 								mBase = m.M
 								v117 = m.ExcPending
 								if v117 != 0 {
@@ -1671,12 +1602,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 										*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 										*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 										*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-										*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+										v140 = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 										v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 										v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-										v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-										*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-										if v145 != 0 {
+										v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+										if v147 != 0 {
 											v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 											F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 											mBase = m.M
@@ -1706,20 +1637,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 												v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 												*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 												v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-												*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-												v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-												if v187 != 0 {
-													v189 = F_kill(m, v187, int32(12))
+												v184 = int32(0)
+												atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+												v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+												if v188 != 0 {
+													v190 = F_pgmem_kill(m, v188, int32(12))
 													mBase = m.M
-													v190 = m.ExcPending
-													if v190 != 0 {
-														return
-													} else {
-														return
-													}
 												} else {
-													return
 												}
+												return
 											}
 										} else {
 											v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -1744,20 +1670,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 											v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 											*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 											v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-											*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-											v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-											if v187 != 0 {
-												v189 = F_kill(m, v187, int32(12))
+											v184 = int32(0)
+											atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+											v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+											if v188 != 0 {
+												v190 = F_pgmem_kill(m, v188, int32(12))
 												mBase = m.M
-												v190 = m.ExcPending
-												if v190 != 0 {
-													return
-												} else {
-													return
-												}
 											} else {
-												return
 											}
+											return
 										}
 									}
 								}
@@ -1778,12 +1699,12 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 							*(*int32)(unsafe.Add(mBase, _c_F_ProcKill[0])) = v132
 							*(*int32)(unsafe.Add(mBase, uint32(v130+int32(20))+12)) = v132
 							*(*int64)(unsafe.Add(mBase, uint32(v130)+52)) = int64(4294967295)
-							*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = int32(0)
+							v140 = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v130)+44)) = v140
 							v142 = *(*int32)(unsafe.Add(mBase, uint32(v130)+8))
 							v144 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-							v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-							*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
-							if v145 != 0 {
+							v147 = base.AtomicRmwXchg32(m, v144, v140, int32(1))
+							if v147 != 0 {
 								v149 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
 								F_s_lock(m, v149, int32(_a_F_ProcKill_4), int32(1008), int32(_a_F_ProcKill_5))
 								mBase = m.M
@@ -1813,20 +1734,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 									v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 									*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 									v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-									*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-									v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-									if v187 != 0 {
-										v189 = F_kill(m, v187, int32(12))
+									v184 = int32(0)
+									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+									v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+									if v188 != 0 {
+										v190 = F_pgmem_kill(m, v188, int32(12))
 										mBase = m.M
-										v190 = m.ExcPending
-										if v190 != 0 {
-											return
-										} else {
-											return
-										}
 									} else {
-										return
 									}
+									return
 								}
 							} else {
 								v155 = *(*int32)(unsafe.Add(mBase, uint32(v130)+616))
@@ -1851,20 +1767,15 @@ func F_ProcKill(m *base.Module, l0 int32, l1 int32) {
 								v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[2]))
 								*(*int32)(unsafe.Add(mBase, uint32(v180)+68)) = v178
 								v183 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[5]))
-								*(*int32)(unsafe.Add(mBase, uint32(v183))) = int32(0)
-								v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
-								if v187 != 0 {
-									v189 = F_kill(m, v187, int32(12))
+								v184 = int32(0)
+								atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v183))), uint32(v184))
+								v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcKill[7]))
+								if v188 != 0 {
+									v190 = F_pgmem_kill(m, v188, int32(12))
 									mBase = m.M
-									v190 = m.ExcPending
-									if v190 != 0 {
-										return
-									} else {
-										return
-									}
 								} else {
-									return
 								}
+								return
 							}
 						}
 					}

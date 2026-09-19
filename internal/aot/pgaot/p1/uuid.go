@@ -302,7 +302,7 @@ func F_uuid_generate_v3(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14015(m, l0, int32(3))
+	v3 = Fn14037(m, l0, int32(3))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -315,7 +315,7 @@ func F_uuid_generate_v5(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14015(m, l0, int32(5))
+	v3 = Fn14037(m, l0, int32(5))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -436,7 +436,7 @@ func F_uuid_ns_dns(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14016(m, l0, int32(_a_F_uuid_ns_dns_0), int32(_a_F_uuid_ns_dns_1), int32(_a_F_uuid_ns_dns_2), int32(_a_F_uuid_ns_dns_3), int32(_a_F_uuid_ns_dns_4))
+	v7 = Fn14038(m, l0, int32(_a_F_uuid_ns_dns_0), int32(_a_F_uuid_ns_dns_1), int32(_a_F_uuid_ns_dns_2), int32(_a_F_uuid_ns_dns_3), int32(_a_F_uuid_ns_dns_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -449,7 +449,7 @@ func F_uuid_ns_url(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14016(m, l0, int32(_a_F_uuid_ns_url_0), int32(_a_F_uuid_ns_url_1), int32(_a_F_uuid_ns_url_2), int32(_a_F_uuid_ns_url_3), int32(_a_F_uuid_ns_url_4))
+	v7 = Fn14038(m, l0, int32(_a_F_uuid_ns_url_0), int32(_a_F_uuid_ns_url_1), int32(_a_F_uuid_ns_url_2), int32(_a_F_uuid_ns_url_3), int32(_a_F_uuid_ns_url_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

@@ -3085,7 +3085,7 @@ func F_jsonb_int2(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13934(m, l0, int32(_a_F_jsonb_int2_0), int32(1317))
+	v4 = Fn13956(m, l0, int32(_a_F_jsonb_int2_0), int32(1317))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -3098,7 +3098,7 @@ func F_jsonb_int8(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13934(m, l0, int32(_a_F_jsonb_int8_0), int32(1261))
+	v4 = Fn13956(m, l0, int32(_a_F_jsonb_int8_0), int32(1261))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

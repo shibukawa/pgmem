@@ -90,7 +90,7 @@ func F_OutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 func F_offsethash_grow(m *base.Module, l0 int32, l1 int64) {
 	var v5 int32
 	_ = v5
-	Fn13973(m, l0, l1, int32(_a_F_offsethash_grow_0))
+	Fn13995(m, l0, l1, int32(_a_F_offsethash_grow_0))
 	v5 = m.ExcPending
 	if v5 != 0 {
 		return
@@ -156,7 +156,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13953(m, l0, int32(1498), int32(1497))
+	v4 = Fn13975(m, l0, int32(1498), int32(1497))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

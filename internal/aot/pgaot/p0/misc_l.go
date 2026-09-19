@@ -3,6 +3,7 @@ package p0
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 	"math"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -2521,7 +2522,7 @@ func F__ltq_regex(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13843(m, l0, int32(_a_F__ltq_regex_0))
+	v3 = Fn13865(m, l0, int32(_a_F__ltq_regex_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -2914,7 +2915,7 @@ func F_lappend(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13937(m, l0, l1, int64(4294967297))
+	v4 = Fn13959(m, l0, l1, int64(4294967297))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2927,7 +2928,7 @@ func F_lappend_xid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13937(m, l0, l1, int64(4294967769))
+	v4 = Fn13959(m, l0, l1, int64(4294967769))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2974,7 +2975,7 @@ func F_latin2_to_mic(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13935(m, l0, int32(9), int32(130))
+	v4 = Fn13957(m, l0, int32(9), int32(130))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -6582,8 +6583,8 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 	_ = v233
 	var v240 int32
 	_ = v240
-	var v241 int32
-	_ = v241
+	var v243 int32
+	_ = v243
 	var v245 int32
 	_ = v245
 	var v250 int32
@@ -6594,46 +6595,48 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 	_ = v257
 	var v258 int32
 	_ = v258
-	var v267 int32
-	_ = v267
-	var v274 int32
-	_ = v274
-	var v278 int32
-	_ = v278
-	var v283 int32
-	_ = v283
-	var v285 int32
-	_ = v285
-	var v289 int32
-	_ = v289
-	var v292 int32
-	_ = v292
-	var v296 int32
-	_ = v296
-	var v303 int32
-	_ = v303
-	var v308 int32
-	_ = v308
-	var v312 int32
-	_ = v312
-	var v316 int32
-	_ = v316
-	var v321 int32
-	_ = v321
-	var v325 int32
-	_ = v325
+	var v262 int32
+	_ = v262
+	var v268 int32
+	_ = v268
+	var v275 int32
+	_ = v275
+	var v279 int32
+	_ = v279
+	var v284 int32
+	_ = v284
+	var v286 int32
+	_ = v286
+	var v290 int32
+	_ = v290
+	var v293 int32
+	_ = v293
+	var v297 int32
+	_ = v297
+	var v304 int32
+	_ = v304
+	var v309 int32
+	_ = v309
+	var v313 int32
+	_ = v313
+	var v317 int32
+	_ = v317
+	var v322 int32
+	_ = v322
 	var v326 int32
 	_ = v326
-	var v328 int32
-	_ = v328
-	var v329 int64
+	var v327 int32
+	_ = v327
+	var v329 int32
 	_ = v329
-	var v330 int32
+	var v330 int64
 	_ = v330
-	var v338 int32
-	_ = v338
-	var v343 int32
-	_ = v343
+	var v331 int32
+	_ = v331
+	var v339 int32
+	_ = v339
+	var v344 int32
+	_ = v344
 	v13 = m.G0
 	v15 = v13 - int32(80)
 	m.G0 = v15
@@ -6673,39 +6676,39 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 						if v52 == int32(0) {
 							F_LWLockRelease(m, v40)
 							mBase = m.M
-							v285 = m.ExcPending
-							if v285 != 0 {
+							v286 = m.ExcPending
+							if v286 != 0 {
 								return
 							} else {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v289 = m.ExcPending
-								if v289 != 0 {
+								v290 = m.ExcPending
+								if v290 != 0 {
 									return
 								} else {
 									F_errcode(m, int32(_a_F_lock_twophase_recover_1))
 									mBase = m.M
-									v292 = m.ExcPending
-									if v292 != 0 {
+									v293 = m.ExcPending
+									if v293 != 0 {
 										return
 									} else {
 										F_errmsg(m, int32(_a_F_lock_twophase_recover_2), int32(0))
 										mBase = m.M
-										v296 = m.ExcPending
-										if v296 != 0 {
+										v297 = m.ExcPending
+										if v297 != 0 {
 											return
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = int32(_a_F_lock_twophase_recover_3)
 											F_errhint(m, int32(_a_F_lock_twophase_recover_4), v15+int32(16))
 											mBase = m.M
-											v303 = m.ExcPending
-											if v303 != 0 {
+											v304 = m.ExcPending
+											if v304 != 0 {
 												return
 											} else {
 												F_errfinish(m, int32(_a_F_lock_twophase_recover_5), int32(_a_F_lock_twophase_recover_6), int32(_a_F_lock_twophase_recover_7))
 												mBase = m.M
-												v308 = m.ExcPending
-												if v308 != 0 {
+												v309 = m.ExcPending
+												if v309 != 0 {
 													return
 												} else {
 													base.Wasm_trap_unreachable()
@@ -6766,20 +6769,20 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 											if v119 == int32(0) {
 												F_errstart_cold(m, int32(23), int32(0))
 												mBase = m.M
-												v312 = m.ExcPending
-												if v312 != 0 {
+												v313 = m.ExcPending
+												if v313 != 0 {
 													return
 												} else {
 													F_errmsg_internal(m, int32(_a_F_lock_twophase_recover_8), int32(0))
 													mBase = m.M
-													v316 = m.ExcPending
-													if v316 != 0 {
+													v317 = m.ExcPending
+													if v317 != 0 {
 														return
 													} else {
 														F_errfinish(m, int32(_a_F_lock_twophase_recover_5), int32(_a_F_lock_twophase_recover_9), int32(_a_F_lock_twophase_recover_7))
 														mBase = m.M
-														v321 = m.ExcPending
-														if v321 != 0 {
+														v322 = m.ExcPending
+														if v322 != 0 {
 															return
 														} else {
 															base.Wasm_trap_unreachable()
@@ -6932,27 +6935,27 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 									if v202&v203 != 0 {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v325 = m.ExcPending
-										if v325 != 0 {
+										v326 = m.ExcPending
+										if v326 != 0 {
 											return
 										} else {
-											v326 = *(*int32)(unsafe.Add(mBase, uint32(v46)+8))
-											v328 = *(*int32)(unsafe.Add(mBase, uint32(v326+v193)))
-											v329 = *(*int64)(unsafe.Add(mBase, uint32(v52)))
-											v330 = *(*int32)(unsafe.Add(mBase, uint32(v52)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v15)+60)) = v330
-											*(*int64)(unsafe.Add(mBase, uint32(v15)+52)) = v329
-											*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v328
+											v327 = *(*int32)(unsafe.Add(mBase, uint32(v46)+8))
+											v329 = *(*int32)(unsafe.Add(mBase, uint32(v327+v193)))
+											v330 = *(*int64)(unsafe.Add(mBase, uint32(v52)))
+											v331 = *(*int32)(unsafe.Add(mBase, uint32(v52)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v15)+60)) = v331
+											*(*int64)(unsafe.Add(mBase, uint32(v15)+52)) = v330
+											*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v329
 											F_errmsg_internal(m, int32(_a_F_lock_twophase_recover_11), v15+int32(48))
 											mBase = m.M
-											v338 = m.ExcPending
-											if v338 != 0 {
+											v339 = m.ExcPending
+											if v339 != 0 {
 												return
 											} else {
 												F_errfinish(m, int32(_a_F_lock_twophase_recover_5), int32(_a_F_lock_twophase_recover_12), int32(_a_F_lock_twophase_recover_7))
 												mBase = m.M
-												v343 = m.ExcPending
-												if v343 != 0 {
+												v344 = m.ExcPending
+												if v344 != 0 {
 													return
 												} else {
 													base.Wasm_trap_unreachable()
@@ -6983,8 +6986,8 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 										if v229 != int32(1) {
 											F_LWLockRelease(m, v40)
 											mBase = m.M
-											v267 = m.ExcPending
-											if v267 != 0 {
+											v268 = m.ExcPending
+											if v268 != 0 {
 												return
 											} else {
 												m.G0 = v15 + int32(80)
@@ -6995,8 +6998,8 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 											if v232 != 0 {
 												F_LWLockRelease(m, v40)
 												mBase = m.M
-												v267 = m.ExcPending
-												if v267 != 0 {
+												v268 = m.ExcPending
+												if v268 != 0 {
 													return
 												} else {
 													m.G0 = v15 + int32(80)
@@ -7007,8 +7010,8 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 												if base.B2i32(v233 == int32(0))|base.B2i32(v27 < int32(5)) != 0 {
 													F_LWLockRelease(m, v40)
 													mBase = m.M
-													v267 = m.ExcPending
-													if v267 != 0 {
+													v268 = m.ExcPending
+													if v268 != 0 {
 														return
 													} else {
 														m.G0 = v15 + int32(80)
@@ -7016,9 +7019,8 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 													}
 												} else {
 													v240 = *(*int32)(unsafe.Add(mBase, _c_F_lock_twophase_recover[4]))
-													v241 = *(*int32)(unsafe.Add(mBase, uint32(v240)))
-													*(*int32)(unsafe.Add(mBase, uint32(v240))) = int32(1)
-													if v241 != 0 {
+													v243 = base.AtomicRmwXchg32(m, v240, int32(0), int32(1))
+													if v243 != 0 {
 														v245 = *(*int32)(unsafe.Add(mBase, _c_F_lock_twophase_recover[4]))
 														F_s_lock(m, v245, int32(_a_F_lock_twophase_recover_5), int32(_a_F_lock_twophase_recover_13), int32(_a_F_lock_twophase_recover_7))
 														mBase = m.M
@@ -7030,11 +7032,12 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 															v257 = v252 + v30&int32(1023)<<(uint(int32(2))%32)
 															v258 = *(*int32)(unsafe.Add(mBase, uint32(v257)+4))
 															*(*int32)(unsafe.Add(mBase, uint32(v257)+4)) = v258 + int32(1)
-															*(*int32)(unsafe.Add(mBase, uint32(v252))) = int32(0)
+															v262 = int32(0)
+															atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v252))), uint32(v262))
 															F_LWLockRelease(m, v40)
 															mBase = m.M
-															v267 = m.ExcPending
-															if v267 != 0 {
+															v268 = m.ExcPending
+															if v268 != 0 {
 																return
 															} else {
 																m.G0 = v15 + int32(80)
@@ -7046,11 +7049,12 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 														v257 = v252 + v30&int32(1023)<<(uint(int32(2))%32)
 														v258 = *(*int32)(unsafe.Add(mBase, uint32(v257)+4))
 														*(*int32)(unsafe.Add(mBase, uint32(v257)+4)) = v258 + int32(1)
-														*(*int32)(unsafe.Add(mBase, uint32(v252))) = int32(0)
+														v262 = int32(0)
+														atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v252))), uint32(v262))
 														F_LWLockRelease(m, v40)
 														mBase = m.M
-														v267 = m.ExcPending
-														if v267 != 0 {
+														v268 = m.ExcPending
+														if v268 != 0 {
 															return
 														} else {
 															m.G0 = v15 + int32(80)
@@ -7070,21 +7074,21 @@ func F_lock_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v274 = m.ExcPending
-			if v274 != 0 {
+			v275 = m.ExcPending
+			if v275 != 0 {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v15))) = v20
 				F_errmsg_internal(m, int32(_a_F_lock_twophase_recover_14), v15)
 				mBase = m.M
-				v278 = m.ExcPending
-				if v278 != 0 {
+				v279 = m.ExcPending
+				if v279 != 0 {
 					return
 				} else {
 					F_errfinish(m, int32(_a_F_lock_twophase_recover_5), int32(_a_F_lock_twophase_recover_15), int32(_a_F_lock_twophase_recover_7))
 					mBase = m.M
-					v283 = m.ExcPending
-					if v283 != 0 {
+					v284 = m.ExcPending
+					if v284 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()

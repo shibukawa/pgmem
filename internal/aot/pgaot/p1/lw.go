@@ -301,32 +301,34 @@ L31:
 func F_LWLockReleaseClearVar(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
+	var v5 int64
 	_ = v5
 	var v6 int32
 	_ = v6
-	var v8 int32
-	_ = v8
+	var v7 int32
+	_ = v7
 	var v9 int32
 	_ = v9
-	var v11 int32
-	_ = v11
-	*(*int64)(unsafe.Add(mBase, uint32(l1))) = int64(0)
-	v5 = F_LWLockDisownInternal(m, l0)
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	v5 = base.AtomicRmwXchg64(m, l1, int32(0), int64(0))
+	v6 = F_LWLockDisownInternal(m, l0)
 	mBase = m.M
-	v6 = m.ExcPending
-	if v6 != 0 {
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return
 	} else {
-		F_LWLockReleaseInternal(m, l0, v5)
+		F_LWLockReleaseInternal(m, l0, v6)
 		mBase = m.M
-		v8 = m.ExcPending
-		if v8 != 0 {
+		v9 = m.ExcPending
+		if v9 != 0 {
 			return
 		} else {
-			v9 = int32(_a_F_LWLockReleaseClearVar_0)
-			v11 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockReleaseClearVar[0]))
-			*(*int32)(unsafe.Add(mBase, _c_F_LWLockReleaseClearVar[0])) = v11 - int32(1)
+			v10 = int32(_a_F_LWLockReleaseClearVar_0)
+			v12 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockReleaseClearVar[0]))
+			*(*int32)(unsafe.Add(mBase, _c_F_LWLockReleaseClearVar[0])) = v12 - int32(1)
 			return
 		}
 	}

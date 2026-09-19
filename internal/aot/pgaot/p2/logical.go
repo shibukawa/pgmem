@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -497,184 +498,189 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 	_ = v1
 	var v2 int64
 	_ = v2
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v22 int32
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v21 int32
+	_ = v21
+	var v22 int64
 	_ = v22
-	var v23 int64
-	_ = v23
+	var v24 int32
+	_ = v24
 	var v27 int64
 	_ = v27
-	var v34 int32
-	_ = v34
-	var v35 int64
+	var v31 int32
+	_ = v31
+	var v35 int32
 	_ = v35
-	var v40 int32
-	_ = v40
-	var v44 int32
-	_ = v44
-	var v45 int32
-	_ = v45
-	var v49 int64
-	_ = v49
-	var v50 int64
-	_ = v50
-	var v54 int64
-	_ = v54
-	var v58 int32
-	_ = v58
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
+	var v36 int64
+	_ = v36
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v51 int64
+	_ = v51
+	var v52 int64
+	_ = v52
+	var v56 int64
+	_ = v56
+	var v60 int32
+	_ = v60
+	var v65 int32
+	_ = v65
 	var v66 int64
 	_ = v66
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
-	var v74 int64
-	_ = v74
-	var v75 int64
-	_ = v75
-	var v79 int64
-	_ = v79
-	var v83 int64
-	_ = v83
-	var v87 int64
-	_ = v87
-	var v91 int64
-	_ = v91
-	var v97 int32
-	_ = v97
-	var v102 int32
-	_ = v102
+	var v67 int32
+	_ = v67
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v77 int64
+	_ = v77
+	var v78 int64
+	_ = v78
+	var v82 int64
+	_ = v82
+	var v86 int64
+	_ = v86
+	var v90 int64
+	_ = v90
+	var v94 int64
+	_ = v94
+	var v100 int32
+	_ = v100
+	var v105 int32
+	_ = v105
 	v1 = l0
 	v2 = l1
-	v9 = m.G0
-	v11 = v9 + int32(-64)
-	m.G0 = v11
-	v14 = *(*int32)(unsafe.Add(mBase, _c_F_LogicalIncreaseRestartDecodingForSlot[0]))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
-	*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(1)
-	if v15 != 0 {
-		F_s_lock(m, v14, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_0), int32(1757), int32(_a_F_LogicalIncreaseRestartDecodingForSlot_1))
+	v8 = m.G0
+	v10 = v8 + int32(-64)
+	m.G0 = v10
+	v13 = *(*int32)(unsafe.Add(mBase, _c_F_LogicalIncreaseRestartDecodingForSlot[0]))
+	v16 = base.AtomicRmwXchg32(m, v13, int32(0), int32(1))
+	if v16 != 0 {
+		F_s_lock(m, v13, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_0), int32(1757), int32(_a_F_LogicalIncreaseRestartDecodingForSlot_1))
 		mBase = m.M
-		v22 = m.ExcPending
-		if v22 != 0 {
+		v21 = m.ExcPending
+		if v21 != 0 {
 			return
 		} else {
-			v23 = *(*int64)(unsafe.Add(mBase, uint32(v14)+104))
-			if base.Ui64(v2) <= base.Ui64(v23) {
-				*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(0)
-				m.G0 = v11 - int32(-64)
+			v22 = *(*int64)(unsafe.Add(mBase, uint32(v13)+104))
+			if base.Ui64(v2) <= base.Ui64(v22) {
+				v24 = int32(0)
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v13))), uint32(v24))
+				m.G0 = v10 - int32(-64)
 				return
 			} else {
-				v27 = *(*int64)(unsafe.Add(mBase, uint32(v14)+120))
+				v27 = *(*int64)(unsafe.Add(mBase, uint32(v13)+120))
 				if base.Ui64(v1) <= base.Ui64(v27) {
-					*(*int64)(unsafe.Add(mBase, uint32(v14)+256)) = v2
-					*(*int64)(unsafe.Add(mBase, uint32(v14)+248)) = v1
-					*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(0)
+					*(*int64)(unsafe.Add(mBase, uint32(v13)+256)) = v2
+					*(*int64)(unsafe.Add(mBase, uint32(v13)+248)) = v1
+					v31 = int32(0)
+					atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v13))), uint32(v31))
 					F_LogicalConfirmReceivedLocation(m, v27)
 					mBase = m.M
-					v34 = m.ExcPending
-					if v34 != 0 {
+					v35 = m.ExcPending
+					if v35 != 0 {
 						return
 					} else {
-						m.G0 = v11 - int32(-64)
+						m.G0 = v10 - int32(-64)
 						return
 					}
 				} else {
-					v35 = *(*int64)(unsafe.Add(mBase, uint32(v14)+248))
-					if v35 == int64(0) {
-						*(*int64)(unsafe.Add(mBase, uint32(v14)+256)) = v2
-						*(*int64)(unsafe.Add(mBase, uint32(v14)+248)) = v1
-						v40 = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v14))) = v40
-						v44 = F_errstart(m, int32(14), v40)
+					v36 = *(*int64)(unsafe.Add(mBase, uint32(v13)+248))
+					if v36 == int64(0) {
+						*(*int64)(unsafe.Add(mBase, uint32(v13)+256)) = v2
+						*(*int64)(unsafe.Add(mBase, uint32(v13)+248)) = v1
+						v41 = int32(0)
+						atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v13))), uint32(v41))
+						v46 = F_errstart(m, int32(14), v41)
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v47 = m.ExcPending
+						if v47 != 0 {
 							return
 						} else {
-							if v44 == int32(0) {
-								m.G0 = v11 - int32(-64)
+							if v46 == int32(0) {
+								m.G0 = v10 - int32(-64)
 								return
 							} else {
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+12)) = uint32(v1)
-								v49 = int64(32)
-								v50 = int64(base.Ui64(v1) >> (uint(v49) % 64))
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v50)
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v2)
-								v54 = int64(base.Ui64(v2) >> (uint(v49) % 64))
-								*(*uint32)(unsafe.Add(mBase, uint32(v11))) = uint32(v54)
-								F_errmsg_internal(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_2), v11)
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+12)) = uint32(v1)
+								v51 = int64(32)
+								v52 = int64(base.Ui64(v1) >> (uint(v51) % 64))
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+8)) = uint32(v52)
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+4)) = uint32(v2)
+								v56 = int64(base.Ui64(v2) >> (uint(v51) % 64))
+								*(*uint32)(unsafe.Add(mBase, uint32(v10))) = uint32(v56)
+								F_errmsg_internal(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_2), v10)
 								mBase = m.M
-								v58 = m.ExcPending
-								if v58 != 0 {
+								v60 = m.ExcPending
+								if v60 != 0 {
 									return
 								} else {
 									F_errfinish(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_0), int32(1792), int32(_a_F_LogicalIncreaseRestartDecodingForSlot_1))
 									mBase = m.M
-									v63 = m.ExcPending
-									if v63 != 0 {
+									v65 = m.ExcPending
+									if v65 != 0 {
 										return
 									} else {
-										m.G0 = v11 - int32(-64)
+										m.G0 = v10 - int32(-64)
 										return
 									}
 								}
 							}
 						}
 					} else {
-						v64 = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v14))) = v64
-						v66 = *(*int64)(unsafe.Add(mBase, uint32(v14)+256))
-						v69 = F_errstart(m, int32(14), v64)
+						v66 = *(*int64)(unsafe.Add(mBase, uint32(v13)+256))
+						v67 = int32(0)
+						atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v13))), uint32(v67))
+						v72 = F_errstart(m, int32(14), v67)
 						mBase = m.M
-						v70 = m.ExcPending
-						if v70 != 0 {
+						v73 = m.ExcPending
+						if v73 != 0 {
 							return
 						} else {
-							if v69 == int32(0) {
-								m.G0 = v11 - int32(-64)
+							if v72 == int32(0) {
+								m.G0 = v10 - int32(-64)
 								return
 							} else {
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+52)) = uint32(v27)
-								v74 = int64(32)
-								v75 = int64(base.Ui64(v27) >> (uint(v74) % 64))
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+48)) = uint32(v75)
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+44)) = uint32(v35)
-								v79 = int64(base.Ui64(v35) >> (uint(v74) % 64))
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+40)) = uint32(v79)
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+36)) = uint32(v66)
-								v83 = int64(base.Ui64(v66) >> (uint(v74) % 64))
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+32)) = uint32(v83)
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+28)) = uint32(v1)
-								v87 = int64(base.Ui64(v1) >> (uint(v74) % 64))
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+24)) = uint32(v87)
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v2)
-								v91 = int64(base.Ui64(v2) >> (uint(v74) % 64))
-								*(*uint32)(unsafe.Add(mBase, uint32(v11)+16)) = uint32(v91)
-								F_errmsg_internal(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_3), v9+int32(-48))
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+52)) = uint32(v27)
+								v77 = int64(32)
+								v78 = int64(base.Ui64(v27) >> (uint(v77) % 64))
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+48)) = uint32(v78)
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+44)) = uint32(v36)
+								v82 = int64(base.Ui64(v36) >> (uint(v77) % 64))
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+40)) = uint32(v82)
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+36)) = uint32(v66)
+								v86 = int64(base.Ui64(v66) >> (uint(v77) % 64))
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+32)) = uint32(v86)
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+28)) = uint32(v1)
+								v90 = int64(base.Ui64(v1) >> (uint(v77) % 64))
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+24)) = uint32(v90)
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+20)) = uint32(v2)
+								v94 = int64(base.Ui64(v2) >> (uint(v77) % 64))
+								*(*uint32)(unsafe.Add(mBase, uint32(v10)+16)) = uint32(v94)
+								F_errmsg_internal(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_3), v8+int32(-48))
 								mBase = m.M
-								v97 = m.ExcPending
-								if v97 != 0 {
+								v100 = m.ExcPending
+								if v100 != 0 {
 									return
 								} else {
 									F_errfinish(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_0), int32(1810), int32(_a_F_LogicalIncreaseRestartDecodingForSlot_1))
 									mBase = m.M
-									v102 = m.ExcPending
-									if v102 != 0 {
+									v105 = m.ExcPending
+									if v105 != 0 {
 										return
 									} else {
-										m.G0 = v11 - int32(-64)
+										m.G0 = v10 - int32(-64)
 										return
 									}
 								}
@@ -685,111 +691,113 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 			}
 		}
 	} else {
-		v23 = *(*int64)(unsafe.Add(mBase, uint32(v14)+104))
-		if base.Ui64(v2) <= base.Ui64(v23) {
-			*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(0)
-			m.G0 = v11 - int32(-64)
+		v22 = *(*int64)(unsafe.Add(mBase, uint32(v13)+104))
+		if base.Ui64(v2) <= base.Ui64(v22) {
+			v24 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v13))), uint32(v24))
+			m.G0 = v10 - int32(-64)
 			return
 		} else {
-			v27 = *(*int64)(unsafe.Add(mBase, uint32(v14)+120))
+			v27 = *(*int64)(unsafe.Add(mBase, uint32(v13)+120))
 			if base.Ui64(v1) <= base.Ui64(v27) {
-				*(*int64)(unsafe.Add(mBase, uint32(v14)+256)) = v2
-				*(*int64)(unsafe.Add(mBase, uint32(v14)+248)) = v1
-				*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(0)
+				*(*int64)(unsafe.Add(mBase, uint32(v13)+256)) = v2
+				*(*int64)(unsafe.Add(mBase, uint32(v13)+248)) = v1
+				v31 = int32(0)
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v13))), uint32(v31))
 				F_LogicalConfirmReceivedLocation(m, v27)
 				mBase = m.M
-				v34 = m.ExcPending
-				if v34 != 0 {
+				v35 = m.ExcPending
+				if v35 != 0 {
 					return
 				} else {
-					m.G0 = v11 - int32(-64)
+					m.G0 = v10 - int32(-64)
 					return
 				}
 			} else {
-				v35 = *(*int64)(unsafe.Add(mBase, uint32(v14)+248))
-				if v35 == int64(0) {
-					*(*int64)(unsafe.Add(mBase, uint32(v14)+256)) = v2
-					*(*int64)(unsafe.Add(mBase, uint32(v14)+248)) = v1
-					v40 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v14))) = v40
-					v44 = F_errstart(m, int32(14), v40)
+				v36 = *(*int64)(unsafe.Add(mBase, uint32(v13)+248))
+				if v36 == int64(0) {
+					*(*int64)(unsafe.Add(mBase, uint32(v13)+256)) = v2
+					*(*int64)(unsafe.Add(mBase, uint32(v13)+248)) = v1
+					v41 = int32(0)
+					atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v13))), uint32(v41))
+					v46 = F_errstart(m, int32(14), v41)
 					mBase = m.M
-					v45 = m.ExcPending
-					if v45 != 0 {
+					v47 = m.ExcPending
+					if v47 != 0 {
 						return
 					} else {
-						if v44 == int32(0) {
-							m.G0 = v11 - int32(-64)
+						if v46 == int32(0) {
+							m.G0 = v10 - int32(-64)
 							return
 						} else {
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+12)) = uint32(v1)
-							v49 = int64(32)
-							v50 = int64(base.Ui64(v1) >> (uint(v49) % 64))
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v50)
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v2)
-							v54 = int64(base.Ui64(v2) >> (uint(v49) % 64))
-							*(*uint32)(unsafe.Add(mBase, uint32(v11))) = uint32(v54)
-							F_errmsg_internal(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_2), v11)
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+12)) = uint32(v1)
+							v51 = int64(32)
+							v52 = int64(base.Ui64(v1) >> (uint(v51) % 64))
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+8)) = uint32(v52)
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+4)) = uint32(v2)
+							v56 = int64(base.Ui64(v2) >> (uint(v51) % 64))
+							*(*uint32)(unsafe.Add(mBase, uint32(v10))) = uint32(v56)
+							F_errmsg_internal(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_2), v10)
 							mBase = m.M
-							v58 = m.ExcPending
-							if v58 != 0 {
+							v60 = m.ExcPending
+							if v60 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_0), int32(1792), int32(_a_F_LogicalIncreaseRestartDecodingForSlot_1))
 								mBase = m.M
-								v63 = m.ExcPending
-								if v63 != 0 {
+								v65 = m.ExcPending
+								if v65 != 0 {
 									return
 								} else {
-									m.G0 = v11 - int32(-64)
+									m.G0 = v10 - int32(-64)
 									return
 								}
 							}
 						}
 					}
 				} else {
-					v64 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v14))) = v64
-					v66 = *(*int64)(unsafe.Add(mBase, uint32(v14)+256))
-					v69 = F_errstart(m, int32(14), v64)
+					v66 = *(*int64)(unsafe.Add(mBase, uint32(v13)+256))
+					v67 = int32(0)
+					atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v13))), uint32(v67))
+					v72 = F_errstart(m, int32(14), v67)
 					mBase = m.M
-					v70 = m.ExcPending
-					if v70 != 0 {
+					v73 = m.ExcPending
+					if v73 != 0 {
 						return
 					} else {
-						if v69 == int32(0) {
-							m.G0 = v11 - int32(-64)
+						if v72 == int32(0) {
+							m.G0 = v10 - int32(-64)
 							return
 						} else {
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+52)) = uint32(v27)
-							v74 = int64(32)
-							v75 = int64(base.Ui64(v27) >> (uint(v74) % 64))
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+48)) = uint32(v75)
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+44)) = uint32(v35)
-							v79 = int64(base.Ui64(v35) >> (uint(v74) % 64))
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+40)) = uint32(v79)
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+36)) = uint32(v66)
-							v83 = int64(base.Ui64(v66) >> (uint(v74) % 64))
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+32)) = uint32(v83)
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+28)) = uint32(v1)
-							v87 = int64(base.Ui64(v1) >> (uint(v74) % 64))
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+24)) = uint32(v87)
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v2)
-							v91 = int64(base.Ui64(v2) >> (uint(v74) % 64))
-							*(*uint32)(unsafe.Add(mBase, uint32(v11)+16)) = uint32(v91)
-							F_errmsg_internal(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_3), v9+int32(-48))
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+52)) = uint32(v27)
+							v77 = int64(32)
+							v78 = int64(base.Ui64(v27) >> (uint(v77) % 64))
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+48)) = uint32(v78)
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+44)) = uint32(v36)
+							v82 = int64(base.Ui64(v36) >> (uint(v77) % 64))
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+40)) = uint32(v82)
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+36)) = uint32(v66)
+							v86 = int64(base.Ui64(v66) >> (uint(v77) % 64))
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+32)) = uint32(v86)
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+28)) = uint32(v1)
+							v90 = int64(base.Ui64(v1) >> (uint(v77) % 64))
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+24)) = uint32(v90)
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+20)) = uint32(v2)
+							v94 = int64(base.Ui64(v2) >> (uint(v77) % 64))
+							*(*uint32)(unsafe.Add(mBase, uint32(v10)+16)) = uint32(v94)
+							F_errmsg_internal(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_3), v8+int32(-48))
 							mBase = m.M
-							v97 = m.ExcPending
-							if v97 != 0 {
+							v100 = m.ExcPending
+							if v100 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_LogicalIncreaseRestartDecodingForSlot_0), int32(1810), int32(_a_F_LogicalIncreaseRestartDecodingForSlot_1))
 								mBase = m.M
-								v102 = m.ExcPending
-								if v102 != 0 {
+								v105 = m.ExcPending
+								if v105 != 0 {
 									return
 								} else {
-									m.G0 = v11 - int32(-64)
+									m.G0 = v10 - int32(-64)
 									return
 								}
 							}

@@ -355,12 +355,12 @@ func F_AtEOXact_PgStat(m *base.Module, l0 int32, l1 int32) {
 	_ = v166
 	var v171 int32
 	_ = v171
-	var v177 int32
-	_ = v177
-	var v178 int64
-	_ = v178
-	var v196 int32
-	_ = v196
+	var v176 int32
+	_ = v176
+	var v179 int64
+	_ = v179
+	var v194 int32
+	_ = v194
 	v3 = int32(0)
 	if l1 == v3 {
 		goto L1
@@ -403,8 +403,8 @@ L7:
 	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_PgStat[0])) = int32(0)
 	F_pgstat_clear_snapshot(m)
 	mBase = m.M
-	v196 = m.ExcPending
-	if v196 != 0 {
+	v194 = m.ExcPending
+	if v194 != 0 {
 		goto L38
 	} else {
 		goto L44
@@ -661,9 +661,8 @@ L41:
 	goto L30
 L42:
 	;
-	v177 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_PgStat[1]))
-	v178 = *(*int64)(unsafe.Add(mBase, uint32(v177)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v177)+16)) = v178 + int64(1)
+	v176 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_PgStat[1]))
+	v179 = base.AtomicRmwAdd64(m, v176, int32(16), int64(1))
 	goto L43
 L43:
 	;

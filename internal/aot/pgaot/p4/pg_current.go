@@ -41,20 +41,22 @@ func F_pg_current_wal_lsn(m *base.Module, l0 int32) int32 {
 	_ = v31
 	var v36 int32
 	_ = v36
+	var v37 int64
+	_ = v37
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v41 int64
-	_ = v41
-	var v46 int32
-	_ = v46
-	var v47 int64
-	_ = v47
-	var v51 int32
-	_ = v51
-	var v52 int32
+	var v44 int64
+	_ = v44
+	var v48 int32
+	_ = v48
+	var v52 int64
 	_ = v52
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[0])))
 	if v4 == int32(1) {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[1]))
@@ -105,22 +107,21 @@ func F_pg_current_wal_lsn(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
+		v37 = int64(0)
 		v39 = int32(_a_F_pg_current_wal_lsn_4)
 		v40 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[1]))
-		v41 = *(*int64)(unsafe.Add(mBase, uint32(v40)+280))
-		*(*int64)(unsafe.Add(mBase, uint32(v40)+280)) = v41
-		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[2])) = v41
-		v46 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[1]))
-		v47 = *(*int64)(unsafe.Add(mBase, uint32(v46)+272))
-		*(*int64)(unsafe.Add(mBase, uint32(v46)+272)) = v47
-		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[3])) = v47
-		v51 = F_Int64GetDatum(m, v47)
+		v44 = base.AtomicRmwCmpxchg64(m, v40, int32(280), v37, v37)
+		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[2])) = v44
+		v48 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[1]))
+		v52 = base.AtomicRmwCmpxchg64(m, v48, int32(272), v37, v37)
+		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[3])) = v52
+		v54 = F_Int64GetDatum(m, v52)
 		mBase = m.M
-		v52 = m.ExcPending
-		if v52 != 0 {
+		v55 = m.ExcPending
+		if v55 != 0 {
 			return int32(0)
 		} else {
-			return v51
+			return v54
 		}
 	}
 }

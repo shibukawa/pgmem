@@ -282,7 +282,7 @@ func F_pgss_ExecutorEnd(m *base.Module, l0 int32) {
 func F_pgss_ExecutorRun(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	var v7 int32
 	_ = v7
-	Fn13972(m, l0, l1, l2, int32(_a_F_pgss_ExecutorRun_0), int32(_a_F_pgss_ExecutorRun_1))
+	Fn13994(m, l0, l1, l2, int32(_a_F_pgss_ExecutorRun_0), int32(_a_F_pgss_ExecutorRun_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return
@@ -361,6 +361,24 @@ func F_pgss_shmem_request(m *base.Module) {
 	_ = v85
 	var v92 int32
 	_ = v92
+	var v108 int32
+	_ = v108
+	var v109 int32
+	_ = v109
+	var v110 int32
+	_ = v110
+	var v112 int32
+	_ = v112
+	var v116 int32
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v119 int32
+	_ = v119
+	var v120 int32
+	_ = v120
+	var v123 int32
+	_ = v123
 	var v135 int32
 	_ = v135
 	var v142 int32
@@ -696,32 +714,78 @@ L39:
 	goto L40
 L40:
 	;
-	goto L43
+	goto L42
 L41:
 	;
-	goto L50
-L43:
+	if base.B2i32(v119 != v120) == int32(0) {
+		v191 = v123
+		v192 = v117
+		goto L35
+	} else {
+		goto L50
+	}
+L42:
 	;
-	goto L44
-L44:
+	v108 = v85
+	v109 = v84
+	v110 = v92
+	goto L45
+L45:
+	;
+	v112 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v108))))
+	*(*uint8)(unsafe.Add(mBase, uint32(v109))) = uint8(v112)
+	if v112 == int32(0) {
+		v171 = v108
+		v172 = v109
+		v173 = v110
+		goto L36
+	} else {
+		goto L47
+	}
+L46:
 	;
 	goto L41
+L47:
+	;
+	v116 = int32(1)
+	v117 = v109 + v116
+	v119 = v110 - v116
+	v120 = int32(0)
+	v123 = v108 + v116
+	if v123&int32(3) == v120 {
+		goto L41
+	} else {
+		goto L48
+	}
+L48:
+	;
+	if v119 != 0 {
+		v108 = v123
+		v109 = v117
+		v110 = v119
+		goto L45
+	} else {
+		goto L49
+	}
+L49:
+	;
+	goto L46
 L50:
 	;
-	v135 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pgss_shmem_request[8])))
-	if base.B2i32(v135 == int32(0))|int32(0) != 0 {
-		v164 = v85
-		v165 = v84
-		v166 = v92
+	v135 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v123))))
+	if base.B2i32(v135 == int32(0))|base.B2i32(base.Ui32(v119) < base.Ui32(int32(4))) != 0 {
+		v164 = v123
+		v165 = v117
+		v166 = v119
 		goto L37
 	} else {
 		goto L51
 	}
 L51:
 	;
-	v142 = v85
-	v143 = v84
-	v144 = v92
+	v142 = v123
+	v143 = v117
+	v144 = v119
 	goto L52
 L52:
 	;

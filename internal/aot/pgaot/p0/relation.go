@@ -4837,7 +4837,7 @@ func F_UnlockRelationForExtension(m *base.Module, l0 int32, l1 int32) {
 func F_UnlockRelationIdForSession(m *base.Module, l0 int32, l1 int32) {
 	var v5 int32
 	_ = v5
-	Fn13839(m, l0, l1, int32(1))
+	Fn13861(m, l0, l1, int32(1))
 	v5 = m.ExcPending
 	if v5 != 0 {
 		return

@@ -7361,7 +7361,7 @@ L16:
 L17:
 	;
 	v64 = v17 + int32(76)
-	v68 = Fn13825(m, v61, v64, int32(_a_F_interval_part_common_0), int32(_a_F_interval_part_common_1), int32(_a_F_interval_part_common_2))
+	v68 = Fn13846(m, v61, v64, int32(_a_F_interval_part_common_0), int32(_a_F_interval_part_common_1), int32(_a_F_interval_part_common_2))
 	mBase = m.M
 	goto L18
 L18:
@@ -7373,7 +7373,7 @@ L18:
 	}
 L19:
 	;
-	v74 = Fn13825(m, v61, v64, int32(_a_F_interval_part_common_3), int32(_a_F_interval_part_common_4), int32(_a_F_interval_part_common_5))
+	v74 = Fn13846(m, v61, v64, int32(_a_F_interval_part_common_3), int32(_a_F_interval_part_common_4), int32(_a_F_interval_part_common_5))
 	mBase = m.M
 	goto L22
 L20:

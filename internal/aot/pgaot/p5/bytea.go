@@ -7,7 +7,7 @@ func F_bytea_sortsupport(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13853(m, l0, int32(17))
+	v3 = Fn13875(m, l0, int32(17))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

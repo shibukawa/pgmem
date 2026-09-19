@@ -2,6 +2,7 @@ package p5
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -405,8 +406,8 @@ func F_LockRefindAndRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v136
 	var v140 int32
 	_ = v140
-	var v141 int32
-	_ = v141
+	var v143 int32
+	_ = v143
 	var v145 int32
 	_ = v145
 	var v150 int32
@@ -417,18 +418,20 @@ func F_LockRefindAndRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v157
 	var v158 int32
 	_ = v158
-	var v176 int32
-	_ = v176
-	var v180 int32
-	_ = v180
-	var v185 int32
-	_ = v185
-	var v189 int32
-	_ = v189
-	var v193 int32
-	_ = v193
-	var v198 int32
-	_ = v198
+	var v162 int32
+	_ = v162
+	var v177 int32
+	_ = v177
+	var v181 int32
+	_ = v181
+	var v186 int32
+	_ = v186
+	var v190 int32
+	_ = v190
+	var v194 int32
+	_ = v194
+	var v199 int32
+	_ = v199
 	v14 = m.G0
 	v16 = v14 - int32(16)
 	m.G0 = v16
@@ -469,20 +472,20 @@ func F_LockRefindAndRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 						if v51 == int32(0) {
 							F_errstart_cold(m, int32(23), int32(0))
 							mBase = m.M
-							v189 = m.ExcPending
-							if v189 != 0 {
+							v190 = m.ExcPending
+							if v190 != 0 {
 								return
 							} else {
 								F_errmsg_internal(m, int32(_a_F_LockRefindAndRelease_1), int32(0))
 								mBase = m.M
-								v193 = m.ExcPending
-								if v193 != 0 {
+								v194 = m.ExcPending
+								if v194 != 0 {
 									return
 								} else {
 									F_errfinish(m, int32(_a_F_LockRefindAndRelease_2), int32(3296), int32(_a_F_LockRefindAndRelease_3))
 									mBase = m.M
-									v198 = m.ExcPending
-									if v198 != 0 {
+									v199 = m.ExcPending
+									if v199 != 0 {
 										return
 									} else {
 										base.Wasm_trap_unreachable()
@@ -591,9 +594,8 @@ func F_LockRefindAndRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 														return
 													} else {
 														v140 = *(*int32)(unsafe.Add(mBase, _c_F_LockRefindAndRelease[3]))
-														v141 = *(*int32)(unsafe.Add(mBase, uint32(v140)))
-														*(*int32)(unsafe.Add(mBase, uint32(v140))) = int32(1)
-														if v141 != 0 {
+														v143 = base.AtomicRmwXchg32(m, v140, int32(0), int32(1))
+														if v143 != 0 {
 															v145 = *(*int32)(unsafe.Add(mBase, _c_F_LockRefindAndRelease[3]))
 															F_s_lock(m, v145, int32(_a_F_LockRefindAndRelease_2), int32(3330), int32(_a_F_LockRefindAndRelease_3))
 															mBase = m.M
@@ -605,7 +607,8 @@ func F_LockRefindAndRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 																v157 = v152 + v20&int32(1023)<<(uint(int32(2))%32)
 																v158 = *(*int32)(unsafe.Add(mBase, uint32(v157)+4))
 																*(*int32)(unsafe.Add(mBase, uint32(v157)+4)) = v158 - int32(1)
-																*(*int32)(unsafe.Add(mBase, uint32(v152))) = int32(0)
+																v162 = int32(0)
+																atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v152))), uint32(v162))
 																m.G0 = v16 + int32(16)
 																return
 															}
@@ -614,7 +617,8 @@ func F_LockRefindAndRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 															v157 = v152 + v20&int32(1023)<<(uint(int32(2))%32)
 															v158 = *(*int32)(unsafe.Add(mBase, uint32(v157)+4))
 															*(*int32)(unsafe.Add(mBase, uint32(v157)+4)) = v158 - int32(1)
-															*(*int32)(unsafe.Add(mBase, uint32(v152))) = int32(0)
+															v162 = int32(0)
+															atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v152))), uint32(v162))
 															m.G0 = v16 + int32(16)
 															return
 														}
@@ -630,20 +634,20 @@ func F_LockRefindAndRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 				} else {
 					F_errstart_cold(m, int32(23), int32(0))
 					mBase = m.M
-					v176 = m.ExcPending
-					if v176 != 0 {
+					v177 = m.ExcPending
+					if v177 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_LockRefindAndRelease_5), int32(0))
 						mBase = m.M
-						v180 = m.ExcPending
-						if v180 != 0 {
+						v181 = m.ExcPending
+						if v181 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_LockRefindAndRelease_2), int32(3280), int32(_a_F_LockRefindAndRelease_3))
 							mBase = m.M
-							v185 = m.ExcPending
-							if v185 != 0 {
+							v186 = m.ExcPending
+							if v186 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -1914,7 +1918,7 @@ func F_latin1_to_mic(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13935(m, l0, int32(8), int32(129))
+	v4 = Fn13957(m, l0, int32(8), int32(129))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2098,7 +2102,7 @@ func F_latin3_to_mic(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13935(m, l0, int32(10), int32(131))
+	v4 = Fn13957(m, l0, int32(10), int32(131))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

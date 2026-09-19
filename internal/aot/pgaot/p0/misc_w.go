@@ -11,17 +11,123 @@ func F_WakeupRecovery(m *base.Module) {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v6 int32
-	_ = v6
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v33 int32
+	_ = v33
+	var v37 int32
+	_ = v37
+	var v45 int32
+	_ = v45
 	v2 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[0]))
-	F_SetLatch(m, v2+int32(4))
-	mBase = m.M
-	v6 = m.ExcPending
-	if v6 != 0 {
-		return
+	v4 = v2 + int32(4)
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
+	if v5 != 0 {
+		goto L2
 	} else {
-		return
+		goto L3
 	}
+L1:
+	;
+	return
+L2:
+	;
+	goto L1
+L3:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(1)
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
+	if v8 == int32(0) {
+		goto L2
+	} else {
+		goto L4
+	}
+L4:
+	;
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
+	if v11 == int32(0) {
+		goto L2
+	} else {
+		goto L5
+	}
+L5:
+	;
+	v15 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[1]))
+	if v15 == v11 {
+		goto L6
+	} else {
+		goto L7
+	}
+L6:
+	;
+	v17 = m.G0
+	v19 = v17 - int32(16)
+	m.G0 = v19
+	v22 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[2]))
+	if v22 == int32(0) {
+		goto L9
+	} else {
+		goto L10
+	}
+L7:
+	;
+	goto L8
+L8:
+	;
+	v45 = F_pgmem_kill(m, v11, int32(23))
+	mBase = m.M
+	goto L2
+L9:
+	;
+	m.G0 = v19 + int32(16)
+	goto L1
+L10:
+	;
+	v25 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v19)+15)) = uint8(v25)
+	goto L11
+L11:
+	;
+	v29 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[3]))
+	v33 = F_write(m, v29, v19+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v33 {
+		goto L9
+	} else {
+		goto L13
+	}
+L12:
+	;
+	goto L9
+L13:
+	;
+	v37 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[4]))
+	if v37 == int32(27) {
+		goto L11
+	} else {
+		goto L14
+	}
+L14:
+	;
+	goto L12
 }
 func F_wcslen(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -1511,7 +1617,7 @@ func F_win866_to_koi8r(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13936(m, l0, int32(_a_F_win866_to_koi8r_0), int32(22), int32(20))
+	v5 = Fn13958(m, l0, int32(_a_F_win866_to_koi8r_0), int32(22), int32(20))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -1524,12 +1630,693 @@ func F_win866_to_mic(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13929(m, l0, int32(_a_F_win866_to_mic_0), int32(20), int32(139))
+	v5 = Fn13951(m, l0, int32(_a_F_win866_to_mic_0), int32(20), int32(139))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
 	} else {
 		return v5
+	}
+}
+func F_write_nondefault_variables(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v31 int32
+	_ = v31
+	var v36 int32
+	_ = v36
+	var v41 int32
+	_ = v41
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v54 int32
+	_ = v54
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v67 int32
+	_ = v67
+	var v68 int32
+	_ = v68
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v76 int32
+	_ = v76
+	var v81 int32
+	_ = v81
+	var v82 int32
+	_ = v82
+	var v85 int32
+	_ = v85
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v93 int32
+	_ = v93
+	var v94 int32
+	_ = v94
+	var v95 int32
+	_ = v95
+	var v96 float64
+	_ = v96
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
+	var v104 int32
+	_ = v104
+	var v111 int32
+	_ = v111
+	var v112 int32
+	_ = v112
+	var v113 int32
+	_ = v113
+	var v114 int32
+	_ = v114
+	var v115 int32
+	_ = v115
+	var v118 int32
+	_ = v118
+	var v121 int32
+	_ = v121
+	var v123 int32
+	_ = v123
+	var v132 int32
+	_ = v132
+	var v135 int32
+	_ = v135
+	var v145 int32
+	_ = v145
+	var v152 int32
+	_ = v152
+	var v153 int32
+	_ = v153
+	var v165 int32
+	_ = v165
+	var v166 int32
+	_ = v166
+	var v171 int32
+	_ = v171
+	var v172 int32
+	_ = v172
+	var v175 int32
+	_ = v175
+	var v180 int32
+	_ = v180
+	var v181 int32
+	_ = v181
+	var v186 int32
+	_ = v186
+	var v187 int32
+	_ = v187
+	var v192 int32
+	_ = v192
+	var v193 int32
+	_ = v193
+	var v198 int32
+	_ = v198
+	var v199 int32
+	_ = v199
+	var v200 int32
+	_ = v200
+	var v212 int32
+	_ = v212
+	var v213 int32
+	_ = v213
+	var v215 int32
+	_ = v215
+	var v216 int32
+	_ = v216
+	var v220 int32
+	_ = v220
+	var v227 int32
+	_ = v227
+	var v232 int32
+	_ = v232
+	var v235 int32
+	_ = v235
+	var v260 int32
+	_ = v260
+	var v261 int32
+	_ = v261
+	var v268 int32
+	_ = v268
+	var v273 int32
+	_ = v273
+	v10 = m.G0
+	v12 = v10 - int32(144)
+	m.G0 = v12
+	if l0 == int32(2) {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	v18 = int32(15)
+	goto L3
+L2:
+	;
+	v18 = int32(21)
+	goto L3
+L3:
+	;
+	v21 = F_AllocateFile(m, int32(_a_F_write_nondefault_variables_0), int32(_a_F_write_nondefault_variables_1))
+	mBase = m.M
+	v22 = m.ExcPending
+	if v22 != 0 {
+		goto L6
+	} else {
+		goto L7
+	}
+L4:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v260 = m.ExcPending
+	if v260 != 0 {
+		goto L6
+	} else {
+		goto L68
+	}
+L5:
+	;
+	m.G0 = v12 + int32(144)
+	return
+L6:
+	;
+	return
+L7:
+	;
+	if v21 == int32(0) {
+		goto L8
+	} else {
+		goto L9
+	}
+L8:
+	;
+	v26 = F_errstart(m, v18, int32(0))
+	mBase = m.M
+	v27 = m.ExcPending
+	if v27 != 0 {
+		goto L6
+	} else {
+		goto L11
+	}
+L9:
+	;
+	goto L10
+L10:
+	;
+	v43 = *(*int32)(unsafe.Add(mBase, _c_F_write_nondefault_variables[0]))
+	v44 = int32(0)
+	if base.B2i32(v43 == v44)|base.B2i32(v43 == int32(_a_F_write_nondefault_variables_2)) == v44 {
+		goto L16
+	} else {
+		goto L17
+	}
+L11:
+	;
+	if v26 == int32(0) {
+		goto L5
+	} else {
+		goto L12
+	}
+L12:
+	;
+	F_errcode_for_file_access(m)
+	mBase = m.M
+	v31 = m.ExcPending
+	if v31 != 0 {
+		goto L6
+	} else {
+		goto L13
+	}
+L13:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12))) = int32(_a_F_write_nondefault_variables_0)
+	F_errmsg(m, int32(_a_F_write_nondefault_variables_3), v12)
+	mBase = m.M
+	v36 = m.ExcPending
+	if v36 != 0 {
+		goto L6
+	} else {
+		goto L14
+	}
+L14:
+	;
+	F_errfinish(m, int32(_a_F_write_nondefault_variables_4), int32(_a_F_write_nondefault_variables_5), int32(_a_F_write_nondefault_variables_6))
+	mBase = m.M
+	v41 = m.ExcPending
+	if v41 != 0 {
+		goto L6
+	} else {
+		goto L15
+	}
+L15:
+	;
+	goto L5
+L16:
+	;
+	v54 = v43
+	goto L19
+L17:
+	;
+	goto L18
+L18:
+	;
+	v212 = F_FreeFile(m, v21)
+	mBase = m.M
+	v213 = m.ExcPending
+	if v213 != 0 {
+		goto L6
+	} else {
+		goto L59
+	}
+L19:
+	;
+	v61 = v54 + int32(-64)
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v61)))
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+128)) = v62
+	v67 = F_pg_fprintf(m, v21, int32(_a_F_write_nondefault_variables_7), v12+int32(128))
+	mBase = m.M
+	v68 = m.ExcPending
+	if v68 != 0 {
+		goto L6
+	} else {
+		goto L21
+	}
+L20:
+	;
+	goto L18
+L21:
+	;
+	F_do_putc(m, int32(0), v21)
+	mBase = m.M
+	v71 = m.ExcPending
+	if v71 != 0 {
+		goto L6
+	} else {
+		goto L22
+	}
+L22:
+	;
+	v74 = *(*int32)(unsafe.Add(mBase, uint32(v54-int32(40))))
+	switch v74 {
+	case 0:
+		goto L28
+	case 1:
+		goto L27
+	case 2:
+		goto L26
+	case 3:
+		goto L25
+	case 4:
+		goto L24
+	default:
+		goto L23
+	}
+L23:
+	;
+	F_do_putc(m, int32(0), v21)
+	mBase = m.M
+	v165 = m.ExcPending
+	if v165 != 0 {
+		goto L6
+	} else {
+		goto L48
+	}
+L24:
+	;
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(v54)+28))
+	v114 = *(*int32)(unsafe.Add(mBase, uint32(v113)))
+	v115 = *(*int32)(unsafe.Add(mBase, uint32(v54)+36))
+	if v115 == int32(0) {
+		goto L4
+	} else {
+		goto L38
+	}
+L25:
+	;
+	v103 = *(*int32)(unsafe.Add(mBase, uint32(v54)+28))
+	v104 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+	if v104 == int32(0) {
+		goto L23
+	} else {
+		goto L36
+	}
+L26:
+	;
+	v95 = *(*int32)(unsafe.Add(mBase, uint32(v54)+28))
+	v96 = *(*float64)(unsafe.Add(mBase, uint32(v95)))
+	*(*float64)(unsafe.Add(mBase, uint32(v12)+64)) = v96
+	v101 = F_pg_fprintf(m, v21, int32(_a_F_write_nondefault_variables_8), v12-int32(-64))
+	mBase = m.M
+	v102 = m.ExcPending
+	if v102 != 0 {
+		goto L6
+	} else {
+		goto L35
+	}
+L27:
+	;
+	v87 = *(*int32)(unsafe.Add(mBase, uint32(v54)+28))
+	v88 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v88
+	v93 = F_pg_fprintf(m, v21, int32(_a_F_write_nondefault_variables_9), v12+int32(48))
+	mBase = m.M
+	v94 = m.ExcPending
+	if v94 != 0 {
+		goto L6
+	} else {
+		goto L34
+	}
+L28:
+	;
+	v75 = *(*int32)(unsafe.Add(mBase, uint32(v54)+28))
+	v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75))))
+	if v76 == int32(1) {
+		goto L29
+	} else {
+		goto L30
+	}
+L29:
+	;
+	v81 = F_pg_fprintf(m, v21, int32(_a_F_write_nondefault_variables_10), int32(0))
+	mBase = m.M
+	v82 = m.ExcPending
+	if v82 != 0 {
+		goto L6
+	} else {
+		goto L32
+	}
+L30:
+	;
+	goto L31
+L31:
+	;
+	v85 = F_pg_fprintf(m, v21, int32(_a_F_write_nondefault_variables_11), int32(0))
+	mBase = m.M
+	v86 = m.ExcPending
+	if v86 != 0 {
+		goto L6
+	} else {
+		goto L33
+	}
+L32:
+	;
+	goto L23
+L33:
+	;
+	goto L23
+L34:
+	;
+	goto L23
+L35:
+	;
+	goto L23
+L36:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+80)) = v104
+	v111 = F_pg_fprintf(m, v21, int32(_a_F_write_nondefault_variables_7), v12+int32(80))
+	mBase = m.M
+	v112 = m.ExcPending
+	if v112 != 0 {
+		goto L6
+	} else {
+		goto L37
+	}
+L37:
+	;
+	goto L23
+L38:
+	;
+	v118 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
+	if v118 == int32(0) {
+		goto L4
+	} else {
+		goto L39
+	}
+L39:
+	;
+	v121 = *(*int32)(unsafe.Add(mBase, uint32(v115)+4))
+	if v114 != v121 {
+		goto L40
+	} else {
+		goto L41
+	}
+L40:
+	;
+	v123 = v115
+	goto L43
+L41:
+	;
+	v145 = v118
+	goto L42
+L42:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+112)) = v145
+	v152 = F_pg_fprintf(m, v21, int32(_a_F_write_nondefault_variables_7), v12+int32(112))
+	mBase = m.M
+	v153 = m.ExcPending
+	if v153 != 0 {
+		goto L6
+	} else {
+		goto L47
+	}
+L43:
+	;
+	v132 = *(*int32)(unsafe.Add(mBase, uint32(v123)+12))
+	if v132 == int32(0) {
+		goto L4
+	} else {
+		goto L45
+	}
+L44:
+	;
+	v145 = v132
+	goto L42
+L45:
+	;
+	v135 = *(*int32)(unsafe.Add(mBase, uint32(v123)+16))
+	if v114 != v135 {
+		v123 = v123 + int32(12)
+		goto L43
+	} else {
+		goto L46
+	}
+L46:
+	;
+	goto L44
+L47:
+	;
+	goto L23
+L48:
+	;
+	v166 = *(*int32)(unsafe.Add(mBase, uint32(v54)+20))
+	if v166 != 0 {
+		goto L49
+	} else {
+		goto L50
+	}
+L49:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v166
+	v171 = F_pg_fprintf(m, v21, int32(_a_F_write_nondefault_variables_7), v12+int32(32))
+	mBase = m.M
+	v172 = m.ExcPending
+	if v172 != 0 {
+		goto L6
+	} else {
+		goto L52
+	}
+L50:
+	;
+	goto L51
+L51:
+	;
+	F_do_putc(m, int32(0), v21)
+	mBase = m.M
+	v175 = m.ExcPending
+	if v175 != 0 {
+		goto L6
+	} else {
+		goto L53
+	}
+L52:
+	;
+	goto L51
+L53:
+	;
+	v180 = F_fwrite(m, v54+int32(24), int32(1), int32(4), v21)
+	mBase = m.M
+	v181 = m.ExcPending
+	if v181 != 0 {
+		goto L6
+	} else {
+		goto L54
+	}
+L54:
+	;
+	v186 = F_fwrite(m, v54-int32(32), int32(1), int32(4), v21)
+	mBase = m.M
+	v187 = m.ExcPending
+	if v187 != 0 {
+		goto L6
+	} else {
+		goto L55
+	}
+L55:
+	;
+	v192 = F_fwrite(m, v54-int32(24), int32(1), int32(4), v21)
+	mBase = m.M
+	v193 = m.ExcPending
+	if v193 != 0 {
+		goto L6
+	} else {
+		goto L56
+	}
+L56:
+	;
+	v198 = F_fwrite(m, v54-int32(16), int32(1), int32(4), v21)
+	mBase = m.M
+	v199 = m.ExcPending
+	if v199 != 0 {
+		goto L6
+	} else {
+		goto L57
+	}
+L57:
+	;
+	v200 = *(*int32)(unsafe.Add(mBase, uint32(v54)+4))
+	if v200 != int32(_a_F_write_nondefault_variables_2) {
+		v54 = v200
+		goto L19
+	} else {
+		goto L58
+	}
+L58:
+	;
+	goto L20
+L59:
+	;
+	if v212 != 0 {
+		goto L60
+	} else {
+		goto L61
+	}
+L60:
+	;
+	v215 = F_errstart(m, v18, int32(0))
+	mBase = m.M
+	v216 = m.ExcPending
+	if v216 != 0 {
+		goto L6
+	} else {
+		goto L63
+	}
+L61:
+	;
+	goto L62
+L62:
+	;
+	v235 = F_rename(m, int32(_a_F_write_nondefault_variables_0), int32(_a_F_write_nondefault_variables_12))
+	mBase = m.M
+	goto L5
+L63:
+	;
+	if v215 == int32(0) {
+		goto L5
+	} else {
+		goto L64
+	}
+L64:
+	;
+	F_errcode_for_file_access(m)
+	mBase = m.M
+	v220 = m.ExcPending
+	if v220 != 0 {
+		goto L6
+	} else {
+		goto L65
+	}
+L65:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = int32(_a_F_write_nondefault_variables_0)
+	F_errmsg(m, int32(_a_F_write_nondefault_variables_3), v12+int32(16))
+	mBase = m.M
+	v227 = m.ExcPending
+	if v227 != 0 {
+		goto L6
+	} else {
+		goto L66
+	}
+L66:
+	;
+	F_errfinish(m, int32(_a_F_write_nondefault_variables_4), int32(_a_F_write_nondefault_variables_13), int32(_a_F_write_nondefault_variables_6))
+	mBase = m.M
+	v232 = m.ExcPending
+	if v232 != 0 {
+		goto L6
+	} else {
+		goto L67
+	}
+L67:
+	;
+	goto L5
+L68:
+	;
+	v261 = *(*int32)(unsafe.Add(mBase, uint32(v61)))
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+100)) = v261
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+96)) = v114
+	F_errmsg_internal(m, int32(_a_F_write_nondefault_variables_14), v12+int32(96))
+	mBase = m.M
+	v268 = m.ExcPending
+	if v268 != 0 {
+		goto L6
+	} else {
+		goto L69
+	}
+L69:
+	;
+	F_errfinish(m, int32(_a_F_write_nondefault_variables_4), int32(3036), int32(_a_F_write_nondefault_variables_15))
+	mBase = m.M
+	v273 = m.ExcPending
+	if v273 != 0 {
+		goto L6
+	} else {
+		goto L70
+	}
+L70:
+	;
+	base.Wasm_trap_unreachable()
+	for {
 	}
 }
 func F_write_stderr(m *base.Module, l0 int32, l1 int32) {

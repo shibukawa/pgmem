@@ -72,3 +72,50 @@ func F_gen_pgmem_decrypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 		}
 	}
 }
+func F_pgmem_shmget(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	v4 = m.Env.Pgmem_shmget(m, l0, l1, l2)
+	mBase = m.M
+	if int32(0) <= v4 {
+		return v4
+	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_pgmem_shmget[0])) = int32(0) - v4
+		return int32(-1)
+	}
+}
+func F_pgmem_waitpid(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v24 int32
+	_ = v24
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = int32(0)
+	v14 = m.Env.Pgmem_waitpid(m, int32(-1), v6+int32(12), int32(1))
+	mBase = m.M
+	if l0 != 0 {
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+		*(*int32)(unsafe.Add(mBase, uint32(l0))) = v15
+	} else {
+	}
+	if int32(0) <= v14 {
+		v24 = v14
+	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_pgmem_waitpid[0])) = int32(0) - v14
+		v24 = int32(-1)
+	}
+	m.G0 = v6 + int32(16)
+	return v24
+}

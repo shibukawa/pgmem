@@ -74,15 +74,19 @@ func F_IOContextForStrategy(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_IdleSessionTimeoutHandler(m *base.Module) {
-	var v3 int32
-	_ = v3
-	Fn13831(m, int32(_a_F_IdleSessionTimeoutHandler_0))
-	v3 = m.ExcPending
-	if v3 != 0 {
-		return
-	} else {
-		return
-	}
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v8 int32
+	_ = v8
+	v2 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_IdleSessionTimeoutHandler[0])) = v2
+	*(*int32)(unsafe.Add(mBase, _c_F_IdleSessionTimeoutHandler[1])) = v2
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_IdleSessionTimeoutHandler[2]))
+	F_SetLatch(m, v8)
+	mBase = m.M
+	return
 }
 func F_InitSparseVector(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
@@ -180,6 +184,54 @@ func F_InitializeFastPathLocks(m *base.Module) {
 	*(*int32)(unsafe.Add(mBase, _c_F_InitializeFastPathLocks[1])) = v23
 	return
 }
+func F_InitializeLatchWaitSet(m *base.Module) {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
+	v5 = F_CreateWaitEventSet(m, int32(0), int32(2))
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return
+	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_InitializeLatchWaitSet[0])) = v5
+		v11 = *(*int32)(unsafe.Add(mBase, _c_F_InitializeLatchWaitSet[1]))
+		F_AddWaitEventToSet(m, v5, int32(1), int32(-1), v11)
+		mBase = m.M
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return
+		} else {
+			v15 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitializeLatchWaitSet[2])))
+			if v15 == int32(1) {
+				v19 = *(*int32)(unsafe.Add(mBase, _c_F_InitializeLatchWaitSet[0]))
+				F_AddWaitEventToSet(m, v19, int32(32), int32(-1), int32(0))
+				mBase = m.M
+				v24 = m.ExcPending
+				if v24 != 0 {
+					return
+				} else {
+					return
+				}
+			} else {
+				return
+			}
+		}
+	}
+}
 func F_IsAbortedTransactionBlockState(m *base.Module) int32 {
 	mBase := m.M
 	_ = mBase
@@ -196,7 +248,7 @@ func F__intbig_out(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F__intbig_out_0), int32(46), int32(_a_F__intbig_out_1), int32(_a_F__intbig_out_2), int32(_a_F__intbig_out_3))
+	v7 = Fn13874(m, l0, int32(_a_F__intbig_out_0), int32(46), int32(_a_F__intbig_out_1), int32(_a_F__intbig_out_2), int32(_a_F__intbig_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -259,7 +311,7 @@ func F_iclikesel(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13988(m, l0, int32(1))
+	v3 = Fn14010(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -11162,7 +11214,7 @@ func F_int82mul(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13860(m, l0, int32(_a_F_int82mul_0), int32(1069), int32(_a_F_int82mul_1), int32(_a_F_int82mul_2))
+	v6 = Fn13882(m, l0, int32(_a_F_int82mul_0), int32(1069), int32(_a_F_int82mul_1), int32(_a_F_int82mul_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -11888,7 +11940,7 @@ func F_int8mi(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13859(m, l0, int32(_a_F_int8mi_0), int32(485), int32(_a_F_int8mi_1), int32(_a_F_int8mi_2))
+	v6 = Fn13881(m, l0, int32(_a_F_int8mi_0), int32(485), int32(_a_F_int8mi_1), int32(_a_F_int8mi_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -11995,7 +12047,7 @@ func F_int8pl(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13863(m, l0, int32(_a_F_int8pl_0), int32(471), int32(_a_F_int8pl_1), int32(_a_F_int8pl_2))
+	v6 = Fn13885(m, l0, int32(_a_F_int8pl_0), int32(471), int32(_a_F_int8pl_1), int32(_a_F_int8pl_2))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -15780,7 +15832,7 @@ func F_ismn_in(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13869(m, l0, int32(4))
+	v3 = Fn13891(m, l0, int32(4))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -15961,7 +16013,7 @@ func F_issn_cast_from_ean13(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13926(m, l0, int32(5))
+	v3 = Fn13948(m, l0, int32(5))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

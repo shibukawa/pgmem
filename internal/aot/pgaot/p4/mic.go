@@ -307,7 +307,7 @@ func F_mic_to_win866(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13945(m, l0, int32(_a_F_mic_to_win866_0), int32(20), int32(139))
+	v5 = Fn13967(m, l0, int32(_a_F_mic_to_win866_0), int32(20), int32(139))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

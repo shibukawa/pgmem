@@ -1347,7 +1347,7 @@ func F_ReceiveFunctionCall(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	_ = v10
 	var v13 int32
 	_ = v13
-	v10 = Fn13833(m, l0, l1, l2, l3, int32(_a_F_ReceiveFunctionCall_0), int32(1728), int32(_a_F_ReceiveFunctionCall_1), int32(1722), int32(_a_F_ReceiveFunctionCall_2))
+	v10 = Fn13854(m, l0, l1, l2, l3, int32(_a_F_ReceiveFunctionCall_0), int32(1728), int32(_a_F_ReceiveFunctionCall_1), int32(1722), int32(_a_F_ReceiveFunctionCall_2))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return int32(0)
@@ -2669,7 +2669,7 @@ func F_has_function_privilege_name(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13917(m, l0, int32(_a_F_has_function_privilege_name_0), int32(1255), int32(_a_F_has_function_privilege_name_1), int32(3565), int32(_a_F_has_function_privilege_name_2), int32(52461700), int32(1237))
+	v9 = Fn13939(m, l0, int32(_a_F_has_function_privilege_name_0), int32(1255), int32(_a_F_has_function_privilege_name_1), int32(3565), int32(_a_F_has_function_privilege_name_2), int32(52461700), int32(1237))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)

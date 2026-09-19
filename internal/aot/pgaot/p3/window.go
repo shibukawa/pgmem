@@ -1141,7 +1141,7 @@ func F_window_lag(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14018(m, l0, int32(-1))
+	v3 = Fn14040(m, l0, int32(-1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1154,7 +1154,7 @@ func F_window_last_value(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14017(m, l0, int32(2))
+	v3 = Fn14039(m, l0, int32(2))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

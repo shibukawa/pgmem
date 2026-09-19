@@ -1458,7 +1458,7 @@ func F_json_array_element(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13930(m, l0, int32(0))
+	v3 = Fn13952(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -2776,7 +2776,7 @@ func F_json_object_field_text(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13931(m, l0, int32(1))
+	v3 = Fn13953(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

@@ -17,8 +17,10 @@ import (
 	"hash/crc32"
 	"math"
 	"net"
+	"os"
 	"strconv"
 	"strings"
+	"sync/atomic"
 	"time"
 
 	"github.com/shibukawa/pgmem/internal/vfs"
@@ -44,6 +46,14 @@ type Guest interface {
 	Timeout(which int32, now float64) error
 	// Malloc calls the guest's malloc.
 	Malloc(size uint32) (uint32, error)
+	// Raise runs the guest's handler for sig (pgmem_raise), honouring the
+	// process's signal mask.
+	Raise(sig int32) error
+	// MapShared maps f (size bytes) at offset off of the linear memory,
+	// shared with every other instance that maps it; UnmapShared puts
+	// private zero pages back.
+	MapShared(off uint32, f *os.File, size uint32) error
+	UnmapShared(off, size uint32) error
 }
 
 // ExitError is panicked by exit-like imports to unwind the guest stack.
@@ -86,8 +96,32 @@ type Host struct {
 	// 2 = UNLISTEN * (channel is empty).
 	Listen func(channel string, op int)
 
-	timers   [3]time.Time // itimer deadlines (zero = unset)
-	inTimer  bool         // a timer handler is running (no re-entry)
+	// Process identity in the multi-process model (see cluster.go). Sys
+	// is nil for a single-user backend, where the process calls are
+	// answered with ENOSYS or served locally.
+	Pid  int32
+	Sys  *Cluster
+	proc *Process
+	// HeapMax caps the heap below the shared memory window (0 = no cap).
+	HeapMax uint32
+	// pending is the bitmask of queued signals, timerDue that of itimers
+	// whose deadline passed; wake is how another goroutine interrupts a
+	// blocking host call on this process. killed ends the process at its
+	// next host call (SIGKILL).
+	pending   atomic.Uint32
+	timerDue  atomic.Uint32
+	wake      chan struct{}
+	inDeliver bool
+	killed    atomic.Bool
+	attached  map[uint32]*Segment // shared memory segments, by address
+	// single-user mode: shared memory and semaphores served locally
+	localSegs    map[int32]*localSeg
+	nextLocalSeg int32
+	localSems    map[uint32]int32
+
+	timers   [3]time.Time   // itimer deadlines (zero = unset)
+	timerFns [3]*time.Timer // fire timerDue at the deadline
+	inTimer  bool           // a timer handler is running (no re-entry)
 	start    time.Time
 	epochSec int64
 
@@ -144,7 +178,20 @@ var castagnoli = crc32.MakeTable(crc32.Castagnoli)
 
 // New creates a host over fs.
 func New(fs *vfs.FS) *Host {
-	return &Host{FS: fs, start: time.Now()}
+	return &Host{FS: fs, start: time.Now(), wake: make(chan struct{}, 1)}
+}
+
+// Every import first lets the process notice queued signals, expired
+// timers and its own death (Host.enter): a host call is where a kernel
+// would interrupt it.
+func init() {
+	for i := range table {
+		call := table[i].Call
+		table[i].Call = func(h *Host, m Memory, a []uint64) uint64 {
+			h.enter()
+			return call(h, m, a)
+		}
+	}
 }
 
 // Fn is one host import.
@@ -270,27 +317,128 @@ const direntSize = 280
 
 var table = []Fn{
 	// ===== pgmem bridge =====
-	{"env", "pgmem_recv", "ii", "i", func(h *Host, m Memory, a []uint64) uint64 {
-		ptr, n := u32(a[0]), u32(a[1])
-		if h.Recv == nil {
-			return 0
-		}
+	// recv/send on a socket fd. A single-user backend has one client and
+	// no real sockets: the fd is ignored and the bytes go through
+	// Host.Recv/Send. In a cluster the fd names a ConnSock.
+	{"env", "pgmem_sock_recv", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		fd, ptr, n := i32(a[0]), u32(a[1]), u32(a[2])
 		dst, ok := m.Read(ptr, n)
 		if !ok {
 			return errno(vfs.EFAULT)
 		}
-		return ret32(int32(h.Recv(dst)))
+		if h.Sys == nil {
+			if h.Recv == nil {
+				return 0
+			}
+			return ret32(int32(h.Recv(dst)))
+		}
+		s, err := h.connSock(fd)
+		if err != vfs.OK {
+			return errno(err)
+		}
+		return ret32(s.recv(dst))
 	}},
-	{"env", "pgmem_send", "ii", "i", func(h *Host, m Memory, a []uint64) uint64 {
-		ptr, n := u32(a[0]), u32(a[1])
+	{"env", "pgmem_sock_send", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		fd, ptr, n := i32(a[0]), u32(a[1]), u32(a[2])
 		b, ok := m.Read(ptr, n)
 		if !ok {
 			return errno(vfs.EFAULT)
 		}
-		if h.Send == nil {
-			return ret32(int32(n))
+		if h.Sys == nil {
+			if h.Send == nil {
+				return ret32(int32(n))
+			}
+			return ret32(int32(h.Send(b)))
 		}
-		return ret32(int32(h.Send(b)))
+		s, err := h.connSock(fd)
+		if err != vfs.OK {
+			return errno(err)
+		}
+		return ret32(s.send(b))
+	}},
+	{"env", "pgmem_getpid", "", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Pid == 0 {
+			return ret32(42) // what Emscripten's getpid says
+		}
+		return ret32(h.Pid)
+	}},
+	{"env", "pgmem_kill", "ii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		pid, sig := i32(a[0]), i32(a[1])
+		if h.Sys == nil {
+			// single user: only oneself exists (SetLatch sends SIGURG)
+			if pid != 42 && pid != h.Pid {
+				return errno(vfs.ESRCH)
+			}
+			if sig != 0 && h.Guest != nil {
+				if err := h.Guest.Raise(sig); err != nil {
+					panic(err)
+				}
+			}
+			return 0
+		}
+		return ret32(h.Sys.Kill(h, pid, sig))
+	}},
+	{"env", "pgmem_waitpid", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return errno(vfs.ECHILD)
+		}
+		pid, status := h.Sys.Waitpid(h, i32(a[0]), i32(a[2]))
+		if pid > 0 && u32(a[1]) != 0 {
+			wrI32(m, u32(a[1]), status)
+		}
+		return ret32(pid)
+	}},
+	{"env", "pgmem_usleep", "i", "", func(h *Host, m Memory, a []uint64) uint64 {
+		us := i32(a[0])
+		if h.Sys == nil {
+			h.sleep((us + 999) / 1000)
+			return 0
+		}
+		h.usleep(us)
+		return 0
+	}},
+	{"env", "pgmem_spawn", "ii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return errno(vfs.ENOSYS)
+		}
+		return ret32(h.Sys.spawn(h, h.str(m, u32(a[0])), h.str(m, u32(a[1]))))
+	}},
+	{"env", "pgmem_shmget", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return ret32(h.localShmget(m, i32(a[0]), u32(a[1]), i32(a[2])))
+		}
+		return ret32(h.Sys.shmget(i32(a[0]), u32(a[1]), i32(a[2])))
+	}},
+	{"env", "pgmem_shmat", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return ret32(h.localShmat(i32(a[0])))
+		}
+		return ret32(h.Sys.shmat(h, i32(a[0]), u32(a[1])))
+	}},
+	{"env", "pgmem_shmdt", "i", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return 0
+		}
+		return ret32(h.Sys.shmdt(h, u32(a[0])))
+	}},
+	{"env", "pgmem_shmctl", "iiii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		var segsz, nattch, r int32
+		if h.Sys == nil {
+			segsz, nattch, r = h.localShmctl(i32(a[0]), i32(a[1]))
+		} else {
+			segsz, nattch, r = h.Sys.shmctl(i32(a[0]), i32(a[1]))
+		}
+		if r == 0 {
+			wrI32(m, u32(a[2]), segsz)
+			wrI32(m, u32(a[3]), nattch)
+		}
+		return ret32(r)
+	}},
+	{"env", "pgmem_sem", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return ret32(h.localSem(i32(a[0]), u32(a[1]), i32(a[2])))
+		}
+		return ret32(h.Sys.sem(h, i32(a[0]), u32(a[1]), i32(a[2])))
 	}},
 	{"env", "pgmem_run", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		cmd := h.str(m, u32(a[0]))
@@ -308,9 +456,17 @@ var table = []Fn{
 		}
 		return 0
 	}},
-	{"env", "pgmem_poll", "i", "i", func(h *Host, m Memory, a []uint64) uint64 {
-		h.sleep(i32(a[0]))
-		return 0
+	{"env", "pgmem_poll", "iii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		fds, nfds, timeout := u32(a[0]), i32(a[1]), i32(a[2])
+		if h.Sys == nil {
+			// single user: nothing can become ready; sleep for the timeout
+			for i := int32(0); i < nfds; i++ {
+				m.Write(fds+uint32(i)*8+6, []byte{0, 0})
+			}
+			h.sleep(timeout)
+			return 0
+		}
+		return h.poll(m, fds, nfds, timeout)
 	}},
 	// pgmem_crc32c(crc, data, len): PostgreSQL's raw CRC-32C state update
 	// (INIT/FIN are applied by the caller), computed with Go's hardware
@@ -441,6 +597,9 @@ var table = []Fn{
 		if want > 0xFFFF0000 {
 			want = 0xFFFF0000
 		}
+		if h.HeapMax != 0 && want > uint64(h.HeapMax) {
+			want = uint64(h.HeapMax)
+		}
 		if want < uint64(req) {
 			return 0
 		}
@@ -456,6 +615,9 @@ var table = []Fn{
 		return 1
 	}},
 	{"env", "emscripten_get_heap_max", "", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.HeapMax != 0 {
+			return ret32(int32(h.HeapMax))
+		}
 		return ret32(int32(0xFFFF0000 - 0x100000000)) // 4 GiB - 64 KiB as i32
 	}},
 
@@ -511,10 +673,20 @@ var table = []Fn{
 		if which < 0 || int(which) >= len(h.timers) {
 			return errno(vfs.EINVAL)
 		}
+		if t := h.timerFns[which]; t != nil {
+			t.Stop()
+			h.timerFns[which] = nil
+		}
 		if ms == 0 {
 			h.timers[which] = time.Time{}
 		} else {
-			h.timers[which] = time.Now().Add(time.Duration(ms * float64(time.Millisecond)))
+			d := time.Duration(ms * float64(time.Millisecond))
+			h.timers[which] = time.Now().Add(d)
+			w := uint(which)
+			h.timerFns[which] = time.AfterFunc(d, func() {
+				h.timerDue.Or(1 << w)
+				h.Wake()
+			})
 		}
 		return 0
 	}},
@@ -894,10 +1066,52 @@ var table = []Fn{
 	{"env", "_munmap_js", "iiiiij", "i", func(h *Host, m Memory, a []uint64) uint64 { return 0 }},
 
 	// ===== sockets (never really used; the wire goes through pgmem_recv/send) =====
-	{"env", "__syscall_socket", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 { return errno(vfs.ENOSYS) }},
-	{"env", "__syscall_bind", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 { return errno(vfs.ENOSYS) }},
-	{"env", "__syscall_listen", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 { return errno(vfs.ENOSYS) }},
-	{"env", "__syscall_accept4", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 { return errno(vfs.ENOSYS) }},
+	// The postmaster's listening sockets (AF_UNIX or AF_INET: the
+	// address is only a name, every connection comes from pgmem through
+	// the cluster's accept queue) and the accepted client sockets.
+	{"env", "__syscall_socket", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return errno(vfs.ENOSYS)
+		}
+		return ret32(h.FS.NewSocket(&Listener{}, nil))
+	}},
+	{"env", "__syscall_bind", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return errno(vfs.ENOSYS)
+		}
+		fd, addr, ln := i32(a[0]), u32(a[1]), u32(a[2])
+		sock, err := h.FS.Socket(fd)
+		if err != vfs.OK {
+			return errno(err)
+		}
+		l, ok := sock.(*Listener)
+		if !ok {
+			return errno(vfs.EINVAL)
+		}
+		if ln >= 2 && rdU32(m, addr)&0xffff == 1 { // AF_UNIX: sun_path follows
+			path := h.str(m, addr+2)
+			if err := h.FS.BindSocket(fd, path); err != vfs.OK {
+				return errno(err)
+			}
+			l.path = path
+		}
+		return 0
+	}},
+	{"env", "__syscall_listen", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return errno(vfs.ENOSYS)
+		}
+		if _, err := h.FS.Socket(i32(a[0])); err != vfs.OK {
+			return errno(err)
+		}
+		return 0
+	}},
+	{"env", "__syscall_accept4", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Sys == nil {
+			return errno(vfs.ENOSYS)
+		}
+		return h.accept(m, i32(a[0]), u32(a[1]), u32(a[2]))
+	}},
 	{"env", "__syscall_connect", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 { return errno(vfs.ENOSYS) }},
 	{"env", "__syscall_recvfrom", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 { return errno(vfs.ENOSYS) }},
 	{"env", "__syscall_sendto", "iiiiii", "i", func(h *Host, m Memory, a []uint64) uint64 { return errno(vfs.ENOSYS) }},
@@ -913,6 +1127,19 @@ var table = []Fn{
 	{"env", "_emscripten_throw_longjmp", "", "", func(h *Host, m Memory, a []uint64) uint64 {
 		panic(&AbortError{Msg: "longjmp in emscripten mode is not supported by this host"})
 	}},
+}
+
+// connSock returns the client connection behind a socket descriptor.
+func (h *Host) connSock(fd int32) (*ConnSock, vfs.Errno) {
+	sock, err := h.FS.Socket(fd)
+	if err != vfs.OK {
+		return nil, err
+	}
+	s, ok := sock.(*ConnSock)
+	if !ok {
+		return nil, vfs.ENOTCONN
+	}
+	return s, vfs.OK
 }
 
 // getaddrinfo resolves numeric hosts (and "localhost") the way

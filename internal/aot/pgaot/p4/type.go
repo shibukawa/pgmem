@@ -469,7 +469,7 @@ func F_findTypeTypmodoutFunction(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v14 int32
 	_ = v14
-	v11 = Fn13877(m, l0, int32(_a_F_findTypeTypmodoutFunction_0), int32(2233), int32(_a_F_findTypeTypmodoutFunction_1), int32(_a_F_findTypeTypmodoutFunction_2), int32(2227), int32(2240), int32(_a_F_findTypeTypmodoutFunction_3), int32(2275), int32(23))
+	v11 = Fn13899(m, l0, int32(_a_F_findTypeTypmodoutFunction_0), int32(2233), int32(_a_F_findTypeTypmodoutFunction_1), int32(_a_F_findTypeTypmodoutFunction_2), int32(2227), int32(2240), int32(_a_F_findTypeTypmodoutFunction_3), int32(2275), int32(23))
 	v14 = m.ExcPending
 	if v14 != 0 {
 		return int32(0)
@@ -746,7 +746,7 @@ func F_type_is_multirange(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14011(m, l0, int32(109))
+	v3 = Fn14033(m, l0, int32(109))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

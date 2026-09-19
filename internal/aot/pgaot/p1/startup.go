@@ -11,14 +11,10 @@ func F_StartupProcTriggerHandler(m *base.Module, l0 int32) {
 	var v6 int32
 	_ = v6
 	*(*int32)(unsafe.Add(mBase, _c_F_StartupProcTriggerHandler[0])) = int32(1)
-	F_WakeupRecovery(m)
+	v6 = *(*int32)(unsafe.Add(mBase, _c_F_StartupProcTriggerHandler[1]))
+	F_SetLatch(m, v6+int32(4))
 	mBase = m.M
-	v6 = m.ExcPending
-	if v6 != 0 {
-		return
-	} else {
-		return
-	}
+	return
 }
 func F_begin_startup_progress_phase(m *base.Module) {
 	mBase := m.M

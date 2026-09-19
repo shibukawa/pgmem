@@ -159,7 +159,7 @@ func F_fill_seq_with_data(m *base.Module, l0 int32, l1 int32) {
 func F_seq_desc(m *base.Module, l0 int32, l1 int32) {
 	var v5 int32
 	_ = v5
-	Fn13990(m, l0, l1, int32(_a_F_seq_desc_0))
+	Fn14012(m, l0, l1, int32(_a_F_seq_desc_0))
 	v5 = m.ExcPending
 	if v5 != 0 {
 		return

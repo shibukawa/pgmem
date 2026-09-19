@@ -58,10 +58,8 @@ func F_XactLockTableWait(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 	_ = v74
 	var v76 int32
 	_ = v76
-	var v79 int32
-	_ = v79
-	var v86 int32
-	_ = v86
+	var v85 int32
+	_ = v85
 	v6 = m.G0
 	v8 = v6 - int32(48)
 	m.G0 = v8
@@ -126,9 +124,9 @@ L6:
 L7:
 	;
 	if l3 != 0 {
-		goto L22
+		goto L21
 	} else {
-		goto L23
+		goto L22
 	}
 L8:
 	;
@@ -218,28 +216,20 @@ L19:
 	;
 	F_pg_usleep(m, int32(1000))
 	mBase = m.M
-	v79 = m.ExcPending
-	if v79 != 0 {
-		goto L4
-	} else {
-		goto L21
-	}
+	v46 = v51
+	goto L10
 L20:
 	;
 	goto L19
 L21:
 	;
-	v46 = v51
-	goto L10
+	v85 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
+	*(*int32)(unsafe.Add(mBase, _c_F_XactLockTableWait[0])) = v85
+	goto L23
 L22:
 	;
-	v86 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
-	*(*int32)(unsafe.Add(mBase, _c_F_XactLockTableWait[0])) = v86
-	goto L24
+	goto L23
 L23:
-	;
-	goto L24
-L24:
 	;
 	m.G0 = v8 + int32(48)
 	return

@@ -708,14 +708,16 @@ func F_SimpleLruZeroPage(m *base.Module, l0 int32, l1 int64) int32 {
 	_ = v88
 	var v94 int32
 	_ = v94
-	var v106 int32
+	var v106 int64
 	_ = v106
-	var v108 int32
-	_ = v108
-	var v114 int32
-	_ = v114
-	var v117 int64
-	_ = v117
+	var v107 int32
+	_ = v107
+	var v109 int32
+	_ = v109
+	var v115 int32
+	_ = v115
+	var v118 int64
+	_ = v118
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v10 = F_SlruSelectLRUPage(m, l0, l1)
 	mBase = m.M
@@ -783,14 +785,14 @@ func F_SimpleLruZeroPage(m *base.Module, l0 int32, l1 int64) int32 {
 				}
 			}
 		}
-		*(*int64)(unsafe.Add(mBase, uint32(v9)+48)) = l1
-		v106 = *(*int32)(unsafe.Add(mBase, uint32(v9)+56))
-		v108 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _c_F_SimpleLruZeroPage[0])) = uint8(v108)
-		*(*uint8)(unsafe.Add(mBase, _c_F_SimpleLruZeroPage[1])) = uint8(v108)
-		v114 = v106 << (uint(int32(6)) % 32)
-		v117 = *(*int64)(unsafe.Add(mBase, uint32(v114)+uint32(_c_F_SimpleLruZeroPage[2])))
-		*(*int64)(unsafe.Add(mBase, uint32(v114)+uint32(_c_F_SimpleLruZeroPage[2]))) = v117 + int64(1)
+		v106 = base.AtomicRmwXchg64(m, v9, int32(48), l1)
+		v107 = *(*int32)(unsafe.Add(mBase, uint32(v9)+56))
+		v109 = int32(1)
+		*(*uint8)(unsafe.Add(mBase, _c_F_SimpleLruZeroPage[0])) = uint8(v109)
+		*(*uint8)(unsafe.Add(mBase, _c_F_SimpleLruZeroPage[1])) = uint8(v109)
+		v115 = v107 << (uint(int32(6)) % 32)
+		v118 = *(*int64)(unsafe.Add(mBase, uint32(v115)+uint32(_c_F_SimpleLruZeroPage[2])))
+		*(*int64)(unsafe.Add(mBase, uint32(v115)+uint32(_c_F_SimpleLruZeroPage[2]))) = v118 + int64(1)
 		return v10
 	}
 }

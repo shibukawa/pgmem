@@ -6,15 +6,19 @@ import (
 )
 
 func F_IdleInTransactionSessionTimeoutHandler(m *base.Module) {
-	var v3 int32
-	_ = v3
-	Fn13831(m, int32(_a_F_IdleInTransactionSessionTimeoutHandler_0))
-	v3 = m.ExcPending
-	if v3 != 0 {
-		return
-	} else {
-		return
-	}
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v8 int32
+	_ = v8
+	v2 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_IdleInTransactionSessionTimeoutHandler[0])) = v2
+	*(*int32)(unsafe.Add(mBase, _c_F_IdleInTransactionSessionTimeoutHandler[1])) = v2
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_IdleInTransactionSessionTimeoutHandler[2]))
+	F_SetLatch(m, v8)
+	mBase = m.M
+	return
 }
 func F_IncrementVarSublevelsUp(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
@@ -196,57 +200,50 @@ func F_IpcMemoryDelete(m *base.Module, l0 int32, l1 int32) {
 	_ = v7
 	var v9 int32
 	_ = v9
-	var v10 int32
-	_ = v10
+	var v14 int32
+	_ = v14
 	var v15 int32
 	_ = v15
-	var v16 int32
-	_ = v16
-	var v24 int32
-	_ = v24
-	var v29 int32
-	_ = v29
+	var v23 int32
+	_ = v23
+	var v28 int32
+	_ = v28
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
 	v7 = int32(0)
-	v9 = F_pgl_shmctl(m, l1, v7, v7)
+	v9 = F_pgmem_shmctl(m, l1, v7, v7)
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	if v7 <= v9 {
+		m.G0 = v5 + int32(16)
 		return
 	} else {
-		if int32(0) <= v9 {
-			m.G0 = v5 + int32(16)
+		v14 = F_errstart(m, int32(15), int32(0))
+		mBase = m.M
+		v15 = m.ExcPending
+		if v15 != 0 {
 			return
 		} else {
-			v15 = F_errstart(m, int32(15), int32(0))
-			mBase = m.M
-			v16 = m.ExcPending
-			if v16 != 0 {
+			if v14 == int32(0) {
+				m.G0 = v5 + int32(16)
 				return
 			} else {
-				if v15 == int32(0) {
-					m.G0 = v5 + int32(16)
+				*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = int32(0)
+				*(*int32)(unsafe.Add(mBase, uint32(v5))) = l1
+				F_errmsg_internal(m, int32(_a_F_IpcMemoryDelete_0), v5)
+				mBase = m.M
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v5))) = l1
-					F_errmsg_internal(m, int32(_a_F_IpcMemoryDelete_0), v5)
+					F_errfinish(m, int32(_a_F_IpcMemoryDelete_1), int32(302), int32(_a_F_IpcMemoryDelete_2))
 					mBase = m.M
-					v24 = m.ExcPending
-					if v24 != 0 {
+					v28 = m.ExcPending
+					if v28 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_IpcMemoryDelete_1), int32(302), int32(_a_F_IpcMemoryDelete_2))
-						mBase = m.M
-						v29 = m.ExcPending
-						if v29 != 0 {
-							return
-						} else {
-							m.G0 = v5 + int32(16)
-							return
-						}
+						m.G0 = v5 + int32(16)
+						return
 					}
 				}
 			}
@@ -260,127 +257,55 @@ func F_IpcMemoryDetach(m *base.Module, l0 int32, l1 int32) {
 	_ = v3
 	var v5 int32
 	_ = v5
-	var v9 int32
-	_ = v9
+	var v7 int32
+	_ = v7
+	var v12 int32
+	_ = v12
 	var v13 int32
 	_ = v13
-	var v14 int32
-	_ = v14
-	var v16 int32
-	_ = v16
-	var v26 int32
-	_ = v26
-	var v31 int32
-	_ = v31
-	var v32 int32
-	_ = v32
-	var v38 int32
-	_ = v38
-	var v43 int32
-	_ = v43
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
-	v9 = *(*int32)(unsafe.Add(mBase, _c_F_IpcMemoryDetach[0]))
-	if v9 == int32(0) {
-		goto L3
-	} else {
-		goto L4
-	}
-L1:
-	;
-	m.G0 = v5 + int32(16)
-	return
-L2:
-	;
-	if int32(0) <= v26 {
-		goto L1
-	} else {
-		goto L11
-	}
-L3:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_IpcMemoryDetach[1])) = int32(28)
-	v26 = int32(-1)
-	goto L2
-L4:
-	;
-	v13 = v9
-	goto L5
-L5:
-	;
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
-	if l1 != v14 {
-		goto L7
-	} else {
-		goto L8
-	}
-L6:
-	;
-	v26 = int32(0)
-	goto L2
-L7:
-	;
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v13)+20))
-	if v16 != 0 {
-		v13 = v16
-		goto L5
-	} else {
-		goto L10
-	}
-L8:
-	;
-	goto L9
-L9:
-	;
-	goto L6
-L10:
-	;
-	goto L3
-L11:
-	;
-	v31 = F_errstart(m, int32(15), int32(0))
+	v7 = F_pgmem_shmdt(m, l1)
 	mBase = m.M
-	v32 = m.ExcPending
-	if v32 != 0 {
-		goto L12
+	if int32(0) <= v7 {
+		m.G0 = v5 + int32(16)
+		return
 	} else {
-		goto L13
+		v12 = F_errstart(m, int32(15), int32(0))
+		mBase = m.M
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return
+		} else {
+			if v12 == int32(0) {
+				m.G0 = v5 + int32(16)
+				return
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v5))) = l1
+				F_errmsg_internal(m, int32(_a_F_IpcMemoryDetach_0), v5)
+				mBase = m.M
+				v19 = m.ExcPending
+				if v19 != 0 {
+					return
+				} else {
+					F_errfinish(m, int32(_a_F_IpcMemoryDetach_1), int32(290), int32(_a_F_IpcMemoryDetach_2))
+					mBase = m.M
+					v24 = m.ExcPending
+					if v24 != 0 {
+						return
+					} else {
+						m.G0 = v5 + int32(16)
+						return
+					}
+				}
+			}
+		}
 	}
-L12:
-	;
-	return
-L13:
-	;
-	if v31 == int32(0) {
-		goto L1
-	} else {
-		goto L14
-	}
-L14:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v5))) = l1
-	F_errmsg_internal(m, int32(_a_F_IpcMemoryDetach_0), v5)
-	mBase = m.M
-	v38 = m.ExcPending
-	if v38 != 0 {
-		goto L12
-	} else {
-		goto L15
-	}
-L15:
-	;
-	F_errfinish(m, int32(_a_F_IpcMemoryDetach_1), int32(290), int32(_a_F_IpcMemoryDetach_2))
-	mBase = m.M
-	v43 = m.ExcPending
-	if v43 != 0 {
-		goto L12
-	} else {
-		goto L16
-	}
-L16:
-	;
-	goto L1
 }
 func F_i2tof(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -569,7 +494,7 @@ func F_icregexnesel(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13989(m, l0, int32(3))
+	v3 = Fn14011(m, l0, int32(3))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -12338,7 +12263,7 @@ func F_isbn_cast_from_ean13(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13926(m, l0, int32(3))
+	v3 = Fn13948(m, l0, int32(3))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -12351,7 +12276,7 @@ func F_isbn_in(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13869(m, l0, int32(3))
+	v3 = Fn13891(m, l0, int32(3))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -12821,7 +12746,7 @@ func F_ivfflathandler(m *base.Module, l0 int32) int32 {
 	_ = v16
 	var v19 int32
 	_ = v19
-	v16 = Fn13924(m, l0, int32(_a_F_ivfflathandler_0), int32(_a_F_ivfflathandler_1), int32(_a_F_ivfflathandler_2), int32(_a_F_ivfflathandler_3), int32(_a_F_ivfflathandler_4), int32(_a_F_ivfflathandler_5), int32(_a_F_ivfflathandler_6), int32(_a_F_ivfflathandler_7), int32(_a_F_ivfflathandler_8), int32(_a_F_ivfflathandler_9), int32(_a_F_ivfflathandler_10), int32(_a_F_ivfflathandler_11), int32(_a_F_ivfflathandler_12), int64(72057594038255616))
+	v16 = Fn13946(m, l0, int32(_a_F_ivfflathandler_0), int32(_a_F_ivfflathandler_1), int32(_a_F_ivfflathandler_2), int32(_a_F_ivfflathandler_3), int32(_a_F_ivfflathandler_4), int32(_a_F_ivfflathandler_5), int32(_a_F_ivfflathandler_6), int32(_a_F_ivfflathandler_7), int32(_a_F_ivfflathandler_8), int32(_a_F_ivfflathandler_9), int32(_a_F_ivfflathandler_10), int32(_a_F_ivfflathandler_11), int32(_a_F_ivfflathandler_12), int64(72057594038255616))
 	v19 = m.ExcPending
 	if v19 != 0 {
 		return int32(0)

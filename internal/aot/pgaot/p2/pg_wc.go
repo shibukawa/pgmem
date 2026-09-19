@@ -19,7 +19,7 @@ func F_pg_wc_islower(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, _c_F_pg_wc_islower[0]))
 	switch v3 - int32(1) {
 	case 0:
-		v15 = Fn13968(m, l0, int32(97), int32(_a_F_pg_wc_islower_0), int32(_a_F_pg_wc_islower_1), int32(689))
+		v15 = Fn13990(m, l0, int32(97), int32(_a_F_pg_wc_islower_0), int32(_a_F_pg_wc_islower_1), int32(689))
 		mBase = m.M
 		return v15
 	case 1:

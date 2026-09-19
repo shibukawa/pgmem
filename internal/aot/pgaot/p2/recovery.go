@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -10,20 +11,21 @@ func F_GetRecoveryPauseState(m *base.Module) int32 {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v5 int32
-	_ = v5
+	var v7 int32
+	_ = v7
 	var v9 int32
 	_ = v9
 	var v18 int32
 	_ = v18
 	var v20 int32
 	_ = v20
-	var v23 int32
-	_ = v23
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+96))
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+96)) = int32(1)
-	if v5 != 0 {
+	v7 = base.AtomicRmwXchg32(m, v4, int32(96), int32(1))
+	if v7 != 0 {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
 		F_s_lock(m, v9+int32(96), int32(_a_F_GetRecoveryPauseState_0), int32(3096), int32(_a_F_GetRecoveryPauseState_1))
 		mBase = m.M
@@ -32,15 +34,17 @@ func F_GetRecoveryPauseState(m *base.Module) int32 {
 			return int32(0)
 		} else {
 			v20 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
-			*(*int32)(unsafe.Add(mBase, uint32(v20)+96)) = int32(0)
-			v23 = *(*int32)(unsafe.Add(mBase, uint32(v20)+80))
-			return v23
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+80))
+			v22 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v20)+96)), uint32(v22))
+			return v21
 		}
 	} else {
 		v20 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
-		*(*int32)(unsafe.Add(mBase, uint32(v20)+96)) = int32(0)
-		v23 = *(*int32)(unsafe.Add(mBase, uint32(v20)+80))
-		return v23
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+80))
+		v22 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v20)+96)), uint32(v22))
+		return v21
 	}
 }
 func F_check_recovery_target_name(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

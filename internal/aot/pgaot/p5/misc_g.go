@@ -2,6 +2,7 @@ package p5
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -1132,20 +1133,21 @@ func F_GetInsertRecPtr(m *base.Module) int64 {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v5 int32
-	_ = v5
+	var v7 int32
+	_ = v7
 	var v9 int32
 	_ = v9
 	var v18 int32
 	_ = v18
 	var v20 int32
 	_ = v20
-	var v23 int64
-	_ = v23
+	var v21 int64
+	_ = v21
+	var v22 int32
+	_ = v22
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_GetInsertRecPtr[0]))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+440))
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+440)) = int32(1)
-	if v5 != 0 {
+	v7 = base.AtomicRmwXchg32(m, v4, int32(440), int32(1))
+	if v7 != 0 {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_GetInsertRecPtr[0]))
 		F_s_lock(m, v9+int32(440), int32(_a_F_GetInsertRecPtr_0), int32(_a_F_GetInsertRecPtr_1), int32(_a_F_GetInsertRecPtr_2))
 		mBase = m.M
@@ -1154,15 +1156,17 @@ func F_GetInsertRecPtr(m *base.Module) int64 {
 			return int64(0)
 		} else {
 			v20 = *(*int32)(unsafe.Add(mBase, _c_F_GetInsertRecPtr[0]))
-			*(*int32)(unsafe.Add(mBase, uint32(v20)+440)) = int32(0)
-			v23 = *(*int64)(unsafe.Add(mBase, uint32(v20)+184))
-			return v23
+			v21 = *(*int64)(unsafe.Add(mBase, uint32(v20)+184))
+			v22 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v20)+440)), uint32(v22))
+			return v21
 		}
 	} else {
 		v20 = *(*int32)(unsafe.Add(mBase, _c_F_GetInsertRecPtr[0]))
-		*(*int32)(unsafe.Add(mBase, uint32(v20)+440)) = int32(0)
-		v23 = *(*int64)(unsafe.Add(mBase, uint32(v20)+184))
-		return v23
+		v21 = *(*int64)(unsafe.Add(mBase, uint32(v20)+184))
+		v22 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v20)+440)), uint32(v22))
+		return v21
 	}
 }
 func F_GetLatestSnapshot(m *base.Module) int32 {
@@ -1979,7 +1983,7 @@ func F_g_intbig_picksplit(m *base.Module, l0 int32) int32 {
 							for {
 								v130 = int32(4)
 								v133 = *(*int32)(unsafe.Add(mBase, uint32(v73+v115<<(uint(v130)%32))))
-								v135 = Fn13923(m, v103, v133, v54, v130)
+								v135 = Fn13945(m, v103, v133, v54, v130)
 								mBase = m.M
 								v136 = base.B2i32(v107 < v135)
 								if v107 < v135 {
@@ -2137,9 +2141,9 @@ func F_g_intbig_picksplit(m *base.Module, l0 int32) int32 {
 										*(*uint16)(unsafe.Add(mBase, uint32(v291-int32(8)))) = uint16(v266)
 										v295 = int32(4)
 										v300 = *(*int32)(unsafe.Add(mBase, uint32(v180+v265<<(uint(v295)%32))))
-										v302 = Fn13923(m, v202, v300, v54, v295)
+										v302 = Fn13945(m, v202, v300, v54, v295)
 										mBase = m.M
-										v304 = Fn13923(m, v231, v300, v54, int32(4))
+										v304 = Fn13945(m, v231, v300, v54, int32(4))
 										mBase = m.M
 										v305 = v302 - v304
 										v307 = v305 >> (uint(int32(31)) % 32)
@@ -2194,9 +2198,9 @@ func F_g_intbig_picksplit(m *base.Module, l0 int32) int32 {
 												} else {
 													v377 = int32(4)
 													v380 = *(*int32)(unsafe.Add(mBase, uint32(v180+v364<<(uint(v377)%32))))
-													v382 = Fn13923(m, v202, v380, v54, v377)
+													v382 = Fn13945(m, v202, v380, v54, v377)
 													mBase = m.M
-													v385 = Fn13923(m, v231, v380, v54, int32(4))
+													v385 = Fn13945(m, v231, v380, v54, int32(4))
 													mBase = m.M
 													v387 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
 													v388 = *(*int32)(unsafe.Add(mBase, uint32(v25)+20))
@@ -2488,7 +2492,7 @@ func F_g_intbig_picksplit(m *base.Module, l0 int32) int32 {
 						for {
 							v130 = int32(4)
 							v133 = *(*int32)(unsafe.Add(mBase, uint32(v73+v115<<(uint(v130)%32))))
-							v135 = Fn13923(m, v103, v133, v54, v130)
+							v135 = Fn13945(m, v103, v133, v54, v130)
 							mBase = m.M
 							v136 = base.B2i32(v107 < v135)
 							if v107 < v135 {
@@ -2646,9 +2650,9 @@ func F_g_intbig_picksplit(m *base.Module, l0 int32) int32 {
 									*(*uint16)(unsafe.Add(mBase, uint32(v291-int32(8)))) = uint16(v266)
 									v295 = int32(4)
 									v300 = *(*int32)(unsafe.Add(mBase, uint32(v180+v265<<(uint(v295)%32))))
-									v302 = Fn13923(m, v202, v300, v54, v295)
+									v302 = Fn13945(m, v202, v300, v54, v295)
 									mBase = m.M
-									v304 = Fn13923(m, v231, v300, v54, int32(4))
+									v304 = Fn13945(m, v231, v300, v54, int32(4))
 									mBase = m.M
 									v305 = v302 - v304
 									v307 = v305 >> (uint(int32(31)) % 32)
@@ -2703,9 +2707,9 @@ func F_g_intbig_picksplit(m *base.Module, l0 int32) int32 {
 											} else {
 												v377 = int32(4)
 												v380 = *(*int32)(unsafe.Add(mBase, uint32(v180+v364<<(uint(v377)%32))))
-												v382 = Fn13923(m, v202, v380, v54, v377)
+												v382 = Fn13945(m, v202, v380, v54, v377)
 												mBase = m.M
-												v385 = Fn13923(m, v231, v380, v54, int32(4))
+												v385 = Fn13945(m, v231, v380, v54, int32(4))
 												mBase = m.M
 												v387 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
 												v388 = *(*int32)(unsafe.Add(mBase, uint32(v25)+20))
@@ -3372,7 +3376,7 @@ func F_gb18030_to_utf8(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v4 = int32(0)
-	v7 = Fn13848(m, l0, int32(39), int32(_a_F_gb18030_to_utf8_0), v4, v4, int32(_a_F_gb18030_to_utf8_1))
+	v7 = Fn13870(m, l0, int32(39), int32(_a_F_gb18030_to_utf8_0), v4, v4, int32(_a_F_gb18030_to_utf8_1))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -19621,7 +19625,7 @@ L68:
 func F_gistadjustmembers(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	var v13 int32
 	_ = v13
-	Fn13908(m, l0, l1, l2, l3, int32(_a_F_gistadjustmembers_0), int32(349), int32(_a_F_gistadjustmembers_1), int32(_a_F_gistadjustmembers_2), int32(230), int32(_a_F_gistadjustmembers_3), int32(12))
+	Fn13930(m, l0, l1, l2, l3, int32(_a_F_gistadjustmembers_0), int32(349), int32(_a_F_gistadjustmembers_1), int32(_a_F_gistadjustmembers_2), int32(230), int32(_a_F_gistadjustmembers_3), int32(12))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return

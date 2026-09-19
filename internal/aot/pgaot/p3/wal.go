@@ -2,6 +2,7 @@ package p3
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -26,28 +27,28 @@ func F_ProcessWalSndrMessage(m *base.Module, l0 int64, l1 int64) {
 	_ = v24
 	var v32 int64
 	_ = v32
-	var v33 int32
-	_ = v33
+	var v35 int32
+	_ = v35
 	var v42 int32
 	_ = v42
 	var v43 int64
 	_ = v43
-	var v51 int32
-	_ = v51
-	var v58 int32
-	_ = v58
-	var v71 int32
-	_ = v71
-	var v75 int32
-	_ = v75
-	var v79 int32
-	_ = v79
-	var v85 int32
-	_ = v85
-	var v88 int32
-	_ = v88
-	var v90 int32
-	_ = v90
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
+	var v59 int32
+	_ = v59
+	var v72 int32
+	_ = v72
+	var v76 int32
+	_ = v76
+	var v80 int32
+	_ = v80
+	var v86 int32
+	_ = v86
+	var v89 int32
+	_ = v89
 	var v91 int32
 	_ = v91
 	var v92 int32
@@ -62,78 +63,82 @@ func F_ProcessWalSndrMessage(m *base.Module, l0 int64, l1 int64) {
 	_ = v96
 	var v97 int32
 	_ = v97
-	var v99 int32
-	_ = v99
+	var v98 int32
+	_ = v98
 	var v100 int32
 	_ = v100
-	var v109 int32
-	_ = v109
+	var v103 int32
+	_ = v103
 	var v110 int32
 	_ = v110
-	var v112 int64
+	var v111 int64
+	_ = v111
+	var v112 int32
 	_ = v112
-	var v114 int64
-	_ = v114
-	var v115 int32
-	_ = v115
-	var v118 int32
-	_ = v118
-	var v119 int32
-	_ = v119
+	var v116 int64
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v120 int32
+	_ = v120
 	var v123 int32
 	_ = v123
-	var v130 int32
-	_ = v130
+	var v125 int32
+	_ = v125
 	var v132 int32
 	_ = v132
-	var v136 int64
+	var v134 int32
+	_ = v134
+	var v135 int64
+	_ = v135
+	var v136 int32
 	_ = v136
-	var v142 int32
-	_ = v142
-	var v143 int32
-	_ = v143
-	var v144 int32
-	_ = v144
-	var v147 int64
+	var v145 int32
+	_ = v145
+	var v146 int32
+	_ = v146
+	var v147 int32
 	_ = v147
-	var v148 int64
-	_ = v148
-	var v156 int64
-	_ = v156
-	var v162 int64
-	_ = v162
-	var v171 int64
-	_ = v171
-	var v174 int32
+	var v150 int64
+	_ = v150
+	var v151 int64
+	_ = v151
+	var v159 int64
+	_ = v159
+	var v165 int64
+	_ = v165
+	var v174 int64
 	_ = v174
-	var v178 int32
-	_ = v178
+	var v177 int32
+	_ = v177
 	var v181 int32
 	_ = v181
 	var v184 int32
 	_ = v184
-	var v185 int32
-	_ = v185
-	var v191 int32
-	_ = v191
-	var v192 int32
-	_ = v192
-	var v198 int32
-	_ = v198
-	var v202 int32
-	_ = v202
-	var v203 int32
-	_ = v203
-	var v212 int32
-	_ = v212
-	var v214 int32
-	_ = v214
+	var v187 int32
+	_ = v187
+	var v188 int32
+	_ = v188
+	var v194 int32
+	_ = v194
+	var v195 int32
+	_ = v195
+	var v201 int32
+	_ = v201
+	var v205 int32
+	_ = v205
+	var v206 int32
+	_ = v206
+	var v215 int32
+	_ = v215
 	var v217 int32
 	_ = v217
-	var v219 int32
-	_ = v219
-	var v221 int32
-	_ = v221
+	var v220 int32
+	_ = v220
+	var v222 int32
+	_ = v222
+	var v224 int32
+	_ = v224
 	v9 = m.G0
 	v11 = v9 - int32(32)
 	m.G0 = v11
@@ -151,9 +156,8 @@ func F_ProcessWalSndrMessage(m *base.Module, l0 int64, l1 int64) {
 	goto L1
 L1:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v14)+1456))
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+1456)) = int32(1)
-	if v33 != 0 {
+	v35 = base.AtomicRmwXchg32(m, v14, int32(1456), int32(1))
+	if v35 != 0 {
 		goto L2
 	} else {
 		goto L3
@@ -194,15 +198,16 @@ L8:
 	goto L9
 L9:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+1456)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v14)+80)) = v32
 	*(*int64)(unsafe.Add(mBase, uint32(v14)+72)) = l1
 	*(*int64)(unsafe.Add(mBase, uint32(v14)+88)) = l0
-	v51 = int32(13)
+	v49 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v14)+1456)), uint32(v49))
+	v52 = int32(13)
 	goto L12
 L10:
 	;
-	if v88 != 0 {
+	if v89 != 0 {
 		goto L23
 	} else {
 		goto L24
@@ -212,26 +217,26 @@ L11:
 	goto L10
 L12:
 	;
-	v58 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[1]))
+	v59 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[1]))
 	goto L15
 L13:
 	;
-	v71 = int32(0)
+	v72 = int32(0)
 	goto L20
 L15:
 	;
 	goto L16
 L16:
 	;
-	if int32(0)|base.B2i32(v58 == int32(15)) != 0 {
+	if int32(0)|base.B2i32(v59 == int32(15)) != 0 {
 		goto L13
 	} else {
 		goto L18
 	}
 L18:
 	;
-	if v58 <= v51 {
-		v88 = int32(1)
+	if v59 <= v52 {
+		v89 = int32(1)
 		goto L11
 	} else {
 		goto L19
@@ -241,33 +246,33 @@ L19:
 	goto L13
 L20:
 	;
-	v75 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[2]))
-	if v75 != int32(2) {
-		v88 = v71
+	v76 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[2]))
+	if v76 != int32(2) {
+		v89 = v72
 		goto L11
 	} else {
 		goto L21
 	}
 L21:
 	;
-	v79 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[3])))
-	if v79&int32(1) != 0 {
-		v88 = v71
+	v80 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[3])))
+	if v80&int32(1) != 0 {
+		v89 = v72
 		goto L11
 	} else {
 		goto L22
 	}
 L22:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[4]))
-	v88 = int32(0) | base.B2i32(v85 <= v51)
+	v86 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[4]))
+	v89 = int32(0) | base.B2i32(v86 <= v52)
 	goto L11
 L23:
 	;
-	v90 = F_timestamptz_to_str(m, l1)
+	v91 = F_timestamptz_to_str(m, l1)
 	mBase = m.M
-	v91 = m.ExcPending
-	if v91 != 0 {
+	v92 = m.ExcPending
+	if v92 != 0 {
 		goto L5
 	} else {
 		goto L26
@@ -281,60 +286,59 @@ L25:
 	return
 L26:
 	;
-	v92 = F_pstrdup(m, v90)
+	v93 = F_pstrdup(m, v91)
 	mBase = m.M
-	v93 = m.ExcPending
-	if v93 != 0 {
+	v94 = m.ExcPending
+	if v94 != 0 {
 		goto L5
 	} else {
 		goto L27
 	}
 L27:
 	;
-	v94 = F_timestamptz_to_str(m, v32)
+	v95 = F_timestamptz_to_str(m, v32)
 	mBase = m.M
-	v95 = m.ExcPending
-	if v95 != 0 {
+	v96 = m.ExcPending
+	if v96 != 0 {
 		goto L5
 	} else {
 		goto L28
 	}
 L28:
 	;
-	v96 = F_pstrdup(m, v94)
+	v97 = F_pstrdup(m, v95)
 	mBase = m.M
-	v97 = m.ExcPending
-	if v97 != 0 {
+	v98 = m.ExcPending
+	if v98 != 0 {
 		goto L5
 	} else {
 		goto L29
 	}
 L29:
 	;
-	v99 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[0]))
-	v100 = *(*int32)(unsafe.Add(mBase, uint32(v99)+1456))
-	*(*int32)(unsafe.Add(mBase, uint32(v99)+1456)) = int32(1)
-	if v100 != 0 {
+	v100 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[0]))
+	v103 = base.AtomicRmwXchg32(m, v100, int32(1456), int32(1))
+	if v103 != 0 {
 		goto L31
 	} else {
 		goto L32
 	}
 L30:
 	;
-	v184 = F_errstart(m, int32(13), int32(0))
+	v187 = F_errstart(m, int32(13), int32(0))
 	mBase = m.M
-	v185 = m.ExcPending
-	if v185 != 0 {
+	v188 = m.ExcPending
+	if v188 != 0 {
 		goto L5
 	} else {
 		goto L49
 	}
 L31:
 	;
-	F_s_lock(m, v99+int32(1456), int32(_a_F_ProcessWalSndrMessage_2), int32(372), int32(_a_F_ProcessWalSndrMessage_3))
+	F_s_lock(m, v100+int32(1456), int32(_a_F_ProcessWalSndrMessage_2), int32(372), int32(_a_F_ProcessWalSndrMessage_3))
 	mBase = m.M
-	v109 = m.ExcPending
-	if v109 != 0 {
+	v110 = m.ExcPending
+	if v110 != 0 {
 		goto L5
 	} else {
 		goto L34
@@ -344,13 +348,13 @@ L32:
 	goto L33
 L33:
 	;
-	v110 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v99)+1456)) = v110
-	v112 = *(*int64)(unsafe.Add(mBase, uint32(v99)+48))
-	v114 = F_GetXLogReplayRecPtr(m, v110)
+	v111 = *(*int64)(unsafe.Add(mBase, uint32(v100)+48))
+	v112 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v100)+1456)), uint32(v112))
+	v116 = F_GetXLogReplayRecPtr(m, v112)
 	mBase = m.M
-	v115 = m.ExcPending
-	if v115 != 0 {
+	v117 = m.ExcPending
+	if v117 != 0 {
 		goto L5
 	} else {
 		goto L35
@@ -360,36 +364,35 @@ L34:
 	goto L33
 L35:
 	;
-	if v112 != v114 {
+	if v116 != v111 {
 		goto L36
 	} else {
 		goto L37
 	}
 L36:
 	;
-	v118 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[5]))
-	v119 = *(*int32)(unsafe.Add(mBase, uint32(v118)+96))
-	*(*int32)(unsafe.Add(mBase, uint32(v118)+96)) = int32(1)
-	if v119 != 0 {
+	v120 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[5]))
+	v123 = base.AtomicRmwXchg32(m, v120, int32(96), int32(1))
+	if v123 != 0 {
 		goto L39
 	} else {
 		goto L40
 	}
 L37:
 	;
-	v178 = int32(0)
+	v181 = int32(0)
 	goto L38
 L38:
 	;
-	v181 = v178
+	v184 = v181
 	goto L30
 L39:
 	;
-	v123 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[5]))
-	F_s_lock(m, v123+int32(96), int32(_a_F_ProcessWalSndrMessage_4), int32(_a_F_ProcessWalSndrMessage_5), int32(_a_F_ProcessWalSndrMessage_6))
+	v125 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[5]))
+	F_s_lock(m, v125+int32(96), int32(_a_F_ProcessWalSndrMessage_4), int32(_a_F_ProcessWalSndrMessage_5), int32(_a_F_ProcessWalSndrMessage_6))
 	mBase = m.M
-	v130 = m.ExcPending
-	if v130 != 0 {
+	v132 = m.ExcPending
+	if v132 != 0 {
 		goto L5
 	} else {
 		goto L42
@@ -399,11 +402,12 @@ L40:
 	goto L41
 L41:
 	;
-	v132 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[5]))
-	*(*int32)(unsafe.Add(mBase, uint32(v132)+96)) = int32(0)
-	v136 = *(*int64)(unsafe.Add(mBase, uint32(v132)+72))
-	if v136 == int64(0) {
-		v181 = int32(-1)
+	v134 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessWalSndrMessage[5]))
+	v135 = *(*int64)(unsafe.Add(mBase, uint32(v134)+72))
+	v136 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v134)+96)), uint32(v136))
+	if v135 == int64(0) {
+		v184 = int32(-1)
 		goto L30
 	} else {
 		goto L43
@@ -413,76 +417,76 @@ L42:
 	goto L41
 L43:
 	;
-	v142 = m.G0
-	v143 = int32(16)
-	v144 = v142 - v143
-	m.G0 = v144
-	F_gettimeofday(m, v144)
+	v145 = m.G0
+	v146 = int32(16)
+	v147 = v145 - v146
+	m.G0 = v147
+	F_gettimeofday(m, v147)
 	mBase = m.M
-	v147 = *(*int64)(unsafe.Add(mBase, uint32(v144)))
-	v148 = int64(*(*int32)(unsafe.Add(mBase, uint32(v144)+8)))
-	m.G0 = v144 + v143
-	v156 = v148 + v147*int64(1000000) - int64(946684800000000)
+	v150 = *(*int64)(unsafe.Add(mBase, uint32(v147)))
+	v151 = int64(*(*int32)(unsafe.Add(mBase, uint32(v147)+8)))
+	m.G0 = v147 + v146
+	v159 = v151 + v150*int64(1000000) - int64(946684800000000)
 	goto L44
 L44:
 	;
-	if v156 <= v136 {
-		v174 = int32(0)
+	if v159 <= v135 {
+		v177 = int32(0)
 		goto L46
 	} else {
 		goto L47
 	}
 L45:
 	;
-	v178 = v174
+	v181 = v177
 	goto L38
 L46:
 	;
 	goto L45
 L47:
 	;
-	v162 = v156 - v136
-	if base.B2i32(int64(0) < v136)^base.B2i32(v162 < v156)|base.B2i32(int64(2147483646000) < v162) != 0 {
-		v174 = int32(2147483647)
+	v165 = v159 - v135
+	if base.B2i32(int64(0) < v135)^base.B2i32(v165 < v159)|base.B2i32(int64(2147483646000) < v165) != 0 {
+		v177 = int32(2147483647)
 		goto L46
 	} else {
 		goto L48
 	}
 L48:
 	;
-	v171 = base.I64_div_s(v162+int64(999), int64(1000))
-	v174 = base.I32_wrap_i64(v171)
+	v174 = base.I64_div_s(v165+int64(999), int64(1000))
+	v177 = base.I32_wrap_i64(v174)
 	goto L46
 L49:
 	;
-	if v181 == int32(-1) {
+	if v184 == int32(-1) {
 		goto L52
 	} else {
 		goto L53
 	}
 L50:
 	;
-	F_pfree(m, v92)
+	F_pfree(m, v93)
 	mBase = m.M
-	v219 = m.ExcPending
-	if v219 != 0 {
+	v222 = m.ExcPending
+	if v222 != 0 {
 		goto L5
 	} else {
 		goto L62
 	}
 L51:
 	;
-	F_errfinish(m, int32(_a_F_ProcessWalSndrMessage_0), v214, int32(_a_F_ProcessWalSndrMessage_1))
+	F_errfinish(m, int32(_a_F_ProcessWalSndrMessage_0), v217, int32(_a_F_ProcessWalSndrMessage_1))
 	mBase = m.M
-	v217 = m.ExcPending
-	if v217 != 0 {
+	v220 = m.ExcPending
+	if v220 != 0 {
 		goto L5
 	} else {
 		goto L61
 	}
 L52:
 	;
-	if v184 == int32(0) {
+	if v187 == int32(0) {
 		goto L50
 	} else {
 		goto L55
@@ -492,75 +496,75 @@ L53:
 	goto L54
 L54:
 	;
-	if v184 == int32(0) {
+	if v187 == int32(0) {
 		goto L50
 	} else {
 		goto L58
 	}
 L55:
 	;
-	v191 = F_GetReplicationTransferLatency(m)
+	v194 = F_GetReplicationTransferLatency(m)
 	mBase = m.M
-	v192 = m.ExcPending
-	if v192 != 0 {
+	v195 = m.ExcPending
+	if v195 != 0 {
 		goto L5
 	} else {
 		goto L56
 	}
 L56:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v191
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v96
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v92
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v194
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v97
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v93
 	F_errmsg_internal(m, int32(_a_F_ProcessWalSndrMessage_7), v11)
 	mBase = m.M
-	v198 = m.ExcPending
-	if v198 != 0 {
+	v201 = m.ExcPending
+	if v201 != 0 {
 		goto L5
 	} else {
 		goto L57
 	}
 L57:
 	;
-	v214 = int32(1287)
+	v217 = int32(1287)
 	goto L51
 L58:
 	;
-	v202 = F_GetReplicationTransferLatency(m)
+	v205 = F_GetReplicationTransferLatency(m)
 	mBase = m.M
-	v203 = m.ExcPending
-	if v203 != 0 {
+	v206 = m.ExcPending
+	if v206 != 0 {
 		goto L5
 	} else {
 		goto L59
 	}
 L59:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+28)) = v202
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = v181
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v96
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v92
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+28)) = v205
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = v184
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v97
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v93
 	F_errmsg_internal(m, int32(_a_F_ProcessWalSndrMessage_8), v11+int32(16))
 	mBase = m.M
-	v212 = m.ExcPending
-	if v212 != 0 {
+	v215 = m.ExcPending
+	if v215 != 0 {
 		goto L5
 	} else {
 		goto L60
 	}
 L60:
 	;
-	v214 = int32(1293)
+	v217 = int32(1293)
 	goto L51
 L61:
 	;
 	goto L50
 L62:
 	;
-	F_pfree(m, v96)
+	F_pfree(m, v97)
 	mBase = m.M
-	v221 = m.ExcPending
-	if v221 != 0 {
+	v224 = m.ExcPending
+	if v224 != 0 {
 		goto L5
 	} else {
 		goto L63
@@ -632,6 +636,8 @@ func F_WalRcvFetchTimeLineHistoryFiles(m *base.Module, l0 int32, l1 int32) {
 	_ = v92
 	var v94 int32
 	_ = v94
+	var v96 int32
+	_ = v96
 	var v99 int32
 	_ = v99
 	var v104 int32
@@ -954,7 +960,9 @@ L27:
 	v92 = m.G0
 	v94 = v92 - int32(2144)
 	m.G0 = v94
-	*(*int32)(unsafe.Add(mBase, uint32(v94)+80)) = int32(42)
+	v96 = m.Env.Pgmem_getpid(m)
+	mBase = m.M
+	*(*int32)(unsafe.Add(mBase, uint32(v94)+80)) = v96
 	v99 = v94 + int32(96)
 	v104 = F_pg_snprintf(m, v99, int32(1024), int32(_a_F_WalRcvFetchTimeLineHistoryFiles_4), v94+int32(80))
 	mBase = m.M

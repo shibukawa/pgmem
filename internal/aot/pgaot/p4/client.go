@@ -220,60 +220,199 @@ func F_ProcessClientWriteInterrupt(m *base.Module, l0 int32) {
 	_ = v25
 	var v29 int32
 	_ = v29
-	var v31 int32
-	_ = v31
+	var v30 int32
+	_ = v30
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v54 int32
+	_ = v54
+	var v58 int32
+	_ = v58
+	var v62 int32
+	_ = v62
+	var v70 int32
+	_ = v70
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0]))
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[1]))
 	if v6 == int32(0) {
-		*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0])) = v4
-		return
+		goto L1
 	} else {
-		if l0 != 0 {
-			v10 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[2]))
-			if v10 != 0 {
-				*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0])) = v4
-				return
-			} else {
-				v12 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[3]))
-				if v12 != 0 {
-					*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0])) = v4
-					return
-				} else {
-					v14 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[4]))
-					if v14 == int32(2) {
-						*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[4])) = int32(0)
-					} else {
-					}
-					v21 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[5]))
-					if v21 == int32(0) {
-						*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0])) = v4
-						return
-					} else {
-						F_ProcessInterrupts(m)
-						mBase = m.M
-						v25 = m.ExcPending
-						if v25 != 0 {
-							return
-						} else {
-							*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0])) = v4
-							return
-						}
-					}
-				}
-			}
-		} else {
-			v29 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[6]))
-			F_SetLatch(m, v29)
-			mBase = m.M
-			v31 = m.ExcPending
-			if v31 != 0 {
-				return
-			} else {
-				*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0])) = v4
-				return
-			}
-		}
+		goto L2
 	}
+L1:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0])) = v4
+	return
+L2:
+	;
+	if l0 != 0 {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	v10 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[2]))
+	if v10 != 0 {
+		goto L1
+	} else {
+		goto L6
+	}
+L4:
+	;
+	goto L5
+L5:
+	;
+	v29 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[3]))
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)))
+	if v30 != 0 {
+		goto L15
+	} else {
+		goto L16
+	}
+L6:
+	;
+	v12 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[4]))
+	if v12 != 0 {
+		goto L1
+	} else {
+		goto L7
+	}
+L7:
+	;
+	v14 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[5]))
+	if v14 == int32(2) {
+		goto L8
+	} else {
+		goto L9
+	}
+L8:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[5])) = int32(0)
+	goto L10
+L9:
+	;
+	goto L10
+L10:
+	;
+	v21 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[6]))
+	if v21 == int32(0) {
+		goto L1
+	} else {
+		goto L11
+	}
+L11:
+	;
+	F_ProcessInterrupts(m)
+	mBase = m.M
+	v25 = m.ExcPending
+	if v25 != 0 {
+		goto L12
+	} else {
+		goto L13
+	}
+L12:
+	;
+	return
+L13:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0])) = v4
+	return
+L14:
+	;
+	goto L1
+L15:
+	;
+	goto L14
+L16:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v29))) = int32(1)
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
+	if v33 == int32(0) {
+		goto L15
+	} else {
+		goto L17
+	}
+L17:
+	;
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
+	if v36 == int32(0) {
+		goto L15
+	} else {
+		goto L18
+	}
+L18:
+	;
+	v40 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[7]))
+	if v40 == v36 {
+		goto L19
+	} else {
+		goto L20
+	}
+L19:
+	;
+	v42 = m.G0
+	v44 = v42 - int32(16)
+	m.G0 = v44
+	v47 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[8]))
+	if v47 == int32(0) {
+		goto L22
+	} else {
+		goto L23
+	}
+L20:
+	;
+	goto L21
+L21:
+	;
+	v70 = F_pgmem_kill(m, v36, int32(23))
+	mBase = m.M
+	goto L15
+L22:
+	;
+	m.G0 = v44 + int32(16)
+	goto L14
+L23:
+	;
+	v50 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v44)+15)) = uint8(v50)
+	goto L24
+L24:
+	;
+	v54 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[9]))
+	v58 = F_write(m, v54, v44+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v58 {
+		goto L22
+	} else {
+		goto L26
+	}
+L25:
+	;
+	goto L22
+L26:
+	;
+	v62 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0]))
+	if v62 == int32(27) {
+		goto L24
+	} else {
+		goto L27
+	}
+L27:
+	;
+	goto L25
 }
 func F_SetClientEncoding(m *base.Module, l0 int32) int32 {
 	mBase := m.M

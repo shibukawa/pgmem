@@ -835,7 +835,7 @@ func F__ltree_extract_isparent(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13842(m, l0, int32(_a_F__ltree_extract_isparent_0))
+	v3 = Fn13864(m, l0, int32(_a_F__ltree_extract_isparent_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -848,7 +848,7 @@ func F__ltree_extract_risparent(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13842(m, l0, int32(_a_F__ltree_extract_risparent_0))
+	v3 = Fn13864(m, l0, int32(_a_F__ltree_extract_risparent_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

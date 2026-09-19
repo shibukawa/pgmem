@@ -5872,7 +5872,7 @@ func F_gin_extract_query_int2(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13905(m, l0, int32(-32768), int32(2096))
+	v4 = Fn13927(m, l0, int32(-32768), int32(2096))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -5885,7 +5885,7 @@ func F_gin_extract_query_int8(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13906(m, l0, int64(-9223372036854775807-1), int32(2272))
+	v4 = Fn13928(m, l0, int64(-9223372036854775807-1), int32(2272))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -6093,7 +6093,7 @@ func F_gin_extract_query_uuid(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13907(m, l0, int32(16), int32(3384))
+	v4 = Fn13929(m, l0, int32(16), int32(3384))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

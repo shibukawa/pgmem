@@ -105,44 +105,46 @@ func F_commit_ts_redo(m *base.Module, l0 int32) {
 	_ = v54
 	var v55 int64
 	_ = v55
-	var v58 int64
-	_ = v58
-	var v60 int32
-	_ = v60
-	var v64 int32
-	_ = v64
-	var v68 int32
-	_ = v68
-	var v73 int32
-	_ = v73
-	var v75 int32
-	_ = v75
+	var v57 int64
+	_ = v57
+	var v59 int64
+	_ = v59
+	var v61 int32
+	_ = v61
+	var v65 int32
+	_ = v65
+	var v69 int32
+	_ = v69
+	var v74 int32
+	_ = v74
 	var v76 int32
 	_ = v76
 	var v77 int32
 	_ = v77
-	var v78 int64
+	var v78 int32
 	_ = v78
-	var v80 int64
-	_ = v80
+	var v79 int64
+	_ = v79
 	var v81 int64
 	_ = v81
-	var v85 int32
-	_ = v85
-	var v87 int32
-	_ = v87
+	var v82 int64
+	_ = v82
+	var v86 int32
+	_ = v86
 	var v88 int32
 	_ = v88
 	var v89 int32
 	_ = v89
-	var v91 int32
-	_ = v91
+	var v90 int32
+	_ = v90
 	var v92 int32
 	_ = v92
-	var v94 int32
-	_ = v94
-	var v96 int32
-	_ = v96
+	var v93 int32
+	_ = v93
+	var v95 int32
+	_ = v95
+	var v97 int32
+	_ = v97
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
@@ -185,12 +187,12 @@ func F_commit_ts_redo(m *base.Module, l0 int32) {
 					v53 = int32(_a_F_commit_ts_redo_1)
 					v54 = *(*int32)(unsafe.Add(mBase, _c_F_commit_ts_redo[2]))
 					v55 = *(*int64)(unsafe.Add(mBase, uint32(v16)))
-					*(*int64)(unsafe.Add(mBase, uint32(v54)+48)) = v55
-					v58 = *(*int64)(unsafe.Add(mBase, uint32(v16)))
-					F_SimpleLruTruncate(m, v53, v58)
+					v57 = base.AtomicRmwXchg64(m, v54, int32(48), v55)
+					v59 = *(*int64)(unsafe.Add(mBase, uint32(v16)))
+					F_SimpleLruTruncate(m, v53, v59)
 					mBase = m.M
-					v60 = m.ExcPending
-					if v60 != 0 {
+					v61 = m.ExcPending
+					if v61 != 0 {
 						return
 					} else {
 						m.G0 = v8 + int32(16)
@@ -201,21 +203,21 @@ func F_commit_ts_redo(m *base.Module, l0 int32) {
 		} else {
 			F_errstart_cold(m, int32(23), int32(0))
 			mBase = m.M
-			v64 = m.ExcPending
-			if v64 != 0 {
+			v65 = m.ExcPending
+			if v65 != 0 {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = v13
 				F_errmsg_internal(m, int32(_a_F_commit_ts_redo_2), v8)
 				mBase = m.M
-				v68 = m.ExcPending
-				if v68 != 0 {
+				v69 = m.ExcPending
+				if v69 != 0 {
 					return
 				} else {
 					F_errfinish(m, int32(_a_F_commit_ts_redo_3), int32(1063), int32(_a_F_commit_ts_redo_4))
 					mBase = m.M
-					v73 = m.ExcPending
-					if v73 != 0 {
+					v74 = m.ExcPending
+					if v74 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()
@@ -226,36 +228,36 @@ func F_commit_ts_redo(m *base.Module, l0 int32) {
 			}
 		}
 	} else {
-		v75 = *(*int32)(unsafe.Add(mBase, _c_F_commit_ts_redo[2]))
-		v76 = *(*int32)(unsafe.Add(mBase, uint32(v75)+28))
-		v77 = *(*int32)(unsafe.Add(mBase, uint32(v10)+64))
-		v78 = *(*int64)(unsafe.Add(mBase, uint32(v77)))
-		v80 = int64(*(*uint16)(unsafe.Add(mBase, _c_F_commit_ts_redo[3])))
-		v81 = base.I64_rem_s(v78, v80)
-		v85 = v76 + base.I32_wrap_i64(v81)<<(uint(int32(7))%32)
-		v87 = F_LWLockAcquire(m, v85, int32(0))
+		v76 = *(*int32)(unsafe.Add(mBase, _c_F_commit_ts_redo[2]))
+		v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+28))
+		v78 = *(*int32)(unsafe.Add(mBase, uint32(v10)+64))
+		v79 = *(*int64)(unsafe.Add(mBase, uint32(v78)))
+		v81 = int64(*(*uint16)(unsafe.Add(mBase, _c_F_commit_ts_redo[3])))
+		v82 = base.I64_rem_s(v79, v81)
+		v86 = v77 + base.I32_wrap_i64(v82)<<(uint(int32(7))%32)
+		v88 = F_LWLockAcquire(m, v86, int32(0))
 		mBase = m.M
-		v88 = m.ExcPending
-		if v88 != 0 {
+		v89 = m.ExcPending
+		if v89 != 0 {
 			return
 		} else {
-			v89 = int32(_a_F_commit_ts_redo_1)
-			v91 = F_SimpleLruZeroPage(m, v89, v78)
+			v90 = int32(_a_F_commit_ts_redo_1)
+			v92 = F_SimpleLruZeroPage(m, v90, v79)
 			mBase = m.M
-			v92 = m.ExcPending
-			if v92 != 0 {
+			v93 = m.ExcPending
+			if v93 != 0 {
 				return
 			} else {
-				F_SimpleLruWritePage(m, v89, v91)
+				F_SimpleLruWritePage(m, v90, v92)
 				mBase = m.M
-				v94 = m.ExcPending
-				if v94 != 0 {
+				v95 = m.ExcPending
+				if v95 != 0 {
 					return
 				} else {
-					F_LWLockRelease(m, v85)
+					F_LWLockRelease(m, v86)
 					mBase = m.M
-					v96 = m.ExcPending
-					if v96 != 0 {
+					v97 = m.ExcPending
+					if v97 != 0 {
 						return
 					} else {
 						m.G0 = v8 + int32(16)
@@ -271,7 +273,7 @@ func F_get_ts_config_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13903(m, l0, l1, int32(_a_F_get_ts_config_oid_0), int32(3201), int32(_a_F_get_ts_config_oid_1), int32(73))
+	v7 = Fn13925(m, l0, l1, int32(_a_F_get_ts_config_oid_0), int32(3201), int32(_a_F_get_ts_config_oid_1), int32(73))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -284,7 +286,7 @@ func F_get_ts_template_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13903(m, l0, l1, int32(_a_F_get_ts_template_oid_0), int32(3056), int32(_a_F_get_ts_template_oid_1), int32(79))
+	v7 = Fn13925(m, l0, l1, int32(_a_F_get_ts_template_oid_0), int32(3056), int32(_a_F_get_ts_template_oid_1), int32(79))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

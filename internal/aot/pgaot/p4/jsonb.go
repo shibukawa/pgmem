@@ -563,7 +563,7 @@ func F_jsonb_build_array_noargs(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13933(m, l0, int32(5), int32(4))
+	v4 = Fn13955(m, l0, int32(5), int32(4))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -731,7 +731,7 @@ func F_jsonb_build_object_noargs(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13933(m, l0, int32(7), int32(6))
+	v4 = Fn13955(m, l0, int32(7), int32(6))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2391,7 +2391,7 @@ func F_jsonb_int4(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13934(m, l0, int32(_a_F_jsonb_int4_0), int32(1318))
+	v4 = Fn13956(m, l0, int32(_a_F_jsonb_int4_0), int32(1318))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

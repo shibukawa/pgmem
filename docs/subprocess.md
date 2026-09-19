@@ -22,7 +22,7 @@ Ready-made wrappers live in this repository:
 
 ```
 pgmem [-port N] [-database NAME] [-user NAME] [-params k=v,k=v] [-log] [-no-stdin]
-      [-control ADDR] [-wait-timeout D]
+      [-control ADDR] [-wait-timeout D] [-single]
 ```
 
 Build it with `go build -ldflags="-s -w" ./cmd/pgmem` (about 37 MB, pure
@@ -60,9 +60,14 @@ Behaviour that a wrapper can rely on:
   connection's idle transaction before it is ended with SQLSTATE 55P03
   (negative waits forever).
 
+- `-single` runs PostgreSQL in single-user mode (one shared session, see
+  "Limits" in the README) instead of the default postmaster with a backend
+  process per connection.
+
 One process hosts the template, its snapshots and every fork; a fork is a
-full single-session PostgreSQL started in about 20 ms because the loaded
-engine is shared. Each test process (pytest-xdist worker, forked test
+full PostgreSQL cluster (postmaster, auxiliary processes, a backend per
+connection) started in a few milliseconds because the loaded engine is
+shared. Each test process (pytest-xdist worker, forked test
 JVM) starts its own `pgmem` process. Node.js test runners, whose workers
 are short-lived (Vitest runs every test file in a new process), share one
 process started in the global setup and fork through the control socket.
@@ -170,11 +175,11 @@ var line = new BufferedReader(new InputStreamReader(proc.getInputStream())).read
 proc.getOutputStream().close();   // closes the child's stdin: server exits
 ```
 
-Connection pools of any size work: each server is a single session, so
-connections are serialized at transaction boundaries the way a
+Connection pools of any size work: every connection is its own backend
+process, as on a real server. With `-single` each server is one session
+and connections are serialized at transaction boundaries the way a
 transaction-mode pooler does (see "Limits" in the README for what that
-means for `SET` and temp tables). `LISTEN`/`NOTIFY` works across
-connections.
+means for `SET` and temp tables).
 
 ## Shipping the binary
 

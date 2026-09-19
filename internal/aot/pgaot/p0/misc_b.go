@@ -4456,7 +4456,7 @@ func F_bgworker_die(m *base.Module, l0 int32) {
 	v2 = m.G0
 	v4 = v2 - int32(16)
 	m.G0 = v4
-	F_sigprocmask(m, int32(_a_F_bgworker_die_0), int32(0))
+	F_pgmem_sigprocmask(m, int32(_a_F_bgworker_die_0), int32(0))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -13876,7 +13876,7 @@ func F_btrim(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = int32(1)
-	v4 = Fn13855(m, l0, v2, v2)
+	v4 = Fn13877(m, l0, v2, v2)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -13889,7 +13889,7 @@ func F_bttextsortsupport(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13854(m, l0, int32(25))
+	v3 = Fn13876(m, l0, int32(25))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

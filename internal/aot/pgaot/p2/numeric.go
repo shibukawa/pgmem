@@ -1116,7 +1116,7 @@ func F_numeric_avg_accum(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13949(m, l0, int32(0))
+	v3 = Fn13971(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -4416,7 +4416,7 @@ func F_numeric_poly_var_samp(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = int32(1)
-	v4 = Fn13950(m, l0, v2, v2)
+	v4 = Fn13972(m, l0, v2, v2)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -5703,7 +5703,7 @@ func F_numeric_stddev_samp(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13951(m, l0, int32(1), int32(0))
+	v4 = Fn13973(m, l0, int32(1), int32(0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
