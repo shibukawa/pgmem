@@ -121,6 +121,12 @@ func (ss *csession) run() {
 			ss.linger(true)
 			return
 		}
+		if ss.isGone() {
+			// PostgreSQL ended the backend; the client has its FATAL and
+			// will hang up
+			ss.drain()
+			return
+		}
 		if msg[0] == 'X' {
 			ss.terminate(msg)
 			return
@@ -192,10 +198,17 @@ func (ss *csession) attach(first bool) error {
 		ss.mu.Unlock()
 		// A backend pgmem itself stopped (muted for a Restore or Close)
 		// is replaced on the client's next message. One that PostgreSQL
-		// ended (FATAL, crash) ends the connection, as it would anywhere:
-		// the client has been sent the message.
+		// ended (FATAL, crash) ends the connection: the client has been
+		// sent the message. The socket is not closed here, though: a
+		// client that writes its next query before reading the FATAL
+		// would get a reset on Windows and lose the message. It stays
+		// open until the client hangs up (or closeGrace passes), and
+		// whatever the client still sends is swallowed (see run).
 		if current && !gone && !cs.Muted() && !s.closed.Load() && !ss.relay.capturing() {
-			ss.c.Close()
+			ss.mu.Lock()
+			ss.gone = true
+			ss.mu.Unlock()
+			ss.c.SetReadDeadline(time.Now().Add(closeGrace))
 		}
 	})
 	if err != nil {
@@ -363,6 +376,25 @@ func (ss *csession) linger(pending bool) {
 	}
 	c.Write(errorResponse("57P01", "terminating connection because the pgmem server was closed"))
 	c.Close()
+}
+
+// isGone reports whether the session's backend ended for good.
+func (ss *csession) isGone() bool {
+	ss.mu.Lock()
+	defer ss.mu.Unlock()
+	return ss.gone
+}
+
+// drain swallows what a client whose backend PostgreSQL ended still
+// sends, until it hangs up or closeGrace passes, then closes the socket.
+func (ss *csession) drain() {
+	ss.c.SetReadDeadline(time.Now().Add(closeGrace))
+	for {
+		if _, err := readMessage(ss.r); err != nil {
+			break
+		}
+	}
+	ss.c.Close()
 }
 
 // inTransaction reports whether the session is inside a transaction or a
