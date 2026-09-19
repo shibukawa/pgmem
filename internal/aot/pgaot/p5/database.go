@@ -16,8 +16,8 @@ func F_DropDatabaseBuffers(m *base.Module, l0 int32) {
 	_ = v8
 	var v11 int32
 	_ = v11
-	var v18 int32
-	_ = v18
+	var v17 int32
+	_ = v17
 	var v20 int32
 	_ = v20
 	var v23 int32
@@ -26,36 +26,36 @@ func F_DropDatabaseBuffers(m *base.Module, l0 int32) {
 	_ = v24
 	var v36 int32
 	_ = v36
-	var v37 int32
-	_ = v37
+	var v38 int32
+	_ = v38
+	var v49 int32
+	_ = v49
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
 	var v52 int32
 	_ = v52
-	var v60 int32
-	_ = v60
-	var v65 int32
-	_ = v65
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v64 int32
+	_ = v64
 	var v66 int32
 	_ = v66
-	var v68 int32
-	_ = v68
-	var v73 int32
-	_ = v73
-	var v76 int32
-	_ = v76
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
+	var v81 int32
+	_ = v81
 	var v83 int32
 	_ = v83
-	var v85 int32
-	_ = v85
-	var v88 int32
-	_ = v88
+	var v86 int32
+	_ = v86
+	var v96 int32
+	_ = v96
 	var v98 int32
 	_ = v98
-	var v100 int32
-	_ = v100
 	v2 = int32(0)
 	v6 = m.G0
 	v8 = v6 - int32(32)
@@ -68,7 +68,7 @@ func F_DropDatabaseBuffers(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v18 = v2
+	v17 = v2
 	goto L4
 L2:
 	;
@@ -80,7 +80,7 @@ L3:
 L4:
 	;
 	v20 = *(*int32)(unsafe.Add(mBase, _c_F_DropDatabaseBuffers[1]))
-	v23 = v20 + v18<<(uint(int32(6))%32)
+	v23 = v20 + v17<<(uint(int32(6))%32)
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
 	if v24 != l0 {
 		goto L6
@@ -92,10 +92,10 @@ L5:
 	goto L3
 L6:
 	;
-	v98 = v18 + int32(1)
-	v100 = *(*int32)(unsafe.Add(mBase, _c_F_DropDatabaseBuffers[0]))
-	if v98 < v100 {
-		v18 = v98
+	v96 = v17 + int32(1)
+	v98 = *(*int32)(unsafe.Add(mBase, _c_F_DropDatabaseBuffers[0]))
+	if v96 < v98 {
+		v17 = v96
 		goto L4
 	} else {
 		goto L31
@@ -107,10 +107,9 @@ L7:
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_DropDatabaseBuffers_2)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = int64(0)
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v23)+24))
-	v37 = int32(_a_F_DropDatabaseBuffers_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v23)+24)) = v36 | v37
-	if v36&v37 != 0 {
+	v36 = int32(_a_F_DropDatabaseBuffers_3)
+	v38 = base.AtomicRmwOr32(m, v23, int32(24), v36)
+	if v38&v36 != 0 {
 		goto L8
 	} else {
 		goto L9
@@ -120,14 +119,14 @@ L8:
 	goto L11
 L9:
 	;
-	v60 = v36
+	v59 = v38
 	goto L10
 L10:
 	;
-	v65 = int32(_a_F_DropDatabaseBuffers_4)
-	v66 = *(*int32)(unsafe.Add(mBase, _c_F_DropDatabaseBuffers[2]))
-	v68 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))+8))
-	if v68 == int32(0) {
+	v63 = int32(_a_F_DropDatabaseBuffers_4)
+	v64 = *(*int32)(unsafe.Add(mBase, _c_F_DropDatabaseBuffers[2]))
+	v66 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))+8))
+	if v66 == int32(0) {
 		goto L19
 	} else {
 		goto L20
@@ -136,25 +135,24 @@ L11:
 	;
 	F_perform_spin_delay(m, v8+int32(8))
 	mBase = m.M
-	v50 = m.ExcPending
-	if v50 != 0 {
+	v49 = m.ExcPending
+	if v49 != 0 {
 		goto L13
 	} else {
 		goto L14
 	}
 L12:
 	;
-	v60 = v51
+	v59 = v52
 	goto L10
 L13:
 	;
 	return
 L14:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(v23)+24))
-	v52 = int32(_a_F_DropDatabaseBuffers_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v23)+24)) = v51 | v52
-	if v51&v52 != 0 {
+	v50 = int32(_a_F_DropDatabaseBuffers_3)
+	v52 = base.AtomicRmwOr32(m, v23, int32(24), v50)
+	if v52&v50 != 0 {
 		goto L11
 	} else {
 		goto L15
@@ -164,8 +162,8 @@ L15:
 	goto L12
 L16:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
-	if l0 == v85 {
+	v83 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
+	if l0 == v83 {
 		goto L27
 	} else {
 		goto L28
@@ -175,11 +173,11 @@ L17:
 	goto L16
 L18:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_DropDatabaseBuffers[2])) = v83
+	*(*int32)(unsafe.Add(mBase, _c_F_DropDatabaseBuffers[2])) = v81
 	goto L17
 L19:
 	;
-	if int32(999) < v66 {
+	if int32(999) < v64 {
 		goto L17
 	} else {
 		goto L22
@@ -189,41 +187,41 @@ L20:
 	goto L21
 L21:
 	;
-	if v66 < int32(11) {
+	if v64 < int32(11) {
 		goto L17
 	} else {
 		goto L26
 	}
 L22:
 	;
-	v73 = int32(900)
-	if v73 <= v66 {
+	v71 = int32(900)
+	if v71 <= v64 {
 		goto L23
 	} else {
 		goto L24
 	}
 L23:
 	;
-	v76 = v73
+	v74 = v71
 	goto L25
 L24:
 	;
-	v76 = v66
+	v74 = v64
 	goto L25
 L25:
 	;
-	v83 = v76 + int32(100)
+	v81 = v74 + int32(100)
 	goto L18
 L26:
 	;
-	v83 = v66 - int32(1)
+	v81 = v64 - int32(1)
 	goto L18
 L27:
 	;
 	F_InvalidateBuffer(m, v23)
 	mBase = m.M
-	v88 = m.ExcPending
-	if v88 != 0 {
+	v86 = m.ExcPending
+	if v86 != 0 {
 		goto L13
 	} else {
 		goto L30
@@ -233,7 +231,7 @@ L28:
 	goto L29
 L29:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v23)+24)) = v60 & int32(-4194305)
+	*(*int32)(unsafe.Add(mBase, uint32(v23)+24)) = v59 & int32(-4194305)
 	goto L6
 L30:
 	;

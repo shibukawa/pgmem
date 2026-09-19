@@ -697,36 +697,42 @@ func F_SetMultiXactIdLimit(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v247
 	var v254 int32
 	_ = v254
-	var v259 int32
-	_ = v259
-	var v260 int32
-	_ = v260
+	var v258 int32
+	_ = v258
 	var v265 int32
 	_ = v265
-	var v266 int32
-	_ = v266
-	var v271 int32
-	_ = v271
+	var v267 int32
+	_ = v267
 	var v272 int32
 	_ = v272
-	var v276 int32
-	_ = v276
-	var v283 int32
-	_ = v283
-	var v288 int32
-	_ = v288
+	var v273 int32
+	_ = v273
+	var v278 int32
+	_ = v278
+	var v279 int32
+	_ = v279
+	var v284 int32
+	_ = v284
+	var v285 int32
+	_ = v285
 	var v289 int32
 	_ = v289
-	var v293 int32
-	_ = v293
-	var v298 int32
-	_ = v298
+	var v296 int32
+	_ = v296
 	var v301 int32
 	_ = v301
-	var v305 int32
-	_ = v305
-	var v309 int32
-	_ = v309
+	var v302 int32
+	_ = v302
+	var v306 int32
+	_ = v306
+	var v311 int32
+	_ = v311
+	var v314 int32
+	_ = v314
+	var v318 int32
+	_ = v318
+	var v322 int32
+	_ = v322
 	v15 = m.G0
 	v17 = v15 - int32(96)
 	m.G0 = v17
@@ -1018,7 +1024,7 @@ L34:
 L35:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+48)) = v124
-	F_errmsg_internal(m, int32(_a_F_SetMultiXactIdLimit_14), v17+int32(48))
+	F_errmsg_internal(m, int32(_a_F_SetMultiXactIdLimit_15), v17+int32(48))
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {
@@ -1123,7 +1129,7 @@ L47:
 L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+64)) = v106
-	F_errmsg(m, int32(_a_F_SetMultiXactIdLimit_15), v17-int32(-64))
+	F_errmsg(m, int32(_a_F_SetMultiXactIdLimit_14), v17-int32(-64))
 	mBase = m.M
 	v182 = m.ExcPending
 	if v182 != 0 {
@@ -1222,11 +1228,11 @@ L59:
 	if int32(0) <= v53-v55 {
 		goto L22
 	} else {
-		goto L63
+		goto L66
 	}
 L60:
 	;
-	v247 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetMultiXactIdLimit[4])))
+	v247 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetMultiXactIdLimit[3])))
 	if v247&int32(1) == int32(0) {
 		goto L59
 	} else {
@@ -1234,135 +1240,147 @@ L60:
 	}
 L61:
 	;
-	F_SendPostmasterSignal(m, int32(4))
-	mBase = m.M
-	v254 = m.ExcPending
-	if v254 != 0 {
-		goto L1
+	v254 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetMultiXactIdLimit[3])))
+	if v254 == int32(1) {
+		goto L63
 	} else {
-		goto L62
+		goto L64
 	}
 L62:
 	;
 	goto L59
 L63:
 	;
-	v259 = *(*int32)(unsafe.Add(mBase, _c_F_SetMultiXactIdLimit[3]))
-	v260 = *(*int32)(unsafe.Add(mBase, uint32(v259)+20))
-	goto L66
+	v258 = *(*int32)(unsafe.Add(mBase, _c_F_SetMultiXactIdLimit[4]))
+	*(*int32)(unsafe.Add(mBase, uint32(v258+int32(16)))) = int32(1)
+	v265 = *(*int32)(unsafe.Add(mBase, _c_F_SetMultiXactIdLimit[5]))
+	v267 = F_pgmem_kill(m, v265, int32(10))
+	mBase = m.M
+	goto L65
 L64:
+	;
+	goto L65
+L65:
+	;
+	goto L62
+L66:
+	;
+	v272 = *(*int32)(unsafe.Add(mBase, _c_F_SetMultiXactIdLimit[6]))
+	v273 = *(*int32)(unsafe.Add(mBase, uint32(v272)+20))
+	goto L69
+L67:
 	;
 	F_errhint(m, int32(_a_F_SetMultiXactIdLimit_10), int32(0))
 	mBase = m.M
-	v305 = m.ExcPending
-	if v305 != 0 {
+	v318 = m.ExcPending
+	if v318 != 0 {
+		goto L1
+	} else {
+		goto L79
+	}
+L68:
+	;
+	v301 = F_errstart(m, int32(19), int32(0))
+	mBase = m.M
+	v302 = m.ExcPending
+	if v302 != 0 {
 		goto L1
 	} else {
 		goto L76
 	}
-L65:
-	;
-	v288 = F_errstart(m, int32(19), int32(0))
-	mBase = m.M
-	v289 = m.ExcPending
-	if v289 != 0 {
-		goto L1
-	} else {
-		goto L73
-	}
-L66:
-	;
-	if base.B2i32(v260 == int32(2)) == int32(0) {
-		goto L65
-	} else {
-		goto L67
-	}
-L67:
-	;
-	v265 = F_get_database_name(m, l1)
-	mBase = m.M
-	v266 = m.ExcPending
-	if v266 != 0 {
-		goto L1
-	} else {
-		goto L68
-	}
-L68:
-	;
-	if v265 == int32(0) {
-		goto L65
-	} else {
-		goto L69
-	}
 L69:
 	;
-	v271 = F_errstart(m, int32(19), int32(0))
-	mBase = m.M
-	v272 = m.ExcPending
-	if v272 != 0 {
-		goto L1
+	if base.B2i32(v273 == int32(2)) == int32(0) {
+		goto L68
 	} else {
 		goto L70
 	}
 L70:
 	;
-	if v271 == int32(0) {
-		goto L22
+	v278 = F_get_database_name(m, l1)
+	mBase = m.M
+	v279 = m.ExcPending
+	if v279 != 0 {
+		goto L1
 	} else {
 		goto L71
 	}
 L71:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = v265
-	v276 = v35 - v55
-	*(*int32)(unsafe.Add(mBase, uint32(v17)+20)) = v276
-	F_errmsg_plural(m, int32(_a_F_SetMultiXactIdLimit_11), int32(_a_F_SetMultiXactIdLimit_12), v276, v17+int32(16))
-	mBase = m.M
-	v283 = m.ExcPending
-	if v283 != 0 {
-		goto L1
+	if v278 == int32(0) {
+		goto L68
 	} else {
 		goto L72
 	}
 L72:
 	;
-	v301 = int32(2558)
-	goto L64
+	v284 = F_errstart(m, int32(19), int32(0))
+	mBase = m.M
+	v285 = m.ExcPending
+	if v285 != 0 {
+		goto L1
+	} else {
+		goto L73
+	}
 L73:
 	;
-	if v288 == int32(0) {
+	if v284 == int32(0) {
 		goto L22
 	} else {
 		goto L74
 	}
 L74:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v17))) = l1
-	v293 = v35 - v55
-	*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v293
-	F_errmsg_plural(m, int32(_a_F_SetMultiXactIdLimit_8), int32(_a_F_SetMultiXactIdLimit_9), v293, v17)
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = v278
+	v289 = v35 - v55
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+20)) = v289
+	F_errmsg_plural(m, int32(_a_F_SetMultiXactIdLimit_11), int32(_a_F_SetMultiXactIdLimit_12), v289, v17+int32(16))
 	mBase = m.M
-	v298 = m.ExcPending
-	if v298 != 0 {
+	v296 = m.ExcPending
+	if v296 != 0 {
 		goto L1
 	} else {
 		goto L75
 	}
 L75:
 	;
-	v301 = int32(2567)
-	goto L64
+	v314 = int32(2558)
+	goto L67
 L76:
 	;
-	F_errfinish(m, int32(_a_F_SetMultiXactIdLimit_2), v301, int32(_a_F_SetMultiXactIdLimit_3))
-	mBase = m.M
-	v309 = m.ExcPending
-	if v309 != 0 {
-		goto L1
+	if v301 == int32(0) {
+		goto L22
 	} else {
 		goto L77
 	}
 L77:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v17))) = l1
+	v306 = v35 - v55
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v306
+	F_errmsg_plural(m, int32(_a_F_SetMultiXactIdLimit_8), int32(_a_F_SetMultiXactIdLimit_9), v306, v17)
+	mBase = m.M
+	v311 = m.ExcPending
+	if v311 != 0 {
+		goto L1
+	} else {
+		goto L78
+	}
+L78:
+	;
+	v314 = int32(2567)
+	goto L67
+L79:
+	;
+	F_errfinish(m, int32(_a_F_SetMultiXactIdLimit_2), v314, int32(_a_F_SetMultiXactIdLimit_3))
+	mBase = m.M
+	v322 = m.ExcPending
+	if v322 != 0 {
+		goto L1
+	} else {
+		goto L80
+	}
+L80:
 	;
 	goto L22
 }

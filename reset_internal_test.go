@@ -11,7 +11,7 @@ import (
 // last restore.
 func TestResetSkipsRestartWhenNothingRan(t *testing.T) {
 	ctx := context.Background()
-	s, err := Start(ctx, Options{})
+	s, err := Start(ctx, Options{SingleUser: true})
 	if err != nil {
 		t.Fatal(err)
 	}

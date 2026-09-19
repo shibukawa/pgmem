@@ -3,6 +3,8 @@
 package aot
 
 import (
+	"errors"
+	"os"
 	"unsafe"
 
 	"golang.org/x/sys/windows"
@@ -30,3 +32,11 @@ func commitMemory(mem []byte, from, to uint64) error {
 	_, err := windows.VirtualAlloc(base+uintptr(from), uintptr(to-from), windows.MEM_COMMIT, windows.PAGE_READWRITE)
 	return err
 }
+
+// mapShared is not implemented on Windows (it needs placeholder mappings,
+// MapViewOfFile3); the multi-process model is unavailable there.
+func mapShared(mem []byte, off uint32, f *os.File, size uint32) error {
+	return errors.New("aot: shared memory segments are not supported on windows")
+}
+
+func unmapShared(mem []byte, off uint32, size uint32) error { return nil }

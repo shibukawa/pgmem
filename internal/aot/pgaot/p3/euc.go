@@ -10,7 +10,7 @@ func F_euc_jis_2004_to_utf8(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13848(m, l0, int32(5), int32(0), int32(25), int32(_a_F_euc_jis_2004_to_utf8_0), int32(_a_F_euc_jis_2004_to_utf8_1))
+	v7 = Fn13870(m, l0, int32(5), int32(0), int32(25), int32(_a_F_euc_jis_2004_to_utf8_0), int32(_a_F_euc_jis_2004_to_utf8_1))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

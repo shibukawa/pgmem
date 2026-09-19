@@ -2,6 +2,7 @@ package p1
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -18,6 +19,8 @@ func F_CleanupProcSignalState(m *base.Module, l0 int32, l1 int32) {
 	_ = v10
 	var v14 int32
 	_ = v14
+	var v15 int32
+	_ = v15
 	var v18 int32
 	_ = v18
 	var v23 int32
@@ -28,33 +31,35 @@ func F_CleanupProcSignalState(m *base.Module, l0 int32, l1 int32) {
 	_ = v26
 	var v28 int32
 	_ = v28
-	var v32 int32
-	_ = v32
 	var v33 int32
 	_ = v33
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
-	var v50 int32
-	_ = v50
-	var v55 int32
-	_ = v55
-	var v58 int32
-	_ = v58
-	var v67 int32
-	_ = v67
+	var v34 int32
+	_ = v34
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v51 int32
+	_ = v51
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v63 int64
+	_ = v63
+	var v70 int32
+	_ = v70
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
 	v9 = int32(_a_F_CleanupProcSignalState_0)
 	v10 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[0])) = int32(0)
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(v10)+96))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+96)) = int32(1)
-	v18 = v10 + int32(96)
-	if v14 != 0 {
-		F_s_lock(m, v18, int32(_a_F_CleanupProcSignalState_1), int32(243), int32(_a_F_CleanupProcSignalState_2))
+	v14 = int32(96)
+	v15 = v10 + v14
+	v18 = base.AtomicRmwXchg32(m, v10, v14, int32(1))
+	if v18 != 0 {
+		F_s_lock(m, v15, int32(_a_F_CleanupProcSignalState_1), int32(243), int32(_a_F_CleanupProcSignalState_2))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -64,32 +69,32 @@ func F_CleanupProcSignalState(m *base.Module, l0 int32, l1 int32) {
 			v26 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[1]))
 			if v24 != v26 {
 				v28 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v18))) = v28
-				v32 = F_errstart(m, int32(15), v28)
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v15))), uint32(v28))
+				v33 = F_errstart(m, int32(15), v28)
 				mBase = m.M
-				v33 = m.ExcPending
-				if v33 != 0 {
+				v34 = m.ExcPending
+				if v34 != 0 {
 					return
 				} else {
-					if v32 == int32(0) {
+					if v33 == int32(0) {
 						m.G0 = v7 + int32(16)
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v24
-						v38 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[1]))
-						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v38
-						v41 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[2]))
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = (v10 - v41 - int32(8)) >> (uint(int32(7)) % 32)
+						v39 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[1]))
+						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v39
+						v42 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[2]))
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = (v10 - v42 - int32(8)) >> (uint(int32(7)) % 32)
 						F_errmsg_internal(m, int32(_a_F_CleanupProcSignalState_3), v7)
 						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
+						v51 = m.ExcPending
+						if v51 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_CleanupProcSignalState_1), int32(253), int32(_a_F_CleanupProcSignalState_2))
 							mBase = m.M
-							v55 = m.ExcPending
-							if v55 != 0 {
+							v56 = m.ExcPending
+							if v56 != 0 {
 								return
 							} else {
 								m.G0 = v7 + int32(16)
@@ -99,15 +104,15 @@ func F_CleanupProcSignalState(m *base.Module, l0 int32, l1 int32) {
 					}
 				}
 			} else {
-				*(*int64)(unsafe.Add(mBase, uint32(v10)+104)) = int64(-1)
-				v58 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v58
-				*(*int32)(unsafe.Add(mBase, uint32(v10))) = v58
-				*(*int32)(unsafe.Add(mBase, uint32(v10)+96)) = v58
+				v57 = int32(0)
+				*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v57
+				*(*int32)(unsafe.Add(mBase, uint32(v10))) = v57
+				v63 = base.AtomicRmwXchg64(m, v10, int32(104), int64(-1))
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v10)+96)), uint32(v57))
 				F_ConditionVariableBroadcast(m, v10+int32(116))
 				mBase = m.M
-				v67 = m.ExcPending
-				if v67 != 0 {
+				v70 = m.ExcPending
+				if v70 != 0 {
 					return
 				} else {
 					m.G0 = v7 + int32(16)
@@ -120,32 +125,32 @@ func F_CleanupProcSignalState(m *base.Module, l0 int32, l1 int32) {
 		v26 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[1]))
 		if v24 != v26 {
 			v28 = int32(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v18))) = v28
-			v32 = F_errstart(m, int32(15), v28)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v15))), uint32(v28))
+			v33 = F_errstart(m, int32(15), v28)
 			mBase = m.M
-			v33 = m.ExcPending
-			if v33 != 0 {
+			v34 = m.ExcPending
+			if v34 != 0 {
 				return
 			} else {
-				if v32 == int32(0) {
+				if v33 == int32(0) {
 					m.G0 = v7 + int32(16)
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v24
-					v38 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[1]))
-					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v38
-					v41 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[2]))
-					*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = (v10 - v41 - int32(8)) >> (uint(int32(7)) % 32)
+					v39 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[1]))
+					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v39
+					v42 = *(*int32)(unsafe.Add(mBase, _c_F_CleanupProcSignalState[2]))
+					*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = (v10 - v42 - int32(8)) >> (uint(int32(7)) % 32)
 					F_errmsg_internal(m, int32(_a_F_CleanupProcSignalState_3), v7)
 					mBase = m.M
-					v50 = m.ExcPending
-					if v50 != 0 {
+					v51 = m.ExcPending
+					if v51 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_CleanupProcSignalState_1), int32(253), int32(_a_F_CleanupProcSignalState_2))
 						mBase = m.M
-						v55 = m.ExcPending
-						if v55 != 0 {
+						v56 = m.ExcPending
+						if v56 != 0 {
 							return
 						} else {
 							m.G0 = v7 + int32(16)
@@ -155,15 +160,15 @@ func F_CleanupProcSignalState(m *base.Module, l0 int32, l1 int32) {
 				}
 			}
 		} else {
-			*(*int64)(unsafe.Add(mBase, uint32(v10)+104)) = int64(-1)
-			v58 = int32(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v58
-			*(*int32)(unsafe.Add(mBase, uint32(v10))) = v58
-			*(*int32)(unsafe.Add(mBase, uint32(v10)+96)) = v58
+			v57 = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v57
+			*(*int32)(unsafe.Add(mBase, uint32(v10))) = v57
+			v63 = base.AtomicRmwXchg64(m, v10, int32(104), int64(-1))
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v10)+96)), uint32(v57))
 			F_ConditionVariableBroadcast(m, v10+int32(116))
 			mBase = m.M
-			v67 = m.ExcPending
-			if v67 != 0 {
+			v70 = m.ExcPending
+			if v70 != 0 {
 				return
 			} else {
 				m.G0 = v7 + int32(16)

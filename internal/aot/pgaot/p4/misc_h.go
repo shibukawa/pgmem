@@ -634,116 +634,138 @@ func F_handle_sig_alarm(m *base.Module, l0 int32) {
 	_ = v13
 	var v18 int32
 	_ = v18
-	var v20 int32
-	_ = v20
+	var v19 int32
+	_ = v19
 	var v22 int32
 	_ = v22
 	var v25 int32
 	_ = v25
 	var v29 int32
 	_ = v29
-	var v32 int32
-	_ = v32
-	var v38 int32
-	_ = v38
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
 	var v39 int32
 	_ = v39
-	var v40 int32
-	_ = v40
-	var v43 int64
+	var v43 int32
 	_ = v43
-	var v44 int64
-	_ = v44
-	var v52 int64
-	_ = v52
-	var v54 int32
-	_ = v54
-	var v58 int64
-	_ = v58
-	var v64 int32
-	_ = v64
-	var v65 int64
-	_ = v65
-	var v68 int32
-	_ = v68
+	var v47 int32
+	_ = v47
+	var v51 int32
+	_ = v51
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
 	var v70 int32
 	_ = v70
 	var v73 int32
 	_ = v73
-	var v75 int32
-	_ = v75
+	var v79 int32
+	_ = v79
 	var v80 int32
 	_ = v80
-	var v83 int32
-	_ = v83
-	var __phi83 int32
-	_ = __phi83
-	var v88 int32
-	_ = v88
-	var __phi88 int32
-	_ = __phi88
-	var v89 int32
-	_ = v89
-	var v93 int32
+	var v81 int32
+	_ = v81
+	var v84 int64
+	_ = v84
+	var v85 int64
+	_ = v85
+	var v93 int64
 	_ = v93
-	var v96 int32
-	_ = v96
-	var v98 int32
-	_ = v98
-	var v106 int32
+	var v95 int32
+	_ = v95
+	var v99 int64
+	_ = v99
+	var v105 int32
+	_ = v105
+	var v106 int64
 	_ = v106
-	var v108 int32
-	_ = v108
 	var v109 int32
 	_ = v109
+	var v111 int32
+	_ = v111
 	var v114 int32
 	_ = v114
 	var v116 int32
 	_ = v116
-	var v117 int32
-	_ = v117
-	var v120 int32
-	_ = v120
-	var v123 int64
-	_ = v123
-	var v125 int64
-	_ = v125
-	var v126 int64
-	_ = v126
-	var v128 int64
-	_ = v128
+	var v121 int32
+	_ = v121
+	var v124 int32
+	_ = v124
+	var __phi124 int32
+	_ = __phi124
+	var v129 int32
+	_ = v129
+	var __phi129 int32
+	_ = __phi129
 	var v130 int32
 	_ = v130
-	var v135 int32
-	_ = v135
-	var v136 int32
-	_ = v136
+	var v134 int32
+	_ = v134
 	var v137 int32
 	_ = v137
-	var v140 int64
-	_ = v140
-	var v141 int64
-	_ = v141
-	var v149 int64
+	var v139 int32
+	_ = v139
+	var v147 int32
+	_ = v147
+	var v149 int32
 	_ = v149
-	var v151 int32
-	_ = v151
-	var v155 int64
+	var v150 int32
+	_ = v150
+	var v155 int32
 	_ = v155
+	var v157 int32
+	_ = v157
+	var v158 int32
+	_ = v158
 	var v161 int32
 	_ = v161
-	var v168 int32
-	_ = v168
-	var v170 int32
-	_ = v170
-	var v180 int32
-	_ = v180
-	var v184 int32
-	_ = v184
-	var v190 int32
+	var v164 int64
+	_ = v164
+	var v166 int64
+	_ = v166
+	var v167 int64
+	_ = v167
+	var v169 int64
+	_ = v169
+	var v171 int32
+	_ = v171
+	var v176 int32
+	_ = v176
+	var v177 int32
+	_ = v177
+	var v178 int32
+	_ = v178
+	var v181 int64
+	_ = v181
+	var v182 int64
+	_ = v182
+	var v190 int64
 	_ = v190
-	var v195 int32
-	_ = v195
+	var v192 int32
+	_ = v192
+	var v196 int64
+	_ = v196
+	var v202 int32
+	_ = v202
+	var v209 int32
+	_ = v209
+	var v211 int32
+	_ = v211
+	var v221 int32
+	_ = v221
+	var v225 int32
+	_ = v225
+	var v231 int32
+	_ = v231
+	var v236 int32
+	_ = v236
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -751,267 +773,345 @@ func F_handle_sig_alarm(m *base.Module, l0 int32) {
 	v13 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[0])) = v13 + int32(1)
 	v18 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[1]))
-	F_SetLatch(m, v18)
-	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
-		goto L1
-	} else {
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)))
+	if v19 != 0 {
 		goto L2
+	} else {
+		goto L3
 	}
 L1:
 	;
-	return
+	v63 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[2])) = v63
+	v66 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[3]))
+	if v66 == v63 {
+		goto L16
+	} else {
+		goto L17
+	}
 L2:
 	;
-	v22 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[2])) = v22
-	v25 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[3]))
-	if v25 == v22 {
-		goto L4
-	} else {
-		goto L5
-	}
+	goto L1
 L3:
 	;
-	F_errstart_cold(m, int32(22), int32(0))
-	mBase = m.M
-	v180 = m.ExcPending
-	if v180 != 0 {
-		goto L1
+	*(*int32)(unsafe.Add(mBase, uint32(v18))) = int32(1)
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
+	if v22 == int32(0) {
+		goto L2
 	} else {
-		goto L31
+		goto L4
 	}
 L4:
 	;
-	v168 = int32(_a_F_handle_sig_alarm_0)
-	v170 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[0]))
-	*(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[0])) = v170 - int32(1)
-	m.G0 = v9 + int32(16)
-	return
+	v25 = *(*int32)(unsafe.Add(mBase, uint32(v18)+12))
+	if v25 == int32(0) {
+		goto L2
+	} else {
+		goto L5
+	}
 L5:
 	;
-	v29 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[3])) = v29
-	v32 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4]))
-	if v32 <= v29 {
-		goto L4
-	} else {
+	v29 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4]))
+	if v29 == v25 {
 		goto L6
+	} else {
+		goto L7
 	}
 L6:
 	;
-	v38 = m.G0
-	v39 = int32(16)
-	v40 = v38 - v39
-	m.G0 = v40
-	F_gettimeofday(m, v40)
-	mBase = m.M
-	v43 = *(*int64)(unsafe.Add(mBase, uint32(v40)))
-	v44 = int64(*(*int32)(unsafe.Add(mBase, uint32(v40)+8)))
-	m.G0 = v40 + v39
-	v52 = v44 + v43*int64(1000000) - int64(946684800000000)
-	goto L7
+	v31 = m.G0
+	v33 = v31 - int32(16)
+	m.G0 = v33
+	v36 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[5]))
+	if v36 == int32(0) {
+		goto L9
+	} else {
+		goto L10
+	}
 L7:
 	;
-	v54 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4]))
-	if v54 <= int32(0) {
-		v155 = v52
-		goto L8
-	} else {
-		goto L9
-	}
+	goto L8
 L8:
 	;
-	F_schedule_alarm(m, v155)
+	v59 = F_pgmem_kill(m, v25, int32(23))
 	mBase = m.M
-	v161 = m.ExcPending
-	if v161 != 0 {
-		goto L1
-	} else {
-		goto L30
-	}
+	goto L2
 L9:
 	;
-	v58 = v52
-	goto L10
+	m.G0 = v33 + int32(16)
+	goto L1
 L10:
 	;
-	v64 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[5]))
-	v65 = *(*int64)(unsafe.Add(mBase, uint32(v64)+24))
-	if v58 < v65 {
-		v155 = v58
-		goto L8
-	} else {
-		goto L12
-	}
+	v39 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v33)+15)) = uint8(v39)
+	goto L11
 L11:
 	;
-	v155 = v149
-	goto L8
-L12:
-	;
-	v68 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[5]))
-	v70 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4]))
-	if v70 <= int32(0) {
-		goto L3
+	v43 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[6]))
+	v47 = F_write(m, v43, v33+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v47 {
+		goto L9
 	} else {
 		goto L13
 	}
+L12:
+	;
+	goto L9
 L13:
 	;
-	v73 = int32(0)
-	v75 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[5]))
-	*(*uint8)(unsafe.Add(mBase, uint32(v75)+4)) = uint8(v73)
-	v80 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4]))
-	if int32(2) <= v80 {
-		goto L14
+	v51 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[7]))
+	if v51 == int32(27) {
+		goto L11
 	} else {
-		goto L15
+		goto L14
 	}
 L14:
 	;
-	__phi83 = v73
-	__phi88 = int32(1)
-	v83 = __phi83
-	v88 = __phi88
-	goto L17
+	goto L12
 L15:
 	;
-	goto L16
+	F_errstart_cold(m, int32(22), int32(0))
+	mBase = m.M
+	v221 = m.ExcPending
+	if v221 != 0 {
+		goto L32
+	} else {
+		goto L44
+	}
 L16:
 	;
-	v106 = int32(_a_F_handle_sig_alarm_1)
-	v108 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4]))
-	v109 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4])) = v108 - v109
-	*(*uint8)(unsafe.Add(mBase, uint32(v68)+5)) = uint8(v109)
-	v114 = *(*int32)(unsafe.Add(mBase, uint32(v68)+8))
-	m.T0[v114].(func(*base.Module))(m)
-	mBase = m.M
-	v116 = m.ExcPending
-	if v116 != 0 {
-		goto L1
-	} else {
-		goto L20
-	}
+	v209 = int32(_a_F_handle_sig_alarm_0)
+	v211 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[0]))
+	*(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[0])) = v211 - int32(1)
+	m.G0 = v9 + int32(16)
+	return
 L17:
 	;
-	v89 = int32(2)
-	v93 = *(*int32)(unsafe.Add(mBase, uint32(v88<<(uint(v89)%32))+uint32(_c_F_handle_sig_alarm[5])))
-	*(*int32)(unsafe.Add(mBase, uint32(v83<<(uint(v89)%32))+uint32(_c_F_handle_sig_alarm[5]))) = v93
-	v96 = v88 + int32(1)
-	v98 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4]))
-	if v96 < v98 {
-		__phi83 = v88
-		__phi88 = v96
-		v83 = __phi83
-		v88 = __phi88
-		goto L17
+	v70 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[3])) = v70
+	v73 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[8]))
+	if v73 <= v70 {
+		goto L16
 	} else {
-		goto L19
+		goto L18
 	}
 L18:
 	;
-	goto L16
+	v79 = m.G0
+	v80 = int32(16)
+	v81 = v79 - v80
+	m.G0 = v81
+	F_gettimeofday(m, v81)
+	mBase = m.M
+	v84 = *(*int64)(unsafe.Add(mBase, uint32(v81)))
+	v85 = int64(*(*int32)(unsafe.Add(mBase, uint32(v81)+8)))
+	m.G0 = v81 + v80
+	v93 = v85 + v84*int64(1000000) - int64(946684800000000)
+	goto L19
 L19:
 	;
-	goto L18
+	v95 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[8]))
+	if v95 <= int32(0) {
+		v196 = v93
+		goto L20
+	} else {
+		goto L21
+	}
 L20:
 	;
-	v117 = *(*int32)(unsafe.Add(mBase, uint32(v68)+32))
-	if int32(0) < v117 {
-		goto L21
+	F_schedule_alarm(m, v196)
+	mBase = m.M
+	v202 = m.ExcPending
+	if v202 != 0 {
+		goto L32
 	} else {
-		goto L22
+		goto L43
 	}
 L21:
 	;
-	v120 = *(*int32)(unsafe.Add(mBase, uint32(v68)))
-	v123 = base.I64_extend_i32_u(v117) * int64(1000)
-	v125 = *(*int64)(unsafe.Add(mBase, uint32(v68)+24))
-	v126 = v125 + v123
-	if v126 < v58 {
+	v99 = v93
+	goto L22
+L22:
+	;
+	v105 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[9]))
+	v106 = *(*int64)(unsafe.Add(mBase, uint32(v105)+24))
+	if v99 < v106 {
+		v196 = v99
+		goto L20
+	} else {
 		goto L24
+	}
+L23:
+	;
+	v196 = v190
+	goto L20
+L24:
+	;
+	v109 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[9]))
+	v111 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[8]))
+	if v111 <= int32(0) {
+		goto L15
 	} else {
 		goto L25
 	}
-L22:
-	;
-	goto L23
-L23:
-	;
-	v135 = m.G0
-	v136 = int32(16)
-	v137 = v135 - v136
-	m.G0 = v137
-	F_gettimeofday(m, v137)
-	mBase = m.M
-	v140 = *(*int64)(unsafe.Add(mBase, uint32(v137)))
-	v141 = int64(*(*int32)(unsafe.Add(mBase, uint32(v137)+8)))
-	m.G0 = v137 + v136
-	v149 = v141 + v140*int64(1000000) - int64(946684800000000)
-	goto L28
-L24:
-	;
-	v128 = v123 + v58
-	goto L26
 L25:
 	;
-	v128 = v126
-	goto L26
-L26:
-	;
-	F_enable_timeout(m, v120, v58, v128, v117)
-	mBase = m.M
-	v130 = m.ExcPending
-	if v130 != 0 {
-		goto L1
+	v114 = int32(0)
+	v116 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[9]))
+	*(*uint8)(unsafe.Add(mBase, uint32(v116)+4)) = uint8(v114)
+	v121 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[8]))
+	if int32(2) <= v121 {
+		goto L26
 	} else {
 		goto L27
 	}
+L26:
+	;
+	__phi124 = v114
+	__phi129 = int32(1)
+	v124 = __phi124
+	v129 = __phi129
+	goto L29
 L27:
 	;
-	goto L23
+	goto L28
 L28:
 	;
-	v151 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4]))
-	if int32(0) < v151 {
-		v58 = v149
-		goto L10
-	} else {
-		goto L29
-	}
-L29:
-	;
-	goto L11
-L30:
-	;
-	goto L4
-L31:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(0)
-	v184 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[4]))
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v184 - int32(1)
-	F_errmsg_internal(m, int32(_a_F_handle_sig_alarm_2), v9)
+	v147 = int32(_a_F_handle_sig_alarm_1)
+	v149 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[8]))
+	v150 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[8])) = v149 - v150
+	*(*uint8)(unsafe.Add(mBase, uint32(v109)+5)) = uint8(v150)
+	v155 = *(*int32)(unsafe.Add(mBase, uint32(v109)+8))
+	m.T0[v155].(func(*base.Module))(m)
 	mBase = m.M
-	v190 = m.ExcPending
-	if v190 != 0 {
-		goto L1
-	} else {
+	v157 = m.ExcPending
+	if v157 != 0 {
 		goto L32
-	}
-L32:
-	;
-	F_errfinish(m, int32(_a_F_handle_sig_alarm_3), int32(143), int32(_a_F_handle_sig_alarm_4))
-	mBase = m.M
-	v195 = m.ExcPending
-	if v195 != 0 {
-		goto L1
 	} else {
 		goto L33
 	}
+L29:
+	;
+	v130 = int32(2)
+	v134 = *(*int32)(unsafe.Add(mBase, uint32(v129<<(uint(v130)%32))+uint32(_c_F_handle_sig_alarm[9])))
+	*(*int32)(unsafe.Add(mBase, uint32(v124<<(uint(v130)%32))+uint32(_c_F_handle_sig_alarm[9]))) = v134
+	v137 = v129 + int32(1)
+	v139 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[8]))
+	if v137 < v139 {
+		__phi124 = v129
+		__phi129 = v137
+		v124 = __phi124
+		v129 = __phi129
+		goto L29
+	} else {
+		goto L31
+	}
+L30:
+	;
+	goto L28
+L31:
+	;
+	goto L30
+L32:
+	;
+	return
 L33:
+	;
+	v158 = *(*int32)(unsafe.Add(mBase, uint32(v109)+32))
+	if int32(0) < v158 {
+		goto L34
+	} else {
+		goto L35
+	}
+L34:
+	;
+	v161 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
+	v164 = base.I64_extend_i32_u(v158) * int64(1000)
+	v166 = *(*int64)(unsafe.Add(mBase, uint32(v109)+24))
+	v167 = v166 + v164
+	if v167 < v99 {
+		goto L37
+	} else {
+		goto L38
+	}
+L35:
+	;
+	goto L36
+L36:
+	;
+	v176 = m.G0
+	v177 = int32(16)
+	v178 = v176 - v177
+	m.G0 = v178
+	F_gettimeofday(m, v178)
+	mBase = m.M
+	v181 = *(*int64)(unsafe.Add(mBase, uint32(v178)))
+	v182 = int64(*(*int32)(unsafe.Add(mBase, uint32(v178)+8)))
+	m.G0 = v178 + v177
+	v190 = v182 + v181*int64(1000000) - int64(946684800000000)
+	goto L41
+L37:
+	;
+	v169 = v164 + v99
+	goto L39
+L38:
+	;
+	v169 = v167
+	goto L39
+L39:
+	;
+	F_enable_timeout(m, v161, v99, v169, v158)
+	mBase = m.M
+	v171 = m.ExcPending
+	if v171 != 0 {
+		goto L32
+	} else {
+		goto L40
+	}
+L40:
+	;
+	goto L36
+L41:
+	;
+	v192 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[8]))
+	if int32(0) < v192 {
+		v99 = v190
+		goto L22
+	} else {
+		goto L42
+	}
+L42:
+	;
+	goto L23
+L43:
+	;
+	goto L16
+L44:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(0)
+	v225 = *(*int32)(unsafe.Add(mBase, _c_F_handle_sig_alarm[8]))
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v225 - int32(1)
+	F_errmsg_internal(m, int32(_a_F_handle_sig_alarm_2), v9)
+	mBase = m.M
+	v231 = m.ExcPending
+	if v231 != 0 {
+		goto L32
+	} else {
+		goto L45
+	}
+L45:
+	;
+	F_errfinish(m, int32(_a_F_handle_sig_alarm_3), int32(143), int32(_a_F_handle_sig_alarm_4))
+	mBase = m.M
+	v236 = m.ExcPending
+	if v236 != 0 {
+		goto L32
+	} else {
+		goto L46
+	}
+L46:
 	;
 	base.Wasm_trap_unreachable()
 	for {
@@ -6967,7 +7067,7 @@ func F_heap2_desc(m *base.Module, l0 int32, l1 int32) {
 func F_hemdist_3(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	var v5 int32
 	_ = v5
-	v5 = Fn13923(m, l0, l1, l2, int32(4))
+	v5 = Fn13945(m, l0, l1, l2, int32(4))
 	return v5
 }
 func F_hex_decode(m *base.Module, l0 int32, l1 int32, l2 int32) int64 {

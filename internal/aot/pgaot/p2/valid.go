@@ -92,7 +92,7 @@ L13:
 func F_check_valid_version_name(m *base.Module, l0 int32) {
 	var v13 int32
 	_ = v13
-	Fn13864(m, l0, int32(_a_F_check_valid_version_name_0), int32(447), int32(_a_F_check_valid_version_name_1), int32(_a_F_check_valid_version_name_2), int32(437), int32(_a_F_check_valid_version_name_3), int32(428), int32(_a_F_check_valid_version_name_4), int32(419), int32(_a_F_check_valid_version_name_5))
+	Fn13886(m, l0, int32(_a_F_check_valid_version_name_0), int32(447), int32(_a_F_check_valid_version_name_1), int32(_a_F_check_valid_version_name_2), int32(437), int32(_a_F_check_valid_version_name_3), int32(428), int32(_a_F_check_valid_version_name_4), int32(419), int32(_a_F_check_valid_version_name_5))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return

@@ -294,6 +294,8 @@ func F_proc_exit(m *base.Module, l0 int32) {
 	_ = v5
 	var v8 int32
 	_ = v8
+	var v9 int32
+	_ = v9
 	var v12 int32
 	_ = v12
 	var v15 int32
@@ -316,7 +318,9 @@ func F_proc_exit(m *base.Module, l0 int32) {
 	v5 = v3 - int32(16)
 	m.G0 = v5
 	v8 = *(*int32)(unsafe.Add(mBase, _c_F_proc_exit[0]))
-	if v8 == int32(42) {
+	v9 = m.Env.Pgmem_getpid(m)
+	mBase = m.M
+	if v8 == v9 {
 		F_proc_exit_prepare(m, l0)
 		mBase = m.M
 		v12 = m.ExcPending

@@ -5,6 +5,64 @@ import (
 	"unsafe"
 )
 
+func F_AttachSharedMemoryStructs(m *base.Module) {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
+	v6 = int32(1)
+	v9 = *(*int32)(unsafe.Add(mBase, _c_F_AttachSharedMemoryStructs[0]))
+	if v9&(v9-v6) != 0 {
+		v16 = v6 << (uint(int32(32)-base.I32_clz(v9)) % 32)
+	} else {
+		v16 = v9
+	}
+	if base.Ui32(v16) <= base.Ui32(int32(31)) {
+		v19 = int32(31)
+	} else {
+		v19 = v16
+	}
+	if base.Ui32(int32(_a_F_AttachSharedMemoryStructs_0)) <= base.Ui32(v16) {
+		v24 = int32(1024)
+	} else {
+		v24 = int32(base.Ui32(v19) >> (uint(int32(4)) % 32))
+	}
+	*(*int32)(unsafe.Add(mBase, _c_F_AttachSharedMemoryStructs[1])) = v24
+	F_CreateOrAttachShmemStructs(m)
+	mBase = m.M
+	v27 = m.ExcPending
+	if v27 != 0 {
+		return
+	} else {
+		v29 = *(*int32)(unsafe.Add(mBase, _c_F_AttachSharedMemoryStructs[2]))
+		if v29 != 0 {
+			m.T0[v29].(func(*base.Module))(m)
+			mBase = m.M
+			v31 = m.ExcPending
+			if v31 != 0 {
+				return
+			} else {
+				return
+			}
+		} else {
+			return
+		}
+	}
+}
 func F_InitSharedLatch(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase

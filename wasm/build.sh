@@ -37,7 +37,12 @@ fi
 # pglitec.c included.
 python3 "$HERE/patches.py" "$SRC"
 
-BASE_CFLAGS="-m32 -O2 -sWASM_BIGINT -sSUPPORT_LONGJMP=$SJLJ \
+# -matomics: PostgreSQL's spinlocks and pg_atomic_* must be real atomic
+# instructions, because in the multi-process model several instances of
+# the module (goroutines) share one segment of their linear memories. The
+# memory itself stays unshared (no pthreads), which wasm-ld only accepts
+# with --no-check-features.
+BASE_CFLAGS="-m32 -O2 -matomics -mbulk-memory -sWASM_BIGINT -sSUPPORT_LONGJMP=$SJLJ \
  -Wno-declaration-after-statement -Wno-macro-redefined -Wno-unused-function \
  -Wno-missing-prototypes -Wno-incompatible-pointer-types -ffile-prefix-map=$ROOT/toolchain/emsdk=/emsdk -ffile-prefix-map=$ROOT=/pgmem-build"
 
@@ -45,8 +50,13 @@ BASE_CFLAGS="-m32 -O2 -sWASM_BIGINT -sSUPPORT_LONGJMP=$SJLJ \
 emcc $BASE_CFLAGS -D__PGMEM__ -c -o "$OUT/pglitec.o" "$SRC/pglite/src/pglitec/pglitec.c"
 emcc $BASE_CFLAGS -c -o "$OUT/pgmem_shim.o" "$HERE/pgmem_shim.c"
 
+# EXEC_BACKEND: the postmaster starts its children the way it does on
+# Windows (a new process running "postgres --forkchild=<kind> <file>" that
+# re-attaches to shared memory), which maps onto a new module instance per
+# process. Process, signal, shared-memory, semaphore and socket calls go
+# to the host through wasm/pgmem_shim.c.
 PG_CFLAGS="$BASE_CFLAGS \
--D__PGLITE__ -D__PGMEM__ -I$HERE \
+-D__PGLITE__ -D__PGMEM__ -DEXEC_BACKEND -I$HERE \
 -Dsystem=pgl_system -Dpopen=pgl_popen -Dpclose=pgl_pclose \
 -Dgeteuid=pgl_geteuid -Dgetuid=pgl_getuid -Dgetpwuid=pgl_getpwuid \
 -Dexit=pgl_exit \
@@ -54,16 +64,19 @@ PG_CFLAGS="$BASE_CFLAGS \
 -Dfcntl=pgl_fcntl \
 -Datexit=pgl_atexit \
 -Dsetsockopt=pgl_setsockopt -Dgetsockopt=pgl_getsockopt -Dgetsockname=pgl_getsockname \
--Drecv=pgl_recv -Dsend=pgl_send -Dconnect=pgl_connect \
--Dpoll=pgmem_poll \
--Dshmget=pgl_shmget -Dshmat=pgl_shmat -Dshmdt=pgl_shmdt -Dshmctl=pgl_shmctl \
+-Drecv=pgmem_recv -Dsend=pgmem_send -Dconnect=pgl_connect \
+-Dpoll=pgmem_poll -Dnanosleep=pgmem_nanosleep \
+-Dshmget=pgmem_shmget -Dshmat=pgmem_shmat -Dshmdt=pgmem_shmdt -Dshmctl=pgmem_shmctl \
+-Dsem_init=pgmem_sem_init -Dsem_destroy=pgmem_sem_destroy -Dsem_wait=pgmem_sem_wait \
+-Dsem_trywait=pgmem_sem_trywait -Dsem_post=pgmem_sem_post \
+-Dkill=pgmem_kill -Dgetpid=pgmem_getpid -Dwaitpid=pgmem_waitpid -Dsigprocmask=pgmem_sigprocmask \
 -Dlongjmp=pgl_longjmp -Dsiglongjmp=pgl_siglongjmp \
 -Ddlopen=pgmem_dlopen -Ddlsym=pgmem_dlsym -Ddlclose=pgmem_dlclose -Ddlerror=pgmem_dlerror"
 
 # Symbols every executable (initdb, postgres) exports to the host.
-EXPORTS_COMMON=_main,_pgmem_init,_pgmem_main,_pgmem_call_sighandler,_pgl_freopen,_pgl_run_atexit_funcs,_pgl_getPGliteExitStatus,_pgl_setPGliteExitStatus,_pgl_setPGliteActive,_malloc,_free,_fflush,___errno_location,_strerror,_emscripten_stack_get_current,__emscripten_stack_restore,_emscripten_builtin_memalign,_emscripten_builtin_free,__emscripten_timeout
+EXPORTS_COMMON=_main,_pgmem_init,_pgmem_main,_pgmem_call_sighandler,_pgmem_raise,_pgl_freopen,_pgl_run_atexit_funcs,_pgl_getPGliteExitStatus,_pgl_setPGliteExitStatus,_pgl_setPGliteActive,_malloc,_free,_fflush,___errno_location,_strerror,_emscripten_stack_get_current,__emscripten_stack_restore,_emscripten_builtin_memalign,_emscripten_builtin_free,__emscripten_timeout
 
-LDFLAGS="-sWASM_BIGINT -sUSE_PTHREADS=0 -sSUPPORT_LONGJMP=$SJLJ"
+LDFLAGS="-sWASM_BIGINT -sUSE_PTHREADS=0 -sSUPPORT_LONGJMP=$SJLJ -Wl,--no-check-features"
 LDFLAGS_EX="-sINITIAL_MEMORY=64MB -sALLOW_MEMORY_GROWTH=1 -sSTACK_SIZE=8MB \
  -sEXIT_RUNTIME=1 -sINVOKE_RUN=0 -sENVIRONMENT=node \
  -sERROR_ON_UNDEFINED_SYMBOLS=0 \
@@ -83,11 +96,17 @@ ac_cv_exeext=.js \
 --with-template=emscripten \
 --prefix=$PREFIX"
 
+# configure's test programs are compiled with PG_CFLAGS, so the -D renames
+# above hide libc functions from its checks (sem_init becomes an undefined
+# pgmem_sem_init and configure would fall back to System V semaphores).
+# Answer the checks the renames break.
+CONFIGURE_ENV="ac_cv_search_sem_init=none required"
+
 cd "$SRC"
-CONF_SIG="$CONFIGURE_PARAMS|$PG_CFLAGS|$LDFLAGS|$LDFLAGS_EX"
+CONF_SIG="$CONFIGURE_PARAMS|$CONFIGURE_ENV|$PG_CFLAGS|$LDFLAGS|$LDFLAGS_EX"
 if [ ! -f config.status ] || [ "$(cat "$OUT/configure.sig" 2>/dev/null)" != "$CONF_SIG" ]; then
   echo "== configure"
-  LDFLAGS="$LDFLAGS" LDFLAGS_EX="$LDFLAGS_EX" CFLAGS="$PG_CFLAGS" \
+  env "$CONFIGURE_ENV" LDFLAGS="$LDFLAGS" LDFLAGS_EX="$LDFLAGS_EX" CFLAGS="$PG_CFLAGS" \
     emconfigure ./configure $CONFIGURE_PARAMS
   printf '%s' "$CONF_SIG" > "$OUT/configure.sig"
   # make does not track CFLAGS changes; start from clean objects.
@@ -248,7 +267,7 @@ ls -la "$OUT"/*.wasm
 
 echo "== translate to the exnref exception encoding (for wazero)"
 for n in postgres initdb; do
-  wasm-opt --enable-exception-handling --enable-reference-types --enable-bulk-memory \
+  wasm-opt --enable-exception-handling --enable-reference-types --enable-bulk-memory --enable-threads \
     --enable-sign-ext --enable-mutable-globals --enable-nontrapping-float-to-int --enable-multivalue \
     --translate-to-exnref "$OUT/$n.wasm" -o "$OUT/$n.exnref.wasm"
 done

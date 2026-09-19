@@ -10,6 +10,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"os"
 	"sync"
 
 	"github.com/shibukawa/pgmem/internal/aot/pgaot"
@@ -52,6 +53,11 @@ func (Factory) Instantiate(ctx context.Context, h *host.Host) (guest.Instance, e
 	inst.release = release
 	inst.m = pgaot.NewWithMemory(imp, imp, mem, pgaot.InitialMemoryBytes)
 	pgaot.InitData(inst.m) // NewWithMemory leaves the data segments to the caller
+	if h.Sys != nil {
+		// A process of a cluster shares memory segments with the other
+		// processes' instances: its atomics must be real ones.
+		base.ForceContendedAtomics(inst.m)
+	}
 	h.Guest = inst
 	if err := inst.callVoid(func() { pgaot.WasmCallCtors(inst.m) }); err != nil {
 		return nil, fmt.Errorf("aot: __wasm_call_ctors: %w", err)
@@ -77,10 +83,14 @@ type instance struct {
 //
 // m.Memory spans the whole reservation; the guest-visible size is
 // m.MemSize (what memory.size reports and what the heap grows within).
+// Host reads and writes are bounded by the reservation, not MemSize: the
+// shared memory segments of a cluster are mapped above the heap (see
+// host.Cluster), and PostgreSQL hands buffers in them to the host (a
+// page written from shared_buffers to a file).
 
 func (in *instance) Read(off, n uint32) ([]byte, bool) {
 	end := uint64(off) + uint64(n)
-	if end > in.m.MemSize.Load() {
+	if end > uint64(len(in.m.Memory)) {
 		return nil, false
 	}
 	return in.m.Memory[off:end:end], true
@@ -88,7 +98,7 @@ func (in *instance) Read(off, n uint32) ([]byte, bool) {
 
 func (in *instance) Write(off uint32, b []byte) bool {
 	end := uint64(off) + uint64(len(b))
-	if end > in.m.MemSize.Load() {
+	if end > uint64(len(in.m.Memory)) {
 		return false
 	}
 	copy(in.m.Memory[off:], b)
@@ -223,4 +233,24 @@ func (in *instance) Memalign(align, size uint32) (uint32, error) {
 // Timeout implements host.Guest.
 func (in *instance) Timeout(which int32, now float64) error {
 	return in.callVoid(func() { pgaot.EmscriptenTimeout(in.m, which, now) })
+}
+
+// Raise implements host.Guest.
+func (in *instance) Raise(sig int32) error {
+	return in.callVoid(func() { pgaot.PgmemRaise(in.m, sig) })
+}
+
+// MapShared implements host.Guest: the segment file replaces the private
+// pages at off, so every instance that maps it sees the same bytes at
+// the same address.
+func (in *instance) MapShared(off uint32, f *os.File, size uint32) error {
+	if uint64(off)+uint64(size) > uint64(len(in.m.Memory)) {
+		return errors.New("aot: shared segment outside the linear memory")
+	}
+	return mapShared(in.m.Memory, off, f, size)
+}
+
+// UnmapShared implements host.Guest.
+func (in *instance) UnmapShared(off, size uint32) error {
+	return unmapShared(in.m.Memory, off, size)
 }

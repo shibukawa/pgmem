@@ -974,8 +974,8 @@ func F_pgstat_drop_all_entries(m *base.Module) {
 	_ = v165
 	var v169 int32
 	_ = v169
-	var v170 int64
-	_ = v170
+	var v172 int64
+	_ = v172
 	v7 = int64(0)
 	v10 = m.G0
 	v12 = v10 + int32(-64)
@@ -1212,8 +1212,7 @@ L30:
 L31:
 	;
 	v169 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_drop_all_entries[2]))
-	v170 = *(*int64)(unsafe.Add(mBase, uint32(v169)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v169)+16)) = v170 + int64(1)
+	v172 = base.AtomicRmwAdd64(m, v169, int32(16), int64(1))
 	goto L2
 }
 func F_pgstat_drop_entry(m *base.Module, l0 int32, l1 int32, l2 int64) int32 {
@@ -1393,12 +1392,12 @@ func F_pgstat_drop_entry(m *base.Module, l0 int32, l1 int32, l2 int64) int32 {
 	_ = v312
 	var v316 int32
 	_ = v316
-	var v317 int64
-	_ = v317
-	var v324 int32
-	_ = v324
-	var v332 int32
-	_ = v332
+	var v319 int64
+	_ = v319
+	var v323 int32
+	_ = v323
+	var v331 int32
+	_ = v331
 	v14 = m.G0
 	v16 = v14 - int32(80)
 	m.G0 = v16
@@ -1505,11 +1504,11 @@ L11:
 L12:
 	;
 	m.G0 = v16 + int32(80)
-	return v332
+	return v331
 L13:
 	;
 	if v130 == int32(0) {
-		v332 = v124
+		v331 = v124
 		goto L12
 	} else {
 		goto L14
@@ -1528,7 +1527,7 @@ L15:
 	;
 	v137 = *(*int32)(unsafe.Add(mBase, uint32(v16)+32))
 	if v137 != int32(1) {
-		v332 = v135
+		v331 = v135
 		goto L12
 	} else {
 		goto L16
@@ -1695,8 +1694,8 @@ L37:
 	;
 	F_dshash_seq_term(m, v16+int32(52))
 	mBase = m.M
-	v324 = m.ExcPending
-	if v324 != 0 {
+	v323 = m.ExcPending
+	if v323 != 0 {
 		goto L10
 	} else {
 		goto L51
@@ -1790,7 +1789,7 @@ L48:
 L49:
 	;
 	if v308 == int64(0) {
-		v332 = v135
+		v331 = v135
 		goto L12
 	} else {
 		goto L50
@@ -1798,13 +1797,12 @@ L49:
 L50:
 	;
 	v316 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_drop_entry[2]))
-	v317 = *(*int64)(unsafe.Add(mBase, uint32(v316)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v316)+16)) = v317 + int64(1)
-	v332 = v135
+	v319 = base.AtomicRmwAdd64(m, v316, int32(16), int64(1))
+	v331 = v135
 	goto L12
 L51:
 	;
-	v332 = v135
+	v331 = v135
 	goto L12
 }
 func F_pgstat_end_function_usage(m *base.Module, l0 int32, l1 int32) {
@@ -1892,10 +1890,10 @@ func F_pgstat_execute_transactional_drops(m *base.Module, l0 int32, l1 int32) {
 	_ = v23
 	var v25 int32
 	_ = v25
-	var v31 int32
-	_ = v31
-	var v32 int64
-	_ = v32
+	var v30 int32
+	_ = v30
+	var v33 int64
+	_ = v33
 	v3 = int32(0)
 	if l0 <= v3 {
 		goto L1
@@ -1951,9 +1949,8 @@ L7:
 	goto L4
 L8:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_execute_transactional_drops[0]))
-	v32 = *(*int64)(unsafe.Add(mBase, uint32(v31)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v31)+16)) = v32 + int64(1)
+	v30 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_execute_transactional_drops[0]))
+	v33 = base.AtomicRmwAdd64(m, v30, int32(16), int64(1))
 	goto L9
 L9:
 	;

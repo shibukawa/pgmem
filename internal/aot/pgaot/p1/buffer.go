@@ -8,160 +8,161 @@ import (
 func F_PinBuffer(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
 	var v15 int32
 	_ = v15
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
-	var v23 int32
-	_ = v23
-	var v25 int32
-	_ = v25
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
-	var v51 int32
-	_ = v51
-	var v65 int32
-	_ = v65
-	var v66 int32
-	_ = v66
-	var v71 int32
-	_ = v71
-	var v80 int32
-	_ = v80
-	var v81 int32
-	_ = v81
-	var v83 int32
-	_ = v83
-	var v88 int32
-	_ = v88
-	var v91 int32
-	_ = v91
+	var v24 int32
+	_ = v24
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v49 int32
+	_ = v49
+	var v62 int32
+	_ = v62
+	var v63 int32
+	_ = v63
+	var v68 int32
+	_ = v68
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	var v84 int32
+	_ = v84
+	var v87 int32
+	_ = v87
+	var v94 int32
+	_ = v94
 	var v98 int32
 	_ = v98
-	var v102 int32
-	_ = v102
-	var v111 int32
-	_ = v111
+	var v106 int32
+	_ = v106
+	var v108 int32
+	_ = v108
 	var v113 int32
 	_ = v113
+	var v114 int32
+	_ = v114
+	var v116 int32
+	_ = v116
 	var v118 int32
 	_ = v118
-	var v119 int32
-	_ = v119
-	var v120 int32
-	_ = v120
-	var v121 int32
-	_ = v121
-	var v122 int32
-	_ = v122
-	var v124 int32
-	_ = v124
-	var v130 int32
-	_ = v130
-	var v132 int32
-	_ = v132
-	var v133 int32
-	_ = v133
-	var v138 int32
-	_ = v138
-	var v141 int32
-	_ = v141
-	v9 = m.G0
-	v11 = v9 - int32(32)
-	m.G0 = v11
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v15 = v13 + int32(1)
-	v16 = F_GetPrivateRefCountEntry(m, v15)
+	var v123 int32
+	_ = v123
+	var v125 int32
+	_ = v125
+	var v126 int32
+	_ = v126
+	var v131 int32
+	_ = v131
+	var v134 int32
+	_ = v134
+	v8 = m.G0
+	v10 = v8 - int32(32)
+	m.G0 = v10
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v14 = v12 + int32(1)
+	v15 = F_GetPrivateRefCountEntry(m, v14)
 	mBase = m.M
-	v19 = m.ExcPending
-	if v19 != 0 {
+	v18 = m.ExcPending
+	if v18 != 0 {
 		goto L2
 	} else {
 		goto L3
 	}
 L1:
 	;
-	v133 = *(*int32)(unsafe.Add(mBase, uint32(v130)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v130)+4)) = v133 + int32(1)
-	v138 = *(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[0]))
-	F_ResourceOwnerRemember(m, v138, v15, int32(_a_F_PinBuffer_0))
+	v126 = *(*int32)(unsafe.Add(mBase, uint32(v123)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v123)+4)) = v126 + int32(1)
+	v131 = *(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[0]))
+	F_ResourceOwnerRemember(m, v131, v14, int32(_a_F_PinBuffer_0))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v134 = m.ExcPending
+	if v134 != 0 {
 		goto L2
 	} else {
-		goto L40
+		goto L37
 	}
 L2:
 	;
 	return int32(0)
 L3:
 	;
-	if v16 == int32(0) {
+	if v15 == int32(0) {
 		goto L4
 	} else {
 		goto L5
 	}
 L4:
 	;
-	v22 = int32(_a_F_PinBuffer_1)
-	v23 = *(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[1]))
-	v25 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[1])) = v25
-	*(*int32)(unsafe.Add(mBase, uint32(v23)+4)) = v25
-	*(*int32)(unsafe.Add(mBase, uint32(v23))) = v15
-	v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	v33 = v30
+	v21 = int32(_a_F_PinBuffer_1)
+	v22 = *(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[1]))
+	v24 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[1])) = v24
+	*(*int32)(unsafe.Add(mBase, uint32(v22)+4)) = v24
+	*(*int32)(unsafe.Add(mBase, uint32(v22))) = v14
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v32 = v29
 	goto L7
 L5:
 	;
 	goto L6
 L6:
 	;
-	v124 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	v130 = v16
-	v132 = v124
+	v118 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v123 = v15
+	v125 = v118
 	goto L1
 L7:
 	;
-	if v33&int32(_a_F_PinBuffer_2) != 0 {
+	if v32&int32(_a_F_PinBuffer_2) != 0 {
 		goto L9
 	} else {
 		goto L10
 	}
+L8:
+	;
+	v123 = v22
+	v125 = v114
+	goto L1
 L9:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+28)) = int32(_a_F_PinBuffer_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = int32(_a_F_PinBuffer_4)
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = int32(_a_F_PinBuffer_5)
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = int32(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = int64(0)
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	if v51&int32(_a_F_PinBuffer_2) != 0 {
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = int32(_a_F_PinBuffer_3)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = int32(_a_F_PinBuffer_4)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(_a_F_PinBuffer_5)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = int32(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = int64(0)
+	v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	if v49&int32(_a_F_PinBuffer_2) != 0 {
 		goto L12
 	} else {
 		goto L13
 	}
 L10:
 	;
-	v102 = v33
+	v98 = v32
 	goto L11
 L11:
 	;
-	v111 = v102 + int32(1)
-	v113 = v111 & int32(_a_F_PinBuffer_6)
+	v106 = v98 + int32(1)
+	v108 = v106 & int32(_a_F_PinBuffer_6)
 	if l1 != 0 {
 		goto L30
 	} else {
@@ -172,36 +173,36 @@ L12:
 	goto L15
 L13:
 	;
-	v71 = v51
+	v68 = v49
 	goto L14
 L14:
 	;
-	v80 = int32(_a_F_PinBuffer_7)
-	v81 = *(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[2]))
-	v83 = *(*int32)(unsafe.Add(mBase, uint32(v11+int32(8))+8))
-	if v83 == int32(0) {
+	v76 = int32(_a_F_PinBuffer_7)
+	v77 = *(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[2]))
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v10+int32(8))+8))
+	if v79 == int32(0) {
 		goto L22
 	} else {
 		goto L23
 	}
 L15:
 	;
-	F_perform_spin_delay(m, v11+int32(8))
+	F_perform_spin_delay(m, v10+int32(8))
 	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
+	v62 = m.ExcPending
+	if v62 != 0 {
 		goto L2
 	} else {
 		goto L17
 	}
 L16:
 	;
-	v71 = v66
+	v68 = v63
 	goto L14
 L17:
 	;
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	if v66&int32(_a_F_PinBuffer_2) != 0 {
+	v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	if v63&int32(_a_F_PinBuffer_2) != 0 {
 		goto L15
 	} else {
 		goto L18
@@ -211,18 +212,18 @@ L18:
 	goto L16
 L19:
 	;
-	v102 = v71
+	v98 = v68
 	goto L11
 L20:
 	;
 	goto L19
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[2])) = v98
+	*(*int32)(unsafe.Add(mBase, _c_F_PinBuffer[2])) = v94
 	goto L20
 L22:
 	;
-	if int32(999) < v81 {
+	if int32(999) < v77 {
 		goto L20
 	} else {
 		goto L25
@@ -232,93 +233,74 @@ L23:
 	goto L24
 L24:
 	;
-	if v81 < int32(11) {
+	if v77 < int32(11) {
 		goto L20
 	} else {
 		goto L29
 	}
 L25:
 	;
-	v88 = int32(900)
-	if v88 <= v81 {
+	v84 = int32(900)
+	if v84 <= v77 {
 		goto L26
 	} else {
 		goto L27
 	}
 L26:
 	;
-	v91 = v88
+	v87 = v84
 	goto L28
 L27:
 	;
-	v91 = v81
+	v87 = v77
 	goto L28
 L28:
 	;
-	v98 = v91 + int32(100)
+	v94 = v87 + int32(100)
 	goto L21
 L29:
 	;
-	v98 = v81 - int32(1)
+	v94 = v77 - int32(1)
 	goto L21
 L30:
 	;
-	v118 = base.B2i32(v113 == int32(0))
+	v113 = base.B2i32(v108 == int32(0))
 	goto L32
 L31:
 	;
-	v118 = base.B2i32(base.Ui32(v113) < base.Ui32(int32(_a_F_PinBuffer_8)))
+	v113 = base.B2i32(base.Ui32(v108) < base.Ui32(int32(_a_F_PinBuffer_8)))
 	goto L32
 L32:
 	;
-	if v118 != 0 {
+	if v113 != 0 {
 		goto L33
 	} else {
 		goto L34
 	}
 L33:
 	;
-	v119 = v102 + int32(_a_F_PinBuffer_9)
+	v114 = v98 + int32(_a_F_PinBuffer_9)
 	goto L35
 L34:
 	;
-	v119 = v111
+	v114 = v106
 	goto L35
 L35:
 	;
-	v120 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	v121 = base.B2i32(v102 == v120)
-	if v102 == v120 {
-		goto L36
+	v116 = base.AtomicRmwCmpxchg32(m, l0, int32(24), v98, v114)
+	if v98 != v116 {
+		v32 = v116
+		goto L7
 	} else {
-		goto L37
+		goto L36
 	}
 L36:
 	;
-	v122 = v119
-	goto L38
+	goto L8
 L37:
 	;
-	v122 = v120
-	goto L38
-L38:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v122
-	if v102 == v120 {
-		v130 = v23
-		v132 = v119
-		goto L1
-	} else {
-		goto L39
-	}
-L39:
-	;
-	v33 = v120
-	goto L7
-L40:
-	;
-	m.G0 = v11 + int32(32)
-	return int32(base.Ui32(v132&int32(16777216)) >> (uint(int32(24)) % 32))
+	m.G0 = v10 + int32(32)
+	return int32(base.Ui32(v125&int32(16777216)) >> (uint(int32(24)) % 32))
 }
 func F_ReadBufferExtended(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
 	mBase := m.M

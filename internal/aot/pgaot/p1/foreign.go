@@ -168,7 +168,7 @@ func F_GetForeignServerIdByRelId(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13828(m, l0, int32(_a_F_GetForeignServerIdByRelId_0), int32(364), int32(_a_F_GetForeignServerIdByRelId_1), int32(_a_F_GetForeignServerIdByRelId_2), int32(33))
+	v7 = Fn13849(m, l0, int32(_a_F_GetForeignServerIdByRelId_0), int32(364), int32(_a_F_GetForeignServerIdByRelId_1), int32(_a_F_GetForeignServerIdByRelId_2), int32(33))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

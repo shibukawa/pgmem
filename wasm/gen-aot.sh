@@ -60,6 +60,7 @@ if [ "${AOT_WASM_OPT_LEVEL:-Oz}" != "0" ]; then
     --enable-exception-handling \
     --enable-reference-types \
     --enable-bulk-memory \
+    --enable-threads \
     --enable-sign-ext \
     --enable-mutable-globals \
     --enable-nontrapping-float-to-int \

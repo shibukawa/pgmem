@@ -1257,65 +1257,69 @@ L18:
 func F_WaitForProcSignalBarrier(m *base.Module, l0 int64) {
 	mBase := m.M
 	_ = mBase
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v12 int32
+	_ = v12
 	var v13 int32
 	_ = v13
-	var v14 int32
-	_ = v14
-	var v20 int32
-	_ = v20
-	var v25 int32
-	_ = v25
-	var v27 int32
-	_ = v27
-	var v29 int32
-	_ = v29
-	var v35 int32
-	_ = v35
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
-	var v43 int64
-	_ = v43
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v40 int32
+	_ = v40
+	var v41 int64
+	_ = v41
+	var v44 int64
+	_ = v44
 	var v47 int32
 	_ = v47
+	var v57 int32
+	_ = v57
 	var v58 int32
 	_ = v58
-	var v59 int32
-	_ = v59
+	var v63 int32
+	_ = v63
 	var v64 int32
 	_ = v64
-	var v65 int32
-	_ = v65
-	var v68 int32
-	_ = v68
-	var v74 int32
-	_ = v74
-	var v79 int32
+	var v67 int32
+	_ = v67
+	var v73 int32
+	_ = v73
+	var v78 int32
+	_ = v78
+	var v79 int64
 	_ = v79
-	var v80 int64
-	_ = v80
+	var v82 int64
+	_ = v82
 	var v92 int32
 	_ = v92
+	var v102 int32
+	_ = v102
 	var v103 int32
 	_ = v103
-	var v104 int32
-	_ = v104
-	var v108 int32
-	_ = v108
-	var v113 int32
-	_ = v113
-	v7 = m.G0
-	v9 = v7 - int32(48)
-	m.G0 = v9
-	v13 = F_errstart(m, int32(14), int32(0))
+	var v107 int32
+	_ = v107
+	var v112 int32
+	_ = v112
+	v6 = m.G0
+	v8 = v6 - int32(48)
+	m.G0 = v8
+	v12 = F_errstart(m, int32(14), int32(0))
 	mBase = m.M
-	v14 = m.ExcPending
-	if v14 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -1325,18 +1329,18 @@ L1:
 	return
 L2:
 	;
-	if v13 != 0 {
+	if v12 != 0 {
 		goto L3
 	} else {
 		goto L4
 	}
 L3:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(v9)+32)) = l0
-	F_errmsg_internal(m, int32(_a_F_WaitForProcSignalBarrier_0), v9+int32(32))
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = l0
+	F_errmsg_internal(m, int32(_a_F_WaitForProcSignalBarrier_0), v8+int32(32))
 	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
+	v19 = m.ExcPending
+	if v19 != 0 {
 		goto L1
 	} else {
 		goto L6
@@ -1346,9 +1350,9 @@ L4:
 	goto L5
 L5:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForProcSignalBarrier[0]))
-	v29 = v27 + int32(37)
-	if int32(0) <= v29 {
+	v26 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForProcSignalBarrier[0]))
+	v28 = v26 + int32(37)
+	if int32(0) <= v28 {
 		goto L8
 	} else {
 		goto L9
@@ -1357,8 +1361,8 @@ L6:
 	;
 	F_errfinish(m, int32(_a_F_WaitForProcSignalBarrier_1), int32(431), int32(_a_F_WaitForProcSignalBarrier_2))
 	mBase = m.M
-	v25 = m.ExcPending
-	if v25 != 0 {
+	v24 = m.ExcPending
+	if v24 != 0 {
 		goto L1
 	} else {
 		goto L7
@@ -1368,28 +1372,28 @@ L7:
 	goto L5
 L8:
 	;
-	v35 = v29
+	v34 = v28
 	goto L11
 L9:
 	;
 	goto L10
 L10:
 	;
-	v103 = F_errstart(m, int32(14), int32(0))
+	v102 = F_errstart(m, int32(14), int32(0))
 	mBase = m.M
-	v104 = m.ExcPending
-	if v104 != 0 {
+	v103 = m.ExcPending
+	if v103 != 0 {
 		goto L1
 	} else {
 		goto L28
 	}
 L11:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForProcSignalBarrier[1]))
-	v42 = v39 + v35<<(uint(int32(7))%32)
-	v43 = *(*int64)(unsafe.Add(mBase, uint32(v42)+112))
-	*(*int64)(unsafe.Add(mBase, uint32(v42)+112)) = v43
-	if base.Ui64(v43) < base.Ui64(l0) {
+	v37 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForProcSignalBarrier[1]))
+	v40 = v37 + v34<<(uint(int32(7))%32)
+	v41 = int64(0)
+	v44 = base.AtomicRmwCmpxchg64(m, v40, int32(112), v41, v41)
+	if base.Ui64(v44) < base.Ui64(l0) {
 		goto L13
 	} else {
 		goto L14
@@ -1399,7 +1403,7 @@ L12:
 	goto L10
 L13:
 	;
-	v47 = v42 + int32(8)
+	v47 = v40 + int32(8)
 	goto L16
 L14:
 	;
@@ -1416,10 +1420,10 @@ L15:
 	}
 L16:
 	;
-	v58 = F_ConditionVariableTimedSleep(m, v42+int32(124), int32(_a_F_WaitForProcSignalBarrier_3), int32(134217770))
+	v57 = F_ConditionVariableTimedSleep(m, v40+int32(124), int32(_a_F_WaitForProcSignalBarrier_3), int32(134217770))
 	mBase = m.M
-	v59 = m.ExcPending
-	if v59 != 0 {
+	v58 = m.ExcPending
+	if v58 != 0 {
 		goto L1
 	} else {
 		goto L19
@@ -1429,45 +1433,45 @@ L17:
 	goto L15
 L18:
 	;
-	v80 = *(*int64)(unsafe.Add(mBase, uint32(v47)+104))
-	*(*int64)(unsafe.Add(mBase, uint32(v47)+104)) = v80
-	if base.Ui64(v80) < base.Ui64(l0) {
+	v79 = int64(0)
+	v82 = base.AtomicRmwCmpxchg64(m, v47, int32(104), v79, v79)
+	if base.Ui64(v82) < base.Ui64(l0) {
 		goto L16
 	} else {
 		goto L25
 	}
 L19:
 	;
-	if v58 == int32(0) {
+	if v57 == int32(0) {
 		goto L18
 	} else {
 		goto L20
 	}
 L20:
 	;
-	v64 = F_errstart(m, int32(15), int32(0))
+	v63 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
+	v64 = m.ExcPending
+	if v64 != 0 {
 		goto L1
 	} else {
 		goto L21
 	}
 L21:
 	;
-	if v64 == int32(0) {
+	if v63 == int32(0) {
 		goto L18
 	} else {
 		goto L22
 	}
 L22:
 	;
-	v68 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v68
-	F_errmsg(m, int32(_a_F_WaitForProcSignalBarrier_4), v9+int32(16))
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v67
+	F_errmsg(m, int32(_a_F_WaitForProcSignalBarrier_4), v8+int32(16))
 	mBase = m.M
-	v74 = m.ExcPending
-	if v74 != 0 {
+	v73 = m.ExcPending
+	if v73 != 0 {
 		goto L1
 	} else {
 		goto L23
@@ -1476,8 +1480,8 @@ L23:
 	;
 	F_errfinish(m, int32(_a_F_WaitForProcSignalBarrier_1), int32(452), int32(_a_F_WaitForProcSignalBarrier_2))
 	mBase = m.M
-	v79 = m.ExcPending
-	if v79 != 0 {
+	v78 = m.ExcPending
+	if v78 != 0 {
 		goto L1
 	} else {
 		goto L24
@@ -1490,8 +1494,8 @@ L25:
 	goto L17
 L26:
 	;
-	if int32(0) < v35 {
-		v35 = v35 - int32(1)
+	if int32(0) < v34 {
+		v34 = v34 - int32(1)
 		goto L11
 	} else {
 		goto L27
@@ -1501,18 +1505,18 @@ L27:
 	goto L12
 L28:
 	;
-	if v103 != 0 {
+	if v102 != 0 {
 		goto L29
 	} else {
 		goto L30
 	}
 L29:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(v9))) = l0
-	F_errmsg_internal(m, int32(_a_F_WaitForProcSignalBarrier_5), v9)
+	*(*int64)(unsafe.Add(mBase, uint32(v8))) = l0
+	F_errmsg_internal(m, int32(_a_F_WaitForProcSignalBarrier_5), v8)
 	mBase = m.M
-	v108 = m.ExcPending
-	if v108 != 0 {
+	v107 = m.ExcPending
+	if v107 != 0 {
 		goto L1
 	} else {
 		goto L32
@@ -1522,14 +1526,14 @@ L30:
 	goto L31
 L31:
 	;
-	m.G0 = v9 + int32(48)
+	m.G0 = v8 + int32(48)
 	return
 L32:
 	;
 	F_errfinish(m, int32(_a_F_WaitForProcSignalBarrier_1), int32(461), int32(_a_F_WaitForProcSignalBarrier_2))
 	mBase = m.M
-	v113 = m.ExcPending
-	if v113 != 0 {
+	v112 = m.ExcPending
+	if v112 != 0 {
 		goto L1
 	} else {
 		goto L33

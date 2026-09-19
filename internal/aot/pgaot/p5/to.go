@@ -1990,7 +1990,7 @@ func F_to_hex64(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14004(m, l0, int64(4), int64(16), int32(15))
+	v5 = Fn14026(m, l0, int64(4), int64(16), int32(15))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -2003,7 +2003,7 @@ func F_to_regcollation(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14005(m, l0, int32(1482))
+	v3 = Fn14027(m, l0, int32(1482))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -2016,7 +2016,7 @@ func F_to_regnamespace(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14005(m, l0, int32(1484))
+	v3 = Fn14027(m, l0, int32(1484))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -2029,7 +2029,7 @@ func F_to_regprocedure(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14005(m, l0, int32(1237))
+	v3 = Fn14027(m, l0, int32(1237))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

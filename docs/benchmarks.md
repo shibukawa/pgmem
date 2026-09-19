@@ -197,3 +197,24 @@ small model-case schema (2,100 files, 50 MB) on the M3:
 What remains per fork is PostgreSQL's own startup, the copy of the files
 startup writes (the 16 MB WAL segment, about 1 ms) and page faults on the
 fresh linear memory, which still serialize when many forks start at once.
+
+## Process model
+
+Default (postmaster and a backend process per connection) against
+single-user mode (`Options.SingleUser`), same machine and suite,
+2026-09-19:
+
+| | default | single-user |
+|---|---|---|
+| simple indexed `SELECT` via pgx over TCP | 30.2 µs | 30.3 µs |
+| same, in-process via `Server.Dial` | 8.6 µs | 8.8 µs |
+| sort + count over 200k generated rows | 117 ms | 116 ms |
+| `Start` | ~40 ms | ~37 ms |
+| `Snapshot.Fork` | ~6 ms | ~6 ms |
+| `Reset` (stop, copy, start, re-attach sessions) | ~15 ms | ~7 ms |
+
+Query cost is the backend's own work either way. The cluster pays for
+its extra processes (five auxiliary processes plus one per connection,
+each a module instance whose memory is touched on demand) at start-up and
+in resident memory, and a `Reset` restarts the cluster instead of one
+backend.

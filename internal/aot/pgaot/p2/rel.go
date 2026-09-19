@@ -776,7 +776,7 @@ func F_get_rel_namespace(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13898(m, l0, int32(57))
+	v3 = Fn13920(m, l0, int32(57))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

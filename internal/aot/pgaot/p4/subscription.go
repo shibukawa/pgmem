@@ -835,7 +835,7 @@ func F_get_subscription_name(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v8 = Fn13902(m, l0, l1, int32(16), int32(_a_F_get_subscription_name_0), int32(3846), int32(_a_F_get_subscription_name_1), int32(67))
+	v8 = Fn13924(m, l0, l1, int32(16), int32(_a_F_get_subscription_name_0), int32(3846), int32(_a_F_get_subscription_name_1), int32(67))
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int32(0)

@@ -476,8 +476,6 @@ func F_logicalrep_worker_onexit(m *base.Module, l0 int32, l1 int32) {
 	_ = v195
 	var v197 int32
 	_ = v197
-	var v198 int32
-	_ = v198
 	v8 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_worker_onexit[0]))
 	if v8 != 0 {
 		goto L1
@@ -856,21 +854,13 @@ L49:
 	goto L48
 L50:
 	;
-	v197 = F_kill(m, v195, int32(10))
+	v197 = F_pgmem_kill(m, v195, int32(10))
 	mBase = m.M
-	v198 = m.ExcPending
-	if v198 != 0 {
-		goto L4
-	} else {
-		goto L53
-	}
+	goto L52
 L51:
 	;
 	goto L52
 L52:
 	;
 	return
-L53:
-	;
-	goto L52
 }

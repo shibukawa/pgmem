@@ -2,219 +2,342 @@ package p0
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
 func F_CheckForStandbyTrigger(m *base.Module) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
-	var v10 int32
-	_ = v10
-	var v12 int32
-	_ = v12
-	var v16 int32
-	_ = v16
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v30 int32
-	_ = v30
-	var v35 int32
-	_ = v35
-	var v37 int32
-	_ = v37
-	var v42 int32
-	_ = v42
-	var v43 int32
-	_ = v43
-	var v47 int32
-	_ = v47
-	var v54 int32
-	_ = v54
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v46 int32
+	_ = v46
+	var v53 int32
+	_ = v53
 	var v55 int32
 	_ = v55
 	var v56 int32
 	_ = v56
-	var v57 int32
-	_ = v57
-	var v62 int32
-	_ = v62
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
 	var v63 int32
 	_ = v63
-	var v70 int32
-	_ = v70
-	var v71 int32
-	_ = v71
+	var v65 int32
+	_ = v65
+	var v72 int32
+	_ = v72
+	var v74 int32
+	_ = v74
 	var v75 int32
 	_ = v75
-	v4 = m.G0
-	v6 = v4 - int32(96)
-	m.G0 = v6
-	v10 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])))
-	if v10 != 0 {
-		v75 = int32(1)
-		m.G0 = v6 + int32(96)
-		return v75
+	var v83 int32
+	_ = v83
+	var v84 int32
+	_ = v84
+	var v88 int32
+	_ = v88
+	v3 = m.G0
+	v5 = v3 - int32(96)
+	m.G0 = v5
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])))
+	if v9 != 0 {
+		v88 = int32(1)
+		m.G0 = v5 + int32(96)
+		return v88
 	} else {
-		v12 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[1]))
-		if v12 == int32(0) {
-			v75 = int32(0)
-			m.G0 = v6 + int32(96)
-			return v75
+		v11 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[1]))
+		if v11 == int32(0) {
+			v88 = int32(0)
+			m.G0 = v5 + int32(96)
+			return v88
 		} else {
-			v16 = int32(0)
-			v20 = F___fstatat(m, int32(-100), int32(_a_F_CheckForStandbyTrigger_0), v6, v16)
+			v15 = int32(0)
+			v19 = F___fstatat(m, int32(-100), int32(_a_F_CheckForStandbyTrigger_0), v5, v15)
 			mBase = m.M
-			if v20 != 0 {
-				v75 = v16
-				m.G0 = v6 + int32(96)
-				return v75
+			if v19 != 0 {
+				v88 = v15
+				m.G0 = v5 + int32(96)
+				return v88
 			} else {
-				v23 = F_errstart(m, int32(15), int32(0))
+				v22 = F_errstart(m, int32(15), int32(0))
 				mBase = m.M
-				v26 = m.ExcPending
-				if v26 != 0 {
+				v25 = m.ExcPending
+				if v25 != 0 {
 					return int32(0)
 				} else {
-					if v23 != 0 {
+					if v22 != 0 {
 						F_errmsg(m, int32(_a_F_CheckForStandbyTrigger_1), int32(0))
 						mBase = m.M
-						v30 = m.ExcPending
-						if v30 != 0 {
+						v29 = m.ExcPending
+						if v29 != 0 {
 							return int32(0)
 						} else {
 							F_errfinish(m, int32(_a_F_CheckForStandbyTrigger_2), int32(_a_F_CheckForStandbyTrigger_3), int32(_a_F_CheckForStandbyTrigger_4))
 							mBase = m.M
-							v35 = m.ExcPending
-							if v35 != 0 {
+							v34 = m.ExcPending
+							if v34 != 0 {
 								return int32(0)
 							} else {
-								v37 = F_unlink(m, int32(_a_F_CheckForStandbyTrigger_0))
+								v36 = F_unlink(m, int32(_a_F_CheckForStandbyTrigger_0))
 								mBase = m.M
 								*(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[1])) = int32(0)
-								v42 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-								v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+96))
-								*(*int32)(unsafe.Add(mBase, uint32(v42)+96)) = int32(1)
-								if v43 != 0 {
-									v47 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-									F_s_lock(m, v47+int32(96), int32(_a_F_CheckForStandbyTrigger_2), int32(_a_F_CheckForStandbyTrigger_5), int32(_a_F_CheckForStandbyTrigger_6))
+								v41 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+								v44 = base.AtomicRmwXchg32(m, v41, int32(96), int32(1))
+								if v44 != 0 {
+									v46 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+									F_s_lock(m, v46+int32(96), int32(_a_F_CheckForStandbyTrigger_2), int32(_a_F_CheckForStandbyTrigger_5), int32(_a_F_CheckForStandbyTrigger_6))
 									mBase = m.M
-									v54 = m.ExcPending
-									if v54 != 0 {
+									v53 = m.ExcPending
+									if v53 != 0 {
 										return int32(0)
 									} else {
-										v55 = int32(_a_F_CheckForStandbyTrigger_7)
-										v56 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-										v57 = int32(1)
-										*(*int32)(unsafe.Add(mBase, uint32(v56)+96)) = v57
-										*(*uint8)(unsafe.Add(mBase, uint32(v56)+1)) = uint8(v57)
-										v62 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-										v63 = int32(0)
-										*(*int32)(unsafe.Add(mBase, uint32(v62)+96)) = v63
-										*(*int32)(unsafe.Add(mBase, uint32(v62)+80)) = v63
-										F_ConditionVariableBroadcast(m, v62+int32(84))
-										mBase = m.M
-										v70 = m.ExcPending
-										if v70 != 0 {
-											return int32(0)
+										v55 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+										v56 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(v55)+1)) = uint8(v56)
+										v58 = int32(0)
+										v59 = int32(96)
+										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v55)+96)), uint32(v58))
+										v63 = base.AtomicRmwXchg32(m, v55, v59, v56)
+										if v63 != 0 {
+											v65 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+											F_s_lock(m, v65+int32(96), int32(_a_F_CheckForStandbyTrigger_2), int32(3114), int32(_a_F_CheckForStandbyTrigger_7))
+											mBase = m.M
+											v72 = m.ExcPending
+											if v72 != 0 {
+												return int32(0)
+											} else {
+												v74 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+												v75 = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v74)+80)) = v75
+												atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74)+96)), uint32(v75))
+												F_ConditionVariableBroadcast(m, v74+int32(84))
+												mBase = m.M
+												v83 = m.ExcPending
+												if v83 != 0 {
+													return int32(0)
+												} else {
+													v84 = int32(1)
+													*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v84)
+													v88 = v84
+													m.G0 = v5 + int32(96)
+													return v88
+												}
+											}
 										} else {
-											v71 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v71)
-											v75 = v71
-											m.G0 = v6 + int32(96)
-											return v75
+											v74 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+											v75 = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v74)+80)) = v75
+											atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74)+96)), uint32(v75))
+											F_ConditionVariableBroadcast(m, v74+int32(84))
+											mBase = m.M
+											v83 = m.ExcPending
+											if v83 != 0 {
+												return int32(0)
+											} else {
+												v84 = int32(1)
+												*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v84)
+												v88 = v84
+												m.G0 = v5 + int32(96)
+												return v88
+											}
 										}
 									}
 								} else {
-									v55 = int32(_a_F_CheckForStandbyTrigger_7)
-									v56 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-									v57 = int32(1)
-									*(*int32)(unsafe.Add(mBase, uint32(v56)+96)) = v57
-									*(*uint8)(unsafe.Add(mBase, uint32(v56)+1)) = uint8(v57)
-									v62 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-									v63 = int32(0)
-									*(*int32)(unsafe.Add(mBase, uint32(v62)+96)) = v63
-									*(*int32)(unsafe.Add(mBase, uint32(v62)+80)) = v63
-									F_ConditionVariableBroadcast(m, v62+int32(84))
-									mBase = m.M
-									v70 = m.ExcPending
-									if v70 != 0 {
-										return int32(0)
+									v55 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+									v56 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(v55)+1)) = uint8(v56)
+									v58 = int32(0)
+									v59 = int32(96)
+									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v55)+96)), uint32(v58))
+									v63 = base.AtomicRmwXchg32(m, v55, v59, v56)
+									if v63 != 0 {
+										v65 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+										F_s_lock(m, v65+int32(96), int32(_a_F_CheckForStandbyTrigger_2), int32(3114), int32(_a_F_CheckForStandbyTrigger_7))
+										mBase = m.M
+										v72 = m.ExcPending
+										if v72 != 0 {
+											return int32(0)
+										} else {
+											v74 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+											v75 = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v74)+80)) = v75
+											atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74)+96)), uint32(v75))
+											F_ConditionVariableBroadcast(m, v74+int32(84))
+											mBase = m.M
+											v83 = m.ExcPending
+											if v83 != 0 {
+												return int32(0)
+											} else {
+												v84 = int32(1)
+												*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v84)
+												v88 = v84
+												m.G0 = v5 + int32(96)
+												return v88
+											}
+										}
 									} else {
-										v71 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v71)
-										v75 = v71
-										m.G0 = v6 + int32(96)
-										return v75
+										v74 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+										v75 = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(v74)+80)) = v75
+										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74)+96)), uint32(v75))
+										F_ConditionVariableBroadcast(m, v74+int32(84))
+										mBase = m.M
+										v83 = m.ExcPending
+										if v83 != 0 {
+											return int32(0)
+										} else {
+											v84 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v84)
+											v88 = v84
+											m.G0 = v5 + int32(96)
+											return v88
+										}
 									}
 								}
 							}
 						}
 					} else {
-						v37 = F_unlink(m, int32(_a_F_CheckForStandbyTrigger_0))
+						v36 = F_unlink(m, int32(_a_F_CheckForStandbyTrigger_0))
 						mBase = m.M
 						*(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[1])) = int32(0)
-						v42 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-						v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+96))
-						*(*int32)(unsafe.Add(mBase, uint32(v42)+96)) = int32(1)
-						if v43 != 0 {
-							v47 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-							F_s_lock(m, v47+int32(96), int32(_a_F_CheckForStandbyTrigger_2), int32(_a_F_CheckForStandbyTrigger_5), int32(_a_F_CheckForStandbyTrigger_6))
+						v41 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+						v44 = base.AtomicRmwXchg32(m, v41, int32(96), int32(1))
+						if v44 != 0 {
+							v46 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+							F_s_lock(m, v46+int32(96), int32(_a_F_CheckForStandbyTrigger_2), int32(_a_F_CheckForStandbyTrigger_5), int32(_a_F_CheckForStandbyTrigger_6))
 							mBase = m.M
-							v54 = m.ExcPending
-							if v54 != 0 {
+							v53 = m.ExcPending
+							if v53 != 0 {
 								return int32(0)
 							} else {
-								v55 = int32(_a_F_CheckForStandbyTrigger_7)
-								v56 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-								v57 = int32(1)
-								*(*int32)(unsafe.Add(mBase, uint32(v56)+96)) = v57
-								*(*uint8)(unsafe.Add(mBase, uint32(v56)+1)) = uint8(v57)
-								v62 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-								v63 = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v62)+96)) = v63
-								*(*int32)(unsafe.Add(mBase, uint32(v62)+80)) = v63
-								F_ConditionVariableBroadcast(m, v62+int32(84))
-								mBase = m.M
-								v70 = m.ExcPending
-								if v70 != 0 {
-									return int32(0)
+								v55 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+								v56 = int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(v55)+1)) = uint8(v56)
+								v58 = int32(0)
+								v59 = int32(96)
+								atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v55)+96)), uint32(v58))
+								v63 = base.AtomicRmwXchg32(m, v55, v59, v56)
+								if v63 != 0 {
+									v65 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+									F_s_lock(m, v65+int32(96), int32(_a_F_CheckForStandbyTrigger_2), int32(3114), int32(_a_F_CheckForStandbyTrigger_7))
+									mBase = m.M
+									v72 = m.ExcPending
+									if v72 != 0 {
+										return int32(0)
+									} else {
+										v74 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+										v75 = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(v74)+80)) = v75
+										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74)+96)), uint32(v75))
+										F_ConditionVariableBroadcast(m, v74+int32(84))
+										mBase = m.M
+										v83 = m.ExcPending
+										if v83 != 0 {
+											return int32(0)
+										} else {
+											v84 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v84)
+											v88 = v84
+											m.G0 = v5 + int32(96)
+											return v88
+										}
+									}
 								} else {
-									v71 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v71)
-									v75 = v71
-									m.G0 = v6 + int32(96)
-									return v75
+									v74 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+									v75 = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v74)+80)) = v75
+									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74)+96)), uint32(v75))
+									F_ConditionVariableBroadcast(m, v74+int32(84))
+									mBase = m.M
+									v83 = m.ExcPending
+									if v83 != 0 {
+										return int32(0)
+									} else {
+										v84 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v84)
+										v88 = v84
+										m.G0 = v5 + int32(96)
+										return v88
+									}
 								}
 							}
 						} else {
-							v55 = int32(_a_F_CheckForStandbyTrigger_7)
-							v56 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-							v57 = int32(1)
-							*(*int32)(unsafe.Add(mBase, uint32(v56)+96)) = v57
-							*(*uint8)(unsafe.Add(mBase, uint32(v56)+1)) = uint8(v57)
-							v62 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
-							v63 = int32(0)
-							*(*int32)(unsafe.Add(mBase, uint32(v62)+96)) = v63
-							*(*int32)(unsafe.Add(mBase, uint32(v62)+80)) = v63
-							F_ConditionVariableBroadcast(m, v62+int32(84))
-							mBase = m.M
-							v70 = m.ExcPending
-							if v70 != 0 {
-								return int32(0)
+							v55 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+							v56 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(v55)+1)) = uint8(v56)
+							v58 = int32(0)
+							v59 = int32(96)
+							atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v55)+96)), uint32(v58))
+							v63 = base.AtomicRmwXchg32(m, v55, v59, v56)
+							if v63 != 0 {
+								v65 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+								F_s_lock(m, v65+int32(96), int32(_a_F_CheckForStandbyTrigger_2), int32(3114), int32(_a_F_CheckForStandbyTrigger_7))
+								mBase = m.M
+								v72 = m.ExcPending
+								if v72 != 0 {
+									return int32(0)
+								} else {
+									v74 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+									v75 = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v74)+80)) = v75
+									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74)+96)), uint32(v75))
+									F_ConditionVariableBroadcast(m, v74+int32(84))
+									mBase = m.M
+									v83 = m.ExcPending
+									if v83 != 0 {
+										return int32(0)
+									} else {
+										v84 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v84)
+										v88 = v84
+										m.G0 = v5 + int32(96)
+										return v88
+									}
+								}
 							} else {
-								v71 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v71)
-								v75 = v71
-								m.G0 = v6 + int32(96)
-								return v75
+								v74 = *(*int32)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[2]))
+								v75 = int32(0)
+								*(*int32)(unsafe.Add(mBase, uint32(v74)+80)) = v75
+								atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v74)+96)), uint32(v75))
+								F_ConditionVariableBroadcast(m, v74+int32(84))
+								mBase = m.M
+								v83 = m.ExcPending
+								if v83 != 0 {
+									return int32(0)
+								} else {
+									v84 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, _c_F_CheckForStandbyTrigger[0])) = uint8(v84)
+									v88 = v84
+									m.G0 = v5 + int32(96)
+									return v88
+								}
 							}
 						}
 					}

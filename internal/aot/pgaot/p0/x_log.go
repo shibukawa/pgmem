@@ -2,6 +2,7 @@ package p0
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -16,38 +17,39 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 	_ = v12
 	var v14 int32
 	_ = v14
-	var v15 int32
-	_ = v15
+	var v17 int32
+	_ = v17
 	var v19 int32
 	_ = v19
 	var v26 int32
 	_ = v26
 	var v28 int32
 	_ = v28
-	var v31 int64
-	_ = v31
-	var v34 int32
-	_ = v34
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
-	var v44 int32
-	_ = v44
-	var v46 int32
-	_ = v46
-	var v50 int32
-	_ = v50
-	var v55 int32
-	_ = v55
+	var v29 int64
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
+	var v51 int32
+	_ = v51
+	var v56 int32
+	_ = v56
 	v7 = m.G0
 	v9 = v7 - int32(80)
 	m.G0 = v9
 	v12 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[0]))
 	v14 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[1]))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+440))
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+440)) = int32(1)
-	if v15 != 0 {
+	v17 = base.AtomicRmwXchg32(m, v14, int32(440), int32(1))
+	if v17 != 0 {
 		v19 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[1]))
 		F_s_lock(m, v19+int32(440), int32(_a_F_CheckXLogRemoved_0), int32(3730), int32(_a_F_CheckXLogRemoved_1))
 		mBase = m.M
@@ -56,41 +58,42 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 			return
 		} else {
 			v28 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[1]))
-			*(*int32)(unsafe.Add(mBase, uint32(v28)+440)) = int32(0)
-			v31 = *(*int64)(unsafe.Add(mBase, uint32(v28)+232))
-			if base.Ui64(l0) <= base.Ui64(v31) {
-				v34 = v9 + int32(16)
-				v36 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[2]))
-				F_XLogFileName(m, v34, l1, l0, v36)
+			v29 = *(*int64)(unsafe.Add(mBase, uint32(v28)+232))
+			v30 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v28)+440)), uint32(v30))
+			if base.Ui64(l0) <= base.Ui64(v29) {
+				v35 = v9 + int32(16)
+				v37 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[2]))
+				F_XLogFileName(m, v35, l1, l0, v37)
 				mBase = m.M
-				v38 = m.ExcPending
-				if v38 != 0 {
+				v39 = m.ExcPending
+				if v39 != 0 {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[0])) = v12
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v44 = m.ExcPending
-					if v44 != 0 {
+					v45 = m.ExcPending
+					if v45 != 0 {
 						return
 					} else {
 						F_errcode_for_file_access(m)
 						mBase = m.M
-						v46 = m.ExcPending
-						if v46 != 0 {
+						v47 = m.ExcPending
+						if v47 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34
+							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v35
 							F_errmsg(m, int32(_a_F_CheckXLogRemoved_2), v9)
 							mBase = m.M
-							v50 = m.ExcPending
-							if v50 != 0 {
+							v51 = m.ExcPending
+							if v51 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_CheckXLogRemoved_0), int32(3743), int32(_a_F_CheckXLogRemoved_1))
 								mBase = m.M
-								v55 = m.ExcPending
-								if v55 != 0 {
+								v56 = m.ExcPending
+								if v56 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -109,41 +112,42 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 		}
 	} else {
 		v28 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[1]))
-		*(*int32)(unsafe.Add(mBase, uint32(v28)+440)) = int32(0)
-		v31 = *(*int64)(unsafe.Add(mBase, uint32(v28)+232))
-		if base.Ui64(l0) <= base.Ui64(v31) {
-			v34 = v9 + int32(16)
-			v36 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[2]))
-			F_XLogFileName(m, v34, l1, l0, v36)
+		v29 = *(*int64)(unsafe.Add(mBase, uint32(v28)+232))
+		v30 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v28)+440)), uint32(v30))
+		if base.Ui64(l0) <= base.Ui64(v29) {
+			v35 = v9 + int32(16)
+			v37 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[2]))
+			F_XLogFileName(m, v35, l1, l0, v37)
 			mBase = m.M
-			v38 = m.ExcPending
-			if v38 != 0 {
+			v39 = m.ExcPending
+			if v39 != 0 {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[0])) = v12
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v44 = m.ExcPending
-				if v44 != 0 {
+				v45 = m.ExcPending
+				if v45 != 0 {
 					return
 				} else {
 					F_errcode_for_file_access(m)
 					mBase = m.M
-					v46 = m.ExcPending
-					if v46 != 0 {
+					v47 = m.ExcPending
+					if v47 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34
+						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v35
 						F_errmsg(m, int32(_a_F_CheckXLogRemoved_2), v9)
 						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
+						v51 = m.ExcPending
+						if v51 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_CheckXLogRemoved_0), int32(3743), int32(_a_F_CheckXLogRemoved_1))
 							mBase = m.M
-							v55 = m.ExcPending
-							if v55 != 0 {
+							v56 = m.ExcPending
+							if v56 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()

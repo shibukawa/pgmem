@@ -46,16 +46,8 @@ func F_InitializeTimeouts(m *base.Module) {
 	_ = v91
 	var v101 int32
 	_ = v101
-	var v113 int32
-	_ = v113
-	var v120 int32
-	_ = v120
-	var v121 int32
-	_ = v121
-	var v123 int64
-	_ = v123
-	var v125 int64
-	_ = v125
+	var v115 int32
+	_ = v115
 	v1 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _c_F_InitializeTimeouts[0])) = v1
 	*(*int32)(unsafe.Add(mBase, _c_F_InitializeTimeouts[1])) = v1
@@ -126,17 +118,8 @@ func F_InitializeTimeouts(m *base.Module) {
 	F_sigemptyset(m, v91+int32(16))
 	mBase = m.M
 	*(*int32)(unsafe.Add(mBase, uint32(v91)+24)) = int32(268435456)
-	v113 = v91 + int32(12)
-	if v113 != 0 {
-		v120 = int32(280)
-		v121 = *(*int32)(unsafe.Add(mBase, uint32(v113)+16))
-		*(*int32)(unsafe.Add(mBase, _c_F_InitializeTimeouts[11])) = v121
-		v123 = *(*int64)(unsafe.Add(mBase, uint32(v113)+8))
-		*(*int64)(unsafe.Add(mBase, _c_F_InitializeTimeouts[12])) = v123
-		v125 = *(*int64)(unsafe.Add(mBase, uint32(v113)))
-		*(*int64)(unsafe.Add(mBase, _c_F_InitializeTimeouts[13])) = v125
-	} else {
-	}
+	v115 = F___sigaction(m, int32(14), v91+int32(12), int32(0))
+	mBase = m.M
 	m.G0 = v91 + int32(32)
 	return
 }
@@ -145,7 +128,7 @@ func F_InputFunctionCall(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 	_ = v10
 	var v13 int32
 	_ = v13
-	v10 = Fn13833(m, l0, l1, l2, l3, int32(_a_F_InputFunctionCall_0), int32(1560), int32(_a_F_InputFunctionCall_1), int32(1554), int32(_a_F_InputFunctionCall_2))
+	v10 = Fn13854(m, l0, l1, l2, l3, int32(_a_F_InputFunctionCall_0), int32(1560), int32(_a_F_InputFunctionCall_1), int32(1554), int32(_a_F_InputFunctionCall_2))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return int32(0)
@@ -161,7 +144,7 @@ func F__intbig_in(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F__intbig_in_0), int32(36), int32(_a_F__intbig_in_1), int32(_a_F__intbig_in_2), int32(_a_F__intbig_in_3))
+	v7 = Fn13874(m, l0, int32(_a_F__intbig_in_0), int32(36), int32(_a_F__intbig_in_1), int32(_a_F__intbig_in_2), int32(_a_F__intbig_in_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -13492,7 +13475,7 @@ func F_iso_to_win866(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13936(m, l0, int32(_a_F_iso_to_win866_0), int32(20), int32(25))
+	v5 = Fn13958(m, l0, int32(_a_F_iso_to_win866_0), int32(20), int32(25))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

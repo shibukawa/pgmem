@@ -10,7 +10,7 @@ func F_uuid_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v11
 	var v14 int32
 	_ = v14
-	v11 = Fn13940(m, l0, l1, int32(_a_F_uuid_abbrev_abort_0), int32(381), int32(_a_F_uuid_abbrev_abort_1), int32(_a_F_uuid_abbrev_abort_2), int32(374), int32(_a_F_uuid_abbrev_abort_3), int32(356), int32(_a_F_uuid_abbrev_abort_4))
+	v11 = Fn13962(m, l0, l1, int32(_a_F_uuid_abbrev_abort_0), int32(381), int32(_a_F_uuid_abbrev_abort_1), int32(_a_F_uuid_abbrev_abort_2), int32(374), int32(_a_F_uuid_abbrev_abort_3), int32(356), int32(_a_F_uuid_abbrev_abort_4))
 	v14 = m.ExcPending
 	if v14 != 0 {
 		return int32(0)
@@ -2147,7 +2147,7 @@ func F_uuid_ns_x500(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14016(m, l0, int32(_a_F_uuid_ns_x500_0), int32(_a_F_uuid_ns_x500_1), int32(_a_F_uuid_ns_x500_2), int32(_a_F_uuid_ns_x500_3), int32(_a_F_uuid_ns_x500_4))
+	v7 = Fn14038(m, l0, int32(_a_F_uuid_ns_x500_0), int32(_a_F_uuid_ns_x500_1), int32(_a_F_uuid_ns_x500_2), int32(_a_F_uuid_ns_x500_3), int32(_a_F_uuid_ns_x500_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -2160,7 +2160,7 @@ func F_uuid_sortsupport(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13942(m, l0, int32(1529), int32(1528), int32(1527))
+	v5 = Fn13964(m, l0, int32(1529), int32(1528), int32(1527))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

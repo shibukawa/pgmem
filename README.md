@@ -154,8 +154,19 @@ is still executed as wasm, under [wazero](https://wazero.io), but only by
   shibukawa/pgmem --skill add-pgmem-extension`).
 - `internal/aot` binds that table to the generated Go code;
   `internal/wzr` binds it to wazero for the initdb step of `pgmem-mkdata`.
-- `internal/engine` drives initdb and a single-user backend the way
-  PGlite's TypeScript does: the backend runs `postgres --single`, the
+- `internal/engine` drives initdb and runs the cluster: PostgreSQL is
+  built with `EXEC_BACKEND` (the Windows way of starting children, a new
+  program image per process that re-attaches to the shared memory), so
+  every process is a fresh module instance on its own goroutine.
+  `internal/host/cluster.go` is the kernel they share: pids and signals
+  (delivered when the target next enters a host call, where a kernel would
+  interrupt it too), System V shared memory (a file per segment, mapped
+  with `MAP_FIXED` at the same address into every instance's reserved
+  linear memory), POSIX semaphores, and the sockets that carry client
+  connections to the postmaster. The module is compiled with `-matomics`
+  so spinlocks and `pg_atomic_*` are real atomic instructions.
+  In single-user mode the engine drives one backend the way PGlite's
+  TypeScript does: the backend runs `postgres --single`, the
   frontend/backend protocol goes through in-memory buffers, and
   `ereport(ERROR)` unwinds are handled with PGlite's exit trick. One
   PGlite detail is patched (`wasm/patches.py`): its longjmp shim decided
@@ -224,54 +235,63 @@ on this memory-bound code (arm64; amd64 not measured).
 
 ## Limits
 
-- **One session.** PostgreSQL runs in single-user mode, so every TCP
-  connection shares one backend session. pgmem multiplexes connections
-  onto it the way a transaction-mode pooler does: a connection owns the
-  backend from `BEGIN` (or an unsynced pipelined message, or `COPY FROM
-  STDIN`) until the transaction ends, and other connections wait. Pools of
-  any size work, but they serialize instead of running in parallel. The
-  consequences are the usual transaction-pooling ones:
+- **Process model.** PostgreSQL runs as it does in production: a
+  postmaster starts a backend process for every connection plus its
+  auxiliary processes (checkpointer, background writer, WAL writer,
+  autovacuum launcher), and they share memory. Every process is a module
+  instance on its own goroutine; the shared memory is a segment mapped at
+  the same address into each of them. So sessions are real: row and
+  advisory locks make other sessions wait, deadlocks are detected
+  (SQLSTATE 40P01 after `deadlock_timeout`), `pg_terminate_backend`,
+  `pg_stat_activity` and `pg_locks` show the other sessions, and session
+  state is per connection. A `Restore`/`Reset` stops the cluster and starts
+  it on the copy; client connections keep their sockets and get a new
+  backend on their next message, with their named prepared statements and
+  `LISTEN` registrations re-created (a backend PostgreSQL itself ends, with
+  a FATAL, ends the connection as it would anywhere). Query cancellation of
+  a statement that never makes a system call waits until it does.
+- **Single-user mode** (`Options.SingleUser`, `pgmem -single`) is the
+  pre-0.2 model, kept for those who want the last bit of speed: one backend
+  session in single-user mode that every TCP connection shares. pgmem
+  multiplexes connections onto it the way a transaction-mode pooler does:
+  a connection owns the backend from `BEGIN` (or an unsynced pipelined
+  message, or `COPY FROM STDIN`) until the transaction ends, and other
+  connections wait. Pools of any size work, but they serialize instead of
+  running in parallel, and:
   - Session state (`SET`, temp tables, advisory locks) is shared between
     live connections. Use `SET LOCAL`; prepared statements are fine (their
     names are prefixed per connection and dropped when it ends). When a
     connection starts and no other is alive, the session is reset to what
     a new backend would give it (everything `DISCARD ALL` does, and no
-    temp namespace), done in C rather than as statements, so sequential
-    connections see a fresh session and pg_stat_statements does not count
-    the housekeeping.
+    temp namespace).
   - `LISTEN`/`NOTIFY` work per connection: the backend reports its listen
     set to pgmem at commit time and notifications are routed to the
-    connections that listen on the channel. `DISCARD ALL` issued by a
-    client while others are connected still unsubscribes everyone.
+    connections that listen on the channel.
   - A connection cannot run while another is inside a transaction. When
     the holder stays idle in its transaction while another connection
-    waits (code that queries through the pool instead of the transaction
-    handle inside a transaction callback, or that waits for another
-    connection's row or advisory lock), the waiting connection is ended
-    after `Options.WaitTimeout` (default 2 s) with SQLSTATE 55P03 and a
-    message naming the holder, instead of waiting forever. A statement
-    that is merely slow is waited for.
+    waits, the waiting connection is ended after `Options.WaitTimeout`
+    (default 2 s) with SQLSTATE 55P03 and a message naming the holder,
+    instead of waiting forever. There is no deadlock detection.
+  - A backend serves one database at a time: a connection to another
+    database restarts the backend on it (well under 10 ms).
+  - Parallel query and parallel index builds are off
+    (`max_parallel_workers=0`): no postmaster would start the workers.
+  On Windows, where the shared memory mapping is not implemented yet,
+  single-user mode is what runs.
 - `Close` does not drop client connections: each stays open until its
   client closes it, sends a message (answered with SQLSTATE 57P01) or 30 s
   pass, because pools such as node-postgres's raise an unhandled error
   when an idle connection is dropped under them.
 - Every database of a server can be connected to (`CREATE DATABASE`
-  works), but a backend serves one database at a time: a connection to
-  another database restarts the backend on it (well under 10 ms), and the
-  connections of the database that stopped being served get their prepared
-  statements and LISTEN registrations back when it is served again, though
-  not their `SET` values or temp tables. Prisma's shadow database needs
-  nothing more; connections that keep alternating between databases pay a
-  restart each time. A database that does not exist is refused with
-  SQLSTATE 3D000.
+  works). A database that does not exist is refused with SQLSTATE 3D000.
 - Extensions: plpgsql, pgcrypto, citext, pg_trgm, hstore, ltree, btree_gist, btree_gin, unaccent, tablefunc, intarray, fuzzystrmatch, cube, earthdistance, seg, bloom, isn, dict_int, dict_xsyn, lo, tsm_system_rows, tsm_system_time, pgstattuple, uuid-ossp, amcheck, pg_visibility, pageinspect, pg_buffercache, pg_freespacemap, pg_prewarm, pg_stat_statements, auto_explain (a `LOAD`-able module rather than an extension), and pgvector 0.8.6 as `vector`. ICU, OpenSSL and zlib are not compiled
   in; pgcrypto gets its crypto and its OpenPGP compression from Go instead
   (so `compress-algo=1|2` and messages made by GnuPG work), and
   `fips_mode()` is always false.
-- Parallel query and parallel index builds are off (`max_parallel_workers=0`):
-  the backend would register workers that no postmaster starts and wait
-  for them forever. Settings such as `max_parallel_workers_per_gather` are
-  accepted but there is never a worker to launch.
+- Parallel query and parallel index builds work: the workers are
+  processes of the cluster like any other. `io_method` defaults to `sync`
+  (PostgreSQL 18's `worker` would add three I/O worker processes for no
+  gain in memory).
 - `io_method` is forced to `sync`. PGlite runs the backend as if under a
   postmaster, so PostgreSQL 18's default `worker` method would hand
   batched reads to IO workers that do not exist; with an in-memory

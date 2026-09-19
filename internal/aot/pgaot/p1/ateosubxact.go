@@ -358,12 +358,12 @@ func F_AtEOSubXact_PgStat(m *base.Module, l0 int32, l1 int32) {
 	_ = v226
 	var v229 int32
 	_ = v229
-	var v235 int32
-	_ = v235
-	var v236 int64
-	_ = v236
-	var v251 int32
-	_ = v251
+	var v234 int32
+	_ = v234
+	var v237 int64
+	_ = v237
+	var v249 int32
+	_ = v249
 	v3 = int32(0)
 	v12 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_PgStat[0]))
 	if v12 == v3 {
@@ -594,8 +594,8 @@ L32:
 	;
 	F_pfree(m, v12)
 	mBase = m.M
-	v251 = m.ExcPending
-	if v251 != 0 {
+	v249 = m.ExcPending
+	if v249 != 0 {
 		goto L24
 	} else {
 		goto L59
@@ -788,9 +788,8 @@ L56:
 	goto L43
 L57:
 	;
-	v235 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_PgStat[2]))
-	v236 = *(*int64)(unsafe.Add(mBase, uint32(v235)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v235)+16)) = v236 + int64(1)
+	v234 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_PgStat[2]))
+	v237 = base.AtomicRmwAdd64(m, v234, int32(16), int64(1))
 	goto L58
 L58:
 	;

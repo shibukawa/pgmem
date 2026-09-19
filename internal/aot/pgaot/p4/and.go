@@ -2,6 +2,7 @@ package p4
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -14,8 +15,8 @@ func F_FindAndDropRelationBuffers(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v13
 	var v16 int32
 	_ = v16
-	var v25 int32
-	_ = v25
+	var v24 int32
+	_ = v24
 	var v26 int32
 	_ = v26
 	var v28 int32
@@ -48,50 +49,50 @@ func F_FindAndDropRelationBuffers(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v70
 	var v71 int32
 	_ = v71
-	var v72 int32
-	_ = v72
+	var v73 int32
+	_ = v73
+	var v89 int32
+	_ = v89
 	var v90 int32
 	_ = v90
-	var v91 int32
-	_ = v91
 	var v92 int32
 	_ = v92
-	var v104 int32
-	_ = v104
-	var v110 int32
-	_ = v110
+	var v103 int32
+	_ = v103
+	var v108 int32
+	_ = v108
+	var v109 int32
+	_ = v109
 	var v111 int32
 	_ = v111
-	var v113 int32
-	_ = v113
-	var v118 int32
-	_ = v118
-	var v121 int32
-	_ = v121
+	var v116 int32
+	_ = v116
+	var v119 int32
+	_ = v119
+	var v126 int32
+	_ = v126
 	var v128 int32
 	_ = v128
-	var v130 int32
-	_ = v130
+	var v129 int32
+	_ = v129
 	var v131 int32
 	_ = v131
-	var v133 int32
-	_ = v133
+	var v132 int32
+	_ = v132
 	var v134 int32
 	_ = v134
-	var v136 int32
-	_ = v136
+	var v135 int32
+	_ = v135
 	var v137 int32
 	_ = v137
 	var v139 int32
 	_ = v139
-	var v141 int32
-	_ = v141
-	var v144 int32
-	_ = v144
-	var v156 int32
-	_ = v156
-	var v159 int32
-	_ = v159
+	var v142 int32
+	_ = v142
+	var v153 int32
+	_ = v153
+	var v157 int32
+	_ = v157
 	v11 = m.G0
 	v13 = v11 - int32(48)
 	m.G0 = v13
@@ -103,7 +104,7 @@ func F_FindAndDropRelationBuffers(m *base.Module, l0 int32, l1 int32, l2 int32, 
 L1:
 	;
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v25 = v16
+	v24 = v16
 	v26 = l3
 	goto L4
 L2:
@@ -115,7 +116,7 @@ L3:
 	return
 L4:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v25
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v24
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v28
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
@@ -172,17 +173,17 @@ L9:
 L10:
 	;
 	if v50 < int32(0) {
-		v156 = v25
+		v153 = v24
 		goto L11
 	} else {
 		goto L12
 	}
 L11:
 	;
-	v159 = v26 + int32(1)
-	if v159 != l2 {
-		v25 = v156
-		v26 = v159
+	v157 = v26 + int32(1)
+	if v157 != l2 {
+		v24 = v153
+		v26 = v157
 		goto L4
 	} else {
 		goto L38
@@ -196,10 +197,9 @@ L12:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v13)+24)) = int64(0)
 	v70 = v57 + v50<<(uint(int32(6))%32)
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(v70)+24))
-	v72 = int32(_a_F_FindAndDropRelationBuffers_4)
-	*(*int32)(unsafe.Add(mBase, uint32(v70)+24)) = v71 | v72
-	if v71&v72 != 0 {
+	v71 = int32(_a_F_FindAndDropRelationBuffers_4)
+	v73 = base.AtomicRmwOr32(m, v70, int32(24), v71)
+	if v73&v71 != 0 {
 		goto L13
 	} else {
 		goto L14
@@ -209,14 +209,14 @@ L13:
 	goto L16
 L14:
 	;
-	v104 = v71
+	v103 = v73
 	goto L15
 L15:
 	;
-	v110 = int32(_a_F_FindAndDropRelationBuffers_5)
-	v111 = *(*int32)(unsafe.Add(mBase, _c_F_FindAndDropRelationBuffers[2]))
-	v113 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(24))+8))
-	if v113 == int32(0) {
+	v108 = int32(_a_F_FindAndDropRelationBuffers_5)
+	v109 = *(*int32)(unsafe.Add(mBase, _c_F_FindAndDropRelationBuffers[2]))
+	v111 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(24))+8))
+	if v111 == int32(0) {
 		goto L23
 	} else {
 		goto L24
@@ -225,22 +225,21 @@ L16:
 	;
 	F_perform_spin_delay(m, v13+int32(24))
 	mBase = m.M
-	v90 = m.ExcPending
-	if v90 != 0 {
+	v89 = m.ExcPending
+	if v89 != 0 {
 		goto L6
 	} else {
 		goto L18
 	}
 L17:
 	;
-	v104 = v91
+	v103 = v92
 	goto L15
 L18:
 	;
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(v70)+24))
-	v92 = int32(_a_F_FindAndDropRelationBuffers_4)
-	*(*int32)(unsafe.Add(mBase, uint32(v70)+24)) = v91 | v92
-	if v91&v92 != 0 {
+	v90 = int32(_a_F_FindAndDropRelationBuffers_4)
+	v92 = base.AtomicRmwOr32(m, v70, int32(24), v90)
+	if v92&v90 != 0 {
 		goto L16
 	} else {
 		goto L19
@@ -250,9 +249,9 @@ L19:
 	goto L17
 L20:
 	;
-	v130 = *(*int32)(unsafe.Add(mBase, uint32(v70)))
-	v131 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	if v130 != v131 {
+	v128 = *(*int32)(unsafe.Add(mBase, uint32(v70)))
+	v129 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if v128 != v129 {
 		goto L31
 	} else {
 		goto L32
@@ -262,11 +261,11 @@ L21:
 	goto L20
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_FindAndDropRelationBuffers[2])) = v128
+	*(*int32)(unsafe.Add(mBase, _c_F_FindAndDropRelationBuffers[2])) = v126
 	goto L21
 L23:
 	;
-	if int32(999) < v111 {
+	if int32(999) < v109 {
 		goto L21
 	} else {
 		goto L26
@@ -276,70 +275,70 @@ L24:
 	goto L25
 L25:
 	;
-	if v111 < int32(11) {
+	if v109 < int32(11) {
 		goto L21
 	} else {
 		goto L30
 	}
 L26:
 	;
-	v118 = int32(900)
-	if v118 <= v111 {
+	v116 = int32(900)
+	if v116 <= v109 {
 		goto L27
 	} else {
 		goto L28
 	}
 L27:
 	;
-	v121 = v118
+	v119 = v116
 	goto L29
 L28:
 	;
-	v121 = v111
+	v119 = v109
 	goto L29
 L29:
 	;
-	v128 = v121 + int32(100)
+	v126 = v119 + int32(100)
 	goto L22
 L30:
 	;
-	v128 = v111 - int32(1)
+	v126 = v109 - int32(1)
 	goto L22
 L31:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v70)+24)) = v104 & int32(-4194305)
-	v156 = v131
+	*(*int32)(unsafe.Add(mBase, uint32(v70)+24)) = v103 & int32(-4194305)
+	v153 = v129
 	goto L11
 L32:
 	;
-	v133 = *(*int32)(unsafe.Add(mBase, uint32(v70)+4))
-	v134 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v133 != v134 {
+	v131 = *(*int32)(unsafe.Add(mBase, uint32(v70)+4))
+	v132 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v131 != v132 {
 		goto L31
 	} else {
 		goto L33
 	}
 L33:
 	;
-	v136 = *(*int32)(unsafe.Add(mBase, uint32(v70)+8))
-	v137 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if v136 != v137 {
+	v134 = *(*int32)(unsafe.Add(mBase, uint32(v70)+8))
+	v135 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v134 != v135 {
 		goto L31
 	} else {
 		goto L34
 	}
 L34:
 	;
-	v139 = *(*int32)(unsafe.Add(mBase, uint32(v70)+12))
-	if v139 != l1 {
+	v137 = *(*int32)(unsafe.Add(mBase, uint32(v70)+12))
+	if v137 != l1 {
 		goto L31
 	} else {
 		goto L35
 	}
 L35:
 	;
-	v141 = *(*int32)(unsafe.Add(mBase, uint32(v70)+16))
-	if base.Ui32(v141) < base.Ui32(l3) {
+	v139 = *(*int32)(unsafe.Add(mBase, uint32(v70)+16))
+	if base.Ui32(v139) < base.Ui32(l3) {
 		goto L31
 	} else {
 		goto L36
@@ -348,15 +347,15 @@ L36:
 	;
 	F_InvalidateBuffer(m, v70)
 	mBase = m.M
-	v144 = m.ExcPending
-	if v144 != 0 {
+	v142 = m.ExcPending
+	if v142 != 0 {
 		goto L6
 	} else {
 		goto L37
 	}
 L37:
 	;
-	v156 = v130
+	v153 = v128
 	goto L11
 L38:
 	;
@@ -715,82 +714,83 @@ func F_ReleaseAndReadBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 func F_check_and_set_sync_info(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v6 int32
-	_ = v6
-	var v10 int32
-	_ = v10
-	var v17 int32
-	_ = v17
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
 	var v19 int32
 	_ = v19
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
-	var v29 int32
-	_ = v29
+	var v22 int32
+	_ = v22
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
 	var v34 int32
 	_ = v34
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
-	var v46 int32
-	_ = v46
-	var v51 int32
-	_ = v51
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
+	var v47 int32
+	_ = v47
 	var v52 int32
 	_ = v52
-	var v57 int32
-	_ = v57
-	var v60 int32
-	_ = v60
-	var v64 int32
-	_ = v64
-	var v69 int32
-	_ = v69
-	v5 = *(*int32)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[0]))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = int32(1)
-	if v6 != 0 {
-		v10 = *(*int32)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[0]))
-		F_s_lock(m, v10+int32(16), int32(_a_F_check_and_set_sync_info_0), int32(1295), int32(_a_F_check_and_set_sync_info_1))
+	var v53 int32
+	_ = v53
+	var v59 int32
+	_ = v59
+	var v62 int32
+	_ = v62
+	var v66 int32
+	_ = v66
+	var v71 int32
+	_ = v71
+	v4 = *(*int32)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[0]))
+	v7 = base.AtomicRmwXchg32(m, v4, int32(16), int32(1))
+	if v7 != 0 {
+		v9 = *(*int32)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[0]))
+		F_s_lock(m, v9+int32(16), int32(_a_F_check_and_set_sync_info_0), int32(1295), int32(_a_F_check_and_set_sync_info_1))
 		mBase = m.M
-		v17 = m.ExcPending
-		if v17 != 0 {
+		v16 = m.ExcPending
+		if v16 != 0 {
 			return
 		} else {
-			v19 = *(*int32)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[0]))
-			v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+4)))
-			if v20 != int32(1) {
-				v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+5)))
-				if v23 == int32(1) {
-					v52 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v52
-					F_errstart_cold(m, int32(21), v52)
+			v18 = *(*int32)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[0]))
+			v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+4)))
+			if v19 != int32(1) {
+				v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+5)))
+				if v22 == int32(1) {
+					v53 = int32(0)
+					atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+16)), uint32(v53))
+					F_errstart_cold(m, int32(21), v53)
 					mBase = m.M
-					v57 = m.ExcPending
-					if v57 != 0 {
+					v59 = m.ExcPending
+					if v59 != 0 {
 						return
 					} else {
 						F_errcode(m, int32(325))
 						mBase = m.M
-						v60 = m.ExcPending
-						if v60 != 0 {
+						v62 = m.ExcPending
+						if v62 != 0 {
 							return
 						} else {
 							F_errmsg(m, int32(_a_F_check_and_set_sync_info_2), int32(0))
 							mBase = m.M
-							v64 = m.ExcPending
-							if v64 != 0 {
+							v66 = m.ExcPending
+							if v66 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_check_and_set_sync_info_0), int32(1317), int32(_a_F_check_and_set_sync_info_1))
 								mBase = m.M
-								v69 = m.ExcPending
-								if v69 != 0 {
+								v71 = m.ExcPending
+								if v71 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -801,38 +801,39 @@ func F_check_and_set_sync_info(m *base.Module, l0 int32) {
 						}
 					}
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v19))) = l0
-					v29 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(v19)+5)) = uint8(v29)
-					*(*uint8)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[1])) = uint8(v29)
+					*(*int32)(unsafe.Add(mBase, uint32(v18))) = l0
+					v26 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(v18)+5)) = uint8(v26)
+					v28 = int32(0)
+					atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+16)), uint32(v28))
+					*(*uint8)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[1])) = uint8(v26)
 					return
 				}
 			} else {
 				v34 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v34
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+16)), uint32(v34))
 				F_errstart_cold(m, int32(21), v34)
 				mBase = m.M
-				v39 = m.ExcPending
-				if v39 != 0 {
+				v40 = m.ExcPending
+				if v40 != 0 {
 					return
 				} else {
 					F_errcode(m, int32(325))
 					mBase = m.M
-					v42 = m.ExcPending
-					if v42 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
 						F_errmsg(m, int32(_a_F_check_and_set_sync_info_3), int32(0))
 						mBase = m.M
-						v46 = m.ExcPending
-						if v46 != 0 {
+						v47 = m.ExcPending
+						if v47 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_check_and_set_sync_info_0), int32(1309), int32(_a_F_check_and_set_sync_info_1))
 							mBase = m.M
-							v51 = m.ExcPending
-							if v51 != 0 {
+							v52 = m.ExcPending
+							if v52 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -845,35 +846,35 @@ func F_check_and_set_sync_info(m *base.Module, l0 int32) {
 			}
 		}
 	} else {
-		v19 = *(*int32)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[0]))
-		v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+4)))
-		if v20 != int32(1) {
-			v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+5)))
-			if v23 == int32(1) {
-				v52 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v52
-				F_errstart_cold(m, int32(21), v52)
+		v18 = *(*int32)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[0]))
+		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+4)))
+		if v19 != int32(1) {
+			v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+5)))
+			if v22 == int32(1) {
+				v53 = int32(0)
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+16)), uint32(v53))
+				F_errstart_cold(m, int32(21), v53)
 				mBase = m.M
-				v57 = m.ExcPending
-				if v57 != 0 {
+				v59 = m.ExcPending
+				if v59 != 0 {
 					return
 				} else {
 					F_errcode(m, int32(325))
 					mBase = m.M
-					v60 = m.ExcPending
-					if v60 != 0 {
+					v62 = m.ExcPending
+					if v62 != 0 {
 						return
 					} else {
 						F_errmsg(m, int32(_a_F_check_and_set_sync_info_2), int32(0))
 						mBase = m.M
-						v64 = m.ExcPending
-						if v64 != 0 {
+						v66 = m.ExcPending
+						if v66 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_check_and_set_sync_info_0), int32(1317), int32(_a_F_check_and_set_sync_info_1))
 							mBase = m.M
-							v69 = m.ExcPending
-							if v69 != 0 {
+							v71 = m.ExcPending
+							if v71 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -884,38 +885,39 @@ func F_check_and_set_sync_info(m *base.Module, l0 int32) {
 					}
 				}
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v19))) = l0
-				v29 = int32(1)
-				*(*uint8)(unsafe.Add(mBase, uint32(v19)+5)) = uint8(v29)
-				*(*uint8)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[1])) = uint8(v29)
+				*(*int32)(unsafe.Add(mBase, uint32(v18))) = l0
+				v26 = int32(1)
+				*(*uint8)(unsafe.Add(mBase, uint32(v18)+5)) = uint8(v26)
+				v28 = int32(0)
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+16)), uint32(v28))
+				*(*uint8)(unsafe.Add(mBase, _c_F_check_and_set_sync_info[1])) = uint8(v26)
 				return
 			}
 		} else {
 			v34 = int32(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v34
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+16)), uint32(v34))
 			F_errstart_cold(m, int32(21), v34)
 			mBase = m.M
-			v39 = m.ExcPending
-			if v39 != 0 {
+			v40 = m.ExcPending
+			if v40 != 0 {
 				return
 			} else {
 				F_errcode(m, int32(325))
 				mBase = m.M
-				v42 = m.ExcPending
-				if v42 != 0 {
+				v43 = m.ExcPending
+				if v43 != 0 {
 					return
 				} else {
 					F_errmsg(m, int32(_a_F_check_and_set_sync_info_3), int32(0))
 					mBase = m.M
-					v46 = m.ExcPending
-					if v46 != 0 {
+					v47 = m.ExcPending
+					if v47 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_check_and_set_sync_info_0), int32(1309), int32(_a_F_check_and_set_sync_info_1))
 						mBase = m.M
-						v51 = m.ExcPending
-						if v51 != 0 {
+						v52 = m.ExcPending
+						if v52 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()

@@ -10,7 +10,7 @@ func F_TSDictionaryIsVisibleExt(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v8 = Fn13838(m, l0, l1, int32(75), int32(_a_F_TSDictionaryIsVisibleExt_0), int32(2950), int32(_a_F_TSDictionaryIsVisibleExt_1), int32(76))
+	v8 = Fn13860(m, l0, l1, int32(75), int32(_a_F_TSDictionaryIsVisibleExt_0), int32(2950), int32(_a_F_TSDictionaryIsVisibleExt_1), int32(76))
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int32(0)
@@ -246,7 +246,7 @@ func F_get_ts_dict_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13903(m, l0, l1, int32(_a_F_get_ts_dict_oid_0), int32(2910), int32(_a_F_get_ts_dict_oid_1), int32(75))
+	v7 = Fn13925(m, l0, l1, int32(_a_F_get_ts_dict_oid_0), int32(2910), int32(_a_F_get_ts_dict_oid_1), int32(75))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

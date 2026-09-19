@@ -31,6 +31,11 @@ func (s *Server) Restore(ctx context.Context, sn *Snapshot) error {
 		return fmt.Errorf("pgmem: the snapshot serves database %q as %q, this server %q as %q",
 			sn.opts.Database, sn.opts.User, s.opts.Database, s.opts.User)
 	}
+	if s.cl != nil {
+		// the cluster is stopped and started on the copy; the sessions get
+		// a new backend on their next message (see cluster.go)
+		return s.restartCluster(ctx, sn.fs.Clone())
+	}
 	if err := s.acquire(ctx, 0, false); err != nil {
 		if errors.Is(err, errServerClosed) {
 			return err

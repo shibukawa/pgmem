@@ -4129,7 +4129,7 @@ func F_jsonb_agg_finalfn(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13932(m, l0, int32(5))
+	v3 = Fn13954(m, l0, int32(5))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -4775,7 +4775,7 @@ func F_jsonb_object_agg_finalfn(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13932(m, l0, int32(7))
+	v3 = Fn13954(m, l0, int32(7))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

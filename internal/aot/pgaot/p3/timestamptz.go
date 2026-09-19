@@ -2493,7 +2493,7 @@ L17:
 	return int64(0)
 L18:
 	;
-	v60 = Fn13825(m, v51, v13+int32(104), int32(_a_F_timestamptz_trunc_internal_0), int32(_a_F_timestamptz_trunc_internal_1), int32(_a_F_timestamptz_trunc_internal_2))
+	v60 = Fn13846(m, v51, v13+int32(104), int32(_a_F_timestamptz_trunc_internal_0), int32(_a_F_timestamptz_trunc_internal_1), int32(_a_F_timestamptz_trunc_internal_2))
 	mBase = m.M
 	goto L19
 L19:

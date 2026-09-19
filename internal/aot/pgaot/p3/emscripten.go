@@ -34,8 +34,6 @@ func F__emscripten_timeout(m *base.Module, l0 int32, l1 float64) {
 	_ = v40
 	var v43 int32
 	_ = v43
-	var v44 int32
-	_ = v44
 	var v45 int32
 	_ = v45
 	v3 = float64(0)
@@ -64,7 +62,7 @@ func F__emscripten_timeout(m *base.Module, l0 int32, l1 float64) {
 	} else {
 		v43 = v40
 	}
-	v44 = F_raise(m, v43)
+	F_raise(m, v43)
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {

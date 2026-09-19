@@ -57,7 +57,7 @@ func F___wasm_call_ctors(m *base.Module) {
 	_ = v37
 	var v60 int32
 	_ = v60
-	m.G2 = int32(13128304)
+	m.G2 = int32(13132400)
 	m.G1 = int32(_a_F___wasm_call_ctors_0)
 	v8 = m.G0
 	v10 = v8 - int32(16)
@@ -92,7 +92,7 @@ func F___wasm_call_ctors(m *base.Module) {
 		}
 	}
 	m.G0 = v10 + int32(16)
-	*(*int32)(unsafe.Add(mBase, _c_F___wasm_call_ctors[1])) = int32(13128304)
+	*(*int32)(unsafe.Add(mBase, _c_F___wasm_call_ctors[1])) = int32(13132400)
 	*(*int32)(unsafe.Add(mBase, _c_F___wasm_call_ctors[2])) = int32(42)
 	*(*int32)(unsafe.Add(mBase, _c_F___wasm_call_ctors[3])) = int32(_a_F___wasm_call_ctors_1)
 	v60 = *(*int32)(unsafe.Add(mBase, _c_F___wasm_call_ctors[4]))
@@ -104,7 +104,7 @@ func F_websearch_to_tsquery_byid(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14006(m, l0, int32(2), int32(4))
+	v4 = Fn14028(m, l0, int32(2), int32(4))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

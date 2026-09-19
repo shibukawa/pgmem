@@ -689,10 +689,10 @@ func F_time_part_common(m *base.Module, l0 int32, l1 int32) int32 {
 			return int32(0)
 		} else {
 			v61 = v13 + int32(28)
-			v65 = Fn13825(m, v58, v61, int32(_a_F_time_part_common_0), int32(_a_F_time_part_common_1), int32(_a_F_time_part_common_2))
+			v65 = Fn13846(m, v58, v61, int32(_a_F_time_part_common_0), int32(_a_F_time_part_common_1), int32(_a_F_time_part_common_2))
 			mBase = m.M
 			if v65 == int32(31) {
-				v71 = Fn13825(m, v58, v61, int32(_a_F_time_part_common_3), int32(_a_F_time_part_common_4), int32(_a_F_time_part_common_5))
+				v71 = Fn13846(m, v58, v61, int32(_a_F_time_part_common_3), int32(_a_F_time_part_common_4), int32(_a_F_time_part_common_5))
 				mBase = m.M
 				v72 = v71
 			} else {

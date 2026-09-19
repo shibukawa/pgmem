@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -2393,334 +2394,318 @@ func F_ParallelApplyWorkerMain(m *base.Module, l0 int32) {
 	_ = v20
 	var v30 int32
 	_ = v30
-	var v42 int32
-	_ = v42
-	var v48 int32
-	_ = v48
-	var v50 int32
-	_ = v50
-	var v52 int64
-	_ = v52
-	var v54 int64
-	_ = v54
-	var v62 int32
-	_ = v62
-	var v64 int32
-	_ = v64
-	var v66 int32
-	_ = v66
-	var v76 int32
-	_ = v76
-	var v88 int32
-	_ = v88
-	var v95 int32
-	_ = v95
+	var v44 int32
+	_ = v44
+	var v49 int32
+	_ = v49
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v63 int32
+	_ = v63
+	var v77 int32
+	_ = v77
+	var v82 int32
+	_ = v82
+	var v84 int32
+	_ = v84
+	var v86 int32
+	_ = v86
 	var v96 int32
 	_ = v96
-	var v98 int64
-	_ = v98
-	var v100 int64
-	_ = v100
-	var v108 int32
-	_ = v108
 	var v110 int32
 	_ = v110
-	var v112 int32
-	_ = v112
+	var v115 int32
+	_ = v115
+	var v117 int32
+	_ = v117
+	var v118 int32
+	_ = v118
+	var v119 int32
+	_ = v119
+	var v120 int32
+	_ = v120
 	var v122 int32
 	_ = v122
-	var v134 int32
-	_ = v134
-	var v141 int32
-	_ = v141
+	var v124 int64
+	_ = v124
+	var v126 int32
+	_ = v126
+	var v132 int32
+	_ = v132
+	var v133 int32
+	_ = v133
+	var v137 int32
+	_ = v137
+	var v138 int32
+	_ = v138
+	var v140 int32
+	_ = v140
 	var v142 int32
 	_ = v142
-	var v144 int64
+	var v143 int32
+	_ = v143
+	var v144 int32
 	_ = v144
-	var v146 int64
+	var v146 int32
 	_ = v146
+	var v149 int32
+	_ = v149
+	var v151 int32
+	_ = v151
 	var v154 int32
 	_ = v154
 	var v156 int32
 	_ = v156
-	var v157 int32
-	_ = v157
-	var v158 int32
-	_ = v158
-	var v159 int32
-	_ = v159
 	var v161 int32
 	_ = v161
-	var v163 int64
+	var v163 int32
 	_ = v163
-	var v165 int32
-	_ = v165
-	var v171 int32
-	_ = v171
-	var v172 int32
-	_ = v172
-	var v176 int32
-	_ = v176
+	var v164 int32
+	_ = v164
+	var v166 int32
+	_ = v166
+	var v169 int32
+	_ = v169
+	var v174 int32
+	_ = v174
+	var v175 int32
+	_ = v175
 	var v177 int32
 	_ = v177
 	var v179 int32
 	_ = v179
+	var v180 int32
+	_ = v180
 	var v181 int32
 	_ = v181
-	var v182 int32
-	_ = v182
 	var v183 int32
 	_ = v183
 	var v185 int32
 	_ = v185
-	var v188 int32
-	_ = v188
-	var v190 int32
-	_ = v190
-	var v191 int32
-	_ = v191
-	var v195 int32
-	_ = v195
-	var v200 int32
-	_ = v200
-	var v202 int32
-	_ = v202
+	var v186 int32
+	_ = v186
+	var v193 int32
+	_ = v193
+	var v194 int64
+	_ = v194
+	var v201 int32
+	_ = v201
 	var v203 int32
 	_ = v203
-	var v205 int32
-	_ = v205
+	var v206 int32
+	_ = v206
 	var v208 int32
 	_ = v208
+	var v209 int32
+	_ = v209
 	var v212 int32
 	_ = v212
-	var v213 int32
-	_ = v213
-	var v215 int32
-	_ = v215
+	var v214 int32
+	_ = v214
+	var v216 int32
+	_ = v216
 	var v217 int32
 	_ = v217
-	var v218 int32
-	_ = v218
 	var v219 int32
 	_ = v219
-	var v221 int32
-	_ = v221
-	var v223 int32
-	_ = v223
-	var v224 int32
-	_ = v224
+	var v220 int32
+	_ = v220
+	var v222 int32
+	_ = v222
+	var v226 int32
+	_ = v226
 	var v231 int32
 	_ = v231
-	var v232 int64
-	_ = v232
-	var v239 int32
-	_ = v239
-	var v241 int32
-	_ = v241
+	var v233 int32
+	_ = v233
+	var v235 int32
+	_ = v235
+	var v238 int32
+	_ = v238
+	var v243 int32
+	_ = v243
 	var v244 int32
 	_ = v244
-	var v246 int32
-	_ = v246
-	var v247 int32
-	_ = v247
-	var v250 int32
-	_ = v250
-	var v252 int32
-	_ = v252
-	var v254 int32
-	_ = v254
-	var v255 int32
-	_ = v255
-	var v257 int32
-	_ = v257
-	var v258 int32
-	_ = v258
-	var v260 int32
-	_ = v260
-	var v264 int32
-	_ = v264
-	var v269 int32
-	_ = v269
+	var v248 int32
+	_ = v248
+	var v249 int32
+	_ = v249
+	var v263 int32
+	_ = v263
+	var v265 int32
+	_ = v265
+	var v267 int32
+	_ = v267
+	var v270 int32
+	_ = v270
 	var v271 int32
 	_ = v271
 	var v273 int32
 	_ = v273
-	var v276 int32
-	_ = v276
-	var v281 int32
-	_ = v281
-	var v282 int32
-	_ = v282
-	var v286 int32
-	_ = v286
-	var v287 int32
-	_ = v287
-	var v301 int32
-	_ = v301
-	var v303 int32
-	_ = v303
-	var v305 int32
-	_ = v305
+	var v274 int32
+	_ = v274
+	var v280 int32
+	_ = v280
+	var v285 int32
+	_ = v285
+	var v288 int32
+	_ = v288
+	var v290 int32
+	_ = v290
+	var v296 int32
+	_ = v296
+	var v299 int32
+	_ = v299
+	var v306 int32
+	_ = v306
+	var v307 int32
+	_ = v307
 	var v308 int32
 	_ = v308
-	var v309 int32
-	_ = v309
-	var v311 int32
-	_ = v311
-	var v312 int32
-	_ = v312
+	var v314 int32
+	_ = v314
+	var v317 int32
+	_ = v317
 	var v318 int32
 	_ = v318
-	var v323 int32
-	_ = v323
-	var v326 int32
-	_ = v326
-	var v328 int32
-	_ = v328
+	var v319 int32
+	_ = v319
+	var v322 int32
+	_ = v322
+	var v327 int32
+	_ = v327
+	var v329 int32
+	_ = v329
+	var v332 int32
+	_ = v332
 	var v334 int32
 	_ = v334
-	var v337 int32
-	_ = v337
-	var v344 int32
-	_ = v344
-	var v345 int32
-	_ = v345
-	var v346 int32
-	_ = v346
-	var v352 int32
-	_ = v352
+	var v339 int32
+	_ = v339
+	var v341 int32
+	_ = v341
+	var v342 int32
+	_ = v342
+	var v343 int32
+	_ = v343
+	var v347 int32
+	_ = v347
+	var v348 int32
+	_ = v348
+	var v350 int32
+	_ = v350
+	var v351 int32
+	_ = v351
 	var v355 int32
 	_ = v355
-	var v356 int32
-	_ = v356
 	var v357 int32
 	_ = v357
+	var v358 int32
+	_ = v358
 	var v360 int32
 	_ = v360
+	var v361 int32
+	_ = v361
 	var v365 int32
 	_ = v365
 	var v367 int32
 	_ = v367
-	var v368 int32
-	_ = v368
+	var v370 int32
+	_ = v370
 	var v372 int32
 	_ = v372
 	var v377 int32
 	_ = v377
 	var v379 int32
 	_ = v379
-	var v382 int32
-	_ = v382
-	var v384 int32
-	_ = v384
+	var v380 int32
+	_ = v380
+	var v381 int32
+	_ = v381
 	var v385 int32
 	_ = v385
-	var v387 int32
-	_ = v387
 	var v388 int32
 	_ = v388
-	var v392 int32
-	_ = v392
+	var v390 int32
+	_ = v390
+	var v393 int32
+	_ = v393
 	var v394 int32
 	_ = v394
-	var v395 int32
-	_ = v395
-	var v397 int32
-	_ = v397
-	var v398 int32
-	_ = v398
+	var v396 int32
+	_ = v396
+	var v399 int32
+	_ = v399
 	var v402 int32
 	_ = v402
 	var v404 int32
 	_ = v404
-	var v405 int32
-	_ = v405
-	var v409 int32
-	_ = v409
-	var v414 int32
-	_ = v414
+	var v406 int32
+	_ = v406
+	var v407 int32
+	_ = v407
+	var v410 int32
+	_ = v410
+	var v411 int32
+	_ = v411
 	var v416 int32
 	_ = v416
-	var v419 int32
-	_ = v419
-	var v421 int32
-	_ = v421
-	var v425 int32
-	_ = v425
-	var v426 int32
-	_ = v426
+	var v417 int32
+	_ = v417
+	var v418 int32
+	_ = v418
+	var v420 int32
+	_ = v420
+	var v424 int32
+	_ = v424
+	var v428 int32
+	_ = v428
 	var v429 int32
 	_ = v429
-	var v430 int32
-	_ = v430
-	var v432 int32
-	_ = v432
 	var v435 int32
 	_ = v435
-	var v438 int32
-	_ = v438
-	var v440 int32
-	_ = v440
 	var v441 int32
 	_ = v441
-	var v446 int32
-	_ = v446
-	var v447 int32
-	_ = v447
+	var v443 int32
+	_ = v443
+	var v449 int32
+	_ = v449
 	var v452 int32
 	_ = v452
-	var v453 int32
-	_ = v453
-	var v454 int32
-	_ = v454
-	var v459 int32
-	_ = v459
-	var v463 int32
-	_ = v463
-	var v464 int32
-	_ = v464
-	var v470 int32
-	_ = v470
-	var v476 int32
-	_ = v476
-	var v478 int32
-	_ = v478
-	var v484 int32
-	_ = v484
-	var v487 int32
-	_ = v487
-	var v491 int32
-	_ = v491
-	var v496 int32
-	_ = v496
-	var v500 int32
-	_ = v500
+	var v456 int32
+	_ = v456
+	var v461 int32
+	_ = v461
+	var v465 int32
+	_ = v465
+	var v468 int32
+	_ = v468
+	var v472 int32
+	_ = v472
+	var v477 int32
+	_ = v477
+	var v481 int32
+	_ = v481
+	var v485 int32
+	_ = v485
+	var v490 int32
+	_ = v490
+	var v494 int32
+	_ = v494
+	var v498 int32
+	_ = v498
 	var v503 int32
 	_ = v503
 	var v507 int32
 	_ = v507
-	var v512 int32
-	_ = v512
-	var v516 int32
-	_ = v516
-	var v520 int32
-	_ = v520
-	var v525 int32
-	_ = v525
-	var v529 int32
-	_ = v529
-	var v533 int32
-	_ = v533
-	var v538 int32
-	_ = v538
-	var v542 int32
-	_ = v542
-	var v545 int32
-	_ = v545
-	var v549 int32
-	_ = v549
-	var v554 int32
-	_ = v554
+	var v510 int32
+	_ = v510
+	var v514 int32
+	_ = v514
+	var v519 int32
+	_ = v519
 	v8 = m.G0
 	v10 = v8 - int32(144)
 	m.G0 = v10
@@ -2739,16 +2724,16 @@ func F_ParallelApplyWorkerMain(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v62 = int32(295)
-	v64 = m.G0
-	v66 = v64 - int32(32)
-	m.G0 = v66
+	v49 = int32(295)
+	v51 = m.G0
+	v53 = v51 - int32(32)
+	m.G0 = v53
 	switch int32(297) {
 	case 0, 2:
-		v76 = v62
-		goto L15
+		v63 = v49
+		goto L8
 	default:
-		goto L16
+		goto L9
 	}
 L2:
 	;
@@ -2767,631 +2752,740 @@ L5:
 L6:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v20)+24)) = int32(268435456)
-	v42 = v20 + int32(12)
-	goto L9
-L7:
-	;
+	v44 = F___sigaction(m, v13, v20+int32(12), int32(0))
+	mBase = m.M
 	m.G0 = v20 + int32(32)
 	goto L1
-L9:
+L7:
 	;
-	goto L10
-L10:
-	;
-	if v42 != 0 {
-		goto L11
-	} else {
-		goto L12
-	}
-L11:
-	;
-	v48 = int32(20)
-	v50 = *(*int32)(unsafe.Add(mBase, uint32(v42)+16))
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[2])) = v50
-	v52 = *(*int64)(unsafe.Add(mBase, uint32(v42)+8))
-	*(*int64)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[3])) = v52
-	v54 = *(*int64)(unsafe.Add(mBase, uint32(v42)))
-	*(*int64)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[4])) = v54
-	goto L13
-L12:
-	;
-	goto L13
-L13:
-	;
-	goto L7
-L14:
-	;
-	v108 = int32(916)
-	v110 = m.G0
-	v112 = v110 - int32(32)
-	m.G0 = v112
+	v82 = int32(916)
+	v84 = m.G0
+	v86 = v84 - int32(32)
+	m.G0 = v86
 	switch int32(918) {
 	case 0, 2:
-		v122 = v108
-		goto L28
+		v96 = v82
+		goto L14
 	default:
-		goto L29
+		goto L15
 	}
-L15:
+L8:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v66)+12)) = v76
-	F_sigemptyset(m, v66+int32(16))
+	*(*int32)(unsafe.Add(mBase, uint32(v53)+12)) = v63
+	F_sigemptyset(m, v53+int32(16))
 	mBase = m.M
-	goto L18
-L16:
+	goto L11
+L9:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5])) = v62
-	v76 = int32(_a_F_ParallelApplyWorkerMain_0)
-	goto L15
-L18:
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[2])) = v49
+	v63 = int32(_a_F_ParallelApplyWorkerMain_0)
+	goto L8
+L11:
 	;
-	goto L19
-L19:
+	goto L12
+L12:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v66)+24)) = int32(268435456)
-	v88 = v66 + int32(12)
-	goto L22
-L20:
-	;
-	m.G0 = v66 + int32(32)
-	goto L14
-L22:
-	;
-	goto L23
-L23:
-	;
-	if v88 != 0 {
-		goto L24
-	} else {
-		goto L25
-	}
-L24:
-	;
-	v95 = int32(300)
-	v96 = *(*int32)(unsafe.Add(mBase, uint32(v88)+16))
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[6])) = v96
-	v98 = *(*int64)(unsafe.Add(mBase, uint32(v88)+8))
-	*(*int64)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[7])) = v98
-	v100 = *(*int64)(unsafe.Add(mBase, uint32(v88)))
-	*(*int64)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[8])) = v100
-	goto L26
-L25:
-	;
-	goto L26
-L26:
-	;
-	goto L20
-L27:
+	*(*int32)(unsafe.Add(mBase, uint32(v53)+24)) = int32(268435456)
+	v77 = F___sigaction(m, int32(15), v53+int32(12), int32(0))
+	mBase = m.M
+	m.G0 = v53 + int32(32)
+	goto L7
+L13:
 	;
 	F_BackgroundWorkerUnblockSignals(m)
 	mBase = m.M
-	v154 = m.ExcPending
+	v115 = m.ExcPending
+	if v115 != 0 {
+		goto L19
+	} else {
+		goto L20
+	}
+L14:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v86)+12)) = v96
+	F_sigemptyset(m, v86+int32(16))
+	mBase = m.M
+	goto L17
+L15:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[3])) = v82
+	v96 = int32(_a_F_ParallelApplyWorkerMain_0)
+	goto L14
+L17:
+	;
+	goto L18
+L18:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v86)+24)) = int32(268435456)
+	v110 = F___sigaction(m, int32(12), v86+int32(12), int32(0))
+	mBase = m.M
+	m.G0 = v86 + int32(32)
+	goto L13
+L19:
+	;
+	return
+L20:
+	;
+	v117 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[4]))
+	v118 = *(*int32)(unsafe.Add(mBase, uint32(v117)+1328))
+	v119 = F_dsm_attach(m, v118)
+	mBase = m.M
+	v120 = m.ExcPending
+	if v120 != 0 {
+		goto L19
+	} else {
+		goto L25
+	}
+L21:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v507 = m.ExcPending
+	if v507 != 0 {
+		goto L19
+	} else {
+		goto L125
+	}
+L22:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v494 = m.ExcPending
+	if v494 != 0 {
+		goto L19
+	} else {
+		goto L122
+	}
+L23:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v481 = m.ExcPending
+	if v481 != 0 {
+		goto L19
+	} else {
+		goto L119
+	}
+L24:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v465 = m.ExcPending
+	if v465 != 0 {
+		goto L19
+	} else {
+		goto L115
+	}
+L25:
+	;
+	if v119 != 0 {
+		goto L26
+	} else {
+		goto L27
+	}
+L26:
+	;
+	v122 = *(*int32)(unsafe.Add(mBase, uint32(v119)+24))
+	v124 = *(*int64)(unsafe.Add(mBase, uint32(v122)))
+	if v124 == int64(2021433447) {
+		goto L30
+	} else {
+		goto L31
+	}
+L27:
+	;
+	goto L28
+L28:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v449 = m.ExcPending
+	if v449 != 0 {
+		goto L19
+	} else {
+		goto L111
+	}
+L29:
+	;
+	if v126 == int32(0) {
+		goto L24
+	} else {
+		goto L33
+	}
+L30:
+	;
+	v126 = v122
+	goto L32
+L31:
+	;
+	v126 = int32(0)
+	goto L32
+L32:
+	;
+	goto L29
+L33:
+	;
+	v132 = F_shm_toc_lookup(m, v126, int64(1), int32(0))
+	mBase = m.M
+	v133 = m.ExcPending
+	if v133 != 0 {
+		goto L19
+	} else {
+		goto L34
+	}
+L34:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5])) = v132
+	v137 = F_shm_toc_lookup(m, v126, int64(2), int32(0))
+	mBase = m.M
+	v138 = m.ExcPending
+	if v138 != 0 {
+		goto L19
+	} else {
+		goto L35
+	}
+L35:
+	;
+	v140 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[6]))
+	F_shm_mq_set_receiver(m, v137, v140)
+	mBase = m.M
+	v142 = m.ExcPending
+	if v142 != 0 {
+		goto L19
+	} else {
+		goto L36
+	}
+L36:
+	;
+	v143 = F_shm_mq_attach(m, v137, v119)
+	mBase = m.M
+	v144 = m.ExcPending
+	if v144 != 0 {
+		goto L19
+	} else {
+		goto L37
+	}
+L37:
+	;
+	F_logicalrep_worker_attach(m, l0)
+	mBase = m.M
+	v146 = m.ExcPending
+	if v146 != 0 {
+		goto L19
+	} else {
+		goto L38
+	}
+L38:
+	;
+	F_before_shmem_exit(m, int32(985), v119)
+	mBase = m.M
+	v149 = m.ExcPending
+	if v149 != 0 {
+		goto L19
+	} else {
+		goto L39
+	}
+L39:
+	;
+	v151 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v154 = base.AtomicRmwXchg32(m, v151, int32(0), int32(1))
 	if v154 != 0 {
 		goto L40
 	} else {
 		goto L41
 	}
-L28:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v112)+12)) = v122
-	F_sigemptyset(m, v112+int32(16))
-	mBase = m.M
-	goto L31
-L29:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[9])) = v108
-	v122 = int32(_a_F_ParallelApplyWorkerMain_0)
-	goto L28
-L31:
-	;
-	goto L32
-L32:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v112)+24)) = int32(268435456)
-	v134 = v112 + int32(12)
-	goto L35
-L33:
-	;
-	m.G0 = v112 + int32(32)
-	goto L27
-L35:
-	;
-	goto L36
-L36:
-	;
-	if v134 != 0 {
-		goto L37
-	} else {
-		goto L38
-	}
-L37:
-	;
-	v141 = int32(240)
-	v142 = *(*int32)(unsafe.Add(mBase, uint32(v134)+16))
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[10])) = v142
-	v144 = *(*int64)(unsafe.Add(mBase, uint32(v134)+8))
-	*(*int64)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[11])) = v144
-	v146 = *(*int64)(unsafe.Add(mBase, uint32(v134)))
-	*(*int64)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[12])) = v146
-	goto L39
-L38:
-	;
-	goto L39
-L39:
-	;
-	goto L33
 L40:
 	;
-	return
+	v156 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	F_s_lock(m, v156, int32(_a_F_ParallelApplyWorkerMain_1), int32(930), int32(_a_F_ParallelApplyWorkerMain_2))
+	mBase = m.M
+	v161 = m.ExcPending
+	if v161 != 0 {
+		goto L19
+	} else {
+		goto L43
+	}
 L41:
 	;
-	v156 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[13]))
-	v157 = *(*int32)(unsafe.Add(mBase, uint32(v156)+1328))
-	v158 = F_dsm_attach(m, v157)
-	mBase = m.M
-	v159 = m.ExcPending
-	if v159 != 0 {
-		goto L40
-	} else {
-		goto L46
-	}
+	goto L42
 L42:
 	;
-	F_errstart_cold(m, int32(21), int32(0))
+	v163 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[7]))
+	v164 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v163)+18)))
+	v166 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	*(*int32)(unsafe.Add(mBase, uint32(v166)+16)) = l0
+	*(*uint16)(unsafe.Add(mBase, uint32(v166)+12)) = uint16(v164)
+	v169 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v166))), uint32(v169))
+	v174 = F_shm_toc_lookup(m, v126, int64(3), v169)
 	mBase = m.M
-	v542 = m.ExcPending
-	if v542 != 0 {
-		goto L40
+	v175 = m.ExcPending
+	if v175 != 0 {
+		goto L19
 	} else {
-		goto L146
+		goto L44
 	}
 L43:
 	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v529 = m.ExcPending
-	if v529 != 0 {
-		goto L40
-	} else {
-		goto L143
-	}
+	goto L42
 L44:
 	;
-	F_errstart_cold(m, int32(21), int32(0))
+	v177 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[6]))
+	F_shm_mq_set_sender(m, v174, v177)
 	mBase = m.M
-	v516 = m.ExcPending
-	if v516 != 0 {
-		goto L40
+	v179 = m.ExcPending
+	if v179 != 0 {
+		goto L19
 	} else {
-		goto L140
+		goto L45
 	}
 L45:
 	;
-	F_errstart_cold(m, int32(21), int32(0))
+	v180 = F_shm_mq_attach(m, v174, v119)
 	mBase = m.M
-	v500 = m.ExcPending
-	if v500 != 0 {
-		goto L40
+	v181 = m.ExcPending
+	if v181 != 0 {
+		goto L19
 	} else {
-		goto L136
+		goto L46
 	}
 L46:
 	;
-	if v158 != 0 {
-		goto L47
+	F_pq_redirect_to_shm_mq(m, v119, v180)
+	mBase = m.M
+	v183 = m.ExcPending
+	if v183 != 0 {
+		goto L19
 	} else {
-		goto L48
+		goto L47
 	}
 L47:
 	;
-	v161 = *(*int32)(unsafe.Add(mBase, uint32(v158)+24))
-	v163 = *(*int64)(unsafe.Add(mBase, uint32(v161)))
-	if v163 == int64(2021433447) {
-		goto L51
-	} else {
-		goto L52
-	}
+	v185 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[7]))
+	v186 = *(*int32)(unsafe.Add(mBase, uint32(v185)+64))
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[8])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[9])) = v186
+	goto L48
 L48:
 	;
-	goto L49
+	v193 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[7]))
+	v194 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v193)+80)) = v194
+	*(*int64)(unsafe.Add(mBase, uint32(v193)+104)) = v194
+	*(*int64)(unsafe.Add(mBase, uint32(v193)+88)) = v194
+	F_InitializeLogRepWorker(m)
+	mBase = m.M
+	v201 = m.ExcPending
+	if v201 != 0 {
+		goto L19
+	} else {
+		goto L49
+	}
 L49:
 	;
-	F_errstart_cold(m, int32(21), int32(0))
+	v203 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[0])) = uint8(v203)
+	F_StartTransactionCommand(m)
 	mBase = m.M
-	v484 = m.ExcPending
-	if v484 != 0 {
-		goto L40
+	v206 = m.ExcPending
+	if v206 != 0 {
+		goto L19
 	} else {
-		goto L132
+		goto L50
 	}
 L50:
 	;
-	if v165 == int32(0) {
-		goto L45
+	v208 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[10]))
+	v209 = *(*int32)(unsafe.Add(mBase, uint32(v208)))
+	v212 = v10 + int32(32)
+	F_ReplicationOriginNameForLogicalRep(m, v209, int32(0), v212)
+	mBase = m.M
+	v214 = m.ExcPending
+	if v214 != 0 {
+		goto L19
 	} else {
-		goto L54
+		goto L51
 	}
 L51:
 	;
-	v165 = v161
-	goto L53
+	v216 = F_replorigin_by_name(m, v212, int32(0))
+	mBase = m.M
+	v217 = m.ExcPending
+	if v217 != 0 {
+		goto L19
+	} else {
+		goto L52
+	}
 L52:
 	;
-	v165 = int32(0)
-	goto L53
+	v219 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[7]))
+	v220 = *(*int32)(unsafe.Add(mBase, uint32(v219)+64))
+	F_replorigin_session_setup(m, v216, v220)
+	mBase = m.M
+	v222 = m.ExcPending
+	if v222 != 0 {
+		goto L19
+	} else {
+		goto L53
+	}
 L53:
 	;
-	goto L50
+	*(*uint16)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[11])) = uint16(v216)
+	F_CommitTransactionCommand(m)
+	mBase = m.M
+	v226 = m.ExcPending
+	if v226 != 0 {
+		goto L19
+	} else {
+		goto L54
+	}
 L54:
 	;
-	v171 = F_shm_toc_lookup(m, v165, int64(1), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(68), int32(986), int32(0))
 	mBase = m.M
-	v172 = m.ExcPending
-	if v172 != 0 {
-		goto L40
+	v231 = m.ExcPending
+	if v231 != 0 {
+		goto L19
 	} else {
 		goto L55
 	}
 L55:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14])) = v171
-	v176 = F_shm_toc_lookup(m, v165, int64(2), int32(0))
+	F_set_apply_error_context_origin(m, v212)
 	mBase = m.M
-	v177 = m.ExcPending
-	if v177 != 0 {
-		goto L40
+	v233 = m.ExcPending
+	if v233 != 0 {
+		goto L19
 	} else {
 		goto L56
 	}
 L56:
 	;
-	v179 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[15]))
-	F_shm_mq_set_receiver(m, v176, v179)
+	v235 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[12]))
+	v238 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[13]))
+	v243 = F_AllocSetContextCreateInternal(m, v238, int32(_a_F_ParallelApplyWorkerMain_3), int32(0), int32(_a_F_ParallelApplyWorkerMain_4), int32(_a_F_ParallelApplyWorkerMain_5))
 	mBase = m.M
-	v181 = m.ExcPending
-	if v181 != 0 {
-		goto L40
+	v244 = m.ExcPending
+	if v244 != 0 {
+		goto L19
 	} else {
 		goto L57
 	}
 L57:
 	;
-	v182 = F_shm_mq_attach(m, v176, v158)
-	mBase = m.M
-	v183 = m.ExcPending
-	if v183 != 0 {
-		goto L40
-	} else {
-		goto L58
-	}
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14])) = v243
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+136)) = int32(987)
+	v248 = int32(_a_F_ParallelApplyWorkerMain_6)
+	v249 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[15]))
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[15])) = v10 + int32(132)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+132)) = v249
+	goto L58
 L58:
 	;
-	F_logicalrep_worker_attach(m, l0)
-	mBase = m.M
-	v185 = m.ExcPending
-	if v185 != 0 {
-		goto L40
-	} else {
-		goto L59
-	}
-L59:
-	;
-	F_before_shmem_exit(m, int32(985), v158)
-	mBase = m.M
-	v188 = m.ExcPending
-	if v188 != 0 {
-		goto L40
-	} else {
+	v263 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[16]))
+	if v263 != 0 {
 		goto L60
+	} else {
+		goto L61
 	}
 L60:
 	;
-	v190 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	v191 = *(*int32)(unsafe.Add(mBase, uint32(v190)))
-	*(*int32)(unsafe.Add(mBase, uint32(v190))) = int32(1)
-	if v191 != 0 {
-		goto L61
+	F_ProcessInterrupts(m)
+	mBase = m.M
+	v265 = m.ExcPending
+	if v265 != 0 {
+		goto L19
 	} else {
-		goto L62
+		goto L63
 	}
 L61:
 	;
-	v195 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	F_s_lock(m, v195, int32(_a_F_ParallelApplyWorkerMain_1), int32(930), int32(_a_F_ParallelApplyWorkerMain_2))
-	mBase = m.M
-	v200 = m.ExcPending
-	if v200 != 0 {
-		goto L40
-	} else {
-		goto L64
-	}
+	goto L62
 L62:
 	;
-	goto L63
-L63:
-	;
-	v202 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[16]))
-	v203 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v202)+18)))
-	v205 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	*(*int32)(unsafe.Add(mBase, uint32(v205)+16)) = l0
-	*(*uint16)(unsafe.Add(mBase, uint32(v205)+12)) = uint16(v203)
-	v208 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v205))) = v208
-	v212 = F_shm_toc_lookup(m, v165, int64(3), v208)
-	mBase = m.M
-	v213 = m.ExcPending
-	if v213 != 0 {
-		goto L40
+	v267 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[17]))
+	if v267 != 0 {
+		goto L64
 	} else {
 		goto L65
 	}
+L63:
+	;
+	goto L62
 L64:
 	;
-	goto L63
-L65:
-	;
-	v215 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[15]))
-	F_shm_mq_set_sender(m, v212, v215)
+	v270 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v217 = m.ExcPending
-	if v217 != 0 {
-		goto L40
-	} else {
-		goto L66
-	}
-L66:
-	;
-	v218 = F_shm_mq_attach(m, v212, v158)
-	mBase = m.M
-	v219 = m.ExcPending
-	if v219 != 0 {
-		goto L40
+	v271 = m.ExcPending
+	if v271 != 0 {
+		goto L19
 	} else {
 		goto L67
 	}
+L65:
+	;
+	goto L66
+L66:
+	;
+	v290 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[18]))
+	if v290 != 0 {
+		goto L74
+	} else {
+		goto L75
+	}
 L67:
 	;
-	F_pq_redirect_to_shm_mq(m, v158, v218)
-	mBase = m.M
-	v221 = m.ExcPending
-	if v221 != 0 {
-		goto L40
-	} else {
+	if v270 != 0 {
 		goto L68
+	} else {
+		goto L69
 	}
 L68:
 	;
-	v223 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[16]))
-	v224 = *(*int32)(unsafe.Add(mBase, uint32(v223)+64))
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[17])) = int32(-1)
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[18])) = v224
-	goto L69
-L69:
-	;
-	v231 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[16]))
-	v232 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v231)+80)) = v232
-	*(*int64)(unsafe.Add(mBase, uint32(v231)+104)) = v232
-	*(*int64)(unsafe.Add(mBase, uint32(v231)+88)) = v232
-	F_InitializeLogRepWorker(m)
+	v273 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[10]))
+	v274 = *(*int32)(unsafe.Add(mBase, uint32(v273)+16))
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v274
+	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_7), v10+int32(16))
 	mBase = m.M
-	v239 = m.ExcPending
-	if v239 != 0 {
-		goto L40
-	} else {
-		goto L70
-	}
-L70:
-	;
-	v241 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[0])) = uint8(v241)
-	F_StartTransactionCommand(m)
-	mBase = m.M
-	v244 = m.ExcPending
-	if v244 != 0 {
-		goto L40
+	v280 = m.ExcPending
+	if v280 != 0 {
+		goto L19
 	} else {
 		goto L71
 	}
+L69:
+	;
+	goto L70
+L70:
+	;
+	F_proc_exit(m, int32(0))
+	mBase = m.M
+	v288 = m.ExcPending
+	if v288 != 0 {
+		goto L19
+	} else {
+		goto L73
+	}
 L71:
 	;
-	v246 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[19]))
-	v247 = *(*int32)(unsafe.Add(mBase, uint32(v246)))
-	v250 = v10 + int32(32)
-	F_ReplicationOriginNameForLogicalRep(m, v247, int32(0), v250)
+	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(720), int32(_a_F_ParallelApplyWorkerMain_8))
 	mBase = m.M
-	v252 = m.ExcPending
-	if v252 != 0 {
-		goto L40
+	v285 = m.ExcPending
+	if v285 != 0 {
+		goto L19
 	} else {
 		goto L72
 	}
 L72:
 	;
-	v254 = F_replorigin_by_name(m, v250, int32(0))
-	mBase = m.M
-	v255 = m.ExcPending
-	if v255 != 0 {
-		goto L40
-	} else {
-		goto L73
-	}
+	goto L70
 L73:
 	;
-	v257 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[16]))
-	v258 = *(*int32)(unsafe.Add(mBase, uint32(v257)+64))
-	F_replorigin_session_setup(m, v254, v258)
-	mBase = m.M
-	v260 = m.ExcPending
-	if v260 != 0 {
-		goto L40
-	} else {
-		goto L74
+	base.Wasm_trap_unreachable()
+	for {
 	}
 L74:
 	;
-	*(*uint16)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[20])) = uint16(v254)
-	F_CommitTransactionCommand(m)
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[18])) = int32(0)
+	F_ProcessConfigFile(m, int32(2))
 	mBase = m.M
-	v264 = m.ExcPending
-	if v264 != 0 {
-		goto L40
-	} else {
-		goto L75
-	}
-L75:
-	;
-	F_CacheRegisterSyscacheCallback(m, int32(68), int32(986), int32(0))
-	mBase = m.M
-	v269 = m.ExcPending
-	if v269 != 0 {
-		goto L40
-	} else {
-		goto L76
-	}
-L76:
-	;
-	F_set_apply_error_context_origin(m, v250)
-	mBase = m.M
-	v271 = m.ExcPending
-	if v271 != 0 {
-		goto L40
+	v296 = m.ExcPending
+	if v296 != 0 {
+		goto L19
 	} else {
 		goto L77
 	}
+L75:
+	;
+	goto L76
+L76:
+	;
+	v299 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[12])) = v299
+	v306 = F_shm_mq_receive(m, v143, v10+int32(124), v10+int32(128), int32(1))
+	mBase = m.M
+	v307 = m.ExcPending
+	if v307 != 0 {
+		goto L19
+	} else {
+		goto L81
+	}
 L77:
 	;
-	v273 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[21]))
-	v276 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[22]))
-	v281 = F_AllocSetContextCreateInternal(m, v276, int32(_a_F_ParallelApplyWorkerMain_3), int32(0), int32(_a_F_ParallelApplyWorkerMain_4), int32(_a_F_ParallelApplyWorkerMain_5))
-	mBase = m.M
-	v282 = m.ExcPending
-	if v282 != 0 {
-		goto L40
-	} else {
-		goto L78
-	}
+	goto L76
 L78:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[23])) = v281
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+136)) = int32(987)
-	v286 = int32(_a_F_ParallelApplyWorkerMain_6)
-	v287 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[24]))
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[24])) = v10 + int32(132)
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+132)) = v287
-	goto L79
+	v441 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
+	F_MemoryContextReset(m, v441)
+	mBase = m.M
+	v443 = m.ExcPending
+	if v443 != 0 {
+		goto L19
+	} else {
+		goto L110
+	}
 L79:
 	;
-	v301 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[25]))
-	if v301 != 0 {
-		goto L81
+	v329 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v332 = base.AtomicRmwXchg32(m, v329, int32(0), int32(1))
+	if v332 != 0 {
+		goto L86
+	} else {
+		goto L87
+	}
+L80:
+	;
+	v308 = *(*int32)(unsafe.Add(mBase, uint32(v10)+124))
+	if v308 == int32(0) {
+		goto L23
 	} else {
 		goto L82
 	}
 L81:
 	;
-	F_ProcessInterrupts(m)
-	mBase = m.M
-	v303 = m.ExcPending
-	if v303 != 0 {
-		goto L40
-	} else {
-		goto L84
+	switch v306 {
+	case 0:
+		goto L80
+	case 1:
+		goto L79
+	default:
+		goto L21
 	}
 L82:
 	;
-	goto L83
+	*(*int64)(unsafe.Add(mBase, uint32(v10)+116)) = int64(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+112)) = v308
+	v314 = *(*int32)(unsafe.Add(mBase, uint32(v10)+128))
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+108)) = v314
+	v317 = v10 + int32(108)
+	v318 = F_pq_getmsgbyte(m, v317)
+	mBase = m.M
+	v319 = m.ExcPending
+	if v319 != 0 {
+		goto L19
+	} else {
+		goto L83
+	}
 L83:
 	;
-	v305 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[26]))
-	if v305 != 0 {
-		goto L85
+	if v318 != int32(119) {
+		goto L22
 	} else {
-		goto L86
+		goto L84
 	}
 L84:
 	;
-	goto L83
+	v322 = *(*int32)(unsafe.Add(mBase, uint32(v10)+120))
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+120)) = v322 + int32(24)
+	F_apply_dispatch(m, v317)
+	mBase = m.M
+	v327 = m.ExcPending
+	if v327 != 0 {
+		goto L19
+	} else {
+		goto L85
+	}
 L85:
 	;
-	v308 = F_errstart(m, int32(15), int32(0))
-	mBase = m.M
-	v309 = m.ExcPending
-	if v309 != 0 {
-		goto L40
-	} else {
-		goto L88
-	}
+	goto L78
 L86:
 	;
-	goto L87
+	v334 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	F_s_lock(m, v334, int32(_a_F_ParallelApplyWorkerMain_1), int32(1531), int32(_a_F_ParallelApplyWorkerMain_9))
+	mBase = m.M
+	v339 = m.ExcPending
+	if v339 != 0 {
+		goto L19
+	} else {
+		goto L89
+	}
 L87:
 	;
-	v328 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[27]))
-	if v328 != 0 {
-		goto L95
-	} else {
-		goto L96
-	}
+	goto L88
 L88:
 	;
-	if v308 != 0 {
-		goto L89
-	} else {
+	v341 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v342 = *(*int32)(unsafe.Add(mBase, uint32(v341)+32))
+	v343 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v341))), uint32(v343))
+	switch v342 {
+	case 0:
 		goto L90
+	case 1:
+		goto L92
+	default:
+		v385 = v342
+		goto L91
 	}
 L89:
 	;
-	v311 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[19]))
-	v312 = *(*int32)(unsafe.Add(mBase, uint32(v311)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v312
-	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_7), v10+int32(16))
-	mBase = m.M
-	v318 = m.ExcPending
-	if v318 != 0 {
-		goto L40
-	} else {
-		goto L92
-	}
+	goto L88
 L90:
 	;
-	goto L91
+	v424 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[19]))
+	v428 = F_WaitLatch(m, v424, int32(41), int32(1000), int32(83886089))
+	mBase = m.M
+	v429 = m.ExcPending
+	if v429 != 0 {
+		goto L19
+	} else {
+		goto L107
+	}
 L91:
 	;
-	F_proc_exit(m, int32(0))
-	mBase = m.M
-	v326 = m.ExcPending
-	if v326 != 0 {
-		goto L40
-	} else {
-		goto L94
+	switch v385 - int32(2) {
+	case 0:
+		goto L102
+	case 1:
+		goto L101
+	default:
+		goto L78
 	}
 L92:
 	;
-	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(720), int32(_a_F_ParallelApplyWorkerMain_8))
+	v347 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[7]))
+	v348 = *(*int32)(unsafe.Add(mBase, uint32(v347)+32))
+	v350 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v351 = *(*int32)(unsafe.Add(mBase, uint32(v350)+4))
+	F_LockApplyTransactionForSession(m, v348, v351, int32(0), int32(1))
 	mBase = m.M
-	v323 = m.ExcPending
-	if v323 != 0 {
-		goto L40
+	v355 = m.ExcPending
+	if v355 != 0 {
+		goto L19
 	} else {
 		goto L93
 	}
 L93:
 	;
-	goto L91
+	v357 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[7]))
+	v358 = *(*int32)(unsafe.Add(mBase, uint32(v357)+32))
+	v360 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v361 = *(*int32)(unsafe.Add(mBase, uint32(v360)+4))
+	F_UnlockApplyTransactionForSession(m, v358, v361, int32(0), int32(1))
+	mBase = m.M
+	v365 = m.ExcPending
+	if v365 != 0 {
+		goto L19
+	} else {
+		goto L94
+	}
 L94:
 	;
-	base.Wasm_trap_unreachable()
-	for {
+	v367 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v370 = base.AtomicRmwXchg32(m, v367, int32(0), int32(1))
+	if v370 != 0 {
+		goto L95
+	} else {
+		goto L96
 	}
 L95:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[27])) = int32(0)
-	F_ProcessConfigFile(m, int32(2))
+	v372 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	F_s_lock(m, v372, int32(_a_F_ParallelApplyWorkerMain_1), int32(1531), int32(_a_F_ParallelApplyWorkerMain_9))
 	mBase = m.M
-	v334 = m.ExcPending
-	if v334 != 0 {
-		goto L40
+	v377 = m.ExcPending
+	if v377 != 0 {
+		goto L19
 	} else {
 		goto L98
 	}
@@ -3400,448 +3494,254 @@ L96:
 	goto L97
 L97:
 	;
-	v337 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[23]))
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[21])) = v337
-	v344 = F_shm_mq_receive(m, v182, v10+int32(124), v10+int32(128), int32(1))
-	mBase = m.M
-	v345 = m.ExcPending
-	if v345 != 0 {
-		goto L40
-	} else {
-		goto L102
-	}
+	v379 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v380 = *(*int32)(unsafe.Add(mBase, uint32(v379)+32))
+	v381 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v379))), uint32(v381))
+	v385 = v380
+	goto L91
 L98:
 	;
 	goto L97
 L99:
 	;
-	v476 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[23]))
-	F_MemoryContextReset(m, v476)
-	mBase = m.M
-	v478 = m.ExcPending
-	if v478 != 0 {
-		goto L40
-	} else {
-		goto L131
-	}
+	*(*int32)(unsafe.Add(mBase, uint32(v418)+32)) = v417
+	v420 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v418))), uint32(v420))
+	goto L78
 L100:
 	;
-	v367 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	v368 = *(*int32)(unsafe.Add(mBase, uint32(v367)))
-	*(*int32)(unsafe.Add(mBase, uint32(v367))) = int32(1)
-	if v368 != 0 {
-		goto L107
+	F_s_lock(m, v411, int32(_a_F_ParallelApplyWorkerMain_1), int32(1508), int32(_a_F_ParallelApplyWorkerMain_10))
+	mBase = m.M
+	v416 = m.ExcPending
+	if v416 != 0 {
+		goto L19
 	} else {
-		goto L108
+		goto L106
 	}
 L101:
 	;
-	v346 = *(*int32)(unsafe.Add(mBase, uint32(v10)+124))
-	if v346 == int32(0) {
-		goto L44
-	} else {
-		goto L103
-	}
-L102:
-	;
-	switch v344 {
-	case 0:
-		goto L101
-	case 1:
-		goto L100
-	default:
-		goto L42
-	}
-L103:
-	;
-	*(*int64)(unsafe.Add(mBase, uint32(v10)+116)) = int64(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+112)) = v346
-	v352 = *(*int32)(unsafe.Add(mBase, uint32(v10)+128))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+108)) = v352
-	v355 = v10 + int32(108)
-	v356 = F_pq_getmsgbyte(m, v355)
+	v394 = int32(0)
+	v396 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v399 = *(*int32)(unsafe.Add(mBase, uint32(v396)+4))
+	F_apply_spooled_messages(m, v396+int32(36), v399, int64(0))
 	mBase = m.M
-	v357 = m.ExcPending
-	if v357 != 0 {
-		goto L40
+	v402 = m.ExcPending
+	if v402 != 0 {
+		goto L19
 	} else {
 		goto L104
 	}
+L102:
+	;
+	v388 = int32(3)
+	v390 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v393 = base.AtomicRmwXchg32(m, v390, int32(0), int32(1))
+	if v393 != 0 {
+		v410 = v388
+		v411 = v390
+		goto L100
+	} else {
+		goto L103
+	}
+L103:
+	;
+	v417 = v388
+	v418 = v390
+	goto L99
 L104:
 	;
-	if v356 != int32(119) {
-		goto L43
+	v404 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[5]))
+	v406 = int32(0)
+	v407 = base.AtomicRmwXchg32(m, v404, v406, int32(1))
+	if v407 == v406 {
+		v417 = v394
+		v418 = v404
+		goto L99
 	} else {
 		goto L105
 	}
 L105:
 	;
-	v360 = *(*int32)(unsafe.Add(mBase, uint32(v10)+120))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+120)) = v360 + int32(24)
-	F_apply_dispatch(m, v355)
-	mBase = m.M
-	v365 = m.ExcPending
-	if v365 != 0 {
-		goto L40
-	} else {
-		goto L106
-	}
+	v410 = v394
+	v411 = v404
+	goto L100
 L106:
 	;
+	v417 = v410
+	v418 = v411
 	goto L99
 L107:
 	;
-	v372 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	F_s_lock(m, v372, int32(_a_F_ParallelApplyWorkerMain_1), int32(1531), int32(_a_F_ParallelApplyWorkerMain_9))
-	mBase = m.M
-	v377 = m.ExcPending
-	if v377 != 0 {
-		goto L40
+	if v428&int32(1) == int32(0) {
+		goto L78
 	} else {
-		goto L110
+		goto L108
 	}
 L108:
 	;
+	v435 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[19]))
+	*(*int32)(unsafe.Add(mBase, uint32(v435))) = int32(0)
 	goto L109
 L109:
 	;
-	v379 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	*(*int32)(unsafe.Add(mBase, uint32(v379))) = int32(0)
-	v382 = *(*int32)(unsafe.Add(mBase, uint32(v379)+32))
-	switch v382 {
-	case 0:
-		goto L111
-	case 1:
-		goto L113
-	default:
-		v421 = v382
-		goto L112
-	}
+	goto L78
 L110:
 	;
-	goto L109
+	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[12])) = v235
+	goto L58
 L111:
 	;
-	v459 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[28]))
-	v463 = F_WaitLatch(m, v459, int32(41), int32(1000), int32(83886089))
+	F_errcode(m, int32(325))
 	mBase = m.M
-	v464 = m.ExcPending
-	if v464 != 0 {
-		goto L40
+	v452 = m.ExcPending
+	if v452 != 0 {
+		goto L19
 	} else {
-		goto L128
+		goto L112
 	}
 L112:
 	;
-	switch v421 - int32(2) {
-	case 0:
-		goto L123
-	case 1:
-		goto L122
-	default:
-		goto L99
+	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_11), int32(0))
+	mBase = m.M
+	v456 = m.ExcPending
+	if v456 != 0 {
+		goto L19
+	} else {
+		goto L113
 	}
 L113:
 	;
-	v384 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[16]))
-	v385 = *(*int32)(unsafe.Add(mBase, uint32(v384)+32))
-	v387 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	v388 = *(*int32)(unsafe.Add(mBase, uint32(v387)+4))
-	F_LockApplyTransactionForSession(m, v385, v388, int32(0), int32(1))
+	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(897), int32(_a_F_ParallelApplyWorkerMain_2))
 	mBase = m.M
-	v392 = m.ExcPending
-	if v392 != 0 {
-		goto L40
+	v461 = m.ExcPending
+	if v461 != 0 {
+		goto L19
 	} else {
 		goto L114
 	}
 L114:
 	;
-	v394 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[16]))
-	v395 = *(*int32)(unsafe.Add(mBase, uint32(v394)+32))
-	v397 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	v398 = *(*int32)(unsafe.Add(mBase, uint32(v397)+4))
-	F_UnlockApplyTransactionForSession(m, v395, v398, int32(0), int32(1))
-	mBase = m.M
-	v402 = m.ExcPending
-	if v402 != 0 {
-		goto L40
-	} else {
-		goto L115
+	base.Wasm_trap_unreachable()
+	for {
 	}
 L115:
 	;
-	v404 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	v405 = *(*int32)(unsafe.Add(mBase, uint32(v404)))
-	*(*int32)(unsafe.Add(mBase, uint32(v404))) = int32(1)
-	if v405 != 0 {
-		goto L116
+	F_errcode(m, int32(325))
+	mBase = m.M
+	v468 = m.ExcPending
+	if v468 != 0 {
+		goto L19
 	} else {
-		goto L117
+		goto L116
 	}
 L116:
 	;
-	v409 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	F_s_lock(m, v409, int32(_a_F_ParallelApplyWorkerMain_1), int32(1531), int32(_a_F_ParallelApplyWorkerMain_9))
+	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_12), int32(0))
 	mBase = m.M
-	v414 = m.ExcPending
-	if v414 != 0 {
-		goto L40
+	v472 = m.ExcPending
+	if v472 != 0 {
+		goto L19
 	} else {
-		goto L119
+		goto L117
 	}
 L117:
 	;
-	goto L118
+	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(903), int32(_a_F_ParallelApplyWorkerMain_2))
+	mBase = m.M
+	v477 = m.ExcPending
+	if v477 != 0 {
+		goto L19
+	} else {
+		goto L118
+	}
 L118:
 	;
-	v416 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	*(*int32)(unsafe.Add(mBase, uint32(v416))) = int32(0)
-	v419 = *(*int32)(unsafe.Add(mBase, uint32(v416)+32))
-	v421 = v419
-	goto L112
+	base.Wasm_trap_unreachable()
+	for {
+	}
 L119:
 	;
-	goto L118
+	F_errmsg_internal(m, int32(_a_F_ParallelApplyWorkerMain_13), int32(0))
+	mBase = m.M
+	v485 = m.ExcPending
+	if v485 != 0 {
+		goto L19
+	} else {
+		goto L120
+	}
 L120:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v454))) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v454)+32)) = v453
-	goto L99
+	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(774), int32(_a_F_ParallelApplyWorkerMain_14))
+	mBase = m.M
+	v490 = m.ExcPending
+	if v490 != 0 {
+		goto L19
+	} else {
+		goto L121
+	}
 L121:
 	;
-	F_s_lock(m, v447, int32(_a_F_ParallelApplyWorkerMain_1), int32(1508), int32(_a_F_ParallelApplyWorkerMain_10))
-	mBase = m.M
-	v452 = m.ExcPending
-	if v452 != 0 {
-		goto L40
-	} else {
-		goto L127
+	base.Wasm_trap_unreachable()
+	for {
 	}
 L122:
 	;
-	v430 = int32(0)
-	v432 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	v435 = *(*int32)(unsafe.Add(mBase, uint32(v432)+4))
-	F_apply_spooled_messages(m, v432+int32(36), v435, int64(0))
+	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v318
+	F_errmsg_internal(m, int32(_a_F_ParallelApplyWorkerMain_15), v10)
 	mBase = m.M
-	v438 = m.ExcPending
-	if v438 != 0 {
-		goto L40
+	v498 = m.ExcPending
+	if v498 != 0 {
+		goto L19
 	} else {
-		goto L125
+		goto L123
 	}
 L123:
 	;
-	v425 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	v426 = *(*int32)(unsafe.Add(mBase, uint32(v425)))
-	*(*int32)(unsafe.Add(mBase, uint32(v425))) = int32(1)
-	v429 = int32(3)
-	if v426 != 0 {
-		v446 = v429
-		v447 = v425
-		goto L121
+	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(784), int32(_a_F_ParallelApplyWorkerMain_14))
+	mBase = m.M
+	v503 = m.ExcPending
+	if v503 != 0 {
+		goto L19
 	} else {
 		goto L124
 	}
 L124:
 	;
-	v453 = v429
-	v454 = v425
-	goto L120
+	base.Wasm_trap_unreachable()
+	for {
+	}
 L125:
 	;
-	v440 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	v441 = *(*int32)(unsafe.Add(mBase, uint32(v440)))
-	*(*int32)(unsafe.Add(mBase, uint32(v440))) = int32(1)
-	if v441 == int32(0) {
-		v453 = v430
-		v454 = v440
-		goto L120
+	F_errcode(m, int32(325))
+	mBase = m.M
+	v510 = m.ExcPending
+	if v510 != 0 {
+		goto L19
 	} else {
 		goto L126
 	}
 L126:
 	;
-	v446 = v430
-	v447 = v440
-	goto L121
-L127:
-	;
-	v453 = v446
-	v454 = v447
-	goto L120
-L128:
-	;
-	if v463&int32(1) == int32(0) {
-		goto L99
-	} else {
-		goto L129
-	}
-L129:
-	;
-	v470 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[28]))
-	*(*int32)(unsafe.Add(mBase, uint32(v470))) = int32(0)
-	goto L130
-L130:
-	;
-	goto L99
-L131:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[21])) = v273
-	goto L79
-L132:
-	;
-	F_errcode(m, int32(325))
-	mBase = m.M
-	v487 = m.ExcPending
-	if v487 != 0 {
-		goto L40
-	} else {
-		goto L133
-	}
-L133:
-	;
-	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_11), int32(0))
-	mBase = m.M
-	v491 = m.ExcPending
-	if v491 != 0 {
-		goto L40
-	} else {
-		goto L134
-	}
-L134:
-	;
-	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(897), int32(_a_F_ParallelApplyWorkerMain_2))
-	mBase = m.M
-	v496 = m.ExcPending
-	if v496 != 0 {
-		goto L40
-	} else {
-		goto L135
-	}
-L135:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L136:
-	;
-	F_errcode(m, int32(325))
-	mBase = m.M
-	v503 = m.ExcPending
-	if v503 != 0 {
-		goto L40
-	} else {
-		goto L137
-	}
-L137:
-	;
-	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_12), int32(0))
-	mBase = m.M
-	v507 = m.ExcPending
-	if v507 != 0 {
-		goto L40
-	} else {
-		goto L138
-	}
-L138:
-	;
-	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(903), int32(_a_F_ParallelApplyWorkerMain_2))
-	mBase = m.M
-	v512 = m.ExcPending
-	if v512 != 0 {
-		goto L40
-	} else {
-		goto L139
-	}
-L139:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L140:
-	;
-	F_errmsg_internal(m, int32(_a_F_ParallelApplyWorkerMain_13), int32(0))
-	mBase = m.M
-	v520 = m.ExcPending
-	if v520 != 0 {
-		goto L40
-	} else {
-		goto L141
-	}
-L141:
-	;
-	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(774), int32(_a_F_ParallelApplyWorkerMain_14))
-	mBase = m.M
-	v525 = m.ExcPending
-	if v525 != 0 {
-		goto L40
-	} else {
-		goto L142
-	}
-L142:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L143:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v356
-	F_errmsg_internal(m, int32(_a_F_ParallelApplyWorkerMain_15), v10)
-	mBase = m.M
-	v533 = m.ExcPending
-	if v533 != 0 {
-		goto L40
-	} else {
-		goto L144
-	}
-L144:
-	;
-	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(784), int32(_a_F_ParallelApplyWorkerMain_14))
-	mBase = m.M
-	v538 = m.ExcPending
-	if v538 != 0 {
-		goto L40
-	} else {
-		goto L145
-	}
-L145:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L146:
-	;
-	F_errcode(m, int32(325))
-	mBase = m.M
-	v545 = m.ExcPending
-	if v545 != 0 {
-		goto L40
-	} else {
-		goto L147
-	}
-L147:
-	;
 	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_16), int32(0))
 	mBase = m.M
-	v549 = m.ExcPending
-	if v549 != 0 {
-		goto L40
+	v514 = m.ExcPending
+	if v514 != 0 {
+		goto L19
 	} else {
-		goto L148
+		goto L127
 	}
-L148:
+L127:
 	;
 	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(822), int32(_a_F_ParallelApplyWorkerMain_14))
 	mBase = m.M
-	v554 = m.ExcPending
-	if v554 != 0 {
-		goto L40
+	v519 = m.ExcPending
+	if v519 != 0 {
+		goto L19
 	} else {
-		goto L149
+		goto L128
 	}
-L149:
+L128:
 	;
 	base.Wasm_trap_unreachable()
 	for {

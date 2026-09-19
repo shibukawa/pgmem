@@ -195,9 +195,9 @@ func F_has_table_privilege_name_name(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_table_block_parallelscan_reinitialize(m *base.Module, l0 int32, l1 int32) {
-	mBase := m.M
-	_ = mBase
-	*(*int64)(unsafe.Add(mBase, uint32(l1)+32)) = int64(0)
+	var v5 int64
+	_ = v5
+	v5 = base.AtomicRmwXchg64(m, l1, int32(32), int64(0))
 	return
 }
 func F_table_openrv(m *base.Module, l0 int32, l1 int32) int32 {

@@ -34,8 +34,8 @@ func F_pgl_setPGliteExitStatus(m *base.Module, l0 int32) int32
 func F_pgl_run_atexit_funcs(m *base.Module)
 //go:linkname F_pgl_freopen github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgl_freopen
 func F_pgl_freopen(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-//go:linkname F_pgmem_poll github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pgmem_poll
-func F_pgmem_poll(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pgmem_raise github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgmem_raise
+func F_pgmem_raise(m *base.Module, l0 int32)
 //go:linkname F_pgmem_init github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgmem_init
 func F_pgmem_init(m *base.Module)
 //go:linkname F_pgmem_main github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgmem_main

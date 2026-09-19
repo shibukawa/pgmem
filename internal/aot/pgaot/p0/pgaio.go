@@ -398,26 +398,48 @@ func F_pgaio_worker_submit(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v236
 	var v240 int32
 	_ = v240
-	var v242 int32
-	_ = v242
+	var v241 int32
+	_ = v241
+	var v244 int32
+	_ = v244
 	var v247 int32
 	_ = v247
-	var v264 int32
-	_ = v264
-	var v266 int32
-	_ = v266
-	var v268 int32
-	_ = v268
-	var v271 int32
-	_ = v271
-	var v275 int32
-	_ = v275
-	var v276 int32
-	_ = v276
-	var v278 int32
-	_ = v278
-	var v282 int32
-	_ = v282
+	var v251 int32
+	_ = v251
+	var v253 int32
+	_ = v253
+	var v255 int32
+	_ = v255
+	var v258 int32
+	_ = v258
+	var v261 int32
+	_ = v261
+	var v265 int32
+	_ = v265
+	var v269 int32
+	_ = v269
+	var v273 int32
+	_ = v273
+	var v281 int32
+	_ = v281
+	var v288 int32
+	_ = v288
+	var v305 int32
+	_ = v305
+	var v307 int32
+	_ = v307
+	var v309 int32
+	_ = v309
+	var v312 int32
+	_ = v312
+	var v316 int32
+	_ = v316
+	var v317 int32
+	_ = v317
+	var v319 int32
+	_ = v319
+	var v323 int32
+	_ = v323
 	v3 = int32(0)
 	v15 = m.G0
 	v17 = v15 - int32(176)
@@ -440,14 +462,14 @@ L3:
 	goto L4
 L4:
 	;
-	v271 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_submit[0]))
-	v275 = F_LWLockAcquire(m, v271+int32(_a_F_pgaio_worker_submit_0), int32(0))
+	v312 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_submit[0]))
+	v316 = F_LWLockAcquire(m, v312+int32(_a_F_pgaio_worker_submit_0), int32(0))
 	mBase = m.M
-	v276 = m.ExcPending
-	if v276 != 0 {
+	v317 = m.ExcPending
+	if v317 != 0 {
 		goto L7
 	} else {
-		goto L61
+		goto L74
 	}
 L5:
 	;
@@ -812,13 +834,11 @@ L51:
 	}
 L52:
 	;
-	F_SetLatch(m, v226)
-	mBase = m.M
-	v242 = m.ExcPending
-	if v242 != 0 {
-		goto L7
+	v241 = *(*int32)(unsafe.Add(mBase, uint32(v226)))
+	if v241 != 0 {
+		goto L56
 	} else {
-		goto L55
+		goto L57
 	}
 L53:
 	;
@@ -828,53 +848,133 @@ L54:
 	if v225 <= int32(0) {
 		goto L1
 	} else {
-		goto L56
+		goto L69
 	}
 L55:
 	;
 	goto L54
 L56:
 	;
-	v247 = int32(0)
-	goto L57
+	goto L55
 L57:
 	;
-	v264 = *(*int32)(unsafe.Add(mBase, uint32(v17+int32(48)+v247<<(uint(int32(2))%32))))
-	F_pgaio_io_perform_synchronously(m, v264)
-	mBase = m.M
-	v266 = m.ExcPending
-	if v266 != 0 {
-		goto L7
+	*(*int32)(unsafe.Add(mBase, uint32(v226))) = int32(1)
+	v244 = *(*int32)(unsafe.Add(mBase, uint32(v226)+4))
+	if v244 == int32(0) {
+		goto L56
 	} else {
-		goto L59
+		goto L58
 	}
 L58:
 	;
-	goto L1
+	v247 = *(*int32)(unsafe.Add(mBase, uint32(v226)+12))
+	if v247 == int32(0) {
+		goto L56
+	} else {
+		goto L59
+	}
 L59:
 	;
-	v268 = v247 + int32(1)
-	if v268 != v225 {
-		v247 = v268
-		goto L57
-	} else {
+	v251 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_submit[8]))
+	if v251 == v247 {
 		goto L60
+	} else {
+		goto L61
 	}
 L60:
 	;
-	goto L58
+	v253 = m.G0
+	v255 = v253 - int32(16)
+	m.G0 = v255
+	v258 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_submit[9]))
+	if v258 == int32(0) {
+		goto L63
+	} else {
+		goto L64
+	}
 L61:
 	;
-	v278 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_submit[0]))
-	F_LWLockRelease(m, v278+int32(_a_F_pgaio_worker_submit_0))
+	goto L62
+L62:
+	;
+	v281 = F_pgmem_kill(m, v247, int32(23))
 	mBase = m.M
-	v282 = m.ExcPending
-	if v282 != 0 {
+	goto L56
+L63:
+	;
+	m.G0 = v255 + int32(16)
+	goto L55
+L64:
+	;
+	v261 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v255)+15)) = uint8(v261)
+	goto L65
+L65:
+	;
+	v265 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_submit[10]))
+	v269 = F_write(m, v265, v255+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v269 {
+		goto L63
+	} else {
+		goto L67
+	}
+L66:
+	;
+	goto L63
+L67:
+	;
+	v273 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_submit[11]))
+	if v273 == int32(27) {
+		goto L65
+	} else {
+		goto L68
+	}
+L68:
+	;
+	goto L66
+L69:
+	;
+	v288 = int32(0)
+	goto L70
+L70:
+	;
+	v305 = *(*int32)(unsafe.Add(mBase, uint32(v17+int32(48)+v288<<(uint(int32(2))%32))))
+	F_pgaio_io_perform_synchronously(m, v305)
+	mBase = m.M
+	v307 = m.ExcPending
+	if v307 != 0 {
 		goto L7
 	} else {
-		goto L62
+		goto L72
 	}
-L62:
+L71:
+	;
+	goto L1
+L72:
+	;
+	v309 = v288 + int32(1)
+	if v309 != v225 {
+		v288 = v309
+		goto L70
+	} else {
+		goto L73
+	}
+L73:
+	;
+	goto L71
+L74:
+	;
+	v319 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_submit[0]))
+	F_LWLockRelease(m, v319+int32(_a_F_pgaio_worker_submit_0))
+	mBase = m.M
+	v323 = m.ExcPending
+	if v323 != 0 {
+		goto L7
+	} else {
+		goto L75
+	}
+L75:
 	;
 	goto L1
 }

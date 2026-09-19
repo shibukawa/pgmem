@@ -3,6 +3,7 @@ package p3
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 	"math"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -73,8 +74,8 @@ func F__brin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v66
 	var v67 float64
 	_ = v67
-	var v70 int32
-	_ = v70
+	var v72 int32
+	_ = v72
 	var v79 int32
 	_ = v79
 	var v80 int32
@@ -85,14 +86,16 @@ func F__brin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v85
 	var v88 float64
 	_ = v88
-	var v91 float64
-	_ = v91
-	var v97 int32
-	_ = v97
+	var v89 float64
+	_ = v89
+	var v92 int32
+	_ = v92
 	var v98 int32
 	_ = v98
-	var v100 int32
-	_ = v100
+	var v99 int32
+	_ = v99
+	var v101 int32
+	_ = v101
 	v10 = m.G0
 	v12 = v10 - int32(16)
 	m.G0 = v12
@@ -173,9 +176,8 @@ func F__brin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int3
 										} else {
 											v67 = *(*float64)(unsafe.Add(mBase, uint32(l0)+16))
 											*(*float64)(unsafe.Add(mBase, uint32(l0)+16)) = base.F64_add(v41, v67)
-											v70 = *(*int32)(unsafe.Add(mBase, uint32(l1)+44))
-											*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = int32(1)
-											if v70 != 0 {
+											v72 = base.AtomicRmwXchg32(m, l1, int32(44), int32(1))
+											if v72 != 0 {
 												F_s_lock(m, l1+int32(44), int32(_a_F__brin_parallel_scan_and_build_0), int32(2847), int32(_a_F__brin_parallel_scan_and_build_1))
 												mBase = m.M
 												v79 = m.ExcPending
@@ -188,20 +190,21 @@ func F__brin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int3
 													v85 = *(*float64)(unsafe.Add(mBase, uint32(l1)+56))
 													*(*float64)(unsafe.Add(mBase, uint32(l1)+56)) = base.F64_add(v84, v85)
 													v88 = *(*float64)(unsafe.Add(mBase, uint32(l0)+8))
-													*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = int32(0)
-													v91 = *(*float64)(unsafe.Add(mBase, uint32(l1)+64))
-													*(*float64)(unsafe.Add(mBase, uint32(l1)+64)) = base.F64_add(v88, v91)
+													v89 = *(*float64)(unsafe.Add(mBase, uint32(l1)+64))
+													*(*float64)(unsafe.Add(mBase, uint32(l1)+64)) = base.F64_add(v88, v89)
+													v92 = int32(0)
+													atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+44)), uint32(v92))
 													F_ConditionVariableSignal(m, l1+int32(32))
 													mBase = m.M
-													v97 = m.ExcPending
-													if v97 != 0 {
+													v98 = m.ExcPending
+													if v98 != 0 {
 														return
 													} else {
-														v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
-														F_tuplesort_end(m, v98)
+														v99 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
+														F_tuplesort_end(m, v99)
 														mBase = m.M
-														v100 = m.ExcPending
-														if v100 != 0 {
+														v101 = m.ExcPending
+														if v101 != 0 {
 															return
 														} else {
 															m.G0 = v12 + int32(16)
@@ -216,20 +219,21 @@ func F__brin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int3
 												v85 = *(*float64)(unsafe.Add(mBase, uint32(l1)+56))
 												*(*float64)(unsafe.Add(mBase, uint32(l1)+56)) = base.F64_add(v84, v85)
 												v88 = *(*float64)(unsafe.Add(mBase, uint32(l0)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = int32(0)
-												v91 = *(*float64)(unsafe.Add(mBase, uint32(l1)+64))
-												*(*float64)(unsafe.Add(mBase, uint32(l1)+64)) = base.F64_add(v88, v91)
+												v89 = *(*float64)(unsafe.Add(mBase, uint32(l1)+64))
+												*(*float64)(unsafe.Add(mBase, uint32(l1)+64)) = base.F64_add(v88, v89)
+												v92 = int32(0)
+												atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+44)), uint32(v92))
 												F_ConditionVariableSignal(m, l1+int32(32))
 												mBase = m.M
-												v97 = m.ExcPending
-												if v97 != 0 {
+												v98 = m.ExcPending
+												if v98 != 0 {
 													return
 												} else {
-													v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
-													F_tuplesort_end(m, v98)
+													v99 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
+													F_tuplesort_end(m, v99)
 													mBase = m.M
-													v100 = m.ExcPending
-													if v100 != 0 {
+													v101 = m.ExcPending
+													if v101 != 0 {
 														return
 													} else {
 														m.G0 = v12 + int32(16)
@@ -251,9 +255,8 @@ func F__brin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int3
 							} else {
 								v67 = *(*float64)(unsafe.Add(mBase, uint32(l0)+16))
 								*(*float64)(unsafe.Add(mBase, uint32(l0)+16)) = base.F64_add(v41, v67)
-								v70 = *(*int32)(unsafe.Add(mBase, uint32(l1)+44))
-								*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = int32(1)
-								if v70 != 0 {
+								v72 = base.AtomicRmwXchg32(m, l1, int32(44), int32(1))
+								if v72 != 0 {
 									F_s_lock(m, l1+int32(44), int32(_a_F__brin_parallel_scan_and_build_0), int32(2847), int32(_a_F__brin_parallel_scan_and_build_1))
 									mBase = m.M
 									v79 = m.ExcPending
@@ -266,20 +269,21 @@ func F__brin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int3
 										v85 = *(*float64)(unsafe.Add(mBase, uint32(l1)+56))
 										*(*float64)(unsafe.Add(mBase, uint32(l1)+56)) = base.F64_add(v84, v85)
 										v88 = *(*float64)(unsafe.Add(mBase, uint32(l0)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = int32(0)
-										v91 = *(*float64)(unsafe.Add(mBase, uint32(l1)+64))
-										*(*float64)(unsafe.Add(mBase, uint32(l1)+64)) = base.F64_add(v88, v91)
+										v89 = *(*float64)(unsafe.Add(mBase, uint32(l1)+64))
+										*(*float64)(unsafe.Add(mBase, uint32(l1)+64)) = base.F64_add(v88, v89)
+										v92 = int32(0)
+										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+44)), uint32(v92))
 										F_ConditionVariableSignal(m, l1+int32(32))
 										mBase = m.M
-										v97 = m.ExcPending
-										if v97 != 0 {
+										v98 = m.ExcPending
+										if v98 != 0 {
 											return
 										} else {
-											v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
-											F_tuplesort_end(m, v98)
+											v99 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
+											F_tuplesort_end(m, v99)
 											mBase = m.M
-											v100 = m.ExcPending
-											if v100 != 0 {
+											v101 = m.ExcPending
+											if v101 != 0 {
 												return
 											} else {
 												m.G0 = v12 + int32(16)
@@ -294,20 +298,21 @@ func F__brin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int3
 									v85 = *(*float64)(unsafe.Add(mBase, uint32(l1)+56))
 									*(*float64)(unsafe.Add(mBase, uint32(l1)+56)) = base.F64_add(v84, v85)
 									v88 = *(*float64)(unsafe.Add(mBase, uint32(l0)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = int32(0)
-									v91 = *(*float64)(unsafe.Add(mBase, uint32(l1)+64))
-									*(*float64)(unsafe.Add(mBase, uint32(l1)+64)) = base.F64_add(v88, v91)
+									v89 = *(*float64)(unsafe.Add(mBase, uint32(l1)+64))
+									*(*float64)(unsafe.Add(mBase, uint32(l1)+64)) = base.F64_add(v88, v89)
+									v92 = int32(0)
+									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+44)), uint32(v92))
 									F_ConditionVariableSignal(m, l1+int32(32))
 									mBase = m.M
-									v97 = m.ExcPending
-									if v97 != 0 {
+									v98 = m.ExcPending
+									if v98 != 0 {
 										return
 									} else {
-										v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
-										F_tuplesort_end(m, v98)
+										v99 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
+										F_tuplesort_end(m, v99)
 										mBase = m.M
-										v100 = m.ExcPending
-										if v100 != 0 {
+										v101 = m.ExcPending
+										if v101 != 0 {
 											return
 										} else {
 											m.G0 = v12 + int32(16)
@@ -1186,7 +1191,7 @@ func F_brin_bloom_summary_recv(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F_brin_bloom_summary_recv_0), int32(826), int32(_a_F_brin_bloom_summary_recv_1), int32(_a_F_brin_bloom_summary_recv_2), int32(_a_F_brin_bloom_summary_recv_3))
+	v7 = Fn13874(m, l0, int32(_a_F_brin_bloom_summary_recv_0), int32(826), int32(_a_F_brin_bloom_summary_recv_1), int32(_a_F_brin_bloom_summary_recv_2), int32(_a_F_brin_bloom_summary_recv_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

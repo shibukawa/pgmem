@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -536,20 +537,21 @@ func F_GetLatestXTime(m *base.Module) int64 {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v5 int32
-	_ = v5
+	var v7 int32
+	_ = v7
 	var v9 int32
 	_ = v9
 	var v18 int32
 	_ = v18
 	var v20 int32
 	_ = v20
-	var v23 int64
-	_ = v23
+	var v21 int64
+	_ = v21
+	var v22 int32
+	_ = v22
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_GetLatestXTime[0]))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+96))
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+96)) = int32(1)
-	if v5 != 0 {
+	v7 = base.AtomicRmwXchg32(m, v4, int32(96), int32(1))
+	if v7 != 0 {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_GetLatestXTime[0]))
 		F_s_lock(m, v9+int32(96), int32(_a_F_GetLatestXTime_0), int32(_a_F_GetLatestXTime_1), int32(_a_F_GetLatestXTime_2))
 		mBase = m.M
@@ -558,15 +560,17 @@ func F_GetLatestXTime(m *base.Module) int64 {
 			return int64(0)
 		} else {
 			v20 = *(*int32)(unsafe.Add(mBase, _c_F_GetLatestXTime[0]))
-			*(*int32)(unsafe.Add(mBase, uint32(v20)+96)) = int32(0)
-			v23 = *(*int64)(unsafe.Add(mBase, uint32(v20)+64))
-			return v23
+			v21 = *(*int64)(unsafe.Add(mBase, uint32(v20)+64))
+			v22 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v20)+96)), uint32(v22))
+			return v21
 		}
 	} else {
 		v20 = *(*int32)(unsafe.Add(mBase, _c_F_GetLatestXTime[0]))
-		*(*int32)(unsafe.Add(mBase, uint32(v20)+96)) = int32(0)
-		v23 = *(*int64)(unsafe.Add(mBase, uint32(v20)+64))
-		return v23
+		v21 = *(*int64)(unsafe.Add(mBase, uint32(v20)+64))
+		v22 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v20)+96)), uint32(v22))
+		return v21
 	}
 }
 func F_GetNamedDSMSegment(m *base.Module, l0 int32) int32 {
@@ -6354,7 +6358,7 @@ func F_gbk_to_utf8(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v3 = int32(0)
-	v7 = Fn13848(m, l0, int32(37), v3, v3, v3, int32(_a_F_gbk_to_utf8_0))
+	v7 = Fn13870(m, l0, int32(37), v3, v3, v3, int32(_a_F_gbk_to_utf8_0))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -22105,7 +22109,7 @@ L321:
 func F_ginadjustmembers(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	var v13 int32
 	_ = v13
-	Fn13908(m, l0, l1, l2, l3, int32(_a_F_ginadjustmembers_0), int32(324), int32(_a_F_ginadjustmembers_1), int32(_a_F_ginadjustmembers_2), int32(12), int32(242), int32(7))
+	Fn13930(m, l0, l1, l2, l3, int32(_a_F_ginadjustmembers_0), int32(324), int32(_a_F_ginadjustmembers_1), int32(_a_F_ginadjustmembers_2), int32(12), int32(242), int32(7))
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return
@@ -24170,7 +24174,7 @@ func F_gistbulkdelete(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 func F_gistcheckpage(m *base.Module, l0 int32, l1 int32) {
 	var v8 int32
 	_ = v8
-	Fn13909(m, l0, l1, int32(_a_F_gistcheckpage_0), int32(812), int32(_a_F_gistcheckpage_1), int32(801))
+	Fn13931(m, l0, l1, int32(_a_F_gistcheckpage_0), int32(812), int32(_a_F_gistcheckpage_1), int32(801))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return
@@ -27972,7 +27976,7 @@ func F_gtsvectorin(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F_gtsvectorin_0), int32(94), int32(_a_F_gtsvectorin_1), int32(_a_F_gtsvectorin_2), int32(_a_F_gtsvectorin_3))
+	v7 = Fn13874(m, l0, int32(_a_F_gtsvectorin_0), int32(94), int32(_a_F_gtsvectorin_1), int32(_a_F_gtsvectorin_2), int32(_a_F_gtsvectorin_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

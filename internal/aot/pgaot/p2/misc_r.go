@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -1417,28 +1418,132 @@ func F_ReleaseSemaphores(m *base.Module, l0 int32, l1 int32) {
 	_ = v5
 	var v8 int32
 	_ = v8
-	var v13 int32
-	_ = v13
-	var v15 int32
-	_ = v15
+	var v12 int32
+	_ = v12
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v25 int32
+	_ = v25
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v37 int32
+	_ = v37
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
+	var v46 int32
+	_ = v46
 	v3 = int32(0)
 	v5 = *(*int32)(unsafe.Add(mBase, _c_F_ReleaseSemaphores[0]))
 	if v3 < v5 {
-		v8 = v3
-		for {
-			v13 = v8 + int32(1)
-			v15 = *(*int32)(unsafe.Add(mBase, _c_F_ReleaseSemaphores[0]))
-			if v13 < v15 {
-				v8 = v13
-				continue
-			} else {
-				break
-			}
-			break
-		}
+		goto L1
 	} else {
+		goto L2
 	}
+L1:
+	;
+	v8 = v3
+	goto L4
+L2:
+	;
+	goto L3
+L3:
+	;
 	return
+L4:
+	;
+	v12 = *(*int32)(unsafe.Add(mBase, _c_F_ReleaseSemaphores[1]))
+	v16 = int32(0)
+	v17 = m.Env.Pgmem_sem(m, int32(1), v12+v8<<(uint(int32(7))%32), v16)
+	mBase = m.M
+	if v16 <= v17 {
+		goto L8
+	} else {
+		goto L9
+	}
+L5:
+	;
+	goto L3
+L6:
+	;
+	v44 = v8 + int32(1)
+	v46 = *(*int32)(unsafe.Add(mBase, _c_F_ReleaseSemaphores[0]))
+	if v44 < v46 {
+		v8 = v44
+		goto L4
+	} else {
+		goto L17
+	}
+L7:
+	;
+	if int32(0) <= v25 {
+		goto L6
+	} else {
+		goto L11
+	}
+L8:
+	;
+	v25 = v17
+	goto L7
+L9:
+	;
+	goto L10
+L10:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_ReleaseSemaphores[2])) = int32(0) - v17
+	v25 = int32(-1)
+	goto L7
+L11:
+	;
+	v30 = F_errstart(m, int32(15), int32(0))
+	mBase = m.M
+	v31 = m.ExcPending
+	if v31 != 0 {
+		goto L12
+	} else {
+		goto L13
+	}
+L12:
+	;
+	return
+L13:
+	;
+	if v30 == int32(0) {
+		goto L6
+	} else {
+		goto L14
+	}
+L14:
+	;
+	F_errmsg_internal(m, int32(_a_F_ReleaseSemaphores_0), int32(0))
+	mBase = m.M
+	v37 = m.ExcPending
+	if v37 != 0 {
+		goto L12
+	} else {
+		goto L15
+	}
+L15:
+	;
+	F_errfinish(m, int32(_a_F_ReleaseSemaphores_1), int32(156), int32(_a_F_ReleaseSemaphores_2))
+	mBase = m.M
+	v42 = m.ExcPending
+	if v42 != 0 {
+		goto L12
+	} else {
+		goto L16
+	}
+L16:
+	;
+	goto L6
+L17:
+	;
+	goto L5
 }
 func F_RemoveOldXlogFiles(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int32) {
 	mBase := m.M
@@ -1661,13 +1766,13 @@ func F_RemoveOldXlogFiles(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int32
 	_ = v370
 	var v371 int64
 	_ = v371
-	var v373 int32
+	var v373 int64
 	_ = v373
-	var v374 int32
-	_ = v374
-	var v378 int64
-	_ = v378
-	var v380 int64
+	var v375 int64
+	_ = v375
+	var v377 int32
+	_ = v377
+	var v380 int32
 	_ = v380
 	var v382 int32
 	_ = v382
@@ -1677,8 +1782,10 @@ func F_RemoveOldXlogFiles(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int32
 	_ = v391
 	var v392 int64
 	_ = v392
-	var v400 int32
-	_ = v400
+	var v395 int32
+	_ = v395
+	var v401 int32
+	_ = v401
 	var v405 int32
 	_ = v405
 	var v406 int32
@@ -2277,12 +2384,11 @@ L84:
 	;
 	v370 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v18)+136)))
 	v371 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v18)+140)))
-	v373 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveOldXlogFiles[8]))
-	v374 = *(*int32)(unsafe.Add(mBase, uint32(v373)+440))
-	*(*int32)(unsafe.Add(mBase, uint32(v373)+440)) = int32(1)
-	v378 = base.I64_div_u_s(int64(4294967296), v357)
-	v380 = v370 + v371*v378
-	if v374 != 0 {
+	v373 = base.I64_div_u_s(int64(4294967296), v357)
+	v375 = v370 + v371*v373
+	v377 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveOldXlogFiles[8]))
+	v380 = base.AtomicRmwXchg32(m, v377, int32(440), int32(1))
+	if v380 != 0 {
 		goto L85
 	} else {
 		goto L86
@@ -2305,7 +2411,7 @@ L87:
 	;
 	v391 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveOldXlogFiles[8]))
 	v392 = *(*int64)(unsafe.Add(mBase, uint32(v391)+232))
-	if base.Ui64(v392) < base.Ui64(v380) {
+	if base.Ui64(v392) < base.Ui64(v375) {
 		goto L89
 	} else {
 		goto L90
@@ -2315,18 +2421,19 @@ L88:
 	goto L87
 L89:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(v391)+232)) = v380
+	*(*int64)(unsafe.Add(mBase, uint32(v391)+232)) = v375
 	goto L91
 L90:
 	;
 	goto L91
 L91:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v391)+440)) = int32(0)
+	v395 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v391)+440)), uint32(v395))
 	F_RemoveXlogFile(m, v107, v96, v18+int32(56), l3)
 	mBase = m.M
-	v400 = m.ExcPending
-	if v400 != 0 {
+	v401 = m.ExcPending
+	if v401 != 0 {
 		goto L1
 	} else {
 		goto L92
@@ -7639,7 +7746,7 @@ func F_r_remove_second_order_prefix_1(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13983(m, l0, int32(_a_F_r_remove_second_order_prefix_1_0), int32(_a_F_r_remove_second_order_prefix_1_1), int32(_a_F_r_remove_second_order_prefix_1_2))
+	v5 = Fn14005(m, l0, int32(_a_F_r_remove_second_order_prefix_1_0), int32(_a_F_r_remove_second_order_prefix_1_1), int32(_a_F_r_remove_second_order_prefix_1_2))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

@@ -415,7 +415,7 @@ func F_quickdie(m *base.Module, l0 int32) {
 	v24 = int32(_a_F_quickdie_0)
 	v25 = *(*int32)(unsafe.Add(mBase, _c_F_quickdie[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_quickdie[0])) = v25 | int32(4)
-	F_sigprocmask(m, int32(_a_F_quickdie_0), int32(0))
+	F_pgmem_sigprocmask(m, int32(_a_F_quickdie_0), int32(0))
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {

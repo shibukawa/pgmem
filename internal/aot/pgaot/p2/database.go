@@ -390,7 +390,7 @@ func F_get_database_name(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13895(m, l0, int32(21))
+	v3 = Fn13917(m, l0, int32(21))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -483,7 +483,7 @@ func F_has_database_privilege_name_id(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13915(m, l0, int32(_a_F_has_database_privilege_name_id_0), int32(1262))
+	v4 = Fn13937(m, l0, int32(_a_F_has_database_privilege_name_id_0), int32(1262))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

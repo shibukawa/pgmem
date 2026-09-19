@@ -566,7 +566,7 @@ L24:
 	}
 L25:
 	;
-	F_sigprocmask(m, int32(_a_F_AbortSubTransaction_4), int32(0))
+	F_pgmem_sigprocmask(m, int32(_a_F_AbortSubTransaction_4), int32(0))
 	mBase = m.M
 	v181 = m.ExcPending
 	if v181 != 0 {

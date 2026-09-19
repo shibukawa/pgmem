@@ -164,36 +164,242 @@ func F_handle_pm_child_exit_signal(m *base.Module, l0 int32) {
 	_ = mBase
 	var v6 int32
 	_ = v6
-	var v8 int32
-	_ = v8
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v39 int32
+	_ = v39
+	var v47 int32
+	_ = v47
 	*(*int32)(unsafe.Add(mBase, _c_F_handle_pm_child_exit_signal[0])) = int32(1)
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_child_exit_signal[1]))
-	F_SetLatch(m, v6)
-	mBase = m.M
-	v8 = m.ExcPending
-	if v8 != 0 {
-		return
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	if v7 != 0 {
+		goto L2
 	} else {
-		return
+		goto L3
 	}
+L1:
+	;
+	return
+L2:
+	;
+	goto L1
+L3:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(1)
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+	if v10 == int32(0) {
+		goto L2
+	} else {
+		goto L4
+	}
+L4:
+	;
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+	if v13 == int32(0) {
+		goto L2
+	} else {
+		goto L5
+	}
+L5:
+	;
+	v17 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_child_exit_signal[2]))
+	if v17 == v13 {
+		goto L6
+	} else {
+		goto L7
+	}
+L6:
+	;
+	v19 = m.G0
+	v21 = v19 - int32(16)
+	m.G0 = v21
+	v24 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_child_exit_signal[3]))
+	if v24 == int32(0) {
+		goto L9
+	} else {
+		goto L10
+	}
+L7:
+	;
+	goto L8
+L8:
+	;
+	v47 = F_pgmem_kill(m, v13, int32(23))
+	mBase = m.M
+	goto L2
+L9:
+	;
+	m.G0 = v21 + int32(16)
+	goto L1
+L10:
+	;
+	v27 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v21)+15)) = uint8(v27)
+	goto L11
+L11:
+	;
+	v31 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_child_exit_signal[4]))
+	v35 = F_write(m, v31, v21+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v35 {
+		goto L9
+	} else {
+		goto L13
+	}
+L12:
+	;
+	goto L9
+L13:
+	;
+	v39 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_child_exit_signal[5]))
+	if v39 == int32(27) {
+		goto L11
+	} else {
+		goto L14
+	}
+L14:
+	;
+	goto L12
 }
 func F_handle_pm_reload_request_signal(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
 	_ = v6
-	var v8 int32
-	_ = v8
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v39 int32
+	_ = v39
+	var v47 int32
+	_ = v47
 	*(*int32)(unsafe.Add(mBase, _c_F_handle_pm_reload_request_signal[0])) = int32(1)
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_reload_request_signal[1]))
-	F_SetLatch(m, v6)
-	mBase = m.M
-	v8 = m.ExcPending
-	if v8 != 0 {
-		return
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	if v7 != 0 {
+		goto L2
 	} else {
-		return
+		goto L3
 	}
+L1:
+	;
+	return
+L2:
+	;
+	goto L1
+L3:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(1)
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+	if v10 == int32(0) {
+		goto L2
+	} else {
+		goto L4
+	}
+L4:
+	;
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+	if v13 == int32(0) {
+		goto L2
+	} else {
+		goto L5
+	}
+L5:
+	;
+	v17 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_reload_request_signal[2]))
+	if v17 == v13 {
+		goto L6
+	} else {
+		goto L7
+	}
+L6:
+	;
+	v19 = m.G0
+	v21 = v19 - int32(16)
+	m.G0 = v21
+	v24 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_reload_request_signal[3]))
+	if v24 == int32(0) {
+		goto L9
+	} else {
+		goto L10
+	}
+L7:
+	;
+	goto L8
+L8:
+	;
+	v47 = F_pgmem_kill(m, v13, int32(23))
+	mBase = m.M
+	goto L2
+L9:
+	;
+	m.G0 = v21 + int32(16)
+	goto L1
+L10:
+	;
+	v27 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v21)+15)) = uint8(v27)
+	goto L11
+L11:
+	;
+	v31 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_reload_request_signal[4]))
+	v35 = F_write(m, v31, v21+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v35 {
+		goto L9
+	} else {
+		goto L13
+	}
+L12:
+	;
+	goto L9
+L13:
+	;
+	v39 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_reload_request_signal[5]))
+	if v39 == int32(27) {
+		goto L11
+	} else {
+		goto L14
+	}
+L14:
+	;
+	goto L12
 }
 func F_handle_streamed_transaction(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
@@ -7889,7 +8095,7 @@ L67:
 func F_hemdist_2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	var v5 int32
 	_ = v5
-	v5 = Fn13923(m, l0, l1, l2, int32(2))
+	v5 = Fn13945(m, l0, l1, l2, int32(2))
 	return v5
 }
 func F_hemdistcache_2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

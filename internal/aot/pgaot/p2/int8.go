@@ -766,7 +766,7 @@ func F_int8_dist(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13858(m, l0, int32(_a_F_int8_dist_0), int32(_a_F_int8_dist_1), int32(_a_F_int8_dist_2))
+	v5 = Fn13880(m, l0, int32(_a_F_int8_dist_0), int32(_a_F_int8_dist_1), int32(_a_F_int8_dist_2))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

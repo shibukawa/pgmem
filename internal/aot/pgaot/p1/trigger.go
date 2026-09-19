@@ -761,7 +761,7 @@ func F_trigger_out(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13852(m, l0, int32(_a_F_trigger_out_0), int32(366), int32(_a_F_trigger_out_1), int32(_a_F_trigger_out_2), int32(_a_F_trigger_out_3))
+	v7 = Fn13874(m, l0, int32(_a_F_trigger_out_0), int32(366), int32(_a_F_trigger_out_1), int32(_a_F_trigger_out_2), int32(_a_F_trigger_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

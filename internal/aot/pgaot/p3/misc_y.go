@@ -5550,7 +5550,7 @@ L653:
 func F_yy_fatal_error_4(m *base.Module, l0 int32) {
 	var v7 int32
 	_ = v7
-	Fn14024(m, l0, int32(_a_F_yy_fatal_error_4_0), int32(37), int32(_a_F_yy_fatal_error_4_1), int32(_a_F_yy_fatal_error_4_2))
+	Fn14046(m, l0, int32(_a_F_yy_fatal_error_4_0), int32(37), int32(_a_F_yy_fatal_error_4_1), int32(_a_F_yy_fatal_error_4_2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return

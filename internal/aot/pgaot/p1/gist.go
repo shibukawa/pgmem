@@ -298,8 +298,8 @@ func F_gistGetFakeLSN(m *base.Module, l0 int32) int64 {
 	_ = v54
 	var v59 int32
 	_ = v59
-	var v60 int64
-	_ = v60
+	var v62 int64
+	_ = v62
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+118)))
 	switch v5 - int32(112) {
@@ -353,9 +353,8 @@ func F_gistGetFakeLSN(m *base.Module, l0 int32) int64 {
 		}
 	default:
 		v59 = *(*int32)(unsafe.Add(mBase, _c_F_gistGetFakeLSN[2]))
-		v60 = *(*int64)(unsafe.Add(mBase, uint32(v59)+240))
-		*(*int64)(unsafe.Add(mBase, uint32(v59)+240)) = v60 + int64(1)
-		return v60
+		v62 = base.AtomicRmwAdd64(m, v59, int32(240), int64(1))
+		return v62
 	case 4:
 		v8 = int32(_a_F_gistGetFakeLSN_1)
 		v10 = *(*int64)(unsafe.Add(mBase, _c_F_gistGetFakeLSN[3]))

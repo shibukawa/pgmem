@@ -2562,7 +2562,7 @@ func F_fastgetattr_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13876(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_2_0))
+	v6 = Fn13898(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_2_0))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -9036,7 +9036,7 @@ func F_find_my_exec(m *base.Module, l0 int32, l1 int32) int32 {
 	goto L4
 L1:
 	;
-	v130 = Fn13878(m, l1, int32(47))
+	v130 = Fn13900(m, l1, int32(47))
 	mBase = m.M
 	goto L34
 L2:
@@ -9493,7 +9493,7 @@ L67:
 	}
 L68:
 	;
-	v214 = Fn13878(m, v207, int32(58))
+	v214 = Fn13900(m, v207, int32(58))
 	mBase = m.M
 	goto L69
 L69:
@@ -9900,7 +9900,7 @@ L124:
 L125:
 	;
 	v403 = v401 + int32(1)
-	v405 = Fn13878(m, v403, int32(58))
+	v405 = Fn13900(m, v403, int32(58))
 	mBase = m.M
 	goto L127
 L126:
@@ -15025,7 +15025,7 @@ func F_ftoi2(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13879(m, l0, int32(_a_F_ftoi2_0), int32(1328), int32(_a_F_ftoi2_1), float32(32768), float32(-32768))
+	v7 = Fn13901(m, l0, int32(_a_F_ftoi2_0), int32(1328), int32(_a_F_ftoi2_1), float32(32768), float32(-32768))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -15038,7 +15038,7 @@ func F_ftoi4(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13879(m, l0, int32(_a_F_ftoi4_0), int32(1303), int32(_a_F_ftoi4_1), float32(2.1474836e+09), float32(-2.1474836e+09))
+	v7 = Fn13901(m, l0, int32(_a_F_ftoi4_0), int32(1303), int32(_a_F_ftoi4_1), float32(2.1474836e+09), float32(-2.1474836e+09))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

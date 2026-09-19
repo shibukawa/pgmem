@@ -239,7 +239,7 @@ func F_euc_cn_to_utf8(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v3 = int32(0)
-	v7 = Fn13848(m, l0, int32(2), v3, v3, v3, int32(_a_F_euc_cn_to_utf8_0))
+	v7 = Fn13870(m, l0, int32(2), v3, v3, v3, int32(_a_F_euc_cn_to_utf8_0))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -482,7 +482,7 @@ func F_euc_kr_to_utf8(m *base.Module, l0 int32) int32 {
 	var v10 int32
 	_ = v10
 	v3 = int32(0)
-	v7 = Fn13848(m, l0, int32(3), v3, v3, v3, int32(_a_F_euc_kr_to_utf8_0))
+	v7 = Fn13870(m, l0, int32(3), v3, v3, v3, int32(_a_F_euc_kr_to_utf8_0))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

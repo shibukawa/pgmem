@@ -86,6 +86,8 @@ func F_ResOwnerPrintDSM(m *base.Module, l0 int32) int32 {
 func F_ResOwnerReleaseBufferIO(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
+	var v2 int32
+	_ = v2
 	var v6 int32
 	_ = v6
 	var v8 int32
@@ -98,84 +100,87 @@ func F_ResOwnerReleaseBufferIO(m *base.Module, l0 int32) {
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
+	var v29 int32
+	_ = v29
+	var v40 int32
+	_ = v40
 	var v41 int32
 	_ = v41
-	var v42 int32
-	_ = v42
 	var v43 int32
 	_ = v43
-	var v48 int32
-	_ = v48
-	var v56 int32
-	_ = v56
+	var v46 int32
+	_ = v46
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
 	var v57 int32
 	_ = v57
-	var v59 int32
-	_ = v59
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
-	var v74 int32
-	_ = v74
-	var v92 int32
-	_ = v92
-	var v93 int32
-	_ = v93
-	var v98 int32
-	_ = v98
+	var v62 int32
+	_ = v62
+	var v65 int32
+	_ = v65
+	var v72 int32
+	_ = v72
+	var v90 int32
+	_ = v90
+	var v91 int32
+	_ = v91
+	var v96 int32
+	_ = v96
+	var v99 int32
+	_ = v99
 	var v101 int32
 	_ = v101
-	var v103 int32
-	_ = v103
-	var v106 int32
-	_ = v106
-	var v109 int32
-	_ = v109
-	var v112 int32
-	_ = v112
+	var v104 int32
+	_ = v104
+	var v107 int32
+	_ = v107
+	var v110 int32
+	_ = v110
+	var v114 int32
+	_ = v114
 	var v116 int32
 	_ = v116
-	var v118 int32
-	_ = v118
-	var v123 int32
-	_ = v123
-	var v127 int32
-	_ = v127
-	var v132 int32
-	_ = v132
+	var v121 int32
+	_ = v121
+	var v125 int32
+	_ = v125
+	var v130 int32
+	_ = v130
+	var v139 int32
+	_ = v139
+	var v143 int32
+	_ = v143
 	var v145 int32
 	_ = v145
-	var v146 int32
-	_ = v146
+	var v156 int32
+	_ = v156
+	var v157 int32
+	_ = v157
 	var v159 int32
 	_ = v159
-	var v160 int32
-	_ = v160
-	var v161 int32
-	_ = v161
-	var v166 int32
-	_ = v166
-	var v174 int32
-	_ = v174
-	var v175 int32
-	_ = v175
-	var v177 int32
-	_ = v177
-	var v182 int32
-	_ = v182
-	var v185 int32
-	_ = v185
-	var v192 int32
-	_ = v192
-	var v200 int32
-	_ = v200
-	var v203 int32
-	_ = v203
-	var v208 int32
-	_ = v208
+	var v162 int32
+	_ = v162
+	var v170 int32
+	_ = v170
+	var v171 int32
+	_ = v171
+	var v173 int32
+	_ = v173
+	var v178 int32
+	_ = v178
+	var v181 int32
+	_ = v181
+	var v188 int32
+	_ = v188
+	var v196 int32
+	_ = v196
+	var v199 int32
+	_ = v199
+	var v204 int32
+	_ = v204
+	v2 = int32(0)
 	v6 = m.G0
 	v8 = v6 - int32(80)
 	m.G0 = v8
@@ -183,14 +188,13 @@ func F_ResOwnerReleaseBufferIO(m *base.Module, l0 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(_a_F_ResOwnerReleaseBufferIO_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(_a_F_ResOwnerReleaseBufferIO_1)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_ResOwnerReleaseBufferIO_2)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v2
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = int64(0)
 	v24 = v11 + l0<<(uint(int32(6))%32)
 	v26 = v24 - int32(40)
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
-	v28 = int32(_a_F_ResOwnerReleaseBufferIO_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v27 | v28
-	if v27&v28 != 0 {
+	v27 = int32(_a_F_ResOwnerReleaseBufferIO_3)
+	v29 = base.AtomicRmwOr32(m, v26, v2, v27)
+	if v29&v27 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -200,14 +204,14 @@ L1:
 	goto L4
 L2:
 	;
-	v48 = v27
+	v46 = v29
 	goto L3
 L3:
 	;
-	v56 = int32(_a_F_ResOwnerReleaseBufferIO_4)
-	v57 = *(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[1]))
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))+8))
-	if v59 == int32(0) {
+	v54 = int32(_a_F_ResOwnerReleaseBufferIO_4)
+	v55 = *(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[1]))
+	v57 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))+8))
+	if v57 == int32(0) {
 		goto L12
 	} else {
 		goto L13
@@ -216,25 +220,24 @@ L4:
 	;
 	F_perform_spin_delay(m, v8+int32(8))
 	mBase = m.M
-	v41 = m.ExcPending
-	if v41 != 0 {
+	v40 = m.ExcPending
+	if v40 != 0 {
 		goto L6
 	} else {
 		goto L7
 	}
 L5:
 	;
-	v48 = v42
+	v46 = v43
 	goto L3
 L6:
 	;
 	return
 L7:
 	;
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
-	v43 = int32(_a_F_ResOwnerReleaseBufferIO_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v42 | v43
-	if v42&v43 != 0 {
+	v41 = int32(_a_F_ResOwnerReleaseBufferIO_3)
+	v43 = base.AtomicRmwOr32(m, v26, int32(0), v41)
+	if v43&v41 != 0 {
 		goto L4
 	} else {
 		goto L8
@@ -244,7 +247,7 @@ L8:
 	goto L5
 L9:
 	;
-	if v48&int32(16777216) == int32(0) {
+	if v46&int32(16777216) == int32(0) {
 		goto L21
 	} else {
 		goto L22
@@ -254,11 +257,11 @@ L10:
 	goto L9
 L11:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[1])) = v74
+	*(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[1])) = v72
 	goto L10
 L12:
 	;
-	if int32(999) < v57 {
+	if int32(999) < v55 {
 		goto L10
 	} else {
 		goto L15
@@ -268,78 +271,78 @@ L13:
 	goto L14
 L14:
 	;
-	if v57 < int32(11) {
+	if v55 < int32(11) {
 		goto L10
 	} else {
 		goto L19
 	}
 L15:
 	;
-	v64 = int32(900)
-	if v64 <= v57 {
+	v62 = int32(900)
+	if v62 <= v55 {
 		goto L16
 	} else {
 		goto L17
 	}
 L16:
 	;
-	v67 = v64
+	v65 = v62
 	goto L18
 L17:
 	;
-	v67 = v57
+	v65 = v55
 	goto L18
 L18:
 	;
-	v74 = v67 + int32(100)
+	v72 = v65 + int32(100)
 	goto L11
 L19:
 	;
-	v74 = v57 - int32(1)
+	v72 = v55 - int32(1)
 	goto L11
 L20:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(_a_F_ResOwnerReleaseBufferIO_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(_a_F_ResOwnerReleaseBufferIO_1)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_ResOwnerReleaseBufferIO_2)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = int32(0)
+	v139 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v139
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = int64(0)
-	v145 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
-	v146 = int32(_a_F_ResOwnerReleaseBufferIO_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v145 | v146
-	if v145&v146 != 0 {
+	v143 = int32(_a_F_ResOwnerReleaseBufferIO_3)
+	v145 = base.AtomicRmwOr32(m, v26, v139, v143)
+	if v145&v143 != 0 {
 		goto L32
 	} else {
 		goto L33
 	}
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v48 & int32(-20971521)
+	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v46 & int32(-20971521)
 	goto L20
 L22:
 	;
 	goto L23
 L23:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v48 & int32(-4194305)
-	if v48&int32(134217728) == int32(0) {
+	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v46 & int32(-4194305)
+	if v46&int32(134217728) == int32(0) {
 		goto L20
 	} else {
 		goto L24
 	}
 L24:
 	;
-	v92 = F_errstart(m, int32(19), int32(0))
+	v90 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v93 = m.ExcPending
-	if v93 != 0 {
+	v91 = m.ExcPending
+	if v91 != 0 {
 		goto L6
 	} else {
 		goto L25
 	}
 L25:
 	;
-	if v92 == int32(0) {
+	if v90 == int32(0) {
 		goto L20
 	} else {
 		goto L26
@@ -348,36 +351,36 @@ L26:
 	;
 	F_errcode(m, int32(_a_F_ResOwnerReleaseBufferIO_5))
 	mBase = m.M
-	v98 = m.ExcPending
-	if v98 != 0 {
+	v96 = m.ExcPending
+	if v96 != 0 {
 		goto L6
 	} else {
 		goto L27
 	}
 L27:
 	;
-	v101 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(48))))
-	v103 = v8 + int32(8)
-	v106 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(60))))
-	v109 = *(*int32)(unsafe.Add(mBase, uint32(v24+int32(-64))))
-	v112 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(56))))
-	v116 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(52))))
-	F_GetRelationPath(m, v103, v106, v109, v112, int32(-1), v116)
+	v99 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(48))))
+	v101 = v8 + int32(8)
+	v104 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(60))))
+	v107 = *(*int32)(unsafe.Add(mBase, uint32(v24+int32(-64))))
+	v110 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(56))))
+	v114 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(52))))
+	F_GetRelationPath(m, v101, v104, v107, v110, int32(-1), v114)
 	mBase = m.M
-	v118 = m.ExcPending
-	if v118 != 0 {
+	v116 = m.ExcPending
+	if v116 != 0 {
 		goto L6
 	} else {
 		goto L28
 	}
 L28:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v101
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v103
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v99
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v101
 	F_errmsg(m, int32(_a_F_ResOwnerReleaseBufferIO_6), v8)
 	mBase = m.M
-	v123 = m.ExcPending
-	if v123 != 0 {
+	v121 = m.ExcPending
+	if v121 != 0 {
 		goto L6
 	} else {
 		goto L29
@@ -386,8 +389,8 @@ L29:
 	;
 	F_errdetail(m, int32(_a_F_ResOwnerReleaseBufferIO_7), int32(0))
 	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
+	v125 = m.ExcPending
+	if v125 != 0 {
 		goto L6
 	} else {
 		goto L30
@@ -396,8 +399,8 @@ L30:
 	;
 	F_errfinish(m, int32(_a_F_ResOwnerReleaseBufferIO_2), int32(_a_F_ResOwnerReleaseBufferIO_8), int32(_a_F_ResOwnerReleaseBufferIO_9))
 	mBase = m.M
-	v132 = m.ExcPending
-	if v132 != 0 {
+	v130 = m.ExcPending
+	if v130 != 0 {
 		goto L6
 	} else {
 		goto L31
@@ -410,14 +413,14 @@ L32:
 	goto L35
 L33:
 	;
-	v166 = v145
+	v162 = v145
 	goto L34
 L34:
 	;
-	v174 = int32(_a_F_ResOwnerReleaseBufferIO_4)
-	v175 = *(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[1]))
-	v177 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))+8))
-	if v177 == int32(0) {
+	v170 = int32(_a_F_ResOwnerReleaseBufferIO_4)
+	v171 = *(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[1]))
+	v173 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))+8))
+	if v173 == int32(0) {
 		goto L42
 	} else {
 		goto L43
@@ -426,22 +429,21 @@ L35:
 	;
 	F_perform_spin_delay(m, v8+int32(8))
 	mBase = m.M
-	v159 = m.ExcPending
-	if v159 != 0 {
+	v156 = m.ExcPending
+	if v156 != 0 {
 		goto L6
 	} else {
 		goto L37
 	}
 L36:
 	;
-	v166 = v160
+	v162 = v159
 	goto L34
 L37:
 	;
-	v160 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
-	v161 = int32(_a_F_ResOwnerReleaseBufferIO_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v160 | v161
-	if v160&v161 != 0 {
+	v157 = int32(_a_F_ResOwnerReleaseBufferIO_3)
+	v159 = base.AtomicRmwOr32(m, v26, int32(0), v157)
+	if v159&v157 != 0 {
 		goto L35
 	} else {
 		goto L38
@@ -451,13 +453,13 @@ L38:
 	goto L36
 L39:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v166&int32(-205520897) | int32(134217728)
-	v200 = *(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[2]))
-	v203 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(44))))
-	F_ConditionVariableBroadcast(m, v200+v203<<(uint(int32(4))%32))
+	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v162&int32(-205520897) | int32(134217728)
+	v196 = *(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[2]))
+	v199 = *(*int32)(unsafe.Add(mBase, uint32(v24-int32(44))))
+	F_ConditionVariableBroadcast(m, v196+v199<<(uint(int32(4))%32))
 	mBase = m.M
-	v208 = m.ExcPending
-	if v208 != 0 {
+	v204 = m.ExcPending
+	if v204 != 0 {
 		goto L6
 	} else {
 		goto L50
@@ -467,11 +469,11 @@ L40:
 	goto L39
 L41:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[1])) = v192
+	*(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferIO[1])) = v188
 	goto L40
 L42:
 	;
-	if int32(999) < v175 {
+	if int32(999) < v171 {
 		goto L40
 	} else {
 		goto L45
@@ -481,34 +483,34 @@ L43:
 	goto L44
 L44:
 	;
-	if v175 < int32(11) {
+	if v171 < int32(11) {
 		goto L40
 	} else {
 		goto L49
 	}
 L45:
 	;
-	v182 = int32(900)
-	if v182 <= v175 {
+	v178 = int32(900)
+	if v178 <= v171 {
 		goto L46
 	} else {
 		goto L47
 	}
 L46:
 	;
-	v185 = v182
+	v181 = v178
 	goto L48
 L47:
 	;
-	v185 = v175
+	v181 = v171
 	goto L48
 L48:
 	;
-	v192 = v185 + int32(100)
+	v188 = v181 + int32(100)
 	goto L41
 L49:
 	;
-	v192 = v175 - int32(1)
+	v188 = v171 - int32(1)
 	goto L41
 L50:
 	;

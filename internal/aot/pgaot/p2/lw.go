@@ -2,54 +2,58 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
 func F_LWLockNewTrancheId(m *base.Module) int32 {
 	mBase := m.M
 	_ = mBase
+	var v3 int32
+	_ = v3
 	var v5 int32
 	_ = v5
-	var v7 int32
-	_ = v7
 	var v8 int32
 	_ = v8
-	var v12 int32
-	_ = v12
+	var v10 int32
+	_ = v10
+	var v17 int32
+	_ = v17
 	var v19 int32
 	_ = v19
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	var v27 int32
-	_ = v27
-	v5 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[0]))
-	v7 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[1]))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(1)
+	var v20 int32
+	_ = v20
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	v3 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[0]))
+	v5 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[1]))
+	v8 = base.AtomicRmwXchg32(m, v5, int32(0), int32(1))
 	if v8 != 0 {
-		v12 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[1]))
-		F_s_lock(m, v12, int32(_a_F_LWLockNewTrancheId_0), int32(622), int32(_a_F_LWLockNewTrancheId_1))
+		v10 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[1]))
+		F_s_lock(m, v10, int32(_a_F_LWLockNewTrancheId_0), int32(622), int32(_a_F_LWLockNewTrancheId_1))
 		mBase = m.M
-		v19 = m.ExcPending
-		if v19 != 0 {
+		v17 = m.ExcPending
+		if v17 != 0 {
 			return int32(0)
 		} else {
-			v21 = v5 - int32(4)
-			v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
-			*(*int32)(unsafe.Add(mBase, uint32(v21))) = v22 + int32(1)
-			v27 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[1]))
-			*(*int32)(unsafe.Add(mBase, uint32(v27))) = int32(0)
-			return v22
+			v19 = v3 - int32(4)
+			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
+			*(*int32)(unsafe.Add(mBase, uint32(v19))) = v20 + int32(1)
+			v25 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[1]))
+			v26 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v25))), uint32(v26))
+			return v20
 		}
 	} else {
-		v21 = v5 - int32(4)
-		v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
-		*(*int32)(unsafe.Add(mBase, uint32(v21))) = v22 + int32(1)
-		v27 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[1]))
-		*(*int32)(unsafe.Add(mBase, uint32(v27))) = int32(0)
-		return v22
+		v19 = v3 - int32(4)
+		v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
+		*(*int32)(unsafe.Add(mBase, uint32(v19))) = v20 + int32(1)
+		v25 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockNewTrancheId[1]))
+		v26 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v25))), uint32(v26))
+		return v20
 	}
 }
 func F_LWLockRegisterTranche(m *base.Module, l0 int32, l1 int32) {

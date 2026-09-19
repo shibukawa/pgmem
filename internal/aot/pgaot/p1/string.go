@@ -507,6 +507,353 @@ func F_initStringInfo(m *base.Module, l0 int32) {
 		return
 	}
 }
+func F_read_string_with_null(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
+	var v33 int32
+	_ = v33
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
+	var v51 int32
+	_ = v51
+	var v56 int32
+	_ = v56
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
+	var v65 int32
+	_ = v65
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v76 int32
+	_ = v76
+	var v80 int32
+	_ = v80
+	var v85 int32
+	_ = v85
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v92 int32
+	_ = v92
+	v2 = int32(0)
+	v8 = v2
+	v9 = v2
+	v10 = int32(256)
+	goto L1
+L1:
+	;
+	v12 = F_do_getc(m, l0)
+	mBase = m.M
+	v15 = m.ExcPending
+	if v15 != 0 {
+		goto L4
+	} else {
+		goto L5
+	}
+L2:
+	;
+	return v92
+L3:
+	;
+	goto L2
+L4:
+	;
+	return int32(0)
+L5:
+	;
+	if v12 == int32(-1) {
+		goto L6
+	} else {
+		goto L7
+	}
+L6:
+	;
+	v18 = int32(0)
+	if v9 == v18 {
+		v92 = v18
+		goto L3
+	} else {
+		goto L9
+	}
+L7:
+	;
+	goto L8
+L8:
+	;
+	if v9 == int32(0) {
+		goto L14
+	} else {
+		goto L15
+	}
+L9:
+	;
+	F_errstart_cold(m, int32(22), int32(0))
+	mBase = m.M
+	v24 = m.ExcPending
+	if v24 != 0 {
+		goto L4
+	} else {
+		goto L10
+	}
+L10:
+	;
+	F_errmsg_internal(m, int32(_a_F_read_string_with_null_0), int32(0))
+	mBase = m.M
+	v28 = m.ExcPending
+	if v28 != 0 {
+		goto L4
+	} else {
+		goto L11
+	}
+L11:
+	;
+	F_errfinish(m, int32(_a_F_read_string_with_null_1), int32(_a_F_read_string_with_null_2), int32(_a_F_read_string_with_null_3))
+	mBase = m.M
+	v33 = m.ExcPending
+	if v33 != 0 {
+		goto L4
+	} else {
+		goto L12
+	}
+L12:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L13:
+	;
+	*(*uint8)(unsafe.Add(mBase, uint32(v86+v9))) = uint8(v12)
+	if v12 != 0 {
+		v8 = v86
+		v9 = v9 + int32(1)
+		v10 = v87
+		goto L1
+	} else {
+		goto L37
+	}
+L14:
+	;
+	v37 = *(*int32)(unsafe.Add(mBase, _c_F_read_string_with_null[0]))
+	v39 = F_MemoryContextAllocExtended(m, v37, v10, int32(2))
+	mBase = m.M
+	v40 = m.ExcPending
+	if v40 != 0 {
+		goto L4
+	} else {
+		goto L17
+	}
+L15:
+	;
+	goto L16
+L16:
+	;
+	if v9 != v10 {
+		v86 = v8
+		v87 = v10
+		goto L13
+	} else {
+		goto L23
+	}
+L17:
+	;
+	if v39 != 0 {
+		v86 = v39
+		v87 = v10
+		goto L13
+	} else {
+		goto L18
+	}
+L18:
+	;
+	F_errstart_cold(m, int32(22), int32(0))
+	mBase = m.M
+	v44 = m.ExcPending
+	if v44 != 0 {
+		goto L4
+	} else {
+		goto L19
+	}
+L19:
+	;
+	F_errcode(m, int32(_a_F_read_string_with_null_4))
+	mBase = m.M
+	v47 = m.ExcPending
+	if v47 != 0 {
+		goto L4
+	} else {
+		goto L20
+	}
+L20:
+	;
+	F_errmsg(m, int32(_a_F_read_string_with_null_5), int32(0))
+	mBase = m.M
+	v51 = m.ExcPending
+	if v51 != 0 {
+		goto L4
+	} else {
+		goto L21
+	}
+L21:
+	;
+	F_errfinish(m, int32(_a_F_read_string_with_null_1), int32(647), int32(_a_F_read_string_with_null_6))
+	mBase = m.M
+	v56 = m.ExcPending
+	if v56 != 0 {
+		goto L4
+	} else {
+		goto L22
+	}
+L22:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L23:
+	;
+	v59 = v9 << (uint(int32(1)) % 32)
+	if v8 != 0 {
+		goto L26
+	} else {
+		goto L27
+	}
+L24:
+	;
+	v86 = v67
+	v87 = v59
+	goto L13
+L25:
+	;
+	if v67 != 0 {
+		goto L24
+	} else {
+		goto L31
+	}
+L26:
+	;
+	v60 = F_repalloc_extended(m, v8, v59)
+	mBase = m.M
+	v61 = m.ExcPending
+	if v61 != 0 {
+		goto L4
+	} else {
+		goto L29
+	}
+L27:
+	;
+	goto L28
+L28:
+	;
+	v63 = *(*int32)(unsafe.Add(mBase, _c_F_read_string_with_null[0]))
+	v65 = F_MemoryContextAllocExtended(m, v63, v59, int32(2))
+	mBase = m.M
+	v66 = m.ExcPending
+	if v66 != 0 {
+		goto L4
+	} else {
+		goto L30
+	}
+L29:
+	;
+	v67 = v60
+	goto L25
+L30:
+	;
+	v67 = v65
+	goto L25
+L31:
+	;
+	v70 = F_errstart(m, int32(22), int32(0))
+	mBase = m.M
+	v71 = m.ExcPending
+	if v71 != 0 {
+		goto L4
+	} else {
+		goto L32
+	}
+L32:
+	;
+	if v70 == int32(0) {
+		goto L24
+	} else {
+		goto L33
+	}
+L33:
+	;
+	F_errcode(m, int32(_a_F_read_string_with_null_4))
+	mBase = m.M
+	v76 = m.ExcPending
+	if v76 != 0 {
+		goto L4
+	} else {
+		goto L34
+	}
+L34:
+	;
+	F_errmsg(m, int32(_a_F_read_string_with_null_5), int32(0))
+	mBase = m.M
+	v80 = m.ExcPending
+	if v80 != 0 {
+		goto L4
+	} else {
+		goto L35
+	}
+L35:
+	;
+	F_errfinish(m, int32(_a_F_read_string_with_null_1), int32(672), int32(_a_F_read_string_with_null_7))
+	mBase = m.M
+	v85 = m.ExcPending
+	if v85 != 0 {
+		goto L4
+	} else {
+		goto L36
+	}
+L36:
+	;
+	goto L24
+L37:
+	;
+	v92 = v86
+	goto L3
+}
 func F_stringToQualifiedNameList(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

@@ -482,20 +482,20 @@ func F_AtEOXact_LogicalRepWorkers(m *base.Module, l0 int32) {
 	_ = v48
 	var v52 int32
 	_ = v52
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
-	var v57 int32
-	_ = v57
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v72 int32
-	_ = v72
-	var v76 int32
-	_ = v76
+	var v53 int32
+	_ = v53
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v74 int32
+	_ = v74
+	var v78 int32
+	_ = v78
 	v2 = int32(0)
 	if l0 == v2 {
 		goto L1
@@ -538,11 +538,11 @@ L5:
 	}
 L6:
 	;
-	v72 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_LogicalRepWorkers[1]))
-	F_LWLockRelease(m, v72+int32(_a_F_AtEOXact_LogicalRepWorkers_0))
+	v74 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_LogicalRepWorkers[1]))
+	F_LWLockRelease(m, v74+int32(_a_F_AtEOXact_LogicalRepWorkers_0))
 	mBase = m.M
-	v76 = m.ExcPending
-	if v76 != 0 {
+	v78 = m.ExcPending
+	if v78 != 0 {
 		goto L4
 	} else {
 		goto L20
@@ -576,10 +576,10 @@ L10:
 	goto L6
 L11:
 	;
-	v64 = v28 + int32(1)
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(v19)+4))
-	if v64 < v65 {
-		v28 = v64
+	v66 = v28 + int32(1)
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v19)+4))
+	if v66 < v67 {
+		v28 = v66
 		goto L9
 	} else {
 		goto L19
@@ -608,23 +608,19 @@ L15:
 	;
 	v48 = *(*int32)(unsafe.Add(mBase, uint32(v36)+12))
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(v48+v44<<(uint(int32(2))%32))))
-	F_logicalrep_worker_wakeup_ptr(m, v52)
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+20))
+	F_SetLatch(m, v53+int32(20))
 	mBase = m.M
-	v54 = m.ExcPending
-	if v54 != 0 {
-		goto L4
-	} else {
-		goto L17
-	}
+	goto L17
 L16:
 	;
 	goto L11
 L17:
 	;
-	v56 = v44 + int32(1)
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v36)+4))
-	if v56 < v57 {
-		v44 = v56
+	v58 = v44 + int32(1)
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v36)+4))
+	if v58 < v59 {
+		v44 = v58
 		goto L15
 	} else {
 		goto L18

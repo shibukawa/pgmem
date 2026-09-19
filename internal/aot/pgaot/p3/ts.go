@@ -34,70 +34,72 @@ func F_ActivateCommitTs(m *base.Module) {
 	_ = v32
 	var v33 int64
 	_ = v33
-	var v36 int32
-	_ = v36
-	var v40 int32
-	_ = v40
+	var v35 int64
+	_ = v35
+	var v37 int32
+	_ = v37
 	var v41 int32
 	_ = v41
-	var v43 int32
-	_ = v43
+	var v42 int32
+	_ = v42
 	var v44 int32
 	_ = v44
-	var v47 int64
-	_ = v47
-	var v48 int32
+	var v45 int32
+	_ = v45
+	var v48 int64
 	_ = v48
-	var v50 int32
-	_ = v50
+	var v49 int32
+	_ = v49
 	var v51 int32
 	_ = v51
-	var v58 int32
-	_ = v58
-	var v62 int32
-	_ = v62
-	var v64 int32
-	_ = v64
+	var v52 int32
+	_ = v52
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
 	var v65 int32
 	_ = v65
-	var v69 int32
-	_ = v69
+	var v66 int32
+	_ = v66
 	var v70 int32
 	_ = v70
-	var v72 int32
-	_ = v72
+	var v71 int32
+	_ = v71
 	var v73 int32
 	_ = v73
-	var v76 int32
-	_ = v76
-	var v78 int32
-	_ = v78
+	var v74 int32
+	_ = v74
+	var v77 int32
+	_ = v77
 	var v79 int32
 	_ = v79
 	var v80 int32
 	_ = v80
-	var v82 int32
-	_ = v82
+	var v81 int32
+	_ = v81
 	var v83 int32
 	_ = v83
-	var v85 int32
-	_ = v85
-	var v87 int32
-	_ = v87
-	var v90 int32
-	_ = v90
-	var v94 int32
-	_ = v94
+	var v84 int32
+	_ = v84
+	var v86 int32
+	_ = v86
+	var v88 int32
+	_ = v88
+	var v91 int32
+	_ = v91
 	var v95 int32
 	_ = v95
-	var v97 int32
-	_ = v97
+	var v96 int32
+	_ = v96
 	var v98 int32
 	_ = v98
-	var v101 int32
-	_ = v101
-	var v105 int32
-	_ = v105
+	var v99 int32
+	_ = v99
+	var v102 int32
+	_ = v102
+	var v106 int32
+	_ = v106
 	v7 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[0]))
 	if v7 == int32(0) {
 		return
@@ -126,86 +128,86 @@ func F_ActivateCommitTs(m *base.Module) {
 					v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+8))
 					v32 = base.I32_div_u_s(v30, int32(819))
 					v33 = base.I64_extend_i32_u(v32)
-					*(*int64)(unsafe.Add(mBase, uint32(v27)+48)) = v33
-					v36 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-					v40 = F_LWLockAcquire(m, v36+int32(_a_F_ActivateCommitTs_0), int32(0))
+					v35 = base.AtomicRmwXchg64(m, v27, int32(48), v33)
+					v37 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+					v41 = F_LWLockAcquire(m, v37+int32(_a_F_ActivateCommitTs_0), int32(0))
 					mBase = m.M
-					v41 = m.ExcPending
-					if v41 != 0 {
+					v42 = m.ExcPending
+					if v42 != 0 {
 						return
 					} else {
-						v43 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[4]))
-						v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+40))
-						if v44 == int32(0) {
-							v47 = F_ReadNextFullTransactionId(m)
+						v44 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[4]))
+						v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+40))
+						if v45 == int32(0) {
+							v48 = F_ReadNextFullTransactionId(m)
 							mBase = m.M
-							v48 = m.ExcPending
-							if v48 != 0 {
+							v49 = m.ExcPending
+							if v49 != 0 {
 								return
 							} else {
-								v50 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[4]))
-								v51 = base.I32_wrap_i64(v47)
-								*(*int32)(unsafe.Add(mBase, uint32(v50)+40)) = v51
-								*(*int32)(unsafe.Add(mBase, uint32(v50)+44)) = v51
-								v58 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-								F_LWLockRelease(m, v58+int32(_a_F_ActivateCommitTs_0))
+								v51 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[4]))
+								v52 = base.I32_wrap_i64(v48)
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+40)) = v52
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+44)) = v52
+								v59 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+								F_LWLockRelease(m, v59+int32(_a_F_ActivateCommitTs_0))
 								mBase = m.M
-								v62 = m.ExcPending
-								if v62 != 0 {
+								v63 = m.ExcPending
+								if v63 != 0 {
 									return
 								} else {
-									v64 = F_SimpleLruDoesPhysicalPageExist(m, int32(_a_F_ActivateCommitTs_1), v33)
+									v65 = F_SimpleLruDoesPhysicalPageExist(m, int32(_a_F_ActivateCommitTs_1), v33)
 									mBase = m.M
-									v65 = m.ExcPending
-									if v65 != 0 {
+									v66 = m.ExcPending
+									if v66 != 0 {
 										return
 									} else {
-										if v64 == int32(0) {
-											v69 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[3]))
-											v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+28))
-											v72 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_ActivateCommitTs[5])))
-											v73 = base.I32_rem_u_s(v32, v72)
-											v76 = v70 + v73<<(uint(int32(7))%32)
-											v78 = F_LWLockAcquire(m, v76, int32(0))
+										if v65 == int32(0) {
+											v70 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[3]))
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(v70)+28))
+											v73 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_ActivateCommitTs[5])))
+											v74 = base.I32_rem_u_s(v32, v73)
+											v77 = v71 + v74<<(uint(int32(7))%32)
+											v79 = F_LWLockAcquire(m, v77, int32(0))
 											mBase = m.M
-											v79 = m.ExcPending
-											if v79 != 0 {
+											v80 = m.ExcPending
+											if v80 != 0 {
 												return
 											} else {
-												v80 = int32(_a_F_ActivateCommitTs_1)
-												v82 = F_SimpleLruZeroPage(m, v80, v33)
+												v81 = int32(_a_F_ActivateCommitTs_1)
+												v83 = F_SimpleLruZeroPage(m, v81, v33)
 												mBase = m.M
-												v83 = m.ExcPending
-												if v83 != 0 {
+												v84 = m.ExcPending
+												if v84 != 0 {
 													return
 												} else {
-													F_SimpleLruWritePage(m, v80, v82)
+													F_SimpleLruWritePage(m, v81, v83)
 													mBase = m.M
-													v85 = m.ExcPending
-													if v85 != 0 {
+													v86 = m.ExcPending
+													if v86 != 0 {
 														return
 													} else {
-														F_LWLockRelease(m, v76)
+														F_LWLockRelease(m, v77)
 														mBase = m.M
-														v87 = m.ExcPending
-														if v87 != 0 {
+														v88 = m.ExcPending
+														if v88 != 0 {
 															return
 														} else {
-															v90 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-															v94 = F_LWLockAcquire(m, v90+int32(_a_F_ActivateCommitTs_0), int32(0))
+															v91 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+															v95 = F_LWLockAcquire(m, v91+int32(_a_F_ActivateCommitTs_0), int32(0))
 															mBase = m.M
-															v95 = m.ExcPending
-															if v95 != 0 {
+															v96 = m.ExcPending
+															if v96 != 0 {
 																return
 															} else {
-																v97 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[2]))
-																v98 = int32(1)
-																*(*uint8)(unsafe.Add(mBase, uint32(v97)+24)) = uint8(v98)
-																v101 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-																F_LWLockRelease(m, v101+int32(_a_F_ActivateCommitTs_0))
+																v98 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[2]))
+																v99 = int32(1)
+																*(*uint8)(unsafe.Add(mBase, uint32(v98)+24)) = uint8(v99)
+																v102 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+																F_LWLockRelease(m, v102+int32(_a_F_ActivateCommitTs_0))
 																mBase = m.M
-																v105 = m.ExcPending
-																if v105 != 0 {
+																v106 = m.ExcPending
+																if v106 != 0 {
 																	return
 																} else {
 																	return
@@ -216,21 +218,21 @@ func F_ActivateCommitTs(m *base.Module) {
 												}
 											}
 										} else {
-											v90 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-											v94 = F_LWLockAcquire(m, v90+int32(_a_F_ActivateCommitTs_0), int32(0))
+											v91 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+											v95 = F_LWLockAcquire(m, v91+int32(_a_F_ActivateCommitTs_0), int32(0))
 											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
+											v96 = m.ExcPending
+											if v96 != 0 {
 												return
 											} else {
-												v97 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[2]))
-												v98 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(v97)+24)) = uint8(v98)
-												v101 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-												F_LWLockRelease(m, v101+int32(_a_F_ActivateCommitTs_0))
+												v98 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[2]))
+												v99 = int32(1)
+												*(*uint8)(unsafe.Add(mBase, uint32(v98)+24)) = uint8(v99)
+												v102 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+												F_LWLockRelease(m, v102+int32(_a_F_ActivateCommitTs_0))
 												mBase = m.M
-												v105 = m.ExcPending
-												if v105 != 0 {
+												v106 = m.ExcPending
+												if v106 != 0 {
 													return
 												} else {
 													return
@@ -241,65 +243,65 @@ func F_ActivateCommitTs(m *base.Module) {
 								}
 							}
 						} else {
-							v58 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-							F_LWLockRelease(m, v58+int32(_a_F_ActivateCommitTs_0))
+							v59 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+							F_LWLockRelease(m, v59+int32(_a_F_ActivateCommitTs_0))
 							mBase = m.M
-							v62 = m.ExcPending
-							if v62 != 0 {
+							v63 = m.ExcPending
+							if v63 != 0 {
 								return
 							} else {
-								v64 = F_SimpleLruDoesPhysicalPageExist(m, int32(_a_F_ActivateCommitTs_1), v33)
+								v65 = F_SimpleLruDoesPhysicalPageExist(m, int32(_a_F_ActivateCommitTs_1), v33)
 								mBase = m.M
-								v65 = m.ExcPending
-								if v65 != 0 {
+								v66 = m.ExcPending
+								if v66 != 0 {
 									return
 								} else {
-									if v64 == int32(0) {
-										v69 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[3]))
-										v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+28))
-										v72 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_ActivateCommitTs[5])))
-										v73 = base.I32_rem_u_s(v32, v72)
-										v76 = v70 + v73<<(uint(int32(7))%32)
-										v78 = F_LWLockAcquire(m, v76, int32(0))
+									if v65 == int32(0) {
+										v70 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[3]))
+										v71 = *(*int32)(unsafe.Add(mBase, uint32(v70)+28))
+										v73 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_ActivateCommitTs[5])))
+										v74 = base.I32_rem_u_s(v32, v73)
+										v77 = v71 + v74<<(uint(int32(7))%32)
+										v79 = F_LWLockAcquire(m, v77, int32(0))
 										mBase = m.M
-										v79 = m.ExcPending
-										if v79 != 0 {
+										v80 = m.ExcPending
+										if v80 != 0 {
 											return
 										} else {
-											v80 = int32(_a_F_ActivateCommitTs_1)
-											v82 = F_SimpleLruZeroPage(m, v80, v33)
+											v81 = int32(_a_F_ActivateCommitTs_1)
+											v83 = F_SimpleLruZeroPage(m, v81, v33)
 											mBase = m.M
-											v83 = m.ExcPending
-											if v83 != 0 {
+											v84 = m.ExcPending
+											if v84 != 0 {
 												return
 											} else {
-												F_SimpleLruWritePage(m, v80, v82)
+												F_SimpleLruWritePage(m, v81, v83)
 												mBase = m.M
-												v85 = m.ExcPending
-												if v85 != 0 {
+												v86 = m.ExcPending
+												if v86 != 0 {
 													return
 												} else {
-													F_LWLockRelease(m, v76)
+													F_LWLockRelease(m, v77)
 													mBase = m.M
-													v87 = m.ExcPending
-													if v87 != 0 {
+													v88 = m.ExcPending
+													if v88 != 0 {
 														return
 													} else {
-														v90 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-														v94 = F_LWLockAcquire(m, v90+int32(_a_F_ActivateCommitTs_0), int32(0))
+														v91 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+														v95 = F_LWLockAcquire(m, v91+int32(_a_F_ActivateCommitTs_0), int32(0))
 														mBase = m.M
-														v95 = m.ExcPending
-														if v95 != 0 {
+														v96 = m.ExcPending
+														if v96 != 0 {
 															return
 														} else {
-															v97 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[2]))
-															v98 = int32(1)
-															*(*uint8)(unsafe.Add(mBase, uint32(v97)+24)) = uint8(v98)
-															v101 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-															F_LWLockRelease(m, v101+int32(_a_F_ActivateCommitTs_0))
+															v98 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[2]))
+															v99 = int32(1)
+															*(*uint8)(unsafe.Add(mBase, uint32(v98)+24)) = uint8(v99)
+															v102 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+															F_LWLockRelease(m, v102+int32(_a_F_ActivateCommitTs_0))
 															mBase = m.M
-															v105 = m.ExcPending
-															if v105 != 0 {
+															v106 = m.ExcPending
+															if v106 != 0 {
 																return
 															} else {
 																return
@@ -310,21 +312,21 @@ func F_ActivateCommitTs(m *base.Module) {
 											}
 										}
 									} else {
-										v90 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-										v94 = F_LWLockAcquire(m, v90+int32(_a_F_ActivateCommitTs_0), int32(0))
+										v91 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+										v95 = F_LWLockAcquire(m, v91+int32(_a_F_ActivateCommitTs_0), int32(0))
 										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
+										v96 = m.ExcPending
+										if v96 != 0 {
 											return
 										} else {
-											v97 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[2]))
-											v98 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v97)+24)) = uint8(v98)
-											v101 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
-											F_LWLockRelease(m, v101+int32(_a_F_ActivateCommitTs_0))
+											v98 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[2]))
+											v99 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(v98)+24)) = uint8(v99)
+											v102 = *(*int32)(unsafe.Add(mBase, _c_F_ActivateCommitTs[1]))
+											F_LWLockRelease(m, v102+int32(_a_F_ActivateCommitTs_0))
 											mBase = m.M
-											v105 = m.ExcPending
-											if v105 != 0 {
+											v106 = m.ExcPending
+											if v106 != 0 {
 												return
 											} else {
 												return

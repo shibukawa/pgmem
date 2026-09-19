@@ -11,6 +11,7 @@ import (
 	"crypto/rand"
 	"errors"
 	"strings"
+	"sync"
 	"sync/atomic"
 	"time"
 )
@@ -21,11 +22,15 @@ type Errno int32
 const (
 	OK           Errno = 0
 	EACCES       Errno = 2
+	EADDRINUSE   Errno = 3
 	EAGAIN       Errno = 6
 	EBADF        Errno = 8
 	EBUSY        Errno = 10
+	ECHILD       Errno = 12
+	ECONNRESET   Errno = 15
 	EEXIST       Errno = 20
 	EFAULT       Errno = 21
+	EINTR        Errno = 27
 	EINVAL       Errno = 28
 	EIO          Errno = 29
 	EISDIR       Errno = 31
@@ -37,6 +42,8 @@ const (
 	ENOSYS       Errno = 52
 	ENOTDIR      Errno = 54
 	ENOTEMPTY    Errno = 55
+	ENOTCONN     Errno = 53
+	ENOTSOCK     Errno = 57
 	ENOTSUP      Errno = 58
 	ENOTTY       Errno = 59
 	EOVERFLOW    Errno = 61
@@ -44,6 +51,7 @@ const (
 	EPIPE        Errno = 64
 	ERANGE       Errno = 68
 	ESPIPE       Errno = 70
+	ESRCH        Errno = 71
 	EXDEV        Errno = 75
 )
 
@@ -116,6 +124,7 @@ const (
 	DT_UNKNOWN uint8 = 0
 	DT_FIFO    uint8 = 1
 	DT_CHR     uint8 = 2
+	DT_SOCK    uint8 = 12
 	DT_DIR     uint8 = 4
 	DT_REG     uint8 = 8
 	DT_LNK     uint8 = 10
@@ -134,6 +143,7 @@ const (
 	KindStdout // fd 1
 	KindStderr // fd 2
 	KindPipe
+	KindSocket // a socket the host owns; see NewSocket
 )
 
 // Node is a filesystem object.
@@ -151,6 +161,12 @@ type Node struct {
 	target string // symlink target
 	mtime  time.Time
 	pipe   *pipeBuf
+	// opens counts the open file descriptions on the node, per pipe end
+	// (index 0 for everything else). A pipe whose write end has no opens
+	// left reads as EOF; a socket whose last fd closes runs onClose.
+	opens   [2]int32
+	sock    any    // KindSocket: the host's socket object
+	onClose func() // KindSocket: run when opens reaches 0
 }
 
 type pipeBuf struct {
@@ -190,6 +206,12 @@ type DirEntry struct {
 
 // FS is an in-memory filesystem with a file-descriptor table.
 type FS struct {
+	// mu guards the tree and the fd table. It is shared by every view of
+	// the same tree (Fork, ForkFDs), because in the multi-process model
+	// the processes of a cluster run on their own goroutines against one
+	// tree; a Clone gets its own.
+	mu      *sync.Mutex
+	pending []func() // socket close callbacks to run once unlocked
 	root    *Node
 	cwd     *Node
 	fds     []*File
@@ -209,11 +231,11 @@ var errNotDir = errors.New("not a directory")
 
 // New creates an empty filesystem with /dev populated and fds 0-2 open.
 func New() *FS {
-	fs := &FS{now: time.Now}
+	fs := &FS{now: time.Now, mu: &sync.Mutex{}}
 	fs.root = fs.newNode(KindDir, 0o755, "")
 	fs.root.parent = fs.root
 	fs.cwd = fs.root
-	dev, _ := fs.MkdirAll("/dev", 0o755)
+	dev, _ := fs.mkdirAllLocked("/dev", 0o755)
 	fs.addChild(dev, fs.newNode(KindNull, 0o666, "null"))
 	fs.addChild(dev, fs.newNode(KindRandom, 0o444, "urandom"))
 	fs.addChild(dev, fs.newNode(KindRandom, 0o444, "random"))
@@ -228,7 +250,7 @@ func New() *FS {
 		{node: stdout, flags: O_WRONLY},
 		{node: stderr, flags: O_WRONLY},
 	}
-	fs.MkdirAll("/tmp", 0o777)
+	fs.mkdirAllLocked("/tmp", 0o777)
 	return fs
 }
 
@@ -352,6 +374,12 @@ func (fs *FS) walkParent(base *Node, p string) (*Node, string, Errno) {
 
 // Lookup resolves an absolute or cwd-relative path.
 func (fs *FS) Lookup(p string) (*Node, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.lookupLocked(p)
+}
+
+func (fs *FS) lookupLocked(p string) (*Node, Errno) {
 	return fs.walk(fs.cwd, p, true)
 }
 
@@ -365,6 +393,7 @@ func (fs *FS) file(fd int32) *File {
 }
 
 func (fs *FS) allocFD(f *File, min int32) int32 {
+	f.node.opens[f.pipeEnd]++
 	for i := int(min); i < len(fs.fds); i++ {
 		if fs.fds[i] == nil {
 			fs.fds[i] = f
@@ -380,6 +409,12 @@ func (fs *FS) allocFD(f *File, min int32) int32 {
 
 // Openat implements openat(2).
 func (fs *FS) Openat(dirfd int32, p string, flags int32, mode uint32) (int32, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.openatLocked(dirfd, p, flags, mode)
+}
+
+func (fs *FS) openatLocked(dirfd int32, p string, flags int32, mode uint32) (int32, Errno) {
 	base, err := fs.baseDir(dirfd, p)
 	if err != OK {
 		return -1, err
@@ -424,16 +459,53 @@ func (fs *FS) Openat(dirfd int32, p string, flags int32, mode uint32) (int32, Er
 
 // Close implements close(2).
 func (fs *FS) Close(fd int32) Errno {
+	fs.mu.Lock()
+	err := fs.closeLocked(fd)
+	cbs := fs.pending
+	fs.pending = nil
+	fs.mu.Unlock()
+	fs.runPending(cbs)
+	return err
+}
+
+func (fs *FS) closeLocked(fd int32) Errno {
 	f := fs.file(fd)
 	if f == nil {
 		return EBADF
 	}
 	fs.fds[fd] = nil
+	fs.release(f)
 	return OK
+}
+
+// release drops one open file description of f's node. Callbacks that
+// run at zero are queued on the FS and run by the exported method after
+// it has unlocked (they may close a network connection).
+func (fs *FS) release(f *File) {
+	n := f.node
+	n.opens[f.pipeEnd]--
+	if n.kind == KindSocket && n.opens[0] == 0 && n.onClose != nil {
+		cb := n.onClose
+		n.onClose = nil
+		fs.pending = append(fs.pending, cb)
+	}
+}
+
+// runPending runs the callbacks queued by release. Call it unlocked.
+func (fs *FS) runPending(cbs []func()) {
+	for _, cb := range cbs {
+		cb()
+	}
 }
 
 // Dup implements dup(2) / F_DUPFD.
 func (fs *FS) Dup(fd int32, min int32) (int32, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.dupLocked(fd, min)
+}
+
+func (fs *FS) dupLocked(fd int32, min int32) (int32, Errno) {
 	f := fs.file(fd)
 	if f == nil {
 		return -1, EBADF
@@ -444,6 +516,12 @@ func (fs *FS) Dup(fd int32, min int32) (int32, Errno) {
 
 // Dup3 implements dup3(2).
 func (fs *FS) Dup3(fd, newfd int32) (int32, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.dup3Locked(fd, newfd)
+}
+
+func (fs *FS) dup3Locked(fd, newfd int32) (int32, Errno) {
 	f := fs.file(fd)
 	if f == nil {
 		return -1, EBADF
@@ -457,13 +535,23 @@ func (fs *FS) Dup3(fd, newfd int32) (int32, Errno) {
 	for int32(len(fs.fds)) <= newfd {
 		fs.fds = append(fs.fds, nil)
 	}
+	if old := fs.fds[newfd]; old != nil {
+		fs.release(old)
+	}
 	nf := *f
+	nf.node.opens[nf.pipeEnd]++
 	fs.fds[newfd] = &nf
 	return newfd, OK
 }
 
 // Flags returns the open flags of an fd (F_GETFL).
 func (fs *FS) Flags(fd int32) (int32, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.flagsLocked(fd)
+}
+
+func (fs *FS) flagsLocked(fd int32) (int32, Errno) {
 	f := fs.file(fd)
 	if f == nil {
 		return 0, EBADF
@@ -473,6 +561,12 @@ func (fs *FS) Flags(fd int32) (int32, Errno) {
 
 // SetFlags ORs flags into an fd's open flags (F_SETFL).
 func (fs *FS) SetFlags(fd int32, flags int32) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.setFlagsLocked(fd, flags)
+}
+
+func (fs *FS) setFlagsLocked(fd int32, flags int32) Errno {
 	f := fs.file(fd)
 	if f == nil {
 		return EBADF
@@ -483,6 +577,12 @@ func (fs *FS) SetFlags(fd int32, flags int32) Errno {
 
 // Read implements read(2).
 func (fs *FS) Read(fd int32, buf []byte) (int, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.readLocked(fd, buf)
+}
+
+func (fs *FS) readLocked(fd int32, buf []byte) (int, Errno) {
 	f := fs.file(fd)
 	if f == nil {
 		return 0, EBADF
@@ -516,6 +616,9 @@ func (fs *FS) Read(fd int32, buf []byte) (int, Errno) {
 			return 0, EBADF
 		}
 		if len(n.pipe.buf) == 0 {
+			if n.opens[1] == 0 {
+				return 0, OK // every write end is closed: EOF
+			}
 			// Behave as if the read end is always non-blocking (as PIPEFS does).
 			return 0, EAGAIN
 		}
@@ -528,6 +631,12 @@ func (fs *FS) Read(fd int32, buf []byte) (int, Errno) {
 
 // Write implements write(2).
 func (fs *FS) Write(fd int32, buf []byte) (int, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.writeLocked(fd, buf)
+}
+
+func (fs *FS) writeLocked(fd int32, buf []byte) (int, Errno) {
 	f := fs.file(fd)
 	if f == nil {
 		return 0, EBADF
@@ -617,6 +726,12 @@ func growCap(cur, need int64) int64 {
 
 // Seek implements lseek(2).
 func (fs *FS) Seek(fd int32, offset int64, whence int32) (int64, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.seekLocked(fd, offset, whence)
+}
+
+func (fs *FS) seekLocked(fd int32, offset int64, whence int32) (int64, Errno) {
 	f := fs.file(fd)
 	if f == nil {
 		return 0, EBADF
@@ -648,6 +763,12 @@ func (fs *FS) Seek(fd int32, offset int64, whence int32) (int64, Errno) {
 
 // Fsync is a no-op (everything is already in memory).
 func (fs *FS) Fsync(fd int32) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.fsyncLocked(fd)
+}
+
+func (fs *FS) fsyncLocked(fd int32) Errno {
 	if fs.file(fd) == nil {
 		return EBADF
 	}
@@ -669,6 +790,8 @@ func (fs *FS) statNode(n *Node) Stat {
 		st.Size = int64(len(n.target))
 	case KindPipe:
 		st.Mode = S_IFIFO | n.perm
+	case KindSocket:
+		st.Mode = S_IFSOCK | n.perm
 	default:
 		st.Mode = S_IFCHR | n.perm
 	}
@@ -677,6 +800,12 @@ func (fs *FS) statNode(n *Node) Stat {
 
 // Fstat implements fstat(2).
 func (fs *FS) Fstat(fd int32) (Stat, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.fstatLocked(fd)
+}
+
+func (fs *FS) fstatLocked(fd int32) (Stat, Errno) {
 	f := fs.file(fd)
 	if f == nil {
 		return Stat{}, EBADF
@@ -687,6 +816,12 @@ func (fs *FS) Fstat(fd int32) (Stat, Errno) {
 // IsTTY reports whether the fd refers to a character device that should
 // look like a terminal (stdin/stdout/stderr).
 func (fs *FS) IsTTY(fd int32) bool {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.isTTYLocked(fd)
+}
+
+func (fs *FS) isTTYLocked(fd int32) bool {
 	f := fs.file(fd)
 	if f == nil {
 		return false
@@ -700,6 +835,12 @@ func (fs *FS) IsTTY(fd int32) bool {
 
 // Kind returns the node kind of an fd.
 func (fs *FS) Kind(fd int32) (Kind, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.kindLocked(fd)
+}
+
+func (fs *FS) kindLocked(fd int32) (Kind, Errno) {
 	f := fs.file(fd)
 	if f == nil {
 		return 0, EBADF
@@ -709,8 +850,14 @@ func (fs *FS) Kind(fd int32) (Kind, Errno) {
 
 // Statat implements fstatat(2).
 func (fs *FS) Statat(dirfd int32, p string, follow bool) (Stat, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.statatLocked(dirfd, p, follow)
+}
+
+func (fs *FS) statatLocked(dirfd int32, p string, follow bool) (Stat, Errno) {
 	if p == "" {
-		return fs.Fstat(dirfd)
+		return fs.fstatLocked(dirfd)
 	}
 	base, err := fs.baseDir(dirfd, p)
 	if err != OK {
@@ -725,6 +872,12 @@ func (fs *FS) Statat(dirfd int32, p string, follow bool) (Stat, Errno) {
 
 // Mkdirat implements mkdirat(2).
 func (fs *FS) Mkdirat(dirfd int32, p string, mode uint32) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.mkdiratLocked(dirfd, p, mode)
+}
+
+func (fs *FS) mkdiratLocked(dirfd int32, p string, mode uint32) Errno {
 	base, err := fs.baseDir(dirfd, p)
 	if err != OK {
 		return err
@@ -742,6 +895,12 @@ func (fs *FS) Mkdirat(dirfd int32, p string, mode uint32) Errno {
 
 // MkdirAll creates a directory and all parents. Existing directories are fine.
 func (fs *FS) MkdirAll(p string, mode uint32) (*Node, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.mkdirAllLocked(p, mode)
+}
+
+func (fs *FS) mkdirAllLocked(p string, mode uint32) (*Node, Errno) {
 	cur := fs.root
 	if !strings.HasPrefix(p, "/") {
 		cur = fs.cwd
@@ -772,6 +931,12 @@ func (fs *FS) MkdirAll(p string, mode uint32) (*Node, Errno) {
 
 // Unlinkat implements unlinkat(2).
 func (fs *FS) Unlinkat(dirfd int32, p string, flags int32) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.unlinkatLocked(dirfd, p, flags)
+}
+
+func (fs *FS) unlinkatLocked(dirfd int32, p string, flags int32) Errno {
 	base, err := fs.baseDir(dirfd, p)
 	if err != OK {
 		return err
@@ -801,6 +966,12 @@ func (fs *FS) Unlinkat(dirfd int32, p string, flags int32) Errno {
 
 // Renameat implements renameat(2).
 func (fs *FS) Renameat(olddirfd int32, oldp string, newdirfd int32, newp string) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.renameatLocked(olddirfd, oldp, newdirfd, newp)
+}
+
+func (fs *FS) renameatLocked(olddirfd int32, oldp string, newdirfd int32, newp string) Errno {
 	obase, err := fs.baseDir(olddirfd, oldp)
 	if err != OK {
 		return err
@@ -852,6 +1023,12 @@ func (fs *FS) Renameat(olddirfd int32, oldp string, newdirfd int32, newp string)
 
 // Readlinkat implements readlinkat(2).
 func (fs *FS) Readlinkat(dirfd int32, p string) (string, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.readlinkatLocked(dirfd, p)
+}
+
+func (fs *FS) readlinkatLocked(dirfd int32, p string) (string, Errno) {
 	base, err := fs.baseDir(dirfd, p)
 	if err != OK {
 		return "", err
@@ -868,6 +1045,12 @@ func (fs *FS) Readlinkat(dirfd int32, p string) (string, Errno) {
 
 // Symlinkat implements symlinkat(2).
 func (fs *FS) Symlinkat(target string, dirfd int32, p string) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.symlinkatLocked(target, dirfd, p)
+}
+
+func (fs *FS) symlinkatLocked(target string, dirfd int32, p string) Errno {
 	base, err := fs.baseDir(dirfd, p)
 	if err != OK {
 		return err
@@ -887,7 +1070,13 @@ func (fs *FS) Symlinkat(target string, dirfd int32, p string) Errno {
 
 // Truncate implements truncate(2).
 func (fs *FS) Truncate(p string, size int64) Errno {
-	n, err := fs.Lookup(p)
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.truncateLocked(p, size)
+}
+
+func (fs *FS) truncateLocked(p string, size int64) Errno {
+	n, err := fs.lookupLocked(p)
 	if err != OK {
 		return err
 	}
@@ -896,6 +1085,12 @@ func (fs *FS) Truncate(p string, size int64) Errno {
 
 // Ftruncate implements ftruncate(2).
 func (fs *FS) Ftruncate(fd int32, size int64) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.ftruncateLocked(fd, size)
+}
+
+func (fs *FS) ftruncateLocked(fd int32, size int64) Errno {
 	f := fs.file(fd)
 	if f == nil {
 		return EBADF
@@ -924,6 +1119,12 @@ func (fs *FS) truncateNode(n *Node, size int64) Errno {
 
 // Chmodat sets permission bits.
 func (fs *FS) Chmodat(dirfd int32, p string, mode uint32, follow bool) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.chmodatLocked(dirfd, p, mode, follow)
+}
+
+func (fs *FS) chmodatLocked(dirfd int32, p string, mode uint32, follow bool) Errno {
 	base, err := fs.baseDir(dirfd, p)
 	if err != OK {
 		return err
@@ -938,6 +1139,12 @@ func (fs *FS) Chmodat(dirfd int32, p string, mode uint32, follow bool) Errno {
 
 // Fchmod sets permission bits on an fd.
 func (fs *FS) Fchmod(fd int32, mode uint32) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.fchmodLocked(fd, mode)
+}
+
+func (fs *FS) fchmodLocked(fd int32, mode uint32) Errno {
 	f := fs.file(fd)
 	if f == nil {
 		return EBADF
@@ -948,6 +1155,12 @@ func (fs *FS) Fchmod(fd int32, mode uint32) Errno {
 
 // Accessat implements faccessat(2); every existing file is accessible.
 func (fs *FS) Accessat(dirfd int32, p string) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.accessatLocked(dirfd, p)
+}
+
+func (fs *FS) accessatLocked(dirfd int32, p string) Errno {
 	base, err := fs.baseDir(dirfd, p)
 	if err != OK {
 		return err
@@ -958,6 +1171,12 @@ func (fs *FS) Accessat(dirfd int32, p string) Errno {
 
 // Utimensat updates the mtime.
 func (fs *FS) Utimensat(dirfd int32, p string, follow bool) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.utimensatLocked(dirfd, p, follow)
+}
+
+func (fs *FS) utimensatLocked(dirfd int32, p string, follow bool) Errno {
 	if p == "" {
 		f := fs.file(dirfd)
 		if f == nil {
@@ -980,7 +1199,13 @@ func (fs *FS) Utimensat(dirfd int32, p string, follow bool) Errno {
 
 // Chdir implements chdir(2).
 func (fs *FS) Chdir(p string) Errno {
-	n, err := fs.Lookup(p)
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.chdirLocked(p)
+}
+
+func (fs *FS) chdirLocked(p string) Errno {
+	n, err := fs.lookupLocked(p)
 	if err != OK {
 		return err
 	}
@@ -993,6 +1218,12 @@ func (fs *FS) Chdir(p string) Errno {
 
 // Getcwd returns the current directory path.
 func (fs *FS) Getcwd() string {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.getcwdLocked()
+}
+
+func (fs *FS) getcwdLocked() string {
 	return fs.pathOf(fs.cwd)
 }
 
@@ -1016,6 +1247,12 @@ func (fs *FS) pathOf(n *Node) string {
 // entry consumes entrySize bytes of position, mirroring Emscripten's
 // getdents64 (which uses the stream position as an entry index).
 func (fs *FS) Getdents(fd int32, maxEntries int, entrySize int64) ([]DirEntry, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.getdentsLocked(fd, maxEntries, entrySize)
+}
+
+func (fs *FS) getdentsLocked(fd int32, maxEntries int, entrySize int64) ([]DirEntry, Errno) {
 	f := fs.file(fd)
 	if f == nil {
 		return nil, EBADF
@@ -1037,6 +1274,8 @@ func (fs *FS) Getdents(fd int32, maxEntries int, entrySize int64) ([]DirEntry, E
 				t = DT_LNK
 			case KindPipe:
 				t = DT_FIFO
+			case KindSocket:
+				t = DT_SOCK
 			default:
 				t = DT_CHR
 			}
@@ -1055,6 +1294,12 @@ func (fs *FS) Getdents(fd int32, maxEntries int, entrySize int64) ([]DirEntry, E
 
 // Pipe creates a pipe and returns (readfd, writefd).
 func (fs *FS) Pipe() (int32, int32) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.pipeLocked()
+}
+
+func (fs *FS) pipeLocked() (int32, int32) {
 	n := fs.newNode(KindPipe, 0o600, "pipe")
 	n.pipe = &pipeBuf{}
 	r := fs.allocFD(&File{node: n, flags: O_RDONLY, pipeEnd: 0}, 0)
@@ -1066,10 +1311,16 @@ func (fs *FS) Pipe() (int32, int32) {
 
 // WriteFile creates or replaces a regular file, creating parent directories.
 func (fs *FS) WriteFile(p string, data []byte, perm uint32) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.writeFileLocked(p, data, perm)
+}
+
+func (fs *FS) writeFileLocked(p string, data []byte, perm uint32) Errno {
 	dir, name, err := fs.walkParent(fs.root, p)
 	if err == ENOENT {
 		parts := splitPath(p)
-		if _, e := fs.MkdirAll("/"+strings.Join(parts[:len(parts)-1], "/"), 0o755); e != OK {
+		if _, e := fs.mkdirAllLocked("/"+strings.Join(parts[:len(parts)-1], "/"), 0o755); e != OK {
 			return e
 		}
 		dir, name, err = fs.walkParent(fs.root, p)
@@ -1091,10 +1342,16 @@ func (fs *FS) WriteFile(p string, data []byte, perm uint32) Errno {
 
 // PutFile is WriteFile without the copy: the file takes ownership of data.
 func (fs *FS) PutFile(p string, data []byte, perm uint32) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.putFileLocked(p, data, perm)
+}
+
+func (fs *FS) putFileLocked(p string, data []byte, perm uint32) Errno {
 	dir, name, err := fs.walkParent(fs.root, p)
 	if err == ENOENT {
 		parts := splitPath(p)
-		if _, e := fs.MkdirAll("/"+strings.Join(parts[:len(parts)-1], "/"), 0o755); e != OK {
+		if _, e := fs.mkdirAllLocked("/"+strings.Join(parts[:len(parts)-1], "/"), 0o755); e != OK {
 			return e
 		}
 		dir, name, err = fs.walkParent(fs.root, p)
@@ -1116,7 +1373,13 @@ func (fs *FS) PutFile(p string, data []byte, perm uint32) Errno {
 
 // ReadFile returns a copy of a regular file's contents.
 func (fs *FS) ReadFile(p string) ([]byte, Errno) {
-	n, err := fs.Lookup(p)
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.readFileLocked(p)
+}
+
+func (fs *FS) readFileLocked(p string) ([]byte, Errno) {
+	n, err := fs.lookupLocked(p)
 	if err != OK {
 		return nil, err
 	}
@@ -1128,19 +1391,37 @@ func (fs *FS) ReadFile(p string) ([]byte, Errno) {
 
 // Exists reports whether a path resolves.
 func (fs *FS) Exists(p string) bool {
-	_, err := fs.Lookup(p)
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.existsLocked(p)
+}
+
+func (fs *FS) existsLocked(p string) bool {
+	_, err := fs.lookupLocked(p)
 	return err == OK
 }
 
 // Symlink creates a symlink (absolute path form of Symlinkat).
 func (fs *FS) Symlink(target, p string) Errno {
-	return fs.Symlinkat(target, AT_FDCWD, p)
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.symlinkLocked(target, p)
+}
+
+func (fs *FS) symlinkLocked(target, p string) Errno {
+	return fs.symlinkatLocked(target, AT_FDCWD, p)
 }
 
 // Walk calls fn for every node under root (depth-first, parents first).
 // The path passed to fn is absolute.
 func (fs *FS) Walk(root string, fn func(path string, st Stat, data []byte, target string) error) error {
-	n, err := fs.Lookup(root)
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.walkLocked(root, fn)
+}
+
+func (fs *FS) walkLocked(root string, fn func(path string, st Stat, data []byte, target string) error) error {
+	n, err := fs.lookupLocked(root)
 	if err != OK {
 		return err
 	}
@@ -1178,7 +1459,9 @@ func sortStrings(s []string) {
 // file-descriptor table and working directory. Used to give each guest
 // "process" (initdb, its postgres children, the backend) private fds.
 func (fs *FS) Fork() *FS {
-	nfs := &FS{root: fs.root, cwd: fs.root, now: fs.now, Stdout: fs.Stdout, Stderr: fs.Stderr, Stdin: fs.Stdin}
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	nfs := &FS{mu: fs.mu, root: fs.root, cwd: fs.root, now: fs.now, Stdout: fs.Stdout, Stderr: fs.Stderr, Stdin: fs.Stdin}
 	dev := fs.root.children["dev"]
 	nfs.fds = []*File{
 		{node: dev.children["stdin"], flags: O_RDONLY},
@@ -1188,8 +1471,128 @@ func (fs *FS) Fork() *FS {
 	return nfs
 }
 
+// ForkFDs is Fork with the file descriptor table inherited, the way a
+// child process inherits its parent's open files: pipes, sockets and
+// files stay open in both until each side closes them. The child keeps
+// the parent's working directory.
+func (fs *FS) ForkFDs() *FS {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	nfs := &FS{mu: fs.mu, root: fs.root, cwd: fs.cwd, now: fs.now, Stdout: fs.Stdout, Stderr: fs.Stderr, Stdin: fs.Stdin}
+	nfs.fds = make([]*File, len(fs.fds))
+	for i, f := range fs.fds {
+		if f == nil {
+			continue
+		}
+		nf := *f
+		nf.node.opens[nf.pipeEnd]++
+		nfs.fds[i] = &nf
+	}
+	return nfs
+}
+
+// CloseAll closes every descriptor of this view (a process exited).
+func (fs *FS) CloseAll() {
+	fs.mu.Lock()
+	for fd, f := range fs.fds {
+		if f != nil {
+			fs.fds[fd] = nil
+			fs.release(f)
+		}
+	}
+	cbs := fs.pending
+	fs.pending = nil
+	fs.mu.Unlock()
+	fs.runPending(cbs)
+}
+
+// NewSocket opens a descriptor on a socket object the host owns. onClose
+// runs (unlocked) when the last descriptor referring to it, in any
+// process, is closed.
+func (fs *FS) NewSocket(sock any, onClose func()) int32 {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	n := fs.newNode(KindSocket, 0o777, "socket")
+	n.sock, n.onClose = sock, onClose
+	return fs.allocFD(&File{node: n, flags: O_RDWR}, 0)
+}
+
+// Socket returns the host object behind a socket descriptor.
+func (fs *FS) Socket(fd int32) (any, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	f := fs.file(fd)
+	if f == nil {
+		return nil, EBADF
+	}
+	if f.node.kind != KindSocket {
+		return nil, ENOTSOCK
+	}
+	return f.node.sock, OK
+}
+
+// BindSocket gives a socket a name in the tree (a Unix-domain socket
+// file), so it can be stat'ed, chmod'ed and unlinked like one.
+func (fs *FS) BindSocket(fd int32, p string) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	f := fs.file(fd)
+	if f == nil {
+		return EBADF
+	}
+	if f.node.kind != KindSocket {
+		return ENOTSOCK
+	}
+	dir, name, err := fs.walkParent(fs.root, p)
+	if err != OK {
+		return err
+	}
+	if _, ok := dir.children[name]; ok {
+		return EADDRINUSE
+	}
+	f.node.name = name
+	fs.addChild(dir, f.node)
+	return OK
+}
+
+// PollInfo is what poll(2) needs to know about a descriptor.
+type PollInfo struct {
+	Kind     Kind
+	Readable bool // a read would not block (pipe with data; regular files always)
+	Hup      bool // pipe: every write end is closed
+	Sock     any  // KindSocket: the host object, which decides readiness
+}
+
+// Poll reports the readiness of a descriptor.
+func (fs *FS) Poll(fd int32) (PollInfo, Errno) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	f := fs.file(fd)
+	if f == nil {
+		return PollInfo{}, EBADF
+	}
+	n := f.node
+	pi := PollInfo{Kind: n.kind}
+	switch n.kind {
+	case KindPipe:
+		pi.Readable = len(n.pipe.buf) > 0
+		pi.Hup = n.opens[1] == 0
+	case KindSocket:
+		pi.Sock = n.sock
+	default:
+		pi.Readable = true
+	}
+	return pi, OK
+}
+
 // RemoveAll deletes a subtree.
 func (fs *FS) RemoveAll(p string) Errno {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	return fs.removeAllLocked(p)
+}
+
+func (fs *FS) removeAllLocked(p string) Errno {
 	dir, name, err := fs.walkParent(fs.root, p)
 	if err != OK {
 		return err
@@ -1207,6 +1610,8 @@ func (fs *FS) RemoveAll(p string) Errno {
 // writes a file (copy on write, see Node.own), so cloning a data
 // directory costs its node count, not its size.
 func (fs *FS) Clone() *FS {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
 	nfs := New()
 	nfs.Stdout, nfs.Stderr, nfs.Stdin = fs.Stdout, fs.Stderr, fs.Stdin
 	nfs.root = cloneNode(fs.root, nil)
@@ -1244,4 +1649,16 @@ func cloneNode(n *Node, parent *Node) *Node {
 		}
 	}
 	return &c
+}
+
+// Sockets calls fn for the host object of every open socket descriptor of
+// this view.
+func (fs *FS) Sockets(fn func(sock any)) {
+	fs.mu.Lock()
+	defer fs.mu.Unlock()
+	for _, f := range fs.fds {
+		if f != nil && f.node.kind == KindSocket {
+			fn(f.node.sock)
+		}
+	}
 }

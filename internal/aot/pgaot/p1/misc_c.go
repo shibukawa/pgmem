@@ -3,6 +3,7 @@ package p1
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 	"math"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -2033,8 +2034,11 @@ func F_CompareTSQ(m *base.Module, l0 int32, l1 int32) int32 {
 func F_ConditionVariableInit(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(-1)
-	*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(-4294967296)
+	var v2 int32
+	_ = v2
+	v2 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v2))
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+4)) = int64(-1)
 	return
 }
 func F_ConditionalLockRelation(m *base.Module, l0 int32) int32 {

@@ -419,7 +419,7 @@ func F_binary_upgrade_set_next_index_relfilenode(m *base.Module, l0 int32) int32
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13849(m, l0, int32(_a_F_binary_upgrade_set_next_index_relfilenode_0), int32(_a_F_binary_upgrade_set_next_index_relfilenode_1), int32(134))
+	v5 = Fn13871(m, l0, int32(_a_F_binary_upgrade_set_next_index_relfilenode_0), int32(_a_F_binary_upgrade_set_next_index_relfilenode_1), int32(134))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -432,7 +432,7 @@ func F_binary_upgrade_set_next_pg_enum_oid(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13849(m, l0, int32(_a_F_binary_upgrade_set_next_pg_enum_oid_0), int32(_a_F_binary_upgrade_set_next_pg_enum_oid_1), int32(167))
+	v5 = Fn13871(m, l0, int32(_a_F_binary_upgrade_set_next_pg_enum_oid_0), int32(_a_F_binary_upgrade_set_next_pg_enum_oid_1), int32(167))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

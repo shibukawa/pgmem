@@ -2068,7 +2068,7 @@ func F_GetSchemaPublications(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13829(m, l0, int32(50))
+	v3 = Fn13850(m, l0, int32(50))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -2081,7 +2081,7 @@ func F_has_schema_privilege_id(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13913(m, l0, int32(_a_F_has_schema_privilege_id_0), int32(2615))
+	v4 = Fn13935(m, l0, int32(_a_F_has_schema_privilege_id_0), int32(2615))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2174,7 +2174,7 @@ func F_has_schema_privilege_name_id(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13915(m, l0, int32(_a_F_has_schema_privilege_name_id_0), int32(2615))
+	v4 = Fn13937(m, l0, int32(_a_F_has_schema_privilege_name_id_0), int32(2615))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

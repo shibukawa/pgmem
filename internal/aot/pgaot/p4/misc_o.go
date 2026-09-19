@@ -50,92 +50,72 @@ func F_OpenPipeStream(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v68
 	var v78 int32
 	_ = v78
-	var v90 int32
-	_ = v90
-	var v97 int32
-	_ = v97
-	var v98 int32
-	_ = v98
-	var v100 int64
+	var v92 int32
+	_ = v92
+	var v99 int32
+	_ = v99
+	var v100 int32
 	_ = v100
-	var v102 int64
+	var v102 int32
 	_ = v102
-	var v113 int32
-	_ = v113
-	var v114 int32
-	_ = v114
-	var v115 int32
-	_ = v115
-	var v120 int32
-	_ = v120
-	var v122 int32
-	_ = v122
-	var v124 int32
-	_ = v124
-	var v126 int32
-	_ = v126
-	var v128 int32
-	_ = v128
-	var v138 int32
-	_ = v138
+	var v104 int32
+	_ = v104
+	var v106 int32
+	_ = v106
+	var v108 int32
+	_ = v108
+	var v118 int32
+	_ = v118
+	var v132 int32
+	_ = v132
+	var v139 int32
+	_ = v139
+	var v141 int32
+	_ = v141
+	var v144 int32
+	_ = v144
+	var v149 int32
+	_ = v149
 	var v150 int32
 	_ = v150
-	var v157 int32
-	_ = v157
+	var v152 int32
+	_ = v152
+	var v154 int32
+	_ = v154
 	var v158 int32
 	_ = v158
-	var v160 int64
-	_ = v160
-	var v162 int64
-	_ = v162
+	var v159 int32
+	_ = v159
+	var v164 int32
+	_ = v164
+	var v165 int32
+	_ = v165
+	var v168 int32
+	_ = v168
 	var v172 int32
 	_ = v172
-	var v174 int32
-	_ = v174
 	var v177 int32
 	_ = v177
-	var v182 int32
-	_ = v182
+	var v179 int32
+	_ = v179
 	var v183 int32
 	_ = v183
-	var v185 int32
-	_ = v185
-	var v187 int32
-	_ = v187
-	var v191 int32
-	_ = v191
-	var v192 int32
-	_ = v192
-	var v197 int32
-	_ = v197
+	var v184 int32
+	_ = v184
+	var v186 int32
+	_ = v186
+	var v190 int32
+	_ = v190
 	var v198 int32
 	_ = v198
 	var v201 int32
 	_ = v201
-	var v205 int32
-	_ = v205
-	var v210 int32
-	_ = v210
-	var v212 int32
-	_ = v212
-	var v216 int32
-	_ = v216
-	var v217 int32
-	_ = v217
-	var v219 int32
-	_ = v219
-	var v223 int32
-	_ = v223
-	var v231 int32
-	_ = v231
-	var v234 int32
-	_ = v234
-	var v237 int32
-	_ = v237
-	var v241 int32
-	_ = v241
-	var v246 int32
-	_ = v246
+	var v204 int32
+	_ = v204
+	var v208 int32
+	_ = v208
+	var v213 int32
+	_ = v213
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
@@ -172,11 +152,11 @@ L5:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v231 = m.ExcPending
-	if v231 != 0 {
+	v198 = m.ExcPending
+	if v198 != 0 {
 		goto L1
 	} else {
-		goto L65
+		goto L47
 	}
 L6:
 	;
@@ -233,7 +213,7 @@ L13:
 L14:
 	;
 	m.G0 = v8 + int32(16)
-	return v223
+	return v190
 L15:
 	;
 	v61 = F_fflush(m, int32(0))
@@ -246,8 +226,8 @@ L15:
 	}
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[5])) = v122
-	v223 = v192
+	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[5])) = v102
+	v190 = v159
 	goto L14
 L17:
 	;
@@ -265,11 +245,13 @@ L17:
 L18:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[5])) = int32(0)
-	v113 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[6]))
-	if v113 != 0 {
-		goto L32
+	v99 = F_pgl_popen(m, l0, l1)
+	mBase = m.M
+	v100 = m.ExcPending
+	if v100 != 0 {
+		goto L1
 	} else {
-		goto L33
+		goto L24
 	}
 L19:
 	;
@@ -279,7 +261,7 @@ L19:
 	goto L22
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[7])) = v64
+	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[6])) = v64
 	v78 = int32(_a_F_OpenPipeStream_0)
 	goto L19
 L22:
@@ -288,181 +270,168 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v68)+24)) = int32(268435456)
-	v90 = v68 + int32(12)
-	goto L26
-L24:
-	;
+	v92 = F___sigaction(m, int32(13), v68+int32(12), int32(0))
+	mBase = m.M
 	m.G0 = v68 + int32(32)
 	goto L18
+L24:
+	;
+	v102 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[5]))
+	v104 = int32(-2)
+	v106 = m.G0
+	v108 = v106 - int32(32)
+	m.G0 = v108
+	switch int32(0) {
+	case 0, 2:
+		v118 = v104
+		goto L26
+	default:
+		goto L27
+	}
+L25:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[5])) = v102
+	if v99 != 0 {
+		goto L31
+	} else {
+		goto L32
+	}
 L26:
 	;
-	goto L27
+	*(*int32)(unsafe.Add(mBase, uint32(v108)+12)) = v118
+	F_sigemptyset(m, v108+int32(16))
+	mBase = m.M
+	goto L29
 L27:
 	;
-	if v90 != 0 {
-		goto L28
-	} else {
-		goto L29
-	}
-L28:
-	;
-	v97 = int32(260)
-	v98 = *(*int32)(unsafe.Add(mBase, uint32(v90)+16))
-	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[8])) = v98
-	v100 = *(*int64)(unsafe.Add(mBase, uint32(v90)+8))
-	*(*int64)(unsafe.Add(mBase, _c_F_OpenPipeStream[9])) = v100
-	v102 = *(*int64)(unsafe.Add(mBase, uint32(v90)))
-	*(*int64)(unsafe.Add(mBase, _c_F_OpenPipeStream[10])) = v102
-	goto L30
+	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[6])) = v104
+	v118 = int32(_a_F_OpenPipeStream_0)
+	goto L26
 L29:
 	;
 	goto L30
 L30:
 	;
-	goto L24
+	*(*int32)(unsafe.Add(mBase, uint32(v108)+24)) = int32(268435456)
+	v132 = F___sigaction(m, int32(13), v108+int32(12), int32(0))
+	mBase = m.M
+	m.G0 = v108 + int32(32)
+	goto L25
 L31:
 	;
-	v122 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[5]))
-	v124 = int32(-2)
-	v126 = m.G0
-	v128 = v126 - int32(32)
-	m.G0 = v128
-	switch int32(0) {
-	case 0, 2:
-		v138 = v124
-		goto L37
-	default:
-		goto L38
-	}
+	v139 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[7]))
+	v141 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[3]))
+	v144 = v139 + v141*int32(12)
+	*(*int32)(unsafe.Add(mBase, uint32(v144)+8)) = v99
+	*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
+	v149 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[8]))
+	v150 = *(*int32)(unsafe.Add(mBase, uint32(v149)+8))
+	goto L34
 L32:
 	;
-	v114 = m.T0[v113].(func(*base.Module, int32, int32) int32)(m, l0, l1)
-	mBase = m.M
-	v115 = m.ExcPending
-	if v115 != 0 {
-		goto L1
-	} else {
-		goto L35
-	}
+	goto L33
 L33:
 	;
-	goto L34
+	v159 = int32(0)
+	switch v102 - int32(33) {
+	case 0, 8:
+		goto L35
+	default:
+		v190 = v159
+		goto L14
+	}
 L34:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[5])) = int32(52)
-	v120 = int32(0)
-	goto L31
+	*(*int32)(unsafe.Add(mBase, uint32(v144)+4)) = v150
+	v152 = int32(_a_F_OpenPipeStream_1)
+	v154 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[3]))
+	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[3])) = v154 + int32(1)
+	v158 = *(*int32)(unsafe.Add(mBase, uint32(v144)+8))
+	v190 = v158
+	goto L14
 L35:
 	;
-	v120 = v114
-	goto L31
+	v164 = F_errstart(m, int32(15), int32(0))
+	mBase = m.M
+	v165 = m.ExcPending
+	if v165 != 0 {
+		goto L1
+	} else {
+		goto L36
+	}
 L36:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[5])) = v122
-	if v120 != 0 {
-		goto L49
+	if v164 != 0 {
+		goto L37
 	} else {
-		goto L50
+		goto L38
 	}
 L37:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v128)+12)) = v138
-	F_sigemptyset(m, v128+int32(16))
+	F_errcode(m, int32(197))
 	mBase = m.M
-	goto L40
+	v168 = m.ExcPending
+	if v168 != 0 {
+		goto L1
+	} else {
+		goto L40
+	}
 L38:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[7])) = v124
-	v138 = int32(_a_F_OpenPipeStream_0)
-	goto L37
+	goto L39
+L39:
+	;
+	v179 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[0]))
+	if int32(0) < v179 {
+		goto L43
+	} else {
+		goto L44
+	}
 L40:
 	;
-	goto L41
+	F_errmsg(m, int32(_a_F_OpenPipeStream_2), int32(0))
+	mBase = m.M
+	v172 = m.ExcPending
+	if v172 != 0 {
+		goto L1
+	} else {
+		goto L41
+	}
 L41:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v128)+24)) = int32(268435456)
-	v150 = v128 + int32(12)
-	goto L44
+	F_errfinish(m, int32(_a_F_OpenPipeStream_3), int32(2793), int32(_a_F_OpenPipeStream_4))
+	mBase = m.M
+	v177 = m.ExcPending
+	if v177 != 0 {
+		goto L1
+	} else {
+		goto L42
+	}
 L42:
 	;
-	m.G0 = v128 + int32(32)
-	goto L36
+	goto L39
+L43:
+	;
+	v183 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[4]))
+	v184 = *(*int32)(unsafe.Add(mBase, uint32(v183)+16))
+	F_LruDelete(m, v184)
+	mBase = m.M
+	v186 = m.ExcPending
+	if v186 != 0 {
+		goto L1
+	} else {
+		goto L46
+	}
 L44:
 	;
 	goto L45
 L45:
 	;
-	if v150 != 0 {
-		goto L46
-	} else {
-		goto L47
-	}
+	goto L16
 L46:
 	;
-	v157 = int32(260)
-	v158 = *(*int32)(unsafe.Add(mBase, uint32(v150)+16))
-	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[8])) = v158
-	v160 = *(*int64)(unsafe.Add(mBase, uint32(v150)+8))
-	*(*int64)(unsafe.Add(mBase, _c_F_OpenPipeStream[9])) = v160
-	v162 = *(*int64)(unsafe.Add(mBase, uint32(v150)))
-	*(*int64)(unsafe.Add(mBase, _c_F_OpenPipeStream[10])) = v162
-	goto L48
+	goto L15
 L47:
-	;
-	goto L48
-L48:
-	;
-	goto L42
-L49:
-	;
-	v172 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[11]))
-	v174 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[3]))
-	v177 = v172 + v174*int32(12)
-	*(*int32)(unsafe.Add(mBase, uint32(v177)+8)) = v120
-	*(*int32)(unsafe.Add(mBase, uint32(v177))) = int32(1)
-	v182 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[12]))
-	v183 = *(*int32)(unsafe.Add(mBase, uint32(v182)+8))
-	goto L52
-L50:
-	;
-	goto L51
-L51:
-	;
-	v192 = int32(0)
-	switch v122 - int32(33) {
-	case 0, 8:
-		goto L53
-	default:
-		v223 = v192
-		goto L14
-	}
-L52:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v177)+4)) = v183
-	v185 = int32(_a_F_OpenPipeStream_1)
-	v187 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[3]))
-	*(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[3])) = v187 + int32(1)
-	v191 = *(*int32)(unsafe.Add(mBase, uint32(v177)+8))
-	v223 = v191
-	goto L14
-L53:
-	;
-	v197 = F_errstart(m, int32(15), int32(0))
-	mBase = m.M
-	v198 = m.ExcPending
-	if v198 != 0 {
-		goto L1
-	} else {
-		goto L54
-	}
-L54:
-	;
-	if v197 != 0 {
-		goto L55
-	} else {
-		goto L56
-	}
-L55:
 	;
 	F_errcode(m, int32(197))
 	mBase = m.M
@@ -470,97 +439,32 @@ L55:
 	if v201 != 0 {
 		goto L1
 	} else {
-		goto L58
+		goto L48
 	}
-L56:
-	;
-	goto L57
-L57:
-	;
-	v212 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[0]))
-	if int32(0) < v212 {
-		goto L61
-	} else {
-		goto L62
-	}
-L58:
-	;
-	F_errmsg(m, int32(_a_F_OpenPipeStream_2), int32(0))
-	mBase = m.M
-	v205 = m.ExcPending
-	if v205 != 0 {
-		goto L1
-	} else {
-		goto L59
-	}
-L59:
-	;
-	F_errfinish(m, int32(_a_F_OpenPipeStream_3), int32(2793), int32(_a_F_OpenPipeStream_4))
-	mBase = m.M
-	v210 = m.ExcPending
-	if v210 != 0 {
-		goto L1
-	} else {
-		goto L60
-	}
-L60:
-	;
-	goto L57
-L61:
-	;
-	v216 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[4]))
-	v217 = *(*int32)(unsafe.Add(mBase, uint32(v216)+16))
-	F_LruDelete(m, v217)
-	mBase = m.M
-	v219 = m.ExcPending
-	if v219 != 0 {
-		goto L1
-	} else {
-		goto L64
-	}
-L62:
-	;
-	goto L63
-L63:
-	;
-	goto L16
-L64:
-	;
-	goto L15
-L65:
-	;
-	F_errcode(m, int32(197))
-	mBase = m.M
-	v234 = m.ExcPending
-	if v234 != 0 {
-		goto L1
-	} else {
-		goto L66
-	}
-L66:
+L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = l0
-	v237 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[13]))
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v237
+	v204 = *(*int32)(unsafe.Add(mBase, _c_F_OpenPipeStream[9]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v204
 	F_errmsg(m, int32(_a_F_OpenPipeStream_5), v8)
 	mBase = m.M
-	v241 = m.ExcPending
-	if v241 != 0 {
+	v208 = m.ExcPending
+	if v208 != 0 {
 		goto L1
 	} else {
-		goto L67
+		goto L49
 	}
-L67:
+L49:
 	;
 	F_errfinish(m, int32(_a_F_OpenPipeStream_3), int32(2765), int32(_a_F_OpenPipeStream_4))
 	mBase = m.M
-	v246 = m.ExcPending
-	if v246 != 0 {
+	v213 = m.ExcPending
+	if v213 != 0 {
 		goto L1
 	} else {
-		goto L68
+		goto L50
 	}
-L68:
+L50:
 	;
 	base.Wasm_trap_unreachable()
 	for {

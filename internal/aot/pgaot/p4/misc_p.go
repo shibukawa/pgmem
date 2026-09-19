@@ -3096,7 +3096,7 @@ func F_ProcessCheckpointerInterrupts(m *base.Module) {
 									if v28 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_ProcessCheckpointerInterrupts_1), int32(1390), int32(_a_F_ProcessCheckpointerInterrupts_2))
+										F_errfinish(m, int32(_a_F_ProcessCheckpointerInterrupts_1), int32(1402), int32(_a_F_ProcessCheckpointerInterrupts_2))
 										mBase = m.M
 										v33 = m.ExcPending
 										if v33 != 0 {
@@ -3187,7 +3187,7 @@ func F_ProcessCheckpointerInterrupts(m *base.Module) {
 								if v28 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_ProcessCheckpointerInterrupts_1), int32(1390), int32(_a_F_ProcessCheckpointerInterrupts_2))
+									F_errfinish(m, int32(_a_F_ProcessCheckpointerInterrupts_1), int32(1402), int32(_a_F_ProcessCheckpointerInterrupts_2))
 									mBase = m.M
 									v33 = m.ExcPending
 									if v33 != 0 {
@@ -10998,20 +10998,42 @@ func F_ProcessPendingWrites(m *base.Module) {
 	_ = v151
 	var v155 int32
 	_ = v155
-	var v157 int32
-	_ = v157
-	var v163 int32
-	_ = v163
+	var v156 int32
+	_ = v156
+	var v159 int32
+	_ = v159
+	var v162 int32
+	_ = v162
+	var v166 int32
+	_ = v166
+	var v168 int32
+	_ = v168
+	var v170 int32
+	_ = v170
+	var v173 int32
+	_ = v173
+	var v176 int32
+	_ = v176
+	var v180 int32
+	_ = v180
+	var v184 int32
+	_ = v184
+	var v188 int32
+	_ = v188
+	var v196 int32
+	_ = v196
+	var v204 int32
+	_ = v204
 	goto L2
 L1:
 	;
 	F_WalSndShutdown(m)
 	mBase = m.M
-	v163 = m.ExcPending
-	if v163 != 0 {
+	v204 = m.ExcPending
+	if v204 != 0 {
 		goto L4
 	} else {
-		goto L47
+		goto L60
 	}
 L2:
 	;
@@ -11026,13 +11048,11 @@ L2:
 L3:
 	;
 	v155 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[0]))
-	F_SetLatch(m, v155)
-	mBase = m.M
-	v157 = m.ExcPending
-	if v157 != 0 {
-		goto L4
+	v156 = *(*int32)(unsafe.Add(mBase, uint32(v155)))
+	if v156 != 0 {
+		goto L47
 	} else {
-		goto L46
+		goto L48
 	}
 L4:
 	;
@@ -11340,6 +11360,86 @@ L46:
 	;
 	return
 L47:
+	;
+	goto L46
+L48:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v155))) = int32(1)
+	v159 = *(*int32)(unsafe.Add(mBase, uint32(v155)+4))
+	if v159 == int32(0) {
+		goto L47
+	} else {
+		goto L49
+	}
+L49:
+	;
+	v162 = *(*int32)(unsafe.Add(mBase, uint32(v155)+12))
+	if v162 == int32(0) {
+		goto L47
+	} else {
+		goto L50
+	}
+L50:
+	;
+	v166 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[8]))
+	if v166 == v162 {
+		goto L51
+	} else {
+		goto L52
+	}
+L51:
+	;
+	v168 = m.G0
+	v170 = v168 - int32(16)
+	m.G0 = v170
+	v173 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[9]))
+	if v173 == int32(0) {
+		goto L54
+	} else {
+		goto L55
+	}
+L52:
+	;
+	goto L53
+L53:
+	;
+	v196 = F_pgmem_kill(m, v162, int32(23))
+	mBase = m.M
+	goto L47
+L54:
+	;
+	m.G0 = v170 + int32(16)
+	goto L46
+L55:
+	;
+	v176 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v170)+15)) = uint8(v176)
+	goto L56
+L56:
+	;
+	v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[10]))
+	v184 = F_write(m, v180, v170+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v184 {
+		goto L54
+	} else {
+		goto L58
+	}
+L57:
+	;
+	goto L54
+L58:
+	;
+	v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[11]))
+	if v188 == int32(27) {
+		goto L56
+	} else {
+		goto L59
+	}
+L59:
+	;
+	goto L57
+L60:
 	;
 	base.Wasm_trap_unreachable()
 	for {
@@ -15091,7 +15191,7 @@ func F_plainto_tsquery_byid(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14006(m, l0, int32(1), int32(2))
+	v4 = Fn14028(m, l0, int32(1), int32(2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

@@ -9289,7 +9289,7 @@ func F_get_array_type(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13900(m, l0, int32(82))
+	v3 = Fn13922(m, l0, int32(82))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

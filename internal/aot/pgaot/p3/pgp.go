@@ -5367,7 +5367,7 @@ func F_pgp_pub_encrypt_bytea(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13970(m, l0, int32(0), int32(1))
+	v4 = Fn13992(m, l0, int32(0), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -5383,7 +5383,7 @@ func F_pgp_pub_encrypt_text(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = int32(1)
-	v4 = Fn13970(m, l0, v2, v2)
+	v4 = Fn13992(m, l0, v2, v2)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -7973,7 +7973,7 @@ func F_pgp_sym_encrypt_bytea(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = int32(0)
-	v4 = Fn13970(m, l0, v2, v2)
+	v4 = Fn13992(m, l0, v2, v2)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

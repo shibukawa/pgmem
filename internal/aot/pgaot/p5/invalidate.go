@@ -32,34 +32,34 @@ func F_InvalidateVictimBuffer(m *base.Module, l0 int32) int32 {
 	_ = v32
 	var v43 int32
 	_ = v43
-	var v44 int32
-	_ = v44
+	var v45 int32
+	_ = v45
+	var v57 int32
+	_ = v57
 	var v58 int32
 	_ = v58
-	var v59 int32
-	_ = v59
 	var v60 int32
 	_ = v60
-	var v67 int32
-	_ = v67
-	var v74 int32
-	_ = v74
+	var v65 int32
+	_ = v65
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
 	var v75 int32
 	_ = v75
-	var v77 int32
-	_ = v77
-	var v82 int32
-	_ = v82
-	var v85 int32
-	_ = v85
-	var v92 int32
-	_ = v92
-	var v95 int32
-	_ = v95
+	var v80 int32
+	_ = v80
+	var v83 int32
+	_ = v83
+	var v90 int32
+	_ = v90
+	var v93 int32
+	_ = v93
+	var v108 int32
+	_ = v108
 	var v110 int32
 	_ = v110
-	var v112 int32
-	_ = v112
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
@@ -99,10 +99,9 @@ L3:
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = int32(_a_F_InvalidateVictimBuffer_3)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = int64(0)
-	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	v44 = int32(_a_F_InvalidateVictimBuffer_4)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v43 | v44
-	if v43&v44 != 0 {
+	v43 = int32(_a_F_InvalidateVictimBuffer_4)
+	v45 = base.AtomicRmwOr32(m, l0, int32(24), v43)
+	if v45&v43 != 0 {
 		goto L4
 	} else {
 		goto L5
@@ -112,14 +111,14 @@ L4:
 	goto L7
 L5:
 	;
-	v67 = v43
+	v65 = v45
 	goto L6
 L6:
 	;
-	v74 = int32(_a_F_InvalidateVictimBuffer_5)
-	v75 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateVictimBuffer[1]))
-	v77 = *(*int32)(unsafe.Add(mBase, uint32(v9+int32(24))+8))
-	if v77 == int32(0) {
+	v72 = int32(_a_F_InvalidateVictimBuffer_5)
+	v73 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateVictimBuffer[1]))
+	v75 = *(*int32)(unsafe.Add(mBase, uint32(v9+int32(24))+8))
+	if v75 == int32(0) {
 		goto L14
 	} else {
 		goto L15
@@ -128,22 +127,21 @@ L7:
 	;
 	F_perform_spin_delay(m, v9+int32(24))
 	mBase = m.M
-	v58 = m.ExcPending
-	if v58 != 0 {
+	v57 = m.ExcPending
+	if v57 != 0 {
 		goto L1
 	} else {
 		goto L9
 	}
 L8:
 	;
-	v67 = v59
+	v65 = v60
 	goto L6
 L9:
 	;
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	v60 = int32(_a_F_InvalidateVictimBuffer_4)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v59 | v60
-	if v59&v60 != 0 {
+	v58 = int32(_a_F_InvalidateVictimBuffer_4)
+	v60 = base.AtomicRmwOr32(m, l0, int32(24), v58)
+	if v60&v58 != 0 {
 		goto L7
 	} else {
 		goto L10
@@ -153,8 +151,8 @@ L10:
 	goto L8
 L11:
 	;
-	v95 = v67 & int32(_a_F_InvalidateVictimBuffer_6)
-	if v95 != int32(1) {
+	v93 = v65 & int32(_a_F_InvalidateVictimBuffer_6)
+	if v93 != int32(1) {
 		goto L23
 	} else {
 		goto L24
@@ -164,11 +162,11 @@ L12:
 	goto L11
 L13:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_InvalidateVictimBuffer[1])) = v92
+	*(*int32)(unsafe.Add(mBase, _c_F_InvalidateVictimBuffer[1])) = v90
 	goto L12
 L14:
 	;
-	if int32(999) < v75 {
+	if int32(999) < v73 {
 		goto L12
 	} else {
 		goto L17
@@ -178,48 +176,48 @@ L15:
 	goto L16
 L16:
 	;
-	if v75 < int32(11) {
+	if v73 < int32(11) {
 		goto L12
 	} else {
 		goto L21
 	}
 L17:
 	;
-	v82 = int32(900)
-	if v82 <= v75 {
+	v80 = int32(900)
+	if v80 <= v73 {
 		goto L18
 	} else {
 		goto L19
 	}
 L18:
 	;
-	v85 = v82
+	v83 = v80
 	goto L20
 L19:
 	;
-	v85 = v75
+	v83 = v73
 	goto L20
 L20:
 	;
-	v92 = v85 + int32(100)
+	v90 = v83 + int32(100)
 	goto L13
 L21:
 	;
-	v92 = v75 - int32(1)
+	v90 = v73 - int32(1)
 	goto L13
 L22:
 	;
 	F_LWLockRelease(m, v29)
 	mBase = m.M
-	v112 = m.ExcPending
-	if v112 != 0 {
+	v110 = m.ExcPending
+	if v110 != 0 {
 		goto L1
 	} else {
 		goto L27
 	}
 L23:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v67 & int32(-4194305)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v65 & int32(-4194305)
 	goto L22
 L24:
 	;
@@ -232,8 +230,8 @@ L25:
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = int32(1)
 	F_BufTableDelete(m, v9, v17)
 	mBase = m.M
-	v110 = m.ExcPending
-	if v110 != 0 {
+	v108 = m.ExcPending
+	if v108 != 0 {
 		goto L1
 	} else {
 		goto L26
@@ -244,5 +242,5 @@ L26:
 L27:
 	;
 	m.G0 = v9 + int32(48)
-	return base.B2i32(v95 == int32(1))
+	return base.B2i32(v93 == int32(1))
 }

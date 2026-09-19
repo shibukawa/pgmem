@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -2911,48 +2912,52 @@ func F_heap_prune_record_unchanged_lp_normal(m *base.Module, l0 int32, l1 int32,
 func F_heap_scan_stream_read_next_parallel(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v6 int32
+	_ = v6
 	var v7 int32
 	_ = v7
 	var v8 int32
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v10 int32
-	_ = v10
-	var v13 int64
-	_ = v13
+	var v12 int64
+	_ = v12
+	var v18 int32
+	_ = v18
 	var v19 int32
 	_ = v19
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
-	var v25 int32
-	_ = v25
-	var v33 int32
-	_ = v33
-	var v36 int32
-	_ = v36
-	var v39 int32
-	_ = v39
-	var v44 int32
-	_ = v44
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
 	var v47 int32
 	_ = v47
-	var v56 int32
-	_ = v56
-	var v57 int32
-	_ = v57
-	var v60 int32
-	_ = v60
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v58 int32
+	_ = v58
+	var v64 int32
+	_ = v64
+	var v67 int32
+	_ = v67
 	var v68 int32
 	_ = v68
 	var v69 int32
 	_ = v69
 	var v70 int32
 	_ = v70
-	var v71 int32
-	_ = v71
+	var v73 int32
+	_ = v73
 	var v76 int32
 	_ = v76
 	var v77 int32
@@ -2969,23 +2974,23 @@ func F_heap_scan_stream_read_next_parallel(m *base.Module, l0 int32, l1 int32, l
 	_ = v85
 	var v86 int32
 	_ = v86
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+32))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)+96))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+48)))
-	if v10 == int32(0) {
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l1)+32))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+96))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+48)))
+	if v9 == int32(0) {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	v13 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = v13
-	*(*int64)(unsafe.Add(mBase, uint32(v8))) = v13
-	v19 = int32(4095)
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(v7)+20))
-	if base.Ui32(v20) <= base.Ui32(v19) {
+	v12 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v7)+8)) = v12
+	*(*int64)(unsafe.Add(mBase, uint32(v7))) = v12
+	v18 = int32(4095)
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v6)+20))
+	if base.Ui32(v19) <= base.Ui32(v18) {
 		goto L4
 	} else {
 		goto L5
@@ -2995,7 +3000,7 @@ L2:
 	goto L3
 L3:
 	;
-	v85 = F_table_block_parallelscan_nextpage(m, v9, v8, v7)
+	v85 = F_table_block_parallelscan_nextpage(m, v8, v7, v6)
 	mBase = m.M
 	v86 = m.ExcPending
 	if v86 != 0 {
@@ -3005,52 +3010,53 @@ L3:
 	}
 L4:
 	;
-	v23 = v19
+	v22 = v18
 	goto L6
 L5:
 	;
-	v23 = v20
+	v22 = v19
 	goto L6
 L6:
 	;
-	v25 = int32(base.Ui32(v23) >> (uint(int32(11)) % 32))
-	if v25&(v25-int32(1)) != 0 {
+	v24 = int32(base.Ui32(v22) >> (uint(int32(11)) % 32))
+	if v24&(v24-int32(1)) != 0 {
 		goto L7
 	} else {
 		goto L8
 	}
 L7:
 	;
-	v33 = int32(2) << (uint(base.I32_clz(v25)^int32(31)) % 32)
+	v32 = int32(2) << (uint(base.I32_clz(v24)^int32(31)) % 32)
 	goto L9
 L8:
 	;
-	v33 = v25
+	v32 = v24
 	goto L9
 L9:
 	;
-	if base.Ui32(int32(_a_F_heap_scan_stream_read_next_parallel_0)) <= base.Ui32(v33) {
+	if base.Ui32(int32(_a_F_heap_scan_stream_read_next_parallel_0)) <= base.Ui32(v32) {
 		goto L10
 	} else {
 		goto L11
 	}
 L10:
 	;
-	v36 = int32(_a_F_heap_scan_stream_read_next_parallel_0)
+	v35 = int32(_a_F_heap_scan_stream_read_next_parallel_0)
 	goto L12
 L11:
 	;
-	v36 = v33
+	v35 = v32
 	goto L12
 L12:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v36
-	v39 = v7 + int32(24)
-	v44 = int32(-1)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = v35
+	v38 = v6 + int32(24)
+	v42 = int32(-1)
 	goto L14
 L13:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v39))) = int32(0)
+	v73 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v38))), uint32(v73))
 	v76 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	v77 = *(*int32)(unsafe.Add(mBase, uint32(l1)+96))
 	v78 = *(*int32)(unsafe.Add(mBase, uint32(l1)+32))
@@ -3064,8 +3070,7 @@ L13:
 	}
 L14:
 	;
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v39)))
-	*(*int32)(unsafe.Add(mBase, uint32(v39))) = int32(1)
+	v47 = base.AtomicRmwXchg32(m, v38, int32(0), int32(1))
 	if v47 != 0 {
 		goto L16
 	} else {
@@ -3073,14 +3078,14 @@ L14:
 	}
 L15:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = v71
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = v70
 	goto L13
 L16:
 	;
-	F_s_lock(m, v39, int32(_a_F_heap_scan_stream_read_next_parallel_1), int32(455), int32(_a_F_heap_scan_stream_read_next_parallel_2))
+	F_s_lock(m, v38, int32(_a_F_heap_scan_stream_read_next_parallel_1), int32(455), int32(_a_F_heap_scan_stream_read_next_parallel_2))
 	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
+	v54 = m.ExcPending
+	if v54 != 0 {
 		goto L19
 	} else {
 		goto L20
@@ -3090,8 +3095,8 @@ L17:
 	goto L18
 L18:
 	;
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
-	if v57 != int32(-1) {
+	v55 = *(*int32)(unsafe.Add(mBase, uint32(v6)+28))
+	if v55 != int32(-1) {
 		goto L13
 	} else {
 		goto L21
@@ -3104,8 +3109,8 @@ L20:
 	goto L18
 L21:
 	;
-	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+12)))
-	if v60 != int32(1) {
+	v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+12)))
+	if v58 != int32(1) {
 		goto L23
 	} else {
 		goto L24
@@ -3115,34 +3120,35 @@ L22:
 	goto L15
 L23:
 	;
-	v71 = int32(0)
+	v70 = int32(0)
 	goto L22
 L24:
 	;
 	goto L25
 L25:
 	;
-	if v44 != int32(-1) {
-		v71 = v44
+	if v42 != int32(-1) {
+		v70 = v42
 		goto L22
 	} else {
 		goto L26
 	}
 L26:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = int32(0)
-	v68 = *(*int32)(unsafe.Add(mBase, uint32(v7)+20))
-	v69 = F_ss_get_location(m, v9, v68)
+	v64 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v6)+24)), uint32(v64))
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v6)+20))
+	v68 = F_ss_get_location(m, v8, v67)
 	mBase = m.M
-	v70 = m.ExcPending
-	if v70 != 0 {
+	v69 = m.ExcPending
+	if v69 != 0 {
 		goto L19
 	} else {
 		goto L27
 	}
 L27:
 	;
-	v44 = v69
+	v42 = v68
 	goto L14
 L28:
 	;

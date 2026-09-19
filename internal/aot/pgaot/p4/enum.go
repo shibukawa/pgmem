@@ -32,7 +32,7 @@ func F_enum_first(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13871(m, l0, int32(_a_F_enum_first_0), int32(460), int32(451), int32(1))
+	v6 = Fn13893(m, l0, int32(_a_F_enum_first_0), int32(460), int32(451), int32(1))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -45,7 +45,7 @@ func F_enum_last(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13871(m, l0, int32(_a_F_enum_last_0), int32(489), int32(480), int32(-1))
+	v6 = Fn13893(m, l0, int32(_a_F_enum_last_0), int32(489), int32(480), int32(-1))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

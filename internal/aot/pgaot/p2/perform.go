@@ -894,40 +894,40 @@ func F_perform_spin_delay(m *base.Module, l0 int32) {
 	_ = v13
 	var v17 int32
 	_ = v17
+	var v22 int32
+	_ = v22
 	var v23 int32
 	_ = v23
 	var v26 int32
 	_ = v26
-	var v28 int32
-	_ = v28
-	var v30 int32
-	_ = v30
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
 	var v33 int32
 	_ = v33
-	var v34 int32
-	_ = v34
+	var v36 int64
+	_ = v36
 	var v37 int64
 	_ = v37
 	var v38 int64
 	_ = v38
-	var v39 int64
-	_ = v39
-	var v60 float64
-	_ = v60
-	var v64 int32
-	_ = v64
-	var v70 int32
-	_ = v70
-	var v73 int32
-	_ = v73
+	var v59 float64
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v69 int32
+	_ = v69
+	var v72 int32
+	_ = v72
+	var v77 int32
+	_ = v77
 	var v78 int32
 	_ = v78
 	var v79 int32
 	_ = v79
-	var v80 int32
-	_ = v80
-	var v82 int32
-	_ = v82
+	var v81 int32
+	_ = v81
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v6 = v4 + int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v6
@@ -937,13 +937,13 @@ func F_perform_spin_delay(m *base.Module, l0 int32) {
 		v13 = v11 + int32(1)
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v13
 		if int32(1001) <= v13 {
-			v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-			v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-			v80 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-			F_s_lock_stuck(m, v78, v79, v80)
+			v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+			v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+			v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+			F_s_lock_stuck(m, v77, v78, v79)
 			mBase = m.M
-			v82 = m.ExcPending
-			if v82 != 0 {
+			v81 = m.ExcPending
+			if v81 != 0 {
 				return
 			} else {
 				base.Wasm_trap_unreachable()
@@ -956,37 +956,33 @@ func F_perform_spin_delay(m *base.Module, l0 int32) {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(1000)
 			} else {
 			}
+			v22 = int32(_a_F_perform_spin_delay_0)
 			v23 = *(*int32)(unsafe.Add(mBase, _c_F_perform_spin_delay[1]))
 			*(*int32)(unsafe.Add(mBase, uint32(v23))) = int32(150994950)
 			v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 			F_pg_usleep(m, v26)
 			mBase = m.M
-			v28 = m.ExcPending
-			if v28 != 0 {
-				return
+			v29 = *(*int32)(unsafe.Add(mBase, _c_F_perform_spin_delay[1]))
+			*(*int32)(unsafe.Add(mBase, uint32(v29))) = int32(0)
+			v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+			v33 = int32(_a_F_perform_spin_delay_1)
+			v36 = *(*int64)(unsafe.Add(mBase, _c_F_perform_spin_delay[2]))
+			v37 = *(*int64)(unsafe.Add(mBase, _c_F_perform_spin_delay[3]))
+			v38 = v36 ^ v37
+			*(*int64)(unsafe.Add(mBase, _c_F_perform_spin_delay[3])) = base.I64_rotl(v38, int64(37))
+			*(*int64)(unsafe.Add(mBase, _c_F_perform_spin_delay[2])) = v38<<(uint(int64(16))%64) ^ base.I64_rotl(v36, int64(24)) ^ v38
+			v59 = F_scalbn(m, base.F64_convert_i64_u(int64(base.Ui64(base.I64_rotl(v36*int64(5), int64(7))*int64(9))>>(uint(int64(12))%64))), int32(-52))
+			mBase = m.M
+			*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(0)
+			v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+			v69 = v63 + base.I32_trunc_sat_f64_s(base.F64_add(base.F64_mul(v59, base.F64_convert_i32_s(v32)), float64(0.5)))
+			if int32(_a_F_perform_spin_delay_2) < v69 {
+				v72 = int32(1000)
 			} else {
-				v30 = *(*int32)(unsafe.Add(mBase, _c_F_perform_spin_delay[1]))
-				*(*int32)(unsafe.Add(mBase, uint32(v30))) = int32(0)
-				v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-				v34 = int32(_a_F_perform_spin_delay_0)
-				v37 = *(*int64)(unsafe.Add(mBase, _c_F_perform_spin_delay[2]))
-				v38 = *(*int64)(unsafe.Add(mBase, _c_F_perform_spin_delay[3]))
-				v39 = v37 ^ v38
-				*(*int64)(unsafe.Add(mBase, _c_F_perform_spin_delay[3])) = base.I64_rotl(v39, int64(37))
-				*(*int64)(unsafe.Add(mBase, _c_F_perform_spin_delay[2])) = v39<<(uint(int64(16))%64) ^ base.I64_rotl(v37, int64(24)) ^ v39
-				v60 = F_scalbn(m, base.F64_convert_i64_u(int64(base.Ui64(base.I64_rotl(v37*int64(5), int64(7))*int64(9))>>(uint(int64(12))%64))), int32(-52))
-				mBase = m.M
-				*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(0)
-				v64 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-				v70 = v64 + base.I32_trunc_sat_f64_s(base.F64_add(base.F64_mul(v60, base.F64_convert_i32_s(v33)), float64(0.5)))
-				if int32(_a_F_perform_spin_delay_1) < v70 {
-					v73 = int32(1000)
-				} else {
-					v73 = v70
-				}
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v73
-				return
+				v72 = v69
 			}
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v72
+			return
 		}
 	} else {
 		return

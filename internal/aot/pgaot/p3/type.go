@@ -2660,7 +2660,7 @@ func F_has_type_privilege_name(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13917(m, l0, int32(_a_F_has_type_privilege_name_0), int32(1247), int32(_a_F_has_type_privilege_name_1), int32(_a_F_has_type_privilege_name_2), int32(_a_F_has_type_privilege_name_3), int32(67137668), int32(1238))
+	v9 = Fn13939(m, l0, int32(_a_F_has_type_privilege_name_0), int32(1247), int32(_a_F_has_type_privilege_name_1), int32(_a_F_has_type_privilege_name_2), int32(_a_F_has_type_privilege_name_3), int32(67137668), int32(1238))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)

@@ -223,31 +223,55 @@ func F_ForwardSyncRequest(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v224
 	var v227 int32
 	_ = v227
-	var v234 int32
-	_ = v234
+	var v232 int32
+	_ = v232
+	var v233 int32
+	_ = v233
 	var v236 int32
 	_ = v236
-	var v248 int32
-	_ = v248
+	var v239 int32
+	_ = v239
+	var v243 int32
+	_ = v243
+	var v245 int32
+	_ = v245
+	var v247 int32
+	_ = v247
+	var v250 int32
+	_ = v250
+	var v253 int32
+	_ = v253
+	var v257 int32
+	_ = v257
 	var v261 int32
 	_ = v261
 	var v265 int32
 	_ = v265
-	var v270 int32
-	_ = v270
-	var v283 int32
-	_ = v283
-	var v287 int32
-	_ = v287
-	var v292 int32
-	_ = v292
+	var v273 int32
+	_ = v273
+	var v277 int32
+	_ = v277
+	var v289 int32
+	_ = v289
+	var v302 int32
+	_ = v302
+	var v306 int32
+	_ = v306
+	var v311 int32
+	_ = v311
+	var v324 int32
+	_ = v324
+	var v328 int32
+	_ = v328
+	var v333 int32
+	_ = v333
 	v3 = int32(0)
 	v11 = m.G0
 	v13 = v11 + int32(-64)
 	m.G0 = v13
 	v16 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ForwardSyncRequest[0])))
 	if v16 != int32(1) {
-		v270 = v3
+		v311 = v3
 		goto L2
 	} else {
 		goto L3
@@ -256,16 +280,16 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v283 = m.ExcPending
-	if v283 != 0 {
+	v324 = m.ExcPending
+	if v324 != 0 {
 		goto L5
 	} else {
-		goto L50
+		goto L63
 	}
 L2:
 	;
 	m.G0 = v13 - int32(-64)
-	return v270
+	return v311
 L3:
 	;
 	v20 = *(*int32)(unsafe.Add(mBase, _c_F_ForwardSyncRequest[1]))
@@ -299,14 +323,14 @@ L6:
 	}
 L7:
 	;
-	v261 = *(*int32)(unsafe.Add(mBase, _c_F_ForwardSyncRequest[2]))
-	F_LWLockRelease(m, v261+int32(2176))
+	v302 = *(*int32)(unsafe.Add(mBase, _c_F_ForwardSyncRequest[2]))
+	F_LWLockRelease(m, v302+int32(2176))
 	mBase = m.M
-	v265 = m.ExcPending
-	if v265 != 0 {
+	v306 = m.ExcPending
+	if v306 != 0 {
 		goto L5
 	} else {
-		goto L49
+		goto L62
 	}
 L8:
 	;
@@ -321,21 +345,21 @@ L9:
 	;
 	F_pfree(m, v42)
 	mBase = m.M
-	v248 = m.ExcPending
-	if v248 != 0 {
+	v289 = m.ExcPending
+	if v289 != 0 {
 		goto L5
 	} else {
-		goto L48
+		goto L61
 	}
 L10:
 	;
 	F_hash_destroy(m, v56)
 	mBase = m.M
-	v236 = m.ExcPending
-	if v236 != 0 {
+	v277 = m.ExcPending
+	if v277 != 0 {
 		goto L5
 	} else {
-		goto L47
+		goto L60
 	}
 L11:
 	;
@@ -593,7 +617,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(_a_F_ForwardSyncRequest_2), int32(1314), int32(_a_F_ForwardSyncRequest_0))
+	F_errfinish(m, int32(_a_F_ForwardSyncRequest_2), int32(1326), int32(_a_F_ForwardSyncRequest_0))
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -615,7 +639,7 @@ L43:
 	;
 	v220 = base.I32_div_s(v212, int32(2))
 	if v211 < v220 {
-		v270 = v195
+		v311 = v195
 		goto L2
 	} else {
 		goto L44
@@ -625,7 +649,7 @@ L44:
 	v223 = *(*int32)(unsafe.Add(mBase, _c_F_ForwardSyncRequest[6]))
 	v224 = *(*int32)(unsafe.Add(mBase, uint32(v223)+64))
 	if v224 == int32(-1) {
-		v270 = v195
+		v311 = v195
 		goto L2
 	} else {
 		goto L45
@@ -633,49 +657,128 @@ L44:
 L45:
 	;
 	v227 = *(*int32)(unsafe.Add(mBase, uint32(v223)))
-	F_SetLatch(m, v227+v224*int32(640)+int32(20))
-	mBase = m.M
-	v234 = m.ExcPending
-	if v234 != 0 {
-		goto L5
+	v232 = v227 + v224*int32(640) + int32(20)
+	v233 = *(*int32)(unsafe.Add(mBase, uint32(v232)))
+	if v233 != 0 {
+		goto L47
 	} else {
-		goto L46
+		goto L48
 	}
 L46:
 	;
-	v270 = v195
+	v311 = v195
 	goto L2
 L47:
 	;
-	goto L9
+	goto L46
 L48:
 	;
-	goto L7
+	*(*int32)(unsafe.Add(mBase, uint32(v232))) = int32(1)
+	v236 = *(*int32)(unsafe.Add(mBase, uint32(v232)+4))
+	if v236 == int32(0) {
+		goto L47
+	} else {
+		goto L49
+	}
 L49:
 	;
-	v270 = int32(0)
-	goto L2
+	v239 = *(*int32)(unsafe.Add(mBase, uint32(v232)+12))
+	if v239 == int32(0) {
+		goto L47
+	} else {
+		goto L50
+	}
 L50:
 	;
-	F_errmsg_internal(m, int32(_a_F_ForwardSyncRequest_3), int32(0))
-	mBase = m.M
-	v287 = m.ExcPending
-	if v287 != 0 {
-		goto L5
-	} else {
+	v243 = *(*int32)(unsafe.Add(mBase, _c_F_ForwardSyncRequest[7]))
+	if v243 == v239 {
 		goto L51
-	}
-L51:
-	;
-	F_errfinish(m, int32(_a_F_ForwardSyncRequest_2), int32(1164), int32(_a_F_ForwardSyncRequest_4))
-	mBase = m.M
-	v292 = m.ExcPending
-	if v292 != 0 {
-		goto L5
 	} else {
 		goto L52
 	}
+L51:
+	;
+	v245 = m.G0
+	v247 = v245 - int32(16)
+	m.G0 = v247
+	v250 = *(*int32)(unsafe.Add(mBase, _c_F_ForwardSyncRequest[8]))
+	if v250 == int32(0) {
+		goto L54
+	} else {
+		goto L55
+	}
 L52:
+	;
+	goto L53
+L53:
+	;
+	v273 = F_pgmem_kill(m, v239, int32(23))
+	mBase = m.M
+	goto L47
+L54:
+	;
+	m.G0 = v247 + int32(16)
+	goto L46
+L55:
+	;
+	v253 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v247)+15)) = uint8(v253)
+	goto L56
+L56:
+	;
+	v257 = *(*int32)(unsafe.Add(mBase, _c_F_ForwardSyncRequest[9]))
+	v261 = F_write(m, v257, v247+int32(15), int32(1))
+	mBase = m.M
+	if int32(0) <= v261 {
+		goto L54
+	} else {
+		goto L58
+	}
+L57:
+	;
+	goto L54
+L58:
+	;
+	v265 = *(*int32)(unsafe.Add(mBase, _c_F_ForwardSyncRequest[10]))
+	if v265 == int32(27) {
+		goto L56
+	} else {
+		goto L59
+	}
+L59:
+	;
+	goto L57
+L60:
+	;
+	goto L9
+L61:
+	;
+	goto L7
+L62:
+	;
+	v311 = int32(0)
+	goto L2
+L63:
+	;
+	F_errmsg_internal(m, int32(_a_F_ForwardSyncRequest_3), int32(0))
+	mBase = m.M
+	v328 = m.ExcPending
+	if v328 != 0 {
+		goto L5
+	} else {
+		goto L64
+	}
+L64:
+	;
+	F_errfinish(m, int32(_a_F_ForwardSyncRequest_2), int32(1176), int32(_a_F_ForwardSyncRequest_4))
+	mBase = m.M
+	v333 = m.ExcPending
+	if v333 != 0 {
+		goto L5
+	} else {
+		goto L65
+	}
+L65:
 	;
 	base.Wasm_trap_unreachable()
 	for {
@@ -846,7 +949,7 @@ func F_fastgetattr_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13875(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_1_0))
+	v6 = Fn13897(m, l0, l1, l2, l3, int32(_a_F_fastgetattr_1_0))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

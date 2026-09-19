@@ -1075,7 +1075,7 @@ func F_window_lead(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14018(m, l0, int32(1))
+	v3 = Fn14040(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

@@ -590,7 +590,7 @@ func F_uuid_nil(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14016(m, l0, int32(_a_F_uuid_nil_0), int32(_a_F_uuid_nil_1), int32(_a_F_uuid_nil_2), int32(_a_F_uuid_nil_3), int32(_a_F_uuid_nil_4))
+	v7 = Fn14038(m, l0, int32(_a_F_uuid_nil_0), int32(_a_F_uuid_nil_1), int32(_a_F_uuid_nil_2), int32(_a_F_uuid_nil_3), int32(_a_F_uuid_nil_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

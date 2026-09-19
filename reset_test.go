@@ -221,7 +221,7 @@ func TestCloseLeavesIdleConnectionsToTheClient(t *testing.T) {
 // terminated after Options.WaitTimeout instead of waiting forever; the
 // holder is not affected.
 func TestWaitBehindIdleTransactionFails(t *testing.T) {
-	s := startServer(t, pgmem.Options{WaitTimeout: 300 * time.Millisecond})
+	s := startServer(t, pgmem.Options{SingleUser: true, WaitTimeout: 300 * time.Millisecond})
 	ctx := context.Background()
 	holder, err := pgx.Connect(ctx, s.DSN())
 	if err != nil {
@@ -257,7 +257,7 @@ func TestWaitBehindIdleTransactionFails(t *testing.T) {
 // A slow statement is not an idle transaction: other connections wait for
 // it however long it runs.
 func TestWaitBehindRunningStatementSucceeds(t *testing.T) {
-	s := startServer(t, pgmem.Options{WaitTimeout: 200 * time.Millisecond})
+	s := startServer(t, pgmem.Options{SingleUser: true, WaitTimeout: 200 * time.Millisecond})
 	ctx := context.Background()
 	slow, err := pgx.Connect(ctx, s.DSN())
 	if err != nil {

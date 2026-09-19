@@ -692,7 +692,7 @@ func F_to_bin32(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn14003(m, l0, int64(1), int64(2), int32(1))
+	v5 = Fn14025(m, l0, int64(1), int64(2), int32(1))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -1182,7 +1182,7 @@ func F_to_regoper(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14005(m, l0, int32(1479))
+	v3 = Fn14027(m, l0, int32(1479))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1195,7 +1195,7 @@ func F_to_regoperator(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14005(m, l0, int32(1480))
+	v3 = Fn14027(m, l0, int32(1480))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -1208,7 +1208,7 @@ func F_to_regrole(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14005(m, l0, int32(1483))
+	v3 = Fn14027(m, l0, int32(1483))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

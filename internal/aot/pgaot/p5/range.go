@@ -679,7 +679,7 @@ func F_get_range_multirange(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13897(m, l0, int32(55))
+	v3 = Fn13919(m, l0, int32(55))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -10106,7 +10106,7 @@ func F_range_lower_inf(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13985(m, l0, int32(3))
+	v3 = Fn14007(m, l0, int32(3))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

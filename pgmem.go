@@ -21,6 +21,7 @@ import (
 	"fmt"
 	"io"
 	"net"
+	"runtime"
 	"runtime/debug"
 	"strconv"
 	"strings"
@@ -68,6 +69,13 @@ type Options struct {
 	Params []string
 	// Log receives server log output and host diagnostics (nil = discard).
 	Log func(format string, args ...any)
+	// SingleUser runs PostgreSQL in single-user mode: one backend session
+	// that every connection shares, multiplexed by pgmem at transaction
+	// boundaries (the pre-0.2 model). It starts and forks faster than the
+	// default multi-process model but cannot run two sessions at once:
+	// no lock waits between connections, no deadlock detection, session
+	// state shared between connections. See the README for the trade-offs.
+	SingleUser bool
 	// WaitTimeout bounds how long a connection waits for the shared session
 	// while the connection holding it sits idle inside a transaction. The
 	// waiting connection is then terminated with SQLSTATE 55P03 and a
@@ -91,6 +99,9 @@ type Server struct {
 	bmu sync.Mutex
 	fs  *vfs.FS
 	b   *engine.Backend
+	// cl is the postmaster and its processes in the default multi-process
+	// model (b is then nil); see serveCluster.
+	cl *engine.Cluster
 
 	// sem serializes use of the single backend. A connection holds it for
 	// one message batch normally, and across batches while it is inside a
@@ -129,12 +140,13 @@ type Server struct {
 	restored *Snapshot
 	dirty    bool
 
-	onClose func()        // set for forks: returns the Snapshot's slot
-	done    chan struct{} // closed by Close
-	connSeq atomic.Int64
-	closed  atomic.Bool
-	connsMu sync.Mutex
-	conns   map[net.Conn]struct{}
+	onClose   func()        // set for forks: returns the Snapshot's slot
+	done      chan struct{} // closed by Close
+	connSeq   atomic.Int64
+	closed    atomic.Bool
+	connsMu   sync.Mutex
+	conns     map[net.Conn]struct{}
+	csessions map[*csession]struct{} // cluster model: the live sessions
 }
 
 // Start boots a fresh server: compiles the module, runs initdb into memory,
@@ -182,6 +194,11 @@ func Start(ctx context.Context, opts Options) (*Server, error) {
 }
 
 func (o Options) withDefaults() Options {
+	if !o.SingleUser && runtime.GOOS == "windows" {
+		// the shared memory of a cluster is mapped with mmap(MAP_FIXED);
+		// Windows has no equivalent here yet
+		o.SingleUser = true
+	}
 	if o.Database == "" {
 		o.Database = "postgres"
 	}
@@ -201,8 +218,9 @@ func (o Options) withDefaults() Options {
 	// For the same reason a parallel query or index build registers
 	// workers that no postmaster will ever start, and the leader waits
 	// for them to attach forever. With no worker slots the planner and
-	// CREATE INDEX fall back to the leader doing all the work.
-	if !hasSetting(o.Params, "max_parallel_workers") {
+	// CREATE INDEX fall back to the leader doing all the work. A cluster
+	// has a postmaster and starts them.
+	if o.SingleUser && !hasSetting(o.Params, "max_parallel_workers") {
 		o.Params = append([]string{"-c", "max_parallel_workers=0"}, o.Params...)
 	}
 	if o.WaitTimeout == 0 {
@@ -230,14 +248,23 @@ func boot(e *engine.Engine, opts Options, fs *vfs.FS, origin *Snapshot, onClose 
 		restored:  origin,
 		onClose:   onClose,
 	}
-	b, err := s.startBackend(fs, opts.Database)
-	if err != nil {
-		return nil, err
+	if opts.SingleUser {
+		b, err := s.startBackend(fs, opts.Database)
+		if err != nil {
+			return nil, err
+		}
+		s.b = b
+	} else {
+		cl, err := s.startCluster(fs)
+		if err != nil {
+			return nil, err
+		}
+		s.cl = cl
 	}
-	s.fs, s.b = fs, b
+	s.fs = fs
 	ln, err := net.Listen("tcp", net.JoinHostPort("127.0.0.1", strconv.Itoa(opts.Port)))
 	if err != nil {
-		b.Close()
+		s.stopEngine()
 		return nil, err
 	}
 	s.ln = ln
@@ -258,6 +285,26 @@ func (s *Server) startBackend(fs *vfs.FS, name string) (*engine.Backend, error) 
 	}
 	b.Listen = s.onListen
 	return b, nil
+}
+
+// startCluster boots a postmaster on fs with the server's options.
+func (s *Server) startCluster(fs *vfs.FS) (*engine.Cluster, error) {
+	var stderr func([]byte)
+	if s.opts.Log != nil {
+		stderr = func(p []byte) { s.opts.Log("%s", bytes.TrimRight(p, "\n")) }
+	}
+	return s.e.StartCluster(context.Background(), fs, engine.StartOptions{User: s.opts.User, Database: s.opts.Database, Params: s.opts.Params}, stderr)
+}
+
+// stopEngine shuts the backend or the cluster down.
+func (s *Server) stopEngine() error {
+	if s.cl != nil {
+		return s.cl.Shutdown(context.Background())
+	}
+	if s.b != nil {
+		return s.b.Close()
+	}
+	return nil
 }
 
 // Dial returns an in-process connection to the server, bypassing TCP. It
@@ -301,12 +348,15 @@ func (s *Server) Close() error {
 	close(s.done)
 	s.ln.Close()
 	s.connsMu.Lock()
+	for ss := range s.csessions {
+		ss.mute() // the backends' shutdown messages must not reach idle clients
+	}
 	for c := range s.conns {
 		c.SetReadDeadline(time.Now()) // wake the reader; serve lingers from there
 	}
 	s.connsMu.Unlock()
 	s.bmu.Lock()
-	err := s.b.Close() // waits for a batch that is running
+	err := s.stopEngine() // single user: waits for a batch that is running
 	s.bmu.Unlock()
 	if s.onClose != nil {
 		s.onClose()
@@ -473,6 +523,10 @@ func (ss *session) write(p []byte) error {
 }
 
 func (s *Server) serve(c net.Conn) {
+	if s.cl != nil {
+		s.serveCluster(c)
+		return
+	}
 	defer c.Close()
 	r := bufio.NewReaderSize(c, 64*1024)
 	var pkt []byte

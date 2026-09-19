@@ -506,7 +506,7 @@ L6:
 	goto L3
 L7:
 	;
-	v26 = Fn13878(m, v18, int32(58))
+	v26 = Fn13900(m, v18, int32(58))
 	mBase = m.M
 	goto L9
 L8:

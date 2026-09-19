@@ -10,7 +10,7 @@ func F_tts_buffer_is_current_xact_tuple(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14010(m, l0, int32(_a_F_tts_buffer_is_current_xact_tuple_0), int32(796))
+	v4 = Fn14032(m, l0, int32(_a_F_tts_buffer_is_current_xact_tuple_0), int32(796))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1341,7 +1341,7 @@ func F_tts_heap_getsysattr(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn14009(m, l0, l1, l2, int32(_a_F_tts_heap_getsysattr_0), int32(369))
+	v6 = Fn14031(m, l0, l1, l2, int32(_a_F_tts_heap_getsysattr_0), int32(369))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

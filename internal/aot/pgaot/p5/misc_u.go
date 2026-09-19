@@ -108,36 +108,36 @@ func F_UnlockBuffers(m *base.Module) {
 	_ = v9
 	var v20 int32
 	_ = v20
-	var v21 int32
-	_ = v21
+	var v22 int32
+	_ = v22
+	var v31 int32
+	_ = v31
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
 	var v34 int32
 	_ = v34
-	var v40 int32
-	_ = v40
-	var v45 int32
-	_ = v45
+	var v38 int32
+	_ = v38
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
 	var v46 int32
 	_ = v46
-	var v48 int32
-	_ = v48
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v63 int32
-	_ = v63
+	var v51 int32
+	_ = v51
+	var v54 int32
+	_ = v54
+	var v61 int32
+	_ = v61
+	var v67 int32
+	_ = v67
 	var v69 int32
 	_ = v69
 	var v71 int32
 	_ = v71
-	var v73 int32
-	_ = v73
-	var v74 int32
-	_ = v74
+	var v72 int32
+	_ = v72
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
@@ -154,10 +154,9 @@ L1:
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(_a_F_UnlockBuffers_2)
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = int64(0)
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(v9)+24))
-	v21 = int32(_a_F_UnlockBuffers_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = v20 | v21
-	if v20&v21 != 0 {
+	v20 = int32(_a_F_UnlockBuffers_3)
+	v22 = base.AtomicRmwOr32(m, v9, int32(24), v20)
+	if v22&v20 != 0 {
 		goto L4
 	} else {
 		goto L5
@@ -174,14 +173,14 @@ L4:
 	goto L7
 L5:
 	;
-	v40 = v20
+	v38 = v22
 	goto L6
 L6:
 	;
-	v45 = int32(_a_F_UnlockBuffers_4)
-	v46 = *(*int32)(unsafe.Add(mBase, _c_F_UnlockBuffers[1]))
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v6+int32(8))+8))
-	if v48 == int32(0) {
+	v43 = int32(_a_F_UnlockBuffers_4)
+	v44 = *(*int32)(unsafe.Add(mBase, _c_F_UnlockBuffers[1]))
+	v46 = *(*int32)(unsafe.Add(mBase, uint32(v6+int32(8))+8))
+	if v46 == int32(0) {
 		goto L15
 	} else {
 		goto L16
@@ -190,25 +189,24 @@ L7:
 	;
 	F_perform_spin_delay(m, v6+int32(8))
 	mBase = m.M
-	v32 = m.ExcPending
-	if v32 != 0 {
+	v31 = m.ExcPending
+	if v31 != 0 {
 		goto L9
 	} else {
 		goto L10
 	}
 L8:
 	;
-	v40 = v33
+	v38 = v34
 	goto L6
 L9:
 	;
 	return
 L10:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v9)+24))
-	v34 = int32(_a_F_UnlockBuffers_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = v33 | v34
-	if v33&v34 != 0 {
+	v32 = int32(_a_F_UnlockBuffers_3)
+	v34 = base.AtomicRmwOr32(m, v9, int32(24), v32)
+	if v34&v32 != 0 {
 		goto L7
 	} else {
 		goto L11
@@ -218,7 +216,7 @@ L11:
 	goto L8
 L12:
 	;
-	if v40&int32(536870912) != 0 {
+	if v38&int32(536870912) != 0 {
 		goto L23
 	} else {
 		goto L24
@@ -228,11 +226,11 @@ L13:
 	goto L12
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_UnlockBuffers[1])) = v63
+	*(*int32)(unsafe.Add(mBase, _c_F_UnlockBuffers[1])) = v61
 	goto L13
 L15:
 	;
-	if int32(999) < v46 {
+	if int32(999) < v44 {
 		goto L13
 	} else {
 		goto L18
@@ -242,64 +240,64 @@ L16:
 	goto L17
 L17:
 	;
-	if v46 < int32(11) {
+	if v44 < int32(11) {
 		goto L13
 	} else {
 		goto L22
 	}
 L18:
 	;
-	v53 = int32(900)
-	if v53 <= v46 {
+	v51 = int32(900)
+	if v51 <= v44 {
 		goto L19
 	} else {
 		goto L20
 	}
 L19:
 	;
-	v56 = v53
+	v54 = v51
 	goto L21
 L20:
 	;
-	v56 = v46
+	v54 = v44
 	goto L21
 L21:
 	;
-	v63 = v56 + int32(100)
+	v61 = v54 + int32(100)
 	goto L14
 L22:
 	;
-	v63 = v46 - int32(1)
+	v61 = v44 - int32(1)
 	goto L14
 L23:
 	;
-	v69 = *(*int32)(unsafe.Add(mBase, uint32(v9)+28))
-	v71 = *(*int32)(unsafe.Add(mBase, _c_F_UnlockBuffers[2]))
-	if v69 == v71 {
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v9)+28))
+	v69 = *(*int32)(unsafe.Add(mBase, _c_F_UnlockBuffers[2]))
+	if v67 == v69 {
 		goto L26
 	} else {
 		goto L27
 	}
 L24:
 	;
-	v74 = v40
+	v72 = v38
 	goto L25
 L25:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = v74 & int32(-4194305)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = v72 & int32(-4194305)
 	*(*int32)(unsafe.Add(mBase, _c_F_UnlockBuffers[0])) = int32(0)
 	goto L3
 L26:
 	;
-	v73 = v40 & int32(-536870913)
+	v71 = v38 & int32(-536870913)
 	goto L28
 L27:
 	;
-	v73 = v40
+	v71 = v38
 	goto L28
 L28:
 	;
-	v74 = v73
+	v72 = v71
 	goto L25
 }
 func F_UnregisterExprContextCallback(m *base.Module, l0 int32, l1 int32, l2 int32) {

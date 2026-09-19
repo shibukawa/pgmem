@@ -2,6 +2,7 @@ package p4
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -4591,8 +4592,8 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v170
 	var v172 int32
 	_ = v172
-	var v173 int32
-	_ = v173
+	var v175 int32
+	_ = v175
 	var v182 int32
 	_ = v182
 	var v183 int32
@@ -4613,16 +4614,18 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v199
 	var v202 int32
 	_ = v202
-	var v209 int32
-	_ = v209
+	var v204 int32
+	_ = v204
 	var v210 int32
 	_ = v210
-	var v212 int32
-	_ = v212
+	var v211 int32
+	_ = v211
 	var v213 int32
 	_ = v213
-	var v215 int32
-	_ = v215
+	var v214 int32
+	_ = v214
+	var v216 int32
+	_ = v216
 	v11 = m.G0
 	v13 = v11 - int32(32)
 	m.G0 = v13
@@ -4741,9 +4744,8 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 											return
 										} else {
 											if l1 == int32(0) {
-												v173 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-												*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(1)
-												if v173 != 0 {
+												v175 = base.AtomicRmwXchg32(m, l2, int32(36), int32(1))
+												if v175 != 0 {
 													F_s_lock(m, l2+int32(36), int32(_a_F__bt_parallel_scan_and_sort_1), int32(1951), int32(_a_F__bt_parallel_scan_and_sort_2))
 													mBase = m.M
 													v182 = m.ExcPending
@@ -4770,26 +4772,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 															*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 														} else {
 														}
-														*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+														v204 = int32(0)
+														atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 														F_ConditionVariableSignal(m, l2+int32(24))
 														mBase = m.M
-														v209 = m.ExcPending
-														if v209 != 0 {
+														v210 = m.ExcPending
+														if v210 != 0 {
 															return
 														} else {
-															v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-															F_tuplesort_end(m, v210)
+															v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+															F_tuplesort_end(m, v211)
 															mBase = m.M
-															v212 = m.ExcPending
-															if v212 != 0 {
+															v213 = m.ExcPending
+															if v213 != 0 {
 																return
 															} else {
 																if l1 != 0 {
-																	v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																	F_tuplesort_end(m, v213)
+																	v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																	F_tuplesort_end(m, v214)
 																	mBase = m.M
-																	v215 = m.ExcPending
-																	if v215 != 0 {
+																	v216 = m.ExcPending
+																	if v216 != 0 {
 																		return
 																	} else {
 																		m.G0 = v13 + int32(32)
@@ -4823,26 +4826,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 														*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 													} else {
 													}
-													*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+													v204 = int32(0)
+													atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 													F_ConditionVariableSignal(m, l2+int32(24))
 													mBase = m.M
-													v209 = m.ExcPending
-													if v209 != 0 {
+													v210 = m.ExcPending
+													if v210 != 0 {
 														return
 													} else {
-														v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-														F_tuplesort_end(m, v210)
+														v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														F_tuplesort_end(m, v211)
 														mBase = m.M
-														v212 = m.ExcPending
-														if v212 != 0 {
+														v213 = m.ExcPending
+														if v213 != 0 {
 															return
 														} else {
 															if l1 != 0 {
-																v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																F_tuplesort_end(m, v213)
+																v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																F_tuplesort_end(m, v214)
 																mBase = m.M
-																v215 = m.ExcPending
-																if v215 != 0 {
+																v216 = m.ExcPending
+																if v216 != 0 {
 																	return
 																} else {
 																	m.G0 = v13 + int32(32)
@@ -4882,9 +4886,8 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 												if v172 != 0 {
 													return
 												} else {
-													v173 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-													*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(1)
-													if v173 != 0 {
+													v175 = base.AtomicRmwXchg32(m, l2, int32(36), int32(1))
+													if v175 != 0 {
 														F_s_lock(m, l2+int32(36), int32(_a_F__bt_parallel_scan_and_sort_1), int32(1951), int32(_a_F__bt_parallel_scan_and_sort_2))
 														mBase = m.M
 														v182 = m.ExcPending
@@ -4911,26 +4914,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 																*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 															} else {
 															}
-															*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+															v204 = int32(0)
+															atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 															F_ConditionVariableSignal(m, l2+int32(24))
 															mBase = m.M
-															v209 = m.ExcPending
-															if v209 != 0 {
+															v210 = m.ExcPending
+															if v210 != 0 {
 																return
 															} else {
-																v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-																F_tuplesort_end(m, v210)
+																v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																F_tuplesort_end(m, v211)
 																mBase = m.M
-																v212 = m.ExcPending
-																if v212 != 0 {
+																v213 = m.ExcPending
+																if v213 != 0 {
 																	return
 																} else {
 																	if l1 != 0 {
-																		v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																		F_tuplesort_end(m, v213)
+																		v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																		F_tuplesort_end(m, v214)
 																		mBase = m.M
-																		v215 = m.ExcPending
-																		if v215 != 0 {
+																		v216 = m.ExcPending
+																		if v216 != 0 {
 																			return
 																		} else {
 																			m.G0 = v13 + int32(32)
@@ -4964,26 +4968,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 															*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 														} else {
 														}
-														*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+														v204 = int32(0)
+														atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 														F_ConditionVariableSignal(m, l2+int32(24))
 														mBase = m.M
-														v209 = m.ExcPending
-														if v209 != 0 {
+														v210 = m.ExcPending
+														if v210 != 0 {
 															return
 														} else {
-															v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-															F_tuplesort_end(m, v210)
+															v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+															F_tuplesort_end(m, v211)
 															mBase = m.M
-															v212 = m.ExcPending
-															if v212 != 0 {
+															v213 = m.ExcPending
+															if v213 != 0 {
 																return
 															} else {
 																if l1 != 0 {
-																	v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																	F_tuplesort_end(m, v213)
+																	v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																	F_tuplesort_end(m, v214)
 																	mBase = m.M
-																	v215 = m.ExcPending
-																	if v215 != 0 {
+																	v216 = m.ExcPending
+																	if v216 != 0 {
 																		return
 																	} else {
 																		m.G0 = v13 + int32(32)
@@ -5008,9 +5013,8 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 											return
 										} else {
 											if l1 == int32(0) {
-												v173 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-												*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(1)
-												if v173 != 0 {
+												v175 = base.AtomicRmwXchg32(m, l2, int32(36), int32(1))
+												if v175 != 0 {
 													F_s_lock(m, l2+int32(36), int32(_a_F__bt_parallel_scan_and_sort_1), int32(1951), int32(_a_F__bt_parallel_scan_and_sort_2))
 													mBase = m.M
 													v182 = m.ExcPending
@@ -5037,26 +5041,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 															*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 														} else {
 														}
-														*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+														v204 = int32(0)
+														atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 														F_ConditionVariableSignal(m, l2+int32(24))
 														mBase = m.M
-														v209 = m.ExcPending
-														if v209 != 0 {
+														v210 = m.ExcPending
+														if v210 != 0 {
 															return
 														} else {
-															v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-															F_tuplesort_end(m, v210)
+															v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+															F_tuplesort_end(m, v211)
 															mBase = m.M
-															v212 = m.ExcPending
-															if v212 != 0 {
+															v213 = m.ExcPending
+															if v213 != 0 {
 																return
 															} else {
 																if l1 != 0 {
-																	v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																	F_tuplesort_end(m, v213)
+																	v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																	F_tuplesort_end(m, v214)
 																	mBase = m.M
-																	v215 = m.ExcPending
-																	if v215 != 0 {
+																	v216 = m.ExcPending
+																	if v216 != 0 {
 																		return
 																	} else {
 																		m.G0 = v13 + int32(32)
@@ -5090,26 +5095,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 														*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 													} else {
 													}
-													*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+													v204 = int32(0)
+													atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 													F_ConditionVariableSignal(m, l2+int32(24))
 													mBase = m.M
-													v209 = m.ExcPending
-													if v209 != 0 {
+													v210 = m.ExcPending
+													if v210 != 0 {
 														return
 													} else {
-														v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-														F_tuplesort_end(m, v210)
+														v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														F_tuplesort_end(m, v211)
 														mBase = m.M
-														v212 = m.ExcPending
-														if v212 != 0 {
+														v213 = m.ExcPending
+														if v213 != 0 {
 															return
 														} else {
 															if l1 != 0 {
-																v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																F_tuplesort_end(m, v213)
+																v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																F_tuplesort_end(m, v214)
 																mBase = m.M
-																v215 = m.ExcPending
-																if v215 != 0 {
+																v216 = m.ExcPending
+																if v216 != 0 {
 																	return
 																} else {
 																	m.G0 = v13 + int32(32)
@@ -5130,9 +5136,8 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 												if v172 != 0 {
 													return
 												} else {
-													v173 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-													*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(1)
-													if v173 != 0 {
+													v175 = base.AtomicRmwXchg32(m, l2, int32(36), int32(1))
+													if v175 != 0 {
 														F_s_lock(m, l2+int32(36), int32(_a_F__bt_parallel_scan_and_sort_1), int32(1951), int32(_a_F__bt_parallel_scan_and_sort_2))
 														mBase = m.M
 														v182 = m.ExcPending
@@ -5159,26 +5164,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 																*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 															} else {
 															}
-															*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+															v204 = int32(0)
+															atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 															F_ConditionVariableSignal(m, l2+int32(24))
 															mBase = m.M
-															v209 = m.ExcPending
-															if v209 != 0 {
+															v210 = m.ExcPending
+															if v210 != 0 {
 																return
 															} else {
-																v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-																F_tuplesort_end(m, v210)
+																v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																F_tuplesort_end(m, v211)
 																mBase = m.M
-																v212 = m.ExcPending
-																if v212 != 0 {
+																v213 = m.ExcPending
+																if v213 != 0 {
 																	return
 																} else {
 																	if l1 != 0 {
-																		v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																		F_tuplesort_end(m, v213)
+																		v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																		F_tuplesort_end(m, v214)
 																		mBase = m.M
-																		v215 = m.ExcPending
-																		if v215 != 0 {
+																		v216 = m.ExcPending
+																		if v216 != 0 {
 																			return
 																		} else {
 																			m.G0 = v13 + int32(32)
@@ -5212,26 +5218,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 															*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 														} else {
 														}
-														*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+														v204 = int32(0)
+														atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 														F_ConditionVariableSignal(m, l2+int32(24))
 														mBase = m.M
-														v209 = m.ExcPending
-														if v209 != 0 {
+														v210 = m.ExcPending
+														if v210 != 0 {
 															return
 														} else {
-															v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-															F_tuplesort_end(m, v210)
+															v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+															F_tuplesort_end(m, v211)
 															mBase = m.M
-															v212 = m.ExcPending
-															if v212 != 0 {
+															v213 = m.ExcPending
+															if v213 != 0 {
 																return
 															} else {
 																if l1 != 0 {
-																	v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																	F_tuplesort_end(m, v213)
+																	v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																	F_tuplesort_end(m, v214)
 																	mBase = m.M
-																	v215 = m.ExcPending
-																	if v215 != 0 {
+																	v216 = m.ExcPending
+																	if v216 != 0 {
 																		return
 																	} else {
 																		m.G0 = v13 + int32(32)
@@ -5321,9 +5328,8 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 									return
 								} else {
 									if l1 == int32(0) {
-										v173 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-										*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(1)
-										if v173 != 0 {
+										v175 = base.AtomicRmwXchg32(m, l2, int32(36), int32(1))
+										if v175 != 0 {
 											F_s_lock(m, l2+int32(36), int32(_a_F__bt_parallel_scan_and_sort_1), int32(1951), int32(_a_F__bt_parallel_scan_and_sort_2))
 											mBase = m.M
 											v182 = m.ExcPending
@@ -5350,26 +5356,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 													*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 												} else {
 												}
-												*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+												v204 = int32(0)
+												atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 												F_ConditionVariableSignal(m, l2+int32(24))
 												mBase = m.M
-												v209 = m.ExcPending
-												if v209 != 0 {
+												v210 = m.ExcPending
+												if v210 != 0 {
 													return
 												} else {
-													v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-													F_tuplesort_end(m, v210)
+													v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+													F_tuplesort_end(m, v211)
 													mBase = m.M
-													v212 = m.ExcPending
-													if v212 != 0 {
+													v213 = m.ExcPending
+													if v213 != 0 {
 														return
 													} else {
 														if l1 != 0 {
-															v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-															F_tuplesort_end(m, v213)
+															v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+															F_tuplesort_end(m, v214)
 															mBase = m.M
-															v215 = m.ExcPending
-															if v215 != 0 {
+															v216 = m.ExcPending
+															if v216 != 0 {
 																return
 															} else {
 																m.G0 = v13 + int32(32)
@@ -5403,26 +5410,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 												*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 											} else {
 											}
-											*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+											v204 = int32(0)
+											atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 											F_ConditionVariableSignal(m, l2+int32(24))
 											mBase = m.M
-											v209 = m.ExcPending
-											if v209 != 0 {
+											v210 = m.ExcPending
+											if v210 != 0 {
 												return
 											} else {
-												v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-												F_tuplesort_end(m, v210)
+												v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												F_tuplesort_end(m, v211)
 												mBase = m.M
-												v212 = m.ExcPending
-												if v212 != 0 {
+												v213 = m.ExcPending
+												if v213 != 0 {
 													return
 												} else {
 													if l1 != 0 {
-														v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-														F_tuplesort_end(m, v213)
+														v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+														F_tuplesort_end(m, v214)
 														mBase = m.M
-														v215 = m.ExcPending
-														if v215 != 0 {
+														v216 = m.ExcPending
+														if v216 != 0 {
 															return
 														} else {
 															m.G0 = v13 + int32(32)
@@ -5462,9 +5470,8 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 										if v172 != 0 {
 											return
 										} else {
-											v173 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-											*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(1)
-											if v173 != 0 {
+											v175 = base.AtomicRmwXchg32(m, l2, int32(36), int32(1))
+											if v175 != 0 {
 												F_s_lock(m, l2+int32(36), int32(_a_F__bt_parallel_scan_and_sort_1), int32(1951), int32(_a_F__bt_parallel_scan_and_sort_2))
 												mBase = m.M
 												v182 = m.ExcPending
@@ -5491,26 +5498,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 														*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 													} else {
 													}
-													*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+													v204 = int32(0)
+													atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 													F_ConditionVariableSignal(m, l2+int32(24))
 													mBase = m.M
-													v209 = m.ExcPending
-													if v209 != 0 {
+													v210 = m.ExcPending
+													if v210 != 0 {
 														return
 													} else {
-														v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-														F_tuplesort_end(m, v210)
+														v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														F_tuplesort_end(m, v211)
 														mBase = m.M
-														v212 = m.ExcPending
-														if v212 != 0 {
+														v213 = m.ExcPending
+														if v213 != 0 {
 															return
 														} else {
 															if l1 != 0 {
-																v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																F_tuplesort_end(m, v213)
+																v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																F_tuplesort_end(m, v214)
 																mBase = m.M
-																v215 = m.ExcPending
-																if v215 != 0 {
+																v216 = m.ExcPending
+																if v216 != 0 {
 																	return
 																} else {
 																	m.G0 = v13 + int32(32)
@@ -5544,26 +5552,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 													*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 												} else {
 												}
-												*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+												v204 = int32(0)
+												atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 												F_ConditionVariableSignal(m, l2+int32(24))
 												mBase = m.M
-												v209 = m.ExcPending
-												if v209 != 0 {
+												v210 = m.ExcPending
+												if v210 != 0 {
 													return
 												} else {
-													v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-													F_tuplesort_end(m, v210)
+													v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+													F_tuplesort_end(m, v211)
 													mBase = m.M
-													v212 = m.ExcPending
-													if v212 != 0 {
+													v213 = m.ExcPending
+													if v213 != 0 {
 														return
 													} else {
 														if l1 != 0 {
-															v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-															F_tuplesort_end(m, v213)
+															v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+															F_tuplesort_end(m, v214)
 															mBase = m.M
-															v215 = m.ExcPending
-															if v215 != 0 {
+															v216 = m.ExcPending
+															if v216 != 0 {
 																return
 															} else {
 																m.G0 = v13 + int32(32)
@@ -5588,9 +5597,8 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 									return
 								} else {
 									if l1 == int32(0) {
-										v173 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-										*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(1)
-										if v173 != 0 {
+										v175 = base.AtomicRmwXchg32(m, l2, int32(36), int32(1))
+										if v175 != 0 {
 											F_s_lock(m, l2+int32(36), int32(_a_F__bt_parallel_scan_and_sort_1), int32(1951), int32(_a_F__bt_parallel_scan_and_sort_2))
 											mBase = m.M
 											v182 = m.ExcPending
@@ -5617,26 +5625,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 													*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 												} else {
 												}
-												*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+												v204 = int32(0)
+												atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 												F_ConditionVariableSignal(m, l2+int32(24))
 												mBase = m.M
-												v209 = m.ExcPending
-												if v209 != 0 {
+												v210 = m.ExcPending
+												if v210 != 0 {
 													return
 												} else {
-													v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-													F_tuplesort_end(m, v210)
+													v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+													F_tuplesort_end(m, v211)
 													mBase = m.M
-													v212 = m.ExcPending
-													if v212 != 0 {
+													v213 = m.ExcPending
+													if v213 != 0 {
 														return
 													} else {
 														if l1 != 0 {
-															v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-															F_tuplesort_end(m, v213)
+															v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+															F_tuplesort_end(m, v214)
 															mBase = m.M
-															v215 = m.ExcPending
-															if v215 != 0 {
+															v216 = m.ExcPending
+															if v216 != 0 {
 																return
 															} else {
 																m.G0 = v13 + int32(32)
@@ -5670,26 +5679,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 												*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 											} else {
 											}
-											*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+											v204 = int32(0)
+											atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 											F_ConditionVariableSignal(m, l2+int32(24))
 											mBase = m.M
-											v209 = m.ExcPending
-											if v209 != 0 {
+											v210 = m.ExcPending
+											if v210 != 0 {
 												return
 											} else {
-												v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-												F_tuplesort_end(m, v210)
+												v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												F_tuplesort_end(m, v211)
 												mBase = m.M
-												v212 = m.ExcPending
-												if v212 != 0 {
+												v213 = m.ExcPending
+												if v213 != 0 {
 													return
 												} else {
 													if l1 != 0 {
-														v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-														F_tuplesort_end(m, v213)
+														v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+														F_tuplesort_end(m, v214)
 														mBase = m.M
-														v215 = m.ExcPending
-														if v215 != 0 {
+														v216 = m.ExcPending
+														if v216 != 0 {
 															return
 														} else {
 															m.G0 = v13 + int32(32)
@@ -5710,9 +5720,8 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 										if v172 != 0 {
 											return
 										} else {
-											v173 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-											*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(1)
-											if v173 != 0 {
+											v175 = base.AtomicRmwXchg32(m, l2, int32(36), int32(1))
+											if v175 != 0 {
 												F_s_lock(m, l2+int32(36), int32(_a_F__bt_parallel_scan_and_sort_1), int32(1951), int32(_a_F__bt_parallel_scan_and_sort_2))
 												mBase = m.M
 												v182 = m.ExcPending
@@ -5739,26 +5748,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 														*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 													} else {
 													}
-													*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+													v204 = int32(0)
+													atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 													F_ConditionVariableSignal(m, l2+int32(24))
 													mBase = m.M
-													v209 = m.ExcPending
-													if v209 != 0 {
+													v210 = m.ExcPending
+													if v210 != 0 {
 														return
 													} else {
-														v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-														F_tuplesort_end(m, v210)
+														v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														F_tuplesort_end(m, v211)
 														mBase = m.M
-														v212 = m.ExcPending
-														if v212 != 0 {
+														v213 = m.ExcPending
+														if v213 != 0 {
 															return
 														} else {
 															if l1 != 0 {
-																v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-																F_tuplesort_end(m, v213)
+																v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+																F_tuplesort_end(m, v214)
 																mBase = m.M
-																v215 = m.ExcPending
-																if v215 != 0 {
+																v216 = m.ExcPending
+																if v216 != 0 {
 																	return
 																} else {
 																	m.G0 = v13 + int32(32)
@@ -5792,26 +5802,27 @@ func F__bt_parallel_scan_and_sort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 													*(*uint8)(unsafe.Add(mBase, uint32(l2)+72)) = uint8(v202)
 												} else {
 												}
-												*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = int32(0)
+												v204 = int32(0)
+												atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l2)+36)), uint32(v204))
 												F_ConditionVariableSignal(m, l2+int32(24))
 												mBase = m.M
-												v209 = m.ExcPending
-												if v209 != 0 {
+												v210 = m.ExcPending
+												if v210 != 0 {
 													return
 												} else {
-													v210 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-													F_tuplesort_end(m, v210)
+													v211 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+													F_tuplesort_end(m, v211)
 													mBase = m.M
-													v212 = m.ExcPending
-													if v212 != 0 {
+													v213 = m.ExcPending
+													if v213 != 0 {
 														return
 													} else {
 														if l1 != 0 {
-															v213 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-															F_tuplesort_end(m, v213)
+															v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+															F_tuplesort_end(m, v214)
 															mBase = m.M
-															v215 = m.ExcPending
-															if v215 != 0 {
+															v216 = m.ExcPending
+															if v216 != 0 {
 																return
 															} else {
 																m.G0 = v13 + int32(32)
