@@ -73,17 +73,19 @@ func TestRegionHeapGrowthAndSegments(t *testing.T) {
 		t.Fatalf("layout\n got %s\nwant %s", got, want)
 	}
 	wantCalls := []string{
-		// Commit(0, 2*k64): the single placeholder is split at 2*k64
+		// Commit(0, 2*k64): the single placeholder is split after 2*k64
 		fmt.Sprintf("split 0x0+%#x", 2*k64),
 		fmt.Sprintf("commit 0x0+%#x", 2*k64),
-		// Commit(2*k64, 4*k64): the remaining placeholder starts at 2*k64, split at 4*k64
+		// Commit(2*k64, 4*k64): the remaining placeholder starts at 2*k64
 		fmt.Sprintf("split %#x+%#x", 2*k64, 2*k64),
 		fmt.Sprintf("commit %#x+%#x", 2*k64, 2*k64),
-		// Map(8*k64, 2*k64): inside [4*k64, 16*k64): one split makes three pieces
+		// Map(8*k64, 2*k64): inside [4*k64, 16*k64): split at 8*k64, then
+		// the piece starting at 8*k64 after 2*k64
+		fmt.Sprintf("split %#x+%#x", 4*k64, 4*k64),
 		fmt.Sprintf("split %#x+%#x", 8*k64, 2*k64),
 		fmt.Sprintf("map %#x+%#x", 8*k64, 2*k64),
 		fmt.Sprintf("holder %#x+%#x kind=2", 8*k64, 2*k64),
-		// Map(8*k64, 4*k64): [8,10) is a placeholder, [10,16) must be split at 12, then merged
+		// Map(8*k64, 4*k64): [8,10) is a placeholder, [10,16) is split after 2*k64, then merged
 		fmt.Sprintf("split %#x+%#x", 10*k64, 2*k64),
 		fmt.Sprintf("coalesce %#x+%#x", 8*k64, 4*k64),
 		fmt.Sprintf("map %#x+%#x", 8*k64, 4*k64),
