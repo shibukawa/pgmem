@@ -1075,12 +1075,8 @@ func checkNoError(out []byte) error {
 
 // hasSetting reports whether params already carry "-c name=...".
 func hasSetting(params []string, name string) bool {
-	for _, p := range params {
-		if strings.HasPrefix(strings.TrimSpace(p), name+"=") {
-			return true
-		}
-	}
-	return false
+	_, ok := settingValue(params, name)
+	return ok
 }
 
 func quoteIdent(s string) string {

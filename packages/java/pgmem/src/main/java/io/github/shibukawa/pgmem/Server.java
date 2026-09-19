@@ -32,7 +32,7 @@ public class Server implements AutoCloseable {
     public Snapshot snapshot() { return snapshot(0); }
 
     /**
-     * @param maxForks forks alive at once before {@link Snapshot#fork()} blocks; 0 = available processors
+     * @param maxForks forks alive at once before {@link Snapshot#fork()} blocks; 0 = derived from the server's memory (a quarter of its limit divided by a fork's cost)
      */
     public Snapshot snapshot(int maxForks) { return snapshot(maxForks, Duration.ofSeconds(30)); }
 

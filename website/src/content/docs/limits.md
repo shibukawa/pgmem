@@ -36,7 +36,7 @@ Closing a server or fork does not drop client connections. Each stays open until
 
 ## Fork capacity and waiting
 
-Each snapshot has its own pool of fork slots. `MaxForks` limits live forks from that snapshot; the template server does not use a slot. The default is the number of available CPUs. Each fork owns another data-directory copy and buffer cache, so the cap also limits memory use. When all slots are occupied, another fork request waits until a fork closes and releases its slot.
+Each snapshot has its own pool of fork slots. `MaxForks` limits live forks from that snapshot; the template server does not use a slot. The default comes from memory: a quarter of the process's memory limit (`GOMEMLIMIT`, the cgroup limit or the physical memory, whichever is smallest) divided by the cost of one fork (`shared_buffers` plus about 32 MB), which is 28 on a 7 GB CI runner with the default `shared_buffers=32MB`. A slot costs nothing until a fork occupies it. When the memory cannot be determined, the default is the number of CPUs. Each fork owns another data-directory copy and buffer cache, so the cap also limits memory use. When all slots are occupied, another fork request waits until a fork closes and releases its slot.
 
 | API | Set the limit | Limit a wait for a free slot |
 |---|---|---|

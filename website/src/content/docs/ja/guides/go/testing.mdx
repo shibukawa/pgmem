@@ -220,7 +220,7 @@ func TestCancelOrder(t *testing.T) {
 
 ## 並列度とメモリ
 
-生きているフォークはそれぞれデータディレクトリとバッファキャッシュの複製を持ちます。`MaxForks` は 1 つのスナップショットから作れるフォーク数を制限し、既定値は `go test` の既定の並列度と同じ `GOMAXPROCS` です。`pgmemtest.Options` または `SnapshotOptions` で設定し、メモリ使用量と並列数を調整できます。
+生きているフォークはそれぞれデータディレクトリとバッファキャッシュの複製を持ちます。`MaxForks` は 1 つのスナップショットから作れるフォーク数を制限します。既定値は利用可能なメモリの 4 分の 1 をフォーク 1 個のコスト（`shared_buffers` + 約 32MB）で割った値で、7GB の CI ランナーなら 28 です。`go test` が同時に走らせるテスト数は `-parallel`（既定は `GOMAXPROCS`）で決まるため、CPU 以外を待つテストが多いならそちらも上げてください。`pgmemtest.Options` または `SnapshotOptions` で設定し、メモリ使用量と並列数を調整できます。
 
 ```go
 pgmemtest.Options{MaxForks: 4, /* ... */}

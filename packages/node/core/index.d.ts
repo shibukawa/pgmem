@@ -31,7 +31,7 @@ export interface StartOptions {
    * opens; the snapshot waits for open transactions.
    */
   prepare?: (template: Endpoint) => unknown;
-  /** Forks alive at once before fork() waits. Default: the number of CPUs. */
+  /** Forks alive at once before fork() waits. Default: a quarter of the server's memory limit divided by a fork's cost (shared_buffers plus about 32 MB). */
   maxForks?: number;
   /** Serve the control socket other processes fork through. Default true. */
   control?: boolean;

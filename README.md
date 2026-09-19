@@ -22,8 +22,9 @@ func TestSomething(t *testing.T) {
 
 Load the schema and seed data once, snapshot, and give every test its own
 copy. A fork is a full backend on a copy of the data directory, so tests
-can run in parallel; `MaxForks` bounds how many exist at once (default
-`GOMAXPROCS`) and `Fork` blocks when the cap is reached.
+can run in parallel; `MaxForks` bounds how many exist at once (by default a
+quarter of the available memory divided by a fork's cost, 28 on a 7 GB CI
+runner) and `Fork` blocks when the cap is reached.
 
 ```go
 var fx *pgmemtest.Fixture

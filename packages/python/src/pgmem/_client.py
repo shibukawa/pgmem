@@ -166,6 +166,9 @@ class Server:
         The snapshot waits for open transactions to end, so commit or close
         every connection first. After ``timeout`` seconds (None = forever)
         it fails with a ``ProtocolError`` whose code is ``busy``.
+
+        ``max_forks`` caps the forks alive at once; None derives it from the
+        server's memory (a quarter of its limit divided by a fork's cost).
         """
         fields = {"server": self.id}
         if max_forks:

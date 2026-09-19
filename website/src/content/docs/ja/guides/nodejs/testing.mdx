@@ -262,7 +262,7 @@ test.concurrent('ファイルを取り込む', async () => {
 
 ## フォーク数と待機
 
-`PgmemServer.start()` の `maxForks` は既定のスナップショットから作るフォーク数を制限します。既定値は利用可能な CPU 数です。`@pgmem/core/register` は各テストファイルの import 前に 1 つフォークするため、すべてのファイルが枠を使います。プールが満杯なら、ほかのファイルのフォークが閉じるまで register が待ちます。この自動待機に期限はありません。
+`PgmemServer.start()` の `maxForks` は既定のスナップショットから作るフォーク数を制限します。既定値はメモリから決まり、サーバープロセスのメモリ上限の 4 分の 1 をフォーク 1 個のコスト（`shared_buffers` + 約 32MB）で割った値で、7GB の CI ランナーなら 28 です。`@pgmem/core/register` は各テストファイルの import 前に 1 つフォークするため、すべてのファイルが枠を使います。プールが満杯なら、ほかのファイルのフォークが閉じるまで register が待ちます。この自動待機に期限はありません。
 
 明示的な `fork()` と `withFork()` には `timeoutMs` を指定できます。期限までに枠が空かなければ、`PgmemError` の code `pool_timeout` で失敗します。
 
