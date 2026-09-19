@@ -146,8 +146,11 @@ is still executed as wasm, under [wazero](https://wazero.io), but only by
   code are the upstream C. There is no TLS code.
 - Contrib extensions are linked in statically like plpgsql
   (`CONTRIB_MODULES` in `wasm/build.sh`); `CREATE EXTENSION pgcrypto` works
-  out of the box. `testdata/regress` replays the upstream pgcrypto
-  regression suite against it (`TestPgcryptoRegress`).
+  out of the box. `testdata/regress` replays every bundled extension's
+  upstream regression suite against it (`TestContribRegress`). Adding one
+  is scripted: `skills/add-pgmem-extension/add-extension.sh` (the
+  `add-pgmem-extension` skill, also installable with `npx skills add
+  shibukawa/pgmem --skill add-pgmem-extension`).
 - `internal/aot` binds that table to the generated Go code;
   `internal/wzr` binds it to wazero for the initdb step of `pgmem-mkdata`.
 - `internal/engine` drives initdb and a single-user backend the way

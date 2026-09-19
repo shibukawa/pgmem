@@ -42,6 +42,7 @@ policy:
     - pg_stat_statements
     - auto_explain
   add_one:
+    - the skill skills/add-pgmem-extension (also .claude/skills, npx skills add shibukawa/pgmem --skill add-pgmem-extension) drives the steps below through add-extension.sh status|add|build|smoke|test
     - append the contrib name to CONTRIB_MODULES in wasm/build.sh (control, SQL and DATA_TSEARCH files are copied into the share tree)
     - ./wasm/build.sh then ./wasm/gen-aot.sh (the symbol-named split keeps the pgaot diff to the new functions)
     - vendor contrib/<name>/sql and expected into testdata/regress/<name> and list the REGRESS order in contribRegress (regress_test.go)
