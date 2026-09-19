@@ -162,7 +162,9 @@ is still executed as wasm, under [wazero](https://wazero.io), but only by
   (delivered when the target next enters a host call, where a kernel would
   interrupt it too), System V shared memory (a file per segment, mapped
   with `MAP_FIXED` at the same address into every instance's reserved
-  linear memory), POSIX semaphores, and the sockets that carry client
+  linear memory; on Windows a placeholder reservation whose pieces are
+  replaced by `MapViewOfFile3` views, which needs Windows 10 1803 or
+  later), POSIX semaphores, and the sockets that carry client
   connections to the postmaster. The module is compiled with `-matomics`
   so spinlocks and `pg_atomic_*` are real atomic instructions. Every
   instance's memory starts as a copy-on-write view of one shared image of
