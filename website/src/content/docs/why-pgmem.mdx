@@ -1,0 +1,273 @@
+---
+title: Why pgmem
+description: pgmem compared with PGlite, Testcontainers, docker run, devbox, embedded-postgres, hand-written mocks and go-sqlmock on start-up time, stability, parallel tests, fidelity, supported languages and extensions.
+---
+
+import WhyPgmemTable from '../../components/WhyPgmemTable.astro';
+import WhyPgmemCharts from '../../components/WhyPgmemCharts.astro';
+
+A test that touches PostgreSQL has to get a PostgreSQL from somewhere, and
+every team has already answered that question once. Some start a container,
+some keep a server installed on the machine, some replace the database with
+a mock and test around it. Each answer trades something away: a second or two
+of start-up, a dependency on a daemon that is not on every machine, or the
+certainty that the SQL actually runs. This page puts pgmem next to the usual
+answers on six axes: start-up time, stability, parallel tests, what is really
+tested, which languages can use it, and which extensions it can run.
+
+The timings for pgmem, Testcontainers, `docker run` and devbox are the ones
+the [benchmarks page](/pgmem/benchmarks/) reports, from the harness in
+`bench/alternatives` and `bench/modelcase`. PGlite and embedded-postgres are
+not in that harness; their numbers were measured by hand on the same
+machine, and the chart says so. Mocks have nothing to measure.
+
+## The options
+
+- **pgmem**: PostgreSQL 18.3 compiled to WebAssembly and translated to Go,
+  running as a real cluster inside the test process (or a bundled binary for
+  Python, Java and Node.js), on an in-memory file system, with snapshots and
+  copy-on-write forks.
+- **[PGlite](https://pglite.dev)**: the project pgmem's PostgreSQL build comes
+  from. PostgreSQL compiled to WebAssembly for JavaScript, running in
+  single-user mode inside Node, Bun, Deno or a browser.
+- **[Testcontainers](https://testcontainers.com)**: a library that starts the
+  official `postgres` image through the Docker API and cleans it up with a
+  reaper container.
+- **`docker run`**: the same image, started by a script or a Makefile.
+- **[devbox](https://www.jetify.com/devbox)**: PostgreSQL installed natively
+  from nix and run as a service, with a data directory on disk.
+- **embedded-postgres**: a family of libraries
+  ([zonky](https://github.com/zonkyio/embedded-postgres) for Java,
+  [fergusstrange](https://github.com/fergusstrange/embedded-postgres) for Go,
+  [embedded-postgres](https://github.com/leinelissen/embedded-postgres) for
+  Node.js) that download native PostgreSQL binaries, run `initdb` and start a
+  postmaster.
+- **A hand-written mock**: an in-memory implementation of your own repository
+  interface, so that the code under test never sees a database.
+- **[go-sqlmock](https://github.com/DATA-DOG/go-sqlmock)**: a `database/sql`
+  driver that returns the rows you scripted when the SQL text matches your
+  expectation. pgxmock does the same for pgx.
+
+## At a glance
+
+<WhyPgmemTable lang="en" />
+
+<WhyPgmemCharts lang="en" />
+
+## Start-up time
+
+A shared server pays its start-up once per test run, so a second and a half
+sounds affordable. It stops being affordable in the places where tests are
+run most often: a single test in the editor, a watch mode, a package that is
+tested on its own, a CI matrix with twelve jobs. Every one of those starts
+the server again.
+
+pgmem starts in about 70 ms because there is no `initdb` to run. The data
+directory is the output of `initdb` at build time, embedded as a compressed
+tarball, and starting a server unpacks it into memory and boots the
+postmaster. devbox is the closest at 0.4 s, and only because its cluster was
+initialised before the clock started. The containers take 1.1 to 1.6 s on an
+already-pulled image; the first run on a machine also fetches 118 MB.
+embedded-postgres is the slowest of the servers at about 5 s, because the Go
+port unpacks a 33 MB archive into 240 MB of binaries and runs `initdb` on
+every start; the first start also downloads the archive.
+
+PGlite sits in between. Its first instance in a process took 0.7 s and every
+further one 0.5 s. That is also the price of isolation there: PGlite has no
+fork, so a test that needs a clean database starts another instance.
+
+A mock starts in no time, and that is its whole advantage on this axis.
+
+## Stability
+
+Two questions decide whether a database fixture is stable: does it start on
+every machine the tests run on, and does it leave anything behind when a
+test run dies.
+
+**Testcontainers and `docker run` need a Docker daemon.** On a developer's
+Linux box or a GitHub-hosted Linux runner it is there. On macOS runners,
+Windows runners, locked-down corporate laptops and inside another container it
+often is not, and the fallback is a second way of running the tests.
+Testcontainers cleans up reliably through its reaper; a `docker run` in a
+script leaves the container behind when the job is cancelled, and a fixed
+host port collides with the next job on the same runner.
+
+**devbox and embedded-postgres run native binaries.** devbox needs nix on the
+machine and keeps a cluster on disk, so state survives between runs unless
+the script drops it. embedded-postgres downloads platform-specific binaries
+from Maven Central and writes them to disk, and a postmaster started by the
+Go port outlives a test process that was killed with SIGKILL.
+
+**PGlite and pgmem have nothing to install.** Both are a package that runs
+where the language runtime runs. pgmem writes nothing to disk, listens on
+`127.0.0.1` only, and the Python, Java and Node.js binaries shut down when
+the test process closes their stdin, so a crashed run cannot leave a server
+behind.
+
+pgmem has limits of its own, and they are the kind you hit at design time,
+not at random. It is PostgreSQL 18.3 and only that version. It has no TLS, no
+password authentication and no ICU collations. Extensions that need their own
+background worker are not bundled. The server is 32-bit WebAssembly and
+addresses at most 4 GiB. The [limits page](/pgmem/limits/) lists all of
+them.
+
+**Mocks are the most stable fixture and the least informative.** A mock never
+fails to start, and it also never notices that a column was renamed, a unique
+constraint was added, or the query it was written for no longer exists. It is
+stable because it has stopped testing the thing that changes.
+
+## Parallel tests
+
+This is where the options differ most, and the difference is structural
+rather than a matter of tuning.
+
+A shared server, whether from a container, devbox or embedded-postgres, is a
+real multi-process PostgreSQL. Read-only tests can run on it in parallel.
+Writing tests cannot: two tests that both insert an order and count the rows
+afterwards see each other, so a suite on one server serialises its writers
+behind a truncate-and-reseed, or gives each writer a database copied from a
+template, which costs 20 to 80 ms per test and requires that nobody else is
+connected to the template while it is copied.
+
+pgmem takes one snapshot after migrations and seed data, and every writing
+test forks it. A fork is a full cluster on a copy-on-write copy of the data
+directory, on its own port, with its own buffer cache; it takes about 6 ms
+alone and about 10 ms with eight in flight. Forks are independent, so writing
+tests run side by side, and `MaxForks` bounds how many live at once, with a
+default derived from the memory available to the process. The 70-test suite
+in the chart above finishes in about 200 ms on pgmem and 1.7 s on
+Testcontainers, and most of the difference is the writers running in
+parallel instead of in line.
+
+PGlite runs PostgreSQL in single-user mode: one instance is one connection,
+and statements execute one at a time. That is fine for a test that uses one
+connection. It cannot exercise anything that needs two sessions, such as a
+lock wait, a deadlock, `SELECT … FOR UPDATE SKIP LOCKED`, an advisory lock,
+or an application that runs a query outside its open transaction. Parallel
+tests mean parallel instances, at 0.5 s and a WebAssembly heap each.
+
+Mocks are trivially parallel and prove nothing about concurrency, because
+nothing is concurrent inside them.
+
+## What is actually tested
+
+A database fixture exists to answer one question: does this code work
+against PostgreSQL? The options answer it to very different degrees.
+
+pgmem, PGlite and every real server run PostgreSQL's own parser, planner and
+executor. A wrong join, a violated constraint, a `RETURNING` clause that
+does not return, a trigger that fires twice: all of them fail in the test the
+same way they would fail in production, with PostgreSQL's SQLSTATE. pgmem
+and the servers also reproduce the multi-session behaviour: locks wait,
+deadlocks are detected, `pg_stat_activity` shows the other sessions.
+
+go-sqlmock tests something narrower: that the code sent the SQL text the
+test expected, in the order the test expected, and that it copes with the
+rows the test scripted. The SQL is never executed. A query with a typo in a
+column name passes if the expectation has the same typo, and a query that
+was rewritten to be faster fails until every regular expression is updated.
+With an ORM the expectation is a string reverse-engineered from the ORM's
+output, and it changes when the ORM is upgraded.
+
+A hand-written mock tests the layer above the repository and nothing below
+it. The repository, the queries and the schema are covered only by whatever
+integration tests exist, which is often none, because the mock was adopted to
+avoid them. Constraints and transactions are simulated by hand, in a model
+that is simpler than PostgreSQL's and diverges from it silently.
+
+Mocks can also do something a real server cannot do on request: fail in a
+chosen way. A test that wants to see how the code handles an out-of-memory
+error, a `too_many_connections` refusal, a connection dropped halfway through
+a transaction, or a query that stalls for thirty seconds gets it from a mock
+in one line, and from a real PostgreSQL only with effort and luck. BeOS had
+an `is_computer_on_fire()` call for exactly this kind of condition; a mock is
+where it returns true.
+
+Mocks are the right tool for logic that has no business touching a database,
+and for error paths that a healthy server will not produce. They are a poor
+substitute for the database when the code under test is built around SQL.
+
+## Languages
+
+pgmem ships for Go, Python, Java and Node.js. The Go package runs the
+cluster in the test process; the other three bundle a standalone binary
+built from the same code and drive it over stdin, so a fork behaves the same
+in every language. A language without an official package is not locked
+out: the binary speaks the ordinary PostgreSQL wire protocol, so any driver
+connects to it, and the control channel is JSON lines on stdin. Supporting
+another language is a thin wrapper, not a port.
+
+PGlite is a JavaScript library first. It runs in Node, Bun, Deno and the
+browser, and since the engine is a WebAssembly module it can also be run
+directly from any language with a WebAssembly runtime, with that language's
+own bindings for the module's imports.
+
+Testcontainers has official libraries for Java, Go, Python, Node.js, .NET,
+Rust, Ruby and more, and `docker run` or devbox can be scripted from any
+language, because the fixture lives outside the test process.
+
+embedded-postgres is a family of independent ports rather than one project.
+Java, Go and Node.js each have a maintained one, with different start-up
+optimisations and different binary sources. Python has no widely used
+equivalent; `pytest-postgresql` expects a PostgreSQL already installed on
+the machine.
+
+A hand-written mock is possible in any language, and go-sqlmock is Go only.
+Its relatives elsewhere (Mockito on a JDBC connection, `unittest.mock` on a
+cursor) share its property: they test the strings, not the SQL.
+
+## Extensions
+
+Most schemas depend on at least one extension by the time they reach
+production: `pgcrypto` or `uuid-ossp` for keys, `pg_trgm` and `citext` for
+search, `hstore` or `ltree` for a data model, and increasingly `vector`. A
+test database that lacks the one your migrations name fails at the first
+`CREATE EXTENSION`, before a single test runs.
+
+pgmem links 33 extensions into the build, chosen by what managed services
+and PGlite offer with ORM-facing ones first: the contrib types and indexes,
+`pg_trgm`, `pgcrypto`, `uuid-ossp`, `pg_stat_statements`, pgvector and the
+rest of the list on the [extensions page](/pgmem/extensions/).
+`CREATE EXTENSION` works for every one of them with nothing installed, so a
+migration that runs in production runs unchanged in the test. What is left
+out is deliberate: extensions with their own background worker such as
+`pg_cron`, network extensions such as `dblink` and `postgres_fdw`, other
+language runtimes, and PostGIS. Adding a contrib module that is missing is a
+documented procedure with a driver script and an agent skill, and takes one
+rebuild.
+
+PGlite ships extensions as separate packages that are passed in when an
+instance is created, with a comparable list including pgvector. The Docker
+image carries the contrib modules and nothing else; pgvector or PostGIS mean
+switching to their image or writing a Dockerfile, which Testcontainers and
+`docker run` both accept. devbox has contrib from the nix package and adds
+others as further nix packages in its configuration. embedded-postgres
+bundles contrib only, and anything beyond that means building your own
+binary archive. Mocks have no extensions to speak of, because they run no
+SQL.
+
+## When something else is the better choice
+
+pgmem is not the answer to every PostgreSQL test.
+
+- **Your production runs a different major version** and you need the
+  planner and features of that version. Testcontainers, `docker run`,
+  devbox and embedded-postgres run whichever version you name.
+- **You need TLS, password authentication, ICU collations, or an extension
+  with a background worker** such as `pg_cron`. A server has them; pgmem does
+  not.
+- **The data set is larger than 4 GiB**, or a single test needs more than a
+  32-bit address space. Use a native server.
+- **The code runs in the browser** and needs a database next to it. That is
+  PGlite's purpose, and nothing else on this page does it.
+- **The code under test is pure logic** that happens to take a repository
+  interface. A mock is faster to write and to run, and the repository can be
+  tested separately, on pgmem.
+- **The test is about a failure the server will not produce on cue**, such
+  as an out-of-memory error, a refused connection or a mid-transaction
+  disconnect. A mock or a fault-injecting driver produces it deterministically.
+
+For the ordinary case, a service or data layer in Go, Python, Java or
+Node.js that is tested on CI and in the editor, pgmem gives the real
+database at the price of a library import, and the parallelism that a
+shared server cannot.

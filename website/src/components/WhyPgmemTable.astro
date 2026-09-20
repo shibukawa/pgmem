@@ -1,0 +1,71 @@
+---
+import bench from '../data/benchmarks.json';
+import why from '../data/why.json';
+
+interface Props {
+	lang?: 'en' | 'ja';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = bench.targets as Record<string, Record<string, number>>;
+const sec = (ms: number) => `${(ms / 1000).toFixed(1)} s`;
+const ms = (v: number) => `${v.toFixed(0)} ms`;
+
+const text = {
+	en: {
+		caption: 'Start-up times are medians; the start-up section says where each comes from.',
+		head: ['', 'Start to first query', 'Breaks when', 'Writing tests', 'Runs', 'Languages', 'Extensions'],
+		rows: [
+			['pgmem', ms(t.pgmem.startup_ms), 'nothing to install', 'a fork each, in parallel', 'PostgreSQL 18.3', 'Go · Python · Java · Node.js; others via the binary', '33 built in, incl. pgvector'],
+			['PGlite', `${sec(why.pglite.first_instance_ms)} per instance`, 'nothing to install', 'one connection per instance', 'PostgreSQL 18.3, single-user', 'JavaScript · TypeScript; any wasm runtime', 'packages passed at creation'],
+			['Testcontainers', `${sec(t.testcontainers.startup_ms)} + image pull`, 'no Docker daemon', 'template copies, in line', 'any version', 'Java · Go · Python · Node.js · .NET · Rust …', 'contrib; else another image'],
+			['docker run', `${sec(t.docker.startup_ms)} + image pull`, 'no Docker; cleanup is yours', 'template copies, in line', 'any version', 'any, from a shell', 'contrib; else another image'],
+			['devbox', `${sec(t.devbox.startup_ms)}, cluster prepared`, 'no nix; state stays on disk', 'template copies, in line', 'any version', 'any, from a shell', 'contrib; others as nix packages'],
+			['embedded-postgres', `about ${sec(why.embedded_postgres.startup_ms)}`, 'native binaries on disk', 'template copies, in line', 'bundled versions', 'Java · Go · Node.js', 'contrib only'],
+			['hand-written mock', 'none', 'never; drifts silently', 'trivially', 'your mock', 'any', '—'],
+			['go-sqlmock', 'none', 'the SQL text changes', 'trivially', 'the SQL string match', 'Go', '—'],
+		],
+	},
+	ja: {
+		caption: '起動時間は中央値です。出典は「起動時間」の節に書いてあります。',
+		head: ['', '起動から最初のクエリまで', '壊れる条件', '更新テスト', '動くもの', '対応言語', '拡張機能'],
+		rows: [
+			['pgmem', ms(t.pgmem.startup_ms), 'インストール不要', 'フォークで並列', 'PostgreSQL 18.3', 'Go · Python · Java · Node.js。ほかはバイナリ経由', '33 個組み込み、pgvector 含む'],
+			['PGlite', `インスタンスごと ${sec(why.pglite.first_instance_ms)}`, 'インストール不要', 'インスタンスにつき接続 1 本', 'PostgreSQL 18.3、シングルユーザー', 'JavaScript · TypeScript。wasm ランタイムがあれば直接', '生成時にパッケージを渡す'],
+			['Testcontainers', `${sec(t.testcontainers.startup_ms)} + イメージ取得`, 'Docker デーモンがない', 'テンプレート複製、直列', '任意のバージョン', 'Java · Go · Python · Node.js · .NET · Rust …', 'contrib。ほかは別イメージ'],
+			['docker run', `${sec(t.docker.startup_ms)} + イメージ取得`, 'Docker がない。後始末は自前', 'テンプレート複製、直列', '任意のバージョン', 'シェルから何でも', 'contrib。ほかは別イメージ'],
+			['devbox', `${sec(t.devbox.startup_ms)}、クラスタ準備済み`, 'nix がない。状態がディスクに残る', 'テンプレート複製、直列', '任意のバージョン', 'シェルから何でも', 'contrib。ほかは nix パッケージ'],
+			['embedded-postgres', `約 ${sec(why.embedded_postgres.startup_ms)}`, 'ネイティブバイナリをディスクに展開', 'テンプレート複製、直列', '同梱バージョン', 'Java · Go · Node.js', 'contrib のみ'],
+			['自作モック', 'なし', '壊れない。黙って乖離', '自明に並列', '自分のモック', '何でも', '—'],
+			['go-sqlmock', 'なし', 'SQL の文字列が変わる', '自明に並列', 'SQL 文字列の一致', 'Go', '—'],
+		],
+	},
+}[lang];
+---
+
+<div class="why-table">
+	<table>
+		<thead>
+			<tr>{text.head.map((h) => <th scope="col">{h}</th>)}</tr>
+		</thead>
+		<tbody>
+			{text.rows.map((row, i) => (
+				<tr class={i === 0 ? 'pgmem' : undefined}>
+					<th scope="row">{row[0]}</th>
+					{row.slice(1).map((cell) => <td>{cell}</td>)}
+				</tr>
+			))}
+		</tbody>
+	</table>
+	<p class="caption">{text.caption}</p>
+</div>
+
+<style>
+	.why-table { margin: 1.25rem 0 1.5rem; overflow-x: auto; }
+	table { border-collapse: collapse; font-size: var(--sl-text-xs); line-height: 1.4; margin: 0; width: 100%; }
+	th, td { border-bottom: 1px solid var(--sl-color-gray-5); padding: 0.45rem 0.5rem; text-align: left; vertical-align: top; }
+	thead th { color: var(--sl-color-gray-2); font-weight: 600; }
+	tbody th { font-weight: 600; white-space: nowrap; }
+	tr.pgmem th, tr.pgmem td { background: color-mix(in srgb, #70d13d 12%, transparent); }
+	.caption { color: var(--sl-color-gray-2); font-size: var(--sl-text-xs); margin: 0.5rem 0 0; }
+</style>

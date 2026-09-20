@@ -1,0 +1,130 @@
+---
+import bench from '../data/benchmarks.json';
+import modelcase from '../data/modelcase.json';
+import why from '../data/why.json';
+
+interface Props {
+	lang?: 'en' | 'ja';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = bench.targets as Record<string, Record<string, number>>;
+const m = modelcase.models as Record<string, Record<string, number>>;
+
+const labels = {
+	en: {
+		startup: 'Start to first query',
+		startupNote: `One fresh process, until SELECT 1 succeeds. pgmem, Testcontainers, docker run and devbox are the medians of the benchmark harness (${bench.measured_at} and ${bench.comparison_measured_at}). PGlite ${why.pglite.version} and embedded-postgres were timed by hand on the same machine on ${why.measured_at}, medians of ${why.pglite.runs} and ${why.embedded_postgres.runs} runs. A mock has no server to start.`,
+		suite: 'The 70-test suite, end to end',
+		suiteNote: `The model-case suite of 50 reading and 20 writing tests, from server start to the last test, median of ${m.pgmem.runs} runs (${modelcase.measured_at}). On the shared servers the writing tests wait for each other; on pgmem they run on forks side by side. PGlite and embedded-postgres are not in the harness.`,
+		pgmem: 'pgmem',
+		pglite: 'PGlite (first instance)',
+		pgliteNext: 'PGlite (another instance)',
+		testcontainers: 'Testcontainers',
+		docker: 'docker run',
+		devbox: 'devbox',
+		embedded: 'embedded-postgres',
+		mock: 'hand-written mock / go-sqlmock',
+		none: 'none',
+	},
+	ja: {
+		startup: '起動から最初のクエリまで',
+		startupNote: `新しいプロセスを 1 つ起動し、SELECT 1 が通るまで。pgmem、Testcontainers、docker run、devbox はベンチマークハーネスの中央値（${bench.measured_at} と ${bench.comparison_measured_at}）です。PGlite ${why.pglite.version} と embedded-postgres は同じマシンで ${why.measured_at} に手で計った中央値（それぞれ ${why.pglite.runs} 回と ${why.embedded_postgres.runs} 回）です。モックには起動するサーバーがありません。`,
+		suite: '70 本のテストスイートを通しで',
+		suiteNote: `参照 50 本、更新 20 本のモデルケースを、サーバー起動から最後のテストまで通した ${m.pgmem.runs} 回の中央値（${modelcase.measured_at}）。共有サーバーでは更新テストが順番を待ち、pgmem ではフォークの上で横に並んで走ります。PGlite と embedded-postgres はハーネスに含めていません。`,
+		pgmem: 'pgmem',
+		pglite: 'PGlite（最初のインスタンス）',
+		pgliteNext: 'PGlite（2 つ目以降）',
+		testcontainers: 'Testcontainers',
+		docker: 'docker run',
+		devbox: 'devbox',
+		embedded: 'embedded-postgres',
+		mock: '自作モック / go-sqlmock',
+		none: 'なし',
+	},
+}[lang];
+
+const colors = {
+	pgmem: '#70d13d',
+	pglite: '#d9a100',
+	container: '#293e96',
+	devbox: '#806126',
+	embedded: '#8a4b9c',
+	mock: '#8b8b8b',
+};
+
+const formatTime = (ms: number) => ms >= 1000 ? `${(ms / 1000).toFixed(2)} s` : `${ms.toFixed(0)} ms`;
+
+const startupRows = [
+	{ name: labels.pgmem, color: colors.pgmem, value: t.pgmem.startup_ms },
+	{ name: labels.pglite, color: colors.pglite, value: why.pglite.first_instance_ms },
+	{ name: labels.pgliteNext, color: colors.pglite, value: why.pglite.next_instance_ms },
+	{ name: labels.devbox, color: colors.devbox, value: t.devbox.startup_ms },
+	{ name: labels.testcontainers, color: colors.container, value: t.testcontainers.startup_ms },
+	{ name: labels.docker, color: colors.container, value: t.docker.startup_ms },
+	{ name: labels.embedded, color: colors.embedded, value: why.embedded_postgres.startup_ms },
+	{ name: labels.mock, color: colors.mock, value: 0 },
+].map((row) => ({ ...row, display: row.value === 0 ? labels.none : formatTime(row.value) }));
+
+const suiteRows = [
+	{ name: labels.pgmem, color: colors.pgmem, value: m.pgmem.total_ms },
+	{ name: labels.devbox, color: colors.devbox, value: m.devbox.total_ms },
+	{ name: labels.testcontainers, color: colors.container, value: m.testcontainers.total_ms },
+	{ name: labels.docker, color: colors.container, value: m.docker.total_ms },
+].map((row) => ({ ...row, display: formatTime(row.value) }));
+
+const cards = [
+	{ id: 'why-startup', title: labels.startup, note: labels.startupNote, rows: startupRows },
+	{ id: 'why-suite', title: labels.suite, note: labels.suiteNote, rows: suiteRows },
+];
+---
+
+<div class="why-charts">
+	{cards.map((card) => {
+		const maxValue = Math.max(...card.rows.map((row) => row.value));
+		return (
+			<section class="card" aria-labelledby={card.id}>
+				<h3 id={card.id}>{card.title}</h3>
+				<ul>
+					{card.rows.map((row) => (
+						<li>
+							<div class="row-label"><span>{row.name}</span><strong>{row.display}</strong></div>
+							<div class="track" aria-hidden="true">
+								<span class="bar" style={`--bar-color:${row.color};width:${(row.value / maxValue) * 100}%`}></span>
+							</div>
+						</li>
+					))}
+				</ul>
+				<p class="note">{card.note}</p>
+			</section>
+		);
+	})}
+</div>
+
+<style>
+	.why-charts { container-type: inline-size; display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 1.25rem 0 2rem; }
+	.card {
+		background: var(--sl-color-gray-6);
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 14px;
+		margin: 0;
+		min-width: 0;
+		padding: 1rem 1rem 0.75rem;
+	}
+	.card h3 { font-size: 1.1rem; margin: 0 0 0.9rem; }
+	.note { color: var(--sl-color-gray-2); font-size: var(--sl-text-sm); line-height: 1.55; margin: 0.5rem 0 0; }
+	ul { list-style: none; margin: 0; padding: 0; }
+	li { margin: 0 0 0.9rem; }
+	.row-label { align-items: baseline; display: flex; gap: 1rem; justify-content: space-between; line-height: 1.5; }
+	.row-label span { color: var(--sl-color-text); }
+	.row-label strong { font-variant-numeric: tabular-nums; white-space: nowrap; }
+	.track { background: var(--sl-color-gray-5); border-radius: 999px; height: 0.55rem; margin-top: 0.3rem; overflow: hidden; }
+	.bar { background: var(--bar-color); border-radius: inherit; display: block; height: 100%; min-width: 0; }
+	@container (max-width: 40rem) {
+		.why-charts { grid-template-columns: 1fr; }
+	}
+	@media (max-width: 480px) {
+		.card { padding-inline: 0.9rem; }
+		.row-label { align-items: flex-start; font-size: var(--sl-text-sm); }
+	}
+</style>

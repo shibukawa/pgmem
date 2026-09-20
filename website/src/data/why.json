@@ -1,0 +1,22 @@
+{
+  "measured_at": "2026-09-20",
+  "machine": "Apple M3, 16 GB, Darwin 27.0.0",
+  "pglite": {
+    "package": "@electric-sql/pglite",
+    "version": "0.5.8",
+    "postgres": "18.3",
+    "node": "26.8.1",
+    "first_instance_ms": 712,
+    "next_instance_ms": 483,
+    "runs": 6
+  },
+  "embedded_postgres": {
+    "package": "github.com/fergusstrange/embedded-postgres",
+    "postgres": "18.3",
+    "startup_ms": 5120,
+    "isolate_ms": 95,
+    "archive_bytes": 33134476,
+    "unpacked_bytes": 239000000,
+    "runs": 5
+  }
+}
