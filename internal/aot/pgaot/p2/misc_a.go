@@ -9577,30 +9577,40 @@ func F_avl_sigusr2_handler(m *base.Module, l0 int32) {
 	_ = v7
 	var v10 int32
 	_ = v10
-	var v13 int32
-	_ = v13
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
 	var v17 int32
 	_ = v17
-	var v19 int32
-	_ = v19
+	var v18 int32
+	_ = v18
 	var v21 int32
 	_ = v21
-	var v24 int32
-	_ = v24
+	var v25 int32
+	_ = v25
 	var v27 int32
 	_ = v27
-	var v31 int32
-	_ = v31
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
 	var v35 int32
 	_ = v35
 	var v39 int32
 	_ = v39
+	var v43 int32
+	_ = v43
 	var v47 int32
 	_ = v47
+	var v55 int32
+	_ = v55
 	*(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[0])) = int32(1)
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[1]))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-	if v7 != 0 {
+	v7 = int32(0)
+	v10 = base.AtomicRmwOr32(m, v7, int32(_a_F_avl_sigusr2_handler_0), v7)
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	if v11 != 0 {
 		goto L2
 	} else {
 		goto L3
@@ -9614,35 +9624,37 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(1)
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
-	if v10 == int32(0) {
+	v14 = int32(0)
+	v17 = base.AtomicRmwOr32(m, v14, int32(_a_F_avl_sigusr2_handler_0), v14)
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+	if v18 == v14 {
 		goto L2
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
-	if v13 == int32(0) {
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+	if v21 == int32(0) {
 		goto L2
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[2]))
-	if v17 == v13 {
+	v25 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[2]))
+	if v25 == v21 {
 		goto L6
 	} else {
 		goto L7
 	}
 L6:
 	;
-	v19 = m.G0
-	v21 = v19 - int32(16)
-	m.G0 = v21
-	v24 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[3]))
-	if v24 == int32(0) {
+	v27 = m.G0
+	v29 = v27 - int32(16)
+	m.G0 = v29
+	v32 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[3]))
+	if v32 == int32(0) {
 		goto L9
 	} else {
 		goto L10
@@ -9652,24 +9664,24 @@ L7:
 	goto L8
 L8:
 	;
-	v47 = F_pgmem_kill(m, v13, int32(23))
+	v55 = F_pgmem_kill(m, v21, int32(23))
 	mBase = m.M
 	goto L2
 L9:
 	;
-	m.G0 = v21 + int32(16)
+	m.G0 = v29 + int32(16)
 	goto L1
 L10:
 	;
-	v27 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v21)+15)) = uint8(v27)
+	v35 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v29)+15)) = uint8(v35)
 	goto L11
 L11:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[4]))
-	v35 = F_write(m, v31, v21+int32(15), int32(1))
+	v39 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[4]))
+	v43 = F_write(m, v39, v29+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v35 {
+	if int32(0) <= v43 {
 		goto L9
 	} else {
 		goto L13
@@ -9679,8 +9691,8 @@ L12:
 	goto L9
 L13:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[5]))
-	if v39 == int32(27) {
+	v47 = *(*int32)(unsafe.Add(mBase, _c_F_avl_sigusr2_handler[5]))
+	if v47 == int32(27) {
 		goto L11
 	} else {
 		goto L14

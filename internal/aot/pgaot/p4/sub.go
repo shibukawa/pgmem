@@ -44,312 +44,320 @@ func F_AbortSubTransaction(m *base.Module) {
 	_ = v53
 	var v57 int32
 	_ = v57
-	var v67 int32
-	_ = v67
-	var v72 int32
-	_ = v72
-	var v74 int32
-	_ = v74
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
 	var v75 int32
 	_ = v75
+	var v80 int32
+	_ = v80
 	var v82 int32
 	_ = v82
-	var v86 int32
-	_ = v86
-	var v88 int32
-	_ = v88
+	var v83 int32
+	_ = v83
+	var v90 int32
+	_ = v90
 	var v94 int32
 	_ = v94
-	var v98 int32
-	_ = v98
-	var v101 int32
-	_ = v101
+	var v96 int32
+	_ = v96
 	var v102 int32
 	_ = v102
-	var v118 int32
-	_ = v118
-	var v119 int32
-	_ = v119
-	var v121 int32
-	_ = v121
+	var v106 int32
+	_ = v106
+	var v109 int32
+	_ = v109
+	var v110 int32
+	_ = v110
 	var v126 int32
 	_ = v126
-	var v132 int32
-	_ = v132
-	var v133 int32
-	_ = v133
+	var v127 int32
+	_ = v127
+	var v129 int32
+	_ = v129
+	var v134 int32
+	_ = v134
+	var v140 int32
+	_ = v140
 	var v141 int32
 	_ = v141
-	var v143 int32
-	_ = v143
-	var v146 int32
-	_ = v146
-	var v161 int32
-	_ = v161
-	var v173 int32
-	_ = v173
-	var v175 int32
-	_ = v175
-	var v177 int32
-	_ = v177
+	var v149 int32
+	_ = v149
+	var v151 int32
+	_ = v151
+	var v154 int32
+	_ = v154
+	var v169 int32
+	_ = v169
 	var v181 int32
 	_ = v181
-	var v182 int32
-	_ = v182
+	var v183 int32
+	_ = v183
+	var v185 int32
+	_ = v185
 	var v189 int32
 	_ = v189
-	var v202 int32
-	_ = v202
-	var v206 int32
-	_ = v206
+	var v190 int32
+	_ = v190
+	var v197 int32
+	_ = v197
 	var v210 int32
 	_ = v210
-	var v216 int32
-	_ = v216
-	var v219 int32
-	_ = v219
-	var v223 int32
-	_ = v223
-	var v225 int32
-	_ = v225
-	var v226 int32
-	_ = v226
+	var v214 int32
+	_ = v214
+	var v218 int32
+	_ = v218
+	var v224 int32
+	_ = v224
+	var v227 int32
+	_ = v227
 	var v231 int32
 	_ = v231
-	var v232 int32
-	_ = v232
-	var v235 int32
-	_ = v235
+	var v233 int32
+	_ = v233
+	var v234 int32
+	_ = v234
+	var v239 int32
+	_ = v239
 	var v240 int32
 	_ = v240
-	var v242 int32
-	_ = v242
-	var v246 int32
-	_ = v246
-	var v251 int32
-	_ = v251
-	var v255 int32
-	_ = v255
-	var v256 int32
-	_ = v256
-	var v261 int32
-	_ = v261
+	var v243 int32
+	_ = v243
+	var v248 int32
+	_ = v248
+	var v250 int32
+	_ = v250
+	var v254 int32
+	_ = v254
+	var v259 int32
+	_ = v259
 	var v263 int32
 	_ = v263
-	var v266 int32
-	_ = v266
-	var v278 int32
-	_ = v278
-	var v284 int32
-	_ = v284
+	var v264 int32
+	_ = v264
+	var v269 int32
+	_ = v269
+	var v271 int32
+	_ = v271
+	var v274 int32
+	_ = v274
 	var v286 int32
 	_ = v286
-	var v289 int32
-	_ = v289
 	var v292 int32
 	_ = v292
-	var v293 int32
-	_ = v293
 	var v294 int32
 	_ = v294
-	var v296 int32
-	_ = v296
 	var v297 int32
 	_ = v297
-	var v299 int32
-	_ = v299
+	var v300 int32
+	_ = v300
 	var v301 int32
 	_ = v301
 	var v302 int32
 	_ = v302
-	var v303 int32
-	_ = v303
+	var v304 int32
+	_ = v304
 	var v305 int32
 	_ = v305
 	var v307 int32
 	_ = v307
-	var v308 int32
-	_ = v308
-	var v317 int32
-	_ = v317
-	var v320 int32
-	_ = v320
-	var v323 int32
-	_ = v323
-	var v326 int32
-	_ = v326
+	var v309 int32
+	_ = v309
+	var v310 int32
+	_ = v310
+	var v311 int32
+	_ = v311
+	var v313 int32
+	_ = v313
+	var v315 int32
+	_ = v315
+	var v316 int32
+	_ = v316
+	var v325 int32
+	_ = v325
 	var v328 int32
 	_ = v328
-	var v332 int32
-	_ = v332
-	var v338 int32
-	_ = v338
-	var v341 int32
-	_ = v341
-	var v344 int32
-	_ = v344
+	var v331 int32
+	_ = v331
+	var v334 int32
+	_ = v334
+	var v336 int32
+	_ = v336
+	var v340 int32
+	_ = v340
 	var v346 int32
 	_ = v346
-	var v355 int32
-	_ = v355
-	var v356 int32
-	_ = v356
-	var v357 int32
-	_ = v357
-	var v359 int32
-	_ = v359
-	var v360 int32
-	_ = v360
-	var v362 int32
-	_ = v362
+	var v349 int32
+	_ = v349
+	var v352 int32
+	_ = v352
+	var v354 int32
+	_ = v354
+	var v363 int32
+	_ = v363
+	var v364 int32
+	_ = v364
+	var v365 int32
+	_ = v365
+	var v367 int32
+	_ = v367
+	var v368 int32
+	_ = v368
 	var v370 int32
 	_ = v370
-	var v371 int32
-	_ = v371
-	var v372 int32
-	_ = v372
-	var v373 int32
-	_ = v373
-	var v375 int32
-	_ = v375
+	var v378 int32
+	_ = v378
+	var v379 int32
+	_ = v379
+	var v380 int32
+	_ = v380
 	var v381 int32
 	_ = v381
 	var v383 int32
 	_ = v383
-	var v384 int32
-	_ = v384
-	var v386 int32
-	_ = v386
+	var v389 int32
+	_ = v389
+	var v391 int32
+	_ = v391
+	var v392 int32
+	_ = v392
 	var v394 int32
 	_ = v394
-	var v396 int32
-	_ = v396
-	var v399 int32
-	_ = v399
-	var v401 int32
-	_ = v401
-	var v403 int32
-	_ = v403
+	var v402 int32
+	_ = v402
 	var v404 int32
 	_ = v404
-	var v405 int32
-	_ = v405
 	var v407 int32
 	_ = v407
 	var v409 int32
 	_ = v409
+	var v411 int32
+	_ = v411
 	var v412 int32
 	_ = v412
 	var v413 int32
 	_ = v413
 	var v415 int32
 	_ = v415
-	var v418 int32
-	_ = v418
-	var v419 int32
-	_ = v419
+	var v417 int32
+	_ = v417
+	var v420 int32
+	_ = v420
 	var v421 int32
 	_ = v421
-	var v424 int32
-	_ = v424
+	var v423 int32
+	_ = v423
+	var v426 int32
+	_ = v426
 	var v427 int32
 	_ = v427
 	var v429 int32
 	_ = v429
-	var v431 int32
-	_ = v431
-	var v433 int32
-	_ = v433
+	var v432 int32
+	_ = v432
 	var v435 int32
 	_ = v435
 	var v437 int32
 	_ = v437
-	var v438 int32
-	_ = v438
 	var v439 int32
 	_ = v439
 	var v441 int32
 	_ = v441
 	var v443 int32
 	_ = v443
+	var v445 int32
+	_ = v445
+	var v446 int32
+	_ = v446
 	var v447 int32
 	_ = v447
-	var v452 int32
-	_ = v452
+	var v449 int32
+	_ = v449
+	var v451 int32
+	_ = v451
 	var v455 int32
 	_ = v455
-	var v467 int32
-	_ = v467
-	var v471 int32
-	_ = v471
-	var v472 int32
-	_ = v472
-	var v473 int32
-	_ = v473
+	var v460 int32
+	_ = v460
+	var v463 int32
+	_ = v463
 	var v475 int32
 	_ = v475
-	var v477 int32
-	_ = v477
 	var v479 int32
 	_ = v479
+	var v480 int32
+	_ = v480
 	var v481 int32
 	_ = v481
 	var v483 int32
 	_ = v483
-	var v484 int32
-	_ = v484
+	var v485 int32
+	_ = v485
 	var v487 int32
 	_ = v487
-	var v490 int32
-	_ = v490
+	var v489 int32
+	_ = v489
+	var v491 int32
+	_ = v491
+	var v492 int32
+	_ = v492
 	var v495 int32
 	_ = v495
-	var v497 int32
-	_ = v497
 	var v498 int32
 	_ = v498
-	var v499 int32
-	_ = v499
 	var v503 int32
 	_ = v503
-	var v504 int32
-	_ = v504
 	var v505 int32
 	_ = v505
+	var v506 int32
+	_ = v506
 	var v507 int32
 	_ = v507
-	var v509 int32
-	_ = v509
-	var v510 int32
-	_ = v510
+	var v511 int32
+	_ = v511
 	var v512 int32
 	_ = v512
-	var v523 int32
-	_ = v523
-	var v525 int32
-	_ = v525
-	var v526 int32
-	_ = v526
-	var v528 int32
-	_ = v528
-	var v530 int32
-	_ = v530
+	var v513 int32
+	_ = v513
+	var v515 int32
+	_ = v515
+	var v517 int32
+	_ = v517
+	var v518 int32
+	_ = v518
+	var v520 int32
+	_ = v520
 	var v531 int32
 	_ = v531
-	var v543 int32
-	_ = v543
-	var v546 int32
-	_ = v546
-	var v548 int32
-	_ = v548
-	var v552 int32
-	_ = v552
-	var v569 int32
-	_ = v569
-	var v571 int32
-	_ = v571
-	var v573 int32
-	_ = v573
+	var v533 int32
+	_ = v533
+	var v534 int32
+	_ = v534
+	var v536 int32
+	_ = v536
+	var v538 int32
+	_ = v538
+	var v539 int32
+	_ = v539
+	var v551 int32
+	_ = v551
+	var v554 int32
+	_ = v554
+	var v556 int32
+	_ = v556
+	var v560 int32
+	_ = v560
+	var v577 int32
+	_ = v577
+	var v579 int32
+	_ = v579
+	var v581 int32
+	_ = v581
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
@@ -387,8 +395,8 @@ L3:
 	;
 	F_pgaio_error_cleanup(m)
 	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
+	v80 = m.ExcPending
+	if v80 != 0 {
 		goto L1
 	} else {
 		goto L8
@@ -421,27 +429,31 @@ L7:
 	v53 = *(*int32)(unsafe.Add(mBase, uint32(v35)))
 	*(*int32)(unsafe.Add(mBase, uint32(v35))) = v53 + v50
 	v57 = int32(0)
+	v59 = int32(_a_F_AbortSubTransaction_2)
+	v60 = base.AtomicRmwOr32(m, v57, v59, v57)
 	*(*int32)(unsafe.Add(mBase, uint32(v35)+220)) = v57
 	*(*int32)(unsafe.Add(mBase, uint32(v35)+224)) = v57
-	*(*int32)(unsafe.Add(mBase, uint32(v35))) = v53 + int32(2)
-	v67 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[8]))
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[8])) = v67 - v50
+	v68 = base.AtomicRmwOr32(m, v57, v59, v57)
+	v69 = *(*int32)(unsafe.Add(mBase, uint32(v35)))
+	*(*int32)(unsafe.Add(mBase, uint32(v35))) = v69 + v50
+	v75 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[8]))
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[8])) = v75 - v50
 	goto L4
 L8:
 	;
 	F_UnlockBuffers(m)
 	mBase = m.M
-	v74 = m.ExcPending
-	if v74 != 0 {
+	v82 = m.ExcPending
+	if v82 != 0 {
 		goto L1
 	} else {
 		goto L9
 	}
 L9:
 	;
-	v75 = int32(0)
-	v82 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[9]))
-	if v82 <= v75 {
+	v83 = int32(0)
+	v90 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[9]))
+	if v90 <= v83 {
 		goto L11
 	} else {
 		goto L12
@@ -450,8 +462,8 @@ L10:
 	;
 	F_ConditionVariableCancelSleep(m)
 	mBase = m.M
-	v173 = m.ExcPending
-	if v173 != 0 {
+	v181 = m.ExcPending
+	if v181 != 0 {
 		goto L1
 	} else {
 		goto L23
@@ -459,61 +471,61 @@ L10:
 L11:
 	;
 	*(*int64)(unsafe.Add(mBase, _c_F_AbortSubTransaction[10])) = int64(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[11])) = int32(_a_F_AbortSubTransaction_2)
-	v161 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[9])) = v161
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[12])) = v161
-	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[13])) = uint8(v161)
-	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[14])) = uint8(v161)
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[11])) = int32(_a_F_AbortSubTransaction_3)
+	v169 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[9])) = v169
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[12])) = v169
+	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[13])) = uint8(v169)
+	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[14])) = uint8(v169)
 	goto L10
 L12:
 	;
-	v86 = v82 & int32(7)
-	v88 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[15]))
-	if base.Ui32(int32(8)) <= base.Ui32(v82) {
+	v94 = v90 & int32(7)
+	v96 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[15]))
+	if base.Ui32(int32(8)) <= base.Ui32(v90) {
 		goto L13
 	} else {
 		goto L14
 	}
 L13:
 	;
-	v94 = v75
-	v98 = v75
+	v102 = v83
+	v106 = v83
 	goto L16
 L14:
 	;
-	v126 = v75
+	v134 = v83
 	goto L15
 L15:
 	;
-	v132 = int32(0)
-	v133 = v126
+	v140 = int32(0)
+	v141 = v134
 	goto L20
 L16:
 	;
-	v101 = v88 + v94*int32(_a_F_AbortSubTransaction_3)
-	v102 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v101)+uint32(_c_F_AbortSubTransaction[16]))) = uint8(v102)
-	*(*uint8)(unsafe.Add(mBase, uint32(v101)+uint32(_c_F_AbortSubTransaction[17]))) = uint8(v102)
-	*(*uint8)(unsafe.Add(mBase, uint32(v101)+uint32(_c_F_AbortSubTransaction[18]))) = uint8(v102)
-	*(*uint8)(unsafe.Add(mBase, uint32(v101)+uint32(_c_F_AbortSubTransaction[19]))) = uint8(v102)
-	*(*uint8)(unsafe.Add(mBase, uint32(v101)+uint32(_c_F_AbortSubTransaction[20]))) = uint8(v102)
-	*(*uint8)(unsafe.Add(mBase, uint32(v101)+uint32(_c_F_AbortSubTransaction[21]))) = uint8(v102)
-	*(*uint8)(unsafe.Add(mBase, uint32(v101)+uint32(_c_F_AbortSubTransaction[22]))) = uint8(v102)
-	*(*uint8)(unsafe.Add(mBase, uint32(v101))) = uint8(v102)
-	v118 = int32(8)
-	v119 = v94 + v118
-	v121 = v98 + v118
-	if v121 != v82&int32(2147483640) {
-		v94 = v119
-		v98 = v121
+	v109 = v96 + v102*int32(_a_F_AbortSubTransaction_4)
+	v110 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v109)+uint32(_c_F_AbortSubTransaction[16]))) = uint8(v110)
+	*(*uint8)(unsafe.Add(mBase, uint32(v109)+uint32(_c_F_AbortSubTransaction[17]))) = uint8(v110)
+	*(*uint8)(unsafe.Add(mBase, uint32(v109)+uint32(_c_F_AbortSubTransaction[18]))) = uint8(v110)
+	*(*uint8)(unsafe.Add(mBase, uint32(v109)+uint32(_c_F_AbortSubTransaction[19]))) = uint8(v110)
+	*(*uint8)(unsafe.Add(mBase, uint32(v109)+uint32(_c_F_AbortSubTransaction[20]))) = uint8(v110)
+	*(*uint8)(unsafe.Add(mBase, uint32(v109)+uint32(_c_F_AbortSubTransaction[21]))) = uint8(v110)
+	*(*uint8)(unsafe.Add(mBase, uint32(v109)+uint32(_c_F_AbortSubTransaction[22]))) = uint8(v110)
+	*(*uint8)(unsafe.Add(mBase, uint32(v109))) = uint8(v110)
+	v126 = int32(8)
+	v127 = v102 + v126
+	v129 = v106 + v126
+	if v129 != v90&int32(2147483640) {
+		v102 = v127
+		v106 = v129
 		goto L16
 	} else {
 		goto L18
 	}
 L17:
 	;
-	if v86 == int32(0) {
+	if v94 == int32(0) {
 		goto L11
 	} else {
 		goto L19
@@ -523,17 +535,17 @@ L18:
 	goto L17
 L19:
 	;
-	v126 = v119
+	v134 = v127
 	goto L15
 L20:
 	;
-	v141 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v88+v133*int32(_a_F_AbortSubTransaction_3)))) = uint8(v141)
-	v143 = int32(1)
-	v146 = v132 + v143
-	if v146 != v86 {
-		v132 = v146
-		v133 = v133 + v143
+	v149 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v96+v141*int32(_a_F_AbortSubTransaction_4)))) = uint8(v149)
+	v151 = int32(1)
+	v154 = v140 + v151
+	if v154 != v94 {
+		v140 = v154
+		v141 = v141 + v151
 		goto L20
 	} else {
 		goto L22
@@ -548,8 +560,8 @@ L23:
 	;
 	F_LockErrorCleanup(m)
 	mBase = m.M
-	v175 = m.ExcPending
-	if v175 != 0 {
+	v183 = m.ExcPending
+	if v183 != 0 {
 		goto L1
 	} else {
 		goto L24
@@ -558,29 +570,29 @@ L24:
 	;
 	F_reschedule_timeouts(m)
 	mBase = m.M
-	v177 = m.ExcPending
-	if v177 != 0 {
+	v185 = m.ExcPending
+	if v185 != 0 {
 		goto L1
 	} else {
 		goto L25
 	}
 L25:
 	;
-	F_pgmem_sigprocmask(m, int32(_a_F_AbortSubTransaction_4), int32(0))
+	F_pgmem_sigprocmask(m, int32(_a_F_AbortSubTransaction_5), int32(0))
 	mBase = m.M
-	v181 = m.ExcPending
-	if v181 != 0 {
+	v189 = m.ExcPending
+	if v189 != 0 {
 		goto L1
 	} else {
 		goto L26
 	}
 L26:
 	;
-	v182 = int32(10)
+	v190 = int32(10)
 	goto L29
 L27:
 	;
-	if v219 != 0 {
+	if v227 != 0 {
 		goto L40
 	} else {
 		goto L41
@@ -590,26 +602,26 @@ L28:
 	goto L27
 L29:
 	;
-	v189 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[23]))
+	v197 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[23]))
 	goto L32
 L30:
 	;
-	v202 = int32(0)
+	v210 = int32(0)
 	goto L37
 L32:
 	;
 	goto L33
 L33:
 	;
-	if int32(0)|base.B2i32(v189 == int32(15)) != 0 {
+	if int32(0)|base.B2i32(v197 == int32(15)) != 0 {
 		goto L30
 	} else {
 		goto L35
 	}
 L35:
 	;
-	if v189 <= v182 {
-		v219 = int32(1)
+	if v197 <= v190 {
+		v227 = int32(1)
 		goto L28
 	} else {
 		goto L36
@@ -619,34 +631,34 @@ L36:
 	goto L30
 L37:
 	;
-	v206 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[24]))
-	if v206 != int32(2) {
-		v219 = v202
+	v214 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[24]))
+	if v214 != int32(2) {
+		v227 = v210
 		goto L28
 	} else {
 		goto L38
 	}
 L38:
 	;
-	v210 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[25])))
-	if v210&int32(1) != 0 {
-		v219 = v202
+	v218 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[25])))
+	if v218&int32(1) != 0 {
+		v227 = v210
 		goto L28
 	} else {
 		goto L39
 	}
 L39:
 	;
-	v216 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[26]))
-	v219 = int32(0) | base.B2i32(v216 <= v182)
+	v224 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[26]))
+	v227 = int32(0) | base.B2i32(v224 <= v190)
 	goto L28
 L40:
 	;
-	v223 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[3]))
-	F_ShowTransactionStateRec(m, int32(_a_F_AbortSubTransaction_5), v223)
+	v231 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[3]))
+	F_ShowTransactionStateRec(m, int32(_a_F_AbortSubTransaction_6), v231)
 	mBase = m.M
-	v225 = m.ExcPending
-	if v225 != 0 {
+	v233 = m.ExcPending
+	if v233 != 0 {
 		goto L1
 	} else {
 		goto L43
@@ -656,8 +668,8 @@ L41:
 	goto L42
 L42:
 	;
-	v226 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-	if v226 == int32(2) {
+	v234 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+	if v234 == int32(2) {
 		goto L44
 	} else {
 		goto L45
@@ -668,62 +680,62 @@ L43:
 L44:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+20)) = int32(4)
-	v255 = *(*int32)(unsafe.Add(mBase, uint32(v24)+60))
-	v256 = *(*int32)(unsafe.Add(mBase, uint32(v24)+64))
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[27])) = v256
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[28])) = v255
+	v263 = *(*int32)(unsafe.Add(mBase, uint32(v24)+60))
+	v264 = *(*int32)(unsafe.Add(mBase, uint32(v24)+64))
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[27])) = v264
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[28])) = v263
 	goto L53
 L45:
 	;
-	v231 = F_errstart(m, int32(19), int32(0))
+	v239 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v232 = m.ExcPending
-	if v232 != 0 {
+	v240 = m.ExcPending
+	if v240 != 0 {
 		goto L1
 	} else {
 		goto L46
 	}
 L46:
 	;
-	if v231 == int32(0) {
+	if v239 == int32(0) {
 		goto L44
 	} else {
 		goto L47
 	}
 L47:
 	;
-	v235 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-	if base.Ui32(v235) <= base.Ui32(int32(5)) {
+	v243 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+	if base.Ui32(v243) <= base.Ui32(int32(5)) {
 		goto L48
 	} else {
 		goto L49
 	}
 L48:
 	;
-	v240 = *(*int32)(unsafe.Add(mBase, uint32(v235<<(uint(int32(2))%32))+uint32(_c_F_AbortSubTransaction[29])))
-	v242 = v240
+	v248 = *(*int32)(unsafe.Add(mBase, uint32(v243<<(uint(int32(2))%32))+uint32(_c_F_AbortSubTransaction[29])))
+	v250 = v248
 	goto L50
 L49:
 	;
-	v242 = int32(_a_F_AbortSubTransaction_6)
+	v250 = int32(_a_F_AbortSubTransaction_7)
 	goto L50
 L50:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v242
-	F_errmsg_internal(m, int32(_a_F_AbortSubTransaction_7), v10)
+	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v250
+	F_errmsg_internal(m, int32(_a_F_AbortSubTransaction_8), v10)
 	mBase = m.M
-	v246 = m.ExcPending
-	if v246 != 0 {
+	v254 = m.ExcPending
+	if v254 != 0 {
 		goto L1
 	} else {
 		goto L51
 	}
 L51:
 	;
-	F_errfinish(m, int32(_a_F_AbortSubTransaction_8), int32(_a_F_AbortSubTransaction_9), int32(_a_F_AbortSubTransaction_5))
+	F_errfinish(m, int32(_a_F_AbortSubTransaction_9), int32(_a_F_AbortSubTransaction_10), int32(_a_F_AbortSubTransaction_6))
 	mBase = m.M
-	v251 = m.ExcPending
-	if v251 != 0 {
+	v259 = m.ExcPending
+	if v259 != 0 {
 		goto L1
 	} else {
 		goto L52
@@ -733,26 +745,26 @@ L52:
 	goto L44
 L53:
 	;
-	v261 = *(*int32)(unsafe.Add(mBase, uint32(v24)+28))
-	v263 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[30]))
-	if v261 <= v263 {
+	v269 = *(*int32)(unsafe.Add(mBase, uint32(v24)+28))
+	v271 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[30]))
+	if v269 <= v271 {
 		goto L55
 	} else {
 		goto L56
 	}
 L54:
 	;
-	v278 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[31])) = uint8(v278)
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[32])) = v278
+	v286 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[31])) = uint8(v286)
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[32])) = v286
 	goto L58
 L55:
 	;
-	v266 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[33])) = v266
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[34])) = v266
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[35])) = v266
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[30])) = v266
+	v274 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[33])) = v274
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[34])) = v274
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[35])) = v274
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[30])) = v274
 	goto L57
 L56:
 	;
@@ -762,11 +774,11 @@ L57:
 	goto L54
 L58:
 	;
-	v284 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-	F_AtEOSubXact_Parallel(m, int32(0), v284)
+	v292 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+	F_AtEOSubXact_Parallel(m, int32(0), v292)
 	mBase = m.M
-	v286 = m.ExcPending
-	if v286 != 0 {
+	v294 = m.ExcPending
+	if v294 != 0 {
 		goto L1
 	} else {
 		goto L59
@@ -774,8 +786,8 @@ L58:
 L59:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+72)) = int32(0)
-	v289 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
-	if v289 != 0 {
+	v297 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
+	if v297 != 0 {
 		goto L60
 	} else {
 		goto L61
@@ -784,8 +796,8 @@ L60:
 	;
 	F_AfterTriggerEndSubXact(m, int32(0))
 	mBase = m.M
-	v292 = m.ExcPending
-	if v292 != 0 {
+	v300 = m.ExcPending
+	if v300 != 0 {
 		goto L1
 	} else {
 		goto L63
@@ -795,60 +807,60 @@ L61:
 	goto L62
 L62:
 	;
-	v569 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24)+68)))
-	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[36])) = uint8(v569)
-	v571 = int32(_a_F_AbortSubTransaction_0)
-	v573 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[2]))
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[2])) = v573 - int32(1)
+	v577 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24)+68)))
+	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[36])) = uint8(v577)
+	v579 = int32(_a_F_AbortSubTransaction_0)
+	v581 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[2]))
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[2])) = v581 - int32(1)
 	m.G0 = v10 + int32(16)
 	return
 L63:
 	;
-	v293 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
-	v294 = *(*int32)(unsafe.Add(mBase, uint32(v293)+8))
-	v296 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-	v297 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
-	F_AtSubAbort_Portals(m, v296, v294, v297)
+	v301 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
+	v302 = *(*int32)(unsafe.Add(mBase, uint32(v301)+8))
+	v304 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+	v305 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
+	F_AtSubAbort_Portals(m, v304, v302, v305)
 	mBase = m.M
-	v299 = m.ExcPending
-	if v299 != 0 {
+	v307 = m.ExcPending
+	if v307 != 0 {
 		goto L1
 	} else {
 		goto L64
 	}
 L64:
 	;
-	v301 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-	v302 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
-	v303 = *(*int32)(unsafe.Add(mBase, uint32(v302)+8))
-	F_AtEOSubXact_LargeObject(m, int32(0), v301, v303)
+	v309 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+	v310 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
+	v311 = *(*int32)(unsafe.Add(mBase, uint32(v310)+8))
+	F_AtEOSubXact_LargeObject(m, int32(0), v309, v311)
 	mBase = m.M
-	v305 = m.ExcPending
-	if v305 != 0 {
+	v313 = m.ExcPending
+	if v313 != 0 {
 		goto L1
 	} else {
 		goto L65
 	}
 L65:
 	;
-	v307 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[3]))
-	v308 = *(*int32)(unsafe.Add(mBase, uint32(v307)+28))
+	v315 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[3]))
+	v316 = *(*int32)(unsafe.Add(mBase, uint32(v315)+28))
 	goto L66
 L66:
 	;
 	goto L67
 L67:
 	;
-	v317 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[37]))
-	if v317 == int32(0) {
+	v325 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[37]))
+	if v325 == int32(0) {
 		goto L69
 	} else {
 		goto L70
 	}
 L68:
 	;
-	v328 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[38]))
-	if v328 == int32(0) {
+	v336 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[38]))
+	if v336 == int32(0) {
 		goto L73
 	} else {
 		goto L74
@@ -858,20 +870,20 @@ L69:
 	goto L68
 L70:
 	;
-	v320 = *(*int32)(unsafe.Add(mBase, uint32(v317)))
-	if v320 < v308 {
+	v328 = *(*int32)(unsafe.Add(mBase, uint32(v325)))
+	if v328 < v316 {
 		goto L69
 	} else {
 		goto L71
 	}
 L71:
 	;
-	v323 = *(*int32)(unsafe.Add(mBase, uint32(v317)+8))
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[37])) = v323
-	F_pfree(m, v317)
+	v331 = *(*int32)(unsafe.Add(mBase, uint32(v325)+8))
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[37])) = v331
+	F_pfree(m, v325)
 	mBase = m.M
-	v326 = m.ExcPending
-	if v326 != 0 {
+	v334 = m.ExcPending
+	if v334 != 0 {
 		goto L1
 	} else {
 		goto L72
@@ -881,22 +893,22 @@ L72:
 	goto L67
 L73:
 	;
-	v355 = F_RecordTransactionAbort(m, int32(1))
+	v363 = F_RecordTransactionAbort(m, int32(1))
 	mBase = m.M
-	v356 = m.ExcPending
-	if v356 != 0 {
+	v364 = m.ExcPending
+	if v364 != 0 {
 		goto L1
 	} else {
 		goto L80
 	}
 L74:
 	;
-	v332 = v328
+	v340 = v336
 	goto L75
 L75:
 	;
-	v338 = *(*int32)(unsafe.Add(mBase, uint32(v332)))
-	if v338 < v308 {
+	v346 = *(*int32)(unsafe.Add(mBase, uint32(v340)))
+	if v346 < v316 {
 		goto L73
 	} else {
 		goto L77
@@ -906,21 +918,21 @@ L76:
 	goto L73
 L77:
 	;
-	v341 = *(*int32)(unsafe.Add(mBase, uint32(v332)+12))
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[38])) = v341
-	F_pfree(m, v332)
+	v349 = *(*int32)(unsafe.Add(mBase, uint32(v340)+12))
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[38])) = v349
+	F_pfree(m, v340)
 	mBase = m.M
-	v344 = m.ExcPending
-	if v344 != 0 {
+	v352 = m.ExcPending
+	if v352 != 0 {
 		goto L1
 	} else {
 		goto L78
 	}
 L78:
 	;
-	v346 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[38]))
-	if v346 != 0 {
-		v332 = v346
+	v354 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[38]))
+	if v354 != 0 {
+		v340 = v354
 		goto L75
 	} else {
 		goto L79
@@ -930,17 +942,17 @@ L79:
 	goto L76
 L80:
 	;
-	v357 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
-	if v357 != 0 {
+	v365 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
+	if v365 != 0 {
 		goto L81
 	} else {
 		goto L82
 	}
 L81:
 	;
-	v359 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[3]))
-	v360 = *(*int32)(unsafe.Add(mBase, uint32(v359)+48))
-	if v360 != 0 {
+	v367 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[3]))
+	v368 = *(*int32)(unsafe.Add(mBase, uint32(v367)+48))
+	if v368 != 0 {
 		goto L84
 	} else {
 		goto L85
@@ -950,18 +962,18 @@ L82:
 	goto L83
 L83:
 	;
-	v370 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[39]))
-	if v370 != 0 {
+	v378 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[39]))
+	if v378 != 0 {
 		goto L88
 	} else {
 		goto L89
 	}
 L84:
 	;
-	F_pfree(m, v360)
+	F_pfree(m, v368)
 	mBase = m.M
-	v362 = m.ExcPending
-	if v362 != 0 {
+	v370 = m.ExcPending
+	if v370 != 0 {
 		goto L1
 	} else {
 		goto L87
@@ -971,43 +983,43 @@ L85:
 	goto L86
 L86:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v359)+56)) = int32(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v359)+48)) = int64(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v367)+56)) = int32(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v367)+48)) = int64(0)
 	goto L83
 L87:
 	;
 	goto L86
 L88:
 	;
-	v371 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-	v372 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
-	v373 = *(*int32)(unsafe.Add(mBase, uint32(v372)+8))
-	v375 = v370
+	v379 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+	v380 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
+	v381 = *(*int32)(unsafe.Add(mBase, uint32(v380)+8))
+	v383 = v378
 	goto L91
 L89:
 	;
 	goto L90
 L90:
 	;
-	v394 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
-	v396 = int32(0)
-	F_ResourceOwnerReleaseInternal(m, v394, int32(1), v396, v396)
+	v402 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
+	v404 = int32(0)
+	F_ResourceOwnerReleaseInternal(m, v402, int32(1), v404, v404)
 	mBase = m.M
-	v399 = m.ExcPending
-	if v399 != 0 {
+	v407 = m.ExcPending
+	if v407 != 0 {
 		goto L1
 	} else {
 		goto L95
 	}
 L91:
 	;
-	v381 = *(*int32)(unsafe.Add(mBase, uint32(v375)))
-	v383 = *(*int32)(unsafe.Add(mBase, uint32(v375)+8))
-	v384 = *(*int32)(unsafe.Add(mBase, uint32(v375)+4))
-	m.T0[v384].(func(*base.Module, int32, int32, int32, int32))(m, int32(2), v371, v373, v383)
+	v389 = *(*int32)(unsafe.Add(mBase, uint32(v383)))
+	v391 = *(*int32)(unsafe.Add(mBase, uint32(v383)+8))
+	v392 = *(*int32)(unsafe.Add(mBase, uint32(v383)+4))
+	m.T0[v392].(func(*base.Module, int32, int32, int32, int32))(m, int32(2), v379, v381, v391)
 	mBase = m.M
-	v386 = m.ExcPending
-	if v386 != 0 {
+	v394 = m.ExcPending
+	if v394 != 0 {
 		goto L1
 	} else {
 		goto L93
@@ -1017,8 +1029,8 @@ L92:
 	goto L90
 L93:
 	;
-	if v381 != 0 {
-		v375 = v381
+	if v389 != 0 {
+		v383 = v389
 		goto L91
 	} else {
 		goto L94
@@ -1030,21 +1042,21 @@ L95:
 	;
 	F_AtEOXact_Aio(m)
 	mBase = m.M
-	v401 = m.ExcPending
-	if v401 != 0 {
+	v409 = m.ExcPending
+	if v409 != 0 {
 		goto L1
 	} else {
 		goto L96
 	}
 L96:
 	;
-	v403 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-	v404 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
-	v405 = *(*int32)(unsafe.Add(mBase, uint32(v404)+8))
-	F_AtEOSubXact_RelationCache(m, int32(0), v403, v405)
+	v411 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+	v412 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
+	v413 = *(*int32)(unsafe.Add(mBase, uint32(v412)+8))
+	F_AtEOSubXact_RelationCache(m, int32(0), v411, v413)
 	mBase = m.M
-	v407 = m.ExcPending
-	if v407 != 0 {
+	v415 = m.ExcPending
+	if v415 != 0 {
 		goto L1
 	} else {
 		goto L97
@@ -1053,8 +1065,8 @@ L97:
 	;
 	F_AtEOXact_TypeCache(m)
 	mBase = m.M
-	v409 = m.ExcPending
-	if v409 != 0 {
+	v417 = m.ExcPending
+	if v417 != 0 {
 		goto L1
 	} else {
 		goto L98
@@ -1063,32 +1075,32 @@ L98:
 	;
 	F_AtEOSubXact_Inval(m, int32(0))
 	mBase = m.M
-	v412 = m.ExcPending
-	if v412 != 0 {
+	v420 = m.ExcPending
+	if v420 != 0 {
 		goto L1
 	} else {
 		goto L99
 	}
 L99:
 	;
-	v413 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
-	v415 = int32(0)
-	F_ResourceOwnerReleaseInternal(m, v413, int32(2), v415, v415)
+	v421 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
+	v423 = int32(0)
+	F_ResourceOwnerReleaseInternal(m, v421, int32(2), v423, v423)
 	mBase = m.M
-	v418 = m.ExcPending
-	if v418 != 0 {
+	v426 = m.ExcPending
+	if v426 != 0 {
 		goto L1
 	} else {
 		goto L100
 	}
 L100:
 	;
-	v419 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
-	v421 = int32(0)
-	F_ResourceOwnerReleaseInternal(m, v419, int32(3), v421, v421)
+	v427 = *(*int32)(unsafe.Add(mBase, uint32(v24)+40))
+	v429 = int32(0)
+	F_ResourceOwnerReleaseInternal(m, v427, int32(3), v429, v429)
 	mBase = m.M
-	v424 = m.ExcPending
-	if v424 != 0 {
+	v432 = m.ExcPending
+	if v432 != 0 {
 		goto L1
 	} else {
 		goto L101
@@ -1097,65 +1109,65 @@ L101:
 	;
 	F_smgrDoPendingDeletes(m, int32(0))
 	mBase = m.M
-	v427 = m.ExcPending
-	if v427 != 0 {
+	v435 = m.ExcPending
+	if v435 != 0 {
 		goto L1
 	} else {
 		goto L102
 	}
 L102:
 	;
-	v429 = *(*int32)(unsafe.Add(mBase, uint32(v24)+32))
-	F_AtEOXact_GUC(m, int32(0), v429)
+	v437 = *(*int32)(unsafe.Add(mBase, uint32(v24)+32))
+	F_AtEOXact_GUC(m, int32(0), v437)
 	mBase = m.M
-	v431 = m.ExcPending
-	if v431 != 0 {
+	v439 = m.ExcPending
+	if v439 != 0 {
 		goto L1
 	} else {
 		goto L103
 	}
 L103:
 	;
-	v433 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-	F_AtEOSubXact_SPI(m, int32(0), v433)
+	v441 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+	F_AtEOSubXact_SPI(m, int32(0), v441)
 	mBase = m.M
-	v435 = m.ExcPending
-	if v435 != 0 {
+	v443 = m.ExcPending
+	if v443 != 0 {
 		goto L1
 	} else {
 		goto L104
 	}
 L104:
 	;
-	v437 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-	v438 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
-	v439 = *(*int32)(unsafe.Add(mBase, uint32(v438)+8))
-	F_AtEOSubXact_on_commit_actions(m, int32(0), v437, v439)
+	v445 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+	v446 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
+	v447 = *(*int32)(unsafe.Add(mBase, uint32(v446)+8))
+	F_AtEOSubXact_on_commit_actions(m, int32(0), v445, v447)
 	mBase = m.M
-	v441 = m.ExcPending
-	if v441 != 0 {
+	v449 = m.ExcPending
+	if v449 != 0 {
 		goto L1
 	} else {
 		goto L105
 	}
 L105:
 	;
-	v443 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-	v447 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[40]))
-	if v443 == v447 {
+	v451 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+	v455 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[40]))
+	if v451 == v455 {
 		goto L107
 	} else {
 		goto L108
 	}
 L106:
 	;
-	v471 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-	v472 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
-	v473 = *(*int32)(unsafe.Add(mBase, uint32(v472)+8))
-	F_AtEOSubXact_Files(m, int32(0), v471, v473)
+	v479 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+	v480 = *(*int32)(unsafe.Add(mBase, uint32(v24)+80))
+	v481 = *(*int32)(unsafe.Add(mBase, uint32(v480)+8))
+	F_AtEOSubXact_Files(m, int32(0), v479, v481)
 	mBase = m.M
-	v475 = m.ExcPending
-	if v475 != 0 {
+	v483 = m.ExcPending
+	if v483 != 0 {
 		goto L1
 	} else {
 		goto L113
@@ -1174,43 +1186,43 @@ L111:
 	goto L112
 L112:
 	;
-	v452 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[41])) = uint8(v452)
-	v455 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[42])) = v455
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[40])) = v455
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[43])) = v455
-	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[44])) = uint8(v455)
-	v467 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[45]))
-	*(*int32)(unsafe.Add(mBase, uint32(v467)+68)) = v455
+	v460 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[41])) = uint8(v460)
+	v463 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[42])) = v463
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[40])) = v463
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[43])) = v463
+	*(*uint8)(unsafe.Add(mBase, _c_F_AbortSubTransaction[44])) = uint8(v463)
+	v475 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[45]))
+	*(*int32)(unsafe.Add(mBase, uint32(v475)+68)) = v463
 	goto L109
 L113:
 	;
-	v477 = *(*int32)(unsafe.Add(mBase, uint32(v24)+28))
-	F_AtEOSubXact_HashTables(m, int32(0), v477)
+	v485 = *(*int32)(unsafe.Add(mBase, uint32(v24)+28))
+	F_AtEOSubXact_HashTables(m, int32(0), v485)
 	mBase = m.M
-	v479 = m.ExcPending
-	if v479 != 0 {
+	v487 = m.ExcPending
+	if v487 != 0 {
 		goto L1
 	} else {
 		goto L114
 	}
 L114:
 	;
-	v481 = *(*int32)(unsafe.Add(mBase, uint32(v24)+28))
-	F_AtEOSubXact_PgStat(m, int32(0), v481)
+	v489 = *(*int32)(unsafe.Add(mBase, uint32(v24)+28))
+	F_AtEOSubXact_PgStat(m, int32(0), v489)
 	mBase = m.M
-	v483 = m.ExcPending
-	if v483 != 0 {
+	v491 = m.ExcPending
+	if v491 != 0 {
 		goto L1
 	} else {
 		goto L115
 	}
 L115:
 	;
-	v484 = *(*int32)(unsafe.Add(mBase, uint32(v24)+28))
-	v487 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[46]))
-	if v487 != 0 {
+	v492 = *(*int32)(unsafe.Add(mBase, uint32(v24)+28))
+	v495 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[46]))
+	if v495 != 0 {
 		goto L117
 	} else {
 		goto L118
@@ -1220,23 +1232,23 @@ L116:
 	goto L62
 L117:
 	;
-	v490 = v487
+	v498 = v495
 	goto L120
 L118:
 	;
 	goto L119
 L119:
 	;
-	v523 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[47]))
-	if v523 != 0 {
+	v531 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[47]))
+	if v531 != 0 {
 		goto L129
 	} else {
 		goto L130
 	}
 L120:
 	;
-	v495 = *(*int32)(unsafe.Add(mBase, uint32(v490)+4))
-	if v495 < v484 {
+	v503 = *(*int32)(unsafe.Add(mBase, uint32(v498)+4))
+	if v503 < v492 {
 		goto L116
 	} else {
 		goto L122
@@ -1246,57 +1258,57 @@ L121:
 	goto L119
 L122:
 	;
-	v497 = *(*int32)(unsafe.Add(mBase, uint32(v490)+8))
-	v498 = *(*int32)(unsafe.Add(mBase, uint32(v490)))
-	v499 = *(*int32)(unsafe.Add(mBase, uint32(v498)+44))
-	*(*int32)(unsafe.Add(mBase, uint32(v498)+44)) = v499 - int32(1)
-	v503 = *(*int32)(unsafe.Add(mBase, uint32(v490)))
-	v504 = *(*int32)(unsafe.Add(mBase, uint32(v503)+44))
-	if v504 != 0 {
-		v510 = v490
+	v505 = *(*int32)(unsafe.Add(mBase, uint32(v498)+8))
+	v506 = *(*int32)(unsafe.Add(mBase, uint32(v498)))
+	v507 = *(*int32)(unsafe.Add(mBase, uint32(v506)+44))
+	*(*int32)(unsafe.Add(mBase, uint32(v506)+44)) = v507 - int32(1)
+	v511 = *(*int32)(unsafe.Add(mBase, uint32(v498)))
+	v512 = *(*int32)(unsafe.Add(mBase, uint32(v511)+44))
+	if v512 != 0 {
+		v518 = v498
 		goto L123
 	} else {
 		goto L124
 	}
 L123:
 	;
-	F_pfree(m, v510)
+	F_pfree(m, v518)
 	mBase = m.M
-	v512 = m.ExcPending
-	if v512 != 0 {
+	v520 = m.ExcPending
+	if v520 != 0 {
 		goto L1
 	} else {
 		goto L127
 	}
 L124:
 	;
-	v505 = *(*int32)(unsafe.Add(mBase, uint32(v503)+48))
-	if v505 != 0 {
-		v510 = v490
+	v513 = *(*int32)(unsafe.Add(mBase, uint32(v511)+48))
+	if v513 != 0 {
+		v518 = v498
 		goto L123
 	} else {
 		goto L125
 	}
 L125:
 	;
-	F_pfree(m, v503)
+	F_pfree(m, v511)
 	mBase = m.M
-	v507 = m.ExcPending
-	if v507 != 0 {
+	v515 = m.ExcPending
+	if v515 != 0 {
 		goto L1
 	} else {
 		goto L126
 	}
 L126:
 	;
-	v509 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[46]))
-	v510 = v509
+	v517 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[46]))
+	v518 = v517
 	goto L123
 L127:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[46])) = v497
-	if v497 != 0 {
-		v490 = v497
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[46])) = v505
+	if v505 != 0 {
+		v498 = v505
 		goto L120
 	} else {
 		goto L128
@@ -1306,48 +1318,48 @@ L128:
 	goto L121
 L129:
 	;
-	v525 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[45]))
-	v526 = *(*int32)(unsafe.Add(mBase, uint32(v525)+40))
-	v528 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[47]))
-	v530 = v528 - int32(48)
-	v531 = *(*int32)(unsafe.Add(mBase, uint32(v530)))
-	if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v531))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v526)) == int32(0) {
+	v533 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[45]))
+	v534 = *(*int32)(unsafe.Add(mBase, uint32(v533)+40))
+	v536 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[47]))
+	v538 = v536 - int32(48)
+	v539 = *(*int32)(unsafe.Add(mBase, uint32(v538)))
+	if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v539))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v534)) == int32(0) {
 		goto L133
 	} else {
 		goto L134
 	}
 L130:
 	;
-	v548 = int32(0)
+	v556 = int32(0)
 	goto L131
 L131:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[48])) = v548
-	v552 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[45]))
-	*(*int32)(unsafe.Add(mBase, uint32(v552)+40)) = v548
+	*(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[48])) = v556
+	v560 = *(*int32)(unsafe.Add(mBase, _c_F_AbortSubTransaction[45]))
+	*(*int32)(unsafe.Add(mBase, uint32(v560)+40)) = v556
 	goto L116
 L132:
 	;
-	if v543 == int32(0) {
+	if v551 == int32(0) {
 		goto L116
 	} else {
 		goto L136
 	}
 L133:
 	;
-	v543 = base.B2i32(base.Ui32(v526) < base.Ui32(v531))
+	v551 = base.B2i32(base.Ui32(v534) < base.Ui32(v539))
 	goto L132
 L134:
 	;
 	goto L135
 L135:
 	;
-	v543 = int32(base.Ui32(v526-v531) >> (uint(int32(31)) % 32))
+	v551 = int32(base.Ui32(v534-v539) >> (uint(int32(31)) % 32))
 	goto L132
 L136:
 	;
-	v546 = *(*int32)(unsafe.Add(mBase, uint32(v530)))
-	v548 = v546
+	v554 = *(*int32)(unsafe.Add(mBase, uint32(v538)))
+	v556 = v554
 	goto L131
 }
 func F_CleanupSubTransaction(m *base.Module) {

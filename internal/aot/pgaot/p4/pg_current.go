@@ -49,14 +49,18 @@ func F_pg_current_wal_lsn(m *base.Module, l0 int32) int32 {
 	_ = v40
 	var v44 int64
 	_ = v44
-	var v48 int32
-	_ = v48
-	var v52 int64
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v52 int32
 	_ = v52
-	var v54 int32
-	_ = v54
-	var v55 int32
-	_ = v55
+	var v56 int64
+	_ = v56
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[0])))
 	if v4 == int32(1) {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[1]))
@@ -112,16 +116,18 @@ func F_pg_current_wal_lsn(m *base.Module, l0 int32) int32 {
 		v40 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[1]))
 		v44 = base.AtomicRmwCmpxchg64(m, v40, int32(280), v37, v37)
 		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[2])) = v44
-		v48 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[1]))
-		v52 = base.AtomicRmwCmpxchg64(m, v48, int32(272), v37, v37)
-		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[3])) = v52
-		v54 = F_Int64GetDatum(m, v52)
+		v46 = int32(0)
+		v49 = base.AtomicRmwOr32(m, v46, int32(_a_F_pg_current_wal_lsn_5), v46)
+		v52 = *(*int32)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[1]))
+		v56 = base.AtomicRmwCmpxchg64(m, v52, int32(272), v37, v37)
+		*(*int64)(unsafe.Add(mBase, _c_F_pg_current_wal_lsn[3])) = v56
+		v58 = F_Int64GetDatum(m, v56)
 		mBase = m.M
-		v55 = m.ExcPending
-		if v55 != 0 {
+		v59 = m.ExcPending
+		if v59 != 0 {
 			return int32(0)
 		} else {
-			return v54
+			return v58
 		}
 	}
 }

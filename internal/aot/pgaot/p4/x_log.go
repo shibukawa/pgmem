@@ -345,142 +345,148 @@ func F_XLogBackgroundFlush(m *base.Module) int32 {
 	_ = v55
 	var v58 int64
 	_ = v58
-	var v62 int32
-	_ = v62
-	var v66 int64
+	var v63 int32
+	_ = v63
+	var v66 int32
 	_ = v66
-	var v68 int64
-	_ = v68
 	var v70 int64
 	_ = v70
-	var v71 int32
-	_ = v71
-	var v73 int32
-	_ = v73
-	var v76 int32
-	_ = v76
-	var v78 int32
-	_ = v78
-	var v85 int32
-	_ = v85
-	var v86 int32
-	_ = v86
-	var v88 int32
-	_ = v88
-	var v89 int64
+	var v72 int64
+	_ = v72
+	var v74 int64
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v77 int32
+	_ = v77
+	var v80 int32
+	_ = v80
+	var v82 int32
+	_ = v82
+	var v89 int32
 	_ = v89
-	var v95 int64
-	_ = v95
-	var v98 int32
-	_ = v98
-	var v102 int64
+	var v90 int32
+	_ = v90
+	var v92 int32
+	_ = v92
+	var v93 int64
+	_ = v93
+	var v99 int64
+	_ = v99
+	var v102 int32
 	_ = v102
-	var v104 int64
-	_ = v104
+	var v106 int64
+	_ = v106
 	var v108 int64
 	_ = v108
-	var v109 int64
-	_ = v109
-	var v112 int32
+	var v112 int64
 	_ = v112
-	var v115 int64
-	_ = v115
-	var v119 int32
+	var v113 int64
+	_ = v113
+	var v116 int32
+	_ = v116
+	var v119 int64
 	_ = v119
-	var v120 int32
-	_ = v120
-	var v121 int32
-	_ = v121
-	var v124 int64
+	var v123 int32
+	_ = v123
+	var v124 int32
 	_ = v124
-	var v125 int64
+	var v125 int32
 	_ = v125
-	var v133 int64
-	_ = v133
-	var v135 int32
-	_ = v135
+	var v128 int64
+	_ = v128
+	var v129 int64
+	_ = v129
 	var v137 int64
 	_ = v137
-	var v145 int64
-	_ = v145
-	var v147 int32
-	_ = v147
-	var v157 int32
-	_ = v157
-	var v158 int64
-	_ = v158
-	var v172 int32
-	_ = v172
-	var v174 int32
-	_ = v174
-	var v178 int64
+	var v139 int32
+	_ = v139
+	var v141 int64
+	_ = v141
+	var v149 int64
+	_ = v149
+	var v151 int32
+	_ = v151
+	var v161 int32
+	_ = v161
+	var v162 int64
+	_ = v162
+	var v176 int32
+	_ = v176
+	var v178 int32
 	_ = v178
-	var v179 int32
-	_ = v179
-	var v181 int32
-	_ = v181
+	var v182 int64
+	_ = v182
+	var v183 int32
+	_ = v183
 	var v185 int32
 	_ = v185
-	var v186 int32
-	_ = v186
-	var v188 int32
-	_ = v188
 	var v189 int32
 	_ = v189
-	var v190 int64
+	var v190 int32
 	_ = v190
-	var v193 int64
+	var v192 int32
+	_ = v192
+	var v193 int32
 	_ = v193
-	var v197 int32
+	var v194 int64
+	_ = v194
+	var v197 int64
 	_ = v197
-	var v201 int64
-	_ = v201
-	var v203 int64
-	_ = v203
-	var v205 int64
+	var v199 int32
+	_ = v199
+	var v202 int32
+	_ = v202
+	var v205 int32
 	_ = v205
-	var v207 int64
-	_ = v207
 	var v209 int64
 	_ = v209
 	var v211 int64
 	_ = v211
-	var v214 int32
-	_ = v214
-	var v216 int32
-	_ = v216
-	var v220 int32
-	_ = v220
-	var v221 int32
-	_ = v221
-	var v223 int32
-	_ = v223
+	var v213 int64
+	_ = v213
+	var v215 int64
+	_ = v215
+	var v217 int64
+	_ = v217
+	var v219 int64
+	_ = v219
+	var v222 int32
+	_ = v222
 	var v224 int32
 	_ = v224
+	var v228 int32
+	_ = v228
 	var v229 int32
 	_ = v229
-	var v234 int32
-	_ = v234
-	var v235 int32
-	_ = v235
-	var v236 int32
-	_ = v236
-	var v241 int32
-	_ = v241
+	var v231 int32
+	_ = v231
+	var v232 int32
+	_ = v232
+	var v237 int32
+	_ = v237
+	var v242 int32
+	_ = v242
 	var v243 int32
 	_ = v243
-	var v247 int32
-	_ = v247
-	var v250 int32
-	_ = v250
+	var v244 int32
+	_ = v244
+	var v249 int32
+	_ = v249
+	var v251 int32
+	_ = v251
 	var v255 int32
 	_ = v255
-	var v256 int32
-	_ = v256
-	var v260 int32
-	_ = v260
-	var v261 int32
-	_ = v261
+	var v258 int32
+	_ = v258
+	var v263 int32
+	_ = v263
+	var v264 int32
+	_ = v264
+	var v268 int32
+	_ = v268
+	var v269 int32
+	_ = v269
 	v10 = m.G0
 	v12 = v10 - int32(32)
 	m.G0 = v12
@@ -494,14 +500,14 @@ func F_XLogBackgroundFlush(m *base.Module) int32 {
 L1:
 	;
 	m.G0 = v12 + int32(32)
-	return v261
+	return v269
 L2:
 	;
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(v15)+316))
 	v23 = base.B2i32(v21 != int32(2))
 	*(*uint8)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[1])) = uint8(v23)
 	if v21 != int32(2) {
-		v261 = int32(0)
+		v269 = int32(0)
 		goto L1
 	} else {
 		goto L5
@@ -551,14 +557,15 @@ L8:
 	v55 = int64(0)
 	v58 = base.AtomicRmwCmpxchg64(m, v42, int32(280), v55, v55)
 	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2])) = v58
-	v62 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
-	v66 = base.AtomicRmwCmpxchg64(m, v62, int32(272), v55, v55)
-	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[3])) = v66
-	v68 = *(*int64)(unsafe.Add(mBase, uint32(v12)+16))
-	v70 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2]))
-	v71 = base.B2i32(base.Ui64(v70) < base.Ui64(v68))
-	if base.Ui64(v70) < base.Ui64(v68) {
-		v115 = v68
+	v63 = base.AtomicRmwOr32(m, v47, int32(_a_F_XLogBackgroundFlush_4), v47)
+	v66 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
+	v70 = base.AtomicRmwCmpxchg64(m, v66, int32(272), v55, v55)
+	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[3])) = v70
+	v72 = *(*int64)(unsafe.Add(mBase, uint32(v12)+16))
+	v74 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2]))
+	v75 = base.B2i32(base.Ui64(v74) < base.Ui64(v72))
+	if base.Ui64(v74) < base.Ui64(v72) {
+		v119 = v72
 		goto L11
 	} else {
 		goto L12
@@ -571,33 +578,33 @@ L10:
 	goto L8
 L11:
 	;
-	v119 = m.G0
-	v120 = int32(16)
-	v121 = v119 - v120
-	m.G0 = v121
-	F_gettimeofday(m, v121)
+	v123 = m.G0
+	v124 = int32(16)
+	v125 = v123 - v124
+	m.G0 = v125
+	F_gettimeofday(m, v125)
 	mBase = m.M
-	v124 = *(*int64)(unsafe.Add(mBase, uint32(v121)))
-	v125 = int64(*(*int32)(unsafe.Add(mBase, uint32(v121)+8)))
-	m.G0 = v121 + v120
-	v133 = v125 + v124*int64(1000000) - int64(946684800000000)
+	v128 = *(*int64)(unsafe.Add(mBase, uint32(v125)))
+	v129 = int64(*(*int32)(unsafe.Add(mBase, uint32(v125)+8)))
+	m.G0 = v125 + v124
+	v137 = v129 + v128*int64(1000000) - int64(946684800000000)
 	goto L21
 L12:
 	;
-	v73 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
-	v76 = base.AtomicRmwXchg32(m, v73, int32(440), int32(1))
-	if v76 != 0 {
+	v77 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
+	v80 = base.AtomicRmwXchg32(m, v77, int32(440), int32(1))
+	if v80 != 0 {
 		goto L13
 	} else {
 		goto L14
 	}
 L13:
 	;
-	v78 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
-	F_s_lock(m, v78+int32(440), int32(_a_F_XLogBackgroundFlush_0), int32(3001), int32(_a_F_XLogBackgroundFlush_1))
+	v82 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
+	F_s_lock(m, v82+int32(440), int32(_a_F_XLogBackgroundFlush_0), int32(3001), int32(_a_F_XLogBackgroundFlush_1))
 	mBase = m.M
-	v85 = m.ExcPending
-	if v85 != 0 {
+	v89 = m.ExcPending
+	if v89 != 0 {
 		goto L9
 	} else {
 		goto L16
@@ -607,14 +614,14 @@ L14:
 	goto L15
 L15:
 	;
-	v86 = int32(0)
-	v88 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
-	v89 = *(*int64)(unsafe.Add(mBase, uint32(v88)+216))
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+16)) = v89
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v88)+440)), uint32(v86))
-	v95 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2]))
-	if base.Ui64(v95) < base.Ui64(v89) {
-		v115 = v89
+	v90 = int32(0)
+	v92 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
+	v93 = *(*int64)(unsafe.Add(mBase, uint32(v92)+216))
+	*(*int64)(unsafe.Add(mBase, uint32(v12)+16)) = v93
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v92)+440)), uint32(v90))
+	v99 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2]))
+	if base.Ui64(v99) < base.Ui64(v93) {
+		v119 = v93
 		goto L11
 	} else {
 		goto L17
@@ -624,21 +631,21 @@ L16:
 	goto L15
 L17:
 	;
-	v98 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[11]))
-	if v98 < int32(0) {
-		v261 = v86
+	v102 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[11]))
+	if v102 < int32(0) {
+		v269 = v90
 		goto L1
 	} else {
 		goto L18
 	}
 L18:
 	;
-	v102 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[12]))
-	v104 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[3]))
-	v108 = int64(*(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[13])))
-	v109 = base.I64_div_u_s(v104-int64(1), v108)
-	if v102 == v109 {
-		v261 = v86
+	v106 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[12]))
+	v108 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[3]))
+	v112 = int64(*(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[13])))
+	v113 = base.I64_div_u_s(v108-int64(1), v112)
+	if v106 == v113 {
+		v269 = v90
 		goto L1
 	} else {
 		goto L19
@@ -647,46 +654,46 @@ L19:
 	;
 	F_XLogFileClose(m)
 	mBase = m.M
-	v112 = m.ExcPending
-	if v112 != 0 {
+	v116 = m.ExcPending
+	if v116 != 0 {
 		goto L9
 	} else {
 		goto L20
 	}
 L20:
 	;
-	v261 = v86
+	v269 = v90
 	goto L1
 L21:
 	;
-	v135 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[4]))
-	if v135 != 0 {
+	v139 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[4]))
+	if v139 != 0 {
 		goto L24
 	} else {
 		goto L25
 	}
 L22:
 	;
-	v172 = int32(_a_F_XLogBackgroundFlush_4)
-	v174 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[7]))
-	*(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[7])) = v174 + int32(1)
-	v178 = F_WaitXLogInsertionsToFinish(m, v115)
+	v176 = int32(_a_F_XLogBackgroundFlush_5)
+	v178 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[7]))
+	*(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[7])) = v178 + int32(1)
+	v182 = F_WaitXLogInsertionsToFinish(m, v119)
 	mBase = m.M
-	v179 = m.ExcPending
-	if v179 != 0 {
+	v183 = m.ExcPending
+	if v183 != 0 {
 		goto L9
 	} else {
 		goto L35
 	}
 L23:
 	;
-	v145 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2]))
-	v147 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[6]))
+	v149 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2]))
+	v151 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[6]))
 	goto L28
 L24:
 	;
-	v137 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[5]))
-	if v137 != int64(0) {
+	v141 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[5]))
+	if v141 != int64(0) {
 		goto L23
 	} else {
 		goto L27
@@ -696,40 +703,40 @@ L25:
 	goto L26
 L26:
 	;
-	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[5])) = v133
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+24)) = v115
+	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[5])) = v137
+	*(*int64)(unsafe.Add(mBase, uint32(v12)+24)) = v119
 	goto L22
 L27:
 	;
 	goto L26
 L28:
 	;
-	if base.I64_extend_i32_s(v147)*int64(1000) <= v133-v137 {
+	if base.I64_extend_i32_s(v151)*int64(1000) <= v137-v141 {
 		goto L29
 	} else {
 		goto L30
 	}
 L29:
 	;
-	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[5])) = v133
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+24)) = v115
+	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[5])) = v137
+	*(*int64)(unsafe.Add(mBase, uint32(v12)+24)) = v119
 	goto L22
 L30:
 	;
 	goto L31
 L31:
 	;
-	v157 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[4]))
-	v158 = int64(13)
-	if v157 <= base.I32_wrap_i64(int64(base.Ui64(v115)>>(uint(v158)%64))-int64(base.Ui64(v145)>>(uint(v158)%64))) {
+	v161 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[4]))
+	v162 = int64(13)
+	if v161 <= base.I32_wrap_i64(int64(base.Ui64(v119)>>(uint(v162)%64))-int64(base.Ui64(v149)>>(uint(v162)%64))) {
 		goto L32
 	} else {
 		goto L33
 	}
 L32:
 	;
-	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[5])) = v133
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+24)) = v115
+	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[5])) = v137
+	*(*int64)(unsafe.Add(mBase, uint32(v12)+24)) = v119
 	goto L22
 L33:
 	;
@@ -740,47 +747,49 @@ L34:
 	goto L22
 L35:
 	;
-	v181 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[8]))
-	v185 = F_LWLockAcquire(m, v181+int32(1024), int32(0))
+	v185 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[8]))
+	v189 = F_LWLockAcquire(m, v185+int32(1024), int32(0))
 	mBase = m.M
-	v186 = m.ExcPending
-	if v186 != 0 {
+	v190 = m.ExcPending
+	if v190 != 0 {
 		goto L9
 	} else {
 		goto L36
 	}
 L36:
 	;
-	v188 = int32(_a_F_XLogBackgroundFlush_2)
-	v189 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
-	v190 = int64(0)
-	v193 = base.AtomicRmwCmpxchg64(m, v189, int32(280), v190, v190)
-	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2])) = v193
-	v197 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
-	v201 = base.AtomicRmwCmpxchg64(m, v197, int32(272), v190, v190)
-	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[3])) = v201
-	v203 = *(*int64)(unsafe.Add(mBase, uint32(v12)+16))
-	if base.Ui64(v203) <= base.Ui64(v201) {
+	v192 = int32(_a_F_XLogBackgroundFlush_2)
+	v193 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
+	v194 = int64(0)
+	v197 = base.AtomicRmwCmpxchg64(m, v193, int32(280), v194, v194)
+	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2])) = v197
+	v199 = int32(0)
+	v202 = base.AtomicRmwOr32(m, v199, int32(_a_F_XLogBackgroundFlush_4), v199)
+	v205 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
+	v209 = base.AtomicRmwCmpxchg64(m, v205, int32(272), v194, v194)
+	*(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[3])) = v209
+	v211 = *(*int64)(unsafe.Add(mBase, uint32(v12)+16))
+	if base.Ui64(v211) <= base.Ui64(v209) {
 		goto L38
 	} else {
 		goto L39
 	}
 L37:
 	;
-	v216 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[8]))
-	F_LWLockRelease(m, v216+int32(1024))
+	v224 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[8]))
+	F_LWLockRelease(m, v224+int32(1024))
 	mBase = m.M
-	v220 = m.ExcPending
-	if v220 != 0 {
+	v228 = m.ExcPending
+	if v228 != 0 {
 		goto L9
 	} else {
 		goto L43
 	}
 L38:
 	;
-	v205 = *(*int64)(unsafe.Add(mBase, uint32(v12)+24))
-	v207 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2]))
-	if base.Ui64(v205) <= base.Ui64(v207) {
+	v213 = *(*int64)(unsafe.Add(mBase, uint32(v12)+24))
+	v215 = *(*int64)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[2]))
+	if base.Ui64(v213) <= base.Ui64(v215) {
 		goto L37
 	} else {
 		goto L41
@@ -790,14 +799,14 @@ L39:
 	goto L40
 L40:
 	;
-	v209 = *(*int64)(unsafe.Add(mBase, uint32(v12)+24))
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+8)) = v209
-	v211 = *(*int64)(unsafe.Add(mBase, uint32(v12)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v12))) = v211
-	F_XLogWrite(m, v12, v26, v71)
+	v217 = *(*int64)(unsafe.Add(mBase, uint32(v12)+24))
+	*(*int64)(unsafe.Add(mBase, uint32(v12)+8)) = v217
+	v219 = *(*int64)(unsafe.Add(mBase, uint32(v12)+16))
+	*(*int64)(unsafe.Add(mBase, uint32(v12))) = v219
+	F_XLogWrite(m, v12, v26, v75)
 	mBase = m.M
-	v214 = m.ExcPending
-	if v214 != 0 {
+	v222 = m.ExcPending
+	if v222 != 0 {
 		goto L9
 	} else {
 		goto L42
@@ -810,63 +819,63 @@ L42:
 	goto L37
 L43:
 	;
-	v221 = int32(_a_F_XLogBackgroundFlush_4)
-	v223 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[7]))
-	v224 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[7])) = v223 - v224
-	v229 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[1])))
-	if v229 == v224 {
+	v229 = int32(_a_F_XLogBackgroundFlush_5)
+	v231 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[7]))
+	v232 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[7])) = v231 - v232
+	v237 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[1])))
+	if v237 == v232 {
 		goto L44
 	} else {
 		goto L45
 	}
 L44:
 	;
-	v234 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
-	v235 = *(*int32)(unsafe.Add(mBase, uint32(v234)+316))
-	v236 = int32(2)
-	*(*uint8)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[1])) = uint8(base.B2i32(v235 != v236))
-	v241 = base.B2i32(v235 == v236)
+	v242 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[0]))
+	v243 = *(*int32)(unsafe.Add(mBase, uint32(v242)+316))
+	v244 = int32(2)
+	*(*uint8)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[1])) = uint8(base.B2i32(v243 != v244))
+	v249 = base.B2i32(v243 == v244)
 	goto L46
 L45:
 	;
-	v241 = v224
+	v249 = v232
 	goto L46
 L46:
 	;
-	v243 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[9])))
-	if v243 != int32(1) {
+	v251 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[9])))
+	if v251 != int32(1) {
 		goto L47
 	} else {
 		goto L48
 	}
 L47:
 	;
-	v256 = int32(1)
-	F_AdvanceXLInsertBuffer(m, int64(0), v26, v256)
+	v264 = int32(1)
+	F_AdvanceXLInsertBuffer(m, int64(0), v26, v264)
 	mBase = m.M
-	v260 = m.ExcPending
-	if v260 != 0 {
+	v268 = m.ExcPending
+	if v268 != 0 {
 		goto L9
 	} else {
 		goto L51
 	}
 L48:
 	;
-	v247 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[9])) = uint8(v247)
-	v250 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[10]))
-	if v250 <= v247 {
+	v255 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[9])) = uint8(v255)
+	v258 = *(*int32)(unsafe.Add(mBase, _c_F_XLogBackgroundFlush[10]))
+	if v258 <= v255 {
 		goto L47
 	} else {
 		goto L49
 	}
 L49:
 	;
-	F_WalSndWakeup(m, int32(1), v241)
+	F_WalSndWakeup(m, int32(1), v249)
 	mBase = m.M
-	v255 = m.ExcPending
-	if v255 != 0 {
+	v263 = m.ExcPending
+	if v263 != 0 {
 		goto L9
 	} else {
 		goto L50
@@ -876,7 +885,7 @@ L50:
 	goto L47
 L51:
 	;
-	v261 = v256
+	v269 = v264
 	goto L1
 }
 func F_XLogFileClose(m *base.Module) {

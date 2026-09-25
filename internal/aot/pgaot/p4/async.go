@@ -236,12 +236,16 @@ func F_ExecAppendAsyncEventWait(m *base.Module, l0 int32) {
 	_ = v348
 	var v357 int32
 	_ = v357
-	var v361 int32
-	_ = v361
+	var v358 int32
+	_ = v358
+	var v363 int32
+	_ = v363
 	var v365 int32
 	_ = v365
-	var v367 int32
-	_ = v367
+	var v369 int32
+	_ = v369
+	var v371 int32
+	_ = v371
 	v10 = m.G0
 	v12 = v10 - int32(256)
 	m.G0 = v12
@@ -931,9 +935,9 @@ L96:
 	}
 L97:
 	;
-	v367 = v253 + int32(1)
-	if v367 != v242 {
-		v253 = v367
+	v371 = v253 + int32(1)
+	if v371 != v242 {
+		v253 = v371
 		goto L63
 	} else {
 		goto L102
@@ -941,12 +945,14 @@ L97:
 L98:
 	;
 	v357 = *(*int32)(unsafe.Add(mBase, _c_F_ExecAppendAsyncEventWait[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v357))) = int32(0)
+	v358 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v357))) = v358
+	v363 = base.AtomicRmwOr32(m, v358, int32(_a_F_ExecAppendAsyncEventWait_5), v358)
 	goto L99
 L99:
 	;
-	v361 = *(*int32)(unsafe.Add(mBase, _c_F_ExecAppendAsyncEventWait[2]))
-	if v361 == int32(0) {
+	v365 = *(*int32)(unsafe.Add(mBase, _c_F_ExecAppendAsyncEventWait[2]))
+	if v365 == int32(0) {
 		goto L97
 	} else {
 		goto L100
@@ -955,8 +961,8 @@ L100:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v365 = m.ExcPending
-	if v365 != 0 {
+	v369 = m.ExcPending
+	if v369 != 0 {
 		goto L1
 	} else {
 		goto L101

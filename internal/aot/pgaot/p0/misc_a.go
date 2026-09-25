@@ -23162,18 +23162,24 @@ func F_assign_application_name(m *base.Module, l0 int32, l1 int32) {
 	_ = v17
 	var v21 int32
 	_ = v21
-	var v23 int32
-	_ = v23
+	var v24 int32
+	_ = v24
 	var v25 int32
 	_ = v25
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v33 int32
-	_ = v33
+	var v29 int32
+	_ = v29
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_assign_application_name[0]))
 	if v6 != 0 {
 		v7 = F_strlen(m, l0)
@@ -23190,20 +23196,23 @@ func F_assign_application_name(m *base.Module, l0 int32, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, _c_F_assign_application_name[1])) = v13 + v14
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = v17 + v14
-			v21 = *(*int32)(unsafe.Add(mBase, uint32(v6)+212))
+			v21 = int32(0)
+			v24 = base.AtomicRmwOr32(m, v21, int32(_a_F_assign_application_name_1), v21)
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(v6)+212))
 			if v9 != 0 {
-				base.MemoryCopy(m, v21, l0, v9)
+				base.MemoryCopy(m, v25, l0, v9)
 			} else {
 			}
-			v23 = *(*int32)(unsafe.Add(mBase, uint32(v6)+212))
-			v25 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, uint32(v23+v9))) = uint8(v25)
-			v27 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-			v28 = int32(1)
-			*(*int32)(unsafe.Add(mBase, uint32(v6))) = v27 + v28
-			v31 = int32(_a_F_assign_application_name_0)
-			v33 = *(*int32)(unsafe.Add(mBase, _c_F_assign_application_name[1]))
-			*(*int32)(unsafe.Add(mBase, _c_F_assign_application_name[1])) = v33 - v28
+			v27 = *(*int32)(unsafe.Add(mBase, uint32(v6)+212))
+			v29 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v27+v9))) = uint8(v29)
+			v34 = base.AtomicRmwOr32(m, v29, int32(_a_F_assign_application_name_1), v29)
+			v35 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+			v36 = int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(v6))) = v35 + v36
+			v39 = int32(_a_F_assign_application_name_0)
+			v41 = *(*int32)(unsafe.Add(mBase, _c_F_assign_application_name[1]))
+			*(*int32)(unsafe.Add(mBase, _c_F_assign_application_name[1])) = v41 - v36
 			return
 		}
 	} else {

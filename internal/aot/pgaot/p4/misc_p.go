@@ -11031,59 +11031,71 @@ func F_ProcessPendingWrites(m *base.Module) {
 	_ = v128
 	var v130 int32
 	_ = v130
-	var v134 int32
-	_ = v134
+	var v131 int32
+	_ = v131
 	var v136 int32
 	_ = v136
 	var v138 int32
 	_ = v138
-	var v144 int32
-	_ = v144
-	var v146 int32
-	_ = v146
+	var v140 int32
+	_ = v140
+	var v142 int32
+	_ = v142
 	var v148 int32
 	_ = v148
-	var v149 int32
-	_ = v149
 	var v150 int32
 	_ = v150
-	var v151 int32
-	_ = v151
+	var v152 int32
+	_ = v152
+	var v153 int32
+	_ = v153
+	var v154 int32
+	_ = v154
 	var v155 int32
 	_ = v155
-	var v156 int32
-	_ = v156
 	var v159 int32
 	_ = v159
-	var v162 int32
-	_ = v162
-	var v166 int32
-	_ = v166
-	var v168 int32
-	_ = v168
+	var v160 int32
+	_ = v160
+	var v163 int32
+	_ = v163
+	var v164 int32
+	_ = v164
+	var v167 int32
+	_ = v167
 	var v170 int32
 	_ = v170
-	var v173 int32
-	_ = v173
-	var v176 int32
-	_ = v176
+	var v171 int32
+	_ = v171
+	var v174 int32
+	_ = v174
+	var v178 int32
+	_ = v178
 	var v180 int32
 	_ = v180
-	var v184 int32
-	_ = v184
+	var v182 int32
+	_ = v182
+	var v185 int32
+	_ = v185
 	var v188 int32
 	_ = v188
+	var v192 int32
+	_ = v192
 	var v196 int32
 	_ = v196
-	var v204 int32
-	_ = v204
+	var v200 int32
+	_ = v200
+	var v208 int32
+	_ = v208
+	var v216 int32
+	_ = v216
 	goto L2
 L1:
 	;
 	F_WalSndShutdown(m)
 	mBase = m.M
-	v204 = m.ExcPending
-	if v204 != 0 {
+	v216 = m.ExcPending
+	if v216 != 0 {
 		goto L4
 	} else {
 		goto L60
@@ -11100,9 +11112,11 @@ L2:
 	}
 L3:
 	;
-	v155 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[0]))
-	v156 = *(*int32)(unsafe.Add(mBase, uint32(v155)))
-	if v156 != 0 {
+	v159 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[0]))
+	v160 = int32(0)
+	v163 = base.AtomicRmwOr32(m, v160, int32(_a_F_ProcessPendingWrites_0), v160)
+	v164 = *(*int32)(unsafe.Add(mBase, uint32(v159)))
+	if v164 != 0 {
 		goto L47
 	} else {
 		goto L48
@@ -11176,7 +11190,7 @@ L12:
 	}
 L13:
 	;
-	F_errmsg(m, int32(_a_F_ProcessPendingWrites_0), int32(0))
+	F_errmsg(m, int32(_a_F_ProcessPendingWrites_1), int32(0))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -11186,7 +11200,7 @@ L13:
 	}
 L14:
 	;
-	F_errfinish(m, int32(_a_F_ProcessPendingWrites_1), int32(2789), int32(_a_F_ProcessPendingWrites_2))
+	F_errfinish(m, int32(_a_F_ProcessPendingWrites_2), int32(2789), int32(_a_F_ProcessPendingWrites_3))
 	mBase = m.M
 	v40 = m.ExcPending
 	if v40 != 0 {
@@ -11265,7 +11279,7 @@ L24:
 	goto L3
 L25:
 	;
-	v85 = int32(_a_F_ProcessPendingWrites_3)
+	v85 = int32(_a_F_ProcessPendingWrites_4)
 	v87 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[3]))
 	if v87 <= int32(0) {
 		v123 = v85
@@ -11326,12 +11340,14 @@ L32:
 L33:
 	;
 	v130 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v130))) = int32(0)
+	v131 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v130))) = v131
+	v136 = base.AtomicRmwOr32(m, v131, int32(_a_F_ProcessPendingWrites_0), v131)
 	goto L34
 L34:
 	;
-	v134 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[6]))
-	if v134 != 0 {
+	v138 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[6]))
+	if v138 != 0 {
 		goto L35
 	} else {
 		goto L36
@@ -11340,8 +11356,8 @@ L35:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v136 = m.ExcPending
-	if v136 != 0 {
+	v140 = m.ExcPending
+	if v140 != 0 {
 		goto L4
 	} else {
 		goto L38
@@ -11351,8 +11367,8 @@ L36:
 	goto L37
 L37:
 	;
-	v138 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[7]))
-	if v138 != 0 {
+	v142 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[7]))
+	if v142 != 0 {
 		goto L39
 	} else {
 		goto L40
@@ -11365,8 +11381,8 @@ L39:
 	*(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[7])) = int32(0)
 	F_ProcessConfigFile(m, int32(2))
 	mBase = m.M
-	v144 = m.ExcPending
-	if v144 != 0 {
+	v148 = m.ExcPending
+	if v148 != 0 {
 		goto L4
 	} else {
 		goto L42
@@ -11376,12 +11392,12 @@ L40:
 	goto L41
 L41:
 	;
-	v148 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[2]))
-	v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+8))
-	v150 = m.T0[v149].(func(*base.Module) int32)(m)
+	v152 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[2]))
+	v153 = *(*int32)(unsafe.Add(mBase, uint32(v152)+8))
+	v154 = m.T0[v153].(func(*base.Module) int32)(m)
 	mBase = m.M
-	v151 = m.ExcPending
-	if v151 != 0 {
+	v155 = m.ExcPending
+	if v155 != 0 {
 		goto L4
 	} else {
 		goto L44
@@ -11390,8 +11406,8 @@ L42:
 	;
 	F_SyncRepInitConfig(m)
 	mBase = m.M
-	v146 = m.ExcPending
-	if v146 != 0 {
+	v150 = m.ExcPending
+	if v150 != 0 {
 		goto L4
 	} else {
 		goto L43
@@ -11401,7 +11417,7 @@ L43:
 	goto L41
 L44:
 	;
-	if v150 == int32(0) {
+	if v154 == int32(0) {
 		goto L2
 	} else {
 		goto L45
@@ -11417,36 +11433,38 @@ L47:
 	goto L46
 L48:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v155))) = int32(1)
-	v159 = *(*int32)(unsafe.Add(mBase, uint32(v155)+4))
-	if v159 == int32(0) {
+	*(*int32)(unsafe.Add(mBase, uint32(v159))) = int32(1)
+	v167 = int32(0)
+	v170 = base.AtomicRmwOr32(m, v167, int32(_a_F_ProcessPendingWrites_0), v167)
+	v171 = *(*int32)(unsafe.Add(mBase, uint32(v159)+4))
+	if v171 == v167 {
 		goto L47
 	} else {
 		goto L49
 	}
 L49:
 	;
-	v162 = *(*int32)(unsafe.Add(mBase, uint32(v155)+12))
-	if v162 == int32(0) {
+	v174 = *(*int32)(unsafe.Add(mBase, uint32(v159)+12))
+	if v174 == int32(0) {
 		goto L47
 	} else {
 		goto L50
 	}
 L50:
 	;
-	v166 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[8]))
-	if v166 == v162 {
+	v178 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[8]))
+	if v178 == v174 {
 		goto L51
 	} else {
 		goto L52
 	}
 L51:
 	;
-	v168 = m.G0
-	v170 = v168 - int32(16)
-	m.G0 = v170
-	v173 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[9]))
-	if v173 == int32(0) {
+	v180 = m.G0
+	v182 = v180 - int32(16)
+	m.G0 = v182
+	v185 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[9]))
+	if v185 == int32(0) {
 		goto L54
 	} else {
 		goto L55
@@ -11456,24 +11474,24 @@ L52:
 	goto L53
 L53:
 	;
-	v196 = F_pgmem_kill(m, v162, int32(23))
+	v208 = F_pgmem_kill(m, v174, int32(23))
 	mBase = m.M
 	goto L47
 L54:
 	;
-	m.G0 = v170 + int32(16)
+	m.G0 = v182 + int32(16)
 	goto L46
 L55:
 	;
-	v176 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v170)+15)) = uint8(v176)
+	v188 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v182)+15)) = uint8(v188)
 	goto L56
 L56:
 	;
-	v180 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[10]))
-	v184 = F_write(m, v180, v170+int32(15), int32(1))
+	v192 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[10]))
+	v196 = F_write(m, v192, v182+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v184 {
+	if int32(0) <= v196 {
 		goto L54
 	} else {
 		goto L58
@@ -11483,8 +11501,8 @@ L57:
 	goto L54
 L58:
 	;
-	v188 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[11]))
-	if v188 == int32(27) {
+	v200 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessPendingWrites[11]))
+	if v200 == int32(27) {
 		goto L56
 	} else {
 		goto L59

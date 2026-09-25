@@ -1346,42 +1346,46 @@ func F_GetRunningTransactionData(m *base.Module) int32 {
 	_ = v179
 	var v181 int32
 	_ = v181
-	var v183 int32
-	_ = v183
-	var v194 int32
-	_ = v194
-	var v196 int32
-	_ = v196
-	var v197 int32
-	_ = v197
+	var v182 int32
+	_ = v182
+	var v185 int32
+	_ = v185
+	var v187 int32
+	_ = v187
 	var v198 int32
 	_ = v198
+	var v200 int32
+	_ = v200
+	var v201 int32
+	_ = v201
 	var v202 int32
 	_ = v202
-	var v205 int32
-	_ = v205
-	var v207 int32
-	_ = v207
-	var v208 int32
-	_ = v208
-	var v210 int32
-	_ = v210
+	var v206 int32
+	_ = v206
+	var v209 int32
+	_ = v209
 	var v211 int32
 	_ = v211
-	var v224 int32
-	_ = v224
+	var v212 int32
+	_ = v212
+	var v214 int32
+	_ = v214
+	var v215 int32
+	_ = v215
 	var v228 int32
 	_ = v228
-	var v229 int64
-	_ = v229
-	var v243 int32
-	_ = v243
-	var v246 int32
-	_ = v246
+	var v232 int32
+	_ = v232
+	var v233 int64
+	_ = v233
+	var v247 int32
+	_ = v247
 	var v250 int32
 	_ = v250
-	var v255 int32
-	_ = v255
+	var v254 int32
+	_ = v254
+	var v259 int32
+	_ = v259
 	v1 = int32(0)
 	v17 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[0]))
 	v19 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[1]))
@@ -1396,26 +1400,26 @@ func F_GetRunningTransactionData(m *base.Module) int32 {
 		if v33 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v243 = m.ExcPending
-			if v243 != 0 {
+			v247 = m.ExcPending
+			if v247 != 0 {
 				return int32(0)
 			} else {
 				F_errcode(m, int32(_a_F_GetRunningTransactionData_0))
 				mBase = m.M
-				v246 = m.ExcPending
-				if v246 != 0 {
+				v250 = m.ExcPending
+				if v250 != 0 {
 					return int32(0)
 				} else {
 					F_errmsg(m, int32(_a_F_GetRunningTransactionData_1), int32(0))
 					mBase = m.M
-					v250 = m.ExcPending
-					if v250 != 0 {
+					v254 = m.ExcPending
+					if v254 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_GetRunningTransactionData_2), int32(2727), int32(_a_F_GetRunningTransactionData_3))
 						mBase = m.M
-						v255 = m.ExcPending
-						if v255 != 0 {
+						v259 = m.ExcPending
+						if v259 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
@@ -1446,11 +1450,11 @@ func F_GetRunningTransactionData(m *base.Module) int32 {
 					v57 = *(*int64)(unsafe.Add(mBase, uint32(v55)+48))
 					v58 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
 					if v58 <= int32(0) {
-						v205 = v1
-						v207 = v1
-						v208 = v56
-						v210 = v1
-						v211 = v56
+						v209 = v1
+						v211 = v1
+						v212 = v56
+						v214 = v1
+						v215 = v56
 					} else {
 						v64 = v58
 						v65 = v1
@@ -1524,19 +1528,19 @@ func F_GetRunningTransactionData(m *base.Module) int32 {
 							break
 						}
 						if v136&int32(1) != 0 {
-							v205 = int32(2)
-							v207 = int32(0)
-							v208 = v137
-							v210 = v138
-							v211 = v139
+							v209 = int32(2)
+							v211 = int32(0)
+							v212 = v137
+							v214 = v138
+							v215 = v139
 						} else {
 							v147 = int32(0)
 							if v135 <= v147 {
-								v205 = v147
-								v207 = int32(0)
-								v208 = v137
-								v210 = v138
-								v211 = v139
+								v209 = v147
+								v211 = int32(0)
+								v212 = v137
+								v214 = v138
+								v215 = v139
 							} else {
 								v152 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[1]))
 								v153 = *(*int32)(unsafe.Add(mBase, uint32(v152)+8))
@@ -1550,51 +1554,53 @@ func F_GetRunningTransactionData(m *base.Module) int32 {
 										v176 = int32(2)
 										v179 = *(*int32)(unsafe.Add(mBase, uint32(v17+int32(36)+v157<<(uint(v176)%32))))
 										v181 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[7]))
-										v183 = v175 << (uint(v176) % 32)
-										if v183 != 0 {
-											base.MemoryCopy(m, v37+v162<<(uint(int32(2))%32), v181+v179*int32(640)+int32(280), v183)
+										v182 = int32(0)
+										v185 = base.AtomicRmwOr32(m, v182, int32(_a_F_GetRunningTransactionData_4), v182)
+										v187 = v175 << (uint(v176) % 32)
+										if v187 != 0 {
+											base.MemoryCopy(m, v37+v162<<(uint(int32(2))%32), v181+v179*int32(640)+int32(280), v187)
 										} else {
 										}
-										v194 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-										v196 = v194
-										v197 = v159 + v175
-										v198 = v175 + v162
+										v198 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+										v200 = v198
+										v201 = v159 + v175
+										v202 = v175 + v162
 									} else {
-										v196 = v158
-										v197 = v159
-										v198 = v162
+										v200 = v158
+										v201 = v159
+										v202 = v162
 									}
-									v202 = v157 + int32(1)
-									if v202 < v196 {
-										v157 = v202
-										v158 = v196
-										v159 = v197
-										v162 = v198
+									v206 = v157 + int32(1)
+									if v206 < v200 {
+										v157 = v206
+										v158 = v200
+										v159 = v201
+										v162 = v202
 										continue
 									} else {
 										break
 									}
 									break
 								}
-								v205 = int32(0)
-								v207 = v197
-								v208 = v137
-								v210 = v198
-								v211 = v139
+								v209 = int32(0)
+								v211 = v201
+								v212 = v137
+								v214 = v202
+								v215 = v139
 							}
 						}
 					}
-					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[9])) = v205
-					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[10])) = v207
-					v224 = int32(_a_F_GetRunningTransactionData_4)
-					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[11])) = v210 - v207
-					v228 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[6]))
-					v229 = *(*int64)(unsafe.Add(mBase, uint32(v228)+8))
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[9])) = v209
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[10])) = v211
+					v228 = int32(_a_F_GetRunningTransactionData_5)
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[11])) = v214 - v211
+					v232 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[6]))
+					v233 = *(*int64)(unsafe.Add(mBase, uint32(v232)+8))
 					*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[12])) = uint32(v57)
-					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[13])) = v208
-					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[14])) = v211
-					*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[15])) = uint32(v229)
-					return v224
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[13])) = v212
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[14])) = v215
+					*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[15])) = uint32(v233)
+					return v228
 				}
 			}
 		}
@@ -1619,11 +1625,11 @@ func F_GetRunningTransactionData(m *base.Module) int32 {
 				v57 = *(*int64)(unsafe.Add(mBase, uint32(v55)+48))
 				v58 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
 				if v58 <= int32(0) {
-					v205 = v1
-					v207 = v1
-					v208 = v56
-					v210 = v1
-					v211 = v56
+					v209 = v1
+					v211 = v1
+					v212 = v56
+					v214 = v1
+					v215 = v56
 				} else {
 					v64 = v58
 					v65 = v1
@@ -1697,19 +1703,19 @@ func F_GetRunningTransactionData(m *base.Module) int32 {
 						break
 					}
 					if v136&int32(1) != 0 {
-						v205 = int32(2)
-						v207 = int32(0)
-						v208 = v137
-						v210 = v138
-						v211 = v139
+						v209 = int32(2)
+						v211 = int32(0)
+						v212 = v137
+						v214 = v138
+						v215 = v139
 					} else {
 						v147 = int32(0)
 						if v135 <= v147 {
-							v205 = v147
-							v207 = int32(0)
-							v208 = v137
-							v210 = v138
-							v211 = v139
+							v209 = v147
+							v211 = int32(0)
+							v212 = v137
+							v214 = v138
+							v215 = v139
 						} else {
 							v152 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[1]))
 							v153 = *(*int32)(unsafe.Add(mBase, uint32(v152)+8))
@@ -1723,51 +1729,53 @@ func F_GetRunningTransactionData(m *base.Module) int32 {
 									v176 = int32(2)
 									v179 = *(*int32)(unsafe.Add(mBase, uint32(v17+int32(36)+v157<<(uint(v176)%32))))
 									v181 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[7]))
-									v183 = v175 << (uint(v176) % 32)
-									if v183 != 0 {
-										base.MemoryCopy(m, v37+v162<<(uint(int32(2))%32), v181+v179*int32(640)+int32(280), v183)
+									v182 = int32(0)
+									v185 = base.AtomicRmwOr32(m, v182, int32(_a_F_GetRunningTransactionData_4), v182)
+									v187 = v175 << (uint(v176) % 32)
+									if v187 != 0 {
+										base.MemoryCopy(m, v37+v162<<(uint(int32(2))%32), v181+v179*int32(640)+int32(280), v187)
 									} else {
 									}
-									v194 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-									v196 = v194
-									v197 = v159 + v175
-									v198 = v175 + v162
+									v198 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+									v200 = v198
+									v201 = v159 + v175
+									v202 = v175 + v162
 								} else {
-									v196 = v158
-									v197 = v159
-									v198 = v162
+									v200 = v158
+									v201 = v159
+									v202 = v162
 								}
-								v202 = v157 + int32(1)
-								if v202 < v196 {
-									v157 = v202
-									v158 = v196
-									v159 = v197
-									v162 = v198
+								v206 = v157 + int32(1)
+								if v206 < v200 {
+									v157 = v206
+									v158 = v200
+									v159 = v201
+									v162 = v202
 									continue
 								} else {
 									break
 								}
 								break
 							}
-							v205 = int32(0)
-							v207 = v197
-							v208 = v137
-							v210 = v198
-							v211 = v139
+							v209 = int32(0)
+							v211 = v201
+							v212 = v137
+							v214 = v202
+							v215 = v139
 						}
 					}
 				}
-				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[9])) = v205
-				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[10])) = v207
-				v224 = int32(_a_F_GetRunningTransactionData_4)
-				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[11])) = v210 - v207
-				v228 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[6]))
-				v229 = *(*int64)(unsafe.Add(mBase, uint32(v228)+8))
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[9])) = v209
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[10])) = v211
+				v228 = int32(_a_F_GetRunningTransactionData_5)
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[11])) = v214 - v211
+				v232 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[6]))
+				v233 = *(*int64)(unsafe.Add(mBase, uint32(v232)+8))
 				*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[12])) = uint32(v57)
-				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[13])) = v208
-				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[14])) = v211
-				*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[15])) = uint32(v229)
-				return v224
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[13])) = v212
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[14])) = v215
+				*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[15])) = uint32(v233)
+				return v228
 			}
 		}
 	}

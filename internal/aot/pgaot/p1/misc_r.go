@@ -1657,90 +1657,98 @@ func F_RequestCheckpoint(m *base.Module, l0 int32) {
 	_ = v87
 	var v90 int32
 	_ = v90
-	var v93 int32
-	_ = v93
+	var v91 int32
+	_ = v91
+	var v94 int32
+	_ = v94
 	var v97 int32
 	_ = v97
-	var v99 int32
-	_ = v99
+	var v98 int32
+	_ = v98
 	var v101 int32
 	_ = v101
-	var v104 int32
-	_ = v104
+	var v105 int32
+	_ = v105
 	var v107 int32
 	_ = v107
-	var v111 int32
-	_ = v111
+	var v109 int32
+	_ = v109
+	var v112 int32
+	_ = v112
 	var v115 int32
 	_ = v115
 	var v119 int32
 	_ = v119
+	var v123 int32
+	_ = v123
 	var v127 int32
 	_ = v127
-	var v132 int32
-	_ = v132
-	var v137 int32
-	_ = v137
-	var v138 int32
-	_ = v138
-	var v144 int32
-	_ = v144
-	var v149 int32
-	_ = v149
-	var v159 int32
-	_ = v159
-	var v163 int32
-	_ = v163
+	var v135 int32
+	_ = v135
+	var v140 int32
+	_ = v140
+	var v145 int32
+	_ = v145
+	var v146 int32
+	_ = v146
+	var v152 int32
+	_ = v152
+	var v157 int32
+	_ = v157
+	var v167 int32
+	_ = v167
 	var v171 int32
 	_ = v171
-	var v174 int32
-	_ = v174
-	var v176 int32
-	_ = v176
-	var v183 int32
-	_ = v183
-	var v185 int32
-	_ = v185
-	var v186 int32
-	_ = v186
-	var v187 int32
-	_ = v187
+	var v179 int32
+	_ = v179
+	var v182 int32
+	_ = v182
+	var v184 int32
+	_ = v184
+	var v191 int32
+	_ = v191
+	var v193 int32
+	_ = v193
+	var v194 int32
+	_ = v194
 	var v195 int32
 	_ = v195
-	var v197 int32
-	_ = v197
-	var v199 int32
-	_ = v199
 	var v203 int32
 	_ = v203
+	var v205 int32
+	_ = v205
+	var v207 int32
+	_ = v207
 	var v211 int32
 	_ = v211
-	var v214 int32
-	_ = v214
-	var v216 int32
-	_ = v216
-	var v223 int32
-	_ = v223
-	var v225 int32
-	_ = v225
-	var v226 int32
-	_ = v226
-	var v227 int32
-	_ = v227
-	var v228 int32
-	_ = v228
-	var v238 int32
-	_ = v238
-	var v240 int32
-	_ = v240
-	var v245 int32
-	_ = v245
-	var v249 int32
-	_ = v249
+	var v219 int32
+	_ = v219
+	var v222 int32
+	_ = v222
+	var v224 int32
+	_ = v224
+	var v231 int32
+	_ = v231
+	var v233 int32
+	_ = v233
+	var v234 int32
+	_ = v234
+	var v235 int32
+	_ = v235
+	var v236 int32
+	_ = v236
+	var v246 int32
+	_ = v246
+	var v248 int32
+	_ = v248
 	var v253 int32
 	_ = v253
-	var v258 int32
-	_ = v258
+	var v257 int32
+	_ = v257
+	var v261 int32
+	_ = v261
+	var v266 int32
+	_ = v266
 	v2 = int32(0)
 	v8 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RequestCheckpoint[0])))
 	if v8 == v2 {
@@ -1832,10 +1840,10 @@ L12:
 	}
 L13:
 	;
-	v137 = F_errstart(m, v132, int32(0))
+	v145 = F_errstart(m, v140, int32(0))
 	mBase = m.M
-	v138 = m.ExcPending
-	if v138 != 0 {
+	v146 = m.ExcPending
+	if v146 != 0 {
 		goto L5
 	} else {
 		goto L44
@@ -1856,15 +1864,17 @@ L16:
 	;
 	v81 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
 	v86 = v81 + v78*int32(640) + int32(20)
-	v87 = *(*int32)(unsafe.Add(mBase, uint32(v86)))
-	if v87 != 0 {
+	v87 = int32(0)
+	v90 = base.AtomicRmwOr32(m, v87, int32(_a_F_RequestCheckpoint_2), v87)
+	v91 = *(*int32)(unsafe.Add(mBase, uint32(v86)))
+	if v91 != 0 {
 		goto L31
 	} else {
 		goto L32
 	}
 L17:
 	;
-	v132 = int32(15)
+	v140 = int32(15)
 	goto L13
 L18:
 	;
@@ -1887,7 +1897,7 @@ L21:
 	goto L16
 L22:
 	;
-	v132 = int32(21)
+	v140 = int32(21)
 	goto L13
 L23:
 	;
@@ -1915,7 +1925,7 @@ L26:
 	goto L27
 L27:
 	;
-	F_pg_usleep(m, int32(_a_F_RequestCheckpoint_2))
+	F_pg_usleep(m, int32(_a_F_RequestCheckpoint_3))
 	mBase = m.M
 	v71 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[2]))
 	v72 = *(*int32)(unsafe.Add(mBase, uint32(v71)+64))
@@ -1940,35 +1950,37 @@ L31:
 L32:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v86))) = int32(1)
-	v90 = *(*int32)(unsafe.Add(mBase, uint32(v86)+4))
-	if v90 == int32(0) {
+	v94 = int32(0)
+	v97 = base.AtomicRmwOr32(m, v94, int32(_a_F_RequestCheckpoint_2), v94)
+	v98 = *(*int32)(unsafe.Add(mBase, uint32(v86)+4))
+	if v98 == v94 {
 		goto L31
 	} else {
 		goto L33
 	}
 L33:
 	;
-	v93 = *(*int32)(unsafe.Add(mBase, uint32(v86)+12))
-	if v93 == int32(0) {
+	v101 = *(*int32)(unsafe.Add(mBase, uint32(v86)+12))
+	if v101 == int32(0) {
 		goto L31
 	} else {
 		goto L34
 	}
 L34:
 	;
-	v97 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[4]))
-	if v97 == v93 {
+	v105 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[4]))
+	if v105 == v101 {
 		goto L35
 	} else {
 		goto L36
 	}
 L35:
 	;
-	v99 = m.G0
-	v101 = v99 - int32(16)
-	m.G0 = v101
-	v104 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[5]))
-	if v104 == int32(0) {
+	v107 = m.G0
+	v109 = v107 - int32(16)
+	m.G0 = v109
+	v112 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[5]))
+	if v112 == int32(0) {
 		goto L38
 	} else {
 		goto L39
@@ -1978,24 +1990,24 @@ L36:
 	goto L37
 L37:
 	;
-	v127 = F_pgmem_kill(m, v93, int32(23))
+	v135 = F_pgmem_kill(m, v101, int32(23))
 	mBase = m.M
 	goto L31
 L38:
 	;
-	m.G0 = v101 + int32(16)
+	m.G0 = v109 + int32(16)
 	goto L30
 L39:
 	;
-	v107 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v101)+15)) = uint8(v107)
+	v115 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v109)+15)) = uint8(v115)
 	goto L40
 L40:
 	;
-	v111 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[6]))
-	v115 = F_write(m, v111, v101+int32(15), int32(1))
+	v119 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[6]))
+	v123 = F_write(m, v119, v109+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v115 {
+	if int32(0) <= v123 {
 		goto L38
 	} else {
 		goto L42
@@ -2005,8 +2017,8 @@ L41:
 	goto L38
 L42:
 	;
-	v119 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[7]))
-	if v119 == int32(27) {
+	v127 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[7]))
+	if v127 == int32(27) {
 		goto L40
 	} else {
 		goto L43
@@ -2016,17 +2028,17 @@ L43:
 	goto L41
 L44:
 	;
-	if v137 == int32(0) {
+	if v145 == int32(0) {
 		goto L12
 	} else {
 		goto L45
 	}
 L45:
 	;
-	F_errmsg_internal(m, int32(_a_F_RequestCheckpoint_3), int32(0))
+	F_errmsg_internal(m, int32(_a_F_RequestCheckpoint_4), int32(0))
 	mBase = m.M
-	v144 = m.ExcPending
-	if v144 != 0 {
+	v152 = m.ExcPending
+	if v152 != 0 {
 		goto L5
 	} else {
 		goto L46
@@ -2035,8 +2047,8 @@ L46:
 	;
 	F_errfinish(m, int32(_a_F_RequestCheckpoint_0), int32(1066), int32(_a_F_RequestCheckpoint_1))
 	mBase = m.M
-	v149 = m.ExcPending
-	if v149 != 0 {
+	v157 = m.ExcPending
+	if v157 != 0 {
 		goto L5
 	} else {
 		goto L47
@@ -2046,11 +2058,11 @@ L47:
 	goto L12
 L48:
 	;
-	v159 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
-	F_ConditionVariablePrepareToSleep(m, v159+int32(24))
+	v167 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
+	F_ConditionVariablePrepareToSleep(m, v167+int32(24))
 	mBase = m.M
-	v163 = m.ExcPending
-	if v163 != 0 {
+	v171 = m.ExcPending
+	if v171 != 0 {
 		goto L5
 	} else {
 		goto L49
@@ -2060,9 +2072,9 @@ L49:
 	goto L50
 L50:
 	;
-	v171 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
-	v174 = base.AtomicRmwXchg32(m, v171, int32(4), int32(1))
-	if v174 != 0 {
+	v179 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
+	v182 = base.AtomicRmwXchg32(m, v179, int32(4), int32(1))
+	if v182 != 0 {
 		goto L52
 	} else {
 		goto L53
@@ -2071,19 +2083,19 @@ L51:
 	;
 	F_ConditionVariableCancelSleep(m)
 	mBase = m.M
-	v197 = m.ExcPending
-	if v197 != 0 {
+	v205 = m.ExcPending
+	if v205 != 0 {
 		goto L5
 	} else {
 		goto L60
 	}
 L52:
 	;
-	v176 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
-	F_s_lock(m, v176+int32(4), int32(_a_F_RequestCheckpoint_0), int32(1094), int32(_a_F_RequestCheckpoint_1))
+	v184 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
+	F_s_lock(m, v184+int32(4), int32(_a_F_RequestCheckpoint_0), int32(1094), int32(_a_F_RequestCheckpoint_1))
 	mBase = m.M
-	v183 = m.ExcPending
-	if v183 != 0 {
+	v191 = m.ExcPending
+	if v191 != 0 {
 		goto L5
 	} else {
 		goto L55
@@ -2093,11 +2105,11 @@ L53:
 	goto L54
 L54:
 	;
-	v185 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
-	v186 = *(*int32)(unsafe.Add(mBase, uint32(v185)+8))
-	v187 = int32(0)
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v185)+4)), uint32(v187))
-	if v186 == v38 {
+	v193 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
+	v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+8))
+	v195 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v193)+4)), uint32(v195))
+	if v194 == v38 {
 		goto L56
 	} else {
 		goto L57
@@ -2107,10 +2119,10 @@ L55:
 	goto L54
 L56:
 	;
-	F_ConditionVariableSleep(m, v185+int32(24), int32(134217740))
+	F_ConditionVariableSleep(m, v193+int32(24), int32(134217740))
 	mBase = m.M
-	v195 = m.ExcPending
-	if v195 != 0 {
+	v203 = m.ExcPending
+	if v203 != 0 {
 		goto L5
 	} else {
 		goto L59
@@ -2126,11 +2138,11 @@ L59:
 	goto L50
 L60:
 	;
-	v199 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
-	F_ConditionVariablePrepareToSleep(m, v199+int32(36))
+	v207 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
+	F_ConditionVariablePrepareToSleep(m, v207+int32(36))
 	mBase = m.M
-	v203 = m.ExcPending
-	if v203 != 0 {
+	v211 = m.ExcPending
+	if v211 != 0 {
 		goto L5
 	} else {
 		goto L61
@@ -2140,9 +2152,9 @@ L61:
 	goto L62
 L62:
 	;
-	v211 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
-	v214 = base.AtomicRmwXchg32(m, v211, int32(4), int32(1))
-	if v214 != 0 {
+	v219 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
+	v222 = base.AtomicRmwXchg32(m, v219, int32(4), int32(1))
+	if v222 != 0 {
 		goto L64
 	} else {
 		goto L65
@@ -2151,19 +2163,19 @@ L63:
 	;
 	F_ConditionVariableCancelSleep(m)
 	mBase = m.M
-	v240 = m.ExcPending
-	if v240 != 0 {
+	v248 = m.ExcPending
+	if v248 != 0 {
 		goto L5
 	} else {
 		goto L72
 	}
 L64:
 	;
-	v216 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
-	F_s_lock(m, v216+int32(4), int32(_a_F_RequestCheckpoint_0), int32(1114), int32(_a_F_RequestCheckpoint_1))
+	v224 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
+	F_s_lock(m, v224+int32(4), int32(_a_F_RequestCheckpoint_0), int32(1114), int32(_a_F_RequestCheckpoint_1))
 	mBase = m.M
-	v223 = m.ExcPending
-	if v223 != 0 {
+	v231 = m.ExcPending
+	if v231 != 0 {
 		goto L5
 	} else {
 		goto L67
@@ -2173,12 +2185,12 @@ L65:
 	goto L66
 L66:
 	;
-	v225 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
-	v226 = *(*int32)(unsafe.Add(mBase, uint32(v225)+16))
-	v227 = *(*int32)(unsafe.Add(mBase, uint32(v225)+12))
-	v228 = int32(0)
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v225)+4)), uint32(v228))
-	if v227-v186 < v228 {
+	v233 = *(*int32)(unsafe.Add(mBase, _c_F_RequestCheckpoint[1]))
+	v234 = *(*int32)(unsafe.Add(mBase, uint32(v233)+16))
+	v235 = *(*int32)(unsafe.Add(mBase, uint32(v233)+12))
+	v236 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v233)+4)), uint32(v236))
+	if v235-v194 < v236 {
 		goto L68
 	} else {
 		goto L69
@@ -2188,10 +2200,10 @@ L67:
 	goto L66
 L68:
 	;
-	F_ConditionVariableSleep(m, v225+int32(36), int32(134217739))
+	F_ConditionVariableSleep(m, v233+int32(36), int32(134217739))
 	mBase = m.M
-	v238 = m.ExcPending
-	if v238 != 0 {
+	v246 = m.ExcPending
+	if v246 != 0 {
 		goto L5
 	} else {
 		goto L71
@@ -2207,7 +2219,7 @@ L71:
 	goto L62
 L72:
 	;
-	if v226 == v39 {
+	if v234 == v39 {
 		goto L1
 	} else {
 		goto L73
@@ -2216,28 +2228,28 @@ L73:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v245 = m.ExcPending
-	if v245 != 0 {
+	v253 = m.ExcPending
+	if v253 != 0 {
 		goto L5
 	} else {
 		goto L74
 	}
 L74:
 	;
-	F_errmsg(m, int32(_a_F_RequestCheckpoint_4), int32(0))
+	F_errmsg(m, int32(_a_F_RequestCheckpoint_5), int32(0))
 	mBase = m.M
-	v249 = m.ExcPending
-	if v249 != 0 {
+	v257 = m.ExcPending
+	if v257 != 0 {
 		goto L5
 	} else {
 		goto L75
 	}
 L75:
 	;
-	F_errhint(m, int32(_a_F_RequestCheckpoint_5), int32(0))
+	F_errhint(m, int32(_a_F_RequestCheckpoint_6), int32(0))
 	mBase = m.M
-	v253 = m.ExcPending
-	if v253 != 0 {
+	v261 = m.ExcPending
+	if v261 != 0 {
 		goto L5
 	} else {
 		goto L76
@@ -2246,8 +2258,8 @@ L76:
 	;
 	F_errfinish(m, int32(_a_F_RequestCheckpoint_0), int32(1130), int32(_a_F_RequestCheckpoint_1))
 	mBase = m.M
-	v258 = m.ExcPending
-	if v258 != 0 {
+	v266 = m.ExcPending
+	if v266 != 0 {
 		goto L5
 	} else {
 		goto L77

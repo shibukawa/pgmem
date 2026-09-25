@@ -273,58 +273,66 @@ func F_reindex_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 	_ = v195
 	var v198 int32
 	_ = v198
-	var v206 int32
-	_ = v206
-	var v212 int32
-	_ = v212
-	var v219 int32
-	_ = v219
+	var v202 int32
+	_ = v202
+	var v204 int32
+	_ = v204
+	var v205 int32
+	_ = v205
+	var v213 int32
+	_ = v213
+	var v214 int32
+	_ = v214
 	var v220 int32
 	_ = v220
-	var v222 int32
-	_ = v222
-	var v223 int32
-	_ = v223
+	var v227 int32
+	_ = v227
+	var v228 int32
+	_ = v228
 	var v230 int32
 	_ = v230
-	var v240 int32
-	_ = v240
-	var v256 int32
-	_ = v256
+	var v231 int32
+	_ = v231
+	var v238 int32
+	_ = v238
+	var v248 int32
+	_ = v248
 	var v264 int32
 	_ = v264
-	var v265 int32
-	_ = v265
-	var v266 int32
-	_ = v266
-	var v267 int32
-	_ = v267
-	var v268 int32
-	_ = v268
-	var v269 int32
-	_ = v269
+	var v272 int32
+	_ = v272
+	var v273 int32
+	_ = v273
+	var v274 int32
+	_ = v274
+	var v275 int32
+	_ = v275
 	var v276 int32
 	_ = v276
-	var v281 int32
-	_ = v281
-	var v285 int32
-	_ = v285
+	var v277 int32
+	_ = v277
+	var v284 int32
+	_ = v284
 	var v289 int32
 	_ = v289
-	var v294 int32
-	_ = v294
-	var v298 int32
-	_ = v298
+	var v293 int32
+	_ = v293
+	var v297 int32
+	_ = v297
 	var v302 int32
 	_ = v302
-	var v307 int32
-	_ = v307
-	var v311 int32
-	_ = v311
+	var v306 int32
+	_ = v306
+	var v310 int32
+	_ = v310
 	var v315 int32
 	_ = v315
-	var v320 int32
-	_ = v320
+	var v319 int32
+	_ = v319
+	var v323 int32
+	_ = v323
+	var v328 int32
+	_ = v328
 	v14 = m.G0
 	v16 = v14 - int32(32)
 	m.G0 = v16
@@ -338,8 +346,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v311 = m.ExcPending
-	if v311 != 0 {
+	v319 = m.ExcPending
+	if v319 != 0 {
 		goto L9
 	} else {
 		goto L87
@@ -348,8 +356,8 @@ L2:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v298 = m.ExcPending
-	if v298 != 0 {
+	v306 = m.ExcPending
+	if v306 != 0 {
 		goto L9
 	} else {
 		goto L84
@@ -358,8 +366,8 @@ L3:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v285 = m.ExcPending
-	if v285 != 0 {
+	v293 = m.ExcPending
+	if v293 != 0 {
 		goto L9
 	} else {
 		goto L81
@@ -368,8 +376,8 @@ L4:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v264 = m.ExcPending
-	if v264 != 0 {
+	v272 = m.ExcPending
+	if v272 != 0 {
 		goto L9
 	} else {
 		goto L77
@@ -426,12 +434,12 @@ L12:
 	}
 L13:
 	;
-	v256 = int32(0)
+	v264 = int32(0)
 	goto L14
 L14:
 	;
 	m.G0 = v16 + int32(32)
-	return v256
+	return v264
 L15:
 	;
 	v34 = *(*int32)(unsafe.Add(mBase, uint32(v30)+112))
@@ -561,7 +569,7 @@ L33:
 	;
 	v91 = int32(0)
 	if v35 == v91 {
-		v230 = v91
+		v238 = v91
 		goto L36
 	} else {
 		goto L37
@@ -584,8 +592,8 @@ L36:
 	;
 	F_relation_close(m, v29, int32(0))
 	mBase = m.M
-	v240 = m.ExcPending
-	if v240 != 0 {
+	v248 = m.ExcPending
+	if v248 != 0 {
 		goto L9
 	} else {
 		goto L76
@@ -600,7 +608,7 @@ L37:
 	}
 L38:
 	;
-	v230 = int32(1)
+	v238 = int32(1)
 	goto L36
 L39:
 	;
@@ -625,16 +633,16 @@ L41:
 	}
 L42:
 	;
-	v230 = v220
+	v238 = v228
 	goto L36
 L43:
 	;
-	v220 = int32(1)
-	v222 = v106 + v220
-	v223 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
-	if v222 < v223 {
-		v106 = v222
-		v114 = v219
+	v228 = int32(1)
+	v230 = v106 + v228
+	v231 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
+	if v230 < v231 {
+		v106 = v230
+		v114 = v227
 		goto L41
 	} else {
 		goto L75
@@ -726,7 +734,7 @@ L55:
 L56:
 	;
 	if v38 == int32(0) {
-		v219 = v114
+		v227 = v114
 		goto L43
 	} else {
 		goto L62
@@ -819,7 +827,7 @@ L67:
 L68:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_reindex_relation[0])) = v172
-	v219 = v114
+	v227 = v114
 	goto L43
 L69:
 	;
@@ -841,7 +849,7 @@ L70:
 	}
 L71:
 	;
-	v219 = v114 + int32(1)
+	v227 = v114 + int32(1)
 	goto L43
 L72:
 	;
@@ -862,40 +870,44 @@ L74:
 	*(*int32)(unsafe.Add(mBase, _c_F_reindex_relation[5])) = v194 + v195
 	v198 = *(*int32)(unsafe.Add(mBase, uint32(v183)))
 	*(*int32)(unsafe.Add(mBase, uint32(v183))) = v198 + v195
+	v202 = int32(0)
+	v204 = int32(_a_F_reindex_relation_5)
+	v205 = base.AtomicRmwOr32(m, v202, v204, v202)
 	*(*int64)(unsafe.Add(mBase, uint32(v183+int32(56))+232)) = base.I64_extend_i32_s(v114)
-	v206 = *(*int32)(unsafe.Add(mBase, uint32(v183)))
-	*(*int32)(unsafe.Add(mBase, uint32(v183))) = v206 + v195
-	v212 = *(*int32)(unsafe.Add(mBase, _c_F_reindex_relation[5]))
-	*(*int32)(unsafe.Add(mBase, _c_F_reindex_relation[5])) = v212 - v195
+	v213 = base.AtomicRmwOr32(m, v202, v204, v202)
+	v214 = *(*int32)(unsafe.Add(mBase, uint32(v183)))
+	*(*int32)(unsafe.Add(mBase, uint32(v183))) = v214 + v195
+	v220 = *(*int32)(unsafe.Add(mBase, _c_F_reindex_relation[5]))
+	*(*int32)(unsafe.Add(mBase, _c_F_reindex_relation[5])) = v220 - v195
 	goto L72
 L75:
 	;
 	goto L42
 L76:
 	;
-	v256 = v230 | v81
+	v264 = v238 | v81
 	goto L14
 L77:
 	;
-	v265 = *(*int32)(unsafe.Add(mBase, uint32(v29)+48))
-	v266 = *(*int32)(unsafe.Add(mBase, uint32(v265)+68))
-	v267 = F_get_namespace_name(m, v266)
+	v273 = *(*int32)(unsafe.Add(mBase, uint32(v29)+48))
+	v274 = *(*int32)(unsafe.Add(mBase, uint32(v273)+68))
+	v275 = F_get_namespace_name(m, v274)
 	mBase = m.M
-	v268 = m.ExcPending
-	if v268 != 0 {
+	v276 = m.ExcPending
+	if v276 != 0 {
 		goto L9
 	} else {
 		goto L78
 	}
 L78:
 	;
-	v269 = *(*int32)(unsafe.Add(mBase, uint32(v29)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v267
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = v269 + int32(4)
-	F_errmsg_internal(m, int32(_a_F_reindex_relation_5), v16)
+	v277 = *(*int32)(unsafe.Add(mBase, uint32(v29)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v275
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = v277 + int32(4)
+	F_errmsg_internal(m, int32(_a_F_reindex_relation_6), v16)
 	mBase = m.M
-	v276 = m.ExcPending
-	if v276 != 0 {
+	v284 = m.ExcPending
+	if v284 != 0 {
 		goto L9
 	} else {
 		goto L79
@@ -904,8 +916,8 @@ L79:
 	;
 	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(3980), int32(_a_F_reindex_relation_2))
 	mBase = m.M
-	v281 = m.ExcPending
-	if v281 != 0 {
+	v289 = m.ExcPending
+	if v289 != 0 {
 		goto L9
 	} else {
 		goto L80
@@ -917,20 +929,20 @@ L80:
 	}
 L81:
 	;
-	F_errmsg_internal(m, int32(_a_F_reindex_relation_6), int32(0))
+	F_errmsg_internal(m, int32(_a_F_reindex_relation_7), int32(0))
 	mBase = m.M
-	v289 = m.ExcPending
-	if v289 != 0 {
+	v297 = m.ExcPending
+	if v297 != 0 {
 		goto L9
 	} else {
 		goto L82
 	}
 L82:
 	;
-	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_7), int32(_a_F_reindex_relation_8))
+	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_8), int32(_a_F_reindex_relation_9))
 	mBase = m.M
-	v294 = m.ExcPending
-	if v294 != 0 {
+	v302 = m.ExcPending
+	if v302 != 0 {
 		goto L9
 	} else {
 		goto L83
@@ -942,20 +954,20 @@ L83:
 	}
 L84:
 	;
-	F_errmsg_internal(m, int32(_a_F_reindex_relation_9), int32(0))
+	F_errmsg_internal(m, int32(_a_F_reindex_relation_10), int32(0))
 	mBase = m.M
-	v302 = m.ExcPending
-	if v302 != 0 {
+	v310 = m.ExcPending
+	if v310 != 0 {
 		goto L9
 	} else {
 		goto L85
 	}
 L85:
 	;
-	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_10), int32(_a_F_reindex_relation_8))
+	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_11), int32(_a_F_reindex_relation_9))
 	mBase = m.M
-	v307 = m.ExcPending
-	if v307 != 0 {
+	v315 = m.ExcPending
+	if v315 != 0 {
 		goto L9
 	} else {
 		goto L86
@@ -967,20 +979,20 @@ L86:
 	}
 L87:
 	;
-	F_errmsg_internal(m, int32(_a_F_reindex_relation_9), int32(0))
+	F_errmsg_internal(m, int32(_a_F_reindex_relation_10), int32(0))
 	mBase = m.M
-	v315 = m.ExcPending
-	if v315 != 0 {
+	v323 = m.ExcPending
+	if v323 != 0 {
 		goto L9
 	} else {
 		goto L88
 	}
 L88:
 	;
-	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_11), int32(_a_F_reindex_relation_12))
+	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_12), int32(_a_F_reindex_relation_13))
 	mBase = m.M
-	v320 = m.ExcPending
-	if v320 != 0 {
+	v328 = m.ExcPending
+	if v328 != 0 {
 		goto L9
 	} else {
 		goto L89

@@ -3317,8 +3317,8 @@ func F_FlushRelationBuffers(m *base.Module, l0 int32) {
 	_ = v102
 	var v104 int32
 	_ = v104
-	var v110 int32
-	_ = v110
+	var v109 int32
+	_ = v109
 	var v117 int32
 	_ = v117
 	var v118 int32
@@ -3349,98 +3349,106 @@ func F_FlushRelationBuffers(m *base.Module, l0 int32) {
 	_ = v151
 	var v152 int32
 	_ = v152
-	var v157 int32
-	_ = v157
-	var v158 int32
-	_ = v158
-	var v159 int32
-	_ = v159
-	var v166 int32
-	_ = v166
-	var v169 int32
-	_ = v169
-	var v172 int32
-	_ = v172
-	var v174 int32
-	_ = v174
+	var v155 int32
+	_ = v155
+	var v156 int32
+	_ = v156
+	var v161 int32
+	_ = v161
+	var v162 int32
+	_ = v162
+	var v163 int32
+	_ = v163
+	var v170 int32
+	_ = v170
+	var v173 int32
+	_ = v173
 	var v176 int32
 	_ = v176
-	var v177 int32
-	_ = v177
+	var v178 int32
+	_ = v178
 	var v180 int32
 	_ = v180
-	var v182 int32
-	_ = v182
+	var v181 int32
+	_ = v181
 	var v184 int32
 	_ = v184
-	var v185 int32
-	_ = v185
-	var v190 int32
-	_ = v190
-	var v192 int32
-	_ = v192
-	var v204 int32
-	_ = v204
-	var v206 int32
-	_ = v206
-	var v209 int32
-	_ = v209
-	var v213 int32
-	_ = v213
+	var v186 int32
+	_ = v186
+	var v188 int32
+	_ = v188
+	var v189 int32
+	_ = v189
+	var v194 int32
+	_ = v194
+	var v196 int32
+	_ = v196
+	var v197 int32
+	_ = v197
+	var v200 int32
+	_ = v200
+	var v212 int32
+	_ = v212
+	var v214 int32
+	_ = v214
 	var v217 int32
 	_ = v217
-	var v218 int32
-	_ = v218
-	var v220 int32
-	_ = v220
-	var v223 int32
-	_ = v223
+	var v221 int32
+	_ = v221
 	var v224 int32
 	_ = v224
-	var v225 int32
-	_ = v225
-	var v227 int32
-	_ = v227
+	var v226 int32
+	_ = v226
 	var v228 int32
 	_ = v228
-	var v230 int32
-	_ = v230
 	var v231 int32
 	_ = v231
+	var v232 int32
+	_ = v232
 	var v233 int32
 	_ = v233
-	var v234 int32
-	_ = v234
+	var v235 int32
+	_ = v235
+	var v236 int32
+	_ = v236
+	var v238 int32
+	_ = v238
+	var v239 int32
+	_ = v239
 	var v241 int32
 	_ = v241
 	var v242 int32
 	_ = v242
 	var v249 int32
 	_ = v249
-	var v251 int32
-	_ = v251
-	var v253 int32
-	_ = v253
-	var v256 int32
-	_ = v256
-	var v258 int32
-	_ = v258
+	var v250 int32
+	_ = v250
+	var v257 int32
+	_ = v257
 	var v259 int32
 	_ = v259
-	var v263 int32
-	_ = v263
-	var v265 int32
-	_ = v265
-	var v268 int32
-	_ = v268
-	var v270 int32
-	_ = v270
+	var v261 int32
+	_ = v261
+	var v264 int32
+	_ = v264
+	var v266 int32
+	_ = v266
+	var v267 int32
+	_ = v267
 	var v271 int32
 	_ = v271
-	var v272 int32
-	_ = v272
-	var v274 int32
-	_ = v274
+	var v273 int32
+	_ = v273
+	var v276 int32
+	_ = v276
+	var v278 int32
+	_ = v278
+	var v279 int32
+	_ = v279
+	var v280 int32
+	_ = v280
+	var v282 int32
+	_ = v282
 	v2 = int32(0)
 	v8 = m.G0
 	v10 = v8 - int32(48)
@@ -3531,8 +3539,8 @@ L12:
 	goto L13
 L13:
 	;
-	v209 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[1]))
-	if v209 <= int32(0) {
+	v217 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[1]))
+	if v217 <= int32(0) {
 		goto L10
 	} else {
 		goto L52
@@ -3557,10 +3565,10 @@ L16:
 	goto L10
 L17:
 	;
-	v204 = v53 + int32(1)
-	v206 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[0]))
-	if v204 < v206 {
-		v53 = v204
+	v212 = v53 + int32(1)
+	v214 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[0]))
+	if v212 < v214 {
+		v53 = v212
 		goto L15
 	} else {
 		goto L51
@@ -3623,7 +3631,7 @@ L23:
 	goto L26
 L24:
 	;
-	v110 = v88
+	v109 = v88
 	goto L25
 L25:
 	;
@@ -3647,7 +3655,7 @@ L26:
 	}
 L27:
 	;
-	v110 = v104
+	v109 = v104
 	goto L25
 L28:
 	;
@@ -3720,14 +3728,16 @@ L40:
 	goto L32
 L41:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v60)+24)) = v110 & int32(-4194305)
+	v197 = int32(0)
+	v200 = base.AtomicRmwOr32(m, v197, int32(_a_F_FlushRelationBuffers_5), v197)
+	*(*int32)(unsafe.Add(mBase, uint32(v60)+24)) = v109 & int32(-4194305)
 	goto L17
 L42:
 	;
 	v140 = *(*int32)(unsafe.Add(mBase, uint32(v60)+4))
 	v141 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v143 = int32(25165824)
-	if base.B2i32(v140 != v141)|base.B2i32(v110&v143 != v143) != 0 {
+	if base.B2i32(v140 != v141)|base.B2i32(v109&v143 != v143) != 0 {
 		goto L41
 	} else {
 		goto L43
@@ -3744,31 +3754,33 @@ L43:
 L44:
 	;
 	v151 = *(*int32)(unsafe.Add(mBase, uint32(v60)+24))
-	v152 = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v60)+24)) = (v151 + v152) & int32(-4194305)
-	v157 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
-	v158 = int32(_a_F_FlushRelationBuffers_5)
-	v159 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[5]))
-	*(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[5])) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v159)+4)) = v152
-	v166 = v157 + v152
-	*(*int32)(unsafe.Add(mBase, uint32(v159))) = v166
-	v169 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[3]))
-	F_ResourceOwnerRemember(m, v169, v166, int32(_a_F_FlushRelationBuffers_6))
+	v152 = int32(0)
+	v155 = base.AtomicRmwOr32(m, v152, int32(_a_F_FlushRelationBuffers_5), v152)
+	v156 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v60)+24)) = (v151 + v156) & int32(-4194305)
+	v161 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
+	v162 = int32(_a_F_FlushRelationBuffers_6)
+	v163 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[5]))
+	*(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[5])) = v152
+	*(*int32)(unsafe.Add(mBase, uint32(v163)+4)) = v156
+	v170 = v161 + v156
+	*(*int32)(unsafe.Add(mBase, uint32(v163))) = v170
+	v173 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[3]))
+	F_ResourceOwnerRemember(m, v173, v170, int32(_a_F_FlushRelationBuffers_7))
 	mBase = m.M
-	v172 = m.ExcPending
-	if v172 != 0 {
+	v176 = m.ExcPending
+	if v176 != 0 {
 		goto L4
 	} else {
 		goto L45
 	}
 L45:
 	;
-	v174 = v60 + int32(48)
-	v176 = F_LWLockAcquire(m, v174, int32(1))
+	v178 = v60 + int32(48)
+	v180 = F_LWLockAcquire(m, v178, int32(1))
 	mBase = m.M
-	v177 = m.ExcPending
-	if v177 != 0 {
+	v181 = m.ExcPending
+	if v181 != 0 {
 		goto L4
 	} else {
 		goto L46
@@ -3777,30 +3789,30 @@ L46:
 	;
 	F_FlushBuffer(m, v60, v40, int32(3))
 	mBase = m.M
-	v180 = m.ExcPending
-	if v180 != 0 {
+	v184 = m.ExcPending
+	if v184 != 0 {
 		goto L4
 	} else {
 		goto L47
 	}
 L47:
 	;
-	F_LWLockRelease(m, v174)
+	F_LWLockRelease(m, v178)
 	mBase = m.M
-	v182 = m.ExcPending
-	if v182 != 0 {
+	v186 = m.ExcPending
+	if v186 != 0 {
 		goto L4
 	} else {
 		goto L48
 	}
 L48:
 	;
-	v184 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[3]))
-	v185 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
-	F_ResourceOwnerForget(m, v184, v185+int32(1), int32(_a_F_FlushRelationBuffers_6))
+	v188 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[3]))
+	v189 = *(*int32)(unsafe.Add(mBase, uint32(v60)+20))
+	F_ResourceOwnerForget(m, v188, v189+int32(1), int32(_a_F_FlushRelationBuffers_7))
 	mBase = m.M
-	v190 = m.ExcPending
-	if v190 != 0 {
+	v194 = m.ExcPending
+	if v194 != 0 {
 		goto L4
 	} else {
 		goto L49
@@ -3809,8 +3821,8 @@ L49:
 	;
 	F_UnpinBufferNoOwner(m, v60)
 	mBase = m.M
-	v192 = m.ExcPending
-	if v192 != 0 {
+	v196 = m.ExcPending
+	if v196 != 0 {
 		goto L4
 	} else {
 		goto L50
@@ -3823,19 +3835,19 @@ L51:
 	goto L16
 L52:
 	;
-	v213 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[6]))
-	v217 = v209
-	v218 = v2
-	v220 = v213
+	v221 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[6]))
+	v224 = v217
+	v226 = v2
+	v228 = v221
 	goto L53
 L53:
 	;
-	v223 = v220 + v218<<(uint(int32(6))%32)
-	v224 = *(*int32)(unsafe.Add(mBase, uint32(v223)))
-	v225 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	if v224 != v225 {
-		v271 = v217
-		v272 = v220
+	v231 = v228 + v226<<(uint(int32(6))%32)
+	v232 = *(*int32)(unsafe.Add(mBase, uint32(v231)))
+	v233 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if v232 != v233 {
+		v279 = v224
+		v280 = v228
 		goto L55
 	} else {
 		goto L56
@@ -3845,114 +3857,114 @@ L54:
 	goto L10
 L55:
 	;
-	v274 = v218 + int32(1)
-	if v274 < v271 {
-		v217 = v271
-		v218 = v274
-		v220 = v272
+	v282 = v226 + int32(1)
+	if v282 < v279 {
+		v224 = v279
+		v226 = v282
+		v228 = v280
 		goto L53
 	} else {
 		goto L65
 	}
 L56:
 	;
-	v227 = *(*int32)(unsafe.Add(mBase, uint32(v223)+4))
-	v228 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v227 != v228 {
-		v271 = v217
-		v272 = v220
+	v235 = *(*int32)(unsafe.Add(mBase, uint32(v231)+4))
+	v236 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v235 != v236 {
+		v279 = v224
+		v280 = v228
 		goto L55
 	} else {
 		goto L57
 	}
 L57:
 	;
-	v230 = *(*int32)(unsafe.Add(mBase, uint32(v223)+8))
-	v231 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if v230 != v231 {
-		v271 = v217
-		v272 = v220
+	v238 = *(*int32)(unsafe.Add(mBase, uint32(v231)+8))
+	v239 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v238 != v239 {
+		v279 = v224
+		v280 = v228
 		goto L55
 	} else {
 		goto L58
 	}
 L58:
 	;
-	v233 = *(*int32)(unsafe.Add(mBase, uint32(v223)+24))
-	v234 = int32(25165824)
-	if v233&v234 != v234 {
-		v271 = v217
-		v272 = v220
+	v241 = *(*int32)(unsafe.Add(mBase, uint32(v231)+24))
+	v242 = int32(25165824)
+	if v241&v242 != v242 {
+		v279 = v224
+		v280 = v228
 		goto L55
 	} else {
 		goto L59
 	}
 L59:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v223
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v231
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = int32(1079)
-	v241 = int32(_a_F_FlushRelationBuffers_7)
-	v242 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[7]))
+	v249 = int32(_a_F_FlushRelationBuffers_8)
+	v250 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[7]))
 	*(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[7])) = v10 + int32(24)
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = v242
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = v250
 	F_ReservePrivateRefCountEntry(m)
 	mBase = m.M
-	v249 = m.ExcPending
-	if v249 != 0 {
+	v257 = m.ExcPending
+	if v257 != 0 {
 		goto L4
 	} else {
 		goto L60
 	}
 L60:
 	;
-	v251 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[3]))
-	F_ResourceOwnerEnlarge(m, v251)
+	v259 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[3]))
+	F_ResourceOwnerEnlarge(m, v259)
 	mBase = m.M
-	v253 = m.ExcPending
-	if v253 != 0 {
+	v261 = m.ExcPending
+	if v261 != 0 {
 		goto L4
 	} else {
 		goto L61
 	}
 L61:
 	;
-	F_PinLocalBuffer(m, v223, int32(0))
+	F_PinLocalBuffer(m, v231, int32(0))
 	mBase = m.M
-	v256 = m.ExcPending
-	if v256 != 0 {
+	v264 = m.ExcPending
+	if v264 != 0 {
 		goto L4
 	} else {
 		goto L62
 	}
 L62:
 	;
-	F_FlushLocalBuffer(m, v223, v40)
+	F_FlushLocalBuffer(m, v231, v40)
 	mBase = m.M
-	v258 = m.ExcPending
-	if v258 != 0 {
+	v266 = m.ExcPending
+	if v266 != 0 {
 		goto L4
 	} else {
 		goto L63
 	}
 L63:
 	;
-	v259 = *(*int32)(unsafe.Add(mBase, uint32(v223)+20))
-	F_UnpinLocalBuffer(m, v259+int32(1))
+	v267 = *(*int32)(unsafe.Add(mBase, uint32(v231)+20))
+	F_UnpinLocalBuffer(m, v267+int32(1))
 	mBase = m.M
-	v263 = m.ExcPending
-	if v263 != 0 {
+	v271 = m.ExcPending
+	if v271 != 0 {
 		goto L4
 	} else {
 		goto L64
 	}
 L64:
 	;
-	v265 = *(*int32)(unsafe.Add(mBase, uint32(v10)+24))
-	*(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[7])) = v265
-	v268 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[1]))
-	v270 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[6]))
-	v271 = v268
-	v272 = v270
+	v273 = *(*int32)(unsafe.Add(mBase, uint32(v10)+24))
+	*(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[7])) = v273
+	v276 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[1]))
+	v278 = *(*int32)(unsafe.Add(mBase, _c_F_FlushRelationBuffers[6]))
+	v279 = v276
+	v280 = v278
 	goto L55
 L65:
 	;

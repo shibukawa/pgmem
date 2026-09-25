@@ -1700,78 +1700,94 @@ func F_vacuum_delay_point(m *base.Module, l0 int32) {
 	_ = v202
 	var v205 int32
 	_ = v205
-	var v213 int32
-	_ = v213
-	var v214 int64
-	_ = v214
+	var v209 int32
+	_ = v209
+	var v211 int32
+	_ = v211
+	var v212 int32
+	_ = v212
 	var v217 int32
 	_ = v217
-	var v223 int32
-	_ = v223
+	var v218 int64
+	_ = v218
+	var v224 int32
+	_ = v224
+	var v225 int32
+	_ = v225
 	var v231 int32
 	_ = v231
-	var v235 int32
-	_ = v235
-	var v240 int32
-	_ = v240
-	var v242 int32
-	_ = v242
+	var v239 int32
+	_ = v239
 	var v243 int32
 	_ = v243
-	var v246 int32
-	_ = v246
+	var v248 int32
+	_ = v248
+	var v250 int32
+	_ = v250
+	var v251 int32
+	_ = v251
 	var v254 int32
 	_ = v254
-	var v255 int64
-	_ = v255
 	var v258 int32
 	_ = v258
-	var v264 int32
-	_ = v264
-	var v272 int32
-	_ = v272
-	var v275 int32
-	_ = v275
-	var v276 int32
-	_ = v276
+	var v260 int32
+	_ = v260
+	var v261 int32
+	_ = v261
+	var v266 int32
+	_ = v266
+	var v267 int64
+	_ = v267
+	var v273 int32
+	_ = v273
+	var v274 int32
+	_ = v274
 	var v280 int32
 	_ = v280
-	var v283 int32
-	_ = v283
 	var v288 int32
 	_ = v288
-	var v293 int32
-	_ = v293
-	var v295 int32
-	_ = v295
-	var v298 int32
-	_ = v298
-	var v300 int32
-	_ = v300
+	var v291 int32
+	_ = v291
+	var v292 int32
+	_ = v292
+	var v296 int32
+	_ = v296
+	var v299 int32
+	_ = v299
 	var v304 int32
 	_ = v304
-	var v305 int32
-	_ = v305
-	var v308 int32
-	_ = v308
 	var v309 int32
 	_ = v309
-	var v312 int32
-	_ = v312
-	var v315 int32
-	_ = v315
+	var v311 int32
+	_ = v311
+	var v314 int32
+	_ = v314
+	var v316 int32
+	_ = v316
 	var v320 int32
 	_ = v320
+	var v321 int32
+	_ = v321
 	var v324 int32
 	_ = v324
-	var v329 int32
-	_ = v329
-	var v333 int32
-	_ = v333
-	var v337 int32
-	_ = v337
-	var v354 int32
-	_ = v354
+	var v325 int32
+	_ = v325
+	var v328 int32
+	_ = v328
+	var v331 int32
+	_ = v331
+	var v336 int32
+	_ = v336
+	var v340 int32
+	_ = v340
+	var v345 int32
+	_ = v345
+	var v349 int32
+	_ = v349
+	var v353 int32
+	_ = v353
+	var v370 int32
+	_ = v370
 	v8 = float64(0)
 	v13 = m.G0
 	v15 = v13 - int32(16)
@@ -1813,8 +1829,8 @@ L6:
 	;
 	F_pgl_exit(m, int32(1))
 	mBase = m.M
-	v354 = m.ExcPending
-	if v354 != 0 {
+	v370 = m.ExcPending
+	if v370 != 0 {
 		goto L4
 	} else {
 		goto L78
@@ -2029,8 +2045,8 @@ L35:
 	}
 L36:
 	;
-	v272 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_vacuum_delay_point[12])))
-	if v272 == int32(1) {
+	v288 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_vacuum_delay_point[12])))
+	if v288 == int32(1) {
 		goto L54
 	} else {
 		goto L55
@@ -2099,8 +2115,8 @@ L44:
 	goto L45
 L45:
 	;
-	v231 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[22]))
-	if v231 == int32(0) {
+	v239 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[22]))
+	if v239 == int32(0) {
 		goto L51
 	} else {
 		goto L52
@@ -2127,13 +2143,17 @@ L49:
 	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24])) = v201 + v202
 	v205 = *(*int32)(unsafe.Add(mBase, uint32(v190)))
 	*(*int32)(unsafe.Add(mBase, uint32(v190))) = v205 + v202
-	v213 = v190 + int32(296)
-	v214 = *(*int64)(unsafe.Add(mBase, uint32(v213)))
-	*(*int64)(unsafe.Add(mBase, uint32(v213))) = v214 + v164
-	v217 = *(*int32)(unsafe.Add(mBase, uint32(v190)))
-	*(*int32)(unsafe.Add(mBase, uint32(v190))) = v217 + v202
-	v223 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24]))
-	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24])) = v223 - v202
+	v209 = int32(0)
+	v211 = int32(_a_F_vacuum_delay_point_8)
+	v212 = base.AtomicRmwOr32(m, v209, v211, v209)
+	v217 = v190 + int32(296)
+	v218 = *(*int64)(unsafe.Add(mBase, uint32(v217)))
+	*(*int64)(unsafe.Add(mBase, uint32(v217))) = v218 + v164
+	v224 = base.AtomicRmwOr32(m, v209, v211, v209)
+	v225 = *(*int32)(unsafe.Add(mBase, uint32(v190)))
+	*(*int32)(unsafe.Add(mBase, uint32(v190))) = v225 + v202
+	v231 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24]))
+	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24])) = v231 - v202
 	goto L47
 L50:
 	;
@@ -2143,34 +2163,38 @@ L51:
 	goto L50
 L52:
 	;
-	v235 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_vacuum_delay_point[23])))
-	if v235&int32(1) == int32(0) {
+	v243 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_vacuum_delay_point[23])))
+	if v243&int32(1) == int32(0) {
 		goto L51
 	} else {
 		goto L53
 	}
 L53:
 	;
-	v240 = int32(_a_F_vacuum_delay_point_7)
-	v242 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24]))
-	v243 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24])) = v242 + v243
-	v246 = *(*int32)(unsafe.Add(mBase, uint32(v231)))
-	*(*int32)(unsafe.Add(mBase, uint32(v231))) = v246 + v243
-	v254 = v231 + int32(312)
-	v255 = *(*int64)(unsafe.Add(mBase, uint32(v254)))
-	*(*int64)(unsafe.Add(mBase, uint32(v254))) = v255 + v164
-	v258 = *(*int32)(unsafe.Add(mBase, uint32(v231)))
-	*(*int32)(unsafe.Add(mBase, uint32(v231))) = v258 + v243
-	v264 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24]))
-	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24])) = v264 - v243
+	v248 = int32(_a_F_vacuum_delay_point_7)
+	v250 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24]))
+	v251 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24])) = v250 + v251
+	v254 = *(*int32)(unsafe.Add(mBase, uint32(v239)))
+	*(*int32)(unsafe.Add(mBase, uint32(v239))) = v254 + v251
+	v258 = int32(0)
+	v260 = int32(_a_F_vacuum_delay_point_8)
+	v261 = base.AtomicRmwOr32(m, v258, v260, v258)
+	v266 = v239 + int32(312)
+	v267 = *(*int64)(unsafe.Add(mBase, uint32(v266)))
+	*(*int64)(unsafe.Add(mBase, uint32(v266))) = v267 + v164
+	v273 = base.AtomicRmwOr32(m, v258, v260, v258)
+	v274 = *(*int32)(unsafe.Add(mBase, uint32(v239)))
+	*(*int32)(unsafe.Add(mBase, uint32(v239))) = v274 + v251
+	v280 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24]))
+	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[24])) = v280 - v251
 	goto L51
 L54:
 	;
-	v275 = F_PostmasterIsAliveInternal(m)
+	v291 = F_PostmasterIsAliveInternal(m)
 	mBase = m.M
-	v276 = m.ExcPending
-	if v276 != 0 {
+	v292 = m.ExcPending
+	if v292 != 0 {
 		goto L4
 	} else {
 		goto L57
@@ -2180,17 +2204,17 @@ L55:
 	goto L56
 L56:
 	;
-	v280 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[6])) = v280
-	v283 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[13]))
-	if v283 == v280 {
+	v296 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[6])) = v296
+	v299 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[13]))
+	if v299 == v296 {
 		goto L59
 	} else {
 		goto L60
 	}
 L57:
 	;
-	if v275 == int32(0) {
+	if v291 == int32(0) {
 		goto L6
 	} else {
 		goto L58
@@ -2200,16 +2224,16 @@ L58:
 	goto L56
 L59:
 	;
-	v333 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[0]))
-	if v333 == int32(0) {
+	v349 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[0]))
+	if v349 == int32(0) {
 		goto L7
 	} else {
 		goto L76
 	}
 L60:
 	;
-	v288 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[14]))
-	if v288 <= int32(0) {
+	v304 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[14]))
+	if v304 <= int32(0) {
 		goto L62
 	} else {
 		goto L63
@@ -2218,82 +2242,82 @@ L61:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v320 = m.ExcPending
-	if v320 != 0 {
+	v336 = m.ExcPending
+	if v336 != 0 {
 		goto L4
 	} else {
 		goto L73
 	}
 L62:
 	;
-	v293 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[15]))
-	v295 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[16]))
-	if int32(0) < v293 {
+	v309 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[15]))
+	v311 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[16]))
+	if int32(0) < v309 {
 		goto L65
 	} else {
 		goto L66
 	}
 L63:
 	;
-	v315 = v288
+	v331 = v304
 	goto L64
 L64:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[8])) = v315
+	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[8])) = v331
 	goto L59
 L65:
 	;
-	v298 = v293
+	v314 = v309
 	goto L67
 L66:
 	;
-	v298 = v295
+	v314 = v311
 	goto L67
 L67:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[8])) = v298
-	v300 = *(*int32)(unsafe.Add(mBase, uint32(v283)+32))
-	if v300 == int32(0) {
+	*(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[8])) = v314
+	v316 = *(*int32)(unsafe.Add(mBase, uint32(v299)+32))
+	if v316 == int32(0) {
 		goto L59
 	} else {
 		goto L68
 	}
 L68:
 	;
-	v304 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[17]))
-	v305 = *(*int32)(unsafe.Add(mBase, uint32(v304)+uint32(_c_F_vacuum_delay_point[18])))
-	if v305 <= int32(0) {
+	v320 = *(*int32)(unsafe.Add(mBase, _c_F_vacuum_delay_point[17]))
+	v321 = *(*int32)(unsafe.Add(mBase, uint32(v320)+uint32(_c_F_vacuum_delay_point[18])))
+	if v321 <= int32(0) {
 		goto L61
 	} else {
 		goto L69
 	}
 L69:
 	;
-	v308 = int32(1)
-	v309 = base.I32_div_s(v298, v305)
-	if v309 <= v308 {
+	v324 = int32(1)
+	v325 = base.I32_div_s(v314, v321)
+	if v325 <= v324 {
 		goto L70
 	} else {
 		goto L71
 	}
 L70:
 	;
-	v312 = v308
+	v328 = v324
 	goto L72
 L71:
 	;
-	v312 = v309
+	v328 = v325
 	goto L72
 L72:
 	;
-	v315 = v312
+	v331 = v328
 	goto L64
 L73:
 	;
 	F_errmsg_internal(m, int32(_a_F_vacuum_delay_point_3), int32(0))
 	mBase = m.M
-	v324 = m.ExcPending
-	if v324 != 0 {
+	v340 = m.ExcPending
+	if v340 != 0 {
 		goto L4
 	} else {
 		goto L74
@@ -2302,8 +2326,8 @@ L74:
 	;
 	F_errfinish(m, int32(_a_F_vacuum_delay_point_4), int32(1754), int32(_a_F_vacuum_delay_point_5))
 	mBase = m.M
-	v329 = m.ExcPending
-	if v329 != 0 {
+	v345 = m.ExcPending
+	if v345 != 0 {
 		goto L4
 	} else {
 		goto L75
@@ -2317,8 +2341,8 @@ L76:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v337 = m.ExcPending
-	if v337 != 0 {
+	v353 = m.ExcPending
+	if v353 != 0 {
 		goto L4
 	} else {
 		goto L77

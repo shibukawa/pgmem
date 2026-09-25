@@ -6235,7 +6235,13 @@ func F_ReservePrivateRefCountEntry(m *base.Module) {
 func F_ResetLatch(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(0)
+	var v2 int32
+	_ = v2
+	var v7 int32
+	_ = v7
+	v2 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v2
+	v7 = base.AtomicRmwOr32(m, v2, int32(_a_F_ResetLatch_0), v2)
 	return
 }
 func F_ResetUnloggedRelations(m *base.Module, l0 int32) {

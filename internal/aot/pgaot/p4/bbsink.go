@@ -269,16 +269,24 @@ func F_bbsink_progress_end_archive(m *base.Module, l0 int32) {
 	_ = v29
 	var v32 int32
 	_ = v32
-	var v40 int32
-	_ = v40
-	var v46 int32
-	_ = v46
-	var v51 int32
-	_ = v51
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v54 int32
+	_ = v54
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
@@ -301,24 +309,28 @@ func F_bbsink_progress_end_archive(m *base.Module, l0 int32) {
 				*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2])) = v28 + v29
 				v32 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
 				*(*int32)(unsafe.Add(mBase, uint32(v17))) = v32 + v29
+				v36 = int32(0)
+				v38 = int32(_a_F_bbsink_progress_end_archive_1)
+				v39 = base.AtomicRmwOr32(m, v36, v38, v36)
 				*(*int64)(unsafe.Add(mBase, uint32(v17+int32(32))+232)) = base.I64_extend_i32_s(v5 + int32(1))
-				v40 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-				*(*int32)(unsafe.Add(mBase, uint32(v17))) = v40 + v29
-				v46 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2]))
-				*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2])) = v46 - v29
+				v47 = base.AtomicRmwOr32(m, v36, v38, v36)
+				v48 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+				*(*int32)(unsafe.Add(mBase, uint32(v17))) = v48 + v29
+				v54 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2]))
+				*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2])) = v54 - v29
 			}
 		}
 	} else {
 	}
 	F_bbsink_forward_end_archive(m, l0)
 	mBase = m.M
-	v51 = m.ExcPending
-	if v51 != 0 {
+	v59 = m.ExcPending
+	if v59 != 0 {
 		return
 	} else {
-		v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-		v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+4))
-		*(*int32)(unsafe.Add(mBase, uint32(v52)+4)) = v53 + int32(1)
+		v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+		v61 = *(*int32)(unsafe.Add(mBase, uint32(v60)+4))
+		*(*int32)(unsafe.Add(mBase, uint32(v60)+4)) = v61 + int32(1)
 		return
 	}
 }

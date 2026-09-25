@@ -3063,26 +3063,34 @@ func F_SwitchBackToLocalLatch(m *base.Module) {
 	_ = v16
 	var v19 int32
 	_ = v19
-	var v22 int32
-	_ = v22
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
 	var v26 int32
 	_ = v26
-	var v28 int32
-	_ = v28
+	var v27 int32
+	_ = v27
 	var v30 int32
 	_ = v30
-	var v33 int32
-	_ = v33
+	var v34 int32
+	_ = v34
 	var v36 int32
 	_ = v36
-	var v40 int32
-	_ = v40
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
 	var v44 int32
 	_ = v44
 	var v48 int32
 	_ = v48
+	var v52 int32
+	_ = v52
 	var v56 int32
 	_ = v56
+	var v64 int32
+	_ = v64
 	*(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[0])) = int32(_a_F_SwitchBackToLocalLatch_0)
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[1]))
 	if v6 != 0 {
@@ -3107,8 +3115,10 @@ L2:
 	goto L3
 L3:
 	;
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
-	if v16 != 0 {
+	v16 = int32(0)
+	v19 = base.AtomicRmwOr32(m, v16, int32(_a_F_SwitchBackToLocalLatch_1), v16)
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+	if v20 != 0 {
 		goto L7
 	} else {
 		goto L8
@@ -3130,35 +3140,37 @@ L7:
 L8:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = int32(1)
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
-	if v19 == int32(0) {
+	v23 = int32(0)
+	v26 = base.AtomicRmwOr32(m, v23, int32(_a_F_SwitchBackToLocalLatch_1), v23)
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
+	if v27 == v23 {
 		goto L7
 	} else {
 		goto L9
 	}
 L9:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v15)+12))
-	if v22 == int32(0) {
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v15)+12))
+	if v30 == int32(0) {
 		goto L7
 	} else {
 		goto L10
 	}
 L10:
 	;
-	v26 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[2]))
-	if v26 == v22 {
+	v34 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[2]))
+	if v34 == v30 {
 		goto L11
 	} else {
 		goto L12
 	}
 L11:
 	;
-	v28 = m.G0
-	v30 = v28 - int32(16)
-	m.G0 = v30
-	v33 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[3]))
-	if v33 == int32(0) {
+	v36 = m.G0
+	v38 = v36 - int32(16)
+	m.G0 = v38
+	v41 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[3]))
+	if v41 == int32(0) {
 		goto L14
 	} else {
 		goto L15
@@ -3168,24 +3180,24 @@ L12:
 	goto L13
 L13:
 	;
-	v56 = F_pgmem_kill(m, v22, int32(23))
+	v64 = F_pgmem_kill(m, v30, int32(23))
 	mBase = m.M
 	goto L7
 L14:
 	;
-	m.G0 = v30 + int32(16)
+	m.G0 = v38 + int32(16)
 	goto L6
 L15:
 	;
-	v36 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v30)+15)) = uint8(v36)
+	v44 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v38)+15)) = uint8(v44)
 	goto L16
 L16:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[4]))
-	v44 = F_write(m, v40, v30+int32(15), int32(1))
+	v48 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[4]))
+	v52 = F_write(m, v48, v38+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v44 {
+	if int32(0) <= v52 {
 		goto L14
 	} else {
 		goto L18
@@ -3195,8 +3207,8 @@ L17:
 	goto L14
 L18:
 	;
-	v48 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[5]))
-	if v48 == int32(27) {
+	v56 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchBackToLocalLatch[5]))
+	if v56 == int32(27) {
 		goto L16
 	} else {
 		goto L19

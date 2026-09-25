@@ -2666,46 +2666,50 @@ func F_ParallelApplyWorkerMain(m *base.Module, l0 int32) {
 	_ = v429
 	var v435 int32
 	_ = v435
+	var v436 int32
+	_ = v436
 	var v441 int32
 	_ = v441
-	var v443 int32
-	_ = v443
-	var v449 int32
-	_ = v449
-	var v452 int32
-	_ = v452
+	var v445 int32
+	_ = v445
+	var v447 int32
+	_ = v447
+	var v453 int32
+	_ = v453
 	var v456 int32
 	_ = v456
-	var v461 int32
-	_ = v461
+	var v460 int32
+	_ = v460
 	var v465 int32
 	_ = v465
-	var v468 int32
-	_ = v468
+	var v469 int32
+	_ = v469
 	var v472 int32
 	_ = v472
-	var v477 int32
-	_ = v477
+	var v476 int32
+	_ = v476
 	var v481 int32
 	_ = v481
 	var v485 int32
 	_ = v485
-	var v490 int32
-	_ = v490
+	var v489 int32
+	_ = v489
 	var v494 int32
 	_ = v494
 	var v498 int32
 	_ = v498
-	var v503 int32
-	_ = v503
+	var v502 int32
+	_ = v502
 	var v507 int32
 	_ = v507
-	var v510 int32
-	_ = v510
+	var v511 int32
+	_ = v511
 	var v514 int32
 	_ = v514
-	var v519 int32
-	_ = v519
+	var v518 int32
+	_ = v518
+	var v523 int32
+	_ = v523
 	v8 = m.G0
 	v10 = v8 - int32(144)
 	m.G0 = v10
@@ -2840,8 +2844,8 @@ L21:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v507 = m.ExcPending
-	if v507 != 0 {
+	v511 = m.ExcPending
+	if v511 != 0 {
 		goto L19
 	} else {
 		goto L125
@@ -2850,8 +2854,8 @@ L22:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v494 = m.ExcPending
-	if v494 != 0 {
+	v498 = m.ExcPending
+	if v498 != 0 {
 		goto L19
 	} else {
 		goto L122
@@ -2860,8 +2864,8 @@ L23:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v481 = m.ExcPending
-	if v481 != 0 {
+	v485 = m.ExcPending
+	if v485 != 0 {
 		goto L19
 	} else {
 		goto L119
@@ -2870,8 +2874,8 @@ L24:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v465 = m.ExcPending
-	if v465 != 0 {
+	v469 = m.ExcPending
+	if v469 != 0 {
 		goto L19
 	} else {
 		goto L115
@@ -2899,8 +2903,8 @@ L28:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v449 = m.ExcPending
-	if v449 != 0 {
+	v453 = m.ExcPending
+	if v453 != 0 {
 		goto L19
 	} else {
 		goto L111
@@ -3315,11 +3319,11 @@ L77:
 	goto L76
 L78:
 	;
-	v441 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
-	F_MemoryContextReset(m, v441)
+	v445 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[14]))
+	F_MemoryContextReset(m, v445)
 	mBase = m.M
-	v443 = m.ExcPending
-	if v443 != 0 {
+	v447 = m.ExcPending
+	if v447 != 0 {
 		goto L19
 	} else {
 		goto L110
@@ -3581,7 +3585,9 @@ L107:
 L108:
 	;
 	v435 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelApplyWorkerMain[19]))
-	*(*int32)(unsafe.Add(mBase, uint32(v435))) = int32(0)
+	v436 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v435))) = v436
+	v441 = base.AtomicRmwOr32(m, v436, int32(_a_F_ParallelApplyWorkerMain_11), v436)
 	goto L109
 L109:
 	;
@@ -3594,18 +3600,18 @@ L111:
 	;
 	F_errcode(m, int32(325))
 	mBase = m.M
-	v452 = m.ExcPending
-	if v452 != 0 {
+	v456 = m.ExcPending
+	if v456 != 0 {
 		goto L19
 	} else {
 		goto L112
 	}
 L112:
 	;
-	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_11), int32(0))
+	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_12), int32(0))
 	mBase = m.M
-	v456 = m.ExcPending
-	if v456 != 0 {
+	v460 = m.ExcPending
+	if v460 != 0 {
 		goto L19
 	} else {
 		goto L113
@@ -3614,8 +3620,8 @@ L113:
 	;
 	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(897), int32(_a_F_ParallelApplyWorkerMain_2))
 	mBase = m.M
-	v461 = m.ExcPending
-	if v461 != 0 {
+	v465 = m.ExcPending
+	if v465 != 0 {
 		goto L19
 	} else {
 		goto L114
@@ -3629,18 +3635,18 @@ L115:
 	;
 	F_errcode(m, int32(325))
 	mBase = m.M
-	v468 = m.ExcPending
-	if v468 != 0 {
+	v472 = m.ExcPending
+	if v472 != 0 {
 		goto L19
 	} else {
 		goto L116
 	}
 L116:
 	;
-	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_12), int32(0))
+	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_13), int32(0))
 	mBase = m.M
-	v472 = m.ExcPending
-	if v472 != 0 {
+	v476 = m.ExcPending
+	if v476 != 0 {
 		goto L19
 	} else {
 		goto L117
@@ -3649,8 +3655,8 @@ L117:
 	;
 	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(903), int32(_a_F_ParallelApplyWorkerMain_2))
 	mBase = m.M
-	v477 = m.ExcPending
-	if v477 != 0 {
+	v481 = m.ExcPending
+	if v481 != 0 {
 		goto L19
 	} else {
 		goto L118
@@ -3662,20 +3668,20 @@ L118:
 	}
 L119:
 	;
-	F_errmsg_internal(m, int32(_a_F_ParallelApplyWorkerMain_13), int32(0))
+	F_errmsg_internal(m, int32(_a_F_ParallelApplyWorkerMain_14), int32(0))
 	mBase = m.M
-	v485 = m.ExcPending
-	if v485 != 0 {
+	v489 = m.ExcPending
+	if v489 != 0 {
 		goto L19
 	} else {
 		goto L120
 	}
 L120:
 	;
-	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(774), int32(_a_F_ParallelApplyWorkerMain_14))
+	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(774), int32(_a_F_ParallelApplyWorkerMain_15))
 	mBase = m.M
-	v490 = m.ExcPending
-	if v490 != 0 {
+	v494 = m.ExcPending
+	if v494 != 0 {
 		goto L19
 	} else {
 		goto L121
@@ -3688,20 +3694,20 @@ L121:
 L122:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v318
-	F_errmsg_internal(m, int32(_a_F_ParallelApplyWorkerMain_15), v10)
+	F_errmsg_internal(m, int32(_a_F_ParallelApplyWorkerMain_16), v10)
 	mBase = m.M
-	v498 = m.ExcPending
-	if v498 != 0 {
+	v502 = m.ExcPending
+	if v502 != 0 {
 		goto L19
 	} else {
 		goto L123
 	}
 L123:
 	;
-	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(784), int32(_a_F_ParallelApplyWorkerMain_14))
+	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(784), int32(_a_F_ParallelApplyWorkerMain_15))
 	mBase = m.M
-	v503 = m.ExcPending
-	if v503 != 0 {
+	v507 = m.ExcPending
+	if v507 != 0 {
 		goto L19
 	} else {
 		goto L124
@@ -3715,28 +3721,28 @@ L125:
 	;
 	F_errcode(m, int32(325))
 	mBase = m.M
-	v510 = m.ExcPending
-	if v510 != 0 {
+	v514 = m.ExcPending
+	if v514 != 0 {
 		goto L19
 	} else {
 		goto L126
 	}
 L126:
 	;
-	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_16), int32(0))
+	F_errmsg(m, int32(_a_F_ParallelApplyWorkerMain_17), int32(0))
 	mBase = m.M
-	v514 = m.ExcPending
-	if v514 != 0 {
+	v518 = m.ExcPending
+	if v518 != 0 {
 		goto L19
 	} else {
 		goto L127
 	}
 L127:
 	;
-	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(822), int32(_a_F_ParallelApplyWorkerMain_14))
+	F_errfinish(m, int32(_a_F_ParallelApplyWorkerMain_1), int32(822), int32(_a_F_ParallelApplyWorkerMain_15))
 	mBase = m.M
-	v519 = m.ExcPending
-	if v519 != 0 {
+	v523 = m.ExcPending
+	if v523 != 0 {
 		goto L19
 	} else {
 		goto L128

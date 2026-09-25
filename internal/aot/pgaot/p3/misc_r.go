@@ -2632,24 +2632,28 @@ func F_ReplSlotSyncWorkerMain(m *base.Module, l0 int32, l1 int32) {
 	_ = v739
 	var v745 int32
 	_ = v745
-	var v756 int32
-	_ = v756
-	var v757 int64
-	_ = v757
-	var v761 int32
+	var v746 int32
+	_ = v746
+	var v751 int32
+	_ = v751
+	var v760 int32
+	_ = v760
+	var v761 int64
 	_ = v761
-	var v763 int32
-	_ = v763
-	var v764 int32
-	_ = v764
+	var v765 int32
+	_ = v765
 	var v767 int32
 	_ = v767
-	var v769 int32
-	_ = v769
+	var v768 int32
+	_ = v768
 	var v771 int32
 	_ = v771
+	var v773 int32
+	_ = v773
 	var v775 int32
 	_ = v775
+	var v779 int32
+	_ = v779
 	v9 = m.G0
 	v11 = v9 - int32(240)
 	m.G0 = v11
@@ -2676,10 +2680,10 @@ L4:
 	}
 L6:
 	;
-	v756 = int32(m.ExcTag)
-	v757 = int64(m.ExcVals[0])
+	v760 = int32(m.ExcTag)
+	v761 = int64(m.ExcVals[0])
 	m.ExcPending = 0
-	if v756 == int32(0) {
+	if v760 == int32(0) {
 		goto L185
 	} else {
 		goto L186
@@ -3915,19 +3919,21 @@ L182:
 L183:
 	;
 	v745 = *(*int32)(unsafe.Add(mBase, _c_F_ReplSlotSyncWorkerMain[34]))
-	*(*int32)(unsafe.Add(mBase, uint32(v745))) = int32(0)
+	v746 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v745))) = v746
+	v751 = base.AtomicRmwOr32(m, v746, int32(_a_F_ReplSlotSyncWorkerMain_24), v746)
 	goto L184
 L184:
 	;
 	goto L117
 L185:
 	;
-	v761 = int32(v757)
+	v765 = int32(v761)
 	m.G0 = v11
-	v763 = *(*int32)(unsafe.Add(mBase, uint32(v761)+4))
-	v764 = *(*int32)(unsafe.Add(mBase, uint32(v761)))
-	v767 = *(*int32)(unsafe.Add(mBase, uint32(v764)))
-	if v11+int32(60) == v767 {
+	v767 = *(*int32)(unsafe.Add(mBase, uint32(v765)+4))
+	v768 = *(*int32)(unsafe.Add(mBase, uint32(v765)))
+	v771 = *(*int32)(unsafe.Add(mBase, uint32(v768)))
+	if v11+int32(60) == v771 {
 		goto L188
 	} else {
 		goto L189
@@ -3938,29 +3944,29 @@ L186:
 	goto L194
 L187:
 	;
-	if v771 == int32(0) {
+	if v775 == int32(0) {
 		goto L191
 	} else {
 		goto L192
 	}
 L188:
 	;
-	v769 = *(*int32)(unsafe.Add(mBase, uint32(v764)+4))
-	v771 = v769
+	v773 = *(*int32)(unsafe.Add(mBase, uint32(v768)+4))
+	v775 = v773
 	goto L190
 L189:
 	;
-	v771 = int32(0)
+	v775 = int32(0)
 	goto L190
 L190:
 	;
 	goto L187
 L191:
 	;
-	F___wasm_longjmp(m, v764, v763)
+	F___wasm_longjmp(m, v768, v767)
 	mBase = m.M
-	v775 = m.ExcPending
-	if v775 != 0 {
+	v779 = m.ExcPending
+	if v779 != 0 {
 		goto L194
 	} else {
 		goto L195
@@ -3970,8 +3976,8 @@ L192:
 	goto L193
 L193:
 	;
-	v15 = v771
-	v16 = v763
+	v15 = v775
+	v16 = v767
 	goto L1
 L194:
 	;

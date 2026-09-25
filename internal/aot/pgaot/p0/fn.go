@@ -459,32 +459,42 @@ func Fn13832(m *base.Module, l0 int32) {
 	_ = v9
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
 	var v19 int32
 	_ = v19
-	var v21 int32
-	_ = v21
+	var v20 int32
+	_ = v20
 	var v23 int32
 	_ = v23
-	var v26 int32
-	_ = v26
+	var v27 int32
+	_ = v27
 	var v29 int32
 	_ = v29
-	var v33 int32
-	_ = v33
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
 	var v37 int32
 	_ = v37
 	var v41 int32
 	_ = v41
+	var v45 int32
+	_ = v45
 	var v49 int32
 	_ = v49
+	var v57 int32
+	_ = v57
 	v2 = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v2
 	*(*int32)(unsafe.Add(mBase, _c_Fn13832[0])) = v2
 	v8 = *(*int32)(unsafe.Add(mBase, _c_Fn13832[1]))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-	if v9 != 0 {
+	v9 = int32(0)
+	v12 = base.AtomicRmwOr32(m, v9, int32(_a_Fn13832_0), v9)
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+	if v13 != 0 {
 		goto L2
 	} else {
 		goto L3
@@ -498,35 +508,37 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(1)
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-	if v12 == int32(0) {
+	v16 = int32(0)
+	v19 = base.AtomicRmwOr32(m, v16, int32(_a_Fn13832_0), v16)
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+	if v20 == v16 {
 		goto L2
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
-	if v15 == int32(0) {
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
+	if v23 == int32(0) {
 		goto L2
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _c_Fn13832[2]))
-	if v19 == v15 {
+	v27 = *(*int32)(unsafe.Add(mBase, _c_Fn13832[2]))
+	if v27 == v23 {
 		goto L6
 	} else {
 		goto L7
 	}
 L6:
 	;
-	v21 = m.G0
-	v23 = v21 - int32(16)
-	m.G0 = v23
-	v26 = *(*int32)(unsafe.Add(mBase, _c_Fn13832[3]))
-	if v26 == int32(0) {
+	v29 = m.G0
+	v31 = v29 - int32(16)
+	m.G0 = v31
+	v34 = *(*int32)(unsafe.Add(mBase, _c_Fn13832[3]))
+	if v34 == int32(0) {
 		goto L9
 	} else {
 		goto L10
@@ -536,24 +548,24 @@ L7:
 	goto L8
 L8:
 	;
-	v49 = F_pgmem_kill(m, v15, int32(23))
+	v57 = F_pgmem_kill(m, v23, int32(23))
 	mBase = m.M
 	goto L2
 L9:
 	;
-	m.G0 = v23 + int32(16)
+	m.G0 = v31 + int32(16)
 	goto L1
 L10:
 	;
-	v29 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v23)+15)) = uint8(v29)
+	v37 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v31)+15)) = uint8(v37)
 	goto L11
 L11:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, _c_Fn13832[4]))
-	v37 = F_write(m, v33, v23+int32(15), int32(1))
+	v41 = *(*int32)(unsafe.Add(mBase, _c_Fn13832[4]))
+	v45 = F_write(m, v41, v31+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v37 {
+	if int32(0) <= v45 {
 		goto L9
 	} else {
 		goto L13
@@ -563,8 +575,8 @@ L12:
 	goto L9
 L13:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, _c_Fn13832[5]))
-	if v41 == int32(27) {
+	v49 = *(*int32)(unsafe.Add(mBase, _c_Fn13832[5]))
+	if v49 == int32(27) {
 		goto L11
 	} else {
 		goto L14

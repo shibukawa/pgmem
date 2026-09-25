@@ -329,3 +329,35 @@ patch('src/backend/access/transam/xlog.c',
 '''#if !defined(__PGLITE__) || defined(__PGMEM__)
 				if (IsUnderPostmaster && XLogCheckpointNeeded(openLogSegNo))''',
 '#if !defined(__PGLITE__) || defined(__PGMEM__)\n\t\t\t\tif (IsUnderPostmaster && XLogCheckpointNeeded')
+
+# Memory barriers: generic-gcc.h makes pg_memory_barrier() and the read and
+# write barriers atomic.fence instructions, and binaryen's precompute pass
+# (in the -O2 link and in gen-aot's -Oz) deletes atomic.fence when the
+# memory is not shared, which ours is not: the processes share their
+# System V segments, not the linear memory. Without the fence, the Dekker
+# pattern of latches (SetLatch stores is_set and then reads maybe_sleeping;
+# the sleeper stores maybe_sleeping and then reads is_set) can reorder the
+# store and the load on ARM64, both sides miss, and a parallel query waits
+# for a wakeup forever. A seq_cst RMW survives binaryen and becomes a
+# sync/atomic compare-and-swap in the Go code (the cluster forces contended
+# atomics), a full barrier (CASAL, LOCK CMPXCHG). The word is private to
+# the process; only the ordering counts. The read and write barriers get
+# the full barrier too.
+patch('src/include/port/atomics.h',
+'''#if defined(__GNUC__) || defined(__INTEL_COMPILER)
+#include "port/atomics/generic-gcc.h"''',
+'''#ifdef __PGMEM__
+static inline void
+pgmem_memory_barrier(void)
+{
+	static int	pgmem_barrier_word;
+
+	(void) __atomic_fetch_add(&pgmem_barrier_word, 0, __ATOMIC_SEQ_CST);
+}
+#define pg_memory_barrier_impl()	pgmem_memory_barrier()
+#define pg_read_barrier_impl()		pgmem_memory_barrier()
+#define pg_write_barrier_impl()		pgmem_memory_barrier()
+#endif
+#if defined(__GNUC__) || defined(__INTEL_COMPILER)
+#include "port/atomics/generic-gcc.h"''',
+'pgmem_memory_barrier')

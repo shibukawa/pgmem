@@ -23,26 +23,34 @@ func F_shm_mq_set_sender(m *base.Module, l0 int32, l1 int32) {
 	_ = v18
 	var v21 int32
 	_ = v21
-	var v24 int32
-	_ = v24
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
+	var v29 int32
+	_ = v29
 	var v32 int32
 	_ = v32
-	var v35 int32
-	_ = v35
+	var v36 int32
+	_ = v36
 	var v38 int32
 	_ = v38
-	var v42 int32
-	_ = v42
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
 	var v46 int32
 	_ = v46
 	var v50 int32
 	_ = v50
+	var v54 int32
+	_ = v54
 	var v58 int32
 	_ = v58
+	var v66 int32
+	_ = v66
 	v5 = base.AtomicRmwXchg32(m, l0, int32(0), int32(1))
 	if v5 != 0 {
 		goto L1
@@ -82,8 +90,10 @@ L5:
 L6:
 	;
 	v17 = v12 + int32(20)
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-	if v18 != 0 {
+	v18 = int32(0)
+	v21 = base.AtomicRmwOr32(m, v18, int32(_a_F_shm_mq_set_sender_2), v18)
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+	if v22 != 0 {
 		goto L10
 	} else {
 		goto L11
@@ -103,35 +113,37 @@ L10:
 L11:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(1)
-	v21 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
-	if v21 == int32(0) {
+	v25 = int32(0)
+	v28 = base.AtomicRmwOr32(m, v25, int32(_a_F_shm_mq_set_sender_2), v25)
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	if v29 == v25 {
 		goto L10
 	} else {
 		goto L12
 	}
 L12:
 	;
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
-	if v24 == int32(0) {
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
+	if v32 == int32(0) {
 		goto L10
 	} else {
 		goto L13
 	}
 L13:
 	;
-	v28 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[0]))
-	if v28 == v24 {
+	v36 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[0]))
+	if v36 == v32 {
 		goto L14
 	} else {
 		goto L15
 	}
 L14:
 	;
-	v30 = m.G0
-	v32 = v30 - int32(16)
-	m.G0 = v32
-	v35 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[1]))
-	if v35 == int32(0) {
+	v38 = m.G0
+	v40 = v38 - int32(16)
+	m.G0 = v40
+	v43 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[1]))
+	if v43 == int32(0) {
 		goto L17
 	} else {
 		goto L18
@@ -141,24 +153,24 @@ L15:
 	goto L16
 L16:
 	;
-	v58 = F_pgmem_kill(m, v24, int32(23))
+	v66 = F_pgmem_kill(m, v32, int32(23))
 	mBase = m.M
 	goto L10
 L17:
 	;
-	m.G0 = v32 + int32(16)
+	m.G0 = v40 + int32(16)
 	goto L9
 L18:
 	;
-	v38 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v32)+15)) = uint8(v38)
+	v46 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v40)+15)) = uint8(v46)
 	goto L19
 L19:
 	;
-	v42 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[2]))
-	v46 = F_write(m, v42, v32+int32(15), int32(1))
+	v50 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[2]))
+	v54 = F_write(m, v50, v40+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v46 {
+	if int32(0) <= v54 {
 		goto L17
 	} else {
 		goto L21
@@ -168,8 +180,8 @@ L20:
 	goto L17
 L21:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[3]))
-	if v50 == int32(27) {
+	v58 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[3]))
+	if v58 == int32(27) {
 		goto L19
 	} else {
 		goto L22
@@ -189,29 +201,32 @@ func F_shm_toc_lookup(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 	_ = v11
 	var v13 int32
 	_ = v13
-	var v21 int32
-	_ = v21
-	var v28 int32
-	_ = v28
-	var v29 int64
-	_ = v29
+	var v17 int32
+	_ = v17
+	var v25 int32
+	_ = v25
 	var v32 int32
 	_ = v32
-	var v34 int32
-	_ = v34
-	var v50 int32
-	_ = v50
-	var v55 int32
-	_ = v55
-	var v60 int32
-	_ = v60
+	var v33 int64
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v54 int32
+	_ = v54
+	var v59 int32
+	_ = v59
 	var v64 int32
 	_ = v64
+	var v68 int32
+	_ = v68
 	v4 = int32(0)
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v17 = base.AtomicRmwOr32(m, v4, int32(_a_F_shm_toc_lookup_0), v4)
 	if v13 == v4 {
 		goto L2
 	} else {
@@ -220,38 +235,38 @@ func F_shm_toc_lookup(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 L1:
 	;
 	m.G0 = v11 + int32(16)
-	return v64
+	return v68
 L2:
 	;
 	if l2 != 0 {
-		v64 = int32(0)
+		v68 = int32(0)
 		goto L1
 	} else {
 		goto L10
 	}
 L3:
 	;
-	v21 = v4
+	v25 = v4
 	goto L4
 L4:
 	;
-	v28 = l0 + int32(24) + v21<<(uint(int32(4))%32)
-	v29 = *(*int64)(unsafe.Add(mBase, uint32(v28)))
-	if l1 != v29 {
+	v32 = l0 + int32(24) + v25<<(uint(int32(4))%32)
+	v33 = *(*int64)(unsafe.Add(mBase, uint32(v32)))
+	if l1 != v33 {
 		goto L6
 	} else {
 		goto L7
 	}
 L5:
 	;
-	v34 = *(*int32)(unsafe.Add(mBase, uint32(v28)+8))
-	v64 = l0 + v34
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(v32)+8))
+	v68 = l0 + v38
 	goto L1
 L6:
 	;
-	v32 = v21 + int32(1)
-	if v13 != v32 {
-		v21 = v32
+	v36 = v25 + int32(1)
+	if v13 != v36 {
+		v25 = v36
 		goto L4
 	} else {
 		goto L9
@@ -269,8 +284,8 @@ L10:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v50 = m.ExcPending
-	if v50 != 0 {
+	v54 = m.ExcPending
+	if v54 != 0 {
 		goto L11
 	} else {
 		goto L12
@@ -282,20 +297,20 @@ L12:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = l0
 	*(*int64)(unsafe.Add(mBase, uint32(v11))) = l1
-	F_errmsg_internal(m, int32(_a_F_shm_toc_lookup_0), v11)
+	F_errmsg_internal(m, int32(_a_F_shm_toc_lookup_1), v11)
 	mBase = m.M
-	v55 = m.ExcPending
-	if v55 != 0 {
+	v59 = m.ExcPending
+	if v59 != 0 {
 		goto L11
 	} else {
 		goto L13
 	}
 L13:
 	;
-	F_errfinish(m, int32(_a_F_shm_toc_lookup_1), int32(254), int32(_a_F_shm_toc_lookup_2))
+	F_errfinish(m, int32(_a_F_shm_toc_lookup_2), int32(254), int32(_a_F_shm_toc_lookup_3))
 	mBase = m.M
-	v60 = m.ExcPending
-	if v60 != 0 {
+	v64 = m.ExcPending
+	if v64 != 0 {
 		goto L11
 	} else {
 		goto L14

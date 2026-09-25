@@ -1385,146 +1385,150 @@ func F_TablesyncWorkerMain(m *base.Module, l0 int32) {
 	_ = v3079
 	var v3089 int32
 	_ = v3089
-	var v3097 int32
-	_ = v3097
+	var v3090 int32
+	_ = v3090
+	var v3095 int32
+	_ = v3095
 	var v3101 int32
 	_ = v3101
-	var v3104 int32
-	_ = v3104
 	var v3105 int32
 	_ = v3105
-	var v3106 int32
-	_ = v3106
-	var v3107 int32
-	_ = v3107
-	var v3117 int32
-	_ = v3117
-	var v3138 int32
-	_ = v3138
-	var v3139 int32
-	_ = v3139
-	var v3140 int32
-	_ = v3140
-	var v3147 int32
-	_ = v3147
-	var v3175 int32
-	_ = v3175
-	var v3176 int64
-	_ = v3176
-	var v3180 int32
+	var v3108 int32
+	_ = v3108
+	var v3109 int32
+	_ = v3109
+	var v3110 int32
+	_ = v3110
+	var v3111 int32
+	_ = v3111
+	var v3121 int32
+	_ = v3121
+	var v3142 int32
+	_ = v3142
+	var v3143 int32
+	_ = v3143
+	var v3144 int32
+	_ = v3144
+	var v3151 int32
+	_ = v3151
+	var v3179 int32
+	_ = v3179
+	var v3180 int64
 	_ = v3180
-	var v3182 int32
-	_ = v3182
-	var v3183 int32
-	_ = v3183
+	var v3184 int32
+	_ = v3184
 	var v3186 int32
 	_ = v3186
-	var v3188 int32
-	_ = v3188
+	var v3187 int32
+	_ = v3187
 	var v3190 int32
 	_ = v3190
-	var v3191 int32
-	_ = v3191
 	var v3192 int32
 	_ = v3192
-	var v3193 int32
-	_ = v3193
 	var v3194 int32
 	_ = v3194
+	var v3195 int32
+	_ = v3195
 	var v3196 int32
 	_ = v3196
-	var v3202 int32
-	_ = v3202
-	var v3203 int32
-	_ = v3203
-	var v3205 int32
-	_ = v3205
+	var v3197 int32
+	_ = v3197
+	var v3198 int32
+	_ = v3198
+	var v3200 int32
+	_ = v3200
 	var v3206 int32
 	_ = v3206
-	var v3208 int32
-	_ = v3208
+	var v3207 int32
+	_ = v3207
+	var v3209 int32
+	_ = v3209
 	var v3210 int32
 	_ = v3210
 	var v3212 int32
 	_ = v3212
-	var v3213 int32
-	_ = v3213
 	var v3214 int32
 	_ = v3214
 	var v3216 int32
 	_ = v3216
-	var v3221 int64
-	_ = v3221
-	var v3226 int32
-	_ = v3226
-	var v3228 int32
-	_ = v3228
-	var v3229 int32
-	_ = v3229
+	var v3217 int32
+	_ = v3217
+	var v3218 int32
+	_ = v3218
+	var v3220 int32
+	_ = v3220
+	var v3225 int64
+	_ = v3225
 	var v3230 int32
 	_ = v3230
-	var v3231 int32
-	_ = v3231
-	var v3239 int32
-	_ = v3239
-	var v3242 int32
-	_ = v3242
-	var v3245 int32
-	_ = v3245
+	var v3232 int32
+	_ = v3232
+	var v3233 int32
+	_ = v3233
+	var v3234 int32
+	_ = v3234
+	var v3235 int32
+	_ = v3235
+	var v3243 int32
+	_ = v3243
 	var v3246 int32
 	_ = v3246
-	var v3248 int32
-	_ = v3248
-	var v3253 int32
-	_ = v3253
+	var v3249 int32
+	_ = v3249
+	var v3250 int32
+	_ = v3250
+	var v3252 int32
+	_ = v3252
 	var v3257 int32
 	_ = v3257
-	var v3258 int32
-	_ = v3258
-	var v3260 int32
-	_ = v3260
-	var v3263 int32
-	_ = v3263
-	var v3266 int32
-	_ = v3266
+	var v3261 int32
+	_ = v3261
+	var v3262 int32
+	_ = v3262
+	var v3264 int32
+	_ = v3264
 	var v3267 int32
 	_ = v3267
-	var v3269 int32
-	_ = v3269
-	var v3276 int32
-	_ = v3276
-	var v3278 int32
-	_ = v3278
-	var v3279 int32
-	_ = v3279
+	var v3270 int32
+	_ = v3270
+	var v3271 int32
+	_ = v3271
+	var v3273 int32
+	_ = v3273
 	var v3280 int32
 	_ = v3280
+	var v3282 int32
+	_ = v3282
 	var v3283 int32
 	_ = v3283
-	var v3285 int32
-	_ = v3285
+	var v3284 int32
+	_ = v3284
 	var v3287 int32
 	_ = v3287
-	var v3288 int32
-	_ = v3288
 	var v3289 int32
 	_ = v3289
+	var v3291 int32
+	_ = v3291
 	var v3292 int32
 	_ = v3292
+	var v3293 int32
+	_ = v3293
 	var v3296 int32
 	_ = v3296
-	var v3297 int32
-	_ = v3297
-	var v3298 int32
-	_ = v3298
-	var v3299 int32
-	_ = v3299
-	var v3300 int64
+	var v3300 int32
 	_ = v3300
+	var v3301 int32
+	_ = v3301
 	var v3302 int32
 	_ = v3302
-	var v3307 int32
-	_ = v3307
+	var v3303 int32
+	_ = v3303
+	var v3304 int64
+	_ = v3304
+	var v3306 int32
+	_ = v3306
+	var v3311 int32
+	_ = v3311
 	v2 = int32(0)
 	F_SetupApplyOrSyncWorker(m, l0)
 	mBase = m.M
@@ -1567,15 +1571,15 @@ L3:
 L4:
 	;
 	m.G0 = v44 + int32(752)
-	v3202 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[0]))
-	v3203 = *(*int32)(unsafe.Add(mBase, uint32(v3202)))
-	v3205 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[1]))
-	v3206 = *(*int32)(unsafe.Add(mBase, uint32(v3205)+36))
-	v3208 = v32 - int32(-64)
-	F_ReplicationOriginNameForLogicalRep(m, v3203, v3206, v3208)
+	v3206 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[0]))
+	v3207 = *(*int32)(unsafe.Add(mBase, uint32(v3206)))
+	v3209 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[1]))
+	v3210 = *(*int32)(unsafe.Add(mBase, uint32(v3209)+36))
+	v3212 = v32 - int32(-64)
+	F_ReplicationOriginNameForLogicalRep(m, v3207, v3210, v3212)
 	mBase = m.M
-	v3210 = m.ExcPending
-	if v3210 != 0 {
+	v3214 = m.ExcPending
+	if v3214 != 0 {
 		goto L1
 	} else {
 		goto L549
@@ -1615,10 +1619,10 @@ L10:
 	goto L4
 L11:
 	;
-	v3175 = int32(m.ExcTag)
-	v3176 = int64(m.ExcVals[0])
+	v3179 = int32(m.ExcTag)
+	v3180 = int64(m.ExcVals[0])
 	m.ExcPending = 0
-	if v3175 == int32(0) {
+	if v3179 == int32(0) {
 		goto L539
 	} else {
 		goto L540
@@ -1627,15 +1631,15 @@ L12:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[2])) = v89
 	*(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[3])) = v90
-	*(*int32)(unsafe.Add(mBase, uint32(v44)+736)) = v3104
-	*(*int32)(unsafe.Add(mBase, uint32(v44)+740)) = v3105
-	*(*int32)(unsafe.Add(mBase, uint32(v44)+744)) = v3106
-	*(*uint16)(unsafe.Add(mBase, uint32(v44)+750)) = uint16(v3107)
-	v3138 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[4]))
-	v3139 = F_MemoryContextStrdup(m, v3138, v3117)
+	*(*int32)(unsafe.Add(mBase, uint32(v44)+736)) = v3108
+	*(*int32)(unsafe.Add(mBase, uint32(v44)+740)) = v3109
+	*(*int32)(unsafe.Add(mBase, uint32(v44)+744)) = v3110
+	*(*uint16)(unsafe.Add(mBase, uint32(v44)+750)) = uint16(v3111)
+	v3142 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[4]))
+	v3143 = F_MemoryContextStrdup(m, v3142, v3121)
 	mBase = m.M
-	v3140 = m.ExcPending
-	if v3140 != 0 {
+	v3144 = m.ExcPending
+	if v3144 != 0 {
 		goto L11
 	} else {
 		goto L537
@@ -5448,11 +5452,11 @@ L397:
 	}
 L398:
 	;
-	v3104 = v49
-	v3105 = v50
-	v3106 = v51
-	v3107 = v52
-	v3117 = int32(0)
+	v3108 = v49
+	v3109 = v50
+	v3110 = v51
+	v3111 = v52
+	v3121 = int32(0)
 	goto L12
 L399:
 	;
@@ -6512,11 +6516,11 @@ L507:
 	*(*int32)(unsafe.Add(mBase, uint32(v44)+740)) = v2858
 	*(*int32)(unsafe.Add(mBase, uint32(v44)+744)) = v2859
 	*(*uint16)(unsafe.Add(mBase, uint32(v44)+750)) = uint16(v2860)
-	v3097 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[17]))
-	F_LWLockRelease(m, v3097+int32(_a_F_TablesyncWorkerMain_49))
+	v3101 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[17]))
+	F_LWLockRelease(m, v3101+int32(_a_F_TablesyncWorkerMain_49))
 	mBase = m.M
-	v3101 = m.ExcPending
-	if v3101 != 0 {
+	v3105 = m.ExcPending
+	if v3105 != 0 {
 		goto L11
 	} else {
 		goto L536
@@ -6543,11 +6547,11 @@ L510:
 	v2986 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[1]))
 	v2987 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v2986)+40)))
 	if v2987 == int32(99) {
-		v3104 = v2857
-		v3105 = v2858
-		v3106 = v2859
-		v3107 = v2860
-		v3117 = v178
+		v3108 = v2857
+		v3109 = v2858
+		v3110 = v2859
+		v3111 = v2860
+		v3121 = v178
 		goto L12
 	} else {
 		goto L512
@@ -6728,30 +6732,32 @@ L534:
 	*(*int32)(unsafe.Add(mBase, uint32(v44)+744)) = v2859
 	*(*uint16)(unsafe.Add(mBase, uint32(v44)+750)) = uint16(v2860)
 	v3089 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[20]))
-	*(*int32)(unsafe.Add(mBase, uint32(v3089))) = int32(0)
+	v3090 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v3089))) = v3090
+	v3095 = base.AtomicRmwOr32(m, v3090, int32(_a_F_TablesyncWorkerMain_50), v3090)
 	goto L535
 L535:
 	;
 	goto L506
 L536:
 	;
-	v3104 = v2857
-	v3105 = v2858
-	v3106 = v2859
-	v3107 = v2860
-	v3117 = v178
+	v3108 = v2857
+	v3109 = v2858
+	v3110 = v2859
+	v3111 = v2860
+	v3121 = v178
 	goto L12
 L537:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v32+int32(52)))) = v3139
-	*(*int32)(unsafe.Add(mBase, uint32(v44)+740)) = v3105
-	*(*int32)(unsafe.Add(mBase, uint32(v44)+736)) = v3104
-	*(*int32)(unsafe.Add(mBase, uint32(v44)+744)) = v3106
-	*(*uint16)(unsafe.Add(mBase, uint32(v44)+750)) = uint16(v3107)
-	F_pfree(m, v3117)
+	*(*int32)(unsafe.Add(mBase, uint32(v32+int32(52)))) = v3143
+	*(*int32)(unsafe.Add(mBase, uint32(v44)+740)) = v3109
+	*(*int32)(unsafe.Add(mBase, uint32(v44)+736)) = v3108
+	*(*int32)(unsafe.Add(mBase, uint32(v44)+744)) = v3110
+	*(*uint16)(unsafe.Add(mBase, uint32(v44)+750)) = uint16(v3111)
+	F_pfree(m, v3121)
 	mBase = m.M
-	v3147 = m.ExcPending
-	if v3147 != 0 {
+	v3151 = m.ExcPending
+	if v3151 != 0 {
 		goto L11
 	} else {
 		goto L538
@@ -6761,12 +6767,12 @@ L538:
 	goto L10
 L539:
 	;
-	v3180 = int32(v3176)
+	v3184 = int32(v3180)
 	m.G0 = v44
-	v3182 = *(*int32)(unsafe.Add(mBase, uint32(v3180)+4))
-	v3183 = *(*int32)(unsafe.Add(mBase, uint32(v3180)))
-	v3186 = *(*int32)(unsafe.Add(mBase, uint32(v3183)))
-	if v44+int32(348) == v3186 {
+	v3186 = *(*int32)(unsafe.Add(mBase, uint32(v3184)+4))
+	v3187 = *(*int32)(unsafe.Add(mBase, uint32(v3184)))
+	v3190 = *(*int32)(unsafe.Add(mBase, uint32(v3187)))
+	if v44+int32(348) == v3190 {
 		goto L542
 	} else {
 		goto L543
@@ -6777,35 +6783,35 @@ L540:
 	goto L1
 L541:
 	;
-	if v3190 != 0 {
+	if v3194 != 0 {
 		goto L545
 	} else {
 		goto L546
 	}
 L542:
 	;
-	v3188 = *(*int32)(unsafe.Add(mBase, uint32(v3183)+4))
-	v3190 = v3188
+	v3192 = *(*int32)(unsafe.Add(mBase, uint32(v3187)+4))
+	v3194 = v3192
 	goto L544
 L543:
 	;
-	v3190 = int32(0)
+	v3194 = int32(0)
 	goto L544
 L544:
 	;
 	goto L541
 L545:
 	;
-	v3191 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v44)+750)))
-	v3192 = *(*int32)(unsafe.Add(mBase, uint32(v44)+744))
-	v3193 = *(*int32)(unsafe.Add(mBase, uint32(v44)+740))
-	v3194 = *(*int32)(unsafe.Add(mBase, uint32(v44)+736))
-	v49 = v3194
-	v50 = v3193
-	v51 = v3192
-	v52 = v3191
-	v53 = v3182
-	v54 = v3190
+	v3195 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v44)+750)))
+	v3196 = *(*int32)(unsafe.Add(mBase, uint32(v44)+744))
+	v3197 = *(*int32)(unsafe.Add(mBase, uint32(v44)+740))
+	v3198 = *(*int32)(unsafe.Add(mBase, uint32(v44)+736))
+	v49 = v3198
+	v50 = v3197
+	v51 = v3196
+	v52 = v3195
+	v53 = v3186
+	v54 = v3194
 	v67 = v89
 	v68 = v90
 	goto L3
@@ -6814,10 +6820,10 @@ L546:
 	goto L547
 L547:
 	;
-	F___wasm_longjmp(m, v3183, v3182)
+	F___wasm_longjmp(m, v3187, v3186)
 	mBase = m.M
-	v3196 = m.ExcPending
-	if v3196 != 0 {
+	v3200 = m.ExcPending
+	if v3200 != 0 {
 		goto L1
 	} else {
 		goto L548
@@ -6829,68 +6835,68 @@ L548:
 	}
 L549:
 	;
-	F_set_apply_error_context_origin(m, v3208)
+	F_set_apply_error_context_origin(m, v3212)
 	mBase = m.M
-	v3212 = m.ExcPending
-	if v3212 != 0 {
+	v3216 = m.ExcPending
+	if v3216 != 0 {
 		goto L1
 	} else {
 		goto L550
 	}
 L550:
 	;
-	v3213 = *(*int32)(unsafe.Add(mBase, uint32(v32)+52))
-	v3214 = int32(1)
-	v3216 = v32 + int32(8)
-	*(*uint8)(unsafe.Add(mBase, uint32(v3216))) = uint8(v3214)
-	v3221 = *(*int64)(unsafe.Add(mBase, uint32(v32+int32(56))))
-	*(*int32)(unsafe.Add(mBase, uint32(v3216)+4)) = v3213
-	*(*int64)(unsafe.Add(mBase, uint32(v3216)+8)) = v3221
-	v3226 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[7]))
-	v3228 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[6]))
-	v3229 = *(*int32)(unsafe.Add(mBase, uint32(v3228)+24))
-	v3230 = m.T0[v3229].(func(*base.Module, int32) int32)(m, v3226)
+	v3217 = *(*int32)(unsafe.Add(mBase, uint32(v32)+52))
+	v3218 = int32(1)
+	v3220 = v32 + int32(8)
+	*(*uint8)(unsafe.Add(mBase, uint32(v3220))) = uint8(v3218)
+	v3225 = *(*int64)(unsafe.Add(mBase, uint32(v32+int32(56))))
+	*(*int32)(unsafe.Add(mBase, uint32(v3220)+4)) = v3217
+	*(*int64)(unsafe.Add(mBase, uint32(v3220)+8)) = v3225
+	v3230 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[7]))
+	v3232 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[6]))
+	v3233 = *(*int32)(unsafe.Add(mBase, uint32(v3232)+24))
+	v3234 = m.T0[v3233].(func(*base.Module, int32) int32)(m, v3230)
 	mBase = m.M
-	v3231 = m.ExcPending
-	if v3231 != 0 {
+	v3235 = m.ExcPending
+	if v3235 != 0 {
 		goto L1
 	} else {
 		goto L553
 	}
 L551:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v3216)+28)) = v3280
-	v3283 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[1]))
-	*(*uint8)(unsafe.Add(mBase, uint32(v3283)+68)) = uint8(v3279)
-	v3285 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v3216)+32)) = uint8(v3285)
-	v3287 = *(*int32)(unsafe.Add(mBase, uint32(v3278)+52))
-	v3288 = F_pstrdup(m, v3287)
+	*(*int32)(unsafe.Add(mBase, uint32(v3220)+28)) = v3284
+	v3287 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[1]))
+	*(*uint8)(unsafe.Add(mBase, uint32(v3287)+68)) = uint8(v3283)
+	v3289 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v3220)+32)) = uint8(v3289)
+	v3291 = *(*int32)(unsafe.Add(mBase, uint32(v3282)+52))
+	v3292 = F_pstrdup(m, v3291)
 	mBase = m.M
-	v3289 = m.ExcPending
-	if v3289 != 0 {
+	v3293 = m.ExcPending
+	if v3293 != 0 {
 		goto L1
 	} else {
 		goto L570
 	}
 L552:
 	;
-	v3269 = int32(0)
-	if v3266&int32(255) != int32(102) {
+	v3273 = int32(0)
+	if v3270&int32(255) != int32(102) {
 		goto L567
 	} else {
 		goto L568
 	}
 L553:
 	;
-	if v3230 <= int32(_a_F_TablesyncWorkerMain_50) {
+	if v3234 <= int32(_a_F_TablesyncWorkerMain_51) {
 		goto L554
 	} else {
 		goto L555
 	}
 L554:
 	;
-	if int32(_a_F_TablesyncWorkerMain_51) < v3230 {
+	if int32(_a_F_TablesyncWorkerMain_52) < v3234 {
 		goto L557
 	} else {
 		goto L558
@@ -6900,112 +6906,112 @@ L555:
 	goto L556
 L556:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v3216)+16)) = int32(4)
-	v3257 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[0]))
-	v3258 = *(*int32)(unsafe.Add(mBase, uint32(v3257)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(v3216)+20)) = v3258
-	v3260 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3257)+26)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v3216)+24)) = uint8(v3260)
-	v3263 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3257)+27)))
-	if v3263 == int32(112) {
-		v3278 = v3257
-		v3279 = v3214
-		v3280 = int32(_a_F_TablesyncWorkerMain_52)
+	*(*int32)(unsafe.Add(mBase, uint32(v3220)+16)) = int32(4)
+	v3261 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[0]))
+	v3262 = *(*int32)(unsafe.Add(mBase, uint32(v3261)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(v3220)+20)) = v3262
+	v3264 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3261)+26)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v3220)+24)) = uint8(v3264)
+	v3267 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3261)+27)))
+	if v3267 == int32(112) {
+		v3282 = v3261
+		v3283 = v3218
+		v3284 = int32(_a_F_TablesyncWorkerMain_53)
 		goto L551
 	} else {
 		goto L566
 	}
 L557:
 	;
-	v3239 = int32(2)
+	v3243 = int32(2)
 	goto L559
 L558:
 	;
-	v3239 = int32(1)
+	v3243 = int32(1)
 	goto L559
 L559:
 	;
-	if int32(_a_F_TablesyncWorkerMain_53) < v3230 {
+	if int32(_a_F_TablesyncWorkerMain_54) < v3234 {
 		goto L560
 	} else {
 		goto L561
 	}
 L560:
 	;
-	v3242 = int32(3)
+	v3246 = int32(3)
 	goto L562
 L561:
 	;
-	v3242 = v3239
+	v3246 = v3243
 	goto L562
 L562:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v3216)+16)) = v3242
-	v3245 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[0]))
-	v3246 = *(*int32)(unsafe.Add(mBase, uint32(v3245)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(v3216)+20)) = v3246
-	v3248 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3245)+26)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v3216)+24)) = uint8(v3248)
-	if v3230 < int32(_a_F_TablesyncWorkerMain_54) {
+	*(*int32)(unsafe.Add(mBase, uint32(v3220)+16)) = v3246
+	v3249 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[0]))
+	v3250 = *(*int32)(unsafe.Add(mBase, uint32(v3249)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(v3220)+20)) = v3250
+	v3252 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3249)+26)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v3220)+24)) = uint8(v3252)
+	if v3234 < int32(_a_F_TablesyncWorkerMain_55) {
 		goto L563
 	} else {
 		goto L564
 	}
 L563:
 	;
-	v3278 = v3245
-	v3279 = int32(0)
-	v3280 = int32(0)
+	v3282 = v3249
+	v3283 = int32(0)
+	v3284 = int32(0)
 	goto L551
 L564:
 	;
 	goto L565
 L565:
 	;
-	v3253 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3245)+27)))
-	v3266 = v3253
-	v3267 = v3245
+	v3257 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3249)+27)))
+	v3270 = v3257
+	v3271 = v3249
 	goto L552
 L566:
 	;
-	v3266 = v3263
-	v3267 = v3257
+	v3270 = v3267
+	v3271 = v3261
 	goto L552
 L567:
 	;
-	v3276 = int32(_a_F_TablesyncWorkerMain_55)
+	v3280 = int32(_a_F_TablesyncWorkerMain_56)
 	goto L569
 L568:
 	;
-	v3276 = v3269
+	v3280 = v3273
 	goto L569
 L569:
 	;
-	v3278 = v3267
-	v3279 = v3269
-	v3280 = v3276
+	v3282 = v3271
+	v3283 = v3273
+	v3284 = v3280
 	goto L551
 L570:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v3216)+36)) = v3288
-	v3292 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[7]))
-	v3296 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[6]))
-	v3297 = *(*int32)(unsafe.Add(mBase, uint32(v3296)+32))
-	v3298 = m.T0[v3297].(func(*base.Module, int32, int32) int32)(m, v3292, v32+int32(8))
+	*(*int32)(unsafe.Add(mBase, uint32(v3220)+36)) = v3292
+	v3296 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[7]))
+	v3300 = *(*int32)(unsafe.Add(mBase, _c_F_TablesyncWorkerMain[6]))
+	v3301 = *(*int32)(unsafe.Add(mBase, uint32(v3300)+32))
+	v3302 = m.T0[v3301].(func(*base.Module, int32, int32) int32)(m, v3296, v32+int32(8))
 	mBase = m.M
-	v3299 = m.ExcPending
-	if v3299 != 0 {
+	v3303 = m.ExcPending
+	if v3303 != 0 {
 		goto L1
 	} else {
 		goto L571
 	}
 L571:
 	;
-	v3300 = *(*int64)(unsafe.Add(mBase, uint32(v32)+56))
-	F_start_apply(m, v3300)
+	v3304 = *(*int64)(unsafe.Add(mBase, uint32(v32)+56))
+	F_start_apply(m, v3304)
 	mBase = m.M
-	v3302 = m.ExcPending
-	if v3302 != 0 {
+	v3306 = m.ExcPending
+	if v3306 != 0 {
 		goto L1
 	} else {
 		goto L572
@@ -7015,8 +7021,8 @@ L572:
 	m.G0 = v32 + int32(128)
 	F_finish_sync_worker(m)
 	mBase = m.M
-	v3307 = m.ExcPending
-	if v3307 != 0 {
+	v3311 = m.ExcPending
+	if v3311 != 0 {
 		goto L1
 	} else {
 		goto L573

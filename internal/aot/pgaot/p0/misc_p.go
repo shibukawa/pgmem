@@ -11143,242 +11143,282 @@ func F_procsignal_sigusr1_handler(m *base.Module, l0 int32) {
 	_ = v3
 	var v6 int32
 	_ = v6
+	var v7 int32
+	_ = v7
 	var v13 int32
 	_ = v13
-	var v14 int32
-	_ = v14
 	var v17 int32
 	_ = v17
-	var v20 int32
-	_ = v20
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
 	var v24 int32
 	_ = v24
-	var v26 int32
-	_ = v26
+	var v25 int32
+	_ = v25
 	var v28 int32
 	_ = v28
-	var v31 int32
-	_ = v31
+	var v32 int32
+	_ = v32
 	var v34 int32
 	_ = v34
-	var v38 int32
-	_ = v38
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
 	var v42 int32
 	_ = v42
 	var v46 int32
 	_ = v46
+	var v50 int32
+	_ = v50
 	var v54 int32
 	_ = v54
-	var v58 int32
-	_ = v58
-	var v61 int32
-	_ = v61
 	var v62 int32
 	_ = v62
+	var v66 int32
+	_ = v66
 	var v69 int32
 	_ = v69
 	var v70 int32
 	_ = v70
-	var v73 int32
-	_ = v73
-	var v76 int32
-	_ = v76
-	var v80 int32
-	_ = v80
+	var v71 int32
+	_ = v71
+	var v77 int32
+	_ = v77
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v90 int32
-	_ = v90
-	var v94 int32
-	_ = v94
+	var v85 int32
+	_ = v85
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
+	var v92 int32
+	_ = v92
+	var v96 int32
+	_ = v96
 	var v98 int32
 	_ = v98
-	var v102 int32
-	_ = v102
+	var v100 int32
+	_ = v100
+	var v103 int32
+	_ = v103
+	var v106 int32
+	_ = v106
 	var v110 int32
 	_ = v110
 	var v114 int32
 	_ = v114
-	var v117 int32
-	_ = v117
 	var v118 int32
 	_ = v118
-	var v122 int32
-	_ = v122
-	var v128 int32
-	_ = v128
-	var v129 int32
-	_ = v129
-	var v132 int32
-	_ = v132
+	var v126 int32
+	_ = v126
+	var v130 int32
+	_ = v130
+	var v133 int32
+	_ = v133
+	var v134 int32
+	_ = v134
 	var v135 int32
 	_ = v135
-	var v139 int32
-	_ = v139
-	var v141 int32
-	_ = v141
-	var v143 int32
-	_ = v143
-	var v146 int32
-	_ = v146
+	var v138 int32
+	_ = v138
+	var v144 int32
+	_ = v144
+	var v148 int32
+	_ = v148
 	var v149 int32
 	_ = v149
-	var v153 int32
-	_ = v153
-	var v157 int32
-	_ = v157
-	var v161 int32
-	_ = v161
-	var v169 int32
-	_ = v169
+	var v152 int32
+	_ = v152
+	var v155 int32
+	_ = v155
+	var v156 int32
+	_ = v156
+	var v159 int32
+	_ = v159
+	var v163 int32
+	_ = v163
+	var v165 int32
+	_ = v165
+	var v167 int32
+	_ = v167
+	var v170 int32
+	_ = v170
 	var v173 int32
 	_ = v173
-	var v176 int32
-	_ = v176
 	var v177 int32
 	_ = v177
-	var v178 int32
-	_ = v178
 	var v181 int32
 	_ = v181
 	var v185 int32
 	_ = v185
-	var v187 int32
-	_ = v187
-	var v192 int32
-	_ = v192
-	var v195 int32
-	_ = v195
-	var v196 int32
-	_ = v196
+	var v193 int32
+	_ = v193
+	var v197 int32
+	_ = v197
 	var v200 int32
 	_ = v200
+	var v201 int32
+	_ = v201
+	var v202 int32
+	_ = v202
 	var v205 int32
 	_ = v205
-	var v206 int32
-	_ = v206
 	var v209 int32
 	_ = v209
-	var v215 int32
-	_ = v215
-	var v218 int32
-	_ = v218
+	var v211 int32
+	_ = v211
+	var v216 int32
+	_ = v216
 	var v219 int32
 	_ = v219
-	var v223 int32
-	_ = v223
+	var v220 int32
+	_ = v220
+	var v224 int32
+	_ = v224
 	var v229 int32
 	_ = v229
 	var v230 int32
 	_ = v230
 	var v233 int32
 	_ = v233
-	var v236 int32
-	_ = v236
-	var v240 int32
-	_ = v240
+	var v239 int32
+	_ = v239
 	var v242 int32
 	_ = v242
+	var v243 int32
+	_ = v243
 	var v244 int32
 	_ = v244
 	var v247 int32
 	_ = v247
-	var v250 int32
-	_ = v250
-	var v254 int32
-	_ = v254
+	var v253 int32
+	_ = v253
+	var v257 int32
+	_ = v257
 	var v258 int32
 	_ = v258
-	var v262 int32
-	_ = v262
-	var v270 int32
-	_ = v270
+	var v261 int32
+	_ = v261
+	var v264 int32
+	_ = v264
+	var v265 int32
+	_ = v265
+	var v268 int32
+	_ = v268
+	var v272 int32
+	_ = v272
 	var v274 int32
 	_ = v274
-	var v277 int32
-	_ = v277
-	var v278 int32
-	_ = v278
-	var v284 int32
-	_ = v284
-	var v293 int32
-	_ = v293
-	var v296 int32
-	_ = v296
-	var v297 int32
-	_ = v297
-	var v303 int32
-	_ = v303
-	var v312 int32
-	_ = v312
-	var v315 int32
-	_ = v315
+	var v276 int32
+	_ = v276
+	var v279 int32
+	_ = v279
+	var v282 int32
+	_ = v282
+	var v286 int32
+	_ = v286
+	var v290 int32
+	_ = v290
+	var v294 int32
+	_ = v294
+	var v302 int32
+	_ = v302
+	var v306 int32
+	_ = v306
+	var v309 int32
+	_ = v309
+	var v310 int32
+	_ = v310
 	var v316 int32
 	_ = v316
-	var v322 int32
-	_ = v322
-	var v331 int32
-	_ = v331
-	var v334 int32
-	_ = v334
+	var v325 int32
+	_ = v325
+	var v328 int32
+	_ = v328
+	var v329 int32
+	_ = v329
 	var v335 int32
 	_ = v335
-	var v341 int32
-	_ = v341
-	var v350 int32
-	_ = v350
-	var v353 int32
-	_ = v353
+	var v344 int32
+	_ = v344
+	var v347 int32
+	_ = v347
+	var v348 int32
+	_ = v348
 	var v354 int32
 	_ = v354
-	var v360 int32
-	_ = v360
-	var v369 int32
-	_ = v369
-	var v372 int32
-	_ = v372
+	var v363 int32
+	_ = v363
+	var v366 int32
+	_ = v366
+	var v367 int32
+	_ = v367
 	var v373 int32
 	_ = v373
-	var v379 int32
-	_ = v379
-	var v388 int32
-	_ = v388
-	var v391 int32
-	_ = v391
+	var v382 int32
+	_ = v382
+	var v385 int32
+	_ = v385
+	var v386 int32
+	_ = v386
 	var v392 int32
 	_ = v392
-	var v400 int32
-	_ = v400
-	var v410 int32
-	_ = v410
+	var v401 int32
+	_ = v401
+	var v404 int32
+	_ = v404
+	var v405 int32
+	_ = v405
 	var v411 int32
 	_ = v411
-	var v414 int32
-	_ = v414
-	var v417 int32
-	_ = v417
-	var v421 int32
-	_ = v421
+	var v420 int32
+	_ = v420
 	var v423 int32
 	_ = v423
-	var v425 int32
-	_ = v425
-	var v428 int32
-	_ = v428
-	var v431 int32
-	_ = v431
-	var v435 int32
-	_ = v435
-	var v439 int32
-	_ = v439
+	var v424 int32
+	_ = v424
+	var v432 int32
+	_ = v432
+	var v442 int32
+	_ = v442
 	var v443 int32
 	_ = v443
-	var v451 int32
-	_ = v451
+	var v446 int32
+	_ = v446
+	var v447 int32
+	_ = v447
+	var v450 int32
+	_ = v450
+	var v453 int32
+	_ = v453
+	var v454 int32
+	_ = v454
+	var v457 int32
+	_ = v457
+	var v461 int32
+	_ = v461
+	var v463 int32
+	_ = v463
+	var v465 int32
+	_ = v465
+	var v468 int32
+	_ = v468
+	var v471 int32
+	_ = v471
+	var v475 int32
+	_ = v475
+	var v479 int32
+	_ = v479
+	var v483 int32
+	_ = v483
+	var v491 int32
+	_ = v491
 	v3 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
 	if v3 == int32(0) {
 		goto L1
@@ -11387,9 +11427,11 @@ func F_procsignal_sigusr1_handler(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v410 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[1]))
-	v411 = *(*int32)(unsafe.Add(mBase, uint32(v410)))
-	if v411 != 0 {
+	v442 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[1]))
+	v443 = int32(0)
+	v446 = base.AtomicRmwOr32(m, v443, int32(_a_F_procsignal_sigusr1_handler_0), v443)
+	v447 = *(*int32)(unsafe.Add(mBase, uint32(v442)))
+	if v447 != 0 {
 		goto L123
 	} else {
 		goto L124
@@ -11404,31 +11446,33 @@ L2:
 	}
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v3)+40)) = int32(0)
+	v7 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v3)+40)) = v7
 	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[2])) = int32(1)
 	v13 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[1]))
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-	if v14 != 0 {
+	v17 = base.AtomicRmwOr32(m, v7, int32(_a_F_procsignal_sigusr1_handler_0), v7)
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+	if v18 != 0 {
 		goto L7
 	} else {
 		goto L8
 	}
 L4:
 	;
-	v61 = v3
+	v69 = v3
 	goto L5
 L5:
 	;
-	v62 = *(*int32)(unsafe.Add(mBase, uint32(v61)+44))
-	if v62 != 0 {
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+44))
+	if v70 != 0 {
 		goto L21
 	} else {
 		goto L22
 	}
 L6:
 	;
-	v58 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v58 == int32(0) {
+	v66 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v66 == int32(0) {
 		goto L1
 	} else {
 		goto L20
@@ -11439,35 +11483,37 @@ L7:
 L8:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = int32(1)
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
-	if v17 == int32(0) {
+	v21 = int32(0)
+	v24 = base.AtomicRmwOr32(m, v21, int32(_a_F_procsignal_sigusr1_handler_0), v21)
+	v25 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+	if v25 == v21 {
 		goto L7
 	} else {
 		goto L9
 	}
 L9:
 	;
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
-	if v20 == int32(0) {
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+	if v28 == int32(0) {
 		goto L7
 	} else {
 		goto L10
 	}
 L10:
 	;
-	v24 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
-	if v24 == v20 {
+	v32 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
+	if v32 == v28 {
 		goto L11
 	} else {
 		goto L12
 	}
 L11:
 	;
-	v26 = m.G0
-	v28 = v26 - int32(16)
-	m.G0 = v28
-	v31 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
-	if v31 == int32(0) {
+	v34 = m.G0
+	v36 = v34 - int32(16)
+	m.G0 = v36
+	v39 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
+	if v39 == int32(0) {
 		goto L14
 	} else {
 		goto L15
@@ -11477,24 +11523,24 @@ L12:
 	goto L13
 L13:
 	;
-	v54 = F_pgmem_kill(m, v20, int32(23))
+	v62 = F_pgmem_kill(m, v28, int32(23))
 	mBase = m.M
 	goto L7
 L14:
 	;
-	m.G0 = v28 + int32(16)
+	m.G0 = v36 + int32(16)
 	goto L6
 L15:
 	;
-	v34 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v28)+15)) = uint8(v34)
+	v42 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v36)+15)) = uint8(v42)
 	goto L16
 L16:
 	;
-	v38 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
-	v42 = F_write(m, v38, v28+int32(15), int32(1))
+	v46 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
+	v50 = F_write(m, v46, v36+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v42 {
+	if int32(0) <= v50 {
 		goto L14
 	} else {
 		goto L18
@@ -11504,8 +11550,8 @@ L17:
 	goto L14
 L18:
 	;
-	v46 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
-	if v46 == int32(27) {
+	v54 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
+	if v54 == int32(27) {
 		goto L16
 	} else {
 		goto L19
@@ -11515,35 +11561,37 @@ L19:
 	goto L17
 L20:
 	;
-	v61 = v58
+	v69 = v66
 	goto L5
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v61)+44)) = int32(0)
+	v71 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v69)+44)) = v71
 	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[7])) = int32(1)
-	v69 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[1]))
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-	if v70 != 0 {
+	v77 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[1]))
+	v81 = base.AtomicRmwOr32(m, v71, int32(_a_F_procsignal_sigusr1_handler_0), v71)
+	v82 = *(*int32)(unsafe.Add(mBase, uint32(v77)))
+	if v82 != 0 {
 		goto L25
 	} else {
 		goto L26
 	}
 L22:
 	;
-	v117 = v61
+	v133 = v69
 	goto L23
 L23:
 	;
-	v118 = *(*int32)(unsafe.Add(mBase, uint32(v117)+48))
-	if v118 != 0 {
+	v134 = *(*int32)(unsafe.Add(mBase, uint32(v133)+48))
+	if v134 != 0 {
 		goto L39
 	} else {
 		goto L40
 	}
 L24:
 	;
-	v114 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v114 == int32(0) {
+	v130 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v130 == int32(0) {
 		goto L1
 	} else {
 		goto L38
@@ -11553,36 +11601,38 @@ L25:
 	goto L24
 L26:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v69))) = int32(1)
-	v73 = *(*int32)(unsafe.Add(mBase, uint32(v69)+4))
-	if v73 == int32(0) {
+	*(*int32)(unsafe.Add(mBase, uint32(v77))) = int32(1)
+	v85 = int32(0)
+	v88 = base.AtomicRmwOr32(m, v85, int32(_a_F_procsignal_sigusr1_handler_0), v85)
+	v89 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
+	if v89 == v85 {
 		goto L25
 	} else {
 		goto L27
 	}
 L27:
 	;
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(v69)+12))
-	if v76 == int32(0) {
+	v92 = *(*int32)(unsafe.Add(mBase, uint32(v77)+12))
+	if v92 == int32(0) {
 		goto L25
 	} else {
 		goto L28
 	}
 L28:
 	;
-	v80 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
-	if v80 == v76 {
+	v96 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
+	if v96 == v92 {
 		goto L29
 	} else {
 		goto L30
 	}
 L29:
 	;
-	v82 = m.G0
-	v84 = v82 - int32(16)
-	m.G0 = v84
-	v87 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
-	if v87 == int32(0) {
+	v98 = m.G0
+	v100 = v98 - int32(16)
+	m.G0 = v100
+	v103 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
+	if v103 == int32(0) {
 		goto L32
 	} else {
 		goto L33
@@ -11592,24 +11642,24 @@ L30:
 	goto L31
 L31:
 	;
-	v110 = F_pgmem_kill(m, v76, int32(23))
+	v126 = F_pgmem_kill(m, v92, int32(23))
 	mBase = m.M
 	goto L25
 L32:
 	;
-	m.G0 = v84 + int32(16)
+	m.G0 = v100 + int32(16)
 	goto L24
 L33:
 	;
-	v90 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v84)+15)) = uint8(v90)
+	v106 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v100)+15)) = uint8(v106)
 	goto L34
 L34:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
-	v98 = F_write(m, v94, v84+int32(15), int32(1))
+	v110 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
+	v114 = F_write(m, v110, v100+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v98 {
+	if int32(0) <= v114 {
 		goto L32
 	} else {
 		goto L36
@@ -11619,8 +11669,8 @@ L35:
 	goto L32
 L36:
 	;
-	v102 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
-	if v102 == int32(27) {
+	v118 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
+	if v118 == int32(27) {
 		goto L34
 	} else {
 		goto L37
@@ -11630,37 +11680,39 @@ L37:
 	goto L35
 L38:
 	;
-	v117 = v114
+	v133 = v130
 	goto L23
 L39:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v117)+48)) = int32(0)
-	v122 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v122
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[9])) = v122
-	v128 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[1]))
-	v129 = *(*int32)(unsafe.Add(mBase, uint32(v128)))
-	if v129 != 0 {
+	v135 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v133)+48)) = v135
+	v138 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v138
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[9])) = v138
+	v144 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[1]))
+	v148 = base.AtomicRmwOr32(m, v135, int32(_a_F_procsignal_sigusr1_handler_0), v135)
+	v149 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
+	if v149 != 0 {
 		goto L43
 	} else {
 		goto L44
 	}
 L40:
 	;
-	v176 = v117
+	v200 = v133
 	goto L41
 L41:
 	;
-	v177 = *(*int32)(unsafe.Add(mBase, uint32(v176)+52))
-	if v177 != 0 {
+	v201 = *(*int32)(unsafe.Add(mBase, uint32(v200)+52))
+	if v201 != 0 {
 		goto L57
 	} else {
 		goto L58
 	}
 L42:
 	;
-	v173 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v173 == int32(0) {
+	v197 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v197 == int32(0) {
 		goto L1
 	} else {
 		goto L56
@@ -11670,36 +11722,38 @@ L43:
 	goto L42
 L44:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v128))) = int32(1)
-	v132 = *(*int32)(unsafe.Add(mBase, uint32(v128)+4))
-	if v132 == int32(0) {
+	*(*int32)(unsafe.Add(mBase, uint32(v144))) = int32(1)
+	v152 = int32(0)
+	v155 = base.AtomicRmwOr32(m, v152, int32(_a_F_procsignal_sigusr1_handler_0), v152)
+	v156 = *(*int32)(unsafe.Add(mBase, uint32(v144)+4))
+	if v156 == v152 {
 		goto L43
 	} else {
 		goto L45
 	}
 L45:
 	;
-	v135 = *(*int32)(unsafe.Add(mBase, uint32(v128)+12))
-	if v135 == int32(0) {
+	v159 = *(*int32)(unsafe.Add(mBase, uint32(v144)+12))
+	if v159 == int32(0) {
 		goto L43
 	} else {
 		goto L46
 	}
 L46:
 	;
-	v139 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
-	if v139 == v135 {
+	v163 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
+	if v163 == v159 {
 		goto L47
 	} else {
 		goto L48
 	}
 L47:
 	;
-	v141 = m.G0
-	v143 = v141 - int32(16)
-	m.G0 = v143
-	v146 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
-	if v146 == int32(0) {
+	v165 = m.G0
+	v167 = v165 - int32(16)
+	m.G0 = v167
+	v170 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
+	if v170 == int32(0) {
 		goto L50
 	} else {
 		goto L51
@@ -11709,24 +11763,24 @@ L48:
 	goto L49
 L49:
 	;
-	v169 = F_pgmem_kill(m, v135, int32(23))
+	v193 = F_pgmem_kill(m, v159, int32(23))
 	mBase = m.M
 	goto L43
 L50:
 	;
-	m.G0 = v143 + int32(16)
+	m.G0 = v167 + int32(16)
 	goto L42
 L51:
 	;
-	v149 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v143)+15)) = uint8(v149)
+	v173 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v167)+15)) = uint8(v173)
 	goto L52
 L52:
 	;
-	v153 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
-	v157 = F_write(m, v153, v143+int32(15), int32(1))
+	v177 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
+	v181 = F_write(m, v177, v167+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v157 {
+	if int32(0) <= v181 {
 		goto L50
 	} else {
 		goto L54
@@ -11736,8 +11790,8 @@ L53:
 	goto L50
 L54:
 	;
-	v161 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
-	if v161 == int32(27) {
+	v185 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
+	if v185 == int32(27) {
 		goto L52
 	} else {
 		goto L55
@@ -11747,42 +11801,42 @@ L55:
 	goto L53
 L56:
 	;
-	v176 = v173
+	v200 = v197
 	goto L41
 L57:
 	;
-	v178 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v176)+52)) = v178
-	v181 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[10]))
-	if v181 == v178 {
+	v202 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v200)+52)) = v202
+	v205 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[10]))
+	if v205 == v202 {
 		goto L61
 	} else {
 		goto L62
 	}
 L58:
 	;
-	v195 = v176
+	v219 = v200
 	goto L59
 L59:
 	;
-	v196 = *(*int32)(unsafe.Add(mBase, uint32(v195)+56))
-	if v196 != 0 {
+	v220 = *(*int32)(unsafe.Add(mBase, uint32(v219)+56))
+	if v220 != 0 {
 		goto L65
 	} else {
 		goto L66
 	}
 L60:
 	;
-	v192 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v192 == int32(0) {
+	v216 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v216 == int32(0) {
 		goto L1
 	} else {
 		goto L64
 	}
 L61:
 	;
-	v185 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
-	v187 = F_pgmem_kill(m, v185, int32(15))
+	v209 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
+	v211 = F_pgmem_kill(m, v209, int32(15))
 	mBase = m.M
 	goto L60
 L62:
@@ -11794,84 +11848,86 @@ L63:
 	goto L60
 L64:
 	;
-	v195 = v192
+	v219 = v216
 	goto L59
 L65:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v195)+56)) = int32(0)
-	v200 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v200
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[12])) = v200
+	*(*int32)(unsafe.Add(mBase, uint32(v219)+56)) = int32(0)
+	v224 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v224
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[12])) = v224
 	goto L67
 L66:
 	;
 	goto L67
 L67:
 	;
-	v205 = *(*int32)(unsafe.Add(mBase, uint32(v195)+60))
-	if v205 != 0 {
+	v229 = *(*int32)(unsafe.Add(mBase, uint32(v219)+60))
+	if v229 != 0 {
 		goto L68
 	} else {
 		goto L69
 	}
 L68:
 	;
-	v206 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v195)+60)) = v206
-	v209 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v209
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[13])) = v209
-	v215 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v215 == v206 {
+	v230 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v219)+60)) = v230
+	v233 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v233
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[13])) = v233
+	v239 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v239 == v230 {
 		goto L1
 	} else {
 		goto L71
 	}
 L69:
 	;
-	v218 = v195
+	v242 = v219
 	goto L70
 L70:
 	;
-	v219 = *(*int32)(unsafe.Add(mBase, uint32(v218)+64))
-	if v219 != 0 {
+	v243 = *(*int32)(unsafe.Add(mBase, uint32(v242)+64))
+	if v243 != 0 {
 		goto L72
 	} else {
 		goto L73
 	}
 L71:
 	;
-	v218 = v215
+	v242 = v239
 	goto L70
 L72:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v218)+64)) = int32(0)
-	v223 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v223
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[14])) = v223
-	v229 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[1]))
-	v230 = *(*int32)(unsafe.Add(mBase, uint32(v229)))
-	if v230 != 0 {
+	v244 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v242)+64)) = v244
+	v247 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v247
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[14])) = v247
+	v253 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[1]))
+	v257 = base.AtomicRmwOr32(m, v244, int32(_a_F_procsignal_sigusr1_handler_0), v244)
+	v258 = *(*int32)(unsafe.Add(mBase, uint32(v253)))
+	if v258 != 0 {
 		goto L76
 	} else {
 		goto L77
 	}
 L73:
 	;
-	v277 = v218
+	v309 = v242
 	goto L74
 L74:
 	;
-	v278 = *(*int32)(unsafe.Add(mBase, uint32(v277)+68))
-	if v278 != 0 {
+	v310 = *(*int32)(unsafe.Add(mBase, uint32(v309)+68))
+	if v310 != 0 {
 		goto L90
 	} else {
 		goto L91
 	}
 L75:
 	;
-	v274 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v274 == int32(0) {
+	v306 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v306 == int32(0) {
 		goto L1
 	} else {
 		goto L89
@@ -11881,36 +11937,38 @@ L76:
 	goto L75
 L77:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v229))) = int32(1)
-	v233 = *(*int32)(unsafe.Add(mBase, uint32(v229)+4))
-	if v233 == int32(0) {
+	*(*int32)(unsafe.Add(mBase, uint32(v253))) = int32(1)
+	v261 = int32(0)
+	v264 = base.AtomicRmwOr32(m, v261, int32(_a_F_procsignal_sigusr1_handler_0), v261)
+	v265 = *(*int32)(unsafe.Add(mBase, uint32(v253)+4))
+	if v265 == v261 {
 		goto L76
 	} else {
 		goto L78
 	}
 L78:
 	;
-	v236 = *(*int32)(unsafe.Add(mBase, uint32(v229)+12))
-	if v236 == int32(0) {
+	v268 = *(*int32)(unsafe.Add(mBase, uint32(v253)+12))
+	if v268 == int32(0) {
 		goto L76
 	} else {
 		goto L79
 	}
 L79:
 	;
-	v240 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
-	if v240 == v236 {
+	v272 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
+	if v272 == v268 {
 		goto L80
 	} else {
 		goto L81
 	}
 L80:
 	;
-	v242 = m.G0
-	v244 = v242 - int32(16)
-	m.G0 = v244
-	v247 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
-	if v247 == int32(0) {
+	v274 = m.G0
+	v276 = v274 - int32(16)
+	m.G0 = v276
+	v279 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
+	if v279 == int32(0) {
 		goto L83
 	} else {
 		goto L84
@@ -11920,24 +11978,24 @@ L81:
 	goto L82
 L82:
 	;
-	v270 = F_pgmem_kill(m, v236, int32(23))
+	v302 = F_pgmem_kill(m, v268, int32(23))
 	mBase = m.M
 	goto L76
 L83:
 	;
-	m.G0 = v244 + int32(16)
+	m.G0 = v276 + int32(16)
 	goto L75
 L84:
 	;
-	v250 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v244)+15)) = uint8(v250)
+	v282 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v276)+15)) = uint8(v282)
 	goto L85
 L85:
 	;
-	v254 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
-	v258 = F_write(m, v254, v244+int32(15), int32(1))
+	v286 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
+	v290 = F_write(m, v286, v276+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v258 {
+	if int32(0) <= v290 {
 		goto L83
 	} else {
 		goto L87
@@ -11947,8 +12005,8 @@ L86:
 	goto L83
 L87:
 	;
-	v262 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
-	if v262 == int32(27) {
+	v294 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
+	if v294 == int32(27) {
 		goto L85
 	} else {
 		goto L88
@@ -11958,207 +12016,207 @@ L88:
 	goto L86
 L89:
 	;
-	v277 = v274
+	v309 = v306
 	goto L74
 L90:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v277)+68)) = int32(0)
-	v284 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[15])) = v284
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v284
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v284
+	*(*int32)(unsafe.Add(mBase, uint32(v309)+68)) = int32(0)
+	v316 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[15])) = v316
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v316
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v316
 	goto L93
 L91:
 	;
-	v296 = v277
+	v328 = v309
 	goto L92
 L92:
 	;
-	v297 = *(*int32)(unsafe.Add(mBase, uint32(v296)+72))
-	if v297 != 0 {
+	v329 = *(*int32)(unsafe.Add(mBase, uint32(v328)+72))
+	if v329 != 0 {
 		goto L95
 	} else {
 		goto L96
 	}
 L93:
 	;
-	v293 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v293 == int32(0) {
+	v325 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v325 == int32(0) {
 		goto L1
 	} else {
 		goto L94
 	}
 L94:
 	;
-	v296 = v293
+	v328 = v325
 	goto L92
 L95:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v296)+72)) = int32(0)
-	v303 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[17])) = v303
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v303
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v303
+	*(*int32)(unsafe.Add(mBase, uint32(v328)+72)) = int32(0)
+	v335 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[17])) = v335
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v335
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v335
 	goto L98
 L96:
 	;
-	v315 = v296
+	v347 = v328
 	goto L97
 L97:
 	;
-	v316 = *(*int32)(unsafe.Add(mBase, uint32(v315)+76))
-	if v316 != 0 {
+	v348 = *(*int32)(unsafe.Add(mBase, uint32(v347)+76))
+	if v348 != 0 {
 		goto L100
 	} else {
 		goto L101
 	}
 L98:
 	;
-	v312 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v312 == int32(0) {
+	v344 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v344 == int32(0) {
 		goto L1
 	} else {
 		goto L99
 	}
 L99:
 	;
-	v315 = v312
+	v347 = v344
 	goto L97
 L100:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v315)+76)) = int32(0)
-	v322 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[18])) = v322
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v322
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v322
+	*(*int32)(unsafe.Add(mBase, uint32(v347)+76)) = int32(0)
+	v354 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[18])) = v354
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v354
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v354
 	goto L103
 L101:
 	;
-	v334 = v315
+	v366 = v347
 	goto L102
 L102:
 	;
-	v335 = *(*int32)(unsafe.Add(mBase, uint32(v334)+80))
-	if v335 != 0 {
+	v367 = *(*int32)(unsafe.Add(mBase, uint32(v366)+80))
+	if v367 != 0 {
 		goto L105
 	} else {
 		goto L106
 	}
 L103:
 	;
-	v331 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v331 == int32(0) {
+	v363 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v363 == int32(0) {
 		goto L1
 	} else {
 		goto L104
 	}
 L104:
 	;
-	v334 = v331
+	v366 = v363
 	goto L102
 L105:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v334)+80)) = int32(0)
-	v341 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[19])) = v341
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v341
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v341
+	*(*int32)(unsafe.Add(mBase, uint32(v366)+80)) = int32(0)
+	v373 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[19])) = v373
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v373
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v373
 	goto L108
 L106:
 	;
-	v353 = v334
+	v385 = v366
 	goto L107
 L107:
 	;
-	v354 = *(*int32)(unsafe.Add(mBase, uint32(v353)+84))
-	if v354 != 0 {
+	v386 = *(*int32)(unsafe.Add(mBase, uint32(v385)+84))
+	if v386 != 0 {
 		goto L110
 	} else {
 		goto L111
 	}
 L108:
 	;
-	v350 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v350 == int32(0) {
+	v382 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v382 == int32(0) {
 		goto L1
 	} else {
 		goto L109
 	}
 L109:
 	;
-	v353 = v350
+	v385 = v382
 	goto L107
 L110:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v353)+84)) = int32(0)
-	v360 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[20])) = v360
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v360
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v360
+	*(*int32)(unsafe.Add(mBase, uint32(v385)+84)) = int32(0)
+	v392 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[20])) = v392
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v392
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v392
 	goto L113
 L111:
 	;
-	v372 = v353
+	v404 = v385
 	goto L112
 L112:
 	;
-	v373 = *(*int32)(unsafe.Add(mBase, uint32(v372)+92))
-	if v373 != 0 {
+	v405 = *(*int32)(unsafe.Add(mBase, uint32(v404)+92))
+	if v405 != 0 {
 		goto L115
 	} else {
 		goto L116
 	}
 L113:
 	;
-	v369 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v369 == int32(0) {
+	v401 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v401 == int32(0) {
 		goto L1
 	} else {
 		goto L114
 	}
 L114:
 	;
-	v372 = v369
+	v404 = v401
 	goto L112
 L115:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v372)+92)) = int32(0)
-	v379 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[21])) = v379
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v379
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v379
+	*(*int32)(unsafe.Add(mBase, uint32(v404)+92)) = int32(0)
+	v411 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[21])) = v411
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v411
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v411
 	goto L118
 L116:
 	;
-	v391 = v372
+	v423 = v404
 	goto L117
 L117:
 	;
-	v392 = *(*int32)(unsafe.Add(mBase, uint32(v391)+88))
-	if v392 == int32(0) {
+	v424 = *(*int32)(unsafe.Add(mBase, uint32(v423)+88))
+	if v424 == int32(0) {
 		goto L1
 	} else {
 		goto L120
 	}
 L118:
 	;
-	v388 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
-	if v388 == int32(0) {
+	v420 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[0]))
+	if v420 == int32(0) {
 		goto L1
 	} else {
 		goto L119
 	}
 L119:
 	;
-	v391 = v388
+	v423 = v420
 	goto L117
 L120:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v391)+88)) = int32(0)
-	v400 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[22])) = v400
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v400
-	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v400
+	*(*int32)(unsafe.Add(mBase, uint32(v423)+88)) = int32(0)
+	v432 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[22])) = v432
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[16])) = v432
+	*(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[8])) = v432
 	goto L121
 L121:
 	;
@@ -12171,36 +12229,38 @@ L123:
 	goto L122
 L124:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v410))) = int32(1)
-	v414 = *(*int32)(unsafe.Add(mBase, uint32(v410)+4))
-	if v414 == int32(0) {
+	*(*int32)(unsafe.Add(mBase, uint32(v442))) = int32(1)
+	v450 = int32(0)
+	v453 = base.AtomicRmwOr32(m, v450, int32(_a_F_procsignal_sigusr1_handler_0), v450)
+	v454 = *(*int32)(unsafe.Add(mBase, uint32(v442)+4))
+	if v454 == v450 {
 		goto L123
 	} else {
 		goto L125
 	}
 L125:
 	;
-	v417 = *(*int32)(unsafe.Add(mBase, uint32(v410)+12))
-	if v417 == int32(0) {
+	v457 = *(*int32)(unsafe.Add(mBase, uint32(v442)+12))
+	if v457 == int32(0) {
 		goto L123
 	} else {
 		goto L126
 	}
 L126:
 	;
-	v421 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
-	if v421 == v417 {
+	v461 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[3]))
+	if v461 == v457 {
 		goto L127
 	} else {
 		goto L128
 	}
 L127:
 	;
-	v423 = m.G0
-	v425 = v423 - int32(16)
-	m.G0 = v425
-	v428 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
-	if v428 == int32(0) {
+	v463 = m.G0
+	v465 = v463 - int32(16)
+	m.G0 = v465
+	v468 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[4]))
+	if v468 == int32(0) {
 		goto L130
 	} else {
 		goto L131
@@ -12210,24 +12270,24 @@ L128:
 	goto L129
 L129:
 	;
-	v451 = F_pgmem_kill(m, v417, int32(23))
+	v491 = F_pgmem_kill(m, v457, int32(23))
 	mBase = m.M
 	goto L123
 L130:
 	;
-	m.G0 = v425 + int32(16)
+	m.G0 = v465 + int32(16)
 	goto L122
 L131:
 	;
-	v431 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v425)+15)) = uint8(v431)
+	v471 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v465)+15)) = uint8(v471)
 	goto L132
 L132:
 	;
-	v435 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
-	v439 = F_write(m, v435, v425+int32(15), int32(1))
+	v475 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[5]))
+	v479 = F_write(m, v475, v465+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v439 {
+	if int32(0) <= v479 {
 		goto L130
 	} else {
 		goto L134
@@ -12237,8 +12297,8 @@ L133:
 	goto L130
 L134:
 	;
-	v443 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
-	if v443 == int32(27) {
+	v483 = *(*int32)(unsafe.Add(mBase, _c_F_procsignal_sigusr1_handler[6]))
+	if v483 == int32(27) {
 		goto L132
 	} else {
 		goto L135

@@ -56,10 +56,18 @@ func F_InvalidateVictimBuffer(m *base.Module, l0 int32) int32 {
 	_ = v90
 	var v93 int32
 	_ = v93
-	var v108 int32
-	_ = v108
-	var v110 int32
-	_ = v110
+	var v96 int32
+	_ = v96
+	var v99 int32
+	_ = v99
+	var v109 int32
+	_ = v109
+	var v112 int32
+	_ = v112
+	var v116 int32
+	_ = v116
+	var v118 int32
+	_ = v118
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
@@ -209,14 +217,16 @@ L22:
 	;
 	F_LWLockRelease(m, v29)
 	mBase = m.M
-	v110 = m.ExcPending
-	if v110 != 0 {
+	v118 = m.ExcPending
+	if v118 != 0 {
 		goto L1
 	} else {
 		goto L27
 	}
 L23:
 	;
+	v96 = int32(0)
+	v99 = base.AtomicRmwOr32(m, v96, int32(_a_F_InvalidateVictimBuffer_7), v96)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v65 & int32(-4194305)
 	goto L22
 L24:
@@ -227,11 +237,13 @@ L25:
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(-1)
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = int64(-4294967296)
 	*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(0)
+	v109 = int32(0)
+	v112 = base.AtomicRmwOr32(m, v109, int32(_a_F_InvalidateVictimBuffer_7), v109)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = int32(1)
 	F_BufTableDelete(m, v9, v17)
 	mBase = m.M
-	v108 = m.ExcPending
-	if v108 != 0 {
+	v116 = m.ExcPending
+	if v116 != 0 {
 		goto L1
 	} else {
 		goto L26

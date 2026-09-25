@@ -50,18 +50,22 @@ func F_WaitIO(m *base.Module, l0 int32) {
 	_ = v82
 	var v84 int32
 	_ = v84
-	var v92 int32
-	_ = v92
-	var v93 int32
-	_ = v93
+	var v86 int32
+	_ = v86
+	var v89 int32
+	_ = v89
+	var v96 int32
+	_ = v96
 	var v97 int32
 	_ = v97
-	var v99 int32
-	_ = v99
-	var v102 int32
-	_ = v102
-	var v104 int32
-	_ = v104
+	var v101 int32
+	_ = v101
+	var v103 int32
+	_ = v103
+	var v106 int32
+	_ = v106
+	var v108 int32
+	_ = v108
 	v6 = m.G0
 	v8 = v6 - int32(48)
 	m.G0 = v8
@@ -101,8 +105,8 @@ L4:
 	;
 	F_ConditionVariableCancelSleep(m)
 	mBase = m.M
-	v104 = m.ExcPending
-	if v104 != 0 {
+	v108 = m.ExcPending
+	if v108 != 0 {
 		goto L1
 	} else {
 		goto L33
@@ -156,6 +160,8 @@ L12:
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = v82
 	v84 = *(*int32)(unsafe.Add(mBase, uint32(v19)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v84
+	v86 = int32(0)
+	v89 = base.AtomicRmwOr32(m, v86, int32(_a_F_WaitIO_5), v86)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v56 & int32(-4194305)
 	if v56&int32(67108864) != 0 {
 		goto L23
@@ -212,8 +218,8 @@ L22:
 	goto L14
 L23:
 	;
-	v92 = v8 + int32(8)
-	v93 = *(*int32)(unsafe.Add(mBase, uint32(v92)))
+	v96 = v8 + int32(8)
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
 	goto L26
 L24:
 	;
@@ -223,17 +229,17 @@ L25:
 	goto L4
 L26:
 	;
-	if v93 != int32(-1) {
+	if v97 != int32(-1) {
 		goto L27
 	} else {
 		goto L28
 	}
 L27:
 	;
-	F_pgaio_wref_wait(m, v92)
+	F_pgaio_wref_wait(m, v96)
 	mBase = m.M
-	v97 = m.ExcPending
-	if v97 != 0 {
+	v101 = m.ExcPending
+	if v101 != 0 {
 		goto L1
 	} else {
 		goto L30
@@ -245,8 +251,8 @@ L29:
 	;
 	F_ConditionVariableSleep(m, v15, int32(134217736))
 	mBase = m.M
-	v102 = m.ExcPending
-	if v102 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L1
 	} else {
 		goto L32
@@ -255,8 +261,8 @@ L30:
 	;
 	F_ConditionVariablePrepareToSleep(m, v15)
 	mBase = m.M
-	v99 = m.ExcPending
-	if v99 != 0 {
+	v103 = m.ExcPending
+	if v103 != 0 {
 		goto L1
 	} else {
 		goto L31

@@ -517,16 +517,24 @@ func F_BuildCallback_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 	_ = v635
 	var v638 int32
 	_ = v638
-	var v646 int32
-	_ = v646
-	var v652 int32
-	_ = v652
-	var v656 int32
-	_ = v656
-	var v685 int32
-	_ = v685
-	var v687 int32
-	_ = v687
+	var v642 int32
+	_ = v642
+	var v644 int32
+	_ = v644
+	var v645 int32
+	_ = v645
+	var v653 int32
+	_ = v653
+	var v654 int32
+	_ = v654
+	var v660 int32
+	_ = v660
+	var v664 int32
+	_ = v664
+	var v693 int32
+	_ = v693
+	var v695 int32
+	_ = v695
 	v25 = m.G0
 	v27 = v25 - int32(16)
 	m.G0 = v27
@@ -564,11 +572,11 @@ L3:
 L4:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_BuildCallback_1[0])) = v34
-	v685 = *(*int32)(unsafe.Add(mBase, uint32(l5)+184))
-	F_MemoryContextReset(m, v685)
+	v693 = *(*int32)(unsafe.Add(mBase, uint32(l5)+184))
+	F_MemoryContextReset(m, v693)
 	mBase = m.M
-	v687 = m.ExcPending
-	if v687 != 0 {
+	v695 = m.ExcPending
+	if v695 != 0 {
 		goto L5
 	} else {
 		goto L169
@@ -1703,8 +1711,8 @@ L164:
 	goto L163
 L165:
 	;
-	v656 = int32(0)
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v32))), uint32(v656))
+	v664 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v32))), uint32(v664))
 	goto L4
 L166:
 	;
@@ -1725,11 +1733,15 @@ L168:
 	*(*int32)(unsafe.Add(mBase, _c_F_BuildCallback_1[4])) = v634 + v635
 	v638 = *(*int32)(unsafe.Add(mBase, uint32(v623)))
 	*(*int32)(unsafe.Add(mBase, uint32(v623))) = v638 + v635
+	v642 = int32(0)
+	v644 = int32(_a_F_BuildCallback_1_10)
+	v645 = base.AtomicRmwOr32(m, v642, v644, v642)
 	*(*int64)(unsafe.Add(mBase, uint32(v623+int32(96))+232)) = base.I64_trunc_sat_f64_s(v617)
-	v646 = *(*int32)(unsafe.Add(mBase, uint32(v623)))
-	*(*int32)(unsafe.Add(mBase, uint32(v623))) = v646 + v635
-	v652 = *(*int32)(unsafe.Add(mBase, _c_F_BuildCallback_1[4]))
-	*(*int32)(unsafe.Add(mBase, _c_F_BuildCallback_1[4])) = v652 - v635
+	v653 = base.AtomicRmwOr32(m, v642, v644, v642)
+	v654 = *(*int32)(unsafe.Add(mBase, uint32(v623)))
+	*(*int32)(unsafe.Add(mBase, uint32(v623))) = v654 + v635
+	v660 = *(*int32)(unsafe.Add(mBase, _c_F_BuildCallback_1[4]))
+	*(*int32)(unsafe.Add(mBase, _c_F_BuildCallback_1[4])) = v660 - v635
 	goto L166
 L169:
 	;

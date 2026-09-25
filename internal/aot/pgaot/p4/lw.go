@@ -770,16 +770,20 @@ func F_LWLockReleaseInternal(m *base.Module, l0 int32, l1 int32) {
 	_ = v350
 	var v357 int32
 	_ = v357
-	var v359 int32
-	_ = v359
-	var v361 int32
-	_ = v361
-	var v364 int32
-	_ = v364
-	var v366 int32
-	_ = v366
+	var v360 int32
+	_ = v360
+	var v363 int32
+	_ = v363
+	var v365 int32
+	_ = v365
 	var v368 int32
 	_ = v368
+	var v371 int32
+	_ = v371
+	var v374 int32
+	_ = v374
+	var v376 int32
+	_ = v376
 	v14 = m.G0
 	v16 = v14 - int32(32)
 	m.G0 = v16
@@ -1244,13 +1248,14 @@ L75:
 L76:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v337)+76)) = int64(0)
-	v364 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v337)+74)) = uint8(v364)
-	v366 = *(*int32)(unsafe.Add(mBase, uint32(v337)+12))
-	F_PGSemaphoreUnlock(m, v366)
+	v368 = int32(0)
+	v371 = base.AtomicRmwOr32(m, v368, int32(_a_F_LWLockReleaseInternal_4), v368)
+	*(*uint8)(unsafe.Add(mBase, uint32(v337)+74)) = uint8(v368)
+	v374 = *(*int32)(unsafe.Add(mBase, uint32(v337)+12))
+	F_PGSemaphoreUnlock(m, v374)
 	mBase = m.M
-	v368 = m.ExcPending
-	if v368 != 0 {
+	v376 = m.ExcPending
+	if v376 != 0 {
 		goto L19
 	} else {
 		goto L84
@@ -1276,12 +1281,13 @@ L80:
 	*(*int32)(unsafe.Add(mBase, uint32(v350+v338*int32(640))+80)) = v339
 	*(*int64)(unsafe.Add(mBase, uint32(v337)+76)) = int64(0)
 	v357 = int32(0)
+	v360 = base.AtomicRmwOr32(m, v357, int32(_a_F_LWLockReleaseInternal_4), v357)
 	*(*uint8)(unsafe.Add(mBase, uint32(v337)+74)) = uint8(v357)
-	v359 = *(*int32)(unsafe.Add(mBase, uint32(v337)+12))
-	F_PGSemaphoreUnlock(m, v359)
+	v363 = *(*int32)(unsafe.Add(mBase, uint32(v337)+12))
+	F_PGSemaphoreUnlock(m, v363)
 	mBase = m.M
-	v361 = m.ExcPending
-	if v361 != 0 {
+	v365 = m.ExcPending
+	if v365 != 0 {
 		goto L19
 	} else {
 		goto L83

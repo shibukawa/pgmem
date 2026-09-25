@@ -52,42 +52,50 @@ func F_pgstat_bgwriter_snapshot_cb(m *base.Module) {
 	_ = v19
 	var v21 int32
 	_ = v21
-	var v23 int64
-	_ = v23
-	var v26 int64
-	_ = v26
-	var v29 int64
-	_ = v29
-	var v32 int64
-	_ = v32
-	var v36 int32
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v27 int64
+	_ = v27
+	var v30 int64
+	_ = v30
+	var v33 int64
+	_ = v33
+	var v36 int64
 	_ = v36
-	var v39 int32
-	_ = v39
 	var v41 int32
 	_ = v41
-	var v42 int32
-	_ = v42
-	var v43 int64
-	_ = v43
-	var v44 int64
+	var v44 int32
 	_ = v44
-	var v45 int64
-	_ = v45
 	var v47 int32
 	_ = v47
-	var v48 int32
-	_ = v48
-	var v50 int64
+	var v49 int32
+	_ = v49
+	var v50 int32
 	_ = v50
-	var v53 int32
+	var v51 int64
+	_ = v51
+	var v52 int64
+	_ = v52
+	var v53 int64
 	_ = v53
-	var v55 int64
+	var v55 int32
 	_ = v55
-	var v58 int32
+	var v56 int32
+	_ = v56
+	var v58 int64
 	_ = v58
-	var v60 int64
-	_ = v60
+	var v61 int32
+	_ = v61
+	var v63 int64
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v68 int64
+	_ = v68
 	v8 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[0]))
 	v10 = v8 + int32(344)
 	goto L1
@@ -102,11 +110,11 @@ L1:
 	}
 L2:
 	;
-	v39 = v8 + int32(320)
-	v41 = F_LWLockAcquire(m, v39, int32(1))
+	v47 = v8 + int32(320)
+	v49 = F_LWLockAcquire(m, v47, int32(1))
 	mBase = m.M
-	v42 = m.ExcPending
-	if v42 != 0 {
+	v50 = m.ExcPending
+	if v50 != 0 {
 		goto L6
 	} else {
 		goto L10
@@ -126,14 +134,18 @@ L4:
 	goto L5
 L5:
 	;
-	v23 = *(*int64)(unsafe.Add(mBase, uint32(v10)+24))
-	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[2])) = v23
-	v26 = *(*int64)(unsafe.Add(mBase, uint32(v10)+16))
-	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[3])) = v26
-	v29 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
-	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[4])) = v29
-	v32 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
-	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[5])) = v32
+	v22 = int32(0)
+	v24 = int32(_a_F_pgstat_bgwriter_snapshot_cb_0)
+	v25 = base.AtomicRmwOr32(m, v22, v24, v22)
+	v27 = *(*int64)(unsafe.Add(mBase, uint32(v10)+24))
+	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[2])) = v27
+	v30 = *(*int64)(unsafe.Add(mBase, uint32(v10)+16))
+	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[3])) = v30
+	v33 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
+	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[4])) = v33
+	v36 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
+	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[5])) = v36
+	v41 = base.AtomicRmwOr32(m, v22, v24, v22)
 	if v17&int32(1) != 0 {
 		goto L1
 	} else {
@@ -147,8 +159,8 @@ L7:
 	goto L5
 L8:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v8)+336))
-	if v17 != v36 {
+	v44 = *(*int32)(unsafe.Add(mBase, uint32(v8)+336))
+	if v17 != v44 {
 		goto L1
 	} else {
 		goto L9
@@ -158,28 +170,28 @@ L9:
 	goto L2
 L10:
 	;
-	v43 = *(*int64)(unsafe.Add(mBase, uint32(v8)+392))
-	v44 = *(*int64)(unsafe.Add(mBase, uint32(v8)+384))
-	v45 = *(*int64)(unsafe.Add(mBase, uint32(v8)+376))
-	F_LWLockRelease(m, v39)
+	v51 = *(*int64)(unsafe.Add(mBase, uint32(v8)+392))
+	v52 = *(*int64)(unsafe.Add(mBase, uint32(v8)+384))
+	v53 = *(*int64)(unsafe.Add(mBase, uint32(v8)+376))
+	F_LWLockRelease(m, v47)
 	mBase = m.M
-	v47 = m.ExcPending
-	if v47 != 0 {
+	v55 = m.ExcPending
+	if v55 != 0 {
 		goto L6
 	} else {
 		goto L11
 	}
 L11:
 	;
-	v48 = int32(_a_F_pgstat_bgwriter_snapshot_cb_0)
-	v50 = *(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[5]))
-	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[5])) = v50 - v45
-	v53 = int32(_a_F_pgstat_bgwriter_snapshot_cb_1)
-	v55 = *(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[4]))
-	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[4])) = v55 - v44
-	v58 = int32(_a_F_pgstat_bgwriter_snapshot_cb_2)
-	v60 = *(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[3]))
-	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[3])) = v60 - v43
+	v56 = int32(_a_F_pgstat_bgwriter_snapshot_cb_1)
+	v58 = *(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[5]))
+	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[5])) = v58 - v53
+	v61 = int32(_a_F_pgstat_bgwriter_snapshot_cb_2)
+	v63 = *(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[4]))
+	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[4])) = v63 - v52
+	v66 = int32(_a_F_pgstat_bgwriter_snapshot_cb_3)
+	v68 = *(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[3]))
+	*(*int64)(unsafe.Add(mBase, _c_F_pgstat_bgwriter_snapshot_cb[3])) = v68 - v51
 	return
 }
 func F_pgstat_build_snapshot(m *base.Module) {
@@ -777,10 +789,18 @@ func F_pgstat_checkpointer_reset_all_cb(m *base.Module, l0 int64) {
 	_ = v26
 	var v28 int32
 	_ = v28
-	var v33 int32
-	_ = v33
-	var v37 int32
-	_ = v37
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
 	v8 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_checkpointer_reset_all_cb[0]))
 	v10 = v8 + int32(408)
 	v12 = F_LWLockAcquire(m, v10, int32(0))
@@ -811,8 +831,8 @@ L4:
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+512)) = l0
 	F_LWLockRelease(m, v10)
 	mBase = m.M
-	v37 = m.ExcPending
-	if v37 != 0 {
+	v45 = m.ExcPending
+	if v45 != 0 {
 		goto L1
 	} else {
 		goto L11
@@ -832,7 +852,11 @@ L6:
 	goto L7
 L7:
 	;
+	v29 = int32(0)
+	v31 = int32(_a_F_pgstat_checkpointer_reset_all_cb_0)
+	v32 = base.AtomicRmwOr32(m, v29, v31, v29)
 	base.MemoryCopy(m, v8+int32(520), v8+int32(432), int32(88))
+	v38 = base.AtomicRmwOr32(m, v29, v31, v29)
 	if v24&int32(1) != 0 {
 		goto L3
 	} else {
@@ -843,8 +867,8 @@ L8:
 	goto L7
 L9:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v8)+424))
-	if v24 != v33 {
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v8)+424))
+	if v24 != v41 {
 		goto L3
 	} else {
 		goto L10
@@ -3041,8 +3065,16 @@ func F_pgstat_progress_end_command(m *base.Module) {
 	_ = v21
 	var v25 int32
 	_ = v25
-	var v35 int32
-	_ = v35
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v43 int32
+	_ = v43
 	v3 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_end_command[0]))
 	if v3 == int32(0) {
 	} else {
@@ -3059,11 +3091,15 @@ func F_pgstat_progress_end_command(m *base.Module) {
 				v21 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
 				*(*int32)(unsafe.Add(mBase, uint32(v3))) = v21 + v18
 				v25 = int32(0)
+				v27 = int32(_a_F_pgstat_progress_end_command_1)
+				v28 = base.AtomicRmwOr32(m, v25, v27, v25)
 				*(*int32)(unsafe.Add(mBase, uint32(v3)+220)) = v25
 				*(*int32)(unsafe.Add(mBase, uint32(v3)+224)) = v25
-				*(*int32)(unsafe.Add(mBase, uint32(v3))) = v21 + int32(2)
-				v35 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_end_command[2]))
-				*(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_end_command[2])) = v35 - v18
+				v36 = base.AtomicRmwOr32(m, v25, v27, v25)
+				v37 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
+				*(*int32)(unsafe.Add(mBase, uint32(v3))) = v37 + v18
+				v43 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_end_command[2]))
+				*(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_end_command[2])) = v43 - v18
 			}
 		}
 	}
@@ -4206,8 +4242,18 @@ func F_pgstat_report_query_id(m *base.Module, l0 int64, l1 int32) {
 	_ = v23
 	var v26 int32
 	_ = v26
-	var v37 int32
-	_ = v37
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v45 int32
+	_ = v45
 	v5 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_query_id[0]))
 	if v5 == int32(0) {
 	} else {
@@ -4223,10 +4269,15 @@ func F_pgstat_report_query_id(m *base.Module, l0 int64, l1 int32) {
 				*(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_query_id[2])) = v22 + v23
 				v26 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
 				*(*int32)(unsafe.Add(mBase, uint32(v5))) = v26 + v23
+				v30 = int32(0)
+				v32 = int32(_a_F_pgstat_report_query_id_1)
+				v33 = base.AtomicRmwOr32(m, v30, v32, v30)
 				*(*int64)(unsafe.Add(mBase, uint32(v5)+392)) = l0
-				*(*int32)(unsafe.Add(mBase, uint32(v5))) = v26 + int32(2)
-				v37 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_query_id[2]))
-				*(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_query_id[2])) = v37 - v23
+				v38 = base.AtomicRmwOr32(m, v30, v32, v30)
+				v39 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
+				*(*int32)(unsafe.Add(mBase, uint32(v5))) = v39 + v23
+				v45 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_query_id[2]))
+				*(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_query_id[2])) = v45 - v23
 			}
 		}
 	}

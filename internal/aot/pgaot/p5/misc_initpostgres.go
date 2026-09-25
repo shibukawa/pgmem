@@ -3097,146 +3097,144 @@ func F_InitPostgres(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 	_ = v6969
 	var v6973 int32
 	_ = v6973
-	var v6983 int32
-	_ = v6983
-	var v6989 int32
-	_ = v6989
-	var v6998 int32
-	_ = v6998
-	var v6999 int32
-	_ = v6999
-	var v7005 int32
-	_ = v7005
+	var v6975 int32
+	_ = v6975
+	var v6976 int32
+	_ = v6976
+	var v6984 int32
+	_ = v6984
+	var v6985 int32
+	_ = v6985
+	var v6991 int32
+	_ = v6991
+	var v6997 int32
+	_ = v6997
+	var v7006 int32
+	_ = v7006
 	var v7007 int32
 	_ = v7007
-	var v7008 int32
-	_ = v7008
-	var v7012 int32
-	_ = v7012
+	var v7013 int32
+	_ = v7013
 	var v7015 int32
 	_ = v7015
-	var v7017 int32
-	_ = v7017
-	var v7022 int32
-	_ = v7022
-	var v7024 int32
-	_ = v7024
+	var v7016 int32
+	_ = v7016
+	var v7020 int32
+	_ = v7020
+	var v7023 int32
+	_ = v7023
 	var v7025 int32
 	_ = v7025
-	var v7028 int32
-	_ = v7028
-	var v7029 int32
-	_ = v7029
+	var v7030 int32
+	_ = v7030
+	var v7032 int32
+	_ = v7032
 	var v7033 int32
 	_ = v7033
-	var v7043 int32
-	_ = v7043
-	var v7068 int32
-	_ = v7068
-	var v7077 int32
-	_ = v7077
-	var v7080 int32
-	_ = v7080
-	var v7124 int32
-	_ = v7124
-	var v7125 int32
-	_ = v7125
-	var v7128 int32
-	_ = v7128
-	var v7130 int32
-	_ = v7130
+	var v7036 int32
+	_ = v7036
+	var v7037 int32
+	_ = v7037
+	var v7041 int32
+	_ = v7041
+	var v7051 int32
+	_ = v7051
+	var v7076 int32
+	_ = v7076
+	var v7085 int32
+	_ = v7085
+	var v7088 int32
+	_ = v7088
 	var v7132 int32
 	_ = v7132
-	var v7135 int32
-	_ = v7135
-	var v7137 int32
-	_ = v7137
+	var v7133 int32
+	_ = v7133
+	var v7136 int32
+	_ = v7136
 	var v7138 int32
 	_ = v7138
-	var v7183 int32
-	_ = v7183
-	var v7187 int32
-	_ = v7187
-	var v7188 int32
-	_ = v7188
-	var v7189 int32
-	_ = v7189
-	var v7193 int32
-	_ = v7193
+	var v7140 int32
+	_ = v7140
+	var v7143 int32
+	_ = v7143
+	var v7145 int32
+	_ = v7145
+	var v7146 int32
+	_ = v7146
+	var v7191 int32
+	_ = v7191
+	var v7195 int32
+	_ = v7195
+	var v7196 int32
+	_ = v7196
 	var v7197 int32
 	_ = v7197
 	var v7201 int32
 	_ = v7201
-	var v7203 int32
-	_ = v7203
 	var v7205 int32
 	_ = v7205
-	var v7212 int32
-	_ = v7212
-	var v7216 int32
-	_ = v7216
-	var v7221 int32
-	_ = v7221
-	var v7225 int32
-	_ = v7225
-	var v7226 int32
-	_ = v7226
+	var v7209 int32
+	_ = v7209
+	var v7211 int32
+	_ = v7211
+	var v7213 int32
+	_ = v7213
+	var v7220 int32
+	_ = v7220
+	var v7224 int32
+	_ = v7224
 	var v7229 int32
 	_ = v7229
-	var v7232 int32
-	_ = v7232
 	var v7233 int32
 	_ = v7233
 	var v7234 int32
 	_ = v7234
-	var v7235 int32
-	_ = v7235
-	var v7236 int32
-	_ = v7236
 	var v7237 int32
 	_ = v7237
-	var v7238 int32
-	_ = v7238
 	var v7240 int32
 	_ = v7240
+	var v7241 int32
+	_ = v7241
+	var v7242 int32
+	_ = v7242
 	var v7243 int32
 	_ = v7243
+	var v7244 int32
+	_ = v7244
+	var v7245 int32
+	_ = v7245
 	var v7246 int32
 	_ = v7246
-	var v7247 int32
-	_ = v7247
-	var v7249 int32
-	_ = v7249
-	var v7252 int32
-	_ = v7252
+	var v7248 int32
+	_ = v7248
+	var v7251 int32
+	_ = v7251
+	var v7254 int32
+	_ = v7254
+	var v7255 int32
+	_ = v7255
+	var v7257 int32
+	_ = v7257
 	var v7260 int32
 	_ = v7260
-	var v7262 int32
-	_ = v7262
-	var v7267 int32
-	_ = v7267
+	var v7268 int32
+	_ = v7268
 	var v7270 int32
 	_ = v7270
-	var v7271 int32
-	_ = v7271
-	var v7274 int32
-	_ = v7274
-	var v7277 int32
-	_ = v7277
+	var v7275 int32
+	_ = v7275
 	var v7278 int32
 	_ = v7278
 	var v7279 int32
 	_ = v7279
-	var v7280 int32
-	_ = v7280
-	var v7281 int32
-	_ = v7281
 	var v7282 int32
 	_ = v7282
-	var v7283 int32
-	_ = v7283
 	var v7285 int32
 	_ = v7285
+	var v7286 int32
+	_ = v7286
+	var v7287 int32
+	_ = v7287
 	var v7288 int32
 	_ = v7288
 	var v7289 int32
@@ -3245,388 +3243,392 @@ func F_InitPostgres(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 	_ = v7290
 	var v7291 int32
 	_ = v7291
-	var v7295 int32
-	_ = v7295
-	var v7301 int32
-	_ = v7301
-	var v7302 int32
-	_ = v7302
+	var v7293 int32
+	_ = v7293
+	var v7296 int32
+	_ = v7296
+	var v7297 int32
+	_ = v7297
+	var v7298 int32
+	_ = v7298
+	var v7299 int32
+	_ = v7299
 	var v7303 int32
 	_ = v7303
 	var v7309 int32
 	_ = v7309
 	var v7310 int32
 	_ = v7310
-	var v7316 int32
-	_ = v7316
-	var v7319 int32
-	_ = v7319
-	var v7325 int32
-	_ = v7325
-	var v7330 int32
-	_ = v7330
-	var v7332 int32
-	_ = v7332
-	var v7334 int32
-	_ = v7334
-	var v7341 int32
-	_ = v7341
-	var v7345 int32
-	_ = v7345
-	var v7357 int32
-	_ = v7357
-	var v7358 int32
-	_ = v7358
-	var v7359 int32
-	_ = v7359
-	var v7361 int32
-	_ = v7361
+	var v7311 int32
+	_ = v7311
+	var v7317 int32
+	_ = v7317
+	var v7318 int32
+	_ = v7318
+	var v7324 int32
+	_ = v7324
+	var v7327 int32
+	_ = v7327
+	var v7333 int32
+	_ = v7333
+	var v7338 int32
+	_ = v7338
+	var v7340 int32
+	_ = v7340
+	var v7342 int32
+	_ = v7342
+	var v7349 int32
+	_ = v7349
+	var v7353 int32
+	_ = v7353
 	var v7365 int32
 	_ = v7365
 	var v7366 int32
 	_ = v7366
-	var v7368 int32
-	_ = v7368
+	var v7367 int32
+	_ = v7367
 	var v7369 int32
 	_ = v7369
-	var v7370 int32
-	_ = v7370
-	var v7372 int32
-	_ = v7372
+	var v7373 int32
+	_ = v7373
+	var v7374 int32
+	_ = v7374
+	var v7376 int32
+	_ = v7376
+	var v7377 int32
+	_ = v7377
 	var v7378 int32
 	_ = v7378
-	var v7379 int32
-	_ = v7379
 	var v7380 int32
 	_ = v7380
-	var v7381 int32
-	_ = v7381
-	var v7384 int32
-	_ = v7384
-	var v7391 int32
-	_ = v7391
+	var v7386 int32
+	_ = v7386
+	var v7387 int32
+	_ = v7387
+	var v7388 int32
+	_ = v7388
+	var v7389 int32
+	_ = v7389
 	var v7392 int32
 	_ = v7392
-	var v7393 int32
-	_ = v7393
-	var v7396 int32
-	_ = v7396
 	var v7399 int32
 	_ = v7399
+	var v7400 int32
+	_ = v7400
+	var v7401 int32
+	_ = v7401
 	var v7404 int32
 	_ = v7404
-	var v7405 int32
-	_ = v7405
 	var v7407 int32
 	_ = v7407
-	var v7409 int32
-	_ = v7409
+	var v7412 int32
+	_ = v7412
 	var v7413 int32
 	_ = v7413
-	var v7414 int32
-	_ = v7414
 	var v7415 int32
 	_ = v7415
-	var v7420 int32
-	_ = v7420
+	var v7417 int32
+	_ = v7417
 	var v7421 int32
 	_ = v7421
 	var v7422 int32
 	_ = v7422
-	var v7425 int32
-	_ = v7425
-	var v7426 int32
-	_ = v7426
-	var v7427 int32
-	_ = v7427
+	var v7423 int32
+	_ = v7423
+	var v7428 int32
+	_ = v7428
 	var v7429 int32
 	_ = v7429
+	var v7430 int32
+	_ = v7430
 	var v7433 int32
 	_ = v7433
 	var v7434 int32
 	_ = v7434
-	var v7436 int32
-	_ = v7436
-	var v7438 int32
-	_ = v7438
-	var v7440 int32
-	_ = v7440
+	var v7435 int32
+	_ = v7435
+	var v7437 int32
+	_ = v7437
 	var v7441 int32
 	_ = v7441
+	var v7442 int32
+	_ = v7442
 	var v7444 int32
 	_ = v7444
-	var v7451 int32
-	_ = v7451
-	var v7454 int32
-	_ = v7454
-	var v7458 int32
-	_ = v7458
-	var v7461 int32
-	_ = v7461
-	var v7470 int32
-	_ = v7470
-	var v7474 int32
-	_ = v7474
-	var v7476 int32
-	_ = v7476
-	var v7477 int32
-	_ = v7477
-	var v7481 int32
-	_ = v7481
+	var v7446 int32
+	_ = v7446
+	var v7448 int32
+	_ = v7448
+	var v7449 int32
+	_ = v7449
+	var v7452 int32
+	_ = v7452
+	var v7459 int32
+	_ = v7459
+	var v7462 int32
+	_ = v7462
+	var v7466 int32
+	_ = v7466
+	var v7469 int32
+	_ = v7469
+	var v7478 int32
+	_ = v7478
 	var v7482 int32
 	_ = v7482
 	var v7484 int32
 	_ = v7484
-	var v7488 int32
-	_ = v7488
+	var v7485 int32
+	_ = v7485
+	var v7489 int32
+	_ = v7489
 	var v7490 int32
 	_ = v7490
 	var v7492 int32
 	_ = v7492
-	var v7495 int32
-	_ = v7495
+	var v7496 int32
+	_ = v7496
+	var v7498 int32
+	_ = v7498
 	var v7500 int32
 	_ = v7500
-	var v7501 int32
-	_ = v7501
-	var v7502 int32
-	_ = v7502
-	var v7504 int32
-	_ = v7504
-	var v7505 int32
-	_ = v7505
-	var v7507 int32
-	_ = v7507
+	var v7503 int32
+	_ = v7503
+	var v7508 int32
+	_ = v7508
 	var v7509 int32
 	_ = v7509
+	var v7510 int32
+	_ = v7510
 	var v7512 int32
 	_ = v7512
+	var v7513 int32
+	_ = v7513
+	var v7515 int32
+	_ = v7515
 	var v7517 int32
 	_ = v7517
-	var v7518 int32
-	_ = v7518
-	var v7519 int32
-	_ = v7519
+	var v7520 int32
+	_ = v7520
+	var v7525 int32
+	_ = v7525
 	var v7526 int32
 	_ = v7526
-	var v7528 int32
-	_ = v7528
-	var v7529 int32
-	_ = v7529
-	var v7531 int32
-	_ = v7531
-	var v7542 int32
-	_ = v7542
-	var v7544 int32
-	_ = v7544
+	var v7527 int32
+	_ = v7527
+	var v7534 int32
+	_ = v7534
+	var v7536 int32
+	_ = v7536
+	var v7537 int32
+	_ = v7537
+	var v7539 int32
+	_ = v7539
 	var v7550 int32
 	_ = v7550
-	var v7555 int32
-	_ = v7555
-	var v7559 int32
-	_ = v7559
-	var v7562 int32
-	_ = v7562
-	var v7566 int32
-	_ = v7566
-	var v7571 int32
-	_ = v7571
-	var v7575 int32
-	_ = v7575
-	var v7578 int32
-	_ = v7578
-	var v7585 int32
-	_ = v7585
-	var v7590 int32
-	_ = v7590
-	var v7594 int32
-	_ = v7594
-	var v7597 int32
-	_ = v7597
-	var v7604 int32
-	_ = v7604
-	var v7609 int32
-	_ = v7609
-	var v7613 int32
-	_ = v7613
-	var v7616 int32
-	_ = v7616
-	var v7620 int32
-	_ = v7620
-	var v7627 int32
-	_ = v7627
-	var v7632 int32
-	_ = v7632
-	var v7636 int32
-	_ = v7636
-	var v7639 int32
-	_ = v7639
-	var v7645 int32
-	_ = v7645
-	var v7650 int32
-	_ = v7650
+	var v7552 int32
+	_ = v7552
+	var v7558 int32
+	_ = v7558
+	var v7563 int32
+	_ = v7563
+	var v7567 int32
+	_ = v7567
+	var v7570 int32
+	_ = v7570
+	var v7574 int32
+	_ = v7574
+	var v7579 int32
+	_ = v7579
+	var v7583 int32
+	_ = v7583
+	var v7586 int32
+	_ = v7586
+	var v7593 int32
+	_ = v7593
+	var v7598 int32
+	_ = v7598
+	var v7602 int32
+	_ = v7602
+	var v7605 int32
+	_ = v7605
+	var v7612 int32
+	_ = v7612
+	var v7617 int32
+	_ = v7617
+	var v7621 int32
+	_ = v7621
+	var v7624 int32
+	_ = v7624
+	var v7628 int32
+	_ = v7628
+	var v7635 int32
+	_ = v7635
+	var v7640 int32
+	_ = v7640
+	var v7644 int32
+	_ = v7644
+	var v7647 int32
+	_ = v7647
+	var v7653 int32
+	_ = v7653
 	var v7658 int32
 	_ = v7658
-	var v7661 int32
-	_ = v7661
+	var v7666 int32
+	_ = v7666
 	var v7669 int32
 	_ = v7669
-	var v7673 int32
-	_ = v7673
-	var v7678 int32
-	_ = v7678
-	var v7680 int32
-	_ = v7680
+	var v7677 int32
+	_ = v7677
+	var v7681 int32
+	_ = v7681
+	var v7686 int32
+	_ = v7686
 	var v7688 int32
 	_ = v7688
-	var v7691 int32
-	_ = v7691
-	var v7693 int32
-	_ = v7693
-	var v7695 int32
-	_ = v7695
 	var v7696 int32
 	_ = v7696
-	var v7697 int32
-	_ = v7697
 	var v7699 int32
 	_ = v7699
+	var v7701 int32
+	_ = v7701
 	var v7703 int32
 	_ = v7703
+	var v7704 int32
+	_ = v7704
+	var v7705 int32
+	_ = v7705
 	var v7707 int32
 	_ = v7707
 	var v7711 int32
 	_ = v7711
-	var v7717 int32
-	_ = v7717
-	var v7722 int32
-	_ = v7722
-	var v7724 int32
-	_ = v7724
-	var v7726 int32
-	_ = v7726
-	var v7728 int32
-	_ = v7728
+	var v7715 int32
+	_ = v7715
+	var v7719 int32
+	_ = v7719
+	var v7725 int32
+	_ = v7725
 	var v7730 int32
 	_ = v7730
 	var v7732 int32
 	_ = v7732
-	var v7735 int32
-	_ = v7735
+	var v7734 int32
+	_ = v7734
 	var v7736 int32
 	_ = v7736
-	var v7737 int32
-	_ = v7737
-	var v7741 int32
-	_ = v7741
-	var v7742 int32
-	_ = v7742
+	var v7738 int32
+	_ = v7738
+	var v7740 int32
+	_ = v7740
 	var v7743 int32
 	_ = v7743
 	var v7744 int32
 	_ = v7744
-	var v7746 int32
-	_ = v7746
+	var v7745 int32
+	_ = v7745
 	var v7749 int32
 	_ = v7749
+	var v7750 int32
+	_ = v7750
+	var v7751 int32
+	_ = v7751
 	var v7752 int32
 	_ = v7752
-	var v7755 int32
-	_ = v7755
-	var v7756 int32
-	_ = v7756
-	var v7759 int32
-	_ = v7759
+	var v7754 int32
+	_ = v7754
+	var v7757 int32
+	_ = v7757
 	var v7760 int32
 	_ = v7760
 	var v7763 int32
 	_ = v7763
-	var v7770 int32
-	_ = v7770
+	var v7764 int32
+	_ = v7764
+	var v7767 int32
+	_ = v7767
+	var v7768 int32
+	_ = v7768
 	var v7771 int32
 	_ = v7771
-	var v7774 int32
-	_ = v7774
 	var v7778 int32
 	_ = v7778
-	var v7781 int32
-	_ = v7781
+	var v7779 int32
+	_ = v7779
+	var v7782 int32
+	_ = v7782
 	var v7786 int32
 	_ = v7786
-	var v7793 int32
-	_ = v7793
-	var v7795 int32
-	_ = v7795
-	var v7797 int32
-	_ = v7797
-	var v7798 int32
-	_ = v7798
-	var v7800 int32
-	_ = v7800
+	var v7789 int32
+	_ = v7789
+	var v7794 int32
+	_ = v7794
+	var v7801 int32
+	_ = v7801
 	var v7803 int32
 	_ = v7803
-	var v7809 int32
-	_ = v7809
-	var v7810 int32
-	_ = v7810
-	var v7812 int32
-	_ = v7812
-	var v7814 int32
-	_ = v7814
+	var v7805 int32
+	_ = v7805
+	var v7806 int32
+	_ = v7806
+	var v7808 int32
+	_ = v7808
+	var v7811 int32
+	_ = v7811
+	var v7817 int32
+	_ = v7817
 	var v7818 int32
 	_ = v7818
-	var v7819 int32
-	_ = v7819
 	var v7820 int32
 	_ = v7820
+	var v7822 int32
+	_ = v7822
 	var v7826 int32
 	_ = v7826
+	var v7827 int32
+	_ = v7827
 	var v7828 int32
 	_ = v7828
-	var v7830 int32
-	_ = v7830
-	var v7872 int32
-	_ = v7872
-	var v7875 int32
-	_ = v7875
-	var v7876 int32
-	_ = v7876
-	var v7879 int32
-	_ = v7879
-	var v7882 int32
-	_ = v7882
-	var v7886 int32
-	_ = v7886
-	var v7888 int32
-	_ = v7888
-	var v7892 int32
-	_ = v7892
-	var v7932 int32
-	_ = v7932
-	var v7936 int32
-	_ = v7936
-	var v7937 int32
-	_ = v7937
-	var v7980 int32
-	_ = v7980
-	var v7981 int32
-	_ = v7981
-	var v7983 int32
-	_ = v7983
-	var v7990 int32
-	_ = v7990
-	var v7994 int32
-	_ = v7994
-	var v7999 int32
-	_ = v7999
+	var v7834 int32
+	_ = v7834
+	var v7836 int32
+	_ = v7836
+	var v7838 int32
+	_ = v7838
+	var v7880 int32
+	_ = v7880
+	var v7883 int32
+	_ = v7883
+	var v7884 int32
+	_ = v7884
+	var v7887 int32
+	_ = v7887
+	var v7890 int32
+	_ = v7890
+	var v7894 int32
+	_ = v7894
+	var v7896 int32
+	_ = v7896
+	var v7900 int32
+	_ = v7900
+	var v7940 int32
+	_ = v7940
+	var v7944 int32
+	_ = v7944
+	var v7945 int32
+	_ = v7945
+	var v7988 int32
+	_ = v7988
+	var v7989 int32
+	_ = v7989
+	var v7991 int32
+	_ = v7991
+	var v7998 int32
+	_ = v7998
 	var v8002 int32
 	_ = v8002
-	var v8012 int32
-	_ = v8012
-	var v8016 int32
-	_ = v8016
-	var v8019 int32
-	_ = v8019
+	var v8007 int32
+	_ = v8007
+	var v8010 int32
+	_ = v8010
 	var v8020 int32
 	_ = v8020
 	var v8024 int32
@@ -3635,386 +3637,392 @@ func F_InitPostgres(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 	_ = v8027
 	var v8028 int32
 	_ = v8028
-	var v8029 int32
-	_ = v8029
-	var v8030 int32
-	_ = v8030
-	var v8033 int32
-	_ = v8033
-	var v8034 int32
-	_ = v8034
+	var v8032 int32
+	_ = v8032
 	var v8035 int32
 	_ = v8035
 	var v8036 int32
 	_ = v8036
+	var v8037 int32
+	_ = v8037
 	var v8038 int32
 	_ = v8038
-	var v8039 int32
-	_ = v8039
+	var v8041 int32
+	_ = v8041
+	var v8042 int32
+	_ = v8042
 	var v8043 int32
 	_ = v8043
 	var v8044 int32
 	_ = v8044
+	var v8046 int32
+	_ = v8046
 	var v8047 int32
 	_ = v8047
-	var v8050 int32
-	_ = v8050
-	var v8053 int32
-	_ = v8053
-	var v8056 int32
-	_ = v8056
-	var v8059 int32
-	_ = v8059
-	var v8062 int32
-	_ = v8062
-	var v8063 int32
-	_ = v8063
-	var v8066 int32
-	_ = v8066
+	var v8051 int32
+	_ = v8051
+	var v8052 int32
+	_ = v8052
+	var v8055 int32
+	_ = v8055
+	var v8058 int32
+	_ = v8058
+	var v8061 int32
+	_ = v8061
+	var v8064 int32
+	_ = v8064
 	var v8067 int32
 	_ = v8067
 	var v8070 int32
 	_ = v8070
-	var v8077 int32
-	_ = v8077
+	var v8071 int32
+	_ = v8071
+	var v8074 int32
+	_ = v8074
+	var v8075 int32
+	_ = v8075
 	var v8078 int32
 	_ = v8078
-	var v8081 int32
-	_ = v8081
-	var v8083 int32
-	_ = v8083
 	var v8085 int32
 	_ = v8085
+	var v8086 int32
+	_ = v8086
 	var v8089 int32
 	_ = v8089
-	var v8090 int32
-	_ = v8090
 	var v8091 int32
 	_ = v8091
-	var v8092 int32
-	_ = v8092
 	var v8093 int32
 	_ = v8093
-	var v8094 int32
-	_ = v8094
-	var v8095 int32
-	_ = v8095
+	var v8097 int32
+	_ = v8097
+	var v8098 int32
+	_ = v8098
+	var v8099 int32
+	_ = v8099
 	var v8100 int32
 	_ = v8100
 	var v8101 int32
 	_ = v8101
-	var v8104 int32
-	_ = v8104
-	var v8105 int32
-	_ = v8105
-	var v8106 int32
-	_ = v8106
-	var v8110 int32
-	_ = v8110
-	var v8111 int32
-	_ = v8111
+	var v8102 int32
+	_ = v8102
+	var v8103 int32
+	_ = v8103
+	var v8108 int32
+	_ = v8108
+	var v8109 int32
+	_ = v8109
+	var v8112 int32
+	_ = v8112
+	var v8113 int32
+	_ = v8113
+	var v8114 int32
+	_ = v8114
+	var v8118 int32
+	_ = v8118
 	var v8119 int32
 	_ = v8119
-	var v8124 int32
-	_ = v8124
 	var v8127 int32
 	_ = v8127
-	var v8128 int32
-	_ = v8128
-	var v8129 int32
-	_ = v8129
-	var v8130 int32
-	_ = v8130
-	var v8131 int32
-	_ = v8131
-	var v8134 int32
-	_ = v8134
-	var v8143 int32
-	_ = v8143
-	var v8145 int32
-	_ = v8145
-	var v8149 int32
-	_ = v8149
-	var v8154 int32
-	_ = v8154
-	var v8159 int32
-	_ = v8159
-	var v8160 int32
-	_ = v8160
-	var v8161 int32
-	_ = v8161
+	var v8132 int32
+	_ = v8132
+	var v8135 int32
+	_ = v8135
+	var v8136 int32
+	_ = v8136
+	var v8137 int32
+	_ = v8137
+	var v8138 int32
+	_ = v8138
+	var v8139 int32
+	_ = v8139
+	var v8142 int32
+	_ = v8142
+	var v8151 int32
+	_ = v8151
+	var v8153 int32
+	_ = v8153
+	var v8157 int32
+	_ = v8157
 	var v8162 int32
 	_ = v8162
-	var v8163 int32
-	_ = v8163
-	var v8165 int32
-	_ = v8165
+	var v8167 int32
+	_ = v8167
+	var v8168 int32
+	_ = v8168
+	var v8169 int32
+	_ = v8169
 	var v8170 int32
 	_ = v8170
 	var v8171 int32
 	_ = v8171
-	var v8172 int32
-	_ = v8172
 	var v8173 int32
 	_ = v8173
-	var v8174 int32
-	_ = v8174
-	var v8176 int32
-	_ = v8176
-	var v8177 int32
-	_ = v8177
+	var v8178 int32
+	_ = v8178
 	var v8179 int32
 	_ = v8179
 	var v8180 int32
 	_ = v8180
+	var v8181 int32
+	_ = v8181
+	var v8182 int32
+	_ = v8182
+	var v8184 int32
+	_ = v8184
 	var v8185 int32
 	_ = v8185
-	var v8186 int32
-	_ = v8186
-	var v8196 int32
-	_ = v8196
-	var v8200 int32
-	_ = v8200
-	var v8203 int32
-	_ = v8203
-	var v8206 int32
-	_ = v8206
-	var v8207 int32
-	_ = v8207
-	var v8210 int32
-	_ = v8210
+	var v8187 int32
+	_ = v8187
+	var v8188 int32
+	_ = v8188
+	var v8193 int32
+	_ = v8193
+	var v8194 int32
+	_ = v8194
+	var v8204 int32
+	_ = v8204
+	var v8208 int32
+	_ = v8208
 	var v8211 int32
 	_ = v8211
 	var v8214 int32
 	_ = v8214
-	var v8221 int32
-	_ = v8221
+	var v8215 int32
+	_ = v8215
+	var v8218 int32
+	_ = v8218
+	var v8219 int32
+	_ = v8219
 	var v8222 int32
 	_ = v8222
-	var v8228 int32
-	_ = v8228
 	var v8229 int32
 	_ = v8229
-	var v8233 int32
-	_ = v8233
-	var v8239 int32
-	_ = v8239
-	var v8246 int32
-	_ = v8246
+	var v8230 int32
+	_ = v8230
+	var v8236 int32
+	_ = v8236
+	var v8237 int32
+	_ = v8237
+	var v8241 int32
+	_ = v8241
 	var v8247 int32
 	_ = v8247
-	var v8248 int32
-	_ = v8248
 	var v8254 int32
 	_ = v8254
-	var v8257 int32
-	_ = v8257
-	var v8260 int32
-	_ = v8260
+	var v8255 int32
+	_ = v8255
+	var v8256 int32
+	_ = v8256
+	var v8262 int32
+	_ = v8262
 	var v8265 int32
 	_ = v8265
-	var v8267 int32
-	_ = v8267
-	var v8269 int32
-	_ = v8269
-	var v8271 int32
-	_ = v8271
+	var v8268 int32
+	_ = v8268
 	var v8273 int32
 	_ = v8273
-	var v8316 int32
-	_ = v8316
-	var v8318 int32
-	_ = v8318
-	var v8320 int32
-	_ = v8320
-	var v8322 int32
-	_ = v8322
+	var v8275 int32
+	_ = v8275
+	var v8277 int32
+	_ = v8277
+	var v8279 int32
+	_ = v8279
+	var v8281 int32
+	_ = v8281
 	var v8324 int32
 	_ = v8324
-	var v8329 int32
-	_ = v8329
+	var v8326 int32
+	_ = v8326
+	var v8328 int32
+	_ = v8328
 	var v8330 int32
 	_ = v8330
 	var v8332 int32
 	_ = v8332
-	var v8333 int32
-	_ = v8333
-	var v8334 int32
-	_ = v8334
-	var v8335 int32
-	_ = v8335
+	var v8337 int32
+	_ = v8337
 	var v8338 int32
 	_ = v8338
+	var v8340 int32
+	_ = v8340
+	var v8341 int32
+	_ = v8341
 	var v8342 int32
 	_ = v8342
+	var v8343 int32
+	_ = v8343
 	var v8346 int32
 	_ = v8346
-	var v8347 int32
-	_ = v8347
-	var v8351 int32
-	_ = v8351
-	var v8353 int32
-	_ = v8353
-	var v8356 int32
-	_ = v8356
-	var v8360 int32
-	_ = v8360
-	var v8366 int32
-	_ = v8366
+	var v8350 int32
+	_ = v8350
+	var v8354 int32
+	_ = v8354
+	var v8355 int32
+	_ = v8355
+	var v8359 int32
+	_ = v8359
+	var v8361 int32
+	_ = v8361
+	var v8364 int32
+	_ = v8364
 	var v8368 int32
 	_ = v8368
-	var v8371 int32
-	_ = v8371
 	var v8374 int32
 	_ = v8374
-	var v8375 int32
-	_ = v8375
-	var v8378 int32
-	_ = v8378
-	var v8380 int32
-	_ = v8380
-	var v8387 int32
-	_ = v8387
+	var v8376 int32
+	_ = v8376
+	var v8379 int32
+	_ = v8379
+	var v8382 int32
+	_ = v8382
+	var v8383 int32
+	_ = v8383
+	var v8386 int32
+	_ = v8386
 	var v8388 int32
 	_ = v8388
-	var v8391 int32
-	_ = v8391
-	var v8393 int32
-	_ = v8393
+	var v8395 int32
+	_ = v8395
 	var v8396 int32
 	_ = v8396
-	var v8397 int32
-	_ = v8397
+	var v8399 int32
+	_ = v8399
+	var v8401 int32
+	_ = v8401
 	var v8404 int32
 	_ = v8404
-	var v8408 int32
-	_ = v8408
+	var v8405 int32
+	_ = v8405
 	var v8412 int32
 	_ = v8412
 	var v8416 int32
 	_ = v8416
-	var v8418 int32
-	_ = v8418
-	var v8420 int64
+	var v8420 int32
 	_ = v8420
-	var v8428 int32
+	var v8424 int32
+	_ = v8424
+	var v8426 int32
+	_ = v8426
+	var v8428 int64
 	_ = v8428
-	var v8433 int32
-	_ = v8433
-	var v8438 int32
-	_ = v8438
-	var v8443 int32
-	_ = v8443
-	var v8445 int32
-	_ = v8445
-	var v8448 int32
-	_ = v8448
+	var v8436 int32
+	_ = v8436
+	var v8441 int32
+	_ = v8441
+	var v8446 int32
+	_ = v8446
+	var v8451 int32
+	_ = v8451
+	var v8453 int32
+	_ = v8453
 	var v8456 int32
 	_ = v8456
-	var v8459 int32
-	_ = v8459
-	var v8461 int32
-	_ = v8461
-	var v8462 int32
-	_ = v8462
+	var v8464 int32
+	_ = v8464
 	var v8467 int32
 	_ = v8467
-	var v8471 int32
-	_ = v8471
-	var v8473 int32
-	_ = v8473
-	var v8477 int32
-	_ = v8477
-	var v8522 int32
-	_ = v8522
-	var v8524 int32
-	_ = v8524
-	var v8537 int32
-	_ = v8537
-	var v8571 int32
-	_ = v8571
+	var v8469 int32
+	_ = v8469
+	var v8470 int32
+	_ = v8470
+	var v8475 int32
+	_ = v8475
+	var v8479 int32
+	_ = v8479
+	var v8481 int32
+	_ = v8481
+	var v8485 int32
+	_ = v8485
+	var v8530 int32
+	_ = v8530
+	var v8532 int32
+	_ = v8532
+	var v8545 int32
+	_ = v8545
 	var v8579 int32
 	_ = v8579
-	var v8583 int32
-	_ = v8583
-	var v8588 int32
-	_ = v8588
-	var v8592 int32
-	_ = v8592
-	var v8594 int32
-	_ = v8594
+	var v8587 int32
+	_ = v8587
+	var v8591 int32
+	_ = v8591
+	var v8596 int32
+	_ = v8596
 	var v8600 int32
 	_ = v8600
-	var v8605 int32
-	_ = v8605
-	var v8609 int32
-	_ = v8609
-	var v8612 int32
-	_ = v8612
+	var v8602 int32
+	_ = v8602
+	var v8608 int32
+	_ = v8608
+	var v8613 int32
+	_ = v8613
+	var v8617 int32
+	_ = v8617
 	var v8620 int32
 	_ = v8620
-	var v8623 int32
-	_ = v8623
-	var v8629 int32
-	_ = v8629
-	var v8634 int32
-	_ = v8634
-	var v8638 int32
-	_ = v8638
-	var v8641 int32
-	_ = v8641
+	var v8628 int32
+	_ = v8628
+	var v8631 int32
+	_ = v8631
+	var v8637 int32
+	_ = v8637
+	var v8642 int32
+	_ = v8642
+	var v8646 int32
+	_ = v8646
 	var v8649 int32
 	_ = v8649
-	var v8654 int32
-	_ = v8654
-	var v8658 int32
-	_ = v8658
-	var v8661 int32
-	_ = v8661
+	var v8657 int32
+	_ = v8657
+	var v8662 int32
+	_ = v8662
+	var v8666 int32
+	_ = v8666
 	var v8669 int32
 	_ = v8669
-	var v8673 int32
-	_ = v8673
-	var v8678 int32
-	_ = v8678
-	var v8682 int32
-	_ = v8682
-	var v8685 int32
-	_ = v8685
+	var v8677 int32
+	_ = v8677
+	var v8681 int32
+	_ = v8681
+	var v8686 int32
+	_ = v8686
+	var v8690 int32
+	_ = v8690
 	var v8693 int32
 	_ = v8693
-	var v8698 int32
-	_ = v8698
-	var v8702 int32
-	_ = v8702
+	var v8701 int32
+	_ = v8701
 	var v8706 int32
 	_ = v8706
-	var v8712 int32
-	_ = v8712
-	var v8716 int32
-	_ = v8716
-	var v8721 int32
-	_ = v8721
-	var v8725 int32
-	_ = v8725
+	var v8710 int32
+	_ = v8710
+	var v8714 int32
+	_ = v8714
+	var v8720 int32
+	_ = v8720
+	var v8724 int32
+	_ = v8724
 	var v8729 int32
 	_ = v8729
-	var v8735 int32
-	_ = v8735
-	var v8739 int32
-	_ = v8739
-	var v8744 int32
-	_ = v8744
-	var v8749 int32
-	_ = v8749
+	var v8733 int32
+	_ = v8733
+	var v8737 int32
+	_ = v8737
+	var v8743 int32
+	_ = v8743
+	var v8747 int32
+	_ = v8747
 	var v8752 int32
 	_ = v8752
-	var v8758 int32
-	_ = v8758
-	var v8762 int32
-	_ = v8762
-	var v8767 int32
-	_ = v8767
+	var v8757 int32
+	_ = v8757
+	var v8760 int32
+	_ = v8760
+	var v8766 int32
+	_ = v8766
+	var v8770 int32
+	_ = v8770
+	var v8775 int32
+	_ = v8775
 	v7 = int32(0)
 	v42 = m.G0
 	v44 = v42 - int32(528)
@@ -5024,8 +5032,8 @@ L119:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v8749 = m.ExcPending
-	if v8749 != 0 {
+	v8757 = m.ExcPending
+	if v8757 != 0 {
 		goto L1
 	} else {
 		goto L1827
@@ -5034,8 +5042,8 @@ L120:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v8725 = m.ExcPending
-	if v8725 != 0 {
+	v8733 = m.ExcPending
+	if v8733 != 0 {
 		goto L1
 	} else {
 		goto L1822
@@ -5044,8 +5052,8 @@ L121:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v8702 = m.ExcPending
-	if v8702 != 0 {
+	v8710 = m.ExcPending
+	if v8710 != 0 {
 		goto L1
 	} else {
 		goto L1817
@@ -5054,8 +5062,8 @@ L122:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v8682 = m.ExcPending
-	if v8682 != 0 {
+	v8690 = m.ExcPending
+	if v8690 != 0 {
 		goto L1
 	} else {
 		goto L1813
@@ -5064,8 +5072,8 @@ L123:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v8658 = m.ExcPending
-	if v8658 != 0 {
+	v8666 = m.ExcPending
+	if v8666 != 0 {
 		goto L1
 	} else {
 		goto L1808
@@ -5074,8 +5082,8 @@ L124:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v8638 = m.ExcPending
-	if v8638 != 0 {
+	v8646 = m.ExcPending
+	if v8646 != 0 {
 		goto L1
 	} else {
 		goto L1804
@@ -5084,8 +5092,8 @@ L125:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v8609 = m.ExcPending
-	if v8609 != 0 {
+	v8617 = m.ExcPending
+	if v8617 != 0 {
 		goto L1
 	} else {
 		goto L1799
@@ -5094,8 +5102,8 @@ L126:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v8592 = m.ExcPending
-	if v8592 != 0 {
+	v8600 = m.ExcPending
+	if v8600 != 0 {
 		goto L1
 	} else {
 		goto L1796
@@ -5104,15 +5112,15 @@ L127:
 	;
 	F_errcode(m, int32(1283))
 	mBase = m.M
-	v8571 = m.ExcPending
-	if v8571 != 0 {
+	v8579 = m.ExcPending
+	if v8579 != 0 {
 		goto L1
 	} else {
 		goto L1792
 	}
 L128:
 	;
-	m.G0 = v8537 + int32(528)
+	m.G0 = v8545 + int32(528)
 	return
 L129:
 	;
@@ -5136,27 +5144,27 @@ L131:
 	}
 L132:
 	;
-	v8537 = v44
+	v8545 = v44
 	goto L128
 L133:
 	;
 	F_pgstat_bestart_final(m)
 	mBase = m.M
-	v8522 = m.ExcPending
-	if v8522 != 0 {
+	v8530 = m.ExcPending
+	if v8530 != 0 {
 		goto L1
 	} else {
 		goto L1790
 	}
 L134:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31])) = v7680
-	v7688 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v7688)+60)) = v7680
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31])) = v7688
+	v7696 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[1]))
+	*(*int32)(unsafe.Add(mBase, uint32(v7696)+60)) = v7688
 	F_InvalidateCatalogSnapshot(m)
 	mBase = m.M
-	v7691 = m.ExcPending
-	if v7691 != 0 {
+	v7699 = m.ExcPending
+	if v7699 != 0 {
 		goto L1
 	} else {
 		goto L1608
@@ -5165,8 +5173,8 @@ L135:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v7658 = m.ExcPending
-	if v7658 != 0 {
+	v7666 = m.ExcPending
+	if v7666 != 0 {
 		goto L1
 	} else {
 		goto L1603
@@ -5174,14 +5182,14 @@ L135:
 L136:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[32])) = int32(1663)
-	v7680 = int32(1)
+	v7688 = int32(1)
 	goto L134
 L137:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v7636 = m.ExcPending
-	if v7636 != 0 {
+	v7644 = m.ExcPending
+	if v7644 != 0 {
 		goto L1
 	} else {
 		goto L1599
@@ -5190,8 +5198,8 @@ L138:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v7613 = m.ExcPending
-	if v7613 != 0 {
+	v7621 = m.ExcPending
+	if v7621 != 0 {
 		goto L1
 	} else {
 		goto L1594
@@ -5200,8 +5208,8 @@ L139:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v7594 = m.ExcPending
-	if v7594 != 0 {
+	v7602 = m.ExcPending
+	if v7602 != 0 {
 		goto L1
 	} else {
 		goto L1590
@@ -5210,8 +5218,8 @@ L140:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v7575 = m.ExcPending
-	if v7575 != 0 {
+	v7583 = m.ExcPending
+	if v7583 != 0 {
 		goto L1
 	} else {
 		goto L1586
@@ -5220,8 +5228,8 @@ L141:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v7559 = m.ExcPending
-	if v7559 != 0 {
+	v7567 = m.ExcPending
+	if v7567 != 0 {
 		goto L1
 	} else {
 		goto L1582
@@ -5230,8 +5238,8 @@ L142:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v7542 = m.ExcPending
-	if v7542 != 0 {
+	v7550 = m.ExcPending
+	if v7550 != 0 {
 		goto L1
 	} else {
 		goto L1579
@@ -14912,66 +14920,70 @@ L1439:
 	v6969 = *(*int32)(unsafe.Add(mBase, uint32(v6968)))
 	*(*int32)(unsafe.Add(mBase, uint32(v6968))) = v6969 + v6964
 	v6973 = int32(0)
+	v6975 = int32(_a_F_InitPostgres_120)
+	v6976 = base.AtomicRmwOr32(m, v6973, v6975, v6973)
 	*(*uint8)(unsafe.Add(mBase, uint32(v6968)+192)) = uint8(v6973)
 	*(*uint8)(unsafe.Add(mBase, uint32(v6968)+200)) = uint8(v6973)
-	*(*int32)(unsafe.Add(mBase, uint32(v6968))) = v6969 + int32(2)
-	v6983 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[71]))
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[71])) = v6983 - v6964
+	v6984 = base.AtomicRmwOr32(m, v6973, v6975, v6973)
+	v6985 = *(*int32)(unsafe.Add(mBase, uint32(v6968)))
+	*(*int32)(unsafe.Add(mBase, uint32(v6968))) = v6985 + v6964
+	v6991 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[71]))
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[71])) = v6991 - v6964
 	goto L1441
 L1440:
 	;
 	goto L1441
 L1441:
 	;
-	v6989 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[73])))
-	if (v6989^int32(-1)|v6921)&int32(1) == int32(0) {
+	v6997 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[73])))
+	if (v6997^int32(-1)|v6921)&int32(1) == int32(0) {
 		goto L141
 	} else {
 		goto L1442
 	}
 L1442:
 	;
-	v6998 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[30]))
-	v6999 = int32(1)
-	if (base.B2i32(v6998 != v6999)|v6921)&v6999 != 0 {
+	v7006 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[30]))
+	v7007 = int32(1)
+	if (base.B2i32(v7006 != v7007)|v6921)&v7007 != 0 {
 		goto L1443
 	} else {
 		goto L1444
 	}
 L1443:
 	;
-	v7183 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[50])))
-	if v7183 != int32(1) {
+	v7191 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[50])))
+	if v7191 != int32(1) {
 		goto L1461
 	} else {
 		goto L1462
 	}
 L1444:
 	;
-	v7005 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[74]))
-	v7007 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[75]))
-	v7008 = v7005 + v7007
-	if v7008 <= int32(0) {
+	v7013 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[74]))
+	v7015 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[75]))
+	v7016 = v7013 + v7015
+	if v7016 <= int32(0) {
 		goto L1443
 	} else {
 		goto L1445
 	}
 L1445:
 	;
-	v7012 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[76]))
-	v7015 = base.AtomicRmwXchg32(m, v7012, int32(0), int32(1))
-	if v7015 != 0 {
+	v7020 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[76]))
+	v7023 = base.AtomicRmwXchg32(m, v7020, int32(0), int32(1))
+	if v7023 != 0 {
 		goto L1446
 	} else {
 		goto L1447
 	}
 L1446:
 	;
-	v7017 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[76]))
-	F_s_lock(m, v7017, int32(_a_F_InitPostgres_120), int32(789), int32(_a_F_InitPostgres_121))
+	v7025 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[76]))
+	F_s_lock(m, v7025, int32(_a_F_InitPostgres_121), int32(789), int32(_a_F_InitPostgres_122))
 	mBase = m.M
-	v7022 = m.ExcPending
-	if v7022 != 0 {
+	v7030 = m.ExcPending
+	if v7030 != 0 {
 		goto L1
 	} else {
 		goto L1449
@@ -14981,12 +14993,12 @@ L1447:
 	goto L1448
 L1448:
 	;
-	v7024 = v6930 + int32(444)
-	v7025 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v7024))) = v7025
-	v7028 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[77]))
-	v7029 = *(*int32)(unsafe.Add(mBase, uint32(v7028)+24))
-	if v7029 == v7025 {
+	v7032 = v6930 + int32(444)
+	v7033 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v7032))) = v7033
+	v7036 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[77]))
+	v7037 = *(*int32)(unsafe.Add(mBase, uint32(v7036)+24))
+	if v7037 == v7033 {
 		goto L1450
 	} else {
 		goto L1451
@@ -14996,33 +15008,33 @@ L1449:
 	goto L1448
 L1450:
 	;
-	v7124 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[76]))
-	v7125 = int32(0)
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v7124))), uint32(v7125))
-	v7128 = *(*int32)(unsafe.Add(mBase, uint32(v7024)))
-	if v7128 == v7008 {
+	v7132 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[76]))
+	v7133 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v7132))), uint32(v7133))
+	v7136 = *(*int32)(unsafe.Add(mBase, uint32(v7032)))
+	if v7136 == v7016 {
 		goto L1443
 	} else {
 		goto L1457
 	}
 L1451:
 	;
-	v7033 = v7028 + int32(20)
-	if v7029 == v7033 {
+	v7041 = v7036 + int32(20)
+	if v7037 == v7041 {
 		goto L1450
 	} else {
 		goto L1452
 	}
 L1452:
 	;
-	v7043 = v7029
-	v7068 = v6951
+	v7051 = v7037
+	v7076 = v6951
 	goto L1453
 L1453:
 	;
-	v7077 = v7068 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v7024))) = v7077
-	if v7008 == v7077 {
+	v7085 = v7076 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v7032))) = v7085
+	if v7016 == v7085 {
 		goto L1450
 	} else {
 		goto L1455
@@ -15032,10 +15044,10 @@ L1454:
 	goto L1450
 L1455:
 	;
-	v7080 = *(*int32)(unsafe.Add(mBase, uint32(v7043)+4))
-	if v7080 != v7033 {
-		v7043 = v7080
-		v7068 = v7077
+	v7088 = *(*int32)(unsafe.Add(mBase, uint32(v7051)+4))
+	if v7088 != v7041 {
+		v7051 = v7088
+		v7076 = v7085
 		goto L1453
 	} else {
 		goto L1456
@@ -15045,27 +15057,27 @@ L1456:
 	goto L1454
 L1457:
 	;
-	v7130 = *(*int32)(unsafe.Add(mBase, uint32(v6930)+444))
-	v7132 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[75]))
-	if v7130 < v7132 {
+	v7138 = *(*int32)(unsafe.Add(mBase, uint32(v6930)+444))
+	v7140 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[75]))
+	if v7138 < v7140 {
 		goto L140
 	} else {
 		goto L1458
 	}
 L1458:
 	;
-	v7135 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[78]))
-	v7137 = F_has_privs_of_role(m, v7135, int32(_a_F_InitPostgres_122))
+	v7143 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[78]))
+	v7145 = F_has_privs_of_role(m, v7143, int32(_a_F_InitPostgres_123))
 	mBase = m.M
-	v7138 = m.ExcPending
-	if v7138 != 0 {
+	v7146 = m.ExcPending
+	if v7146 != 0 {
 		goto L1
 	} else {
 		goto L1459
 	}
 L1459:
 	;
-	if v7137 == int32(0) {
+	if v7145 == int32(0) {
 		goto L139
 	} else {
 		goto L1460
@@ -15082,52 +15094,52 @@ L1461:
 	}
 L1462:
 	;
-	v7187 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[78]))
-	v7188 = F_has_rolreplication(m, v7187)
+	v7195 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[78]))
+	v7196 = F_has_rolreplication(m, v7195)
 	mBase = m.M
-	v7189 = m.ExcPending
-	if v7189 != 0 {
+	v7197 = m.ExcPending
+	if v7197 != 0 {
 		goto L1
 	} else {
 		goto L1463
 	}
 L1463:
 	;
-	if v7188 == int32(0) {
+	if v7196 == int32(0) {
 		goto L138
 	} else {
 		goto L1464
 	}
 L1464:
 	;
-	v7193 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[50])))
-	if v7193 != int32(1) {
+	v7201 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[50])))
+	if v7201 != int32(1) {
 		goto L1461
 	} else {
 		goto L1465
 	}
 L1465:
 	;
-	v7197 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[51])))
-	if v7197&int32(1) != 0 {
+	v7205 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[51])))
+	if v7205&int32(1) != 0 {
 		goto L1461
 	} else {
 		goto L1466
 	}
 L1466:
 	;
-	v7201 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[33]))
-	if v7201 != 0 {
+	v7209 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[33]))
+	if v7209 != 0 {
 		goto L1467
 	} else {
 		goto L1468
 	}
 L1467:
 	;
-	F_process_startup_options(m, v7201, v6921)
+	F_process_startup_options(m, v7209, v6921)
 	mBase = m.M
-	v7203 = m.ExcPending
-	if v7203 != 0 {
+	v7211 = m.ExcPending
+	if v7211 != 0 {
 		goto L1
 	} else {
 		goto L1470
@@ -15137,8 +15149,8 @@ L1468:
 	goto L1469
 L1469:
 	;
-	v7205 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[79]))
-	if int32(0) < v7205 {
+	v7213 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[79]))
+	if int32(0) < v7213 {
 		goto L1471
 	} else {
 		goto L1472
@@ -15148,7 +15160,7 @@ L1470:
 	goto L1469
 L1471:
 	;
-	F_pg_usleep(m, v7205*int32(_a_F_InitPostgres_123))
+	F_pg_usleep(m, v7213*int32(_a_F_InitPostgres_124))
 	mBase = m.M
 	goto L1473
 L1472:
@@ -15158,8 +15170,8 @@ L1473:
 	;
 	F_InitializeClientEncoding(m)
 	mBase = m.M
-	v7212 = m.ExcPending
-	if v7212 != 0 {
+	v7220 = m.ExcPending
+	if v7220 != 0 {
 		goto L1
 	} else {
 		goto L1474
@@ -15176,21 +15188,21 @@ L1475:
 	}
 L1476:
 	;
-	F_LockSharedObject(m, int32(1262), v7252, int32(3))
+	F_LockSharedObject(m, int32(1262), v7260, int32(3))
 	mBase = m.M
-	v7260 = m.ExcPending
-	if v7260 != 0 {
+	v7268 = m.ExcPending
+	if v7268 != 0 {
 		goto L1
 	} else {
 		goto L1492
 	}
 L1477:
 	;
-	v7216 = v6930 + int32(448)
-	F_ScanKeyInit(m, v7216, int32(2), int32(3), int32(62), v6918)
+	v7224 = v6930 + int32(448)
+	F_ScanKeyInit(m, v7224, int32(2), int32(3), int32(62), v6918)
 	mBase = m.M
-	v7221 = m.ExcPending
-	if v7221 != 0 {
+	v7229 = m.ExcPending
+	if v7229 != 0 {
 		goto L1
 	} else {
 		goto L1480
@@ -15207,202 +15219,202 @@ L1479:
 	}
 L1480:
 	;
-	v7225 = F_table_open(m, int32(1262), int32(1))
+	v7233 = F_table_open(m, int32(1262), int32(1))
 	mBase = m.M
-	v7226 = m.ExcPending
-	if v7226 != 0 {
+	v7234 = m.ExcPending
+	if v7234 != 0 {
 		goto L1
 	} else {
 		goto L1481
 	}
 L1481:
 	;
-	v7229 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[80])))
-	v7232 = F_systable_beginscan(m, v7225, int32(2671), v7229, int32(0), int32(1), v7216)
+	v7237 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[80])))
+	v7240 = F_systable_beginscan(m, v7233, int32(2671), v7237, int32(0), int32(1), v7224)
 	mBase = m.M
-	v7233 = m.ExcPending
-	if v7233 != 0 {
+	v7241 = m.ExcPending
+	if v7241 != 0 {
 		goto L1
 	} else {
 		goto L1482
 	}
 L1482:
 	;
-	v7234 = F_systable_getnext(m, v7232)
+	v7242 = F_systable_getnext(m, v7240)
 	mBase = m.M
-	v7235 = m.ExcPending
-	if v7235 != 0 {
+	v7243 = m.ExcPending
+	if v7243 != 0 {
 		goto L1
 	} else {
 		goto L1483
 	}
 L1483:
 	;
-	if v7234 != 0 {
+	if v7242 != 0 {
 		goto L1484
 	} else {
 		goto L1485
 	}
 L1484:
 	;
-	v7236 = F_heap_copytuple(m, v7234)
+	v7244 = F_heap_copytuple(m, v7242)
 	mBase = m.M
-	v7237 = m.ExcPending
-	if v7237 != 0 {
+	v7245 = m.ExcPending
+	if v7245 != 0 {
 		goto L1
 	} else {
 		goto L1487
 	}
 L1485:
 	;
-	v7238 = int32(0)
+	v7246 = int32(0)
 	goto L1486
 L1486:
 	;
-	F_systable_endscan(m, v7232)
+	F_systable_endscan(m, v7240)
 	mBase = m.M
-	v7240 = m.ExcPending
-	if v7240 != 0 {
+	v7248 = m.ExcPending
+	if v7248 != 0 {
 		goto L1
 	} else {
 		goto L1488
 	}
 L1487:
 	;
-	v7238 = v7236
+	v7246 = v7244
 	goto L1486
 L1488:
 	;
-	F_relation_close(m, v7225, int32(1))
+	F_relation_close(m, v7233, int32(1))
 	mBase = m.M
-	v7243 = m.ExcPending
-	if v7243 != 0 {
+	v7251 = m.ExcPending
+	if v7251 != 0 {
 		goto L1
 	} else {
 		goto L1489
 	}
 L1489:
 	;
-	if v7238 == int32(0) {
+	if v7246 == int32(0) {
 		goto L137
 	} else {
 		goto L1490
 	}
 L1490:
 	;
-	v7246 = *(*int32)(unsafe.Add(mBase, uint32(v7238)+16))
-	v7247 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7246)+22)))
-	v7249 = *(*int32)(unsafe.Add(mBase, uint32(v7246+v7247)))
-	v7252 = v7249
+	v7254 = *(*int32)(unsafe.Add(mBase, uint32(v7246)+16))
+	v7255 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7254)+22)))
+	v7257 = *(*int32)(unsafe.Add(mBase, uint32(v7254+v7255)))
+	v7260 = v7257
 	goto L1476
 L1491:
 	;
-	v7252 = v6919
+	v7260 = v6919
 	goto L1476
 L1492:
 	;
-	v7262 = v6930 + int32(448)
-	F_ScanKeyInit(m, v7262, int32(1), int32(3), int32(184), v7252)
+	v7270 = v6930 + int32(448)
+	F_ScanKeyInit(m, v7270, int32(1), int32(3), int32(184), v7260)
 	mBase = m.M
-	v7267 = m.ExcPending
-	if v7267 != 0 {
+	v7275 = m.ExcPending
+	if v7275 != 0 {
 		goto L1
 	} else {
 		goto L1493
 	}
 L1493:
 	;
-	v7270 = F_table_open(m, int32(1262), int32(1))
+	v7278 = F_table_open(m, int32(1262), int32(1))
 	mBase = m.M
-	v7271 = m.ExcPending
-	if v7271 != 0 {
+	v7279 = m.ExcPending
+	if v7279 != 0 {
 		goto L1
 	} else {
 		goto L1494
 	}
 L1494:
 	;
-	v7274 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[80])))
-	v7277 = F_systable_beginscan(m, v7270, int32(2672), v7274, int32(0), int32(1), v7262)
+	v7282 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[80])))
+	v7285 = F_systable_beginscan(m, v7278, int32(2672), v7282, int32(0), int32(1), v7270)
 	mBase = m.M
-	v7278 = m.ExcPending
-	if v7278 != 0 {
+	v7286 = m.ExcPending
+	if v7286 != 0 {
 		goto L1
 	} else {
 		goto L1495
 	}
 L1495:
 	;
-	v7279 = F_systable_getnext(m, v7277)
+	v7287 = F_systable_getnext(m, v7285)
 	mBase = m.M
-	v7280 = m.ExcPending
-	if v7280 != 0 {
+	v7288 = m.ExcPending
+	if v7288 != 0 {
 		goto L1
 	} else {
 		goto L1496
 	}
 L1496:
 	;
-	if v7279 != 0 {
+	if v7287 != 0 {
 		goto L1497
 	} else {
 		goto L1498
 	}
 L1497:
 	;
-	v7281 = F_heap_copytuple(m, v7279)
+	v7289 = F_heap_copytuple(m, v7287)
 	mBase = m.M
-	v7282 = m.ExcPending
-	if v7282 != 0 {
+	v7290 = m.ExcPending
+	if v7290 != 0 {
 		goto L1
 	} else {
 		goto L1500
 	}
 L1498:
 	;
-	v7283 = int32(0)
+	v7291 = int32(0)
 	goto L1499
 L1499:
 	;
-	F_systable_endscan(m, v7277)
+	F_systable_endscan(m, v7285)
 	mBase = m.M
-	v7285 = m.ExcPending
-	if v7285 != 0 {
+	v7293 = m.ExcPending
+	if v7293 != 0 {
 		goto L1
 	} else {
 		goto L1501
 	}
 L1500:
 	;
-	v7283 = v7281
+	v7291 = v7289
 	goto L1499
 L1501:
 	;
-	F_relation_close(m, v7270, int32(1))
+	F_relation_close(m, v7278, int32(1))
 	mBase = m.M
-	v7288 = m.ExcPending
-	if v7288 != 0 {
+	v7296 = m.ExcPending
+	if v7296 != 0 {
 		goto L1
 	} else {
 		goto L1502
 	}
 L1502:
 	;
-	if v7283 != 0 {
+	if v7291 != 0 {
 		goto L1504
 	} else {
 		goto L1505
 	}
 L1503:
 	;
-	v7332 = v6930 + int32(448)
-	v7334 = v7291 + int32(4)
+	v7340 = v6930 + int32(448)
+	v7342 = v7299 + int32(4)
 	goto L1527
 L1504:
 	;
-	v7289 = *(*int32)(unsafe.Add(mBase, uint32(v7283)+16))
-	v7290 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7289)+22)))
-	v7291 = v7289 + v7290
+	v7297 = *(*int32)(unsafe.Add(mBase, uint32(v7291)+16))
+	v7298 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7297)+22)))
+	v7299 = v7297 + v7298
 	if v6918 == int32(0) {
 		goto L1503
 	} else {
@@ -15420,59 +15432,59 @@ L1506:
 	}
 L1507:
 	;
-	v7295 = v7291 + int32(4)
-	if v7295|v6918 != 0 {
+	v7303 = v7299 + int32(4)
+	if v7303|v6918 != 0 {
 		goto L1509
 	} else {
 		goto L1510
 	}
 L1508:
 	;
-	if v7310 == int32(0) {
+	if v7318 == int32(0) {
 		goto L1503
 	} else {
 		goto L1518
 	}
 L1509:
 	;
-	v7301 = int32(-1)
+	v7309 = int32(-1)
 	goto L1511
 L1510:
 	;
-	v7301 = int32(0)
+	v7309 = int32(0)
 	goto L1511
 L1511:
 	;
-	if v7295 != 0 {
+	if v7303 != 0 {
 		goto L1512
 	} else {
 		goto L1513
 	}
 L1512:
 	;
-	v7302 = int32(1)
+	v7310 = int32(1)
 	goto L1514
 L1513:
 	;
-	v7302 = v7301
+	v7310 = v7309
 	goto L1514
 L1514:
 	;
-	v7303 = int32(0)
-	if base.B2i32(v7295 == v7303)|base.B2i32(v6918 == v7303) != 0 {
+	v7311 = int32(0)
+	if base.B2i32(v7303 == v7311)|base.B2i32(v6918 == v7311) != 0 {
 		goto L1515
 	} else {
 		goto L1516
 	}
 L1515:
 	;
-	v7310 = v7302
+	v7318 = v7310
 	goto L1517
 L1516:
 	;
-	v7309 = F_strncmp(m, v7295, v6918, int32(64))
+	v7317 = F_strncmp(m, v7303, v6918, int32(64))
 	mBase = m.M
-	v7310 = v7309
+	v7318 = v7317
 	goto L1517
 L1517:
 	;
@@ -15484,8 +15496,8 @@ L1519:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v7316 = m.ExcPending
-	if v7316 != 0 {
+	v7324 = m.ExcPending
+	if v7324 != 0 {
 		goto L1
 	} else {
 		goto L1520
@@ -15494,19 +15506,19 @@ L1520:
 	;
 	F_errcode(m, int32(1283))
 	mBase = m.M
-	v7319 = m.ExcPending
-	if v7319 != 0 {
+	v7327 = m.ExcPending
+	if v7327 != 0 {
 		goto L1
 	} else {
 		goto L1521
 	}
 L1521:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+240)) = v7252
-	F_errmsg(m, int32(_a_F_InitPostgres_124), v6930+int32(240))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+240)) = v7260
+	F_errmsg(m, int32(_a_F_InitPostgres_125), v6930+int32(240))
 	mBase = m.M
-	v7325 = m.ExcPending
-	if v7325 != 0 {
+	v7333 = m.ExcPending
+	if v7333 != 0 {
 		goto L1
 	} else {
 		goto L1522
@@ -15515,8 +15527,8 @@ L1522:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(1101), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v7330 = m.ExcPending
-	if v7330 != 0 {
+	v7338 = m.ExcPending
+	if v7338 != 0 {
 		goto L1
 	} else {
 		goto L1523
@@ -15528,11 +15540,11 @@ L1523:
 	}
 L1524:
 	;
-	v7454 = *(*int32)(unsafe.Add(mBase, uint32(v7291)+80))
+	v7462 = *(*int32)(unsafe.Add(mBase, uint32(v7299)+80))
 	goto L1555
 L1525:
 	;
-	v7451 = F_strlen(m, v7440)
+	v7459 = F_strlen(m, v7448)
 	mBase = m.M
 	goto L1524
 L1527:
@@ -15540,116 +15552,116 @@ L1527:
 	goto L1528
 L1528:
 	;
-	v7341 = int32(63)
-	if (v7332^v7334)&int32(3) != 0 {
+	v7349 = int32(63)
+	if (v7340^v7342)&int32(3) != 0 {
 		goto L1532
 	} else {
 		goto L1533
 	}
 L1529:
 	;
-	v7444 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v7441))) = uint8(v7444)
+	v7452 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v7449))) = uint8(v7452)
 	goto L1525
 L1530:
 	;
-	v7425 = v7420
-	v7426 = v7421
-	v7427 = v7422
+	v7433 = v7428
+	v7434 = v7429
+	v7435 = v7430
 	goto L1551
 L1531:
 	;
-	if v7415 == int32(0) {
-		v7440 = v7413
-		v7441 = v7414
+	if v7423 == int32(0) {
+		v7448 = v7421
+		v7449 = v7422
 		goto L1529
 	} else {
 		goto L1550
 	}
 L1532:
 	;
-	v7413 = v7334
-	v7414 = v7332
-	v7415 = v7341
+	v7421 = v7342
+	v7422 = v7340
+	v7423 = v7349
 	goto L1531
 L1533:
 	;
 	goto L1534
 L1534:
 	;
-	v7345 = int32(0)
-	if base.B2i32(v7334&int32(3) == v7345)|int32(0) == v7345 {
+	v7353 = int32(0)
+	if base.B2i32(v7342&int32(3) == v7353)|int32(0) == v7353 {
 		goto L1536
 	} else {
 		goto L1537
 	}
 L1535:
 	;
-	if v7381 == int32(0) {
-		v7440 = v7378
-		v7441 = v7379
+	if v7389 == int32(0) {
+		v7448 = v7386
+		v7449 = v7387
 		goto L1529
 	} else {
 		goto L1544
 	}
 L1536:
 	;
-	v7357 = v7334
-	v7358 = v7332
-	v7359 = v7341
+	v7365 = v7342
+	v7366 = v7340
+	v7367 = v7349
 	goto L1539
 L1537:
 	;
 	goto L1538
 L1538:
 	;
-	v7378 = v7334
-	v7379 = v7332
-	v7380 = v7341
-	v7381 = int32(1)
+	v7386 = v7342
+	v7387 = v7340
+	v7388 = v7349
+	v7389 = int32(1)
 	goto L1535
 L1539:
 	;
-	v7361 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7357))))
-	*(*uint8)(unsafe.Add(mBase, uint32(v7358))) = uint8(v7361)
-	if v7361 == int32(0) {
-		v7420 = v7357
-		v7421 = v7358
-		v7422 = v7359
+	v7369 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7365))))
+	*(*uint8)(unsafe.Add(mBase, uint32(v7366))) = uint8(v7369)
+	if v7369 == int32(0) {
+		v7428 = v7365
+		v7429 = v7366
+		v7430 = v7367
 		goto L1530
 	} else {
 		goto L1541
 	}
 L1540:
 	;
-	v7378 = v7372
-	v7379 = v7366
-	v7380 = v7368
-	v7381 = v7370
+	v7386 = v7380
+	v7387 = v7374
+	v7388 = v7376
+	v7389 = v7378
 	goto L1535
 L1541:
 	;
-	v7365 = int32(1)
-	v7366 = v7358 + v7365
-	v7368 = v7359 - v7365
-	v7369 = int32(0)
-	v7370 = base.B2i32(v7368 != v7369)
-	v7372 = v7357 + v7365
-	if v7372&int32(3) == v7369 {
-		v7378 = v7372
-		v7379 = v7366
-		v7380 = v7368
-		v7381 = v7370
+	v7373 = int32(1)
+	v7374 = v7366 + v7373
+	v7376 = v7367 - v7373
+	v7377 = int32(0)
+	v7378 = base.B2i32(v7376 != v7377)
+	v7380 = v7365 + v7373
+	if v7380&int32(3) == v7377 {
+		v7386 = v7380
+		v7387 = v7374
+		v7388 = v7376
+		v7389 = v7378
 		goto L1535
 	} else {
 		goto L1542
 	}
 L1542:
 	;
-	if v7368 != 0 {
-		v7357 = v7372
-		v7358 = v7366
-		v7359 = v7368
+	if v7376 != 0 {
+		v7365 = v7380
+		v7366 = v7374
+		v7367 = v7376
 		goto L1539
 	} else {
 		goto L1543
@@ -15659,50 +15671,50 @@ L1543:
 	goto L1540
 L1544:
 	;
-	v7384 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7378))))
-	if base.B2i32(v7384 == int32(0))|base.B2i32(base.Ui32(v7380) < base.Ui32(int32(4))) != 0 {
-		v7413 = v7378
-		v7414 = v7379
-		v7415 = v7380
+	v7392 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7386))))
+	if base.B2i32(v7392 == int32(0))|base.B2i32(base.Ui32(v7388) < base.Ui32(int32(4))) != 0 {
+		v7421 = v7386
+		v7422 = v7387
+		v7423 = v7388
 		goto L1531
 	} else {
 		goto L1545
 	}
 L1545:
 	;
-	v7391 = v7378
-	v7392 = v7379
-	v7393 = v7380
+	v7399 = v7386
+	v7400 = v7387
+	v7401 = v7388
 	goto L1546
 L1546:
 	;
-	v7396 = *(*int32)(unsafe.Add(mBase, uint32(v7391)))
-	v7399 = int32(-2139062144)
-	if (int32(16843008)-v7396|v7396)&v7399 != v7399 {
-		v7420 = v7391
-		v7421 = v7392
-		v7422 = v7393
+	v7404 = *(*int32)(unsafe.Add(mBase, uint32(v7399)))
+	v7407 = int32(-2139062144)
+	if (int32(16843008)-v7404|v7404)&v7407 != v7407 {
+		v7428 = v7399
+		v7429 = v7400
+		v7430 = v7401
 		goto L1530
 	} else {
 		goto L1548
 	}
 L1547:
 	;
-	v7413 = v7407
-	v7414 = v7405
-	v7415 = v7409
+	v7421 = v7415
+	v7422 = v7413
+	v7423 = v7417
 	goto L1531
 L1548:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7392))) = v7396
-	v7404 = int32(4)
-	v7405 = v7392 + v7404
-	v7407 = v7391 + v7404
-	v7409 = v7393 - v7404
-	if base.Ui32(int32(3)) < base.Ui32(v7409) {
-		v7391 = v7407
-		v7392 = v7405
-		v7393 = v7409
+	*(*int32)(unsafe.Add(mBase, uint32(v7400))) = v7404
+	v7412 = int32(4)
+	v7413 = v7400 + v7412
+	v7415 = v7399 + v7412
+	v7417 = v7401 - v7412
+	if base.Ui32(int32(3)) < base.Ui32(v7417) {
+		v7399 = v7415
+		v7400 = v7413
+		v7401 = v7417
 		goto L1546
 	} else {
 		goto L1549
@@ -15712,36 +15724,36 @@ L1549:
 	goto L1547
 L1550:
 	;
-	v7420 = v7413
-	v7421 = v7414
-	v7422 = v7415
+	v7428 = v7421
+	v7429 = v7422
+	v7430 = v7423
 	goto L1530
 L1551:
 	;
-	v7429 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7425))))
-	*(*uint8)(unsafe.Add(mBase, uint32(v7426))) = uint8(v7429)
-	if v7429 == int32(0) {
-		v7440 = v7425
-		v7441 = v7426
+	v7437 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7433))))
+	*(*uint8)(unsafe.Add(mBase, uint32(v7434))) = uint8(v7437)
+	if v7437 == int32(0) {
+		v7448 = v7433
+		v7449 = v7434
 		goto L1529
 	} else {
 		goto L1553
 	}
 L1552:
 	;
-	v7440 = v7436
-	v7441 = v7434
+	v7448 = v7444
+	v7449 = v7442
 	goto L1529
 L1553:
 	;
-	v7433 = int32(1)
-	v7434 = v7426 + v7433
-	v7436 = v7425 + v7433
-	v7438 = v7427 - v7433
-	if v7438 != 0 {
-		v7425 = v7436
-		v7426 = v7434
-		v7427 = v7438
+	v7441 = int32(1)
+	v7442 = v7434 + v7441
+	v7444 = v7433 + v7441
+	v7446 = v7435 - v7441
+	if v7446 != 0 {
+		v7433 = v7444
+		v7434 = v7442
+		v7435 = v7446
 		goto L1551
 	} else {
 		goto L1554
@@ -15751,106 +15763,106 @@ L1554:
 	goto L1552
 L1555:
 	;
-	if v7454 == int32(-2) {
+	if v7462 == int32(-2) {
 		goto L135
 	} else {
 		goto L1556
 	}
 L1556:
 	;
-	v7458 = *(*int32)(unsafe.Add(mBase, uint32(v7291)+92))
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[32])) = v7458
-	v7461 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7291)+79)))
-	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[81])) = uint8(v7461)
+	v7466 = *(*int32)(unsafe.Add(mBase, uint32(v7299)+92))
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[32])) = v7466
+	v7469 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7299)+79)))
+	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[81])) = uint8(v7469)
 	if v6923 == int32(0) {
-		v7680 = v7252
+		v7688 = v7260
 		goto L134
 	} else {
 		goto L1557
 	}
 L1557:
 	;
-	if (v7332^v6923)&int32(3) != 0 {
+	if (v7340^v6923)&int32(3) != 0 {
 		goto L1561
 	} else {
 		goto L1562
 	}
 L1558:
 	;
-	v7680 = v7252
+	v7688 = v7260
 	goto L134
 L1559:
 	;
 	goto L1558
 L1560:
 	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v7519))) = uint8(v7518)
-	if v7518&int32(255) == int32(0) {
+	*(*uint8)(unsafe.Add(mBase, uint32(v7527))) = uint8(v7526)
+	if v7526&int32(255) == int32(0) {
 		goto L1559
 	} else {
 		goto L1575
 	}
 L1561:
 	;
-	v7470 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7332))))
-	v7517 = v7332
-	v7518 = v7470
-	v7519 = v6923
+	v7478 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7340))))
+	v7525 = v7340
+	v7526 = v7478
+	v7527 = v6923
 	goto L1560
 L1562:
 	;
 	goto L1563
 L1563:
 	;
-	if v7332&int32(3) != 0 {
+	if v7340&int32(3) != 0 {
 		goto L1564
 	} else {
 		goto L1565
 	}
 L1564:
 	;
-	v7474 = v7332
-	v7476 = v6923
+	v7482 = v7340
+	v7484 = v6923
 	goto L1567
 L1565:
 	;
-	v7488 = v7332
-	v7490 = v6923
+	v7496 = v7340
+	v7498 = v6923
 	goto L1566
 L1566:
 	;
-	v7492 = *(*int32)(unsafe.Add(mBase, uint32(v7488)))
-	v7495 = int32(-2139062144)
-	if (int32(16843008)-v7492|v7492)&v7495 != v7495 {
-		v7517 = v7488
-		v7518 = v7492
-		v7519 = v7490
+	v7500 = *(*int32)(unsafe.Add(mBase, uint32(v7496)))
+	v7503 = int32(-2139062144)
+	if (int32(16843008)-v7500|v7500)&v7503 != v7503 {
+		v7525 = v7496
+		v7526 = v7500
+		v7527 = v7498
 		goto L1560
 	} else {
 		goto L1571
 	}
 L1567:
 	;
-	v7477 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7474))))
-	*(*uint8)(unsafe.Add(mBase, uint32(v7476))) = uint8(v7477)
-	if v7477 == int32(0) {
+	v7485 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7482))))
+	*(*uint8)(unsafe.Add(mBase, uint32(v7484))) = uint8(v7485)
+	if v7485 == int32(0) {
 		goto L1559
 	} else {
 		goto L1569
 	}
 L1568:
 	;
-	v7488 = v7484
-	v7490 = v7482
+	v7496 = v7492
+	v7498 = v7490
 	goto L1566
 L1569:
 	;
-	v7481 = int32(1)
-	v7482 = v7476 + v7481
-	v7484 = v7474 + v7481
-	if v7484&int32(3) != 0 {
-		v7474 = v7484
-		v7476 = v7482
+	v7489 = int32(1)
+	v7490 = v7484 + v7489
+	v7492 = v7482 + v7489
+	if v7492&int32(3) != 0 {
+		v7482 = v7492
+		v7484 = v7490
 		goto L1567
 	} else {
 		goto L1570
@@ -15860,48 +15872,48 @@ L1570:
 	goto L1568
 L1571:
 	;
-	v7500 = v7488
-	v7501 = v7492
-	v7502 = v7490
+	v7508 = v7496
+	v7509 = v7500
+	v7510 = v7498
 	goto L1572
 L1572:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7502))) = v7501
-	v7504 = int32(4)
-	v7505 = v7502 + v7504
-	v7507 = v7500 + v7504
-	v7509 = *(*int32)(unsafe.Add(mBase, uint32(v7500)+4))
-	v7512 = int32(-2139062144)
-	if (int32(16843008)-v7509|v7509)&v7512 == v7512 {
-		v7500 = v7507
-		v7501 = v7509
-		v7502 = v7505
+	*(*int32)(unsafe.Add(mBase, uint32(v7510))) = v7509
+	v7512 = int32(4)
+	v7513 = v7510 + v7512
+	v7515 = v7508 + v7512
+	v7517 = *(*int32)(unsafe.Add(mBase, uint32(v7508)+4))
+	v7520 = int32(-2139062144)
+	if (int32(16843008)-v7517|v7517)&v7520 == v7520 {
+		v7508 = v7515
+		v7509 = v7517
+		v7510 = v7513
 		goto L1572
 	} else {
 		goto L1574
 	}
 L1573:
 	;
-	v7517 = v7507
-	v7518 = v7509
-	v7519 = v7505
+	v7525 = v7515
+	v7526 = v7517
+	v7527 = v7513
 	goto L1560
 L1574:
 	;
 	goto L1573
 L1575:
 	;
-	v7526 = v7517
-	v7528 = v7519
+	v7534 = v7525
+	v7536 = v7527
 	goto L1576
 L1576:
 	;
-	v7529 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7526)+1)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v7528)+1)) = uint8(v7529)
-	v7531 = int32(1)
-	if v7529 != 0 {
-		v7526 = v7526 + v7531
-		v7528 = v7528 + v7531
+	v7537 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7534)+1)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v7536)+1)) = uint8(v7537)
+	v7539 = int32(1)
+	if v7537 != 0 {
+		v7534 = v7534 + v7539
+		v7536 = v7536 + v7539
 		goto L1576
 	} else {
 		goto L1578
@@ -15914,12 +15926,12 @@ L1578:
 	goto L1577
 L1579:
 	;
-	v7544 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[82]))
-	*(*int32)(unsafe.Add(mBase, uint32(v44)+416)) = v7544
-	F_errmsg(m, int32(_a_F_InitPostgres_125), v44+int32(416))
+	v7552 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[82]))
+	*(*int32)(unsafe.Add(mBase, uint32(v44)+416)) = v7552
+	F_errmsg(m, int32(_a_F_InitPostgres_126), v44+int32(416))
 	mBase = m.M
-	v7550 = m.ExcPending
-	if v7550 != 0 {
+	v7558 = m.ExcPending
+	if v7558 != 0 {
 		goto L1
 	} else {
 		goto L1580
@@ -15928,8 +15940,8 @@ L1580:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(225), int32(_a_F_InitPostgres_118))
 	mBase = m.M
-	v7555 = m.ExcPending
-	if v7555 != 0 {
+	v7563 = m.ExcPending
+	if v7563 != 0 {
 		goto L1
 	} else {
 		goto L1581
@@ -15943,18 +15955,18 @@ L1582:
 	;
 	F_errcode(m, int32(16797828))
 	mBase = m.M
-	v7562 = m.ExcPending
-	if v7562 != 0 {
+	v7570 = m.ExcPending
+	if v7570 != 0 {
 		goto L1
 	} else {
 		goto L1583
 	}
 L1583:
 	;
-	F_errmsg(m, int32(_a_F_InitPostgres_126), int32(0))
+	F_errmsg(m, int32(_a_F_InitPostgres_127), int32(0))
 	mBase = m.M
-	v7566 = m.ExcPending
-	if v7566 != 0 {
+	v7574 = m.ExcPending
+	if v7574 != 0 {
 		goto L1
 	} else {
 		goto L1584
@@ -15963,8 +15975,8 @@ L1584:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(940), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v7571 = m.ExcPending
-	if v7571 != 0 {
+	v7579 = m.ExcPending
+	if v7579 != 0 {
 		goto L1
 	} else {
 		goto L1585
@@ -15976,21 +15988,21 @@ L1585:
 	}
 L1586:
 	;
-	F_errcode(m, int32(_a_F_InitPostgres_127))
+	F_errcode(m, int32(_a_F_InitPostgres_128))
 	mBase = m.M
-	v7578 = m.ExcPending
-	if v7578 != 0 {
+	v7586 = m.ExcPending
+	if v7586 != 0 {
 		goto L1
 	} else {
 		goto L1587
 	}
 L1587:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+320)) = int32(_a_F_InitPostgres_128)
-	F_errmsg(m, int32(_a_F_InitPostgres_129), v6930+int32(320))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+320)) = int32(_a_F_InitPostgres_129)
+	F_errmsg(m, int32(_a_F_InitPostgres_130), v6930+int32(320))
 	mBase = m.M
-	v7585 = m.ExcPending
-	if v7585 != 0 {
+	v7593 = m.ExcPending
+	if v7593 != 0 {
 		goto L1
 	} else {
 		goto L1588
@@ -15999,8 +16011,8 @@ L1588:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(961), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v7590 = m.ExcPending
-	if v7590 != 0 {
+	v7598 = m.ExcPending
+	if v7598 != 0 {
 		goto L1
 	} else {
 		goto L1589
@@ -16012,21 +16024,21 @@ L1589:
 	}
 L1590:
 	;
-	F_errcode(m, int32(_a_F_InitPostgres_127))
+	F_errcode(m, int32(_a_F_InitPostgres_128))
 	mBase = m.M
-	v7597 = m.ExcPending
-	if v7597 != 0 {
+	v7605 = m.ExcPending
+	if v7605 != 0 {
 		goto L1
 	} else {
 		goto L1591
 	}
 L1591:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+336)) = int32(_a_F_InitPostgres_130)
-	F_errmsg(m, int32(_a_F_InitPostgres_131), v6930+int32(336))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+336)) = int32(_a_F_InitPostgres_131)
+	F_errmsg(m, int32(_a_F_InitPostgres_132), v6930+int32(336))
 	mBase = m.M
-	v7604 = m.ExcPending
-	if v7604 != 0 {
+	v7612 = m.ExcPending
+	if v7612 != 0 {
 		goto L1
 	} else {
 		goto L1592
@@ -16035,8 +16047,8 @@ L1592:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(967), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v7609 = m.ExcPending
-	if v7609 != 0 {
+	v7617 = m.ExcPending
+	if v7617 != 0 {
 		goto L1
 	} else {
 		goto L1593
@@ -16050,29 +16062,29 @@ L1594:
 	;
 	F_errcode(m, int32(16797828))
 	mBase = m.M
-	v7616 = m.ExcPending
-	if v7616 != 0 {
+	v7624 = m.ExcPending
+	if v7624 != 0 {
 		goto L1
 	} else {
 		goto L1595
 	}
 L1595:
 	;
-	F_errmsg(m, int32(_a_F_InitPostgres_132), int32(0))
+	F_errmsg(m, int32(_a_F_InitPostgres_133), int32(0))
 	mBase = m.M
-	v7620 = m.ExcPending
-	if v7620 != 0 {
+	v7628 = m.ExcPending
+	if v7628 != 0 {
 		goto L1
 	} else {
 		goto L1596
 	}
 L1596:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+304)) = int32(_a_F_InitPostgres_133)
-	F_errdetail(m, int32(_a_F_InitPostgres_134), v6930+int32(304))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+304)) = int32(_a_F_InitPostgres_134)
+	F_errdetail(m, int32(_a_F_InitPostgres_135), v6930+int32(304))
 	mBase = m.M
-	v7627 = m.ExcPending
-	if v7627 != 0 {
+	v7635 = m.ExcPending
+	if v7635 != 0 {
 		goto L1
 	} else {
 		goto L1597
@@ -16081,8 +16093,8 @@ L1597:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(980), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v7632 = m.ExcPending
-	if v7632 != 0 {
+	v7640 = m.ExcPending
+	if v7640 != 0 {
 		goto L1
 	} else {
 		goto L1598
@@ -16096,8 +16108,8 @@ L1599:
 	;
 	F_errcode(m, int32(1283))
 	mBase = m.M
-	v7639 = m.ExcPending
-	if v7639 != 0 {
+	v7647 = m.ExcPending
+	if v7647 != 0 {
 		goto L1
 	} else {
 		goto L1600
@@ -16105,10 +16117,10 @@ L1599:
 L1600:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6930)+288)) = v6918
-	F_errmsg(m, int32(_a_F_InitPostgres_135), v6930+int32(288))
+	F_errmsg(m, int32(_a_F_InitPostgres_136), v6930+int32(288))
 	mBase = m.M
-	v7645 = m.ExcPending
-	if v7645 != 0 {
+	v7653 = m.ExcPending
+	if v7653 != 0 {
 		goto L1
 	} else {
 		goto L1601
@@ -16117,8 +16129,8 @@ L1601:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(1032), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v7650 = m.ExcPending
-	if v7650 != 0 {
+	v7658 = m.ExcPending
+	if v7658 != 0 {
 		goto L1
 	} else {
 		goto L1602
@@ -16132,8 +16144,8 @@ L1603:
 	;
 	F_errcode(m, int32(325))
 	mBase = m.M
-	v7661 = m.ExcPending
-	if v7661 != 0 {
+	v7669 = m.ExcPending
+	if v7669 != 0 {
 		goto L1
 	} else {
 		goto L1604
@@ -16141,20 +16153,20 @@ L1603:
 L1604:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6930)+272)) = v6930 + int32(448)
-	F_errmsg(m, int32(_a_F_InitPostgres_136), v6930+int32(272))
+	F_errmsg(m, int32(_a_F_InitPostgres_137), v6930+int32(272))
 	mBase = m.M
-	v7669 = m.ExcPending
-	if v7669 != 0 {
+	v7677 = m.ExcPending
+	if v7677 != 0 {
 		goto L1
 	} else {
 		goto L1605
 	}
 L1605:
 	;
-	F_errhint(m, int32(_a_F_InitPostgres_137), int32(0))
+	F_errhint(m, int32(_a_F_InitPostgres_138), int32(0))
 	mBase = m.M
-	v7673 = m.ExcPending
-	if v7673 != 0 {
+	v7681 = m.ExcPending
+	if v7681 != 0 {
 		goto L1
 	} else {
 		goto L1606
@@ -16163,8 +16175,8 @@ L1606:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(1111), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v7678 = m.ExcPending
-	if v7678 != 0 {
+	v7686 = m.ExcPending
+	if v7686 != 0 {
 		goto L1
 	} else {
 		goto L1607
@@ -16176,12 +16188,12 @@ L1607:
 	}
 L1608:
 	;
-	v7693 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
-	v7695 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[32]))
-	v7696 = F_GetDatabasePath(m, v7693, v7695)
+	v7701 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
+	v7703 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[32]))
+	v7704 = F_GetDatabasePath(m, v7701, v7703)
 	mBase = m.M
-	v7697 = m.ExcPending
-	if v7697 != 0 {
+	v7705 = m.ExcPending
+	if v7705 != 0 {
 		goto L1
 	} else {
 		goto L1609
@@ -16195,17 +16207,17 @@ L1609:
 	}
 L1610:
 	;
-	v8316 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[33]))
-	if v8316 != 0 {
+	v8324 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[33]))
+	if v8324 != 0 {
 		goto L1754
 	} else {
 		goto L1755
 	}
 L1611:
 	;
-	v7699 = F_access(m, v7696, int32(0))
+	v7707 = F_access(m, v7704, int32(0))
 	mBase = m.M
-	if v7699 == int32(-1) {
+	if v7707 == int32(-1) {
 		goto L1614
 	} else {
 		goto L1615
@@ -16215,21 +16227,21 @@ L1612:
 	goto L1613
 L1613:
 	;
-	F_SetDatabasePath(m, v7696)
+	F_SetDatabasePath(m, v7704)
 	mBase = m.M
-	v8267 = m.ExcPending
-	if v8267 != 0 {
+	v8275 = m.ExcPending
+	if v8275 != 0 {
 		goto L1
 	} else {
 		goto L1750
 	}
 L1614:
 	;
-	v7703 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[44]))
+	v7711 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[44]))
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v7707 = m.ExcPending
-	if v7707 != 0 {
+	v7715 = m.ExcPending
+	if v7715 != 0 {
 		goto L1
 	} else {
 		goto L1617
@@ -16239,17 +16251,17 @@ L1615:
 	goto L1616
 L1616:
 	;
-	F_ValidatePgVersion(m, v7696)
+	F_ValidatePgVersion(m, v7704)
 	mBase = m.M
-	v7724 = m.ExcPending
-	if v7724 != 0 {
+	v7732 = m.ExcPending
+	if v7732 != 0 {
 		goto L1
 	} else {
 		goto L1622
 	}
 L1617:
 	;
-	if v7703 == int32(44) {
+	if v7711 == int32(44) {
 		goto L127
 	} else {
 		goto L1618
@@ -16258,19 +16270,19 @@ L1618:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v7711 = m.ExcPending
-	if v7711 != 0 {
+	v7719 = m.ExcPending
+	if v7719 != 0 {
 		goto L1
 	} else {
 		goto L1619
 	}
 L1619:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+32)) = v7696
-	F_errmsg(m, int32(_a_F_InitPostgres_138), v6930+int32(32))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+32)) = v7704
+	F_errmsg(m, int32(_a_F_InitPostgres_139), v6930+int32(32))
 	mBase = m.M
-	v7717 = m.ExcPending
-	if v7717 != 0 {
+	v7725 = m.ExcPending
+	if v7725 != 0 {
 		goto L1
 	} else {
 		goto L1620
@@ -16279,8 +16291,8 @@ L1620:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(1177), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v7722 = m.ExcPending
-	if v7722 != 0 {
+	v7730 = m.ExcPending
+	if v7730 != 0 {
 		goto L1
 	} else {
 		goto L1621
@@ -16292,20 +16304,20 @@ L1621:
 	}
 L1622:
 	;
-	F_SetDatabasePath(m, v7696)
+	F_SetDatabasePath(m, v7704)
 	mBase = m.M
-	v7726 = m.ExcPending
-	if v7726 != 0 {
+	v7734 = m.ExcPending
+	if v7734 != 0 {
 		goto L1
 	} else {
 		goto L1623
 	}
 L1623:
 	;
-	F_pfree(m, v7696)
+	F_pfree(m, v7704)
 	mBase = m.M
-	v7728 = m.ExcPending
-	if v7728 != 0 {
+	v7736 = m.ExcPending
+	if v7736 != 0 {
 		goto L1
 	} else {
 		goto L1624
@@ -16314,8 +16326,8 @@ L1624:
 	;
 	F_RelationCacheInitializePhase3(m)
 	mBase = m.M
-	v7730 = m.ExcPending
-	if v7730 != 0 {
+	v7738 = m.ExcPending
+	if v7738 != 0 {
 		goto L1
 	} else {
 		goto L1625
@@ -16324,49 +16336,49 @@ L1625:
 	;
 	F_initialize_acl(m)
 	mBase = m.M
-	v7732 = m.ExcPending
-	if v7732 != 0 {
+	v7740 = m.ExcPending
+	if v7740 != 0 {
 		goto L1
 	} else {
 		goto L1626
 	}
 L1626:
 	;
-	v7735 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
-	v7736 = F_SearchSysCache1(m, int32(21), v7735)
+	v7743 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
+	v7744 = F_SearchSysCache1(m, int32(21), v7743)
 	mBase = m.M
-	v7737 = m.ExcPending
-	if v7737 != 0 {
+	v7745 = m.ExcPending
+	if v7745 != 0 {
 		goto L1
 	} else {
 		goto L1627
 	}
 L1627:
 	;
-	if v7736 == int32(0) {
+	if v7744 == int32(0) {
 		goto L126
 	} else {
 		goto L1628
 	}
 L1628:
 	;
-	v7741 = v6930 + int32(448)
-	v7742 = *(*int32)(unsafe.Add(mBase, uint32(v7736)+16))
-	v7743 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7742)+22)))
-	v7744 = v7742 + v7743
-	v7746 = v7744 + int32(4)
-	v7749 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7741))))
-	v7752 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7746))))
-	if base.B2i32(v7749 == int32(0))|base.B2i32(v7749 != v7752) != 0 {
-		v7770 = v7749
-		v7771 = v7752
+	v7749 = v6930 + int32(448)
+	v7750 = *(*int32)(unsafe.Add(mBase, uint32(v7744)+16))
+	v7751 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7750)+22)))
+	v7752 = v7750 + v7751
+	v7754 = v7752 + int32(4)
+	v7757 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7749))))
+	v7760 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7754))))
+	if base.B2i32(v7757 == int32(0))|base.B2i32(v7757 != v7760) != 0 {
+		v7778 = v7757
+		v7779 = v7760
 		goto L1630
 	} else {
 		goto L1631
 	}
 L1629:
 	;
-	if v7770-v7771 != 0 {
+	if v7778-v7779 != 0 {
 		goto L125
 	} else {
 		goto L1636
@@ -16376,31 +16388,31 @@ L1630:
 	goto L1629
 L1631:
 	;
-	v7755 = v7741
-	v7756 = v7746
+	v7763 = v7749
+	v7764 = v7754
 	goto L1632
 L1632:
 	;
-	v7759 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7756)+1)))
-	v7760 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7755)+1)))
-	if v7760 == int32(0) {
-		v7770 = v7760
-		v7771 = v7759
+	v7767 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7764)+1)))
+	v7768 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7763)+1)))
+	if v7768 == int32(0) {
+		v7778 = v7768
+		v7779 = v7767
 		goto L1630
 	} else {
 		goto L1634
 	}
 L1633:
 	;
-	v7770 = v7760
-	v7771 = v7759
+	v7778 = v7768
+	v7779 = v7767
 	goto L1630
 L1634:
 	;
-	v7763 = int32(1)
-	if v7760 == v7759 {
-		v7755 = v7755 + v7763
-		v7756 = v7756 + v7763
+	v7771 = int32(1)
+	if v7768 == v7767 {
+		v7763 = v7763 + v7771
+		v7764 = v7764 + v7771
 		goto L1632
 	} else {
 		goto L1635
@@ -16410,35 +16422,35 @@ L1635:
 	goto L1633
 L1636:
 	;
-	v7774 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[2])))
-	if v7774 != int32(1) {
+	v7782 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[2])))
+	if v7782 != int32(1) {
 		goto L1637
 	} else {
 		goto L1638
 	}
 L1637:
 	;
-	v7980 = *(*int32)(unsafe.Add(mBase, uint32(v7744)+72))
-	v7981 = m.G0
-	v7983 = v7981 - int32(16)
-	m.G0 = v7983
-	if base.Ui32(int32(35)) <= base.Ui32(v7980) {
+	v7988 = *(*int32)(unsafe.Add(mBase, uint32(v7752)+72))
+	v7989 = m.G0
+	v7991 = v7989 - int32(16)
+	m.G0 = v7991
+	if base.Ui32(int32(35)) <= base.Ui32(v7988) {
 		goto L1665
 	} else {
 		goto L1666
 	}
 L1638:
 	;
-	v7778 = v6922 & int32(2)
-	if v7778 == int32(0) {
+	v7786 = v6922 & int32(2)
+	if v7786 == int32(0) {
 		goto L1639
 	} else {
 		goto L1640
 	}
 L1639:
 	;
-	v7781 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7744)+78)))
-	if v7781&int32(1) == int32(0) {
+	v7789 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7752)+78)))
+	if v7789&int32(1) == int32(0) {
 		goto L124
 	} else {
 		goto L1642
@@ -16448,8 +16460,8 @@ L1640:
 	goto L1641
 L1641:
 	;
-	v7786 = int32(0)
-	if base.B2i32(v7778 != v7786)|v6921 == v7786 {
+	v7794 = int32(0)
+	if base.B2i32(v7786 != v7794)|v6921 == v7794 {
 		goto L1643
 	} else {
 		goto L1644
@@ -16459,12 +16471,12 @@ L1642:
 	goto L1641
 L1643:
 	;
-	v7793 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
-	v7795 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[78]))
-	v7797 = F_object_aclcheck(m, int32(1262), v7793, v7795, int64(2048))
+	v7801 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
+	v7803 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[78]))
+	v7805 = F_object_aclcheck(m, int32(1262), v7801, v7803, int64(2048))
 	mBase = m.M
-	v7798 = m.ExcPending
-	if v7798 != 0 {
+	v7806 = m.ExcPending
+	if v7806 != 0 {
 		goto L1
 	} else {
 		goto L1646
@@ -16474,16 +16486,16 @@ L1644:
 	goto L1645
 L1645:
 	;
-	v7800 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[30]))
-	v7803 = *(*int32)(unsafe.Add(mBase, uint32(v7744)+80))
-	if v6921|(base.B2i32(v7800 != int32(1))|base.B2i32(v7803 < int32(0))) != 0 {
+	v7808 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[30]))
+	v7811 = *(*int32)(unsafe.Add(mBase, uint32(v7752)+80))
+	if v6921|(base.B2i32(v7808 != int32(1))|base.B2i32(v7811 < int32(0))) != 0 {
 		goto L1637
 	} else {
 		goto L1648
 	}
 L1646:
 	;
-	if v7797 != 0 {
+	if v7805 != 0 {
 		goto L123
 	} else {
 		goto L1647
@@ -16493,93 +16505,93 @@ L1647:
 	goto L1645
 L1648:
 	;
-	v7809 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
-	v7810 = int32(0)
-	v7812 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[83]))
-	v7814 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[84]))
-	v7818 = F_LWLockAcquire(m, v7814+int32(512), int32(1))
+	v7817 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
+	v7818 = int32(0)
+	v7820 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[83]))
+	v7822 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[84]))
+	v7826 = F_LWLockAcquire(m, v7822+int32(512), int32(1))
 	mBase = m.M
-	v7819 = m.ExcPending
-	if v7819 != 0 {
+	v7827 = m.ExcPending
+	if v7827 != 0 {
 		goto L1
 	} else {
 		goto L1649
 	}
 L1649:
 	;
-	v7820 = *(*int32)(unsafe.Add(mBase, uint32(v7812)))
-	if int32(0) < v7820 {
+	v7828 = *(*int32)(unsafe.Add(mBase, uint32(v7820)))
+	if int32(0) < v7828 {
 		goto L1650
 	} else {
 		goto L1651
 	}
 L1650:
 	;
-	v7826 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[85]))
-	v7828 = int32(0)
-	v7830 = v7810
+	v7834 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[85]))
+	v7836 = int32(0)
+	v7838 = v7818
 	goto L1653
 L1651:
 	;
-	v7892 = v7810
+	v7900 = v7818
 	goto L1652
 L1652:
 	;
-	v7932 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[84]))
-	F_LWLockRelease(m, v7932+int32(512))
+	v7940 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[84]))
+	F_LWLockRelease(m, v7940+int32(512))
 	mBase = m.M
-	v7936 = m.ExcPending
-	if v7936 != 0 {
+	v7944 = m.ExcPending
+	if v7944 != 0 {
 		goto L1
 	} else {
 		goto L1663
 	}
 L1653:
 	;
-	v7872 = *(*int32)(unsafe.Add(mBase, uint32(v7812+int32(36)+v7828<<(uint(int32(2))%32))))
-	v7875 = v7826 + v7872*int32(640)
-	v7876 = *(*int32)(unsafe.Add(mBase, uint32(v7875)+44))
-	if v7876 == int32(0) {
-		v7886 = v7830
+	v7880 = *(*int32)(unsafe.Add(mBase, uint32(v7820+int32(36)+v7836<<(uint(int32(2))%32))))
+	v7883 = v7834 + v7880*int32(640)
+	v7884 = *(*int32)(unsafe.Add(mBase, uint32(v7883)+44))
+	if v7884 == int32(0) {
+		v7894 = v7838
 		goto L1655
 	} else {
 		goto L1656
 	}
 L1654:
 	;
-	v7892 = v7886
+	v7900 = v7894
 	goto L1652
 L1655:
 	;
-	v7888 = v7828 + int32(1)
-	if v7888 != v7820 {
-		v7828 = v7888
-		v7830 = v7886
+	v7896 = v7836 + int32(1)
+	if v7896 != v7828 {
+		v7836 = v7896
+		v7838 = v7894
 		goto L1653
 	} else {
 		goto L1662
 	}
 L1656:
 	;
-	v7879 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7875)+72)))
-	if v7879 != int32(1) {
-		v7886 = v7830
+	v7887 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7883)+72)))
+	if v7887 != int32(1) {
+		v7894 = v7838
 		goto L1655
 	} else {
 		goto L1657
 	}
 L1657:
 	;
-	if v7809 != 0 {
+	if v7817 != 0 {
 		goto L1658
 	} else {
 		goto L1659
 	}
 L1658:
 	;
-	v7882 = *(*int32)(unsafe.Add(mBase, uint32(v7875)+60))
-	if v7882 != v7809 {
-		v7886 = v7830
+	v7890 = *(*int32)(unsafe.Add(mBase, uint32(v7883)+60))
+	if v7890 != v7817 {
+		v7894 = v7838
 		goto L1655
 	} else {
 		goto L1661
@@ -16589,7 +16601,7 @@ L1659:
 	goto L1660
 L1660:
 	;
-	v7886 = v7830 + int32(1)
+	v7894 = v7838 + int32(1)
 	goto L1655
 L1661:
 	;
@@ -16599,8 +16611,8 @@ L1662:
 	goto L1654
 L1663:
 	;
-	v7937 = *(*int32)(unsafe.Add(mBase, uint32(v7744)+80))
-	if v7937 < v7892 {
+	v7945 = *(*int32)(unsafe.Add(mBase, uint32(v7752)+80))
+	if v7945 < v7900 {
 		goto L122
 	} else {
 		goto L1664
@@ -16612,8 +16624,8 @@ L1665:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v7990 = m.ExcPending
-	if v7990 != 0 {
+	v7998 = m.ExcPending
+	if v7998 != 0 {
 		goto L1
 	} else {
 		goto L1668
@@ -16623,28 +16635,28 @@ L1666:
 	goto L1667
 L1667:
 	;
-	v8002 = v7980 << (uint(int32(3)) % 32)
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[86])) = v8002 + int32(_a_F_InitPostgres_139)
-	m.G0 = v7983 + int32(16)
-	v8012 = *(*int32)(unsafe.Add(mBase, uint32(v8002)+uint32(_c_F_InitPostgres[87])))
+	v8010 = v7988 << (uint(int32(3)) % 32)
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[86])) = v8010 + int32(_a_F_InitPostgres_140)
+	m.G0 = v7991 + int32(16)
+	v8020 = *(*int32)(unsafe.Add(mBase, uint32(v8010)+uint32(_c_F_InitPostgres[87])))
 	goto L1671
 L1668:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7983))) = v7980
-	F_errmsg_internal(m, int32(_a_F_InitPostgres_140), v7983)
+	*(*int32)(unsafe.Add(mBase, uint32(v7991))) = v7988
+	F_errmsg_internal(m, int32(_a_F_InitPostgres_141), v7991)
 	mBase = m.M
-	v7994 = m.ExcPending
-	if v7994 != 0 {
+	v8002 = m.ExcPending
+	if v8002 != 0 {
 		goto L1
 	} else {
 		goto L1669
 	}
 L1669:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_141), int32(1290), int32(_a_F_InitPostgres_142))
+	F_errfinish(m, int32(_a_F_InitPostgres_142), int32(1290), int32(_a_F_InitPostgres_143))
 	mBase = m.M
-	v7999 = m.ExcPending
-	if v7999 != 0 {
+	v8007 = m.ExcPending
+	if v8007 != 0 {
 		goto L1
 	} else {
 		goto L1670
@@ -16656,134 +16668,134 @@ L1670:
 	}
 L1671:
 	;
-	F_SetConfigOption(m, int32(_a_F_InitPostgres_143), v8012, int32(0), int32(1))
+	F_SetConfigOption(m, int32(_a_F_InitPostgres_144), v8020, int32(0), int32(1))
 	mBase = m.M
-	v8016 = m.ExcPending
-	if v8016 != 0 {
+	v8024 = m.ExcPending
+	if v8024 != 0 {
 		goto L1
 	} else {
 		goto L1672
 	}
 L1672:
 	;
-	v8019 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[86]))
-	v8020 = *(*int32)(unsafe.Add(mBase, uint32(v8019)))
+	v8027 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[86]))
+	v8028 = *(*int32)(unsafe.Add(mBase, uint32(v8027)))
 	goto L1673
 L1673:
 	;
-	F_SetConfigOption(m, int32(_a_F_InitPostgres_144), v8020, int32(4), int32(1))
+	F_SetConfigOption(m, int32(_a_F_InitPostgres_145), v8028, int32(4), int32(1))
 	mBase = m.M
-	v8024 = m.ExcPending
-	if v8024 != 0 {
+	v8032 = m.ExcPending
+	if v8032 != 0 {
 		goto L1
 	} else {
 		goto L1674
 	}
 L1674:
 	;
-	v8027 = F_SysCacheGetAttrNotNull(m, int32(21), v7736, int32(13))
+	v8035 = F_SysCacheGetAttrNotNull(m, int32(21), v7744, int32(13))
 	mBase = m.M
-	v8028 = m.ExcPending
-	if v8028 != 0 {
+	v8036 = m.ExcPending
+	if v8036 != 0 {
 		goto L1
 	} else {
 		goto L1675
 	}
 L1675:
 	;
-	v8029 = F_text_to_cstring(m, v8027)
+	v8037 = F_text_to_cstring(m, v8035)
 	mBase = m.M
-	v8030 = m.ExcPending
-	if v8030 != 0 {
+	v8038 = m.ExcPending
+	if v8038 != 0 {
 		goto L1
 	} else {
 		goto L1676
 	}
 L1676:
 	;
-	v8033 = F_SysCacheGetAttrNotNull(m, int32(21), v7736, int32(14))
+	v8041 = F_SysCacheGetAttrNotNull(m, int32(21), v7744, int32(14))
 	mBase = m.M
-	v8034 = m.ExcPending
-	if v8034 != 0 {
+	v8042 = m.ExcPending
+	if v8042 != 0 {
 		goto L1
 	} else {
 		goto L1677
 	}
 L1677:
 	;
-	v8035 = F_text_to_cstring(m, v8033)
+	v8043 = F_text_to_cstring(m, v8041)
 	mBase = m.M
-	v8036 = m.ExcPending
-	if v8036 != 0 {
+	v8044 = m.ExcPending
+	if v8044 != 0 {
 		goto L1
 	} else {
 		goto L1678
 	}
 L1678:
 	;
-	v8038 = F_pg_perm_setlocale(m, int32(3), v8029)
+	v8046 = F_pg_perm_setlocale(m, int32(3), v8037)
 	mBase = m.M
-	v8039 = m.ExcPending
-	if v8039 != 0 {
+	v8047 = m.ExcPending
+	if v8047 != 0 {
 		goto L1
 	} else {
 		goto L1679
 	}
 L1679:
 	;
-	if v8038 == int32(0) {
+	if v8046 == int32(0) {
 		goto L121
 	} else {
 		goto L1680
 	}
 L1680:
 	;
-	v8043 = F_pg_perm_setlocale(m, int32(0), v8035)
+	v8051 = F_pg_perm_setlocale(m, int32(0), v8043)
 	mBase = m.M
-	v8044 = m.ExcPending
-	if v8044 != 0 {
+	v8052 = m.ExcPending
+	if v8052 != 0 {
 		goto L1
 	} else {
 		goto L1681
 	}
 L1681:
 	;
-	if v8043 == int32(0) {
+	if v8051 == int32(0) {
 		goto L120
 	} else {
 		goto L1682
 	}
 L1682:
 	;
-	v8047 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8035))))
-	if v8047 == int32(67) {
+	v8055 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8043))))
+	if v8055 == int32(67) {
 		goto L1685
 	} else {
 		goto L1686
 	}
 L1683:
 	;
-	v8083 = m.G0
-	v8085 = v8083 - int32(32)
-	m.G0 = v8085
-	v8089 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
-	v8090 = F_SearchSysCache1(m, int32(21), v8089)
+	v8091 = m.G0
+	v8093 = v8091 - int32(32)
+	m.G0 = v8093
+	v8097 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
+	v8098 = F_SearchSysCache1(m, int32(21), v8097)
 	mBase = m.M
-	v8091 = m.ExcPending
-	if v8091 != 0 {
+	v8099 = m.ExcPending
+	if v8099 != 0 {
 		goto L1
 	} else {
 		goto L1698
 	}
 L1684:
 	;
-	v8081 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[88])) = uint8(v8081)
+	v8089 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[88])) = uint8(v8089)
 	goto L1683
 L1685:
 	;
-	v8050 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8035)+1)))
-	if v8050 == int32(0) {
+	v8058 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8043)+1)))
+	if v8058 == int32(0) {
 		goto L1684
 	} else {
 		goto L1688
@@ -16793,12 +16805,12 @@ L1686:
 	goto L1687
 L1687:
 	;
-	v8053 = int32(_a_F_InitPostgres_145)
-	v8056 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8035))))
-	v8059 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[89])))
-	if base.B2i32(v8056 == int32(0))|base.B2i32(v8056 != v8059) != 0 {
-		v8077 = v8056
-		v8078 = v8059
+	v8061 = int32(_a_F_InitPostgres_146)
+	v8064 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8043))))
+	v8067 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[89])))
+	if base.B2i32(v8064 == int32(0))|base.B2i32(v8064 != v8067) != 0 {
+		v8085 = v8064
+		v8086 = v8067
 		goto L1690
 	} else {
 		goto L1691
@@ -16808,7 +16820,7 @@ L1688:
 	goto L1687
 L1689:
 	;
-	if v8077-v8078 != 0 {
+	if v8085-v8086 != 0 {
 		goto L1683
 	} else {
 		goto L1696
@@ -16818,31 +16830,31 @@ L1690:
 	goto L1689
 L1691:
 	;
-	v8062 = v8035
-	v8063 = v8053
+	v8070 = v8043
+	v8071 = v8061
 	goto L1692
 L1692:
 	;
-	v8066 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8063)+1)))
-	v8067 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8062)+1)))
-	if v8067 == int32(0) {
-		v8077 = v8067
-		v8078 = v8066
+	v8074 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8071)+1)))
+	v8075 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8070)+1)))
+	if v8075 == int32(0) {
+		v8085 = v8075
+		v8086 = v8074
 		goto L1690
 	} else {
 		goto L1694
 	}
 L1693:
 	;
-	v8077 = v8067
-	v8078 = v8066
+	v8085 = v8075
+	v8086 = v8074
 	goto L1690
 L1694:
 	;
-	v8070 = int32(1)
-	if v8067 == v8066 {
-		v8062 = v8062 + v8070
-		v8063 = v8063 + v8070
+	v8078 = int32(1)
+	if v8075 == v8074 {
+		v8070 = v8070 + v8078
+		v8071 = v8071 + v8078
 		goto L1692
 	} else {
 		goto L1695
@@ -16855,28 +16867,28 @@ L1696:
 	goto L1684
 L1697:
 	;
-	v8159 = F_SysCacheGetAttr(m, int32(21), v7736, int32(17), v6930+int32(527))
+	v8167 = F_SysCacheGetAttr(m, int32(21), v7744, int32(17), v6930+int32(527))
 	mBase = m.M
-	v8160 = m.ExcPending
-	if v8160 != 0 {
+	v8168 = m.ExcPending
+	if v8168 != 0 {
 		goto L1
 	} else {
 		goto L1717
 	}
 L1698:
 	;
-	if v8090 != 0 {
+	if v8098 != 0 {
 		goto L1699
 	} else {
 		goto L1700
 	}
 L1699:
 	;
-	v8092 = *(*int32)(unsafe.Add(mBase, uint32(v8090)+16))
-	v8093 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8092)+22)))
-	v8094 = v8092 + v8093
-	v8095 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8094)+76)))
-	switch v8095 - int32(98) {
+	v8100 = *(*int32)(unsafe.Add(mBase, uint32(v8098)+16))
+	v8101 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8100)+22)))
+	v8102 = v8100 + v8101
+	v8103 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8102)+76)))
+	switch v8103 - int32(98) {
 	case 0:
 		goto L1703
 	case 1:
@@ -16893,31 +16905,31 @@ L1701:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v8143 = m.ExcPending
-	if v8143 != 0 {
+	v8151 = m.ExcPending
+	if v8151 != 0 {
 		goto L1
 	} else {
 		goto L1714
 	}
 L1702:
 	;
-	v8131 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v8130)+4)) = uint8(v8131)
-	F_ReleaseCatCache(m, v8090)
+	v8139 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v8138)+4)) = uint8(v8139)
+	F_ReleaseCatCache(m, v8098)
 	mBase = m.M
-	v8134 = m.ExcPending
-	if v8134 != 0 {
+	v8142 = m.ExcPending
+	if v8142 != 0 {
 		goto L1
 	} else {
 		goto L1713
 	}
 L1703:
 	;
-	v8127 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[21]))
-	v8128 = F_create_pg_locale_builtin(m, int32(100), v8127)
+	v8135 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[21]))
+	v8136 = F_create_pg_locale_builtin(m, int32(100), v8135)
 	mBase = m.M
-	v8129 = m.ExcPending
-	if v8129 != 0 {
+	v8137 = m.ExcPending
+	if v8137 != 0 {
 		goto L1
 	} else {
 		goto L1712
@@ -16926,60 +16938,60 @@ L1704:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v8110 = m.ExcPending
-	if v8110 != 0 {
+	v8118 = m.ExcPending
+	if v8118 != 0 {
 		goto L1
 	} else {
 		goto L1709
 	}
 L1705:
 	;
-	v8104 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[21]))
-	v8105 = F_create_pg_locale_libc(m, int32(100), v8104)
+	v8112 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[21]))
+	v8113 = F_create_pg_locale_libc(m, int32(100), v8112)
 	mBase = m.M
-	v8106 = m.ExcPending
-	if v8106 != 0 {
+	v8114 = m.ExcPending
+	if v8114 != 0 {
 		goto L1
 	} else {
 		goto L1708
 	}
 L1706:
 	;
-	v8100 = F_create_pg_locale_icu(m)
+	v8108 = F_create_pg_locale_icu(m)
 	mBase = m.M
-	v8101 = m.ExcPending
-	if v8101 != 0 {
+	v8109 = m.ExcPending
+	if v8109 != 0 {
 		goto L1
 	} else {
 		goto L1707
 	}
 L1707:
 	;
-	v8130 = v8100
+	v8138 = v8108
 	goto L1702
 L1708:
 	;
-	v8130 = v8105
+	v8138 = v8113
 	goto L1702
 L1709:
 	;
-	v8111 = int32(*(*int8)(unsafe.Add(mBase, uint32(v8094)+76)))
-	*(*int32)(unsafe.Add(mBase, uint32(v8085)+20)) = v8111
-	*(*int32)(unsafe.Add(mBase, uint32(v8085)+16)) = int32(_a_F_InitPostgres_146)
-	F_errmsg_internal(m, int32(_a_F_InitPostgres_147), v8085+int32(16))
+	v8119 = int32(*(*int8)(unsafe.Add(mBase, uint32(v8102)+76)))
+	*(*int32)(unsafe.Add(mBase, uint32(v8093)+20)) = v8119
+	*(*int32)(unsafe.Add(mBase, uint32(v8093)+16)) = int32(_a_F_InitPostgres_147)
+	F_errmsg_internal(m, int32(_a_F_InitPostgres_148), v8093+int32(16))
 	mBase = m.M
-	v8119 = m.ExcPending
-	if v8119 != 0 {
+	v8127 = m.ExcPending
+	if v8127 != 0 {
 		goto L1
 	} else {
 		goto L1710
 	}
 L1710:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_148), int32(1179), int32(_a_F_InitPostgres_146))
+	F_errfinish(m, int32(_a_F_InitPostgres_149), int32(1179), int32(_a_F_InitPostgres_147))
 	mBase = m.M
-	v8124 = m.ExcPending
-	if v8124 != 0 {
+	v8132 = m.ExcPending
+	if v8132 != 0 {
 		goto L1
 	} else {
 		goto L1711
@@ -16991,31 +17003,31 @@ L1711:
 	}
 L1712:
 	;
-	v8130 = v8128
+	v8138 = v8136
 	goto L1702
 L1713:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[90])) = v8130
-	m.G0 = v8085 + int32(32)
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[90])) = v8138
+	m.G0 = v8093 + int32(32)
 	goto L1697
 L1714:
 	;
-	v8145 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
-	*(*int32)(unsafe.Add(mBase, uint32(v8085))) = v8145
-	F_errmsg_internal(m, int32(_a_F_InitPostgres_149), v8085)
+	v8153 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8093))) = v8153
+	F_errmsg_internal(m, int32(_a_F_InitPostgres_150), v8093)
 	mBase = m.M
-	v8149 = m.ExcPending
-	if v8149 != 0 {
+	v8157 = m.ExcPending
+	if v8157 != 0 {
 		goto L1
 	} else {
 		goto L1715
 	}
 L1715:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_148), int32(1165), int32(_a_F_InitPostgres_146))
+	F_errfinish(m, int32(_a_F_InitPostgres_149), int32(1165), int32(_a_F_InitPostgres_147))
 	mBase = m.M
-	v8154 = m.ExcPending
-	if v8154 != 0 {
+	v8162 = m.ExcPending
+	if v8162 != 0 {
 		goto L1
 	} else {
 		goto L1716
@@ -17027,104 +17039,104 @@ L1716:
 	}
 L1717:
 	;
-	v8161 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6930)+527)))
-	if v8161 != 0 {
+	v8169 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6930)+527)))
+	if v8169 != 0 {
 		goto L1718
 	} else {
 		goto L1719
 	}
 L1718:
 	;
-	F_ReleaseCatCache(m, v7736)
+	F_ReleaseCatCache(m, v7744)
 	mBase = m.M
-	v8265 = m.ExcPending
-	if v8265 != 0 {
+	v8273 = m.ExcPending
+	if v8273 != 0 {
 		goto L1
 	} else {
 		goto L1749
 	}
 L1719:
 	;
-	v8162 = F_text_to_cstring(m, v8159)
+	v8170 = F_text_to_cstring(m, v8167)
 	mBase = m.M
-	v8163 = m.ExcPending
-	if v8163 != 0 {
+	v8171 = m.ExcPending
+	if v8171 != 0 {
 		goto L1
 	} else {
 		goto L1720
 	}
 L1720:
 	;
-	v8165 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7744)+76)))
-	if v8165 != int32(99) {
+	v8173 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7752)+76)))
+	if v8173 != int32(99) {
 		goto L1722
 	} else {
 		goto L1723
 	}
 L1721:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_1), v8257, int32(_a_F_InitPostgres_150))
+	F_errfinish(m, int32(_a_F_InitPostgres_1), v8265, int32(_a_F_InitPostgres_151))
 	mBase = m.M
-	v8260 = m.ExcPending
-	if v8260 != 0 {
+	v8268 = m.ExcPending
+	if v8268 != 0 {
 		goto L1
 	} else {
 		goto L1748
 	}
 L1722:
 	;
-	v8170 = F_SysCacheGetAttrNotNull(m, int32(21), v7736, int32(15))
+	v8178 = F_SysCacheGetAttrNotNull(m, int32(21), v7744, int32(15))
 	mBase = m.M
-	v8171 = m.ExcPending
-	if v8171 != 0 {
+	v8179 = m.ExcPending
+	if v8179 != 0 {
 		goto L1
 	} else {
 		goto L1725
 	}
 L1723:
 	;
-	v8176 = v8029
-	v8177 = int32(99)
+	v8184 = v8037
+	v8185 = int32(99)
 	goto L1724
 L1724:
 	;
-	v8179 = F_get_collation_actual_version(m, base.I32_extend8_s(v8177), v8176)
+	v8187 = F_get_collation_actual_version(m, base.I32_extend8_s(v8185), v8184)
 	mBase = m.M
-	v8180 = m.ExcPending
-	if v8180 != 0 {
+	v8188 = m.ExcPending
+	if v8188 != 0 {
 		goto L1
 	} else {
 		goto L1727
 	}
 L1725:
 	;
-	v8172 = F_text_to_cstring(m, v8170)
+	v8180 = F_text_to_cstring(m, v8178)
 	mBase = m.M
-	v8173 = m.ExcPending
-	if v8173 != 0 {
+	v8181 = m.ExcPending
+	if v8181 != 0 {
 		goto L1
 	} else {
 		goto L1726
 	}
 L1726:
 	;
-	v8174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7744)+76)))
-	v8176 = v8172
-	v8177 = v8174
+	v8182 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7752)+76)))
+	v8184 = v8180
+	v8185 = v8182
 	goto L1724
 L1727:
 	;
-	if v8179 == int32(0) {
+	if v8187 == int32(0) {
 		goto L1728
 	} else {
 		goto L1729
 	}
 L1728:
 	;
-	v8185 = F_errstart(m, int32(19), int32(0))
+	v8193 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v8186 = m.ExcPending
-	if v8186 != 0 {
+	v8194 = m.ExcPending
+	if v8194 != 0 {
 		goto L1
 	} else {
 		goto L1731
@@ -17134,18 +17146,18 @@ L1729:
 	goto L1730
 L1730:
 	;
-	v8200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8179))))
-	v8203 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8162))))
-	if base.B2i32(v8200 == int32(0))|base.B2i32(v8200 != v8203) != 0 {
-		v8221 = v8200
-		v8222 = v8203
+	v8208 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8187))))
+	v8211 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8170))))
+	if base.B2i32(v8208 == int32(0))|base.B2i32(v8208 != v8211) != 0 {
+		v8229 = v8208
+		v8230 = v8211
 		goto L1735
 	} else {
 		goto L1736
 	}
 L1731:
 	;
-	if v8185 == int32(0) {
+	if v8193 == int32(0) {
 		goto L1718
 	} else {
 		goto L1732
@@ -17153,21 +17165,21 @@ L1731:
 L1732:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6930)+96)) = v6930 + int32(448)
-	F_errmsg_internal(m, int32(_a_F_InitPostgres_151), v6930+int32(96))
+	F_errmsg_internal(m, int32(_a_F_InitPostgres_152), v6930+int32(96))
 	mBase = m.M
-	v8196 = m.ExcPending
-	if v8196 != 0 {
+	v8204 = m.ExcPending
+	if v8204 != 0 {
 		goto L1
 	} else {
 		goto L1733
 	}
 L1733:
 	;
-	v8257 = int32(468)
+	v8265 = int32(468)
 	goto L1721
 L1734:
 	;
-	if v8221-v8222 == int32(0) {
+	if v8229-v8230 == int32(0) {
 		goto L1718
 	} else {
 		goto L1741
@@ -17177,31 +17189,31 @@ L1735:
 	goto L1734
 L1736:
 	;
-	v8206 = v8179
-	v8207 = v8162
+	v8214 = v8187
+	v8215 = v8170
 	goto L1737
 L1737:
 	;
-	v8210 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8207)+1)))
-	v8211 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8206)+1)))
-	if v8211 == int32(0) {
-		v8221 = v8211
-		v8222 = v8210
+	v8218 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8215)+1)))
+	v8219 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8214)+1)))
+	if v8219 == int32(0) {
+		v8229 = v8219
+		v8230 = v8218
 		goto L1735
 	} else {
 		goto L1739
 	}
 L1738:
 	;
-	v8221 = v8211
-	v8222 = v8210
+	v8229 = v8219
+	v8230 = v8218
 	goto L1735
 L1739:
 	;
-	v8214 = int32(1)
-	if v8211 == v8210 {
-		v8206 = v8206 + v8214
-		v8207 = v8207 + v8214
+	v8222 = int32(1)
+	if v8219 == v8218 {
+		v8214 = v8214 + v8222
+		v8215 = v8215 + v8222
 		goto L1737
 	} else {
 		goto L1740
@@ -17211,69 +17223,69 @@ L1740:
 	goto L1738
 L1741:
 	;
-	v8228 = F_errstart(m, int32(19), int32(0))
+	v8236 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v8229 = m.ExcPending
-	if v8229 != 0 {
+	v8237 = m.ExcPending
+	if v8237 != 0 {
 		goto L1
 	} else {
 		goto L1742
 	}
 L1742:
 	;
-	if v8228 == int32(0) {
+	if v8236 == int32(0) {
 		goto L1718
 	} else {
 		goto L1743
 	}
 L1743:
 	;
-	v8233 = v6930 + int32(448)
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+144)) = v8233
-	F_errmsg(m, int32(_a_F_InitPostgres_152), v6930+int32(144))
+	v8241 = v6930 + int32(448)
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+144)) = v8241
+	F_errmsg(m, int32(_a_F_InitPostgres_153), v6930+int32(144))
 	mBase = m.M
-	v8239 = m.ExcPending
-	if v8239 != 0 {
+	v8247 = m.ExcPending
+	if v8247 != 0 {
 		goto L1
 	} else {
 		goto L1744
 	}
 L1744:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+132)) = v8179
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+128)) = v8162
-	F_errdetail(m, int32(_a_F_InitPostgres_153), v6930+int32(128))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+132)) = v8187
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+128)) = v8170
+	F_errdetail(m, int32(_a_F_InitPostgres_154), v6930+int32(128))
 	mBase = m.M
-	v8246 = m.ExcPending
-	if v8246 != 0 {
+	v8254 = m.ExcPending
+	if v8254 != 0 {
 		goto L1
 	} else {
 		goto L1745
 	}
 L1745:
 	;
-	v8247 = F_quote_identifier(m, v8233)
+	v8255 = F_quote_identifier(m, v8241)
 	mBase = m.M
-	v8248 = m.ExcPending
-	if v8248 != 0 {
+	v8256 = m.ExcPending
+	if v8256 != 0 {
 		goto L1
 	} else {
 		goto L1746
 	}
 L1746:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+112)) = v8247
-	F_errhint(m, int32(_a_F_InitPostgres_154), v6930+int32(112))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+112)) = v8255
+	F_errhint(m, int32(_a_F_InitPostgres_155), v6930+int32(112))
 	mBase = m.M
-	v8254 = m.ExcPending
-	if v8254 != 0 {
+	v8262 = m.ExcPending
+	if v8262 != 0 {
 		goto L1
 	} else {
 		goto L1747
 	}
 L1747:
 	;
-	v8257 = int32(479)
+	v8265 = int32(479)
 	goto L1721
 L1748:
 	;
@@ -17283,10 +17295,10 @@ L1749:
 	goto L1610
 L1750:
 	;
-	F_pfree(m, v7696)
+	F_pfree(m, v7704)
 	mBase = m.M
-	v8269 = m.ExcPending
-	if v8269 != 0 {
+	v8277 = m.ExcPending
+	if v8277 != 0 {
 		goto L1
 	} else {
 		goto L1751
@@ -17295,8 +17307,8 @@ L1751:
 	;
 	F_RelationCacheInitializePhase3(m)
 	mBase = m.M
-	v8271 = m.ExcPending
-	if v8271 != 0 {
+	v8279 = m.ExcPending
+	if v8279 != 0 {
 		goto L1
 	} else {
 		goto L1752
@@ -17305,8 +17317,8 @@ L1752:
 	;
 	F_initialize_acl(m)
 	mBase = m.M
-	v8273 = m.ExcPending
-	if v8273 != 0 {
+	v8281 = m.ExcPending
+	if v8281 != 0 {
 		goto L1
 	} else {
 		goto L1753
@@ -17316,10 +17328,10 @@ L1753:
 	goto L1610
 L1754:
 	;
-	F_process_startup_options(m, v8316, v6921)
+	F_process_startup_options(m, v8324, v6921)
 	mBase = m.M
-	v8318 = m.ExcPending
-	if v8318 != 0 {
+	v8326 = m.ExcPending
+	if v8326 != 0 {
 		goto L1
 	} else {
 		goto L1757
@@ -17329,10 +17341,10 @@ L1755:
 	goto L1756
 L1756:
 	;
-	v8320 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
-	v8322 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[91]))
-	v8324 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[2])))
-	if v8324 == int32(1) {
+	v8328 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
+	v8330 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[91]))
+	v8332 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[2])))
+	if v8332 == int32(1) {
 		goto L1758
 	} else {
 		goto L1759
@@ -17342,10 +17354,10 @@ L1757:
 	goto L1756
 L1758:
 	;
-	v8329 = F_table_open(m, int32(2964), int32(1))
+	v8337 = F_table_open(m, int32(2964), int32(1))
 	mBase = m.M
-	v8330 = m.ExcPending
-	if v8330 != 0 {
+	v8338 = m.ExcPending
+	if v8338 != 0 {
 		goto L1
 	} else {
 		goto L1761
@@ -17355,89 +17367,89 @@ L1759:
 	goto L1760
 L1760:
 	;
-	v8360 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[79]))
-	if int32(0) < v8360 {
+	v8368 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[79]))
+	if int32(0) < v8368 {
 		goto L1770
 	} else {
 		goto L1771
 	}
 L1761:
 	;
-	v8332 = F_GetCatalogSnapshot(m, int32(2964))
+	v8340 = F_GetCatalogSnapshot(m, int32(2964))
 	mBase = m.M
-	v8333 = m.ExcPending
-	if v8333 != 0 {
+	v8341 = m.ExcPending
+	if v8341 != 0 {
 		goto L1
 	} else {
 		goto L1762
 	}
 L1762:
 	;
-	v8334 = F_RegisterSnapshot(m, v8332)
+	v8342 = F_RegisterSnapshot(m, v8340)
 	mBase = m.M
-	v8335 = m.ExcPending
-	if v8335 != 0 {
+	v8343 = m.ExcPending
+	if v8343 != 0 {
 		goto L1
 	} else {
 		goto L1763
 	}
 L1763:
 	;
-	F_ApplySetting(m, v8334, v8320, v8322, v8329, int32(8))
+	F_ApplySetting(m, v8342, v8328, v8330, v8337, int32(8))
 	mBase = m.M
-	v8338 = m.ExcPending
-	if v8338 != 0 {
+	v8346 = m.ExcPending
+	if v8346 != 0 {
 		goto L1
 	} else {
 		goto L1764
 	}
 L1764:
 	;
-	F_ApplySetting(m, v8334, int32(0), v8322, v8329, int32(7))
+	F_ApplySetting(m, v8342, int32(0), v8330, v8337, int32(7))
 	mBase = m.M
-	v8342 = m.ExcPending
-	if v8342 != 0 {
+	v8350 = m.ExcPending
+	if v8350 != 0 {
 		goto L1
 	} else {
 		goto L1765
 	}
 L1765:
 	;
-	F_ApplySetting(m, v8334, v8320, int32(0), v8329, int32(6))
+	F_ApplySetting(m, v8342, v8328, int32(0), v8337, int32(6))
 	mBase = m.M
-	v8346 = m.ExcPending
-	if v8346 != 0 {
+	v8354 = m.ExcPending
+	if v8354 != 0 {
 		goto L1
 	} else {
 		goto L1766
 	}
 L1766:
 	;
-	v8347 = int32(0)
-	F_ApplySetting(m, v8334, v8347, v8347, v8329, int32(5))
+	v8355 = int32(0)
+	F_ApplySetting(m, v8342, v8355, v8355, v8337, int32(5))
 	mBase = m.M
-	v8351 = m.ExcPending
-	if v8351 != 0 {
+	v8359 = m.ExcPending
+	if v8359 != 0 {
 		goto L1
 	} else {
 		goto L1767
 	}
 L1767:
 	;
-	F_UnregisterSnapshot(m, v8334)
+	F_UnregisterSnapshot(m, v8342)
 	mBase = m.M
-	v8353 = m.ExcPending
-	if v8353 != 0 {
+	v8361 = m.ExcPending
+	if v8361 != 0 {
 		goto L1
 	} else {
 		goto L1768
 	}
 L1768:
 	;
-	F_relation_close(m, v8329, int32(1))
+	F_relation_close(m, v8337, int32(1))
 	mBase = m.M
-	v8356 = m.ExcPending
-	if v8356 != 0 {
+	v8364 = m.ExcPending
+	if v8364 != 0 {
 		goto L1
 	} else {
 		goto L1769
@@ -17447,7 +17459,7 @@ L1769:
 	goto L1760
 L1770:
 	;
-	F_pg_usleep(m, v8360*int32(_a_F_InitPostgres_123))
+	F_pg_usleep(m, v8368*int32(_a_F_InitPostgres_124))
 	mBase = m.M
 	goto L1772
 L1771:
@@ -17455,39 +17467,39 @@ L1771:
 	goto L1772
 L1772:
 	;
-	v8366 = m.G0
-	v8368 = v8366 - int32(16)
-	m.G0 = v8368
-	v8371 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[0]))
-	if v8371 == int32(0) {
+	v8374 = m.G0
+	v8376 = v8374 - int32(16)
+	m.G0 = v8376
+	v8379 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[0]))
+	if v8379 == int32(0) {
 		goto L1774
 	} else {
 		goto L1775
 	}
 L1773:
 	;
-	m.G0 = v8368 + int32(16)
+	m.G0 = v8376 + int32(16)
 	F_InitializeClientEncoding(m)
 	mBase = m.M
-	v8456 = m.ExcPending
-	if v8456 != 0 {
+	v8464 = m.ExcPending
+	if v8464 != 0 {
 		goto L1
 	} else {
 		goto L1782
 	}
 L1774:
 	;
-	v8374 = int32(_a_F_InitPostgres_8)
-	v8375 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[22]))
-	v8378 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[21]))
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[22])) = v8378
-	v8380 = int32(11)
-	*(*int32)(unsafe.Add(mBase, uint32(v8368)+12)) = v8380
-	*(*int32)(unsafe.Add(mBase, uint32(v8368)+8)) = v8380
-	v8387 = F_list_make1_impl(m, int32(472), v8368+int32(8))
+	v8382 = int32(_a_F_InitPostgres_8)
+	v8383 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[22]))
+	v8386 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[21]))
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[22])) = v8386
+	v8388 = int32(11)
+	*(*int32)(unsafe.Add(mBase, uint32(v8376)+12)) = v8388
+	*(*int32)(unsafe.Add(mBase, uint32(v8376)+8)) = v8388
+	v8395 = F_list_make1_impl(m, int32(472), v8376+int32(8))
 	mBase = m.M
-	v8388 = m.ExcPending
-	if v8388 != 0 {
+	v8396 = m.ExcPending
+	if v8396 != 0 {
 		goto L1
 	} else {
 		goto L1777
@@ -17499,41 +17511,41 @@ L1776:
 	;
 	F_CacheRegisterSyscacheCallback(m, int32(38), int32(470), int32(0))
 	mBase = m.M
-	v8428 = m.ExcPending
-	if v8428 != 0 {
+	v8436 = m.ExcPending
+	if v8436 != 0 {
 		goto L1
 	} else {
 		goto L1778
 	}
 L1777:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[22])) = v8375
-	v8391 = int32(_a_F_InitPostgres_155)
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[92])) = v8387
-	v8393 = int32(_a_F_InitPostgres_156)
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[22])) = v8383
+	v8399 = int32(_a_F_InitPostgres_156)
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[92])) = v8395
+	v8401 = int32(_a_F_InitPostgres_157)
 	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[93])) = int32(11)
-	v8396 = int32(_a_F_InitPostgres_157)
-	v8397 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[94])) = uint8(v8397)
-	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[95])) = uint8(v8397)
-	v8404 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[78]))
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[96])) = v8404
-	v8408 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[92]))
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[97])) = v8408
-	v8412 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[93]))
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[98])) = v8412
-	v8416 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[94])))
-	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[99])) = uint8(v8416)
-	v8418 = int32(_a_F_InitPostgres_158)
-	v8420 = *(*int64)(unsafe.Add(mBase, _c_F_InitPostgres[100]))
-	*(*int64)(unsafe.Add(mBase, _c_F_InitPostgres[100])) = v8420 + int64(1)
+	v8404 = int32(_a_F_InitPostgres_158)
+	v8405 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[94])) = uint8(v8405)
+	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[95])) = uint8(v8405)
+	v8412 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[78]))
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[96])) = v8412
+	v8416 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[92]))
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[97])) = v8416
+	v8420 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[93]))
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[98])) = v8420
+	v8424 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[94])))
+	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[99])) = uint8(v8424)
+	v8426 = int32(_a_F_InitPostgres_159)
+	v8428 = *(*int64)(unsafe.Add(mBase, _c_F_InitPostgres[100]))
+	*(*int64)(unsafe.Add(mBase, _c_F_InitPostgres[100])) = v8428 + int64(1)
 	goto L1773
 L1778:
 	;
 	F_CacheRegisterSyscacheCallback(m, int32(11), int32(470), int32(0))
 	mBase = m.M
-	v8433 = m.ExcPending
-	if v8433 != 0 {
+	v8441 = m.ExcPending
+	if v8441 != 0 {
 		goto L1
 	} else {
 		goto L1779
@@ -17542,8 +17554,8 @@ L1779:
 	;
 	F_CacheRegisterSyscacheCallback(m, int32(9), int32(470), int32(0))
 	mBase = m.M
-	v8438 = m.ExcPending
-	if v8438 != 0 {
+	v8446 = m.ExcPending
+	if v8446 != 0 {
 		goto L1
 	} else {
 		goto L1780
@@ -17552,33 +17564,33 @@ L1780:
 	;
 	F_CacheRegisterSyscacheCallback(m, int32(21), int32(470), int32(0))
 	mBase = m.M
-	v8443 = m.ExcPending
-	if v8443 != 0 {
+	v8451 = m.ExcPending
+	if v8451 != 0 {
 		goto L1
 	} else {
 		goto L1781
 	}
 L1781:
 	;
-	v8445 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[95])) = uint8(v8445)
-	v8448 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[101])) = uint8(v8448)
+	v8453 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[95])) = uint8(v8453)
+	v8456 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, _c_F_InitPostgres[101])) = uint8(v8456)
 	goto L1773
 L1782:
 	;
-	v8459 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[21]))
-	v8461 = F_MemoryContextAllocZero(m, v8459, int32(20))
+	v8467 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[21]))
+	v8469 = F_MemoryContextAllocZero(m, v8467, int32(20))
 	mBase = m.M
-	v8462 = m.ExcPending
-	if v8462 != 0 {
+	v8470 = m.ExcPending
+	if v8470 != 0 {
 		goto L1
 	} else {
 		goto L1783
 	}
 L1783:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[102])) = v8461
+	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[102])) = v8469
 	if v6922&int32(1) != 0 {
 		goto L1784
 	} else {
@@ -17586,11 +17598,11 @@ L1783:
 	}
 L1784:
 	;
-	v8467 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[103]))
-	F_load_libraries(m, v8467, int32(_a_F_InitPostgres_159), int32(0))
+	v8475 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[103]))
+	F_load_libraries(m, v8475, int32(_a_F_InitPostgres_160), int32(0))
 	mBase = m.M
-	v8471 = m.ExcPending
-	if v8471 != 0 {
+	v8479 = m.ExcPending
+	if v8479 != 0 {
 		goto L1
 	} else {
 		goto L1787
@@ -17601,18 +17613,18 @@ L1785:
 L1786:
 	;
 	if v6942 == int32(0) {
-		v8537 = v6930
+		v8545 = v6930
 		goto L128
 	} else {
 		goto L1789
 	}
 L1787:
 	;
-	v8473 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[104]))
-	F_load_libraries(m, v8473, int32(_a_F_InitPostgres_160), int32(1))
+	v8481 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[104]))
+	F_load_libraries(m, v8481, int32(_a_F_InitPostgres_161), int32(1))
 	mBase = m.M
-	v8477 = m.ExcPending
-	if v8477 != 0 {
+	v8485 = m.ExcPending
+	if v8485 != 0 {
 		goto L1
 	} else {
 		goto L1788
@@ -17627,34 +17639,34 @@ L1790:
 	;
 	F_CommitTransactionCommand(m)
 	mBase = m.M
-	v8524 = m.ExcPending
-	if v8524 != 0 {
+	v8532 = m.ExcPending
+	if v8532 != 0 {
 		goto L1
 	} else {
 		goto L1791
 	}
 L1791:
 	;
-	v8537 = v6930
+	v8545 = v6930
 	goto L128
 L1792:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6930)+16)) = v6930 + int32(448)
-	F_errmsg(m, int32(_a_F_InitPostgres_135), v6930+int32(16))
+	F_errmsg(m, int32(_a_F_InitPostgres_136), v6930+int32(16))
 	mBase = m.M
-	v8579 = m.ExcPending
-	if v8579 != 0 {
+	v8587 = m.ExcPending
+	if v8587 != 0 {
 		goto L1
 	} else {
 		goto L1793
 	}
 L1793:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930))) = v7696
-	F_errdetail(m, int32(_a_F_InitPostgres_161), v6930)
+	*(*int32)(unsafe.Add(mBase, uint32(v6930))) = v7704
+	F_errdetail(m, int32(_a_F_InitPostgres_162), v6930)
 	mBase = m.M
-	v8583 = m.ExcPending
-	if v8583 != 0 {
+	v8591 = m.ExcPending
+	if v8591 != 0 {
 		goto L1
 	} else {
 		goto L1794
@@ -17663,8 +17675,8 @@ L1794:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(1172), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v8588 = m.ExcPending
-	if v8588 != 0 {
+	v8596 = m.ExcPending
+	if v8596 != 0 {
 		goto L1
 	} else {
 		goto L1795
@@ -17676,22 +17688,22 @@ L1795:
 	}
 L1796:
 	;
-	v8594 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+48)) = v8594
-	F_errmsg_internal(m, int32(_a_F_InitPostgres_149), v6930+int32(48))
+	v8602 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+48)) = v8602
+	F_errmsg_internal(m, int32(_a_F_InitPostgres_150), v6930+int32(48))
 	mBase = m.M
-	v8600 = m.ExcPending
-	if v8600 != 0 {
+	v8608 = m.ExcPending
+	if v8608 != 0 {
 		goto L1
 	} else {
 		goto L1797
 	}
 L1797:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(335), int32(_a_F_InitPostgres_150))
+	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(335), int32(_a_F_InitPostgres_151))
 	mBase = m.M
-	v8605 = m.ExcPending
-	if v8605 != 0 {
+	v8613 = m.ExcPending
+	if v8613 != 0 {
 		goto L1
 	} else {
 		goto L1798
@@ -17705,8 +17717,8 @@ L1799:
 	;
 	F_errcode(m, int32(1283))
 	mBase = m.M
-	v8612 = m.ExcPending
-	if v8612 != 0 {
+	v8620 = m.ExcPending
+	if v8620 != 0 {
 		goto L1
 	} else {
 		goto L1800
@@ -17714,33 +17726,33 @@ L1799:
 L1800:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6930)+224)) = v6930 + int32(448)
-	F_errmsg(m, int32(_a_F_InitPostgres_162), v6930+int32(224))
+	F_errmsg(m, int32(_a_F_InitPostgres_163), v6930+int32(224))
 	mBase = m.M
-	v8620 = m.ExcPending
-	if v8620 != 0 {
+	v8628 = m.ExcPending
+	if v8628 != 0 {
 		goto L1
 	} else {
 		goto L1801
 	}
 L1801:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+212)) = v7746
-	v8623 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+208)) = v8623
-	F_errdetail(m, int32(_a_F_InitPostgres_163), v6930+int32(208))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+212)) = v7754
+	v8631 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[31]))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+208)) = v8631
+	F_errdetail(m, int32(_a_F_InitPostgres_164), v6930+int32(208))
 	mBase = m.M
-	v8629 = m.ExcPending
-	if v8629 != 0 {
+	v8637 = m.ExcPending
+	if v8637 != 0 {
 		goto L1
 	} else {
 		goto L1802
 	}
 L1802:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(345), int32(_a_F_InitPostgres_150))
+	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(345), int32(_a_F_InitPostgres_151))
 	mBase = m.M
-	v8634 = m.ExcPending
-	if v8634 != 0 {
+	v8642 = m.ExcPending
+	if v8642 != 0 {
 		goto L1
 	} else {
 		goto L1803
@@ -17754,8 +17766,8 @@ L1804:
 	;
 	F_errcode(m, int32(325))
 	mBase = m.M
-	v8641 = m.ExcPending
-	if v8641 != 0 {
+	v8649 = m.ExcPending
+	if v8649 != 0 {
 		goto L1
 	} else {
 		goto L1805
@@ -17763,20 +17775,20 @@ L1804:
 L1805:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6930)+192)) = v6930 + int32(448)
-	F_errmsg(m, int32(_a_F_InitPostgres_164), v6930+int32(192))
+	F_errmsg(m, int32(_a_F_InitPostgres_165), v6930+int32(192))
 	mBase = m.M
-	v8649 = m.ExcPending
-	if v8649 != 0 {
+	v8657 = m.ExcPending
+	if v8657 != 0 {
 		goto L1
 	} else {
 		goto L1806
 	}
 L1806:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(365), int32(_a_F_InitPostgres_150))
+	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(365), int32(_a_F_InitPostgres_151))
 	mBase = m.M
-	v8654 = m.ExcPending
-	if v8654 != 0 {
+	v8662 = m.ExcPending
+	if v8662 != 0 {
 		goto L1
 	} else {
 		goto L1807
@@ -17790,8 +17802,8 @@ L1808:
 	;
 	F_errcode(m, int32(16797828))
 	mBase = m.M
-	v8661 = m.ExcPending
-	if v8661 != 0 {
+	v8669 = m.ExcPending
+	if v8669 != 0 {
 		goto L1
 	} else {
 		goto L1809
@@ -17799,30 +17811,30 @@ L1808:
 L1809:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6930)+176)) = v6930 + int32(448)
-	F_errmsg(m, int32(_a_F_InitPostgres_165), v6930+int32(176))
+	F_errmsg(m, int32(_a_F_InitPostgres_166), v6930+int32(176))
 	mBase = m.M
-	v8669 = m.ExcPending
-	if v8669 != 0 {
+	v8677 = m.ExcPending
+	if v8677 != 0 {
 		goto L1
 	} else {
 		goto L1810
 	}
 L1810:
 	;
-	F_errdetail(m, int32(_a_F_InitPostgres_166), int32(0))
+	F_errdetail(m, int32(_a_F_InitPostgres_167), int32(0))
 	mBase = m.M
-	v8673 = m.ExcPending
-	if v8673 != 0 {
+	v8681 = m.ExcPending
+	if v8681 != 0 {
 		goto L1
 	} else {
 		goto L1811
 	}
 L1811:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(378), int32(_a_F_InitPostgres_150))
+	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(378), int32(_a_F_InitPostgres_151))
 	mBase = m.M
-	v8678 = m.ExcPending
-	if v8678 != 0 {
+	v8686 = m.ExcPending
+	if v8686 != 0 {
 		goto L1
 	} else {
 		goto L1812
@@ -17834,10 +17846,10 @@ L1812:
 	}
 L1813:
 	;
-	F_errcode(m, int32(_a_F_InitPostgres_127))
+	F_errcode(m, int32(_a_F_InitPostgres_128))
 	mBase = m.M
-	v8685 = m.ExcPending
-	if v8685 != 0 {
+	v8693 = m.ExcPending
+	if v8693 != 0 {
 		goto L1
 	} else {
 		goto L1814
@@ -17845,20 +17857,20 @@ L1813:
 L1814:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6930)+160)) = v6930 + int32(448)
-	F_errmsg(m, int32(_a_F_InitPostgres_167), v6930+int32(160))
+	F_errmsg(m, int32(_a_F_InitPostgres_168), v6930+int32(160))
 	mBase = m.M
-	v8693 = m.ExcPending
-	if v8693 != 0 {
+	v8701 = m.ExcPending
+	if v8701 != 0 {
 		goto L1
 	} else {
 		goto L1815
 	}
 L1815:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(399), int32(_a_F_InitPostgres_150))
+	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(399), int32(_a_F_InitPostgres_151))
 	mBase = m.M
-	v8698 = m.ExcPending
-	if v8698 != 0 {
+	v8706 = m.ExcPending
+	if v8706 != 0 {
 		goto L1
 	} else {
 		goto L1816
@@ -17870,41 +17882,41 @@ L1816:
 	}
 L1817:
 	;
-	F_errmsg(m, int32(_a_F_InitPostgres_168), int32(0))
+	F_errmsg(m, int32(_a_F_InitPostgres_169), int32(0))
 	mBase = m.M
-	v8706 = m.ExcPending
-	if v8706 != 0 {
+	v8714 = m.ExcPending
+	if v8714 != 0 {
 		goto L1
 	} else {
 		goto L1818
 	}
 L1818:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+64)) = v8029
-	F_errdetail(m, int32(_a_F_InitPostgres_169), v6930-int32(-64))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+64)) = v8037
+	F_errdetail(m, int32(_a_F_InitPostgres_170), v6930-int32(-64))
 	mBase = m.M
-	v8712 = m.ExcPending
-	if v8712 != 0 {
+	v8720 = m.ExcPending
+	if v8720 != 0 {
 		goto L1
 	} else {
 		goto L1819
 	}
 L1819:
 	;
-	F_errhint(m, int32(_a_F_InitPostgres_170), int32(0))
+	F_errhint(m, int32(_a_F_InitPostgres_171), int32(0))
 	mBase = m.M
-	v8716 = m.ExcPending
-	if v8716 != 0 {
+	v8724 = m.ExcPending
+	if v8724 != 0 {
 		goto L1
 	} else {
 		goto L1820
 	}
 L1820:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(425), int32(_a_F_InitPostgres_150))
+	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(425), int32(_a_F_InitPostgres_151))
 	mBase = m.M
-	v8721 = m.ExcPending
-	if v8721 != 0 {
+	v8729 = m.ExcPending
+	if v8729 != 0 {
 		goto L1
 	} else {
 		goto L1821
@@ -17916,41 +17928,41 @@ L1821:
 	}
 L1822:
 	;
-	F_errmsg(m, int32(_a_F_InitPostgres_168), int32(0))
+	F_errmsg(m, int32(_a_F_InitPostgres_169), int32(0))
 	mBase = m.M
-	v8729 = m.ExcPending
-	if v8729 != 0 {
+	v8737 = m.ExcPending
+	if v8737 != 0 {
 		goto L1
 	} else {
 		goto L1823
 	}
 L1823:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6930)+80)) = v8035
-	F_errdetail(m, int32(_a_F_InitPostgres_171), v6930+int32(80))
+	*(*int32)(unsafe.Add(mBase, uint32(v6930)+80)) = v8043
+	F_errdetail(m, int32(_a_F_InitPostgres_172), v6930+int32(80))
 	mBase = m.M
-	v8735 = m.ExcPending
-	if v8735 != 0 {
+	v8743 = m.ExcPending
+	if v8743 != 0 {
 		goto L1
 	} else {
 		goto L1824
 	}
 L1824:
 	;
-	F_errhint(m, int32(_a_F_InitPostgres_170), int32(0))
+	F_errhint(m, int32(_a_F_InitPostgres_171), int32(0))
 	mBase = m.M
-	v8739 = m.ExcPending
-	if v8739 != 0 {
+	v8747 = m.ExcPending
+	if v8747 != 0 {
 		goto L1
 	} else {
 		goto L1825
 	}
 L1825:
 	;
-	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(432), int32(_a_F_InitPostgres_150))
+	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(432), int32(_a_F_InitPostgres_151))
 	mBase = m.M
-	v8744 = m.ExcPending
-	if v8744 != 0 {
+	v8752 = m.ExcPending
+	if v8752 != 0 {
 		goto L1
 	} else {
 		goto L1826
@@ -17964,8 +17976,8 @@ L1827:
 	;
 	F_errcode(m, int32(1283))
 	mBase = m.M
-	v8752 = m.ExcPending
-	if v8752 != 0 {
+	v8760 = m.ExcPending
+	if v8760 != 0 {
 		goto L1
 	} else {
 		goto L1828
@@ -17973,20 +17985,20 @@ L1827:
 L1828:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6930)+256)) = v6918
-	F_errmsg(m, int32(_a_F_InitPostgres_135), v6930+int32(256))
+	F_errmsg(m, int32(_a_F_InitPostgres_136), v6930+int32(256))
 	mBase = m.M
-	v8758 = m.ExcPending
-	if v8758 != 0 {
+	v8766 = m.ExcPending
+	if v8766 != 0 {
 		goto L1
 	} else {
 		goto L1829
 	}
 L1829:
 	;
-	F_errdetail(m, int32(_a_F_InitPostgres_172), int32(0))
+	F_errdetail(m, int32(_a_F_InitPostgres_173), int32(0))
 	mBase = m.M
-	v8762 = m.ExcPending
-	if v8762 != 0 {
+	v8770 = m.ExcPending
+	if v8770 != 0 {
 		goto L1
 	} else {
 		goto L1830
@@ -17995,8 +18007,8 @@ L1830:
 	;
 	F_errfinish(m, int32(_a_F_InitPostgres_1), int32(1097), int32(_a_F_InitPostgres_0))
 	mBase = m.M
-	v8767 = m.ExcPending
-	if v8767 != 0 {
+	v8775 = m.ExcPending
+	if v8775 != 0 {
 		goto L1
 	} else {
 		goto L1831

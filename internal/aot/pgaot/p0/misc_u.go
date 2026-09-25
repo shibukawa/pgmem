@@ -51,70 +51,66 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 	_ = v10
 	var v11 int32
 	_ = v11
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
-	var v21 int32
-	_ = v21
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
 	var v22 int32
 	_ = v22
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
 	var v26 int32
 	_ = v26
 	var v30 int32
 	_ = v30
-	var v33 int32
-	_ = v33
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
 	var v37 int32
 	_ = v37
 	var v38 int32
 	_ = v38
+	var v39 int32
+	_ = v39
 	var v40 int32
 	_ = v40
+	var v41 int32
+	_ = v41
 	var v42 int32
 	_ = v42
+	var v44 int32
+	_ = v44
 	var v46 int32
 	_ = v46
-	var v47 int32
-	_ = v47
-	var v48 int32
-	_ = v48
+	var v50 int32
+	_ = v50
 	var v53 int32
 	_ = v53
 	var v54 int32
 	_ = v54
+	var v55 int32
+	_ = v55
 	var v56 int32
 	_ = v56
-	var v57 int32
-	_ = v57
 	var v61 int32
 	_ = v61
+	var v62 int32
+	_ = v62
+	var v64 int32
+	_ = v64
 	var v65 int32
 	_ = v65
-	var v68 int32
-	_ = v68
 	var v69 int32
 	_ = v69
-	var v70 int32
-	_ = v70
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
 	var v73 int32
 	_ = v73
-	var v75 int32
-	_ = v75
+	var v76 int32
+	_ = v76
 	var v77 int32
 	_ = v77
 	var v78 int32
@@ -123,81 +119,99 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 	_ = v79
 	var v80 int32
 	_ = v80
+	var v81 int32
+	_ = v81
+	var v83 int32
+	_ = v83
 	var v85 int32
 	_ = v85
 	var v86 int32
 	_ = v86
-	var v88 int32
-	_ = v88
 	var v89 int32
 	_ = v89
-	var v93 int32
-	_ = v93
+	var v90 int32
+	_ = v90
+	var v91 int32
+	_ = v91
+	var v92 int32
+	_ = v92
 	var v97 int32
 	_ = v97
+	var v98 int32
+	_ = v98
 	var v100 int32
 	_ = v100
 	var v101 int32
 	_ = v101
-	var v102 int32
-	_ = v102
-	var v103 int32
-	_ = v103
-	var v104 int32
-	_ = v104
 	var v105 int32
 	_ = v105
-	var v107 int32
-	_ = v107
-	var v111 int32
-	_ = v111
+	var v109 int32
+	_ = v109
+	var v112 int32
+	_ = v112
+	var v113 int32
+	_ = v113
+	var v114 int32
+	_ = v114
+	var v115 int32
+	_ = v115
+	var v116 int32
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v119 int32
+	_ = v119
+	var v123 int32
+	_ = v123
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	if v7 == int32(0) {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-		v42 = v10
-		if v42 != 0 {
-			v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-			v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-			v48 = *(*int32)(unsafe.Add(mBase, uint32(v47)+1468))
-			if v46 != v48 {
-				v53 = F_LWLockAcquire(m, v47+int32(1476), int32(0))
+		v46 = v10
+		if v46 != 0 {
+			v50 = int32(0)
+			v53 = base.AtomicRmwOr32(m, v50, int32(_a_F_unlink_span_0), v50)
+			v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+			v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+			v56 = *(*int32)(unsafe.Add(mBase, uint32(v55)+1468))
+			if v54 != v56 {
+				v61 = F_LWLockAcquire(m, v55+int32(1476), int32(0))
 				mBase = m.M
-				v54 = m.ExcPending
-				if v54 != 0 {
+				v62 = m.ExcPending
+				if v62 != 0 {
 					return
 				} else {
 					F_check_for_freed_segments_locked(m, l0)
 					mBase = m.M
-					v56 = m.ExcPending
-					if v56 != 0 {
+					v64 = m.ExcPending
+					if v64 != 0 {
 						return
 					} else {
-						v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						F_LWLockRelease(m, v57+int32(1476))
+						v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						F_LWLockRelease(m, v65+int32(1476))
 						mBase = m.M
-						v61 = m.ExcPending
-						if v61 != 0 {
+						v69 = m.ExcPending
+						if v69 != 0 {
 							return
 						} else {
-							v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-							v68 = l0 + v65*int32(20)
-							v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-							if v69 != 0 {
-								v73 = v69
-								v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+							v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+							v76 = l0 + v73*int32(20)
+							v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+							if v77 != 0 {
+								v81 = v77
+								v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 								return
 							} else {
-								v70 = F_get_segment_by_index(m, l0, v65)
+								v78 = F_get_segment_by_index(m, l0, v73)
 								mBase = m.M
-								v71 = m.ExcPending
-								if v71 != 0 {
+								v79 = m.ExcPending
+								if v79 != 0 {
 									return
 								} else {
-									v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-									v73 = v72
-									v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+									v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+									v81 = v80
+									v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 									return
 								}
 							}
@@ -205,75 +219,77 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 					}
 				}
 			} else {
-				v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-				v68 = l0 + v65*int32(20)
-				v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-				if v69 != 0 {
-					v73 = v69
-					v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+				v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+				v76 = l0 + v73*int32(20)
+				v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+				if v77 != 0 {
+					v81 = v77
+					v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+					*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 					return
 				} else {
-					v70 = F_get_segment_by_index(m, l0, v65)
+					v78 = F_get_segment_by_index(m, l0, v73)
 					mBase = m.M
-					v71 = m.ExcPending
-					if v71 != 0 {
+					v79 = m.ExcPending
+					if v79 != 0 {
 						return
 					} else {
-						v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-						v73 = v72
-						v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+						v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+						v81 = v80
+						v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+						*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 						return
 					}
 				}
 			}
 		} else {
-			v77 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-			v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-			v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-			v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+1468))
-			if v78 != v80 {
-				v85 = F_LWLockAcquire(m, v79+int32(1476), int32(0))
+			v85 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+			v86 = int32(0)
+			v89 = base.AtomicRmwOr32(m, v86, int32(_a_F_unlink_span_0), v86)
+			v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+			v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+			v92 = *(*int32)(unsafe.Add(mBase, uint32(v91)+1468))
+			if v90 != v92 {
+				v97 = F_LWLockAcquire(m, v91+int32(1476), int32(0))
 				mBase = m.M
-				v86 = m.ExcPending
-				if v86 != 0 {
+				v98 = m.ExcPending
+				if v98 != 0 {
 					return
 				} else {
 					F_check_for_freed_segments_locked(m, l0)
 					mBase = m.M
-					v88 = m.ExcPending
-					if v88 != 0 {
+					v100 = m.ExcPending
+					if v100 != 0 {
 						return
 					} else {
-						v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						F_LWLockRelease(m, v89+int32(1476))
+						v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						F_LWLockRelease(m, v101+int32(1476))
 						mBase = m.M
-						v93 = m.ExcPending
-						if v93 != 0 {
+						v105 = m.ExcPending
+						if v105 != 0 {
 							return
 						} else {
-							v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-							v100 = l0 + v97*int32(20)
-							v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-							if v101 != 0 {
-								v105 = v101
-								v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-								v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+							v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+							v112 = l0 + v109*int32(20)
+							v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+							if v113 != 0 {
+								v117 = v113
+								v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+								v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 								return
 							} else {
-								v102 = F_get_segment_by_index(m, l0, v97)
+								v114 = F_get_segment_by_index(m, l0, v109)
 								mBase = m.M
-								v103 = m.ExcPending
-								if v103 != 0 {
+								v115 = m.ExcPending
+								if v115 != 0 {
 									return
 								} else {
-									v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-									v105 = v104
-									v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-									v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+									v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+									v117 = v116
+									v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+									v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 									return
 								}
 							}
@@ -281,107 +297,111 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 					}
 				}
 			} else {
-				v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-				v100 = l0 + v97*int32(20)
-				v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-				if v101 != 0 {
-					v105 = v101
-					v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-					v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+				v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+				v112 = l0 + v109*int32(20)
+				v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+				if v113 != 0 {
+					v117 = v113
+					v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+					v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+					*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 					return
 				} else {
-					v102 = F_get_segment_by_index(m, l0, v97)
+					v114 = F_get_segment_by_index(m, l0, v109)
 					mBase = m.M
-					v103 = m.ExcPending
-					if v103 != 0 {
+					v115 = m.ExcPending
+					if v115 != 0 {
 						return
 					} else {
-						v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-						v105 = v104
-						v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-						v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+						v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+						v117 = v116
+						v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+						v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+						*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 						return
 					}
 				}
 			}
 		}
 	} else {
-		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+1468))
-		if v11 != v13 {
-			v18 = F_LWLockAcquire(m, v12+int32(1476), int32(0))
+		v11 = int32(0)
+		v14 = base.AtomicRmwOr32(m, v11, int32(_a_F_unlink_span_0), v11)
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+1468))
+		if v15 != v17 {
+			v22 = F_LWLockAcquire(m, v16+int32(1476), int32(0))
 			mBase = m.M
-			v19 = m.ExcPending
-			if v19 != 0 {
+			v23 = m.ExcPending
+			if v23 != 0 {
 				return
 			} else {
 				F_check_for_freed_segments_locked(m, l0)
 				mBase = m.M
-				v21 = m.ExcPending
-				if v21 != 0 {
+				v25 = m.ExcPending
+				if v25 != 0 {
 					return
 				} else {
-					v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					F_LWLockRelease(m, v22+int32(1476))
+					v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					F_LWLockRelease(m, v26+int32(1476))
 					mBase = m.M
-					v26 = m.ExcPending
-					if v26 != 0 {
+					v30 = m.ExcPending
+					if v30 != 0 {
 						return
 					} else {
-						v30 = int32(base.Ui32(v7) >> (uint(int32(27)) % 32))
-						v33 = l0 + v30*int32(20)
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
-						if v34 != 0 {
-							v38 = v34
-							v40 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-							*(*int32)(unsafe.Add(mBase, uint32(v38+v7&int32(134217727))+4)) = v40
-							v42 = v40
-							if v42 != 0 {
-								v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-								v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								v48 = *(*int32)(unsafe.Add(mBase, uint32(v47)+1468))
-								if v46 != v48 {
-									v53 = F_LWLockAcquire(m, v47+int32(1476), int32(0))
+						v34 = int32(base.Ui32(v7) >> (uint(int32(27)) % 32))
+						v37 = l0 + v34*int32(20)
+						v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+12))
+						if v38 != 0 {
+							v42 = v38
+							v44 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+							*(*int32)(unsafe.Add(mBase, uint32(v42+v7&int32(134217727))+4)) = v44
+							v46 = v44
+							if v46 != 0 {
+								v50 = int32(0)
+								v53 = base.AtomicRmwOr32(m, v50, int32(_a_F_unlink_span_0), v50)
+								v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+								v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								v56 = *(*int32)(unsafe.Add(mBase, uint32(v55)+1468))
+								if v54 != v56 {
+									v61 = F_LWLockAcquire(m, v55+int32(1476), int32(0))
 									mBase = m.M
-									v54 = m.ExcPending
-									if v54 != 0 {
+									v62 = m.ExcPending
+									if v62 != 0 {
 										return
 									} else {
 										F_check_for_freed_segments_locked(m, l0)
 										mBase = m.M
-										v56 = m.ExcPending
-										if v56 != 0 {
+										v64 = m.ExcPending
+										if v64 != 0 {
 											return
 										} else {
-											v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-											F_LWLockRelease(m, v57+int32(1476))
+											v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+											F_LWLockRelease(m, v65+int32(1476))
 											mBase = m.M
-											v61 = m.ExcPending
-											if v61 != 0 {
+											v69 = m.ExcPending
+											if v69 != 0 {
 												return
 											} else {
-												v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-												v68 = l0 + v65*int32(20)
-												v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-												if v69 != 0 {
-													v73 = v69
-													v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-													*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+												v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+												v76 = l0 + v73*int32(20)
+												v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+												if v77 != 0 {
+													v81 = v77
+													v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+													*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 													return
 												} else {
-													v70 = F_get_segment_by_index(m, l0, v65)
+													v78 = F_get_segment_by_index(m, l0, v73)
 													mBase = m.M
-													v71 = m.ExcPending
-													if v71 != 0 {
+													v79 = m.ExcPending
+													if v79 != 0 {
 														return
 													} else {
-														v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-														v73 = v72
-														v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-														*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+														v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+														v81 = v80
+														v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+														*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 														return
 													}
 												}
@@ -389,75 +409,77 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 										}
 									}
 								} else {
-									v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-									v68 = l0 + v65*int32(20)
-									v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-									if v69 != 0 {
-										v73 = v69
-										v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+									v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+									v76 = l0 + v73*int32(20)
+									v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+									if v77 != 0 {
+										v81 = v77
+										v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 										return
 									} else {
-										v70 = F_get_segment_by_index(m, l0, v65)
+										v78 = F_get_segment_by_index(m, l0, v73)
 										mBase = m.M
-										v71 = m.ExcPending
-										if v71 != 0 {
+										v79 = m.ExcPending
+										if v79 != 0 {
 											return
 										} else {
-											v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-											v73 = v72
-											v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+											v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+											v81 = v80
+											v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 											return
 										}
 									}
 								}
 							} else {
-								v77 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-								v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-								v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+1468))
-								if v78 != v80 {
-									v85 = F_LWLockAcquire(m, v79+int32(1476), int32(0))
+								v85 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+								v86 = int32(0)
+								v89 = base.AtomicRmwOr32(m, v86, int32(_a_F_unlink_span_0), v86)
+								v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+								v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								v92 = *(*int32)(unsafe.Add(mBase, uint32(v91)+1468))
+								if v90 != v92 {
+									v97 = F_LWLockAcquire(m, v91+int32(1476), int32(0))
 									mBase = m.M
-									v86 = m.ExcPending
-									if v86 != 0 {
+									v98 = m.ExcPending
+									if v98 != 0 {
 										return
 									} else {
 										F_check_for_freed_segments_locked(m, l0)
 										mBase = m.M
-										v88 = m.ExcPending
-										if v88 != 0 {
+										v100 = m.ExcPending
+										if v100 != 0 {
 											return
 										} else {
-											v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-											F_LWLockRelease(m, v89+int32(1476))
+											v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+											F_LWLockRelease(m, v101+int32(1476))
 											mBase = m.M
-											v93 = m.ExcPending
-											if v93 != 0 {
+											v105 = m.ExcPending
+											if v105 != 0 {
 												return
 											} else {
-												v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-												v100 = l0 + v97*int32(20)
-												v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-												if v101 != 0 {
-													v105 = v101
-													v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-													v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-													*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+												v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+												v112 = l0 + v109*int32(20)
+												v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+												if v113 != 0 {
+													v117 = v113
+													v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+													v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+													*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 													return
 												} else {
-													v102 = F_get_segment_by_index(m, l0, v97)
+													v114 = F_get_segment_by_index(m, l0, v109)
 													mBase = m.M
-													v103 = m.ExcPending
-													if v103 != 0 {
+													v115 = m.ExcPending
+													if v115 != 0 {
 														return
 													} else {
-														v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-														v105 = v104
-														v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-														v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-														*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+														v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+														v117 = v116
+														v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+														v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+														*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 														return
 													}
 												}
@@ -465,87 +487,89 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 										}
 									}
 								} else {
-									v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-									v100 = l0 + v97*int32(20)
-									v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-									if v101 != 0 {
-										v105 = v101
-										v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-										v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+									v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+									v112 = l0 + v109*int32(20)
+									v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+									if v113 != 0 {
+										v117 = v113
+										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+										v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 										return
 									} else {
-										v102 = F_get_segment_by_index(m, l0, v97)
+										v114 = F_get_segment_by_index(m, l0, v109)
 										mBase = m.M
-										v103 = m.ExcPending
-										if v103 != 0 {
+										v115 = m.ExcPending
+										if v115 != 0 {
 											return
 										} else {
-											v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-											v105 = v104
-											v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-											v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+											v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+											v117 = v116
+											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+											v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 											return
 										}
 									}
 								}
 							}
 						} else {
-							v35 = F_get_segment_by_index(m, l0, v30)
+							v39 = F_get_segment_by_index(m, l0, v34)
 							mBase = m.M
-							v36 = m.ExcPending
-							if v36 != 0 {
+							v40 = m.ExcPending
+							if v40 != 0 {
 								return
 							} else {
-								v37 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
-								v38 = v37
-								v40 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-								*(*int32)(unsafe.Add(mBase, uint32(v38+v7&int32(134217727))+4)) = v40
-								v42 = v40
-								if v42 != 0 {
-									v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-									v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									v48 = *(*int32)(unsafe.Add(mBase, uint32(v47)+1468))
-									if v46 != v48 {
-										v53 = F_LWLockAcquire(m, v47+int32(1476), int32(0))
+								v41 = *(*int32)(unsafe.Add(mBase, uint32(v37)+12))
+								v42 = v41
+								v44 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+								*(*int32)(unsafe.Add(mBase, uint32(v42+v7&int32(134217727))+4)) = v44
+								v46 = v44
+								if v46 != 0 {
+									v50 = int32(0)
+									v53 = base.AtomicRmwOr32(m, v50, int32(_a_F_unlink_span_0), v50)
+									v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+									v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									v56 = *(*int32)(unsafe.Add(mBase, uint32(v55)+1468))
+									if v54 != v56 {
+										v61 = F_LWLockAcquire(m, v55+int32(1476), int32(0))
 										mBase = m.M
-										v54 = m.ExcPending
-										if v54 != 0 {
+										v62 = m.ExcPending
+										if v62 != 0 {
 											return
 										} else {
 											F_check_for_freed_segments_locked(m, l0)
 											mBase = m.M
-											v56 = m.ExcPending
-											if v56 != 0 {
+											v64 = m.ExcPending
+											if v64 != 0 {
 												return
 											} else {
-												v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-												F_LWLockRelease(m, v57+int32(1476))
+												v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												F_LWLockRelease(m, v65+int32(1476))
 												mBase = m.M
-												v61 = m.ExcPending
-												if v61 != 0 {
+												v69 = m.ExcPending
+												if v69 != 0 {
 													return
 												} else {
-													v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-													v68 = l0 + v65*int32(20)
-													v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-													if v69 != 0 {
-														v73 = v69
-														v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-														*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+													v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+													v76 = l0 + v73*int32(20)
+													v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+													if v77 != 0 {
+														v81 = v77
+														v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+														*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 														return
 													} else {
-														v70 = F_get_segment_by_index(m, l0, v65)
+														v78 = F_get_segment_by_index(m, l0, v73)
 														mBase = m.M
-														v71 = m.ExcPending
-														if v71 != 0 {
+														v79 = m.ExcPending
+														if v79 != 0 {
 															return
 														} else {
-															v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-															v73 = v72
-															v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-															*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+															v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+															v81 = v80
+															v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+															*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 															return
 														}
 													}
@@ -553,75 +577,77 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 											}
 										}
 									} else {
-										v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-										v68 = l0 + v65*int32(20)
-										v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-										if v69 != 0 {
-											v73 = v69
-											v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+										v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+										v76 = l0 + v73*int32(20)
+										v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+										if v77 != 0 {
+											v81 = v77
+											v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 											return
 										} else {
-											v70 = F_get_segment_by_index(m, l0, v65)
+											v78 = F_get_segment_by_index(m, l0, v73)
 											mBase = m.M
-											v71 = m.ExcPending
-											if v71 != 0 {
+											v79 = m.ExcPending
+											if v79 != 0 {
 												return
 											} else {
-												v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-												v73 = v72
-												v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+												v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+												v81 = v80
+												v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+												*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 												return
 											}
 										}
 									}
 								} else {
-									v77 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-									v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-									v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+1468))
-									if v78 != v80 {
-										v85 = F_LWLockAcquire(m, v79+int32(1476), int32(0))
+									v85 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+									v86 = int32(0)
+									v89 = base.AtomicRmwOr32(m, v86, int32(_a_F_unlink_span_0), v86)
+									v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+									v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									v92 = *(*int32)(unsafe.Add(mBase, uint32(v91)+1468))
+									if v90 != v92 {
+										v97 = F_LWLockAcquire(m, v91+int32(1476), int32(0))
 										mBase = m.M
-										v86 = m.ExcPending
-										if v86 != 0 {
+										v98 = m.ExcPending
+										if v98 != 0 {
 											return
 										} else {
 											F_check_for_freed_segments_locked(m, l0)
 											mBase = m.M
-											v88 = m.ExcPending
-											if v88 != 0 {
+											v100 = m.ExcPending
+											if v100 != 0 {
 												return
 											} else {
-												v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-												F_LWLockRelease(m, v89+int32(1476))
+												v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												F_LWLockRelease(m, v101+int32(1476))
 												mBase = m.M
-												v93 = m.ExcPending
-												if v93 != 0 {
+												v105 = m.ExcPending
+												if v105 != 0 {
 													return
 												} else {
-													v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-													v100 = l0 + v97*int32(20)
-													v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-													if v101 != 0 {
-														v105 = v101
-														v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-														v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-														*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+													v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+													v112 = l0 + v109*int32(20)
+													v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+													if v113 != 0 {
+														v117 = v113
+														v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+														v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+														*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 														return
 													} else {
-														v102 = F_get_segment_by_index(m, l0, v97)
+														v114 = F_get_segment_by_index(m, l0, v109)
 														mBase = m.M
-														v103 = m.ExcPending
-														if v103 != 0 {
+														v115 = m.ExcPending
+														if v115 != 0 {
 															return
 														} else {
-															v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-															v105 = v104
-															v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-															v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-															*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+															v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+															v117 = v116
+															v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+															v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+															*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 															return
 														}
 													}
@@ -629,27 +655,27 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 											}
 										}
 									} else {
-										v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-										v100 = l0 + v97*int32(20)
-										v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-										if v101 != 0 {
-											v105 = v101
-											v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-											v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+										v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+										v112 = l0 + v109*int32(20)
+										v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+										if v113 != 0 {
+											v117 = v113
+											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+											v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 											return
 										} else {
-											v102 = F_get_segment_by_index(m, l0, v97)
+											v114 = F_get_segment_by_index(m, l0, v109)
 											mBase = m.M
-											v103 = m.ExcPending
-											if v103 != 0 {
+											v115 = m.ExcPending
+											if v115 != 0 {
 												return
 											} else {
-												v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-												v105 = v104
-												v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-												v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+												v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+												v117 = v116
+												v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+												v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+												*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 												return
 											}
 										}
@@ -661,57 +687,59 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 				}
 			}
 		} else {
-			v30 = int32(base.Ui32(v7) >> (uint(int32(27)) % 32))
-			v33 = l0 + v30*int32(20)
-			v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
-			if v34 != 0 {
-				v38 = v34
-				v40 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v38+v7&int32(134217727))+4)) = v40
-				v42 = v40
-				if v42 != 0 {
-					v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-					v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					v48 = *(*int32)(unsafe.Add(mBase, uint32(v47)+1468))
-					if v46 != v48 {
-						v53 = F_LWLockAcquire(m, v47+int32(1476), int32(0))
+			v34 = int32(base.Ui32(v7) >> (uint(int32(27)) % 32))
+			v37 = l0 + v34*int32(20)
+			v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+12))
+			if v38 != 0 {
+				v42 = v38
+				v44 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+				*(*int32)(unsafe.Add(mBase, uint32(v42+v7&int32(134217727))+4)) = v44
+				v46 = v44
+				if v46 != 0 {
+					v50 = int32(0)
+					v53 = base.AtomicRmwOr32(m, v50, int32(_a_F_unlink_span_0), v50)
+					v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+					v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v56 = *(*int32)(unsafe.Add(mBase, uint32(v55)+1468))
+					if v54 != v56 {
+						v61 = F_LWLockAcquire(m, v55+int32(1476), int32(0))
 						mBase = m.M
-						v54 = m.ExcPending
-						if v54 != 0 {
+						v62 = m.ExcPending
+						if v62 != 0 {
 							return
 						} else {
 							F_check_for_freed_segments_locked(m, l0)
 							mBase = m.M
-							v56 = m.ExcPending
-							if v56 != 0 {
+							v64 = m.ExcPending
+							if v64 != 0 {
 								return
 							} else {
-								v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								F_LWLockRelease(m, v57+int32(1476))
+								v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								F_LWLockRelease(m, v65+int32(1476))
 								mBase = m.M
-								v61 = m.ExcPending
-								if v61 != 0 {
+								v69 = m.ExcPending
+								if v69 != 0 {
 									return
 								} else {
-									v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-									v68 = l0 + v65*int32(20)
-									v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-									if v69 != 0 {
-										v73 = v69
-										v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+									v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+									v76 = l0 + v73*int32(20)
+									v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+									if v77 != 0 {
+										v81 = v77
+										v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 										return
 									} else {
-										v70 = F_get_segment_by_index(m, l0, v65)
+										v78 = F_get_segment_by_index(m, l0, v73)
 										mBase = m.M
-										v71 = m.ExcPending
-										if v71 != 0 {
+										v79 = m.ExcPending
+										if v79 != 0 {
 											return
 										} else {
-											v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-											v73 = v72
-											v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+											v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+											v81 = v80
+											v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 											return
 										}
 									}
@@ -719,75 +747,77 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 							}
 						}
 					} else {
-						v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-						v68 = l0 + v65*int32(20)
-						v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-						if v69 != 0 {
-							v73 = v69
-							v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-							*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+						v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+						v76 = l0 + v73*int32(20)
+						v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+						if v77 != 0 {
+							v81 = v77
+							v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+							*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 							return
 						} else {
-							v70 = F_get_segment_by_index(m, l0, v65)
+							v78 = F_get_segment_by_index(m, l0, v73)
 							mBase = m.M
-							v71 = m.ExcPending
-							if v71 != 0 {
+							v79 = m.ExcPending
+							if v79 != 0 {
 								return
 							} else {
-								v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-								v73 = v72
-								v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+								v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+								v81 = v80
+								v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 								return
 							}
 						}
 					}
 				} else {
-					v77 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-					v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-					v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+1468))
-					if v78 != v80 {
-						v85 = F_LWLockAcquire(m, v79+int32(1476), int32(0))
+					v85 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+					v86 = int32(0)
+					v89 = base.AtomicRmwOr32(m, v86, int32(_a_F_unlink_span_0), v86)
+					v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+					v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v92 = *(*int32)(unsafe.Add(mBase, uint32(v91)+1468))
+					if v90 != v92 {
+						v97 = F_LWLockAcquire(m, v91+int32(1476), int32(0))
 						mBase = m.M
-						v86 = m.ExcPending
-						if v86 != 0 {
+						v98 = m.ExcPending
+						if v98 != 0 {
 							return
 						} else {
 							F_check_for_freed_segments_locked(m, l0)
 							mBase = m.M
-							v88 = m.ExcPending
-							if v88 != 0 {
+							v100 = m.ExcPending
+							if v100 != 0 {
 								return
 							} else {
-								v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								F_LWLockRelease(m, v89+int32(1476))
+								v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								F_LWLockRelease(m, v101+int32(1476))
 								mBase = m.M
-								v93 = m.ExcPending
-								if v93 != 0 {
+								v105 = m.ExcPending
+								if v105 != 0 {
 									return
 								} else {
-									v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-									v100 = l0 + v97*int32(20)
-									v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-									if v101 != 0 {
-										v105 = v101
-										v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-										v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+									v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+									v112 = l0 + v109*int32(20)
+									v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+									if v113 != 0 {
+										v117 = v113
+										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+										v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 										return
 									} else {
-										v102 = F_get_segment_by_index(m, l0, v97)
+										v114 = F_get_segment_by_index(m, l0, v109)
 										mBase = m.M
-										v103 = m.ExcPending
-										if v103 != 0 {
+										v115 = m.ExcPending
+										if v115 != 0 {
 											return
 										} else {
-											v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-											v105 = v104
-											v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-											v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+											v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+											v117 = v116
+											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+											v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 											return
 										}
 									}
@@ -795,87 +825,89 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 							}
 						}
 					} else {
-						v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-						v100 = l0 + v97*int32(20)
-						v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-						if v101 != 0 {
-							v105 = v101
-							v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-							v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-							*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+						v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+						v112 = l0 + v109*int32(20)
+						v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+						if v113 != 0 {
+							v117 = v113
+							v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+							v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+							*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 							return
 						} else {
-							v102 = F_get_segment_by_index(m, l0, v97)
+							v114 = F_get_segment_by_index(m, l0, v109)
 							mBase = m.M
-							v103 = m.ExcPending
-							if v103 != 0 {
+							v115 = m.ExcPending
+							if v115 != 0 {
 								return
 							} else {
-								v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-								v105 = v104
-								v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-								v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+								v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+								v117 = v116
+								v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+								v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 								return
 							}
 						}
 					}
 				}
 			} else {
-				v35 = F_get_segment_by_index(m, l0, v30)
+				v39 = F_get_segment_by_index(m, l0, v34)
 				mBase = m.M
-				v36 = m.ExcPending
-				if v36 != 0 {
+				v40 = m.ExcPending
+				if v40 != 0 {
 					return
 				} else {
-					v37 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
-					v38 = v37
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-					*(*int32)(unsafe.Add(mBase, uint32(v38+v7&int32(134217727))+4)) = v40
-					v42 = v40
-					if v42 != 0 {
-						v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-						v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						v48 = *(*int32)(unsafe.Add(mBase, uint32(v47)+1468))
-						if v46 != v48 {
-							v53 = F_LWLockAcquire(m, v47+int32(1476), int32(0))
+					v41 = *(*int32)(unsafe.Add(mBase, uint32(v37)+12))
+					v42 = v41
+					v44 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+					*(*int32)(unsafe.Add(mBase, uint32(v42+v7&int32(134217727))+4)) = v44
+					v46 = v44
+					if v46 != 0 {
+						v50 = int32(0)
+						v53 = base.AtomicRmwOr32(m, v50, int32(_a_F_unlink_span_0), v50)
+						v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+						v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						v56 = *(*int32)(unsafe.Add(mBase, uint32(v55)+1468))
+						if v54 != v56 {
+							v61 = F_LWLockAcquire(m, v55+int32(1476), int32(0))
 							mBase = m.M
-							v54 = m.ExcPending
-							if v54 != 0 {
+							v62 = m.ExcPending
+							if v62 != 0 {
 								return
 							} else {
 								F_check_for_freed_segments_locked(m, l0)
 								mBase = m.M
-								v56 = m.ExcPending
-								if v56 != 0 {
+								v64 = m.ExcPending
+								if v64 != 0 {
 									return
 								} else {
-									v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									F_LWLockRelease(m, v57+int32(1476))
+									v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									F_LWLockRelease(m, v65+int32(1476))
 									mBase = m.M
-									v61 = m.ExcPending
-									if v61 != 0 {
+									v69 = m.ExcPending
+									if v69 != 0 {
 										return
 									} else {
-										v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-										v68 = l0 + v65*int32(20)
-										v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-										if v69 != 0 {
-											v73 = v69
-											v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+										v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+										v76 = l0 + v73*int32(20)
+										v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+										if v77 != 0 {
+											v81 = v77
+											v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 											return
 										} else {
-											v70 = F_get_segment_by_index(m, l0, v65)
+											v78 = F_get_segment_by_index(m, l0, v73)
 											mBase = m.M
-											v71 = m.ExcPending
-											if v71 != 0 {
+											v79 = m.ExcPending
+											if v79 != 0 {
 												return
 											} else {
-												v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-												v73 = v72
-												v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+												v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+												v81 = v80
+												v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+												*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 												return
 											}
 										}
@@ -883,75 +915,77 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v65 = int32(base.Ui32(v42) >> (uint(int32(27)) % 32))
-							v68 = l0 + v65*int32(20)
-							v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-							if v69 != 0 {
-								v73 = v69
-								v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+							v73 = int32(base.Ui32(v46) >> (uint(int32(27)) % 32))
+							v76 = l0 + v73*int32(20)
+							v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+							if v77 != 0 {
+								v81 = v77
+								v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 								return
 							} else {
-								v70 = F_get_segment_by_index(m, l0, v65)
+								v78 = F_get_segment_by_index(m, l0, v73)
 								mBase = m.M
-								v71 = m.ExcPending
-								if v71 != 0 {
+								v79 = m.ExcPending
+								if v79 != 0 {
 									return
 								} else {
-									v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)+12))
-									v73 = v72
-									v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(v73+v42&int32(134217727))+8)) = v75
+									v80 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
+									v81 = v80
+									v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v81+v46&int32(134217727))+8)) = v83
 									return
 								}
 							}
 						}
 					} else {
-						v77 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-						v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-						v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+1468))
-						if v78 != v80 {
-							v85 = F_LWLockAcquire(m, v79+int32(1476), int32(0))
+						v85 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+						v86 = int32(0)
+						v89 = base.AtomicRmwOr32(m, v86, int32(_a_F_unlink_span_0), v86)
+						v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+						v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						v92 = *(*int32)(unsafe.Add(mBase, uint32(v91)+1468))
+						if v90 != v92 {
+							v97 = F_LWLockAcquire(m, v91+int32(1476), int32(0))
 							mBase = m.M
-							v86 = m.ExcPending
-							if v86 != 0 {
+							v98 = m.ExcPending
+							if v98 != 0 {
 								return
 							} else {
 								F_check_for_freed_segments_locked(m, l0)
 								mBase = m.M
-								v88 = m.ExcPending
-								if v88 != 0 {
+								v100 = m.ExcPending
+								if v100 != 0 {
 									return
 								} else {
-									v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									F_LWLockRelease(m, v89+int32(1476))
+									v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									F_LWLockRelease(m, v101+int32(1476))
 									mBase = m.M
-									v93 = m.ExcPending
-									if v93 != 0 {
+									v105 = m.ExcPending
+									if v105 != 0 {
 										return
 									} else {
-										v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-										v100 = l0 + v97*int32(20)
-										v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-										if v101 != 0 {
-											v105 = v101
-											v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-											v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+										v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+										v112 = l0 + v109*int32(20)
+										v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+										if v113 != 0 {
+											v117 = v113
+											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+											v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 											return
 										} else {
-											v102 = F_get_segment_by_index(m, l0, v97)
+											v114 = F_get_segment_by_index(m, l0, v109)
 											mBase = m.M
-											v103 = m.ExcPending
-											if v103 != 0 {
+											v115 = m.ExcPending
+											if v115 != 0 {
 												return
 											} else {
-												v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-												v105 = v104
-												v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-												v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+												v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+												v117 = v116
+												v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+												v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+												*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 												return
 											}
 										}
@@ -959,27 +993,27 @@ func F_unlink_span(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v97 = int32(base.Ui32(v77) >> (uint(int32(27)) % 32))
-							v100 = l0 + v97*int32(20)
-							v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-							if v101 != 0 {
-								v105 = v101
-								v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-								v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+							v109 = int32(base.Ui32(v85) >> (uint(int32(27)) % 32))
+							v112 = l0 + v109*int32(20)
+							v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+							if v113 != 0 {
+								v117 = v113
+								v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+								v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 								return
 							} else {
-								v102 = F_get_segment_by_index(m, l0, v97)
+								v114 = F_get_segment_by_index(m, l0, v109)
 								mBase = m.M
-								v103 = m.ExcPending
-								if v103 != 0 {
+								v115 = m.ExcPending
+								if v115 != 0 {
 									return
 								} else {
-									v104 = *(*int32)(unsafe.Add(mBase, uint32(v100)+12))
-									v105 = v104
-									v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
-									v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(v105+v77&int32(134217727)+v107<<(uint(int32(2))%32))+16)) = v111
+									v116 = *(*int32)(unsafe.Add(mBase, uint32(v112)+12))
+									v117 = v116
+									v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+30)))
+									v123 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v117+v85&int32(134217727)+v119<<(uint(int32(2))%32))+16)) = v123
 									return
 								}
 							}

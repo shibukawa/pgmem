@@ -84,8 +84,18 @@ func F_parse_analyze_fixedparams(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	_ = v111
 	var v114 int32
 	_ = v114
-	var v125 int32
-	_ = v125
+	var v118 int32
+	_ = v118
+	var v120 int32
+	_ = v120
+	var v121 int32
+	_ = v121
+	var v126 int32
+	_ = v126
+	var v127 int32
+	_ = v127
+	var v133 int32
+	_ = v133
 	v8 = F_make_parsestate(m, int32(0))
 	mBase = m.M
 	v11 = m.ExcPending
@@ -338,10 +348,15 @@ L36:
 	*(*int32)(unsafe.Add(mBase, _c_F_parse_analyze_fixedparams[4])) = v110 + v111
 	v114 = *(*int32)(unsafe.Add(mBase, uint32(v93)))
 	*(*int32)(unsafe.Add(mBase, uint32(v93))) = v114 + v111
+	v118 = int32(0)
+	v120 = int32(_a_F_parse_analyze_fixedparams_1)
+	v121 = base.AtomicRmwOr32(m, v118, v120, v118)
 	*(*int64)(unsafe.Add(mBase, uint32(v93)+392)) = v89
-	*(*int32)(unsafe.Add(mBase, uint32(v93))) = v114 + int32(2)
-	v125 = *(*int32)(unsafe.Add(mBase, _c_F_parse_analyze_fixedparams[4]))
-	*(*int32)(unsafe.Add(mBase, _c_F_parse_analyze_fixedparams[4])) = v125 - v111
+	v126 = base.AtomicRmwOr32(m, v118, v120, v118)
+	v127 = *(*int32)(unsafe.Add(mBase, uint32(v93)))
+	*(*int32)(unsafe.Add(mBase, uint32(v93))) = v127 + v111
+	v133 = *(*int32)(unsafe.Add(mBase, _c_F_parse_analyze_fixedparams[4]))
+	*(*int32)(unsafe.Add(mBase, _c_F_parse_analyze_fixedparams[4])) = v133 - v111
 	goto L33
 }
 func F_serializeAnalyzeReceive(m *base.Module, l0 int32, l1 int32) int32 {

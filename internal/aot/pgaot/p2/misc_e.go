@@ -2610,58 +2610,56 @@ func F_ExecGather(m *base.Module, l0 int32) int32 {
 	_ = v218
 	var v220 int32
 	_ = v220
-	var v223 int32
-	_ = v223
-	var v224 int32
-	_ = v224
+	var v221 int32
+	_ = v221
 	var v226 int32
 	_ = v226
 	var v227 int32
 	_ = v227
-	var v229 int32
-	_ = v229
+	var v228 int32
+	_ = v228
 	var v230 int32
 	_ = v230
-	var v242 int32
-	_ = v242
-	var v245 int32
-	_ = v245
+	var v231 int32
+	_ = v231
+	var v233 int32
+	_ = v233
+	var v234 int32
+	_ = v234
 	var v246 int32
 	_ = v246
-	var v247 int32
-	_ = v247
 	var v249 int32
 	_ = v249
+	var v250 int32
+	_ = v250
 	var v251 int32
 	_ = v251
 	var v253 int32
 	_ = v253
-	var v254 int32
-	_ = v254
 	var v255 int32
 	_ = v255
-	var v256 int32
-	_ = v256
+	var v257 int32
+	_ = v257
+	var v258 int32
+	_ = v258
 	var v259 int32
 	_ = v259
-	var v264 int32
-	_ = v264
-	var v267 int32
-	_ = v267
-	var v276 int32
-	_ = v276
-	var v279 int32
-	_ = v279
+	var v260 int32
+	_ = v260
+	var v263 int32
+	_ = v263
+	var v268 int32
+	_ = v268
+	var v271 int32
+	_ = v271
+	var v280 int32
+	_ = v280
 	var v283 int32
 	_ = v283
-	var v284 int32
-	_ = v284
-	var v285 int32
-	_ = v285
-	var v286 int32
-	_ = v286
 	var v287 int32
 	_ = v287
+	var v288 int32
+	_ = v288
 	var v289 int32
 	_ = v289
 	var v290 int32
@@ -2670,22 +2668,28 @@ func F_ExecGather(m *base.Module, l0 int32) int32 {
 	_ = v291
 	var v293 int32
 	_ = v293
-	var v298 int32
-	_ = v298
-	var v299 int32
-	_ = v299
-	var v300 int32
-	_ = v300
+	var v294 int32
+	_ = v294
+	var v295 int32
+	_ = v295
+	var v297 int32
+	_ = v297
+	var v302 int32
+	_ = v302
 	var v303 int32
 	_ = v303
-	var v305 int32
-	_ = v305
+	var v304 int32
+	_ = v304
 	var v307 int32
 	_ = v307
-	var v308 int32
-	_ = v308
+	var v309 int32
+	_ = v309
+	var v311 int32
+	_ = v311
 	var v312 int32
 	_ = v312
+	var v316 int32
+	_ = v316
 	v10 = m.G0
 	v12 = v10 - int32(16)
 	m.G0 = v12
@@ -2911,7 +2915,7 @@ L29:
 L30:
 	;
 	m.G0 = v12 + int32(16)
-	return v312
+	return v316
 L31:
 	;
 	v126 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
@@ -2922,9 +2926,9 @@ L31:
 	}
 L32:
 	;
-	v276 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v267)+4)))
-	if v276&int32(2) != 0 {
-		v312 = int32(0)
+	v280 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v271)+4)))
+	if v280&int32(2) != 0 {
+		v316 = int32(0)
 		goto L30
 	} else {
 		goto L95
@@ -2934,31 +2938,31 @@ L33:
 	goto L32
 L34:
 	;
-	v242 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+105)))
-	if v242 != int32(1) {
+	v246 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+105)))
+	if v246 != int32(1) {
 		goto L31
 	} else {
 		goto L82
 	}
 L35:
 	;
-	v227 = int32(0)
-	v229 = F_ExecStoreMinimalTuple(m, v163, v115, v227)
+	v231 = int32(0)
+	v233 = F_ExecStoreMinimalTuple(m, v163, v115, v231)
 	mBase = m.M
-	v230 = m.ExcPending
-	if v230 != 0 {
+	v234 = m.ExcPending
+	if v234 != 0 {
 		goto L4
 	} else {
 		goto L80
 	}
 L36:
 	;
-	v223 = *(*int32)(unsafe.Add(mBase, uint32(v115)+8))
-	v224 = *(*int32)(unsafe.Add(mBase, uint32(v223)+12))
-	m.T0[v224].(func(*base.Module, int32))(m, v115)
+	v227 = *(*int32)(unsafe.Add(mBase, uint32(v115)+8))
+	v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+12))
+	m.T0[v228].(func(*base.Module, int32))(m, v115)
 	mBase = m.M
-	v226 = m.ExcPending
-	if v226 != 0 {
+	v230 = m.ExcPending
+	if v230 != 0 {
 		goto L4
 	} else {
 		goto L79
@@ -3218,7 +3222,9 @@ L76:
 L77:
 	;
 	v220 = *(*int32)(unsafe.Add(mBase, _c_F_ExecGather[2]))
-	*(*int32)(unsafe.Add(mBase, uint32(v220))) = int32(0)
+	v221 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v220))) = v221
+	v226 = base.AtomicRmwOr32(m, v221, int32(_a_F_ExecGather_0), v221)
 	goto L78
 L78:
 	;
@@ -3226,43 +3232,43 @@ L78:
 	goto L46
 L79:
 	;
-	v267 = v115
+	v271 = v115
 	goto L33
 L80:
 	;
 	if v115 == int32(0) {
-		v312 = v227
+		v316 = v231
 		goto L30
 	} else {
 		goto L81
 	}
 L81:
 	;
-	v267 = v115
+	v271 = v115
 	goto L33
 L82:
 	;
-	v245 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v246 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
-	if v246 != 0 {
+	v249 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v250 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
+	if v250 != 0 {
 		goto L83
 	} else {
 		goto L84
 	}
 L83:
 	;
-	v247 = *(*int32)(unsafe.Add(mBase, uint32(v246)+24))
-	v249 = v247
+	v251 = *(*int32)(unsafe.Add(mBase, uint32(v250)+24))
+	v253 = v251
 	goto L85
 L84:
 	;
-	v249 = int32(0)
+	v253 = int32(0)
 	goto L85
 L85:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v245)+172)) = v249
-	v251 = *(*int32)(unsafe.Add(mBase, uint32(v116)+52))
-	if v251 != 0 {
+	*(*int32)(unsafe.Add(mBase, uint32(v249)+172)) = v253
+	v255 = *(*int32)(unsafe.Add(mBase, uint32(v116)+52))
+	if v255 != 0 {
 		goto L86
 	} else {
 		goto L87
@@ -3271,8 +3277,8 @@ L86:
 	;
 	F_ExecReScan(m, v116)
 	mBase = m.M
-	v253 = m.ExcPending
-	if v253 != 0 {
+	v257 = m.ExcPending
+	if v257 != 0 {
 		goto L4
 	} else {
 		goto L89
@@ -3282,11 +3288,11 @@ L87:
 	goto L88
 L88:
 	;
-	v254 = *(*int32)(unsafe.Add(mBase, uint32(v116)+12))
-	v255 = m.T0[v254].(func(*base.Module, int32) int32)(m, v116)
+	v258 = *(*int32)(unsafe.Add(mBase, uint32(v116)+12))
+	v259 = m.T0[v258].(func(*base.Module, int32) int32)(m, v116)
 	mBase = m.M
-	v256 = m.ExcPending
-	if v256 != 0 {
+	v260 = m.ExcPending
+	if v260 != 0 {
 		goto L4
 	} else {
 		goto L90
@@ -3296,17 +3302,17 @@ L89:
 	goto L88
 L90:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v245)+172)) = int32(0)
-	if v255 != 0 {
+	*(*int32)(unsafe.Add(mBase, uint32(v249)+172)) = int32(0)
+	if v259 != 0 {
 		goto L91
 	} else {
 		goto L92
 	}
 L91:
 	;
-	v259 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v255)+4)))
-	if v259&int32(2) == int32(0) {
-		v267 = v255
+	v263 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v259)+4)))
+	if v263&int32(2) == int32(0) {
+		v271 = v259
 		goto L33
 	} else {
 		goto L94
@@ -3316,68 +3322,68 @@ L92:
 	goto L93
 L93:
 	;
-	v264 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+105)) = uint8(v264)
+	v268 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+105)) = uint8(v268)
 	goto L31
 L94:
 	;
 	goto L93
 L95:
 	;
-	v279 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-	if v279 == int32(0) {
+	v283 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+	if v283 == int32(0) {
 		goto L96
 	} else {
 		goto L97
 	}
 L96:
 	;
-	v312 = v267
+	v316 = v271
 	goto L30
 L97:
 	;
 	goto L98
 L98:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v111)+12)) = v267
-	v283 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-	v284 = *(*int32)(unsafe.Add(mBase, uint32(v283)+72))
-	v285 = *(*int32)(unsafe.Add(mBase, uint32(v283)+16))
-	v286 = *(*int32)(unsafe.Add(mBase, uint32(v285)+8))
-	v287 = *(*int32)(unsafe.Add(mBase, uint32(v286)+12))
-	m.T0[v287].(func(*base.Module, int32))(m, v285)
+	*(*int32)(unsafe.Add(mBase, uint32(v111)+12)) = v271
+	v287 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+	v288 = *(*int32)(unsafe.Add(mBase, uint32(v287)+72))
+	v289 = *(*int32)(unsafe.Add(mBase, uint32(v287)+16))
+	v290 = *(*int32)(unsafe.Add(mBase, uint32(v289)+8))
+	v291 = *(*int32)(unsafe.Add(mBase, uint32(v290)+12))
+	m.T0[v291].(func(*base.Module, int32))(m, v289)
 	mBase = m.M
-	v289 = m.ExcPending
-	if v289 != 0 {
+	v293 = m.ExcPending
+	if v293 != 0 {
 		goto L4
 	} else {
 		goto L99
 	}
 L99:
 	;
-	v290 = int32(_a_F_ExecGather_0)
-	v291 = *(*int32)(unsafe.Add(mBase, _c_F_ExecGather[3]))
-	v293 = *(*int32)(unsafe.Add(mBase, uint32(v284)+20))
-	*(*int32)(unsafe.Add(mBase, _c_F_ExecGather[3])) = v293
-	v298 = *(*int32)(unsafe.Add(mBase, uint32(v283)+24))
-	v299 = m.T0[v298].(func(*base.Module, int32, int32, int32) int32)(m, v283+int32(4), v284, int32(0))
+	v294 = int32(_a_F_ExecGather_1)
+	v295 = *(*int32)(unsafe.Add(mBase, _c_F_ExecGather[3]))
+	v297 = *(*int32)(unsafe.Add(mBase, uint32(v288)+20))
+	*(*int32)(unsafe.Add(mBase, _c_F_ExecGather[3])) = v297
+	v302 = *(*int32)(unsafe.Add(mBase, uint32(v287)+24))
+	v303 = m.T0[v302].(func(*base.Module, int32, int32, int32) int32)(m, v287+int32(4), v288, int32(0))
 	mBase = m.M
-	v300 = m.ExcPending
-	if v300 != 0 {
+	v304 = m.ExcPending
+	if v304 != 0 {
 		goto L4
 	} else {
 		goto L100
 	}
 L100:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ExecGather[3])) = v291
-	v303 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v285)+4)))
-	v305 = v303 & int32(_a_F_ExecGather_1)
-	*(*uint16)(unsafe.Add(mBase, uint32(v285)+4)) = uint16(v305)
-	v307 = *(*int32)(unsafe.Add(mBase, uint32(v285)+12))
-	v308 = *(*int32)(unsafe.Add(mBase, uint32(v307)))
-	*(*uint16)(unsafe.Add(mBase, uint32(v285)+6)) = uint16(v308)
-	v312 = v285
+	*(*int32)(unsafe.Add(mBase, _c_F_ExecGather[3])) = v295
+	v307 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v289)+4)))
+	v309 = v307 & int32(_a_F_ExecGather_2)
+	*(*uint16)(unsafe.Add(mBase, uint32(v289)+4)) = uint16(v309)
+	v311 = *(*int32)(unsafe.Add(mBase, uint32(v289)+12))
+	v312 = *(*int32)(unsafe.Add(mBase, uint32(v311)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v289)+6)) = uint16(v312)
+	v316 = v289
 	goto L30
 }
 func F_ExecGatherMerge(m *base.Module, l0 int32) int32 {

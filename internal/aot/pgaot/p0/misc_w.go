@@ -17,30 +17,40 @@ func F_WakeupRecovery(m *base.Module) {
 	_ = v5
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
 	var v15 int32
 	_ = v15
-	var v17 int32
-	_ = v17
+	var v16 int32
+	_ = v16
 	var v19 int32
 	_ = v19
-	var v22 int32
-	_ = v22
+	var v23 int32
+	_ = v23
 	var v25 int32
 	_ = v25
-	var v29 int32
-	_ = v29
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
 	var v33 int32
 	_ = v33
 	var v37 int32
 	_ = v37
+	var v41 int32
+	_ = v41
 	var v45 int32
 	_ = v45
+	var v53 int32
+	_ = v53
 	v2 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[0]))
 	v4 = v2 + int32(4)
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
-	if v5 != 0 {
+	v5 = int32(0)
+	v8 = base.AtomicRmwOr32(m, v5, int32(_a_F_WakeupRecovery_0), v5)
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
+	if v9 != 0 {
 		goto L2
 	} else {
 		goto L3
@@ -54,35 +64,37 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(1)
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
-	if v8 == int32(0) {
+	v12 = int32(0)
+	v15 = base.AtomicRmwOr32(m, v12, int32(_a_F_WakeupRecovery_0), v12)
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
+	if v16 == v12 {
 		goto L2
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
-	if v11 == int32(0) {
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
+	if v19 == int32(0) {
 		goto L2
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v15 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[1]))
-	if v15 == v11 {
+	v23 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[1]))
+	if v23 == v19 {
 		goto L6
 	} else {
 		goto L7
 	}
 L6:
 	;
-	v17 = m.G0
-	v19 = v17 - int32(16)
-	m.G0 = v19
-	v22 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[2]))
-	if v22 == int32(0) {
+	v25 = m.G0
+	v27 = v25 - int32(16)
+	m.G0 = v27
+	v30 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[2]))
+	if v30 == int32(0) {
 		goto L9
 	} else {
 		goto L10
@@ -92,24 +104,24 @@ L7:
 	goto L8
 L8:
 	;
-	v45 = F_pgmem_kill(m, v11, int32(23))
+	v53 = F_pgmem_kill(m, v19, int32(23))
 	mBase = m.M
 	goto L2
 L9:
 	;
-	m.G0 = v19 + int32(16)
+	m.G0 = v27 + int32(16)
 	goto L1
 L10:
 	;
-	v25 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v19)+15)) = uint8(v25)
+	v33 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v27)+15)) = uint8(v33)
 	goto L11
 L11:
 	;
-	v29 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[3]))
-	v33 = F_write(m, v29, v19+int32(15), int32(1))
+	v37 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[3]))
+	v41 = F_write(m, v37, v27+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v33 {
+	if int32(0) <= v41 {
 		goto L9
 	} else {
 		goto L13
@@ -119,8 +131,8 @@ L12:
 	goto L9
 L13:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[4]))
-	if v37 == int32(27) {
+	v45 = *(*int32)(unsafe.Add(mBase, _c_F_WakeupRecovery[4]))
+	if v45 == int32(27) {
 		goto L11
 	} else {
 		goto L14

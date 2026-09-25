@@ -197,34 +197,38 @@ func F_pa_send_data(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v47
 	var v53 int32
 	_ = v53
-	var v57 int32
-	_ = v57
+	var v54 int32
+	_ = v54
+	var v59 int32
+	_ = v59
 	var v61 int32
 	_ = v61
 	var v65 int32
 	_ = v65
-	var v66 int32
-	_ = v66
-	var v67 int32
-	_ = v67
-	var v70 int64
+	var v69 int32
+	_ = v69
+	var v70 int32
 	_ = v70
-	var v71 int64
+	var v71 int32
 	_ = v71
-	var v79 int64
-	_ = v79
-	var v94 int32
-	_ = v94
+	var v74 int64
+	_ = v74
+	var v75 int64
+	_ = v75
+	var v83 int64
+	_ = v83
+	var v98 int32
+	_ = v98
 	v8 = *(*int32)(unsafe.Add(mBase, _c_F_pa_send_data[0]))
 	if v8 == int32(1) {
-		v94 = int32(0)
+		v98 = int32(0)
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	return v94
+	return v98
 L2:
 	;
 	v16 = int64(0)
@@ -243,7 +247,7 @@ L3:
 	}
 L4:
 	;
-	v94 = int32(0)
+	v98 = int32(0)
 	goto L1
 L5:
 	;
@@ -273,7 +277,7 @@ L8:
 	;
 	switch v21 {
 	case 0:
-		v94 = v17
+		v98 = v17
 		goto L1
 	default:
 		goto L5
@@ -317,16 +321,16 @@ L12:
 	}
 L13:
 	;
-	v65 = m.G0
-	v66 = int32(16)
-	v67 = v65 - v66
-	m.G0 = v67
-	F_gettimeofday(m, v67)
+	v69 = m.G0
+	v70 = int32(16)
+	v71 = v69 - v70
+	m.G0 = v71
+	F_gettimeofday(m, v71)
 	mBase = m.M
-	v70 = *(*int64)(unsafe.Add(mBase, uint32(v67)))
-	v71 = int64(*(*int32)(unsafe.Add(mBase, uint32(v67)+8)))
-	m.G0 = v67 + v66
-	v79 = v71 + v70*int64(1000000) - int64(946684800000000)
+	v74 = *(*int64)(unsafe.Add(mBase, uint32(v71)))
+	v75 = int64(*(*int32)(unsafe.Add(mBase, uint32(v71)+8)))
+	m.G0 = v71 + v70
+	v83 = v75 + v74*int64(1000000) - int64(946684800000000)
 	goto L19
 L14:
 	;
@@ -338,12 +342,14 @@ L14:
 L15:
 	;
 	v53 = *(*int32)(unsafe.Add(mBase, _c_F_pa_send_data[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v53))) = int32(0)
+	v54 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v53))) = v54
+	v59 = base.AtomicRmwOr32(m, v54, int32(_a_F_pa_send_data_3), v54)
 	goto L16
 L16:
 	;
-	v57 = *(*int32)(unsafe.Add(mBase, _c_F_pa_send_data[2]))
-	if v57 == int32(0) {
+	v61 = *(*int32)(unsafe.Add(mBase, _c_F_pa_send_data[2]))
+	if v61 == int32(0) {
 		goto L13
 	} else {
 		goto L17
@@ -352,8 +358,8 @@ L17:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v61 = m.ExcPending
-	if v61 != 0 {
+	v65 = m.ExcPending
+	if v65 != 0 {
 		goto L7
 	} else {
 		goto L18
@@ -370,7 +376,7 @@ L19:
 	}
 L20:
 	;
-	v16 = v79
+	v16 = v83
 	goto L3
 L21:
 	;
@@ -380,7 +386,7 @@ L22:
 	goto L23
 L23:
 	;
-	if base.B2i32(base.I64_extend_i32_s(int32(_a_F_pa_send_data_3))*int64(1000) <= v79-v16) == int32(0) {
+	if base.B2i32(base.I64_extend_i32_s(int32(_a_F_pa_send_data_4))*int64(1000) <= v83-v16) == int32(0) {
 		goto L3
 	} else {
 		goto L24

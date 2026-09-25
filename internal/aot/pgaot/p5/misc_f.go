@@ -1371,22 +1371,24 @@ func F_ForgetBackgroundWorker(m *base.Module, l0 int32) {
 	_ = v20
 	var v24 int32
 	_ = v24
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
 	var v33 int32
 	_ = v33
-	var v38 int32
-	_ = v38
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
+	var v37 int32
+	_ = v37
 	var v42 int32
 	_ = v42
-	var v45 int32
-	_ = v45
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
 	v5 = m.G0
 	v6 = int32(16)
 	v7 = v5 - v6
@@ -1400,36 +1402,37 @@ func F_ForgetBackgroundWorker(m *base.Module, l0 int32) {
 	} else {
 	}
 	v24 = int32(0)
+	v27 = base.AtomicRmwOr32(m, v24, int32(_a_F_ForgetBackgroundWorker_0), v24)
 	*(*uint8)(unsafe.Add(mBase, uint32(v10+v11*int32(1480)+v6))) = uint8(v24)
-	v28 = F_errstart(m, int32(14), v24)
+	v32 = F_errstart(m, int32(14), v24)
 	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
+	v33 = m.ExcPending
+	if v33 != 0 {
 		return
 	} else {
-		if v28 != 0 {
+		if v32 != 0 {
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-			F_errmsg_internal(m, int32(_a_F_ForgetBackgroundWorker_0), v7)
+			F_errmsg_internal(m, int32(_a_F_ForgetBackgroundWorker_1), v7)
 			mBase = m.M
-			v33 = m.ExcPending
-			if v33 != 0 {
+			v37 = m.ExcPending
+			if v37 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_ForgetBackgroundWorker_1), int32(449), int32(_a_F_ForgetBackgroundWorker_2))
+				F_errfinish(m, int32(_a_F_ForgetBackgroundWorker_2), int32(449), int32(_a_F_ForgetBackgroundWorker_3))
 				mBase = m.M
-				v38 = m.ExcPending
-				if v38 != 0 {
+				v42 = m.ExcPending
+				if v42 != 0 {
 					return
 				} else {
-					v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1480))
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1484))
-					*(*int32)(unsafe.Add(mBase, uint32(v39)+4)) = v40
-					v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1480))
-					*(*int32)(unsafe.Add(mBase, uint32(v40))) = v42
+					v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1480))
+					v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1484))
+					*(*int32)(unsafe.Add(mBase, uint32(v43)+4)) = v44
+					v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1480))
+					*(*int32)(unsafe.Add(mBase, uint32(v44))) = v46
 					F_pfree(m, l0)
 					mBase = m.M
-					v45 = m.ExcPending
-					if v45 != 0 {
+					v49 = m.ExcPending
+					if v49 != 0 {
 						return
 					} else {
 						m.G0 = v7 + int32(16)
@@ -1438,15 +1441,15 @@ func F_ForgetBackgroundWorker(m *base.Module, l0 int32) {
 				}
 			}
 		} else {
-			v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1480))
-			v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1484))
-			*(*int32)(unsafe.Add(mBase, uint32(v39)+4)) = v40
-			v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1480))
-			*(*int32)(unsafe.Add(mBase, uint32(v40))) = v42
+			v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1480))
+			v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1484))
+			*(*int32)(unsafe.Add(mBase, uint32(v43)+4)) = v44
+			v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1480))
+			*(*int32)(unsafe.Add(mBase, uint32(v44))) = v46
 			F_pfree(m, l0)
 			mBase = m.M
-			v45 = m.ExcPending
-			if v45 != 0 {
+			v49 = m.ExcPending
+			if v49 != 0 {
 				return
 			} else {
 				m.G0 = v7 + int32(16)

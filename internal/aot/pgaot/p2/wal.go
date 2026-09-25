@@ -917,26 +917,34 @@ func F_WalRcvForceReply(m *base.Module) {
 	_ = v35
 	var v38 int32
 	_ = v38
-	var v41 int32
-	_ = v41
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
 	var v45 int32
 	_ = v45
-	var v47 int32
-	_ = v47
+	var v46 int32
+	_ = v46
 	var v49 int32
 	_ = v49
-	var v52 int32
-	_ = v52
+	var v53 int32
+	_ = v53
 	var v55 int32
 	_ = v55
-	var v59 int32
-	_ = v59
+	var v57 int32
+	_ = v57
+	var v60 int32
+	_ = v60
 	var v63 int32
 	_ = v63
 	var v67 int32
 	_ = v67
+	var v71 int32
+	_ = v71
 	var v75 int32
 	_ = v75
+	var v83 int32
+	_ = v83
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[0]))
 	v5 = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+1472)) = v5
@@ -982,8 +990,10 @@ L6:
 	v28 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[1]))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)))
 	v34 = v29 + v21*int32(640) + int32(20)
-	v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-	if v35 != 0 {
+	v35 = int32(0)
+	v38 = base.AtomicRmwOr32(m, v35, int32(_a_F_WalRcvForceReply_2), v35)
+	v39 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
+	if v39 != 0 {
 		goto L10
 	} else {
 		goto L11
@@ -1003,35 +1013,37 @@ L10:
 L11:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v34))) = int32(1)
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
-	if v38 == int32(0) {
+	v42 = int32(0)
+	v45 = base.AtomicRmwOr32(m, v42, int32(_a_F_WalRcvForceReply_2), v42)
+	v46 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
+	if v46 == v42 {
 		goto L10
 	} else {
 		goto L12
 	}
 L12:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(v34)+12))
-	if v41 == int32(0) {
+	v49 = *(*int32)(unsafe.Add(mBase, uint32(v34)+12))
+	if v49 == int32(0) {
 		goto L10
 	} else {
 		goto L13
 	}
 L13:
 	;
-	v45 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[2]))
-	if v45 == v41 {
+	v53 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[2]))
+	if v53 == v49 {
 		goto L14
 	} else {
 		goto L15
 	}
 L14:
 	;
-	v47 = m.G0
-	v49 = v47 - int32(16)
-	m.G0 = v49
-	v52 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[3]))
-	if v52 == int32(0) {
+	v55 = m.G0
+	v57 = v55 - int32(16)
+	m.G0 = v57
+	v60 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[3]))
+	if v60 == int32(0) {
 		goto L17
 	} else {
 		goto L18
@@ -1041,24 +1053,24 @@ L15:
 	goto L16
 L16:
 	;
-	v75 = F_pgmem_kill(m, v41, int32(23))
+	v83 = F_pgmem_kill(m, v49, int32(23))
 	mBase = m.M
 	goto L10
 L17:
 	;
-	m.G0 = v49 + int32(16)
+	m.G0 = v57 + int32(16)
 	goto L9
 L18:
 	;
-	v55 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v49)+15)) = uint8(v55)
+	v63 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v57)+15)) = uint8(v63)
 	goto L19
 L19:
 	;
-	v59 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[4]))
-	v63 = F_write(m, v59, v49+int32(15), int32(1))
+	v67 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[4]))
+	v71 = F_write(m, v67, v57+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v63 {
+	if int32(0) <= v71 {
 		goto L17
 	} else {
 		goto L21
@@ -1068,8 +1080,8 @@ L20:
 	goto L17
 L21:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[5]))
-	if v67 == int32(27) {
+	v75 = *(*int32)(unsafe.Add(mBase, _c_F_WalRcvForceReply[5]))
+	if v75 == int32(27) {
 		goto L19
 	} else {
 		goto L22

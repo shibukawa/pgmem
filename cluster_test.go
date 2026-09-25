@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"os"
+	"strconv"
 	"strings"
 	"sync"
 	"testing"
@@ -216,4 +218,55 @@ func TestClusterTerminateBackend(t *testing.T) {
 		}
 		time.Sleep(20 * time.Millisecond)
 	}
+}
+
+// TestClusterParallelQueryStress runs a parallel hash join over and over.
+// Leader and workers sleep on latches and condition variables in shared
+// memory, so a lost wakeup (SetLatch missing a process that is about to
+// sleep) hangs a query for good; statement_timeout turns such a hang into
+// an error. Slow, so it runs only with PGMEM_STRESS=<iterations>.
+func TestClusterParallelQueryStress(t *testing.T) {
+	n, _ := strconv.Atoi(os.Getenv("PGMEM_STRESS"))
+	if n <= 0 {
+		t.Skip("set PGMEM_STRESS=<iterations> to run")
+	}
+	// parallel plans even for a small table, so an iteration takes
+	// milliseconds and every one of them starts workers
+	s, logs := startClusterServer(t, Options{Database: "app", Params: []string{
+		"-c", "parallel_setup_cost=0", "-c", "parallel_tuple_cost=0",
+		"-c", "min_parallel_table_scan_size=0", "-c", "max_parallel_workers_per_gather=4",
+		"-c", "statement_timeout=20s",
+	}})
+	ctx := context.Background()
+	conn, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatalf("connect: %v\n%s", err, logs.String())
+	}
+	defer conn.Close(ctx)
+	if _, err := conn.Exec(ctx, `CREATE TABLE big AS SELECT g AS id, ((g::bigint*7919)%20000)::int AS k FROM generate_series(1,20000) g; ANALYZE big`); err != nil {
+		t.Fatal(err)
+	}
+	rows, err := conn.Query(ctx, `EXPLAIN (COSTS OFF) SELECT count(*) FROM big a JOIN big b ON a.id = b.k`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	lines, err := pgx.CollectRows(rows, pgx.RowTo[string])
+	if err != nil {
+		t.Fatal(err)
+	}
+	plan := strings.Join(lines, "\n")
+	if !strings.Contains(plan, "Parallel Hash Join") {
+		t.Fatalf("plan is not parallel: %s", plan)
+	}
+	start := time.Now()
+	for i := 0; i < n; i++ {
+		var count int64
+		if err := conn.QueryRow(ctx, `SELECT count(*) FROM big a JOIN big b ON a.id = b.k`).Scan(&count); err != nil {
+			t.Fatalf("iteration %d after %v: %v\n%s", i, time.Since(start), err, logs.String())
+		}
+		if count != 19999 {
+			t.Fatalf("iteration %d: count = %d", i, count)
+		}
+	}
+	t.Logf("%d iterations in %v", n, time.Since(start))
 }

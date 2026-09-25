@@ -1565,30 +1565,40 @@ func F_SignalHandlerForShutdownRequest(m *base.Module, l0 int32) {
 	_ = v7
 	var v10 int32
 	_ = v10
-	var v13 int32
-	_ = v13
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
 	var v17 int32
 	_ = v17
-	var v19 int32
-	_ = v19
+	var v18 int32
+	_ = v18
 	var v21 int32
 	_ = v21
-	var v24 int32
-	_ = v24
+	var v25 int32
+	_ = v25
 	var v27 int32
 	_ = v27
-	var v31 int32
-	_ = v31
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
 	var v35 int32
 	_ = v35
 	var v39 int32
 	_ = v39
+	var v43 int32
+	_ = v43
 	var v47 int32
 	_ = v47
+	var v55 int32
+	_ = v55
 	*(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[0])) = int32(1)
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[1]))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-	if v7 != 0 {
+	v7 = int32(0)
+	v10 = base.AtomicRmwOr32(m, v7, int32(_a_F_SignalHandlerForShutdownRequest_0), v7)
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	if v11 != 0 {
 		goto L2
 	} else {
 		goto L3
@@ -1602,35 +1612,37 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(1)
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
-	if v10 == int32(0) {
+	v14 = int32(0)
+	v17 = base.AtomicRmwOr32(m, v14, int32(_a_F_SignalHandlerForShutdownRequest_0), v14)
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+	if v18 == v14 {
 		goto L2
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
-	if v13 == int32(0) {
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+	if v21 == int32(0) {
 		goto L2
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[2]))
-	if v17 == v13 {
+	v25 = *(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[2]))
+	if v25 == v21 {
 		goto L6
 	} else {
 		goto L7
 	}
 L6:
 	;
-	v19 = m.G0
-	v21 = v19 - int32(16)
-	m.G0 = v21
-	v24 = *(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[3]))
-	if v24 == int32(0) {
+	v27 = m.G0
+	v29 = v27 - int32(16)
+	m.G0 = v29
+	v32 = *(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[3]))
+	if v32 == int32(0) {
 		goto L9
 	} else {
 		goto L10
@@ -1640,24 +1652,24 @@ L7:
 	goto L8
 L8:
 	;
-	v47 = F_pgmem_kill(m, v13, int32(23))
+	v55 = F_pgmem_kill(m, v21, int32(23))
 	mBase = m.M
 	goto L2
 L9:
 	;
-	m.G0 = v21 + int32(16)
+	m.G0 = v29 + int32(16)
 	goto L1
 L10:
 	;
-	v27 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v21)+15)) = uint8(v27)
+	v35 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v29)+15)) = uint8(v35)
 	goto L11
 L11:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[4]))
-	v35 = F_write(m, v31, v21+int32(15), int32(1))
+	v39 = *(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[4]))
+	v43 = F_write(m, v39, v29+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v35 {
+	if int32(0) <= v43 {
 		goto L9
 	} else {
 		goto L13
@@ -1667,8 +1679,8 @@ L12:
 	goto L9
 L13:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[5]))
-	if v39 == int32(27) {
+	v47 = *(*int32)(unsafe.Add(mBase, _c_F_SignalHandlerForShutdownRequest[5]))
+	if v47 == int32(27) {
 		goto L11
 	} else {
 		goto L14
@@ -1698,26 +1710,34 @@ func F_SwitchToSharedLatch(m *base.Module) {
 	_ = v18
 	var v21 int32
 	_ = v21
-	var v24 int32
-	_ = v24
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
+	var v29 int32
+	_ = v29
 	var v32 int32
 	_ = v32
-	var v35 int32
-	_ = v35
+	var v36 int32
+	_ = v36
 	var v38 int32
 	_ = v38
-	var v42 int32
-	_ = v42
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
 	var v46 int32
 	_ = v46
 	var v50 int32
 	_ = v50
+	var v54 int32
+	_ = v54
 	var v58 int32
 	_ = v58
+	var v66 int32
+	_ = v66
 	v5 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[0]))
 	v7 = v5 + int32(20)
 	*(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[1])) = v7
@@ -1744,8 +1764,10 @@ L2:
 	goto L3
 L3:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-	if v18 != 0 {
+	v18 = int32(0)
+	v21 = base.AtomicRmwOr32(m, v18, int32(_a_F_SwitchToSharedLatch_0), v18)
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+	if v22 != 0 {
 		goto L7
 	} else {
 		goto L8
@@ -1767,35 +1789,37 @@ L7:
 L8:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(1)
-	v21 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
-	if v21 == int32(0) {
+	v25 = int32(0)
+	v28 = base.AtomicRmwOr32(m, v25, int32(_a_F_SwitchToSharedLatch_0), v25)
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	if v29 == v25 {
 		goto L7
 	} else {
 		goto L9
 	}
 L9:
 	;
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
-	if v24 == int32(0) {
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
+	if v32 == int32(0) {
 		goto L7
 	} else {
 		goto L10
 	}
 L10:
 	;
-	v28 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[3]))
-	if v28 == v24 {
+	v36 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[3]))
+	if v36 == v32 {
 		goto L11
 	} else {
 		goto L12
 	}
 L11:
 	;
-	v30 = m.G0
-	v32 = v30 - int32(16)
-	m.G0 = v32
-	v35 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[4]))
-	if v35 == int32(0) {
+	v38 = m.G0
+	v40 = v38 - int32(16)
+	m.G0 = v40
+	v43 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[4]))
+	if v43 == int32(0) {
 		goto L14
 	} else {
 		goto L15
@@ -1805,24 +1829,24 @@ L12:
 	goto L13
 L13:
 	;
-	v58 = F_pgmem_kill(m, v24, int32(23))
+	v66 = F_pgmem_kill(m, v32, int32(23))
 	mBase = m.M
 	goto L7
 L14:
 	;
-	m.G0 = v32 + int32(16)
+	m.G0 = v40 + int32(16)
 	goto L6
 L15:
 	;
-	v38 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v32)+15)) = uint8(v38)
+	v46 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v40)+15)) = uint8(v46)
 	goto L16
 L16:
 	;
-	v42 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[5]))
-	v46 = F_write(m, v42, v32+int32(15), int32(1))
+	v50 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[5]))
+	v54 = F_write(m, v50, v40+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v46 {
+	if int32(0) <= v54 {
 		goto L14
 	} else {
 		goto L18
@@ -1832,8 +1856,8 @@ L17:
 	goto L14
 L18:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[6]))
-	if v50 == int32(27) {
+	v58 = *(*int32)(unsafe.Add(mBase, _c_F_SwitchToSharedLatch[6]))
+	if v58 == int32(27) {
 		goto L16
 	} else {
 		goto L19
@@ -9653,34 +9677,38 @@ func F_secure_read(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v46
 	var v54 int32
 	_ = v54
-	var v59 int32
-	_ = v59
+	var v55 int32
+	_ = v55
 	var v60 int32
 	_ = v60
-	var v66 int32
-	_ = v66
-	var v69 int32
-	_ = v69
+	var v63 int32
+	_ = v63
+	var v64 int32
+	_ = v64
+	var v70 int32
+	_ = v70
 	var v73 int32
 	_ = v73
-	var v78 int32
-	_ = v78
+	var v77 int32
+	_ = v77
 	var v82 int32
 	_ = v82
-	var v85 int32
-	_ = v85
 	var v86 int32
 	_ = v86
-	var v87 int32
-	_ = v87
+	var v89 int32
+	_ = v89
 	var v90 int32
 	_ = v90
-	var v93 int32
-	_ = v93
-	var v99 int32
-	_ = v99
+	var v91 int32
+	_ = v91
+	var v94 int32
+	_ = v94
+	var v97 int32
+	_ = v97
 	var v103 int32
 	_ = v103
+	var v107 int32
+	_ = v107
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
@@ -9699,7 +9727,7 @@ L2:
 	;
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+520))
 	if int32(0) < v15 {
-		v82 = v15
+		v86 = v15
 		goto L4
 	} else {
 		goto L5
@@ -9708,15 +9736,15 @@ L3:
 	;
 	F_ProcessClientReadInterrupt(m, int32(0))
 	mBase = m.M
-	v103 = m.ExcPending
-	if v103 != 0 {
+	v107 = m.ExcPending
+	if v107 != 0 {
 		goto L1
 	} else {
 		goto L32
 	}
 L4:
 	;
-	if base.Ui32(l2) < base.Ui32(v82) {
+	if base.Ui32(l2) < base.Ui32(v86) {
 		goto L26
 	} else {
 		goto L27
@@ -9730,7 +9758,7 @@ L6:
 	v24 = F_pgmem_recv(m, v23, l1, l2)
 	mBase = m.M
 	if int32(0) <= v24 {
-		v99 = v24
+		v103 = v24
 		goto L3
 	} else {
 		goto L8
@@ -9739,8 +9767,8 @@ L7:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v66 = m.ExcPending
-	if v66 != 0 {
+	v70 = m.ExcPending
+	if v70 != 0 {
 		goto L1
 	} else {
 		goto L22
@@ -9749,7 +9777,7 @@ L8:
 	;
 	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
 	if v27 != 0 {
-		v99 = v24
+		v103 = v24
 		goto L3
 	} else {
 		goto L9
@@ -9758,7 +9786,7 @@ L9:
 	;
 	v29 = *(*int32)(unsafe.Add(mBase, _c_F_secure_read[0]))
 	if v29 != int32(6) {
-		v99 = v24
+		v103 = v24
 		goto L3
 	} else {
 		goto L10
@@ -9810,15 +9838,17 @@ L15:
 L16:
 	;
 	v54 = *(*int32)(unsafe.Add(mBase, _c_F_secure_read[2]))
-	*(*int32)(unsafe.Add(mBase, uint32(v54))) = int32(0)
+	v55 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v54))) = v55
+	v60 = base.AtomicRmwOr32(m, v55, int32(_a_F_secure_read_0), v55)
 	goto L19
 L17:
 	;
 	goto L18
 L18:
 	;
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+520))
-	if v60 <= int32(0) {
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(l0)+520))
+	if v64 <= int32(0) {
 		goto L6
 	} else {
 		goto L21
@@ -9827,8 +9857,8 @@ L19:
 	;
 	F_ProcessClientReadInterrupt(m, int32(1))
 	mBase = m.M
-	v59 = m.ExcPending
-	if v59 != 0 {
+	v63 = m.ExcPending
+	if v63 != 0 {
 		goto L1
 	} else {
 		goto L20
@@ -9838,34 +9868,34 @@ L20:
 	goto L18
 L21:
 	;
-	v82 = v60
+	v86 = v64
 	goto L4
 L22:
 	;
 	F_errcode(m, int32(16908741))
 	mBase = m.M
-	v69 = m.ExcPending
-	if v69 != 0 {
+	v73 = m.ExcPending
+	if v73 != 0 {
 		goto L1
 	} else {
 		goto L23
 	}
 L23:
 	;
-	F_errmsg(m, int32(_a_F_secure_read_0), int32(0))
+	F_errmsg(m, int32(_a_F_secure_read_1), int32(0))
 	mBase = m.M
-	v73 = m.ExcPending
-	if v73 != 0 {
+	v77 = m.ExcPending
+	if v77 != 0 {
 		goto L1
 	} else {
 		goto L24
 	}
 L24:
 	;
-	F_errfinish(m, int32(_a_F_secure_read_1), int32(241), int32(_a_F_secure_read_2))
+	F_errfinish(m, int32(_a_F_secure_read_2), int32(241), int32(_a_F_secure_read_3))
 	mBase = m.M
-	v78 = m.ExcPending
-	if v78 != 0 {
+	v82 = m.ExcPending
+	if v82 != 0 {
 		goto L1
 	} else {
 		goto L25
@@ -9877,40 +9907,40 @@ L25:
 	}
 L26:
 	;
-	v85 = l2
+	v89 = l2
 	goto L28
 L27:
 	;
-	v85 = v82
+	v89 = v86
 	goto L28
 L28:
 	;
-	if v85 != 0 {
+	if v89 != 0 {
 		goto L29
 	} else {
 		goto L30
 	}
 L29:
 	;
-	v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)+512))
-	v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
-	base.MemoryCopy(m, l1, v86+v87, v85)
+	v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+512))
+	v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
+	base.MemoryCopy(m, l1, v90+v91, v89)
 	goto L31
 L30:
 	;
 	goto L31
 L31:
 	;
-	v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+516)) = v90 + v85
-	v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+520))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+520)) = v93 - v85
-	v99 = v85
+	v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+516))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+516)) = v94 + v89
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(l0)+520))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+520)) = v97 - v89
+	v103 = v89
 	goto L3
 L32:
 	;
 	m.G0 = v8 + int32(16)
-	return v99
+	return v103
 }
 func F_serialize_deflist(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -15587,30 +15617,40 @@ func F_sigUsr1Handler(m *base.Module, l0 int32) {
 	_ = v7
 	var v10 int32
 	_ = v10
-	var v13 int32
-	_ = v13
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
 	var v17 int32
 	_ = v17
-	var v19 int32
-	_ = v19
+	var v18 int32
+	_ = v18
 	var v21 int32
 	_ = v21
-	var v24 int32
-	_ = v24
+	var v25 int32
+	_ = v25
 	var v27 int32
 	_ = v27
-	var v31 int32
-	_ = v31
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
 	var v35 int32
 	_ = v35
 	var v39 int32
 	_ = v39
+	var v43 int32
+	_ = v43
 	var v47 int32
 	_ = v47
+	var v55 int32
+	_ = v55
 	*(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[0])) = int32(1)
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[1]))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-	if v7 != 0 {
+	v7 = int32(0)
+	v10 = base.AtomicRmwOr32(m, v7, int32(_a_F_sigUsr1Handler_0), v7)
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	if v11 != 0 {
 		goto L2
 	} else {
 		goto L3
@@ -15624,35 +15664,37 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(1)
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
-	if v10 == int32(0) {
+	v14 = int32(0)
+	v17 = base.AtomicRmwOr32(m, v14, int32(_a_F_sigUsr1Handler_0), v14)
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+	if v18 == v14 {
 		goto L2
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
-	if v13 == int32(0) {
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+	if v21 == int32(0) {
 		goto L2
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[2]))
-	if v17 == v13 {
+	v25 = *(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[2]))
+	if v25 == v21 {
 		goto L6
 	} else {
 		goto L7
 	}
 L6:
 	;
-	v19 = m.G0
-	v21 = v19 - int32(16)
-	m.G0 = v21
-	v24 = *(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[3]))
-	if v24 == int32(0) {
+	v27 = m.G0
+	v29 = v27 - int32(16)
+	m.G0 = v29
+	v32 = *(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[3]))
+	if v32 == int32(0) {
 		goto L9
 	} else {
 		goto L10
@@ -15662,24 +15704,24 @@ L7:
 	goto L8
 L8:
 	;
-	v47 = F_pgmem_kill(m, v13, int32(23))
+	v55 = F_pgmem_kill(m, v21, int32(23))
 	mBase = m.M
 	goto L2
 L9:
 	;
-	m.G0 = v21 + int32(16)
+	m.G0 = v29 + int32(16)
 	goto L1
 L10:
 	;
-	v27 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v21)+15)) = uint8(v27)
+	v35 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v29)+15)) = uint8(v35)
 	goto L11
 L11:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[4]))
-	v35 = F_write(m, v31, v21+int32(15), int32(1))
+	v39 = *(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[4]))
+	v43 = F_write(m, v39, v29+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v35 {
+	if int32(0) <= v43 {
 		goto L9
 	} else {
 		goto L13
@@ -15689,8 +15731,8 @@ L12:
 	goto L9
 L13:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[5]))
-	if v39 == int32(27) {
+	v47 = *(*int32)(unsafe.Add(mBase, _c_F_sigUsr1Handler[5]))
+	if v47 == int32(27) {
 		goto L11
 	} else {
 		goto L14

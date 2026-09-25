@@ -224,26 +224,34 @@ func F_ProcessClientWriteInterrupt(m *base.Module, l0 int32) {
 	_ = v30
 	var v33 int32
 	_ = v33
-	var v36 int32
-	_ = v36
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
 	var v40 int32
 	_ = v40
-	var v42 int32
-	_ = v42
+	var v41 int32
+	_ = v41
 	var v44 int32
 	_ = v44
-	var v47 int32
-	_ = v47
+	var v48 int32
+	_ = v48
 	var v50 int32
 	_ = v50
-	var v54 int32
-	_ = v54
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
 	var v58 int32
 	_ = v58
 	var v62 int32
 	_ = v62
+	var v66 int32
+	_ = v66
 	var v70 int32
 	_ = v70
+	var v78 int32
+	_ = v78
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0]))
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[1]))
 	if v6 == int32(0) {
@@ -276,8 +284,10 @@ L4:
 L5:
 	;
 	v29 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[3]))
-	v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)))
-	if v30 != 0 {
+	v30 = int32(0)
+	v33 = base.AtomicRmwOr32(m, v30, int32(_a_F_ProcessClientWriteInterrupt_0), v30)
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v29)))
+	if v34 != 0 {
 		goto L15
 	} else {
 		goto L16
@@ -339,35 +349,37 @@ L15:
 L16:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v29))) = int32(1)
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
-	if v33 == int32(0) {
+	v37 = int32(0)
+	v40 = base.AtomicRmwOr32(m, v37, int32(_a_F_ProcessClientWriteInterrupt_0), v37)
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
+	if v41 == v37 {
 		goto L15
 	} else {
 		goto L17
 	}
 L17:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
-	if v36 == int32(0) {
+	v44 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
+	if v44 == int32(0) {
 		goto L15
 	} else {
 		goto L18
 	}
 L18:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[7]))
-	if v40 == v36 {
+	v48 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[7]))
+	if v48 == v44 {
 		goto L19
 	} else {
 		goto L20
 	}
 L19:
 	;
-	v42 = m.G0
-	v44 = v42 - int32(16)
-	m.G0 = v44
-	v47 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[8]))
-	if v47 == int32(0) {
+	v50 = m.G0
+	v52 = v50 - int32(16)
+	m.G0 = v52
+	v55 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[8]))
+	if v55 == int32(0) {
 		goto L22
 	} else {
 		goto L23
@@ -377,24 +389,24 @@ L20:
 	goto L21
 L21:
 	;
-	v70 = F_pgmem_kill(m, v36, int32(23))
+	v78 = F_pgmem_kill(m, v44, int32(23))
 	mBase = m.M
 	goto L15
 L22:
 	;
-	m.G0 = v44 + int32(16)
+	m.G0 = v52 + int32(16)
 	goto L14
 L23:
 	;
-	v50 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v44)+15)) = uint8(v50)
+	v58 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v52)+15)) = uint8(v58)
 	goto L24
 L24:
 	;
-	v54 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[9]))
-	v58 = F_write(m, v54, v44+int32(15), int32(1))
+	v62 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[9]))
+	v66 = F_write(m, v62, v52+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v58 {
+	if int32(0) <= v66 {
 		goto L22
 	} else {
 		goto L26
@@ -404,8 +416,8 @@ L25:
 	goto L22
 L26:
 	;
-	v62 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0]))
-	if v62 == int32(27) {
+	v70 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessClientWriteInterrupt[0]))
+	if v70 == int32(27) {
 		goto L24
 	} else {
 		goto L27

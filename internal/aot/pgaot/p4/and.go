@@ -15,10 +15,10 @@ func F_FindAndDropRelationBuffers(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v13
 	var v16 int32
 	_ = v16
-	var v24 int32
-	_ = v24
-	var v26 int32
-	_ = v26
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
 	var v28 int32
 	_ = v28
 	var v30 int32
@@ -57,8 +57,8 @@ func F_FindAndDropRelationBuffers(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v90
 	var v92 int32
 	_ = v92
-	var v103 int32
-	_ = v103
+	var v102 int32
+	_ = v102
 	var v108 int32
 	_ = v108
 	var v109 int32
@@ -89,10 +89,16 @@ func F_FindAndDropRelationBuffers(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v139
 	var v142 int32
 	_ = v142
-	var v153 int32
-	_ = v153
+	var v143 int32
+	_ = v143
+	var v146 int32
+	_ = v146
+	var v150 int32
+	_ = v150
 	var v157 int32
 	_ = v157
+	var v162 int32
+	_ = v162
 	v11 = m.G0
 	v13 = v11 - int32(48)
 	m.G0 = v13
@@ -104,8 +110,8 @@ func F_FindAndDropRelationBuffers(m *base.Module, l0 int32, l1 int32, l2 int32, 
 L1:
 	;
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v24 = v16
-	v26 = l3
+	v23 = v16
+	v25 = l3
 	goto L4
 L2:
 	;
@@ -116,11 +122,11 @@ L3:
 	return
 L4:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v24
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v23
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v28
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v26
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v25
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = v30
 	v35 = v13 + int32(4)
@@ -173,17 +179,17 @@ L9:
 L10:
 	;
 	if v50 < int32(0) {
-		v153 = v24
+		v157 = v23
 		goto L11
 	} else {
 		goto L12
 	}
 L11:
 	;
-	v157 = v26 + int32(1)
-	if v157 != l2 {
-		v24 = v153
-		v26 = v157
+	v162 = v25 + int32(1)
+	if v162 != l2 {
+		v23 = v157
+		v25 = v162
 		goto L4
 	} else {
 		goto L38
@@ -209,7 +215,7 @@ L13:
 	goto L16
 L14:
 	;
-	v103 = v73
+	v102 = v73
 	goto L15
 L15:
 	;
@@ -233,7 +239,7 @@ L16:
 	}
 L17:
 	;
-	v103 = v92
+	v102 = v92
 	goto L15
 L18:
 	;
@@ -306,8 +312,11 @@ L30:
 	goto L22
 L31:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v70)+24)) = v103 & int32(-4194305)
-	v153 = v129
+	v143 = int32(0)
+	v146 = base.AtomicRmwOr32(m, v143, int32(_a_F_FindAndDropRelationBuffers_6), v143)
+	*(*int32)(unsafe.Add(mBase, uint32(v70)+24)) = v102 & int32(-4194305)
+	v150 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v157 = v150
 	goto L11
 L32:
 	;
@@ -355,7 +364,7 @@ L36:
 	}
 L37:
 	;
-	v153 = v128
+	v157 = v128
 	goto L11
 L38:
 	;

@@ -13801,96 +13801,100 @@ func F_pg_promote(m *base.Module, l0 int32) int32 {
 	_ = v50
 	var v56 int32
 	_ = v56
-	var v61 int32
-	_ = v61
-	var v66 int32
-	_ = v66
-	var v67 int32
-	_ = v67
-	var v69 int32
-	_ = v69
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
+	var v65 int32
+	_ = v65
+	var v70 int32
+	_ = v70
 	var v71 int32
 	_ = v71
+	var v73 int32
+	_ = v73
 	var v75 int32
 	_ = v75
-	var v77 int32
-	_ = v77
 	var v79 int32
 	_ = v79
+	var v81 int32
+	_ = v81
 	var v83 int32
 	_ = v83
-	var v84 int32
-	_ = v84
-	var v90 int32
-	_ = v90
-	var v95 int32
-	_ = v95
-	var v98 int32
-	_ = v98
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v94 int32
+	_ = v94
+	var v99 int32
+	_ = v99
 	var v102 int32
 	_ = v102
-	var v105 int32
-	_ = v105
+	var v106 int32
+	_ = v106
 	var v109 int32
 	_ = v109
-	var v114 int32
-	_ = v114
-	var v120 int32
-	_ = v120
-	var v123 int32
-	_ = v123
+	var v113 int32
+	_ = v113
+	var v118 int32
+	_ = v118
 	var v124 int32
 	_ = v124
-	var v133 int32
-	_ = v133
-	var v138 int32
-	_ = v138
-	var v141 int32
-	_ = v141
-	var v151 int32
-	_ = v151
-	var v154 int32
-	_ = v154
+	var v127 int32
+	_ = v127
+	var v128 int32
+	_ = v128
+	var v137 int32
+	_ = v137
+	var v142 int32
+	_ = v142
+	var v145 int32
+	_ = v145
+	var v155 int32
+	_ = v155
 	var v158 int32
 	_ = v158
 	var v162 int32
 	_ = v162
-	var v167 int32
-	_ = v167
+	var v166 int32
+	_ = v166
 	var v171 int32
 	_ = v171
-	var v174 int32
-	_ = v174
+	var v175 int32
+	_ = v175
 	var v178 int32
 	_ = v178
-	var v183 int32
-	_ = v183
+	var v182 int32
+	_ = v182
 	var v187 int32
 	_ = v187
-	var v189 int32
-	_ = v189
-	var v194 int32
-	_ = v194
-	var v199 int32
-	_ = v199
+	var v191 int32
+	_ = v191
+	var v193 int32
+	_ = v193
+	var v198 int32
+	_ = v198
 	var v203 int32
 	_ = v203
-	var v205 int32
-	_ = v205
-	var v212 int32
-	_ = v212
-	var v217 int32
-	_ = v217
-	var v219 int32
-	_ = v219
+	var v207 int32
+	_ = v207
+	var v209 int32
+	_ = v209
+	var v216 int32
+	_ = v216
+	var v221 int32
+	_ = v221
 	var v223 int32
 	_ = v223
-	var v226 int32
-	_ = v226
+	var v227 int32
+	_ = v227
 	var v230 int32
 	_ = v230
-	var v235 int32
-	_ = v235
+	var v234 int32
+	_ = v234
+	var v239 int32
+	_ = v239
 	v6 = m.G0
 	v8 = v6 - int32(48)
 	m.G0 = v8
@@ -13904,12 +13908,12 @@ func F_pg_promote(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	v219 = F_unlink(m, int32(_a_F_pg_promote_0))
+	v223 = F_unlink(m, int32(_a_F_pg_promote_0))
 	mBase = m.M
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v223 = m.ExcPending
-	if v223 != 0 {
+	v227 = m.ExcPending
+	if v227 != 0 {
 		goto L13
 	} else {
 		goto L69
@@ -13918,8 +13922,8 @@ L2:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v203 = m.ExcPending
-	if v203 != 0 {
+	v207 = m.ExcPending
+	if v207 != 0 {
 		goto L13
 	} else {
 		goto L65
@@ -13928,8 +13932,8 @@ L3:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v187 = m.ExcPending
-	if v187 != 0 {
+	v191 = m.ExcPending
+	if v191 != 0 {
 		goto L13
 	} else {
 		goto L61
@@ -13938,8 +13942,8 @@ L4:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v171 = m.ExcPending
-	if v171 != 0 {
+	v175 = m.ExcPending
+	if v175 != 0 {
 		goto L13
 	} else {
 		goto L57
@@ -13980,8 +13984,8 @@ L11:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v151 = m.ExcPending
-	if v151 != 0 {
+	v155 = m.ExcPending
+	if v155 != 0 {
 		goto L13
 	} else {
 		goto L52
@@ -14043,10 +14047,10 @@ L18:
 L19:
 	;
 	m.G0 = v8 + int32(48)
-	return v141
+	return v145
 L20:
 	;
-	v141 = int32(1)
+	v145 = int32(1)
 	goto L19
 L21:
 	;
@@ -14062,11 +14066,11 @@ L22:
 	}
 L23:
 	;
-	v120 = int32(0)
-	v123 = F_errstart(m, int32(19), v120)
+	v124 = int32(0)
+	v127 = F_errstart(m, int32(19), v124)
 	mBase = m.M
-	v124 = m.ExcPending
-	if v124 != 0 {
+	v128 = m.ExcPending
+	if v128 != 0 {
 		goto L13
 	} else {
 		goto L48
@@ -14078,53 +14082,55 @@ L24:
 L25:
 	;
 	v56 = *(*int32)(unsafe.Add(mBase, _c_F_pg_promote[3]))
-	*(*int32)(unsafe.Add(mBase, uint32(v56))) = int32(0)
+	v57 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v56))) = v57
+	v62 = base.AtomicRmwOr32(m, v57, int32(_a_F_pg_promote_2), v57)
 	goto L27
 L26:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v95 = m.ExcPending
-	if v95 != 0 {
+	v99 = m.ExcPending
+	if v99 != 0 {
 		goto L13
 	} else {
 		goto L42
 	}
 L27:
 	;
-	v61 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_promote[0])))
-	if v61 == int32(1) {
+	v65 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_promote[0])))
+	if v65 == int32(1) {
 		goto L29
 	} else {
 		goto L30
 	}
 L28:
 	;
-	if v71 == int32(0) {
-		v141 = int32(1)
+	if v75 == int32(0) {
+		v145 = int32(1)
 		goto L19
 	} else {
 		goto L32
 	}
 L29:
 	;
-	v66 = *(*int32)(unsafe.Add(mBase, _c_F_pg_promote[1]))
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(v66)+316))
-	v69 = base.B2i32(v67 != int32(2))
-	*(*uint8)(unsafe.Add(mBase, _c_F_pg_promote[0])) = uint8(v69)
-	v71 = v69
+	v70 = *(*int32)(unsafe.Add(mBase, _c_F_pg_promote[1]))
+	v71 = *(*int32)(unsafe.Add(mBase, uint32(v70)+316))
+	v73 = base.B2i32(v71 != int32(2))
+	*(*uint8)(unsafe.Add(mBase, _c_F_pg_promote[0])) = uint8(v73)
+	v75 = v73
 	goto L31
 L30:
 	;
-	v71 = int32(0)
+	v75 = int32(0)
 	goto L31
 L31:
 	;
 	goto L28
 L32:
 	;
-	v75 = *(*int32)(unsafe.Add(mBase, _c_F_pg_promote[4]))
-	if v75 != 0 {
+	v79 = *(*int32)(unsafe.Add(mBase, _c_F_pg_promote[4]))
+	if v79 != 0 {
 		goto L33
 	} else {
 		goto L34
@@ -14133,8 +14139,8 @@ L33:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
+	v81 = m.ExcPending
+	if v81 != 0 {
 		goto L13
 	} else {
 		goto L36
@@ -14144,11 +14150,11 @@ L34:
 	goto L35
 L35:
 	;
-	v79 = *(*int32)(unsafe.Add(mBase, _c_F_pg_promote[3]))
-	v83 = F_WaitLatch(m, v79, int32(25), int32(100), int32(134217771))
+	v83 = *(*int32)(unsafe.Add(mBase, _c_F_pg_promote[3]))
+	v87 = F_WaitLatch(m, v83, int32(25), int32(100), int32(134217771))
 	mBase = m.M
-	v84 = m.ExcPending
-	if v84 != 0 {
+	v88 = m.ExcPending
+	if v88 != 0 {
 		goto L13
 	} else {
 		goto L37
@@ -14158,15 +14164,15 @@ L36:
 	goto L35
 L37:
 	;
-	if v83&int32(16) == int32(0) {
+	if v87&int32(16) == int32(0) {
 		goto L38
 	} else {
 		goto L39
 	}
 L38:
 	;
-	v90 = v50 + int32(1)
-	if v90 == v46 {
+	v94 = v50 + int32(1)
+	if v94 == v46 {
 		goto L23
 	} else {
 		goto L41
@@ -14179,24 +14185,24 @@ L40:
 	goto L26
 L41:
 	;
-	v50 = v90
+	v50 = v94
 	goto L25
 L42:
 	;
 	F_errcode(m, int32(16908741))
 	mBase = m.M
-	v98 = m.ExcPending
-	if v98 != 0 {
+	v102 = m.ExcPending
+	if v102 != 0 {
 		goto L13
 	} else {
 		goto L43
 	}
 L43:
 	;
-	F_errmsg(m, int32(_a_F_pg_promote_2), int32(0))
+	F_errmsg(m, int32(_a_F_pg_promote_3), int32(0))
 	mBase = m.M
-	v102 = m.ExcPending
-	if v102 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L13
 	} else {
 		goto L44
@@ -14205,28 +14211,28 @@ L44:
 	;
 	F_set_errcontext_domain(m, int32(0))
 	mBase = m.M
-	v105 = m.ExcPending
-	if v105 != 0 {
+	v109 = m.ExcPending
+	if v109 != 0 {
 		goto L13
 	} else {
 		goto L45
 	}
 L45:
 	;
-	F_errcontext_msg(m, int32(_a_F_pg_promote_3), int32(0))
+	F_errcontext_msg(m, int32(_a_F_pg_promote_4), int32(0))
 	mBase = m.M
-	v109 = m.ExcPending
-	if v109 != 0 {
+	v113 = m.ExcPending
+	if v113 != 0 {
 		goto L13
 	} else {
 		goto L46
 	}
 L46:
 	;
-	F_errfinish(m, int32(_a_F_pg_promote_4), int32(741), int32(_a_F_pg_promote_5))
+	F_errfinish(m, int32(_a_F_pg_promote_5), int32(741), int32(_a_F_pg_promote_6))
 	mBase = m.M
-	v114 = m.ExcPending
-	if v114 != 0 {
+	v118 = m.ExcPending
+	if v118 != 0 {
 		goto L13
 	} else {
 		goto L47
@@ -14238,8 +14244,8 @@ L47:
 	}
 L48:
 	;
-	if v123 == int32(0) {
-		v141 = v120
+	if v127 == int32(0) {
+		v145 = v124
 		goto L19
 	} else {
 		goto L49
@@ -14247,64 +14253,64 @@ L48:
 L49:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v10
-	F_errmsg_plural(m, int32(_a_F_pg_promote_6), int32(_a_F_pg_promote_7), v10, v8+int32(16))
+	F_errmsg_plural(m, int32(_a_F_pg_promote_7), int32(_a_F_pg_promote_8), v10, v8+int32(16))
 	mBase = m.M
-	v133 = m.ExcPending
-	if v133 != 0 {
+	v137 = m.ExcPending
+	if v137 != 0 {
 		goto L13
 	} else {
 		goto L50
 	}
 L50:
 	;
-	F_errfinish(m, int32(_a_F_pg_promote_4), int32(748), int32(_a_F_pg_promote_5))
+	F_errfinish(m, int32(_a_F_pg_promote_5), int32(748), int32(_a_F_pg_promote_6))
 	mBase = m.M
-	v138 = m.ExcPending
-	if v138 != 0 {
+	v142 = m.ExcPending
+	if v142 != 0 {
 		goto L13
 	} else {
 		goto L51
 	}
 L51:
 	;
-	v141 = v120
+	v145 = v124
 	goto L19
 L52:
 	;
 	F_errcode(m, int32(325))
 	mBase = m.M
-	v154 = m.ExcPending
-	if v154 != 0 {
+	v158 = m.ExcPending
+	if v158 != 0 {
 		goto L13
 	} else {
 		goto L53
 	}
 L53:
 	;
-	F_errmsg(m, int32(_a_F_pg_promote_8), int32(0))
+	F_errmsg(m, int32(_a_F_pg_promote_9), int32(0))
 	mBase = m.M
-	v158 = m.ExcPending
-	if v158 != 0 {
+	v162 = m.ExcPending
+	if v162 != 0 {
 		goto L13
 	} else {
 		goto L54
 	}
 L54:
 	;
-	F_errhint(m, int32(_a_F_pg_promote_9), int32(0))
+	F_errhint(m, int32(_a_F_pg_promote_10), int32(0))
 	mBase = m.M
-	v162 = m.ExcPending
-	if v162 != 0 {
+	v166 = m.ExcPending
+	if v166 != 0 {
 		goto L13
 	} else {
 		goto L55
 	}
 L55:
 	;
-	F_errfinish(m, int32(_a_F_pg_promote_4), int32(681), int32(_a_F_pg_promote_5))
+	F_errfinish(m, int32(_a_F_pg_promote_5), int32(681), int32(_a_F_pg_promote_6))
 	mBase = m.M
-	v167 = m.ExcPending
-	if v167 != 0 {
+	v171 = m.ExcPending
+	if v171 != 0 {
 		goto L13
 	} else {
 		goto L56
@@ -14318,28 +14324,28 @@ L57:
 	;
 	F_errcode(m, int32(50331778))
 	mBase = m.M
-	v174 = m.ExcPending
-	if v174 != 0 {
+	v178 = m.ExcPending
+	if v178 != 0 {
 		goto L13
 	} else {
 		goto L58
 	}
 L58:
 	;
-	F_errmsg(m, int32(_a_F_pg_promote_10), int32(0))
+	F_errmsg(m, int32(_a_F_pg_promote_11), int32(0))
 	mBase = m.M
-	v178 = m.ExcPending
-	if v178 != 0 {
+	v182 = m.ExcPending
+	if v182 != 0 {
 		goto L13
 	} else {
 		goto L59
 	}
 L59:
 	;
-	F_errfinish(m, int32(_a_F_pg_promote_4), int32(686), int32(_a_F_pg_promote_5))
+	F_errfinish(m, int32(_a_F_pg_promote_5), int32(686), int32(_a_F_pg_promote_6))
 	mBase = m.M
-	v183 = m.ExcPending
-	if v183 != 0 {
+	v187 = m.ExcPending
+	if v187 != 0 {
 		goto L13
 	} else {
 		goto L60
@@ -14353,8 +14359,8 @@ L61:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v189 = m.ExcPending
-	if v189 != 0 {
+	v193 = m.ExcPending
+	if v193 != 0 {
 		goto L13
 	} else {
 		goto L62
@@ -14362,20 +14368,20 @@ L61:
 L62:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(_a_F_pg_promote_0)
-	F_errmsg(m, int32(_a_F_pg_promote_11), v8)
+	F_errmsg(m, int32(_a_F_pg_promote_12), v8)
 	mBase = m.M
-	v194 = m.ExcPending
-	if v194 != 0 {
+	v198 = m.ExcPending
+	if v198 != 0 {
 		goto L13
 	} else {
 		goto L63
 	}
 L63:
 	;
-	F_errfinish(m, int32(_a_F_pg_promote_4), int32(694), int32(_a_F_pg_promote_5))
+	F_errfinish(m, int32(_a_F_pg_promote_5), int32(694), int32(_a_F_pg_promote_6))
 	mBase = m.M
-	v199 = m.ExcPending
-	if v199 != 0 {
+	v203 = m.ExcPending
+	if v203 != 0 {
 		goto L13
 	} else {
 		goto L64
@@ -14389,8 +14395,8 @@ L65:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v205 = m.ExcPending
-	if v205 != 0 {
+	v209 = m.ExcPending
+	if v209 != 0 {
 		goto L13
 	} else {
 		goto L66
@@ -14398,20 +14404,20 @@ L65:
 L66:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = int32(_a_F_pg_promote_0)
-	F_errmsg(m, int32(_a_F_pg_promote_12), v8+int32(32))
+	F_errmsg(m, int32(_a_F_pg_promote_13), v8+int32(32))
 	mBase = m.M
-	v212 = m.ExcPending
-	if v212 != 0 {
+	v216 = m.ExcPending
+	if v216 != 0 {
 		goto L13
 	} else {
 		goto L67
 	}
 L67:
 	;
-	F_errfinish(m, int32(_a_F_pg_promote_4), int32(700), int32(_a_F_pg_promote_5))
+	F_errfinish(m, int32(_a_F_pg_promote_5), int32(700), int32(_a_F_pg_promote_6))
 	mBase = m.M
-	v217 = m.ExcPending
-	if v217 != 0 {
+	v221 = m.ExcPending
+	if v221 != 0 {
 		goto L13
 	} else {
 		goto L68
@@ -14425,28 +14431,28 @@ L69:
 	;
 	F_errcode(m, int32(517))
 	mBase = m.M
-	v226 = m.ExcPending
-	if v226 != 0 {
+	v230 = m.ExcPending
+	if v230 != 0 {
 		goto L13
 	} else {
 		goto L70
 	}
 L70:
 	;
-	F_errmsg(m, int32(_a_F_pg_promote_13), int32(0))
+	F_errmsg(m, int32(_a_F_pg_promote_14), int32(0))
 	mBase = m.M
-	v230 = m.ExcPending
-	if v230 != 0 {
+	v234 = m.ExcPending
+	if v234 != 0 {
 		goto L13
 	} else {
 		goto L71
 	}
 L71:
 	;
-	F_errfinish(m, int32(_a_F_pg_promote_4), int32(708), int32(_a_F_pg_promote_5))
+	F_errfinish(m, int32(_a_F_pg_promote_5), int32(708), int32(_a_F_pg_promote_6))
 	mBase = m.M
-	v235 = m.ExcPending
-	if v235 != 0 {
+	v239 = m.ExcPending
+	if v239 != 0 {
 		goto L13
 	} else {
 		goto L72

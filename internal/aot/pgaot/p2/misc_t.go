@@ -2626,38 +2626,42 @@ func F_throttle(m *base.Module, l0 int32, l1 int32) {
 	_ = v38
 	var v42 int32
 	_ = v42
-	var v46 int32
-	_ = v46
+	var v43 int32
+	_ = v43
 	var v48 int32
 	_ = v48
 	var v50 int32
 	_ = v50
-	var v53 int64
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v57 int32
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v57 int64
 	_ = v57
-	var v63 int32
-	_ = v63
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
 	var v67 int32
 	_ = v67
-	var v73 int64
-	_ = v73
-	var v74 int64
-	_ = v74
-	var v75 int64
-	_ = v75
-	var v80 int32
-	_ = v80
-	var v81 int32
-	_ = v81
-	var v82 int32
-	_ = v82
-	var v85 int64
+	var v71 int32
+	_ = v71
+	var v77 int64
+	_ = v77
+	var v78 int64
+	_ = v78
+	var v79 int64
+	_ = v79
+	var v84 int32
+	_ = v84
+	var v85 int32
 	_ = v85
-	var v86 int64
+	var v86 int32
 	_ = v86
+	var v89 int64
+	_ = v89
+	var v90 int64
+	_ = v90
 	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 	v7 = v5 + base.I64_extend_i32_u(l1)
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v7
@@ -2692,19 +2696,19 @@ L4:
 	goto L7
 L5:
 	;
-	v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
-	v74 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
-	v75 = base.I64_rem_u_s(v73, v74)
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v75
-	v80 = m.G0
-	v81 = int32(16)
-	v82 = v80 - v81
-	m.G0 = v82
-	F_gettimeofday(m, v82)
+	v77 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
+	v78 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v79 = base.I64_rem_u_s(v77, v78)
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v79
+	v84 = m.G0
+	v85 = int32(16)
+	v86 = v84 - v85
+	m.G0 = v86
+	F_gettimeofday(m, v86)
 	mBase = m.M
-	v85 = *(*int64)(unsafe.Add(mBase, uint32(v82)))
-	v86 = int64(*(*int32)(unsafe.Add(mBase, uint32(v82)+8)))
-	m.G0 = v82 + v81
+	v89 = *(*int64)(unsafe.Add(mBase, uint32(v86)))
+	v90 = int64(*(*int32)(unsafe.Add(mBase, uint32(v86)+8)))
+	m.G0 = v86 + v85
 	goto L21
 L6:
 	;
@@ -2721,12 +2725,14 @@ L7:
 L8:
 	;
 	v42 = *(*int32)(unsafe.Add(mBase, _c_F_throttle[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v42))) = int32(0)
+	v43 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v42))) = v43
+	v48 = base.AtomicRmwOr32(m, v43, int32(_a_F_throttle_0), v43)
 	goto L9
 L9:
 	;
-	v46 = *(*int32)(unsafe.Add(mBase, _c_F_throttle[1]))
-	if v46 != 0 {
+	v50 = *(*int32)(unsafe.Add(mBase, _c_F_throttle[1]))
+	if v50 != 0 {
 		goto L10
 	} else {
 		goto L11
@@ -2735,8 +2741,8 @@ L10:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v48 = m.ExcPending
-	if v48 != 0 {
+	v52 = m.ExcPending
+	if v52 != 0 {
 		goto L13
 	} else {
 		goto L14
@@ -2746,12 +2752,12 @@ L11:
 	goto L12
 L12:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, _c_F_throttle[0]))
-	v53 = base.I64_div_u_s(v38, int64(1000))
-	v56 = F_WaitLatch(m, v50, int32(41), base.I32_wrap_i64(v53), int32(150994944))
+	v54 = *(*int32)(unsafe.Add(mBase, _c_F_throttle[0]))
+	v57 = base.I64_div_u_s(v38, int64(1000))
+	v60 = F_WaitLatch(m, v54, int32(41), base.I32_wrap_i64(v57), int32(150994944))
 	mBase = m.M
-	v57 = m.ExcPending
-	if v57 != 0 {
+	v61 = m.ExcPending
+	if v61 != 0 {
 		goto L13
 	} else {
 		goto L16
@@ -2764,22 +2770,22 @@ L14:
 	goto L12
 L15:
 	;
-	if v56&int32(8) == int32(0) {
+	if v60&int32(8) == int32(0) {
 		goto L4
 	} else {
 		goto L20
 	}
 L16:
 	;
-	if v56&int32(1) == int32(0) {
+	if v60&int32(1) == int32(0) {
 		goto L15
 	} else {
 		goto L17
 	}
 L17:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, _c_F_throttle[1]))
-	if v63 == int32(0) {
+	v67 = *(*int32)(unsafe.Add(mBase, _c_F_throttle[1]))
+	if v67 == int32(0) {
 		goto L15
 	} else {
 		goto L18
@@ -2788,8 +2794,8 @@ L18:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v67 = m.ExcPending
-	if v67 != 0 {
+	v71 = m.ExcPending
+	if v71 != 0 {
 		goto L13
 	} else {
 		goto L19
@@ -2802,7 +2808,7 @@ L20:
 	goto L6
 L21:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v86 + v85*int64(1000000) - int64(946684800000000)
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v90 + v89*int64(1000000) - int64(946684800000000)
 	goto L3
 }
 func F_tidle(m *base.Module, l0 int32) int32 {

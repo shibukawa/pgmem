@@ -34,110 +34,120 @@ func F__brin_parallel_build_main(m *base.Module, l0 int32, l1 int32) {
 	_ = v46
 	var v49 int32
 	_ = v49
-	var v60 int32
-	_ = v60
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
+	var v53 int32
+	_ = v53
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
 	var v68 int32
 	_ = v68
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
-	var v73 int32
-	_ = v73
-	var v74 int32
-	_ = v74
+	var v72 int32
+	_ = v72
 	var v75 int32
 	_ = v75
 	var v76 int32
 	_ = v76
+	var v77 int32
+	_ = v77
 	var v78 int32
 	_ = v78
-	var v79 int32
-	_ = v79
-	var v80 int64
-	_ = v80
-	var v85 int32
-	_ = v85
-	var v92 int32
-	_ = v92
+	var v81 int32
+	_ = v81
+	var v82 int32
+	_ = v82
+	var v83 int32
+	_ = v83
+	var v84 int32
+	_ = v84
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v88 int64
+	_ = v88
 	var v93 int32
 	_ = v93
-	var v95 int32
-	_ = v95
-	var v96 int32
-	_ = v96
-	var v97 int32
-	_ = v97
-	var v99 int64
-	_ = v99
+	var v100 int32
+	_ = v100
+	var v101 int32
+	_ = v101
 	var v103 int32
 	_ = v103
-	var v107 int32
+	var v104 int32
+	_ = v104
+	var v105 int32
+	_ = v105
+	var v107 int64
 	_ = v107
-	var v109 int32
-	_ = v109
-	var v116 int32
-	_ = v116
+	var v111 int32
+	_ = v111
+	var v115 int32
+	_ = v115
 	var v117 int32
 	_ = v117
-	var v119 int32
-	_ = v119
-	var v126 int64
-	_ = v126
-	var v130 int64
-	_ = v130
+	var v124 int32
+	_ = v124
+	var v125 int32
+	_ = v125
+	var v127 int32
+	_ = v127
 	var v134 int64
 	_ = v134
 	var v138 int64
 	_ = v138
-	var v141 int32
-	_ = v141
-	var v142 int32
+	var v142 int64
 	_ = v142
-	var v143 int32
-	_ = v143
-	var v145 int32
-	_ = v145
-	var v148 int32
-	_ = v148
+	var v146 int64
+	_ = v146
 	var v149 int32
 	_ = v149
-	var v152 int32
-	_ = v152
+	var v150 int32
+	_ = v150
+	var v151 int32
+	_ = v151
 	var v153 int32
 	_ = v153
-	var v155 int32
-	_ = v155
-	var v158 int32
-	_ = v158
+	var v156 int32
+	_ = v156
+	var v157 int32
+	_ = v157
+	var v160 int32
+	_ = v160
 	var v161 int32
 	_ = v161
-	var v167 int64
-	_ = v167
-	var v176 int64
-	_ = v176
-	var v178 int64
-	_ = v178
-	var v182 int64
-	_ = v182
+	var v163 int32
+	_ = v163
+	var v166 int32
+	_ = v166
+	var v169 int32
+	_ = v169
+	var v175 int64
+	_ = v175
 	var v184 int64
 	_ = v184
-	var v188 int64
-	_ = v188
+	var v186 int64
+	_ = v186
 	var v190 int64
 	_ = v190
-	var v194 int64
-	_ = v194
+	var v192 int64
+	_ = v192
 	var v196 int64
 	_ = v196
-	var v200 int32
-	_ = v200
-	var v202 int32
+	var v198 int64
+	_ = v198
+	var v202 int64
 	_ = v202
+	var v204 int64
+	_ = v204
+	var v208 int32
+	_ = v208
+	var v210 int32
+	_ = v210
 	v14 = F_shm_toc_lookup(m, l1, int64(-5764607523034234877), int32(1))
 	mBase = m.M
 	v15 = m.ExcPending
@@ -170,152 +180,157 @@ func F__brin_parallel_build_main(m *base.Module, l0 int32, l1 int32) {
 						*(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[3])) = v45 + v46
 						v49 = *(*int32)(unsafe.Add(mBase, uint32(v28)))
 						*(*int32)(unsafe.Add(mBase, uint32(v28))) = v49 + v46
+						v53 = int32(0)
+						v55 = int32(_a_F__brin_parallel_build_main_1)
+						v56 = base.AtomicRmwOr32(m, v53, v55, v53)
 						*(*int64)(unsafe.Add(mBase, uint32(v28)+392)) = v24
-						*(*int32)(unsafe.Add(mBase, uint32(v28))) = v49 + int32(2)
-						v60 = *(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[3]))
-						*(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[3])) = v60 - v46
+						v61 = base.AtomicRmwOr32(m, v53, v55, v53)
+						v62 = *(*int32)(unsafe.Add(mBase, uint32(v28)))
+						*(*int32)(unsafe.Add(mBase, uint32(v28))) = v62 + v46
+						v68 = *(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[3]))
+						*(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[3])) = v68 - v46
 					}
 				}
 			}
-			v64 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+			v72 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
 			if v23 != 0 {
-				v67 = int32(4)
+				v75 = int32(4)
 			} else {
-				v67 = int32(5)
+				v75 = int32(5)
 			}
-			v68 = F_table_open(m, v64, v67)
+			v76 = F_table_open(m, v72, v75)
 			mBase = m.M
-			v69 = m.ExcPending
-			if v69 != 0 {
+			v77 = m.ExcPending
+			if v77 != 0 {
 				return
 			} else {
-				v70 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
+				v78 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
 				if v23 != 0 {
-					v73 = int32(3)
+					v81 = int32(3)
 				} else {
-					v73 = int32(8)
+					v81 = int32(8)
 				}
-				v74 = F_index_open(m, v70, v73)
+				v82 = F_index_open(m, v78, v81)
 				mBase = m.M
-				v75 = m.ExcPending
-				if v75 != 0 {
+				v83 = m.ExcPending
+				if v83 != 0 {
 					return
 				} else {
-					v76 = *(*int32)(unsafe.Add(mBase, uint32(v21)+12))
-					v78 = F_palloc(m, int32(80))
+					v84 = *(*int32)(unsafe.Add(mBase, uint32(v21)+12))
+					v86 = F_palloc(m, int32(80))
 					mBase = m.M
-					v79 = m.ExcPending
-					if v79 != 0 {
+					v87 = m.ExcPending
+					if v87 != 0 {
 						return
 					} else {
-						v80 = int64(0)
-						*(*int64)(unsafe.Add(mBase, uint32(v78)+8)) = v80
-						*(*int32)(unsafe.Add(mBase, uint32(v78))) = v74
-						*(*int64)(unsafe.Add(mBase, uint32(v78)+16)) = v80
-						v85 = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v78)+24)) = v85
-						*(*int32)(unsafe.Add(mBase, uint32(v78)+40)) = v85
-						*(*int32)(unsafe.Add(mBase, uint32(v78)+32)) = v85
-						*(*int32)(unsafe.Add(mBase, uint32(v78)+28)) = v76
-						v92 = F_brin_build_desc(m, v74)
+						v88 = int64(0)
+						*(*int64)(unsafe.Add(mBase, uint32(v86)+8)) = v88
+						*(*int32)(unsafe.Add(mBase, uint32(v86))) = v82
+						*(*int64)(unsafe.Add(mBase, uint32(v86)+16)) = v88
+						v93 = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v86)+24)) = v93
+						*(*int32)(unsafe.Add(mBase, uint32(v86)+40)) = v93
+						*(*int32)(unsafe.Add(mBase, uint32(v86)+32)) = v93
+						*(*int32)(unsafe.Add(mBase, uint32(v86)+28)) = v84
+						v100 = F_brin_build_desc(m, v82)
 						mBase = m.M
-						v93 = m.ExcPending
-						if v93 != 0 {
+						v101 = m.ExcPending
+						if v101 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v78)+44)) = v92
-							v95 = F_brin_new_memtuple(m, v92)
+							*(*int32)(unsafe.Add(mBase, uint32(v86)+44)) = v100
+							v103 = F_brin_new_memtuple(m, v100)
 							mBase = m.M
-							v96 = m.ExcPending
-							if v96 != 0 {
+							v104 = m.ExcPending
+							if v104 != 0 {
 								return
 							} else {
-								v97 = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v78)+72)) = v97
-								v99 = int64(0)
-								*(*int64)(unsafe.Add(mBase, uint32(v78)+64)) = v99
-								*(*int32)(unsafe.Add(mBase, uint32(v78)+48)) = v95
-								v103 = *(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[4]))
-								*(*int64)(unsafe.Add(mBase, uint32(v78)+52)) = v99
-								*(*int32)(unsafe.Add(mBase, uint32(v78)+60)) = v103
-								v107 = *(*int32)(unsafe.Add(mBase, uint32(v78)+28))
-								v109 = base.I32_rem_u_s(int32(-2), v76)
-								*(*int32)(unsafe.Add(mBase, uint32(v78)+36)) = v107 - v109 - int32(2)
-								v116 = F_shm_toc_lookup(m, l1, int64(-5764607523034234878), v97)
+								v105 = int32(0)
+								*(*int32)(unsafe.Add(mBase, uint32(v86)+72)) = v105
+								v107 = int64(0)
+								*(*int64)(unsafe.Add(mBase, uint32(v86)+64)) = v107
+								*(*int32)(unsafe.Add(mBase, uint32(v86)+48)) = v103
+								v111 = *(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[4]))
+								*(*int64)(unsafe.Add(mBase, uint32(v86)+52)) = v107
+								*(*int32)(unsafe.Add(mBase, uint32(v86)+60)) = v111
+								v115 = *(*int32)(unsafe.Add(mBase, uint32(v86)+28))
+								v117 = base.I32_rem_u_s(int32(-2), v84)
+								*(*int32)(unsafe.Add(mBase, uint32(v86)+36)) = v115 - v117 - int32(2)
+								v124 = F_shm_toc_lookup(m, l1, int64(-5764607523034234878), v105)
 								mBase = m.M
-								v117 = m.ExcPending
-								if v117 != 0 {
+								v125 = m.ExcPending
+								if v125 != 0 {
 									return
 								} else {
-									F_tuplesort_attach_shared(m, v116, l0)
+									F_tuplesort_attach_shared(m, v124, l0)
 									mBase = m.M
-									v119 = m.ExcPending
-									if v119 != 0 {
+									v127 = m.ExcPending
+									if v127 != 0 {
 										return
 									} else {
-										base.MemoryCopy(m, int32(_a_F__brin_parallel_build_main_1), int32(_a_F__brin_parallel_build_main_2), int32(128))
-										v126 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[5]))
-										*(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[6])) = v126
-										v130 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[7]))
-										*(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[8])) = v130
-										v134 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[9]))
-										*(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[10])) = v134
-										v138 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[11]))
-										*(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[12])) = v138
-										v141 = *(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[13]))
-										v142 = *(*int32)(unsafe.Add(mBase, uint32(v21)+16))
-										v143 = base.I32_div_s(v141, v142)
-										F__brin_parallel_scan_and_build(m, v78, v21, v116, v68, v74, v143)
+										base.MemoryCopy(m, int32(_a_F__brin_parallel_build_main_2), int32(_a_F__brin_parallel_build_main_3), int32(128))
+										v134 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[5]))
+										*(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[6])) = v134
+										v138 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[7]))
+										*(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[8])) = v138
+										v142 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[9]))
+										*(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[10])) = v142
+										v146 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[11]))
+										*(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[12])) = v146
+										v149 = *(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[13]))
+										v150 = *(*int32)(unsafe.Add(mBase, uint32(v21)+16))
+										v151 = base.I32_div_s(v149, v150)
+										F__brin_parallel_scan_and_build(m, v86, v21, v124, v76, v82, v151)
 										mBase = m.M
-										v145 = m.ExcPending
-										if v145 != 0 {
+										v153 = m.ExcPending
+										if v153 != 0 {
 											return
 										} else {
-											v148 = F_shm_toc_lookup(m, l1, int64(-5764607523034234875), int32(0))
+											v156 = F_shm_toc_lookup(m, l1, int64(-5764607523034234875), int32(0))
 											mBase = m.M
-											v149 = m.ExcPending
-											if v149 != 0 {
+											v157 = m.ExcPending
+											if v157 != 0 {
 												return
 											} else {
-												v152 = F_shm_toc_lookup(m, l1, int64(-5764607523034234876), int32(0))
+												v160 = F_shm_toc_lookup(m, l1, int64(-5764607523034234876), int32(0))
 												mBase = m.M
-												v153 = m.ExcPending
-												if v153 != 0 {
+												v161 = m.ExcPending
+												if v161 != 0 {
 													return
 												} else {
-													v155 = *(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[14]))
-													v158 = v148 + v155<<(uint(int32(7))%32)
-													v161 = v152 + v155<<(uint(int32(5))%32)
-													base.MemoryFill(m, v158, int32(0), int32(128))
-													F_BufferUsageAccumDiff(m, v158, int32(_a_F__brin_parallel_build_main_1))
+													v163 = *(*int32)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[14]))
+													v166 = v156 + v163<<(uint(int32(7))%32)
+													v169 = v160 + v163<<(uint(int32(5))%32)
+													base.MemoryFill(m, v166, int32(0), int32(128))
+													F_BufferUsageAccumDiff(m, v166, int32(_a_F__brin_parallel_build_main_2))
 													mBase = m.M
-													v167 = int64(0)
-													*(*int64)(unsafe.Add(mBase, uint32(v161)+24)) = v167
-													*(*int64)(unsafe.Add(mBase, uint32(v161)+16)) = v167
-													*(*int64)(unsafe.Add(mBase, uint32(v161)+8)) = v167
-													*(*int64)(unsafe.Add(mBase, uint32(v161))) = v167
-													v176 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[7]))
-													v178 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[8]))
-													*(*int64)(unsafe.Add(mBase, uint32(v161)+16)) = v176 - v178
-													v182 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[11]))
-													v184 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[12]))
-													*(*int64)(unsafe.Add(mBase, uint32(v161))) = v182 - v184
-													v188 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[9]))
-													v190 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[10]))
-													*(*int64)(unsafe.Add(mBase, uint32(v161)+8)) = v188 - v190
-													v194 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[5]))
-													v196 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[6]))
-													*(*int64)(unsafe.Add(mBase, uint32(v161)+24)) = v194 - v196
-													F_relation_close(m, v74, v73)
+													v175 = int64(0)
+													*(*int64)(unsafe.Add(mBase, uint32(v169)+24)) = v175
+													*(*int64)(unsafe.Add(mBase, uint32(v169)+16)) = v175
+													*(*int64)(unsafe.Add(mBase, uint32(v169)+8)) = v175
+													*(*int64)(unsafe.Add(mBase, uint32(v169))) = v175
+													v184 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[7]))
+													v186 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[8]))
+													*(*int64)(unsafe.Add(mBase, uint32(v169)+16)) = v184 - v186
+													v190 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[11]))
+													v192 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[12]))
+													*(*int64)(unsafe.Add(mBase, uint32(v169))) = v190 - v192
+													v196 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[9]))
+													v198 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[10]))
+													*(*int64)(unsafe.Add(mBase, uint32(v169)+8)) = v196 - v198
+													v202 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[5]))
+													v204 = *(*int64)(unsafe.Add(mBase, _c_F__brin_parallel_build_main[6]))
+													*(*int64)(unsafe.Add(mBase, uint32(v169)+24)) = v202 - v204
+													F_relation_close(m, v82, v81)
 													mBase = m.M
-													v200 = m.ExcPending
-													if v200 != 0 {
+													v208 = m.ExcPending
+													if v208 != 0 {
 														return
 													} else {
-														F_relation_close(m, v68, v67)
+														F_relation_close(m, v76, v75)
 														mBase = m.M
-														v202 = m.ExcPending
-														if v202 != 0 {
+														v210 = m.ExcPending
+														if v210 != 0 {
 															return
 														} else {
 															return

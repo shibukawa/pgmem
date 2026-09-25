@@ -98,338 +98,342 @@ func F_PostmasterStateMachine(m *base.Module) {
 	_ = v122
 	var v127 int32
 	_ = v127
-	var v130 int32
-	_ = v130
-	var v134 int32
-	_ = v134
-	var v135 int32
-	_ = v135
+	var v128 int32
+	_ = v128
+	var v131 int32
+	_ = v131
+	var v138 int32
+	_ = v138
 	var v139 int32
 	_ = v139
-	var v144 int32
-	_ = v144
-	var v145 int32
-	_ = v145
-	var v146 int32
-	_ = v146
+	var v143 int32
+	_ = v143
 	var v148 int32
 	_ = v148
-	var v151 int32
-	_ = v151
-	var v153 int32
-	_ = v153
+	var v149 int32
+	_ = v149
+	var v150 int32
+	_ = v150
+	var v152 int32
+	_ = v152
 	var v155 int32
 	_ = v155
-	var v156 int32
-	_ = v156
-	var v173 int32
-	_ = v173
-	var v174 int32
-	_ = v174
-	var v183 int32
-	_ = v183
-	var v192 int32
-	_ = v192
-	var v193 int32
-	_ = v193
-	var v198 int32
-	_ = v198
-	var v200 int32
-	_ = v200
+	var v157 int32
+	_ = v157
+	var v159 int32
+	_ = v159
+	var v160 int32
+	_ = v160
+	var v177 int32
+	_ = v177
+	var v178 int32
+	_ = v178
+	var v187 int32
+	_ = v187
+	var v196 int32
+	_ = v196
+	var v197 int32
+	_ = v197
+	var v202 int32
+	_ = v202
 	var v204 int32
 	_ = v204
-	var v214 int32
-	_ = v214
-	var v222 int32
-	_ = v222
-	var v223 int32
-	_ = v223
-	var v236 int32
-	_ = v236
-	var v237 int32
-	_ = v237
+	var v208 int32
+	_ = v208
+	var v218 int32
+	_ = v218
+	var v226 int32
+	_ = v226
+	var v227 int32
+	_ = v227
+	var v240 int32
+	_ = v240
 	var v241 int32
 	_ = v241
-	var v246 int32
-	_ = v246
-	var v252 int32
-	_ = v252
-	var v257 int32
-	_ = v257
-	var v269 int32
-	_ = v269
-	var v270 int32
-	_ = v270
-	var v272 int32
-	_ = v272
+	var v245 int32
+	_ = v245
+	var v250 int32
+	_ = v250
+	var v256 int32
+	_ = v256
+	var v261 int32
+	_ = v261
+	var v273 int32
+	_ = v273
+	var v274 int32
+	_ = v274
 	var v276 int32
 	_ = v276
-	var v283 int32
-	_ = v283
-	var v284 int32
-	_ = v284
+	var v280 int32
+	_ = v280
+	var v287 int32
+	_ = v287
 	var v288 int32
 	_ = v288
-	var v293 int32
-	_ = v293
-	var v299 int32
-	_ = v299
-	var v304 int32
-	_ = v304
-	var v309 int32
-	_ = v309
-	var v311 int32
-	_ = v311
-	var v312 int32
-	_ = v312
+	var v292 int32
+	_ = v292
+	var v297 int32
+	_ = v297
+	var v303 int32
+	_ = v303
+	var v308 int32
+	_ = v308
 	var v313 int32
 	_ = v313
-	var v318 int32
-	_ = v318
-	var v319 int32
-	_ = v319
-	var v324 int32
-	_ = v324
-	var v326 int32
-	_ = v326
+	var v315 int32
+	_ = v315
+	var v316 int32
+	_ = v316
+	var v317 int32
+	_ = v317
+	var v322 int32
+	_ = v322
+	var v323 int32
+	_ = v323
 	var v328 int32
 	_ = v328
-	var v334 int32
-	_ = v334
-	var v344 int32
-	_ = v344
-	var v351 int32
-	_ = v351
-	var v352 int32
-	_ = v352
+	var v330 int32
+	_ = v330
+	var v332 int32
+	_ = v332
+	var v338 int32
+	_ = v338
+	var v348 int32
+	_ = v348
+	var v355 int32
+	_ = v355
 	var v356 int32
 	_ = v356
-	var v361 int32
-	_ = v361
-	var v362 int32
-	_ = v362
+	var v360 int32
+	_ = v360
+	var v365 int32
+	_ = v365
 	var v366 int32
 	_ = v366
-	var v369 int32
-	_ = v369
-	var v372 int32
-	_ = v372
+	var v370 int32
+	_ = v370
 	var v373 int32
 	_ = v373
+	var v376 int32
+	_ = v376
 	var v377 int32
 	_ = v377
-	var v382 int32
-	_ = v382
-	var v388 int32
-	_ = v388
-	var v393 int32
-	_ = v393
-	var v399 int32
-	_ = v399
-	var v409 int32
-	_ = v409
+	var v381 int32
+	_ = v381
+	var v386 int32
+	_ = v386
+	var v392 int32
+	_ = v392
+	var v397 int32
+	_ = v397
+	var v403 int32
+	_ = v403
 	var v413 int32
 	_ = v413
-	var v414 int32
-	_ = v414
 	var v417 int32
 	_ = v417
 	var v418 int32
 	_ = v418
+	var v421 int32
+	_ = v421
 	var v422 int32
 	_ = v422
-	var v427 int32
-	_ = v427
-	var v433 int32
-	_ = v433
-	var v438 int32
-	_ = v438
-	var v443 int32
-	_ = v443
-	var v449 int32
-	_ = v449
-	var v457 int32
-	_ = v457
-	var v459 int32
-	_ = v459
-	var v466 int32
-	_ = v466
-	var v467 int32
-	_ = v467
-	var v479 int32
-	_ = v479
+	var v426 int32
+	_ = v426
+	var v431 int32
+	_ = v431
+	var v437 int32
+	_ = v437
+	var v442 int32
+	_ = v442
+	var v447 int32
+	_ = v447
+	var v453 int32
+	_ = v453
+	var v461 int32
+	_ = v461
+	var v463 int32
+	_ = v463
+	var v470 int32
+	_ = v470
+	var v471 int32
+	_ = v471
 	var v483 int32
 	_ = v483
-	var v486 int32
-	_ = v486
 	var v487 int32
 	_ = v487
+	var v490 int32
+	_ = v490
 	var v491 int32
 	_ = v491
-	var v496 int32
-	_ = v496
-	var v502 int32
-	_ = v502
-	var v507 int32
-	_ = v507
-	var v512 int32
-	_ = v512
-	var v517 int32
-	_ = v517
-	var v519 int32
-	_ = v519
-	var v520 int32
-	_ = v520
-	var v525 int32
-	_ = v525
-	var v526 int32
-	_ = v526
+	var v495 int32
+	_ = v495
+	var v500 int32
+	_ = v500
+	var v506 int32
+	_ = v506
+	var v511 int32
+	_ = v511
+	var v516 int32
+	_ = v516
+	var v521 int32
+	_ = v521
+	var v523 int32
+	_ = v523
+	var v524 int32
+	_ = v524
+	var v529 int32
+	_ = v529
 	var v530 int32
 	_ = v530
-	var v531 int32
-	_ = v531
+	var v534 int32
+	_ = v534
 	var v535 int32
 	_ = v535
-	var v543 int32
-	_ = v543
-	var v544 int32
-	_ = v544
+	var v539 int32
+	_ = v539
+	var v547 int32
+	_ = v547
 	var v548 int32
 	_ = v548
-	var v553 int32
-	_ = v553
-	var v559 int32
-	_ = v559
-	var v564 int32
-	_ = v564
-	var v569 int32
-	_ = v569
-	var v574 int32
-	_ = v574
-	var v577 int32
-	_ = v577
+	var v552 int32
+	_ = v552
+	var v557 int32
+	_ = v557
+	var v563 int32
+	_ = v563
+	var v568 int32
+	_ = v568
+	var v573 int32
+	_ = v573
 	var v578 int32
 	_ = v578
+	var v581 int32
+	_ = v581
 	var v582 int32
 	_ = v582
-	var v587 int32
-	_ = v587
-	var v590 int32
-	_ = v590
-	var v593 int32
-	_ = v593
-	var v596 int32
-	_ = v596
-	var v601 int32
-	_ = v601
-	var v602 int32
-	_ = v602
+	var v586 int32
+	_ = v586
+	var v591 int32
+	_ = v591
+	var v594 int32
+	_ = v594
+	var v597 int32
+	_ = v597
+	var v600 int32
+	_ = v600
+	var v605 int32
+	_ = v605
 	var v606 int32
 	_ = v606
-	var v611 int32
-	_ = v611
-	var v614 int32
-	_ = v614
-	var v616 int32
-	_ = v616
-	var v621 int32
-	_ = v621
-	var v622 int32
-	_ = v622
+	var v610 int32
+	_ = v610
+	var v615 int32
+	_ = v615
+	var v618 int32
+	_ = v618
+	var v620 int32
+	_ = v620
+	var v625 int32
+	_ = v625
 	var v626 int32
 	_ = v626
-	var v631 int32
-	_ = v631
-	var v634 int32
-	_ = v634
-	var v636 int32
-	_ = v636
-	var v641 int32
-	_ = v641
-	var v642 int32
-	_ = v642
+	var v630 int32
+	_ = v630
+	var v635 int32
+	_ = v635
+	var v638 int32
+	_ = v638
+	var v640 int32
+	_ = v640
+	var v645 int32
+	_ = v645
 	var v646 int32
 	_ = v646
-	var v651 int32
-	_ = v651
-	var v653 int32
-	_ = v653
+	var v650 int32
+	_ = v650
+	var v655 int32
+	_ = v655
 	var v657 int32
 	_ = v657
-	var v658 int32
-	_ = v658
-	var v660 int32
-	_ = v660
-	var v663 int32
-	_ = v663
+	var v661 int32
+	_ = v661
+	var v662 int32
+	_ = v662
 	var v664 int32
 	_ = v664
-	var v671 int32
-	_ = v671
-	var v679 int32
-	_ = v679
-	var v682 int32
-	_ = v682
+	var v667 int32
+	_ = v667
+	var v668 int32
+	_ = v668
+	var v675 int32
+	_ = v675
+	var v683 int32
+	_ = v683
 	var v686 int32
 	_ = v686
-	var v689 int32
-	_ = v689
+	var v690 int32
+	_ = v690
 	var v693 int32
 	_ = v693
 	var v697 int32
 	_ = v697
-	var v700 int32
-	_ = v700
-	var v705 int32
-	_ = v705
-	var v706 int32
-	_ = v706
+	var v701 int32
+	_ = v701
+	var v704 int32
+	_ = v704
+	var v709 int32
+	_ = v709
 	var v710 int32
 	_ = v710
-	var v711 int32
-	_ = v711
-	var v715 int32
-	_ = v715
-	var v720 int32
-	_ = v720
-	var v721 int32
-	_ = v721
-	var v722 int32
-	_ = v722
-	var v724 int32
-	_ = v724
-	var v727 int32
-	_ = v727
+	var v713 int32
+	_ = v713
+	var v718 int32
+	_ = v718
+	var v719 int32
+	_ = v719
+	var v723 int32
+	_ = v723
+	var v728 int32
+	_ = v728
 	var v729 int32
 	_ = v729
-	var v730 int64
+	var v730 int32
 	_ = v730
-	var v752 int32
-	_ = v752
-	var v754 int32
-	_ = v754
-	var v756 int32
-	_ = v756
-	var v759 int32
-	_ = v759
+	var v732 int32
+	_ = v732
+	var v735 int32
+	_ = v735
+	var v737 int32
+	_ = v737
+	var v738 int64
+	_ = v738
 	var v760 int32
 	_ = v760
+	var v762 int32
+	_ = v762
 	var v764 int32
 	_ = v764
-	var v769 int32
-	_ = v769
-	var v773 int32
-	_ = v773
-	var v778 int32
-	_ = v778
-	var v783 int32
-	_ = v783
-	var v785 int32
-	_ = v785
+	var v767 int32
+	_ = v767
+	var v768 int32
+	_ = v768
+	var v772 int32
+	_ = v772
+	var v777 int32
+	_ = v777
+	var v781 int32
+	_ = v781
 	var v786 int32
 	_ = v786
-	var v796 int32
-	_ = v796
+	var v791 int32
+	_ = v791
+	var v793 int32
+	_ = v793
+	var v794 int32
+	_ = v794
+	var v804 int32
+	_ = v804
 	v9 = m.G0
 	v11 = v9 - int32(128)
 	m.G0 = v11
@@ -442,17 +446,17 @@ func F_PostmasterStateMachine(m *base.Module) {
 	}
 L1:
 	;
-	v479 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	if v479 != int32(9) {
-		v520 = v479
+	v483 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	if v483 != int32(9) {
+		v524 = v483
 		goto L127
 	} else {
 		goto L128
 	}
 L2:
 	;
-	v409 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	if v409 != int32(8) {
+	v413 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	if v413 != int32(8) {
 		goto L1
 	} else {
 		goto L109
@@ -615,10 +619,10 @@ L26:
 	goto L27
 L27:
 	;
-	v269 = F_CountChildren(m, v76)
+	v273 = F_CountChildren(m, v76)
 	mBase = m.M
-	v270 = m.ExcPending
-	if v270 != 0 {
+	v274 = m.ExcPending
+	if v274 != 0 {
 		goto L7
 	} else {
 		goto L68
@@ -635,9 +639,9 @@ L29:
 L30:
 	;
 	m.G0 = v81 + int32(16)
-	v173 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[7]))
-	v174 = int32(0)
-	if base.B2i32(v173 == v174)|base.B2i32(v173 == int32(_a_F_PostmasterStateMachine_7)) == v174 {
+	v177 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[7]))
+	v178 = int32(0)
+	if base.B2i32(v177 == v178)|base.B2i32(v177 == int32(_a_F_PostmasterStateMachine_7)) == v178 {
 		goto L47
 	} else {
 		goto L48
@@ -649,7 +653,7 @@ L31:
 	v108 = v97 + v105*int32(1480)
 	v109 = *(*int32)(unsafe.Add(mBase, uint32(v108)+20))
 	if v109 != int32(-1) {
-		v156 = v97
+		v160 = v97
 		goto L33
 	} else {
 		goto L34
@@ -661,7 +665,7 @@ L33:
 	;
 	if v102 != int32(_a_F_PostmasterStateMachine_6) {
 		v96 = v102
-		v97 = v156
+		v97 = v160
 		goto L31
 	} else {
 		goto L46
@@ -670,7 +674,7 @@ L34:
 	;
 	v114 = *(*int32)(unsafe.Add(mBase, uint32(v96-int32(24))))
 	if v114 == int32(0) {
-		v156 = v97
+		v160 = v97
 		goto L33
 	} else {
 		goto L35
@@ -694,19 +698,20 @@ L37:
 L38:
 	;
 	v127 = v96 - int32(1480)
-	v130 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v108+int32(16)))) = uint8(v130)
-	v134 = F_errstart(m, int32(14), v130)
+	v128 = int32(0)
+	v131 = base.AtomicRmwOr32(m, v128, int32(_a_F_PostmasterStateMachine_8), v128)
+	*(*uint8)(unsafe.Add(mBase, uint32(v108+int32(16)))) = uint8(v128)
+	v138 = F_errstart(m, int32(14), v128)
 	mBase = m.M
-	v135 = m.ExcPending
-	if v135 != 0 {
+	v139 = m.ExcPending
+	if v139 != 0 {
 		goto L7
 	} else {
 		goto L39
 	}
 L39:
 	;
-	if v134 != 0 {
+	if v138 != 0 {
 		goto L40
 	} else {
 		goto L41
@@ -714,10 +719,10 @@ L39:
 L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v81))) = v127
-	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_8), v81)
+	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_9), v81)
 	mBase = m.M
-	v139 = m.ExcPending
-	if v139 != 0 {
+	v143 = m.ExcPending
+	if v143 != 0 {
 		goto L7
 	} else {
 		goto L43
@@ -727,25 +732,25 @@ L41:
 	goto L42
 L42:
 	;
-	v145 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
-	v146 = *(*int32)(unsafe.Add(mBase, uint32(v96)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v145)+4)) = v146
-	v148 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
-	*(*int32)(unsafe.Add(mBase, uint32(v146))) = v148
+	v149 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
+	v150 = *(*int32)(unsafe.Add(mBase, uint32(v96)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v149)+4)) = v150
+	v152 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
+	*(*int32)(unsafe.Add(mBase, uint32(v150))) = v152
 	F_pfree(m, v127)
 	mBase = m.M
-	v151 = m.ExcPending
-	if v151 != 0 {
+	v155 = m.ExcPending
+	if v155 != 0 {
 		goto L7
 	} else {
 		goto L45
 	}
 L43:
 	;
-	F_errfinish(m, int32(_a_F_PostmasterStateMachine_9), int32(449), int32(_a_F_PostmasterStateMachine_10))
+	F_errfinish(m, int32(_a_F_PostmasterStateMachine_10), int32(449), int32(_a_F_PostmasterStateMachine_11))
 	mBase = m.M
-	v144 = m.ExcPending
-	if v144 != 0 {
+	v148 = m.ExcPending
+	if v148 != 0 {
 		goto L7
 	} else {
 		goto L44
@@ -755,27 +760,27 @@ L44:
 	goto L42
 L45:
 	;
-	v153 = F_pgmem_kill(m, v114, int32(10))
+	v157 = F_pgmem_kill(m, v114, int32(10))
 	mBase = m.M
-	v155 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[6]))
-	v156 = v155
+	v159 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[6]))
+	v160 = v159
 	goto L33
 L46:
 	;
 	goto L32
 L47:
 	;
-	v183 = v173
+	v187 = v177
 	goto L50
 L48:
 	;
 	goto L49
 L49:
 	;
-	v236 = F_errstart(m, int32(14), int32(0))
+	v240 = F_errstart(m, int32(14), int32(0))
 	mBase = m.M
-	v237 = m.ExcPending
-	if v237 != 0 {
+	v241 = m.ExcPending
+	if v241 != 0 {
 		goto L7
 	} else {
 		goto L62
@@ -792,44 +797,44 @@ L51:
 	goto L49
 L52:
 	;
-	v214 = *(*int32)(unsafe.Add(mBase, uint32(v183-int32(12))))
-	if int32(base.Ui32(v76)>>(uint(v214)%32))&int32(1) != 0 {
+	v218 = *(*int32)(unsafe.Add(mBase, uint32(v187-int32(12))))
+	if int32(base.Ui32(v76)>>(uint(v218)%32))&int32(1) != 0 {
 		goto L57
 	} else {
 		goto L58
 	}
 L53:
 	;
-	v192 = v183 - int32(12)
-	v193 = *(*int32)(unsafe.Add(mBase, uint32(v192)))
-	if v193 != int32(1) {
+	v196 = v187 - int32(12)
+	v197 = *(*int32)(unsafe.Add(mBase, uint32(v196)))
+	if v197 != int32(1) {
 		goto L52
 	} else {
 		goto L54
 	}
 L54:
 	;
-	v198 = *(*int32)(unsafe.Add(mBase, uint32(v183-int32(16))))
-	v200 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[8]))
-	v204 = *(*int32)(unsafe.Add(mBase, uint32(v200+v198<<(uint(int32(2))%32))+44))
+	v202 = *(*int32)(unsafe.Add(mBase, uint32(v187-int32(16))))
+	v204 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[8]))
+	v208 = *(*int32)(unsafe.Add(mBase, uint32(v204+v202<<(uint(int32(2))%32))+44))
 	goto L55
 L55:
 	;
-	if base.B2i32(v204 == int32(3)) == int32(0) {
+	if base.B2i32(v208 == int32(3)) == int32(0) {
 		goto L52
 	} else {
 		goto L56
 	}
 L56:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v192))) = int32(6)
+	*(*int32)(unsafe.Add(mBase, uint32(v196))) = int32(6)
 	goto L52
 L57:
 	;
-	F_signal_child(m, v183-int32(20), int32(15))
+	F_signal_child(m, v187-int32(20), int32(15))
 	mBase = m.M
-	v222 = m.ExcPending
-	if v222 != 0 {
+	v226 = m.ExcPending
+	if v226 != 0 {
 		goto L7
 	} else {
 		goto L60
@@ -839,9 +844,9 @@ L58:
 	goto L59
 L59:
 	;
-	v223 = *(*int32)(unsafe.Add(mBase, uint32(v183)+4))
-	if v223 != int32(_a_F_PostmasterStateMachine_7) {
-		v183 = v223
+	v227 = *(*int32)(unsafe.Add(mBase, uint32(v187)+4))
+	if v227 != int32(_a_F_PostmasterStateMachine_7) {
+		v187 = v227
 		goto L50
 	} else {
 		goto L61
@@ -854,21 +859,21 @@ L61:
 	goto L51
 L62:
 	;
-	if v236 != 0 {
+	if v240 != 0 {
 		goto L63
 	} else {
 		goto L64
 	}
 L63:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+100)) = int32(_a_F_PostmasterStateMachine_11)
-	v241 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	v246 = *(*int32)(unsafe.Add(mBase, uint32(v241<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+96)) = v246
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+100)) = int32(_a_F_PostmasterStateMachine_12)
+	v245 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	v250 = *(*int32)(unsafe.Add(mBase, uint32(v245<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+96)) = v250
 	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_2), v11+int32(96))
 	mBase = m.M
-	v252 = m.ExcPending
-	if v252 != 0 {
+	v256 = m.ExcPending
+	if v256 != 0 {
 		goto L7
 	} else {
 		goto L66
@@ -884,8 +889,8 @@ L66:
 	;
 	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3272), int32(_a_F_PostmasterStateMachine_4))
 	mBase = m.M
-	v257 = m.ExcPending
-	if v257 != 0 {
+	v261 = m.ExcPending
+	if v261 != 0 {
 		goto L7
 	} else {
 		goto L67
@@ -895,31 +900,31 @@ L67:
 	goto L65
 L68:
 	;
-	if v269 != 0 {
+	if v273 != 0 {
 		goto L2
 	} else {
 		goto L69
 	}
 L69:
 	;
-	v272 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[1]))
-	if v272 <= int32(2) {
+	v276 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[1]))
+	if v276 <= int32(2) {
 		goto L71
 	} else {
 		goto L72
 	}
 L70:
 	;
-	v356 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[9]))
-	if v356 == int32(0) {
+	v360 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[9]))
+	if v360 == int32(0) {
 		goto L96
 	} else {
 		goto L97
 	}
 L71:
 	;
-	v276 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[4])))
-	if v276&int32(1) == int32(0) {
+	v280 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[4])))
+	if v280&int32(1) == int32(0) {
 		goto L70
 	} else {
 		goto L74
@@ -929,10 +934,10 @@ L72:
 	goto L73
 L73:
 	;
-	v283 = F_errstart(m, int32(14), int32(0))
+	v287 = F_errstart(m, int32(14), int32(0))
 	mBase = m.M
-	v284 = m.ExcPending
-	if v284 != 0 {
+	v288 = m.ExcPending
+	if v288 != 0 {
 		goto L7
 	} else {
 		goto L75
@@ -942,21 +947,21 @@ L74:
 	goto L73
 L75:
 	;
-	if v283 != 0 {
+	if v287 != 0 {
 		goto L76
 	} else {
 		goto L77
 	}
 L76:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+68)) = int32(_a_F_PostmasterStateMachine_12)
-	v288 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	v293 = *(*int32)(unsafe.Add(mBase, uint32(v288<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+64)) = v293
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+68)) = int32(_a_F_PostmasterStateMachine_13)
+	v292 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	v297 = *(*int32)(unsafe.Add(mBase, uint32(v292<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+64)) = v297
 	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_2), v11-int32(-64))
 	mBase = m.M
-	v299 = m.ExcPending
-	if v299 != 0 {
+	v303 = m.ExcPending
+	if v303 != 0 {
 		goto L7
 	} else {
 		goto L79
@@ -967,8 +972,8 @@ L77:
 L78:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0])) = int32(11)
-	v309 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[10]))
-	if v309 != 0 {
+	v313 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[10]))
+	if v313 != 0 {
 		goto L81
 	} else {
 		goto L82
@@ -977,8 +982,8 @@ L79:
 	;
 	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3272), int32(_a_F_PostmasterStateMachine_4))
 	mBase = m.M
-	v304 = m.ExcPending
-	if v304 != 0 {
+	v308 = m.ExcPending
+	if v308 != 0 {
 		goto L7
 	} else {
 		goto L80
@@ -988,10 +993,10 @@ L80:
 	goto L78
 L81:
 	;
-	F_FreeWaitEventSet(m, v309)
+	F_FreeWaitEventSet(m, v313)
 	mBase = m.M
-	v311 = m.ExcPending
-	if v311 != 0 {
+	v315 = m.ExcPending
+	if v315 != 0 {
 		goto L7
 	} else {
 		goto L84
@@ -1001,13 +1006,13 @@ L82:
 	goto L83
 L83:
 	;
-	v312 = int32(_a_F_PostmasterStateMachine_13)
-	v313 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[10])) = v313
-	v318 = F_CreateWaitEventSet(m, v313, int32(1))
+	v316 = int32(_a_F_PostmasterStateMachine_14)
+	v317 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[10])) = v317
+	v322 = F_CreateWaitEventSet(m, v317, int32(1))
 	mBase = m.M
-	v319 = m.ExcPending
-	if v319 != 0 {
+	v323 = m.ExcPending
+	if v323 != 0 {
 		goto L7
 	} else {
 		goto L85
@@ -1017,32 +1022,32 @@ L84:
 	goto L83
 L85:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[10])) = v318
-	v324 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[11]))
-	F_AddWaitEventToSet(m, v318, int32(1), int32(-1), v324)
+	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[10])) = v322
+	v328 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[11]))
+	F_AddWaitEventToSet(m, v322, int32(1), int32(-1), v328)
 	mBase = m.M
-	v326 = m.ExcPending
-	if v326 != 0 {
+	v330 = m.ExcPending
+	if v330 != 0 {
 		goto L7
 	} else {
 		goto L86
 	}
 L86:
 	;
-	v328 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[7]))
-	if base.B2i32(v328 == int32(0))|base.B2i32(v328 == int32(_a_F_PostmasterStateMachine_7)) != 0 {
+	v332 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[7]))
+	if base.B2i32(v332 == int32(0))|base.B2i32(v332 == int32(_a_F_PostmasterStateMachine_7)) != 0 {
 		goto L2
 	} else {
 		goto L87
 	}
 L87:
 	;
-	v334 = v328
+	v338 = v332
 	goto L88
 L88:
 	;
-	v344 = *(*int32)(unsafe.Add(mBase, uint32(v334-int32(12))))
-	if v344 == int32(2) {
+	v348 = *(*int32)(unsafe.Add(mBase, uint32(v338-int32(12))))
+	if v348 == int32(2) {
 		goto L90
 	} else {
 		goto L91
@@ -1052,10 +1057,10 @@ L89:
 	goto L2
 L90:
 	;
-	F_signal_child(m, v334-int32(20), int32(3))
+	F_signal_child(m, v338-int32(20), int32(3))
 	mBase = m.M
-	v351 = m.ExcPending
-	if v351 != 0 {
+	v355 = m.ExcPending
+	if v355 != 0 {
 		goto L7
 	} else {
 		goto L93
@@ -1065,9 +1070,9 @@ L91:
 	goto L92
 L92:
 	;
-	v352 = *(*int32)(unsafe.Add(mBase, uint32(v334)+4))
-	if v352 != int32(_a_F_PostmasterStateMachine_7) {
-		v334 = v352
+	v356 = *(*int32)(unsafe.Add(mBase, uint32(v338)+4))
+	if v356 != int32(_a_F_PostmasterStateMachine_7) {
+		v338 = v356
 		goto L88
 	} else {
 		goto L94
@@ -1082,75 +1087,75 @@ L95:
 	;
 	F_HandleFatalError(m, int32(0))
 	mBase = m.M
-	v399 = m.ExcPending
-	if v399 != 0 {
+	v403 = m.ExcPending
+	if v403 != 0 {
 		goto L7
 	} else {
 		goto L108
 	}
 L96:
 	;
-	v361 = F_StartChildProcess(m, int32(11))
+	v365 = F_StartChildProcess(m, int32(11))
 	mBase = m.M
-	v362 = m.ExcPending
-	if v362 != 0 {
+	v366 = m.ExcPending
+	if v366 != 0 {
 		goto L7
 	} else {
 		goto L99
 	}
 L97:
 	;
-	v366 = v356
+	v370 = v360
 	goto L98
 L98:
 	;
-	F_signal_child(m, v366, int32(2))
+	F_signal_child(m, v370, int32(2))
 	mBase = m.M
-	v369 = m.ExcPending
-	if v369 != 0 {
+	v373 = m.ExcPending
+	if v373 != 0 {
 		goto L7
 	} else {
 		goto L101
 	}
 L99:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[9])) = v361
-	if v361 == int32(0) {
+	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[9])) = v365
+	if v365 == int32(0) {
 		goto L95
 	} else {
 		goto L100
 	}
 L100:
 	;
-	v366 = v361
+	v370 = v365
 	goto L98
 L101:
 	;
-	v372 = F_errstart(m, int32(14), int32(0))
+	v376 = F_errstart(m, int32(14), int32(0))
 	mBase = m.M
-	v373 = m.ExcPending
-	if v373 != 0 {
+	v377 = m.ExcPending
+	if v377 != 0 {
 		goto L7
 	} else {
 		goto L102
 	}
 L102:
 	;
-	if v372 != 0 {
+	if v376 != 0 {
 		goto L103
 	} else {
 		goto L104
 	}
 L103:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+84)) = int32(_a_F_PostmasterStateMachine_14)
-	v377 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	v382 = *(*int32)(unsafe.Add(mBase, uint32(v377<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+80)) = v382
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+84)) = int32(_a_F_PostmasterStateMachine_15)
+	v381 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	v386 = *(*int32)(unsafe.Add(mBase, uint32(v381<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+80)) = v386
 	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_2), v11+int32(80))
 	mBase = m.M
-	v388 = m.ExcPending
-	if v388 != 0 {
+	v392 = m.ExcPending
+	if v392 != 0 {
 		goto L7
 	} else {
 		goto L106
@@ -1166,8 +1171,8 @@ L106:
 	;
 	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3272), int32(_a_F_PostmasterStateMachine_4))
 	mBase = m.M
-	v393 = m.ExcPending
-	if v393 != 0 {
+	v397 = m.ExcPending
+	if v397 != 0 {
 		goto L7
 	} else {
 		goto L107
@@ -1180,48 +1185,48 @@ L108:
 	goto L2
 L109:
 	;
-	v413 = F_CountChildren(m, int32(_a_F_PostmasterStateMachine_15))
+	v417 = F_CountChildren(m, int32(_a_F_PostmasterStateMachine_16))
 	mBase = m.M
-	v414 = m.ExcPending
-	if v414 != 0 {
+	v418 = m.ExcPending
+	if v418 != 0 {
 		goto L7
 	} else {
 		goto L110
 	}
 L110:
 	;
-	if v413 != 0 {
+	if v417 != 0 {
 		goto L1
 	} else {
 		goto L111
 	}
 L111:
 	;
-	v417 = F_errstart(m, int32(14), int32(0))
+	v421 = F_errstart(m, int32(14), int32(0))
 	mBase = m.M
-	v418 = m.ExcPending
-	if v418 != 0 {
+	v422 = m.ExcPending
+	if v422 != 0 {
 		goto L7
 	} else {
 		goto L112
 	}
 L112:
 	;
-	if v417 != 0 {
+	if v421 != 0 {
 		goto L113
 	} else {
 		goto L114
 	}
 L113:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+52)) = int32(_a_F_PostmasterStateMachine_16)
-	v422 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	v427 = *(*int32)(unsafe.Add(mBase, uint32(v422<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+48)) = v427
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+52)) = int32(_a_F_PostmasterStateMachine_17)
+	v426 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	v431 = *(*int32)(unsafe.Add(mBase, uint32(v426<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+48)) = v431
 	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_2), v11+int32(48))
 	mBase = m.M
-	v433 = m.ExcPending
-	if v433 != 0 {
+	v437 = m.ExcPending
+	if v437 != 0 {
 		goto L7
 	} else {
 		goto L116
@@ -1232,8 +1237,8 @@ L114:
 L115:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0])) = int32(9)
-	v443 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[7]))
-	if base.B2i32(v443 == int32(0))|base.B2i32(v443 == int32(_a_F_PostmasterStateMachine_7)) != 0 {
+	v447 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[7]))
+	if base.B2i32(v447 == int32(0))|base.B2i32(v447 == int32(_a_F_PostmasterStateMachine_7)) != 0 {
 		goto L1
 	} else {
 		goto L118
@@ -1242,8 +1247,8 @@ L116:
 	;
 	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3272), int32(_a_F_PostmasterStateMachine_4))
 	mBase = m.M
-	v438 = m.ExcPending
-	if v438 != 0 {
+	v442 = m.ExcPending
+	if v442 != 0 {
 		goto L7
 	} else {
 		goto L117
@@ -1253,13 +1258,13 @@ L117:
 	goto L115
 L118:
 	;
-	v449 = v443
+	v453 = v447
 	goto L119
 L119:
 	;
-	v457 = int32(12)
-	v459 = *(*int32)(unsafe.Add(mBase, uint32(v449-v457)))
-	if v459 == v457 {
+	v461 = int32(12)
+	v463 = *(*int32)(unsafe.Add(mBase, uint32(v453-v461)))
+	if v463 == v461 {
 		goto L121
 	} else {
 		goto L122
@@ -1269,10 +1274,10 @@ L120:
 	goto L1
 L121:
 	;
-	F_signal_child(m, v449-int32(20), int32(12))
+	F_signal_child(m, v453-int32(20), int32(12))
 	mBase = m.M
-	v466 = m.ExcPending
-	if v466 != 0 {
+	v470 = m.ExcPending
+	if v470 != 0 {
 		goto L7
 	} else {
 		goto L124
@@ -1282,9 +1287,9 @@ L122:
 	goto L123
 L123:
 	;
-	v467 = *(*int32)(unsafe.Add(mBase, uint32(v449)+4))
-	if v467 != int32(_a_F_PostmasterStateMachine_7) {
-		v449 = v467
+	v471 = *(*int32)(unsafe.Add(mBase, uint32(v453)+4))
+	if v471 != int32(_a_F_PostmasterStateMachine_7) {
+		v453 = v471
 		goto L119
 	} else {
 		goto L125
@@ -1301,47 +1306,47 @@ L126:
 	return
 L127:
 	;
-	if v520 == int32(11) {
+	if v524 == int32(11) {
 		goto L141
 	} else {
 		goto L142
 	}
 L128:
 	;
-	v483 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[12]))
-	if v483 != 0 {
-		v520 = v479
+	v487 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[12]))
+	if v487 != 0 {
+		v524 = v483
 		goto L127
 	} else {
 		goto L129
 	}
 L129:
 	;
-	v486 = F_errstart(m, int32(14), int32(0))
+	v490 = F_errstart(m, int32(14), int32(0))
 	mBase = m.M
-	v487 = m.ExcPending
-	if v487 != 0 {
+	v491 = m.ExcPending
+	if v491 != 0 {
 		goto L7
 	} else {
 		goto L130
 	}
 L130:
 	;
-	if v486 != 0 {
+	if v490 != 0 {
 		goto L131
 	} else {
 		goto L132
 	}
 L131:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = int32(_a_F_PostmasterStateMachine_17)
-	v491 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	v496 = *(*int32)(unsafe.Add(mBase, uint32(v491<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v496
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = int32(_a_F_PostmasterStateMachine_18)
+	v495 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	v500 = *(*int32)(unsafe.Add(mBase, uint32(v495<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v500
 	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_2), v11+int32(32))
 	mBase = m.M
-	v502 = m.ExcPending
-	if v502 != 0 {
+	v506 = m.ExcPending
+	if v506 != 0 {
 		goto L7
 	} else {
 		goto L134
@@ -1352,8 +1357,8 @@ L132:
 L133:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0])) = int32(10)
-	v512 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[9]))
-	if v512 == int32(0) {
+	v516 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[9]))
+	if v516 == int32(0) {
 		goto L126
 	} else {
 		goto L136
@@ -1362,8 +1367,8 @@ L134:
 	;
 	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3272), int32(_a_F_PostmasterStateMachine_4))
 	mBase = m.M
-	v507 = m.ExcPending
-	if v507 != 0 {
+	v511 = m.ExcPending
+	if v511 != 0 {
 		goto L7
 	} else {
 		goto L135
@@ -1373,82 +1378,82 @@ L135:
 	goto L133
 L136:
 	;
-	F_signal_child(m, v512, int32(12))
+	F_signal_child(m, v516, int32(12))
 	mBase = m.M
-	v517 = m.ExcPending
-	if v517 != 0 {
+	v521 = m.ExcPending
+	if v521 != 0 {
 		goto L7
 	} else {
 		goto L137
 	}
 L137:
 	;
-	v519 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	v520 = v519
+	v523 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	v524 = v523
 	goto L127
 L138:
 	;
-	v596 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[13]))
-	if v596 == int32(3) {
+	v600 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[13]))
+	if v600 == int32(3) {
 		goto L166
 	} else {
 		goto L167
 	}
 L139:
 	;
-	v574 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[4])))
-	if v574 != 0 {
+	v578 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[4])))
+	if v578 != 0 {
 		goto L155
 	} else {
 		goto L156
 	}
 L140:
 	;
-	v543 = F_errstart(m, int32(14), int32(0))
+	v547 = F_errstart(m, int32(14), int32(0))
 	mBase = m.M
-	v544 = m.ExcPending
-	if v544 != 0 {
+	v548 = m.ExcPending
+	if v548 != 0 {
 		goto L7
 	} else {
 		goto L148
 	}
 L141:
 	;
-	v525 = F_CountChildren(m, int32(_a_F_PostmasterStateMachine_18))
+	v529 = F_CountChildren(m, int32(_a_F_PostmasterStateMachine_19))
 	mBase = m.M
-	v526 = m.ExcPending
-	if v526 != 0 {
+	v530 = m.ExcPending
+	if v530 != 0 {
 		goto L7
 	} else {
 		goto L144
 	}
 L142:
 	;
-	v531 = v520
+	v535 = v524
 	goto L143
 L143:
 	;
-	v535 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[1]))
-	if base.B2i32(v531 == int32(12))&base.B2i32(int32(0) < v535) != 0 {
+	v539 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[1]))
+	if base.B2i32(v535 == int32(12))&base.B2i32(int32(0) < v539) != 0 {
 		goto L139
 	} else {
 		goto L146
 	}
 L144:
 	;
-	if v525 == int32(0) {
+	if v529 == int32(0) {
 		goto L140
 	} else {
 		goto L145
 	}
 L145:
 	;
-	v530 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	v531 = v530
+	v534 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	v535 = v534
 	goto L143
 L146:
 	;
-	if v531 != int32(12) {
+	if v535 != int32(12) {
 		goto L126
 	} else {
 		goto L147
@@ -1458,21 +1463,21 @@ L147:
 	goto L138
 L148:
 	;
-	if v543 != 0 {
+	if v547 != 0 {
 		goto L149
 	} else {
 		goto L150
 	}
 L149:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = int32(_a_F_PostmasterStateMachine_19)
-	v548 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	v553 = *(*int32)(unsafe.Add(mBase, uint32(v548<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v553
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = int32(_a_F_PostmasterStateMachine_20)
+	v552 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	v557 = *(*int32)(unsafe.Add(mBase, uint32(v552<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v557
 	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_2), v11+int32(16))
 	mBase = m.M
-	v559 = m.ExcPending
-	if v559 != 0 {
+	v563 = m.ExcPending
+	if v563 != 0 {
 		goto L7
 	} else {
 		goto L152
@@ -1483,8 +1488,8 @@ L150:
 L151:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0])) = int32(12)
-	v569 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[1]))
-	if v569 <= int32(0) {
+	v573 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[1]))
+	if v573 <= int32(0) {
 		goto L138
 	} else {
 		goto L154
@@ -1493,8 +1498,8 @@ L152:
 	;
 	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3272), int32(_a_F_PostmasterStateMachine_4))
 	mBase = m.M
-	v564 = m.ExcPending
-	if v564 != 0 {
+	v568 = m.ExcPending
+	if v568 != 0 {
 		goto L7
 	} else {
 		goto L153
@@ -1507,10 +1512,10 @@ L154:
 	goto L139
 L155:
 	;
-	v577 = F_errstart(m, int32(15), int32(0))
+	v581 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v578 = m.ExcPending
-	if v578 != 0 {
+	v582 = m.ExcPending
+	if v582 != 0 {
 		goto L7
 	} else {
 		goto L158
@@ -1522,25 +1527,25 @@ L157:
 	;
 	F_ExitPostmaster(m, int32(0))
 	mBase = m.M
-	v593 = m.ExcPending
-	if v593 != 0 {
+	v597 = m.ExcPending
+	if v597 != 0 {
 		goto L7
 	} else {
 		goto L165
 	}
 L158:
 	;
-	if v577 != 0 {
+	if v581 != 0 {
 		goto L159
 	} else {
 		goto L160
 	}
 L159:
 	;
-	F_errmsg(m, int32(_a_F_PostmasterStateMachine_20), int32(0))
+	F_errmsg(m, int32(_a_F_PostmasterStateMachine_21), int32(0))
 	mBase = m.M
-	v582 = m.ExcPending
-	if v582 != 0 {
+	v586 = m.ExcPending
+	if v586 != 0 {
 		goto L7
 	} else {
 		goto L162
@@ -1552,18 +1557,18 @@ L161:
 	;
 	F_ExitPostmaster(m, int32(1))
 	mBase = m.M
-	v590 = m.ExcPending
-	if v590 != 0 {
+	v594 = m.ExcPending
+	if v594 != 0 {
 		goto L7
 	} else {
 		goto L164
 	}
 L162:
 	;
-	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3161), int32(_a_F_PostmasterStateMachine_21))
+	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3161), int32(_a_F_PostmasterStateMachine_22))
 	mBase = m.M
-	v587 = m.ExcPending
-	if v587 != 0 {
+	v591 = m.ExcPending
+	if v591 != 0 {
 		goto L7
 	} else {
 		goto L163
@@ -1583,10 +1588,10 @@ L165:
 	}
 L166:
 	;
-	v601 = F_errstart(m, int32(15), int32(0))
+	v605 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v602 = m.ExcPending
-	if v602 != 0 {
+	v606 = m.ExcPending
+	if v606 != 0 {
 		goto L7
 	} else {
 		goto L169
@@ -1596,25 +1601,25 @@ L167:
 	goto L168
 L168:
 	;
-	v616 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[14])))
-	if v616 == int32(0) {
+	v620 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[14])))
+	if v620 == int32(0) {
 		goto L176
 	} else {
 		goto L177
 	}
 L169:
 	;
-	if v601 != 0 {
+	if v605 != 0 {
 		goto L170
 	} else {
 		goto L171
 	}
 L170:
 	;
-	F_errmsg(m, int32(_a_F_PostmasterStateMachine_22), int32(0))
+	F_errmsg(m, int32(_a_F_PostmasterStateMachine_23), int32(0))
 	mBase = m.M
-	v606 = m.ExcPending
-	if v606 != 0 {
+	v610 = m.ExcPending
+	if v610 != 0 {
 		goto L7
 	} else {
 		goto L173
@@ -1626,18 +1631,18 @@ L172:
 	;
 	F_ExitPostmaster(m, int32(1))
 	mBase = m.M
-	v614 = m.ExcPending
-	if v614 != 0 {
+	v618 = m.ExcPending
+	if v618 != 0 {
 		goto L7
 	} else {
 		goto L175
 	}
 L173:
 	;
-	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3187), int32(_a_F_PostmasterStateMachine_21))
+	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3187), int32(_a_F_PostmasterStateMachine_22))
 	mBase = m.M
-	v611 = m.ExcPending
-	if v611 != 0 {
+	v615 = m.ExcPending
+	if v615 != 0 {
 		goto L7
 	} else {
 		goto L174
@@ -1652,10 +1657,10 @@ L175:
 	}
 L176:
 	;
-	v621 = F_errstart(m, int32(15), int32(0))
+	v625 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v622 = m.ExcPending
-	if v622 != 0 {
+	v626 = m.ExcPending
+	if v626 != 0 {
 		goto L7
 	} else {
 		goto L179
@@ -1665,25 +1670,25 @@ L177:
 	goto L178
 L178:
 	;
-	v636 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[4])))
-	if v636 == int32(0) {
+	v640 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[4])))
+	if v640 == int32(0) {
 		goto L126
 	} else {
 		goto L186
 	}
 L179:
 	;
-	if v621 != 0 {
+	if v625 != 0 {
 		goto L180
 	} else {
 		goto L181
 	}
 L180:
 	;
-	F_errmsg(m, int32(_a_F_PostmasterStateMachine_23), int32(0))
+	F_errmsg(m, int32(_a_F_PostmasterStateMachine_24), int32(0))
 	mBase = m.M
-	v626 = m.ExcPending
-	if v626 != 0 {
+	v630 = m.ExcPending
+	if v630 != 0 {
 		goto L7
 	} else {
 		goto L183
@@ -1695,18 +1700,18 @@ L182:
 	;
 	F_ExitPostmaster(m, int32(1))
 	mBase = m.M
-	v634 = m.ExcPending
-	if v634 != 0 {
+	v638 = m.ExcPending
+	if v638 != 0 {
 		goto L7
 	} else {
 		goto L185
 	}
 L183:
 	;
-	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3193), int32(_a_F_PostmasterStateMachine_21))
+	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3193), int32(_a_F_PostmasterStateMachine_22))
 	mBase = m.M
-	v631 = m.ExcPending
-	if v631 != 0 {
+	v635 = m.ExcPending
+	if v635 != 0 {
 		goto L7
 	} else {
 		goto L184
@@ -1721,27 +1726,27 @@ L185:
 	}
 L186:
 	;
-	v641 = F_errstart(m, int32(15), int32(0))
+	v645 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v642 = m.ExcPending
-	if v642 != 0 {
+	v646 = m.ExcPending
+	if v646 != 0 {
 		goto L7
 	} else {
 		goto L187
 	}
 L187:
 	;
-	if v641 != 0 {
+	if v645 != 0 {
 		goto L188
 	} else {
 		goto L189
 	}
 L188:
 	;
-	F_errmsg(m, int32(_a_F_PostmasterStateMachine_24), int32(0))
+	F_errmsg(m, int32(_a_F_PostmasterStateMachine_25), int32(0))
 	mBase = m.M
-	v646 = m.ExcPending
-	if v646 != 0 {
+	v650 = m.ExcPending
+	if v650 != 0 {
 		goto L7
 	} else {
 		goto L191
@@ -1751,18 +1756,18 @@ L189:
 	goto L190
 L190:
 	;
-	v653 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[15])))
-	if v653 == int32(1) {
+	v657 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[15])))
+	if v657 == int32(1) {
 		goto L193
 	} else {
 		goto L194
 	}
 L191:
 	;
-	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3205), int32(_a_F_PostmasterStateMachine_21))
+	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3205), int32(_a_F_PostmasterStateMachine_22))
 	mBase = m.M
-	v651 = m.ExcPending
-	if v651 != 0 {
+	v655 = m.ExcPending
+	if v655 != 0 {
 		goto L7
 	} else {
 		goto L192
@@ -1774,8 +1779,8 @@ L193:
 	;
 	F_RemovePgTempFiles(m)
 	mBase = m.M
-	v657 = m.ExcPending
-	if v657 != 0 {
+	v661 = m.ExcPending
+	if v661 != 0 {
 		goto L7
 	} else {
 		goto L196
@@ -1785,12 +1790,12 @@ L194:
 	goto L195
 L195:
 	;
-	v658 = m.G0
-	v660 = v658 - int32(16)
-	m.G0 = v660
-	v663 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[5]))
-	v664 = int32(0)
-	if base.B2i32(v663 == v664)|base.B2i32(v663 == int32(_a_F_PostmasterStateMachine_6)) == v664 {
+	v662 = m.G0
+	v664 = v662 - int32(16)
+	m.G0 = v664
+	v667 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[5]))
+	v668 = int32(0)
+	if base.B2i32(v667 == v668)|base.B2i32(v667 == int32(_a_F_PostmasterStateMachine_6)) == v668 {
 		goto L197
 	} else {
 		goto L198
@@ -1800,27 +1805,27 @@ L196:
 	goto L195
 L197:
 	;
-	v671 = v663
+	v675 = v667
 	goto L200
 L198:
 	;
 	goto L199
 L199:
 	;
-	m.G0 = v660 + int32(16)
+	m.G0 = v664 + int32(16)
 	F_shmem_exit(m, int32(1))
 	mBase = m.M
-	v752 = m.ExcPending
-	if v752 != 0 {
+	v760 = m.ExcPending
+	if v760 != 0 {
 		goto L7
 	} else {
 		goto L217
 	}
 L200:
 	;
-	v679 = *(*int32)(unsafe.Add(mBase, uint32(v671)+4))
-	v682 = *(*int32)(unsafe.Add(mBase, uint32(v671-int32(1280))))
-	if v682 == int32(-1) {
+	v683 = *(*int32)(unsafe.Add(mBase, uint32(v675)+4))
+	v686 = *(*int32)(unsafe.Add(mBase, uint32(v675-int32(1280))))
+	if v686 == int32(-1) {
 		goto L203
 	} else {
 		goto L204
@@ -1830,19 +1835,19 @@ L201:
 	goto L199
 L202:
 	;
-	if v679 != int32(_a_F_PostmasterStateMachine_6) {
-		v671 = v679
+	if v683 != int32(_a_F_PostmasterStateMachine_6) {
+		v675 = v683
 		goto L200
 	} else {
 		goto L216
 	}
 L203:
 	;
-	v686 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[6]))
-	v689 = *(*int32)(unsafe.Add(mBase, uint32(v671-int32(8))))
-	v693 = int32(16)
-	v697 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v671-int32(1288)))))
-	if v697&v693 != 0 {
+	v690 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[6]))
+	v693 = *(*int32)(unsafe.Add(mBase, uint32(v675-int32(8))))
+	v697 = int32(16)
+	v701 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v675-int32(1288)))))
+	if v701&v697 != 0 {
 		goto L206
 	} else {
 		goto L207
@@ -1852,46 +1857,47 @@ L204:
 	goto L205
 L205:
 	;
-	v729 = v671 - int32(24)
-	v730 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v729)+8)) = v730
-	*(*int64)(unsafe.Add(mBase, uint32(v729))) = v730
+	v737 = v675 - int32(24)
+	v738 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v737)+8)) = v738
+	*(*int64)(unsafe.Add(mBase, uint32(v737))) = v738
 	goto L202
 L206:
 	;
-	v700 = *(*int32)(unsafe.Add(mBase, uint32(v686)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v686)+8)) = v700 + int32(1)
+	v704 = *(*int32)(unsafe.Add(mBase, uint32(v690)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v690)+8)) = v704 + int32(1)
 	goto L208
 L207:
 	;
 	goto L208
 L208:
 	;
-	v705 = v671 - int32(1480)
-	v706 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v686+v689*int32(1480)+v693))) = uint8(v706)
-	v710 = F_errstart(m, int32(14), v706)
+	v709 = v675 - int32(1480)
+	v710 = int32(0)
+	v713 = base.AtomicRmwOr32(m, v710, int32(_a_F_PostmasterStateMachine_8), v710)
+	*(*uint8)(unsafe.Add(mBase, uint32(v690+v693*int32(1480)+v697))) = uint8(v710)
+	v718 = F_errstart(m, int32(14), v710)
 	mBase = m.M
-	v711 = m.ExcPending
-	if v711 != 0 {
+	v719 = m.ExcPending
+	if v719 != 0 {
 		goto L7
 	} else {
 		goto L209
 	}
 L209:
 	;
-	if v710 != 0 {
+	if v718 != 0 {
 		goto L210
 	} else {
 		goto L211
 	}
 L210:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v660))) = v705
-	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_8), v660)
+	*(*int32)(unsafe.Add(mBase, uint32(v664))) = v709
+	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_9), v664)
 	mBase = m.M
-	v715 = m.ExcPending
-	if v715 != 0 {
+	v723 = m.ExcPending
+	if v723 != 0 {
 		goto L7
 	} else {
 		goto L213
@@ -1901,25 +1907,25 @@ L211:
 	goto L212
 L212:
 	;
-	v721 = *(*int32)(unsafe.Add(mBase, uint32(v671)))
-	v722 = *(*int32)(unsafe.Add(mBase, uint32(v671)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v721)+4)) = v722
-	v724 = *(*int32)(unsafe.Add(mBase, uint32(v671)))
-	*(*int32)(unsafe.Add(mBase, uint32(v722))) = v724
-	F_pfree(m, v705)
+	v729 = *(*int32)(unsafe.Add(mBase, uint32(v675)))
+	v730 = *(*int32)(unsafe.Add(mBase, uint32(v675)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v729)+4)) = v730
+	v732 = *(*int32)(unsafe.Add(mBase, uint32(v675)))
+	*(*int32)(unsafe.Add(mBase, uint32(v730))) = v732
+	F_pfree(m, v709)
 	mBase = m.M
-	v727 = m.ExcPending
-	if v727 != 0 {
+	v735 = m.ExcPending
+	if v735 != 0 {
 		goto L7
 	} else {
 		goto L215
 	}
 L213:
 	;
-	F_errfinish(m, int32(_a_F_PostmasterStateMachine_9), int32(449), int32(_a_F_PostmasterStateMachine_10))
+	F_errfinish(m, int32(_a_F_PostmasterStateMachine_10), int32(449), int32(_a_F_PostmasterStateMachine_11))
 	mBase = m.M
-	v720 = m.ExcPending
-	if v720 != 0 {
+	v728 = m.ExcPending
+	if v728 != 0 {
 		goto L7
 	} else {
 		goto L214
@@ -1937,8 +1943,8 @@ L217:
 	;
 	F_LocalProcessControlFile(m)
 	mBase = m.M
-	v754 = m.ExcPending
-	if v754 != 0 {
+	v762 = m.ExcPending
+	if v762 != 0 {
 		goto L7
 	} else {
 		goto L218
@@ -1947,39 +1953,39 @@ L218:
 	;
 	F_CreateSharedMemoryAndSemaphores(m)
 	mBase = m.M
-	v756 = m.ExcPending
-	if v756 != 0 {
+	v764 = m.ExcPending
+	if v764 != 0 {
 		goto L7
 	} else {
 		goto L219
 	}
 L219:
 	;
-	v759 = F_errstart(m, int32(14), int32(0))
+	v767 = F_errstart(m, int32(14), int32(0))
 	mBase = m.M
-	v760 = m.ExcPending
-	if v760 != 0 {
+	v768 = m.ExcPending
+	if v768 != 0 {
 		goto L7
 	} else {
 		goto L220
 	}
 L220:
 	;
-	if v759 != 0 {
+	if v767 != 0 {
 		goto L221
 	} else {
 		goto L222
 	}
 L221:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = int32(_a_F_PostmasterStateMachine_25)
-	v764 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
-	v769 = *(*int32)(unsafe.Add(mBase, uint32(v764<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v769
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = int32(_a_F_PostmasterStateMachine_26)
+	v772 = *(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0]))
+	v777 = *(*int32)(unsafe.Add(mBase, uint32(v772<<(uint(int32(2))%32))+uint32(_c_F_PostmasterStateMachine[3])))
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v777
 	F_errmsg_internal(m, int32(_a_F_PostmasterStateMachine_2), v11)
 	mBase = m.M
-	v773 = m.ExcPending
-	if v773 != 0 {
+	v781 = m.ExcPending
+	if v781 != 0 {
 		goto L7
 	} else {
 		goto L224
@@ -1992,8 +1998,8 @@ L223:
 	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[0])) = int32(1)
 	F_maybe_adjust_io_workers(m)
 	mBase = m.M
-	v783 = m.ExcPending
-	if v783 != 0 {
+	v791 = m.ExcPending
+	if v791 != 0 {
 		goto L7
 	} else {
 		goto L226
@@ -2002,8 +2008,8 @@ L224:
 	;
 	F_errfinish(m, int32(_a_F_PostmasterStateMachine_3), int32(3272), int32(_a_F_PostmasterStateMachine_4))
 	mBase = m.M
-	v778 = m.ExcPending
-	if v778 != 0 {
+	v786 = m.ExcPending
+	if v786 != 0 {
 		goto L7
 	} else {
 		goto L225
@@ -2013,10 +2019,10 @@ L225:
 	goto L223
 L226:
 	;
-	v785 = F_StartChildProcess(m, int32(13))
+	v793 = F_StartChildProcess(m, int32(13))
 	mBase = m.M
-	v786 = m.ExcPending
-	if v786 != 0 {
+	v794 = m.ExcPending
+	if v794 != 0 {
 		goto L7
 	} else {
 		goto L227
@@ -2024,12 +2030,12 @@ L226:
 L227:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[13])) = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[16])) = v785
+	*(*int32)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[16])) = v793
 	*(*int64)(unsafe.Add(mBase, _c_F_PostmasterStateMachine[17])) = int64(0)
 	F_ConfigurePostmasterWaitSet(m)
 	mBase = m.M
-	v796 = m.ExcPending
-	if v796 != 0 {
+	v804 = m.ExcPending
+	if v804 != 0 {
 		goto L7
 	} else {
 		goto L228

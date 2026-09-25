@@ -3681,232 +3681,244 @@ func F_init_span(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 	_ = v6
 	var v13 int32
 	_ = v13
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v20 int32
-	_ = v20
-	var v21 int32
-	_ = v21
-	var v23 int32
-	_ = v23
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
 	var v24 int32
 	_ = v24
+	var v25 int32
+	_ = v25
+	var v27 int32
+	_ = v27
 	var v28 int32
 	_ = v28
 	var v32 int32
 	_ = v32
-	var v35 int32
-	_ = v35
 	var v36 int32
 	_ = v36
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v47 int32
-	_ = v47
-	var v50 int32
-	_ = v50
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
 	var v54 int32
 	_ = v54
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
 	var v59 int32
 	_ = v59
 	var v60 int32
 	_ = v60
+	var v61 int32
+	_ = v61
 	var v62 int32
 	_ = v62
-	var v63 int32
-	_ = v63
 	var v67 int32
 	_ = v67
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
 	var v71 int32
 	_ = v71
-	var v74 int32
-	_ = v74
 	var v75 int32
 	_ = v75
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
-	var v78 int32
-	_ = v78
 	var v79 int32
 	_ = v79
+	var v82 int32
+	_ = v82
+	var v83 int32
+	_ = v83
+	var v84 int32
+	_ = v84
+	var v85 int32
+	_ = v85
 	var v86 int32
 	_ = v86
-	var v89 int32
-	_ = v89
-	var v90 int32
-	_ = v90
-	var v99 int32
-	_ = v99
-	var v100 int32
-	_ = v100
-	var v103 int32
-	_ = v103
+	var v87 int32
+	_ = v87
+	var v94 int32
+	_ = v94
+	var v97 int32
+	_ = v97
+	var v98 int32
+	_ = v98
 	var v107 int32
 	_ = v107
 	var v108 int32
 	_ = v108
-	var v110 int32
-	_ = v110
 	var v111 int32
 	_ = v111
-	var v114 int32
-	_ = v114
+	var v115 int32
+	_ = v115
+	var v116 int32
+	_ = v116
+	var v118 int32
+	_ = v118
+	var v119 int32
+	_ = v119
+	var v122 int32
+	_ = v122
 	v6 = l5
 	if l1 != 0 {
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+1468))
-		if v13 != v15 {
-			v20 = F_LWLockAcquire(m, v14+int32(1476), int32(0))
+		v13 = int32(0)
+		v16 = base.AtomicRmwOr32(m, v13, int32(_a_F_init_span_0), v13)
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+1468))
+		if v17 != v19 {
+			v24 = F_LWLockAcquire(m, v18+int32(1476), int32(0))
 			mBase = m.M
-			v21 = m.ExcPending
-			if v21 != 0 {
+			v25 = m.ExcPending
+			if v25 != 0 {
 				return
 			} else {
 				F_check_for_freed_segments_locked(m, l0)
 				mBase = m.M
-				v23 = m.ExcPending
-				if v23 != 0 {
+				v27 = m.ExcPending
+				if v27 != 0 {
 					return
 				} else {
-					v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					F_LWLockRelease(m, v24+int32(1476))
+					v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					F_LWLockRelease(m, v28+int32(1476))
 					mBase = m.M
-					v28 = m.ExcPending
-					if v28 != 0 {
+					v32 = m.ExcPending
+					if v32 != 0 {
 						return
 					} else {
-						v32 = int32(base.Ui32(l1) >> (uint(int32(27)) % 32))
-						v35 = l0 + v32*int32(20)
-						v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+12))
-						if v36 != 0 {
-							v40 = v36
-							v47 = v40 + l1&int32(134217727)
-							v50 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
-							v51 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-							if v51 != 0 {
-								v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-								v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+1468))
-								if v52 != v54 {
-									v59 = F_LWLockAcquire(m, v53+int32(1476), int32(0))
+						v36 = int32(base.Ui32(l1) >> (uint(int32(27)) % 32))
+						v39 = l0 + v36*int32(20)
+						v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+12))
+						if v40 != 0 {
+							v44 = v40
+							v51 = v44 + l1&int32(134217727)
+							v54 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
+							v55 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+							if v55 != 0 {
+								v56 = int32(0)
+								v59 = base.AtomicRmwOr32(m, v56, int32(_a_F_init_span_0), v56)
+								v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+								v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								v62 = *(*int32)(unsafe.Add(mBase, uint32(v61)+1468))
+								if v60 != v62 {
+									v67 = F_LWLockAcquire(m, v61+int32(1476), int32(0))
 									mBase = m.M
-									v60 = m.ExcPending
-									if v60 != 0 {
+									v68 = m.ExcPending
+									if v68 != 0 {
 										return
 									} else {
 										F_check_for_freed_segments_locked(m, l0)
 										mBase = m.M
-										v62 = m.ExcPending
-										if v62 != 0 {
+										v70 = m.ExcPending
+										if v70 != 0 {
 											return
 										} else {
-											v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-											F_LWLockRelease(m, v63+int32(1476))
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+											F_LWLockRelease(m, v71+int32(1476))
 											mBase = m.M
-											v67 = m.ExcPending
-											if v67 != 0 {
+											v75 = m.ExcPending
+											if v75 != 0 {
 												return
 											} else {
-												v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-												v74 = l0 + v71*int32(20)
-												v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-												if v75 != 0 {
-													v79 = v75
-													*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-													v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-													*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-													v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-													v90 = int32(0)
-													*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-													*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+												v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+												v82 = l0 + v79*int32(20)
+												v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+												if v83 != 0 {
+													v87 = v83
+													*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+													v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+													*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+													v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+													v98 = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+													*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 													*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-													*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-													*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+													*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+													*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 													switch v6 {
 													case 0:
-														v100 = int32(1)
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-														v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-														v108 = v103 - v100
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-														v110 = v108
+														v108 = int32(1)
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+														v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+														v116 = v111 - v108
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+														v118 = v116
 													case 1:
-														v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-														v110 = v99
+														v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+														v118 = v107
 													default:
-														v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-														v108 = v107
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-														v110 = v108
+														v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+														v116 = v115
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+														v118 = v116
 													}
-													v111 = int32(1)
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-													v114 = int32(_a_F_init_span_2)
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+													v119 = int32(1)
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+													v122 = int32(_a_F_init_span_3)
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 													return
 												} else {
-													v76 = F_get_segment_by_index(m, l0, v71)
+													v84 = F_get_segment_by_index(m, l0, v79)
 													mBase = m.M
-													v77 = m.ExcPending
-													if v77 != 0 {
+													v85 = m.ExcPending
+													if v85 != 0 {
 														return
 													} else {
-														v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-														v79 = v78
-														*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-														v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-														*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-														v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-														v90 = int32(0)
-														*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-														*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+														v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+														v87 = v86
+														*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+														v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+														v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+														v98 = int32(0)
+														*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+														*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 														*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-														*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-														*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+														*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+														*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 														switch v6 {
 														case 0:
-															v100 = int32(1)
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-															v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-															v108 = v103 - v100
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-															v110 = v108
+															v108 = int32(1)
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+															v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+															v116 = v111 - v108
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+															v118 = v116
 														case 1:
-															v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-															v110 = v99
+															v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+															v118 = v107
 														default:
-															v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-															v108 = v107
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-															v110 = v108
+															v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+															v116 = v115
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+															v118 = v116
 														}
-														v111 = int32(1)
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-														v114 = int32(_a_F_init_span_2)
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+														v119 = int32(1)
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+														v122 = int32(_a_F_init_span_3)
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 														return
 													}
 												}
@@ -3914,248 +3926,250 @@ func F_init_span(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 										}
 									}
 								} else {
-									v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-									v74 = l0 + v71*int32(20)
-									v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-									if v75 != 0 {
-										v79 = v75
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-										v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-										*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-										v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-										v90 = int32(0)
-										*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-										*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+									v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+									v82 = l0 + v79*int32(20)
+									v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+									if v83 != 0 {
+										v87 = v83
+										*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+										v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+										*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+										v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+										v98 = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+										*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 										*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-										*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-										*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+										*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+										*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 										switch v6 {
 										case 0:
-											v100 = int32(1)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-											v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-											v108 = v103 - v100
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-											v110 = v108
+											v108 = int32(1)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+											v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+											v116 = v111 - v108
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+											v118 = v116
 										case 1:
-											v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-											v110 = v99
+											v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+											v118 = v107
 										default:
-											v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-											v108 = v107
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-											v110 = v108
+											v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+											v116 = v115
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+											v118 = v116
 										}
-										v111 = int32(1)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-										v114 = int32(_a_F_init_span_2)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+										v119 = int32(1)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+										v122 = int32(_a_F_init_span_3)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 										return
 									} else {
-										v76 = F_get_segment_by_index(m, l0, v71)
+										v84 = F_get_segment_by_index(m, l0, v79)
 										mBase = m.M
-										v77 = m.ExcPending
-										if v77 != 0 {
+										v85 = m.ExcPending
+										if v85 != 0 {
 											return
 										} else {
-											v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-											v79 = v78
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-											v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-											*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-											v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-											v90 = int32(0)
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+											v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+											v87 = v86
+											*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+											v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+											*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+											v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+											v98 = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 											*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 											switch v6 {
 											case 0:
-												v100 = int32(1)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-												v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-												v108 = v103 - v100
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-												v110 = v108
+												v108 = int32(1)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+												v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+												v116 = v111 - v108
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+												v118 = v116
 											case 1:
-												v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-												v110 = v99
+												v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+												v118 = v107
 											default:
-												v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-												v108 = v107
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-												v110 = v108
+												v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+												v116 = v115
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+												v118 = v116
 											}
-											v111 = int32(1)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-											v114 = int32(_a_F_init_span_2)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+											v119 = int32(1)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+											v122 = int32(_a_F_init_span_3)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 											return
 										}
 									}
 								}
 							} else {
-								v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-								v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-								v90 = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+								v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+								v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+								v98 = int32(0)
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 								*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 								switch v6 {
 								case 0:
-									v100 = int32(1)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-									v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-									v108 = v103 - v100
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-									v110 = v108
+									v108 = int32(1)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+									v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+									v116 = v111 - v108
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+									v118 = v116
 								case 1:
-									v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-									v110 = v99
+									v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+									v118 = v107
 								default:
-									v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-									v108 = v107
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-									v110 = v108
+									v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+									v116 = v115
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+									v118 = v116
 								}
-								v111 = int32(1)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-								v114 = int32(_a_F_init_span_2)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+								v119 = int32(1)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+								v122 = int32(_a_F_init_span_3)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 								return
 							}
 						} else {
-							v37 = F_get_segment_by_index(m, l0, v32)
+							v41 = F_get_segment_by_index(m, l0, v36)
 							mBase = m.M
-							v38 = m.ExcPending
-							if v38 != 0 {
+							v42 = m.ExcPending
+							if v42 != 0 {
 								return
 							} else {
-								v39 = *(*int32)(unsafe.Add(mBase, uint32(v35)+12))
-								v40 = v39
-								v47 = v40 + l1&int32(134217727)
-								v50 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
-								v51 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-								if v51 != 0 {
-									v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-									v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+1468))
-									if v52 != v54 {
-										v59 = F_LWLockAcquire(m, v53+int32(1476), int32(0))
+								v43 = *(*int32)(unsafe.Add(mBase, uint32(v39)+12))
+								v44 = v43
+								v51 = v44 + l1&int32(134217727)
+								v54 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
+								v55 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+								if v55 != 0 {
+									v56 = int32(0)
+									v59 = base.AtomicRmwOr32(m, v56, int32(_a_F_init_span_0), v56)
+									v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+									v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									v62 = *(*int32)(unsafe.Add(mBase, uint32(v61)+1468))
+									if v60 != v62 {
+										v67 = F_LWLockAcquire(m, v61+int32(1476), int32(0))
 										mBase = m.M
-										v60 = m.ExcPending
-										if v60 != 0 {
+										v68 = m.ExcPending
+										if v68 != 0 {
 											return
 										} else {
 											F_check_for_freed_segments_locked(m, l0)
 											mBase = m.M
-											v62 = m.ExcPending
-											if v62 != 0 {
+											v70 = m.ExcPending
+											if v70 != 0 {
 												return
 											} else {
-												v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-												F_LWLockRelease(m, v63+int32(1476))
+												v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												F_LWLockRelease(m, v71+int32(1476))
 												mBase = m.M
-												v67 = m.ExcPending
-												if v67 != 0 {
+												v75 = m.ExcPending
+												if v75 != 0 {
 													return
 												} else {
-													v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-													v74 = l0 + v71*int32(20)
-													v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-													if v75 != 0 {
-														v79 = v75
-														*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-														v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-														*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-														v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-														v90 = int32(0)
-														*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-														*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+													v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+													v82 = l0 + v79*int32(20)
+													v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+													if v83 != 0 {
+														v87 = v83
+														*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+														v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+														v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+														v98 = int32(0)
+														*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+														*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 														*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-														*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-														*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+														*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+														*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 														switch v6 {
 														case 0:
-															v100 = int32(1)
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-															v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-															v108 = v103 - v100
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-															v110 = v108
+															v108 = int32(1)
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+															v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+															v116 = v111 - v108
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+															v118 = v116
 														case 1:
-															v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-															v110 = v99
+															v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+															v118 = v107
 														default:
-															v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-															v108 = v107
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-															v110 = v108
+															v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+															v116 = v115
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+															v118 = v116
 														}
-														v111 = int32(1)
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-														v114 = int32(_a_F_init_span_2)
-														*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+														v119 = int32(1)
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+														v122 = int32(_a_F_init_span_3)
+														*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 														return
 													} else {
-														v76 = F_get_segment_by_index(m, l0, v71)
+														v84 = F_get_segment_by_index(m, l0, v79)
 														mBase = m.M
-														v77 = m.ExcPending
-														if v77 != 0 {
+														v85 = m.ExcPending
+														if v85 != 0 {
 															return
 														} else {
-															v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-															v79 = v78
-															*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-															v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-															*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-															v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-															v90 = int32(0)
-															*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-															*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+															v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+															v87 = v86
+															*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+															v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+															*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+															v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+															v98 = int32(0)
+															*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+															*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 															*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-															*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-															*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+															*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+															*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 															switch v6 {
 															case 0:
-																v100 = int32(1)
-																*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-																v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-																v108 = v103 - v100
-																*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-																v110 = v108
+																v108 = int32(1)
+																*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+																v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+																v116 = v111 - v108
+																*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+																v118 = v116
 															case 1:
-																v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-																v110 = v99
+																v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+																v118 = v107
 															default:
-																v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-																v108 = v107
-																*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-																v110 = v108
+																v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+																v116 = v115
+																*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+																v118 = v116
 															}
-															v111 = int32(1)
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-															v114 = int32(_a_F_init_span_2)
-															*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+															v119 = int32(1)
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+															v122 = int32(_a_F_init_span_3)
+															*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 															return
 														}
 													}
@@ -4163,127 +4177,127 @@ func F_init_span(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 											}
 										}
 									} else {
-										v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-										v74 = l0 + v71*int32(20)
-										v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-										if v75 != 0 {
-											v79 = v75
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-											v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-											*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-											v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-											v90 = int32(0)
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+										v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+										v82 = l0 + v79*int32(20)
+										v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+										if v83 != 0 {
+											v87 = v83
+											*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+											v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+											*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+											v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+											v98 = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 											*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 											switch v6 {
 											case 0:
-												v100 = int32(1)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-												v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-												v108 = v103 - v100
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-												v110 = v108
+												v108 = int32(1)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+												v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+												v116 = v111 - v108
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+												v118 = v116
 											case 1:
-												v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-												v110 = v99
+												v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+												v118 = v107
 											default:
-												v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-												v108 = v107
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-												v110 = v108
+												v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+												v116 = v115
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+												v118 = v116
 											}
-											v111 = int32(1)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-											v114 = int32(_a_F_init_span_2)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+											v119 = int32(1)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+											v122 = int32(_a_F_init_span_3)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 											return
 										} else {
-											v76 = F_get_segment_by_index(m, l0, v71)
+											v84 = F_get_segment_by_index(m, l0, v79)
 											mBase = m.M
-											v77 = m.ExcPending
-											if v77 != 0 {
+											v85 = m.ExcPending
+											if v85 != 0 {
 												return
 											} else {
-												v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-												v79 = v78
-												*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-												v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-												*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-												v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-												v90 = int32(0)
-												*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-												*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+												v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+												v87 = v86
+												*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+												v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+												v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+												v98 = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+												*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 												*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-												*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-												*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+												*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+												*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 												switch v6 {
 												case 0:
-													v100 = int32(1)
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-													v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-													v108 = v103 - v100
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-													v110 = v108
+													v108 = int32(1)
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+													v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+													v116 = v111 - v108
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+													v118 = v116
 												case 1:
-													v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-													v110 = v99
+													v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+													v118 = v107
 												default:
-													v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-													v108 = v107
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-													v110 = v108
+													v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+													v116 = v115
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+													v118 = v116
 												}
-												v111 = int32(1)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-												v114 = int32(_a_F_init_span_2)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+												v119 = int32(1)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+												v122 = int32(_a_F_init_span_3)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 												return
 											}
 										}
 									}
 								} else {
-									v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-									v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-									v90 = int32(0)
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+									v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+									v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+									v98 = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 									*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 									switch v6 {
 									case 0:
-										v100 = int32(1)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-										v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-										v108 = v103 - v100
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-										v110 = v108
+										v108 = int32(1)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+										v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+										v116 = v111 - v108
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+										v118 = v116
 									case 1:
-										v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-										v110 = v99
+										v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+										v118 = v107
 									default:
-										v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-										v108 = v107
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-										v110 = v108
+										v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+										v116 = v115
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+										v118 = v116
 									}
-									v111 = int32(1)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-									v114 = int32(_a_F_init_span_2)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+									v119 = int32(1)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+									v122 = int32(_a_F_init_span_3)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 									return
 								}
 							}
@@ -4292,121 +4306,123 @@ func F_init_span(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 				}
 			}
 		} else {
-			v32 = int32(base.Ui32(l1) >> (uint(int32(27)) % 32))
-			v35 = l0 + v32*int32(20)
-			v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+12))
-			if v36 != 0 {
-				v40 = v36
-				v47 = v40 + l1&int32(134217727)
-				v50 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
-				v51 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-				if v51 != 0 {
-					v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-					v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+1468))
-					if v52 != v54 {
-						v59 = F_LWLockAcquire(m, v53+int32(1476), int32(0))
+			v36 = int32(base.Ui32(l1) >> (uint(int32(27)) % 32))
+			v39 = l0 + v36*int32(20)
+			v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+12))
+			if v40 != 0 {
+				v44 = v40
+				v51 = v44 + l1&int32(134217727)
+				v54 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
+				v55 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+				if v55 != 0 {
+					v56 = int32(0)
+					v59 = base.AtomicRmwOr32(m, v56, int32(_a_F_init_span_0), v56)
+					v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+					v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v62 = *(*int32)(unsafe.Add(mBase, uint32(v61)+1468))
+					if v60 != v62 {
+						v67 = F_LWLockAcquire(m, v61+int32(1476), int32(0))
 						mBase = m.M
-						v60 = m.ExcPending
-						if v60 != 0 {
+						v68 = m.ExcPending
+						if v68 != 0 {
 							return
 						} else {
 							F_check_for_freed_segments_locked(m, l0)
 							mBase = m.M
-							v62 = m.ExcPending
-							if v62 != 0 {
+							v70 = m.ExcPending
+							if v70 != 0 {
 								return
 							} else {
-								v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								F_LWLockRelease(m, v63+int32(1476))
+								v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								F_LWLockRelease(m, v71+int32(1476))
 								mBase = m.M
-								v67 = m.ExcPending
-								if v67 != 0 {
+								v75 = m.ExcPending
+								if v75 != 0 {
 									return
 								} else {
-									v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-									v74 = l0 + v71*int32(20)
-									v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-									if v75 != 0 {
-										v79 = v75
-										*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-										v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-										*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-										v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-										v90 = int32(0)
-										*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-										*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+									v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+									v82 = l0 + v79*int32(20)
+									v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+									if v83 != 0 {
+										v87 = v83
+										*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+										v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+										*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+										v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+										v98 = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+										*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 										*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-										*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-										*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+										*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+										*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 										switch v6 {
 										case 0:
-											v100 = int32(1)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-											v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-											v108 = v103 - v100
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-											v110 = v108
+											v108 = int32(1)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+											v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+											v116 = v111 - v108
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+											v118 = v116
 										case 1:
-											v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-											v110 = v99
+											v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+											v118 = v107
 										default:
-											v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-											v108 = v107
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-											v110 = v108
+											v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+											v116 = v115
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+											v118 = v116
 										}
-										v111 = int32(1)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-										v114 = int32(_a_F_init_span_2)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+										v119 = int32(1)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+										v122 = int32(_a_F_init_span_3)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 										return
 									} else {
-										v76 = F_get_segment_by_index(m, l0, v71)
+										v84 = F_get_segment_by_index(m, l0, v79)
 										mBase = m.M
-										v77 = m.ExcPending
-										if v77 != 0 {
+										v85 = m.ExcPending
+										if v85 != 0 {
 											return
 										} else {
-											v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-											v79 = v78
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-											v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-											*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-											v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-											v90 = int32(0)
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+											v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+											v87 = v86
+											*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+											v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+											*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+											v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+											v98 = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 											*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 											switch v6 {
 											case 0:
-												v100 = int32(1)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-												v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-												v108 = v103 - v100
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-												v110 = v108
+												v108 = int32(1)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+												v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+												v116 = v111 - v108
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+												v118 = v116
 											case 1:
-												v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-												v110 = v99
+												v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+												v118 = v107
 											default:
-												v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-												v108 = v107
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-												v110 = v108
+												v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+												v116 = v115
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+												v118 = v116
 											}
-											v111 = int32(1)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-											v114 = int32(_a_F_init_span_2)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+											v119 = int32(1)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+											v122 = int32(_a_F_init_span_3)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 											return
 										}
 									}
@@ -4414,248 +4430,250 @@ func F_init_span(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 							}
 						}
 					} else {
-						v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-						v74 = l0 + v71*int32(20)
-						v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-						if v75 != 0 {
-							v79 = v75
-							*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-							v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-							*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-							v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-							v90 = int32(0)
-							*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-							*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+						v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+						v82 = l0 + v79*int32(20)
+						v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+						if v83 != 0 {
+							v87 = v83
+							*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+							v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+							*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+							v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+							v98 = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+							*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 							*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-							*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-							*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+							*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+							*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 							switch v6 {
 							case 0:
-								v100 = int32(1)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-								v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-								v108 = v103 - v100
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-								v110 = v108
+								v108 = int32(1)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+								v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+								v116 = v111 - v108
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+								v118 = v116
 							case 1:
-								v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-								v110 = v99
+								v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+								v118 = v107
 							default:
-								v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-								v108 = v107
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-								v110 = v108
+								v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+								v116 = v115
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+								v118 = v116
 							}
-							v111 = int32(1)
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-							v114 = int32(_a_F_init_span_2)
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+							v119 = int32(1)
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+							v122 = int32(_a_F_init_span_3)
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 							return
 						} else {
-							v76 = F_get_segment_by_index(m, l0, v71)
+							v84 = F_get_segment_by_index(m, l0, v79)
 							mBase = m.M
-							v77 = m.ExcPending
-							if v77 != 0 {
+							v85 = m.ExcPending
+							if v85 != 0 {
 								return
 							} else {
-								v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-								v79 = v78
-								*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-								v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-								v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-								v90 = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+								v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+								v87 = v86
+								*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+								v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+								v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+								v98 = int32(0)
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 								*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 								switch v6 {
 								case 0:
-									v100 = int32(1)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-									v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-									v108 = v103 - v100
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-									v110 = v108
+									v108 = int32(1)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+									v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+									v116 = v111 - v108
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+									v118 = v116
 								case 1:
-									v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-									v110 = v99
+									v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+									v118 = v107
 								default:
-									v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-									v108 = v107
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-									v110 = v108
+									v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+									v116 = v115
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+									v118 = v116
 								}
-								v111 = int32(1)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-								v114 = int32(_a_F_init_span_2)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+								v119 = int32(1)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+								v122 = int32(_a_F_init_span_3)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 								return
 							}
 						}
 					}
 				} else {
-					v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-					v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-					v90 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-					*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+					v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+					v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+					v98 = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+					*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 					*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-					*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-					*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+					*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+					*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 					switch v6 {
 					case 0:
-						v100 = int32(1)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-						v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-						v108 = v103 - v100
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-						v110 = v108
+						v108 = int32(1)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+						v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+						v116 = v111 - v108
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+						v118 = v116
 					case 1:
-						v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-						v110 = v99
+						v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+						v118 = v107
 					default:
-						v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-						v108 = v107
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-						v110 = v108
+						v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+						v116 = v115
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+						v118 = v116
 					}
-					v111 = int32(1)
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-					v114 = int32(_a_F_init_span_2)
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+					v119 = int32(1)
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+					v122 = int32(_a_F_init_span_3)
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 					return
 				}
 			} else {
-				v37 = F_get_segment_by_index(m, l0, v32)
+				v41 = F_get_segment_by_index(m, l0, v36)
 				mBase = m.M
-				v38 = m.ExcPending
-				if v38 != 0 {
+				v42 = m.ExcPending
+				if v42 != 0 {
 					return
 				} else {
-					v39 = *(*int32)(unsafe.Add(mBase, uint32(v35)+12))
-					v40 = v39
-					v47 = v40 + l1&int32(134217727)
-					v50 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
-					v51 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-					if v51 != 0 {
-						v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-						v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+1468))
-						if v52 != v54 {
-							v59 = F_LWLockAcquire(m, v53+int32(1476), int32(0))
+					v43 = *(*int32)(unsafe.Add(mBase, uint32(v39)+12))
+					v44 = v43
+					v51 = v44 + l1&int32(134217727)
+					v54 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
+					v55 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+					if v55 != 0 {
+						v56 = int32(0)
+						v59 = base.AtomicRmwOr32(m, v56, int32(_a_F_init_span_0), v56)
+						v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+						v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						v62 = *(*int32)(unsafe.Add(mBase, uint32(v61)+1468))
+						if v60 != v62 {
+							v67 = F_LWLockAcquire(m, v61+int32(1476), int32(0))
 							mBase = m.M
-							v60 = m.ExcPending
-							if v60 != 0 {
+							v68 = m.ExcPending
+							if v68 != 0 {
 								return
 							} else {
 								F_check_for_freed_segments_locked(m, l0)
 								mBase = m.M
-								v62 = m.ExcPending
-								if v62 != 0 {
+								v70 = m.ExcPending
+								if v70 != 0 {
 									return
 								} else {
-									v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									F_LWLockRelease(m, v63+int32(1476))
+									v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									F_LWLockRelease(m, v71+int32(1476))
 									mBase = m.M
-									v67 = m.ExcPending
-									if v67 != 0 {
+									v75 = m.ExcPending
+									if v75 != 0 {
 										return
 									} else {
-										v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-										v74 = l0 + v71*int32(20)
-										v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-										if v75 != 0 {
-											v79 = v75
-											*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-											v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-											*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-											v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-											v90 = int32(0)
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+										v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+										v82 = l0 + v79*int32(20)
+										v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+										if v83 != 0 {
+											v87 = v83
+											*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+											v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+											*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+											v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+											v98 = int32(0)
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 											*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-											*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+											*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 											switch v6 {
 											case 0:
-												v100 = int32(1)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-												v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-												v108 = v103 - v100
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-												v110 = v108
+												v108 = int32(1)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+												v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+												v116 = v111 - v108
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+												v118 = v116
 											case 1:
-												v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-												v110 = v99
+												v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+												v118 = v107
 											default:
-												v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-												v108 = v107
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-												v110 = v108
+												v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+												v116 = v115
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+												v118 = v116
 											}
-											v111 = int32(1)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-											v114 = int32(_a_F_init_span_2)
-											*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+											v119 = int32(1)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+											v122 = int32(_a_F_init_span_3)
+											*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 											return
 										} else {
-											v76 = F_get_segment_by_index(m, l0, v71)
+											v84 = F_get_segment_by_index(m, l0, v79)
 											mBase = m.M
-											v77 = m.ExcPending
-											if v77 != 0 {
+											v85 = m.ExcPending
+											if v85 != 0 {
 												return
 											} else {
-												v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-												v79 = v78
-												*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-												v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-												*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-												v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-												v90 = int32(0)
-												*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-												*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+												v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+												v87 = v86
+												*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+												v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+												v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+												v98 = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+												*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 												*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-												*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-												*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+												*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+												*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 												switch v6 {
 												case 0:
-													v100 = int32(1)
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-													v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-													v108 = v103 - v100
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-													v110 = v108
+													v108 = int32(1)
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+													v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+													v116 = v111 - v108
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+													v118 = v116
 												case 1:
-													v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-													v110 = v99
+													v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+													v118 = v107
 												default:
-													v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-													v108 = v107
-													*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-													v110 = v108
+													v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+													v116 = v115
+													*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+													v118 = v116
 												}
-												v111 = int32(1)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-												v114 = int32(_a_F_init_span_2)
-												*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+												v119 = int32(1)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+												v122 = int32(_a_F_init_span_3)
+												*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 												return
 											}
 										}
@@ -4663,243 +4681,245 @@ func F_init_span(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 								}
 							}
 						} else {
-							v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-							v74 = l0 + v71*int32(20)
-							v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-							if v75 != 0 {
-								v79 = v75
-								*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-								v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-								v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-								v90 = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+							v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+							v82 = l0 + v79*int32(20)
+							v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+							if v83 != 0 {
+								v87 = v83
+								*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+								v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+								v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+								v98 = int32(0)
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 								*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 								switch v6 {
 								case 0:
-									v100 = int32(1)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-									v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-									v108 = v103 - v100
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-									v110 = v108
+									v108 = int32(1)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+									v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+									v116 = v111 - v108
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+									v118 = v116
 								case 1:
-									v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-									v110 = v99
+									v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+									v118 = v107
 								default:
-									v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-									v108 = v107
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-									v110 = v108
+									v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+									v116 = v115
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+									v118 = v116
 								}
-								v111 = int32(1)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-								v114 = int32(_a_F_init_span_2)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+								v119 = int32(1)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+								v122 = int32(_a_F_init_span_3)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 								return
 							} else {
-								v76 = F_get_segment_by_index(m, l0, v71)
+								v84 = F_get_segment_by_index(m, l0, v79)
 								mBase = m.M
-								v77 = m.ExcPending
-								if v77 != 0 {
+								v85 = m.ExcPending
+								if v85 != 0 {
 									return
 								} else {
-									v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-									v79 = v78
-									*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-									v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-									v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-									v90 = int32(0)
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+									v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+									v87 = v86
+									*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+									v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+									v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+									v98 = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 									*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 									switch v6 {
 									case 0:
-										v100 = int32(1)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-										v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-										v108 = v103 - v100
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-										v110 = v108
+										v108 = int32(1)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+										v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+										v116 = v111 - v108
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+										v118 = v116
 									case 1:
-										v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-										v110 = v99
+										v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+										v118 = v107
 									default:
-										v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-										v108 = v107
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-										v110 = v108
+										v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+										v116 = v115
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+										v118 = v116
 									}
-									v111 = int32(1)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-									v114 = int32(_a_F_init_span_2)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+									v119 = int32(1)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+									v122 = int32(_a_F_init_span_3)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 									return
 								}
 							}
 						}
 					} else {
-						v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-						v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-						v90 = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-						*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+						v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+						v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+						v98 = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+						*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 						*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-						*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-						*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+						*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+						*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 						switch v6 {
 						case 0:
-							v100 = int32(1)
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-							v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-							v108 = v103 - v100
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-							v110 = v108
+							v108 = int32(1)
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+							v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+							v116 = v111 - v108
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+							v118 = v116
 						case 1:
-							v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-							v110 = v99
+							v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+							v118 = v107
 						default:
-							v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-							v108 = v107
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-							v110 = v108
+							v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+							v116 = v115
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+							v118 = v116
 						}
-						v111 = int32(1)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-						v114 = int32(_a_F_init_span_2)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+						v119 = int32(1)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+						v122 = int32(_a_F_init_span_3)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 						return
 					}
 				}
 			}
 		}
 	} else {
-		v47 = int32(0)
-		v50 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
-		v51 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-		if v51 != 0 {
-			v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
-			v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-			v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+1468))
-			if v52 != v54 {
-				v59 = F_LWLockAcquire(m, v53+int32(1476), int32(0))
+		v51 = int32(0)
+		v54 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6<<(uint(int32(1))%32))+uint32(_c_F_init_span[0]))))
+		v55 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+		if v55 != 0 {
+			v56 = int32(0)
+			v59 = base.AtomicRmwOr32(m, v56, int32(_a_F_init_span_0), v56)
+			v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+652))
+			v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+			v62 = *(*int32)(unsafe.Add(mBase, uint32(v61)+1468))
+			if v60 != v62 {
+				v67 = F_LWLockAcquire(m, v61+int32(1476), int32(0))
 				mBase = m.M
-				v60 = m.ExcPending
-				if v60 != 0 {
+				v68 = m.ExcPending
+				if v68 != 0 {
 					return
 				} else {
 					F_check_for_freed_segments_locked(m, l0)
 					mBase = m.M
-					v62 = m.ExcPending
-					if v62 != 0 {
+					v70 = m.ExcPending
+					if v70 != 0 {
 						return
 					} else {
-						v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						F_LWLockRelease(m, v63+int32(1476))
+						v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						F_LWLockRelease(m, v71+int32(1476))
 						mBase = m.M
-						v67 = m.ExcPending
-						if v67 != 0 {
+						v75 = m.ExcPending
+						if v75 != 0 {
 							return
 						} else {
-							v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-							v74 = l0 + v71*int32(20)
-							v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-							if v75 != 0 {
-								v79 = v75
-								*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-								v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-								v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-								v90 = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+							v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+							v82 = l0 + v79*int32(20)
+							v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+							if v83 != 0 {
+								v87 = v83
+								*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+								v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+								v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+								v98 = int32(0)
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 								*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-								*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+								*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 								switch v6 {
 								case 0:
-									v100 = int32(1)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-									v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-									v108 = v103 - v100
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-									v110 = v108
+									v108 = int32(1)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+									v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+									v116 = v111 - v108
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+									v118 = v116
 								case 1:
-									v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-									v110 = v99
+									v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+									v118 = v107
 								default:
-									v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-									v108 = v107
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-									v110 = v108
+									v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+									v116 = v115
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+									v118 = v116
 								}
-								v111 = int32(1)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-								v114 = int32(_a_F_init_span_2)
-								*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+								v119 = int32(1)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+								v122 = int32(_a_F_init_span_3)
+								*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 								return
 							} else {
-								v76 = F_get_segment_by_index(m, l0, v71)
+								v84 = F_get_segment_by_index(m, l0, v79)
 								mBase = m.M
-								v77 = m.ExcPending
-								if v77 != 0 {
+								v85 = m.ExcPending
+								if v85 != 0 {
 									return
 								} else {
-									v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-									v79 = v78
-									*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-									v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-									v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-									v90 = int32(0)
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+									v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+									v87 = v86
+									*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+									v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+									v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+									v98 = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 									*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-									*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+									*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 									switch v6 {
 									case 0:
-										v100 = int32(1)
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-										v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-										v108 = v103 - v100
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-										v110 = v108
+										v108 = int32(1)
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+										v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+										v116 = v111 - v108
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+										v118 = v116
 									case 1:
-										v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-										v110 = v99
+										v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+										v118 = v107
 									default:
-										v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-										v108 = v107
-										*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-										v110 = v108
+										v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+										v116 = v115
+										*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+										v118 = v116
 									}
-									v111 = int32(1)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-									v114 = int32(_a_F_init_span_2)
-									*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+									v119 = int32(1)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+									v122 = int32(_a_F_init_span_3)
+									*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 									return
 								}
 							}
@@ -4907,127 +4927,127 @@ func F_init_span(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 					}
 				}
 			} else {
-				v71 = int32(base.Ui32(v51) >> (uint(int32(27)) % 32))
-				v74 = l0 + v71*int32(20)
-				v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-				if v75 != 0 {
-					v79 = v75
-					*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-					v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-					v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-					v90 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-					*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+				v79 = int32(base.Ui32(v55) >> (uint(int32(27)) % 32))
+				v82 = l0 + v79*int32(20)
+				v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+				if v83 != 0 {
+					v87 = v83
+					*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+					v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+					v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+					v98 = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+					*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 					*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-					*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-					*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+					*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+					*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 					switch v6 {
 					case 0:
-						v100 = int32(1)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-						v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-						v108 = v103 - v100
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-						v110 = v108
+						v108 = int32(1)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+						v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+						v116 = v111 - v108
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+						v118 = v116
 					case 1:
-						v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-						v110 = v99
+						v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+						v118 = v107
 					default:
-						v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-						v108 = v107
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-						v110 = v108
+						v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+						v116 = v115
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+						v118 = v116
 					}
-					v111 = int32(1)
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-					v114 = int32(_a_F_init_span_2)
-					*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+					v119 = int32(1)
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+					v122 = int32(_a_F_init_span_3)
+					*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 					return
 				} else {
-					v76 = F_get_segment_by_index(m, l0, v71)
+					v84 = F_get_segment_by_index(m, l0, v79)
 					mBase = m.M
-					v77 = m.ExcPending
-					if v77 != 0 {
+					v85 = m.ExcPending
+					if v85 != 0 {
 						return
 					} else {
-						v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)+12))
-						v79 = v78
-						*(*int32)(unsafe.Add(mBase, uint32(v79+v51&int32(134217727))+4)) = l1
-						v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-						v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-						v90 = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-						*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+						v86 = *(*int32)(unsafe.Add(mBase, uint32(v82)+12))
+						v87 = v86
+						*(*int32)(unsafe.Add(mBase, uint32(v87+v55&int32(134217727))+4)) = l1
+						v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+						v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+						v98 = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+						*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 						*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-						*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-						*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+						*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+						*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 						switch v6 {
 						case 0:
-							v100 = int32(1)
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-							v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-							v108 = v103 - v100
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-							v110 = v108
+							v108 = int32(1)
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+							v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+							v116 = v111 - v108
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+							v118 = v116
 						case 1:
-							v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-							v110 = v99
+							v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+							v118 = v107
 						default:
-							v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-							v108 = v107
-							*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-							v110 = v108
+							v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+							v116 = v115
+							*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+							v118 = v116
 						}
-						v111 = int32(1)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-						v114 = int32(_a_F_init_span_2)
-						*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+						v119 = int32(1)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+						v122 = int32(_a_F_init_span_3)
+						*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 						return
 					}
 				}
 			}
 		} else {
-			v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-			*(*int32)(unsafe.Add(mBase, uint32(v47))) = l2 - v86
-			v89 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-			v90 = int32(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v90
-			*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = v89
+			v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+			*(*int32)(unsafe.Add(mBase, uint32(v51))) = l2 - v94
+			v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+			v98 = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v51)+4)) = v98
+			*(*int32)(unsafe.Add(mBase, uint32(v51)+8)) = v97
 			*(*int32)(unsafe.Add(mBase, uint32(l2)+20)) = l1
-			*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v90)
-			*(*uint16)(unsafe.Add(mBase, uint32(v47)+20)) = uint16(v6)
-			*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l4
-			*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = l3
+			*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v98)
+			*(*uint16)(unsafe.Add(mBase, uint32(v51)+20)) = uint16(v6)
+			*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = l4
+			*(*int32)(unsafe.Add(mBase, uint32(v51)+12)) = l3
 			switch v6 {
 			case 0:
-				v100 = int32(1)
-				*(*uint16)(unsafe.Add(mBase, uint32(v47)+22)) = uint16(v100)
-				v103 = base.I32_div_u_s(int32(_a_F_init_span_0), v50)
-				v108 = v103 - v100
-				*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-				v110 = v108
+				v108 = int32(1)
+				*(*uint16)(unsafe.Add(mBase, uint32(v51)+22)) = uint16(v108)
+				v111 = base.I32_div_u_s(int32(_a_F_init_span_1), v54)
+				v116 = v111 - v108
+				*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+				v118 = v116
 			case 1:
-				v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)))
-				v110 = v99
+				v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)))
+				v118 = v107
 			default:
-				v107 = base.I32_div_u_s(int32(_a_F_init_span_1), v50)
-				v108 = v107
-				*(*uint16)(unsafe.Add(mBase, uint32(v47)+24)) = uint16(v108)
-				v110 = v108
+				v115 = base.I32_div_u_s(int32(_a_F_init_span_2), v54)
+				v116 = v115
+				*(*uint16)(unsafe.Add(mBase, uint32(v51)+24)) = uint16(v116)
+				v118 = v116
 			}
-			v111 = int32(1)
-			*(*uint16)(unsafe.Add(mBase, uint32(v47)+30)) = uint16(v111)
-			*(*uint16)(unsafe.Add(mBase, uint32(v47)+28)) = uint16(v110)
-			v114 = int32(_a_F_init_span_2)
-			*(*uint16)(unsafe.Add(mBase, uint32(v47)+26)) = uint16(v114)
+			v119 = int32(1)
+			*(*uint16)(unsafe.Add(mBase, uint32(v51)+30)) = uint16(v119)
+			*(*uint16)(unsafe.Add(mBase, uint32(v51)+28)) = uint16(v118)
+			v122 = int32(_a_F_init_span_3)
+			*(*uint16)(unsafe.Add(mBase, uint32(v51)+26)) = uint16(v122)
 			return
 		}
 	}

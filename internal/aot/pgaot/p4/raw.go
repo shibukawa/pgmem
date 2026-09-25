@@ -58,12 +58,20 @@ func F_CopyLoadRawBuf(m *base.Module, l0 int32) {
 	_ = v68
 	var v71 int32
 	_ = v71
-	var v79 int32
-	_ = v79
-	var v85 int32
-	_ = v85
-	var v91 int32
-	_ = v91
+	var v75 int32
+	_ = v75
+	var v77 int32
+	_ = v77
+	var v78 int32
+	_ = v78
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v93 int32
+	_ = v93
+	var v99 int32
+	_ = v99
 	v2 = int32(0)
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+332))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+328))
@@ -117,16 +125,20 @@ func F_CopyLoadRawBuf(m *base.Module, l0 int32) {
 				*(*int32)(unsafe.Add(mBase, _c_F_CopyLoadRawBuf[2])) = v67 + v68
 				v71 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
 				*(*int32)(unsafe.Add(mBase, uint32(v56))) = v71 + v68
-				*(*int64)(unsafe.Add(mBase, uint32(v56+int32(0))+232)) = v51
-				v79 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
-				*(*int32)(unsafe.Add(mBase, uint32(v56))) = v79 + v68
-				v85 = *(*int32)(unsafe.Add(mBase, _c_F_CopyLoadRawBuf[2]))
-				*(*int32)(unsafe.Add(mBase, _c_F_CopyLoadRawBuf[2])) = v85 - v68
+				v75 = int32(0)
+				v77 = int32(_a_F_CopyLoadRawBuf_2)
+				v78 = base.AtomicRmwOr32(m, v75, v77, v75)
+				*(*int64)(unsafe.Add(mBase, uint32(v56+v75)+232)) = v51
+				v86 = base.AtomicRmwOr32(m, v75, v77, v75)
+				v87 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+				*(*int32)(unsafe.Add(mBase, uint32(v56))) = v87 + v68
+				v93 = *(*int32)(unsafe.Add(mBase, _c_F_CopyLoadRawBuf[2]))
+				*(*int32)(unsafe.Add(mBase, _c_F_CopyLoadRawBuf[2])) = v93 - v68
 			}
 		}
 		if v41 == int32(0) {
-			v91 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(l0)+336)) = uint8(v91)
+			v99 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(l0)+336)) = uint8(v99)
 		} else {
 		}
 		return

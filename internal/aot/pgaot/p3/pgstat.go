@@ -2656,10 +2656,18 @@ func F_pgstat_progress_update_param(m *base.Module, l0 int32, l1 int64) {
 	_ = v17
 	var v20 int32
 	_ = v20
-	var v28 int32
-	_ = v28
-	var v34 int32
-	_ = v34
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v42 int32
+	_ = v42
 	v5 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_update_param[0]))
 	if v5 == int32(0) {
 	} else {
@@ -2672,11 +2680,15 @@ func F_pgstat_progress_update_param(m *base.Module, l0 int32, l1 int64) {
 			*(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_update_param[2])) = v16 + v17
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
 			*(*int32)(unsafe.Add(mBase, uint32(v5))) = v20 + v17
+			v24 = int32(0)
+			v26 = int32(_a_F_pgstat_progress_update_param_1)
+			v27 = base.AtomicRmwOr32(m, v24, v26, v24)
 			*(*int64)(unsafe.Add(mBase, uint32(v5+l0<<(uint(int32(3))%32))+232)) = l1
-			v28 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
-			*(*int32)(unsafe.Add(mBase, uint32(v5))) = v28 + v17
-			v34 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_update_param[2]))
-			*(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_update_param[2])) = v34 - v17
+			v35 = base.AtomicRmwOr32(m, v24, v26, v24)
+			v36 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = v36 + v17
+			v42 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_update_param[2]))
+			*(*int32)(unsafe.Add(mBase, _c_F_pgstat_progress_update_param[2])) = v42 - v17
 		}
 	}
 	return
@@ -2704,21 +2716,21 @@ func F_pgstat_report_archiver(m *base.Module, l0 int32, l1 int32) {
 	_ = v29
 	var v32 int32
 	_ = v32
-	var v38 int32
-	_ = v38
+	var v36 int32
+	_ = v36
 	var v39 int32
 	_ = v39
-	var v40 int64
-	_ = v40
-	var v46 int32
-	_ = v46
-	var v47 int32
-	_ = v47
-	var v48 int32
-	_ = v48
-	var v50 int64
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v44 int64
+	_ = v44
+	var v50 int32
 	_ = v50
-	var v52 int64
+	var v51 int32
+	_ = v51
+	var v52 int32
 	_ = v52
 	var v54 int64
 	_ = v54
@@ -2726,16 +2738,24 @@ func F_pgstat_report_archiver(m *base.Module, l0 int32, l1 int32) {
 	_ = v56
 	var v58 int64
 	_ = v58
-	var v62 int32
+	var v60 int64
+	_ = v60
+	var v62 int64
 	_ = v62
-	var v65 int32
-	_ = v65
 	var v66 int32
 	_ = v66
 	var v69 int32
 	_ = v69
-	var v71 int32
-	_ = v71
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
 	v7 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_archiver[0]))
 	v11 = m.G0
 	v12 = int32(16)
@@ -2752,44 +2772,48 @@ func F_pgstat_report_archiver(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_archiver[1])) = v28 + v29
 	v32 = *(*int32)(unsafe.Add(mBase, uint32(v7)+40))
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+40)) = v32 + v29
+	v36 = int32(0)
+	v39 = base.AtomicRmwOr32(m, v36, int32(_a_F_pgstat_report_archiver_1), v36)
 	if l1 != 0 {
-		v38 = int32(112)
+		v42 = int32(112)
 	} else {
-		v38 = int32(48)
+		v42 = int32(48)
 	}
-	v39 = v7 + v38
-	v40 = *(*int64)(unsafe.Add(mBase, uint32(v39)))
-	*(*int64)(unsafe.Add(mBase, uint32(v39))) = v40 + int64(1)
+	v43 = v7 + v42
+	v44 = *(*int64)(unsafe.Add(mBase, uint32(v43)))
+	*(*int64)(unsafe.Add(mBase, uint32(v43))) = v44 + int64(1)
 	if l1 != 0 {
-		v46 = int32(120)
+		v50 = int32(120)
 	} else {
-		v46 = int32(56)
+		v50 = int32(56)
 	}
-	v47 = v7 + v46
-	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+40)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v47)+40)) = uint8(v48)
-	v50 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
-	*(*int64)(unsafe.Add(mBase, uint32(v47)+32)) = v50
-	v52 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
-	*(*int64)(unsafe.Add(mBase, uint32(v47)+24)) = v52
-	v54 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v47)+16)) = v54
-	v56 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v47)+8)) = v56
-	v58 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-	*(*int64)(unsafe.Add(mBase, uint32(v47))) = v58
+	v51 = v7 + v50
+	v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+40)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v51)+40)) = uint8(v52)
+	v54 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
+	*(*int64)(unsafe.Add(mBase, uint32(v51)+32)) = v54
+	v56 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	*(*int64)(unsafe.Add(mBase, uint32(v51)+24)) = v56
+	v58 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
+	*(*int64)(unsafe.Add(mBase, uint32(v51)+16)) = v58
+	v60 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
+	*(*int64)(unsafe.Add(mBase, uint32(v51)+8)) = v60
+	v62 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
+	*(*int64)(unsafe.Add(mBase, uint32(v51))) = v62
 	if l1 != 0 {
-		v62 = int32(168)
+		v66 = int32(168)
 	} else {
-		v62 = int32(104)
+		v66 = int32(104)
 	}
-	*(*int64)(unsafe.Add(mBase, uint32(v7+v62))) = v17 + v16*int64(1000000) - int64(946684800000000)
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(v7)+40))
-	v66 = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+40)) = v65 + v66
-	v69 = int32(_a_F_pgstat_report_archiver_0)
-	v71 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_archiver[1]))
-	*(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_archiver[1])) = v71 - v66
+	*(*int64)(unsafe.Add(mBase, uint32(v7+v66))) = v17 + v16*int64(1000000) - int64(946684800000000)
+	v69 = int32(0)
+	v72 = base.AtomicRmwOr32(m, v69, int32(_a_F_pgstat_report_archiver_1), v69)
+	v73 = *(*int32)(unsafe.Add(mBase, uint32(v7)+40))
+	v74 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+40)) = v73 + v74
+	v77 = int32(_a_F_pgstat_report_archiver_0)
+	v79 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_archiver[1]))
+	*(*int32)(unsafe.Add(mBase, _c_F_pgstat_report_archiver[1])) = v79 - v74
 	return
 }
 func F_pgstat_report_subscription_error(m *base.Module, l0 int32, l1 int32) {

@@ -184,26 +184,34 @@ func F_handle_pm_shutdown_request_signal(m *base.Module, l0 int32) {
 	_ = v17
 	var v20 int32
 	_ = v20
-	var v23 int32
-	_ = v23
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
 	var v27 int32
 	_ = v27
-	var v29 int32
-	_ = v29
+	var v28 int32
+	_ = v28
 	var v31 int32
 	_ = v31
-	var v34 int32
-	_ = v34
+	var v35 int32
+	_ = v35
 	var v37 int32
 	_ = v37
-	var v41 int32
-	_ = v41
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
 	var v45 int32
 	_ = v45
 	var v49 int32
 	_ = v49
+	var v53 int32
+	_ = v53
 	var v57 int32
 	_ = v57
+	var v65 int32
+	_ = v65
 	switch l0 - int32(2) {
 	case 0:
 		v7 = int32(_a_F_handle_pm_shutdown_request_signal_0)
@@ -218,8 +226,10 @@ func F_handle_pm_shutdown_request_signal(m *base.Module, l0 int32) {
 L1:
 	;
 	v16 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[0]))
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
-	if v17 != 0 {
+	v17 = int32(0)
+	v20 = base.AtomicRmwOr32(m, v17, int32(_a_F_handle_pm_shutdown_request_signal_1), v17)
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+	if v21 != 0 {
 		goto L6
 	} else {
 		goto L7
@@ -234,7 +244,7 @@ L3:
 	goto L2
 L4:
 	;
-	v7 = int32(_a_F_handle_pm_shutdown_request_signal_1)
+	v7 = int32(_a_F_handle_pm_shutdown_request_signal_2)
 	goto L3
 L5:
 	;
@@ -245,35 +255,37 @@ L6:
 L7:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1)
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
-	if v20 == int32(0) {
+	v24 = int32(0)
+	v27 = base.AtomicRmwOr32(m, v24, int32(_a_F_handle_pm_shutdown_request_signal_1), v24)
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
+	if v28 == v24 {
 		goto L6
 	} else {
 		goto L8
 	}
 L8:
 	;
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(v16)+12))
-	if v23 == int32(0) {
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(v16)+12))
+	if v31 == int32(0) {
 		goto L6
 	} else {
 		goto L9
 	}
 L9:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[2]))
-	if v27 == v23 {
+	v35 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[2]))
+	if v35 == v31 {
 		goto L10
 	} else {
 		goto L11
 	}
 L10:
 	;
-	v29 = m.G0
-	v31 = v29 - int32(16)
-	m.G0 = v31
-	v34 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[3]))
-	if v34 == int32(0) {
+	v37 = m.G0
+	v39 = v37 - int32(16)
+	m.G0 = v39
+	v42 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[3]))
+	if v42 == int32(0) {
 		goto L13
 	} else {
 		goto L14
@@ -283,24 +295,24 @@ L11:
 	goto L12
 L12:
 	;
-	v57 = F_pgmem_kill(m, v23, int32(23))
+	v65 = F_pgmem_kill(m, v31, int32(23))
 	mBase = m.M
 	goto L6
 L13:
 	;
-	m.G0 = v31 + int32(16)
+	m.G0 = v39 + int32(16)
 	goto L5
 L14:
 	;
-	v37 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v31)+15)) = uint8(v37)
+	v45 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v39)+15)) = uint8(v45)
 	goto L15
 L15:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[4]))
-	v45 = F_write(m, v41, v31+int32(15), int32(1))
+	v49 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[4]))
+	v53 = F_write(m, v49, v39+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v45 {
+	if int32(0) <= v53 {
 		goto L13
 	} else {
 		goto L17
@@ -310,8 +322,8 @@ L16:
 	goto L13
 L17:
 	;
-	v49 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[5]))
-	if v49 == int32(27) {
+	v57 = *(*int32)(unsafe.Add(mBase, _c_F_handle_pm_shutdown_request_signal[5]))
+	if v57 == int32(27) {
 		goto L15
 	} else {
 		goto L18

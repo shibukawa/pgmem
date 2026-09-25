@@ -44,70 +44,78 @@ func F_bbsink_progress_archive_contents(m *base.Module, l0 int32, l1 int32) {
 	_ = v53
 	var v56 int32
 	_ = v56
+	var v60 int32
+	_ = v60
 	var v63 int32
 	_ = v63
-	var v65 int32
-	_ = v65
-	var v71 int32
-	_ = v71
-	var v74 int32
-	_ = v74
-	var v80 int32
-	_ = v80
-	var v83 int32
-	_ = v83
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
+	var v75 int32
+	_ = v75
+	var v78 int32
+	_ = v78
 	var v84 int32
 	_ = v84
-	var v90 int64
-	_ = v90
-	var v93 int32
-	_ = v93
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v94 int64
+	_ = v94
 	var v97 int32
 	_ = v97
-	var v104 int64
-	_ = v104
-	var v107 int32
-	_ = v107
+	var v101 int32
+	_ = v101
+	var v108 int64
+	_ = v108
 	var v111 int32
 	_ = v111
-	var v118 int64
-	_ = v118
-	var v121 int32
-	_ = v121
+	var v115 int32
+	_ = v115
+	var v122 int64
+	_ = v122
 	var v125 int32
 	_ = v125
-	var v132 int64
-	_ = v132
-	var v134 int32
-	_ = v134
-	var v135 int32
-	_ = v135
-	var v137 int32
-	_ = v137
-	var v144 int32
-	_ = v144
-	var v151 int32
-	_ = v151
-	var v154 int32
-	_ = v154
-	var v163 int32
-	_ = v163
-	var v164 int32
-	_ = v164
-	var v170 int64
-	_ = v170
-	var v172 int32
-	_ = v172
-	var v175 int32
-	_ = v175
-	var v186 int32
-	_ = v186
-	var v187 int32
-	_ = v187
+	var v129 int32
+	_ = v129
+	var v136 int64
+	_ = v136
+	var v138 int32
+	_ = v138
+	var v139 int32
+	_ = v139
+	var v141 int32
+	_ = v141
+	var v148 int32
+	_ = v148
+	var v155 int32
+	_ = v155
+	var v158 int32
+	_ = v158
+	var v167 int32
+	_ = v167
+	var v168 int32
+	_ = v168
+	var v174 int64
+	_ = v174
+	var v176 int32
+	_ = v176
+	var v179 int32
+	_ = v179
 	var v190 int32
 	_ = v190
-	var v192 int32
-	_ = v192
+	var v193 int32
+	_ = v193
+	var v194 int32
+	_ = v194
+	var v195 int32
+	_ = v195
+	var v198 int32
+	_ = v198
+	var v200 int32
+	_ = v200
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
@@ -152,58 +160,60 @@ func F_bbsink_progress_archive_contents(m *base.Module, l0 int32, l1 int32) {
 					*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_archive_contents[2])) = v52 + v53
 					v56 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 					*(*int32)(unsafe.Add(mBase, uint32(v41))) = v56 + v53
-					if v29 <= int32(0) {
+					v60 = int32(0)
+					v63 = base.AtomicRmwOr32(m, v60, int32(_a_F_bbsink_progress_archive_contents_1), v60)
+					if v29 <= v60 {
 					} else {
-						v63 = v29 & int32(3)
-						v65 = v41 + int32(232)
+						v67 = v29 & int32(3)
+						v69 = v41 + int32(232)
 						if base.Ui32(int32(4)) <= base.Ui32(v29) {
-							v71 = int32(0)
-							v74 = v32
+							v75 = int32(0)
+							v78 = v32
 							for {
-								v80 = int32(2)
-								v83 = *(*int32)(unsafe.Add(mBase, uint32(v31+v74<<(uint(v80)%32))))
-								v84 = int32(3)
-								v90 = *(*int64)(unsafe.Add(mBase, uint32(v8+v74<<(uint(v84)%32))))
-								*(*int64)(unsafe.Add(mBase, uint32(v65+v83<<(uint(v84)%32)))) = v90
-								v93 = v74 | int32(1)
-								v97 = *(*int32)(unsafe.Add(mBase, uint32(v31+v93<<(uint(v80)%32))))
-								v104 = *(*int64)(unsafe.Add(mBase, uint32(v8+v93<<(uint(v84)%32))))
-								*(*int64)(unsafe.Add(mBase, uint32(v65+v97<<(uint(v84)%32)))) = v104
-								v107 = v74 | v80
-								v111 = *(*int32)(unsafe.Add(mBase, uint32(v31+v107<<(uint(v80)%32))))
-								v118 = *(*int64)(unsafe.Add(mBase, uint32(v8+v107<<(uint(v84)%32))))
-								*(*int64)(unsafe.Add(mBase, uint32(v65+v111<<(uint(v84)%32)))) = v118
-								v121 = v74 | v84
-								v125 = *(*int32)(unsafe.Add(mBase, uint32(v31+v121<<(uint(v80)%32))))
-								v132 = *(*int64)(unsafe.Add(mBase, uint32(v8+v121<<(uint(v84)%32))))
-								*(*int64)(unsafe.Add(mBase, uint32(v65+v125<<(uint(v84)%32)))) = v132
-								v134 = int32(4)
-								v135 = v74 + v134
-								v137 = v71 + v134
-								if v137 != v29&int32(2147483644) {
-									v71 = v137
-									v74 = v135
+								v84 = int32(2)
+								v87 = *(*int32)(unsafe.Add(mBase, uint32(v31+v78<<(uint(v84)%32))))
+								v88 = int32(3)
+								v94 = *(*int64)(unsafe.Add(mBase, uint32(v8+v78<<(uint(v88)%32))))
+								*(*int64)(unsafe.Add(mBase, uint32(v69+v87<<(uint(v88)%32)))) = v94
+								v97 = v78 | int32(1)
+								v101 = *(*int32)(unsafe.Add(mBase, uint32(v31+v97<<(uint(v84)%32))))
+								v108 = *(*int64)(unsafe.Add(mBase, uint32(v8+v97<<(uint(v88)%32))))
+								*(*int64)(unsafe.Add(mBase, uint32(v69+v101<<(uint(v88)%32)))) = v108
+								v111 = v78 | v84
+								v115 = *(*int32)(unsafe.Add(mBase, uint32(v31+v111<<(uint(v84)%32))))
+								v122 = *(*int64)(unsafe.Add(mBase, uint32(v8+v111<<(uint(v88)%32))))
+								*(*int64)(unsafe.Add(mBase, uint32(v69+v115<<(uint(v88)%32)))) = v122
+								v125 = v78 | v88
+								v129 = *(*int32)(unsafe.Add(mBase, uint32(v31+v125<<(uint(v84)%32))))
+								v136 = *(*int64)(unsafe.Add(mBase, uint32(v8+v125<<(uint(v88)%32))))
+								*(*int64)(unsafe.Add(mBase, uint32(v69+v129<<(uint(v88)%32)))) = v136
+								v138 = int32(4)
+								v139 = v78 + v138
+								v141 = v75 + v138
+								if v141 != v29&int32(2147483644) {
+									v75 = v141
+									v78 = v139
 									continue
 								} else {
 									break
 								}
 								break
 							}
-							if v63 == int32(0) {
+							if v67 == int32(0) {
 							} else {
-								v144 = v135
-								v151 = int32(0)
-								v154 = v144
+								v148 = v139
+								v155 = int32(0)
+								v158 = v148
 								for {
-									v163 = *(*int32)(unsafe.Add(mBase, uint32(v31+v154<<(uint(int32(2))%32))))
-									v164 = int32(3)
-									v170 = *(*int64)(unsafe.Add(mBase, uint32(v8+v154<<(uint(v164)%32))))
-									*(*int64)(unsafe.Add(mBase, uint32(v65+v163<<(uint(v164)%32)))) = v170
-									v172 = int32(1)
-									v175 = v151 + v172
-									if v175 != v63 {
-										v151 = v175
-										v154 = v154 + v172
+									v167 = *(*int32)(unsafe.Add(mBase, uint32(v31+v158<<(uint(int32(2))%32))))
+									v168 = int32(3)
+									v174 = *(*int64)(unsafe.Add(mBase, uint32(v8+v158<<(uint(v168)%32))))
+									*(*int64)(unsafe.Add(mBase, uint32(v69+v167<<(uint(v168)%32)))) = v174
+									v176 = int32(1)
+									v179 = v155 + v176
+									if v179 != v67 {
+										v155 = v179
+										v158 = v158 + v176
 										continue
 									} else {
 										break
@@ -212,19 +222,19 @@ func F_bbsink_progress_archive_contents(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v144 = v32
-							v151 = int32(0)
-							v154 = v144
+							v148 = v32
+							v155 = int32(0)
+							v158 = v148
 							for {
-								v163 = *(*int32)(unsafe.Add(mBase, uint32(v31+v154<<(uint(int32(2))%32))))
-								v164 = int32(3)
-								v170 = *(*int64)(unsafe.Add(mBase, uint32(v8+v154<<(uint(v164)%32))))
-								*(*int64)(unsafe.Add(mBase, uint32(v65+v163<<(uint(v164)%32)))) = v170
-								v172 = int32(1)
-								v175 = v151 + v172
-								if v175 != v63 {
-									v151 = v175
-									v154 = v154 + v172
+								v167 = *(*int32)(unsafe.Add(mBase, uint32(v31+v158<<(uint(int32(2))%32))))
+								v168 = int32(3)
+								v174 = *(*int64)(unsafe.Add(mBase, uint32(v8+v158<<(uint(v168)%32))))
+								*(*int64)(unsafe.Add(mBase, uint32(v69+v167<<(uint(v168)%32)))) = v174
+								v176 = int32(1)
+								v179 = v155 + v176
+								if v179 != v67 {
+									v155 = v179
+									v158 = v158 + v176
 									continue
 								} else {
 									break
@@ -233,12 +243,14 @@ func F_bbsink_progress_archive_contents(m *base.Module, l0 int32, l1 int32) {
 							}
 						}
 					}
-					v186 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
-					v187 = int32(1)
-					*(*int32)(unsafe.Add(mBase, uint32(v41))) = v186 + v187
-					v190 = int32(_a_F_bbsink_progress_archive_contents_0)
-					v192 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_archive_contents[2]))
-					*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_archive_contents[2])) = v192 - v187
+					v190 = int32(0)
+					v193 = base.AtomicRmwOr32(m, v190, int32(_a_F_bbsink_progress_archive_contents_1), v190)
+					v194 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
+					v195 = int32(1)
+					*(*int32)(unsafe.Add(mBase, uint32(v41))) = v194 + v195
+					v198 = int32(_a_F_bbsink_progress_archive_contents_0)
+					v200 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_archive_contents[2]))
+					*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_archive_contents[2])) = v200 - v195
 				}
 			}
 		}

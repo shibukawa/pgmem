@@ -284,14 +284,18 @@ func F_shared_buffer_readv_stage(m *base.Module, l0 int32, l1 int32) {
 	_ = v118
 	var v120 int64
 	_ = v120
-	var v128 int32
-	_ = v128
-	var v131 int32
-	_ = v131
-	var v133 int32
-	_ = v133
-	var v134 int32
-	_ = v134
+	var v122 int32
+	_ = v122
+	var v125 int32
+	_ = v125
+	var v132 int32
+	_ = v132
+	var v135 int32
+	_ = v135
+	var v137 int32
+	_ = v137
+	var v138 int32
+	_ = v138
 	v8 = m.G0
 	v10 = v8 - int32(48)
 	m.G0 = v10
@@ -406,12 +410,14 @@ L16:
 	*(*int32)(unsafe.Add(mBase, uint32(v117)+8)) = v118
 	v120 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
 	*(*int64)(unsafe.Add(mBase, uint32(v117))) = v120
-	*(*int32)(unsafe.Add(mBase, uint32(v64))) = (v91 + int32(_a_F_shared_buffer_readv_stage_5)) & int32(-4194305)
-	v128 = *(*int32)(unsafe.Add(mBase, _c_F_shared_buffer_readv_stage[3]))
-	F_ResourceOwnerForget(m, v128, v47, int32(_a_F_shared_buffer_readv_stage_6))
+	v122 = int32(0)
+	v125 = base.AtomicRmwOr32(m, v122, int32(_a_F_shared_buffer_readv_stage_5), v122)
+	*(*int32)(unsafe.Add(mBase, uint32(v64))) = (v91 + int32(_a_F_shared_buffer_readv_stage_6)) & int32(-4194305)
+	v132 = *(*int32)(unsafe.Add(mBase, _c_F_shared_buffer_readv_stage[3]))
+	F_ResourceOwnerForget(m, v132, v47, int32(_a_F_shared_buffer_readv_stage_7))
 	mBase = m.M
-	v131 = m.ExcPending
-	if v131 != 0 {
+	v135 = m.ExcPending
+	if v135 != 0 {
 		goto L13
 	} else {
 		goto L27
@@ -466,10 +472,10 @@ L26:
 	goto L18
 L27:
 	;
-	v133 = v41 + int32(1)
-	v134 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+23)))
-	if base.Ui32(v133) < base.Ui32(v134) {
-		v41 = v133
+	v137 = v41 + int32(1)
+	v138 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+23)))
+	if base.Ui32(v137) < base.Ui32(v138) {
+		v41 = v137
 		goto L6
 	} else {
 		goto L28

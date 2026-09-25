@@ -557,10 +557,12 @@ func F_LWLockUpdateVar(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	_ = v246
 	var v253 int32
 	_ = v253
-	var v255 int32
-	_ = v255
-	var v257 int32
-	_ = v257
+	var v256 int32
+	_ = v256
+	var v259 int32
+	_ = v259
+	var v261 int32
+	_ = v261
 	v12 = m.G0
 	v14 = v12 - int32(32)
 	m.G0 = v14
@@ -913,12 +915,13 @@ L56:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v233)+76)) = int64(0)
 	v253 = int32(0)
+	v256 = base.AtomicRmwOr32(m, v253, int32(_a_F_LWLockUpdateVar_3), v253)
 	*(*uint8)(unsafe.Add(mBase, uint32(v233)+74)) = uint8(v253)
-	v255 = *(*int32)(unsafe.Add(mBase, uint32(v233)+12))
-	F_PGSemaphoreUnlock(m, v255)
+	v259 = *(*int32)(unsafe.Add(mBase, uint32(v233)+12))
+	F_PGSemaphoreUnlock(m, v259)
 	mBase = m.M
-	v257 = m.ExcPending
-	if v257 != 0 {
+	v261 = m.ExcPending
+	if v261 != 0 {
 		goto L11
 	} else {
 		goto L57

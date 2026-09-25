@@ -2183,58 +2183,66 @@ func F_lazy_check_wraparound_failsafe(m *base.Module, l0 int32) int32 {
 	_ = v127
 	var v130 int32
 	_ = v130
-	var v225 int32
-	_ = v225
-	var v228 int32
-	_ = v228
-	var v237 int32
-	_ = v237
-	var v238 int32
-	_ = v238
-	var v244 int64
-	_ = v244
-	var v246 int32
-	_ = v246
-	var v249 int32
-	_ = v249
-	var v260 int32
-	_ = v260
-	var v261 int32
-	_ = v261
+	var v134 int32
+	_ = v134
+	var v137 int32
+	_ = v137
+	var v229 int32
+	_ = v229
+	var v232 int32
+	_ = v232
+	var v241 int32
+	_ = v241
+	var v242 int32
+	_ = v242
+	var v248 int64
+	_ = v248
+	var v250 int32
+	_ = v250
+	var v253 int32
+	_ = v253
 	var v264 int32
 	_ = v264
-	var v266 int32
-	_ = v266
-	var v281 int32
-	_ = v281
-	var v282 int32
-	_ = v282
-	var v283 int32
-	_ = v283
-	var v284 int64
-	_ = v284
-	var v285 int32
-	_ = v285
+	var v267 int32
+	_ = v267
+	var v268 int32
+	_ = v268
+	var v269 int32
+	_ = v269
+	var v272 int32
+	_ = v272
+	var v274 int32
+	_ = v274
+	var v289 int32
+	_ = v289
+	var v290 int32
+	_ = v290
 	var v291 int32
 	_ = v291
-	var v295 int32
-	_ = v295
+	var v292 int64
+	_ = v292
+	var v293 int32
+	_ = v293
 	var v299 int32
 	_ = v299
-	var v304 int32
-	_ = v304
-	var v308 int32
-	_ = v308
-	var v314 int32
-	_ = v314
+	var v303 int32
+	_ = v303
+	var v307 int32
+	_ = v307
+	var v312 int32
+	_ = v312
+	var v316 int32
+	_ = v316
+	var v322 int32
+	_ = v322
 	v11 = m.G0
 	v13 = v11 - int32(48)
 	m.G0 = v13
 	v17 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[0])))
 	if v17 != 0 {
-		v314 = int32(1)
+		v322 = int32(1)
 		m.G0 = v13 + int32(48)
-		return v314
+		return v322
 	} else {
 		v20 = *(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[1]))
 		v22 = *(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[2]))
@@ -2268,9 +2276,9 @@ func F_lazy_check_wraparound_failsafe(m *base.Module, l0 int32) int32 {
 			if v55 != 0 {
 				v82 = int32(1)
 				if v82 == int32(0) {
-					v314 = int32(0)
+					v322 = int32(0)
 					m.G0 = v13 + int32(48)
-					return v314
+					return v322
 				} else {
 					v85 = int32(1)
 					*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[0])) = uint8(v85)
@@ -2294,86 +2302,90 @@ func F_lazy_check_wraparound_failsafe(m *base.Module, l0 int32) int32 {
 							*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5])) = v126 + v127
 							v130 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
 							*(*int32)(unsafe.Add(mBase, uint32(v115))) = v130 + v127
-							v225 = int32(0)
-							v228 = v95
+							v134 = int32(0)
+							v137 = base.AtomicRmwOr32(m, v134, int32(_a_F_lazy_check_wraparound_failsafe_1), v134)
+							v229 = int32(0)
+							v232 = v95
 							for {
-								v237 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(40)+v228<<(uint(int32(2))%32))))
-								v238 = int32(3)
-								v244 = *(*int64)(unsafe.Add(mBase, uint32(v13+int32(16)+v228<<(uint(v238)%32))))
-								*(*int64)(unsafe.Add(mBase, uint32(v115+int32(232)+v237<<(uint(v238)%32)))) = v244
-								v246 = int32(1)
-								v249 = v225 + v246
-								if v249 != int32(2) {
-									v225 = v249
-									v228 = v228 + v246
+								v241 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(40)+v232<<(uint(int32(2))%32))))
+								v242 = int32(3)
+								v248 = *(*int64)(unsafe.Add(mBase, uint32(v13+int32(16)+v232<<(uint(v242)%32))))
+								*(*int64)(unsafe.Add(mBase, uint32(v115+int32(232)+v241<<(uint(v242)%32)))) = v248
+								v250 = int32(1)
+								v253 = v229 + v250
+								if v253 != int32(2) {
+									v229 = v253
+									v232 = v232 + v250
 									continue
 								} else {
 									break
 								}
 								break
 							}
-							v260 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
-							v261 = int32(1)
-							*(*int32)(unsafe.Add(mBase, uint32(v115))) = v260 + v261
-							v264 = int32(_a_F_lazy_check_wraparound_failsafe_0)
-							v266 = *(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5]))
-							*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5])) = v266 - v261
+							v264 = int32(0)
+							v267 = base.AtomicRmwOr32(m, v264, int32(_a_F_lazy_check_wraparound_failsafe_1), v264)
+							v268 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
+							v269 = int32(1)
+							*(*int32)(unsafe.Add(mBase, uint32(v115))) = v268 + v269
+							v272 = int32(_a_F_lazy_check_wraparound_failsafe_0)
+							v274 = *(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5]))
+							*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5])) = v274 - v269
 						}
 					}
-					v281 = F_errstart(m, int32(19), int32(0))
+					v289 = F_errstart(m, int32(19), int32(0))
 					mBase = m.M
-					v282 = m.ExcPending
-					if v282 != 0 {
+					v290 = m.ExcPending
+					if v290 != 0 {
 						return int32(0)
 					} else {
-						if v281 != 0 {
-							v283 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
-							v284 = *(*int64)(unsafe.Add(mBase, uint32(l0)+68))
-							v285 = *(*int32)(unsafe.Add(mBase, uint32(l0)+172))
-							*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = v285
-							*(*int64)(unsafe.Add(mBase, uint32(v13))) = v284
-							*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v283
-							F_errmsg(m, int32(_a_F_lazy_check_wraparound_failsafe_1), v13)
+						if v289 != 0 {
+							v291 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
+							v292 = *(*int64)(unsafe.Add(mBase, uint32(l0)+68))
+							v293 = *(*int32)(unsafe.Add(mBase, uint32(l0)+172))
+							*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = v293
+							*(*int64)(unsafe.Add(mBase, uint32(v13))) = v292
+							*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v291
+							F_errmsg(m, int32(_a_F_lazy_check_wraparound_failsafe_2), v13)
 							mBase = m.M
-							v291 = m.ExcPending
-							if v291 != 0 {
+							v299 = m.ExcPending
+							if v299 != 0 {
 								return int32(0)
 							} else {
-								F_errdetail(m, int32(_a_F_lazy_check_wraparound_failsafe_2), int32(0))
+								F_errdetail(m, int32(_a_F_lazy_check_wraparound_failsafe_3), int32(0))
 								mBase = m.M
-								v295 = m.ExcPending
-								if v295 != 0 {
+								v303 = m.ExcPending
+								if v303 != 0 {
 									return int32(0)
 								} else {
-									F_errhint(m, int32(_a_F_lazy_check_wraparound_failsafe_3), int32(0))
+									F_errhint(m, int32(_a_F_lazy_check_wraparound_failsafe_4), int32(0))
 									mBase = m.M
-									v299 = m.ExcPending
-									if v299 != 0 {
+									v307 = m.ExcPending
+									if v307 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_lazy_check_wraparound_failsafe_4), int32(2987), int32(_a_F_lazy_check_wraparound_failsafe_5))
+										F_errfinish(m, int32(_a_F_lazy_check_wraparound_failsafe_5), int32(2987), int32(_a_F_lazy_check_wraparound_failsafe_6))
 										mBase = m.M
-										v304 = m.ExcPending
-										if v304 != 0 {
+										v312 = m.ExcPending
+										if v312 != 0 {
 											return int32(0)
 										} else {
-											v308 = int32(0)
-											*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[6])) = v308
-											*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[7])) = uint8(v308)
-											v314 = v85
+											v316 = int32(0)
+											*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[6])) = v316
+											*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[7])) = uint8(v316)
+											v322 = v85
 											m.G0 = v13 + int32(48)
-											return v314
+											return v322
 										}
 									}
 								}
 							}
 						} else {
-							v308 = int32(0)
-							*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[6])) = v308
-							*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[7])) = uint8(v308)
-							v314 = v85
+							v316 = int32(0)
+							*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[6])) = v316
+							*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[7])) = uint8(v316)
+							v322 = v85
 							m.G0 = v13 + int32(48)
-							return v314
+							return v322
 						}
 					}
 				}
@@ -2401,9 +2413,9 @@ func F_lazy_check_wraparound_failsafe(m *base.Module, l0 int32) int32 {
 					}
 					v82 = int32(base.Ui32(v25-v73) >> (uint(int32(31)) % 32))
 					if v82 == int32(0) {
-						v314 = int32(0)
+						v322 = int32(0)
 						m.G0 = v13 + int32(48)
-						return v314
+						return v322
 					} else {
 						v85 = int32(1)
 						*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[0])) = uint8(v85)
@@ -2427,86 +2439,90 @@ func F_lazy_check_wraparound_failsafe(m *base.Module, l0 int32) int32 {
 								*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5])) = v126 + v127
 								v130 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
 								*(*int32)(unsafe.Add(mBase, uint32(v115))) = v130 + v127
-								v225 = int32(0)
-								v228 = v95
+								v134 = int32(0)
+								v137 = base.AtomicRmwOr32(m, v134, int32(_a_F_lazy_check_wraparound_failsafe_1), v134)
+								v229 = int32(0)
+								v232 = v95
 								for {
-									v237 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(40)+v228<<(uint(int32(2))%32))))
-									v238 = int32(3)
-									v244 = *(*int64)(unsafe.Add(mBase, uint32(v13+int32(16)+v228<<(uint(v238)%32))))
-									*(*int64)(unsafe.Add(mBase, uint32(v115+int32(232)+v237<<(uint(v238)%32)))) = v244
-									v246 = int32(1)
-									v249 = v225 + v246
-									if v249 != int32(2) {
-										v225 = v249
-										v228 = v228 + v246
+									v241 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(40)+v232<<(uint(int32(2))%32))))
+									v242 = int32(3)
+									v248 = *(*int64)(unsafe.Add(mBase, uint32(v13+int32(16)+v232<<(uint(v242)%32))))
+									*(*int64)(unsafe.Add(mBase, uint32(v115+int32(232)+v241<<(uint(v242)%32)))) = v248
+									v250 = int32(1)
+									v253 = v229 + v250
+									if v253 != int32(2) {
+										v229 = v253
+										v232 = v232 + v250
 										continue
 									} else {
 										break
 									}
 									break
 								}
-								v260 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
-								v261 = int32(1)
-								*(*int32)(unsafe.Add(mBase, uint32(v115))) = v260 + v261
-								v264 = int32(_a_F_lazy_check_wraparound_failsafe_0)
-								v266 = *(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5]))
-								*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5])) = v266 - v261
+								v264 = int32(0)
+								v267 = base.AtomicRmwOr32(m, v264, int32(_a_F_lazy_check_wraparound_failsafe_1), v264)
+								v268 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
+								v269 = int32(1)
+								*(*int32)(unsafe.Add(mBase, uint32(v115))) = v268 + v269
+								v272 = int32(_a_F_lazy_check_wraparound_failsafe_0)
+								v274 = *(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5]))
+								*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[5])) = v274 - v269
 							}
 						}
-						v281 = F_errstart(m, int32(19), int32(0))
+						v289 = F_errstart(m, int32(19), int32(0))
 						mBase = m.M
-						v282 = m.ExcPending
-						if v282 != 0 {
+						v290 = m.ExcPending
+						if v290 != 0 {
 							return int32(0)
 						} else {
-							if v281 != 0 {
-								v283 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
-								v284 = *(*int64)(unsafe.Add(mBase, uint32(l0)+68))
-								v285 = *(*int32)(unsafe.Add(mBase, uint32(l0)+172))
-								*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = v285
-								*(*int64)(unsafe.Add(mBase, uint32(v13))) = v284
-								*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v283
-								F_errmsg(m, int32(_a_F_lazy_check_wraparound_failsafe_1), v13)
+							if v289 != 0 {
+								v291 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
+								v292 = *(*int64)(unsafe.Add(mBase, uint32(l0)+68))
+								v293 = *(*int32)(unsafe.Add(mBase, uint32(l0)+172))
+								*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = v293
+								*(*int64)(unsafe.Add(mBase, uint32(v13))) = v292
+								*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v291
+								F_errmsg(m, int32(_a_F_lazy_check_wraparound_failsafe_2), v13)
 								mBase = m.M
-								v291 = m.ExcPending
-								if v291 != 0 {
+								v299 = m.ExcPending
+								if v299 != 0 {
 									return int32(0)
 								} else {
-									F_errdetail(m, int32(_a_F_lazy_check_wraparound_failsafe_2), int32(0))
+									F_errdetail(m, int32(_a_F_lazy_check_wraparound_failsafe_3), int32(0))
 									mBase = m.M
-									v295 = m.ExcPending
-									if v295 != 0 {
+									v303 = m.ExcPending
+									if v303 != 0 {
 										return int32(0)
 									} else {
-										F_errhint(m, int32(_a_F_lazy_check_wraparound_failsafe_3), int32(0))
+										F_errhint(m, int32(_a_F_lazy_check_wraparound_failsafe_4), int32(0))
 										mBase = m.M
-										v299 = m.ExcPending
-										if v299 != 0 {
+										v307 = m.ExcPending
+										if v307 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_lazy_check_wraparound_failsafe_4), int32(2987), int32(_a_F_lazy_check_wraparound_failsafe_5))
+											F_errfinish(m, int32(_a_F_lazy_check_wraparound_failsafe_5), int32(2987), int32(_a_F_lazy_check_wraparound_failsafe_6))
 											mBase = m.M
-											v304 = m.ExcPending
-											if v304 != 0 {
+											v312 = m.ExcPending
+											if v312 != 0 {
 												return int32(0)
 											} else {
-												v308 = int32(0)
-												*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[6])) = v308
-												*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[7])) = uint8(v308)
-												v314 = v85
+												v316 = int32(0)
+												*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[6])) = v316
+												*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[7])) = uint8(v316)
+												v322 = v85
 												m.G0 = v13 + int32(48)
-												return v314
+												return v322
 											}
 										}
 									}
 								}
 							} else {
-								v308 = int32(0)
-								*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[6])) = v308
-								*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[7])) = uint8(v308)
-								v314 = v85
+								v316 = int32(0)
+								*(*int32)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[6])) = v316
+								*(*uint8)(unsafe.Add(mBase, _c_F_lazy_check_wraparound_failsafe[7])) = uint8(v316)
+								v322 = v85
 								m.G0 = v13 + int32(48)
-								return v314
+								return v322
 							}
 						}
 					}

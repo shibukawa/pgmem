@@ -437,39 +437,49 @@ func F_CheckArchiveTimeout(m *base.Module) {
 func F_CheckDeadLockAlert(m *base.Module) {
 	mBase := m.M
 	_ = mBase
+	var v1 int32
+	_ = v1
 	var v3 int32
 	_ = v3
 	var v8 int32
 	_ = v8
-	var v9 int32
-	_ = v9
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
 	var v19 int32
 	_ = v19
-	var v21 int32
-	_ = v21
+	var v20 int32
+	_ = v20
 	var v23 int32
 	_ = v23
-	var v26 int32
-	_ = v26
+	var v27 int32
+	_ = v27
 	var v29 int32
 	_ = v29
-	var v33 int32
-	_ = v33
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
 	var v37 int32
 	_ = v37
 	var v41 int32
 	_ = v41
+	var v45 int32
+	_ = v45
 	var v49 int32
 	_ = v49
+	var v57 int32
+	_ = v57
+	v1 = int32(0)
 	v3 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[1])) = int32(1)
 	v8 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[2]))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-	if v9 != 0 {
+	v12 = base.AtomicRmwOr32(m, v1, int32(_a_F_CheckDeadLockAlert_0), v1)
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+	if v13 != 0 {
 		goto L2
 	} else {
 		goto L3
@@ -484,35 +494,37 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(1)
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
-	if v12 == int32(0) {
+	v16 = int32(0)
+	v19 = base.AtomicRmwOr32(m, v16, int32(_a_F_CheckDeadLockAlert_0), v16)
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+	if v20 == v16 {
 		goto L2
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
-	if v15 == int32(0) {
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
+	if v23 == int32(0) {
 		goto L2
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[3]))
-	if v19 == v15 {
+	v27 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[3]))
+	if v27 == v23 {
 		goto L6
 	} else {
 		goto L7
 	}
 L6:
 	;
-	v21 = m.G0
-	v23 = v21 - int32(16)
-	m.G0 = v23
-	v26 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[4]))
-	if v26 == int32(0) {
+	v29 = m.G0
+	v31 = v29 - int32(16)
+	m.G0 = v31
+	v34 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[4]))
+	if v34 == int32(0) {
 		goto L9
 	} else {
 		goto L10
@@ -522,24 +534,24 @@ L7:
 	goto L8
 L8:
 	;
-	v49 = F_pgmem_kill(m, v15, int32(23))
+	v57 = F_pgmem_kill(m, v23, int32(23))
 	mBase = m.M
 	goto L2
 L9:
 	;
-	m.G0 = v23 + int32(16)
+	m.G0 = v31 + int32(16)
 	goto L1
 L10:
 	;
-	v29 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v23)+15)) = uint8(v29)
+	v37 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v31)+15)) = uint8(v37)
 	goto L11
 L11:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[5]))
-	v37 = F_write(m, v33, v23+int32(15), int32(1))
+	v41 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[5]))
+	v45 = F_write(m, v41, v31+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v37 {
+	if int32(0) <= v45 {
 		goto L9
 	} else {
 		goto L13
@@ -549,8 +561,8 @@ L12:
 	goto L9
 L13:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[0]))
-	if v41 == int32(27) {
+	v49 = *(*int32)(unsafe.Add(mBase, _c_F_CheckDeadLockAlert[0]))
+	if v49 == int32(27) {
 		goto L11
 	} else {
 		goto L14
@@ -1957,30 +1969,36 @@ func F_ConditionVariableSignal(m *base.Module, l0 int32) {
 	_ = v49
 	var v53 int32
 	_ = v53
-	var v54 int32
-	_ = v54
 	var v57 int32
 	_ = v57
-	var v60 int32
-	_ = v60
+	var v58 int32
+	_ = v58
+	var v61 int32
+	_ = v61
 	var v64 int32
 	_ = v64
-	var v66 int32
-	_ = v66
+	var v65 int32
+	_ = v65
 	var v68 int32
 	_ = v68
-	var v71 int32
-	_ = v71
+	var v72 int32
+	_ = v72
 	var v74 int32
 	_ = v74
-	var v78 int32
-	_ = v78
+	var v76 int32
+	_ = v76
+	var v79 int32
+	_ = v79
 	var v82 int32
 	_ = v82
 	var v86 int32
 	_ = v86
+	var v90 int32
+	_ = v90
 	var v94 int32
 	_ = v94
+	var v102 int32
+	_ = v102
 	v8 = base.AtomicRmwXchg32(m, l0, int32(0), int32(1))
 	if v8 != 0 {
 		goto L1
@@ -2061,8 +2079,9 @@ L13:
 	v49 = int32(0)
 	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v49))
 	v53 = v25 + int32(20)
-	v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
-	if v54 != 0 {
+	v57 = base.AtomicRmwOr32(m, v49, int32(_a_F_ConditionVariableSignal_2), v49)
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
+	if v58 != 0 {
 		goto L18
 	} else {
 		goto L19
@@ -2089,35 +2108,37 @@ L18:
 L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v53))) = int32(1)
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v53)+4))
-	if v57 == int32(0) {
+	v61 = int32(0)
+	v64 = base.AtomicRmwOr32(m, v61, int32(_a_F_ConditionVariableSignal_2), v61)
+	v65 = *(*int32)(unsafe.Add(mBase, uint32(v53)+4))
+	if v65 == v61 {
 		goto L18
 	} else {
 		goto L20
 	}
 L20:
 	;
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(v53)+12))
-	if v60 == int32(0) {
+	v68 = *(*int32)(unsafe.Add(mBase, uint32(v53)+12))
+	if v68 == int32(0) {
 		goto L18
 	} else {
 		goto L21
 	}
 L21:
 	;
-	v64 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableSignal[1]))
-	if v64 == v60 {
+	v72 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableSignal[1]))
+	if v72 == v68 {
 		goto L22
 	} else {
 		goto L23
 	}
 L22:
 	;
-	v66 = m.G0
-	v68 = v66 - int32(16)
-	m.G0 = v68
-	v71 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableSignal[2]))
-	if v71 == int32(0) {
+	v74 = m.G0
+	v76 = v74 - int32(16)
+	m.G0 = v76
+	v79 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableSignal[2]))
+	if v79 == int32(0) {
 		goto L25
 	} else {
 		goto L26
@@ -2127,24 +2148,24 @@ L23:
 	goto L24
 L24:
 	;
-	v94 = F_pgmem_kill(m, v60, int32(23))
+	v102 = F_pgmem_kill(m, v68, int32(23))
 	mBase = m.M
 	goto L18
 L25:
 	;
-	m.G0 = v68 + int32(16)
+	m.G0 = v76 + int32(16)
 	goto L17
 L26:
 	;
-	v74 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v68)+15)) = uint8(v74)
+	v82 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v76)+15)) = uint8(v82)
 	goto L27
 L27:
 	;
-	v78 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableSignal[3]))
-	v82 = F_write(m, v78, v68+int32(15), int32(1))
+	v86 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableSignal[3]))
+	v90 = F_write(m, v86, v76+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v82 {
+	if int32(0) <= v90 {
 		goto L25
 	} else {
 		goto L29
@@ -2154,8 +2175,8 @@ L28:
 	goto L25
 L29:
 	;
-	v86 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableSignal[4]))
-	if v86 == int32(27) {
+	v94 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableSignal[4]))
+	if v94 == int32(27) {
 		goto L27
 	} else {
 		goto L30

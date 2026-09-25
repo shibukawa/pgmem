@@ -4453,14 +4453,18 @@ func F_ApplyLauncherMain(m *base.Module, l0 int32) {
 	_ = v511
 	var v517 int32
 	_ = v517
-	var v521 int32
-	_ = v521
+	var v518 int32
+	_ = v518
+	var v523 int32
+	_ = v523
 	var v525 int32
 	_ = v525
-	var v527 int32
-	_ = v527
-	var v535 int32
-	_ = v535
+	var v529 int32
+	_ = v529
+	var v531 int32
+	_ = v531
+	var v539 int32
+	_ = v539
 	v15 = m.G0
 	v17 = v15 - int32(16)
 	m.G0 = v17
@@ -5302,8 +5306,8 @@ L110:
 	}
 L111:
 	;
-	v527 = *(*int32)(unsafe.Add(mBase, _c_F_ApplyLauncherMain[14]))
-	if v527 == int32(0) {
+	v531 = *(*int32)(unsafe.Add(mBase, _c_F_ApplyLauncherMain[14]))
+	if v531 == int32(0) {
 		goto L36
 	} else {
 		goto L117
@@ -5318,12 +5322,14 @@ L112:
 L113:
 	;
 	v517 = *(*int32)(unsafe.Add(mBase, _c_F_ApplyLauncherMain[13]))
-	*(*int32)(unsafe.Add(mBase, uint32(v517))) = int32(0)
+	v518 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v517))) = v518
+	v523 = base.AtomicRmwOr32(m, v518, int32(_a_F_ApplyLauncherMain_15), v518)
 	goto L114
 L114:
 	;
-	v521 = *(*int32)(unsafe.Add(mBase, _c_F_ApplyLauncherMain[6]))
-	if v521 == int32(0) {
+	v525 = *(*int32)(unsafe.Add(mBase, _c_F_ApplyLauncherMain[6]))
+	if v525 == int32(0) {
 		goto L111
 	} else {
 		goto L115
@@ -5332,8 +5338,8 @@ L115:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v525 = m.ExcPending
-	if v525 != 0 {
+	v529 = m.ExcPending
+	if v529 != 0 {
 		goto L1
 	} else {
 		goto L116
@@ -5346,8 +5352,8 @@ L117:
 	*(*int32)(unsafe.Add(mBase, _c_F_ApplyLauncherMain[14])) = int32(0)
 	F_ProcessConfigFile(m, int32(2))
 	mBase = m.M
-	v535 = m.ExcPending
-	if v535 != 0 {
+	v539 = m.ExcPending
+	if v539 != 0 {
 		goto L1
 	} else {
 		goto L118

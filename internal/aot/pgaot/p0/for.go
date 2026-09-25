@@ -415,26 +415,30 @@ func F_WaitForParallelWorkersToFinish(m *base.Module, l0 int32) {
 	_ = v102
 	var v104 int32
 	_ = v104
-	var v114 int32
-	_ = v114
-	var v119 int32
-	_ = v119
-	var v120 int32
-	_ = v120
-	var v121 int64
-	_ = v121
-	var v123 int64
+	var v105 int32
+	_ = v105
+	var v110 int32
+	_ = v110
+	var v118 int32
+	_ = v118
+	var v123 int32
 	_ = v123
-	var v134 int32
-	_ = v134
-	var v137 int32
-	_ = v137
+	var v124 int32
+	_ = v124
+	var v125 int64
+	_ = v125
+	var v127 int64
+	_ = v127
+	var v138 int32
+	_ = v138
 	var v141 int32
 	_ = v141
 	var v145 int32
 	_ = v145
-	var v150 int32
-	_ = v150
+	var v149 int32
+	_ = v149
+	var v154 int32
+	_ = v154
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
@@ -443,8 +447,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v134 = m.ExcPending
-	if v134 != 0 {
+	v138 = m.ExcPending
+	if v138 != 0 {
 		goto L7
 	} else {
 		goto L37
@@ -459,8 +463,8 @@ L2:
 	}
 L3:
 	;
-	v114 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	if v114 == int32(0) {
+	v118 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+	if v118 == int32(0) {
 		goto L33
 	} else {
 		goto L34
@@ -643,7 +647,9 @@ L30:
 L31:
 	;
 	v104 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForParallelWorkersToFinish[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v104))) = int32(0)
+	v105 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v104))) = v105
+	v110 = base.AtomicRmwOr32(m, v105, int32(_a_F_WaitForParallelWorkersToFinish_0), v105)
 	goto L32
 L32:
 	;
@@ -654,63 +660,63 @@ L33:
 	return
 L34:
 	;
-	v119 = F_shm_toc_lookup(m, v114, int64(-65535), int32(0))
+	v123 = F_shm_toc_lookup(m, v118, int64(-65535), int32(0))
 	mBase = m.M
-	v120 = m.ExcPending
-	if v120 != 0 {
+	v124 = m.ExcPending
+	if v124 != 0 {
 		goto L7
 	} else {
 		goto L35
 	}
 L35:
 	;
-	v121 = *(*int64)(unsafe.Add(mBase, uint32(v119)+72))
-	v123 = *(*int64)(unsafe.Add(mBase, _c_F_WaitForParallelWorkersToFinish[2]))
-	if base.Ui64(v121) <= base.Ui64(v123) {
+	v125 = *(*int64)(unsafe.Add(mBase, uint32(v123)+72))
+	v127 = *(*int64)(unsafe.Add(mBase, _c_F_WaitForParallelWorkersToFinish[2]))
+	if base.Ui64(v125) <= base.Ui64(v127) {
 		goto L33
 	} else {
 		goto L36
 	}
 L36:
 	;
-	*(*int64)(unsafe.Add(mBase, _c_F_WaitForParallelWorkersToFinish[2])) = v121
+	*(*int64)(unsafe.Add(mBase, _c_F_WaitForParallelWorkersToFinish[2])) = v125
 	goto L33
 L37:
 	;
 	F_errcode(m, int32(325))
 	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
+	v141 = m.ExcPending
+	if v141 != 0 {
 		goto L7
 	} else {
 		goto L38
 	}
 L38:
 	;
-	F_errmsg(m, int32(_a_F_WaitForParallelWorkersToFinish_0), int32(0))
+	F_errmsg(m, int32(_a_F_WaitForParallelWorkersToFinish_1), int32(0))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v145 = m.ExcPending
+	if v145 != 0 {
 		goto L7
 	} else {
 		goto L39
 	}
 L39:
 	;
-	F_errhint(m, int32(_a_F_WaitForParallelWorkersToFinish_1), int32(0))
+	F_errhint(m, int32(_a_F_WaitForParallelWorkersToFinish_2), int32(0))
 	mBase = m.M
-	v145 = m.ExcPending
-	if v145 != 0 {
+	v149 = m.ExcPending
+	if v149 != 0 {
 		goto L7
 	} else {
 		goto L40
 	}
 L40:
 	;
-	F_errfinish(m, int32(_a_F_WaitForParallelWorkersToFinish_2), int32(879), int32(_a_F_WaitForParallelWorkersToFinish_3))
+	F_errfinish(m, int32(_a_F_WaitForParallelWorkersToFinish_3), int32(879), int32(_a_F_WaitForParallelWorkersToFinish_4))
 	mBase = m.M
-	v150 = m.ExcPending
-	if v150 != 0 {
+	v154 = m.ExcPending
+	if v154 != 0 {
 		goto L7
 	} else {
 		goto L41

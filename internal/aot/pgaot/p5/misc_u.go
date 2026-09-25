@@ -138,6 +138,10 @@ func F_UnlockBuffers(m *base.Module) {
 	_ = v71
 	var v72 int32
 	_ = v72
+	var v73 int32
+	_ = v73
+	var v76 int32
+	_ = v76
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
@@ -284,8 +288,10 @@ L24:
 	goto L25
 L25:
 	;
+	v73 = int32(0)
+	v76 = base.AtomicRmwOr32(m, v73, int32(_a_F_UnlockBuffers_5), v73)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = v72 & int32(-4194305)
-	*(*int32)(unsafe.Add(mBase, _c_F_UnlockBuffers[0])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_UnlockBuffers[0])) = v73
 	goto L3
 L26:
 	;

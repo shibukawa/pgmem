@@ -355,14 +355,24 @@ func F_ExecutorStart(m *base.Module, l0 int32, l1 int32) {
 	_ = v27
 	var v30 int32
 	_ = v30
-	var v41 int32
-	_ = v41
-	var v46 int32
-	_ = v46
-	var v48 int32
-	_ = v48
-	var v50 int32
-	_ = v50
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v49 int32
+	_ = v49
+	var v54 int32
+	_ = v54
+	var v56 int32
+	_ = v56
+	var v58 int32
+	_ = v58
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v5 = *(*int64)(unsafe.Add(mBase, uint32(v4)+8))
 	v9 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[0]))
@@ -380,19 +390,24 @@ func F_ExecutorStart(m *base.Module, l0 int32, l1 int32) {
 				*(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2])) = v26 + v27
 				v30 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
 				*(*int32)(unsafe.Add(mBase, uint32(v9))) = v30 + v27
+				v34 = int32(0)
+				v36 = int32(_a_F_ExecutorStart_1)
+				v37 = base.AtomicRmwOr32(m, v34, v36, v34)
 				*(*int64)(unsafe.Add(mBase, uint32(v9)+392)) = v5
-				*(*int32)(unsafe.Add(mBase, uint32(v9))) = v30 + int32(2)
-				v41 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2]))
-				*(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2])) = v41 - v27
+				v42 = base.AtomicRmwOr32(m, v34, v36, v34)
+				v43 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
+				*(*int32)(unsafe.Add(mBase, uint32(v9))) = v43 + v27
+				v49 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2]))
+				*(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[2])) = v49 - v27
 			}
 		}
 	}
-	v46 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[3]))
-	if v46 != 0 {
-		m.T0[v46].(func(*base.Module, int32, int32))(m, l0, l1)
+	v54 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorStart[3]))
+	if v54 != 0 {
+		m.T0[v54].(func(*base.Module, int32, int32))(m, l0, l1)
 		mBase = m.M
-		v48 = m.ExcPending
-		if v48 != 0 {
+		v56 = m.ExcPending
+		if v56 != 0 {
 			return
 		} else {
 			return
@@ -400,8 +415,8 @@ func F_ExecutorStart(m *base.Module, l0 int32, l1 int32) {
 	} else {
 		F_standard_ExecutorStart(m, l0, l1)
 		mBase = m.M
-		v50 = m.ExcPending
-		if v50 != 0 {
+		v58 = m.ExcPending
+		if v58 != 0 {
 			return
 		} else {
 			return

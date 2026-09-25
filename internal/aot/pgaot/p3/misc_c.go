@@ -2004,52 +2004,56 @@ func F_ConditionVariableTimedSleep(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v52
 	var v54 int32
 	_ = v54
-	var v59 int32
-	_ = v59
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v67 int32
-	_ = v67
+	var v55 int32
+	_ = v55
+	var v60 int32
+	_ = v60
+	var v63 int32
+	_ = v63
 	var v68 int32
 	_ = v68
-	var v70 int32
-	_ = v70
-	var v73 int32
-	_ = v73
+	var v69 int32
+	_ = v69
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
 	var v74 int32
 	_ = v74
-	var v75 int32
-	_ = v75
-	var v76 int32
-	_ = v76
-	var v84 int32
-	_ = v84
-	var v85 int32
-	_ = v85
-	var v94 int32
-	_ = v94
-	var v95 int32
-	_ = v95
+	var v77 int32
+	_ = v77
+	var v78 int32
+	_ = v78
+	var v79 int32
+	_ = v79
+	var v80 int32
+	_ = v80
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
+	var v98 int32
+	_ = v98
 	var v99 int32
 	_ = v99
-	var v101 int32
-	_ = v101
 	var v103 int32
 	_ = v103
 	var v105 int32
 	_ = v105
+	var v107 int32
+	_ = v107
 	var v109 int32
 	_ = v109
-	var v112 int64
-	_ = v112
-	var v113 int64
+	var v113 int32
 	_ = v113
-	var v122 int32
-	_ = v122
-	var v131 int32
-	_ = v131
+	var v116 int64
+	_ = v116
+	var v117 int64
+	_ = v117
+	var v126 int32
+	_ = v126
+	var v135 int32
+	_ = v135
 	v12 = m.G0
 	v14 = v12 - int32(16)
 	m.G0 = v14
@@ -2062,7 +2066,7 @@ func F_ConditionVariableTimedSleep(m *base.Module, l0 int32, l1 int32, l2 int32)
 L1:
 	;
 	m.G0 = v14 + int32(16)
-	return v131
+	return v135
 L2:
 	;
 	F_ConditionVariablePrepareToSleep(m, l0)
@@ -2089,7 +2093,7 @@ L5:
 	return int32(0)
 L6:
 	;
-	v131 = int32(0)
+	v135 = int32(0)
 	goto L1
 L7:
 	;
@@ -2127,27 +2131,29 @@ L11:
 	}
 L12:
 	;
-	v131 = int32(0)
+	v135 = int32(0)
 	goto L1
 L13:
 	;
 	v54 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v54))) = int32(0)
+	v55 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v54))) = v55
+	v60 = base.AtomicRmwOr32(m, v55, int32(_a_F_ConditionVariableTimedSleep_0), v55)
 	goto L14
 L14:
 	;
-	v59 = base.AtomicRmwXchg32(m, l0, int32(0), int32(1))
-	if v59 != 0 {
+	v63 = base.AtomicRmwXchg32(m, l0, int32(0), int32(1))
+	if v63 != 0 {
 		goto L15
 	} else {
 		goto L16
 	}
 L15:
 	;
-	F_s_lock(m, l0, int32(_a_F_ConditionVariableTimedSleep_0), int32(183), int32(_a_F_ConditionVariableTimedSleep_1))
+	F_s_lock(m, l0, int32(_a_F_ConditionVariableTimedSleep_1), int32(183), int32(_a_F_ConditionVariableTimedSleep_2))
 	mBase = m.M
-	v64 = m.ExcPending
-	if v64 != 0 {
+	v68 = m.ExcPending
+	if v68 != 0 {
 		goto L5
 	} else {
 		goto L18
@@ -2157,14 +2163,14 @@ L16:
 	goto L17
 L17:
 	;
-	v65 = int32(0)
-	v67 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[2]))
-	v68 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
-	v70 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[3]))
-	v73 = v68 + v70*int32(640)
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(v73)+88))
-	if v74 != 0 {
-		v94 = v65
+	v69 = int32(0)
+	v71 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[2]))
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(v71)))
+	v74 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[3]))
+	v77 = v72 + v74*int32(640)
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+88))
+	if v78 != 0 {
+		v98 = v69
 		goto L19
 	} else {
 		goto L20
@@ -2174,58 +2180,58 @@ L18:
 	goto L17
 L19:
 	;
-	v95 = int32(0)
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v95))
-	v99 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[4]))
-	if v99 != 0 {
+	v99 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v99))
+	v103 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[4]))
+	if v103 != 0 {
 		goto L26
 	} else {
 		goto L27
 	}
 L20:
 	;
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v73)+84))
-	if v75 != 0 {
-		v94 = v65
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v77)+84))
+	if v79 != 0 {
+		v98 = v69
 		goto L19
 	} else {
 		goto L21
 	}
 L21:
 	;
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if v76 == int32(-1) {
+	v80 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v80 == int32(-1) {
 		goto L23
 	} else {
 		goto L24
 	}
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v70
-	v94 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v74
+	v98 = int32(1)
 	goto L19
 L23:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(v73)+84)) = int64(-1)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v70
+	*(*int64)(unsafe.Add(mBase, uint32(v77)+84)) = int64(-1)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v74
 	goto L22
 L24:
 	;
 	goto L25
 L25:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v73)+88)) = v76
-	v84 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[2]))
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
-	*(*int32)(unsafe.Add(mBase, uint32(v85+v76*int32(640))+84)) = v70
-	*(*int32)(unsafe.Add(mBase, uint32(v73)+84)) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+88)) = v80
+	v88 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[2]))
+	v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)))
+	*(*int32)(unsafe.Add(mBase, uint32(v89+v80*int32(640))+84)) = v74
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+84)) = int32(-1)
 	goto L22
 L26:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
+	v105 = m.ExcPending
+	if v105 != 0 {
 		goto L5
 	} else {
 		goto L29
@@ -2235,9 +2241,9 @@ L27:
 	goto L28
 L28:
 	;
-	v103 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[0]))
-	v105 = v94 | base.B2i32(l0 != v103)
-	if v105|v24 == int32(0) {
+	v107 = *(*int32)(unsafe.Add(mBase, _c_F_ConditionVariableTimedSleep[0]))
+	v109 = v98 | base.B2i32(l0 != v107)
+	if v109|v24 == int32(0) {
 		goto L30
 	} else {
 		goto L31
@@ -2247,14 +2253,14 @@ L29:
 	goto L28
 L30:
 	;
-	v109 = int32(1)
-	F___clock_gettime(m, v109, v14)
+	v113 = int32(1)
+	F___clock_gettime(m, v113, v14)
 	mBase = m.M
-	v112 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+8)))
-	v113 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
-	v122 = l1 - base.I32_trunc_sat_f64_s(base.F64_div(base.F64_convert_i64_s(v112+(v113*int64(1000000000)+v36)), float64(1e+06)))
-	if int32(0) < v122 {
-		v46 = v122
+	v116 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+8)))
+	v117 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
+	v126 = l1 - base.I32_trunc_sat_f64_s(base.F64_div(base.F64_convert_i64_s(v116+(v117*int64(1000000000)+v36)), float64(1e+06)))
+	if int32(0) < v126 {
+		v46 = v126
 		goto L11
 	} else {
 		goto L33
@@ -2264,14 +2270,14 @@ L31:
 	goto L32
 L32:
 	;
-	if v105 == int32(0) {
+	if v109 == int32(0) {
 		goto L11
 	} else {
 		goto L34
 	}
 L33:
 	;
-	v131 = v109
+	v135 = v113
 	goto L1
 L34:
 	;
@@ -2358,14 +2364,22 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 	_ = v96
 	var v99 int32
 	_ = v99
-	var v107 int32
-	_ = v107
-	var v113 int32
-	_ = v113
-	var v117 int32
-	_ = v117
-	var v118 int32
-	_ = v118
+	var v103 int32
+	_ = v103
+	var v105 int32
+	_ = v105
+	var v106 int32
+	_ = v106
+	var v114 int32
+	_ = v114
+	var v115 int32
+	_ = v115
+	var v121 int32
+	_ = v121
+	var v125 int32
+	_ = v125
+	var v126 int32
+	_ = v126
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	switch v5 {
@@ -2399,18 +2413,22 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 							*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v95 + v96
 							v99 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
 							*(*int32)(unsafe.Add(mBase, uint32(v84))) = v99 + v96
-							*(*int64)(unsafe.Add(mBase, uint32(v84+int32(0))+232)) = v79
-							v107 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
-							*(*int32)(unsafe.Add(mBase, uint32(v84))) = v107 + v96
-							v113 = *(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2]))
-							*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v113 - v96
+							v103 = int32(0)
+							v105 = int32(_a_F_CopySendEndOfRow_1)
+							v106 = base.AtomicRmwOr32(m, v103, v105, v103)
+							*(*int64)(unsafe.Add(mBase, uint32(v84+v103)+232)) = v79
+							v114 = base.AtomicRmwOr32(m, v103, v105, v103)
+							v115 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
+							*(*int32)(unsafe.Add(mBase, uint32(v84))) = v115 + v96
+							v121 = *(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2]))
+							*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v121 - v96
 						}
 					}
-					v117 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
-					v118 = int32(0)
-					*(*uint8)(unsafe.Add(mBase, uint32(v117))) = uint8(v118)
-					*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v118
-					*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v118
+					v125 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
+					v126 = int32(0)
+					*(*uint8)(unsafe.Add(mBase, uint32(v125))) = uint8(v126)
+					*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v126
+					*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v126
 					return
 				} else {
 					v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+40)))
@@ -2436,13 +2454,13 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 									if v39 != 0 {
 										return
 									} else {
-										F_errmsg(m, int32(_a_F_CopySendEndOfRow_1), int32(0))
+										F_errmsg(m, int32(_a_F_CopySendEndOfRow_2), int32(0))
 										mBase = m.M
 										v43 = m.ExcPending
 										if v43 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(_a_F_CopySendEndOfRow_2), int32(477), int32(_a_F_CopySendEndOfRow_3))
+											F_errfinish(m, int32(_a_F_CopySendEndOfRow_3), int32(477), int32(_a_F_CopySendEndOfRow_4))
 											mBase = m.M
 											v48 = m.ExcPending
 											if v48 != 0 {
@@ -2469,13 +2487,13 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 								if v39 != 0 {
 									return
 								} else {
-									F_errmsg(m, int32(_a_F_CopySendEndOfRow_1), int32(0))
+									F_errmsg(m, int32(_a_F_CopySendEndOfRow_2), int32(0))
 									mBase = m.M
 									v43 = m.ExcPending
 									if v43 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_CopySendEndOfRow_2), int32(477), int32(_a_F_CopySendEndOfRow_3))
+										F_errfinish(m, int32(_a_F_CopySendEndOfRow_3), int32(477), int32(_a_F_CopySendEndOfRow_4))
 										mBase = m.M
 										v48 = m.ExcPending
 										if v48 != 0 {
@@ -2502,13 +2520,13 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 							if v54 != 0 {
 								return
 							} else {
-								F_errmsg(m, int32(_a_F_CopySendEndOfRow_4), int32(0))
+								F_errmsg(m, int32(_a_F_CopySendEndOfRow_5), int32(0))
 								mBase = m.M
 								v58 = m.ExcPending
 								if v58 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_CopySendEndOfRow_2), int32(482), int32(_a_F_CopySendEndOfRow_3))
+									F_errfinish(m, int32(_a_F_CopySendEndOfRow_3), int32(482), int32(_a_F_CopySendEndOfRow_4))
 									mBase = m.M
 									v63 = m.ExcPending
 									if v63 != 0 {
@@ -2547,13 +2565,13 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 								if v39 != 0 {
 									return
 								} else {
-									F_errmsg(m, int32(_a_F_CopySendEndOfRow_1), int32(0))
+									F_errmsg(m, int32(_a_F_CopySendEndOfRow_2), int32(0))
 									mBase = m.M
 									v43 = m.ExcPending
 									if v43 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_CopySendEndOfRow_2), int32(477), int32(_a_F_CopySendEndOfRow_3))
+										F_errfinish(m, int32(_a_F_CopySendEndOfRow_3), int32(477), int32(_a_F_CopySendEndOfRow_4))
 										mBase = m.M
 										v48 = m.ExcPending
 										if v48 != 0 {
@@ -2580,13 +2598,13 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 							if v39 != 0 {
 								return
 							} else {
-								F_errmsg(m, int32(_a_F_CopySendEndOfRow_1), int32(0))
+								F_errmsg(m, int32(_a_F_CopySendEndOfRow_2), int32(0))
 								mBase = m.M
 								v43 = m.ExcPending
 								if v43 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_CopySendEndOfRow_2), int32(477), int32(_a_F_CopySendEndOfRow_3))
+									F_errfinish(m, int32(_a_F_CopySendEndOfRow_3), int32(477), int32(_a_F_CopySendEndOfRow_4))
 									mBase = m.M
 									v48 = m.ExcPending
 									if v48 != 0 {
@@ -2613,13 +2631,13 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 						if v54 != 0 {
 							return
 						} else {
-							F_errmsg(m, int32(_a_F_CopySendEndOfRow_4), int32(0))
+							F_errmsg(m, int32(_a_F_CopySendEndOfRow_5), int32(0))
 							mBase = m.M
 							v58 = m.ExcPending
 							if v58 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_CopySendEndOfRow_2), int32(482), int32(_a_F_CopySendEndOfRow_3))
+								F_errfinish(m, int32(_a_F_CopySendEndOfRow_3), int32(482), int32(_a_F_CopySendEndOfRow_4))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
@@ -2662,18 +2680,22 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 					*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v95 + v96
 					v99 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
 					*(*int32)(unsafe.Add(mBase, uint32(v84))) = v99 + v96
-					*(*int64)(unsafe.Add(mBase, uint32(v84+int32(0))+232)) = v79
-					v107 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
-					*(*int32)(unsafe.Add(mBase, uint32(v84))) = v107 + v96
-					v113 = *(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2]))
-					*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v113 - v96
+					v103 = int32(0)
+					v105 = int32(_a_F_CopySendEndOfRow_1)
+					v106 = base.AtomicRmwOr32(m, v103, v105, v103)
+					*(*int64)(unsafe.Add(mBase, uint32(v84+v103)+232)) = v79
+					v114 = base.AtomicRmwOr32(m, v103, v105, v103)
+					v115 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
+					*(*int32)(unsafe.Add(mBase, uint32(v84))) = v115 + v96
+					v121 = *(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2]))
+					*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v121 - v96
 				}
 			}
-			v117 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
-			v118 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, uint32(v117))) = uint8(v118)
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v118
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v118
+			v125 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
+			v126 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v125))) = uint8(v126)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v126
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v126
 			return
 		}
 	case 2:
@@ -2702,18 +2724,22 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 					*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v95 + v96
 					v99 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
 					*(*int32)(unsafe.Add(mBase, uint32(v84))) = v99 + v96
-					*(*int64)(unsafe.Add(mBase, uint32(v84+int32(0))+232)) = v79
-					v107 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
-					*(*int32)(unsafe.Add(mBase, uint32(v84))) = v107 + v96
-					v113 = *(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2]))
-					*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v113 - v96
+					v103 = int32(0)
+					v105 = int32(_a_F_CopySendEndOfRow_1)
+					v106 = base.AtomicRmwOr32(m, v103, v105, v103)
+					*(*int64)(unsafe.Add(mBase, uint32(v84+v103)+232)) = v79
+					v114 = base.AtomicRmwOr32(m, v103, v105, v103)
+					v115 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
+					*(*int32)(unsafe.Add(mBase, uint32(v84))) = v115 + v96
+					v121 = *(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2]))
+					*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v121 - v96
 				}
 			}
-			v117 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
-			v118 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, uint32(v117))) = uint8(v118)
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v118
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v118
+			v125 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
+			v126 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v125))) = uint8(v126)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v126
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v126
 			return
 		}
 	default:
@@ -2733,18 +2759,22 @@ func F_CopySendEndOfRow(m *base.Module, l0 int32) {
 				*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v95 + v96
 				v99 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
 				*(*int32)(unsafe.Add(mBase, uint32(v84))) = v99 + v96
-				*(*int64)(unsafe.Add(mBase, uint32(v84+int32(0))+232)) = v79
-				v107 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
-				*(*int32)(unsafe.Add(mBase, uint32(v84))) = v107 + v96
-				v113 = *(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2]))
-				*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v113 - v96
+				v103 = int32(0)
+				v105 = int32(_a_F_CopySendEndOfRow_1)
+				v106 = base.AtomicRmwOr32(m, v103, v105, v103)
+				*(*int64)(unsafe.Add(mBase, uint32(v84+v103)+232)) = v79
+				v114 = base.AtomicRmwOr32(m, v103, v105, v103)
+				v115 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
+				*(*int32)(unsafe.Add(mBase, uint32(v84))) = v115 + v96
+				v121 = *(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2]))
+				*(*int32)(unsafe.Add(mBase, _c_F_CopySendEndOfRow[2])) = v121 - v96
 			}
 		}
-		v117 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
-		v118 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v117))) = uint8(v118)
-		*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v118
-		*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v118
+		v125 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
+		v126 = int32(0)
+		*(*uint8)(unsafe.Add(mBase, uint32(v125))) = uint8(v126)
+		*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v126
+		*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v126
 		return
 	}
 }

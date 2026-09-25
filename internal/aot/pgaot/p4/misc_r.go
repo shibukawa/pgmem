@@ -338,43 +338,47 @@ func F_RegisterDynamicBackgroundWorker(m *base.Module, l0 int32, l1 int32) int32
 	_ = v81
 	var v85 int32
 	_ = v85
+	var v88 int32
+	_ = v88
 	var v89 int32
 	_ = v89
 	var v93 int32
 	_ = v93
-	var v96 int32
-	_ = v96
+	var v97 int32
+	_ = v97
 	var v100 int32
 	_ = v100
-	var v107 int32
-	_ = v107
-	var v109 int32
-	_ = v109
+	var v104 int32
+	_ = v104
+	var v111 int32
+	_ = v111
 	var v113 int32
 	_ = v113
-	var v114 int32
-	_ = v114
 	var v117 int32
 	_ = v117
-	var v122 int32
-	_ = v122
-	var v135 int32
-	_ = v135
+	var v118 int32
+	_ = v118
+	var v121 int32
+	_ = v121
+	var v126 int32
+	_ = v126
 	var v139 int32
 	_ = v139
-	var v142 int32
-	_ = v142
+	var v143 int32
+	_ = v143
+	var v146 int32
+	_ = v146
 	v3 = int32(0)
 	v11 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[0])))
 	if v11 != int32(1) {
-		v142 = v3
+		v146 = v3
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	return v142
+	return v146
 L2:
 	;
 	v15 = F_SanityCheckBackgroundWorker(m, l0, int32(21))
@@ -391,7 +395,7 @@ L3:
 L4:
 	;
 	if v15 == int32(0) {
-		v142 = v3
+		v146 = v3
 		goto L1
 	} else {
 		goto L5
@@ -458,11 +462,11 @@ L12:
 	goto L13
 L13:
 	;
-	v135 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[1]))
-	F_LWLockRelease(m, v135+int32(_a_F_RegisterDynamicBackgroundWorker_0))
+	v139 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[1]))
+	F_LWLockRelease(m, v139+int32(_a_F_RegisterDynamicBackgroundWorker_0))
 	mBase = m.M
-	v139 = m.ExcPending
-	if v139 != 0 {
+	v143 = m.ExcPending
+	if v143 != 0 {
 		goto L3
 	} else {
 		goto L30
@@ -498,9 +502,9 @@ L17:
 	goto L18
 L18:
 	;
-	v122 = v58 + int32(1)
-	if v122 != v49 {
-		v58 = v122
+	v126 = v58 + int32(1)
+	if v126 != v49 {
+		v58 = v126
 		goto L14
 	} else {
 		goto L29
@@ -515,21 +519,23 @@ L20:
 	goto L21
 L21:
 	;
-	v85 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v65))) = uint8(v85)
-	v89 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[1]))
-	F_LWLockRelease(m, v89+int32(_a_F_RegisterDynamicBackgroundWorker_0))
+	v85 = int32(0)
+	v88 = base.AtomicRmwOr32(m, v85, int32(_a_F_RegisterDynamicBackgroundWorker_1), v85)
+	v89 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v65))) = uint8(v89)
+	v93 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[1]))
+	F_LWLockRelease(m, v93+int32(_a_F_RegisterDynamicBackgroundWorker_0))
 	mBase = m.M
-	v93 = m.ExcPending
-	if v93 != 0 {
+	v97 = m.ExcPending
+	if v97 != 0 {
 		goto L3
 	} else {
 		goto L22
 	}
 L22:
 	;
-	v96 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[0])))
-	if v96 == int32(1) {
+	v100 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[0])))
+	if v100 == int32(1) {
 		goto L24
 	} else {
 		goto L25
@@ -537,17 +543,17 @@ L22:
 L23:
 	;
 	if l1 == int32(0) {
-		v142 = v85
+		v146 = v89
 		goto L1
 	} else {
 		goto L27
 	}
 L24:
 	;
-	v100 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[4]))
-	*(*int32)(unsafe.Add(mBase, uint32(v100+int32(24)))) = int32(1)
-	v107 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[5]))
-	v109 = F_pgmem_kill(m, v107, int32(10))
+	v104 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[4]))
+	*(*int32)(unsafe.Add(mBase, uint32(v104+int32(24)))) = int32(1)
+	v111 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterDynamicBackgroundWorker[5]))
+	v113 = F_pgmem_kill(m, v111, int32(10))
 	mBase = m.M
 	goto L26
 L25:
@@ -558,27 +564,27 @@ L26:
 	goto L23
 L27:
 	;
-	v113 = F_palloc(m, int32(16))
+	v117 = F_palloc(m, int32(16))
 	mBase = m.M
-	v114 = m.ExcPending
-	if v114 != 0 {
+	v118 = m.ExcPending
+	if v118 != 0 {
 		goto L3
 	} else {
 		goto L28
 	}
 L28:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v113
-	*(*int32)(unsafe.Add(mBase, uint32(v113))) = v58
-	v117 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	*(*int64)(unsafe.Add(mBase, uint32(v117)+8)) = v79
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v117
+	*(*int32)(unsafe.Add(mBase, uint32(v117))) = v58
+	v121 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	*(*int64)(unsafe.Add(mBase, uint32(v121)+8)) = v79
 	return int32(1)
 L29:
 	;
 	goto L15
 L30:
 	;
-	v142 = int32(0)
+	v146 = int32(0)
 	goto L1
 }
 func F_ReleaseExternalFD(m *base.Module) {

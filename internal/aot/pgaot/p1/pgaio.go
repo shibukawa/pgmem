@@ -512,6 +512,10 @@ func F_pgaio_io_update_state(m *base.Module, l0 int32, l1 int32) {
 	_ = v57
 	var v62 int32
 	_ = v62
+	var v68 int32
+	_ = v68
+	var v71 int32
+	_ = v71
 	v2 = l1
 	v3 = int32(0)
 	v9 = m.G0
@@ -573,6 +577,8 @@ func F_pgaio_io_update_state(m *base.Module, l0 int32, l1 int32) {
 						if v62 != 0 {
 							return
 						} else {
+							v68 = int32(0)
+							v71 = base.AtomicRmwOr32(m, v68, int32(_a_F_pgaio_io_update_state_3), v68)
 							*(*uint8)(unsafe.Add(mBase, uint32(l0))) = uint8(v2)
 							m.G0 = v11 + int32(32)
 							return
@@ -581,6 +587,8 @@ func F_pgaio_io_update_state(m *base.Module, l0 int32, l1 int32) {
 				}
 			}
 		} else {
+			v68 = int32(0)
+			v71 = base.AtomicRmwOr32(m, v68, int32(_a_F_pgaio_io_update_state_3), v68)
 			*(*uint8)(unsafe.Add(mBase, uint32(l0))) = uint8(v2)
 			m.G0 = v11 + int32(32)
 			return

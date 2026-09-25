@@ -192,52 +192,56 @@ func F_read_local_xlog_page(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int
 	_ = v45
 	var v48 int64
 	_ = v48
-	var v52 int32
-	_ = v52
-	var v56 int64
+	var v50 int32
+	_ = v50
+	var v53 int32
+	_ = v53
+	var v56 int32
 	_ = v56
-	var v59 int32
-	_ = v59
-	var v60 int32
+	var v60 int64
 	_ = v60
-	var v63 int64
+	var v63 int32
 	_ = v63
-	var v66 int64
-	_ = v66
-	var v69 int32
-	_ = v69
+	var v64 int32
+	_ = v64
+	var v67 int64
+	_ = v67
 	var v70 int64
 	_ = v70
-	var v71 int32
-	_ = v71
 	var v73 int32
 	_ = v73
-	var v74 int32
+	var v74 int64
 	_ = v74
 	var v75 int32
 	_ = v75
+	var v77 int32
+	_ = v77
+	var v78 int32
+	_ = v78
 	var v79 int32
 	_ = v79
-	var v81 int32
-	_ = v81
-	var v84 int64
-	_ = v84
-	var v85 int64
+	var v83 int32
+	_ = v83
+	var v85 int32
 	_ = v85
-	var v86 int32
-	_ = v86
-	var v95 int32
-	_ = v95
-	var v97 int32
-	_ = v97
-	var v98 int32
-	_ = v98
+	var v88 int64
+	_ = v88
+	var v89 int64
+	_ = v89
+	var v90 int32
+	_ = v90
 	var v99 int32
 	_ = v99
 	var v101 int32
 	_ = v101
+	var v102 int32
+	_ = v102
 	var v103 int32
 	_ = v103
+	var v105 int32
+	_ = v105
+	var v107 int32
+	_ = v107
 	v10 = m.G0
 	v12 = v10 - int32(48)
 	m.G0 = v12
@@ -245,7 +249,7 @@ func F_read_local_xlog_page(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int
 	goto L2
 L1:
 	;
-	if base.Ui64(v85) < base.Ui64(l1-int64(-8192)) {
+	if base.Ui64(v89) < base.Ui64(l1-int64(-8192)) {
 		goto L28
 	} else {
 		goto L29
@@ -260,17 +264,17 @@ L2:
 	}
 L3:
 	;
-	v84 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-	v85 = v84
-	v86 = v74
+	v88 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+	v89 = v88
+	v90 = v78
 	goto L1
 L4:
 	;
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
-	F_XLogReadDetermineTimeline(m, l0, l1, l2, v71)
+	v75 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
+	F_XLogReadDetermineTimeline(m, l0, l1, l2, v75)
 	mBase = m.M
-	v73 = m.ExcPending
-	if v73 != 0 {
+	v77 = m.ExcPending
+	if v77 != 0 {
 		goto L16
 	} else {
 		goto L18
@@ -305,9 +309,11 @@ L9:
 	v45 = int64(0)
 	v48 = base.AtomicRmwCmpxchg64(m, v44, int32(280), v45, v45)
 	*(*int64)(unsafe.Add(mBase, _c_F_read_local_xlog_page[2])) = v48
-	v52 = *(*int32)(unsafe.Add(mBase, _c_F_read_local_xlog_page[1]))
-	v56 = base.AtomicRmwCmpxchg64(m, v52, int32(272), v45, v45)
-	*(*int64)(unsafe.Add(mBase, _c_F_read_local_xlog_page[3])) = v56
+	v50 = int32(0)
+	v53 = base.AtomicRmwOr32(m, v50, int32(_a_F_read_local_xlog_page_1), v50)
+	v56 = *(*int32)(unsafe.Add(mBase, _c_F_read_local_xlog_page[1]))
+	v60 = base.AtomicRmwCmpxchg64(m, v56, int32(272), v45, v45)
+	*(*int64)(unsafe.Add(mBase, _c_F_read_local_xlog_page[3])) = v60
 	if v41 != 0 {
 		goto L13
 	} else {
@@ -318,52 +324,52 @@ L10:
 	goto L11
 L11:
 	;
-	v66 = F_GetXLogReplayRecPtr(m, v12+int32(4))
+	v70 = F_GetXLogReplayRecPtr(m, v12+int32(4))
 	mBase = m.M
-	v69 = m.ExcPending
-	if v69 != 0 {
+	v73 = m.ExcPending
+	if v73 != 0 {
 		goto L16
 	} else {
 		goto L17
 	}
 L12:
 	;
-	v70 = v63
+	v74 = v67
 	goto L4
 L13:
 	;
-	v59 = *(*int32)(unsafe.Add(mBase, _c_F_read_local_xlog_page[1]))
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+308))
-	*(*int32)(unsafe.Add(mBase, uint32(v41))) = v60
+	v63 = *(*int32)(unsafe.Add(mBase, _c_F_read_local_xlog_page[1]))
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+308))
+	*(*int32)(unsafe.Add(mBase, uint32(v41))) = v64
 	goto L15
 L14:
 	;
 	goto L15
 L15:
 	;
-	v63 = *(*int64)(unsafe.Add(mBase, _c_F_read_local_xlog_page[2]))
+	v67 = *(*int64)(unsafe.Add(mBase, _c_F_read_local_xlog_page[2]))
 	goto L12
 L16:
 	;
 	return int32(0)
 L17:
 	;
-	v70 = v66
+	v74 = v70
 	goto L4
 L18:
 	;
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
-	if v74 == v75 {
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
+	if v78 == v79 {
 		goto L19
 	} else {
 		goto L20
 	}
 L19:
 	;
-	if base.Ui64(v15) <= base.Ui64(v70) {
-		v85 = v70
-		v86 = v71
+	if base.Ui64(v15) <= base.Ui64(v74) {
+		v89 = v74
+		v90 = v75
 		goto L1
 	} else {
 		goto L22
@@ -376,8 +382,8 @@ L21:
 	goto L3
 L22:
 	;
-	v79 = *(*int32)(unsafe.Add(mBase, _c_F_read_local_xlog_page[4]))
-	if v79 != 0 {
+	v83 = *(*int32)(unsafe.Add(mBase, _c_F_read_local_xlog_page[4]))
+	if v83 != 0 {
 		goto L23
 	} else {
 		goto L24
@@ -386,8 +392,8 @@ L23:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
+	v85 = m.ExcPending
+	if v85 != 0 {
 		goto L16
 	} else {
 		goto L26
@@ -406,55 +412,55 @@ L26:
 L27:
 	;
 	m.G0 = v12 + int32(48)
-	return v103
+	return v107
 L28:
 	;
-	if base.Ui64(v85) < base.Ui64(v15) {
-		v103 = int32(-1)
+	if base.Ui64(v89) < base.Ui64(v15) {
+		v107 = int32(-1)
 		goto L27
 	} else {
 		goto L31
 	}
 L29:
 	;
-	v95 = int32(_a_F_read_local_xlog_page_1)
+	v99 = int32(_a_F_read_local_xlog_page_2)
 	goto L30
 L30:
 	;
-	v97 = v12 + int32(8)
-	v98 = F_WALRead(m, l0, l4, l1, v95, v86, v97)
+	v101 = v12 + int32(8)
+	v102 = F_WALRead(m, l0, l4, l1, v99, v90, v101)
 	mBase = m.M
-	v99 = m.ExcPending
-	if v99 != 0 {
+	v103 = m.ExcPending
+	if v103 != 0 {
 		goto L16
 	} else {
 		goto L32
 	}
 L31:
 	;
-	v95 = base.I32_wrap_i64(v85 - l1)
+	v99 = base.I32_wrap_i64(v89 - l1)
 	goto L30
 L32:
 	;
-	if v98 != 0 {
-		v103 = v95
+	if v102 != 0 {
+		v107 = v99
 		goto L27
 	} else {
 		goto L33
 	}
 L33:
 	;
-	F_WALReadRaiseError(m, v97)
+	F_WALReadRaiseError(m, v101)
 	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
+	v105 = m.ExcPending
+	if v105 != 0 {
 		goto L16
 	} else {
 		goto L34
 	}
 L34:
 	;
-	v103 = v95
+	v107 = v99
 	goto L27
 }
 func F_update_local_synced_slot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {

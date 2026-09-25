@@ -50,6 +50,10 @@ func F_WaitForBackgroundWorkerShutdown(m *base.Module, l0 int32) int32 {
 	_ = v58
 	var v64 int32
 	_ = v64
+	var v65 int32
+	_ = v65
+	var v70 int32
+	_ = v70
 	goto L1
 L1:
 	;
@@ -182,7 +186,9 @@ L21:
 L22:
 	;
 	v64 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForBackgroundWorkerShutdown[3]))
-	*(*int32)(unsafe.Add(mBase, uint32(v64))) = int32(0)
+	v65 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v64))) = v65
+	v70 = base.AtomicRmwOr32(m, v65, int32(_a_F_WaitForBackgroundWorkerShutdown_1), v65)
 	goto L23
 L23:
 	;
@@ -275,24 +281,28 @@ func F_WaitForParallelWorkersToAttach(m *base.Module, l0 int32) {
 	_ = v92
 	var v98 int32
 	_ = v98
+	var v99 int32
+	_ = v99
 	var v104 int32
 	_ = v104
-	var v105 int32
-	_ = v105
 	var v108 int32
 	_ = v108
-	var v113 int32
-	_ = v113
-	var v127 int32
-	_ = v127
-	var v130 int32
-	_ = v130
+	var v109 int32
+	_ = v109
+	var v112 int32
+	_ = v112
+	var v117 int32
+	_ = v117
+	var v131 int32
+	_ = v131
 	var v134 int32
 	_ = v134
 	var v138 int32
 	_ = v138
-	var v143 int32
-	_ = v143
+	var v142 int32
+	_ = v142
+	var v147 int32
+	_ = v147
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -306,8 +316,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
+	v131 = m.ExcPending
+	if v131 != 0 {
 		goto L10
 	} else {
 		goto L35
@@ -370,13 +380,13 @@ L12:
 	goto L15
 L13:
 	;
-	v108 = v23
+	v112 = v23
 	goto L14
 L14:
 	;
-	v113 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-	if v113 < v108 {
-		v13 = v108
+	v117 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+	if v117 < v112 {
+		v13 = v112
 		goto L5
 	} else {
 		goto L34
@@ -393,14 +403,14 @@ L15:
 	}
 L16:
 	;
-	v108 = v105
+	v112 = v109
 	goto L14
 L17:
 	;
-	v104 = v29 + int32(1)
-	v105 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	if v104 < v105 {
-		v29 = v104
+	v108 = v29 + int32(1)
+	v109 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	if v108 < v109 {
+		v29 = v108
 		goto L15
 	} else {
 		goto L33
@@ -524,7 +534,9 @@ L30:
 L31:
 	;
 	v98 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForParallelWorkersToAttach[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v98))) = int32(0)
+	v99 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v98))) = v99
+	v104 = base.AtomicRmwOr32(m, v99, int32(_a_F_WaitForParallelWorkersToAttach_0), v99)
 	goto L32
 L32:
 	;
@@ -539,38 +551,38 @@ L35:
 	;
 	F_errcode(m, int32(325))
 	mBase = m.M
-	v130 = m.ExcPending
-	if v130 != 0 {
+	v134 = m.ExcPending
+	if v134 != 0 {
 		goto L10
 	} else {
 		goto L36
 	}
 L36:
 	;
-	F_errmsg(m, int32(_a_F_WaitForParallelWorkersToAttach_0), int32(0))
+	F_errmsg(m, int32(_a_F_WaitForParallelWorkersToAttach_1), int32(0))
 	mBase = m.M
-	v134 = m.ExcPending
-	if v134 != 0 {
+	v138 = m.ExcPending
+	if v138 != 0 {
 		goto L10
 	} else {
 		goto L37
 	}
 L37:
 	;
-	F_errhint(m, int32(_a_F_WaitForParallelWorkersToAttach_1), int32(0))
+	F_errhint(m, int32(_a_F_WaitForParallelWorkersToAttach_2), int32(0))
 	mBase = m.M
-	v138 = m.ExcPending
-	if v138 != 0 {
+	v142 = m.ExcPending
+	if v142 != 0 {
 		goto L10
 	} else {
 		goto L38
 	}
 L38:
 	;
-	F_errfinish(m, int32(_a_F_WaitForParallelWorkersToAttach_2), int32(760), int32(_a_F_WaitForParallelWorkersToAttach_3))
+	F_errfinish(m, int32(_a_F_WaitForParallelWorkersToAttach_3), int32(760), int32(_a_F_WaitForParallelWorkersToAttach_4))
 	mBase = m.M
-	v143 = m.ExcPending
-	if v143 != 0 {
+	v147 = m.ExcPending
+	if v147 != 0 {
 		goto L10
 	} else {
 		goto L39

@@ -52,10 +52,14 @@ func F_DropDatabaseBuffers(m *base.Module, l0 int32) {
 	_ = v83
 	var v86 int32
 	_ = v86
-	var v96 int32
-	_ = v96
-	var v98 int32
-	_ = v98
+	var v87 int32
+	_ = v87
+	var v90 int32
+	_ = v90
+	var v100 int32
+	_ = v100
+	var v102 int32
+	_ = v102
 	v2 = int32(0)
 	v6 = m.G0
 	v8 = v6 - int32(32)
@@ -92,10 +96,10 @@ L5:
 	goto L3
 L6:
 	;
-	v96 = v17 + int32(1)
-	v98 = *(*int32)(unsafe.Add(mBase, _c_F_DropDatabaseBuffers[0]))
-	if v96 < v98 {
-		v17 = v96
+	v100 = v17 + int32(1)
+	v102 = *(*int32)(unsafe.Add(mBase, _c_F_DropDatabaseBuffers[0]))
+	if v100 < v102 {
+		v17 = v100
 		goto L4
 	} else {
 		goto L31
@@ -231,6 +235,8 @@ L28:
 	goto L29
 L29:
 	;
+	v87 = int32(0)
+	v90 = base.AtomicRmwOr32(m, v87, int32(_a_F_DropDatabaseBuffers_5), v87)
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+24)) = v59 & int32(-4194305)
 	goto L6
 L30:

@@ -6839,18 +6839,22 @@ func F_mq_putmessage(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v78
 	var v80 int32
 	_ = v80
-	var v84 int32
-	_ = v84
+	var v81 int32
+	_ = v81
 	var v86 int32
 	_ = v86
 	var v88 int32
 	_ = v88
 	var v90 int32
 	_ = v90
+	var v92 int32
+	_ = v92
 	var v94 int32
 	_ = v94
-	var v99 int32
-	_ = v99
+	var v98 int32
+	_ = v98
+	var v103 int32
+	_ = v103
 	v1 = l0
 	v6 = m.G0
 	v8 = v6 - int32(32)
@@ -6866,7 +6870,7 @@ func F_mq_putmessage(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 L1:
 	;
 	m.G0 = v8 + int32(32)
-	return v99
+	return v103
 L2:
 	;
 	if v12 != 0 {
@@ -6880,7 +6884,7 @@ L3:
 L4:
 	;
 	if v12 == int32(0) {
-		v99 = int32(0)
+		v103 = int32(0)
 		goto L1
 	} else {
 		goto L10
@@ -6901,7 +6905,7 @@ L6:
 L7:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_mq_putmessage[0])) = int32(0)
-	v99 = int32(-1)
+	v103 = int32(-1)
 	goto L1
 L8:
 	;
@@ -6932,8 +6936,8 @@ L11:
 	}
 L12:
 	;
-	v90 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _c_F_mq_putmessage[1])) = uint8(v90)
+	v94 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, _c_F_mq_putmessage[1])) = uint8(v94)
 	if v43 != 0 {
 		goto L33
 	} else {
@@ -7031,12 +7035,14 @@ L26:
 L27:
 	;
 	v80 = *(*int32)(unsafe.Add(mBase, _c_F_mq_putmessage[5]))
-	*(*int32)(unsafe.Add(mBase, uint32(v80))) = int32(0)
+	v81 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v80))) = v81
+	v86 = base.AtomicRmwOr32(m, v81, int32(_a_F_mq_putmessage_0), v81)
 	goto L28
 L28:
 	;
-	v84 = *(*int32)(unsafe.Add(mBase, _c_F_mq_putmessage[6]))
-	if v84 != 0 {
+	v88 = *(*int32)(unsafe.Add(mBase, _c_F_mq_putmessage[6]))
+	if v88 != 0 {
 		goto L29
 	} else {
 		goto L30
@@ -7045,8 +7051,8 @@ L29:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v86 = m.ExcPending
-	if v86 != 0 {
+	v90 = m.ExcPending
+	if v90 != 0 {
 		goto L8
 	} else {
 		goto L32
@@ -7056,22 +7062,22 @@ L30:
 	goto L31
 L31:
 	;
-	v88 = *(*int32)(unsafe.Add(mBase, _c_F_mq_putmessage[0]))
-	v35 = v88
+	v92 = *(*int32)(unsafe.Add(mBase, _c_F_mq_putmessage[0]))
+	v35 = v92
 	goto L11
 L32:
 	;
 	goto L31
 L33:
 	;
-	v94 = int32(-1)
+	v98 = int32(-1)
 	goto L35
 L34:
 	;
-	v94 = v90
+	v98 = v94
 	goto L35
 L35:
 	;
-	v99 = v94
+	v103 = v98
 	goto L1
 }

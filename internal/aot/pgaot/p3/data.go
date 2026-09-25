@@ -114,8 +114,12 @@ func F_copy_read_data(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v98
 	var v100 int32
 	_ = v100
-	var v108 int32
-	_ = v108
+	var v101 int32
+	_ = v101
+	var v106 int32
+	_ = v106
+	var v112 int32
+	_ = v112
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
@@ -143,7 +147,7 @@ L2:
 L3:
 	;
 	if base.B2i32(v28 <= int32(0))|base.B2i32(l1 <= v29) != 0 {
-		v108 = v29
+		v112 = v29
 		goto L10
 	} else {
 		goto L11
@@ -181,7 +185,7 @@ L9:
 L10:
 	;
 	m.G0 = v11 + int32(16)
-	return v108
+	return v112
 L11:
 	;
 	v34 = l0
@@ -198,7 +202,7 @@ L12:
 	goto L14
 L13:
 	;
-	v108 = v50
+	v112 = v50
 	goto L10
 L14:
 	;
@@ -262,7 +266,7 @@ L21:
 L22:
 	;
 	if v63 < int32(0) {
-		v108 = v50
+		v112 = v50
 		goto L10
 	} else {
 		goto L25
@@ -314,7 +318,7 @@ L31:
 	v86 = v81 + v50
 	v87 = v48 - v81
 	if v87 <= int32(0) {
-		v108 = v86
+		v112 = v86
 		goto L10
 	} else {
 		goto L32
@@ -331,12 +335,14 @@ L32:
 	}
 L33:
 	;
-	v108 = v86
+	v112 = v86
 	goto L10
 L34:
 	;
 	v100 = *(*int32)(unsafe.Add(mBase, _c_F_copy_read_data[3]))
-	*(*int32)(unsafe.Add(mBase, uint32(v100))) = int32(0)
+	v101 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v100))) = v101
+	v106 = base.AtomicRmwOr32(m, v101, int32(_a_F_copy_read_data_0), v101)
 	goto L35
 L35:
 	;
