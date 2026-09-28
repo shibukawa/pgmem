@@ -356,6 +356,14 @@ proxy.golang.org so that pkg.go.dev lists it. CI runs the same packaging
 scripts on every push with placeholder binaries and a throwaway signing
 key, and `.github/workflows/docs.yml` deploys `website/` to GitHub Pages.
 
+npm dist-tags are selected separately for each package. Beta versions (`0.x`)
+use `beta`. For stable versions, `latest` always points to the highest
+published SemVer version; a release below the current `latest` is published
+under `postgresql-X`, where `X` is the bundled PostgreSQL major. Thus a later
+`1.18.x` maintenance release will not replace a newer `1.19.x` as `latest`.
+Use `npm install @pgmem/core@beta` for the beta channel and
+`npm install @pgmem/core@postgresql-18` for the PostgreSQL 18 maintenance line.
+
 Rehearse on the commit you are going to tag. Nothing is published: npm
 runs `publish --dry-run`, and the Central Publisher Portal validates the
 Maven bundle, which is then dropped.
@@ -373,11 +381,14 @@ The registries need a one-time setup:
   exists, so the first version of the five `@pgmem/<platform>` packages
   and of `@pgmem/core` is published by hand, with 2FA, from the tarballs
   of a rehearsal (`gh run download <run-id> -n packages -D dist`, then
-  `npm publish dist/npm/<tarball> --access public`, `pgmem-core` last).
+  `npm publish dist/npm/<tarball> --access public --tag latest`, `pgmem-core`
+  last).
   Each package then gets the trusted publisher `shibukawa/pgmem`,
   `release.yml`, environment `release`, with direct publishing allowed
   (package settings on npmjs.com, or `npm trust github`). The workflow
-  skips versions that are already on npm.
+  verifies the selected dist-tag when a version already exists. Trusted
+  publishing cannot move tags on existing versions, so correct a mismatch
+  in npmjs.com before retrying.
 - **Maven Central**: the namespace `io.github.shibukawa`, which the
   Central Publisher Portal verifies when you sign in with the GitHub
   account `shibukawa` (the artifacts are `io.github.shibukawa.pgmem:*`),
@@ -387,10 +398,11 @@ The registries need a one-time setup:
   secrets of the `release` environment.
 
 To publish a tagged version to some registries again, for instance after
-a registry-side failure, run the workflow on the tag:
+a registry-side failure, dispatch the current workflow from `main` and select
+the existing source tag. The workflow builds from that tag without moving it:
 
 ```bash
-gh workflow run release.yml --ref v1.18.0 -f version=1.18.0 -f registries=maven -f dry_run=false
+gh workflow run release.yml --ref main -f version=0.19.0 -f source_tag=v0.19.0 -f registries=npm -f dry_run=false
 ```
 
 ## Branch strategy
