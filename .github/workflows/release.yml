@@ -1,7 +1,10 @@
 name: Release
 
 # Pushing a tag vX.Y.Z builds every artifact from the tagged commit and
-# publishes it under that one version:
+# publishes it under that one version. PostgreSQL 18 stable tags (v1.18.x)
+# belong to postgresql/18; PostgreSQL 19 beta/stable tags (v0.19.x, v1.19.x)
+# belong to main. The workflow checks that the tagged commit is reachable from
+# its assigned branch.
 #   - GitHub Release: the pgmem binaries (tar.gz, zip for Windows) with
 #     SHA256SUMS, the wheels and the npm tarballs
 #   - npm: the @pgmem/<platform> packages, then @pgmem/core, by trusted
@@ -52,6 +55,9 @@ jobs:
       registries: ${{ steps.check.outputs.registries }}
       publish: ${{ steps.check.outputs.publish }}
     steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - id: check
         env:
           EVENT: ${{ github.event_name }}
@@ -77,6 +83,16 @@ jobs:
           if [ "$publish" = true ] && [ "$REF" != "refs/tags/v$version" ]; then
             echo "::error::publishing $version has to run on the tag v$version, not on $REF"
             exit 1
+          fi
+          if [ "$publish" = true ]; then
+            release_branch=origin/main
+            case "$version" in
+              1.18.*) release_branch=origin/postgresql/18 ;;
+            esac
+            if ! git merge-base --is-ancestor "$GITHUB_SHA" "$release_branch"; then
+              echo "::error::tag v$version must point to a commit reachable from $release_branch"
+              exit 1
+            fi
           fi
           {
             echo "version=$version"

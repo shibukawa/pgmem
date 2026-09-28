@@ -2,7 +2,7 @@ name: Docs
 
 on:
   push:
-    branches: [main]
+    branches: [main, postgresql/18]
     paths:
       - "website/**"
       - ".github/workflows/docs.yml"
@@ -24,7 +24,7 @@ jobs:
           path: ./website
 
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
     needs: build
     runs-on: ubuntu-latest
     permissions:

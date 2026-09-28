@@ -1,6 +1,6 @@
 # pgmem
 
-A real PostgreSQL 18 server that runs entirely inside your Go test process,
+A real PostgreSQL server that runs entirely inside your Go test process,
 keeps everything in memory, and speaks the normal wire protocol on a loopback
 port. No Docker, no external binaries, no files on disk. Works wherever Go
 and wazero run (macOS, Linux, Windows; amd64 and arm64).
@@ -114,12 +114,14 @@ languages.
 
 ## How it works
 
-The server is PostgreSQL 18.3 from the [PGlite](https://pglite.dev) fork
-(`electric-sql/postgres-pglite`), rebuilt as a self-contained WebAssembly
-module and translated to Go with wasm2go. The wasm file is a build
-intermediate; only the generated Go is in the module. (The initdb program
-is still executed as wasm, under [wazero](https://wazero.io), but only by
-`cmd/pgmem-mkdata` when regenerating the embedded data directory.)
+The `postgresql/18` branch builds PostgreSQL 18.3 from the
+[PGlite](https://pglite.dev) fork (`electric-sql/postgres-pglite`). `main`
+tracks the newest PostgreSQL major; it currently builds PostgreSQL 19 Beta 4
+from the upstream source with the PGlite port patch. Both are rebuilt as a
+self-contained WebAssembly module and translated to Go with wasm2go. The wasm
+file is a build intermediate; only the generated Go is in the module. (The
+initdb program is still executed as wasm, under [wazero](https://wazero.io),
+but only by `cmd/pgmem-mkdata` when regenerating the embedded data directory.)
 
 - `wasm/build.sh` builds the module with Emscripten. Unlike the PGlite
   distribution it is linked statically: no dynamic linking, no JS-based
@@ -340,7 +342,9 @@ SIMD-in-Go lever there.
 Every artifact of a release carries one version, taken from a `vX.Y.Z`
 tag (the numbering is explained on the
 [versioning](https://shibukawa.github.io/pgmem/versioning/) page; the
-current PostgreSQL 18 stable line starts at 1.18.0). Pushing the tag runs
+current PostgreSQL 18 stable line starts at 1.18.0). PostgreSQL 18 tags
+(`v1.18.x`) come from `postgresql/18`; PostgreSQL 19 beta (`v0.19.x`) and
+stable (`v1.19.x`) tags come from `main`. Pushing the tag runs
 `.github/workflows/release.yml`. It cross-compiles `cmd/pgmem` for five
 platforms (`scripts/build-binaries.sh`), stamps the version into every
 manifest (`scripts/set-version.sh`), packs the archives, npm packages,
@@ -388,6 +392,42 @@ a registry-side failure, run the workflow on the tag:
 ```bash
 gh workflow run release.yml --ref v1.18.0 -f version=1.18.0 -f registries=maven -f dry_run=false
 ```
+
+## Branch strategy
+
+`main` follows the newest PostgreSQL major. `postgresql/18` keeps the
+PostgreSQL 18 stable line:
+
+| Branch | PostgreSQL line | pgmem line | Role |
+|---|---|---|---|
+| `postgresql/18` | PostgreSQL 18 stable | `1.18.x`, starting at `1.18.0` | Stable PostgreSQL 18 releases |
+| `main` | Newest major; currently PostgreSQL 19 Beta 4 | `0.19.x`, starting at `0.19.0`; after PostgreSQL 19 GA, `1.19.x` starting at `1.19.0` | Beta and future stable releases for the newest major |
+
+Keep `postgresql/18` as GitHub's default branch until PostgreSQL 19 is
+generally available; then make `main` the default. CI runs on pushes to both
+branches. The docs workflow builds both branches and deploys only the current
+default branch. Release tags use `vX.Y.Z`: `v1.18.0` belongs to
+`postgresql/18`, `v0.19.0` belongs to `main`, and the future `v1.19.0` also
+belongs to `main`. The release workflow checks that a release tag is reachable
+from its assigned branch.
+
+## ブランチ戦略
+
+`main` は最新メジャーバージョンの PostgreSQL を追います。`postgresql/18`
+は PostgreSQL 18 の安定系列を維持します。
+
+| ブランチ | PostgreSQL 系列 | pgmem 系列 | 役割 |
+|---|---|---|---|
+| `postgresql/18` | PostgreSQL 18 安定版 | `1.18.x`（`1.18.0` から開始） | PostgreSQL 18 の安定版リリース |
+| `main` | 最新メジャー。現在は PostgreSQL 19 Beta 4 | `0.19.x`（`0.19.0` から開始）。PostgreSQL 19 正式リリース後は `1.19.x`（`1.19.0` から開始） | 最新メジャーのベータ版と将来の安定版 |
+
+PostgreSQL 19 が正式リリースされるまでは `postgresql/18` を GitHub の
+デフォルトブランチにし、その後 `main` に切り替えます。CI は両ブランチへの
+push で実行します。ドキュメントは両ブランチでビルドし、現在のデフォルト
+ブランチからのみ公開します。リリースタグは `vX.Y.Z` 形式です。`v1.18.0`
+は `postgresql/18`、`v0.19.0` と将来の `v1.19.0` は `main` に付けます。
+リリースワークフローは、タグのコミットが対応するブランチに含まれることを
+確認します。
 
 ## Debugging
 

@@ -3,11 +3,11 @@ id: flow:release
 type: flow
 title: Release
 ---
-How a vX.Y.Z tag becomes every published artifact at one version (policy:versioning, policy:binary-distribution, policy:third-party-notices); .github/workflows/release.yml, set up 2026-09-14 after the osmem release.yml that published osmem 0.1.1.
+How a vX.Y.Z tag becomes every published artifact at one version (policy:versioning, policy:branching, policy:binary-distribution, policy:third-party-notices); .github/workflows/release.yml, set up 2026-09-14 after the osmem release.yml that published osmem 0.1.1.
 
 ```yaml
 flow:
-  trigger: push of tag vX.Y.Z; workflow_dispatch rehearses (dry_run, the default) or, run on a tag, republishes to chosen registries
+  trigger: push of tag vX.Y.Z; v1.18.x tags come from postgresql/18, v0.19.x and v1.19.x tags from main; workflow_dispatch rehearses (dry_run, the default) or, run on a tag, republishes to chosen registries
   steps:
     - id: prepare
       action: version from the tag or input; refuse to publish unless the ref is tag vX.Y.Z
@@ -28,12 +28,12 @@ flow:
       action: scripts/build-maven-bundle.sh (Gradle publish into build/central-staging, in-memory GPG signing, zip without maven-metadata) then scripts/publish-maven-central.sh (Portal upload AUTOMATIC; rehearsal USER_MANAGED, wait for VALIDATED, drop); skipped when the POM is on repo1
     - id: go
       action: go list -m github.com/shibukawa/pgmem@vX.Y.Z through proxy.golang.org
-  ci_guard: ci.yml job release-packaging runs the same scripts on every push with placeholder binaries and a throwaway ed25519 key; Go tests run on ubuntu, macos and windows (testdata stays LF through .gitattributes; pg_stat_statements/entry_timestamp is skipped on Windows, where back-to-back statements can share one time.Now)
+  ci_guard: ci.yml runs on pushes to main and postgresql/18 and pull requests; release-packaging runs the same scripts with placeholder binaries and a throwaway ed25519 key; Go tests run on ubuntu, macos and windows (testdata stays LF through .gitattributes; pg_stat_statements/entry_timestamp is skipped on Windows, where back-to-back statements can share one time.Now)
   rehearsed: 2026-09-14 run 34790183276 on 4e294d34 passed every job (six binaries, archives, 7 npm tarballs with npm publish --dry-run, wheels with twine check, Maven bundle signed with the release GPG key and VALIDATED by the Portal as io.github.shibukawa.pgmem, then dropped); the first rehearsal had shown the Portal refusing jp.shibu and astral-sh/setup-uv lacking a v10 tag
   registry_setup:
     pypi: pending trusted publisher for project pgmem (shibukawa/pgmem, release.yml, environment release); valid before the first upload
     npm: a trusted publisher needs an existing package, so the first version of the 6 packages is published by hand with 2FA from rehearsal tarballs; configurations need direct publishing enabled, since those created after 2026-09-03 otherwise allow only npm stage publish
     maven: groupId io.github.shibukawa.pgmem under the namespace io.github.shibukawa, which the Portal verifies through the GitHub account (the user switched from jp.shibu on 2026-09-14 before the first publish, as osmem did); CENTRAL_USERNAME/CENTRAL_PASSWORD and GPG_PRIVATE_KEY/GPG_PASSPHRASE secrets exist in environment release since 2026-09-13
-    pages: build_type workflow; environment github-pages allows main; docs.yml deploys website/
+    pages: docs.yml builds website/ on main and postgresql/18, but deploys only from the current GitHub default branch; default is postgresql/18 until PostgreSQL 19 GA, then main
   limits: Go module zip 26MB compressed, 129MB of the 500MB proxy limit (2026-09-14); a cold cross-compile of one target takes ~46s and ~2.2GB RSS on an M-series Mac
 ```
