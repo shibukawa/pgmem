@@ -46,7 +46,7 @@ func F_stream_abort_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_stream_abort_cb_wrapper_1)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v12
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(993)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(1058)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v11
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v8 + int32(16)
 	v27 = int32(1)
@@ -76,7 +76,7 @@ func F_stream_abort_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 				if v48 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_stream_abort_cb_wrapper_4), int32(1399), int32(_a_F_stream_abort_cb_wrapper_5))
+					F_errfinish(m, int32(_a_F_stream_abort_cb_wrapper_4), int32(1479), int32(_a_F_stream_abort_cb_wrapper_5))
 					mBase = m.M
 					v53 = m.ExcPending
 					if v53 != 0 {
@@ -147,7 +147,7 @@ func F_stream_start_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_stream_start_cb_wrapper_1)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v12
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(993)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(1058)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v11
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v8 + int32(16)
 	v27 = int32(1)
@@ -177,7 +177,7 @@ func F_stream_start_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 				if v48 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_stream_start_cb_wrapper_4), int32(1309), int32(_a_F_stream_start_cb_wrapper_5))
+					F_errfinish(m, int32(_a_F_stream_start_cb_wrapper_4), int32(1389), int32(_a_F_stream_start_cb_wrapper_5))
 					mBase = m.M
 					v53 = m.ExcPending
 					if v53 != 0 {

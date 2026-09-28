@@ -437,8 +437,8 @@ func F_CreateWaitEventSet(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v20
 	var v26 int32
 	_ = v26
-	var v32 int32
-	_ = v32
+	var v33 int32
+	_ = v33
 	v6 = l1 << (uint(int32(4)) % 32)
 	if l0 != 0 {
 		F_ResourceOwnerEnlarge(m, l0)
@@ -462,10 +462,10 @@ func F_CreateWaitEventSet(m *base.Module, l0 int32, l1 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = v26
 				*(*int32)(unsafe.Add(mBase, uint32(v18)+28)) = v26 + v6
 				if l0 != 0 {
-					F_ResourceOwnerRemember(m, l0, v18, int32(_a_F_CreateWaitEventSet_0))
+					F_ResourceOwnerRemember(m, l0, base.I64_extend_i32_u(v18), int32(_a_F_CreateWaitEventSet_0))
 					mBase = m.M
-					v32 = m.ExcPending
-					if v32 != 0 {
+					v33 = m.ExcPending
+					if v33 != 0 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v18))) = l0
@@ -492,10 +492,10 @@ func F_CreateWaitEventSet(m *base.Module, l0 int32, l1 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = v26
 			*(*int32)(unsafe.Add(mBase, uint32(v18)+28)) = v26 + v6
 			if l0 != 0 {
-				F_ResourceOwnerRemember(m, l0, v18, int32(_a_F_CreateWaitEventSet_0))
+				F_ResourceOwnerRemember(m, l0, base.I64_extend_i32_u(v18), int32(_a_F_CreateWaitEventSet_0))
 				mBase = m.M
-				v32 = m.ExcPending
-				if v32 != 0 {
+				v33 = m.ExcPending
+				if v33 != 0 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v18))) = l0
@@ -1040,30 +1040,30 @@ L36:
 	}
 }
 func F_EventTriggerSupportsObjectType(m *base.Module, l0 int32) int32 {
-	return (base.I32_wrap_i64(int64(base.Ui64(int64(4389322341887))>>(uint(base.I64_extend_i32_u(l0))%64))) | base.B2i32(base.Ui32(int32(42)) < base.Ui32(l0))) & int32(1)
+	return (base.I32_wrap_i64(int64(base.Ui64(int64(8778778918399))>>(uint(base.I64_extend_i32_u(l0))%64))) | base.B2i32(base.Ui32(int32(43)) < base.Ui32(l0))) & int32(1)
 }
 func F_FreeWaitEventSet(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v6 int32
-	_ = v6
-	var v10 int32
-	_ = v10
+	var v7 int32
+	_ = v7
+	var v11 int32
+	_ = v11
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	if v3 != 0 {
-		F_ResourceOwnerForget(m, v3, l0, int32(_a_F_FreeWaitEventSet_0))
+		F_ResourceOwnerForget(m, v3, base.I64_extend_i32_u(l0), int32(_a_F_FreeWaitEventSet_0))
 		mBase = m.M
-		v6 = m.ExcPending
-		if v6 != 0 {
+		v7 = m.ExcPending
+		if v7 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(0)
 			F_pfree(m, l0)
 			mBase = m.M
-			v10 = m.ExcPending
-			if v10 != 0 {
+			v11 = m.ExcPending
+			if v11 != 0 {
 				return
 			} else {
 				return
@@ -1072,11 +1072,86 @@ func F_FreeWaitEventSet(m *base.Module, l0 int32) {
 	} else {
 		F_pfree(m, l0)
 		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
+		v11 = m.ExcPending
+		if v11 != 0 {
 			return
 		} else {
 			return
+		}
+	}
+}
+func F_WaitEventCustomShmemRequest(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v4 int32
+	_ = v4
+	var v15 int32
+	_ = v15
+	var v16 int64
+	_ = v16
+	var v45 int32
+	_ = v45
+	var v46 int64
+	_ = v46
+	var v73 int32
+	_ = v73
+	v2 = m.G0
+	v4 = v2 - int32(192)
+	m.G0 = v4
+	*(*int32)(unsafe.Add(mBase, uint32(v4)+188)) = int32(_a_F_WaitEventCustomShmemRequest_0)
+	*(*int64)(unsafe.Add(mBase, uint32(v4)+180)) = int64(8)
+	*(*int32)(unsafe.Add(mBase, uint32(v4)+176)) = int32(_a_F_WaitEventCustomShmemRequest_1)
+	F_ShmemRequestStructWithOpts(m, v4+int32(176))
+	mBase = m.M
+	v15 = m.ExcPending
+	if v15 != 0 {
+		return
+	} else {
+		v16 = int64(0)
+		*(*int64)(unsafe.Add(mBase, uint32(v4)+96)) = v16
+		*(*int64)(unsafe.Add(mBase, uint32(v4)+88)) = v16
+		*(*int64)(unsafe.Add(mBase, uint32(v4)+120)) = v16
+		*(*int64)(unsafe.Add(mBase, uint32(v4)+112)) = int64(128)
+		*(*int32)(unsafe.Add(mBase, uint32(v4)+108)) = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v4)+104)) = int32(_a_F_WaitEventCustomShmemRequest_2)
+		*(*int64)(unsafe.Add(mBase, uint32(v4)+128)) = int64(292057776132)
+		*(*int64)(unsafe.Add(mBase, uint32(v4)+136)) = v16
+		*(*int64)(unsafe.Add(mBase, uint32(v4)+144)) = v16
+		*(*int64)(unsafe.Add(mBase, uint32(v4)+152)) = v16
+		*(*int64)(unsafe.Add(mBase, uint32(v4)+160)) = v16
+		*(*int32)(unsafe.Add(mBase, uint32(v4)+172)) = int32(_a_F_WaitEventCustomShmemRequest_3)
+		*(*int32)(unsafe.Add(mBase, uint32(v4)+168)) = int32(40)
+		F_ShmemRequestHashWithOpts(m, v4+int32(88))
+		mBase = m.M
+		v45 = m.ExcPending
+		if v45 != 0 {
+			return
+		} else {
+			v46 = int64(0)
+			*(*int64)(unsafe.Add(mBase, uint32(v4)+8)) = v46
+			*(*int64)(unsafe.Add(mBase, uint32(v4))) = v46
+			*(*int64)(unsafe.Add(mBase, uint32(v4)+32)) = v46
+			*(*int64)(unsafe.Add(mBase, uint32(v4)+24)) = int64(128)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+20)) = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(_a_F_WaitEventCustomShmemRequest_4)
+			*(*int64)(unsafe.Add(mBase, uint32(v4)+40)) = int64(292057776192)
+			*(*int64)(unsafe.Add(mBase, uint32(v4)+48)) = v46
+			*(*int64)(unsafe.Add(mBase, uint32(v4)+56)) = v46
+			*(*int64)(unsafe.Add(mBase, uint32(v4)+64)) = v46
+			*(*int64)(unsafe.Add(mBase, uint32(v4)+72)) = v46
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+84)) = int32(_a_F_WaitEventCustomShmemRequest_5)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+80)) = int32(24)
+			F_ShmemRequestHashWithOpts(m, v4)
+			mBase = m.M
+			v73 = m.ExcPending
+			if v73 != 0 {
+				return
+			} else {
+				m.G0 = v4 + int32(192)
+				return
+			}
 		}
 	}
 }

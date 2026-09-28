@@ -5,22 +5,22 @@ import (
 	"unsafe"
 )
 
-func F_gtsvector_options(m *base.Module, l0 int32) int32 {
+func F_gtsvector_options(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
 	var v15 int32
 	_ = v15
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(8)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(0)
 	F_add_local_int_reloption(m, v2, int32(_a_F_gtsvector_options_0), int32(_a_F_gtsvector_options_1), int32(124), int32(1), int32(2024))
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return int32(0)
+		return int64(0)
 	}
 }

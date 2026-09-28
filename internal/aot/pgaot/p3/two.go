@@ -323,7 +323,7 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	}
 }
-func F_TwoPhaseGetDummyProc(m *base.Module, l0 int32, l1 int32) int32 {
+func F_TwoPhaseGetDummyProc(m *base.Module, l0 int64, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -345,6 +345,6 @@ func F_TwoPhaseGetDummyProc(m *base.Module, l0 int32, l1 int32) int32 {
 		v8 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseGetDummyProc[0]))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
-		return v9 + v10*int32(640)
+		return v9 + v10*int32(768)
 	}
 }

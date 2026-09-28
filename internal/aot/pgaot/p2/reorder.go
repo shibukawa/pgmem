@@ -688,7 +688,7 @@ func F_ReorderBufferCopySnap(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 				v77 = v72
 			}
 		}
-		F_pg_qsort(m, v77, v75, int32(4), int32(185))
+		F_pg_qsort(m, v77, v75, int32(4), int32(187))
 		mBase = m.M
 		v83 = m.ExcPending
 		if v83 != 0 {
@@ -704,85 +704,91 @@ func F_ReorderBufferForget(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v9 int32
-	_ = v9
 	var v11 int32
 	_ = v11
-	var v14 int32
-	_ = v14
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
 	var v30 int32
 	_ = v30
-	var v33 int32
-	_ = v33
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
-	var v44 int32
-	_ = v44
-	var v47 int32
-	_ = v47
-	var v50 int32
-	_ = v50
-	var v53 int32
-	_ = v53
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
 	var v55 int32
 	_ = v55
 	var v56 int32
 	_ = v56
 	var v58 int32
 	_ = v58
+	var v59 int32
+	_ = v59
 	var v61 int32
 	_ = v61
 	var v63 int32
 	_ = v63
-	var v66 int32
-	_ = v66
-	var v77 int32
-	_ = v77
-	var v79 int32
-	_ = v79
-	var v84 int32
-	_ = v84
-	var v94 int32
-	_ = v94
+	var v65 int32
+	_ = v65
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
+	var v72 int32
+	_ = v72
+	var v85 int32
+	_ = v85
+	var v87 int32
+	_ = v87
+	var v92 int32
+	_ = v92
+	var v108 int32
+	_ = v108
 	v4 = int32(0)
-	v9 = m.G0
-	v11 = v9 - int32(16)
-	m.G0 = v11
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = l1
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-	if base.B2i32(v14 == v4)|base.B2i32(l1 != v14) == v4 {
+	v11 = m.G0
+	v13 = v11 - int32(16)
+	m.G0 = v13
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = l1
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	if base.B2i32(v16 == v4)|base.B2i32(l1 != v16) == v4 {
 		goto L3
 	} else {
 		goto L4
 	}
 L1:
 	;
-	m.G0 = v11 + int32(16)
+	m.G0 = v13 + int32(16)
 	return
 L2:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(v44)+24)) = l2
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v44)+80))
-	if v47 == int32(0) {
+	*(*int64)(unsafe.Add(mBase, uint32(v46)+24)) = l2
+	v49 = *(*int32)(unsafe.Add(mBase, uint32(v46)+80))
+	if v49 == int32(0) {
 		goto L13
 	} else {
 		goto L14
 	}
 L3:
 	;
-	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	if v21 != 0 {
-		v44 = v21
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	if v23 != 0 {
+		v46 = v23
 		goto L2
 	} else {
 		goto L6
@@ -792,11 +798,11 @@ L4:
 	goto L5
 L5:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v28 = F_hash_search(m, v22, v11+int32(12), int32(0), v11+int32(11))
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v30 = F_hash_search(m, v24, v13+int32(12), int32(0), v13+int32(11))
 	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
+	v31 = m.ExcPending
+	if v31 != 0 {
 		goto L7
 	} else {
 		goto L8
@@ -809,64 +815,67 @@ L7:
 	return
 L8:
 	;
-	v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+11)))
-	if v30 == int32(0) {
+	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+11)))
+	if v32 == int32(0) {
 		goto L9
 	} else {
 		goto L10
 	}
 L9:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v33
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v35
 	goto L1
 L10:
 	;
 	goto L11
 L11:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = v38
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v37
-	if v38 == int32(0) {
+	v39 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v30)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = v40
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v39
+	if v40 == int32(0) {
 		goto L1
 	} else {
 		goto L12
 	}
 L12:
 	;
-	v44 = v38
+	v46 = v40
 	goto L2
 L13:
 	;
-	F_ReorderBufferCleanupTXN(m, l0, v44)
+	F_ReorderBufferCleanupTXN(m, l0, v46)
 	mBase = m.M
-	v94 = m.ExcPending
-	if v94 != 0 {
+	v108 = m.ExcPending
+	if v108 != 0 {
 		goto L7
 	} else {
 		goto L28
 	}
 L14:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, uint32(v44)+172))
-	if v50 == int32(0) {
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v46)+172))
+	if v52 == int32(0) {
 		goto L13
 	} else {
 		goto L15
 	}
 L15:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v44)+176))
-	v55 = *(*int32)(unsafe.Add(mBase, _c_F_ReorderBufferForget[0]))
-	v56 = *(*int32)(unsafe.Add(mBase, uint32(v55)+24))
-	v58 = base.B2i32(v56 != int32(0))
+	v55 = *(*int32)(unsafe.Add(mBase, uint32(v46)+176))
+	v56 = int32(0)
+	v58 = *(*int32)(unsafe.Add(mBase, _c_F_ReorderBufferForget[0]))
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v58)+24))
+	v61 = base.B2i32(v59 != v56)
 	goto L16
 L16:
 	;
-	if v56 != int32(0) {
+	v63 = *(*int32)(unsafe.Add(mBase, _c_F_ReorderBufferForget[1]))
+	v65 = *(*int32)(unsafe.Add(mBase, _c_F_ReorderBufferForget[2]))
+	if v59 != v56 {
 		goto L17
 	} else {
 		goto L18
@@ -875,8 +884,8 @@ L17:
 	;
 	F_BeginInternalSubTransaction(m, int32(_a_F_ReorderBufferForget_0))
 	mBase = m.M
-	v61 = m.ExcPending
-	if v61 != 0 {
+	v68 = m.ExcPending
+	if v68 != 0 {
 		goto L7
 	} else {
 		goto L20
@@ -886,14 +895,14 @@ L18:
 	goto L19
 L19:
 	;
-	v66 = int32(0)
+	v72 = v56
 	goto L22
 L20:
 	;
 	F_AbortCurrentTransaction(m)
 	mBase = m.M
-	v63 = m.ExcPending
-	if v63 != 0 {
+	v70 = m.ExcPending
+	if v70 != 0 {
 		goto L7
 	} else {
 		goto L21
@@ -903,26 +912,26 @@ L21:
 	goto L19
 L22:
 	;
-	F_LocalExecuteInvalidationMessage(m, v53+v66<<(uint(int32(4))%32))
+	F_LocalExecuteInvalidationMessage(m, v55+v72<<(uint(int32(4))%32))
 	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
+	v85 = m.ExcPending
+	if v85 != 0 {
 		goto L7
 	} else {
 		goto L24
 	}
 L23:
 	;
-	if v58 == int32(0) {
+	if v61 == int32(0) {
 		goto L13
 	} else {
 		goto L26
 	}
 L24:
 	;
-	v79 = v66 + int32(1)
-	if v79 != v50 {
-		v66 = v79
+	v87 = v72 + int32(1)
+	if v87 != v52 {
+		v72 = v87
 		goto L22
 	} else {
 		goto L25
@@ -934,35 +943,37 @@ L26:
 	;
 	F_RollbackAndReleaseCurrentSubTransaction(m)
 	mBase = m.M
-	v84 = m.ExcPending
-	if v84 != 0 {
+	v92 = m.ExcPending
+	if v92 != 0 {
 		goto L7
 	} else {
 		goto L27
 	}
 L27:
 	;
+	*(*int32)(unsafe.Add(mBase, _c_F_ReorderBufferForget[1])) = v63
+	*(*int32)(unsafe.Add(mBase, _c_F_ReorderBufferForget[2])) = v65
 	goto L13
 L28:
 	;
 	goto L1
 }
-func F_ReorderBufferIterCompare(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_ReorderBufferIterCompare(m *base.Module, l0 int64, l1 int64, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v5 int32
+	_ = v5
 	var v7 int32
 	_ = v7
-	var v8 int32
-	_ = v8
-	var v11 int64
-	_ = v11
+	var v10 int64
+	_ = v10
 	var v15 int64
 	_ = v15
-	v7 = l2 + int32(16)
-	v8 = int32(40)
-	v11 = *(*int64)(unsafe.Add(mBase, uint32(v7+l1*v8)))
-	v15 = *(*int64)(unsafe.Add(mBase, uint32(v7+l0*v8)))
-	return base.B2i32(base.Ui64(v15) < base.Ui64(v11)) - base.B2i32(base.Ui64(v11) < base.Ui64(v15))
+	v5 = l2 + int32(16)
+	v7 = int32(40)
+	v10 = *(*int64)(unsafe.Add(mBase, uint32(v5+base.I32_wrap_i64(l1)*v7)))
+	v15 = *(*int64)(unsafe.Add(mBase, uint32(v5+base.I32_wrap_i64(l0)*v7)))
+	return base.B2i32(base.Ui64(v15) < base.Ui64(v10)) - base.B2i32(base.Ui64(v10) < base.Ui64(v15))
 }
 func F_ReorderBufferReplay(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int64, l4 int64, l5 int32, l6 int64) {
 	mBase := m.M

@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_ltxtq_exec(m *base.Module, l0 int32) int32 {
+func F_ltxtq_exec(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -45,19 +45,19 @@ func F_ltxtq_exec(m *base.Module, l0 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v11 = F_pg_detoast_datum(m, v10)
 	mBase = m.M
 	v14 = m.ExcPending
 	if v14 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v16 = F_pg_detoast_datum(m, v15)
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v11
 			v19 = int32(8)
@@ -68,71 +68,71 @@ func F_ltxtq_exec(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v31 = m.ExcPending
 			if v31 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
-				v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 				if v32 != v11 {
 					F_pfree(m, v11)
 					mBase = m.M
 					v35 = m.ExcPending
 					if v35 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
-						v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 						if v36 != v16 {
 							F_pfree(m, v16)
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								m.G0 = v8 + int32(16)
-								return v30
+								return base.I64_extend_i32_u(v30)
 							}
 						} else {
 							m.G0 = v8 + int32(16)
-							return v30
+							return base.I64_extend_i32_u(v30)
 						}
 					}
 				} else {
-					v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 					if v36 != v16 {
 						F_pfree(m, v16)
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							m.G0 = v8 + int32(16)
-							return v30
+							return base.I64_extend_i32_u(v30)
 						}
 					} else {
 						m.G0 = v8 + int32(16)
-						return v30
+						return base.I64_extend_i32_u(v30)
 					}
 				}
 			}
 		}
 	}
 }
-func F_ltxtq_rexec(m *base.Module, l0 int32) int32 {
+func F_ltxtq_rexec(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F_ltxtq_rexec_0), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v6
 	}

@@ -5,33 +5,33 @@ import (
 	"unsafe"
 )
 
-func F_has_server_privilege_id(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_has_server_privilege_id(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13915(m, l0, int32(_a_F_has_server_privilege_id_0), int32(1417))
+	v4 = Fn14302(m, l0, int32(_a_F_has_server_privilege_id_0), int32(1417))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}
 }
-func F_has_server_privilege_id_id(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_has_server_privilege_id_id(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13916(m, l0, int32(_a_F_has_server_privilege_id_id_0), int32(1417))
+	v4 = Fn14303(m, l0, int32(_a_F_has_server_privilege_id_id_0), int32(1417))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}
 }
-func F_has_server_privilege_id_name(m *base.Module, l0 int32) int32 {
+func F_has_server_privilege_id_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -64,46 +64,46 @@ func F_has_server_privilege_id_name(m *base.Module, l0 int32) int32 {
 	_ = v22
 	var v23 int32
 	_ = v23
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v11 = F_pg_detoast_datum_packed(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v14 = F_text_to_cstring(m, v6)
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v17 = F_get_foreign_server_oid(m, v14, int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v20 = F_convert_any_priv_string(m, v11, int32(_a_F_has_server_privilege_id_name_0))
 					mBase = m.M
 					v21 = m.ExcPending
 					if v21 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v22 = F_object_aclcheck(m, int32(1417), v17, v4, v20)
 						mBase = m.M
 						v23 = m.ExcPending
 						if v23 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return base.B2i32(v22 == int32(0))
+							return base.I64_extend_i32_u(base.B2i32(v22 == int32(0)))
 						}
 					}
 				}
@@ -111,15 +111,15 @@ func F_has_server_privilege_id_name(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_server_privilege_name_id(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_has_server_privilege_name_id(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13917(m, l0, int32(_a_F_has_server_privilege_name_id_0), int32(1417))
+	v4 = Fn14304(m, l0, int32(_a_F_has_server_privilege_name_id_0), int32(1417))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}
@@ -263,6 +263,8 @@ func F_server_get_sink(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v220
 	var v224 int32
 	_ = v224
+	var v230 int32
+	_ = v230
 	var v231 int32
 	_ = v231
 	var v236 int32
@@ -862,7 +864,7 @@ L83:
 L84:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = int32(_a_F_server_get_sink_9)
-	F_errdetail(m, int32(_a_F_server_get_sink_10), v10+int32(-16))
+	v230 = F_errdetail(m, int32(_a_F_server_get_sink_10), v10+int32(-16))
 	mBase = m.M
 	v231 = m.ExcPending
 	if v231 != 0 {

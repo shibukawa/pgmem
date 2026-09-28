@@ -504,7 +504,7 @@ L43:
 	}
 L44:
 	;
-	F_errfinish(m, int32(_a_F_select_common_type_1), int32(1422), int32(_a_F_select_common_type_2))
+	F_errfinish(m, int32(_a_F_select_common_type_1), int32(1426), int32(_a_F_select_common_type_2))
 	mBase = m.M
 	v154 = m.ExcPending
 	if v154 != 0 {

@@ -210,7 +210,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(_a_F_pgaio_closing_fd_1), int32(1237), int32(_a_F_pgaio_closing_fd_2))
+	F_errfinish(m, int32(_a_F_pgaio_closing_fd_1), int32(1247), int32(_a_F_pgaio_closing_fd_2))
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -417,7 +417,7 @@ L43:
 	}
 L44:
 	;
-	F_errfinish(m, int32(_a_F_pgaio_closing_fd_1), int32(1276), int32(_a_F_pgaio_closing_fd_2))
+	F_errfinish(m, int32(_a_F_pgaio_closing_fd_1), int32(1286), int32(_a_F_pgaio_closing_fd_2))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -595,7 +595,7 @@ func F_pgaio_io_update_state(m *base.Module, l0 int32, l1 int32) {
 		}
 	}
 }
-func F_pgaio_shutdown(m *base.Module, l0 int32, l1 int32) {
+func F_pgaio_shutdown(m *base.Module, l0 int32, l1 int64) {
 	mBase := m.M
 	_ = mBase
 	var v10 int32
@@ -737,7 +737,7 @@ L6:
 	}
 L7:
 	;
-	F_errfinish(m, int32(_a_F_pgaio_shutdown_1), int32(1206), int32(_a_F_pgaio_shutdown_2))
+	F_errfinish(m, int32(_a_F_pgaio_shutdown_1), int32(1216), int32(_a_F_pgaio_shutdown_2))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -880,7 +880,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(_a_F_pgaio_shutdown_1), int32(1312), int32(_a_F_pgaio_shutdown_4))
+	F_errfinish(m, int32(_a_F_pgaio_shutdown_1), int32(1322), int32(_a_F_pgaio_shutdown_4))
 	mBase = m.M
 	v106 = m.ExcPending
 	if v106 != 0 {

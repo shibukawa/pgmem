@@ -271,64 +271,6 @@ func F_list_copy_tail(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	}
 }
-func F_list_delete_cell(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v5 int32
-	_ = v5
-	var v6 int32
-	_ = v6
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	var v23 int32
-	_ = v23
-	var v27 int32
-	_ = v27
-	var v31 int32
-	_ = v31
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v6 == int32(1) {
-		if l0+int32(16) != v5 {
-			F_pfree(m, v5)
-			mBase = m.M
-			v15 = m.ExcPending
-			if v15 != 0 {
-				return int32(0)
-			} else {
-				F_pfree(m, l0)
-				mBase = m.M
-				v17 = m.ExcPending
-				if v17 != 0 {
-					return int32(0)
-				} else {
-					return int32(0)
-				}
-			}
-		} else {
-			F_pfree(m, l0)
-			mBase = m.M
-			v17 = m.ExcPending
-			if v17 != 0 {
-				return int32(0)
-			} else {
-				return int32(0)
-			}
-		}
-	} else {
-		v23 = int32(2)
-		v27 = (v6 + int32(base.Ui32(l1-v5^int32(-1))>>(uint(v23)%32))) << (uint(v23) % 32)
-		if v27 != 0 {
-			base.MemoryCopy(m, l1, l1+int32(4), v27)
-		} else {
-		}
-		v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v31 - int32(1)
-		return l0
-	}
-}
 func F_list_difference_ptr(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

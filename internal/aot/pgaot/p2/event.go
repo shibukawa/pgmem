@@ -2,6 +2,7 @@ package p2
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -252,7 +253,7 @@ L28:
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = v21
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+4)) = l2
-	*(*int32)(unsafe.Add(mBase, uint32(l3))) = int32(441)
+	*(*int32)(unsafe.Add(mBase, uint32(l3))) = int32(447)
 	v79 = v58
 	goto L1
 }
@@ -269,6 +270,25 @@ func F_EventTriggerUndoInhibitCommandCollection(m *base.Module) {
 		*(*uint8)(unsafe.Add(mBase, uint32(v3)+20)) = uint8(v4)
 	} else {
 	}
+	return
+}
+func F_WaitEventCustomShmemInit(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	v2 = int32(_a_F_WaitEventCustomShmemInit_0)
+	v3 = *(*int32)(unsafe.Add(mBase, _c_F_WaitEventCustomShmemInit[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v3))) = int32(1)
+	v7 = *(*int32)(unsafe.Add(mBase, _c_F_WaitEventCustomShmemInit[0]))
+	v8 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v7)+4)), uint32(v8))
 	return
 }
 func F_WaitEventSetWait(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
@@ -722,7 +742,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(_a_F_WaitEventSetWait_3), int32(1492), int32(_a_F_WaitEventSetWait_4))
+	F_errfinish(m, int32(_a_F_WaitEventSetWait_3), int32(1494), int32(_a_F_WaitEventSetWait_4))
 	mBase = m.M
 	v142 = m.ExcPending
 	if v142 != 0 {
@@ -934,7 +954,7 @@ L62:
 	}
 L63:
 	;
-	F_errfinish(m, int32(_a_F_WaitEventSetWait_3), int32(1970), int32(_a_F_WaitEventSetWait_6))
+	F_errfinish(m, int32(_a_F_WaitEventSetWait_3), int32(1972), int32(_a_F_WaitEventSetWait_6))
 	mBase = m.M
 	v233 = m.ExcPending
 	if v233 != 0 {
@@ -1189,7 +1209,7 @@ L96:
 	}
 L97:
 	;
-	F_errfinish(m, int32(_a_F_WaitEventSetWait_3), int32(1980), int32(_a_F_WaitEventSetWait_6))
+	F_errfinish(m, int32(_a_F_WaitEventSetWait_3), int32(1982), int32(_a_F_WaitEventSetWait_6))
 	mBase = m.M
 	v449 = m.ExcPending
 	if v449 != 0 {
@@ -1208,15 +1228,15 @@ L99:
 	for {
 	}
 }
-func F_event_trigger_out(m *base.Module, l0 int32) int32 {
-	var v7 int32
+func F_event_trigger_out(m *base.Module, l0 int32) int64 {
+	var v7 int64
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13854(m, l0, int32(_a_F_event_trigger_out_0), int32(367), int32(_a_F_event_trigger_out_1), int32(_a_F_event_trigger_out_2), int32(_a_F_event_trigger_out_3))
+	v7 = Fn14235(m, l0, int32(_a_F_event_trigger_out_0), int32(367), int32(_a_F_event_trigger_out_1), int32(_a_F_event_trigger_out_2), int32(_a_F_event_trigger_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v7
 	}

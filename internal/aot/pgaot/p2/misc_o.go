@@ -223,7 +223,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(_a_F_OpenTransientFilePerm_2), int32(2720), int32(_a_F_OpenTransientFilePerm_3))
+	F_errfinish(m, int32(_a_F_OpenTransientFilePerm_2), int32(2704), int32(_a_F_OpenTransientFilePerm_3))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -242,7 +242,7 @@ func F_offsethash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13999(m, l0, l1, l2, int32(_a_F_offsethash_create_0))
+	v5 = Fn14380(m, l0, l1, l2, int32(_a_F_offsethash_create_0))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -646,7 +646,7 @@ L45:
 	}
 L46:
 	;
-	F_errfinish(m, int32(_a_F_offsethash_insert_hash_internal_1), int32(630), int32(_a_F_offsethash_insert_hash_internal_2))
+	F_errfinish(m, int32(_a_F_offsethash_insert_hash_internal_1), int32(635), int32(_a_F_offsethash_insert_hash_internal_2))
 	mBase = m.M
 	v198 = m.ExcPending
 	if v198 != 0 {
@@ -660,31 +660,99 @@ L47:
 	for {
 	}
 }
-func F_oidge(m *base.Module, l0 int32) int32 {
+func F_oid8_increment(m *base.Module, l0 int32, l1 int64, l2 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v5 int64
+	_ = v5
+	v5 = l1 + int64(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(base.B2i32(v5 == int64(0)))
+	return v5
+}
+func F_oid8ge(m *base.Module, l0 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v2 int64
+	_ = v2
+	var v3 int64
+	_ = v3
+	v2 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	return base.I64_extend_i32_u(base.B2i32(base.Ui64(v3) <= base.Ui64(v2)))
+}
+func F_oid8lt(m *base.Module, l0 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v2 int64
+	_ = v2
+	var v3 int64
+	_ = v3
+	v2 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	return base.I64_extend_i32_u(base.B2i32(base.Ui64(v2) < base.Ui64(v3)))
+}
+func F_oid8smaller(m *base.Module, l0 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v4 int64
+	_ = v4
+	var v5 int64
+	_ = v5
+	var v7 int64
+	_ = v7
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	if base.Ui64(v4) < base.Ui64(v5) {
+		v7 = v4
+	} else {
+		v7 = v5
+	}
+	return v7
+}
+func F_oidge(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
 	var v3 int32
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	return base.B2i32(base.Ui32(v3) <= base.Ui32(v2))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	return base.I64_extend_i32_u(base.B2i32(base.Ui32(v3) <= base.Ui32(v2)))
 }
-func F_oidout(m *base.Module, l0 int32) int32 {
+func F_oidout(m *base.Module, l0 int32) int64 {
+	var v3 int64
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = Fn14337(m, l0, int32(12))
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int64(0)
+	} else {
+		return v3
+	}
+}
+func F_oidrecv(m *base.Module, l0 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
 	var v4 int32
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13954(m, l0, int32(_a_F_oidout_0), int32(12))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v4 = F_pq_getmsgint(m, v2, int32(4))
+	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return v4
+		return base.I64_extend_i32_u(v4)
 	}
 }
-func F_oidsmaller(m *base.Module, l0 int32) int32 {
+func F_oidsmaller(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -693,29 +761,29 @@ func F_oidsmaller(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v6 int32
 	_ = v6
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	if base.Ui32(v3) < base.Ui32(v4) {
 		v6 = v3
 	} else {
 		v6 = v4
 	}
-	return v6
+	return base.I64_extend_i32_u(v6)
 }
-func F_oidvectorne(m *base.Module, l0 int32) int32 {
-	var v2 int32
+func F_oidvectorne(m *base.Module, l0 int32) int64 {
+	var v2 int64
 	_ = v2
 	var v5 int32
 	_ = v5
 	v2 = F_btoidvectorcmp(m, l0)
 	v5 = m.ExcPending
 	if v5 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return base.B2i32(v2 != int32(0))
+		return base.I64_extend_i32_u(base.B2i32(base.I32_wrap_i64(v2) != int32(0)))
 	}
 }
-func F_oidvectortypes(m *base.Module, l0 int32) int32 {
+func F_oidvectortypes(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v12 int32
@@ -812,7 +880,7 @@ func F_oidvectortypes(m *base.Module, l0 int32) int32 {
 	_ = v111
 	var v112 int32
 	_ = v112
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	F_check_valid_oidvector(m, v12)
 	mBase = m.M
 	v16 = m.ExcPending
@@ -823,7 +891,7 @@ func F_oidvectortypes(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
@@ -1003,7 +1071,7 @@ L21:
 	goto L14
 L22:
 	;
-	return v111
+	return base.I64_extend_i32_u(v111)
 }
 func F_okeys_array_start(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -1049,7 +1117,7 @@ func F_okeys_array_start(m *base.Module, l0 int32) int32 {
 				if v24 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_okeys_array_start_2), int32(818), int32(_a_F_okeys_array_start_3))
+					F_errfinish(m, int32(_a_F_okeys_array_start_2), int32(821), int32(_a_F_okeys_array_start_3))
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
@@ -1111,7 +1179,7 @@ func F_okeys_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v25 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_okeys_scalar_2), int32(833), int32(_a_F_okeys_scalar_3))
+					F_errfinish(m, int32(_a_F_okeys_scalar_2), int32(836), int32(_a_F_okeys_scalar_3))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
@@ -1251,7 +1319,7 @@ func F_open_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 					if v25 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_open_auth_file_1), int32(612), int32(_a_F_open_auth_file_2))
+						F_errfinish(m, int32(_a_F_open_auth_file_1), int32(608), int32(_a_F_open_auth_file_2))
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
@@ -1328,7 +1396,7 @@ func F_open_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 							if v55 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_open_auth_file_1), int32(627), int32(_a_F_open_auth_file_2))
+								F_errfinish(m, int32(_a_F_open_auth_file_1), int32(623), int32(_a_F_open_auth_file_2))
 								mBase = m.M
 								v60 = m.ExcPending
 								if v60 != 0 {
@@ -1437,7 +1505,7 @@ func F_or_arg_index_match_cmp_group(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 	return v18
 }
-func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
+func F_ordered_set_transition_multi(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -1484,7 +1552,7 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 	_ = v57
 	var v59 int32
 	_ = v59
-	var v60 int32
+	var v60 int64
 	_ = v60
 	var v62 int32
 	_ = v62
@@ -1492,11 +1560,13 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 	_ = v64
 	var v66 int32
 	_ = v66
+	var v70 int32
+	_ = v70
 	var v71 int32
 	_ = v71
 	var v74 int32
 	_ = v74
-	var v75 int32
+	var v75 int64
 	_ = v75
 	var v77 int32
 	_ = v77
@@ -1510,7 +1580,7 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 	_ = v96
 	var v102 int32
 	_ = v102
-	var v103 int32
+	var v103 int64
 	_ = v103
 	var v105 int32
 	_ = v105
@@ -1526,10 +1596,10 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 	_ = v121
 	var v124 int32
 	_ = v124
-	var v128 int32
-	_ = v128
 	var v130 int32
 	_ = v130
+	var v132 int32
+	_ = v132
 	var v134 int32
 	_ = v134
 	var v136 int32
@@ -1545,14 +1615,14 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 	var v144 int64
 	_ = v144
 	v2 = int32(0)
-	v12 = l0 + int32(20)
-	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
+	v12 = l0 + int32(24)
+	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 	if v13 == int32(1) {
 		v17 = F_ordered_set_startup(m, l0, int32(1))
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v22 = v17
 			v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)))
@@ -1563,7 +1633,7 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v28 = m.ExcPending
 			if v28 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v29 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+18)))
 				if v29 < int32(2) {
@@ -1576,24 +1646,25 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 						v50 = v2
 						for {
 							v51 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-							v52 = int32(2)
+							v52 = int32(3)
 							v56 = v41 | int32(1)
-							v57 = int32(3)
+							v57 = int32(4)
 							v59 = v12 + v56<<(uint(v57)%32)
-							v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)))
-							*(*int32)(unsafe.Add(mBase, uint32(v51+v41<<(uint(v52)%32)))) = v60
+							v60 = *(*int64)(unsafe.Add(mBase, uint32(v59)))
+							*(*int64)(unsafe.Add(mBase, uint32(v51+v41<<(uint(v52)%32)))) = v60
 							v62 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-							v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59)+4)))
+							v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59)+8)))
 							*(*uint8)(unsafe.Add(mBase, uint32(v62+v41))) = uint8(v64)
 							v66 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-							v71 = v41 + v52
+							v70 = int32(2)
+							v71 = v41 + v70
 							v74 = v12 + v71<<(uint(v57)%32)
-							v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)))
-							*(*int32)(unsafe.Add(mBase, uint32(v66+v56<<(uint(v52)%32)))) = v75
+							v75 = *(*int64)(unsafe.Add(mBase, uint32(v74)))
+							*(*int64)(unsafe.Add(mBase, uint32(v66+v56<<(uint(v52)%32)))) = v75
 							v77 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-							v79 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v74)+4)))
+							v79 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v74)+8)))
 							*(*uint8)(unsafe.Add(mBase, uint32(v56+v77))) = uint8(v79)
-							v82 = v50 + v52
+							v82 = v50 + v70
 							if v82 != v33&int32(-2) {
 								v41 = v71
 								v50 = v82
@@ -1608,22 +1679,22 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 						} else {
 							v86 = v71
 							v96 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-							v102 = v12 + v86<<(uint(int32(3))%32)
-							v103 = *(*int32)(unsafe.Add(mBase, uint32(v102)+8))
-							*(*int32)(unsafe.Add(mBase, uint32(v96+v86<<(uint(int32(2))%32)))) = v103
+							v102 = v12 + v86<<(uint(int32(4))%32)
+							v103 = *(*int64)(unsafe.Add(mBase, uint32(v102)+16))
+							*(*int64)(unsafe.Add(mBase, uint32(v96+v86<<(uint(int32(3))%32)))) = v103
 							v105 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-							v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+12)))
+							v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+24)))
 							*(*uint8)(unsafe.Add(mBase, uint32(v105+v86))) = uint8(v107)
 							v114 = v33
 						}
 					} else {
 						v86 = v34
 						v96 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-						v102 = v12 + v86<<(uint(int32(3))%32)
-						v103 = *(*int32)(unsafe.Add(mBase, uint32(v102)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(v96+v86<<(uint(int32(2))%32)))) = v103
+						v102 = v12 + v86<<(uint(int32(4))%32)
+						v103 = *(*int64)(unsafe.Add(mBase, uint32(v102)+16))
+						*(*int64)(unsafe.Add(mBase, uint32(v96+v86<<(uint(int32(3))%32)))) = v103
 						v105 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-						v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+12)))
+						v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+24)))
 						*(*uint8)(unsafe.Add(mBase, uint32(v105+v86))) = uint8(v107)
 						v114 = v33
 					}
@@ -1633,10 +1704,10 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 				v121 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v120)+50)))
 				if v121 == int32(104) {
 					v124 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-					v128 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v124+v114<<(uint(int32(2))%32)))) = v128
+					*(*int64)(unsafe.Add(mBase, uint32(v124+v114<<(uint(int32(3))%32)))) = int64(0)
 					v130 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-					*(*uint8)(unsafe.Add(mBase, uint32(v130+v114))) = uint8(v128)
+					v132 = int32(0)
+					*(*uint8)(unsafe.Add(mBase, uint32(v130+v114))) = uint8(v132)
 				} else {
 				}
 				v134 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v24)+4)))
@@ -1650,11 +1721,11 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				v143 = m.ExcPending
 				if v143 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v144 = *(*int64)(unsafe.Add(mBase, uint32(v22)+16))
 					*(*int64)(unsafe.Add(mBase, uint32(v22)+16)) = v144 + int64(1)
-					return v22
+					return base.I64_extend_i32_u(v22)
 				}
 			}
 		}
@@ -1669,7 +1740,7 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v29 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+18)))
 			if v29 < int32(2) {
@@ -1682,24 +1753,25 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 					v50 = v2
 					for {
 						v51 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-						v52 = int32(2)
+						v52 = int32(3)
 						v56 = v41 | int32(1)
-						v57 = int32(3)
+						v57 = int32(4)
 						v59 = v12 + v56<<(uint(v57)%32)
-						v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)))
-						*(*int32)(unsafe.Add(mBase, uint32(v51+v41<<(uint(v52)%32)))) = v60
+						v60 = *(*int64)(unsafe.Add(mBase, uint32(v59)))
+						*(*int64)(unsafe.Add(mBase, uint32(v51+v41<<(uint(v52)%32)))) = v60
 						v62 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-						v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59)+4)))
+						v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59)+8)))
 						*(*uint8)(unsafe.Add(mBase, uint32(v62+v41))) = uint8(v64)
 						v66 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-						v71 = v41 + v52
+						v70 = int32(2)
+						v71 = v41 + v70
 						v74 = v12 + v71<<(uint(v57)%32)
-						v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)))
-						*(*int32)(unsafe.Add(mBase, uint32(v66+v56<<(uint(v52)%32)))) = v75
+						v75 = *(*int64)(unsafe.Add(mBase, uint32(v74)))
+						*(*int64)(unsafe.Add(mBase, uint32(v66+v56<<(uint(v52)%32)))) = v75
 						v77 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-						v79 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v74)+4)))
+						v79 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v74)+8)))
 						*(*uint8)(unsafe.Add(mBase, uint32(v56+v77))) = uint8(v79)
-						v82 = v50 + v52
+						v82 = v50 + v70
 						if v82 != v33&int32(-2) {
 							v41 = v71
 							v50 = v82
@@ -1714,22 +1786,22 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 					} else {
 						v86 = v71
 						v96 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-						v102 = v12 + v86<<(uint(int32(3))%32)
-						v103 = *(*int32)(unsafe.Add(mBase, uint32(v102)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(v96+v86<<(uint(int32(2))%32)))) = v103
+						v102 = v12 + v86<<(uint(int32(4))%32)
+						v103 = *(*int64)(unsafe.Add(mBase, uint32(v102)+16))
+						*(*int64)(unsafe.Add(mBase, uint32(v96+v86<<(uint(int32(3))%32)))) = v103
 						v105 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-						v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+12)))
+						v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+24)))
 						*(*uint8)(unsafe.Add(mBase, uint32(v105+v86))) = uint8(v107)
 						v114 = v33
 					}
 				} else {
 					v86 = v34
 					v96 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-					v102 = v12 + v86<<(uint(int32(3))%32)
-					v103 = *(*int32)(unsafe.Add(mBase, uint32(v102)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(v96+v86<<(uint(int32(2))%32)))) = v103
+					v102 = v12 + v86<<(uint(int32(4))%32)
+					v103 = *(*int64)(unsafe.Add(mBase, uint32(v102)+16))
+					*(*int64)(unsafe.Add(mBase, uint32(v96+v86<<(uint(int32(3))%32)))) = v103
 					v105 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-					v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+12)))
+					v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+24)))
 					*(*uint8)(unsafe.Add(mBase, uint32(v105+v86))) = uint8(v107)
 					v114 = v33
 				}
@@ -1739,10 +1811,10 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 			v121 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v120)+50)))
 			if v121 == int32(104) {
 				v124 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-				v128 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v124+v114<<(uint(int32(2))%32)))) = v128
+				*(*int64)(unsafe.Add(mBase, uint32(v124+v114<<(uint(int32(3))%32)))) = int64(0)
 				v130 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
-				*(*uint8)(unsafe.Add(mBase, uint32(v130+v114))) = uint8(v128)
+				v132 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v130+v114))) = uint8(v132)
 			} else {
 			}
 			v134 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v24)+4)))
@@ -1756,24 +1828,24 @@ func F_ordered_set_transition_multi(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v143 = m.ExcPending
 			if v143 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v144 = *(*int64)(unsafe.Add(mBase, uint32(v22)+16))
 				*(*int64)(unsafe.Add(mBase, uint32(v22)+16)) = v144 + int64(1)
-				return v22
+				return base.I64_extend_i32_u(v22)
 			}
 		}
 	}
 }
-func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_overlaps_timetz(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13955(m, l0, int32(1272), int32(1271))
+	v4 = Fn14338(m, l0, int32(1400), int32(1399))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}

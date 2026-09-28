@@ -388,123 +388,122 @@ func F_TransactionIdGetCommitTsData(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v9
 	var v11 int32
 	_ = v11
-	var v14 int32
-	_ = v14
-	var v20 int32
-	_ = v20
-	var v24 int32
-	_ = v24
-	var v27 int32
-	_ = v27
-	var v29 int32
-	_ = v29
+	var v15 int32
+	_ = v15
+	var v21 int32
+	_ = v21
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
 	var v30 int32
 	_ = v30
-	var v33 int32
-	_ = v33
-	var v35 int64
-	_ = v35
-	var v37 int32
-	_ = v37
-	var v40 int32
-	_ = v40
-	var v44 int32
-	_ = v44
-	var v45 int64
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v36 int64
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v45 int32
 	_ = v45
-	var v48 int32
-	_ = v48
-	var v50 int32
-	_ = v50
+	var v46 int64
+	_ = v46
+	var v49 int32
+	_ = v49
 	var v51 int32
 	_ = v51
 	var v52 int32
 	_ = v52
-	var v54 int32
-	_ = v54
-	var v58 int32
-	_ = v58
-	var v72 int32
-	_ = v72
-	var v84 int32
-	_ = v84
+	var v53 int32
+	_ = v53
+	var v55 int32
+	_ = v55
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v82 int32
+	_ = v82
+	var v85 int32
+	_ = v85
 	var v91 int32
 	_ = v91
+	var v92 int32
+	_ = v92
 	var v94 int32
 	_ = v94
-	var v98 int32
-	_ = v98
+	var v95 int32
+	_ = v95
 	var v99 int32
 	_ = v99
-	var v101 int32
-	_ = v101
-	var v102 int32
-	_ = v102
+	var v105 int32
+	_ = v105
 	var v106 int32
 	_ = v106
+	var v107 int64
+	_ = v107
+	var v111 int32
+	_ = v111
 	var v112 int32
 	_ = v112
-	var v113 int32
-	_ = v113
-	var v114 int64
+	var v114 int32
 	_ = v114
-	var v118 int32
-	_ = v118
-	var v119 int32
-	_ = v119
-	var v121 int32
+	var v115 int32
+	_ = v115
+	var v120 int32
+	_ = v120
+	var v121 int64
 	_ = v121
-	var v122 int32
-	_ = v122
-	var v127 int32
-	_ = v127
-	var v128 int64
-	_ = v128
-	var v132 int32
-	_ = v132
-	var v142 int32
-	_ = v142
-	var v145 int32
-	_ = v145
+	var v125 int32
+	_ = v125
+	var v135 int32
+	_ = v135
+	var v138 int32
+	_ = v138
+	var v143 int32
+	_ = v143
+	var v148 int32
+	_ = v148
 	var v150 int32
 	_ = v150
-	var v155 int32
-	_ = v155
-	var v157 int32
-	_ = v157
 	v4 = int32(0)
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
-	v14 = base.I32_div_u_s(l0, int32(819))
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = l0
+	v15 = base.I32_div_u_s(l0, int32(819))
 	if l0 != 0 {
 		if base.Ui32(l0) <= base.Ui32(int32(2)) {
 			*(*int64)(unsafe.Add(mBase, uint32(l1))) = int64(0)
 			if l2 != 0 {
-				v91 = v4
-				v94 = int32(0)
-				*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v94)
-				v132 = v91
+				v82 = v4
+				v85 = int32(0)
+				*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v85)
+				v125 = v82
 			} else {
-				v132 = v4
+				v125 = v4
 			}
 			m.G0 = v11 + int32(16)
-			return v132
+			return v125
 		} else {
-			v20 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[0]))
-			v24 = F_LWLockAcquire(m, v20+int32(_a_F_TransactionIdGetCommitTsData_0), int32(1))
+			v21 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[0]))
+			v25 = F_LWLockAcquire(m, v21+int32(_a_F_TransactionIdGetCommitTsData_0), int32(1))
 			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
+			v28 = m.ExcPending
+			if v28 != 0 {
 				return int32(0)
 			} else {
-				v29 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[1]))
-				v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29)+24)))
-				if v30 == int32(0) {
+				v30 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[1]))
+				v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+24)))
+				if v31 == int32(0) {
 					F_error_commit_ts_disabled(m)
 					mBase = m.M
-					v157 = m.ExcPending
-					if v157 != 0 {
+					v150 = m.ExcPending
+					if v150 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()
@@ -512,123 +511,86 @@ func F_TransactionIdGetCommitTsData(m *base.Module, l0 int32, l1 int32, l2 int32
 						}
 					}
 				} else {
-					v33 = *(*int32)(unsafe.Add(mBase, uint32(v29)))
-					if l0 == v33 {
-						v35 = *(*int64)(unsafe.Add(mBase, uint32(v29)+8))
-						*(*int64)(unsafe.Add(mBase, uint32(l1))) = v35
+					v34 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
+					if l0 == v34 {
+						v36 = *(*int64)(unsafe.Add(mBase, uint32(v30)+8))
+						*(*int64)(unsafe.Add(mBase, uint32(l1))) = v36
 						if l2 != 0 {
-							v37 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v29)+16)))
-							*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v37)
+							v38 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v30)+16)))
+							*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v38)
 						} else {
 						}
-						v40 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[0]))
-						F_LWLockRelease(m, v40+int32(_a_F_TransactionIdGetCommitTsData_0))
+						v41 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[0]))
+						F_LWLockRelease(m, v41+int32(_a_F_TransactionIdGetCommitTsData_0))
 						mBase = m.M
-						v44 = m.ExcPending
-						if v44 != 0 {
+						v45 = m.ExcPending
+						if v45 != 0 {
 							return int32(0)
 						} else {
-							v45 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
-							v132 = base.B2i32(v45 != int64(0))
+							v46 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
+							v125 = base.B2i32(v46 != int64(0))
 							m.G0 = v11 + int32(16)
-							return v132
+							return v125
 						}
 					} else {
-						v48 = int32(0)
-						v50 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[2]))
-						v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+44))
-						v52 = *(*int32)(unsafe.Add(mBase, uint32(v50)+40))
-						v54 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[0]))
-						F_LWLockRelease(m, v54+int32(_a_F_TransactionIdGetCommitTsData_0))
+						v49 = int32(0)
+						v51 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[2]))
+						v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+44))
+						v53 = *(*int32)(unsafe.Add(mBase, uint32(v51)+40))
+						v55 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[0]))
+						F_LWLockRelease(m, v55+int32(_a_F_TransactionIdGetCommitTsData_0))
 						mBase = m.M
-						v58 = m.ExcPending
-						if v58 != 0 {
+						v59 = m.ExcPending
+						if v59 != 0 {
 							return int32(0)
 						} else {
-							if v52 == int32(0) {
+							v60 = int32(0)
+							if base.B2i32(base.B2i32(v53 == v60)|base.B2i32(l0-v53 < v60)&base.B2i32(base.Ui32(int32(2)) < base.Ui32(v53))|base.B2i32(base.Ui32(v52) < base.Ui32(int32(3))) == v60)&base.B2i32(v60 <= v52-l0) != 0 {
+								v91 = F_SimpleLruReadPage_ReadOnly(m, int32(_a_F_TransactionIdGetCommitTsData_1), base.I64_extend_i32_u(v15), v11+int32(12))
+								mBase = m.M
+								v92 = m.ExcPending
+								if v92 != 0 {
+									return int32(0)
+								} else {
+									v94 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[3]))
+									v95 = *(*int32)(unsafe.Add(mBase, uint32(v94)+4))
+									v99 = *(*int32)(unsafe.Add(mBase, uint32(v95+v91<<(uint(int32(2))%32))))
+									v105 = v99 + (l0-v15*int32(819))*int32(10)
+									v106 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v105)+8)))
+									v107 = *(*int64)(unsafe.Add(mBase, uint32(v105)))
+									*(*int64)(unsafe.Add(mBase, uint32(l1))) = v107
+									if l2 != 0 {
+										*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v106)
+									} else {
+									}
+									v111 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[3]))
+									v112 = *(*int32)(unsafe.Add(mBase, uint32(v111)+28))
+									v114 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[4])))
+									v115 = base.I32_rem_u_s(v15, v114)
+									F_LWLockRelease(m, v112+v115<<(uint(int32(7))%32))
+									mBase = m.M
+									v120 = m.ExcPending
+									if v120 != 0 {
+										return int32(0)
+									} else {
+										v121 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
+										v125 = base.B2i32(v121 != int64(0))
+										m.G0 = v11 + int32(16)
+										return v125
+									}
+								}
+							} else {
 								*(*int64)(unsafe.Add(mBase, uint32(l1))) = int64(0)
 								if l2 == int32(0) {
-									v132 = v48
+									v125 = v49
 								} else {
-									v91 = v48
-									v94 = int32(0)
-									*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v94)
-									v132 = v91
+									v82 = v49
+									v85 = int32(0)
+									*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v85)
+									v125 = v82
 								}
 								m.G0 = v11 + int32(16)
-								return v132
-							} else {
-								if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v52))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(l0)) == int32(0) {
-									v72 = base.B2i32(base.Ui32(l0) < base.Ui32(v52))
-								} else {
-									v72 = int32(base.Ui32(l0-v52) >> (uint(int32(31)) % 32))
-								}
-								if v72 != 0 {
-									*(*int64)(unsafe.Add(mBase, uint32(l1))) = int64(0)
-									if l2 == int32(0) {
-										v132 = v48
-									} else {
-										v91 = v48
-										v94 = int32(0)
-										*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v94)
-										v132 = v91
-									}
-									m.G0 = v11 + int32(16)
-									return v132
-								} else {
-									if base.B2i32(base.Ui32(int32(2)) < base.Ui32(l0))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v51)) == int32(0) {
-										v84 = base.B2i32(base.Ui32(v51) < base.Ui32(l0))
-									} else {
-										v84 = int32(base.Ui32(v51-l0) >> (uint(int32(31)) % 32))
-									}
-									if v84 == int32(0) {
-										v98 = F_SimpleLruReadPage_ReadOnly(m, int32(_a_F_TransactionIdGetCommitTsData_1), base.I64_extend_i32_u(v14), l0)
-										mBase = m.M
-										v99 = m.ExcPending
-										if v99 != 0 {
-											return int32(0)
-										} else {
-											v101 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[3]))
-											v102 = *(*int32)(unsafe.Add(mBase, uint32(v101)+4))
-											v106 = *(*int32)(unsafe.Add(mBase, uint32(v102+v98<<(uint(int32(2))%32))))
-											v112 = v106 + (l0-v14*int32(819))*int32(10)
-											v113 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v112)+8)))
-											v114 = *(*int64)(unsafe.Add(mBase, uint32(v112)))
-											*(*int64)(unsafe.Add(mBase, uint32(l1))) = v114
-											if l2 != 0 {
-												*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v113)
-											} else {
-											}
-											v118 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[3]))
-											v119 = *(*int32)(unsafe.Add(mBase, uint32(v118)+28))
-											v121 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_TransactionIdGetCommitTsData[4])))
-											v122 = base.I32_rem_u_s(v14, v121)
-											F_LWLockRelease(m, v119+v122<<(uint(int32(7))%32))
-											mBase = m.M
-											v127 = m.ExcPending
-											if v127 != 0 {
-												return int32(0)
-											} else {
-												v128 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
-												v132 = base.B2i32(v128 != int64(0))
-												m.G0 = v11 + int32(16)
-												return v132
-											}
-										}
-									} else {
-										*(*int64)(unsafe.Add(mBase, uint32(l1))) = int64(0)
-										if l2 == int32(0) {
-											v132 = v48
-										} else {
-											v91 = v48
-											v94 = int32(0)
-											*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v94)
-											v132 = v91
-										}
-										m.G0 = v11 + int32(16)
-										return v132
-									}
-								}
+								return v125
 							}
 						}
 					}
@@ -638,27 +600,27 @@ func F_TransactionIdGetCommitTsData(m *base.Module, l0 int32, l1 int32, l2 int32
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v142 = m.ExcPending
-		if v142 != 0 {
+		v135 = m.ExcPending
+		if v135 != 0 {
 			return int32(0)
 		} else {
 			F_errcode(m, int32(50856066))
 			mBase = m.M
-			v145 = m.ExcPending
-			if v145 != 0 {
+			v138 = m.ExcPending
+			if v138 != 0 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(0)
 				F_errmsg(m, int32(_a_F_TransactionIdGetCommitTsData_2), v11)
 				mBase = m.M
-				v150 = m.ExcPending
-				if v150 != 0 {
+				v143 = m.ExcPending
+				if v143 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_TransactionIdGetCommitTsData_3), int32(287), int32(_a_F_TransactionIdGetCommitTsData_4))
+					F_errfinish(m, int32(_a_F_TransactionIdGetCommitTsData_3), int32(296), int32(_a_F_TransactionIdGetCommitTsData_4))
 					mBase = m.M
-					v155 = m.ExcPending
-					if v155 != 0 {
+					v148 = m.ExcPending
+					if v148 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()

@@ -112,7 +112,7 @@ func F_GenericMatchText(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 					if v48 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_GenericMatchText_2), int32(163), int32(_a_F_GenericMatchText_3))
+						F_errfinish(m, int32(_a_F_GenericMatchText_2), int32(151), int32(_a_F_GenericMatchText_3))
 						mBase = m.M
 						v53 = m.ExcPending
 						if v53 != 0 {

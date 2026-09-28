@@ -538,8 +538,8 @@ L46:
 L47:
 	;
 	v237 = *(*int32)(unsafe.Add(mBase, uint32(v234)))
-	v240 = v237 + v227*int32(640)
-	v242 = *(*int32)(unsafe.Add(mBase, uint32(v240)+44))
+	v240 = v237 + v227*int32(768)
+	v242 = *(*int32)(unsafe.Add(mBase, uint32(v240)+12))
 	if v242 != 0 {
 		goto L48
 	} else {
@@ -559,7 +559,7 @@ L50:
 	goto L45
 L51:
 	;
-	v250 = int64(*(*int32)(unsafe.Add(mBase, uint32(v246)+44)))
+	v250 = int64(*(*int32)(unsafe.Add(mBase, uint32(v246)+12)))
 	v253 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForOlderSnapshots[0]))
 	if v253 == int32(0) {
 		goto L53
@@ -744,6 +744,8 @@ func F_WaitForWalSummarization(m *base.Module, l0 int64) {
 	_ = v165
 	var v169 int64
 	_ = v169
+	var v174 int32
+	_ = v174
 	var v175 int32
 	_ = v175
 	var v180 int32
@@ -780,6 +782,8 @@ func F_WaitForWalSummarization(m *base.Module, l0 int64) {
 	_ = v233
 	var v239 int64
 	_ = v239
+	var v242 int32
+	_ = v242
 	var v243 int32
 	_ = v243
 	var v248 int32
@@ -1076,7 +1080,7 @@ L38:
 	*(*uint32)(unsafe.Add(mBase, uint32(v15)+36)) = uint32(v69)
 	v169 = int64(base.Ui64(v69) >> (uint(v164) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v15)+32)) = uint32(v169)
-	F_errdetail(m, int32(_a_F_WaitForWalSummarization_4), v13+int32(-32))
+	v174 = F_errdetail(m, int32(_a_F_WaitForWalSummarization_4), v13+int32(-32))
 	mBase = m.M
 	v175 = m.ExcPending
 	if v175 != 0 {
@@ -1086,7 +1090,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(_a_F_WaitForWalSummarization_5), int32(765), int32(_a_F_WaitForWalSummarization_6))
+	F_errfinish(m, int32(_a_F_WaitForWalSummarization_5), int32(802), int32(_a_F_WaitForWalSummarization_6))
 	mBase = m.M
 	v180 = m.ExcPending
 	if v180 != 0 {
@@ -1103,7 +1107,7 @@ L40:
 L41:
 	;
 	v204 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForWalSummarization[3]))
-	v210 = F_ConditionVariableTimedSleep(m, v204+int32(32), int32(_a_F_WaitForWalSummarization_1)-v202, int32(134217783))
+	v210 = F_ConditionVariableTimedSleep(m, v204+int32(32), int32(_a_F_WaitForWalSummarization_1)-v202, int32(134217788))
 	mBase = m.M
 	v211 = m.ExcPending
 	if v211 != 0 {
@@ -1168,7 +1172,7 @@ L49:
 	*(*uint32)(unsafe.Add(mBase, uint32(v15)+12)) = uint32(v69)
 	v239 = int64(base.Ui64(v69) >> (uint(v232) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v15)+8)) = uint32(v239)
-	F_errdetail(m, int32(_a_F_WaitForWalSummarization_8), v15)
+	v242 = F_errdetail(m, int32(_a_F_WaitForWalSummarization_8), v15)
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {
@@ -1178,7 +1182,7 @@ L49:
 	}
 L50:
 	;
-	F_errfinish(m, int32(_a_F_WaitForWalSummarization_5), int32(747), int32(_a_F_WaitForWalSummarization_6))
+	F_errfinish(m, int32(_a_F_WaitForWalSummarization_5), int32(784), int32(_a_F_WaitForWalSummarization_6))
 	mBase = m.M
 	v248 = m.ExcPending
 	if v248 != 0 {

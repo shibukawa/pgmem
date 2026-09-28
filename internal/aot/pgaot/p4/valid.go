@@ -413,7 +413,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1090), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1101), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -450,7 +450,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1096), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1107), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -517,7 +517,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1115), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1126), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -623,7 +623,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1133), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1144), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {
@@ -695,7 +695,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1146), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1157), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v191 = m.ExcPending
 	if v191 != 0 {
@@ -767,7 +767,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1159), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1170), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v222 = m.ExcPending
 	if v222 != 0 {
@@ -793,7 +793,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1162), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1173), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v237 = m.ExcPending
 	if v237 != 0 {
@@ -830,7 +830,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1170), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1181), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v256 = m.ExcPending
 	if v256 != 0 {
@@ -867,7 +867,7 @@ L78:
 	}
 L79:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1127), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1138), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v277 = m.ExcPending
 	if v277 != 0 {
@@ -904,7 +904,7 @@ L82:
 	}
 L83:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1140), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1151), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {
@@ -941,7 +941,7 @@ L86:
 	}
 L87:
 	;
-	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1153), int32(_a_F_CheckValidResultRel_2))
+	F_errfinish(m, int32(_a_F_CheckValidResultRel_1), int32(1164), int32(_a_F_CheckValidResultRel_2))
 	mBase = m.M
 	v319 = m.ExcPending
 	if v319 != 0 {
@@ -982,7 +982,7 @@ func F_ValidJsonBehaviorDefaultExpr(m *base.Module, l0 int32, l1 int32) int32 {
 			v17 = int32(0)
 			return v17
 		case 20, 21, 22, 23, 24, 48:
-			v11 = F_expression_tree_walker_impl(m, l0, int32(487), l1)
+			v11 = F_expression_tree_walker_impl(m, l0, int32(522), l1)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {

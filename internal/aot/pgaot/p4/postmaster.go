@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_MarkPostmasterChildInactive(m *base.Module, l0 int32, l1 int32) {
+func F_MarkPostmasterChildInactive(m *base.Module, l0 int32, l1 int64) {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -14,7 +14,7 @@ func F_MarkPostmasterChildInactive(m *base.Module, l0 int32, l1 int32) {
 	_ = v6
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_MarkPostmasterChildInactive[0]))
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_MarkPostmasterChildInactive[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v4+v6<<(uint(int32(2))%32))+44)) = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v4+v6<<(uint(int32(2))%32))+48)) = int32(1)
 	return
 }
 func F_PostmasterIsAliveInternal(m *base.Module) int32 {
@@ -66,7 +66,7 @@ func F_PostmasterIsAliveInternal(m *base.Module) int32 {
 				if v28 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_PostmasterIsAliveInternal_1), int32(382), int32(_a_F_PostmasterIsAliveInternal_2))
+					F_errfinish(m, int32(_a_F_PostmasterIsAliveInternal_1), int32(381), int32(_a_F_PostmasterIsAliveInternal_2))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {
@@ -96,7 +96,7 @@ func F_PostmasterIsAliveInternal(m *base.Module) int32 {
 				if v43 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_PostmasterIsAliveInternal_1), int32(384), int32(_a_F_PostmasterIsAliveInternal_2))
+					F_errfinish(m, int32(_a_F_PostmasterIsAliveInternal_1), int32(383), int32(_a_F_PostmasterIsAliveInternal_2))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {

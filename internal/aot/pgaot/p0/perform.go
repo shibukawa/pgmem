@@ -24,50 +24,54 @@ func F_perform_default_encoding_conversion(m *base.Module, l0 int32, l1 int32, l
 	_ = v24
 	var v25 int32
 	_ = v25
-	var v26 int32
+	var v26 int64
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v28 int32
+	var v28 int64
 	_ = v28
-	var v30 int32
-	_ = v30
-	var v35 int32
-	_ = v35
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
-	var v41 int32
-	_ = v41
+	var v31 int32
+	_ = v31
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
+	var v43 int64
+	_ = v43
 	var v44 int32
 	_ = v44
-	var v49 int32
-	_ = v49
-	var v50 int32
-	_ = v50
-	var v51 int32
-	_ = v51
-	var v62 int32
-	_ = v62
+	var v47 int32
+	_ = v47
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
 	var v65 int32
 	_ = v65
-	var v69 int32
-	_ = v69
-	var v73 int32
-	_ = v73
-	var v78 int32
-	_ = v78
-	var v82 int32
-	_ = v82
+	var v68 int32
+	_ = v68
+	var v72 int32
+	_ = v72
+	var v75 int32
+	_ = v75
+	var v76 int32
+	_ = v76
+	var v81 int32
+	_ = v81
 	var v85 int32
 	_ = v85
-	var v89 int32
-	_ = v89
-	var v95 int32
-	_ = v95
-	var v100 int32
-	_ = v100
+	var v88 int32
+	_ = v88
+	var v92 int32
+	_ = v92
+	var v97 int32
+	_ = v97
+	var v98 int32
+	_ = v98
+	var v103 int32
+	_ = v103
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
@@ -79,40 +83,40 @@ func F_perform_default_encoding_conversion(m *base.Module, l0 int32, l1 int32, l
 	}
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
 	if v16 == int32(0) {
-		v51 = l0
+		v54 = l0
 		m.G0 = v9 + int32(32)
-		return v51
+		return v54
 	} else {
 		if base.Ui32(int32(536870911)) <= base.Ui32(l1) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v62 = m.ExcPending
-			if v62 != 0 {
+			v65 = m.ExcPending
+			if v65 != 0 {
 				return int32(0)
 			} else {
 				F_errcode(m, int32(261))
 				mBase = m.M
-				v65 = m.ExcPending
-				if v65 != 0 {
+				v68 = m.ExcPending
+				if v68 != 0 {
 					return int32(0)
 				} else {
 					F_errmsg(m, int32(_a_F_perform_default_encoding_conversion_2), int32(0))
 					mBase = m.M
-					v69 = m.ExcPending
-					if v69 != 0 {
+					v72 = m.ExcPending
+					if v72 != 0 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
-						F_errdetail(m, int32(_a_F_perform_default_encoding_conversion_3), v9)
+						v75 = F_errdetail(m, int32(_a_F_perform_default_encoding_conversion_3), v9)
 						mBase = m.M
-						v73 = m.ExcPending
-						if v73 != 0 {
+						v76 = m.ExcPending
+						if v76 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_perform_default_encoding_conversion_4), int32(825), int32(_a_F_perform_default_encoding_conversion_5))
+							F_errfinish(m, int32(_a_F_perform_default_encoding_conversion_4), int32(827), int32(_a_F_perform_default_encoding_conversion_5))
 							mBase = m.M
-							v78 = m.ExcPending
-							if v78 != 0 {
+							v81 = m.ExcPending
+							if v81 != 0 {
 								return int32(0)
 							} else {
 								base.Wasm_trap_unreachable()
@@ -131,63 +135,63 @@ func F_perform_default_encoding_conversion(m *base.Module, l0 int32, l1 int32, l
 			} else {
 				v25 = v24
 			}
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
+			v26 = int64(*(*int32)(unsafe.Add(mBase, uint32(v25)+4)))
 			if v14 != 0 {
 				v27 = v24
 			} else {
 				v27 = v22
 			}
-			v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
-			v30 = *(*int32)(unsafe.Add(mBase, _c_F_perform_default_encoding_conversion[2]))
-			v35 = F_MemoryContextAllocHuge(m, v30, l1<<(uint(int32(2))%32)|int32(1))
+			v28 = int64(*(*int32)(unsafe.Add(mBase, uint32(v27)+4)))
+			v31 = *(*int32)(unsafe.Add(mBase, _c_F_perform_default_encoding_conversion[2]))
+			v36 = F_MemoryContextAllocHuge(m, v31, l1<<(uint(int32(2))%32)|int32(1))
 			mBase = m.M
-			v38 = m.ExcPending
-			if v38 != 0 {
+			v39 = m.ExcPending
+			if v39 != 0 {
 				return int32(0)
 			} else {
-				v40 = F_FunctionCall6Coll(m, v16, v26, v28, l0, v35, l1, int32(0))
+				v43 = F_FunctionCall6Coll(m, v16, v26, v28, base.I64_extend_i32_u(l0), base.I64_extend_i32_u(v36), base.I64_extend_i32_u(l1), int64(0))
 				mBase = m.M
-				v41 = m.ExcPending
-				if v41 != 0 {
+				v44 = m.ExcPending
+				if v44 != 0 {
 					return int32(0)
 				} else {
 					if base.Ui32(l1) < base.Ui32(int32(_a_F_perform_default_encoding_conversion_6)) {
-						v51 = v35
+						v54 = v36
 						m.G0 = v9 + int32(32)
-						return v51
+						return v54
 					} else {
-						v44 = F_strlen(m, v35)
+						v47 = F_strlen(m, v36)
 						mBase = m.M
-						if base.Ui32(int32(1073741823)) <= base.Ui32(v44) {
+						if base.Ui32(int32(1073741823)) <= base.Ui32(v47) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v82 = m.ExcPending
-							if v82 != 0 {
+							v85 = m.ExcPending
+							if v85 != 0 {
 								return int32(0)
 							} else {
 								F_errcode(m, int32(261))
 								mBase = m.M
-								v85 = m.ExcPending
-								if v85 != 0 {
+								v88 = m.ExcPending
+								if v88 != 0 {
 									return int32(0)
 								} else {
 									F_errmsg(m, int32(_a_F_perform_default_encoding_conversion_2), int32(0))
 									mBase = m.M
-									v89 = m.ExcPending
-									if v89 != 0 {
+									v92 = m.ExcPending
+									if v92 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l1
-										F_errdetail(m, int32(_a_F_perform_default_encoding_conversion_3), v9+int32(16))
+										v97 = F_errdetail(m, int32(_a_F_perform_default_encoding_conversion_3), v9+int32(16))
 										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
+										v98 = m.ExcPending
+										if v98 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_perform_default_encoding_conversion_4), int32(852), int32(_a_F_perform_default_encoding_conversion_5))
+											F_errfinish(m, int32(_a_F_perform_default_encoding_conversion_4), int32(854), int32(_a_F_perform_default_encoding_conversion_5))
 											mBase = m.M
-											v100 = m.ExcPending
-											if v100 != 0 {
+											v103 = m.ExcPending
+											if v103 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -199,15 +203,15 @@ func F_perform_default_encoding_conversion(m *base.Module, l0 int32, l1 int32, l
 								}
 							}
 						} else {
-							v49 = F_repalloc(m, v35, v44+int32(1))
+							v52 = F_repalloc(m, v36, v47+int32(1))
 							mBase = m.M
-							v50 = m.ExcPending
-							if v50 != 0 {
+							v53 = m.ExcPending
+							if v53 != 0 {
 								return int32(0)
 							} else {
-								v51 = v49
+								v54 = v52
 								m.G0 = v9 + int32(32)
-								return v51
+								return v54
 							}
 						}
 					}

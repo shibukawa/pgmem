@@ -112,9 +112,9 @@ type EnvImports interface {
 	X__syscall_readlinkat(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	X__syscall_renameat(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	X__syscall_rmdir(m *Module, l0 int32) int32
-	X__syscall_poll(m *Module, l0 int32, l1 int32, l2 int32) int32
 	X_setitimer_js(m *Module, l0 int32, l1 float64) int32
 	X__syscall_symlinkat(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Emscripten_get_heap_max(m *Module) int32
 	X__syscall_truncate64(m *Module, l0 int32, l1 int64) int32
 	X__syscall_umask(m *Module, l0 int32) int32
 	X__syscall_unlinkat(m *Module, l0 int32, l1 int32, l2 int32) int32
@@ -280,8 +280,6 @@ func I32_rotl(x, y int32) int32 { return int32(bits.RotateLeft32(uint32(x), int(
 func I32_rotr(x, y int32) int32 { return int32(bits.RotateLeft32(uint32(x), -int(y&31))) }
 
 func I64_rotl(x, y int64) int64 { return int64(bits.RotateLeft64(uint64(x), int(y&63))) }
-
-func I64_rotr(x, y int64) int64 { return int64(bits.RotateLeft64(uint64(x), -int(y&63))) }
 
 func F64_max(x, y float64) float64 {
 	if x != x || y != y {
@@ -800,6 +798,17 @@ func AtomicRmwAdd64At(m *Module, ea uint64, v int64) int64 {
 }
 
 //go:noinline
+func AtomicRmwSub64At(m *Module, ea uint64, v int64) int64 {
+	p := AtomicPtr64At(m, ea)
+	if !AtomicsContended(m) {
+		old := *p
+		*p = old - uint64(v)
+		return int64(old)
+	}
+	return int64(atomic.AddUint64(p, -uint64(v)) + uint64(v))
+}
+
+//go:noinline
 func AtomicRmwXchg64At(m *Module, ea uint64, v int64) int64 {
 	p := AtomicPtr64At(m, ea)
 	if !AtomicsContended(m) {
@@ -864,6 +873,16 @@ func AtomicRmwCmpxchg32(m *Module, addr, offset, expected, replacement int32) in
 //go:noinline
 func AtomicRmwAdd64(m *Module, addr, offset int32, v int64) int64 {
 	return AtomicRmwAdd64At(m, AtomicEA(m, addr, offset, 8), v)
+}
+
+//go:noinline
+func AtomicRmwSub64(m *Module, addr, offset int32, v int64) int64 {
+	return AtomicRmwSub64At(m, AtomicEA(m, addr, offset, 8), v)
+}
+
+//go:noinline
+func AtomicRmwAnd64(m *Module, addr, offset int32, v int64) int64 {
+	return AtomicRmw64At(m, AtomicEA(m, addr, offset, 8), func(o uint64) uint64 { return o & uint64(v) })
 }
 
 //go:noinline

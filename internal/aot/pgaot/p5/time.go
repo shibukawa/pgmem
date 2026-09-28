@@ -4100,15 +4100,15 @@ L438:
 	v1990 = int32(0) - v1939
 	goto L406
 }
-func F_extract_time(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F_extract_time(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
 	v3 = F_time_part_common(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
@@ -4455,7 +4455,7 @@ L19:
 L20:
 	;
 	v71 = *(*int32)(unsafe.Add(mBase, _c_F_readTimeLineHistory[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v71))) = int32(167772219)
+	*(*int32)(unsafe.Add(mBase, uint32(v71))) = int32(167772221)
 	v77 = F_fgets(m, v12+int32(160), int32(1024), v68)
 	mBase = m.M
 	v78 = m.ExcPending
@@ -4590,7 +4590,7 @@ L36:
 L37:
 	;
 	v175 = *(*int32)(unsafe.Add(mBase, _c_F_readTimeLineHistory[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v175))) = int32(167772219)
+	*(*int32)(unsafe.Add(mBase, uint32(v175))) = int32(167772221)
 	v181 = F_fgets(m, v12+int32(160), int32(1024), v68)
 	mBase = m.M
 	v182 = m.ExcPending
@@ -4737,7 +4737,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(164), int32(_a_F_readTimeLineHistory_8))
+	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(165), int32(_a_F_readTimeLineHistory_8))
 	mBase = m.M
 	v211 = m.ExcPending
 	if v211 != 0 {
@@ -4773,7 +4773,7 @@ L57:
 	}
 L58:
 	;
-	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(169), int32(_a_F_readTimeLineHistory_8))
+	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(170), int32(_a_F_readTimeLineHistory_8))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -4809,7 +4809,7 @@ L61:
 	}
 L62:
 	;
-	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(174), int32(_a_F_readTimeLineHistory_8))
+	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(175), int32(_a_F_readTimeLineHistory_8))
 	mBase = m.M
 	v253 = m.ExcPending
 	if v253 != 0 {
@@ -4845,7 +4845,7 @@ L65:
 	}
 L66:
 	;
-	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(111), int32(_a_F_readTimeLineHistory_8))
+	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(112), int32(_a_F_readTimeLineHistory_8))
 	mBase = m.M
 	v272 = m.ExcPending
 	if v272 != 0 {
@@ -4911,7 +4911,7 @@ L73:
 	}
 L74:
 	;
-	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(143), int32(_a_F_readTimeLineHistory_8))
+	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(144), int32(_a_F_readTimeLineHistory_8))
 	mBase = m.M
 	v305 = m.ExcPending
 	if v305 != 0 {
@@ -5014,7 +5014,7 @@ L86:
 	}
 L87:
 	;
-	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(195), int32(_a_F_readTimeLineHistory_8))
+	F_errfinish(m, int32(_a_F_readTimeLineHistory_7), int32(196), int32(_a_F_readTimeLineHistory_8))
 	mBase = m.M
 	v361 = m.ExcPending
 	if v361 != 0 {
@@ -5034,39 +5034,36 @@ func F_time(m *base.Module) int64 {
 	v1 = m.Env.Emscripten_date_now(m)
 	return base.I64_trunc_sat_f64_s(base.F64_div(v1, float64(1000)))
 }
-func F_time_interval(m *base.Module, l0 int32) int32 {
+func F_time_interval(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
+	var v3 int64
 	_ = v3
-	var v4 int64
-	_ = v4
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = *(*int64)(unsafe.Add(mBase, uint32(v3)))
-	v6 = F_palloc(m, int32(16))
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	v3 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = F_palloc(m, int32(16))
 	mBase = m.M
-	v9 = m.ExcPending
-	if v9 != 0 {
-		return int32(0)
+	v8 = m.ExcPending
+	if v8 != 0 {
+		return int64(0)
 	} else {
-		*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = int64(0)
-		*(*int64)(unsafe.Add(mBase, uint32(v6))) = v4
-		return v6
+		*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = int64(0)
+		*(*int64)(unsafe.Add(mBase, uint32(v5))) = v3
+		return base.I64_extend_i32_u(v5)
 	}
 }
-func F_time_part(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F_time_part(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
 	v3 = F_time_part_common(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
@@ -5074,80 +5071,77 @@ func F_time_part(m *base.Module, l0 int32) int32 {
 func F_time_t_to_timestamptz(m *base.Module, l0 int64) int64 {
 	return l0*int64(1000000) - int64(946684800000000)
 }
-func F_time_timetz(m *base.Module, l0 int32) int32 {
+func F_time_timetz(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
 	_ = v7
 	var v9 int32
 	_ = v9
-	var v11 int32
+	var v11 int64
 	_ = v11
-	var v12 int64
-	_ = v12
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
-	var v20 int64
-	_ = v20
-	var v25 int64
-	_ = v25
-	var v27 int64
-	_ = v27
-	var v34 int64
-	_ = v34
-	var v37 int32
-	_ = v37
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v19 int64
+	_ = v19
+	var v24 int64
+	_ = v24
+	var v26 int64
+	_ = v26
+	var v33 int64
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
-	var v41 int32
-	_ = v41
-	var v45 int32
-	_ = v45
+	var v44 int32
+	_ = v44
+	var v49 int32
+	_ = v49
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v12 = *(*int64)(unsafe.Add(mBase, uint32(v11)))
-	v14 = v9 + int32(4)
-	F_GetCurrentDateTime(m, v14)
+	v11 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v13 = v9 + int32(4)
+	F_GetCurrentDateTime(m, v13)
 	mBase = m.M
-	v18 = m.ExcPending
-	if v18 != 0 {
-		return int32(0)
+	v17 = m.ExcPending
+	if v17 != 0 {
+		return int64(0)
 	} else {
-		v20 = base.I64_div_s(v12, int64(3600000000))
-		*(*uint32)(unsafe.Add(mBase, uint32(v9)+12)) = uint32(v20)
-		v25 = v12 + base.I64_extend32_s(v20)*int64(-3600000000)
-		v27 = base.I64_div_s(v25, int64(60000000))
-		*(*uint32)(unsafe.Add(mBase, uint32(v9)+8)) = uint32(v27)
-		v34 = base.I64_div_s(base.I64_extend32_s(v27)*int64(-60000000)+v25, int64(1000000))
-		*(*uint32)(unsafe.Add(mBase, uint32(v9)+4)) = uint32(v34)
-		v37 = *(*int32)(unsafe.Add(mBase, _c_F_time_timetz[0]))
-		v39 = m.G0
-		v40 = int32(16)
-		v41 = v39 - v40
-		m.G0 = v41
-		v45 = F_DetermineTimeZoneOffsetInternal(m, v14, v37, v41+int32(8))
+		v19 = base.I64_div_s(v11, int64(3600000000))
+		*(*uint32)(unsafe.Add(mBase, uint32(v9)+12)) = uint32(v19)
+		v24 = v11 + base.I64_extend32_s(v19)*int64(-3600000000)
+		v26 = base.I64_div_s(v24, int64(60000000))
+		*(*uint32)(unsafe.Add(mBase, uint32(v9)+8)) = uint32(v26)
+		v33 = base.I64_div_s(base.I64_extend32_s(v26)*int64(-60000000)+v24, int64(1000000))
+		*(*uint32)(unsafe.Add(mBase, uint32(v9)+4)) = uint32(v33)
+		v36 = *(*int32)(unsafe.Add(mBase, _c_F_time_timetz[0]))
+		v38 = m.G0
+		v39 = int32(16)
+		v40 = v38 - v39
+		m.G0 = v40
+		v44 = F_DetermineTimeZoneOffsetInternal(m, v13, v36, v40+int32(8))
 		mBase = m.M
-		m.G0 = v41 + v40
-		v50 = F_palloc(m, int32(16))
+		m.G0 = v40 + v39
+		v49 = F_palloc(m, int32(16))
 		mBase = m.M
-		v51 = m.ExcPending
-		if v51 != 0 {
-			return int32(0)
+		v50 = m.ExcPending
+		if v50 != 0 {
+			return int64(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v50)+8)) = v45
-			*(*int64)(unsafe.Add(mBase, uint32(v50))) = v12
+			*(*int32)(unsafe.Add(mBase, uint32(v49)+8)) = v44
+			*(*int64)(unsafe.Add(mBase, uint32(v49))) = v11
 			m.G0 = v9 + int32(48)
-			return v50
+			return base.I64_extend_i32_u(v49)
 		}
 	}
 }

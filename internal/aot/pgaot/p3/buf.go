@@ -8,18 +8,18 @@ import (
 func F_BufFileDumpBuffer(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
-	_ = v2
+	var v8 int64
+	_ = v8
 	var v12 int32
 	_ = v12
 	var v14 int32
 	_ = v14
-	var v16 int32
+	var v16 int64
 	_ = v16
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
+	var v28 int64
+	_ = v28
+	var v30 int64
+	_ = v30
 	var v32 int32
 	_ = v32
 	var v33 int64
@@ -92,98 +92,104 @@ func F_BufFileDumpBuffer(m *base.Module, l0 int32) {
 	_ = v115
 	var v117 int32
 	_ = v117
-	var v119 int32
+	var v119 int64
 	_ = v119
 	var v122 int32
 	_ = v122
-	var v123 int32
-	_ = v123
+	var v127 int64
+	_ = v127
 	var v131 int64
 	_ = v131
 	var v137 int32
 	_ = v137
-	var v138 int32
-	_ = v138
+	var v142 int64
+	_ = v142
 	var v143 int64
 	_ = v143
-	var v147 int64
-	_ = v147
-	var v149 int64
-	_ = v149
-	var v151 int64
+	var v146 int64
+	_ = v146
+	var v148 int64
+	_ = v148
+	var v150 int64
+	_ = v150
+	var v151 int32
 	_ = v151
-	var v153 int32
-	_ = v153
-	var v157 int32
-	_ = v157
-	var v160 int32
-	_ = v160
-	var v167 int64
-	_ = v167
-	var v170 int64
-	_ = v170
+	var v155 int32
+	_ = v155
+	var v158 int32
+	_ = v158
+	var v165 int64
+	_ = v165
+	var v166 int64
+	_ = v166
+	var v169 int64
+	_ = v169
+	var v171 int64
+	_ = v171
 	var v172 int64
 	_ = v172
-	var v173 int64
-	_ = v173
-	var v174 int64
-	_ = v174
-	var v179 int32
-	_ = v179
+	var v178 int32
+	_ = v178
+	var v181 int32
+	_ = v181
 	var v182 int32
 	_ = v182
-	var v183 int32
-	_ = v183
-	var v187 int32
-	_ = v187
-	var v192 int32
-	_ = v192
+	var v186 int32
+	_ = v186
+	var v191 int32
+	_ = v191
+	var v193 int64
+	_ = v193
 	var v194 int64
 	_ = v194
 	var v195 int64
 	_ = v195
-	var v196 int64
-	_ = v196
+	var v202 int64
+	_ = v202
 	var v203 int64
 	_ = v203
-	var v207 int32
-	_ = v207
-	var v209 int64
-	_ = v209
-	var v213 int32
+	var v206 int32
+	_ = v206
+	var v208 int64
+	_ = v208
+	var v212 int64
+	_ = v212
+	var v213 int64
 	_ = v213
-	var v214 int32
-	_ = v214
-	var v218 int32
-	_ = v218
-	var v227 int32
-	_ = v227
+	var v222 int64
+	_ = v222
+	var v226 int32
+	_ = v226
+	var v228 int64
+	_ = v228
 	var v229 int64
 	_ = v229
-	var v230 int32
-	_ = v230
-	var v233 int64
-	_ = v233
-	var v240 int32
-	_ = v240
-	var v252 int32
-	_ = v252
+	var v231 int64
+	_ = v231
+	var v238 int32
+	_ = v238
+	var v243 int32
+	_ = v243
+	var v244 int64
+	_ = v244
 	var v254 int32
 	_ = v254
 	var v256 int32
 	_ = v256
-	var v260 int32
-	_ = v260
-	var v264 int32
-	_ = v264
-	var v269 int32
-	_ = v269
-	v2 = int32(0)
+	var v258 int32
+	_ = v258
+	var v262 int32
+	_ = v262
+	var v266 int32
+	_ = v266
+	var v271 int32
+	_ = v271
+	v8 = int64(0)
 	v12 = m.G0
 	v14 = v12 - int32(1072)
 	m.G0 = v14
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	if v2 < v16 {
+	v16 = *(*int64)(unsafe.Add(mBase, uint32(l0)+48))
+	if v8 < v16 {
 		goto L2
 	} else {
 		goto L3
@@ -192,30 +198,30 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v252 = m.ExcPending
-	if v252 != 0 {
+	v254 = m.ExcPending
+	if v254 != 0 {
 		goto L19
 	} else {
 		goto L42
 	}
 L2:
 	;
-	v23 = v16
-	v26 = v2
+	v28 = v16
+	v30 = v8
 	goto L5
 L3:
 	;
-	v218 = v16
+	v222 = v16
 	goto L4
 L4:
 	;
-	v227 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+9)) = uint8(v227)
-	v229 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
-	v230 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	v233 = v229 - base.I64_extend_i32_s(v218-v230)
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v233
-	if v233 < int64(0) {
+	v226 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+9)) = uint8(v226)
+	v228 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
+	v229 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v231 = v228 + (v229 - v222)
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v231
+	if v231 < int64(0) {
 		goto L39
 	} else {
 		goto L40
@@ -231,7 +237,7 @@ L5:
 	}
 L6:
 	;
-	v218 = v214
+	v222 = v213
 	goto L4
 L7:
 	;
@@ -244,15 +250,15 @@ L7:
 	}
 L8:
 	;
-	v137 = v23
-	v138 = v32
+	v137 = v32
+	v142 = v28
 	v143 = v33
 	goto L9
 L9:
 	;
-	v147 = int64(1073741824) - v143
-	v149 = base.I64_extend_i32_s(v137 - v26)
-	if v147 < v149 {
+	v146 = v142 - v30
+	v148 = int64(1073741824) - v143
+	if v146 < v148 {
 		goto L27
 	} else {
 		goto L28
@@ -262,16 +268,16 @@ L10:
 	goto L13
 L11:
 	;
-	v122 = v23
-	v123 = v37
+	v122 = v37
+	v127 = v28
 	goto L12
 L12:
 	;
 	v131 = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v131
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v123
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v122
 	v137 = v122
-	v138 = v123
+	v142 = v127
 	v143 = v131
 	goto L9
 L13:
@@ -288,9 +294,9 @@ L13:
 	}
 L14:
 	;
-	v119 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v122 = v119
-	v123 = v117
+	v119 = *(*int64)(unsafe.Add(mBase, uint32(l0)+48))
+	v122 = v117
+	v127 = v119
 	goto L12
 L15:
 	;
@@ -401,18 +407,18 @@ L26:
 	goto L14
 L27:
 	;
-	v151 = v147
+	v150 = v146
 	goto L29
 L28:
 	;
-	v151 = v149
+	v150 = v148
 	goto L29
 L29:
 	;
-	v153 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v157 = *(*int32)(unsafe.Add(mBase, uint32(v153+v138<<(uint(int32(2))%32))))
-	v160 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[1])))
-	if v160 == int32(1) {
+	v151 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v155 = *(*int32)(unsafe.Add(mBase, uint32(v151+v137<<(uint(int32(2))%32))))
+	v158 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[1])))
+	if v158 == int32(1) {
 		goto L30
 	} else {
 		goto L31
@@ -421,70 +427,71 @@ L30:
 	;
 	F___clock_gettime(m, int32(1), v14+int32(48))
 	mBase = m.M
-	v167 = *(*int64)(unsafe.Add(mBase, uint32(v14)+48))
-	v170 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+56)))
-	v172 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
-	v173 = v172
-	v174 = v167*int64(-1000000000) - v170
+	v165 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
+	v166 = *(*int64)(unsafe.Add(mBase, uint32(v14)+48))
+	v169 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+56)))
+	v171 = v166*int64(-1000000000) - v169
+	v172 = v165
 	goto L32
 L31:
 	;
-	v173 = v143
-	v174 = int64(0)
+	v171 = int64(0)
+	v172 = v143
 	goto L32
 L32:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+52)) = base.I32_wrap_i64(v151)
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = v26 + (l0 + int32(48))
-	v179 = v14 + int32(48)
-	v182 = F_FileWriteV(m, v157, v179, int32(1), v173, int32(167772168))
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+52)) = uint32(v150)
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = l0 + int32(56) + base.I32_wrap_i64(v30)
+	v178 = v14 + int32(48)
+	v181 = F_FileWriteV(m, v155, v178, int32(1), v172, int32(167772168))
 	mBase = m.M
-	v183 = m.ExcPending
-	if v183 != 0 {
+	v182 = m.ExcPending
+	if v182 != 0 {
 		goto L19
 	} else {
 		goto L33
 	}
 L33:
 	;
-	if v182 <= int32(0) {
+	if v181 <= int32(0) {
 		goto L1
 	} else {
 		goto L34
 	}
 L34:
 	;
-	v187 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[1])))
-	if v187 == int32(1) {
+	v186 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[1])))
+	if v186 == int32(1) {
 		goto L35
 	} else {
 		goto L36
 	}
 L35:
 	;
-	F___clock_gettime(m, int32(1), v179)
+	F___clock_gettime(m, int32(1), v178)
 	mBase = m.M
-	v192 = int32(_a_F_BufFileDumpBuffer_2)
-	v194 = *(*int64)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[2]))
-	v195 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+56)))
-	v196 = *(*int64)(unsafe.Add(mBase, uint32(v14)+48))
-	*(*int64)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[2])) = v194 + (v195 + (v196*int64(1000000000) + v174))
+	v191 = int32(_a_F_BufFileDumpBuffer_2)
+	v193 = *(*int64)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[2]))
+	v194 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+56)))
+	v195 = *(*int64)(unsafe.Add(mBase, uint32(v14)+48))
+	*(*int64)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[2])) = v193 + (v194 + (v195*int64(1000000000) + v171))
 	goto L37
 L36:
 	;
 	goto L37
 L37:
 	;
+	v202 = base.I64_extend_i32_s(v181)
 	v203 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v203 + base.I64_extend_i32_u(v182)
-	v207 = int32(_a_F_BufFileDumpBuffer_3)
-	v209 = *(*int64)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[3]))
-	*(*int64)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[3])) = v209 + int64(1)
-	v213 = v182 + v26
-	v214 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	if v213 < v214 {
-		v23 = v214
-		v26 = v213
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v202 + v203
+	v206 = int32(_a_F_BufFileDumpBuffer_3)
+	v208 = *(*int64)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[3]))
+	*(*int64)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[3])) = v208 + int64(1)
+	v212 = v202 + v30
+	v213 = *(*int64)(unsafe.Add(mBase, uint32(l0)+48))
+	if v212 < v213 {
+		v28 = v213
+		v30 = v212
 		goto L5
 	} else {
 		goto L38
@@ -494,50 +501,53 @@ L38:
 	goto L6
 L39:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v233 + int64(1073741824)
-	v240 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v240 - int32(1)
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v231 + int64(1073741824)
+	v238 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v238 - int32(1)
 	goto L41
 L40:
 	;
 	goto L41
 L41:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = int64(0)
+	v243 = l0 + int32(40)
+	v244 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v243)+8)) = v244
+	*(*int64)(unsafe.Add(mBase, uint32(v243))) = v244
 	m.G0 = v14 + int32(1072)
 	return
 L42:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v254 = m.ExcPending
-	if v254 != 0 {
+	v256 = m.ExcPending
+	if v256 != 0 {
 		goto L19
 	} else {
 		goto L43
 	}
 L43:
 	;
-	v256 = *(*int32)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[4]))
-	v260 = *(*int32)(unsafe.Add(mBase, uint32(v256+v157*int32(48))+32))
+	v258 = *(*int32)(unsafe.Add(mBase, _c_F_BufFileDumpBuffer[4]))
+	v262 = *(*int32)(unsafe.Add(mBase, uint32(v258+v155*int32(48))+32))
 	goto L44
 L44:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v260
+	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v262
 	F_errmsg(m, int32(_a_F_BufFileDumpBuffer_4), v14)
 	mBase = m.M
-	v264 = m.ExcPending
-	if v264 != 0 {
+	v266 = m.ExcPending
+	if v266 != 0 {
 		goto L19
 	} else {
 		goto L45
 	}
 L45:
 	;
-	F_errfinish(m, int32(_a_F_BufFileDumpBuffer_5), int32(546), int32(_a_F_BufFileDumpBuffer_6))
+	F_errfinish(m, int32(_a_F_BufFileDumpBuffer_5), int32(547), int32(_a_F_BufFileDumpBuffer_6))
 	mBase = m.M
-	v269 = m.ExcPending
-	if v269 != 0 {
+	v271 = m.ExcPending
+	if v271 != 0 {
 		goto L19
 	} else {
 		goto L46

@@ -328,6 +328,8 @@ func F_internal_load_library(m *base.Module, l0 int32) int32 {
 	_ = v583
 	var v589 int32
 	_ = v589
+	var v598 int32
+	_ = v598
 	var v599 int32
 	_ = v599
 	var v604 int32
@@ -396,48 +398,52 @@ func F_internal_load_library(m *base.Module, l0 int32) int32 {
 	_ = v706
 	var v707 int32
 	_ = v707
-	var v708 int32
-	_ = v708
-	var v713 int32
-	_ = v713
+	var v710 int32
+	_ = v710
+	var v715 int32
+	_ = v715
 	var v716 int32
 	_ = v716
 	var v717 int32
 	_ = v717
-	var v719 int32
-	_ = v719
-	var v731 int32
-	_ = v731
+	var v720 int32
+	_ = v720
+	var v724 int32
+	_ = v724
 	var v732 int32
 	_ = v732
-	var v739 int32
-	_ = v739
-	var v743 int32
-	_ = v743
-	var v749 int32
-	_ = v749
-	var v750 int32
-	_ = v750
-	var v754 int32
-	_ = v754
-	var v759 int32
-	_ = v759
-	var v763 int32
-	_ = v763
-	var v769 int32
-	_ = v769
-	var v777 int32
-	_ = v777
-	var v782 int32
-	_ = v782
-	var v788 int32
-	_ = v788
-	var v794 int32
-	_ = v794
-	var v798 int32
-	_ = v798
-	var v803 int32
-	_ = v803
+	var v734 int32
+	_ = v734
+	var v741 int32
+	_ = v741
+	var v745 int32
+	_ = v745
+	var v751 int32
+	_ = v751
+	var v752 int32
+	_ = v752
+	var v756 int32
+	_ = v756
+	var v761 int32
+	_ = v761
+	var v765 int32
+	_ = v765
+	var v771 int32
+	_ = v771
+	var v778 int32
+	_ = v778
+	var v779 int32
+	_ = v779
+	var v784 int32
+	_ = v784
+	var v790 int32
+	_ = v790
+	var v796 int32
+	_ = v796
+	var v800 int32
+	_ = v800
+	var v805 int32
+	_ = v805
 	v13 = m.G0
 	v15 = v13 - int32(208)
 	m.G0 = v15
@@ -449,8 +455,8 @@ L1:
 	mBase = m.M
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v788 = m.ExcPending
-	if v788 != 0 {
+	v790 = m.ExcPending
+	if v790 != 0 {
 		goto L104
 	} else {
 		goto L207
@@ -480,7 +486,7 @@ L2:
 	m.G0 = v542
 	v547 = v15 + int32(48) | int32(4)
 	v548 = *(*int32)(unsafe.Add(mBase, uint32(v547)))
-	if v548 != int32(1800) {
+	if v548 != int32(1900) {
 		goto L136
 	} else {
 		goto L137
@@ -1182,7 +1188,7 @@ L110:
 	v421 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v401)+52)))
 	v422 = *(*int64)(unsafe.Add(mBase, uint32(v401)+36))
 	v423 = *(*int64)(unsafe.Add(mBase, uint32(v401)+44))
-	if v406^int64(429496731400)|(v409^int64(274877906976))|(v413^int64(8391172920109432832)|(v416^int64(83912175219303)))|(v421|(v422|v423)) != int64(0) {
+	if v406^int64(429496731500)|(v409^int64(274877906976))|(v413^int64(8391172920109432833)|(v416^int64(83912175219303)))|(v421|(v422|v423)) != int64(0) {
 		goto L2
 	} else {
 		goto L111
@@ -1458,9 +1464,9 @@ L145:
 	}
 L146:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v542)+128)) = int32(18)
+	*(*int32)(unsafe.Add(mBase, uint32(v542)+128)) = int32(19)
 	*(*int32)(unsafe.Add(mBase, uint32(v542)+132)) = v542 + int32(192)
-	F_errdetail(m, int32(_a_F_internal_load_library_16), v542+int32(128))
+	v598 = F_errdetail(m, int32(_a_F_internal_load_library_16), v542+int32(128))
 	mBase = m.M
 	v599 = m.ExcPending
 	if v599 != 0 {
@@ -1545,8 +1551,8 @@ L158:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v763 = m.ExcPending
-	if v763 != 0 {
+	v765 = m.ExcPending
+	if v765 != 0 {
 		goto L104
 	} else {
 		goto L203
@@ -1681,7 +1687,7 @@ L177:
 L178:
 	;
 	v707 = *(*int32)(unsafe.Add(mBase, uint32(v547)+16))
-	if v707 != 0 {
+	if v707 != int32(1) {
 		goto L184
 	} else {
 		goto L185
@@ -1723,8 +1729,8 @@ L183:
 	goto L178
 L184:
 	;
-	v708 = *(*int32)(unsafe.Add(mBase, uint32(v542)+196))
-	if v708 != 0 {
+	v710 = *(*int32)(unsafe.Add(mBase, uint32(v542)+196))
+	if v710 != 0 {
 		goto L187
 	} else {
 		goto L188
@@ -1734,8 +1740,8 @@ L185:
 	goto L186
 L186:
 	;
-	v732 = *(*int32)(unsafe.Add(mBase, uint32(v542)+196))
-	if v732 == int32(0) {
+	v734 = *(*int32)(unsafe.Add(mBase, uint32(v542)+196))
+	if v734 == int32(0) {
 		goto L195
 	} else {
 		goto L196
@@ -1744,49 +1750,50 @@ L187:
 	;
 	F_appendStringInfoChar(m, v542+int32(192), int32(10))
 	mBase = m.M
-	v713 = m.ExcPending
-	if v713 != 0 {
+	v715 = m.ExcPending
+	if v715 != 0 {
 		goto L104
 	} else {
 		goto L190
 	}
 L188:
 	;
-	v719 = int32(_a_F_internal_load_library_22)
+	v717 = v707
 	goto L189
 L189:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v542)+40)) = v719
-	*(*int32)(unsafe.Add(mBase, uint32(v542)+36)) = int32(_a_F_internal_load_library_23)
-	*(*int32)(unsafe.Add(mBase, uint32(v542)+32)) = int32(_a_F_internal_load_library_24)
-	F_appendStringInfo(m, v542+int32(192), int32(_a_F_internal_load_library_25), v542+int32(32))
-	mBase = m.M
-	v731 = m.ExcPending
-	if v731 != 0 {
-		goto L104
-	} else {
-		goto L194
-	}
-L190:
-	;
-	v716 = *(*int32)(unsafe.Add(mBase, uint32(v547)+16))
-	if v716 != 0 {
+	*(*int32)(unsafe.Add(mBase, uint32(v542)+32)) = int32(_a_F_internal_load_library_22)
+	v720 = int32(_a_F_internal_load_library_23)
+	*(*int32)(unsafe.Add(mBase, uint32(v542)+36)) = v720
+	if v717 != 0 {
 		goto L191
 	} else {
 		goto L192
 	}
+L190:
+	;
+	v716 = *(*int32)(unsafe.Add(mBase, uint32(v547)+16))
+	v717 = v716
+	goto L189
 L191:
 	;
-	v717 = int32(_a_F_internal_load_library_22)
+	v724 = v720
 	goto L193
 L192:
 	;
-	v717 = int32(_a_F_internal_load_library_23)
+	v724 = int32(_a_F_internal_load_library_24)
 	goto L193
 L193:
 	;
-	v719 = v717
-	goto L189
+	*(*int32)(unsafe.Add(mBase, uint32(v542)+40)) = v724
+	F_appendStringInfo(m, v542+int32(192), int32(_a_F_internal_load_library_25), v542+int32(32))
+	mBase = m.M
+	v732 = m.ExcPending
+	if v732 != 0 {
+		goto L104
+	} else {
+		goto L194
+	}
 L194:
 	;
 	goto L186
@@ -1794,8 +1801,8 @@ L195:
 	;
 	F_appendStringInfoString(m, v542+int32(192), int32(_a_F_internal_load_library_26))
 	mBase = m.M
-	v739 = m.ExcPending
-	if v739 != 0 {
+	v741 = m.ExcPending
+	if v741 != 0 {
 		goto L104
 	} else {
 		goto L198
@@ -1807,8 +1814,8 @@ L197:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v743 = m.ExcPending
-	if v743 != 0 {
+	v745 = m.ExcPending
+	if v745 != 0 {
 		goto L104
 	} else {
 		goto L199
@@ -1821,20 +1828,20 @@ L199:
 	*(*int32)(unsafe.Add(mBase, uint32(v542)+16)) = l0
 	F_errmsg(m, int32(_a_F_internal_load_library_27), v542+int32(16))
 	mBase = m.M
-	v749 = m.ExcPending
-	if v749 != 0 {
+	v751 = m.ExcPending
+	if v751 != 0 {
 		goto L104
 	} else {
 		goto L200
 	}
 L200:
 	;
-	v750 = *(*int32)(unsafe.Add(mBase, uint32(v542)+192))
-	*(*int32)(unsafe.Add(mBase, uint32(v542))) = v750
+	v752 = *(*int32)(unsafe.Add(mBase, uint32(v542)+192))
+	*(*int32)(unsafe.Add(mBase, uint32(v542))) = v752
 	F_errdetail_internal(m, int32(_a_F_internal_load_library_28), v542)
 	mBase = m.M
-	v754 = m.ExcPending
-	if v754 != 0 {
+	v756 = m.ExcPending
+	if v756 != 0 {
 		goto L104
 	} else {
 		goto L201
@@ -1843,8 +1850,8 @@ L201:
 	;
 	F_errfinish(m, int32(_a_F_internal_load_library_7), int32(414), int32(_a_F_internal_load_library_17))
 	mBase = m.M
-	v759 = m.ExcPending
-	if v759 != 0 {
+	v761 = m.ExcPending
+	if v761 != 0 {
 		goto L104
 	} else {
 		goto L202
@@ -1859,8 +1866,8 @@ L203:
 	*(*int32)(unsafe.Add(mBase, uint32(v542)+112)) = l0
 	F_errmsg(m, int32(_a_F_internal_load_library_29), v542+int32(112))
 	mBase = m.M
-	v769 = m.ExcPending
-	if v769 != 0 {
+	v771 = m.ExcPending
+	if v771 != 0 {
 		goto L104
 	} else {
 		goto L204
@@ -1869,10 +1876,10 @@ L204:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v542)+100)) = v606
 	*(*int32)(unsafe.Add(mBase, uint32(v542)+96)) = int32(_a_F_internal_load_library_12)
-	F_errdetail(m, int32(_a_F_internal_load_library_30), v542+int32(96))
+	v778 = F_errdetail(m, int32(_a_F_internal_load_library_30), v542+int32(96))
 	mBase = m.M
-	v777 = m.ExcPending
-	if v777 != 0 {
+	v779 = m.ExcPending
+	if v779 != 0 {
 		goto L104
 	} else {
 		goto L205
@@ -1881,8 +1888,8 @@ L205:
 	;
 	F_errfinish(m, int32(_a_F_internal_load_library_7), int32(355), int32(_a_F_internal_load_library_17))
 	mBase = m.M
-	v782 = m.ExcPending
-	if v782 != 0 {
+	v784 = m.ExcPending
+	if v784 != 0 {
 		goto L104
 	} else {
 		goto L206
@@ -1897,8 +1904,8 @@ L207:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = l0
 	F_errmsg(m, int32(_a_F_internal_load_library_31), v15+int32(32))
 	mBase = m.M
-	v794 = m.ExcPending
-	if v794 != 0 {
+	v796 = m.ExcPending
+	if v796 != 0 {
 		goto L104
 	} else {
 		goto L208
@@ -1907,8 +1914,8 @@ L208:
 	;
 	F_errhint(m, int32(_a_F_internal_load_library_32), int32(0))
 	mBase = m.M
-	v798 = m.ExcPending
-	if v798 != 0 {
+	v800 = m.ExcPending
+	if v800 != 0 {
 		goto L104
 	} else {
 		goto L209
@@ -1917,8 +1924,8 @@ L209:
 	;
 	F_errfinish(m, int32(_a_F_internal_load_library_7), int32(291), int32(_a_F_internal_load_library_8))
 	mBase = m.M
-	v803 = m.ExcPending
-	if v803 != 0 {
+	v805 = m.ExcPending
+	if v805 != 0 {
 		goto L104
 	} else {
 		goto L210

@@ -421,7 +421,7 @@ L4:
 L5:
 	;
 	v42 = *(*int32)(unsafe.Add(mBase, _c_F_LockReleaseAll[2]))
-	v46 = F_LWLockAcquire(m, v42+int32(584), int32(0))
+	v46 = F_LWLockAcquire(m, v42+int32(548), int32(0))
 	mBase = m.M
 	v47 = m.ExcPending
 	if v47 != 0 {
@@ -435,12 +435,12 @@ L6:
 L7:
 	;
 	v49 = *(*int32)(unsafe.Add(mBase, _c_F_LockReleaseAll[2]))
-	v50 = *(*int32)(unsafe.Add(mBase, uint32(v49)+612))
+	v50 = *(*int32)(unsafe.Add(mBase, uint32(v49)+576))
 	v51 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v49)+612)) = v51
-	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+608)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v49)+608)) = uint8(v51)
-	F_LWLockRelease(m, v49+int32(584))
+	*(*int32)(unsafe.Add(mBase, uint32(v49)+576)) = v51
+	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+572)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v49)+572)) = uint8(v51)
+	F_LWLockRelease(m, v49+int32(548))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -557,7 +557,7 @@ L20:
 	}
 L21:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
 	v384 = m.ExcPending
 	if v384 != 0 {
@@ -735,7 +735,7 @@ L47:
 L48:
 	;
 	v246 = *(*int32)(unsafe.Add(mBase, _c_F_LockReleaseAll[2]))
-	v250 = F_LWLockAcquire(m, v246+int32(584), int32(0))
+	v250 = F_LWLockAcquire(m, v246+int32(548), int32(0))
 	mBase = m.M
 	v251 = m.ExcPending
 	if v251 != 0 {
@@ -766,7 +766,7 @@ L51:
 	goto L50
 L52:
 	;
-	v303 = *(*int32)(unsafe.Add(mBase, uint32(v281)+604))
+	v303 = *(*int32)(unsafe.Add(mBase, uint32(v281)+568))
 	v309 = *(*int32)(unsafe.Add(mBase, uint32(v303+v260<<(uint(int32(6))%32)+base.I32_wrap_i64(v299)<<(uint(int32(2))%32))))
 	if v257 != v309 {
 		goto L55
@@ -782,7 +782,7 @@ L53:
 	}
 L54:
 	;
-	v339 = *(*int32)(unsafe.Add(mBase, uint32(v333)+600))
+	v339 = *(*int32)(unsafe.Add(mBase, uint32(v333)+564))
 	v341 = *(*int64)(unsafe.Add(mBase, uint32(v339+v277)))
 	if int64(base.Ui64(v341)>>(uint(v336)%64))&int64(7) != int64(0) {
 		goto L59
@@ -800,7 +800,7 @@ L56:
 	goto L57
 L57:
 	;
-	v313 = *(*int32)(unsafe.Add(mBase, uint32(v281)+600))
+	v313 = *(*int32)(unsafe.Add(mBase, uint32(v281)+564))
 	v314 = v313 + v277
 	v315 = *(*int64)(unsafe.Add(mBase, uint32(v314)))
 	v318 = v299 * int64(3)
@@ -845,7 +845,7 @@ L62:
 	goto L53
 L63:
 	;
-	F_LWLockRelease(m, v333+int32(584))
+	F_LWLockRelease(m, v333+int32(548))
 	mBase = m.M
 	v360 = m.ExcPending
 	if v360 != 0 {
@@ -902,7 +902,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(_a_F_LockReleaseAll_5), int32(2385), int32(_a_F_LockReleaseAll_6))
+	F_errfinish(m, int32(_a_F_LockReleaseAll_5), int32(2457), int32(_a_F_LockReleaseAll_6))
 	mBase = m.M
 	v393 = m.ExcPending
 	if v393 != 0 {
@@ -934,7 +934,7 @@ L75:
 L76:
 	;
 	v453 = *(*int32)(unsafe.Add(mBase, _c_F_LockReleaseAll[2]))
-	F_LWLockRelease(m, v453+int32(584))
+	F_LWLockRelease(m, v453+int32(548))
 	mBase = m.M
 	v457 = m.ExcPending
 	if v457 != 0 {
@@ -964,7 +964,7 @@ L80:
 L81:
 	;
 	v520 = v496 + v508<<(uint(int32(3))%32)
-	v521 = *(*int32)(unsafe.Add(mBase, uint32(v520)+152))
+	v521 = *(*int32)(unsafe.Add(mBase, uint32(v520)+424))
 	if v521 == int32(0) {
 		v771 = v495
 		v772 = v496
@@ -989,7 +989,7 @@ L83:
 	}
 L84:
 	;
-	v525 = v520 + int32(148)
+	v525 = v520 + int32(420)
 	if v521 == v525 {
 		v771 = v495
 		v772 = v496
@@ -1238,7 +1238,7 @@ L120:
 	}
 L121:
 	;
-	F_errfinish(m, int32(_a_F_LockReleaseAll_5), int32(2287), int32(_a_F_LockReleaseAll_6))
+	F_errfinish(m, int32(_a_F_LockReleaseAll_5), int32(2359), int32(_a_F_LockReleaseAll_6))
 	mBase = m.M
 	v813 = m.ExcPending
 	if v813 != 0 {
@@ -1286,14 +1286,14 @@ L2:
 L3:
 	;
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-	if v9 == int32(319) {
+	if v9 == int32(321) {
 		goto L5
 	} else {
 		goto L6
 	}
 L4:
 	;
-	v14 = F_expression_tree_mutator_impl(m, v6, int32(1489), l1)
+	v14 = F_expression_tree_mutator_impl(m, v6, int32(1703), l1)
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {

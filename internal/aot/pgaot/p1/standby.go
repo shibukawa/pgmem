@@ -32,7 +32,7 @@ func F_StandbyRecoverPreparedTransactions(m *base.Module) {
 	_ = v16
 	var v20 int32
 	_ = v20
-	var v21 int32
+	var v21 int64
 	_ = v21
 	var v22 int64
 	_ = v22
@@ -98,9 +98,9 @@ L5:
 L6:
 	;
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v15+v16<<(uint(int32(2))%32))+8))
-	v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+32))
+	v21 = *(*int64)(unsafe.Add(mBase, uint32(v20)+32))
 	v22 = *(*int64)(unsafe.Add(mBase, uint32(v20)+16))
-	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+45)))
+	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+49)))
 	v26 = F_ProcessTwoPhaseBuffer(m, v21, v22, v23, int32(1), int32(0))
 	mBase = m.M
 	v27 = m.ExcPending

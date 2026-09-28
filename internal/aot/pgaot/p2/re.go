@@ -52,8 +52,8 @@ func F_ExecScanReScan(m *base.Module, l0 int32) {
 	_ = v49
 	var v51 int32
 	_ = v51
-	var v61 int32
-	_ = v61
+	var v59 int32
+	_ = v59
 	var v62 int32
 	_ = v62
 	var v65 int32
@@ -62,8 +62,8 @@ func F_ExecScanReScan(m *base.Module, l0 int32) {
 	_ = v69
 	var v72 int32
 	_ = v72
-	var v74 int32
-	_ = v74
+	var v73 int32
+	_ = v73
 	var v77 int32
 	_ = v77
 	var v84 int32
@@ -165,7 +165,7 @@ L6:
 L7:
 	;
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-	switch v30 - int32(354) {
+	switch v30 - int32(358) {
 	case 0:
 		v49 = int32(116)
 		goto L8
@@ -241,9 +241,9 @@ L16:
 	goto L14
 L17:
 	;
-	v61 = base.I32_div_s(int32(0), int32(32))
+	v59 = int32(0)
 	v62 = *(*int32)(unsafe.Add(mBase, uint32(v51)+4))
-	if v62 <= v61 {
+	if v62 <= v59 {
 		goto L16
 	} else {
 		goto L18
@@ -251,26 +251,26 @@ L17:
 L18:
 	;
 	v65 = v51 + int32(8)
-	v69 = *(*int32)(unsafe.Add(mBase, uint32(v65+v61<<(uint(int32(2))%32))))
+	v69 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
 	v72 = v69 & int32(-1)
 	if v72 != 0 {
 		v94 = v72
-		v95 = v61
+		v95 = v59
 		goto L15
 	} else {
 		goto L19
 	}
 L19:
 	;
-	v74 = v61 + int32(1)
-	if v74 == v62 {
+	v73 = int32(1)
+	if v73 == v62 {
 		goto L16
 	} else {
 		goto L20
 	}
 L20:
 	;
-	v77 = v74
+	v77 = v73
 	goto L21
 L21:
 	;
@@ -335,7 +335,7 @@ L30:
 L31:
 	;
 	v130 = v111 + int32(1)
-	v132 = base.I32_div_s(v130, int32(32))
+	v132 = int32(base.Ui32(v130) >> (uint(int32(5)) % 32))
 	v133 = *(*int32)(unsafe.Add(mBase, uint32(v51)+4))
 	if v133 <= v132 {
 		goto L30

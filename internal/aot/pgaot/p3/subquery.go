@@ -83,7 +83,7 @@ func F_set_subquery_size_estimates(m *base.Module, l0 int32, l1 int32) {
 	var v96 int32
 	_ = v96
 	v3 = int32(0)
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+140))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+148))
 	v14 = F_fetch_upper_rel(m, v11, int32(7), v3)
 	mBase = m.M
 	v15 = m.ExcPending
@@ -97,9 +97,9 @@ L1:
 	return
 L2:
 	;
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v14)+48))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v14)+60))
 	v17 = *(*float64)(unsafe.Add(mBase, uint32(v16)+32))
-	*(*float64)(unsafe.Add(mBase, uint32(l1)+120)) = v17
+	*(*float64)(unsafe.Add(mBase, uint32(l1)+128)) = v17
 	v19 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+76))
 	if v20 == int32(0) {
@@ -155,7 +155,7 @@ L8:
 L9:
 	;
 	v42 = int32(*(*int16)(unsafe.Add(mBase, uint32(v40)+8)))
-	v43 = int32(*(*int16)(unsafe.Add(mBase, uint32(l1)+80)))
+	v43 = int32(*(*int16)(unsafe.Add(mBase, uint32(l1)+88)))
 	if v42 < v43 {
 		goto L8
 	} else {
@@ -163,7 +163,7 @@ L9:
 	}
 L10:
 	;
-	v45 = int32(*(*int16)(unsafe.Add(mBase, uint32(l1)+82)))
+	v45 = int32(*(*int16)(unsafe.Add(mBase, uint32(l1)+90)))
 	if v45 < v42 {
 		goto L8
 	} else {
@@ -184,7 +184,7 @@ L11:
 	}
 L12:
 	;
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(l1)+88))
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(l1)+96))
 	*(*int32)(unsafe.Add(mBase, uint32(v70+(base.I32_extend16_s(v67)-v68)<<(uint(int32(2))%32)))) = v69
 	goto L8
 L13:
@@ -212,11 +212,11 @@ L14:
 	}
 L15:
 	;
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v55)+88))
+	v57 = *(*int32)(unsafe.Add(mBase, uint32(v55)+96))
 	v58 = int32(*(*int16)(unsafe.Add(mBase, uint32(v48)+8)))
-	v59 = int32(*(*int16)(unsafe.Add(mBase, uint32(v55)+80)))
+	v59 = int32(*(*int16)(unsafe.Add(mBase, uint32(v55)+88)))
 	v64 = *(*int32)(unsafe.Add(mBase, uint32(v57+(v58-v59)<<(uint(int32(2))%32))))
-	v65 = int32(*(*int16)(unsafe.Add(mBase, uint32(l1)+80)))
+	v65 = int32(*(*int16)(unsafe.Add(mBase, uint32(l1)+88)))
 	v66 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v40)+8)))
 	v67 = v66
 	v68 = v65

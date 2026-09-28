@@ -82,44 +82,48 @@ func F_CheckAttributeNamesTypes(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v183
 	var v186 int32
 	_ = v186
-	var v192 int32
-	_ = v192
+	var v189 int32
+	_ = v189
 	var v196 int32
 	_ = v196
 	var v202 int32
 	_ = v202
-	var v205 int32
-	_ = v205
-	var v206 int32
-	_ = v206
+	var v203 int32
+	_ = v203
 	var v207 int32
 	_ = v207
 	var v210 int32
 	_ = v210
-	var v213 int32
-	_ = v213
-	var v216 int32
-	_ = v216
+	var v211 int32
+	_ = v211
+	var v212 int32
+	_ = v212
+	var v215 int32
+	_ = v215
 	var v218 int32
 	_ = v218
-	var v234 int32
-	_ = v234
-	var v237 int32
-	_ = v237
-	var v242 int32
-	_ = v242
-	var v247 int32
-	_ = v247
-	var v251 int32
-	_ = v251
-	var v254 int32
-	_ = v254
-	var v255 int32
-	_ = v255
-	var v269 int32
-	_ = v269
-	var v274 int32
-	_ = v274
+	var v221 int32
+	_ = v221
+	var v224 int32
+	_ = v224
+	var v240 int32
+	_ = v240
+	var v243 int32
+	_ = v243
+	var v248 int32
+	_ = v248
+	var v253 int32
+	_ = v253
+	var v257 int32
+	_ = v257
+	var v260 int32
+	_ = v260
+	var v261 int32
+	_ = v261
+	var v275 int32
+	_ = v275
+	var v280 int32
+	_ = v280
 	v9 = m.G0
 	v11 = v9 - int32(48)
 	m.G0 = v11
@@ -133,11 +137,11 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v251 = m.ExcPending
-	if v251 != 0 {
+	v257 = m.ExcPending
+	if v257 != 0 {
 		goto L34
 	} else {
-		goto L72
+		goto L75
 	}
 L2:
 	;
@@ -154,11 +158,11 @@ L4:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v234 = m.ExcPending
-	if v234 != 0 {
+	v240 = m.ExcPending
+	if v240 != 0 {
 		goto L34
 	} else {
-		goto L68
+		goto L71
 	}
 L5:
 	;
@@ -184,7 +188,7 @@ L8:
 	goto L9
 L9:
 	;
-	v41 = l0 + v13<<(uint(int32(4))%32) + v30*int32(100) + int32(24)
+	v41 = l0 + v13<<(uint(int32(3))%32) + v30*int32(100) + int32(32)
 	v43 = F_strcmp(m, int32(_a_F_CheckAttributeNamesTypes_0), v41)
 	mBase = m.M
 	if v43 == int32(0) {
@@ -345,7 +349,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(_a_F_CheckAttributeNamesTypes_13), int32(482), int32(_a_F_CheckAttributeNamesTypes_14))
+	F_errfinish(m, int32(_a_F_CheckAttributeNamesTypes_13), int32(483), int32(_a_F_CheckAttributeNamesTypes_14))
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -368,7 +372,7 @@ L39:
 	}
 L40:
 	;
-	v110 = l0 + v13<<(uint(int32(4))%32) + int32(20)
+	v110 = l0 + v13<<(uint(int32(3))%32) + int32(28)
 	v116 = int32(1)
 	goto L43
 L41:
@@ -482,17 +486,14 @@ L59:
 	goto L60
 L60:
 	;
-	v192 = int32(0)
+	v189 = int32(0)
 	goto L61
 L61:
 	;
 	v196 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v202 = l0 + v196<<(uint(int32(4))%32) + v192*int32(100)
-	v205 = *(*int32)(unsafe.Add(mBase, uint32(v202)+88))
-	v206 = *(*int32)(unsafe.Add(mBase, uint32(v202)+116))
-	v207 = int32(0)
-	v210 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v202)+110)))
-	if v210 == int32(118) {
+	v202 = l0 + v196<<(uint(int32(3))%32) + v189*int32(100)
+	v203 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v202)+119)))
+	if v203 == int32(0) {
 		goto L63
 	} else {
 		goto L64
@@ -502,103 +503,121 @@ L62:
 	goto L5
 L63:
 	;
-	v213 = int32(8)
-	goto L65
-L64:
-	;
-	v213 = v207
-	goto L65
-L65:
-	;
-	F_CheckAttributeType(m, v202+int32(24), v205, v206, v207, v213|l2)
-	mBase = m.M
-	v216 = m.ExcPending
-	if v216 != 0 {
-		goto L34
-	} else {
+	v207 = v202 + int32(28)
+	v210 = *(*int32)(unsafe.Add(mBase, uint32(v207)+68))
+	v211 = *(*int32)(unsafe.Add(mBase, uint32(v207)+96))
+	v212 = int32(0)
+	v215 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v207)+90)))
+	if v215 == int32(118) {
 		goto L66
-	}
-L66:
-	;
-	v218 = v192 + int32(1)
-	if v218 != v186 {
-		v192 = v218
-		goto L61
 	} else {
 		goto L67
 	}
+L64:
+	;
+	goto L65
+L65:
+	;
+	v224 = v189 + int32(1)
+	if v224 != v186 {
+		v189 = v224
+		goto L61
+	} else {
+		goto L70
+	}
+L66:
+	;
+	v218 = int32(8)
+	goto L68
 L67:
 	;
-	goto L62
+	v218 = v212
+	goto L68
 L68:
 	;
-	F_errcode(m, int32(17039621))
+	F_CheckAttributeType(m, v202+int32(32), v210, v211, v212, v218|l2)
 	mBase = m.M
-	v237 = m.ExcPending
-	if v237 != 0 {
+	v221 = m.ExcPending
+	if v221 != 0 {
 		goto L34
 	} else {
 		goto L69
 	}
 L69:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(1600)
-	F_errmsg(m, int32(_a_F_CheckAttributeNamesTypes_15), v11)
-	mBase = m.M
-	v242 = m.ExcPending
-	if v242 != 0 {
-		goto L34
-	} else {
-		goto L70
-	}
+	goto L65
 L70:
 	;
-	F_errfinish(m, int32(_a_F_CheckAttributeNamesTypes_13), int32(464), int32(_a_F_CheckAttributeNamesTypes_14))
-	mBase = m.M
-	v247 = m.ExcPending
-	if v247 != 0 {
-		goto L34
-	} else {
-		goto L71
-	}
+	goto L62
 L71:
 	;
-	base.Wasm_trap_unreachable()
-	for {
+	F_errcode(m, int32(17039621))
+	mBase = m.M
+	v243 = m.ExcPending
+	if v243 != 0 {
+		goto L34
+	} else {
+		goto L72
 	}
 L72:
 	;
-	F_errcode(m, int32(16806020))
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(1600)
+	F_errmsg(m, int32(_a_F_CheckAttributeNamesTypes_15), v11)
 	mBase = m.M
-	v254 = m.ExcPending
-	if v254 != 0 {
+	v248 = m.ExcPending
+	if v248 != 0 {
 		goto L34
 	} else {
 		goto L73
 	}
 L73:
 	;
-	v255 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = l0 + v255<<(uint(int32(4))%32) + v127*int32(100) + int32(24)
-	F_errmsg(m, int32(_a_F_CheckAttributeNamesTypes_16), v11+int32(16))
+	F_errfinish(m, int32(_a_F_CheckAttributeNamesTypes_13), int32(465), int32(_a_F_CheckAttributeNamesTypes_14))
 	mBase = m.M
-	v269 = m.ExcPending
-	if v269 != 0 {
+	v253 = m.ExcPending
+	if v253 != 0 {
 		goto L34
 	} else {
 		goto L74
 	}
 L74:
 	;
-	F_errfinish(m, int32(_a_F_CheckAttributeNamesTypes_13), int32(498), int32(_a_F_CheckAttributeNamesTypes_14))
-	mBase = m.M
-	v274 = m.ExcPending
-	if v274 != 0 {
-		goto L34
-	} else {
-		goto L75
+	base.Wasm_trap_unreachable()
+	for {
 	}
 L75:
+	;
+	F_errcode(m, int32(16806020))
+	mBase = m.M
+	v260 = m.ExcPending
+	if v260 != 0 {
+		goto L34
+	} else {
+		goto L76
+	}
+L76:
+	;
+	v261 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = l0 + v261<<(uint(int32(3))%32) + v127*int32(100) + int32(32)
+	F_errmsg(m, int32(_a_F_CheckAttributeNamesTypes_16), v11+int32(16))
+	mBase = m.M
+	v275 = m.ExcPending
+	if v275 != 0 {
+		goto L34
+	} else {
+		goto L77
+	}
+L77:
+	;
+	F_errfinish(m, int32(_a_F_CheckAttributeNamesTypes_13), int32(499), int32(_a_F_CheckAttributeNamesTypes_14))
+	mBase = m.M
+	v280 = m.ExcPending
+	if v280 != 0 {
+		goto L34
+	} else {
+		goto L78
+	}
+L78:
 	;
 	base.Wasm_trap_unreachable()
 	for {

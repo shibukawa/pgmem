@@ -5,14 +5,14 @@ import (
 	"unsafe"
 )
 
-func F_StartupProcTriggerHandler(m *base.Module, l0 int32) {
+func F_StartupProcTriggerHandler(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
+	var v7 int32
+	_ = v7
 	*(*int32)(unsafe.Add(mBase, _c_F_StartupProcTriggerHandler[0])) = int32(1)
-	v6 = *(*int32)(unsafe.Add(mBase, _c_F_StartupProcTriggerHandler[1]))
-	F_SetLatch(m, v6+int32(4))
+	v7 = *(*int32)(unsafe.Add(mBase, _c_F_StartupProcTriggerHandler[1]))
+	F_SetLatch(m, v7+int32(4))
 	mBase = m.M
 	return
 }
@@ -115,7 +115,7 @@ func F_begin_startup_progress_phase(m *base.Module) {
 		}
 	}
 }
-func F_process_startup_packet_die(m *base.Module, l0 int32) {
+func F_process_startup_packet_die(m *base.Module, l0 int32, l1 int32) {
 	F__Exit(m, int32(1))
 	base.Wasm_trap_unreachable()
 	for {

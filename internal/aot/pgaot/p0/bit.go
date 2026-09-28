@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_bit_send(m *base.Module, l0 int32) int32 {
+func F_bit_send(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -43,25 +43,25 @@ func F_bit_send(m *base.Module, l0 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v10 = F_pg_detoast_datum(m, v9)
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		F_pq_begintypsend(m, v7)
 		mBase = m.M
 		v15 = m.ExcPending
 		if v15 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
 			F_enlargeStringInfo(m, v7, int32(4))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
 				v21 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
@@ -74,13 +74,13 @@ func F_bit_send(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v46 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
 					v47 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
 					*(*int32)(unsafe.Add(mBase, uint32(v46))) = v47 << (uint(int32(2)) % 32)
 					m.G0 = v7 + int32(16)
-					return v46
+					return base.I64_extend_i32_u(v46)
 				}
 			}
 		}

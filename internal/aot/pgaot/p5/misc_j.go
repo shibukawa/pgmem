@@ -538,7 +538,7 @@ L57:
 	}
 L58:
 	;
-	F_errfinish(m, int32(_a_F_jointree_contains_lateral_outer_refs_1), int32(2397), int32(_a_F_jointree_contains_lateral_outer_refs_2))
+	F_errfinish(m, int32(_a_F_jointree_contains_lateral_outer_refs_1), int32(2546), int32(_a_F_jointree_contains_lateral_outer_refs_2))
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {
@@ -552,7 +552,7 @@ L59:
 	for {
 	}
 }
-func F_jsonpath_in(m *base.Module, l0 int32) int32 {
+func F_jsonpath_in(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -561,11 +561,11 @@ func F_jsonpath_in(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v5 int32
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v4 = F_strlen(m, v3)
 	mBase = m.M
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
@@ -573,7 +573,7 @@ func F_jsonpath_in(m *base.Module, l0 int32) int32 {
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v6
 	}

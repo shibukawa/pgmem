@@ -12,10 +12,8 @@ func F_generate_collation_name(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
+	var v12 int32
+	_ = v12
 	var v15 int32
 	_ = v15
 	var v16 int32
@@ -26,166 +24,168 @@ func F_generate_collation_name(m *base.Module, l0 int32) int32 {
 	_ = v18
 	var v19 int32
 	_ = v19
-	var v23 int32
-	_ = v23
+	var v20 int32
+	_ = v20
 	var v24 int32
 	_ = v24
 	var v25 int32
 	_ = v25
 	var v26 int32
 	_ = v26
-	var v28 int32
-	_ = v28
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
 	var v34 int32
 	_ = v34
-	var v40 int32
-	_ = v40
-	var v47 int32
-	_ = v47
+	var v35 int32
+	_ = v35
+	var v41 int32
+	_ = v41
 	var v48 int32
 	_ = v48
-	var v50 int32
-	_ = v50
+	var v49 int32
+	_ = v49
 	var v51 int32
 	_ = v51
-	var v53 int32
-	_ = v53
-	var v61 int32
-	_ = v61
-	var v65 int32
-	_ = v65
-	var v70 int32
-	_ = v70
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v62 int32
+	_ = v62
+	var v66 int32
+	_ = v66
+	var v71 int32
+	_ = v71
 	v6 = m.G0
 	v8 = v6 - int32(48)
 	m.G0 = v8
-	v11 = F_SearchSysCache1(m, int32(16), l0)
+	v12 = F_SearchSysCache1(m, int32(16), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v14 = m.ExcPending
-	if v14 != 0 {
+	v15 = m.ExcPending
+	if v15 != 0 {
 		return int32(0)
 	} else {
-		if v11 != 0 {
-			v15 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
-			v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+22)))
-			v17 = v15 + v16
-			v18 = F_CollationIsVisible(m, l0)
+		if v12 != 0 {
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
+			v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+22)))
+			v18 = v16 + v17
+			v19 = F_CollationIsVisible(m, l0)
 			mBase = m.M
-			v19 = m.ExcPending
-			if v19 != 0 {
+			v20 = m.ExcPending
+			if v20 != 0 {
 				return int32(0)
 			} else {
-				if v18 != 0 {
+				if v19 != 0 {
 					F_initStringInfo(m, v8+int32(32))
 					mBase = m.M
-					v23 = m.ExcPending
-					if v23 != 0 {
+					v24 = m.ExcPending
+					if v24 != 0 {
 						return int32(0)
 					} else {
-						v47 = F_quote_identifier(m, v17+int32(4))
+						v48 = F_quote_identifier(m, v18+int32(4))
 						mBase = m.M
-						v48 = m.ExcPending
-						if v48 != 0 {
+						v49 = m.ExcPending
+						if v49 != 0 {
 							return int32(0)
 						} else {
-							F_appendStringInfoString(m, v8+int32(32), v47)
+							F_appendStringInfoString(m, v8+int32(32), v48)
 							mBase = m.M
-							v50 = m.ExcPending
-							if v50 != 0 {
+							v51 = m.ExcPending
+							if v51 != 0 {
 								return int32(0)
 							} else {
-								v51 = *(*int32)(unsafe.Add(mBase, uint32(v8)+32))
-								F_ReleaseCatCache(m, v11)
+								v52 = *(*int32)(unsafe.Add(mBase, uint32(v8)+32))
+								F_ReleaseCatCache(m, v12)
 								mBase = m.M
-								v53 = m.ExcPending
-								if v53 != 0 {
+								v54 = m.ExcPending
+								if v54 != 0 {
 									return int32(0)
 								} else {
 									m.G0 = v8 + int32(48)
-									return v51
+									return v52
 								}
 							}
 						}
 					}
 				} else {
-					v24 = *(*int32)(unsafe.Add(mBase, uint32(v17)+68))
-					v25 = F_get_namespace_name_or_temp(m, v24)
+					v25 = *(*int32)(unsafe.Add(mBase, uint32(v18)+68))
+					v26 = F_get_namespace_name_or_temp(m, v25)
 					mBase = m.M
-					v26 = m.ExcPending
-					if v26 != 0 {
+					v27 = m.ExcPending
+					if v27 != 0 {
 						return int32(0)
 					} else {
-						v28 = v8 + int32(32)
-						F_initStringInfo(m, v28)
+						v29 = v8 + int32(32)
+						F_initStringInfo(m, v29)
 						mBase = m.M
-						v30 = m.ExcPending
-						if v30 != 0 {
+						v31 = m.ExcPending
+						if v31 != 0 {
 							return int32(0)
 						} else {
-							if v25 == int32(0) {
-								v47 = F_quote_identifier(m, v17+int32(4))
+							if v26 == int32(0) {
+								v48 = F_quote_identifier(m, v18+int32(4))
 								mBase = m.M
-								v48 = m.ExcPending
-								if v48 != 0 {
+								v49 = m.ExcPending
+								if v49 != 0 {
 									return int32(0)
 								} else {
-									F_appendStringInfoString(m, v8+int32(32), v47)
+									F_appendStringInfoString(m, v8+int32(32), v48)
 									mBase = m.M
-									v50 = m.ExcPending
-									if v50 != 0 {
+									v51 = m.ExcPending
+									if v51 != 0 {
 										return int32(0)
 									} else {
-										v51 = *(*int32)(unsafe.Add(mBase, uint32(v8)+32))
-										F_ReleaseCatCache(m, v11)
+										v52 = *(*int32)(unsafe.Add(mBase, uint32(v8)+32))
+										F_ReleaseCatCache(m, v12)
 										mBase = m.M
-										v53 = m.ExcPending
-										if v53 != 0 {
+										v54 = m.ExcPending
+										if v54 != 0 {
 											return int32(0)
 										} else {
 											m.G0 = v8 + int32(48)
-											return v51
+											return v52
 										}
 									}
 								}
 							} else {
-								v33 = F_quote_identifier(m, v25)
+								v34 = F_quote_identifier(m, v26)
 								mBase = m.M
-								v34 = m.ExcPending
-								if v34 != 0 {
+								v35 = m.ExcPending
+								if v35 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v33
-									F_appendStringInfo(m, v28, int32(_a_F_generate_collation_name_0), v8+int32(16))
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v34
+									F_appendStringInfo(m, v29, int32(_a_F_generate_collation_name_0), v8+int32(16))
 									mBase = m.M
-									v40 = m.ExcPending
-									if v40 != 0 {
+									v41 = m.ExcPending
+									if v41 != 0 {
 										return int32(0)
 									} else {
-										v47 = F_quote_identifier(m, v17+int32(4))
+										v48 = F_quote_identifier(m, v18+int32(4))
 										mBase = m.M
-										v48 = m.ExcPending
-										if v48 != 0 {
+										v49 = m.ExcPending
+										if v49 != 0 {
 											return int32(0)
 										} else {
-											F_appendStringInfoString(m, v8+int32(32), v47)
+											F_appendStringInfoString(m, v8+int32(32), v48)
 											mBase = m.M
-											v50 = m.ExcPending
-											if v50 != 0 {
+											v51 = m.ExcPending
+											if v51 != 0 {
 												return int32(0)
 											} else {
-												v51 = *(*int32)(unsafe.Add(mBase, uint32(v8)+32))
-												F_ReleaseCatCache(m, v11)
+												v52 = *(*int32)(unsafe.Add(mBase, uint32(v8)+32))
+												F_ReleaseCatCache(m, v12)
 												mBase = m.M
-												v53 = m.ExcPending
-												if v53 != 0 {
+												v54 = m.ExcPending
+												if v54 != 0 {
 													return int32(0)
 												} else {
 													m.G0 = v8 + int32(48)
-													return v51
+													return v52
 												}
 											}
 										}
@@ -199,21 +199,21 @@ func F_generate_collation_name(m *base.Module, l0 int32) int32 {
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v61 = m.ExcPending
-			if v61 != 0 {
+			v62 = m.ExcPending
+			if v62 != 0 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
 				F_errmsg_internal(m, int32(_a_F_generate_collation_name_1), v8)
 				mBase = m.M
-				v65 = m.ExcPending
-				if v65 != 0 {
+				v66 = m.ExcPending
+				if v66 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_generate_collation_name_2), int32(_a_F_generate_collation_name_3), int32(_a_F_generate_collation_name_4))
 					mBase = m.M
-					v70 = m.ExcPending
-					if v70 != 0 {
+					v71 = m.ExcPending
+					if v71 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()

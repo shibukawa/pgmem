@@ -12,33 +12,33 @@ func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v5
 	var v7 int32
 	_ = v7
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
-	var v11 int32
-	_ = v11
-	var v15 int32
-	_ = v15
-	var v22 int32
-	_ = v22
+	var v14 int32
+	_ = v14
+	var v21 int32
+	_ = v21
 	v5 = l4
 	v7 = int32(0)
-	v10 = F_init_custom_variable(m, l0, l1, l2, l5, v7, v7, int32(120))
+	v9 = F_init_custom_variable(m, l0, l1, l2, l5, v7, v7)
 	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
+	v10 = m.ExcPending
+	if v10 != 0 {
 		return
 	} else {
-		*(*uint8)(unsafe.Add(mBase, uint32(v10)+112)) = uint8(v5)
-		*(*uint8)(unsafe.Add(mBase, uint32(v10)+96)) = uint8(v5)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+92)) = l3
-		v15 = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+108)) = v15
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+104)) = v15
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+100)) = v15
-		F_define_custom_variable(m, v10)
+		*(*uint8)(unsafe.Add(mBase, uint32(v9)+116)) = uint8(v5)
+		*(*uint8)(unsafe.Add(mBase, uint32(v9)+100)) = uint8(v5)
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+96)) = l3
+		v14 = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+112)) = v14
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+108)) = v14
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+104)) = v14
+		F_define_custom_variable(m, v9)
 		mBase = m.M
-		v22 = m.ExcPending
-		if v22 != 0 {
+		v21 = m.ExcPending
+		if v21 != 0 {
 			return
 		} else {
 			return

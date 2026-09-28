@@ -110,7 +110,7 @@ L12:
 L13:
 	;
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v16+v18<<(uint(int32(2))%32))))
-	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+26)))
+	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+30)))
 	if v26 == int32(1) {
 		v39 = v25
 		goto L5
@@ -623,7 +623,7 @@ L27:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+180)) = v66
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+184)) = v67
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+188)) = v68
-	F_errfinish(m, int32(_a_F_PortalRunFetch_2), int32(1434), int32(_a_F_PortalRunFetch_3))
+	F_errfinish(m, int32(_a_F_PortalRunFetch_2), int32(1431), int32(_a_F_PortalRunFetch_3))
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {
@@ -987,7 +987,7 @@ L77:
 	}
 L78:
 	;
-	v226 = *(*int32)(unsafe.Add(mBase, uint32(v212)+40))
+	v226 = *(*int32)(unsafe.Add(mBase, uint32(v212)+44))
 	v227 = *(*int64)(unsafe.Add(mBase, uint32(v226)+112))
 	F_PopActiveSnapshot(m)
 	mBase = m.M
@@ -1102,7 +1102,7 @@ L94:
 	}
 L95:
 	;
-	F_errfinish(m, int32(_a_F_PortalRunFetch_2), int32(1605), int32(_a_F_PortalRunFetch_5))
+	F_errfinish(m, int32(_a_F_PortalRunFetch_2), int32(1602), int32(_a_F_PortalRunFetch_5))
 	mBase = m.M
 	v273 = m.ExcPending
 	if v273 != 0 {

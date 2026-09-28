@@ -95,6 +95,8 @@ func F_makeItemLikeRegex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = v77
 	var v78 int32
 	_ = v78
+	var v85 int32
+	_ = v85
 	var v86 int32
 	_ = v86
 	var v91 int32
@@ -372,7 +374,7 @@ L27:
 	v78 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v76
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v39 + v78
-	F_errdetail(m, int32(_a_F_makeItemLikeRegex_2), v12+int32(16))
+	v85 = F_errdetail(m, int32(_a_F_makeItemLikeRegex_2), v12+int32(16))
 	mBase = m.M
 	v86 = m.ExcPending
 	if v86 != 0 {
@@ -382,7 +384,7 @@ L27:
 	}
 L28:
 	;
-	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(603), int32(_a_F_makeItemLikeRegex_4))
+	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(634), int32(_a_F_makeItemLikeRegex_4))
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -474,7 +476,7 @@ L42:
 	}
 L43:
 	;
-	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(680), int32(_a_F_makeItemLikeRegex_6))
+	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(711), int32(_a_F_makeItemLikeRegex_6))
 	mBase = m.M
 	v147 = m.ExcPending
 	if v147 != 0 {
@@ -581,7 +583,7 @@ L54:
 	}
 L55:
 	;
-	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(632), int32(_a_F_makeItemLikeRegex_4))
+	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(663), int32(_a_F_makeItemLikeRegex_4))
 	mBase = m.M
 	v193 = m.ExcPending
 	if v193 != 0 {

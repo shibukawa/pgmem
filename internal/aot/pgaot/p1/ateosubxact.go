@@ -98,9 +98,9 @@ L9:
 	v49 = int32(_a_F_AtEOSubXact_HashTables_0)
 	v50 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_HashTables[0]))
 	v52 = v50 << (uint(int32(2)) % 32)
-	v55 = *(*int32)(unsafe.Add(mBase, uint32(v52)+uint32(_c_F_AtEOSubXact_HashTables[2])))
-	*(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_AtEOSubXact_HashTables[3]))) = v55
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v52)+uint32(_c_F_AtEOSubXact_HashTables[4])))
+	v55 = *(*int32)(unsafe.Add(mBase, uint32(v52)+uint32(_c_F_AtEOSubXact_HashTables[0])))
+	*(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_AtEOSubXact_HashTables[2]))) = v55
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v52)+uint32(_c_F_AtEOSubXact_HashTables[3])))
 	*(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_AtEOSubXact_HashTables[1]))) = v59
 	*(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_HashTables[0])) = v50 - int32(1)
 	goto L8
@@ -126,7 +126,7 @@ L12:
 	}
 L13:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_AtEOSubXact_HashTables[3])))
+	v39 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_AtEOSubXact_HashTables[2])))
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v39
 	F_errmsg_internal(m, int32(_a_F_AtEOSubXact_HashTables_1), v10)
 	mBase = m.M
@@ -138,7 +138,7 @@ L13:
 	}
 L14:
 	;
-	F_errfinish(m, int32(_a_F_AtEOSubXact_HashTables_2), int32(1956), int32(_a_F_AtEOSubXact_HashTables_3))
+	F_errfinish(m, int32(_a_F_AtEOSubXact_HashTables_2), int32(1909), int32(_a_F_AtEOSubXact_HashTables_3))
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -178,7 +178,7 @@ func F_AtEOSubXact_Namespace(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			*(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Namespace[3])) = v13
 			*(*uint8)(unsafe.Add(mBase, _c_F_AtEOSubXact_Namespace[4])) = uint8(v13)
 			v25 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_Namespace[5]))
-			*(*int32)(unsafe.Add(mBase, uint32(v25)+68)) = v13
+			*(*int32)(unsafe.Add(mBase, uint32(v25)+28)) = v13
 			return
 		}
 	} else {
@@ -342,28 +342,28 @@ func F_AtEOSubXact_PgStat(m *base.Module, l0 int32, l1 int32) {
 	_ = v198
 	var v201 int32
 	_ = v201
-	var v202 int32
-	_ = v202
 	var v203 int32
 	_ = v203
-	var v205 int32
-	_ = v205
-	var v209 int32
-	_ = v209
-	var v217 int32
-	_ = v217
-	var v221 int32
-	_ = v221
-	var v226 int32
-	_ = v226
-	var v229 int32
-	_ = v229
-	var v234 int32
-	_ = v234
-	var v237 int64
-	_ = v237
-	var v249 int32
-	_ = v249
+	var v204 int32
+	_ = v204
+	var v206 int32
+	_ = v206
+	var v210 int32
+	_ = v210
+	var v218 int32
+	_ = v218
+	var v222 int32
+	_ = v222
+	var v227 int32
+	_ = v227
+	var v230 int32
+	_ = v230
+	var v235 int32
+	_ = v235
+	var v238 int64
+	_ = v238
+	var v250 int32
+	_ = v250
 	v3 = int32(0)
 	v12 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_PgStat[0]))
 	if v12 == v3 {
@@ -594,8 +594,8 @@ L32:
 	;
 	F_pfree(m, v12)
 	mBase = m.M
-	v249 = m.ExcPending
-	if v249 != 0 {
+	v250 = m.ExcPending
+	if v250 != 0 {
 		goto L24
 	} else {
 		goto L59
@@ -689,7 +689,7 @@ L42:
 	}
 L43:
 	;
-	if v229 <= int32(0) {
+	if v230 <= int32(0) {
 		goto L32
 	} else {
 		goto L57
@@ -698,7 +698,7 @@ L44:
 	;
 	if v181 != v163 {
 		v168 = v181
-		v175 = v229
+		v175 = v230
 		goto L42
 	} else {
 		goto L56
@@ -707,8 +707,8 @@ L45:
 	;
 	F_pfree(m, v192)
 	mBase = m.M
-	v226 = m.ExcPending
-	if v226 != 0 {
+	v227 = m.ExcPending
+	if v227 != 0 {
 		goto L24
 	} else {
 		goto L55
@@ -727,8 +727,8 @@ L47:
 	goto L48
 L48:
 	;
-	v209 = *(*int32)(unsafe.Add(mBase, uint32(v158)+12))
-	if v209 == int32(0) {
+	v210 = *(*int32)(unsafe.Add(mBase, uint32(v158)+12))
+	if v210 == int32(0) {
 		goto L52
 	} else {
 		goto L53
@@ -737,10 +737,10 @@ L49:
 	;
 	v198 = *(*int32)(unsafe.Add(mBase, uint32(v192)))
 	v201 = *(*int32)(unsafe.Add(mBase, uint32(v168-int32(16))))
-	v202 = F_pgstat_drop_entry(m, v198, v201, v179)
+	v203 = F_pgstat_drop_entry(m, v198, v201, v179, int32(1))
 	mBase = m.M
-	v203 = m.ExcPending
-	if v203 != 0 {
+	v204 = m.ExcPending
+	if v204 != 0 {
 		goto L24
 	} else {
 		goto L50
@@ -749,15 +749,15 @@ L50:
 	;
 	F_pfree(m, v192)
 	mBase = m.M
-	v205 = m.ExcPending
-	if v205 != 0 {
+	v206 = m.ExcPending
+	if v206 != 0 {
 		goto L24
 	} else {
 		goto L51
 	}
 L51:
 	;
-	v229 = v175 + (v202 ^ int32(1))
+	v230 = v175 + (v203 ^ int32(1))
 	goto L44
 L52:
 	;
@@ -771,25 +771,25 @@ L53:
 L54:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v168)+4)) = v166
-	v217 = *(*int32)(unsafe.Add(mBase, uint32(v158)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v168))) = v217
-	*(*int32)(unsafe.Add(mBase, uint32(v217)+4)) = v168
+	v218 = *(*int32)(unsafe.Add(mBase, uint32(v158)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v168))) = v218
+	*(*int32)(unsafe.Add(mBase, uint32(v218)+4)) = v168
 	*(*int32)(unsafe.Add(mBase, uint32(v158)+8)) = v168
-	v221 = *(*int32)(unsafe.Add(mBase, uint32(v158)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v158)+16)) = v221 + int32(1)
-	v229 = v175
+	v222 = *(*int32)(unsafe.Add(mBase, uint32(v158)+16))
+	*(*int32)(unsafe.Add(mBase, uint32(v158)+16)) = v222 + int32(1)
+	v230 = v175
 	goto L44
 L55:
 	;
-	v229 = v175
+	v230 = v175
 	goto L44
 L56:
 	;
 	goto L43
 L57:
 	;
-	v234 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_PgStat[2]))
-	v237 = base.AtomicRmwAdd64(m, v234, int32(16), int64(1))
+	v235 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_PgStat[2]))
+	v238 = base.AtomicRmwAdd64(m, v235, int32(16), int64(1))
 	goto L58
 L58:
 	;

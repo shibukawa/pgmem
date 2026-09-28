@@ -603,7 +603,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(_a_F_CopyErrorData_2), int32(1760), int32(_a_F_CopyErrorData_3))
+	F_errfinish(m, int32(_a_F_CopyErrorData_2), int32(1951), int32(_a_F_CopyErrorData_3))
 	mBase = m.M
 	v105 = m.ExcPending
 	if v105 != 0 {
@@ -736,26 +736,30 @@ func F_CopyGetData(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v174
 	var v176 int32
 	_ = v176
-	var v177 int32
-	_ = v177
-	var v178 int32
-	_ = v178
-	var v179 int32
-	_ = v179
 	var v180 int32
 	_ = v180
-	var v185 int32
-	_ = v185
+	var v181 int32
+	_ = v181
+	var v182 int32
+	_ = v182
+	var v184 int32
+	_ = v184
+	var v187 int32
+	_ = v187
+	var v188 int32
+	_ = v188
 	var v193 int32
 	_ = v193
-	var v203 int32
-	_ = v203
-	var v205 int32
-	_ = v205
-	var v209 int32
-	_ = v209
-	var v214 int32
-	_ = v214
+	var v201 int32
+	_ = v201
+	var v211 int32
+	_ = v211
+	var v213 int32
+	_ = v213
+	var v217 int32
+	_ = v217
+	var v222 int32
+	_ = v222
 	v4 = int32(0)
 	v9 = m.G0
 	v11 = v9 - int32(32)
@@ -769,15 +773,15 @@ func F_CopyGetData(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	case 2:
 		goto L4
 	default:
-		v193 = v4
+		v201 = v4
 		goto L2
 	}
 L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v203 = m.ExcPending
-	if v203 != 0 {
+	v211 = m.ExcPending
+	if v211 != 0 {
 		goto L17
 	} else {
 		goto L62
@@ -785,14 +789,16 @@ L1:
 L2:
 	;
 	m.G0 = v11 + int32(32)
-	return v193
+	return v201
 L3:
 	;
-	v176 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v177 = F_fread(m, l1, int32(1), l2, v176)
+	v176 = *(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v176))) = int32(167772177)
+	v180 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v181 = F_fread(m, l1, int32(1), l2, v180)
 	mBase = m.M
-	v178 = m.ExcPending
-	if v178 != 0 {
+	v182 = m.ExcPending
+	if v182 != 0 {
 		goto L17
 	} else {
 		goto L58
@@ -811,7 +817,7 @@ L4:
 L5:
 	;
 	if l2 <= int32(0) {
-		v193 = v4
+		v201 = v4
 		goto L2
 	} else {
 		goto L6
@@ -824,16 +830,16 @@ L6:
 	goto L7
 L7:
 	;
-	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+336)))
+	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+352)))
 	if v24 != 0 {
-		v193 = v21
+		v201 = v21
 		goto L2
 	} else {
 		goto L9
 	}
 L8:
 	;
-	v193 = v164
+	v201 = v164
 	goto L2
 L9:
 	;
@@ -889,8 +895,8 @@ L14:
 L15:
 	;
 	v37 = int32(_a_F_CopyGetData_0)
-	v39 = *(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[0]))
-	*(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[0])) = v39 + int32(1)
+	v39 = *(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[1]))
+	*(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[1])) = v39 + int32(1)
 	F_pq_startmsgread(m)
 	mBase = m.M
 	v46 = m.ExcPending
@@ -902,8 +908,8 @@ L15:
 L16:
 	;
 	v77 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+336)) = uint8(v77)
-	v193 = v21
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+352)) = uint8(v77)
+	v201 = v21
 	goto L2
 L17:
 	;
@@ -972,8 +978,8 @@ L26:
 L27:
 	;
 	v67 = int32(_a_F_CopyGetData_0)
-	v69 = *(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[0]))
-	*(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[0])) = v69 - int32(1)
+	v69 = *(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[1]))
+	*(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[1])) = v69 - int32(1)
 	switch v50 {
 	case 0, 11:
 		goto L15
@@ -1037,7 +1043,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(318), int32(_a_F_CopyGetData_4))
+	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(324), int32(_a_F_CopyGetData_4))
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -1072,7 +1078,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(303), int32(_a_F_CopyGetData_4))
+	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(309), int32(_a_F_CopyGetData_4))
 	mBase = m.M
 	v115 = m.ExcPending
 	if v115 != 0 {
@@ -1130,7 +1136,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(278), int32(_a_F_CopyGetData_4))
+	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(284), int32(_a_F_CopyGetData_4))
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -1166,7 +1172,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(295), int32(_a_F_CopyGetData_4))
+	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(301), int32(_a_F_CopyGetData_4))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -1202,7 +1208,7 @@ L54:
 	v164 = v161 + v21
 	v165 = v18 - v161
 	if v165 <= int32(0) {
-		v193 = v164
+		v201 = v164
 		goto L2
 	} else {
 		goto L55
@@ -1222,40 +1228,42 @@ L56:
 	goto L8
 L57:
 	;
-	v193 = v173
+	v201 = v173
 	goto L2
 L58:
 	;
-	v179 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v180 = *(*int32)(unsafe.Add(mBase, uint32(v179)))
+	v184 = *(*int32)(unsafe.Add(mBase, _c_F_CopyGetData[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v184))) = int32(0)
+	v187 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v188 = *(*int32)(unsafe.Add(mBase, uint32(v187)))
 	goto L59
 L59:
 	;
-	if int32(base.Ui32(v180)>>(uint(int32(5))%32))&int32(1) != 0 {
+	if int32(base.Ui32(v188)>>(uint(int32(5))%32))&int32(1) != 0 {
 		goto L1
 	} else {
 		goto L60
 	}
 L60:
 	;
-	if v177 != 0 {
-		v193 = v177
+	if v181 != 0 {
+		v201 = v181
 		goto L2
 	} else {
 		goto L61
 	}
 L61:
 	;
-	v185 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+336)) = uint8(v185)
-	v193 = int32(0)
+	v193 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+352)) = uint8(v193)
+	v201 = int32(0)
 	goto L2
 L62:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v205 = m.ExcPending
-	if v205 != 0 {
+	v213 = m.ExcPending
+	if v213 != 0 {
 		goto L17
 	} else {
 		goto L63
@@ -1264,18 +1272,18 @@ L63:
 	;
 	F_errmsg(m, int32(_a_F_CopyGetData_7), int32(0))
 	mBase = m.M
-	v209 = m.ExcPending
-	if v209 != 0 {
+	v217 = m.ExcPending
+	if v217 != 0 {
 		goto L17
 	} else {
 		goto L64
 	}
 L64:
 	;
-	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(256), int32(_a_F_CopyGetData_4))
+	F_errfinish(m, int32(_a_F_CopyGetData_3), int32(262), int32(_a_F_CopyGetData_4))
 	mBase = m.M
-	v214 = m.ExcPending
-	if v214 != 0 {
+	v222 = m.ExcPending
+	if v222 != 0 {
 		goto L17
 	} else {
 		goto L65
@@ -1358,7 +1366,7 @@ func F_checkDataDir(m *base.Module) {
 					if v55 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_checkDataDir_1), int32(359), int32(_a_F_checkDataDir_2))
+						F_errfinish(m, int32(_a_F_checkDataDir_1), int32(309), int32(_a_F_checkDataDir_2))
 						mBase = m.M
 						v60 = m.ExcPending
 						if v60 != 0 {
@@ -1377,7 +1385,7 @@ func F_checkDataDir(m *base.Module) {
 					if v32 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_checkDataDir_1), int32(364), int32(_a_F_checkDataDir_2))
+						F_errfinish(m, int32(_a_F_checkDataDir_1), int32(314), int32(_a_F_checkDataDir_2))
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {
@@ -1414,7 +1422,7 @@ func F_checkDataDir(m *base.Module) {
 					if v73 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_checkDataDir_1), int32(372), int32(_a_F_checkDataDir_2))
+						F_errfinish(m, int32(_a_F_checkDataDir_1), int32(322), int32(_a_F_checkDataDir_2))
 						mBase = m.M
 						v78 = m.ExcPending
 						if v78 != 0 {
@@ -1462,6 +1470,8 @@ func F_dataPrepareDownlink(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v36
 	var v38 int32
 	_ = v38
+	var v39 int32
+	_ = v39
 	var v44 int32
 	_ = v44
 	var v45 int32
@@ -1486,11 +1496,12 @@ func F_dataPrepareDownlink(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 		if l1 < int32(0) {
 			v30 = *(*int32)(unsafe.Add(mBase, _c_F_dataPrepareDownlink[2]))
-			v36 = *(*int32)(unsafe.Add(mBase, uint32(v30+(l1^int32(-1))<<(uint(int32(6))%32))+16))
+			v36 = *(*int32)(unsafe.Add(mBase, uint32(v30+(l1^int32(-1))*int32(56))+16))
 			v45 = v36
 		} else {
 			v38 = *(*int32)(unsafe.Add(mBase, _c_F_dataPrepareDownlink[3]))
-			v44 = *(*int32)(unsafe.Add(mBase, uint32(v38+l1<<(uint(int32(6))%32)+int32(-64))+16))
+			v39 = int32(56)
+			v44 = *(*int32)(unsafe.Add(mBase, uint32(v38+l1*v39-v39)+16))
 			v45 = v44
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v5))) = base.I32_rotr(v45, int32(16))

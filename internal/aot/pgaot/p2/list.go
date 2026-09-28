@@ -634,12 +634,12 @@ func F_writeListPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 	_ = v185
 	var v188 int32
 	_ = v188
-	var v190 int32
-	_ = v190
+	var v189 int32
+	_ = v189
 	var v191 int32
 	_ = v191
-	var v193 int32
-	_ = v193
+	var v196 int32
+	_ = v196
 	var v204 int32
 	_ = v204
 	var v205 int32
@@ -933,14 +933,17 @@ L37:
 	}
 L38:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(v36))) = base.I64_rotr(v177, int64(32))
+	*(*int64)(unsafe.Add(mBase, uint32(v36))) = base.I64_rotl(v177, int64(32))
 	goto L27
 L39:
 	;
+	v189 = int32(_a_F_writeListPage_1)
+	v191 = *(*int32)(unsafe.Add(mBase, _c_F_writeListPage[0]))
+	*(*int32)(unsafe.Add(mBase, _c_F_writeListPage[0])) = v191 - int32(1)
 	F_UnlockReleaseBuffer(m, l1)
 	mBase = m.M
-	v190 = m.ExcPending
-	if v190 != 0 {
+	v196 = m.ExcPending
+	if v196 != 0 {
 		goto L19
 	} else {
 		goto L43
@@ -958,9 +961,6 @@ L42:
 	goto L39
 L43:
 	;
-	v191 = int32(_a_F_writeListPage_1)
-	v193 = *(*int32)(unsafe.Add(mBase, _c_F_writeListPage[0]))
-	*(*int32)(unsafe.Add(mBase, _c_F_writeListPage[0])) = v193 - int32(1)
 	m.G0 = v17 + int32(_a_F_writeListPage_0)
 	return v188
 L44:

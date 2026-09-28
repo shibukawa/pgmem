@@ -32,16 +32,20 @@ func F_LogCheckpointStart(m *base.Module, l0 int32, l1 int32) {
 	_ = v52
 	var v58 int32
 	_ = v58
-	var v62 int32
-	_ = v62
-	var v64 int32
-	_ = v64
-	var v68 int32
-	_ = v68
+	var v65 int32
+	_ = v65
+	var v66 int32
+	_ = v66
 	var v71 int32
 	_ = v71
+	var v73 int32
+	_ = v73
+	var v77 int32
+	_ = v77
+	var v80 int32
+	_ = v80
 	v4 = m.G0
-	v6 = v4 - int32(32)
+	v6 = v4 - int32(48)
 	m.G0 = v6
 	v10 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
@@ -55,77 +59,85 @@ func F_LogCheckpointStart(m *base.Module, l0 int32, l1 int32) {
 			} else {
 				v16 = int32(_a_F_LogCheckpointStart_1)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = v16
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+44)) = v16
 			if l0&int32(256) != 0 {
 				v22 = int32(_a_F_LogCheckpointStart_2)
 			} else {
 				v22 = int32(_a_F_LogCheckpointStart_1)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = v22
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+40)) = v22
 			if l0&int32(128) != 0 {
 				v28 = int32(_a_F_LogCheckpointStart_3)
 			} else {
 				v28 = int32(_a_F_LogCheckpointStart_1)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = v28
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = v28
 			if l0&int32(32) != 0 {
 				v34 = int32(_a_F_LogCheckpointStart_4)
 			} else {
 				v34 = int32(_a_F_LogCheckpointStart_1)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v34
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = v34
 			if l0&int32(8) != 0 {
 				v40 = int32(_a_F_LogCheckpointStart_5)
 			} else {
 				v40 = int32(_a_F_LogCheckpointStart_1)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v40
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = v40
 			if l0&int32(4) != 0 {
 				v46 = int32(_a_F_LogCheckpointStart_6)
 			} else {
 				v46 = int32(_a_F_LogCheckpointStart_1)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v46
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = v46
 			if l0&int32(2) != 0 {
 				v52 = int32(_a_F_LogCheckpointStart_7)
 			} else {
 				v52 = int32(_a_F_LogCheckpointStart_1)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v52
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = v52
 			if l0&int32(1) != 0 {
 				v58 = int32(_a_F_LogCheckpointStart_8)
 			} else {
 				v58 = int32(_a_F_LogCheckpointStart_1)
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v6))) = v58
-			if l1 != 0 {
-				v62 = int32(_a_F_LogCheckpointStart_9)
-			} else {
-				v62 = int32(_a_F_LogCheckpointStart_10)
-			}
-			F_errmsg(m, v62, v6)
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v58
+			v65 = F_pg_snprintf(m, int32(_a_F_LogCheckpointStart_9), int32(128), int32(_a_F_LogCheckpointStart_10), v6+int32(16))
 			mBase = m.M
-			v64 = m.ExcPending
-			if v64 != 0 {
+			v66 = m.ExcPending
+			if v66 != 0 {
 				return
 			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(_a_F_LogCheckpointStart_9)
 				if l1 != 0 {
-					v68 = int32(_a_F_LogCheckpointStart_11)
+					v71 = int32(_a_F_LogCheckpointStart_11)
 				} else {
-					v68 = int32(_a_F_LogCheckpointStart_12)
+					v71 = int32(_a_F_LogCheckpointStart_12)
 				}
-				F_errfinish(m, int32(_a_F_LogCheckpointStart_13), v68, int32(_a_F_LogCheckpointStart_14))
+				F_errmsg(m, v71, v6)
 				mBase = m.M
-				v71 = m.ExcPending
-				if v71 != 0 {
+				v73 = m.ExcPending
+				if v73 != 0 {
 					return
 				} else {
-					m.G0 = v6 + int32(32)
-					return
+					if l1 != 0 {
+						v77 = int32(_a_F_LogCheckpointStart_13)
+					} else {
+						v77 = int32(_a_F_LogCheckpointStart_14)
+					}
+					F_errfinish(m, int32(_a_F_LogCheckpointStart_15), v77, int32(_a_F_LogCheckpointStart_16))
+					mBase = m.M
+					v80 = m.ExcPending
+					if v80 != 0 {
+						return
+					} else {
+						m.G0 = v6 + int32(48)
+						return
+					}
 				}
 			}
 		} else {
-			m.G0 = v6 + int32(32)
+			m.G0 = v6 + int32(48)
 			return
 		}
 	}
@@ -408,7 +420,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(_a_F_ProcessLogMemoryContextInterrupt_1), int32(1319), int32(_a_F_ProcessLogMemoryContextInterrupt_2))
+	F_errfinish(m, int32(_a_F_ProcessLogMemoryContextInterrupt_1), int32(1366), int32(_a_F_ProcessLogMemoryContextInterrupt_2))
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -488,7 +500,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(_a_F_ProcessLogMemoryContextInterrupt_1), int32(867), int32(_a_F_ProcessLogMemoryContextInterrupt_4))
+	F_errfinish(m, int32(_a_F_ProcessLogMemoryContextInterrupt_1), int32(916), int32(_a_F_ProcessLogMemoryContextInterrupt_4))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -1687,9 +1699,10 @@ func F_check_log_of_query(m *base.Module, l0 int32) int32 {
 			v26 = v2
 		}
 	} else {
-		if v7 == int32(20) {
+		switch v7 - int32(20) {
+		case 0, 3:
 			v26 = v2
-		} else {
+		default:
 			if v6 == int32(15) {
 				if int32(21) < v7 {
 					v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+6)))

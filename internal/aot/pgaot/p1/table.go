@@ -752,89 +752,185 @@ func F_TableFuncNext(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_table_am_handler_out(m *base.Module, l0 int32) int32 {
-	var v7 int32
+func F_table_am_handler_out(m *base.Module, l0 int32) int64 {
+	var v7 int64
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13854(m, l0, int32(_a_F_table_am_handler_out_0), int32(370), int32(_a_F_table_am_handler_out_1), int32(_a_F_table_am_handler_out_2), int32(_a_F_table_am_handler_out_3))
+	v7 = Fn14235(m, l0, int32(_a_F_table_am_handler_out_0), int32(370), int32(_a_F_table_am_handler_out_1), int32(_a_F_table_am_handler_out_2), int32(_a_F_table_am_handler_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v7
 	}
 }
-func F_table_beginscan_parallel(m *base.Module, l0 int32, l1 int32) int32 {
+func F_table_beginscan_parallel(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
 	var v14 int32
 	_ = v14
 	var v15 int32
 	_ = v15
-	var v17 int32
-	_ = v17
+	var v16 int32
+	_ = v16
 	var v18 int32
 	_ = v18
 	var v19 int32
 	_ = v19
 	var v21 int32
 	_ = v21
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v24 int32
-	_ = v24
-	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)))
-	if v5 != 0 {
-		v17 = int32(_a_F_table_beginscan_parallel_0)
-		v18 = int32(449)
-		v19 = int32(0)
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
-		v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+8))
-		v23 = m.T0[v22].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, l0, v17, v19, v19, l1, v18)
-		mBase = m.M
-		v24 = m.ExcPending
-		if v24 != 0 {
-			return int32(0)
-		} else {
-			return v23
-		}
-	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-		v10 = F_RestoreSnapshot(m, l1+v8)
-		mBase = m.M
-		v13 = m.ExcPending
-		if v13 != 0 {
-			return int32(0)
-		} else {
-			v14 = F_RegisterSnapshot(m, v10)
+	var v25 int32
+	_ = v25
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)))
+	if v6 != 0 {
+		v18 = int32(_a_F_table_beginscan_parallel_0)
+		v19 = int32(449)
+		v21 = *(*int32)(unsafe.Add(mBase, _c_F_table_beginscan_parallel[0]))
+		if v21 == int32(0) {
+			v41 = int32(0)
+			v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
+			v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+8))
+			v46 = m.T0[v45].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, l0, v18, v41, v41, l1, l2|v19)
 			mBase = m.M
-			v15 = m.ExcPending
-			if v15 != 0 {
+			v47 = m.ExcPending
+			if v47 != 0 {
 				return int32(0)
 			} else {
-				v17 = v10
-				v18 = int32(961)
-				v19 = int32(0)
-				v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
-				v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+8))
-				v23 = m.T0[v22].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, l0, v17, v19, v19, l1, v18)
+				return v46
+			}
+		} else {
+			v25 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_table_beginscan_parallel[1])))
+			if v25&int32(1) != 0 {
+				v41 = int32(0)
+				v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
+				v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+8))
+				v46 = m.T0[v45].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, l0, v18, v41, v41, l1, l2|v19)
 				mBase = m.M
-				v24 = m.ExcPending
-				if v24 != 0 {
+				v47 = m.ExcPending
+				if v47 != 0 {
 					return int32(0)
 				} else {
-					return v23
+					return v46
+				}
+			} else {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v31 = m.ExcPending
+				if v31 != 0 {
+					return int32(0)
+				} else {
+					F_errmsg_internal(m, int32(_a_F_table_beginscan_parallel_1), int32(0))
+					mBase = m.M
+					v35 = m.ExcPending
+					if v35 != 0 {
+						return int32(0)
+					} else {
+						F_errfinish(m, int32(_a_F_table_beginscan_parallel_2), int32(931), int32(_a_F_table_beginscan_parallel_3))
+						mBase = m.M
+						v40 = m.ExcPending
+						if v40 != 0 {
+							return int32(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+		v11 = F_RestoreSnapshot(m, l1+v9)
+		mBase = m.M
+		v14 = m.ExcPending
+		if v14 != 0 {
+			return int32(0)
+		} else {
+			v15 = F_RegisterSnapshot(m, v11)
+			mBase = m.M
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return int32(0)
+			} else {
+				v18 = v11
+				v19 = int32(961)
+				v21 = *(*int32)(unsafe.Add(mBase, _c_F_table_beginscan_parallel[0]))
+				if v21 == int32(0) {
+					v41 = int32(0)
+					v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
+					v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+8))
+					v46 = m.T0[v45].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, l0, v18, v41, v41, l1, l2|v19)
+					mBase = m.M
+					v47 = m.ExcPending
+					if v47 != 0 {
+						return int32(0)
+					} else {
+						return v46
+					}
+				} else {
+					v25 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_table_beginscan_parallel[1])))
+					if v25&int32(1) != 0 {
+						v41 = int32(0)
+						v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
+						v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+8))
+						v46 = m.T0[v45].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, l0, v18, v41, v41, l1, l2|v19)
+						mBase = m.M
+						v47 = m.ExcPending
+						if v47 != 0 {
+							return int32(0)
+						} else {
+							return v46
+						}
+					} else {
+						F_errstart_cold(m, int32(21), int32(0))
+						mBase = m.M
+						v31 = m.ExcPending
+						if v31 != 0 {
+							return int32(0)
+						} else {
+							F_errmsg_internal(m, int32(_a_F_table_beginscan_parallel_1), int32(0))
+							mBase = m.M
+							v35 = m.ExcPending
+							if v35 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_table_beginscan_parallel_2), int32(931), int32(_a_F_table_beginscan_parallel_3))
+								mBase = m.M
+								v40 = m.ExcPending
+								if v40 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1523,7 +1619,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 			if v137 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1101), int32(_a_F_transformTableConstraint_2))
+				F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1107), int32(_a_F_transformTableConstraint_2))
 				mBase = m.M
 				v142 = m.ExcPending
 				if v142 != 0 {
@@ -1587,7 +1683,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 						if v97 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1077), int32(_a_F_transformTableConstraint_2))
+							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1083), int32(_a_F_transformTableConstraint_2))
 							mBase = m.M
 							v102 = m.ExcPending
 							if v102 != 0 {
@@ -1617,7 +1713,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 			if v151 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1106), int32(_a_F_transformTableConstraint_2))
+				F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1112), int32(_a_F_transformTableConstraint_2))
 				mBase = m.M
 				v156 = m.ExcPending
 				if v156 != 0 {
@@ -1686,7 +1782,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 						if v28 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1045), int32(_a_F_transformTableConstraint_2))
+							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1051), int32(_a_F_transformTableConstraint_2))
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
@@ -1744,7 +1840,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 						if v51 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1055), int32(_a_F_transformTableConstraint_2))
+							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1061), int32(_a_F_transformTableConstraint_2))
 							mBase = m.M
 							v56 = m.ExcPending
 							if v56 != 0 {
@@ -1802,7 +1898,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 						if v74 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1065), int32(_a_F_transformTableConstraint_2))
+							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1071), int32(_a_F_transformTableConstraint_2))
 							mBase = m.M
 							v79 = m.ExcPending
 							if v79 != 0 {
@@ -1860,7 +1956,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 						if v121 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1088), int32(_a_F_transformTableConstraint_2))
+							F_errfinish(m, int32(_a_F_transformTableConstraint_1), int32(1094), int32(_a_F_transformTableConstraint_2))
 							mBase = m.M
 							v126 = m.ExcPending
 							if v126 != 0 {

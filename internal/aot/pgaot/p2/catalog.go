@@ -63,7 +63,7 @@ func F_CatalogIndexInsert(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	var v95 int32
 	_ = v95
 	v13 = m.G0
-	v15 = v13 - int32(160)
+	v15 = v13 - int32(288)
 	m.G0 = v15
 	if l2 != int32(2) {
 		goto L2
@@ -72,7 +72,7 @@ func F_CatalogIndexInsert(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	}
 L1:
 	;
-	m.G0 = v15 + int32(160)
+	m.G0 = v15 + int32(288)
 	return
 L2:
 	;
@@ -103,7 +103,7 @@ L6:
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+52))
-	v31 = F_MakeTupleTableSlot(m, v29, int32(_a_F_CatalogIndexInsert_0))
+	v31 = F_MakeSingleTupleTableSlot(m, v29, int32(_a_F_CatalogIndexInsert_0))
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {
@@ -326,7 +326,7 @@ L8:
 L9:
 	;
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+36))
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+40))
 	*(*int32)(unsafe.Add(mBase, uint32(v35)+12)) = v38
 	F_CatalogIndexInsert(m, l3, v35, int32(1))
 	mBase = m.M

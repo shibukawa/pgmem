@@ -419,7 +419,7 @@ L35:
 	}
 L36:
 	;
-	F_errfinish(m, int32(_a_F_check_temp_tablespaces_2), int32(1258), int32(_a_F_check_temp_tablespaces_3))
+	F_errfinish(m, int32(_a_F_check_temp_tablespaces_2), int32(1284), int32(_a_F_check_temp_tablespaces_3))
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {
@@ -473,7 +473,7 @@ L44:
 	goto L24
 L45:
 	;
-	F_aclcheck_error(m, v134, int32(42), v91)
+	F_aclcheck_error(m, v134, int32(43), v91)
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {

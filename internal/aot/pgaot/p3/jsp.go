@@ -12,7 +12,7 @@ func F_emit_jsp_gin_entries(m *base.Module, l0 int32, l1 int32) {
 	_ = v7
 	var v8 int32
 	_ = v8
-	var v9 int32
+	var v9 int64
 	_ = v9
 	var v10 int32
 	_ = v10
@@ -20,8 +20,12 @@ func F_emit_jsp_gin_entries(m *base.Module, l0 int32, l1 int32) {
 	_ = v11
 	var v13 int32
 	_ = v13
+	var v15 int32
+	_ = v15
 	var v17 int32
 	_ = v17
+	var v19 int32
+	_ = v19
 	var v20 int32
 	_ = v20
 	var v21 int32
@@ -30,24 +34,24 @@ func F_emit_jsp_gin_entries(m *base.Module, l0 int32, l1 int32) {
 	_ = v25
 	var v26 int32
 	_ = v26
-	var v27 int32
-	_ = v27
-	var v29 int32
-	_ = v29
+	var v28 int32
+	_ = v28
 	var v30 int32
 	_ = v30
-	var v39 int32
-	_ = v39
-	var v46 int32
-	_ = v46
-	var v52 int32
-	_ = v52
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
+	var v31 int32
+	_ = v31
+	var v40 int32
+	_ = v40
+	var v47 int32
+	_ = v47
+	var v53 int32
+	_ = v53
+	var v55 int32
+	_ = v55
 	var v57 int32
 	_ = v57
+	var v58 int32
+	_ = v58
 	F_check_stack_depth(m)
 	mBase = m.M
 	v7 = m.ExcPending
@@ -75,15 +79,15 @@ L3:
 	return
 L4:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v39 <= int32(0) {
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v40 <= int32(0) {
 		goto L3
 	} else {
 		goto L16
 	}
 L5:
 	;
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v9 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	if v10 < v11 {
@@ -93,15 +97,15 @@ L5:
 	}
 L6:
 	;
-	v30 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v30 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v29+v30<<(uint(int32(2))%32)))) = v9
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v10
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v31 + int32(1)
+	*(*int64)(unsafe.Add(mBase, uint32(v30+v31<<(uint(int32(3))%32)))) = v9
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v10
 	return
 L7:
 	;
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v29 = v13
+	v30 = v13
 	goto L6
 L8:
 	;
@@ -115,17 +119,18 @@ L9:
 	}
 L10:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v27
-	v29 = v27
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v28
+	v30 = v28
 	goto L6
 L11:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v11 << (uint(int32(1)) % 32)
+	v15 = v11 << (uint(int32(1)) % 32)
+	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v15
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v20 = F_repalloc(m, v17, v11<<(uint(int32(3))%32))
+	v19 = F_repalloc_mul(m, v17, int32(8), v15)
 	mBase = m.M
-	v21 = m.ExcPending
-	if v21 != 0 {
+	v20 = m.ExcPending
+	if v20 != 0 {
 		goto L1
 	} else {
 		goto L14
@@ -135,8 +140,9 @@ L12:
 	goto L13
 L13:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(8)
-	v25 = F_palloc(m, int32(32))
+	v21 = int32(8)
+	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v21
+	v25 = F_palloc_mul(m, v21, v21)
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -146,23 +152,23 @@ L13:
 	}
 L14:
 	;
-	v27 = v20
+	v28 = v19
 	goto L10
 L15:
 	;
-	v27 = v25
+	v28 = v25
 	goto L10
 L16:
 	;
-	v46 = int32(0)
+	v47 = int32(0)
 	goto L17
 L17:
 	;
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(8)+v46<<(uint(int32(2))%32))))
-	F_emit_jsp_gin_entries(m, v52, l1)
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(16)+v47<<(uint(int32(2))%32))))
+	F_emit_jsp_gin_entries(m, v53, l1)
 	mBase = m.M
-	v54 = m.ExcPending
-	if v54 != 0 {
+	v55 = m.ExcPending
+	if v55 != 0 {
 		goto L1
 	} else {
 		goto L19
@@ -172,10 +178,10 @@ L18:
 	goto L3
 L19:
 	;
-	v56 = v46 + int32(1)
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v56 < v57 {
-		v46 = v56
+	v57 = v47 + int32(1)
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v57 < v58 {
+		v47 = v57
 		goto L17
 	} else {
 		goto L20
@@ -266,7 +272,7 @@ L1:
 	return base.I32_extend8_s(v90)
 L2:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v85 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v87 = int32(*(*int8)(unsafe.Add(mBase, uint32(l1+v85))))
 	v90 = v87
 	goto L1
@@ -287,7 +293,7 @@ L4:
 	goto L16
 L5:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v17 <= int32(0) {
 		v90 = int32(1)
 		goto L1
@@ -296,7 +302,7 @@ L5:
 	}
 L6:
 	;
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if int32(0) < v13 {
 		goto L4
 	} else {
@@ -313,7 +319,7 @@ L8:
 	goto L9
 L9:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(8)+v26<<(uint(int32(2))%32))))
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(16)+v26<<(uint(int32(2))%32))))
 	v34 = F_execute_jsp_gin_node(m, v33, l1)
 	mBase = m.M
 	v37 = m.ExcPending
@@ -329,7 +335,7 @@ L10:
 L11:
 	;
 	v43 = v26 + int32(1)
-	v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v43 < v44 {
 		v26 = v43
 		v27 = v41
@@ -361,7 +367,7 @@ L15:
 	goto L10
 L16:
 	;
-	v58 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(8)+v51<<(uint(int32(2))%32))))
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(16)+v51<<(uint(int32(2))%32))))
 	v59 = F_execute_jsp_gin_node(m, v58, l1)
 	mBase = m.M
 	v60 = m.ExcPending
@@ -377,7 +383,7 @@ L17:
 L18:
 	;
 	v68 = v51 + int32(1)
-	v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v68 < v69 {
 		v51 = v68
 		v52 = v66
@@ -418,7 +424,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(_a_F_execute_jsp_gin_node_1), int32(842), int32(_a_F_execute_jsp_gin_node_2))
+	F_errfinish(m, int32(_a_F_execute_jsp_gin_node_1), int32(843), int32(_a_F_execute_jsp_gin_node_2))
 	mBase = m.M
 	v84 = m.ExcPending
 	if v84 != 0 {

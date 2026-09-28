@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_bytea_smaller(m *base.Module, l0 int32) int32 {
+func F_bytea_smaller(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
@@ -114,7 +114,7 @@ func F_bytea_smaller(m *base.Module, l0 int32) int32 {
 	_ = v153
 	var v156 int32
 	_ = v156
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v8 = F_pg_detoast_datum_packed(m, v7)
 	mBase = m.M
 	v11 = m.ExcPending
@@ -125,10 +125,10 @@ func F_bytea_smaller(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v13 = F_pg_detoast_datum_packed(m, v12)
 	mBase = m.M
 	v14 = m.ExcPending
@@ -474,5 +474,5 @@ L60:
 	goto L61
 L61:
 	;
-	return v156
+	return base.I64_extend_i32_u(v156)
 }

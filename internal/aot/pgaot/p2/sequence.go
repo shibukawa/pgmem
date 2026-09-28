@@ -5,14 +5,14 @@ import (
 	"unsafe"
 )
 
-func F_has_sequence_privilege_id_id(m *base.Module, l0 int32) int32 {
+func F_has_sequence_privilege_id_id(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
 	_ = v7
 	var v9 int32
 	_ = v9
-	var v11 int32
+	var v11 int64
 	_ = v11
 	var v12 int32
 	_ = v12
@@ -46,27 +46,27 @@ func F_has_sequence_privilege_id_id(m *base.Module, l0 int32) int32 {
 	_ = v46
 	var v51 int32
 	_ = v51
-	var v54 int32
-	_ = v54
 	var v55 int32
 	_ = v55
 	var v56 int32
 	_ = v56
-	var v59 int32
-	_ = v59
-	var v64 int32
-	_ = v64
+	var v57 int32
+	_ = v57
+	var v60 int32
+	_ = v60
+	var v66 int64
+	_ = v66
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v11 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	v14 = F_pg_detoast_datum_packed(m, v13)
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
@@ -74,52 +74,52 @@ func F_has_sequence_privilege_id_id(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v22 = m.ExcPending
 		if v22 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v23 = F_get_rel_relkind(m, v12)
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				if v23 != int32(83) {
 					if v23&int32(255) == int32(0) {
 						v31 = int32(1)
 						*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-						v64 = int32(0)
+						v66 = int64(0)
 						m.G0 = v9 + int32(16)
-						return v64
+						return v66
 					} else {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							F_errcode(m, int32(151027844))
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v41 = F_get_rel_name(m, v12)
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v9))) = v41
 									F_errmsg(m, int32(_a_F_has_sequence_privilege_id_id_1), v9)
 									mBase = m.M
 									v46 = m.ExcPending
 									if v46 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
-										F_errfinish(m, int32(_a_F_has_sequence_privilege_id_id_2), int32(2284), int32(_a_F_has_sequence_privilege_id_id_3))
+										F_errfinish(m, int32(_a_F_has_sequence_privilege_id_id_2), int32(2308), int32(_a_F_has_sequence_privilege_id_id_3))
 										mBase = m.M
 										v51 = m.ExcPending
 										if v51 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											base.Wasm_trap_unreachable()
 											for {
@@ -131,29 +131,29 @@ func F_has_sequence_privilege_id_id(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					v54 = F_pg_class_aclcheck_ext(m, v12, v11, v21, v9+int32(15))
+					v55 = F_pg_class_aclcheck_ext(m, v12, base.I32_wrap_i64(v11), v21, v9+int32(15))
 					mBase = m.M
-					v55 = m.ExcPending
-					if v55 != 0 {
-						return int32(0)
+					v56 = m.ExcPending
+					if v56 != 0 {
+						return int64(0)
 					} else {
-						v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-						if v56 == int32(1) {
-							v59 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v59)
-							v64 = int32(0)
+						v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
+						if v57 == int32(1) {
+							v60 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v60)
+							v66 = int64(0)
 						} else {
-							v64 = base.B2i32(v54 == int32(0))
+							v66 = base.I64_extend_i32_u(base.B2i32(v55 == int32(0)))
 						}
 						m.G0 = v9 + int32(16)
-						return v64
+						return v66
 					}
 				}
 			}
 		}
 	}
 }
-func F_has_sequence_privilege_name_id(m *base.Module, l0 int32) int32 {
+func F_has_sequence_privilege_name_id(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
@@ -206,19 +206,19 @@ func F_has_sequence_privilege_name_id(m *base.Module, l0 int32) int32 {
 	_ = v58
 	var v61 int32
 	_ = v61
-	var v66 int32
-	_ = v66
+	var v67 int64
+	_ = v67
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	v14 = F_pg_detoast_datum_packed(m, v13)
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
@@ -226,58 +226,58 @@ func F_has_sequence_privilege_name_id(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v21 = m.ExcPending
 		if v21 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v23 = F_convert_any_priv_string(m, v14, int32(_a_F_has_sequence_privilege_name_id_0))
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v25 = F_get_rel_relkind(m, v11)
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					if v25 != int32(83) {
 						if v25&int32(255) == int32(0) {
 							v33 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v33)
-							v66 = int32(0)
+							v67 = int64(0)
 							m.G0 = v9 + int32(16)
-							return v66
+							return v67
 						} else {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								F_errcode(m, int32(151027844))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									v43 = F_get_rel_name(m, v11)
 									mBase = m.M
 									v44 = m.ExcPending
 									if v44 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v9))) = v43
 										F_errmsg(m, int32(_a_F_has_sequence_privilege_name_id_1), v9)
 										mBase = m.M
 										v48 = m.ExcPending
 										if v48 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
-											F_errfinish(m, int32(_a_F_has_sequence_privilege_name_id_2), int32(2186), int32(_a_F_has_sequence_privilege_name_id_3))
+											F_errfinish(m, int32(_a_F_has_sequence_privilege_name_id_2), int32(2210), int32(_a_F_has_sequence_privilege_name_id_3))
 											mBase = m.M
 											v53 = m.ExcPending
 											if v53 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												base.Wasm_trap_unreachable()
 												for {
@@ -293,18 +293,18 @@ func F_has_sequence_privilege_name_id(m *base.Module, l0 int32) int32 {
 						mBase = m.M
 						v57 = m.ExcPending
 						if v57 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
 							if v58 == int32(1) {
 								v61 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v61)
-								v66 = int32(0)
+								v67 = int64(0)
 							} else {
-								v66 = base.B2i32(v56 == int32(0))
+								v67 = base.I64_extend_i32_u(base.B2i32(v56 == int32(0)))
 							}
 							m.G0 = v9 + int32(16)
-							return v66
+							return v67
 						}
 					}
 				}
@@ -312,7 +312,7 @@ func F_has_sequence_privilege_name_id(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_sequence_privilege_name_name(m *base.Module, l0 int32) int32 {
+func F_has_sequence_privilege_name_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -378,89 +378,89 @@ func F_has_sequence_privilege_name_name(m *base.Module, l0 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v12 = F_pg_detoast_datum_packed(m, v11)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v17 = F_pg_detoast_datum_packed(m, v16)
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v19 = F_get_role_oid_or_public(m, v10)
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v22 = F_convert_any_priv_string(m, v17, int32(_a_F_has_sequence_privilege_name_name_0))
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v24 = F_textToQualifiedNameList(m, v12)
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v26 = F_makeRangeVarFromNameList(m, v24)
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v28 = int32(0)
 							v32 = F_RangeVarGetRelidExtended(m, v26, v28, v28, v28, v28)
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v34 = F_get_rel_relkind(m, v32)
 								mBase = m.M
 								v35 = m.ExcPending
 								if v35 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									if v34 != int32(83) {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
 										v41 = m.ExcPending
 										if v41 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											F_errcode(m, int32(151027844))
 											mBase = m.M
 											v44 = m.ExcPending
 											if v44 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												v45 = F_text_to_cstring(m, v12)
 												mBase = m.M
 												v46 = m.ExcPending
 												if v46 != 0 {
-													return int32(0)
+													return int64(0)
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v8))) = v45
 													F_errmsg(m, int32(_a_F_has_sequence_privilege_name_name_1), v8)
 													mBase = m.M
 													v50 = m.ExcPending
 													if v50 != 0 {
-														return int32(0)
+														return int64(0)
 													} else {
-														F_errfinish(m, int32(_a_F_has_sequence_privilege_name_name_2), int32(2123), int32(_a_F_has_sequence_privilege_name_name_3))
+														F_errfinish(m, int32(_a_F_has_sequence_privilege_name_name_2), int32(2147), int32(_a_F_has_sequence_privilege_name_name_3))
 														mBase = m.M
 														v55 = m.ExcPending
 														if v55 != 0 {
-															return int32(0)
+															return int64(0)
 														} else {
 															base.Wasm_trap_unreachable()
 															for {
@@ -475,10 +475,10 @@ func F_has_sequence_privilege_name_name(m *base.Module, l0 int32) int32 {
 										mBase = m.M
 										v57 = m.ExcPending
 										if v57 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											m.G0 = v8 + int32(16)
-											return base.B2i32(v56 == int32(0))
+											return base.I64_extend_i32_u(base.B2i32(v56 == int32(0)))
 										}
 									}
 								}
@@ -553,8 +553,8 @@ func F_init_sequence(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = l0
 	v13 = *(*int32)(unsafe.Add(mBase, _c_F_init_sequence[0]))
 	if v13 == int32(0) {
-		*(*int64)(unsafe.Add(mBase, uint32(v9)+32)) = int64(171798691844)
-		v24 = F_hash_create(m, int32(_a_F_init_sequence_0), int32(16), v7+int32(-48), int32(40))
+		*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = int64(171798691844)
+		v24 = F_hash_create(m, int32(_a_F_init_sequence_0), int64(16), v7+int32(-48), int32(40))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -582,7 +582,7 @@ func F_init_sequence(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					v48 = v39
 				}
 				v50 = *(*int32)(unsafe.Add(mBase, _c_F_init_sequence[1]))
-				v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+56))
+				v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+44))
 				if v48 != v51 {
 					v53 = int32(_a_F_init_sequence_1)
 					v54 = *(*int32)(unsafe.Add(mBase, _c_F_init_sequence[2]))
@@ -666,7 +666,7 @@ func F_init_sequence(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				v48 = v39
 			}
 			v50 = *(*int32)(unsafe.Add(mBase, _c_F_init_sequence[1]))
-			v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+56))
+			v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+44))
 			if v48 != v51 {
 				v53 = int32(_a_F_init_sequence_1)
 				v54 = *(*int32)(unsafe.Add(mBase, _c_F_init_sequence[2]))
@@ -752,14 +752,8 @@ func F_sequence_open(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v23
 	var v29 int32
 	_ = v29
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
-	var v33 int32
-	_ = v33
-	var v38 int32
-	_ = v38
+	var v34 int32
+	_ = v34
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
@@ -792,23 +786,14 @@ func F_sequence_open(m *base.Module, l0 int32, l1 int32) int32 {
 					if v29 != 0 {
 						return int32(0)
 					} else {
-						v30 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
-						v31 = int32(*(*int8)(unsafe.Add(mBase, uint32(v30)+119)))
-						F_errdetail_relkind_not_supported(m, v31)
+						F_errfinish(m, int32(_a_F_sequence_open_1), int32(76), int32(_a_F_sequence_open_2))
 						mBase = m.M
-						v33 = m.ExcPending
-						if v33 != 0 {
+						v34 = m.ExcPending
+						if v34 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_sequence_open_1), int32(77), int32(_a_F_sequence_open_2))
-							mBase = m.M
-							v38 = m.ExcPending
-							if v38 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
+							base.Wasm_trap_unreachable()
+							for {
 							}
 						}
 					}

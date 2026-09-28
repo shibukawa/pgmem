@@ -8,93 +8,93 @@ import (
 func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v8 int32
-	_ = v8
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v14 int32
+	_ = v14
 	var v17 int32
 	_ = v17
-	var v20 int32
-	_ = v20
-	var v22 int32
-	_ = v22
-	var v23 int32
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v23 int64
 	_ = v23
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
+	var v24 int32
+	_ = v24
 	var v29 int32
 	_ = v29
 	var v30 int32
 	_ = v30
-	var v31 int32
+	var v31 int64
 	_ = v31
 	var v32 int32
 	_ = v32
+	var v33 int64
+	_ = v33
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
-	var v41 int32
-	_ = v41
-	var v45 int32
-	_ = v45
-	var v50 int32
-	_ = v50
-	var v51 int32
-	_ = v51
-	var v54 int32
-	_ = v54
-	var v55 int32
-	_ = v55
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	switch v5 - int32(1) {
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v43 int32
+	_ = v43
+	var v47 int32
+	_ = v47
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+	switch v6 - int32(1) {
 	case 0:
-		v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
-		if v13&int32(8) != 0 {
-			v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-			*(*int32)(unsafe.Add(mBase, uint32(v51))) = int32(0)
-			v54 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-			v55 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(v54))) = uint8(v55)
+		v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
+		if v14&int32(8) != 0 {
+			v53 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+			*(*int64)(unsafe.Add(mBase, uint32(v53))) = int64(0)
+			v56 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			v57 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(v56))) = uint8(v57)
 			return
 		} else {
-			v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-			switch v17 + int32(6) {
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+			switch v18 + int32(6) {
 			case 0:
-				v20 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, uint32(v16))) = uint8(v20)
-				v22 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-				v31 = v22
-				v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v32))) = v31
-				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-				v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34))))
-				if v35 != int32(1) {
+				v21 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v17))) = uint8(v21)
+				v23 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l2)+40)))
+				v33 = v23
+				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+				*(*int64)(unsafe.Add(mBase, uint32(v34))) = v33
+				v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+				v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+				if v37 != int32(1) {
 					return
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v41 = m.ExcPending
-					if v41 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_ExecEvalSysVar_0), int32(0))
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v47 = m.ExcPending
+						if v47 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_ExecEvalSysVar_1), int32(_a_F_ExecEvalSysVar_2), int32(_a_F_ExecEvalSysVar_3))
 							mBase = m.M
-							v50 = m.ExcPending
-							if v50 != 0 {
+							v52 = m.ExcPending
+							if v52 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -105,38 +105,38 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			default:
-				v27 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-				v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+20))
-				v29 = m.T0[v28].(func(*base.Module, int32, int32, int32) int32)(m, l2, v17, v16)
+				v29 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+20))
+				v31 = m.T0[v30].(func(*base.Module, int32, int32, int32) int64)(m, l2, v18, v17)
 				mBase = m.M
-				v30 = m.ExcPending
-				if v30 != 0 {
+				v32 = m.ExcPending
+				if v32 != 0 {
 					return
 				} else {
-					v31 = v29
-					v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-					*(*int32)(unsafe.Add(mBase, uint32(v32))) = v31
-					v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-					v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34))))
-					if v35 != int32(1) {
+					v33 = v31
+					v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+					*(*int64)(unsafe.Add(mBase, uint32(v34))) = v33
+					v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+					v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+					if v37 != int32(1) {
 						return
 					} else {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v41 = m.ExcPending
-						if v41 != 0 {
+						v43 = m.ExcPending
+						if v43 != 0 {
 							return
 						} else {
 							F_errmsg_internal(m, int32(_a_F_ExecEvalSysVar_0), int32(0))
 							mBase = m.M
-							v45 = m.ExcPending
-							if v45 != 0 {
+							v47 = m.ExcPending
+							if v47 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_ExecEvalSysVar_1), int32(_a_F_ExecEvalSysVar_2), int32(_a_F_ExecEvalSysVar_3))
 								mBase = m.M
-								v50 = m.ExcPending
-								if v50 != 0 {
+								v52 = m.ExcPending
+								if v52 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -148,32 +148,32 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			case 5:
-				v23 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, uint32(v16))) = uint8(v23)
-				v31 = l2 + int32(28)
-				v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v32))) = v31
-				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-				v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34))))
-				if v35 != int32(1) {
+				v24 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v17))) = uint8(v24)
+				v33 = base.I64_extend_i32_u(l2 + int32(32))
+				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+				*(*int64)(unsafe.Add(mBase, uint32(v34))) = v33
+				v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+				v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+				if v37 != int32(1) {
 					return
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v41 = m.ExcPending
-					if v41 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_ExecEvalSysVar_0), int32(0))
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v47 = m.ExcPending
+						if v47 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_ExecEvalSysVar_1), int32(_a_F_ExecEvalSysVar_2), int32(_a_F_ExecEvalSysVar_3))
 							mBase = m.M
-							v50 = m.ExcPending
-							if v50 != 0 {
+							v52 = m.ExcPending
+							if v52 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -186,39 +186,39 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			}
 		}
 	case 1:
-		v8 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
-		if v8&int32(16) == int32(0) {
-			v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-			switch v17 + int32(6) {
+		v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
+		if v9&int32(16) == int32(0) {
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+			switch v18 + int32(6) {
 			case 0:
-				v20 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, uint32(v16))) = uint8(v20)
-				v22 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-				v31 = v22
-				v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v32))) = v31
-				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-				v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34))))
-				if v35 != int32(1) {
+				v21 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v17))) = uint8(v21)
+				v23 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l2)+40)))
+				v33 = v23
+				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+				*(*int64)(unsafe.Add(mBase, uint32(v34))) = v33
+				v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+				v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+				if v37 != int32(1) {
 					return
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v41 = m.ExcPending
-					if v41 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_ExecEvalSysVar_0), int32(0))
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v47 = m.ExcPending
+						if v47 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_ExecEvalSysVar_1), int32(_a_F_ExecEvalSysVar_2), int32(_a_F_ExecEvalSysVar_3))
 							mBase = m.M
-							v50 = m.ExcPending
-							if v50 != 0 {
+							v52 = m.ExcPending
+							if v52 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -229,38 +229,38 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			default:
-				v27 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-				v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+20))
-				v29 = m.T0[v28].(func(*base.Module, int32, int32, int32) int32)(m, l2, v17, v16)
+				v29 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+20))
+				v31 = m.T0[v30].(func(*base.Module, int32, int32, int32) int64)(m, l2, v18, v17)
 				mBase = m.M
-				v30 = m.ExcPending
-				if v30 != 0 {
+				v32 = m.ExcPending
+				if v32 != 0 {
 					return
 				} else {
-					v31 = v29
-					v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-					*(*int32)(unsafe.Add(mBase, uint32(v32))) = v31
-					v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-					v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34))))
-					if v35 != int32(1) {
+					v33 = v31
+					v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+					*(*int64)(unsafe.Add(mBase, uint32(v34))) = v33
+					v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+					v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+					if v37 != int32(1) {
 						return
 					} else {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v41 = m.ExcPending
-						if v41 != 0 {
+						v43 = m.ExcPending
+						if v43 != 0 {
 							return
 						} else {
 							F_errmsg_internal(m, int32(_a_F_ExecEvalSysVar_0), int32(0))
 							mBase = m.M
-							v45 = m.ExcPending
-							if v45 != 0 {
+							v47 = m.ExcPending
+							if v47 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_ExecEvalSysVar_1), int32(_a_F_ExecEvalSysVar_2), int32(_a_F_ExecEvalSysVar_3))
 								mBase = m.M
-								v50 = m.ExcPending
-								if v50 != 0 {
+								v52 = m.ExcPending
+								if v52 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -272,32 +272,32 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			case 5:
-				v23 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, uint32(v16))) = uint8(v23)
-				v31 = l2 + int32(28)
-				v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v32))) = v31
-				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-				v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34))))
-				if v35 != int32(1) {
+				v24 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v17))) = uint8(v24)
+				v33 = base.I64_extend_i32_u(l2 + int32(32))
+				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+				*(*int64)(unsafe.Add(mBase, uint32(v34))) = v33
+				v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+				v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+				if v37 != int32(1) {
 					return
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v41 = m.ExcPending
-					if v41 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_ExecEvalSysVar_0), int32(0))
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v47 = m.ExcPending
+						if v47 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_ExecEvalSysVar_1), int32(_a_F_ExecEvalSysVar_2), int32(_a_F_ExecEvalSysVar_3))
 							mBase = m.M
-							v50 = m.ExcPending
-							if v50 != 0 {
+							v52 = m.ExcPending
+							if v52 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -309,45 +309,45 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				}
 			}
 		} else {
-			v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-			*(*int32)(unsafe.Add(mBase, uint32(v51))) = int32(0)
-			v54 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-			v55 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(v54))) = uint8(v55)
+			v53 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+			*(*int64)(unsafe.Add(mBase, uint32(v53))) = int64(0)
+			v56 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			v57 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(v56))) = uint8(v57)
 			return
 		}
 	default:
-		v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-		v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-		switch v17 + int32(6) {
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+		v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+		switch v18 + int32(6) {
 		case 0:
-			v20 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, uint32(v16))) = uint8(v20)
-			v22 = *(*int32)(unsafe.Add(mBase, uint32(l2)+36))
-			v31 = v22
-			v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-			*(*int32)(unsafe.Add(mBase, uint32(v32))) = v31
-			v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-			v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34))))
-			if v35 != int32(1) {
+			v21 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v17))) = uint8(v21)
+			v23 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l2)+40)))
+			v33 = v23
+			v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+			*(*int64)(unsafe.Add(mBase, uint32(v34))) = v33
+			v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+			if v37 != int32(1) {
 				return
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v41 = m.ExcPending
-				if v41 != 0 {
+				v43 = m.ExcPending
+				if v43 != 0 {
 					return
 				} else {
 					F_errmsg_internal(m, int32(_a_F_ExecEvalSysVar_0), int32(0))
 					mBase = m.M
-					v45 = m.ExcPending
-					if v45 != 0 {
+					v47 = m.ExcPending
+					if v47 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_ExecEvalSysVar_1), int32(_a_F_ExecEvalSysVar_2), int32(_a_F_ExecEvalSysVar_3))
 						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
+						v52 = m.ExcPending
+						if v52 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -358,38 +358,38 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				}
 			}
 		default:
-			v27 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-			v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+20))
-			v29 = m.T0[v28].(func(*base.Module, int32, int32, int32) int32)(m, l2, v17, v16)
+			v29 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+			v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+20))
+			v31 = m.T0[v30].(func(*base.Module, int32, int32, int32) int64)(m, l2, v18, v17)
 			mBase = m.M
-			v30 = m.ExcPending
-			if v30 != 0 {
+			v32 = m.ExcPending
+			if v32 != 0 {
 				return
 			} else {
-				v31 = v29
-				v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v32))) = v31
-				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-				v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34))))
-				if v35 != int32(1) {
+				v33 = v31
+				v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+				*(*int64)(unsafe.Add(mBase, uint32(v34))) = v33
+				v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+				v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+				if v37 != int32(1) {
 					return
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v41 = m.ExcPending
-					if v41 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_ExecEvalSysVar_0), int32(0))
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v47 = m.ExcPending
+						if v47 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_ExecEvalSysVar_1), int32(_a_F_ExecEvalSysVar_2), int32(_a_F_ExecEvalSysVar_3))
 							mBase = m.M
-							v50 = m.ExcPending
-							if v50 != 0 {
+							v52 = m.ExcPending
+							if v52 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -401,32 +401,32 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				}
 			}
 		case 5:
-			v23 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, uint32(v16))) = uint8(v23)
-			v31 = l2 + int32(28)
-			v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-			*(*int32)(unsafe.Add(mBase, uint32(v32))) = v31
-			v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-			v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34))))
-			if v35 != int32(1) {
+			v24 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v17))) = uint8(v24)
+			v33 = base.I64_extend_i32_u(l2 + int32(32))
+			v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+			*(*int64)(unsafe.Add(mBase, uint32(v34))) = v33
+			v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+			if v37 != int32(1) {
 				return
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v41 = m.ExcPending
-				if v41 != 0 {
+				v43 = m.ExcPending
+				if v43 != 0 {
 					return
 				} else {
 					F_errmsg_internal(m, int32(_a_F_ExecEvalSysVar_0), int32(0))
 					mBase = m.M
-					v45 = m.ExcPending
-					if v45 != 0 {
+					v47 = m.ExcPending
+					if v47 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_ExecEvalSysVar_1), int32(_a_F_ExecEvalSysVar_2), int32(_a_F_ExecEvalSysVar_3))
 						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
+						v52 = m.ExcPending
+						if v52 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -439,85 +439,147 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	}
 }
-func F_GetSysCacheOid(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+func F_GetSysCacheOid(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64) int32 {
 	mBase := m.M
 	_ = mBase
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
 	var v16 int32
 	_ = v16
-	var v19 int32
-	_ = v19
-	var v24 int32
-	_ = v24
-	var v25 int32
-	_ = v25
-	var v28 int32
-	_ = v28
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v26 int64
+	_ = v26
+	var v27 int32
+	_ = v27
 	var v29 int32
 	_ = v29
-	var v31 int32
-	_ = v31
 	var v32 int32
 	_ = v32
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v12 = l0 << (uint(int32(2)) % 32)
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v12)+uint32(_c_F_GetSysCacheOid[0])))
-	v16 = F_SearchCatCache(m, v15, l1, l2, l3, l4)
+	v8 = m.G0
+	v10 = v8 - int32(16)
+	m.G0 = v10
+	v13 = l0 << (uint(int32(2)) % 32)
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v13)+uint32(_c_F_GetSysCacheOid[0])))
+	v17 = F_SearchCatCache(m, v16, l1, l2, l3, l4)
 	mBase = m.M
-	v19 = m.ExcPending
-	if v19 != 0 {
+	v20 = m.ExcPending
+	if v20 != 0 {
 		return int32(0)
 	} else {
-		if v16 == int32(0) {
-			v32 = int32(0)
-			m.G0 = v9 + int32(16)
-			return v32
-		} else {
-			v24 = *(*int32)(unsafe.Add(mBase, uint32(v12)+uint32(_c_F_GetSysCacheOid[0])))
-			v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
-			v28 = F_heap_getattr_1(m, v16, int32(1), v25, v9+int32(15))
+		if v17 != 0 {
+			v22 = *(*int32)(unsafe.Add(mBase, uint32(v13)+uint32(_c_F_GetSysCacheOid[0])))
+			v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+8))
+			v26 = F_heap_getattr_1(m, v17, int32(1), v23, v10+int32(15))
 			mBase = m.M
-			v29 = m.ExcPending
-			if v29 != 0 {
+			v27 = m.ExcPending
+			if v27 != 0 {
 				return int32(0)
 			} else {
-				F_ReleaseCatCache(m, v16)
+				F_ReleaseCatCache(m, v17)
 				mBase = m.M
-				v31 = m.ExcPending
-				if v31 != 0 {
+				v29 = m.ExcPending
+				if v29 != 0 {
 					return int32(0)
 				} else {
-					v32 = v28
-					m.G0 = v9 + int32(16)
+					v32 = base.I32_wrap_i64(v26)
+					m.G0 = v10 + int32(16)
 					return v32
 				}
 			}
+		} else {
+			v32 = int32(0)
+			m.G0 = v10 + int32(16)
+			return v32
 		}
 	}
 }
 func F_SearchSysCacheCopyAttNum(m *base.Module, l0 int32, l1 int32) int32 {
-	var v4 int32
-	_ = v4
-	var v7 int32
-	_ = v7
-	v4 = Fn13839(m, l0, l1, int32(_a_F_SearchSysCacheCopyAttNum_0))
-	v7 = m.ExcPending
-	if v7 != 0 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	v3 = int32(0)
+	v5 = *(*int32)(unsafe.Add(mBase, _c_F_SearchSysCacheCopyAttNum[0]))
+	v8 = F_SearchCatCache2(m, v5, base.I64_extend_i32_u(l0), base.I64_extend_i32_s(l1))
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
 		return int32(0)
 	} else {
-		return v4
+		if v8 != 0 {
+			v12 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
+			v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+22)))
+			v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12+v13)+91)))
+			if v15 == int32(0) {
+				v18 = F_heap_copytuple(m, v8)
+				mBase = m.M
+				v19 = m.ExcPending
+				if v19 != 0 {
+					return int32(0)
+				} else {
+					v20 = v18
+					F_ReleaseCatCache(m, v8)
+					mBase = m.M
+					v22 = m.ExcPending
+					if v22 != 0 {
+						return int32(0)
+					} else {
+						v24 = v20
+						return v24
+					}
+				}
+			} else {
+				v20 = v3
+				F_ReleaseCatCache(m, v8)
+				mBase = m.M
+				v22 = m.ExcPending
+				if v22 != 0 {
+					return int32(0)
+				} else {
+					v24 = v20
+					return v24
+				}
+			}
+		} else {
+			v24 = v3
+			return v24
+		}
 	}
 }
-func F_SearchSysCacheList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+func F_SearchSysCacheList(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int64, l4 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -565,7 +627,7 @@ func F_SearchSysCacheList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_SearchSysCacheList_1), int32(683), int32(_a_F_SearchSysCacheList_2))
+					F_errfinish(m, int32(_a_F_SearchSysCacheList_1), int32(676), int32(_a_F_SearchSysCacheList_2))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {
@@ -592,7 +654,7 @@ func F_SearchSysCacheList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			if v27 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_SearchSysCacheList_1), int32(683), int32(_a_F_SearchSysCacheList_2))
+				F_errfinish(m, int32(_a_F_SearchSysCacheList_1), int32(676), int32(_a_F_SearchSysCacheList_2))
 				mBase = m.M
 				v32 = m.ExcPending
 				if v32 != 0 {
@@ -863,7 +925,7 @@ L4:
 	goto L5
 L5:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
 	v306 = m.ExcPending
 	if v306 != 0 {
@@ -1271,7 +1333,7 @@ L60:
 	}
 L61:
 	;
-	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(711), int32(_a_F_StartSysLogger_3))
+	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(730), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
 	v167 = m.ExcPending
 	if v167 != 0 {
@@ -1352,7 +1414,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(732), int32(_a_F_StartSysLogger_3))
+	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(751), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -1476,7 +1538,7 @@ L85:
 	}
 L86:
 	;
-	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(626), int32(_a_F_StartSysLogger_3))
+	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(645), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
 	v262 = m.ExcPending
 	if v262 != 0 {
@@ -1511,7 +1573,7 @@ L89:
 	}
 L90:
 	;
-	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(739), int32(_a_F_StartSysLogger_3))
+	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(758), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
 	v277 = m.ExcPending
 	if v277 != 0 {
@@ -1546,7 +1608,7 @@ L93:
 	}
 L94:
 	;
-	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(744), int32(_a_F_StartSysLogger_3))
+	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(763), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
 	v292 = m.ExcPending
 	if v292 != 0 {
@@ -1591,7 +1653,7 @@ L100:
 	}
 L101:
 	;
-	F_errfinish(m, int32(_a_F_StartSysLogger_15), int32(4012), int32(_a_F_StartSysLogger_16))
+	F_errfinish(m, int32(_a_F_StartSysLogger_15), int32(4070), int32(_a_F_StartSysLogger_16))
 	mBase = m.M
 	v315 = m.ExcPending
 	if v315 != 0 {

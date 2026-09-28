@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_point_eq(m *base.Module, l0 int32) int32 {
+func F_point_eq(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -42,11 +42,11 @@ func F_point_eq(m *base.Module, l0 int32) int32 {
 	_ = v74
 	var v77 int64
 	_ = v77
-	var v94 int32
-	_ = v94
+	var v96 int32
+	_ = v96
 	v8 = int32(0)
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v12 = *(*float64)(unsafe.Add(mBase, uint32(v11)))
 	if base.Ui64(base.I64_reinterpret_f64(v12)&int64(9223372036854775807)) <= base.Ui64(int64(9218868437227405312)) {
 		v18 = *(*float64)(unsafe.Add(mBase, uint32(v10)))
@@ -57,46 +57,46 @@ func F_point_eq(m *base.Module, l0 int32) int32 {
 		if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v25) {
 			v62 = base.B2i32(base.Ui64(v21) < base.Ui64(int64(9218868437227405313)))
 			if base.B2i32(v62 == int32(0))|base.F64_ne(v12, v18) != 0 {
-				v94 = v8
-				return v94
+				v96 = v8
+				return base.I64_extend_i32_u(v96)
 			} else {
 				v69 = v22
 				v73 = v25
 				v74 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
 				v77 = base.I64_reinterpret_f64(v74) & int64(9223372036854775807)
 				if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v73) {
-					return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v77))
+					return base.I64_extend_i32_u(base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v77)))
 				} else {
-					return base.B2i32(base.Ui64(v77) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v74, v69)
+					return base.I64_extend_i32_u(base.B2i32(base.Ui64(v77) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v74, v69))
 				}
 			}
 		} else {
 			if base.Ui64(int64(9218868437227405312)) < base.Ui64(v21) {
-				v94 = v8
-				return v94
+				v96 = v8
+				return base.I64_extend_i32_u(v96)
 			} else {
 				v32 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
 				if base.Ui64(base.I64_reinterpret_f64(v32)&int64(9223372036854775807)) <= base.Ui64(int64(9218868437227405312)) {
 					if base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v12, v18)), float64(1e-06)) == int32(0))&base.F64_ne(v12, v18) != 0 {
-						v94 = v8
+						v96 = v8
 					} else {
-						v94 = base.F64_eq(v22, v32) | base.F64_le(base.F64_abs(base.F64_sub(v22, v32)), float64(1e-06))
+						v96 = base.F64_eq(v22, v32) | base.F64_le(base.F64_abs(base.F64_sub(v22, v32)), float64(1e-06))
 					}
-					return v94
+					return base.I64_extend_i32_u(v96)
 				} else {
 					v62 = int32(1)
 					if base.B2i32(v62 == int32(0))|base.F64_ne(v12, v18) != 0 {
-						v94 = v8
-						return v94
+						v96 = v8
+						return base.I64_extend_i32_u(v96)
 					} else {
 						v69 = v22
 						v73 = v25
 						v74 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
 						v77 = base.I64_reinterpret_f64(v74) & int64(9223372036854775807)
 						if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v73) {
-							return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v77))
+							return base.I64_extend_i32_u(base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v77)))
 						} else {
-							return base.B2i32(base.Ui64(v77) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v74, v69)
+							return base.I64_extend_i32_u(base.B2i32(base.Ui64(v77) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v74, v69))
 						}
 					}
 				}
@@ -105,8 +105,8 @@ func F_point_eq(m *base.Module, l0 int32) int32 {
 	} else {
 		v39 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
 		if base.Ui64(v39&int64(9223372036854775807)) < base.Ui64(int64(9218868437227405313)) {
-			v94 = v8
-			return v94
+			v96 = v8
+			return base.I64_extend_i32_u(v96)
 		} else {
 			v44 = *(*float64)(unsafe.Add(mBase, uint32(v11)+8))
 			v69 = v44
@@ -114,14 +114,14 @@ func F_point_eq(m *base.Module, l0 int32) int32 {
 			v74 = *(*float64)(unsafe.Add(mBase, uint32(v10)+8))
 			v77 = base.I64_reinterpret_f64(v74) & int64(9223372036854775807)
 			if base.Ui64(int64(9218868437227405313)) <= base.Ui64(v73) {
-				return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v77))
+				return base.I64_extend_i32_u(base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v77)))
 			} else {
-				return base.B2i32(base.Ui64(v77) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v74, v69)
+				return base.I64_extend_i32_u(base.B2i32(base.Ui64(v77) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v74, v69))
 			}
 		}
 	}
 }
-func F_point_mul(m *base.Module, l0 int32) int32 {
+func F_point_mul(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -134,25 +134,25 @@ func F_point_mul(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v12 int32
 	_ = v12
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v7 = F_palloc(m, int32(16))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		F_point_mul_point(m, v7, v5, v4)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			return v7
+			return base.I64_extend_i32_u(v7)
 		}
 	}
 }
-func F_point_recv(m *base.Module, l0 int32) int32 {
+func F_point_recv(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -169,28 +169,28 @@ func F_point_recv(m *base.Module, l0 int32) int32 {
 	_ = v12
 	var v13 int32
 	_ = v13
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v5 = F_palloc(m, int32(16))
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v9 = F_pq_getmsgfloat8(m, v3)
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			*(*float64)(unsafe.Add(mBase, uint32(v5))) = v9
 			v12 = F_pq_getmsgfloat8(m, v3)
 			mBase = m.M
 			v13 = m.ExcPending
 			if v13 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				*(*float64)(unsafe.Add(mBase, uint32(v5)+8)) = v12
-				return v5
+				return base.I64_extend_i32_u(v5)
 			}
 		}
 	}
@@ -321,7 +321,7 @@ L8:
 L9:
 	;
 	v39 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-	if v39 != int32(447) {
+	if v39 != int32(453) {
 		v46 = v27
 		goto L4
 	} else {
@@ -407,7 +407,7 @@ L22:
 L23:
 	;
 	v78 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-	if v78 != int32(447) {
+	if v78 != int32(453) {
 		goto L22
 	} else {
 		goto L24

@@ -420,7 +420,7 @@ L42:
 	}
 L43:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v132))) = int32(388)
+	*(*int32)(unsafe.Add(mBase, uint32(v132))) = int32(394)
 	v137 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
 	F_InitResultRelInfo(m, v132, v122, int32(0), l2, v137)
 	mBase = m.M
@@ -756,15 +756,15 @@ L37:
 	;
 	goto L3
 }
-func F_trigger_out(m *base.Module, l0 int32) int32 {
-	var v7 int32
+func F_trigger_out(m *base.Module, l0 int32) int64 {
+	var v7 int64
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13854(m, l0, int32(_a_F_trigger_out_0), int32(366), int32(_a_F_trigger_out_1), int32(_a_F_trigger_out_2), int32(_a_F_trigger_out_3))
+	v7 = Fn14235(m, l0, int32(_a_F_trigger_out_0), int32(366), int32(_a_F_trigger_out_1), int32(_a_F_trigger_out_2), int32(_a_F_trigger_out_3))
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v7
 	}

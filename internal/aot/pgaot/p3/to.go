@@ -56,6 +56,80 @@ func F_CopyToBinaryStart(m *base.Module, l0 int32, l1 int32) {
 		}
 	}
 }
+func F_CopyToJsonEnd(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+136)))
+	if v4 == int32(1) {
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
+		v11 = *(*int32)(unsafe.Add(mBase, uint32(v7)+8))
+		if v11 <= v8+int32(1) {
+			F_appendStringInfoChar(m, v7, int32(93))
+			mBase = m.M
+			v15 = m.ExcPending
+			if v15 != 0 {
+				return
+			} else {
+				F_CopySendTextLikeEndOfRow(m, l0)
+				mBase = m.M
+				v32 = m.ExcPending
+				if v32 != 0 {
+					return
+				} else {
+					return
+				}
+			}
+		} else {
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+			v18 = int32(93)
+			*(*uint8)(unsafe.Add(mBase, uint32(v16+v8))) = uint8(v18)
+			v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+4))
+			v23 = v21 + int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v23
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
+			v27 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v25+v23))) = uint8(v27)
+			F_CopySendTextLikeEndOfRow(m, l0)
+			mBase = m.M
+			v32 = m.ExcPending
+			if v32 != 0 {
+				return
+			} else {
+				return
+			}
+		}
+	} else {
+		return
+	}
+}
 func F_CopyToTextOneRow(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
@@ -77,7 +151,7 @@ func F_CopyToTextOneRow(m *base.Module, l0 int32, l1 int32) {
 	_ = v25
 	var v31 int32
 	_ = v31
-	var v35 int32
+	var v35 int64
 	_ = v35
 	var v36 int32
 	_ = v36
@@ -101,8 +175,6 @@ func F_CopyToTextOneRow(m *base.Module, l0 int32, l1 int32) {
 	_ = v52
 	var v61 int32
 	_ = v61
-	var v62 int32
-	_ = v62
 	var v65 int32
 	_ = v65
 	var v66 int32
@@ -115,7 +187,7 @@ func F_CopyToTextOneRow(m *base.Module, l0 int32, l1 int32) {
 	_ = v70
 	var v71 int32
 	_ = v71
-	var v75 int32
+	var v75 int64
 	_ = v75
 	var v76 int32
 	_ = v76
@@ -187,7 +259,7 @@ L2:
 	}
 L3:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+168))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+196))
 	v19 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
 	v22 = v20 - int32(1)
@@ -210,7 +282,7 @@ L4:
 L5:
 	;
 	v31 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v35 = *(*int32)(unsafe.Add(mBase, uint32(v31+v22<<(uint(int32(2))%32))))
+	v35 = *(*int64)(unsafe.Add(mBase, uint32(v31+v22<<(uint(int32(3))%32))))
 	v36 = F_OutputFunctionCall(m, v18+v22*int32(28), v35)
 	mBase = m.M
 	v37 = m.ExcPending
@@ -225,7 +297,7 @@ L6:
 L7:
 	;
 	v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 	v42 = F_strlen(m, v41)
 	mBase = m.M
 	F_appendBinaryStringInfo(m, v40, v41, v42)
@@ -262,15 +334,14 @@ L12:
 L13:
 	;
 	v61 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-	v62 = int32(2)
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(v61+v52<<(uint(v62)%32))))
+	v65 = *(*int32)(unsafe.Add(mBase, uint32(v61+v52<<(uint(int32(2))%32))))
 	v66 = int32(1)
 	v67 = v65 - v66
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
 	v70 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v67+v68))))
 	v71 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v71+v67<<(uint(v62)%32))))
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
+	v75 = *(*int64)(unsafe.Add(mBase, uint32(v71+v67<<(uint(int32(3))%32))))
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
 	v77 = int32(*(*int8)(unsafe.Add(mBase, uint32(v76))))
 	v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(v78)+4))
@@ -331,7 +402,7 @@ L20:
 L21:
 	;
 	v102 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v103 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+	v103 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 	v104 = F_strlen(m, v103)
 	mBase = m.M
 	F_appendBinaryStringInfo(m, v102, v103, v104)
@@ -378,44 +449,16 @@ L28:
 	;
 	return
 }
-func F_to_tsquery(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v2 int32
-	_ = v2
-	var v3 int32
+func F_to_tsquery(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v3 = F_pg_detoast_datum_packed(m, v2)
-	mBase = m.M
+	v3 = Fn14391(m, l0, int32(1274))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v9 = F_getTSCurrentConfig(m)
-		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return int32(0)
-		} else {
-			v11 = F_DirectFunctionCall2Coll(m, int32(1159), int32(0), v9, v3)
-			mBase = m.M
-			v12 = m.ExcPending
-			if v12 != 0 {
-				return int32(0)
-			} else {
-				return v11
-			}
-		}
+		return v3
 	}
 }

@@ -16,6 +16,8 @@ func F_errdetail_busy_db(m *base.Module, l0 int32, l1 int32) {
 	_ = v7
 	var v10 int32
 	_ = v10
+	var v19 int32
+	_ = v19
 	var v20 int32
 	_ = v20
 	var v29 int32
@@ -30,7 +32,7 @@ func F_errdetail_busy_db(m *base.Module, l0 int32, l1 int32) {
 	if v10|base.B2i32(l1 <= v3) == v3 {
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l1
 		*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-		F_errdetail(m, int32(_a_F_errdetail_busy_db_0), v7)
+		v19 = F_errdetail(m, int32(_a_F_errdetail_busy_db_0), v7)
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
@@ -326,7 +328,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(_a_F_errdetail_plural_3), int32(1303), int32(_a_F_errdetail_plural_4))
+	F_errfinish(m, int32(_a_F_errdetail_plural_3), int32(1494), int32(_a_F_errdetail_plural_4))
 	mBase = m.M
 	v107 = m.ExcPending
 	if v107 != 0 {

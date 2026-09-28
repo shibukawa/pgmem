@@ -225,6 +225,8 @@ func F_CheckRecoveryConsistency(m *base.Module) {
 	_ = v354
 	var v362 int32
 	_ = v362
+	var v368 int32
+	_ = v368
 	var v369 int32
 	_ = v369
 	var v373 int32
@@ -267,24 +269,26 @@ func F_CheckRecoveryConsistency(m *base.Module) {
 	_ = v459
 	var v462 int32
 	_ = v462
-	var v464 int32
-	_ = v464
-	var v471 int32
-	_ = v471
+	var v467 int32
+	_ = v467
+	var v468 int32
+	_ = v468
+	var v469 int32
+	_ = v469
+	var v470 int32
+	_ = v470
 	var v473 int32
 	_ = v473
 	var v474 int32
 	_ = v474
-	var v476 int32
-	_ = v476
-	var v484 int32
-	_ = v484
-	var v488 int32
-	_ = v488
+	var v482 int32
+	_ = v482
+	var v486 int32
+	_ = v486
+	var v493 int32
+	_ = v493
 	var v495 int32
 	_ = v495
-	var v497 int32
-	_ = v497
 	v10 = m.G0
 	v12 = v10 - int32(1120)
 	m.G0 = v12
@@ -364,7 +368,7 @@ L9:
 	}
 L10:
 	;
-	F_errfinish(m, int32(_a_F_CheckRecoveryConsistency_1), int32(2226), int32(_a_F_CheckRecoveryConsistency_2))
+	F_errfinish(m, int32(_a_F_CheckRecoveryConsistency_1), int32(2190), int32(_a_F_CheckRecoveryConsistency_2))
 	mBase = m.M
 	v41 = m.ExcPending
 	if v41 != 0 {
@@ -378,7 +382,7 @@ L11:
 L12:
 	;
 	v50 = *(*int32)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[6]))
-	v51 = *(*int64)(unsafe.Add(mBase, uint32(v50)+136))
+	v51 = *(*int64)(unsafe.Add(mBase, uint32(v50)+144))
 	if base.Ui64(v51) < base.Ui64(v20) {
 		goto L13
 	} else {
@@ -386,8 +390,8 @@ L12:
 	}
 L13:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v50)+144)) = v26
-	*(*int64)(unsafe.Add(mBase, uint32(v50)+136)) = v20
+	*(*int32)(unsafe.Add(mBase, uint32(v50)+152)) = v26
+	*(*int64)(unsafe.Add(mBase, uint32(v50)+144)) = v20
 	goto L15
 L14:
 	;
@@ -395,10 +399,10 @@ L14:
 L15:
 	;
 	v55 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v50)+168)) = uint8(v55)
+	*(*uint8)(unsafe.Add(mBase, uint32(v50)+176)) = uint8(v55)
 	v57 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v50)+168)) = v57
 	*(*int64)(unsafe.Add(mBase, uint32(v50)+160)) = v57
-	*(*int64)(unsafe.Add(mBase, uint32(v50)+152)) = v57
 	v62 = *(*int32)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[7]))
 	F_update_controlfile(m, v62, v50)
 	mBase = m.M
@@ -460,7 +464,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(_a_F_CheckRecoveryConsistency_1), int32(2240), int32(_a_F_CheckRecoveryConsistency_2))
+	F_errfinish(m, int32(_a_F_CheckRecoveryConsistency_1), int32(2204), int32(_a_F_CheckRecoveryConsistency_2))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -691,7 +695,7 @@ L50:
 	goto L52
 L51:
 	;
-	v179 = int32(23)
+	v179 = int32(24)
 	goto L52
 L52:
 	;
@@ -959,7 +963,7 @@ L89:
 	goto L91
 L90:
 	;
-	v346 = int32(23)
+	v346 = int32(24)
 	goto L91
 L91:
 	;
@@ -1003,7 +1007,7 @@ L94:
 L95:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = int32(_a_F_CheckRecoveryConsistency_4)
-	F_errdetail(m, int32(_a_F_CheckRecoveryConsistency_14), v12+int32(16))
+	v368 = F_errdetail(m, int32(_a_F_CheckRecoveryConsistency_14), v12+int32(16))
 	mBase = m.M
 	v369 = m.ExcPending
 	if v369 != 0 {
@@ -1023,7 +1027,7 @@ L96:
 	}
 L97:
 	;
-	F_errfinish(m, int32(_a_F_CheckRecoveryConsistency_1), int32(2186), int32(_a_F_CheckRecoveryConsistency_16))
+	F_errfinish(m, int32(_a_F_CheckRecoveryConsistency_1), int32(2150), int32(_a_F_CheckRecoveryConsistency_16))
 	mBase = m.M
 	v378 = m.ExcPending
 	if v378 != 0 {
@@ -1091,7 +1095,7 @@ L106:
 	}
 L107:
 	;
-	F_errfinish(m, int32(_a_F_CheckRecoveryConsistency_1), int32(2270), int32(_a_F_CheckRecoveryConsistency_2))
+	F_errfinish(m, int32(_a_F_CheckRecoveryConsistency_1), int32(2234), int32(_a_F_CheckRecoveryConsistency_2))
 	mBase = m.M
 	v428 = m.ExcPending
 	if v428 != 0 {
@@ -1137,11 +1141,10 @@ L112:
 	}
 L113:
 	;
-	v464 = *(*int32)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[1]))
-	F_s_lock(m, v464+int32(96), int32(_a_F_CheckRecoveryConsistency_1), int32(2283), int32(_a_F_CheckRecoveryConsistency_2))
+	F_s_lock(m, v459+int32(96), int32(_a_F_CheckRecoveryConsistency_18))
 	mBase = m.M
-	v471 = m.ExcPending
-	if v471 != 0 {
+	v467 = m.ExcPending
+	if v467 != 0 {
 		goto L5
 	} else {
 		goto L116
@@ -1151,14 +1154,16 @@ L114:
 	goto L115
 L115:
 	;
+	v468 = int32(_a_F_CheckRecoveryConsistency_19)
+	v469 = *(*int32)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[1]))
+	v470 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v469))) = uint8(v470)
 	v473 = *(*int32)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[1]))
-	v474 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v473))) = uint8(v474)
-	v476 = int32(0)
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v473)+96)), uint32(v476))
-	*(*uint8)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[18])) = uint8(v474)
-	v484 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[12])))
-	if v484 == v474 {
+	v474 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v473)+96)), uint32(v474))
+	*(*uint8)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[18])) = uint8(v470)
+	v482 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[12])))
+	if v482 == v470 {
 		goto L118
 	} else {
 		goto L119
@@ -1171,10 +1176,10 @@ L117:
 	goto L1
 L118:
 	;
-	v488 = *(*int32)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[16]))
-	*(*int32)(unsafe.Add(mBase, uint32(v488+int32(8)))) = int32(1)
-	v495 = *(*int32)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[17]))
-	v497 = F_pgmem_kill(m, v495, int32(10))
+	v486 = *(*int32)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[16]))
+	*(*int32)(unsafe.Add(mBase, uint32(v486+int32(8)))) = int32(1)
+	v493 = *(*int32)(unsafe.Add(mBase, _c_F_CheckRecoveryConsistency[17]))
+	v495 = F_pgmem_kill(m, v493, int32(10))
 	mBase = m.M
 	goto L120
 L119:
@@ -1200,7 +1205,7 @@ func F_RecoveryInProgress(m *base.Module) int32 {
 	v3 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RecoveryInProgress[0])))
 	if v3 == int32(1) {
 		v8 = *(*int32)(unsafe.Add(mBase, _c_F_RecoveryInProgress[1]))
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+316))
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+308))
 		v11 = base.B2i32(v9 != int32(2))
 		*(*uint8)(unsafe.Add(mBase, _c_F_RecoveryInProgress[0])) = uint8(v11)
 		v13 = v11
@@ -1216,48 +1221,45 @@ func F_SetRecoveryPause(m *base.Module, l0 int32) {
 	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v16 int32
-	_ = v16
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
-	var v24 int32
-	_ = v24
-	var v27 int32
-	_ = v27
-	var v35 int32
-	_ = v35
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v31 int32
+	_ = v31
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_SetRecoveryPause[0]))
 	v7 = base.AtomicRmwXchg32(m, v4, int32(96), int32(1))
 	if v7 != 0 {
-		v9 = *(*int32)(unsafe.Add(mBase, _c_F_SetRecoveryPause[0]))
-		F_s_lock(m, v9+int32(96), int32(_a_F_SetRecoveryPause_0), int32(3114), int32(_a_F_SetRecoveryPause_1))
+		F_s_lock(m, v4+int32(96), int32(_a_F_SetRecoveryPause_0))
 		mBase = m.M
-		v16 = m.ExcPending
-		if v16 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return
 		} else {
-			v18 = *(*int32)(unsafe.Add(mBase, _c_F_SetRecoveryPause[0]))
+			v14 = *(*int32)(unsafe.Add(mBase, _c_F_SetRecoveryPause[0]))
 			if l0 != 0 {
-				v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+80))
-				if v19 == int32(0) {
-					*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = int32(1)
+				v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+80))
+				if v15 == int32(0) {
+					*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = int32(1)
 				} else {
 				}
-				v24 = int32(0)
-				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+96)), uint32(v24))
+				v20 = int32(0)
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v14)+96)), uint32(v20))
 				return
 			} else {
-				v27 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v27
-				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+96)), uint32(v27))
-				F_ConditionVariableBroadcast(m, v18+int32(84))
+				v23 = int32(0)
+				*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = v23
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v14)+96)), uint32(v23))
+				F_ConditionVariableBroadcast(m, v14+int32(84))
 				mBase = m.M
-				v35 = m.ExcPending
-				if v35 != 0 {
+				v31 = m.ExcPending
+				if v31 != 0 {
 					return
 				} else {
 					return
@@ -1265,24 +1267,24 @@ func F_SetRecoveryPause(m *base.Module, l0 int32) {
 			}
 		}
 	} else {
-		v18 = *(*int32)(unsafe.Add(mBase, _c_F_SetRecoveryPause[0]))
+		v14 = *(*int32)(unsafe.Add(mBase, _c_F_SetRecoveryPause[0]))
 		if l0 != 0 {
-			v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+80))
-			if v19 == int32(0) {
-				*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = int32(1)
+			v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+80))
+			if v15 == int32(0) {
+				*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = int32(1)
 			} else {
 			}
-			v24 = int32(0)
-			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+96)), uint32(v24))
+			v20 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v14)+96)), uint32(v20))
 			return
 		} else {
-			v27 = int32(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v27
-			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v18)+96)), uint32(v27))
-			F_ConditionVariableBroadcast(m, v18+int32(84))
+			v23 = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = v23
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v14)+96)), uint32(v23))
+			F_ConditionVariableBroadcast(m, v14+int32(84))
 			mBase = m.M
-			v35 = m.ExcPending
-			if v35 != 0 {
+			v31 = m.ExcPending
+			if v31 != 0 {
 				return
 			} else {
 				return

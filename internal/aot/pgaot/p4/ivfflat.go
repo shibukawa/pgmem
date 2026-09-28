@@ -42,7 +42,7 @@ func F_IvfflatGetMetaPageInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	if v7 != 0 {
 		return
 	} else {
-		F_LockBuffer(m, v6, int32(1))
+		F_LockBufferInternal(m, v6, int32(1))
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {
@@ -110,7 +110,7 @@ func F_IvfflatGetTypeInfo(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13831(m, l0, int32(5), int32(_a_F_IvfflatGetTypeInfo_0))
+	v4 = Fn14214(m, l0, int32(5), int32(_a_F_IvfflatGetTypeInfo_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

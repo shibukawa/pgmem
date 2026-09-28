@@ -5,6 +5,37 @@ import (
 	"unsafe"
 )
 
+func F_PredicateLockShmemAttach(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v16 int32
+	_ = v16
+	v4 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockShmemAttach[0]))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+56))
+	*(*int32)(unsafe.Add(mBase, _c_F_PredicateLockShmemAttach[1])) = v5
+	v9 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockShmemAttach[2]))
+	v11 = F_get_hash_value(m, v9, int32(_a_F_PredicateLockShmemAttach_0))
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return
+	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_PredicateLockShmemAttach[3])) = v11
+		v16 = *(*int32)(unsafe.Add(mBase, _c_F_PredicateLockShmemAttach[4]))
+		*(*int32)(unsafe.Add(mBase, _c_F_PredicateLockShmemAttach[5])) = v16 + v11&int32(15)<<(uint(int32(7))%32) + int32(_a_F_PredicateLockShmemAttach_1)
+		return
+	}
+}
 func F_predicate_refuted_by_recurse(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -378,7 +409,7 @@ func F_predicate_refuted_by_recurse(m *base.Module, l0 int32, l1 int32, l2 int32
 	v10 = v8 - int32(48)
 	m.G0 = v10
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	if v12 == int32(318) {
+	if v12 == int32(320) {
 		goto L1
 	} else {
 		goto L2

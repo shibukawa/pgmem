@@ -1246,7 +1246,7 @@ func F_create_bitmap_subplan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 	v19 = v17 - int32(48)
 	m.G0 = v19
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	switch v21 - int32(280) {
+	switch v21 - int32(283) {
 	case 0:
 		goto L11
 	default:
@@ -1495,7 +1495,7 @@ L26:
 	;
 	v95 = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v93)+44)) = v95
-	*(*int32)(unsafe.Add(mBase, uint32(v93))) = int32(337)
+	*(*int32)(unsafe.Add(mBase, uint32(v93))) = int32(341)
 	*(*int64)(unsafe.Add(mBase, uint32(v93)+52)) = v95
 	*(*int32)(unsafe.Add(mBase, uint32(v93)+72)) = v87
 	v102 = *(*float64)(unsafe.Add(mBase, uint32(l1)+48))
@@ -1504,7 +1504,7 @@ L26:
 	*(*float64)(unsafe.Add(mBase, uint32(v93)+16)) = v104
 	v106 = *(*float64)(unsafe.Add(mBase, uint32(l1)+80))
 	v107 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v108 = *(*float64)(unsafe.Add(mBase, uint32(v107)+120))
+	v108 = *(*float64)(unsafe.Add(mBase, uint32(v107)+128))
 	v109 = base.F64_mul(v106, v108)
 	v110 = float64(1e+100)
 	if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v109)&int64(9223372036854775807)))|base.F64_gt(v109, v110) != 0 {
@@ -1705,7 +1705,7 @@ L49:
 	;
 	v210 = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v208)+44)) = v210
-	*(*int32)(unsafe.Add(mBase, uint32(v208))) = int32(343)
+	*(*int32)(unsafe.Add(mBase, uint32(v208))) = int32(347)
 	*(*int64)(unsafe.Add(mBase, uint32(v208)+52)) = v210
 	*(*int64)(unsafe.Add(mBase, uint32(v208)+88)) = v206
 	*(*int32)(unsafe.Add(mBase, uint32(v208)+80)) = v205
@@ -1715,7 +1715,7 @@ L49:
 	*(*float64)(unsafe.Add(mBase, uint32(v208)+16)) = v221
 	v223 = *(*float64)(unsafe.Add(mBase, uint32(l1)+104))
 	v224 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v225 = *(*float64)(unsafe.Add(mBase, uint32(v224)+120))
+	v225 = *(*float64)(unsafe.Add(mBase, uint32(v224)+128))
 	v226 = base.F64_mul(v223, v225)
 	v227 = float64(1e+100)
 	if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v226)&int64(9223372036854775807)))|base.F64_gt(v226, v227) != 0 {
@@ -1872,7 +1872,7 @@ L66:
 	}
 L67:
 	;
-	F_errfinish(m, int32(_a_F_create_bitmap_subplan_1), int32(3520), int32(_a_F_create_bitmap_subplan_2))
+	F_errfinish(m, int32(_a_F_create_bitmap_subplan_1), int32(3365), int32(_a_F_create_bitmap_subplan_2))
 	mBase = m.M
 	v307 = m.ExcPending
 	if v307 != 0 {
@@ -2037,7 +2037,7 @@ L87:
 	;
 	v439 = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v437)+44)) = v439
-	*(*int32)(unsafe.Add(mBase, uint32(v437))) = int32(338)
+	*(*int32)(unsafe.Add(mBase, uint32(v437))) = int32(342)
 	*(*int64)(unsafe.Add(mBase, uint32(v437)+52)) = v439
 	*(*int32)(unsafe.Add(mBase, uint32(v437)+76)) = v429
 	v446 = *(*float64)(unsafe.Add(mBase, uint32(l1)+48))
@@ -2046,7 +2046,7 @@ L87:
 	*(*float64)(unsafe.Add(mBase, uint32(v437)+16)) = v448
 	v450 = *(*float64)(unsafe.Add(mBase, uint32(l1)+80))
 	v451 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v452 = *(*float64)(unsafe.Add(mBase, uint32(v451)+120))
+	v452 = *(*float64)(unsafe.Add(mBase, uint32(v451)+128))
 	v453 = base.F64_mul(v450, v452)
 	v454 = float64(1e+100)
 	if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v453)&int64(9223372036854775807)))|base.F64_gt(v453, v454) != 0 {
@@ -2207,7 +2207,7 @@ L109:
 	v581 = v553
 	goto L1
 }
-func F_storeBitmap(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) {
+func F_storeBitmap(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) {
 	mBase := m.M
 	_ = mBase
 	var v9 int32

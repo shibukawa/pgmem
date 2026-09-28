@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_binary_quantize(m *base.Module, l0 int32) int32 {
+func F_binary_quantize(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -90,12 +90,12 @@ func F_binary_quantize(m *base.Module, l0 int32) int32 {
 	_ = v133
 	var v134 int32
 	_ = v134
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v9 = F_pg_detoast_datum(m, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v14 = v9 + int32(8)
 		v15 = int32(*(*int16)(unsafe.Add(mBase, uint32(v9)+4)))
@@ -103,7 +103,7 @@ func F_binary_quantize(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v18 = int32(8)
 			v19 = v16 + v18
@@ -195,45 +195,194 @@ func F_binary_quantize(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 			}
-			return v16
+			return base.I64_extend_i32_u(v16)
 		}
 	}
 }
-func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int32 {
-	var v5 int32
+func F_binary_upgrade_create_conflict_detection_slot(m *base.Module, l0 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
+	var v49 int32
+	_ = v49
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_binary_upgrade_create_conflict_detection_slot[0])))
+	if v3 == int32(0) {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v11 = m.ExcPending
+		if v11 != 0 {
+			return int64(0)
+		} else {
+			F_errcode(m, int32(33685829))
+			mBase = m.M
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return int64(0)
+			} else {
+				F_errmsg(m, int32(_a_F_binary_upgrade_create_conflict_detection_slot_0), int32(0))
+				mBase = m.M
+				v18 = m.ExcPending
+				if v18 != 0 {
+					return int64(0)
+				} else {
+					F_errfinish(m, int32(_a_F_binary_upgrade_create_conflict_detection_slot_1), int32(430), int32(_a_F_binary_upgrade_create_conflict_detection_slot_2))
+					mBase = m.M
+					v23 = m.ExcPending
+					if v23 != 0 {
+						return int64(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v25 = *(*int32)(unsafe.Add(mBase, _c_F_binary_upgrade_create_conflict_detection_slot[1]))
+		if v25 == int32(0) {
+			v30 = F_errstart(m, int32(15), int32(0))
+			mBase = m.M
+			v31 = m.ExcPending
+			if v31 != 0 {
+				return int64(0)
+			} else {
+				if v30 != 0 {
+					F_errmsg(m, int32(_a_F_binary_upgrade_create_conflict_detection_slot_3), int32(0))
+					mBase = m.M
+					v35 = m.ExcPending
+					if v35 != 0 {
+						return int64(0)
+					} else {
+						F_errfinish(m, int32(_a_F_binary_upgrade_create_conflict_detection_slot_4), int32(1643), int32(_a_F_binary_upgrade_create_conflict_detection_slot_5))
+						mBase = m.M
+						v40 = m.ExcPending
+						if v40 != 0 {
+							return int64(0)
+						} else {
+							v42 = int32(0)
+							F_ReplicationSlotCreate(m, int32(_a_F_binary_upgrade_create_conflict_detection_slot_6), v42, v42, v42, v42, v42, v42)
+							mBase = m.M
+							v49 = m.ExcPending
+							if v49 != 0 {
+								return int64(0)
+							} else {
+								F_reset_conflict_slot_xmin_to_safe_horizon(m)
+								mBase = m.M
+								v51 = m.ExcPending
+								if v51 != 0 {
+									return int64(0)
+								} else {
+									F_ReplicationSlotRelease(m)
+									mBase = m.M
+									v53 = m.ExcPending
+									if v53 != 0 {
+										return int64(0)
+									} else {
+										return int64(0)
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v42 = int32(0)
+					F_ReplicationSlotCreate(m, int32(_a_F_binary_upgrade_create_conflict_detection_slot_6), v42, v42, v42, v42, v42, v42)
+					mBase = m.M
+					v49 = m.ExcPending
+					if v49 != 0 {
+						return int64(0)
+					} else {
+						F_reset_conflict_slot_xmin_to_safe_horizon(m)
+						mBase = m.M
+						v51 = m.ExcPending
+						if v51 != 0 {
+							return int64(0)
+						} else {
+							F_ReplicationSlotRelease(m)
+							mBase = m.M
+							v53 = m.ExcPending
+							if v53 != 0 {
+								return int64(0)
+							} else {
+								return int64(0)
+							}
+						}
+					}
+				}
+			}
+		} else {
+			F_ReplicationSlotRelease(m)
+			mBase = m.M
+			v53 = m.ExcPending
+			if v53 != 0 {
+				return int64(0)
+			} else {
+				return int64(0)
+			}
+		}
+	}
+}
+func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int64 {
+	var v5 int64
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13851(m, l0, int32(_a_F_binary_upgrade_set_next_pg_tablespace_oid_0), int32(_a_F_binary_upgrade_set_next_pg_tablespace_oid_1), int32(46))
+	v5 = Fn14232(m, l0, int32(_a_F_binary_upgrade_set_next_pg_tablespace_oid_0), int32(_a_F_binary_upgrade_set_next_pg_tablespace_oid_1), int32(47))
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v5
 	}
 }
-func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int32 {
-	var v5 int32
+func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int64 {
+	var v5 int64
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13851(m, l0, int32(_a_F_binary_upgrade_set_next_pg_type_oid_0), int32(_a_F_binary_upgrade_set_next_pg_type_oid_1), int32(57))
+	v5 = Fn14232(m, l0, int32(_a_F_binary_upgrade_set_next_pg_type_oid_0), int32(_a_F_binary_upgrade_set_next_pg_type_oid_1), int32(58))
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v5
 	}
 }
-func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int32 {
-	var v5 int32
+func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int64 {
+	var v5 int64
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13851(m, l0, int32(_a_F_binary_upgrade_set_next_toast_relfilenode_0), int32(_a_F_binary_upgrade_set_next_toast_relfilenode_1), int32(156))
+	v5 = Fn14232(m, l0, int32(_a_F_binary_upgrade_set_next_toast_relfilenode_0), int32(_a_F_binary_upgrade_set_next_toast_relfilenode_1), int32(157))
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v5
 	}

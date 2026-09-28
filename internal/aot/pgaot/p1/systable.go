@@ -8,22 +8,20 @@ import (
 func F_systable_getnext(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
-	_ = v2
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
 	var v11 int32
 	_ = v11
-	var v12 int32
-	_ = v12
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
 	var v20 int32
 	_ = v20
 	var v24 int32
@@ -48,62 +46,51 @@ func F_systable_getnext(m *base.Module, l0 int32) int32 {
 	_ = v45
 	var v48 int32
 	_ = v48
+	var v49 int32
+	_ = v49
 	var v50 int32
 	_ = v50
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
 	var v56 int32
 	_ = v56
-	var v57 int32
-	_ = v57
-	var v58 int32
-	_ = v58
-	var v59 int32
-	_ = v59
 	var v60 int32
 	_ = v60
-	var v63 int32
-	_ = v63
-	var v67 int32
-	_ = v67
-	var v68 int32
-	_ = v68
-	var v69 int32
-	_ = v69
-	var v72 int32
-	_ = v72
-	var v80 int32
-	_ = v80
-	var v84 int32
-	_ = v84
-	var v89 int32
-	_ = v89
-	v2 = int32(0)
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v11 != 0 {
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-		v14 = F_index_getnext_slot(m, v12, int32(1), v10)
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v65 int32
+	_ = v65
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v10 != 0 {
+		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+		v13 = F_index_getnext_slot(m, v11, int32(1), v9)
 		mBase = m.M
-		v17 = m.ExcPending
-		if v17 != 0 {
+		v16 = m.ExcPending
+		if v16 != 0 {
 			return int32(0)
 		} else {
-			if v14 == int32(0) {
-				v69 = v2
+			if v13 == int32(0) {
+				v62 = int32(0)
 				F_HandleConcurrentAbort(m)
 				mBase = m.M
-				v72 = m.ExcPending
-				if v72 != 0 {
+				v65 = m.ExcPending
+				if v65 != 0 {
 					return int32(0)
 				} else {
-					m.G0 = v8 + int32(16)
-					return v69
+					m.G0 = v7 + int32(16)
+					return v62
 				}
 			} else {
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-				v24 = F_ExecFetchSlotHeapTuple(m, v20, int32(0), v8+int32(15))
+				v24 = F_ExecFetchSlotHeapTuple(m, v20, int32(0), v7+int32(15))
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
@@ -112,15 +99,15 @@ func F_systable_getnext(m *base.Module, l0 int32) int32 {
 					v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 					v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+72)))
 					if v27 != int32(1) {
-						v69 = v24
+						v62 = v24
 						F_HandleConcurrentAbort(m)
 						mBase = m.M
-						v72 = m.ExcPending
-						if v72 != 0 {
+						v65 = m.ExcPending
+						if v65 != 0 {
 							return int32(0)
 						} else {
-							m.G0 = v8 + int32(16)
-							return v69
+							m.G0 = v7 + int32(16)
+							return v62
 						}
 					} else {
 						F_errstart_cold(m, int32(21), int32(0))
@@ -135,7 +122,7 @@ func F_systable_getnext(m *base.Module, l0 int32) int32 {
 							if v37 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_systable_getnext_1), int32(536), int32(_a_F_systable_getnext_2))
+								F_errfinish(m, int32(_a_F_systable_getnext_1), int32(537), int32(_a_F_systable_getnext_2))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -155,117 +142,44 @@ func F_systable_getnext(m *base.Module, l0 int32) int32 {
 		v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 		v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
 		v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+56))
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = v45
-		v48 = *(*int32)(unsafe.Add(mBase, _c_F_systable_getnext[0]))
-		if v48 != 0 {
-			v50 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_systable_getnext[1])))
-			if v50&int32(1) == int32(0) {
-				F_errstart_cold(m, int32(21), int32(0))
-				mBase = m.M
-				v80 = m.ExcPending
-				if v80 != 0 {
-					return int32(0)
-				} else {
-					F_errmsg_internal(m, int32(_a_F_systable_getnext_3), int32(0))
-					mBase = m.M
-					v84 = m.ExcPending
-					if v84 != 0 {
-						return int32(0)
-					} else {
-						F_errfinish(m, int32(_a_F_systable_getnext_4), int32(1034), int32(_a_F_systable_getnext_5))
-						mBase = m.M
-						v89 = m.ExcPending
-						if v89 != 0 {
-							return int32(0)
-						} else {
-							base.Wasm_trap_unreachable()
-							for {
-							}
-						}
-					}
-				}
-			} else {
-				v56 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
-				v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+188))
-				v58 = *(*int32)(unsafe.Add(mBase, uint32(v57)+20))
-				v59 = m.T0[v58].(func(*base.Module, int32, int32, int32) int32)(m, v43, int32(1), v10)
-				mBase = m.M
-				v60 = m.ExcPending
-				if v60 != 0 {
-					return int32(0)
-				} else {
-					if v59 == int32(0) {
-						v69 = v2
-						F_HandleConcurrentAbort(m)
-						mBase = m.M
-						v72 = m.ExcPending
-						if v72 != 0 {
-							return int32(0)
-						} else {
-							m.G0 = v8 + int32(16)
-							return v69
-						}
-					} else {
-						v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-						v67 = F_ExecFetchSlotHeapTuple(m, v63, int32(0), v8+int32(14))
-						mBase = m.M
-						v68 = m.ExcPending
-						if v68 != 0 {
-							return int32(0)
-						} else {
-							v69 = v67
-							F_HandleConcurrentAbort(m)
-							mBase = m.M
-							v72 = m.ExcPending
-							if v72 != 0 {
-								return int32(0)
-							} else {
-								m.G0 = v8 + int32(16)
-								return v69
-							}
-						}
-					}
-				}
-			}
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+40)) = v45
+		v48 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
+		v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)+188))
+		v50 = *(*int32)(unsafe.Add(mBase, uint32(v49)+20))
+		v51 = m.T0[v50].(func(*base.Module, int32, int32, int32) int32)(m, v43, int32(1), v9)
+		mBase = m.M
+		v52 = m.ExcPending
+		if v52 != 0 {
+			return int32(0)
 		} else {
-			v56 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
-			v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+188))
-			v58 = *(*int32)(unsafe.Add(mBase, uint32(v57)+20))
-			v59 = m.T0[v58].(func(*base.Module, int32, int32, int32) int32)(m, v43, int32(1), v10)
-			mBase = m.M
-			v60 = m.ExcPending
-			if v60 != 0 {
-				return int32(0)
+			if v51 == int32(0) {
+				v62 = int32(0)
+				F_HandleConcurrentAbort(m)
+				mBase = m.M
+				v65 = m.ExcPending
+				if v65 != 0 {
+					return int32(0)
+				} else {
+					m.G0 = v7 + int32(16)
+					return v62
+				}
 			} else {
-				if v59 == int32(0) {
-					v69 = v2
+				v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				v60 = F_ExecFetchSlotHeapTuple(m, v56, int32(0), v7+int32(14))
+				mBase = m.M
+				v61 = m.ExcPending
+				if v61 != 0 {
+					return int32(0)
+				} else {
+					v62 = v60
 					F_HandleConcurrentAbort(m)
 					mBase = m.M
-					v72 = m.ExcPending
-					if v72 != 0 {
+					v65 = m.ExcPending
+					if v65 != 0 {
 						return int32(0)
 					} else {
-						m.G0 = v8 + int32(16)
-						return v69
-					}
-				} else {
-					v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-					v67 = F_ExecFetchSlotHeapTuple(m, v63, int32(0), v8+int32(14))
-					mBase = m.M
-					v68 = m.ExcPending
-					if v68 != 0 {
-						return int32(0)
-					} else {
-						v69 = v67
-						F_HandleConcurrentAbort(m)
-						mBase = m.M
-						v72 = m.ExcPending
-						if v72 != 0 {
-							return int32(0)
-						} else {
-							m.G0 = v8 + int32(16)
-							return v69
-						}
+						m.G0 = v7 + int32(16)
+						return v62
 					}
 				}
 			}
@@ -371,7 +285,7 @@ func F_systable_getnext_ordered(m *base.Module, l0 int32, l1 int32) int32 {
 							if v30 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_systable_getnext_ordered_1), int32(742), int32(_a_F_systable_getnext_ordered_2))
+								F_errfinish(m, int32(_a_F_systable_getnext_ordered_1), int32(744), int32(_a_F_systable_getnext_ordered_2))
 								mBase = m.M
 								v35 = m.ExcPending
 								if v35 != 0 {
@@ -400,33 +314,33 @@ func F_systable_inplace_update_cancel(m *base.Module, l0 int32) {
 	_ = v7
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
-	var v16 int32
-	_ = v16
-	var v21 int32
-	_ = v21
+	var v10 int32
+	_ = v10
+	var v15 int32
+	_ = v15
+	var v20 int32
+	_ = v20
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+40))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(v6)+68))
-	F_LockBuffer(m, v8, int32(0))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+44))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v6)+72))
+	F_UnlockBuffer(m, v8)
 	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
+	v10 = m.ExcPending
+	if v10 != 0 {
 		return
 	} else {
 		F_UnlockTuple(m, v5, v7+int32(4), int32(7))
 		mBase = m.M
-		v16 = m.ExcPending
-		if v16 != 0 {
+		v15 = m.ExcPending
+		if v15 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, _c_F_systable_inplace_update_cancel[0])) = int32(0)
 			F_systable_endscan(m, l0)
 			mBase = m.M
-			v21 = m.ExcPending
-			if v21 != 0 {
+			v20 = m.ExcPending
+			if v20 != 0 {
 				return
 			} else {
 				return

@@ -10,12 +10,12 @@ func F_extract_grouping_cols(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	var v18 int32
-	_ = v18
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
 	var v21 int32
 	_ = v21
 	var v22 int32
@@ -64,10 +64,10 @@ func F_extract_grouping_cols(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 L1:
 	;
-	v13 = F_palloc(m, int32(0))
+	v14 = F_palloc_mul(m, int32(2), int32(0))
 	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v17 = m.ExcPending
+	if v17 != 0 {
 		goto L4
 	} else {
 		goto L5
@@ -77,8 +77,8 @@ L2:
 	goto L3
 L3:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v21 = F_palloc(m, v18<<(uint(int32(1))%32))
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v21 = F_palloc_mul(m, int32(2), v20)
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -91,7 +91,7 @@ L4:
 	return int32(0)
 L5:
 	;
-	return v13
+	return v14
 L6:
 	;
 	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
@@ -566,7 +566,7 @@ L31:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = v116
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = v116
-	v124 = F_list_make1_impl(m, int32(471), v18+int32(8))
+	v124 = F_list_make1_impl(m, int32(479), v18+int32(8))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -657,7 +657,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(_a_F_transformGroupingSet_1), int32(2587), int32(_a_F_transformGroupingSet_2))
+	F_errfinish(m, int32(_a_F_transformGroupingSet_1), int32(2589), int32(_a_F_transformGroupingSet_2))
 	mBase = m.M
 	v194 = m.ExcPending
 	if v194 != 0 {

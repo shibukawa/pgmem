@@ -73,7 +73,7 @@ L1:
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l3
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = int32(1112)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = int32(1214)
 	v15 = int32(_a_F_XactLockTableWait_0)
 	v16 = *(*int32)(unsafe.Add(mBase, _c_F_XactLockTableWait[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_XactLockTableWait[0])) = v8 + int32(8)
@@ -239,152 +239,156 @@ func F_XactLogCommitRecord(m *base.Module, l0 int64, l1 int32, l2 int32, l3 int3
 	_ = mBase
 	var v14 int32
 	_ = v14
-	var v16 int32
-	_ = v16
-	var v18 int32
-	_ = v18
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v28 int32
-	_ = v28
-	var v34 int32
-	_ = v34
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
 	var v35 int32
 	_ = v35
 	var v36 int32
 	_ = v36
-	var v40 int32
-	_ = v40
-	var v44 int32
-	_ = v44
-	var v46 int32
-	_ = v46
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	var v57 int32
-	_ = v57
-	var v60 int32
-	_ = v60
-	var v63 int32
-	_ = v63
-	var v65 int32
-	_ = v65
-	var v70 int32
-	_ = v70
-	var v72 int32
-	_ = v72
-	var v75 int32
-	_ = v75
-	var v80 int32
-	_ = v80
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
+	var v55 int32
+	_ = v55
+	var v61 int32
+	_ = v61
+	var v64 int32
+	_ = v64
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
+	var v74 int32
+	_ = v74
+	var v76 int32
+	_ = v76
+	var v79 int32
+	_ = v79
 	var v84 int32
 	_ = v84
-	var v85 int32
-	_ = v85
-	var v90 int32
-	_ = v90
-	var v92 int32
-	_ = v92
-	var v97 int32
-	_ = v97
-	var v99 int32
-	_ = v99
-	var v104 int32
-	_ = v104
-	var v109 int32
-	_ = v109
-	var v111 int32
-	_ = v111
-	var v113 int32
-	_ = v113
-	var v118 int64
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
+	var v94 int32
+	_ = v94
+	var v96 int32
+	_ = v96
+	var v101 int32
+	_ = v101
+	var v103 int32
+	_ = v103
+	var v108 int32
+	_ = v108
+	var v110 int32
+	_ = v110
+	var v118 int32
 	_ = v118
-	var v121 int64
-	_ = v121
-	var v124 int32
-	_ = v124
-	var v128 int32
-	_ = v128
+	var v120 int32
+	_ = v120
+	var v122 int32
+	_ = v122
+	var v127 int64
+	_ = v127
+	var v130 int64
+	_ = v130
 	var v133 int32
 	_ = v133
-	var v140 int32
-	_ = v140
-	var v141 int32
-	_ = v141
-	var v148 int32
-	_ = v148
+	var v137 int32
+	_ = v137
+	var v142 int32
+	_ = v142
 	var v149 int32
 	_ = v149
 	var v150 int32
 	_ = v150
 	var v157 int32
 	_ = v157
-	var v161 int32
-	_ = v161
-	var v162 int32
-	_ = v162
-	var v163 int32
-	_ = v163
+	var v158 int32
+	_ = v158
+	var v159 int32
+	_ = v159
+	var v166 int32
+	_ = v166
 	var v170 int32
 	_ = v170
-	var v174 int32
-	_ = v174
-	var v175 int32
-	_ = v175
-	var v176 int32
-	_ = v176
+	var v171 int32
+	_ = v171
+	var v172 int32
+	_ = v172
+	var v179 int32
+	_ = v179
 	var v183 int32
 	_ = v183
-	var v187 int32
-	_ = v187
-	var v188 int32
-	_ = v188
-	var v189 int32
-	_ = v189
+	var v184 int32
+	_ = v184
+	var v185 int32
+	_ = v185
+	var v192 int32
+	_ = v192
 	var v196 int32
 	_ = v196
-	var v200 int32
-	_ = v200
-	var v201 int32
-	_ = v201
-	var v202 int32
-	_ = v202
+	var v197 int32
+	_ = v197
+	var v198 int32
+	_ = v198
+	var v205 int32
+	_ = v205
+	var v209 int32
+	_ = v209
+	var v210 int32
+	_ = v210
 	var v211 int32
 	_ = v211
-	var v212 int32
-	_ = v212
-	var v217 int32
-	_ = v217
+	var v220 int32
+	_ = v220
 	var v221 int32
 	_ = v221
-	var v222 int32
-	_ = v222
-	var v223 int32
-	_ = v223
+	var v226 int32
+	_ = v226
+	var v230 int32
+	_ = v230
+	var v231 int32
+	_ = v231
 	var v232 int32
 	_ = v232
-	var v235 int32
-	_ = v235
-	var v237 int32
-	_ = v237
-	var v238 int32
-	_ = v238
-	var v243 int32
-	_ = v243
-	var v244 int64
+	var v241 int32
+	_ = v241
+	var v244 int32
 	_ = v244
-	var v245 int32
-	_ = v245
+	var v246 int32
+	_ = v246
+	var v247 int32
+	_ = v247
+	var v252 int32
+	_ = v252
+	var v253 int64
+	_ = v253
+	var v254 int32
+	_ = v254
 	v14 = int32(0)
-	v16 = m.G0
-	v18 = v16 + int32(-64)
-	m.G0 = v18
-	*(*int64)(unsafe.Add(mBase, uint32(v18)+56)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v14
+	v17 = m.G0
+	v19 = v17 + int32(-64)
+	m.G0 = v19
+	*(*int64)(unsafe.Add(mBase, uint32(v19)+56)) = l0
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v14
 	if l9 != 0 {
 		goto L1
 	} else {
@@ -392,86 +396,87 @@ func F_XactLogCommitRecord(m *base.Module, l0 int64, l1 int32, l2 int32, l3 int3
 	}
 L1:
 	;
-	v23 = int32(1073741824)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v23
-	v26 = v23
+	v24 = int32(1073741824)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v24
+	v27 = v24
 	goto L3
 L2:
 	;
-	v26 = v14
+	v27 = v14
 	goto L3
 L3:
 	;
-	v28 = l10 & int32(2)
-	v34 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[0])))
-	if v34 != 0 {
+	v29 = l10 & int32(2)
+	v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[0])))
+	if v35 != 0 {
 		goto L4
 	} else {
 		goto L5
 	}
 L4:
 	;
-	v35 = v26 | int32(-2147483648)
+	v36 = v27 | int32(-2147483648)
 	goto L6
 L5:
 	;
-	v35 = v26
+	v36 = v27
 	goto L6
 L6:
 	;
-	v36 = v28<<(uint(int32(5))%32) | v35
-	if v28|v34 != 0 {
+	v37 = v29<<(uint(int32(5))%32) | v36
+	if v29|v35 != 0 {
 		goto L7
 	} else {
 		goto L8
 	}
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v36
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v37
 	goto L9
 L8:
 	;
 	goto L9
 L9:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[1]))
-	if int32(4) <= v40 {
+	v41 = *(*int32)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[1]))
+	if int32(4) <= v41 {
 		goto L10
 	} else {
 		goto L11
 	}
 L10:
 	;
-	v44 = v36 | int32(536870912)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v44
-	v46 = v44
+	v45 = v37 | int32(536870912)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v45
+	v47 = v45
 	goto L12
 L11:
 	;
-	v46 = v36
+	v47 = v37
 	goto L12
 L12:
 	;
-	v48 = *(*int32)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[2]))
-	v51 = int32(0)
-	if base.B2i32(v48 < int32(2))&base.B2i32(l7 <= v51) == v51 {
+	v49 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[2])))
+	v50 = int32(1)
+	v55 = *(*int32)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[3]))
+	if v49&v50|(base.B2i32(int32(0) < l7)|base.B2i32(v50 < v55)) != 0 {
 		goto L13
 	} else {
 		goto L14
 	}
 L13:
 	;
-	v57 = v46 | int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v57
-	v60 = *(*int32)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[3]))
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+44)) = v60
-	v63 = *(*int32)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[4]))
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+48)) = v63
-	v65 = v57
+	v61 = v47 | int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v61
+	v64 = *(*int32)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[4]))
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+44)) = v64
+	v67 = *(*int32)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[5]))
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+48)) = v67
+	v69 = v61
 	goto L15
 L14:
 	;
-	v65 = v46
+	v69 = v47
 	goto L15
 L15:
 	;
@@ -482,14 +487,14 @@ L15:
 	}
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = l1
-	v70 = v65 | int32(2)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v70
-	v72 = v70
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+40)) = l1
+	v74 = v69 | int32(2)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v74
+	v76 = v74
 	goto L18
 L17:
 	;
-	v72 = v65
+	v76 = v69
 	goto L18
 L18:
 	;
@@ -500,11 +505,11 @@ L18:
 	}
 L19:
 	;
-	v75 = int32(48)
+	v79 = int32(48)
 	goto L21
 L20:
 	;
-	v75 = int32(0)
+	v79 = int32(0)
 	goto L21
 L21:
 	;
@@ -515,16 +520,16 @@ L21:
 	}
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+36)) = l3
-	v80 = v72 | int32(4)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v80
-	v84 = v75 | int32(1)
-	v85 = v80
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+36)) = l3
+	v84 = v76 | int32(4)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v84
+	v88 = v79 | int32(1)
+	v89 = v84
 	goto L24
 L23:
 	;
-	v84 = v75
-	v85 = v72
+	v88 = v79
+	v89 = v76
 	goto L24
 L24:
 	;
@@ -535,14 +540,14 @@ L24:
 	}
 L25:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+32)) = l5
-	v90 = v85 | int32(256)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v90
-	v92 = v90
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+32)) = l5
+	v94 = v89 | int32(256)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v94
+	v96 = v94
 	goto L27
 L26:
 	;
-	v92 = v85
+	v96 = v89
 	goto L27
 L27:
 	;
@@ -553,14 +558,14 @@ L27:
 	}
 L28:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+28)) = l7
-	v97 = v92 | int32(8)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v97
-	v99 = v97
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+28)) = l7
+	v101 = v96 | int32(8)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v101
+	v103 = v101
 	goto L30
 L29:
 	;
-	v99 = v92
+	v103 = v96
 	goto L30
 L30:
 	;
@@ -571,55 +576,56 @@ L30:
 	}
 L31:
 	;
-	v113 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[5])))
-	if v113 != 0 {
+	v122 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[6])))
+	if v122 != 0 {
 		goto L36
 	} else {
 		goto L37
 	}
 L32:
 	;
-	v111 = v99
+	v120 = v103
 	goto L31
 L33:
 	;
 	goto L34
 L34:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+24)) = l11
-	v104 = v99 | int32(16)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v104
-	if v48 < int32(2) {
-		v111 = v104
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+24)) = l11
+	v108 = v103 | int32(16)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v108
+	v110 = int32(1)
+	if base.B2i32(v49&v110 == int32(0))&base.B2i32(v55 <= v110) != 0 {
+		v120 = v108
 		goto L31
 	} else {
 		goto L35
 	}
 L35:
 	;
-	v109 = v99 | int32(144)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v109
-	v111 = v109
+	v118 = v103 | int32(144)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v118
+	v120 = v118
 	goto L31
 L36:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v111 | int32(32)
-	v118 = *(*int64)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[6]))
-	*(*int64)(unsafe.Add(mBase, uint32(v18)+8)) = v118
-	v121 = *(*int64)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[7]))
-	*(*int64)(unsafe.Add(mBase, uint32(v18)+16)) = v121
-	v124 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v120 | int32(32)
+	v127 = *(*int64)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[7]))
+	*(*int64)(unsafe.Add(mBase, uint32(v19)+8)) = v127
+	v130 = *(*int64)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[8]))
+	*(*int64)(unsafe.Add(mBase, uint32(v19)+16)) = v130
+	v133 = int32(1)
 	goto L38
 L37:
 	;
-	v124 = v111
+	v133 = v120
 	goto L38
 L38:
 	;
 	F_XLogBeginInsert(m)
 	mBase = m.M
-	v128 = m.ExcPending
-	if v128 != 0 {
+	v137 = m.ExcPending
+	if v137 != 0 {
 		goto L39
 	} else {
 		goto L40
@@ -629,89 +635,89 @@ L39:
 	return int64(0)
 L40:
 	;
-	F_XLogRegisterData(m, v16+int32(-8), int32(8))
+	F_XLogRegisterData(m, v17+int32(-8), int32(8))
 	mBase = m.M
-	v133 = m.ExcPending
-	if v133 != 0 {
+	v142 = m.ExcPending
+	if v142 != 0 {
 		goto L39
 	} else {
 		goto L41
 	}
 L41:
 	;
-	if v124 == int32(0) {
+	if v133 == int32(0) {
 		goto L42
 	} else {
 		goto L43
 	}
 L42:
 	;
-	v235 = int32(_a_F_XactLogCommitRecord_0)
-	v237 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[8])))
-	v238 = v237 | int32(1)
-	*(*uint8)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[8])) = uint8(v238)
+	v244 = int32(_a_F_XactLogCommitRecord_0)
+	v246 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[9])))
+	v247 = v246 | int32(1)
+	*(*uint8)(unsafe.Add(mBase, _c_F_XactLogCommitRecord[9])) = uint8(v247)
 	goto L76
 L43:
 	;
-	F_XLogRegisterData(m, v16+int32(-12), int32(4))
+	F_XLogRegisterData(m, v17+int32(-12), int32(4))
 	mBase = m.M
-	v140 = m.ExcPending
-	if v140 != 0 {
+	v149 = m.ExcPending
+	if v149 != 0 {
 		goto L39
 	} else {
 		goto L44
 	}
 L44:
 	;
-	v141 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
-	if v141&int32(1) != 0 {
+	v150 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
+	if v150&int32(1) != 0 {
 		goto L45
 	} else {
 		goto L46
 	}
 L45:
 	;
-	F_XLogRegisterData(m, v16+int32(-20), int32(8))
+	F_XLogRegisterData(m, v17+int32(-20), int32(8))
 	mBase = m.M
-	v148 = m.ExcPending
-	if v148 != 0 {
+	v157 = m.ExcPending
+	if v157 != 0 {
 		goto L39
 	} else {
 		goto L48
 	}
 L46:
 	;
-	v150 = v141
+	v159 = v150
 	goto L47
 L47:
 	;
-	if v150&int32(2) != 0 {
+	if v159&int32(2) != 0 {
 		goto L49
 	} else {
 		goto L50
 	}
 L48:
 	;
-	v149 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
-	v150 = v149
+	v158 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
+	v159 = v158
 	goto L47
 L49:
 	;
-	F_XLogRegisterData(m, v16+int32(-24), int32(4))
+	F_XLogRegisterData(m, v17+int32(-24), int32(4))
 	mBase = m.M
-	v157 = m.ExcPending
-	if v157 != 0 {
+	v166 = m.ExcPending
+	if v166 != 0 {
 		goto L39
 	} else {
 		goto L52
 	}
 L50:
 	;
-	v163 = v150
+	v172 = v159
 	goto L51
 L51:
 	;
-	if v163&int32(4) != 0 {
+	if v172&int32(4) != 0 {
 		goto L54
 	} else {
 		goto L55
@@ -720,34 +726,34 @@ L52:
 	;
 	F_XLogRegisterData(m, l2, l1<<(uint(int32(2))%32))
 	mBase = m.M
-	v161 = m.ExcPending
-	if v161 != 0 {
+	v170 = m.ExcPending
+	if v170 != 0 {
 		goto L39
 	} else {
 		goto L53
 	}
 L53:
 	;
-	v162 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
-	v163 = v162
+	v171 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
+	v172 = v171
 	goto L51
 L54:
 	;
-	F_XLogRegisterData(m, v16+int32(-28), int32(4))
+	F_XLogRegisterData(m, v17+int32(-28), int32(4))
 	mBase = m.M
-	v170 = m.ExcPending
-	if v170 != 0 {
+	v179 = m.ExcPending
+	if v179 != 0 {
 		goto L39
 	} else {
 		goto L57
 	}
 L55:
 	;
-	v176 = v163
+	v185 = v172
 	goto L56
 L56:
 	;
-	if v176&int32(256) != 0 {
+	if v185&int32(256) != 0 {
 		goto L59
 	} else {
 		goto L60
@@ -756,34 +762,34 @@ L57:
 	;
 	F_XLogRegisterData(m, l4, l3*int32(12))
 	mBase = m.M
-	v174 = m.ExcPending
-	if v174 != 0 {
+	v183 = m.ExcPending
+	if v183 != 0 {
 		goto L39
 	} else {
 		goto L58
 	}
 L58:
 	;
-	v175 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
-	v176 = v175
+	v184 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
+	v185 = v184
 	goto L56
 L59:
 	;
-	F_XLogRegisterData(m, v16+int32(-32), int32(4))
+	F_XLogRegisterData(m, v17+int32(-32), int32(4))
 	mBase = m.M
-	v183 = m.ExcPending
-	if v183 != 0 {
+	v192 = m.ExcPending
+	if v192 != 0 {
 		goto L39
 	} else {
 		goto L62
 	}
 L60:
 	;
-	v189 = v176
+	v198 = v185
 	goto L61
 L61:
 	;
-	if v189&int32(8) != 0 {
+	if v198&int32(8) != 0 {
 		goto L64
 	} else {
 		goto L65
@@ -792,35 +798,35 @@ L62:
 	;
 	F_XLogRegisterData(m, l6, l5<<(uint(int32(4))%32))
 	mBase = m.M
-	v187 = m.ExcPending
-	if v187 != 0 {
+	v196 = m.ExcPending
+	if v196 != 0 {
 		goto L39
 	} else {
 		goto L63
 	}
 L63:
 	;
-	v188 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
-	v189 = v188
+	v197 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
+	v198 = v197
 	goto L61
 L64:
 	;
-	F_XLogRegisterData(m, v16+int32(-36), int32(4))
+	F_XLogRegisterData(m, v17+int32(-36), int32(4))
 	mBase = m.M
-	v196 = m.ExcPending
-	if v196 != 0 {
+	v205 = m.ExcPending
+	if v205 != 0 {
 		goto L39
 	} else {
 		goto L67
 	}
 L65:
 	;
-	v202 = v189
+	v211 = v198
 	goto L66
 L66:
 	;
-	if v202&int32(16) == int32(0) {
-		v223 = v202
+	if v211&int32(16) == int32(0) {
+		v232 = v211
 		goto L69
 	} else {
 		goto L70
@@ -829,66 +835,66 @@ L67:
 	;
 	F_XLogRegisterData(m, l8, l7<<(uint(int32(4))%32))
 	mBase = m.M
-	v200 = m.ExcPending
-	if v200 != 0 {
+	v209 = m.ExcPending
+	if v209 != 0 {
 		goto L39
 	} else {
 		goto L68
 	}
 L68:
 	;
-	v201 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
-	v202 = v201
+	v210 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
+	v211 = v210
 	goto L66
 L69:
 	;
-	if v223&int32(32) == int32(0) {
+	if v232&int32(32) == int32(0) {
 		goto L42
 	} else {
 		goto L74
 	}
 L70:
 	;
-	F_XLogRegisterData(m, v16+int32(-40), int32(4))
+	F_XLogRegisterData(m, v17+int32(-40), int32(4))
 	mBase = m.M
-	v211 = m.ExcPending
-	if v211 != 0 {
+	v220 = m.ExcPending
+	if v220 != 0 {
 		goto L39
 	} else {
 		goto L71
 	}
 L71:
 	;
-	v212 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
-	if v212&int32(128) == int32(0) {
-		v223 = v212
+	v221 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
+	if v221&int32(128) == int32(0) {
+		v232 = v221
 		goto L69
 	} else {
 		goto L72
 	}
 L72:
 	;
-	v217 = F_strlen(m, l12)
+	v226 = F_strlen(m, l12)
 	mBase = m.M
-	F_XLogRegisterData(m, l12, v217+int32(1))
+	F_XLogRegisterData(m, l12, v226+int32(1))
 	mBase = m.M
-	v221 = m.ExcPending
-	if v221 != 0 {
+	v230 = m.ExcPending
+	if v230 != 0 {
 		goto L39
 	} else {
 		goto L73
 	}
 L73:
 	;
-	v222 = *(*int32)(unsafe.Add(mBase, uint32(v18)+52))
-	v223 = v222
+	v231 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
+	v232 = v231
 	goto L69
 L74:
 	;
-	F_XLogRegisterData(m, v16+int32(-56), int32(16))
+	F_XLogRegisterData(m, v17+int32(-56), int32(16))
 	mBase = m.M
-	v232 = m.ExcPending
-	if v232 != 0 {
+	v241 = m.ExcPending
+	if v241 != 0 {
 		goto L39
 	} else {
 		goto L75
@@ -898,33 +904,33 @@ L75:
 	goto L42
 L76:
 	;
-	if v124 != 0 {
+	if v133 != 0 {
 		goto L77
 	} else {
 		goto L78
 	}
 L77:
 	;
-	v243 = v84 | int32(128)
+	v252 = v88 | int32(128)
 	goto L79
 L78:
 	;
-	v243 = v84
+	v252 = v88
 	goto L79
 L79:
 	;
-	v244 = F_XLogInsert(m, int32(1), v243)
+	v253 = F_XLogInsert(m, int32(1), v252)
 	mBase = m.M
-	v245 = m.ExcPending
-	if v245 != 0 {
+	v254 = m.ExcPending
+	if v254 != 0 {
 		goto L39
 	} else {
 		goto L80
 	}
 L80:
 	;
-	m.G0 = v18 - int32(-64)
-	return v244
+	m.G0 = v19 - int32(-64)
+	return v253
 }
 func F_xact_desc(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M

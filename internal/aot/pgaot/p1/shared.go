@@ -195,7 +195,7 @@ func F_shared_record_table_hash(m *base.Module, l0 int32, l1 int32, l2 int32) in
 				v35 = v30
 				v36 = v12
 				for {
-					v43 = *(*int32)(unsafe.Add(mBase, uint32(v8+v35<<(uint(int32(4))%32)+v36*int32(100))+88))
+					v43 = *(*int32)(unsafe.Add(mBase, uint32(v8+v35<<(uint(int32(3))%32)+v36*int32(100))+96))
 					v44 = F_hash_bytes_uint32(m, v43)
 					mBase = m.M
 					v53 = v44 + (v34<<(uint(int32(6))%32) + int32(base.Ui32(v34)>>(uint(int32(2))%32))) - int32(1640531527) ^ v34
@@ -235,7 +235,7 @@ func F_shared_record_table_hash(m *base.Module, l0 int32, l1 int32, l2 int32) in
 			v87 = v82
 			v88 = v64
 			for {
-				v95 = *(*int32)(unsafe.Add(mBase, uint32(v63+v87<<(uint(int32(4))%32)+v88*int32(100))+88))
+				v95 = *(*int32)(unsafe.Add(mBase, uint32(v63+v87<<(uint(int32(3))%32)+v88*int32(100))+96))
 				v96 = F_hash_bytes_uint32(m, v95)
 				mBase = m.M
 				v105 = v96 + (v86<<(uint(int32(6))%32) + int32(base.Ui32(v86)>>(uint(int32(2))%32))) - int32(1640531527) ^ v86

@@ -33,7 +33,7 @@ func F_multixact_identify(m *base.Module, l0 int32) int32 {
 	}
 	return v10
 }
-func F_multixact_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
+func F_multixact_twophase_recover(m *base.Module, l0 int64, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -42,8 +42,8 @@ func F_multixact_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v7
 	var v9 int32
 	_ = v9
-	var v13 int32
-	_ = v13
+	var v15 int32
+	_ = v15
 	v6 = F_TwoPhaseGetDummyProcNumber(m, l0, int32(0))
 	mBase = m.M
 	v7 = m.ExcPending
@@ -51,8 +51,8 @@ func F_multixact_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, 
 		return
 	} else {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_multixact_twophase_recover[0]))
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-		*(*int32)(unsafe.Add(mBase, uint32(v9+v6<<(uint(int32(2))%32)))) = v13
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+		*(*int32)(unsafe.Add(mBase, uint32(v9+v6<<(uint(int32(2))%32)-int32(152)))) = v15
 		return
 	}
 }

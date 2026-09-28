@@ -52,10 +52,10 @@ func F_ExecutorRewind(m *base.Module, l0 int32) {
 	_ = v11
 	v3 = int32(_a_F_ExecutorRewind_0)
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_ExecutorRewind[0]))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+100))
 	*(*int32)(unsafe.Add(mBase, _c_F_ExecutorRewind[0])) = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	F_ExecReScan(m, v9)
 	mBase = m.M
 	v11 = m.ExcPending

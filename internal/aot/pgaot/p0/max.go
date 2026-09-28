@@ -137,7 +137,7 @@ L3:
 L4:
 	;
 	v13 = int32(1)
-	v15 = F_check_functions_in_node(m, v9, int32(864), l1)
+	v15 = F_check_functions_in_node(m, v9, int32(912), l1)
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
@@ -196,7 +196,7 @@ L10:
 	}
 L11:
 	;
-	v126 = F_expression_tree_walker_impl(m, v9, int32(865), l1)
+	v126 = F_expression_tree_walker_impl(m, v9, int32(913), l1)
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {
@@ -206,7 +206,7 @@ L11:
 	}
 L12:
 	;
-	if v19 == int32(318) {
+	if v19 == int32(320) {
 		v131 = int32(4)
 		goto L6
 	} else {
@@ -235,7 +235,7 @@ L14:
 	}
 L15:
 	;
-	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+38)))
+	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+39)))
 	if v41 == int32(0) {
 		goto L23
 	} else {
@@ -457,7 +457,7 @@ L48:
 	goto L49
 L49:
 	;
-	v118 = F_query_tree_walker_impl(m, v9, int32(865), l1, int32(0))
+	v118 = F_query_tree_walker_impl(m, v9, int32(913), l1, int32(0))
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {

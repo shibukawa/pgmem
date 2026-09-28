@@ -5,10 +5,10 @@ import (
 	"unsafe"
 )
 
-func F_pg_replication_origin_session_progress(m *base.Module, l0 int32) int32 {
+func F_pg_replication_origin_session_progress(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v10 int32
 	_ = v10
@@ -26,113 +26,93 @@ func F_pg_replication_origin_session_progress(m *base.Module, l0 int32) int32 {
 	_ = v21
 	var v25 int32
 	_ = v25
-	var v26 int32
+	var v26 int64
 	_ = v26
 	var v34 int32
 	_ = v34
 	var v37 int32
 	_ = v37
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	var v47 int32
-	_ = v47
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
 	var v50 int32
 	_ = v50
-	var v54 int32
-	_ = v54
-	var v59 int32
-	_ = v59
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	var v55 int32
+	_ = v55
+	v6 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
 	F_replorigin_check_prerequisites(m)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v12 = *(*int32)(unsafe.Add(mBase, _c_F_pg_replication_origin_session_progress[0]))
 		if v12 != 0 {
-			v16 = F_LWLockAcquire(m, v12+int32(40), int32(1))
+			v16 = F_LWLockAcquire(m, v12+int32(44), int32(1))
 			mBase = m.M
 			v17 = m.ExcPending
 			if v17 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v19 = *(*int32)(unsafe.Add(mBase, _c_F_pg_replication_origin_session_progress[0]))
 				v20 = *(*int64)(unsafe.Add(mBase, uint32(v19)+16))
 				v21 = *(*int64)(unsafe.Add(mBase, uint32(v19)+8))
-				F_LWLockRelease(m, v19+int32(40))
+				F_LWLockRelease(m, v19+int32(44))
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
-					v26 = int32(0)
-					if base.B2i32(v6 == v26)|base.B2i32(v20 == int64(0)) == v26 {
+					v26 = int64(0)
+					if base.B2i32(v6 == v26)|base.B2i32(v20 == v26) == int32(0) {
 						F_XLogFlush(m, v20)
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							if v21 == int64(0) {
 								v37 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v37)
-								return int32(0)
 							} else {
-								v41 = F_Int64GetDatum(m, v21)
-								mBase = m.M
-								v42 = m.ExcPending
-								if v42 != 0 {
-									return int32(0)
-								} else {
-									return v41
-								}
 							}
+							return v21
 						}
 					} else {
 						if v21 == int64(0) {
 							v37 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v37)
-							return int32(0)
 						} else {
-							v41 = F_Int64GetDatum(m, v21)
-							mBase = m.M
-							v42 = m.ExcPending
-							if v42 != 0 {
-								return int32(0)
-							} else {
-								return v41
-							}
 						}
+						return v21
 					}
 				}
 			}
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v47 = m.ExcPending
-			if v47 != 0 {
-				return int32(0)
+			v43 = m.ExcPending
+			if v43 != 0 {
+				return int64(0)
 			} else {
 				F_errcode(m, int32(325))
 				mBase = m.M
-				v50 = m.ExcPending
-				if v50 != 0 {
-					return int32(0)
+				v46 = m.ExcPending
+				if v46 != 0 {
+					return int64(0)
 				} else {
 					F_errmsg(m, int32(_a_F_pg_replication_origin_session_progress_0), int32(0))
 					mBase = m.M
-					v54 = m.ExcPending
-					if v54 != 0 {
-						return int32(0)
+					v50 = m.ExcPending
+					if v50 != 0 {
+						return int64(0)
 					} else {
-						F_errfinish(m, int32(_a_F_pg_replication_origin_session_progress_1), int32(1438), int32(_a_F_pg_replication_origin_session_progress_2))
+						F_errfinish(m, int32(_a_F_pg_replication_origin_session_progress_1), int32(1544), int32(_a_F_pg_replication_origin_session_progress_2))
 						mBase = m.M
-						v59 = m.ExcPending
-						if v59 != 0 {
-							return int32(0)
+						v55 = m.ExcPending
+						if v55 != 0 {
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {
@@ -144,65 +124,68 @@ func F_pg_replication_origin_session_progress(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_pg_replication_origin_session_setup(m *base.Module, l0 int32) int32 {
+func F_pg_replication_origin_session_setup(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
 	var v7 int32
 	_ = v7
 	var v8 int32
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v11 int32
-	_ = v11
+	var v10 int32
+	_ = v10
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
-	var v19 int32
-	_ = v19
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v20 int32
+	_ = v20
 	F_replorigin_check_prerequisites(m)
 	mBase = m.M
-	v6 = m.ExcPending
-	if v6 != 0 {
-		return int32(0)
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int64(0)
 	} else {
-		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		v8 = F_text_to_cstring(m, v7)
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+		v9 = F_text_to_cstring(m, v8)
 		mBase = m.M
-		v9 = m.ExcPending
-		if v9 != 0 {
-			return int32(0)
+		v10 = m.ExcPending
+		if v10 != 0 {
+			return int64(0)
 		} else {
-			v11 = F_replorigin_by_name(m, v8, int32(0))
+			v12 = F_replorigin_by_name(m, v9, int32(0))
 			mBase = m.M
-			v12 = m.ExcPending
-			if v12 != 0 {
-				return int32(0)
+			v13 = m.ExcPending
+			if v13 != 0 {
+				return int64(0)
 			} else {
-				F_replorigin_session_setup(m, v11, int32(0))
+				v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+				F_replorigin_session_setup(m, v12, v14)
 				mBase = m.M
-				v15 = m.ExcPending
-				if v15 != 0 {
-					return int32(0)
+				v16 = m.ExcPending
+				if v16 != 0 {
+					return int64(0)
 				} else {
-					*(*uint16)(unsafe.Add(mBase, _c_F_pg_replication_origin_session_setup[0])) = uint16(v11)
-					F_pfree(m, v8)
+					*(*uint16)(unsafe.Add(mBase, _c_F_pg_replication_origin_session_setup[0])) = uint16(v12)
+					F_pfree(m, v9)
 					mBase = m.M
-					v19 = m.ExcPending
-					if v19 != 0 {
-						return int32(0)
+					v20 = m.ExcPending
+					if v20 != 0 {
+						return int64(0)
 					} else {
-						return int32(0)
+						return int64(0)
 					}
 				}
 			}
 		}
 	}
 }
-func F_pg_replication_origin_xact_reset(m *base.Module, l0 int32) int32 {
+func F_pg_replication_origin_xact_reset(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -213,70 +196,65 @@ func F_pg_replication_origin_xact_reset(m *base.Module, l0 int32) int32 {
 	mBase = m.M
 	v5 = m.ExcPending
 	if v5 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v7 = int64(0)
 		*(*int64)(unsafe.Add(mBase, _c_F_pg_replication_origin_xact_reset[0])) = v7
 		*(*int64)(unsafe.Add(mBase, _c_F_pg_replication_origin_xact_reset[1])) = v7
-		return int32(0)
+		return v7
 	}
 }
-func F_pg_replication_origin_xact_setup(m *base.Module, l0 int32) int32 {
+func F_pg_replication_origin_xact_setup(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
+	var v3 int64
 	_ = v3
-	var v4 int64
-	_ = v4
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
-	var v23 int32
-	_ = v23
-	var v28 int32
-	_ = v28
-	var v32 int32
-	_ = v32
-	var v33 int64
-	_ = v33
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = *(*int64)(unsafe.Add(mBase, uint32(v3)))
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
+	var v31 int64
+	_ = v31
+	v3 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
 	F_replorigin_check_prerequisites(m)
 	mBase = m.M
-	v8 = m.ExcPending
-	if v8 != 0 {
-		return int32(0)
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, _c_F_pg_replication_origin_xact_setup[0]))
-		if v10 == int32(0) {
+		v9 = *(*int32)(unsafe.Add(mBase, _c_F_pg_replication_origin_xact_setup[0]))
+		if v9 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v16 = m.ExcPending
-			if v16 != 0 {
-				return int32(0)
+			v15 = m.ExcPending
+			if v15 != 0 {
+				return int64(0)
 			} else {
 				F_errcode(m, int32(325))
 				mBase = m.M
-				v19 = m.ExcPending
-				if v19 != 0 {
-					return int32(0)
+				v18 = m.ExcPending
+				if v18 != 0 {
+					return int64(0)
 				} else {
 					F_errmsg(m, int32(_a_F_pg_replication_origin_xact_setup_0), int32(0))
 					mBase = m.M
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
+					v22 = m.ExcPending
+					if v22 != 0 {
+						return int64(0)
 					} else {
-						F_errfinish(m, int32(_a_F_pg_replication_origin_xact_setup_1), int32(1458), int32(_a_F_pg_replication_origin_xact_setup_2))
+						F_errfinish(m, int32(_a_F_pg_replication_origin_xact_setup_1), int32(1564), int32(_a_F_pg_replication_origin_xact_setup_2))
 						mBase = m.M
-						v28 = m.ExcPending
-						if v28 != 0 {
-							return int32(0)
+						v27 = m.ExcPending
+						if v27 != 0 {
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {
@@ -286,11 +264,10 @@ func F_pg_replication_origin_xact_setup(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			*(*int64)(unsafe.Add(mBase, _c_F_pg_replication_origin_xact_setup[1])) = v4
-			v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-			v33 = *(*int64)(unsafe.Add(mBase, uint32(v32)))
-			*(*int64)(unsafe.Add(mBase, _c_F_pg_replication_origin_xact_setup[2])) = v33
-			return int32(0)
+			*(*int64)(unsafe.Add(mBase, _c_F_pg_replication_origin_xact_setup[1])) = v3
+			v31 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+			*(*int64)(unsafe.Add(mBase, _c_F_pg_replication_origin_xact_setup[2])) = v31
+			return int64(0)
 		}
 	}
 }

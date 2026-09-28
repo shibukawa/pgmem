@@ -10,32 +10,30 @@ func F_SPI_cursor_open(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
 	var v20 int32
 	_ = v20
 	var v21 int32
 	_ = v21
-	var v22 int32
-	_ = v22
-	var v26 int32
-	_ = v26
-	var v35 int32
-	_ = v35
-	var v37 int32
-	_ = v37
+	var v25 int32
+	_ = v25
+	var v33 int32
+	_ = v33
+	var v36 int64
+	_ = v36
 	var v38 int32
 	_ = v38
 	var v40 int32
 	_ = v40
-	var v42 int32
-	_ = v42
 	var v45 int32
 	_ = v45
 	var v48 int32
@@ -47,53 +45,52 @@ func F_SPI_cursor_open(m *base.Module, l0 int32) int32 {
 	var v55 int32
 	_ = v55
 	v2 = int32(0)
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	if v9 <= v2 {
-		v12 = int32(0)
-		v15 = F_SPI_cursor_open_internal(m, v12, l0, v12, int32(1))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	if v8 <= v2 {
+		v11 = int32(0)
+		v14 = F_SPI_cursor_open_internal(m, v11, l0, v11, int32(1))
 		mBase = m.M
-		v18 = m.ExcPending
-		if v18 != 0 {
+		v17 = m.ExcPending
+		if v17 != 0 {
 			return int32(0)
 		} else {
-			return v15
+			return v14
 		}
 	} else {
-		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v21 = F_makeParamList(m, v9)
+		v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v20 = F_makeParamList(m, v8)
 		mBase = m.M
-		v22 = m.ExcPending
-		if v22 != 0 {
+		v21 = m.ExcPending
+		if v21 != 0 {
 			return int32(0)
 		} else {
-			v26 = v2
+			v25 = v2
 			for {
-				v35 = v21 + int32(32) + v26*int32(12)
-				v37 = v26 << (uint(int32(2)) % 32)
-				v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)))
-				*(*int32)(unsafe.Add(mBase, uint32(v35))) = v38
-				v40 = int32(1)
-				*(*uint16)(unsafe.Add(mBase, uint32(v35)+6)) = uint16(v40)
-				v42 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, uint32(v35)+4)) = uint8(v42)
-				v45 = *(*int32)(unsafe.Add(mBase, uint32(v20+v37)))
-				*(*int32)(unsafe.Add(mBase, uint32(v35)+8)) = v45
-				v48 = v26 + v40
-				if v48 != v9 {
-					v26 = v48
+				v33 = v20 + int32(32) + v25<<(uint(int32(4))%32)
+				v36 = *(*int64)(unsafe.Add(mBase, uint32(v25<<(uint(int32(3))%32))))
+				*(*int64)(unsafe.Add(mBase, uint32(v33))) = v36
+				v38 = int32(1)
+				*(*uint16)(unsafe.Add(mBase, uint32(v33)+10)) = uint16(v38)
+				v40 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v33)+8)) = uint8(v40)
+				v45 = *(*int32)(unsafe.Add(mBase, uint32(v19+v25<<(uint(int32(2))%32))))
+				*(*int32)(unsafe.Add(mBase, uint32(v33)+12)) = v45
+				v48 = v25 + v38
+				if v48 != v8 {
+					v25 = v48
 					continue
 				} else {
 					break
 				}
 				break
 			}
-			v52 = F_SPI_cursor_open_internal(m, int32(0), l0, v21, int32(1))
+			v52 = F_SPI_cursor_open_internal(m, int32(0), l0, v20, int32(1))
 			mBase = m.M
 			v53 = m.ExcPending
 			if v53 != 0 {
 				return int32(0)
 			} else {
-				F_pfree(m, v21)
+				F_pfree(m, v20)
 				mBase = m.M
 				v55 = m.ExcPending
 				if v55 != 0 {
@@ -326,6 +323,8 @@ func F_SPI_cursor_open_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v312
 	var v316 int32
 	_ = v316
+	var v319 int32
+	_ = v319
 	var v320 int32
 	_ = v320
 	var v325 int32
@@ -574,7 +573,7 @@ L30:
 	v76 = *(*int32)(unsafe.Add(mBase, uint32(v42)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+40)) = v76
 	v78 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = int32(779)
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = int32(825)
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+44)) = v78
 	v82 = int32(_a_F_SPI_cursor_open_internal_0)
 	v83 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_cursor_open_internal[6]))
@@ -622,14 +621,14 @@ L33:
 L34:
 	;
 	v119 = *(*int32)(unsafe.Add(mBase, uint32(v42)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v71)+48)) = int64(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v71)+40)) = v119
-	*(*int32)(unsafe.Add(mBase, uint32(v71)+32)) = v74
-	*(*int32)(unsafe.Add(mBase, uint32(v71)+4)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v71)+80)) = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v71)+60)) = v116
 	*(*int32)(unsafe.Add(mBase, uint32(v71)+56)) = v115
+	*(*int64)(unsafe.Add(mBase, uint32(v71)+48)) = int64(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v71)+40)) = v119
 	*(*int32)(unsafe.Add(mBase, uint32(v71)+36)) = v119
+	*(*int32)(unsafe.Add(mBase, uint32(v71)+32)) = v74
+	*(*int32)(unsafe.Add(mBase, uint32(v71)+4)) = int32(0)
 	goto L37
 L35:
 	;
@@ -707,7 +706,7 @@ L44:
 	}
 L45:
 	;
-	v146 = *(*int32)(unsafe.Add(mBase, uint32(v142)+72))
+	v146 = *(*int32)(unsafe.Add(mBase, uint32(v142)+80))
 	if v146 != 0 {
 		v155 = v130
 		goto L42
@@ -716,7 +715,7 @@ L45:
 	}
 L46:
 	;
-	v147 = *(*int32)(unsafe.Add(mBase, uint32(v142)+36))
+	v147 = *(*int32)(unsafe.Add(mBase, uint32(v142)+40))
 	v148 = F_ExecSupportsBackwardScan(m, v147)
 	mBase = m.M
 	v149 = m.ExcPending
@@ -768,7 +767,7 @@ L51:
 	}
 L52:
 	;
-	v180 = *(*int32)(unsafe.Add(mBase, uint32(v176)+72))
+	v180 = *(*int32)(unsafe.Add(mBase, uint32(v176)+80))
 	if v180 != 0 {
 		goto L16
 	} else {
@@ -903,7 +902,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1745), int32(_a_F_SPI_cursor_open_internal_4))
+	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1746), int32(_a_F_SPI_cursor_open_internal_4))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -1000,7 +999,7 @@ L82:
 	}
 L83:
 	;
-	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1620), int32(_a_F_SPI_cursor_open_internal_4))
+	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1621), int32(_a_F_SPI_cursor_open_internal_4))
 	mBase = m.M
 	v305 = m.ExcPending
 	if v305 != 0 {
@@ -1035,7 +1034,7 @@ L86:
 	}
 L87:
 	;
-	F_errdetail(m, int32(_a_F_SPI_cursor_open_internal_7), int32(0))
+	v319 = F_errdetail(m, int32(_a_F_SPI_cursor_open_internal_7), int32(0))
 	mBase = m.M
 	v320 = m.ExcPending
 	if v320 != 0 {
@@ -1045,7 +1044,7 @@ L87:
 	}
 L88:
 	;
-	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1719), int32(_a_F_SPI_cursor_open_internal_4))
+	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1720), int32(_a_F_SPI_cursor_open_internal_4))
 	mBase = m.M
 	v325 = m.ExcPending
 	if v325 != 0 {
@@ -1063,7 +1062,7 @@ L90:
 	v332 = *(*int32)(unsafe.Add(mBase, uint32(v326)+12))
 	v333 = *(*int32)(unsafe.Add(mBase, uint32(v332)))
 	v334 = *(*int32)(unsafe.Add(mBase, uint32(v333)+16))
-	if v334 != int32(179) {
+	if v334 != int32(180) {
 		goto L91
 	} else {
 		goto L92
@@ -1113,7 +1112,7 @@ L96:
 	}
 L97:
 	;
-	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1612), int32(_a_F_SPI_cursor_open_internal_4))
+	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1613), int32(_a_F_SPI_cursor_open_internal_4))
 	mBase = m.M
 	v356 = m.ExcPending
 	if v356 != 0 {
@@ -1148,7 +1147,7 @@ L100:
 	}
 L101:
 	;
-	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1602), int32(_a_F_SPI_cursor_open_internal_4))
+	F_errfinish(m, int32(_a_F_SPI_cursor_open_internal_3), int32(1603), int32(_a_F_SPI_cursor_open_internal_4))
 	mBase = m.M
 	v374 = m.ExcPending
 	if v374 != 0 {
@@ -1406,7 +1405,7 @@ func F_SPI_palloc(m *base.Module, l0 int32) int32 {
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_SPI_palloc_1), int32(1341), int32(_a_F_SPI_palloc_2))
+				F_errfinish(m, int32(_a_F_SPI_palloc_1), int32(1342), int32(_a_F_SPI_palloc_2))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
@@ -1580,7 +1579,7 @@ func F_SPI_sql_row_to_xmlelement(m *base.Module, l0 int32, l1 int32, l2 int32) {
 										}
 									}
 								} else {
-									v74 = F_pstrdup(m, v59+v63<<(uint(int32(4))%32)+int32(24))
+									v74 = F_pstrdup(m, v59+v63<<(uint(int32(3))%32)+int32(32))
 									mBase = m.M
 									v75 = m.ExcPending
 									if v75 != 0 {
@@ -1647,7 +1646,7 @@ func F_SPI_sql_row_to_xmlelement(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									}
 								}
 							} else {
-								v74 = F_pstrdup(m, v59+v63<<(uint(int32(4))%32)+int32(24))
+								v74 = F_pstrdup(m, v59+v63<<(uint(int32(3))%32)+int32(32))
 								mBase = m.M
 								v75 = m.ExcPending
 								if v75 != 0 {
@@ -1716,7 +1715,7 @@ func F_SPI_sql_row_to_xmlelement(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						}
 					}
 				} else {
-					v74 = F_pstrdup(m, v59+v63<<(uint(int32(4))%32)+int32(24))
+					v74 = F_pstrdup(m, v59+v63<<(uint(int32(3))%32)+int32(32))
 					mBase = m.M
 					v75 = m.ExcPending
 					if v75 != 0 {

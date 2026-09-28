@@ -213,6 +213,8 @@ func F_build_tuplestore_recursively(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v375
 	var v379 int32
 	_ = v379
+	var v382 int32
+	_ = v382
 	var v383 int32
 	_ = v383
 	var v388 int32
@@ -231,6 +233,8 @@ func F_build_tuplestore_recursively(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v402
 	var v403 int32
 	_ = v403
+	var v409 int32
+	_ = v409
 	var v410 int32
 	_ = v410
 	var v415 int32
@@ -249,6 +253,8 @@ func F_build_tuplestore_recursively(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v429
 	var v430 int32
 	_ = v430
+	var v436 int32
+	_ = v436
 	var v437 int32
 	_ = v437
 	var v442 int32
@@ -564,14 +570,14 @@ L38:
 	}
 L39:
 	;
-	v140 = int32(4)
+	v140 = int32(3)
 	v142 = v136 + v137<<(uint(v140)%32)
-	v143 = *(*int32)(unsafe.Add(mBase, uint32(v142)+96))
+	v143 = *(*int32)(unsafe.Add(mBase, uint32(v142)+104))
 	v144 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
 	v147 = v30 + v144<<(uint(v140)%32)
-	v148 = *(*int32)(unsafe.Add(mBase, uint32(v147)+96))
-	v153 = *(*int32)(unsafe.Add(mBase, uint32(v147)+88))
-	v154 = *(*int32)(unsafe.Add(mBase, uint32(v142)+88))
+	v148 = *(*int32)(unsafe.Add(mBase, uint32(v147)+104))
+	v153 = *(*int32)(unsafe.Add(mBase, uint32(v147)+96))
+	v154 = *(*int32)(unsafe.Add(mBase, uint32(v142)+96))
 	if base.B2i32(v143 != v148)&base.B2i32(int32(0) <= v148)|base.B2i32(v153 != v154) != 0 {
 		goto L3
 	} else {
@@ -579,10 +585,10 @@ L39:
 	}
 L40:
 	;
-	v157 = *(*int32)(unsafe.Add(mBase, uint32(v142)+196))
-	v158 = *(*int32)(unsafe.Add(mBase, uint32(v147)+196))
-	v163 = *(*int32)(unsafe.Add(mBase, uint32(v147)+188))
-	v164 = *(*int32)(unsafe.Add(mBase, uint32(v142)+188))
+	v157 = *(*int32)(unsafe.Add(mBase, uint32(v142)+204))
+	v158 = *(*int32)(unsafe.Add(mBase, uint32(v147)+204))
+	v163 = *(*int32)(unsafe.Add(mBase, uint32(v147)+196))
+	v164 = *(*int32)(unsafe.Add(mBase, uint32(v142)+196))
 	if base.B2i32(v157 != v158)&base.B2i32(int32(0) <= v158)|base.B2i32(v163 != v164) != 0 {
 		goto L2
 	} else {
@@ -1003,7 +1009,7 @@ L94:
 	}
 L95:
 	;
-	F_errdetail(m, int32(_a_F_build_tuplestore_recursively_6), int32(0))
+	v382 = F_errdetail(m, int32(_a_F_build_tuplestore_recursively_6), int32(0))
 	mBase = m.M
 	v383 = m.ExcPending
 	if v383 != 0 {
@@ -1013,7 +1019,7 @@ L95:
 	}
 L96:
 	;
-	F_errfinish(m, int32(_a_F_build_tuplestore_recursively_7), int32(1481), int32(_a_F_build_tuplestore_recursively_8))
+	F_errfinish(m, int32(_a_F_build_tuplestore_recursively_7), int32(1483), int32(_a_F_build_tuplestore_recursively_8))
 	mBase = m.M
 	v388 = m.ExcPending
 	if v388 != 0 {
@@ -1070,7 +1076,7 @@ L102:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v28)+100)) = v402
 	*(*int32)(unsafe.Add(mBase, uint32(v28)+96)) = v400
-	F_errdetail(m, int32(_a_F_build_tuplestore_recursively_10), v28+int32(96))
+	v409 = F_errdetail(m, int32(_a_F_build_tuplestore_recursively_10), v28+int32(96))
 	mBase = m.M
 	v410 = m.ExcPending
 	if v410 != 0 {
@@ -1080,7 +1086,7 @@ L102:
 	}
 L103:
 	;
-	F_errfinish(m, int32(_a_F_build_tuplestore_recursively_7), int32(1498), int32(_a_F_build_tuplestore_recursively_8))
+	F_errfinish(m, int32(_a_F_build_tuplestore_recursively_7), int32(1500), int32(_a_F_build_tuplestore_recursively_8))
 	mBase = m.M
 	v415 = m.ExcPending
 	if v415 != 0 {
@@ -1137,7 +1143,7 @@ L109:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v28)+84)) = v429
 	*(*int32)(unsafe.Add(mBase, uint32(v28)+80)) = v427
-	F_errdetail(m, int32(_a_F_build_tuplestore_recursively_11), v28+int32(80))
+	v436 = F_errdetail(m, int32(_a_F_build_tuplestore_recursively_11), v28+int32(80))
 	mBase = m.M
 	v437 = m.ExcPending
 	if v437 != 0 {
@@ -1147,7 +1153,7 @@ L109:
 	}
 L110:
 	;
-	F_errfinish(m, int32(_a_F_build_tuplestore_recursively_7), int32(1511), int32(_a_F_build_tuplestore_recursively_8))
+	F_errfinish(m, int32(_a_F_build_tuplestore_recursively_7), int32(1513), int32(_a_F_build_tuplestore_recursively_8))
 	mBase = m.M
 	v442 = m.ExcPending
 	if v442 != 0 {
@@ -1182,7 +1188,7 @@ L113:
 	}
 L114:
 	;
-	F_errfinish(m, int32(_a_F_build_tuplestore_recursively_7), int32(1340), int32(_a_F_build_tuplestore_recursively_13))
+	F_errfinish(m, int32(_a_F_build_tuplestore_recursively_7), int32(1342), int32(_a_F_build_tuplestore_recursively_13))
 	mBase = m.M
 	v458 = m.ExcPending
 	if v458 != 0 {
@@ -1314,9 +1320,9 @@ func F_tuplestore_begin_heap(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 						*(*uint8)(unsafe.Add(mBase, uint32(v68)+4)) = uint8(v69)
 						v71 = *(*int32)(unsafe.Add(mBase, uint32(v7)+92))
 						*(*int32)(unsafe.Add(mBase, uint32(v71)+8)) = v69
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+68)) = int32(1851)
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+64)) = int32(1852)
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+60)) = int32(1853)
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+68)) = int32(2074)
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+64)) = int32(2075)
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+60)) = int32(2076)
 						return v7
 					}
 				}
@@ -1511,7 +1517,7 @@ func F_tuplestore_rescan(m *base.Module, l0 int32) {
 						if v34 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_tuplestore_rescan_1), int32(1308), int32(_a_F_tuplestore_rescan_2))
+							F_errfinish(m, int32(_a_F_tuplestore_rescan_1), int32(1353), int32(_a_F_tuplestore_rescan_2))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {
@@ -1539,7 +1545,7 @@ func F_tuplestore_rescan(m *base.Module, l0 int32) {
 			if v47 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_tuplestore_rescan_1), int32(1311), int32(_a_F_tuplestore_rescan_2))
+				F_errfinish(m, int32(_a_F_tuplestore_rescan_1), int32(1356), int32(_a_F_tuplestore_rescan_2))
 				mBase = m.M
 				v52 = m.ExcPending
 				if v52 != 0 {

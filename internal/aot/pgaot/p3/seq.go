@@ -8,62 +8,60 @@ import (
 func F_ExecSeqScanWithQualProject(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
+	var v12 int32
+	_ = v12
 	var v14 int32
 	_ = v14
-	var v15 int32
-	_ = v15
 	var v16 int32
 	_ = v16
-	var v20 int32
-	_ = v20
-	var v25 int32
-	_ = v25
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v23 int32
+	_ = v23
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
 	var v39 int32
 	_ = v39
+	var v40 int32
+	_ = v40
 	var v41 int32
 	_ = v41
 	var v42 int32
 	_ = v42
-	var v43 int32
-	_ = v43
-	var v44 int32
-	_ = v44
-	var v51 int32
-	_ = v51
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
 	var v55 int32
 	_ = v55
+	var v56 int32
+	_ = v56
 	var v57 int32
 	_ = v57
-	var v58 int32
-	_ = v58
 	var v60 int32
 	_ = v60
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v66 int32
-	_ = v66
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
 	var v74 int32
 	_ = v74
-	var v75 int32
-	_ = v75
 	var v76 int32
 	_ = v76
 	var v77 int32
@@ -74,43 +72,91 @@ func F_ExecSeqScanWithQualProject(m *base.Module, l0 int32) int32 {
 	_ = v80
 	var v81 int32
 	_ = v81
+	var v82 int32
+	_ = v82
 	var v83 int32
 	_ = v83
-	var v88 int32
-	_ = v88
-	var v89 int32
-	_ = v89
-	var v90 int32
-	_ = v90
-	var v93 int32
-	_ = v93
-	var v95 int32
-	_ = v95
+	var v84 int32
+	_ = v84
+	var v91 int32
+	_ = v91
+	var v96 int32
+	_ = v96
 	var v97 int32
 	_ = v97
 	var v98 int32
 	_ = v98
 	var v100 int32
 	_ = v100
-	var v101 float64
-	_ = v101
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
 	var v105 int32
 	_ = v105
-	var v107 int32
-	_ = v107
 	var v109 int32
 	_ = v109
-	v9 = m.G0
-	v11 = v9 - int32(16)
-	m.G0 = v11
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
-	F_MemoryContextReset(m, v16)
+	var v110 int64
+	_ = v110
+	var v111 int32
+	_ = v111
+	var v116 int32
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v118 int32
+	_ = v118
+	var v119 int32
+	_ = v119
+	var v121 int32
+	_ = v121
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v125 int32
+	_ = v125
+	var v130 int32
+	_ = v130
+	var v131 int64
+	_ = v131
+	var v132 int32
+	_ = v132
+	var v135 int32
+	_ = v135
+	var v137 int32
+	_ = v137
+	var v139 int32
+	_ = v139
+	var v140 int32
+	_ = v140
+	var v142 int32
+	_ = v142
+	var v143 float64
+	_ = v143
+	var v147 int32
+	_ = v147
+	var v149 int32
+	_ = v149
+	var v153 int32
+	_ = v153
+	var v157 int32
+	_ = v157
+	var v162 int32
+	_ = v162
+	var v163 int32
+	_ = v163
+	v12 = m.G0
+	v14 = v12 - int32(16)
+	m.G0 = v14
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+20))
+	F_MemoryContextReset(m, v19)
 	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
+	v23 = m.ExcPending
+	if v23 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -120,252 +166,306 @@ L1:
 	return int32(0)
 L2:
 	;
-	if v13|v14 == int32(0) {
-		goto L4
-	} else {
-		goto L5
-	}
+	goto L4
 L3:
 	;
-	m.G0 = v11 + int32(16)
-	return v109
+	m.G0 = v14 + int32(16)
+	return v163
 L4:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[0]))
-	if v25 != 0 {
-		goto L7
+	v36 = *(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[0]))
+	if v36 != 0 {
+		goto L6
 	} else {
-		goto L8
+		goto L7
 	}
 L5:
 	;
-	goto L6
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v153 = m.ExcPending
+	if v153 != 0 {
+		goto L1
+	} else {
+		goto L40
+	}
 L6:
 	;
-	goto L12
+	F_ProcessInterrupts(m)
+	mBase = m.M
+	v38 = m.ExcPending
+	if v38 != 0 {
+		goto L1
+	} else {
+		goto L9
+	}
 L7:
 	;
-	F_ProcessInterrupts(m)
-	mBase = m.M
-	v27 = m.ExcPending
-	if v27 != 0 {
-		goto L1
-	} else {
-		goto L10
-	}
+	goto L8
 L8:
 	;
-	goto L9
+	v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v40)+4))
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
+	if v42 == int32(0) {
+		goto L11
+	} else {
+		goto L12
+	}
 L9:
 	;
-	v28 = F_SeqNext(m, l0)
-	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
-		goto L1
-	} else {
-		goto L11
-	}
+	goto L8
 L10:
 	;
-	goto L9
+	goto L5
 L11:
 	;
-	v109 = v28
-	goto L3
+	v45 = F_ScanRelIsReadOnly(m, l0)
+	mBase = m.M
+	v46 = m.ExcPending
+	if v46 != 0 {
+		goto L1
+	} else {
+		goto L14
+	}
 L12:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[0]))
-	if v39 != 0 {
-		goto L14
-	} else {
-		goto L15
-	}
-L14:
+	v74 = v42
+	goto L13
+L13:
 	;
-	F_ProcessInterrupts(m)
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(v74)))
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+56))
+	*(*int32)(unsafe.Add(mBase, uint32(v39)+40)) = v77
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v74)))
+	v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+188))
+	v81 = *(*int32)(unsafe.Add(mBase, uint32(v80)+20))
+	v82 = m.T0[v81].(func(*base.Module, int32, int32, int32) int32)(m, v74, v41, v39)
 	mBase = m.M
-	v41 = m.ExcPending
-	if v41 != 0 {
+	v83 = m.ExcPending
+	if v83 != 0 {
 		goto L1
-	} else {
-		goto L17
-	}
-L15:
-	;
-	goto L16
-L16:
-	;
-	v42 = F_SeqNext(m, l0)
-	mBase = m.M
-	v43 = m.ExcPending
-	if v43 != 0 {
-		goto L1
-	} else {
-		goto L19
-	}
-L17:
-	;
-	goto L16
-L18:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v42
-	if v14 != 0 {
-		goto L27
-	} else {
-		goto L28
-	}
-L19:
-	;
-	if v42 != 0 {
-		goto L20
-	} else {
-		goto L21
-	}
-L20:
-	;
-	v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+4)))
-	if v44&int32(2) == int32(0) {
-		goto L18
-	} else {
-		goto L23
-	}
-L21:
-	;
-	goto L22
-L22:
-	;
-	if v13 == int32(0) {
-		v109 = v42
-		goto L3
 	} else {
 		goto L24
 	}
-L23:
+L14:
 	;
-	goto L22
-L24:
+	v48 = *(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[1]))
+	if v48 != 0 {
+		goto L15
+	} else {
+		goto L16
+	}
+L15:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(v13)+16))
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+8))
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+12))
-	m.T0[v53].(func(*base.Module, int32))(m, v51)
+	v50 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[2])))
+	if v50&int32(1) == int32(0) {
+		goto L10
+	} else {
+		goto L18
+	}
+L16:
+	;
+	goto L17
+L17:
+	;
+	v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(v40)+8))
+	v57 = int32(0)
+	v60 = *(*int32)(unsafe.Add(mBase, uint32(v40)+132))
+	if v45 != 0 {
+		goto L19
+	} else {
+		goto L20
+	}
+L18:
+	;
+	goto L17
+L19:
+	;
+	v67 = int32(1473)
+	goto L21
+L20:
+	;
+	v67 = int32(449)
+	goto L21
+L21:
+	;
+	v69 = *(*int32)(unsafe.Add(mBase, uint32(v55)+188))
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+8))
+	v71 = m.T0[v70].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, v55, v56, v57, v57, v57, v60<<(uint(int32(7))%32)&int32(2048)|v67)
 	mBase = m.M
-	v55 = m.ExcPending
-	if v55 != 0 {
+	v72 = m.ExcPending
+	if v72 != 0 {
 		goto L1
 	} else {
-		goto L25
+		goto L22
 	}
-L25:
+L22:
 	;
-	v109 = v51
-	goto L3
-L26:
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = v71
+	v74 = v71
+	goto L13
+L23:
 	;
-	v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	if v100 != 0 {
-		goto L35
-	} else {
-		goto L36
-	}
-L27:
-	;
-	v57 = int32(_a_F_ExecSeqScanWithQualProject_0)
-	v58 = *(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[1]))
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
-	*(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[1])) = v60
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(v14)+20))
-	v65 = m.T0[v64].(func(*base.Module, int32, int32, int32) int32)(m, v14, v15, v11+int32(15))
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = v39
+	v102 = int32(_a_F_ExecSeqScanWithQualProject_0)
+	v103 = *(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[3]))
+	v105 = *(*int32)(unsafe.Add(mBase, uint32(v18)+20))
+	*(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[3])) = v105
+	v109 = *(*int32)(unsafe.Add(mBase, uint32(v17)+24))
+	v110 = m.T0[v109].(func(*base.Module, int32, int32, int32) int64)(m, v17, v18, v14+int32(15))
 	mBase = m.M
-	v66 = m.ExcPending
-	if v66 != 0 {
+	v111 = m.ExcPending
+	if v111 != 0 {
 		goto L1
 	} else {
 		goto L30
 	}
+L24:
+	;
+	v84 = int32(0)
+	if base.B2i32(v82 == v84)|base.B2i32(v39 == v84) == v84 {
+		goto L25
+	} else {
+		goto L26
+	}
+L25:
+	;
+	v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39)+4)))
+	if v91&int32(2) == int32(0) {
+		goto L23
+	} else {
+		goto L28
+	}
+L26:
+	;
+	goto L27
+L27:
+	;
+	v96 = *(*int32)(unsafe.Add(mBase, uint32(v16)+24))
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(v96)+8))
+	v98 = *(*int32)(unsafe.Add(mBase, uint32(v97)+12))
+	m.T0[v98].(func(*base.Module, int32))(m, v96)
+	mBase = m.M
+	v100 = m.ExcPending
+	if v100 != 0 {
+		goto L1
+	} else {
+		goto L29
+	}
 L28:
 	;
-	goto L29
+	goto L27
 L29:
 	;
-	if v13 == int32(0) {
-		v109 = v42
-		goto L3
+	v163 = v96
+	goto L3
+L30:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[3])) = v103
+	if v110 != int64(0) {
+		goto L31
 	} else {
 		goto L32
 	}
-L30:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[1])) = v58
-	if v65 == int32(0) {
-		goto L26
-	} else {
-		goto L31
-	}
 L31:
 	;
-	goto L29
-L32:
-	;
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+72))
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v13)+16))
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(v75)+8))
-	v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+12))
-	m.T0[v77].(func(*base.Module, int32))(m, v75)
+	v116 = *(*int32)(unsafe.Add(mBase, uint32(v16)+80))
+	v117 = *(*int32)(unsafe.Add(mBase, uint32(v16)+24))
+	v118 = *(*int32)(unsafe.Add(mBase, uint32(v117)+8))
+	v119 = *(*int32)(unsafe.Add(mBase, uint32(v118)+12))
+	m.T0[v119].(func(*base.Module, int32))(m, v117)
 	mBase = m.M
-	v79 = m.ExcPending
-	if v79 != 0 {
-		goto L1
-	} else {
-		goto L33
-	}
-L33:
-	;
-	v80 = int32(_a_F_ExecSeqScanWithQualProject_0)
-	v81 = *(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[1]))
-	v83 = *(*int32)(unsafe.Add(mBase, uint32(v74)+20))
-	*(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[1])) = v83
-	v88 = *(*int32)(unsafe.Add(mBase, uint32(v13)+24))
-	v89 = m.T0[v88].(func(*base.Module, int32, int32, int32) int32)(m, v13+int32(4), v74, int32(0))
-	mBase = m.M
-	v90 = m.ExcPending
-	if v90 != 0 {
+	v121 = m.ExcPending
+	if v121 != 0 {
 		goto L1
 	} else {
 		goto L34
 	}
+L32:
+	;
+	goto L33
+L33:
+	;
+	v142 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	if v142 != 0 {
+		goto L36
+	} else {
+		goto L37
+	}
 L34:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[1])) = v81
-	v93 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v75)+4)))
-	v95 = v93 & int32(_a_F_ExecSeqScanWithQualProject_1)
-	*(*uint16)(unsafe.Add(mBase, uint32(v75)+4)) = uint16(v95)
-	v97 = *(*int32)(unsafe.Add(mBase, uint32(v75)+12))
-	v98 = *(*int32)(unsafe.Add(mBase, uint32(v97)))
-	*(*uint16)(unsafe.Add(mBase, uint32(v75)+6)) = uint16(v98)
-	v109 = v75
-	goto L3
-L35:
-	;
-	v101 = *(*float64)(unsafe.Add(mBase, uint32(v100)+240))
-	*(*float64)(unsafe.Add(mBase, uint32(v100)+240)) = base.F64_add(v101, float64(1))
-	goto L37
-L36:
-	;
-	goto L37
-L37:
-	;
-	v105 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
-	F_MemoryContextReset(m, v105)
+	v122 = int32(_a_F_ExecSeqScanWithQualProject_0)
+	v123 = *(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[3]))
+	v125 = *(*int32)(unsafe.Add(mBase, uint32(v116)+20))
+	*(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[3])) = v125
+	v130 = *(*int32)(unsafe.Add(mBase, uint32(v16)+32))
+	v131 = m.T0[v130].(func(*base.Module, int32, int32, int32) int64)(m, v16+int32(8), v116, int32(0))
 	mBase = m.M
-	v107 = m.ExcPending
-	if v107 != 0 {
+	v132 = m.ExcPending
+	if v132 != 0 {
 		goto L1
 	} else {
-		goto L38
+		goto L35
 	}
+L35:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_ExecSeqScanWithQualProject[3])) = v123
+	v135 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v117)+4)))
+	v137 = v135 & int32(_a_F_ExecSeqScanWithQualProject_1)
+	*(*uint16)(unsafe.Add(mBase, uint32(v117)+4)) = uint16(v137)
+	v139 = *(*int32)(unsafe.Add(mBase, uint32(v117)+12))
+	v140 = *(*int32)(unsafe.Add(mBase, uint32(v139)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v117)+6)) = uint16(v140)
+	v163 = v117
+	goto L3
+L36:
+	;
+	v143 = *(*float64)(unsafe.Add(mBase, uint32(v142)+424))
+	*(*float64)(unsafe.Add(mBase, uint32(v142)+424)) = base.F64_add(v143, float64(1))
+	goto L38
+L37:
+	;
+	goto L38
 L38:
 	;
-	goto L12
+	v147 = *(*int32)(unsafe.Add(mBase, uint32(v18)+20))
+	F_MemoryContextReset(m, v147)
+	mBase = m.M
+	v149 = m.ExcPending
+	if v149 != 0 {
+		goto L1
+	} else {
+		goto L39
+	}
+L39:
+	;
+	goto L4
+L40:
+	;
+	F_errmsg_internal(m, int32(_a_F_ExecSeqScanWithQualProject_2), int32(0))
+	mBase = m.M
+	v157 = m.ExcPending
+	if v157 != 0 {
+		goto L1
+	} else {
+		goto L41
+	}
+L41:
+	;
+	F_errfinish(m, int32(_a_F_ExecSeqScanWithQualProject_3), int32(931), int32(_a_F_ExecSeqScanWithQualProject_4))
+	mBase = m.M
+	v162 = m.ExcPending
+	if v162 != 0 {
+		goto L1
+	} else {
+		goto L42
+	}
+L42:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
 }

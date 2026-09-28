@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7738)
-	m.G0 = int32(13132400)
+	m.T0 = make([]any, 7982)
+	m.G0 = int32(13210208)
 	m.G1 = int32(0)
 	m.G2 = int32(0)
 	InitElemSeg_0_0(m)
@@ -31,16 +31,19 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_0_2(m)
 	InitElemSeg_0_3(m)
 	InitElemSeg_0_4(m)
+	InitElemSeg_0_5(m)
 	InitElemSeg_1_0(m)
 	InitElemSeg_1_1(m)
 	InitElemSeg_1_2(m)
 	InitElemSeg_1_3(m)
 	InitElemSeg_1_4(m)
+	InitElemSeg_1_5(m)
 	InitElemSeg_2_0(m)
 	InitElemSeg_2_1(m)
 	InitElemSeg_2_2(m)
 	InitElemSeg_2_3(m)
 	InitElemSeg_2_4(m)
+	InitElemSeg_2_5(m)
 	InitElemSeg_3_0(m)
 	InitElemSeg_3_1(m)
 	InitElemSeg_3_2(m)
@@ -58,7 +61,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4453631
+	m.DataEnd = 4532271
 	initData_0(m)
 	return m
 }
@@ -91,8 +94,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7738)
-	m.G0 = int32(13132400)
+	m.T0 = make([]any, 7982)
+	m.G0 = int32(13210208)
 	m.G1 = int32(0)
 	m.G2 = int32(0)
 	InitElemSeg_0_0(m)
@@ -100,16 +103,19 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_0_2(m)
 	InitElemSeg_0_3(m)
 	InitElemSeg_0_4(m)
+	InitElemSeg_0_5(m)
 	InitElemSeg_1_0(m)
 	InitElemSeg_1_1(m)
 	InitElemSeg_1_2(m)
 	InitElemSeg_1_3(m)
 	InitElemSeg_1_4(m)
+	InitElemSeg_1_5(m)
 	InitElemSeg_2_0(m)
 	InitElemSeg_2_1(m)
 	InitElemSeg_2_2(m)
 	InitElemSeg_2_3(m)
 	InitElemSeg_2_4(m)
+	InitElemSeg_2_5(m)
 	InitElemSeg_3_0(m)
 	InitElemSeg_3_1(m)
 	InitElemSeg_3_2(m)
@@ -127,7 +133,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4453631
+	m.DataEnd = 4532271
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -142,8 +148,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7738)
-	m.G0 = int32(13132400)
+	m.T0 = make([]any, 7982)
+	m.G0 = int32(13210208)
 	m.G1 = int32(0)
 	m.G2 = int32(0)
 	InitElemSeg_0_0(m)
@@ -151,16 +157,19 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_0_2(m)
 	InitElemSeg_0_3(m)
 	InitElemSeg_0_4(m)
+	InitElemSeg_0_5(m)
 	InitElemSeg_1_0(m)
 	InitElemSeg_1_1(m)
 	InitElemSeg_1_2(m)
 	InitElemSeg_1_3(m)
 	InitElemSeg_1_4(m)
+	InitElemSeg_1_5(m)
 	InitElemSeg_2_0(m)
 	InitElemSeg_2_1(m)
 	InitElemSeg_2_2(m)
 	InitElemSeg_2_3(m)
 	InitElemSeg_2_4(m)
+	InitElemSeg_2_5(m)
 	InitElemSeg_3_0(m)
 	InitElemSeg_3_1(m)
 	InitElemSeg_3_2(m)
@@ -178,18 +187,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4453631
+	m.DataEnd = 4532271
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1645120])
-	copy(m.Memory[1650448:], wasm2goData_data_bin[1645120:1645129])
-	copy(m.Memory[1652496:], wasm2goData_data_bin[1645129:1658057])
-	copy(m.Memory[1675268:], wasm2goData_data_bin[1658057:1751266])
-	copy(m.Memory[1769504:], wasm2goData_data_bin[1751266:1862906])
-	copy(m.Memory[1892408:], wasm2goData_data_bin[1862906:4126864])
-	copy(m.Memory[4163856:], wasm2goData_data_bin[4126864:4416639])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1685840])
+	copy(m.Memory[1691168:], wasm2goData_data_bin[1685840:1685849])
+	copy(m.Memory[1693216:], wasm2goData_data_bin[1685849:1699721])
+	copy(m.Memory[1716228:], wasm2goData_data_bin[1699721:1793842])
+	copy(m.Memory[1811376:], wasm2goData_data_bin[1793842:1908122])
+	copy(m.Memory[1937464:], wasm2goData_data_bin[1908122:4178144])
+	copy(m.Memory[4214976:], wasm2goData_data_bin[4178144:4495439])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -205,9 +214,6 @@ func Malloc(m *base.Module, l0 int32) int32 {
 }
 func Free(m *base.Module, l0 int32) {
 	F_emscripten_builtin_free(m, l0)
-}
-func ProcessStartupPacket(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
-	return F_ProcessStartupPacket(m, l0, l1, l2)
 }
 func PglFreopen(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F_pgl_freopen(m, l0, l1, l2)

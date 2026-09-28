@@ -2658,109 +2658,110 @@ L72:
 	for {
 	}
 }
-func F_pgp_cfb_create(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32 {
+func F_pgp_cfb_create(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v20 int32
-	_ = v20
-	var v22 int32
-	_ = v22
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
 	var v23 int32
 	_ = v23
 	var v24 int32
 	_ = v24
-	var v27 int32
-	_ = v27
+	var v25 int32
+	_ = v25
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
-	var v32 int32
-	_ = v32
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
 	var v33 int32
 	_ = v33
 	var v34 int32
 	_ = v34
-	var v36 int32
-	_ = v36
+	var v35 int32
+	_ = v35
 	var v37 int32
 	_ = v37
 	var v38 int32
 	_ = v38
-	var v41 int32
-	_ = v41
-	var v54 int32
-	_ = v54
-	v8 = m.G0
-	v10 = v8 - int32(16)
-	m.G0 = v10
-	v14 = F_pgp_load_cipher(m, l1, v10+int32(12))
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
+	var v56 int32
+	_ = v56
+	v9 = m.G0
+	v11 = v9 - int32(16)
+	m.G0 = v11
+	v15 = F_pgp_load_cipher(m, l1, v11+int32(12))
 	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v18 = m.ExcPending
+	if v18 != 0 {
 		return int32(0)
 	} else {
-		if v14 < int32(0) {
-			v54 = v14
-			m.G0 = v10 + int32(16)
-			return v54
+		if v15 < int32(0) {
+			v56 = v15
+			m.G0 = v11 + int32(16)
+			return v56
 		} else {
-			v20 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
-			v22 = *(*int32)(unsafe.Add(mBase, uint32(v20)+12))
-			v23 = m.T0[v22].(func(*base.Module, int32, int32, int32, int32) int32)(m, v20, l2, l3, int32(0))
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+			v23 = *(*int32)(unsafe.Add(mBase, uint32(v21)+12))
+			v24 = m.T0[v23].(func(*base.Module, int32, int32, int32, int32) int32)(m, v21, l2, l3, int32(0))
 			mBase = m.M
-			v24 = m.ExcPending
-			if v24 != 0 {
+			v25 = m.ExcPending
+			if v25 != 0 {
 				return int32(0)
 			} else {
-				if v23 < int32(0) {
-					v27 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
-					v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+24))
-					m.T0[v28].(func(*base.Module, int32))(m, v27)
+				if v24 < int32(0) {
+					v28 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+					v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+24))
+					m.T0[v29].(func(*base.Module, int32))(m, v28)
 					mBase = m.M
-					v30 = m.ExcPending
-					if v30 != 0 {
+					v31 = m.ExcPending
+					if v31 != 0 {
 						return int32(0)
 					} else {
-						v54 = v23
-						m.G0 = v10 + int32(16)
-						return v54
+						v56 = v24
+						m.G0 = v11 + int32(16)
+						return v56
 					}
 				} else {
-					v32 = F_palloc0(m, int32(116))
+					v33 = F_palloc0(m, int32(120))
 					mBase = m.M
-					v33 = m.ExcPending
-					if v33 != 0 {
+					v34 = m.ExcPending
+					if v34 != 0 {
 						return int32(0)
 					} else {
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
-						*(*int32)(unsafe.Add(mBase, uint32(v32))) = v34
-						v36 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-						v37 = m.T0[v36].(func(*base.Module, int32) int32)(m, v34)
+						v35 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+						*(*int32)(unsafe.Add(mBase, uint32(v33))) = v35
+						v37 = *(*int32)(unsafe.Add(mBase, uint32(v35)))
+						v38 = m.T0[v37].(func(*base.Module, int32) int32)(m, v35)
 						mBase = m.M
-						v38 = m.ExcPending
-						if v38 != 0 {
+						v39 = m.ExcPending
+						if v39 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v32)+16)) = l4
-							*(*int32)(unsafe.Add(mBase, uint32(v32)+4)) = v37
-							v41 = int32(0)
-							if base.B2i32(l5 == v41)|base.B2i32(v37 == v41) == v41 {
-								base.MemoryCopy(m, v32+int32(20), l5, v37)
+							*(*int32)(unsafe.Add(mBase, uint32(v33)+20)) = l6
+							*(*int32)(unsafe.Add(mBase, uint32(v33)+16)) = l4
+							*(*int32)(unsafe.Add(mBase, uint32(v33)+4)) = v38
+							v43 = int32(0)
+							if base.B2i32(l5 == v43)|base.B2i32(v38 == v43) == v43 {
+								base.MemoryCopy(m, v33+int32(24), l5, v38)
 							} else {
 							}
-							*(*int32)(unsafe.Add(mBase, uint32(l0))) = v32
-							v54 = int32(0)
-							m.G0 = v10 + int32(16)
-							return v54
+							*(*int32)(unsafe.Add(mBase, uint32(l0))) = v33
+							v56 = int32(0)
+							m.G0 = v11 + int32(16)
+							return v56
 						}
 					}
 				}
@@ -2838,7 +2839,7 @@ func F_pgp_free(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v12 int32
 	_ = v12
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
 	if v3 != 0 {
 		F_pgp_key_free(m, v3)
 		mBase = m.M
@@ -2846,7 +2847,7 @@ func F_pgp_free(m *base.Module, l0 int32) int32 {
 		if v7 != 0 {
 			return int32(0)
 		} else {
-			base.MemoryFill(m, l0, int32(0), int32(168))
+			base.MemoryFill(m, l0, int32(0), int32(172))
 			F_pfree(m, l0)
 			mBase = m.M
 			v12 = m.ExcPending
@@ -2857,7 +2858,7 @@ func F_pgp_free(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		base.MemoryFill(m, l0, int32(0), int32(168))
+		base.MemoryFill(m, l0, int32(0), int32(172))
 		F_pfree(m, l0)
 		mBase = m.M
 		v12 = m.ExcPending

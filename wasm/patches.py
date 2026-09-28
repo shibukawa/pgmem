@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Idempotent pgmem source patches for the PostgreSQL (PGlite fork) checkout.
+"""Idempotent pgmem source patches for the prepared PostgreSQL checkout.
 
-usage: patches.py <postgres-pglite dir>
+usage: patches.py <postgres source dir>
 
 Everything is guarded by __PGMEM__ so the tree still builds unpatched.
 """
@@ -68,7 +68,10 @@ extern int pgmem_random_bytes(void *buf, size_t len)
 # LISTEN/NOTIFY: report changes to the session's listen set to the host at
 # commit time (op 1 = LISTEN, 0 = UNLISTEN, 2 = UNLISTEN *). pgmem re-issues
 # a session's LISTENs on the new backend it gets after a Restore.
-patch('src/backend/commands/async.c',
+if 'Exec_ListenCommit(const char *channel)' in open(os.path.join(src, 'src/backend/commands/async.c')).read():
+    # PostgreSQL 18 keeps the committed channel set as a list and has one
+    # hook per LISTEN/UNLISTEN operation.
+    patch('src/backend/commands/async.c',
 '''static void
 Exec_ListenCommit(const char *channel)
 {
@@ -76,7 +79,7 @@ Exec_ListenCommit(const char *channel)
 
 	/* Do nothing if we are already listening on this channel */
 	if (IsListeningOn(channel))
-		return;
+	return;
 ''',
 '''#ifdef __PGMEM__
 extern void pgmem_listen(const char *channel, int op)
@@ -93,11 +96,11 @@ Exec_ListenCommit(const char *channel)
 	pgmem_listen(channel, 1);
 	/* Do nothing if we are already listening on this channel */
 	if (IsListeningOn(channel))
-		return;
+	return;
 ''',
 'pgmem_listen(channel, 1)')
 
-patch('src/backend/commands/async.c',
+    patch('src/backend/commands/async.c',
 '''	if (Trace_notify)
 		elog(DEBUG1, "Exec_UnlistenCommit(%s,%d)", channel, MyProcPid);
 ''',
@@ -107,7 +110,7 @@ patch('src/backend/commands/async.c',
 ''',
 'pgmem_listen(channel, 0)')
 
-patch('src/backend/commands/async.c',
+    patch('src/backend/commands/async.c',
 '''	if (Trace_notify)
 		elog(DEBUG1, "Exec_UnlistenAllCommit(%d)", MyProcPid);
 ''',
@@ -116,6 +119,35 @@ patch('src/backend/commands/async.c',
 	pgmem_listen("", 2);
 ''',
 'pgmem_listen("", 2)')
+else:
+    # PostgreSQL 19 stages actions into a hash and applies them in one commit
+    # hook. Rebuild the host's set from the committed local channel table.
+    patch('src/backend/commands/async.c',
+'''\t/* Apply staged listen/unlisten changes */
+\tApplyPendingListenActions(true);
+''',
+'''\t/* Apply staged listen/unlisten changes */
+\tApplyPendingListenActions(true);
+
+#ifdef __PGMEM__
+\tif (pendingActions != NULL)
+\t{
+\t\tHASH_SEQ_STATUS listen_status;
+\t\tChannelName *channel_entry;
+\t\textern void pgmem_listen(const char *channel, int op)
+\t\t\t__attribute__((import_module("env"), import_name("pgmem_listen")));
+
+\t\tpgmem_listen("", 2);
+\t\tif (localChannelTable != NULL)
+\t\t{
+\t\t\thash_seq_init(&listen_status, localChannelTable);
+\t\t\twhile ((channel_entry = (ChannelName *) hash_seq_search(&listen_status)) != NULL)
+\t\t\t\tpgmem_listen(channel_entry->channel, 1);
+\t\t}
+\t}
+#endif
+''',
+    'pgmem_listen(channel_entry->channel, 1)')
 
 # pgcrypto: the OpenSSL-backed files (digests, ciphers, OpenPGP bignum
 # arithmetic) and the zlib-backed OpenPGP compression are replaced by
@@ -241,12 +273,12 @@ patch('src/port/pgsleep.c',
 ''',
 'pgmem_usleep')
 
-# ReadyForQuery at session start: PGlite split PostgresMain's loop body
-# into PostgresMainLoopOnce, which reads the global send_ready_for_query
-# (pglitec.c, initially false), while PostgresMain still declares a local
-# of the same name and sets that; the client would never get its first
-# ReadyForQuery.
-patch('src/backend/tcop/postgres.c',
+# ReadyForQuery at session start: PGlite's message loop reads the global
+# send_ready_for_query in pglitec.c, initially false. Ensure the main
+# initialization path sets that shared flag before the first message.
+postgres_c = open(os.path.join(src, 'src/backend/tcop/postgres.c')).read()
+if 'volatile bool send_ready_for_query = true;' in postgres_c:
+    patch('src/backend/tcop/postgres.c',
 '''	/* these must be volatile to ensure state is preserved across longjmp: */
 	volatile bool send_ready_for_query = true;
 	volatile bool idle_in_transaction_timeout_enabled = false;
@@ -258,6 +290,8 @@ patch('src/backend/tcop/postgres.c',
 	volatile bool idle_in_transaction_timeout_enabled = false;
 ''',
 '#ifndef __PGMEM__\n\tvolatile bool send_ready_for_query = true;')
+else:
+    print('src/backend/tcop/postgres.c: ready state is already global for PGlite')
 
 patch('src/backend/tcop/postgres.c',
 '''	if (!ignore_till_sync)
@@ -330,19 +364,10 @@ patch('src/backend/access/transam/xlog.c',
 				if (IsUnderPostmaster && XLogCheckpointNeeded(openLogSegNo))''',
 '#if !defined(__PGLITE__) || defined(__PGMEM__)\n\t\t\t\tif (IsUnderPostmaster && XLogCheckpointNeeded')
 
-# Memory barriers: generic-gcc.h makes pg_memory_barrier() and the read and
-# write barriers atomic.fence instructions, and binaryen's precompute pass
-# (in the -O2 link and in gen-aot's -Oz) deletes atomic.fence when the
-# memory is not shared, which ours is not: the processes share their
-# System V segments, not the linear memory. Without the fence, the Dekker
-# pattern of latches (SetLatch stores is_set and then reads maybe_sleeping;
-# the sleeper stores maybe_sleeping and then reads is_set) can reorder the
-# store and the load on ARM64, both sides miss, and a parallel query waits
-# for a wakeup forever. A seq_cst RMW survives binaryen and becomes a
-# sync/atomic compare-and-swap in the Go code (the cluster forces contended
-# atomics), a full barrier (CASAL, LOCK CMPXCHG). The word is private to
-# the process; only the ordering counts. The read and write barriers get
-# the full barrier too.
+# Memory barriers: generic-gcc.h uses atomic.fence instructions, which
+# binaryen removes when the wasm linear memory is not shared. pgmem's
+# processes share System V segments outside that linear memory, so preserve
+# the ordering with a seq_cst RMW that lowers to a Go sync/atomic barrier.
 patch('src/include/port/atomics.h',
 '''#if defined(__GNUC__) || defined(__INTEL_COMPILER)
 #include "port/atomics/generic-gcc.h"''',
@@ -354,9 +379,9 @@ pgmem_memory_barrier(void)
 
 	(void) __atomic_fetch_add(&pgmem_barrier_word, 0, __ATOMIC_SEQ_CST);
 }
-#define pg_memory_barrier_impl()	pgmem_memory_barrier()
-#define pg_read_barrier_impl()		pgmem_memory_barrier()
-#define pg_write_barrier_impl()		pgmem_memory_barrier()
+#define pg_memory_barrier_impl()\tpgmem_memory_barrier()
+#define pg_read_barrier_impl()\t\tpgmem_memory_barrier()
+#define pg_write_barrier_impl()\t\tpgmem_memory_barrier()
 #endif
 #if defined(__GNUC__) || defined(__INTEL_COMPILER)
 #include "port/atomics/generic-gcc.h"''',

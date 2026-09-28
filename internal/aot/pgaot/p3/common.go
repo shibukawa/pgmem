@@ -14,8 +14,8 @@ func F_get_common_eclass_indexes(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	_ = v8
 	var v10 int32
 	_ = v10
-	var v21 int32
-	_ = v21
+	var v19 int32
+	_ = v19
 	var v22 int32
 	_ = v22
 	var v25 int32
@@ -24,8 +24,8 @@ func F_get_common_eclass_indexes(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	_ = v29
 	var v32 int32
 	_ = v32
-	var v34 int32
-	_ = v34
+	var v33 int32
+	_ = v33
 	var v37 int32
 	_ = v37
 	var v44 int32
@@ -114,8 +114,8 @@ func F_get_common_eclass_indexes(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	_ = v221
 	var v222 int32
 	_ = v222
-	var v232 int32
-	_ = v232
+	var v230 int32
+	_ = v230
 	var v233 int32
 	_ = v233
 	var v236 int32
@@ -124,8 +124,8 @@ func F_get_common_eclass_indexes(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	_ = v240
 	var v243 int32
 	_ = v243
-	var v245 int32
-	_ = v245
+	var v244 int32
+	_ = v244
 	var v248 int32
 	_ = v248
 	var v255 int32
@@ -214,9 +214,9 @@ L3:
 	goto L1
 L4:
 	;
-	v21 = base.I32_div_s(int32(0), int32(32))
+	v19 = int32(0)
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	if v22 <= v21 {
+	if v22 <= v19 {
 		goto L3
 	} else {
 		goto L5
@@ -224,26 +224,26 @@ L4:
 L5:
 	;
 	v25 = l1 + int32(8)
-	v29 = *(*int32)(unsafe.Add(mBase, uint32(v25+v21<<(uint(int32(2))%32))))
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
 	v32 = v29 & int32(-1)
 	if v32 != 0 {
 		v54 = v32
-		v55 = v21
+		v55 = v19
 		goto L2
 	} else {
 		goto L6
 	}
 L6:
 	;
-	v34 = v21 + int32(1)
-	if v34 == v22 {
+	v33 = int32(1)
+	if v33 == v22 {
 		goto L3
 	} else {
 		goto L7
 	}
 L7:
 	;
-	v37 = v34
+	v37 = v33
 	goto L8
 L8:
 	;
@@ -289,7 +289,7 @@ L14:
 	}
 L15:
 	;
-	v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+324))
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+340))
 	if v74 == v78 {
 		v93 = v77
 		goto L17
@@ -309,7 +309,7 @@ L17:
 	}
 L18:
 	;
-	v80 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v80 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v84 = *(*int32)(unsafe.Add(mBase, uint32(v80+v74<<(uint(int32(2))%32))))
 	if v84 == int32(0) {
 		v93 = v77
@@ -319,7 +319,7 @@ L18:
 	}
 L19:
 	;
-	v87 = *(*int32)(unsafe.Add(mBase, uint32(v84)+136))
+	v87 = *(*int32)(unsafe.Add(mBase, uint32(v84)+144))
 	v88 = F_bms_add_members(m, v77, v87)
 	mBase = m.M
 	v91 = m.ExcPending
@@ -355,7 +355,7 @@ L24:
 L25:
 	;
 	v100 = v74 + int32(1)
-	v102 = base.I32_div_s(v100, int32(32))
+	v102 = int32(base.Ui32(v100) >> (uint(int32(5)) % 32))
 	v103 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v103 <= v102 {
 		goto L24
@@ -508,10 +508,10 @@ L49:
 	goto L44
 L50:
 	;
-	v216 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v216 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v217 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
 	v221 = *(*int32)(unsafe.Add(mBase, uint32(v216+v217<<(uint(int32(2))%32))))
-	v222 = *(*int32)(unsafe.Add(mBase, uint32(v221)+136))
+	v222 = *(*int32)(unsafe.Add(mBase, uint32(v221)+144))
 	v364 = v222
 	goto L34
 L51:
@@ -541,9 +541,9 @@ L55:
 	goto L53
 L56:
 	;
-	v232 = base.I32_div_s(int32(0), int32(32))
+	v230 = int32(0)
 	v233 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-	if v233 <= v232 {
+	if v233 <= v230 {
 		goto L55
 	} else {
 		goto L57
@@ -551,26 +551,26 @@ L56:
 L57:
 	;
 	v236 = l2 + int32(8)
-	v240 = *(*int32)(unsafe.Add(mBase, uint32(v236+v232<<(uint(int32(2))%32))))
+	v240 = *(*int32)(unsafe.Add(mBase, uint32(v236)))
 	v243 = v240 & int32(-1)
 	if v243 != 0 {
 		v265 = v243
-		v266 = v232
+		v266 = v230
 		goto L54
 	} else {
 		goto L58
 	}
 L58:
 	;
-	v245 = v232 + int32(1)
-	if v245 == v233 {
+	v244 = int32(1)
+	if v244 == v233 {
 		goto L55
 	} else {
 		goto L59
 	}
 L59:
 	;
-	v248 = v245
+	v248 = v244
 	goto L60
 L60:
 	;
@@ -611,7 +611,7 @@ L66:
 	goto L67
 L67:
 	;
-	v291 = *(*int32)(unsafe.Add(mBase, uint32(l0)+324))
+	v291 = *(*int32)(unsafe.Add(mBase, uint32(l0)+340))
 	if v287 == v291 {
 		v303 = v285
 		goto L69
@@ -631,7 +631,7 @@ L69:
 	}
 L70:
 	;
-	v293 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v293 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v297 = *(*int32)(unsafe.Add(mBase, uint32(v293+v287<<(uint(int32(2))%32))))
 	if v297 == int32(0) {
 		v303 = v285
@@ -641,7 +641,7 @@ L70:
 	}
 L71:
 	;
-	v300 = *(*int32)(unsafe.Add(mBase, uint32(v297)+136))
+	v300 = *(*int32)(unsafe.Add(mBase, uint32(v297)+144))
 	v301 = F_bms_add_members(m, v285, v300)
 	mBase = m.M
 	v302 = m.ExcPending
@@ -674,7 +674,7 @@ L75:
 L76:
 	;
 	v311 = v287 + int32(1)
-	v313 = base.I32_div_s(v311, int32(32))
+	v313 = int32(base.Ui32(v311) >> (uint(int32(5)) % 32))
 	v314 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
 	if v314 <= v313 {
 		goto L75

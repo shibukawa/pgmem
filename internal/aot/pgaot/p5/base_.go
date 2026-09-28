@@ -201,7 +201,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(_a_F_add_base_rels_to_query_1), int32(185), int32(_a_F_add_base_rels_to_query_2))
+	F_errfinish(m, int32(_a_F_add_base_rels_to_query_1), int32(203), int32(_a_F_add_base_rels_to_query_2))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -240,7 +240,7 @@ func F_find_base_rel(m *base.Module, l0 int32, l1 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	if base.Ui32(v8) <= base.Ui32(l1) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
@@ -255,7 +255,7 @@ func F_find_base_rel(m *base.Module, l0 int32, l1 int32) int32 {
 			if v31 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_find_base_rel_1), int32(426), int32(_a_F_find_base_rel_2))
+				F_errfinish(m, int32(_a_F_find_base_rel_1), int32(556), int32(_a_F_find_base_rel_2))
 				mBase = m.M
 				v36 = m.ExcPending
 				if v36 != 0 {
@@ -268,7 +268,7 @@ func F_find_base_rel(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		}
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(v10+l1<<(uint(int32(2))%32))))
 		if v14 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
@@ -284,7 +284,7 @@ func F_find_base_rel(m *base.Module, l0 int32, l1 int32) int32 {
 				if v31 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_find_base_rel_1), int32(426), int32(_a_F_find_base_rel_2))
+					F_errfinish(m, int32(_a_F_find_base_rel_1), int32(556), int32(_a_F_find_base_rel_2))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {

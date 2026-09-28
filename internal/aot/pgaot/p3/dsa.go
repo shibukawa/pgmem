@@ -22,7 +22,7 @@ func F_dsa_create_ext(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v14
 	var v15 int32
 	_ = v15
-	var v17 int32
+	var v17 int64
 	_ = v17
 	var v19 int32
 	_ = v19
@@ -46,8 +46,8 @@ func F_dsa_create_ext(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v15 != 0 {
 				return int32(0)
 			} else {
-				v17 = *(*int32)(unsafe.Add(mBase, uint32(v6)+24))
-				F_on_dsm_detach(m, v6, int32(1770), v17)
+				v17 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v6)+24)))
+				F_on_dsm_detach(m, v6, int32(1993), v17)
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {
@@ -1626,39 +1626,42 @@ L145:
 	;
 	return
 }
-func F_dsa_on_dsm_detach_release_in_place(m *base.Module, l0 int32, l1 int32) {
+func F_dsa_on_dsm_detach_release_in_place(m *base.Module, l0 int32, l1 int64) {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
 	var v11 int32
 	_ = v11
 	var v12 int32
 	_ = v12
-	var v14 int32
-	_ = v14
-	var v20 int32
-	_ = v20
-	var v28 int32
-	_ = v28
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v24 int32
+	_ = v24
 	var v30 int32
 	_ = v30
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
-	var v41 int32
-	_ = v41
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v44 int32
+	_ = v44
 	v3 = int32(0)
-	v8 = l1 + int32(1476)
-	v10 = F_LWLockAcquire(m, v8, v3)
+	v7 = base.I32_wrap_i64(l1)
+	v9 = v7 + int32(1476)
+	v11 = F_LWLockAcquire(m, v9, v3)
 	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
+	v12 = m.ExcPending
+	if v12 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -1668,35 +1671,35 @@ L1:
 	return
 L2:
 	;
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l1)+1460))
-	v14 = v12 - int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+1460)) = v14
-	if v14 == int32(0) {
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v7)+1460))
+	v15 = v13 - int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+1460)) = v15
+	if v15 == int32(0) {
 		goto L3
 	} else {
 		goto L4
 	}
 L3:
 	;
-	v20 = v3
+	v24 = v3
 	goto L6
 L4:
 	;
 	goto L5
 L5:
 	;
-	F_LWLockRelease(m, v8)
+	F_LWLockRelease(m, v9)
 	mBase = m.M
-	v41 = m.ExcPending
-	if v41 != 0 {
+	v44 = m.ExcPending
+	if v44 != 0 {
 		goto L1
 	} else {
 		goto L13
 	}
 L6:
 	;
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(l1+int32(32)+v20<<(uint(int32(2))%32))))
-	if v28 != 0 {
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v7+int32(32)+v24<<(uint(int32(2))%32))))
+	if v30 != 0 {
 		goto L8
 	} else {
 		goto L9
@@ -1706,10 +1709,10 @@ L7:
 	goto L5
 L8:
 	;
-	F_dsm_unpin_segment(m, v28)
+	F_dsm_unpin_segment(m, v30)
 	mBase = m.M
-	v30 = m.ExcPending
-	if v30 != 0 {
+	v32 = m.ExcPending
+	if v32 != 0 {
 		goto L1
 	} else {
 		goto L11
@@ -1719,10 +1722,10 @@ L9:
 	goto L10
 L10:
 	;
-	v32 = v20 + int32(1)
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(l1)+1456))
-	if base.Ui32(v32) <= base.Ui32(v33) {
-		v20 = v32
+	v34 = v24 + int32(1)
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v7)+1456))
+	if base.Ui32(v34) <= base.Ui32(v35) {
+		v24 = v34
 		goto L6
 	} else {
 		goto L12

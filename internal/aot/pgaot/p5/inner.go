@@ -134,7 +134,7 @@ func F_inner_subltree(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v108 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_inner_subltree_1), int32(273), int32(_a_F_inner_subltree_2))
+					F_errfinish(m, int32(_a_F_inner_subltree_1), int32(310), int32(_a_F_inner_subltree_2))
 					mBase = m.M
 					v113 = m.ExcPending
 					if v113 != 0 {
@@ -168,7 +168,7 @@ func F_inner_subltree(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v108 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_inner_subltree_1), int32(273), int32(_a_F_inner_subltree_2))
+						F_errfinish(m, int32(_a_F_inner_subltree_1), int32(310), int32(_a_F_inner_subltree_2))
 						mBase = m.M
 						v113 = m.ExcPending
 						if v113 != 0 {

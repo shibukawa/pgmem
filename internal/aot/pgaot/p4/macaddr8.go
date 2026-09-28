@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_macaddr8_and(m *base.Module, l0 int32) int32 {
+func F_macaddr8_and(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -64,13 +64,13 @@ func F_macaddr8_and(m *base.Module, l0 int32) int32 {
 	_ = v40
 	var v41 int32
 	_ = v41
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v7 = F_palloc0(m, int32(8))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4))))
 		v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5))))
@@ -104,13 +104,13 @@ func F_macaddr8_and(m *base.Module, l0 int32) int32 {
 		v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5)+7)))
 		v41 = v39 & v40
 		*(*uint8)(unsafe.Add(mBase, uint32(v7)+7)) = uint8(v41)
-		return v7
+		return base.I64_extend_i32_u(v7)
 	}
 }
-func F_macaddr8_ne(m *base.Module, l0 int32) int32 {
+func F_macaddr8_ne(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
+	var v5 int64
 	_ = v5
 	var v6 int32
 	_ = v6
@@ -140,18 +140,18 @@ func F_macaddr8_ne(m *base.Module, l0 int32) int32 {
 	_ = v39
 	var v48 int32
 	_ = v48
-	var v53 int32
-	_ = v53
-	v5 = int32(1)
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	var v54 int64
+	_ = v54
+	v5 = int64(1)
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
 	v8 = int32(16711935)
 	v10 = int32(8)
 	v12 = int32(24)
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
 	if base.I32_rotr(v7&v8, v10)|base.I32_rotr(v7, v12)&v8 != base.I32_rotr(v18&v8, v10)|base.I32_rotr(v18, v12)&v8 {
-		v53 = v5
+		v54 = v5
 	} else {
 		v29 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
 		v30 = int32(16711935)
@@ -161,10 +161,10 @@ func F_macaddr8_ne(m *base.Module, l0 int32) int32 {
 		v39 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
 		v48 = base.I32_rotr(v39&v30, v32) | base.I32_rotr(v39, v34)&v30
 		if base.Ui32(v38) < base.Ui32(v48) {
-			v53 = v5
+			v54 = v5
 		} else {
-			v53 = base.B2i32(base.Ui32(v48) < base.Ui32(v38))
+			v54 = base.I64_extend_i32_u(base.B2i32(base.Ui32(v48) < base.Ui32(v38)))
 		}
 	}
-	return v53
+	return v54
 }

@@ -194,6 +194,8 @@ func F_SpGistGetBuffer(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	_ = v347
 	var v349 int32
 	_ = v349
+	var v350 int32
+	_ = v350
 	var v355 int32
 	_ = v355
 	var v356 int32
@@ -619,7 +621,7 @@ L62:
 	}
 L63:
 	;
-	F_errfinish(m, int32(_a_F_SpGistGetBuffer_9), int32(576), int32(_a_F_SpGistGetBuffer_10))
+	F_errfinish(m, int32(_a_F_SpGistGetBuffer_9), int32(575), int32(_a_F_SpGistGetBuffer_10))
 	mBase = m.M
 	v228 = m.ExcPending
 	if v228 != 0 {
@@ -783,7 +785,7 @@ L89:
 L90:
 	;
 	v341 = *(*int32)(unsafe.Add(mBase, _c_F_SpGistGetBuffer[2]))
-	v347 = *(*int32)(unsafe.Add(mBase, uint32(v341+(v261^int32(-1))<<(uint(int32(6))%32))+16))
+	v347 = *(*int32)(unsafe.Add(mBase, uint32(v341+(v261^int32(-1))*int32(56))+16))
 	v356 = v347
 	goto L89
 L91:
@@ -792,7 +794,8 @@ L91:
 L92:
 	;
 	v349 = *(*int32)(unsafe.Add(mBase, _c_F_SpGistGetBuffer[3]))
-	v355 = *(*int32)(unsafe.Add(mBase, uint32(v349+v261<<(uint(int32(6))%32)+int32(-64))+16))
+	v350 = int32(56)
+	v355 = *(*int32)(unsafe.Add(mBase, uint32(v349+v261*v350-v350)+16))
 	v356 = v355
 	goto L89
 L93:
@@ -907,28 +910,28 @@ func F_SpGistNewBuffer(m *base.Module, l0 int32) int32 {
 	_ = v48
 	var v51 int32
 	_ = v51
-	var v56 int32
-	_ = v56
-	var v59 int32
-	_ = v59
+	var v55 int32
+	_ = v55
+	var v58 int32
+	_ = v58
+	var v61 int32
+	_ = v61
 	var v62 int32
 	_ = v62
-	var v63 int32
-	_ = v63
-	var v73 int64
-	_ = v73
-	var v75 int32
-	_ = v75
-	var v77 int32
-	_ = v77
-	var v79 int32
-	_ = v79
+	var v72 int64
+	_ = v72
+	var v74 int32
+	_ = v74
+	var v76 int32
+	_ = v76
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
-	var v83 int32
-	_ = v83
-	var v85 int32
-	_ = v85
+	var v84 int32
+	_ = v84
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
@@ -943,7 +946,7 @@ func F_SpGistNewBuffer(m *base.Module, l0 int32) int32 {
 L1:
 	;
 	m.G0 = v7 + int32(32)
-	return v85
+	return v84
 L2:
 	;
 	return int32(0)
@@ -965,16 +968,16 @@ L6:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = int64(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = l0
-	v73 = *(*int64)(unsafe.Add(mBase, uint32(v7)+20))
-	*(*int64)(unsafe.Add(mBase, uint32(v7)+8)) = v73
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v75
-	v77 = int32(8)
-	v79 = int32(0)
-	v82 = F_ExtendBufferedRel(m, v7+v77, v79, v79, v77)
+	v72 = *(*int64)(unsafe.Add(mBase, uint32(v7)+20))
+	*(*int64)(unsafe.Add(mBase, uint32(v7)+8)) = v72
+	v74 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v74
+	v76 = int32(8)
+	v78 = int32(0)
+	v81 = F_ExtendBufferedRel(m, v7+v76, v78, v78, v76)
 	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
+	v82 = m.ExcPending
+	if v82 != 0 {
 		goto L2
 	} else {
 		goto L28
@@ -1004,10 +1007,10 @@ L10:
 	goto L11
 L11:
 	;
-	v62 = F_GetFreeIndexPage(m, l0)
+	v61 = F_GetFreeIndexPage(m, l0)
 	mBase = m.M
-	v63 = m.ExcPending
-	if v63 != 0 {
+	v62 = m.ExcPending
+	if v62 != 0 {
 		goto L2
 	} else {
 		goto L26
@@ -1043,8 +1046,8 @@ L16:
 	;
 	F_ReleaseBuffer(m, v21)
 	mBase = m.M
-	v59 = m.ExcPending
-	if v59 != 0 {
+	v58 = m.ExcPending
+	if v58 != 0 {
 		goto L2
 	} else {
 		goto L25
@@ -1053,7 +1056,7 @@ L17:
 	;
 	v43 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v42)+14)))
 	if v43 == int32(0) {
-		v85 = v21
+		v84 = v21
 		goto L1
 	} else {
 		goto L21
@@ -1077,7 +1080,7 @@ L21:
 	v46 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v42)+16)))
 	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42+v46))))
 	if v48&int32(2) != 0 {
-		v85 = v21
+		v84 = v21
 		goto L1
 	} else {
 		goto L22
@@ -1086,17 +1089,17 @@ L22:
 	;
 	v51 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v42)+12)))
 	if base.Ui32(v51) < base.Ui32(int32(25)) {
-		v85 = v21
+		v84 = v21
 		goto L1
 	} else {
 		goto L23
 	}
 L23:
 	;
-	F_LockBuffer(m, v21, int32(0))
+	F_UnlockBuffer(m, v21)
 	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
+	v55 = m.ExcPending
+	if v55 != 0 {
 		goto L2
 	} else {
 		goto L24
@@ -1109,8 +1112,8 @@ L25:
 	goto L11
 L26:
 	;
-	if v62 != int32(-1) {
-		v16 = v62
+	if v61 != int32(-1) {
+		v16 = v61
 		goto L7
 	} else {
 		goto L27
@@ -1120,6 +1123,6 @@ L27:
 	goto L8
 L28:
 	;
-	v85 = v82
+	v84 = v81
 	goto L1
 }

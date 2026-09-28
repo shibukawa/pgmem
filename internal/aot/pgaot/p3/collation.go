@@ -46,7 +46,7 @@ func F_LookupCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		}
 	} else {
 		v18 = v8 + int32(12)
-		*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(489)
+		*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(524)
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = l2
 		*(*int32)(unsafe.Add(mBase, uint32(v18))) = l0
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+16)) = v18
@@ -77,52 +77,52 @@ func F_get_collation_isdeterministic(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v6 int32
 	_ = v6
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
-	var v18 int32
-	_ = v18
-	var v22 int32
-	_ = v22
-	var v27 int32
-	_ = v27
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v19 int32
+	_ = v19
+	var v23 int32
+	_ = v23
 	var v28 int32
 	_ = v28
 	var v29 int32
 	_ = v29
-	var v31 int32
-	_ = v31
-	var v33 int32
-	_ = v33
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
 	v4 = m.G0
 	v5 = int32(16)
 	v6 = v4 - v5
 	m.G0 = v6
-	v9 = F_SearchSysCache1(m, v5, l0)
+	v10 = F_SearchSysCache1(m, v5, base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v12 = m.ExcPending
-	if v12 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		return int32(0)
 	} else {
-		if v9 == int32(0) {
+		if v10 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v18 = m.ExcPending
-			if v18 != 0 {
+			v19 = m.ExcPending
+			if v19 != 0 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
 				F_errmsg_internal(m, int32(_a_F_get_collation_isdeterministic_0), v6)
 				mBase = m.M
-				v22 = m.ExcPending
-				if v22 != 0 {
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_get_collation_isdeterministic_1), int32(1154), int32(_a_F_get_collation_isdeterministic_2))
+					F_errfinish(m, int32(_a_F_get_collation_isdeterministic_1), int32(1286), int32(_a_F_get_collation_isdeterministic_2))
 					mBase = m.M
-					v27 = m.ExcPending
-					if v27 != 0 {
+					v28 = m.ExcPending
+					if v28 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()
@@ -132,17 +132,17 @@ func F_get_collation_isdeterministic(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v28 = *(*int32)(unsafe.Add(mBase, uint32(v9)+16))
-			v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+22)))
-			v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28+v29)+77)))
-			F_ReleaseCatCache(m, v9)
+			v29 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
+			v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29)+22)))
+			v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29+v30)+77)))
+			F_ReleaseCatCache(m, v10)
 			mBase = m.M
-			v33 = m.ExcPending
-			if v33 != 0 {
+			v34 = m.ExcPending
+			if v34 != 0 {
 				return int32(0)
 			} else {
 				m.G0 = v6 + int32(16)
-				return v31
+				return v32
 			}
 		}
 	}

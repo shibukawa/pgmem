@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_SearchCatCache(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+func F_SearchCatCache(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32

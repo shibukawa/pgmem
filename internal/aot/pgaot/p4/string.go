@@ -308,6 +308,30 @@ L34:
 	;
 	goto L33
 }
+func F_initStringInfoExt(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	v4 = F_palloc(m, l1)
+	mBase = m.M
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return
+	} else {
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = l1
+		*(*int32)(unsafe.Add(mBase, uint32(l0))) = v4
+		v8 = int32(0)
+		*(*uint8)(unsafe.Add(mBase, uint32(v4))) = uint8(v8)
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v8
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v8
+		return
+	}
+}
 func F_string_hash(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

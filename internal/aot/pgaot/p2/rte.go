@@ -86,29 +86,29 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+52)) = v17
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+60)) = v17
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+68)) = v11
-		v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+		v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v30 = F_lappend(m, v29, v7)
 		mBase = m.M
 		v31 = m.ExcPending
 		if v31 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v30
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v30
 			v33 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
 			switch v33 {
 			case 0:
 				v34 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
 				v38 = v34
-				v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+				v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 				v40 = F_lappend_oid(m, v39, v38)
 				mBase = m.M
 				v41 = m.ExcPending
 				if v41 != 0 {
 					return
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v40
-					v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-					v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v40
+					v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+					v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 					if v44 != 0 {
 						v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+4))
 						v47 = v45
@@ -121,7 +121,7 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v49 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v48
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v48
 						v52 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
 						if v52 != 0 {
 							v53 = F_getRTEPermissionInfo(m, l1, v7)
@@ -131,7 +131,7 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(0)
-								v59 = F_addRTEPermissionInfo(m, l0+int32(36), v7)
+								v59 = F_addRTEPermissionInfo(m, l0+int32(40), v7)
 								mBase = m.M
 								v60 = m.ExcPending
 								if v60 != 0 {
@@ -167,7 +167,7 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(0)
-							v59 = F_addRTEPermissionInfo(m, l0+int32(36), v7)
+							v59 = F_addRTEPermissionInfo(m, l0+int32(40), v7)
 							mBase = m.M
 							v60 = m.ExcPending
 							if v60 != 0 {
@@ -191,16 +191,16 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				} else {
 					v38 = v35
-					v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+					v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 					v40 = F_lappend_oid(m, v39, v38)
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v40
-						v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-						v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v40
+						v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+						v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 						if v44 != 0 {
 							v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+4))
 							v47 = v45
@@ -213,7 +213,7 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v49 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v48
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v48
 							v52 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
 							if v52 != 0 {
 								v53 = F_getRTEPermissionInfo(m, l1, v7)
@@ -223,7 +223,7 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(0)
-									v59 = F_addRTEPermissionInfo(m, l0+int32(36), v7)
+									v59 = F_addRTEPermissionInfo(m, l0+int32(40), v7)
 									mBase = m.M
 									v60 = m.ExcPending
 									if v60 != 0 {
@@ -258,7 +258,7 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(0)
-						v59 = F_addRTEPermissionInfo(m, l0+int32(36), v7)
+						v59 = F_addRTEPermissionInfo(m, l0+int32(40), v7)
 						mBase = m.M
 						v60 = m.ExcPending
 						if v60 != 0 {
@@ -345,7 +345,7 @@ func F_getRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32 {
 			if v43 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_getRTEPermissionInfo_1), int32(4016), int32(_a_F_getRTEPermissionInfo_2))
+				F_errfinish(m, int32(_a_F_getRTEPermissionInfo_1), int32(3992), int32(_a_F_getRTEPermissionInfo_2))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
@@ -376,7 +376,7 @@ func F_getRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32 {
 				if v43 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_getRTEPermissionInfo_1), int32(4016), int32(_a_F_getRTEPermissionInfo_2))
+					F_errfinish(m, int32(_a_F_getRTEPermissionInfo_1), int32(3992), int32(_a_F_getRTEPermissionInfo_2))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
@@ -407,7 +407,7 @@ func F_getRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32 {
 					if v43 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_getRTEPermissionInfo_1), int32(4016), int32(_a_F_getRTEPermissionInfo_2))
+						F_errfinish(m, int32(_a_F_getRTEPermissionInfo_1), int32(3992), int32(_a_F_getRTEPermissionInfo_2))
 						mBase = m.M
 						v48 = m.ExcPending
 						if v48 != 0 {
@@ -443,7 +443,7 @@ func F_getRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32 {
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_getRTEPermissionInfo_1), int32(4021), int32(_a_F_getRTEPermissionInfo_2))
+							F_errfinish(m, int32(_a_F_getRTEPermissionInfo_1), int32(3997), int32(_a_F_getRTEPermissionInfo_2))
 							mBase = m.M
 							v68 = m.ExcPending
 							if v68 != 0 {

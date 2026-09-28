@@ -22,9 +22,9 @@ func F_comparetup_heap(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v23
 	var v24 int32
 	_ = v24
-	var v26 int32
+	var v26 int64
 	_ = v26
-	var v27 int32
+	var v27 int64
 	_ = v27
 	var v28 int32
 	_ = v28
@@ -44,9 +44,9 @@ func F_comparetup_heap(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v45
 	var v47 int32
 	_ = v47
-	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
+	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l2)+44))
-	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 	if v9 == int32(1) {
 		if v7&int32(1) != 0 {
 			v44 = F_comparetup_heap_tiebreak(m, l0, l1, l2)
@@ -77,10 +77,10 @@ func F_comparetup_heap(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			}
 			return v24
 		} else {
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-			v27 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+			v26 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
+			v27 = *(*int64)(unsafe.Add(mBase, uint32(l1)+8))
 			v28 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
-			v29 = m.T0[v28].(func(*base.Module, int32, int32, int32) int32)(m, v26, v27, v8)
+			v29 = m.T0[v28].(func(*base.Module, int64, int64, int32) int32)(m, v26, v27, v8)
 			mBase = m.M
 			v32 = m.ExcPending
 			if v32 != 0 {

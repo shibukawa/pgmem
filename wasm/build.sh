@@ -1,5 +1,5 @@
 #!/bin/bash
-# Build PostgreSQL (PGlite fork) to a self-contained wasm module for pgmem.
+# Build PostgreSQL with its PGlite port as a self-contained wasm module for pgmem.
 #   SJLJ=wasm|emscripten   setjmp/longjmp strategy (default: wasm = wasm EH, legacy try/catch)
 #   JOBS=N                 parallelism
 set -euo pipefail
@@ -19,18 +19,27 @@ SJLJ=${SJLJ:-wasm}
 JOBS=${JOBS:-8}
 mkdir -p "$OUT/src"
 
-# PostgreSQL source: a pinned commit of the PGlite fork, downloaded once
-# into wasm/out/src (gitignored) and patched in place by patches.py.
+# PostgreSQL source: a pinned upstream snapshot, downloaded once into
+# wasm/out/src (gitignored), ported to PGlite if requested, then patched for
+# pgmem by patches.py.
 source "$HERE/postgres-pglite.lock"
-SRC=$OUT/src/postgres-pglite-$commit
+SRC=$OUT/src/${srcdir:-postgres-pglite-$commit}
 if [ ! -f "$SRC/configure" ]; then
+  mkdir -p "$SRC"
   ARCHIVE=$OUT/src/postgres-pglite-$commit.tar.gz
   if [ ! -f "$ARCHIVE" ]; then
     echo "== fetching $repo@$commit"
     curl -fsSL -o "$ARCHIVE" "https://github.com/$repo/archive/$commit.tar.gz"
   fi
   echo "$sha256  $ARCHIVE" | shasum -a 256 -c - >/dev/null || { echo "error: checksum mismatch for $ARCHIVE"; exit 2; }
-  tar xzf "$ARCHIVE" -C "$OUT/src"
+  tar xzf "$ARCHIVE" --strip-components=1 -C "$SRC"
+fi
+
+# Keep the upstream PostgreSQL 19 Beta 4 source intact as the build input;
+# apply the reviewed PGlite port once to the extracted copy.
+if [ -n "${port_patch:-}" ] && ! grep -q 'PostgresMainLoopOnce()' "$SRC/src/backend/tcop/postgres.c"; then
+  echo "== applying PGlite port $port_patch"
+  patch --batch -p1 -d "$SRC" < "$HERE/$port_patch"
 fi
 
 # pgmem-specific source patches (idempotent); before anything is compiled,
@@ -103,7 +112,11 @@ ac_cv_exeext=.js \
 CONFIGURE_ENV="ac_cv_search_sem_init=none required"
 
 cd "$SRC"
-CONF_SIG="$CONFIGURE_PARAMS|$CONFIGURE_ENV|$PG_CFLAGS|$LDFLAGS|$LDFLAGS_EX"
+PORT_PATCH_SIG=""
+if [ -n "${port_patch:-}" ]; then
+  PORT_PATCH_SIG=$(shasum -a 256 "$HERE/$port_patch" | cut -d ' ' -f 1)
+fi
+CONF_SIG="$CONFIGURE_PARAMS|$CONFIGURE_ENV|$PG_CFLAGS|$LDFLAGS|$LDFLAGS_EX|$PORT_PATCH_SIG"
 if [ ! -f config.status ] || [ "$(cat "$OUT/configure.sig" 2>/dev/null)" != "$CONF_SIG" ]; then
   echo "== configure"
   env "$CONFIGURE_ENV" LDFLAGS="$LDFLAGS" LDFLAGS_EX="$LDFLAGS_EX" CFLAGS="$PG_CFLAGS" \

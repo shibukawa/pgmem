@@ -20,11 +20,11 @@ func F_SpecialHyphen(m *base.Module, l0 int32) {
 	_ = v9
 	var v10 int32
 	_ = v10
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v3)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v3))) = v4 - v5
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v9 - v10
@@ -450,7 +450,7 @@ L32:
 	v85 = *(*int32)(unsafe.Add(mBase, uint32(l1)+36))
 	v86 = *(*int32)(unsafe.Add(mBase, uint32(v34)+40))
 	v87 = *(*int32)(unsafe.Add(mBase, uint32(v86)))
-	if v87&int32(-2) == int32(334) {
+	if v87&int32(-2) == int32(338) {
 		goto L33
 	} else {
 		goto L34

@@ -299,7 +299,7 @@ L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = v82
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v82
-	v97 = F_list_make1_impl(m, int32(471), v16+int32(8))
+	v97 = F_list_make1_impl(m, int32(479), v16+int32(8))
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {

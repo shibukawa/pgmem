@@ -5,57 +5,57 @@ import (
 	"unsafe"
 )
 
-func F_logicalrep_partmap_invalidate_cb(m *base.Module, l0 int32, l1 int32) {
+func F_logicalrep_partmap_invalidate_cb(m *base.Module, l0 int64, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v10 int32
-	_ = v10
-	var v16 int32
-	_ = v16
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v17 int32
+	_ = v17
 	var v24 int32
 	_ = v24
-	var v27 int32
-	_ = v27
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
 	var v29 int32
 	_ = v29
-	var v32 int32
-	_ = v32
+	var v31 int32
+	_ = v31
 	var v34 int32
 	_ = v34
 	var v36 int32
 	_ = v36
-	var v37 int32
-	_ = v37
 	var v38 int32
 	_ = v38
-	var v41 int32
-	_ = v41
-	var v45 int32
-	_ = v45
-	var v49 int32
-	_ = v49
-	var v50 int32
-	_ = v50
-	v5 = m.G0
-	v7 = v5 - int32(32)
-	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_partmap_invalidate_cb[0]))
-	if v10 == int32(0) {
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v44 int32
+	_ = v44
+	var v48 int32
+	_ = v48
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	v6 = m.G0
+	v8 = v6 - int32(32)
+	m.G0 = v8
+	v11 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_partmap_invalidate_cb[0]))
+	if v11 == int32(0) {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	m.G0 = v7 + int32(32)
+	m.G0 = v8 + int32(32)
 	return
 L2:
 	;
@@ -66,10 +66,10 @@ L2:
 	}
 L3:
 	;
-	F_hash_seq_init(m, v7+int32(12), v10)
+	F_hash_seq_init(m, v8+int32(12), v11)
 	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v17 = m.ExcPending
+	if v17 != 0 {
 		goto L6
 	} else {
 		goto L7
@@ -79,11 +79,11 @@ L4:
 	goto L5
 L5:
 	;
-	v34 = v7 + int32(12)
-	F_hash_seq_init(m, v34, v10)
+	v36 = v8 + int32(12)
+	F_hash_seq_init(m, v36, v11)
 	mBase = m.M
-	v36 = m.ExcPending
-	if v36 != 0 {
+	v38 = m.ExcPending
+	if v38 != 0 {
 		goto L6
 	} else {
 		goto L14
@@ -96,38 +96,38 @@ L7:
 	goto L8
 L8:
 	;
-	v22 = v7 + int32(12)
-	v23 = F_hash_seq_search(m, v22)
+	v24 = v8 + int32(12)
+	v25 = F_hash_seq_search(m, v24)
 	mBase = m.M
-	v24 = m.ExcPending
-	if v24 != 0 {
+	v26 = m.ExcPending
+	if v26 != 0 {
 		goto L6
 	} else {
 		goto L10
 	}
 L9:
 	;
-	v29 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v23)+40)) = uint8(v29)
-	F_hash_seq_term(m, v22)
+	v31 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v25)+40)) = uint8(v31)
+	F_hash_seq_term(m, v24)
 	mBase = m.M
-	v32 = m.ExcPending
-	if v32 != 0 {
+	v34 = m.ExcPending
+	if v34 != 0 {
 		goto L6
 	} else {
 		goto L13
 	}
 L10:
 	;
-	if v23 == int32(0) {
+	if v25 == int32(0) {
 		goto L1
 	} else {
 		goto L11
 	}
 L11:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(v23)+44))
-	if v27 != l1 {
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v25)+44))
+	if v29 != l1 {
 		goto L8
 	} else {
 		goto L12
@@ -140,33 +140,33 @@ L13:
 	goto L1
 L14:
 	;
-	v37 = F_hash_seq_search(m, v34)
+	v39 = F_hash_seq_search(m, v36)
 	mBase = m.M
-	v38 = m.ExcPending
-	if v38 != 0 {
+	v40 = m.ExcPending
+	if v40 != 0 {
 		goto L6
 	} else {
 		goto L15
 	}
 L15:
 	;
-	if v37 == int32(0) {
+	if v39 == int32(0) {
 		goto L1
 	} else {
 		goto L16
 	}
 L16:
 	;
-	v41 = v37
+	v44 = v39
 	goto L17
 L17:
 	;
-	v45 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v41)+40)) = uint8(v45)
-	v49 = F_hash_seq_search(m, v7+int32(12))
+	v48 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v44)+40)) = uint8(v48)
+	v52 = F_hash_seq_search(m, v8+int32(12))
 	mBase = m.M
-	v50 = m.ExcPending
-	if v50 != 0 {
+	v53 = m.ExcPending
+	if v53 != 0 {
 		goto L6
 	} else {
 		goto L19
@@ -176,8 +176,8 @@ L18:
 	goto L1
 L19:
 	;
-	if v49 != 0 {
-		v41 = v49
+	if v52 != 0 {
+		v44 = v52
 		goto L17
 	} else {
 		goto L20
@@ -464,7 +464,7 @@ L8:
 	}
 L9:
 	;
-	v34 = v29 + v30*int32(112)
+	v34 = v29 + v30<<(uint(int32(7))%32)
 	v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+32)))
 	if v35 != int32(1) {
 		v52 = v28

@@ -276,69 +276,67 @@ func F_jspIsMutableWalker(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v291
 	var v302 int32
 	_ = v302
-	var v305 int32
-	_ = v305
+	var v308 int32
+	_ = v308
 	var v309 int32
 	_ = v309
-	var v310 int32
-	_ = v310
-	var v317 int32
-	_ = v317
+	var v316 int32
+	_ = v316
+	var v318 int32
+	_ = v318
 	var v319 int32
 	_ = v319
 	var v320 int32
 	_ = v320
-	var v321 int32
-	_ = v321
+	var v323 int32
+	_ = v323
 	var v324 int32
 	_ = v324
-	var v325 int32
-	_ = v325
-	var v336 int32
-	_ = v336
-	var v340 int32
-	_ = v340
-	var v342 int32
-	_ = v342
-	var v344 int32
-	_ = v344
-	var v347 int32
-	_ = v347
+	var v335 int32
+	_ = v335
+	var v339 int32
+	_ = v339
+	var v341 int32
+	_ = v341
+	var v343 int32
+	_ = v343
+	var v346 int32
+	_ = v346
+	var v348 int32
+	_ = v348
 	var v349 int32
 	_ = v349
 	var v350 int32
 	_ = v350
-	var v351 int32
-	_ = v351
+	var v352 int32
+	_ = v352
 	var v353 int32
 	_ = v353
 	var v354 int32
 	_ = v354
-	var v355 int32
-	_ = v355
-	var v357 int32
-	_ = v357
-	var v366 int32
-	_ = v366
-	var v373 int32
-	_ = v373
+	var v356 int32
+	_ = v356
+	var v365 int32
+	_ = v365
+	var v372 int32
+	_ = v372
+	var v376 int32
+	_ = v376
 	var v377 int32
 	_ = v377
-	var v378 int32
-	_ = v378
+	var v379 int32
+	_ = v379
 	var v380 int32
 	_ = v380
-	var v381 int32
-	_ = v381
-	var v388 int32
-	_ = v388
+	var v387 int32
+	_ = v387
 	v3 = int32(0)
 	v12 = m.G0
 	v14 = v12 - int32(112)
 	m.G0 = v14
 	v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)))
 	if v16 != 0 {
-		v388 = v3
+		v387 = v3
 		goto L1
 	} else {
 		goto L2
@@ -346,7 +344,7 @@ func F_jspIsMutableWalker(m *base.Module, l0 int32, l1 int32) int32 {
 L1:
 	;
 	m.G0 = v14 + int32(112)
-	return v388
+	return v387
 L2:
 	;
 	v17 = l0
@@ -364,7 +362,7 @@ L3:
 		goto L16
 	case 17:
 		goto L12
-	case 18, 21, 27, 28, 29, 30, 31, 32, 34, 35, 36, 39, 40, 42, 43, 44, 45:
+	case 18, 21, 27, 28, 29, 30, 31, 32, 34, 35, 36, 39, 40, 42, 43, 44, 45, 50, 51, 52, 53, 54, 55, 56, 57:
 		goto L8
 	case 19:
 		goto L13
@@ -373,7 +371,7 @@ L3:
 	case 22:
 		goto L19
 	default:
-		v366 = v21
+		v365 = v21
 		goto L5
 	case 24:
 		goto L17
@@ -388,40 +386,40 @@ L3:
 	}
 L4:
 	;
-	v388 = v366
+	v387 = v365
 	goto L1
 L5:
 	;
-	v373 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
-	if v373 <= int32(0) {
-		v388 = v366
+	v372 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	if v372 <= int32(0) {
+		v387 = v365
 		goto L1
 	} else {
 		goto L119
 	}
 L6:
 	;
-	v366 = int32(0)
+	v365 = int32(0)
 	goto L5
 L7:
 	;
-	v357 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)) = uint8(v357)
-	v366 = int32(3)
+	v356 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)) = uint8(v356)
+	v365 = int32(3)
 	goto L5
 L8:
 	;
-	v366 = int32(0)
+	v365 = int32(0)
 	goto L5
 L9:
 	;
-	v349 = v14 + int32(56)
-	v350 = *(*int32)(unsafe.Add(mBase, uint32(v17)+8))
-	v351 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
-	F_jspInitByBuffer(m, v349, v350, v351)
+	v348 = v14 + int32(56)
+	v349 = *(*int32)(unsafe.Add(mBase, uint32(v17)+8))
+	v350 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
+	F_jspInitByBuffer(m, v348, v349, v350)
 	mBase = m.M
-	v353 = m.ExcPending
-	if v353 != 0 {
+	v352 = m.ExcPending
+	if v352 != 0 {
 		goto L20
 	} else {
 		goto L117
@@ -524,7 +522,7 @@ L18:
 L19:
 	;
 	v31 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v366 = v31
+	v365 = v31
 	goto L5
 L20:
 	;
@@ -542,7 +540,7 @@ L21:
 L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v32
-	v366 = v21
+	v365 = v21
 	goto L5
 L23:
 	;
@@ -556,7 +554,7 @@ L23:
 L25:
 	;
 	if v45 == int32(0) {
-		v366 = v21
+		v365 = v21
 		goto L5
 	} else {
 		goto L28
@@ -579,7 +577,7 @@ L28:
 	;
 	v76 = *(*int32)(unsafe.Add(mBase, uint32(v45)+4))
 	if base.B2i32(v71 == int32(0))|base.B2i32(v76 <= v52) != 0 {
-		v366 = v21
+		v365 = v21
 		goto L5
 	} else {
 		goto L29
@@ -588,7 +586,7 @@ L29:
 	;
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(v45)+12))
 	if v79 == int32(0) {
-		v366 = v21
+		v365 = v21
 		goto L5
 	} else {
 		goto L30
@@ -713,7 +711,7 @@ L47:
 L48:
 	;
 	if base.B2i32(v135 == int32(1114))|base.B2i32(base.Ui32(v135-int32(1082)) < base.Ui32(int32(2))) != 0 {
-		v366 = int32(3)
+		v365 = int32(3)
 		goto L5
 	} else {
 		goto L51
@@ -733,7 +731,7 @@ L51:
 	goto L6
 L52:
 	;
-	v366 = int32(2)
+	v365 = int32(2)
 	goto L5
 L53:
 	;
@@ -772,7 +770,7 @@ L56:
 	v169 = int32(0)
 	v172 = int32(1)
 	if base.B2i32(v159 == int32(0))|base.B2i32(v167 == v169)|base.B2i32(base.B2i32(v159 == v172)|base.B2i32(v167 == v172) == v169)&base.B2i32(v159 == v167) != 0 {
-		v366 = v21
+		v365 = v21
 		goto L5
 	} else {
 		goto L57
@@ -781,7 +779,7 @@ L57:
 	;
 	v182 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)) = uint8(v182)
-	v366 = v21
+	v365 = v21
 	goto L5
 L58:
 	;
@@ -795,7 +793,7 @@ L58:
 	}
 L59:
 	;
-	v366 = v21
+	v365 = v21
 	goto L5
 L60:
 	;
@@ -831,7 +829,7 @@ L62:
 	}
 L63:
 	;
-	v366 = v21
+	v365 = v21
 	goto L5
 L64:
 	;
@@ -923,7 +921,7 @@ L76:
 	goto L77
 L77:
 	;
-	v366 = v260
+	v365 = v260
 	goto L5
 L78:
 	;
@@ -935,11 +933,11 @@ L79:
 	goto L80
 L80:
 	;
-	v366 = v263
+	v365 = v263
 	goto L5
 L81:
 	;
-	v366 = int32(1)
+	v365 = int32(1)
 	goto L5
 L82:
 	;
@@ -965,7 +963,7 @@ L84:
 	}
 L85:
 	;
-	v366 = int32(0)
+	v365 = int32(0)
 	goto L5
 L86:
 	;
@@ -975,15 +973,15 @@ L87:
 	v277 = *(*int32)(unsafe.Add(mBase, uint32(v14)+68))
 	v278 = F_strlen(m, v277)
 	mBase = m.M
-	if base.Ui32(v278) <= base.Ui32(int32(155)) {
+	if base.Ui32(v278) <= base.Ui32(int32(119)) {
 		goto L89
 	} else {
 		goto L90
 	}
 L88:
 	;
-	v344 = int32(3)
-	if base.Ui32(v344) < base.Ui32(v342) {
+	v343 = int32(3)
+	if base.Ui32(v343) < base.Ui32(v341) {
 		goto L114
 	} else {
 		goto L115
@@ -1003,11 +1001,10 @@ L90:
 	goto L91
 L91:
 	;
-	v305 = int32(12)
-	v309 = F_palloc(m, v278*v305+v305)
+	v308 = F_palloc_mul(m, int32(16), v278+int32(1))
 	mBase = m.M
-	v310 = m.ExcPending
-	if v310 != 0 {
+	v309 = m.ExcPending
+	if v309 != 0 {
 		goto L20
 	} else {
 		goto L102
@@ -1019,34 +1016,28 @@ L92:
 	goto L94
 L93:
 	;
-	v342 = v286
+	v341 = v286
 	goto L88
 L94:
 	;
-	v287 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v285))))
+	v287 = *(*int32)(unsafe.Add(mBase, uint32(v285)))
 	switch v287 - int32(1) {
 	case 0:
-		goto L96
-	case 1:
 		goto L98
+	case 1:
+		goto L97
 	default:
 		v302 = v286
-		goto L97
+		goto L96
 	}
-L95:
-	;
-	goto L93
 L96:
 	;
-	goto L95
-L97:
-	;
-	v285 = v285 + int32(12)
+	v285 = v285 + int32(16)
 	v286 = v302
 	goto L94
-L98:
+L97:
 	;
-	v290 = *(*int32)(unsafe.Add(mBase, uint32(v285)+8))
+	v290 = *(*int32)(unsafe.Add(mBase, uint32(v285)+12))
 	v291 = *(*int32)(unsafe.Add(mBase, uint32(v290)+8))
 	switch v291 {
 	case 0, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 24, 25, 27, 28, 29, 30, 31, 33, 34, 35, 37, 38, 42, 43, 51, 52, 53, 54, 55, 56, 57, 58, 60, 62, 63, 65, 68, 90, 91, 97:
@@ -1055,149 +1046,149 @@ L98:
 		goto L101
 	default:
 		v302 = v286
-		goto L97
+		goto L96
 	case 39, 47, 48, 49, 103:
 		goto L100
 	}
+L98:
+	;
+	goto L93
 L99:
 	;
 	v302 = v286 | int32(1)
-	goto L97
+	goto L96
 L100:
 	;
-	v285 = v285 + int32(12)
+	v285 = v285 + int32(16)
 	v286 = v286 | int32(4)
 	goto L94
 L101:
 	;
-	v285 = v285 + int32(12)
+	v285 = v285 + int32(16)
 	v286 = v286 | int32(2)
 	goto L94
 L102:
 	;
-	F_parse_format(m, v309, v277, int32(_a_F_jspIsMutableWalker_0), int32(_a_F_jspIsMutableWalker_1), int32(_a_F_jspIsMutableWalker_2), int32(1), int32(0))
+	F_parse_format(m, v308, v277, int32(_a_F_jspIsMutableWalker_0), int32(_a_F_jspIsMutableWalker_1), int32(_a_F_jspIsMutableWalker_2), int32(1), int32(0))
 	mBase = m.M
-	v317 = m.ExcPending
-	if v317 != 0 {
+	v316 = m.ExcPending
+	if v316 != 0 {
 		goto L20
 	} else {
 		goto L103
 	}
 L103:
 	;
-	v319 = v309
-	v320 = int32(0)
+	v318 = v308
+	v319 = int32(0)
 	goto L105
 L104:
 	;
-	F_pfree(m, v309)
+	F_pfree(m, v308)
 	mBase = m.M
-	v340 = m.ExcPending
-	if v340 != 0 {
+	v339 = m.ExcPending
+	if v339 != 0 {
 		goto L20
 	} else {
 		goto L113
 	}
 L105:
 	;
-	v321 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v319))))
-	switch v321 - int32(1) {
+	v320 = *(*int32)(unsafe.Add(mBase, uint32(v318)))
+	switch v320 - int32(1) {
 	case 0:
-		goto L107
-	case 1:
 		goto L109
-	default:
-		v336 = v320
+	case 1:
 		goto L108
+	default:
+		v335 = v319
+		goto L107
 	}
-L106:
-	;
-	goto L104
 L107:
 	;
-	goto L106
+	v318 = v318 + int32(16)
+	v319 = v335
+	goto L105
 L108:
 	;
-	v319 = v319 + int32(12)
-	v320 = v336
-	goto L105
-L109:
-	;
-	v324 = *(*int32)(unsafe.Add(mBase, uint32(v319)+8))
-	v325 = *(*int32)(unsafe.Add(mBase, uint32(v324)+8))
-	switch v325 {
+	v323 = *(*int32)(unsafe.Add(mBase, uint32(v318)+12))
+	v324 = *(*int32)(unsafe.Add(mBase, uint32(v323)+8))
+	switch v324 {
 	case 0, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 24, 25, 27, 28, 29, 30, 31, 33, 34, 35, 37, 38, 42, 43, 51, 52, 53, 54, 55, 56, 57, 58, 60, 62, 63, 65, 68, 90, 91, 97:
 		goto L110
 	case 1, 3, 14, 15, 16, 17, 18, 19, 21, 22, 23, 32, 36, 40, 41, 45, 46, 50, 59, 61, 94, 95:
 		goto L112
 	default:
-		v336 = v320
-		goto L108
+		v335 = v319
+		goto L107
 	case 39, 47, 48, 49, 103:
 		goto L111
 	}
+L109:
+	;
+	goto L104
 L110:
 	;
-	v336 = v320 | int32(1)
-	goto L108
+	v335 = v319 | int32(1)
+	goto L107
 L111:
 	;
-	v319 = v319 + int32(12)
-	v320 = v320 | int32(4)
+	v318 = v318 + int32(16)
+	v319 = v319 | int32(4)
 	goto L105
 L112:
 	;
-	v319 = v319 + int32(12)
-	v320 = v320 | int32(2)
+	v318 = v318 + int32(16)
+	v319 = v319 | int32(2)
 	goto L105
 L113:
 	;
-	v342 = v320
+	v341 = v319
 	goto L88
 L114:
 	;
-	v347 = int32(2)
+	v346 = int32(2)
 	goto L116
 L115:
 	;
-	v347 = v344
+	v346 = v343
 	goto L116
 L116:
 	;
-	v366 = v347
+	v365 = v346
 	goto L5
 L117:
 	;
-	v354 = F_jspIsMutableWalker(m, v349, l1)
+	v353 = F_jspIsMutableWalker(m, v348, l1)
 	mBase = m.M
-	v355 = m.ExcPending
-	if v355 != 0 {
+	v354 = m.ExcPending
+	if v354 != 0 {
 		goto L20
 	} else {
 		goto L118
 	}
 L118:
 	;
-	v366 = v21
+	v365 = v21
 	goto L5
 L119:
 	;
-	v377 = v14 + int32(84)
-	v378 = *(*int32)(unsafe.Add(mBase, uint32(v17)+8))
-	F_jspInitByBuffer(m, v377, v378, v373)
+	v376 = v14 + int32(84)
+	v377 = *(*int32)(unsafe.Add(mBase, uint32(v17)+8))
+	F_jspInitByBuffer(m, v376, v377, v372)
 	mBase = m.M
-	v380 = m.ExcPending
-	if v380 != 0 {
+	v379 = m.ExcPending
+	if v379 != 0 {
 		goto L20
 	} else {
 		goto L120
 	}
 L120:
 	;
-	v381 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)))
-	if v381 != int32(1) {
-		v17 = v377
-		v21 = v366
+	v380 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)))
+	if v380 != int32(1) {
+		v17 = v376
+		v21 = v365
 		goto L3
 	} else {
 		goto L121

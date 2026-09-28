@@ -50,7 +50,7 @@ func F_check_role_1(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v55
 	var v56 int32
 	_ = v56
-	var v62 int32
+	var v62 int64
 	_ = v62
 	var v63 int32
 	_ = v63
@@ -259,7 +259,7 @@ L18:
 	}
 L19:
 	;
-	v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v62 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0))))
 	v63 = F_SearchSysCache1(m, int32(10), v62)
 	mBase = m.M
 	v66 = m.ExcPending
@@ -557,6 +557,8 @@ func F_check_role_grantor(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v59
 	var v60 int32
 	_ = v60
+	var v65 int32
+	_ = v65
 	var v66 int32
 	_ = v66
 	var v71 int32
@@ -577,6 +579,8 @@ func F_check_role_grantor(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v98
 	var v99 int32
 	_ = v99
+	var v104 int32
+	_ = v104
 	var v105 int32
 	_ = v105
 	var v110 int32
@@ -595,6 +599,8 @@ func F_check_role_grantor(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v128
 	var v129 int32
 	_ = v129
+	var v134 int32
+	_ = v134
 	var v135 int32
 	_ = v135
 	var v140 int32
@@ -637,7 +643,7 @@ func F_check_role_grantor(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							if v26 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_check_role_grantor_1), int32(2231), int32(_a_F_check_role_grantor_2))
+								F_errfinish(m, int32(_a_F_check_role_grantor_1), int32(2244), int32(_a_F_check_role_grantor_2))
 								mBase = m.M
 								v31 = m.ExcPending
 								if v31 != 0 {
@@ -694,13 +700,13 @@ func F_check_role_grantor(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v98
-										F_errdetail(m, int32(_a_F_check_role_grantor_4), v8+int32(32))
+										v104 = F_errdetail(m, int32(_a_F_check_role_grantor_4), v8+int32(32))
 										mBase = m.M
 										v105 = m.ExcPending
 										if v105 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_check_role_grantor_1), int32(2252), int32(_a_F_check_role_grantor_2))
+											F_errfinish(m, int32(_a_F_check_role_grantor_1), int32(2265), int32(_a_F_check_role_grantor_2))
 											mBase = m.M
 											v110 = m.ExcPending
 											if v110 != 0 {
@@ -767,13 +773,13 @@ func F_check_role_grantor(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v59
 													*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(_a_F_check_role_grantor_5)
-													F_errdetail(m, int32(_a_F_check_role_grantor_6), v8)
+													v65 = F_errdetail(m, int32(_a_F_check_role_grantor_6), v8)
 													mBase = m.M
 													v66 = m.ExcPending
 													if v66 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_check_role_grantor_1), int32(2261), int32(_a_F_check_role_grantor_2))
+														F_errfinish(m, int32(_a_F_check_role_grantor_1), int32(2274), int32(_a_F_check_role_grantor_2))
 														mBase = m.M
 														v71 = m.ExcPending
 														if v71 != 0 {
@@ -827,13 +833,13 @@ func F_check_role_grantor(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = v128
-										F_errdetail(m, int32(_a_F_check_role_grantor_8), v8-int32(-64))
+										v134 = F_errdetail(m, int32(_a_F_check_role_grantor_8), v8-int32(-64))
 										mBase = m.M
 										v135 = m.ExcPending
 										if v135 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_check_role_grantor_1), int32(2271), int32(_a_F_check_role_grantor_2))
+											F_errfinish(m, int32(_a_F_check_role_grantor_1), int32(2284), int32(_a_F_check_role_grantor_2))
 											mBase = m.M
 											v140 = m.ExcPending
 											if v140 != 0 {
@@ -861,176 +867,362 @@ func F_check_role_grantor(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 func F_get_role_password(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
-	var v20 int32
-	_ = v20
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
 	var v21 int32
 	_ = v21
 	var v26 int32
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
-	var v32 int32
-	_ = v32
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
+	var v33 int64
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
 	var v39 int32
 	_ = v39
-	var v40 int32
-	_ = v40
+	var v44 int32
+	_ = v44
 	var v45 int32
 	_ = v45
-	var v46 int32
-	_ = v46
-	var v47 int32
-	_ = v47
-	var v50 int64
-	_ = v50
-	var v51 int64
-	_ = v51
-	var v53 int32
-	_ = v53
-	var v54 int32
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v54 int64
 	_ = v54
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
 	var v58 int32
 	_ = v58
 	var v59 int32
 	_ = v59
-	var v60 int32
-	_ = v60
 	var v63 int64
 	_ = v63
-	var v64 int64
-	_ = v64
-	var v78 int32
-	_ = v78
-	var v79 int32
-	_ = v79
-	var v83 int32
-	_ = v83
-	var v86 int32
-	_ = v86
-	v7 = m.G0
-	v9 = v7 - int32(48)
-	m.G0 = v9
-	v12 = F_SearchSysCache1(m, int32(10), l0)
+	var v67 int32
+	_ = v67
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v72 int64
+	_ = v72
+	var v73 int64
+	_ = v73
+	var v81 int64
+	_ = v81
+	var v84 int64
+	_ = v84
+	var v88 int64
+	_ = v88
+	var v90 int64
+	_ = v90
+	var v92 int32
+	_ = v92
+	var v93 int32
+	_ = v93
+	var v96 int32
+	_ = v96
+	var v98 int64
+	_ = v98
+	var v99 int64
+	_ = v99
+	var v102 int32
+	_ = v102
+	var v103 int64
+	_ = v103
+	var v104 int64
+	_ = v104
+	var v107 int64
+	_ = v107
+	var v109 int64
+	_ = v109
+	var v111 int32
+	_ = v111
+	var v112 int32
+	_ = v112
+	var v121 int32
+	_ = v121
+	var v124 int32
+	_ = v124
+	var v125 int32
+	_ = v125
+	var v134 int32
+	_ = v134
+	var v137 int32
+	_ = v137
+	var v138 int32
+	_ = v138
+	var v147 int32
+	_ = v147
+	var v150 int32
+	_ = v150
+	var v151 int32
+	_ = v151
+	var v156 int32
+	_ = v156
+	var v157 int32
+	_ = v157
+	var v158 int32
+	_ = v158
+	var v161 int32
+	_ = v161
+	var v168 int32
+	_ = v168
+	var v169 int32
+	_ = v169
+	var v178 int32
+	_ = v178
+	v12 = m.G0
+	v14 = v12 - int32(112)
+	m.G0 = v14
+	v18 = F_SearchSysCache1(m, int32(10), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	v21 = m.ExcPending
+	if v21 != 0 {
 		return int32(0)
 	} else {
-		if v12 == int32(0) {
-			*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-			v20 = F_psprintf(m, int32(_a_F_get_role_password_0), v9)
-			mBase = m.M
-			v21 = m.ExcPending
-			if v21 != 0 {
-				return int32(0)
-			} else {
-				v83 = v20
-				*(*int32)(unsafe.Add(mBase, uint32(l1))) = v83
-				v86 = int32(0)
-				m.G0 = v9 + int32(48)
-				return v86
-			}
-		} else {
-			v26 = F_SysCacheGetAttr(m, int32(10), v12, int32(11), v9+int32(47))
+		if v18 == int32(0) {
+			*(*int32)(unsafe.Add(mBase, uint32(v14))) = l0
+			v26 = F_psprintf(m, int32(_a_F_get_role_password_0), v14)
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {
 				return int32(0)
 			} else {
-				v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+47)))
-				if v28 == int32(1) {
-					F_ReleaseCatCache(m, v12)
+				*(*int32)(unsafe.Add(mBase, uint32(l1))) = v26
+				v178 = int32(0)
+				m.G0 = v14 + int32(112)
+				return v178
+			}
+		} else {
+			v33 = F_SysCacheGetAttr(m, int32(10), v18, int32(11), v14+int32(111))
+			mBase = m.M
+			v34 = m.ExcPending
+			if v34 != 0 {
+				return int32(0)
+			} else {
+				v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+111)))
+				if v35 == int32(1) {
+					F_ReleaseCatCache(m, v18)
 					mBase = m.M
-					v32 = m.ExcPending
-					if v32 != 0 {
+					v39 = m.ExcPending
+					if v39 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l0
-						v37 = F_psprintf(m, int32(_a_F_get_role_password_1), v9+int32(16))
+						*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = l0
+						v44 = F_psprintf(m, int32(_a_F_get_role_password_1), v14+int32(16))
 						mBase = m.M
-						v38 = m.ExcPending
-						if v38 != 0 {
+						v45 = m.ExcPending
+						if v45 != 0 {
 							return int32(0)
 						} else {
-							v83 = v37
-							*(*int32)(unsafe.Add(mBase, uint32(l1))) = v83
-							v86 = int32(0)
-							m.G0 = v9 + int32(48)
-							return v86
+							*(*int32)(unsafe.Add(mBase, uint32(l1))) = v44
+							v178 = int32(0)
+							m.G0 = v14 + int32(112)
+							return v178
 						}
 					}
 				} else {
-					v39 = F_text_to_cstring(m, v26)
+					v48 = F_text_to_cstring(m, base.I32_wrap_i64(v33))
 					mBase = m.M
-					v40 = m.ExcPending
-					if v40 != 0 {
+					v49 = m.ExcPending
+					if v49 != 0 {
 						return int32(0)
 					} else {
-						v45 = F_SysCacheGetAttr(m, int32(10), v12, int32(12), v9+int32(47))
+						v54 = F_SysCacheGetAttr(m, int32(10), v18, int32(12), v14+int32(111))
 						mBase = m.M
-						v46 = m.ExcPending
-						if v46 != 0 {
+						v55 = m.ExcPending
+						if v55 != 0 {
 							return int32(0)
 						} else {
-							v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+47)))
-							if v47 == int32(0) {
-								v50 = *(*int64)(unsafe.Add(mBase, uint32(v45)))
-								v51 = v50
-							} else {
-								v51 = int64(0)
-							}
-							F_ReleaseCatCache(m, v12)
+							v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+111)))
+							F_ReleaseCatCache(m, v18)
 							mBase = m.M
-							v53 = m.ExcPending
-							if v53 != 0 {
+							v58 = m.ExcPending
+							if v58 != 0 {
 								return int32(0)
 							} else {
-								v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+47)))
-								if v54 != 0 {
-									v86 = v39
-									m.G0 = v9 + int32(48)
-									return v86
+								v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+111)))
+								if v59 != 0 {
+									v178 = v48
+									m.G0 = v14 + int32(112)
+									return v178
 								} else {
-									v58 = m.G0
-									v59 = int32(16)
-									v60 = v58 - v59
-									m.G0 = v60
-									F_gettimeofday(m, v60)
-									mBase = m.M
-									v63 = *(*int64)(unsafe.Add(mBase, uint32(v60)))
-									v64 = int64(*(*int32)(unsafe.Add(mBase, uint32(v60)+8)))
-									m.G0 = v60 + v59
-									if v64+v63*int64(1000000)-int64(946684800000000) <= v51 {
-										v86 = v39
-										m.G0 = v9 + int32(48)
-										return v86
+									if v56&int32(1) != 0 {
+										v63 = int64(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l0
-										v78 = F_psprintf(m, int32(_a_F_get_role_password_2), v9+int32(32))
+										v63 = v54
+									}
+									v67 = m.G0
+									v68 = int32(16)
+									v69 = v67 - v68
+									m.G0 = v69
+									F_gettimeofday(m, v69)
+									mBase = m.M
+									v72 = *(*int64)(unsafe.Add(mBase, uint32(v69)))
+									v73 = int64(*(*int32)(unsafe.Add(mBase, uint32(v69)+8)))
+									m.G0 = v69 + v68
+									v81 = v73 + v72*int64(1000000) - int64(946684800000000)
+									if v81 <= v63 {
+										v84 = int64(*(*int32)(unsafe.Add(mBase, _c_F_get_role_password[0])))
+										if v81 < v63 {
+											v88 = v63 - v81
+										} else {
+											v88 = int64(0)
+										}
+										v90 = base.I64_div_u_s(v88, int64(1000000))
+										if base.Ui64(v84) <= base.Ui64(v90) {
+											v178 = v48
+											m.G0 = v14 + int32(112)
+											return v178
+										} else {
+											v92 = int32(_a_F_get_role_password_2)
+											v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_role_password[1]))
+											v96 = *(*int32)(unsafe.Add(mBase, _c_F_get_role_password[2]))
+											*(*int32)(unsafe.Add(mBase, _c_F_get_role_password[1])) = v96
+											v98 = int64(3600000000)
+											v99 = base.I64_rem_u_s(v88, v98)
+											v102 = base.I32_div_u_s(base.I32_wrap_i64(v99), int32(60000000))
+											v103 = int64(86400000000)
+											v104 = base.I64_div_u_s(v88, v103)
+											v107 = v88 - v104*v103
+											v109 = base.I64_div_u_s(v107, v98)
+											v111 = F_pstrdup(m, int32(_a_F_get_role_password_3))
+											mBase = m.M
+											v112 = m.ExcPending
+											if v112 != 0 {
+												return int32(0)
+											} else {
+												if base.Ui64(int64(86400000000)) <= base.Ui64(v88) {
+													*(*uint32)(unsafe.Add(mBase, uint32(v14)+100)) = uint32(v104)
+													*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l0
+													if base.Ui64(v88) < base.Ui64(int64(172800000000)) {
+														v121 = int32(_a_F_get_role_password_4)
+													} else {
+														v121 = int32(_a_F_get_role_password_5)
+													}
+													v124 = F_psprintf(m, v121, v14+int32(96))
+													mBase = m.M
+													v125 = m.ExcPending
+													if v125 != 0 {
+														return int32(0)
+													} else {
+														v158 = v124
+														F_StoreConnectionWarning(m, v111, v158, int32(0))
+														mBase = m.M
+														v161 = m.ExcPending
+														if v161 != 0 {
+															return int32(0)
+														} else {
+															*(*int32)(unsafe.Add(mBase, _c_F_get_role_password[1])) = v93
+															v178 = v48
+															m.G0 = v14 + int32(112)
+															return v178
+														}
+													}
+												} else {
+													if base.Ui64(int64(3600000000)) <= base.Ui64(v107) {
+														*(*uint32)(unsafe.Add(mBase, uint32(v14)+84)) = uint32(v109)
+														*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l0
+														if base.Ui64(v107) < base.Ui64(int64(7200000000)) {
+															v134 = int32(_a_F_get_role_password_6)
+														} else {
+															v134 = int32(_a_F_get_role_password_7)
+														}
+														v137 = F_psprintf(m, v134, v14+int32(80))
+														mBase = m.M
+														v138 = m.ExcPending
+														if v138 != 0 {
+															return int32(0)
+														} else {
+															v158 = v137
+															F_StoreConnectionWarning(m, v111, v158, int32(0))
+															mBase = m.M
+															v161 = m.ExcPending
+															if v161 != 0 {
+																return int32(0)
+															} else {
+																*(*int32)(unsafe.Add(mBase, _c_F_get_role_password[1])) = v93
+																v178 = v48
+																m.G0 = v14 + int32(112)
+																return v178
+															}
+														}
+													} else {
+														if base.Ui64(int64(60000000)) <= base.Ui64(v99) {
+															*(*int32)(unsafe.Add(mBase, uint32(v14)+68)) = v102
+															*(*int32)(unsafe.Add(mBase, uint32(v14)+64)) = l0
+															if base.Ui64(v99) < base.Ui64(int64(120000000)) {
+																v147 = int32(_a_F_get_role_password_8)
+															} else {
+																v147 = int32(_a_F_get_role_password_9)
+															}
+															v150 = F_psprintf(m, v147, v14-int32(-64))
+															mBase = m.M
+															v151 = m.ExcPending
+															if v151 != 0 {
+																return int32(0)
+															} else {
+																v158 = v150
+																F_StoreConnectionWarning(m, v111, v158, int32(0))
+																mBase = m.M
+																v161 = m.ExcPending
+																if v161 != 0 {
+																	return int32(0)
+																} else {
+																	*(*int32)(unsafe.Add(mBase, _c_F_get_role_password[1])) = v93
+																	v178 = v48
+																	m.G0 = v14 + int32(112)
+																	return v178
+																}
+															}
+														} else {
+															*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = l0
+															v156 = F_psprintf(m, int32(_a_F_get_role_password_10), v14+int32(48))
+															mBase = m.M
+															v157 = m.ExcPending
+															if v157 != 0 {
+																return int32(0)
+															} else {
+																v158 = v156
+																F_StoreConnectionWarning(m, v111, v158, int32(0))
+																mBase = m.M
+																v161 = m.ExcPending
+																if v161 != 0 {
+																	return int32(0)
+																} else {
+																	*(*int32)(unsafe.Add(mBase, _c_F_get_role_password[1])) = v93
+																	v178 = v48
+																	m.G0 = v14 + int32(112)
+																	return v178
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									} else {
+										*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = l0
+										v168 = F_psprintf(m, int32(_a_F_get_role_password_11), v14+int32(32))
 										mBase = m.M
-										v79 = m.ExcPending
-										if v79 != 0 {
+										v169 = m.ExcPending
+										if v169 != 0 {
 											return int32(0)
 										} else {
-											v83 = v78
-											*(*int32)(unsafe.Add(mBase, uint32(l1))) = v83
-											v86 = int32(0)
-											m.G0 = v9 + int32(48)
-											return v86
+											*(*int32)(unsafe.Add(mBase, uint32(l1))) = v168
+											v178 = int32(0)
+											m.G0 = v14 + int32(112)
+											return v178
 										}
 									}
 								}

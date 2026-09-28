@@ -36,6 +36,8 @@ func F_InitializeMaxBackends(m *base.Module) {
 	_ = v44
 	var v47 int32
 	_ = v47
+	var v50 int32
+	_ = v50
 	var v51 int32
 	_ = v51
 	var v56 int32
@@ -77,13 +79,13 @@ func F_InitializeMaxBackends(m *base.Module) {
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+8)) = v44
 					v47 = *(*int32)(unsafe.Add(mBase, _c_F_InitializeMaxBackends[0]))
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = v47
-					F_errdetail(m, int32(_a_F_InitializeMaxBackends_3), v5)
+					v50 = F_errdetail(m, int32(_a_F_InitializeMaxBackends_3), v5)
 					mBase = m.M
 					v51 = m.ExcPending
 					if v51 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_InitializeMaxBackends_4), int32(570), int32(_a_F_InitializeMaxBackends_5))
+						F_errfinish(m, int32(_a_F_InitializeMaxBackends_4), int32(581), int32(_a_F_InitializeMaxBackends_5))
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -100,46 +102,5 @@ func F_InitializeMaxBackends(m *base.Module) {
 	} else {
 		m.G0 = v5 + int32(32)
 		return
-	}
-}
-func F_MaxLivePostmasterChildren(m *base.Module) int32 {
-	mBase := m.M
-	_ = mBase
-	var v3 int32
-	_ = v3
-	var v11 int32
-	_ = v11
-	var v15 int32
-	_ = v15
-	var v20 int32
-	_ = v20
-	v3 = *(*int32)(unsafe.Add(mBase, _c_F_MaxLivePostmasterChildren[0]))
-	if v3 == int32(0) {
-		F_errstart_cold(m, int32(21), int32(0))
-		mBase = m.M
-		v11 = m.ExcPending
-		if v11 != 0 {
-			return int32(0)
-		} else {
-			F_errmsg_internal(m, int32(_a_F_MaxLivePostmasterChildren_0), int32(0))
-			mBase = m.M
-			v15 = m.ExcPending
-			if v15 != 0 {
-				return int32(0)
-			} else {
-				F_errfinish(m, int32(_a_F_MaxLivePostmasterChildren_1), int32(73), int32(_a_F_MaxLivePostmasterChildren_2))
-				mBase = m.M
-				v20 = m.ExcPending
-				if v20 != 0 {
-					return int32(0)
-				} else {
-					base.Wasm_trap_unreachable()
-					for {
-					}
-				}
-			}
-		}
-	} else {
-		return v3
 	}
 }

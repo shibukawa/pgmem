@@ -264,7 +264,7 @@ L3:
 	}
 L4:
 	;
-	v215 = F_raw_expression_tree_walker_impl(m, l0, int32(484), l1)
+	v215 = F_raw_expression_tree_walker_impl(m, l0, int32(519), l1)
 	mBase = m.M
 	v216 = m.ExcPending
 	if v216 != 0 {
@@ -689,7 +689,7 @@ L70:
 	}
 L71:
 	;
-	v276 = F_raw_expression_tree_walker_impl(m, l0, int32(484), l1)
+	v276 = F_raw_expression_tree_walker_impl(m, l0, int32(519), l1)
 	mBase = m.M
 	v277 = m.ExcPending
 	if v277 != 0 {
@@ -764,7 +764,7 @@ L80:
 	}
 L81:
 	;
-	v334 = F_raw_expression_tree_walker_impl(m, l0, int32(484), l1)
+	v334 = F_raw_expression_tree_walker_impl(m, l0, int32(519), l1)
 	mBase = m.M
 	v335 = m.ExcPending
 	if v335 != 0 {

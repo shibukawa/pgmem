@@ -103,7 +103,7 @@ L4:
 L5:
 	;
 	v45 = *(*int32)(unsafe.Add(mBase, uint32(v21+int32(8)+v32<<(uint(int32(2))%32))))
-	v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45)+44)))
+	v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45)+48)))
 	if v46 != int32(1) {
 		v59 = v35
 		goto L8
@@ -133,8 +133,8 @@ L9:
 	;
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(v31)))
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v45)+4))
-	v53 = v49 + v50*int32(640)
-	v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+52))
+	v53 = v49 + v50*int32(768)
+	v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+40))
 	if v28 != v54 {
 		v59 = v35
 		goto L8
@@ -143,7 +143,7 @@ L9:
 	}
 L10:
 	;
-	v56 = *(*int32)(unsafe.Add(mBase, uint32(v53)+56))
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(v53)+44))
 	if v27 != v56 {
 		v59 = v35
 		goto L8
@@ -169,6 +169,82 @@ L13:
 L14:
 	;
 	return v69
+}
+func F_TwoPhaseShmemInit(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v10 int32
+	_ = v10
+	var v14 int32
+	_ = v14
+	var v24 int32
+	_ = v24
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
+	v2 = int32(0)
+	v5 = int32(_a_F_TwoPhaseShmemInit_0)
+	v6 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemInit[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v2
+	v10 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemInit[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v2
+	v14 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemInit[1]))
+	if v2 < v14 {
+		v24 = v2
+		for {
+			v29 = v10 + (v14<<(uint(int32(2))%32)+int32(15))&int32(-8) + v24<<(uint(int32(8))%32)
+			v30 = int32(_a_F_TwoPhaseShmemInit_0)
+			v31 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemInit[0]))
+			v32 = *(*int32)(unsafe.Add(mBase, uint32(v31)))
+			*(*int32)(unsafe.Add(mBase, uint32(v29))) = v32
+			v35 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemInit[0]))
+			*(*int32)(unsafe.Add(mBase, uint32(v35))) = v29
+			v38 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemInit[2]))
+			v39 = int32(768)
+			v43 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemInit[3]))
+			v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
+			v47 = base.I32_div_s(v38+v24*v39-v44, v39)
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+4)) = v47
+			v50 = v24 + int32(1)
+			v52 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemInit[1]))
+			if v50 < v52 {
+				v24 = v50
+				continue
+			} else {
+				break
+			}
+			break
+		}
+	} else {
+	}
+	return
 }
 func F_TwoPhaseTransactionGid(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
@@ -211,7 +287,7 @@ func F_TwoPhaseTransactionGid(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v21 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_TwoPhaseTransactionGid_1), int32(2689), int32(_a_F_TwoPhaseTransactionGid_2))
+					F_errfinish(m, int32(_a_F_TwoPhaseTransactionGid_1), int32(2760), int32(_a_F_TwoPhaseTransactionGid_2))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {

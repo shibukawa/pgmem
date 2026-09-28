@@ -20,9 +20,6 @@ func F_pg_finfo_autoprewarm_dump_now(m *base.Module) int32 {
 func F_pg_finfo_avals(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_avals_0)
 }
-func F_pg_finfo_big5_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_big5_to_mic_0)
-}
 func F_pg_finfo_big5_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_big5_to_utf8_0)
 }
@@ -67,12 +64,6 @@ func F_pg_finfo_ean13_out(m *base.Module) int32 {
 }
 func F_pg_finfo_euc_jis_2004_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jis_2004_to_utf8_0)
-}
-func F_pg_finfo_euc_kr_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_euc_kr_to_mic_0)
-}
-func F_pg_finfo_euc_tw_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_euc_tw_to_mic_0)
 }
 func F_pg_finfo_float4_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_float4_dist_0)
@@ -320,9 +311,6 @@ func F_pg_finfo_isn_out(m *base.Module) int32 {
 func F_pg_finfo_iso8859_1_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso8859_1_to_utf8_0)
 }
-func F_pg_finfo_iso_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_iso_to_mic_0)
-}
 func F_pg_finfo_issn_cast_from_ean13(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_issn_cast_from_ean13_0)
 }
@@ -334,9 +322,6 @@ func F_pg_finfo_koi8r_to_utf8(m *base.Module) int32 {
 }
 func F_pg_finfo_l1_distance(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_l1_distance_0)
-}
-func F_pg_finfo_latin1_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_latin1_to_mic_0)
 }
 func F_pg_finfo_latin2_to_win1250(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_latin2_to_win1250_0)
@@ -367,15 +352,6 @@ func F_pg_finfo_ltree_risparent(m *base.Module) int32 {
 }
 func F_pg_finfo_ltxtq_in(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ltxtq_in_0)
-}
-func F_pg_finfo_mic_to_euc_tw(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_euc_tw_0)
-}
-func F_pg_finfo_mic_to_iso(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_iso_0)
-}
-func F_pg_finfo_mic_to_latin1(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_latin1_0)
 }
 func F_pg_finfo_pg_buffercache_numa_pages(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_buffercache_numa_pages_0)

@@ -229,7 +229,7 @@ func F_record_type_typmod_hash(m *base.Module, l0 int32, l1 int32) int32 {
 		v27 = v22
 		v28 = v4
 		for {
-			v35 = *(*int32)(unsafe.Add(mBase, uint32(v3+v27<<(uint(int32(4))%32)+v28*int32(100))+88))
+			v35 = *(*int32)(unsafe.Add(mBase, uint32(v3+v27<<(uint(int32(3))%32)+v28*int32(100))+96))
 			v36 = F_hash_bytes_uint32(m, v35)
 			mBase = m.M
 			v45 = v36 + (v26<<(uint(int32(6))%32) + int32(base.Ui32(v26)>>(uint(int32(2))%32))) - int32(1640531527) ^ v26
@@ -472,7 +472,7 @@ L20:
 L21:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(498)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(532)
 	v98 = int32(_a_F_typeStringToTypeName_1)
 	v99 = *(*int32)(unsafe.Add(mBase, _c_F_typeStringToTypeName[2]))
 	*(*int32)(unsafe.Add(mBase, _c_F_typeStringToTypeName[2])) = v7 + int32(4)
@@ -612,37 +612,37 @@ func F_typeTypeId(m *base.Module, l0 int32) int32 {
 func F_type_is_collatable(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v7 int32
-	_ = v7
-	var v12 int32
-	_ = v12
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
 	var v13 int32
 	_ = v13
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	v4 = F_SearchSysCache1(m, int32(82), l0)
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	v5 = F_SearchSysCache1(m, int32(82), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v7 = m.ExcPending
-	if v7 != 0 {
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return int32(0)
 	} else {
-		if v4 == int32(0) {
+		if v5 == int32(0) {
 			return int32(0)
 		} else {
-			v12 = *(*int32)(unsafe.Add(mBase, uint32(v4)+16))
-			v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+22)))
-			v15 = *(*int32)(unsafe.Add(mBase, uint32(v12+v13)+144))
-			F_ReleaseCatCache(m, v4)
+			v13 = *(*int32)(unsafe.Add(mBase, uint32(v5)+16))
+			v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+22)))
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v13+v14)+144))
+			F_ReleaseCatCache(m, v5)
 			mBase = m.M
-			v17 = m.ExcPending
-			if v17 != 0 {
+			v18 = m.ExcPending
+			if v18 != 0 {
 				return int32(0)
 			} else {
-				return base.B2i32(v15 != int32(0))
+				return base.B2i32(v16 != int32(0))
 			}
 		}
 	}

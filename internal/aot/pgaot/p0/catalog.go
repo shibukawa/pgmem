@@ -62,7 +62,7 @@ func F_CatalogTupleUpdate(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		v15 = int32(0)
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+52)) = v15
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = l0
-		*(*int64)(unsafe.Add(mBase, uint32(v13))) = int64(388)
+		*(*int64)(unsafe.Add(mBase, uint32(v13))) = int64(394)
 		F_ExecOpenIndices(m, v13, v15)
 		mBase = m.M
 		v22 = m.ExcPending

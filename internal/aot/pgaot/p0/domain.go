@@ -124,7 +124,7 @@ func F_domainAddNotNullConstraint(m *base.Module, l0 int32, l1 int32, l2 int32, 
 						if v31 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_domainAddNotNullConstraint_2), int32(3684), int32(_a_F_domainAddNotNullConstraint_3))
+							F_errfinish(m, int32(_a_F_domainAddNotNullConstraint_2), int32(3752), int32(_a_F_domainAddNotNullConstraint_3))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {

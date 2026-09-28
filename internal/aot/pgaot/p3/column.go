@@ -178,7 +178,7 @@ L17:
 	;
 	goto L1
 }
-func F_has_column_privilege_name_id_attnum(m *base.Module, l0 int32) int32 {
+func F_has_column_privilege_name_id_attnum(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -207,99 +207,99 @@ func F_has_column_privilege_name_id_attnum(m *base.Module, l0 int32) int32 {
 	_ = v24
 	var v25 int32
 	_ = v25
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
 	var v33 int32
 	_ = v33
 	var v34 int32
 	_ = v34
 	var v35 int32
 	_ = v35
-	var v36 int32
-	_ = v36
 	var v37 int32
 	_ = v37
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
-	var v44 int32
-	_ = v44
-	var v49 int32
-	_ = v49
+	var v41 int32
+	_ = v41
+	var v46 int64
+	_ = v46
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v12 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+56)))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 	v16 = F_pg_detoast_datum_packed(m, v15)
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v20 = F_get_role_oid_or_public(m, v14)
 		mBase = m.M
 		v21 = m.ExcPending
 		if v21 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v23 = F_convert_any_priv_string(m, v16, int32(_a_F_has_column_privilege_name_id_attnum_0))
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v25 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)) = uint8(v25)
-				if v13&int32(_a_F_has_column_privilege_name_id_attnum_1) == v25 {
-					v44 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v44)
-					v49 = int32(0)
+				if v12 == v25 {
+					v41 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v41)
+					v46 = int64(0)
 					m.G0 = v10 + int32(16)
-					return v49
+					return v46
 				} else {
-					v33 = v10 + int32(15)
-					v34 = F_pg_attribute_aclcheck_ext(m, v12, base.I32_extend16_s(v13), v20, v23, v33)
+					v30 = v10 + int32(15)
+					v31 = F_pg_attribute_aclcheck_ext(m, v13, v12, v20, v23, v30)
 					mBase = m.M
-					v35 = m.ExcPending
-					if v35 != 0 {
-						return int32(0)
+					v32 = m.ExcPending
+					if v32 != 0 {
+						return int64(0)
 					} else {
-						if v34 != 0 {
-							v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)))
-							if v36 != 0 {
-								v44 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v44)
-								v49 = int32(0)
+						if v31 != 0 {
+							v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)))
+							if v33 != 0 {
+								v41 = int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v41)
+								v46 = int64(0)
 								m.G0 = v10 + int32(16)
-								return v49
+								return v46
 							} else {
-								v37 = F_pg_class_aclcheck_ext(m, v12, v20, v23, v33)
+								v34 = F_pg_class_aclcheck_ext(m, v13, v20, v23, v30)
 								mBase = m.M
-								v38 = m.ExcPending
-								if v38 != 0 {
-									return int32(0)
+								v35 = m.ExcPending
+								if v35 != 0 {
+									return int64(0)
 								} else {
-									if v37 != 0 {
-										v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)))
-										if v40 == int32(0) {
+									if v34 != 0 {
+										v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)))
+										if v37 == int32(0) {
 										} else {
-											v44 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v44)
+											v41 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v41)
 										}
-										v49 = int32(0)
+										v46 = int64(0)
 									} else {
-										v49 = int32(1)
+										v46 = int64(1)
 									}
 									m.G0 = v10 + int32(16)
-									return v49
+									return v46
 								}
 							}
 						} else {
-							v49 = int32(1)
+							v46 = int64(1)
 							m.G0 = v10 + int32(16)
-							return v49
+							return v46
 						}
 					}
 				}
@@ -307,7 +307,7 @@ func F_has_column_privilege_name_id_attnum(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_column_privilege_name_id_name(m *base.Module, l0 int32) int32 {
+func F_has_column_privilege_name_id_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -360,51 +360,51 @@ func F_has_column_privilege_name_id_name(m *base.Module, l0 int32) int32 {
 	_ = v41
 	var v45 int32
 	_ = v45
-	var v50 int32
+	var v50 int64
 	_ = v50
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	v15 = F_pg_detoast_datum_packed(m, v14)
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+		v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 		v20 = F_pg_detoast_datum_packed(m, v19)
 		mBase = m.M
 		v21 = m.ExcPending
 		if v21 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v22 = F_get_role_oid_or_public(m, v13)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v24 = F_convert_column_name(m, v12, v15)
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v27 = F_convert_any_priv_string(m, v20, int32(_a_F_has_column_privilege_name_id_name_0))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v29 = int32(0)
 						*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)) = uint8(v29)
 						if v24 == v29 {
 							v45 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v45)
-							v50 = int32(0)
+							v50 = int64(0)
 							m.G0 = v10 + int32(16)
 							return v50
 						} else {
@@ -413,14 +413,14 @@ func F_has_column_privilege_name_id_name(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								if v35 != 0 {
 									v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)))
 									if v37 != 0 {
 										v45 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v45)
-										v50 = int32(0)
+										v50 = int64(0)
 										m.G0 = v10 + int32(16)
 										return v50
 									} else {
@@ -428,7 +428,7 @@ func F_has_column_privilege_name_id_name(m *base.Module, l0 int32) int32 {
 										mBase = m.M
 										v39 = m.ExcPending
 										if v39 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											if v38 != 0 {
 												v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)))
@@ -437,16 +437,16 @@ func F_has_column_privilege_name_id_name(m *base.Module, l0 int32) int32 {
 													v45 = int32(1)
 													*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v45)
 												}
-												v50 = int32(0)
+												v50 = int64(0)
 											} else {
-												v50 = int32(1)
+												v50 = int64(1)
 											}
 											m.G0 = v10 + int32(16)
 											return v50
 										}
 									}
 								} else {
-									v50 = int32(1)
+									v50 = int64(1)
 									m.G0 = v10 + int32(16)
 									return v50
 								}
@@ -458,7 +458,7 @@ func F_has_column_privilege_name_id_name(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_column_privilege_name_name_name(m *base.Module, l0 int32) int32 {
+func F_has_column_privilege_name_name_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -529,76 +529,76 @@ func F_has_column_privilege_name_name_name(m *base.Module, l0 int32) int32 {
 	_ = v53
 	var v57 int32
 	_ = v57
-	var v62 int32
+	var v62 int64
 	_ = v62
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v14 = F_pg_detoast_datum_packed(m, v13)
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v19 = F_pg_detoast_datum_packed(m, v18)
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 			v22 = F_pg_detoast_datum_packed(m, v21)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v24 = F_get_role_oid_or_public(m, v12)
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v26 = F_textToQualifiedNameList(m, v14)
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v28 = F_makeRangeVarFromNameList(m, v26)
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v30 = int32(0)
 							v34 = F_RangeVarGetRelidExtended(m, v28, v30, v30, v30, v30)
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v36 = F_convert_column_name(m, v34, v19)
 								mBase = m.M
 								v37 = m.ExcPending
 								if v37 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									v39 = F_convert_any_priv_string(m, v22, int32(_a_F_has_column_privilege_name_name_name_0))
 									mBase = m.M
 									v40 = m.ExcPending
 									if v40 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										v41 = int32(0)
 										*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)) = uint8(v41)
 										if v36 == v41 {
 											v57 = int32(1)
 											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v57)
-											v62 = int32(0)
+											v62 = int64(0)
 											m.G0 = v10 + int32(16)
 											return v62
 										} else {
@@ -607,14 +607,14 @@ func F_has_column_privilege_name_name_name(m *base.Module, l0 int32) int32 {
 											mBase = m.M
 											v48 = m.ExcPending
 											if v48 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												if v47 != 0 {
 													v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)))
 													if v49 != 0 {
 														v57 = int32(1)
 														*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v57)
-														v62 = int32(0)
+														v62 = int64(0)
 														m.G0 = v10 + int32(16)
 														return v62
 													} else {
@@ -622,7 +622,7 @@ func F_has_column_privilege_name_name_name(m *base.Module, l0 int32) int32 {
 														mBase = m.M
 														v51 = m.ExcPending
 														if v51 != 0 {
-															return int32(0)
+															return int64(0)
 														} else {
 															if v50 != 0 {
 																v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+15)))
@@ -631,16 +631,16 @@ func F_has_column_privilege_name_name_name(m *base.Module, l0 int32) int32 {
 																	v57 = int32(1)
 																	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v57)
 																}
-																v62 = int32(0)
+																v62 = int64(0)
 															} else {
-																v62 = int32(1)
+																v62 = int64(1)
 															}
 															m.G0 = v10 + int32(16)
 															return v62
 														}
 													}
 												} else {
-													v62 = int32(1)
+													v62 = int64(1)
 													m.G0 = v10 + int32(16)
 													return v62
 												}

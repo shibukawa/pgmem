@@ -174,7 +174,7 @@ func F_tuplestore_alloc_read_pointer(m *base.Module, l0 int32, l1 int32) int32 {
 					if v64 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_tuplestore_alloc_read_pointer_1), int32(401), int32(_a_F_tuplestore_alloc_read_pointer_2))
+						F_errfinish(m, int32(_a_F_tuplestore_alloc_read_pointer_1), int32(402), int32(_a_F_tuplestore_alloc_read_pointer_2))
 						mBase = m.M
 						v69 = m.ExcPending
 						if v69 != 0 {
@@ -257,7 +257,7 @@ func F_tuplestore_alloc_read_pointer(m *base.Module, l0 int32, l1 int32) int32 {
 				if v64 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_tuplestore_alloc_read_pointer_1), int32(401), int32(_a_F_tuplestore_alloc_read_pointer_2))
+					F_errfinish(m, int32(_a_F_tuplestore_alloc_read_pointer_1), int32(402), int32(_a_F_tuplestore_alloc_read_pointer_2))
 					mBase = m.M
 					v69 = m.ExcPending
 					if v69 != 0 {
@@ -577,7 +577,7 @@ func F_tuplestore_copy_read_pointer(m *base.Module, l0 int32, l1 int32, l2 int32
 					if v217 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_tuplestore_copy_read_pointer_1), int32(1394), int32(_a_F_tuplestore_copy_read_pointer_2))
+						F_errfinish(m, int32(_a_F_tuplestore_copy_read_pointer_1), int32(1439), int32(_a_F_tuplestore_copy_read_pointer_2))
 						mBase = m.M
 						v222 = m.ExcPending
 						if v222 != 0 {
@@ -624,7 +624,7 @@ func F_tuplestore_copy_read_pointer(m *base.Module, l0 int32, l1 int32, l2 int32
 										if v158 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(_a_F_tuplestore_copy_read_pointer_1), int32(1373), int32(_a_F_tuplestore_copy_read_pointer_2))
+											F_errfinish(m, int32(_a_F_tuplestore_copy_read_pointer_1), int32(1418), int32(_a_F_tuplestore_copy_read_pointer_2))
 											mBase = m.M
 											v163 = m.ExcPending
 											if v163 != 0 {
@@ -669,7 +669,7 @@ func F_tuplestore_copy_read_pointer(m *base.Module, l0 int32, l1 int32, l2 int32
 										if v180 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(_a_F_tuplestore_copy_read_pointer_1), int32(1382), int32(_a_F_tuplestore_copy_read_pointer_2))
+											F_errfinish(m, int32(_a_F_tuplestore_copy_read_pointer_1), int32(1427), int32(_a_F_tuplestore_copy_read_pointer_2))
 											mBase = m.M
 											v185 = m.ExcPending
 											if v185 != 0 {
@@ -694,8 +694,8 @@ func F_tuplestore_copy_read_pointer(m *base.Module, l0 int32, l1 int32, l2 int32
 							v188 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 							v193 = *(*int32)(unsafe.Add(mBase, uint32(v188)+24))
 							*(*int32)(unsafe.Add(mBase, uint32(v20+int32(12)))) = v193
-							v195 = *(*int64)(unsafe.Add(mBase, uint32(v188)+32))
-							v196 = int64(*(*int32)(unsafe.Add(mBase, uint32(v188)+40)))
+							v195 = *(*int64)(unsafe.Add(mBase, uint32(v188)+40))
+							v196 = *(*int64)(unsafe.Add(mBase, uint32(v188)+32))
 							*(*int64)(unsafe.Add(mBase, uint32(v20+int32(16)))) = v195 + v196
 						}
 					}
@@ -921,76 +921,74 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v128
 	var v130 int32
 	_ = v130
-	var v136 int32
-	_ = v136
-	var v137 int32
-	_ = v137
 	var v138 int32
 	_ = v138
-	var v144 int32
-	_ = v144
-	var v145 int32
-	_ = v145
-	var v151 int32
-	_ = v151
-	var v153 int32
-	_ = v153
+	var v139 int32
+	_ = v139
+	var v140 int32
+	_ = v140
+	var v148 int32
+	_ = v148
+	var v149 int32
+	_ = v149
+	var v155 int32
+	_ = v155
 	var v157 int32
 	_ = v157
-	var v162 int32
-	_ = v162
-	var v163 int32
-	_ = v163
-	var v168 int32
-	_ = v168
-	var v169 int32
-	_ = v169
-	var v170 int32
-	_ = v170
+	var v161 int32
+	_ = v161
+	var v166 int32
+	_ = v166
+	var v167 int32
+	_ = v167
 	var v172 int32
 	_ = v172
 	var v173 int32
 	_ = v173
 	var v174 int32
 	_ = v174
-	var v175 int32
-	_ = v175
-	var v180 int32
-	_ = v180
-	var v181 int32
-	_ = v181
-	var v182 int32
-	_ = v182
-	var v183 int32
-	_ = v183
+	var v176 int32
+	_ = v176
+	var v177 int32
+	_ = v177
+	var v178 int32
+	_ = v178
 	var v184 int32
 	_ = v184
+	var v185 int32
+	_ = v185
+	var v186 int32
+	_ = v186
+	var v187 int32
+	_ = v187
 	var v188 int32
 	_ = v188
 	var v192 int32
 	_ = v192
-	var v197 int32
-	_ = v197
-	var v198 int32
-	_ = v198
+	var v196 int32
+	_ = v196
+	var v201 int32
+	_ = v201
 	var v202 int32
 	_ = v202
-	var v210 int32
-	_ = v210
-	var v212 int32
-	_ = v212
+	var v206 int32
+	_ = v206
+	var v214 int32
+	_ = v214
 	var v216 int32
 	_ = v216
-	var v221 int32
-	_ = v221
+	var v220 int32
+	_ = v220
 	var v225 int32
 	_ = v225
-	var v227 int32
-	_ = v227
+	var v229 int32
+	_ = v229
 	var v231 int32
 	_ = v231
-	var v236 int32
-	_ = v236
+	var v235 int32
+	_ = v235
+	var v240 int32
+	_ = v240
 	v4 = int32(0)
 	v7 = m.G0
 	v9 = v7 - int32(16)
@@ -1006,19 +1004,19 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)))
 		if l1 != 0 {
 			if v19&int32(1) != 0 {
-				v202 = v4
+				v206 = v4
 			} else {
 				v22 = *(*int32)(unsafe.Add(mBase, uint32(v15)+8))
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
 				if v23 <= v22 {
-					v198 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v198)
-					v202 = v4
+					v202 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v202)
+					v206 = v4
 				} else {
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 					*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v22 + int32(1)
 					v32 = *(*int32)(unsafe.Add(mBase, uint32(v25+v22<<(uint(int32(2))%32))))
-					v202 = v32
+					v206 = v32
 				}
 			}
 		} else {
@@ -1030,40 +1028,40 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v44
 				v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
 				if v44 <= v46 {
-					v202 = int32(0)
+					v206 = int32(0)
 				} else {
 					v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 					v55 = *(*int32)(unsafe.Add(mBase, uint32(v49+v44<<(uint(int32(2))%32)-int32(4))))
-					v202 = v55
+					v206 = v55
 				}
 			} else {
 				v38 = *(*int32)(unsafe.Add(mBase, uint32(v15)+8))
 				v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
 				if v38 <= v39 {
-					v202 = v4
+					v206 = v4
 				} else {
 					v44 = v38 - int32(1)
 					*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v44
 					v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
 					if v44 <= v46 {
-						v202 = int32(0)
+						v206 = int32(0)
 					} else {
 						v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 						v55 = *(*int32)(unsafe.Add(mBase, uint32(v49+v44<<(uint(int32(2))%32)-int32(4))))
-						v202 = v55
+						v206 = v55
 					}
 				}
 			}
 		}
 		m.G0 = v9 + int32(16)
-		return v202
+		return v206
 	case 1:
 		if l1 == int32(0) {
 			v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 			v68 = *(*int32)(unsafe.Add(mBase, uint32(v63)+24))
 			*(*int32)(unsafe.Add(mBase, uint32(l0+int32(108)))) = v68
-			v70 = *(*int64)(unsafe.Add(mBase, uint32(v63)+32))
-			v71 = int64(*(*int32)(unsafe.Add(mBase, uint32(v63)+40)))
+			v70 = *(*int64)(unsafe.Add(mBase, uint32(v63)+40))
+			v71 = *(*int64)(unsafe.Add(mBase, uint32(v63)+32))
 			*(*int64)(unsafe.Add(mBase, uint32(l0+int32(112)))) = v70 + v71
 			v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)))
 			if v74 == int32(0) {
@@ -1079,26 +1077,26 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v81 != 0 {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v210 = m.ExcPending
-						if v210 != 0 {
+						v214 = m.ExcPending
+						if v214 != 0 {
 							return int32(0)
 						} else {
 							F_errcode_for_file_access(m)
 							mBase = m.M
-							v212 = m.ExcPending
-							if v212 != 0 {
+							v216 = m.ExcPending
+							if v216 != 0 {
 								return int32(0)
 							} else {
 								F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 								mBase = m.M
-								v216 = m.ExcPending
-								if v216 != 0 {
+								v220 = m.ExcPending
+								if v220 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1025), int32(_a_F_tuplestore_gettuple_2))
+									F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1026), int32(_a_F_tuplestore_gettuple_2))
 									mBase = m.M
-									v221 = m.ExcPending
-									if v221 != 0 {
+									v225 = m.ExcPending
+									if v225 != 0 {
 										return int32(0)
 									} else {
 										base.Wasm_trap_unreachable()
@@ -1124,17 +1122,17 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v94 == int32(0) {
 									v105 = int32(1)
 									*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-									v202 = v4
+									v206 = v4
 									m.G0 = v9 + int32(16)
-									return v202
+									return v206
 								} else {
 									v98 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 									if v98 == int32(0) {
 										v105 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-										v202 = v4
+										v206 = v4
 										m.G0 = v9 + int32(16)
-										return v202
+										return v206
 									} else {
 										v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 										v102 = m.T0[v101].(func(*base.Module, int32, int32) int32)(m, l0, v98)
@@ -1143,9 +1141,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										if v103 != 0 {
 											return int32(0)
 										} else {
-											v202 = v102
+											v206 = v102
 											m.G0 = v9 + int32(16)
-											return v202
+											return v206
 										}
 									}
 								}
@@ -1161,9 +1159,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v111 != 0 {
 									v113 = int32(0)
 									*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v113)
-									v202 = v4
+									v206 = v4
 									m.G0 = v9 + int32(16)
-									return v202
+									return v206
 								} else {
 									v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 									v120 = F_BufFileReadCommon(m, v115, v9+int32(8), int32(4), int32(0))
@@ -1182,38 +1180,37 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										if v125 == int32(1) {
 											v128 = int32(0)
 											*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v128)
-											v173 = v124
-											v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-											v175 = int32(0)
-											v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+											v177 = v124
+											v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+											v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 											mBase = m.M
-											v181 = m.ExcPending
-											if v181 != 0 {
+											v185 = m.ExcPending
+											if v185 != 0 {
 												return int32(0)
 											} else {
-												if v180 != 0 {
+												if v184 != 0 {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v225 = m.ExcPending
-													if v225 != 0 {
+													v229 = m.ExcPending
+													if v229 != 0 {
 														return int32(0)
 													} else {
 														F_errcode_for_file_access(m)
 														mBase = m.M
-														v227 = m.ExcPending
-														if v227 != 0 {
+														v231 = m.ExcPending
+														if v231 != 0 {
 															return int32(0)
 														} else {
 															F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 															mBase = m.M
-															v231 = m.ExcPending
-															if v231 != 0 {
+															v235 = m.ExcPending
+															if v235 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+																F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 																mBase = m.M
-																v236 = m.ExcPending
-																if v236 != 0 {
+																v240 = m.ExcPending
+																if v240 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -1224,62 +1221,62 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 														}
 													}
 												} else {
-													v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-													v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+													v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+													v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 													mBase = m.M
-													v184 = m.ExcPending
-													if v184 != 0 {
+													v188 = m.ExcPending
+													if v188 != 0 {
 														return int32(0)
 													} else {
-														v202 = v183
+														v206 = v187
 														m.G0 = v9 + int32(16)
-														return v202
+														return v206
 													}
 												}
 											}
 										} else {
 											v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-											v136 = F_BufFileSeek(m, v130, int32(0), base.I64_extend_i32_s(int32(-8)-v124), int32(1))
+											v138 = F_BufFileSeek(m, v130, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(8)), int32(1))
 											mBase = m.M
-											v137 = m.ExcPending
-											if v137 != 0 {
+											v139 = m.ExcPending
+											if v139 != 0 {
 												return int32(0)
 											} else {
-												if v136 != 0 {
-													v138 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-													v144 = F_BufFileSeek(m, v138, int32(0), base.I64_extend_i32_s(int32(-4)-v124), int32(1))
+												if v138 != 0 {
+													v140 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+													v148 = F_BufFileSeek(m, v140, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(4)), int32(1))
 													mBase = m.M
-													v145 = m.ExcPending
-													if v145 != 0 {
+													v149 = m.ExcPending
+													if v149 != 0 {
 														return int32(0)
 													} else {
-														if v144 == int32(0) {
-															v202 = v4
+														if v148 == int32(0) {
+															v206 = v4
 															m.G0 = v9 + int32(16)
-															return v202
+															return v206
 														} else {
 															F_errstart_cold(m, int32(21), int32(0))
 															mBase = m.M
-															v151 = m.ExcPending
-															if v151 != 0 {
+															v155 = m.ExcPending
+															if v155 != 0 {
 																return int32(0)
 															} else {
 																F_errcode_for_file_access(m)
 																mBase = m.M
-																v153 = m.ExcPending
-																if v153 != 0 {
+																v157 = m.ExcPending
+																if v157 != 0 {
 																	return int32(0)
 																} else {
 																	F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 																	mBase = m.M
-																	v157 = m.ExcPending
-																	if v157 != 0 {
+																	v161 = m.ExcPending
+																	if v161 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1089), int32(_a_F_tuplestore_gettuple_2))
+																		F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1090), int32(_a_F_tuplestore_gettuple_2))
 																		mBase = m.M
-																		v162 = m.ExcPending
-																		if v162 != 0 {
+																		v166 = m.ExcPending
+																		if v166 != 0 {
 																			return int32(0)
 																		} else {
 																			base.Wasm_trap_unreachable()
@@ -1292,51 +1289,50 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 														}
 													}
 												} else {
-													v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-													v168 = F_BufFileReadCommon(m, v163, v9+int32(12), int32(4), int32(0))
+													v167 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+													v172 = F_BufFileReadCommon(m, v167, v9+int32(12), int32(4), int32(0))
 													mBase = m.M
-													v169 = m.ExcPending
-													if v169 != 0 {
+													v173 = m.ExcPending
+													if v173 != 0 {
 														return int32(0)
 													} else {
-														v170 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
-														if v168 != 0 {
-															v172 = v170
+														v174 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+														if v172 != 0 {
+															v176 = v174
 														} else {
-															v172 = int32(0)
+															v176 = int32(0)
 														}
-														v173 = v172
-														v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-														v175 = int32(0)
-														v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+														v177 = v176
+														v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+														v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 														mBase = m.M
-														v181 = m.ExcPending
-														if v181 != 0 {
+														v185 = m.ExcPending
+														if v185 != 0 {
 															return int32(0)
 														} else {
-															if v180 != 0 {
+															if v184 != 0 {
 																F_errstart_cold(m, int32(21), int32(0))
 																mBase = m.M
-																v225 = m.ExcPending
-																if v225 != 0 {
+																v229 = m.ExcPending
+																if v229 != 0 {
 																	return int32(0)
 																} else {
 																	F_errcode_for_file_access(m)
 																	mBase = m.M
-																	v227 = m.ExcPending
-																	if v227 != 0 {
+																	v231 = m.ExcPending
+																	if v231 != 0 {
 																		return int32(0)
 																	} else {
 																		F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 																		mBase = m.M
-																		v231 = m.ExcPending
-																		if v231 != 0 {
+																		v235 = m.ExcPending
+																		if v235 != 0 {
 																			return int32(0)
 																		} else {
-																			F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+																			F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 																			mBase = m.M
-																			v236 = m.ExcPending
-																			if v236 != 0 {
+																			v240 = m.ExcPending
+																			if v240 != 0 {
 																				return int32(0)
 																			} else {
 																				base.Wasm_trap_unreachable()
@@ -1347,16 +1343,16 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																	}
 																}
 															} else {
-																v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-																v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+																v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+																v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 																mBase = m.M
-																v184 = m.ExcPending
-																if v184 != 0 {
+																v188 = m.ExcPending
+																if v188 != 0 {
 																	return int32(0)
 																} else {
-																	v202 = v183
+																	v206 = v187
 																	m.G0 = v9 + int32(16)
-																	return v202
+																	return v206
 																}
 															}
 														}
@@ -1386,17 +1382,17 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						if v94 == int32(0) {
 							v105 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-							v202 = v4
+							v206 = v4
 							m.G0 = v9 + int32(16)
-							return v202
+							return v206
 						} else {
 							v98 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 							if v98 == int32(0) {
 								v105 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-								v202 = v4
+								v206 = v4
 								m.G0 = v9 + int32(16)
-								return v202
+								return v206
 							} else {
 								v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 								v102 = m.T0[v101].(func(*base.Module, int32, int32) int32)(m, l0, v98)
@@ -1405,9 +1401,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v103 != 0 {
 									return int32(0)
 								} else {
-									v202 = v102
+									v206 = v102
 									m.G0 = v9 + int32(16)
-									return v202
+									return v206
 								}
 							}
 						}
@@ -1423,9 +1419,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						if v111 != 0 {
 							v113 = int32(0)
 							*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v113)
-							v202 = v4
+							v206 = v4
 							m.G0 = v9 + int32(16)
-							return v202
+							return v206
 						} else {
 							v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 							v120 = F_BufFileReadCommon(m, v115, v9+int32(8), int32(4), int32(0))
@@ -1444,38 +1440,37 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v125 == int32(1) {
 									v128 = int32(0)
 									*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v128)
-									v173 = v124
-									v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-									v175 = int32(0)
-									v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+									v177 = v124
+									v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+									v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 									mBase = m.M
-									v181 = m.ExcPending
-									if v181 != 0 {
+									v185 = m.ExcPending
+									if v185 != 0 {
 										return int32(0)
 									} else {
-										if v180 != 0 {
+										if v184 != 0 {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v225 = m.ExcPending
-											if v225 != 0 {
+											v229 = m.ExcPending
+											if v229 != 0 {
 												return int32(0)
 											} else {
 												F_errcode_for_file_access(m)
 												mBase = m.M
-												v227 = m.ExcPending
-												if v227 != 0 {
+												v231 = m.ExcPending
+												if v231 != 0 {
 													return int32(0)
 												} else {
 													F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 													mBase = m.M
-													v231 = m.ExcPending
-													if v231 != 0 {
+													v235 = m.ExcPending
+													if v235 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+														F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 														mBase = m.M
-														v236 = m.ExcPending
-														if v236 != 0 {
+														v240 = m.ExcPending
+														if v240 != 0 {
 															return int32(0)
 														} else {
 															base.Wasm_trap_unreachable()
@@ -1486,62 +1481,62 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 												}
 											}
 										} else {
-											v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-											v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+											v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+											v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 											mBase = m.M
-											v184 = m.ExcPending
-											if v184 != 0 {
+											v188 = m.ExcPending
+											if v188 != 0 {
 												return int32(0)
 											} else {
-												v202 = v183
+												v206 = v187
 												m.G0 = v9 + int32(16)
-												return v202
+												return v206
 											}
 										}
 									}
 								} else {
 									v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-									v136 = F_BufFileSeek(m, v130, int32(0), base.I64_extend_i32_s(int32(-8)-v124), int32(1))
+									v138 = F_BufFileSeek(m, v130, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(8)), int32(1))
 									mBase = m.M
-									v137 = m.ExcPending
-									if v137 != 0 {
+									v139 = m.ExcPending
+									if v139 != 0 {
 										return int32(0)
 									} else {
-										if v136 != 0 {
-											v138 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-											v144 = F_BufFileSeek(m, v138, int32(0), base.I64_extend_i32_s(int32(-4)-v124), int32(1))
+										if v138 != 0 {
+											v140 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+											v148 = F_BufFileSeek(m, v140, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(4)), int32(1))
 											mBase = m.M
-											v145 = m.ExcPending
-											if v145 != 0 {
+											v149 = m.ExcPending
+											if v149 != 0 {
 												return int32(0)
 											} else {
-												if v144 == int32(0) {
-													v202 = v4
+												if v148 == int32(0) {
+													v206 = v4
 													m.G0 = v9 + int32(16)
-													return v202
+													return v206
 												} else {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v151 = m.ExcPending
-													if v151 != 0 {
+													v155 = m.ExcPending
+													if v155 != 0 {
 														return int32(0)
 													} else {
 														F_errcode_for_file_access(m)
 														mBase = m.M
-														v153 = m.ExcPending
-														if v153 != 0 {
+														v157 = m.ExcPending
+														if v157 != 0 {
 															return int32(0)
 														} else {
 															F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 															mBase = m.M
-															v157 = m.ExcPending
-															if v157 != 0 {
+															v161 = m.ExcPending
+															if v161 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1089), int32(_a_F_tuplestore_gettuple_2))
+																F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1090), int32(_a_F_tuplestore_gettuple_2))
 																mBase = m.M
-																v162 = m.ExcPending
-																if v162 != 0 {
+																v166 = m.ExcPending
+																if v166 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -1554,51 +1549,50 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 												}
 											}
 										} else {
-											v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-											v168 = F_BufFileReadCommon(m, v163, v9+int32(12), int32(4), int32(0))
+											v167 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+											v172 = F_BufFileReadCommon(m, v167, v9+int32(12), int32(4), int32(0))
 											mBase = m.M
-											v169 = m.ExcPending
-											if v169 != 0 {
+											v173 = m.ExcPending
+											if v173 != 0 {
 												return int32(0)
 											} else {
-												v170 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
-												if v168 != 0 {
-													v172 = v170
+												v174 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+												if v172 != 0 {
+													v176 = v174
 												} else {
-													v172 = int32(0)
+													v176 = int32(0)
 												}
-												v173 = v172
-												v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-												v175 = int32(0)
-												v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+												v177 = v176
+												v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+												v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 												mBase = m.M
-												v181 = m.ExcPending
-												if v181 != 0 {
+												v185 = m.ExcPending
+												if v185 != 0 {
 													return int32(0)
 												} else {
-													if v180 != 0 {
+													if v184 != 0 {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v225 = m.ExcPending
-														if v225 != 0 {
+														v229 = m.ExcPending
+														if v229 != 0 {
 															return int32(0)
 														} else {
 															F_errcode_for_file_access(m)
 															mBase = m.M
-															v227 = m.ExcPending
-															if v227 != 0 {
+															v231 = m.ExcPending
+															if v231 != 0 {
 																return int32(0)
 															} else {
 																F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 																mBase = m.M
-																v231 = m.ExcPending
-																if v231 != 0 {
+																v235 = m.ExcPending
+																if v235 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+																	F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 																	mBase = m.M
-																	v236 = m.ExcPending
-																	if v236 != 0 {
+																	v240 = m.ExcPending
+																	if v240 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -1609,16 +1603,16 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 															}
 														}
 													} else {
-														v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-														v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+														v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+														v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 														mBase = m.M
-														v184 = m.ExcPending
-														if v184 != 0 {
+														v188 = m.ExcPending
+														if v188 != 0 {
 															return int32(0)
 														} else {
-															v202 = v183
+															v206 = v187
 															m.G0 = v9 + int32(16)
-															return v202
+															return v206
 														}
 													}
 												}
@@ -1637,8 +1631,8 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 				v68 = *(*int32)(unsafe.Add(mBase, uint32(v63)+24))
 				*(*int32)(unsafe.Add(mBase, uint32(l0+int32(108)))) = v68
-				v70 = *(*int64)(unsafe.Add(mBase, uint32(v63)+32))
-				v71 = int64(*(*int32)(unsafe.Add(mBase, uint32(v63)+40)))
+				v70 = *(*int64)(unsafe.Add(mBase, uint32(v63)+40))
+				v71 = *(*int64)(unsafe.Add(mBase, uint32(v63)+32))
 				*(*int64)(unsafe.Add(mBase, uint32(l0+int32(112)))) = v70 + v71
 				v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)))
 				if v74 == int32(0) {
@@ -1654,26 +1648,26 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						if v81 != 0 {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v210 = m.ExcPending
-							if v210 != 0 {
+							v214 = m.ExcPending
+							if v214 != 0 {
 								return int32(0)
 							} else {
 								F_errcode_for_file_access(m)
 								mBase = m.M
-								v212 = m.ExcPending
-								if v212 != 0 {
+								v216 = m.ExcPending
+								if v216 != 0 {
 									return int32(0)
 								} else {
 									F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 									mBase = m.M
-									v216 = m.ExcPending
-									if v216 != 0 {
+									v220 = m.ExcPending
+									if v220 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1025), int32(_a_F_tuplestore_gettuple_2))
+										F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1026), int32(_a_F_tuplestore_gettuple_2))
 										mBase = m.M
-										v221 = m.ExcPending
-										if v221 != 0 {
+										v225 = m.ExcPending
+										if v225 != 0 {
 											return int32(0)
 										} else {
 											base.Wasm_trap_unreachable()
@@ -1699,17 +1693,17 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									if v94 == int32(0) {
 										v105 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-										v202 = v4
+										v206 = v4
 										m.G0 = v9 + int32(16)
-										return v202
+										return v206
 									} else {
 										v98 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 										if v98 == int32(0) {
 											v105 = int32(1)
 											*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-											v202 = v4
+											v206 = v4
 											m.G0 = v9 + int32(16)
-											return v202
+											return v206
 										} else {
 											v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 											v102 = m.T0[v101].(func(*base.Module, int32, int32) int32)(m, l0, v98)
@@ -1718,9 +1712,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											if v103 != 0 {
 												return int32(0)
 											} else {
-												v202 = v102
+												v206 = v102
 												m.G0 = v9 + int32(16)
-												return v202
+												return v206
 											}
 										}
 									}
@@ -1736,9 +1730,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									if v111 != 0 {
 										v113 = int32(0)
 										*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v113)
-										v202 = v4
+										v206 = v4
 										m.G0 = v9 + int32(16)
-										return v202
+										return v206
 									} else {
 										v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 										v120 = F_BufFileReadCommon(m, v115, v9+int32(8), int32(4), int32(0))
@@ -1757,38 +1751,37 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											if v125 == int32(1) {
 												v128 = int32(0)
 												*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v128)
-												v173 = v124
-												v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-												v175 = int32(0)
-												v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+												v177 = v124
+												v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+												v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 												mBase = m.M
-												v181 = m.ExcPending
-												if v181 != 0 {
+												v185 = m.ExcPending
+												if v185 != 0 {
 													return int32(0)
 												} else {
-													if v180 != 0 {
+													if v184 != 0 {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v225 = m.ExcPending
-														if v225 != 0 {
+														v229 = m.ExcPending
+														if v229 != 0 {
 															return int32(0)
 														} else {
 															F_errcode_for_file_access(m)
 															mBase = m.M
-															v227 = m.ExcPending
-															if v227 != 0 {
+															v231 = m.ExcPending
+															if v231 != 0 {
 																return int32(0)
 															} else {
 																F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 																mBase = m.M
-																v231 = m.ExcPending
-																if v231 != 0 {
+																v235 = m.ExcPending
+																if v235 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+																	F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 																	mBase = m.M
-																	v236 = m.ExcPending
-																	if v236 != 0 {
+																	v240 = m.ExcPending
+																	if v240 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -1799,62 +1792,62 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 															}
 														}
 													} else {
-														v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-														v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+														v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+														v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 														mBase = m.M
-														v184 = m.ExcPending
-														if v184 != 0 {
+														v188 = m.ExcPending
+														if v188 != 0 {
 															return int32(0)
 														} else {
-															v202 = v183
+															v206 = v187
 															m.G0 = v9 + int32(16)
-															return v202
+															return v206
 														}
 													}
 												}
 											} else {
 												v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-												v136 = F_BufFileSeek(m, v130, int32(0), base.I64_extend_i32_s(int32(-8)-v124), int32(1))
+												v138 = F_BufFileSeek(m, v130, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(8)), int32(1))
 												mBase = m.M
-												v137 = m.ExcPending
-												if v137 != 0 {
+												v139 = m.ExcPending
+												if v139 != 0 {
 													return int32(0)
 												} else {
-													if v136 != 0 {
-														v138 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-														v144 = F_BufFileSeek(m, v138, int32(0), base.I64_extend_i32_s(int32(-4)-v124), int32(1))
+													if v138 != 0 {
+														v140 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+														v148 = F_BufFileSeek(m, v140, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(4)), int32(1))
 														mBase = m.M
-														v145 = m.ExcPending
-														if v145 != 0 {
+														v149 = m.ExcPending
+														if v149 != 0 {
 															return int32(0)
 														} else {
-															if v144 == int32(0) {
-																v202 = v4
+															if v148 == int32(0) {
+																v206 = v4
 																m.G0 = v9 + int32(16)
-																return v202
+																return v206
 															} else {
 																F_errstart_cold(m, int32(21), int32(0))
 																mBase = m.M
-																v151 = m.ExcPending
-																if v151 != 0 {
+																v155 = m.ExcPending
+																if v155 != 0 {
 																	return int32(0)
 																} else {
 																	F_errcode_for_file_access(m)
 																	mBase = m.M
-																	v153 = m.ExcPending
-																	if v153 != 0 {
+																	v157 = m.ExcPending
+																	if v157 != 0 {
 																		return int32(0)
 																	} else {
 																		F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 																		mBase = m.M
-																		v157 = m.ExcPending
-																		if v157 != 0 {
+																		v161 = m.ExcPending
+																		if v161 != 0 {
 																			return int32(0)
 																		} else {
-																			F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1089), int32(_a_F_tuplestore_gettuple_2))
+																			F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1090), int32(_a_F_tuplestore_gettuple_2))
 																			mBase = m.M
-																			v162 = m.ExcPending
-																			if v162 != 0 {
+																			v166 = m.ExcPending
+																			if v166 != 0 {
 																				return int32(0)
 																			} else {
 																				base.Wasm_trap_unreachable()
@@ -1867,51 +1860,50 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 															}
 														}
 													} else {
-														v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-														v168 = F_BufFileReadCommon(m, v163, v9+int32(12), int32(4), int32(0))
+														v167 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+														v172 = F_BufFileReadCommon(m, v167, v9+int32(12), int32(4), int32(0))
 														mBase = m.M
-														v169 = m.ExcPending
-														if v169 != 0 {
+														v173 = m.ExcPending
+														if v173 != 0 {
 															return int32(0)
 														} else {
-															v170 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
-															if v168 != 0 {
-																v172 = v170
+															v174 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+															if v172 != 0 {
+																v176 = v174
 															} else {
-																v172 = int32(0)
+																v176 = int32(0)
 															}
-															v173 = v172
-															v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-															v175 = int32(0)
-															v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+															v177 = v176
+															v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+															v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 															mBase = m.M
-															v181 = m.ExcPending
-															if v181 != 0 {
+															v185 = m.ExcPending
+															if v185 != 0 {
 																return int32(0)
 															} else {
-																if v180 != 0 {
+																if v184 != 0 {
 																	F_errstart_cold(m, int32(21), int32(0))
 																	mBase = m.M
-																	v225 = m.ExcPending
-																	if v225 != 0 {
+																	v229 = m.ExcPending
+																	if v229 != 0 {
 																		return int32(0)
 																	} else {
 																		F_errcode_for_file_access(m)
 																		mBase = m.M
-																		v227 = m.ExcPending
-																		if v227 != 0 {
+																		v231 = m.ExcPending
+																		if v231 != 0 {
 																			return int32(0)
 																		} else {
 																			F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 																			mBase = m.M
-																			v231 = m.ExcPending
-																			if v231 != 0 {
+																			v235 = m.ExcPending
+																			if v235 != 0 {
 																				return int32(0)
 																			} else {
-																				F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+																				F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 																				mBase = m.M
-																				v236 = m.ExcPending
-																				if v236 != 0 {
+																				v240 = m.ExcPending
+																				if v240 != 0 {
 																					return int32(0)
 																				} else {
 																					base.Wasm_trap_unreachable()
@@ -1922,16 +1914,16 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																		}
 																	}
 																} else {
-																	v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-																	v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+																	v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+																	v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 																	mBase = m.M
-																	v184 = m.ExcPending
-																	if v184 != 0 {
+																	v188 = m.ExcPending
+																	if v188 != 0 {
 																		return int32(0)
 																	} else {
-																		v202 = v183
+																		v206 = v187
 																		m.G0 = v9 + int32(16)
-																		return v202
+																		return v206
 																	}
 																}
 															}
@@ -1961,17 +1953,17 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							if v94 == int32(0) {
 								v105 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-								v202 = v4
+								v206 = v4
 								m.G0 = v9 + int32(16)
-								return v202
+								return v206
 							} else {
 								v98 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 								if v98 == int32(0) {
 									v105 = int32(1)
 									*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-									v202 = v4
+									v206 = v4
 									m.G0 = v9 + int32(16)
-									return v202
+									return v206
 								} else {
 									v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 									v102 = m.T0[v101].(func(*base.Module, int32, int32) int32)(m, l0, v98)
@@ -1980,9 +1972,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									if v103 != 0 {
 										return int32(0)
 									} else {
-										v202 = v102
+										v206 = v102
 										m.G0 = v9 + int32(16)
-										return v202
+										return v206
 									}
 								}
 							}
@@ -1998,9 +1990,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							if v111 != 0 {
 								v113 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v113)
-								v202 = v4
+								v206 = v4
 								m.G0 = v9 + int32(16)
-								return v202
+								return v206
 							} else {
 								v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 								v120 = F_BufFileReadCommon(m, v115, v9+int32(8), int32(4), int32(0))
@@ -2019,38 +2011,37 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									if v125 == int32(1) {
 										v128 = int32(0)
 										*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v128)
-										v173 = v124
-										v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-										v175 = int32(0)
-										v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+										v177 = v124
+										v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+										v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 										mBase = m.M
-										v181 = m.ExcPending
-										if v181 != 0 {
+										v185 = m.ExcPending
+										if v185 != 0 {
 											return int32(0)
 										} else {
-											if v180 != 0 {
+											if v184 != 0 {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v225 = m.ExcPending
-												if v225 != 0 {
+												v229 = m.ExcPending
+												if v229 != 0 {
 													return int32(0)
 												} else {
 													F_errcode_for_file_access(m)
 													mBase = m.M
-													v227 = m.ExcPending
-													if v227 != 0 {
+													v231 = m.ExcPending
+													if v231 != 0 {
 														return int32(0)
 													} else {
 														F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 														mBase = m.M
-														v231 = m.ExcPending
-														if v231 != 0 {
+														v235 = m.ExcPending
+														if v235 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+															F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 															mBase = m.M
-															v236 = m.ExcPending
-															if v236 != 0 {
+															v240 = m.ExcPending
+															if v240 != 0 {
 																return int32(0)
 															} else {
 																base.Wasm_trap_unreachable()
@@ -2061,62 +2052,62 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													}
 												}
 											} else {
-												v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-												v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+												v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+												v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 												mBase = m.M
-												v184 = m.ExcPending
-												if v184 != 0 {
+												v188 = m.ExcPending
+												if v188 != 0 {
 													return int32(0)
 												} else {
-													v202 = v183
+													v206 = v187
 													m.G0 = v9 + int32(16)
-													return v202
+													return v206
 												}
 											}
 										}
 									} else {
 										v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-										v136 = F_BufFileSeek(m, v130, int32(0), base.I64_extend_i32_s(int32(-8)-v124), int32(1))
+										v138 = F_BufFileSeek(m, v130, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(8)), int32(1))
 										mBase = m.M
-										v137 = m.ExcPending
-										if v137 != 0 {
+										v139 = m.ExcPending
+										if v139 != 0 {
 											return int32(0)
 										} else {
-											if v136 != 0 {
-												v138 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-												v144 = F_BufFileSeek(m, v138, int32(0), base.I64_extend_i32_s(int32(-4)-v124), int32(1))
+											if v138 != 0 {
+												v140 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+												v148 = F_BufFileSeek(m, v140, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(4)), int32(1))
 												mBase = m.M
-												v145 = m.ExcPending
-												if v145 != 0 {
+												v149 = m.ExcPending
+												if v149 != 0 {
 													return int32(0)
 												} else {
-													if v144 == int32(0) {
-														v202 = v4
+													if v148 == int32(0) {
+														v206 = v4
 														m.G0 = v9 + int32(16)
-														return v202
+														return v206
 													} else {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v151 = m.ExcPending
-														if v151 != 0 {
+														v155 = m.ExcPending
+														if v155 != 0 {
 															return int32(0)
 														} else {
 															F_errcode_for_file_access(m)
 															mBase = m.M
-															v153 = m.ExcPending
-															if v153 != 0 {
+															v157 = m.ExcPending
+															if v157 != 0 {
 																return int32(0)
 															} else {
 																F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 																mBase = m.M
-																v157 = m.ExcPending
-																if v157 != 0 {
+																v161 = m.ExcPending
+																if v161 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1089), int32(_a_F_tuplestore_gettuple_2))
+																	F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1090), int32(_a_F_tuplestore_gettuple_2))
 																	mBase = m.M
-																	v162 = m.ExcPending
-																	if v162 != 0 {
+																	v166 = m.ExcPending
+																	if v166 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -2129,51 +2120,50 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													}
 												}
 											} else {
-												v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-												v168 = F_BufFileReadCommon(m, v163, v9+int32(12), int32(4), int32(0))
+												v167 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+												v172 = F_BufFileReadCommon(m, v167, v9+int32(12), int32(4), int32(0))
 												mBase = m.M
-												v169 = m.ExcPending
-												if v169 != 0 {
+												v173 = m.ExcPending
+												if v173 != 0 {
 													return int32(0)
 												} else {
-													v170 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
-													if v168 != 0 {
-														v172 = v170
+													v174 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+													if v172 != 0 {
+														v176 = v174
 													} else {
-														v172 = int32(0)
+														v176 = int32(0)
 													}
-													v173 = v172
-													v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-													v175 = int32(0)
-													v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+													v177 = v176
+													v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+													v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 													mBase = m.M
-													v181 = m.ExcPending
-													if v181 != 0 {
+													v185 = m.ExcPending
+													if v185 != 0 {
 														return int32(0)
 													} else {
-														if v180 != 0 {
+														if v184 != 0 {
 															F_errstart_cold(m, int32(21), int32(0))
 															mBase = m.M
-															v225 = m.ExcPending
-															if v225 != 0 {
+															v229 = m.ExcPending
+															if v229 != 0 {
 																return int32(0)
 															} else {
 																F_errcode_for_file_access(m)
 																mBase = m.M
-																v227 = m.ExcPending
-																if v227 != 0 {
+																v231 = m.ExcPending
+																if v231 != 0 {
 																	return int32(0)
 																} else {
 																	F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 																	mBase = m.M
-																	v231 = m.ExcPending
-																	if v231 != 0 {
+																	v235 = m.ExcPending
+																	if v235 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+																		F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 																		mBase = m.M
-																		v236 = m.ExcPending
-																		if v236 != 0 {
+																		v240 = m.ExcPending
+																		if v240 != 0 {
 																			return int32(0)
 																		} else {
 																			base.Wasm_trap_unreachable()
@@ -2184,16 +2174,16 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																}
 															}
 														} else {
-															v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-															v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+															v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+															v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 															mBase = m.M
-															v184 = m.ExcPending
-															if v184 != 0 {
+															v188 = m.ExcPending
+															if v188 != 0 {
 																return int32(0)
 															} else {
-																v202 = v183
+																v206 = v187
 																m.G0 = v9 + int32(16)
-																return v202
+																return v206
 															}
 														}
 													}
@@ -2207,9 +2197,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					}
 				}
 			} else {
-				v202 = v4
+				v206 = v4
 				m.G0 = v9 + int32(16)
-				return v202
+				return v206
 			}
 		}
 	case 2:
@@ -2227,17 +2217,17 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v94 == int32(0) {
 					v105 = int32(1)
 					*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-					v202 = v4
+					v206 = v4
 					m.G0 = v9 + int32(16)
-					return v202
+					return v206
 				} else {
 					v98 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 					if v98 == int32(0) {
 						v105 = int32(1)
 						*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v105)
-						v202 = v4
+						v206 = v4
 						m.G0 = v9 + int32(16)
-						return v202
+						return v206
 					} else {
 						v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 						v102 = m.T0[v101].(func(*base.Module, int32, int32) int32)(m, l0, v98)
@@ -2246,9 +2236,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						if v103 != 0 {
 							return int32(0)
 						} else {
-							v202 = v102
+							v206 = v102
 							m.G0 = v9 + int32(16)
-							return v202
+							return v206
 						}
 					}
 				}
@@ -2264,9 +2254,9 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v111 != 0 {
 					v113 = int32(0)
 					*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v113)
-					v202 = v4
+					v206 = v4
 					m.G0 = v9 + int32(16)
-					return v202
+					return v206
 				} else {
 					v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 					v120 = F_BufFileReadCommon(m, v115, v9+int32(8), int32(4), int32(0))
@@ -2285,38 +2275,37 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						if v125 == int32(1) {
 							v128 = int32(0)
 							*(*uint8)(unsafe.Add(mBase, uint32(v15)+4)) = uint8(v128)
-							v173 = v124
-							v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-							v175 = int32(0)
-							v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+							v177 = v124
+							v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+							v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 							mBase = m.M
-							v181 = m.ExcPending
-							if v181 != 0 {
+							v185 = m.ExcPending
+							if v185 != 0 {
 								return int32(0)
 							} else {
-								if v180 != 0 {
+								if v184 != 0 {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v225 = m.ExcPending
-									if v225 != 0 {
+									v229 = m.ExcPending
+									if v229 != 0 {
 										return int32(0)
 									} else {
 										F_errcode_for_file_access(m)
 										mBase = m.M
-										v227 = m.ExcPending
-										if v227 != 0 {
+										v231 = m.ExcPending
+										if v231 != 0 {
 											return int32(0)
 										} else {
 											F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 											mBase = m.M
-											v231 = m.ExcPending
-											if v231 != 0 {
+											v235 = m.ExcPending
+											if v235 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+												F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 												mBase = m.M
-												v236 = m.ExcPending
-												if v236 != 0 {
+												v240 = m.ExcPending
+												if v240 != 0 {
 													return int32(0)
 												} else {
 													base.Wasm_trap_unreachable()
@@ -2327,62 +2316,62 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										}
 									}
 								} else {
-									v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-									v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+									v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+									v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 									mBase = m.M
-									v184 = m.ExcPending
-									if v184 != 0 {
+									v188 = m.ExcPending
+									if v188 != 0 {
 										return int32(0)
 									} else {
-										v202 = v183
+										v206 = v187
 										m.G0 = v9 + int32(16)
-										return v202
+										return v206
 									}
 								}
 							}
 						} else {
 							v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-							v136 = F_BufFileSeek(m, v130, int32(0), base.I64_extend_i32_s(int32(-8)-v124), int32(1))
+							v138 = F_BufFileSeek(m, v130, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(8)), int32(1))
 							mBase = m.M
-							v137 = m.ExcPending
-							if v137 != 0 {
+							v139 = m.ExcPending
+							if v139 != 0 {
 								return int32(0)
 							} else {
-								if v136 != 0 {
-									v138 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-									v144 = F_BufFileSeek(m, v138, int32(0), base.I64_extend_i32_s(int32(-4)-v124), int32(1))
+								if v138 != 0 {
+									v140 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+									v148 = F_BufFileSeek(m, v140, int32(0), int64(0)-base.I64_extend_i32_u(v124+int32(4)), int32(1))
 									mBase = m.M
-									v145 = m.ExcPending
-									if v145 != 0 {
+									v149 = m.ExcPending
+									if v149 != 0 {
 										return int32(0)
 									} else {
-										if v144 == int32(0) {
-											v202 = v4
+										if v148 == int32(0) {
+											v206 = v4
 											m.G0 = v9 + int32(16)
-											return v202
+											return v206
 										} else {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v151 = m.ExcPending
-											if v151 != 0 {
+											v155 = m.ExcPending
+											if v155 != 0 {
 												return int32(0)
 											} else {
 												F_errcode_for_file_access(m)
 												mBase = m.M
-												v153 = m.ExcPending
-												if v153 != 0 {
+												v157 = m.ExcPending
+												if v157 != 0 {
 													return int32(0)
 												} else {
 													F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 													mBase = m.M
-													v157 = m.ExcPending
-													if v157 != 0 {
+													v161 = m.ExcPending
+													if v161 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1089), int32(_a_F_tuplestore_gettuple_2))
+														F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1090), int32(_a_F_tuplestore_gettuple_2))
 														mBase = m.M
-														v162 = m.ExcPending
-														if v162 != 0 {
+														v166 = m.ExcPending
+														if v166 != 0 {
 															return int32(0)
 														} else {
 															base.Wasm_trap_unreachable()
@@ -2395,51 +2384,50 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										}
 									}
 								} else {
-									v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-									v168 = F_BufFileReadCommon(m, v163, v9+int32(12), int32(4), int32(0))
+									v167 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+									v172 = F_BufFileReadCommon(m, v167, v9+int32(12), int32(4), int32(0))
 									mBase = m.M
-									v169 = m.ExcPending
-									if v169 != 0 {
+									v173 = m.ExcPending
+									if v173 != 0 {
 										return int32(0)
 									} else {
-										v170 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
-										if v168 != 0 {
-											v172 = v170
+										v174 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+										if v172 != 0 {
+											v176 = v174
 										} else {
-											v172 = int32(0)
+											v176 = int32(0)
 										}
-										v173 = v172
-										v174 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-										v175 = int32(0)
-										v180 = F_BufFileSeek(m, v174, v175, base.I64_extend_i32_s(v175-v173), int32(1))
+										v177 = v176
+										v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+										v184 = F_BufFileSeek(m, v178, int32(0), int64(0)-base.I64_extend_i32_u(v177), int32(1))
 										mBase = m.M
-										v181 = m.ExcPending
-										if v181 != 0 {
+										v185 = m.ExcPending
+										if v185 != 0 {
 											return int32(0)
 										} else {
-											if v180 != 0 {
+											if v184 != 0 {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v225 = m.ExcPending
-												if v225 != 0 {
+												v229 = m.ExcPending
+												if v229 != 0 {
 													return int32(0)
 												} else {
 													F_errcode_for_file_access(m)
 													mBase = m.M
-													v227 = m.ExcPending
-													if v227 != 0 {
+													v231 = m.ExcPending
+													if v231 != 0 {
 														return int32(0)
 													} else {
 														F_errmsg(m, int32(_a_F_tuplestore_gettuple_0), int32(0))
 														mBase = m.M
-														v231 = m.ExcPending
-														if v231 != 0 {
+														v235 = m.ExcPending
+														if v235 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1106), int32(_a_F_tuplestore_gettuple_2))
+															F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1107), int32(_a_F_tuplestore_gettuple_2))
 															mBase = m.M
-															v236 = m.ExcPending
-															if v236 != 0 {
+															v240 = m.ExcPending
+															if v240 != 0 {
 																return int32(0)
 															} else {
 																base.Wasm_trap_unreachable()
@@ -2450,16 +2438,16 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													}
 												}
 											} else {
-												v182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-												v183 = m.T0[v182].(func(*base.Module, int32, int32) int32)(m, l0, v173)
+												v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+												v187 = m.T0[v186].(func(*base.Module, int32, int32) int32)(m, l0, v177)
 												mBase = m.M
-												v184 = m.ExcPending
-												if v184 != 0 {
+												v188 = m.ExcPending
+												if v188 != 0 {
 													return int32(0)
 												} else {
-													v202 = v183
+													v206 = v187
 													m.G0 = v9 + int32(16)
-													return v202
+													return v206
 												}
 											}
 										}
@@ -2474,20 +2462,20 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	default:
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v188 = m.ExcPending
-		if v188 != 0 {
+		v192 = m.ExcPending
+		if v192 != 0 {
 			return int32(0)
 		} else {
 			F_errmsg_internal(m, int32(_a_F_tuplestore_gettuple_3), int32(0))
 			mBase = m.M
-			v192 = m.ExcPending
-			if v192 != 0 {
+			v196 = m.ExcPending
+			if v196 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1111), int32(_a_F_tuplestore_gettuple_2))
+				F_errfinish(m, int32(_a_F_tuplestore_gettuple_1), int32(1112), int32(_a_F_tuplestore_gettuple_2))
 				mBase = m.M
-				v197 = m.ExcPending
-				if v197 != 0 {
+				v201 = m.ExcPending
+				if v201 != 0 {
 					return int32(0)
 				} else {
 					base.Wasm_trap_unreachable()

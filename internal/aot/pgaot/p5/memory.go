@@ -8,38 +8,82 @@ import (
 func F_MemoryContextAllocAligned(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v7 int32
-	_ = v7
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v20 int32
-	_ = v20
-	var v22 int32
-	_ = v22
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v57 int32
+	_ = v57
+	var v59 int32
+	_ = v59
+	var v61 int32
+	_ = v61
+	var v66 int32
+	_ = v66
 	if base.Ui32(l2) <= base.Ui32(int32(8)) {
-		v7 = F_MemoryContextAllocExtended(m, l0, l1, l3)
+		v9 = F_MemoryContextAllocExtended(m, l0, l1, l3)
 		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return int32(0)
 		} else {
-			return v7
+			return v9
 		}
 	} else {
-		v13 = F_MemoryContextAllocExtended(m, l0, l1+l2, l3)
+		v17 = F_MemoryContextAllocExtended(m, l0, l1+l2, l3&int32(-5))
 		mBase = m.M
-		v14 = m.ExcPending
-		if v14 != 0 {
+		v18 = m.ExcPending
+		if v18 != 0 {
 			return int32(0)
 		} else {
-			v20 = (v13 + l2 + int32(7)) & (int32(0) - l2)
-			v22 = v20 - int32(8)
-			*(*int64)(unsafe.Add(mBase, uint32(v22))) = base.I64_extend_i32_u(l2)<<(uint(int64(5))%64) | base.I64_extend_i32_u(v22-v13)<<(uint(int64(34))%64) | int64(6)
-			return v20
+			if v17 == int32(0) {
+				return int32(0)
+			} else {
+				v26 = int32(0)
+				v28 = (l2 + v17 + int32(7)) & (v26 - l2)
+				v30 = v28 - int32(8)
+				*(*int64)(unsafe.Add(mBase, uint32(v30))) = base.I64_extend_i32_u(l2)<<(uint(int64(5))%64) | base.I64_extend_i32_u(v30-v17)<<(uint(int64(34))%64) | int64(6)
+				if l3&int32(4) == v26 {
+					return v28
+				} else {
+					if l1&int32(3)|base.B2i32(base.Ui32(int32(1024)) < base.Ui32(l1)) == int32(0) {
+						if l1 == int32(0) {
+							return v28
+						} else {
+							v57 = v28 + l1
+							v59 = v28 + int32(4)
+							if base.Ui32(v59) < base.Ui32(v57) {
+								v61 = v57
+							} else {
+								v61 = v59
+							}
+							v66 = (v28^int32(-1)+v61)&int32(-4) + int32(4)
+							if v66 == int32(0) {
+								return v28
+							} else {
+								base.MemoryFill(m, v28, int32(0), v66)
+								return v28
+							}
+						}
+					} else {
+						if l1 == int32(0) {
+						} else {
+							base.MemoryFill(m, v28, int32(0), l1)
+						}
+						return v28
+					}
+				}
+			}
 		}
 	}
 }

@@ -28,8 +28,8 @@ func F_ExecAppendAsyncEventWait(m *base.Module, l0 int32) {
 	_ = v27
 	var v28 int32
 	_ = v28
-	var v38 int32
-	_ = v38
+	var v36 int32
+	_ = v36
 	var v39 int32
 	_ = v39
 	var v42 int32
@@ -38,8 +38,8 @@ func F_ExecAppendAsyncEventWait(m *base.Module, l0 int32) {
 	_ = v46
 	var v49 int32
 	_ = v49
-	var v51 int32
-	_ = v51
+	var v50 int32
+	_ = v50
 	var v54 int32
 	_ = v54
 	var v61 int32
@@ -300,9 +300,9 @@ L6:
 	goto L4
 L7:
 	;
-	v38 = base.I32_div_s(int32(0), int32(32))
+	v36 = int32(0)
 	v39 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
-	if v39 <= v38 {
+	if v39 <= v36 {
 		goto L6
 	} else {
 		goto L8
@@ -310,26 +310,26 @@ L7:
 L8:
 	;
 	v42 = v28 + int32(8)
-	v46 = *(*int32)(unsafe.Add(mBase, uint32(v42+v38<<(uint(int32(2))%32))))
+	v46 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 	v49 = v46 & int32(-1)
 	if v49 != 0 {
 		v71 = v49
-		v72 = v38
+		v72 = v36
 		goto L5
 	} else {
 		goto L9
 	}
 L9:
 	;
-	v51 = v38 + int32(1)
-	if v51 == v39 {
+	v50 = int32(1)
+	if v50 == v39 {
 		goto L6
 	} else {
 		goto L10
 	}
 L10:
 	;
-	v54 = v51
+	v54 = v50
 	goto L11
 L11:
 	;
@@ -413,7 +413,7 @@ L23:
 	goto L22
 L24:
 	;
-	F_InstrStartNode(m, v110)
+	F_InstrStart(m, v110)
 	mBase = m.M
 	v112 = m.ExcPending
 	if v112 != 0 {
@@ -428,7 +428,7 @@ L25:
 L26:
 	;
 	v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
-	if v115 == int32(418) {
+	if v115 == int32(424) {
 		goto L28
 	} else {
 		goto L29
@@ -442,7 +442,7 @@ L28:
 	;
 	v118 = *(*int32)(unsafe.Add(mBase, uint32(v101)+4))
 	v119 = *(*int32)(unsafe.Add(mBase, uint32(v118)+128))
-	v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+176))
+	v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+180))
 	m.T0[v120].(func(*base.Module, int32))(m, v101)
 	mBase = m.M
 	v122 = m.ExcPending
@@ -508,7 +508,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(_a_F_ExecAppendAsyncEventWait_1), int32(76), int32(_a_F_ExecAppendAsyncEventWait_2))
+	F_errfinish(m, int32(_a_F_ExecAppendAsyncEventWait_1), int32(77), int32(_a_F_ExecAppendAsyncEventWait_2))
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {
@@ -540,7 +540,7 @@ L41:
 L42:
 	;
 	v157 = v90 + int32(1)
-	v159 = base.I32_div_s(v157, int32(32))
+	v159 = int32(base.Ui32(v157) >> (uint(int32(5)) % 32))
 	v160 = *(*int32)(unsafe.Add(mBase, uint32(v150)+4))
 	if v160 <= v159 {
 		goto L41
@@ -733,7 +733,7 @@ L68:
 	goto L65
 L69:
 	;
-	F_InstrStartNode(m, v279)
+	F_InstrStart(m, v279)
 	mBase = m.M
 	v281 = m.ExcPending
 	if v281 != 0 {
@@ -748,7 +748,7 @@ L70:
 L71:
 	;
 	v284 = *(*int32)(unsafe.Add(mBase, uint32(v283)))
-	if v284 == int32(418) {
+	if v284 == int32(424) {
 		goto L73
 	} else {
 		goto L74
@@ -762,7 +762,7 @@ L73:
 	;
 	v287 = *(*int32)(unsafe.Add(mBase, uint32(v268)+4))
 	v288 = *(*int32)(unsafe.Add(mBase, uint32(v287)+128))
-	v289 = *(*int32)(unsafe.Add(mBase, uint32(v288)+180))
+	v289 = *(*int32)(unsafe.Add(mBase, uint32(v288)+184))
 	m.T0[v289].(func(*base.Module, int32))(m, v268)
 	mBase = m.M
 	v291 = m.ExcPending
@@ -788,7 +788,7 @@ L76:
 	;
 	v292 = *(*int32)(unsafe.Add(mBase, uint32(v268)))
 	v293 = *(*int32)(unsafe.Add(mBase, uint32(v292)))
-	if v293 == int32(397) {
+	if v293 == int32(403) {
 		goto L77
 	} else {
 		goto L78
@@ -892,7 +892,7 @@ L91:
 	}
 L92:
 	;
-	F_errfinish(m, int32(_a_F_ExecAppendAsyncEventWait_1), int32(127), int32(_a_F_ExecAppendAsyncEventWait_3))
+	F_errfinish(m, int32(_a_F_ExecAppendAsyncEventWait_1), int32(128), int32(_a_F_ExecAppendAsyncEventWait_3))
 	mBase = m.M
 	v329 = m.ExcPending
 	if v329 != 0 {
@@ -920,7 +920,7 @@ L94:
 	}
 L95:
 	;
-	F_errfinish(m, int32(_a_F_ExecAppendAsyncEventWait_1), int32(102), int32(_a_F_ExecAppendAsyncEventWait_4))
+	F_errfinish(m, int32(_a_F_ExecAppendAsyncEventWait_1), int32(103), int32(_a_F_ExecAppendAsyncEventWait_4))
 	mBase = m.M
 	v346 = m.ExcPending
 	if v346 != 0 {

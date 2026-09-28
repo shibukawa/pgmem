@@ -1081,7 +1081,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(_a_F_expandRTE_1), int32(2926), int32(_a_F_expandRTE_2))
+	F_errfinish(m, int32(_a_F_expandRTE_1), int32(2948), int32(_a_F_expandRTE_2))
 	mBase = m.M
 	v222 = m.ExcPending
 	if v222 != 0 {
@@ -1295,7 +1295,7 @@ L100:
 	}
 L101:
 	;
-	F_errfinish(m, int32(_a_F_expandRTE_1), int32(2797), int32(_a_F_expandRTE_2))
+	F_errfinish(m, int32(_a_F_expandRTE_1), int32(2819), int32(_a_F_expandRTE_2))
 	mBase = m.M
 	v368 = m.ExcPending
 	if v368 != 0 {
@@ -1347,7 +1347,7 @@ L106:
 	}
 L107:
 	;
-	F_errfinish(m, int32(_a_F_expandRTE_1), int32(3110), int32(_a_F_expandRTE_2))
+	F_errfinish(m, int32(_a_F_expandRTE_1), int32(3132), int32(_a_F_expandRTE_2))
 	mBase = m.M
 	v395 = m.ExcPending
 	if v395 != 0 {
@@ -2427,7 +2427,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 						if v73 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+							F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 							mBase = m.M
 							v78 = m.ExcPending
 							if v78 != 0 {
@@ -2459,7 +2459,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 							if v73 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+								F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 								mBase = m.M
 								v78 = m.ExcPending
 								if v78 != 0 {
@@ -2490,7 +2490,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 								if v73 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+									F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 									mBase = m.M
 									v78 = m.ExcPending
 									if v78 != 0 {
@@ -2547,7 +2547,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 							if v73 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+								F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 								mBase = m.M
 								v78 = m.ExcPending
 								if v78 != 0 {
@@ -2579,7 +2579,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 								if v73 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+									F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 									mBase = m.M
 									v78 = m.ExcPending
 									if v78 != 0 {
@@ -2610,7 +2610,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 									if v73 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+										F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -2667,7 +2667,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 								if v73 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+									F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 									mBase = m.M
 									v78 = m.ExcPending
 									if v78 != 0 {
@@ -2699,7 +2699,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 									if v73 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+										F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -2730,7 +2730,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 										if v73 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+											F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -2787,7 +2787,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 									if v73 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+										F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -2819,7 +2819,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 										if v73 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+											F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -2850,7 +2850,7 @@ func F_get_rte_attribute_name(m *base.Module, l0 int32, l1 int32) int32 {
 											if v73 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3387), int32(_a_F_get_rte_attribute_name_3))
+												F_errfinish(m, int32(_a_F_get_rte_attribute_name_2), int32(3409), int32(_a_F_get_rte_attribute_name_3))
 												mBase = m.M
 												v78 = m.ExcPending
 												if v78 != 0 {
@@ -2987,28 +2987,28 @@ func F_scanRTEForColumn(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 	_ = v179
 	var v182 int32
 	_ = v182
-	var v185 int32
-	_ = v185
-	var v187 int32
-	_ = v187
-	var v190 int32
-	_ = v190
-	var v191 int32
+	var v188 int64
+	_ = v188
+	var v191 int64
 	_ = v191
-	var v192 int32
-	_ = v192
-	var v202 int32
-	_ = v202
-	var v213 int32
-	_ = v213
+	var v193 int32
+	_ = v193
+	var v194 int32
+	_ = v194
+	var v195 int32
+	_ = v195
+	var v205 int32
+	_ = v205
 	var v216 int32
 	_ = v216
-	var v220 int32
-	_ = v220
-	var v222 int32
-	_ = v222
-	var v227 int32
-	_ = v227
+	var v219 int32
+	_ = v219
+	var v223 int32
+	_ = v223
+	var v225 int32
+	_ = v225
+	var v230 int32
+	_ = v230
 	v8 = int32(0)
 	v14 = m.G0
 	v16 = v14 - int32(16)
@@ -3023,8 +3023,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v213 = m.ExcPending
-	if v213 != 0 {
+	v216 = m.ExcPending
+	if v216 != 0 {
 		goto L27
 	} else {
 		goto L67
@@ -3032,7 +3032,7 @@ L1:
 L2:
 	;
 	m.G0 = v16 + int32(16)
-	return v202
+	return v205
 L3:
 	;
 	v19 = int32(0)
@@ -3050,7 +3050,7 @@ L5:
 	v144 = int32(0)
 	v145 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 	if v145 != 0 {
-		v202 = v144
+		v205 = v144
 		goto L2
 	} else {
 		goto L40
@@ -3067,7 +3067,7 @@ L7:
 L8:
 	;
 	if v127 != 0 {
-		v202 = v127
+		v205 = v127
 		goto L2
 	} else {
 		goto L39
@@ -3278,7 +3278,7 @@ L40:
 	;
 	v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+21)))
 	if v146 == int32(99) {
-		v202 = v144
+		v205 = v144
 		goto L2
 	} else {
 		goto L41
@@ -3295,7 +3295,7 @@ L41:
 L42:
 	;
 	if v179 == int32(0) {
-		v202 = v144
+		v205 = v144
 		goto L2
 	} else {
 		goto L61
@@ -3394,50 +3394,50 @@ L60:
 	goto L42
 L61:
 	;
-	v182 = int32(*(*int16)(unsafe.Add(mBase, uint32(v179)+74)))
+	v182 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v179)+74)))
 	if v182 == int32(0) {
-		v202 = v144
+		v205 = v144
 		goto L2
 	} else {
 		goto L62
 	}
 L62:
 	;
-	v185 = int32(0)
-	v187 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v190 = F_SearchSysCacheExists(m, int32(7), v187, v182, v185, v185)
+	v188 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l1)+16)))
+	v191 = int64(0)
+	v193 = F_SearchSysCacheExists(m, int32(7), v188, base.I64_extend16_s(base.I64_extend_i32_u(v182)), v191, v191)
 	mBase = m.M
-	v191 = m.ExcPending
-	if v191 != 0 {
+	v194 = m.ExcPending
+	if v194 != 0 {
 		goto L27
 	} else {
 		goto L63
 	}
 L63:
 	;
-	if v190 != 0 {
+	if v193 != 0 {
 		goto L64
 	} else {
 		goto L65
 	}
 L64:
 	;
-	v192 = v182
+	v195 = base.I32_extend16_s(v182)
 	goto L66
 L65:
 	;
-	v192 = v185
+	v195 = int32(0)
 	goto L66
 L66:
 	;
-	v202 = v192
+	v205 = v195
 	goto L2
 L67:
 	;
 	F_errcode(m, int32(33583236))
 	mBase = m.M
-	v216 = m.ExcPending
-	if v216 != 0 {
+	v219 = m.ExcPending
+	if v219 != 0 {
 		goto L27
 	} else {
 		goto L68
@@ -3447,8 +3447,8 @@ L68:
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = l3
 	F_errmsg(m, int32(_a_F_scanRTEForColumn_12), v16)
 	mBase = m.M
-	v220 = m.ExcPending
-	if v220 != 0 {
+	v223 = m.ExcPending
+	if v223 != 0 {
 		goto L27
 	} else {
 		goto L69
@@ -3457,18 +3457,18 @@ L69:
 	;
 	F_parser_errposition(m, l0, l4)
 	mBase = m.M
-	v222 = m.ExcPending
-	if v222 != 0 {
+	v225 = m.ExcPending
+	if v225 != 0 {
 		goto L27
 	} else {
 		goto L70
 	}
 L70:
 	;
-	F_errfinish(m, int32(_a_F_scanRTEForColumn_13), int32(850), int32(_a_F_scanRTEForColumn_14))
+	F_errfinish(m, int32(_a_F_scanRTEForColumn_13), int32(878), int32(_a_F_scanRTEForColumn_14))
 	mBase = m.M
-	v227 = m.ExcPending
-	if v227 != 0 {
+	v230 = m.ExcPending
+	if v230 != 0 {
 		goto L27
 	} else {
 		goto L71

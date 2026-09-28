@@ -5,12 +5,12 @@ import (
 	"unsafe"
 )
 
-func F_ghstore_union(m *base.Module, l0 int32) int32 {
+func F_ghstore_union(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v18 int32
+	var v18 int64
 	_ = v18
 	var v19 int32
 	_ = v19
@@ -52,8 +52,6 @@ func F_ghstore_union(m *base.Module, l0 int32) int32 {
 	_ = v67
 	var v83 int32
 	_ = v83
-	var v89 int32
-	_ = v89
 	var v92 int32
 	_ = v92
 	var v93 int32
@@ -133,8 +131,8 @@ func F_ghstore_union(m *base.Module, l0 int32) int32 {
 	var v236 int32
 	_ = v236
 	v2 = int32(0)
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v18 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	if v22 == v2 {
@@ -182,7 +180,7 @@ L5:
 	}
 L6:
 	;
-	v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+24)))
+	v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+32)))
 	v39 = v35 ^ int32(1)
 	goto L2
 L7:
@@ -213,7 +211,7 @@ L9:
 	}
 L10:
 	;
-	return int32(0)
+	return int64(0)
 L11:
 	;
 	v47 = *(*int32)(unsafe.Add(mBase, uint32(v43)+4))
@@ -247,8 +245,8 @@ L15:
 	}
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18))) = int32(base.Ui32(v236) >> (uint(int32(2)) % 32))
-	return v51
+	*(*int32)(unsafe.Add(mBase, uint32(base.I32_wrap_i64(v18)))) = int32(base.Ui32(v236) >> (uint(int32(2)) % 32))
+	return base.I64_extend_i32_u(v51)
 L17:
 	;
 	v67 = v48 & int32(3)
@@ -256,10 +254,9 @@ L17:
 	goto L18
 L18:
 	;
-	v89 = int32(4)
-	v92 = *(*int32)(unsafe.Add(mBase, uint32(v19+int32(4)+v83<<(uint(v89)%32))))
+	v92 = *(*int32)(unsafe.Add(mBase, uint32(v19+int32(8)+v83*int32(24))))
 	v93 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v92)+4)))
-	if v93&v89 == int32(0) {
+	if v93&int32(4) == int32(0) {
 		goto L20
 	} else {
 		goto L21

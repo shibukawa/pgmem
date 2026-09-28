@@ -35,7 +35,7 @@ func F_vac_bulkdel_one_index(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = F_index_bulk_delete(m, l0, l1, int32(583), l2)
+	v11 = F_index_bulk_delete(m, l0, l1, int32(628), l2)
 	mBase = m.M
 	v14 = m.ExcPending
 	if v14 != 0 {
@@ -60,7 +60,7 @@ func F_vac_bulkdel_one_index(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 				if v28 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_vac_bulkdel_one_index_1), int32(2661), int32(_a_F_vac_bulkdel_one_index_2))
+					F_errfinish(m, int32(_a_F_vac_bulkdel_one_index_1), int32(2676), int32(_a_F_vac_bulkdel_one_index_2))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {

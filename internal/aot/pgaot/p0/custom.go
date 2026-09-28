@@ -116,72 +116,24 @@ func F_define_custom_variable(m *base.Module, l0 int32) {
 	_ = v123
 	var v131 int32
 	_ = v131
-	var v132 int32
-	_ = v132
-	var v133 int32
-	_ = v133
-	var v134 int32
-	_ = v134
-	var v138 int32
-	_ = v138
-	var v139 int32
-	_ = v139
-	var v141 int32
-	_ = v141
 	var v143 int32
 	_ = v143
-	var v147 int32
-	_ = v147
-	var v151 int32
-	_ = v151
-	var v152 int32
-	_ = v152
-	var v154 int32
-	_ = v154
-	var v157 int32
-	_ = v157
-	var v164 int32
-	_ = v164
+	var v146 int32
+	_ = v146
+	var v150 int32
+	_ = v150
+	var v155 int32
+	_ = v155
+	var v159 int32
+	_ = v159
+	var v162 int32
+	_ = v162
+	var v163 int32
+	_ = v163
 	var v167 int32
 	_ = v167
-	var v171 int32
-	_ = v171
-	var v175 int32
-	_ = v175
-	var v176 int32
-	_ = v176
-	var v178 int32
-	_ = v178
-	var v180 int32
-	_ = v180
-	var v186 int32
-	_ = v186
-	var v187 int32
-	_ = v187
-	var v189 int32
-	_ = v189
-	var v192 int32
-	_ = v192
-	var v202 int32
-	_ = v202
-	var v215 int32
-	_ = v215
-	var v218 int32
-	_ = v218
-	var v222 int32
-	_ = v222
-	var v227 int32
-	_ = v227
-	var v231 int32
-	_ = v231
-	var v234 int32
-	_ = v234
-	var v235 int32
-	_ = v235
-	var v239 int32
-	_ = v239
-	var v244 int32
-	_ = v244
+	var v172 int32
+	_ = v172
 	v2 = int32(0)
 	v7 = m.G0
 	v9 = v7 - int32(16)
@@ -201,21 +153,21 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v231 = m.ExcPending
-	if v231 != 0 {
+	v159 = m.ExcPending
+	if v159 != 0 {
 		goto L4
 	} else {
-		goto L85
+		goto L57
 	}
 L2:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v215 = m.ExcPending
-	if v215 != 0 {
+	v143 = m.ExcPending
+	if v143 != 0 {
 		goto L4
 	} else {
-		goto L81
+		goto L53
 	}
 L3:
 	;
@@ -298,10 +250,10 @@ L13:
 	}
 L14:
 	;
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v35)+64))
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v35)+68))
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(v35)+68))
+	v48 = *(*int32)(unsafe.Add(mBase, uint32(v35)+72))
 	*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = v48
-	v50 = *(*int32)(unsafe.Add(mBase, uint32(v35)+64))
+	v50 = *(*int32)(unsafe.Add(mBase, uint32(v35)+68))
 	*(*int32)(unsafe.Add(mBase, uint32(v48))) = v50
 	goto L16
 L15:
@@ -351,7 +303,7 @@ L23:
 	goto L21
 L24:
 	;
-	if v61 != v35+int32(72) {
+	if v61 != v35+int32(76) {
 		v58 = v61
 		goto L22
 	} else {
@@ -369,7 +321,7 @@ L27:
 	goto L28
 L28:
 	;
-	v83 = *(*int32)(unsafe.Add(mBase, uint32(v35)+112))
+	v83 = *(*int32)(unsafe.Add(mBase, uint32(v35)+116))
 	if v83 != 0 {
 		goto L35
 	} else {
@@ -396,7 +348,7 @@ L32:
 	goto L30
 L33:
 	;
-	if v77 != v35+int32(76) {
+	if v77 != v35+int32(80) {
 		v74 = v77
 		goto L31
 	} else {
@@ -426,7 +378,7 @@ L36:
 L37:
 	;
 	v95 = *(*int32)(unsafe.Add(mBase, uint32(v35)+56))
-	v96 = *(*int32)(unsafe.Add(mBase, uint32(v35)+92))
+	v96 = *(*int32)(unsafe.Add(mBase, uint32(v35)+96))
 	v97 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
 	v98 = *(*int32)(unsafe.Add(mBase, uint32(v35)+40))
 	v99 = *(*int32)(unsafe.Add(mBase, uint32(v35)+32))
@@ -444,7 +396,7 @@ L38:
 	goto L37
 L39:
 	;
-	v103 = *(*int32)(unsafe.Add(mBase, uint32(v35)+84))
+	v103 = *(*int32)(unsafe.Add(mBase, uint32(v35)+88))
 	if v103 == int32(0) {
 		goto L40
 	} else {
@@ -452,19 +404,17 @@ L39:
 	}
 L40:
 	;
-	v131 = v35 + int32(56)
-	v132 = *(*int32)(unsafe.Add(mBase, uint32(v35)+92))
-	v133 = *(*int32)(unsafe.Add(mBase, uint32(v132)))
-	v134 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v132))) = v134
-	if v133 == v134 {
-		goto L53
+	F_free_placeholder(m, v35)
+	mBase = m.M
+	v131 = m.ExcPending
+	if v131 != 0 {
+		goto L4
 	} else {
-		goto L54
+		goto L52
 	}
 L41:
 	;
-	v106 = *(*int32)(unsafe.Add(mBase, uint32(v35)+88))
+	v106 = *(*int32)(unsafe.Add(mBase, uint32(v35)+92))
 	v107 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
 	v113 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_define_custom_variable[1])))
 	if v113 != 0 {
@@ -509,7 +459,7 @@ L46:
 	}
 L47:
 	;
-	v121 = *(*int32)(unsafe.Add(mBase, uint32(v115)+84))
+	v121 = *(*int32)(unsafe.Add(mBase, uint32(v115)+88))
 	if v121 != 0 {
 		goto L48
 	} else {
@@ -530,262 +480,83 @@ L49:
 	goto L50
 L50:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v115)+88)) = v106
-	*(*int32)(unsafe.Add(mBase, uint32(v115)+84)) = v119
+	*(*int32)(unsafe.Add(mBase, uint32(v115)+92)) = v106
+	*(*int32)(unsafe.Add(mBase, uint32(v115)+88)) = v119
 	goto L40
 L51:
 	;
 	goto L50
 L52:
 	;
-	v171 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v35)+112)) = v171
-	if v167 == v171 {
-		goto L66
-	} else {
-		goto L67
-	}
+	goto L3
 L53:
 	;
-	v164 = *(*int32)(unsafe.Add(mBase, uint32(v35)+112))
-	v167 = v164
-	goto L52
+	F_errcode(m, int32(_a_F_define_custom_variable_2))
+	mBase = m.M
+	v146 = m.ExcPending
+	if v146 != 0 {
+		goto L4
+	} else {
+		goto L54
+	}
 L54:
 	;
-	v138 = *(*int32)(unsafe.Add(mBase, uint32(v35)+92))
-	v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)))
-	if v133 == v139 {
-		goto L53
+	F_errmsg(m, int32(_a_F_define_custom_variable_3), int32(0))
+	mBase = m.M
+	v150 = m.ExcPending
+	if v150 != 0 {
+		goto L4
 	} else {
 		goto L55
 	}
 L55:
 	;
-	v141 = *(*int32)(unsafe.Add(mBase, uint32(v35)+112))
-	if v133 == v141 {
-		v167 = v141
-		goto L52
+	F_errfinish(m, int32(_a_F_define_custom_variable_4), int32(941), int32(_a_F_define_custom_variable_5))
+	mBase = m.M
+	v155 = m.ExcPending
+	if v155 != 0 {
+		goto L4
 	} else {
 		goto L56
 	}
 L56:
 	;
-	v143 = *(*int32)(unsafe.Add(mBase, uint32(v35)+96))
-	if v133 == v143 {
-		goto L53
-	} else {
-		goto L57
-	}
-L57:
-	;
-	v147 = v131
-	goto L58
-L58:
-	;
-	v151 = *(*int32)(unsafe.Add(mBase, uint32(v147)))
-	if v151 != 0 {
-		goto L60
-	} else {
-		goto L61
-	}
-L59:
-	;
-	F_pfree(m, v133)
-	mBase = m.M
-	v157 = m.ExcPending
-	if v157 != 0 {
-		goto L4
-	} else {
-		goto L65
-	}
-L60:
-	;
-	v152 = *(*int32)(unsafe.Add(mBase, uint32(v151)+32))
-	if v133 == v152 {
-		goto L53
-	} else {
-		goto L63
-	}
-L61:
-	;
-	goto L62
-L62:
-	;
-	goto L59
-L63:
-	;
-	v154 = *(*int32)(unsafe.Add(mBase, uint32(v151)+48))
-	if v133 != v154 {
-		v147 = v151
-		goto L58
-	} else {
-		goto L64
-	}
-L64:
-	;
-	goto L53
-L65:
-	;
-	goto L53
-L66:
-	;
-	F_pfree(m, v35)
-	mBase = m.M
-	v202 = m.ExcPending
-	if v202 != 0 {
-		goto L4
-	} else {
-		goto L80
-	}
-L67:
-	;
-	v175 = *(*int32)(unsafe.Add(mBase, uint32(v35)+92))
-	v176 = *(*int32)(unsafe.Add(mBase, uint32(v175)))
-	if v167 == v176 {
-		goto L66
-	} else {
-		goto L68
-	}
-L68:
-	;
-	v178 = *(*int32)(unsafe.Add(mBase, uint32(v35)+96))
-	if v167 == v178 {
-		goto L66
-	} else {
-		goto L69
-	}
-L69:
-	;
-	v180 = v131
-	goto L71
-L70:
-	;
-	if v35 == int32(0) {
-		goto L3
-	} else {
-		goto L79
-	}
-L71:
-	;
-	v186 = *(*int32)(unsafe.Add(mBase, uint32(v180)))
-	if v186 != 0 {
-		goto L73
-	} else {
-		goto L74
-	}
-L72:
-	;
-	F_pfree(m, v167)
-	mBase = m.M
-	v192 = m.ExcPending
-	if v192 != 0 {
-		goto L4
-	} else {
-		goto L78
-	}
-L73:
-	;
-	v187 = *(*int32)(unsafe.Add(mBase, uint32(v186)+32))
-	if v167 == v187 {
-		goto L70
-	} else {
-		goto L76
-	}
-L74:
-	;
-	goto L75
-L75:
-	;
-	goto L72
-L76:
-	;
-	v189 = *(*int32)(unsafe.Add(mBase, uint32(v186)+48))
-	if v167 != v189 {
-		v180 = v186
-		goto L71
-	} else {
-		goto L77
-	}
-L77:
-	;
-	goto L70
-L78:
-	;
-	goto L70
-L79:
-	;
-	goto L66
-L80:
-	;
-	goto L3
-L81:
-	;
-	F_errcode(m, int32(_a_F_define_custom_variable_2))
-	mBase = m.M
-	v218 = m.ExcPending
-	if v218 != 0 {
-		goto L4
-	} else {
-		goto L82
-	}
-L82:
-	;
-	F_errmsg(m, int32(_a_F_define_custom_variable_3), int32(0))
-	mBase = m.M
-	v222 = m.ExcPending
-	if v222 != 0 {
-		goto L4
-	} else {
-		goto L83
-	}
-L83:
-	;
-	F_errfinish(m, int32(_a_F_define_custom_variable_4), int32(1060), int32(_a_F_define_custom_variable_5))
-	mBase = m.M
-	v227 = m.ExcPending
-	if v227 != 0 {
-		goto L4
-	} else {
-		goto L84
-	}
-L84:
-	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L85:
+L57:
 	;
 	F_errcode(m, int32(2600))
 	mBase = m.M
-	v234 = m.ExcPending
-	if v234 != 0 {
+	v162 = m.ExcPending
+	if v162 != 0 {
 		goto L4
 	} else {
-		goto L86
+		goto L58
 	}
-L86:
+L58:
 	;
-	v235 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v235
+	v163 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v163
 	F_errmsg(m, int32(_a_F_define_custom_variable_6), v9)
 	mBase = m.M
-	v239 = m.ExcPending
-	if v239 != 0 {
+	v167 = m.ExcPending
+	if v167 != 0 {
 		goto L4
 	} else {
-		goto L87
+		goto L59
 	}
-L87:
+L59:
 	;
 	F_errfinish(m, int32(_a_F_define_custom_variable_4), int32(_a_F_define_custom_variable_7), int32(_a_F_define_custom_variable_8))
 	mBase = m.M
-	v244 = m.ExcPending
-	if v244 != 0 {
+	v172 = m.ExcPending
+	if v172 != 0 {
 		goto L4
 	} else {
-		goto L88
+		goto L60
 	}
-L88:
+L60:
 	;
 	base.Wasm_trap_unreachable()
 	for {

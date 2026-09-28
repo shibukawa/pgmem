@@ -10,7 +10,7 @@ func F_ExecSubqueryScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(759), int32(760))
+	v4 = F_ExecScan(m, l0, int32(805), int32(806))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -276,7 +276,7 @@ func F_convert_subquery_pathkeys(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	var v512 int32
 	_ = v512
 	v5 = int32(0)
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+156))
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+176))
 	if v24 != 0 {
 		goto L1
 	} else {
@@ -394,7 +394,7 @@ L16:
 	}
 L17:
 	;
-	v72 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
 	v73 = *(*int32)(unsafe.Add(mBase, uint32(v72)+4))
 	if v73 == int32(0) {
 		v488 = v44
@@ -610,7 +610,7 @@ L42:
 	}
 L43:
 	;
-	v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
+	v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
 	v215 = *(*int32)(unsafe.Add(mBase, uint32(v214)+4))
 	if v215 == int32(0) {
 		v308 = v191
@@ -786,7 +786,7 @@ L64:
 	}
 L65:
 	;
-	v290 = *(*int32)(unsafe.Add(mBase, uint32(l0)+156))
+	v290 = *(*int32)(unsafe.Add(mBase, uint32(l0)+176))
 	v291 = *(*int32)(unsafe.Add(mBase, uint32(v290)+12))
 	v295 = *(*int32)(unsafe.Add(mBase, uint32(v291+v47<<(uint(int32(2))%32))))
 	if v295 == v281 {
@@ -1600,7 +1600,7 @@ L55:
 	v136 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	v137 = int32(*(*int16)(unsafe.Add(mBase, uint32(v74))))
 	v139 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v136+v137))))
-	if v139&int32(4) != 0 {
+	if v139&int32(8) != 0 {
 		goto L26
 	} else {
 		goto L56
@@ -1929,7 +1929,7 @@ L107:
 	}
 L108:
 	;
-	F_errfinish(m, int32(_a_F_subquery_is_pushdown_safe_1), int32(3862), int32(_a_F_subquery_is_pushdown_safe_2))
+	F_errfinish(m, int32(_a_F_subquery_is_pushdown_safe_1), int32(_a_F_subquery_is_pushdown_safe_2), int32(_a_F_subquery_is_pushdown_safe_3))
 	mBase = m.M
 	v368 = m.ExcPending
 	if v368 != 0 {
@@ -1954,7 +1954,7 @@ L110:
 	}
 L111:
 	;
-	F_errfinish(m, int32(_a_F_subquery_is_pushdown_safe_1), int32(3868), int32(_a_F_subquery_is_pushdown_safe_2))
+	F_errfinish(m, int32(_a_F_subquery_is_pushdown_safe_1), int32(_a_F_subquery_is_pushdown_safe_4), int32(_a_F_subquery_is_pushdown_safe_3))
 	mBase = m.M
 	v381 = m.ExcPending
 	if v381 != 0 {

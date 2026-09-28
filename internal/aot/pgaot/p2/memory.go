@@ -93,7 +93,7 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 				if v72 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_MemoryContextAllocExtended_1), int32(1254), int32(_a_F_MemoryContextAllocExtended_2))
+					F_errfinish(m, int32(_a_F_MemoryContextAllocExtended_1), int32(1301), int32(_a_F_MemoryContextAllocExtended_2))
 					mBase = m.M
 					v77 = m.ExcPending
 					if v77 != 0 {
@@ -121,7 +121,7 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 				if v72 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_MemoryContextAllocExtended_1), int32(1254), int32(_a_F_MemoryContextAllocExtended_2))
+					F_errfinish(m, int32(_a_F_MemoryContextAllocExtended_1), int32(1301), int32(_a_F_MemoryContextAllocExtended_2))
 					mBase = m.M
 					v77 = m.ExcPending
 					if v77 != 0 {
@@ -220,6 +220,8 @@ func F_MemoryContextAllocationFailure(m *base.Module, l0 int32, l1 int32, l2 int
 	_ = v29
 	var v30 int32
 	_ = v30
+	var v34 int32
+	_ = v34
 	var v35 int32
 	_ = v35
 	var v40 int32
@@ -257,13 +259,13 @@ func F_MemoryContextAllocationFailure(m *base.Module, l0 int32, l1 int32, l2 int
 							v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v30
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-							F_errdetail(m, int32(_a_F_MemoryContextAllocationFailure_2), v7)
+							v34 = F_errdetail(m, int32(_a_F_MemoryContextAllocationFailure_2), v7)
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_MemoryContextAllocationFailure_3), int32(1164), int32(_a_F_MemoryContextAllocationFailure_4))
+								F_errfinish(m, int32(_a_F_MemoryContextAllocationFailure_3), int32(1211), int32(_a_F_MemoryContextAllocationFailure_4))
 								mBase = m.M
 								v40 = m.ExcPending
 								if v40 != 0 {
@@ -300,13 +302,13 @@ func F_MemoryContextAllocationFailure(m *base.Module, l0 int32, l1 int32, l2 int
 						v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v30
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-						F_errdetail(m, int32(_a_F_MemoryContextAllocationFailure_2), v7)
+						v34 = F_errdetail(m, int32(_a_F_MemoryContextAllocationFailure_2), v7)
 						mBase = m.M
 						v35 = m.ExcPending
 						if v35 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_MemoryContextAllocationFailure_3), int32(1164), int32(_a_F_MemoryContextAllocationFailure_4))
+							F_errfinish(m, int32(_a_F_MemoryContextAllocationFailure_3), int32(1211), int32(_a_F_MemoryContextAllocationFailure_4))
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {

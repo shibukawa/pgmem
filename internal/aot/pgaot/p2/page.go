@@ -160,7 +160,7 @@ func F_PageAddItemExtended(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	}
 L1:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
 	v278 = m.ExcPending
 	if v278 != 0 {
@@ -312,7 +312,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(_a_F_PageAddItemExtended_5), int32(235), int32(_a_F_PageAddItemExtended_6))
+	F_errfinish(m, int32(_a_F_PageAddItemExtended_5), int32(238), int32(_a_F_PageAddItemExtended_6))
 	mBase = m.M
 	v71 = m.ExcPending
 	if v71 != 0 {
@@ -410,7 +410,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(_a_F_PageAddItemExtended_5), int32(292), int32(_a_F_PageAddItemExtended_6))
+	F_errfinish(m, int32(_a_F_PageAddItemExtended_5), int32(295), int32(_a_F_PageAddItemExtended_6))
 	mBase = m.M
 	v173 = m.ExcPending
 	if v173 != 0 {
@@ -465,7 +465,7 @@ L43:
 	}
 L44:
 	;
-	F_errfinish(m, int32(_a_F_PageAddItemExtended_5), int32(299), int32(_a_F_PageAddItemExtended_6))
+	F_errfinish(m, int32(_a_F_PageAddItemExtended_5), int32(302), int32(_a_F_PageAddItemExtended_6))
 	mBase = m.M
 	v212 = m.ExcPending
 	if v212 != 0 {
@@ -579,7 +579,7 @@ L60:
 	}
 L61:
 	;
-	F_errfinish(m, int32(_a_F_PageAddItemExtended_5), int32(217), int32(_a_F_PageAddItemExtended_6))
+	F_errfinish(m, int32(_a_F_PageAddItemExtended_5), int32(220), int32(_a_F_PageAddItemExtended_6))
 	mBase = m.M
 	v295 = m.ExcPending
 	if v295 != 0 {
@@ -617,7 +617,7 @@ func F_PageRestoreTempPage(m *base.Module, l0 int32, l1 int32) {
 		return
 	}
 }
-func F_PageSetChecksumInplace(m *base.Module, l0 int32, l1 int32) {
+func F_PageSetChecksum(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -628,292 +628,28 @@ func F_PageSetChecksumInplace(m *base.Module, l0 int32, l1 int32) {
 	_ = v8
 	var v13 int32
 	_ = v13
-	var v46 int32
-	_ = v46
-	var v49 int32
-	_ = v49
-	var v50 int32
-	_ = v50
-	var v51 int32
-	_ = v51
-	var v58 int32
-	_ = v58
-	var v92 int32
-	_ = v92
-	var v99 int32
-	_ = v99
-	var v129 int32
-	_ = v129
-	var v130 int32
-	_ = v130
-	var v131 int32
-	_ = v131
-	var v133 int32
-	_ = v133
-	var v134 int32
-	_ = v134
-	var v135 int32
-	_ = v135
-	var v136 int32
-	_ = v136
-	var v138 int32
-	_ = v138
-	var v143 int32
-	_ = v143
-	var v144 int32
-	_ = v144
-	var v146 int32
-	_ = v146
-	var v147 int32
-	_ = v147
-	var v148 int32
-	_ = v148
-	var v156 int32
-	_ = v156
-	var v160 int32
-	_ = v160
-	var v169 int32
-	_ = v169
-	var v201 int32
-	_ = v201
-	var v202 int32
-	_ = v202
-	var v203 int32
-	_ = v203
-	var v205 int32
-	_ = v205
-	var v209 int32
-	_ = v209
-	var v216 int32
-	_ = v216
-	var v223 int32
-	_ = v223
-	var v231 int32
-	_ = v231
-	var v240 int32
-	_ = v240
-	var v272 int32
-	_ = v272
-	var v273 int32
-	_ = v273
-	var v274 int32
-	_ = v274
-	var v276 int32
-	_ = v276
-	var v280 int32
-	_ = v280
-	var v287 int32
-	_ = v287
-	var v294 int32
-	_ = v294
-	var v302 int32
-	_ = v302
-	var v305 int32
-	_ = v305
-	var v306 int32
-	_ = v306
-	var v307 int32
-	_ = v307
-	var v308 int32
-	_ = v308
-	var v309 int32
-	_ = v309
-	var v310 int32
-	_ = v310
-	var v311 int32
-	_ = v311
-	var v312 int32
-	_ = v312
-	var v313 int32
-	_ = v313
-	var v314 int32
-	_ = v314
-	var v315 int32
-	_ = v315
-	var v316 int32
-	_ = v316
-	var v317 int32
-	_ = v317
-	var v318 int32
-	_ = v318
-	var v319 int32
-	_ = v319
-	var v320 int32
-	_ = v320
-	var v321 int32
-	_ = v321
-	var v322 int32
-	_ = v322
-	var v323 int32
-	_ = v323
-	var v324 int32
-	_ = v324
-	var v325 int32
-	_ = v325
-	var v326 int32
-	_ = v326
-	var v327 int32
-	_ = v327
-	var v328 int32
-	_ = v328
-	var v329 int32
-	_ = v329
-	var v330 int32
-	_ = v330
-	var v331 int32
-	_ = v331
-	var v332 int32
-	_ = v332
-	var v333 int32
-	_ = v333
-	var v334 int32
-	_ = v334
-	var v335 int32
-	_ = v335
-	var v336 int32
-	_ = v336
-	var v370 int32
-	_ = v370
-	var v371 int32
-	_ = v371
-	var v375 int32
-	_ = v375
+	var v14 int32
+	_ = v14
 	v3 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+14)))
 	if v3 == int32(0) {
+		return
 	} else {
-		v7 = *(*int32)(unsafe.Add(mBase, _c_F_PageSetChecksumInplace[0]))
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+252))
+		v7 = *(*int32)(unsafe.Add(mBase, _c_F_PageSetChecksum[0]))
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+268))
 		if base.B2i32(v8 != int32(0)) == int32(0) {
+			return
 		} else {
-			v13 = int32(0)
-			v46 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+8)))
-			*(*uint16)(unsafe.Add(mBase, uint32(l0)+8)) = uint16(v13)
-			v49 = m.G0
-			v50 = int32(128)
-			v51 = v49 - v50
-			base.MemoryCopy(m, v51, int32(_a_F_PageSetChecksumInplace_0), v50)
-			v58 = v13
-			for {
-				v92 = l0 + v58<<(uint(int32(7))%32)
-				v99 = int32(0)
-				for {
-					v129 = int32(2)
-					v130 = v99 << (uint(v129) % 32)
-					v131 = v51 + v130
-					v133 = *(*int32)(unsafe.Add(mBase, uint32(v92+v130)))
-					v134 = *(*int32)(unsafe.Add(mBase, uint32(v131)))
-					v135 = v133 ^ v134
-					v136 = int32(16777619)
-					v138 = int32(17)
-					*(*int32)(unsafe.Add(mBase, uint32(v131))) = v135*v136 ^ int32(base.Ui32(v135)>>(uint(v138)%32))
-					v143 = v130 | int32(4)
-					v144 = v51 + v143
-					v146 = *(*int32)(unsafe.Add(mBase, uint32(v92+v143)))
-					v147 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
-					v148 = v146 ^ v147
-					*(*int32)(unsafe.Add(mBase, uint32(v144))) = v148*v136 ^ int32(base.Ui32(v148)>>(uint(v138)%32))
-					v156 = v99 + v129
-					if v156 != int32(32) {
-						v99 = v156
-						continue
-					} else {
-						break
-					}
-					break
-				}
-				v160 = v58 + int32(1)
-				if v160 != int32(64) {
-					v58 = v160
-					continue
-				} else {
-					break
-				}
-				break
+			v13 = F_pg_checksum_page(m, l0, l1)
+			mBase = m.M
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return
+			} else {
+				*(*uint16)(unsafe.Add(mBase, uint32(l0)+8)) = uint16(v13)
+				return
 			}
-			v169 = int32(0)
-			for {
-				v201 = v51 + v169<<(uint(int32(2))%32)
-				v202 = *(*int32)(unsafe.Add(mBase, uint32(v201)))
-				v203 = int32(16777619)
-				v205 = int32(17)
-				*(*int32)(unsafe.Add(mBase, uint32(v201))) = v202*v203 ^ int32(base.Ui32(v202)>>(uint(v205)%32))
-				v209 = *(*int32)(unsafe.Add(mBase, uint32(v201)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v201)+4)) = v209*v203 ^ int32(base.Ui32(v209)>>(uint(v205)%32))
-				v216 = *(*int32)(unsafe.Add(mBase, uint32(v201)+8))
-				*(*int32)(unsafe.Add(mBase, uint32(v201)+8)) = v216*v203 ^ int32(base.Ui32(v216)>>(uint(v205)%32))
-				v223 = *(*int32)(unsafe.Add(mBase, uint32(v201)+12))
-				*(*int32)(unsafe.Add(mBase, uint32(v201)+12)) = v223*v203 ^ int32(base.Ui32(v223)>>(uint(v205)%32))
-				v231 = v169 + int32(4)
-				if v231 != int32(32) {
-					v169 = v231
-					continue
-				} else {
-					break
-				}
-				break
-			}
-			v240 = int32(0)
-			for {
-				v272 = v51 + v240<<(uint(int32(2))%32)
-				v273 = *(*int32)(unsafe.Add(mBase, uint32(v272)))
-				v274 = int32(16777619)
-				v276 = int32(17)
-				*(*int32)(unsafe.Add(mBase, uint32(v272))) = v273*v274 ^ int32(base.Ui32(v273)>>(uint(v276)%32))
-				v280 = *(*int32)(unsafe.Add(mBase, uint32(v272)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v272)+4)) = v280*v274 ^ int32(base.Ui32(v280)>>(uint(v276)%32))
-				v287 = *(*int32)(unsafe.Add(mBase, uint32(v272)+8))
-				*(*int32)(unsafe.Add(mBase, uint32(v272)+8)) = v287*v274 ^ int32(base.Ui32(v287)>>(uint(v276)%32))
-				v294 = *(*int32)(unsafe.Add(mBase, uint32(v272)+12))
-				*(*int32)(unsafe.Add(mBase, uint32(v272)+12)) = v294*v274 ^ int32(base.Ui32(v294)>>(uint(v276)%32))
-				v302 = v240 + int32(4)
-				if v302 != int32(32) {
-					v240 = v302
-					continue
-				} else {
-					break
-				}
-				break
-			}
-			v305 = *(*int32)(unsafe.Add(mBase, uint32(v51)+124))
-			v306 = *(*int32)(unsafe.Add(mBase, uint32(v51)+120))
-			v307 = *(*int32)(unsafe.Add(mBase, uint32(v51)+116))
-			v308 = *(*int32)(unsafe.Add(mBase, uint32(v51)+112))
-			v309 = *(*int32)(unsafe.Add(mBase, uint32(v51)+108))
-			v310 = *(*int32)(unsafe.Add(mBase, uint32(v51)+104))
-			v311 = *(*int32)(unsafe.Add(mBase, uint32(v51)+100))
-			v312 = *(*int32)(unsafe.Add(mBase, uint32(v51)+96))
-			v313 = *(*int32)(unsafe.Add(mBase, uint32(v51)+92))
-			v314 = *(*int32)(unsafe.Add(mBase, uint32(v51)+88))
-			v315 = *(*int32)(unsafe.Add(mBase, uint32(v51)+84))
-			v316 = *(*int32)(unsafe.Add(mBase, uint32(v51)+80))
-			v317 = *(*int32)(unsafe.Add(mBase, uint32(v51)+76))
-			v318 = *(*int32)(unsafe.Add(mBase, uint32(v51)+72))
-			v319 = *(*int32)(unsafe.Add(mBase, uint32(v51)+68))
-			v320 = *(*int32)(unsafe.Add(mBase, uint32(v51)+64))
-			v321 = *(*int32)(unsafe.Add(mBase, uint32(v51)+60))
-			v322 = *(*int32)(unsafe.Add(mBase, uint32(v51)+56))
-			v323 = *(*int32)(unsafe.Add(mBase, uint32(v51)+52))
-			v324 = *(*int32)(unsafe.Add(mBase, uint32(v51)+48))
-			v325 = *(*int32)(unsafe.Add(mBase, uint32(v51)+44))
-			v326 = *(*int32)(unsafe.Add(mBase, uint32(v51)+40))
-			v327 = *(*int32)(unsafe.Add(mBase, uint32(v51)+36))
-			v328 = *(*int32)(unsafe.Add(mBase, uint32(v51)+32))
-			v329 = *(*int32)(unsafe.Add(mBase, uint32(v51)+28))
-			v330 = *(*int32)(unsafe.Add(mBase, uint32(v51)+24))
-			v331 = *(*int32)(unsafe.Add(mBase, uint32(v51)+20))
-			v332 = *(*int32)(unsafe.Add(mBase, uint32(v51)+16))
-			v333 = *(*int32)(unsafe.Add(mBase, uint32(v51)+12))
-			v334 = *(*int32)(unsafe.Add(mBase, uint32(v51)+8))
-			v335 = *(*int32)(unsafe.Add(mBase, uint32(v51)+4))
-			v336 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
-			*(*uint16)(unsafe.Add(mBase, uint32(l0)+8)) = uint16(v46)
-			v370 = int32(_a_F_PageSetChecksumInplace_1)
-			v371 = base.I32_rem_u_s(v305^(v306^(v307^(v308^(v309^(v310^(v311^(v312^(v313^(v314^(v315^(v316^(v317^(v318^(v319^(v320^(v321^(v322^(v323^(v324^(v325^(v326^(v327^(v328^(v329^(v330^(v331^(v332^(v333^(v334^(v335^(l1^v336))))))))))))))))))))))))))))))), v370)
-			v375 = (v371 + int32(1)) & v370
-			*(*uint16)(unsafe.Add(mBase, uint32(l0)+8)) = uint16(v375)
 		}
 	}
-	return
 }
 func F_ReadPageInternal(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 	mBase := m.M

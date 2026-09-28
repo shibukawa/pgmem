@@ -24,100 +24,98 @@ func F_ProcArrayRemove(m *base.Module, l0 int32, l1 int32) {
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v29 int32
-	_ = v29
-	var v30 int64
-	_ = v30
+	var v28 int32
+	_ = v28
 	var v31 int32
 	_ = v31
-	var v43 int32
-	_ = v43
-	var v45 int32
-	_ = v45
-	var v50 int64
-	_ = v50
-	var v54 int32
-	_ = v54
-	var v55 int32
-	_ = v55
-	var v56 int32
-	_ = v56
+	var v32 int64
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v47 int64
+	_ = v47
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v57 int32
+	_ = v57
 	var v60 int32
 	_ = v60
+	var v62 int32
+	_ = v62
 	var v63 int32
 	_ = v63
-	var v65 int32
-	_ = v65
-	var v66 int32
-	_ = v66
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v78 int32
+	_ = v78
+	var v79 int32
+	_ = v79
 	var v81 int32
 	_ = v81
-	var v82 int32
-	_ = v82
+	var v83 int32
+	_ = v83
 	var v84 int32
 	_ = v84
 	var v86 int32
 	_ = v86
-	var v87 int32
-	_ = v87
-	var v89 int32
-	_ = v89
+	var v88 int32
+	_ = v88
+	var v90 int32
+	_ = v90
 	var v91 int32
 	_ = v91
-	var v93 int32
-	_ = v93
 	var v94 int32
 	_ = v94
-	var v97 int32
-	_ = v97
-	var v99 int32
-	_ = v99
-	var v101 int32
-	_ = v101
-	var v110 int32
-	_ = v110
-	var v111 int32
-	_ = v111
+	var v96 int32
+	_ = v96
+	var v98 int32
+	_ = v98
+	var v107 int32
+	_ = v107
+	var v108 int32
+	_ = v108
+	var v114 int32
+	_ = v114
+	var v116 int32
+	_ = v116
 	var v117 int32
 	_ = v117
-	var v119 int32
-	_ = v119
-	var v120 int32
-	_ = v120
-	var v121 int32
-	_ = v121
-	var v130 int32
-	_ = v130
-	var v131 int32
-	_ = v131
-	var v136 int32
-	_ = v136
-	var v144 int32
-	_ = v144
-	var v146 int32
-	_ = v146
-	var v150 int32
-	_ = v150
-	var v151 int32
-	_ = v151
-	var v164 int32
-	_ = v164
-	var v170 int32
-	_ = v170
-	var v171 int32
-	_ = v171
-	var v184 int32
-	_ = v184
-	var v188 int32
-	_ = v188
-	var v190 int32
-	_ = v190
-	var v194 int32
-	_ = v194
+	var v118 int32
+	_ = v118
+	var v127 int32
+	_ = v127
+	var v128 int32
+	_ = v128
+	var v133 int32
+	_ = v133
+	var v141 int32
+	_ = v141
+	var v143 int32
+	_ = v143
+	var v147 int32
+	_ = v147
+	var v148 int32
+	_ = v148
+	var v161 int32
+	_ = v161
+	var v167 int32
+	_ = v167
+	var v168 int32
+	_ = v168
+	var v181 int32
+	_ = v181
+	var v185 int32
+	_ = v185
+	var v187 int32
+	_ = v187
+	var v191 int32
+	_ = v191
 	v12 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[0]))
 	v14 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[1]))
 	v18 = F_LWLockAcquire(m, v14+int32(512), int32(0))
@@ -133,89 +131,91 @@ func F_ProcArrayRemove(m *base.Module, l0 int32, l1 int32) {
 		if v26 != 0 {
 			return
 		} else {
-			v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+			v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 			if l1 != 0 {
-				v29 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[2]))
-				v30 = *(*int64)(unsafe.Add(mBase, uint32(v29)+48))
-				v31 = base.I32_wrap_i64(v30)
-				if base.B2i32(base.Ui32(int32(2)) < base.Ui32(l1))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v31)) == int32(0) {
-					v43 = base.B2i32(base.Ui32(v31) < base.Ui32(l1))
+				v28 = int32(3)
+				v31 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[2]))
+				v32 = *(*int64)(unsafe.Add(mBase, uint32(v31)+48))
+				v33 = base.I32_wrap_i64(v32)
+				if base.B2i32(base.Ui32(l1) < base.Ui32(v28))|base.B2i32(base.Ui32(v33) < base.Ui32(v28)) == int32(0) {
+					if v33-l1 < int32(0) {
+						*(*int64)(unsafe.Add(mBase, uint32(v31)+48)) = v32 + base.I64_extend_i32_s(l1-v33)
+					} else {
+					}
 				} else {
-					v43 = int32(base.Ui32(v31-l1) >> (uint(int32(31)) % 32))
+					if base.Ui32(l1) <= base.Ui32(v33) {
+					} else {
+						*(*int64)(unsafe.Add(mBase, uint32(v31)+48)) = v32 + base.I64_extend_i32_s(l1-v33)
+					}
 				}
-				v45 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[2]))
-				if v43 != 0 {
-					*(*int64)(unsafe.Add(mBase, uint32(v45)+48)) = v30 + base.I64_extend_i32_s(l1-v31)
-				} else {
-				}
-				v50 = *(*int64)(unsafe.Add(mBase, uint32(v45)+56))
-				*(*int64)(unsafe.Add(mBase, uint32(v45)+56)) = v50 + int64(1)
-				v54 = int32(_a_F_ProcArrayRemove_0)
-				v55 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
-				v56 = *(*int32)(unsafe.Add(mBase, uint32(v55)+4))
-				v60 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v56+v27<<(uint(int32(2))%32)))) = v60
-				v63 = v27 << (uint(int32(1)) % 32)
-				v65 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
-				v66 = *(*int32)(unsafe.Add(mBase, uint32(v65)+8))
-				*(*uint8)(unsafe.Add(mBase, uint32(v63+v66)+1)) = uint8(v60)
-				v71 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
-				v72 = *(*int32)(unsafe.Add(mBase, uint32(v71)+8))
-				*(*uint8)(unsafe.Add(mBase, uint32(v72+v63))) = uint8(v60)
+				v47 = *(*int64)(unsafe.Add(mBase, uint32(v31)+56))
+				*(*int64)(unsafe.Add(mBase, uint32(v31)+56)) = v47 + int64(1)
+				v51 = int32(_a_F_ProcArrayRemove_0)
+				v52 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
+				v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+4))
+				v57 = int32(0)
+				*(*int32)(unsafe.Add(mBase, uint32(v53+v27<<(uint(int32(2))%32)))) = v57
+				v60 = v27 << (uint(int32(1)) % 32)
+				v62 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
+				v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+8))
+				*(*uint8)(unsafe.Add(mBase, uint32(v60+v63)+1)) = uint8(v57)
+				v68 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
+				v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+8))
+				*(*uint8)(unsafe.Add(mBase, uint32(v69+v60))) = uint8(v57)
 			} else {
 			}
-			v81 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
-			v82 = *(*int32)(unsafe.Add(mBase, uint32(v81)+12))
-			v84 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, uint32(v82+v27))) = uint8(v84)
-			v86 = int32(2)
-			v87 = v27 << (uint(v86) % 32)
-			v89 = v12 + int32(36)
-			v91 = v27 + int32(1)
-			v93 = v91 << (uint(v86) % 32)
-			v94 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-			v97 = v94 + (v27 ^ int32(-1))
-			v99 = v97 << (uint(v86) % 32)
-			v101 = base.B2i32(v99 == v84)
-			if v101 == v84 {
-				base.MemoryCopy(m, v89+v87, v89+v93, v99)
+			v78 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
+			v79 = *(*int32)(unsafe.Add(mBase, uint32(v78)+12))
+			v81 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v79+v27))) = uint8(v81)
+			v83 = int32(2)
+			v84 = v27 << (uint(v83) % 32)
+			v86 = v12 + int32(36)
+			v88 = v27 + int32(1)
+			v90 = v88 << (uint(v83) % 32)
+			v91 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
+			v94 = v91 + (v27 ^ int32(-1))
+			v96 = v94 << (uint(v83) % 32)
+			v98 = base.B2i32(v96 == v81)
+			if v98 == v81 {
+				base.MemoryCopy(m, v86+v84, v86+v90, v96)
 			} else {
 			}
-			if v101 == int32(0) {
-				v110 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
-				v111 = *(*int32)(unsafe.Add(mBase, uint32(v110)+4))
-				base.MemoryCopy(m, v87+v111, v111+v93, v99)
+			if v98 == int32(0) {
+				v107 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
+				v108 = *(*int32)(unsafe.Add(mBase, uint32(v107)+4))
+				base.MemoryCopy(m, v84+v108, v108+v90, v96)
 			} else {
 			}
-			v117 = v97 << (uint(int32(1)) % 32)
-			if v117 != 0 {
-				v119 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
-				v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+8))
-				v121 = int32(1)
-				base.MemoryCopy(m, v120+v27<<(uint(v121)%32), v120+v91<<(uint(v121)%32), v117)
+			v114 = v94 << (uint(int32(1)) % 32)
+			if v114 != 0 {
+				v116 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
+				v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+8))
+				v118 = int32(1)
+				base.MemoryCopy(m, v117+v27<<(uint(v118)%32), v117+v88<<(uint(v118)%32), v114)
 			} else {
 			}
-			if v97 != 0 {
-				v130 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
-				v131 = *(*int32)(unsafe.Add(mBase, uint32(v130)+12))
-				base.MemoryCopy(m, v131+v27, v131+v91, v97)
+			if v94 != 0 {
+				v127 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[3]))
+				v128 = *(*int32)(unsafe.Add(mBase, uint32(v127)+12))
+				base.MemoryCopy(m, v128+v27, v128+v88, v94)
 			} else {
 			}
-			v136 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-			*(*int32)(unsafe.Add(mBase, uint32(v89+v136<<(uint(int32(2))%32)-int32(4)))) = int32(-1)
-			v144 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-			v146 = v144 - int32(1)
-			*(*int32)(unsafe.Add(mBase, uint32(v12))) = v146
-			if v27 < v146 {
-				v150 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[4]))
-				v151 = v27
+			v133 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
+			*(*int32)(unsafe.Add(mBase, uint32(v86+v133<<(uint(int32(2))%32)-int32(4)))) = int32(-1)
+			v141 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
+			v143 = v141 - int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(v12))) = v143
+			if v27 < v143 {
+				v147 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[4]))
+				v148 = v27
 				for {
-					v164 = *(*int32)(unsafe.Add(mBase, uint32(v89+v151<<(uint(int32(2))%32))))
-					*(*int32)(unsafe.Add(mBase, uint32(v150+v164*int32(640))+48)) = v151
-					v170 = v151 + int32(1)
-					v171 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-					if v170 < v171 {
-						v151 = v170
+					v161 = *(*int32)(unsafe.Add(mBase, uint32(v86+v148<<(uint(int32(2))%32))))
+					*(*int32)(unsafe.Add(mBase, uint32(v147+v161*int32(768))+32)) = v148
+					v167 = v148 + int32(1)
+					v168 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
+					if v167 < v168 {
+						v148 = v167
 						continue
 					} else {
 						break
@@ -224,18 +224,18 @@ func F_ProcArrayRemove(m *base.Module, l0 int32, l1 int32) {
 				}
 			} else {
 			}
-			v184 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[1]))
-			F_LWLockRelease(m, v184+int32(384))
+			v181 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[1]))
+			F_LWLockRelease(m, v181+int32(384))
 			mBase = m.M
-			v188 = m.ExcPending
-			if v188 != 0 {
+			v185 = m.ExcPending
+			if v185 != 0 {
 				return
 			} else {
-				v190 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[1]))
-				F_LWLockRelease(m, v190+int32(512))
+				v187 = *(*int32)(unsafe.Add(mBase, _c_F_ProcArrayRemove[1]))
+				F_LWLockRelease(m, v187+int32(512))
 				mBase = m.M
-				v194 = m.ExcPending
-				if v194 != 0 {
+				v191 = m.ExcPending
+				if v191 != 0 {
 					return
 				} else {
 					return
@@ -273,8 +273,8 @@ func F_ProcNumberGetProc(m *base.Module, l0 int32) int32 {
 			v20 = int32(0)
 		} else {
 			v11 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-			v14 = v11 + l0*int32(640)
-			v16 = *(*int32)(unsafe.Add(mBase, uint32(v14)+44))
+			v14 = v11 + l0*int32(768)
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v14)+12))
 			if v16 != 0 {
 				v17 = v14
 			} else {
@@ -374,7 +374,7 @@ func F_proc_exit(m *base.Module, l0 int32) {
 			}
 		}
 	} else {
-		F_errstart_cold(m, int32(23), int32(0))
+		F_errstart_cold(m, int32(24), int32(0))
 		mBase = m.M
 		v31 = m.ExcPending
 		if v31 != 0 {

@@ -399,7 +399,7 @@ func F_SlabAlloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v242 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_SlabAlloc_1), int32(611), int32(_a_F_SlabAlloc_2))
+				F_errfinish(m, int32(_a_F_SlabAlloc_1), int32(640), int32(_a_F_SlabAlloc_2))
 				mBase = m.M
 				v247 = m.ExcPending
 				if v247 != 0 {

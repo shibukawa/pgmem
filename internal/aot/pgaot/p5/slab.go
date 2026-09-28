@@ -68,6 +68,8 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 	_ = v131
 	var v135 int32
 	_ = v135
+	var v140 int32
+	_ = v140
 	var v141 int32
 	_ = v141
 	var v146 int32
@@ -115,7 +117,7 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
-							F_errdetail(m, int32(_a_F_SlabContextCreate_2), v12+int32(16))
+							v140 = F_errdetail(m, int32(_a_F_SlabContextCreate_2), v12+int32(16))
 							mBase = m.M
 							v141 = m.ExcPending
 							if v141 != 0 {
@@ -172,7 +174,7 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 			*(*int32)(unsafe.Add(mBase, uint32(v29)+16)) = l0
 			v75 = int32(1)
 			*(*uint8)(unsafe.Add(mBase, uint32(v29)+4)) = uint8(v75)
-			*(*int32)(unsafe.Add(mBase, uint32(v29))) = int32(476)
+			*(*int32)(unsafe.Add(mBase, uint32(v29))) = int32(484)
 			v78 = int64(0)
 			*(*int64)(unsafe.Add(mBase, uint32(v29)+36)) = v78
 			*(*int32)(unsafe.Add(mBase, uint32(v29)+32)) = l1

@@ -64,7 +64,7 @@ func F_SparsevecCheckValue(m *base.Module, l0 int32) {
 		return
 	}
 }
-func F_sparsevec_ge(m *base.Module, l0 int32) int32 {
+func F_sparsevec_ge(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -147,7 +147,7 @@ func F_sparsevec_ge(m *base.Module, l0 int32) int32 {
 	_ = v136
 	var v155 int32
 	_ = v155
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = F_pg_detoast_datum(m, v2)
 	mBase = m.M
 	v6 = m.ExcPending
@@ -158,10 +158,10 @@ func F_sparsevec_ge(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v8 = F_pg_detoast_datum(m, v7)
 	mBase = m.M
 	v9 = m.ExcPending
@@ -187,7 +187,7 @@ L3:
 	}
 L4:
 	;
-	return int32(base.Ui32(v155^int32(-1)) >> (uint(int32(31)) % 32))
+	return base.I64_extend_i32_u(base.B2i32(int32(0) <= v155))
 L5:
 	;
 	v36 = v31
@@ -421,7 +421,7 @@ L48:
 	v155 = base.B2i32(v134 < v136)
 	goto L4
 }
-func F_sparsevec_l2_distance(m *base.Module, l0 int32) int32 {
+func F_sparsevec_l2_distance(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 float32
@@ -564,16 +564,12 @@ func F_sparsevec_l2_distance(m *base.Module, l0 int32) int32 {
 	_ = v263
 	var v267 float32
 	_ = v267
-	var v284 int32
-	_ = v284
-	var v285 int32
-	_ = v285
 	v2 = float32(0)
 	v4 = int32(0)
 	v18 = m.G0
 	v20 = v18 - int32(16)
 	m.G0 = v20
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v23 = F_pg_detoast_datum(m, v22)
 	mBase = m.M
 	v26 = m.ExcPending
@@ -584,10 +580,10 @@ func F_sparsevec_l2_distance(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v28 = F_pg_detoast_datum(m, v27)
 	mBase = m.M
 	v29 = m.ExcPending
@@ -818,14 +814,8 @@ L32:
 	}
 L33:
 	;
-	v284 = F_Float8GetDatum(m, base.F64_sqrt(base.F64_promote_f32(v267)))
-	mBase = m.M
-	v285 = m.ExcPending
-	if v285 != 0 {
-		goto L1
-	} else {
-		goto L46
-	}
+	m.G0 = v20 + int32(16)
+	return base.I64_reinterpret_f64(base.F64_sqrt(base.F64_promote_f32(v267)))
 L34:
 	;
 	v178 = (v35 - v161) & int32(3)
@@ -907,12 +897,8 @@ L44:
 L45:
 	;
 	goto L44
-L46:
-	;
-	m.G0 = v20 + int32(16)
-	return v284
 }
-func F_sparsevec_lt(m *base.Module, l0 int32) int32 {
+func F_sparsevec_lt(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -995,7 +981,7 @@ func F_sparsevec_lt(m *base.Module, l0 int32) int32 {
 	_ = v136
 	var v155 int32
 	_ = v155
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = F_pg_detoast_datum(m, v2)
 	mBase = m.M
 	v6 = m.ExcPending
@@ -1006,10 +992,10 @@ func F_sparsevec_lt(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v8 = F_pg_detoast_datum(m, v7)
 	mBase = m.M
 	v9 = m.ExcPending
@@ -1035,7 +1021,7 @@ L3:
 	}
 L4:
 	;
-	return int32(base.Ui32(v155) >> (uint(int32(31)) % 32))
+	return base.I64_extend_i32_u(int32(base.Ui32(v155) >> (uint(int32(31)) % 32)))
 L5:
 	;
 	v36 = v31
@@ -1269,7 +1255,7 @@ L48:
 	v155 = base.B2i32(v134 < v136)
 	goto L4
 }
-func F_sparsevec_negative_inner_product(m *base.Module, l0 int32) int32 {
+func F_sparsevec_negative_inner_product(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -1348,28 +1334,24 @@ func F_sparsevec_negative_inner_product(m *base.Module, l0 int32) int32 {
 	_ = v108
 	var v125 float32
 	_ = v125
-	var v128 int32
-	_ = v128
-	var v129 int32
-	_ = v129
-	var v137 int32
-	_ = v137
+	var v136 int32
+	_ = v136
+	var v139 int32
+	_ = v139
 	var v140 int32
 	_ = v140
 	var v141 int32
 	_ = v141
-	var v142 int32
-	_ = v142
-	var v147 int32
-	_ = v147
-	var v152 int32
-	_ = v152
+	var v146 int32
+	_ = v146
+	var v151 int32
+	_ = v151
 	v2 = int32(0)
 	v16 = float32(0)
 	v17 = m.G0
 	v19 = v17 - int32(16)
 	m.G0 = v19
-	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v22 = F_pg_detoast_datum(m, v21)
 	mBase = m.M
 	v25 = m.ExcPending
@@ -1380,10 +1362,10 @@ func F_sparsevec_negative_inner_product(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v27 = F_pg_detoast_datum(m, v26)
 	mBase = m.M
 	v28 = m.ExcPending
@@ -1416,11 +1398,11 @@ L6:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
+	v136 = m.ExcPending
+	if v136 != 0 {
 		goto L1
 	} else {
-		goto L29
+		goto L28
 	}
 L7:
 	;
@@ -1439,14 +1421,8 @@ L8:
 	goto L9
 L9:
 	;
-	v128 = F_Float8GetDatum(m, base.F64_promote_f32(base.F32_neg(v125)))
-	mBase = m.M
-	v129 = m.ExcPending
-	if v129 != 0 {
-		goto L1
-	} else {
-		goto L28
-	}
+	m.G0 = v19 + int32(16)
+	return base.I64_reinterpret_f64(base.F64_promote_f32(base.F32_neg(v125)))
 L10:
 	;
 	if v37 < v48 {
@@ -1555,49 +1531,45 @@ L27:
 	goto L11
 L28:
 	;
-	m.G0 = v19 + int32(16)
-	return v128
-L29:
-	;
 	F_errcode(m, int32(130))
 	mBase = m.M
-	v140 = m.ExcPending
-	if v140 != 0 {
+	v139 = m.ExcPending
+	if v139 != 0 {
+		goto L1
+	} else {
+		goto L29
+	}
+L29:
+	;
+	v140 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
+	v141 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+4)) = v141
+	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v140
+	F_errmsg(m, int32(_a_F_sparsevec_negative_inner_product_0), v19)
+	mBase = m.M
+	v146 = m.ExcPending
+	if v146 != 0 {
 		goto L1
 	} else {
 		goto L30
 	}
 L30:
 	;
-	v141 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
-	v142 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+4)) = v142
-	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v141
-	F_errmsg(m, int32(_a_F_sparsevec_negative_inner_product_0), v19)
+	F_errfinish(m, int32(_a_F_sparsevec_negative_inner_product_1), int32(50), int32(_a_F_sparsevec_negative_inner_product_2))
 	mBase = m.M
-	v147 = m.ExcPending
-	if v147 != 0 {
+	v151 = m.ExcPending
+	if v151 != 0 {
 		goto L1
 	} else {
 		goto L31
 	}
 L31:
 	;
-	F_errfinish(m, int32(_a_F_sparsevec_negative_inner_product_1), int32(50), int32(_a_F_sparsevec_negative_inner_product_2))
-	mBase = m.M
-	v152 = m.ExcPending
-	if v152 != 0 {
-		goto L1
-	} else {
-		goto L32
-	}
-L32:
-	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
 }
-func F_sparsevec_recv(m *base.Module, l0 int32) int32 {
+func F_sparsevec_recv(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v10 int32
@@ -1697,8 +1669,8 @@ func F_sparsevec_recv(m *base.Module, l0 int32) int32 {
 	v10 = m.G0
 	v12 = v10 - int32(32)
 	m.G0 = v12
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v17 = F_pq_getmsgint(m, v15, int32(4))
 	mBase = m.M
 	v20 = m.ExcPending
@@ -1709,7 +1681,7 @@ func F_sparsevec_recv(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
 	v22 = F_pq_getmsgint(m, v15, int32(4))
@@ -1760,7 +1732,7 @@ L6:
 L7:
 	;
 	m.G0 = v12 + int32(32)
-	return v48
+	return base.I64_extend_i32_u(v48)
 L8:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
@@ -2057,7 +2029,7 @@ L42:
 	for {
 	}
 }
-func F_sparsevec_send(m *base.Module, l0 int32) int32 {
+func F_sparsevec_send(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -2149,7 +2121,7 @@ func F_sparsevec_send(m *base.Module, l0 int32) int32 {
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v13 = F_pg_detoast_datum(m, v12)
 	mBase = m.M
 	v16 = m.ExcPending
@@ -2160,7 +2132,7 @@ func F_sparsevec_send(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
@@ -2313,5 +2285,5 @@ L17:
 L18:
 	;
 	m.G0 = v10 + int32(16)
-	return v151
+	return base.I64_extend_i32_u(v151)
 }

@@ -10,17 +10,17 @@ func F_dsa_attach_in_place(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
+	var v12 int32
+	_ = v12
 	v5 = F_attach_internal(m, l0, int32(0))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
 	} else {
 		if l1 != 0 {
-			F_on_dsm_detach(m, l1, int32(1770), l0)
-			v11 = m.ExcPending
-			if v11 != 0 {
+			F_on_dsm_detach(m, l1, int32(1993), base.I64_extend_i32_u(l0))
+			v12 = m.ExcPending
+			if v12 != 0 {
 				return int32(0)
 			} else {
 				return v5
@@ -89,7 +89,7 @@ func F_dsa_pin(m *base.Module, l0 int32) {
 					if v24 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_dsa_pin_1), int32(981), int32(_a_F_dsa_pin_2))
+						F_errfinish(m, int32(_a_F_dsa_pin_1), int32(996), int32(_a_F_dsa_pin_2))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {

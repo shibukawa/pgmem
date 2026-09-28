@@ -34,7 +34,7 @@ func F_WinGetPartitionLocalMemory(m *base.Module, l0 int32, l1 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	if v4 == int32(0) {
 		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+360))
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+368))
 		v9 = F_MemoryContextAllocZero(m, v8, l1)
 		mBase = m.M
 		v12 = m.ExcPending

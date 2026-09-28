@@ -1,0 +1,1906 @@
+--- a/configure
++++ b/configure
+@@ -19753,7 +19753,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PG_VERSION_STR "PostgreSQL $PG_VERSION on $host, compiled by $cc_string, `expr $ac_cv_sizeof_void_p \* 8`-bit"
++#define PG_VERSION_STR "PostgreSQL $PG_VERSION (PGlite $PGLITE_VERSION) on $host, compiled by $cc_string, `expr $ac_cv_sizeof_void_p \* 8`-bit"
+ _ACEOF
+ 
+ 
+--- a/contrib/Makefile
++++ b/contrib/Makefile
+@@ -61,6 +61,10 @@
+ ALWAYS_SUBDIRS += pgcrypto sslinfo
+ endif
+ 
++ifeq ($(PGLITE_WITH_PGCRYPTO), 1)
++SUBDIRS += pgcrypto
++endif
++
+ ifneq ($(with_uuid),no)
+ SUBDIRS += uuid-ossp
+ else
+@@ -94,6 +98,8 @@
+ # Missing:
+ #		start-scripts	\ (does not have a makefile)
+ 
++include ./dist.mk
++
+ 
+ $(recurse)
+ $(recurse_always)
+--- /dev/null
++++ b/contrib/dist.mk
+@@ -0,0 +1,27 @@
++# contrib/dist.mk
++#
++# Package each contrib extension into its own .tar.gz archive
++
++prefix ?= /pglite
++CONTRIB_BUILD_ROOT := /tmp/extensions/build
++ARCHIVE_DIR := /pglite/extensions
++
++CONTRIBS := $(SUBDIRS)
++
++# Default target: build tarballs for all contribs
++dist: $(addsuffix .tar.gz,$(CONTRIBS))
++
++# Pattern rule: build $(EXT).tar.gz for each contrib
++%.tar.gz:
++	@echo "=== Staging $* ==="
++	rm -rf $(CONTRIB_BUILD_ROOT)/$*
++	bash -c 'mkdir -p $(CONTRIB_BUILD_ROOT)/$*/$(prefix)/{bin,lib,share/extension,share/doc,share/postgresql/extension,share/postgresql/tsearch_data,include}'
++	$(MAKE) -C $* install DESTDIR=$(CONTRIB_BUILD_ROOT)/$*
++	@echo "=== Packaging $* ==="
++	mkdir -p $(ARCHIVE_DIR)
++	cd $(CONTRIB_BUILD_ROOT)/$*/$(prefix) && \
++	files=$$(find . -type f -o -type l | sed 's|^\./||') && \
++	tar -czf $(ARCHIVE_DIR)/$*.tar.gz $$files
++# 	tar -C $(CONTRIB_BUILD_ROOT)/$*/$(prefix) -czf $(ARCHIVE_DIR)/$*.tar.gz .
++
++.PHONY: dist
+--- a/src/Makefile.shlib
++++ b/src/Makefile.shlib
+@@ -238,6 +238,20 @@
+   override CXXFLAGS += $(CXXFLAGS_SL_MODULE)
+ endif
+ 
++ifeq ($(PORTNAME), emscripten)
++  LINK.shared       = $(COMPILER)
++  ifdef soname
++    # emscripten uses unversioned shared libraries
++    shlib     = $(shlib_bare)
++    soname    = $(shlib_bare)
++  endif
++  BUILD.exports     = ( $(AWK) '/^[^\#]/ {printf "%s\n",$$1}' $< ) | sort -u >$@
++#  BUILD.exports     = ( echo '{ global:'; $(AWK) '/^[^\#]/ {printf "%s;\n",$$1}' $<; echo ' local: *; };' ) >$@
++  exports_file      = $(SHLIB_EXPORTS:%.txt=%.list)
++#  ifneq (,$(exports_file))
++#    LINK.shared     += -Wl,--version-script=$(exports_file)
++#  endif
++endif
+ 
+ ##
+ ## BUILD
+--- a/src/backend/Makefile
++++ b/src/backend/Makefile
+@@ -83,6 +83,7 @@
+ 
+ all: submake-libpgport submake-catalog-headers submake-utils-headers postgres $(POSTGRES_IMP)
+ 
++ifneq ($(PORTNAME), emscripten)
+ ifneq ($(PORTNAME), cygwin)
+ ifneq ($(PORTNAME), win32)
+ ifneq ($(PORTNAME), aix)
+@@ -92,6 +93,45 @@
+ 
+ endif
+ endif
++endif
++endif
++
++ifeq ($(PORTNAME), emscripten)
++
++postgres: $(OBJS)
++	$(CC) $(CFLAGS) $(call expand_subsys,$^) $(LDFLAGS) $(LIBS) -o $@$(X)
++
++# Extensions use functions from the core PG. These need to be exported by the emscripten compiler.
++# The following target gathers all extension imports + the default ones (included.pglite.imports),
++# excludes the one in excluded.pglite.imports and adds a leading _ to each.
++pglite-exported-functions:
++	$(MKDIR_P) /install/pglite
++	cat $(top_builddir)/pglite/static/excluded.pglite.exports \
++	$(top_builddir)/src/interfaces/libpq/exports.list \
++	$(LIB_EXPORTS_DIR)/libossp-uuid.exports \
++	$(LIB_EXPORTS_DIR)/libssl.exports \
++	$(LIB_EXPORTS_DIR)/libcrypto.exports \
++	$(LIB_EXPORTS_DIR)/libjson-c.exports \
++	$(LIB_EXPORTS_DIR)/libdeflate.exports \
++	$(LIB_EXPORTS_DIR)/libtiff.exports \
++	$(LIB_EXPORTS_DIR)/libsqlite3.exports \
++	$(LIB_EXPORTS_DIR)/libproj.exports \
++	$(LIB_EXPORTS_DIR)/libgeos.exports \
++	| sort -u > '/install/pglite/excluded.imports.gen'
++	cat $(DESTDIR)$(emscripten_extension_imports_dir)/*.imports '$(top_builddir)/pglite/static/included.pglite.exports' | \
++	sort -u | \
++	grep -v -E '^(invoke_|__indirect_function_table)' | \
++	grep -Fvx -f '/install/pglite/excluded.imports.gen' | \
++	awk NF | \
++	sed 's/^/_/' \
++	> '/install/pglite/exported_functions.txt'
++
++pglite: $(OBJS)
++	$(CC) $(CFLAGS) $(call expand_subsys,$^) $(LDFLAGS) $(LIBS) $(POSTGRES_PGLITE_FLAGS) -o $@$(X)
++
++pglite-libc:
++	$(CC) $(CFLAGS) 
++
+ endif
+ 
+ ifeq ($(PORTNAME), cygwin)
+@@ -257,6 +297,14 @@
+ 	$(MKDIR_P) '$(DESTDIR)$(pgxsdir)/$(MKLDEXPORT_DIR)'
+ endif
+ 
++ifeq ($(PORTNAME), emscripten)
++install-pglite:
++	$(INSTALL_PROGRAM) pglite.wasm '$(DESTDIR)$(bindir)/pglite.wasm'
++	$(INSTALL_PROGRAM) pglite.js '$(DESTDIR)$(bindir)/pglite.js'
++	$(INSTALL_PROGRAM) pglite.data '$(DESTDIR)$(bindir)/pglite.data'
++endif
++
++.PHONY: install-pglite
+ 
+ ##########################################################################
+ 
+--- a/src/backend/access/transam/xlog.c
++++ b/src/backend/access/transam/xlog.c
+@@ -2522,12 +2522,14 @@
+ 				 * like a checkpoint is needed, forcibly update RedoRecPtr and
+ 				 * recheck.
+ 				 */
++#ifndef __PGLITE__					
+ 				if (IsUnderPostmaster && XLogCheckpointNeeded(openLogSegNo))
+ 				{
+ 					(void) GetRedoRecPtr();
+ 					if (XLogCheckpointNeeded(openLogSegNo))
+ 						RequestCheckpoint(CHECKPOINT_CAUSE_XLOG);
+ 				}
++#endif				
+ 			}
+ 		}
+ 
+--- a/src/backend/port/posix_sema.c
++++ b/src/backend/port/posix_sema.c
+@@ -287,6 +287,10 @@
+ void
+ PGSemaphoreReset(PGSemaphore sema)
+ {
++#ifdef __PGLITE__
++    sem_trywait(PG_SEM_REF(sema));
++    return;
++#else
+ 	/*
+ 	 * There's no direct API for this in POSIX, so we have to ratchet the
+ 	 * semaphore down to 0 with repeated trywait's.
+@@ -302,6 +306,7 @@
+ 			elog(FATAL, "sem_trywait failed: %m");
+ 		}
+ 	}
++#endif	
+ }
+ 
+ /*
+--- a/src/backend/postmaster/checkpointer.c
++++ b/src/backend/postmaster/checkpointer.c
+@@ -1075,7 +1075,9 @@
+ 	/*
+ 	 * If in a standalone backend, just do it ourselves.
+ 	 */
++#ifndef __PGLITE__	
+ 	if (!IsPostmasterEnvironment)
++#endif
+ 	{
+ 		/*
+ 		 * There's no point in doing slow checkpoints in a standalone backend,
+--- a/src/backend/storage/file/fd.c
++++ b/src/backend/storage/file/fd.c
+@@ -525,6 +525,10 @@
+ void
+ pg_flush_data(int fd, pgoff_t offset, pgoff_t nbytes)
+ {
++#ifdef __PGLITE__
++    //int res = sync_file_range(fd, offset, nbytes, SYNC_FILE_RANGE_WAIT_BEFORE | SYNC_FILE_RANGE_WRITE | SYNC_FILE_RANGE_WAIT_AFTER);
++    (void)fsync(fd);
++#else
+ 	/*
+ 	 * Right now file flushing is primarily used to avoid making later
+ 	 * fsync()/fdatasync() calls have less impact. Thus don't trigger flushes
+@@ -695,6 +699,7 @@
+ 		return;
+ 	}
+ #endif
++#endif // ifdef __PGLITE__
+ }
+ 
+ /*
+--- a/src/backend/tcop/postgres.c
++++ b/src/backend/tcop/postgres.c
+@@ -155,7 +155,11 @@
+  * the extended query protocol.
+  */
+ static bool doing_extended_query_message = false;
++#ifdef __PGLITE__
++extern bool ignore_till_sync;
++#else
+ static bool ignore_till_sync = false;
++#endif
+ 
+ /*
+  * If an unnamed prepared statement exists, it's stored here.
+@@ -199,6 +203,110 @@
+ static void enable_statement_timeout(void);
+ static void disable_statement_timeout(void);
+ 
++
++#if defined(__EMSCRIPTEN__)
++#include <emscripten/emscripten.h>
++#else
++#define EMSCRIPTEN_KEEPALIVE
++// TODO: an include for libpglite
++#endif
++
++/* these must be volatile to ensure state is preserved across longjmp: */
++#ifdef __PGLITE__
++extern bool send_ready_for_query;
++#else
++bool send_ready_for_query = false;
++#endif
++
++static volatile bool idle_in_transaction_timeout_enabled = false;
++static volatile bool idle_session_timeout_enabled = false;
++
++#ifdef __PGLITE__
++#define PGLITE_EXIT_ALIVE 99
++
++extern sigjmp_buf postgresmain_sigjmp_buf;
++extern int pgl_sigsetjmp(sigjmp_buf env, int savesigs);
++extern int is_pglite_active;
++extern int pgl_setPGliteExitStatus(int status);
++
++void initDummyPort() {
++	ClientSocket s;
++	struct sockaddr_in *addr;
++	MemoryContext oldcontext;
++
++	/* Switch to TopMemoryContext so the Port survives MessageContext resets */
++	oldcontext = MemoryContextSwitchTo(TopMemoryContext);
++
++	s.sock = 1;
++
++	/* Set up a valid-looking localhost address */
++	memset(&s.raddr, 0, sizeof(s.raddr));
++	addr = (struct sockaddr_in *) &s.raddr.addr;
++	addr->sin_family = AF_INET;
++	addr->sin_port = htons(5432);
++	addr->sin_addr.s_addr = htonl(INADDR_LOOPBACK);
++	s.raddr.salen = sizeof(struct sockaddr_in);
++
++	MyProcPort = pq_init(&s);
++
++	MemoryContextSwitchTo(oldcontext);
++}
++
++void pgl_startPGlite() {
++	initDummyPort();
++	whereToSendOutput = DestRemote;
++	// initdb execs postgres in single mode, which sets this to true
++    // and this doesn't play well with out our longjmp trick
++    // so set it to false
++    ExitOnAnyError = false;
++    MyBackendType = B_BACKEND;
++	IsPostmasterEnvironment = true;
++	IsUnderPostmaster = true;
++
++	if (!load_hba())
++	{
++		/*
++		 * It makes no sense to continue if we fail to load the HBA file,
++		 * since there is no way to connect to the database in this case.
++		 */
++		ereport(FATAL,
++		/* translator: %s is a configuration file */
++				(errmsg("could not load %s", HbaFileName)));
++	}
++
++}
++
++void pgl_pq_flush() {
++	pq_flush();
++}
++
++struct Port* pgl_getMyProcPort() {
++	return MyProcPort;
++}
++
++void pgl_sendConnData() {
++	ClientAuthInProgress = false;
++
++    {
++        StringInfoData buf;
++        pq_beginmessage(&buf, 'R');
++        pq_sendint32(&buf, (int32) AUTH_REQ_OK);
++        pq_endmessage(&buf);
++    }
++
++    BeginReportingGUCOptions();
++    pgstat_report_connect(MyDatabaseId);
++    {
++        StringInfoData buf;
++        pq_beginmessage(&buf, 'K');
++        pq_sendint32(&buf, (int32) MyProcPid);
++        pq_sendint32(&buf, (int32) MyCancelKey);
++        pq_endmessage(&buf);
++    }
++	ReadyForQuery(DestRemote);
++}
++
++#endif // ifdef __PGLITE__
+ 
+ /* ----------------------------------------------------------------
+  *		infrastructure for valgrind debugging
+@@ -4270,218 +4378,8 @@
+  * if reasonably possible.
+  * ----------------------------------------------------------------
+  */
+-void
+-PostgresMain(const char *dbname, const char *username)
+-{
+-	sigjmp_buf	local_sigjmp_buf;
+-
+-	/* these must be volatile to ensure state is preserved across longjmp: */
+-	volatile bool send_ready_for_query = true;
+-	volatile bool idle_in_transaction_timeout_enabled = false;
+-	volatile bool idle_session_timeout_enabled = false;
+-
+-	Assert(dbname != NULL);
+-	Assert(username != NULL);
+-
+-	Assert(GetProcessingMode() == InitProcessing);
+-
+-	/*
+-	 * Set up signal handlers.  (InitPostmasterChild or InitStandaloneProcess
+-	 * has already set up BlockSig and made that the active signal mask.)
+-	 *
+-	 * Note that postmaster blocked all signals before forking child process,
+-	 * so there is no race condition whereby we might receive a signal before
+-	 * we have set up the handler.
+-	 *
+-	 * Also note: it's best not to use any signals that are SIG_IGNored in the
+-	 * postmaster.  If such a signal arrives before we are able to change the
+-	 * handler to non-SIG_IGN, it'll get dropped.  Instead, make a dummy
+-	 * handler in the postmaster to reserve the signal. (Of course, this isn't
+-	 * an issue for signals that are locally generated, such as SIGALRM and
+-	 * SIGPIPE.)
+-	 */
+-	if (am_walsender)
+-		WalSndSignals();
+-	else
+-	{
+-		pqsignal(SIGHUP, SignalHandlerForConfigReload);
+-		pqsignal(SIGINT, StatementCancelHandler);	/* cancel current query */
+-		pqsignal(SIGTERM, die); /* cancel current query and exit */
+-
+-		/*
+-		 * In a postmaster child backend, replace SignalHandlerForCrashExit
+-		 * with quickdie, so we can tell the client we're dying.
+-		 *
+-		 * In a standalone backend, SIGQUIT can be generated from the keyboard
+-		 * easily, while SIGTERM cannot, so we make both signals do die()
+-		 * rather than quickdie().
+-		 */
+-		if (IsUnderPostmaster)
+-			pqsignal(SIGQUIT, quickdie);	/* hard crash time */
+-		else
+-			pqsignal(SIGQUIT, die); /* cancel current query and exit */
+-		InitializeTimeouts();	/* establishes SIGALRM handler */
+-
+-		/*
+-		 * Ignore failure to write to frontend. Note: if frontend closes
+-		 * connection, we will notice it and exit cleanly when control next
+-		 * returns to outer loop.  This seems safer than forcing exit in the
+-		 * midst of output during who-knows-what operation...
+-		 */
+-		pqsignal(SIGPIPE, PG_SIG_IGN);
+-		pqsignal(SIGUSR1, procsignal_sigusr1_handler);
+-		pqsignal(SIGUSR2, PG_SIG_IGN);
+-		pqsignal(SIGFPE, FloatExceptionHandler);
+-
+-		/*
+-		 * Reset some signals that are accepted by postmaster but not by
+-		 * backend
+-		 */
+-		pqsignal(SIGCHLD, PG_SIG_DFL);	/* system() requires this on some
+-										 * platforms */
+-	}
+-
+-	/* Early initialization */
+-	BaseInit();
+-
+-	/* We need to allow SIGINT, etc during the initial transaction */
+-	sigprocmask(SIG_SETMASK, &UnBlockSig, NULL);
+-
+-	/*
+-	 * Generate a random cancel key, if this is a backend serving a
+-	 * connection. InitPostgres() will advertise it in shared memory.
+-	 */
+-	Assert(MyCancelKeyLength == 0);
+-	if (whereToSendOutput == DestRemote)
+-	{
+-		int			len;
+-
+-		len = (MyProcPort == NULL || MyProcPort->proto >= PG_PROTOCOL(3, 2))
+-			? MAX_CANCEL_KEY_LENGTH : 4;
+-		if (!pg_strong_random(&MyCancelKey, len))
+-		{
+-			ereport(ERROR,
+-					(errcode(ERRCODE_INTERNAL_ERROR),
+-					 errmsg("could not generate random cancel key")));
+-		}
+-		MyCancelKeyLength = len;
+-	}
+-
+-	/*
+-	 * General initialization.
+-	 *
+-	 * NOTE: if you are tempted to add code in this vicinity, consider putting
+-	 * it inside InitPostgres() instead.  In particular, anything that
+-	 * involves database access should be there, not here.
+-	 *
+-	 * Honor session_preload_libraries if not dealing with a WAL sender.
+-	 */
+-	InitPostgres(dbname, InvalidOid,	/* database to connect to */
+-				 username, InvalidOid,	/* role to connect as */
+-				 (!am_walsender) ? INIT_PG_LOAD_SESSION_LIBS : 0,
+-				 NULL);			/* no out_dbname */
+-
+-	/*
+-	 * If the PostmasterContext is still around, recycle the space; we don't
+-	 * need it anymore after InitPostgres completes.
+-	 */
+-	if (PostmasterContext)
+-	{
+-		MemoryContextDelete(PostmasterContext);
+-		PostmasterContext = NULL;
+-	}
+-
+-	SetProcessingMode(NormalProcessing);
+-
+-	/*
+-	 * Now all GUC states are fully set up.  Report them to client if
+-	 * appropriate.
+-	 */
+-	BeginReportingGUCOptions();
+-
+-	/*
+-	 * Also set up handler to log session end; we have to wait till now to be
+-	 * sure Log_disconnections has its final value.
+-	 */
+-	if (IsUnderPostmaster && Log_disconnections)
+-		on_proc_exit(log_disconnections, 0);
+-
+-	pgstat_report_connect(MyDatabaseId);
+-
+-	/* Perform initialization specific to a WAL sender process. */
+-	if (am_walsender)
+-		InitWalSender();
+-
+-	/*
+-	 * Send this backend's cancellation info to the frontend.
+-	 */
+-	if (whereToSendOutput == DestRemote)
+-	{
+-		StringInfoData buf;
+-
+-		Assert(MyCancelKeyLength > 0);
+-		pq_beginmessage(&buf, PqMsg_BackendKeyData);
+-		pq_sendint32(&buf, (int32) MyProcPid);
+-
+-		pq_sendbytes(&buf, MyCancelKey, MyCancelKeyLength);
+-		pq_endmessage(&buf);
+-		/* Need not flush since ReadyForQuery will do it. */
+-	}
+-
+-	/* Welcome banner for standalone case */
+-	if (whereToSendOutput == DestDebug)
+-		printf("\nPostgreSQL stand-alone backend %s\n", PG_VERSION);
+-
+-	/*
+-	 * Create the memory context we will use in the main loop.
+-	 *
+-	 * MessageContext is reset once per iteration of the main loop, ie, upon
+-	 * completion of processing of each command message from the client.
+-	 */
+-	MessageContext = AllocSetContextCreate(TopMemoryContext,
+-										   "MessageContext",
+-										   ALLOCSET_DEFAULT_SIZES);
+-
+-	/*
+-	 * Create memory context and buffer used for RowDescription messages. As
+-	 * SendRowDescriptionMessage(), via exec_describe_statement_message(), is
+-	 * frequently executed for every single statement, we don't want to
+-	 * allocate a separate buffer every time.
+-	 */
+-	row_description_context = AllocSetContextCreate(TopMemoryContext,
+-													"RowDescriptionContext",
+-													ALLOCSET_DEFAULT_SIZES);
+-	MemoryContextSwitchTo(row_description_context);
+-	initStringInfo(&row_description_buf);
+-	MemoryContextSwitchTo(TopMemoryContext);
+-
+-	/* Fire any defined login event triggers, if appropriate */
+-	EventTriggerOnLogin();
+-
+-	/*
+-	 * POSTGRES main processing loop begins here
+-	 *
+-	 * If an exception is encountered, processing resumes here so we abort the
+-	 * current transaction and start a new one.
+-	 *
+-	 * You might wonder why this isn't coded as an infinite loop around a
+-	 * PG_TRY construct.  The reason is that this is the bottom of the
+-	 * exception stack, and so with PG_TRY there would be no exception handler
+-	 * in force at all during the CATCH part.  By leaving the outermost setjmp
+-	 * always active, we have at least some chance of recovering from an error
+-	 * during error recovery.  (If we get into an infinite loop thereby, it
+-	 * will soon be stopped by overflow of elog.c's internal state stack.)
+-	 *
+-	 * Note that we use sigsetjmp(..., 1), so that this function's signal mask
+-	 * (to wit, UnBlockSig) will be restored when longjmp'ing to here.  This
+-	 * is essential in case we longjmp'd out of a signal handler on a platform
+-	 * where that leaves the signal blocked.  It's not redundant with the
+-	 * unblock in AbortTransaction() because the latter is only called if we
+-	 * were inside a transaction.
+-	 */
+-
+-	if (sigsetjmp(local_sigjmp_buf, 1) != 0)
+-	{
++void PostgresMainLongJmp()
++{
+ 		/*
+ 		 * NOTE: if you are tempted to add more code in this if-block,
+ 		 * consider the high probability that it should be in
+@@ -4591,20 +4489,10 @@
+ 
+ 		/* Now we can allow interrupts again */
+ 		RESUME_INTERRUPTS();
+-	}
+-
+-	/* We can now handle ereport(ERROR) */
+-	PG_exception_stack = &local_sigjmp_buf;
+-
+-	if (!ignore_till_sync)
+-		send_ready_for_query = true;	/* initially, or after error */
+-
+-	/*
+-	 * Non-error queries loop here.
+-	 */
+-
+-	for (;;)
+-	{
++}
++
++void PostgresMainLoopOnce()
++{
+ 		int			firstchar;
+ 		StringInfoData input_message;
+ 
+@@ -4833,7 +4721,7 @@
+ 		 * Sync.
+ 		 */
+ 		if (ignore_till_sync && firstchar != EOF)
+-			continue;
++			return;
+ 
+ 		switch (firstchar)
+ 		{
+@@ -5089,7 +4977,17 @@
+ 				 * it will fail to be called during other backend-shutdown
+ 				 * scenarios.
+ 				 */
++				#ifdef __PGLITE__
++				if (is_pglite_active != 0)
++				{
++					pgl_setPGliteExitStatus(PGLITE_EXIT_ALIVE);
++					emscripten_exit_with_live_runtime();
++				}
++				else
++					proc_exit(0);
++				#else
+ 				proc_exit(0);
++				#endif
+ 
+ 			case PqMsg_CopyData:
+ 			case PqMsg_CopyDone:
+@@ -5108,7 +5006,228 @@
+ 						 errmsg("invalid frontend message type %d",
+ 								firstchar)));
+ 		}
+-	}							/* end of input-reading loop */
++}
++
++void
++PostgresMain(const char *dbname, const char *username)
++{
++
++	Assert(dbname != NULL);
++	Assert(username != NULL);
++
++	Assert(GetProcessingMode() == InitProcessing);
++
++	/*
++	 * Set up signal handlers.  (InitPostmasterChild or InitStandaloneProcess
++	 * has already set up BlockSig and made that the active signal mask.)
++	 *
++	 * Note that postmaster blocked all signals before forking child process,
++	 * so there is no race condition whereby we might receive a signal before
++	 * we have set up the handler.
++	 *
++	 * Also note: it's best not to use any signals that are SIG_IGNored in the
++	 * postmaster.  If such a signal arrives before we are able to change the
++	 * handler to non-SIG_IGN, it'll get dropped.  Instead, make a dummy
++	 * handler in the postmaster to reserve the signal. (Of course, this isn't
++	 * an issue for signals that are locally generated, such as SIGALRM and
++	 * SIGPIPE.)
++	 */
++	if (am_walsender)
++		WalSndSignals();
++	else
++	{
++		pqsignal(SIGHUP, SignalHandlerForConfigReload);
++		pqsignal(SIGINT, StatementCancelHandler);	/* cancel current query */
++		pqsignal(SIGTERM, die); /* cancel current query and exit */
++
++		/*
++		 * In a postmaster child backend, replace SignalHandlerForCrashExit
++		 * with quickdie, so we can tell the client we're dying.
++		 *
++		 * In a standalone backend, SIGQUIT can be generated from the keyboard
++		 * easily, while SIGTERM cannot, so we make both signals do die()
++		 * rather than quickdie().
++		 */
++		if (IsUnderPostmaster)
++			pqsignal(SIGQUIT, quickdie);	/* hard crash time */
++		else
++			pqsignal(SIGQUIT, die); /* cancel current query and exit */
++		InitializeTimeouts();	/* establishes SIGALRM handler */
++
++		/*
++		 * Ignore failure to write to frontend. Note: if frontend closes
++		 * connection, we will notice it and exit cleanly when control next
++		 * returns to outer loop.  This seems safer than forcing exit in the
++		 * midst of output during who-knows-what operation...
++		 */
++		pqsignal(SIGPIPE, PG_SIG_IGN);
++		pqsignal(SIGUSR1, procsignal_sigusr1_handler);
++		pqsignal(SIGUSR2, PG_SIG_IGN);
++		pqsignal(SIGFPE, FloatExceptionHandler);
++
++		/*
++		 * Reset some signals that are accepted by postmaster but not by
++		 * backend
++		 */
++		pqsignal(SIGCHLD, PG_SIG_DFL);	/* system() requires this on some
++										 * platforms */
++	}
++
++	/* Early initialization */
++	BaseInit();
++
++	/* We need to allow SIGINT, etc during the initial transaction */
++	sigprocmask(SIG_SETMASK, &UnBlockSig, NULL);
++
++	/*
++	 * Generate a random cancel key, if this is a backend serving a
++	 * connection. InitPostgres() will advertise it in shared memory.
++	 */
++	Assert(MyCancelKeyLength == 0);
++	if (whereToSendOutput == DestRemote)
++	{
++		int			len;
++
++		len = (MyProcPort == NULL || MyProcPort->proto >= PG_PROTOCOL(3, 2))
++			? MAX_CANCEL_KEY_LENGTH : 4;
++		if (!pg_strong_random(&MyCancelKey, len))
++		{
++			ereport(ERROR,
++					(errcode(ERRCODE_INTERNAL_ERROR),
++					 errmsg("could not generate random cancel key")));
++		}
++		MyCancelKeyLength = len;
++	}
++
++	/*
++	 * General initialization.
++	 *
++	 * NOTE: if you are tempted to add code in this vicinity, consider putting
++	 * it inside InitPostgres() instead.  In particular, anything that
++	 * involves database access should be there, not here.
++	 *
++	 * Honor session_preload_libraries if not dealing with a WAL sender.
++	 */
++	InitPostgres(dbname, InvalidOid,	/* database to connect to */
++				 username, InvalidOid,	/* role to connect as */
++				 (!am_walsender) ? INIT_PG_LOAD_SESSION_LIBS : 0,
++				 NULL);			/* no out_dbname */
++
++	/*
++	 * If the PostmasterContext is still around, recycle the space; we don't
++	 * need it anymore after InitPostgres completes.
++	 */
++	if (PostmasterContext)
++	{
++		MemoryContextDelete(PostmasterContext);
++		PostmasterContext = NULL;
++	}
++
++	SetProcessingMode(NormalProcessing);
++
++	/*
++	 * Now all GUC states are fully set up.  Report them to client if
++	 * appropriate.
++	 */
++	BeginReportingGUCOptions();
++
++	/*
++	 * Also set up handler to log session end; we have to wait till now to be
++	 * sure Log_disconnections has its final value.
++	 */
++	if (IsUnderPostmaster && Log_disconnections)
++		on_proc_exit(log_disconnections, 0);
++
++	pgstat_report_connect(MyDatabaseId);
++
++	/* Perform initialization specific to a WAL sender process. */
++	if (am_walsender)
++		InitWalSender();
++
++	/*
++	 * Send this backend's cancellation info to the frontend.
++	 */
++	if (whereToSendOutput == DestRemote)
++	{
++		StringInfoData buf;
++
++		Assert(MyCancelKeyLength > 0);
++		pq_beginmessage(&buf, PqMsg_BackendKeyData);
++		pq_sendint32(&buf, (int32) MyProcPid);
++
++		pq_sendbytes(&buf, MyCancelKey, MyCancelKeyLength);
++		pq_endmessage(&buf);
++		/* Need not flush since ReadyForQuery will do it. */
++	}
++
++	/* Welcome banner for standalone case */
++	if (whereToSendOutput == DestDebug)
++		printf("\nPostgreSQL stand-alone backend %s\n", PG_VERSION);
++
++	/*
++	 * Create the memory context we will use in the main loop.
++	 *
++	 * MessageContext is reset once per iteration of the main loop, ie, upon
++	 * completion of processing of each command message from the client.
++	 */
++	MessageContext = AllocSetContextCreate(TopMemoryContext,
++										   "MessageContext",
++										   ALLOCSET_DEFAULT_SIZES);
++
++	/*
++	 * Create memory context and buffer used for RowDescription messages. As
++	 * SendRowDescriptionMessage(), via exec_describe_statement_message(), is
++	 * frequently executed for every single statement, we don't want to
++	 * allocate a separate buffer every time.
++	 */
++	row_description_context = AllocSetContextCreate(TopMemoryContext,
++													"RowDescriptionContext",
++													ALLOCSET_DEFAULT_SIZES);
++	MemoryContextSwitchTo(row_description_context);
++	initStringInfo(&row_description_buf);
++	MemoryContextSwitchTo(TopMemoryContext);
++
++	/* Fire any defined login event triggers, if appropriate */
++	EventTriggerOnLogin();
++
++	/*
++	 * POSTGRES main processing loop begins here
++	 *
++	 * If an exception is encountered, processing resumes here so we abort the
++	 * current transaction and start a new one.
++	 *
++	 * You might wonder why this isn't coded as an infinite loop around a
++	 * PG_TRY construct.  The reason is that this is the bottom of the
++	 * exception stack, and so with PG_TRY there would be no exception handler
++	 * in force at all during the CATCH part.  By leaving the outermost setjmp
++	 * always active, we have at least some chance of recovering from an error
++	 * during error recovery.  (If we get into an infinite loop thereby, it
++	 * will soon be stopped by overflow of elog.c's internal state stack.)
++	 *
++	 * Note that we use sigsetjmp(..., 1), so that this function's signal mask
++	 * (to wit, UnBlockSig) will be restored when longjmp'ing to here.  This
++	 * is essential in case we longjmp'd out of a signal handler on a platform
++	 * where that leaves the signal blocked.  It's not redundant with the
++	 * unblock in AbortTransaction() because the latter is only called if we
++	 * were inside a transaction.
++	 */
++
++	if (sigsetjmp(postgresmain_sigjmp_buf, 1) != 0)
++		PostgresMainLongJmp();
++
++	/* We can now handle ereport(ERROR) */
++	PG_exception_stack = &postgresmain_sigjmp_buf;
++
++	if (!ignore_till_sync)
++		send_ready_for_query = true;	/* initially, or after error */
++
++	/*
++	 * Non-error queries loop here.
++	 */
++
++	for (;;)
++		PostgresMainLoopOnce();	/* end of input-reading loop */
++
+ }
+ 
+ /*
+--- a/src/backend/utils/init/miscinit.c
++++ b/src/backend/utils/init/miscinit.c
+@@ -330,7 +330,7 @@
+ 	 *
+ 	 * XXX can we safely enable this check on Windows?
+ 	 */
+-#if !defined(WIN32) && !defined(__CYGWIN__)
++#if !defined(WIN32) && !defined(__CYGWIN__) && !defined(__PGLITE__)
+ 	if (stat_buf.st_uid != geteuid())
+ 		ereport(FATAL,
+ 				(errcode(ERRCODE_OBJECT_NOT_IN_PREREQUISITE_STATE),
+@@ -350,7 +350,7 @@
+ 	 * be proper support for Unix-y file permissions.  Need to think of a
+ 	 * reasonable check to apply on Windows.
+ 	 */
+-#if !defined(WIN32) && !defined(__CYGWIN__)
++#if !defined(WIN32) && !defined(__CYGWIN__) && !defined(__PGLITE__)
+ 	if (stat_buf.st_mode & PG_MODE_MASK_GROUP)
+ 		ereport(FATAL,
+ 				(errcode(ERRCODE_OBJECT_NOT_IN_PREREQUISITE_STATE),
+@@ -371,7 +371,7 @@
+ 	 * Suppress when on Windows, because there may not be proper support for
+ 	 * Unix-y file permissions.
+ 	 */
+-#if !defined(WIN32) && !defined(__CYGWIN__)
++#if !defined(WIN32) && !defined(__CYGWIN__) && !defined(__PGLITE__)
+ 	SetDataDirectoryCreatePerm(stat_buf.st_mode);
+ 
+ 	umask(pg_mode_mask);
+--- a/src/backend/utils/init/postinit.c
++++ b/src/backend/utils/init/postinit.c
+@@ -719,6 +719,12 @@
+  *		Be very careful with the order of calls in the InitPostgres function.
+  * --------------------------------
+  */
++
++// force the name used with --single
++#if !defined(WASM_USERNAME)
++#define WASM_USERNAME "postgres"
++#endif
++
+ void
+ InitPostgres(const char *in_dbname, Oid dboid,
+ 			 const char *username, Oid useroid,
+@@ -891,8 +897,18 @@
+ 	}
+ 	else if (!IsUnderPostmaster)
+ 	{
++#if defined(__EMSCRIPTEN__)
++if (!strcmp( username , WASM_USERNAME )) {
++#endif		
+ 		InitializeSessionUserIdStandalone();
+ 		am_superuser = true;
++#if defined(__EMSCRIPTEN__)
++} else {
++        //puts("# 894: switching session id");
++        InitializeSessionUserId(username, InvalidOid, false);
++		am_superuser = superuser();
++}
++#endif		
+ 		if (!ThereIsAtLeastOneRole())
+ 			ereport(WARNING,
+ 					(errcode(ERRCODE_UNDEFINED_OBJECT),
+--- a/src/backend/utils/misc/guc.c
++++ b/src/backend/utils/misc/guc.c
+@@ -2552,6 +2552,7 @@
+ 		pq_sendstring(&msgbuf, val);
+ 		pq_endmessage(&msgbuf);
+ 
++#ifndef __PGLITE__		
+ 		/*
+ 		 * We need a long-lifespan copy.  If guc_strdup() fails due to OOM,
+ 		 * we'll set last_reported to NULL and thereby possibly make a
+@@ -2559,6 +2560,7 @@
+ 		 */
+ 		guc_free(record->last_reported);
+ 		record->last_reported = guc_strdup(LOG, val);
++#endif		
+ 	}
+ 
+ 	pfree(val);
+--- a/src/bin/initdb/Makefile
++++ b/src/bin/initdb/Makefile
+@@ -47,16 +47,25 @@
+ 
+ install: all installdirs
+ 	$(INSTALL_PROGRAM) initdb$(X) '$(DESTDIR)$(bindir)/initdb$(X)'
++ifeq ($(PORTNAME), emscripten)
++	$(INSTALL_PROGRAM) initdb.wasm '$(DESTDIR)$(bindir)/initdb.wasm'
++endif
+ 
+ installdirs:
+ 	$(MKDIR_P) '$(DESTDIR)$(bindir)'
+ 
+ uninstall:
+ 	rm -f '$(DESTDIR)$(bindir)/initdb$(X)'
++ifeq ($(PORTNAME), emscripten)
++	rm -f $(addprefix '$(DESTDIR)$(bindir)'/, initdb.wasm)
++endif
+ 
+ clean distclean:
+ 	rm -f initdb$(X) $(OBJS) localtime.c
+ 	rm -rf tmp_check
++ifeq ($(PORTNAME), emscripten)
++	rm -f initdb.wasm
++endif
+ 
+ # ensure that changes in datadir propagate into object file
+ initdb.o: initdb.c $(top_builddir)/src/Makefile.global
+--- a/src/bin/pg_config/Makefile
++++ b/src/bin/pg_config/Makefile
+@@ -24,18 +24,39 @@
+ pg_config: $(OBJS) | submake-libpgport
+ 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDFLAGS_EX) $(LIBS) -o $@$(X)
+ 
++# the emscripten build generates multiple "runnable" files (.cjs/.mjs + .wasm)
++# but other postgres tools expect exacly 'pg_config' as an executable 
++# we create a pg_config link to run_pg_cmd.mjs, which in turn calls pg_config.cjs/.mjs
++# pg_config.wasm is implicitly expected to be in the same folder
++
+ install: all installdirs
+ 	$(INSTALL_SCRIPT) pg_config$(X) '$(DESTDIR)$(bindir)/pg_config$(X)'
++ifeq ($(PORTNAME), emscripten)
++	$(INSTALL_PROGRAM) pg_config.wasm '$(DESTDIR)$(bindir)/pg_config.wasm'
++	$(INSTALL_PROGRAM) pg_config$(X) '$(DESTDIR)$(bindir)/pg_config.mjs'
++	$(INSTALL_PROGRAM) $(top_srcdir)/pglite/scripts/run_pg_cmd.mjs '$(DESTDIR)$(bindir)/run_pg_cmd.mjs'
++	(cd '$(DESTDIR)$(bindir)' && ln -sf 'run_pg_cmd.mjs' 'pg_config')
++endif
+ 
+ installdirs:
+ 	$(MKDIR_P) '$(DESTDIR)$(bindir)'
+ 
+ uninstall:
+ 	rm -f '$(DESTDIR)$(bindir)/pg_config$(X)'
++ifeq ($(PORTNAME), emscripten)
++	rm -f '$(DESTDIR)$(bindir)/pg_config.wasm'
++	rm -f '$(DESTDIR)$(bindir)/pg_config.mjs'
++	rm -f '$(DESTDIR)$(bindir)/run_pg_cmd.mjs'
++	rm -f '$(DESTDIR)$(bindir)/pg_config'
++endif
+ 
+ clean distclean:
+ 	rm -f pg_config$(X) $(OBJS)
+ 	rm -rf tmp_check
++ifeq ($(PORTNAME), emscripten)
++	rm -f pg_config.wasm
++	rm -f pg_config
++endif
+ 
+ check:
+ 	$(prove_check)
+--- a/src/bin/pg_ctl/Makefile
++++ b/src/bin/pg_ctl/Makefile
+@@ -35,12 +35,23 @@
+ 
+ install: all installdirs
+ 	$(INSTALL_PROGRAM) pg_ctl$(X) '$(DESTDIR)$(bindir)/pg_ctl$(X)'
++ifeq ($(PORTNAME), emscripten)
++	$(INSTALL_PROGRAM) pg_ctl.wasm '$(DESTDIR)$(bindir)/pg_ctl.wasm'
++	$(INSTALL_PROGRAM) pg_ctl$(X) '$(DESTDIR)$(bindir)/pg_ctl.mjs'
++	$(INSTALL_PROGRAM) $(top_srcdir)/pglite/scripts/run_pg_cmd.mjs '$(DESTDIR)$(bindir)/run_pg_cmd.mjs'
++	(cd '$(DESTDIR)$(bindir)' && ln -sf 'run_pg_cmd.mjs' 'pg_ctl')
++endif
+ 
+ installdirs:
+ 	$(MKDIR_P) '$(DESTDIR)$(bindir)'
+ 
+ uninstall:
+ 	rm -f '$(DESTDIR)$(bindir)/pg_ctl$(X)'
++ifeq ($(PORTNAME), emscripten)
++	rm -f '$(DESTDIR)$(bindir)/pg_ctl.wasm'
++	rm -f '$(DESTDIR)$(bindir)/pg_ctl.mjs'
++	rm -f '$(DESTDIR)$(bindir)/pg_ctl'
++endif
+ 
+ clean distclean:
+ 	rm -f pg_ctl$(X) $(OBJS)
+--- a/src/bin/pg_dump/Makefile
++++ b/src/bin/pg_dump/Makefile
+@@ -58,6 +58,11 @@
+ 	$(INSTALL_PROGRAM) pg_dump$(X) '$(DESTDIR)$(bindir)'/pg_dump$(X)
+ 	$(INSTALL_PROGRAM) pg_restore$(X) '$(DESTDIR)$(bindir)'/pg_restore$(X)
+ 	$(INSTALL_PROGRAM) pg_dumpall$(X) '$(DESTDIR)$(bindir)'/pg_dumpall$(X)
++ifeq ($(PORTNAME), emscripten)
++	$(INSTALL_PROGRAM) pg_dump.wasm '$(DESTDIR)$(bindir)/pg_dump.wasm'
++	$(INSTALL_PROGRAM) pg_restore.wasm '$(DESTDIR)$(bindir)/pg_restore.wasm'
++	$(INSTALL_PROGRAM) pg_dumpall.wasm '$(DESTDIR)$(bindir)/pg_dumpall.wasm'
++endif
+ 
+ installdirs:
+ 	$(MKDIR_P) '$(DESTDIR)$(bindir)'
+@@ -70,7 +75,13 @@
+ 
+ uninstall:
+ 	rm -f $(addprefix '$(DESTDIR)$(bindir)'/, pg_dump$(X) pg_restore$(X) pg_dumpall$(X))
++ifeq ($(PORTNAME), emscripten)
++	rm -f $(addprefix '$(DESTDIR)$(bindir)'/, pg_dump.wasm pg_restore.wasm pg_dumpall.wasm)
++endif
+ 
+ clean distclean:
+ 	rm -f pg_dump$(X) pg_restore$(X) pg_dumpall$(X) $(OBJS) pg_dump.o common.o pg_dump_sort.o pg_restore.o pg_dumpall.o
+ 	rm -rf tmp_check
++ifeq ($(PORTNAME), emscripten)
++	rm -f pg_dump.wasm pg_restore.wasm pg_dumpall.wasm
++endif
+--- a/src/bin/pg_dump/pg_backup_archiver.c
++++ b/src/bin/pg_dump/pg_backup_archiver.c
+@@ -52,6 +52,28 @@
+ #define TOC_PREFIX_NONE		""
+ #define TOC_PREFIX_DATA		"Data for "
+ #define TOC_PREFIX_STATS	"Statistics for "
++
++#ifdef __PGLITE__
++extern int	pg_char_to_encoding_private(const char *name);
++extern const char *pg_encoding_to_char_private(int encoding);
++extern int	pg_valid_server_encoding_id_private(int encoding);
++
++
++#if defined(pg_char_to_encoding)
++#undef pg_char_to_encoding
++#endif
++#define pg_char_to_encoding(encoding) pg_char_to_encoding_private(encoding)
++
++#if defined(pg_encoding_to_char)
++#undef pg_encoding_to_char
++#endif
++#define pg_encoding_to_char(encoding) pg_encoding_to_char_private(encoding)
++
++#if defined(pg_valid_server_encoding_id)
++#undef pg_valid_server_encoding_id
++#endif
++#define pg_valid_server_encoding_id(encoding) pg_valid_server_encoding_id_private(encoding)
++#endif
+ 
+ static ArchiveHandle *_allocAH(const char *FileSpec, const ArchiveFormat fmt,
+ 							   const pg_compress_specification compression_spec,
+--- a/src/bin/pg_dump/pg_dump.c
++++ b/src/bin/pg_dump/pg_dump.c
+@@ -73,6 +73,28 @@
+ #include "pg_dump.h"
+ #include "statistics/statistics_format.h"
+ #include "storage/block.h"
++
++#ifdef __PGLITE__
++extern int	pg_char_to_encoding_private(const char *name);
++extern const char *pg_encoding_to_char_private(int encoding);
++extern int	pg_valid_server_encoding_id_private(int encoding);
++
++
++#if defined(pg_char_to_encoding)
++#undef pg_char_to_encoding
++#endif
++#define pg_char_to_encoding(encoding) pg_char_to_encoding_private(encoding)
++
++#if defined(pg_encoding_to_char)
++#undef pg_encoding_to_char
++#endif
++#define pg_encoding_to_char(encoding) pg_encoding_to_char_private(encoding)
++
++#if defined(pg_valid_server_encoding_id)
++#undef pg_valid_server_encoding_id
++#endif
++#define pg_valid_server_encoding_id(encoding) pg_valid_server_encoding_id_private(encoding)
++#endif
+ 
+ typedef struct
+ {
+--- /dev/null
++++ b/src/include/port/emscripten.h
+@@ -0,0 +1,16 @@
++#ifndef I_WASM
++#define I_WASM
++
++// #include "port/wasm_common.h"
++
++#define WAIT_USE_POLL 1
++
++#define HAVE_LINUX_EIDRM_BUG
++
++#define PLATFORM_DEFAULT_WAL_SYNC_METHOD	WAL_SYNC_METHOD_FDATASYNC
++
++#define COPY_OFF
++#define PGDLLIMPORT
++#define PG_FORCE_DISABLE_INLINE
++
++#endif // I_WASM
+--- a/src/interfaces/libpq/fe-exec.c
++++ b/src/interfaces/libpq/fe-exec.c
+@@ -28,6 +28,28 @@
+ #include "libpq-fe.h"
+ #include "libpq-int.h"
+ #include "mb/pg_wchar.h"
++
++#ifdef __PGLITE__
++extern int	pg_char_to_encoding_private(const char *name);
++extern const char *pg_encoding_to_char_private(int encoding);
++extern int	pg_valid_server_encoding_id_private(int encoding);
++
++
++#if defined(pg_char_to_encoding)
++#undef pg_char_to_encoding
++#endif
++#define pg_char_to_encoding(encoding) pg_char_to_encoding_private(encoding)
++
++#if defined(pg_encoding_to_char)
++#undef pg_encoding_to_char
++#endif
++#define pg_encoding_to_char(encoding) pg_encoding_to_char_private(encoding)
++
++#if defined(pg_valid_server_encoding_id)
++#undef pg_valid_server_encoding_id
++#endif
++#define pg_valid_server_encoding_id(encoding) pg_valid_server_encoding_id_private(encoding)
++#endif
+ 
+ /* keep this in same order as ExecStatusType in libpq-fe.h */
+ char	   *const pgresStatus[] = {
+--- /dev/null
++++ b/src/makefiles/Makefile.emscripten
+@@ -0,0 +1,22 @@
++# Use --enable-new-dtags to generate DT_RUNPATH instead of DT_RPATH.
++# This allows LD_LIBRARY_PATH to still work when needed.
++rpath = 
++AROPT = crs
++
++# Rule for building a shared library from a single .o file
++%.so: %.o
++	$(CC) $(CFLAGS) $< $(LDFLAGS) $(LDFLAGS_SL) -shared -o $@
++# Use --enable-new-dtags to generate DT_RUNPATH instead of DT_RPATH.
++# This allows LD_LIBRARY_PATH to still work when needed.
++rpath = 
++AROPT = crs
++
++# Rule for building a shared library from a single .o file
++%.so: %.o
++	$(CC) $(CFLAGS) $< $(LDFLAGS) $(LDFLAGS_SL) -shared -o $@
++
++emscripten_include_dir := $(pkgincludedir)/emscripten
++emscripten_base_dir := $(emscripten_include_dir)/base
++emscripten_imports_dir := /install/pglite/imports
++emscripten_extension_dir := $(emscripten_include_dir)/extension
++emscripten_extension_imports_dir := $(emscripten_extension_dir)/imports
+--- a/src/makefiles/pgxs.mk
++++ b/src/makefiles/pgxs.mk
+@@ -249,6 +249,11 @@
+ ifeq ($(with_llvm), yes)
+ 	$(foreach mod, $(MODULES), $(call install_llvm_module,$(mod),$(mod).bc))
+ endif # with_llvm
++ifeq ($(PORTNAME), emscripten)
++	find . -name "*.o" -exec $(LLVM_NM) --undefined-only {} \; | awk '{print $$2}' | sed '/^$$/d' | sort -u > '$(MODULES).undef.txt'
++	find . -type f \( -name "*.o" -o -name "*.so" \) -exec $(LLVM_NM) --defined-only {} \;   | awk '$$2 ~ /^[TDB]$$/ {print $$3}' | sed '/^$$/d' | sort -u > '$(MODULES).defs.txt'
++	comm -23 '$(MODULES).undef.txt' '$(MODULES).defs.txt' > '$(emscripten_extension_imports_dir)/$(MODULES).imports'
++endif # PORTNAME=emscripten
+ endif # MODULES
+ ifdef DOCS
+ ifdef docdir
+@@ -271,6 +276,11 @@
+ ifeq ($(with_llvm), yes)
+ 	$(call install_llvm_module,$(MODULE_big),$(OBJS))
+ endif # with_llvm
++ifeq ($(PORTNAME), emscripten)
++	find . -name "*.o" -exec $(LLVM_NM) --undefined-only {} \; | awk '{print $$2}' | sed '/^$$/d' | sort -u > '$(MODULE_big).undef.txt'
++	find . -type f \( -name "*.o" -o -name "*.so" \) -exec $(LLVM_NM) --defined-only   {} \; | awk '$$2 ~ /^[TDB]$$/ {print $$3}' | sed '/^$$/d' | sort -u > '$(MODULE_big).defs.txt'
++	comm -23 '$(MODULE_big).undef.txt' '$(MODULE_big).defs.txt' > '$(emscripten_extension_imports_dir)/$(MODULE_big).imports'
++endif # PORTNAME=emscripten
+ 
+ install: install-lib
+ endif # MODULE_big
+@@ -297,6 +307,9 @@
+ ifneq (,$(PROGRAM)$(SCRIPTS)$(SCRIPTS_built))
+ 	$(MKDIR_P) '$(DESTDIR)$(bindir)'
+ endif
++ifeq ($(PORTNAME), emscripten)
++	$(MKDIR_P) '$(DESTDIR)$(emscripten_extension_imports_dir)'
++endif
+ 
+ ifdef MODULE_big
+ installdirs: installdirs-lib
+@@ -318,6 +331,9 @@
+ ifeq ($(with_llvm), yes)
+ 	$(foreach mod, $(MODULES), $(call uninstall_llvm_module,$(mod)))
+ endif # with_llvm
++ifeq ($(PORTNAME), emscripten)
++	rm -f '$(DESTDIR)$(emscripten_extension_imports_dir)/$(MODULES).imports'
++endif
+ endif # MODULES
+ ifdef DOCS
+ 	rm -f $(addprefix '$(DESTDIR)$(docdir)/$(docmoduledir)'/, $(DOCS))
+@@ -339,6 +355,9 @@
+ ifeq ($(with_llvm), yes)
+ 	$(call uninstall_llvm_module,$(MODULE_big))
+ endif # with_llvm
++ifeq ($(PORTNAME), emscripten)
++	rm -f '$(DESTDIR)$(emscripten_extension_imports_dir)/$(MODULE_big).imports'
++endif
+ 
+ uninstall: uninstall-lib
+ endif # MODULE_big
+--- a/src/pl/plpgsql/src/Makefile
++++ b/src/pl/plpgsql/src/Makefile
+@@ -53,11 +53,20 @@
+ installdirs: installdirs-lib
+ 	$(MKDIR_P) '$(DESTDIR)$(datadir)/extension'
+ 	$(MKDIR_P) '$(DESTDIR)$(includedir_server)'
++ifeq ($(PORTNAME), emscripten)
++	$(MKDIR_P) '$(DESTDIR)$(emscripten_extension_imports_dir)'
++endif
+ 
+ uninstall: uninstall-lib uninstall-data uninstall-headers
+ 
+ install-data: installdirs
+ 	$(INSTALL_DATA) $(addprefix $(srcdir)/, $(DATA)) '$(DESTDIR)$(datadir)/extension/'
++ifeq ($(PORTNAME), emscripten)
++	$(LLVM_NM) -u $(OBJS)    | awk '{print $$2}'              | sed '/^$$/d' | sort -u > undef.txt
++	$(LLVM_NM)    $(OBJS)    | awk '$$2 ~ /^[TDB]$$/ {print $$3}' | sed '/^$$/d' | sort -u > defs.txt
++	comm -23 undef.txt defs.txt > '$(DESTDIR)$(emscripten_extension_imports_dir)/$(NAME).imports'
++	rm -f undef.txt defs.txt
++endif
+ 
+ # The plpgsql.h header file is needed by instrumentation plugins
+ install-headers: installdirs
+@@ -65,6 +74,9 @@
+ 
+ uninstall-data:
+ 	rm -f $(addprefix '$(DESTDIR)$(datadir)/extension'/, $(notdir $(DATA)))
++ifeq ($(PORTNAME), emscripten)
++	rm -f '$(DESTDIR)$(emscripten_extension_imports_dir)/$(NAME).imports'
++endif
+ 
+ uninstall-headers:
+ 	rm -f '$(DESTDIR)$(includedir_server)/plpgsql.h'
+--- /dev/null
++++ b/src/template/emscripten
+@@ -0,0 +1,55 @@
++# src/template/emscripten
++
++# Prefer unnamed POSIX semaphores if available, unless user overrides choice
++if test x"$PREFERRED_SEMAPHORES" = x"" ; then
++  PREFERRED_SEMAPHORES=UNNAMED_POSIX
++fi
++
++# Force _GNU_SOURCE on; plperl is broken with Perl 5.8.0 otherwise
++# This is also required for ppoll(2), and perhaps other things
++CPPFLAGS="$CPPFLAGS -D_GNU_SOURCE"
++
++# Extra CFLAGS for code that will go into a shared library
++CFLAGS_SL="-fPIC"
++
++# src/template/emscripten
++
++# Prefer unnamed POSIX semaphores if available, unless user overrides choice
++if test x"$PREFERRED_SEMAPHORES" = x"" ; then
++  PREFERRED_SEMAPHORES=UNNAMED_POSIX
++fi
++
++# Force _GNU_SOURCE on; plperl is broken with Perl 5.8.0 otherwise
++# This is also required for ppoll(2), and perhaps other things
++CPPFLAGS="$CPPFLAGS -D_GNU_SOURCE"
++
++# Extra CFLAGS for code that will go into a shared library
++CFLAGS_SL="-fPIC"
++
++# src/template/emscripten
++
++# Prefer unnamed POSIX semaphores if available, unless user overrides choice
++if test x"$PREFERRED_SEMAPHORES" = x"" ; then
++  PREFERRED_SEMAPHORES=UNNAMED_POSIX
++fi
++
++# Force _GNU_SOURCE on; plperl is broken with Perl 5.8.0 otherwise
++# This is also required for ppoll(2), and perhaps other things
++CPPFLAGS="$CPPFLAGS -D_GNU_SOURCE"
++
++# Extra CFLAGS for code that will go into a shared library
++CFLAGS_SL="-fPIC"
++
++# src/template/emscripten
++
++# Prefer unnamed POSIX semaphores if available, unless user overrides choice
++if test x"$PREFERRED_SEMAPHORES" = x"" ; then
++  PREFERRED_SEMAPHORES=UNNAMED_POSIX
++fi
++
++# Force _GNU_SOURCE on; plperl is broken with Perl 5.8.0 otherwise
++# This is also required for ppoll(2), and perhaps other things
++CPPFLAGS="$CPPFLAGS -D_GNU_SOURCE"
++
++# Extra CFLAGS for code that will go into a shared library
++CFLAGS_SL="-fPIC"
+--- a/src/timezone/Makefile
++++ b/src/timezone/Makefile
+@@ -48,7 +48,11 @@
+ # but GNU make versions <= 3.78.1 or perhaps later have a bug
+ # that causes a segfault;  GNU make 3.81 or later fixes this.
+ ifeq (,$(ZIC))
++ifeq ($(PORTNAME), emscripten)
++ZIC= /usr/sbin/zic
++else
+ ZIC= ./zic
++endif
+ endif
+ 
+ zic: $(ZICOBJS) | submake-libpgport
+@@ -77,3 +81,6 @@
+ 
+ clean distclean:
+ 	rm -f zic$(X) $(ZICOBJS) abbrevs.txt
++ifeq ($(PORTNAME), emscripten)
++	rm -f zic.wasm
++endif
+--- /dev/null
++++ b/pglite/scripts/run_pg_cmd.mjs
+@@ -0,0 +1,40 @@
++#!/usr/bin/env node
++import { basename, dirname, join } from "path";
++
++const invokedPath = process.argv[1];
++const invokedName = basename(invokedPath);
++const moduleName = invokedName + ".mjs";
++const modulePath = join(dirname(invokedPath), moduleName);
++const { default: Module } = await import(modulePath);
++
++// If the module has a `main()` (or similar) method, call it:
++if (typeof Module.main === "function") {
++  await Module.main();
++} else if (typeof Module === "function") {
++  const mod = await Module();
++
++  // postgres executables (like pg_config etc.) complain if they cannot find their respective executables
++  const nodePath = process.argv.shift();
++  const exePath = process.argv.shift();
++  ensureExePath(mod.FS, exePath);
++
++  mod.callMain(process.argv)
++} else {
++  console.error("⚠️ Module has no callable entry point");
++}
++
++function ensureExePath(FS, fullPath) {
++  const exeInfo = FS.analyzePath(fullPath);
++  if (!exeInfo.exists) {
++    const exePathArray = fullPath.split('/');
++    const exeName = exePathArray.pop();
++    const dirPath = exePathArray.join('/');
++    const pathInfo = FS.analyzePath(dirPath);
++    if (!pathInfo.exists) {
++      FS.mkdirTree(dirPath);
++    }
++    const view = new Int32Array(new ArrayBuffer(0));
++    FS.createDataFile(dirPath, exeName, view, true, false, true);
++    FS.chmod(fullPath, 0o0755);
++  }
++}
+--- /dev/null
++++ b/pglite/src/pglitec/pglitec.c
+@@ -0,0 +1,494 @@
++/*-------------------------------------------------------------------------
++ *
++ * pglitec.c
++ *	  PGlite libc overrides
++ *
++ *
++ *
++ * NOTES
++ *    this file contains "libc" function wrappers for PGlite, as well as 
++ *    other flags used by PostgreSQL and needed by PGlite. These are 
++ *    needed in order to emulate some system calls related to sockets, 
++ *    user management etc.
++ *
++ *-------------------------------------------------------------------------
++ */
++
++#include <unistd.h>
++#include <stdio.h>
++#include <sys/shm.h>
++#include <errno.h>
++#include <time.h>
++#include <pwd.h>
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <sys/time.h>
++#include <setjmp.h>
++#include <string.h>
++
++#if defined(__EMSCRIPTEN__)
++#include <emscripten/emscripten.h>
++#else
++#define EMSCRIPTEN_KEEPALIVE
++// TODO: an include for libpglite
++#endif
++
++volatile int is_pglite_active = 0;
++volatile int pglite_exit_status = -1;
++
++void EMSCRIPTEN_KEEPALIVE clear_setitimer(void) {
++    struct itimerval zero = {{0, 0}, {0, 0}};
++    setitimer(ITIMER_REAL, &zero, NULL);
++}
++
++int pgl_setPGliteActive(int newValue) {
++	int current = is_pglite_active;
++	is_pglite_active = newValue;
++    if (newValue == 0) {
++        clear_setitimer();
++    }
++	return current;
++}
++
++int EMSCRIPTEN_KEEPALIVE pgl_getPGliteExitStatus() {
++    return pglite_exit_status;
++}
++
++int EMSCRIPTEN_KEEPALIVE pgl_setPGliteExitStatus(int status) {
++    int prev = pglite_exit_status;
++    pglite_exit_status = status;
++    return prev;
++}
++
++/* ========== Top level exception handling ==========
++*
++* In Postgres, the top level sigsetjmp handles exceptions encountered during executions
++* In PGlite, we handle the top level sigsetjmp manually by exiting on the corresponding longjmp 
++* with a predefined exit code (POSTGRES_MAIN_LONGJMP). We only need to override the longjmp 
++* because setjmp already behaves as expected.
++* This keeps the code changes cleaner.
++*/
++
++#define POSTGRES_MAIN_LONGJMP 100
++
++volatile sigjmp_buf	postgresmain_sigjmp_buf;
++
++volatile bool ignore_till_sync = false;
++volatile bool send_ready_for_query = false;
++
++/*
++* This wraps the libc longjmp() to enable us to intercept and handle the main longjmp manually
++*/
++void EMSCRIPTEN_KEEPALIVE pgl_longjmp(jmp_buf env, int val) {
++    if (is_pglite_active && memcmp(env, (void*)postgresmain_sigjmp_buf, sizeof(jmp_buf)) == 0) {
++        // reset this as it is expected
++        if (!ignore_till_sync)
++		    send_ready_for_query = true;	/* initially, or after error */
++        pglite_exit_status = POSTGRES_MAIN_LONGJMP;
++        emscripten_exit_with_live_runtime();
++    }
++    longjmp(env, val);
++}
++
++// emscripten defines siglongjmp as longjmp
++void EMSCRIPTEN_KEEPALIVE pgl_siglongjmp(sigjmp_buf env, int val) {
++    pgl_longjmp(env, val);
++}
++
++/* ========== Process handling functions ==========
++*
++* We wrap some process handling functions to emulate 
++* the behavior of an OS when instantiating a new process.
++* This is not available in emscripten atm, so we handle it manually
++* See pglite.ts in the frontend on how we emulate this instantiation.
++*/
++typedef ssize_t (*pglite_system_t)(const char *command);
++pglite_system_t pglite_system = NULL;
++
++void EMSCRIPTEN_KEEPALIVE
++pgl_set_system_fn(pglite_system_t system_fn) {
++    pglite_system = system_fn;
++}
++
++int EMSCRIPTEN_KEEPALIVE
++pgl_system(const char *command) {
++    if (pglite_system) {
++        return pglite_system(command);
++    }
++    // if pglite_system is not set, we assume we cannot exec that command and return != 0
++    // we could also just call system() and let it crash, but this leads to some stderr messages on Windows
++    return 123;
++}
++
++typedef FILE* (*pglite_popen_t)(const char *command, const char *mode);
++pglite_popen_t pglite_popen = NULL;
++
++void EMSCRIPTEN_KEEPALIVE
++pgl_set_popen_fn(pglite_popen_t popen_fn) {
++    pglite_popen = popen_fn;
++}
++
++FILE* EMSCRIPTEN_KEEPALIVE
++pgl_popen(const char *command, const char *mode) {
++    if (pglite_popen) {
++        return pglite_popen(command, mode);
++    }
++    return popen(command, mode);
++}
++
++typedef int (*pglite_pclose_t)(FILE* stream);
++pglite_pclose_t pglite_pclose = NULL;
++
++void EMSCRIPTEN_KEEPALIVE
++pgl_set_pclose_fn(pglite_pclose_t pclose_fn) {
++    pglite_pclose = pclose_fn;
++}
++
++int EMSCRIPTEN_KEEPALIVE
++pgl_pclose(FILE* stream) {
++    if (pglite_pclose) {
++        return pglite_pclose(stream);
++    }
++    return pclose(stream);
++}
++
++/* ========== User related functions ==========
++*
++* PostgreSQL code expects the current user to fulfill certain criteria to be allowed to run the process, otherwise it exits. 
++* This is irrelevant in WASM/emscripten, so we fake the expected data to match what Postgres wants.
++*/
++
++#define PGLITE_UID 123
++
++uid_t EMSCRIPTEN_KEEPALIVE
++pgl_geteuid(void) {
++    return PGLITE_UID;
++}
++
++uid_t EMSCRIPTEN_KEEPALIVE
++pgl_getuid(void) {
++    return PGLITE_UID;
++}
++
++struct passwd* EMSCRIPTEN_KEEPALIVE
++pgl_getpwuid(uid_t uid) {
++    static struct passwd pw;
++    static char name[] = "postgres";
++    static char passwd[] = "x";
++    static char gecos[] = "Static User";
++    static char dir[] = "/home/postgres";
++    static char shell[] = "/bin/sh";
++
++    pw.pw_name   = name;
++    pw.pw_passwd = passwd;
++    pw.pw_uid    = uid;
++    pw.pw_gid    = uid;
++    pw.pw_gecos  = gecos;
++    pw.pw_dir    = dir;
++    pw.pw_shell  = shell;
++
++    return &pw;
++}
++
++/* ========== atexit functions ==========
++*
++* atexit registered functions provide important functionality in Postgres
++* we need to be able to run them when closing PGlite.
++*/
++#define MAX_ATEXIT_FUNCS 32
++
++static void (*atexit_funcs[MAX_ATEXIT_FUNCS])(void);
++static int atexit_func_count = 0;
++
++int EMSCRIPTEN_KEEPALIVE pgl_atexit(void (*function)(void)) {
++    if (atexit_func_count >= MAX_ATEXIT_FUNCS) {
++        // According to the C standard, atexit returns nonzero on failure.
++        return -1;
++    }
++    atexit_funcs[atexit_func_count++] = function;
++    return 0;
++}
++
++void EMSCRIPTEN_KEEPALIVE pgl_run_atexit_funcs(void) {
++    // Call in reverse registration order
++    for (int i = atexit_func_count - 1; i >= 0; --i) {
++        if (atexit_funcs[i]) {
++            atexit_funcs[i]();
++        }
++    }
++    atexit_func_count = 0;
++}
++
++/* ========== streams functions ==========
++*
++* initdb communicates with postgres via stdin<->stdout redirection
++* we need to handle this manually mainly because we're also handling processes manually
++*/
++
++FILE* pgl_stdin = NULL;
++FILE* pgl_stdout = NULL;
++
++/*
++* we override exit() to make sure we cleanup the stdin/stdout file descriptors
++*/
++void EMSCRIPTEN_KEEPALIVE
++pgl_exit(int status) {
++    if (pgl_stdin != NULL) {
++        fclose(pgl_stdin);
++        pgl_stdin = NULL;
++    }
++    if (pgl_stdout != NULL) {
++        fflush(pgl_stdout);
++        fclose(pgl_stdout);
++        pgl_stdout = NULL;
++    }
++    optind = 1;
++    pglite_exit_status = -1;
++    exit(status);
++}
++
++/*
++* Overrides freopen() libc function to allow initdb<->PGlite comm via standard streams (see initdb.ts in frontend)
++*/
++FILE * EMSCRIPTEN_KEEPALIVE
++pgl_freopen(const char *pathname, const char *mode, int streamid) {
++    if (streamid == 0) {
++        pgl_stdin = freopen(pathname, mode, stdin);
++        return pgl_stdin;
++    }
++    if (streamid == 1) {
++        pgl_stdout = freopen(pathname, mode, stdout);
++        return pgl_stdout;
++    }
++    if (streamid == 2) {
++        return freopen(pathname, mode, stderr);
++    }
++    return NULL;
++}
++
++// ============ SHM ===============
++
++typedef struct ShmSegment {
++    int shmid;
++    key_t key;
++    size_t size;
++    void *addr;
++    int shmflg;
++    struct ShmSegment *next;
++} ShmSegment;
++
++static ShmSegment *shm_list = NULL;
++static unsigned int next_shmid = 1;
++
++// shmget replacement
++int EMSCRIPTEN_KEEPALIVE
++pgl_shmget(key_t key, size_t size, int shmflg) {
++    ShmSegment *seg = shm_list;
++
++    // Search for existing segment
++    while (seg) {
++        if (seg->key == key) return seg->shmid;
++        seg = seg->next;
++    }
++
++    // If IPC_CREAT is set, create new segment
++    if (shmflg & IPC_CREAT) {
++        int pagesize = getpagesize();
++        while (pagesize < size) pagesize += pagesize;
++        void *mem = malloc(pagesize);
++        if (!mem) {
++            errno = ENOMEM;
++            return -1;
++        }
++
++        ShmSegment *new_seg = malloc(sizeof(ShmSegment));
++        if (!new_seg) {
++            free(mem);
++            errno = ENOMEM;
++            return -1;
++        }
++
++        new_seg->shmid = next_shmid++;
++        new_seg->key = key;
++        new_seg->size = size;
++        new_seg->addr = mem;
++        new_seg->shmflg = shmflg;
++        new_seg->next = shm_list;
++        shm_list = new_seg;
++
++        return new_seg->shmid;
++    }
++
++    errno = ENOENT;
++    return -1;
++}
++
++// shmat replacement
++void EMSCRIPTEN_KEEPALIVE
++*pgl_shmat(int shmid, const void *shmaddr, int shmflg) {
++    ShmSegment *seg = shm_list;
++
++    while (seg) {
++        if (seg->shmid == shmid) {
++            return seg->addr;
++        }
++        seg = seg->next;
++    }
++
++    errno = EINVAL;
++    return (void *)-1;
++}
++
++// shmdt replacement
++int EMSCRIPTEN_KEEPALIVE
++pgl_shmdt(const void *shmaddr) {
++    ShmSegment *seg = shm_list;
++
++    while (seg) {
++        if (seg->addr == shmaddr) {
++            return 0;
++        }
++        seg = seg->next;
++    }
++
++    errno = EINVAL;
++    return -1;
++}
++
++// shmctl replacement
++int EMSCRIPTEN_KEEPALIVE
++pgl_shmctl(int shmid, int cmd, struct shmid_ds *buf) {
++    ShmSegment *seg = shm_list;
++    ShmSegment *prev = NULL;
++
++    while (seg) {
++        if (seg->shmid == shmid) {
++            if (cmd == IPC_RMID) {
++                free(seg->addr);
++                if (prev) prev->next = seg->next;
++                else shm_list = seg->next;
++                free(seg);
++                return 0;
++            } else if (cmd == IPC_STAT && buf != NULL) {
++                buf->shm_segsz = seg->size;
++                buf->shm_perm.__key = seg->key;
++                buf->shm_nattch = 0;
++                buf->shm_atime = buf->shm_dtime = buf->shm_ctime = time(NULL);
++                return 0;
++            } else if (cmd == IPC_SET && buf != NULL) {
++                seg->size = buf->shm_segsz;
++                return 0;
++            } else {
++                fprintf(stderr, "pglitec: shmctl: no such cmd %d\n", cmd);
++                errno = EINVAL;
++                return -1;
++            }
++        }
++        prev = seg;
++        seg = seg->next;
++    }
++
++    fprintf(stderr, "pglitec: shmctl: no such segment %d\n", shmid);
++    errno = EINVAL;
++    return -1;
++}
++
++/* ========== MMAP/MUNMAP ==========
++ * Dummy munmap implementation for emscripten.
++ * Emscripten's munmap can corrupt unrelated files in MEMFS,
++ * so we just return success without doing anything.
++ * Memory will be reclaimed when the WASM instance terminates.
++ */
++int EMSCRIPTEN_KEEPALIVE
++pgl_munmap(void *addr, size_t length) {
++    (void)addr;
++    (void)length;
++    // dummy
++    return 0;
++}
++
++/* ============ SOCKET EMULATION =============
++*
++* To exchange data between the backend (Postgres) and frontend (JS part of PGlite),
++* we emulate a socket by overriding the following libc functions.
++*/
++
++/* 
++* read FROM JS
++* Callback used for reading data from the frontend
++*/
++typedef ssize_t (*pgl_read_t)(void *buffer, size_t max_length);
++pgl_read_t pgl_read;
++
++/* write TO JS
++* Callback used for writing data to the frontend
++*/
++typedef ssize_t (*pgl_write_t)(void *buffer, size_t length);
++pgl_write_t pgl_write;
++
++/*
++* Set the above callbacks
++*/
++void EMSCRIPTEN_KEEPALIVE
++pgl_set_rw_cbs(pgl_read_t read_cb, pgl_write_t write_cb) {
++    pgl_read = read_cb;
++    pgl_write = write_cb;
++}
++
++int EMSCRIPTEN_KEEPALIVE pgl_fcntl(int __fd, int __cmd, ...) {
++	// dummy 
++	return 0;
++}
++
++int EMSCRIPTEN_KEEPALIVE pgl_setsockopt(int __fd, int __level, int __optname,
++	const void *__optval, socklen_t __optlen) {
++	// dummy 
++	return 0;
++}
++
++int EMSCRIPTEN_KEEPALIVE pgl_getsockopt(int __fd, int __level, int __optname,
++	void *__restrict __optval,
++	socklen_t *__restrict __optlen) {
++	// dummy 
++	return 0;
++}
++
++int EMSCRIPTEN_KEEPALIVE pgl_getsockname(int __fd, struct sockaddr * __addr,
++	socklen_t *__restrict __len) {
++	// dummy 
++	return 0;
++}
++
++/*
++* Overrides the recv() libc function
++*/
++
++ssize_t EMSCRIPTEN_KEEPALIVE pgl_recv(int __fd, void *__buf, size_t __n, int __flags) {
++	ssize_t got = pgl_read(__buf, __n);
++	return got;
++}
++
++/*
++* Overrides the send() libc function
++*/
++
++ssize_t EMSCRIPTEN_KEEPALIVE pgl_send(int __fd, const void *__buf, size_t __n, int __flags) {
++	ssize_t wrote = pgl_write(__buf, __n);
++	return wrote;
++}
++
++int EMSCRIPTEN_KEEPALIVE pgl_connect(int socket, const struct sockaddr *address, socklen_t address_len) {
++	// dummy
++	return 0;
++}
++
++struct pollfd {
++    int   fd;         /* file descriptor */
++    short events;     /* requested events */
++	short revents;    /* returned events */
++};
++
++int EMSCRIPTEN_KEEPALIVE pgl_poll(struct pollfd fds[], ssize_t nfds, int timeout) {
++    // dummy
++	return nfds;
++}

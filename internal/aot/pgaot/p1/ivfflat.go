@@ -58,7 +58,7 @@ func F_IvfflatUpdateList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	if v13 != 0 {
 		return
 	} else {
-		F_LockBuffer(m, v12, int32(2))
+		F_LockBufferInternal(m, v12, int32(3))
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {

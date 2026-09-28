@@ -28,84 +28,86 @@ func F_ExecCheckTupleVisible(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v21
 	var v22 int32
 	_ = v22
-	var v23 int32
+	var v23 int64
 	_ = v23
 	var v24 int32
 	_ = v24
-	var v35 int32
-	_ = v35
-	var v39 int32
-	_ = v39
-	var v43 int32
-	_ = v43
-	var v48 int32
-	_ = v48
-	var v53 int32
-	_ = v53
+	var v25 int32
+	_ = v25
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	var v50 int32
+	_ = v50
 	var v56 int32
 	_ = v56
 	var v59 int32
 	_ = v59
-	var v61 int32
-	_ = v61
-	var v63 int32
-	_ = v63
-	var v68 int32
-	_ = v68
-	var v70 int32
-	_ = v70
-	var v74 int32
-	_ = v74
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
-	var v78 int32
-	_ = v78
+	var v62 int32
+	_ = v62
+	var v64 int32
+	_ = v64
+	var v66 int32
+	_ = v66
+	var v69 int32
+	_ = v69
+	var v72 int32
+	_ = v72
+	var v75 int32
+	_ = v75
+	var v80 int32
+	_ = v80
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
 	var v86 int32
 	_ = v86
-	var v87 int32
-	_ = v87
-	var v90 int32
-	_ = v90
-	var v100 int32
-	_ = v100
-	var v105 int32
-	_ = v105
-	var v107 int32
-	_ = v107
-	var v109 int32
-	_ = v109
-	var v114 int32
-	_ = v114
+	var v95 int32
+	_ = v95
+	var v96 int32
+	_ = v96
+	var v99 int32
+	_ = v99
+	var v110 int32
+	_ = v110
 	var v115 int32
 	_ = v115
-	var v116 int32
-	_ = v116
+	var v117 int32
+	_ = v117
 	var v120 int32
 	_ = v120
-	var v121 int32
-	_ = v121
-	var v124 int32
-	_ = v124
 	var v125 int32
 	_ = v125
-	var v128 int32
-	_ = v128
+	var v126 int32
+	_ = v126
+	var v127 int32
+	_ = v127
+	var v131 int32
+	_ = v131
+	var v132 int32
+	_ = v132
+	var v135 int32
+	_ = v135
 	var v136 int32
 	_ = v136
-	var v144 int32
-	_ = v144
-	var v153 int32
-	_ = v153
-	var v156 int32
-	_ = v156
-	var v160 int32
-	_ = v160
-	var v165 int32
-	_ = v165
+	var v139 int32
+	_ = v139
+	var v147 int32
+	_ = v147
+	var v157 int32
+	_ = v157
+	var v166 int32
+	_ = v166
+	var v169 int32
+	_ = v169
+	var v173 int32
+	_ = v173
+	var v178 int32
+	_ = v178
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
@@ -119,8 +121,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v153 = m.ExcPending
-	if v153 != 0 {
+	v166 = m.ExcPending
+	if v166 != 0 {
 		goto L4
 	} else {
 		goto L49
@@ -156,7 +158,7 @@ L6:
 	;
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
-	v23 = m.T0[v22].(func(*base.Module, int32, int32, int32) int32)(m, l2, int32(-2), v7+int32(15))
+	v23 = m.T0[v22].(func(*base.Module, int32, int32, int32) int64)(m, l2, int32(-2), v7+int32(15))
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -166,57 +168,58 @@ L6:
 	}
 L7:
 	;
-	if base.Ui32(v23) < base.Ui32(int32(3)) {
+	v25 = base.I32_wrap_i64(v23)
+	if base.Ui32(v25) < base.Ui32(int32(3)) {
 		goto L9
 	} else {
 		goto L10
 	}
 L8:
 	;
-	if v144 == int32(0) {
+	if v157 == int32(0) {
 		goto L1
 	} else {
 		goto L48
 	}
 L9:
 	;
-	v144 = int32(0)
+	v157 = int32(0)
 	goto L8
 L10:
 	;
 	goto L11
 L11:
 	;
-	v35 = *(*int32)(unsafe.Add(mBase, _c_F_ExecCheckTupleVisible[1]))
-	if v35 == v23 {
+	v37 = *(*int32)(unsafe.Add(mBase, _c_F_ExecCheckTupleVisible[1]))
+	if v37 == v25 {
 		goto L12
 	} else {
 		goto L13
 	}
 L12:
 	;
-	v144 = int32(1)
+	v157 = int32(1)
 	goto L8
 L13:
 	;
 	goto L14
 L14:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, _c_F_ExecCheckTupleVisible[2]))
-	if v39 <= int32(0) {
+	v41 = *(*int32)(unsafe.Add(mBase, _c_F_ExecCheckTupleVisible[2]))
+	if v41 <= int32(0) {
 		goto L16
 	} else {
 		goto L17
 	}
 L15:
 	;
-	v144 = v136
+	v157 = v147
 	goto L8
 L16:
 	;
-	v43 = *(*int32)(unsafe.Add(mBase, _c_F_ExecCheckTupleVisible[3]))
-	if v43 == int32(0) {
-		v136 = int32(0)
+	v45 = *(*int32)(unsafe.Add(mBase, _c_F_ExecCheckTupleVisible[3]))
+	if v45 == int32(0) {
+		v147 = int32(0)
 		goto L15
 	} else {
 		goto L19
@@ -226,75 +229,75 @@ L17:
 	goto L18
 L18:
 	;
-	v105 = *(*int32)(unsafe.Add(mBase, _c_F_ExecCheckTupleVisible[4]))
-	v107 = int32(0)
-	v109 = v39 - int32(1)
+	v115 = *(*int32)(unsafe.Add(mBase, _c_F_ExecCheckTupleVisible[4]))
+	v117 = int32(0)
+	v120 = v41 - int32(1)
 	goto L38
 L19:
 	;
-	v48 = v43
+	v50 = v45
 	goto L20
 L20:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v48)+20))
-	if v53 == int32(4) {
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
+	if v56 == int32(4) {
 		goto L22
 	} else {
 		goto L23
 	}
 L21:
 	;
-	v136 = int32(0)
+	v147 = int32(0)
 	goto L15
 L22:
 	;
-	v100 = *(*int32)(unsafe.Add(mBase, uint32(v48)+80))
-	if v100 != 0 {
-		v48 = v100
+	v110 = *(*int32)(unsafe.Add(mBase, uint32(v50)+80))
+	if v110 != 0 {
+		v50 = v110
 		goto L20
 	} else {
 		goto L37
 	}
 L23:
 	;
-	v56 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-	if v56 == int32(0) {
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
+	if v59 == int32(0) {
 		goto L22
 	} else {
 		goto L24
 	}
 L24:
 	;
-	v59 = int32(1)
-	if v23 == v56 {
-		v136 = v59
+	v62 = int32(1)
+	if v25 == v59 {
+		v147 = v62
 		goto L15
 	} else {
 		goto L25
 	}
 L25:
 	;
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v48)+52))
-	v63 = v61 - int32(1)
-	if v63 < int32(0) {
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(v50)+52))
+	v66 = v64 - int32(1)
+	if v66 < int32(0) {
 		goto L22
 	} else {
 		goto L26
 	}
 L26:
 	;
-	v68 = int32(0)
-	v70 = v63
+	v69 = *(*int32)(unsafe.Add(mBase, uint32(v50)+48))
+	v72 = int32(0)
+	v75 = v66
 	goto L27
 L27:
 	;
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(v48)+48))
-	v76 = int32(2)
-	v77 = base.I32_div_s(v70-v68, v76)
-	v78 = v77 + v68
-	v82 = *(*int32)(unsafe.Add(mBase, uint32(v74+v78<<(uint(v76)%32))))
-	if v82 == v23 {
-		v136 = v59
+	v80 = int32(2)
+	v81 = base.I32_div_s(v75-v72, v80)
+	v82 = v81 + v72
+	v86 = *(*int32)(unsafe.Add(mBase, uint32(v69+v82<<(uint(v80)%32))))
+	if v86 == v25 {
+		v147 = v62
 		goto L15
 	} else {
 		goto L29
@@ -304,41 +307,40 @@ L28:
 	goto L22
 L29:
 	;
-	v86 = F_TransactionIdPrecedes(m, v82, v23)
-	mBase = m.M
-	if v86 != 0 {
+	v95 = base.B2i32(v86-v25 < int32(0)) | base.B2i32(base.Ui32(v86) < base.Ui32(int32(3)))
+	if v95 != 0 {
 		goto L30
 	} else {
 		goto L31
 	}
 L30:
 	;
-	v87 = v78 + int32(1)
+	v96 = v82 + int32(1)
 	goto L32
 L31:
 	;
-	v87 = v68
+	v96 = v72
 	goto L32
 L32:
 	;
-	if v86 != 0 {
+	if v95 != 0 {
 		goto L33
 	} else {
 		goto L34
 	}
 L33:
 	;
-	v90 = v70
+	v99 = v75
 	goto L35
 L34:
 	;
-	v90 = v78 - int32(1)
+	v99 = v82 - int32(1)
 	goto L35
 L35:
 	;
-	if v87 <= v90 {
-		v68 = v87
-		v70 = v90
+	if v96 <= v99 {
+		v72 = v96
+		v75 = v99
 		goto L27
 	} else {
 		goto L36
@@ -351,57 +353,57 @@ L37:
 	goto L21
 L38:
 	;
-	v114 = int32(2)
-	v115 = base.I32_div_s(v109-v107, v114)
-	v116 = v115 + v107
-	v120 = *(*int32)(unsafe.Add(mBase, uint32(v105+v116<<(uint(v114)%32))))
-	v121 = base.B2i32(v120 == v23)
-	if v120 == v23 {
-		v136 = v121
+	v125 = int32(2)
+	v126 = base.I32_div_s(v120-v117, v125)
+	v127 = v126 + v117
+	v131 = *(*int32)(unsafe.Add(mBase, uint32(v115+v127<<(uint(v125)%32))))
+	v132 = base.B2i32(v131 == v25)
+	if v131 == v25 {
+		v147 = v132
 		goto L15
 	} else {
 		goto L40
 	}
 L39:
 	;
-	v136 = v121
+	v147 = v132
 	goto L15
 L40:
 	;
-	v124 = base.B2i32(base.Ui32(v120) < base.Ui32(v23))
-	if base.Ui32(v120) < base.Ui32(v23) {
+	v135 = base.B2i32(base.Ui32(v131) < base.Ui32(v25))
+	if base.Ui32(v131) < base.Ui32(v25) {
 		goto L41
 	} else {
 		goto L42
 	}
 L41:
 	;
-	v125 = v116 + int32(1)
+	v136 = v127 + int32(1)
 	goto L43
 L42:
 	;
-	v125 = v107
+	v136 = v117
 	goto L43
 L43:
 	;
-	if base.Ui32(v120) < base.Ui32(v23) {
+	if base.Ui32(v131) < base.Ui32(v25) {
 		goto L44
 	} else {
 		goto L45
 	}
 L44:
 	;
-	v128 = v109
+	v139 = v120
 	goto L46
 L45:
 	;
-	v128 = v116 - int32(1)
+	v139 = v127 - int32(1)
 	goto L46
 L46:
 	;
-	if v125 <= v128 {
-		v107 = v125
-		v109 = v128
+	if v136 <= v139 {
+		v117 = v136
+		v120 = v139
 		goto L38
 	} else {
 		goto L47
@@ -416,8 +418,8 @@ L49:
 	;
 	F_errcode(m, int32(16777220))
 	mBase = m.M
-	v156 = m.ExcPending
-	if v156 != 0 {
+	v169 = m.ExcPending
+	if v169 != 0 {
 		goto L4
 	} else {
 		goto L50
@@ -426,18 +428,18 @@ L50:
 	;
 	F_errmsg(m, int32(_a_F_ExecCheckTupleVisible_0), int32(0))
 	mBase = m.M
-	v160 = m.ExcPending
-	if v160 != 0 {
+	v173 = m.ExcPending
+	if v173 != 0 {
 		goto L4
 	} else {
 		goto L51
 	}
 L51:
 	;
-	F_errfinish(m, int32(_a_F_ExecCheckTupleVisible_1), int32(389), int32(_a_F_ExecCheckTupleVisible_2))
+	F_errfinish(m, int32(_a_F_ExecCheckTupleVisible_1), int32(403), int32(_a_F_ExecCheckTupleVisible_2))
 	mBase = m.M
-	v165 = m.ExcPending
-	if v165 != 0 {
+	v178 = m.ExcPending
+	if v178 != 0 {
 		goto L4
 	} else {
 		goto L52
@@ -894,7 +896,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					if v138 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3457), int32(_a_F_GetTupleForTrigger_2))
+						F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3472), int32(_a_F_GetTupleForTrigger_2))
 						mBase = m.M
 						v143 = m.ExcPending
 						if v143 != 0 {
@@ -938,7 +940,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 								if v63 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3402), int32(_a_F_GetTupleForTrigger_2))
+									F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3417), int32(_a_F_GetTupleForTrigger_2))
 									mBase = m.M
 									v68 = m.ExcPending
 									if v68 != 0 {
@@ -974,7 +976,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							if v190 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3444), int32(_a_F_GetTupleForTrigger_2))
+								F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3459), int32(_a_F_GetTupleForTrigger_2))
 								mBase = m.M
 								v195 = m.ExcPending
 								if v195 != 0 {
@@ -994,7 +996,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v104 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3445), int32(_a_F_GetTupleForTrigger_2))
+							F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3460), int32(_a_F_GetTupleForTrigger_2))
 							mBase = m.M
 							v109 = m.ExcPending
 							if v109 != 0 {
@@ -1032,7 +1034,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							if v125 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3452), int32(_a_F_GetTupleForTrigger_2))
+								F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3467), int32(_a_F_GetTupleForTrigger_2))
 								mBase = m.M
 								v130 = m.ExcPending
 								if v130 != 0 {
@@ -1060,7 +1062,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					if v151 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3461), int32(_a_F_GetTupleForTrigger_2))
+						F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3476), int32(_a_F_GetTupleForTrigger_2))
 						mBase = m.M
 						v156 = m.ExcPending
 						if v156 != 0 {
@@ -1091,7 +1093,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					if v203 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_GetTupleForTrigger_10), int32(1264), int32(_a_F_GetTupleForTrigger_11))
+						F_errfinish(m, int32(_a_F_GetTupleForTrigger_10), int32(1355), int32(_a_F_GetTupleForTrigger_11))
 						mBase = m.M
 						v208 = m.ExcPending
 						if v208 != 0 {
@@ -1129,7 +1131,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							if v178 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3473), int32(_a_F_GetTupleForTrigger_2))
+								F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3488), int32(_a_F_GetTupleForTrigger_2))
 								mBase = m.M
 								v183 = m.ExcPending
 								if v183 != 0 {
@@ -1170,7 +1172,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v178 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3473), int32(_a_F_GetTupleForTrigger_2))
+							F_errfinish(m, int32(_a_F_GetTupleForTrigger_1), int32(3488), int32(_a_F_GetTupleForTrigger_2))
 							mBase = m.M
 							v183 = m.ExcPending
 							if v183 != 0 {
@@ -1186,6 +1188,188 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			}
 		}
 	}
+}
+func F_TupleDescFinalize(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v59 int32
+	_ = v59
+	var v65 int32
+	_ = v65
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	var v79 int32
+	_ = v79
+	var v86 int32
+	_ = v86
+	v2 = int32(0)
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if v2 < v11 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	v15 = l0 + int32(28)
+	v22 = v2
+	v23 = v11
+	v25 = v2
+	goto L5
+L2:
+	;
+	v79 = v2
+	v86 = v11
+	goto L3
+L3:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v86
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v79
+	return
+L4:
+	;
+	v79 = v73
+	v86 = v52
+	goto L3
+L5:
+	;
+	v31 = v15 + v11<<(uint(int32(3))%32) + v22*int32(100)
+	v34 = v15 + v22<<(uint(int32(3))%32)
+	if v11 != v23 {
+		v52 = v23
+		goto L7
+	} else {
+		goto L8
+	}
+L6:
+	;
+	v73 = v11
+	goto L4
+L7:
+	;
+	v53 = int32(*(*int16)(unsafe.Add(mBase, uint32(v34)+2)))
+	if v53 <= int32(0) {
+		v73 = v22
+		goto L4
+	} else {
+		goto L15
+	}
+L8:
+	;
+	v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+7)))
+	if v36 != int32(118) {
+		goto L9
+	} else {
+		goto L10
+	}
+L9:
+	;
+	v52 = v22
+	goto L7
+L10:
+	;
+	v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+4)))
+	if v39 != int32(1) {
+		goto L9
+	} else {
+		goto L11
+	}
+L11:
+	;
+	v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+6)))
+	if v42&int32(6) != 0 {
+		goto L9
+	} else {
+		goto L12
+	}
+L12:
+	;
+	v45 = int32(*(*int16)(unsafe.Add(mBase, uint32(v34)+2)))
+	if v45 <= int32(0) {
+		goto L9
+	} else {
+		goto L13
+	}
+L13:
+	;
+	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+90)))
+	if v48 != int32(118) {
+		v52 = v11
+		goto L7
+	} else {
+		goto L14
+	}
+L14:
+	;
+	goto L9
+L15:
+	;
+	v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+90)))
+	if v56 == int32(118) {
+		v73 = v22
+		goto L4
+	} else {
+		goto L16
+	}
+L16:
+	;
+	v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+5)))
+	v65 = (v25 + v59 - int32(1)) & (int32(0) - v59)
+	if int32(_a_F_TupleDescFinalize_0) < v65 {
+		v73 = v22
+		goto L4
+	} else {
+		goto L17
+	}
+L17:
+	;
+	*(*uint16)(unsafe.Add(mBase, uint32(v34))) = uint16(v65)
+	v71 = v22 + int32(1)
+	if v71 != v11 {
+		v22 = v71
+		v23 = v52
+		v25 = v65 + v53
+		goto L5
+	} else {
+		goto L18
+	}
+L18:
+	;
+	goto L6
 }
 func F_load_tuple_array(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
@@ -1395,8 +1579,8 @@ func F_make_tuple_from_row(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v33
 	var v37 int32
 	_ = v37
-	var v40 int32
-	_ = v40
+	var v42 int32
+	_ = v42
 	var v45 int32
 	_ = v45
 	var v50 int32
@@ -1409,30 +1593,28 @@ func F_make_tuple_from_row(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v57
 	var v58 int32
 	_ = v58
-	var v59 int32
-	_ = v59
 	var v61 int32
 	_ = v61
 	var v65 int32
 	_ = v65
-	var v73 int32
-	_ = v73
-	var v74 int32
-	_ = v74
 	var v75 int32
 	_ = v75
-	var v80 int32
-	_ = v80
-	var v83 int32
-	_ = v83
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v82 int32
+	_ = v82
 	var v85 int32
 	_ = v85
-	var v97 int32
-	_ = v97
-	var v98 int32
-	_ = v98
-	var v109 int32
-	_ = v109
+	var v87 int32
+	_ = v87
+	var v99 int32
+	_ = v99
+	var v100 int32
+	_ = v100
+	var v111 int32
+	_ = v111
 	v4 = int32(0)
 	v11 = m.G0
 	v13 = v11 - int32(16)
@@ -1440,7 +1622,7 @@ func F_make_tuple_from_row(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	if v16 != v17 {
-		v109 = v4
+		v111 = v4
 		goto L1
 	} else {
 		goto L2
@@ -1448,12 +1630,12 @@ func F_make_tuple_from_row(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 L1:
 	;
 	m.G0 = v13 + int32(16)
-	return v109
+	return v111
 L2:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+128))
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+20))
-	v23 = F_MemoryContextAllocZero(m, v20, v16<<(uint(int32(2))%32))
+	v23 = F_MemoryContextAllocZero(m, v20, v16<<(uint(int32(3))%32))
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -1466,7 +1648,7 @@ L3:
 	return int32(0)
 L4:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+128))
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+20))
 	v29 = F_MemoryContextAlloc(m, v28, v16)
 	mBase = m.M
@@ -1487,17 +1669,17 @@ L6:
 	;
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	v37 = v4
-	v40 = v33
+	v42 = v33
 	goto L9
 L7:
 	;
 	goto L8
 L8:
 	;
-	v97 = F_heap_form_tuple(m, l2, v23, v29)
+	v99 = F_heap_form_tuple(m, l2, v23, v29)
 	mBase = m.M
-	v98 = m.ExcPending
-	if v98 != 0 {
+	v100 = m.ExcPending
+	if v100 != 0 {
 		goto L3
 	} else {
 		goto L18
@@ -1505,7 +1687,7 @@ L8:
 L9:
 	;
 	v45 = v37 * int32(100)
-	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45+(l2+v40<<(uint(int32(4))%32)))+111)))
+	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45+(l2+v42<<(uint(int32(3))%32)))+119)))
 	if v50 == int32(1) {
 		goto L12
 	} else {
@@ -1516,10 +1698,10 @@ L10:
 	goto L8
 L11:
 	;
-	v85 = v37 + int32(1)
-	if v85 != v16 {
-		v37 = v85
-		v40 = v83
+	v87 = v37 + int32(1)
+	if v87 != v16 {
+		v37 = v87
+		v42 = v85
 		goto L9
 	} else {
 		goto L17
@@ -1528,47 +1710,46 @@ L12:
 	;
 	v54 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v37+v29))) = uint8(v54)
-	v83 = v40
+	v85 = v42
 	goto L11
 L13:
 	;
 	goto L14
 L14:
 	;
-	v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-	v57 = int32(2)
-	v58 = v37 << (uint(v57) % 32)
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(l1)+36))
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v58+v59)))
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(v56+v61<<(uint(v57)%32))))
-	F_exec_eval_datum(m, l0, v65, v13+int32(12), v13+int32(8), v58+v23, v37+v29)
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
+	v57 = *(*int32)(unsafe.Add(mBase, uint32(l1)+36))
+	v58 = int32(2)
+	v61 = *(*int32)(unsafe.Add(mBase, uint32(v57+v37<<(uint(v58)%32))))
+	v65 = *(*int32)(unsafe.Add(mBase, uint32(v56+v61<<(uint(v58)%32))))
+	F_exec_eval_datum(m, l0, v65, v13+int32(12), v13+int32(8), v23+v37<<(uint(int32(3))%32), v37+v29)
 	mBase = m.M
-	v73 = m.ExcPending
-	if v73 != 0 {
+	v75 = m.ExcPending
+	if v75 != 0 {
 		goto L3
 	} else {
 		goto L15
 	}
 L15:
 	;
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	v80 = *(*int32)(unsafe.Add(mBase, uint32(l2+v75<<(uint(int32(4))%32)+v45)+88))
-	if v74 == v80 {
-		v83 = v75
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+	v82 = *(*int32)(unsafe.Add(mBase, uint32(l2+v77<<(uint(int32(3))%32)+v45)+96))
+	if v76 == v82 {
+		v85 = v77
 		goto L11
 	} else {
 		goto L16
 	}
 L16:
 	;
-	v109 = int32(0)
+	v111 = int32(0)
 	goto L1
 L17:
 	;
 	goto L10
 L18:
 	;
-	v109 = v97
+	v111 = v99
 	goto L1
 }

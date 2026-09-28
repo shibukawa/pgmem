@@ -144,11 +144,11 @@ func F_check_variable_parameters(m *base.Module, l0 int32, l1 int32) {
 	_ = v10
 	var v11 int32
 	_ = v11
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+116))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 	if int32(0) < v5 {
-		v10 = F_query_tree_walker_impl(m, l1, int32(495), l0, int32(0))
+		v10 = F_query_tree_walker_impl(m, l1, int32(530), l0, int32(0))
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {

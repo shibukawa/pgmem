@@ -1043,7 +1043,7 @@ func F_pgaio_io_wait(m *base.Module, l0 int32, l1 int64) {
 	}
 L1:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {
@@ -1128,7 +1128,7 @@ L10:
 L11:
 	;
 	v62 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_io_wait[1]))
-	v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+24))
+	v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+36))
 	if v63 == int32(0) {
 		goto L10
 	} else {

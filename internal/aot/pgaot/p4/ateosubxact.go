@@ -424,7 +424,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(_a_F_AtEOSubXact_SPI_3), int32(532), int32(_a_F_AtEOSubXact_SPI_4))
+	F_errfinish(m, int32(_a_F_AtEOSubXact_SPI_3), int32(533), int32(_a_F_AtEOSubXact_SPI_4))
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {

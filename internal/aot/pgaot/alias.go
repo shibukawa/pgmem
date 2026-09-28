@@ -6,8 +6,6 @@ import (
 )
 //go:linkname F___wasm_call_ctors github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___wasm_call_ctors
 func F___wasm_call_ctors(m *base.Module)
-//go:linkname F_ProcessStartupPacket github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ProcessStartupPacket
-func F_ProcessStartupPacket(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_pgl_freopen github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgl_freopen
 func F_pgl_freopen(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_pgmem_raise github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgmem_raise
@@ -44,6 +42,8 @@ func InitElemSeg_0_2(m *base.Module)
 func InitElemSeg_0_3(m *base.Module)
 //go:linkname InitElemSeg_0_4 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.InitElemSeg_0_4
 func InitElemSeg_0_4(m *base.Module)
+//go:linkname InitElemSeg_0_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.InitElemSeg_0_5
+func InitElemSeg_0_5(m *base.Module)
 //go:linkname InitElemSeg_1_0 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.InitElemSeg_1_0
 func InitElemSeg_1_0(m *base.Module)
 //go:linkname InitElemSeg_1_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.InitElemSeg_1_1
@@ -54,6 +54,8 @@ func InitElemSeg_1_2(m *base.Module)
 func InitElemSeg_1_3(m *base.Module)
 //go:linkname InitElemSeg_1_4 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.InitElemSeg_1_4
 func InitElemSeg_1_4(m *base.Module)
+//go:linkname InitElemSeg_1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.InitElemSeg_1_5
+func InitElemSeg_1_5(m *base.Module)
 //go:linkname InitElemSeg_2_0 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.InitElemSeg_2_0
 func InitElemSeg_2_0(m *base.Module)
 //go:linkname InitElemSeg_2_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.InitElemSeg_2_1
@@ -64,6 +66,8 @@ func InitElemSeg_2_2(m *base.Module)
 func InitElemSeg_2_3(m *base.Module)
 //go:linkname InitElemSeg_2_4 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.InitElemSeg_2_4
 func InitElemSeg_2_4(m *base.Module)
+//go:linkname InitElemSeg_2_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.InitElemSeg_2_5
+func InitElemSeg_2_5(m *base.Module)
 //go:linkname InitElemSeg_3_0 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.InitElemSeg_3_0
 func InitElemSeg_3_0(m *base.Module)
 //go:linkname InitElemSeg_3_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.InitElemSeg_3_1

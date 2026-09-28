@@ -223,55 +223,238 @@ L15:
 func F_bms_num_members(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
-	_ = v2
+	var v3 int64
+	_ = v3
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
-	var v20 int32
-	_ = v20
-	var v26 int32
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int64
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int64
 	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int64
+	_ = v28
 	var v29 int32
 	_ = v29
+	var v30 int64
+	_ = v30
 	var v31 int32
 	_ = v31
-	v2 = int32(0)
-	if l0 == v2 {
+	var v32 int64
+	_ = v32
+	var v36 int64
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v40 int32
+	_ = v40
+	var v41 int64
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v49 int32
+	_ = v49
+	var v54 int32
+	_ = v54
+	var v56 int64
+	_ = v56
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v63 int64
+	_ = v63
+	var v64 int32
+	_ = v64
+	var v65 int64
+	_ = v65
+	var v66 int32
+	_ = v66
+	var v67 int64
+	_ = v67
+	var v68 int32
+	_ = v68
+	var v69 int64
+	_ = v69
+	var v73 int64
+	_ = v73
+	var v75 int32
+	_ = v75
+	var v79 int32
+	_ = v79
+	var v81 int64
+	_ = v81
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v88 int64
+	_ = v88
+	var v92 int32
+	_ = v92
+	var v93 int64
+	_ = v93
+	var v94 int64
+	_ = v94
+	var v95 int32
+	_ = v95
+	var v98 int32
+	_ = v98
+	var v102 int64
+	_ = v102
+	var v112 int64
+	_ = v112
+	var v115 int64
+	_ = v115
+	v3 = int64(0)
+	if l0 == int32(0) {
 		return int32(0)
 	} else {
-		v10 = int32(1)
-		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		if v11 <= v10 {
-			v14 = v10
+		v9 = l0 + int32(8)
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+		if v10 == int32(1) {
+			v13 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
+			return base.I32_popcnt(v13)
 		} else {
-			v14 = v11
-		}
-		v18 = int32(0)
-		v20 = v2
-		for {
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(8)+v18<<(uint(int32(2))%32))))
-			if v26 != 0 {
-				v29 = v20 + base.I32_popcnt(v26)
+			v17 = v10 << (uint(int32(2)) % 32)
+			if v17 <= int32(7) {
+				if v17 == int32(0) {
+					v115 = v3
+				} else {
+					v22 = v17
+					v23 = v9
+					v24 = v3
+					for {
+						v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+3)))
+						v26 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v25)+uint32(_c_F_bms_num_members[0]))))
+						v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+2)))
+						v28 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v27)+uint32(_c_F_bms_num_members[0]))))
+						v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+1)))
+						v30 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v29)+uint32(_c_F_bms_num_members[0]))))
+						v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23))))
+						v32 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v31)+uint32(_c_F_bms_num_members[0]))))
+						v36 = v26 + (v28 + (v30 + (v24 + v32)))
+						v37 = int32(4)
+						v40 = v22 - v37
+						if v40 != 0 {
+							v22 = v40
+							v23 = v23 + v37
+							v24 = v36
+							continue
+						} else {
+							break
+						}
+						break
+					}
+					v115 = v36
+				}
 			} else {
-				v29 = v20
+				v41 = int64(0)
+				v42 = int32(0)
+				if v17 == v42 {
+					v112 = int64(0)
+				} else {
+					v49 = v17 & int32(3)
+					if base.Ui32(int32(4)) <= base.Ui32(v17) {
+						v54 = v9
+						v56 = v41
+						v59 = v42
+						for {
+							v60 = int32(4)
+							v61 = v54 + v60
+							v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54)+3)))
+							v63 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v62)+uint32(_c_F_bms_num_members[0]))))
+							v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54)+2)))
+							v65 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v64)+uint32(_c_F_bms_num_members[0]))))
+							v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54)+1)))
+							v67 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v66)+uint32(_c_F_bms_num_members[0]))))
+							v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54))))
+							v69 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v68)+uint32(_c_F_bms_num_members[0]))))
+							v73 = v63 + (v65 + (v67 + (v56 + v69)))
+							v75 = v59 + v60
+							if v75 != v17&int32(-4) {
+								v54 = v61
+								v56 = v73
+								v59 = v75
+								continue
+							} else {
+								break
+							}
+							break
+						}
+						if v49 == int32(0) {
+							v102 = v73
+						} else {
+							v79 = v61
+							v81 = v73
+							v86 = v79
+							v87 = int32(0)
+							v88 = v81
+							for {
+								v92 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v86))))
+								v93 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v92)+uint32(_c_F_bms_num_members[0]))))
+								v94 = v88 + v93
+								v95 = int32(1)
+								v98 = v87 + v95
+								if v98 != v49 {
+									v86 = v86 + v95
+									v87 = v98
+									v88 = v94
+									continue
+								} else {
+									break
+								}
+								break
+							}
+							v102 = v94
+						}
+					} else {
+						v79 = v9
+						v81 = v41
+						v86 = v79
+						v87 = int32(0)
+						v88 = v81
+						for {
+							v92 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v86))))
+							v93 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v92)+uint32(_c_F_bms_num_members[0]))))
+							v94 = v88 + v93
+							v95 = int32(1)
+							v98 = v87 + v95
+							if v98 != v49 {
+								v86 = v86 + v95
+								v87 = v98
+								v88 = v94
+								continue
+							} else {
+								break
+							}
+							break
+						}
+						v102 = v94
+					}
+					v112 = v102
+				}
+				v115 = v112
 			}
-			v31 = v18 + int32(1)
-			if v31 != v14 {
-				v18 = v31
-				v20 = v29
-				continue
-			} else {
-				break
-			}
-			break
+			return base.I32_wrap_i64(v115)
 		}
-		return v29
 	}
 }
 func F_bms_subset_compare(m *base.Module, l0 int32, l1 int32) int32 {

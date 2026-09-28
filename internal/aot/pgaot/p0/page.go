@@ -250,7 +250,7 @@ func F_PageIndexTupleDelete(m *base.Module, l0 int32, l1 int32) {
 				if v223 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1073), int32(_a_F_PageIndexTupleDelete_2))
+					F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1076), int32(_a_F_PageIndexTupleDelete_2))
 					mBase = m.M
 					v228 = m.ExcPending
 					if v228 != 0 {
@@ -290,7 +290,7 @@ func F_PageIndexTupleDelete(m *base.Module, l0 int32, l1 int32) {
 					if v223 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1073), int32(_a_F_PageIndexTupleDelete_2))
+						F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1076), int32(_a_F_PageIndexTupleDelete_2))
 						mBase = m.M
 						v228 = m.ExcPending
 						if v228 != 0 {
@@ -330,7 +330,7 @@ func F_PageIndexTupleDelete(m *base.Module, l0 int32, l1 int32) {
 						if v223 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1073), int32(_a_F_PageIndexTupleDelete_2))
+							F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1076), int32(_a_F_PageIndexTupleDelete_2))
 							mBase = m.M
 							v228 = m.ExcPending
 							if v228 != 0 {
@@ -365,7 +365,7 @@ func F_PageIndexTupleDelete(m *base.Module, l0 int32, l1 int32) {
 						if v238 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1077), int32(_a_F_PageIndexTupleDelete_2))
+							F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1080), int32(_a_F_PageIndexTupleDelete_2))
 							mBase = m.M
 							v243 = m.ExcPending
 							if v243 != 0 {
@@ -404,7 +404,7 @@ func F_PageIndexTupleDelete(m *base.Module, l0 int32, l1 int32) {
 								if v257 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1092), int32(_a_F_PageIndexTupleDelete_2))
+									F_errfinish(m, int32(_a_F_PageIndexTupleDelete_1), int32(1095), int32(_a_F_PageIndexTupleDelete_2))
 									mBase = m.M
 									v262 = m.ExcPending
 									if v262 != 0 {
@@ -645,7 +645,7 @@ func F_PageIndexTupleOverwrite(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 				if v272 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1426), int32(_a_F_PageIndexTupleOverwrite_2))
+					F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1429), int32(_a_F_PageIndexTupleOverwrite_2))
 					mBase = m.M
 					v277 = m.ExcPending
 					if v277 != 0 {
@@ -685,7 +685,7 @@ func F_PageIndexTupleOverwrite(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 					if v272 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1426), int32(_a_F_PageIndexTupleOverwrite_2))
+						F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1429), int32(_a_F_PageIndexTupleOverwrite_2))
 						mBase = m.M
 						v277 = m.ExcPending
 						if v277 != 0 {
@@ -725,7 +725,7 @@ func F_PageIndexTupleOverwrite(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						if v272 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1426), int32(_a_F_PageIndexTupleOverwrite_2))
+							F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1429), int32(_a_F_PageIndexTupleOverwrite_2))
 							mBase = m.M
 							v277 = m.ExcPending
 							if v277 != 0 {
@@ -760,7 +760,7 @@ func F_PageIndexTupleOverwrite(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						if v287 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1430), int32(_a_F_PageIndexTupleOverwrite_2))
+							F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1433), int32(_a_F_PageIndexTupleOverwrite_2))
 							mBase = m.M
 							v292 = m.ExcPending
 							if v292 != 0 {
@@ -799,7 +799,7 @@ func F_PageIndexTupleOverwrite(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 								if v306 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1442), int32(_a_F_PageIndexTupleOverwrite_2))
+									F_errfinish(m, int32(_a_F_PageIndexTupleOverwrite_1), int32(1445), int32(_a_F_PageIndexTupleOverwrite_2))
 									mBase = m.M
 									v311 = m.ExcPending
 									if v311 != 0 {
@@ -1007,7 +1007,7 @@ L1:
 	return
 L2:
 	;
-	F_LockBuffer(m, v19, int32(2))
+	F_LockBufferInternal(m, v19, int32(3))
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {

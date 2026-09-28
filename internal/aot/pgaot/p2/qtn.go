@@ -62,32 +62,32 @@ func F_QTNCopy(m *base.Module, l0 int32) int32 {
 	_ = v56
 	var v58 int32
 	_ = v58
-	var v63 int32
-	_ = v63
+	var v64 int32
+	_ = v64
+	var v65 int32
+	_ = v65
 	var v66 int32
 	_ = v66
-	var v67 int32
-	_ = v67
-	var v69 int32
-	_ = v69
-	var v75 int32
-	_ = v75
+	var v68 int32
+	_ = v68
+	var v74 int32
+	_ = v74
+	var v78 int32
+	_ = v78
 	var v79 int32
 	_ = v79
-	var v80 int32
-	_ = v80
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
 	var v83 int32
 	_ = v83
 	var v84 int32
 	_ = v84
-	var v85 int32
-	_ = v85
+	var v88 int32
+	_ = v88
 	var v89 int32
 	_ = v89
-	var v90 int32
-	_ = v90
 	F_check_stack_depth(m)
 	mBase = m.M
 	v9 = m.ExcPending
@@ -159,11 +159,11 @@ L6:
 	goto L7
 L7:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v66 = F_palloc(m, v63<<(uint(int32(2))%32))
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v65 = F_palloc_mul(m, int32(4), v64)
 	mBase = m.M
-	v67 = m.ExcPending
-	if v67 != 0 {
+	v66 = m.ExcPending
+	if v66 != 0 {
 		goto L1
 	} else {
 		goto L12
@@ -199,16 +199,16 @@ L11:
 	return v11
 L12:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v66
-	v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if int32(0) < v69 {
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v65
+	v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if int32(0) < v68 {
 		goto L13
 	} else {
 		goto L14
 	}
 L13:
 	;
-	v75 = int32(0)
+	v74 = int32(0)
 	goto L16
 L14:
 	;
@@ -218,13 +218,13 @@ L15:
 	return v11
 L16:
 	;
-	v79 = v75 << (uint(int32(2)) % 32)
-	v80 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v82 = *(*int32)(unsafe.Add(mBase, uint32(v79+v80)))
-	v83 = F_QTNCopy(m, v82)
+	v78 = v74 << (uint(int32(2)) % 32)
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v81 = *(*int32)(unsafe.Add(mBase, uint32(v78+v79)))
+	v82 = F_QTNCopy(m, v81)
 	mBase = m.M
-	v84 = m.ExcPending
-	if v84 != 0 {
+	v83 = m.ExcPending
+	if v83 != 0 {
 		goto L1
 	} else {
 		goto L18
@@ -234,12 +234,12 @@ L17:
 	goto L15
 L18:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(v11)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v85+v79))) = v83
-	v89 = v75 + int32(1)
-	v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if v89 < v90 {
-		v75 = v89
+	v84 = *(*int32)(unsafe.Add(mBase, uint32(v11)+20))
+	*(*int32)(unsafe.Add(mBase, uint32(v84+v78))) = v82
+	v88 = v74 + int32(1)
+	v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v88 < v89 {
+		v74 = v88
 		goto L16
 	} else {
 		goto L19

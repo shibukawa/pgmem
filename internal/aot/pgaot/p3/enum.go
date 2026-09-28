@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_enum_range_bounds(m *base.Module, l0 int32) int32 {
+func F_enum_range_bounds(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -41,16 +41,16 @@ func F_enum_range_bounds(m *base.Module, l0 int32) int32 {
 	var v39 int32
 	_ = v39
 	v2 = int32(0)
-	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
+	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 	if v4 == v2 {
-		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 		v8 = v7
 	} else {
 		v8 = v2
 	}
-	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)))
 	if v9 == int32(0) {
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v13 = v12
 	} else {
 		v13 = v2
@@ -60,32 +60,32 @@ func F_enum_range_bounds(m *base.Module, l0 int32) int32 {
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		if v16 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				F_errcode(m, int32(1088))
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					F_errmsg(m, int32(_a_F_enum_range_bounds_0), int32(0))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						F_errfinish(m, int32(_a_F_enum_range_bounds_1), int32(520), int32(_a_F_enum_range_bounds_2))
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {
@@ -99,9 +99,9 @@ func F_enum_range_bounds(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v39 = m.ExcPending
 			if v39 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
-				return v38
+				return base.I64_extend_i32_u(v38)
 			}
 		}
 	}

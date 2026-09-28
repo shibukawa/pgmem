@@ -24,9 +24,9 @@ func F_comparetup_cluster(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v25
 	var v26 int32
 	_ = v26
-	var v28 int32
+	var v28 int64
 	_ = v28
-	var v29 int32
+	var v29 int64
 	_ = v29
 	var v30 int32
 	_ = v30
@@ -56,9 +56,9 @@ func F_comparetup_cluster(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v47
 		}
 	} else {
-		v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
+		v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l2)+44))
-		v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+		v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 		if v11 == int32(1) {
 			if v9&int32(1) != 0 {
 				v45 = F_comparetup_cluster_tiebreak(m, l0, l1, l2)
@@ -89,10 +89,10 @@ func F_comparetup_cluster(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				}
 				return v26
 			} else {
-				v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-				v29 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+				v28 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
+				v29 = *(*int64)(unsafe.Add(mBase, uint32(l1)+8))
 				v30 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-				v31 = m.T0[v30].(func(*base.Module, int32, int32, int32) int32)(m, v28, v29, v10)
+				v31 = m.T0[v30].(func(*base.Module, int64, int64, int32) int32)(m, v28, v29, v10)
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {
@@ -166,11 +166,11 @@ func F_comparetup_cluster_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v28
 	var v29 int32
 	_ = v29
-	var v32 int32
+	var v32 int64
 	_ = v32
 	var v35 int32
 	_ = v35
-	var v38 int32
+	var v38 int64
 	_ = v38
 	var v39 int32
 	_ = v39
@@ -220,11 +220,11 @@ func F_comparetup_cluster_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v96
 	var v100 int32
 	_ = v100
-	var v103 int32
+	var v103 int64
 	_ = v103
 	var v104 int32
 	_ = v104
-	var v107 int32
+	var v107 int64
 	_ = v107
 	var v108 int32
 	_ = v108
@@ -318,9 +318,9 @@ func F_comparetup_cluster_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v209
 	var v211 int32
 	_ = v211
-	var v215 int32
+	var v215 int64
 	_ = v215
-	var v219 int32
+	var v219 int64
 	_ = v219
 	var v220 int32
 	_ = v220
@@ -341,7 +341,7 @@ func F_comparetup_cluster_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32)
 	var v262 int32
 	_ = v262
 	v12 = m.G0
-	v14 = v12 - int32(336)
+	v14 = v12 - int32(592)
 	m.G0 = v14
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l2)+44))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l2)+60))
@@ -356,7 +356,7 @@ func F_comparetup_cluster_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32)
 	}
 L1:
 	;
-	m.G0 = v14 + int32(336)
+	m.G0 = v14 + int32(592)
 	return v262
 L2:
 	;
@@ -401,7 +401,7 @@ L8:
 	;
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
 	v29 = int32(*(*int16)(unsafe.Add(mBase, uint32(v28)+12)))
-	v32 = F_heap_getattr_1(m, v20, v29, v18, v14+int32(335))
+	v32 = F_heap_getattr_1(m, v20, v29, v18, v14+int32(591))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -414,7 +414,7 @@ L9:
 	return int32(0)
 L10:
 	;
-	v38 = F_heap_getattr_1(m, v19, v29, v18, v14+int32(334))
+	v38 = F_heap_getattr_1(m, v19, v29, v18, v14+int32(590))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -424,8 +424,8 @@ L10:
 	}
 L11:
 	;
-	v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+334)))
-	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+335)))
+	v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+590)))
+	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+591)))
 	if v41 == int32(1) {
 		goto L12
 	} else {
@@ -482,7 +482,7 @@ L20:
 L21:
 	;
 	v56 = *(*int32)(unsafe.Add(mBase, uint32(v16)+32))
-	v57 = m.T0[v56].(func(*base.Module, int32, int32, int32) int32)(m, v32, v38, v16)
+	v57 = m.T0[v56].(func(*base.Module, int64, int64, int32) int32)(m, v32, v38, v16)
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -572,7 +572,7 @@ L36:
 	;
 	v96 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
 	v100 = int32(*(*int16)(unsafe.Add(mBase, uint32(v96+v86<<(uint(int32(1))%32))+12)))
-	v103 = F_heap_getattr_1(m, v20, v100, v18, v14+int32(335))
+	v103 = F_heap_getattr_1(m, v20, v100, v18, v14+int32(591))
 	mBase = m.M
 	v104 = m.ExcPending
 	if v104 != 0 {
@@ -585,7 +585,7 @@ L37:
 	goto L3
 L38:
 	;
-	v107 = F_heap_getattr_1(m, v19, v100, v18, v14+int32(334))
+	v107 = F_heap_getattr_1(m, v19, v100, v18, v14+int32(590))
 	mBase = m.M
 	v108 = m.ExcPending
 	if v108 != 0 {
@@ -595,8 +595,8 @@ L38:
 	}
 L39:
 	;
-	v109 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+334)))
-	v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+335)))
+	v109 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+590)))
+	v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+591)))
 	if v110 == int32(1) {
 		goto L41
 	} else {
@@ -664,7 +664,7 @@ L49:
 L50:
 	;
 	v125 = *(*int32)(unsafe.Add(mBase, uint32(v88)+16))
-	v126 = m.T0[v125].(func(*base.Module, int32, int32, int32) int32)(m, v103, v107, v88)
+	v126 = m.T0[v125].(func(*base.Module, int64, int64, int32) int32)(m, v103, v107, v88)
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {
@@ -779,7 +779,7 @@ L68:
 	;
 	v160 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
 	v161 = *(*int32)(unsafe.Add(mBase, uint32(v17)+8))
-	F_FormIndexDatum(m, v160, v156, v161, v14+int32(192), v14+int32(160))
+	F_FormIndexDatum(m, v160, v156, v161, v14+int32(320), v14+int32(288))
 	mBase = m.M
 	v167 = m.ExcPending
 	if v167 != 0 {
@@ -826,7 +826,7 @@ L72:
 L73:
 	;
 	v191 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v180+v14))))
-	v195 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14+int32(160)+v180))))
+	v195 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14+int32(288)+v180))))
 	if v195 == int32(1) {
 		goto L76
 	} else {
@@ -897,11 +897,11 @@ L84:
 	goto L85
 L85:
 	;
-	v211 = v180 << (uint(int32(2)) % 32)
-	v215 = *(*int32)(unsafe.Add(mBase, uint32(v211+(v14+int32(192)))))
-	v219 = *(*int32)(unsafe.Add(mBase, uint32(v14+int32(32)+v211)))
+	v211 = v180 << (uint(int32(3)) % 32)
+	v215 = *(*int64)(unsafe.Add(mBase, uint32(v211+(v14+int32(320)))))
+	v219 = *(*int64)(unsafe.Add(mBase, uint32(v14+int32(32)+v211)))
 	v220 = *(*int32)(unsafe.Add(mBase, uint32(v182)+16))
-	v221 = m.T0[v220].(func(*base.Module, int32, int32, int32) int32)(m, v215, v219, v182)
+	v221 = m.T0[v220].(func(*base.Module, int64, int64, int32) int32)(m, v215, v219, v182)
 	mBase = m.M
 	v222 = m.ExcPending
 	if v222 != 0 {
@@ -968,7 +968,7 @@ func F_comparetup_index_brin(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v4
 	var v5 int32
 	_ = v5
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	return base.B2i32(base.Ui32(v5) < base.Ui32(v4)) - base.B2i32(base.Ui32(v4) < base.Ui32(v5))
 }

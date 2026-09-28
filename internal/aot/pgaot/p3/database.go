@@ -20,7 +20,7 @@ func F_SetDatabaseHasLoginEventTriggers(m *base.Module) {
 	_ = v15
 	var v18 int32
 	_ = v18
-	var v21 int32
+	var v21 int64
 	_ = v21
 	var v22 int32
 	_ = v22
@@ -74,7 +74,7 @@ func F_SetDatabaseHasLoginEventTriggers(m *base.Module) {
 		if v18 != 0 {
 			return
 		} else {
-			v21 = *(*int32)(unsafe.Add(mBase, _c_F_SetDatabaseHasLoginEventTriggers[0]))
+			v21 = int64(*(*uint32)(unsafe.Add(mBase, _c_F_SetDatabaseHasLoginEventTriggers[0])))
 			v22 = F_SearchSysCacheLockedCopy1(m, int32(21), v21)
 			mBase = m.M
 			v23 = m.ExcPending
@@ -170,7 +170,7 @@ func F_SetDatabaseHasLoginEventTriggers(m *base.Module) {
 						if v64 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_SetDatabaseHasLoginEventTriggers_1), int32(409), int32(_a_F_SetDatabaseHasLoginEventTriggers_2))
+							F_errfinish(m, int32(_a_F_SetDatabaseHasLoginEventTriggers_1), int32(411), int32(_a_F_SetDatabaseHasLoginEventTriggers_2))
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {

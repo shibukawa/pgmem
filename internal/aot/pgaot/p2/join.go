@@ -536,7 +536,7 @@ L19:
 L20:
 	;
 	v71 = v52 + int32(1)
-	v73 = base.I32_div_s(v71, int32(32))
+	v73 = int32(base.Ui32(v71) >> (uint(int32(5)) % 32))
 	v74 = *(*int32)(unsafe.Add(mBase, uint32(v24)+4))
 	if v74 <= v73 {
 		goto L19

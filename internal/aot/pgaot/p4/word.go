@@ -130,41 +130,41 @@ L15:
 	v31 = v35
 	goto L11
 }
-func F_word_similarity(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F_word_similarity(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14021(m, l0, int32(0))
+	v3 = Fn14406(m, l0, int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
 }
-func F_word_similarity_commutator_op(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_word_similarity_commutator_op(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14022(m, l0, int32(_a_F_word_similarity_commutator_op_0), int32(1))
+	v4 = Fn14407(m, l0, int32(_a_F_word_similarity_commutator_op_0), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}
 }
-func F_word_similarity_op(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_word_similarity_op(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14025(m, l0, int32(_a_F_word_similarity_op_0), int32(1))
+	v4 = Fn14410(m, l0, int32(_a_F_word_similarity_op_0), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}

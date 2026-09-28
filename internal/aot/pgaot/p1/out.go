@@ -262,8 +262,8 @@ func F_outBitmapset(m *base.Module, l0 int32, l1 int32) {
 	_ = v11
 	var v14 int32
 	_ = v14
-	var v24 int32
-	_ = v24
+	var v22 int32
+	_ = v22
 	var v25 int32
 	_ = v25
 	var v28 int32
@@ -272,8 +272,8 @@ func F_outBitmapset(m *base.Module, l0 int32, l1 int32) {
 	_ = v32
 	var v35 int32
 	_ = v35
-	var v37 int32
-	_ = v37
+	var v36 int32
+	_ = v36
 	var v40 int32
 	_ = v40
 	var v47 int32
@@ -366,9 +366,9 @@ L6:
 	goto L4
 L7:
 	;
-	v24 = base.I32_div_s(int32(0), int32(32))
+	v22 = int32(0)
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	if v25 <= v24 {
+	if v25 <= v22 {
 		goto L6
 	} else {
 		goto L8
@@ -376,26 +376,26 @@ L7:
 L8:
 	;
 	v28 = l1 + int32(8)
-	v32 = *(*int32)(unsafe.Add(mBase, uint32(v28+v24<<(uint(int32(2))%32))))
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v28)))
 	v35 = v32 & int32(-1)
 	if v35 != 0 {
 		v57 = v35
-		v58 = v24
+		v58 = v22
 		goto L5
 	} else {
 		goto L9
 	}
 L9:
 	;
-	v37 = v24 + int32(1)
-	if v37 == v25 {
+	v36 = int32(1)
+	if v36 == v25 {
 		goto L6
 	} else {
 		goto L10
 	}
 L10:
 	;
-	v40 = v37
+	v40 = v36
 	goto L11
 L11:
 	;
@@ -479,7 +479,7 @@ L23:
 L24:
 	;
 	v88 = v77 + int32(1)
-	v90 = base.I32_div_s(v88, int32(32))
+	v90 = int32(base.Ui32(v88) >> (uint(int32(5)) % 32))
 	v91 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v91 <= v90 {
 		goto L23

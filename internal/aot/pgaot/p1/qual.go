@@ -10,50 +10,52 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
-	var v19 int32
-	_ = v19
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
 	var v20 int32
 	_ = v20
 	var v21 int32
 	_ = v21
-	var v24 int32
-	_ = v24
+	var v22 int32
+	_ = v22
 	var v25 int32
 	_ = v25
-	var v27 int32
-	_ = v27
+	var v26 int32
+	_ = v26
 	var v28 int32
 	_ = v28
 	var v29 int32
 	_ = v29
-	var v34 int32
-	_ = v34
-	var v36 int32
-	_ = v36
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
 	var v37 int32
 	_ = v37
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
 	var v44 int32
 	_ = v44
-	var v45 int32
-	_ = v45
-	var v47 int32
-	_ = v47
-	var v49 int32
-	_ = v49
+	var v48 int32
+	_ = v48
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
 	var v54 int32
 	_ = v54
 	var v57 int32
@@ -66,228 +68,240 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	_ = v62
 	var v64 int32
 	_ = v64
-	var v68 int32
-	_ = v68
+	var v65 int32
+	_ = v65
+	var v67 int32
+	_ = v67
 	var v69 int32
 	_ = v69
-	var v70 int32
-	_ = v70
-	var v71 int32
-	_ = v71
+	var v73 int64
+	_ = v73
 	var v74 int32
 	_ = v74
-	var v77 int32
-	_ = v77
-	var v78 int32
-	_ = v78
+	var v75 int32
+	_ = v75
+	var v76 int32
+	_ = v76
 	var v79 int32
 	_ = v79
 	var v82 int32
 	_ = v82
-	var v86 int32
-	_ = v86
+	var v83 int32
+	_ = v83
+	var v84 int32
+	_ = v84
 	var v87 int32
 	_ = v87
-	var v95 int32
-	_ = v95
+	var v91 int32
+	_ = v91
 	var v99 int32
 	_ = v99
-	var v104 int32
-	_ = v104
-	var v106 int32
-	_ = v106
+	var v103 int32
+	_ = v103
 	var v108 int32
 	_ = v108
-	var v114 int32
-	_ = v114
-	var v115 int32
-	_ = v115
-	var v116 int32
-	_ = v116
-	var v117 int32
-	_ = v117
+	var v110 int32
+	_ = v110
+	var v112 int32
+	_ = v112
+	var v119 int32
+	_ = v119
+	var v120 int32
+	_ = v120
 	var v121 int32
 	_ = v121
-	var v125 int32
-	_ = v125
+	var v122 int32
+	_ = v122
+	var v126 int32
+	_ = v126
 	var v130 int32
 	_ = v130
-	var v131 int32
-	_ = v131
-	var v134 int32
-	_ = v134
+	var v135 int32
+	_ = v135
 	var v136 int32
 	_ = v136
-	var v137 int32
-	_ = v137
+	var v138 int32
+	_ = v138
 	var v139 int32
 	_ = v139
 	var v141 int32
 	_ = v141
-	var v145 int32
-	_ = v145
+	var v143 int32
+	_ = v143
+	var v144 int32
+	_ = v144
 	var v146 int32
 	_ = v146
 	var v148 int32
 	_ = v148
-	var v152 int32
+	var v152 int64
 	_ = v152
 	var v153 int32
 	_ = v153
-	var v154 int32
-	_ = v154
-	var v158 int32
-	_ = v158
+	var v155 int32
+	_ = v155
 	var v160 int32
 	_ = v160
-	var v163 int32
-	_ = v163
-	var v164 int32
-	_ = v164
+	var v161 int32
+	_ = v161
+	var v162 int32
+	_ = v162
 	var v166 int32
 	_ = v166
-	var v169 int32
-	_ = v169
-	var v170 int32
-	_ = v170
+	var v168 int32
+	_ = v168
 	var v171 int32
 	_ = v171
-	var v173 int32
-	_ = v173
+	var v172 int32
+	_ = v172
 	var v174 int32
 	_ = v174
-	var v176 int32
-	_ = v176
+	var v177 int32
+	_ = v177
 	var v178 int32
 	_ = v178
 	var v179 int32
 	_ = v179
-	var v194 int32
-	_ = v194
-	var v202 int32
-	_ = v202
-	var v206 int32
-	_ = v206
-	var v211 int32
-	_ = v211
-	var v215 int32
-	_ = v215
-	var v218 int32
-	_ = v218
+	var v181 int32
+	_ = v181
+	var v182 int32
+	_ = v182
+	var v184 int32
+	_ = v184
+	var v186 int32
+	_ = v186
+	var v187 int32
+	_ = v187
+	var v201 int32
+	_ = v201
+	var v210 int32
+	_ = v210
+	var v214 int32
+	_ = v214
 	var v219 int32
 	_ = v219
-	var v220 int32
-	_ = v220
+	var v223 int32
+	_ = v223
 	var v226 int32
 	_ = v226
-	var v231 int32
-	_ = v231
-	var v235 int32
-	_ = v235
+	var v227 int32
+	_ = v227
+	var v228 int32
+	_ = v228
+	var v234 int32
+	_ = v234
 	var v239 int32
 	_ = v239
-	var v244 int32
-	_ = v244
+	var v243 int32
+	_ = v243
+	var v247 int32
+	_ = v247
+	var v252 int32
+	_ = v252
 	v4 = int32(0)
-	v9 = m.G0
-	v11 = v9 - int32(16)
-	m.G0 = v11
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(v13+l1<<(uint(int32(2))%32)-int32(4))))
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-	v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+20))
-	if base.Ui32(int32(3)) < base.Ui32(v21) {
-		v24 = *(*int32)(unsafe.Add(mBase, uint32(v20)+8))
-		v25 = *(*int32)(unsafe.Add(mBase, uint32(v20)+12))
-		if v24 != v25 {
-			v27 = int32(*(*int16)(unsafe.Add(mBase, uint32(v19)+6)))
-			v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-			v29 = int32(*(*int16)(unsafe.Add(mBase, uint32(v28)+6)))
-			if v29 < v27 {
-				F_slot_getsomeattrs_int(m, v28, v27)
+	v10 = m.G0
+	v12 = v10 - int32(16)
+	m.G0 = v12
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v14+l1<<(uint(int32(2))%32)-int32(4))))
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
+	if base.Ui32(int32(3)) < base.Ui32(v22) {
+		v25 = *(*int32)(unsafe.Add(mBase, uint32(v21)+8))
+		v26 = *(*int32)(unsafe.Add(mBase, uint32(v21)+12))
+		if v25 != v26 {
+			v28 = int32(*(*int16)(unsafe.Add(mBase, uint32(v20)+6)))
+			v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v30 = int32(*(*int16)(unsafe.Add(mBase, uint32(v29)+6)))
+			if v30 < v28 {
+				v32 = *(*int32)(unsafe.Add(mBase, uint32(v29)+8))
+				v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+16))
+				m.T0[v33].(func(*base.Module, int32, int32))(m, v29, v28)
 				mBase = m.M
-				v34 = m.ExcPending
-				if v34 != 0 {
+				v37 = m.ExcPending
+				if v37 != 0 {
 					return int32(0)
 				} else {
-					v36 = v27 - int32(1)
-					v37 = *(*int32)(unsafe.Add(mBase, uint32(v28)+20))
-					v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36+v37))))
-					if v39 != 0 {
-						v194 = v4
-						m.G0 = v11 + int32(16)
-						return v194
+					v39 = v28 - int32(1)
+					v40 = *(*int32)(unsafe.Add(mBase, uint32(v29)+20))
+					v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39+v40))))
+					if v42 != 0 {
+						v201 = v4
+						m.G0 = v12 + int32(16)
+						return v201
 					} else {
-						v40 = *(*int32)(unsafe.Add(mBase, uint32(v28)+16))
-						v44 = *(*int32)(unsafe.Add(mBase, uint32(v40+v36<<(uint(int32(2))%32))))
-						v45 = *(*int32)(unsafe.Add(mBase, uint32(v20)+4))
-						if v44 != v45 {
-							v194 = v4
-							m.G0 = v11 + int32(16)
-							return v194
+						v43 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
+						v44 = *(*int32)(unsafe.Add(mBase, uint32(v29)+16))
+						v48 = *(*int32)(unsafe.Add(mBase, uint32(v44+v39<<(uint(int32(3))%32))))
+						if v43 != v48 {
+							v201 = v4
+							m.G0 = v12 + int32(16)
+							return v201
 						} else {
-							v47 = *(*int32)(unsafe.Add(mBase, uint32(v20)+20))
-							v49 = v47
-							v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-							v51 = int32(*(*int16)(unsafe.Add(mBase, uint32(v50)+6)))
-							if v49 == int32(4) {
-								v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(v19)+4)))
-								if v51 < v54 {
-									F_slot_getsomeattrs_int(m, v50, v54)
+							v50 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
+							v52 = v50
+							v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+							v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(v53)+6)))
+							if v52 == int32(4) {
+								v57 = int32(*(*int16)(unsafe.Add(mBase, uint32(v20)+4)))
+								if v54 < v57 {
+									v59 = *(*int32)(unsafe.Add(mBase, uint32(v53)+8))
+									v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+16))
+									m.T0[v60].(func(*base.Module, int32, int32))(m, v53, v57)
 									mBase = m.M
-									v57 = m.ExcPending
-									if v57 != 0 {
+									v62 = m.ExcPending
+									if v62 != 0 {
 										return int32(0)
 									} else {
-										v59 = v54 - int32(1)
-										v60 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-										v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59+v60))))
-										if v62 != 0 {
-											v194 = int32(0)
-											m.G0 = v11 + int32(16)
-											return v194
+										v64 = v57 - int32(1)
+										v65 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+										v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64+v65))))
+										if v67 != 0 {
+											v201 = int32(0)
+											m.G0 = v12 + int32(16)
+											return v201
 										} else {
-											v64 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-											v68 = *(*int32)(unsafe.Add(mBase, uint32(v64+v59<<(uint(int32(2))%32))))
-											v69 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-											v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+48))
-											v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70)+119)))
-											if v71 == int32(102) {
-												v74 = int32(0)
-												*(*uint8)(unsafe.Add(mBase, uint32(v11)+15)) = uint8(v74)
-												v77 = F_GetFdwRoutineForRelation(m, v69, v74)
+											v69 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+											v73 = *(*int64)(unsafe.Add(mBase, uint32(v69+v64<<(uint(int32(3))%32))))
+											v74 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+											v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+48))
+											v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+119)))
+											if v76 == int32(102) {
+												v79 = int32(0)
+												*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)) = uint8(v79)
+												v82 = F_GetFdwRoutineForRelation(m, v74, v79)
 												mBase = m.M
-												v78 = m.ExcPending
-												if v78 != 0 {
+												v83 = m.ExcPending
+												if v83 != 0 {
 													return int32(0)
 												} else {
-													v79 = *(*int32)(unsafe.Add(mBase, uint32(v77)+108))
-													if v79 == int32(0) {
+													v84 = *(*int32)(unsafe.Add(mBase, uint32(v82)+108))
+													if v84 == int32(0) {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v215 = m.ExcPending
-														if v215 != 0 {
+														v223 = m.ExcPending
+														if v223 != 0 {
 															return int32(0)
 														} else {
 															F_errcode(m, int32(1088))
 															mBase = m.M
-															v218 = m.ExcPending
-															if v218 != 0 {
+															v226 = m.ExcPending
+															if v226 != 0 {
 																return int32(0)
 															} else {
-																v219 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-																v220 = *(*int32)(unsafe.Add(mBase, uint32(v219)+48))
-																*(*int32)(unsafe.Add(mBase, uint32(v11))) = v220 + int32(4)
-																F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v11)
+																v227 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+																v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+48))
+																*(*int32)(unsafe.Add(mBase, uint32(v12))) = v228 + int32(4)
+																F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v12)
 																mBase = m.M
-																v226 = m.ExcPending
-																if v226 != 0 {
+																v234 = m.ExcPending
+																if v234 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2870), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2896), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																	mBase = m.M
-																	v231 = m.ExcPending
-																	if v231 != 0 {
+																	v239 = m.ExcPending
+																	if v239 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -298,62 +312,32 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 															}
 														}
 													} else {
-														v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-														m.T0[v79].(func(*base.Module, int32, int32, int32, int32, int32))(m, v82, v20, v68, l2, v11+int32(15))
+														v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+														m.T0[v84].(func(*base.Module, int32, int32, int64, int32, int32))(m, v87, v21, v73, l2, v12+int32(15))
 														mBase = m.M
-														v86 = m.ExcPending
-														if v86 != 0 {
-															return int32(0)
-														} else {
-															if l2 != 0 {
-																v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
-																if v87&int32(2) == int32(0) {
-																	v194 = int32(1)
-																	m.G0 = v11 + int32(16)
-																	return v194
-																} else {
-																	F_errstart_cold(m, int32(21), int32(0))
-																	mBase = m.M
-																	v95 = m.ExcPending
-																	if v95 != 0 {
-																		return int32(0)
-																	} else {
-																		F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
-																		mBase = m.M
-																		v99 = m.ExcPending
-																		if v99 != 0 {
-																			return int32(0)
-																		} else {
-																			F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
-																			mBase = m.M
-																			v104 = m.ExcPending
-																			if v104 != 0 {
-																				return int32(0)
-																			} else {
-																				base.Wasm_trap_unreachable()
-																				for {
-																				}
-																			}
-																		}
-																	}
-																}
+														if l2 != 0 {
+															v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
+															if v91&int32(2) == int32(0) {
+																v201 = int32(1)
+																m.G0 = v12 + int32(16)
+																return v201
 															} else {
 																F_errstart_cold(m, int32(21), int32(0))
 																mBase = m.M
-																v95 = m.ExcPending
-																if v95 != 0 {
+																v99 = m.ExcPending
+																if v99 != 0 {
 																	return int32(0)
 																} else {
 																	F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 																	mBase = m.M
-																	v99 = m.ExcPending
-																	if v99 != 0 {
+																	v103 = m.ExcPending
+																	if v103 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																		F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																		mBase = m.M
-																		v104 = m.ExcPending
-																		if v104 != 0 {
+																		v108 = m.ExcPending
+																		if v108 != 0 {
 																			return int32(0)
 																		} else {
 																			base.Wasm_trap_unreachable()
@@ -363,30 +347,55 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 																	}
 																}
 															}
+														} else {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v99 = m.ExcPending
+															if v99 != 0 {
+																return int32(0)
+															} else {
+																F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
+																mBase = m.M
+																v103 = m.ExcPending
+																if v103 != 0 {
+																	return int32(0)
+																} else {
+																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																	mBase = m.M
+																	v108 = m.ExcPending
+																	if v108 != 0 {
+																		return int32(0)
+																	} else {
+																		base.Wasm_trap_unreachable()
+																		for {
+																		}
+																	}
+																}
+															}
 														}
 													}
 												}
 											} else {
-												v106 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
-												if v106 != 0 {
-													v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
-													if v108&int32(1) == int32(0) {
+												v110 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
+												if v110 != 0 {
+													v112 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
+													if v112&int32(1) == int32(0) {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v235 = m.ExcPending
-														if v235 != 0 {
+														v243 = m.ExcPending
+														if v243 != 0 {
 															return int32(0)
 														} else {
 															F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_4), int32(0))
 															mBase = m.M
-															v239 = m.ExcPending
-															if v239 != 0 {
+															v247 = m.ExcPending
+															if v247 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1264), int32(_a_F_EvalPlanQualFetchRowMark_6))
+																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1355), int32(_a_F_EvalPlanQualFetchRowMark_6))
 																mBase = m.M
-																v244 = m.ExcPending
-																if v244 != 0 {
+																v252 = m.ExcPending
+																if v252 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -396,35 +405,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 															}
 														}
 													} else {
-														v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-														v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-														v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+														v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+														v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+														v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 														mBase = m.M
-														v117 = m.ExcPending
-														if v117 != 0 {
+														v122 = m.ExcPending
+														if v122 != 0 {
 															return int32(0)
 														} else {
-															if v116 != 0 {
-																v194 = int32(1)
-																m.G0 = v11 + int32(16)
-																return v194
+															if v121 != 0 {
+																v201 = int32(1)
+																m.G0 = v12 + int32(16)
+																return v201
 															} else {
 																F_errstart_cold(m, int32(21), int32(0))
 																mBase = m.M
-																v121 = m.ExcPending
-																if v121 != 0 {
+																v126 = m.ExcPending
+																if v126 != 0 {
 																	return int32(0)
 																} else {
 																	F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 																	mBase = m.M
-																	v125 = m.ExcPending
-																	if v125 != 0 {
+																	v130 = m.ExcPending
+																	if v130 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																		F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																		mBase = m.M
-																		v130 = m.ExcPending
-																		if v130 != 0 {
+																		v135 = m.ExcPending
+																		if v135 != 0 {
 																			return int32(0)
 																		} else {
 																			base.Wasm_trap_unreachable()
@@ -437,35 +446,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 														}
 													}
 												} else {
-													v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-													v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-													v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+													v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+													v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+													v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 													mBase = m.M
-													v117 = m.ExcPending
-													if v117 != 0 {
+													v122 = m.ExcPending
+													if v122 != 0 {
 														return int32(0)
 													} else {
-														if v116 != 0 {
-															v194 = int32(1)
-															m.G0 = v11 + int32(16)
-															return v194
+														if v121 != 0 {
+															v201 = int32(1)
+															m.G0 = v12 + int32(16)
+															return v201
 														} else {
 															F_errstart_cold(m, int32(21), int32(0))
 															mBase = m.M
-															v121 = m.ExcPending
-															if v121 != 0 {
+															v126 = m.ExcPending
+															if v126 != 0 {
 																return int32(0)
 															} else {
 																F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 																mBase = m.M
-																v125 = m.ExcPending
-																if v125 != 0 {
+																v130 = m.ExcPending
+																if v130 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																	mBase = m.M
-																	v130 = m.ExcPending
-																	if v130 != 0 {
+																	v135 = m.ExcPending
+																	if v135 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -481,55 +490,55 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 										}
 									}
 								} else {
-									v59 = v54 - int32(1)
-									v60 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-									v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59+v60))))
-									if v62 != 0 {
-										v194 = int32(0)
-										m.G0 = v11 + int32(16)
-										return v194
+									v64 = v57 - int32(1)
+									v65 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+									v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64+v65))))
+									if v67 != 0 {
+										v201 = int32(0)
+										m.G0 = v12 + int32(16)
+										return v201
 									} else {
-										v64 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-										v68 = *(*int32)(unsafe.Add(mBase, uint32(v64+v59<<(uint(int32(2))%32))))
-										v69 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-										v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+48))
-										v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70)+119)))
-										if v71 == int32(102) {
-											v74 = int32(0)
-											*(*uint8)(unsafe.Add(mBase, uint32(v11)+15)) = uint8(v74)
-											v77 = F_GetFdwRoutineForRelation(m, v69, v74)
+										v69 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+										v73 = *(*int64)(unsafe.Add(mBase, uint32(v69+v64<<(uint(int32(3))%32))))
+										v74 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+										v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+48))
+										v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+119)))
+										if v76 == int32(102) {
+											v79 = int32(0)
+											*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)) = uint8(v79)
+											v82 = F_GetFdwRoutineForRelation(m, v74, v79)
 											mBase = m.M
-											v78 = m.ExcPending
-											if v78 != 0 {
+											v83 = m.ExcPending
+											if v83 != 0 {
 												return int32(0)
 											} else {
-												v79 = *(*int32)(unsafe.Add(mBase, uint32(v77)+108))
-												if v79 == int32(0) {
+												v84 = *(*int32)(unsafe.Add(mBase, uint32(v82)+108))
+												if v84 == int32(0) {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v215 = m.ExcPending
-													if v215 != 0 {
+													v223 = m.ExcPending
+													if v223 != 0 {
 														return int32(0)
 													} else {
 														F_errcode(m, int32(1088))
 														mBase = m.M
-														v218 = m.ExcPending
-														if v218 != 0 {
+														v226 = m.ExcPending
+														if v226 != 0 {
 															return int32(0)
 														} else {
-															v219 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-															v220 = *(*int32)(unsafe.Add(mBase, uint32(v219)+48))
-															*(*int32)(unsafe.Add(mBase, uint32(v11))) = v220 + int32(4)
-															F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v11)
+															v227 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+															v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+48))
+															*(*int32)(unsafe.Add(mBase, uint32(v12))) = v228 + int32(4)
+															F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v12)
 															mBase = m.M
-															v226 = m.ExcPending
-															if v226 != 0 {
+															v234 = m.ExcPending
+															if v234 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2870), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2896), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																mBase = m.M
-																v231 = m.ExcPending
-																if v231 != 0 {
+																v239 = m.ExcPending
+																if v239 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -540,62 +549,32 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 														}
 													}
 												} else {
-													v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-													m.T0[v79].(func(*base.Module, int32, int32, int32, int32, int32))(m, v82, v20, v68, l2, v11+int32(15))
+													v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+													m.T0[v84].(func(*base.Module, int32, int32, int64, int32, int32))(m, v87, v21, v73, l2, v12+int32(15))
 													mBase = m.M
-													v86 = m.ExcPending
-													if v86 != 0 {
-														return int32(0)
-													} else {
-														if l2 != 0 {
-															v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
-															if v87&int32(2) == int32(0) {
-																v194 = int32(1)
-																m.G0 = v11 + int32(16)
-																return v194
-															} else {
-																F_errstart_cold(m, int32(21), int32(0))
-																mBase = m.M
-																v95 = m.ExcPending
-																if v95 != 0 {
-																	return int32(0)
-																} else {
-																	F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
-																	mBase = m.M
-																	v99 = m.ExcPending
-																	if v99 != 0 {
-																		return int32(0)
-																	} else {
-																		F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
-																		mBase = m.M
-																		v104 = m.ExcPending
-																		if v104 != 0 {
-																			return int32(0)
-																		} else {
-																			base.Wasm_trap_unreachable()
-																			for {
-																			}
-																		}
-																	}
-																}
-															}
+													if l2 != 0 {
+														v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
+														if v91&int32(2) == int32(0) {
+															v201 = int32(1)
+															m.G0 = v12 + int32(16)
+															return v201
 														} else {
 															F_errstart_cold(m, int32(21), int32(0))
 															mBase = m.M
-															v95 = m.ExcPending
-															if v95 != 0 {
+															v99 = m.ExcPending
+															if v99 != 0 {
 																return int32(0)
 															} else {
 																F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 																mBase = m.M
-																v99 = m.ExcPending
-																if v99 != 0 {
+																v103 = m.ExcPending
+																if v103 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																	mBase = m.M
-																	v104 = m.ExcPending
-																	if v104 != 0 {
+																	v108 = m.ExcPending
+																	if v108 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -605,30 +584,55 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 																}
 															}
 														}
+													} else {
+														F_errstart_cold(m, int32(21), int32(0))
+														mBase = m.M
+														v99 = m.ExcPending
+														if v99 != 0 {
+															return int32(0)
+														} else {
+															F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
+															mBase = m.M
+															v103 = m.ExcPending
+															if v103 != 0 {
+																return int32(0)
+															} else {
+																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																mBase = m.M
+																v108 = m.ExcPending
+																if v108 != 0 {
+																	return int32(0)
+																} else {
+																	base.Wasm_trap_unreachable()
+																	for {
+																	}
+																}
+															}
+														}
 													}
 												}
 											}
 										} else {
-											v106 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
-											if v106 != 0 {
-												v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
-												if v108&int32(1) == int32(0) {
+											v110 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
+											if v110 != 0 {
+												v112 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
+												if v112&int32(1) == int32(0) {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v235 = m.ExcPending
-													if v235 != 0 {
+													v243 = m.ExcPending
+													if v243 != 0 {
 														return int32(0)
 													} else {
 														F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_4), int32(0))
 														mBase = m.M
-														v239 = m.ExcPending
-														if v239 != 0 {
+														v247 = m.ExcPending
+														if v247 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1264), int32(_a_F_EvalPlanQualFetchRowMark_6))
+															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1355), int32(_a_F_EvalPlanQualFetchRowMark_6))
 															mBase = m.M
-															v244 = m.ExcPending
-															if v244 != 0 {
+															v252 = m.ExcPending
+															if v252 != 0 {
 																return int32(0)
 															} else {
 																base.Wasm_trap_unreachable()
@@ -638,35 +642,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 														}
 													}
 												} else {
-													v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-													v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-													v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+													v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+													v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+													v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 													mBase = m.M
-													v117 = m.ExcPending
-													if v117 != 0 {
+													v122 = m.ExcPending
+													if v122 != 0 {
 														return int32(0)
 													} else {
-														if v116 != 0 {
-															v194 = int32(1)
-															m.G0 = v11 + int32(16)
-															return v194
+														if v121 != 0 {
+															v201 = int32(1)
+															m.G0 = v12 + int32(16)
+															return v201
 														} else {
 															F_errstart_cold(m, int32(21), int32(0))
 															mBase = m.M
-															v121 = m.ExcPending
-															if v121 != 0 {
+															v126 = m.ExcPending
+															if v126 != 0 {
 																return int32(0)
 															} else {
 																F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 																mBase = m.M
-																v125 = m.ExcPending
-																if v125 != 0 {
+																v130 = m.ExcPending
+																if v130 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																	mBase = m.M
-																	v130 = m.ExcPending
-																	if v130 != 0 {
+																	v135 = m.ExcPending
+																	if v135 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -679,35 +683,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 													}
 												}
 											} else {
-												v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-												v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-												v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+												v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+												v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+												v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 												mBase = m.M
-												v117 = m.ExcPending
-												if v117 != 0 {
+												v122 = m.ExcPending
+												if v122 != 0 {
 													return int32(0)
 												} else {
-													if v116 != 0 {
-														v194 = int32(1)
-														m.G0 = v11 + int32(16)
-														return v194
+													if v121 != 0 {
+														v201 = int32(1)
+														m.G0 = v12 + int32(16)
+														return v201
 													} else {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v121 = m.ExcPending
-														if v121 != 0 {
+														v126 = m.ExcPending
+														if v126 != 0 {
 															return int32(0)
 														} else {
 															F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 															mBase = m.M
-															v125 = m.ExcPending
-															if v125 != 0 {
+															v130 = m.ExcPending
+															if v130 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																mBase = m.M
-																v130 = m.ExcPending
-																if v130 != 0 {
+																v135 = m.ExcPending
+																if v135 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -723,128 +727,130 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 									}
 								}
 							} else {
-								v131 = int32(*(*int16)(unsafe.Add(mBase, uint32(v19)+8)))
-								if v51 < v131 {
-									F_slot_getsomeattrs_int(m, v50, v131)
+								v136 = int32(*(*int16)(unsafe.Add(mBase, uint32(v20)+8)))
+								if v54 < v136 {
+									v138 = *(*int32)(unsafe.Add(mBase, uint32(v53)+8))
+									v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+16))
+									m.T0[v139].(func(*base.Module, int32, int32))(m, v53, v136)
 									mBase = m.M
-									v134 = m.ExcPending
-									if v134 != 0 {
+									v141 = m.ExcPending
+									if v141 != 0 {
 										return int32(0)
 									} else {
-										v136 = v131 - int32(1)
-										v137 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-										v139 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v136+v137))))
-										if v139 != 0 {
-											v194 = int32(0)
-											m.G0 = v11 + int32(16)
-											return v194
+										v143 = v136 - int32(1)
+										v144 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+										v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v143+v144))))
+										if v146 != 0 {
+											v201 = int32(0)
+											m.G0 = v12 + int32(16)
+											return v201
 										} else {
-											v141 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-											v145 = *(*int32)(unsafe.Add(mBase, uint32(v141+v136<<(uint(int32(2))%32))))
-											v146 = m.G0
-											v148 = v146 - int32(32)
-											m.G0 = v148
-											*(*int64)(unsafe.Add(mBase, uint32(v148)+20)) = int64(0)
-											v152 = F_pg_detoast_datum(m, v145)
+											v148 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+											v152 = *(*int64)(unsafe.Add(mBase, uint32(v148+v143<<(uint(int32(3))%32))))
+											v153 = m.G0
+											v155 = v153 - int32(32)
+											m.G0 = v155
+											*(*int64)(unsafe.Add(mBase, uint32(v155)+20)) = int64(0)
+											v160 = F_pg_detoast_datum(m, base.I32_wrap_i64(v152))
 											mBase = m.M
-											v153 = m.ExcPending
-											if v153 != 0 {
+											v161 = m.ExcPending
+											if v161 != 0 {
 												return int32(0)
 											} else {
-												v154 = *(*int32)(unsafe.Add(mBase, uint32(v152)))
-												*(*int32)(unsafe.Add(mBase, uint32(v148)+12)) = int32(base.Ui32(v154) >> (uint(int32(2)) % 32))
-												v158 = *(*int32)(unsafe.Add(mBase, uint32(v152)+12))
-												*(*int32)(unsafe.Add(mBase, uint32(v148)+16)) = v158
-												v160 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152)+16)))
-												*(*uint16)(unsafe.Add(mBase, uint32(v148)+20)) = uint16(v160)
-												*(*int32)(unsafe.Add(mBase, uint32(v148)+28)) = v152
-												v163 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-												v164 = *(*int32)(unsafe.Add(mBase, uint32(v163)+12))
-												m.T0[v164].(func(*base.Module, int32))(m, l2)
+												v162 = *(*int32)(unsafe.Add(mBase, uint32(v160)))
+												*(*int32)(unsafe.Add(mBase, uint32(v155)+12)) = int32(base.Ui32(v162) >> (uint(int32(2)) % 32))
+												v166 = *(*int32)(unsafe.Add(mBase, uint32(v160)+12))
+												*(*int32)(unsafe.Add(mBase, uint32(v155)+16)) = v166
+												v168 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v160)+16)))
+												*(*uint16)(unsafe.Add(mBase, uint32(v155)+20)) = uint16(v168)
+												*(*int32)(unsafe.Add(mBase, uint32(v155)+28)) = v160
+												v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+												v172 = *(*int32)(unsafe.Add(mBase, uint32(v171)+12))
+												m.T0[v172].(func(*base.Module, int32))(m, l2)
 												mBase = m.M
-												v166 = m.ExcPending
-												if v166 != 0 {
+												v174 = m.ExcPending
+												if v174 != 0 {
 													return int32(0)
 												} else {
-													v169 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-													v170 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
-													v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-													F_heap_deform_tuple(m, v148+int32(12), v169, v170, v171)
+													v177 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+													v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
+													v179 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+													F_heap_deform_tuple(m, v155+int32(12), v177, v178, v179)
 													mBase = m.M
-													v173 = m.ExcPending
-													if v173 != 0 {
+													v181 = m.ExcPending
+													if v181 != 0 {
 														return int32(0)
 													} else {
-														v174 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
-														v176 = v174 & int32(_a_F_EvalPlanQualFetchRowMark_8)
-														*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v176)
-														v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-														v179 = *(*int32)(unsafe.Add(mBase, uint32(v178)))
-														*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v179)
-														m.G0 = v148 + int32(32)
-														v194 = int32(1)
-														m.G0 = v11 + int32(16)
-														return v194
+														v182 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
+														v184 = v182 & int32(_a_F_EvalPlanQualFetchRowMark_8)
+														*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v184)
+														v186 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+														v187 = *(*int32)(unsafe.Add(mBase, uint32(v186)))
+														*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v187)
+														m.G0 = v155 + int32(32)
+														v201 = int32(1)
+														m.G0 = v12 + int32(16)
+														return v201
 													}
 												}
 											}
 										}
 									}
 								} else {
-									v136 = v131 - int32(1)
-									v137 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-									v139 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v136+v137))))
-									if v139 != 0 {
-										v194 = int32(0)
-										m.G0 = v11 + int32(16)
-										return v194
+									v143 = v136 - int32(1)
+									v144 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+									v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v143+v144))))
+									if v146 != 0 {
+										v201 = int32(0)
+										m.G0 = v12 + int32(16)
+										return v201
 									} else {
-										v141 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-										v145 = *(*int32)(unsafe.Add(mBase, uint32(v141+v136<<(uint(int32(2))%32))))
-										v146 = m.G0
-										v148 = v146 - int32(32)
-										m.G0 = v148
-										*(*int64)(unsafe.Add(mBase, uint32(v148)+20)) = int64(0)
-										v152 = F_pg_detoast_datum(m, v145)
+										v148 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+										v152 = *(*int64)(unsafe.Add(mBase, uint32(v148+v143<<(uint(int32(3))%32))))
+										v153 = m.G0
+										v155 = v153 - int32(32)
+										m.G0 = v155
+										*(*int64)(unsafe.Add(mBase, uint32(v155)+20)) = int64(0)
+										v160 = F_pg_detoast_datum(m, base.I32_wrap_i64(v152))
 										mBase = m.M
-										v153 = m.ExcPending
-										if v153 != 0 {
+										v161 = m.ExcPending
+										if v161 != 0 {
 											return int32(0)
 										} else {
-											v154 = *(*int32)(unsafe.Add(mBase, uint32(v152)))
-											*(*int32)(unsafe.Add(mBase, uint32(v148)+12)) = int32(base.Ui32(v154) >> (uint(int32(2)) % 32))
-											v158 = *(*int32)(unsafe.Add(mBase, uint32(v152)+12))
-											*(*int32)(unsafe.Add(mBase, uint32(v148)+16)) = v158
-											v160 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152)+16)))
-											*(*uint16)(unsafe.Add(mBase, uint32(v148)+20)) = uint16(v160)
-											*(*int32)(unsafe.Add(mBase, uint32(v148)+28)) = v152
-											v163 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-											v164 = *(*int32)(unsafe.Add(mBase, uint32(v163)+12))
-											m.T0[v164].(func(*base.Module, int32))(m, l2)
+											v162 = *(*int32)(unsafe.Add(mBase, uint32(v160)))
+											*(*int32)(unsafe.Add(mBase, uint32(v155)+12)) = int32(base.Ui32(v162) >> (uint(int32(2)) % 32))
+											v166 = *(*int32)(unsafe.Add(mBase, uint32(v160)+12))
+											*(*int32)(unsafe.Add(mBase, uint32(v155)+16)) = v166
+											v168 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v160)+16)))
+											*(*uint16)(unsafe.Add(mBase, uint32(v155)+20)) = uint16(v168)
+											*(*int32)(unsafe.Add(mBase, uint32(v155)+28)) = v160
+											v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+											v172 = *(*int32)(unsafe.Add(mBase, uint32(v171)+12))
+											m.T0[v172].(func(*base.Module, int32))(m, l2)
 											mBase = m.M
-											v166 = m.ExcPending
-											if v166 != 0 {
+											v174 = m.ExcPending
+											if v174 != 0 {
 												return int32(0)
 											} else {
-												v169 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-												v170 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
-												v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-												F_heap_deform_tuple(m, v148+int32(12), v169, v170, v171)
+												v177 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+												v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
+												v179 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+												F_heap_deform_tuple(m, v155+int32(12), v177, v178, v179)
 												mBase = m.M
-												v173 = m.ExcPending
-												if v173 != 0 {
+												v181 = m.ExcPending
+												if v181 != 0 {
 													return int32(0)
 												} else {
-													v174 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
-													v176 = v174 & int32(_a_F_EvalPlanQualFetchRowMark_8)
-													*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v176)
-													v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-													v179 = *(*int32)(unsafe.Add(mBase, uint32(v178)))
-													*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v179)
-													m.G0 = v148 + int32(32)
-													v194 = int32(1)
-													m.G0 = v11 + int32(16)
-													return v194
+													v182 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
+													v184 = v182 & int32(_a_F_EvalPlanQualFetchRowMark_8)
+													*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v184)
+													v186 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+													v187 = *(*int32)(unsafe.Add(mBase, uint32(v186)))
+													*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v187)
+													m.G0 = v155 + int32(32)
+													v201 = int32(1)
+													m.G0 = v12 + int32(16)
+													return v201
 												}
 											}
 										}
@@ -855,84 +861,86 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 					}
 				}
 			} else {
-				v36 = v27 - int32(1)
-				v37 = *(*int32)(unsafe.Add(mBase, uint32(v28)+20))
-				v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36+v37))))
-				if v39 != 0 {
-					v194 = v4
-					m.G0 = v11 + int32(16)
-					return v194
+				v39 = v28 - int32(1)
+				v40 = *(*int32)(unsafe.Add(mBase, uint32(v29)+20))
+				v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39+v40))))
+				if v42 != 0 {
+					v201 = v4
+					m.G0 = v12 + int32(16)
+					return v201
 				} else {
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(v28)+16))
-					v44 = *(*int32)(unsafe.Add(mBase, uint32(v40+v36<<(uint(int32(2))%32))))
-					v45 = *(*int32)(unsafe.Add(mBase, uint32(v20)+4))
-					if v44 != v45 {
-						v194 = v4
-						m.G0 = v11 + int32(16)
-						return v194
+					v43 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
+					v44 = *(*int32)(unsafe.Add(mBase, uint32(v29)+16))
+					v48 = *(*int32)(unsafe.Add(mBase, uint32(v44+v39<<(uint(int32(3))%32))))
+					if v43 != v48 {
+						v201 = v4
+						m.G0 = v12 + int32(16)
+						return v201
 					} else {
-						v47 = *(*int32)(unsafe.Add(mBase, uint32(v20)+20))
-						v49 = v47
-						v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-						v51 = int32(*(*int16)(unsafe.Add(mBase, uint32(v50)+6)))
-						if v49 == int32(4) {
-							v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(v19)+4)))
-							if v51 < v54 {
-								F_slot_getsomeattrs_int(m, v50, v54)
+						v50 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
+						v52 = v50
+						v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(v53)+6)))
+						if v52 == int32(4) {
+							v57 = int32(*(*int16)(unsafe.Add(mBase, uint32(v20)+4)))
+							if v54 < v57 {
+								v59 = *(*int32)(unsafe.Add(mBase, uint32(v53)+8))
+								v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+16))
+								m.T0[v60].(func(*base.Module, int32, int32))(m, v53, v57)
 								mBase = m.M
-								v57 = m.ExcPending
-								if v57 != 0 {
+								v62 = m.ExcPending
+								if v62 != 0 {
 									return int32(0)
 								} else {
-									v59 = v54 - int32(1)
-									v60 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-									v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59+v60))))
-									if v62 != 0 {
-										v194 = int32(0)
-										m.G0 = v11 + int32(16)
-										return v194
+									v64 = v57 - int32(1)
+									v65 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+									v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64+v65))))
+									if v67 != 0 {
+										v201 = int32(0)
+										m.G0 = v12 + int32(16)
+										return v201
 									} else {
-										v64 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-										v68 = *(*int32)(unsafe.Add(mBase, uint32(v64+v59<<(uint(int32(2))%32))))
-										v69 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-										v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+48))
-										v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70)+119)))
-										if v71 == int32(102) {
-											v74 = int32(0)
-											*(*uint8)(unsafe.Add(mBase, uint32(v11)+15)) = uint8(v74)
-											v77 = F_GetFdwRoutineForRelation(m, v69, v74)
+										v69 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+										v73 = *(*int64)(unsafe.Add(mBase, uint32(v69+v64<<(uint(int32(3))%32))))
+										v74 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+										v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+48))
+										v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+119)))
+										if v76 == int32(102) {
+											v79 = int32(0)
+											*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)) = uint8(v79)
+											v82 = F_GetFdwRoutineForRelation(m, v74, v79)
 											mBase = m.M
-											v78 = m.ExcPending
-											if v78 != 0 {
+											v83 = m.ExcPending
+											if v83 != 0 {
 												return int32(0)
 											} else {
-												v79 = *(*int32)(unsafe.Add(mBase, uint32(v77)+108))
-												if v79 == int32(0) {
+												v84 = *(*int32)(unsafe.Add(mBase, uint32(v82)+108))
+												if v84 == int32(0) {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v215 = m.ExcPending
-													if v215 != 0 {
+													v223 = m.ExcPending
+													if v223 != 0 {
 														return int32(0)
 													} else {
 														F_errcode(m, int32(1088))
 														mBase = m.M
-														v218 = m.ExcPending
-														if v218 != 0 {
+														v226 = m.ExcPending
+														if v226 != 0 {
 															return int32(0)
 														} else {
-															v219 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-															v220 = *(*int32)(unsafe.Add(mBase, uint32(v219)+48))
-															*(*int32)(unsafe.Add(mBase, uint32(v11))) = v220 + int32(4)
-															F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v11)
+															v227 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+															v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+48))
+															*(*int32)(unsafe.Add(mBase, uint32(v12))) = v228 + int32(4)
+															F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v12)
 															mBase = m.M
-															v226 = m.ExcPending
-															if v226 != 0 {
+															v234 = m.ExcPending
+															if v234 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2870), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2896), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																mBase = m.M
-																v231 = m.ExcPending
-																if v231 != 0 {
+																v239 = m.ExcPending
+																if v239 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -943,62 +951,32 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 														}
 													}
 												} else {
-													v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-													m.T0[v79].(func(*base.Module, int32, int32, int32, int32, int32))(m, v82, v20, v68, l2, v11+int32(15))
+													v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+													m.T0[v84].(func(*base.Module, int32, int32, int64, int32, int32))(m, v87, v21, v73, l2, v12+int32(15))
 													mBase = m.M
-													v86 = m.ExcPending
-													if v86 != 0 {
-														return int32(0)
-													} else {
-														if l2 != 0 {
-															v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
-															if v87&int32(2) == int32(0) {
-																v194 = int32(1)
-																m.G0 = v11 + int32(16)
-																return v194
-															} else {
-																F_errstart_cold(m, int32(21), int32(0))
-																mBase = m.M
-																v95 = m.ExcPending
-																if v95 != 0 {
-																	return int32(0)
-																} else {
-																	F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
-																	mBase = m.M
-																	v99 = m.ExcPending
-																	if v99 != 0 {
-																		return int32(0)
-																	} else {
-																		F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
-																		mBase = m.M
-																		v104 = m.ExcPending
-																		if v104 != 0 {
-																			return int32(0)
-																		} else {
-																			base.Wasm_trap_unreachable()
-																			for {
-																			}
-																		}
-																	}
-																}
-															}
+													if l2 != 0 {
+														v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
+														if v91&int32(2) == int32(0) {
+															v201 = int32(1)
+															m.G0 = v12 + int32(16)
+															return v201
 														} else {
 															F_errstart_cold(m, int32(21), int32(0))
 															mBase = m.M
-															v95 = m.ExcPending
-															if v95 != 0 {
+															v99 = m.ExcPending
+															if v99 != 0 {
 																return int32(0)
 															} else {
 																F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 																mBase = m.M
-																v99 = m.ExcPending
-																if v99 != 0 {
+																v103 = m.ExcPending
+																if v103 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																	mBase = m.M
-																	v104 = m.ExcPending
-																	if v104 != 0 {
+																	v108 = m.ExcPending
+																	if v108 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -1008,30 +986,55 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 																}
 															}
 														}
+													} else {
+														F_errstart_cold(m, int32(21), int32(0))
+														mBase = m.M
+														v99 = m.ExcPending
+														if v99 != 0 {
+															return int32(0)
+														} else {
+															F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
+															mBase = m.M
+															v103 = m.ExcPending
+															if v103 != 0 {
+																return int32(0)
+															} else {
+																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																mBase = m.M
+																v108 = m.ExcPending
+																if v108 != 0 {
+																	return int32(0)
+																} else {
+																	base.Wasm_trap_unreachable()
+																	for {
+																	}
+																}
+															}
+														}
 													}
 												}
 											}
 										} else {
-											v106 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
-											if v106 != 0 {
-												v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
-												if v108&int32(1) == int32(0) {
+											v110 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
+											if v110 != 0 {
+												v112 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
+												if v112&int32(1) == int32(0) {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v235 = m.ExcPending
-													if v235 != 0 {
+													v243 = m.ExcPending
+													if v243 != 0 {
 														return int32(0)
 													} else {
 														F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_4), int32(0))
 														mBase = m.M
-														v239 = m.ExcPending
-														if v239 != 0 {
+														v247 = m.ExcPending
+														if v247 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1264), int32(_a_F_EvalPlanQualFetchRowMark_6))
+															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1355), int32(_a_F_EvalPlanQualFetchRowMark_6))
 															mBase = m.M
-															v244 = m.ExcPending
-															if v244 != 0 {
+															v252 = m.ExcPending
+															if v252 != 0 {
 																return int32(0)
 															} else {
 																base.Wasm_trap_unreachable()
@@ -1041,35 +1044,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 														}
 													}
 												} else {
-													v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-													v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-													v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+													v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+													v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+													v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 													mBase = m.M
-													v117 = m.ExcPending
-													if v117 != 0 {
+													v122 = m.ExcPending
+													if v122 != 0 {
 														return int32(0)
 													} else {
-														if v116 != 0 {
-															v194 = int32(1)
-															m.G0 = v11 + int32(16)
-															return v194
+														if v121 != 0 {
+															v201 = int32(1)
+															m.G0 = v12 + int32(16)
+															return v201
 														} else {
 															F_errstart_cold(m, int32(21), int32(0))
 															mBase = m.M
-															v121 = m.ExcPending
-															if v121 != 0 {
+															v126 = m.ExcPending
+															if v126 != 0 {
 																return int32(0)
 															} else {
 																F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 																mBase = m.M
-																v125 = m.ExcPending
-																if v125 != 0 {
+																v130 = m.ExcPending
+																if v130 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																	mBase = m.M
-																	v130 = m.ExcPending
-																	if v130 != 0 {
+																	v135 = m.ExcPending
+																	if v135 != 0 {
 																		return int32(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
@@ -1082,35 +1085,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 													}
 												}
 											} else {
-												v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-												v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-												v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+												v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+												v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+												v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 												mBase = m.M
-												v117 = m.ExcPending
-												if v117 != 0 {
+												v122 = m.ExcPending
+												if v122 != 0 {
 													return int32(0)
 												} else {
-													if v116 != 0 {
-														v194 = int32(1)
-														m.G0 = v11 + int32(16)
-														return v194
+													if v121 != 0 {
+														v201 = int32(1)
+														m.G0 = v12 + int32(16)
+														return v201
 													} else {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v121 = m.ExcPending
-														if v121 != 0 {
+														v126 = m.ExcPending
+														if v126 != 0 {
 															return int32(0)
 														} else {
 															F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 															mBase = m.M
-															v125 = m.ExcPending
-															if v125 != 0 {
+															v130 = m.ExcPending
+															if v130 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																mBase = m.M
-																v130 = m.ExcPending
-																if v130 != 0 {
+																v135 = m.ExcPending
+																if v135 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -1126,55 +1129,55 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 									}
 								}
 							} else {
-								v59 = v54 - int32(1)
-								v60 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-								v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59+v60))))
-								if v62 != 0 {
-									v194 = int32(0)
-									m.G0 = v11 + int32(16)
-									return v194
+								v64 = v57 - int32(1)
+								v65 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+								v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64+v65))))
+								if v67 != 0 {
+									v201 = int32(0)
+									m.G0 = v12 + int32(16)
+									return v201
 								} else {
-									v64 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-									v68 = *(*int32)(unsafe.Add(mBase, uint32(v64+v59<<(uint(int32(2))%32))))
-									v69 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-									v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+48))
-									v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70)+119)))
-									if v71 == int32(102) {
-										v74 = int32(0)
-										*(*uint8)(unsafe.Add(mBase, uint32(v11)+15)) = uint8(v74)
-										v77 = F_GetFdwRoutineForRelation(m, v69, v74)
+									v69 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+									v73 = *(*int64)(unsafe.Add(mBase, uint32(v69+v64<<(uint(int32(3))%32))))
+									v74 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+									v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+48))
+									v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+119)))
+									if v76 == int32(102) {
+										v79 = int32(0)
+										*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)) = uint8(v79)
+										v82 = F_GetFdwRoutineForRelation(m, v74, v79)
 										mBase = m.M
-										v78 = m.ExcPending
-										if v78 != 0 {
+										v83 = m.ExcPending
+										if v83 != 0 {
 											return int32(0)
 										} else {
-											v79 = *(*int32)(unsafe.Add(mBase, uint32(v77)+108))
-											if v79 == int32(0) {
+											v84 = *(*int32)(unsafe.Add(mBase, uint32(v82)+108))
+											if v84 == int32(0) {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v215 = m.ExcPending
-												if v215 != 0 {
+												v223 = m.ExcPending
+												if v223 != 0 {
 													return int32(0)
 												} else {
 													F_errcode(m, int32(1088))
 													mBase = m.M
-													v218 = m.ExcPending
-													if v218 != 0 {
+													v226 = m.ExcPending
+													if v226 != 0 {
 														return int32(0)
 													} else {
-														v219 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-														v220 = *(*int32)(unsafe.Add(mBase, uint32(v219)+48))
-														*(*int32)(unsafe.Add(mBase, uint32(v11))) = v220 + int32(4)
-														F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v11)
+														v227 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+														v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+48))
+														*(*int32)(unsafe.Add(mBase, uint32(v12))) = v228 + int32(4)
+														F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v12)
 														mBase = m.M
-														v226 = m.ExcPending
-														if v226 != 0 {
+														v234 = m.ExcPending
+														if v234 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2870), int32(_a_F_EvalPlanQualFetchRowMark_2))
+															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2896), int32(_a_F_EvalPlanQualFetchRowMark_2))
 															mBase = m.M
-															v231 = m.ExcPending
-															if v231 != 0 {
+															v239 = m.ExcPending
+															if v239 != 0 {
 																return int32(0)
 															} else {
 																base.Wasm_trap_unreachable()
@@ -1185,62 +1188,32 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 													}
 												}
 											} else {
-												v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-												m.T0[v79].(func(*base.Module, int32, int32, int32, int32, int32))(m, v82, v20, v68, l2, v11+int32(15))
+												v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+												m.T0[v84].(func(*base.Module, int32, int32, int64, int32, int32))(m, v87, v21, v73, l2, v12+int32(15))
 												mBase = m.M
-												v86 = m.ExcPending
-												if v86 != 0 {
-													return int32(0)
-												} else {
-													if l2 != 0 {
-														v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
-														if v87&int32(2) == int32(0) {
-															v194 = int32(1)
-															m.G0 = v11 + int32(16)
-															return v194
-														} else {
-															F_errstart_cold(m, int32(21), int32(0))
-															mBase = m.M
-															v95 = m.ExcPending
-															if v95 != 0 {
-																return int32(0)
-															} else {
-																F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
-																mBase = m.M
-																v99 = m.ExcPending
-																if v99 != 0 {
-																	return int32(0)
-																} else {
-																	F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
-																	mBase = m.M
-																	v104 = m.ExcPending
-																	if v104 != 0 {
-																		return int32(0)
-																	} else {
-																		base.Wasm_trap_unreachable()
-																		for {
-																		}
-																	}
-																}
-															}
-														}
+												if l2 != 0 {
+													v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
+													if v91&int32(2) == int32(0) {
+														v201 = int32(1)
+														m.G0 = v12 + int32(16)
+														return v201
 													} else {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v95 = m.ExcPending
-														if v95 != 0 {
+														v99 = m.ExcPending
+														if v99 != 0 {
 															return int32(0)
 														} else {
 															F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 															mBase = m.M
-															v99 = m.ExcPending
-															if v99 != 0 {
+															v103 = m.ExcPending
+															if v103 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																mBase = m.M
-																v104 = m.ExcPending
-																if v104 != 0 {
+																v108 = m.ExcPending
+																if v108 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -1250,30 +1223,55 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 															}
 														}
 													}
+												} else {
+													F_errstart_cold(m, int32(21), int32(0))
+													mBase = m.M
+													v99 = m.ExcPending
+													if v99 != 0 {
+														return int32(0)
+													} else {
+														F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
+														mBase = m.M
+														v103 = m.ExcPending
+														if v103 != 0 {
+															return int32(0)
+														} else {
+															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
+															mBase = m.M
+															v108 = m.ExcPending
+															if v108 != 0 {
+																return int32(0)
+															} else {
+																base.Wasm_trap_unreachable()
+																for {
+																}
+															}
+														}
+													}
 												}
 											}
 										}
 									} else {
-										v106 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
-										if v106 != 0 {
-											v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
-											if v108&int32(1) == int32(0) {
+										v110 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
+										if v110 != 0 {
+											v112 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
+											if v112&int32(1) == int32(0) {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v235 = m.ExcPending
-												if v235 != 0 {
+												v243 = m.ExcPending
+												if v243 != 0 {
 													return int32(0)
 												} else {
 													F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_4), int32(0))
 													mBase = m.M
-													v239 = m.ExcPending
-													if v239 != 0 {
+													v247 = m.ExcPending
+													if v247 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1264), int32(_a_F_EvalPlanQualFetchRowMark_6))
+														F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1355), int32(_a_F_EvalPlanQualFetchRowMark_6))
 														mBase = m.M
-														v244 = m.ExcPending
-														if v244 != 0 {
+														v252 = m.ExcPending
+														if v252 != 0 {
 															return int32(0)
 														} else {
 															base.Wasm_trap_unreachable()
@@ -1283,35 +1281,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 													}
 												}
 											} else {
-												v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-												v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-												v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+												v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+												v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+												v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 												mBase = m.M
-												v117 = m.ExcPending
-												if v117 != 0 {
+												v122 = m.ExcPending
+												if v122 != 0 {
 													return int32(0)
 												} else {
-													if v116 != 0 {
-														v194 = int32(1)
-														m.G0 = v11 + int32(16)
-														return v194
+													if v121 != 0 {
+														v201 = int32(1)
+														m.G0 = v12 + int32(16)
+														return v201
 													} else {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v121 = m.ExcPending
-														if v121 != 0 {
+														v126 = m.ExcPending
+														if v126 != 0 {
 															return int32(0)
 														} else {
 															F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 															mBase = m.M
-															v125 = m.ExcPending
-															if v125 != 0 {
+															v130 = m.ExcPending
+															if v130 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+																F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 																mBase = m.M
-																v130 = m.ExcPending
-																if v130 != 0 {
+																v135 = m.ExcPending
+																if v135 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -1324,35 +1322,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 												}
 											}
 										} else {
-											v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-											v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-											v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+											v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+											v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+											v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 											mBase = m.M
-											v117 = m.ExcPending
-											if v117 != 0 {
+											v122 = m.ExcPending
+											if v122 != 0 {
 												return int32(0)
 											} else {
-												if v116 != 0 {
-													v194 = int32(1)
-													m.G0 = v11 + int32(16)
-													return v194
+												if v121 != 0 {
+													v201 = int32(1)
+													m.G0 = v12 + int32(16)
+													return v201
 												} else {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v121 = m.ExcPending
-													if v121 != 0 {
+													v126 = m.ExcPending
+													if v126 != 0 {
 														return int32(0)
 													} else {
 														F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 														mBase = m.M
-														v125 = m.ExcPending
-														if v125 != 0 {
+														v130 = m.ExcPending
+														if v130 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 															mBase = m.M
-															v130 = m.ExcPending
-															if v130 != 0 {
+															v135 = m.ExcPending
+															if v135 != 0 {
 																return int32(0)
 															} else {
 																base.Wasm_trap_unreachable()
@@ -1368,128 +1366,130 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 								}
 							}
 						} else {
-							v131 = int32(*(*int16)(unsafe.Add(mBase, uint32(v19)+8)))
-							if v51 < v131 {
-								F_slot_getsomeattrs_int(m, v50, v131)
+							v136 = int32(*(*int16)(unsafe.Add(mBase, uint32(v20)+8)))
+							if v54 < v136 {
+								v138 = *(*int32)(unsafe.Add(mBase, uint32(v53)+8))
+								v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+16))
+								m.T0[v139].(func(*base.Module, int32, int32))(m, v53, v136)
 								mBase = m.M
-								v134 = m.ExcPending
-								if v134 != 0 {
+								v141 = m.ExcPending
+								if v141 != 0 {
 									return int32(0)
 								} else {
-									v136 = v131 - int32(1)
-									v137 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-									v139 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v136+v137))))
-									if v139 != 0 {
-										v194 = int32(0)
-										m.G0 = v11 + int32(16)
-										return v194
+									v143 = v136 - int32(1)
+									v144 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+									v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v143+v144))))
+									if v146 != 0 {
+										v201 = int32(0)
+										m.G0 = v12 + int32(16)
+										return v201
 									} else {
-										v141 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-										v145 = *(*int32)(unsafe.Add(mBase, uint32(v141+v136<<(uint(int32(2))%32))))
-										v146 = m.G0
-										v148 = v146 - int32(32)
-										m.G0 = v148
-										*(*int64)(unsafe.Add(mBase, uint32(v148)+20)) = int64(0)
-										v152 = F_pg_detoast_datum(m, v145)
+										v148 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+										v152 = *(*int64)(unsafe.Add(mBase, uint32(v148+v143<<(uint(int32(3))%32))))
+										v153 = m.G0
+										v155 = v153 - int32(32)
+										m.G0 = v155
+										*(*int64)(unsafe.Add(mBase, uint32(v155)+20)) = int64(0)
+										v160 = F_pg_detoast_datum(m, base.I32_wrap_i64(v152))
 										mBase = m.M
-										v153 = m.ExcPending
-										if v153 != 0 {
+										v161 = m.ExcPending
+										if v161 != 0 {
 											return int32(0)
 										} else {
-											v154 = *(*int32)(unsafe.Add(mBase, uint32(v152)))
-											*(*int32)(unsafe.Add(mBase, uint32(v148)+12)) = int32(base.Ui32(v154) >> (uint(int32(2)) % 32))
-											v158 = *(*int32)(unsafe.Add(mBase, uint32(v152)+12))
-											*(*int32)(unsafe.Add(mBase, uint32(v148)+16)) = v158
-											v160 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152)+16)))
-											*(*uint16)(unsafe.Add(mBase, uint32(v148)+20)) = uint16(v160)
-											*(*int32)(unsafe.Add(mBase, uint32(v148)+28)) = v152
-											v163 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-											v164 = *(*int32)(unsafe.Add(mBase, uint32(v163)+12))
-											m.T0[v164].(func(*base.Module, int32))(m, l2)
+											v162 = *(*int32)(unsafe.Add(mBase, uint32(v160)))
+											*(*int32)(unsafe.Add(mBase, uint32(v155)+12)) = int32(base.Ui32(v162) >> (uint(int32(2)) % 32))
+											v166 = *(*int32)(unsafe.Add(mBase, uint32(v160)+12))
+											*(*int32)(unsafe.Add(mBase, uint32(v155)+16)) = v166
+											v168 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v160)+16)))
+											*(*uint16)(unsafe.Add(mBase, uint32(v155)+20)) = uint16(v168)
+											*(*int32)(unsafe.Add(mBase, uint32(v155)+28)) = v160
+											v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+											v172 = *(*int32)(unsafe.Add(mBase, uint32(v171)+12))
+											m.T0[v172].(func(*base.Module, int32))(m, l2)
 											mBase = m.M
-											v166 = m.ExcPending
-											if v166 != 0 {
+											v174 = m.ExcPending
+											if v174 != 0 {
 												return int32(0)
 											} else {
-												v169 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-												v170 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
-												v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-												F_heap_deform_tuple(m, v148+int32(12), v169, v170, v171)
+												v177 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+												v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
+												v179 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+												F_heap_deform_tuple(m, v155+int32(12), v177, v178, v179)
 												mBase = m.M
-												v173 = m.ExcPending
-												if v173 != 0 {
+												v181 = m.ExcPending
+												if v181 != 0 {
 													return int32(0)
 												} else {
-													v174 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
-													v176 = v174 & int32(_a_F_EvalPlanQualFetchRowMark_8)
-													*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v176)
-													v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-													v179 = *(*int32)(unsafe.Add(mBase, uint32(v178)))
-													*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v179)
-													m.G0 = v148 + int32(32)
-													v194 = int32(1)
-													m.G0 = v11 + int32(16)
-													return v194
+													v182 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
+													v184 = v182 & int32(_a_F_EvalPlanQualFetchRowMark_8)
+													*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v184)
+													v186 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+													v187 = *(*int32)(unsafe.Add(mBase, uint32(v186)))
+													*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v187)
+													m.G0 = v155 + int32(32)
+													v201 = int32(1)
+													m.G0 = v12 + int32(16)
+													return v201
 												}
 											}
 										}
 									}
 								}
 							} else {
-								v136 = v131 - int32(1)
-								v137 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-								v139 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v136+v137))))
-								if v139 != 0 {
-									v194 = int32(0)
-									m.G0 = v11 + int32(16)
-									return v194
+								v143 = v136 - int32(1)
+								v144 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+								v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v143+v144))))
+								if v146 != 0 {
+									v201 = int32(0)
+									m.G0 = v12 + int32(16)
+									return v201
 								} else {
-									v141 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-									v145 = *(*int32)(unsafe.Add(mBase, uint32(v141+v136<<(uint(int32(2))%32))))
-									v146 = m.G0
-									v148 = v146 - int32(32)
-									m.G0 = v148
-									*(*int64)(unsafe.Add(mBase, uint32(v148)+20)) = int64(0)
-									v152 = F_pg_detoast_datum(m, v145)
+									v148 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+									v152 = *(*int64)(unsafe.Add(mBase, uint32(v148+v143<<(uint(int32(3))%32))))
+									v153 = m.G0
+									v155 = v153 - int32(32)
+									m.G0 = v155
+									*(*int64)(unsafe.Add(mBase, uint32(v155)+20)) = int64(0)
+									v160 = F_pg_detoast_datum(m, base.I32_wrap_i64(v152))
 									mBase = m.M
-									v153 = m.ExcPending
-									if v153 != 0 {
+									v161 = m.ExcPending
+									if v161 != 0 {
 										return int32(0)
 									} else {
-										v154 = *(*int32)(unsafe.Add(mBase, uint32(v152)))
-										*(*int32)(unsafe.Add(mBase, uint32(v148)+12)) = int32(base.Ui32(v154) >> (uint(int32(2)) % 32))
-										v158 = *(*int32)(unsafe.Add(mBase, uint32(v152)+12))
-										*(*int32)(unsafe.Add(mBase, uint32(v148)+16)) = v158
-										v160 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152)+16)))
-										*(*uint16)(unsafe.Add(mBase, uint32(v148)+20)) = uint16(v160)
-										*(*int32)(unsafe.Add(mBase, uint32(v148)+28)) = v152
-										v163 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-										v164 = *(*int32)(unsafe.Add(mBase, uint32(v163)+12))
-										m.T0[v164].(func(*base.Module, int32))(m, l2)
+										v162 = *(*int32)(unsafe.Add(mBase, uint32(v160)))
+										*(*int32)(unsafe.Add(mBase, uint32(v155)+12)) = int32(base.Ui32(v162) >> (uint(int32(2)) % 32))
+										v166 = *(*int32)(unsafe.Add(mBase, uint32(v160)+12))
+										*(*int32)(unsafe.Add(mBase, uint32(v155)+16)) = v166
+										v168 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v160)+16)))
+										*(*uint16)(unsafe.Add(mBase, uint32(v155)+20)) = uint16(v168)
+										*(*int32)(unsafe.Add(mBase, uint32(v155)+28)) = v160
+										v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+										v172 = *(*int32)(unsafe.Add(mBase, uint32(v171)+12))
+										m.T0[v172].(func(*base.Module, int32))(m, l2)
 										mBase = m.M
-										v166 = m.ExcPending
-										if v166 != 0 {
+										v174 = m.ExcPending
+										if v174 != 0 {
 											return int32(0)
 										} else {
-											v169 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-											v170 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
-											v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-											F_heap_deform_tuple(m, v148+int32(12), v169, v170, v171)
+											v177 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+											v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
+											v179 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+											F_heap_deform_tuple(m, v155+int32(12), v177, v178, v179)
 											mBase = m.M
-											v173 = m.ExcPending
-											if v173 != 0 {
+											v181 = m.ExcPending
+											if v181 != 0 {
 												return int32(0)
 											} else {
-												v174 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
-												v176 = v174 & int32(_a_F_EvalPlanQualFetchRowMark_8)
-												*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v176)
-												v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-												v179 = *(*int32)(unsafe.Add(mBase, uint32(v178)))
-												*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v179)
-												m.G0 = v148 + int32(32)
-												v194 = int32(1)
-												m.G0 = v11 + int32(16)
-												return v194
+												v182 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
+												v184 = v182 & int32(_a_F_EvalPlanQualFetchRowMark_8)
+												*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v184)
+												v186 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+												v187 = *(*int32)(unsafe.Add(mBase, uint32(v186)))
+												*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v187)
+												m.G0 = v155 + int32(32)
+												v201 = int32(1)
+												m.G0 = v12 + int32(16)
+												return v201
 											}
 										}
 									}
@@ -1500,67 +1500,69 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 				}
 			}
 		} else {
-			v49 = v21
-			v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-			v51 = int32(*(*int16)(unsafe.Add(mBase, uint32(v50)+6)))
-			if v49 == int32(4) {
-				v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(v19)+4)))
-				if v51 < v54 {
-					F_slot_getsomeattrs_int(m, v50, v54)
+			v52 = v22
+			v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(v53)+6)))
+			if v52 == int32(4) {
+				v57 = int32(*(*int16)(unsafe.Add(mBase, uint32(v20)+4)))
+				if v54 < v57 {
+					v59 = *(*int32)(unsafe.Add(mBase, uint32(v53)+8))
+					v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+16))
+					m.T0[v60].(func(*base.Module, int32, int32))(m, v53, v57)
 					mBase = m.M
-					v57 = m.ExcPending
-					if v57 != 0 {
+					v62 = m.ExcPending
+					if v62 != 0 {
 						return int32(0)
 					} else {
-						v59 = v54 - int32(1)
-						v60 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-						v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59+v60))))
-						if v62 != 0 {
-							v194 = int32(0)
-							m.G0 = v11 + int32(16)
-							return v194
+						v64 = v57 - int32(1)
+						v65 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+						v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64+v65))))
+						if v67 != 0 {
+							v201 = int32(0)
+							m.G0 = v12 + int32(16)
+							return v201
 						} else {
-							v64 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-							v68 = *(*int32)(unsafe.Add(mBase, uint32(v64+v59<<(uint(int32(2))%32))))
-							v69 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-							v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+48))
-							v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70)+119)))
-							if v71 == int32(102) {
-								v74 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v11)+15)) = uint8(v74)
-								v77 = F_GetFdwRoutineForRelation(m, v69, v74)
+							v69 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+							v73 = *(*int64)(unsafe.Add(mBase, uint32(v69+v64<<(uint(int32(3))%32))))
+							v74 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+							v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+48))
+							v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+119)))
+							if v76 == int32(102) {
+								v79 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)) = uint8(v79)
+								v82 = F_GetFdwRoutineForRelation(m, v74, v79)
 								mBase = m.M
-								v78 = m.ExcPending
-								if v78 != 0 {
+								v83 = m.ExcPending
+								if v83 != 0 {
 									return int32(0)
 								} else {
-									v79 = *(*int32)(unsafe.Add(mBase, uint32(v77)+108))
-									if v79 == int32(0) {
+									v84 = *(*int32)(unsafe.Add(mBase, uint32(v82)+108))
+									if v84 == int32(0) {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v215 = m.ExcPending
-										if v215 != 0 {
+										v223 = m.ExcPending
+										if v223 != 0 {
 											return int32(0)
 										} else {
 											F_errcode(m, int32(1088))
 											mBase = m.M
-											v218 = m.ExcPending
-											if v218 != 0 {
+											v226 = m.ExcPending
+											if v226 != 0 {
 												return int32(0)
 											} else {
-												v219 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-												v220 = *(*int32)(unsafe.Add(mBase, uint32(v219)+48))
-												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v220 + int32(4)
-												F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v11)
+												v227 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+												v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+48))
+												*(*int32)(unsafe.Add(mBase, uint32(v12))) = v228 + int32(4)
+												F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v12)
 												mBase = m.M
-												v226 = m.ExcPending
-												if v226 != 0 {
+												v234 = m.ExcPending
+												if v234 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2870), int32(_a_F_EvalPlanQualFetchRowMark_2))
+													F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2896), int32(_a_F_EvalPlanQualFetchRowMark_2))
 													mBase = m.M
-													v231 = m.ExcPending
-													if v231 != 0 {
+													v239 = m.ExcPending
+													if v239 != 0 {
 														return int32(0)
 													} else {
 														base.Wasm_trap_unreachable()
@@ -1571,62 +1573,32 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 											}
 										}
 									} else {
-										v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-										m.T0[v79].(func(*base.Module, int32, int32, int32, int32, int32))(m, v82, v20, v68, l2, v11+int32(15))
+										v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+										m.T0[v84].(func(*base.Module, int32, int32, int64, int32, int32))(m, v87, v21, v73, l2, v12+int32(15))
 										mBase = m.M
-										v86 = m.ExcPending
-										if v86 != 0 {
-											return int32(0)
-										} else {
-											if l2 != 0 {
-												v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
-												if v87&int32(2) == int32(0) {
-													v194 = int32(1)
-													m.G0 = v11 + int32(16)
-													return v194
-												} else {
-													F_errstart_cold(m, int32(21), int32(0))
-													mBase = m.M
-													v95 = m.ExcPending
-													if v95 != 0 {
-														return int32(0)
-													} else {
-														F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
-														mBase = m.M
-														v99 = m.ExcPending
-														if v99 != 0 {
-															return int32(0)
-														} else {
-															F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
-															mBase = m.M
-															v104 = m.ExcPending
-															if v104 != 0 {
-																return int32(0)
-															} else {
-																base.Wasm_trap_unreachable()
-																for {
-																}
-															}
-														}
-													}
-												}
+										if l2 != 0 {
+											v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
+											if v91&int32(2) == int32(0) {
+												v201 = int32(1)
+												m.G0 = v12 + int32(16)
+												return v201
 											} else {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v95 = m.ExcPending
-												if v95 != 0 {
+												v99 = m.ExcPending
+												if v99 != 0 {
 													return int32(0)
 												} else {
 													F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 													mBase = m.M
-													v99 = m.ExcPending
-													if v99 != 0 {
+													v103 = m.ExcPending
+													if v103 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
+														F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
 														mBase = m.M
-														v104 = m.ExcPending
-														if v104 != 0 {
+														v108 = m.ExcPending
+														if v108 != 0 {
 															return int32(0)
 														} else {
 															base.Wasm_trap_unreachable()
@@ -1636,30 +1608,55 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 													}
 												}
 											}
+										} else {
+											F_errstart_cold(m, int32(21), int32(0))
+											mBase = m.M
+											v99 = m.ExcPending
+											if v99 != 0 {
+												return int32(0)
+											} else {
+												F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
+												mBase = m.M
+												v103 = m.ExcPending
+												if v103 != 0 {
+													return int32(0)
+												} else {
+													F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
+													mBase = m.M
+													v108 = m.ExcPending
+													if v108 != 0 {
+														return int32(0)
+													} else {
+														base.Wasm_trap_unreachable()
+														for {
+														}
+													}
+												}
+											}
 										}
 									}
 								}
 							} else {
-								v106 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
-								if v106 != 0 {
-									v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
-									if v108&int32(1) == int32(0) {
+								v110 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
+								if v110 != 0 {
+									v112 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
+									if v112&int32(1) == int32(0) {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v235 = m.ExcPending
-										if v235 != 0 {
+										v243 = m.ExcPending
+										if v243 != 0 {
 											return int32(0)
 										} else {
 											F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_4), int32(0))
 											mBase = m.M
-											v239 = m.ExcPending
-											if v239 != 0 {
+											v247 = m.ExcPending
+											if v247 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1264), int32(_a_F_EvalPlanQualFetchRowMark_6))
+												F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1355), int32(_a_F_EvalPlanQualFetchRowMark_6))
 												mBase = m.M
-												v244 = m.ExcPending
-												if v244 != 0 {
+												v252 = m.ExcPending
+												if v252 != 0 {
 													return int32(0)
 												} else {
 													base.Wasm_trap_unreachable()
@@ -1669,35 +1666,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 											}
 										}
 									} else {
-										v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-										v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-										v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+										v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+										v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+										v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 										mBase = m.M
-										v117 = m.ExcPending
-										if v117 != 0 {
+										v122 = m.ExcPending
+										if v122 != 0 {
 											return int32(0)
 										} else {
-											if v116 != 0 {
-												v194 = int32(1)
-												m.G0 = v11 + int32(16)
-												return v194
+											if v121 != 0 {
+												v201 = int32(1)
+												m.G0 = v12 + int32(16)
+												return v201
 											} else {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v121 = m.ExcPending
-												if v121 != 0 {
+												v126 = m.ExcPending
+												if v126 != 0 {
 													return int32(0)
 												} else {
 													F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 													mBase = m.M
-													v125 = m.ExcPending
-													if v125 != 0 {
+													v130 = m.ExcPending
+													if v130 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+														F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 														mBase = m.M
-														v130 = m.ExcPending
-														if v130 != 0 {
+														v135 = m.ExcPending
+														if v135 != 0 {
 															return int32(0)
 														} else {
 															base.Wasm_trap_unreachable()
@@ -1710,35 +1707,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 										}
 									}
 								} else {
-									v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-									v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-									v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+									v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+									v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+									v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 									mBase = m.M
-									v117 = m.ExcPending
-									if v117 != 0 {
+									v122 = m.ExcPending
+									if v122 != 0 {
 										return int32(0)
 									} else {
-										if v116 != 0 {
-											v194 = int32(1)
-											m.G0 = v11 + int32(16)
-											return v194
+										if v121 != 0 {
+											v201 = int32(1)
+											m.G0 = v12 + int32(16)
+											return v201
 										} else {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v121 = m.ExcPending
-											if v121 != 0 {
+											v126 = m.ExcPending
+											if v126 != 0 {
 												return int32(0)
 											} else {
 												F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 												mBase = m.M
-												v125 = m.ExcPending
-												if v125 != 0 {
+												v130 = m.ExcPending
+												if v130 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+													F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 													mBase = m.M
-													v130 = m.ExcPending
-													if v130 != 0 {
+													v135 = m.ExcPending
+													if v135 != 0 {
 														return int32(0)
 													} else {
 														base.Wasm_trap_unreachable()
@@ -1754,55 +1751,55 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 						}
 					}
 				} else {
-					v59 = v54 - int32(1)
-					v60 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-					v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59+v60))))
-					if v62 != 0 {
-						v194 = int32(0)
-						m.G0 = v11 + int32(16)
-						return v194
+					v64 = v57 - int32(1)
+					v65 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+					v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64+v65))))
+					if v67 != 0 {
+						v201 = int32(0)
+						m.G0 = v12 + int32(16)
+						return v201
 					} else {
-						v64 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-						v68 = *(*int32)(unsafe.Add(mBase, uint32(v64+v59<<(uint(int32(2))%32))))
-						v69 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-						v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+48))
-						v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70)+119)))
-						if v71 == int32(102) {
-							v74 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, uint32(v11)+15)) = uint8(v74)
-							v77 = F_GetFdwRoutineForRelation(m, v69, v74)
+						v69 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+						v73 = *(*int64)(unsafe.Add(mBase, uint32(v69+v64<<(uint(int32(3))%32))))
+						v74 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+						v75 = *(*int32)(unsafe.Add(mBase, uint32(v74)+48))
+						v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+119)))
+						if v76 == int32(102) {
+							v79 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)) = uint8(v79)
+							v82 = F_GetFdwRoutineForRelation(m, v74, v79)
 							mBase = m.M
-							v78 = m.ExcPending
-							if v78 != 0 {
+							v83 = m.ExcPending
+							if v83 != 0 {
 								return int32(0)
 							} else {
-								v79 = *(*int32)(unsafe.Add(mBase, uint32(v77)+108))
-								if v79 == int32(0) {
+								v84 = *(*int32)(unsafe.Add(mBase, uint32(v82)+108))
+								if v84 == int32(0) {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v215 = m.ExcPending
-									if v215 != 0 {
+									v223 = m.ExcPending
+									if v223 != 0 {
 										return int32(0)
 									} else {
 										F_errcode(m, int32(1088))
 										mBase = m.M
-										v218 = m.ExcPending
-										if v218 != 0 {
+										v226 = m.ExcPending
+										if v226 != 0 {
 											return int32(0)
 										} else {
-											v219 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-											v220 = *(*int32)(unsafe.Add(mBase, uint32(v219)+48))
-											*(*int32)(unsafe.Add(mBase, uint32(v11))) = v220 + int32(4)
-											F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v11)
+											v227 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+											v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+48))
+											*(*int32)(unsafe.Add(mBase, uint32(v12))) = v228 + int32(4)
+											F_errmsg(m, int32(_a_F_EvalPlanQualFetchRowMark_0), v12)
 											mBase = m.M
-											v226 = m.ExcPending
-											if v226 != 0 {
+											v234 = m.ExcPending
+											if v234 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2870), int32(_a_F_EvalPlanQualFetchRowMark_2))
+												F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2896), int32(_a_F_EvalPlanQualFetchRowMark_2))
 												mBase = m.M
-												v231 = m.ExcPending
-												if v231 != 0 {
+												v239 = m.ExcPending
+												if v239 != 0 {
 													return int32(0)
 												} else {
 													base.Wasm_trap_unreachable()
@@ -1813,62 +1810,32 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 										}
 									}
 								} else {
-									v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-									m.T0[v79].(func(*base.Module, int32, int32, int32, int32, int32))(m, v82, v20, v68, l2, v11+int32(15))
+									v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+									m.T0[v84].(func(*base.Module, int32, int32, int64, int32, int32))(m, v87, v21, v73, l2, v12+int32(15))
 									mBase = m.M
-									v86 = m.ExcPending
-									if v86 != 0 {
-										return int32(0)
-									} else {
-										if l2 != 0 {
-											v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
-											if v87&int32(2) == int32(0) {
-												v194 = int32(1)
-												m.G0 = v11 + int32(16)
-												return v194
-											} else {
-												F_errstart_cold(m, int32(21), int32(0))
-												mBase = m.M
-												v95 = m.ExcPending
-												if v95 != 0 {
-													return int32(0)
-												} else {
-													F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
-													mBase = m.M
-													v99 = m.ExcPending
-													if v99 != 0 {
-														return int32(0)
-													} else {
-														F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
-														mBase = m.M
-														v104 = m.ExcPending
-														if v104 != 0 {
-															return int32(0)
-														} else {
-															base.Wasm_trap_unreachable()
-															for {
-															}
-														}
-													}
-												}
-											}
+									if l2 != 0 {
+										v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
+										if v91&int32(2) == int32(0) {
+											v201 = int32(1)
+											m.G0 = v12 + int32(16)
+											return v201
 										} else {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
+											v99 = m.ExcPending
+											if v99 != 0 {
 												return int32(0)
 											} else {
 												F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 												mBase = m.M
-												v99 = m.ExcPending
-												if v99 != 0 {
+												v103 = m.ExcPending
+												if v103 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2878), int32(_a_F_EvalPlanQualFetchRowMark_2))
+													F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
 													mBase = m.M
-													v104 = m.ExcPending
-													if v104 != 0 {
+													v108 = m.ExcPending
+													if v108 != 0 {
 														return int32(0)
 													} else {
 														base.Wasm_trap_unreachable()
@@ -1878,30 +1845,55 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 												}
 											}
 										}
+									} else {
+										F_errstart_cold(m, int32(21), int32(0))
+										mBase = m.M
+										v99 = m.ExcPending
+										if v99 != 0 {
+											return int32(0)
+										} else {
+											F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
+											mBase = m.M
+											v103 = m.ExcPending
+											if v103 != 0 {
+												return int32(0)
+											} else {
+												F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2904), int32(_a_F_EvalPlanQualFetchRowMark_2))
+												mBase = m.M
+												v108 = m.ExcPending
+												if v108 != 0 {
+													return int32(0)
+												} else {
+													base.Wasm_trap_unreachable()
+													for {
+													}
+												}
+											}
+										}
 									}
 								}
 							}
 						} else {
-							v106 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
-							if v106 != 0 {
-								v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
-								if v108&int32(1) == int32(0) {
+							v110 = *(*int32)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[0]))
+							if v110 != 0 {
+								v112 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EvalPlanQualFetchRowMark[1])))
+								if v112&int32(1) == int32(0) {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v235 = m.ExcPending
-									if v235 != 0 {
+									v243 = m.ExcPending
+									if v243 != 0 {
 										return int32(0)
 									} else {
 										F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_4), int32(0))
 										mBase = m.M
-										v239 = m.ExcPending
-										if v239 != 0 {
+										v247 = m.ExcPending
+										if v247 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1264), int32(_a_F_EvalPlanQualFetchRowMark_6))
+											F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_5), int32(1355), int32(_a_F_EvalPlanQualFetchRowMark_6))
 											mBase = m.M
-											v244 = m.ExcPending
-											if v244 != 0 {
+											v252 = m.ExcPending
+											if v252 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -1911,35 +1903,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 										}
 									}
 								} else {
-									v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-									v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-									v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+									v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+									v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+									v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 									mBase = m.M
-									v117 = m.ExcPending
-									if v117 != 0 {
+									v122 = m.ExcPending
+									if v122 != 0 {
 										return int32(0)
 									} else {
-										if v116 != 0 {
-											v194 = int32(1)
-											m.G0 = v11 + int32(16)
-											return v194
+										if v121 != 0 {
+											v201 = int32(1)
+											m.G0 = v12 + int32(16)
+											return v201
 										} else {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v121 = m.ExcPending
-											if v121 != 0 {
+											v126 = m.ExcPending
+											if v126 != 0 {
 												return int32(0)
 											} else {
 												F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 												mBase = m.M
-												v125 = m.ExcPending
-												if v125 != 0 {
+												v130 = m.ExcPending
+												if v130 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+													F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 													mBase = m.M
-													v130 = m.ExcPending
-													if v130 != 0 {
+													v135 = m.ExcPending
+													if v135 != 0 {
 														return int32(0)
 													} else {
 														base.Wasm_trap_unreachable()
@@ -1952,35 +1944,35 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 									}
 								}
 							} else {
-								v114 = *(*int32)(unsafe.Add(mBase, uint32(v69)+188))
-								v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)+60))
-								v116 = m.T0[v115].(func(*base.Module, int32, int32, int32, int32) int32)(m, v69, v68, int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
+								v119 = *(*int32)(unsafe.Add(mBase, uint32(v74)+188))
+								v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+60))
+								v121 = m.T0[v120].(func(*base.Module, int32, int32, int32, int32) int32)(m, v74, base.I32_wrap_i64(v73), int32(_a_F_EvalPlanQualFetchRowMark_7), l2)
 								mBase = m.M
-								v117 = m.ExcPending
-								if v117 != 0 {
+								v122 = m.ExcPending
+								if v122 != 0 {
 									return int32(0)
 								} else {
-									if v116 != 0 {
-										v194 = int32(1)
-										m.G0 = v11 + int32(16)
-										return v194
+									if v121 != 0 {
+										v201 = int32(1)
+										m.G0 = v12 + int32(16)
+										return v201
 									} else {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v121 = m.ExcPending
-										if v121 != 0 {
+										v126 = m.ExcPending
+										if v126 != 0 {
 											return int32(0)
 										} else {
 											F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_3), int32(0))
 											mBase = m.M
-											v125 = m.ExcPending
-											if v125 != 0 {
+											v130 = m.ExcPending
+											if v130 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2893), int32(_a_F_EvalPlanQualFetchRowMark_2))
+												F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2919), int32(_a_F_EvalPlanQualFetchRowMark_2))
 												mBase = m.M
-												v130 = m.ExcPending
-												if v130 != 0 {
+												v135 = m.ExcPending
+												if v135 != 0 {
 													return int32(0)
 												} else {
 													base.Wasm_trap_unreachable()
@@ -1996,128 +1988,130 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 					}
 				}
 			} else {
-				v131 = int32(*(*int16)(unsafe.Add(mBase, uint32(v19)+8)))
-				if v51 < v131 {
-					F_slot_getsomeattrs_int(m, v50, v131)
+				v136 = int32(*(*int16)(unsafe.Add(mBase, uint32(v20)+8)))
+				if v54 < v136 {
+					v138 = *(*int32)(unsafe.Add(mBase, uint32(v53)+8))
+					v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+16))
+					m.T0[v139].(func(*base.Module, int32, int32))(m, v53, v136)
 					mBase = m.M
-					v134 = m.ExcPending
-					if v134 != 0 {
+					v141 = m.ExcPending
+					if v141 != 0 {
 						return int32(0)
 					} else {
-						v136 = v131 - int32(1)
-						v137 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-						v139 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v136+v137))))
-						if v139 != 0 {
-							v194 = int32(0)
-							m.G0 = v11 + int32(16)
-							return v194
+						v143 = v136 - int32(1)
+						v144 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+						v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v143+v144))))
+						if v146 != 0 {
+							v201 = int32(0)
+							m.G0 = v12 + int32(16)
+							return v201
 						} else {
-							v141 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-							v145 = *(*int32)(unsafe.Add(mBase, uint32(v141+v136<<(uint(int32(2))%32))))
-							v146 = m.G0
-							v148 = v146 - int32(32)
-							m.G0 = v148
-							*(*int64)(unsafe.Add(mBase, uint32(v148)+20)) = int64(0)
-							v152 = F_pg_detoast_datum(m, v145)
+							v148 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+							v152 = *(*int64)(unsafe.Add(mBase, uint32(v148+v143<<(uint(int32(3))%32))))
+							v153 = m.G0
+							v155 = v153 - int32(32)
+							m.G0 = v155
+							*(*int64)(unsafe.Add(mBase, uint32(v155)+20)) = int64(0)
+							v160 = F_pg_detoast_datum(m, base.I32_wrap_i64(v152))
 							mBase = m.M
-							v153 = m.ExcPending
-							if v153 != 0 {
+							v161 = m.ExcPending
+							if v161 != 0 {
 								return int32(0)
 							} else {
-								v154 = *(*int32)(unsafe.Add(mBase, uint32(v152)))
-								*(*int32)(unsafe.Add(mBase, uint32(v148)+12)) = int32(base.Ui32(v154) >> (uint(int32(2)) % 32))
-								v158 = *(*int32)(unsafe.Add(mBase, uint32(v152)+12))
-								*(*int32)(unsafe.Add(mBase, uint32(v148)+16)) = v158
-								v160 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152)+16)))
-								*(*uint16)(unsafe.Add(mBase, uint32(v148)+20)) = uint16(v160)
-								*(*int32)(unsafe.Add(mBase, uint32(v148)+28)) = v152
-								v163 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-								v164 = *(*int32)(unsafe.Add(mBase, uint32(v163)+12))
-								m.T0[v164].(func(*base.Module, int32))(m, l2)
+								v162 = *(*int32)(unsafe.Add(mBase, uint32(v160)))
+								*(*int32)(unsafe.Add(mBase, uint32(v155)+12)) = int32(base.Ui32(v162) >> (uint(int32(2)) % 32))
+								v166 = *(*int32)(unsafe.Add(mBase, uint32(v160)+12))
+								*(*int32)(unsafe.Add(mBase, uint32(v155)+16)) = v166
+								v168 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v160)+16)))
+								*(*uint16)(unsafe.Add(mBase, uint32(v155)+20)) = uint16(v168)
+								*(*int32)(unsafe.Add(mBase, uint32(v155)+28)) = v160
+								v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+								v172 = *(*int32)(unsafe.Add(mBase, uint32(v171)+12))
+								m.T0[v172].(func(*base.Module, int32))(m, l2)
 								mBase = m.M
-								v166 = m.ExcPending
-								if v166 != 0 {
+								v174 = m.ExcPending
+								if v174 != 0 {
 									return int32(0)
 								} else {
-									v169 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-									v170 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
-									v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-									F_heap_deform_tuple(m, v148+int32(12), v169, v170, v171)
+									v177 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+									v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
+									v179 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+									F_heap_deform_tuple(m, v155+int32(12), v177, v178, v179)
 									mBase = m.M
-									v173 = m.ExcPending
-									if v173 != 0 {
+									v181 = m.ExcPending
+									if v181 != 0 {
 										return int32(0)
 									} else {
-										v174 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
-										v176 = v174 & int32(_a_F_EvalPlanQualFetchRowMark_8)
-										*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v176)
-										v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-										v179 = *(*int32)(unsafe.Add(mBase, uint32(v178)))
-										*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v179)
-										m.G0 = v148 + int32(32)
-										v194 = int32(1)
-										m.G0 = v11 + int32(16)
-										return v194
+										v182 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
+										v184 = v182 & int32(_a_F_EvalPlanQualFetchRowMark_8)
+										*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v184)
+										v186 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+										v187 = *(*int32)(unsafe.Add(mBase, uint32(v186)))
+										*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v187)
+										m.G0 = v155 + int32(32)
+										v201 = int32(1)
+										m.G0 = v12 + int32(16)
+										return v201
 									}
 								}
 							}
 						}
 					}
 				} else {
-					v136 = v131 - int32(1)
-					v137 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-					v139 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v136+v137))))
-					if v139 != 0 {
-						v194 = int32(0)
-						m.G0 = v11 + int32(16)
-						return v194
+					v143 = v136 - int32(1)
+					v144 = *(*int32)(unsafe.Add(mBase, uint32(v53)+20))
+					v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v143+v144))))
+					if v146 != 0 {
+						v201 = int32(0)
+						m.G0 = v12 + int32(16)
+						return v201
 					} else {
-						v141 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
-						v145 = *(*int32)(unsafe.Add(mBase, uint32(v141+v136<<(uint(int32(2))%32))))
-						v146 = m.G0
-						v148 = v146 - int32(32)
-						m.G0 = v148
-						*(*int64)(unsafe.Add(mBase, uint32(v148)+20)) = int64(0)
-						v152 = F_pg_detoast_datum(m, v145)
+						v148 = *(*int32)(unsafe.Add(mBase, uint32(v53)+16))
+						v152 = *(*int64)(unsafe.Add(mBase, uint32(v148+v143<<(uint(int32(3))%32))))
+						v153 = m.G0
+						v155 = v153 - int32(32)
+						m.G0 = v155
+						*(*int64)(unsafe.Add(mBase, uint32(v155)+20)) = int64(0)
+						v160 = F_pg_detoast_datum(m, base.I32_wrap_i64(v152))
 						mBase = m.M
-						v153 = m.ExcPending
-						if v153 != 0 {
+						v161 = m.ExcPending
+						if v161 != 0 {
 							return int32(0)
 						} else {
-							v154 = *(*int32)(unsafe.Add(mBase, uint32(v152)))
-							*(*int32)(unsafe.Add(mBase, uint32(v148)+12)) = int32(base.Ui32(v154) >> (uint(int32(2)) % 32))
-							v158 = *(*int32)(unsafe.Add(mBase, uint32(v152)+12))
-							*(*int32)(unsafe.Add(mBase, uint32(v148)+16)) = v158
-							v160 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152)+16)))
-							*(*uint16)(unsafe.Add(mBase, uint32(v148)+20)) = uint16(v160)
-							*(*int32)(unsafe.Add(mBase, uint32(v148)+28)) = v152
-							v163 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-							v164 = *(*int32)(unsafe.Add(mBase, uint32(v163)+12))
-							m.T0[v164].(func(*base.Module, int32))(m, l2)
+							v162 = *(*int32)(unsafe.Add(mBase, uint32(v160)))
+							*(*int32)(unsafe.Add(mBase, uint32(v155)+12)) = int32(base.Ui32(v162) >> (uint(int32(2)) % 32))
+							v166 = *(*int32)(unsafe.Add(mBase, uint32(v160)+12))
+							*(*int32)(unsafe.Add(mBase, uint32(v155)+16)) = v166
+							v168 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v160)+16)))
+							*(*uint16)(unsafe.Add(mBase, uint32(v155)+20)) = uint16(v168)
+							*(*int32)(unsafe.Add(mBase, uint32(v155)+28)) = v160
+							v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+							v172 = *(*int32)(unsafe.Add(mBase, uint32(v171)+12))
+							m.T0[v172].(func(*base.Module, int32))(m, l2)
 							mBase = m.M
-							v166 = m.ExcPending
-							if v166 != 0 {
+							v174 = m.ExcPending
+							if v174 != 0 {
 								return int32(0)
 							} else {
-								v169 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-								v170 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
-								v171 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-								F_heap_deform_tuple(m, v148+int32(12), v169, v170, v171)
+								v177 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+								v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
+								v179 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+								F_heap_deform_tuple(m, v155+int32(12), v177, v178, v179)
 								mBase = m.M
-								v173 = m.ExcPending
-								if v173 != 0 {
+								v181 = m.ExcPending
+								if v181 != 0 {
 									return int32(0)
 								} else {
-									v174 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
-									v176 = v174 & int32(_a_F_EvalPlanQualFetchRowMark_8)
-									*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v176)
-									v178 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-									v179 = *(*int32)(unsafe.Add(mBase, uint32(v178)))
-									*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v179)
-									m.G0 = v148 + int32(32)
-									v194 = int32(1)
-									m.G0 = v11 + int32(16)
-									return v194
+									v182 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
+									v184 = v182 & int32(_a_F_EvalPlanQualFetchRowMark_8)
+									*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)) = uint16(v184)
+									v186 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+									v187 = *(*int32)(unsafe.Add(mBase, uint32(v186)))
+									*(*uint16)(unsafe.Add(mBase, uint32(l2)+6)) = uint16(v187)
+									m.G0 = v155 + int32(32)
+									v201 = int32(1)
+									m.G0 = v12 + int32(16)
+									return v201
 								}
 							}
 						}
@@ -2128,20 +2122,20 @@ func F_EvalPlanQualFetchRowMark(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v202 = m.ExcPending
-		if v202 != 0 {
+		v210 = m.ExcPending
+		if v210 != 0 {
 			return int32(0)
 		} else {
 			F_errmsg_internal(m, int32(_a_F_EvalPlanQualFetchRowMark_9), int32(0))
 			mBase = m.M
-			v206 = m.ExcPending
-			if v206 != 0 {
+			v214 = m.ExcPending
+			if v214 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2822), int32(_a_F_EvalPlanQualFetchRowMark_2))
+				F_errfinish(m, int32(_a_F_EvalPlanQualFetchRowMark_1), int32(2848), int32(_a_F_EvalPlanQualFetchRowMark_2))
 				mBase = m.M
-				v211 = m.ExcPending
-				if v211 != 0 {
+				v219 = m.ExcPending
+				if v219 != 0 {
 					return int32(0)
 				} else {
 					base.Wasm_trap_unreachable()
@@ -2313,13 +2307,13 @@ func F_get_qual_for_list(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v73
 	var v77 int32
 	_ = v77
-	var v78 int32
+	var v78 int64
 	_ = v78
 	var v79 int32
 	_ = v79
 	var v80 int32
 	_ = v80
-	var v81 int32
+	var v81 int64
 	_ = v81
 	var v82 int32
 	_ = v82
@@ -2629,7 +2623,7 @@ L22:
 	v72 = int32(*(*int16)(unsafe.Add(mBase, uint32(v71))))
 	v73 = *(*int32)(unsafe.Add(mBase, uint32(v43)+8))
 	v77 = *(*int32)(unsafe.Add(mBase, uint32(v73+v59<<(uint(int32(2))%32))))
-	v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)))
+	v78 = *(*int64)(unsafe.Add(mBase, uint32(v77)))
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(v14)+44))
 	v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79))))
 	v81 = F_datumCopy(m, v78, v80, v72)
@@ -2708,7 +2702,7 @@ L32:
 	;
 	v111 = *(*int32)(unsafe.Add(mBase, uint32(v93)+12))
 	v115 = *(*int32)(unsafe.Add(mBase, uint32(v111+v105<<(uint(int32(2))%32))))
-	v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v115)+24)))
+	v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v115)+32)))
 	if v116 != 0 {
 		goto L35
 	} else {

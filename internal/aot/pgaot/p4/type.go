@@ -66,82 +66,98 @@ func F_assign_record_type_typmod(m *base.Module, l0 int32) {
 	_ = v82
 	var v83 int32
 	_ = v83
+	var v86 int32
+	_ = v86
 	var v87 int32
 	_ = v87
-	var v90 int32
-	_ = v90
-	var v95 int32
-	_ = v95
+	var v89 int32
+	_ = v89
+	var v92 int32
+	_ = v92
+	var v97 int32
+	_ = v97
 	var v98 int32
 	_ = v98
 	var v99 int32
 	_ = v99
-	var v106 int32
-	_ = v106
-	var v107 int32
-	_ = v107
+	var v100 int32
+	_ = v100
+	var v101 int32
+	_ = v101
 	var v108 int32
 	_ = v108
 	var v109 int32
 	_ = v109
+	var v110 int32
+	_ = v110
 	var v111 int32
 	_ = v111
 	var v113 int32
 	_ = v113
-	var v119 int32
-	_ = v119
-	var v120 int32
-	_ = v120
+	var v115 int32
+	_ = v115
+	var v121 int32
+	_ = v121
 	var v122 int32
 	_ = v122
 	var v124 int32
 	_ = v124
-	var v127 int32
-	_ = v127
+	var v126 int32
+	_ = v126
 	var v129 int32
 	_ = v129
-	var v130 int32
-	_ = v130
-	var v136 int32
-	_ = v136
-	var v137 int32
-	_ = v137
-	var v141 int32
-	_ = v141
-	var v144 int32
-	_ = v144
-	var v149 int32
-	_ = v149
-	var v152 int32
-	_ = v152
+	var v131 int32
+	_ = v131
+	var v132 int32
+	_ = v132
+	var v138 int32
+	_ = v138
+	var v139 int32
+	_ = v139
+	var v142 int32
+	_ = v142
+	var v143 int32
+	_ = v143
+	var v145 int32
+	_ = v145
+	var v148 int32
+	_ = v148
 	var v153 int32
 	_ = v153
-	var v158 int32
-	_ = v158
-	var v159 int32
-	_ = v159
+	var v154 int32
+	_ = v154
+	var v155 int32
+	_ = v155
+	var v156 int32
+	_ = v156
+	var v157 int32
+	_ = v157
 	var v162 int32
 	_ = v162
 	var v163 int32
 	_ = v163
+	var v166 int32
+	_ = v166
 	var v167 int32
 	_ = v167
-	var v169 int64
-	_ = v169
-	var v171 int64
+	var v171 int32
 	_ = v171
-	var v173 int32
+	var v173 int64
 	_ = v173
-	var v179 int32
-	_ = v179
-	var v184 int32
-	_ = v184
-	var v185 int32
-	_ = v185
-	var v187 int32
-	_ = v187
+	var v175 int64
+	_ = v175
+	var v177 int32
+	_ = v177
+	var v183 int32
+	_ = v183
 	var v188 int32
 	_ = v188
+	var v189 int32
+	_ = v189
+	var v191 int32
+	_ = v191
+	var v192 int32
+	_ = v192
 	v8 = m.G0
 	v10 = v8 + int32(-64)
 	m.G0 = v10
@@ -155,7 +171,7 @@ func F_assign_record_type_typmod(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v42 = F_hash_search(m, v36, v8+int32(-4), int32(0), v8+int32(-52))
+	v42 = F_hash_search(m, v36, v8+int32(-4), int32(0), v8+int32(-56))
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -165,10 +181,10 @@ L1:
 	}
 L2:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(1605)
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = int32(1606)
-	*(*int64)(unsafe.Add(mBase, uint32(v10)+28)) = int64(17179869188)
-	v27 = F_hash_create(m, int32(_a_F_assign_record_type_typmod_3), int32(64), v8+int32(-52), int32(200))
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = int32(1819)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = int32(1820)
+	*(*int64)(unsafe.Add(mBase, uint32(v10)+16)) = int64(17179869188)
+	v27 = F_hash_create(m, int32(_a_F_assign_record_type_typmod_3), int64(64), v8+int32(-56), int32(200))
 	mBase = m.M
 	v28 = m.ExcPending
 	if v28 != 0 {
@@ -206,7 +222,7 @@ L6:
 	goto L1
 L7:
 	;
-	v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+12)))
+	v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+8)))
 	if v44 != int32(1) {
 		goto L9
 	} else {
@@ -247,23 +263,23 @@ L11:
 	goto L8
 L12:
 	;
-	v162 = *(*int32)(unsafe.Add(mBase, uint32(v158)+8))
-	v163 = int32(4)
-	*(*int32)(unsafe.Add(mBase, uint32(v159+v162<<(uint(v163)%32))+8)) = v158
-	v167 = int32(_a_F_assign_record_type_typmod_2)
-	v169 = *(*int64)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[6]))
-	v171 = v169 + int64(1)
-	*(*int64)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[6])) = v171
-	v173 = *(*int32)(unsafe.Add(mBase, uint32(v158)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v159+v173<<(uint(v163)%32)))) = v171
-	v179 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[0]))
-	v184 = F_hash_search(m, v179, v8+int32(-4), int32(1), int32(0))
+	v166 = *(*int32)(unsafe.Add(mBase, uint32(v162)+8))
+	v167 = int32(4)
+	*(*int32)(unsafe.Add(mBase, uint32(v163+v166<<(uint(v167)%32))+8)) = v162
+	v171 = int32(_a_F_assign_record_type_typmod_2)
+	v173 = *(*int64)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[6]))
+	v175 = v173 + int64(1)
+	*(*int64)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[6])) = v175
+	v177 = *(*int32)(unsafe.Add(mBase, uint32(v162)+8))
+	*(*int64)(unsafe.Add(mBase, uint32(v163+v177<<(uint(v167)%32)))) = v175
+	v183 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[0]))
+	v188 = F_hash_search(m, v183, v8+int32(-4), int32(1), int32(0))
 	mBase = m.M
-	v185 = m.ExcPending
-	if v185 != 0 {
+	v189 = m.ExcPending
+	if v189 != 0 {
 		goto L3
 	} else {
-		goto L40
+		goto L44
 	}
 L13:
 	;
@@ -286,12 +302,12 @@ L15:
 	goto L16
 L16:
 	;
-	v120 = *(*int32)(unsafe.Add(mBase, uint32(v61)+8))
-	v122 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4]))
-	if v122 != 0 {
-		goto L31
+	v122 = *(*int32)(unsafe.Add(mBase, uint32(v61)+8))
+	v124 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4]))
+	if v124 != 0 {
+		goto L33
 	} else {
-		goto L32
+		goto L34
 	}
 L17:
 	;
@@ -329,138 +345,178 @@ L21:
 	goto L17
 L22:
 	;
-	v87 = int32(1)
-	v90 = v66 + v87
-	if v66&v90 != 0 {
-		goto L25
+	v86 = F_mul_size(m, int32(16), v82)
+	mBase = m.M
+	v87 = m.ExcPending
+	if v87 != 0 {
+		goto L3
 	} else {
-		goto L26
+		goto L25
 	}
 L23:
 	;
 	goto L24
 L24:
 	;
-	v106 = *(*int32)(unsafe.Add(mBase, uint32(v10)+60))
-	v107 = F_CreateTupleDescCopy(m, v106)
+	v108 = *(*int32)(unsafe.Add(mBase, uint32(v10)+60))
+	v109 = F_CreateTupleDescCopy(m, v108)
 	mBase = m.M
-	v108 = m.ExcPending
-	if v108 != 0 {
+	v110 = m.ExcPending
+	if v110 != 0 {
 		goto L3
 	} else {
-		goto L29
+		goto L31
 	}
 L25:
 	;
-	v95 = v87 << (uint(int32(32)-base.I32_clz(v90)) % 32)
-	goto L27
+	v89 = int32(1)
+	v92 = v66 + v89
+	if v66&v92 != 0 {
+		goto L26
+	} else {
+		goto L27
+	}
 L26:
 	;
-	v95 = v90
-	goto L27
+	v97 = v89 << (uint(int32(32)-base.I32_clz(v92)) % 32)
+	goto L28
 L27:
 	;
-	v98 = F_repalloc0(m, v83, v82<<(uint(int32(4))%32), v95<<(uint(int32(4))%32))
+	v97 = v92
+	goto L28
+L28:
+	;
+	v98 = F_mul_size(m, int32(16), v97)
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
 		goto L3
 	} else {
-		goto L28
+		goto L29
 	}
-L28:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[5])) = v95
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4])) = v98
-	goto L24
 L29:
 	;
-	v109 = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v107)+12)) = v109
-	v111 = int32(_a_F_assign_record_type_typmod_1)
-	v113 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[3]))
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[3])) = v113 + v109
-	*(*int32)(unsafe.Add(mBase, uint32(v107)+8)) = v113
-	v119 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4]))
-	v158 = v107
-	v159 = v119
-	goto L12
-L30:
-	;
-	if v120 < v137 {
-		v158 = v61
-		v159 = v136
-		goto L12
-	} else {
-		goto L35
-	}
-L31:
-	;
-	v124 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[5]))
-	v136 = v122
-	v137 = v124
-	goto L30
-L32:
-	;
-	goto L33
-L33:
-	;
-	v127 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[2]))
-	v129 = F_MemoryContextAllocZero(m, v127, int32(1024))
+	v100 = F_repalloc0(m, v83, v86, v98)
 	mBase = m.M
-	v130 = m.ExcPending
-	if v130 != 0 {
+	v101 = m.ExcPending
+	if v101 != 0 {
 		goto L3
 	} else {
-		goto L34
+		goto L30
 	}
-L34:
+L30:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[5])) = int32(64)
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4])) = v129
-	v136 = v129
-	v137 = int32(64)
-	goto L30
-L35:
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[5])) = v97
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4])) = v100
+	goto L24
+L31:
 	;
-	v141 = int32(1)
-	v144 = v120 + v141
-	if v144&v120 != 0 {
-		goto L36
+	v111 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v109)+12)) = v111
+	v113 = int32(_a_F_assign_record_type_typmod_1)
+	v115 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[3]))
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[3])) = v115 + v111
+	*(*int32)(unsafe.Add(mBase, uint32(v109)+8)) = v115
+	v121 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4]))
+	v162 = v109
+	v163 = v121
+	goto L12
+L32:
+	;
+	if v122 < v139 {
+		v162 = v61
+		v163 = v138
+		goto L12
 	} else {
 		goto L37
 	}
-L36:
+L33:
 	;
-	v149 = v141 << (uint(int32(32)-base.I32_clz(v144)) % 32)
-	goto L38
-L37:
+	v126 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[5]))
+	v138 = v124
+	v139 = v126
+	goto L32
+L34:
 	;
-	v149 = v144
-	goto L38
-L38:
+	goto L35
+L35:
 	;
-	v152 = F_repalloc0(m, v136, v137<<(uint(int32(4))%32), v149<<(uint(int32(4))%32))
+	v129 = *(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[2]))
+	v131 = F_MemoryContextAllocZero(m, v129, int32(1024))
 	mBase = m.M
-	v153 = m.ExcPending
-	if v153 != 0 {
+	v132 = m.ExcPending
+	if v132 != 0 {
 		goto L3
 	} else {
+		goto L36
+	}
+L36:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[5])) = int32(64)
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4])) = v131
+	v138 = v131
+	v139 = int32(64)
+	goto L32
+L37:
+	;
+	v142 = F_mul_size(m, int32(16), v139)
+	mBase = m.M
+	v143 = m.ExcPending
+	if v143 != 0 {
+		goto L3
+	} else {
+		goto L38
+	}
+L38:
+	;
+	v145 = int32(1)
+	v148 = v122 + v145
+	if v148&v122 != 0 {
 		goto L39
+	} else {
+		goto L40
 	}
 L39:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[5])) = v149
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4])) = v152
-	v158 = v61
-	v159 = v152
-	goto L12
+	v153 = v145 << (uint(int32(32)-base.I32_clz(v148)) % 32)
+	goto L41
 L40:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v184))) = v158
-	v187 = *(*int32)(unsafe.Add(mBase, uint32(v10)+60))
-	v188 = *(*int32)(unsafe.Add(mBase, uint32(v158)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v187)+8)) = v188
+	v153 = v148
+	goto L41
+L41:
+	;
+	v154 = F_mul_size(m, int32(16), v153)
+	mBase = m.M
+	v155 = m.ExcPending
+	if v155 != 0 {
+		goto L3
+	} else {
+		goto L42
+	}
+L42:
+	;
+	v156 = F_repalloc0(m, v138, v142, v154)
+	mBase = m.M
+	v157 = m.ExcPending
+	if v157 != 0 {
+		goto L3
+	} else {
+		goto L43
+	}
+L43:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[5])) = v153
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[4])) = v156
+	v162 = v61
+	v163 = v156
+	goto L12
+L44:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v188))) = v162
+	v191 = *(*int32)(unsafe.Add(mBase, uint32(v10)+60))
+	v192 = *(*int32)(unsafe.Add(mBase, uint32(v162)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v191)+8)) = v192
 	*(*int32)(unsafe.Add(mBase, _c_F_assign_record_type_typmod[1])) = v55
 	goto L8
 }
@@ -469,7 +525,7 @@ func F_findTypeTypmodoutFunction(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v14 int32
 	_ = v14
-	v11 = Fn13879(m, l0, int32(_a_F_findTypeTypmodoutFunction_0), int32(2233), int32(_a_F_findTypeTypmodoutFunction_1), int32(_a_F_findTypeTypmodoutFunction_2), int32(2227), int32(2240), int32(_a_F_findTypeTypmodoutFunction_3), int32(2275), int32(23))
+	v11 = Fn14264(m, l0, int32(_a_F_findTypeTypmodoutFunction_0), int32(2277), int32(_a_F_findTypeTypmodoutFunction_1), int32(_a_F_findTypeTypmodoutFunction_2), int32(2271), int32(2284), int32(_a_F_findTypeTypmodoutFunction_3), int32(2275), int32(23))
 	v14 = m.ExcPending
 	if v14 != 0 {
 		return int32(0)
@@ -497,16 +553,14 @@ func F_get_type_category_preferred(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v6
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
 	var v12 int32
 	_ = v12
-	var v18 int32
-	_ = v18
-	var v22 int32
-	_ = v22
-	var v27 int32
-	_ = v27
+	var v13 int32
+	_ = v13
+	var v19 int32
+	_ = v19
+	var v23 int32
+	_ = v23
 	var v28 int32
 	_ = v28
 	var v29 int32
@@ -515,37 +569,39 @@ func F_get_type_category_preferred(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v30
 	var v31 int32
 	_ = v31
-	var v33 int32
-	_ = v33
-	var v36 int32
-	_ = v36
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = F_SearchSysCache1(m, int32(82), l0)
+	v12 = F_SearchSysCache1(m, int32(82), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v12 = m.ExcPending
-	if v12 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		return
 	} else {
-		if v11 == int32(0) {
+		if v12 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v18 = m.ExcPending
-			if v18 != 0 {
+			v19 = m.ExcPending
+			if v19 != 0 {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
 				F_errmsg_internal(m, int32(_a_F_get_type_category_preferred_0), v8)
 				mBase = m.M
-				v22 = m.ExcPending
-				if v22 != 0 {
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_get_type_category_preferred_1), int32(2857), int32(_a_F_get_type_category_preferred_2))
+					F_errfinish(m, int32(_a_F_get_type_category_preferred_1), int32(3031), int32(_a_F_get_type_category_preferred_2))
 					mBase = m.M
-					v27 = m.ExcPending
-					if v27 != 0 {
+					v28 = m.ExcPending
+					if v28 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()
@@ -555,17 +611,17 @@ func F_get_type_category_preferred(m *base.Module, l0 int32, l1 int32, l2 int32)
 				}
 			}
 		} else {
-			v28 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
-			v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+22)))
-			v30 = v28 + v29
-			v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+80)))
-			*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v31)
-			v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+81)))
-			*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v33)
-			F_ReleaseCatCache(m, v11)
+			v29 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
+			v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29)+22)))
+			v31 = v29 + v30
+			v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+80)))
+			*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v32)
+			v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+81)))
+			*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v34)
+			F_ReleaseCatCache(m, v12)
 			mBase = m.M
-			v36 = m.ExcPending
-			if v36 != 0 {
+			v37 = m.ExcPending
+			if v37 != 0 {
 				return
 			} else {
 				m.G0 = v8 + int32(16)
@@ -666,8 +722,8 @@ L4:
 	}
 L5:
 	;
-	v20 = v10 << (uint(int32(4)) % 32)
-	v22 = int32(20)
+	v20 = v10 << (uint(int32(3)) % 32)
+	v22 = int32(28)
 	v28 = int32(0)
 	goto L6
 L6:
@@ -746,7 +802,7 @@ func F_type_is_multirange(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14013(m, l0, int32(109))
+	v3 = Fn14396(m, l0, int32(109))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -763,112 +819,112 @@ func F_type_is_rowtype(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v10 int32
 	_ = v10
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v20 int32
-	_ = v20
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
 	var v21 int32
 	_ = v21
-	var v23 int32
-	_ = v23
-	var v25 int32
-	_ = v25
-	var v31 int32
-	_ = v31
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
 	var v32 int32
 	_ = v32
 	var v33 int32
 	_ = v33
-	var v34 int32
-	_ = v34
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
 	var v40 int32
 	_ = v40
 	var v42 int32
 	_ = v42
-	var v52 int32
-	_ = v52
+	var v44 int32
+	_ = v44
+	var v54 int32
+	_ = v54
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
 	v10 = int32(1)
 	if l0 == int32(2249) {
-		v52 = v10
+		v54 = v10
 		m.G0 = v8 + int32(16)
-		return v52
+		return v54
 	} else {
-		v14 = F_SearchSysCache1(m, int32(82), l0)
+		v15 = F_SearchSysCache1(m, int32(82), base.I64_extend_i32_u(l0))
 		mBase = m.M
-		v17 = m.ExcPending
-		if v17 != 0 {
+		v18 = m.ExcPending
+		if v18 != 0 {
 			return int32(0)
 		} else {
-			if v14 == int32(0) {
-				v52 = int32(0)
+			if v15 == int32(0) {
+				v54 = int32(0)
 				m.G0 = v8 + int32(16)
-				return v52
+				return v54
 			} else {
-				v20 = *(*int32)(unsafe.Add(mBase, uint32(v14)+16))
-				v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+22)))
-				v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20+v21)+79)))
-				F_ReleaseCatCache(m, v14)
+				v21 = *(*int32)(unsafe.Add(mBase, uint32(v15)+16))
+				v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21)+22)))
+				v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21+v22)+79)))
+				F_ReleaseCatCache(m, v15)
 				mBase = m.M
-				v25 = m.ExcPending
-				if v25 != 0 {
+				v26 = m.ExcPending
+				if v26 != 0 {
 					return int32(0)
 				} else {
-					switch v23 - int32(99) {
+					switch v24 - int32(99) {
 					case 0:
-						v52 = v10
+						v54 = v10
 						m.G0 = v8 + int32(16)
-						return v52
+						return v54
 					case 1:
-						v31 = F_getBaseTypeAndTypmod(m, l0, v8+int32(12))
+						v32 = F_getBaseTypeAndTypmod(m, l0, v8+int32(12))
 						mBase = m.M
-						v32 = m.ExcPending
-						if v32 != 0 {
+						v33 = m.ExcPending
+						if v33 != 0 {
 							return int32(0)
 						} else {
-							v33 = F_SearchSysCache1(m, int32(82), v31)
+							v35 = F_SearchSysCache1(m, int32(82), base.I64_extend_i32_u(v32))
 							mBase = m.M
-							v34 = m.ExcPending
-							if v34 != 0 {
+							v36 = m.ExcPending
+							if v36 != 0 {
 								return int32(0)
 							} else {
-								if v33 == int32(0) {
-									v52 = int32(0)
+								if v35 == int32(0) {
+									v54 = int32(0)
 									m.G0 = v8 + int32(16)
-									return v52
+									return v54
 								} else {
-									v37 = *(*int32)(unsafe.Add(mBase, uint32(v33)+16))
-									v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v37)+22)))
-									v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v37+v38)+79)))
-									F_ReleaseCatCache(m, v33)
+									v39 = *(*int32)(unsafe.Add(mBase, uint32(v35)+16))
+									v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39)+22)))
+									v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39+v40)+79)))
+									F_ReleaseCatCache(m, v35)
 									mBase = m.M
-									v42 = m.ExcPending
-									if v42 != 0 {
+									v44 = m.ExcPending
+									if v44 != 0 {
 										return int32(0)
 									} else {
-										if v40 == int32(99) {
-											v52 = v10
+										if v42 == int32(99) {
+											v54 = v10
 										} else {
-											v52 = int32(0)
+											v54 = int32(0)
 										}
 										m.G0 = v8 + int32(16)
-										return v52
+										return v54
 									}
 								}
 							}
 						}
 					default:
-						v52 = int32(0)
+						v54 = int32(0)
 						m.G0 = v8 + int32(16)
-						return v52
+						return v54
 					}
 				}
 			}

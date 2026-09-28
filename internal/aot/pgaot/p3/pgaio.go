@@ -109,11 +109,11 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 						v48 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_io_acquire_nb[0]))
 						*(*int32)(unsafe.Add(mBase, uint32(v48)+16)) = v43
 						if l0 != 0 {
-							v51 = l0 + int32(352)
-							v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+356))
+							v51 = l0 + int32(608)
+							v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+612))
 							if v52 == int32(0) {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+356)) = v51
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+352)) = v51
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+612)) = v51
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+608)) = v51
 							} else {
 							}
 							v58 = v32 + int32(12)
@@ -200,11 +200,11 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 					v48 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_io_acquire_nb[0]))
 					*(*int32)(unsafe.Add(mBase, uint32(v48)+16)) = v43
 					if l0 != 0 {
-						v51 = l0 + int32(352)
-						v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+356))
+						v51 = l0 + int32(608)
+						v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+612))
 						if v52 == int32(0) {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+356)) = v51
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+352)) = v51
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+612)) = v51
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+608)) = v51
 						} else {
 						}
 						v58 = v32 + int32(12)
@@ -302,95 +302,37 @@ func F_pgaio_sync_submit(m *base.Module, l0 int32, l1 int32) int32 {
 func F_pgaio_worker_shmem_init(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
-	var v19 int32
-	_ = v19
-	var v31 int32
-	_ = v31
-	var v32 int32
-	_ = v32
-	var v34 int32
-	_ = v34
-	var v40 int32
-	_ = v40
-	var v46 int32
-	_ = v46
-	var v48 int32
-	_ = v48
-	var v50 int32
-	_ = v50
-	var v56 int32
-	_ = v56
-	var v64 int32
-	_ = v64
-	var v72 int32
-	_ = v72
-	var v80 int32
-	_ = v80
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v16 = F_ShmemInitStruct(m, int32(_a_F_pgaio_worker_shmem_init_0), int32(272), v9+int32(15))
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
-		return
-	} else {
-		*(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_shmem_init[0])) = v16
-		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-		if v19 == int32(0) {
-			*(*int64)(unsafe.Add(mBase, uint32(v16)+8)) = int64(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(64)
-		} else {
-		}
-		v31 = F_ShmemInitStruct(m, int32(_a_F_pgaio_worker_shmem_init_1), int32(264), v9+int32(15))
-		mBase = m.M
-		v32 = m.ExcPending
-		if v32 != 0 {
-			return
-		} else {
-			*(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_shmem_init[1])) = v31
-			v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-			if v34 == int32(0) {
-				*(*int64)(unsafe.Add(mBase, uint32(v31))) = int64(0)
-				v40 = v31 + int32(8)
-				v46 = int32(0)
-				for {
-					v48 = v46 << (uint(int32(3)) % 32)
-					v50 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v40+v48))) = v50
-					*(*uint8)(unsafe.Add(mBase, uint32(v31+v48)+12)) = uint8(v50)
-					v56 = v48 | int32(8)
-					*(*int32)(unsafe.Add(mBase, uint32(v40+v56))) = v50
-					*(*uint8)(unsafe.Add(mBase, uint32(v31+v56)+12)) = uint8(v50)
-					v64 = v48 | int32(16)
-					*(*int32)(unsafe.Add(mBase, uint32(v40+v64))) = v50
-					*(*uint8)(unsafe.Add(mBase, uint32(v31+v64)+12)) = uint8(v50)
-					v72 = v48 | int32(24)
-					*(*int32)(unsafe.Add(mBase, uint32(v40+v72))) = v50
-					*(*uint8)(unsafe.Add(mBase, uint32(v31+v72)+12)) = uint8(v50)
-					v80 = v46 + int32(4)
-					if v80 != int32(32) {
-						v46 = v80
-						continue
-					} else {
-						break
-					}
-					break
-				}
-			} else {
-			}
-			m.G0 = v9 + int32(16)
-			return
-		}
-	}
+	var v8 int64
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	v2 = int32(_a_F_pgaio_worker_shmem_init_0)
+	v3 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_shmem_init[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v3))) = int32(64)
+	v7 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_shmem_init[0]))
+	v8 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v7)+4)) = v8
+	v10 = int32(_a_F_pgaio_worker_shmem_init_1)
+	v11 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_shmem_init[1]))
+	v12 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v12)
+	v15 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_shmem_init[1]))
+	*(*int64)(unsafe.Add(mBase, uint32(v15)+16)) = v8
+	*(*int64)(unsafe.Add(mBase, uint32(v15)+8)) = v8
+	base.MemoryFill(m, v15+int32(28), int32(255), int32(128))
+	return
 }
 func F_pgaio_wref_clear(m *base.Module, l0 int32) {
 	mBase := m.M

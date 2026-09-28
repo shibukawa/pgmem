@@ -198,173 +198,68 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v29
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
-	var v35 int32
-	_ = v35
-	var v39 int32
-	_ = v39
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
 	var v42 int32
 	_ = v42
-	var v46 int32
-	_ = v46
-	var v51 int32
-	_ = v51
-	var v52 int32
-	_ = v52
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
 	var v56 int32
 	_ = v56
-	var v57 int32
-	_ = v57
-	var v61 int32
-	_ = v61
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v68 int32
-	_ = v68
-	var v74 int32
-	_ = v74
-	var v75 int32
-	_ = v75
-	var v76 int32
-	_ = v76
 	if l0 == int32(0) {
 		return int32(0)
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		switch v8 - int32(58) {
-		case 0:
-			v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-			v33 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-			if v32 != v33 {
-				v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
-				mBase = m.M
-				v75 = m.ExcPending
-				if v75 != 0 {
-					return int32(0)
-				} else {
-					v76 = v74
-					return v76
-				}
-			} else {
-				v35 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-				if v35 != 0 {
-					v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
-					mBase = m.M
-					v75 = m.ExcPending
-					if v75 != 0 {
-						return int32(0)
-					} else {
-						v76 = v74
-						return v76
-					}
-				} else {
-					F_errstart_cold(m, int32(21), int32(0))
-					mBase = m.M
-					v39 = m.ExcPending
-					if v39 != 0 {
-						return int32(0)
-					} else {
-						F_errcode(m, int32(1088))
-						mBase = m.M
-						v42 = m.ExcPending
-						if v42 != 0 {
-							return int32(0)
-						} else {
-							F_errmsg(m, int32(_a_F_replace_rte_variables_mutator_0), int32(0))
-							mBase = m.M
-							v46 = m.ExcPending
-							if v46 != 0 {
-								return int32(0)
-							} else {
-								F_errfinish(m, int32(_a_F_replace_rte_variables_mutator_1), int32(1520), int32(_a_F_replace_rte_variables_mutator_2))
-								mBase = m.M
-								v51 = m.ExcPending
-								if v51 != 0 {
-									return int32(0)
-								} else {
-									base.Wasm_trap_unreachable()
-									for {
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		case 1, 2, 3, 4, 5, 6, 7, 8:
-			v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
-			mBase = m.M
-			v75 = m.ExcPending
-			if v75 != 0 {
-				return int32(0)
-			} else {
-				v76 = v74
-				return v76
-			}
-		case 9:
-			v52 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v52 + int32(1)
-			v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
-			v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+39)))
-			*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)) = uint8(v57)
-			v61 = F_query_tree_mutator_impl(m, l0, int32(1054), l1, int32(0))
-			mBase = m.M
-			v62 = m.ExcPending
-			if v62 != 0 {
-				return int32(0)
-			} else {
-				v63 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+39)))
-				v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
-				v65 = v63 | v64
-				*(*uint8)(unsafe.Add(mBase, uint32(v61)+39)) = uint8(v65)
-				*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)) = uint8(v56)
-				v68 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-				*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v68 - int32(1)
-				return v61
-			}
-		default:
+		if v8 != int32(67) {
 			if v8 != int32(6) {
-				v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+				v54 = F_expression_tree_mutator_impl(m, l0, int32(1132), l1)
 				mBase = m.M
-				v75 = m.ExcPending
-				if v75 != 0 {
+				v55 = m.ExcPending
+				if v55 != 0 {
 					return int32(0)
 				} else {
-					v76 = v74
-					return v76
+					v56 = v54
+					return v56
 				}
 			} else {
 				v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 				if v13 != v14 {
-					v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+					v54 = F_expression_tree_mutator_impl(m, l0, int32(1132), l1)
 					mBase = m.M
-					v75 = m.ExcPending
-					if v75 != 0 {
+					v55 = m.ExcPending
+					if v55 != 0 {
 						return int32(0)
 					} else {
-						v76 = v74
-						return v76
+						v56 = v54
+						return v56
 					}
 				} else {
 					v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 					v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					if v16 != v17 {
-						v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+						v54 = F_expression_tree_mutator_impl(m, l0, int32(1132), l1)
 						mBase = m.M
-						v75 = m.ExcPending
-						if v75 != 0 {
+						v55 = m.ExcPending
+						if v55 != 0 {
 							return int32(0)
 						} else {
-							v76 = v74
-							return v76
+							v56 = v54
+							return v56
 						}
 					} else {
 						v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
@@ -376,10 +271,10 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 						} else {
 							v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
 							if v24 != 0 {
-								v76 = v20
-								return v76
+								v56 = v20
+								return v56
 							} else {
-								v28 = F_query_or_expression_tree_walker_impl(m, v20, int32(1047), int32(0), int32(3))
+								v28 = F_query_or_expression_tree_walker_impl(m, v20, int32(1125), int32(0), int32(3))
 								mBase = m.M
 								v29 = m.ExcPending
 								if v29 != 0 {
@@ -392,6 +287,27 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				}
+			}
+		} else {
+			v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v32 + int32(1)
+			v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
+			v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+39)))
+			*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)) = uint8(v37)
+			v41 = F_query_tree_mutator_impl(m, l0, int32(1132), l1, int32(0))
+			mBase = m.M
+			v42 = m.ExcPending
+			if v42 != 0 {
+				return int32(0)
+			} else {
+				v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+39)))
+				v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
+				v45 = v43 | v44
+				*(*uint8)(unsafe.Add(mBase, uint32(v41)+39)) = uint8(v45)
+				*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)) = uint8(v36)
+				v48 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+				*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v48 - int32(1)
+				return v41
 			}
 		}
 	}

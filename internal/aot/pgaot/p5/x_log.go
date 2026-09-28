@@ -2,6 +2,7 @@ package p5
 
 import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -32,10 +33,8 @@ func F_XLogCheckBufferNeedsBackup(m *base.Module, l0 int32) int32 {
 	_ = v40
 	var v41 int64
 	_ = v41
-	var v42 int64
-	_ = v42
-	var v48 int32
-	_ = v48
+	var v46 int32
+	_ = v46
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
@@ -55,18 +54,17 @@ func F_XLogCheckBufferNeedsBackup(m *base.Module, l0 int32) int32 {
 	v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+7)))
 	if v37 == v36 {
 		v40 = *(*int64)(unsafe.Add(mBase, uint32(v6)+8))
-		v41 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v35)+4)))
-		v42 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v35))))
-		if base.Ui64(v41|v42<<(uint(int64(32))%64)) <= base.Ui64(v40) {
-			v48 = v36
+		v41 = *(*int64)(unsafe.Add(mBase, uint32(v35)))
+		if base.Ui64(base.I64_rotl(v41, int64(32))) <= base.Ui64(v40) {
+			v46 = v36
 		} else {
-			v48 = int32(0)
+			v46 = int32(0)
 		}
 	} else {
-		v48 = int32(0)
+		v46 = int32(0)
 	}
 	m.G0 = v6 + int32(16)
-	return v48
+	return v46
 }
 func F_XLogCheckpointNeeded(m *base.Module, l0 int64) int32 {
 	mBase := m.M
@@ -197,7 +195,7 @@ func F_XLogRecGetBlockTag(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			if v41 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_XLogRecGetBlockTag_1), int32(2000), int32(_a_F_XLogRecGetBlockTag_2))
+				F_errfinish(m, int32(_a_F_XLogRecGetBlockTag_1), int32(2021), int32(_a_F_XLogRecGetBlockTag_2))
 				mBase = m.M
 				v46 = m.ExcPending
 				if v46 != 0 {
@@ -226,7 +224,7 @@ func F_XLogRecGetBlockTag(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				if v41 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_XLogRecGetBlockTag_1), int32(2000), int32(_a_F_XLogRecGetBlockTag_2))
+					F_errfinish(m, int32(_a_F_XLogRecGetBlockTag_1), int32(2021), int32(_a_F_XLogRecGetBlockTag_2))
 					mBase = m.M
 					v46 = m.ExcPending
 					if v46 != 0 {
@@ -261,6 +259,39 @@ func F_XLogRecGetBlockTag(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			return
 		}
 	}
+}
+func F_XLogRecoveryShmemInit(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v11 int32
+	_ = v11
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	v3 = *(*int32)(unsafe.Add(mBase, _c_F_XLogRecoveryShmemInit[0]))
+	v4 = int32(0)
+	base.MemoryFill(m, v3, v4, int32(104))
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v3)+96)), uint32(v4))
+	v11 = v3 + int32(4)
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v4
+	*(*int64)(unsafe.Add(mBase, uint32(v11))) = int64(0)
+	v16 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11)+8)) = uint8(v16)
+	v19 = *(*int32)(unsafe.Add(mBase, _c_F_XLogRecoveryShmemInit[0]))
+	v21 = v19 + int32(84)
+	v22 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v21))), uint32(v22))
+	*(*int64)(unsafe.Add(mBase, uint32(v21)+4)) = int64(-1)
+	return
 }
 func F_XLogRegisterData(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
@@ -325,7 +356,7 @@ func F_XLogRegisterData(m *base.Module, l0 int32, l1 int32) {
 				if v30 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_XLogRegisterData_2), int32(374), int32(_a_F_XLogRegisterData_3))
+					F_errfinish(m, int32(_a_F_XLogRegisterData_2), int32(382), int32(_a_F_XLogRegisterData_3))
 					mBase = m.M
 					v35 = m.ExcPending
 					if v35 != 0 {
@@ -454,7 +485,7 @@ func F_XLogWalRcvClose(m *base.Module, l0 int32) {
 					}
 				}
 			} else {
-				F_errstart_cold(m, int32(23), int32(0))
+				F_errstart_cold(m, int32(24), int32(0))
 				mBase = m.M
 				v59 = m.ExcPending
 				if v59 != 0 {
@@ -473,7 +504,7 @@ func F_XLogWalRcvClose(m *base.Module, l0 int32) {
 						if v67 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_XLogWalRcvClose_2), int32(1064), int32(_a_F_XLogWalRcvClose_3))
+							F_errfinish(m, int32(_a_F_XLogWalRcvClose_2), int32(1178), int32(_a_F_XLogWalRcvClose_3))
 							mBase = m.M
 							v72 = m.ExcPending
 							if v72 != 0 {

@@ -740,7 +740,7 @@ L35:
 	}
 L36:
 	;
-	F_errfinish(m, int32(_a_F_select_common_type_from_oids_1), int32(1536), int32(_a_F_select_common_type_from_oids_2))
+	F_errfinish(m, int32(_a_F_select_common_type_from_oids_1), int32(1540), int32(_a_F_select_common_type_from_oids_2))
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {

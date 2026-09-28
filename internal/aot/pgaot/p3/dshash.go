@@ -5,6 +5,108 @@ import (
 	"unsafe"
 )
 
+func F_dshash_delete_current(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v17 int32
+	_ = v17
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+36))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v6)+40))
+	v17 = v7 + int32(base.Ui32(v9)>>(uint(int32(32)-v11)%32))<<(uint(int32(2))%32)
+	goto L2
+L1:
+	;
+	return
+L2:
+	;
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+	if v22 == int32(0) {
+		goto L1
+	} else {
+		goto L4
+	}
+L3:
+	;
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+	F_dsa_free(m, v30, v31)
+	mBase = m.M
+	v33 = m.ExcPending
+	if v33 != 0 {
+		goto L5
+	} else {
+		goto L8
+	}
+L4:
+	;
+	v25 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	v26 = F_dsa_get_address(m, v25, v22)
+	mBase = m.M
+	v27 = m.ExcPending
+	if v27 != 0 {
+		goto L5
+	} else {
+		goto L6
+	}
+L5:
+	;
+	return
+L6:
+	;
+	if v26 != v8 {
+		v17 = v26
+		goto L2
+	} else {
+		goto L7
+	}
+L7:
+	;
+	goto L3
+L8:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v29
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v6)+32))
+	v40 = v35 + int32(base.Ui32(v9)>>(uint(int32(25))%32))*int32(20)
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v40)+24))
+	*(*int32)(unsafe.Add(mBase, uint32(v40)+24)) = v41 - int32(1)
+	goto L1
+}
 func F_dshash_find(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase

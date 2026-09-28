@@ -70,20 +70,20 @@ func F_GetDatabasePath(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	}
 }
-func F_has_database_privilege_id_id(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_has_database_privilege_id_id(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13916(m, l0, int32(_a_F_has_database_privilege_id_id_0), int32(1262))
+	v4 = Fn14303(m, l0, int32(_a_F_has_database_privilege_id_id_0), int32(1262))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}
 }
-func F_has_database_privilege_id_name(m *base.Module, l0 int32) int32 {
+func F_has_database_privilege_id_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -116,46 +116,46 @@ func F_has_database_privilege_id_name(m *base.Module, l0 int32) int32 {
 	_ = v22
 	var v23 int32
 	_ = v23
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v11 = F_pg_detoast_datum_packed(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v14 = F_text_to_cstring(m, v6)
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v17 = F_get_database_oid(m, v14, int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v20 = F_convert_any_priv_string(m, v11, int32(_a_F_has_database_privilege_id_name_0))
 					mBase = m.M
 					v21 = m.ExcPending
 					if v21 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v22 = F_object_aclcheck(m, int32(1262), v17, v4, v20)
 						mBase = m.M
 						v23 = m.ExcPending
 						if v23 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return base.B2i32(v22 == int32(0))
+							return base.I64_extend_i32_u(base.B2i32(v22 == int32(0)))
 						}
 					}
 				}
@@ -163,7 +163,7 @@ func F_has_database_privilege_id_name(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_database_privilege_name_name(m *base.Module, l0 int32) int32 {
+func F_has_database_privilege_name_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -200,52 +200,52 @@ func F_has_database_privilege_name_name(m *base.Module, l0 int32) int32 {
 	_ = v24
 	var v25 int32
 	_ = v25
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v11 = F_pg_detoast_datum_packed(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = F_get_role_oid_or_public(m, v4)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v16 = F_text_to_cstring(m, v6)
 				mBase = m.M
 				v17 = m.ExcPending
 				if v17 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v19 = F_get_database_oid(m, v16, int32(0))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v22 = F_convert_any_priv_string(m, v11, int32(_a_F_has_database_privilege_name_name_0))
 						mBase = m.M
 						v23 = m.ExcPending
 						if v23 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v24 = F_object_aclcheck(m, int32(1262), v19, v13, v22)
 							mBase = m.M
 							v25 = m.ExcPending
 							if v25 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								return base.B2i32(v24 == int32(0))
+								return base.I64_extend_i32_u(base.B2i32(v24 == int32(0)))
 							}
 						}
 					}
@@ -499,9 +499,9 @@ L3:
 	v33 = int32(_a_F_rebuild_database_list_4)
 	v34 = *(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1]))
 	*(*int32)(unsafe.Add(mBase, _c_F_rebuild_database_list[1])) = v31
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+68)) = v31
-	*(*int64)(unsafe.Add(mBase, uint32(v16)+44)) = int64(137438953476)
-	v45 = F_hash_create(m, int32(_a_F_rebuild_database_list_5), int32(20), v16+int32(28), int32(1064))
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v31
+	*(*int64)(unsafe.Add(mBase, uint32(v16)+32)) = int64(137438953476)
+	v45 = F_hash_create(m, int32(_a_F_rebuild_database_list_5), int64(20), v16+int32(24), int32(1064))
 	mBase = m.M
 	v46 = m.ExcPending
 	if v46 != 0 {
@@ -615,7 +615,7 @@ L16:
 	}
 L17:
 	;
-	v95 = F_hash_search(m, v45, v86, int32(1), v16+int32(8))
+	v95 = F_hash_search(m, v45, v86, int32(1), v16+int32(4))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -625,7 +625,7 @@ L17:
 	}
 L18:
 	;
-	v97 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+8)))
+	v97 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+4)))
 	if v97 != 0 {
 		v101 = v73
 		goto L15
@@ -711,7 +711,7 @@ L28:
 	}
 L29:
 	;
-	v152 = F_hash_search(m, v45, v143, int32(1), v16+int32(8))
+	v152 = F_hash_search(m, v45, v143, int32(1), v16+int32(4))
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {
@@ -721,7 +721,7 @@ L29:
 	}
 L30:
 	;
-	v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+8)))
+	v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+4)))
 	if v154 != 0 {
 		v158 = v127
 		goto L27
@@ -756,7 +756,7 @@ L34:
 	}
 L35:
 	;
-	v191 = v16 + int32(8)
+	v191 = v16 + int32(4)
 	F_hash_seq_init(m, v191, v45)
 	mBase = m.M
 	v193 = m.ExcPending
@@ -792,7 +792,7 @@ L39:
 	goto L40
 L40:
 	;
-	F_pg_qsort(m, v188, v164, int32(32), int32(920))
+	F_pg_qsort(m, v188, v164, int32(32), int32(971))
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {
@@ -811,7 +811,7 @@ L41:
 	*(*int64)(unsafe.Add(mBase, uint32(v212)+8)) = v217
 	v219 = *(*int64)(unsafe.Add(mBase, uint32(v197)))
 	*(*int64)(unsafe.Add(mBase, uint32(v212))) = v219
-	v225 = F_hash_seq_search(m, v16+int32(8))
+	v225 = F_hash_seq_search(m, v16+int32(4))
 	mBase = m.M
 	v226 = m.ExcPending
 	if v226 != 0 {

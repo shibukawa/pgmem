@@ -24,54 +24,80 @@ func F_AddEventToPendingNotifies(m *base.Module, l0 int32) {
 	_ = v20
 	var v28 int32
 	_ = v28
+	var v33 int32
+	_ = v33
 	var v35 int32
 	_ = v35
 	var v36 int32
 	_ = v36
 	var v38 int32
 	_ = v38
-	var v40 int32
-	_ = v40
-	var v41 int32
-	_ = v41
+	var v43 int32
+	_ = v43
 	var v48 int32
 	_ = v48
 	var v49 int32
 	_ = v49
+	var v51 int32
+	_ = v51
 	var v53 int32
 	_ = v53
-	var v56 int32
-	_ = v56
-	var v57 int32
-	_ = v57
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
+	var v54 int32
+	_ = v54
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
 	var v66 int32
 	_ = v66
-	var v67 int32
-	_ = v67
-	var v75 int32
-	_ = v75
-	var v81 int32
-	_ = v81
-	var v82 int32
-	_ = v82
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	var v80 int32
+	_ = v80
+	var v85 int32
+	_ = v85
+	var v86 int32
+	_ = v86
 	var v88 int32
 	_ = v88
 	var v89 int32
 	_ = v89
-	var v90 int32
-	_ = v90
-	var v92 int32
-	_ = v92
-	var v94 int32
-	_ = v94
-	var v100 int32
-	_ = v100
-	var v101 int32
-	_ = v101
+	var v97 int32
+	_ = v97
+	var v103 int32
+	_ = v103
+	var v104 int32
+	_ = v104
+	var v110 int32
+	_ = v110
+	var v111 int32
+	_ = v111
+	var v112 int32
+	_ = v112
+	var v114 int32
+	_ = v114
+	var v116 int32
+	_ = v116
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v125 int32
+	_ = v125
+	var v126 int32
+	_ = v126
+	var v131 int32
+	_ = v131
+	var v132 int32
+	_ = v132
 	v2 = int32(0)
 	v6 = m.G0
 	v8 = v6 + int32(-64)
@@ -80,26 +106,26 @@ func F_AddEventToPendingNotifies(m *base.Module, l0 int32) {
 	v13 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
 	if v14 == v2 {
-		v88 = v2
+		v110 = v2
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	v89 = F_lappend(m, v88, l0)
+	v111 = F_lappend(m, v110, l0)
 	mBase = m.M
-	v90 = m.ExcPending
-	if v90 != 0 {
+	v112 = m.ExcPending
+	if v112 != 0 {
 		goto L5
 	} else {
-		goto L17
+		goto L19
 	}
 L2:
 	;
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
 	if v17 < int32(16) {
-		v88 = v14
+		v110 = v14
 		goto L1
 	} else {
 		goto L3
@@ -108,19 +134,20 @@ L3:
 	;
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
 	if v20 != 0 {
-		v88 = v14
+		v110 = v14
 		goto L1
 	} else {
 		goto L4
 	}
 L4:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = int32(512)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = int32(513)
-	*(*int64)(unsafe.Add(mBase, uint32(v8)+28)) = int64(17179869188)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(547)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(548)
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = int64(17179869188)
 	v28 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = v28
-	v35 = F_hash_create(m, int32(_a_F_AddEventToPendingNotifies_0), int32(256), v6+int32(-52), int32(1224))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+44)) = v28
+	v33 = v6 + int32(-56)
+	v35 = F_hash_create(m, int32(_a_F_AddEventToPendingNotifies_0), int64(256), v33, int32(1224))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -135,102 +162,141 @@ L6:
 	;
 	v38 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
 	*(*int32)(unsafe.Add(mBase, uint32(v38)+8)) = v35
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v38)+4))
-	if v40 != 0 {
-		goto L7
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = int64(274877907008)
+	v43 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[1]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+44)) = v43
+	v48 = F_hash_create(m, int32(_a_F_AddEventToPendingNotifies_1), int64(64), v33, int32(1048))
+	mBase = m.M
+	v49 = m.ExcPending
+	if v49 != 0 {
+		goto L5
 	} else {
-		goto L8
+		goto L7
 	}
 L7:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(v40)+4))
-	if int32(0) < v41 {
-		goto L10
+	v51 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v51)+16)) = v48
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(v51)+4))
+	if v53 != 0 {
+		goto L8
 	} else {
-		goto L11
+		goto L9
 	}
 L8:
 	;
-	v81 = v38
-	goto L9
+	v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+4))
+	if int32(0) < v54 {
+		goto L11
+	} else {
+		goto L12
+	}
 L9:
 	;
-	v82 = *(*int32)(unsafe.Add(mBase, uint32(v81)+4))
-	v88 = v82
-	goto L1
+	v103 = v51
+	goto L10
 L10:
 	;
-	v48 = v2
-	goto L13
+	v104 = *(*int32)(unsafe.Add(mBase, uint32(v103)+4))
+	v110 = v104
+	goto L1
 L11:
 	;
-	goto L12
+	v61 = v2
+	goto L14
 L12:
 	;
-	v75 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
-	v81 = v75
-	goto L9
+	goto L13
 L13:
 	;
-	v49 = *(*int32)(unsafe.Add(mBase, uint32(v40)+12))
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v49+v48<<(uint(int32(2))%32))))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v53
-	v56 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+8))
-	v63 = F_hash_search(m, v57, v6+int32(-56), int32(1), v6+int32(-57))
-	mBase = m.M
-	v64 = m.ExcPending
-	if v64 != 0 {
-		goto L5
-	} else {
-		goto L15
-	}
+	v97 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
+	v103 = v97
+	goto L10
 L14:
 	;
-	goto L12
-L15:
-	;
-	v66 = v48 + int32(1)
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(v40)+4))
-	if v66 < v67 {
-		v48 = v66
-		goto L13
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v53)+12))
+	v66 = *(*int32)(unsafe.Add(mBase, uint32(v62+v61<<(uint(int32(2))%32))))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v66
+	v69 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+8))
+	v76 = F_hash_search(m, v70, v6+int32(-60), int32(1), v6+int32(-61))
+	mBase = m.M
+	v77 = m.ExcPending
+	if v77 != 0 {
+		goto L5
 	} else {
 		goto L16
 	}
+L15:
+	;
+	goto L13
 L16:
 	;
-	goto L14
+	v79 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
+	v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+16))
+	v85 = F_hash_search(m, v80, v66+int32(4), int32(1), int32(0))
+	mBase = m.M
+	v86 = m.ExcPending
+	if v86 != 0 {
+		goto L5
+	} else {
+		goto L17
+	}
 L17:
 	;
-	v92 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v92)+4)) = v89
-	v94 = *(*int32)(unsafe.Add(mBase, uint32(v92)+8))
-	if v94 != 0 {
-		goto L18
+	v88 = v61 + int32(1)
+	v89 = *(*int32)(unsafe.Add(mBase, uint32(v53)+4))
+	if v88 < v89 {
+		v61 = v88
+		goto L14
 	} else {
-		goto L19
+		goto L18
 	}
 L18:
 	;
-	v100 = F_hash_search(m, v94, v6+int32(-4), int32(1), v6+int32(-52))
-	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
-		goto L5
+	goto L15
+L19:
+	;
+	v114 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v114)+4)) = v111
+	v116 = *(*int32)(unsafe.Add(mBase, uint32(v114)+8))
+	if v116 != 0 {
+		goto L20
 	} else {
 		goto L21
 	}
-L19:
-	;
-	goto L20
 L20:
+	;
+	v122 = F_hash_search(m, v116, v6+int32(-4), int32(1), v6+int32(-56))
+	mBase = m.M
+	v123 = m.ExcPending
+	if v123 != 0 {
+		goto L5
+	} else {
+		goto L23
+	}
+L21:
+	;
+	goto L22
+L22:
 	;
 	m.G0 = v8 - int32(-64)
 	return
-L21:
+L23:
 	;
-	goto L20
+	v125 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
+	v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+16))
+	v131 = F_hash_search(m, v126, l0+int32(4), int32(1), int32(0))
+	mBase = m.M
+	v132 = m.ExcPending
+	if v132 != 0 {
+		goto L5
+	} else {
+		goto L24
+	}
+L24:
+	;
+	goto L22
 }
 func F_EventTriggerAlterTableStart(m *base.Module, l0 int32) {
 	mBase := m.M

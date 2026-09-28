@@ -18,7 +18,7 @@ func F_check_multixact_member_buffers(m *base.Module, l0 int32, l1 int32, l2 int
 		return v5
 	}
 }
-func F_multixact_twophase_postcommit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
+func F_multixact_twophase_postcommit(m *base.Module, l0 int64, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -34,7 +34,7 @@ func F_multixact_twophase_postcommit(m *base.Module, l0 int32, l1 int32, l2 int3
 		return
 	} else {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_multixact_twophase_postcommit[0]))
-		*(*int32)(unsafe.Add(mBase, uint32(v9+v6<<(uint(int32(2))%32)))) = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v9+v6<<(uint(int32(2))%32)-int32(152)))) = int32(0)
 		return
 	}
 }

@@ -73,30 +73,30 @@ func F_CopyLoadRawBuf(m *base.Module, l0 int32) {
 	var v99 int32
 	_ = v99
 	v2 = int32(0)
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+332))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+328))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+348))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+344))
 	v9 = v7 - v8
 	if base.B2i32(v8 <= v2)|base.B2i32(v9 <= v2) == v2 {
 		if v9 != 0 {
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+324))
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+340))
 			base.MemoryCopy(m, v17, v17+v8, v9)
 		} else {
 		}
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+332))
-		v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+328))
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+348))
+		v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+344))
 		v24 = v21 - v22
 	} else {
 		v24 = v9
 	}
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+328)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+332)) = v24
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+324))
-	v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+308))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+344)) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+348)) = v24
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+340))
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+324))
 	if v28 == v29 {
-		v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+312))
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+312)) = int32(0)
-		v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+316))
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+316)) = v34 - v31
+		v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+328))
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+328)) = int32(0)
+		v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+332))
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+332)) = v34 - v31
 	} else {
 	}
 	v41 = F_CopyGetData(m, l0, v24+v28, int32(_a_F_CopyLoadRawBuf_0)-v24)
@@ -106,13 +106,13 @@ func F_CopyLoadRawBuf(m *base.Module, l0 int32) {
 		return
 	} else {
 		v43 = v41 + v9
-		v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+324))
+		v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+340))
 		v46 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v43+v44))) = uint8(v46)
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+332)) = v43
-		v49 = *(*int64)(unsafe.Add(mBase, uint32(l0)+344))
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+348)) = v43
+		v49 = *(*int64)(unsafe.Add(mBase, uint32(l0)+360))
 		v51 = v49 + base.I64_extend_i32_s(v41)
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+344)) = v51
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+360)) = v51
 		v56 = *(*int32)(unsafe.Add(mBase, _c_F_CopyLoadRawBuf[0]))
 		if v56 == v46 {
 		} else {
@@ -138,13 +138,13 @@ func F_CopyLoadRawBuf(m *base.Module, l0 int32) {
 		}
 		if v41 == int32(0) {
 			v99 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(l0)+336)) = uint8(v99)
+			*(*uint8)(unsafe.Add(mBase, uint32(l0)+352)) = uint8(v99)
 		} else {
 		}
 		return
 	}
 }
-func F_get_raw_page_fork_1_9(m *base.Module, l0 int32) int32 {
+func F_get_raw_page_fork_1_9(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -159,9 +159,9 @@ func F_get_raw_page_fork_1_9(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v12 int32
 	_ = v12
-	var v13 int32
+	var v13 int64
 	_ = v13
-	var v14 int64
+	var v14 int32
 	_ = v14
 	var v15 int32
 	_ = v15
@@ -169,72 +169,69 @@ func F_get_raw_page_fork_1_9(m *base.Module, l0 int32) int32 {
 	_ = v16
 	var v17 int32
 	_ = v17
-	var v18 int32
-	_ = v18
-	var v24 int32
-	_ = v24
-	var v27 int32
-	_ = v27
-	var v31 int32
-	_ = v31
-	var v36 int32
-	_ = v36
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v30 int32
+	_ = v30
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
 	var v38 int32
 	_ = v38
-	var v39 int32
-	_ = v39
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v11 = F_pg_detoast_datum_packed(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-			v14 = *(*int64)(unsafe.Add(mBase, uint32(v13)))
-			v15 = F_text_to_cstring(m, v11)
+			v13 = *(*int64)(unsafe.Add(mBase, uint32(l0)+56))
+			v14 = F_text_to_cstring(m, v11)
 			mBase = m.M
-			v16 = m.ExcPending
-			if v16 != 0 {
-				return int32(0)
+			v15 = m.ExcPending
+			if v15 != 0 {
+				return int64(0)
 			} else {
-				v17 = F_forkname_to_number(m, v15)
+				v16 = F_forkname_to_number(m, v14)
 				mBase = m.M
-				v18 = m.ExcPending
-				if v18 != 0 {
-					return int32(0)
+				v17 = m.ExcPending
+				if v17 != 0 {
+					return int64(0)
 				} else {
-					if base.Ui64(int64(4294967295)) <= base.Ui64(v14) {
+					if base.Ui64(int64(4294967295)) <= base.Ui64(v13) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v24 = m.ExcPending
-						if v24 != 0 {
-							return int32(0)
+						v23 = m.ExcPending
+						if v23 != 0 {
+							return int64(0)
 						} else {
 							F_errcode(m, int32(50856066))
 							mBase = m.M
-							v27 = m.ExcPending
-							if v27 != 0 {
-								return int32(0)
+							v26 = m.ExcPending
+							if v26 != 0 {
+								return int64(0)
 							} else {
 								F_errmsg(m, int32(_a_F_get_raw_page_fork_1_9_0), int32(0))
 								mBase = m.M
-								v31 = m.ExcPending
-								if v31 != 0 {
-									return int32(0)
+								v30 = m.ExcPending
+								if v30 != 0 {
+									return int64(0)
 								} else {
 									F_errfinish(m, int32(_a_F_get_raw_page_fork_1_9_1), int32(113), int32(_a_F_get_raw_page_fork_1_9_2))
 									mBase = m.M
-									v36 = m.ExcPending
-									if v36 != 0 {
-										return int32(0)
+									v35 = m.ExcPending
+									if v35 != 0 {
+										return int64(0)
 									} else {
 										base.Wasm_trap_unreachable()
 										for {
@@ -244,13 +241,13 @@ func F_get_raw_page_fork_1_9(m *base.Module, l0 int32) int32 {
 							}
 						}
 					} else {
-						v38 = F_get_raw_page_internal(m, v6, v17, base.I32_wrap_i64(v14))
+						v37 = F_get_raw_page_internal(m, v6, v16, base.I32_wrap_i64(v13))
 						mBase = m.M
-						v39 = m.ExcPending
-						if v39 != 0 {
-							return int32(0)
+						v38 = m.ExcPending
+						if v38 != 0 {
+							return int64(0)
 						} else {
-							return v38
+							return base.I64_extend_i32_u(v37)
 						}
 					}
 				}

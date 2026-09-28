@@ -130,7 +130,7 @@ func F_bit_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 		}
 	}
 }
-func F_bit_recv(m *base.Module, l0 int32) int32 {
+func F_bit_recv(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
@@ -169,60 +169,60 @@ func F_bit_recv(m *base.Module, l0 int32) int32 {
 	_ = v54
 	var v57 int32
 	_ = v57
-	var v67 int32
-	_ = v67
-	var v70 int32
-	_ = v70
-	var v74 int32
-	_ = v74
-	var v79 int32
-	_ = v79
-	var v83 int32
-	_ = v83
-	var v86 int32
-	_ = v86
-	var v91 int32
-	_ = v91
-	var v96 int32
-	_ = v96
+	var v68 int32
+	_ = v68
+	var v71 int32
+	_ = v71
+	var v75 int32
+	_ = v75
+	var v80 int32
+	_ = v80
+	var v84 int32
+	_ = v84
+	var v87 int32
+	_ = v87
+	var v92 int32
+	_ = v92
+	var v97 int32
+	_ = v97
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v14 = F_pq_getmsgint(m, v12, int32(4))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		if base.Ui32(v14) < base.Ui32(int32(2147483641)) {
 			if base.B2i32(v14 != v11)&base.B2i32(int32(0) < v11) != 0 {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v83 = m.ExcPending
-				if v83 != 0 {
-					return int32(0)
+				v84 = m.ExcPending
+				if v84 != 0 {
+					return int64(0)
 				} else {
 					F_errcode(m, int32(101187714))
 					mBase = m.M
-					v86 = m.ExcPending
-					if v86 != 0 {
-						return int32(0)
+					v87 = m.ExcPending
+					if v87 != 0 {
+						return int64(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v11
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v14
 						F_errmsg(m, int32(_a_F_bit_recv_0), v9)
 						mBase = m.M
-						v91 = m.ExcPending
-						if v91 != 0 {
-							return int32(0)
+						v92 = m.ExcPending
+						if v92 != 0 {
+							return int64(0)
 						} else {
 							F_errfinish(m, int32(_a_F_bit_recv_1), int32(357), int32(_a_F_bit_recv_2))
 							mBase = m.M
-							v96 = m.ExcPending
-							if v96 != 0 {
-								return int32(0)
+							v97 = m.ExcPending
+							if v97 != 0 {
+								return int64(0)
 							} else {
 								base.Wasm_trap_unreachable()
 								for {
@@ -238,7 +238,7 @@ func F_bit_recv(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				v31 = m.ExcPending
 				if v31 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v30)+4)) = v14
 					*(*int32)(unsafe.Add(mBase, uint32(v30))) = v29 << (uint(int32(2)) % 32)
@@ -246,7 +246,7 @@ func F_bit_recv(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v40 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
 						v42 = int32(base.Ui32(v40) >> (uint(int32(2)) % 32))
@@ -260,34 +260,34 @@ func F_bit_recv(m *base.Module, l0 int32) int32 {
 						} else {
 						}
 						m.G0 = v9 + int32(16)
-						return v30
+						return base.I64_extend_i32_u(v30)
 					}
 				}
 			}
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v67 = m.ExcPending
-			if v67 != 0 {
-				return int32(0)
+			v68 = m.ExcPending
+			if v68 != 0 {
+				return int64(0)
 			} else {
 				F_errcode(m, int32(50462850))
 				mBase = m.M
-				v70 = m.ExcPending
-				if v70 != 0 {
-					return int32(0)
+				v71 = m.ExcPending
+				if v71 != 0 {
+					return int64(0)
 				} else {
 					F_errmsg(m, int32(_a_F_bit_recv_3), int32(0))
 					mBase = m.M
-					v74 = m.ExcPending
-					if v74 != 0 {
-						return int32(0)
+					v75 = m.ExcPending
+					if v75 != 0 {
+						return int64(0)
 					} else {
 						F_errfinish(m, int32(_a_F_bit_recv_1), int32(347), int32(_a_F_bit_recv_2))
 						mBase = m.M
-						v79 = m.ExcPending
-						if v79 != 0 {
-							return int32(0)
+						v80 = m.ExcPending
+						if v80 != 0 {
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {

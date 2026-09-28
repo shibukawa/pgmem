@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_SearchSysCache1(m *base.Module, l0 int32, l1 int32) int32 {
+func F_SearchSysCache1(m *base.Module, l0 int32, l1 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
@@ -24,53 +24,53 @@ func F_SearchSysCache1(m *base.Module, l0 int32, l1 int32) int32 {
 		return v8
 	}
 }
-func F_SearchSysCacheCopy(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_SearchSysCacheCopy(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 	mBase := m.M
 	_ = mBase
-	var v8 int32
-	_ = v8
 	var v9 int32
 	_ = v9
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
-	var v19 int32
-	_ = v19
+	var v10 int64
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
 	var v20 int32
 	_ = v20
-	var v22 int32
-	_ = v22
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_c_F_SearchSysCacheCopy[0])))
-	v9 = int32(0)
-	v11 = F_SearchCatCache(m, v8, l1, l2, v9, v9)
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_c_F_SearchSysCacheCopy[0])))
+	v10 = int64(0)
+	v12 = F_SearchCatCache(m, v9, l1, l2, v10, v10)
 	mBase = m.M
-	v14 = m.ExcPending
-	if v14 != 0 {
+	v15 = m.ExcPending
+	if v15 != 0 {
 		return int32(0)
 	} else {
-		if v11 == int32(0) {
+		if v12 == int32(0) {
 			return int32(0)
 		} else {
-			v19 = F_heap_copytuple(m, v11)
+			v20 = F_heap_copytuple(m, v12)
 			mBase = m.M
-			v20 = m.ExcPending
-			if v20 != 0 {
+			v21 = m.ExcPending
+			if v21 != 0 {
 				return int32(0)
 			} else {
-				F_ReleaseCatCache(m, v11)
+				F_ReleaseCatCache(m, v12)
 				mBase = m.M
-				v22 = m.ExcPending
-				if v22 != 0 {
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return int32(0)
 				} else {
-					return v19
+					return v20
 				}
 			}
 		}
 	}
 }
-func F_SearchSysCacheLocked1(m *base.Module, l0 int32, l1 int32) int32 {
+func F_SearchSysCacheLocked1(m *base.Module, l0 int32, l1 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -355,59 +355,59 @@ L28:
 	v19 = v104
 	goto L1
 }
-func F_SysCacheGetAttr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+func F_SysCacheGetAttr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v15 int32
-	_ = v15
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
 	var v16 int32
 	_ = v16
-	var v19 int32
-	_ = v19
-	var v24 int32
-	_ = v24
-	var v27 int32
-	_ = v27
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v25 int32
+	_ = v25
 	var v28 int32
 	_ = v28
 	var v29 int32
 	_ = v29
 	var v30 int32
 	_ = v30
-	var v31 int32
+	var v31 int64
 	_ = v31
-	var v41 int32
-	_ = v41
-	var v45 int32
-	_ = v45
-	var v50 int32
-	_ = v50
-	v8 = m.G0
-	v10 = v8 - int32(16)
-	m.G0 = v10
+	var v32 int32
+	_ = v32
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v51 int32
+	_ = v51
+	v9 = m.G0
+	v11 = v9 - int32(16)
+	m.G0 = v11
 	if base.Ui32(int32(84)) < base.Ui32(l0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v41 = m.ExcPending
-		if v41 != 0 {
-			return int32(0)
+		v42 = m.ExcPending
+		if v42 != 0 {
+			return int64(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-			F_errmsg_internal(m, int32(_a_F_SysCacheGetAttr_0), v10)
+			*(*int32)(unsafe.Add(mBase, uint32(v11))) = l0
+			F_errmsg_internal(m, int32(_a_F_SysCacheGetAttr_0), v11)
 			mBase = m.M
-			v45 = m.ExcPending
-			if v45 != 0 {
-				return int32(0)
+			v46 = m.ExcPending
+			if v46 != 0 {
+				return int64(0)
 			} else {
-				F_errfinish(m, int32(_a_F_SysCacheGetAttr_1), int32(612), int32(_a_F_SysCacheGetAttr_2))
+				F_errfinish(m, int32(_a_F_SysCacheGetAttr_1), int32(607), int32(_a_F_SysCacheGetAttr_2))
 				mBase = m.M
-				v50 = m.ExcPending
-				if v50 != 0 {
-					return int32(0)
+				v51 = m.ExcPending
+				if v51 != 0 {
+					return int64(0)
 				} else {
 					base.Wasm_trap_unreachable()
 					for {
@@ -416,27 +416,27 @@ func F_SysCacheGetAttr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 			}
 		}
 	} else {
-		v15 = l0 << (uint(int32(2)) % 32)
-		v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+uint32(_c_F_SysCacheGetAttr[0])))
-		if v16 == int32(0) {
+		v16 = l0 << (uint(int32(2)) % 32)
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+uint32(_c_F_SysCacheGetAttr[0])))
+		if v17 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v41 = m.ExcPending
-			if v41 != 0 {
-				return int32(0)
+			v42 = m.ExcPending
+			if v42 != 0 {
+				return int64(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-				F_errmsg_internal(m, int32(_a_F_SysCacheGetAttr_0), v10)
+				*(*int32)(unsafe.Add(mBase, uint32(v11))) = l0
+				F_errmsg_internal(m, int32(_a_F_SysCacheGetAttr_0), v11)
 				mBase = m.M
-				v45 = m.ExcPending
-				if v45 != 0 {
-					return int32(0)
+				v46 = m.ExcPending
+				if v46 != 0 {
+					return int64(0)
 				} else {
-					F_errfinish(m, int32(_a_F_SysCacheGetAttr_1), int32(612), int32(_a_F_SysCacheGetAttr_2))
+					F_errfinish(m, int32(_a_F_SysCacheGetAttr_1), int32(607), int32(_a_F_SysCacheGetAttr_2))
 					mBase = m.M
-					v50 = m.ExcPending
-					if v50 != 0 {
-						return int32(0)
+					v51 = m.ExcPending
+					if v51 != 0 {
+						return int64(0)
 					} else {
 						base.Wasm_trap_unreachable()
 						for {
@@ -445,36 +445,36 @@ func F_SysCacheGetAttr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 				}
 			}
 		} else {
-			v19 = *(*int32)(unsafe.Add(mBase, uint32(v16)+8))
-			if v19 != 0 {
-				v29 = v19
-				v30 = F_heap_getattr_1(m, l1, l2, v29, l3)
+			v20 = *(*int32)(unsafe.Add(mBase, uint32(v17)+8))
+			if v20 != 0 {
+				v30 = v20
+				v31 = F_heap_getattr_1(m, l1, l2, v30, l3)
 				mBase = m.M
-				v31 = m.ExcPending
-				if v31 != 0 {
-					return int32(0)
+				v32 = m.ExcPending
+				if v32 != 0 {
+					return int64(0)
 				} else {
-					m.G0 = v10 + int32(16)
-					return v30
+					m.G0 = v11 + int32(16)
+					return v31
 				}
 			} else {
-				F_InitCatCachePhase2(m, v16, int32(0))
+				F_InitCatCachePhase2(m, v17, int32(0))
 				mBase = m.M
-				v24 = m.ExcPending
-				if v24 != 0 {
-					return int32(0)
+				v25 = m.ExcPending
+				if v25 != 0 {
+					return int64(0)
 				} else {
-					v27 = *(*int32)(unsafe.Add(mBase, uint32(v15)+uint32(_c_F_SysCacheGetAttr[0])))
-					v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+8))
-					v29 = v28
-					v30 = F_heap_getattr_1(m, l1, l2, v29, l3)
+					v28 = *(*int32)(unsafe.Add(mBase, uint32(v16)+uint32(_c_F_SysCacheGetAttr[0])))
+					v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+8))
+					v30 = v29
+					v31 = F_heap_getattr_1(m, l1, l2, v30, l3)
 					mBase = m.M
-					v31 = m.ExcPending
-					if v31 != 0 {
-						return int32(0)
+					v32 = m.ExcPending
+					if v32 != 0 {
+						return int64(0)
 					} else {
-						m.G0 = v10 + int32(16)
-						return v30
+						m.G0 = v11 + int32(16)
+						return v31
 					}
 				}
 			}

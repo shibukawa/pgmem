@@ -389,7 +389,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(_a_F_convert_any_priv_string_1), int32(1726), int32(_a_F_convert_any_priv_string_2))
+	F_errfinish(m, int32(_a_F_convert_any_priv_string_1), int32(1749), int32(_a_F_convert_any_priv_string_2))
 	mBase = m.M
 	v180 = m.ExcPending
 	if v180 != 0 {
@@ -407,7 +407,7 @@ L51:
 	m.G0 = v11 + int32(16)
 	return v24
 }
-func F_has_any_column_privilege_name(m *base.Module, l0 int32) int32 {
+func F_has_any_column_privilege_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -450,62 +450,62 @@ func F_has_any_column_privilege_name(m *base.Module, l0 int32) int32 {
 	_ = v35
 	var v36 int32
 	_ = v36
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v11 = F_pg_detoast_datum_packed(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v14 = *(*int32)(unsafe.Add(mBase, _c_F_has_any_column_privilege_name[0]))
 			v15 = F_textToQualifiedNameList(m, v6)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v17 = F_makeRangeVarFromNameList(m, v15)
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v19 = int32(0)
 					v23 = F_RangeVarGetRelidExtended(m, v17, v19, v19, v19, v19)
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v26 = F_convert_any_priv_string(m, v11, int32(_a_F_has_any_column_privilege_name_0))
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v28 = F_pg_class_aclcheck(m, v23, v14, v26)
 							mBase = m.M
 							v29 = m.ExcPending
 							if v29 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								if v28 == int32(0) {
-									return int32(1)
+									return int64(1)
 								} else {
 									v35 = F_pg_attribute_aclcheck_all(m, v23, v14, v26, int32(1))
 									mBase = m.M
 									v36 = m.ExcPending
 									if v36 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
-										return base.B2i32(v35 == int32(0))
+										return base.I64_extend_i32_u(base.B2i32(v35 == int32(0)))
 									}
 								}
 							}
@@ -516,7 +516,7 @@ func F_has_any_column_privilege_name(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_any_column_privilege_name_name(m *base.Module, l0 int32) int32 {
+func F_has_any_column_privilege_name_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -563,68 +563,68 @@ func F_has_any_column_privilege_name_name(m *base.Module, l0 int32) int32 {
 	_ = v37
 	var v38 int32
 	_ = v38
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v8 = F_pg_detoast_datum_packed(m, v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v13 = F_pg_detoast_datum_packed(m, v12)
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v15 = F_get_role_oid_or_public(m, v6)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v17 = F_textToQualifiedNameList(m, v8)
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v19 = F_makeRangeVarFromNameList(m, v17)
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v21 = int32(0)
 						v25 = F_RangeVarGetRelidExtended(m, v19, v21, v21, v21, v21)
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v28 = F_convert_any_priv_string(m, v13, int32(_a_F_has_any_column_privilege_name_name_0))
 							mBase = m.M
 							v29 = m.ExcPending
 							if v29 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v30 = F_pg_class_aclcheck(m, v25, v15, v28)
 								mBase = m.M
 								v31 = m.ExcPending
 								if v31 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									if v30 == int32(0) {
-										return int32(1)
+										return int64(1)
 									} else {
 										v37 = F_pg_attribute_aclcheck_all(m, v25, v15, v28, int32(1))
 										mBase = m.M
 										v38 = m.ExcPending
 										if v38 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
-											return base.B2i32(v37 == int32(0))
+											return base.I64_extend_i32_u(base.B2i32(v37 == int32(0)))
 										}
 									}
 								}

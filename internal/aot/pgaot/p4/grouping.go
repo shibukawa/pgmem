@@ -212,7 +212,7 @@ L3:
 	}
 L4:
 	;
-	F_list_sort(m, v229, int32(479))
+	F_list_sort(m, v229, int32(514))
 	mBase = m.M
 	v316 = m.ExcPending
 	if v316 != 0 {
@@ -549,7 +549,7 @@ L52:
 	;
 	v256 = *(*int32)(unsafe.Add(mBase, uint32(v229)+12))
 	v260 = *(*int32)(unsafe.Add(mBase, uint32(v256+v248<<(uint(int32(2))%32))))
-	F_list_sort(m, v260, int32(477))
+	F_list_sort(m, v260, int32(512))
 	mBase = m.M
 	v263 = m.ExcPending
 	if v263 != 0 {
@@ -559,7 +559,7 @@ L52:
 	}
 L53:
 	;
-	F_list_sort(m, v229, int32(478))
+	F_list_sort(m, v229, int32(513))
 	mBase = m.M
 	v270 = m.ExcPending
 	if v270 != 0 {
@@ -669,12 +669,12 @@ func F_extract_grouping_collations(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v19 int32
-	_ = v19
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
 	var v23 int32
@@ -727,10 +727,10 @@ func F_extract_grouping_collations(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 L1:
 	;
-	v14 = F_palloc(m, int32(0))
+	v15 = F_palloc_mul(m, int32(4), int32(0))
 	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v18 = m.ExcPending
+	if v18 != 0 {
 		goto L4
 	} else {
 		goto L5
@@ -740,8 +740,8 @@ L2:
 	goto L3
 L3:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v22 = F_palloc(m, v19<<(uint(int32(2))%32))
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v22 = F_palloc_mul(m, int32(4), v21)
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {
@@ -754,7 +754,7 @@ L4:
 	return int32(0)
 L5:
 	;
-	return v14
+	return v15
 L6:
 	;
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
@@ -893,12 +893,12 @@ func F_extract_grouping_ops(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v8 int32
-	_ = v8
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
 	var v17 int32
@@ -921,17 +921,17 @@ func F_extract_grouping_ops(m *base.Module, l0 int32) int32 {
 	_ = v35
 	v2 = int32(0)
 	if l0 == v2 {
-		v8 = F_palloc(m, int32(0))
+		v9 = F_palloc_mul(m, int32(4), int32(0))
 		mBase = m.M
-		v11 = m.ExcPending
-		if v11 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return int32(0)
 		} else {
-			return v8
+			return v9
 		}
 	} else {
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		v16 = F_palloc(m, v13<<(uint(int32(2))%32))
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+		v16 = F_palloc_mul(m, int32(4), v15)
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {

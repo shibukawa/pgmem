@@ -5,40 +5,158 @@ import (
 	"unsafe"
 )
 
-func F_uuid_generate_v4(m *base.Module, l0 int32) int32 {
-	var v3 int32
-	_ = v3
+func F_uuid_abbrev_convert(m *base.Module, l0 int64, l1 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v4 int64
+	_ = v4
 	var v5 int32
 	_ = v5
-	var v9 int32
-	_ = v9
+	var v6 int64
+	_ = v6
+	var v10 int32
+	_ = v10
 	var v13 int32
 	_ = v13
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
-	v3 = m.G0
-	v5 = v3 + int32(-64)
-	m.G0 = v5
-	F_uuid_generate_random(m, v5)
-	v9 = v3 + int32(-48)
-	F_uuid_unparse(m, v5, v9)
-	v13 = m.ExcPending
-	if v13 != 0 {
-		return int32(0)
-	} else {
-		v16 = F_DirectFunctionCall1Coll(m, int32(3376), int32(0), v9)
-		v17 = m.ExcPending
-		if v17 != 0 {
-			return int32(0)
+	var v14 int32
+	_ = v14
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v31 int32
+	_ = v31
+	var v36 int32
+	_ = v36
+	var v40 int32
+	_ = v40
+	var v44 int32
+	_ = v44
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v64 int32
+	_ = v64
+	var v65 int32
+	_ = v65
+	var v70 int32
+	_ = v70
+	var v74 int32
+	_ = v74
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	var v81 int64
+	_ = v81
+	var v83 int64
+	_ = v83
+	var v85 int64
+	_ = v85
+	var v88 int64
+	_ = v88
+	var v90 int64
+	_ = v90
+	var v92 int64
+	_ = v92
+	var v94 int64
+	_ = v94
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(base.I32_wrap_i64(l0))))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+	v6 = *(*int64)(unsafe.Add(mBase, uint32(v5)))
+	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v6 + int64(1)
+	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5)+8)))
+	if v10 == int32(1) {
+		v13 = int32(16)
+		v14 = v5 + v13
+		v23 = int32(711645284)
+		v26 = base.I32_wrap_i64(int64(base.Ui64(v4)>>(uint(int64(32))%64))^v4) - int32(1636608428) ^ v23 - int32(1455628627)
+		v31 = v26 ^ int32(-1636608428) - base.I32_rotl(v26, int32(25))
+		v36 = v31 ^ v23 - base.I32_rotl(v31, v13)
+		v40 = v36 ^ v26 - base.I32_rotl(v36, int32(4))
+		v44 = v40 ^ v31 - base.I32_rotl(v40, int32(14))
+		v48 = v44 ^ v36 - base.I32_rotl(v44, int32(24))
+		v51 = *(*int32)(unsafe.Add(mBase, uint32(v14)+16))
+		v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14))))
+		v54 = int32(32) - v53
+		v56 = v51 + int32(base.Ui32(v48)>>(uint(v54)%32))
+		v57 = v48 << (uint(v53) % 32)
+		if v57 != 0 {
+			v64 = int32(32) - (base.I32_clz(v57) ^ int32(31))
+			v65 = int32(255)
+			if base.Ui32(v54&v65) < base.Ui32(v64&v65) {
+				v70 = v54 + int32(1)
+			} else {
+				v70 = v64
+			}
+			v74 = v70
 		} else {
-			m.G0 = v5 - int32(-64)
-			return v16
+			v74 = v54 + int32(1)
+		}
+		v76 = v74 & int32(255)
+		v77 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56))))
+		if base.Ui32(v77) < base.Ui32(v76) {
+			v79 = v76
+		} else {
+			v79 = v77
+		}
+		*(*uint8)(unsafe.Add(mBase, uint32(v56))) = uint8(v79)
+	} else {
+	}
+	v81 = int64(56)
+	v83 = int64(65280)
+	v85 = int64(40)
+	v88 = int64(16711680)
+	v90 = int64(24)
+	v92 = int64(4278190080)
+	v94 = int64(8)
+	return v4<<(uint(v81)%64) | v4&v83<<(uint(v85)%64) | (v4&v88<<(uint(v90)%64) | v4&v92<<(uint(v94)%64)) | (int64(base.Ui64(v4)>>(uint(v94)%64))&v92 | int64(base.Ui64(v4)>>(uint(v90)%64))&v88 | (int64(base.Ui64(v4)>>(uint(v85)%64))&v83 | int64(base.Ui64(v4)>>(uint(v81)%64))))
+}
+func F_uuid_generate_v4(m *base.Module, l0 int32) int64 {
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v10 int32
+	_ = v10
+	var v14 int32
+	_ = v14
+	var v18 int64
+	_ = v18
+	var v19 int32
+	_ = v19
+	v4 = m.G0
+	v6 = v4 + int32(-64)
+	m.G0 = v6
+	F_uuid_generate_random(m, v6)
+	v10 = v4 + int32(-48)
+	F_uuid_unparse(m, v6, v10)
+	v14 = m.ExcPending
+	if v14 != 0 {
+		return int64(0)
+	} else {
+		v18 = F_DirectFunctionCall1Coll(m, int32(3591), int32(0), base.I64_extend_i32_u(v10))
+		v19 = m.ExcPending
+		if v19 != 0 {
+			return int64(0)
+		} else {
+			m.G0 = v6 - int32(-64)
+			return v18
 		}
 	}
 }
-func F_uuid_hash(m *base.Module, l0 int32) int32 {
+func F_uuid_hash(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -273,7 +391,7 @@ func F_uuid_hash(m *base.Module, l0 int32) int32 {
 	_ = v259
 	var v263 int32
 	_ = v263
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = int32(16)
 	v9 = int32(-1636608416)
 	if v2&int32(3) != 0 {
@@ -734,9 +852,9 @@ func F_uuid_hash(m *base.Module, l0 int32) int32 {
 	v255 = v251 ^ v243 - base.I32_rotl(v251, int32(16))
 	v259 = v255 ^ v247 - base.I32_rotl(v255, int32(4))
 	v263 = v259 ^ v251 - base.I32_rotl(v259, v241)
-	return v263 ^ v255 - base.I32_rotl(v263, int32(24))
+	return base.I64_extend_i32_u(v263 ^ v255 - base.I32_rotl(v263, int32(24)))
 }
-func F_uuid_recv(m *base.Module, l0 int32) int32 {
+func F_uuid_recv(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -753,28 +871,28 @@ func F_uuid_recv(m *base.Module, l0 int32) int32 {
 	_ = v12
 	var v14 int64
 	_ = v14
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v5 = F_palloc(m, int32(16))
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v10 = F_pq_getmsgbytes(m, v3, int32(16))
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v12 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
 			*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v12
 			v14 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
 			*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
-			return v5
+			return base.I64_extend_i32_u(v5)
 		}
 	}
 }
-func F_uuid_send(m *base.Module, l0 int32) int32 {
+func F_uuid_send(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -794,24 +912,24 @@ func F_uuid_send(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	F_pq_begintypsend(m, v5)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		F_appendBinaryStringInfo(m, v5, v7, int32(16))
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(v5)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(v16))) = v17 << (uint(int32(2)) % 32)
 			m.G0 = v5 + int32(16)
-			return v16
+			return base.I64_extend_i32_u(v16)
 		}
 	}
 }

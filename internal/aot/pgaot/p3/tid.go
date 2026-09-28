@@ -40,28 +40,26 @@ func F_TidStoreCreateShared(m *base.Module, l0 int32) int32 {
 	_ = v45
 	var v48 int32
 	_ = v48
-	var v50 int32
-	_ = v50
-	var v51 int32
-	_ = v51
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
 	var v57 int32
 	_ = v57
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
 	var v60 int32
 	_ = v60
 	var v61 int32
 	_ = v61
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
 	var v64 int32
 	_ = v64
-	var v67 int32
-	_ = v67
+	var v66 int32
+	_ = v66
 	var v69 int32
 	_ = v69
-	var v72 int32
-	_ = v72
 	v8 = F_palloc0(m, int32(12))
 	mBase = m.M
 	v11 = m.ExcPending
@@ -89,7 +87,7 @@ func F_TidStoreCreateShared(m *base.Module, l0 int32) int32 {
 		} else {
 			v30 = v27
 		}
-		v31 = F_dsa_create_ext(m, int32(93), v30, v27)
+		v31 = F_dsa_create_ext(m, int32(97), v30, v27)
 		mBase = m.M
 		v32 = m.ExcPending
 		if v32 != 0 {
@@ -119,35 +117,37 @@ func F_TidStoreCreateShared(m *base.Module, l0 int32) int32 {
 						v45 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
 						*(*int32)(unsafe.Add(mBase, uint32(v45)+4)) = int32(1420067175)
 						v48 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-						v50 = v48 + int32(8)
-						v51 = int32(93)
-						*(*uint16)(unsafe.Add(mBase, uint32(v50))) = uint16(v51)
-						*(*int32)(unsafe.Add(mBase, uint32(v50)+4)) = int32(1073741824)
-						*(*int64)(unsafe.Add(mBase, uint32(v50)+8)) = int64(-1)
-						v57 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
-						v60 = F_dsa_allocate_extended(m, v57, int32(24), int32(0))
+						F_LWLockInitialize(m, v48+int32(8), int32(97))
 						mBase = m.M
-						v61 = m.ExcPending
-						if v61 != 0 {
+						v53 = m.ExcPending
+						if v53 != 0 {
 							return int32(0)
 						} else {
-							v62 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
-							v63 = F_dsa_get_address(m, v62, v60)
+							v54 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
+							v57 = F_dsa_allocate_extended(m, v54, int32(24), int32(0))
 							mBase = m.M
-							v64 = m.ExcPending
-							if v64 != 0 {
+							v58 = m.ExcPending
+							if v58 != 0 {
 								return int32(0)
 							} else {
-								*(*int64)(unsafe.Add(mBase, uint32(v63))) = int64(1024)
-								v67 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-								*(*int32)(unsafe.Add(mBase, uint32(v67)+24)) = v60
-								v69 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-								*(*int32)(unsafe.Add(mBase, uint32(v69)+48)) = int32(0)
-								v72 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-								*(*int64)(unsafe.Add(mBase, uint32(v72)+32)) = int64(255)
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v31
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v34
-								return v8
+								v59 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
+								v60 = F_dsa_get_address(m, v59, v57)
+								mBase = m.M
+								v61 = m.ExcPending
+								if v61 != 0 {
+									return int32(0)
+								} else {
+									*(*int64)(unsafe.Add(mBase, uint32(v60))) = int64(1024)
+									v64 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
+									*(*int32)(unsafe.Add(mBase, uint32(v64)+24)) = v57
+									v66 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
+									*(*int32)(unsafe.Add(mBase, uint32(v66)+48)) = int32(0)
+									v69 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
+									*(*int64)(unsafe.Add(mBase, uint32(v69)+32)) = int64(255)
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v31
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v34
+									return v8
+								}
 							}
 						}
 					}

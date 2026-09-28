@@ -16,8 +16,6 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v16
 	var v17 int32
 	_ = v17
-	var v19 int32
-	_ = v19
 	var v20 int32
 	_ = v20
 	var v21 int32
@@ -34,66 +32,68 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v29 int32
-	_ = v29
-	var v31 int32
-	_ = v31
-	var v39 int32
-	_ = v39
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
 	var v40 int32
 	_ = v40
-	var v43 int32
-	_ = v43
-	var v51 int32
-	_ = v51
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v64 int32
-	_ = v64
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v57 int32
+	_ = v57
 	var v65 int32
 	_ = v65
-	var v69 int32
-	_ = v69
-	var v71 int32
-	_ = v71
-	var v76 int32
-	_ = v76
+	var v66 int32
+	_ = v66
+	var v70 int32
+	_ = v70
+	var v72 int32
+	_ = v72
 	var v77 int32
 	_ = v77
-	var v80 int32
-	_ = v80
+	var v78 int32
+	_ = v78
 	var v81 int32
 	_ = v81
-	var v85 int32
-	_ = v85
+	var v82 int32
+	_ = v82
 	var v86 int32
 	_ = v86
-	var v91 int32
-	_ = v91
-	var v94 int32
-	_ = v94
-	var v101 int32
-	_ = v101
-	var v105 int32
-	_ = v105
-	var v110 int32
-	_ = v110
-	var v114 int32
-	_ = v114
-	var v120 int32
-	_ = v120
-	var v125 int32
-	_ = v125
-	var v129 int32
-	_ = v129
-	var v132 int32
-	_ = v132
-	var v136 int32
-	_ = v136
-	var v141 int32
-	_ = v141
+	var v87 int32
+	_ = v87
+	var v92 int32
+	_ = v92
+	var v95 int32
+	_ = v95
+	var v102 int32
+	_ = v102
+	var v106 int32
+	_ = v106
+	var v111 int32
+	_ = v111
+	var v115 int32
+	_ = v115
+	var v121 int32
+	_ = v121
+	var v126 int32
+	_ = v126
+	var v130 int32
+	_ = v130
+	var v133 int32
+	_ = v133
+	var v137 int32
+	_ = v137
+	var v142 int32
+	_ = v142
 	v10 = m.G0
 	v12 = v10 - int32(48)
 	m.G0 = v12
@@ -103,42 +103,42 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 	if v17 != 0 {
 		return
 	} else {
-		v19 = F_SearchSysCache1(m, int32(19), l0)
+		v20 = F_SearchSysCache1(m, int32(19), base.I64_extend_i32_u(l0))
 		mBase = m.M
-		v20 = m.ExcPending
-		if v20 != 0 {
+		v21 = m.ExcPending
+		if v21 != 0 {
 			return
 		} else {
-			if v19 != 0 {
-				v21 = F_heap_copytuple(m, v19)
+			if v20 != 0 {
+				v22 = F_heap_copytuple(m, v20)
 				mBase = m.M
-				v22 = m.ExcPending
-				if v22 != 0 {
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return
 				} else {
-					v23 = *(*int32)(unsafe.Add(mBase, uint32(v21)+16))
-					v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+22)))
-					v25 = v23 + v24
+					v24 = *(*int32)(unsafe.Add(mBase, uint32(v22)+16))
+					v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24)+22)))
+					v26 = v24 + v25
 					if l1 != 0 {
-						v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+92))
-						if v26 != 0 {
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+92))
+						if v27 != 0 {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v114 = m.ExcPending
-							if v114 != 0 {
+							v115 = m.ExcPending
+							if v115 != 0 {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l0
 								F_errmsg_internal(m, int32(_a_F_ConstraintSetParentConstraint_0), v12+int32(16))
 								mBase = m.M
-								v120 = m.ExcPending
-								if v120 != 0 {
+								v121 = m.ExcPending
+								if v121 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_ConstraintSetParentConstraint_1), int32(1147), int32(_a_F_ConstraintSetParentConstraint_2))
+									F_errfinish(m, int32(_a_F_ConstraintSetParentConstraint_1), int32(1152), int32(_a_F_ConstraintSetParentConstraint_2))
 									mBase = m.M
-									v125 = m.ExcPending
-									if v125 != 0 {
+									v126 = m.ExcPending
+									if v126 != 0 {
 										return
 									} else {
 										base.Wasm_trap_unreachable()
@@ -148,34 +148,34 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 								}
 							}
 						} else {
-							v27 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, uint32(v25)+103)) = uint8(v27)
-							v29 = int32(*(*int16)(unsafe.Add(mBase, uint32(v25)+104)))
-							v31 = v29 + int32(1)
-							*(*uint16)(unsafe.Add(mBase, uint32(v25)+104)) = uint16(v31)
-							if base.I32_extend16_s(v31) != v31 {
+							v28 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v26)+103)) = uint8(v28)
+							v30 = int32(*(*int16)(unsafe.Add(mBase, uint32(v26)+104)))
+							v32 = v30 + int32(1)
+							*(*uint16)(unsafe.Add(mBase, uint32(v26)+104)) = uint16(v32)
+							if base.I32_extend16_s(v32) != v32 {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v129 = m.ExcPending
-								if v129 != 0 {
+								v130 = m.ExcPending
+								if v130 != 0 {
 									return
 								} else {
 									F_errcode(m, int32(261))
 									mBase = m.M
-									v132 = m.ExcPending
-									if v132 != 0 {
+									v133 = m.ExcPending
+									if v133 != 0 {
 										return
 									} else {
 										F_errmsg(m, int32(_a_F_ConstraintSetParentConstraint_3), int32(0))
 										mBase = m.M
-										v136 = m.ExcPending
-										if v136 != 0 {
+										v137 = m.ExcPending
+										if v137 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(_a_F_ConstraintSetParentConstraint_1), int32(1154), int32(_a_F_ConstraintSetParentConstraint_2))
+											F_errfinish(m, int32(_a_F_ConstraintSetParentConstraint_1), int32(1159), int32(_a_F_ConstraintSetParentConstraint_2))
 											mBase = m.M
-											v141 = m.ExcPending
-											if v141 != 0 {
+											v142 = m.ExcPending
+											if v142 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -186,48 +186,48 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 									}
 								}
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v25)+92)) = l1
-								F_CatalogTupleUpdate(m, v16, v19+int32(4), v21)
+								*(*int32)(unsafe.Add(mBase, uint32(v26)+92)) = l1
+								F_CatalogTupleUpdate(m, v16, v20+int32(4), v22)
 								mBase = m.M
-								v39 = m.ExcPending
-								if v39 != 0 {
+								v40 = m.ExcPending
+								if v40 != 0 {
 									return
 								} else {
-									v40 = int32(0)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = v40
+									v41 = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = v41
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = l0
-									v43 = int32(2606)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v43
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v40
+									v44 = int32(2606)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v44
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v41
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = l1
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v43
-									v51 = v12 + int32(36)
-									v53 = v12 + int32(24)
-									F_recordDependencyOn(m, v51, v53, int32(80))
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v44
+									v52 = v12 + int32(36)
+									v54 = v12 + int32(24)
+									F_recordDependencyOn(m, v52, v54, int32(80))
 									mBase = m.M
-									v56 = m.ExcPending
-									if v56 != 0 {
+									v57 = m.ExcPending
+									if v57 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = int32(0)
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = l2
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = int32(1259)
-										F_recordDependencyOn(m, v51, v53, int32(83))
+										F_recordDependencyOn(m, v52, v54, int32(83))
 										mBase = m.M
-										v64 = m.ExcPending
-										if v64 != 0 {
+										v65 = m.ExcPending
+										if v65 != 0 {
 											return
 										} else {
-											F_ReleaseCatCache(m, v19)
+											F_ReleaseCatCache(m, v20)
 											mBase = m.M
-											v91 = m.ExcPending
-											if v91 != 0 {
+											v92 = m.ExcPending
+											if v92 != 0 {
 												return
 											} else {
 												F_relation_close(m, v16, int32(3))
 												mBase = m.M
-												v94 = m.ExcPending
-												if v94 != 0 {
+												v95 = m.ExcPending
+												if v95 != 0 {
 													return
 												} else {
 													m.G0 = v12 + int32(48)
@@ -240,41 +240,41 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 							}
 						}
 					} else {
-						v65 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(v25)+103)) = uint8(v65)
-						*(*int32)(unsafe.Add(mBase, uint32(v25)+92)) = int32(0)
-						v69 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v25)+104)))
-						v71 = v69 - v65
-						*(*uint16)(unsafe.Add(mBase, uint32(v25)+104)) = uint16(v71)
-						F_CatalogTupleUpdate(m, v16, v19+int32(4), v21)
+						v66 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(v26)+103)) = uint8(v66)
+						*(*int32)(unsafe.Add(mBase, uint32(v26)+92)) = int32(0)
+						v70 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v26)+104)))
+						v72 = v70 - v66
+						*(*uint16)(unsafe.Add(mBase, uint32(v26)+104)) = uint16(v72)
+						F_CatalogTupleUpdate(m, v16, v20+int32(4), v22)
 						mBase = m.M
-						v76 = m.ExcPending
-						if v76 != 0 {
+						v77 = m.ExcPending
+						if v77 != 0 {
 							return
 						} else {
-							v77 = int32(2606)
-							v80 = F_deleteDependencyRecordsForClass(m, v77, l0, v77, int32(80))
+							v78 = int32(2606)
+							v81 = F_deleteDependencyRecordsForClass(m, v78, l0, v78, int32(80))
 							mBase = m.M
-							v81 = m.ExcPending
-							if v81 != 0 {
+							v82 = m.ExcPending
+							if v82 != 0 {
 								return
 							} else {
-								v85 = F_deleteDependencyRecordsForClass(m, int32(2606), l0, int32(1259), int32(83))
+								v86 = F_deleteDependencyRecordsForClass(m, int32(2606), l0, int32(1259), int32(83))
 								mBase = m.M
-								v86 = m.ExcPending
-								if v86 != 0 {
+								v87 = m.ExcPending
+								if v87 != 0 {
 									return
 								} else {
-									F_ReleaseCatCache(m, v19)
+									F_ReleaseCatCache(m, v20)
 									mBase = m.M
-									v91 = m.ExcPending
-									if v91 != 0 {
+									v92 = m.ExcPending
+									if v92 != 0 {
 										return
 									} else {
 										F_relation_close(m, v16, int32(3))
 										mBase = m.M
-										v94 = m.ExcPending
-										if v94 != 0 {
+										v95 = m.ExcPending
+										if v95 != 0 {
 											return
 										} else {
 											m.G0 = v12 + int32(48)
@@ -289,21 +289,21 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v101 = m.ExcPending
-				if v101 != 0 {
+				v102 = m.ExcPending
+				if v102 != 0 {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v12))) = l0
 					F_errmsg_internal(m, int32(_a_F_ConstraintSetParentConstraint_4), v12)
 					mBase = m.M
-					v105 = m.ExcPending
-					if v105 != 0 {
+					v106 = m.ExcPending
+					if v106 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_ConstraintSetParentConstraint_1), int32(1138), int32(_a_F_ConstraintSetParentConstraint_2))
+						F_errfinish(m, int32(_a_F_ConstraintSetParentConstraint_1), int32(1143), int32(_a_F_ConstraintSetParentConstraint_2))
 						mBase = m.M
-						v110 = m.ExcPending
-						if v110 != 0 {
+						v111 = m.ExcPending
+						if v111 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()

@@ -5,6 +5,17 @@ import (
 	"unsafe"
 )
 
+func F_GetDefaultCharSignedness(m *base.Module) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	v2 = *(*int32)(unsafe.Add(mBase, _c_F_GetDefaultCharSignedness[0]))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v2)+272)))
+	return v3
+}
 func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -44,12 +55,10 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v52
 	var v57 int32
 	_ = v57
-	var v61 int32
-	_ = v61
 	var v62 int32
 	_ = v62
-	var v65 int32
-	_ = v65
+	var v63 int32
+	_ = v63
 	var v66 int32
 	_ = v66
 	var v67 int32
@@ -60,47 +69,49 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v69
 	var v70 int32
 	_ = v70
-	var v73 int32
-	_ = v73
+	var v71 int32
+	_ = v71
 	var v74 int32
 	_ = v74
-	var v76 int32
-	_ = v76
+	var v75 int32
+	_ = v75
 	var v77 int32
 	_ = v77
-	var v79 int32
-	_ = v79
-	var v81 int32
-	_ = v81
+	var v78 int32
+	_ = v78
+	var v80 int32
+	_ = v80
 	var v82 int32
 	_ = v82
-	var v85 int32
-	_ = v85
+	var v83 int32
+	_ = v83
 	var v86 int32
 	_ = v86
-	var v93 int32
-	_ = v93
-	var v101 int32
-	_ = v101
-	var v107 int32
-	_ = v107
-	var v112 int32
-	_ = v112
+	var v87 int32
+	_ = v87
+	var v94 int32
+	_ = v94
+	var v102 int32
+	_ = v102
+	var v108 int32
+	_ = v108
+	var v113 int32
+	_ = v113
 	v5 = m.G0
 	v7 = v5 - int32(48)
 	m.G0 = v7
 	v10 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_text_search_config[0]))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
 	if base.B2i32(v11 == int32(2)) == int32(0) {
-		v93 = int32(1)
+		v94 = int32(1)
 		m.G0 = v7 + int32(48)
-		return v93
+		return v94
 	} else {
 		v17 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_text_search_config[1]))
 		if v17 == int32(0) {
-			v93 = int32(1)
+			v94 = int32(1)
 			m.G0 = v7 + int32(48)
-			return v93
+			return v94
 		} else {
 			v21 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_text_search_config[2]))
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+40)) = v21
@@ -121,30 +132,30 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 						return int32(0)
 					} else {
 						if v34 != 0 {
-							v61 = F_SearchSysCache1(m, int32(74), v34)
+							v62 = F_SearchSysCache1(m, int32(74), base.I64_extend_i32_u(v34))
 							mBase = m.M
-							v62 = m.ExcPending
-							if v62 != 0 {
+							v63 = m.ExcPending
+							if v63 != 0 {
 								return int32(0)
 							} else {
-								if v61 == int32(0) {
+								if v62 == int32(0) {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v101 = m.ExcPending
-									if v101 != 0 {
+									v102 = m.ExcPending
+									if v102 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v34
 										F_errmsg_internal(m, int32(_a_F_check_default_text_search_config_0), v7+int32(16))
 										mBase = m.M
-										v107 = m.ExcPending
-										if v107 != 0 {
+										v108 = m.ExcPending
+										if v108 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_check_default_text_search_config_1), int32(649), int32(_a_F_check_default_text_search_config_2))
+											F_errfinish(m, int32(_a_F_check_default_text_search_config_1), int32(665), int32(_a_F_check_default_text_search_config_2))
 											mBase = m.M
-											v112 = m.ExcPending
-											if v112 != 0 {
+											v113 = m.ExcPending
+											if v113 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -154,56 +165,56 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 										}
 									}
 								} else {
-									v65 = *(*int32)(unsafe.Add(mBase, uint32(v61)+16))
-									v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v65)+22)))
-									v67 = v65 + v66
-									v68 = *(*int32)(unsafe.Add(mBase, uint32(v67)+68))
-									v69 = F_get_namespace_name(m, v68)
+									v66 = *(*int32)(unsafe.Add(mBase, uint32(v62)+16))
+									v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v66)+22)))
+									v68 = v66 + v67
+									v69 = *(*int32)(unsafe.Add(mBase, uint32(v68)+68))
+									v70 = F_get_namespace_name(m, v69)
 									mBase = m.M
-									v70 = m.ExcPending
-									if v70 != 0 {
+									v71 = m.ExcPending
+									if v71 != 0 {
 										return int32(0)
 									} else {
-										v73 = F_quote_qualified_identifier(m, v69, v67+int32(4))
+										v74 = F_quote_qualified_identifier(m, v70, v68+int32(4))
 										mBase = m.M
-										v74 = m.ExcPending
-										if v74 != 0 {
+										v75 = m.ExcPending
+										if v75 != 0 {
 											return int32(0)
 										} else {
-											F_ReleaseCatCache(m, v61)
+											F_ReleaseCatCache(m, v62)
 											mBase = m.M
-											v76 = m.ExcPending
-											if v76 != 0 {
+											v77 = m.ExcPending
+											if v77 != 0 {
 												return int32(0)
 											} else {
-												v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-												F_bms_free(m, v77)
+												v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												F_bms_free(m, v78)
 												mBase = m.M
-												v79 = m.ExcPending
-												if v79 != 0 {
+												v80 = m.ExcPending
+												if v80 != 0 {
 													return int32(0)
 												} else {
-													v81 = F_guc_strdup(m, int32(15), v73)
+													v82 = F_guc_strdup(m, int32(15), v74)
 													mBase = m.M
-													v82 = m.ExcPending
-													if v82 != 0 {
+													v83 = m.ExcPending
+													if v83 != 0 {
 														return int32(0)
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(l0))) = v81
-														F_pfree(m, v73)
+														*(*int32)(unsafe.Add(mBase, uint32(l0))) = v82
+														F_pfree(m, v74)
 														mBase = m.M
-														v85 = m.ExcPending
-														if v85 != 0 {
+														v86 = m.ExcPending
+														if v86 != 0 {
 															return int32(0)
 														} else {
-															v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-															if v86 != 0 {
-																v93 = int32(1)
+															v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+															if v87 != 0 {
+																v94 = int32(1)
 															} else {
-																v93 = int32(0)
+																v94 = int32(0)
 															}
 															m.G0 = v7 + int32(48)
-															return v93
+															return v94
 														}
 													}
 												}
@@ -214,9 +225,9 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 							}
 						} else {
 							if l2 != int32(12) {
-								v93 = base.B2i32(l2 == int32(12))
+								v94 = base.B2i32(l2 == int32(12))
 								m.G0 = v7 + int32(48)
-								return v93
+								return v94
 							} else {
 								v41 = F_errstart(m, int32(18), int32(0))
 								mBase = m.M
@@ -225,9 +236,9 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 									return int32(0)
 								} else {
 									if v41 == int32(0) {
-										v93 = base.B2i32(l2 == int32(12))
+										v94 = base.B2i32(l2 == int32(12))
 										m.G0 = v7 + int32(48)
-										return v93
+										return v94
 									} else {
 										F_errcode(m, int32(67137668))
 										mBase = m.M
@@ -243,15 +254,15 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 											if v52 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_check_default_text_search_config_1), int32(635), int32(_a_F_check_default_text_search_config_2))
+												F_errfinish(m, int32(_a_F_check_default_text_search_config_1), int32(651), int32(_a_F_check_default_text_search_config_2))
 												mBase = m.M
 												v57 = m.ExcPending
 												if v57 != 0 {
 													return int32(0)
 												} else {
-													v93 = base.B2i32(l2 == int32(12))
+													v94 = base.B2i32(l2 == int32(12))
 													m.G0 = v7 + int32(48)
-													return v93
+													return v94
 												}
 											}
 										}
@@ -262,9 +273,9 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 					}
 				} else {
 					if l2 != int32(12) {
-						v93 = base.B2i32(l2 == int32(12))
+						v94 = base.B2i32(l2 == int32(12))
 						m.G0 = v7 + int32(48)
-						return v93
+						return v94
 					} else {
 						v41 = F_errstart(m, int32(18), int32(0))
 						mBase = m.M
@@ -273,9 +284,9 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 							return int32(0)
 						} else {
 							if v41 == int32(0) {
-								v93 = base.B2i32(l2 == int32(12))
+								v94 = base.B2i32(l2 == int32(12))
 								m.G0 = v7 + int32(48)
-								return v93
+								return v94
 							} else {
 								F_errcode(m, int32(67137668))
 								mBase = m.M
@@ -291,15 +302,15 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 									if v52 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_check_default_text_search_config_1), int32(635), int32(_a_F_check_default_text_search_config_2))
+										F_errfinish(m, int32(_a_F_check_default_text_search_config_1), int32(651), int32(_a_F_check_default_text_search_config_2))
 										mBase = m.M
 										v57 = m.ExcPending
 										if v57 != 0 {
 											return int32(0)
 										} else {
-											v93 = base.B2i32(l2 == int32(12))
+											v94 = base.B2i32(l2 == int32(12))
 											m.G0 = v7 + int32(48)
-											return v93
+											return v94
 										}
 									}
 								}

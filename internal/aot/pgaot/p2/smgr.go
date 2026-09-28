@@ -90,8 +90,8 @@ func F_smgr_bulk_finish(m *base.Module, l0 int32) {
 				}
 			} else {
 				v16 = *(*int32)(unsafe.Add(mBase, _c_F_smgr_bulk_finish[0]))
-				v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+120))
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+120)) = v17 | int32(1)
+				v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+336))
+				*(*int32)(unsafe.Add(mBase, uint32(v16)+336)) = v17 | int32(1)
 				v21 = *(*int64)(unsafe.Add(mBase, uint32(l0)+408))
 				v22 = F_GetRedoRecPtr(m)
 				mBase = m.M
@@ -101,8 +101,8 @@ func F_smgr_bulk_finish(m *base.Module, l0 int32) {
 				} else {
 					if v21 != v22 {
 						v26 = *(*int32)(unsafe.Add(mBase, _c_F_smgr_bulk_finish[0]))
-						v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+120))
-						*(*int32)(unsafe.Add(mBase, uint32(v26)+120)) = v27 & int32(-2)
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+336))
+						*(*int32)(unsafe.Add(mBase, uint32(v26)+336)) = v27 & int32(-2)
 						v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 						v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 						v33 = int32(_a_F_smgr_bulk_finish_0)
@@ -154,8 +154,8 @@ func F_smgr_bulk_finish(m *base.Module, l0 int32) {
 							return
 						} else {
 							v67 = *(*int32)(unsafe.Add(mBase, _c_F_smgr_bulk_finish[0]))
-							v68 = *(*int32)(unsafe.Add(mBase, uint32(v67)+120))
-							*(*int32)(unsafe.Add(mBase, uint32(v67)+120)) = v68 & int32(-2)
+							v68 = *(*int32)(unsafe.Add(mBase, uint32(v67)+336))
+							*(*int32)(unsafe.Add(mBase, uint32(v67)+336)) = v68 & int32(-2)
 							return
 						}
 					}

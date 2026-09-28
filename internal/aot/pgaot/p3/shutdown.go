@@ -5,71 +5,74 @@ import (
 	"unsafe"
 )
 
-func F_ShutdownSetExpr(m *base.Module, l0 int32) {
+func F_ShutdownSetExpr(m *base.Module, l0 int64) {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
 	var v4 int32
 	_ = v4
 	var v5 int32
 	_ = v5
+	var v6 int32
+	_ = v6
 	var v7 int32
 	_ = v7
-	var v8 int32
-	_ = v8
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
-	var v11 int32
-	_ = v11
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	if v3 != 0 {
-		v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+8))
-		v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
-		m.T0[v5].(func(*base.Module, int32))(m, v3)
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	v4 = base.I32_wrap_i64(l0)
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+48))
+	if v5 != 0 {
+		v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)+8))
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+		m.T0[v7].(func(*base.Module, int32))(m, v5)
 		mBase = m.M
-		v7 = m.ExcPending
-		if v7 != 0 {
+		v9 = m.ExcPending
+		if v9 != 0 {
 			return
 		} else {
-			v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-			if v8 != 0 {
-				F_tuplestore_end(m, v8)
+			v10 = *(*int32)(unsafe.Add(mBase, uint32(v4)+44))
+			if v10 != 0 {
+				F_tuplestore_end(m, v10)
 				mBase = m.M
-				v10 = m.ExcPending
-				if v10 != 0 {
+				v12 = m.ExcPending
+				if v12 != 0 {
 					return
 				} else {
-					v11 = int32(0)
-					*(*uint16)(unsafe.Add(mBase, uint32(l0)+58)) = uint16(v11)
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v11
+					v13 = int32(0)
+					*(*uint16)(unsafe.Add(mBase, uint32(v4)+58)) = uint16(v13)
+					*(*int32)(unsafe.Add(mBase, uint32(v4)+44)) = v13
 					return
 				}
 			} else {
-				v11 = int32(0)
-				*(*uint16)(unsafe.Add(mBase, uint32(l0)+58)) = uint16(v11)
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v11
+				v13 = int32(0)
+				*(*uint16)(unsafe.Add(mBase, uint32(v4)+58)) = uint16(v13)
+				*(*int32)(unsafe.Add(mBase, uint32(v4)+44)) = v13
 				return
 			}
 		}
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-		if v8 != 0 {
-			F_tuplestore_end(m, v8)
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(v4)+44))
+		if v10 != 0 {
+			F_tuplestore_end(m, v10)
 			mBase = m.M
-			v10 = m.ExcPending
-			if v10 != 0 {
+			v12 = m.ExcPending
+			if v12 != 0 {
 				return
 			} else {
-				v11 = int32(0)
-				*(*uint16)(unsafe.Add(mBase, uint32(l0)+58)) = uint16(v11)
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v11
+				v13 = int32(0)
+				*(*uint16)(unsafe.Add(mBase, uint32(v4)+58)) = uint16(v13)
+				*(*int32)(unsafe.Add(mBase, uint32(v4)+44)) = v13
 				return
 			}
 		} else {
-			v11 = int32(0)
-			*(*uint16)(unsafe.Add(mBase, uint32(l0)+58)) = uint16(v11)
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v11
+			v13 = int32(0)
+			*(*uint16)(unsafe.Add(mBase, uint32(v4)+58)) = uint16(v13)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+44)) = v13
 			return
 		}
 	}

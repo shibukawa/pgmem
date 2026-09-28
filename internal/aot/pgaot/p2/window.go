@@ -212,7 +212,7 @@ func F_transformWindowFuncCall(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v11 = m.G0
 	v13 = v11 - int32(48)
 	m.G0 = v13
-	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+93)))
+	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+89)))
 	if v15 == int32(1) {
 		goto L2
 	} else {
@@ -244,7 +244,7 @@ L3:
 	goto L4
 L4:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 	switch v22 - int32(2) {
 	case 0, 1:
 		v42 = int32(_a_F_transformWindowFuncCall_0)
@@ -303,7 +303,7 @@ L7:
 	goto L4
 L8:
 	;
-	v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
 	v94 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
 	if v94 != 0 {
 		goto L43
@@ -421,7 +421,7 @@ L29:
 	}
 L30:
 	;
-	v56 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(l1)+44))
 	F_parser_errposition(m, l0, v56)
 	mBase = m.M
 	v58 = m.ExcPending
@@ -432,7 +432,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(_a_F_transformWindowFuncCall_20), int32(1039), int32(_a_F_transformWindowFuncCall_21))
+	F_errfinish(m, int32(_a_F_transformWindowFuncCall_20), int32(1040), int32(_a_F_transformWindowFuncCall_21))
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {
@@ -457,7 +457,7 @@ L33:
 	}
 L34:
 	;
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+	v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 	if base.Ui32(v71) <= base.Ui32(int32(44)) {
 		goto L36
 	} else {
@@ -488,7 +488,7 @@ L38:
 	goto L35
 L39:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+	v85 = *(*int32)(unsafe.Add(mBase, uint32(l1)+44))
 	F_parser_errposition(m, l0, v85)
 	mBase = m.M
 	v87 = m.ExcPending
@@ -499,7 +499,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(_a_F_transformWindowFuncCall_20), int32(1046), int32(_a_F_transformWindowFuncCall_21))
+	F_errfinish(m, int32(_a_F_transformWindowFuncCall_20), int32(1047), int32(_a_F_transformWindowFuncCall_21))
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {
@@ -516,7 +516,7 @@ L42:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+32)) = v295
 	v303 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+93)) = uint8(v303)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+89)) = uint8(v303)
 	m.G0 = v13 + int32(48)
 	return
 L43:
@@ -696,7 +696,7 @@ L68:
 	}
 L69:
 	;
-	F_errfinish(m, int32(_a_F_transformWindowFuncCall_20), int32(1079), int32(_a_F_transformWindowFuncCall_21))
+	F_errfinish(m, int32(_a_F_transformWindowFuncCall_20), int32(1080), int32(_a_F_transformWindowFuncCall_21))
 	mBase = m.M
 	v180 = m.ExcPending
 	if v180 != 0 {
@@ -740,7 +740,7 @@ L75:
 	goto L76
 L76:
 	;
-	v273 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	v273 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
 	v285 = v273
 	goto L73
 L77:
@@ -939,7 +939,7 @@ L103:
 	goto L78
 L104:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v286
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v286
 	if v286 == int32(0) {
 		v295 = int32(0)
 		goto L42
@@ -994,7 +994,7 @@ L109:
 	}
 L110:
 	;
-	F_errfinish(m, int32(_a_F_transformWindowFuncCall_20), int32(898), int32(_a_F_transformWindowFuncCall_21))
+	F_errfinish(m, int32(_a_F_transformWindowFuncCall_20), int32(899), int32(_a_F_transformWindowFuncCall_21))
 	mBase = m.M
 	v328 = m.ExcPending
 	if v328 != 0 {

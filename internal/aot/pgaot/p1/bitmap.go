@@ -22,7 +22,7 @@ func F_ExecBitmapAnd(m *base.Module, l0 int32) int32 {
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(_a_F_ExecBitmapAnd_1), int32(44), int32(_a_F_ExecBitmapAnd_2))
+			F_errfinish(m, int32(_a_F_ExecBitmapAnd_1), int32(47), int32(_a_F_ExecBitmapAnd_2))
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)
@@ -39,7 +39,7 @@ func F_ExecBitmapHeapScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(700), int32(701))
+	v4 = F_ExecScan(m, l0, int32(746), int32(747))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -64,7 +64,7 @@ func F_ExecBitmapIndexScan(m *base.Module, l0 int32) int32 {
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(_a_F_ExecBitmapIndexScan_1), int32(40), int32(_a_F_ExecBitmapIndexScan_2))
+			F_errfinish(m, int32(_a_F_ExecBitmapIndexScan_1), int32(42), int32(_a_F_ExecBitmapIndexScan_2))
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)
@@ -85,18 +85,18 @@ func F_choose_bitmap_and(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v20
 	var v22 int32
 	_ = v22
-	var v27 int32
-	_ = v27
-	var v30 int32
-	_ = v30
-	var v35 int32
-	_ = v35
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
 	var v36 int32
 	_ = v36
-	var v39 int32
-	_ = v39
+	var v37 int32
+	_ = v37
 	var v40 int32
 	_ = v40
+	var v41 int32
+	_ = v41
 	var v43 int32
 	_ = v43
 	var v44 int32
@@ -570,10 +570,10 @@ L2:
 	}
 L3:
 	;
-	v27 = F_palloc(m, int32(0))
+	v28 = F_palloc_mul(m, int32(4), int32(0))
 	mBase = m.M
-	v30 = m.ExcPending
-	if v30 != 0 {
+	v31 = m.ExcPending
+	if v31 != 0 {
 		goto L6
 	} else {
 		goto L7
@@ -583,8 +583,8 @@ L4:
 	goto L5
 L5:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-	if v36 == int32(1) {
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
+	if v37 == int32(1) {
 		goto L9
 	} else {
 		goto L10
@@ -594,10 +594,10 @@ L6:
 	return int32(0)
 L7:
 	;
-	F_pg_qsort(m, v27, int32(0), int32(4), int32(824))
+	F_pg_qsort(m, v28, int32(0), int32(4), int32(873))
 	mBase = m.M
-	v35 = m.ExcPending
-	if v35 != 0 {
+	v36 = m.ExcPending
+	if v36 != 0 {
 		goto L6
 	} else {
 		goto L8
@@ -609,17 +609,17 @@ L8:
 	goto L2
 L9:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)))
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 	v899 = v22
-	v915 = v40
+	v915 = v41
 	goto L1
 L10:
 	;
 	goto L11
 L11:
 	;
-	v43 = F_palloc(m, v36<<(uint(int32(2))%32))
+	v43 = F_palloc_mul(m, int32(4), v37)
 	mBase = m.M
 	v44 = m.ExcPending
 	if v44 != 0 {
@@ -1211,7 +1211,7 @@ L93:
 	goto L94
 L94:
 	;
-	F_pg_qsort(m, v43, v538, int32(4), int32(824))
+	F_pg_qsort(m, v43, v538, int32(4), int32(873))
 	mBase = m.M
 	v554 = m.ExcPending
 	if v554 != 0 {
@@ -1275,9 +1275,9 @@ L101:
 L102:
 	;
 	v593 = *(*int32)(unsafe.Add(mBase, uint32(v584)))
-	*(*int64)(unsafe.Add(mBase, uint32(v22)+48)) = int64(1477468750106)
+	*(*int64)(unsafe.Add(mBase, uint32(v22)+48)) = int64(1494648619293)
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+56)) = l1
-	v597 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
+	v597 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+60)) = v597
 	v599 = *(*int32)(unsafe.Add(mBase, uint32(v593)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+120)) = v593
@@ -1285,7 +1285,7 @@ L102:
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+112)) = v601
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+64)) = v599
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+72)) = v601
-	v608 = *(*int32)(unsafe.Add(mBase, uint32(l1)+68))
+	v608 = *(*int32)(unsafe.Add(mBase, uint32(l1)+76))
 	if v599 != 0 {
 		goto L103
 	} else {
@@ -1581,8 +1581,8 @@ L139:
 L140:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+56)) = l1
-	*(*int64)(unsafe.Add(mBase, uint32(v22)+48)) = int64(1477468750106)
-	v769 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
+	*(*int64)(unsafe.Add(mBase, uint32(v22)+48)) = int64(1494648619293)
+	v769 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+60)) = v769
 	v771 = *(*int32)(unsafe.Add(mBase, uint32(v764)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+120)) = v764
@@ -1590,7 +1590,7 @@ L140:
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+112)) = v773
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+64)) = v771
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+72)) = v773
-	v780 = *(*int32)(unsafe.Add(mBase, uint32(l1)+68))
+	v780 = *(*int32)(unsafe.Add(mBase, uint32(l1)+76))
 	if v771 != 0 {
 		goto L141
 	} else {

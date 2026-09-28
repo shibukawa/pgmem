@@ -100,7 +100,7 @@ L3:
 	;
 	v17 = F_strlen(m, l3)
 	mBase = m.M
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v18 == int32(0) {
 		goto L4
 	} else {
@@ -262,7 +262,7 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 						if v80 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_get_config_unit_name_1), int32(2854), int32(_a_F_get_config_unit_name_2))
+							F_errfinish(m, int32(_a_F_get_config_unit_name_1), int32(2758), int32(_a_F_get_config_unit_name_2))
 							mBase = m.M
 							v85 = m.ExcPending
 							if v85 != 0 {
@@ -321,7 +321,7 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 						if v80 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_get_config_unit_name_1), int32(2854), int32(_a_F_get_config_unit_name_2))
+							F_errfinish(m, int32(_a_F_get_config_unit_name_1), int32(2758), int32(_a_F_get_config_unit_name_2))
 							mBase = m.M
 							v85 = m.ExcPending
 							if v85 != 0 {
@@ -378,7 +378,7 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 						if v80 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_get_config_unit_name_1), int32(2854), int32(_a_F_get_config_unit_name_2))
+							F_errfinish(m, int32(_a_F_get_config_unit_name_1), int32(2758), int32(_a_F_get_config_unit_name_2))
 							mBase = m.M
 							v85 = m.ExcPending
 							if v85 != 0 {
@@ -421,7 +421,7 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 							if v80 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_get_config_unit_name_1), int32(2854), int32(_a_F_get_config_unit_name_2))
+								F_errfinish(m, int32(_a_F_get_config_unit_name_1), int32(2758), int32(_a_F_get_config_unit_name_2))
 								mBase = m.M
 								v85 = m.ExcPending
 								if v85 != 0 {

@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_ShutdownAuxiliaryProcess(m *base.Module, l0 int32, l1 int32) {
+func F_ShutdownAuxiliaryProcess(m *base.Module, l0 int32, l1 int64) {
 	mBase := m.M
 	_ = mBase
 	var v4 int32

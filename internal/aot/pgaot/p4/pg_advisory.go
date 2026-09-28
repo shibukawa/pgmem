@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_pg_advisory_unlock_all(m *base.Module, l0 int32) int32 {
+func F_pg_advisory_unlock_all(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -47,7 +47,7 @@ func F_pg_advisory_unlock_all(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
 	v15 = F_hash_seq_search(m, v8)
@@ -75,7 +75,7 @@ L5:
 L6:
 	;
 	m.G0 = v5 + int32(32)
-	return int32(0)
+	return int64(0)
 L7:
 	;
 	v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+15)))
@@ -125,67 +125,67 @@ L14:
 	;
 	goto L8
 }
-func F_pg_advisory_unlock_int4(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F_pg_advisory_unlock_int4(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13959(m, l0, int32(7))
+	v3 = Fn14342(m, l0, int32(7))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
 }
-func F_pg_advisory_unlock_shared_int4(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F_pg_advisory_unlock_shared_int4(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13959(m, l0, int32(5))
+	v3 = Fn14342(m, l0, int32(5))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
 }
-func F_pg_advisory_unlock_shared_int8(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F_pg_advisory_unlock_shared_int8(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13960(m, l0, int32(5))
+	v3 = Fn14343(m, l0, int32(5))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
 }
-func F_pg_try_advisory_xact_lock_int4(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_pg_try_advisory_xact_lock_int4(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13968(m, l0, int32(0), int32(7))
+	v4 = Fn14350(m, l0, int32(0), int32(7))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}
 }
-func F_pg_try_advisory_xact_lock_int8(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_pg_try_advisory_xact_lock_int8(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13969(m, l0, int32(0), int32(7))
+	v4 = Fn14351(m, l0, int32(0), int32(7))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}

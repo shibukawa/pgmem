@@ -5,108 +5,108 @@ import (
 	"unsafe"
 )
 
-func F__int_contained_joinsel(m *base.Module, l0 int32) int32 {
+func F__int_contained_joinsel(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v6 int32
+	var v6 int64
 	_ = v6
-	var v7 int32
+	var v7 int64
 	_ = v7
-	var v8 int32
+	var v8 int64
 	_ = v8
-	var v9 int32
+	var v9 int64
 	_ = v9
 	var v12 int32
 	_ = v12
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v9 = F_DirectFunctionCall5Coll(m, int32(3994), int32(0), v4, int32(2752), v6, v7, v8)
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v6 = *(*int64)(unsafe.Add(mBase, uint32(l0)+56))
+	v7 = *(*int64)(unsafe.Add(mBase, uint32(l0)+72))
+	v8 = *(*int64)(unsafe.Add(mBase, uint32(l0)+88))
+	v9 = F_DirectFunctionCall5Coll(m, int32(_a_F__int_contained_joinsel_0), int32(0), v4, int64(2752), v6, v7, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v9
 	}
 }
-func F__int_contained_sel(m *base.Module, l0 int32) int32 {
+func F__int_contained_sel(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v6 int32
+	var v6 int64
 	_ = v6
-	var v7 int32
+	var v7 int64
 	_ = v7
-	var v8 int32
+	var v8 int64
 	_ = v8
 	var v11 int32
 	_ = v11
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v8 = F_DirectFunctionCall4Coll(m, int32(3993), int32(0), v4, int32(2752), v6, v7)
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v6 = *(*int64)(unsafe.Add(mBase, uint32(l0)+56))
+	v7 = *(*int64)(unsafe.Add(mBase, uint32(l0)+72))
+	v8 = F_DirectFunctionCall4Coll(m, int32(_a_F__int_contained_sel_0), int32(0), v4, int64(2752), v6, v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v8
 	}
 }
-func F__int_overlap_joinsel(m *base.Module, l0 int32) int32 {
+func F__int_overlap_joinsel(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v6 int32
+	var v6 int64
 	_ = v6
-	var v7 int32
+	var v7 int64
 	_ = v7
-	var v8 int32
+	var v8 int64
 	_ = v8
-	var v9 int32
+	var v9 int64
 	_ = v9
 	var v12 int32
 	_ = v12
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v9 = F_DirectFunctionCall5Coll(m, int32(3994), int32(0), v4, int32(2750), v6, v7, v8)
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v6 = *(*int64)(unsafe.Add(mBase, uint32(l0)+56))
+	v7 = *(*int64)(unsafe.Add(mBase, uint32(l0)+72))
+	v8 = *(*int64)(unsafe.Add(mBase, uint32(l0)+88))
+	v9 = F_DirectFunctionCall5Coll(m, int32(_a_F__int_overlap_joinsel_0), int32(0), v4, int64(2750), v6, v7, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v9
 	}
 }
-func F__int_overlap_sel(m *base.Module, l0 int32) int32 {
+func F__int_overlap_sel(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v6 int32
+	var v6 int64
 	_ = v6
-	var v7 int32
+	var v7 int64
 	_ = v7
-	var v8 int32
+	var v8 int64
 	_ = v8
 	var v11 int32
 	_ = v11
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v8 = F_DirectFunctionCall4Coll(m, int32(3993), int32(0), v4, int32(2750), v6, v7)
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v6 = *(*int64)(unsafe.Add(mBase, uint32(l0)+56))
+	v7 = *(*int64)(unsafe.Add(mBase, uint32(l0)+72))
+	v8 = F_DirectFunctionCall4Coll(m, int32(_a_F__int_overlap_sel_0), int32(0), v4, int64(2750), v6, v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v8
 	}

@@ -9,6 +9,8 @@ func F_XmlTableSetColumnFilter(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v10
 	var v14 int32
 	_ = v14
+	var v17 int32
+	_ = v17
 	var v18 int32
 	_ = v18
 	var v23 int32
@@ -28,7 +30,7 @@ func F_XmlTableSetColumnFilter(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v14 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(_a_F_XmlTableSetColumnFilter_1), int32(0))
+				v17 = F_errdetail(m, int32(_a_F_XmlTableSetColumnFilter_1), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return
@@ -47,28 +49,28 @@ func F_XmlTableSetColumnFilter(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	}
 }
-func F_xml_in(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_xml_in(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13842(m, l0, int32(_a_F_xml_in_0), int32(295))
+	v4 = Fn14411(m, l0, int32(_a_F_xml_in_0), int32(294))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}
 }
-func F_xml_is_well_formed_content(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_xml_is_well_formed_content(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13842(m, l0, int32(_a_F_xml_is_well_formed_content_0), int32(_a_F_xml_is_well_formed_content_1))
+	v4 = Fn14411(m, l0, int32(_a_F_xml_is_well_formed_content_0), int32(_a_F_xml_is_well_formed_content_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}

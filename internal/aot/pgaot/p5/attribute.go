@@ -188,9 +188,9 @@ func F_CopyAttributeOutCSV(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v235
 	var v237 int32
 	_ = v237
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+84))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 	if v12 != 0 {
 		goto L1
@@ -218,7 +218,7 @@ L3:
 	}
 L4:
 	;
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
 	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 	v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24))))
 	if base.B2i32(v27 == int32(0))|base.B2i32(v27 != v30) != 0 {

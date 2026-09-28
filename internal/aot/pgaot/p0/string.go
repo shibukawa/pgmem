@@ -261,7 +261,7 @@ func F_resetStringInfo(m *base.Module, l0 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v3
 	return
 }
-func F_string_agg_finalfn(m *base.Module, l0 int32) int32 {
+func F_string_agg_finalfn(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -282,23 +282,19 @@ func F_string_agg_finalfn(m *base.Module, l0 int32) int32 {
 	_ = v16
 	var v19 int32
 	_ = v19
-	var v31 int32
-	_ = v31
-	var v34 int32
-	_ = v34
-	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
+	var v30 int32
+	_ = v30
+	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 	if v6 != 0 {
-		v31 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-		v34 = int32(0)
-		return v34
+		v30 = int32(1)
+		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v30)
+		return int64(0)
 	} else {
-		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 		if v7 == int32(0) {
-			v31 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-			v34 = int32(0)
-			return v34
+			v30 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v30)
+			return int64(0)
 		} else {
 			v10 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
 			v11 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
@@ -309,21 +305,19 @@ func F_string_agg_finalfn(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v15 << (uint(int32(2)) % 32)
-				if v13 == int32(0) {
-					v34 = v16
-					return v34
-				} else {
+				if v13 != 0 {
 					base.MemoryCopy(m, v16+int32(4), v10+v12, v13)
-					return v16
+				} else {
 				}
+				return base.I64_extend_i32_u(v16)
 			}
 		}
 	}
 }
-func F_string_agg_serialize(m *base.Module, l0 int32) int32 {
+func F_string_agg_serialize(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -357,19 +351,19 @@ func F_string_agg_serialize(m *base.Module, l0 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	F_pq_begintypsend(m, v7)
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
 		F_enlargeStringInfo(m, v7, int32(4))
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
 			v19 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
@@ -382,13 +376,13 @@ func F_string_agg_serialize(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v37 = m.ExcPending
 			if v37 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v39 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
 				v40 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v39))) = v40 << (uint(int32(2)) % 32)
 				m.G0 = v7 + int32(16)
-				return v39
+				return base.I64_extend_i32_u(v39)
 			}
 		}
 	}

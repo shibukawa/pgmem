@@ -5,24 +5,24 @@ import (
 	"unsafe"
 )
 
-func F__int_contained(m *base.Module, l0 int32) int32 {
+func F__int_contained(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F__int_contained_0), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v6
 	}
@@ -123,7 +123,7 @@ func F_add_int_reloption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 					*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = v25
 					v28 = F_strlen(m, l1)
 					mBase = m.M
-					*(*int32)(unsafe.Add(mBase, uint32(v18)+20)) = int32(1)
+					*(*int32)(unsafe.Add(mBase, uint32(v18)+20)) = int32(2)
 					*(*int32)(unsafe.Add(mBase, uint32(v18)+16)) = v28
 					*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(8)
 					if v16 != 0 {
@@ -199,7 +199,7 @@ func F_add_int_reloption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 				*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = v25
 				v28 = F_strlen(m, l1)
 				mBase = m.M
-				*(*int32)(unsafe.Add(mBase, uint32(v18)+20)) = int32(1)
+				*(*int32)(unsafe.Add(mBase, uint32(v18)+20)) = int32(2)
 				*(*int32)(unsafe.Add(mBase, uint32(v18)+16)) = v28
 				*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(8)
 				if v16 != 0 {
@@ -628,7 +628,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(_a_F_readIntCols_1), int32(696), int32(_a_F_readIntCols_2))
+	F_errfinish(m, int32(_a_F_readIntCols_1), int32(693), int32(_a_F_readIntCols_2))
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -653,7 +653,7 @@ L41:
 	}
 L42:
 	;
-	F_errfinish(m, int32(_a_F_readIntCols_1), int32(696), int32(_a_F_readIntCols_2))
+	F_errfinish(m, int32(_a_F_readIntCols_1), int32(693), int32(_a_F_readIntCols_2))
 	mBase = m.M
 	v151 = m.ExcPending
 	if v151 != 0 {

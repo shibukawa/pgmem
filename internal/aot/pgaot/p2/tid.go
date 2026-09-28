@@ -75,7 +75,7 @@ L1:
 	;
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
-	v10 = F_LWLockAcquire(m, v6+int32(1476), int32(0))
+	v10 = F_LWLockAcquire(m, v6+int32(1476), int32(1))
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {

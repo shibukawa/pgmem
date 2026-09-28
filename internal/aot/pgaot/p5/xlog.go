@@ -5,7 +5,19 @@ import (
 	"unsafe"
 )
 
-func F_XLOGShmemSize(m *base.Module) int32 {
+func F_XLOGShmemAttach(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	v4 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemAttach[0]))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+176))
+	*(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemAttach[1])) = v5
+	return
+}
+func F_XLOGShmemRequest(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -30,99 +42,124 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 	_ = v28
 	var v31 int32
 	_ = v31
+	var v32 int32
+	_ = v32
 	var v34 int32
 	_ = v34
-	var v36 int32
-	_ = v36
+	var v37 int32
+	_ = v37
 	var v39 int32
 	_ = v39
-	var v41 int32
-	_ = v41
-	var v48 int32
-	_ = v48
+	var v46 int32
+	_ = v46
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
 	var v54 int32
 	_ = v54
 	var v55 int32
 	_ = v55
-	var v56 int32
-	_ = v56
-	var v57 int32
-	_ = v57
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
 	var v60 int32
 	_ = v60
 	var v61 int32
 	_ = v61
 	var v62 int32
 	_ = v62
-	var v63 int32
-	_ = v63
 	var v64 int32
 	_ = v64
-	var v66 int32
-	_ = v66
-	var v67 int32
-	_ = v67
+	var v65 int32
+	_ = v65
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
 	var v70 int32
 	_ = v70
 	var v71 int32
 	_ = v71
 	var v72 int32
 	_ = v72
-	var v73 int32
-	_ = v73
-	var v74 int32
-	_ = v74
+	var v83 int32
+	_ = v83
+	var v93 int32
+	_ = v93
 	v4 = m.G0
-	v6 = v4 - int32(48)
+	v6 = v4 - int32(80)
 	m.G0 = v6
-	v9 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[0]))
+	v9 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[0]))
 	if v9 != int32(-1) {
-		v54 = F_mul_size(m, int32(128), int32(9))
+		v52 = F_mul_size(m, int32(128), int32(9))
 		mBase = m.M
-		v55 = m.ExcPending
-		if v55 != 0 {
-			return int32(0)
+		v53 = m.ExcPending
+		if v53 != 0 {
+			return
 		} else {
-			v56 = F_add_size(m, int32(448), v54)
+			v54 = F_add_size(m, int32(448), v52)
 			mBase = m.M
-			v57 = m.ExcPending
-			if v57 != 0 {
-				return int32(0)
+			v55 = m.ExcPending
+			if v55 != 0 {
+				return
 			} else {
-				v60 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[0]))
-				v61 = F_mul_size(m, int32(8), v60)
+				v58 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[0]))
+				v59 = F_mul_size(m, int32(8), v58)
 				mBase = m.M
-				v62 = m.ExcPending
-				if v62 != 0 {
-					return int32(0)
+				v60 = m.ExcPending
+				if v60 != 0 {
+					return
 				} else {
-					v63 = F_add_size(m, v56, v61)
+					v61 = F_add_size(m, v54, v59)
 					mBase = m.M
-					v64 = m.ExcPending
-					if v64 != 0 {
-						return int32(0)
+					v62 = m.ExcPending
+					if v62 != 0 {
+						return
 					} else {
-						v66 = F_add_size(m, v63, int32(_a_F_XLOGShmemSize_0))
+						v64 = F_add_size(m, v61, int32(_a_F_XLOGShmemRequest_0))
 						mBase = m.M
-						v67 = m.ExcPending
-						if v67 != 0 {
-							return int32(0)
+						v65 = m.ExcPending
+						if v65 != 0 {
+							return
 						} else {
-							v70 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[0]))
-							v71 = F_mul_size(m, int32(_a_F_XLOGShmemSize_0), v70)
+							v68 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[0]))
+							v69 = F_mul_size(m, int32(_a_F_XLOGShmemRequest_0), v68)
 							mBase = m.M
-							v72 = m.ExcPending
-							if v72 != 0 {
-								return int32(0)
+							v70 = m.ExcPending
+							if v70 != 0 {
+								return
 							} else {
-								v73 = F_add_size(m, v66, v71)
+								v71 = F_add_size(m, v64, v69)
 								mBase = m.M
-								v74 = m.ExcPending
-								if v74 != 0 {
-									return int32(0)
+								v72 = m.ExcPending
+								if v72 != 0 {
+									return
 								} else {
-									m.G0 = v6 + int32(48)
-									return v73
+									*(*int32)(unsafe.Add(mBase, uint32(v6)+44)) = int32(_a_F_XLOGShmemRequest_1)
+									*(*int32)(unsafe.Add(mBase, uint32(v6)+40)) = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = v71
+									*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = int32(_a_F_XLOGShmemRequest_2)
+									F_ShmemRequestStructWithOpts(m, v6+int32(32))
+									mBase = m.M
+									v83 = m.ExcPending
+									if v83 != 0 {
+										return
+									} else {
+										*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = int32(_a_F_XLOGShmemRequest_3)
+										*(*int64)(unsafe.Add(mBase, uint32(v6)+20)) = int64(312)
+										*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(_a_F_XLOGShmemRequest_4)
+										F_ShmemRequestStructWithOpts(m, v6+int32(16))
+										mBase = m.M
+										v93 = m.ExcPending
+										if v93 != 0 {
+											return
+										} else {
+											m.G0 = v6 + int32(80)
+											return
+										}
+									}
 								}
 							}
 						}
@@ -131,10 +168,10 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 			}
 		}
 	} else {
-		v14 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[1]))
+		v14 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[1]))
 		v16 = base.I32_div_s(v14, int32(32))
-		v18 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[2]))
-		v20 = base.I32_div_s(v18, int32(_a_F_XLOGShmemSize_0))
+		v18 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[2]))
+		v20 = base.I32_div_s(v18, int32(_a_F_XLOGShmemRequest_0))
 		if v16 < v20 {
 			v22 = v16
 		} else {
@@ -146,68 +183,89 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 			v25 = v22
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25
-		v28 = v6 + int32(16)
-		v31 = F_pg_snprintf(m, v28, int32(32), int32(_a_F_XLOGShmemSize_1), v6)
+		v28 = v6 + int32(48)
+		v31 = F_pg_snprintf(m, v28, int32(32), int32(_a_F_XLOGShmemRequest_5), v6)
 		mBase = m.M
-		v34 = m.ExcPending
-		if v34 != 0 {
-			return int32(0)
+		v32 = m.ExcPending
+		if v32 != 0 {
+			return
 		} else {
-			v36 = int32(1)
-			F_SetConfigOption(m, int32(_a_F_XLOGShmemSize_2), v28, v36, v36)
+			v34 = int32(1)
+			F_SetConfigOption(m, int32(_a_F_XLOGShmemRequest_6), v28, v34, v34)
 			mBase = m.M
-			v39 = m.ExcPending
-			if v39 != 0 {
-				return int32(0)
+			v37 = m.ExcPending
+			if v37 != 0 {
+				return
 			} else {
-				v41 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[0]))
-				if v41 != int32(-1) {
-					v54 = F_mul_size(m, int32(128), int32(9))
+				v39 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[0]))
+				if v39 != int32(-1) {
+					v52 = F_mul_size(m, int32(128), int32(9))
 					mBase = m.M
-					v55 = m.ExcPending
-					if v55 != 0 {
-						return int32(0)
+					v53 = m.ExcPending
+					if v53 != 0 {
+						return
 					} else {
-						v56 = F_add_size(m, int32(448), v54)
+						v54 = F_add_size(m, int32(448), v52)
 						mBase = m.M
-						v57 = m.ExcPending
-						if v57 != 0 {
-							return int32(0)
+						v55 = m.ExcPending
+						if v55 != 0 {
+							return
 						} else {
-							v60 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[0]))
-							v61 = F_mul_size(m, int32(8), v60)
+							v58 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[0]))
+							v59 = F_mul_size(m, int32(8), v58)
 							mBase = m.M
-							v62 = m.ExcPending
-							if v62 != 0 {
-								return int32(0)
+							v60 = m.ExcPending
+							if v60 != 0 {
+								return
 							} else {
-								v63 = F_add_size(m, v56, v61)
+								v61 = F_add_size(m, v54, v59)
 								mBase = m.M
-								v64 = m.ExcPending
-								if v64 != 0 {
-									return int32(0)
+								v62 = m.ExcPending
+								if v62 != 0 {
+									return
 								} else {
-									v66 = F_add_size(m, v63, int32(_a_F_XLOGShmemSize_0))
+									v64 = F_add_size(m, v61, int32(_a_F_XLOGShmemRequest_0))
 									mBase = m.M
-									v67 = m.ExcPending
-									if v67 != 0 {
-										return int32(0)
+									v65 = m.ExcPending
+									if v65 != 0 {
+										return
 									} else {
-										v70 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[0]))
-										v71 = F_mul_size(m, int32(_a_F_XLOGShmemSize_0), v70)
+										v68 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[0]))
+										v69 = F_mul_size(m, int32(_a_F_XLOGShmemRequest_0), v68)
 										mBase = m.M
-										v72 = m.ExcPending
-										if v72 != 0 {
-											return int32(0)
+										v70 = m.ExcPending
+										if v70 != 0 {
+											return
 										} else {
-											v73 = F_add_size(m, v66, v71)
+											v71 = F_add_size(m, v64, v69)
 											mBase = m.M
-											v74 = m.ExcPending
-											if v74 != 0 {
-												return int32(0)
+											v72 = m.ExcPending
+											if v72 != 0 {
+												return
 											} else {
-												m.G0 = v6 + int32(48)
-												return v73
+												*(*int32)(unsafe.Add(mBase, uint32(v6)+44)) = int32(_a_F_XLOGShmemRequest_1)
+												*(*int32)(unsafe.Add(mBase, uint32(v6)+40)) = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = v71
+												*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = int32(_a_F_XLOGShmemRequest_2)
+												F_ShmemRequestStructWithOpts(m, v6+int32(32))
+												mBase = m.M
+												v83 = m.ExcPending
+												if v83 != 0 {
+													return
+												} else {
+													*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = int32(_a_F_XLOGShmemRequest_3)
+													*(*int64)(unsafe.Add(mBase, uint32(v6)+20)) = int64(312)
+													*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(_a_F_XLOGShmemRequest_4)
+													F_ShmemRequestStructWithOpts(m, v6+int32(16))
+													mBase = m.M
+													v93 = m.ExcPending
+													if v93 != 0 {
+														return
+													} else {
+														m.G0 = v6 + int32(80)
+														return
+													}
+												}
 											}
 										}
 									}
@@ -216,58 +274,79 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 						}
 					}
 				} else {
-					F_SetConfigOption(m, int32(_a_F_XLOGShmemSize_2), v28, int32(1), int32(10))
+					F_SetConfigOption(m, int32(_a_F_XLOGShmemRequest_6), v28, int32(1), int32(10))
 					mBase = m.M
-					v48 = m.ExcPending
-					if v48 != 0 {
-						return int32(0)
+					v46 = m.ExcPending
+					if v46 != 0 {
+						return
 					} else {
-						v54 = F_mul_size(m, int32(128), int32(9))
+						v52 = F_mul_size(m, int32(128), int32(9))
 						mBase = m.M
-						v55 = m.ExcPending
-						if v55 != 0 {
-							return int32(0)
+						v53 = m.ExcPending
+						if v53 != 0 {
+							return
 						} else {
-							v56 = F_add_size(m, int32(448), v54)
+							v54 = F_add_size(m, int32(448), v52)
 							mBase = m.M
-							v57 = m.ExcPending
-							if v57 != 0 {
-								return int32(0)
+							v55 = m.ExcPending
+							if v55 != 0 {
+								return
 							} else {
-								v60 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[0]))
-								v61 = F_mul_size(m, int32(8), v60)
+								v58 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[0]))
+								v59 = F_mul_size(m, int32(8), v58)
 								mBase = m.M
-								v62 = m.ExcPending
-								if v62 != 0 {
-									return int32(0)
+								v60 = m.ExcPending
+								if v60 != 0 {
+									return
 								} else {
-									v63 = F_add_size(m, v56, v61)
+									v61 = F_add_size(m, v54, v59)
 									mBase = m.M
-									v64 = m.ExcPending
-									if v64 != 0 {
-										return int32(0)
+									v62 = m.ExcPending
+									if v62 != 0 {
+										return
 									} else {
-										v66 = F_add_size(m, v63, int32(_a_F_XLOGShmemSize_0))
+										v64 = F_add_size(m, v61, int32(_a_F_XLOGShmemRequest_0))
 										mBase = m.M
-										v67 = m.ExcPending
-										if v67 != 0 {
-											return int32(0)
+										v65 = m.ExcPending
+										if v65 != 0 {
+											return
 										} else {
-											v70 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemSize[0]))
-											v71 = F_mul_size(m, int32(_a_F_XLOGShmemSize_0), v70)
+											v68 = *(*int32)(unsafe.Add(mBase, _c_F_XLOGShmemRequest[0]))
+											v69 = F_mul_size(m, int32(_a_F_XLOGShmemRequest_0), v68)
 											mBase = m.M
-											v72 = m.ExcPending
-											if v72 != 0 {
-												return int32(0)
+											v70 = m.ExcPending
+											if v70 != 0 {
+												return
 											} else {
-												v73 = F_add_size(m, v66, v71)
+												v71 = F_add_size(m, v64, v69)
 												mBase = m.M
-												v74 = m.ExcPending
-												if v74 != 0 {
-													return int32(0)
+												v72 = m.ExcPending
+												if v72 != 0 {
+													return
 												} else {
-													m.G0 = v6 + int32(48)
-													return v73
+													*(*int32)(unsafe.Add(mBase, uint32(v6)+44)) = int32(_a_F_XLOGShmemRequest_1)
+													*(*int32)(unsafe.Add(mBase, uint32(v6)+40)) = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = v71
+													*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = int32(_a_F_XLOGShmemRequest_2)
+													F_ShmemRequestStructWithOpts(m, v6+int32(32))
+													mBase = m.M
+													v83 = m.ExcPending
+													if v83 != 0 {
+														return
+													} else {
+														*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = int32(_a_F_XLOGShmemRequest_3)
+														*(*int64)(unsafe.Add(mBase, uint32(v6)+20)) = int64(312)
+														*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(_a_F_XLOGShmemRequest_4)
+														F_ShmemRequestStructWithOpts(m, v6+int32(16))
+														mBase = m.M
+														v93 = m.ExcPending
+														if v93 != 0 {
+															return
+														} else {
+															m.G0 = v6 + int32(80)
+															return
+														}
+													}
 												}
 											}
 										}
@@ -284,18 +363,8 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 func F_xlog_identify(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	v3 = int32(base.Ui32(l0) >> (uint(int32(4)) % 32))
-	if v3 != int32(15) {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(v3<<(uint(int32(2))%32))+uint32(_c_F_xlog_identify[0])))
-		v10 = v8
-	} else {
-		v10 = int32(0)
-	}
-	return v10
+	var v6 int32
+	_ = v6
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(int32(base.Ui32(l0)>>(uint(int32(2))%32))&int32(60))+uint32(_c_F_xlog_identify[0])))
+	return v6
 }

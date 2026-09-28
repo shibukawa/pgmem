@@ -5,15 +5,29 @@ import (
 	"unsafe"
 )
 
-func F_pq_cleanup_redirect_to_shm_mq(m *base.Module, l0 int32, l1 int32) {
+func F_pq_cleanup_redirect_to_shm_mq(m *base.Module, l0 int32, l1 int64) {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
 	_ = v4
-	v4 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_pq_cleanup_redirect_to_shm_mq[0])) = v4
-	*(*int32)(unsafe.Add(mBase, _c_F_pq_cleanup_redirect_to_shm_mq[1])) = v4
-	return
+	var v6 int32
+	_ = v6
+	v4 = *(*int32)(unsafe.Add(mBase, _c_F_pq_cleanup_redirect_to_shm_mq[0]))
+	if v4 != 0 {
+		F_pfree(m, v4)
+		mBase = m.M
+		v6 = m.ExcPending
+		if v6 != 0 {
+			return
+		} else {
+			*(*int32)(unsafe.Add(mBase, _c_F_pq_cleanup_redirect_to_shm_mq[0])) = int32(0)
+			*(*int32)(unsafe.Add(mBase, _c_F_pq_cleanup_redirect_to_shm_mq[1])) = int32(0)
+			return
+		}
+	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_pq_cleanup_redirect_to_shm_mq[1])) = int32(0)
+		return
+	}
 }
 func F_pq_getmsgbyte(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -55,7 +69,7 @@ func F_pq_getmsgbyte(m *base.Module, l0 int32) int32 {
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_pq_getmsgbyte_1), int32(404), int32(_a_F_pq_getmsgbyte_2))
+					F_errfinish(m, int32(_a_F_pq_getmsgbyte_1), int32(403), int32(_a_F_pq_getmsgbyte_2))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {

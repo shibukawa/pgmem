@@ -1320,7 +1320,7 @@ L113:
 	}
 L114:
 	;
-	F_errfinish(m, int32(_a_F_compute_common_attribute_10), int32(612), int32(_a_F_compute_common_attribute_11))
+	F_errfinish(m, int32(_a_F_compute_common_attribute_10), int32(627), int32(_a_F_compute_common_attribute_11))
 	mBase = m.M
 	v324 = m.ExcPending
 	if v324 != 0 {

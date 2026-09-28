@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_uuid_extract_version(m *base.Module, l0 int32) int32 {
+func F_uuid_extract_version(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -16,18 +16,18 @@ func F_uuid_extract_version(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v11 int32
 	_ = v11
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v4 = int32(*(*int8)(unsafe.Add(mBase, uint32(v3)+8)))
 	if int32(-64) <= v4 {
 		v7 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v7)
-		return int32(0)
+		return int64(0)
 	} else {
 		v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3)+6)))
-		return int32(base.Ui32(v11) >> (uint(int32(4)) % 32))
+		return base.I64_extend_i32_u(int32(base.Ui32(v11) >> (uint(int32(4)) % 32)))
 	}
 }
-func F_uuid_ge(m *base.Module, l0 int32) int32 {
+func F_uuid_ge(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -86,7 +86,7 @@ func F_uuid_ge(m *base.Module, l0 int32) int32 {
 	_ = v159
 	var v162 int32
 	_ = v162
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = *(*int64)(unsafe.Add(mBase, uint32(v5)))
 	v7 = int64(56)
 	v9 = int64(65280)
@@ -96,7 +96,7 @@ func F_uuid_ge(m *base.Module, l0 int32) int32 {
 	v18 = int64(4278190080)
 	v20 = int64(8)
 	v41 = v6<<(uint(v7)%64) | v6&v9<<(uint(v11)%64) | (v6&v14<<(uint(v16)%64) | v6&v18<<(uint(v20)%64)) | (int64(base.Ui64(v6)>>(uint(v20)%64))&v18 | int64(base.Ui64(v6)>>(uint(v16)%64))&v14 | (int64(base.Ui64(v6)>>(uint(v11)%64))&v9 | int64(base.Ui64(v6)>>(uint(v7)%64))))
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v43 = *(*int64)(unsafe.Add(mBase, uint32(v42)))
 	v78 = v43<<(uint(v7)%64) | v43&v9<<(uint(v11)%64) | (v43&v14<<(uint(v16)%64) | v43&v18<<(uint(v20)%64)) | (int64(base.Ui64(v43)>>(uint(v20)%64))&v18 | int64(base.Ui64(v43)>>(uint(v16)%64))&v14 | (int64(base.Ui64(v43)>>(uint(v11)%64))&v9 | int64(base.Ui64(v43)>>(uint(v7)%64))))
 	if v41 == v78 {
@@ -133,9 +133,9 @@ func F_uuid_ge(m *base.Module, l0 int32) int32 {
 		}
 		v162 = v159
 	}
-	return int32(base.Ui32(v162^int32(-1)) >> (uint(int32(31)) % 32))
+	return base.I64_extend_i32_u(base.B2i32(int32(0) <= v162))
 }
-func F_uuid_lt(m *base.Module, l0 int32) int32 {
+func F_uuid_lt(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -194,7 +194,7 @@ func F_uuid_lt(m *base.Module, l0 int32) int32 {
 	_ = v159
 	var v162 int32
 	_ = v162
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = *(*int64)(unsafe.Add(mBase, uint32(v5)))
 	v7 = int64(56)
 	v9 = int64(65280)
@@ -204,7 +204,7 @@ func F_uuid_lt(m *base.Module, l0 int32) int32 {
 	v18 = int64(4278190080)
 	v20 = int64(8)
 	v41 = v6<<(uint(v7)%64) | v6&v9<<(uint(v11)%64) | (v6&v14<<(uint(v16)%64) | v6&v18<<(uint(v20)%64)) | (int64(base.Ui64(v6)>>(uint(v20)%64))&v18 | int64(base.Ui64(v6)>>(uint(v16)%64))&v14 | (int64(base.Ui64(v6)>>(uint(v11)%64))&v9 | int64(base.Ui64(v6)>>(uint(v7)%64))))
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v43 = *(*int64)(unsafe.Add(mBase, uint32(v42)))
 	v78 = v43<<(uint(v7)%64) | v43&v9<<(uint(v11)%64) | (v43&v14<<(uint(v16)%64) | v43&v18<<(uint(v20)%64)) | (int64(base.Ui64(v43)>>(uint(v20)%64))&v18 | int64(base.Ui64(v43)>>(uint(v16)%64))&v14 | (int64(base.Ui64(v43)>>(uint(v11)%64))&v9 | int64(base.Ui64(v43)>>(uint(v7)%64))))
 	if v41 == v78 {
@@ -241,22 +241,22 @@ func F_uuid_lt(m *base.Module, l0 int32) int32 {
 		}
 		v162 = v159
 	}
-	return int32(base.Ui32(v162) >> (uint(int32(31)) % 32))
+	return base.I64_extend_i32_u(int32(base.Ui32(v162) >> (uint(int32(31)) % 32)))
 }
-func F_uuid_ns_oid(m *base.Module, l0 int32) int32 {
-	var v7 int32
+func F_uuid_ns_oid(m *base.Module, l0 int32) int64 {
+	var v7 int64
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn14018(m, l0, int32(_a_F_uuid_ns_oid_0), int32(_a_F_uuid_ns_oid_1), int32(_a_F_uuid_ns_oid_2), int32(_a_F_uuid_ns_oid_3), int32(_a_F_uuid_ns_oid_4))
+	v7 = Fn14401(m, l0, int32(_a_F_uuid_ns_oid_0), int32(_a_F_uuid_ns_oid_1), int32(_a_F_uuid_ns_oid_2), int32(_a_F_uuid_ns_oid_3), int32(_a_F_uuid_ns_oid_4))
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v7
 	}
 }
-func F_uuid_skipsupport(m *base.Module, l0 int32) int32 {
+func F_uuid_skipsupport(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -273,18 +273,18 @@ func F_uuid_skipsupport(m *base.Module, l0 int32) int32 {
 	_ = v13
 	var v17 int64
 	_ = v17
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_palloc(m, int32(16))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v11 = F_palloc(m, int32(16))
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = int64(0)
 			*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = v13
@@ -292,11 +292,11 @@ func F_uuid_skipsupport(m *base.Module, l0 int32) int32 {
 			v17 = int64(-1)
 			*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v17
 			*(*int64)(unsafe.Add(mBase, uint32(v11))) = v17
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(1530)
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+8)) = int32(1531)
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v11
-			*(*int32)(unsafe.Add(mBase, uint32(v4))) = v6
-			return int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+20)) = int32(1743)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(1744)
+			*(*int64)(unsafe.Add(mBase, uint32(v4)+8)) = base.I64_extend_i32_u(v11)
+			*(*int64)(unsafe.Add(mBase, uint32(v4))) = base.I64_extend_i32_u(v6)
+			return v13
 		}
 	}
 }

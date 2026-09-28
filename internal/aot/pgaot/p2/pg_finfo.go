@@ -338,12 +338,6 @@ func F_pg_finfo_iso_to_koi8r(m *base.Module) int32 {
 func F_pg_finfo_koi8r_to_iso(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_koi8r_to_iso_0)
 }
-func F_pg_finfo_koi8r_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_koi8r_to_mic_0)
-}
-func F_pg_finfo_latin3_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_latin3_to_mic_0)
-}
 func F_pg_finfo_levenshtein_with_costs(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_levenshtein_with_costs_0)
 }
@@ -373,12 +367,6 @@ func F_pg_finfo_ltree_textadd(m *base.Module) int32 {
 }
 func F_pg_finfo_make_valid(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_make_valid_0)
-}
-func F_pg_finfo_mic_to_big5(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_big5_0)
-}
-func F_pg_finfo_mic_to_latin3(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_latin3_0)
 }
 func F_pg_finfo_oid_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_oid_dist_0)
@@ -446,9 +434,6 @@ func F_pg_finfo_similarity(m *base.Module) int32 {
 func F_pg_finfo_similarity_op(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_similarity_op_0)
 }
-func F_pg_finfo_sjis_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_sjis_to_mic_0)
-}
 func F_pg_finfo_sparsevec_cmp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_sparsevec_cmp_0)
 }
@@ -508,9 +493,6 @@ func F_pg_finfo_win1251_to_iso(m *base.Module) int32 {
 }
 func F_pg_finfo_win1251_to_koi8r(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_win1251_to_koi8r_0)
-}
-func F_pg_finfo_win1251_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_win1251_to_mic_0)
 }
 func F_pg_finfo_word_similarity_dist_commutator_op(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_word_similarity_dist_commutator_op_0)

@@ -52,7 +52,7 @@ func F_AtEOXact_Aio(m *base.Module) {
 					if v20 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_AtEOXact_Aio_1), int32(1206), int32(_a_F_AtEOXact_Aio_2))
+						F_errfinish(m, int32(_a_F_AtEOXact_Aio_1), int32(1216), int32(_a_F_AtEOXact_Aio_2))
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
@@ -97,7 +97,7 @@ func F_AtEOXact_Namespace(m *base.Module, l0 int32, l1 int32) {
 			return
 		} else {
 			if l0 != 0 {
-				F_before_shmem_exit(m, int32(469), int32(0))
+				F_before_shmem_exit(m, int32(504), int64(0))
 				mBase = m.M
 				v10 = m.ExcPending
 				if v10 != 0 {
@@ -114,7 +114,7 @@ func F_AtEOXact_Namespace(m *base.Module, l0 int32, l1 int32) {
 				*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Namespace[3])) = v15
 				*(*uint8)(unsafe.Add(mBase, _c_F_AtEOXact_Namespace[4])) = uint8(v15)
 				v24 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Namespace[5]))
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+68)) = v15
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+28)) = v15
 				*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_Namespace[0])) = int32(0)
 				return
 			}
@@ -205,7 +205,7 @@ L9:
 	}
 L10:
 	;
-	F_errfinish(m, int32(_a_F_AtEOXact_Parallel_2), int32(1290), int32(_a_F_AtEOXact_Parallel_3))
+	F_errfinish(m, int32(_a_F_AtEOXact_Parallel_2), int32(1292), int32(_a_F_AtEOXact_Parallel_3))
 	mBase = m.M
 	v28 = m.ExcPending
 	if v28 != 0 {
@@ -337,30 +337,30 @@ func F_AtEOXact_PgStat(m *base.Module, l0 int32, l1 int32) {
 	_ = v150
 	var v153 int32
 	_ = v153
-	var v154 int32
-	_ = v154
 	var v155 int32
 	_ = v155
-	var v159 int32
-	_ = v159
+	var v156 int32
+	_ = v156
 	var v160 int32
 	_ = v160
 	var v161 int32
 	_ = v161
 	var v162 int32
 	_ = v162
-	var v164 int32
-	_ = v164
-	var v166 int32
-	_ = v166
-	var v171 int32
-	_ = v171
-	var v176 int32
-	_ = v176
-	var v179 int64
-	_ = v179
-	var v194 int32
-	_ = v194
+	var v163 int32
+	_ = v163
+	var v165 int32
+	_ = v165
+	var v167 int32
+	_ = v167
+	var v172 int32
+	_ = v172
+	var v177 int32
+	_ = v177
+	var v180 int64
+	_ = v180
+	var v195 int32
+	_ = v195
 	v3 = int32(0)
 	if l1 == v3 {
 		goto L1
@@ -403,8 +403,8 @@ L7:
 	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_PgStat[0])) = int32(0)
 	F_pgstat_clear_snapshot(m)
 	mBase = m.M
-	v194 = m.ExcPending
-	if v194 != 0 {
+	v195 = m.ExcPending
+	if v195 != 0 {
 		goto L38
 	} else {
 		goto L44
@@ -578,23 +578,23 @@ L29:
 	}
 L30:
 	;
-	if v160 <= int32(0) {
+	if v161 <= int32(0) {
 		goto L7
 	} else {
 		goto L42
 	}
 L31:
 	;
-	v162 = *(*int32)(unsafe.Add(mBase, uint32(v127)))
-	*(*int32)(unsafe.Add(mBase, uint32(v162)+4)) = v161
-	v164 = *(*int32)(unsafe.Add(mBase, uint32(v127)))
-	*(*int32)(unsafe.Add(mBase, uint32(v161))) = v164
-	v166 = *(*int32)(unsafe.Add(mBase, uint32(v22)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v22)+16)) = v166 - int32(1)
+	v163 = *(*int32)(unsafe.Add(mBase, uint32(v127)))
+	*(*int32)(unsafe.Add(mBase, uint32(v163)+4)) = v162
+	v165 = *(*int32)(unsafe.Add(mBase, uint32(v127)))
+	*(*int32)(unsafe.Add(mBase, uint32(v162))) = v165
+	v167 = *(*int32)(unsafe.Add(mBase, uint32(v22)+16))
+	*(*int32)(unsafe.Add(mBase, uint32(v22)+16)) = v167 - int32(1)
 	F_pfree(m, v136)
 	mBase = m.M
-	v171 = m.ExcPending
-	if v171 != 0 {
+	v172 = m.ExcPending
+	if v172 != 0 {
 		goto L38
 	} else {
 		goto L40
@@ -603,10 +603,10 @@ L32:
 	;
 	v150 = *(*int32)(unsafe.Add(mBase, uint32(v136)))
 	v153 = *(*int32)(unsafe.Add(mBase, uint32(v127-int32(16))))
-	v154 = F_pgstat_drop_entry(m, v150, v153, v142)
+	v155 = F_pgstat_drop_entry(m, v150, v153, v142, int32(1))
 	mBase = m.M
-	v155 = m.ExcPending
-	if v155 != 0 {
+	v156 = m.ExcPending
+	if v156 != 0 {
 		goto L38
 	} else {
 		goto L39
@@ -630,28 +630,28 @@ L35:
 	}
 L36:
 	;
-	v160 = v131
-	v161 = v143
+	v161 = v131
+	v162 = v143
 	goto L31
 L37:
 	;
-	v160 = v131
-	v161 = v143
+	v161 = v131
+	v162 = v143
 	goto L31
 L38:
 	;
 	return
 L39:
 	;
-	v159 = *(*int32)(unsafe.Add(mBase, uint32(v127)+4))
-	v160 = v131 + (v154 ^ int32(1))
-	v161 = v159
+	v160 = *(*int32)(unsafe.Add(mBase, uint32(v127)+4))
+	v161 = v131 + (v155 ^ int32(1))
+	v162 = v160
 	goto L31
 L40:
 	;
 	if v143 != v123 {
 		v127 = v143
-		v131 = v160
+		v131 = v161
 		goto L29
 	} else {
 		goto L41
@@ -661,8 +661,8 @@ L41:
 	goto L30
 L42:
 	;
-	v176 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_PgStat[1]))
-	v179 = base.AtomicRmwAdd64(m, v176, int32(16), int64(1))
+	v177 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_PgStat[1]))
+	v180 = base.AtomicRmwAdd64(m, v177, int32(16), int64(1))
 	goto L43
 L43:
 	;

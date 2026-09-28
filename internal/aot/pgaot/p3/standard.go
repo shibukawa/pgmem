@@ -194,7 +194,7 @@ func F_standard_ExplainOneQuery(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 			mBase = m.M
 			v47 = *(*int64)(unsafe.Add(mBase, uint32(v16)+24))
 			v48 = int64(*(*int32)(unsafe.Add(mBase, uint32(v16)+32)))
-			v49 = F_pg_plan_query(m, l0, l4, l1, l5)
+			v49 = F_pg_plan_query(m, l0, l4, l1, l5, l3)
 			mBase = m.M
 			v50 = m.ExcPending
 			if v50 != 0 {
@@ -421,7 +421,7 @@ func F_standard_ExplainOneQuery(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 		mBase = m.M
 		v47 = *(*int64)(unsafe.Add(mBase, uint32(v16)+24))
 		v48 = int64(*(*int32)(unsafe.Add(mBase, uint32(v16)+32)))
-		v49 = F_pg_plan_query(m, l0, l4, l1, l5)
+		v49 = F_pg_plan_query(m, l0, l4, l1, l5, l3)
 		mBase = m.M
 		v50 = m.ExcPending
 		if v50 != 0 {

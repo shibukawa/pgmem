@@ -12,52 +12,54 @@ func F_AllTablesyncsReady(m *base.Module) int32 {
 	_ = v4
 	var v6 int32
 	_ = v6
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
-	var v20 int32
-	_ = v20
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
 	var v21 int32
 	_ = v21
 	var v23 int32
 	_ = v23
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v10 = F_FetchTableStates(m, v6+int32(15))
+	F_FetchRelationStates(m, v6+int32(14), int32(0), v6+int32(15))
 	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	v16 = m.ExcPending
+	if v16 != 0 {
 		return int32(0)
 	} else {
-		v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+15)))
-		if v14 == int32(1) {
+		v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+15)))
+		if v17 == int32(1) {
 			F_CommitTransactionCommand(m)
 			mBase = m.M
-			v18 = m.ExcPending
-			if v18 != 0 {
+			v21 = m.ExcPending
+			if v21 != 0 {
 				return int32(0)
 			} else {
-				v20 = F_pgstat_report_stat(m, int32(1))
+				v23 = F_pgstat_report_stat(m, int32(1))
 				mBase = m.M
-				v21 = m.ExcPending
-				if v21 != 0 {
+				v24 = m.ExcPending
+				if v24 != 0 {
 					return int32(0)
 				} else {
-					v23 = *(*int32)(unsafe.Add(mBase, _c_F_AllTablesyncsReady[0]))
+					v26 = *(*int32)(unsafe.Add(mBase, _c_F_AllTablesyncsReady[0]))
+					v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+14)))
 					m.G0 = v6 + int32(16)
-					return v10 & base.B2i32(v23 == int32(0))
+					return v27 & base.B2i32(v26 == int32(0))
 				}
 			}
 		} else {
-			v23 = *(*int32)(unsafe.Add(mBase, _c_F_AllTablesyncsReady[0]))
+			v26 = *(*int32)(unsafe.Add(mBase, _c_F_AllTablesyncsReady[0]))
+			v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+14)))
 			m.G0 = v6 + int32(16)
-			return v10 & base.B2i32(v23 == int32(0))
+			return v27 & base.B2i32(v26 == int32(0))
 		}
 	}
 }
@@ -201,6 +203,8 @@ func F_ExecStoreAllNullTuple(m *base.Module, l0 int32) {
 	_ = v8
 	var v9 int32
 	_ = v9
+	var v10 int32
+	_ = v10
 	var v12 int32
 	_ = v12
 	var v13 int32
@@ -238,10 +242,11 @@ func F_ExecStoreAllNullTuple(m *base.Module, l0 int32) {
 		return
 	} else {
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+		v10 = int32(3)
 		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-		v15 = v13 << (uint(int32(2)) % 32)
-		if v9&int32(3)|base.B2i32(base.Ui32(int32(1024)) < base.Ui32(v15)) == int32(0) {
+		v15 = v13 << (uint(v10) % 32)
+		if v9&v10|base.B2i32(base.Ui32(int32(1024)) < base.Ui32(v15)) == int32(0) {
 			if v15 == int32(0) {
 			} else {
 				v25 = v15 + v9
@@ -350,8 +355,8 @@ func F_all_rows_selectable(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v82
 	var v83 int32
 	_ = v83
-	var v93 int32
-	_ = v93
+	var v91 int32
+	_ = v91
 	var v94 int32
 	_ = v94
 	var v97 int32
@@ -360,8 +365,8 @@ func F_all_rows_selectable(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v101
 	var v104 int32
 	_ = v104
-	var v106 int32
-	_ = v106
+	var v105 int32
+	_ = v105
 	var v109 int32
 	_ = v109
 	var v116 int32
@@ -484,8 +489,8 @@ func F_all_rows_selectable(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v320
 	var v321 int32
 	_ = v321
-	var v335 int32
-	_ = v335
+	var v333 int32
+	_ = v333
 	var v336 int32
 	_ = v336
 	var v339 int32
@@ -494,8 +499,8 @@ func F_all_rows_selectable(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v343
 	var v346 int32
 	_ = v346
-	var v348 int32
-	_ = v348
+	var v347 int32
+	_ = v347
 	var v351 int32
 	_ = v351
 	var v358 int32
@@ -548,7 +553,7 @@ func F_all_rows_selectable(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v450
 	var v463 int32
 	_ = v463
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	if base.Ui32(l1) < base.Ui32(v9) {
 		goto L1
 	} else {
@@ -556,7 +561,7 @@ func F_all_rows_selectable(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	}
 L1:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v11+l1<<(uint(int32(2))%32))))
 	v17 = v15
 	goto L3
@@ -566,7 +571,7 @@ L2:
 	goto L3
 L3:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	if v18 != 0 {
 		goto L5
 	} else {
@@ -596,7 +601,7 @@ L7:
 	goto L4
 L8:
 	;
-	v42 = v17 + int32(160)
+	v42 = v17 + int32(168)
 	goto L10
 L9:
 	;
@@ -636,7 +641,7 @@ L14:
 	goto L15
 L15:
 	;
-	v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	if v49 == int32(0) {
 		goto L18
 	} else {
@@ -663,7 +668,7 @@ L19:
 	goto L20
 L20:
 	;
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	v56 = *(*int32)(unsafe.Add(mBase, uint32(v49+l1<<(uint(int32(2))%32))))
 	if v56 == int32(0) {
 		goto L22
@@ -765,9 +770,9 @@ L36:
 	goto L34
 L37:
 	;
-	v93 = base.I32_div_s(int32(0), int32(32))
+	v91 = int32(0)
 	v94 = *(*int32)(unsafe.Add(mBase, uint32(v61)+4))
-	if v94 <= v93 {
+	if v94 <= v91 {
 		goto L36
 	} else {
 		goto L38
@@ -775,26 +780,26 @@ L37:
 L38:
 	;
 	v97 = v61 + int32(8)
-	v101 = *(*int32)(unsafe.Add(mBase, uint32(v97+v93<<(uint(int32(2))%32))))
+	v101 = *(*int32)(unsafe.Add(mBase, uint32(v97)))
 	v104 = v101 & int32(-1)
 	if v104 != 0 {
 		v126 = v104
-		v127 = v93
+		v127 = v91
 		goto L35
 	} else {
 		goto L39
 	}
 L39:
 	;
-	v106 = v93 + int32(1)
-	if v106 == v94 {
+	v105 = int32(1)
+	if v105 == v94 {
 		goto L36
 	} else {
 		goto L40
 	}
 L40:
 	;
-	v109 = v106
+	v109 = v105
 	goto L41
 L41:
 	;
@@ -832,8 +837,8 @@ L46:
 	goto L47
 L47:
 	;
-	v281 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v282 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v281 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v282 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	v283 = *(*int32)(unsafe.Add(mBase, uint32(v62)+4))
 	v287 = *(*int32)(unsafe.Add(mBase, uint32(v282+v283<<(uint(int32(2))%32))))
 	if v287 != 0 {
@@ -989,7 +994,7 @@ L68:
 L69:
 	;
 	v221 = v150 + int32(1)
-	v223 = base.I32_div_s(v221, int32(32))
+	v223 = int32(base.Ui32(v221) >> (uint(int32(5)) % 32))
 	v224 = *(*int32)(unsafe.Add(mBase, uint32(v61)+4))
 	if v224 <= v223 {
 		goto L68
@@ -1121,9 +1126,9 @@ L89:
 	goto L87
 L90:
 	;
-	v335 = base.I32_div_s(int32(0), int32(32))
+	v333 = int32(0)
 	v336 = *(*int32)(unsafe.Add(mBase, uint32(v313)+4))
-	if v336 <= v335 {
+	if v336 <= v333 {
 		goto L89
 	} else {
 		goto L91
@@ -1131,26 +1136,26 @@ L90:
 L91:
 	;
 	v339 = v313 + int32(8)
-	v343 = *(*int32)(unsafe.Add(mBase, uint32(v339+v335<<(uint(int32(2))%32))))
+	v343 = *(*int32)(unsafe.Add(mBase, uint32(v339)))
 	v346 = v343 & int32(-1)
 	if v346 != 0 {
 		v368 = v346
-		v369 = v335
+		v369 = v333
 		goto L88
 	} else {
 		goto L92
 	}
 L92:
 	;
-	v348 = v335 + int32(1)
-	if v348 == v336 {
+	v347 = int32(1)
+	if v347 == v336 {
 		goto L89
 	} else {
 		goto L93
 	}
 L93:
 	;
-	v351 = v348
+	v351 = v347
 	goto L94
 L94:
 	;
@@ -1262,7 +1267,7 @@ L111:
 L112:
 	;
 	v414 = v386 + int32(1)
-	v416 = base.I32_div_s(v414, int32(32))
+	v416 = int32(base.Ui32(v414) >> (uint(int32(5)) % 32))
 	v417 = *(*int32)(unsafe.Add(mBase, uint32(v313)+4))
 	if v417 <= v416 {
 		goto L111

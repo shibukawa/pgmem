@@ -62,62 +62,64 @@ func F_VacuumUpdateCosts(m *base.Module) {
 	_ = v80
 	var v87 int32
 	_ = v87
-	var v100 int32
-	_ = v100
-	var v104 int32
-	_ = v104
-	var v108 int32
-	_ = v108
-	var v114 int32
-	_ = v114
+	var v90 int32
+	_ = v90
+	var v103 int32
+	_ = v103
+	var v107 int32
+	_ = v107
+	var v111 int32
+	_ = v111
 	var v117 int32
 	_ = v117
-	var v122 int32
-	_ = v122
-	var v126 int32
-	_ = v126
-	var v127 int32
-	_ = v127
+	var v120 int32
+	_ = v120
+	var v125 int32
+	_ = v125
 	var v129 int32
 	_ = v129
 	var v130 int32
 	_ = v130
-	var v131 int32
-	_ = v131
+	var v132 int32
+	_ = v132
 	var v133 int32
 	_ = v133
-	var v137 int32
-	_ = v137
+	var v134 int32
+	_ = v134
+	var v136 int32
+	_ = v136
 	var v140 int32
 	_ = v140
-	var v141 int32
-	_ = v141
-	var v145 int32
-	_ = v145
-	var v146 int32
-	_ = v146
-	var v148 float64
+	var v143 int32
+	_ = v143
+	var v144 int32
+	_ = v144
+	var v148 int32
 	_ = v148
-	var v153 int32
-	_ = v153
-	var v154 int32
-	_ = v154
-	var v160 int32
-	_ = v160
-	var v166 int32
-	_ = v166
+	var v149 int32
+	_ = v149
+	var v151 float64
+	_ = v151
+	var v156 int32
+	_ = v156
+	var v157 int32
+	_ = v157
+	var v163 int32
+	_ = v163
 	var v169 int32
 	_ = v169
-	var v173 int32
-	_ = v173
-	var v178 int32
-	_ = v178
-	var v189 int32
-	_ = v189
-	var v193 int32
-	_ = v193
-	var v198 int32
-	_ = v198
+	var v172 int32
+	_ = v172
+	var v176 int32
+	_ = v176
+	var v181 int32
+	_ = v181
+	var v192 int32
+	_ = v192
+	var v196 int32
+	_ = v196
+	var v201 int32
+	_ = v201
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
@@ -160,107 +162,108 @@ func F_VacuumUpdateCosts(m *base.Module) {
 			} else {
 				v80 = int32(13)
 				v87 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[10]))
-				if int32(0)|base.B2i32(v87 == int32(15)) != 0 {
-					v100 = int32(0)
-					v104 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[11]))
-					if v104 != int32(2) {
-						v117 = v100
+				v90 = *(*int32)(unsafe.Add(mBase, uint32(v87<<(uint(int32(2))%32))+uint32(_c_F_VacuumUpdateCosts[11])))
+				if int32(0)|base.B2i32(v90 == int32(15)) != 0 {
+					v103 = int32(0)
+					v107 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12]))
+					if v107 != int32(2) {
+						v120 = v103
 					} else {
-						v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12])))
-						if v108&int32(1) != 0 {
-							v117 = v100
+						v111 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13])))
+						if v111&int32(1) != 0 {
+							v120 = v103
 						} else {
-							v114 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13]))
-							v117 = int32(0) | base.B2i32(v114 <= v80)
+							v117 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
+							v120 = int32(0) | base.B2i32(v117 <= v80)
 						}
 					}
 				} else {
-					if v87 <= v80 {
-						v117 = int32(1)
+					if v90 <= v80 {
+						v120 = int32(1)
 					} else {
-						v100 = int32(0)
-						v104 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[11]))
-						if v104 != int32(2) {
-							v117 = v100
+						v103 = int32(0)
+						v107 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12]))
+						if v107 != int32(2) {
+							v120 = v103
 						} else {
-							v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12])))
-							if v108&int32(1) != 0 {
-								v117 = v100
+							v111 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13])))
+							if v111&int32(1) != 0 {
+								v120 = v103
 							} else {
-								v114 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13]))
-								v117 = int32(0) | base.B2i32(v114 <= v80)
+								v117 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
+								v120 = int32(0) | base.B2i32(v117 <= v80)
 							}
 						}
 					}
 				}
-				if v117 == int32(0) {
+				if v120 == int32(0) {
 					m.G0 = v8 + int32(32)
 					return
 				} else {
-					v122 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
-					v126 = F_LWLockAcquire(m, v122+int32(2816), int32(1))
+					v125 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[15]))
+					v129 = F_LWLockAcquire(m, v125+int32(2816), int32(1))
 					mBase = m.M
-					v127 = m.ExcPending
-					if v127 != 0 {
+					v130 = m.ExcPending
+					if v130 != 0 {
 						return
 					} else {
-						v129 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
-						v130 = *(*int32)(unsafe.Add(mBase, uint32(v129)+12))
-						v131 = *(*int32)(unsafe.Add(mBase, uint32(v129)+8))
-						v133 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
-						F_LWLockRelease(m, v133+int32(2816))
+						v132 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
+						v133 = *(*int32)(unsafe.Add(mBase, uint32(v132)+12))
+						v134 = *(*int32)(unsafe.Add(mBase, uint32(v132)+8))
+						v136 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[15]))
+						F_LWLockRelease(m, v136+int32(2816))
 						mBase = m.M
-						v137 = m.ExcPending
-						if v137 != 0 {
+						v140 = m.ExcPending
+						if v140 != 0 {
 							return
 						} else {
-							v140 = F_errstart(m, int32(13), int32(0))
+							v143 = F_errstart(m, int32(13), int32(0))
 							mBase = m.M
-							v141 = m.ExcPending
-							if v141 != 0 {
+							v144 = m.ExcPending
+							if v144 != 0 {
 								return
 							} else {
-								if v140 == int32(0) {
+								if v143 == int32(0) {
 									m.G0 = v8 + int32(32)
 									return
 								} else {
-									v145 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
-									v146 = *(*int32)(unsafe.Add(mBase, uint32(v145)+32))
-									v148 = *(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[4]))
-									*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v148
-									v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[7])))
-									if v153 != 0 {
-										v154 = int32(_a_F_VacuumUpdateCosts_0)
+									v148 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
+									v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+32))
+									v151 = *(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[4]))
+									*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v151
+									v156 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[7])))
+									if v156 != 0 {
+										v157 = int32(_a_F_VacuumUpdateCosts_0)
 									} else {
-										v154 = int32(_a_F_VacuumUpdateCosts_1)
+										v157 = int32(_a_F_VacuumUpdateCosts_1)
 									}
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v154
-									if base.F64_gt(v148, float64(0)) != 0 {
-										v160 = int32(_a_F_VacuumUpdateCosts_0)
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v157
+									if base.F64_gt(v151, float64(0)) != 0 {
+										v163 = int32(_a_F_VacuumUpdateCosts_0)
 									} else {
-										v160 = int32(_a_F_VacuumUpdateCosts_1)
+										v163 = int32(_a_F_VacuumUpdateCosts_1)
 									}
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v160
-									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v131
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v130
-									if v146 != 0 {
-										v166 = int32(_a_F_VacuumUpdateCosts_0)
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v163
+									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v134
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v133
+									if v149 != 0 {
+										v169 = int32(_a_F_VacuumUpdateCosts_0)
 									} else {
-										v166 = int32(_a_F_VacuumUpdateCosts_1)
+										v169 = int32(_a_F_VacuumUpdateCosts_1)
 									}
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v166
-									v169 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[6]))
-									*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v169
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v169
+									v172 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[6]))
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v172
 									F_errmsg_internal(m, int32(_a_F_VacuumUpdateCosts_2), v8)
 									mBase = m.M
-									v173 = m.ExcPending
-									if v173 != 0 {
+									v176 = m.ExcPending
+									if v176 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1710), int32(_a_F_VacuumUpdateCosts_4))
+										F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1738), int32(_a_F_VacuumUpdateCosts_4))
 										mBase = m.M
-										v178 = m.ExcPending
-										if v178 != 0 {
+										v181 = m.ExcPending
+										if v181 != 0 {
 											return
 										} else {
 											m.G0 = v8 + int32(32)
@@ -274,8 +277,8 @@ func F_VacuumUpdateCosts(m *base.Module) {
 				}
 			}
 		} else {
-			v31 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[15]))
-			v33 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[16]))
+			v31 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[16]))
+			v33 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[17]))
 			if int32(0) < v31 {
 				v36 = v31
 			} else {
@@ -303,107 +306,108 @@ func F_VacuumUpdateCosts(m *base.Module) {
 				} else {
 					v80 = int32(13)
 					v87 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[10]))
-					if int32(0)|base.B2i32(v87 == int32(15)) != 0 {
-						v100 = int32(0)
-						v104 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[11]))
-						if v104 != int32(2) {
-							v117 = v100
+					v90 = *(*int32)(unsafe.Add(mBase, uint32(v87<<(uint(int32(2))%32))+uint32(_c_F_VacuumUpdateCosts[11])))
+					if int32(0)|base.B2i32(v90 == int32(15)) != 0 {
+						v103 = int32(0)
+						v107 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12]))
+						if v107 != int32(2) {
+							v120 = v103
 						} else {
-							v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12])))
-							if v108&int32(1) != 0 {
-								v117 = v100
+							v111 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13])))
+							if v111&int32(1) != 0 {
+								v120 = v103
 							} else {
-								v114 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13]))
-								v117 = int32(0) | base.B2i32(v114 <= v80)
+								v117 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
+								v120 = int32(0) | base.B2i32(v117 <= v80)
 							}
 						}
 					} else {
-						if v87 <= v80 {
-							v117 = int32(1)
+						if v90 <= v80 {
+							v120 = int32(1)
 						} else {
-							v100 = int32(0)
-							v104 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[11]))
-							if v104 != int32(2) {
-								v117 = v100
+							v103 = int32(0)
+							v107 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12]))
+							if v107 != int32(2) {
+								v120 = v103
 							} else {
-								v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12])))
-								if v108&int32(1) != 0 {
-									v117 = v100
+								v111 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13])))
+								if v111&int32(1) != 0 {
+									v120 = v103
 								} else {
-									v114 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13]))
-									v117 = int32(0) | base.B2i32(v114 <= v80)
+									v117 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
+									v120 = int32(0) | base.B2i32(v117 <= v80)
 								}
 							}
 						}
 					}
-					if v117 == int32(0) {
+					if v120 == int32(0) {
 						m.G0 = v8 + int32(32)
 						return
 					} else {
-						v122 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
-						v126 = F_LWLockAcquire(m, v122+int32(2816), int32(1))
+						v125 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[15]))
+						v129 = F_LWLockAcquire(m, v125+int32(2816), int32(1))
 						mBase = m.M
-						v127 = m.ExcPending
-						if v127 != 0 {
+						v130 = m.ExcPending
+						if v130 != 0 {
 							return
 						} else {
-							v129 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
-							v130 = *(*int32)(unsafe.Add(mBase, uint32(v129)+12))
-							v131 = *(*int32)(unsafe.Add(mBase, uint32(v129)+8))
-							v133 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
-							F_LWLockRelease(m, v133+int32(2816))
+							v132 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
+							v133 = *(*int32)(unsafe.Add(mBase, uint32(v132)+12))
+							v134 = *(*int32)(unsafe.Add(mBase, uint32(v132)+8))
+							v136 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[15]))
+							F_LWLockRelease(m, v136+int32(2816))
 							mBase = m.M
-							v137 = m.ExcPending
-							if v137 != 0 {
+							v140 = m.ExcPending
+							if v140 != 0 {
 								return
 							} else {
-								v140 = F_errstart(m, int32(13), int32(0))
+								v143 = F_errstart(m, int32(13), int32(0))
 								mBase = m.M
-								v141 = m.ExcPending
-								if v141 != 0 {
+								v144 = m.ExcPending
+								if v144 != 0 {
 									return
 								} else {
-									if v140 == int32(0) {
+									if v143 == int32(0) {
 										m.G0 = v8 + int32(32)
 										return
 									} else {
-										v145 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
-										v146 = *(*int32)(unsafe.Add(mBase, uint32(v145)+32))
-										v148 = *(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[4]))
-										*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v148
-										v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[7])))
-										if v153 != 0 {
-											v154 = int32(_a_F_VacuumUpdateCosts_0)
+										v148 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
+										v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+32))
+										v151 = *(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[4]))
+										*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v151
+										v156 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[7])))
+										if v156 != 0 {
+											v157 = int32(_a_F_VacuumUpdateCosts_0)
 										} else {
-											v154 = int32(_a_F_VacuumUpdateCosts_1)
+											v157 = int32(_a_F_VacuumUpdateCosts_1)
 										}
-										*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v154
-										if base.F64_gt(v148, float64(0)) != 0 {
-											v160 = int32(_a_F_VacuumUpdateCosts_0)
+										*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v157
+										if base.F64_gt(v151, float64(0)) != 0 {
+											v163 = int32(_a_F_VacuumUpdateCosts_0)
 										} else {
-											v160 = int32(_a_F_VacuumUpdateCosts_1)
+											v163 = int32(_a_F_VacuumUpdateCosts_1)
 										}
-										*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v160
-										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v131
-										*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v130
-										if v146 != 0 {
-											v166 = int32(_a_F_VacuumUpdateCosts_0)
+										*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v163
+										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v134
+										*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v133
+										if v149 != 0 {
+											v169 = int32(_a_F_VacuumUpdateCosts_0)
 										} else {
-											v166 = int32(_a_F_VacuumUpdateCosts_1)
+											v169 = int32(_a_F_VacuumUpdateCosts_1)
 										}
-										*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v166
-										v169 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[6]))
-										*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v169
+										*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v169
+										v172 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[6]))
+										*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v172
 										F_errmsg_internal(m, int32(_a_F_VacuumUpdateCosts_2), v8)
 										mBase = m.M
-										v173 = m.ExcPending
-										if v173 != 0 {
+										v176 = m.ExcPending
+										if v176 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1710), int32(_a_F_VacuumUpdateCosts_4))
+											F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1738), int32(_a_F_VacuumUpdateCosts_4))
 											mBase = m.M
-											v178 = m.ExcPending
-											if v178 != 0 {
+											v181 = m.ExcPending
+											if v181 != 0 {
 												return
 											} else {
 												m.G0 = v8 + int32(32)
@@ -417,25 +421,25 @@ func F_VacuumUpdateCosts(m *base.Module) {
 					}
 				}
 			} else {
-				v42 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[17]))
-				v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+uint32(_c_F_VacuumUpdateCosts[18])))
+				v42 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[18]))
+				v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+uint32(_c_F_VacuumUpdateCosts[19])))
 				if v43 <= int32(0) {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v189 = m.ExcPending
-					if v189 != 0 {
+					v192 = m.ExcPending
+					if v192 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_VacuumUpdateCosts_5), int32(0))
 						mBase = m.M
-						v193 = m.ExcPending
-						if v193 != 0 {
+						v196 = m.ExcPending
+						if v196 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1754), int32(_a_F_VacuumUpdateCosts_6))
+							F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1782), int32(_a_F_VacuumUpdateCosts_6))
 							mBase = m.M
-							v198 = m.ExcPending
-							if v198 != 0 {
+							v201 = m.ExcPending
+							if v201 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -474,107 +478,108 @@ func F_VacuumUpdateCosts(m *base.Module) {
 					} else {
 						v80 = int32(13)
 						v87 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[10]))
-						if int32(0)|base.B2i32(v87 == int32(15)) != 0 {
-							v100 = int32(0)
-							v104 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[11]))
-							if v104 != int32(2) {
-								v117 = v100
+						v90 = *(*int32)(unsafe.Add(mBase, uint32(v87<<(uint(int32(2))%32))+uint32(_c_F_VacuumUpdateCosts[11])))
+						if int32(0)|base.B2i32(v90 == int32(15)) != 0 {
+							v103 = int32(0)
+							v107 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12]))
+							if v107 != int32(2) {
+								v120 = v103
 							} else {
-								v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12])))
-								if v108&int32(1) != 0 {
-									v117 = v100
+								v111 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13])))
+								if v111&int32(1) != 0 {
+									v120 = v103
 								} else {
-									v114 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13]))
-									v117 = int32(0) | base.B2i32(v114 <= v80)
+									v117 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
+									v120 = int32(0) | base.B2i32(v117 <= v80)
 								}
 							}
 						} else {
-							if v87 <= v80 {
-								v117 = int32(1)
+							if v90 <= v80 {
+								v120 = int32(1)
 							} else {
-								v100 = int32(0)
-								v104 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[11]))
-								if v104 != int32(2) {
-									v117 = v100
+								v103 = int32(0)
+								v107 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12]))
+								if v107 != int32(2) {
+									v120 = v103
 								} else {
-									v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12])))
-									if v108&int32(1) != 0 {
-										v117 = v100
+									v111 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13])))
+									if v111&int32(1) != 0 {
+										v120 = v103
 									} else {
-										v114 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13]))
-										v117 = int32(0) | base.B2i32(v114 <= v80)
+										v117 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
+										v120 = int32(0) | base.B2i32(v117 <= v80)
 									}
 								}
 							}
 						}
-						if v117 == int32(0) {
+						if v120 == int32(0) {
 							m.G0 = v8 + int32(32)
 							return
 						} else {
-							v122 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
-							v126 = F_LWLockAcquire(m, v122+int32(2816), int32(1))
+							v125 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[15]))
+							v129 = F_LWLockAcquire(m, v125+int32(2816), int32(1))
 							mBase = m.M
-							v127 = m.ExcPending
-							if v127 != 0 {
+							v130 = m.ExcPending
+							if v130 != 0 {
 								return
 							} else {
-								v129 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
-								v130 = *(*int32)(unsafe.Add(mBase, uint32(v129)+12))
-								v131 = *(*int32)(unsafe.Add(mBase, uint32(v129)+8))
-								v133 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
-								F_LWLockRelease(m, v133+int32(2816))
+								v132 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
+								v133 = *(*int32)(unsafe.Add(mBase, uint32(v132)+12))
+								v134 = *(*int32)(unsafe.Add(mBase, uint32(v132)+8))
+								v136 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[15]))
+								F_LWLockRelease(m, v136+int32(2816))
 								mBase = m.M
-								v137 = m.ExcPending
-								if v137 != 0 {
+								v140 = m.ExcPending
+								if v140 != 0 {
 									return
 								} else {
-									v140 = F_errstart(m, int32(13), int32(0))
+									v143 = F_errstart(m, int32(13), int32(0))
 									mBase = m.M
-									v141 = m.ExcPending
-									if v141 != 0 {
+									v144 = m.ExcPending
+									if v144 != 0 {
 										return
 									} else {
-										if v140 == int32(0) {
+										if v143 == int32(0) {
 											m.G0 = v8 + int32(32)
 											return
 										} else {
-											v145 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
-											v146 = *(*int32)(unsafe.Add(mBase, uint32(v145)+32))
-											v148 = *(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[4]))
-											*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v148
-											v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[7])))
-											if v153 != 0 {
-												v154 = int32(_a_F_VacuumUpdateCosts_0)
+											v148 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
+											v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+32))
+											v151 = *(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[4]))
+											*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v151
+											v156 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[7])))
+											if v156 != 0 {
+												v157 = int32(_a_F_VacuumUpdateCosts_0)
 											} else {
-												v154 = int32(_a_F_VacuumUpdateCosts_1)
+												v157 = int32(_a_F_VacuumUpdateCosts_1)
 											}
-											*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v154
-											if base.F64_gt(v148, float64(0)) != 0 {
-												v160 = int32(_a_F_VacuumUpdateCosts_0)
+											*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v157
+											if base.F64_gt(v151, float64(0)) != 0 {
+												v163 = int32(_a_F_VacuumUpdateCosts_0)
 											} else {
-												v160 = int32(_a_F_VacuumUpdateCosts_1)
+												v163 = int32(_a_F_VacuumUpdateCosts_1)
 											}
-											*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v160
-											*(*int32)(unsafe.Add(mBase, uint32(v8))) = v131
-											*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v130
-											if v146 != 0 {
-												v166 = int32(_a_F_VacuumUpdateCosts_0)
+											*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v163
+											*(*int32)(unsafe.Add(mBase, uint32(v8))) = v134
+											*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v133
+											if v149 != 0 {
+												v169 = int32(_a_F_VacuumUpdateCosts_0)
 											} else {
-												v166 = int32(_a_F_VacuumUpdateCosts_1)
+												v169 = int32(_a_F_VacuumUpdateCosts_1)
 											}
-											*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v166
-											v169 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[6]))
-											*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v169
+											*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v169
+											v172 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[6]))
+											*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v172
 											F_errmsg_internal(m, int32(_a_F_VacuumUpdateCosts_2), v8)
 											mBase = m.M
-											v173 = m.ExcPending
-											if v173 != 0 {
+											v176 = m.ExcPending
+											if v176 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1710), int32(_a_F_VacuumUpdateCosts_4))
+												F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1738), int32(_a_F_VacuumUpdateCosts_4))
 												mBase = m.M
-												v178 = m.ExcPending
-												if v178 != 0 {
+												v181 = m.ExcPending
+												if v181 != 0 {
 													return
 												} else {
 													m.G0 = v8 + int32(32)
@@ -593,7 +598,7 @@ func F_VacuumUpdateCosts(m *base.Module) {
 	} else {
 		v53 = *(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[3]))
 		*(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[4])) = v53
-		v56 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[16]))
+		v56 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[17]))
 		v57 = v56
 		v59 = v53
 		*(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[6])) = v57
@@ -616,107 +621,108 @@ func F_VacuumUpdateCosts(m *base.Module) {
 		} else {
 			v80 = int32(13)
 			v87 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[10]))
-			if int32(0)|base.B2i32(v87 == int32(15)) != 0 {
-				v100 = int32(0)
-				v104 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[11]))
-				if v104 != int32(2) {
-					v117 = v100
+			v90 = *(*int32)(unsafe.Add(mBase, uint32(v87<<(uint(int32(2))%32))+uint32(_c_F_VacuumUpdateCosts[11])))
+			if int32(0)|base.B2i32(v90 == int32(15)) != 0 {
+				v103 = int32(0)
+				v107 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12]))
+				if v107 != int32(2) {
+					v120 = v103
 				} else {
-					v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12])))
-					if v108&int32(1) != 0 {
-						v117 = v100
+					v111 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13])))
+					if v111&int32(1) != 0 {
+						v120 = v103
 					} else {
-						v114 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13]))
-						v117 = int32(0) | base.B2i32(v114 <= v80)
+						v117 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
+						v120 = int32(0) | base.B2i32(v117 <= v80)
 					}
 				}
 			} else {
-				if v87 <= v80 {
-					v117 = int32(1)
+				if v90 <= v80 {
+					v120 = int32(1)
 				} else {
-					v100 = int32(0)
-					v104 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[11]))
-					if v104 != int32(2) {
-						v117 = v100
+					v103 = int32(0)
+					v107 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12]))
+					if v107 != int32(2) {
+						v120 = v103
 					} else {
-						v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[12])))
-						if v108&int32(1) != 0 {
-							v117 = v100
+						v111 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13])))
+						if v111&int32(1) != 0 {
+							v120 = v103
 						} else {
-							v114 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[13]))
-							v117 = int32(0) | base.B2i32(v114 <= v80)
+							v117 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
+							v120 = int32(0) | base.B2i32(v117 <= v80)
 						}
 					}
 				}
 			}
-			if v117 == int32(0) {
+			if v120 == int32(0) {
 				m.G0 = v8 + int32(32)
 				return
 			} else {
-				v122 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
-				v126 = F_LWLockAcquire(m, v122+int32(2816), int32(1))
+				v125 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[15]))
+				v129 = F_LWLockAcquire(m, v125+int32(2816), int32(1))
 				mBase = m.M
-				v127 = m.ExcPending
-				if v127 != 0 {
+				v130 = m.ExcPending
+				if v130 != 0 {
 					return
 				} else {
-					v129 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
-					v130 = *(*int32)(unsafe.Add(mBase, uint32(v129)+12))
-					v131 = *(*int32)(unsafe.Add(mBase, uint32(v129)+8))
-					v133 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[14]))
-					F_LWLockRelease(m, v133+int32(2816))
+					v132 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
+					v133 = *(*int32)(unsafe.Add(mBase, uint32(v132)+12))
+					v134 = *(*int32)(unsafe.Add(mBase, uint32(v132)+8))
+					v136 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[15]))
+					F_LWLockRelease(m, v136+int32(2816))
 					mBase = m.M
-					v137 = m.ExcPending
-					if v137 != 0 {
+					v140 = m.ExcPending
+					if v140 != 0 {
 						return
 					} else {
-						v140 = F_errstart(m, int32(13), int32(0))
+						v143 = F_errstart(m, int32(13), int32(0))
 						mBase = m.M
-						v141 = m.ExcPending
-						if v141 != 0 {
+						v144 = m.ExcPending
+						if v144 != 0 {
 							return
 						} else {
-							if v140 == int32(0) {
+							if v143 == int32(0) {
 								m.G0 = v8 + int32(32)
 								return
 							} else {
-								v145 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
-								v146 = *(*int32)(unsafe.Add(mBase, uint32(v145)+32))
-								v148 = *(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[4]))
-								*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v148
-								v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[7])))
-								if v153 != 0 {
-									v154 = int32(_a_F_VacuumUpdateCosts_0)
+								v148 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[0]))
+								v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+32))
+								v151 = *(*float64)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[4]))
+								*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v151
+								v156 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[7])))
+								if v156 != 0 {
+									v157 = int32(_a_F_VacuumUpdateCosts_0)
 								} else {
-									v154 = int32(_a_F_VacuumUpdateCosts_1)
+									v157 = int32(_a_F_VacuumUpdateCosts_1)
 								}
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v154
-								if base.F64_gt(v148, float64(0)) != 0 {
-									v160 = int32(_a_F_VacuumUpdateCosts_0)
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v157
+								if base.F64_gt(v151, float64(0)) != 0 {
+									v163 = int32(_a_F_VacuumUpdateCosts_0)
 								} else {
-									v160 = int32(_a_F_VacuumUpdateCosts_1)
+									v163 = int32(_a_F_VacuumUpdateCosts_1)
 								}
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v160
-								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v131
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v130
-								if v146 != 0 {
-									v166 = int32(_a_F_VacuumUpdateCosts_0)
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v163
+								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v134
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v133
+								if v149 != 0 {
+									v169 = int32(_a_F_VacuumUpdateCosts_0)
 								} else {
-									v166 = int32(_a_F_VacuumUpdateCosts_1)
+									v169 = int32(_a_F_VacuumUpdateCosts_1)
 								}
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v166
-								v169 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[6]))
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v169
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v169
+								v172 = *(*int32)(unsafe.Add(mBase, _c_F_VacuumUpdateCosts[6]))
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v172
 								F_errmsg_internal(m, int32(_a_F_VacuumUpdateCosts_2), v8)
 								mBase = m.M
-								v173 = m.ExcPending
-								if v173 != 0 {
+								v176 = m.ExcPending
+								if v176 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1710), int32(_a_F_VacuumUpdateCosts_4))
+									F_errfinish(m, int32(_a_F_VacuumUpdateCosts_3), int32(1738), int32(_a_F_VacuumUpdateCosts_4))
 									mBase = m.M
-									v178 = m.ExcPending
-									if v178 != 0 {
+									v181 = m.ExcPending
+									if v181 != 0 {
 										return
 									} else {
 										m.G0 = v8 + int32(32)
@@ -822,7 +828,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 									m.G0 = v8 + int32(16)
 									return v69
 								} else {
-									v56 = int32(760)
+									v56 = int32(745)
 									v57 = int32(_a_F_vacuum_is_permitted_for_relation_0)
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1 + int32(4)
 									F_errmsg(m, v57, v8)
@@ -862,7 +868,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 										m.G0 = v8 + int32(16)
 										return v69
 									} else {
-										v56 = int32(773)
+										v56 = int32(758)
 										v57 = int32(_a_F_vacuum_is_permitted_for_relation_3)
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1 + int32(4)
 										F_errmsg(m, v57, v8)
@@ -915,7 +921,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 								m.G0 = v8 + int32(16)
 								return v69
 							} else {
-								v56 = int32(760)
+								v56 = int32(745)
 								v57 = int32(_a_F_vacuum_is_permitted_for_relation_0)
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1 + int32(4)
 								F_errmsg(m, v57, v8)
@@ -955,7 +961,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 									m.G0 = v8 + int32(16)
 									return v69
 								} else {
-									v56 = int32(773)
+									v56 = int32(758)
 									v57 = int32(_a_F_vacuum_is_permitted_for_relation_3)
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1 + int32(4)
 									F_errmsg(m, v57, v8)

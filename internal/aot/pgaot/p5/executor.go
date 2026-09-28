@@ -126,7 +126,7 @@ L6:
 	}
 L7:
 	;
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(v24)+88))
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v24)+100))
 	v30 = v28
 	goto L11
 L8:
@@ -134,7 +134,7 @@ L8:
 	goto L9
 L9:
 	;
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v24)+44))
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v24)+48))
 	if v59 == int32(0) {
 		goto L6
 	} else {

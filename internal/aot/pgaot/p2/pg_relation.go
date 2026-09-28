@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_pg_relation_size(m *base.Module, l0 int32) int32 {
+func F_pg_relation_size(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -38,62 +38,51 @@ func F_pg_relation_size(m *base.Module, l0 int32) int32 {
 	_ = v26
 	var v29 int32
 	_ = v29
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v7 = F_pg_detoast_datum_packed(m, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v12 = F_try_relation_open(m, v5, int32(1))
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			if v12 == int32(0) {
 				v16 = int32(1)
 				*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v16)
-				return int32(0)
+				return int64(0)
 			} else {
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(v12)+20))
 				v21 = F_text_to_cstring(m, v7)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v23 = F_forkname_to_number(m, v21)
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v25 = F_calculate_relation_size(m, v12, v20, v23)
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							F_relation_close(m, v12, int32(1))
 							mBase = m.M
 							v29 = m.ExcPending
 							if v29 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								v30 = F_Int64GetDatum(m, v25)
-								mBase = m.M
-								v31 = m.ExcPending
-								if v31 != 0 {
-									return int32(0)
-								} else {
-									return v30
-								}
+								return v25
 							}
 						}
 					}

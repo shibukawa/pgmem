@@ -24,42 +24,42 @@ func F_FindDefaultConversionProc(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v34
 	var v36 int32
 	_ = v36
-	var v40 int32
-	_ = v40
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	var v46 int32
-	_ = v46
-	var v53 int32
-	_ = v53
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
+	var v56 int32
+	_ = v56
 	var v66 int32
 	_ = v66
 	var v67 int32
 	_ = v67
-	var v71 int32
-	_ = v71
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
 	var v74 int32
 	_ = v74
-	var v76 int32
-	_ = v76
-	var v78 int32
-	_ = v78
-	var v88 int32
-	_ = v88
-	var v99 int32
-	_ = v99
-	var v100 int32
-	_ = v100
-	var v114 int32
-	_ = v114
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	var v81 int32
+	_ = v81
+	var v91 int32
+	_ = v91
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
+	var v117 int32
+	_ = v117
 	v3 = int32(0)
 	F_recomputeNamespacePath(m)
 	mBase = m.M
@@ -76,14 +76,14 @@ L2:
 	;
 	v15 = *(*int32)(unsafe.Add(mBase, _c_F_FindDefaultConversionProc[0]))
 	if v15 == int32(0) {
-		v114 = v3
+		v117 = v3
 		goto L3
 	} else {
 		goto L4
 	}
 L3:
 	;
-	return v114
+	return v117
 L4:
 	;
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
@@ -101,7 +101,7 @@ L6:
 	goto L7
 L7:
 	;
-	v114 = int32(0)
+	v117 = int32(0)
 	goto L3
 L8:
 	;
@@ -118,10 +118,10 @@ L9:
 	goto L7
 L10:
 	;
-	v40 = F_SearchSysCacheList(m, int32(17), int32(3), v34, l0, l1)
+	v43 = F_SearchSysCacheList(m, int32(17), int32(3), base.I64_extend_i32_u(v34), base.I64_extend_i32_s(l0), base.I64_extend_i32_s(l1))
 	mBase = m.M
-	v41 = m.ExcPending
-	if v41 != 0 {
+	v44 = m.ExcPending
+	if v44 != 0 {
 		goto L1
 	} else {
 		goto L14
@@ -131,36 +131,36 @@ L11:
 	goto L12
 L12:
 	;
-	v99 = v27 + int32(1)
-	v100 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
-	if v99 < v100 {
-		v27 = v99
+	v102 = v27 + int32(1)
+	v103 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
+	if v102 < v103 {
+		v27 = v102
 		goto L8
 	} else {
 		goto L27
 	}
 L13:
 	;
-	if v88 != 0 {
-		v114 = v88
+	if v91 != 0 {
+		v117 = v91
 		goto L3
 	} else {
 		goto L26
 	}
 L14:
 	;
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v40)+40))
-	if v42 <= int32(0) {
+	v45 = *(*int32)(unsafe.Add(mBase, uint32(v43)+56))
+	if v45 <= int32(0) {
 		goto L15
 	} else {
 		goto L16
 	}
 L15:
 	;
-	F_ReleaseCatCacheList(m, v40)
+	F_ReleaseCatCacheList(m, v43)
 	mBase = m.M
-	v46 = m.ExcPending
-	if v46 != 0 {
+	v49 = m.ExcPending
+	if v49 != 0 {
 		goto L1
 	} else {
 		goto L18
@@ -170,50 +170,50 @@ L16:
 	goto L17
 L17:
 	;
-	v53 = int32(0)
+	v56 = int32(0)
 	goto L20
 L18:
 	;
-	v88 = int32(0)
+	v91 = int32(0)
 	goto L13
 L19:
 	;
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(v66)+84))
-	F_ReleaseCatCacheList(m, v40)
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v69)+84))
+	F_ReleaseCatCacheList(m, v43)
 	mBase = m.M
-	v78 = m.ExcPending
-	if v78 != 0 {
+	v81 = m.ExcPending
+	if v81 != 0 {
 		goto L1
 	} else {
 		goto L25
 	}
 L20:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, uint32(v40+int32(48)+v53<<(uint(int32(2))%32))))
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+56))
-	v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64)+22)))
-	v66 = v64 + v65
-	v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v66)+88)))
-	if v67 == int32(1) {
+	v66 = *(*int32)(unsafe.Add(mBase, uint32(v43-int32(-64)+v56<<(uint(int32(2))%32))))
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v66)+72))
+	v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v67)+22)))
+	v69 = v67 + v68
+	v70 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v69)+88)))
+	if v70 == int32(1) {
 		goto L19
 	} else {
 		goto L22
 	}
 L21:
 	;
-	F_ReleaseCatCacheList(m, v40)
+	F_ReleaseCatCacheList(m, v43)
 	mBase = m.M
-	v74 = m.ExcPending
-	if v74 != 0 {
+	v77 = m.ExcPending
+	if v77 != 0 {
 		goto L1
 	} else {
 		goto L24
 	}
 L22:
 	;
-	v71 = v53 + int32(1)
-	if v71 != v42 {
-		v53 = v71
+	v74 = v56 + int32(1)
+	if v74 != v45 {
+		v56 = v74
 		goto L20
 	} else {
 		goto L23
@@ -223,11 +223,11 @@ L23:
 	goto L21
 L24:
 	;
-	v88 = int32(0)
+	v91 = int32(0)
 	goto L13
 L25:
 	;
-	v88 = v76
+	v91 = v79
 	goto L13
 L26:
 	;

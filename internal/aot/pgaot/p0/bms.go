@@ -74,7 +74,7 @@ func F_bms_add_range(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v126 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_bms_add_range_1), int32(1040), int32(_a_F_bms_add_range_2))
+					F_errfinish(m, int32(_a_F_bms_add_range_1), int32(1024), int32(_a_F_bms_add_range_2))
 					mBase = m.M
 					v131 = m.ExcPending
 					if v131 != 0 {
@@ -97,7 +97,7 @@ func F_bms_add_range(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v21)+4)) = v16
-					*(*int32)(unsafe.Add(mBase, uint32(v21))) = int32(445)
+					*(*int32)(unsafe.Add(mBase, uint32(v21))) = int32(451)
 					v57 = v21
 					v65 = int32(-1) << (uint(l1) % 32)
 					v66 = int32(5)

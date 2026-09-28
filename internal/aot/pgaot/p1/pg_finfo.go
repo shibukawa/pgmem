@@ -68,9 +68,6 @@ func F_pg_finfo_dsnowball_lexize(m *base.Module) int32 {
 func F_pg_finfo_euc_jis_2004_to_shift_jis_2004(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jis_2004_to_shift_jis_2004_0)
 }
-func F_pg_finfo_euc_jp_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_euc_jp_to_mic_0)
-}
 func F_pg_finfo_g_cube_compress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_g_cube_compress_0)
 }
@@ -323,9 +320,6 @@ func F_pg_finfo_koi8u_to_utf8(m *base.Module) int32 {
 func F_pg_finfo_l2_distance(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_l2_distance_0)
 }
-func F_pg_finfo_latin4_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_latin4_to_mic_0)
-}
 func F_pg_finfo_lca(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_lca_0)
 }
@@ -347,11 +341,14 @@ func F_pg_finfo_ltree_gt(m *base.Module) int32 {
 func F_pg_finfo_ltree_union(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ltree_union_0)
 }
-func F_pg_finfo_mic_to_latin2(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_latin2_0)
-}
 func F_pg_finfo_nlevel(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_nlevel_0)
+}
+func F_pg_finfo_pg_buffercache_mark_dirty_relation(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_buffercache_mark_dirty_relation_0)
+}
+func F_pg_finfo_pg_buffercache_os_pages(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_buffercache_os_pages_0)
 }
 func F_pg_finfo_pg_prewarm(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_prewarm_0)

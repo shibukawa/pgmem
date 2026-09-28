@@ -74,7 +74,7 @@ L1:
 L2:
 	;
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+24))
 	if v12 == int32(0) {
 		v51 = v7
 		goto L3
@@ -200,7 +200,7 @@ func F_get_constraint_name(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13897(m, l0, int32(19))
+	v3 = Fn14286(m, l0, int32(19))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

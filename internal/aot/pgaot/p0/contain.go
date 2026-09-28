@@ -10,7 +10,7 @@ func F_contain_aggs_of_level(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13867(m, l0, l1, int32(1043))
+	v4 = Fn14250(m, l0, l1, int32(1121))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -33,90 +33,157 @@ func F_contain_context_dependent_node_walker(m *base.Module, l0 int32, l1 int32)
 	_ = v25
 	var v28 int32
 	_ = v28
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
 	var v31 int32
 	_ = v31
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
 	var v36 int32
 	_ = v36
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
 	var v40 int32
 	_ = v40
 	var v41 int32
 	_ = v41
 	var v42 int32
 	_ = v42
-	var v46 int32
-	_ = v46
-	var v47 int32
-	_ = v47
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
 	if l0 == int32(0) {
 		return int32(0)
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		switch v8 - int32(29) {
 		case 0:
-			v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-			v32 = F_contain_context_dependent_node_walker(m, v31, l1)
+			v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+			v30 = F_contain_context_dependent_node_walker(m, v29, l1)
 			mBase = m.M
-			v33 = m.ExcPending
-			if v33 != 0 {
+			v31 = m.ExcPending
+			if v31 != 0 {
 				return int32(0)
 			} else {
-				if v32 != 0 {
+				if v30 != 0 {
 					return int32(1)
 				} else {
-					v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-					*(*int32)(unsafe.Add(mBase, uint32(l1))) = v36 | int32(1)
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-					v41 = F_contain_context_dependent_node_walker(m, v40, l1)
+					v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+					*(*int32)(unsafe.Add(mBase, uint32(l1))) = v32 | int32(1)
+					v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+					v37 = F_contain_context_dependent_node_walker(m, v36, l1)
 					mBase = m.M
-					v42 = m.ExcPending
-					if v42 != 0 {
+					v38 = m.ExcPending
+					if v38 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l1))) = v36
-						return v41
+						v58 = v37
+						v59 = v32
+						*(*int32)(unsafe.Add(mBase, uint32(l1))) = v59
+						return v58
 					}
 				}
 			}
 		default:
-			v46 = F_expression_tree_walker_impl(m, l0, int32(877), l1)
+			v53 = F_expression_tree_walker_impl(m, l0, int32(926), l1)
 			mBase = m.M
-			v47 = m.ExcPending
-			if v47 != 0 {
+			v54 = m.ExcPending
+			if v54 != 0 {
 				return int32(0)
 			} else {
-				return v46
+				return v53
 			}
 		case 3:
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 			if v17 == int32(0) {
-				v46 = F_expression_tree_walker_impl(m, l0, int32(877), l1)
+				v53 = F_expression_tree_walker_impl(m, l0, int32(926), l1)
 				mBase = m.M
-				v47 = m.ExcPending
-				if v47 != 0 {
+				v54 = m.ExcPending
+				if v54 != 0 {
 					return int32(0)
 				} else {
-					return v46
+					return v53
 				}
 			} else {
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 				*(*int32)(unsafe.Add(mBase, uint32(l1))) = v20 | int32(1)
-				v25 = F_expression_tree_walker_impl(m, l0, int32(877), l1)
+				v25 = F_expression_tree_walker_impl(m, l0, int32(926), l1)
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
 					return int32(0)
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(l1))) = v20
-					return v25
+					v58 = v25
+					v59 = v20
+					*(*int32)(unsafe.Add(mBase, uint32(l1))) = v59
+					return v58
 				}
 			}
 		case 5:
 			v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 			return base.B2i32(v11&int32(1) == int32(0))
+		case 16:
+			v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+			v40 = F_contain_context_dependent_node_walker(m, v39, l1)
+			mBase = m.M
+			v41 = m.ExcPending
+			if v41 != 0 {
+				return int32(0)
+			} else {
+				if v40 != 0 {
+					return int32(1)
+				} else {
+					v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+					v43 = F_contain_context_dependent_node_walker(m, v42, l1)
+					mBase = m.M
+					v44 = m.ExcPending
+					if v44 != 0 {
+						return int32(0)
+					} else {
+						if v43 != 0 {
+							return int32(1)
+						} else {
+							v45 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+							*(*int32)(unsafe.Add(mBase, uint32(l1))) = v45 | int32(1)
+							v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+							v50 = F_contain_context_dependent_node_walker(m, v49, l1)
+							mBase = m.M
+							v51 = m.ExcPending
+							if v51 != 0 {
+								return int32(0)
+							} else {
+								v58 = v50
+								v59 = v45
+								*(*int32)(unsafe.Add(mBase, uint32(l1))) = v59
+								return v58
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -183,7 +250,7 @@ L4:
 	return v61
 L5:
 	;
-	v57 = F_expression_tree_walker_impl(m, l0, int32(868), l1)
+	v57 = F_expression_tree_walker_impl(m, l0, int32(916), l1)
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {
@@ -336,519 +403,443 @@ func F_contain_mutable_functions_walker(m *base.Module, l0 int32, l1 int32) int3
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
 	var v29 int32
 	_ = v29
 	var v30 int32
 	_ = v30
-	var v31 int32
-	_ = v31
-	var v36 int32
-	_ = v36
-	var v43 int32
-	_ = v43
+	var v35 int32
+	_ = v35
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
 	var v47 int32
 	_ = v47
-	var v48 int32
-	_ = v48
-	var v49 int32
-	_ = v49
+	var v50 int32
+	_ = v50
 	var v52 int32
 	_ = v52
 	var v54 int32
 	_ = v54
-	var v56 int32
-	_ = v56
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v68 int32
-	_ = v68
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
 	var v75 int32
 	_ = v75
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
-	var v89 int32
-	_ = v89
-	var v91 int32
-	_ = v91
-	var v99 int32
-	_ = v99
-	var v100 int32
-	_ = v100
-	var v103 int32
-	_ = v103
+	var v94 int32
+	_ = v94
+	var v95 int32
+	_ = v95
 	var v105 int32
 	_ = v105
-	var v112 int32
-	_ = v112
-	var v113 int32
-	_ = v113
-	var v114 int32
-	_ = v114
-	var v120 int32
-	_ = v120
+	var v108 int32
+	_ = v108
+	var v116 int32
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v124 int32
+	_ = v124
+	var v125 int32
+	_ = v125
+	var v126 int32
+	_ = v126
+	var v127 int32
+	_ = v127
+	var v128 int32
+	_ = v128
 	var v130 int32
 	_ = v130
-	var v131 int32
-	_ = v131
-	var v142 int32
-	_ = v142
-	var v145 int32
-	_ = v145
-	var v154 int32
-	_ = v154
-	var v155 int32
-	_ = v155
+	var v132 int32
+	_ = v132
+	var v136 int32
+	_ = v136
+	var v140 int32
+	_ = v140
+	var v143 int32
+	_ = v143
+	var v148 int32
+	_ = v148
+	var v151 int32
+	_ = v151
+	var v152 int32
+	_ = v152
+	var v153 int32
+	_ = v153
+	var v159 int32
+	_ = v159
 	var v160 int32
 	_ = v160
-	var v161 int32
-	_ = v161
-	var v162 int32
-	_ = v162
-	var v163 int32
-	_ = v163
 	var v164 int32
 	_ = v164
-	var v165 int32
-	_ = v165
-	var v166 int32
-	_ = v166
-	var v168 int32
-	_ = v168
-	var v170 int32
-	_ = v170
-	var v174 int32
-	_ = v174
-	var v178 int32
-	_ = v178
+	var v167 int32
+	_ = v167
 	var v181 int32
 	_ = v181
-	var v186 int32
-	_ = v186
+	var v182 int32
+	_ = v182
 	var v189 int32
 	_ = v189
-	var v190 int32
-	_ = v190
-	var v191 int32
-	_ = v191
-	var v197 int32
-	_ = v197
-	var v198 int32
-	_ = v198
-	var v207 int32
-	_ = v207
-	var v208 int32
-	_ = v208
-	var v220 int32
-	_ = v220
-	var v221 int32
-	_ = v221
-	var v229 int32
-	_ = v229
+	var v194 int32
+	_ = v194
+	var v195 int32
+	_ = v195
 	v3 = int32(0)
 	if l0 == v3 {
-		v229 = v3
-		goto L1
-	} else {
+		v189 = v3
 		goto L2
+	} else {
+		goto L3
 	}
 L1:
 	;
-	return v229
+	v194 = F_query_tree_walker_impl(m, l0, int32(907), l1, int32(0))
+	mBase = m.M
+	v195 = m.ExcPending
+	if v195 != 0 {
+		goto L4
+	} else {
+		goto L46
+	}
 L2:
 	;
-	v13 = F_check_functions_in_node(m, l0, int32(858), l1)
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
-		goto L3
-	} else {
-		goto L4
-	}
+	return v189
 L3:
 	;
-	return int32(0)
+	v12 = F_check_functions_in_node(m, l0, int32(906), l1)
+	mBase = m.M
+	v15 = m.ExcPending
+	if v15 != 0 {
+		goto L4
+	} else {
+		goto L5
+	}
 L4:
 	;
-	if v13 != 0 {
-		goto L5
-	} else {
-		goto L6
-	}
+	return int32(0)
 L5:
 	;
-	return int32(1)
+	if v12 != 0 {
+		goto L6
+	} else {
+		goto L7
+	}
 L6:
 	;
-	goto L7
+	return int32(1)
 L7:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	if v19 == int32(45) {
-		goto L9
-	} else {
-		goto L10
-	}
+	goto L8
 L8:
 	;
-	v220 = F_expression_tree_walker_impl(m, l0, int32(859), l1)
-	mBase = m.M
-	v221 = m.ExcPending
-	if v221 != 0 {
-		goto L3
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if v18 == int32(45) {
+		goto L10
 	} else {
-		goto L55
+		goto L11
 	}
 L9:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if v22 == int32(0) {
-		goto L8
+	v181 = F_expression_tree_walker_impl(m, l0, int32(907), l1)
+	mBase = m.M
+	v182 = m.ExcPending
+	if v182 != 0 {
+		goto L4
 	} else {
-		goto L12
+		goto L45
 	}
 L10:
 	;
-	v145 = v19
-	goto L11
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v21 == int32(0) {
+		goto L9
+	} else {
+		goto L13
+	}
 L11:
 	;
-	if v145 == int32(48) {
-		goto L40
-	} else {
-		goto L41
-	}
+	v108 = v18
+	goto L12
 L12:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
-	if int32(0) < v25 {
-		goto L13
+	if v108 == int32(48) {
+		goto L29
 	} else {
-		goto L14
+		goto L30
 	}
 L13:
 	;
-	v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+4))
-	v36 = int32(0)
-	goto L16
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
+	if int32(0) < v24 {
+		goto L14
+	} else {
+		goto L15
+	}
 L14:
 	;
-	goto L15
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
+	v35 = int32(0)
+	goto L17
 L15:
 	;
-	v142 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v145 = v142
-	goto L11
+	goto L16
 L16:
 	;
-	v43 = *(*int32)(unsafe.Add(mBase, uint32(v22)+12))
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v43+v36<<(uint(int32(2))%32))))
-	v48 = F_exprType(m, v47)
-	mBase = m.M
-	v49 = m.ExcPending
-	if v49 != 0 {
-		goto L3
-	} else {
-		goto L18
-	}
+	v105 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v108 = v105
+	goto L12
 L17:
 	;
-	goto L15
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v21)+12))
+	v45 = *(*int32)(unsafe.Add(mBase, uint32(v41+v35<<(uint(int32(2))%32))))
+	v46 = F_exprType(m, v45)
+	mBase = m.M
+	v47 = m.ExcPending
+	if v47 != 0 {
+		goto L4
+	} else {
+		goto L19
+	}
 L18:
 	;
-	if base.B2i32(v31 != int32(2)) == int32(0) {
-		goto L20
-	} else {
-		goto L21
-	}
+	goto L16
 L19:
 	;
-	v130 = v36 + int32(1)
-	v131 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
-	if v130 < v131 {
-		v36 = v130
-		goto L16
+	if base.B2i32(v30 != int32(2)) == int32(0) {
+		goto L21
 	} else {
-		goto L39
+		goto L22
 	}
 L20:
 	;
-	v52 = m.G0
-	v54 = v52 - int32(16)
-	m.G0 = v54
-	v56 = int32(1)
-	F_json_categorize_type(m, v48, v56, v54+int32(12), v54+int32(8))
-	mBase = m.M
-	v63 = m.ExcPending
-	if v63 != 0 {
-		goto L3
+	v94 = v35 + int32(1)
+	v95 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
+	if v94 < v95 {
+		v35 = v94
+		goto L17
 	} else {
-		goto L23
+		goto L28
 	}
 L21:
 	;
-	goto L22
+	v50 = m.G0
+	v52 = v50 - int32(16)
+	m.G0 = v52
+	v54 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v52)+15)) = uint8(v54)
+	F_json_check_mutability(m, v46, int32(1), v52+int32(15))
+	mBase = m.M
+	v60 = m.ExcPending
+	if v60 != 0 {
+		goto L4
+	} else {
+		goto L24
+	}
 L22:
 	;
-	v89 = m.G0
-	v91 = v89 - int32(16)
-	m.G0 = v91
-	F_json_categorize_type(m, v48, int32(0), v91+int32(12), v91+int32(8))
-	mBase = m.M
-	v99 = m.ExcPending
-	if v99 != 0 {
-		goto L3
-	} else {
-		goto L31
-	}
+	goto L23
 L23:
 	;
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(v54)+12))
-	if base.Ui32(int32(11)) < base.Ui32(v64) {
-		goto L25
+	v71 = m.G0
+	v73 = v71 - int32(16)
+	m.G0 = v73
+	v75 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v73)+15)) = uint8(v75)
+	F_json_check_mutability(m, v46, v75, v73+int32(15))
+	mBase = m.M
+	v81 = m.ExcPending
+	if v81 != 0 {
+		goto L4
 	} else {
 		goto L26
 	}
 L24:
 	;
-	m.G0 = v54 + int32(16)
-	if v82 != 0 {
-		goto L19
+	v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+15)))
+	m.G0 = v52 + int32(16)
+	if (v61^int32(-1))&int32(1) != 0 {
+		goto L20
 	} else {
-		goto L30
+		goto L25
 	}
 L25:
 	;
-	v82 = int32(0)
-	goto L24
+	return int32(1)
 L26:
 	;
-	v68 = int32(1) << (uint(v64) % 32)
-	if v68&int32(195) != 0 {
-		v82 = v56
-		goto L24
+	v82 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73)+15)))
+	m.G0 = v73 + int32(16)
+	if (v82^int32(-1))&int32(1) != 0 {
+		goto L20
 	} else {
 		goto L27
 	}
 L27:
 	;
-	if v68&int32(3076) == int32(0) {
-		goto L25
-	} else {
-		goto L28
-	}
+	return int32(1)
 L28:
 	;
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v54)+8))
-	v76 = F_func_volatile(m, v75)
-	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
-		goto L3
-	} else {
-		goto L29
-	}
+	goto L18
 L29:
 	;
-	v82 = base.B2i32(v76 == int32(105))
-	goto L24
+	v116 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)))
+	if v117 != int32(7) {
+		goto L32
+	} else {
+		goto L33
+	}
 L30:
 	;
-	return int32(1)
+	v160 = v108
+	goto L31
 L31:
 	;
-	v100 = *(*int32)(unsafe.Add(mBase, uint32(v91)+12))
-	if base.Ui32(int32(11)) < base.Ui32(v100) {
-		goto L33
-	} else {
-		goto L34
+	v164 = int32(1)
+	switch v160 - int32(40) {
+	case 0, 19:
+		v189 = v164
+		goto L2
+	case 1:
+		goto L42
+	default:
+		goto L9
+	case 27:
+		goto L1
 	}
 L32:
 	;
-	m.G0 = v91 + int32(16)
-	if v120 != 0 {
-		goto L19
-	} else {
-		goto L38
-	}
+	return int32(1)
 L33:
 	;
-	v120 = int32(0)
-	goto L32
+	goto L34
 L34:
 	;
-	v103 = int32(1)
-	v105 = v103 << (uint(v100) % 32)
-	if v105&int32(195) != 0 {
-		v120 = v103
-		goto L32
+	v122 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v116)+32)))
+	if v122 != 0 {
+		v189 = v3
+		goto L2
 	} else {
 		goto L35
 	}
 L35:
 	;
-	if v105&int32(3076) == int32(0) {
-		goto L33
+	v123 = *(*int32)(unsafe.Add(mBase, uint32(v116)+24))
+	v124 = F_pg_detoast_datum(m, v123)
+	mBase = m.M
+	v125 = m.ExcPending
+	if v125 != 0 {
+		goto L4
 	} else {
 		goto L36
 	}
 L36:
 	;
-	v112 = *(*int32)(unsafe.Add(mBase, uint32(v91)+8))
-	v113 = F_func_volatile(m, v112)
+	v126 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v127 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v128 = m.G0
+	v130 = v128 - int32(48)
+	m.G0 = v130
+	v132 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v130)+40)) = v132
+	*(*int32)(unsafe.Add(mBase, uint32(v130)+36)) = v127
+	*(*int32)(unsafe.Add(mBase, uint32(v130)+32)) = v126
+	v136 = *(*int32)(unsafe.Add(mBase, uint32(v124)+4))
+	*(*uint8)(unsafe.Add(mBase, uint32(v130)+45)) = uint8(v132)
+	v140 = int32(base.Ui32(v136) >> (uint(int32(31)) % 32))
+	*(*uint8)(unsafe.Add(mBase, uint32(v130)+44)) = uint8(v140)
+	v143 = v130 + int32(4)
+	F_jspInitByBuffer(m, v143, v124+int32(8), v132)
 	mBase = m.M
-	v114 = m.ExcPending
-	if v114 != 0 {
-		goto L3
+	v148 = m.ExcPending
+	if v148 != 0 {
+		goto L4
 	} else {
 		goto L37
 	}
 L37:
 	;
-	v120 = base.B2i32(v113 == int32(105))
-	goto L32
+	v151 = F_jspIsMutableWalker(m, v143, v130+int32(32))
+	mBase = m.M
+	v152 = m.ExcPending
+	if v152 != 0 {
+		goto L4
+	} else {
+		goto L38
+	}
 L38:
 	;
-	return int32(1)
+	v153 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+45)))
+	m.G0 = v130 + int32(48)
+	if v153 != 0 {
+		goto L39
+	} else {
+		goto L40
+	}
 L39:
 	;
-	goto L17
+	return int32(1)
 L40:
 	;
-	v154 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v155 = *(*int32)(unsafe.Add(mBase, uint32(v154)))
-	if v155 != int32(7) {
-		goto L43
-	} else {
-		goto L44
-	}
+	goto L41
 L41:
 	;
-	v198 = v145
-	goto L42
+	v159 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v160 = v159
+	goto L31
 L42:
 	;
-	switch v198 - int32(40) {
-	case 0, 19:
-		v229 = int32(1)
-		goto L1
-	default:
-		goto L8
-	case 27:
-		goto L53
+	v167 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if base.Ui32(v167-int32(3)) < base.Ui32(int32(5)) {
+		goto L9
+	} else {
+		goto L43
 	}
 L43:
 	;
-	return int32(1)
+	if v167 != 0 {
+		v189 = v164
+		goto L2
+	} else {
+		goto L44
+	}
 L44:
 	;
-	goto L45
+	goto L9
 L45:
 	;
-	v160 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v154)+24)))
-	if v160 != 0 {
-		v229 = v3
-		goto L1
-	} else {
-		goto L46
-	}
+	v189 = v181
+	goto L2
 L46:
 	;
-	v161 = *(*int32)(unsafe.Add(mBase, uint32(v154)+20))
-	v162 = F_pg_detoast_datum(m, v161)
-	mBase = m.M
-	v163 = m.ExcPending
-	if v163 != 0 {
-		goto L3
-	} else {
-		goto L47
-	}
-L47:
-	;
-	v164 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v165 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-	v166 = m.G0
-	v168 = v166 - int32(48)
-	m.G0 = v168
-	v170 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v168)+40)) = v170
-	*(*int32)(unsafe.Add(mBase, uint32(v168)+36)) = v165
-	*(*int32)(unsafe.Add(mBase, uint32(v168)+32)) = v164
-	v174 = *(*int32)(unsafe.Add(mBase, uint32(v162)+4))
-	*(*uint8)(unsafe.Add(mBase, uint32(v168)+45)) = uint8(v170)
-	v178 = int32(base.Ui32(v174) >> (uint(int32(31)) % 32))
-	*(*uint8)(unsafe.Add(mBase, uint32(v168)+44)) = uint8(v178)
-	v181 = v168 + int32(4)
-	F_jspInitByBuffer(m, v181, v162+int32(8), v170)
-	mBase = m.M
-	v186 = m.ExcPending
-	if v186 != 0 {
-		goto L3
-	} else {
-		goto L48
-	}
-L48:
-	;
-	v189 = F_jspIsMutableWalker(m, v181, v168+int32(32))
-	mBase = m.M
-	v190 = m.ExcPending
-	if v190 != 0 {
-		goto L3
-	} else {
-		goto L49
-	}
-L49:
-	;
-	v191 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v168)+45)))
-	m.G0 = v168 + int32(48)
-	if v191 != 0 {
-		goto L50
-	} else {
-		goto L51
-	}
-L50:
-	;
-	return int32(1)
-L51:
-	;
-	goto L52
-L52:
-	;
-	v197 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v198 = v197
-	goto L42
-L53:
-	;
-	v207 = F_query_tree_walker_impl(m, l0, int32(859), l1, int32(0))
-	mBase = m.M
-	v208 = m.ExcPending
-	if v208 != 0 {
-		goto L3
-	} else {
-		goto L54
-	}
-L54:
-	;
-	return v207
-L55:
-	;
-	v229 = v220
-	goto L1
+	return v194
 }

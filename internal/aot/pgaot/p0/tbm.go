@@ -28,7 +28,7 @@ func F_tbm_create(m *base.Module, l0 int32, l1 int32) int32 {
 	if v9 != 0 {
 		return int32(0)
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(478)
+		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(486)
 		v13 = *(*int32)(unsafe.Add(mBase, _c_F_tbm_create[0]))
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+112)) = l1
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = int32(0)

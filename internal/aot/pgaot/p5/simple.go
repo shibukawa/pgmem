@@ -22,52 +22,52 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 	_ = v22
 	var v25 int64
 	_ = v25
-	var v30 int32
+	var v30 int64
 	_ = v30
-	var v32 int64
+	var v31 int32
+	_ = v31
+	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
-	var v42 int32
-	_ = v42
-	var v45 int32
-	_ = v45
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v53 int32
+	_ = v53
 	var v54 int32
 	_ = v54
 	var v55 int32
 	_ = v55
-	var v56 int32
-	_ = v56
+	var v59 int32
+	_ = v59
 	var v60 int32
 	_ = v60
-	var v61 int32
-	_ = v61
-	var v65 int32
-	_ = v65
-	var v71 int32
-	_ = v71
-	var v75 int32
-	_ = v75
-	var v77 int64
-	_ = v77
-	var v79 int64
-	_ = v79
-	var v87 int32
-	_ = v87
+	var v64 int32
+	_ = v64
+	var v70 int32
+	_ = v70
+	var v74 int32
+	_ = v74
+	var v76 int64
+	_ = v76
+	var v78 int64
+	_ = v78
+	var v86 int32
+	_ = v86
+	var v90 int32
+	_ = v90
 	var v91 int32
 	_ = v91
 	var v92 int32
 	_ = v92
-	var v93 int32
-	_ = v93
-	var v99 int32
-	_ = v99
-	var v111 int32
-	_ = v111
+	var v98 int32
+	_ = v98
+	var v110 int32
+	_ = v110
 	v9 = m.G0
 	v11 = v9 - int32(1056)
 	m.G0 = v11
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+56))
 	v16 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[0])) = uint8(v16)
@@ -75,295 +75,284 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 	v22 = v14 << (uint(int32(6)) % 32)
 	v25 = *(*int64)(unsafe.Add(mBase, uint32(v22)+uint32(_c_F_SimpleLruDoesPhysicalPageExist[2])))
 	*(*int64)(unsafe.Add(mBase, uint32(v22)+uint32(_c_F_SimpleLruDoesPhysicalPageExist[2]))) = v25 + int64(1)
-	v30 = l0 + int32(16)
-	v32 = base.I64_div_s(l1, int64(32))
-	v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+6)))
-	if v33 == v16 {
-		*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v32
-		*(*int32)(unsafe.Add(mBase, uint32(v11))) = v30
-		v42 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(_a_F_SimpleLruDoesPhysicalPageExist_0), v11)
+	v30 = base.I64_div_s(l1, int64(32))
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+40)))
+	if v32 == v16 {
+		*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v30
+		*(*int32)(unsafe.Add(mBase, uint32(v11))) = v31
+		v41 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(_a_F_SimpleLruDoesPhysicalPageExist_0), v11)
 		mBase = m.M
-		v45 = m.ExcPending
-		if v45 != 0 {
+		v44 = m.ExcPending
+		if v44 != 0 {
 			return int32(0)
 		} else {
-			v56 = int32(0)
-			v60 = F_OpenTransientFile(m, v11+int32(32), v56)
+			v55 = int32(0)
+			v59 = F_OpenTransientFile(m, v11+int32(32), v55)
 			mBase = m.M
-			v61 = m.ExcPending
-			if v61 != 0 {
+			v60 = m.ExcPending
+			if v60 != 0 {
 				return int32(0)
 			} else {
-				if v60 < int32(0) {
-					v65 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-					if v65 == int32(44) {
-						v111 = v56
+				if v59 < int32(0) {
+					v64 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+					if v64 == int32(44) {
+						v110 = v55
 						m.G0 = v11 + int32(1056)
-						return v111
+						return v110
 					} else {
-						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v65
-						v71 = int32(0)
-						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = v71
-						F_SlruReportIOError(m, l0, l1, v71)
+						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v64
+						v70 = int32(0)
+						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = v70
+						F_SlruReportIOError(m, l0, l1, v70)
 						mBase = m.M
-						v75 = m.ExcPending
-						if v75 != 0 {
+						v74 = m.ExcPending
+						if v74 != 0 {
 							return int32(0)
 						} else {
-							v77 = int64(0)
-							v79 = F___lseek(m, v60, v77, int32(2))
+							v76 = int64(0)
+							v78 = F___lseek(m, v59, v76, int32(2))
 							mBase = m.M
-							if v79 < v77 {
+							if v78 < v76 {
 								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(1)
-								v87 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v87
+								v86 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v86
 								F_SlruReportIOError(m, l0, l1, int32(0))
 								mBase = m.M
-								v91 = m.ExcPending
-								if v91 != 0 {
+								v90 = m.ExcPending
+								if v90 != 0 {
 									return int32(0)
 								} else {
-									v92 = F_CloseTransientFile(m, v60)
+									v91 = F_CloseTransientFile(m, v59)
 									mBase = m.M
-									v93 = m.ExcPending
-									if v93 != 0 {
+									v92 = m.ExcPending
+									if v92 != 0 {
 										return int32(0)
 									} else {
-										if v92 != 0 {
+										if v91 != 0 {
 											*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(5)
-											v99 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-											*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v99
-											v111 = v56
+											v98 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+											*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v98
+											v110 = v55
 										} else {
-											v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
+											v110 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v30<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v78)
 										}
 										m.G0 = v11 + int32(1056)
-										return v111
+										return v110
 									}
 								}
 							} else {
-								v92 = F_CloseTransientFile(m, v60)
+								v91 = F_CloseTransientFile(m, v59)
 								mBase = m.M
-								v93 = m.ExcPending
-								if v93 != 0 {
+								v92 = m.ExcPending
+								if v92 != 0 {
 									return int32(0)
 								} else {
-									if v92 != 0 {
+									if v91 != 0 {
 										*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(5)
-										v99 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-										*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v99
-										v111 = v56
+										v98 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+										*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v98
+										v110 = v55
 									} else {
-										v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
+										v110 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v30<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v78)
 									}
 									m.G0 = v11 + int32(1056)
-									return v111
+									return v110
 								}
 							}
 						}
 					}
 				} else {
-					v77 = int64(0)
-					v79 = F___lseek(m, v60, v77, int32(2))
+					v76 = int64(0)
+					v78 = F___lseek(m, v59, v76, int32(2))
 					mBase = m.M
-					if v79 < v77 {
+					if v78 < v76 {
 						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(1)
-						v87 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v87
+						v86 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v86
 						F_SlruReportIOError(m, l0, l1, int32(0))
 						mBase = m.M
-						v91 = m.ExcPending
-						if v91 != 0 {
+						v90 = m.ExcPending
+						if v90 != 0 {
 							return int32(0)
 						} else {
-							v92 = F_CloseTransientFile(m, v60)
+							v91 = F_CloseTransientFile(m, v59)
 							mBase = m.M
-							v93 = m.ExcPending
-							if v93 != 0 {
+							v92 = m.ExcPending
+							if v92 != 0 {
 								return int32(0)
 							} else {
-								if v92 != 0 {
+								if v91 != 0 {
 									*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(5)
-									v99 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-									*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v99
-									v111 = v56
+									v98 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+									*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v98
+									v110 = v55
 								} else {
-									v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
+									v110 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v30<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v78)
 								}
 								m.G0 = v11 + int32(1056)
-								return v111
+								return v110
 							}
 						}
 					} else {
-						v92 = F_CloseTransientFile(m, v60)
+						v91 = F_CloseTransientFile(m, v59)
 						mBase = m.M
-						v93 = m.ExcPending
-						if v93 != 0 {
+						v92 = m.ExcPending
+						if v92 != 0 {
 							return int32(0)
 						} else {
-							if v92 != 0 {
+							if v91 != 0 {
 								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(5)
-								v99 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v99
-								v111 = v56
+								v98 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v98
+								v110 = v55
 							} else {
-								v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
+								v110 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v30<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v78)
 							}
 							m.G0 = v11 + int32(1056)
-							return v111
+							return v110
 						}
 					}
 				}
 			}
 		}
 	} else {
-		*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v32)
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v30
-		v54 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(_a_F_SimpleLruDoesPhysicalPageExist_1), v11+int32(16))
+		*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v30)
+		*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v31
+		v53 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(_a_F_SimpleLruDoesPhysicalPageExist_1), v11+int32(16))
 		mBase = m.M
-		v55 = m.ExcPending
-		if v55 != 0 {
+		v54 = m.ExcPending
+		if v54 != 0 {
 			return int32(0)
 		} else {
-			v56 = int32(0)
-			v60 = F_OpenTransientFile(m, v11+int32(32), v56)
+			v55 = int32(0)
+			v59 = F_OpenTransientFile(m, v11+int32(32), v55)
 			mBase = m.M
-			v61 = m.ExcPending
-			if v61 != 0 {
+			v60 = m.ExcPending
+			if v60 != 0 {
 				return int32(0)
 			} else {
-				if v60 < int32(0) {
-					v65 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-					if v65 == int32(44) {
-						v111 = v56
+				if v59 < int32(0) {
+					v64 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+					if v64 == int32(44) {
+						v110 = v55
 						m.G0 = v11 + int32(1056)
-						return v111
+						return v110
 					} else {
-						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v65
-						v71 = int32(0)
-						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = v71
-						F_SlruReportIOError(m, l0, l1, v71)
+						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v64
+						v70 = int32(0)
+						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = v70
+						F_SlruReportIOError(m, l0, l1, v70)
 						mBase = m.M
-						v75 = m.ExcPending
-						if v75 != 0 {
+						v74 = m.ExcPending
+						if v74 != 0 {
 							return int32(0)
 						} else {
-							v77 = int64(0)
-							v79 = F___lseek(m, v60, v77, int32(2))
+							v76 = int64(0)
+							v78 = F___lseek(m, v59, v76, int32(2))
 							mBase = m.M
-							if v79 < v77 {
+							if v78 < v76 {
 								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(1)
-								v87 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v87
+								v86 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v86
 								F_SlruReportIOError(m, l0, l1, int32(0))
 								mBase = m.M
-								v91 = m.ExcPending
-								if v91 != 0 {
+								v90 = m.ExcPending
+								if v90 != 0 {
 									return int32(0)
 								} else {
-									v92 = F_CloseTransientFile(m, v60)
+									v91 = F_CloseTransientFile(m, v59)
 									mBase = m.M
-									v93 = m.ExcPending
-									if v93 != 0 {
+									v92 = m.ExcPending
+									if v92 != 0 {
 										return int32(0)
 									} else {
-										if v92 != 0 {
+										if v91 != 0 {
 											*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(5)
-											v99 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-											*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v99
-											v111 = v56
+											v98 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+											*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v98
+											v110 = v55
 										} else {
-											v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
+											v110 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v30<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v78)
 										}
 										m.G0 = v11 + int32(1056)
-										return v111
+										return v110
 									}
 								}
 							} else {
-								v92 = F_CloseTransientFile(m, v60)
+								v91 = F_CloseTransientFile(m, v59)
 								mBase = m.M
-								v93 = m.ExcPending
-								if v93 != 0 {
+								v92 = m.ExcPending
+								if v92 != 0 {
 									return int32(0)
 								} else {
-									if v92 != 0 {
+									if v91 != 0 {
 										*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(5)
-										v99 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-										*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v99
-										v111 = v56
+										v98 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+										*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v98
+										v110 = v55
 									} else {
-										v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
+										v110 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v30<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v78)
 									}
 									m.G0 = v11 + int32(1056)
-									return v111
+									return v110
 								}
 							}
 						}
 					}
 				} else {
-					v77 = int64(0)
-					v79 = F___lseek(m, v60, v77, int32(2))
+					v76 = int64(0)
+					v78 = F___lseek(m, v59, v76, int32(2))
 					mBase = m.M
-					if v79 < v77 {
+					if v78 < v76 {
 						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(1)
-						v87 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v87
+						v86 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+						*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v86
 						F_SlruReportIOError(m, l0, l1, int32(0))
 						mBase = m.M
-						v91 = m.ExcPending
-						if v91 != 0 {
+						v90 = m.ExcPending
+						if v90 != 0 {
 							return int32(0)
 						} else {
-							v92 = F_CloseTransientFile(m, v60)
+							v91 = F_CloseTransientFile(m, v59)
 							mBase = m.M
-							v93 = m.ExcPending
-							if v93 != 0 {
+							v92 = m.ExcPending
+							if v92 != 0 {
 								return int32(0)
 							} else {
-								if v92 != 0 {
+								if v91 != 0 {
 									*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(5)
-									v99 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-									*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v99
-									v111 = v56
+									v98 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+									*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v98
+									v110 = v55
 								} else {
-									v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
+									v110 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v30<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v78)
 								}
 								m.G0 = v11 + int32(1056)
-								return v111
+								return v110
 							}
 						}
 					} else {
-						v92 = F_CloseTransientFile(m, v60)
+						v91 = F_CloseTransientFile(m, v59)
 						mBase = m.M
-						v93 = m.ExcPending
-						if v93 != 0 {
+						v92 = m.ExcPending
+						if v92 != 0 {
 							return int32(0)
 						} else {
-							if v92 != 0 {
+							if v91 != 0 {
 								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[5])) = int32(5)
-								v99 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
-								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v99
-								v111 = v56
+								v98 = *(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[3]))
+								*(*int32)(unsafe.Add(mBase, _c_F_SimpleLruDoesPhysicalPageExist[4])) = v98
+								v110 = v55
 							} else {
-								v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
+								v110 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v30<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v78)
 							}
 							m.G0 = v11 + int32(1056)
-							return v111
+							return v110
 						}
 					}
 				}
 			}
 		}
-	}
-}
-func F_SimpleLruWritePage(m *base.Module, l0 int32, l1 int32) {
-	var v5 int32
-	_ = v5
-	F_SlruInternalWritePage(m, l0, l1, int32(0))
-	v5 = m.ExcPending
-	if v5 != 0 {
-		return
-	} else {
-		return
 	}
 }

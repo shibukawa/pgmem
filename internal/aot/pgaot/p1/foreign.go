@@ -67,7 +67,7 @@ func F_ForeignNext(m *base.Module, l0 int32) int32 {
 			} else {
 				v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
 				v37 = *(*int32)(unsafe.Add(mBase, uint32(v36)+56))
-				*(*int32)(unsafe.Add(mBase, uint32(v21)+36)) = v37
+				*(*int32)(unsafe.Add(mBase, uint32(v21)+40)) = v37
 			}
 		}
 		return v21
@@ -76,12 +76,12 @@ func F_ForeignNext(m *base.Module, l0 int32) int32 {
 func F_GetForeignServerByName(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v11 int64
+	_ = v11
 	var v14 int32
 	_ = v14
 	var v17 int32
@@ -90,21 +90,21 @@ func F_GetForeignServerByName(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v20
 	var v21 int32
 	_ = v21
-	var v22 int32
-	_ = v22
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
-	var v37 int32
-	_ = v37
-	var v42 int32
-	_ = v42
-	v3 = int32(0)
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
-	v14 = F_GetSysCacheOid(m, int32(31), l0, v3, v3, v3)
+	var v23 int32
+	_ = v23
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v38 int32
+	_ = v38
+	var v43 int32
+	_ = v43
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v11 = int64(0)
+	v14 = F_GetSysCacheOid(m, int32(31), base.I64_extend_i32_u(l0), v11, v11, v11)
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
@@ -118,39 +118,39 @@ func F_GetForeignServerByName(m *base.Module, l0 int32, l1 int32) int32 {
 				if v21 != 0 {
 					return int32(0)
 				} else {
-					v22 = v20
-					m.G0 = v8 + int32(16)
-					return v22
+					v23 = v20
+					m.G0 = v7 + int32(16)
+					return v23
 				}
 			} else {
-				v22 = v3
-				m.G0 = v8 + int32(16)
-				return v22
+				v23 = int32(0)
+				m.G0 = v7 + int32(16)
+				return v23
 			}
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v30 = m.ExcPending
-			if v30 != 0 {
+			v31 = m.ExcPending
+			if v31 != 0 {
 				return int32(0)
 			} else {
 				F_errcode(m, int32(67137668))
 				mBase = m.M
-				v33 = m.ExcPending
-				if v33 != 0 {
+				v34 = m.ExcPending
+				if v34 != 0 {
 					return int32(0)
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-					F_errmsg(m, int32(_a_F_GetForeignServerByName_0), v8)
+					*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
+					F_errmsg(m, int32(_a_F_GetForeignServerByName_0), v7)
 					mBase = m.M
-					v37 = m.ExcPending
-					if v37 != 0 {
+					v38 = m.ExcPending
+					if v38 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_GetForeignServerByName_1), int32(714), int32(_a_F_GetForeignServerByName_2))
+						F_errfinish(m, int32(_a_F_GetForeignServerByName_1), int32(757), int32(_a_F_GetForeignServerByName_2))
 						mBase = m.M
-						v42 = m.ExcPending
-						if v42 != 0 {
+						v43 = m.ExcPending
+						if v43 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
@@ -168,7 +168,7 @@ func F_GetForeignServerIdByRelId(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = Fn13829(m, l0, int32(_a_F_GetForeignServerIdByRelId_0), int32(364), int32(_a_F_GetForeignServerIdByRelId_1), int32(_a_F_GetForeignServerIdByRelId_2), int32(33))
+	v7 = Fn14213(m, l0, int32(_a_F_GetForeignServerIdByRelId_0), int32(407), int32(_a_F_GetForeignServerIdByRelId_1), int32(_a_F_GetForeignServerIdByRelId_2), int32(33))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

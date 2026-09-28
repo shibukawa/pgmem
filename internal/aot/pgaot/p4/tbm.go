@@ -330,7 +330,7 @@ L30:
 L31:
 	;
 	v157 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
-	F_pg_qsort(m, v157, v100, int32(4), int32(817))
+	F_pg_qsort(m, v157, v100, int32(4), int32(865))
 	mBase = m.M
 	v161 = m.ExcPending
 	if v161 != 0 {
@@ -354,7 +354,7 @@ L34:
 L35:
 	;
 	v164 = *(*int32)(unsafe.Add(mBase, uint32(l0)+92))
-	F_pg_qsort(m, v164, v99, int32(4), int32(817))
+	F_pg_qsort(m, v164, v99, int32(4), int32(865))
 	mBase = m.M
 	v168 = m.ExcPending
 	if v168 != 0 {

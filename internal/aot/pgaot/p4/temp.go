@@ -364,85 +364,85 @@ L43:
 	;
 	goto L1
 }
-func F_RemoveTempRelationsCallback(m *base.Module, l0 int32, l1 int32) {
+func F_RemoveTempRelationsCallback(m *base.Module, l0 int32, l1 int64) {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v5 int32
-	_ = v5
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v12 int32
-	_ = v12
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
 	var v13 int32
 	_ = v13
-	var v14 int32
-	_ = v14
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
 	var v18 int32
 	_ = v18
-	var v29 int32
-	_ = v29
+	var v20 int32
+	_ = v20
 	var v31 int32
 	_ = v31
 	var v33 int32
 	_ = v33
-	v3 = m.G0
-	v5 = v3 - int32(16)
-	m.G0 = v5
-	v8 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveTempRelationsCallback[0]))
-	if v8 != 0 {
+	var v35 int32
+	_ = v35
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v9 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveTempRelationsCallback[0]))
+	if v9 != 0 {
 		F_AbortOutOfAnyTransaction(m)
 		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
+		v11 = m.ExcPending
+		if v11 != 0 {
 			return
 		} else {
 			F_StartTransactionCommand(m)
 			mBase = m.M
-			v12 = m.ExcPending
-			if v12 != 0 {
+			v13 = m.ExcPending
+			if v13 != 0 {
 				return
 			} else {
-				v13 = F_GetTransactionSnapshot(m)
+				v15 = F_GetCatalogSnapshot(m, int32(1259))
 				mBase = m.M
-				v14 = m.ExcPending
-				if v14 != 0 {
+				v16 = m.ExcPending
+				if v16 != 0 {
 					return
 				} else {
-					F_PushActiveSnapshot(m, v13)
+					F_PushActiveSnapshot(m, v15)
 					mBase = m.M
-					v16 = m.ExcPending
-					if v16 != 0 {
+					v18 = m.ExcPending
+					if v18 != 0 {
 						return
 					} else {
-						v18 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveTempRelationsCallback[0]))
-						*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v5)+8)) = v18
-						*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = int32(2615)
-						F_performDeletion(m, v5+int32(4), int32(1), int32(29))
+						v20 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveTempRelationsCallback[0]))
+						*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v20
+						*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = int32(2615)
+						F_performDeletion(m, v6+int32(4), int32(1), int32(29))
 						mBase = m.M
-						v29 = m.ExcPending
-						if v29 != 0 {
+						v31 = m.ExcPending
+						if v31 != 0 {
 							return
 						} else {
 							F_PopActiveSnapshot(m)
 							mBase = m.M
-							v31 = m.ExcPending
-							if v31 != 0 {
+							v33 = m.ExcPending
+							if v33 != 0 {
 								return
 							} else {
 								F_CommitTransactionCommand(m)
 								mBase = m.M
-								v33 = m.ExcPending
-								if v33 != 0 {
+								v35 = m.ExcPending
+								if v35 != 0 {
 									return
 								} else {
-									m.G0 = v5 + int32(16)
+									m.G0 = v6 + int32(16)
 									return
 								}
 							}
@@ -452,7 +452,7 @@ func F_RemoveTempRelationsCallback(m *base.Module, l0 int32, l1 int32) {
 			}
 		}
 	} else {
-		m.G0 = v5 + int32(16)
+		m.G0 = v6 + int32(16)
 		return
 	}
 }

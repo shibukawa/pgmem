@@ -112,7 +112,7 @@ func F_RebuildConstraintComment(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v18))) = int32(199)
 				if l3 != 0 {
-					*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = int32(40)
+					*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = int32(41)
 					v24 = *(*int32)(unsafe.Add(mBase, uint32(l3)+48))
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)+68))
 					v26 = F_get_namespace_name(m, v25)
@@ -274,56 +274,56 @@ func F_RebuildConstraintComment(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 func F_get_constraint_index(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
-	var v14 int32
-	_ = v14
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
 	var v15 int32
 	_ = v15
 	var v16 int32
 	_ = v16
 	var v17 int32
 	_ = v17
-	var v19 int32
-	_ = v19
-	var v26 int32
-	_ = v26
-	var v31 int32
-	_ = v31
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v27 int32
+	_ = v27
 	var v32 int32
 	_ = v32
-	var v34 int32
-	_ = v34
-	v6 = F_SearchSysCache1(m, int32(19), l0)
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	v7 = F_SearchSysCache1(m, int32(19), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v9 = m.ExcPending
-	if v9 != 0 {
+	v10 = m.ExcPending
+	if v10 != 0 {
 		return int32(0)
 	} else {
-		if v6 == int32(0) {
+		if v7 == int32(0) {
 			return int32(0)
 		} else {
-			v14 = *(*int32)(unsafe.Add(mBase, uint32(v6)+16))
-			v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+22)))
-			v16 = v14 + v15
-			v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+72)))
-			v19 = v17 - int32(112)
-			v26 = int32(0)
-			if base.B2i32(base.Ui32(int32(8)) < base.Ui32(v19))|base.B2i32(int32(1)<<(uint(v19)%32)&int32(289) == v26) == v26 {
-				v31 = *(*int32)(unsafe.Add(mBase, uint32(v16)+88))
-				v32 = v31
+			v15 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+			v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+22)))
+			v17 = v15 + v16
+			v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+72)))
+			v20 = v18 - int32(112)
+			v27 = int32(0)
+			if base.B2i32(base.Ui32(int32(8)) < base.Ui32(v20))|base.B2i32(int32(1)<<(uint(v20)%32)&int32(289) == v27) == v27 {
+				v32 = *(*int32)(unsafe.Add(mBase, uint32(v17)+88))
+				v33 = v32
 			} else {
-				v32 = int32(0)
+				v33 = int32(0)
 			}
-			F_ReleaseCatCache(m, v6)
+			F_ReleaseCatCache(m, v7)
 			mBase = m.M
-			v34 = m.ExcPending
-			if v34 != 0 {
+			v35 = m.ExcPending
+			if v35 != 0 {
 				return int32(0)
 			} else {
-				return v32
+				return v33
 			}
 		}
 	}

@@ -386,7 +386,7 @@ L35:
 	goto L36
 L36:
 	;
-	v118 = F_palloc(m, v109<<(uint(int32(2))%32)+int32(8))
+	v118 = F_palloc(m, v109<<(uint(int32(2))%32)+int32(16))
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -396,7 +396,7 @@ L36:
 	}
 L37:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v118)+4)) = v109
+	*(*int32)(unsafe.Add(mBase, uint32(v118)+8)) = v109
 	*(*int32)(unsafe.Add(mBase, uint32(v118))) = int32(1)
 	v123 = *(*int32)(unsafe.Add(mBase, uint32(v101)+4))
 	if v123 <= int32(0) {
@@ -414,7 +414,7 @@ L39:
 	v136 = v129 << (uint(int32(2)) % 32)
 	v138 = *(*int32)(unsafe.Add(mBase, uint32(v101)+12))
 	v140 = *(*int32)(unsafe.Add(mBase, uint32(v138+v136)))
-	*(*int32)(unsafe.Add(mBase, uint32(v118+int32(8)+v136))) = v140
+	*(*int32)(unsafe.Add(mBase, uint32(v118+int32(16)+v136))) = v140
 	v143 = v129 + int32(1)
 	v144 = *(*int32)(unsafe.Add(mBase, uint32(v101)+4))
 	if v143 < v144 {
@@ -466,7 +466,7 @@ func F_jspOperationName(m *base.Module, l0 int32) int32 {
 	v6 = v4 - int32(16)
 	m.G0 = v6
 	v9 = l0 - int32(4)
-	if base.B2i32(base.Ui32(int32(50)) <= base.Ui32(v9))|base.B2i32(base.I32_wrap_i64(int64(base.Ui64(int64(1125796693540851))>>(uint(base.I64_extend_i32_u(v9))%64)))&int32(1) == v2) == v2 {
+	if base.B2i32(base.Ui32(int32(58)) <= base.Ui32(v9))|base.B2i32(base.I32_wrap_i64(int64(base.Ui64(int64(288230272938409971))>>(uint(base.I64_extend_i32_u(v9))%64)))&int32(1) == v2) == v2 {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(v9<<(uint(int32(2))%32))+uint32(_c_F_jspOperationName[0])))
 		m.G0 = v6 + int32(16)
 		return v25
@@ -484,7 +484,7 @@ func F_jspOperationName(m *base.Module, l0 int32) int32 {
 			if v39 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_jspOperationName_1), int32(918), int32(_a_F_jspOperationName_2))
+				F_errfinish(m, int32(_a_F_jspOperationName_1), int32(996), int32(_a_F_jspOperationName_2))
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {

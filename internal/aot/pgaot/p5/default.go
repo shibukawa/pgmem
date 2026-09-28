@@ -123,7 +123,7 @@ func F_GetDefaultTablespace(m *base.Module, l0 int32, l1 int32) int32 {
 								if v64 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_GetDefaultTablespace_2), int32(1178), int32(_a_F_GetDefaultTablespace_3))
+									F_errfinish(m, int32(_a_F_GetDefaultTablespace_2), int32(1204), int32(_a_F_GetDefaultTablespace_3))
 									mBase = m.M
 									v69 = m.ExcPending
 									if v69 != 0 {

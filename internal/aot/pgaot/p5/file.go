@@ -1215,7 +1215,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(_a_F_FileWriteV_3), int32(2295), int32(_a_F_FileWriteV_4))
+	F_errfinish(m, int32(_a_F_FileWriteV_3), int32(2279), int32(_a_F_FileWriteV_4))
 	mBase = m.M
 	v256 = m.ExcPending
 	if v256 != 0 {

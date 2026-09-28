@@ -10,36 +10,36 @@ func F_SearchSysCacheAttName(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v5 int32
-	_ = v5
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
+	var v7 int32
+	_ = v7
 	var v10 int32
 	_ = v10
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
-	var v17 int32
-	_ = v17
+	var v14 int32
+	_ = v14
+	var v19 int32
+	_ = v19
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_SearchSysCacheAttName[0]))
-	v5 = F_SearchCatCache2(m, v4, l0, l1)
+	v7 = F_SearchCatCache2(m, v4, base.I64_extend_i32_u(l0), base.I64_extend_i32_u(l1))
 	mBase = m.M
-	v8 = m.ExcPending
-	if v8 != 0 {
+	v10 = m.ExcPending
+	if v10 != 0 {
 		return int32(0)
 	} else {
-		if v5 != 0 {
-			v9 = *(*int32)(unsafe.Add(mBase, uint32(v5)+16))
-			v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+22)))
-			v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9+v10)+91)))
-			if v12 != int32(1) {
-				return v5
+		if v7 != 0 {
+			v11 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+			v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+22)))
+			v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11+v12)+91)))
+			if v14 != int32(1) {
+				return v7
 			} else {
-				F_ReleaseCatCache(m, v5)
+				F_ReleaseCatCache(m, v7)
 				mBase = m.M
-				v17 = m.ExcPending
-				if v17 != 0 {
+				v19 = m.ExcPending
+				if v19 != 0 {
 					return int32(0)
 				} else {
 					return int32(0)
@@ -55,43 +55,43 @@ func F_SearchSysCacheExistsAttName(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v5 int32
-	_ = v5
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
+	var v7 int32
+	_ = v7
 	var v10 int32
 	_ = v10
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
 	var v14 int32
 	_ = v14
-	var v19 int32
-	_ = v19
+	var v16 int32
+	_ = v16
+	var v21 int32
+	_ = v21
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_SearchSysCacheExistsAttName[0]))
-	v5 = F_SearchCatCache2(m, v4, l0, l1)
+	v7 = F_SearchCatCache2(m, v4, base.I64_extend_i32_u(l0), base.I64_extend_i32_u(l1))
 	mBase = m.M
-	v8 = m.ExcPending
-	if v8 != 0 {
+	v10 = m.ExcPending
+	if v10 != 0 {
 		return int32(0)
 	} else {
-		if v5 != 0 {
-			v9 = *(*int32)(unsafe.Add(mBase, uint32(v5)+16))
-			v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+22)))
-			v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9+v10)+91)))
-			F_ReleaseCatCache(m, v5)
+		if v7 != 0 {
+			v11 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+			v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+22)))
+			v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11+v12)+91)))
+			F_ReleaseCatCache(m, v7)
 			mBase = m.M
-			v14 = m.ExcPending
-			if v14 != 0 {
+			v16 = m.ExcPending
+			if v16 != 0 {
 				return int32(0)
 			} else {
-				v19 = v12 ^ int32(1)
-				return v19 & int32(1)
+				v21 = v14 ^ int32(1)
+				return v21 & int32(1)
 			}
 		} else {
-			v19 = int32(0)
-			return v19 & int32(1)
+			v21 = int32(0)
+			return v21 & int32(1)
 		}
 	}
 }

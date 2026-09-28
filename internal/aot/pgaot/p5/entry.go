@@ -8,96 +8,137 @@ import (
 func F_entryIsMoveRight(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
 	var v7 int32
 	_ = v7
 	var v9 int32
 	_ = v9
 	var v11 int32
 	_ = v11
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v26 int32
-	_ = v26
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
-	var v34 int32
-	_ = v34
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	var v43 int32
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v28 int32
+	_ = v28
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v43 int64
 	_ = v43
 	var v44 int32
 	_ = v44
 	var v45 int32
 	_ = v45
-	var v46 int32
-	_ = v46
-	var v47 int32
-	_ = v47
-	var v48 int32
-	_ = v48
-	var v49 int32
-	_ = v49
-	var v54 int32
-	_ = v54
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v9 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+16)))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1+v9)))
-	if v11 == int32(-1) {
-		v54 = int32(0)
-		m.G0 = v7 + int32(16)
-		return v54
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v57 int32
+	_ = v57
+	var v59 int32
+	_ = v59
+	var v70 int32
+	_ = v70
+	var v71 int64
+	_ = v71
+	var v72 int64
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v77 int32
+	_ = v77
+	var v84 int32
+	_ = v84
+	v7 = m.G0
+	v9 = v7 - int32(16)
+	m.G0 = v9
+	v11 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+16)))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1+v11)))
+	if v13 == int32(-1) {
+		v84 = int32(0)
+		m.G0 = v9 + int32(16)
+		return v84
 	} else {
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-		v16 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+12)))
-		if base.Ui32(int32(25)) <= base.Ui32(v16) {
-			v26 = int32(base.Ui32(v16+int32(_a_F_entryIsMoveRight_0))>>(uint(int32(2))%32)) & int32(_a_F_entryIsMoveRight_1)
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+		v18 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+12)))
+		if base.Ui32(int32(25)) <= base.Ui32(v18) {
+			v28 = int32(base.Ui32(v18+int32(_a_F_entryIsMoveRight_0))>>(uint(int32(2))%32)) & int32(_a_F_entryIsMoveRight_1)
 		} else {
-			v26 = int32(0)
+			v28 = int32(0)
 		}
-		v30 = *(*int32)(unsafe.Add(mBase, uint32(l1+v26<<(uint(int32(2))%32))+20))
-		v33 = l1 + v30&int32(_a_F_entryIsMoveRight_2)
-		v34 = F_gintuple_get_attrnum(m, v15, v33)
+		v32 = *(*int32)(unsafe.Add(mBase, uint32(l1+v28<<(uint(int32(2))%32))+20))
+		v35 = l1 + v32&int32(_a_F_entryIsMoveRight_2)
+		v36 = F_gintuple_get_attrnum(m, v17, v35)
 		mBase = m.M
-		v37 = m.ExcPending
-		if v37 != 0 {
+		v39 = m.ExcPending
+		if v39 != 0 {
 			return int32(0)
 		} else {
-			v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-			v41 = F_gintuple_get_key(m, v38, v33, v7+int32(15))
+			v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+			v43 = F_gintuple_get_key(m, v40, v35, v9+int32(15))
 			mBase = m.M
-			v42 = m.ExcPending
-			if v42 != 0 {
+			v44 = m.ExcPending
+			if v44 != 0 {
 				return int32(0)
 			} else {
-				v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-				v44 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+54)))
-				v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-				v46 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+60)))
-				v47 = int32(*(*int8)(unsafe.Add(mBase, uint32(v7)+15)))
-				v48 = F_ginCompareAttEntries(m, v43, v44, v45, v46, v34, v41, v47)
-				mBase = m.M
-				v49 = m.ExcPending
-				if v49 != 0 {
-					return int32(0)
+				v45 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+54)))
+				if v45 != v36 {
+					if base.Ui32(v45) < base.Ui32(v36) {
+						v50 = int32(-1)
+					} else {
+						v50 = int32(1)
+					}
+					v77 = v50
+					v84 = base.B2i32(int32(0) < v77)
+					m.G0 = v9 + int32(16)
+					return v84
 				} else {
-					v54 = base.B2i32(int32(0) < v48)
-					m.G0 = v7 + int32(16)
-					return v54
+					v51 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+64)))
+					v52 = int32(*(*int8)(unsafe.Add(mBase, uint32(v9)+15)))
+					if v51 != v52 {
+						if v51 < v52 {
+							v57 = int32(-1)
+						} else {
+							v57 = int32(1)
+						}
+						v77 = v57
+						v84 = base.B2i32(int32(0) < v77)
+						m.G0 = v9 + int32(16)
+						return v84
+					} else {
+						if v51 != 0 {
+							v77 = int32(0)
+							v84 = base.B2i32(int32(0) < v77)
+							m.G0 = v9 + int32(16)
+							return v84
+						} else {
+							v59 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+							v70 = *(*int32)(unsafe.Add(mBase, uint32(v36<<(uint(int32(2))%32)+v59)+uint32(_c_F_entryIsMoveRight[0])))
+							v71 = *(*int64)(unsafe.Add(mBase, uint32(l0)+56))
+							v72 = F_FunctionCall2Coll(m, v59+v36*int32(28)+int32(112), v70, v71, v43)
+							mBase = m.M
+							v73 = m.ExcPending
+							if v73 != 0 {
+								return int32(0)
+							} else {
+								v77 = base.I32_wrap_i64(v72)
+								v84 = base.B2i32(int32(0) < v77)
+								m.G0 = v9 + int32(16)
+								return v84
+							}
+						}
+					}
 				}
 			}
 		}

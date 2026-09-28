@@ -474,18 +474,18 @@ func F_px_find_cipher(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v398
 	var v401 int32
 	_ = v401
-	var v405 int32
-	_ = v405
-	var v407 int32
-	_ = v407
+	var v406 int32
+	_ = v406
 	var v408 int32
 	_ = v408
-	var v417 int32
-	_ = v417
+	var v409 int32
+	_ = v409
 	var v418 int32
 	_ = v418
-	var v428 int32
-	_ = v428
+	var v419 int32
+	_ = v419
+	var v429 int32
+	_ = v429
 	v6 = int32(_a_F_px_find_cipher_0)
 	v7 = int32(_a_F_px_find_cipher_1)
 	v9 = *(*int32)(unsafe.Add(mBase, _c_F_px_find_cipher[0]))
@@ -496,7 +496,7 @@ func F_px_find_cipher(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 L1:
 	;
-	return v428
+	return v429
 L2:
 	;
 	v388 = *(*int32)(unsafe.Add(mBase, _c_F_px_find_cipher[1]))
@@ -1193,7 +1193,7 @@ L100:
 L101:
 	;
 	if v381-v382 != 0 {
-		v428 = int32(-3)
+		v429 = int32(-3)
 		goto L1
 	} else {
 		goto L108
@@ -1259,38 +1259,38 @@ L111:
 	*(*int32)(unsafe.Add(mBase, uint32(v396)+92)) = v398
 	v401 = *(*int32)(unsafe.Add(mBase, _c_F_px_find_cipher[1]))
 	*(*int32)(unsafe.Add(mBase, uint32(v396)+96)) = v401
-	F_ResourceOwnerRemember(m, v401, v396, int32(_a_F_px_find_cipher_25))
+	F_ResourceOwnerRemember(m, v401, base.I64_extend_i32_u(v396), int32(_a_F_px_find_cipher_25))
 	mBase = m.M
-	v405 = m.ExcPending
-	if v405 != 0 {
+	v406 = m.ExcPending
+	if v406 != 0 {
 		goto L109
 	} else {
 		goto L112
 	}
 L112:
 	;
-	v407 = F_palloc(m, int32(36))
+	v408 = F_palloc(m, int32(36))
 	mBase = m.M
-	v408 = m.ExcPending
-	if v408 != 0 {
+	v409 = m.ExcPending
+	if v409 != 0 {
 		goto L109
 	} else {
 		goto L113
 	}
 L113:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v407)+24)) = int32(_a_F_px_find_cipher_26)
-	*(*int32)(unsafe.Add(mBase, uint32(v407)+8)) = int32(_a_F_px_find_cipher_27)
-	*(*int32)(unsafe.Add(mBase, uint32(v407)+4)) = int32(_a_F_px_find_cipher_28)
-	*(*int32)(unsafe.Add(mBase, uint32(v407))) = int32(_a_F_px_find_cipher_29)
-	v417 = *(*int32)(unsafe.Add(mBase, uint32(v396)+92))
-	v418 = *(*int32)(unsafe.Add(mBase, uint32(v417)))
-	*(*int32)(unsafe.Add(mBase, uint32(v407)+28)) = v396
-	*(*int32)(unsafe.Add(mBase, uint32(v407)+20)) = int32(_a_F_px_find_cipher_30)
-	*(*int32)(unsafe.Add(mBase, uint32(v407)+16)) = int32(_a_F_px_find_cipher_31)
-	*(*int32)(unsafe.Add(mBase, uint32(v407)+12)) = v418
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v407
-	v428 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v408)+24)) = int32(_a_F_px_find_cipher_26)
+	*(*int32)(unsafe.Add(mBase, uint32(v408)+8)) = int32(_a_F_px_find_cipher_27)
+	*(*int32)(unsafe.Add(mBase, uint32(v408)+4)) = int32(_a_F_px_find_cipher_28)
+	*(*int32)(unsafe.Add(mBase, uint32(v408))) = int32(_a_F_px_find_cipher_29)
+	v418 = *(*int32)(unsafe.Add(mBase, uint32(v396)+92))
+	v419 = *(*int32)(unsafe.Add(mBase, uint32(v418)))
+	*(*int32)(unsafe.Add(mBase, uint32(v408)+28)) = v396
+	*(*int32)(unsafe.Add(mBase, uint32(v408)+20)) = int32(_a_F_px_find_cipher_30)
+	*(*int32)(unsafe.Add(mBase, uint32(v408)+16)) = int32(_a_F_px_find_cipher_31)
+	*(*int32)(unsafe.Add(mBase, uint32(v408)+12)) = v419
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v408
+	v429 = int32(0)
 	goto L1
 }
 func F_px_resolve_alias(m *base.Module, l0 int32, l1 int32) int32 {

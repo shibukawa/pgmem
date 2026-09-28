@@ -71,7 +71,7 @@ func F_GenerationFree(m *base.Module, l0 int32) {
 				if v34 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_GenerationFree_1), int32(711), int32(_a_F_GenerationFree_2))
+					F_errfinish(m, int32(_a_F_GenerationFree_1), int32(740), int32(_a_F_GenerationFree_2))
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
@@ -85,7 +85,7 @@ func F_GenerationFree(m *base.Module, l0 int32) {
 			}
 		} else {
 			v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-			if v22 != int32(475) {
+			if v22 != int32(483) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
 				v30 = m.ExcPending
@@ -99,7 +99,7 @@ func F_GenerationFree(m *base.Module, l0 int32) {
 					if v34 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_GenerationFree_1), int32(711), int32(_a_F_GenerationFree_2))
+						F_errfinish(m, int32(_a_F_GenerationFree_1), int32(740), int32(_a_F_GenerationFree_2))
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {

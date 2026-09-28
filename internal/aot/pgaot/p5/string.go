@@ -184,103 +184,107 @@ func F_appendStringInfoChar(m *base.Module, l0 int32, l1 int32) {
 		return
 	}
 }
-func F_convert_string_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+func F_convert_string_datum(m *base.Module, l0 int64, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v1 int32
+	var v1 int64
 	_ = v1
-	var v7 int32
-	_ = v7
-	var v10 int32
-	_ = v10
-	var v15 int32
-	_ = v15
-	var v20 int32
-	_ = v20
-	var v21 int32
-	_ = v21
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v17 int32
+	_ = v17
 	var v22 int32
 	_ = v22
-	var v25 int32
-	_ = v25
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
 	var v28 int32
 	_ = v28
 	var v29 int32
 	_ = v29
 	var v30 int32
 	_ = v30
-	var v32 int32
-	_ = v32
 	var v34 int32
 	_ = v34
 	var v35 int32
 	_ = v35
-	var v37 int32
-	_ = v37
+	var v36 int32
+	_ = v36
 	var v38 int32
 	_ = v38
-	var v39 int32
-	_ = v39
 	var v40 int32
 	_ = v40
 	var v41 int32
 	_ = v41
 	var v43 int32
 	_ = v43
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v49 int32
+	_ = v49
 	v1 = l0
 	switch l1 - int32(18) {
 	case 0:
-		v20 = F_palloc(m, int32(2))
+		v22 = F_palloc(m, int32(2))
 		mBase = m.M
-		v21 = m.ExcPending
-		if v21 != 0 {
+		v23 = m.ExcPending
+		if v23 != 0 {
 			return int32(0)
 		} else {
-			v22 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, uint32(v20)+1)) = uint8(v22)
-			*(*uint8)(unsafe.Add(mBase, uint32(v20))) = uint8(v1)
-			v27 = v20
-			v28 = F_pg_newlocale_from_collation(m, l2)
-			mBase = m.M
-			v29 = m.ExcPending
-			if v29 != 0 {
-				return int32(0)
+			v24 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v22)+1)) = uint8(v24)
+			*(*uint8)(unsafe.Add(mBase, uint32(v22))) = uint8(v1)
+			v30 = v22
+			if l2 == int32(0) {
+				return v30
 			} else {
-				v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+2)))
-				if v30 != 0 {
-					return v27
+				v34 = F_pg_newlocale_from_collation(m, l2)
+				mBase = m.M
+				v35 = m.ExcPending
+				if v35 != 0 {
+					return int32(0)
 				} else {
-					v32 = int32(0)
-					v34 = F_pg_strxfrm(m, v32, v27, v32, v28)
-					mBase = m.M
-					v35 = m.ExcPending
-					if v35 != 0 {
-						return int32(0)
+					v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+1)))
+					if v36 != 0 {
+						return v30
 					} else {
-						v37 = v34 + int32(1)
-						v38 = F_palloc(m, v37)
+						v38 = int32(0)
+						v40 = F_pg_strxfrm(m, v38, v30, v38, v34)
 						mBase = m.M
-						v39 = m.ExcPending
-						if v39 != 0 {
+						v41 = m.ExcPending
+						if v41 != 0 {
 							return int32(0)
 						} else {
-							v40 = F_pg_strxfrm(m, v38, v27, v37, v28)
+							v43 = v40 + int32(1)
+							v44 = F_palloc(m, v43)
 							mBase = m.M
-							v41 = m.ExcPending
-							if v41 != 0 {
+							v45 = m.ExcPending
+							if v45 != 0 {
 								return int32(0)
 							} else {
-								F_pfree(m, v27)
+								v46 = F_pg_strxfrm(m, v44, v30, v43, v34)
 								mBase = m.M
-								v43 = m.ExcPending
-								if v43 != 0 {
+								v47 = m.ExcPending
+								if v47 != 0 {
 									return int32(0)
 								} else {
-									return v38
+									F_pfree(m, v30)
+									mBase = m.M
+									v49 = m.ExcPending
+									if v49 != 0 {
+										return int32(0)
+									} else {
+										return v44
+									}
 								}
 							}
 						}
@@ -289,50 +293,54 @@ func F_convert_string_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 			}
 		}
 	case 1:
-		v7 = F_pstrdup(m, v1)
+		v9 = F_pstrdup(m, base.I32_wrap_i64(v1))
 		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return int32(0)
 		} else {
-			v27 = v7
-			v28 = F_pg_newlocale_from_collation(m, l2)
-			mBase = m.M
-			v29 = m.ExcPending
-			if v29 != 0 {
-				return int32(0)
+			v30 = v9
+			if l2 == int32(0) {
+				return v30
 			} else {
-				v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+2)))
-				if v30 != 0 {
-					return v27
+				v34 = F_pg_newlocale_from_collation(m, l2)
+				mBase = m.M
+				v35 = m.ExcPending
+				if v35 != 0 {
+					return int32(0)
 				} else {
-					v32 = int32(0)
-					v34 = F_pg_strxfrm(m, v32, v27, v32, v28)
-					mBase = m.M
-					v35 = m.ExcPending
-					if v35 != 0 {
-						return int32(0)
+					v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+1)))
+					if v36 != 0 {
+						return v30
 					} else {
-						v37 = v34 + int32(1)
-						v38 = F_palloc(m, v37)
+						v38 = int32(0)
+						v40 = F_pg_strxfrm(m, v38, v30, v38, v34)
 						mBase = m.M
-						v39 = m.ExcPending
-						if v39 != 0 {
+						v41 = m.ExcPending
+						if v41 != 0 {
 							return int32(0)
 						} else {
-							v40 = F_pg_strxfrm(m, v38, v27, v37, v28)
+							v43 = v40 + int32(1)
+							v44 = F_palloc(m, v43)
 							mBase = m.M
-							v41 = m.ExcPending
-							if v41 != 0 {
+							v45 = m.ExcPending
+							if v45 != 0 {
 								return int32(0)
 							} else {
-								F_pfree(m, v27)
+								v46 = F_pg_strxfrm(m, v44, v30, v43, v34)
 								mBase = m.M
-								v43 = m.ExcPending
-								if v43 != 0 {
+								v47 = m.ExcPending
+								if v47 != 0 {
 									return int32(0)
 								} else {
-									return v38
+									F_pfree(m, v30)
+									mBase = m.M
+									v49 = m.ExcPending
+									if v49 != 0 {
+										return int32(0)
+									} else {
+										return v44
+									}
 								}
 							}
 						}
@@ -341,54 +349,58 @@ func F_convert_string_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 			}
 		}
 	case 2, 3, 4, 5, 6:
-		v15 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v15)
+		v17 = int32(1)
+		*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v17)
 		return int32(0)
 	case 7:
-		v25 = F_text_to_cstring(m, v1)
+		v28 = F_text_to_cstring(m, base.I32_wrap_i64(v1))
 		mBase = m.M
-		v26 = m.ExcPending
-		if v26 != 0 {
+		v29 = m.ExcPending
+		if v29 != 0 {
 			return int32(0)
 		} else {
-			v27 = v25
-			v28 = F_pg_newlocale_from_collation(m, l2)
-			mBase = m.M
-			v29 = m.ExcPending
-			if v29 != 0 {
-				return int32(0)
+			v30 = v28
+			if l2 == int32(0) {
+				return v30
 			} else {
-				v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+2)))
-				if v30 != 0 {
-					return v27
+				v34 = F_pg_newlocale_from_collation(m, l2)
+				mBase = m.M
+				v35 = m.ExcPending
+				if v35 != 0 {
+					return int32(0)
 				} else {
-					v32 = int32(0)
-					v34 = F_pg_strxfrm(m, v32, v27, v32, v28)
-					mBase = m.M
-					v35 = m.ExcPending
-					if v35 != 0 {
-						return int32(0)
+					v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+1)))
+					if v36 != 0 {
+						return v30
 					} else {
-						v37 = v34 + int32(1)
-						v38 = F_palloc(m, v37)
+						v38 = int32(0)
+						v40 = F_pg_strxfrm(m, v38, v30, v38, v34)
 						mBase = m.M
-						v39 = m.ExcPending
-						if v39 != 0 {
+						v41 = m.ExcPending
+						if v41 != 0 {
 							return int32(0)
 						} else {
-							v40 = F_pg_strxfrm(m, v38, v27, v37, v28)
+							v43 = v40 + int32(1)
+							v44 = F_palloc(m, v43)
 							mBase = m.M
-							v41 = m.ExcPending
-							if v41 != 0 {
+							v45 = m.ExcPending
+							if v45 != 0 {
 								return int32(0)
 							} else {
-								F_pfree(m, v27)
+								v46 = F_pg_strxfrm(m, v44, v30, v43, v34)
 								mBase = m.M
-								v43 = m.ExcPending
-								if v43 != 0 {
+								v47 = m.ExcPending
+								if v47 != 0 {
 									return int32(0)
 								} else {
-									return v38
+									F_pfree(m, v30)
+									mBase = m.M
+									v49 = m.ExcPending
+									if v49 != 0 {
+										return int32(0)
+									} else {
+										return v44
+									}
 								}
 							}
 						}
@@ -398,50 +410,54 @@ func F_convert_string_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 		}
 	default:
 		if base.Ui32(l1-int32(1042)) < base.Ui32(int32(2)) {
-			v25 = F_text_to_cstring(m, v1)
+			v28 = F_text_to_cstring(m, base.I32_wrap_i64(v1))
 			mBase = m.M
-			v26 = m.ExcPending
-			if v26 != 0 {
+			v29 = m.ExcPending
+			if v29 != 0 {
 				return int32(0)
 			} else {
-				v27 = v25
-				v28 = F_pg_newlocale_from_collation(m, l2)
-				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
-					return int32(0)
+				v30 = v28
+				if l2 == int32(0) {
+					return v30
 				} else {
-					v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+2)))
-					if v30 != 0 {
-						return v27
+					v34 = F_pg_newlocale_from_collation(m, l2)
+					mBase = m.M
+					v35 = m.ExcPending
+					if v35 != 0 {
+						return int32(0)
 					} else {
-						v32 = int32(0)
-						v34 = F_pg_strxfrm(m, v32, v27, v32, v28)
-						mBase = m.M
-						v35 = m.ExcPending
-						if v35 != 0 {
-							return int32(0)
+						v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+1)))
+						if v36 != 0 {
+							return v30
 						} else {
-							v37 = v34 + int32(1)
-							v38 = F_palloc(m, v37)
+							v38 = int32(0)
+							v40 = F_pg_strxfrm(m, v38, v30, v38, v34)
 							mBase = m.M
-							v39 = m.ExcPending
-							if v39 != 0 {
+							v41 = m.ExcPending
+							if v41 != 0 {
 								return int32(0)
 							} else {
-								v40 = F_pg_strxfrm(m, v38, v27, v37, v28)
+								v43 = v40 + int32(1)
+								v44 = F_palloc(m, v43)
 								mBase = m.M
-								v41 = m.ExcPending
-								if v41 != 0 {
+								v45 = m.ExcPending
+								if v45 != 0 {
 									return int32(0)
 								} else {
-									F_pfree(m, v27)
+									v46 = F_pg_strxfrm(m, v44, v30, v43, v34)
 									mBase = m.M
-									v43 = m.ExcPending
-									if v43 != 0 {
+									v47 = m.ExcPending
+									if v47 != 0 {
 										return int32(0)
 									} else {
-										return v38
+										F_pfree(m, v30)
+										mBase = m.M
+										v49 = m.ExcPending
+										if v49 != 0 {
+											return int32(0)
+										} else {
+											return v44
+										}
 									}
 								}
 							}
@@ -450,8 +466,8 @@ func F_convert_string_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 				}
 			}
 		} else {
-			v15 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v15)
+			v17 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v17)
 			return int32(0)
 		}
 	}
@@ -470,7 +486,7 @@ func F_makeString(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(468)
+		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(476)
 		return v4
 	}
 }
@@ -505,7 +521,7 @@ func F_makeStringConstCast(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		}
 	}
 }
-func F_string_agg_combine(m *base.Module, l0 int32) int32 {
+func F_string_agg_combine(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -604,18 +620,18 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 	_ = v120
 	var v122 int32
 	_ = v122
-	var v132 int32
-	_ = v132
-	var v136 int32
-	_ = v136
-	var v141 int32
-	_ = v141
-	var v145 int32
-	_ = v145
-	var v149 int32
-	_ = v149
-	var v154 int32
-	_ = v154
+	var v133 int32
+	_ = v133
+	var v137 int32
+	_ = v137
+	var v142 int32
+	_ = v142
+	var v146 int32
+	_ = v146
+	var v150 int32
+	_ = v150
+	var v155 int32
+	_ = v155
 	v2 = int32(0)
 	v6 = m.G0
 	v8 = v6 - int32(16)
@@ -635,7 +651,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 		v41 = v38
 	} else {
 		v16 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-		switch v16 - int32(429) {
+		switch v16 - int32(435) {
 		case 0:
 			if v11 == int32(0) {
 				v41 = int32(1)
@@ -652,7 +668,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 			if v11 == int32(0) {
 				v41 = int32(2)
 			} else {
-				v28 = *(*int32)(unsafe.Add(mBase, uint32(v13)+368))
+				v28 = *(*int32)(unsafe.Add(mBase, uint32(v13)+376))
 				v33 = v28
 				v34 = int32(2)
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = v33
@@ -673,16 +689,16 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 		}
 	}
 	if v41 != 0 {
-		v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
+		v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 		if v42 == int32(0) {
-			v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+			v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			v46 = v45
 		} else {
 			v46 = v2
 		}
-		v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
+		v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)))
 		if v47 == int32(0) {
-			v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 			if v50 != 0 {
 				if v46 == int32(0) {
 					v57 = int32(_a_F_string_agg_combine_0)
@@ -705,7 +721,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 						v93 = v90
 					} else {
 						v68 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
-						switch v68 - int32(429) {
+						switch v68 - int32(435) {
 						case 0:
 							if v63 == int32(0) {
 								v93 = int32(1)
@@ -722,7 +738,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 							if v63 == int32(0) {
 								v93 = int32(2)
 							} else {
-								v80 = *(*int32)(unsafe.Add(mBase, uint32(v65)+368))
+								v80 = *(*int32)(unsafe.Add(mBase, uint32(v65)+376))
 								v85 = v80
 								v86 = int32(2)
 								*(*int32)(unsafe.Add(mBase, uint32(v63))) = v85
@@ -745,21 +761,21 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 					if v93 == int32(0) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v145 = m.ExcPending
-						if v145 != 0 {
-							return int32(0)
+						v146 = m.ExcPending
+						if v146 != 0 {
+							return int64(0)
 						} else {
 							F_errmsg_internal(m, int32(_a_F_string_agg_combine_1), int32(0))
 							mBase = m.M
-							v149 = m.ExcPending
-							if v149 != 0 {
-								return int32(0)
+							v150 = m.ExcPending
+							if v150 != 0 {
+								return int64(0)
 							} else {
 								F_errfinish(m, int32(_a_F_string_agg_combine_2), int32(_a_F_string_agg_combine_3), int32(_a_F_string_agg_combine_4))
 								mBase = m.M
-								v154 = m.ExcPending
-								if v154 != 0 {
-									return int32(0)
+								v155 = m.ExcPending
+								if v155 != 0 {
+									return int64(0)
 								} else {
 									base.Wasm_trap_unreachable()
 									for {
@@ -776,7 +792,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 						mBase = m.M
 						v104 = m.ExcPending
 						if v104 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, _c_F_string_agg_combine[0])) = v97
 							v107 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
@@ -785,14 +801,14 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v110 = m.ExcPending
 							if v110 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v111 = *(*int32)(unsafe.Add(mBase, uint32(v50)+12))
 								*(*int32)(unsafe.Add(mBase, uint32(v101)+12)) = v111
 								*(*int32)(unsafe.Add(mBase, _c_F_string_agg_combine[0])) = v58
 								v122 = v101
 								m.G0 = v8 + int32(16)
-								return v122
+								return base.I64_extend_i32_u(v122)
 							}
 						}
 					}
@@ -801,18 +817,18 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 					if v115 <= int32(0) {
 						v122 = v46
 						m.G0 = v8 + int32(16)
-						return v122
+						return base.I64_extend_i32_u(v122)
 					} else {
 						v118 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
 						F_appendBinaryStringInfo(m, v46, v118, v115)
 						mBase = m.M
 						v120 = m.ExcPending
 						if v120 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v122 = v46
 							m.G0 = v8 + int32(16)
-							return v122
+							return base.I64_extend_i32_u(v122)
 						}
 					}
 				}
@@ -825,7 +841,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 					v122 = int32(0)
 				}
 				m.G0 = v8 + int32(16)
-				return v122
+				return base.I64_extend_i32_u(v122)
 			}
 		} else {
 			if v46 != 0 {
@@ -836,26 +852,26 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 				v122 = int32(0)
 			}
 			m.G0 = v8 + int32(16)
-			return v122
+			return base.I64_extend_i32_u(v122)
 		}
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v132 = m.ExcPending
-		if v132 != 0 {
-			return int32(0)
+		v133 = m.ExcPending
+		if v133 != 0 {
+			return int64(0)
 		} else {
 			F_errmsg_internal(m, int32(_a_F_string_agg_combine_5), int32(0))
 			mBase = m.M
-			v136 = m.ExcPending
-			if v136 != 0 {
-				return int32(0)
+			v137 = m.ExcPending
+			if v137 != 0 {
+				return int64(0)
 			} else {
 				F_errfinish(m, int32(_a_F_string_agg_combine_2), int32(_a_F_string_agg_combine_6), int32(_a_F_string_agg_combine_7))
 				mBase = m.M
-				v141 = m.ExcPending
-				if v141 != 0 {
-					return int32(0)
+				v142 = m.ExcPending
+				if v142 != 0 {
+					return int64(0)
 				} else {
 					base.Wasm_trap_unreachable()
 					for {

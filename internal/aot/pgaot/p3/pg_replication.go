@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_pg_replication_origin_drop(m *base.Module, l0 int32) int32 {
+func F_pg_replication_origin_drop(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -39,7 +39,7 @@ func F_pg_replication_origin_drop(m *base.Module, l0 int32) int32 {
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_replication_origin_drop[0])))
 	if v4 == int32(1) {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_pg_replication_origin_drop[1]))
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+316))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+308))
 		v12 = base.B2i32(v10 != int32(2))
 		*(*uint8)(unsafe.Add(mBase, _c_F_pg_replication_origin_drop[0])) = uint8(v12)
 		v14 = v12
@@ -51,25 +51,25 @@ func F_pg_replication_origin_drop(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			F_errcode(m, int32(100663618))
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				F_errmsg(m, int32(_a_F_pg_replication_origin_drop_0), int32(0))
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
-					F_errfinish(m, int32(_a_F_pg_replication_origin_drop_1), int32(200), int32(_a_F_pg_replication_origin_drop_2))
+					F_errfinish(m, int32(_a_F_pg_replication_origin_drop_1), int32(217), int32(_a_F_pg_replication_origin_drop_2))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						base.Wasm_trap_unreachable()
 						for {
@@ -79,26 +79,26 @@ func F_pg_replication_origin_drop(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 		v34 = F_text_to_cstring(m, v33)
 		mBase = m.M
 		v35 = m.ExcPending
 		if v35 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			F_replorigin_drop_by_name(m, v34, int32(0), int32(1))
 			mBase = m.M
 			v39 = m.ExcPending
 			if v39 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				F_pfree(m, v34)
 				mBase = m.M
 				v41 = m.ExcPending
 				if v41 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
-					return int32(0)
+					return int64(0)
 				}
 			}
 		}

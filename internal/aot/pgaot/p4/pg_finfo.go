@@ -68,9 +68,6 @@ func F_pg_finfo_dmetaphone(m *base.Module) int32 {
 func F_pg_finfo_dsnowball_init(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_dsnowball_init_0)
 }
-func F_pg_finfo_euc_cn_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_euc_cn_to_mic_0)
-}
 func F_pg_finfo_euc_kr_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_kr_to_utf8_0)
 }
@@ -371,21 +368,6 @@ func F_pg_finfo_ltxtq_rexec(m *base.Module) int32 {
 func F_pg_finfo_metaphone(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_metaphone_0)
 }
-func F_pg_finfo_mic_to_euc_cn(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_euc_cn_0)
-}
-func F_pg_finfo_mic_to_euc_kr(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_euc_kr_0)
-}
-func F_pg_finfo_mic_to_koi8r(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_koi8r_0)
-}
-func F_pg_finfo_mic_to_sjis(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_sjis_0)
-}
-func F_pg_finfo_mic_to_win1251(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_win1251_0)
-}
 func F_pg_finfo_normal_rand(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_normal_rand_0)
 }
@@ -397,6 +379,12 @@ func F_pg_finfo_page_checksum_1_9(m *base.Module) int32 {
 }
 func F_pg_finfo_pg_armor(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_armor_0)
+}
+func F_pg_finfo_pg_buffercache_mark_dirty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_buffercache_mark_dirty_0)
+}
+func F_pg_finfo_pg_buffercache_mark_dirty_all(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_buffercache_mark_dirty_all_0)
 }
 func F_pg_finfo_pg_buffercache_pages(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_buffercache_pages_0)

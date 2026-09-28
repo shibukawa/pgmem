@@ -266,7 +266,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(_a_F_errdetail_log_plural_3), int32(1280), int32(_a_F_errdetail_log_plural_4))
+	F_errfinish(m, int32(_a_F_errdetail_log_plural_3), int32(1471), int32(_a_F_errdetail_log_plural_4))
 	mBase = m.M
 	v107 = m.ExcPending
 	if v107 != 0 {

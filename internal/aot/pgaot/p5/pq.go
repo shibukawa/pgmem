@@ -43,7 +43,7 @@ func F_pq_copymsgbytes(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v28 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_pq_copymsgbytes_1), int32(533), int32(_a_F_pq_copymsgbytes_2))
+					F_errfinish(m, int32(_a_F_pq_copymsgbytes_1), int32(532), int32(_a_F_pq_copymsgbytes_2))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {
@@ -78,7 +78,7 @@ func F_pq_copymsgbytes(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v28 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_pq_copymsgbytes_1), int32(533), int32(_a_F_pq_copymsgbytes_2))
+						F_errfinish(m, int32(_a_F_pq_copymsgbytes_1), int32(532), int32(_a_F_pq_copymsgbytes_2))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {

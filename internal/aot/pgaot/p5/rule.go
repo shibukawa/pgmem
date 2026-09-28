@@ -20,68 +20,68 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v15
 	var v16 int32
 	_ = v16
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
+	var v20 int32
+	_ = v20
 	var v21 int32
 	_ = v21
-	var v22 int32
-	_ = v22
 	var v23 int32
 	_ = v23
 	var v24 int32
 	_ = v24
+	var v25 int32
+	_ = v25
 	var v26 int32
 	_ = v26
-	var v27 int32
-	_ = v27
 	var v28 int32
 	_ = v28
-	var v32 int32
-	_ = v32
-	var v33 int32
-	_ = v33
-	var v43 int32
-	_ = v43
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
 	var v45 int32
 	_ = v45
-	var v46 int32
-	_ = v46
 	var v47 int32
 	_ = v47
+	var v48 int32
+	_ = v48
 	var v49 int32
 	_ = v49
-	var v50 int32
-	_ = v50
-	var v58 int32
-	_ = v58
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
 	var v60 int32
 	_ = v60
 	var v62 int32
 	_ = v62
-	var v63 int32
-	_ = v63
-	var v67 int32
-	_ = v67
+	var v64 int32
+	_ = v64
+	var v65 int32
+	_ = v65
 	var v69 int32
 	_ = v69
-	var v72 int32
-	_ = v72
-	var v77 int32
-	_ = v77
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v88 int32
-	_ = v88
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
+	var v79 int32
+	_ = v79
+	var v86 int32
+	_ = v86
 	var v89 int32
 	_ = v89
-	var v94 int32
-	_ = v94
-	var v99 int32
-	_ = v99
+	var v90 int32
+	_ = v90
+	var v91 int32
+	_ = v91
+	var v96 int32
+	_ = v96
+	var v101 int32
+	_ = v101
 	v3 = l2
 	v8 = m.G0
 	v10 = v8 - int32(16)
@@ -93,95 +93,95 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	if v16 != 0 {
 		return
 	} else {
-		v18 = F_SearchSysCacheCopy(m, int32(60), v12, l1)
+		v20 = F_SearchSysCacheCopy(m, int32(60), base.I64_extend_i32_u(v12), base.I64_extend_i32_u(l1))
 		mBase = m.M
-		v19 = m.ExcPending
-		if v19 != 0 {
+		v21 = m.ExcPending
+		if v21 != 0 {
 			return
 		} else {
-			if v18 != 0 {
-				v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)+16))
-				v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21)+22)))
-				v23 = v21 + v22
-				v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+68))
-				v26 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[0]))
-				v27 = F_object_ownercheck(m, int32(1259), v24, v26)
+			if v20 != 0 {
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(v20)+16))
+				v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+22)))
+				v25 = v23 + v24
+				v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+68))
+				v28 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[0]))
+				v29 = F_object_ownercheck(m, int32(1259), v26, v28)
 				mBase = m.M
-				v28 = m.ExcPending
-				if v28 != 0 {
+				v30 = m.ExcPending
+				if v30 != 0 {
 					return
 				} else {
-					if v27 == int32(0) {
-						v32 = F_get_rel_relkind(m, v24)
+					if v29 == int32(0) {
+						v34 = F_get_rel_relkind(m, v26)
 						mBase = m.M
-						v33 = m.ExcPending
-						if v33 != 0 {
+						v35 = m.ExcPending
+						if v35 != 0 {
 							return
 						} else {
-							switch v32 - int32(73) {
+							switch v34 - int32(73) {
 							case 0, 32:
-								v43 = int32(20)
-								v45 = v43
+								v45 = int32(20)
+								v47 = v45
 							default:
-								v43 = int32(41)
-								v45 = v43
+								v45 = int32(42)
+								v47 = v45
 							case 10:
-								v45 = int32(37)
+								v47 = int32(38)
 							case 29:
-								v45 = int32(18)
+								v47 = int32(18)
 							case 36:
-								v45 = int32(23)
+								v47 = int32(23)
 							case 45:
-								v45 = int32(51)
+								v47 = int32(52)
 							}
-							v46 = F_get_rel_name(m, v24)
+							v48 = F_get_rel_name(m, v26)
 							mBase = m.M
-							v47 = m.ExcPending
-							if v47 != 0 {
+							v49 = m.ExcPending
+							if v49 != 0 {
 								return
 							} else {
-								F_aclcheck_error(m, int32(2), v45, v46)
+								F_aclcheck_error(m, int32(2), v47, v48)
 								mBase = m.M
-								v49 = m.ExcPending
-								if v49 != 0 {
+								v51 = m.ExcPending
+								if v51 != 0 {
 									return
 								} else {
-									v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+73)))
-									if v50 != v3&int32(255) {
-										*(*uint8)(unsafe.Add(mBase, uint32(v23)+73)) = uint8(v3)
-										F_CatalogTupleUpdate(m, v15, v18+int32(4), v18)
+									v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+73)))
+									if v52 != v3&int32(255) {
+										*(*uint8)(unsafe.Add(mBase, uint32(v25)+73)) = uint8(v3)
+										F_CatalogTupleUpdate(m, v15, v20+int32(4), v20)
 										mBase = m.M
-										v58 = m.ExcPending
-										if v58 != 0 {
+										v60 = m.ExcPending
+										if v60 != 0 {
 											return
 										} else {
-											v60 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[1]))
-											if v60 != 0 {
-												v62 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-												v63 = int32(0)
-												F_RunObjectPostAlterHook(m, int32(2618), v62, v63, v63, v63)
+											v62 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[1]))
+											if v62 != 0 {
+												v64 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
+												v65 = int32(0)
+												F_RunObjectPostAlterHook(m, int32(2618), v64, v65, v65, v65)
 												mBase = m.M
-												v67 = m.ExcPending
-												if v67 != 0 {
+												v69 = m.ExcPending
+												if v69 != 0 {
 													return
 												} else {
-													F_pfree(m, v18)
+													F_pfree(m, v20)
 													mBase = m.M
-													v69 = m.ExcPending
-													if v69 != 0 {
+													v71 = m.ExcPending
+													if v71 != 0 {
 														return
 													} else {
 														F_relation_close(m, v15, int32(3))
 														mBase = m.M
-														v72 = m.ExcPending
-														if v72 != 0 {
+														v74 = m.ExcPending
+														if v74 != 0 {
 															return
 														} else {
-															if v3&int32(255) != v50 {
+															if v3&int32(255) != v52 {
 																F_CacheInvalidateRelcache(m, l0)
 																mBase = m.M
-																v77 = m.ExcPending
-																if v77 != 0 {
+																v79 = m.ExcPending
+																if v79 != 0 {
 																	return
 																} else {
 																	m.G0 = v10 + int32(16)
@@ -195,23 +195,23 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 													}
 												}
 											} else {
-												F_pfree(m, v18)
+												F_pfree(m, v20)
 												mBase = m.M
-												v69 = m.ExcPending
-												if v69 != 0 {
+												v71 = m.ExcPending
+												if v71 != 0 {
 													return
 												} else {
 													F_relation_close(m, v15, int32(3))
 													mBase = m.M
-													v72 = m.ExcPending
-													if v72 != 0 {
+													v74 = m.ExcPending
+													if v74 != 0 {
 														return
 													} else {
-														if v3&int32(255) != v50 {
+														if v3&int32(255) != v52 {
 															F_CacheInvalidateRelcache(m, l0)
 															mBase = m.M
-															v77 = m.ExcPending
-															if v77 != 0 {
+															v79 = m.ExcPending
+															if v79 != 0 {
 																return
 															} else {
 																m.G0 = v10 + int32(16)
@@ -226,33 +226,33 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 											}
 										}
 									} else {
-										v60 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[1]))
-										if v60 != 0 {
-											v62 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-											v63 = int32(0)
-											F_RunObjectPostAlterHook(m, int32(2618), v62, v63, v63, v63)
+										v62 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[1]))
+										if v62 != 0 {
+											v64 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
+											v65 = int32(0)
+											F_RunObjectPostAlterHook(m, int32(2618), v64, v65, v65, v65)
 											mBase = m.M
-											v67 = m.ExcPending
-											if v67 != 0 {
+											v69 = m.ExcPending
+											if v69 != 0 {
 												return
 											} else {
-												F_pfree(m, v18)
+												F_pfree(m, v20)
 												mBase = m.M
-												v69 = m.ExcPending
-												if v69 != 0 {
+												v71 = m.ExcPending
+												if v71 != 0 {
 													return
 												} else {
 													F_relation_close(m, v15, int32(3))
 													mBase = m.M
-													v72 = m.ExcPending
-													if v72 != 0 {
+													v74 = m.ExcPending
+													if v74 != 0 {
 														return
 													} else {
-														if v3&int32(255) != v50 {
+														if v3&int32(255) != v52 {
 															F_CacheInvalidateRelcache(m, l0)
 															mBase = m.M
-															v77 = m.ExcPending
-															if v77 != 0 {
+															v79 = m.ExcPending
+															if v79 != 0 {
 																return
 															} else {
 																m.G0 = v10 + int32(16)
@@ -266,23 +266,23 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 												}
 											}
 										} else {
-											F_pfree(m, v18)
+											F_pfree(m, v20)
 											mBase = m.M
-											v69 = m.ExcPending
-											if v69 != 0 {
+											v71 = m.ExcPending
+											if v71 != 0 {
 												return
 											} else {
 												F_relation_close(m, v15, int32(3))
 												mBase = m.M
-												v72 = m.ExcPending
-												if v72 != 0 {
+												v74 = m.ExcPending
+												if v74 != 0 {
 													return
 												} else {
-													if v3&int32(255) != v50 {
+													if v3&int32(255) != v52 {
 														F_CacheInvalidateRelcache(m, l0)
 														mBase = m.M
-														v77 = m.ExcPending
-														if v77 != 0 {
+														v79 = m.ExcPending
+														if v79 != 0 {
 															return
 														} else {
 															m.G0 = v10 + int32(16)
@@ -300,42 +300,42 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							}
 						}
 					} else {
-						v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+73)))
-						if v50 != v3&int32(255) {
-							*(*uint8)(unsafe.Add(mBase, uint32(v23)+73)) = uint8(v3)
-							F_CatalogTupleUpdate(m, v15, v18+int32(4), v18)
+						v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+73)))
+						if v52 != v3&int32(255) {
+							*(*uint8)(unsafe.Add(mBase, uint32(v25)+73)) = uint8(v3)
+							F_CatalogTupleUpdate(m, v15, v20+int32(4), v20)
 							mBase = m.M
-							v58 = m.ExcPending
-							if v58 != 0 {
+							v60 = m.ExcPending
+							if v60 != 0 {
 								return
 							} else {
-								v60 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[1]))
-								if v60 != 0 {
-									v62 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-									v63 = int32(0)
-									F_RunObjectPostAlterHook(m, int32(2618), v62, v63, v63, v63)
+								v62 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[1]))
+								if v62 != 0 {
+									v64 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
+									v65 = int32(0)
+									F_RunObjectPostAlterHook(m, int32(2618), v64, v65, v65, v65)
 									mBase = m.M
-									v67 = m.ExcPending
-									if v67 != 0 {
+									v69 = m.ExcPending
+									if v69 != 0 {
 										return
 									} else {
-										F_pfree(m, v18)
+										F_pfree(m, v20)
 										mBase = m.M
-										v69 = m.ExcPending
-										if v69 != 0 {
+										v71 = m.ExcPending
+										if v71 != 0 {
 											return
 										} else {
 											F_relation_close(m, v15, int32(3))
 											mBase = m.M
-											v72 = m.ExcPending
-											if v72 != 0 {
+											v74 = m.ExcPending
+											if v74 != 0 {
 												return
 											} else {
-												if v3&int32(255) != v50 {
+												if v3&int32(255) != v52 {
 													F_CacheInvalidateRelcache(m, l0)
 													mBase = m.M
-													v77 = m.ExcPending
-													if v77 != 0 {
+													v79 = m.ExcPending
+													if v79 != 0 {
 														return
 													} else {
 														m.G0 = v10 + int32(16)
@@ -349,23 +349,23 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 										}
 									}
 								} else {
-									F_pfree(m, v18)
+									F_pfree(m, v20)
 									mBase = m.M
-									v69 = m.ExcPending
-									if v69 != 0 {
+									v71 = m.ExcPending
+									if v71 != 0 {
 										return
 									} else {
 										F_relation_close(m, v15, int32(3))
 										mBase = m.M
-										v72 = m.ExcPending
-										if v72 != 0 {
+										v74 = m.ExcPending
+										if v74 != 0 {
 											return
 										} else {
-											if v3&int32(255) != v50 {
+											if v3&int32(255) != v52 {
 												F_CacheInvalidateRelcache(m, l0)
 												mBase = m.M
-												v77 = m.ExcPending
-												if v77 != 0 {
+												v79 = m.ExcPending
+												if v79 != 0 {
 													return
 												} else {
 													m.G0 = v10 + int32(16)
@@ -380,33 +380,33 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								}
 							}
 						} else {
-							v60 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[1]))
-							if v60 != 0 {
-								v62 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-								v63 = int32(0)
-								F_RunObjectPostAlterHook(m, int32(2618), v62, v63, v63, v63)
+							v62 = *(*int32)(unsafe.Add(mBase, _c_F_EnableDisableRule[1]))
+							if v62 != 0 {
+								v64 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
+								v65 = int32(0)
+								F_RunObjectPostAlterHook(m, int32(2618), v64, v65, v65, v65)
 								mBase = m.M
-								v67 = m.ExcPending
-								if v67 != 0 {
+								v69 = m.ExcPending
+								if v69 != 0 {
 									return
 								} else {
-									F_pfree(m, v18)
+									F_pfree(m, v20)
 									mBase = m.M
-									v69 = m.ExcPending
-									if v69 != 0 {
+									v71 = m.ExcPending
+									if v71 != 0 {
 										return
 									} else {
 										F_relation_close(m, v15, int32(3))
 										mBase = m.M
-										v72 = m.ExcPending
-										if v72 != 0 {
+										v74 = m.ExcPending
+										if v74 != 0 {
 											return
 										} else {
-											if v3&int32(255) != v50 {
+											if v3&int32(255) != v52 {
 												F_CacheInvalidateRelcache(m, l0)
 												mBase = m.M
-												v77 = m.ExcPending
-												if v77 != 0 {
+												v79 = m.ExcPending
+												if v79 != 0 {
 													return
 												} else {
 													m.G0 = v10 + int32(16)
@@ -420,23 +420,23 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									}
 								}
 							} else {
-								F_pfree(m, v18)
+								F_pfree(m, v20)
 								mBase = m.M
-								v69 = m.ExcPending
-								if v69 != 0 {
+								v71 = m.ExcPending
+								if v71 != 0 {
 									return
 								} else {
 									F_relation_close(m, v15, int32(3))
 									mBase = m.M
-									v72 = m.ExcPending
-									if v72 != 0 {
+									v74 = m.ExcPending
+									if v74 != 0 {
 										return
 									} else {
-										if v3&int32(255) != v50 {
+										if v3&int32(255) != v52 {
 											F_CacheInvalidateRelcache(m, l0)
 											mBase = m.M
-											v77 = m.ExcPending
-											if v77 != 0 {
+											v79 = m.ExcPending
+											if v79 != 0 {
 												return
 											} else {
 												m.G0 = v10 + int32(16)
@@ -455,34 +455,34 @@ func F_EnableDisableRule(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v84 = m.ExcPending
-				if v84 != 0 {
+				v86 = m.ExcPending
+				if v86 != 0 {
 					return
 				} else {
 					F_errcode(m, int32(67137668))
 					mBase = m.M
-					v87 = m.ExcPending
-					if v87 != 0 {
+					v89 = m.ExcPending
+					if v89 != 0 {
 						return
 					} else {
-						v88 = F_get_rel_name(m, v12)
+						v90 = F_get_rel_name(m, v12)
 						mBase = m.M
-						v89 = m.ExcPending
-						if v89 != 0 {
+						v91 = m.ExcPending
+						if v91 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v88
+							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v90
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
 							F_errmsg(m, int32(_a_F_EnableDisableRule_0), v10)
 							mBase = m.M
-							v94 = m.ExcPending
-							if v94 != 0 {
+							v96 = m.ExcPending
+							if v96 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_EnableDisableRule_1), int32(712), int32(_a_F_EnableDisableRule_2))
+								F_errfinish(m, int32(_a_F_EnableDisableRule_1), int32(699), int32(_a_F_EnableDisableRule_2))
 								mBase = m.M
-								v99 = m.ExcPending
-								if v99 != 0 {
+								v101 = m.ExcPending
+								if v101 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -606,6 +606,8 @@ func F_checkRuleResultList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	_ = v180
 	var v181 int32
 	_ = v181
+	var v186 int32
+	_ = v186
 	var v187 int32
 	_ = v187
 	var v192 int32
@@ -630,6 +632,8 @@ func F_checkRuleResultList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	_ = v213
 	var v218 int32
 	_ = v218
+	var v221 int32
+	_ = v221
 	var v222 int32
 	_ = v222
 	var v227 int32
@@ -656,6 +660,8 @@ func F_checkRuleResultList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	_ = v249
 	var v254 int32
 	_ = v254
+	var v255 int32
+	_ = v255
 	var v256 int32
 	_ = v256
 	var v261 int32
@@ -802,8 +808,8 @@ L14:
 	}
 L15:
 	;
-	v51 = l1 + v44<<(uint(int32(4))%32) + v27*int32(100)
-	v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+111)))
+	v51 = l1 + v44<<(uint(int32(3))%32) + v27*int32(100)
+	v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+119)))
 	if v52 == int32(1) {
 		goto L5
 	} else {
@@ -811,7 +817,7 @@ L15:
 	}
 L16:
 	;
-	v56 = v51 + int32(24)
+	v56 = v51 + int32(32)
 	if l3 != 0 {
 		goto L17
 	} else {
@@ -895,7 +901,7 @@ L28:
 	return
 L29:
 	;
-	v88 = v51 + int32(20)
+	v88 = v51 + int32(28)
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+68))
 	if v85 != v89 {
 		goto L3
@@ -970,7 +976,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(533), int32(_a_F_checkRuleResultList_3))
+	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(520), int32(_a_F_checkRuleResultList_3))
 	mBase = m.M
 	v148 = m.ExcPending
 	if v148 != 0 {
@@ -1020,7 +1026,7 @@ L46:
 	}
 L47:
 	;
-	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(561), int32(_a_F_checkRuleResultList_3))
+	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(548), int32(_a_F_checkRuleResultList_3))
 	mBase = m.M
 	v166 = m.ExcPending
 	if v166 != 0 {
@@ -1059,7 +1065,7 @@ L51:
 	;
 	v181 = *(*int32)(unsafe.Add(mBase, uint32(v38)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v181
-	F_errdetail(m, int32(_a_F_checkRuleResultList_7), v15-int32(-64))
+	v186 = F_errdetail(m, int32(_a_F_checkRuleResultList_7), v15-int32(-64))
 	mBase = m.M
 	v187 = m.ExcPending
 	if v187 != 0 {
@@ -1069,7 +1075,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(570), int32(_a_F_checkRuleResultList_3))
+	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(557), int32(_a_F_checkRuleResultList_3))
 	mBase = m.M
 	v192 = m.ExcPending
 	if v192 != 0 {
@@ -1159,7 +1165,7 @@ L63:
 	goto L64
 L64:
 	;
-	F_errdetail(m, v218, v15+int32(32))
+	v221 = F_errdetail(m, v218, v15+int32(32))
 	mBase = m.M
 	v222 = m.ExcPending
 	if v222 != 0 {
@@ -1169,7 +1175,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(588), int32(_a_F_checkRuleResultList_3))
+	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(575), int32(_a_F_checkRuleResultList_3))
 	mBase = m.M
 	v227 = m.ExcPending
 	if v227 != 0 {
@@ -1260,7 +1266,7 @@ L76:
 	goto L77
 L77:
 	;
-	F_errdetail(m, v254, v15)
+	v255 = F_errdetail(m, v254, v15)
 	mBase = m.M
 	v256 = m.ExcPending
 	if v256 != 0 {
@@ -1270,7 +1276,7 @@ L77:
 	}
 L78:
 	;
-	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(614), int32(_a_F_checkRuleResultList_3))
+	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(601), int32(_a_F_checkRuleResultList_3))
 	mBase = m.M
 	v261 = m.ExcPending
 	if v261 != 0 {
@@ -1320,7 +1326,7 @@ L84:
 	}
 L85:
 	;
-	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(622), int32(_a_F_checkRuleResultList_3))
+	F_errfinish(m, int32(_a_F_checkRuleResultList_2), int32(609), int32(_a_F_checkRuleResultList_3))
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -1369,7 +1375,7 @@ func F_setRuleCheckAsUser(m *base.Module, l0 int32, l1 int32) {
 				return
 			}
 		} else {
-			v19 = F_expression_tree_walker_impl(m, l0, int32(1039), v6+int32(12))
+			v19 = F_expression_tree_walker_impl(m, l0, int32(1117), v6+int32(12))
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {

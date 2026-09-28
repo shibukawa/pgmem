@@ -16,8 +16,6 @@ func F_find_all_inheritors(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v14
 	var v19 int32
 	_ = v19
-	var v22 int32
-	_ = v22
 	var v26 int32
 	_ = v26
 	var v29 int32
@@ -120,11 +118,10 @@ func F_find_all_inheritors(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v12 = m.G0
 	v14 = v12 - int32(80)
 	m.G0 = v14
-	*(*int64)(unsafe.Add(mBase, uint32(v14)+48)) = int64(34359738372)
+	*(*int64)(unsafe.Add(mBase, uint32(v14)+40)) = int64(34359738372)
 	v19 = *(*int32)(unsafe.Add(mBase, _c_F_find_all_inheritors[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+72)) = v19
-	v22 = int32(32)
-	v26 = F_hash_create(m, int32(_a_F_find_all_inheritors_0), v22, v14+v22, int32(1064))
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+68)) = v19
+	v26 = F_hash_create(m, int32(_a_F_find_all_inheritors_0), int64(32), v14+int32(32), int32(1064))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -139,7 +136,7 @@ L2:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = l0
-	v35 = F_list_make1_impl(m, int32(472), v14+int32(12))
+	v35 = F_list_make1_impl(m, int32(480), v14+int32(12))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -152,7 +149,7 @@ L3:
 	v37 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v37
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v37
-	v44 = F_list_make1_impl(m, int32(471), v14+int32(8))
+	v44 = F_list_make1_impl(m, int32(479), v14+int32(8))
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {

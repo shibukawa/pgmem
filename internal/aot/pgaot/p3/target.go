@@ -148,7 +148,7 @@ func F_transformTargetList(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	}
 L1:
 	;
-	v155 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
+	v155 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 	if v155 != 0 {
 		goto L46
 	} else {
@@ -413,8 +413,8 @@ L37:
 	goto L38
 L38:
 	;
-	v127 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+72)) = v127 + int32(1)
+	v127 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+68)) = v127 + int32(1)
 	v133 = F_makeTargetEntry(m, v113, base.I32_extend16_s(v127), v126, int32(0))
 	mBase = m.M
 	v134 = m.ExcPending
@@ -480,7 +480,7 @@ L48:
 	return v160
 L49:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+72)) = int32(0)
 	v160 = v156
 	goto L48
 }

@@ -29,7 +29,7 @@ func F_float_underflow_error(m *base.Module) {
 			if v11 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_float_underflow_error_1), int32(98), int32(_a_F_float_underflow_error_2))
+				F_errfinish(m, int32(_a_F_float_underflow_error_1), int32(115), int32(_a_F_float_underflow_error_2))
 				v16 = m.ExcPending
 				if v16 != 0 {
 					return
@@ -56,7 +56,7 @@ func F_makeFloat(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(466)
+		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(474)
 		return v4
 	}
 }

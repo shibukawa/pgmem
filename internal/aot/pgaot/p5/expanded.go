@@ -60,7 +60,7 @@ func F_expanded_record_fetch_tupdesc(m *base.Module, l0 int32) int32 {
 			if int32(0) <= v13 {
 				v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 				if v16 == int32(0) {
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(1292)
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(1430)
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = l0
 					v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 					v24 = l0 + int32(108)
@@ -260,8 +260,8 @@ L9:
 	}
 L10:
 	;
-	v28 = v13 + v21<<(uint(int32(4))%32) + v18*int32(100)
-	v30 = v28 + int32(24)
+	v28 = v13 + v21<<(uint(int32(3))%32) + v18*int32(100)
+	v30 = v28 + int32(32)
 	if v30|l1 != 0 {
 		goto L13
 	} else {
@@ -323,7 +323,7 @@ L21:
 	goto L12
 L22:
 	;
-	v49 = v28 + int32(20)
+	v49 = v28 + int32(28)
 	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+91)))
 	if v50 != int32(1) {
 		v99 = v49
@@ -625,7 +625,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 							return int32(0)
 						} else {
 							v49 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
-							v54 = F_MemoryContextAlloc(m, v47, v49*int32(5)+int32(120))
+							v54 = F_MemoryContextAlloc(m, v47, v49*int32(9)+int32(120))
 							mBase = m.M
 							v55 = m.ExcPending
 							if v55 != 0 {
@@ -645,7 +645,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 								*(*int32)(unsafe.Add(mBase, uint32(v54)+56)) = v71
 								*(*int32)(unsafe.Add(mBase, uint32(v54)+24)) = int32(1384727874)
 								v75 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
-								*(*int32)(unsafe.Add(mBase, uint32(v54)+60)) = v71 + v75<<(uint(int32(2))%32)
+								*(*int32)(unsafe.Add(mBase, uint32(v54)+60)) = v71 + v75<<(uint(int32(3))%32)
 								v80 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 								*(*int32)(unsafe.Add(mBase, uint32(v54)+32)) = l0
 								*(*int32)(unsafe.Add(mBase, uint32(v54)+64)) = v80
@@ -657,7 +657,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 								*(*int32)(unsafe.Add(mBase, uint32(v54)+28)) = v41
 								v89 = *(*int32)(unsafe.Add(mBase, uint32(v40)+12))
 								if int32(0) <= v89 {
-									*(*int32)(unsafe.Add(mBase, uint32(v54)+108)) = int32(1292)
+									*(*int32)(unsafe.Add(mBase, uint32(v54)+108)) = int32(1430)
 									*(*int32)(unsafe.Add(mBase, uint32(v54)+112)) = v54
 									v95 = *(*int32)(unsafe.Add(mBase, uint32(v54)+8))
 									v97 = v54 + int32(108)
@@ -749,7 +749,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 						return int32(0)
 					} else {
 						v49 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
-						v54 = F_MemoryContextAlloc(m, v47, v49*int32(5)+int32(120))
+						v54 = F_MemoryContextAlloc(m, v47, v49*int32(9)+int32(120))
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
@@ -769,7 +769,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 							*(*int32)(unsafe.Add(mBase, uint32(v54)+56)) = v71
 							*(*int32)(unsafe.Add(mBase, uint32(v54)+24)) = int32(1384727874)
 							v75 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
-							*(*int32)(unsafe.Add(mBase, uint32(v54)+60)) = v71 + v75<<(uint(int32(2))%32)
+							*(*int32)(unsafe.Add(mBase, uint32(v54)+60)) = v71 + v75<<(uint(int32(3))%32)
 							v80 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 							*(*int32)(unsafe.Add(mBase, uint32(v54)+32)) = l0
 							*(*int32)(unsafe.Add(mBase, uint32(v54)+64)) = v80
@@ -781,7 +781,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 							*(*int32)(unsafe.Add(mBase, uint32(v54)+28)) = v41
 							v89 = *(*int32)(unsafe.Add(mBase, uint32(v40)+12))
 							if int32(0) <= v89 {
-								*(*int32)(unsafe.Add(mBase, uint32(v54)+108)) = int32(1292)
+								*(*int32)(unsafe.Add(mBase, uint32(v54)+108)) = int32(1430)
 								*(*int32)(unsafe.Add(mBase, uint32(v54)+112)) = v54
 								v95 = *(*int32)(unsafe.Add(mBase, uint32(v54)+8))
 								v97 = v54 + int32(108)
@@ -841,7 +841,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 					return int32(0)
 				} else {
 					v49 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
-					v54 = F_MemoryContextAlloc(m, v47, v49*int32(5)+int32(120))
+					v54 = F_MemoryContextAlloc(m, v47, v49*int32(9)+int32(120))
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {
@@ -861,7 +861,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 						*(*int32)(unsafe.Add(mBase, uint32(v54)+56)) = v71
 						*(*int32)(unsafe.Add(mBase, uint32(v54)+24)) = int32(1384727874)
 						v75 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
-						*(*int32)(unsafe.Add(mBase, uint32(v54)+60)) = v71 + v75<<(uint(int32(2))%32)
+						*(*int32)(unsafe.Add(mBase, uint32(v54)+60)) = v71 + v75<<(uint(int32(3))%32)
 						v80 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 						*(*int32)(unsafe.Add(mBase, uint32(v54)+32)) = l0
 						*(*int32)(unsafe.Add(mBase, uint32(v54)+64)) = v80
@@ -873,7 +873,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 						*(*int32)(unsafe.Add(mBase, uint32(v54)+28)) = v41
 						v89 = *(*int32)(unsafe.Add(mBase, uint32(v40)+12))
 						if int32(0) <= v89 {
-							*(*int32)(unsafe.Add(mBase, uint32(v54)+108)) = int32(1292)
+							*(*int32)(unsafe.Add(mBase, uint32(v54)+108)) = int32(1430)
 							*(*int32)(unsafe.Add(mBase, uint32(v54)+112)) = v54
 							v95 = *(*int32)(unsafe.Add(mBase, uint32(v54)+8))
 							v97 = v54 + int32(108)

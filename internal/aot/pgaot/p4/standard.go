@@ -116,16 +116,14 @@ func F_standard_ExecutorRun(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	_ = v165
 	var v166 int32
 	_ = v166
-	var v167 int64
-	_ = v167
-	var v170 int32
-	_ = v170
+	var v168 int32
+	_ = v168
 	v14 = int32(_a_F_standard_ExecutorRun_0)
 	v15 = *(*int32)(unsafe.Add(mBase, _c_F_standard_ExecutorRun[0]))
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+100))
 	*(*int32)(unsafe.Add(mBase, _c_F_standard_ExecutorRun[0])) = v18
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	if v20 != 0 {
 		goto L1
 	} else {
@@ -133,7 +131,7 @@ func F_standard_ExecutorRun(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	}
 L1:
 	;
-	F_InstrStartNode(m, v20)
+	F_InstrStart(m, v20)
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -170,7 +168,7 @@ L6:
 L7:
 	;
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+24)))
+	v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+28)))
 	if v31 != int32(1) {
 		v39 = int32(0)
 		goto L6
@@ -182,7 +180,7 @@ L8:
 	goto L9
 L9:
 	;
-	v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v35 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
 	m.T0[v35].(func(*base.Module, int32, int32, int32))(m, v23, v24, v34)
 	mBase = m.M
@@ -211,8 +209,8 @@ L12:
 	}
 L13:
 	;
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	*(*int32)(unsafe.Add(mBase, uint32(v43)+4)) = l1
 	if l2 == int64(0) {
 		goto L16
@@ -226,9 +224,9 @@ L14:
 L15:
 	;
 	v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v57)+29)))
+	v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v57)+33)))
 	v59 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v59)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v59)
 	*(*uint8)(unsafe.Add(mBase, uint32(v43)+160)) = uint8(v58)
 	if v58 != v59 {
 		v74 = int32(0)
@@ -238,7 +236,7 @@ L15:
 	}
 L16:
 	;
-	v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)))
+	v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)))
 	if v47&int32(1) == int32(0) {
 		goto L15
 	} else {
@@ -250,7 +248,7 @@ L17:
 L18:
 	;
 	v52 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v52)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v52)
 	v54 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v43)+160)) = uint8(v54)
 	v74 = v54
@@ -486,7 +484,7 @@ L56:
 	goto L57
 L57:
 	;
-	v166 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+	v166 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	if v166 != 0 {
 		goto L59
 	} else {
@@ -497,11 +495,10 @@ L58:
 	goto L57
 L59:
 	;
-	v167 = *(*int64)(unsafe.Add(mBase, uint32(v17)+112))
-	F_InstrStopNode(m, v166, base.F64_convert_i64_u(v167))
+	F_InstrStop(m, v166)
 	mBase = m.M
-	v170 = m.ExcPending
-	if v170 != 0 {
+	v168 = m.ExcPending
+	if v168 != 0 {
 		goto L4
 	} else {
 		goto L62

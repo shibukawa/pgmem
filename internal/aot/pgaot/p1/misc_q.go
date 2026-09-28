@@ -351,7 +351,7 @@ L33:
 	*(*int32)(unsafe.Add(mBase, uint32(v129)+4)) = v126
 	goto L25
 }
-func F_quickdie(m *base.Module, l0 int32) {
+func F_quickdie(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
 	var v24 int32
@@ -396,6 +396,8 @@ func F_quickdie(m *base.Module, l0 int32) {
 	_ = v90
 	var v94 int32
 	_ = v94
+	var v97 int32
+	_ = v97
 	var v98 int32
 	_ = v98
 	var v102 int32
@@ -444,7 +446,7 @@ func F_quickdie(m *base.Module, l0 int32) {
 			if v62 == int32(0) {
 				v66 = v53
 			} else {
-				v65 = *(*int32)(unsafe.Add(mBase, uint32(v62)+40))
+				v65 = *(*int32)(unsafe.Add(mBase, uint32(v62)+44))
 				v66 = v65
 			}
 		}
@@ -475,7 +477,7 @@ func F_quickdie(m *base.Module, l0 int32) {
 						if v80 != 0 {
 							return
 						} else {
-							v118 = int32(3089)
+							v118 = int32(3088)
 							F_errfinish(m, int32(_a_F_quickdie_3), v118, int32(_a_F_quickdie_4))
 							mBase = m.M
 							v121 = m.ExcPending
@@ -518,7 +520,7 @@ func F_quickdie(m *base.Module, l0 int32) {
 						if v94 != 0 {
 							return
 						} else {
-							F_errdetail(m, int32(_a_F_quickdie_6), int32(0))
+							v97 = F_errdetail(m, int32(_a_F_quickdie_6), int32(0))
 							mBase = m.M
 							v98 = m.ExcPending
 							if v98 != 0 {
@@ -530,7 +532,7 @@ func F_quickdie(m *base.Module, l0 int32) {
 								if v102 != 0 {
 									return
 								} else {
-									v118 = int32(3101)
+									v118 = int32(3100)
 									F_errfinish(m, int32(_a_F_quickdie_3), v118, int32(_a_F_quickdie_4))
 									mBase = m.M
 									v121 = m.ExcPending
@@ -575,7 +577,7 @@ func F_quickdie(m *base.Module, l0 int32) {
 						if v116 != 0 {
 							return
 						} else {
-							v118 = int32(3107)
+							v118 = int32(3106)
 							F_errfinish(m, int32(_a_F_quickdie_3), v118, int32(_a_F_quickdie_4))
 							mBase = m.M
 							v121 = m.ExcPending

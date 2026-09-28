@@ -20,36 +20,32 @@ func F_UpdateSubscriptionRelState(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v20
 	var v21 int32
 	_ = v21
-	var v23 int32
-	_ = v23
-	var v24 int32
-	_ = v24
-	var v25 int64
+	var v25 int32
 	_ = v25
-	var v36 int32
-	_ = v36
-	var v37 int32
-	_ = v37
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
-	var v48 int32
-	_ = v48
-	var v49 int32
-	_ = v49
-	var v53 int32
-	_ = v53
+	var v26 int32
+	_ = v26
+	var v27 int64
+	_ = v27
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
 	var v56 int32
 	_ = v56
-	var v63 int32
-	_ = v63
-	var v68 int32
-	_ = v68
-	var v73 int32
-	_ = v73
+	var v59 int32
+	_ = v59
+	var v66 int32
+	_ = v66
+	var v71 int32
+	_ = v71
+	var v76 int32
+	_ = v76
 	v8 = m.G0
-	v10 = v8 - int32(48)
+	v10 = v8 + int32(-64)
 	m.G0 = v10
 	if l4 != 0 {
 		v19 = int32(0)
@@ -59,99 +55,69 @@ func F_UpdateSubscriptionRelState(m *base.Module, l0 int32, l1 int32, l2 int32, 
 		if v21 != 0 {
 			return
 		} else {
-			v23 = F_SearchSysCacheCopy(m, int32(68), l1, l0)
+			v25 = F_SearchSysCacheCopy(m, int32(68), base.I64_extend_i32_u(l1), base.I64_extend_i32_u(l0))
 			mBase = m.M
-			v24 = m.ExcPending
-			if v24 != 0 {
+			v26 = m.ExcPending
+			if v26 != 0 {
 				return
 			} else {
-				if v23 != 0 {
-					v25 = int64(0)
-					*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v25
-					*(*int64)(unsafe.Add(mBase, uint32(v10)+16)) = v25
-					*(*int32)(unsafe.Add(mBase, uint32(v10)+44)) = int32(0)
+				if v25 != 0 {
+					v27 = int64(0)
+					*(*int64)(unsafe.Add(mBase, uint32(v10)+40)) = v27
+					*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v27
+					*(*int64)(unsafe.Add(mBase, uint32(v10)+16)) = v27
+					*(*int32)(unsafe.Add(mBase, uint32(v10)+60)) = int32(0)
 					*(*int32)(unsafe.Add(mBase, uint32(v10)+12)) = int32(16842752)
-					*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = l2
-					if l3 != v25 {
-						v36 = F_Int64GetDatum(m, l3)
-						mBase = m.M
-						v37 = m.ExcPending
-						if v37 != 0 {
-							return
-						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = v36
-							v41 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
-							v48 = F_heap_modify_tuple(m, v23, v41, v10+int32(16), v10+int32(44), v10+int32(12))
-							mBase = m.M
-							v49 = m.ExcPending
-							if v49 != 0 {
-								return
-							} else {
-								F_CatalogTupleUpdate(m, v20, v48+int32(4), v48)
-								mBase = m.M
-								v53 = m.ExcPending
-								if v53 != 0 {
-									return
-								} else {
-									F_relation_close(m, v20, int32(0))
-									mBase = m.M
-									v56 = m.ExcPending
-									if v56 != 0 {
-										return
-									} else {
-										m.G0 = v10 + int32(48)
-										return
-									}
-								}
-							}
-						}
+					*(*int64)(unsafe.Add(mBase, uint32(v10)+32)) = base.I64_extend_i32_s(l2)
+					if l3 != v27 {
+						*(*int64)(unsafe.Add(mBase, uint32(v10)+40)) = l3
 					} else {
-						v39 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(v10)+47)) = uint8(v39)
-						v41 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
-						v48 = F_heap_modify_tuple(m, v23, v41, v10+int32(16), v10+int32(44), v10+int32(12))
+						v42 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(v10)+63)) = uint8(v42)
+					}
+					v44 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
+					v51 = F_heap_modify_tuple(m, v25, v44, v8+int32(-48), v8+int32(-4), v8+int32(-52))
+					mBase = m.M
+					v52 = m.ExcPending
+					if v52 != 0 {
+						return
+					} else {
+						F_CatalogTupleUpdate(m, v20, v51+int32(4), v51)
 						mBase = m.M
-						v49 = m.ExcPending
-						if v49 != 0 {
+						v56 = m.ExcPending
+						if v56 != 0 {
 							return
 						} else {
-							F_CatalogTupleUpdate(m, v20, v48+int32(4), v48)
+							F_relation_close(m, v20, int32(0))
 							mBase = m.M
-							v53 = m.ExcPending
-							if v53 != 0 {
+							v59 = m.ExcPending
+							if v59 != 0 {
 								return
 							} else {
-								F_relation_close(m, v20, int32(0))
-								mBase = m.M
-								v56 = m.ExcPending
-								if v56 != 0 {
-									return
-								} else {
-									m.G0 = v10 + int32(48)
-									return
-								}
+								m.G0 = v10 - int32(-64)
+								return
 							}
 						}
 					}
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v63 = m.ExcPending
-					if v63 != 0 {
+					v66 = m.ExcPending
+					if v66 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l0
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
 						F_errmsg_internal(m, int32(_a_F_UpdateSubscriptionRelState_1), v10)
 						mBase = m.M
-						v68 = m.ExcPending
-						if v68 != 0 {
+						v71 = m.ExcPending
+						if v71 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_UpdateSubscriptionRelState_2), int32(355), int32(_a_F_UpdateSubscriptionRelState_3))
+							F_errfinish(m, int32(_a_F_UpdateSubscriptionRelState_2), int32(431), int32(_a_F_UpdateSubscriptionRelState_3))
 							mBase = m.M
-							v73 = m.ExcPending
-							if v73 != 0 {
+							v76 = m.ExcPending
+							if v76 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -177,99 +143,69 @@ func F_UpdateSubscriptionRelState(m *base.Module, l0 int32, l1 int32, l2 int32, 
 			if v21 != 0 {
 				return
 			} else {
-				v23 = F_SearchSysCacheCopy(m, int32(68), l1, l0)
+				v25 = F_SearchSysCacheCopy(m, int32(68), base.I64_extend_i32_u(l1), base.I64_extend_i32_u(l0))
 				mBase = m.M
-				v24 = m.ExcPending
-				if v24 != 0 {
+				v26 = m.ExcPending
+				if v26 != 0 {
 					return
 				} else {
-					if v23 != 0 {
-						v25 = int64(0)
-						*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v25
-						*(*int64)(unsafe.Add(mBase, uint32(v10)+16)) = v25
-						*(*int32)(unsafe.Add(mBase, uint32(v10)+44)) = int32(0)
+					if v25 != 0 {
+						v27 = int64(0)
+						*(*int64)(unsafe.Add(mBase, uint32(v10)+40)) = v27
+						*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v27
+						*(*int64)(unsafe.Add(mBase, uint32(v10)+16)) = v27
+						*(*int32)(unsafe.Add(mBase, uint32(v10)+60)) = int32(0)
 						*(*int32)(unsafe.Add(mBase, uint32(v10)+12)) = int32(16842752)
-						*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = l2
-						if l3 != v25 {
-							v36 = F_Int64GetDatum(m, l3)
-							mBase = m.M
-							v37 = m.ExcPending
-							if v37 != 0 {
-								return
-							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = v36
-								v41 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
-								v48 = F_heap_modify_tuple(m, v23, v41, v10+int32(16), v10+int32(44), v10+int32(12))
-								mBase = m.M
-								v49 = m.ExcPending
-								if v49 != 0 {
-									return
-								} else {
-									F_CatalogTupleUpdate(m, v20, v48+int32(4), v48)
-									mBase = m.M
-									v53 = m.ExcPending
-									if v53 != 0 {
-										return
-									} else {
-										F_relation_close(m, v20, int32(0))
-										mBase = m.M
-										v56 = m.ExcPending
-										if v56 != 0 {
-											return
-										} else {
-											m.G0 = v10 + int32(48)
-											return
-										}
-									}
-								}
-							}
+						*(*int64)(unsafe.Add(mBase, uint32(v10)+32)) = base.I64_extend_i32_s(l2)
+						if l3 != v27 {
+							*(*int64)(unsafe.Add(mBase, uint32(v10)+40)) = l3
 						} else {
-							v39 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, uint32(v10)+47)) = uint8(v39)
-							v41 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
-							v48 = F_heap_modify_tuple(m, v23, v41, v10+int32(16), v10+int32(44), v10+int32(12))
+							v42 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(v10)+63)) = uint8(v42)
+						}
+						v44 = *(*int32)(unsafe.Add(mBase, uint32(v20)+52))
+						v51 = F_heap_modify_tuple(m, v25, v44, v8+int32(-48), v8+int32(-4), v8+int32(-52))
+						mBase = m.M
+						v52 = m.ExcPending
+						if v52 != 0 {
+							return
+						} else {
+							F_CatalogTupleUpdate(m, v20, v51+int32(4), v51)
 							mBase = m.M
-							v49 = m.ExcPending
-							if v49 != 0 {
+							v56 = m.ExcPending
+							if v56 != 0 {
 								return
 							} else {
-								F_CatalogTupleUpdate(m, v20, v48+int32(4), v48)
+								F_relation_close(m, v20, int32(0))
 								mBase = m.M
-								v53 = m.ExcPending
-								if v53 != 0 {
+								v59 = m.ExcPending
+								if v59 != 0 {
 									return
 								} else {
-									F_relation_close(m, v20, int32(0))
-									mBase = m.M
-									v56 = m.ExcPending
-									if v56 != 0 {
-										return
-									} else {
-										m.G0 = v10 + int32(48)
-										return
-									}
+									m.G0 = v10 - int32(-64)
+									return
 								}
 							}
 						}
 					} else {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v63 = m.ExcPending
-						if v63 != 0 {
+						v66 = m.ExcPending
+						if v66 != 0 {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l0
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
 							F_errmsg_internal(m, int32(_a_F_UpdateSubscriptionRelState_1), v10)
 							mBase = m.M
-							v68 = m.ExcPending
-							if v68 != 0 {
+							v71 = m.ExcPending
+							if v71 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_UpdateSubscriptionRelState_2), int32(355), int32(_a_F_UpdateSubscriptionRelState_3))
+								F_errfinish(m, int32(_a_F_UpdateSubscriptionRelState_2), int32(431), int32(_a_F_UpdateSubscriptionRelState_3))
 								mBase = m.M
-								v73 = m.ExcPending
-								if v73 != 0 {
+								v76 = m.ExcPending
+								if v76 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()

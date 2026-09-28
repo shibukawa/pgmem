@@ -1531,7 +1531,7 @@ L60:
 		goto L5
 	case 3:
 		goto L6
-	case 5, 6, 7, 12, 33, 39, 55, 56, 57, 58, 62, 66, 105, 112, 377:
+	case 5, 6, 7, 12, 33, 39, 55, 56, 57, 58, 62, 66, 105, 112, 381:
 		goto L3
 	case 8:
 		goto L73
@@ -1649,15 +1649,15 @@ L60:
 		goto L24
 	case 141:
 		goto L15
-	case 280:
+	case 283:
 		goto L14
-	case 318:
+	case 320:
 		goto L13
-	case 321:
-		goto L10
 	case 323:
+		goto L10
+	case 325:
 		goto L9
-	case 376:
+	case 380:
 		goto L17
 	}
 L61:
@@ -3091,7 +3091,7 @@ L253:
 	}
 L254:
 	;
-	v444 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
+	v444 = *(*int32)(unsafe.Add(mBase, uint32(v15)+24))
 	v445 = m.T0[l1].(func(*base.Module, int32, int32) int32)(m, v444, l2)
 	mBase = m.M
 	v446 = m.ExcPending
@@ -3110,7 +3110,7 @@ L255:
 	}
 L256:
 	;
-	v447 = *(*int32)(unsafe.Add(mBase, uint32(v15)+24))
+	v447 = *(*int32)(unsafe.Add(mBase, uint32(v15)+28))
 	v448 = m.T0[l1].(func(*base.Module, int32, int32) int32)(m, v447, l2)
 	mBase = m.M
 	v449 = m.ExcPending
@@ -3129,7 +3129,7 @@ L257:
 	}
 L258:
 	;
-	v450 = *(*int32)(unsafe.Add(mBase, uint32(v15)+32))
+	v450 = *(*int32)(unsafe.Add(mBase, uint32(v15)+36))
 	v451 = m.T0[l1].(func(*base.Module, int32, int32) int32)(m, v450, l2)
 	mBase = m.M
 	v452 = m.ExcPending
@@ -3499,7 +3499,7 @@ L306:
 	}
 L307:
 	;
-	F_errfinish(m, int32(_a_F_expression_tree_walker_impl_1), int32(2669), int32(_a_F_expression_tree_walker_impl_2))
+	F_errfinish(m, int32(_a_F_expression_tree_walker_impl_1), int32(2683), int32(_a_F_expression_tree_walker_impl_2))
 	mBase = m.M
 	v567 = m.ExcPending
 	if v567 != 0 {

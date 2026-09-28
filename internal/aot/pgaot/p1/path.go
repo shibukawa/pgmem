@@ -2227,7 +2227,7 @@ L1:
 L2:
 	;
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v11 = int32(0)
 	if base.B2i32(v9 == v11)|base.B2i32(v10 == v11) != 0 {
 		v56 = v11
@@ -2316,7 +2316,7 @@ L16:
 	;
 	v59 = int32(0)
 	v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	switch v60 - int32(279) {
+	switch v60 - int32(282) {
 	case 0, 1:
 		goto L17
 	default:
@@ -2338,9 +2338,9 @@ L16:
 		goto L20
 	case 15:
 		goto L19
-	case 17:
+	case 16:
 		goto L18
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L22
 	}
 L17:
@@ -2456,7 +2456,7 @@ L29:
 L30:
 	;
 	v70 = *(*int32)(unsafe.Add(mBase, uint32(v67)+4))
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v71 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v72 = F_bms_overlap(m, v70, v71)
 	mBase = m.M
 	if v72 == int32(0) {
@@ -2469,7 +2469,7 @@ L31:
 	;
 	v75 = int32(0)
 	v76 = *(*int32)(unsafe.Add(mBase, uint32(v63)))
-	switch v76 - int32(279) {
+	switch v76 - int32(282) {
 	case 0, 1:
 		goto L32
 	default:
@@ -2491,9 +2491,9 @@ L31:
 		goto L35
 	case 15:
 		goto L34
-	case 17:
+	case 16:
 		goto L33
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L37
 	}
 L32:
@@ -2868,7 +2868,7 @@ L89:
 L90:
 	;
 	v223 = *(*int32)(unsafe.Add(mBase, uint32(v220)+4))
-	v224 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v224 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v225 = F_bms_overlap(m, v223, v224)
 	mBase = m.M
 	if v225 == int32(0) {
@@ -2881,7 +2881,7 @@ L91:
 	;
 	v228 = int32(0)
 	v229 = *(*int32)(unsafe.Add(mBase, uint32(v216)))
-	switch v229 - int32(279) {
+	switch v229 - int32(282) {
 	case 0, 1:
 		goto L92
 	default:
@@ -2903,9 +2903,9 @@ L91:
 		goto L95
 	case 15:
 		goto L94
-	case 17:
+	case 16:
 		goto L93
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L97
 	}
 L92:
@@ -3295,7 +3295,7 @@ L152:
 L153:
 	;
 	v382 = *(*int32)(unsafe.Add(mBase, uint32(v379)+4))
-	v383 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v383 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v384 = F_bms_overlap(m, v382, v383)
 	mBase = m.M
 	if v384 == int32(0) {
@@ -3308,7 +3308,7 @@ L154:
 	;
 	v387 = int32(0)
 	v388 = *(*int32)(unsafe.Add(mBase, uint32(v375)))
-	switch v388 - int32(279) {
+	switch v388 - int32(282) {
 	case 0, 1:
 		goto L155
 	default:
@@ -3330,9 +3330,9 @@ L154:
 		goto L158
 	case 15:
 		goto L157
-	case 17:
+	case 16:
 		goto L156
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L160
 	}
 L155:
@@ -3704,7 +3704,7 @@ L212:
 L213:
 	;
 	v528 = *(*int32)(unsafe.Add(mBase, uint32(v525)+4))
-	v529 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v529 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v530 = F_bms_overlap(m, v528, v529)
 	mBase = m.M
 	if v530 == int32(0) {
@@ -3717,7 +3717,7 @@ L214:
 	;
 	v533 = int32(0)
 	v534 = *(*int32)(unsafe.Add(mBase, uint32(v519)))
-	switch v534 - int32(279) {
+	switch v534 - int32(282) {
 	case 0, 1:
 		goto L215
 	default:
@@ -3739,9 +3739,9 @@ L214:
 		goto L218
 	case 15:
 		goto L217
-	case 17:
+	case 16:
 		goto L216
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L220
 	}
 L215:
@@ -4116,7 +4116,7 @@ L272:
 L273:
 	;
 	v681 = *(*int32)(unsafe.Add(mBase, uint32(v678)+4))
-	v682 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v682 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v683 = F_bms_overlap(m, v681, v682)
 	mBase = m.M
 	if v683 == int32(0) {
@@ -4129,7 +4129,7 @@ L274:
 	;
 	v686 = int32(0)
 	v687 = *(*int32)(unsafe.Add(mBase, uint32(v674)))
-	switch v687 - int32(279) {
+	switch v687 - int32(282) {
 	case 0, 1:
 		goto L275
 	default:
@@ -4151,9 +4151,9 @@ L274:
 		goto L278
 	case 15:
 		goto L277
-	case 17:
+	case 16:
 		goto L276
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L280
 	}
 L275:
@@ -4516,7 +4516,7 @@ L331:
 L332:
 	;
 	v825 = *(*int32)(unsafe.Add(mBase, uint32(v822)+4))
-	v826 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v826 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v827 = F_bms_overlap(m, v825, v826)
 	mBase = m.M
 	if v827 == int32(0) {
@@ -4529,7 +4529,7 @@ L333:
 	;
 	v830 = int32(0)
 	v831 = *(*int32)(unsafe.Add(mBase, uint32(v818)))
-	switch v831 - int32(279) {
+	switch v831 - int32(282) {
 	case 0, 1:
 		goto L334
 	default:
@@ -4551,9 +4551,9 @@ L333:
 		goto L337
 	case 15:
 		goto L336
-	case 17:
+	case 16:
 		goto L335
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L339
 	}
 L334:
@@ -4907,7 +4907,7 @@ L387:
 L388:
 	;
 	v965 = *(*int32)(unsafe.Add(mBase, uint32(v962)+4))
-	v966 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v966 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v967 = F_bms_overlap(m, v965, v966)
 	mBase = m.M
 	if v967 == int32(0) {
@@ -4920,7 +4920,7 @@ L389:
 	;
 	v970 = int32(0)
 	v971 = *(*int32)(unsafe.Add(mBase, uint32(v958)))
-	switch v971 - int32(279) {
+	switch v971 - int32(282) {
 	case 0, 1:
 		goto L390
 	default:
@@ -4942,9 +4942,9 @@ L389:
 		goto L393
 	case 15:
 		goto L392
-	case 17:
+	case 16:
 		goto L391
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L395
 	}
 L390:
@@ -5319,7 +5319,7 @@ L447:
 L448:
 	;
 	v1118 = *(*int32)(unsafe.Add(mBase, uint32(v1115)+4))
-	v1119 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v1119 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v1120 = F_bms_overlap(m, v1118, v1119)
 	mBase = m.M
 	if v1120 == int32(0) {
@@ -5332,7 +5332,7 @@ L449:
 	;
 	v1123 = int32(0)
 	v1124 = *(*int32)(unsafe.Add(mBase, uint32(v1111)))
-	switch v1124 - int32(279) {
+	switch v1124 - int32(282) {
 	case 0, 1:
 		goto L450
 	default:
@@ -5354,9 +5354,9 @@ L449:
 		goto L453
 	case 15:
 		goto L452
-	case 17:
+	case 16:
 		goto L451
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L455
 	}
 L450:
@@ -5718,7 +5718,7 @@ L506:
 L507:
 	;
 	v1262 = *(*int32)(unsafe.Add(mBase, uint32(v1259)+4))
-	v1263 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v1263 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v1264 = F_bms_overlap(m, v1262, v1263)
 	mBase = m.M
 	if v1264 == int32(0) {
@@ -5731,7 +5731,7 @@ L508:
 	;
 	v1267 = int32(0)
 	v1268 = *(*int32)(unsafe.Add(mBase, uint32(v1255)))
-	switch v1268 - int32(279) {
+	switch v1268 - int32(282) {
 	case 0, 1:
 		goto L509
 	default:
@@ -5753,9 +5753,9 @@ L508:
 		goto L512
 	case 15:
 		goto L511
-	case 17:
+	case 16:
 		goto L510
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L514
 	}
 L509:
@@ -6102,7 +6102,7 @@ L562:
 L563:
 	;
 	v1400 = *(*int32)(unsafe.Add(mBase, uint32(v1397)+4))
-	v1401 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v1401 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v1402 = F_bms_overlap(m, v1400, v1401)
 	mBase = m.M
 	if v1402 == int32(0) {
@@ -6115,7 +6115,7 @@ L564:
 	;
 	v1405 = int32(0)
 	v1406 = *(*int32)(unsafe.Add(mBase, uint32(v1393)))
-	switch v1406 - int32(279) {
+	switch v1406 - int32(282) {
 	case 0, 1:
 		goto L565
 	default:
@@ -6137,9 +6137,9 @@ L564:
 		goto L568
 	case 15:
 		goto L567
-	case 17:
+	case 16:
 		goto L566
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L570
 	}
 L565:
@@ -6487,7 +6487,7 @@ L618:
 L619:
 	;
 	v1538 = *(*int32)(unsafe.Add(mBase, uint32(v1535)+4))
-	v1539 = *(*int32)(unsafe.Add(mBase, uint32(l1)+228))
+	v1539 = *(*int32)(unsafe.Add(mBase, uint32(l1)+252))
 	v1540 = F_bms_overlap(m, v1538, v1539)
 	mBase = m.M
 	if v1540 == int32(0) {
@@ -6500,7 +6500,7 @@ L620:
 	;
 	v1543 = int32(0)
 	v1544 = *(*int32)(unsafe.Add(mBase, uint32(v1531)))
-	switch v1544 - int32(279) {
+	switch v1544 - int32(282) {
 	case 0, 1:
 		goto L621
 	default:
@@ -6522,9 +6522,9 @@ L620:
 		goto L624
 	case 15:
 		goto L623
-	case 17:
+	case 16:
 		goto L622
-	case 19, 20, 21:
+	case 18, 19, 20:
 		goto L626
 	}
 L621:
@@ -6857,7 +6857,7 @@ L672:
 	;
 	goto L17
 }
-func F_path_n_ge(m *base.Module, l0 int32) int32 {
+func F_path_n_ge(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -6876,27 +6876,27 @@ func F_path_n_ge(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v12 int32
 	_ = v12
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v4 = F_pg_detoast_datum(m, v3)
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v9 = F_pg_detoast_datum(m, v8)
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v11 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
-			return base.B2i32(v12 <= v11)
+			return base.I64_extend_i32_u(base.B2i32(v12 <= v11))
 		}
 	}
 }
-func F_path_n_lt(m *base.Module, l0 int32) int32 {
+func F_path_n_lt(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -6915,27 +6915,27 @@ func F_path_n_lt(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v12 int32
 	_ = v12
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v4 = F_pg_detoast_datum(m, v3)
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v9 = F_pg_detoast_datum(m, v8)
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v11 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
-			return base.B2i32(v11 < v12)
+			return base.I64_extend_i32_u(base.B2i32(v11 < v12))
 		}
 	}
 }
-func F_path_npoints(m *base.Module, l0 int32) int32 {
+func F_path_npoints(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -6944,16 +6944,16 @@ func F_path_npoints(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	var v7 int32
+	var v7 int64
 	_ = v7
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = F_pg_detoast_datum(m, v2)
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v7 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
+		v7 = int64(*(*int32)(unsafe.Add(mBase, uint32(v3)+4)))
 		return v7
 	}
 }

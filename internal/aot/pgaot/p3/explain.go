@@ -764,16 +764,53 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v48
 	var v49 int32
 	_ = v49
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
 	var v52 int32
 	_ = v52
-	var v57 int32
-	_ = v57
-	var v58 int32
-	_ = v58
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-	switch v7 - int32(333) {
+	switch v7 - int32(335) {
 	case 0:
+		v50 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+		v51 = *(*int32)(unsafe.Add(mBase, uint32(v6)+80))
+		v52 = F_bms_add_members(m, v50, v51)
+		mBase = m.M
+		v53 = m.ExcPending
+		if v53 != 0 {
+			return int32(0)
+		} else {
+			v56 = v52
+			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v56
+			v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
+			mBase = m.M
+			v62 = m.ExcPending
+			if v62 != 0 {
+				return int32(0)
+			} else {
+				return v61
+			}
+		}
+	default:
+		v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
+		mBase = m.M
+		v62 = m.ExcPending
+		if v62 != 0 {
+			return int32(0)
+		} else {
+			return v61
+		}
+	case 2:
 		v24 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(v6)+80))
 		v26 = F_bms_add_member(m, v24, v25)
@@ -795,16 +832,16 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 					v33 = v30
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(v6)+44))
 					if v34 == int32(0) {
-						v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
+						v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
 						mBase = m.M
-						v58 = m.ExcPending
-						if v58 != 0 {
+						v62 = m.ExcPending
+						if v62 != 0 {
 							return int32(0)
 						} else {
-							return v57
+							return v61
 						}
 					} else {
-						v37 = *(*int32)(unsafe.Add(mBase, uint32(v6)+92))
+						v37 = *(*int32)(unsafe.Add(mBase, uint32(v6)+88))
 						v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+12))
 						v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)))
 						v40 = F_bms_add_member(m, v33, v39)
@@ -813,15 +850,15 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 						if v41 != 0 {
 							return int32(0)
 						} else {
-							v52 = v40
-							*(*int32)(unsafe.Add(mBase, uint32(l1))) = v52
-							v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
+							v56 = v40
+							*(*int32)(unsafe.Add(mBase, uint32(l1))) = v56
+							v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
 							mBase = m.M
-							v58 = m.ExcPending
-							if v58 != 0 {
+							v62 = m.ExcPending
+							if v62 != 0 {
 								return int32(0)
 							} else {
-								return v57
+								return v61
 							}
 						}
 					}
@@ -830,16 +867,16 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 				v33 = v26
 				v34 = *(*int32)(unsafe.Add(mBase, uint32(v6)+44))
 				if v34 == int32(0) {
-					v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
+					v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
 					mBase = m.M
-					v58 = m.ExcPending
-					if v58 != 0 {
+					v62 = m.ExcPending
+					if v62 != 0 {
 						return int32(0)
 					} else {
-						return v57
+						return v61
 					}
 				} else {
-					v37 = *(*int32)(unsafe.Add(mBase, uint32(v6)+92))
+					v37 = *(*int32)(unsafe.Add(mBase, uint32(v6)+88))
 					v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+12))
 					v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)))
 					v40 = F_bms_add_member(m, v33, v39)
@@ -848,21 +885,21 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 					if v41 != 0 {
 						return int32(0)
 					} else {
-						v52 = v40
-						*(*int32)(unsafe.Add(mBase, uint32(l1))) = v52
-						v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
+						v56 = v40
+						*(*int32)(unsafe.Add(mBase, uint32(l1))) = v56
+						v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
 						mBase = m.M
-						v58 = m.ExcPending
-						if v58 != 0 {
+						v62 = m.ExcPending
+						if v62 != 0 {
 							return int32(0)
 						} else {
-							return v57
+							return v61
 						}
 					}
 				}
 			}
 		}
-	case 1:
+	case 3:
 		v42 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 		v43 = *(*int32)(unsafe.Add(mBase, uint32(v6)+72))
 		v44 = F_bms_add_members(m, v42, v43)
@@ -871,18 +908,18 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 		if v45 != 0 {
 			return int32(0)
 		} else {
-			v52 = v44
-			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v52
-			v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
+			v56 = v44
+			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v56
+			v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
 			mBase = m.M
-			v58 = m.ExcPending
-			if v58 != 0 {
+			v62 = m.ExcPending
+			if v62 != 0 {
 				return int32(0)
 			} else {
-				return v57
+				return v61
 			}
 		}
-	case 2:
+	case 4:
 		v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 		v47 = *(*int32)(unsafe.Add(mBase, uint32(v6)+72))
 		v48 = F_bms_add_members(m, v46, v47)
@@ -891,27 +928,18 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 		if v49 != 0 {
 			return int32(0)
 		} else {
-			v52 = v48
-			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v52
-			v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
+			v56 = v48
+			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v56
+			v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
 			mBase = m.M
-			v58 = m.ExcPending
-			if v58 != 0 {
+			v62 = m.ExcPending
+			if v62 != 0 {
 				return int32(0)
 			} else {
-				return v57
+				return v61
 			}
 		}
-	default:
-		v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
-		mBase = m.M
-		v58 = m.ExcPending
-		if v58 != 0 {
-			return int32(0)
-		} else {
-			return v57
-		}
-	case 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20:
+	case 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22:
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 		v11 = *(*int32)(unsafe.Add(mBase, uint32(v6)+72))
 		v12 = F_bms_add_member(m, v10, v11)
@@ -920,18 +948,18 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			v52 = v12
-			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v52
-			v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
+			v56 = v12
+			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v56
+			v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
 			mBase = m.M
-			v58 = m.ExcPending
-			if v58 != 0 {
+			v62 = m.ExcPending
+			if v62 != 0 {
 				return int32(0)
 			} else {
-				return v57
+				return v61
 			}
 		}
-	case 21:
+	case 23:
 		v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 		v17 = *(*int32)(unsafe.Add(mBase, uint32(v6)+116))
 		v18 = F_bms_add_members(m, v16, v17)
@@ -940,18 +968,18 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 		if v19 != 0 {
 			return int32(0)
 		} else {
-			v52 = v18
-			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v52
-			v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
+			v56 = v18
+			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v56
+			v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
 			mBase = m.M
-			v58 = m.ExcPending
-			if v58 != 0 {
+			v62 = m.ExcPending
+			if v62 != 0 {
 				return int32(0)
 			} else {
-				return v57
+				return v61
 			}
 		}
-	case 22:
+	case 24:
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(v6)+100))
 		v22 = F_bms_add_members(m, v20, v21)
@@ -960,15 +988,15 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 		if v23 != 0 {
 			return int32(0)
 		} else {
-			v52 = v22
-			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v52
-			v57 = F_planstate_tree_walker_impl(m, l0, int32(548), l1)
+			v56 = v22
+			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v56
+			v61 = F_planstate_tree_walker_impl(m, l0, int32(589), l1)
 			mBase = m.M
-			v58 = m.ExcPending
-			if v58 != 0 {
+			v62 = m.ExcPending
+			if v62 != 0 {
 				return int32(0)
 			} else {
-				return v57
+				return v61
 			}
 		}
 	}
@@ -976,7 +1004,7 @@ func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32 {
 func F_ExplainPropertyUInteger(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) {
 	var v7 int32
 	_ = v7
-	Fn13828(m, l0, l1, l2, l3, int32(_a_F_ExplainPropertyUInteger_0))
+	Fn14212(m, l0, l1, l2, l3, int32(_a_F_ExplainPropertyUInteger_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return
@@ -989,26 +1017,18 @@ func F_ExplainSubPlans(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	_ = mBase
 	var v5 int32
 	_ = v5
-	var v8 int32
-	_ = v8
+	var v10 int32
+	_ = v10
 	var v12 int32
 	_ = v12
-	var v16 int32
-	_ = v16
+	var v14 int32
+	_ = v14
 	var v18 int32
 	_ = v18
-	var v22 int32
-	_ = v22
 	var v23 int32
 	_ = v23
-	var v24 int32
-	_ = v24
-	var v25 int32
-	_ = v25
 	var v26 int32
 	_ = v26
-	var v27 int32
-	_ = v27
 	var v30 int32
 	_ = v30
 	var v31 int32
@@ -1017,55 +1037,91 @@ func F_ExplainSubPlans(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	_ = v32
 	var v33 int32
 	_ = v33
+	var v34 int32
+	_ = v34
 	var v35 int32
 	_ = v35
-	var v36 int32
-	_ = v36
-	var v37 int32
-	_ = v37
 	var v38 int32
 	_ = v38
+	var v39 int32
+	_ = v39
 	var v40 int32
 	_ = v40
 	var v41 int32
 	_ = v41
-	var v42 int32
-	_ = v42
 	var v43 int32
 	_ = v43
+	var v44 int32
+	_ = v44
 	var v45 int32
 	_ = v45
-	var v46 int32
-	_ = v46
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v67 int32
+	_ = v67
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v76 int32
+	_ = v76
+	var v80 int32
+	_ = v80
+	var v81 int32
+	_ = v81
 	v5 = int32(0)
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v5 < v8 {
+	v10 = m.G0
+	v12 = v10 - int32(48)
+	m.G0 = v12
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v5 < v14 {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	v12 = l1
-	v16 = v5
+	v18 = l1
+	v23 = v5
 	goto L4
 L2:
 	;
 	goto L3
 L3:
 	;
+	m.G0 = v12 + int32(48)
 	return
 L4:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v18+v16<<(uint(int32(2))%32))))
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+16))
-	v25 = *(*int32)(unsafe.Add(mBase, uint32(l3)+48))
-	v26 = F_bms_is_member(m, v24, v25)
+	v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v26+v23<<(uint(int32(2))%32))))
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+4))
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(l3)+48))
+	v34 = F_bms_is_member(m, v32, v33)
 	mBase = m.M
-	v27 = m.ExcPending
-	if v27 != 0 {
+	v35 = m.ExcPending
+	if v35 != 0 {
 		goto L6
 	} else {
 		goto L7
@@ -1078,76 +1134,144 @@ L6:
 	return
 L7:
 	;
-	if v26 == int32(0) {
+	if v34 == int32(0) {
 		goto L8
 	} else {
 		goto L9
 	}
 L8:
 	;
-	v30 = *(*int32)(unsafe.Add(mBase, uint32(l3)+48))
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(v23)+16))
-	v32 = F_bms_add_member(m, v30, v31)
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(l3)+48))
+	v39 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
+	v40 = F_bms_add_member(m, v38, v39)
 	mBase = m.M
-	v33 = m.ExcPending
-	if v33 != 0 {
+	v41 = m.ExcPending
+	if v41 != 0 {
 		goto L6
 	} else {
 		goto L11
 	}
 L9:
 	;
-	v43 = v12
+	v76 = v18
 	goto L10
 L10:
 	;
-	v45 = v16 + int32(1)
-	v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v45 < v46 {
-		v12 = v43
-		v16 = v45
+	v80 = v23 + int32(1)
+	v81 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v80 < v81 {
+		v18 = v76
+		v23 = v80
 		goto L4
 	} else {
-		goto L15
+		goto L25
 	}
 L11:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l3)+48)) = v32
-	v35 = F_lcons(m, v23, v12)
+	*(*int32)(unsafe.Add(mBase, uint32(l3)+48)) = v40
+	v43 = F_lcons(m, v31, v18)
 	mBase = m.M
-	v36 = m.ExcPending
-	if v36 != 0 {
+	v44 = m.ExcPending
+	if v44 != 0 {
 		goto L6
 	} else {
 		goto L12
 	}
 L12:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(v22)+8))
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))
-	F_ExplainNode(m, v37, v35, l2, v38, l3)
-	mBase = m.M
-	v40 = m.ExcPending
-	if v40 != 0 {
-		goto L6
+	v45 = *(*int32)(unsafe.Add(mBase, uint32(v31)+4))
+	if v45 == int32(7) {
+		goto L14
 	} else {
-		goto L13
+		goto L15
 	}
 L13:
 	;
-	v41 = F_list_delete_first(m, v35)
+	v71 = *(*int32)(unsafe.Add(mBase, uint32(v30)+8))
+	F_ExplainNode(m, v71, v43, l2, v70, l3)
 	mBase = m.M
-	v42 = m.ExcPending
-	if v42 != 0 {
+	v73 = m.ExcPending
+	if v73 != 0 {
 		goto L6
 	} else {
-		goto L14
+		goto L23
 	}
 L14:
 	;
-	v43 = v41
-	goto L10
+	v48 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v48
+	v51 = F_psprintf(m, int32(_a_F_ExplainSubPlans_0), v12)
+	mBase = m.M
+	v52 = m.ExcPending
+	if v52 != 0 {
+		goto L6
+	} else {
+		goto L17
+	}
 L15:
+	;
+	goto L16
+L16:
+	;
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(v31)+20))
+	v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+36)))
+	if v54 == int32(1) {
+		goto L18
+	} else {
+		goto L19
+	}
+L17:
+	;
+	v70 = v51
+	goto L13
+L18:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v53
+	v61 = F_psprintf(m, int32(_a_F_ExplainSubPlans_1), v12+int32(16))
+	mBase = m.M
+	v62 = m.ExcPending
+	if v62 != 0 {
+		goto L6
+	} else {
+		goto L21
+	}
+L19:
+	;
+	goto L20
+L20:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v53
+	v67 = F_psprintf(m, int32(_a_F_ExplainSubPlans_2), v12+int32(32))
+	mBase = m.M
+	v68 = m.ExcPending
+	if v68 != 0 {
+		goto L6
+	} else {
+		goto L22
+	}
+L21:
+	;
+	v70 = v61
+	goto L13
+L22:
+	;
+	v70 = v67
+	goto L13
+L23:
+	;
+	v74 = F_list_delete_first(m, v43)
+	mBase = m.M
+	v75 = m.ExcPending
+	if v75 != 0 {
+		goto L6
+	} else {
+		goto L24
+	}
+L24:
+	;
+	v76 = v74
+	goto L10
+L25:
 	;
 	goto L5
 }

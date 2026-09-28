@@ -10,30 +10,30 @@ func F_EvalPlanQualInit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 	_ = mBase
 	var v8 int32
 	_ = v8
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
-	var v17 int32
+	var v17 int64
 	_ = v17
-	var v18 int64
-	_ = v18
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = l5
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = l4
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = l1
-	v16 = F_palloc0(m, v8<<(uint(int32(2))%32))
+	v15 = F_palloc0_mul(m, int32(4), v8)
 	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v16 = m.ExcPending
+	if v16 != 0 {
 		return
 	} else {
-		v18 = int64(0)
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+28)) = v18
+		v17 = int64(0)
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+28)) = v17
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = l3
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = l2
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v16
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v18
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v18
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v15
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v17
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v17
 		return
 	}
 }

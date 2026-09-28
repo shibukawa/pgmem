@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_WinGetFuncArgCurrent(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_WinGetFuncArgCurrent(m *base.Module, l0 int32, l1 int32, l2 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -22,7 +22,7 @@ func F_WinGetFuncArgCurrent(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	_ = v15
 	var v16 int32
 	_ = v16
-	var v17 int32
+	var v17 int64
 	_ = v17
 	var v20 int32
 	_ = v20
@@ -33,12 +33,12 @@ func F_WinGetFuncArgCurrent(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v11+l1<<(uint(int32(2))%32))))
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
-	v17 = m.T0[v16].(func(*base.Module, int32, int32, int32) int32)(m, v15, v7, l2)
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+24))
+	v17 = m.T0[v16].(func(*base.Module, int32, int32, int32) int64)(m, v15, v7, l2)
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v17
 	}

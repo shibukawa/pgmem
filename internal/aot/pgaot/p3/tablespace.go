@@ -16,10 +16,8 @@ func F_get_tablespace_name(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v14 int32
 	_ = v14
-	var v19 int32
-	_ = v19
-	var v21 int32
-	_ = v21
+	var v20 int32
+	_ = v20
 	var v22 int32
 	_ = v22
 	var v23 int32
@@ -30,24 +28,26 @@ func F_get_tablespace_name(m *base.Module, l0 int32) int32 {
 	_ = v25
 	var v26 int32
 	_ = v26
-	var v30 int32
-	_ = v30
+	var v27 int32
+	_ = v27
 	var v31 int32
 	_ = v31
-	var v34 int32
-	_ = v34
+	var v32 int32
+	_ = v32
 	var v35 int32
 	_ = v35
 	var v36 int32
 	_ = v36
 	var v37 int32
 	_ = v37
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
 	v5 = m.G0
-	v7 = v5 - int32(48)
+	v7 = v5 + int32(-64)
 	m.G0 = v7
 	v11 = F_table_open(m, int32(1213), int32(1))
 	mBase = m.M
@@ -55,73 +55,73 @@ func F_get_tablespace_name(m *base.Module, l0 int32) int32 {
 	if v14 != 0 {
 		return int32(0)
 	} else {
-		F_ScanKeyInit(m, v7, int32(1), int32(3), int32(184), l0)
+		F_ScanKeyInit(m, v7, int32(1), int32(3), int32(184), base.I64_extend_i32_u(l0))
 		mBase = m.M
-		v19 = m.ExcPending
-		if v19 != 0 {
+		v20 = m.ExcPending
+		if v20 != 0 {
 			return int32(0)
 		} else {
-			v21 = F_table_beginscan_catalog(m, v11, int32(1), v7)
+			v22 = F_table_beginscan_catalog(m, v11, int32(1), v7)
 			mBase = m.M
-			v22 = m.ExcPending
-			if v22 != 0 {
+			v23 = m.ExcPending
+			if v23 != 0 {
 				return int32(0)
 			} else {
-				v23 = F_heap_getnext(m, v21)
+				v24 = F_heap_getnext(m, v22)
 				mBase = m.M
-				v24 = m.ExcPending
-				if v24 != 0 {
+				v25 = m.ExcPending
+				if v25 != 0 {
 					return int32(0)
 				} else {
-					if v23 != 0 {
-						v25 = *(*int32)(unsafe.Add(mBase, uint32(v23)+16))
-						v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+22)))
-						v30 = F_pstrdup(m, v25+v26+int32(4))
+					if v24 != 0 {
+						v26 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
+						v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+22)))
+						v31 = F_pstrdup(m, v26+v27+int32(4))
 						mBase = m.M
-						v31 = m.ExcPending
-						if v31 != 0 {
+						v32 = m.ExcPending
+						if v32 != 0 {
 							return int32(0)
 						} else {
-							v34 = v30
-							v35 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
-							v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+188))
-							v37 = *(*int32)(unsafe.Add(mBase, uint32(v36)+12))
-							m.T0[v37].(func(*base.Module, int32))(m, v21)
+							v35 = v31
+							v36 = *(*int32)(unsafe.Add(mBase, uint32(v22)))
+							v37 = *(*int32)(unsafe.Add(mBase, uint32(v36)+188))
+							v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+12))
+							m.T0[v38].(func(*base.Module, int32))(m, v22)
 							mBase = m.M
-							v39 = m.ExcPending
-							if v39 != 0 {
+							v40 = m.ExcPending
+							if v40 != 0 {
 								return int32(0)
 							} else {
 								F_relation_close(m, v11, int32(1))
 								mBase = m.M
-								v42 = m.ExcPending
-								if v42 != 0 {
+								v43 = m.ExcPending
+								if v43 != 0 {
 									return int32(0)
 								} else {
-									m.G0 = v7 + int32(48)
-									return v34
+									m.G0 = v7 - int32(-64)
+									return v35
 								}
 							}
 						}
 					} else {
-						v34 = int32(0)
-						v35 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
-						v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+188))
-						v37 = *(*int32)(unsafe.Add(mBase, uint32(v36)+12))
-						m.T0[v37].(func(*base.Module, int32))(m, v21)
+						v35 = int32(0)
+						v36 = *(*int32)(unsafe.Add(mBase, uint32(v22)))
+						v37 = *(*int32)(unsafe.Add(mBase, uint32(v36)+188))
+						v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+12))
+						m.T0[v38].(func(*base.Module, int32))(m, v22)
 						mBase = m.M
-						v39 = m.ExcPending
-						if v39 != 0 {
+						v40 = m.ExcPending
+						if v40 != 0 {
 							return int32(0)
 						} else {
 							F_relation_close(m, v11, int32(1))
 							mBase = m.M
-							v42 = m.ExcPending
-							if v42 != 0 {
+							v43 = m.ExcPending
+							if v43 != 0 {
 								return int32(0)
 							} else {
-								m.G0 = v7 + int32(48)
-								return v34
+								m.G0 = v7 - int32(-64)
+								return v35
 							}
 						}
 					}
@@ -130,7 +130,7 @@ func F_get_tablespace_name(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_tablespace_privilege_id_name(m *base.Module, l0 int32) int32 {
+func F_has_tablespace_privilege_id_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -163,46 +163,46 @@ func F_has_tablespace_privilege_id_name(m *base.Module, l0 int32) int32 {
 	_ = v22
 	var v23 int32
 	_ = v23
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v11 = F_pg_detoast_datum_packed(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v14 = F_text_to_cstring(m, v6)
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v17 = F_get_tablespace_oid(m, v14, int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v20 = F_convert_any_priv_string(m, v11, int32(_a_F_has_tablespace_privilege_id_name_0))
 					mBase = m.M
 					v21 = m.ExcPending
 					if v21 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v22 = F_object_aclcheck(m, int32(1213), v17, v4, v20)
 						mBase = m.M
 						v23 = m.ExcPending
 						if v23 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return base.B2i32(v22 == int32(0))
+							return base.I64_extend_i32_u(base.B2i32(v22 == int32(0)))
 						}
 					}
 				}
@@ -295,7 +295,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 					if v28 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_remove_tablespace_symlink_1), int32(893), int32(_a_F_remove_tablespace_symlink_2))
+						F_errfinish(m, int32(_a_F_remove_tablespace_symlink_1), int32(906), int32(_a_F_remove_tablespace_symlink_2))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -333,7 +333,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 						if v101 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_remove_tablespace_symlink_1), int32(922), int32(_a_F_remove_tablespace_symlink_2))
+							F_errfinish(m, int32(_a_F_remove_tablespace_symlink_1), int32(935), int32(_a_F_remove_tablespace_symlink_2))
 							mBase = m.M
 							v106 = m.ExcPending
 							if v106 != 0 {
@@ -377,7 +377,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 								if v59 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_remove_tablespace_symlink_1), int32(906), int32(_a_F_remove_tablespace_symlink_2))
+									F_errfinish(m, int32(_a_F_remove_tablespace_symlink_1), int32(919), int32(_a_F_remove_tablespace_symlink_2))
 									mBase = m.M
 									v64 = m.ExcPending
 									if v64 != 0 {
@@ -424,7 +424,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 							if v83 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_remove_tablespace_symlink_1), int32(914), int32(_a_F_remove_tablespace_symlink_2))
+								F_errfinish(m, int32(_a_F_remove_tablespace_symlink_1), int32(927), int32(_a_F_remove_tablespace_symlink_2))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {

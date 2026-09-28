@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_OutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
+func F_OutputFunctionCall(m *base.Module, l0 int32, l1 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -20,7 +20,7 @@ func F_OutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v16
 	var v20 int32
 	_ = v20
-	var v21 int32
+	var v21 int64
 	_ = v21
 	var v24 int32
 	_ = v24
@@ -36,24 +36,24 @@ func F_OutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v41
 	v3 = int32(0)
 	v4 = m.G0
-	v6 = v4 - int32(32)
+	v6 = v4 - int32(48)
 	m.G0 = v6
 	v8 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = v8
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = l0
-	*(*int64)(unsafe.Add(mBase, uint32(v6)+13)) = v8
-	*(*uint8)(unsafe.Add(mBase, uint32(v6)+28)) = uint8(v3)
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = l1
+	*(*int64)(unsafe.Add(mBase, uint32(v6)+12)) = v8
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = l0
+	*(*int64)(unsafe.Add(mBase, uint32(v6)+17)) = v8
+	*(*uint8)(unsafe.Add(mBase, uint32(v6)+40)) = uint8(v3)
+	*(*int64)(unsafe.Add(mBase, uint32(v6)+32)) = l1
 	v16 = int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(v6)+22)) = uint16(v16)
+	*(*uint16)(unsafe.Add(mBase, uint32(v6)+26)) = uint16(v16)
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v21 = m.T0[v20].(func(*base.Module, int32) int32)(m, v6+int32(4))
+	v21 = m.T0[v20].(func(*base.Module, int32) int64)(m, v6+int32(8))
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
 		return int32(0)
 	} else {
-		v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+20)))
+		v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+24)))
 		if v25 == int32(1) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
@@ -69,7 +69,7 @@ func F_OutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 				if v36 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_OutputFunctionCall_1), int32(1143), int32(_a_F_OutputFunctionCall_2))
+					F_errfinish(m, int32(_a_F_OutputFunctionCall_1), int32(1145), int32(_a_F_OutputFunctionCall_2))
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
@@ -82,15 +82,15 @@ func F_OutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			m.G0 = v6 + int32(32)
-			return v21
+			m.G0 = v6 + int32(48)
+			return base.I32_wrap_i64(v21)
 		}
 	}
 }
 func F_offsethash_grow(m *base.Module, l0 int32, l1 int64) {
 	var v5 int32
 	_ = v5
-	Fn13975(m, l0, l1, int32(_a_F_offsethash_grow_0))
+	Fn14355(m, l0, l1, int32(_a_F_offsethash_grow_0))
 	v5 = m.ExcPending
 	if v5 != 0 {
 		return
@@ -98,39 +98,50 @@ func F_offsethash_grow(m *base.Module, l0 int32, l1 int64) {
 		return
 	}
 }
-func F_oidgt(m *base.Module, l0 int32) int32 {
+func F_oid8le(m *base.Module, l0 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v2 int64
+	_ = v2
+	var v3 int64
+	_ = v3
+	v2 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	return base.I64_extend_i32_u(base.B2i32(base.Ui64(v2) <= base.Ui64(v3)))
+}
+func F_oidgt(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
 	var v3 int32
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	return base.B2i32(base.Ui32(v3) < base.Ui32(v2))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	return base.I64_extend_i32_u(base.B2i32(base.Ui32(v3) < base.Ui32(v2)))
 }
-func F_oidle(m *base.Module, l0 int32) int32 {
+func F_oidle(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
 	var v3 int32
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	return base.B2i32(base.Ui32(v2) <= base.Ui32(v3))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	return base.I64_extend_i32_u(base.B2i32(base.Ui32(v2) <= base.Ui32(v3)))
 }
-func F_oidvectorhashfast(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_oidvectorhashfast(m *base.Module, l0 int64) int32 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_DirectFunctionCall1Coll(m, int32(1572), int32(0), l0)
+	v4 = F_DirectFunctionCall1Coll(m, int32(1785), int32(0), l0)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		return v4
+		return base.I32_wrap_i64(v4)
 	}
 }
 func F_operationPriority(m *base.Module, l0 int32) int32 {
@@ -151,15 +162,15 @@ func F_operationPriority(m *base.Module, l0 int32) int32 {
 	}
 	return v10
 }
-func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_overlaps_timestamp(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13955(m, l0, int32(1498), int32(1497))
+	v4 = Fn14338(m, l0, int32(1711), int32(1710))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}

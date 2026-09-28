@@ -284,7 +284,7 @@ L25:
 	}
 L26:
 	;
-	F_errfinish(m, int32(_a_F_AllocateFile_1), int32(2684), int32(_a_F_AllocateFile_2))
+	F_errfinish(m, int32(_a_F_AllocateFile_1), int32(2668), int32(_a_F_AllocateFile_2))
 	mBase = m.M
 	v82 = m.ExcPending
 	if v82 != 0 {
@@ -361,7 +361,7 @@ L35:
 	}
 L36:
 	;
-	F_errfinish(m, int32(_a_F_AllocateFile_1), int32(2661), int32(_a_F_AllocateFile_2))
+	F_errfinish(m, int32(_a_F_AllocateFile_1), int32(2645), int32(_a_F_AllocateFile_2))
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {

@@ -10,7 +10,7 @@ func F_OpfamilyIsVisibleExt(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v8 = Fn13836(m, l0, l1, int32(41), int32(_a_F_OpfamilyIsVisibleExt_0), int32(2283), int32(_a_F_OpfamilyIsVisibleExt_1), int32(42))
+	v8 = Fn14219(m, l0, l1, int32(41), int32(_a_F_OpfamilyIsVisibleExt_0), int32(2352), int32(_a_F_OpfamilyIsVisibleExt_1), int32(42))
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int32(0)
@@ -25,53 +25,53 @@ func F_get_opfamily_name(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v6 int32
 	_ = v6
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
-	var v18 int32
-	_ = v18
-	var v22 int32
-	_ = v22
-	var v27 int32
-	_ = v27
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v19 int32
+	_ = v19
+	var v23 int32
+	_ = v23
 	var v28 int32
 	_ = v28
 	var v29 int32
 	_ = v29
-	var v33 int32
-	_ = v33
+	var v30 int32
+	_ = v30
 	var v34 int32
 	_ = v34
-	var v36 int32
-	_ = v36
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v9 = F_SearchSysCache1(m, int32(42), l0)
+	v10 = F_SearchSysCache1(m, int32(42), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v12 = m.ExcPending
-	if v12 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		return int32(0)
 	} else {
-		if v9 == int32(0) {
+		if v10 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v18 = m.ExcPending
-			if v18 != 0 {
+			v19 = m.ExcPending
+			if v19 != 0 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
 				F_errmsg_internal(m, int32(_a_F_get_opfamily_name_0), v6)
 				mBase = m.M
-				v22 = m.ExcPending
-				if v22 != 0 {
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_get_opfamily_name_1), int32(1404), int32(_a_F_get_opfamily_name_2))
+					F_errfinish(m, int32(_a_F_get_opfamily_name_1), int32(1562), int32(_a_F_get_opfamily_name_2))
 					mBase = m.M
-					v27 = m.ExcPending
-					if v27 != 0 {
+					v28 = m.ExcPending
+					if v28 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()
@@ -81,22 +81,22 @@ func F_get_opfamily_name(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v28 = *(*int32)(unsafe.Add(mBase, uint32(v9)+16))
-			v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+22)))
-			v33 = F_pstrdup(m, v28+v29+int32(8))
+			v29 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
+			v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29)+22)))
+			v34 = F_pstrdup(m, v29+v30+int32(8))
 			mBase = m.M
-			v34 = m.ExcPending
-			if v34 != 0 {
+			v35 = m.ExcPending
+			if v35 != 0 {
 				return int32(0)
 			} else {
-				F_ReleaseCatCache(m, v9)
+				F_ReleaseCatCache(m, v10)
 				mBase = m.M
-				v36 = m.ExcPending
-				if v36 != 0 {
+				v37 = m.ExcPending
+				if v37 != 0 {
 					return int32(0)
 				} else {
 					m.G0 = v6 + int32(16)
-					return v33
+					return v34
 				}
 			}
 		}
@@ -105,8 +105,8 @@ func F_get_opfamily_name(m *base.Module, l0 int32) int32 {
 func F_opfamily_can_sort_type(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
+	var v11 int64
+	_ = v11
 	var v13 int32
 	_ = v13
 	var v16 int32
@@ -135,8 +135,8 @@ func F_opfamily_can_sort_type(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v47
 	var v57 int32
 	_ = v57
-	v3 = int32(0)
-	v13 = F_SearchSysCacheList(m, int32(13), int32(1), int32(403), v3, v3)
+	v11 = int64(0)
+	v13 = F_SearchSysCacheList(m, int32(13), int32(1), int64(403), v11, v11)
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
@@ -149,7 +149,7 @@ L1:
 	return int32(0)
 L2:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(v13)+40))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(v13)+56))
 	if int32(0) < v17 {
 		goto L3
 	} else {
@@ -157,7 +157,7 @@ L2:
 	}
 L3:
 	;
-	v26 = v3
+	v26 = int32(0)
 	goto L6
 L4:
 	;
@@ -174,8 +174,8 @@ L5:
 	}
 L6:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(48)+v26<<(uint(int32(2))%32))))
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+56))
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v13-int32(-64)+v26<<(uint(int32(2))%32))))
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+72))
 	v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v33)+22)))
 	v35 = v33 + v34
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+80))

@@ -6,7 +6,7 @@ import (
 	"unsafe"
 )
 
-func F_dist_cpoly(m *base.Module, l0 int32) int32 {
+func F_dist_cpoly(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -27,64 +27,63 @@ func F_dist_cpoly(m *base.Module, l0 int32) int32 {
 	_ = v15
 	var v17 float64
 	_ = v17
-	var v30 int32
+	var v30 float64
 	_ = v30
-	var v31 float64
+	var v31 int32
 	_ = v31
-	var v34 float64
-	_ = v34
-	var v35 int32
-	_ = v35
-	var v36 int32
+	var v32 float64
+	_ = v32
+	var v33 float64
+	_ = v33
+	var v36 float64
 	_ = v36
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v8 = F_pg_detoast_datum(m, v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v12 = F_dist_ppoly_internal(m, v6, v8)
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v14 = *(*float64)(unsafe.Add(mBase, uint32(v6)+16))
 			v15 = base.F64_sub(v12, v14)
 			v17 = math.Float64frombits(uint64(0x7ff0000000000000))
 			if base.F64_ne(base.F64_abs(v15), v17)|base.F64_eq(base.F64_abs(v12), v17)|base.F64_eq(base.F64_abs(v14), v17) == int32(0) {
-				F_float_overflow_error(m)
+				v30 = F_float_overflow_error_ext(m, int32(0))
 				mBase = m.M
-				v30 = m.ExcPending
-				if v30 != 0 {
-					return int32(0)
+				v31 = m.ExcPending
+				if v31 != 0 {
+					return int64(0)
 				} else {
-					base.Wasm_trap_unreachable()
-					for {
+					v32 = v30
+					v33 = float64(0)
+					if base.F64_lt(v32, v33) != 0 {
+						v36 = v33
+					} else {
+						v36 = v32
 					}
+					return base.I64_reinterpret_f64(v36)
 				}
 			} else {
-				v31 = float64(0)
-				if base.F64_lt(v15, v31) != 0 {
-					v34 = v31
+				v32 = v15
+				v33 = float64(0)
+				if base.F64_lt(v32, v33) != 0 {
+					v36 = v33
 				} else {
-					v34 = v15
+					v36 = v32
 				}
-				v35 = F_Float8GetDatum(m, v34)
-				mBase = m.M
-				v36 = m.ExcPending
-				if v36 != 0 {
-					return int32(0)
-				} else {
-					return v35
-				}
+				return base.I64_reinterpret_f64(v36)
 			}
 		}
 	}
 }
-func F_dist_ls(m *base.Module, l0 int32) int32 {
+func F_dist_ls(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -105,63 +104,45 @@ func F_dist_ls(m *base.Module, l0 int32) int32 {
 	_ = v20
 	var v22 float64
 	_ = v22
-	var v25 float64
-	_ = v25
-	var v26 int32
+	var v26 int64
 	_ = v26
-	var v27 int32
-	_ = v27
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v8 = F_lseg_interpt_line(m, int32(0), v6, v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		if v8 != 0 {
-			v25 = float64(0)
-			v26 = F_Float8GetDatum(m, v25)
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				return v26
-			}
+			v26 = int64(0)
+			return v26
 		} else {
 			v14 = F_line_closept_point(m, int32(0), v7, v6)
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v19 = F_line_closept_point(m, int32(0), v7, v6+int32(16))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					if base.F64_lt(v14, v19) != 0 {
 						v22 = v14
 					} else {
 						v22 = v19
 					}
-					v25 = v22
-					v26 = F_Float8GetDatum(m, v25)
-					mBase = m.M
-					v27 = m.ExcPending
-					if v27 != 0 {
-						return int32(0)
-					} else {
-						return v26
-					}
+					v26 = base.I64_reinterpret_f64(v22)
+					return v26
 				}
 			}
 		}
 	}
 }
-func F_dist_pathp(m *base.Module, l0 int32) int32 {
+func F_dist_pathp(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -176,36 +157,25 @@ func F_dist_pathp(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v10 int32
 	_ = v10
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v4 = F_pg_detoast_datum(m, v3)
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v9 = F_dist_ppath_internal(m, v8, v4)
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			v11 = F_Float8GetDatum(m, v9)
-			mBase = m.M
-			v12 = m.ExcPending
-			if v12 != 0 {
-				return int32(0)
-			} else {
-				return v11
-			}
+			return base.I64_reinterpret_f64(v9)
 		}
 	}
 }
-func F_dist_ppath(m *base.Module, l0 int32) int32 {
+func F_dist_ppath(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -220,32 +190,21 @@ func F_dist_ppath(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v4 = F_pg_detoast_datum(m, v3)
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v8 = F_dist_ppath_internal(m, v2, v4)
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			v10 = F_Float8GetDatum(m, v8)
-			mBase = m.M
-			v11 = m.ExcPending
-			if v11 != 0 {
-				return int32(0)
-			} else {
-				return v10
-			}
+			return base.I64_reinterpret_f64(v8)
 		}
 	}
 }
@@ -543,7 +502,7 @@ L29:
 	;
 	goto L18
 }
-func F_dist_ps(m *base.Module, l0 int32) int32 {
+func F_dist_ps(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -554,25 +513,14 @@ func F_dist_ps(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v5 = F_lseg_closept_point(m, int32(0), v3, v4)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v9 = F_Float8GetDatum(m, v5)
-		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return int32(0)
-		} else {
-			return v9
-		}
+		return base.I64_reinterpret_f64(v5)
 	}
 }

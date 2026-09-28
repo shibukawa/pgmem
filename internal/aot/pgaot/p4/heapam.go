@@ -12,9 +12,13 @@ func F_heapam_index_fetch_end(m *base.Module, l0 int32) {
 	_ = v3
 	var v5 int32
 	_ = v5
-	var v9 int32
-	_ = v9
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v3 != 0 {
 		F_ReleaseBuffer(m, v3)
 		mBase = m.M
@@ -22,48 +26,66 @@ func F_heapam_index_fetch_end(m *base.Module, l0 int32) {
 		if v5 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = int32(0)
+			v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+			if v6 != 0 {
+				F_ReleaseBuffer(m, v6)
+				mBase = m.M
+				v8 = m.ExcPending
+				if v8 != 0 {
+					return
+				} else {
+					F_pfree(m, l0)
+					mBase = m.M
+					v10 = m.ExcPending
+					if v10 != 0 {
+						return
+					} else {
+						return
+					}
+				}
+			} else {
+				F_pfree(m, l0)
+				mBase = m.M
+				v10 = m.ExcPending
+				if v10 != 0 {
+					return
+				} else {
+					return
+				}
+			}
+		}
+	} else {
+		v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+		if v6 != 0 {
+			F_ReleaseBuffer(m, v6)
+			mBase = m.M
+			v8 = m.ExcPending
+			if v8 != 0 {
+				return
+			} else {
+				F_pfree(m, l0)
+				mBase = m.M
+				v10 = m.ExcPending
+				if v10 != 0 {
+					return
+				} else {
+					return
+				}
+			}
+		} else {
 			F_pfree(m, l0)
 			mBase = m.M
-			v9 = m.ExcPending
-			if v9 != 0 {
+			v10 = m.ExcPending
+			if v10 != 0 {
 				return
 			} else {
 				return
 			}
 		}
-	} else {
-		F_pfree(m, l0)
-		mBase = m.M
-		v9 = m.ExcPending
-		if v9 != 0 {
-			return
-		} else {
-			return
-		}
 	}
 }
 func F_heapam_index_fetch_reset(m *base.Module, l0 int32) {
-	mBase := m.M
-	_ = mBase
-	var v3 int32
-	_ = v3
-	var v5 int32
-	_ = v5
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v3 != 0 {
-		F_ReleaseBuffer(m, v3)
-		mBase = m.M
-		v5 = m.ExcPending
-		if v5 != 0 {
-			return
-		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = int32(0)
-			return
-		}
-	} else {
-		return
-	}
+	return
 }
 func F_heapam_relation_copy_data(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M

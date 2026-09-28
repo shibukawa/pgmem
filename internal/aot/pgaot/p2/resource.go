@@ -76,7 +76,7 @@ L8:
 	v29 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v29
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v29
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+280))
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+536))
 	if v33 != 0 {
 		goto L17
 	} else {
@@ -173,9 +173,9 @@ func F_resource_priority_cmp(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v11
 	var v19 int32
 	_ = v19
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)+4))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
 	if v6 == v8 {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(v7)+8))

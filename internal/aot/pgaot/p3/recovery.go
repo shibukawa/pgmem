@@ -16,12 +16,14 @@ func F_ResolveRecoveryConflictWithSnapshot(m *base.Module, l0 int32, l1 int32, l
 	_ = v8
 	var v13 int32
 	_ = v13
+	var v16 int32
+	_ = v16
 	var v17 int32
 	_ = v17
-	var v22 int32
-	_ = v22
 	var v23 int32
 	_ = v23
+	var v24 int32
+	_ = v24
 	if l0 == int32(0) {
 		return
 	} else {
@@ -32,23 +34,25 @@ func F_ResolveRecoveryConflictWithSnapshot(m *base.Module, l0 int32, l1 int32, l
 		if v8 != 0 {
 			return
 		} else {
-			F_ResolveRecoveryConflictWithVirtualXIDs(m, v7, int32(10), int32(134217772), int32(1))
+			F_ResolveRecoveryConflictWithVirtualXIDs(m, v7, int32(3), int32(134217772), int32(1))
 			mBase = m.M
 			v13 = m.ExcPending
 			if v13 != 0 {
 				return
 			} else {
-				if l1 == int32(0) {
+				v16 = F_IsLogicalDecodingEnabled(m)
+				mBase = m.M
+				v17 = m.ExcPending
+				if v17 != 0 {
 					return
 				} else {
-					v17 = *(*int32)(unsafe.Add(mBase, _c_F_ResolveRecoveryConflictWithSnapshot[0]))
-					if v17 < int32(2) {
+					if base.B2i32(l1 == int32(0))|base.B2i32(v16 == int32(0)) != 0 {
 						return
 					} else {
-						v22 = F_InvalidateObsoleteReplicationSlots(m, int32(2), int64(0), v6, l0)
+						v23 = F_InvalidateObsoleteReplicationSlots(m, int32(2), int64(0), v6, l0)
 						mBase = m.M
-						v23 = m.ExcPending
-						if v23 != 0 {
+						v24 = m.ExcPending
+						if v24 != 0 {
 							return
 						} else {
 							return

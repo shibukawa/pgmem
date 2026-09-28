@@ -216,7 +216,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(_a_F_readBoolCols_1), int32(697), int32(_a_F_readBoolCols_2))
+	F_errfinish(m, int32(_a_F_readBoolCols_1), int32(694), int32(_a_F_readBoolCols_2))
 	mBase = m.M
 	v83 = m.ExcPending
 	if v83 != 0 {
@@ -241,7 +241,7 @@ L25:
 	}
 L26:
 	;
-	F_errfinish(m, int32(_a_F_readBoolCols_1), int32(697), int32(_a_F_readBoolCols_2))
+	F_errfinish(m, int32(_a_F_readBoolCols_1), int32(694), int32(_a_F_readBoolCols_2))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {

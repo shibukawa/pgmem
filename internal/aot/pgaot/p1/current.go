@@ -16,7 +16,7 @@ func F_GetCurrentTransactionNestLevel(m *base.Module) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)+28))
 	return v3
 }
-func F_current_user(m *base.Module, l0 int32) int32 {
+func F_current_user(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -27,25 +27,25 @@ func F_current_user(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	var v11 int32
-	_ = v11
-	var v12 int32
+	var v12 int64
 	_ = v12
+	var v13 int32
+	_ = v13
 	v3 = int32(0)
 	v5 = *(*int32)(unsafe.Add(mBase, _c_F_current_user[0]))
 	v7 = F_GetUserNameFromId(m, v5, v3)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v11 = F_DirectFunctionCall1Coll(m, int32(500), v3, v7)
+		v12 = F_DirectFunctionCall1Coll(m, int32(534), v3, base.I64_extend_i32_u(v7))
 		mBase = m.M
-		v12 = m.ExcPending
-		if v12 != 0 {
-			return int32(0)
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return int64(0)
 		} else {
-			return v11
+			return v12
 		}
 	}
 }

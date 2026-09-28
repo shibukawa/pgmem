@@ -36,7 +36,7 @@ func F_SetDatabasePath(m *base.Module, l0 int32) {
 		return
 	}
 }
-func F_database_to_xmlschema(m *base.Module, l0 int32) int32 {
+func F_database_to_xmlschema(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -132,7 +132,7 @@ func F_database_to_xmlschema(m *base.Module, l0 int32) int32 {
 	var v90 int32
 	_ = v90
 	v2 = int32(0)
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	v7 = F_pg_detoast_datum_packed(m, v6)
 	mBase = m.M
 	v10 = m.ExcPending
@@ -143,7 +143,7 @@ func F_database_to_xmlschema(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
 	v11 = F_text_to_cstring(m, v7)
@@ -390,7 +390,7 @@ func F_get_database_name(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13897(m, l0, int32(21))
+	v3 = Fn14286(m, l0, int32(21))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
@@ -398,7 +398,7 @@ func F_get_database_name(m *base.Module, l0 int32) int32 {
 		return v3
 	}
 }
-func F_has_database_privilege_name(m *base.Module, l0 int32) int32 {
+func F_has_database_privilege_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -431,46 +431,46 @@ func F_has_database_privilege_name(m *base.Module, l0 int32) int32 {
 	_ = v23
 	var v24 int32
 	_ = v24
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v5 = F_pg_detoast_datum_packed(m, v4)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v10 = F_pg_detoast_datum_packed(m, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = *(*int32)(unsafe.Add(mBase, _c_F_has_database_privilege_name[0]))
 			v15 = F_text_to_cstring(m, v5)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v18 = F_get_database_oid(m, v15, int32(0))
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v21 = F_convert_any_priv_string(m, v10, int32(_a_F_has_database_privilege_name_0))
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v23 = F_object_aclcheck(m, int32(1262), v18, v13, v21)
 						mBase = m.M
 						v24 = m.ExcPending
 						if v24 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return base.B2i32(v23 == int32(0))
+							return base.I64_extend_i32_u(base.B2i32(v23 == int32(0)))
 						}
 					}
 				}
@@ -478,15 +478,15 @@ func F_has_database_privilege_name(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_database_privilege_name_id(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_has_database_privilege_name_id(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13917(m, l0, int32(_a_F_has_database_privilege_name_id_0), int32(1262))
+	v4 = Fn14304(m, l0, int32(_a_F_has_database_privilege_name_id_0), int32(1262))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}

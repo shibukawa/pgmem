@@ -586,7 +586,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(_a_F_sts_parallel_scan_next_3), int32(550), int32(_a_F_sts_parallel_scan_next_4))
+	F_errfinish(m, int32(_a_F_sts_parallel_scan_next_3), int32(549), int32(_a_F_sts_parallel_scan_next_4))
 	mBase = m.M
 	v140 = m.ExcPending
 	if v140 != 0 {
@@ -875,7 +875,7 @@ L76:
 	}
 L77:
 	;
-	F_errfinish(m, int32(_a_F_sts_parallel_scan_next_3), int32(468), int32(_a_F_sts_parallel_scan_next_9))
+	F_errfinish(m, int32(_a_F_sts_parallel_scan_next_3), int32(467), int32(_a_F_sts_parallel_scan_next_9))
 	mBase = m.M
 	v290 = m.ExcPending
 	if v290 != 0 {

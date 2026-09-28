@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_pg_replication_origin_advance(m *base.Module, l0 int32) int32 {
+func F_pg_replication_origin_advance(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -14,75 +14,72 @@ func F_pg_replication_origin_advance(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	var v9 int32
+	var v9 int64
 	_ = v9
-	var v10 int64
-	_ = v10
-	var v12 int32
-	_ = v12
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
 	var v17 int32
 	_ = v17
-	var v18 int32
-	_ = v18
+	var v19 int32
+	_ = v19
 	var v20 int32
 	_ = v20
-	var v21 int32
-	_ = v21
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v30 int32
-	_ = v30
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v5 = F_pg_detoast_datum_packed(m, v4)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v10 = *(*int64)(unsafe.Add(mBase, uint32(v9)))
+		v9 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
 		F_replorigin_check_prerequisites(m)
 		mBase = m.M
-		v12 = m.ExcPending
-		if v12 != 0 {
-			return int32(0)
+		v11 = m.ExcPending
+		if v11 != 0 {
+			return int64(0)
 		} else {
 			F_LockRelationOid(m, int32(_a_F_pg_replication_origin_advance_0), int32(3))
 			mBase = m.M
-			v16 = m.ExcPending
-			if v16 != 0 {
-				return int32(0)
+			v15 = m.ExcPending
+			if v15 != 0 {
+				return int64(0)
 			} else {
-				v17 = F_text_to_cstring(m, v5)
+				v16 = F_text_to_cstring(m, v5)
 				mBase = m.M
-				v18 = m.ExcPending
-				if v18 != 0 {
-					return int32(0)
+				v17 = m.ExcPending
+				if v17 != 0 {
+					return int64(0)
 				} else {
-					v20 = F_replorigin_by_name(m, v17, int32(0))
+					v19 = F_replorigin_by_name(m, v16, int32(0))
 					mBase = m.M
-					v21 = m.ExcPending
-					if v21 != 0 {
-						return int32(0)
+					v20 = m.ExcPending
+					if v20 != 0 {
+						return int64(0)
 					} else {
-						v23 = int32(1)
-						F_replorigin_advance(m, v20, v10, int64(0), v23, v23)
+						v22 = int32(1)
+						F_replorigin_advance(m, v19, v9, int64(0), v22, v22)
 						mBase = m.M
-						v26 = m.ExcPending
-						if v26 != 0 {
-							return int32(0)
+						v25 = m.ExcPending
+						if v25 != 0 {
+							return int64(0)
 						} else {
 							F_UnlockRelationOid(m, int32(_a_F_pg_replication_origin_advance_0), int32(3))
 							mBase = m.M
-							v30 = m.ExcPending
-							if v30 != 0 {
-								return int32(0)
+							v29 = m.ExcPending
+							if v29 != 0 {
+								return int64(0)
 							} else {
-								return int32(0)
+								return int64(0)
 							}
 						}
 					}
@@ -91,7 +88,7 @@ func F_pg_replication_origin_advance(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_pg_replication_origin_oid(m *base.Module, l0 int32) int32 {
+func F_pg_replication_origin_oid(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
@@ -114,38 +111,36 @@ func F_pg_replication_origin_oid(m *base.Module, l0 int32) int32 {
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
 	var v29 int32
 	_ = v29
-	var v33 int32
-	_ = v33
+	var v30 int32
+	_ = v30
 	var v34 int32
 	_ = v34
 	var v35 int32
 	_ = v35
-	var v37 int32
-	_ = v37
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
-	var v43 int32
-	_ = v43
-	var v46 int32
-	_ = v46
-	var v51 int32
-	_ = v51
-	var v54 int32
-	_ = v54
-	var v58 int32
-	_ = v58
-	var v63 int32
-	_ = v63
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
+	var v50 int32
+	_ = v50
+	var v53 int32
+	_ = v53
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
+	var v64 int32
+	_ = v64
 	v7 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_replication_origin_oid[0])))
 	if v7 == int32(1) {
 		v12 = *(*int32)(unsafe.Add(mBase, _c_F_pg_replication_origin_oid[1]))
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+316))
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+308))
 		v15 = base.B2i32(v13 != int32(2))
 		*(*uint8)(unsafe.Add(mBase, _c_F_pg_replication_origin_oid[0])) = uint8(v15)
 		v17 = v15
@@ -153,61 +148,59 @@ func F_pg_replication_origin_oid(m *base.Module, l0 int32) int32 {
 		v17 = int32(0)
 	}
 	if v17 == int32(0) {
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 		v22 = F_text_to_cstring(m, v21)
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v26 = F_cstring_to_text(m, v22)
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
-				v28 = F_SearchSysCache1(m, int32(59), v26)
+				v29 = F_SearchSysCache1(m, int32(59), base.I64_extend_i32_u(v26))
 				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
-					return int32(0)
+				v30 = m.ExcPending
+				if v30 != 0 {
+					return int64(0)
 				} else {
-					if v28 == int32(0) {
+					if v29 == int32(0) {
 						F_pfree(m, v22)
 						mBase = m.M
-						v33 = m.ExcPending
-						if v33 != 0 {
-							return int32(0)
+						v34 = m.ExcPending
+						if v34 != 0 {
+							return int64(0)
 						} else {
-							v43 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v43)
-							v46 = int32(0)
-							return v46
+							v64 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
+							return int64(0)
 						}
 					} else {
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(v28)+16))
-						v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+22)))
-						v37 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v34+v35))))
-						F_ReleaseCatCache(m, v28)
+						v35 = *(*int32)(unsafe.Add(mBase, uint32(v29)+16))
+						v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+22)))
+						v38 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v35+v36))))
+						F_ReleaseCatCache(m, v29)
 						mBase = m.M
-						v39 = m.ExcPending
-						if v39 != 0 {
-							return int32(0)
+						v40 = m.ExcPending
+						if v40 != 0 {
+							return int64(0)
 						} else {
 							F_pfree(m, v22)
 							mBase = m.M
-							v41 = m.ExcPending
-							if v41 != 0 {
-								return int32(0)
+							v42 = m.ExcPending
+							if v42 != 0 {
+								return int64(0)
 							} else {
-								if v37 != 0 {
-									v46 = v37
+								if v38 == int32(0) {
+									v64 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v64)
+									return int64(0)
 								} else {
-									v43 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v43)
-									v46 = int32(0)
+									return base.I64_extend_i32_u(v38)
 								}
-								return v46
 							}
 						}
 					}
@@ -217,27 +210,27 @@ func F_pg_replication_origin_oid(m *base.Module, l0 int32) int32 {
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v51 = m.ExcPending
-		if v51 != 0 {
-			return int32(0)
+		v50 = m.ExcPending
+		if v50 != 0 {
+			return int64(0)
 		} else {
 			F_errcode(m, int32(100663618))
 			mBase = m.M
-			v54 = m.ExcPending
-			if v54 != 0 {
-				return int32(0)
+			v53 = m.ExcPending
+			if v53 != 0 {
+				return int64(0)
 			} else {
 				F_errmsg(m, int32(_a_F_pg_replication_origin_oid_0), int32(0))
 				mBase = m.M
-				v58 = m.ExcPending
-				if v58 != 0 {
-					return int32(0)
+				v57 = m.ExcPending
+				if v57 != 0 {
+					return int64(0)
 				} else {
-					F_errfinish(m, int32(_a_F_pg_replication_origin_oid_1), int32(200), int32(_a_F_pg_replication_origin_oid_2))
+					F_errfinish(m, int32(_a_F_pg_replication_origin_oid_1), int32(217), int32(_a_F_pg_replication_origin_oid_2))
 					mBase = m.M
-					v63 = m.ExcPending
-					if v63 != 0 {
-						return int32(0)
+					v62 = m.ExcPending
+					if v62 != 0 {
+						return int64(0)
 					} else {
 						base.Wasm_trap_unreachable()
 						for {

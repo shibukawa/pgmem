@@ -34,7 +34,7 @@ func F_execute_attr_map_tuple(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v39
 	var v42 int32
 	_ = v42
-	var v46 int32
+	var v46 int64
 	_ = v46
 	var v50 int32
 	_ = v50
@@ -54,7 +54,7 @@ func F_execute_attr_map_tuple(m *base.Module, l0 int32, l1 int32) int32 {
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	F_heap_deform_tuple(m, l0, v12, v13+int32(4), v16+int32(1))
+	F_heap_deform_tuple(m, l0, v12, v13+int32(8), v16+int32(1))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -64,12 +64,12 @@ func F_execute_attr_map_tuple(m *base.Module, l0 int32, l1 int32) int32 {
 		if int32(0) < v23 {
 			v27 = int32(0)
 			for {
-				v35 = int32(2)
+				v35 = int32(3)
 				v38 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 				v39 = int32(1)
 				v42 = int32(*(*int16)(unsafe.Add(mBase, uint32(v38+v27<<(uint(v39)%32)))))
-				v46 = *(*int32)(unsafe.Add(mBase, uint32(v13+v42<<(uint(v35)%32))))
-				*(*int32)(unsafe.Add(mBase, uint32(v10+v27<<(uint(v35)%32)))) = v46
+				v46 = *(*int64)(unsafe.Add(mBase, uint32(v13+v42<<(uint(v35)%32))))
+				*(*int64)(unsafe.Add(mBase, uint32(v10+v27<<(uint(v35)%32)))) = v46
 				v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16+v42))))
 				*(*uint8)(unsafe.Add(mBase, uint32(v27+v9))) = uint8(v50)
 				v53 = v27 + v39

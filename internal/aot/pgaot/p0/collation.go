@@ -10,62 +10,66 @@ func F_CollationGetCollid(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
-	var v13 int32
-	_ = v13
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
 	var v15 int32
 	_ = v15
-	var v18 int32
-	_ = v18
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v31 int32
-	_ = v31
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v24 int64
+	_ = v24
+	var v29 int32
+	_ = v29
 	var v33 int32
 	_ = v33
 	var v37 int32
 	_ = v37
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
-	var v42 int32
+	var v39 int32
+	_ = v39
+	var v42 int64
 	_ = v42
+	var v44 int32
+	_ = v44
 	var v45 int32
 	_ = v45
-	var v46 int32
-	_ = v46
-	var v47 int32
-	_ = v47
 	var v48 int32
 	_ = v48
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
-	var v65 int32
-	_ = v65
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
-	var v80 int32
-	_ = v80
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v75 int32
+	_ = v75
+	var v76 int32
+	_ = v76
+	var v78 int32
+	_ = v78
+	var v83 int32
+	_ = v83
+	var v84 int32
+	_ = v84
+	var v96 int32
+	_ = v96
 	v2 = int32(0)
-	v8 = *(*int32)(unsafe.Add(mBase, _c_F_CollationGetCollid[0]))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+	v10 = *(*int32)(unsafe.Add(mBase, _c_F_CollationGetCollid[0]))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
 	goto L1
 L1:
 	;
 	F_recomputeNamespacePath(m)
 	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	v15 = m.ExcPending
+	if v15 != 0 {
 		goto L2
 	} else {
 		goto L3
@@ -75,41 +79,42 @@ L2:
 	return int32(0)
 L3:
 	;
-	v15 = *(*int32)(unsafe.Add(mBase, _c_F_CollationGetCollid[1]))
-	if v15 == int32(0) {
-		v80 = v2
+	v17 = *(*int32)(unsafe.Add(mBase, _c_F_CollationGetCollid[1]))
+	if v17 == int32(0) {
+		v96 = v2
 		goto L4
 	} else {
 		goto L5
 	}
 L4:
 	;
-	return v80
+	return v96
 L5:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
-	if int32(0) < v18 {
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	if int32(0) < v20 {
 		goto L6
 	} else {
 		goto L7
 	}
 L6:
 	;
-	v26 = v2
+	v24 = base.I64_extend_i32_u(l0)
+	v29 = v2
 	goto L9
 L7:
 	;
 	goto L8
 L8:
 	;
-	v80 = int32(0)
+	v96 = int32(0)
 	goto L4
 L9:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(v15)+12))
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(v27+v26<<(uint(int32(2))%32))))
-	v33 = *(*int32)(unsafe.Add(mBase, _c_F_CollationGetCollid[2]))
-	if v31 == v33 {
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(v33+v29<<(uint(int32(2))%32))))
+	v39 = *(*int32)(unsafe.Add(mBase, _c_F_CollationGetCollid[2]))
+	if v37 == v39 {
 		goto L11
 	} else {
 		goto L12
@@ -119,67 +124,68 @@ L10:
 	goto L8
 L11:
 	;
-	v69 = v26 + int32(1)
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
-	if v69 < v70 {
-		v26 = v69
+	v83 = v29 + int32(1)
+	v84 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	if v83 < v84 {
+		v29 = v83
 		goto L9
 	} else {
 		goto L24
 	}
 L12:
 	;
-	v37 = F_GetSysCacheOid(m, int32(15), l0, v9, v31, int32(0))
+	v42 = base.I64_extend_i32_u(v37)
+	v44 = F_GetSysCacheOid(m, int32(15), v24, base.I64_extend_i32_s(v11), v42, int64(0))
 	mBase = m.M
-	v38 = m.ExcPending
-	if v38 != 0 {
+	v45 = m.ExcPending
+	if v45 != 0 {
 		goto L2
 	} else {
 		goto L13
 	}
 L13:
 	;
-	if v37 != 0 {
-		v80 = v37
+	if v44 != 0 {
+		v96 = v44
 		goto L4
 	} else {
 		goto L14
 	}
 L14:
 	;
-	v41 = F_SearchSysCache3(m, int32(15), l0, int32(-1), v31)
+	v48 = F_SearchSysCache3(m, int32(15), v24, int64(-1), v42)
 	mBase = m.M
-	v42 = m.ExcPending
-	if v42 != 0 {
+	v49 = m.ExcPending
+	if v49 != 0 {
 		goto L2
 	} else {
 		goto L15
 	}
 L15:
 	;
-	if v41 == int32(0) {
+	if v48 == int32(0) {
 		goto L11
 	} else {
 		goto L16
 	}
 L16:
 	;
-	v45 = *(*int32)(unsafe.Add(mBase, uint32(v41)+16))
-	v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45)+22)))
-	v47 = v45 + v46
-	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47)+76)))
-	if v48 != int32(105) {
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v48)+16))
+	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+22)))
+	v54 = v52 + v53
+	v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54)+76)))
+	if v55 != int32(105) {
 		goto L17
 	} else {
 		goto L18
 	}
 L17:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
-	F_ReleaseCatCache(m, v41)
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(v54)))
+	F_ReleaseCatCache(m, v48)
 	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
+	v78 = m.ExcPending
+	if v78 != 0 {
 		goto L2
 	} else {
 		goto L22
@@ -189,17 +195,17 @@ L18:
 	goto L19
 L19:
 	;
-	if base.B2i32(base.Ui32(v9) < base.Ui32(int32(35)))&base.B2i32(int64(1)<<(uint(base.I64_extend_i32_u(v9))%64)&int64(34357509982) != int64(0)) != 0 {
+	if base.B2i32(base.B2i32(v11 == int32(7))|base.B2i32(base.Ui32(int32(34)) < base.Ui32(v11)) == int32(0))&base.B2i32(int64(1)<<(uint(base.I64_extend_i32_u(v11))%64)&int64(34357509982) != int64(0)) != 0 {
 		goto L17
 	} else {
 		goto L20
 	}
 L20:
 	;
-	F_ReleaseCatCache(m, v41)
+	F_ReleaseCatCache(m, v48)
 	mBase = m.M
-	v62 = m.ExcPending
-	if v62 != 0 {
+	v75 = m.ExcPending
+	if v75 != 0 {
 		goto L2
 	} else {
 		goto L21
@@ -209,8 +215,8 @@ L21:
 	goto L11
 L22:
 	;
-	if v63 != 0 {
-		v80 = v63
+	if v76 != 0 {
+		v96 = v76
 		goto L4
 	} else {
 		goto L23
@@ -456,7 +462,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(_a_F_get_collation_actual_version_builtin_4), int32(189), int32(_a_F_get_collation_actual_version_builtin_5))
+	F_errfinish(m, int32(_a_F_get_collation_actual_version_builtin_4), int32(305), int32(_a_F_get_collation_actual_version_builtin_5))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {

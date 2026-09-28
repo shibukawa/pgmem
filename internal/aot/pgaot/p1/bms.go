@@ -56,7 +56,7 @@ func F_bms_add_member(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v15
-				*(*int32)(unsafe.Add(mBase, uint32(v20))) = int32(445)
+				*(*int32)(unsafe.Add(mBase, uint32(v20))) = int32(451)
 				*(*int32)(unsafe.Add(mBase, uint32(v20+v11<<(uint(int32(2))%32))+8)) = int32(1) << (uint(v9) % 32)
 				return v20
 			}
@@ -111,7 +111,7 @@ func F_bms_add_member(m *base.Module, l0 int32, l1 int32) int32 {
 			if v82 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_bms_add_member_1), int32(823), int32(_a_F_bms_add_member_2))
+				F_errfinish(m, int32(_a_F_bms_add_member_1), int32(807), int32(_a_F_bms_add_member_2))
 				mBase = m.M
 				v87 = m.ExcPending
 				if v87 != 0 {
@@ -270,7 +270,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(_a_F_bms_del_member_1), int32(876), int32(_a_F_bms_del_member_2))
+	F_errfinish(m, int32(_a_F_bms_del_member_1), int32(860), int32(_a_F_bms_del_member_2))
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -558,7 +558,7 @@ L2:
 L3:
 	;
 	v9 = l1 + int32(1)
-	v11 = base.I32_div_s(v9, int32(32))
+	v11 = int32(base.Ui32(v9) >> (uint(int32(5)) % 32))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if v12 <= v11 {
 		goto L2
@@ -750,7 +750,7 @@ L16:
 	}
 L17:
 	;
-	F_errfinish(m, int32(_a_F_bms_singleton_member_1), int32(681), int32(_a_F_bms_singleton_member_2))
+	F_errfinish(m, int32(_a_F_bms_singleton_member_1), int32(674), int32(_a_F_bms_singleton_member_2))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -775,7 +775,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(_a_F_bms_singleton_member_1), int32(692), int32(_a_F_bms_singleton_member_2))
+	F_errfinish(m, int32(_a_F_bms_singleton_member_1), int32(685), int32(_a_F_bms_singleton_member_2))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {

@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_OidFunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_OidFunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int64) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -24,7 +24,7 @@ func F_OidFunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	_ = v27
 	var v31 int32
 	_ = v31
-	var v32 int32
+	var v32 int64
 	_ = v32
 	var v33 int32
 	_ = v33
@@ -39,53 +39,53 @@ func F_OidFunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	var v50 int32
 	_ = v50
 	v5 = m.G0
-	v7 = v5 + int32(-64)
+	v7 = v5 - int32(80)
 	m.G0 = v7
-	v10 = v5 + int32(-56)
+	v10 = v7 + int32(12)
 	v12 = *(*int32)(unsafe.Add(mBase, _c_F_OidFunctionCall1Coll[0]))
 	F_fmgr_info_cxt_security(m, l0, v10, v12, int32(0))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v18 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v7)+60)) = uint8(v18)
-		*(*int32)(unsafe.Add(mBase, uint32(v7)+56)) = l2
-		*(*uint8)(unsafe.Add(mBase, uint32(v7)+52)) = uint8(v18)
-		*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = l1
-		*(*int64)(unsafe.Add(mBase, uint32(v7)+40)) = int64(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = v10
+		*(*uint8)(unsafe.Add(mBase, uint32(v7)+72)) = uint8(v18)
+		*(*int64)(unsafe.Add(mBase, uint32(v7)+64)) = l2
+		*(*uint8)(unsafe.Add(mBase, uint32(v7)+56)) = uint8(v18)
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+52)) = l1
+		*(*int64)(unsafe.Add(mBase, uint32(v7)+44)) = int64(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+40)) = v10
 		v27 = int32(1)
-		*(*uint16)(unsafe.Add(mBase, uint32(v7)+54)) = uint16(v27)
-		v31 = *(*int32)(unsafe.Add(mBase, uint32(v7)+8))
-		v32 = m.T0[v31].(func(*base.Module, int32) int32)(m, v5+int32(-28))
+		*(*uint16)(unsafe.Add(mBase, uint32(v7)+58)) = uint16(v27)
+		v31 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
+		v32 = m.T0[v31].(func(*base.Module, int32) int64)(m, v7+int32(40))
 		mBase = m.M
 		v33 = m.ExcPending
 		if v33 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+52)))
+			v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+56)))
 			if v34 == int32(1) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
 				v40 = m.ExcPending
 				if v40 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
-					v41 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
+					v41 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v41
 					F_errmsg_internal(m, int32(_a_F_OidFunctionCall1Coll_0), v7)
 					mBase = m.M
 					v45 = m.ExcPending
 					if v45 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
-						F_errfinish(m, int32(_a_F_OidFunctionCall1Coll_1), int32(1143), int32(_a_F_OidFunctionCall1Coll_2))
+						F_errfinish(m, int32(_a_F_OidFunctionCall1Coll_1), int32(1145), int32(_a_F_OidFunctionCall1Coll_2))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {
@@ -94,29 +94,29 @@ func F_OidFunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					}
 				}
 			} else {
-				m.G0 = v7 - int32(-64)
+				m.G0 = v7 + int32(80)
 				return v32
 			}
 		}
 	}
 }
-func F_oid_dist(m *base.Module, l0 int32) int32 {
+func F_oid_dist(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v8 int32
-	_ = v8
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	if base.Ui32(v4) < base.Ui32(v3) {
-		v8 = v3 - v4
+	var v5 int64
+	_ = v5
+	var v11 int64
+	_ = v11
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	if base.Ui32(base.I32_wrap_i64(v5)) < base.Ui32(base.I32_wrap_i64(v4)) {
+		v11 = v4 - v5
 	} else {
-		v8 = v4 - v3
+		v11 = v5 - v4
 	}
-	return v8
+	return v11 & int64(4294967295)
 }
 func F_readOidCols(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -336,7 +336,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(_a_F_readOidCols_1), int32(693), int32(_a_F_readOidCols_2))
+	F_errfinish(m, int32(_a_F_readOidCols_1), int32(690), int32(_a_F_readOidCols_2))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -361,7 +361,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(_a_F_readOidCols_1), int32(693), int32(_a_F_readOidCols_2))
+	F_errfinish(m, int32(_a_F_readOidCols_1), int32(690), int32(_a_F_readOidCols_2))
 	mBase = m.M
 	v108 = m.ExcPending
 	if v108 != 0 {

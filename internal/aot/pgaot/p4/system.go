@@ -632,11 +632,11 @@ func F_system_samplescangetsamplesize(m *base.Module, l0 int32, l1 int32, l2 int
 		if v13 != int32(7) {
 			v36 = v8
 		} else {
-			v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+24)))
+			v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+32)))
 			if v16 != 0 {
 				v36 = v8
 			} else {
-				v17 = *(*int32)(unsafe.Add(mBase, uint32(v11)+20))
+				v17 = *(*int32)(unsafe.Add(mBase, uint32(v11)+24))
 				v18 = base.F32_reinterpret_i32(v17)
 				v21 = int32(0)
 				if base.B2i32(base.F32_ge(v18, float32(0)) == v21)|base.B2i32(base.F32_le(v18, float32(100)) == v21)|base.B2i32(base.Ui32(int32(2139095040)) < base.Ui32(v17&int32(2147483647))) != 0 {
@@ -646,7 +646,7 @@ func F_system_samplescangetsamplesize(m *base.Module, l0 int32, l1 int32, l2 int
 				}
 			}
 		}
-		v38 = *(*int32)(unsafe.Add(mBase, uint32(l1)+116))
+		v38 = *(*int32)(unsafe.Add(mBase, uint32(l1)+124))
 		v41 = base.F64_promote_f32(base.F32_mul(v36, base.F32_convert_i32_u(v38)))
 		v42 = float64(1e+100)
 		if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v41)&int64(9223372036854775807)))|base.F64_gt(v41, v42) != 0 {
@@ -660,7 +660,7 @@ func F_system_samplescangetsamplesize(m *base.Module, l0 int32, l1 int32, l2 int
 			}
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(l3))) = base.I32_trunc_sat_f64_u(v55)
-		v58 = *(*float64)(unsafe.Add(mBase, uint32(l1)+120))
+		v58 = *(*float64)(unsafe.Add(mBase, uint32(l1)+128))
 		v60 = base.F64_mul(v58, base.F64_promote_f32(v36))
 		v61 = float64(1e+100)
 		if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v60)&int64(9223372036854775807)))|base.F64_gt(v60, v61) != 0 {

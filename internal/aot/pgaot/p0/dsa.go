@@ -30,6 +30,8 @@ func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v47
 	var v51 int32
 	_ = v51
+	var v54 int32
+	_ = v54
 	var v55 int32
 	_ = v55
 	var v60 int32
@@ -62,6 +64,8 @@ func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v90
 	var v94 int32
 	_ = v94
+	var v99 int32
+	_ = v99
 	var v100 int32
 	_ = v100
 	var v105 int32
@@ -184,6 +188,8 @@ func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v293
 	var v297 int32
 	_ = v297
+	var v302 int32
+	_ = v302
 	var v303 int32
 	_ = v303
 	var v308 int32
@@ -264,13 +270,13 @@ func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v13))) = l1
-									F_errdetail(m, int32(_a_F_dsa_allocate_extended_3), v13)
+									v54 = F_errdetail(m, int32(_a_F_dsa_allocate_extended_3), v13)
 									mBase = m.M
 									v55 = m.ExcPending
 									if v55 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(709), int32(_a_F_dsa_allocate_extended_5))
+										F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(724), int32(_a_F_dsa_allocate_extended_5))
 										mBase = m.M
 										v60 = m.ExcPending
 										if v60 != 0 {
@@ -323,7 +329,7 @@ func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 											if v255 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(744), int32(_a_F_dsa_allocate_extended_5))
+												F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(759), int32(_a_F_dsa_allocate_extended_5))
 												mBase = m.M
 												v260 = m.ExcPending
 												if v260 != 0 {
@@ -522,7 +528,7 @@ func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 													if v255 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(744), int32(_a_F_dsa_allocate_extended_5))
+														F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(759), int32(_a_F_dsa_allocate_extended_5))
 														mBase = m.M
 														v260 = m.ExcPending
 														if v260 != 0 {
@@ -729,13 +735,13 @@ func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = l1
-																F_errdetail(m, int32(_a_F_dsa_allocate_extended_3), v13+int32(16))
+																v99 = F_errdetail(m, int32(_a_F_dsa_allocate_extended_3), v13+int32(16))
 																mBase = m.M
 																v100 = m.ExcPending
 																if v100 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(731), int32(_a_F_dsa_allocate_extended_5))
+																	F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(746), int32(_a_F_dsa_allocate_extended_5))
 																	mBase = m.M
 																	v105 = m.ExcPending
 																	if v105 != 0 {
@@ -825,13 +831,13 @@ func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v13)+48)) = l1
-									F_errdetail(m, int32(_a_F_dsa_allocate_extended_3), v13+int32(48))
+									v302 = F_errdetail(m, int32(_a_F_dsa_allocate_extended_3), v13+int32(48))
 									mBase = m.M
 									v303 = m.ExcPending
 									if v303 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(811), int32(_a_F_dsa_allocate_extended_5))
+										F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(826), int32(_a_F_dsa_allocate_extended_5))
 										mBase = m.M
 										v308 = m.ExcPending
 										if v308 != 0 {
@@ -964,7 +970,7 @@ func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 			if v240 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(683), int32(_a_F_dsa_allocate_extended_5))
+				F_errfinish(m, int32(_a_F_dsa_allocate_extended_4), int32(698), int32(_a_F_dsa_allocate_extended_5))
 				mBase = m.M
 				v245 = m.ExcPending
 				if v245 != 0 {
@@ -1084,5 +1090,294 @@ func F_dsa_get_address(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		}
+	}
+}
+func F_dsa_get_total_size_from_handle(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v7 int32
+	_ = v7
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v64 int32
+	_ = v64
+	var v68 int32
+	_ = v68
+	var v73 int32
+	_ = v73
+	var v76 int32
+	_ = v76
+	var v80 int32
+	_ = v80
+	var v85 int32
+	_ = v85
+	v2 = int32(0)
+	v7 = *(*int32)(unsafe.Add(mBase, _c_F_dsa_get_total_size_from_handle[0]))
+	if base.B2i32(v7 == v2)|base.B2i32(v7 == int32(_a_F_dsa_get_total_size_from_handle_0)) == v2 {
+		goto L3
+	} else {
+		goto L4
+	}
+L1:
+	;
+	if v55 != 0 {
+		goto L27
+	} else {
+		goto L28
+	}
+L2:
+	;
+	if v27 != 0 {
+		goto L12
+	} else {
+		goto L13
+	}
+L3:
+	;
+	v16 = v7
+	goto L6
+L4:
+	;
+	goto L5
+L5:
+	;
+	v27 = int32(0)
+	goto L2
+L6:
+	;
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+12))
+	if l0 == v17 {
+		goto L8
+	} else {
+		goto L9
+	}
+L7:
+	;
+	goto L5
+L8:
+	;
+	v27 = v16
+	goto L2
+L9:
+	;
+	goto L10
+L10:
+	;
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
+	if v19 != int32(_a_F_dsa_get_total_size_from_handle_0) {
+		v16 = v19
+		goto L6
+	} else {
+		goto L11
+	}
+L11:
+	;
+	goto L7
+L12:
+	;
+	v28 = int32(0)
+	v30 = *(*int32)(unsafe.Add(mBase, _c_F_dsa_get_total_size_from_handle[0]))
+	if base.B2i32(v30 == v28)|base.B2i32(v30 == int32(_a_F_dsa_get_total_size_from_handle_0)) == v28 {
+		goto L16
+	} else {
+		goto L17
+	}
+L13:
+	;
+	goto L14
+L14:
+	;
+	v51 = F_dsm_attach(m, l0)
+	mBase = m.M
+	v54 = m.ExcPending
+	if v54 != 0 {
+		goto L25
+	} else {
+		goto L26
+	}
+L15:
+	;
+	v55 = v50
+	goto L1
+L16:
+	;
+	v39 = v30
+	goto L19
+L17:
+	;
+	goto L18
+L18:
+	;
+	v50 = int32(0)
+	goto L15
+L19:
+	;
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+12))
+	if l0 == v40 {
+		goto L21
+	} else {
+		goto L22
+	}
+L20:
+	;
+	goto L18
+L21:
+	;
+	v50 = v39
+	goto L15
+L22:
+	;
+	goto L23
+L23:
+	;
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(v39)+4))
+	if v42 != int32(_a_F_dsa_get_total_size_from_handle_0) {
+		v39 = v42
+		goto L19
+	} else {
+		goto L24
+	}
+L24:
+	;
+	goto L20
+L25:
+	;
+	return int32(0)
+L26:
+	;
+	v55 = v51
+	goto L1
+L27:
+	;
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(v55)+24))
+	v58 = v56 + int32(1476)
+	v60 = F_LWLockAcquire(m, v58, int32(1))
+	mBase = m.M
+	v61 = m.ExcPending
+	if v61 != 0 {
+		goto L25
+	} else {
+		goto L30
+	}
+L28:
+	;
+	goto L29
+L29:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v73 = m.ExcPending
+	if v73 != 0 {
+		goto L25
+	} else {
+		goto L36
+	}
+L30:
+	;
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v56)+1448))
+	F_LWLockRelease(m, v58)
+	mBase = m.M
+	v64 = m.ExcPending
+	if v64 != 0 {
+		goto L25
+	} else {
+		goto L31
+	}
+L31:
+	;
+	if v27 == int32(0) {
+		goto L32
+	} else {
+		goto L33
+	}
+L32:
+	;
+	F_dsm_detach(m, v55)
+	mBase = m.M
+	v68 = m.ExcPending
+	if v68 != 0 {
+		goto L25
+	} else {
+		goto L35
+	}
+L33:
+	;
+	goto L34
+L34:
+	;
+	return v62
+L35:
+	;
+	goto L34
+L36:
+	;
+	F_errcode(m, int32(325))
+	mBase = m.M
+	v76 = m.ExcPending
+	if v76 != 0 {
+		goto L25
+	} else {
+		goto L37
+	}
+L37:
+	;
+	F_errmsg(m, int32(_a_F_dsa_get_total_size_from_handle_1), int32(0))
+	mBase = m.M
+	v80 = m.ExcPending
+	if v80 != 0 {
+		goto L25
+	} else {
+		goto L38
+	}
+L38:
+	;
+	F_errfinish(m, int32(_a_F_dsa_get_total_size_from_handle_2), int32(1074), int32(_a_F_dsa_get_total_size_from_handle_3))
+	mBase = m.M
+	v85 = m.ExcPending
+	if v85 != 0 {
+		goto L25
+	} else {
+		goto L39
+	}
+L39:
+	;
+	base.Wasm_trap_unreachable()
+	for {
 	}
 }

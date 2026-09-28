@@ -216,7 +216,7 @@ L16:
 	}
 L17:
 	;
-	F_errfinish(m, int32(_a_F_AtEOXact_Files_1), int32(3302), int32(_a_F_AtEOXact_Files_2))
+	F_errfinish(m, int32(_a_F_AtEOXact_Files_1), int32(3287), int32(_a_F_AtEOXact_Files_2))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -276,7 +276,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(_a_F_AtEOXact_Files_1), int32(3314), int32(_a_F_AtEOXact_Files_2))
+	F_errfinish(m, int32(_a_F_AtEOXact_Files_1), int32(3299), int32(_a_F_AtEOXact_Files_2))
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -430,7 +430,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(_a_F_AtEOXact_HashTables_1), int32(1933), int32(_a_F_AtEOXact_HashTables_2))
+	F_errfinish(m, int32(_a_F_AtEOXact_HashTables_1), int32(1886), int32(_a_F_AtEOXact_HashTables_2))
 	mBase = m.M
 	v31 = m.ExcPending
 	if v31 != 0 {
@@ -609,7 +609,7 @@ L15:
 	v48 = *(*int32)(unsafe.Add(mBase, uint32(v36)+12))
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(v48+v44<<(uint(int32(2))%32))))
 	v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+20))
-	F_SetLatch(m, v53+int32(20))
+	F_SetLatch(m, v53+int32(316))
 	mBase = m.M
 	goto L17
 L16:
@@ -632,6 +632,67 @@ L19:
 	;
 	goto L10
 L20:
+	;
+	goto L1
+}
+func F_AtEOXact_RI(m *base.Module) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	goto L1
+L1:
+	;
+	v4 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RI[0]))
+	if v4 != 0 {
+		goto L3
+	} else {
+		goto L4
+	}
+L2:
+	;
+	return
+L3:
+	;
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(v4)+2244))
+	*(*int32)(unsafe.Add(mBase, _c_F_AtEOXact_RI[0])) = v6
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v4)+2240))
+	F_MemoryContextDelete(m, v8)
+	mBase = m.M
+	v10 = m.ExcPending
+	if v10 != 0 {
+		goto L6
+	} else {
+		goto L7
+	}
+L4:
+	;
+	goto L5
+L5:
+	;
+	goto L2
+L6:
+	;
+	return
+L7:
+	;
+	F_pfree(m, v4)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		goto L6
+	} else {
+		goto L8
+	}
+L8:
 	;
 	goto L1
 }

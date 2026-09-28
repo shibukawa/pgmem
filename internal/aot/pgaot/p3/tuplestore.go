@@ -628,14 +628,14 @@ func F_tuplestore_puttuple_common(m *base.Module, l0 int32, l1 int32) {
 	_ = v243
 	var v244 int32
 	_ = v244
-	var v246 int64
-	_ = v246
-	var v250 int32
-	_ = v250
+	var v245 int64
+	_ = v245
+	var v249 int32
+	_ = v249
+	var v252 int32
+	_ = v252
 	var v253 int32
 	_ = v253
-	var v254 int32
-	_ = v254
 	var v256 int32
 	_ = v256
 	var v257 int32
@@ -760,10 +760,14 @@ func F_tuplestore_puttuple_common(m *base.Module, l0 int32, l1 int32) {
 	_ = v415
 	var v417 int32
 	_ = v417
-	var v440 int32
-	_ = v440
-	var v442 int32
-	_ = v442
+	var v418 int32
+	_ = v418
+	var v419 int32
+	_ = v419
+	var v444 int32
+	_ = v444
+	var v446 int32
+	_ = v446
 	v3 = int32(0)
 	v10 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = v10 + int64(1)
@@ -780,11 +784,11 @@ func F_tuplestore_puttuple_common(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	v440 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-	m.T0[v440].(func(*base.Module, int32, int32))(m, l0, l1)
+	v444 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	m.T0[v444].(func(*base.Module, int32, int32))(m, l0, l1)
 	mBase = m.M
-	v442 = m.ExcPending
-	if v442 != 0 {
+	v446 = m.ExcPending
+	if v446 != 0 {
 		goto L48
 	} else {
 		goto L113
@@ -1067,8 +1071,8 @@ L41:
 	v108 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	v113 = *(*int32)(unsafe.Add(mBase, uint32(v108)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v94+int32(12)))) = v113
-	v115 = *(*int64)(unsafe.Add(mBase, uint32(v108)+32))
-	v116 = int64(*(*int32)(unsafe.Add(mBase, uint32(v108)+40)))
+	v115 = *(*int64)(unsafe.Add(mBase, uint32(v108)+40))
+	v116 = *(*int64)(unsafe.Add(mBase, uint32(v108)+32))
 	*(*int64)(unsafe.Add(mBase, uint32(v94+int32(16)))) = v115 + v116
 	goto L42
 L42:
@@ -1084,8 +1088,8 @@ L44:
 	v143 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	v148 = *(*int32)(unsafe.Add(mBase, uint32(v143)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v139+int32(12)))) = v148
-	v150 = *(*int64)(unsafe.Add(mBase, uint32(v143)+32))
-	v151 = int64(*(*int32)(unsafe.Add(mBase, uint32(v143)+40)))
+	v150 = *(*int64)(unsafe.Add(mBase, uint32(v143)+40))
+	v151 = *(*int64)(unsafe.Add(mBase, uint32(v143)+32))
 	*(*int64)(unsafe.Add(mBase, uint32(v139+int32(16)))) = v150 + v151
 	goto L47
 L45:
@@ -1197,7 +1201,7 @@ L60:
 	}
 L61:
 	;
-	F_errfinish(m, int32(_a_F_tuplestore_puttuple_common_1), int32(941), int32(_a_F_tuplestore_puttuple_common_2))
+	F_errfinish(m, int32(_a_F_tuplestore_puttuple_common_1), int32(942), int32(_a_F_tuplestore_puttuple_common_2))
 	mBase = m.M
 	v214 = m.ExcPending
 	if v214 != 0 {
@@ -1232,7 +1236,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(_a_F_tuplestore_puttuple_common_1), int32(921), int32(_a_F_tuplestore_puttuple_common_2))
+	F_errfinish(m, int32(_a_F_tuplestore_puttuple_common_1), int32(922), int32(_a_F_tuplestore_puttuple_common_2))
 	mBase = m.M
 	v229 = m.ExcPending
 	if v229 != 0 {
@@ -1258,22 +1262,22 @@ L67:
 	}
 L68:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v235
-	v246 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v246 + base.I64_extend_i32_u(v243)
-	v250 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
-	v253 = F_repalloc_huge(m, v250, v235<<(uint(int32(2))%32))
+	v245 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v245 + base.I64_extend_i32_u(v243)
+	v249 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
+	v252 = F_repalloc_huge(m, v249, v235<<(uint(int32(2))%32))
 	mBase = m.M
-	v254 = m.ExcPending
-	if v254 != 0 {
+	v253 = m.ExcPending
+	if v253 != 0 {
 		goto L48
 	} else {
 		goto L69
 	}
 L69:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+72)) = v253
-	v256 = F_GetMemoryChunkSpace(m, v253)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+84)) = v235
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+72)) = v252
+	v256 = F_GetMemoryChunkSpace(m, v252)
 	mBase = m.M
 	v257 = m.ExcPending
 	if v257 != 0 {
@@ -1321,7 +1325,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(_a_F_tuplestore_puttuple_common_1), int32(716), int32(_a_F_tuplestore_puttuple_common_5))
+	F_errfinish(m, int32(_a_F_tuplestore_puttuple_common_1), int32(717), int32(_a_F_tuplestore_puttuple_common_5))
 	mBase = m.M
 	v277 = m.ExcPending
 	if v277 != 0 {
@@ -1540,8 +1544,8 @@ L106:
 	v381 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	v386 = *(*int32)(unsafe.Add(mBase, uint32(v381)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v371+int32(12)))) = v386
-	v388 = *(*int64)(unsafe.Add(mBase, uint32(v381)+32))
-	v389 = int64(*(*int32)(unsafe.Add(mBase, uint32(v381)+40)))
+	v388 = *(*int64)(unsafe.Add(mBase, uint32(v381)+40))
+	v389 = *(*int64)(unsafe.Add(mBase, uint32(v381)+32))
 	*(*int64)(unsafe.Add(mBase, uint32(v371+int32(16)))) = v388 + v389
 	goto L107
 L107:
@@ -1573,7 +1577,10 @@ L111:
 	goto L98
 L112:
 	;
-	v356 = v356 + int32(1)
+	v418 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
+	v419 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v418 + v419
+	v356 = v356 + v419
 	goto L97
 L113:
 	;

@@ -5,20 +5,20 @@ import (
 	"unsafe"
 )
 
-func F_has_language_privilege_id(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_has_language_privilege_id(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13915(m, l0, int32(_a_F_has_language_privilege_id_0), int32(2612))
+	v4 = Fn14302(m, l0, int32(_a_F_has_language_privilege_id_0), int32(2612))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}
 }
-func F_has_language_privilege_name(m *base.Module, l0 int32) int32 {
+func F_has_language_privilege_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -51,46 +51,46 @@ func F_has_language_privilege_name(m *base.Module, l0 int32) int32 {
 	_ = v23
 	var v24 int32
 	_ = v24
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v5 = F_pg_detoast_datum_packed(m, v4)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v10 = F_pg_detoast_datum_packed(m, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = *(*int32)(unsafe.Add(mBase, _c_F_has_language_privilege_name[0]))
 			v15 = F_text_to_cstring(m, v5)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v18 = F_get_language_oid(m, v15, int32(0))
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v21 = F_convert_any_priv_string(m, v10, int32(_a_F_has_language_privilege_name_0))
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v23 = F_object_aclcheck(m, int32(2612), v18, v13, v21)
 						mBase = m.M
 						v24 = m.ExcPending
 						if v24 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return base.B2i32(v23 == int32(0))
+							return base.I64_extend_i32_u(base.B2i32(v23 == int32(0)))
 						}
 					}
 				}
@@ -98,7 +98,7 @@ func F_has_language_privilege_name(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_language_privilege_name_name(m *base.Module, l0 int32) int32 {
+func F_has_language_privilege_name_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -135,52 +135,52 @@ func F_has_language_privilege_name_name(m *base.Module, l0 int32) int32 {
 	_ = v24
 	var v25 int32
 	_ = v25
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v11 = F_pg_detoast_datum_packed(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = F_get_role_oid_or_public(m, v4)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v16 = F_text_to_cstring(m, v6)
 				mBase = m.M
 				v17 = m.ExcPending
 				if v17 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v19 = F_get_language_oid(m, v16, int32(0))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v22 = F_convert_any_priv_string(m, v11, int32(_a_F_has_language_privilege_name_name_0))
 						mBase = m.M
 						v23 = m.ExcPending
 						if v23 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v24 = F_object_aclcheck(m, int32(2612), v19, v13, v22)
 							mBase = m.M
 							v25 = m.ExcPending
 							if v25 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								return base.B2i32(v24 == int32(0))
+								return base.I64_extend_i32_u(base.B2i32(v24 == int32(0)))
 							}
 						}
 					}

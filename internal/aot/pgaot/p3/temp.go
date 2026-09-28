@@ -593,8 +593,8 @@ L55:
 L56:
 	;
 	v179 = *(*int32)(unsafe.Add(mBase, uint32(v176)))
-	v182 = v179 + v164*int32(640)
-	v184 = *(*int32)(unsafe.Add(mBase, uint32(v182)+44))
+	v182 = v179 + v164*int32(768)
+	v184 = *(*int32)(unsafe.Add(mBase, uint32(v182)+12))
 	if v184 != 0 {
 		goto L57
 	} else {
@@ -614,7 +614,7 @@ L59:
 	goto L54
 L60:
 	;
-	v191 = *(*int32)(unsafe.Add(mBase, uint32(v188)+60))
+	v191 = *(*int32)(unsafe.Add(mBase, uint32(v188)+20))
 	v193 = *(*int32)(unsafe.Add(mBase, _c_F_checkTempNamespaceStatus[1]))
 	if v191 != v193 {
 		v202 = v169
@@ -624,7 +624,7 @@ L60:
 	}
 L61:
 	;
-	v197 = *(*int32)(unsafe.Add(mBase, uint32(v188)+68))
+	v197 = *(*int32)(unsafe.Add(mBase, uint32(v188)+28))
 	if v197 == l0 {
 		goto L62
 	} else {

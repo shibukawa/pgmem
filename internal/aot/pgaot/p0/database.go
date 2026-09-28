@@ -43,15 +43,15 @@ func F_UnlockDatabaseObject(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		return
 	}
 }
-func F_has_database_privilege_id(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_has_database_privilege_id(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13915(m, l0, int32(_a_F_has_database_privilege_id_0), int32(1262))
+	v4 = Fn14302(m, l0, int32(_a_F_has_database_privilege_id_0), int32(1262))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}

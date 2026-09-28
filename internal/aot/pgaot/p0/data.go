@@ -1160,6 +1160,8 @@ func F_dataBeginPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v1275
 	var v1277 int32
 	_ = v1277
+	var v1278 int32
+	_ = v1278
 	var v1283 int32
 	_ = v1283
 	var v1284 int32
@@ -1178,6 +1180,8 @@ func F_dataBeginPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v1313
 	var v1315 int32
 	_ = v1315
+	var v1316 int32
+	_ = v1316
 	var v1321 int32
 	_ = v1321
 	var v1322 int32
@@ -1332,6 +1336,8 @@ func F_dataBeginPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v1624
 	var v1626 int32
 	_ = v1626
+	var v1627 int32
+	_ = v1627
 	var v1632 int32
 	_ = v1632
 	var v1633 int32
@@ -1350,6 +1356,8 @@ func F_dataBeginPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v1660
 	var v1662 int32
 	_ = v1662
+	var v1663 int32
+	_ = v1663
 	var v1668 int32
 	_ = v1668
 	var v1669 int32
@@ -3101,7 +3109,7 @@ L234:
 L235:
 	;
 	v1269 = *(*int32)(unsafe.Add(mBase, _c_F_dataBeginPlaceToPage[6]))
-	v1275 = *(*int32)(unsafe.Add(mBase, uint32(v1269+(l1^int32(-1))<<(uint(int32(6))%32))+16))
+	v1275 = *(*int32)(unsafe.Add(mBase, uint32(v1269+(l1^int32(-1))*int32(56))+16))
 	v1284 = v1275
 	goto L234
 L236:
@@ -3110,7 +3118,8 @@ L236:
 L237:
 	;
 	v1277 = *(*int32)(unsafe.Add(mBase, _c_F_dataBeginPlaceToPage[7]))
-	v1283 = *(*int32)(unsafe.Add(mBase, uint32(v1277+l1<<(uint(int32(6))%32)+int32(-64))+16))
+	v1278 = int32(56)
+	v1283 = *(*int32)(unsafe.Add(mBase, uint32(v1277+l1*v1278-v1278)+16))
 	v1284 = v1283
 	goto L234
 L238:
@@ -3153,7 +3162,7 @@ L242:
 L243:
 	;
 	v1307 = *(*int32)(unsafe.Add(mBase, _c_F_dataBeginPlaceToPage[6]))
-	v1313 = *(*int32)(unsafe.Add(mBase, uint32(v1307+(l1^int32(-1))<<(uint(int32(6))%32))+16))
+	v1313 = *(*int32)(unsafe.Add(mBase, uint32(v1307+(l1^int32(-1))*int32(56))+16))
 	v1322 = v1313
 	goto L242
 L244:
@@ -3162,7 +3171,8 @@ L244:
 L245:
 	;
 	v1315 = *(*int32)(unsafe.Add(mBase, _c_F_dataBeginPlaceToPage[7]))
-	v1321 = *(*int32)(unsafe.Add(mBase, uint32(v1315+l1<<(uint(int32(6))%32)+int32(-64))+16))
+	v1316 = int32(56)
+	v1321 = *(*int32)(unsafe.Add(mBase, uint32(v1315+l1*v1316-v1316)+16))
 	v1322 = v1321
 	goto L242
 L246:
@@ -3522,7 +3532,7 @@ L293:
 L294:
 	;
 	v1618 = *(*int32)(unsafe.Add(mBase, _c_F_dataBeginPlaceToPage[6]))
-	v1624 = *(*int32)(unsafe.Add(mBase, uint32(v1618+(l1^int32(-1))<<(uint(int32(6))%32))+16))
+	v1624 = *(*int32)(unsafe.Add(mBase, uint32(v1618+(l1^int32(-1))*int32(56))+16))
 	v1633 = v1624
 	goto L293
 L295:
@@ -3531,7 +3541,8 @@ L295:
 L296:
 	;
 	v1626 = *(*int32)(unsafe.Add(mBase, _c_F_dataBeginPlaceToPage[7]))
-	v1632 = *(*int32)(unsafe.Add(mBase, uint32(v1626+l1<<(uint(int32(6))%32)+int32(-64))+16))
+	v1627 = int32(56)
+	v1632 = *(*int32)(unsafe.Add(mBase, uint32(v1626+l1*v1627-v1627)+16))
 	v1633 = v1632
 	goto L293
 L297:
@@ -3574,7 +3585,7 @@ L301:
 L302:
 	;
 	v1654 = *(*int32)(unsafe.Add(mBase, _c_F_dataBeginPlaceToPage[6]))
-	v1660 = *(*int32)(unsafe.Add(mBase, uint32(v1654+(l1^int32(-1))<<(uint(int32(6))%32))+16))
+	v1660 = *(*int32)(unsafe.Add(mBase, uint32(v1654+(l1^int32(-1))*int32(56))+16))
 	v1669 = v1660
 	goto L301
 L303:
@@ -3583,7 +3594,8 @@ L303:
 L304:
 	;
 	v1662 = *(*int32)(unsafe.Add(mBase, _c_F_dataBeginPlaceToPage[7]))
-	v1668 = *(*int32)(unsafe.Add(mBase, uint32(v1662+l1<<(uint(int32(6))%32)+int32(-64))+16))
+	v1663 = int32(56)
+	v1668 = *(*int32)(unsafe.Add(mBase, uint32(v1662+l1*v1663-v1663)+16))
 	v1669 = v1668
 	goto L301
 L305:
@@ -3658,7 +3670,7 @@ func F_data_sync_elevel(m *base.Module) int32 {
 	if v4 != 0 {
 		v5 = int32(21)
 	} else {
-		v5 = int32(23)
+		v5 = int32(24)
 	}
 	return v5
 }
@@ -3667,7 +3679,7 @@ func F_show_data_directory_mode(m *base.Module) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13994(m, int32(_a_F_show_data_directory_mode_0), int32(_a_F_show_data_directory_mode_1))
+	v3 = Fn14375(m, int32(_a_F_show_data_directory_mode_0), int32(_a_F_show_data_directory_mode_1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

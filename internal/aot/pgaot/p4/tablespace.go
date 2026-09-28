@@ -117,7 +117,7 @@ func F_sendTablespace(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 						if v45 != 0 {
 							return int64(0)
 						} else {
-							F_errfinish(m, int32(_a_F_sendTablespace_3), int32(1160), int32(_a_F_sendTablespace_4))
+							F_errfinish(m, int32(_a_F_sendTablespace_3), int32(1159), int32(_a_F_sendTablespace_4))
 							mBase = m.M
 							v50 = m.ExcPending
 							if v50 != 0 {
@@ -154,7 +154,7 @@ func F_sendTablespace(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 		}
 	}
 }
-func F_tablespace_reloptions(m *base.Module, l0 int32, l1 int32) int32 {
+func F_tablespace_reloptions(m *base.Module, l0 int64, l1 int32) int32 {
 	var v7 int32
 	_ = v7
 	var v10 int32

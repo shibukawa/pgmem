@@ -14,7 +14,7 @@ func F_makeParamList(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v11 int64
 	_ = v11
-	v7 = F_palloc(m, l0*int32(12)+int32(32))
+	v7 = F_palloc(m, l0<<(uint(int32(4))%32)+int32(32))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -25,7 +25,7 @@ func F_makeParamList(m *base.Module, l0 int32) int32 {
 		*(*int64)(unsafe.Add(mBase, uint32(v7))) = v11
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = l0
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(815)
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(862)
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v7
 		return v7
 	}

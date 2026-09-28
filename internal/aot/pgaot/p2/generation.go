@@ -73,7 +73,7 @@ func F_build_generation_expression(m *base.Module, l0 int32, l1 int32) int32 {
 		return int32(0)
 	} else {
 		if v13 != 0 {
-			v23 = *(*int32)(unsafe.Add(mBase, uint32(v11+v12<<(uint(int32(4))%32)+l1*int32(100))+16))
+			v23 = *(*int32)(unsafe.Add(mBase, uint32(v11+v12<<(uint(int32(3))%32)+l1*int32(100))+24))
 			if v23 == int32(0) {
 				v38 = v13
 				m.G0 = v9 + int32(16)

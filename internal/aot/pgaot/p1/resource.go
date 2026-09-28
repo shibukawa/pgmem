@@ -108,7 +108,7 @@ func F_ResourceOwnerRememberLock(m *base.Module, l0 int32, l1 int32) {
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+18)))
 	if base.Ui32(v4) <= base.Ui32(int32(15)) {
 		if v4 != int32(15) {
-			*(*int32)(unsafe.Add(mBase, uint32(l0+v4<<(uint(int32(2))%32))+292)) = l1
+			*(*int32)(unsafe.Add(mBase, uint32(l0+v4<<(uint(int32(2))%32))+548)) = l1
 		} else {
 		}
 		v14 = v4 + int32(1)

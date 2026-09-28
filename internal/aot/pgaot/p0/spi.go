@@ -287,7 +287,7 @@ func F_SPI_gettypeid(m *base.Module, l0 int32, l1 int32) int32 {
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		if l1 <= v14 {
 			if int32(0) < l1 {
-				v32 = *(*int32)(unsafe.Add(mBase, uint32(l0+v14<<(uint(int32(4))%32)+l1*int32(100)-int32(12))))
+				v32 = *(*int32)(unsafe.Add(mBase, uint32(l0+v14<<(uint(int32(3))%32)+l1*int32(100)-int32(4))))
 				return v32
 			} else {
 				v34 = F_SystemAttributeDefinition(m, l1)
@@ -568,7 +568,7 @@ L15:
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+184)) = v16
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+180)) = v17
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+188)) = v23
-	F_errfinish(m, int32(_a_F__SPI_rollback_1), int32(341), int32(_a_F__SPI_rollback_2))
+	F_errfinish(m, int32(_a_F__SPI_rollback_1), int32(342), int32(_a_F__SPI_rollback_2))
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {
@@ -640,7 +640,7 @@ L23:
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+184)) = v16
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+180)) = v17
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+188)) = v23
-	F_errfinish(m, int32(_a_F__SPI_rollback_1), int32(347), int32(_a_F__SPI_rollback_2))
+	F_errfinish(m, int32(_a_F__SPI_rollback_1), int32(348), int32(_a_F__SPI_rollback_2))
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {

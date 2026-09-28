@@ -213,10 +213,10 @@ func F_dataIsMoveRight(m *base.Module, l0 int32, l1 int32) int32 {
 		if v11&int32(4) != 0 {
 			return int32(1)
 		} else {
-			v16 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+66)))
-			v17 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+64)))
+			v16 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+70)))
+			v17 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+68)))
 			v18 = int64(32)
-			v20 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+62)))
+			v20 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+66)))
 			v21 = int64(48)
 			v25 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l1)+28)))
 			v26 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l1)+26)))
@@ -427,10 +427,10 @@ L17:
 	goto L18
 L18:
 	;
-	v80 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+66)))
-	v81 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+64)))
+	v80 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+70)))
+	v81 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+68)))
 	v82 = int64(32)
-	v84 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+62)))
+	v84 = int64(*(*uint16)(unsafe.Add(mBase, uint32(l0)+66)))
 	v85 = int64(48)
 	v88 = v80 | (v81<<(uint(v82)%64) | v84<<(uint(v85)%64))
 	v91 = v30 + int32(22) + v78*int32(10)

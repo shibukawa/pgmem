@@ -379,7 +379,7 @@ L25:
 	}
 L26:
 	;
-	v96 = v79 + v82<<(uint(int32(4))%32) + v30*int32(100) + int32(24)
+	v96 = v79 + v82<<(uint(int32(3))%32) + v30*int32(100) + int32(32)
 	goto L23
 L27:
 	;
@@ -1440,7 +1440,7 @@ L80:
 	}
 L81:
 	;
-	F_errfinish(m, int32(_a_F_markTargetListOrigins_2), int32(372), int32(_a_F_markTargetListOrigins_3))
+	F_errfinish(m, int32(_a_F_markTargetListOrigins_2), int32(371), int32(_a_F_markTargetListOrigins_3))
 	mBase = m.M
 	v282 = m.ExcPending
 	if v282 != 0 {
@@ -1469,7 +1469,7 @@ L83:
 	}
 L84:
 	;
-	F_errfinish(m, int32(_a_F_markTargetListOrigins_2), int32(418), int32(_a_F_markTargetListOrigins_3))
+	F_errfinish(m, int32(_a_F_markTargetListOrigins_2), int32(417), int32(_a_F_markTargetListOrigins_3))
 	mBase = m.M
 	v300 = m.ExcPending
 	if v300 != 0 {
@@ -1536,7 +1536,7 @@ func F_setTargetTable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	if v12 == int32(0) {
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+84))
 		v17 = F_get_visible_ENR_metadata(m, v16, v15)
 		mBase = m.M
 		if v17 != int32(0) {

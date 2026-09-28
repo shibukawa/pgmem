@@ -5,198 +5,199 @@ import (
 	"unsafe"
 )
 
-func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
+func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v12 int32
-	_ = v12
-	var v13 int32
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v13 int64
 	_ = v13
-	var v14 int32
+	var v14 int64
 	_ = v14
-	var v15 int32
+	var v15 int64
 	_ = v15
-	var v16 int32
+	var v16 int64
 	_ = v16
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
-	var v27 int32
-	_ = v27
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
+	var v17 int64
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
 	var v33 int32
 	_ = v33
-	var v34 int32
-	_ = v34
-	var v40 int32
-	_ = v40
-	var v47 int32
-	_ = v47
-	var v50 int32
-	_ = v50
-	var v54 int32
-	_ = v54
-	var v55 int32
-	_ = v55
-	var v57 int32
-	_ = v57
-	var v59 int32
-	_ = v59
-	var v61 int32
-	_ = v61
-	var v65 int64
+	var v38 int32
+	_ = v38
+	var v39 int64
+	_ = v39
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v56 int32
+	_ = v56
+	var v60 int32
+	_ = v60
+	var v64 int32
+	_ = v64
+	var v65 int32
 	_ = v65
-	var v66 int32
-	_ = v66
 	var v67 int32
 	_ = v67
-	var v68 int32
-	_ = v68
+	var v69 int32
+	_ = v69
 	var v71 int32
 	_ = v71
-	var v74 int32
-	_ = v74
-	var v75 int32
-	_ = v75
-	var v76 int32
+	var v76 int64
 	_ = v76
-	var v77 int32
-	_ = v77
 	var v78 int32
 	_ = v78
+	var v80 int32
+	_ = v80
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
-	var v84 int32
+	var v83 int32
+	_ = v83
+	var v84 int64
 	_ = v84
-	var v92 int32
-	_ = v92
-	var v96 int32
-	_ = v96
-	var v101 int32
-	_ = v101
-	v8 = m.G0
-	v10 = v8 - int32(32)
-	m.G0 = v10
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v20 = F_get_call_result_type(m, l0, int32(0), v10+int32(16))
+	var v85 int32
+	_ = v85
+	var v89 int32
+	_ = v89
+	var v91 int32
+	_ = v91
+	var v99 int32
+	_ = v99
+	var v103 int32
+	_ = v103
+	var v108 int32
+	_ = v108
+	v9 = m.G0
+	v11 = v9 - int32(32)
+	m.G0 = v11
+	v13 = *(*int64)(unsafe.Add(mBase, uint32(l0)+88))
+	v14 = *(*int64)(unsafe.Add(mBase, uint32(l0)+72))
+	v15 = *(*int64)(unsafe.Add(mBase, uint32(l0)+56))
+	v16 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v17 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v21 = F_get_call_result_type(m, l0, int32(0), v11+int32(16))
 	mBase = m.M
-	v23 = m.ExcPending
-	if v23 != 0 {
-		return int32(0)
+	v24 = m.ExcPending
+	if v24 != 0 {
+		return int64(0)
 	} else {
-		if v20 == int32(1) {
+		if v21 == int32(1) {
 			F_CheckSlotPermissions(m)
 			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
+			v28 = m.ExcPending
+			if v28 != 0 {
+				return int64(0)
 			} else {
-				F_CheckLogicalDecodingRequirements(m)
+				F_CheckLogicalDecodingRequirements(m, int32(0))
 				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
-					return int32(0)
+				v31 = m.ExcPending
+				if v31 != 0 {
+					return int64(0)
 				} else {
-					v30 = int32(1)
-					if v14 != 0 {
-						v33 = int32(2)
+					v33 = int32(1)
+					if v15 == int64(0) {
+						v38 = v33
 					} else {
-						v33 = v30
+						v38 = int32(2)
 					}
-					v34 = int32(0)
-					F_ReplicationSlotCreate(m, v16, v30, v33, base.B2i32(v13 != v34), base.B2i32(v12 != v34), v34)
+					v39 = int64(0)
+					v41 = int32(0)
+					F_ReplicationSlotCreate(m, base.I32_wrap_i64(v17), v33, v38, base.B2i32(v14 != v39), v41, base.B2i32(v13 != v39), v41)
 					mBase = m.M
-					v40 = m.ExcPending
-					if v40 != 0 {
-						return int32(0)
+					v46 = m.ExcPending
+					if v46 != 0 {
+						return int64(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = int32(394)
-						*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = int32(395)
-						*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(396)
-						v47 = int32(0)
-						v50 = v10 + int32(20)
-						v54 = F_CreateInitDecodingContext(m, v15, v47, int64(0), v50, v47, v47, v47)
+						F_EnsureLogicalDecodingEnabled(m)
 						mBase = m.M
-						v55 = m.ExcPending
-						if v55 != 0 {
-							return int32(0)
+						v48 = m.ExcPending
+						if v48 != 0 {
+							return int64(0)
 						} else {
-							F_DecodingContextFindStartpoint(m, v54)
+							*(*int32)(unsafe.Add(mBase, uint32(v11)+28)) = int32(414)
+							*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = int32(415)
+							*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = int32(416)
+							v56 = int32(0)
+							v60 = v11 + int32(20)
+							v64 = F_CreateInitDecodingContext(m, base.I32_wrap_i64(v16), v56, v56, int64(0), v60, v56, v56, v56)
 							mBase = m.M
-							v57 = m.ExcPending
-							if v57 != 0 {
-								return int32(0)
+							v65 = m.ExcPending
+							if v65 != 0 {
+								return int64(0)
 							} else {
-								F_FreeDecodingContext(m, v54)
+								F_DecodingContextFindStartpoint(m, v64)
 								mBase = m.M
-								v59 = m.ExcPending
-								if v59 != 0 {
-									return int32(0)
+								v67 = m.ExcPending
+								if v67 != 0 {
+									return int64(0)
 								} else {
-									v61 = *(*int32)(unsafe.Add(mBase, _c_F_pg_create_logical_replication_slot[0]))
-									*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v61 + int32(24)
-									v65 = *(*int64)(unsafe.Add(mBase, uint32(v61)+120))
-									v66 = F_Int64GetDatum(m, v65)
+									F_FreeDecodingContext(m, v64)
 									mBase = m.M
-									v67 = m.ExcPending
-									if v67 != 0 {
-										return int32(0)
+									v69 = m.ExcPending
+									if v69 != 0 {
+										return int64(0)
 									} else {
-										v68 = int32(0)
-										*(*uint16)(unsafe.Add(mBase, uint32(v10)+20)) = uint16(v68)
-										*(*int32)(unsafe.Add(mBase, uint32(v10)+12)) = v66
-										v71 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-										v74 = F_heap_form_tuple(m, v71, v10+int32(8), v50)
+										v71 = *(*int32)(unsafe.Add(mBase, _c_F_pg_create_logical_replication_slot[0]))
+										*(*int64)(unsafe.Add(mBase, uint32(v11))) = base.I64_extend_i32_u(v71 + int32(24))
+										v76 = *(*int64)(unsafe.Add(mBase, uint32(v71)+120))
+										*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v76
+										v78 = int32(0)
+										*(*uint16)(unsafe.Add(mBase, uint32(v11)+20)) = uint16(v78)
+										v80 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
+										v81 = F_heap_form_tuple(m, v80, v11, v60)
 										mBase = m.M
-										v75 = m.ExcPending
-										if v75 != 0 {
-											return int32(0)
+										v82 = m.ExcPending
+										if v82 != 0 {
+											return int64(0)
 										} else {
-											v76 = *(*int32)(unsafe.Add(mBase, uint32(v74)+16))
-											v77 = F_HeapTupleHeaderGetDatum(m, v76)
+											v83 = *(*int32)(unsafe.Add(mBase, uint32(v81)+16))
+											v84 = F_HeapTupleHeaderGetDatum(m, v83)
 											mBase = m.M
-											v78 = m.ExcPending
-											if v78 != 0 {
-												return int32(0)
+											v85 = m.ExcPending
+											if v85 != 0 {
+												return int64(0)
 											} else {
-												if v14 == int32(0) {
+												if v15 == int64(0) {
 													F_ReplicationSlotPersist(m)
 													mBase = m.M
-													v82 = m.ExcPending
-													if v82 != 0 {
-														return int32(0)
+													v89 = m.ExcPending
+													if v89 != 0 {
+														return int64(0)
 													} else {
 														F_ReplicationSlotRelease(m)
 														mBase = m.M
-														v84 = m.ExcPending
-														if v84 != 0 {
-															return int32(0)
+														v91 = m.ExcPending
+														if v91 != 0 {
+															return int64(0)
 														} else {
-															m.G0 = v10 + int32(32)
-															return v77
+															m.G0 = v11 + int32(32)
+															return v84
 														}
 													}
 												} else {
 													F_ReplicationSlotRelease(m)
 													mBase = m.M
-													v84 = m.ExcPending
-													if v84 != 0 {
-														return int32(0)
+													v91 = m.ExcPending
+													if v91 != 0 {
+														return int64(0)
 													} else {
-														m.G0 = v10 + int32(32)
-														return v77
+														m.G0 = v11 + int32(32)
+														return v84
 													}
 												}
 											}
@@ -211,21 +212,21 @@ func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v92 = m.ExcPending
-			if v92 != 0 {
-				return int32(0)
+			v99 = m.ExcPending
+			if v99 != 0 {
+				return int64(0)
 			} else {
 				F_errmsg_internal(m, int32(_a_F_pg_create_logical_replication_slot_0), int32(0))
 				mBase = m.M
-				v96 = m.ExcPending
-				if v96 != 0 {
-					return int32(0)
+				v103 = m.ExcPending
+				if v103 != 0 {
+					return int64(0)
 				} else {
-					F_errfinish(m, int32(_a_F_pg_create_logical_replication_slot_1), int32(183), int32(_a_F_pg_create_logical_replication_slot_2))
+					F_errfinish(m, int32(_a_F_pg_create_logical_replication_slot_1), int32(212), int32(_a_F_pg_create_logical_replication_slot_2))
 					mBase = m.M
-					v101 = m.ExcPending
-					if v101 != 0 {
-						return int32(0)
+					v108 = m.ExcPending
+					if v108 != 0 {
+						return int64(0)
 					} else {
 						base.Wasm_trap_unreachable()
 						for {

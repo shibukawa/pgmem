@@ -40,28 +40,28 @@ func F_BloomNewBuffer(m *base.Module, l0 int32) int32 {
 	_ = v44
 	var v46 int32
 	_ = v46
-	var v51 int32
-	_ = v51
+	var v50 int32
+	_ = v50
+	var v53 int32
+	_ = v53
 	var v54 int32
 	_ = v54
 	var v55 int32
 	_ = v55
-	var v56 int32
-	_ = v56
-	var v66 int64
-	_ = v66
-	var v68 int32
-	_ = v68
-	var v70 int32
-	_ = v70
-	var v72 int32
-	_ = v72
+	var v65 int64
+	_ = v65
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
 	var v75 int32
 	_ = v75
-	var v76 int32
-	_ = v76
-	var v78 int32
-	_ = v78
+	var v77 int32
+	_ = v77
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
@@ -76,7 +76,7 @@ func F_BloomNewBuffer(m *base.Module, l0 int32) int32 {
 L1:
 	;
 	m.G0 = v7 + int32(32)
-	return v78
+	return v77
 L2:
 	;
 	return int32(0)
@@ -98,16 +98,16 @@ L6:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = int64(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = l0
-	v66 = *(*int64)(unsafe.Add(mBase, uint32(v7)+20))
-	*(*int64)(unsafe.Add(mBase, uint32(v7)+8)) = v66
-	v68 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v68
-	v70 = int32(8)
-	v72 = int32(0)
-	v75 = F_ExtendBufferedRel(m, v7+v70, v72, v72, v70)
+	v65 = *(*int64)(unsafe.Add(mBase, uint32(v7)+20))
+	*(*int64)(unsafe.Add(mBase, uint32(v7)+8)) = v65
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v67
+	v69 = int32(8)
+	v71 = int32(0)
+	v74 = F_ExtendBufferedRel(m, v7+v69, v71, v71, v69)
 	mBase = m.M
-	v76 = m.ExcPending
-	if v76 != 0 {
+	v75 = m.ExcPending
+	if v75 != 0 {
 		goto L2
 	} else {
 		goto L24
@@ -156,8 +156,8 @@ L13:
 	;
 	F_ReleaseBuffer(m, v19)
 	mBase = m.M
-	v54 = m.ExcPending
-	if v54 != 0 {
+	v53 = m.ExcPending
+	if v53 != 0 {
 		goto L2
 	} else {
 		goto L21
@@ -166,7 +166,7 @@ L14:
 	;
 	v41 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v40)+14)))
 	if v41 == int32(0) {
-		v78 = v19
+		v77 = v19
 		goto L1
 	} else {
 		goto L18
@@ -190,17 +190,17 @@ L18:
 	v44 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v40)+16)))
 	v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v40+v44)+2)))
 	if v46&int32(2) != 0 {
-		v78 = v19
+		v77 = v19
 		goto L1
 	} else {
 		goto L19
 	}
 L19:
 	;
-	F_LockBuffer(m, v19, int32(0))
+	F_UnlockBuffer(m, v19)
 	mBase = m.M
-	v51 = m.ExcPending
-	if v51 != 0 {
+	v50 = m.ExcPending
+	if v50 != 0 {
 		goto L2
 	} else {
 		goto L20
@@ -210,18 +210,18 @@ L20:
 	goto L13
 L21:
 	;
-	v55 = F_GetFreeIndexPage(m, l0)
+	v54 = F_GetFreeIndexPage(m, l0)
 	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
+	v55 = m.ExcPending
+	if v55 != 0 {
 		goto L2
 	} else {
 		goto L22
 	}
 L22:
 	;
-	if v55 != int32(-1) {
-		v16 = v55
+	if v54 != int32(-1) {
+		v16 = v54
 		goto L7
 	} else {
 		goto L23
@@ -231,7 +231,7 @@ L23:
 	goto L8
 L24:
 	;
-	v78 = v75
+	v77 = v74
 	goto L1
 }
 func F_bloom_get_procinfo(m *base.Module, l0 int32, l1 int32) int32 {
@@ -239,7 +239,7 @@ func F_bloom_get_procinfo(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = Fn13852(m, l0, l1, int32(_a_F_bloom_get_procinfo_0), int32(739), int32(_a_F_bloom_get_procinfo_1))
+	v6 = Fn14233(m, l0, l1, int32(_a_F_bloom_get_procinfo_0), int32(741), int32(_a_F_bloom_get_procinfo_1))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

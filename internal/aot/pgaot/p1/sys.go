@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_SearchSysCache2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_SearchSysCache2(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -24,7 +24,7 @@ func F_SearchSysCache2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		return v9
 	}
 }
-func F_SearchSysCache4(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+func F_SearchSysCache4(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v10 int32
@@ -43,7 +43,7 @@ func F_SearchSysCache4(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 		return v12
 	}
 }
-func F_SearchSysCacheExists(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+func F_SearchSysCacheExists(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v10 int32
@@ -75,36 +75,36 @@ func F_SearchSysCacheExists(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 		}
 	}
 }
-func F_SearchSysCacheLockedCopy1(m *base.Module, l0 int32, l1 int32) int32 {
-	var v3 int32
-	_ = v3
-	var v6 int32
-	_ = v6
-	var v11 int32
-	_ = v11
+func F_SearchSysCacheLockedCopy1(m *base.Module, l0 int32, l1 int64) int32 {
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
 	var v12 int32
 	_ = v12
-	var v14 int32
-	_ = v14
-	v3 = F_SearchSysCacheLocked1(m, l0, l1)
-	v6 = m.ExcPending
-	if v6 != 0 {
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	v4 = F_SearchSysCacheLocked1(m, l0, l1)
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		if v3 == int32(0) {
+		if v4 == int32(0) {
 			return int32(0)
 		} else {
-			v11 = F_heap_copytuple(m, v3)
-			v12 = m.ExcPending
-			if v12 != 0 {
+			v12 = F_heap_copytuple(m, v4)
+			v13 = m.ExcPending
+			if v13 != 0 {
 				return int32(0)
 			} else {
-				F_ReleaseCatCache(m, v3)
-				v14 = m.ExcPending
-				if v14 != 0 {
+				F_ReleaseCatCache(m, v4)
+				v15 = m.ExcPending
+				if v15 != 0 {
 					return int32(0)
 				} else {
-					return v11
+					return v12
 				}
 			}
 		}

@@ -111,7 +111,7 @@ func F_check_default_tablespace(m *base.Module, l0 int32, l1 int32, l2 int32) in
 										if v46 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_check_default_tablespace_1), int32(1112), int32(_a_F_check_default_tablespace_2))
+											F_errfinish(m, int32(_a_F_check_default_tablespace_1), int32(1138), int32(_a_F_check_default_tablespace_2))
 											mBase = m.M
 											v51 = m.ExcPending
 											if v51 != 0 {
@@ -194,26 +194,26 @@ func F_update_default_partition_oid(m *base.Module, l0 int32, l1 int32) {
 	_ = v12
 	var v13 int32
 	_ = v13
-	var v16 int32
-	_ = v16
 	var v17 int32
 	_ = v17
-	var v23 int32
-	_ = v23
-	var v27 int32
-	_ = v27
-	var v32 int32
-	_ = v32
+	var v18 int32
+	_ = v18
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
 	var v33 int32
 	_ = v33
 	var v34 int32
 	_ = v34
-	var v40 int32
-	_ = v40
-	var v42 int32
-	_ = v42
-	var v45 int32
-	_ = v45
+	var v35 int32
+	_ = v35
+	var v41 int32
+	_ = v41
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
@@ -223,30 +223,30 @@ func F_update_default_partition_oid(m *base.Module, l0 int32, l1 int32) {
 	if v13 != 0 {
 		return
 	} else {
-		v16 = F_SearchSysCacheCopy(m, int32(45), l0, int32(0))
+		v17 = F_SearchSysCacheCopy(m, int32(45), base.I64_extend_i32_u(l0), int64(0))
 		mBase = m.M
-		v17 = m.ExcPending
-		if v17 != 0 {
+		v18 = m.ExcPending
+		if v18 != 0 {
 			return
 		} else {
-			if v16 == int32(0) {
+			if v17 == int32(0) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v23 = m.ExcPending
-				if v23 != 0 {
+				v24 = m.ExcPending
+				if v24 != 0 {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
 					F_errmsg_internal(m, int32(_a_F_update_default_partition_oid_0), v8)
 					mBase = m.M
-					v27 = m.ExcPending
-					if v27 != 0 {
+					v28 = m.ExcPending
+					if v28 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_update_default_partition_oid_1), int32(352), int32(_a_F_update_default_partition_oid_2))
 						mBase = m.M
-						v32 = m.ExcPending
-						if v32 != 0 {
+						v33 = m.ExcPending
+						if v33 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -256,25 +256,25 @@ func F_update_default_partition_oid(m *base.Module, l0 int32, l1 int32) {
 					}
 				}
 			} else {
-				v33 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-				v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v33)+22)))
-				*(*int32)(unsafe.Add(mBase, uint32(v33+v34)+8)) = l1
-				F_CatalogTupleUpdate(m, v12, v16+int32(4), v16)
+				v34 = *(*int32)(unsafe.Add(mBase, uint32(v17)+16))
+				v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+22)))
+				*(*int32)(unsafe.Add(mBase, uint32(v34+v35)+8)) = l1
+				F_CatalogTupleUpdate(m, v12, v17+int32(4), v17)
 				mBase = m.M
-				v40 = m.ExcPending
-				if v40 != 0 {
+				v41 = m.ExcPending
+				if v41 != 0 {
 					return
 				} else {
-					F_pfree(m, v16)
+					F_pfree(m, v17)
 					mBase = m.M
-					v42 = m.ExcPending
-					if v42 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
 						F_relation_close(m, v12, int32(3))
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v46 = m.ExcPending
+						if v46 != 0 {
 							return
 						} else {
 							m.G0 = v8 + int32(16)

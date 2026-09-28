@@ -96,7 +96,7 @@ func F_pq_getmsgbytes(m *base.Module, l0 int32, l1 int32) int32 {
 					if v23 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_pq_getmsgbytes_1), int32(515), int32(_a_F_pq_getmsgbytes_2))
+						F_errfinish(m, int32(_a_F_pq_getmsgbytes_1), int32(514), int32(_a_F_pq_getmsgbytes_2))
 						mBase = m.M
 						v28 = m.ExcPending
 						if v28 != 0 {
@@ -129,7 +129,7 @@ func F_pq_getmsgbytes(m *base.Module, l0 int32, l1 int32) int32 {
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_pq_getmsgbytes_1), int32(515), int32(_a_F_pq_getmsgbytes_2))
+					F_errfinish(m, int32(_a_F_pq_getmsgbytes_1), int32(514), int32(_a_F_pq_getmsgbytes_2))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
@@ -197,7 +197,7 @@ func F_pq_getmsgstring(m *base.Module, l0 int32) int32 {
 				if v24 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_pq_getmsgstring_1), int32(595), int32(_a_F_pq_getmsgstring_2))
+					F_errfinish(m, int32(_a_F_pq_getmsgstring_1), int32(594), int32(_a_F_pq_getmsgstring_2))
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
@@ -272,7 +272,7 @@ func F_pq_getmsgtext(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v44 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_pq_getmsgtext_1), int32(554), int32(_a_F_pq_getmsgtext_2))
+					F_errfinish(m, int32(_a_F_pq_getmsgtext_1), int32(553), int32(_a_F_pq_getmsgtext_2))
 					mBase = m.M
 					v49 = m.ExcPending
 					if v49 != 0 {
@@ -307,7 +307,7 @@ func F_pq_getmsgtext(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v44 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_pq_getmsgtext_1), int32(554), int32(_a_F_pq_getmsgtext_2))
+						F_errfinish(m, int32(_a_F_pq_getmsgtext_1), int32(553), int32(_a_F_pq_getmsgtext_2))
 						mBase = m.M
 						v49 = m.ExcPending
 						if v49 != 0 {
@@ -1428,7 +1428,7 @@ L105:
 	goto L103
 L106:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = int32(23)
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = int32(24)
 	goto L10
 L107:
 	;
@@ -1456,7 +1456,7 @@ L109:
 	}
 L110:
 	;
-	F_errfinish(m, int32(_a_F_pq_parse_errornotice_9), int32(272), int32(_a_F_pq_parse_errornotice_10))
+	F_errfinish(m, int32(_a_F_pq_parse_errornotice_9), int32(284), int32(_a_F_pq_parse_errornotice_10))
 	mBase = m.M
 	v297 = m.ExcPending
 	if v297 != 0 {
@@ -1549,7 +1549,7 @@ L127:
 	}
 L128:
 	;
-	F_errfinish(m, int32(_a_F_pq_parse_errornotice_9), int32(326), int32(_a_F_pq_parse_errornotice_10))
+	F_errfinish(m, int32(_a_F_pq_parse_errornotice_9), int32(338), int32(_a_F_pq_parse_errornotice_10))
 	mBase = m.M
 	v393 = m.ExcPending
 	if v393 != 0 {
@@ -1595,7 +1595,7 @@ L134:
 	}
 L135:
 	;
-	F_errfinish(m, int32(_a_F_pq_parse_errornotice_9), int32(276), int32(_a_F_pq_parse_errornotice_10))
+	F_errfinish(m, int32(_a_F_pq_parse_errornotice_9), int32(288), int32(_a_F_pq_parse_errornotice_10))
 	mBase = m.M
 	v425 = m.ExcPending
 	if v425 != 0 {
@@ -1618,7 +1618,7 @@ func F_pq_redirect_to_shm_mq(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, _c_F_pq_redirect_to_shm_mq[1])) = int32(_a_F_pq_redirect_to_shm_mq_0)
 	*(*int32)(unsafe.Add(mBase, _c_F_pq_redirect_to_shm_mq[2])) = int32(2)
 	*(*int32)(unsafe.Add(mBase, _c_F_pq_redirect_to_shm_mq[3])) = int32(_a_F_pq_redirect_to_shm_mq_1)
-	F_on_dsm_detach(m, l0, int32(808), int32(0))
+	F_on_dsm_detach(m, l0, int32(855), int64(0))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {

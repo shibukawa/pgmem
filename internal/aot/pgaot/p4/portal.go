@@ -148,7 +148,7 @@ L5:
 	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-	if v21 != int32(330) {
+	if v21 != int32(334) {
 		goto L7
 	} else {
 		goto L8
@@ -175,7 +175,7 @@ L8:
 	goto L9
 L9:
 	;
-	v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+26)))
+	v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+30)))
 	if v45 != int32(1) {
 		goto L4
 	} else {
@@ -251,7 +251,7 @@ L19:
 	}
 L20:
 	;
-	v58 = *(*int32)(unsafe.Add(mBase, uint32(v20)+88))
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(v20)+100))
 	v59 = F_UtilityReturnsTuples(m, v58)
 	mBase = m.M
 	v60 = m.ExcPending
@@ -262,7 +262,7 @@ L20:
 	}
 L21:
 	;
-	v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+25)))
+	v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+29)))
 	v129 = v51 << (uint(int32(1)) % 32) & int32(2)
 	goto L2
 L22:
@@ -298,7 +298,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(_a_F_ChoosePortalStrategy_1), int32(270), int32(_a_F_ChoosePortalStrategy_2))
+	F_errfinish(m, int32(_a_F_ChoosePortalStrategy_1), int32(266), int32(_a_F_ChoosePortalStrategy_2))
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -337,7 +337,7 @@ L33:
 	;
 	v97 = *(*int32)(unsafe.Add(mBase, uint32(v84+v86<<(uint(int32(2))%32))))
 	v98 = *(*int32)(unsafe.Add(mBase, uint32(v97)))
-	if v98 != int32(330) {
+	if v98 != int32(334) {
 		goto L37
 	} else {
 		goto L38
@@ -375,7 +375,7 @@ L38:
 	goto L39
 L39:
 	;
-	v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97)+26)))
+	v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97)+30)))
 	if v110 != int32(1) {
 		v120 = v92
 		goto L35
@@ -439,7 +439,7 @@ L46:
 	}
 L47:
 	;
-	v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97)+24)))
+	v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97)+28)))
 	if v116 == int32(0) {
 		v129 = v13
 		goto L2
@@ -478,7 +478,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(_a_F_ChoosePortalStrategy_1), int32(310), int32(_a_F_ChoosePortalStrategy_2))
+	F_errfinish(m, int32(_a_F_ChoosePortalStrategy_1), int32(306), int32(_a_F_ChoosePortalStrategy_2))
 	mBase = m.M
 	v154 = m.ExcPending
 	if v154 != 0 {
@@ -818,7 +818,7 @@ L13:
 	goto L14
 L14:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v48)+88))
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(v48)+100))
 	if v53 == int32(0) {
 		goto L18
 	} else {
@@ -854,7 +854,7 @@ L19:
 	goto L20
 L20:
 	;
-	v98 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48)+26)))
+	v98 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48)+30)))
 	if v98 == int32(1) {
 		goto L44
 	} else {
@@ -885,7 +885,7 @@ L25:
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 	v80 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 	v81 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-	v82 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48)+26)))
+	v82 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48)+30)))
 	if v82 == int32(1) {
 		goto L37
 	} else {

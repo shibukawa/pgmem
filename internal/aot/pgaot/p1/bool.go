@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_bool_anytrue(m *base.Module, l0 int32) int32 {
+func F_bool_anytrue(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -18,26 +18,26 @@ func F_bool_anytrue(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v15 int64
 	_ = v15
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 	if v3 != 0 {
 		v11 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v11)
-		return int32(0)
+		return int64(0)
 	} else {
-		v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 		if v4 == int32(0) {
 			v11 = int32(1)
 			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v11)
-			return int32(0)
+			return int64(0)
 		} else {
 			v7 = *(*int64)(unsafe.Add(mBase, uint32(v4)))
 			if v7 != int64(0) {
 				v15 = *(*int64)(unsafe.Add(mBase, uint32(v4)+8))
-				return base.B2i32(int64(0) < v15)
+				return base.I64_extend_i32_u(base.B2i32(int64(0) < v15))
 			} else {
 				v11 = int32(1)
 				*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v11)
-				return int32(0)
+				return int64(0)
 			}
 		}
 	}
@@ -54,17 +54,17 @@ func F_makeBoolConst(m *base.Module, l0 int32, l1 int32) int32 {
 	var v11 int32
 	_ = v11
 	v2 = l1
-	v5 = F_palloc0(m, int32(32))
+	v5 = F_palloc0(m, int32(40))
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v5)+28)) = int32(-1)
+		*(*int32)(unsafe.Add(mBase, uint32(v5)+36)) = int32(-1)
 		v11 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, uint32(v5)+25)) = uint8(v11)
-		*(*uint8)(unsafe.Add(mBase, uint32(v5)+24)) = uint8(v2)
-		*(*int32)(unsafe.Add(mBase, uint32(v5)+20)) = l0
+		*(*uint8)(unsafe.Add(mBase, uint32(v5)+33)) = uint8(v11)
+		*(*uint8)(unsafe.Add(mBase, uint32(v5)+32)) = uint8(v2)
+		*(*int64)(unsafe.Add(mBase, uint32(v5)+24)) = base.I64_extend_i32_u(l0)
 		*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = v11
 		*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = int64(4294967295)
 		*(*int64)(unsafe.Add(mBase, uint32(v5))) = int64(68719476743)
@@ -76,7 +76,7 @@ func F_makeBoolExpr(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13945(m, l0, l1, l2, int32(21))
+	v5 = Fn14328(m, l0, l1, l2, int32(21))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

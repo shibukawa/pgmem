@@ -37,11 +37,11 @@ func F_sort_item_compare(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v24
 	var v26 int32
 	_ = v26
-	var v27 int32
+	var v27 int64
 	_ = v27
 	var v28 int32
 	_ = v28
-	var v29 int32
+	var v29 int64
 	_ = v29
 	var v30 int32
 	_ = v30
@@ -85,11 +85,11 @@ func F_sort_item_compare(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v24
 		} else {
 			v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-			v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+			v27 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
 			v28 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-			v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)))
+			v29 = *(*int64)(unsafe.Add(mBase, uint32(v28)))
 			v30 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
-			v31 = m.T0[v30].(func(*base.Module, int32, int32, int32) int32)(m, v27, v29, l2)
+			v31 = m.T0[v30].(func(*base.Module, int64, int64, int32) int32)(m, v27, v29, l2)
 			mBase = m.M
 			v34 = m.ExcPending
 			if v34 != 0 {

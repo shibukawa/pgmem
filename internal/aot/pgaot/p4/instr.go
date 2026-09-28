@@ -52,3 +52,21 @@ func F_InstrJitAgg(m *base.Module, l0 int32, l1 int32) {
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = v23 + v24
 	return
 }
+func F_InstrStopTrigger(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int64
+	_ = v6
+	F_InstrStopCommon(m, l0, l0+int32(184))
+	mBase = m.M
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return
+	} else {
+		v6 = *(*int64)(unsafe.Add(mBase, uint32(l0)+360))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+360)) = v6 + int64(1)
+		return
+	}
+}

@@ -5,14 +5,14 @@ import (
 	"unsafe"
 )
 
-func F_seg_cmp(m *base.Module, l0 int32) int32 {
+func F_seg_cmp(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v12 int32
 	_ = v12
 	var v14 int32
 	_ = v14
-	var v16 int32
+	var v16 int64
 	_ = v16
 	var v17 int32
 	_ = v17
@@ -58,7 +58,7 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 	_ = v96
 	var v100 int32
 	_ = v100
-	var v101 int32
+	var v101 int64
 	_ = v101
 	var v112 int32
 	_ = v112
@@ -70,83 +70,83 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 	_ = v119
 	var v124 int32
 	_ = v124
-	var v136 int32
-	_ = v136
+	var v138 int64
+	_ = v138
 	v12 = m.G0
 	v14 = v12 - int32(32)
 	m.G0 = v14
-	v16 = int32(-1)
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v16 = int64(-1)
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v18 = *(*float32)(unsafe.Add(mBase, uint32(v17)))
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v20 = *(*float32)(unsafe.Add(mBase, uint32(v19)))
 	if base.F32_lt(v18, v20) != 0 {
-		v136 = v16
+		v138 = v16
 		m.G0 = v14 + int32(32)
-		return v136
+		return v138
 	} else {
 		if base.F32_gt(v18, v20) != 0 {
-			v136 = int32(1)
+			v138 = int64(1)
 			m.G0 = v14 + int32(32)
-			return v136
+			return v138
 		} else {
 			v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+10)))
 			v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+10)))
 			v25 = base.B2i32(v23 == v24)
 			if v25 == int32(0) {
 				if v23 == int32(45) {
-					v136 = v16
+					v138 = v16
 					m.G0 = v14 + int32(32)
-					return v136
+					return v138
 				} else {
 					if v24 == int32(45) {
-						v136 = int32(1)
+						v138 = int64(1)
 						m.G0 = v14 + int32(32)
-						return v136
+						return v138
 					} else {
 						if v23 == int32(60) {
-							v136 = v16
+							v138 = v16
 							m.G0 = v14 + int32(32)
-							return v136
+							return v138
 						} else {
 							if base.B2i32(v23 == int32(62))|base.B2i32(v24 == int32(60)) != 0 {
-								v136 = int32(1)
+								v138 = int64(1)
 								m.G0 = v14 + int32(32)
-								return v136
+								return v138
 							} else {
 								if v24 == int32(62) {
-									v136 = v16
+									v138 = v16
 									m.G0 = v14 + int32(32)
-									return v136
+									return v138
 								} else {
 									v41 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+8)))
 									v42 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+8)))
 									if v41 < v42 {
-										v136 = v16
+										v138 = v16
 										m.G0 = v14 + int32(32)
-										return v136
+										return v138
 									} else {
 										if v42 < v41 {
-											v136 = int32(1)
+											v138 = int64(1)
 											m.G0 = v14 + int32(32)
-											return v136
+											return v138
 										} else {
 											if v25 == int32(0) {
 												if v23 == int32(126) {
-													v136 = v16
+													v138 = v16
 													m.G0 = v14 + int32(32)
-													return v136
+													return v138
 												} else {
 													if v24 == int32(126) {
-														v136 = int32(1)
+														v138 = int64(1)
 														m.G0 = v14 + int32(32)
-														return v136
+														return v138
 													} else {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
 														v57 = m.ExcPending
 														if v57 != 0 {
-															return int32(0)
+															return int64(0)
 														} else {
 															v58 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+10)))
 															v59 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+10)))
@@ -156,13 +156,13 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 															mBase = m.M
 															v66 = m.ExcPending
 															if v66 != 0 {
-																return int32(0)
+																return int64(0)
 															} else {
-																F_errfinish(m, int32(_a_F_seg_cmp_1), int32(787), int32(_a_F_seg_cmp_2))
+																F_errfinish(m, int32(_a_F_seg_cmp_1), int32(793), int32(_a_F_seg_cmp_2))
 																mBase = m.M
 																v71 = m.ExcPending
 																if v71 != 0 {
-																	return int32(0)
+																	return int64(0)
 																} else {
 																	base.Wasm_trap_unreachable()
 																	for {
@@ -176,72 +176,72 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 												v72 = *(*float32)(unsafe.Add(mBase, uint32(v17)+4))
 												v73 = *(*float32)(unsafe.Add(mBase, uint32(v19)+4))
 												if base.F32_lt(v72, v73) != 0 {
-													v136 = v16
+													v138 = v16
 													m.G0 = v14 + int32(32)
-													return v136
+													return v138
 												} else {
 													if base.F32_gt(v72, v73) != 0 {
-														v136 = int32(1)
+														v138 = int64(1)
 														m.G0 = v14 + int32(32)
-														return v136
+														return v138
 													} else {
 														v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+11)))
 														v77 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+11)))
 														v78 = base.B2i32(v76 == v77)
 														if v78 == int32(0) {
 															if v76 == int32(45) {
-																v136 = int32(1)
+																v138 = int64(1)
 																m.G0 = v14 + int32(32)
-																return v136
+																return v138
 															} else {
 																if base.B2i32(v76 == int32(60))|base.B2i32(v77 == int32(45)) != 0 {
-																	v136 = v16
+																	v138 = v16
 																	m.G0 = v14 + int32(32)
-																	return v136
+																	return v138
 																} else {
 																	if base.B2i32(v76 == int32(62))|base.B2i32(v77 == int32(60)) != 0 {
-																		v136 = int32(1)
+																		v138 = int64(1)
 																		m.G0 = v14 + int32(32)
-																		return v136
+																		return v138
 																	} else {
 																		if v77 == int32(62) {
-																			v136 = v16
+																			v138 = v16
 																			m.G0 = v14 + int32(32)
-																			return v136
+																			return v138
 																		} else {
 																			v95 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+9)))
 																			v96 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+9)))
 																			if v95 < v96 {
-																				v136 = int32(1)
+																				v138 = int64(1)
 																				m.G0 = v14 + int32(32)
-																				return v136
+																				return v138
 																			} else {
 																				v100 = base.B2i32(v96 < v95)
 																				if v96 < v95 {
-																					v101 = int32(-1)
+																					v101 = int64(-1)
 																				} else {
-																					v101 = int32(0)
+																					v101 = int64(0)
 																				}
 																				if v100|v78 != 0 {
-																					v136 = v101
+																					v138 = v101
 																					m.G0 = v14 + int32(32)
-																					return v136
+																					return v138
 																				} else {
 																					if v76 == int32(126) {
-																						v136 = int32(1)
+																						v138 = int64(1)
 																						m.G0 = v14 + int32(32)
-																						return v136
+																						return v138
 																					} else {
 																						if v77 == int32(126) {
-																							v136 = int32(-1)
+																							v138 = int64(-1)
 																							m.G0 = v14 + int32(32)
-																							return v136
+																							return v138
 																						} else {
 																							F_errstart_cold(m, int32(21), int32(0))
 																							mBase = m.M
 																							v112 = m.ExcPending
 																							if v112 != 0 {
-																								return int32(0)
+																								return int64(0)
 																							} else {
 																								v113 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+11)))
 																								v114 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+11)))
@@ -251,13 +251,13 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 																								mBase = m.M
 																								v119 = m.ExcPending
 																								if v119 != 0 {
-																									return int32(0)
+																									return int64(0)
 																								} else {
-																									F_errfinish(m, int32(_a_F_seg_cmp_1), int32(845), int32(_a_F_seg_cmp_2))
+																									F_errfinish(m, int32(_a_F_seg_cmp_1), int32(851), int32(_a_F_seg_cmp_2))
 																									mBase = m.M
 																									v124 = m.ExcPending
 																									if v124 != 0 {
-																										return int32(0)
+																										return int64(0)
 																									} else {
 																										base.Wasm_trap_unreachable()
 																										for {
@@ -277,36 +277,36 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 															v95 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+9)))
 															v96 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+9)))
 															if v95 < v96 {
-																v136 = int32(1)
+																v138 = int64(1)
 																m.G0 = v14 + int32(32)
-																return v136
+																return v138
 															} else {
 																v100 = base.B2i32(v96 < v95)
 																if v96 < v95 {
-																	v101 = int32(-1)
+																	v101 = int64(-1)
 																} else {
-																	v101 = int32(0)
+																	v101 = int64(0)
 																}
 																if v100|v78 != 0 {
-																	v136 = v101
+																	v138 = v101
 																	m.G0 = v14 + int32(32)
-																	return v136
+																	return v138
 																} else {
 																	if v76 == int32(126) {
-																		v136 = int32(1)
+																		v138 = int64(1)
 																		m.G0 = v14 + int32(32)
-																		return v136
+																		return v138
 																	} else {
 																		if v77 == int32(126) {
-																			v136 = int32(-1)
+																			v138 = int64(-1)
 																			m.G0 = v14 + int32(32)
-																			return v136
+																			return v138
 																		} else {
 																			F_errstart_cold(m, int32(21), int32(0))
 																			mBase = m.M
 																			v112 = m.ExcPending
 																			if v112 != 0 {
-																				return int32(0)
+																				return int64(0)
 																			} else {
 																				v113 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+11)))
 																				v114 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+11)))
@@ -316,13 +316,13 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 																				mBase = m.M
 																				v119 = m.ExcPending
 																				if v119 != 0 {
-																					return int32(0)
+																					return int64(0)
 																				} else {
-																					F_errfinish(m, int32(_a_F_seg_cmp_1), int32(845), int32(_a_F_seg_cmp_2))
+																					F_errfinish(m, int32(_a_F_seg_cmp_1), int32(851), int32(_a_F_seg_cmp_2))
 																					mBase = m.M
 																					v124 = m.ExcPending
 																					if v124 != 0 {
-																						return int32(0)
+																						return int64(0)
 																					} else {
 																						base.Wasm_trap_unreachable()
 																						for {
@@ -349,31 +349,31 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 				v41 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+8)))
 				v42 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+8)))
 				if v41 < v42 {
-					v136 = v16
+					v138 = v16
 					m.G0 = v14 + int32(32)
-					return v136
+					return v138
 				} else {
 					if v42 < v41 {
-						v136 = int32(1)
+						v138 = int64(1)
 						m.G0 = v14 + int32(32)
-						return v136
+						return v138
 					} else {
 						if v25 == int32(0) {
 							if v23 == int32(126) {
-								v136 = v16
+								v138 = v16
 								m.G0 = v14 + int32(32)
-								return v136
+								return v138
 							} else {
 								if v24 == int32(126) {
-									v136 = int32(1)
+									v138 = int64(1)
 									m.G0 = v14 + int32(32)
-									return v136
+									return v138
 								} else {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
 									v57 = m.ExcPending
 									if v57 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										v58 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+10)))
 										v59 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+10)))
@@ -383,13 +383,13 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 										mBase = m.M
 										v66 = m.ExcPending
 										if v66 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
-											F_errfinish(m, int32(_a_F_seg_cmp_1), int32(787), int32(_a_F_seg_cmp_2))
+											F_errfinish(m, int32(_a_F_seg_cmp_1), int32(793), int32(_a_F_seg_cmp_2))
 											mBase = m.M
 											v71 = m.ExcPending
 											if v71 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												base.Wasm_trap_unreachable()
 												for {
@@ -403,72 +403,72 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 							v72 = *(*float32)(unsafe.Add(mBase, uint32(v17)+4))
 							v73 = *(*float32)(unsafe.Add(mBase, uint32(v19)+4))
 							if base.F32_lt(v72, v73) != 0 {
-								v136 = v16
+								v138 = v16
 								m.G0 = v14 + int32(32)
-								return v136
+								return v138
 							} else {
 								if base.F32_gt(v72, v73) != 0 {
-									v136 = int32(1)
+									v138 = int64(1)
 									m.G0 = v14 + int32(32)
-									return v136
+									return v138
 								} else {
 									v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+11)))
 									v77 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+11)))
 									v78 = base.B2i32(v76 == v77)
 									if v78 == int32(0) {
 										if v76 == int32(45) {
-											v136 = int32(1)
+											v138 = int64(1)
 											m.G0 = v14 + int32(32)
-											return v136
+											return v138
 										} else {
 											if base.B2i32(v76 == int32(60))|base.B2i32(v77 == int32(45)) != 0 {
-												v136 = v16
+												v138 = v16
 												m.G0 = v14 + int32(32)
-												return v136
+												return v138
 											} else {
 												if base.B2i32(v76 == int32(62))|base.B2i32(v77 == int32(60)) != 0 {
-													v136 = int32(1)
+													v138 = int64(1)
 													m.G0 = v14 + int32(32)
-													return v136
+													return v138
 												} else {
 													if v77 == int32(62) {
-														v136 = v16
+														v138 = v16
 														m.G0 = v14 + int32(32)
-														return v136
+														return v138
 													} else {
 														v95 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+9)))
 														v96 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+9)))
 														if v95 < v96 {
-															v136 = int32(1)
+															v138 = int64(1)
 															m.G0 = v14 + int32(32)
-															return v136
+															return v138
 														} else {
 															v100 = base.B2i32(v96 < v95)
 															if v96 < v95 {
-																v101 = int32(-1)
+																v101 = int64(-1)
 															} else {
-																v101 = int32(0)
+																v101 = int64(0)
 															}
 															if v100|v78 != 0 {
-																v136 = v101
+																v138 = v101
 																m.G0 = v14 + int32(32)
-																return v136
+																return v138
 															} else {
 																if v76 == int32(126) {
-																	v136 = int32(1)
+																	v138 = int64(1)
 																	m.G0 = v14 + int32(32)
-																	return v136
+																	return v138
 																} else {
 																	if v77 == int32(126) {
-																		v136 = int32(-1)
+																		v138 = int64(-1)
 																		m.G0 = v14 + int32(32)
-																		return v136
+																		return v138
 																	} else {
 																		F_errstart_cold(m, int32(21), int32(0))
 																		mBase = m.M
 																		v112 = m.ExcPending
 																		if v112 != 0 {
-																			return int32(0)
+																			return int64(0)
 																		} else {
 																			v113 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+11)))
 																			v114 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+11)))
@@ -478,13 +478,13 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 																			mBase = m.M
 																			v119 = m.ExcPending
 																			if v119 != 0 {
-																				return int32(0)
+																				return int64(0)
 																			} else {
-																				F_errfinish(m, int32(_a_F_seg_cmp_1), int32(845), int32(_a_F_seg_cmp_2))
+																				F_errfinish(m, int32(_a_F_seg_cmp_1), int32(851), int32(_a_F_seg_cmp_2))
 																				mBase = m.M
 																				v124 = m.ExcPending
 																				if v124 != 0 {
-																					return int32(0)
+																					return int64(0)
 																				} else {
 																					base.Wasm_trap_unreachable()
 																					for {
@@ -504,36 +504,36 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 										v95 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+9)))
 										v96 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+9)))
 										if v95 < v96 {
-											v136 = int32(1)
+											v138 = int64(1)
 											m.G0 = v14 + int32(32)
-											return v136
+											return v138
 										} else {
 											v100 = base.B2i32(v96 < v95)
 											if v96 < v95 {
-												v101 = int32(-1)
+												v101 = int64(-1)
 											} else {
-												v101 = int32(0)
+												v101 = int64(0)
 											}
 											if v100|v78 != 0 {
-												v136 = v101
+												v138 = v101
 												m.G0 = v14 + int32(32)
-												return v136
+												return v138
 											} else {
 												if v76 == int32(126) {
-													v136 = int32(1)
+													v138 = int64(1)
 													m.G0 = v14 + int32(32)
-													return v136
+													return v138
 												} else {
 													if v77 == int32(126) {
-														v136 = int32(-1)
+														v138 = int64(-1)
 														m.G0 = v14 + int32(32)
-														return v136
+														return v138
 													} else {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
 														v112 = m.ExcPending
 														if v112 != 0 {
-															return int32(0)
+															return int64(0)
 														} else {
 															v113 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17)+11)))
 															v114 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+11)))
@@ -543,13 +543,13 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 															mBase = m.M
 															v119 = m.ExcPending
 															if v119 != 0 {
-																return int32(0)
+																return int64(0)
 															} else {
-																F_errfinish(m, int32(_a_F_seg_cmp_1), int32(845), int32(_a_F_seg_cmp_2))
+																F_errfinish(m, int32(_a_F_seg_cmp_1), int32(851), int32(_a_F_seg_cmp_2))
 																mBase = m.M
 																v124 = m.ExcPending
 																if v124 != 0 {
-																	return int32(0)
+																	return int64(0)
 																} else {
 																	base.Wasm_trap_unreachable()
 																	for {
@@ -571,29 +571,29 @@ func F_seg_cmp(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_seg_ge(m *base.Module, l0 int32) int32 {
+func F_seg_ge(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F_seg_ge_0), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return int32(base.Ui32(v6^int32(-1)) >> (uint(int32(31)) % 32))
+		return int64(base.Ui64(v6^int64(-1))>>(uint(int64(31))%64)) & int64(1)
 	}
 }
-func F_seg_inter(m *base.Module, l0 int32) int32 {
+func F_seg_inter(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v9 int32
@@ -632,13 +632,13 @@ func F_seg_inter(m *base.Module, l0 int32) int32 {
 	_ = v31
 	var v34 float32
 	_ = v34
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v12 = F_palloc(m, int32(12))
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v16 = *(*float32)(unsafe.Add(mBase, uint32(v9)+4))
 		v17 = *(*float32)(unsafe.Add(mBase, uint32(v10)+4))
@@ -676,7 +676,7 @@ func F_seg_inter(m *base.Module, l0 int32) int32 {
 			v34 = v27
 		}
 		*(*float32)(unsafe.Add(mBase, uint32(v12))) = v34
-		return v12
+		return base.I64_extend_i32_u(v12)
 	}
 }
 func F_seg_yy_create_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

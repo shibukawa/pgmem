@@ -139,30 +139,30 @@ func F_KeepFileRestoredFromArchive(m *base.Module, l0 int32, l1 int32) {
 	_ = v182
 	var v185 int32
 	_ = v185
+	var v188 int32
+	_ = v188
 	var v190 int32
 	_ = v190
+	var v191 int32
+	_ = v191
 	var v192 int32
 	_ = v192
-	var v193 int32
-	_ = v193
 	var v194 int32
 	_ = v194
-	var v196 int32
-	_ = v196
+	var v198 int32
+	_ = v198
 	var v200 int32
 	_ = v200
-	var v202 int32
-	_ = v202
-	var v219 int32
-	_ = v219
+	var v217 int32
+	_ = v217
+	var v224 int32
+	_ = v224
 	var v226 int32
 	_ = v226
-	var v228 int32
-	_ = v228
-	var v234 int32
-	_ = v234
-	var v239 int32
-	_ = v239
+	var v232 int32
+	_ = v232
+	var v237 int32
+	_ = v237
 	v7 = m.G0
 	v9 = v7 - int32(2176)
 	m.G0 = v9
@@ -188,8 +188,8 @@ L3:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v226 = m.ExcPending
-	if v226 != 0 {
+	v224 = m.ExcPending
+	if v224 != 0 {
 		goto L1
 	} else {
 		goto L64
@@ -509,8 +509,8 @@ L49:
 	;
 	F_WalSndWakeup(m, int32(1), int32(0))
 	mBase = m.M
-	v219 = m.ExcPending
-	if v219 != 0 {
+	v217 = m.ExcPending
+	if v217 != 0 {
 		goto L1
 	} else {
 		goto L63
@@ -542,10 +542,10 @@ L54:
 	goto L52
 L55:
 	;
-	F_s_lock(m, v182, int32(_a_F_KeepFileRestoredFromArchive_1), int32(3596), int32(_a_F_KeepFileRestoredFromArchive_2))
+	F_s_lock(m, v182, int32(_a_F_KeepFileRestoredFromArchive_1))
 	mBase = m.M
-	v190 = m.ExcPending
-	if v190 != 0 {
+	v188 = m.ExcPending
+	if v188 != 0 {
 		goto L1
 	} else {
 		goto L58
@@ -555,9 +555,9 @@ L56:
 	goto L57
 L57:
 	;
-	v192 = v180 + int32(88)
-	v193 = *(*int32)(unsafe.Add(mBase, uint32(v192)))
-	if v193 != 0 {
+	v190 = v180 + int32(88)
+	v191 = *(*int32)(unsafe.Add(mBase, uint32(v190)))
+	if v191 != 0 {
 		goto L59
 	} else {
 		goto L60
@@ -567,20 +567,20 @@ L58:
 	goto L57
 L59:
 	;
-	v194 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v192)+16)) = uint8(v194)
+	v192 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v190)+16)) = uint8(v192)
 	goto L61
 L60:
 	;
 	goto L61
 L61:
 	;
-	v196 = int32(0)
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v182))), uint32(v196))
-	v200 = v171 + int32(1)
-	v202 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[1]))
-	if v200 < v202 {
-		v171 = v200
+	v194 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v182))), uint32(v194))
+	v198 = v171 + int32(1)
+	v200 = *(*int32)(unsafe.Add(mBase, _c_F_KeepFileRestoredFromArchive[1]))
+	if v198 < v200 {
+		v171 = v198
 		goto L53
 	} else {
 		goto L62
@@ -596,8 +596,8 @@ L64:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v228 = m.ExcPending
-	if v228 != 0 {
+	v226 = m.ExcPending
+	if v226 != 0 {
 		goto L1
 	} else {
 		goto L65
@@ -605,20 +605,20 @@ L64:
 L65:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(1152)
-	F_errmsg(m, int32(_a_F_KeepFileRestoredFromArchive_3), v9)
+	F_errmsg(m, int32(_a_F_KeepFileRestoredFromArchive_2), v9)
 	mBase = m.M
-	v234 = m.ExcPending
-	if v234 != 0 {
+	v232 = m.ExcPending
+	if v232 != 0 {
 		goto L1
 	} else {
 		goto L66
 	}
 L66:
 	;
-	F_errfinish(m, int32(_a_F_KeepFileRestoredFromArchive_4), int32(400), int32(_a_F_KeepFileRestoredFromArchive_5))
+	F_errfinish(m, int32(_a_F_KeepFileRestoredFromArchive_3), int32(401), int32(_a_F_KeepFileRestoredFromArchive_4))
 	mBase = m.M
-	v239 = m.ExcPending
-	if v239 != 0 {
+	v237 = m.ExcPending
+	if v237 != 0 {
 		goto L1
 	} else {
 		goto L67
@@ -632,361 +632,255 @@ L67:
 func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
 	var v13 int32
 	_ = v13
 	var v14 int32
 	_ = v14
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
 	var v23 int32
 	_ = v23
-	var v25 int32
-	_ = v25
-	var v26 int32
-	_ = v26
-	var v39 int64
-	_ = v39
-	var v45 int32
-	_ = v45
-	var v46 int32
-	_ = v46
-	var v47 int32
+	var v36 int64
+	_ = v36
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v47 int64
 	_ = v47
-	var v50 int64
-	_ = v50
-	var v51 int64
-	_ = v51
-	var v68 int32
-	_ = v68
-	var v72 int32
-	_ = v72
-	var v73 int32
-	_ = v73
+	var v48 int64
+	_ = v48
+	var v65 int32
+	_ = v65
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
 	var v74 int32
 	_ = v74
+	var v75 int32
+	_ = v75
 	var v77 int32
 	_ = v77
-	var v79 int32
-	_ = v79
+	var v78 int32
+	_ = v78
+	var v84 int32
+	_ = v84
 	var v88 int32
 	_ = v88
-	var v90 int32
-	_ = v90
-	var v92 int32
-	_ = v92
+	var v89 int32
+	_ = v89
+	var v95 int32
+	_ = v95
+	var v97 int32
+	_ = v97
+	var v98 int32
+	_ = v98
 	var v100 int32
 	_ = v100
 	var v103 int32
 	_ = v103
+	var v106 int32
+	_ = v106
+	var v107 int32
+	_ = v107
 	var v109 int32
 	_ = v109
-	var v112 int32
-	_ = v112
-	var v116 int32
-	_ = v116
-	var v117 int32
-	_ = v117
-	var v118 int32
-	_ = v118
+	var v111 int32
+	_ = v111
 	var v120 int32
 	_ = v120
-	var v123 int32
-	_ = v123
+	var v125 int32
+	_ = v125
 	var v129 int32
 	_ = v129
-	var v132 int32
-	_ = v132
+	var v134 int32
+	_ = v134
+	var v135 int32
+	_ = v135
 	var v136 int32
 	_ = v136
-	var v137 int32
-	_ = v137
-	var v138 int32
-	_ = v138
-	var v140 int32
+	var v139 int64
+	_ = v139
+	var v140 int64
 	_ = v140
-	var v144 int32
-	_ = v144
-	var v146 int32
-	_ = v146
-	var v156 int32
-	_ = v156
-	var v159 int32
-	_ = v159
-	var v165 int32
-	_ = v165
-	var v168 int32
-	_ = v168
-	var v172 int32
-	_ = v172
-	var v184 int32
-	_ = v184
-	var v189 int32
-	_ = v189
-	var v193 int32
-	_ = v193
-	var v198 int32
-	_ = v198
-	var v199 int32
-	_ = v199
-	var v200 int32
-	_ = v200
-	var v203 int64
-	_ = v203
-	var v204 int64
-	_ = v204
-	v13 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[0]))
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+20))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v13)+16))
-	v16 = v14 - v15
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
-	if v16 == v17 {
+	v10 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[0]))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
+	v13 = v11 - v12
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
+	if v13 == v14 {
 		if l0 == int32(0) {
 			if l1 == int32(0) {
-				v68 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-				v72 = F_LWLockAcquire(m, v68+int32(512), int32(0))
+				v65 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+				v69 = F_LWLockAcquire(m, v65+int32(512), int32(0))
 				mBase = m.M
-				v73 = m.ExcPending
-				if v73 != 0 {
+				v70 = m.ExcPending
+				if v70 != 0 {
 					return
 				} else {
-					v74 = int32(0)
-					if v14 <= v15 {
-						v172 = v74
-					} else {
-						v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-						v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-						if v15+int32(1) != v14 {
-							v88 = v74
-							v90 = v15
-							v92 = int32(0)
-							for {
-								v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-								if v100 == int32(1) {
-									v103 = int32(2)
-									v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-									v112 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-									v116 = v88 + v112
-								} else {
-									v116 = v88
-								}
-								v117 = int32(1)
-								v118 = v90 + v117
-								v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-								if v120 == v117 {
-									v123 = int32(2)
-									v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-									v132 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-									v136 = v116 + v132
-								} else {
-									v136 = v116
-								}
-								v137 = int32(2)
-								v138 = v90 + v137
-								v140 = v92 + v137
-								if v140 != v16&int32(-2) {
-									v88 = v136
-									v90 = v138
-									v92 = v140
-									continue
-								} else {
-									break
-								}
-								break
-							}
-							if v16&int32(1) == int32(0) {
-								v172 = v136
-							} else {
-								v144 = v136
-								v146 = v138
-								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-								if v156 != int32(1) {
-									v172 = v144
-								} else {
-									v159 = int32(2)
-									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-									v168 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-									v172 = v144 + v168
-								}
-							}
-						} else {
-							v144 = v74
-							v146 = v15
-							v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-							if v156 != int32(1) {
-								v172 = v144
-							} else {
-								v159 = int32(2)
-								v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-								*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-								v168 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-								v172 = v144 + v168
-							}
-						}
-					}
-					*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-					v184 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-					if l1 == v184 {
-						v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-						F_LWLockRelease(m, v189+int32(512))
-						mBase = m.M
-						v193 = m.ExcPending
-						if v193 != 0 {
-							return
-						} else {
-							v198 = m.G0
-							v199 = int32(16)
-							v200 = v198 - v199
-							m.G0 = v200
-							F_gettimeofday(m, v200)
-							mBase = m.M
-							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-							return
-						}
-					} else {
-						v198 = m.G0
-						v199 = int32(16)
-						v200 = v198 - v199
-						m.G0 = v200
-						F_gettimeofday(m, v200)
-						mBase = m.M
-						v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-						v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-						m.G0 = v200 + v199
-						*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-						return
-					}
-				}
-			} else {
-				v74 = int32(0)
-				if v14 <= v15 {
-					v172 = v74
-				} else {
-					v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-					v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-					if v15+int32(1) != v14 {
-						v88 = v74
-						v90 = v15
-						v92 = int32(0)
+					v71 = int32(0)
+					if v12 < v11 {
+						v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+						v75 = v71
+						v77 = v74
+						v78 = v12
 						for {
-							v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-							if v100 == int32(1) {
-								v103 = int32(2)
-								v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-								*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-								v112 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-								v116 = v88 + v112
+							v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+							if v84 == int32(1) {
+								v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+								v89 = int32(2)
+								v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+								*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+								v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+								v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v100 = int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+								v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v106 = v75 + v100
+								v107 = v103
 							} else {
-								v116 = v88
+								v106 = v75
+								v107 = v77
 							}
-							v117 = int32(1)
-							v118 = v90 + v117
-							v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-							if v120 == v117 {
-								v123 = int32(2)
-								v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-								*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-								v132 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-								v136 = v116 + v132
-							} else {
-								v136 = v116
-							}
-							v137 = int32(2)
-							v138 = v90 + v137
-							v140 = v92 + v137
-							if v140 != v16&int32(-2) {
-								v88 = v136
-								v90 = v138
-								v92 = v140
+							v109 = v78 + int32(1)
+							if v109 != v11 {
+								v75 = v106
+								v77 = v107
+								v78 = v109
 								continue
 							} else {
 								break
 							}
 							break
 						}
-						if v16&int32(1) == int32(0) {
-							v172 = v136
+						v111 = v106
+					} else {
+						v111 = v71
+					}
+					*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+					v120 = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+					if l1 == v120 {
+						v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+						F_LWLockRelease(m, v125+int32(512))
+						mBase = m.M
+						v129 = m.ExcPending
+						if v129 != 0 {
+							return
 						} else {
-							v144 = v136
-							v146 = v138
-							v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-							if v156 != int32(1) {
-								v172 = v144
-							} else {
-								v159 = int32(2)
-								v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-								*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-								v168 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-								v172 = v144 + v168
-							}
+							v134 = m.G0
+							v135 = int32(16)
+							v136 = v134 - v135
+							m.G0 = v136
+							F_gettimeofday(m, v136)
+							mBase = m.M
+							v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+							v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+							m.G0 = v136 + v135
+							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+							return
 						}
 					} else {
-						v144 = v74
-						v146 = v15
-						v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-						if v156 != int32(1) {
-							v172 = v144
-						} else {
-							v159 = int32(2)
-							v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-							*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-							v168 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-							v172 = v144 + v168
-						}
+						v134 = m.G0
+						v135 = int32(16)
+						v136 = v134 - v135
+						m.G0 = v136
+						F_gettimeofday(m, v136)
+						mBase = m.M
+						v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+						v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+						m.G0 = v136 + v135
+						*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+						return
 					}
 				}
-				*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-				v184 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-				if l1 == v184 {
-					v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-					F_LWLockRelease(m, v189+int32(512))
+			} else {
+				v71 = int32(0)
+				if v12 < v11 {
+					v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+					v75 = v71
+					v77 = v74
+					v78 = v12
+					for {
+						v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+						if v84 == int32(1) {
+							v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+							v89 = int32(2)
+							v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+							*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+							v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+							v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+							v100 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+							v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+							v106 = v75 + v100
+							v107 = v103
+						} else {
+							v106 = v75
+							v107 = v77
+						}
+						v109 = v78 + int32(1)
+						if v109 != v11 {
+							v75 = v106
+							v77 = v107
+							v78 = v109
+							continue
+						} else {
+							break
+						}
+						break
+					}
+					v111 = v106
+				} else {
+					v111 = v71
+				}
+				*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+				v120 = int32(0)
+				*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+				if l1 == v120 {
+					v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+					F_LWLockRelease(m, v125+int32(512))
 					mBase = m.M
-					v193 = m.ExcPending
-					if v193 != 0 {
+					v129 = m.ExcPending
+					if v129 != 0 {
 						return
 					} else {
-						v198 = m.G0
-						v199 = int32(16)
-						v200 = v198 - v199
-						m.G0 = v200
-						F_gettimeofday(m, v200)
+						v134 = m.G0
+						v135 = int32(16)
+						v136 = v134 - v135
+						m.G0 = v136
+						F_gettimeofday(m, v136)
 						mBase = m.M
-						v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-						v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-						m.G0 = v200 + v199
-						*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+						v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+						v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+						m.G0 = v136 + v135
+						*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 						return
 					}
 				} else {
-					v198 = m.G0
-					v199 = int32(16)
-					v200 = v198 - v199
-					m.G0 = v200
-					F_gettimeofday(m, v200)
+					v134 = m.G0
+					v135 = int32(16)
+					v136 = v134 - v135
+					m.G0 = v136
+					F_gettimeofday(m, v136)
 					mBase = m.M
-					v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-					v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-					m.G0 = v200 + v199
-					*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+					v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+					v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+					m.G0 = v136 + v135
+					*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 					return
 				}
 			}
@@ -995,256 +889,172 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 		}
 	} else {
 		if l0 == int32(2) {
-			v23 = int32(_a_F_KnownAssignedXidsCompress_0)
-			v25 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[5]))
-			v26 = int32(1)
-			*(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[5])) = v25 + v26
-			if v16 < v17<<(uint(v26)%32) {
+			v20 = int32(_a_F_KnownAssignedXidsCompress_1)
+			v22 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[5]))
+			v23 = int32(1)
+			*(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[5])) = v22 + v23
+			if v13 < v14<<(uint(v23)%32) {
 				return
 			} else {
-				if v25&int32(127) == int32(0) {
+				if v22&int32(127) == int32(0) {
 					if l1 == int32(0) {
-						v68 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-						v72 = F_LWLockAcquire(m, v68+int32(512), int32(0))
+						v65 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+						v69 = F_LWLockAcquire(m, v65+int32(512), int32(0))
 						mBase = m.M
-						v73 = m.ExcPending
-						if v73 != 0 {
+						v70 = m.ExcPending
+						if v70 != 0 {
 							return
 						} else {
-							v74 = int32(0)
-							if v14 <= v15 {
-								v172 = v74
-							} else {
-								v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-								v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-								if v15+int32(1) != v14 {
-									v88 = v74
-									v90 = v15
-									v92 = int32(0)
-									for {
-										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-										if v100 == int32(1) {
-											v103 = int32(2)
-											v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-											v112 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-											v116 = v88 + v112
-										} else {
-											v116 = v88
-										}
-										v117 = int32(1)
-										v118 = v90 + v117
-										v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-										if v120 == v117 {
-											v123 = int32(2)
-											v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-											v132 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-											v136 = v116 + v132
-										} else {
-											v136 = v116
-										}
-										v137 = int32(2)
-										v138 = v90 + v137
-										v140 = v92 + v137
-										if v140 != v16&int32(-2) {
-											v88 = v136
-											v90 = v138
-											v92 = v140
-											continue
-										} else {
-											break
-										}
-										break
-									}
-									if v16&int32(1) == int32(0) {
-										v172 = v136
-									} else {
-										v144 = v136
-										v146 = v138
-										v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-										if v156 != int32(1) {
-											v172 = v144
-										} else {
-											v159 = int32(2)
-											v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-											v168 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-											v172 = v144 + v168
-										}
-									}
-								} else {
-									v144 = v74
-									v146 = v15
-									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-									if v156 != int32(1) {
-										v172 = v144
-									} else {
-										v159 = int32(2)
-										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-										v168 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-										v172 = v144 + v168
-									}
-								}
-							}
-							*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-							v184 = int32(0)
-							*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-							if l1 == v184 {
-								v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-								F_LWLockRelease(m, v189+int32(512))
-								mBase = m.M
-								v193 = m.ExcPending
-								if v193 != 0 {
-									return
-								} else {
-									v198 = m.G0
-									v199 = int32(16)
-									v200 = v198 - v199
-									m.G0 = v200
-									F_gettimeofday(m, v200)
-									mBase = m.M
-									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-									m.G0 = v200 + v199
-									*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-									return
-								}
-							} else {
-								v198 = m.G0
-								v199 = int32(16)
-								v200 = v198 - v199
-								m.G0 = v200
-								F_gettimeofday(m, v200)
-								mBase = m.M
-								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-								return
-							}
-						}
-					} else {
-						v74 = int32(0)
-						if v14 <= v15 {
-							v172 = v74
-						} else {
-							v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-							v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-							if v15+int32(1) != v14 {
-								v88 = v74
-								v90 = v15
-								v92 = int32(0)
+							v71 = int32(0)
+							if v12 < v11 {
+								v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v75 = v71
+								v77 = v74
+								v78 = v12
 								for {
-									v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-									if v100 == int32(1) {
-										v103 = int32(2)
-										v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-										v112 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-										v116 = v88 + v112
+									v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+									if v84 == int32(1) {
+										v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+										v89 = int32(2)
+										v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+										v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+										v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+										v100 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+										v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+										v106 = v75 + v100
+										v107 = v103
 									} else {
-										v116 = v88
+										v106 = v75
+										v107 = v77
 									}
-									v117 = int32(1)
-									v118 = v90 + v117
-									v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-									if v120 == v117 {
-										v123 = int32(2)
-										v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-										v132 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-										v136 = v116 + v132
-									} else {
-										v136 = v116
-									}
-									v137 = int32(2)
-									v138 = v90 + v137
-									v140 = v92 + v137
-									if v140 != v16&int32(-2) {
-										v88 = v136
-										v90 = v138
-										v92 = v140
+									v109 = v78 + int32(1)
+									if v109 != v11 {
+										v75 = v106
+										v77 = v107
+										v78 = v109
 										continue
 									} else {
 										break
 									}
 									break
 								}
-								if v16&int32(1) == int32(0) {
-									v172 = v136
+								v111 = v106
+							} else {
+								v111 = v71
+							}
+							*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+							v120 = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+							if l1 == v120 {
+								v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+								F_LWLockRelease(m, v125+int32(512))
+								mBase = m.M
+								v129 = m.ExcPending
+								if v129 != 0 {
+									return
 								} else {
-									v144 = v136
-									v146 = v138
-									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-									if v156 != int32(1) {
-										v172 = v144
-									} else {
-										v159 = int32(2)
-										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-										v168 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-										v172 = v144 + v168
-									}
+									v134 = m.G0
+									v135 = int32(16)
+									v136 = v134 - v135
+									m.G0 = v136
+									F_gettimeofday(m, v136)
+									mBase = m.M
+									v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+									v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+									m.G0 = v136 + v135
+									*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+									return
 								}
 							} else {
-								v144 = v74
-								v146 = v15
-								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-								if v156 != int32(1) {
-									v172 = v144
-								} else {
-									v159 = int32(2)
-									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-									v168 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-									v172 = v144 + v168
-								}
+								v134 = m.G0
+								v135 = int32(16)
+								v136 = v134 - v135
+								m.G0 = v136
+								F_gettimeofday(m, v136)
+								mBase = m.M
+								v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+								v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+								m.G0 = v136 + v135
+								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+								return
 							}
 						}
-						*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-						v184 = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-						if l1 == v184 {
-							v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-							F_LWLockRelease(m, v189+int32(512))
+					} else {
+						v71 = int32(0)
+						if v12 < v11 {
+							v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+							v75 = v71
+							v77 = v74
+							v78 = v12
+							for {
+								v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+								if v84 == int32(1) {
+									v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+									v89 = int32(2)
+									v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+									v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+									v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+									v100 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+									v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+									v106 = v75 + v100
+									v107 = v103
+								} else {
+									v106 = v75
+									v107 = v77
+								}
+								v109 = v78 + int32(1)
+								if v109 != v11 {
+									v75 = v106
+									v77 = v107
+									v78 = v109
+									continue
+								} else {
+									break
+								}
+								break
+							}
+							v111 = v106
+						} else {
+							v111 = v71
+						}
+						*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+						v120 = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+						if l1 == v120 {
+							v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+							F_LWLockRelease(m, v125+int32(512))
 							mBase = m.M
-							v193 = m.ExcPending
-							if v193 != 0 {
+							v129 = m.ExcPending
+							if v129 != 0 {
 								return
 							} else {
-								v198 = m.G0
-								v199 = int32(16)
-								v200 = v198 - v199
-								m.G0 = v200
-								F_gettimeofday(m, v200)
+								v134 = m.G0
+								v135 = int32(16)
+								v136 = v134 - v135
+								m.G0 = v136
+								F_gettimeofday(m, v136)
 								mBase = m.M
-								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+								v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+								v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+								m.G0 = v136 + v135
+								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 								return
 							}
 						} else {
-							v198 = m.G0
-							v199 = int32(16)
-							v200 = v198 - v199
-							m.G0 = v200
-							F_gettimeofday(m, v200)
+							v134 = m.G0
+							v135 = int32(16)
+							v136 = v134 - v135
+							m.G0 = v136
+							F_gettimeofday(m, v136)
 							mBase = m.M
-							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+							v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+							v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+							m.G0 = v136 + v135
+							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 							return
 						}
 					}
@@ -1255,753 +1065,501 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 		} else {
 			if l0 != int32(3) {
 				if l1 == int32(0) {
-					v68 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-					v72 = F_LWLockAcquire(m, v68+int32(512), int32(0))
+					v65 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+					v69 = F_LWLockAcquire(m, v65+int32(512), int32(0))
 					mBase = m.M
-					v73 = m.ExcPending
-					if v73 != 0 {
+					v70 = m.ExcPending
+					if v70 != 0 {
 						return
 					} else {
-						v74 = int32(0)
-						if v14 <= v15 {
-							v172 = v74
-						} else {
-							v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-							v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-							if v15+int32(1) != v14 {
-								v88 = v74
-								v90 = v15
-								v92 = int32(0)
-								for {
-									v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-									if v100 == int32(1) {
-										v103 = int32(2)
-										v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-										v112 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-										v116 = v88 + v112
-									} else {
-										v116 = v88
-									}
-									v117 = int32(1)
-									v118 = v90 + v117
-									v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-									if v120 == v117 {
-										v123 = int32(2)
-										v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-										v132 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-										v136 = v116 + v132
-									} else {
-										v136 = v116
-									}
-									v137 = int32(2)
-									v138 = v90 + v137
-									v140 = v92 + v137
-									if v140 != v16&int32(-2) {
-										v88 = v136
-										v90 = v138
-										v92 = v140
-										continue
-									} else {
-										break
-									}
-									break
-								}
-								if v16&int32(1) == int32(0) {
-									v172 = v136
-								} else {
-									v144 = v136
-									v146 = v138
-									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-									if v156 != int32(1) {
-										v172 = v144
-									} else {
-										v159 = int32(2)
-										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-										v168 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-										v172 = v144 + v168
-									}
-								}
-							} else {
-								v144 = v74
-								v146 = v15
-								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-								if v156 != int32(1) {
-									v172 = v144
-								} else {
-									v159 = int32(2)
-									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-									v168 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-									v172 = v144 + v168
-								}
-							}
-						}
-						*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-						v184 = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-						if l1 == v184 {
-							v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-							F_LWLockRelease(m, v189+int32(512))
-							mBase = m.M
-							v193 = m.ExcPending
-							if v193 != 0 {
-								return
-							} else {
-								v198 = m.G0
-								v199 = int32(16)
-								v200 = v198 - v199
-								m.G0 = v200
-								F_gettimeofday(m, v200)
-								mBase = m.M
-								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-								return
-							}
-						} else {
-							v198 = m.G0
-							v199 = int32(16)
-							v200 = v198 - v199
-							m.G0 = v200
-							F_gettimeofday(m, v200)
-							mBase = m.M
-							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-							return
-						}
-					}
-				} else {
-					v74 = int32(0)
-					if v14 <= v15 {
-						v172 = v74
-					} else {
-						v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-						v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-						if v15+int32(1) != v14 {
-							v88 = v74
-							v90 = v15
-							v92 = int32(0)
+						v71 = int32(0)
+						if v12 < v11 {
+							v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+							v75 = v71
+							v77 = v74
+							v78 = v12
 							for {
-								v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-								if v100 == int32(1) {
-									v103 = int32(2)
-									v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-									v112 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-									v116 = v88 + v112
+								v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+								if v84 == int32(1) {
+									v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+									v89 = int32(2)
+									v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+									v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+									v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+									v100 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+									v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+									v106 = v75 + v100
+									v107 = v103
 								} else {
-									v116 = v88
+									v106 = v75
+									v107 = v77
 								}
-								v117 = int32(1)
-								v118 = v90 + v117
-								v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-								if v120 == v117 {
-									v123 = int32(2)
-									v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-									v132 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-									v136 = v116 + v132
-								} else {
-									v136 = v116
-								}
-								v137 = int32(2)
-								v138 = v90 + v137
-								v140 = v92 + v137
-								if v140 != v16&int32(-2) {
-									v88 = v136
-									v90 = v138
-									v92 = v140
+								v109 = v78 + int32(1)
+								if v109 != v11 {
+									v75 = v106
+									v77 = v107
+									v78 = v109
 									continue
 								} else {
 									break
 								}
 								break
 							}
-							if v16&int32(1) == int32(0) {
-								v172 = v136
+							v111 = v106
+						} else {
+							v111 = v71
+						}
+						*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+						v120 = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+						if l1 == v120 {
+							v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+							F_LWLockRelease(m, v125+int32(512))
+							mBase = m.M
+							v129 = m.ExcPending
+							if v129 != 0 {
+								return
 							} else {
-								v144 = v136
-								v146 = v138
-								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-								if v156 != int32(1) {
-									v172 = v144
-								} else {
-									v159 = int32(2)
-									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-									v168 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-									v172 = v144 + v168
-								}
+								v134 = m.G0
+								v135 = int32(16)
+								v136 = v134 - v135
+								m.G0 = v136
+								F_gettimeofday(m, v136)
+								mBase = m.M
+								v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+								v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+								m.G0 = v136 + v135
+								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+								return
 							}
 						} else {
-							v144 = v74
-							v146 = v15
-							v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-							if v156 != int32(1) {
-								v172 = v144
-							} else {
-								v159 = int32(2)
-								v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-								*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-								v168 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-								v172 = v144 + v168
-							}
+							v134 = m.G0
+							v135 = int32(16)
+							v136 = v134 - v135
+							m.G0 = v136
+							F_gettimeofday(m, v136)
+							mBase = m.M
+							v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+							v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+							m.G0 = v136 + v135
+							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+							return
 						}
 					}
-					*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-					v184 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-					if l1 == v184 {
-						v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-						F_LWLockRelease(m, v189+int32(512))
+				} else {
+					v71 = int32(0)
+					if v12 < v11 {
+						v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+						v75 = v71
+						v77 = v74
+						v78 = v12
+						for {
+							v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+							if v84 == int32(1) {
+								v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+								v89 = int32(2)
+								v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+								*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+								v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+								v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v100 = int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+								v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v106 = v75 + v100
+								v107 = v103
+							} else {
+								v106 = v75
+								v107 = v77
+							}
+							v109 = v78 + int32(1)
+							if v109 != v11 {
+								v75 = v106
+								v77 = v107
+								v78 = v109
+								continue
+							} else {
+								break
+							}
+							break
+						}
+						v111 = v106
+					} else {
+						v111 = v71
+					}
+					*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+					v120 = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+					if l1 == v120 {
+						v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+						F_LWLockRelease(m, v125+int32(512))
 						mBase = m.M
-						v193 = m.ExcPending
-						if v193 != 0 {
+						v129 = m.ExcPending
+						if v129 != 0 {
 							return
 						} else {
-							v198 = m.G0
-							v199 = int32(16)
-							v200 = v198 - v199
-							m.G0 = v200
-							F_gettimeofday(m, v200)
+							v134 = m.G0
+							v135 = int32(16)
+							v136 = v134 - v135
+							m.G0 = v136
+							F_gettimeofday(m, v136)
 							mBase = m.M
-							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+							v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+							v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+							m.G0 = v136 + v135
+							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 							return
 						}
 					} else {
-						v198 = m.G0
-						v199 = int32(16)
-						v200 = v198 - v199
-						m.G0 = v200
-						F_gettimeofday(m, v200)
+						v134 = m.G0
+						v135 = int32(16)
+						v136 = v134 - v135
+						m.G0 = v136
+						F_gettimeofday(m, v136)
 						mBase = m.M
-						v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-						v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-						m.G0 = v200 + v199
-						*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+						v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+						v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+						m.G0 = v136 + v135
+						*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 						return
 					}
 				}
 			} else {
-				v39 = *(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4]))
-				if v39 == int64(0) {
+				v36 = *(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4]))
+				if v36 == int64(0) {
 					if l1 == int32(0) {
-						v68 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-						v72 = F_LWLockAcquire(m, v68+int32(512), int32(0))
+						v65 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+						v69 = F_LWLockAcquire(m, v65+int32(512), int32(0))
 						mBase = m.M
-						v73 = m.ExcPending
-						if v73 != 0 {
+						v70 = m.ExcPending
+						if v70 != 0 {
 							return
 						} else {
-							v74 = int32(0)
-							if v14 <= v15 {
-								v172 = v74
-							} else {
-								v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-								v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-								if v15+int32(1) != v14 {
-									v88 = v74
-									v90 = v15
-									v92 = int32(0)
-									for {
-										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-										if v100 == int32(1) {
-											v103 = int32(2)
-											v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-											v112 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-											v116 = v88 + v112
-										} else {
-											v116 = v88
-										}
-										v117 = int32(1)
-										v118 = v90 + v117
-										v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-										if v120 == v117 {
-											v123 = int32(2)
-											v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-											v132 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-											v136 = v116 + v132
-										} else {
-											v136 = v116
-										}
-										v137 = int32(2)
-										v138 = v90 + v137
-										v140 = v92 + v137
-										if v140 != v16&int32(-2) {
-											v88 = v136
-											v90 = v138
-											v92 = v140
-											continue
-										} else {
-											break
-										}
-										break
-									}
-									if v16&int32(1) == int32(0) {
-										v172 = v136
-									} else {
-										v144 = v136
-										v146 = v138
-										v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-										if v156 != int32(1) {
-											v172 = v144
-										} else {
-											v159 = int32(2)
-											v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-											v168 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-											v172 = v144 + v168
-										}
-									}
-								} else {
-									v144 = v74
-									v146 = v15
-									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-									if v156 != int32(1) {
-										v172 = v144
-									} else {
-										v159 = int32(2)
-										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-										v168 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-										v172 = v144 + v168
-									}
-								}
-							}
-							*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-							v184 = int32(0)
-							*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-							if l1 == v184 {
-								v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-								F_LWLockRelease(m, v189+int32(512))
-								mBase = m.M
-								v193 = m.ExcPending
-								if v193 != 0 {
-									return
-								} else {
-									v198 = m.G0
-									v199 = int32(16)
-									v200 = v198 - v199
-									m.G0 = v200
-									F_gettimeofday(m, v200)
-									mBase = m.M
-									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-									m.G0 = v200 + v199
-									*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-									return
-								}
-							} else {
-								v198 = m.G0
-								v199 = int32(16)
-								v200 = v198 - v199
-								m.G0 = v200
-								F_gettimeofday(m, v200)
-								mBase = m.M
-								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-								return
-							}
-						}
-					} else {
-						v74 = int32(0)
-						if v14 <= v15 {
-							v172 = v74
-						} else {
-							v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-							v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-							if v15+int32(1) != v14 {
-								v88 = v74
-								v90 = v15
-								v92 = int32(0)
+							v71 = int32(0)
+							if v12 < v11 {
+								v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v75 = v71
+								v77 = v74
+								v78 = v12
 								for {
-									v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-									if v100 == int32(1) {
-										v103 = int32(2)
-										v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-										v112 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-										v116 = v88 + v112
+									v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+									if v84 == int32(1) {
+										v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+										v89 = int32(2)
+										v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+										v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+										v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+										v100 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+										v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+										v106 = v75 + v100
+										v107 = v103
 									} else {
-										v116 = v88
+										v106 = v75
+										v107 = v77
 									}
-									v117 = int32(1)
-									v118 = v90 + v117
-									v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-									if v120 == v117 {
-										v123 = int32(2)
-										v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-										v132 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-										v136 = v116 + v132
-									} else {
-										v136 = v116
-									}
-									v137 = int32(2)
-									v138 = v90 + v137
-									v140 = v92 + v137
-									if v140 != v16&int32(-2) {
-										v88 = v136
-										v90 = v138
-										v92 = v140
+									v109 = v78 + int32(1)
+									if v109 != v11 {
+										v75 = v106
+										v77 = v107
+										v78 = v109
 										continue
 									} else {
 										break
 									}
 									break
 								}
-								if v16&int32(1) == int32(0) {
-									v172 = v136
+								v111 = v106
+							} else {
+								v111 = v71
+							}
+							*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+							v120 = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+							if l1 == v120 {
+								v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+								F_LWLockRelease(m, v125+int32(512))
+								mBase = m.M
+								v129 = m.ExcPending
+								if v129 != 0 {
+									return
 								} else {
-									v144 = v136
-									v146 = v138
-									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-									if v156 != int32(1) {
-										v172 = v144
-									} else {
-										v159 = int32(2)
-										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-										v168 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-										v172 = v144 + v168
-									}
+									v134 = m.G0
+									v135 = int32(16)
+									v136 = v134 - v135
+									m.G0 = v136
+									F_gettimeofday(m, v136)
+									mBase = m.M
+									v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+									v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+									m.G0 = v136 + v135
+									*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+									return
 								}
 							} else {
-								v144 = v74
-								v146 = v15
-								v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-								if v156 != int32(1) {
-									v172 = v144
-								} else {
-									v159 = int32(2)
-									v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-									*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-									v168 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-									v172 = v144 + v168
-								}
+								v134 = m.G0
+								v135 = int32(16)
+								v136 = v134 - v135
+								m.G0 = v136
+								F_gettimeofday(m, v136)
+								mBase = m.M
+								v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+								v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+								m.G0 = v136 + v135
+								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+								return
 							}
 						}
-						*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-						v184 = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-						if l1 == v184 {
-							v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-							F_LWLockRelease(m, v189+int32(512))
+					} else {
+						v71 = int32(0)
+						if v12 < v11 {
+							v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+							v75 = v71
+							v77 = v74
+							v78 = v12
+							for {
+								v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+								if v84 == int32(1) {
+									v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+									v89 = int32(2)
+									v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+									v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+									v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+									v100 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+									v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+									v106 = v75 + v100
+									v107 = v103
+								} else {
+									v106 = v75
+									v107 = v77
+								}
+								v109 = v78 + int32(1)
+								if v109 != v11 {
+									v75 = v106
+									v77 = v107
+									v78 = v109
+									continue
+								} else {
+									break
+								}
+								break
+							}
+							v111 = v106
+						} else {
+							v111 = v71
+						}
+						*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+						v120 = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+						if l1 == v120 {
+							v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+							F_LWLockRelease(m, v125+int32(512))
 							mBase = m.M
-							v193 = m.ExcPending
-							if v193 != 0 {
+							v129 = m.ExcPending
+							if v129 != 0 {
 								return
 							} else {
-								v198 = m.G0
-								v199 = int32(16)
-								v200 = v198 - v199
-								m.G0 = v200
-								F_gettimeofday(m, v200)
+								v134 = m.G0
+								v135 = int32(16)
+								v136 = v134 - v135
+								m.G0 = v136
+								F_gettimeofday(m, v136)
 								mBase = m.M
-								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+								v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+								v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+								m.G0 = v136 + v135
+								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 								return
 							}
 						} else {
-							v198 = m.G0
-							v199 = int32(16)
-							v200 = v198 - v199
-							m.G0 = v200
-							F_gettimeofday(m, v200)
+							v134 = m.G0
+							v135 = int32(16)
+							v136 = v134 - v135
+							m.G0 = v136
+							F_gettimeofday(m, v136)
 							mBase = m.M
-							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+							v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+							v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+							m.G0 = v136 + v135
+							*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 							return
 						}
 					}
 				} else {
-					v45 = m.G0
-					v46 = int32(16)
-					v47 = v45 - v46
-					m.G0 = v47
-					F_gettimeofday(m, v47)
+					v42 = m.G0
+					v43 = int32(16)
+					v44 = v42 - v43
+					m.G0 = v44
+					F_gettimeofday(m, v44)
 					mBase = m.M
-					v50 = *(*int64)(unsafe.Add(mBase, uint32(v47)))
-					v51 = int64(*(*int32)(unsafe.Add(mBase, uint32(v47)+8)))
-					m.G0 = v47 + v46
-					if v51+v50*int64(1000000)-int64(946684800000000) < v39+int64(1000000) {
+					v47 = *(*int64)(unsafe.Add(mBase, uint32(v44)))
+					v48 = int64(*(*int32)(unsafe.Add(mBase, uint32(v44)+8)))
+					m.G0 = v44 + v43
+					if v48+v47*int64(1000000)-int64(946684800000000) < v36+int64(1000000) {
 						return
 					} else {
 						if l1 == int32(0) {
-							v68 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-							v72 = F_LWLockAcquire(m, v68+int32(512), int32(0))
+							v65 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+							v69 = F_LWLockAcquire(m, v65+int32(512), int32(0))
 							mBase = m.M
-							v73 = m.ExcPending
-							if v73 != 0 {
+							v70 = m.ExcPending
+							if v70 != 0 {
 								return
 							} else {
-								v74 = int32(0)
-								if v14 <= v15 {
-									v172 = v74
-								} else {
-									v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-									v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-									if v15+int32(1) != v14 {
-										v88 = v74
-										v90 = v15
-										v92 = int32(0)
-										for {
-											v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-											if v100 == int32(1) {
-												v103 = int32(2)
-												v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-												*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-												v112 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-												v116 = v88 + v112
-											} else {
-												v116 = v88
-											}
-											v117 = int32(1)
-											v118 = v90 + v117
-											v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-											if v120 == v117 {
-												v123 = int32(2)
-												v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-												*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-												v132 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-												v136 = v116 + v132
-											} else {
-												v136 = v116
-											}
-											v137 = int32(2)
-											v138 = v90 + v137
-											v140 = v92 + v137
-											if v140 != v16&int32(-2) {
-												v88 = v136
-												v90 = v138
-												v92 = v140
-												continue
-											} else {
-												break
-											}
-											break
-										}
-										if v16&int32(1) == int32(0) {
-											v172 = v136
-										} else {
-											v144 = v136
-											v146 = v138
-											v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-											if v156 != int32(1) {
-												v172 = v144
-											} else {
-												v159 = int32(2)
-												v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-												*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-												v168 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-												v172 = v144 + v168
-											}
-										}
-									} else {
-										v144 = v74
-										v146 = v15
-										v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-										if v156 != int32(1) {
-											v172 = v144
-										} else {
-											v159 = int32(2)
-											v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-											v168 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-											v172 = v144 + v168
-										}
-									}
-								}
-								*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-								v184 = int32(0)
-								*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-								if l1 == v184 {
-									v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-									F_LWLockRelease(m, v189+int32(512))
-									mBase = m.M
-									v193 = m.ExcPending
-									if v193 != 0 {
-										return
-									} else {
-										v198 = m.G0
-										v199 = int32(16)
-										v200 = v198 - v199
-										m.G0 = v200
-										F_gettimeofday(m, v200)
-										mBase = m.M
-										v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-										v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-										m.G0 = v200 + v199
-										*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-										return
-									}
-								} else {
-									v198 = m.G0
-									v199 = int32(16)
-									v200 = v198 - v199
-									m.G0 = v200
-									F_gettimeofday(m, v200)
-									mBase = m.M
-									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-									m.G0 = v200 + v199
-									*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
-									return
-								}
-							}
-						} else {
-							v74 = int32(0)
-							if v14 <= v15 {
-								v172 = v74
-							} else {
-								v77 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
-								v79 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
-								if v15+int32(1) != v14 {
-									v88 = v74
-									v90 = v15
-									v92 = int32(0)
+								v71 = int32(0)
+								if v12 < v11 {
+									v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+									v75 = v71
+									v77 = v74
+									v78 = v12
 									for {
-										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90+v79))))
-										if v100 == int32(1) {
-											v103 = int32(2)
-											v109 = *(*int32)(unsafe.Add(mBase, uint32(v77+v90<<(uint(v103)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v88<<(uint(v103)%32)))) = v109
-											v112 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v88+v79))) = uint8(v112)
-											v116 = v88 + v112
+										v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+										if v84 == int32(1) {
+											v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+											v89 = int32(2)
+											v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+											*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+											v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+											v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+											v100 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+											v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+											v106 = v75 + v100
+											v107 = v103
 										} else {
-											v116 = v88
+											v106 = v75
+											v107 = v77
 										}
-										v117 = int32(1)
-										v118 = v90 + v117
-										v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79+v118))))
-										if v120 == v117 {
-											v123 = int32(2)
-											v129 = *(*int32)(unsafe.Add(mBase, uint32(v77+v118<<(uint(v123)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v116<<(uint(v123)%32)))) = v129
-											v132 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v116+v79))) = uint8(v132)
-											v136 = v116 + v132
-										} else {
-											v136 = v116
-										}
-										v137 = int32(2)
-										v138 = v90 + v137
-										v140 = v92 + v137
-										if v140 != v16&int32(-2) {
-											v88 = v136
-											v90 = v138
-											v92 = v140
+										v109 = v78 + int32(1)
+										if v109 != v11 {
+											v75 = v106
+											v77 = v107
+											v78 = v109
 											continue
 										} else {
 											break
 										}
 										break
 									}
-									if v16&int32(1) == int32(0) {
-										v172 = v136
+									v111 = v106
+								} else {
+									v111 = v71
+								}
+								*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+								v120 = int32(0)
+								*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+								if l1 == v120 {
+									v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+									F_LWLockRelease(m, v125+int32(512))
+									mBase = m.M
+									v129 = m.ExcPending
+									if v129 != 0 {
+										return
 									} else {
-										v144 = v136
-										v146 = v138
-										v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-										if v156 != int32(1) {
-											v172 = v144
-										} else {
-											v159 = int32(2)
-											v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-											*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-											v168 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-											v172 = v144 + v168
-										}
+										v134 = m.G0
+										v135 = int32(16)
+										v136 = v134 - v135
+										m.G0 = v136
+										F_gettimeofday(m, v136)
+										mBase = m.M
+										v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+										v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+										m.G0 = v136 + v135
+										*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+										return
 									}
 								} else {
-									v144 = v74
-									v146 = v15
-									v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146+v79))))
-									if v156 != int32(1) {
-										v172 = v144
-									} else {
-										v159 = int32(2)
-										v165 = *(*int32)(unsafe.Add(mBase, uint32(v77+v146<<(uint(v159)%32))))
-										*(*int32)(unsafe.Add(mBase, uint32(v77+v144<<(uint(v159)%32)))) = v165
-										v168 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(v144+v79))) = uint8(v168)
-										v172 = v144 + v168
-									}
+									v134 = m.G0
+									v135 = int32(16)
+									v136 = v134 - v135
+									m.G0 = v136
+									F_gettimeofday(m, v136)
+									mBase = m.M
+									v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+									v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+									m.G0 = v136 + v135
+									*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
+									return
 								}
 							}
-							*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v172
-							v184 = int32(0)
-							*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v184
-							if l1 == v184 {
-								v189 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
-								F_LWLockRelease(m, v189+int32(512))
+						} else {
+							v71 = int32(0)
+							if v12 < v11 {
+								v74 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+								v75 = v71
+								v77 = v74
+								v78 = v12
+								for {
+									v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77+v78))))
+									if v84 == int32(1) {
+										v88 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[3]))
+										v89 = int32(2)
+										v95 = *(*int32)(unsafe.Add(mBase, uint32(v88+v78<<(uint(v89)%32))))
+										*(*int32)(unsafe.Add(mBase, uint32(v88+v75<<(uint(v89)%32)))) = v95
+										v97 = int32(_a_F_KnownAssignedXidsCompress_0)
+										v98 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+										v100 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(v98+v75))) = uint8(v100)
+										v103 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[2]))
+										v106 = v75 + v100
+										v107 = v103
+									} else {
+										v106 = v75
+										v107 = v77
+									}
+									v109 = v78 + int32(1)
+									if v109 != v11 {
+										v75 = v106
+										v77 = v107
+										v78 = v109
+										continue
+									} else {
+										break
+									}
+									break
+								}
+								v111 = v106
+							} else {
+								v111 = v71
+							}
+							*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v111
+							v120 = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v120
+							if l1 == v120 {
+								v125 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[1]))
+								F_LWLockRelease(m, v125+int32(512))
 								mBase = m.M
-								v193 = m.ExcPending
-								if v193 != 0 {
+								v129 = m.ExcPending
+								if v129 != 0 {
 									return
 								} else {
-									v198 = m.G0
-									v199 = int32(16)
-									v200 = v198 - v199
-									m.G0 = v200
-									F_gettimeofday(m, v200)
+									v134 = m.G0
+									v135 = int32(16)
+									v136 = v134 - v135
+									m.G0 = v136
+									F_gettimeofday(m, v136)
 									mBase = m.M
-									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-									m.G0 = v200 + v199
-									*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+									v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+									v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+									m.G0 = v136 + v135
+									*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 									return
 								}
 							} else {
-								v198 = m.G0
-								v199 = int32(16)
-								v200 = v198 - v199
-								m.G0 = v200
-								F_gettimeofday(m, v200)
+								v134 = m.G0
+								v135 = int32(16)
+								v136 = v134 - v135
+								m.G0 = v136
+								F_gettimeofday(m, v136)
 								mBase = m.M
-								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
-								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
-								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v204 + v203*int64(1000000) - int64(946684800000000)
+								v139 = *(*int64)(unsafe.Add(mBase, uint32(v136)))
+								v140 = int64(*(*int32)(unsafe.Add(mBase, uint32(v136)+8)))
+								m.G0 = v136 + v135
+								*(*int64)(unsafe.Add(mBase, _c_F_KnownAssignedXidsCompress[4])) = v140 + v139*int64(1000000) - int64(946684800000000)
 								return
 							}
 						}
@@ -2011,15 +1569,15 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 		}
 	}
 }
-func F_koi8r_to_iso(m *base.Module, l0 int32) int32 {
-	var v5 int32
+func F_koi8r_to_iso(m *base.Module, l0 int32) int64 {
+	var v5 int64
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13938(m, l0, int32(_a_F_koi8r_to_iso_0), int32(25), int32(22))
+	v5 = Fn14323(m, l0, int32(_a_F_koi8r_to_iso_0), int32(25), int32(22))
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v5
 	}

@@ -12,65 +12,65 @@ func F_get_op_opfamily_properties(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v8
 	var v10 int32
 	_ = v10
-	var v15 int32
-	_ = v15
-	var v16 int32
+	var v16 int64
 	_ = v16
-	var v17 int32
-	_ = v17
-	var v23 int32
-	_ = v23
-	var v28 int32
-	_ = v28
-	var v33 int32
-	_ = v33
-	var v34 int32
-	_ = v34
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v25 int32
+	_ = v25
+	var v30 int32
+	_ = v30
 	var v35 int32
 	_ = v35
 	var v36 int32
 	_ = v36
 	var v37 int32
 	_ = v37
+	var v38 int32
+	_ = v38
 	var v39 int32
 	_ = v39
 	var v41 int32
 	_ = v41
-	var v44 int32
-	_ = v44
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
 	if l2 != 0 {
-		v15 = int32(111)
+		v16 = int64(111)
 	} else {
-		v15 = int32(115)
+		v16 = int64(115)
 	}
-	v16 = F_SearchSysCache3(m, int32(3), l0, v15, l1)
+	v18 = F_SearchSysCache3(m, int32(3), base.I64_extend_i32_u(l0), v16, base.I64_extend_i32_u(l1))
 	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v19 = m.ExcPending
+	if v19 != 0 {
 		return
 	} else {
-		if v16 == int32(0) {
+		if v18 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v23 = m.ExcPending
-			if v23 != 0 {
+			v25 = m.ExcPending
+			if v25 != 0 {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l1
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
 				F_errmsg_internal(m, int32(_a_F_get_op_opfamily_properties_0), v10)
 				mBase = m.M
-				v28 = m.ExcPending
-				if v28 != 0 {
+				v30 = m.ExcPending
+				if v30 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_get_op_opfamily_properties_1), int32(151), int32(_a_F_get_op_opfamily_properties_2))
+					F_errfinish(m, int32(_a_F_get_op_opfamily_properties_1), int32(152), int32(_a_F_get_op_opfamily_properties_2))
 					mBase = m.M
-					v33 = m.ExcPending
-					if v33 != 0 {
+					v35 = m.ExcPending
+					if v35 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()
@@ -80,19 +80,19 @@ func F_get_op_opfamily_properties(m *base.Module, l0 int32, l1 int32, l2 int32, 
 				}
 			}
 		} else {
-			v34 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-			v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+22)))
-			v36 = v34 + v35
-			v37 = int32(*(*int16)(unsafe.Add(mBase, uint32(v36)+16)))
-			*(*int32)(unsafe.Add(mBase, uint32(l3))) = v37
-			v39 = *(*int32)(unsafe.Add(mBase, uint32(v36)+8))
-			*(*int32)(unsafe.Add(mBase, uint32(l4))) = v39
-			v41 = *(*int32)(unsafe.Add(mBase, uint32(v36)+12))
-			*(*int32)(unsafe.Add(mBase, uint32(l5))) = v41
-			F_ReleaseCatCache(m, v16)
+			v36 = *(*int32)(unsafe.Add(mBase, uint32(v18)+16))
+			v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36)+22)))
+			v38 = v36 + v37
+			v39 = int32(*(*int16)(unsafe.Add(mBase, uint32(v38)+16)))
+			*(*int32)(unsafe.Add(mBase, uint32(l3))) = v39
+			v41 = *(*int32)(unsafe.Add(mBase, uint32(v38)+8))
+			*(*int32)(unsafe.Add(mBase, uint32(l4))) = v41
+			v43 = *(*int32)(unsafe.Add(mBase, uint32(v38)+12))
+			*(*int32)(unsafe.Add(mBase, uint32(l5))) = v43
+			F_ReleaseCatCache(m, v18)
 			mBase = m.M
-			v44 = m.ExcPending
-			if v44 != 0 {
+			v46 = m.ExcPending
+			if v46 != 0 {
 				return
 			} else {
 				m.G0 = v10 + int32(16)

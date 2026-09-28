@@ -5,29 +5,29 @@ import (
 	"unsafe"
 )
 
-func F_seg_contained(m *base.Module, l0 int32) int32 {
+func F_seg_contained(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F_seg_contained_0), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v6
 	}
 }
-func F_seg_left(m *base.Module, l0 int32) int32 {
+func F_seg_left(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -38,13 +38,13 @@ func F_seg_left(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v5 float32
 	_ = v5
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = *(*float32)(unsafe.Add(mBase, uint32(v2)+4))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v5 = *(*float32)(unsafe.Add(mBase, uint32(v4)))
-	return base.F32_lt(v3, v5)
+	return base.I64_extend_i32_u(base.F32_lt(v3, v5))
 }
-func F_seg_over_right(m *base.Module, l0 int32) int32 {
+func F_seg_over_right(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -55,13 +55,13 @@ func F_seg_over_right(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v5 float32
 	_ = v5
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = *(*float32)(unsafe.Add(mBase, uint32(v2)))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v5 = *(*float32)(unsafe.Add(mBase, uint32(v4)))
-	return base.F32_ge(v3, v5)
+	return base.I64_extend_i32_u(base.F32_ge(v3, v5))
 }
-func F_seg_overlap(m *base.Module, l0 int32) int32 {
+func F_seg_overlap(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -76,28 +76,28 @@ func F_seg_overlap(m *base.Module, l0 int32) int32 {
 	_ = v12
 	var v23 float32
 	_ = v23
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = *(*float32)(unsafe.Add(mBase, uint32(v5)+4))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v8 = *(*float32)(unsafe.Add(mBase, uint32(v7)+4))
 	if base.F32_ge(v6, v8) == int32(0) {
 		if base.F32_le(v6, v8) == int32(0) {
-			return int32(0)
+			return int64(0)
 		} else {
 			v23 = *(*float32)(unsafe.Add(mBase, uint32(v7)))
-			return base.F32_le(v23, v6)
+			return base.I64_extend_i32_u(base.F32_le(v23, v6))
 		}
 	} else {
 		v12 = *(*float32)(unsafe.Add(mBase, uint32(v5)))
 		if base.F32_le(v12, v8) == int32(0) {
 			if base.F32_le(v6, v8) == int32(0) {
-				return int32(0)
+				return int64(0)
 			} else {
 				v23 = *(*float32)(unsafe.Add(mBase, uint32(v7)))
-				return base.F32_le(v23, v6)
+				return base.I64_extend_i32_u(base.F32_le(v23, v6))
 			}
 		} else {
-			return int32(1)
+			return int64(1)
 		}
 	}
 }
@@ -4184,7 +4184,7 @@ L184:
 L185:
 	;
 	v645 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	if v645 != int32(447) {
+	if v645 != int32(453) {
 		goto L184
 	} else {
 		goto L186
@@ -4356,7 +4356,7 @@ L214:
 L215:
 	;
 	v742 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	if v742 != int32(447) {
+	if v742 != int32(453) {
 		goto L214
 	} else {
 		goto L216

@@ -166,7 +166,7 @@ L8:
 	;
 	v34 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v15)+223)) = uint8(v34)
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
 	if v37 == int32(0) {
 		v140 = v34
 		goto L7
@@ -214,7 +214,7 @@ L16:
 	*(*int32)(unsafe.Add(mBase, _c_F_call_string_check_hook[3])) = v63
 	*(*int32)(unsafe.Add(mBase, _c_F_call_string_check_hook[4])) = v63
 	*(*int32)(unsafe.Add(mBase, _c_F_call_string_check_hook[5])) = v63
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(100))))
+	v71 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(104))))
 	v72 = m.T0[v71].(func(*base.Module, int32, int32, int32) int32)(m, l1, l2, l3)
 	mBase = m.M
 	v73 = m.ExcPending
@@ -734,7 +734,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(_a_F_read_string_with_null_1), int32(647), int32(_a_F_read_string_with_null_6))
+	F_errfinish(m, int32(_a_F_read_string_with_null_1), int32(646), int32(_a_F_read_string_with_null_6))
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {
@@ -838,7 +838,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(_a_F_read_string_with_null_1), int32(672), int32(_a_F_read_string_with_null_7))
+	F_errfinish(m, int32(_a_F_read_string_with_null_1), int32(671), int32(_a_F_read_string_with_null_7))
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -1020,7 +1020,7 @@ L10:
 	}
 L11:
 	;
-	F_errsave_finish(m, l1, int32(_a_F_stringToQualifiedNameList_1), int32(1810), int32(_a_F_stringToQualifiedNameList_2))
+	F_errsave_finish(m, l1, int32(_a_F_stringToQualifiedNameList_1), int32(1935), int32(_a_F_stringToQualifiedNameList_2))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -1169,7 +1169,7 @@ L29:
 	}
 L30:
 	;
-	F_errsave_finish(m, l1, int32(_a_F_stringToQualifiedNameList_1), int32(1815), int32(_a_F_stringToQualifiedNameList_2))
+	F_errsave_finish(m, l1, int32(_a_F_stringToQualifiedNameList_1), int32(1940), int32(_a_F_stringToQualifiedNameList_2))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -1185,58 +1185,58 @@ L31:
 func F_string_to_const(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v18 int64
+	_ = v18
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
 	var v23 int32
 	_ = v23
-	var v34 int32
-	_ = v34
-	var v38 int32
-	_ = v38
-	var v43 int32
-	_ = v43
-	var v44 int32
-	_ = v44
-	var v45 int32
-	_ = v45
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
 	var v46 int32
 	_ = v46
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
-	var v50 int32
-	_ = v50
+	var v49 int64
+	_ = v49
 	var v51 int32
 	_ = v51
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	v7 = m.G0
+	v9 = v7 - int32(16)
+	m.G0 = v9
 	if l1 == int32(19) {
-		v16 = F_DirectFunctionCall1Coll(m, int32(500), int32(0), l0)
+		v18 = F_DirectFunctionCall1Coll(m, int32(534), int32(0), base.I64_extend_i32_u(l0))
 		mBase = m.M
-		v19 = m.ExcPending
-		if v19 != 0 {
+		v21 = m.ExcPending
+		if v21 != 0 {
 			return int32(0)
 		} else {
-			v44 = v16
-			v45 = int32(950)
-			v46 = int32(64)
-			v48 = int32(0)
-			v50 = F_makeConst(m, l1, int32(-1), v45, v46, v44, v48, v48)
+			v47 = int32(950)
+			v48 = int32(64)
+			v49 = v18
+			v51 = int32(0)
+			v53 = F_makeConst(m, l1, int32(-1), v47, v48, v49, v51, v51)
 			mBase = m.M
-			v51 = m.ExcPending
-			if v51 != 0 {
+			v54 = m.ExcPending
+			if v54 != 0 {
 				return int32(0)
 			} else {
-				m.G0 = v8 + int32(16)
-				return v50
+				m.G0 = v9 + int32(16)
+				return v53
 			}
 		}
 	} else {
@@ -1247,37 +1247,37 @@ func F_string_to_const(m *base.Module, l0 int32, l1 int32) int32 {
 			return int32(0)
 		} else {
 			if base.B2i32(l1 == int32(25))|base.B2i32(base.Ui32(l1-int32(1042)) < base.Ui32(int32(2))) != 0 {
-				v44 = v22
-				v45 = int32(100)
-				v46 = int32(-1)
-				v48 = int32(0)
-				v50 = F_makeConst(m, l1, int32(-1), v45, v46, v44, v48, v48)
+				v47 = int32(100)
+				v48 = int32(-1)
+				v49 = base.I64_extend_i32_u(v22)
+				v51 = int32(0)
+				v53 = F_makeConst(m, l1, int32(-1), v47, v48, v49, v51, v51)
 				mBase = m.M
-				v51 = m.ExcPending
-				if v51 != 0 {
+				v54 = m.ExcPending
+				if v54 != 0 {
 					return int32(0)
 				} else {
-					m.G0 = v8 + int32(16)
-					return v50
+					m.G0 = v9 + int32(16)
+					return v53
 				}
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v34 = m.ExcPending
-				if v34 != 0 {
+				v37 = m.ExcPending
+				if v37 != 0 {
 					return int32(0)
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
-					F_errmsg_internal(m, int32(_a_F_string_to_const_0), v8)
+					*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
+					F_errmsg_internal(m, int32(_a_F_string_to_const_0), v9)
 					mBase = m.M
-					v38 = m.ExcPending
-					if v38 != 0 {
+					v41 = m.ExcPending
+					if v41 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_string_to_const_1), int32(1765), int32(_a_F_string_to_const_2))
+						F_errfinish(m, int32(_a_F_string_to_const_1), int32(1827), int32(_a_F_string_to_const_2))
 						mBase = m.M
-						v43 = m.ExcPending
-						if v43 != 0 {
+						v46 = m.ExcPending
+						if v46 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
@@ -2664,7 +2664,7 @@ L159:
 	}
 L160:
 	;
-	F_errfinish(m, int32(_a_F_string_to_privilege_17), int32(2603), int32(_a_F_string_to_privilege_18))
+	F_errfinish(m, int32(_a_F_string_to_privilege_17), int32(2591), int32(_a_F_string_to_privilege_18))
 	mBase = m.M
 	v507 = m.ExcPending
 	if v507 != 0 {

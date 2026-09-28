@@ -140,8 +140,8 @@ func F_tuplestore_select_read_pointer(m *base.Module, l0 int32, l1 int32) {
 					v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 					v28 = *(*int32)(unsafe.Add(mBase, uint32(v23)+24))
 					*(*int32)(unsafe.Add(mBase, uint32(v19+int32(12)))) = v28
-					v30 = *(*int64)(unsafe.Add(mBase, uint32(v23)+32))
-					v31 = int64(*(*int32)(unsafe.Add(mBase, uint32(v23)+40)))
+					v30 = *(*int64)(unsafe.Add(mBase, uint32(v23)+40))
+					v31 = *(*int64)(unsafe.Add(mBase, uint32(v23)+32))
 					*(*int64)(unsafe.Add(mBase, uint32(v19+int32(16)))) = v30 + v31
 				} else {
 				}
@@ -178,7 +178,7 @@ func F_tuplestore_select_read_pointer(m *base.Module, l0 int32, l1 int32) {
 									if v54 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_tuplestore_select_read_pointer_1), int32(552), int32(_a_F_tuplestore_select_read_pointer_2))
+										F_errfinish(m, int32(_a_F_tuplestore_select_read_pointer_1), int32(553), int32(_a_F_tuplestore_select_read_pointer_2))
 										mBase = m.M
 										v59 = m.ExcPending
 										if v59 != 0 {
@@ -224,7 +224,7 @@ func F_tuplestore_select_read_pointer(m *base.Module, l0 int32, l1 int32) {
 									if v76 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_tuplestore_select_read_pointer_1), int32(562), int32(_a_F_tuplestore_select_read_pointer_2))
+										F_errfinish(m, int32(_a_F_tuplestore_select_read_pointer_1), int32(563), int32(_a_F_tuplestore_select_read_pointer_2))
 										mBase = m.M
 										v81 = m.ExcPending
 										if v81 != 0 {
@@ -253,7 +253,7 @@ func F_tuplestore_select_read_pointer(m *base.Module, l0 int32, l1 int32) {
 					if v89 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_tuplestore_select_read_pointer_1), int32(566), int32(_a_F_tuplestore_select_read_pointer_2))
+						F_errfinish(m, int32(_a_F_tuplestore_select_read_pointer_1), int32(567), int32(_a_F_tuplestore_select_read_pointer_2))
 						mBase = m.M
 						v94 = m.ExcPending
 						if v94 != 0 {

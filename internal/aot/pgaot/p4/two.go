@@ -5,119 +5,132 @@ import (
 	"unsafe"
 )
 
-func F_ProcessTwoPhaseBuffer(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32, l4 int32) int32 {
+func F_ProcessTwoPhaseBuffer(m *base.Module, l0 int64, l1 int64, l2 int32, l3 int32, l4 int32) int32 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
 	_ = v6
-	var v10 int32
-	_ = v10
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
+	var v14 int32
+	_ = v14
 	var v17 int32
 	_ = v17
+	var v18 int64
+	_ = v18
+	var v19 int32
+	_ = v19
 	var v20 int32
 	_ = v20
 	var v23 int32
 	_ = v23
-	var v24 int32
-	_ = v24
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v34 int32
-	_ = v34
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v36 int64
+	_ = v36
+	var v40 int32
+	_ = v40
+	var v45 int32
+	_ = v45
 	var v48 int32
 	_ = v48
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v68 int32
-	_ = v68
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
-	var v78 int32
-	_ = v78
-	var v83 int32
-	_ = v83
-	var v86 int32
-	_ = v86
-	var v92 int32
-	_ = v92
-	var v97 int32
-	_ = v97
-	var v100 int32
-	_ = v100
-	var v102 int32
-	_ = v102
-	var v103 int32
-	_ = v103
+	var v51 int64
+	_ = v51
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
+	var v65 int32
+	_ = v65
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
+	var v73 int64
+	_ = v73
+	var v79 int32
+	_ = v79
+	var v84 int32
+	_ = v84
+	var v87 int32
+	_ = v87
+	var v90 int64
+	_ = v90
+	var v96 int32
+	_ = v96
+	var v101 int32
+	_ = v101
 	var v104 int32
 	_ = v104
-	var v109 int32
-	_ = v109
-	var v112 int32
-	_ = v112
-	var v118 int32
+	var v106 int32
+	_ = v106
+	var v107 int32
+	_ = v107
+	var v108 int32
+	_ = v108
+	var v113 int32
+	_ = v113
+	var v116 int32
+	_ = v116
+	var v118 int64
 	_ = v118
-	var v123 int32
-	_ = v123
-	var v128 int32
-	_ = v128
-	var v129 int32
-	_ = v129
+	var v125 int32
+	_ = v125
 	var v130 int32
 	_ = v130
-	var v132 int32
-	_ = v132
-	var v133 int32
-	_ = v133
+	var v135 int32
+	_ = v135
 	var v136 int32
 	_ = v136
-	var v147 int32
-	_ = v147
-	var v157 int32
-	_ = v157
-	var v159 int32
-	_ = v159
-	var v161 int32
-	_ = v161
-	var v163 int32
-	_ = v163
-	var v164 int32
-	_ = v164
+	var v137 int32
+	_ = v137
+	var v139 int32
+	_ = v139
+	var v140 int32
+	_ = v140
+	var v143 int32
+	_ = v143
+	var v154 int32
+	_ = v154
+	var v166 int32
+	_ = v166
+	var v168 int32
+	_ = v168
+	var v170 int32
+	_ = v170
 	var v172 int32
 	_ = v172
+	var v173 int32
+	_ = v173
 	var v182 int32
 	_ = v182
-	var v185 int32
-	_ = v185
-	var v191 int32
-	_ = v191
+	var v193 int32
+	_ = v193
 	var v196 int32
 	_ = v196
+	var v198 int64
+	_ = v198
+	var v205 int32
+	_ = v205
+	var v210 int32
+	_ = v210
 	v6 = int32(0)
-	v10 = m.G0
-	v12 = v10 - int32(96)
-	m.G0 = v12
-	v15 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessTwoPhaseBuffer[0]))
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+8))
-	v17 = F_TransactionIdDidCommit(m, l0)
+	v12 = m.G0
+	v14 = v12 - int32(96)
+	m.G0 = v14
+	v17 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessTwoPhaseBuffer[0]))
+	v18 = *(*int64)(unsafe.Add(mBase, uint32(v17)+8))
+	v19 = base.I32_wrap_i64(l0)
+	v20 = F_TransactionIdDidCommit(m, v19)
 	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
+	v23 = m.ExcPending
+	if v23 != 0 {
 		goto L4
 	} else {
 		goto L5
@@ -126,39 +139,39 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v182 = m.ExcPending
-	if v182 != 0 {
+	v193 = m.ExcPending
+	if v193 != 0 {
 		goto L4
 	} else {
-		goto L74
+		goto L70
 	}
 L2:
 	;
-	m.G0 = v12 + int32(96)
-	return v172
+	m.G0 = v14 + int32(96)
+	return v182
 L3:
 	;
-	if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v16))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(l0)) == int32(0) {
-		goto L28
+	if base.Ui64(v18) <= base.Ui64(l0) {
+		goto L27
 	} else {
-		goto L29
+		goto L28
 	}
 L4:
 	;
 	return int32(0)
 L5:
 	;
-	if v17 == int32(0) {
+	if v20 == int32(0) {
 		goto L6
 	} else {
 		goto L7
 	}
 L6:
 	;
-	v23 = F_TransactionIdDidAbort(m, l0)
+	v26 = F_TransactionIdDidAbort(m, v19)
 	mBase = m.M
-	v24 = m.ExcPending
-	if v24 != 0 {
+	v27 = m.ExcPending
+	if v27 != 0 {
 		goto L4
 	} else {
 		goto L9
@@ -168,17 +181,17 @@ L7:
 	goto L8
 L8:
 	;
-	v29 = F_errstart(m, int32(19), int32(0))
+	v32 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v30 = m.ExcPending
-	if v30 != 0 {
+	v33 = m.ExcPending
+	if v33 != 0 {
 		goto L4
 	} else {
 		goto L11
 	}
 L9:
 	;
-	if v23 == int32(0) {
+	if v26 == int32(0) {
 		goto L3
 	} else {
 		goto L10
@@ -195,7 +208,7 @@ L11:
 	}
 L12:
 	;
-	if v29 != 0 {
+	if v32 != 0 {
 		goto L15
 	} else {
 		goto L16
@@ -205,18 +218,20 @@ L13:
 	goto L14
 L14:
 	;
-	if v29 != 0 {
+	if v32 != 0 {
 		goto L21
 	} else {
 		goto L22
 	}
 L15:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12))) = l0
-	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_0), v12)
+	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v19
+	v36 = int64(base.Ui64(l0) >> (uint(int64(32)) % 64))
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+4)) = uint32(v36)
+	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_0), v14)
 	mBase = m.M
-	v34 = m.ExcPending
-	if v34 != 0 {
+	v40 = m.ExcPending
+	if v40 != 0 {
 		goto L4
 	} else {
 		goto L18
@@ -228,18 +243,18 @@ L17:
 	;
 	F_RemoveTwoPhaseFile(m, l0, int32(1))
 	mBase = m.M
-	v42 = m.ExcPending
-	if v42 != 0 {
+	v48 = m.ExcPending
+	if v48 != 0 {
 		goto L4
 	} else {
 		goto L20
 	}
 L18:
 	;
-	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2200), int32(_a_F_ProcessTwoPhaseBuffer_2))
+	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2218), int32(_a_F_ProcessTwoPhaseBuffer_2))
 	mBase = m.M
-	v39 = m.ExcPending
-	if v39 != 0 {
+	v45 = m.ExcPending
+	if v45 != 0 {
 		goto L4
 	} else {
 		goto L19
@@ -249,15 +264,17 @@ L19:
 	goto L17
 L20:
 	;
-	v172 = v6
+	v182 = v6
 	goto L2
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l0
-	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_3), v12+int32(16))
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v19
+	v51 = int64(base.Ui64(l0) >> (uint(int64(32)) % 64))
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+20)) = uint32(v51)
+	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_3), v14+int32(16))
 	mBase = m.M
-	v48 = m.ExcPending
-	if v48 != 0 {
+	v57 = m.ExcPending
+	if v57 != 0 {
 		goto L4
 	} else {
 		goto L24
@@ -267,20 +284,20 @@ L22:
 	goto L23
 L23:
 	;
-	F_PrepareRedoRemove(m, l0, int32(1))
+	F_PrepareRedoRemoveFull(m, l0, int32(1))
 	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
+	v65 = m.ExcPending
+	if v65 != 0 {
 		goto L4
 	} else {
 		goto L26
 	}
 L24:
 	;
-	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2207), int32(_a_F_ProcessTwoPhaseBuffer_2))
+	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2226), int32(_a_F_ProcessTwoPhaseBuffer_2))
 	mBase = m.M
-	v53 = m.ExcPending
-	if v53 != 0 {
+	v62 = m.ExcPending
+	if v62 != 0 {
 		goto L4
 	} else {
 		goto L25
@@ -290,275 +307,286 @@ L25:
 	goto L23
 L26:
 	;
-	v172 = v6
+	v182 = v6
 	goto L2
 L27:
 	;
-	if v68 != 0 {
+	v69 = F_errstart(m, int32(19), int32(0))
+	mBase = m.M
+	v70 = m.ExcPending
+	if v70 != 0 {
+		goto L4
+	} else {
+		goto L30
+	}
+L28:
+	;
+	goto L29
+L29:
+	;
+	if l2 != 0 {
+		goto L47
+	} else {
+		goto L48
+	}
+L30:
+	;
+	if l2 != 0 {
 		goto L31
 	} else {
 		goto L32
 	}
-L28:
-	;
-	v68 = base.B2i32(base.Ui32(v16) <= base.Ui32(l0))
-	goto L27
-L29:
-	;
-	goto L30
-L30:
-	;
-	v68 = base.B2i32(int32(0) <= l0-v16)
-	goto L27
 L31:
 	;
-	v71 = F_errstart(m, int32(19), int32(0))
-	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
-		goto L4
-	} else {
+	if v69 != 0 {
 		goto L34
+	} else {
+		goto L35
 	}
 L32:
 	;
 	goto L33
 L33:
 	;
-	if l2 != 0 {
-		goto L51
-	} else {
-		goto L52
-	}
-L34:
-	;
-	if l2 != 0 {
-		goto L35
-	} else {
-		goto L36
-	}
-L35:
-	;
-	if v71 != 0 {
-		goto L38
-	} else {
-		goto L39
-	}
-L36:
-	;
-	goto L37
-L37:
-	;
-	if v71 != 0 {
-		goto L44
-	} else {
-		goto L45
-	}
-L38:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = l0
-	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_4), v12+int32(32))
-	mBase = m.M
-	v78 = m.ExcPending
-	if v78 != 0 {
-		goto L4
+	if v69 != 0 {
+		goto L40
 	} else {
 		goto L41
 	}
-L39:
+L34:
 	;
-	goto L40
-L40:
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+64)) = v19
+	v73 = int64(base.Ui64(l0) >> (uint(int64(32)) % 64))
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+68)) = uint32(v73)
+	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_4), v14-int32(-64))
+	mBase = m.M
+	v79 = m.ExcPending
+	if v79 != 0 {
+		goto L4
+	} else {
+		goto L37
+	}
+L35:
+	;
+	goto L36
+L36:
 	;
 	F_RemoveTwoPhaseFile(m, l0, int32(1))
 	mBase = m.M
-	v86 = m.ExcPending
-	if v86 != 0 {
+	v87 = m.ExcPending
+	if v87 != 0 {
+		goto L4
+	} else {
+		goto L39
+	}
+L37:
+	;
+	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2240), int32(_a_F_ProcessTwoPhaseBuffer_2))
+	mBase = m.M
+	v84 = m.ExcPending
+	if v84 != 0 {
+		goto L4
+	} else {
+		goto L38
+	}
+L38:
+	;
+	goto L36
+L39:
+	;
+	v182 = v6
+	goto L2
+L40:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = v19
+	v90 = int64(base.Ui64(l0) >> (uint(int64(32)) % 64))
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+84)) = uint32(v90)
+	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_5), v14+int32(80))
+	mBase = m.M
+	v96 = m.ExcPending
+	if v96 != 0 {
 		goto L4
 	} else {
 		goto L43
 	}
 L41:
 	;
-	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2220), int32(_a_F_ProcessTwoPhaseBuffer_2))
-	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
-		goto L4
-	} else {
-		goto L42
-	}
+	goto L42
 L42:
 	;
-	goto L40
+	F_PrepareRedoRemoveFull(m, l0, int32(1))
+	mBase = m.M
+	v104 = m.ExcPending
+	if v104 != 0 {
+		goto L4
+	} else {
+		goto L45
+	}
 L43:
 	;
-	v172 = v6
-	goto L2
+	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2248), int32(_a_F_ProcessTwoPhaseBuffer_2))
+	mBase = m.M
+	v101 = m.ExcPending
+	if v101 != 0 {
+		goto L4
+	} else {
+		goto L44
+	}
 L44:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = l0
-	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_5), v12+int32(48))
-	mBase = m.M
-	v92 = m.ExcPending
-	if v92 != 0 {
-		goto L4
-	} else {
-		goto L47
-	}
+	goto L42
 L45:
 	;
-	goto L46
+	v182 = v6
+	goto L2
 L46:
 	;
-	F_PrepareRedoRemove(m, l0, int32(1))
-	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
-		goto L4
+	v140 = *(*int32)(unsafe.Add(mBase, uint32(v139)+28))
+	if v140 <= int32(0) {
+		v182 = v139
+		goto L2
 	} else {
-		goto L49
+		goto L58
 	}
 L47:
 	;
-	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2227), int32(_a_F_ProcessTwoPhaseBuffer_2))
+	v106 = F_ReadTwoPhaseFile(m, l0, int32(0))
 	mBase = m.M
-	v97 = m.ExcPending
-	if v97 != 0 {
+	v107 = m.ExcPending
+	if v107 != 0 {
 		goto L4
 	} else {
-		goto L48
+		goto L50
 	}
 L48:
 	;
-	goto L46
+	goto L49
 L49:
 	;
-	v172 = v6
-	goto L2
+	F_XlogReadTwoPhaseData(m, l1, v14+int32(92), int32(0))
+	mBase = m.M
+	v135 = m.ExcPending
+	if v135 != 0 {
+		goto L4
+	} else {
+		goto L56
+	}
 L50:
 	;
-	v133 = *(*int32)(unsafe.Add(mBase, uint32(v132)+28))
-	if v133 <= int32(0) {
-		v172 = v132
-		goto L2
+	v108 = *(*int32)(unsafe.Add(mBase, uint32(v106)+8))
+	if v108 == v19 {
+		v139 = v106
+		goto L46
 	} else {
-		goto L62
+		goto L51
 	}
 L51:
 	;
-	v102 = F_ReadTwoPhaseFile(m, l0, int32(0))
+	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v103 = m.ExcPending
-	if v103 != 0 {
+	v113 = m.ExcPending
+	if v113 != 0 {
+		goto L4
+	} else {
+		goto L52
+	}
+L52:
+	;
+	F_errcode(m, int32(16779816))
+	mBase = m.M
+	v116 = m.ExcPending
+	if v116 != 0 {
+		goto L4
+	} else {
+		goto L53
+	}
+L53:
+	;
+	v118 = int64(base.Ui64(l0) >> (uint(int64(32)) % 64))
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+36)) = uint32(v118)
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = v19
+	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_6), v14+int32(32))
+	mBase = m.M
+	v125 = m.ExcPending
+	if v125 != 0 {
 		goto L4
 	} else {
 		goto L54
 	}
-L52:
-	;
-	goto L53
-L53:
-	;
-	F_XlogReadTwoPhaseData(m, l1, v12+int32(92), int32(0))
-	mBase = m.M
-	v128 = m.ExcPending
-	if v128 != 0 {
-		goto L4
-	} else {
-		goto L60
-	}
 L54:
 	;
-	v104 = *(*int32)(unsafe.Add(mBase, uint32(v102)+8))
-	if v104 == l0 {
-		v132 = v102
-		goto L50
+	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2274), int32(_a_F_ProcessTwoPhaseBuffer_2))
+	mBase = m.M
+	v130 = m.ExcPending
+	if v130 != 0 {
+		goto L4
 	} else {
 		goto L55
 	}
 L55:
 	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v109 = m.ExcPending
-	if v109 != 0 {
-		goto L4
-	} else {
-		goto L56
+	base.Wasm_trap_unreachable()
+	for {
 	}
 L56:
 	;
-	F_errcode(m, int32(16779816))
-	mBase = m.M
-	v112 = m.ExcPending
-	if v112 != 0 {
-		goto L4
+	v136 = *(*int32)(unsafe.Add(mBase, uint32(v14)+92))
+	v137 = *(*int32)(unsafe.Add(mBase, uint32(v136)+8))
+	if v137 != v19 {
+		goto L1
 	} else {
 		goto L57
 	}
 L57:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+64)) = l0
-	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_6), v12-int32(-64))
-	mBase = m.M
-	v118 = m.ExcPending
-	if v118 != 0 {
-		goto L4
-	} else {
-		goto L58
-	}
+	v139 = v136
+	goto L46
 L58:
 	;
-	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2252), int32(_a_F_ProcessTwoPhaseBuffer_2))
-	mBase = m.M
-	v123 = m.ExcPending
-	if v123 != 0 {
-		goto L4
-	} else {
-		goto L59
-	}
+	v143 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v139)+54)))
+	v154 = int32(0)
+	goto L59
 L59:
 	;
-	base.Wasm_trap_unreachable()
-	for {
+	v166 = *(*int32)(unsafe.Add(mBase, uint32(v139+(v143+int32(7))&int32(_a_F_ProcessTwoPhaseBuffer_7)+int32(72)+v154<<(uint(int32(2))%32))))
+	if l4 != 0 {
+		goto L61
+	} else {
+		goto L62
 	}
 L60:
 	;
-	v129 = *(*int32)(unsafe.Add(mBase, uint32(v12)+92))
-	v130 = *(*int32)(unsafe.Add(mBase, uint32(v129)+8))
-	if v130 != l0 {
-		goto L1
-	} else {
-		goto L61
-	}
+	v182 = v139
+	goto L2
 L61:
 	;
-	v132 = v129
-	goto L50
+	F_AdvanceNextFullTransactionIdPastXid(m, v166)
+	mBase = m.M
+	v168 = m.ExcPending
+	if v168 != 0 {
+		goto L4
+	} else {
+		goto L64
+	}
 L62:
 	;
-	v136 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v132)+54)))
-	v147 = int32(0)
 	goto L63
 L63:
 	;
-	v157 = *(*int32)(unsafe.Add(mBase, uint32(v132+(v136+int32(7))&int32(_a_F_ProcessTwoPhaseBuffer_7)+int32(72)+v147<<(uint(int32(2))%32))))
-	if l4 != 0 {
+	if l3 != 0 {
 		goto L65
 	} else {
 		goto L66
 	}
 L64:
 	;
-	v172 = v132
-	goto L2
+	goto L63
 L65:
 	;
-	F_AdvanceNextFullTransactionIdPastXid(m, v157)
+	F_SubTransSetParent(m, v166, v19)
 	mBase = m.M
-	v159 = m.ExcPending
-	if v159 != 0 {
+	v170 = m.ExcPending
+	if v170 != 0 {
 		goto L4
 	} else {
 		goto L68
@@ -568,75 +596,54 @@ L66:
 	goto L67
 L67:
 	;
-	if l3 != 0 {
-		goto L69
+	v172 = v154 + int32(1)
+	v173 = *(*int32)(unsafe.Add(mBase, uint32(v139)+28))
+	if v172 < v173 {
+		v154 = v172
+		goto L59
 	} else {
-		goto L70
+		goto L69
 	}
 L68:
 	;
 	goto L67
 L69:
 	;
-	F_SubTransSetParent(m, v157, l0)
-	mBase = m.M
-	v161 = m.ExcPending
-	if v161 != 0 {
-		goto L4
-	} else {
-		goto L72
-	}
+	goto L60
 L70:
 	;
-	goto L71
-L71:
-	;
-	v163 = v147 + int32(1)
-	v164 = *(*int32)(unsafe.Add(mBase, uint32(v132)+28))
-	if v163 < v164 {
-		v147 = v163
-		goto L63
-	} else {
-		goto L73
-	}
-L72:
-	;
-	goto L71
-L73:
-	;
-	goto L64
-L74:
-	;
 	F_errcode(m, int32(16779816))
-	mBase = m.M
-	v185 = m.ExcPending
-	if v185 != 0 {
-		goto L4
-	} else {
-		goto L75
-	}
-L75:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+80)) = l0
-	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_8), v12+int32(80))
-	mBase = m.M
-	v191 = m.ExcPending
-	if v191 != 0 {
-		goto L4
-	} else {
-		goto L76
-	}
-L76:
-	;
-	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2257), int32(_a_F_ProcessTwoPhaseBuffer_2))
 	mBase = m.M
 	v196 = m.ExcPending
 	if v196 != 0 {
 		goto L4
 	} else {
-		goto L77
+		goto L71
 	}
-L77:
+L71:
+	;
+	v198 = int64(base.Ui64(l0) >> (uint(int64(32)) % 64))
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+52)) = uint32(v198)
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = v19
+	F_errmsg(m, int32(_a_F_ProcessTwoPhaseBuffer_8), v14+int32(48))
+	mBase = m.M
+	v205 = m.ExcPending
+	if v205 != 0 {
+		goto L4
+	} else {
+		goto L72
+	}
+L72:
+	;
+	F_errfinish(m, int32(_a_F_ProcessTwoPhaseBuffer_1), int32(2280), int32(_a_F_ProcessTwoPhaseBuffer_2))
+	mBase = m.M
+	v210 = m.ExcPending
+	if v210 != 0 {
+		goto L4
+	} else {
+		goto L73
+	}
+L73:
 	;
 	base.Wasm_trap_unreachable()
 	for {

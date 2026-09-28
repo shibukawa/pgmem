@@ -8,11 +8,8 @@ func F_Pg_magic_func_bloom(m *base.Module) int32 {
 func F_Pg_magic_func_btree_gin(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_btree_gin_0)
 }
-func F_Pg_magic_func_euc_cn_and_mic(m *base.Module) int32 {
-	return int32(_a_F_Pg_magic_func_euc_cn_and_mic_0)
-}
-func F_Pg_magic_func_euc_kr_and_mic(m *base.Module) int32 {
-	return int32(_a_F_Pg_magic_func_euc_kr_and_mic_0)
+func F_Pg_magic_func_cyrillic(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_cyrillic_0)
 }
 func F_Pg_magic_func_pageinspect(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_pageinspect_0)

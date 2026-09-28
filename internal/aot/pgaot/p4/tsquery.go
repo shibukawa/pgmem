@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_tsquery_cmp(m *base.Module, l0 int32) int32 {
+func F_tsquery_cmp(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -32,68 +32,68 @@ func F_tsquery_cmp(m *base.Module, l0 int32) int32 {
 	_ = v19
 	var v22 int32
 	_ = v22
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_pg_detoast_datum_copy(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v11 = F_pg_detoast_datum_copy(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = F_CompareTSQ(m, v6, v11)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
-				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 				if v15 != v6 {
 					F_pfree(m, v6)
 					mBase = m.M
 					v18 = m.ExcPending
 					if v18 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
-						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 						if v19 != v11 {
 							F_pfree(m, v11)
 							mBase = m.M
 							v22 = m.ExcPending
 							if v22 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								return v13
+								return base.I64_extend_i32_s(v13)
 							}
 						} else {
-							return v13
+							return base.I64_extend_i32_s(v13)
 						}
 					}
 				} else {
-					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 					if v19 != v11 {
 						F_pfree(m, v11)
 						mBase = m.M
 						v22 = m.ExcPending
 						if v22 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return v13
+							return base.I64_extend_i32_s(v13)
 						}
 					} else {
-						return v13
+						return base.I64_extend_i32_s(v13)
 					}
 				}
 			}
 		}
 	}
 }
-func F_tsquery_eq(m *base.Module, l0 int32) int32 {
+func F_tsquery_eq(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -120,68 +120,68 @@ func F_tsquery_eq(m *base.Module, l0 int32) int32 {
 	_ = v19
 	var v22 int32
 	_ = v22
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_pg_detoast_datum_copy(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v11 = F_pg_detoast_datum_copy(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = F_CompareTSQ(m, v6, v11)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
-				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 				if v15 != v6 {
 					F_pfree(m, v6)
 					mBase = m.M
 					v18 = m.ExcPending
 					if v18 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
-						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 						if v19 != v11 {
 							F_pfree(m, v11)
 							mBase = m.M
 							v22 = m.ExcPending
 							if v22 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								return base.B2i32(v13 == int32(0))
+								return base.I64_extend_i32_u(base.B2i32(v13 == int32(0)))
 							}
 						} else {
-							return base.B2i32(v13 == int32(0))
+							return base.I64_extend_i32_u(base.B2i32(v13 == int32(0)))
 						}
 					}
 				} else {
-					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 					if v19 != v11 {
 						F_pfree(m, v11)
 						mBase = m.M
 						v22 = m.ExcPending
 						if v22 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return base.B2i32(v13 == int32(0))
+							return base.I64_extend_i32_u(base.B2i32(v13 == int32(0)))
 						}
 					} else {
-						return base.B2i32(v13 == int32(0))
+						return base.I64_extend_i32_u(base.B2i32(v13 == int32(0)))
 					}
 				}
 			}
 		}
 	}
 }
-func F_tsquery_ge(m *base.Module, l0 int32) int32 {
+func F_tsquery_ge(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -208,68 +208,68 @@ func F_tsquery_ge(m *base.Module, l0 int32) int32 {
 	_ = v19
 	var v22 int32
 	_ = v22
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_pg_detoast_datum_copy(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v11 = F_pg_detoast_datum_copy(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = F_CompareTSQ(m, v6, v11)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
-				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 				if v15 != v6 {
 					F_pfree(m, v6)
 					mBase = m.M
 					v18 = m.ExcPending
 					if v18 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
-						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 						if v19 != v11 {
 							F_pfree(m, v11)
 							mBase = m.M
 							v22 = m.ExcPending
 							if v22 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								return int32(base.Ui32(v13^int32(-1)) >> (uint(int32(31)) % 32))
+								return base.I64_extend_i32_u(base.B2i32(int32(0) <= v13))
 							}
 						} else {
-							return int32(base.Ui32(v13^int32(-1)) >> (uint(int32(31)) % 32))
+							return base.I64_extend_i32_u(base.B2i32(int32(0) <= v13))
 						}
 					}
 				} else {
-					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 					if v19 != v11 {
 						F_pfree(m, v11)
 						mBase = m.M
 						v22 = m.ExcPending
 						if v22 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return int32(base.Ui32(v13^int32(-1)) >> (uint(int32(31)) % 32))
+							return base.I64_extend_i32_u(base.B2i32(int32(0) <= v13))
 						}
 					} else {
-						return int32(base.Ui32(v13^int32(-1)) >> (uint(int32(31)) % 32))
+						return base.I64_extend_i32_u(base.B2i32(int32(0) <= v13))
 					}
 				}
 			}
 		}
 	}
 }
-func F_tsquery_lt(m *base.Module, l0 int32) int32 {
+func F_tsquery_lt(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -296,61 +296,61 @@ func F_tsquery_lt(m *base.Module, l0 int32) int32 {
 	_ = v19
 	var v22 int32
 	_ = v22
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = F_pg_detoast_datum_copy(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v11 = F_pg_detoast_datum_copy(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = F_CompareTSQ(m, v6, v11)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
-				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 				if v15 != v6 {
 					F_pfree(m, v6)
 					mBase = m.M
 					v18 = m.ExcPending
 					if v18 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
-						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 						if v19 != v11 {
 							F_pfree(m, v11)
 							mBase = m.M
 							v22 = m.ExcPending
 							if v22 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								return int32(base.Ui32(v13) >> (uint(int32(31)) % 32))
+								return base.I64_extend_i32_u(int32(base.Ui32(v13) >> (uint(int32(31)) % 32)))
 							}
 						} else {
-							return int32(base.Ui32(v13) >> (uint(int32(31)) % 32))
+							return base.I64_extend_i32_u(int32(base.Ui32(v13) >> (uint(int32(31)) % 32)))
 						}
 					}
 				} else {
-					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 					if v19 != v11 {
 						F_pfree(m, v11)
 						mBase = m.M
 						v22 = m.ExcPending
 						if v22 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return int32(base.Ui32(v13) >> (uint(int32(31)) % 32))
+							return base.I64_extend_i32_u(int32(base.Ui32(v13) >> (uint(int32(31)) % 32)))
 						}
 					} else {
-						return int32(base.Ui32(v13) >> (uint(int32(31)) % 32))
+						return base.I64_extend_i32_u(int32(base.Ui32(v13) >> (uint(int32(31)) % 32)))
 					}
 				}
 			}
@@ -920,7 +920,7 @@ L59:
 L60:
 	;
 	v202 = int32(8)
-	v206 = F_bsearch(m, v18+v202, l2, l3, v202, int32(1164))
+	v206 = F_bsearch(m, v18+v202, l2, l3, v202, int32(1279))
 	mBase = m.M
 	v207 = m.ExcPending
 	if v207 != 0 {
@@ -1028,7 +1028,7 @@ L72:
 	}
 L73:
 	;
-	F_errfinish(m, int32(_a_F_tsquery_opr_selec_1), int32(417), int32(_a_F_tsquery_opr_selec_2))
+	F_errfinish(m, int32(_a_F_tsquery_opr_selec_1), int32(420), int32(_a_F_tsquery_opr_selec_2))
 	mBase = m.M
 	v258 = m.ExcPending
 	if v258 != 0 {

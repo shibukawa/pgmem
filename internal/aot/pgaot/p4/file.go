@@ -372,7 +372,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(_a_F_copy_file_3), int32(213), int32(_a_F_copy_file_4))
+	F_errfinish(m, int32(_a_F_copy_file_3), int32(214), int32(_a_F_copy_file_4))
 	mBase = m.M
 	v89 = m.ExcPending
 	if v89 != 0 {
@@ -467,7 +467,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(_a_F_copy_file_3), int32(167), int32(_a_F_copy_file_4))
+	F_errfinish(m, int32(_a_F_copy_file_3), int32(168), int32(_a_F_copy_file_4))
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {
@@ -503,7 +503,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(_a_F_copy_file_3), int32(173), int32(_a_F_copy_file_4))
+	F_errfinish(m, int32(_a_F_copy_file_3), int32(174), int32(_a_F_copy_file_4))
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {
@@ -539,7 +539,7 @@ L55:
 	}
 L56:
 	;
-	F_errfinish(m, int32(_a_F_copy_file_3), int32(201), int32(_a_F_copy_file_4))
+	F_errfinish(m, int32(_a_F_copy_file_3), int32(202), int32(_a_F_copy_file_4))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -575,7 +575,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(_a_F_copy_file_3), int32(224), int32(_a_F_copy_file_4))
+	F_errfinish(m, int32(_a_F_copy_file_3), int32(225), int32(_a_F_copy_file_4))
 	mBase = m.M
 	v172 = m.ExcPending
 	if v172 != 0 {
@@ -611,7 +611,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(_a_F_copy_file_3), int32(229), int32(_a_F_copy_file_4))
+	F_errfinish(m, int32(_a_F_copy_file_3), int32(230), int32(_a_F_copy_file_4))
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {
@@ -1017,7 +1017,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(_a_F_sendFile_3), int32(1600), int32(_a_F_sendFile_4))
+	F_errfinish(m, int32(_a_F_sendFile_3), int32(1599), int32(_a_F_sendFile_4))
 	mBase = m.M
 	v61 = m.ExcPending
 	if v61 != 0 {
@@ -1041,7 +1041,7 @@ L21:
 L22:
 	;
 	v72 = *(*int32)(unsafe.Add(mBase, _c_F_sendFile[5]))
-	v73 = *(*int32)(unsafe.Add(mBase, uint32(v72)+252))
+	v73 = *(*int32)(unsafe.Add(mBase, uint32(v72)+268))
 	goto L25
 L23:
 	;
@@ -1369,7 +1369,7 @@ L69:
 	}
 L70:
 	;
-	F_errfinish(m, int32(_a_F_sendFile_3), int32(1756), int32(_a_F_sendFile_4))
+	F_errfinish(m, int32(_a_F_sendFile_3), int32(1755), int32(_a_F_sendFile_4))
 	mBase = m.M
 	v245 = m.ExcPending
 	if v245 != 0 {
@@ -1424,7 +1424,7 @@ L75:
 	}
 L76:
 	;
-	F_errfinish(m, int32(_a_F_sendFile_3), int32(1785), int32(_a_F_sendFile_4))
+	F_errfinish(m, int32(_a_F_sendFile_3), int32(1784), int32(_a_F_sendFile_4))
 	mBase = m.M
 	v276 = m.ExcPending
 	if v276 != 0 {
@@ -1667,7 +1667,7 @@ L112:
 L113:
 	;
 	v409 = *(*int32)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_sendFile[2])))
-	if int32(2) <= v409 {
+	if int32(0) < v409 {
 		goto L114
 	} else {
 		goto L115
@@ -1734,7 +1734,7 @@ L120:
 	}
 L121:
 	;
-	F_errfinish(m, int32(_a_F_sendFile_3), int32(1818), int32(_a_F_sendFile_4))
+	F_errfinish(m, int32(_a_F_sendFile_3), int32(1817), int32(_a_F_sendFile_4))
 	mBase = m.M
 	v428 = m.ExcPending
 	if v428 != 0 {
@@ -1774,7 +1774,7 @@ L126:
 	}
 L127:
 	;
-	F_errfinish(m, int32(_a_F_sendFile_3), int32(1591), int32(_a_F_sendFile_4))
+	F_errfinish(m, int32(_a_F_sendFile_3), int32(1590), int32(_a_F_sendFile_4))
 	mBase = m.M
 	v483 = m.ExcPending
 	if v483 != 0 {
@@ -1799,7 +1799,7 @@ L129:
 	}
 L130:
 	;
-	F_errfinish(m, int32(_a_F_sendFile_3), int32(1666), int32(_a_F_sendFile_4))
+	F_errfinish(m, int32(_a_F_sendFile_3), int32(1665), int32(_a_F_sendFile_4))
 	mBase = m.M
 	v496 = m.ExcPending
 	if v496 != 0 {
@@ -1824,7 +1824,7 @@ L132:
 	}
 L133:
 	;
-	F_errfinish(m, int32(_a_F_sendFile_3), int32(1798), int32(_a_F_sendFile_4))
+	F_errfinish(m, int32(_a_F_sendFile_3), int32(1797), int32(_a_F_sendFile_4))
 	mBase = m.M
 	v509 = m.ExcPending
 	if v509 != 0 {

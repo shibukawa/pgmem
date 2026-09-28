@@ -4293,7 +4293,7 @@ L272:
 	}
 L273:
 	;
-	F_pg_qsort(m, v775, v890, int32(4), int32(970))
+	F_pg_qsort(m, v775, v890, int32(4), int32(1035))
 	mBase = m.M
 	v923 = m.ExcPending
 	if v923 != 0 {

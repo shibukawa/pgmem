@@ -38,6 +38,8 @@ func F_vac_cleanup_one_index(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v37
 	var v38 int32
 	_ = v38
+	var v43 int32
+	_ = v43
 	var v44 int32
 	_ = v44
 	var v49 int32
@@ -85,13 +87,13 @@ func F_vac_cleanup_one_index(m *base.Module, l0 int32, l1 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v38
 						*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = v37
 						*(*float64)(unsafe.Add(mBase, uint32(v8))) = v36
-						F_errdetail(m, int32(_a_F_vac_cleanup_one_index_1), v8)
+						v43 = F_errdetail(m, int32(_a_F_vac_cleanup_one_index_1), v8)
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_vac_cleanup_one_index_2), int32(2687), int32(_a_F_vac_cleanup_one_index_3))
+							F_errfinish(m, int32(_a_F_vac_cleanup_one_index_2), int32(2702), int32(_a_F_vac_cleanup_one_index_3))
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {

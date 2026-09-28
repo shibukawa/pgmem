@@ -72,186 +72,186 @@ func F_SnapBuildSerialize(m *base.Module, l0 int32, l1 int64) {
 	_ = v113
 	var v114 int32
 	_ = v114
+	var v116 int32
+	_ = v116
 	var v117 int32
 	_ = v117
 	var v118 int32
 	_ = v118
 	var v119 int32
 	_ = v119
-	var v120 int32
-	_ = v120
-	var v124 int32
-	_ = v124
+	var v123 int32
+	_ = v123
+	var v128 int32
+	_ = v128
 	var v129 int32
 	_ = v129
-	var v130 int32
-	_ = v130
-	var v142 int32
-	_ = v142
+	var v141 int32
+	_ = v141
+	var v144 int32
+	_ = v144
 	var v145 int32
 	_ = v145
-	var v146 int32
-	_ = v146
-	var v151 int32
-	_ = v151
-	var v162 int32
-	_ = v162
+	var v150 int32
+	_ = v150
+	var v161 int32
+	_ = v161
+	var v174 int32
+	_ = v174
 	var v175 int32
 	_ = v175
 	var v176 int32
 	_ = v176
 	var v177 int32
 	_ = v177
-	var v178 int32
-	_ = v178
+	var v182 int32
+	_ = v182
 	var v183 int32
 	_ = v183
 	var v184 int32
 	_ = v184
-	var v185 int32
-	_ = v185
-	var v192 int32
-	_ = v192
-	var v195 int32
-	_ = v195
-	var v198 int32
-	_ = v198
-	var v201 int32
-	_ = v201
-	var v213 int32
-	_ = v213
+	var v191 int32
+	_ = v191
+	var v194 int32
+	_ = v194
+	var v197 int32
+	_ = v197
+	var v200 int32
+	_ = v200
+	var v212 int32
+	_ = v212
+	var v215 int32
+	_ = v215
 	var v216 int32
 	_ = v216
-	var v217 int32
-	_ = v217
+	var v218 int32
+	_ = v218
 	var v219 int32
 	_ = v219
-	var v220 int32
-	_ = v220
-	var v222 int32
-	_ = v222
+	var v221 int32
+	_ = v221
+	var v224 int32
+	_ = v224
 	var v225 int32
 	_ = v225
-	var v226 int32
-	_ = v226
-	var v229 int32
-	_ = v229
+	var v228 int32
+	_ = v228
+	var v230 int32
+	_ = v230
 	var v231 int32
 	_ = v231
-	var v232 int32
-	_ = v232
-	var v234 int32
-	_ = v234
-	var v239 int32
-	_ = v239
+	var v233 int32
+	_ = v233
+	var v238 int32
+	_ = v238
+	var v240 int32
+	_ = v240
 	var v241 int32
 	_ = v241
-	var v242 int32
-	_ = v242
-	var v249 int32
-	_ = v249
-	var v252 int32
-	_ = v252
+	var v248 int32
+	_ = v248
+	var v251 int32
+	_ = v251
+	var v253 int32
+	_ = v253
 	var v254 int32
 	_ = v254
 	var v255 int32
 	_ = v255
-	var v256 int32
-	_ = v256
-	var v259 int32
-	_ = v259
-	var v264 int32
-	_ = v264
-	var v269 int32
-	_ = v269
-	var v273 int32
-	_ = v273
-	var v278 int32
-	_ = v278
-	var v280 int32
-	_ = v280
+	var v258 int32
+	_ = v258
+	var v263 int32
+	_ = v263
+	var v268 int32
+	_ = v268
+	var v272 int32
+	_ = v272
+	var v277 int32
+	_ = v277
+	var v279 int32
+	_ = v279
+	var v282 int32
+	_ = v282
 	var v283 int32
 	_ = v283
-	var v284 int32
-	_ = v284
-	var v288 int32
-	_ = v288
+	var v287 int32
+	_ = v287
+	var v289 int32
+	_ = v289
 	var v290 int32
 	_ = v290
-	var v291 int32
-	_ = v291
-	var v294 int32
-	_ = v294
-	var v298 int32
-	_ = v298
-	var v302 int32
-	_ = v302
-	var v305 int32
-	_ = v305
-	var v309 int32
-	_ = v309
-	var v327 int32
-	_ = v327
-	var v329 int32
-	_ = v329
-	var v337 int32
-	_ = v337
-	var v342 int32
-	_ = v342
-	var v346 int32
-	_ = v346
-	var v348 int32
-	_ = v348
-	var v354 int32
-	_ = v354
-	var v359 int32
-	_ = v359
+	var v293 int32
+	_ = v293
+	var v297 int32
+	_ = v297
+	var v301 int32
+	_ = v301
+	var v304 int32
+	_ = v304
+	var v308 int32
+	_ = v308
+	var v326 int32
+	_ = v326
+	var v328 int32
+	_ = v328
+	var v336 int32
+	_ = v336
+	var v341 int32
+	_ = v341
+	var v345 int32
+	_ = v345
+	var v347 int32
+	_ = v347
+	var v353 int32
+	_ = v353
+	var v358 int32
+	_ = v358
+	var v360 int32
+	_ = v360
 	var v361 int32
 	_ = v361
 	var v362 int32
 	_ = v362
-	var v363 int32
-	_ = v363
-	var v366 int32
-	_ = v366
-	var v371 int32
-	_ = v371
-	var v373 int32
-	_ = v373
-	var v381 int32
-	_ = v381
-	var v386 int32
-	_ = v386
+	var v365 int32
+	_ = v365
+	var v370 int32
+	_ = v370
+	var v372 int32
+	_ = v372
+	var v380 int32
+	_ = v380
+	var v385 int32
+	_ = v385
+	var v387 int32
+	_ = v387
 	var v388 int32
 	_ = v388
 	var v389 int32
 	_ = v389
-	var v390 int32
-	_ = v390
-	var v396 int32
-	_ = v396
-	var v398 int32
-	_ = v398
-	var v406 int32
-	_ = v406
-	var v411 int32
-	_ = v411
-	var v415 int32
-	_ = v415
-	var v417 int32
-	_ = v417
-	var v425 int32
-	_ = v425
-	var v430 int32
-	_ = v430
-	var v434 int32
-	_ = v434
-	var v436 int32
-	_ = v436
-	var v447 int32
-	_ = v447
-	var v452 int32
-	_ = v452
+	var v395 int32
+	_ = v395
+	var v397 int32
+	_ = v397
+	var v405 int32
+	_ = v405
+	var v410 int32
+	_ = v410
+	var v414 int32
+	_ = v414
+	var v416 int32
+	_ = v416
+	var v424 int32
+	_ = v424
+	var v429 int32
+	_ = v429
+	var v433 int32
+	_ = v433
+	var v435 int32
+	_ = v435
+	var v446 int32
+	_ = v446
+	var v451 int32
+	_ = v451
 	v12 = m.G0
 	v14 = v12 - int32(2304)
 	m.G0 = v14
@@ -265,8 +265,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v434 = m.ExcPending
-	if v434 != 0 {
+	v433 = m.ExcPending
+	if v433 != 0 {
 		goto L9
 	} else {
 		goto L103
@@ -275,30 +275,30 @@ L2:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v415 = m.ExcPending
-	if v415 != 0 {
+	v414 = m.ExcPending
+	if v414 != 0 {
 		goto L9
 	} else {
 		goto L99
 	}
 L3:
 	;
-	v388 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0]))
-	v389 = F_CloseTransientFile(m, v241)
+	v387 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0]))
+	v388 = F_CloseTransientFile(m, v240)
 	mBase = m.M
-	v390 = m.ExcPending
-	if v390 != 0 {
+	v389 = m.ExcPending
+	if v389 != 0 {
 		goto L9
 	} else {
 		goto L94
 	}
 L4:
 	;
-	v361 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0]))
-	v362 = F_CloseTransientFile(m, v241)
+	v360 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0]))
+	v361 = F_CloseTransientFile(m, v240)
 	mBase = m.M
-	v363 = m.ExcPending
-	if v363 != 0 {
+	v362 = m.ExcPending
+	if v362 != 0 {
 		goto L9
 	} else {
 		goto L86
@@ -307,8 +307,8 @@ L5:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v346 = m.ExcPending
-	if v346 != 0 {
+	v345 = m.ExcPending
+	if v345 != 0 {
 		goto L9
 	} else {
 		goto L82
@@ -317,8 +317,8 @@ L6:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v327 = m.ExcPending
-	if v327 != 0 {
+	v326 = m.ExcPending
+	if v326 != 0 {
 		goto L9
 	} else {
 		goto L78
@@ -422,7 +422,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1546), int32(_a_F_SnapBuildSerialize_4))
+	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1550), int32(_a_F_SnapBuildSerialize_4))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -490,7 +490,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1573), int32(_a_F_SnapBuildSerialize_4))
+	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1577), int32(_a_F_SnapBuildSerialize_4))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -539,195 +539,195 @@ L33:
 	goto L32
 L34:
 	;
-	v117 = F_palloc(m, v114<<(uint(int32(2))%32))
+	v116 = F_palloc_mul(m, int32(4), v114)
 	mBase = m.M
-	v118 = m.ExcPending
-	if v118 != 0 {
+	v117 = m.ExcPending
+	if v117 != 0 {
 		goto L9
 	} else {
 		goto L37
 	}
 L35:
 	;
-	v175 = int32(0)
+	v174 = int32(0)
 	goto L36
 L36:
 	;
-	v176 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-	v177 = *(*int32)(unsafe.Add(mBase, uint32(v176)+28))
-	v178 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-	v183 = (v177+v178)<<(uint(int32(2))%32) + int32(104)
-	v184 = F_palloc0(m, v183)
+	v175 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+	v176 = *(*int32)(unsafe.Add(mBase, uint32(v175)+28))
+	v177 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	v182 = (v176+v177)<<(uint(int32(2))%32) + int32(104)
+	v183 = F_palloc0(m, v182)
 	mBase = m.M
-	v185 = m.ExcPending
-	if v185 != 0 {
+	v184 = m.ExcPending
+	if v184 != 0 {
 		goto L9
 	} else {
 		goto L45
 	}
 L37:
 	;
-	v119 = int32(0)
-	v120 = *(*int32)(unsafe.Add(mBase, uint32(v113)+24))
-	if v120 == v119 {
-		v151 = v119
+	v118 = int32(0)
+	v119 = *(*int32)(unsafe.Add(mBase, uint32(v113)+24))
+	if v119 == v118 {
+		v150 = v118
 		goto L38
 	} else {
 		goto L39
 	}
 L38:
 	;
-	F_pg_qsort(m, v117, v151, int32(4), int32(185))
+	F_pg_qsort(m, v116, v150, int32(4), int32(187))
 	mBase = m.M
-	v162 = m.ExcPending
-	if v162 != 0 {
+	v161 = m.ExcPending
+	if v161 != 0 {
 		goto L9
 	} else {
 		goto L44
 	}
 L39:
 	;
-	v124 = v113 + int32(20)
-	if v120 == v124 {
-		v151 = v119
+	v123 = v113 + int32(20)
+	if v119 == v123 {
+		v150 = v118
 		goto L38
 	} else {
 		goto L40
 	}
 L40:
 	;
+	v128 = v118
 	v129 = v119
-	v130 = v120
 	goto L41
 L41:
 	;
-	v142 = *(*int32)(unsafe.Add(mBase, uint32(v130-int32(192))))
-	*(*int32)(unsafe.Add(mBase, uint32(v117+v129<<(uint(int32(2))%32)))) = v142
-	v145 = v129 + int32(1)
-	v146 = *(*int32)(unsafe.Add(mBase, uint32(v130)+4))
-	if v146 != v124 {
+	v141 = *(*int32)(unsafe.Add(mBase, uint32(v129-int32(192))))
+	*(*int32)(unsafe.Add(mBase, uint32(v116+v128<<(uint(int32(2))%32)))) = v141
+	v144 = v128 + int32(1)
+	v145 = *(*int32)(unsafe.Add(mBase, uint32(v129)+4))
+	if v145 != v123 {
+		v128 = v144
 		v129 = v145
-		v130 = v146
 		goto L41
 	} else {
 		goto L43
 	}
 L42:
 	;
-	v151 = v145
+	v150 = v144
 	goto L38
 L43:
 	;
 	goto L42
 L44:
 	;
-	v175 = v117
+	v174 = v116
 	goto L36
 L45:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+12)) = v183
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+8)) = int32(6)
-	*(*int64)(unsafe.Add(mBase, uint32(v184))) = int64(-2925404159)
-	v192 = int32(8)
-	v195 = m.Env.Pgmem_crc32c(m, int32(-1), v184+v192, v192)
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+12)) = v182
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+8)) = int32(6)
+	*(*int64)(unsafe.Add(mBase, uint32(v183))) = int64(-2925404159)
+	v191 = int32(8)
+	v194 = m.Env.Pgmem_crc32c(m, int32(-1), v183+v191, v191)
 	mBase = m.M
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+4)) = v195
-	v198 = v184 + int32(16)
-	base.MemoryCopy(m, v198, l0, int32(80))
-	v201 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+100)) = v201
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+92)) = v201
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+72)) = v201
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+56)) = v201
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = v201
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+96)) = v177
-	v213 = m.Env.Pgmem_crc32c(m, v195, v198, int32(88))
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+4)) = v194
+	v197 = v183 + int32(16)
+	base.MemoryCopy(m, v197, l0, int32(80))
+	v200 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+100)) = v200
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+92)) = v200
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+72)) = v200
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+56)) = v200
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+20)) = v200
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+96)) = v176
+	v212 = m.Env.Pgmem_crc32c(m, v194, v197, int32(88))
 	mBase = m.M
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+4)) = v213
-	v216 = v184 + int32(104)
-	v217 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-	if v217 != 0 {
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+4)) = v212
+	v215 = v183 + int32(104)
+	v216 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	if v216 != 0 {
 		goto L46
 	} else {
 		goto L47
 	}
 L46:
 	;
-	v219 = v217 << (uint(int32(2)) % 32)
-	if v219 != 0 {
+	v218 = v216 << (uint(int32(2)) % 32)
+	if v218 != 0 {
 		goto L49
 	} else {
 		goto L50
 	}
 L47:
 	;
-	v225 = v216
-	v226 = v213
+	v224 = v215
+	v225 = v212
 	goto L48
 L48:
 	;
-	if v177 != 0 {
+	if v176 != 0 {
 		goto L52
 	} else {
 		goto L53
 	}
 L49:
 	;
-	v220 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
-	base.MemoryCopy(m, v216, v220, v219)
+	v219 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
+	base.MemoryCopy(m, v215, v219, v218)
 	goto L51
 L50:
 	;
 	goto L51
 L51:
 	;
-	v222 = m.Env.Pgmem_crc32c(m, v213, v216, v219)
+	v221 = m.Env.Pgmem_crc32c(m, v212, v215, v218)
 	mBase = m.M
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+4)) = v222
-	v225 = v216 + v219
-	v226 = v222
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+4)) = v221
+	v224 = v215 + v218
+	v225 = v221
 	goto L48
 L52:
 	;
-	v229 = v177 << (uint(int32(2)) % 32)
-	if v229 != 0 {
+	v228 = v176 << (uint(int32(2)) % 32)
+	if v228 != 0 {
 		goto L55
 	} else {
 		goto L56
 	}
 L53:
 	;
-	v234 = v226
+	v233 = v225
 	goto L54
 L54:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v184)+4)) = v234 ^ int32(-1)
-	v239 = v14 + int32(1280)
-	v241 = F_OpenTransientFile(m, v239, int32(193))
+	*(*int32)(unsafe.Add(mBase, uint32(v183)+4)) = v233 ^ int32(-1)
+	v238 = v14 + int32(1280)
+	v240 = F_OpenTransientFile(m, v238, int32(193))
 	mBase = m.M
-	v242 = m.ExcPending
-	if v242 != 0 {
+	v241 = m.ExcPending
+	if v241 != 0 {
 		goto L9
 	} else {
 		goto L58
 	}
 L55:
 	;
-	base.MemoryCopy(m, v225, v175, v229)
+	base.MemoryCopy(m, v224, v174, v228)
 	goto L57
 L56:
 	;
 	goto L57
 L57:
 	;
-	v231 = *(*int32)(unsafe.Add(mBase, uint32(v184)+4))
-	v232 = m.Env.Pgmem_crc32c(m, v231, v225, v229)
+	v230 = *(*int32)(unsafe.Add(mBase, uint32(v183)+4))
+	v231 = m.Env.Pgmem_crc32c(m, v230, v224, v228)
 	mBase = m.M
-	v234 = v232
+	v233 = v231
 	goto L54
 L58:
 	;
-	if v241 < int32(0) {
+	if v240 < int32(0) {
 		goto L5
 	} else {
 		goto L59
@@ -735,33 +735,33 @@ L58:
 L59:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0])) = int32(0)
-	v249 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[3]))
-	*(*int32)(unsafe.Add(mBase, uint32(v249))) = int32(167772216)
-	v252 = F_write(m, v241, v184, v183)
+	v248 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[3]))
+	*(*int32)(unsafe.Add(mBase, uint32(v248))) = int32(167772218)
+	v251 = F_write(m, v240, v183, v182)
 	mBase = m.M
-	if v252 != v183 {
+	if v251 != v182 {
 		goto L4
 	} else {
 		goto L60
 	}
 L60:
 	;
-	v254 = int32(_a_F_SnapBuildSerialize_8)
-	v255 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[3]))
-	v256 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v255))) = v256
-	v259 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[3]))
-	*(*int32)(unsafe.Add(mBase, uint32(v259))) = int32(167772215)
-	v264 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[4])))
-	if v264 != int32(1) {
-		v278 = v256
+	v253 = int32(_a_F_SnapBuildSerialize_8)
+	v254 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[3]))
+	v255 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v254))) = v255
+	v258 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[3]))
+	*(*int32)(unsafe.Add(mBase, uint32(v258))) = int32(167772217)
+	v263 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[4])))
+	if v263 != int32(1) {
+		v277 = v255
 		goto L62
 	} else {
 		goto L63
 	}
 L61:
 	;
-	if v278 != 0 {
+	if v277 != 0 {
 		goto L3
 	} else {
 		goto L68
@@ -774,22 +774,22 @@ L63:
 	goto L64
 L64:
 	;
-	v269 = F_fsync(m, v241)
+	v268 = F_fsync(m, v240)
 	mBase = m.M
-	if v269 != int32(-1) {
-		v278 = v269
+	if v268 != int32(-1) {
+		v277 = v268
 		goto L62
 	} else {
 		goto L66
 	}
 L65:
 	;
-	v278 = int32(-1)
+	v277 = int32(-1)
 	goto L62
 L66:
 	;
-	v273 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0]))
-	if v273 == int32(27) {
+	v272 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0]))
+	if v272 == int32(27) {
 		goto L64
 	} else {
 		goto L67
@@ -799,19 +799,19 @@ L67:
 	goto L65
 L68:
 	;
-	v280 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[3]))
-	*(*int32)(unsafe.Add(mBase, uint32(v280))) = int32(0)
-	v283 = F_CloseTransientFile(m, v241)
+	v279 = *(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[3]))
+	*(*int32)(unsafe.Add(mBase, uint32(v279))) = int32(0)
+	v282 = F_CloseTransientFile(m, v240)
 	mBase = m.M
-	v284 = m.ExcPending
-	if v284 != 0 {
+	v283 = m.ExcPending
+	if v283 != 0 {
 		goto L9
 	} else {
 		goto L69
 	}
 L69:
 	;
-	if v283 != 0 {
+	if v282 != 0 {
 		goto L2
 	} else {
 		goto L70
@@ -820,28 +820,28 @@ L70:
 	;
 	F_fsync_fname(m, int32(_a_F_SnapBuildSerialize_0), int32(1))
 	mBase = m.M
-	v288 = m.ExcPending
-	if v288 != 0 {
+	v287 = m.ExcPending
+	if v287 != 0 {
 		goto L9
 	} else {
 		goto L71
 	}
 L71:
 	;
-	v290 = v14 + int32(256)
-	v291 = F_rename(m, v239, v290)
+	v289 = v14 + int32(256)
+	v290 = F_rename(m, v238, v289)
 	mBase = m.M
-	if v291 != 0 {
+	if v290 != 0 {
 		goto L1
 	} else {
 		goto L72
 	}
 L72:
 	;
-	F_fsync_fname(m, v290, int32(0))
+	F_fsync_fname(m, v289, int32(0))
 	mBase = m.M
-	v294 = m.ExcPending
-	if v294 != 0 {
+	v293 = m.ExcPending
+	if v293 != 0 {
 		goto L9
 	} else {
 		goto L73
@@ -850,8 +850,8 @@ L73:
 	;
 	F_fsync_fname(m, int32(_a_F_SnapBuildSerialize_0), int32(1))
 	mBase = m.M
-	v298 = m.ExcPending
-	if v298 != 0 {
+	v297 = m.ExcPending
+	if v297 != 0 {
 		goto L9
 	} else {
 		goto L74
@@ -860,29 +860,29 @@ L74:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = l1
 	*(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[2])) = v109
-	v302 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-	*(*int64)(unsafe.Add(mBase, uint32(v302)+136)) = l1
-	F_pfree(m, v184)
+	v301 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+	*(*int64)(unsafe.Add(mBase, uint32(v301)+136)) = l1
+	F_pfree(m, v183)
 	mBase = m.M
-	v305 = m.ExcPending
-	if v305 != 0 {
+	v304 = m.ExcPending
+	if v304 != 0 {
 		goto L9
 	} else {
 		goto L75
 	}
 L75:
 	;
-	if v175 == int32(0) {
+	if v174 == int32(0) {
 		goto L7
 	} else {
 		goto L76
 	}
 L76:
 	;
-	F_pfree(m, v175)
+	F_pfree(m, v174)
 	mBase = m.M
-	v309 = m.ExcPending
-	if v309 != 0 {
+	v308 = m.ExcPending
+	if v308 != 0 {
 		goto L9
 	} else {
 		goto L77
@@ -894,8 +894,8 @@ L78:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v329 = m.ExcPending
-	if v329 != 0 {
+	v328 = m.ExcPending
+	if v328 != 0 {
 		goto L9
 	} else {
 		goto L79
@@ -905,18 +905,18 @@ L79:
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = v14 + int32(1280)
 	F_errmsg(m, int32(_a_F_SnapBuildSerialize_9), v14+int32(80))
 	mBase = m.M
-	v337 = m.ExcPending
-	if v337 != 0 {
+	v336 = m.ExcPending
+	if v336 != 0 {
 		goto L9
 	} else {
 		goto L80
 	}
 L80:
 	;
-	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1589), int32(_a_F_SnapBuildSerialize_4))
+	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1593), int32(_a_F_SnapBuildSerialize_4))
 	mBase = m.M
-	v342 = m.ExcPending
-	if v342 != 0 {
+	v341 = m.ExcPending
+	if v341 != 0 {
 		goto L9
 	} else {
 		goto L81
@@ -930,8 +930,8 @@ L82:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v348 = m.ExcPending
-	if v348 != 0 {
+	v347 = m.ExcPending
+	if v347 != 0 {
 		goto L9
 	} else {
 		goto L83
@@ -941,18 +941,18 @@ L83:
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v14 + int32(1280)
 	F_errmsg(m, int32(_a_F_SnapBuildSerialize_10), v14)
 	mBase = m.M
-	v354 = m.ExcPending
-	if v354 != 0 {
+	v353 = m.ExcPending
+	if v353 != 0 {
 		goto L9
 	} else {
 		goto L84
 	}
 L84:
 	;
-	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1651), int32(_a_F_SnapBuildSerialize_4))
+	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1655), int32(_a_F_SnapBuildSerialize_4))
 	mBase = m.M
-	v359 = m.ExcPending
-	if v359 != 0 {
+	v358 = m.ExcPending
+	if v358 != 0 {
 		goto L9
 	} else {
 		goto L85
@@ -964,26 +964,26 @@ L85:
 	}
 L86:
 	;
-	if v361 != 0 {
+	if v360 != 0 {
 		goto L87
 	} else {
 		goto L88
 	}
 L87:
 	;
-	v366 = v361
+	v365 = v360
 	goto L89
 L88:
 	;
-	v366 = int32(51)
+	v365 = int32(51)
 	goto L89
 L89:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0])) = v366
+	*(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0])) = v365
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v371 = m.ExcPending
-	if v371 != 0 {
+	v370 = m.ExcPending
+	if v370 != 0 {
 		goto L9
 	} else {
 		goto L90
@@ -992,8 +992,8 @@ L90:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v373 = m.ExcPending
-	if v373 != 0 {
+	v372 = m.ExcPending
+	if v372 != 0 {
 		goto L9
 	} else {
 		goto L91
@@ -1003,18 +1003,18 @@ L91:
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+64)) = v14 + int32(1280)
 	F_errmsg(m, int32(_a_F_SnapBuildSerialize_11), v14-int32(-64))
 	mBase = m.M
-	v381 = m.ExcPending
-	if v381 != 0 {
+	v380 = m.ExcPending
+	if v380 != 0 {
 		goto L9
 	} else {
 		goto L92
 	}
 L92:
 	;
-	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1665), int32(_a_F_SnapBuildSerialize_4))
+	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1669), int32(_a_F_SnapBuildSerialize_4))
 	mBase = m.M
-	v386 = m.ExcPending
-	if v386 != 0 {
+	v385 = m.ExcPending
+	if v385 != 0 {
 		goto L9
 	} else {
 		goto L93
@@ -1026,11 +1026,11 @@ L93:
 	}
 L94:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0])) = v388
+	*(*int32)(unsafe.Add(mBase, _c_F_SnapBuildSerialize[0])) = v387
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v396 = m.ExcPending
-	if v396 != 0 {
+	v395 = m.ExcPending
+	if v395 != 0 {
 		goto L9
 	} else {
 		goto L95
@@ -1039,8 +1039,8 @@ L95:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v398 = m.ExcPending
-	if v398 != 0 {
+	v397 = m.ExcPending
+	if v397 != 0 {
 		goto L9
 	} else {
 		goto L96
@@ -1050,18 +1050,18 @@ L96:
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = v14 + int32(1280)
 	F_errmsg(m, int32(_a_F_SnapBuildSerialize_12), v14+int32(48))
 	mBase = m.M
-	v406 = m.ExcPending
-	if v406 != 0 {
+	v405 = m.ExcPending
+	if v405 != 0 {
 		goto L9
 	} else {
 		goto L97
 	}
 L97:
 	;
-	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1689), int32(_a_F_SnapBuildSerialize_4))
+	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1693), int32(_a_F_SnapBuildSerialize_4))
 	mBase = m.M
-	v411 = m.ExcPending
-	if v411 != 0 {
+	v410 = m.ExcPending
+	if v410 != 0 {
 		goto L9
 	} else {
 		goto L98
@@ -1075,8 +1075,8 @@ L99:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v417 = m.ExcPending
-	if v417 != 0 {
+	v416 = m.ExcPending
+	if v416 != 0 {
 		goto L9
 	} else {
 		goto L100
@@ -1086,18 +1086,18 @@ L100:
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = v14 + int32(1280)
 	F_errmsg(m, int32(_a_F_SnapBuildSerialize_13), v14+int32(32))
 	mBase = m.M
-	v425 = m.ExcPending
-	if v425 != 0 {
+	v424 = m.ExcPending
+	if v424 != 0 {
 		goto L9
 	} else {
 		goto L101
 	}
 L101:
 	;
-	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1696), int32(_a_F_SnapBuildSerialize_4))
+	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1700), int32(_a_F_SnapBuildSerialize_4))
 	mBase = m.M
-	v430 = m.ExcPending
-	if v430 != 0 {
+	v429 = m.ExcPending
+	if v429 != 0 {
 		goto L9
 	} else {
 		goto L102
@@ -1111,8 +1111,8 @@ L103:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v436 = m.ExcPending
-	if v436 != 0 {
+	v435 = m.ExcPending
+	if v435 != 0 {
 		goto L9
 	} else {
 		goto L104
@@ -1123,18 +1123,18 @@ L104:
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v14 + int32(1280)
 	F_errmsg(m, int32(_a_F_SnapBuildSerialize_14), v14+int32(16))
 	mBase = m.M
-	v447 = m.ExcPending
-	if v447 != 0 {
+	v446 = m.ExcPending
+	if v446 != 0 {
 		goto L9
 	} else {
 		goto L105
 	}
 L105:
 	;
-	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1709), int32(_a_F_SnapBuildSerialize_4))
+	F_errfinish(m, int32(_a_F_SnapBuildSerialize_3), int32(1713), int32(_a_F_SnapBuildSerialize_4))
 	mBase = m.M
-	v452 = m.ExcPending
-	if v452 != 0 {
+	v451 = m.ExcPending
+	if v451 != 0 {
 		goto L9
 	} else {
 		goto L106

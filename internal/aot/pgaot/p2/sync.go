@@ -77,24 +77,22 @@ func F_SyncRepInitConfig(m *base.Module) {
 	_ = v104
 	var v108 int32
 	_ = v108
-	var v110 int32
-	_ = v110
+	var v113 int32
+	_ = v113
+	var v115 int32
+	_ = v115
 	var v117 int32
 	_ = v117
-	var v119 int32
-	_ = v119
-	var v121 int32
-	_ = v121
-	var v126 int32
-	_ = v126
-	var v127 int32
-	_ = v127
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v128 int32
+	_ = v128
 	var v132 int32
 	_ = v132
-	var v136 int32
-	_ = v136
-	var v141 int32
-	_ = v141
+	var v137 int32
+	_ = v137
 	v1 = int32(0)
 	v5 = m.G0
 	v7 = v5 - int32(16)
@@ -317,11 +315,10 @@ L33:
 	}
 L34:
 	;
-	v110 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[1]))
-	F_s_lock(m, v110+int32(76), int32(_a_F_SyncRepInitConfig_0), int32(456), int32(_a_F_SyncRepInitConfig_1))
+	F_s_lock(m, v103+int32(76), int32(_a_F_SyncRepInitConfig_0))
 	mBase = m.M
-	v117 = m.ExcPending
-	if v117 != 0 {
+	v113 = m.ExcPending
+	if v113 != 0 {
 		goto L37
 	} else {
 		goto L38
@@ -331,14 +328,14 @@ L35:
 	goto L36
 L36:
 	;
-	v119 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v119)+72)) = v101
-	v121 = int32(0)
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v119)+76)), uint32(v121))
-	v126 = F_errstart(m, int32(14), v121)
+	v115 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[1]))
+	*(*int32)(unsafe.Add(mBase, uint32(v115)+72)) = v101
+	v117 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v115)+76)), uint32(v117))
+	v122 = F_errstart(m, int32(14), v117)
 	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
+	v123 = m.ExcPending
+	if v123 != 0 {
 		goto L37
 	} else {
 		goto L39
@@ -351,7 +348,7 @@ L38:
 	goto L36
 L39:
 	;
-	if v126 == int32(0) {
+	if v122 == int32(0) {
 		goto L32
 	} else {
 		goto L40
@@ -359,22 +356,22 @@ L39:
 L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v101
-	v132 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[4]))
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v132
-	F_errmsg_internal(m, int32(_a_F_SyncRepInitConfig_2), v7)
+	v128 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[4]))
+	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v128
+	F_errmsg_internal(m, int32(_a_F_SyncRepInitConfig_1), v7)
 	mBase = m.M
-	v136 = m.ExcPending
-	if v136 != 0 {
+	v132 = m.ExcPending
+	if v132 != 0 {
 		goto L37
 	} else {
 		goto L41
 	}
 L41:
 	;
-	F_errfinish(m, int32(_a_F_SyncRepInitConfig_0), int32(462), int32(_a_F_SyncRepInitConfig_1))
+	F_errfinish(m, int32(_a_F_SyncRepInitConfig_2), int32(472), int32(_a_F_SyncRepInitConfig_3))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v137 = m.ExcPending
+	if v137 != 0 {
 		goto L37
 	} else {
 		goto L42

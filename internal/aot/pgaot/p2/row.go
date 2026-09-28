@@ -5,50 +5,56 @@ import (
 	"unsafe"
 )
 
-func F_row_to_json_pretty(m *base.Module, l0 int32) int32 {
+func F_row_to_json_pretty(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v4 int32
-	_ = v4
 	var v5 int32
 	_ = v5
-	var v8 int32
-	_ = v8
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
+	var v7 int32
+	_ = v7
+	var v9 int64
+	_ = v9
+	var v10 int64
+	_ = v10
 	var v14 int32
 	_ = v14
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = F_makeStringInfo(m)
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v9 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v10 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	F_initStringInfo(m, v7)
 	mBase = m.M
-	v8 = m.ExcPending
-	if v8 != 0 {
-		return int32(0)
+	v14 = m.ExcPending
+	if v14 != 0 {
+		return int64(0)
 	} else {
-		F_composite_to_json(m, v4, v5, base.B2i32(v3 != int32(0)))
+		F_composite_to_json(m, v10, v7, base.B2i32(v9 != int64(0)))
 		mBase = m.M
-		v12 = m.ExcPending
-		if v12 != 0 {
-			return int32(0)
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return int64(0)
 		} else {
-			v13 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
-			v14 = *(*int32)(unsafe.Add(mBase, uint32(v5)+4))
-			v15 = F_cstring_to_text_with_len(m, v13, v14)
+			v19 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+			v20 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
+			v21 = F_cstring_to_text_with_len(m, v19, v20)
 			mBase = m.M
-			v16 = m.ExcPending
-			if v16 != 0 {
-				return int32(0)
+			v22 = m.ExcPending
+			if v22 != 0 {
+				return int64(0)
 			} else {
-				return v15
+				m.G0 = v7 + int32(16)
+				return base.I64_extend_i32_u(v21)
 			}
 		}
 	}

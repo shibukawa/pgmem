@@ -111,6 +111,8 @@ func F_SpGistSetLastUsedPage(m *base.Module, l0 int32, l1 int32) {
 	_ = v34
 	var v36 int32
 	_ = v36
+	var v37 int32
+	_ = v37
 	var v42 int32
 	_ = v42
 	var v43 int32
@@ -159,11 +161,12 @@ func F_SpGistSetLastUsedPage(m *base.Module, l0 int32, l1 int32) {
 		}
 		if l1 < int32(0) {
 			v28 = *(*int32)(unsafe.Add(mBase, _c_F_SpGistSetLastUsedPage[2]))
-			v34 = *(*int32)(unsafe.Add(mBase, uint32(v28+(l1^int32(-1))<<(uint(int32(6))%32))+16))
+			v34 = *(*int32)(unsafe.Add(mBase, uint32(v28+(l1^int32(-1))*int32(56))+16))
 			v43 = v34
 		} else {
 			v36 = *(*int32)(unsafe.Add(mBase, _c_F_SpGistSetLastUsedPage[3]))
-			v42 = *(*int32)(unsafe.Add(mBase, uint32(v36+l1<<(uint(int32(6))%32)+int32(-64))+16))
+			v37 = int32(56)
+			v42 = *(*int32)(unsafe.Add(mBase, uint32(v36+l1*v37-v37)+16))
 			v43 = v42
 		}
 		if base.Ui32(v43) < base.Ui32(int32(3)) {

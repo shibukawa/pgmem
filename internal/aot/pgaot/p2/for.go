@@ -98,7 +98,7 @@ L7:
 L8:
 	;
 	v23 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
-	v26 = v14 + v15*int32(1480)
+	v26 = v14 + v15*int32(1488)
 	v27 = *(*int64)(unsafe.Add(mBase, uint32(v26)+24))
 	if v23 == v27 {
 		goto L10
@@ -579,7 +579,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(_a_F_WaitForParallelWorkersToAttach_3), int32(760), int32(_a_F_WaitForParallelWorkersToAttach_4))
+	F_errfinish(m, int32(_a_F_WaitForParallelWorkersToAttach_3), int32(762), int32(_a_F_WaitForParallelWorkersToAttach_4))
 	mBase = m.M
 	v147 = m.ExcPending
 	if v147 != 0 {

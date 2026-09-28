@@ -38,28 +38,30 @@ func F_GetAttributeCompression(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v40
 	var v43 int32
 	_ = v43
-	var v47 int32
-	_ = v47
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
 	var v50 int32
 	_ = v50
 	var v53 int32
 	_ = v53
 	var v56 int32
 	_ = v56
-	var v57 int32
-	_ = v57
+	var v59 int32
+	_ = v59
 	var v60 int32
 	_ = v60
-	var v61 int32
-	_ = v61
+	var v63 int32
+	_ = v63
 	var v64 int32
 	_ = v64
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
-	var v76 int32
-	_ = v76
+	var v67 int32
+	_ = v67
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
 	var v77 int32
 	_ = v77
 	var v80 int32
@@ -80,46 +82,48 @@ func F_GetAttributeCompression(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v101
 	var v102 int32
 	_ = v102
-	var v107 int32
-	_ = v107
-	var v110 int32
-	_ = v110
-	var v114 int32
-	_ = v114
+	var v108 int32
+	_ = v108
+	var v115 int32
+	_ = v115
 	var v118 int32
 	_ = v118
-	var v123 int32
-	_ = v123
-	var v124 int32
-	_ = v124
-	var v127 int32
-	_ = v127
+	var v125 int32
+	_ = v125
+	var v129 int32
+	_ = v129
+	var v130 int32
+	_ = v130
 	var v135 int32
 	_ = v135
-	var v138 int32
-	_ = v138
 	var v139 int32
 	_ = v139
-	var v140 int32
-	_ = v140
-	var v144 int32
-	_ = v144
-	var v149 int32
-	_ = v149
-	var v153 int32
-	_ = v153
+	var v147 int32
+	_ = v147
+	var v150 int32
+	_ = v150
+	var v151 int32
+	_ = v151
+	var v152 int32
+	_ = v152
 	var v156 int32
 	_ = v156
-	var v162 int32
-	_ = v162
-	var v167 int32
-	_ = v167
+	var v161 int32
+	_ = v161
+	var v165 int32
+	_ = v165
+	var v168 int32
+	_ = v168
+	var v174 int32
+	_ = v174
+	var v179 int32
+	_ = v179
 	v3 = int32(0)
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
 	if l1 == v3 {
-		v127 = v3
+		v139 = v3
 		goto L3
 	} else {
 		goto L4
@@ -128,26 +132,26 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v153 = m.ExcPending
-	if v153 != 0 {
+	v165 = m.ExcPending
+	if v165 != 0 {
 		goto L13
 	} else {
-		goto L44
+		goto L47
 	}
 L2:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v135 = m.ExcPending
-	if v135 != 0 {
+	v147 = m.ExcPending
+	if v147 != 0 {
 		goto L13
 	} else {
-		goto L39
+		goto L42
 	}
 L3:
 	;
 	m.G0 = v7 + int32(32)
-	return v127
+	return v139
 L4:
 	;
 	v11 = int32(_a_F_GetAttributeCompression_0)
@@ -163,7 +167,7 @@ L4:
 L5:
 	;
 	if v35-v36 == int32(0) {
-		v127 = v3
+		v139 = v3
 		goto L3
 	} else {
 		goto L12
@@ -227,234 +231,223 @@ L14:
 	}
 L15:
 	;
-	v47 = int32(_a_F_GetAttributeCompression_1)
-	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
-	v53 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_GetAttributeCompression[1])))
-	if base.B2i32(v50 == int32(0))|base.B2i32(v50 != v53) != 0 {
-		v71 = v50
-		v72 = v53
-		goto L18
-	} else {
+	v46 = m.G0
+	v48 = v46 - int32(32)
+	m.G0 = v48
+	v50 = int32(_a_F_GetAttributeCompression_1)
+	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
+	v56 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_GetAttributeCompression[1])))
+	if base.B2i32(v53 == int32(0))|base.B2i32(v53 != v56) != 0 {
+		v74 = v53
+		v75 = v56
 		goto L19
+	} else {
+		goto L20
 	}
 L16:
 	;
-	if v124 == int32(0) {
+	if v108 == int32(0) {
 		goto L1
 	} else {
-		goto L38
+		goto L41
 	}
 L17:
 	;
-	if v71-v72 == int32(0) {
-		v124 = int32(112)
-		goto L16
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v115 = m.ExcPending
+	if v115 != 0 {
+		goto L13
 	} else {
-		goto L24
+		goto L36
 	}
 L18:
 	;
-	goto L17
+	if v74-v75 != 0 {
+		goto L25
+	} else {
+		goto L26
+	}
 L19:
 	;
-	v56 = l1
-	v57 = v47
-	goto L20
+	goto L18
 L20:
 	;
-	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v57)+1)))
-	v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56)+1)))
-	if v61 == int32(0) {
-		v71 = v61
-		v72 = v60
-		goto L18
-	} else {
-		goto L22
-	}
+	v59 = l1
+	v60 = v50
+	goto L21
 L21:
 	;
-	v71 = v61
-	v72 = v60
-	goto L18
-L22:
-	;
-	v64 = int32(1)
-	if v61 == v60 {
-		v56 = v56 + v64
-		v57 = v57 + v64
-		goto L20
+	v63 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60)+1)))
+	v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59)+1)))
+	if v64 == int32(0) {
+		v74 = v64
+		v75 = v63
+		goto L19
 	} else {
 		goto L23
 	}
+L22:
+	;
+	v74 = v64
+	v75 = v63
+	goto L19
 L23:
 	;
-	goto L21
+	v67 = int32(1)
+	if v64 == v63 {
+		v59 = v59 + v67
+		v60 = v60 + v67
+		goto L21
+	} else {
+		goto L24
+	}
 L24:
 	;
-	v76 = int32(0)
+	goto L22
+L25:
+	;
 	v77 = int32(_a_F_GetAttributeCompression_2)
 	v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 	v83 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_GetAttributeCompression[2])))
-	if base.B2i32(v80 == v76)|base.B2i32(v80 != v83) != 0 {
+	if base.B2i32(v80 == int32(0))|base.B2i32(v80 != v83) != 0 {
 		v101 = v80
 		v102 = v83
-		goto L26
+		goto L29
 	} else {
-		goto L27
-	}
-L25:
-	;
-	if v101-v102 != 0 {
-		v124 = v76
-		goto L16
-	} else {
-		goto L32
+		goto L30
 	}
 L26:
 	;
-	goto L25
+	v108 = int32(112)
+	goto L27
 L27:
+	;
+	m.G0 = v48 + int32(32)
+	goto L16
+L28:
+	;
+	if v101-v102 == int32(0) {
+		goto L17
+	} else {
+		goto L35
+	}
+L29:
+	;
+	goto L28
+L30:
 	;
 	v86 = l1
 	v87 = v77
-	goto L28
-L28:
+	goto L31
+L31:
 	;
 	v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v87)+1)))
 	v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v86)+1)))
 	if v91 == int32(0) {
 		v101 = v91
 		v102 = v90
-		goto L26
+		goto L29
 	} else {
-		goto L30
+		goto L33
 	}
-L29:
+L32:
 	;
 	v101 = v91
 	v102 = v90
-	goto L26
-L30:
+	goto L29
+L33:
 	;
 	v94 = int32(1)
 	if v91 == v90 {
 		v86 = v86 + v94
 		v87 = v87 + v94
-		goto L28
-	} else {
 		goto L31
-	}
-L31:
-	;
-	goto L29
-L32:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v107 = m.ExcPending
-	if v107 != 0 {
-		goto L13
-	} else {
-		goto L33
-	}
-L33:
-	;
-	F_errcode(m, int32(1088))
-	mBase = m.M
-	v110 = m.ExcPending
-	if v110 != 0 {
-		goto L13
 	} else {
 		goto L34
 	}
 L34:
 	;
-	F_errmsg(m, int32(_a_F_GetAttributeCompression_3), int32(0))
-	mBase = m.M
-	v114 = m.ExcPending
-	if v114 != 0 {
-		goto L13
-	} else {
-		goto L35
-	}
+	goto L32
 L35:
 	;
-	F_errdetail(m, int32(_a_F_GetAttributeCompression_4), int32(0))
+	v108 = int32(0)
+	goto L27
+L36:
+	;
+	F_errcode(m, int32(1088))
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
-		goto L13
-	} else {
-		goto L36
-	}
-L36:
-	;
-	F_errfinish(m, int32(_a_F_GetAttributeCompression_5), int32(292), int32(_a_F_GetAttributeCompression_6))
-	mBase = m.M
-	v123 = m.ExcPending
-	if v123 != 0 {
 		goto L13
 	} else {
 		goto L37
 	}
 L37:
 	;
-	base.Wasm_trap_unreachable()
-	for {
+	*(*int32)(unsafe.Add(mBase, uint32(v48)+16)) = int32(_a_F_GetAttributeCompression_2)
+	F_errmsg(m, int32(_a_F_GetAttributeCompression_3), v48+int32(16))
+	mBase = m.M
+	v125 = m.ExcPending
+	if v125 != 0 {
+		goto L13
+	} else {
+		goto L38
 	}
 L38:
 	;
-	v127 = v124
-	goto L3
+	*(*int32)(unsafe.Add(mBase, uint32(v48))) = int32(_a_F_GetAttributeCompression_2)
+	v129 = F_errdetail(m, int32(_a_F_GetAttributeCompression_4), v48)
+	mBase = m.M
+	v130 = m.ExcPending
+	if v130 != 0 {
+		goto L13
+	} else {
+		goto L39
+	}
 L39:
 	;
-	F_errcode(m, int32(1088))
+	F_errfinish(m, int32(_a_F_GetAttributeCompression_5), int32(292), int32(_a_F_GetAttributeCompression_6))
 	mBase = m.M
-	v138 = m.ExcPending
-	if v138 != 0 {
+	v135 = m.ExcPending
+	if v135 != 0 {
 		goto L13
 	} else {
 		goto L40
 	}
 L40:
 	;
-	v139 = F_format_type_be(m, l0)
-	mBase = m.M
-	v140 = m.ExcPending
-	if v140 != 0 {
-		goto L13
-	} else {
-		goto L41
+	base.Wasm_trap_unreachable()
+	for {
 	}
 L41:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v139
-	F_errmsg(m, int32(_a_F_GetAttributeCompression_7), v7)
-	mBase = m.M
-	v144 = m.ExcPending
-	if v144 != 0 {
-		goto L13
-	} else {
-		goto L42
-	}
+	v139 = v108
+	goto L3
 L42:
 	;
-	F_errfinish(m, int32(_a_F_GetAttributeCompression_8), int32(_a_F_GetAttributeCompression_9), int32(_a_F_GetAttributeCompression_10))
+	F_errcode(m, int32(1088))
 	mBase = m.M
-	v149 = m.ExcPending
-	if v149 != 0 {
+	v150 = m.ExcPending
+	if v150 != 0 {
 		goto L13
 	} else {
 		goto L43
 	}
 L43:
 	;
-	base.Wasm_trap_unreachable()
-	for {
+	v151 = F_format_type_be(m, l0)
+	mBase = m.M
+	v152 = m.ExcPending
+	if v152 != 0 {
+		goto L13
+	} else {
+		goto L44
 	}
 L44:
 	;
-	F_errcode(m, int32(50856066))
+	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v151
+	F_errmsg(m, int32(_a_F_GetAttributeCompression_7), v7)
 	mBase = m.M
 	v156 = m.ExcPending
 	if v156 != 0 {
@@ -464,26 +457,51 @@ L44:
 	}
 L45:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = l1
-	F_errmsg(m, int32(_a_F_GetAttributeCompression_11), v7+int32(16))
+	F_errfinish(m, int32(_a_F_GetAttributeCompression_8), int32(_a_F_GetAttributeCompression_9), int32(_a_F_GetAttributeCompression_10))
 	mBase = m.M
-	v162 = m.ExcPending
-	if v162 != 0 {
+	v161 = m.ExcPending
+	if v161 != 0 {
 		goto L13
 	} else {
 		goto L46
 	}
 L46:
 	;
-	F_errfinish(m, int32(_a_F_GetAttributeCompression_8), int32(_a_F_GetAttributeCompression_12), int32(_a_F_GetAttributeCompression_10))
-	mBase = m.M
-	v167 = m.ExcPending
-	if v167 != 0 {
-		goto L13
-	} else {
-		goto L47
+	base.Wasm_trap_unreachable()
+	for {
 	}
 L47:
+	;
+	F_errcode(m, int32(50856066))
+	mBase = m.M
+	v168 = m.ExcPending
+	if v168 != 0 {
+		goto L13
+	} else {
+		goto L48
+	}
+L48:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = l1
+	F_errmsg(m, int32(_a_F_GetAttributeCompression_11), v7+int32(16))
+	mBase = m.M
+	v174 = m.ExcPending
+	if v174 != 0 {
+		goto L13
+	} else {
+		goto L49
+	}
+L49:
+	;
+	F_errfinish(m, int32(_a_F_GetAttributeCompression_8), int32(_a_F_GetAttributeCompression_12), int32(_a_F_GetAttributeCompression_10))
+	mBase = m.M
+	v179 = m.ExcPending
+	if v179 != 0 {
+		goto L13
+	} else {
+		goto L50
+	}
+L50:
 	;
 	base.Wasm_trap_unreachable()
 	for {

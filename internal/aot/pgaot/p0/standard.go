@@ -134,7 +134,7 @@ L9:
 	}
 L10:
 	;
-	if v7 != int32(319) {
+	if v7 != int32(321) {
 		goto L1
 	} else {
 		goto L13
@@ -212,6 +212,35 @@ L21:
 L22:
 	;
 	goto L20
+}
+func F_check_standard_conforming_strings(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v11 int32
+	_ = v11
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	if v4 == int32(0) {
+		*(*int32)(unsafe.Add(mBase, _c_F_check_standard_conforming_strings[0])) = int32(1088)
+		v11 = *(*int32)(unsafe.Add(mBase, _c_F_check_standard_conforming_strings[1]))
+		*(*int32)(unsafe.Add(mBase, _c_F_check_standard_conforming_strings[2])) = v11
+		v17 = F_format_elog_string(m, int32(_a_F_check_standard_conforming_strings_0), int32(0))
+		mBase = m.M
+		v20 = m.ExcPending
+		if v20 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, _c_F_check_standard_conforming_strings[3])) = v17
+			return v4
+		}
+	} else {
+		return v4
+	}
 }
 func F_standard_ExecutorEnd(m *base.Module, l0 int32) {
 	mBase := m.M
@@ -296,7 +325,7 @@ func F_standard_ExecutorEnd(m *base.Module, l0 int32) {
 	_ = v123
 	var v124 int32
 	_ = v124
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+164))
 	if int32(0) < v10 {
 		goto L1
@@ -321,7 +350,7 @@ L3:
 	v37 = *(*int32)(unsafe.Add(mBase, _c_F_standard_ExecutorEnd[1]))
 	v39 = *(*int32)(unsafe.Add(mBase, uint32(v9)+100))
 	*(*int32)(unsafe.Add(mBase, _c_F_standard_ExecutorEnd[1])) = v39
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	F_ExecEndNode(m, v41)
 	mBase = m.M
 	v43 = m.ExcPending
@@ -522,8 +551,8 @@ L30:
 L31:
 	;
 	v124 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v124
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v124
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = int64(0)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v124
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+48)) = v124
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = int64(0)
 	return
 }

@@ -197,7 +197,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(_a_F_tsquery_requires_match_1), int32(2195), int32(_a_F_tsquery_requires_match_2))
+	F_errfinish(m, int32(_a_F_tsquery_requires_match_1), int32(2199), int32(_a_F_tsquery_requires_match_2))
 	mBase = m.M
 	v71 = m.ExcPending
 	if v71 != 0 {

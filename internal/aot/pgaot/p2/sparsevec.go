@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_sparsevec_le(m *base.Module, l0 int32) int32 {
+func F_sparsevec_le(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -88,7 +88,7 @@ func F_sparsevec_le(m *base.Module, l0 int32) int32 {
 	_ = v136
 	var v155 int32
 	_ = v155
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = F_pg_detoast_datum(m, v2)
 	mBase = m.M
 	v6 = m.ExcPending
@@ -99,10 +99,10 @@ func F_sparsevec_le(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v8 = F_pg_detoast_datum(m, v7)
 	mBase = m.M
 	v9 = m.ExcPending
@@ -128,7 +128,7 @@ L3:
 	}
 L4:
 	;
-	return base.B2i32(v155 <= int32(0))
+	return base.I64_extend_i32_u(base.B2i32(v155 <= int32(0)))
 L5:
 	;
 	v36 = v31

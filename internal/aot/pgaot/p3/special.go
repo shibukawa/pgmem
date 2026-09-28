@@ -42,7 +42,7 @@ func F_EncodeSpecialTimestamp(m *base.Module, l0 int64, l1 int32) {
 				if v20 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_EncodeSpecialTimestamp_1), int32(1594), int32(_a_F_EncodeSpecialTimestamp_2))
+					F_errfinish(m, int32(_a_F_EncodeSpecialTimestamp_1), int32(1598), int32(_a_F_EncodeSpecialTimestamp_2))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
@@ -81,7 +81,7 @@ func F_assign_special_exec_param(m *base.Module, l0 int32) int32 {
 	var v13 int32
 	_ = v13
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+64))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+72))
 	if v5 != 0 {
 		v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)+4))
 		v7 = v6
@@ -95,7 +95,7 @@ func F_assign_special_exec_param(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-		*(*int32)(unsafe.Add(mBase, uint32(v13)+64)) = v9
+		*(*int32)(unsafe.Add(mBase, uint32(v13)+72)) = v9
 		return v7
 	}
 }

@@ -1468,7 +1468,7 @@ L66:
 	goto L5
 L67:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = int32(1)
 	goto L68
 L68:
 	;
@@ -1514,7 +1514,7 @@ L74:
 	goto L75
 L75:
 	;
-	v221 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
+	v221 = *(*int32)(unsafe.Add(mBase, uint32(l0)+116))
 	if v221 != 0 {
 		v290 = int32(-12)
 		goto L78
@@ -1529,7 +1529,7 @@ L76:
 L77:
 	;
 	v298 = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+92)) = v298
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+96)) = v298
 	v564 = int32(0)
 	v565 = v298
 	v567 = v31
@@ -1553,7 +1553,7 @@ L79:
 L80:
 	;
 	v226 = *(*int32)(unsafe.Add(mBase, uint32(v19)+36))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(1)
 	v234 = F_pullf_read_max(m, v226, int32(20), v19+int32(1084), v19+int32(1088))
 	mBase = m.M
 	v235 = m.ExcPending
@@ -1597,7 +1597,7 @@ L86:
 	goto L87
 L87:
 	;
-	v255 = *(*int32)(unsafe.Add(mBase, uint32(l0)+116))
+	v255 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
 	v257 = v19 + int32(48)
 	v258 = *(*int32)(unsafe.Add(mBase, uint32(v255)+16))
 	m.T0[v258].(func(*base.Module, int32, int32))(m, v255, v257)
@@ -1763,7 +1763,7 @@ L115:
 	goto L116
 L116:
 	;
-	v334 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
+	v334 = *(*int32)(unsafe.Add(mBase, uint32(l0)+116))
 	if v334 != 0 {
 		v587 = v330
 		goto L3
@@ -1848,7 +1848,7 @@ L130:
 	goto L132
 L131:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(1)
 	goto L130
 L132:
 	;

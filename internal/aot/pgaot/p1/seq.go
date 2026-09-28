@@ -10,7 +10,7 @@ func F_ExecSeqScanEPQ(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(754), int32(755))
+	v4 = F_ExecScan(m, l0, int32(800), int32(801))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -97,7 +97,7 @@ func F_read_seq_tuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l1))) = v12
-		F_LockBuffer(m, v12, int32(2))
+		F_LockBufferInternal(m, v12, int32(3))
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {
@@ -168,7 +168,7 @@ func F_read_seq_tuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v90 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_read_seq_tuple_4), int32(1205), int32(_a_F_read_seq_tuple_5))
+						F_errfinish(m, int32(_a_F_read_seq_tuple_4), int32(1206), int32(_a_F_read_seq_tuple_5))
 						mBase = m.M
 						v95 = m.ExcPending
 						if v95 != 0 {

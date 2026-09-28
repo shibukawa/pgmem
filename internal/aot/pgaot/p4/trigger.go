@@ -418,12 +418,10 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	_ = v12
 	var v15 int32
 	_ = v15
-	var v20 int32
-	_ = v20
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
 	var v26 int32
 	_ = v26
 	var v27 int32
@@ -442,101 +440,103 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	_ = v33
 	var v34 int32
 	_ = v34
-	var v39 int32
-	_ = v39
+	var v35 int32
+	_ = v35
 	var v40 int32
 	_ = v40
-	var v43 int32
-	_ = v43
-	var v51 int32
-	_ = v51
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v64 int32
-	_ = v64
-	var v70 int32
-	_ = v70
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v57 int32
+	_ = v57
+	var v65 int32
+	_ = v65
 	var v71 int32
 	_ = v71
-	var v74 int32
-	_ = v74
+	var v72 int32
+	_ = v72
 	var v75 int32
 	_ = v75
-	var v79 int32
-	_ = v79
+	var v76 int32
+	_ = v76
 	var v80 int32
 	_ = v80
-	var v84 int32
-	_ = v84
-	var v86 int32
-	_ = v86
-	var v93 int32
-	_ = v93
-	var v97 int32
-	_ = v97
-	var v102 int32
-	_ = v102
-	var v106 int32
-	_ = v106
-	var v112 int32
-	_ = v112
-	var v117 int32
-	_ = v117
+	var v81 int32
+	_ = v81
+	var v85 int32
+	_ = v85
+	var v87 int32
+	_ = v87
+	var v94 int32
+	_ = v94
+	var v98 int32
+	_ = v98
+	var v103 int32
+	_ = v103
+	var v107 int32
+	_ = v107
+	var v113 int32
+	_ = v113
+	var v118 int32
+	_ = v118
 	v10 = m.G0
-	v12 = v10 - int32(96)
+	v12 = v10 - int32(112)
 	m.G0 = v12
 	v15 = v12 + int32(48)
-	F_ScanKeyInit(m, v15, int32(1), int32(3), int32(184), l1)
+	F_ScanKeyInit(m, v15, int32(1), int32(3), int32(184), base.I64_extend_i32_u(l1))
 	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
+	v21 = m.ExcPending
+	if v21 != 0 {
 		return
 	} else {
-		v22 = int32(1)
-		v25 = F_systable_beginscan(m, l0, int32(2702), v22, int32(0), v22, v15)
+		v23 = int32(1)
+		v26 = F_systable_beginscan(m, l0, int32(2702), v23, int32(0), v23, v15)
 		mBase = m.M
-		v26 = m.ExcPending
-		if v26 != 0 {
+		v27 = m.ExcPending
+		if v27 != 0 {
 			return
 		} else {
-			v27 = F_systable_getnext(m, v25)
+			v28 = F_systable_getnext(m, v26)
 			mBase = m.M
-			v28 = m.ExcPending
-			if v28 != 0 {
+			v29 = m.ExcPending
+			if v29 != 0 {
 				return
 			} else {
-				if v27 != 0 {
-					v29 = F_heap_copytuple(m, v27)
+				if v28 != 0 {
+					v30 = F_heap_copytuple(m, v28)
 					mBase = m.M
-					v30 = m.ExcPending
-					if v30 != 0 {
+					v31 = m.ExcPending
+					if v31 != 0 {
 						return
 					} else {
-						v31 = *(*int32)(unsafe.Add(mBase, uint32(v29)+16))
-						v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+22)))
-						v33 = v31 + v32
+						v32 = *(*int32)(unsafe.Add(mBase, uint32(v30)+16))
+						v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v32)+22)))
+						v34 = v32 + v33
 						if l2 != 0 {
-							v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+8))
-							if v34 != 0 {
+							v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)+8))
+							if v35 != 0 {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v106 = m.ExcPending
-								if v106 != 0 {
+								v107 = m.ExcPending
+								if v107 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
 									F_errmsg_internal(m, int32(_a_F_TriggerSetParentTrigger_0), v12+int32(16))
 									mBase = m.M
-									v112 = m.ExcPending
-									if v112 != 0 {
+									v113 = m.ExcPending
+									if v113 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_TriggerSetParentTrigger_1), int32(1255), int32(_a_F_TriggerSetParentTrigger_2))
+										F_errfinish(m, int32(_a_F_TriggerSetParentTrigger_1), int32(1270), int32(_a_F_TriggerSetParentTrigger_2))
 										mBase = m.M
-										v117 = m.ExcPending
-										if v117 != 0 {
+										v118 = m.ExcPending
+										if v118 != 0 {
 											return
 										} else {
 											base.Wasm_trap_unreachable()
@@ -546,51 +546,51 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 									}
 								}
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v33)+8)) = l2
-								F_CatalogTupleUpdate(m, l0, v27+int32(4), v29)
+								*(*int32)(unsafe.Add(mBase, uint32(v34)+8)) = l2
+								F_CatalogTupleUpdate(m, l0, v28+int32(4), v30)
 								mBase = m.M
-								v39 = m.ExcPending
-								if v39 != 0 {
+								v40 = m.ExcPending
+								if v40 != 0 {
 									return
 								} else {
-									v40 = int32(0)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = v40
+									v41 = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = v41
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = l1
-									v43 = int32(2620)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v43
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v40
+									v44 = int32(2620)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v44
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v41
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = l2
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v43
-									v51 = v12 + int32(36)
-									v53 = v12 + int32(24)
-									F_recordDependencyOn(m, v51, v53, int32(80))
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v44
+									v52 = v12 + int32(36)
+									v54 = v12 + int32(24)
+									F_recordDependencyOn(m, v52, v54, int32(80))
 									mBase = m.M
-									v56 = m.ExcPending
-									if v56 != 0 {
+									v57 = m.ExcPending
+									if v57 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = int32(0)
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = l3
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = int32(1259)
-										F_recordDependencyOn(m, v51, v53, int32(83))
+										F_recordDependencyOn(m, v52, v54, int32(83))
 										mBase = m.M
-										v64 = m.ExcPending
-										if v64 != 0 {
+										v65 = m.ExcPending
+										if v65 != 0 {
 											return
 										} else {
-											F_pfree(m, v29)
+											F_pfree(m, v30)
 											mBase = m.M
-											v84 = m.ExcPending
-											if v84 != 0 {
+											v85 = m.ExcPending
+											if v85 != 0 {
 												return
 											} else {
-												F_systable_endscan(m, v25)
+												F_systable_endscan(m, v26)
 												mBase = m.M
-												v86 = m.ExcPending
-												if v86 != 0 {
+												v87 = m.ExcPending
+												if v87 != 0 {
 													return
 												} else {
-													m.G0 = v12 + int32(96)
+													m.G0 = v12 + int32(112)
 													return
 												}
 											}
@@ -599,39 +599,39 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 								}
 							}
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v33)+8)) = int32(0)
-							F_CatalogTupleUpdate(m, l0, v27+int32(4), v29)
+							*(*int32)(unsafe.Add(mBase, uint32(v34)+8)) = int32(0)
+							F_CatalogTupleUpdate(m, l0, v28+int32(4), v30)
 							mBase = m.M
-							v70 = m.ExcPending
-							if v70 != 0 {
+							v71 = m.ExcPending
+							if v71 != 0 {
 								return
 							} else {
-								v71 = int32(2620)
-								v74 = F_deleteDependencyRecordsForClass(m, v71, l1, v71, int32(80))
+								v72 = int32(2620)
+								v75 = F_deleteDependencyRecordsForClass(m, v72, l1, v72, int32(80))
 								mBase = m.M
-								v75 = m.ExcPending
-								if v75 != 0 {
+								v76 = m.ExcPending
+								if v76 != 0 {
 									return
 								} else {
-									v79 = F_deleteDependencyRecordsForClass(m, int32(2620), l1, int32(1259), int32(83))
+									v80 = F_deleteDependencyRecordsForClass(m, int32(2620), l1, int32(1259), int32(83))
 									mBase = m.M
-									v80 = m.ExcPending
-									if v80 != 0 {
+									v81 = m.ExcPending
+									if v81 != 0 {
 										return
 									} else {
-										F_pfree(m, v29)
+										F_pfree(m, v30)
 										mBase = m.M
-										v84 = m.ExcPending
-										if v84 != 0 {
+										v85 = m.ExcPending
+										if v85 != 0 {
 											return
 										} else {
-											F_systable_endscan(m, v25)
+											F_systable_endscan(m, v26)
 											mBase = m.M
-											v86 = m.ExcPending
-											if v86 != 0 {
+											v87 = m.ExcPending
+											if v87 != 0 {
 												return
 											} else {
-												m.G0 = v12 + int32(96)
+												m.G0 = v12 + int32(112)
 												return
 											}
 										}
@@ -643,21 +643,21 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v93 = m.ExcPending
-					if v93 != 0 {
+					v94 = m.ExcPending
+					if v94 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
 						F_errmsg_internal(m, int32(_a_F_TriggerSetParentTrigger_3), v12)
 						mBase = m.M
-						v97 = m.ExcPending
-						if v97 != 0 {
+						v98 = m.ExcPending
+						if v98 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_TriggerSetParentTrigger_1), int32(1247), int32(_a_F_TriggerSetParentTrigger_2))
+							F_errfinish(m, int32(_a_F_TriggerSetParentTrigger_1), int32(1262), int32(_a_F_TriggerSetParentTrigger_2))
 							mBase = m.M
-							v102 = m.ExcPending
-							if v102 != 0 {
+							v103 = m.ExcPending
+							if v103 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()

@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_seg_center(m *base.Module, l0 int32) int32 {
+func F_seg_center(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -14,12 +14,12 @@ func F_seg_center(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v4 float32
 	_ = v4
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = *(*float32)(unsafe.Add(mBase, uint32(v2)))
 	v4 = *(*float32)(unsafe.Add(mBase, uint32(v2)+4))
-	return base.I32_reinterpret_f32(base.F32_mul(base.F32_add(v3, v4), float32(0.5)))
+	return base.I64_extend_i32_s(base.I32_reinterpret_f32(base.F32_mul(base.F32_add(v3, v4), float32(0.5))))
 }
-func F_seg_in(m *base.Module, l0 int32) int32 {
+func F_seg_in(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
@@ -55,18 +55,18 @@ func F_seg_in(m *base.Module, l0 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v11 = F_palloc(m, int32(12))
 	mBase = m.M
 	v14 = m.ExcPending
 	if v14 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		F_seg_scanner_init(m, v9, v7+int32(12))
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
@@ -74,7 +74,7 @@ func F_seg_in(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				if v21 != 0 {
 					v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
@@ -83,17 +83,17 @@ func F_seg_in(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v28 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
 						F_cube_scanner_finish(m, v28)
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							m.G0 = v7 + int32(16)
-							return v11
+							return base.I64_extend_i32_u(v11)
 						}
 					}
 				} else {
@@ -102,39 +102,50 @@ func F_seg_in(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						m.G0 = v7 + int32(16)
-						return v11
+						return base.I64_extend_i32_u(v11)
 					}
 				}
 			}
 		}
 	}
 }
-func F_seg_le(m *base.Module, l0 int32) int32 {
+func F_seg_le(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F_seg_le_0), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return base.B2i32(v6 <= int32(0))
+		return base.I64_extend_i32_u(base.B2i32(base.I32_wrap_i64(v6) <= int32(0)))
 	}
 }
-func F_seg_union(m *base.Module, l0 int32) int32 {
+func F_seg_lower(m *base.Module, l0 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int64
+	_ = v3
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = int64(*(*int32)(unsafe.Add(mBase, uint32(v2))))
+	return v3
+}
+func F_seg_union(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v9 int32
@@ -173,13 +184,13 @@ func F_seg_union(m *base.Module, l0 int32) int32 {
 	_ = v31
 	var v34 float32
 	_ = v34
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v12 = F_palloc(m, int32(12))
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v16 = *(*float32)(unsafe.Add(mBase, uint32(v9)+4))
 		v17 = *(*float32)(unsafe.Add(mBase, uint32(v10)+4))
@@ -217,7 +228,7 @@ func F_seg_union(m *base.Module, l0 int32) int32 {
 			v34 = v27
 		}
 		*(*float32)(unsafe.Add(mBase, uint32(v12))) = v34
-		return v12
+		return base.I64_extend_i32_u(v12)
 	}
 }
 func F_seg_yy_scan_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

@@ -567,7 +567,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(_a_F_raw_heap_insert_10), int32(641), int32(_a_F_raw_heap_insert_11))
+	F_errfinish(m, int32(_a_F_raw_heap_insert_10), int32(645), int32(_a_F_raw_heap_insert_11))
 	mBase = m.M
 	v242 = m.ExcPending
 	if v242 != 0 {
@@ -592,7 +592,7 @@ L66:
 	}
 L67:
 	;
-	F_errfinish(m, int32(_a_F_raw_heap_insert_10), int32(679), int32(_a_F_raw_heap_insert_11))
+	F_errfinish(m, int32(_a_F_raw_heap_insert_10), int32(682), int32(_a_F_raw_heap_insert_11))
 	mBase = m.M
 	v255 = m.ExcPending
 	if v255 != 0 {

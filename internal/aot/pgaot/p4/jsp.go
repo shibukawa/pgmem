@@ -70,7 +70,7 @@ func F_jspInitByBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v22 = v19 - l1
 	v24 = v22 + v16
 	switch v14 {
-	case 0, 21, 22, 26, 27, 31, 32, 33, 34, 35, 36, 38, 40, 43, 44, 45, 47, 48, 49:
+	case 0, 21, 22, 26, 27, 31, 32, 33, 34, 35, 36, 38, 40, 43, 44, 45, 47, 48, 49, 55, 56, 60:
 		m.G0 = v10 + int32(16)
 		return
 	case 1, 25, 28:
@@ -85,14 +85,14 @@ func F_jspInitByBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = l1 + v30
 		m.G0 = v10 + int32(16)
 		return
-	case 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 41, 46:
+	case 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 41, 46, 54, 61:
 		v72 = *(*int32)(unsafe.Add(mBase, uint32(l1+v24)))
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v72
 		v74 = *(*int32)(unsafe.Add(mBase, uint32(v19)+8))
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v74
 		m.G0 = v10 + int32(16)
 		return
-	case 6, 7, 19, 20, 29, 30, 37, 50, 51, 52, 53:
+	case 6, 7, 19, 20, 29, 30, 37, 50, 51, 52, 53, 57, 58, 59:
 		v34 = *(*int32)(unsafe.Add(mBase, uint32(l1+v24)))
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v34
 		m.G0 = v10 + int32(16)
@@ -125,7 +125,7 @@ func F_jspInitByBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v65 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_jspInitByBuffer_1), int32(1076), int32(_a_F_jspInitByBuffer_2))
+				F_errfinish(m, int32(_a_F_jspInitByBuffer_1), int32(1162), int32(_a_F_jspInitByBuffer_2))
 				mBase = m.M
 				v70 = m.ExcPending
 				if v70 != 0 {

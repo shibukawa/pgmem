@@ -304,6 +304,8 @@ func F_parse_publication_options(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	_ = v514
 	var v521 int32
 	_ = v521
+	var v529 int32
+	_ = v529
 	var v530 int32
 	_ = v530
 	var v535 int32
@@ -1188,7 +1190,7 @@ L130:
 	}
 L131:
 	;
-	F_errfinish(m, int32(_a_F_parse_publication_options_11), int32(136), int32(_a_F_parse_publication_options_12))
+	F_errfinish(m, int32(_a_F_parse_publication_options_11), int32(135), int32(_a_F_parse_publication_options_12))
 	mBase = m.M
 	v468 = m.ExcPending
 	if v468 != 0 {
@@ -1225,7 +1227,7 @@ L134:
 	}
 L135:
 	;
-	F_errfinish(m, int32(_a_F_parse_publication_options_11), int32(155), int32(_a_F_parse_publication_options_12))
+	F_errfinish(m, int32(_a_F_parse_publication_options_11), int32(154), int32(_a_F_parse_publication_options_12))
 	mBase = m.M
 	v486 = m.ExcPending
 	if v486 != 0 {
@@ -1262,7 +1264,7 @@ L138:
 	}
 L139:
 	;
-	F_errfinish(m, int32(_a_F_parse_publication_options_11), int32(175), int32(_a_F_parse_publication_options_12))
+	F_errfinish(m, int32(_a_F_parse_publication_options_11), int32(174), int32(_a_F_parse_publication_options_12))
 	mBase = m.M
 	v505 = m.ExcPending
 	if v505 != 0 {
@@ -1302,7 +1304,7 @@ L143:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+36)) = int32(_a_F_parse_publication_options_9)
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+32)) = int32(_a_F_parse_publication_options_8)
-	F_errdetail(m, int32(_a_F_parse_publication_options_16), v16+int32(32))
+	v529 = F_errdetail(m, int32(_a_F_parse_publication_options_16), v16+int32(32))
 	mBase = m.M
 	v530 = m.ExcPending
 	if v530 != 0 {
@@ -1312,7 +1314,7 @@ L143:
 	}
 L144:
 	;
-	F_errfinish(m, int32(_a_F_parse_publication_options_11), int32(2139), int32(_a_F_parse_publication_options_17))
+	F_errfinish(m, int32(_a_F_parse_publication_options_11), int32(2316), int32(_a_F_parse_publication_options_17))
 	mBase = m.M
 	v535 = m.ExcPending
 	if v535 != 0 {

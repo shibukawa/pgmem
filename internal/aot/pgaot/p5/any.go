@@ -326,6 +326,8 @@ func F_read_any_attr(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v56
 	var v60 int32
 	_ = v60
+	var v63 int32
+	_ = v63
 	var v64 int32
 	_ = v64
 	var v69 int32
@@ -338,6 +340,8 @@ func F_read_any_attr(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v80
 	var v82 int32
 	_ = v82
+	var v88 int32
+	_ = v88
 	var v89 int32
 	_ = v89
 	var v94 int32
@@ -348,6 +352,8 @@ func F_read_any_attr(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v101
 	var v105 int32
 	_ = v105
+	var v108 int32
+	_ = v108
 	var v109 int32
 	_ = v109
 	var v114 int32
@@ -491,7 +497,7 @@ L20:
 	}
 L21:
 	;
-	F_errdetail(m, int32(_a_F_read_any_attr_1), int32(0))
+	v63 = F_errdetail(m, int32(_a_F_read_any_attr_1), int32(0))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -501,7 +507,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(_a_F_read_any_attr_2), int32(865), int32(_a_F_read_any_attr_3))
+	F_errfinish(m, int32(_a_F_read_any_attr_2), int32(863), int32(_a_F_read_any_attr_3))
 	mBase = m.M
 	v69 = m.ExcPending
 	if v69 != 0 {
@@ -547,7 +553,7 @@ L26:
 L27:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = int32(_a_F_read_any_attr_4)
-	F_errdetail(m, int32(_a_F_read_any_attr_5), v8+int32(16))
+	v88 = F_errdetail(m, int32(_a_F_read_any_attr_5), v8+int32(16))
 	mBase = m.M
 	v89 = m.ExcPending
 	if v89 != 0 {
@@ -557,7 +563,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(_a_F_read_any_attr_2), int32(879), int32(_a_F_read_any_attr_3))
+	F_errfinish(m, int32(_a_F_read_any_attr_2), int32(877), int32(_a_F_read_any_attr_3))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -593,7 +599,7 @@ L31:
 L32:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
-	F_errdetail(m, int32(_a_F_read_any_attr_6), v8)
+	v108 = F_errdetail(m, int32(_a_F_read_any_attr_6), v8)
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -603,7 +609,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(_a_F_read_any_attr_2), int32(888), int32(_a_F_read_any_attr_3))
+	F_errfinish(m, int32(_a_F_read_any_attr_2), int32(886), int32(_a_F_read_any_attr_3))
 	mBase = m.M
 	v114 = m.ExcPending
 	if v114 != 0 {

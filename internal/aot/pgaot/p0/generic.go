@@ -98,6 +98,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v139
 	var v140 int32
 	_ = v140
+	var v146 int32
+	_ = v146
 	var v147 int32
 	_ = v147
 	var v152 int32
@@ -124,6 +126,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v183
 	var v184 int32
 	_ = v184
+	var v190 int32
+	_ = v190
 	var v191 int32
 	_ = v191
 	var v196 int32
@@ -148,6 +152,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v222
 	var v223 int32
 	_ = v223
+	var v229 int32
+	_ = v229
 	var v230 int32
 	_ = v230
 	var v235 int32
@@ -176,6 +182,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v267
 	var v268 int32
 	_ = v268
+	var v274 int32
+	_ = v274
 	var v275 int32
 	_ = v275
 	var v280 int32
@@ -224,6 +232,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v351
 	var v352 int32
 	_ = v352
+	var v358 int32
+	_ = v358
 	var v359 int32
 	_ = v359
 	var v364 int32
@@ -264,6 +274,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v417
 	var v418 int32
 	_ = v418
+	var v424 int32
+	_ = v424
 	var v425 int32
 	_ = v425
 	var v430 int32
@@ -412,6 +424,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v605
 	var v606 int32
 	_ = v606
+	var v612 int32
+	_ = v612
 	var v613 int32
 	_ = v613
 	var v618 int32
@@ -444,6 +458,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v655
 	var v656 int32
 	_ = v656
+	var v662 int32
+	_ = v662
 	var v663 int32
 	_ = v663
 	var v668 int32
@@ -482,6 +498,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v731
 	var v732 int32
 	_ = v732
+	var v738 int32
+	_ = v738
 	var v739 int32
 	_ = v739
 	var v744 int32
@@ -562,6 +580,8 @@ func F_enforce_generic_type_consistency(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v864
 	var v865 int32
 	_ = v865
+	var v871 int32
+	_ = v871
 	var v872 int32
 	_ = v872
 	var v877 int32
@@ -1501,7 +1521,7 @@ L49:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+468)) = v139
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+464)) = v137
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(464))
+	v146 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(464))
 	mBase = m.M
 	v147 = m.ExcPending
 	if v147 != 0 {
@@ -1511,7 +1531,7 @@ L49:
 	}
 L50:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2192), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2196), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v152 = m.ExcPending
 	if v152 != 0 {
@@ -1719,7 +1739,7 @@ L70:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+500)) = v183
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+496)) = v181
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(496))
+	v190 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(496))
 	mBase = m.M
 	v191 = m.ExcPending
 	if v191 != 0 {
@@ -1729,7 +1749,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2212), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2216), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v196 = m.ExcPending
 	if v196 != 0 {
@@ -1905,7 +1925,7 @@ L88:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+532)) = v222
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+528)) = v220
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(528))
+	v229 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(528))
 	mBase = m.M
 	v230 = m.ExcPending
 	if v230 != 0 {
@@ -1915,7 +1935,7 @@ L88:
 	}
 L89:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2232), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2236), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v235 = m.ExcPending
 	if v235 != 0 {
@@ -2123,7 +2143,7 @@ L109:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+564)) = v267
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+560)) = v265
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(560))
+	v274 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(560))
 	mBase = m.M
 	v275 = m.ExcPending
 	if v275 != 0 {
@@ -2133,7 +2153,7 @@ L109:
 	}
 L110:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2253), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2257), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v280 = m.ExcPending
 	if v280 != 0 {
@@ -2289,7 +2309,7 @@ L124:
 	}
 L125:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2286), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2290), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v322 = m.ExcPending
 	if v322 != 0 {
@@ -2476,7 +2496,7 @@ L144:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+628)) = v351
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+624)) = v349
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(624))
+	v358 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(624))
 	mBase = m.M
 	v359 = m.ExcPending
 	if v359 != 0 {
@@ -2486,7 +2506,7 @@ L144:
 	}
 L145:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2308), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2312), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v364 = m.ExcPending
 	if v364 != 0 {
@@ -2562,7 +2582,7 @@ L153:
 	}
 L154:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2319), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2323), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v388 = m.ExcPending
 	if v388 != 0 {
@@ -2749,7 +2769,7 @@ L173:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+676)) = v417
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+672)) = v415
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(672))
+	v424 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(672))
 	mBase = m.M
 	v425 = m.ExcPending
 	if v425 != 0 {
@@ -2759,7 +2779,7 @@ L173:
 	}
 L174:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2342), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2346), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v430 = m.ExcPending
 	if v430 != 0 {
@@ -2848,7 +2868,7 @@ L182:
 	}
 L183:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2353), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2357), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v455 = m.ExcPending
 	if v455 != 0 {
@@ -3170,7 +3190,7 @@ L223:
 	}
 L224:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2388), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2392), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v569 = m.ExcPending
 	if v569 != 0 {
@@ -3340,7 +3360,7 @@ L247:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+404)) = v605
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+400)) = v603
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(400))
+	v612 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(400))
 	mBase = m.M
 	v613 = m.ExcPending
 	if v613 != 0 {
@@ -3350,7 +3370,7 @@ L247:
 	}
 L248:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2449), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2453), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v618 = m.ExcPending
 	if v618 != 0 {
@@ -3482,7 +3502,7 @@ L265:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+340)) = v655
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+336)) = v653
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(336))
+	v662 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(336))
 	mBase = m.M
 	v663 = m.ExcPending
 	if v663 != 0 {
@@ -3492,7 +3512,7 @@ L265:
 	}
 L266:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2488), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2492), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v668 = m.ExcPending
 	if v668 != 0 {
@@ -3555,7 +3575,7 @@ L273:
 	}
 L274:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2510), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2514), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v692 = m.ExcPending
 	if v692 != 0 {
@@ -3602,7 +3622,7 @@ L278:
 	}
 L279:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2398), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2402), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v712 = m.ExcPending
 	if v712 != 0 {
@@ -3661,7 +3681,7 @@ L285:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+436)) = v731
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+432)) = v729
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(432))
+	v738 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(432))
 	mBase = m.M
 	v739 = m.ExcPending
 	if v739 != 0 {
@@ -3671,7 +3691,7 @@ L285:
 	}
 L286:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2418), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2422), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v744 = m.ExcPending
 	if v744 != 0 {
@@ -3718,7 +3738,7 @@ L290:
 	}
 L291:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2433), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2437), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v766 = m.ExcPending
 	if v766 != 0 {
@@ -3765,7 +3785,7 @@ L295:
 	}
 L296:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2469), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2473), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v788 = m.ExcPending
 	if v788 != 0 {
@@ -3849,7 +3869,7 @@ L304:
 	}
 L305:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2524), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2528), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v823 = m.ExcPending
 	if v823 != 0 {
@@ -4021,7 +4041,7 @@ L327:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+276)) = v864
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+272)) = v862
-	F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(272))
+	v871 = F_errdetail(m, int32(_a_F_enforce_generic_type_consistency_8), v31+int32(272))
 	mBase = m.M
 	v872 = m.ExcPending
 	if v872 != 0 {
@@ -4031,7 +4051,7 @@ L327:
 	}
 L328:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2555), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2559), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v877 = m.ExcPending
 	if v877 != 0 {
@@ -4314,7 +4334,7 @@ L367:
 	}
 L368:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2658), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2662), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v996 = m.ExcPending
 	if v996 != 0 {
@@ -4713,7 +4733,7 @@ L421:
 	}
 L422:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2765), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2769), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1240 = m.ExcPending
 	if v1240 != 0 {
@@ -4788,7 +4808,7 @@ L429:
 	}
 L430:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2741), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2745), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1262 = m.ExcPending
 	if v1262 != 0 {
@@ -4835,7 +4855,7 @@ L434:
 	}
 L435:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2753), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2757), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1283 = m.ExcPending
 	if v1283 != 0 {
@@ -4944,7 +4964,7 @@ L448:
 	}
 L449:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2801), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2805), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1352 = m.ExcPending
 	if v1352 != 0 {
@@ -5018,7 +5038,7 @@ L456:
 	}
 L457:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2788), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2792), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1374 = m.ExcPending
 	if v1374 != 0 {
@@ -5068,7 +5088,7 @@ L462:
 	}
 L463:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2534), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2538), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1396 = m.ExcPending
 	if v1396 != 0 {
@@ -5115,7 +5135,7 @@ L467:
 	}
 L468:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2566), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2570), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1418 = m.ExcPending
 	if v1418 != 0 {
@@ -5150,7 +5170,7 @@ L471:
 	}
 L472:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2594), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2598), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1434 = m.ExcPending
 	if v1434 != 0 {
@@ -5196,7 +5216,7 @@ L476:
 	}
 L477:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2603), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2607), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1454 = m.ExcPending
 	if v1454 != 0 {
@@ -5233,7 +5253,7 @@ L480:
 	}
 L481:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2613), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2617), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1475 = m.ExcPending
 	if v1475 != 0 {
@@ -5290,7 +5310,7 @@ L486:
 	}
 L487:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2624), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2628), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1498 = m.ExcPending
 	if v1498 != 0 {
@@ -5327,7 +5347,7 @@ L490:
 	}
 L491:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2634), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2638), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1519 = m.ExcPending
 	if v1519 != 0 {
@@ -5384,7 +5404,7 @@ L496:
 	}
 L497:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2645), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2649), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1542 = m.ExcPending
 	if v1542 != 0 {
@@ -5421,7 +5441,7 @@ L500:
 	}
 L501:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2684), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2688), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1563 = m.ExcPending
 	if v1563 != 0 {
@@ -5458,7 +5478,7 @@ L504:
 	}
 L505:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2689), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2693), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1584 = m.ExcPending
 	if v1584 != 0 {
@@ -5524,7 +5544,7 @@ L512:
 	}
 L513:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2813), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2817), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1607 = m.ExcPending
 	if v1607 != 0 {
@@ -5584,7 +5604,7 @@ L519:
 	}
 L520:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2825), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2829), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1625 = m.ExcPending
 	if v1625 != 0 {
@@ -5647,7 +5667,7 @@ L527:
 	}
 L528:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2836), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2840), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1643 = m.ExcPending
 	if v1643 != 0 {
@@ -5711,7 +5731,7 @@ L535:
 	}
 L536:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2847), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2851), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1661 = m.ExcPending
 	if v1661 != 0 {
@@ -5764,7 +5784,7 @@ L541:
 	}
 L542:
 	;
-	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2858), int32(_a_F_enforce_generic_type_consistency_10))
+	F_errfinish(m, int32(_a_F_enforce_generic_type_consistency_9), int32(2862), int32(_a_F_enforce_generic_type_consistency_10))
 	mBase = m.M
 	v1679 = m.ExcPending
 	if v1679 != 0 {

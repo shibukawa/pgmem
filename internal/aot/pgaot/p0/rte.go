@@ -463,7 +463,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(_a_F_markRTEForSelectPriv_1), int32(1112), int32(_a_F_markRTEForSelectPriv_2))
+	F_errfinish(m, int32(_a_F_markRTEForSelectPriv_1), int32(1140), int32(_a_F_markRTEForSelectPriv_2))
 	mBase = m.M
 	v175 = m.ExcPending
 	if v175 != 0 {
@@ -491,7 +491,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(_a_F_markRTEForSelectPriv_1), int32(1144), int32(_a_F_markRTEForSelectPriv_2))
+	F_errfinish(m, int32(_a_F_markRTEForSelectPriv_1), int32(1172), int32(_a_F_markRTEForSelectPriv_2))
 	mBase = m.M
 	v199 = m.ExcPending
 	if v199 != 0 {
@@ -519,7 +519,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(_a_F_markRTEForSelectPriv_1), int32(1129), int32(_a_F_markRTEForSelectPriv_2))
+	F_errfinish(m, int32(_a_F_markRTEForSelectPriv_1), int32(1157), int32(_a_F_markRTEForSelectPriv_2))
 	mBase = m.M
 	v221 = m.ExcPending
 	if v221 != 0 {
@@ -599,7 +599,7 @@ func F_replace_rte_variables(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 		}
 	}
 	*(*uint8)(unsafe.Add(mBase, uint32(v10)+28)) = uint8(v26)
-	v31 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1054), v10+int32(12))
+	v31 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1132), v10+int32(12))
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
@@ -624,7 +624,7 @@ func F_replace_rte_variables(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 						if v60 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_replace_rte_variables_1), int32(1475), int32(_a_F_replace_rte_variables_2))
+							F_errfinish(m, int32(_a_F_replace_rte_variables_1), int32(1493), int32(_a_F_replace_rte_variables_2))
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
@@ -658,7 +658,7 @@ func F_replace_rte_variables(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 							if v60 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_replace_rte_variables_1), int32(1475), int32(_a_F_replace_rte_variables_2))
+								F_errfinish(m, int32(_a_F_replace_rte_variables_1), int32(1493), int32(_a_F_replace_rte_variables_2))
 								mBase = m.M
 								v65 = m.ExcPending
 								if v65 != 0 {

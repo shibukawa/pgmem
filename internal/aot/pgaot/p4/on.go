@@ -122,8 +122,8 @@ L4:
 	;
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-	v24 = v17 + v18<<(uint(int32(4))%32) + v14*int32(100)
-	v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24)+111)))
+	v24 = v17 + v18<<(uint(int32(3))%32) + v14*int32(100)
+	v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24)+119)))
 	if v25 == int32(1) {
 		goto L7
 	} else {
@@ -161,7 +161,7 @@ L8:
 	goto L9
 L9:
 	;
-	v40 = v24 + int32(20)
+	v40 = v24 + int32(28)
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(v40)+68))
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(v40)+76))
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(v40)+96))
@@ -183,7 +183,7 @@ L11:
 	goto L6
 L12:
 	;
-	v49 = F_pstrdup(m, v24+int32(24))
+	v49 = F_pstrdup(m, v24+int32(32))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -245,7 +245,7 @@ L19:
 	;
 	return v82
 }
-func F_on_pl(m *base.Module, l0 int32) int32 {
+func F_on_pl(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -256,14 +256,14 @@ func F_on_pl(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v4 = F_line_contain_point(m, v2, v3)
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return v4
+		return base.I64_extend_i32_u(v4)
 	}
 }

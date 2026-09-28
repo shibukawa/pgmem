@@ -295,7 +295,7 @@ func F_jsonpath_yyerror(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	} else {
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		if v13 != int32(447) {
+		if v13 != int32(453) {
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+80))
 			v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17))))
 			v19 = F_errsave_start(m, l0)

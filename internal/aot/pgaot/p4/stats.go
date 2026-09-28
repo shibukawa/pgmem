@@ -302,10 +302,10 @@ func F_stats_check_arg_pair(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	v9 = v7 - int32(16)
 	m.G0 = v9
 	v11 = int32(1)
-	v13 = l0 + int32(20)
-	v14 = int32(3)
-	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13+l2<<(uint(v14)%32))+4)))
-	v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13+l1<<(uint(v14)%32))+4)))
+	v13 = l0 + int32(24)
+	v14 = int32(4)
+	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13+l2<<(uint(v14)%32))+8)))
+	v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13+l1<<(uint(v14)%32))+8)))
 	if v21 == v11 {
 		if v17&int32(1) == int32(0) {
 			v32 = int32(0)
@@ -346,7 +346,7 @@ func F_stats_check_arg_pair(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						if v60 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_stats_check_arg_pair_1), int32(116), int32(_a_F_stats_check_arg_pair_2))
+							F_errfinish(m, int32(_a_F_stats_check_arg_pair_1), int32(129), int32(_a_F_stats_check_arg_pair_2))
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
@@ -409,7 +409,7 @@ func F_stats_check_arg_pair(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						if v60 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_stats_check_arg_pair_1), int32(116), int32(_a_F_stats_check_arg_pair_2))
+							F_errfinish(m, int32(_a_F_stats_check_arg_pair_1), int32(129), int32(_a_F_stats_check_arg_pair_2))
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {

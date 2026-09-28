@@ -152,15 +152,15 @@ L4:
 	;
 	v53 = *(*int32)(unsafe.Add(mBase, uint32(l1)+192))
 	v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(v53)+10)))
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(1831)
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(2054)
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+40)) = v54
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v26
 	v59 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v16)+36)) = uint8(v59)
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(1832)
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(1833)
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(1834)
-	*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1835)
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(2055)
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(2056)
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(2057)
+	*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(2058)
 	*(*uint8)(unsafe.Add(mBase, uint32(v26)+9)) = uint8(v4)
 	*(*uint8)(unsafe.Add(mBase, uint32(v26)+8)) = uint8(v3)
 	*(*int32)(unsafe.Add(mBase, uint32(v26)+4)) = l1
@@ -220,7 +220,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(_a_F_tuplesort_begin_index_btree_2), int32(382), int32(_a_F_tuplesort_begin_index_btree_3))
+	F_errfinish(m, int32(_a_F_tuplesort_begin_index_btree_2), int32(383), int32(_a_F_tuplesort_begin_index_btree_3))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -302,7 +302,7 @@ L19:
 	v126 = v123 + v116*int32(36)
 	v128 = *(*int32)(unsafe.Add(mBase, _c_F_tuplesort_begin_index_btree[0]))
 	*(*int32)(unsafe.Add(mBase, uint32(v126))) = v128
-	v132 = v74 + int32(16) + v116*int32(48)
+	v132 = v74 + int32(16) + v116*int32(56)
 	v133 = *(*int32)(unsafe.Add(mBase, uint32(v132)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v126)+4)) = v133
 	v135 = *(*int32)(unsafe.Add(mBase, uint32(v132)))
@@ -394,7 +394,7 @@ func F_tuplesort_putindextuplevalues(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v23
 	var v24 int32
 	_ = v24
-	var v27 int32
+	var v27 int64
 	_ = v27
 	var v28 int32
 	_ = v28
@@ -418,10 +418,10 @@ func F_tuplesort_putindextuplevalues(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v52
 	var v55 int32
 	_ = v55
-	var v59 int32
-	_ = v59
+	var v61 int32
+	_ = v61
 	v8 = m.G0
-	v10 = v8 - int32(16)
+	v10 = v8 - int32(32)
 	m.G0 = v10
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)+52))
@@ -432,20 +432,20 @@ func F_tuplesort_putindextuplevalues(m *base.Module, l0 int32, l1 int32, l2 int3
 	if v16 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v10))) = v15
+		*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v15
 		v18 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+4)))
 		*(*uint16)(unsafe.Add(mBase, uint32(v15)+4)) = uint16(v18)
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 		*(*int32)(unsafe.Add(mBase, uint32(v15))) = v20
 		v23 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
 		v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+52))
-		v27 = F_index_getattr_2(m, v15, int32(1), v24, v10+int32(8))
+		v27 = F_index_getattr_2(m, v15, int32(1), v24, v10+int32(24))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v27
+			*(*int64)(unsafe.Add(mBase, uint32(v10)+16)) = v27
 			v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)))
 			if v30&int32(2) == int32(0) {
 				v35 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v15)+6)))
@@ -459,17 +459,17 @@ func F_tuplesort_putindextuplevalues(m *base.Module, l0 int32, l1 int32, l2 int3
 					if v49 == int32(0) {
 						v55 = v45
 					} else {
-						v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+8)))
+						v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+24)))
 						v55 = v52 ^ int32(1)
 					}
 				}
-				F_tuplesort_puttuple_common(m, l0, v10, v55&int32(1), v44)
+				F_tuplesort_puttuple_common(m, l0, v10+int32(8), v55&int32(1), v44)
 				mBase = m.M
-				v59 = m.ExcPending
-				if v59 != 0 {
+				v61 = m.ExcPending
+				if v61 != 0 {
 					return
 				} else {
-					m.G0 = v10 + int32(16)
+					m.G0 = v10 + int32(32)
 					return
 				}
 			} else {
@@ -489,17 +489,17 @@ func F_tuplesort_putindextuplevalues(m *base.Module, l0 int32, l1 int32, l2 int3
 						if v49 == int32(0) {
 							v55 = v45
 						} else {
-							v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+8)))
+							v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+24)))
 							v55 = v52 ^ int32(1)
 						}
 					}
-					F_tuplesort_puttuple_common(m, l0, v10, v55&int32(1), v44)
+					F_tuplesort_puttuple_common(m, l0, v10+int32(8), v55&int32(1), v44)
 					mBase = m.M
-					v59 = m.ExcPending
-					if v59 != 0 {
+					v61 = m.ExcPending
+					if v61 != 0 {
 						return
 					} else {
-						m.G0 = v10 + int32(16)
+						m.G0 = v10 + int32(32)
 						return
 					}
 				}

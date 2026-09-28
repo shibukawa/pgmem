@@ -26,7 +26,7 @@ func F_BloomFormTuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 	_ = v28
 	var v31 int32
 	_ = v31
-	var v37 int32
+	var v37 int64
 	_ = v37
 	var v39 int32
 	_ = v39
@@ -84,7 +84,7 @@ L7:
 	goto L5
 L8:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(l2+v24<<(uint(int32(2))%32))))
+	v37 = *(*int64)(unsafe.Add(mBase, uint32(l2+v24<<(uint(int32(3))%32))))
 	F_signValue(m, l0, v9+int32(6), v37, v24)
 	mBase = m.M
 	v39 = m.ExcPending

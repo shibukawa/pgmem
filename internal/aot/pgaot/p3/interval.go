@@ -5,10 +5,10 @@ import (
 	"unsafe"
 )
 
-func F_interval_finite(m *base.Module, l0 int32) int32 {
+func F_interval_finite(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
 	var v5 int32
 	_ = v5
@@ -22,41 +22,41 @@ func F_interval_finite(m *base.Module, l0 int32) int32 {
 	_ = v21
 	var v24 int64
 	_ = v24
-	var v27 int32
-	_ = v27
-	v4 = int32(1)
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	var v28 int64
+	_ = v28
+	v4 = int64(1)
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)+12))
 	if v6 != int32(2147483647) {
 		if v6 != int32(-2147483648) {
-			v27 = v4
-			return v27
+			v28 = v4
+			return v28
 		} else {
 			v11 = *(*int32)(unsafe.Add(mBase, uint32(v5)+8))
 			if v11 == int32(-2147483648) {
 				v15 = *(*int64)(unsafe.Add(mBase, uint32(v5)))
 				if v15 == int64(-9223372036854775807-1) {
-					v27 = int32(0)
-					return v27
+					v28 = int64(0)
+					return v28
 				} else {
-					return int32(1)
+					return int64(1)
 				}
 			} else {
-				return int32(1)
+				return int64(1)
 			}
 		}
 	} else {
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(v5)+8))
 		if v21 != int32(2147483647) {
-			v27 = v4
+			v28 = v4
 		} else {
 			v24 = *(*int64)(unsafe.Add(mBase, uint32(v5)))
-			v27 = base.B2i32(v24 != int64(9223372036854775807))
+			v28 = base.I64_extend_i32_u(base.B2i32(v24 != int64(9223372036854775807)))
 		}
-		return v27
+		return v28
 	}
 }
-func F_interval_larger(m *base.Module, l0 int32) int32 {
+func F_interval_larger(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v12 int32
@@ -65,62 +65,62 @@ func F_interval_larger(m *base.Module, l0 int32) int32 {
 	_ = v14
 	var v17 int32
 	_ = v17
-	var v18 int32
+	var v18 int64
 	_ = v18
-	var v19 int64
+	var v19 int32
 	_ = v19
-	var v22 int64
-	_ = v22
+	var v20 int64
+	_ = v20
 	var v23 int64
 	_ = v23
-	var v32 int64
-	_ = v32
+	var v24 int64
+	_ = v24
 	var v33 int64
 	_ = v33
-	var v35 int64
-	_ = v35
-	var v38 int64
-	_ = v38
+	var v34 int64
+	_ = v34
+	var v36 int64
+	_ = v36
 	var v39 int64
 	_ = v39
-	var v41 int64
-	_ = v41
+	var v40 int64
+	_ = v40
 	var v42 int64
 	_ = v42
-	var v46 int64
-	_ = v46
-	var v53 int64
-	_ = v53
-	var v64 int32
-	_ = v64
+	var v43 int64
+	_ = v43
+	var v47 int64
+	_ = v47
+	var v54 int64
+	_ = v54
 	var v65 int64
 	_ = v65
-	var v68 int64
-	_ = v68
-	var v69 int64
-	_ = v69
-	var v78 int64
-	_ = v78
-	var v79 int64
-	_ = v79
+	var v66 int32
+	_ = v66
+	var v67 int64
+	_ = v67
+	var v70 int64
+	_ = v70
+	var v71 int64
+	_ = v71
+	var v80 int64
+	_ = v80
 	var v81 int64
 	_ = v81
-	var v84 int64
-	_ = v84
-	var v85 int64
-	_ = v85
+	var v83 int64
+	_ = v83
+	var v86 int64
+	_ = v86
 	var v87 int64
 	_ = v87
-	var v88 int64
-	_ = v88
-	var v92 int64
-	_ = v92
-	var v99 int64
-	_ = v99
-	var v110 int64
-	_ = v110
-	var v111 int64
-	_ = v111
+	var v89 int64
+	_ = v89
+	var v90 int64
+	_ = v90
+	var v94 int64
+	_ = v94
+	var v101 int64
+	_ = v101
 	var v112 int64
 	_ = v112
 	var v113 int64
@@ -129,75 +129,81 @@ func F_interval_larger(m *base.Module, l0 int32) int32 {
 	_ = v114
 	var v115 int64
 	_ = v115
-	var v119 int64
-	_ = v119
-	var v120 int64
-	_ = v120
-	var v124 int64
-	_ = v124
-	var v127 int64
-	_ = v127
-	var v133 int64
-	_ = v133
-	var v136 int32
-	_ = v136
-	var v137 int32
-	_ = v137
+	var v116 int64
+	_ = v116
+	var v117 int64
+	_ = v117
+	var v121 int64
+	_ = v121
+	var v122 int64
+	_ = v122
+	var v126 int64
+	_ = v126
+	var v129 int64
+	_ = v129
+	var v135 int64
+	_ = v135
+	var v138 int32
+	_ = v138
+	var v139 int64
+	_ = v139
 	v12 = m.G0
 	v14 = v12 - int32(32)
 	m.G0 = v14
 	v17 = v14 + int32(16)
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v19 = int64(*(*int32)(unsafe.Add(mBase, uint32(v18)+12)))
-	v22 = int64(*(*int32)(unsafe.Add(mBase, uint32(v18)+8)))
-	v23 = v19*int64(30) + v22
-	v32 = int64(32)
-	v33 = int64(20)
-	v35 = int64(base.Ui64(v23) >> (uint(v32) % 64))
-	v38 = int64(4294967295)
-	v39 = int64(500654080)
-	v41 = v23 & v38
-	v42 = v39 * v41
-	v46 = int64(base.Ui64(v42)>>(uint(v32)%64)) + v39*v35
-	v53 = v41*v33 + v46&v38
-	*(*int64)(unsafe.Add(mBase, uint32(v17)+8)) = v23*int64(0) + v23>>(uint(int64(63))%64)*int64(86400000000) + v33*v35 + int64(base.Ui64(v46)>>(uint(v32)%64)) + int64(base.Ui64(v53)>>(uint(v32)%64))
-	*(*int64)(unsafe.Add(mBase, uint32(v17))) = v42&v38 | v53<<(uint(v32)%64)
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v65 = int64(*(*int32)(unsafe.Add(mBase, uint32(v64)+12)))
-	v68 = int64(*(*int32)(unsafe.Add(mBase, uint32(v64)+8)))
-	v69 = v65*int64(30) + v68
-	v78 = int64(32)
-	v79 = int64(20)
-	v81 = int64(base.Ui64(v69) >> (uint(v78) % 64))
-	v84 = int64(4294967295)
-	v85 = int64(500654080)
-	v87 = v69 & v84
-	v88 = v85 * v87
-	v92 = int64(base.Ui64(v88)>>(uint(v78)%64)) + v85*v81
-	v99 = v87*v79 + v92&v84
-	*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v69*int64(0) + v69>>(uint(int64(63))%64)*int64(86400000000) + v79*v81 + int64(base.Ui64(v92)>>(uint(v78)%64)) + int64(base.Ui64(v99)>>(uint(v78)%64))
-	*(*int64)(unsafe.Add(mBase, uint32(v14))) = v88&v84 | v99<<(uint(v78)%64)
-	v110 = *(*int64)(unsafe.Add(mBase, uint32(v64)))
-	v111 = *(*int64)(unsafe.Add(mBase, uint32(v14)+8))
-	v112 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
-	v113 = *(*int64)(unsafe.Add(mBase, uint32(v18)))
-	v114 = *(*int64)(unsafe.Add(mBase, uint32(v14)+24))
-	v115 = *(*int64)(unsafe.Add(mBase, uint32(v14)+16))
+	v18 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v19 = base.I32_wrap_i64(v18)
+	v20 = int64(*(*int32)(unsafe.Add(mBase, uint32(v19)+12)))
+	v23 = int64(*(*int32)(unsafe.Add(mBase, uint32(v19)+8)))
+	v24 = v20*int64(30) + v23
+	v33 = int64(32)
+	v34 = int64(20)
+	v36 = int64(base.Ui64(v24) >> (uint(v33) % 64))
+	v39 = int64(4294967295)
+	v40 = int64(500654080)
+	v42 = v24 & v39
+	v43 = v40 * v42
+	v47 = int64(base.Ui64(v43)>>(uint(v33)%64)) + v40*v36
+	v54 = v42*v34 + v47&v39
+	*(*int64)(unsafe.Add(mBase, uint32(v17)+8)) = v24*int64(0) + v24>>(uint(int64(63))%64)*int64(86400000000) + v34*v36 + int64(base.Ui64(v47)>>(uint(v33)%64)) + int64(base.Ui64(v54)>>(uint(v33)%64))
+	*(*int64)(unsafe.Add(mBase, uint32(v17))) = v43&v39 | v54<<(uint(v33)%64)
+	v65 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v66 = base.I32_wrap_i64(v65)
+	v67 = int64(*(*int32)(unsafe.Add(mBase, uint32(v66)+12)))
+	v70 = int64(*(*int32)(unsafe.Add(mBase, uint32(v66)+8)))
+	v71 = v67*int64(30) + v70
+	v80 = int64(32)
+	v81 = int64(20)
+	v83 = int64(base.Ui64(v71) >> (uint(v80) % 64))
+	v86 = int64(4294967295)
+	v87 = int64(500654080)
+	v89 = v71 & v86
+	v90 = v87 * v89
+	v94 = int64(base.Ui64(v90)>>(uint(v80)%64)) + v87*v83
+	v101 = v89*v81 + v94&v86
+	*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v71*int64(0) + v71>>(uint(int64(63))%64)*int64(86400000000) + v81*v83 + int64(base.Ui64(v94)>>(uint(v80)%64)) + int64(base.Ui64(v101)>>(uint(v80)%64))
+	*(*int64)(unsafe.Add(mBase, uint32(v14))) = v90&v86 | v101<<(uint(v80)%64)
+	v112 = *(*int64)(unsafe.Add(mBase, uint32(v66)))
+	v113 = *(*int64)(unsafe.Add(mBase, uint32(v14)+8))
+	v114 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
+	v115 = *(*int64)(unsafe.Add(mBase, uint32(v19)))
+	v116 = *(*int64)(unsafe.Add(mBase, uint32(v14)+24))
+	v117 = *(*int64)(unsafe.Add(mBase, uint32(v14)+16))
 	m.G0 = v14 + int32(32)
-	v119 = v113 + v115
-	v120 = v110 + v112
-	v124 = int64(63)
-	v127 = base.I64_extend_i32_u(base.B2i32(base.Ui64(v119) < base.Ui64(v115))) + (v114 + v113>>(uint(v124)%64))
-	v133 = base.I64_extend_i32_u(base.B2i32(base.Ui64(v120) < base.Ui64(v112))) + (v111 + v110>>(uint(v124)%64))
-	if v133 == v127 {
-		v136 = base.B2i32(base.Ui64(v120) < base.Ui64(v119))
+	v121 = v115 + v117
+	v122 = v112 + v114
+	v126 = int64(63)
+	v129 = base.I64_extend_i32_u(base.B2i32(base.Ui64(v121) < base.Ui64(v117))) + (v116 + v115>>(uint(v126)%64))
+	v135 = base.I64_extend_i32_u(base.B2i32(base.Ui64(v122) < base.Ui64(v114))) + (v113 + v112>>(uint(v126)%64))
+	if v135 == v129 {
+		v138 = base.B2i32(base.Ui64(v122) < base.Ui64(v121))
 	} else {
-		v136 = base.B2i32(v133 < v127)
+		v138 = base.B2i32(v135 < v129)
 	}
-	if v136 != 0 {
-		v137 = v18
+	if v138 != 0 {
+		v139 = v18
 	} else {
-		v137 = v64
+		v139 = v65
 	}
-	return v137
+	return v139 & int64(4294967295)
 }

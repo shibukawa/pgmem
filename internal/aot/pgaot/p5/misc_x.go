@@ -36,49 +36,46 @@ func F_x_cmp(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 	return v15
 }
-func F_xid8out(m *base.Module, l0 int32) int32 {
+func F_xid8out(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
 	_ = v4
 	var v6 int32
 	_ = v6
-	var v8 int32
+	var v8 int64
 	_ = v8
-	var v9 int64
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
 	var v18 int32
 	_ = v18
-	var v19 int32
-	_ = v19
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v9 = *(*int64)(unsafe.Add(mBase, uint32(v8)))
-	v11 = F_palloc(m, int32(21))
+	v8 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v10 = F_palloc(m, int32(21))
 	mBase = m.M
-	v14 = m.ExcPending
-	if v14 != 0 {
-		return int32(0)
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int64(0)
 	} else {
-		*(*int64)(unsafe.Add(mBase, uint32(v6))) = v9
-		v18 = F_pg_snprintf(m, v11, int32(21), int32(_a_F_xid8out_0), v6)
+		*(*int64)(unsafe.Add(mBase, uint32(v6))) = v8
+		v17 = F_pg_snprintf(m, v10, int32(21), int32(_a_F_xid8out_0), v6)
 		mBase = m.M
-		v19 = m.ExcPending
-		if v19 != 0 {
-			return int32(0)
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return int64(0)
 		} else {
 			m.G0 = v6 + int32(16)
-			return v11
+			return base.I64_extend_i32_u(v10)
 		}
 	}
 }
-func F_xmlconcat2(m *base.Module, l0 int32) int32 {
+func F_xmlconcat2(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -130,56 +127,56 @@ func F_xmlconcat2(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v8 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
-	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
+	v8 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)))
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 	if v9 == int32(1) {
 		if v8&int32(1) == int32(0) {
-			v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 			v44 = F_pg_detoast_datum(m, v43)
 			mBase = m.M
 			v45 = m.ExcPending
 			if v45 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v46 = v44
 				m.G0 = v6 + int32(16)
-				return v46
+				return base.I64_extend_i32_u(v46)
 			}
 		} else {
 			v16 = int32(1)
 			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v16)
 			v46 = int32(0)
 			m.G0 = v6 + int32(16)
-			return v46
+			return base.I64_extend_i32_u(v46)
 		}
 	} else {
 		if v8&int32(1) != 0 {
-			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			v22 = F_pg_detoast_datum(m, v21)
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v46 = v22
 				m.G0 = v6 + int32(16)
-				return v46
+				return base.I64_extend_i32_u(v46)
 			}
 		} else {
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+			v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			v27 = F_pg_detoast_datum(m, v26)
 			mBase = m.M
 			v28 = m.ExcPending
 			if v28 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v27
-				v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 				v31 = F_pg_detoast_datum(m, v30)
 				mBase = m.M
 				v32 = m.ExcPending
 				if v32 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v31
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v31
@@ -189,13 +186,13 @@ func F_xmlconcat2(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v41 = F_xmlconcat(m)
 						mBase = m.M
 						v42 = m.ExcPending
 						if v42 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {

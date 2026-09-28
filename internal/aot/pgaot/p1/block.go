@@ -307,10 +307,10 @@ func F_CreateBlockRefTableReader(m *base.Module, l0 int32, l1 int32) int32 {
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_c_F_CreateBlockRefTableReader[0]))) = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_c_F_CreateBlockRefTableReader[1]))) = int32(433)
+		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_c_F_CreateBlockRefTableReader[1]))) = int32(467)
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_c_F_CreateBlockRefTableReader[2]))) = l1
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(432)
+		*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(466)
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_c_F_CreateBlockRefTableReader[3]))) = int32(-1)
 		F_BlockRefTableRead(m, v10, v7+int32(12), int32(4))
 		mBase = m.M

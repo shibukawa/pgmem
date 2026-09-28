@@ -8,233 +8,238 @@ import (
 func F_GetOperatorFromCompareType(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
 	mBase := m.M
 	_ = mBase
-	var v10 int32
-	_ = v10
-	var v12 int32
-	_ = v12
-	var v14 int32
-	_ = v14
-	var v16 int32
-	_ = v16
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
 	var v19 int32
 	_ = v19
-	var v20 int32
-	_ = v20
+	var v21 int32
+	_ = v21
+	var v25 int32
+	_ = v25
 	var v26 int32
 	_ = v26
-	var v30 int32
-	_ = v30
-	var v35 int32
-	_ = v35
+	var v32 int32
+	_ = v32
 	var v36 int32
 	_ = v36
-	var v37 int32
-	_ = v37
-	var v39 int32
-	_ = v39
 	var v41 int32
 	_ = v41
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
 	var v53 int32
 	_ = v53
-	var v55 int32
-	_ = v55
-	var v56 int32
-	_ = v56
-	var v63 int32
-	_ = v63
-	var v66 int32
-	_ = v66
+	var v54 int32
+	_ = v54
+	var v61 int32
+	_ = v61
+	var v64 int32
+	_ = v64
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
 	var v72 int32
 	_ = v72
 	var v73 int32
 	_ = v73
-	var v74 int32
-	_ = v74
-	var v75 int32
-	_ = v75
+	var v78 int32
+	_ = v78
 	var v80 int32
 	_ = v80
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
 	var v83 int32
 	_ = v83
 	var v84 int32
 	_ = v84
-	var v85 int32
-	_ = v85
-	var v86 int32
-	_ = v86
-	var v92 int32
-	_ = v92
+	var v89 int32
+	_ = v89
+	var v90 int32
+	_ = v90
+	var v95 int32
+	_ = v95
+	var v96 int32
+	_ = v96
 	var v97 int32
 	_ = v97
 	var v98 int32
 	_ = v98
-	var v99 int32
-	_ = v99
 	var v100 int32
 	_ = v100
-	var v102 int32
-	_ = v102
-	var v103 int32
-	_ = v103
-	var v105 int32
-	_ = v105
-	var v106 int32
-	_ = v106
-	var v113 int32
-	_ = v113
-	var v116 int32
-	_ = v116
-	var v122 int32
-	_ = v122
-	var v123 int32
-	_ = v123
-	var v124 int32
-	_ = v124
+	var v101 int32
+	_ = v101
+	var v108 int32
+	_ = v108
+	var v111 int32
+	_ = v111
+	var v117 int32
+	_ = v117
+	var v118 int32
+	_ = v118
+	var v119 int32
+	_ = v119
+	var v120 int32
+	_ = v120
 	var v125 int32
 	_ = v125
+	var v127 int32
+	_ = v127
+	var v128 int32
+	_ = v128
+	var v129 int32
+	_ = v129
 	var v130 int32
 	_ = v130
-	var v132 int32
-	_ = v132
-	var v133 int32
-	_ = v133
-	var v134 int32
-	_ = v134
-	var v135 int32
-	_ = v135
-	var v136 int32
-	_ = v136
+	var v131 int32
+	_ = v131
+	var v137 int32
+	_ = v137
+	var v138 int32
+	_ = v138
 	var v143 int32
 	_ = v143
-	var v148 int32
-	_ = v148
-	v10 = m.G0
-	v12 = v10 + int32(-64)
-	m.G0 = v12
-	v14 = m.G0
-	v16 = v14 - int32(16)
-	m.G0 = v16
-	v19 = F_SearchSysCache1(m, int32(14), l0)
+	var v150 int32
+	_ = v150
+	var v156 int32
+	_ = v156
+	var v161 int32
+	_ = v161
+	v9 = m.G0
+	v11 = v9 - int32(80)
+	m.G0 = v11
+	v17 = F_get_opclass_opfamily_and_input_type(m, l0, v11+int32(76), v11+int32(72))
 	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
+	v18 = m.ExcPending
+	if v18 != 0 {
 		return
 	} else {
-		if v19 == int32(0) {
-			F_errstart_cold(m, int32(21), int32(0))
+		if v17 != 0 {
+			v19 = m.G0
+			v21 = v19 - int32(16)
+			m.G0 = v21
+			v25 = F_SearchSysCache1(m, int32(14), base.I64_extend_i32_u(l0))
 			mBase = m.M
 			v26 = m.ExcPending
 			if v26 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v16))) = l0
-				F_errmsg_internal(m, int32(_a_F_GetOperatorFromCompareType_0), v16)
-				mBase = m.M
-				v30 = m.ExcPending
-				if v30 != 0 {
-					return
-				} else {
-					F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_1), int32(1360), int32(_a_F_GetOperatorFromCompareType_2))
+				if v25 == int32(0) {
+					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v35 = m.ExcPending
-					if v35 != 0 {
+					v32 = m.ExcPending
+					if v32 != 0 {
 						return
 					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
-			}
-		} else {
-			v36 = *(*int32)(unsafe.Add(mBase, uint32(v19)+16))
-			v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36)+22)))
-			v39 = *(*int32)(unsafe.Add(mBase, uint32(v36+v37)+4))
-			F_ReleaseCatCache(m, v19)
-			mBase = m.M
-			v41 = m.ExcPending
-			if v41 != 0 {
-				return
-			} else {
-				m.G0 = v16 + int32(16)
-				*(*int32)(unsafe.Add(mBase, uint32(l3))) = int32(0)
-				v51 = F_get_opclass_opfamily_and_input_type(m, l0, v10+int32(-4), v10+int32(-8))
-				mBase = m.M
-				v52 = m.ExcPending
-				if v52 != 0 {
-					return
-				} else {
-					if v51 != 0 {
-						v53 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-						v55 = F_IndexAmTranslateCompareType(m, l2, v39, v53, int32(1))
+						*(*int32)(unsafe.Add(mBase, uint32(v21))) = l0
+						F_errmsg_internal(m, int32(_a_F_GetOperatorFromCompareType_0), v21)
 						mBase = m.M
-						v56 = m.ExcPending
-						if v56 != 0 {
+						v36 = m.ExcPending
+						if v36 != 0 {
 							return
 						} else {
-							*(*uint16)(unsafe.Add(mBase, uint32(l4))) = uint16(v55)
-							if v55 == int32(0) {
+							F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_1), int32(1518), int32(_a_F_GetOperatorFromCompareType_2))
+							mBase = m.M
+							v41 = m.ExcPending
+							if v41 != 0 {
+								return
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				} else {
+					v42 = *(*int32)(unsafe.Add(mBase, uint32(v25)+16))
+					v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+22)))
+					v45 = *(*int32)(unsafe.Add(mBase, uint32(v42+v43)+4))
+					F_ReleaseCatCache(m, v25)
+					mBase = m.M
+					v47 = m.ExcPending
+					if v47 != 0 {
+						return
+					} else {
+						m.G0 = v21 + int32(16)
+						v51 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+						v53 = F_IndexAmTranslateCompareType(m, l2, v45, v51, int32(1))
+						mBase = m.M
+						v54 = m.ExcPending
+						if v54 != 0 {
+							return
+						} else {
+							*(*uint16)(unsafe.Add(mBase, uint32(l4))) = uint16(v53)
+							if v53 == int32(0) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v63 = m.ExcPending
-								if v63 != 0 {
+								v61 = m.ExcPending
+								if v61 != 0 {
 									return
 								} else {
 									F_errcode(m, int32(67137668))
 									mBase = m.M
-									v66 = m.ExcPending
-									if v66 != 0 {
+									v64 = m.ExcPending
+									if v64 != 0 {
 										return
 									} else {
 										switch l2 - int32(3) {
 										case 0:
-											v72 = int32(_a_F_GetOperatorFromCompareType_3)
-											v73 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-											v74 = F_format_type_be(m, v73)
+											v70 = int32(_a_F_GetOperatorFromCompareType_3)
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
+											v72 = F_format_type_be(m, v71)
 											mBase = m.M
-											v75 = m.ExcPending
-											if v75 != 0 {
+											v73 = m.ExcPending
+											if v73 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v74
-												F_errmsg(m, v72, v10+int32(-48))
+												*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v72
+												F_errmsg(m, v70, v11+int32(16))
 												mBase = m.M
-												v80 = m.ExcPending
-												if v80 != 0 {
+												v78 = m.ExcPending
+												if v78 != 0 {
 													return
 												} else {
-													v82 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-													v83 = F_get_opfamily_name(m, v82)
+													v80 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+													v81 = F_get_opfamily_name(m, v80)
 													mBase = m.M
-													v84 = m.ExcPending
-													if v84 != 0 {
+													v82 = m.ExcPending
+													if v82 != 0 {
 														return
 													} else {
-														v85 = F_get_am_name(m, v39)
+														v83 = F_get_am_name(m, v45)
 														mBase = m.M
-														v86 = m.ExcPending
-														if v86 != 0 {
+														v84 = m.ExcPending
+														if v84 != 0 {
 															return
 														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v85
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v83
-															*(*int32)(unsafe.Add(mBase, uint32(v12))) = l2
-															F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_4), v12)
+															*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v83
+															*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v81
+															*(*int32)(unsafe.Add(mBase, uint32(v11))) = l2
+															v89 = F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_4), v11)
 															mBase = m.M
-															v92 = m.ExcPending
-															if v92 != 0 {
+															v90 = m.ExcPending
+															if v90 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2473), int32(_a_F_GetOperatorFromCompareType_6))
+																F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2518), int32(_a_F_GetOperatorFromCompareType_6))
 																mBase = m.M
-																v97 = m.ExcPending
-																if v97 != 0 {
+																v95 = m.ExcPending
+																if v95 != 0 {
 																	return
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -247,32 +252,32 @@ func F_GetOperatorFromCompareType(m *base.Module, l0 int32, l1 int32, l2 int32, 
 												}
 											}
 										default:
-											v82 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-											v83 = F_get_opfamily_name(m, v82)
+											v80 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+											v81 = F_get_opfamily_name(m, v80)
 											mBase = m.M
-											v84 = m.ExcPending
-											if v84 != 0 {
+											v82 = m.ExcPending
+											if v82 != 0 {
 												return
 											} else {
-												v85 = F_get_am_name(m, v39)
+												v83 = F_get_am_name(m, v45)
 												mBase = m.M
-												v86 = m.ExcPending
-												if v86 != 0 {
+												v84 = m.ExcPending
+												if v84 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v85
-													*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v83
-													*(*int32)(unsafe.Add(mBase, uint32(v12))) = l2
-													F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_4), v12)
+													*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v83
+													*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v81
+													*(*int32)(unsafe.Add(mBase, uint32(v11))) = l2
+													v89 = F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_4), v11)
 													mBase = m.M
-													v92 = m.ExcPending
-													if v92 != 0 {
+													v90 = m.ExcPending
+													if v90 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2473), int32(_a_F_GetOperatorFromCompareType_6))
+														F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2518), int32(_a_F_GetOperatorFromCompareType_6))
 														mBase = m.M
-														v97 = m.ExcPending
-														if v97 != 0 {
+														v95 = m.ExcPending
+														if v95 != 0 {
 															return
 														} else {
 															base.Wasm_trap_unreachable()
@@ -283,47 +288,47 @@ func F_GetOperatorFromCompareType(m *base.Module, l0 int32, l1 int32, l2 int32, 
 												}
 											}
 										case 4:
-											v72 = int32(_a_F_GetOperatorFromCompareType_7)
-											v73 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-											v74 = F_format_type_be(m, v73)
+											v70 = int32(_a_F_GetOperatorFromCompareType_7)
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
+											v72 = F_format_type_be(m, v71)
 											mBase = m.M
-											v75 = m.ExcPending
-											if v75 != 0 {
+											v73 = m.ExcPending
+											if v73 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v74
-												F_errmsg(m, v72, v10+int32(-48))
+												*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v72
+												F_errmsg(m, v70, v11+int32(16))
 												mBase = m.M
-												v80 = m.ExcPending
-												if v80 != 0 {
+												v78 = m.ExcPending
+												if v78 != 0 {
 													return
 												} else {
-													v82 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-													v83 = F_get_opfamily_name(m, v82)
+													v80 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+													v81 = F_get_opfamily_name(m, v80)
 													mBase = m.M
-													v84 = m.ExcPending
-													if v84 != 0 {
+													v82 = m.ExcPending
+													if v82 != 0 {
 														return
 													} else {
-														v85 = F_get_am_name(m, v39)
+														v83 = F_get_am_name(m, v45)
 														mBase = m.M
-														v86 = m.ExcPending
-														if v86 != 0 {
+														v84 = m.ExcPending
+														if v84 != 0 {
 															return
 														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v85
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v83
-															*(*int32)(unsafe.Add(mBase, uint32(v12))) = l2
-															F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_4), v12)
+															*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v83
+															*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v81
+															*(*int32)(unsafe.Add(mBase, uint32(v11))) = l2
+															v89 = F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_4), v11)
 															mBase = m.M
-															v92 = m.ExcPending
-															if v92 != 0 {
+															v90 = m.ExcPending
+															if v90 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2473), int32(_a_F_GetOperatorFromCompareType_6))
+																F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2518), int32(_a_F_GetOperatorFromCompareType_6))
 																mBase = m.M
-																v97 = m.ExcPending
-																if v97 != 0 {
+																v95 = m.ExcPending
+																if v95 != 0 {
 																	return
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -336,47 +341,47 @@ func F_GetOperatorFromCompareType(m *base.Module, l0 int32, l1 int32, l2 int32, 
 												}
 											}
 										case 5:
-											v72 = int32(_a_F_GetOperatorFromCompareType_8)
-											v73 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-											v74 = F_format_type_be(m, v73)
+											v70 = int32(_a_F_GetOperatorFromCompareType_8)
+											v71 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
+											v72 = F_format_type_be(m, v71)
 											mBase = m.M
-											v75 = m.ExcPending
-											if v75 != 0 {
+											v73 = m.ExcPending
+											if v73 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v74
-												F_errmsg(m, v72, v10+int32(-48))
+												*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v72
+												F_errmsg(m, v70, v11+int32(16))
 												mBase = m.M
-												v80 = m.ExcPending
-												if v80 != 0 {
+												v78 = m.ExcPending
+												if v78 != 0 {
 													return
 												} else {
-													v82 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-													v83 = F_get_opfamily_name(m, v82)
+													v80 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+													v81 = F_get_opfamily_name(m, v80)
 													mBase = m.M
-													v84 = m.ExcPending
-													if v84 != 0 {
+													v82 = m.ExcPending
+													if v82 != 0 {
 														return
 													} else {
-														v85 = F_get_am_name(m, v39)
+														v83 = F_get_am_name(m, v45)
 														mBase = m.M
-														v86 = m.ExcPending
-														if v86 != 0 {
+														v84 = m.ExcPending
+														if v84 != 0 {
 															return
 														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v85
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v83
-															*(*int32)(unsafe.Add(mBase, uint32(v12))) = l2
-															F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_4), v12)
+															*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v83
+															*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v81
+															*(*int32)(unsafe.Add(mBase, uint32(v11))) = l2
+															v89 = F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_4), v11)
 															mBase = m.M
-															v92 = m.ExcPending
-															if v92 != 0 {
+															v90 = m.ExcPending
+															if v90 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2473), int32(_a_F_GetOperatorFromCompareType_6))
+																F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2518), int32(_a_F_GetOperatorFromCompareType_6))
 																mBase = m.M
-																v97 = m.ExcPending
-																if v97 != 0 {
+																v95 = m.ExcPending
+																if v95 != 0 {
 																	return
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -392,76 +397,75 @@ func F_GetOperatorFromCompareType(m *base.Module, l0 int32, l1 int32, l2 int32, 
 									}
 								}
 							} else {
-								v98 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-								v99 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
+								v96 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+								v97 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
 								if l1 != 0 {
-									v100 = l1
+									v98 = l1
 								} else {
-									v100 = v99
+									v98 = v97
 								}
-								v102 = F_get_opfamily_member(m, v98, v99, v100, base.I32_extend16_s(v55))
+								v100 = F_get_opfamily_member(m, v96, v97, v98, base.I32_extend16_s(v53))
 								mBase = m.M
-								v103 = m.ExcPending
-								if v103 != 0 {
+								v101 = m.ExcPending
+								if v101 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l3))) = v102
-									v106 = v102
-									if v106 == int32(0) {
+									*(*int32)(unsafe.Add(mBase, uint32(l3))) = v100
+									if v100 == int32(0) {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v113 = m.ExcPending
-										if v113 != 0 {
+										v108 = m.ExcPending
+										if v108 != 0 {
 											return
 										} else {
 											F_errcode(m, int32(67137668))
 											mBase = m.M
-											v116 = m.ExcPending
-											if v116 != 0 {
+											v111 = m.ExcPending
+											if v111 != 0 {
 												return
 											} else {
 												switch l2 - int32(3) {
 												case 0:
-													v122 = int32(_a_F_GetOperatorFromCompareType_3)
-													v123 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-													v124 = F_format_type_be(m, v123)
+													v117 = int32(_a_F_GetOperatorFromCompareType_3)
+													v118 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
+													v119 = F_format_type_be(m, v118)
 													mBase = m.M
-													v125 = m.ExcPending
-													if v125 != 0 {
+													v120 = m.ExcPending
+													if v120 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v124
-														F_errmsg(m, v122, v10+int32(-16))
+														*(*int32)(unsafe.Add(mBase, uint32(v11)+48)) = v119
+														F_errmsg(m, v117, v11+int32(48))
 														mBase = m.M
-														v130 = m.ExcPending
-														if v130 != 0 {
+														v125 = m.ExcPending
+														if v125 != 0 {
 															return
 														} else {
-															v132 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-															v133 = F_get_opfamily_name(m, v132)
+															v127 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+															v128 = F_get_opfamily_name(m, v127)
 															mBase = m.M
-															v134 = m.ExcPending
-															if v134 != 0 {
+															v129 = m.ExcPending
+															if v129 != 0 {
 																return
 															} else {
-																v135 = F_get_am_name(m, v39)
+																v130 = F_get_am_name(m, v45)
 																mBase = m.M
-																v136 = m.ExcPending
-																if v136 != 0 {
+																v131 = m.ExcPending
+																if v131 != 0 {
 																	return
 																} else {
-																	*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v135
-																	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v133
-																	F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v10+int32(-32))
+																	*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v130
+																	*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v128
+																	v137 = F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v11+int32(32))
 																	mBase = m.M
-																	v143 = m.ExcPending
-																	if v143 != 0 {
+																	v138 = m.ExcPending
+																	if v138 != 0 {
 																		return
 																	} else {
-																		F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2492), int32(_a_F_GetOperatorFromCompareType_6))
+																		F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2536), int32(_a_F_GetOperatorFromCompareType_6))
 																		mBase = m.M
-																		v148 = m.ExcPending
-																		if v148 != 0 {
+																		v143 = m.ExcPending
+																		if v143 != 0 {
 																			return
 																		} else {
 																			base.Wasm_trap_unreachable()
@@ -474,31 +478,31 @@ func F_GetOperatorFromCompareType(m *base.Module, l0 int32, l1 int32, l2 int32, 
 														}
 													}
 												default:
-													v132 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-													v133 = F_get_opfamily_name(m, v132)
+													v127 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+													v128 = F_get_opfamily_name(m, v127)
 													mBase = m.M
-													v134 = m.ExcPending
-													if v134 != 0 {
+													v129 = m.ExcPending
+													if v129 != 0 {
 														return
 													} else {
-														v135 = F_get_am_name(m, v39)
+														v130 = F_get_am_name(m, v45)
 														mBase = m.M
-														v136 = m.ExcPending
-														if v136 != 0 {
+														v131 = m.ExcPending
+														if v131 != 0 {
 															return
 														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v135
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v133
-															F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v10+int32(-32))
+															*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v130
+															*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v128
+															v137 = F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v11+int32(32))
 															mBase = m.M
-															v143 = m.ExcPending
-															if v143 != 0 {
+															v138 = m.ExcPending
+															if v138 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2492), int32(_a_F_GetOperatorFromCompareType_6))
+																F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2536), int32(_a_F_GetOperatorFromCompareType_6))
 																mBase = m.M
-																v148 = m.ExcPending
-																if v148 != 0 {
+																v143 = m.ExcPending
+																if v143 != 0 {
 																	return
 																} else {
 																	base.Wasm_trap_unreachable()
@@ -509,46 +513,46 @@ func F_GetOperatorFromCompareType(m *base.Module, l0 int32, l1 int32, l2 int32, 
 														}
 													}
 												case 4:
-													v122 = int32(_a_F_GetOperatorFromCompareType_7)
-													v123 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-													v124 = F_format_type_be(m, v123)
+													v117 = int32(_a_F_GetOperatorFromCompareType_7)
+													v118 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
+													v119 = F_format_type_be(m, v118)
 													mBase = m.M
-													v125 = m.ExcPending
-													if v125 != 0 {
+													v120 = m.ExcPending
+													if v120 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v124
-														F_errmsg(m, v122, v10+int32(-16))
+														*(*int32)(unsafe.Add(mBase, uint32(v11)+48)) = v119
+														F_errmsg(m, v117, v11+int32(48))
 														mBase = m.M
-														v130 = m.ExcPending
-														if v130 != 0 {
+														v125 = m.ExcPending
+														if v125 != 0 {
 															return
 														} else {
-															v132 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-															v133 = F_get_opfamily_name(m, v132)
+															v127 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+															v128 = F_get_opfamily_name(m, v127)
 															mBase = m.M
-															v134 = m.ExcPending
-															if v134 != 0 {
+															v129 = m.ExcPending
+															if v129 != 0 {
 																return
 															} else {
-																v135 = F_get_am_name(m, v39)
+																v130 = F_get_am_name(m, v45)
 																mBase = m.M
-																v136 = m.ExcPending
-																if v136 != 0 {
+																v131 = m.ExcPending
+																if v131 != 0 {
 																	return
 																} else {
-																	*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v135
-																	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v133
-																	F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v10+int32(-32))
+																	*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v130
+																	*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v128
+																	v137 = F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v11+int32(32))
 																	mBase = m.M
-																	v143 = m.ExcPending
-																	if v143 != 0 {
+																	v138 = m.ExcPending
+																	if v138 != 0 {
 																		return
 																	} else {
-																		F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2492), int32(_a_F_GetOperatorFromCompareType_6))
+																		F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2536), int32(_a_F_GetOperatorFromCompareType_6))
 																		mBase = m.M
-																		v148 = m.ExcPending
-																		if v148 != 0 {
+																		v143 = m.ExcPending
+																		if v143 != 0 {
 																			return
 																		} else {
 																			base.Wasm_trap_unreachable()
@@ -561,46 +565,46 @@ func F_GetOperatorFromCompareType(m *base.Module, l0 int32, l1 int32, l2 int32, 
 														}
 													}
 												case 5:
-													v122 = int32(_a_F_GetOperatorFromCompareType_8)
-													v123 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-													v124 = F_format_type_be(m, v123)
+													v117 = int32(_a_F_GetOperatorFromCompareType_8)
+													v118 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
+													v119 = F_format_type_be(m, v118)
 													mBase = m.M
-													v125 = m.ExcPending
-													if v125 != 0 {
+													v120 = m.ExcPending
+													if v120 != 0 {
 														return
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v124
-														F_errmsg(m, v122, v10+int32(-16))
+														*(*int32)(unsafe.Add(mBase, uint32(v11)+48)) = v119
+														F_errmsg(m, v117, v11+int32(48))
 														mBase = m.M
-														v130 = m.ExcPending
-														if v130 != 0 {
+														v125 = m.ExcPending
+														if v125 != 0 {
 															return
 														} else {
-															v132 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-															v133 = F_get_opfamily_name(m, v132)
+															v127 = *(*int32)(unsafe.Add(mBase, uint32(v11)+76))
+															v128 = F_get_opfamily_name(m, v127)
 															mBase = m.M
-															v134 = m.ExcPending
-															if v134 != 0 {
+															v129 = m.ExcPending
+															if v129 != 0 {
 																return
 															} else {
-																v135 = F_get_am_name(m, v39)
+																v130 = F_get_am_name(m, v45)
 																mBase = m.M
-																v136 = m.ExcPending
-																if v136 != 0 {
+																v131 = m.ExcPending
+																if v131 != 0 {
 																	return
 																} else {
-																	*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v135
-																	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v133
-																	F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v10+int32(-32))
+																	*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v130
+																	*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v128
+																	v137 = F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v11+int32(32))
 																	mBase = m.M
-																	v143 = m.ExcPending
-																	if v143 != 0 {
+																	v138 = m.ExcPending
+																	if v138 != 0 {
 																		return
 																	} else {
-																		F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2492), int32(_a_F_GetOperatorFromCompareType_6))
+																		F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2536), int32(_a_F_GetOperatorFromCompareType_6))
 																		mBase = m.M
-																		v148 = m.ExcPending
-																		if v148 != 0 {
+																		v143 = m.ExcPending
+																		if v143 != 0 {
 																			return
 																		} else {
 																			base.Wasm_trap_unreachable()
@@ -616,226 +620,37 @@ func F_GetOperatorFromCompareType(m *base.Module, l0 int32, l1 int32, l2 int32, 
 											}
 										}
 									} else {
-										m.G0 = v12 - int32(-64)
+										m.G0 = v11 + int32(80)
 										return
 									}
 								}
 							}
 						}
+					}
+				}
+			}
+		} else {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v150 = m.ExcPending
+			if v150 != 0 {
+				return
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v11)+64)) = l0
+				F_errmsg_internal(m, int32(_a_F_GetOperatorFromCompareType_0), v11-int32(-64))
+				mBase = m.M
+				v156 = m.ExcPending
+				if v156 != 0 {
+					return
+				} else {
+					F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2503), int32(_a_F_GetOperatorFromCompareType_6))
+					mBase = m.M
+					v161 = m.ExcPending
+					if v161 != 0 {
+						return
 					} else {
-						v105 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-						v106 = v105
-						if v106 == int32(0) {
-							F_errstart_cold(m, int32(21), int32(0))
-							mBase = m.M
-							v113 = m.ExcPending
-							if v113 != 0 {
-								return
-							} else {
-								F_errcode(m, int32(67137668))
-								mBase = m.M
-								v116 = m.ExcPending
-								if v116 != 0 {
-									return
-								} else {
-									switch l2 - int32(3) {
-									case 0:
-										v122 = int32(_a_F_GetOperatorFromCompareType_3)
-										v123 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-										v124 = F_format_type_be(m, v123)
-										mBase = m.M
-										v125 = m.ExcPending
-										if v125 != 0 {
-											return
-										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v124
-											F_errmsg(m, v122, v10+int32(-16))
-											mBase = m.M
-											v130 = m.ExcPending
-											if v130 != 0 {
-												return
-											} else {
-												v132 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-												v133 = F_get_opfamily_name(m, v132)
-												mBase = m.M
-												v134 = m.ExcPending
-												if v134 != 0 {
-													return
-												} else {
-													v135 = F_get_am_name(m, v39)
-													mBase = m.M
-													v136 = m.ExcPending
-													if v136 != 0 {
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v135
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v133
-														F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v10+int32(-32))
-														mBase = m.M
-														v143 = m.ExcPending
-														if v143 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2492), int32(_a_F_GetOperatorFromCompareType_6))
-															mBase = m.M
-															v148 = m.ExcPending
-															if v148 != 0 {
-																return
-															} else {
-																base.Wasm_trap_unreachable()
-																for {
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									default:
-										v132 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-										v133 = F_get_opfamily_name(m, v132)
-										mBase = m.M
-										v134 = m.ExcPending
-										if v134 != 0 {
-											return
-										} else {
-											v135 = F_get_am_name(m, v39)
-											mBase = m.M
-											v136 = m.ExcPending
-											if v136 != 0 {
-												return
-											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v135
-												*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v133
-												F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v10+int32(-32))
-												mBase = m.M
-												v143 = m.ExcPending
-												if v143 != 0 {
-													return
-												} else {
-													F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2492), int32(_a_F_GetOperatorFromCompareType_6))
-													mBase = m.M
-													v148 = m.ExcPending
-													if v148 != 0 {
-														return
-													} else {
-														base.Wasm_trap_unreachable()
-														for {
-														}
-													}
-												}
-											}
-										}
-									case 4:
-										v122 = int32(_a_F_GetOperatorFromCompareType_7)
-										v123 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-										v124 = F_format_type_be(m, v123)
-										mBase = m.M
-										v125 = m.ExcPending
-										if v125 != 0 {
-											return
-										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v124
-											F_errmsg(m, v122, v10+int32(-16))
-											mBase = m.M
-											v130 = m.ExcPending
-											if v130 != 0 {
-												return
-											} else {
-												v132 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-												v133 = F_get_opfamily_name(m, v132)
-												mBase = m.M
-												v134 = m.ExcPending
-												if v134 != 0 {
-													return
-												} else {
-													v135 = F_get_am_name(m, v39)
-													mBase = m.M
-													v136 = m.ExcPending
-													if v136 != 0 {
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v135
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v133
-														F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v10+int32(-32))
-														mBase = m.M
-														v143 = m.ExcPending
-														if v143 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2492), int32(_a_F_GetOperatorFromCompareType_6))
-															mBase = m.M
-															v148 = m.ExcPending
-															if v148 != 0 {
-																return
-															} else {
-																base.Wasm_trap_unreachable()
-																for {
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									case 5:
-										v122 = int32(_a_F_GetOperatorFromCompareType_8)
-										v123 = *(*int32)(unsafe.Add(mBase, uint32(v12)+56))
-										v124 = F_format_type_be(m, v123)
-										mBase = m.M
-										v125 = m.ExcPending
-										if v125 != 0 {
-											return
-										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v124
-											F_errmsg(m, v122, v10+int32(-16))
-											mBase = m.M
-											v130 = m.ExcPending
-											if v130 != 0 {
-												return
-											} else {
-												v132 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
-												v133 = F_get_opfamily_name(m, v132)
-												mBase = m.M
-												v134 = m.ExcPending
-												if v134 != 0 {
-													return
-												} else {
-													v135 = F_get_am_name(m, v39)
-													mBase = m.M
-													v136 = m.ExcPending
-													if v136 != 0 {
-														return
-													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v135
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v133
-														F_errdetail(m, int32(_a_F_GetOperatorFromCompareType_9), v10+int32(-32))
-														mBase = m.M
-														v143 = m.ExcPending
-														if v143 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_GetOperatorFromCompareType_5), int32(2492), int32(_a_F_GetOperatorFromCompareType_6))
-															mBase = m.M
-															v148 = m.ExcPending
-															if v148 != 0 {
-																return
-															} else {
-																base.Wasm_trap_unreachable()
-																for {
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						} else {
-							m.G0 = v12 - int32(-64)
-							return
+						base.Wasm_trap_unreachable()
+						for {
 						}
 					}
 				}

@@ -30,11 +30,11 @@ func F_comparetup_heap_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	_ = v32
 	var v37 int32
 	_ = v37
-	var v40 int32
+	var v40 int64
 	_ = v40
 	var v43 int32
 	_ = v43
-	var v48 int32
+	var v48 int64
 	_ = v48
 	var v49 int32
 	_ = v49
@@ -72,11 +72,11 @@ func F_comparetup_heap_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	_ = v94
 	var v97 int32
 	_ = v97
-	var v100 int32
+	var v100 int64
 	_ = v100
 	var v101 int32
 	_ = v101
-	var v106 int32
+	var v106 int64
 	_ = v106
 	var v107 int32
 	_ = v107
@@ -224,7 +224,7 @@ L15:
 L16:
 	;
 	v66 = *(*int32)(unsafe.Add(mBase, uint32(v14)+32))
-	v67 = m.T0[v66].(func(*base.Module, int32, int32, int32) int32)(m, v40, v48, v14)
+	v67 = m.T0[v66].(func(*base.Module, int64, int64, int32) int32)(m, v40, v48, v14)
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {
@@ -392,7 +392,7 @@ L43:
 L44:
 	;
 	v124 = *(*int32)(unsafe.Add(mBase, uint32(v88)+52))
-	v125 = m.T0[v124].(func(*base.Module, int32, int32, int32) int32)(m, v100, v106, v94)
+	v125 = m.T0[v124].(func(*base.Module, int64, int64, int32) int32)(m, v100, v106, v94)
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {

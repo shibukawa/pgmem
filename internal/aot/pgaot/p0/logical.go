@@ -5,6 +5,543 @@ import (
 	"unsafe"
 )
 
+func F_DisableLogicalDecoding(m *base.Module) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v10 int32
+	_ = v10
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v54 int32
+	_ = v54
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v62 int32
+	_ = v62
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v70 int32
+	_ = v70
+	var v73 int32
+	_ = v73
+	var v78 int32
+	_ = v78
+	var v81 int64
+	_ = v81
+	var v82 int32
+	_ = v82
+	var v84 int32
+	_ = v84
+	var v85 int32
+	_ = v85
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v90 int32
+	_ = v90
+	var v93 int32
+	_ = v93
+	var v95 int32
+	_ = v95
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
+	var v108 int32
+	_ = v108
+	var v113 int32
+	_ = v113
+	var v115 int32
+	_ = v115
+	var v116 int32
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v120 int32
+	_ = v120
+	var v123 int32
+	_ = v123
+	var v125 int32
+	_ = v125
+	var v131 int32
+	_ = v131
+	var v135 int32
+	_ = v135
+	var v137 int64
+	_ = v137
+	var v138 int32
+	_ = v138
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v10 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[0])))
+	if v10 == int32(1) {
+		v15 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[1]))
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+308))
+		v18 = base.B2i32(v16 != int32(2))
+		*(*uint8)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[0])) = uint8(v18)
+		v20 = v18
+	} else {
+		v20 = int32(0)
+	}
+	v22 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+	v26 = F_LWLockAcquire(m, v22+int32(_a_F_DisableLogicalDecoding_0), int32(0))
+	mBase = m.M
+	v27 = m.ExcPending
+	if v27 != 0 {
+		return
+	} else {
+		v29 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+		v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29)+1)))
+		if v30 == int32(0) {
+			v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29))))
+			if v33 != int32(1) {
+				v50 = v29
+				v51 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v50)+2)) = uint8(v51)
+				v54 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+				F_LWLockRelease(m, v54+int32(_a_F_DisableLogicalDecoding_0))
+				mBase = m.M
+				v58 = m.ExcPending
+				if v58 != 0 {
+					return
+				} else {
+					m.G0 = v6 + int32(16)
+					return
+				}
+			} else {
+				if v20 != 0 {
+					v36 = int32(_a_F_DisableLogicalDecoding_1)
+					v38 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+					*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v38 + int32(1)
+					v42 = int32(0)
+					*(*uint8)(unsafe.Add(mBase, uint32(v29)+1)) = uint8(v42)
+					v115 = int32(_a_F_DisableLogicalDecoding_2)
+					v116 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+					v117 = int32(0)
+					*(*uint8)(unsafe.Add(mBase, uint32(v116))) = uint8(v117)
+					v120 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+					*(*uint8)(unsafe.Add(mBase, uint32(v120)+2)) = uint8(v117)
+					v123 = int32(_a_F_DisableLogicalDecoding_1)
+					v125 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+					*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v125 - int32(1)
+					v131 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+					F_LWLockRelease(m, v131+int32(_a_F_DisableLogicalDecoding_0))
+					mBase = m.M
+					v135 = m.ExcPending
+					if v135 != 0 {
+						return
+					} else {
+						v137 = F_EmitProcSignalBarrier(m, int32(1))
+						mBase = m.M
+						v138 = m.ExcPending
+						if v138 != 0 {
+							return
+						} else {
+							m.G0 = v6 + int32(16)
+							return
+						}
+					}
+				} else {
+					v44 = F_CheckLogicalSlotExists(m)
+					mBase = m.M
+					v45 = m.ExcPending
+					if v45 != 0 {
+						return
+					} else {
+						v47 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+						if v44 == int32(0) {
+							v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47)+1)))
+							v60 = int32(_a_F_DisableLogicalDecoding_1)
+							v62 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+							v63 = int32(1)
+							*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v62 + v63
+							v66 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v47)+1)) = uint8(v66)
+							if v59 != v63 {
+								v115 = int32(_a_F_DisableLogicalDecoding_2)
+								v116 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+								v117 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v116))) = uint8(v117)
+								v120 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+								*(*uint8)(unsafe.Add(mBase, uint32(v120)+2)) = uint8(v117)
+								v123 = int32(_a_F_DisableLogicalDecoding_1)
+								v125 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+								*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v125 - int32(1)
+								v131 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+								F_LWLockRelease(m, v131+int32(_a_F_DisableLogicalDecoding_0))
+								mBase = m.M
+								v135 = m.ExcPending
+								if v135 != 0 {
+									return
+								} else {
+									v137 = F_EmitProcSignalBarrier(m, int32(1))
+									mBase = m.M
+									v138 = m.ExcPending
+									if v138 != 0 {
+										return
+									} else {
+										m.G0 = v6 + int32(16)
+										return
+									}
+								}
+							} else {
+								v70 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v6)+15)) = uint8(v70)
+								F_XLogBeginInsert(m)
+								mBase = m.M
+								v73 = m.ExcPending
+								if v73 != 0 {
+									return
+								} else {
+									F_XLogRegisterData(m, v6+int32(15), int32(1))
+									mBase = m.M
+									v78 = m.ExcPending
+									if v78 != 0 {
+										return
+									} else {
+										v81 = F_XLogInsert(m, int32(0), int32(240))
+										mBase = m.M
+										v82 = m.ExcPending
+										if v82 != 0 {
+											return
+										} else {
+											F_XLogFlush(m, v81)
+											mBase = m.M
+											v84 = m.ExcPending
+											if v84 != 0 {
+												return
+											} else {
+												v85 = int32(_a_F_DisableLogicalDecoding_2)
+												v86 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+												v87 = int32(0)
+												*(*uint8)(unsafe.Add(mBase, uint32(v86))) = uint8(v87)
+												v90 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+												*(*uint8)(unsafe.Add(mBase, uint32(v90)+2)) = uint8(v87)
+												v93 = int32(_a_F_DisableLogicalDecoding_1)
+												v95 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+												*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v95 - int32(1)
+												v101 = F_errstart(m, int32(15), v87)
+												mBase = m.M
+												v102 = m.ExcPending
+												if v102 != 0 {
+													return
+												} else {
+													if v101 == int32(0) {
+														v131 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+														F_LWLockRelease(m, v131+int32(_a_F_DisableLogicalDecoding_0))
+														mBase = m.M
+														v135 = m.ExcPending
+														if v135 != 0 {
+															return
+														} else {
+															v137 = F_EmitProcSignalBarrier(m, int32(1))
+															mBase = m.M
+															v138 = m.ExcPending
+															if v138 != 0 {
+																return
+															} else {
+																m.G0 = v6 + int32(16)
+																return
+															}
+														}
+													} else {
+														F_errmsg(m, int32(_a_F_DisableLogicalDecoding_3), int32(0))
+														mBase = m.M
+														v108 = m.ExcPending
+														if v108 != 0 {
+															return
+														} else {
+															F_errfinish(m, int32(_a_F_DisableLogicalDecoding_4), int32(579), int32(_a_F_DisableLogicalDecoding_5))
+															mBase = m.M
+															v113 = m.ExcPending
+															if v113 != 0 {
+																return
+															} else {
+																v131 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+																F_LWLockRelease(m, v131+int32(_a_F_DisableLogicalDecoding_0))
+																mBase = m.M
+																v135 = m.ExcPending
+																if v135 != 0 {
+																	return
+																} else {
+																	v137 = F_EmitProcSignalBarrier(m, int32(1))
+																	mBase = m.M
+																	v138 = m.ExcPending
+																	if v138 != 0 {
+																		return
+																	} else {
+																		m.G0 = v6 + int32(16)
+																		return
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						} else {
+							v50 = v47
+							v51 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v50)+2)) = uint8(v51)
+							v54 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+							F_LWLockRelease(m, v54+int32(_a_F_DisableLogicalDecoding_0))
+							mBase = m.M
+							v58 = m.ExcPending
+							if v58 != 0 {
+								return
+							} else {
+								m.G0 = v6 + int32(16)
+								return
+							}
+						}
+					}
+				}
+			}
+		} else {
+			if v20 != 0 {
+				v36 = int32(_a_F_DisableLogicalDecoding_1)
+				v38 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+				*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v38 + int32(1)
+				v42 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v29)+1)) = uint8(v42)
+				v115 = int32(_a_F_DisableLogicalDecoding_2)
+				v116 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+				v117 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v116))) = uint8(v117)
+				v120 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+				*(*uint8)(unsafe.Add(mBase, uint32(v120)+2)) = uint8(v117)
+				v123 = int32(_a_F_DisableLogicalDecoding_1)
+				v125 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+				*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v125 - int32(1)
+				v131 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+				F_LWLockRelease(m, v131+int32(_a_F_DisableLogicalDecoding_0))
+				mBase = m.M
+				v135 = m.ExcPending
+				if v135 != 0 {
+					return
+				} else {
+					v137 = F_EmitProcSignalBarrier(m, int32(1))
+					mBase = m.M
+					v138 = m.ExcPending
+					if v138 != 0 {
+						return
+					} else {
+						m.G0 = v6 + int32(16)
+						return
+					}
+				}
+			} else {
+				v44 = F_CheckLogicalSlotExists(m)
+				mBase = m.M
+				v45 = m.ExcPending
+				if v45 != 0 {
+					return
+				} else {
+					v47 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+					if v44 == int32(0) {
+						v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47)+1)))
+						v60 = int32(_a_F_DisableLogicalDecoding_1)
+						v62 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+						v63 = int32(1)
+						*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v62 + v63
+						v66 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, uint32(v47)+1)) = uint8(v66)
+						if v59 != v63 {
+							v115 = int32(_a_F_DisableLogicalDecoding_2)
+							v116 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+							v117 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v116))) = uint8(v117)
+							v120 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+							*(*uint8)(unsafe.Add(mBase, uint32(v120)+2)) = uint8(v117)
+							v123 = int32(_a_F_DisableLogicalDecoding_1)
+							v125 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+							*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v125 - int32(1)
+							v131 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+							F_LWLockRelease(m, v131+int32(_a_F_DisableLogicalDecoding_0))
+							mBase = m.M
+							v135 = m.ExcPending
+							if v135 != 0 {
+								return
+							} else {
+								v137 = F_EmitProcSignalBarrier(m, int32(1))
+								mBase = m.M
+								v138 = m.ExcPending
+								if v138 != 0 {
+									return
+								} else {
+									m.G0 = v6 + int32(16)
+									return
+								}
+							}
+						} else {
+							v70 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v6)+15)) = uint8(v70)
+							F_XLogBeginInsert(m)
+							mBase = m.M
+							v73 = m.ExcPending
+							if v73 != 0 {
+								return
+							} else {
+								F_XLogRegisterData(m, v6+int32(15), int32(1))
+								mBase = m.M
+								v78 = m.ExcPending
+								if v78 != 0 {
+									return
+								} else {
+									v81 = F_XLogInsert(m, int32(0), int32(240))
+									mBase = m.M
+									v82 = m.ExcPending
+									if v82 != 0 {
+										return
+									} else {
+										F_XLogFlush(m, v81)
+										mBase = m.M
+										v84 = m.ExcPending
+										if v84 != 0 {
+											return
+										} else {
+											v85 = int32(_a_F_DisableLogicalDecoding_2)
+											v86 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+											v87 = int32(0)
+											*(*uint8)(unsafe.Add(mBase, uint32(v86))) = uint8(v87)
+											v90 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[3]))
+											*(*uint8)(unsafe.Add(mBase, uint32(v90)+2)) = uint8(v87)
+											v93 = int32(_a_F_DisableLogicalDecoding_1)
+											v95 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4]))
+											*(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[4])) = v95 - int32(1)
+											v101 = F_errstart(m, int32(15), v87)
+											mBase = m.M
+											v102 = m.ExcPending
+											if v102 != 0 {
+												return
+											} else {
+												if v101 == int32(0) {
+													v131 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+													F_LWLockRelease(m, v131+int32(_a_F_DisableLogicalDecoding_0))
+													mBase = m.M
+													v135 = m.ExcPending
+													if v135 != 0 {
+														return
+													} else {
+														v137 = F_EmitProcSignalBarrier(m, int32(1))
+														mBase = m.M
+														v138 = m.ExcPending
+														if v138 != 0 {
+															return
+														} else {
+															m.G0 = v6 + int32(16)
+															return
+														}
+													}
+												} else {
+													F_errmsg(m, int32(_a_F_DisableLogicalDecoding_3), int32(0))
+													mBase = m.M
+													v108 = m.ExcPending
+													if v108 != 0 {
+														return
+													} else {
+														F_errfinish(m, int32(_a_F_DisableLogicalDecoding_4), int32(579), int32(_a_F_DisableLogicalDecoding_5))
+														mBase = m.M
+														v113 = m.ExcPending
+														if v113 != 0 {
+															return
+														} else {
+															v131 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+															F_LWLockRelease(m, v131+int32(_a_F_DisableLogicalDecoding_0))
+															mBase = m.M
+															v135 = m.ExcPending
+															if v135 != 0 {
+																return
+															} else {
+																v137 = F_EmitProcSignalBarrier(m, int32(1))
+																mBase = m.M
+																v138 = m.ExcPending
+																if v138 != 0 {
+																	return
+																} else {
+																	m.G0 = v6 + int32(16)
+																	return
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					} else {
+						v50 = v47
+						v51 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, uint32(v50)+2)) = uint8(v51)
+						v54 = *(*int32)(unsafe.Add(mBase, _c_F_DisableLogicalDecoding[2]))
+						F_LWLockRelease(m, v54+int32(_a_F_DisableLogicalDecoding_0))
+						mBase = m.M
+						v58 = m.ExcPending
+						if v58 != 0 {
+							return
+						} else {
+							m.G0 = v6 + int32(16)
+							return
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_LogicalDecodingProcessRecord(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

@@ -12,14 +12,10 @@ func F_convert_column_name(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v6
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
+	var v12 int32
+	_ = v12
 	var v15 int32
 	_ = v15
-	var v16 int32
-	_ = v16
 	var v17 int32
 	_ = v17
 	var v18 int32
@@ -30,115 +26,119 @@ func F_convert_column_name(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v20
 	var v21 int32
 	_ = v21
-	var v24 int32
-	_ = v24
-	var v25 int32
-	_ = v25
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
 	var v27 int32
 	_ = v27
 	var v29 int32
 	_ = v29
-	var v30 int32
-	_ = v30
-	var v36 int32
-	_ = v36
-	var v39 int32
-	_ = v39
-	var v44 int32
-	_ = v44
-	var v49 int32
-	_ = v49
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
 	var v51 int32
 	_ = v51
 	var v53 int32
 	_ = v53
+	var v55 int32
+	_ = v55
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = F_text_to_cstring(m, l1)
+	v12 = F_text_to_cstring(m, l1)
 	mBase = m.M
-	v14 = m.ExcPending
-	if v14 != 0 {
+	v15 = m.ExcPending
+	if v15 != 0 {
 		return int32(0)
 	} else {
-		v15 = F_SearchSysCache2(m, int32(6), l0, v11)
+		v17 = F_SearchSysCache2(m, int32(6), base.I64_extend_i32_u(l0), base.I64_extend_i32_u(v12))
 		mBase = m.M
-		v16 = m.ExcPending
-		if v16 != 0 {
+		v18 = m.ExcPending
+		if v18 != 0 {
 			return int32(0)
 		} else {
-			if v15 != 0 {
-				v17 = int32(0)
-				v18 = *(*int32)(unsafe.Add(mBase, uint32(v15)+16))
-				v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+22)))
-				v20 = v18 + v19
-				v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+91)))
-				if v21 == v17 {
-					v24 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20)+74)))
-					v25 = v24
+			if v17 != 0 {
+				v19 = int32(0)
+				v20 = *(*int32)(unsafe.Add(mBase, uint32(v17)+16))
+				v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+22)))
+				v22 = v20 + v21
+				v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22)+91)))
+				if v23 == v19 {
+					v26 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v22)+74)))
+					v27 = v26
 				} else {
-					v25 = v17
+					v27 = v19
 				}
-				F_ReleaseCatCache(m, v15)
+				F_ReleaseCatCache(m, v17)
 				mBase = m.M
-				v27 = m.ExcPending
-				if v27 != 0 {
+				v29 = m.ExcPending
+				if v29 != 0 {
 					return int32(0)
 				} else {
-					v51 = v25
-					F_pfree(m, v11)
+					v53 = v27
+					F_pfree(m, v12)
 					mBase = m.M
-					v53 = m.ExcPending
-					if v53 != 0 {
+					v55 = m.ExcPending
+					if v55 != 0 {
 						return int32(0)
 					} else {
 						m.G0 = v8 + int32(16)
-						return base.I32_extend16_s(v51)
+						return base.I32_extend16_s(v53)
 					}
 				}
 			} else {
-				v29 = F_get_rel_name(m, l0)
+				v31 = F_get_rel_name(m, l0)
 				mBase = m.M
-				v30 = m.ExcPending
-				if v30 != 0 {
+				v32 = m.ExcPending
+				if v32 != 0 {
 					return int32(0)
 				} else {
-					if v29 == int32(0) {
-						v51 = int32(0)
-						F_pfree(m, v11)
+					if v31 == int32(0) {
+						v53 = int32(0)
+						F_pfree(m, v12)
 						mBase = m.M
-						v53 = m.ExcPending
-						if v53 != 0 {
+						v55 = m.ExcPending
+						if v55 != 0 {
 							return int32(0)
 						} else {
 							m.G0 = v8 + int32(16)
-							return base.I32_extend16_s(v51)
+							return base.I32_extend16_s(v53)
 						}
 					} else {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v36 = m.ExcPending
-						if v36 != 0 {
+						v38 = m.ExcPending
+						if v38 != 0 {
 							return int32(0)
 						} else {
 							F_errcode(m, int32(50360452))
 							mBase = m.M
-							v39 = m.ExcPending
-							if v39 != 0 {
+							v41 = m.ExcPending
+							if v41 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v29
-								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v31
+								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v12
 								F_errmsg(m, int32(_a_F_convert_column_name_0), v8)
 								mBase = m.M
-								v44 = m.ExcPending
-								if v44 != 0 {
+								v46 = m.ExcPending
+								if v46 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_convert_column_name_1), int32(2939), int32(_a_F_convert_column_name_2))
+									F_errfinish(m, int32(_a_F_convert_column_name_1), int32(2963), int32(_a_F_convert_column_name_2))
 									mBase = m.M
-									v49 = m.ExcPending
-									if v49 != 0 {
+									v51 = m.ExcPending
+									if v51 != 0 {
 										return int32(0)
 									} else {
 										base.Wasm_trap_unreachable()

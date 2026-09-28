@@ -56,9 +56,6 @@ func F_bbsink_copystream_begin_manifest(m *base.Module, l0 int32) {
 		}
 	}
 }
-func F_bbsink_copystream_end_manifest(m *base.Module, l0 int32) {
-	return
-}
 func F_bbsink_forward_end_manifest(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
@@ -203,7 +200,7 @@ func F_bbsink_server_archive_contents(m *base.Module, l0 int32, l1 int32) {
 						v34 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_server_archive_contents[0]))
 						v38 = *(*int32)(unsafe.Add(mBase, uint32(v34+v32*int32(48))+32))
 						v39 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
-						*(*uint32)(unsafe.Add(mBase, uint32(v9)+28)) = uint32(v39)
+						*(*int64)(unsafe.Add(mBase, uint32(v9)+32)) = v39
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = l1
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v20
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v38

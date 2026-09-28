@@ -76,7 +76,7 @@ func F_find_window_functions_walker(m *base.Module, l0 int32, l1 int32) int32 {
 					if v54 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_find_window_functions_walker_1), int32(252), int32(_a_F_find_window_functions_walker_2))
+						F_errfinish(m, int32(_a_F_find_window_functions_walker_1), int32(287), int32(_a_F_find_window_functions_walker_2))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
@@ -108,7 +108,7 @@ func F_find_window_functions_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v38 = F_expression_tree_walker_impl(m, l0, int32(856), l1)
+			v38 = F_expression_tree_walker_impl(m, l0, int32(904), l1)
 			mBase = m.M
 			v39 = m.ExcPending
 			if v39 != 0 {
@@ -295,7 +295,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 												if v107 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3165), int32(_a_F_window_gettupleslot_3))
+													F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3317), int32(_a_F_window_gettupleslot_3))
 													mBase = m.M
 													v112 = m.ExcPending
 													if v112 != 0 {
@@ -330,7 +330,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														if v156 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3206), int32(_a_F_window_gettupleslot_3))
+															F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3358), int32(_a_F_window_gettupleslot_3))
 															mBase = m.M
 															v161 = m.ExcPending
 															if v161 != 0 {
@@ -376,7 +376,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													if v120 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3173), int32(_a_F_window_gettupleslot_3))
+														F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3325), int32(_a_F_window_gettupleslot_3))
 														mBase = m.M
 														v125 = m.ExcPending
 														if v125 != 0 {
@@ -417,7 +417,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 															if v81 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3200), int32(_a_F_window_gettupleslot_3))
+																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3352), int32(_a_F_window_gettupleslot_3))
 																mBase = m.M
 																v86 = m.ExcPending
 																if v86 != 0 {
@@ -468,7 +468,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 																if v156 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3206), int32(_a_F_window_gettupleslot_3))
+																	F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3358), int32(_a_F_window_gettupleslot_3))
 																	mBase = m.M
 																	v161 = m.ExcPending
 																	if v161 != 0 {
@@ -517,7 +517,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 																if v81 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3200), int32(_a_F_window_gettupleslot_3))
+																	F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3352), int32(_a_F_window_gettupleslot_3))
 																	mBase = m.M
 																	v86 = m.ExcPending
 																	if v86 != 0 {
@@ -557,7 +557,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 															if v156 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3206), int32(_a_F_window_gettupleslot_3))
+																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3358), int32(_a_F_window_gettupleslot_3))
 																mBase = m.M
 																v161 = m.ExcPending
 																if v161 != 0 {
@@ -606,7 +606,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 															if v81 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3200), int32(_a_F_window_gettupleslot_3))
+																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3352), int32(_a_F_window_gettupleslot_3))
 																mBase = m.M
 																v86 = m.ExcPending
 																if v86 != 0 {
@@ -638,7 +638,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 								if v94 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3151), int32(_a_F_window_gettupleslot_3))
+									F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3303), int32(_a_F_window_gettupleslot_3))
 									mBase = m.M
 									v99 = m.ExcPending
 									if v99 != 0 {
@@ -709,7 +709,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 											if v107 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3165), int32(_a_F_window_gettupleslot_3))
+												F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3317), int32(_a_F_window_gettupleslot_3))
 												mBase = m.M
 												v112 = m.ExcPending
 												if v112 != 0 {
@@ -744,7 +744,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													if v156 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3206), int32(_a_F_window_gettupleslot_3))
+														F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3358), int32(_a_F_window_gettupleslot_3))
 														mBase = m.M
 														v161 = m.ExcPending
 														if v161 != 0 {
@@ -790,7 +790,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 												if v120 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3173), int32(_a_F_window_gettupleslot_3))
+													F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3325), int32(_a_F_window_gettupleslot_3))
 													mBase = m.M
 													v125 = m.ExcPending
 													if v125 != 0 {
@@ -831,7 +831,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														if v81 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3200), int32(_a_F_window_gettupleslot_3))
+															F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3352), int32(_a_F_window_gettupleslot_3))
 															mBase = m.M
 															v86 = m.ExcPending
 															if v86 != 0 {
@@ -882,7 +882,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 															if v156 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3206), int32(_a_F_window_gettupleslot_3))
+																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3358), int32(_a_F_window_gettupleslot_3))
 																mBase = m.M
 																v161 = m.ExcPending
 																if v161 != 0 {
@@ -931,7 +931,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 															if v81 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3200), int32(_a_F_window_gettupleslot_3))
+																F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3352), int32(_a_F_window_gettupleslot_3))
 																mBase = m.M
 																v86 = m.ExcPending
 																if v86 != 0 {
@@ -971,7 +971,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														if v156 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3206), int32(_a_F_window_gettupleslot_3))
+															F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3358), int32(_a_F_window_gettupleslot_3))
 															mBase = m.M
 															v161 = m.ExcPending
 															if v161 != 0 {
@@ -1020,7 +1020,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														if v81 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3200), int32(_a_F_window_gettupleslot_3))
+															F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3352), int32(_a_F_window_gettupleslot_3))
 															mBase = m.M
 															v86 = m.ExcPending
 															if v86 != 0 {
@@ -1052,7 +1052,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 							if v94 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3151), int32(_a_F_window_gettupleslot_3))
+								F_errfinish(m, int32(_a_F_window_gettupleslot_2), int32(3303), int32(_a_F_window_gettupleslot_3))
 								mBase = m.M
 								v99 = m.ExcPending
 								if v99 != 0 {
@@ -1070,50 +1070,48 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 		}
 	}
 }
-func F_window_lead(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F_window_lead(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn14020(m, l0, int32(1))
+	v3 = Fn14405(m, l0, int32(1))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
 }
-func F_window_row_number(m *base.Module, l0 int32) int32 {
+func F_window_row_number(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
 	var v4 int32
 	_ = v4
-	var v5 int64
+	var v5 int32
 	_ = v5
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
+	var v6 int64
+	_ = v6
+	var v11 int32
+	_ = v11
 	var v13 int32
 	_ = v13
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
-	v5 = *(*int64)(unsafe.Add(mBase, uint32(v4)+176))
-	F_WinSetMarkPosition(m, v3, v5)
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
+	v6 = *(*int64)(unsafe.Add(mBase, uint32(v5)+176))
+	F_WinCheckAndInitializeNullTreatment(m, v4, int32(0), l0)
 	mBase = m.M
-	v9 = m.ExcPending
-	if v9 != 0 {
-		return int32(0)
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return int64(0)
 	} else {
-		v12 = F_Int64GetDatum(m, v5+int64(1))
+		F_WinSetMarkPosition(m, v4, v6)
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			return v12
+			return v6 + int64(1)
 		}
 	}
 }

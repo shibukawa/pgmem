@@ -26,7 +26,7 @@ func F_dsa_attach(m *base.Module, l0 int32) int32 {
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v29 int32
+	var v29 int64
 	_ = v29
 	var v31 int32
 	_ = v31
@@ -76,8 +76,8 @@ func F_dsa_attach(m *base.Module, l0 int32) int32 {
 			if v27 != 0 {
 				return int32(0)
 			} else {
-				v29 = *(*int32)(unsafe.Add(mBase, uint32(v3)+24))
-				F_on_dsm_detach(m, v3, int32(1770), v29)
+				v29 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v3)+24)))
+				F_on_dsm_detach(m, v3, int32(1993), v29)
 				mBase = m.M
 				v31 = m.ExcPending
 				if v31 != 0 {

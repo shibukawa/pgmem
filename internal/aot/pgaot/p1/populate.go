@@ -5,6 +5,9 @@ import (
 	"unsafe"
 )
 
+func F_populate_recordset_array_start(m *base.Module, l0 int32) int32 {
+	return int32(0)
+}
 func F_populate_recordset_object_start(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -39,10 +42,10 @@ func F_populate_recordset_object_start(m *base.Module, l0 int32) int32 {
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+32))
 	if v9 != 0 {
 		if v9 <= int32(1) {
-			*(*int64)(unsafe.Add(mBase, uint32(v6)+32)) = int64(309237645376)
+			*(*int64)(unsafe.Add(mBase, uint32(v6)+24)) = int64(309237645376)
 			v15 = *(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_object_start[0]))
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+56)) = v15
-			v22 = F_hash_create(m, int32(_a_F_populate_recordset_object_start_0), int32(100), v4+int32(-48), int32(1048))
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+52)) = v15
+			v22 = F_hash_create(m, int32(_a_F_populate_recordset_object_start_0), int64(100), v4+int32(-48), int32(1048))
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {

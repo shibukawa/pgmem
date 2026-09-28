@@ -5,83 +5,83 @@ import (
 	"unsafe"
 )
 
-func F_PG_encoding_to_char(m *base.Module, l0 int32) int32 {
+func F_PG_encoding_to_char(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
 	var v15 int32
 	_ = v15
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	if base.Ui32(v4) <= base.Ui32(int32(41)) {
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(3))%32))+uint32(_c_F_PG_encoding_to_char[0])))
-		v11 = v9
+	var v16 int32
+	_ = v16
+	var v18 int64
+	_ = v18
+	var v21 int32
+	_ = v21
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	if base.B2i32(v4 == int32(7))|base.B2i32(base.Ui32(int32(41)) < base.Ui32(v4)) != 0 {
+		v16 = int32(_a_F_PG_encoding_to_char_0)
 	} else {
-		v11 = int32(_a_F_PG_encoding_to_char_0)
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(3))%32))+uint32(_c_F_PG_encoding_to_char[0])))
+		v16 = v15
 	}
-	v12 = F_DirectFunctionCall1Coll(m, int32(500), int32(0), v11)
+	v18 = F_DirectFunctionCall1Coll(m, int32(534), int32(0), base.I64_extend_i32_u(v16))
 	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
-		return int32(0)
+	v21 = m.ExcPending
+	if v21 != 0 {
+		return int64(0)
 	} else {
-		return v12
+		return v18
 	}
 }
 func F_pg_do_encoding_conversion_buf(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32 {
-	var v12 int32
-	_ = v12
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	var v21 int64
+	_ = v21
+	var v24 int32
+	_ = v24
+	v16 = int32(base.Ui32(l6-int32(1)) >> (uint(int32(2)) % 32))
+	if base.Ui32(l4) < base.Ui32(v16) {
+		v18 = l4
+	} else {
+		v18 = v16
+	}
+	v21 = F_OidFunctionCall6Coll(m, l0, base.I64_extend_i32_s(l1), base.I64_extend_i32_s(l2), base.I64_extend_i32_u(l3), base.I64_extend_i32_u(l5), base.I64_extend_i32_u(v18), base.I64_extend_i32_u(l7))
+	v24 = m.ExcPending
+	if v24 != 0 {
+		return int32(0)
+	} else {
+		return base.I32_wrap_i64(v21)
+	}
+}
+func F_pg_encoding_verifymbchar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
 	var v14 int32
 	_ = v14
 	var v15 int32
 	_ = v15
 	var v18 int32
 	_ = v18
-	v12 = int32(base.Ui32(l6-int32(1)) >> (uint(int32(2)) % 32))
-	if base.Ui32(l4) < base.Ui32(v12) {
-		v14 = l4
+	var v19 int32
+	_ = v19
+	if base.B2i32(l0 == int32(7))|base.B2i32(base.Ui32(int32(41)) < base.Ui32(l0)) != 0 {
+		v19 = int32(1)
+		return v19
 	} else {
-		v14 = v12
-	}
-	v15 = F_OidFunctionCall6Coll(m, l0, l1, l2, l3, l5, v14, l7)
-	v18 = m.ExcPending
-	if v18 != 0 {
-		return int32(0)
-	} else {
-		return v15
-	}
-}
-func F_pg_encoding_verifymbchar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
-	var v14 int32
-	_ = v14
-	if base.Ui32(l0) <= base.Ui32(int32(41)) {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_c_F_pg_encoding_verifymbchar[0])))
-		v9 = m.T0[v8].(func(*base.Module, int32, int32) int32)(m, l1, l2)
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_c_F_pg_encoding_verifymbchar[0])))
+		v15 = m.T0[v14].(func(*base.Module, int32, int32) int32)(m, l1, l2)
 		mBase = m.M
-		v12 = m.ExcPending
-		if v12 != 0 {
+		v18 = m.ExcPending
+		if v18 != 0 {
 			return int32(0)
 		} else {
-			v14 = v9
-			return v14
+			v19 = v15
+			return v19
 		}
-	} else {
-		v14 = int32(1)
-		return v14
 	}
 }
 func F_pg_get_encoding_from_locale(m *base.Module, l0 int32, l1 int32) int32 {

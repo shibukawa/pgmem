@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_be_lo_creat(m *base.Module, l0 int32) int32 {
+func F_be_lo_creat(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -20,7 +20,7 @@ func F_be_lo_creat(m *base.Module, l0 int32) int32 {
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v8 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, _c_F_be_lo_creat[0])) = uint8(v8)
@@ -28,13 +28,13 @@ func F_be_lo_creat(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			return v11
+			return base.I64_extend_i32_u(v11)
 		}
 	}
 }
-func F_be_lo_get_fragment(m *base.Module, l0 int32) int32 {
+func F_be_lo_get_fragment(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -49,39 +49,37 @@ func F_be_lo_get_fragment(m *base.Module, l0 int32) int32 {
 	_ = v23
 	var v24 int32
 	_ = v24
-	var v25 int32
+	var v25 int64
 	_ = v25
-	var v26 int64
+	var v26 int32
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	if v3 < int32(0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			F_errcode(m, int32(50856066))
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				F_errmsg(m, int32(_a_F_be_lo_get_fragment_0), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					F_errfinish(m, int32(_a_F_be_lo_get_fragment_1), int32(821), int32(_a_F_be_lo_get_fragment_2))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						base.Wasm_trap_unreachable()
 						for {
@@ -91,20 +89,19 @@ func F_be_lo_get_fragment(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v26 = *(*int64)(unsafe.Add(mBase, uint32(v25)))
-		v27 = F_lo_get_fragment_internal(m, v24, v26, v3)
+		v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+		v25 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+		v26 = F_lo_get_fragment_internal(m, v24, v25, v3)
 		mBase = m.M
-		v28 = m.ExcPending
-		if v28 != 0 {
-			return int32(0)
+		v27 = m.ExcPending
+		if v27 != 0 {
+			return int64(0)
 		} else {
-			return v27
+			return base.I64_extend_i32_u(v26)
 		}
 	}
 }
-func F_be_lo_import(m *base.Module, l0 int32) int32 {
+func F_be_lo_import(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -117,20 +114,20 @@ func F_be_lo_import(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v9 int32
 	_ = v9
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = F_pg_detoast_datum_packed(m, v2)
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v8 = F_lo_import_internal(m, v3, int32(0))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			return v8
+			return base.I64_extend_i32_u(v8)
 		}
 	}
 }

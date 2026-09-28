@@ -5,6 +5,113 @@ import (
 	"unsafe"
 )
 
+func F_WinCheckAndInitializeNullTreatment(m *base.Module, l0 int32, l1 int32, l2 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v23 int32
+	_ = v23
+	var v28 int32
+	_ = v28
+	var v32 int32
+	_ = v32
+	var v37 int32
+	_ = v37
+	var v48 int32
+	_ = v48
+	var v53 int32
+	_ = v53
+	v4 = int32(0)
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+	if l1|base.B2i32(v10 == v4) == v4 {
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
+		v18 = F_get_func_name(m, v17)
+		mBase = m.M
+		v19 = m.ExcPending
+		if v19 != 0 {
+			return
+		} else {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v23 = m.ExcPending
+			if v23 != 0 {
+				return
+			} else {
+				if v18 == int32(0) {
+					F_errmsg_internal(m, int32(_a_F_WinCheckAndInitializeNullTreatment_0), int32(0))
+					mBase = m.M
+					v48 = m.ExcPending
+					if v48 != 0 {
+						return
+					} else {
+						F_errfinish(m, int32(_a_F_WinCheckAndInitializeNullTreatment_1), int32(3690), int32(_a_F_WinCheckAndInitializeNullTreatment_2))
+						mBase = m.M
+						v53 = m.ExcPending
+						if v53 != 0 {
+							return
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				} else {
+					F_errcode(m, int32(1088))
+					mBase = m.M
+					v28 = m.ExcPending
+					if v28 != 0 {
+						return
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v18
+						F_errmsg(m, int32(_a_F_WinCheckAndInitializeNullTreatment_3), v8)
+						mBase = m.M
+						v32 = m.ExcPending
+						if v32 != 0 {
+							return
+						} else {
+							F_errfinish(m, int32(_a_F_WinCheckAndInitializeNullTreatment_1), int32(3694), int32(_a_F_WinCheckAndInitializeNullTreatment_2))
+							mBase = m.M
+							v37 = m.ExcPending
+							if v37 != 0 {
+								return
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	} else {
+		if v10 == int32(1) {
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = int32(3)
+		} else {
+		}
+		m.G0 = v8 + int32(16)
+		return
+	}
+}
 func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 	mBase := m.M
 	_ = mBase
@@ -46,7 +153,7 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 	_ = v43
 	var v47 int32
 	_ = v47
-	var v48 int32
+	var v48 int64
 	_ = v48
 	var v49 int32
 	_ = v49
@@ -95,8 +202,8 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 		m.G0 = v11 + int32(32)
 		return v72
 	} else {
-		v19 = *(*int32)(unsafe.Add(mBase, uint32(v13)+404))
-		v20 = *(*int32)(unsafe.Add(mBase, uint32(v13)+400))
+		v19 = *(*int32)(unsafe.Add(mBase, uint32(v13)+412))
+		v20 = *(*int32)(unsafe.Add(mBase, uint32(v13)+408))
 		v21 = F_window_gettupleslot(m, l0, l1, v20)
 		mBase = m.M
 		v24 = m.ExcPending
@@ -117,7 +224,7 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 					if v89 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_WinRowsArePeers_1), int32(3344), int32(_a_F_WinRowsArePeers_2))
+						F_errfinish(m, int32(_a_F_WinRowsArePeers_1), int32(3821), int32(_a_F_WinRowsArePeers_2))
 						mBase = m.M
 						v94 = m.ExcPending
 						if v94 != 0 {
@@ -150,7 +257,7 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 							if v102 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_WinRowsArePeers_1), int32(3347), int32(_a_F_WinRowsArePeers_2))
+								F_errfinish(m, int32(_a_F_WinRowsArePeers_1), int32(3824), int32(_a_F_WinRowsArePeers_2))
 								mBase = m.M
 								v107 = m.ExcPending
 								if v107 != 0 {
@@ -189,7 +296,7 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 								}
 							}
 						} else {
-							v36 = *(*int32)(unsafe.Add(mBase, uint32(v13)+372))
+							v36 = *(*int32)(unsafe.Add(mBase, uint32(v13)+380))
 							*(*int32)(unsafe.Add(mBase, uint32(v36)+8)) = v19
 							*(*int32)(unsafe.Add(mBase, uint32(v36)+12)) = v20
 							v39 = *(*int32)(unsafe.Add(mBase, uint32(v13)+140))
@@ -198,15 +305,15 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 								v41 = *(*int32)(unsafe.Add(mBase, _c_F_WinRowsArePeers[0]))
 								v43 = *(*int32)(unsafe.Add(mBase, uint32(v36)+20))
 								*(*int32)(unsafe.Add(mBase, _c_F_WinRowsArePeers[0])) = v43
-								v47 = *(*int32)(unsafe.Add(mBase, uint32(v39)+20))
-								v48 = m.T0[v47].(func(*base.Module, int32, int32, int32) int32)(m, v39, v36, v11+int32(31))
+								v47 = *(*int32)(unsafe.Add(mBase, uint32(v39)+24))
+								v48 = m.T0[v47].(func(*base.Module, int32, int32, int32) int64)(m, v39, v36, v11+int32(31))
 								mBase = m.M
 								v49 = m.ExcPending
 								if v49 != 0 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, _c_F_WinRowsArePeers[0])) = v41
-									v56 = base.B2i32(v48 != int32(0))
+									v56 = base.B2i32(v48 != int64(0))
 									v57 = *(*int32)(unsafe.Add(mBase, uint32(v36)+20))
 									F_MemoryContextReset(m, v57)
 									mBase = m.M
@@ -278,15 +385,15 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 		}
 	}
 }
-func F_win_to_utf8(m *base.Module, l0 int32) int32 {
-	var v10 int32
+func F_win_to_utf8(m *base.Module, l0 int32) int64 {
+	var v10 int64
 	_ = v10
 	var v13 int32
 	_ = v13
-	v10 = Fn13930(m, l0, int32(_a_F_win_to_utf8_0), int32(_a_F_win_to_utf8_1), int32(114), int32(_a_F_win_to_utf8_2), int32(_a_F_win_to_utf8_3), int32(_a_F_win_to_utf8_4), int32(15), int32(18))
+	v10 = Fn14317(m, l0, int32(_a_F_win_to_utf8_0), int32(_a_F_win_to_utf8_1), int32(114), int32(_a_F_win_to_utf8_2), int32(_a_F_win_to_utf8_3), int32(_a_F_win_to_utf8_4), int32(15), int32(18))
 	v13 = m.ExcPending
 	if v13 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v10
 	}

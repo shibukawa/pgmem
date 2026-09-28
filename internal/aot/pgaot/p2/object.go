@@ -201,7 +201,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(_a_F_get_object_attnum_namespace_5), int32(2777), int32(_a_F_get_object_attnum_namespace_6))
+	F_errfinish(m, int32(_a_F_get_object_attnum_namespace_5), int32(2827), int32(_a_F_get_object_attnum_namespace_6))
 	mBase = m.M
 	v71 = m.ExcPending
 	if v71 != 0 {
@@ -380,7 +380,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(_a_F_get_object_attnum_owner_5), int32(2777), int32(_a_F_get_object_attnum_owner_6))
+	F_errfinish(m, int32(_a_F_get_object_attnum_owner_5), int32(2827), int32(_a_F_get_object_attnum_owner_6))
 	mBase = m.M
 	v71 = m.ExcPending
 	if v71 != 0 {
@@ -1060,7 +1060,7 @@ func F_record_object_address_dependencies(m *base.Module, l0 int32, l1 int32, l2
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	if int32(2) <= v11 {
-		F_pg_qsort(m, v10, v11, int32(12), int32(462))
+		F_pg_qsort(m, v10, v11, int32(12), int32(497))
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {

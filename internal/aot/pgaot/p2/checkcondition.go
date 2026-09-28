@@ -26,30 +26,30 @@ func F_checkcondition_HL(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v24
 	var v30 int32
 	_ = v30
-	var v35 int32
-	_ = v35
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
 	var v38 int32
 	_ = v38
-	var v39 int32
-	_ = v39
-	var v44 int32
-	_ = v44
-	var v46 int32
-	_ = v46
+	var v43 int32
+	_ = v43
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
-	var v49 int32
-	_ = v49
-	var v52 int32
-	_ = v52
-	var v55 int32
-	_ = v55
+	var v51 int32
+	_ = v51
+	var v54 int32
+	_ = v54
+	var v65 int32
+	_ = v65
 	var v66 int32
 	_ = v66
-	var v67 int32
-	_ = v67
-	var v79 int32
-	_ = v79
+	var v78 int32
+	_ = v78
 	v4 = int32(0)
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if v4 < v9 {
@@ -88,11 +88,11 @@ L5:
 	goto L3
 L6:
 	;
-	v66 = v18 + int32(1)
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v66 < v67 {
-		v15 = v67
-		v18 = v66
+	v65 = v18 + int32(1)
+	v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v65 < v66 {
+		v15 = v66
+		v18 = v65
 		goto L4
 	} else {
 		goto L17
@@ -120,10 +120,10 @@ L10:
 	}
 L11:
 	;
-	v35 = F_palloc(m, v15<<(uint(int32(1))%32))
+	v34 = F_palloc_mul(m, int32(2), v15)
 	mBase = m.M
-	v38 = m.ExcPending
-	if v38 != 0 {
+	v37 = m.ExcPending
+	if v37 != 0 {
 		goto L14
 	} else {
 		goto L15
@@ -133,11 +133,11 @@ L12:
 	goto L13
 L13:
 	;
-	v48 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v23)+4)))
-	v49 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	v52 = v30 + v49<<(uint(int32(1))%32)
-	v55 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v52-int32(2)))))
-	if base.Ui32(v48) <= base.Ui32(v55) {
+	v47 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v23)+4)))
+	v48 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+	v51 = v30 + v48<<(uint(int32(1))%32)
+	v54 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v51-int32(2)))))
+	if base.Ui32(v47) <= base.Ui32(v54) {
 		goto L6
 	} else {
 		goto L16
@@ -147,18 +147,18 @@ L14:
 	return int32(0)
 L15:
 	;
-	v39 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)) = uint8(v39)
-	*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v35
-	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v39
-	v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v46 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v44+v21)+4)))
-	*(*uint16)(unsafe.Add(mBase, uint32(v35))) = uint16(v46)
+	v38 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)) = uint8(v38)
+	*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v34
+	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v38
+	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v45 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v43+v21)+4)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v34))) = uint16(v45)
 	goto L6
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v49 + int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(v52))) = uint16(v48)
+	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v48 + int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(v51))) = uint16(v47)
 	goto L6
 L17:
 	;
@@ -168,8 +168,8 @@ L18:
 	return int32(0)
 L19:
 	;
-	v79 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	if v79 <= int32(0) {
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+	if v78 <= int32(0) {
 		goto L18
 	} else {
 		goto L20

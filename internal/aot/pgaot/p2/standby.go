@@ -84,12 +84,12 @@ func F_standby_redo(m *base.Module, l0 int32) {
 	_ = v97
 	var v98 int32
 	_ = v98
-	var v99 int32
-	_ = v99
-	var v111 int32
-	_ = v111
-	var v112 int32
-	_ = v112
+	var v108 int32
+	_ = v108
+	var v109 int32
+	_ = v109
+	var v110 int32
+	_ = v110
 	var v119 int32
 	_ = v119
 	var v120 int32
@@ -186,7 +186,7 @@ L3:
 	}
 L4:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -340,7 +340,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(_a_F_standby_redo_1), int32(1000), int32(_a_F_standby_redo_2))
+	F_errfinish(m, int32(_a_F_standby_redo_1), int32(1002), int32(_a_F_standby_redo_2))
 	mBase = m.M
 	v70 = m.ExcPending
 	if v70 != 0 {
@@ -391,22 +391,22 @@ L28:
 	}
 L29:
 	;
-	v99 = *(*int32)(unsafe.Add(mBase, uint32(v78)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v96)+12)) = v99
-	*(*int32)(unsafe.Add(mBase, uint32(v78)+4)) = v96
 	*(*int64)(unsafe.Add(mBase, uint32(v48)+24)) = int64(72057594037927936)
 	*(*int32)(unsafe.Add(mBase, uint32(v48)+20)) = v45
 	*(*int32)(unsafe.Add(mBase, uint32(v48)+16)) = v44
-	v111 = F_LockAcquire(m, v48+int32(16), int32(8), int32(1), int32(0))
+	v108 = F_LockAcquire(m, v48+int32(16), int32(8), int32(1), int32(0))
 	mBase = m.M
-	v112 = m.ExcPending
-	if v112 != 0 {
+	v109 = m.ExcPending
+	if v109 != 0 {
 		goto L13
 	} else {
 		goto L30
 	}
 L30:
 	;
+	v110 = *(*int32)(unsafe.Add(mBase, uint32(v78)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v96)+12)) = v110
+	*(*int32)(unsafe.Add(mBase, uint32(v78)+4)) = v96
 	goto L11
 L31:
 	;
@@ -427,7 +427,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(_a_F_standby_redo_1), int32(1219), int32(_a_F_standby_redo_4))
+	F_errfinish(m, int32(_a_F_standby_redo_1), int32(1221), int32(_a_F_standby_redo_4))
 	mBase = m.M
 	v143 = m.ExcPending
 	if v143 != 0 {

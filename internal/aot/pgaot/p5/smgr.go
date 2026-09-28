@@ -26,8 +26,8 @@ func F_smgrDoPendingDeletes(m *base.Module, l0 int32) {
 	_ = v24
 	var v25 int32
 	_ = v25
-	var v26 int32
-	_ = v26
+	var v27 int32
+	_ = v27
 	var v30 int32
 	_ = v30
 	var v32 int32
@@ -46,14 +46,18 @@ func F_smgrDoPendingDeletes(m *base.Module, l0 int32) {
 	_ = v45
 	var v46 int32
 	_ = v46
-	var v51 int32
-	_ = v51
+	var v49 int32
+	_ = v49
 	var v52 int32
 	_ = v52
-	var v56 int32
-	_ = v56
+	var v53 int32
+	_ = v53
 	var v57 int32
 	_ = v57
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
 	var v60 int32
 	_ = v60
 	var v61 int32
@@ -112,7 +116,7 @@ L3:
 	v23 = v19
 	v24 = v2
 	v25 = v2
-	v26 = v2
+	v27 = v2
 	v30 = v2
 	goto L4
 L4:
@@ -137,7 +141,7 @@ L6:
 		v23 = v32
 		v24 = v74
 		v25 = v75
-		v26 = v76
+		v27 = v76
 		v30 = v78
 		goto L4
 	} else {
@@ -147,7 +151,7 @@ L7:
 	;
 	v74 = v24
 	v75 = v25
-	v76 = v26
+	v76 = v27
 	v78 = v23
 	goto L6
 L8:
@@ -198,7 +202,7 @@ L15:
 	;
 	v68 = v24
 	v69 = v25
-	v70 = v26
+	v70 = v27
 	goto L16
 L16:
 	;
@@ -215,7 +219,7 @@ L17:
 	return
 L18:
 	;
-	if v26 == int32(0) {
+	if v27 == int32(0) {
 		goto L20
 	} else {
 		goto L21
@@ -229,10 +233,11 @@ L19:
 	goto L16
 L20:
 	;
-	v51 = F_palloc(m, int32(32))
+	v49 = int32(8)
+	v52 = F_palloc_mul(m, int32(4), v49)
 	mBase = m.M
-	v52 = m.ExcPending
-	if v52 != 0 {
+	v53 = m.ExcPending
+	if v53 != 0 {
 		goto L17
 	} else {
 		goto L23
@@ -242,32 +247,33 @@ L21:
 	goto L22
 L22:
 	;
-	if v24 < v26 {
+	if v24 < v27 {
 		v60 = v25
-		v61 = v26
+		v61 = v27
 		goto L19
 	} else {
 		goto L24
 	}
 L23:
 	;
-	v60 = v51
-	v61 = int32(8)
+	v60 = v52
+	v61 = v49
 	goto L19
 L24:
 	;
-	v56 = F_repalloc(m, v25, v26<<(uint(int32(3))%32))
+	v57 = v27 << (uint(int32(1)) % 32)
+	v58 = F_repalloc_mul(m, v25, int32(4), v57)
 	mBase = m.M
-	v57 = m.ExcPending
-	if v57 != 0 {
+	v59 = m.ExcPending
+	if v59 != 0 {
 		goto L17
 	} else {
 		goto L25
 	}
 L25:
 	;
-	v60 = v56
-	v61 = v26 << (uint(int32(1)) % 32)
+	v60 = v58
+	v61 = v57
 	goto L19
 L26:
 	;

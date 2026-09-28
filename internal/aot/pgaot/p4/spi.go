@@ -25,7 +25,7 @@ func F_SPI_cursor_close(m *base.Module, l0 int32) {
 			if v11 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_SPI_cursor_close_1), int32(1865), int32(_a_F_SPI_cursor_close_2))
+				F_errfinish(m, int32(_a_F_SPI_cursor_close_1), int32(1866), int32(_a_F_SPI_cursor_close_2))
 				v16 = m.ExcPending
 				if v16 != 0 {
 					return
@@ -165,320 +165,316 @@ func F_SPI_execute_plan(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v13 int32
-	_ = v13
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
-	var v28 int32
-	_ = v28
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
 	var v33 int32
 	_ = v33
-	var v34 int32
-	_ = v34
-	var v36 int32
-	_ = v36
-	var v39 int32
-	_ = v39
-	var v41 int64
-	_ = v41
-	var v47 int32
-	_ = v47
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v40 int64
+	_ = v40
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
-	var v54 int32
-	_ = v54
-	var v61 int32
-	_ = v61
-	var v72 int32
-	_ = v72
-	var v74 int32
+	var v53 int32
+	_ = v53
+	var v60 int32
+	_ = v60
+	var v70 int32
+	_ = v70
+	var v74 int64
 	_ = v74
-	var v76 int32
-	_ = v76
-	var v80 int32
-	_ = v80
-	var v83 int32
-	_ = v83
-	var v84 int32
-	_ = v84
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v82 int32
+	_ = v82
 	var v88 int32
 	_ = v88
 	var v91 int32
 	_ = v91
 	var v102 int32
 	_ = v102
-	var v105 int32
-	_ = v105
-	var v112 int32
-	_ = v112
+	var v104 int32
+	_ = v104
+	var v111 int32
+	_ = v111
+	var v114 int32
+	_ = v114
 	var v115 int32
 	_ = v115
-	var v116 int32
-	_ = v116
+	var v118 int32
+	_ = v118
 	var v119 int32
 	_ = v119
-	var v120 int32
-	_ = v120
-	var v124 int32
-	_ = v124
-	var v126 int32
-	_ = v126
-	var v130 int32
-	_ = v130
+	var v123 int32
+	_ = v123
+	var v125 int32
+	_ = v125
+	var v129 int32
+	_ = v129
 	v4 = int32(0)
-	v13 = m.G0
-	v15 = v13 - int32(32)
-	m.G0 = v15
-	v17 = int32(-6)
+	v12 = m.G0
+	v14 = v12 - int32(32)
+	m.G0 = v14
+	v16 = int32(-6)
 	if l0 == v4 {
-		v130 = v17
-		m.G0 = v15 + int32(32)
-		return v130
+		v129 = v16
+		m.G0 = v14 + int32(32)
+		return v129
 	} else {
-		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		if v20 != int32(569278163) {
-			v130 = v17
-			m.G0 = v15 + int32(32)
-			return v130
+		v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		if v19 != int32(569278163) {
+			v129 = v16
+			m.G0 = v14 + int32(32)
+			return v129
 		} else {
 			if l1 != 0 {
-				v28 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
-				if v28 == int32(0) {
-					v130 = int32(-4)
-					m.G0 = v15 + int32(32)
-					return v130
+				v27 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
+				if v27 == int32(0) {
+					v129 = int32(-4)
+					m.G0 = v14 + int32(32)
+					return v129
 				} else {
-					v33 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[1]))
-					v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+8))
-					v36 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
-					*(*int32)(unsafe.Add(mBase, uint32(v36)+12)) = v34
-					v39 = *(*int32)(unsafe.Add(mBase, uint32(v36)+24))
-					*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v39
-					v41 = int64(0)
-					*(*int64)(unsafe.Add(mBase, uint32(v15)+8)) = v41
-					*(*int64)(unsafe.Add(mBase, uint32(v15)+16)) = v41
-					*(*int64)(unsafe.Add(mBase, uint32(v15)+24)) = v41
-					v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-					if int32(0) < v47 {
-						v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-						v51 = F_makeParamList(m, v47)
+					v32 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[1]))
+					v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+8))
+					v35 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
+					*(*int32)(unsafe.Add(mBase, uint32(v35)+12)) = v33
+					v38 = *(*int32)(unsafe.Add(mBase, uint32(v35)+24))
+					*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v38
+					v40 = int64(0)
+					*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v40
+					*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v40
+					*(*int64)(unsafe.Add(mBase, uint32(v14)+24)) = v40
+					v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+					if int32(0) < v46 {
+						v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						v50 = F_makeParamList(m, v46)
 						mBase = m.M
-						v54 = m.ExcPending
-						if v54 != 0 {
+						v53 = m.ExcPending
+						if v53 != 0 {
 							return int32(0)
 						} else {
-							v61 = int32(0)
+							v60 = int32(0)
 							for {
-								v72 = v51 + int32(32) + v61*int32(12)
-								v74 = v61 << (uint(int32(2)) % 32)
-								v76 = *(*int32)(unsafe.Add(mBase, uint32(l1+v74)))
-								*(*int32)(unsafe.Add(mBase, uint32(v72))) = v76
+								v70 = v50 + int32(32) + v60<<(uint(int32(4))%32)
+								v74 = *(*int64)(unsafe.Add(mBase, uint32(l1+v60<<(uint(int32(3))%32))))
+								*(*int64)(unsafe.Add(mBase, uint32(v70))) = v74
 								if l2 != 0 {
-									v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2+v61))))
-									v83 = base.B2i32(v80 == int32(110))
+									v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2+v60))))
+									v81 = base.B2i32(v78 == int32(110))
 								} else {
-									v83 = int32(0)
+									v81 = int32(0)
 								}
-								v84 = int32(1)
-								*(*uint16)(unsafe.Add(mBase, uint32(v72)+6)) = uint16(v84)
-								*(*uint8)(unsafe.Add(mBase, uint32(v72)+4)) = uint8(v83)
-								v88 = *(*int32)(unsafe.Add(mBase, uint32(v50+v74)))
-								*(*int32)(unsafe.Add(mBase, uint32(v72)+8)) = v88
-								v91 = v61 + v84
-								if v91 != v47 {
-									v61 = v91
+								v82 = int32(1)
+								*(*uint16)(unsafe.Add(mBase, uint32(v70)+10)) = uint16(v82)
+								*(*uint8)(unsafe.Add(mBase, uint32(v70)+8)) = uint8(v81)
+								v88 = *(*int32)(unsafe.Add(mBase, uint32(v49+v60<<(uint(int32(2))%32))))
+								*(*int32)(unsafe.Add(mBase, uint32(v70)+12)) = v88
+								v91 = v60 + v82
+								if v91 != v46 {
+									v60 = v91
 									continue
 								} else {
 									break
 								}
 								break
 							}
-							v102 = v51
-							v105 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, uint32(v15)+12)) = uint8(v105)
-							*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v102
-							*(*int64)(unsafe.Add(mBase, uint32(v15)+16)) = int64(0)
-							v112 = int32(0)
-							v115 = F__SPI_execute_plan(m, l0, v15+int32(8), v112, v112, v105)
+							v102 = v50
+							v104 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(v14)+12)) = uint8(v104)
+							*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v102
+							*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = int64(0)
+							v111 = int32(0)
+							v114 = F__SPI_execute_plan(m, l0, v14+int32(8), v111, v111, v104)
 							mBase = m.M
-							v116 = m.ExcPending
-							if v116 != 0 {
+							v115 = m.ExcPending
+							if v115 != 0 {
 								return int32(0)
 							} else {
-								v119 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
-								v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+20))
-								*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v120
-								*(*int32)(unsafe.Add(mBase, uint32(v119)+12)) = int32(0)
-								v124 = *(*int32)(unsafe.Add(mBase, uint32(v119)+24))
-								F_MemoryContextReset(m, v124)
+								v118 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
+								v119 = *(*int32)(unsafe.Add(mBase, uint32(v118)+20))
+								*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v119
+								*(*int32)(unsafe.Add(mBase, uint32(v118)+12)) = int32(0)
+								v123 = *(*int32)(unsafe.Add(mBase, uint32(v118)+24))
+								F_MemoryContextReset(m, v123)
 								mBase = m.M
-								v126 = m.ExcPending
-								if v126 != 0 {
+								v125 = m.ExcPending
+								if v125 != 0 {
 									return int32(0)
 								} else {
-									v130 = v115
-									m.G0 = v15 + int32(32)
-									return v130
+									v129 = v114
+									m.G0 = v14 + int32(32)
+									return v129
 								}
 							}
 						}
 					} else {
 						v102 = v4
-						v105 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(v15)+12)) = uint8(v105)
-						*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v102
-						*(*int64)(unsafe.Add(mBase, uint32(v15)+16)) = int64(0)
-						v112 = int32(0)
-						v115 = F__SPI_execute_plan(m, l0, v15+int32(8), v112, v112, v105)
+						v104 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(v14)+12)) = uint8(v104)
+						*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v102
+						*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = int64(0)
+						v111 = int32(0)
+						v114 = F__SPI_execute_plan(m, l0, v14+int32(8), v111, v111, v104)
 						mBase = m.M
-						v116 = m.ExcPending
-						if v116 != 0 {
+						v115 = m.ExcPending
+						if v115 != 0 {
 							return int32(0)
 						} else {
-							v119 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
-							v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+20))
-							*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v120
-							*(*int32)(unsafe.Add(mBase, uint32(v119)+12)) = int32(0)
-							v124 = *(*int32)(unsafe.Add(mBase, uint32(v119)+24))
-							F_MemoryContextReset(m, v124)
+							v118 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
+							v119 = *(*int32)(unsafe.Add(mBase, uint32(v118)+20))
+							*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v119
+							*(*int32)(unsafe.Add(mBase, uint32(v118)+12)) = int32(0)
+							v123 = *(*int32)(unsafe.Add(mBase, uint32(v118)+24))
+							F_MemoryContextReset(m, v123)
 							mBase = m.M
-							v126 = m.ExcPending
-							if v126 != 0 {
+							v125 = m.ExcPending
+							if v125 != 0 {
 								return int32(0)
 							} else {
-								v130 = v115
-								m.G0 = v15 + int32(32)
-								return v130
+								v129 = v114
+								m.G0 = v14 + int32(32)
+								return v129
 							}
 						}
 					}
 				}
 			} else {
-				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-				if v23 <= int32(0) {
-					v28 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
-					if v28 == int32(0) {
-						v130 = int32(-4)
-						m.G0 = v15 + int32(32)
-						return v130
+				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+				if v22 <= int32(0) {
+					v27 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
+					if v27 == int32(0) {
+						v129 = int32(-4)
+						m.G0 = v14 + int32(32)
+						return v129
 					} else {
-						v33 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[1]))
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+8))
-						v36 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
-						*(*int32)(unsafe.Add(mBase, uint32(v36)+12)) = v34
-						v39 = *(*int32)(unsafe.Add(mBase, uint32(v36)+24))
-						*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v39
-						v41 = int64(0)
-						*(*int64)(unsafe.Add(mBase, uint32(v15)+8)) = v41
-						*(*int64)(unsafe.Add(mBase, uint32(v15)+16)) = v41
-						*(*int64)(unsafe.Add(mBase, uint32(v15)+24)) = v41
-						v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-						if int32(0) < v47 {
-							v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-							v51 = F_makeParamList(m, v47)
+						v32 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[1]))
+						v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+8))
+						v35 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
+						*(*int32)(unsafe.Add(mBase, uint32(v35)+12)) = v33
+						v38 = *(*int32)(unsafe.Add(mBase, uint32(v35)+24))
+						*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v38
+						v40 = int64(0)
+						*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v40
+						*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v40
+						*(*int64)(unsafe.Add(mBase, uint32(v14)+24)) = v40
+						v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+						if int32(0) < v46 {
+							v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+							v50 = F_makeParamList(m, v46)
 							mBase = m.M
-							v54 = m.ExcPending
-							if v54 != 0 {
+							v53 = m.ExcPending
+							if v53 != 0 {
 								return int32(0)
 							} else {
-								v61 = int32(0)
+								v60 = int32(0)
 								for {
-									v72 = v51 + int32(32) + v61*int32(12)
-									v74 = v61 << (uint(int32(2)) % 32)
-									v76 = *(*int32)(unsafe.Add(mBase, uint32(l1+v74)))
-									*(*int32)(unsafe.Add(mBase, uint32(v72))) = v76
+									v70 = v50 + int32(32) + v60<<(uint(int32(4))%32)
+									v74 = *(*int64)(unsafe.Add(mBase, uint32(l1+v60<<(uint(int32(3))%32))))
+									*(*int64)(unsafe.Add(mBase, uint32(v70))) = v74
 									if l2 != 0 {
-										v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2+v61))))
-										v83 = base.B2i32(v80 == int32(110))
+										v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2+v60))))
+										v81 = base.B2i32(v78 == int32(110))
 									} else {
-										v83 = int32(0)
+										v81 = int32(0)
 									}
-									v84 = int32(1)
-									*(*uint16)(unsafe.Add(mBase, uint32(v72)+6)) = uint16(v84)
-									*(*uint8)(unsafe.Add(mBase, uint32(v72)+4)) = uint8(v83)
-									v88 = *(*int32)(unsafe.Add(mBase, uint32(v50+v74)))
-									*(*int32)(unsafe.Add(mBase, uint32(v72)+8)) = v88
-									v91 = v61 + v84
-									if v91 != v47 {
-										v61 = v91
+									v82 = int32(1)
+									*(*uint16)(unsafe.Add(mBase, uint32(v70)+10)) = uint16(v82)
+									*(*uint8)(unsafe.Add(mBase, uint32(v70)+8)) = uint8(v81)
+									v88 = *(*int32)(unsafe.Add(mBase, uint32(v49+v60<<(uint(int32(2))%32))))
+									*(*int32)(unsafe.Add(mBase, uint32(v70)+12)) = v88
+									v91 = v60 + v82
+									if v91 != v46 {
+										v60 = v91
 										continue
 									} else {
 										break
 									}
 									break
 								}
-								v102 = v51
-								v105 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v15)+12)) = uint8(v105)
-								*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v102
-								*(*int64)(unsafe.Add(mBase, uint32(v15)+16)) = int64(0)
-								v112 = int32(0)
-								v115 = F__SPI_execute_plan(m, l0, v15+int32(8), v112, v112, v105)
+								v102 = v50
+								v104 = int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(v14)+12)) = uint8(v104)
+								*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v102
+								*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = int64(0)
+								v111 = int32(0)
+								v114 = F__SPI_execute_plan(m, l0, v14+int32(8), v111, v111, v104)
 								mBase = m.M
-								v116 = m.ExcPending
-								if v116 != 0 {
+								v115 = m.ExcPending
+								if v115 != 0 {
 									return int32(0)
 								} else {
-									v119 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
-									v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+20))
-									*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v120
-									*(*int32)(unsafe.Add(mBase, uint32(v119)+12)) = int32(0)
-									v124 = *(*int32)(unsafe.Add(mBase, uint32(v119)+24))
-									F_MemoryContextReset(m, v124)
+									v118 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
+									v119 = *(*int32)(unsafe.Add(mBase, uint32(v118)+20))
+									*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v119
+									*(*int32)(unsafe.Add(mBase, uint32(v118)+12)) = int32(0)
+									v123 = *(*int32)(unsafe.Add(mBase, uint32(v118)+24))
+									F_MemoryContextReset(m, v123)
 									mBase = m.M
-									v126 = m.ExcPending
-									if v126 != 0 {
+									v125 = m.ExcPending
+									if v125 != 0 {
 										return int32(0)
 									} else {
-										v130 = v115
-										m.G0 = v15 + int32(32)
-										return v130
+										v129 = v114
+										m.G0 = v14 + int32(32)
+										return v129
 									}
 								}
 							}
 						} else {
 							v102 = v4
-							v105 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, uint32(v15)+12)) = uint8(v105)
-							*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v102
-							*(*int64)(unsafe.Add(mBase, uint32(v15)+16)) = int64(0)
-							v112 = int32(0)
-							v115 = F__SPI_execute_plan(m, l0, v15+int32(8), v112, v112, v105)
+							v104 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(v14)+12)) = uint8(v104)
+							*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v102
+							*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = int64(0)
+							v111 = int32(0)
+							v114 = F__SPI_execute_plan(m, l0, v14+int32(8), v111, v111, v104)
 							mBase = m.M
-							v116 = m.ExcPending
-							if v116 != 0 {
+							v115 = m.ExcPending
+							if v115 != 0 {
 								return int32(0)
 							} else {
-								v119 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
-								v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+20))
-								*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v120
-								*(*int32)(unsafe.Add(mBase, uint32(v119)+12)) = int32(0)
-								v124 = *(*int32)(unsafe.Add(mBase, uint32(v119)+24))
-								F_MemoryContextReset(m, v124)
+								v118 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[0]))
+								v119 = *(*int32)(unsafe.Add(mBase, uint32(v118)+20))
+								*(*int32)(unsafe.Add(mBase, _c_F_SPI_execute_plan[2])) = v119
+								*(*int32)(unsafe.Add(mBase, uint32(v118)+12)) = int32(0)
+								v123 = *(*int32)(unsafe.Add(mBase, uint32(v118)+24))
+								F_MemoryContextReset(m, v123)
 								mBase = m.M
-								v126 = m.ExcPending
-								if v126 != 0 {
+								v125 = m.ExcPending
+								if v125 != 0 {
 									return int32(0)
 								} else {
-									v130 = v115
-									m.G0 = v15 + int32(32)
-									return v130
+									v129 = v114
+									m.G0 = v14 + int32(32)
+									return v129
 								}
 							}
 						}
 					}
 				} else {
-					v130 = int32(-7)
-					m.G0 = v15 + int32(32)
-					return v130
+					v129 = int32(-7)
+					m.G0 = v14 + int32(32)
+					return v129
 				}
 			}
 		}
@@ -562,8 +558,8 @@ L4:
 	}
 L5:
 	;
-	v17 = l0 + v10<<(uint(int32(4))%32) + v11*int32(100)
-	v19 = v17 + int32(24)
+	v17 = l0 + v10<<(uint(int32(3))%32) + v11*int32(100)
+	v19 = v17 + int32(32)
 	if v19|l1 != 0 {
 		goto L8
 	} else {
@@ -625,7 +621,7 @@ L16:
 	goto L7
 L17:
 	;
-	v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+111)))
+	v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+119)))
 	if v37 != int32(1) {
 		goto L1
 	} else {
@@ -963,7 +959,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(_a_F_SPI_freetuptable_1), int32(1424), int32(_a_F_SPI_freetuptable_2))
+	F_errfinish(m, int32(_a_F_SPI_freetuptable_1), int32(1425), int32(_a_F_SPI_freetuptable_2))
 	mBase = m.M
 	v80 = m.ExcPending
 	if v80 != 0 {
@@ -980,104 +976,104 @@ func F_SPI_getvalue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v20 int32
-	_ = v20
-	var v27 int32
-	_ = v27
-	var v30 int32
-	_ = v30
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v21 int32
+	_ = v21
+	var v28 int64
+	_ = v28
 	var v31 int32
 	_ = v31
-	var v34 int32
-	_ = v34
-	var v43 int32
-	_ = v43
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
 	var v44 int32
 	_ = v44
 	var v45 int32
 	_ = v45
 	var v46 int32
 	_ = v46
-	var v52 int32
-	_ = v52
+	var v47 int32
+	_ = v47
 	var v53 int32
 	_ = v53
 	var v54 int32
 	_ = v54
 	var v55 int32
 	_ = v55
+	var v56 int32
+	_ = v56
 	var v57 int32
 	_ = v57
 	v4 = int32(0)
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
+	v7 = m.G0
+	v9 = v7 - int32(16)
+	m.G0 = v9
 	*(*int32)(unsafe.Add(mBase, _c_F_SPI_getvalue[0])) = v4
 	if base.B2i32(l2 == v4)|base.B2i32(l2 < int32(-6)) == v4 {
-		v20 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-		if l2 <= v20 {
-			v27 = F_heap_getattr_2(m, l0, l2, l1, v8+int32(15))
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+		if l2 <= v21 {
+			v28 = F_heap_getattr_2(m, l0, l2, l1, v9+int32(15))
 			mBase = m.M
-			v30 = m.ExcPending
-			if v30 != 0 {
+			v31 = m.ExcPending
+			if v31 != 0 {
 				return int32(0)
 			} else {
-				v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)))
-				if v31 != 0 {
+				v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
+				if v32 != 0 {
 					v57 = v4
-					m.G0 = v8 + int32(16)
+					m.G0 = v9 + int32(16)
 					return v57
 				} else {
 					if int32(0) < l2 {
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-						v45 = l1 + v34<<(uint(int32(4))%32) + l2*int32(100) - int32(80)
-						v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)+68))
-						F_getTypeOutputInfo(m, v46, v8+int32(8), v8+int32(7))
+						v35 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+						v46 = l1 + v35<<(uint(int32(3))%32) + l2*int32(100) - int32(72)
+						v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)+68))
+						F_getTypeOutputInfo(m, v47, v9+int32(8), v9+int32(7))
 						mBase = m.M
-						v52 = m.ExcPending
-						if v52 != 0 {
+						v53 = m.ExcPending
+						if v53 != 0 {
 							return int32(0)
 						} else {
-							v53 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
-							v54 = F_OidOutputFunctionCall(m, v53, v27)
+							v54 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
+							v55 = F_OidOutputFunctionCall(m, v54, v28)
 							mBase = m.M
-							v55 = m.ExcPending
-							if v55 != 0 {
+							v56 = m.ExcPending
+							if v56 != 0 {
 								return int32(0)
 							} else {
-								v57 = v54
-								m.G0 = v8 + int32(16)
+								v57 = v55
+								m.G0 = v9 + int32(16)
 								return v57
 							}
 						}
 					} else {
-						v43 = F_SystemAttributeDefinition(m, l2)
+						v44 = F_SystemAttributeDefinition(m, l2)
 						mBase = m.M
-						v44 = m.ExcPending
-						if v44 != 0 {
+						v45 = m.ExcPending
+						if v45 != 0 {
 							return int32(0)
 						} else {
-							v45 = v43
-							v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)+68))
-							F_getTypeOutputInfo(m, v46, v8+int32(8), v8+int32(7))
+							v46 = v44
+							v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)+68))
+							F_getTypeOutputInfo(m, v47, v9+int32(8), v9+int32(7))
 							mBase = m.M
-							v52 = m.ExcPending
-							if v52 != 0 {
+							v53 = m.ExcPending
+							if v53 != 0 {
 								return int32(0)
 							} else {
-								v53 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
-								v54 = F_OidOutputFunctionCall(m, v53, v27)
+								v54 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
+								v55 = F_OidOutputFunctionCall(m, v54, v28)
 								mBase = m.M
-								v55 = m.ExcPending
-								if v55 != 0 {
+								v56 = m.ExcPending
+								if v56 != 0 {
 									return int32(0)
 								} else {
-									v57 = v54
-									m.G0 = v8 + int32(16)
+									v57 = v55
+									m.G0 = v9 + int32(16)
 									return v57
 								}
 							}
@@ -1088,13 +1084,13 @@ func F_SPI_getvalue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		} else {
 			*(*int32)(unsafe.Add(mBase, _c_F_SPI_getvalue[0])) = int32(-9)
 			v57 = v4
-			m.G0 = v8 + int32(16)
+			m.G0 = v9 + int32(16)
 			return v57
 		}
 	} else {
 		*(*int32)(unsafe.Add(mBase, _c_F_SPI_getvalue[0])) = int32(-9)
 		v57 = v4
-		m.G0 = v8 + int32(16)
+		m.G0 = v9 + int32(16)
 		return v57
 	}
 }
@@ -1172,7 +1168,7 @@ func F_SPI_plan_get_cached_plan(m *base.Module, l0 int32) int32 {
 				v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = v18
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-				*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(779)
+				*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(825)
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = v20
 				v24 = int32(_a_F_SPI_plan_get_cached_plan_0)
 				v25 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_plan_get_cached_plan[0]))
@@ -1505,7 +1501,7 @@ func F__SPI_prepare_oneshot_plan(m *base.Module, l0 int32, l1 int32) {
 	m.G0 = v11
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = l0
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = int32(779)
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = int32(825)
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+28)) = v14
 	v18 = int32(_a_F__SPI_prepare_oneshot_plan_0)
 	v19 = *(*int32)(unsafe.Add(mBase, _c_F__SPI_prepare_oneshot_plan[0]))

@@ -10,7 +10,7 @@ func F_OpclassIsVisibleExt(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v8 = Fn13836(m, l0, l1, int32(13), int32(_a_F_OpclassIsVisibleExt_0), int32(2181), int32(_a_F_OpclassIsVisibleExt_1), int32(14))
+	v8 = Fn14219(m, l0, l1, int32(13), int32(_a_F_OpclassIsVisibleExt_0), int32(2250), int32(_a_F_OpclassIsVisibleExt_1), int32(14))
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int32(0)
@@ -25,8 +25,6 @@ func F_get_opclass_name(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v7
 	var v9 int32
 	_ = v9
-	var v12 int32
-	_ = v12
 	var v13 int32
 	_ = v13
 	var v14 int32
@@ -41,8 +39,8 @@ func F_get_opclass_name(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v18
 	var v19 int32
 	_ = v19
-	var v22 int32
-	_ = v22
+	var v20 int32
+	_ = v20
 	var v23 int32
 	_ = v23
 	var v24 int32
@@ -51,8 +49,8 @@ func F_get_opclass_name(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v25
 	var v26 int32
 	_ = v26
-	var v32 int32
-	_ = v32
+	var v27 int32
+	_ = v27
 	var v33 int32
 	_ = v33
 	var v34 int32
@@ -67,73 +65,75 @@ func F_get_opclass_name(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v38
 	var v39 int32
 	_ = v39
-	var v46 int32
-	_ = v46
-	var v50 int32
-	_ = v50
-	var v57 int32
-	_ = v57
-	var v61 int32
-	_ = v61
-	var v66 int32
-	_ = v66
+	var v40 int32
+	_ = v40
+	var v47 int32
+	_ = v47
+	var v51 int32
+	_ = v51
+	var v58 int32
+	_ = v58
+	var v62 int32
+	_ = v62
+	var v67 int32
+	_ = v67
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
-	v12 = F_SearchSysCache1(m, int32(14), l0)
+	v13 = F_SearchSysCache1(m, int32(14), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	v14 = m.ExcPending
+	if v14 != 0 {
 		return
 	} else {
-		if v12 != 0 {
-			v14 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
-			v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+22)))
-			v16 = v14 + v15
+		if v13 != 0 {
+			v15 = *(*int32)(unsafe.Add(mBase, uint32(v13)+16))
+			v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+22)))
+			v17 = v15 + v16
 			if l1 != 0 {
-				v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
-				v18 = F_GetDefaultOpClass(m, l1, v17)
+				v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+				v19 = F_GetDefaultOpClass(m, l1, v18)
 				mBase = m.M
-				v19 = m.ExcPending
-				if v19 != 0 {
+				v20 = m.ExcPending
+				if v20 != 0 {
 					return
 				} else {
-					if v18 == l0 {
-						F_ReleaseCatCache(m, v12)
+					if v19 == l0 {
+						F_ReleaseCatCache(m, v13)
 						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
+						v51 = m.ExcPending
+						if v51 != 0 {
 							return
 						} else {
 							m.G0 = v9 + int32(48)
 							return
 						}
 					} else {
-						v22 = v16 + int32(8)
-						v23 = F_OpclassIsVisible(m, l0)
+						v23 = v17 + int32(8)
+						v24 = F_OpclassIsVisible(m, l0)
 						mBase = m.M
-						v24 = m.ExcPending
-						if v24 != 0 {
+						v25 = m.ExcPending
+						if v25 != 0 {
 							return
 						} else {
-							if v23 != 0 {
-								v25 = F_quote_identifier(m, v22)
+							if v24 != 0 {
+								v26 = F_quote_identifier(m, v23)
 								mBase = m.M
-								v26 = m.ExcPending
-								if v26 != 0 {
+								v27 = m.ExcPending
+								if v27 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v25
+									*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v26
 									F_appendStringInfo(m, l2, int32(_a_F_get_opclass_name_0), v9+int32(16))
 									mBase = m.M
-									v32 = m.ExcPending
-									if v32 != 0 {
+									v33 = m.ExcPending
+									if v33 != 0 {
 										return
 									} else {
-										F_ReleaseCatCache(m, v12)
+										F_ReleaseCatCache(m, v13)
 										mBase = m.M
-										v50 = m.ExcPending
-										if v50 != 0 {
+										v51 = m.ExcPending
+										if v51 != 0 {
 											return
 										} else {
 											m.G0 = v9 + int32(48)
@@ -142,37 +142,37 @@ func F_get_opclass_name(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									}
 								}
 							} else {
-								v33 = *(*int32)(unsafe.Add(mBase, uint32(v16)+72))
-								v34 = F_get_namespace_name_or_temp(m, v33)
+								v34 = *(*int32)(unsafe.Add(mBase, uint32(v17)+72))
+								v35 = F_get_namespace_name_or_temp(m, v34)
 								mBase = m.M
-								v35 = m.ExcPending
-								if v35 != 0 {
+								v36 = m.ExcPending
+								if v36 != 0 {
 									return
 								} else {
-									v36 = F_quote_identifier(m, v34)
+									v37 = F_quote_identifier(m, v35)
 									mBase = m.M
-									v37 = m.ExcPending
-									if v37 != 0 {
+									v38 = m.ExcPending
+									if v38 != 0 {
 										return
 									} else {
-										v38 = F_quote_identifier(m, v22)
+										v39 = F_quote_identifier(m, v23)
 										mBase = m.M
-										v39 = m.ExcPending
-										if v39 != 0 {
+										v40 = m.ExcPending
+										if v40 != 0 {
 											return
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v38
-											*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v36
+											*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v39
+											*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v37
 											F_appendStringInfo(m, l2, int32(_a_F_get_opclass_name_1), v9+int32(32))
 											mBase = m.M
-											v46 = m.ExcPending
-											if v46 != 0 {
+											v47 = m.ExcPending
+											if v47 != 0 {
 												return
 											} else {
-												F_ReleaseCatCache(m, v12)
+												F_ReleaseCatCache(m, v13)
 												mBase = m.M
-												v50 = m.ExcPending
-												if v50 != 0 {
+												v51 = m.ExcPending
+												if v51 != 0 {
 													return
 												} else {
 													m.G0 = v9 + int32(48)
@@ -187,31 +187,31 @@ func F_get_opclass_name(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			} else {
-				v22 = v16 + int32(8)
-				v23 = F_OpclassIsVisible(m, l0)
+				v23 = v17 + int32(8)
+				v24 = F_OpclassIsVisible(m, l0)
 				mBase = m.M
-				v24 = m.ExcPending
-				if v24 != 0 {
+				v25 = m.ExcPending
+				if v25 != 0 {
 					return
 				} else {
-					if v23 != 0 {
-						v25 = F_quote_identifier(m, v22)
+					if v24 != 0 {
+						v26 = F_quote_identifier(m, v23)
 						mBase = m.M
-						v26 = m.ExcPending
-						if v26 != 0 {
+						v27 = m.ExcPending
+						if v27 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v25
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v26
 							F_appendStringInfo(m, l2, int32(_a_F_get_opclass_name_0), v9+int32(16))
 							mBase = m.M
-							v32 = m.ExcPending
-							if v32 != 0 {
+							v33 = m.ExcPending
+							if v33 != 0 {
 								return
 							} else {
-								F_ReleaseCatCache(m, v12)
+								F_ReleaseCatCache(m, v13)
 								mBase = m.M
-								v50 = m.ExcPending
-								if v50 != 0 {
+								v51 = m.ExcPending
+								if v51 != 0 {
 									return
 								} else {
 									m.G0 = v9 + int32(48)
@@ -220,37 +220,37 @@ func F_get_opclass_name(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							}
 						}
 					} else {
-						v33 = *(*int32)(unsafe.Add(mBase, uint32(v16)+72))
-						v34 = F_get_namespace_name_or_temp(m, v33)
+						v34 = *(*int32)(unsafe.Add(mBase, uint32(v17)+72))
+						v35 = F_get_namespace_name_or_temp(m, v34)
 						mBase = m.M
-						v35 = m.ExcPending
-						if v35 != 0 {
+						v36 = m.ExcPending
+						if v36 != 0 {
 							return
 						} else {
-							v36 = F_quote_identifier(m, v34)
+							v37 = F_quote_identifier(m, v35)
 							mBase = m.M
-							v37 = m.ExcPending
-							if v37 != 0 {
+							v38 = m.ExcPending
+							if v38 != 0 {
 								return
 							} else {
-								v38 = F_quote_identifier(m, v22)
+								v39 = F_quote_identifier(m, v23)
 								mBase = m.M
-								v39 = m.ExcPending
-								if v39 != 0 {
+								v40 = m.ExcPending
+								if v40 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v38
-									*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v36
+									*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v39
+									*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v37
 									F_appendStringInfo(m, l2, int32(_a_F_get_opclass_name_1), v9+int32(32))
 									mBase = m.M
-									v46 = m.ExcPending
-									if v46 != 0 {
+									v47 = m.ExcPending
+									if v47 != 0 {
 										return
 									} else {
-										F_ReleaseCatCache(m, v12)
+										F_ReleaseCatCache(m, v13)
 										mBase = m.M
-										v50 = m.ExcPending
-										if v50 != 0 {
+										v51 = m.ExcPending
+										if v51 != 0 {
 											return
 										} else {
 											m.G0 = v9 + int32(48)
@@ -266,21 +266,21 @@ func F_get_opclass_name(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v57 = m.ExcPending
-			if v57 != 0 {
+			v58 = m.ExcPending
+			if v58 != 0 {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
 				F_errmsg_internal(m, int32(_a_F_get_opclass_name_2), v9)
 				mBase = m.M
-				v61 = m.ExcPending
-				if v61 != 0 {
+				v62 = m.ExcPending
+				if v62 != 0 {
 					return
 				} else {
 					F_errfinish(m, int32(_a_F_get_opclass_name_3), int32(_a_F_get_opclass_name_4), int32(_a_F_get_opclass_name_5))
 					mBase = m.M
-					v66 = m.ExcPending
-					if v66 != 0 {
+					v67 = m.ExcPending
+					if v67 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()

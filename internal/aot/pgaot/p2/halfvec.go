@@ -256,7 +256,7 @@ func F_HalfvecL1DistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32) fl
 	}
 	return v212
 }
-func F_halfvec_concat(m *base.Module, l0 int32) int32 {
+func F_halfvec_concat(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -325,19 +325,19 @@ func F_halfvec_concat(m *base.Module, l0 int32) int32 {
 	_ = v91
 	var v92 int32
 	_ = v92
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v9 = F_pg_detoast_datum(m, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v14 = F_pg_detoast_datum(m, v13)
 		mBase = m.M
 		v15 = m.ExcPending
 		if v15 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v16 = int32(*(*int16)(unsafe.Add(mBase, uint32(v14)+4)))
 			v17 = int32(*(*int16)(unsafe.Add(mBase, uint32(v9)+4)))
@@ -346,25 +346,25 @@ func F_halfvec_concat(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v23 = F_mul_size(m, int32(2), v18)
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v25 = F_add_size(m, int32(8), v23)
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v27 = F_palloc0(m, v25)
 						mBase = m.M
 						v28 = m.ExcPending
 						if v28 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							*(*uint16)(unsafe.Add(mBase, uint32(v27)+4)) = uint16(v18)
 							*(*int32)(unsafe.Add(mBase, uint32(v27))) = v25 << (uint(int32(2)) % 32)
@@ -411,7 +411,7 @@ func F_halfvec_concat(m *base.Module, l0 int32) int32 {
 								}
 							} else {
 							}
-							return v27
+							return base.I64_extend_i32_u(v27)
 						}
 					}
 				}
@@ -419,32 +419,30 @@ func F_halfvec_concat(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_halfvec_inner_product(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F_halfvec_inner_product(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13913(m, l0, int32(_a_F_halfvec_inner_product_0))
+	v3 = Fn14300(m, l0, int32(_a_F_halfvec_inner_product_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
 }
-func F_halfvec_l2_distance(m *base.Module, l0 int32) int32 {
+func F_halfvec_l2_distance(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
 	var v10 int32
 	_ = v10
-	var v13 int32
-	_ = v13
+	var v11 int32
+	_ = v11
 	var v14 int32
 	_ = v14
 	var v15 int32
@@ -455,77 +453,75 @@ func F_halfvec_l2_distance(m *base.Module, l0 int32) int32 {
 	_ = v17
 	var v18 int32
 	_ = v18
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
 	var v27 int32
 	_ = v27
 	var v28 int32
 	_ = v28
-	var v33 int32
-	_ = v33
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
-	var v45 int32
-	_ = v45
-	var v46 float32
+	var v29 int32
+	_ = v29
+	var v34 int32
+	_ = v34
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
+	var v46 int32
 	_ = v46
-	var v47 int32
+	var v47 float32
 	_ = v47
-	var v50 int32
-	_ = v50
-	var v51 int32
-	_ = v51
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v10 = F_pg_detoast_datum(m, v9)
+	var v48 int32
+	_ = v48
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v11 = F_pg_detoast_datum(m, v10)
 	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
-		return int32(0)
+	v14 = m.ExcPending
+	if v14 != 0 {
+		return int64(0)
 	} else {
-		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v15 = F_pg_detoast_datum(m, v14)
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+		v16 = F_pg_detoast_datum(m, v15)
 		mBase = m.M
-		v16 = m.ExcPending
-		if v16 != 0 {
-			return int32(0)
+		v17 = m.ExcPending
+		if v17 != 0 {
+			return int64(0)
 		} else {
-			v17 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10)+4)))
-			v18 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v15)+4)))
-			if v17 != v18 {
+			v18 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+4)))
+			v19 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v16)+4)))
+			if v18 != v19 {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v23 = m.ExcPending
-				if v23 != 0 {
-					return int32(0)
+				v24 = m.ExcPending
+				if v24 != 0 {
+					return int64(0)
 				} else {
 					F_errcode(m, int32(130))
 					mBase = m.M
-					v26 = m.ExcPending
-					if v26 != 0 {
-						return int32(0)
+					v27 = m.ExcPending
+					if v27 != 0 {
+						return int64(0)
 					} else {
-						v27 = int32(*(*int16)(unsafe.Add(mBase, uint32(v10)+4)))
-						v28 = int32(*(*int16)(unsafe.Add(mBase, uint32(v15)+4)))
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v28
-						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v27
-						F_errmsg(m, int32(_a_F_halfvec_l2_distance_0), v7)
+						v28 = int32(*(*int16)(unsafe.Add(mBase, uint32(v11)+4)))
+						v29 = int32(*(*int16)(unsafe.Add(mBase, uint32(v16)+4)))
+						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v29
+						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v28
+						F_errmsg(m, int32(_a_F_halfvec_l2_distance_0), v8)
 						mBase = m.M
-						v33 = m.ExcPending
-						if v33 != 0 {
-							return int32(0)
+						v34 = m.ExcPending
+						if v34 != 0 {
+							return int64(0)
 						} else {
 							F_errfinish(m, int32(_a_F_halfvec_l2_distance_1), int32(80), int32(_a_F_halfvec_l2_distance_2))
 							mBase = m.M
-							v38 = m.ExcPending
-							if v38 != 0 {
-								return int32(0)
+							v39 = m.ExcPending
+							if v39 != 0 {
+								return int64(0)
 							} else {
 								base.Wasm_trap_unreachable()
 								for {
@@ -535,41 +531,32 @@ func F_halfvec_l2_distance(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v40 = int32(8)
-				v45 = *(*int32)(unsafe.Add(mBase, _c_F_halfvec_l2_distance[0]))
-				v46 = m.T0[v45].(func(*base.Module, int32, int32, int32) float32)(m, base.I32_extend16_s(v17), v10+v40, v15+v40)
+				v41 = int32(8)
+				v46 = *(*int32)(unsafe.Add(mBase, _c_F_halfvec_l2_distance[0]))
+				v47 = m.T0[v46].(func(*base.Module, int32, int32, int32) float32)(m, base.I32_extend16_s(v18), v11+v41, v16+v41)
 				mBase = m.M
-				v47 = m.ExcPending
-				if v47 != 0 {
-					return int32(0)
+				v48 = m.ExcPending
+				if v48 != 0 {
+					return int64(0)
 				} else {
-					v50 = F_Float8GetDatum(m, base.F64_sqrt(base.F64_promote_f32(v46)))
-					mBase = m.M
-					v51 = m.ExcPending
-					if v51 != 0 {
-						return int32(0)
-					} else {
-						m.G0 = v7 + int32(16)
-						return v50
-					}
+					m.G0 = v8 + int32(16)
+					return base.I64_reinterpret_f64(base.F64_sqrt(base.F64_promote_f32(v47)))
 				}
 			}
 		}
 	}
 }
-func F_halfvec_negative_inner_product(m *base.Module, l0 int32) int32 {
+func F_halfvec_negative_inner_product(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
 	var v10 int32
 	_ = v10
-	var v13 int32
-	_ = v13
+	var v11 int32
+	_ = v11
 	var v14 int32
 	_ = v14
 	var v15 int32
@@ -580,77 +567,75 @@ func F_halfvec_negative_inner_product(m *base.Module, l0 int32) int32 {
 	_ = v17
 	var v18 int32
 	_ = v18
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
 	var v27 int32
 	_ = v27
 	var v28 int32
 	_ = v28
-	var v33 int32
-	_ = v33
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
-	var v45 int32
-	_ = v45
-	var v46 float32
+	var v29 int32
+	_ = v29
+	var v34 int32
+	_ = v34
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
+	var v46 int32
 	_ = v46
-	var v47 int32
+	var v47 float32
 	_ = v47
-	var v50 int32
-	_ = v50
-	var v51 int32
-	_ = v51
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v10 = F_pg_detoast_datum(m, v9)
+	var v48 int32
+	_ = v48
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v11 = F_pg_detoast_datum(m, v10)
 	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
-		return int32(0)
+	v14 = m.ExcPending
+	if v14 != 0 {
+		return int64(0)
 	} else {
-		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v15 = F_pg_detoast_datum(m, v14)
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+		v16 = F_pg_detoast_datum(m, v15)
 		mBase = m.M
-		v16 = m.ExcPending
-		if v16 != 0 {
-			return int32(0)
+		v17 = m.ExcPending
+		if v17 != 0 {
+			return int64(0)
 		} else {
-			v17 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10)+4)))
-			v18 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v15)+4)))
-			if v17 != v18 {
+			v18 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+4)))
+			v19 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v16)+4)))
+			if v18 != v19 {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v23 = m.ExcPending
-				if v23 != 0 {
-					return int32(0)
+				v24 = m.ExcPending
+				if v24 != 0 {
+					return int64(0)
 				} else {
 					F_errcode(m, int32(130))
 					mBase = m.M
-					v26 = m.ExcPending
-					if v26 != 0 {
-						return int32(0)
+					v27 = m.ExcPending
+					if v27 != 0 {
+						return int64(0)
 					} else {
-						v27 = int32(*(*int16)(unsafe.Add(mBase, uint32(v10)+4)))
-						v28 = int32(*(*int16)(unsafe.Add(mBase, uint32(v15)+4)))
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v28
-						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v27
-						F_errmsg(m, int32(_a_F_halfvec_negative_inner_product_0), v7)
+						v28 = int32(*(*int16)(unsafe.Add(mBase, uint32(v11)+4)))
+						v29 = int32(*(*int16)(unsafe.Add(mBase, uint32(v16)+4)))
+						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v29
+						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v28
+						F_errmsg(m, int32(_a_F_halfvec_negative_inner_product_0), v8)
 						mBase = m.M
-						v33 = m.ExcPending
-						if v33 != 0 {
-							return int32(0)
+						v34 = m.ExcPending
+						if v34 != 0 {
+							return int64(0)
 						} else {
 							F_errfinish(m, int32(_a_F_halfvec_negative_inner_product_1), int32(80), int32(_a_F_halfvec_negative_inner_product_2))
 							mBase = m.M
-							v38 = m.ExcPending
-							if v38 != 0 {
-								return int32(0)
+							v39 = m.ExcPending
+							if v39 != 0 {
+								return int64(0)
 							} else {
 								base.Wasm_trap_unreachable()
 								for {
@@ -660,29 +645,22 @@ func F_halfvec_negative_inner_product(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v40 = int32(8)
-				v45 = *(*int32)(unsafe.Add(mBase, _c_F_halfvec_negative_inner_product[0]))
-				v46 = m.T0[v45].(func(*base.Module, int32, int32, int32) float32)(m, base.I32_extend16_s(v17), v10+v40, v15+v40)
+				v41 = int32(8)
+				v46 = *(*int32)(unsafe.Add(mBase, _c_F_halfvec_negative_inner_product[0]))
+				v47 = m.T0[v46].(func(*base.Module, int32, int32, int32) float32)(m, base.I32_extend16_s(v18), v11+v41, v16+v41)
 				mBase = m.M
-				v47 = m.ExcPending
-				if v47 != 0 {
-					return int32(0)
+				v48 = m.ExcPending
+				if v48 != 0 {
+					return int64(0)
 				} else {
-					v50 = F_Float8GetDatum(m, base.F64_promote_f32(base.F32_neg(v46)))
-					mBase = m.M
-					v51 = m.ExcPending
-					if v51 != 0 {
-						return int32(0)
-					} else {
-						m.G0 = v7 + int32(16)
-						return v50
-					}
+					m.G0 = v8 + int32(16)
+					return base.I64_reinterpret_f64(base.F64_promote_f32(base.F32_neg(v47)))
 				}
 			}
 		}
 	}
 }
-func F_halfvec_recv(m *base.Module, l0 int32) int32 {
+func F_halfvec_recv(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -729,27 +707,27 @@ func F_halfvec_recv(m *base.Module, l0 int32) int32 {
 	_ = v67
 	var v69 int32
 	_ = v69
-	var v85 int32
-	_ = v85
-	var v88 int32
-	_ = v88
-	var v95 int32
-	_ = v95
-	var v100 int32
-	_ = v100
-	var v104 int32
-	_ = v104
-	var v107 int32
-	_ = v107
-	var v113 int32
-	_ = v113
-	var v118 int32
-	_ = v118
+	var v86 int32
+	_ = v86
+	var v89 int32
+	_ = v89
+	var v96 int32
+	_ = v96
+	var v101 int32
+	_ = v101
+	var v105 int32
+	_ = v105
+	var v108 int32
+	_ = v108
+	var v114 int32
+	_ = v114
+	var v119 int32
+	_ = v119
 	v8 = m.G0
 	v10 = v8 - int32(32)
 	m.G0 = v10
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v15 = F_pq_getmsgint(m, v13, int32(2))
 	mBase = m.M
 	v18 = m.ExcPending
@@ -760,7 +738,7 @@ func F_halfvec_recv(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
 	v20 = F_pq_getmsgint(m, v13, int32(2))
@@ -793,8 +771,8 @@ L5:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v104 = m.ExcPending
-	if v104 != 0 {
+	v105 = m.ExcPending
+	if v105 != 0 {
 		goto L1
 	} else {
 		goto L25
@@ -814,8 +792,8 @@ L8:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v85 = m.ExcPending
-	if v85 != 0 {
+	v86 = m.ExcPending
+	if v86 != 0 {
 		goto L1
 	} else {
 		goto L21
@@ -869,7 +847,7 @@ L14:
 L15:
 	;
 	m.G0 = v10 + int32(32)
-	return v39
+	return base.I64_extend_i32_u(v39)
 L16:
 	;
 	v61 = F_pq_getmsgint(m, v13, int32(2))
@@ -910,8 +888,8 @@ L21:
 	;
 	F_errcode(m, int32(130))
 	mBase = m.M
-	v88 = m.ExcPending
-	if v88 != 0 {
+	v89 = m.ExcPending
+	if v89 != 0 {
 		goto L1
 	} else {
 		goto L22
@@ -922,8 +900,8 @@ L22:
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v12
 	F_errmsg(m, int32(_a_F_halfvec_recv_1), v10+int32(16))
 	mBase = m.M
-	v95 = m.ExcPending
-	if v95 != 0 {
+	v96 = m.ExcPending
+	if v96 != 0 {
 		goto L1
 	} else {
 		goto L23
@@ -932,8 +910,8 @@ L23:
 	;
 	F_errfinish(m, int32(_a_F_halfvec_recv_2), int32(92), int32(_a_F_halfvec_recv_3))
 	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
+	v101 = m.ExcPending
+	if v101 != 0 {
 		goto L1
 	} else {
 		goto L24
@@ -947,8 +925,8 @@ L25:
 	;
 	F_errcode(m, int32(130))
 	mBase = m.M
-	v107 = m.ExcPending
-	if v107 != 0 {
+	v108 = m.ExcPending
+	if v108 != 0 {
 		goto L1
 	} else {
 		goto L26
@@ -958,8 +936,8 @@ L26:
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v32 >> (uint(int32(16)) % 32)
 	F_errmsg(m, int32(_a_F_halfvec_recv_4), v10)
 	mBase = m.M
-	v113 = m.ExcPending
-	if v113 != 0 {
+	v114 = m.ExcPending
+	if v114 != 0 {
 		goto L1
 	} else {
 		goto L27
@@ -968,8 +946,8 @@ L27:
 	;
 	F_errfinish(m, int32(_a_F_halfvec_recv_2), int32(390), int32(_a_F_halfvec_recv_5))
 	mBase = m.M
-	v118 = m.ExcPending
-	if v118 != 0 {
+	v119 = m.ExcPending
+	if v119 != 0 {
 		goto L1
 	} else {
 		goto L28
@@ -980,7 +958,7 @@ L28:
 	for {
 	}
 }
-func F_halfvec_to_sparsevec(m *base.Module, l0 int32) int32 {
+func F_halfvec_to_sparsevec(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -1117,25 +1095,25 @@ func F_halfvec_to_sparsevec(m *base.Module, l0 int32) int32 {
 	_ = v294
 	var v299 int32
 	_ = v299
-	var v321 int32
-	_ = v321
-	var v325 int32
-	_ = v325
-	var v330 int32
-	_ = v330
-	var v334 int32
-	_ = v334
-	var v337 int32
-	_ = v337
-	var v342 int32
-	_ = v342
-	var v347 int32
-	_ = v347
+	var v322 int32
+	_ = v322
+	var v326 int32
+	_ = v326
+	var v331 int32
+	_ = v331
+	var v335 int32
+	_ = v335
+	var v338 int32
+	_ = v338
+	var v343 int32
+	_ = v343
+	var v348 int32
+	_ = v348
 	v2 = int32(0)
 	v14 = m.G0
 	v16 = v14 - int32(16)
 	m.G0 = v16
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v19 = F_pg_detoast_datum(m, v18)
 	mBase = m.M
 	v22 = m.ExcPending
@@ -1146,10 +1124,10 @@ func F_halfvec_to_sparsevec(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v24 = int32(*(*int16)(unsafe.Add(mBase, uint32(v19)+4)))
 	F_CheckDim_2(m, v24)
 	mBase = m.M
@@ -1182,8 +1160,8 @@ L6:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v334 = m.ExcPending
-	if v334 != 0 {
+	v335 = m.ExcPending
+	if v335 != 0 {
 		goto L1
 	} else {
 		goto L81
@@ -1346,8 +1324,8 @@ L25:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v321 = m.ExcPending
-	if v321 != 0 {
+	v322 = m.ExcPending
+	if v322 != 0 {
 		goto L1
 	} else {
 		goto L78
@@ -1365,7 +1343,7 @@ L27:
 L28:
 	;
 	m.G0 = v16 + int32(16)
-	return v160
+	return base.I64_extend_i32_u(v160)
 L29:
 	;
 	v194 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v19+int32(8)+v178<<(uint(int32(1))%32)))))
@@ -1632,8 +1610,8 @@ L78:
 	;
 	F_errmsg_internal(m, int32(_a_F_halfvec_to_sparsevec_2), int32(0))
 	mBase = m.M
-	v325 = m.ExcPending
-	if v325 != 0 {
+	v326 = m.ExcPending
+	if v326 != 0 {
 		goto L1
 	} else {
 		goto L79
@@ -1642,8 +1620,8 @@ L79:
 	;
 	F_errfinish(m, int32(_a_F_halfvec_to_sparsevec_3), int32(676), int32(_a_F_halfvec_to_sparsevec_4))
 	mBase = m.M
-	v330 = m.ExcPending
-	if v330 != 0 {
+	v331 = m.ExcPending
+	if v331 != 0 {
 		goto L1
 	} else {
 		goto L80
@@ -1657,8 +1635,8 @@ L81:
 	;
 	F_errcode(m, int32(130))
 	mBase = m.M
-	v337 = m.ExcPending
-	if v337 != 0 {
+	v338 = m.ExcPending
+	if v338 != 0 {
 		goto L1
 	} else {
 		goto L82
@@ -1669,8 +1647,8 @@ L82:
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v23
 	F_errmsg(m, int32(_a_F_halfvec_to_sparsevec_5), v16)
 	mBase = m.M
-	v342 = m.ExcPending
-	if v342 != 0 {
+	v343 = m.ExcPending
+	if v343 != 0 {
 		goto L1
 	} else {
 		goto L83
@@ -1679,8 +1657,8 @@ L83:
 	;
 	F_errfinish(m, int32(_a_F_halfvec_to_sparsevec_3), int32(62), int32(_a_F_halfvec_to_sparsevec_6))
 	mBase = m.M
-	v347 = m.ExcPending
-	if v347 != 0 {
+	v348 = m.ExcPending
+	if v348 != 0 {
 		goto L1
 	} else {
 		goto L84

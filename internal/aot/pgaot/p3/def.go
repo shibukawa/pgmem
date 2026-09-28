@@ -126,7 +126,7 @@ L1:
 L2:
 	;
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
-	if v13 == int32(465) {
+	if v13 == int32(473) {
 		goto L5
 	} else {
 		goto L6
@@ -528,7 +528,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(_a_F_defGetBoolean_5), int32(141), int32(_a_F_defGetBoolean_6))
+	F_errfinish(m, int32(_a_F_defGetBoolean_5), int32(140), int32(_a_F_defGetBoolean_6))
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {
@@ -581,7 +581,7 @@ func F_defGetInt32(m *base.Module, l0 int32) int32 {
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	if v8 != 0 {
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-		if v9 == int32(465) {
+		if v9 == int32(473) {
 			v50 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 			m.G0 = v6 + int32(32)
 			return v50
@@ -606,7 +606,7 @@ func F_defGetInt32(m *base.Module, l0 int32) int32 {
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_defGetInt32_1), int32(164), int32(_a_F_defGetInt32_2))
+						F_errfinish(m, int32(_a_F_defGetInt32_1), int32(163), int32(_a_F_defGetInt32_2))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {
@@ -641,7 +641,7 @@ func F_defGetInt32(m *base.Module, l0 int32) int32 {
 				if v44 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_defGetInt32_1), int32(155), int32(_a_F_defGetInt32_2))
+					F_errfinish(m, int32(_a_F_defGetInt32_1), int32(154), int32(_a_F_defGetInt32_2))
 					mBase = m.M
 					v49 = m.ExcPending
 					if v49 != 0 {

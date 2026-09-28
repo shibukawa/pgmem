@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_dist_lp(m *base.Module, l0 int32) int32 {
+func F_dist_lp(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -16,29 +16,18 @@ func F_dist_lp(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v5 = F_line_closept_point(m, int32(0), v3, v4)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v9 = F_Float8GetDatum(m, v5)
-		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return int32(0)
-		} else {
-			return v9
-		}
+		return base.I64_reinterpret_f64(v5)
 	}
 }
-func F_dist_ppoly(m *base.Module, l0 int32) int32 {
+func F_dist_ppoly(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -53,32 +42,21 @@ func F_dist_ppoly(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v4 = F_pg_detoast_datum(m, v3)
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v8 = F_dist_ppoly_internal(m, v2, v4)
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			v10 = F_Float8GetDatum(m, v8)
-			mBase = m.M
-			v11 = m.ExcPending
-			if v11 != 0 {
-				return int32(0)
-			} else {
-				return v10
-			}
+			return base.I64_reinterpret_f64(v8)
 		}
 	}
 }

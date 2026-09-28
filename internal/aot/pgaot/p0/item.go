@@ -20,79 +20,79 @@ func F_makeItemUnary(m *base.Module, l0 int32) int32 {
 	_ = v13
 	var v15 int32
 	_ = v15
-	var v20 int32
+	var v20 int64
 	_ = v20
-	var v21 int32
+	var v21 int64
 	_ = v21
 	var v22 int32
 	_ = v22
-	var v23 int32
-	_ = v23
 	var v24 int32
 	_ = v24
-	var v28 int32
-	_ = v28
+	var v25 int32
+	_ = v25
 	var v29 int32
 	_ = v29
-	var v31 int32
-	_ = v31
-	var v33 int32
-	_ = v33
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	if v3 != int32(2) {
-		v28 = F_palloc(m, int32(24))
+		v29 = F_palloc(m, int32(24))
 		mBase = m.M
-		v29 = m.ExcPending
-		if v29 != 0 {
+		v30 = m.ExcPending
+		if v30 != 0 {
 			return int32(0)
 		} else {
-			v31 = *(*int32)(unsafe.Add(mBase, _c_F_makeItemUnary[0]))
-			if v31 != 0 {
+			v32 = *(*int32)(unsafe.Add(mBase, _c_F_makeItemUnary[0]))
+			if v32 != 0 {
 				F_ProcessInterrupts(m)
 				mBase = m.M
-				v33 = m.ExcPending
-				if v33 != 0 {
+				v34 = m.ExcPending
+				if v34 != 0 {
 					return int32(0)
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v28)+4)) = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(20)
-					*(*int32)(unsafe.Add(mBase, uint32(v28)+8)) = l0
-					return v28
+					*(*int32)(unsafe.Add(mBase, uint32(v29)+4)) = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v29))) = int32(20)
+					*(*int32)(unsafe.Add(mBase, uint32(v29)+8)) = l0
+					return v29
 				}
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v28)+4)) = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(20)
-				*(*int32)(unsafe.Add(mBase, uint32(v28)+8)) = l0
-				return v28
+				*(*int32)(unsafe.Add(mBase, uint32(v29)+4)) = int32(0)
+				*(*int32)(unsafe.Add(mBase, uint32(v29))) = int32(20)
+				*(*int32)(unsafe.Add(mBase, uint32(v29)+8)) = l0
+				return v29
 			}
 		}
 	} else {
 		v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 		if v6 != 0 {
-			v28 = F_palloc(m, int32(24))
+			v29 = F_palloc(m, int32(24))
 			mBase = m.M
-			v29 = m.ExcPending
-			if v29 != 0 {
+			v30 = m.ExcPending
+			if v30 != 0 {
 				return int32(0)
 			} else {
-				v31 = *(*int32)(unsafe.Add(mBase, _c_F_makeItemUnary[0]))
-				if v31 != 0 {
+				v32 = *(*int32)(unsafe.Add(mBase, _c_F_makeItemUnary[0]))
+				if v32 != 0 {
 					F_ProcessInterrupts(m)
 					mBase = m.M
-					v33 = m.ExcPending
-					if v33 != 0 {
+					v34 = m.ExcPending
+					if v34 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v28)+4)) = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(20)
-						*(*int32)(unsafe.Add(mBase, uint32(v28)+8)) = l0
-						return v28
+						*(*int32)(unsafe.Add(mBase, uint32(v29)+4)) = int32(0)
+						*(*int32)(unsafe.Add(mBase, uint32(v29))) = int32(20)
+						*(*int32)(unsafe.Add(mBase, uint32(v29)+8)) = l0
+						return v29
 					}
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v28)+4)) = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(20)
-					*(*int32)(unsafe.Add(mBase, uint32(v28)+8)) = l0
-					return v28
+					*(*int32)(unsafe.Add(mBase, uint32(v29)+4)) = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v29))) = int32(20)
+					*(*int32)(unsafe.Add(mBase, uint32(v29)+8)) = l0
+					return v29
 				}
 			}
 		} else {
@@ -111,40 +111,40 @@ func F_makeItemUnary(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int64)(unsafe.Add(mBase, uint32(v8))) = int64(2)
-						v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-						v21 = F_DirectFunctionCall1Coll(m, int32(1406), int32(0), v20)
+						v20 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0)+8)))
+						v21 = F_DirectFunctionCall1Coll(m, int32(1546), int32(0), v20)
 						mBase = m.M
 						v22 = m.ExcPending
 						if v22 != 0 {
 							return int32(0)
 						} else {
-							v23 = F_pg_detoast_datum(m, v21)
+							v24 = F_pg_detoast_datum(m, base.I32_wrap_i64(v21))
 							mBase = m.M
-							v24 = m.ExcPending
-							if v24 != 0 {
+							v25 = m.ExcPending
+							if v25 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v23
+								*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v24
 								return v8
 							}
 						}
 					}
 				} else {
 					*(*int64)(unsafe.Add(mBase, uint32(v8))) = int64(2)
-					v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-					v21 = F_DirectFunctionCall1Coll(m, int32(1406), int32(0), v20)
+					v20 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0)+8)))
+					v21 = F_DirectFunctionCall1Coll(m, int32(1546), int32(0), v20)
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return int32(0)
 					} else {
-						v23 = F_pg_detoast_datum(m, v21)
+						v24 = F_pg_detoast_datum(m, base.I32_wrap_i64(v21))
 						mBase = m.M
-						v24 = m.ExcPending
-						if v24 != 0 {
+						v25 = m.ExcPending
+						if v25 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v23
+							*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v24
 							return v8
 						}
 					}

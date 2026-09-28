@@ -11,13 +11,15 @@ func F_pa_set_fileset_state(m *base.Module, l0 int32) {
 	_ = mBase
 	var v5 int32
 	_ = v5
-	var v10 int32
-	_ = v10
+	var v8 int32
+	_ = v8
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
 	var v14 int32
 	_ = v14
-	var v15 int32
-	_ = v15
-	var v16 int32
+	var v16 int64
 	_ = v16
 	var v18 int64
 	_ = v18
@@ -27,55 +29,53 @@ func F_pa_set_fileset_state(m *base.Module, l0 int32) {
 	_ = v22
 	var v24 int64
 	_ = v24
-	var v26 int64
+	var v26 int32
 	_ = v26
-	var v28 int32
-	_ = v28
 	v5 = base.AtomicRmwXchg32(m, l0, int32(0), int32(1))
 	if v5 != 0 {
-		F_s_lock(m, l0, int32(_a_F_pa_set_fileset_state_0), int32(1508), int32(_a_F_pa_set_fileset_state_1))
+		F_s_lock(m, l0, int32(_a_F_pa_set_fileset_state_0))
 		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
+		v8 = m.ExcPending
+		if v8 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = int32(2)
-			v14 = *(*int32)(unsafe.Add(mBase, _c_F_pa_set_fileset_state[0]))
-			v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+60))
-			v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+40))
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v16
-			v18 = *(*int64)(unsafe.Add(mBase, uint32(v15)+32))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+68)) = v18
-			v20 = *(*int64)(unsafe.Add(mBase, uint32(v15)+24))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+60)) = v20
-			v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+16))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+52)) = v22
-			v24 = *(*int64)(unsafe.Add(mBase, uint32(v15)+8))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v24
-			v26 = *(*int64)(unsafe.Add(mBase, uint32(v15)))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v26
-			v28 = int32(0)
-			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v28))
+			v12 = *(*int32)(unsafe.Add(mBase, _c_F_pa_set_fileset_state[0]))
+			v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+40))
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v14
+			v16 = *(*int64)(unsafe.Add(mBase, uint32(v13)+32))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+68)) = v16
+			v18 = *(*int64)(unsafe.Add(mBase, uint32(v13)+24))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+60)) = v18
+			v20 = *(*int64)(unsafe.Add(mBase, uint32(v13)+16))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+52)) = v20
+			v22 = *(*int64)(unsafe.Add(mBase, uint32(v13)+8))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v22
+			v24 = *(*int64)(unsafe.Add(mBase, uint32(v13)))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v24
+			v26 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v26))
 			return
 		}
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = int32(2)
-		v14 = *(*int32)(unsafe.Add(mBase, _c_F_pa_set_fileset_state[0]))
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+60))
-		v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+40))
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v16
-		v18 = *(*int64)(unsafe.Add(mBase, uint32(v15)+32))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+68)) = v18
-		v20 = *(*int64)(unsafe.Add(mBase, uint32(v15)+24))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+60)) = v20
-		v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+16))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+52)) = v22
-		v24 = *(*int64)(unsafe.Add(mBase, uint32(v15)+8))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v24
-		v26 = *(*int64)(unsafe.Add(mBase, uint32(v15)))
-		*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v26
-		v28 = int32(0)
-		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v28))
+		v12 = *(*int32)(unsafe.Add(mBase, _c_F_pa_set_fileset_state[0]))
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+40))
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v14
+		v16 = *(*int64)(unsafe.Add(mBase, uint32(v13)+32))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+68)) = v16
+		v18 = *(*int64)(unsafe.Add(mBase, uint32(v13)+24))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+60)) = v18
+		v20 = *(*int64)(unsafe.Add(mBase, uint32(v13)+16))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+52)) = v20
+		v22 = *(*int64)(unsafe.Add(mBase, uint32(v13)+8))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+44)) = v22
+		v24 = *(*int64)(unsafe.Add(mBase, uint32(v13)))
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v24
+		v26 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v26))
 		return
 	}
 }
@@ -120,10 +120,10 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 	_ = v41
 	var v44 int32
 	_ = v44
-	var v49 int32
-	_ = v49
-	var v52 int32
-	_ = v52
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
@@ -143,7 +143,7 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 			if v17 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_pa_switch_to_partial_serialize_1), int32(1223), int32(_a_F_pa_switch_to_partial_serialize_2))
+				F_errfinish(m, int32(_a_F_pa_switch_to_partial_serialize_1), int32(1235), int32(_a_F_pa_switch_to_partial_serialize_2))
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
@@ -173,22 +173,22 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 								v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 								v44 = base.AtomicRmwXchg32(m, v41, int32(0), int32(1))
 								if v44 != 0 {
-									F_s_lock(m, v41, int32(_a_F_pa_switch_to_partial_serialize_1), int32(1508), int32(_a_F_pa_switch_to_partial_serialize_3))
+									F_s_lock(m, v41, int32(_a_F_pa_switch_to_partial_serialize_3))
 									mBase = m.M
-									v49 = m.ExcPending
-									if v49 != 0 {
+									v47 = m.ExcPending
+									if v47 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v41)+32)) = int32(1)
-										v52 = int32(0)
-										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v52))
+										v50 = int32(0)
+										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v50))
 										m.G0 = v6 + int32(16)
 										return
 									}
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v41)+32)) = int32(1)
-									v52 = int32(0)
-									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v52))
+									v50 = int32(0)
+									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v50))
 									m.G0 = v6 + int32(16)
 									return
 								}
@@ -197,22 +197,22 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 							v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 							v44 = base.AtomicRmwXchg32(m, v41, int32(0), int32(1))
 							if v44 != 0 {
-								F_s_lock(m, v41, int32(_a_F_pa_switch_to_partial_serialize_1), int32(1508), int32(_a_F_pa_switch_to_partial_serialize_3))
+								F_s_lock(m, v41, int32(_a_F_pa_switch_to_partial_serialize_3))
 								mBase = m.M
-								v49 = m.ExcPending
-								if v49 != 0 {
+								v47 = m.ExcPending
+								if v47 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v41)+32)) = int32(1)
-									v52 = int32(0)
-									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v52))
+									v50 = int32(0)
+									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v50))
 									m.G0 = v6 + int32(16)
 									return
 								}
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v41)+32)) = int32(1)
-								v52 = int32(0)
-								atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v52))
+								v50 = int32(0)
+								atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v50))
 								m.G0 = v6 + int32(16)
 								return
 							}
@@ -245,22 +245,22 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 						v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 						v44 = base.AtomicRmwXchg32(m, v41, int32(0), int32(1))
 						if v44 != 0 {
-							F_s_lock(m, v41, int32(_a_F_pa_switch_to_partial_serialize_1), int32(1508), int32(_a_F_pa_switch_to_partial_serialize_3))
+							F_s_lock(m, v41, int32(_a_F_pa_switch_to_partial_serialize_3))
 							mBase = m.M
-							v49 = m.ExcPending
-							if v49 != 0 {
+							v47 = m.ExcPending
+							if v47 != 0 {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v41)+32)) = int32(1)
-								v52 = int32(0)
-								atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v52))
+								v50 = int32(0)
+								atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v50))
 								m.G0 = v6 + int32(16)
 								return
 							}
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v41)+32)) = int32(1)
-							v52 = int32(0)
-							atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v52))
+							v50 = int32(0)
+							atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v50))
 							m.G0 = v6 + int32(16)
 							return
 						}
@@ -269,22 +269,22 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 					v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 					v44 = base.AtomicRmwXchg32(m, v41, int32(0), int32(1))
 					if v44 != 0 {
-						F_s_lock(m, v41, int32(_a_F_pa_switch_to_partial_serialize_1), int32(1508), int32(_a_F_pa_switch_to_partial_serialize_3))
+						F_s_lock(m, v41, int32(_a_F_pa_switch_to_partial_serialize_3))
 						mBase = m.M
-						v49 = m.ExcPending
-						if v49 != 0 {
+						v47 = m.ExcPending
+						if v47 != 0 {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v41)+32)) = int32(1)
-							v52 = int32(0)
-							atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v52))
+							v50 = int32(0)
+							atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v50))
 							m.G0 = v6 + int32(16)
 							return
 						}
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v41)+32)) = int32(1)
-						v52 = int32(0)
-						atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v52))
+						v50 = int32(0)
+						atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v41))), uint32(v50))
 						m.G0 = v6 + int32(16)
 						return
 					}

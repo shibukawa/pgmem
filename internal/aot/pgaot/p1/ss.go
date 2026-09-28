@@ -46,18 +46,22 @@ func F_ss_get_location(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v52
 	var v54 int32
 	_ = v54
+	var v58 int32
+	_ = v58
 	var v59 int32
 	_ = v59
 	var v60 int32
 	_ = v60
-	var v66 int32
-	_ = v66
-	var v68 int32
-	_ = v68
-	var v72 int32
-	_ = v72
-	var v75 int32
-	_ = v75
+	var v64 int32
+	_ = v64
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
+	var v73 int32
+	_ = v73
+	var v76 int32
+	_ = v76
 	v10 = *(*int32)(unsafe.Add(mBase, _c_F_ss_get_location[0]))
 	v14 = F_LWLockAcquire(m, v10+int32(3072), int32(0))
 	mBase = m.M
@@ -149,12 +153,12 @@ L12:
 	goto L13
 L13:
 	;
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(v26)+20))
-	v68 = *(*int32)(unsafe.Add(mBase, _c_F_ss_get_location[0]))
-	F_LWLockRelease(m, v68+int32(3072))
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v26)+20))
+	v69 = *(*int32)(unsafe.Add(mBase, _c_F_ss_get_location[0]))
+	F_LWLockRelease(m, v69+int32(3072))
 	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
+	v73 = m.ExcPending
+	if v73 != 0 {
 		goto L1
 	} else {
 		goto L20
@@ -186,28 +190,30 @@ L18:
 L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v26))) = int32(0)
+	v58 = int32(_a_F_ss_get_location_0)
 	v59 = *(*int32)(unsafe.Add(mBase, _c_F_ss_get_location[1]))
 	v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)))
 	*(*int32)(unsafe.Add(mBase, uint32(v26)+4)) = v60
 	*(*int32)(unsafe.Add(mBase, uint32(v60))) = v26
-	*(*int32)(unsafe.Add(mBase, uint32(v59))) = v26
+	v64 = *(*int32)(unsafe.Add(mBase, _c_F_ss_get_location[1]))
+	*(*int32)(unsafe.Add(mBase, uint32(v64))) = v26
 	goto L13
 L20:
 	;
-	if base.Ui32(v66) < base.Ui32(l1) {
+	if base.Ui32(v67) < base.Ui32(l1) {
 		goto L21
 	} else {
 		goto L22
 	}
 L21:
 	;
-	v75 = v66
+	v76 = v67
 	goto L23
 L22:
 	;
-	v75 = int32(0)
+	v76 = int32(0)
 	goto L23
 L23:
 	;
-	return v75
+	return v76
 }

@@ -14,12 +14,12 @@ func F_gen_pgmem_free(m *base.Module, l0 int32) {
 	_ = v5
 	var v9 int32
 	_ = v9
-	var v12 int32
-	_ = v12
-	var v17 int32
-	_ = v17
-	var v19 int32
-	_ = v19
+	var v13 int32
+	_ = v13
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 	if int32(0) < v5 {
@@ -29,23 +29,23 @@ func F_gen_pgmem_free(m *base.Module, l0 int32) {
 	}
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v4)+96))
 	if v9 != 0 {
-		F_ResourceOwnerForget(m, v9, v4, int32(_a_F_gen_pgmem_free_0))
+		F_ResourceOwnerForget(m, v9, base.I64_extend_i32_u(v4), int32(_a_F_gen_pgmem_free_0))
 		mBase = m.M
-		v12 = m.ExcPending
-		if v12 != 0 {
+		v13 = m.ExcPending
+		if v13 != 0 {
 			return
 		} else {
 			base.MemoryFill(m, v4, int32(0), int32(100))
 			F_pfree(m, v4)
 			mBase = m.M
-			v17 = m.ExcPending
-			if v17 != 0 {
+			v18 = m.ExcPending
+			if v18 != 0 {
 				return
 			} else {
 				F_pfree(m, l0)
 				mBase = m.M
-				v19 = m.ExcPending
-				if v19 != 0 {
+				v20 = m.ExcPending
+				if v20 != 0 {
 					return
 				} else {
 					return
@@ -56,14 +56,14 @@ func F_gen_pgmem_free(m *base.Module, l0 int32) {
 		base.MemoryFill(m, v4, int32(0), int32(100))
 		F_pfree(m, v4)
 		mBase = m.M
-		v17 = m.ExcPending
-		if v17 != 0 {
+		v18 = m.ExcPending
+		if v18 != 0 {
 			return
 		} else {
 			F_pfree(m, l0)
 			mBase = m.M
-			v19 = m.ExcPending
-			if v19 != 0 {
+			v20 = m.ExcPending
+			if v20 != 0 {
 				return
 			} else {
 				return

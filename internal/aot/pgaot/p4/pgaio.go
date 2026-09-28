@@ -793,7 +793,7 @@ func F_pgaio_io_register_callbacks(m *base.Module, l0 int32, l1 int32, l2 int32)
 			} else {
 				v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
 				if base.Ui32(int32(4)) <= base.Ui32(v27) {
-					F_errstart_cold(m, int32(23), int32(0))
+					F_errstart_cold(m, int32(24), int32(0))
 					mBase = m.M
 					v134 = m.ExcPending
 					if v134 != 0 {
@@ -903,7 +903,7 @@ func F_pgaio_io_register_callbacks(m *base.Module, l0 int32, l1 int32, l2 int32)
 		} else {
 			v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
 			if base.Ui32(int32(4)) <= base.Ui32(v27) {
-				F_errstart_cold(m, int32(23), int32(0))
+				F_errstart_cold(m, int32(24), int32(0))
 				mBase = m.M
 				v134 = m.ExcPending
 				if v134 != 0 {
@@ -1064,7 +1064,7 @@ func F_pgaio_worker_error_callback(m *base.Module, l0 int32) {
 		v8 = *(*int32)(unsafe.Add(mBase, _c_F_pgaio_worker_error_callback[0]))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-		v14 = *(*int32)(unsafe.Add(mBase, uint32(v9+v10*int32(640))+44))
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(v9+v10*int32(768))+12))
 		F_set_errcontext_domain(m, int32(0))
 		mBase = m.M
 		v17 = m.ExcPending

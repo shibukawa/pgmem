@@ -185,10 +185,10 @@ L5:
 		goto L3
 	case 74:
 		goto L13
-	case 77, 91, 92, 134, 135, 136, 144, 146, 155, 156, 157, 158, 164, 172, 177, 178, 179, 180, 181, 187:
+	case 77, 91, 92, 134, 135, 136, 144, 146, 155, 156, 157, 158, 164, 171, 177, 178, 179, 180, 181, 187, 200:
 		v189 = int32(3)
 		goto L2
-	case 78, 79, 83, 84, 85, 88, 89, 93, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 128, 129, 130, 132, 133, 137, 138, 140, 141, 143, 148, 149, 150, 151, 152, 153, 154, 159, 160, 161, 162, 163, 165, 166, 167, 168, 169, 170, 171, 175, 176, 182, 183, 184, 188, 189, 190, 191, 194, 195, 196, 197, 198:
+	case 78, 79, 83, 84, 85, 88, 89, 93, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 128, 129, 130, 132, 133, 137, 138, 140, 141, 143, 148, 149, 150, 151, 152, 153, 154, 159, 160, 161, 162, 163, 165, 166, 167, 168, 169, 170, 173, 175, 176, 182, 183, 184, 188, 189, 190, 191, 195, 196, 197, 198, 199:
 		v191 = int32(1)
 		goto L1
 	case 90:
@@ -199,7 +199,7 @@ L5:
 		goto L11
 	case 186:
 		goto L10
-	case 263:
+	case 267:
 		goto L8
 	}
 L6:
@@ -474,7 +474,7 @@ L44:
 	goto L45
 L45:
 	;
-	v119 = *(*int32)(unsafe.Add(mBase, uint32(v12)+88))
+	v119 = *(*int32)(unsafe.Add(mBase, uint32(v12)+100))
 	v12 = v119
 	goto L5
 L46:
@@ -499,7 +499,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(_a_F_GetCommandLogLevel_2), int32(3724), int32(_a_F_GetCommandLogLevel_3))
+	F_errfinish(m, int32(_a_F_GetCommandLogLevel_2), int32(3759), int32(_a_F_GetCommandLogLevel_3))
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {
@@ -556,7 +556,7 @@ L55:
 	}
 L56:
 	;
-	F_errfinish(m, int32(_a_F_GetCommandLogLevel_2), int32(3755), int32(_a_F_GetCommandLogLevel_3))
+	F_errfinish(m, int32(_a_F_GetCommandLogLevel_2), int32(3790), int32(_a_F_GetCommandLogLevel_3))
 	mBase = m.M
 	v165 = m.ExcPending
 	if v165 != 0 {
@@ -590,7 +590,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(_a_F_GetCommandLogLevel_2), int32(3764), int32(_a_F_GetCommandLogLevel_3))
+	F_errfinish(m, int32(_a_F_GetCommandLogLevel_2), int32(3799), int32(_a_F_GetCommandLogLevel_3))
 	mBase = m.M
 	v182 = m.ExcPending
 	if v182 != 0 {

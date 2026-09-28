@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F__int_contains(m *base.Module, l0 int32) int32 {
+func F__int_contains(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -80,38 +80,38 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 	_ = v71
 	var v73 int32
 	_ = v73
-	var v81 int32
-	_ = v81
-	var v84 int32
-	_ = v84
-	var v88 int32
-	_ = v88
-	var v93 int32
-	_ = v93
-	var v97 int32
-	_ = v97
-	var v100 int32
-	_ = v100
-	var v104 int32
-	_ = v104
-	var v109 int32
-	_ = v109
+	var v82 int32
+	_ = v82
+	var v85 int32
+	_ = v85
+	var v89 int32
+	_ = v89
+	var v94 int32
+	_ = v94
+	var v98 int32
+	_ = v98
+	var v101 int32
+	_ = v101
+	var v105 int32
+	_ = v105
+	var v110 int32
+	_ = v110
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v11 = F_pg_detoast_datum_copy(m, v10)
 	mBase = m.M
 	v14 = m.ExcPending
 	if v14 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v16 = F_pg_detoast_datum_copy(m, v15)
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
 			if v18 != 0 {
@@ -119,32 +119,32 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					if v19 != 0 {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v81 = m.ExcPending
-						if v81 != 0 {
-							return int32(0)
+						v82 = m.ExcPending
+						if v82 != 0 {
+							return int64(0)
 						} else {
 							F_errcode(m, int32(67108994))
 							mBase = m.M
-							v84 = m.ExcPending
-							if v84 != 0 {
-								return int32(0)
+							v85 = m.ExcPending
+							if v85 != 0 {
+								return int64(0)
 							} else {
 								F_errmsg(m, int32(_a_F__int_contains_0), int32(0))
 								mBase = m.M
-								v88 = m.ExcPending
-								if v88 != 0 {
-									return int32(0)
+								v89 = m.ExcPending
+								if v89 != 0 {
+									return int64(0)
 								} else {
 									F_errfinish(m, int32(_a_F__int_contains_1), int32(38), int32(_a_F__int_contains_2))
 									mBase = m.M
-									v93 = m.ExcPending
-									if v93 != 0 {
-										return int32(0)
+									v94 = m.ExcPending
+									if v94 != 0 {
+										return int64(0)
 									} else {
 										base.Wasm_trap_unreachable()
 										for {
@@ -160,32 +160,32 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v23 = m.ExcPending
 							if v23 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								if v22 != 0 {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v97 = m.ExcPending
-									if v97 != 0 {
-										return int32(0)
+									v98 = m.ExcPending
+									if v98 != 0 {
+										return int64(0)
 									} else {
 										F_errcode(m, int32(67108994))
 										mBase = m.M
-										v100 = m.ExcPending
-										if v100 != 0 {
-											return int32(0)
+										v101 = m.ExcPending
+										if v101 != 0 {
+											return int64(0)
 										} else {
 											F_errmsg(m, int32(_a_F__int_contains_0), int32(0))
 											mBase = m.M
-											v104 = m.ExcPending
-											if v104 != 0 {
-												return int32(0)
+											v105 = m.ExcPending
+											if v105 != 0 {
+												return int64(0)
 											} else {
 												F_errfinish(m, int32(_a_F__int_contains_1), int32(39), int32(_a_F__int_contains_2))
 												mBase = m.M
-												v109 = m.ExcPending
-												if v109 != 0 {
-													return int32(0)
+												v110 = m.ExcPending
+												if v110 != 0 {
+													return int64(0)
 												} else {
 													base.Wasm_trap_unreachable()
 													for {
@@ -200,7 +200,7 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 									mBase = m.M
 									v28 = m.ExcPending
 									if v28 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										v29 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v29)
@@ -217,14 +217,14 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 										mBase = m.M
 										v45 = m.ExcPending
 										if v45 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											v46 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
 											v49 = F_ArrayGetNItemsSafe(m, v46, v16+int32(16))
 											mBase = m.M
 											v50 = m.ExcPending
 											if v50 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												v51 = int32(1)
 												*(*uint8)(unsafe.Add(mBase, uint32(v8)+14)) = uint8(v51)
@@ -241,28 +241,28 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 												mBase = m.M
 												v67 = m.ExcPending
 												if v67 != 0 {
-													return int32(0)
+													return int64(0)
 												} else {
 													v68 = F_inner_int_contains(m, v44, v66)
 													mBase = m.M
 													v69 = m.ExcPending
 													if v69 != 0 {
-														return int32(0)
+														return int64(0)
 													} else {
 														F_pfree(m, v44)
 														mBase = m.M
 														v71 = m.ExcPending
 														if v71 != 0 {
-															return int32(0)
+															return int64(0)
 														} else {
 															F_pfree(m, v66)
 															mBase = m.M
 															v73 = m.ExcPending
 															if v73 != 0 {
-																return int32(0)
+																return int64(0)
 															} else {
 																m.G0 = v8 + int32(16)
-																return v68
+																return base.I64_extend_i32_u(v68)
 															}
 														}
 													}
@@ -278,7 +278,7 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v28 = m.ExcPending
 							if v28 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v29 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v29)
@@ -295,14 +295,14 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									v46 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
 									v49 = F_ArrayGetNItemsSafe(m, v46, v16+int32(16))
 									mBase = m.M
 									v50 = m.ExcPending
 									if v50 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										v51 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(v8)+14)) = uint8(v51)
@@ -319,28 +319,28 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 										mBase = m.M
 										v67 = m.ExcPending
 										if v67 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											v68 = F_inner_int_contains(m, v44, v66)
 											mBase = m.M
 											v69 = m.ExcPending
 											if v69 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												F_pfree(m, v44)
 												mBase = m.M
 												v71 = m.ExcPending
 												if v71 != 0 {
-													return int32(0)
+													return int64(0)
 												} else {
 													F_pfree(m, v66)
 													mBase = m.M
 													v73 = m.ExcPending
 													if v73 != 0 {
-														return int32(0)
+														return int64(0)
 													} else {
 														m.G0 = v8 + int32(16)
-														return v68
+														return base.I64_extend_i32_u(v68)
 													}
 												}
 											}
@@ -358,32 +358,32 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						if v22 != 0 {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v97 = m.ExcPending
-							if v97 != 0 {
-								return int32(0)
+							v98 = m.ExcPending
+							if v98 != 0 {
+								return int64(0)
 							} else {
 								F_errcode(m, int32(67108994))
 								mBase = m.M
-								v100 = m.ExcPending
-								if v100 != 0 {
-									return int32(0)
+								v101 = m.ExcPending
+								if v101 != 0 {
+									return int64(0)
 								} else {
 									F_errmsg(m, int32(_a_F__int_contains_0), int32(0))
 									mBase = m.M
-									v104 = m.ExcPending
-									if v104 != 0 {
-										return int32(0)
+									v105 = m.ExcPending
+									if v105 != 0 {
+										return int64(0)
 									} else {
 										F_errfinish(m, int32(_a_F__int_contains_1), int32(39), int32(_a_F__int_contains_2))
 										mBase = m.M
-										v109 = m.ExcPending
-										if v109 != 0 {
-											return int32(0)
+										v110 = m.ExcPending
+										if v110 != 0 {
+											return int64(0)
 										} else {
 											base.Wasm_trap_unreachable()
 											for {
@@ -398,7 +398,7 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v28 = m.ExcPending
 							if v28 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v29 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v29)
@@ -415,14 +415,14 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									v46 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
 									v49 = F_ArrayGetNItemsSafe(m, v46, v16+int32(16))
 									mBase = m.M
 									v50 = m.ExcPending
 									if v50 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										v51 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(v8)+14)) = uint8(v51)
@@ -439,28 +439,28 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 										mBase = m.M
 										v67 = m.ExcPending
 										if v67 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											v68 = F_inner_int_contains(m, v44, v66)
 											mBase = m.M
 											v69 = m.ExcPending
 											if v69 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												F_pfree(m, v44)
 												mBase = m.M
 												v71 = m.ExcPending
 												if v71 != 0 {
-													return int32(0)
+													return int64(0)
 												} else {
 													F_pfree(m, v66)
 													mBase = m.M
 													v73 = m.ExcPending
 													if v73 != 0 {
-														return int32(0)
+														return int64(0)
 													} else {
 														m.G0 = v8 + int32(16)
-														return v68
+														return base.I64_extend_i32_u(v68)
 													}
 												}
 											}
@@ -476,7 +476,7 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v29 = int32(1)
 						*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v29)
@@ -493,14 +493,14 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v46 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
 							v49 = F_ArrayGetNItemsSafe(m, v46, v16+int32(16))
 							mBase = m.M
 							v50 = m.ExcPending
 							if v50 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v51 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v8)+14)) = uint8(v51)
@@ -517,28 +517,28 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 								mBase = m.M
 								v67 = m.ExcPending
 								if v67 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									v68 = F_inner_int_contains(m, v44, v66)
 									mBase = m.M
 									v69 = m.ExcPending
 									if v69 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										F_pfree(m, v44)
 										mBase = m.M
 										v71 = m.ExcPending
 										if v71 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											F_pfree(m, v66)
 											mBase = m.M
 											v73 = m.ExcPending
 											if v73 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												m.G0 = v8 + int32(16)
-												return v68
+												return base.I64_extend_i32_u(v68)
 											}
 										}
 									}
@@ -551,29 +551,29 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F__int_different(m *base.Module, l0 int32) int32 {
+func F__int_different(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0)+24)))
+	v5 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0)+40)))
 	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F__int_different_0), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return base.B2i32(v6 == int32(0))
+		return base.I64_extend_i32_u(base.B2i32(v6 == int64(0)))
 	}
 }
-func F__int_union(m *base.Module, l0 int32) int32 {
+func F__int_union(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -640,38 +640,38 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 	_ = v67
 	var v69 int32
 	_ = v69
-	var v77 int32
-	_ = v77
-	var v80 int32
-	_ = v80
-	var v84 int32
-	_ = v84
-	var v89 int32
-	_ = v89
-	var v93 int32
-	_ = v93
-	var v96 int32
-	_ = v96
-	var v100 int32
-	_ = v100
-	var v105 int32
-	_ = v105
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v85 int32
+	_ = v85
+	var v90 int32
+	_ = v90
+	var v94 int32
+	_ = v94
+	var v97 int32
+	_ = v97
+	var v101 int32
+	_ = v101
+	var v106 int32
+	_ = v106
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v11 = F_pg_detoast_datum_copy(m, v10)
 	mBase = m.M
 	v14 = m.ExcPending
 	if v14 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v16 = F_pg_detoast_datum_copy(m, v15)
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
 			if v18 != 0 {
@@ -679,32 +679,32 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					if v19 != 0 {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v77 = m.ExcPending
-						if v77 != 0 {
-							return int32(0)
+						v78 = m.ExcPending
+						if v78 != 0 {
+							return int64(0)
 						} else {
 							F_errcode(m, int32(67108994))
 							mBase = m.M
-							v80 = m.ExcPending
-							if v80 != 0 {
-								return int32(0)
+							v81 = m.ExcPending
+							if v81 != 0 {
+								return int64(0)
 							} else {
 								F_errmsg(m, int32(_a_F__int_union_0), int32(0))
 								mBase = m.M
-								v84 = m.ExcPending
-								if v84 != 0 {
-									return int32(0)
+								v85 = m.ExcPending
+								if v85 != 0 {
+									return int64(0)
 								} else {
-									F_errfinish(m, int32(_a_F__int_union_1), int32(131), int32(_a_F__int_union_2))
+									F_errfinish(m, int32(_a_F__int_union_1), int32(132), int32(_a_F__int_union_2))
 									mBase = m.M
-									v89 = m.ExcPending
-									if v89 != 0 {
-										return int32(0)
+									v90 = m.ExcPending
+									if v90 != 0 {
+										return int64(0)
 									} else {
 										base.Wasm_trap_unreachable()
 										for {
@@ -720,32 +720,32 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v23 = m.ExcPending
 							if v23 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								if v22 != 0 {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v93 = m.ExcPending
-									if v93 != 0 {
-										return int32(0)
+									v94 = m.ExcPending
+									if v94 != 0 {
+										return int64(0)
 									} else {
 										F_errcode(m, int32(67108994))
 										mBase = m.M
-										v96 = m.ExcPending
-										if v96 != 0 {
-											return int32(0)
+										v97 = m.ExcPending
+										if v97 != 0 {
+											return int64(0)
 										} else {
 											F_errmsg(m, int32(_a_F__int_union_0), int32(0))
 											mBase = m.M
-											v100 = m.ExcPending
-											if v100 != 0 {
-												return int32(0)
+											v101 = m.ExcPending
+											if v101 != 0 {
+												return int64(0)
 											} else {
-												F_errfinish(m, int32(_a_F__int_union_1), int32(132), int32(_a_F__int_union_2))
+												F_errfinish(m, int32(_a_F__int_union_1), int32(133), int32(_a_F__int_union_2))
 												mBase = m.M
-												v105 = m.ExcPending
-												if v105 != 0 {
-													return int32(0)
+												v106 = m.ExcPending
+												if v106 != 0 {
+													return int64(0)
 												} else {
 													base.Wasm_trap_unreachable()
 													for {
@@ -760,7 +760,7 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 									mBase = m.M
 									v28 = m.ExcPending
 									if v28 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										v29 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v29)
@@ -778,7 +778,7 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 										mBase = m.M
 										v48 = m.ExcPending
 										if v48 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											v49 = int32(1)
 											*(*uint8)(unsafe.Add(mBase, uint32(v8)+14)) = uint8(v49)
@@ -795,22 +795,22 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 											mBase = m.M
 											v65 = m.ExcPending
 											if v65 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												F_pfree(m, v11)
 												mBase = m.M
 												v67 = m.ExcPending
 												if v67 != 0 {
-													return int32(0)
+													return int64(0)
 												} else {
 													F_pfree(m, v16)
 													mBase = m.M
 													v69 = m.ExcPending
 													if v69 != 0 {
-														return int32(0)
+														return int64(0)
 													} else {
 														m.G0 = v8 + int32(16)
-														return v64
+														return base.I64_extend_i32_u(v64)
 													}
 												}
 											}
@@ -824,7 +824,7 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v28 = m.ExcPending
 							if v28 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v29 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v29)
@@ -842,7 +842,7 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 								mBase = m.M
 								v48 = m.ExcPending
 								if v48 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									v49 = int32(1)
 									*(*uint8)(unsafe.Add(mBase, uint32(v8)+14)) = uint8(v49)
@@ -859,22 +859,22 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 									mBase = m.M
 									v65 = m.ExcPending
 									if v65 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										F_pfree(m, v11)
 										mBase = m.M
 										v67 = m.ExcPending
 										if v67 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											F_pfree(m, v16)
 											mBase = m.M
 											v69 = m.ExcPending
 											if v69 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												m.G0 = v8 + int32(16)
-												return v64
+												return base.I64_extend_i32_u(v64)
 											}
 										}
 									}
@@ -890,32 +890,32 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						if v22 != 0 {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v93 = m.ExcPending
-							if v93 != 0 {
-								return int32(0)
+							v94 = m.ExcPending
+							if v94 != 0 {
+								return int64(0)
 							} else {
 								F_errcode(m, int32(67108994))
 								mBase = m.M
-								v96 = m.ExcPending
-								if v96 != 0 {
-									return int32(0)
+								v97 = m.ExcPending
+								if v97 != 0 {
+									return int64(0)
 								} else {
 									F_errmsg(m, int32(_a_F__int_union_0), int32(0))
 									mBase = m.M
-									v100 = m.ExcPending
-									if v100 != 0 {
-										return int32(0)
+									v101 = m.ExcPending
+									if v101 != 0 {
+										return int64(0)
 									} else {
-										F_errfinish(m, int32(_a_F__int_union_1), int32(132), int32(_a_F__int_union_2))
+										F_errfinish(m, int32(_a_F__int_union_1), int32(133), int32(_a_F__int_union_2))
 										mBase = m.M
-										v105 = m.ExcPending
-										if v105 != 0 {
-											return int32(0)
+										v106 = m.ExcPending
+										if v106 != 0 {
+											return int64(0)
 										} else {
 											base.Wasm_trap_unreachable()
 											for {
@@ -930,7 +930,7 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v28 = m.ExcPending
 							if v28 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v29 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v29)
@@ -948,7 +948,7 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 								mBase = m.M
 								v48 = m.ExcPending
 								if v48 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									v49 = int32(1)
 									*(*uint8)(unsafe.Add(mBase, uint32(v8)+14)) = uint8(v49)
@@ -965,22 +965,22 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 									mBase = m.M
 									v65 = m.ExcPending
 									if v65 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										F_pfree(m, v11)
 										mBase = m.M
 										v67 = m.ExcPending
 										if v67 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											F_pfree(m, v16)
 											mBase = m.M
 											v69 = m.ExcPending
 											if v69 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												m.G0 = v8 + int32(16)
-												return v64
+												return base.I64_extend_i32_u(v64)
 											}
 										}
 									}
@@ -994,7 +994,7 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v29 = int32(1)
 						*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v29)
@@ -1012,7 +1012,7 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 						mBase = m.M
 						v48 = m.ExcPending
 						if v48 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v49 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(v8)+14)) = uint8(v49)
@@ -1029,22 +1029,22 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								F_pfree(m, v11)
 								mBase = m.M
 								v67 = m.ExcPending
 								if v67 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									F_pfree(m, v16)
 									mBase = m.M
 									v69 = m.ExcPending
 									if v69 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										m.G0 = v8 + int32(16)
-										return v64
+										return base.I64_extend_i32_u(v64)
 									}
 								}
 							}

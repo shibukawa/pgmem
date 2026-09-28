@@ -390,7 +390,7 @@ func F_generate_new_exec_param(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	} else {
 		*(*int64)(unsafe.Add(mBase, uint32(v8))) = int64(4294967304)
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+64))
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+72))
 		if v15 != 0 {
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
 			v18 = v16
@@ -399,7 +399,7 @@ func F_generate_new_exec_param(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v18
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+64))
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+72))
 		v22 = F_lappend_oid(m, v21, l1)
 		mBase = m.M
 		v23 = m.ExcPending
@@ -407,7 +407,7 @@ func F_generate_new_exec_param(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 			return int32(0)
 		} else {
 			v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-			*(*int32)(unsafe.Add(mBase, uint32(v24)+64)) = v22
+			*(*int32)(unsafe.Add(mBase, uint32(v24)+72)) = v22
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(-1)
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l3
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l2

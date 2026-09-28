@@ -871,7 +871,7 @@ func F_PageGetItemIdCareful_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						if v112 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_PageGetItemIdCareful_1_6), int32(791), int32(_a_F_PageGetItemIdCareful_1_7))
+							F_errfinish(m, int32(_a_F_PageGetItemIdCareful_1_6), int32(792), int32(_a_F_PageGetItemIdCareful_1_7))
 							mBase = m.M
 							v117 = m.ExcPending
 							if v117 != 0 {
@@ -922,7 +922,7 @@ func F_PageGetItemIdCareful_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					if v70 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_PageGetItemIdCareful_1_6), int32(775), int32(_a_F_PageGetItemIdCareful_1_7))
+						F_errfinish(m, int32(_a_F_PageGetItemIdCareful_1_6), int32(776), int32(_a_F_PageGetItemIdCareful_1_7))
 						mBase = m.M
 						v75 = m.ExcPending
 						if v75 != 0 {

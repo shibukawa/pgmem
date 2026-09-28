@@ -102,7 +102,7 @@ func F_SpecialTags(m *base.Module, l0 int32) {
 	_ = v223
 	var v225 int32
 	_ = v225
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)+16))
 	switch v3 - int32(6) {
 	case 0:
@@ -119,7 +119,7 @@ L1:
 	return
 L2:
 	;
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+28)) = uint8(v225)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+20)) = uint8(v225)
 	goto L1
 L3:
 	;
@@ -127,21 +127,21 @@ L3:
 	goto L2
 L4:
 	;
-	v171 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v171 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v176 = v171
 	v177 = int32(_a_F_SpecialTags_0)
 	v178 = int32(6)
 	goto L59
 L5:
 	;
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v66 = v61
 	v67 = int32(_a_F_SpecialTags_1)
 	v68 = int32(7)
 	goto L25
 L6:
 	;
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v11 = v6
 	v12 = int32(_a_F_SpecialTags_2)
 	v13 = int32(8)
@@ -333,7 +333,7 @@ L39:
 	goto L29
 L40:
 	;
-	v116 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v116 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v121 = v116
 	v122 = int32(_a_F_SpecialTags_3)
 	v123 = int32(7)

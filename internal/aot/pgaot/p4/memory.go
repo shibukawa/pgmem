@@ -836,7 +836,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(_a_F_MemoryContextStatsPrint_5), int32(1044), int32(_a_F_MemoryContextStatsPrint_6))
+	F_errfinish(m, int32(_a_F_MemoryContextStatsPrint_5), int32(1093), int32(_a_F_MemoryContextStatsPrint_6))
 	mBase = m.M
 	v275 = m.ExcPending
 	if v275 != 0 {

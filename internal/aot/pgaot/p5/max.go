@@ -130,6 +130,8 @@ func F_set_max_safe_fds(m *base.Module) {
 	_ = v208
 	var v213 int32
 	_ = v213
+	var v218 int32
+	_ = v218
 	var v219 int32
 	_ = v219
 	var v224 int32
@@ -243,7 +245,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(_a_F_set_max_safe_fds_2), int32(988), int32(_a_F_set_max_safe_fds_3))
+	F_errfinish(m, int32(_a_F_set_max_safe_fds_2), int32(989), int32(_a_F_set_max_safe_fds_3))
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -394,7 +396,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(_a_F_set_max_safe_fds_2), int32(1011), int32(_a_F_set_max_safe_fds_3))
+	F_errfinish(m, int32(_a_F_set_max_safe_fds_2), int32(1012), int32(_a_F_set_max_safe_fds_3))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -562,7 +564,7 @@ L62:
 	return
 L63:
 	;
-	F_errfinish(m, int32(_a_F_set_max_safe_fds_2), int32(1086), int32(_a_F_set_max_safe_fds_6))
+	F_errfinish(m, int32(_a_F_set_max_safe_fds_2), int32(1087), int32(_a_F_set_max_safe_fds_6))
 	mBase = m.M
 	v194 = m.ExcPending
 	if v194 != 0 {
@@ -599,7 +601,7 @@ L67:
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v173
 	v213 = *(*int32)(unsafe.Add(mBase, _c_F_set_max_safe_fds[2]))
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v213 + int32(10)
-	F_errdetail(m, int32(_a_F_set_max_safe_fds_8), v11)
+	v218 = F_errdetail(m, int32(_a_F_set_max_safe_fds_8), v11)
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {
@@ -609,7 +611,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(_a_F_set_max_safe_fds_2), int32(1083), int32(_a_F_set_max_safe_fds_6))
+	F_errfinish(m, int32(_a_F_set_max_safe_fds_2), int32(1084), int32(_a_F_set_max_safe_fds_6))
 	mBase = m.M
 	v224 = m.ExcPending
 	if v224 != 0 {

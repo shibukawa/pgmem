@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_pg_restore_relation_stats(m *base.Module, l0 int32) int32 {
+func F_pg_restore_relation_stats(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -30,7 +30,7 @@ func F_pg_restore_relation_stats(m *base.Module, l0 int32) int32 {
 	_ = v24
 	v2 = int32(0)
 	v4 = m.G0
-	v6 = v4 - int32(80)
+	v6 = v4 - int32(128)
 	m.G0 = v6
 	*(*uint8)(unsafe.Add(mBase, uint32(v6)+24)) = uint8(v2)
 	v10 = int64(0)
@@ -43,16 +43,16 @@ func F_pg_restore_relation_stats(m *base.Module, l0 int32) int32 {
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v23 = F_relation_statistics_update(m, v17)
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			m.G0 = v6 + int32(80)
-			return v19 & v23
+			m.G0 = v6 + int32(128)
+			return base.I64_extend_i32_u(v19 & v23)
 		}
 	}
 }

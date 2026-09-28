@@ -233,15 +233,15 @@ L17:
 	;
 	return base.B2i32(v12 < v11)
 }
-func F_vector_eq(m *base.Module, l0 int32) int32 {
+func F_vector_eq(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
-	_ = v2
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
-	var v13 int32
-	_ = v13
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
 	var v17 int32
@@ -256,122 +256,120 @@ func F_vector_eq(m *base.Module, l0 int32) int32 {
 	_ = v21
 	var v22 int32
 	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v31 int32
-	_ = v31
-	var v43 int32
+	var v25 int32
+	_ = v25
+	var v30 int32
+	_ = v30
+	var v41 int32
+	_ = v41
+	var v43 float32
 	_ = v43
 	var v45 float32
 	_ = v45
-	var v47 float32
-	_ = v47
 	var v52 int32
 	_ = v52
-	var v74 int32
-	_ = v74
-	v2 = int32(0)
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = F_pg_detoast_datum(m, v12)
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v12 = F_pg_detoast_datum(m, v11)
 	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v15 = m.ExcPending
+	if v15 != 0 {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v18 = F_pg_detoast_datum(m, v17)
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v17 = F_pg_detoast_datum(m, v16)
 	mBase = m.M
-	v19 = m.ExcPending
-	if v19 != 0 {
+	v18 = m.ExcPending
+	if v18 != 0 {
 		goto L1
 	} else {
 		goto L3
 	}
 L3:
 	;
-	v20 = int32(*(*int16)(unsafe.Add(mBase, uint32(v13)+4)))
-	v21 = int32(*(*int16)(unsafe.Add(mBase, uint32(v18)+4)))
-	v22 = base.B2i32(v20 < v21)
-	if v20 < v21 {
+	v19 = int32(*(*int16)(unsafe.Add(mBase, uint32(v12)+4)))
+	v20 = int32(*(*int16)(unsafe.Add(mBase, uint32(v17)+4)))
+	v21 = base.B2i32(v19 < v20)
+	if v19 < v20 {
 		goto L5
 	} else {
 		goto L6
 	}
 L4:
 	;
-	return v74
+	if v19 < v20 {
+		goto L15
+	} else {
+		goto L16
+	}
 L5:
 	;
-	v23 = v20
+	v22 = v19
 	goto L7
 L6:
 	;
-	v23 = v21
+	v22 = v20
 	goto L7
 L7:
 	;
-	if int32(0) < v23 {
-		goto L8
+	if v22 <= int32(0) {
+		goto L4
 	} else {
-		goto L9
+		goto L8
 	}
 L8:
 	;
-	v26 = int32(8)
-	v31 = int32(0)
-	goto L11
+	v25 = int32(8)
+	v30 = int32(0)
+	goto L9
 L9:
 	;
-	goto L10
+	v41 = v30 << (uint(int32(2)) % 32)
+	v43 = *(*float32)(unsafe.Add(mBase, uint32(v12+v25+v41)))
+	v45 = *(*float32)(unsafe.Add(mBase, uint32(v17+v25+v41)))
+	if base.F32_gt(v43, v45)|base.F32_lt(v43, v45) == int32(0) {
+		goto L11
+	} else {
+		goto L12
+	}
 L10:
 	;
-	if v20 < v21 {
-		v74 = v2
-		goto L4
-	} else {
-		goto L15
-	}
+	return int64(0)
 L11:
 	;
-	v43 = v31 << (uint(int32(2)) % 32)
-	v45 = *(*float32)(unsafe.Add(mBase, uint32(v13+v26+v43)))
-	v47 = *(*float32)(unsafe.Add(mBase, uint32(v18+v26+v43)))
-	if base.F32_gt(v45, v47)|base.F32_lt(v45, v47) != 0 {
-		v74 = v2
-		goto L4
-	} else {
-		goto L13
-	}
-L12:
-	;
-	goto L10
-L13:
-	;
-	v52 = v31 + int32(1)
-	if v52 != v23 {
-		v31 = v52
-		goto L11
+	v52 = v30 + int32(1)
+	if v22 != v52 {
+		v30 = v52
+		goto L9
 	} else {
 		goto L14
 	}
+L12:
+	;
+	goto L13
+L13:
+	;
+	goto L10
 L14:
 	;
-	goto L12
+	goto L4
 L15:
 	;
-	v74 = base.B2i32(v20 <= v21)
-	goto L4
+	return int64(0)
+L16:
+	;
+	goto L17
+L17:
+	;
+	return base.I64_extend_i32_u(base.B2i32(v19 <= v20))
 }
-func F_vector_lt(m *base.Module, l0 int32) int32 {
+func F_vector_lt(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v9 int32
@@ -406,9 +404,7 @@ func F_vector_lt(m *base.Module, l0 int32) int32 {
 	_ = v41
 	var v49 int32
 	_ = v49
-	var v54 int32
-	_ = v54
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v10 = F_pg_detoast_datum(m, v9)
 	mBase = m.M
 	v13 = m.ExcPending
@@ -419,10 +415,10 @@ func F_vector_lt(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v15 = F_pg_detoast_datum(m, v14)
 	mBase = m.M
 	v16 = m.ExcPending
@@ -443,7 +439,7 @@ L3:
 	}
 L4:
 	;
-	return v54
+	return base.I64_extend_i32_u(v19)
 L5:
 	;
 	v20 = v17
@@ -455,7 +451,6 @@ L6:
 L7:
 	;
 	if v20 <= int32(0) {
-		v54 = v19
 		goto L4
 	} else {
 		goto L8
@@ -477,11 +472,10 @@ L9:
 	}
 L10:
 	;
-	v54 = int32(0)
-	goto L4
+	return int64(0)
 L11:
 	;
-	return int32(1)
+	return int64(1)
 L12:
 	;
 	goto L13
@@ -496,7 +490,6 @@ L14:
 	;
 	v49 = v28 + int32(1)
 	if v49 == v20 {
-		v54 = v19
 		goto L4
 	} else {
 		goto L17
@@ -512,7 +505,7 @@ L17:
 	v28 = v49
 	goto L9
 }
-func F_vector_mul(m *base.Module, l0 int32) int32 {
+func F_vector_mul(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -601,27 +594,27 @@ func F_vector_mul(m *base.Module, l0 int32) int32 {
 	_ = v148
 	var v152 int32
 	_ = v152
-	var v172 int32
-	_ = v172
-	var v175 int32
-	_ = v175
+	var v173 int32
+	_ = v173
 	var v176 int32
 	_ = v176
 	var v177 int32
 	_ = v177
-	var v182 int32
-	_ = v182
-	var v187 int32
-	_ = v187
-	var v189 int32
-	_ = v189
-	var v191 int32
-	_ = v191
+	var v178 int32
+	_ = v178
+	var v183 int32
+	_ = v183
+	var v188 int32
+	_ = v188
+	var v190 int32
+	_ = v190
+	var v192 int32
+	_ = v192
 	v2 = int32(0)
 	v12 = m.G0
 	v14 = v12 - int32(16)
 	m.G0 = v14
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v17 = F_pg_detoast_datum(m, v16)
 	mBase = m.M
 	v20 = m.ExcPending
@@ -632,10 +625,10 @@ func F_vector_mul(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v22 = F_pg_detoast_datum(m, v21)
 	mBase = m.M
 	v23 = m.ExcPending
@@ -657,8 +650,8 @@ L4:
 	;
 	F_float_underflow_error(m)
 	mBase = m.M
-	v191 = m.ExcPending
-	if v191 != 0 {
+	v192 = m.ExcPending
+	if v192 != 0 {
 		goto L1
 	} else {
 		goto L36
@@ -667,8 +660,8 @@ L5:
 	;
 	F_float_overflow_error(m)
 	mBase = m.M
-	v189 = m.ExcPending
-	if v189 != 0 {
+	v190 = m.ExcPending
+	if v190 != 0 {
 		goto L1
 	} else {
 		goto L35
@@ -690,8 +683,8 @@ L8:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v172 = m.ExcPending
-	if v172 != 0 {
+	v173 = m.ExcPending
+	if v173 != 0 {
 		goto L1
 	} else {
 		goto L31
@@ -743,7 +736,7 @@ L13:
 L14:
 	;
 	m.G0 = v14 + int32(16)
-	return v34
+	return base.I64_extend_i32_u(v34)
 L15:
 	;
 	v124 = int32(0)
@@ -852,22 +845,22 @@ L31:
 	;
 	F_errcode(m, int32(130))
 	mBase = m.M
-	v175 = m.ExcPending
-	if v175 != 0 {
+	v176 = m.ExcPending
+	if v176 != 0 {
 		goto L1
 	} else {
 		goto L32
 	}
 L32:
 	;
-	v176 = int32(*(*int16)(unsafe.Add(mBase, uint32(v17)+4)))
-	v177 = int32(*(*int16)(unsafe.Add(mBase, uint32(v22)+4)))
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v177
-	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v176
+	v177 = int32(*(*int16)(unsafe.Add(mBase, uint32(v17)+4)))
+	v178 = int32(*(*int16)(unsafe.Add(mBase, uint32(v22)+4)))
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v178
+	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v177
 	F_errmsg(m, int32(_a_F_vector_mul_1), v14)
 	mBase = m.M
-	v182 = m.ExcPending
-	if v182 != 0 {
+	v183 = m.ExcPending
+	if v183 != 0 {
 		goto L1
 	} else {
 		goto L33
@@ -876,8 +869,8 @@ L33:
 	;
 	F_errfinish(m, int32(_a_F_vector_mul_2), int32(76), int32(_a_F_vector_mul_3))
 	mBase = m.M
-	v187 = m.ExcPending
-	if v187 != 0 {
+	v188 = m.ExcPending
+	if v188 != 0 {
 		goto L1
 	} else {
 		goto L34
@@ -898,7 +891,7 @@ L36:
 	for {
 	}
 }
-func F_vector_negative_inner_product(m *base.Module, l0 int32) int32 {
+func F_vector_negative_inner_product(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -997,40 +990,36 @@ func F_vector_negative_inner_product(m *base.Module, l0 int32) int32 {
 	_ = v130
 	var v143 float32
 	_ = v143
-	var v146 int32
-	_ = v146
-	var v147 int32
-	_ = v147
-	var v155 int32
-	_ = v155
+	var v154 int32
+	_ = v154
+	var v157 int32
+	_ = v157
 	var v158 int32
 	_ = v158
 	var v159 int32
 	_ = v159
-	var v160 int32
-	_ = v160
-	var v165 int32
-	_ = v165
-	var v170 int32
-	_ = v170
+	var v164 int32
+	_ = v164
+	var v169 int32
+	_ = v169
 	v2 = int32(0)
 	v12 = float32(0)
 	v13 = m.G0
 	v15 = v13 - int32(16)
 	m.G0 = v15
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v18 = F_pg_detoast_datum(m, v17)
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v23 = F_pg_detoast_datum(m, v22)
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v25 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v18)+4)))
 			v26 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v23)+4)))
@@ -1127,43 +1116,36 @@ func F_vector_negative_inner_product(m *base.Module, l0 int32) int32 {
 						v143 = v126
 					}
 				}
-				v146 = F_Float8GetDatum(m, base.F64_promote_f32(base.F32_neg(v143)))
-				mBase = m.M
-				v147 = m.ExcPending
-				if v147 != 0 {
-					return int32(0)
-				} else {
-					m.G0 = v15 + int32(16)
-					return v146
-				}
+				m.G0 = v15 + int32(16)
+				return base.I64_reinterpret_f64(base.F64_promote_f32(base.F32_neg(v143)))
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v155 = m.ExcPending
-				if v155 != 0 {
-					return int32(0)
+				v154 = m.ExcPending
+				if v154 != 0 {
+					return int64(0)
 				} else {
 					F_errcode(m, int32(130))
 					mBase = m.M
-					v158 = m.ExcPending
-					if v158 != 0 {
-						return int32(0)
+					v157 = m.ExcPending
+					if v157 != 0 {
+						return int64(0)
 					} else {
-						v159 = int32(*(*int16)(unsafe.Add(mBase, uint32(v18)+4)))
-						v160 = int32(*(*int16)(unsafe.Add(mBase, uint32(v23)+4)))
-						*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v160
-						*(*int32)(unsafe.Add(mBase, uint32(v15))) = v159
+						v158 = int32(*(*int16)(unsafe.Add(mBase, uint32(v18)+4)))
+						v159 = int32(*(*int16)(unsafe.Add(mBase, uint32(v23)+4)))
+						*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v159
+						*(*int32)(unsafe.Add(mBase, uint32(v15))) = v158
 						F_errmsg(m, int32(_a_F_vector_negative_inner_product_1), v15)
 						mBase = m.M
-						v165 = m.ExcPending
-						if v165 != 0 {
-							return int32(0)
+						v164 = m.ExcPending
+						if v164 != 0 {
+							return int64(0)
 						} else {
 							F_errfinish(m, int32(_a_F_vector_negative_inner_product_2), int32(76), int32(_a_F_vector_negative_inner_product_3))
 							mBase = m.M
-							v170 = m.ExcPending
-							if v170 != 0 {
-								return int32(0)
+							v169 = m.ExcPending
+							if v169 != 0 {
+								return int64(0)
 							} else {
 								base.Wasm_trap_unreachable()
 								for {

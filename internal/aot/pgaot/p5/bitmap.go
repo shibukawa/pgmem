@@ -5,6 +5,39 @@ import (
 	"unsafe"
 )
 
+func F_ExecBitmapIndexScanInitializeWorker(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int64
+	_ = v6
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	if v3 != 0 {
+		v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+		v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+		v6 = int64(*(*int32)(unsafe.Add(mBase, uint32(v5)+40)))
+		v10 = F_shm_toc_lookup(m, v4, v6-int64(3458764513820540928), int32(0))
+		mBase = m.M
+		v11 = m.ExcPending
+		if v11 != 0 {
+			return
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+164)) = v10
+			return
+		}
+	} else {
+		return
+	}
+}
 func F_ExecBitmapIndexScanRetrieveInstrumentation(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
@@ -18,7 +51,7 @@ func F_ExecBitmapIndexScanRetrieveInstrumentation(m *base.Module, l0 int32) {
 	_ = v12
 	var v13 int32
 	_ = v13
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+168))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+164))
 	if v4 == int32(0) {
 		return
 	} else {
@@ -30,7 +63,7 @@ func F_ExecBitmapIndexScanRetrieveInstrumentation(m *base.Module, l0 int32) {
 		if v13 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+168)) = v12
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+164)) = v12
 			if v11 == int32(0) {
 			} else {
 				base.MemoryCopy(m, v12, v4, v11)
@@ -56,7 +89,7 @@ func F_ExecBitmapOr(m *base.Module, l0 int32) int32 {
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(_a_F_ExecBitmapOr_1), int32(45), int32(_a_F_ExecBitmapOr_2))
+			F_errfinish(m, int32(_a_F_ExecBitmapOr_1), int32(48), int32(_a_F_ExecBitmapOr_2))
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)

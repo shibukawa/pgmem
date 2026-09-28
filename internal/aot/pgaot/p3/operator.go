@@ -318,30 +318,28 @@ func F_operator_predicate_proof(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = mBase
 	var v5 int32
 	_ = v5
-	var v14 int32
-	_ = v14
-	var v16 int32
-	_ = v16
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
 	var v24 int32
 	_ = v24
-	var v29 int32
-	_ = v29
-	var v32 int32
-	_ = v32
-	var v35 int32
-	_ = v35
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
+	var v25 int32
+	_ = v25
+	var v30 int32
+	_ = v30
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
 	var v42 int32
 	_ = v42
-	var v44 int32
-	_ = v44
+	var v43 int32
+	_ = v43
 	var v45 int32
 	_ = v45
 	var v46 int32
@@ -358,8 +356,8 @@ func F_operator_predicate_proof(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v51
 	var v52 int32
 	_ = v52
-	var v55 int32
-	_ = v55
+	var v53 int32
+	_ = v53
 	var v56 int32
 	_ = v56
 	var v57 int32
@@ -368,22 +366,22 @@ func F_operator_predicate_proof(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v58
 	var v59 int32
 	_ = v59
-	var v64 int32
-	_ = v64
-	var v68 int32
-	_ = v68
-	var v71 int32
-	_ = v71
-	var v76 int32
-	_ = v76
-	var v79 int32
-	_ = v79
-	var v82 int32
-	_ = v82
+	var v60 int32
+	_ = v60
+	var v65 int32
+	_ = v65
+	var v69 int32
+	_ = v69
+	var v72 int32
+	_ = v72
+	var v77 int32
+	_ = v77
+	var v80 int32
+	_ = v80
 	var v83 int32
 	_ = v83
-	var v86 int32
-	_ = v86
+	var v84 int32
+	_ = v84
 	var v87 int32
 	_ = v87
 	var v88 int32
@@ -398,448 +396,450 @@ func F_operator_predicate_proof(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v92
 	var v93 int32
 	_ = v93
-	var v96 int32
-	_ = v96
+	var v94 int32
+	_ = v94
 	var v97 int32
 	_ = v97
 	var v98 int32
 	_ = v98
-	var v103 int32
-	_ = v103
-	var v106 int32
-	_ = v106
-	var v109 int32
-	_ = v109
+	var v99 int32
+	_ = v99
+	var v104 int32
+	_ = v104
+	var v107 int32
+	_ = v107
 	var v110 int32
 	_ = v110
-	var v118 int32
-	_ = v118
-	var v122 int32
-	_ = v122
-	var v125 int32
-	_ = v125
+	var v111 int32
+	_ = v111
+	var v119 int32
+	_ = v119
+	var v123 int32
+	_ = v123
 	var v126 int32
 	_ = v126
-	var v129 int32
-	_ = v129
+	var v127 int32
+	_ = v127
 	var v130 int32
 	_ = v130
 	var v131 int32
 	_ = v131
 	var v132 int32
 	_ = v132
-	var v134 int32
-	_ = v134
-	var v137 int32
-	_ = v137
+	var v133 int32
+	_ = v133
+	var v135 int32
+	_ = v135
 	var v138 int32
 	_ = v138
-	var v141 int32
-	_ = v141
-	var v145 int32
-	_ = v145
-	var v148 int32
-	_ = v148
+	var v139 int32
+	_ = v139
+	var v142 int32
+	_ = v142
+	var v146 int32
+	_ = v146
 	var v149 int32
 	_ = v149
-	var v151 int32
-	_ = v151
-	var v155 int32
-	_ = v155
+	var v150 int32
+	_ = v150
+	var v152 int32
+	_ = v152
 	var v156 int32
 	_ = v156
-	var v159 int32
-	_ = v159
+	var v157 int32
+	_ = v157
 	var v160 int32
 	_ = v160
-	var v163 int32
-	_ = v163
-	var v165 int32
-	_ = v165
-	var v168 int32
-	_ = v168
+	var v161 int32
+	_ = v161
+	var v164 int32
+	_ = v164
+	var v166 int32
+	_ = v166
 	var v169 int32
 	_ = v169
 	var v170 int32
 	_ = v170
 	var v171 int32
 	_ = v171
-	var v173 int32
-	_ = v173
-	var v175 int32
-	_ = v175
+	var v172 int32
+	_ = v172
+	var v174 int32
+	_ = v174
 	var v176 int32
 	_ = v176
-	var v178 int32
-	_ = v178
-	var v180 int32
-	_ = v180
+	var v177 int32
+	_ = v177
+	var v179 int32
+	_ = v179
 	var v181 int32
 	_ = v181
 	var v182 int32
 	_ = v182
-	var v185 int32
-	_ = v185
+	var v183 int32
+	_ = v183
 	var v186 int32
 	_ = v186
 	var v187 int32
 	_ = v187
-	var v189 int32
-	_ = v189
-	var v193 int32
-	_ = v193
+	var v188 int32
+	_ = v188
+	var v190 int32
+	_ = v190
 	var v194 int32
 	_ = v194
-	var v195 int32
+	var v195 int64
 	_ = v195
-	var v199 int32
-	_ = v199
+	var v196 int32
+	_ = v196
 	var v200 int32
 	_ = v200
-	var v205 int32
-	_ = v205
+	var v201 int32
+	_ = v201
 	var v206 int32
 	_ = v206
-	var v212 int32
-	_ = v212
-	var v217 int32
-	_ = v217
-	var v228 int32
-	_ = v228
+	var v207 int32
+	_ = v207
+	var v213 int32
+	_ = v213
+	var v218 int32
+	_ = v218
+	var v229 int32
+	_ = v229
 	v5 = int32(0)
-	v14 = m.G0
-	v16 = v14 - int32(16)
-	m.G0 = v16
+	v15 = m.G0
+	v17 = v15 - int32(16)
+	m.G0 = v17
 	if l0 == v5 {
-		v228 = v5
-		m.G0 = v16 + int32(16)
-		return v228
+		v229 = v5
+		m.G0 = v17 + int32(16)
+		return v229
 	} else {
-		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		if v20 != int32(17) {
-			v228 = v5
-			m.G0 = v16 + int32(16)
-			return v228
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		if v21 != int32(17) {
+			v229 = v5
+			m.G0 = v17 + int32(16)
+			return v229
 		} else {
-			v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-			v24 = int32(0)
-			if base.B2i32(v23 == v24)|base.B2i32(l1 == v24) != 0 {
-				v228 = v5
-				m.G0 = v16 + int32(16)
-				return v228
+			v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v25 = int32(0)
+			if base.B2i32(v24 == v25)|base.B2i32(l1 == v25) != 0 {
+				v229 = v5
+				m.G0 = v17 + int32(16)
+				return v229
 			} else {
-				v29 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
-				if v29 != int32(2) {
-					v228 = v5
-					m.G0 = v16 + int32(16)
-					return v228
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(v24)+4))
+				if v30 != int32(2) {
+					v229 = v5
+					m.G0 = v17 + int32(16)
+					return v229
 				} else {
-					v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-					if v32 != int32(17) {
-						v228 = v5
-						m.G0 = v16 + int32(16)
-						return v228
+					v33 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+					if v33 != int32(17) {
+						v229 = v5
+						m.G0 = v17 + int32(16)
+						return v229
 					} else {
-						v35 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
-						if v35 == int32(0) {
-							v228 = v5
-							m.G0 = v16 + int32(16)
-							return v228
+						v36 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
+						if v36 == int32(0) {
+							v229 = v5
+							m.G0 = v17 + int32(16)
+							return v229
 						} else {
-							v38 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
-							if v38 != int32(2) {
-								v228 = v5
-								m.G0 = v16 + int32(16)
-								return v228
+							v39 = *(*int32)(unsafe.Add(mBase, uint32(v36)+4))
+							if v39 != int32(2) {
+								v229 = v5
+								m.G0 = v17 + int32(16)
+								return v229
 							} else {
-								v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-								v42 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-								if v41 != v42 {
-									v228 = v5
-									m.G0 = v16 + int32(16)
-									return v228
+								v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+								v43 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
+								if v42 != v43 {
+									v229 = v5
+									m.G0 = v17 + int32(16)
+									return v229
 								} else {
-									v44 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-									v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-									v46 = *(*int32)(unsafe.Add(mBase, uint32(v35)+12))
-									v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)+4))
-									v48 = *(*int32)(unsafe.Add(mBase, uint32(v23)+12))
-									v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
-									v50 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-									v51 = *(*int32)(unsafe.Add(mBase, uint32(v46)))
-									v52 = F_equal(m, v50, v51)
+									v45 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+									v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+									v47 = *(*int32)(unsafe.Add(mBase, uint32(v36)+12))
+									v48 = *(*int32)(unsafe.Add(mBase, uint32(v47)+4))
+									v49 = *(*int32)(unsafe.Add(mBase, uint32(v24)+12))
+									v50 = *(*int32)(unsafe.Add(mBase, uint32(v49)+4))
+									v51 = *(*int32)(unsafe.Add(mBase, uint32(v49)))
+									v52 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
+									v53 = F_equal(m, v51, v52)
 									mBase = m.M
-									v55 = m.ExcPending
-									if v55 != 0 {
+									v56 = m.ExcPending
+									if v56 != 0 {
 										return int32(0)
 									} else {
-										v56 = F_equal(m, v49, v47)
+										v57 = F_equal(m, v50, v48)
 										mBase = m.M
-										v57 = m.ExcPending
-										if v57 != 0 {
+										v58 = m.ExcPending
+										if v58 != 0 {
 											return int32(0)
 										} else {
-											if v52 != 0 {
-												if v56 != 0 {
-													v58 = F_operator_same_subexprs_proof(m, v45, v44, l2)
+											if v53 != 0 {
+												if v57 != 0 {
+													v59 = F_operator_same_subexprs_proof(m, v46, v45, l2)
 													mBase = m.M
-													v59 = m.ExcPending
-													if v59 != 0 {
+													v60 = m.ExcPending
+													if v60 != 0 {
 														return int32(0)
 													} else {
-														v228 = v58
-														m.G0 = v16 + int32(16)
-														return v228
+														v229 = v59
+														m.G0 = v17 + int32(16)
+														return v229
 													}
 												} else {
-													if v49 == int32(0) {
-														v228 = v5
-														m.G0 = v16 + int32(16)
-														return v228
+													if v50 == int32(0) {
+														v229 = v5
+														m.G0 = v17 + int32(16)
+														return v229
 													} else {
-														v64 = *(*int32)(unsafe.Add(mBase, uint32(v49)))
-														if base.B2i32(v47 == int32(0))|base.B2i32(v64 != int32(7)) != 0 {
-															v228 = v5
-															m.G0 = v16 + int32(16)
-															return v228
+														v65 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
+														if base.B2i32(v48 == int32(0))|base.B2i32(v65 != int32(7)) != 0 {
+															v229 = v5
+															m.G0 = v17 + int32(16)
+															return v229
 														} else {
-															v68 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
-															if v68 == int32(7) {
-																v129 = v49
-																v130 = v47
-																v131 = v45
-																v132 = v44
-																v134 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+24)))
-																if v134 == int32(1) {
-																	v137 = F_op_strict(m, v132)
+															v69 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
+															if v69 == int32(7) {
+																v130 = v50
+																v131 = v48
+																v132 = v46
+																v133 = v45
+																v135 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v131)+32)))
+																if v135 == int32(1) {
+																	v138 = F_op_strict(m, v133)
 																	mBase = m.M
-																	v138 = m.ExcPending
-																	if v138 != 0 {
+																	v139 = m.ExcPending
+																	if v139 != 0 {
 																		return int32(0)
 																	} else {
-																		if v137 == int32(0) {
-																			v228 = v5
-																			m.G0 = v16 + int32(16)
-																			return v228
+																		if v138 == int32(0) {
+																			v229 = v5
+																			m.G0 = v17 + int32(16)
+																			return v229
 																		} else {
-																			v141 = int32(1)
+																			v142 = int32(1)
 																			if l2|base.B2i32(l3 == int32(0)) != 0 {
-																				v228 = v141
-																				m.G0 = v16 + int32(16)
-																				return v228
+																				v229 = v142
+																				m.G0 = v17 + int32(16)
+																				return v229
 																			} else {
-																				v145 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v129)+24)))
-																				if v145 == int32(1) {
-																					v148 = F_op_strict(m, v131)
+																				v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+32)))
+																				if v146 == int32(1) {
+																					v149 = F_op_strict(m, v132)
 																					mBase = m.M
-																					v149 = m.ExcPending
-																					if v149 != 0 {
+																					v150 = m.ExcPending
+																					if v150 != 0 {
 																						return int32(0)
 																					} else {
-																						if v148 != 0 {
-																							v228 = v141
+																						if v149 != 0 {
+																							v229 = v142
 																						} else {
-																							v228 = int32(0)
+																							v229 = int32(0)
 																						}
-																						m.G0 = v16 + int32(16)
-																						return v228
+																						m.G0 = v17 + int32(16)
+																						return v229
 																					}
 																				} else {
-																					v228 = int32(0)
-																					m.G0 = v16 + int32(16)
-																					return v228
+																					v229 = int32(0)
+																					m.G0 = v17 + int32(16)
+																					return v229
 																				}
 																			}
 																		}
 																	}
 																} else {
-																	v151 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v129)+24)))
-																	if v151 == int32(1) {
+																	v152 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+32)))
+																	if v152 == int32(1) {
 																		if l3 != 0 {
-																			v155 = F_op_strict(m, v131)
+																			v156 = F_op_strict(m, v132)
 																			mBase = m.M
-																			v156 = m.ExcPending
-																			if v156 != 0 {
+																			v157 = m.ExcPending
+																			if v157 != 0 {
 																				return int32(0)
 																			} else {
-																				if v155 != 0 {
-																					v228 = int32(1)
+																				if v156 != 0 {
+																					v229 = int32(1)
 																				} else {
-																					v228 = int32(0)
+																					v229 = int32(0)
 																				}
-																				m.G0 = v16 + int32(16)
-																				return v228
+																				m.G0 = v17 + int32(16)
+																				return v229
 																			}
 																		} else {
-																			v228 = int32(0)
-																			m.G0 = v16 + int32(16)
-																			return v228
+																			v229 = int32(0)
+																			m.G0 = v17 + int32(16)
+																			return v229
 																		}
 																	} else {
-																		v159 = F_lookup_proof_cache(m, v131, v132, l2)
+																		v160 = F_lookup_proof_cache(m, v132, v133, l2)
 																		mBase = m.M
-																		v160 = m.ExcPending
-																		if v160 != 0 {
+																		v161 = m.ExcPending
+																		if v161 != 0 {
 																			return int32(0)
 																		} else {
 																			if l2 != 0 {
-																				v163 = int32(16)
+																				v164 = int32(16)
 																			} else {
-																				v163 = int32(12)
+																				v164 = int32(12)
 																			}
-																			v165 = *(*int32)(unsafe.Add(mBase, uint32(v159+v163)))
-																			if v165 == int32(0) {
-																				v228 = v5
-																				m.G0 = v16 + int32(16)
-																				return v228
+																			v166 = *(*int32)(unsafe.Add(mBase, uint32(v160+v164)))
+																			if v166 == int32(0) {
+																				v229 = v5
+																				m.G0 = v17 + int32(16)
+																				return v229
 																			} else {
-																				v168 = F_CreateExecutorState(m)
+																				v169 = F_CreateExecutorState(m)
 																				mBase = m.M
-																				v169 = m.ExcPending
-																				if v169 != 0 {
+																				v170 = m.ExcPending
+																				if v170 != 0 {
 																					return int32(0)
 																				} else {
-																					v170 = int32(_a_F_operator_predicate_proof_0)
-																					v171 = *(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0]))
-																					v173 = *(*int32)(unsafe.Add(mBase, uint32(v168)+100))
-																					*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v173
-																					v175 = F_make_opclause(m, v165, v129, v130, v41)
+																					v171 = int32(_a_F_operator_predicate_proof_0)
+																					v172 = *(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0]))
+																					v174 = *(*int32)(unsafe.Add(mBase, uint32(v169)+100))
+																					*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v174
+																					v176 = F_make_opclause(m, v166, v130, v131, v42)
 																					mBase = m.M
-																					v176 = m.ExcPending
-																					if v176 != 0 {
+																					v177 = m.ExcPending
+																					if v177 != 0 {
 																						return int32(0)
 																					} else {
-																						F_fix_opfuncids(m, v175)
+																						F_fix_opfuncids(m, v176)
 																						mBase = m.M
-																						v178 = m.ExcPending
-																						if v178 != 0 {
+																						v179 = m.ExcPending
+																						if v179 != 0 {
 																							return int32(0)
 																						} else {
-																							v180 = F_ExecInitExpr(m, v175, int32(0))
+																							v181 = F_ExecInitExpr(m, v176, int32(0))
 																							mBase = m.M
-																							v181 = m.ExcPending
-																							if v181 != 0 {
+																							v182 = m.ExcPending
+																							if v182 != 0 {
 																								return int32(0)
 																							} else {
-																								v182 = *(*int32)(unsafe.Add(mBase, uint32(v168)+152))
-																								if v182 == int32(0) {
-																									v185 = F_MakePerTupleExprContext(m, v168)
+																								v183 = *(*int32)(unsafe.Add(mBase, uint32(v169)+152))
+																								if v183 == int32(0) {
+																									v186 = F_MakePerTupleExprContext(m, v169)
 																									mBase = m.M
-																									v186 = m.ExcPending
-																									if v186 != 0 {
+																									v187 = m.ExcPending
+																									if v187 != 0 {
 																										return int32(0)
 																									} else {
-																										v187 = v185
-																										v189 = *(*int32)(unsafe.Add(mBase, uint32(v187)+20))
-																										*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v189
-																										v193 = *(*int32)(unsafe.Add(mBase, uint32(v180)+20))
-																										v194 = m.T0[v193].(func(*base.Module, int32, int32, int32) int32)(m, v180, v187, v16+int32(15))
+																										v188 = v186
+																										v190 = *(*int32)(unsafe.Add(mBase, uint32(v188)+20))
+																										*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v190
+																										v194 = *(*int32)(unsafe.Add(mBase, uint32(v181)+24))
+																										v195 = m.T0[v194].(func(*base.Module, int32, int32, int32) int64)(m, v181, v188, v17+int32(15))
 																										mBase = m.M
-																										v195 = m.ExcPending
-																										if v195 != 0 {
+																										v196 = m.ExcPending
+																										if v196 != 0 {
 																											return int32(0)
 																										} else {
-																											*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v171
-																											F_FreeExecutorState(m, v168)
+																											*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v172
+																											F_FreeExecutorState(m, v169)
 																											mBase = m.M
-																											v199 = m.ExcPending
-																											if v199 != 0 {
+																											v200 = m.ExcPending
+																											if v200 != 0 {
 																												return int32(0)
 																											} else {
-																												v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)))
-																												if v200 == int32(1) {
-																													v205 = F_errstart(m, int32(13), int32(0))
+																												v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+15)))
+																												if v201 == int32(1) {
+																													v206 = F_errstart(m, int32(13), int32(0))
 																													mBase = m.M
-																													v206 = m.ExcPending
-																													if v206 != 0 {
+																													v207 = m.ExcPending
+																													if v207 != 0 {
 																														return int32(0)
 																													} else {
-																														if v205 == int32(0) {
-																															v228 = v5
-																															m.G0 = v16 + int32(16)
-																															return v228
+																														if v206 == int32(0) {
+																															v229 = v5
+																															m.G0 = v17 + int32(16)
+																															return v229
 																														} else {
 																															F_errmsg_internal(m, int32(_a_F_operator_predicate_proof_1), int32(0))
 																															mBase = m.M
-																															v212 = m.ExcPending
-																															if v212 != 0 {
+																															v213 = m.ExcPending
+																															if v213 != 0 {
 																																return int32(0)
 																															} else {
-																																F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2017), int32(_a_F_operator_predicate_proof_3))
+																																F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2019), int32(_a_F_operator_predicate_proof_3))
 																																mBase = m.M
-																																v217 = m.ExcPending
-																																if v217 != 0 {
+																																v218 = m.ExcPending
+																																if v218 != 0 {
 																																	return int32(0)
 																																} else {
-																																	v228 = v5
-																																	m.G0 = v16 + int32(16)
-																																	return v228
+																																	v229 = v5
+																																	m.G0 = v17 + int32(16)
+																																	return v229
 																																}
 																															}
 																														}
 																													}
 																												} else {
-																													v228 = base.B2i32(v194 != int32(0))
-																													m.G0 = v16 + int32(16)
-																													return v228
+																													v229 = base.B2i32(v195 != int64(0))
+																													m.G0 = v17 + int32(16)
+																													return v229
 																												}
 																											}
 																										}
 																									}
 																								} else {
-																									v187 = v182
-																									v189 = *(*int32)(unsafe.Add(mBase, uint32(v187)+20))
-																									*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v189
-																									v193 = *(*int32)(unsafe.Add(mBase, uint32(v180)+20))
-																									v194 = m.T0[v193].(func(*base.Module, int32, int32, int32) int32)(m, v180, v187, v16+int32(15))
+																									v188 = v183
+																									v190 = *(*int32)(unsafe.Add(mBase, uint32(v188)+20))
+																									*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v190
+																									v194 = *(*int32)(unsafe.Add(mBase, uint32(v181)+24))
+																									v195 = m.T0[v194].(func(*base.Module, int32, int32, int32) int64)(m, v181, v188, v17+int32(15))
 																									mBase = m.M
-																									v195 = m.ExcPending
-																									if v195 != 0 {
+																									v196 = m.ExcPending
+																									if v196 != 0 {
 																										return int32(0)
 																									} else {
-																										*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v171
-																										F_FreeExecutorState(m, v168)
+																										*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v172
+																										F_FreeExecutorState(m, v169)
 																										mBase = m.M
-																										v199 = m.ExcPending
-																										if v199 != 0 {
+																										v200 = m.ExcPending
+																										if v200 != 0 {
 																											return int32(0)
 																										} else {
-																											v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)))
-																											if v200 == int32(1) {
-																												v205 = F_errstart(m, int32(13), int32(0))
+																											v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+15)))
+																											if v201 == int32(1) {
+																												v206 = F_errstart(m, int32(13), int32(0))
 																												mBase = m.M
-																												v206 = m.ExcPending
-																												if v206 != 0 {
+																												v207 = m.ExcPending
+																												if v207 != 0 {
 																													return int32(0)
 																												} else {
-																													if v205 == int32(0) {
-																														v228 = v5
-																														m.G0 = v16 + int32(16)
-																														return v228
+																													if v206 == int32(0) {
+																														v229 = v5
+																														m.G0 = v17 + int32(16)
+																														return v229
 																													} else {
 																														F_errmsg_internal(m, int32(_a_F_operator_predicate_proof_1), int32(0))
 																														mBase = m.M
-																														v212 = m.ExcPending
-																														if v212 != 0 {
+																														v213 = m.ExcPending
+																														if v213 != 0 {
 																															return int32(0)
 																														} else {
-																															F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2017), int32(_a_F_operator_predicate_proof_3))
+																															F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2019), int32(_a_F_operator_predicate_proof_3))
 																															mBase = m.M
-																															v217 = m.ExcPending
-																															if v217 != 0 {
+																															v218 = m.ExcPending
+																															if v218 != 0 {
 																																return int32(0)
 																															} else {
-																																v228 = v5
-																																m.G0 = v16 + int32(16)
-																																return v228
+																																v229 = v5
+																																m.G0 = v17 + int32(16)
+																																return v229
 																															}
 																														}
 																													}
 																												}
 																											} else {
-																												v228 = base.B2i32(v194 != int32(0))
-																												m.G0 = v16 + int32(16)
-																												return v228
+																												v229 = base.B2i32(v195 != int64(0))
+																												m.G0 = v17 + int32(16)
+																												return v229
 																											}
 																										}
 																									}
@@ -853,286 +853,286 @@ func F_operator_predicate_proof(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 																	}
 																}
 															} else {
-																v228 = v5
-																m.G0 = v16 + int32(16)
-																return v228
+																v229 = v5
+																m.G0 = v17 + int32(16)
+																return v229
 															}
 														}
 													}
 												}
 											} else {
-												if v56 != 0 {
-													v71 = int32(0)
-													if base.B2i32(v50 == v71)|base.B2i32(v51 == v71) != 0 {
-														v228 = v5
-														m.G0 = v16 + int32(16)
-														return v228
+												if v57 != 0 {
+													v72 = int32(0)
+													if base.B2i32(v51 == v72)|base.B2i32(v52 == v72) != 0 {
+														v229 = v5
+														m.G0 = v17 + int32(16)
+														return v229
 													} else {
-														v76 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
-														if v76 != int32(7) {
-															v228 = v5
-															m.G0 = v16 + int32(16)
-															return v228
+														v77 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
+														if v77 != int32(7) {
+															v229 = v5
+															m.G0 = v17 + int32(16)
+															return v229
 														} else {
-															v79 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
-															if v79 != int32(7) {
-																v228 = v5
-																m.G0 = v16 + int32(16)
-																return v228
+															v80 = *(*int32)(unsafe.Add(mBase, uint32(v52)))
+															if v80 != int32(7) {
+																v229 = v5
+																m.G0 = v17 + int32(16)
+																return v229
 															} else {
-																v82 = F_get_commutator(m, v45)
+																v83 = F_get_commutator(m, v46)
 																mBase = m.M
-																v83 = m.ExcPending
-																if v83 != 0 {
+																v84 = m.ExcPending
+																if v84 != 0 {
 																	return int32(0)
 																} else {
-																	if v82 == int32(0) {
-																		v228 = v5
-																		m.G0 = v16 + int32(16)
-																		return v228
+																	if v83 == int32(0) {
+																		v229 = v5
+																		m.G0 = v17 + int32(16)
+																		return v229
 																	} else {
-																		v86 = F_get_commutator(m, v44)
+																		v87 = F_get_commutator(m, v45)
 																		mBase = m.M
-																		v87 = m.ExcPending
-																		if v87 != 0 {
+																		v88 = m.ExcPending
+																		if v88 != 0 {
 																			return int32(0)
 																		} else {
-																			if v86 != 0 {
-																				v129 = v50
+																			if v87 != 0 {
 																				v130 = v51
-																				v131 = v82
-																				v132 = v86
-																				v134 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+24)))
-																				if v134 == int32(1) {
-																					v137 = F_op_strict(m, v132)
+																				v131 = v52
+																				v132 = v83
+																				v133 = v87
+																				v135 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v131)+32)))
+																				if v135 == int32(1) {
+																					v138 = F_op_strict(m, v133)
 																					mBase = m.M
-																					v138 = m.ExcPending
-																					if v138 != 0 {
+																					v139 = m.ExcPending
+																					if v139 != 0 {
 																						return int32(0)
 																					} else {
-																						if v137 == int32(0) {
-																							v228 = v5
-																							m.G0 = v16 + int32(16)
-																							return v228
+																						if v138 == int32(0) {
+																							v229 = v5
+																							m.G0 = v17 + int32(16)
+																							return v229
 																						} else {
-																							v141 = int32(1)
+																							v142 = int32(1)
 																							if l2|base.B2i32(l3 == int32(0)) != 0 {
-																								v228 = v141
-																								m.G0 = v16 + int32(16)
-																								return v228
+																								v229 = v142
+																								m.G0 = v17 + int32(16)
+																								return v229
 																							} else {
-																								v145 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v129)+24)))
-																								if v145 == int32(1) {
-																									v148 = F_op_strict(m, v131)
+																								v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+32)))
+																								if v146 == int32(1) {
+																									v149 = F_op_strict(m, v132)
 																									mBase = m.M
-																									v149 = m.ExcPending
-																									if v149 != 0 {
+																									v150 = m.ExcPending
+																									if v150 != 0 {
 																										return int32(0)
 																									} else {
-																										if v148 != 0 {
-																											v228 = v141
+																										if v149 != 0 {
+																											v229 = v142
 																										} else {
-																											v228 = int32(0)
+																											v229 = int32(0)
 																										}
-																										m.G0 = v16 + int32(16)
-																										return v228
+																										m.G0 = v17 + int32(16)
+																										return v229
 																									}
 																								} else {
-																									v228 = int32(0)
-																									m.G0 = v16 + int32(16)
-																									return v228
+																									v229 = int32(0)
+																									m.G0 = v17 + int32(16)
+																									return v229
 																								}
 																							}
 																						}
 																					}
 																				} else {
-																					v151 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v129)+24)))
-																					if v151 == int32(1) {
+																					v152 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+32)))
+																					if v152 == int32(1) {
 																						if l3 != 0 {
-																							v155 = F_op_strict(m, v131)
+																							v156 = F_op_strict(m, v132)
 																							mBase = m.M
-																							v156 = m.ExcPending
-																							if v156 != 0 {
+																							v157 = m.ExcPending
+																							if v157 != 0 {
 																								return int32(0)
 																							} else {
-																								if v155 != 0 {
-																									v228 = int32(1)
+																								if v156 != 0 {
+																									v229 = int32(1)
 																								} else {
-																									v228 = int32(0)
+																									v229 = int32(0)
 																								}
-																								m.G0 = v16 + int32(16)
-																								return v228
+																								m.G0 = v17 + int32(16)
+																								return v229
 																							}
 																						} else {
-																							v228 = int32(0)
-																							m.G0 = v16 + int32(16)
-																							return v228
+																							v229 = int32(0)
+																							m.G0 = v17 + int32(16)
+																							return v229
 																						}
 																					} else {
-																						v159 = F_lookup_proof_cache(m, v131, v132, l2)
+																						v160 = F_lookup_proof_cache(m, v132, v133, l2)
 																						mBase = m.M
-																						v160 = m.ExcPending
-																						if v160 != 0 {
+																						v161 = m.ExcPending
+																						if v161 != 0 {
 																							return int32(0)
 																						} else {
 																							if l2 != 0 {
-																								v163 = int32(16)
+																								v164 = int32(16)
 																							} else {
-																								v163 = int32(12)
+																								v164 = int32(12)
 																							}
-																							v165 = *(*int32)(unsafe.Add(mBase, uint32(v159+v163)))
-																							if v165 == int32(0) {
-																								v228 = v5
-																								m.G0 = v16 + int32(16)
-																								return v228
+																							v166 = *(*int32)(unsafe.Add(mBase, uint32(v160+v164)))
+																							if v166 == int32(0) {
+																								v229 = v5
+																								m.G0 = v17 + int32(16)
+																								return v229
 																							} else {
-																								v168 = F_CreateExecutorState(m)
+																								v169 = F_CreateExecutorState(m)
 																								mBase = m.M
-																								v169 = m.ExcPending
-																								if v169 != 0 {
+																								v170 = m.ExcPending
+																								if v170 != 0 {
 																									return int32(0)
 																								} else {
-																									v170 = int32(_a_F_operator_predicate_proof_0)
-																									v171 = *(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0]))
-																									v173 = *(*int32)(unsafe.Add(mBase, uint32(v168)+100))
-																									*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v173
-																									v175 = F_make_opclause(m, v165, v129, v130, v41)
+																									v171 = int32(_a_F_operator_predicate_proof_0)
+																									v172 = *(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0]))
+																									v174 = *(*int32)(unsafe.Add(mBase, uint32(v169)+100))
+																									*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v174
+																									v176 = F_make_opclause(m, v166, v130, v131, v42)
 																									mBase = m.M
-																									v176 = m.ExcPending
-																									if v176 != 0 {
+																									v177 = m.ExcPending
+																									if v177 != 0 {
 																										return int32(0)
 																									} else {
-																										F_fix_opfuncids(m, v175)
+																										F_fix_opfuncids(m, v176)
 																										mBase = m.M
-																										v178 = m.ExcPending
-																										if v178 != 0 {
+																										v179 = m.ExcPending
+																										if v179 != 0 {
 																											return int32(0)
 																										} else {
-																											v180 = F_ExecInitExpr(m, v175, int32(0))
+																											v181 = F_ExecInitExpr(m, v176, int32(0))
 																											mBase = m.M
-																											v181 = m.ExcPending
-																											if v181 != 0 {
+																											v182 = m.ExcPending
+																											if v182 != 0 {
 																												return int32(0)
 																											} else {
-																												v182 = *(*int32)(unsafe.Add(mBase, uint32(v168)+152))
-																												if v182 == int32(0) {
-																													v185 = F_MakePerTupleExprContext(m, v168)
+																												v183 = *(*int32)(unsafe.Add(mBase, uint32(v169)+152))
+																												if v183 == int32(0) {
+																													v186 = F_MakePerTupleExprContext(m, v169)
 																													mBase = m.M
-																													v186 = m.ExcPending
-																													if v186 != 0 {
+																													v187 = m.ExcPending
+																													if v187 != 0 {
 																														return int32(0)
 																													} else {
-																														v187 = v185
-																														v189 = *(*int32)(unsafe.Add(mBase, uint32(v187)+20))
-																														*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v189
-																														v193 = *(*int32)(unsafe.Add(mBase, uint32(v180)+20))
-																														v194 = m.T0[v193].(func(*base.Module, int32, int32, int32) int32)(m, v180, v187, v16+int32(15))
+																														v188 = v186
+																														v190 = *(*int32)(unsafe.Add(mBase, uint32(v188)+20))
+																														*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v190
+																														v194 = *(*int32)(unsafe.Add(mBase, uint32(v181)+24))
+																														v195 = m.T0[v194].(func(*base.Module, int32, int32, int32) int64)(m, v181, v188, v17+int32(15))
 																														mBase = m.M
-																														v195 = m.ExcPending
-																														if v195 != 0 {
+																														v196 = m.ExcPending
+																														if v196 != 0 {
 																															return int32(0)
 																														} else {
-																															*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v171
-																															F_FreeExecutorState(m, v168)
+																															*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v172
+																															F_FreeExecutorState(m, v169)
 																															mBase = m.M
-																															v199 = m.ExcPending
-																															if v199 != 0 {
+																															v200 = m.ExcPending
+																															if v200 != 0 {
 																																return int32(0)
 																															} else {
-																																v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)))
-																																if v200 == int32(1) {
-																																	v205 = F_errstart(m, int32(13), int32(0))
+																																v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+15)))
+																																if v201 == int32(1) {
+																																	v206 = F_errstart(m, int32(13), int32(0))
 																																	mBase = m.M
-																																	v206 = m.ExcPending
-																																	if v206 != 0 {
+																																	v207 = m.ExcPending
+																																	if v207 != 0 {
 																																		return int32(0)
 																																	} else {
-																																		if v205 == int32(0) {
-																																			v228 = v5
-																																			m.G0 = v16 + int32(16)
-																																			return v228
+																																		if v206 == int32(0) {
+																																			v229 = v5
+																																			m.G0 = v17 + int32(16)
+																																			return v229
 																																		} else {
 																																			F_errmsg_internal(m, int32(_a_F_operator_predicate_proof_1), int32(0))
 																																			mBase = m.M
-																																			v212 = m.ExcPending
-																																			if v212 != 0 {
+																																			v213 = m.ExcPending
+																																			if v213 != 0 {
 																																				return int32(0)
 																																			} else {
-																																				F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2017), int32(_a_F_operator_predicate_proof_3))
+																																				F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2019), int32(_a_F_operator_predicate_proof_3))
 																																				mBase = m.M
-																																				v217 = m.ExcPending
-																																				if v217 != 0 {
+																																				v218 = m.ExcPending
+																																				if v218 != 0 {
 																																					return int32(0)
 																																				} else {
-																																					v228 = v5
-																																					m.G0 = v16 + int32(16)
-																																					return v228
+																																					v229 = v5
+																																					m.G0 = v17 + int32(16)
+																																					return v229
 																																				}
 																																			}
 																																		}
 																																	}
 																																} else {
-																																	v228 = base.B2i32(v194 != int32(0))
-																																	m.G0 = v16 + int32(16)
-																																	return v228
+																																	v229 = base.B2i32(v195 != int64(0))
+																																	m.G0 = v17 + int32(16)
+																																	return v229
 																																}
 																															}
 																														}
 																													}
 																												} else {
-																													v187 = v182
-																													v189 = *(*int32)(unsafe.Add(mBase, uint32(v187)+20))
-																													*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v189
-																													v193 = *(*int32)(unsafe.Add(mBase, uint32(v180)+20))
-																													v194 = m.T0[v193].(func(*base.Module, int32, int32, int32) int32)(m, v180, v187, v16+int32(15))
+																													v188 = v183
+																													v190 = *(*int32)(unsafe.Add(mBase, uint32(v188)+20))
+																													*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v190
+																													v194 = *(*int32)(unsafe.Add(mBase, uint32(v181)+24))
+																													v195 = m.T0[v194].(func(*base.Module, int32, int32, int32) int64)(m, v181, v188, v17+int32(15))
 																													mBase = m.M
-																													v195 = m.ExcPending
-																													if v195 != 0 {
+																													v196 = m.ExcPending
+																													if v196 != 0 {
 																														return int32(0)
 																													} else {
-																														*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v171
-																														F_FreeExecutorState(m, v168)
+																														*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v172
+																														F_FreeExecutorState(m, v169)
 																														mBase = m.M
-																														v199 = m.ExcPending
-																														if v199 != 0 {
+																														v200 = m.ExcPending
+																														if v200 != 0 {
 																															return int32(0)
 																														} else {
-																															v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)))
-																															if v200 == int32(1) {
-																																v205 = F_errstart(m, int32(13), int32(0))
+																															v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+15)))
+																															if v201 == int32(1) {
+																																v206 = F_errstart(m, int32(13), int32(0))
 																																mBase = m.M
-																																v206 = m.ExcPending
-																																if v206 != 0 {
+																																v207 = m.ExcPending
+																																if v207 != 0 {
 																																	return int32(0)
 																																} else {
-																																	if v205 == int32(0) {
-																																		v228 = v5
-																																		m.G0 = v16 + int32(16)
-																																		return v228
+																																	if v206 == int32(0) {
+																																		v229 = v5
+																																		m.G0 = v17 + int32(16)
+																																		return v229
 																																	} else {
 																																		F_errmsg_internal(m, int32(_a_F_operator_predicate_proof_1), int32(0))
 																																		mBase = m.M
-																																		v212 = m.ExcPending
-																																		if v212 != 0 {
+																																		v213 = m.ExcPending
+																																		if v213 != 0 {
 																																			return int32(0)
 																																		} else {
-																																			F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2017), int32(_a_F_operator_predicate_proof_3))
+																																			F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2019), int32(_a_F_operator_predicate_proof_3))
 																																			mBase = m.M
-																																			v217 = m.ExcPending
-																																			if v217 != 0 {
+																																			v218 = m.ExcPending
+																																			if v218 != 0 {
 																																				return int32(0)
 																																			} else {
-																																				v228 = v5
-																																				m.G0 = v16 + int32(16)
-																																				return v228
+																																				v229 = v5
+																																				m.G0 = v17 + int32(16)
+																																				return v229
 																																			}
 																																		}
 																																	}
 																																}
 																															} else {
-																																v228 = base.B2i32(v194 != int32(0))
-																																m.G0 = v16 + int32(16)
-																																return v228
+																																v229 = base.B2i32(v195 != int64(0))
+																																m.G0 = v17 + int32(16)
+																																return v229
 																															}
 																														}
 																													}
@@ -1146,9 +1146,9 @@ func F_operator_predicate_proof(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 																					}
 																				}
 																			} else {
-																				v228 = v5
-																				m.G0 = v16 + int32(16)
-																				return v228
+																				v229 = v5
+																				m.G0 = v17 + int32(16)
+																				return v229
 																			}
 																		}
 																	}
@@ -1157,304 +1157,304 @@ func F_operator_predicate_proof(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 														}
 													}
 												} else {
-													v88 = F_equal(m, v50, v47)
+													v89 = F_equal(m, v51, v48)
 													mBase = m.M
-													v89 = m.ExcPending
-													if v89 != 0 {
+													v90 = m.ExcPending
+													if v90 != 0 {
 														return int32(0)
 													} else {
-														v90 = F_equal(m, v49, v51)
+														v91 = F_equal(m, v50, v52)
 														mBase = m.M
-														v91 = m.ExcPending
-														if v91 != 0 {
+														v92 = m.ExcPending
+														if v92 != 0 {
 															return int32(0)
 														} else {
-															if v88 != 0 {
-																if v90 != 0 {
-																	v92 = F_get_commutator(m, v45)
+															if v89 != 0 {
+																if v91 != 0 {
+																	v93 = F_get_commutator(m, v46)
 																	mBase = m.M
-																	v93 = m.ExcPending
-																	if v93 != 0 {
+																	v94 = m.ExcPending
+																	if v94 != 0 {
 																		return int32(0)
 																	} else {
-																		if v92 == int32(0) {
-																			v228 = v5
-																			m.G0 = v16 + int32(16)
-																			return v228
+																		if v93 == int32(0) {
+																			v229 = v5
+																			m.G0 = v17 + int32(16)
+																			return v229
 																		} else {
-																			v96 = F_operator_same_subexprs_proof(m, v92, v44, l2)
+																			v97 = F_operator_same_subexprs_proof(m, v93, v45, l2)
 																			mBase = m.M
-																			v97 = m.ExcPending
-																			if v97 != 0 {
+																			v98 = m.ExcPending
+																			if v98 != 0 {
 																				return int32(0)
 																			} else {
-																				v228 = v96
-																				m.G0 = v16 + int32(16)
-																				return v228
+																				v229 = v97
+																				m.G0 = v17 + int32(16)
+																				return v229
 																			}
 																		}
 																	}
 																} else {
-																	v98 = int32(0)
-																	if base.B2i32(v49 == v98)|base.B2i32(v51 == v98) != 0 {
-																		v228 = v5
-																		m.G0 = v16 + int32(16)
-																		return v228
+																	v99 = int32(0)
+																	if base.B2i32(v50 == v99)|base.B2i32(v52 == v99) != 0 {
+																		v229 = v5
+																		m.G0 = v17 + int32(16)
+																		return v229
 																	} else {
-																		v103 = *(*int32)(unsafe.Add(mBase, uint32(v49)))
-																		if v103 != int32(7) {
-																			v228 = v5
-																			m.G0 = v16 + int32(16)
-																			return v228
+																		v104 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
+																		if v104 != int32(7) {
+																			v229 = v5
+																			m.G0 = v17 + int32(16)
+																			return v229
 																		} else {
-																			v106 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
-																			if v106 != int32(7) {
-																				v228 = v5
-																				m.G0 = v16 + int32(16)
-																				return v228
+																			v107 = *(*int32)(unsafe.Add(mBase, uint32(v52)))
+																			if v107 != int32(7) {
+																				v229 = v5
+																				m.G0 = v17 + int32(16)
+																				return v229
 																			} else {
-																				v109 = F_get_commutator(m, v44)
+																				v110 = F_get_commutator(m, v45)
 																				mBase = m.M
-																				v110 = m.ExcPending
-																				if v110 != 0 {
+																				v111 = m.ExcPending
+																				if v111 != 0 {
 																					return int32(0)
 																				} else {
-																					if v109 != 0 {
-																						v129 = v49
-																						v130 = v51
-																						v131 = v45
-																						v132 = v109
-																						v134 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+24)))
-																						if v134 == int32(1) {
-																							v137 = F_op_strict(m, v132)
+																					if v110 != 0 {
+																						v130 = v50
+																						v131 = v52
+																						v132 = v46
+																						v133 = v110
+																						v135 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v131)+32)))
+																						if v135 == int32(1) {
+																							v138 = F_op_strict(m, v133)
 																							mBase = m.M
-																							v138 = m.ExcPending
-																							if v138 != 0 {
+																							v139 = m.ExcPending
+																							if v139 != 0 {
 																								return int32(0)
 																							} else {
-																								if v137 == int32(0) {
-																									v228 = v5
-																									m.G0 = v16 + int32(16)
-																									return v228
+																								if v138 == int32(0) {
+																									v229 = v5
+																									m.G0 = v17 + int32(16)
+																									return v229
 																								} else {
-																									v141 = int32(1)
+																									v142 = int32(1)
 																									if l2|base.B2i32(l3 == int32(0)) != 0 {
-																										v228 = v141
-																										m.G0 = v16 + int32(16)
-																										return v228
+																										v229 = v142
+																										m.G0 = v17 + int32(16)
+																										return v229
 																									} else {
-																										v145 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v129)+24)))
-																										if v145 == int32(1) {
-																											v148 = F_op_strict(m, v131)
+																										v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+32)))
+																										if v146 == int32(1) {
+																											v149 = F_op_strict(m, v132)
 																											mBase = m.M
-																											v149 = m.ExcPending
-																											if v149 != 0 {
+																											v150 = m.ExcPending
+																											if v150 != 0 {
 																												return int32(0)
 																											} else {
-																												if v148 != 0 {
-																													v228 = v141
+																												if v149 != 0 {
+																													v229 = v142
 																												} else {
-																													v228 = int32(0)
+																													v229 = int32(0)
 																												}
-																												m.G0 = v16 + int32(16)
-																												return v228
+																												m.G0 = v17 + int32(16)
+																												return v229
 																											}
 																										} else {
-																											v228 = int32(0)
-																											m.G0 = v16 + int32(16)
-																											return v228
+																											v229 = int32(0)
+																											m.G0 = v17 + int32(16)
+																											return v229
 																										}
 																									}
 																								}
 																							}
 																						} else {
-																							v151 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v129)+24)))
-																							if v151 == int32(1) {
+																							v152 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+32)))
+																							if v152 == int32(1) {
 																								if l3 != 0 {
-																									v155 = F_op_strict(m, v131)
+																									v156 = F_op_strict(m, v132)
 																									mBase = m.M
-																									v156 = m.ExcPending
-																									if v156 != 0 {
+																									v157 = m.ExcPending
+																									if v157 != 0 {
 																										return int32(0)
 																									} else {
-																										if v155 != 0 {
-																											v228 = int32(1)
+																										if v156 != 0 {
+																											v229 = int32(1)
 																										} else {
-																											v228 = int32(0)
+																											v229 = int32(0)
 																										}
-																										m.G0 = v16 + int32(16)
-																										return v228
+																										m.G0 = v17 + int32(16)
+																										return v229
 																									}
 																								} else {
-																									v228 = int32(0)
-																									m.G0 = v16 + int32(16)
-																									return v228
+																									v229 = int32(0)
+																									m.G0 = v17 + int32(16)
+																									return v229
 																								}
 																							} else {
-																								v159 = F_lookup_proof_cache(m, v131, v132, l2)
+																								v160 = F_lookup_proof_cache(m, v132, v133, l2)
 																								mBase = m.M
-																								v160 = m.ExcPending
-																								if v160 != 0 {
+																								v161 = m.ExcPending
+																								if v161 != 0 {
 																									return int32(0)
 																								} else {
 																									if l2 != 0 {
-																										v163 = int32(16)
+																										v164 = int32(16)
 																									} else {
-																										v163 = int32(12)
+																										v164 = int32(12)
 																									}
-																									v165 = *(*int32)(unsafe.Add(mBase, uint32(v159+v163)))
-																									if v165 == int32(0) {
-																										v228 = v5
-																										m.G0 = v16 + int32(16)
-																										return v228
+																									v166 = *(*int32)(unsafe.Add(mBase, uint32(v160+v164)))
+																									if v166 == int32(0) {
+																										v229 = v5
+																										m.G0 = v17 + int32(16)
+																										return v229
 																									} else {
-																										v168 = F_CreateExecutorState(m)
+																										v169 = F_CreateExecutorState(m)
 																										mBase = m.M
-																										v169 = m.ExcPending
-																										if v169 != 0 {
+																										v170 = m.ExcPending
+																										if v170 != 0 {
 																											return int32(0)
 																										} else {
-																											v170 = int32(_a_F_operator_predicate_proof_0)
-																											v171 = *(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0]))
-																											v173 = *(*int32)(unsafe.Add(mBase, uint32(v168)+100))
-																											*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v173
-																											v175 = F_make_opclause(m, v165, v129, v130, v41)
+																											v171 = int32(_a_F_operator_predicate_proof_0)
+																											v172 = *(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0]))
+																											v174 = *(*int32)(unsafe.Add(mBase, uint32(v169)+100))
+																											*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v174
+																											v176 = F_make_opclause(m, v166, v130, v131, v42)
 																											mBase = m.M
-																											v176 = m.ExcPending
-																											if v176 != 0 {
+																											v177 = m.ExcPending
+																											if v177 != 0 {
 																												return int32(0)
 																											} else {
-																												F_fix_opfuncids(m, v175)
+																												F_fix_opfuncids(m, v176)
 																												mBase = m.M
-																												v178 = m.ExcPending
-																												if v178 != 0 {
+																												v179 = m.ExcPending
+																												if v179 != 0 {
 																													return int32(0)
 																												} else {
-																													v180 = F_ExecInitExpr(m, v175, int32(0))
+																													v181 = F_ExecInitExpr(m, v176, int32(0))
 																													mBase = m.M
-																													v181 = m.ExcPending
-																													if v181 != 0 {
+																													v182 = m.ExcPending
+																													if v182 != 0 {
 																														return int32(0)
 																													} else {
-																														v182 = *(*int32)(unsafe.Add(mBase, uint32(v168)+152))
-																														if v182 == int32(0) {
-																															v185 = F_MakePerTupleExprContext(m, v168)
+																														v183 = *(*int32)(unsafe.Add(mBase, uint32(v169)+152))
+																														if v183 == int32(0) {
+																															v186 = F_MakePerTupleExprContext(m, v169)
 																															mBase = m.M
-																															v186 = m.ExcPending
-																															if v186 != 0 {
+																															v187 = m.ExcPending
+																															if v187 != 0 {
 																																return int32(0)
 																															} else {
-																																v187 = v185
-																																v189 = *(*int32)(unsafe.Add(mBase, uint32(v187)+20))
-																																*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v189
-																																v193 = *(*int32)(unsafe.Add(mBase, uint32(v180)+20))
-																																v194 = m.T0[v193].(func(*base.Module, int32, int32, int32) int32)(m, v180, v187, v16+int32(15))
+																																v188 = v186
+																																v190 = *(*int32)(unsafe.Add(mBase, uint32(v188)+20))
+																																*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v190
+																																v194 = *(*int32)(unsafe.Add(mBase, uint32(v181)+24))
+																																v195 = m.T0[v194].(func(*base.Module, int32, int32, int32) int64)(m, v181, v188, v17+int32(15))
 																																mBase = m.M
-																																v195 = m.ExcPending
-																																if v195 != 0 {
+																																v196 = m.ExcPending
+																																if v196 != 0 {
 																																	return int32(0)
 																																} else {
-																																	*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v171
-																																	F_FreeExecutorState(m, v168)
+																																	*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v172
+																																	F_FreeExecutorState(m, v169)
 																																	mBase = m.M
-																																	v199 = m.ExcPending
-																																	if v199 != 0 {
+																																	v200 = m.ExcPending
+																																	if v200 != 0 {
 																																		return int32(0)
 																																	} else {
-																																		v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)))
-																																		if v200 == int32(1) {
-																																			v205 = F_errstart(m, int32(13), int32(0))
+																																		v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+15)))
+																																		if v201 == int32(1) {
+																																			v206 = F_errstart(m, int32(13), int32(0))
 																																			mBase = m.M
-																																			v206 = m.ExcPending
-																																			if v206 != 0 {
+																																			v207 = m.ExcPending
+																																			if v207 != 0 {
 																																				return int32(0)
 																																			} else {
-																																				if v205 == int32(0) {
-																																					v228 = v5
-																																					m.G0 = v16 + int32(16)
-																																					return v228
+																																				if v206 == int32(0) {
+																																					v229 = v5
+																																					m.G0 = v17 + int32(16)
+																																					return v229
 																																				} else {
 																																					F_errmsg_internal(m, int32(_a_F_operator_predicate_proof_1), int32(0))
 																																					mBase = m.M
-																																					v212 = m.ExcPending
-																																					if v212 != 0 {
+																																					v213 = m.ExcPending
+																																					if v213 != 0 {
 																																						return int32(0)
 																																					} else {
-																																						F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2017), int32(_a_F_operator_predicate_proof_3))
+																																						F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2019), int32(_a_F_operator_predicate_proof_3))
 																																						mBase = m.M
-																																						v217 = m.ExcPending
-																																						if v217 != 0 {
+																																						v218 = m.ExcPending
+																																						if v218 != 0 {
 																																							return int32(0)
 																																						} else {
-																																							v228 = v5
-																																							m.G0 = v16 + int32(16)
-																																							return v228
+																																							v229 = v5
+																																							m.G0 = v17 + int32(16)
+																																							return v229
 																																						}
 																																					}
 																																				}
 																																			}
 																																		} else {
-																																			v228 = base.B2i32(v194 != int32(0))
-																																			m.G0 = v16 + int32(16)
-																																			return v228
+																																			v229 = base.B2i32(v195 != int64(0))
+																																			m.G0 = v17 + int32(16)
+																																			return v229
 																																		}
 																																	}
 																																}
 																															}
 																														} else {
-																															v187 = v182
-																															v189 = *(*int32)(unsafe.Add(mBase, uint32(v187)+20))
-																															*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v189
-																															v193 = *(*int32)(unsafe.Add(mBase, uint32(v180)+20))
-																															v194 = m.T0[v193].(func(*base.Module, int32, int32, int32) int32)(m, v180, v187, v16+int32(15))
+																															v188 = v183
+																															v190 = *(*int32)(unsafe.Add(mBase, uint32(v188)+20))
+																															*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v190
+																															v194 = *(*int32)(unsafe.Add(mBase, uint32(v181)+24))
+																															v195 = m.T0[v194].(func(*base.Module, int32, int32, int32) int64)(m, v181, v188, v17+int32(15))
 																															mBase = m.M
-																															v195 = m.ExcPending
-																															if v195 != 0 {
+																															v196 = m.ExcPending
+																															if v196 != 0 {
 																																return int32(0)
 																															} else {
-																																*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v171
-																																F_FreeExecutorState(m, v168)
+																																*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v172
+																																F_FreeExecutorState(m, v169)
 																																mBase = m.M
-																																v199 = m.ExcPending
-																																if v199 != 0 {
+																																v200 = m.ExcPending
+																																if v200 != 0 {
 																																	return int32(0)
 																																} else {
-																																	v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)))
-																																	if v200 == int32(1) {
-																																		v205 = F_errstart(m, int32(13), int32(0))
+																																	v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+15)))
+																																	if v201 == int32(1) {
+																																		v206 = F_errstart(m, int32(13), int32(0))
 																																		mBase = m.M
-																																		v206 = m.ExcPending
-																																		if v206 != 0 {
+																																		v207 = m.ExcPending
+																																		if v207 != 0 {
 																																			return int32(0)
 																																		} else {
-																																			if v205 == int32(0) {
-																																				v228 = v5
-																																				m.G0 = v16 + int32(16)
-																																				return v228
+																																			if v206 == int32(0) {
+																																				v229 = v5
+																																				m.G0 = v17 + int32(16)
+																																				return v229
 																																			} else {
 																																				F_errmsg_internal(m, int32(_a_F_operator_predicate_proof_1), int32(0))
 																																				mBase = m.M
-																																				v212 = m.ExcPending
-																																				if v212 != 0 {
+																																				v213 = m.ExcPending
+																																				if v213 != 0 {
 																																					return int32(0)
 																																				} else {
-																																					F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2017), int32(_a_F_operator_predicate_proof_3))
+																																					F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2019), int32(_a_F_operator_predicate_proof_3))
 																																					mBase = m.M
-																																					v217 = m.ExcPending
-																																					if v217 != 0 {
+																																					v218 = m.ExcPending
+																																					if v218 != 0 {
 																																						return int32(0)
 																																					} else {
-																																						v228 = v5
-																																						m.G0 = v16 + int32(16)
-																																						return v228
+																																						v229 = v5
+																																						m.G0 = v17 + int32(16)
+																																						return v229
 																																					}
 																																				}
 																																			}
 																																		}
 																																	} else {
-																																		v228 = base.B2i32(v194 != int32(0))
-																																		m.G0 = v16 + int32(16)
-																																		return v228
+																																		v229 = base.B2i32(v195 != int64(0))
+																																		m.G0 = v17 + int32(16)
+																																		return v229
 																																	}
 																																}
 																															}
@@ -1468,9 +1468,9 @@ func F_operator_predicate_proof(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 																							}
 																						}
 																					} else {
-																						v228 = v5
-																						m.G0 = v16 + int32(16)
-																						return v228
+																						v229 = v5
+																						m.G0 = v17 + int32(16)
+																						return v229
 																					}
 																				}
 																			}
@@ -1478,269 +1478,269 @@ func F_operator_predicate_proof(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 																	}
 																}
 															} else {
-																if base.B2i32(v50 == int32(0))|(v90^int32(1)) != 0 {
-																	v228 = v5
-																	m.G0 = v16 + int32(16)
-																	return v228
+																if base.B2i32(v51 == int32(0))|(v91^int32(1)) != 0 {
+																	v229 = v5
+																	m.G0 = v17 + int32(16)
+																	return v229
 																} else {
-																	v118 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
-																	if base.B2i32(v47 == int32(0))|base.B2i32(v118 != int32(7)) != 0 {
-																		v228 = v5
-																		m.G0 = v16 + int32(16)
-																		return v228
+																	v119 = *(*int32)(unsafe.Add(mBase, uint32(v51)))
+																	if base.B2i32(v48 == int32(0))|base.B2i32(v119 != int32(7)) != 0 {
+																		v229 = v5
+																		m.G0 = v17 + int32(16)
+																		return v229
 																	} else {
-																		v122 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
-																		if v122 != int32(7) {
-																			v228 = v5
-																			m.G0 = v16 + int32(16)
-																			return v228
+																		v123 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
+																		if v123 != int32(7) {
+																			v229 = v5
+																			m.G0 = v17 + int32(16)
+																			return v229
 																		} else {
-																			v125 = F_get_commutator(m, v45)
+																			v126 = F_get_commutator(m, v46)
 																			mBase = m.M
-																			v126 = m.ExcPending
-																			if v126 != 0 {
+																			v127 = m.ExcPending
+																			if v127 != 0 {
 																				return int32(0)
 																			} else {
-																				if v125 == int32(0) {
-																					v228 = v5
-																					m.G0 = v16 + int32(16)
-																					return v228
+																				if v126 == int32(0) {
+																					v229 = v5
+																					m.G0 = v17 + int32(16)
+																					return v229
 																				} else {
-																					v129 = v50
-																					v130 = v47
-																					v131 = v125
-																					v132 = v44
-																					v134 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+24)))
-																					if v134 == int32(1) {
-																						v137 = F_op_strict(m, v132)
+																					v130 = v51
+																					v131 = v48
+																					v132 = v126
+																					v133 = v45
+																					v135 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v131)+32)))
+																					if v135 == int32(1) {
+																						v138 = F_op_strict(m, v133)
 																						mBase = m.M
-																						v138 = m.ExcPending
-																						if v138 != 0 {
+																						v139 = m.ExcPending
+																						if v139 != 0 {
 																							return int32(0)
 																						} else {
-																							if v137 == int32(0) {
-																								v228 = v5
-																								m.G0 = v16 + int32(16)
-																								return v228
+																							if v138 == int32(0) {
+																								v229 = v5
+																								m.G0 = v17 + int32(16)
+																								return v229
 																							} else {
-																								v141 = int32(1)
+																								v142 = int32(1)
 																								if l2|base.B2i32(l3 == int32(0)) != 0 {
-																									v228 = v141
-																									m.G0 = v16 + int32(16)
-																									return v228
+																									v229 = v142
+																									m.G0 = v17 + int32(16)
+																									return v229
 																								} else {
-																									v145 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v129)+24)))
-																									if v145 == int32(1) {
-																										v148 = F_op_strict(m, v131)
+																									v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+32)))
+																									if v146 == int32(1) {
+																										v149 = F_op_strict(m, v132)
 																										mBase = m.M
-																										v149 = m.ExcPending
-																										if v149 != 0 {
+																										v150 = m.ExcPending
+																										if v150 != 0 {
 																											return int32(0)
 																										} else {
-																											if v148 != 0 {
-																												v228 = v141
+																											if v149 != 0 {
+																												v229 = v142
 																											} else {
-																												v228 = int32(0)
+																												v229 = int32(0)
 																											}
-																											m.G0 = v16 + int32(16)
-																											return v228
+																											m.G0 = v17 + int32(16)
+																											return v229
 																										}
 																									} else {
-																										v228 = int32(0)
-																										m.G0 = v16 + int32(16)
-																										return v228
+																										v229 = int32(0)
+																										m.G0 = v17 + int32(16)
+																										return v229
 																									}
 																								}
 																							}
 																						}
 																					} else {
-																						v151 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v129)+24)))
-																						if v151 == int32(1) {
+																						v152 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130)+32)))
+																						if v152 == int32(1) {
 																							if l3 != 0 {
-																								v155 = F_op_strict(m, v131)
+																								v156 = F_op_strict(m, v132)
 																								mBase = m.M
-																								v156 = m.ExcPending
-																								if v156 != 0 {
+																								v157 = m.ExcPending
+																								if v157 != 0 {
 																									return int32(0)
 																								} else {
-																									if v155 != 0 {
-																										v228 = int32(1)
+																									if v156 != 0 {
+																										v229 = int32(1)
 																									} else {
-																										v228 = int32(0)
+																										v229 = int32(0)
 																									}
-																									m.G0 = v16 + int32(16)
-																									return v228
+																									m.G0 = v17 + int32(16)
+																									return v229
 																								}
 																							} else {
-																								v228 = int32(0)
-																								m.G0 = v16 + int32(16)
-																								return v228
+																								v229 = int32(0)
+																								m.G0 = v17 + int32(16)
+																								return v229
 																							}
 																						} else {
-																							v159 = F_lookup_proof_cache(m, v131, v132, l2)
+																							v160 = F_lookup_proof_cache(m, v132, v133, l2)
 																							mBase = m.M
-																							v160 = m.ExcPending
-																							if v160 != 0 {
+																							v161 = m.ExcPending
+																							if v161 != 0 {
 																								return int32(0)
 																							} else {
 																								if l2 != 0 {
-																									v163 = int32(16)
+																									v164 = int32(16)
 																								} else {
-																									v163 = int32(12)
+																									v164 = int32(12)
 																								}
-																								v165 = *(*int32)(unsafe.Add(mBase, uint32(v159+v163)))
-																								if v165 == int32(0) {
-																									v228 = v5
-																									m.G0 = v16 + int32(16)
-																									return v228
+																								v166 = *(*int32)(unsafe.Add(mBase, uint32(v160+v164)))
+																								if v166 == int32(0) {
+																									v229 = v5
+																									m.G0 = v17 + int32(16)
+																									return v229
 																								} else {
-																									v168 = F_CreateExecutorState(m)
+																									v169 = F_CreateExecutorState(m)
 																									mBase = m.M
-																									v169 = m.ExcPending
-																									if v169 != 0 {
+																									v170 = m.ExcPending
+																									if v170 != 0 {
 																										return int32(0)
 																									} else {
-																										v170 = int32(_a_F_operator_predicate_proof_0)
-																										v171 = *(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0]))
-																										v173 = *(*int32)(unsafe.Add(mBase, uint32(v168)+100))
-																										*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v173
-																										v175 = F_make_opclause(m, v165, v129, v130, v41)
+																										v171 = int32(_a_F_operator_predicate_proof_0)
+																										v172 = *(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0]))
+																										v174 = *(*int32)(unsafe.Add(mBase, uint32(v169)+100))
+																										*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v174
+																										v176 = F_make_opclause(m, v166, v130, v131, v42)
 																										mBase = m.M
-																										v176 = m.ExcPending
-																										if v176 != 0 {
+																										v177 = m.ExcPending
+																										if v177 != 0 {
 																											return int32(0)
 																										} else {
-																											F_fix_opfuncids(m, v175)
+																											F_fix_opfuncids(m, v176)
 																											mBase = m.M
-																											v178 = m.ExcPending
-																											if v178 != 0 {
+																											v179 = m.ExcPending
+																											if v179 != 0 {
 																												return int32(0)
 																											} else {
-																												v180 = F_ExecInitExpr(m, v175, int32(0))
+																												v181 = F_ExecInitExpr(m, v176, int32(0))
 																												mBase = m.M
-																												v181 = m.ExcPending
-																												if v181 != 0 {
+																												v182 = m.ExcPending
+																												if v182 != 0 {
 																													return int32(0)
 																												} else {
-																													v182 = *(*int32)(unsafe.Add(mBase, uint32(v168)+152))
-																													if v182 == int32(0) {
-																														v185 = F_MakePerTupleExprContext(m, v168)
+																													v183 = *(*int32)(unsafe.Add(mBase, uint32(v169)+152))
+																													if v183 == int32(0) {
+																														v186 = F_MakePerTupleExprContext(m, v169)
 																														mBase = m.M
-																														v186 = m.ExcPending
-																														if v186 != 0 {
+																														v187 = m.ExcPending
+																														if v187 != 0 {
 																															return int32(0)
 																														} else {
-																															v187 = v185
-																															v189 = *(*int32)(unsafe.Add(mBase, uint32(v187)+20))
-																															*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v189
-																															v193 = *(*int32)(unsafe.Add(mBase, uint32(v180)+20))
-																															v194 = m.T0[v193].(func(*base.Module, int32, int32, int32) int32)(m, v180, v187, v16+int32(15))
+																															v188 = v186
+																															v190 = *(*int32)(unsafe.Add(mBase, uint32(v188)+20))
+																															*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v190
+																															v194 = *(*int32)(unsafe.Add(mBase, uint32(v181)+24))
+																															v195 = m.T0[v194].(func(*base.Module, int32, int32, int32) int64)(m, v181, v188, v17+int32(15))
 																															mBase = m.M
-																															v195 = m.ExcPending
-																															if v195 != 0 {
+																															v196 = m.ExcPending
+																															if v196 != 0 {
 																																return int32(0)
 																															} else {
-																																*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v171
-																																F_FreeExecutorState(m, v168)
+																																*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v172
+																																F_FreeExecutorState(m, v169)
 																																mBase = m.M
-																																v199 = m.ExcPending
-																																if v199 != 0 {
+																																v200 = m.ExcPending
+																																if v200 != 0 {
 																																	return int32(0)
 																																} else {
-																																	v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)))
-																																	if v200 == int32(1) {
-																																		v205 = F_errstart(m, int32(13), int32(0))
+																																	v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+15)))
+																																	if v201 == int32(1) {
+																																		v206 = F_errstart(m, int32(13), int32(0))
 																																		mBase = m.M
-																																		v206 = m.ExcPending
-																																		if v206 != 0 {
+																																		v207 = m.ExcPending
+																																		if v207 != 0 {
 																																			return int32(0)
 																																		} else {
-																																			if v205 == int32(0) {
-																																				v228 = v5
-																																				m.G0 = v16 + int32(16)
-																																				return v228
+																																			if v206 == int32(0) {
+																																				v229 = v5
+																																				m.G0 = v17 + int32(16)
+																																				return v229
 																																			} else {
 																																				F_errmsg_internal(m, int32(_a_F_operator_predicate_proof_1), int32(0))
 																																				mBase = m.M
-																																				v212 = m.ExcPending
-																																				if v212 != 0 {
+																																				v213 = m.ExcPending
+																																				if v213 != 0 {
 																																					return int32(0)
 																																				} else {
-																																					F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2017), int32(_a_F_operator_predicate_proof_3))
+																																					F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2019), int32(_a_F_operator_predicate_proof_3))
 																																					mBase = m.M
-																																					v217 = m.ExcPending
-																																					if v217 != 0 {
+																																					v218 = m.ExcPending
+																																					if v218 != 0 {
 																																						return int32(0)
 																																					} else {
-																																						v228 = v5
-																																						m.G0 = v16 + int32(16)
-																																						return v228
+																																						v229 = v5
+																																						m.G0 = v17 + int32(16)
+																																						return v229
 																																					}
 																																				}
 																																			}
 																																		}
 																																	} else {
-																																		v228 = base.B2i32(v194 != int32(0))
-																																		m.G0 = v16 + int32(16)
-																																		return v228
+																																		v229 = base.B2i32(v195 != int64(0))
+																																		m.G0 = v17 + int32(16)
+																																		return v229
 																																	}
 																																}
 																															}
 																														}
 																													} else {
-																														v187 = v182
-																														v189 = *(*int32)(unsafe.Add(mBase, uint32(v187)+20))
-																														*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v189
-																														v193 = *(*int32)(unsafe.Add(mBase, uint32(v180)+20))
-																														v194 = m.T0[v193].(func(*base.Module, int32, int32, int32) int32)(m, v180, v187, v16+int32(15))
+																														v188 = v183
+																														v190 = *(*int32)(unsafe.Add(mBase, uint32(v188)+20))
+																														*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v190
+																														v194 = *(*int32)(unsafe.Add(mBase, uint32(v181)+24))
+																														v195 = m.T0[v194].(func(*base.Module, int32, int32, int32) int64)(m, v181, v188, v17+int32(15))
 																														mBase = m.M
-																														v195 = m.ExcPending
-																														if v195 != 0 {
+																														v196 = m.ExcPending
+																														if v196 != 0 {
 																															return int32(0)
 																														} else {
-																															*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v171
-																															F_FreeExecutorState(m, v168)
+																															*(*int32)(unsafe.Add(mBase, _c_F_operator_predicate_proof[0])) = v172
+																															F_FreeExecutorState(m, v169)
 																															mBase = m.M
-																															v199 = m.ExcPending
-																															if v199 != 0 {
+																															v200 = m.ExcPending
+																															if v200 != 0 {
 																																return int32(0)
 																															} else {
-																																v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)))
-																																if v200 == int32(1) {
-																																	v205 = F_errstart(m, int32(13), int32(0))
+																																v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+15)))
+																																if v201 == int32(1) {
+																																	v206 = F_errstart(m, int32(13), int32(0))
 																																	mBase = m.M
-																																	v206 = m.ExcPending
-																																	if v206 != 0 {
+																																	v207 = m.ExcPending
+																																	if v207 != 0 {
 																																		return int32(0)
 																																	} else {
-																																		if v205 == int32(0) {
-																																			v228 = v5
-																																			m.G0 = v16 + int32(16)
-																																			return v228
+																																		if v206 == int32(0) {
+																																			v229 = v5
+																																			m.G0 = v17 + int32(16)
+																																			return v229
 																																		} else {
 																																			F_errmsg_internal(m, int32(_a_F_operator_predicate_proof_1), int32(0))
 																																			mBase = m.M
-																																			v212 = m.ExcPending
-																																			if v212 != 0 {
+																																			v213 = m.ExcPending
+																																			if v213 != 0 {
 																																				return int32(0)
 																																			} else {
-																																				F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2017), int32(_a_F_operator_predicate_proof_3))
+																																				F_errfinish(m, int32(_a_F_operator_predicate_proof_2), int32(2019), int32(_a_F_operator_predicate_proof_3))
 																																				mBase = m.M
-																																				v217 = m.ExcPending
-																																				if v217 != 0 {
+																																				v218 = m.ExcPending
+																																				if v218 != 0 {
 																																					return int32(0)
 																																				} else {
-																																					v228 = v5
-																																					m.G0 = v16 + int32(16)
-																																					return v228
+																																					v229 = v5
+																																					m.G0 = v17 + int32(16)
+																																					return v229
 																																				}
 																																			}
 																																		}
 																																	}
 																																} else {
-																																	v228 = base.B2i32(v194 != int32(0))
-																																	m.G0 = v16 + int32(16)
-																																	return v228
+																																	v229 = base.B2i32(v195 != int64(0))
+																																	m.G0 = v17 + int32(16)
+																																	return v229
 																																}
 																															}
 																														}

@@ -96,7 +96,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 					if v77 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(4045), int32(_a_F_RemoveXlogFile_3))
+						F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(_a_F_RemoveXlogFile_3), int32(_a_F_RemoveXlogFile_4))
 						mBase = m.M
 						v82 = m.ExcPending
 						if v82 != 0 {
@@ -112,7 +112,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 									m.G0 = v10 + int32(1072)
 									return
 								} else {
-									v88 = int32(_a_F_RemoveXlogFile_4)
+									v88 = int32(_a_F_RemoveXlogFile_5)
 									v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 									*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 									F_XLogArchiveCleanup(m, v13)
@@ -139,7 +139,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 							m.G0 = v10 + int32(1072)
 							return
 						} else {
-							v88 = int32(_a_F_RemoveXlogFile_4)
+							v88 = int32(_a_F_RemoveXlogFile_5)
 							v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 							*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 							F_XLogArchiveCleanup(m, v13)
@@ -172,7 +172,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 						if v77 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(4045), int32(_a_F_RemoveXlogFile_3))
+							F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(_a_F_RemoveXlogFile_3), int32(_a_F_RemoveXlogFile_4))
 							mBase = m.M
 							v82 = m.ExcPending
 							if v82 != 0 {
@@ -188,7 +188,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 										m.G0 = v10 + int32(1072)
 										return
 									} else {
-										v88 = int32(_a_F_RemoveXlogFile_4)
+										v88 = int32(_a_F_RemoveXlogFile_5)
 										v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 										*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 										F_XLogArchiveCleanup(m, v13)
@@ -215,7 +215,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 								m.G0 = v10 + int32(1072)
 								return
 							} else {
-								v88 = int32(_a_F_RemoveXlogFile_4)
+								v88 = int32(_a_F_RemoveXlogFile_5)
 								v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 								*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 								F_XLogArchiveCleanup(m, v13)
@@ -233,7 +233,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 				}
 			} else {
 				v30 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[2]))
-				v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+320)))
+				v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+312)))
 				if v31 != int32(1) {
 					v72 = F_errstart(m, int32(13), int32(0))
 					mBase = m.M
@@ -249,7 +249,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 							if v77 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(4045), int32(_a_F_RemoveXlogFile_3))
+								F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(_a_F_RemoveXlogFile_3), int32(_a_F_RemoveXlogFile_4))
 								mBase = m.M
 								v82 = m.ExcPending
 								if v82 != 0 {
@@ -265,7 +265,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 											m.G0 = v10 + int32(1072)
 											return
 										} else {
-											v88 = int32(_a_F_RemoveXlogFile_4)
+											v88 = int32(_a_F_RemoveXlogFile_5)
 											v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 											*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 											F_XLogArchiveCleanup(m, v13)
@@ -292,7 +292,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 									m.G0 = v10 + int32(1072)
 									return
 								} else {
-									v88 = int32(_a_F_RemoveXlogFile_4)
+									v88 = int32(_a_F_RemoveXlogFile_5)
 									v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 									*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 									F_XLogArchiveCleanup(m, v13)
@@ -330,7 +330,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 									if v77 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(4045), int32(_a_F_RemoveXlogFile_3))
+										F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(_a_F_RemoveXlogFile_3), int32(_a_F_RemoveXlogFile_4))
 										mBase = m.M
 										v82 = m.ExcPending
 										if v82 != 0 {
@@ -346,7 +346,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 													m.G0 = v10 + int32(1072)
 													return
 												} else {
-													v88 = int32(_a_F_RemoveXlogFile_4)
+													v88 = int32(_a_F_RemoveXlogFile_5)
 													v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 													*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 													F_XLogArchiveCleanup(m, v13)
@@ -373,7 +373,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 											m.G0 = v10 + int32(1072)
 											return
 										} else {
-											v88 = int32(_a_F_RemoveXlogFile_4)
+											v88 = int32(_a_F_RemoveXlogFile_5)
 											v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 											*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 											F_XLogArchiveCleanup(m, v13)
@@ -411,7 +411,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 											if v77 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(4045), int32(_a_F_RemoveXlogFile_3))
+												F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(_a_F_RemoveXlogFile_3), int32(_a_F_RemoveXlogFile_4))
 												mBase = m.M
 												v82 = m.ExcPending
 												if v82 != 0 {
@@ -427,7 +427,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 															m.G0 = v10 + int32(1072)
 															return
 														} else {
-															v88 = int32(_a_F_RemoveXlogFile_4)
+															v88 = int32(_a_F_RemoveXlogFile_5)
 															v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 															*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 															F_XLogArchiveCleanup(m, v13)
@@ -454,7 +454,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 													m.G0 = v10 + int32(1072)
 													return
 												} else {
-													v88 = int32(_a_F_RemoveXlogFile_4)
+													v88 = int32(_a_F_RemoveXlogFile_5)
 													v90 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1]))
 													*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[1])) = v90 + int32(1)
 													F_XLogArchiveCleanup(m, v13)
@@ -479,19 +479,19 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 									} else {
 										if v47 != 0 {
 											*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v13
-											F_errmsg_internal(m, int32(_a_F_RemoveXlogFile_5), v10+int32(16))
+											F_errmsg_internal(m, int32(_a_F_RemoveXlogFile_6), v10+int32(16))
 											mBase = m.M
 											v54 = m.ExcPending
 											if v54 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(4033), int32(_a_F_RemoveXlogFile_3))
+												F_errfinish(m, int32(_a_F_RemoveXlogFile_2), int32(_a_F_RemoveXlogFile_7), int32(_a_F_RemoveXlogFile_4))
 												mBase = m.M
 												v59 = m.ExcPending
 												if v59 != 0 {
 													return
 												} else {
-													v60 = int32(_a_F_RemoveXlogFile_6)
+													v60 = int32(_a_F_RemoveXlogFile_8)
 													v62 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[3]))
 													*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[3])) = v62 + int32(1)
 													v66 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
@@ -508,7 +508,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 												}
 											}
 										} else {
-											v60 = int32(_a_F_RemoveXlogFile_6)
+											v60 = int32(_a_F_RemoveXlogFile_8)
 											v62 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[3]))
 											*(*int32)(unsafe.Add(mBase, _c_F_RemoveXlogFile[3])) = v62 + int32(1)
 											v66 = *(*int64)(unsafe.Add(mBase, uint32(l2)))

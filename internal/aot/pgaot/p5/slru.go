@@ -19,29 +19,6 @@ func F_SlruScanDirCbDeleteAll(m *base.Module, l0 int32, l1 int32, l2 int64, l3 i
 		return int32(0)
 	}
 }
-func F_SlruScanDirCbFindEarliest(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v6 int64
-	_ = v6
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	v6 = *(*int64)(unsafe.Add(mBase, uint32(l3)))
-	if v6 != int64(-1) {
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-		v10 = m.T0[v9].(func(*base.Module, int64, int64) int32)(m, l2, v6)
-		mBase = m.M
-		if v10 == int32(0) {
-		} else {
-			*(*int64)(unsafe.Add(mBase, uint32(l3))) = l2
-		}
-	} else {
-		*(*int64)(unsafe.Add(mBase, uint32(l3))) = l2
-	}
-	return int32(0)
-}
 func F_check_slru_buffers(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

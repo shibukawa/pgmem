@@ -5,10 +5,10 @@ import (
 	"unsafe"
 )
 
-func F_macaddr8_cmp(m *base.Module, l0 int32) int32 {
+func F_macaddr8_cmp(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
+	var v2 int64
 	_ = v2
 	var v6 int32
 	_ = v6
@@ -42,23 +42,23 @@ func F_macaddr8_cmp(m *base.Module, l0 int32) int32 {
 	_ = v41
 	var v50 int32
 	_ = v50
-	var v55 int32
-	_ = v55
-	v2 = int32(-1)
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	var v56 int64
+	_ = v56
+	v2 = int64(-1)
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
 	v8 = int32(16711935)
 	v10 = int32(8)
 	v12 = int32(24)
 	v16 = base.I32_rotr(v7&v8, v10) | base.I32_rotr(v7, v12)&v8
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
 	v27 = base.I32_rotr(v18&v8, v10) | base.I32_rotr(v18, v12)&v8
 	if base.Ui32(v16) < base.Ui32(v27) {
-		v55 = v2
+		v56 = v2
 	} else {
 		if base.Ui32(v27) < base.Ui32(v16) {
-			v55 = int32(1)
+			v56 = int64(1)
 		} else {
 			v31 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
 			v32 = int32(16711935)
@@ -68,15 +68,15 @@ func F_macaddr8_cmp(m *base.Module, l0 int32) int32 {
 			v41 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
 			v50 = base.I32_rotr(v41&v32, v34) | base.I32_rotr(v41, v36)&v32
 			if base.Ui32(v40) < base.Ui32(v50) {
-				v55 = v2
+				v56 = v2
 			} else {
-				v55 = base.B2i32(base.Ui32(v50) < base.Ui32(v40))
+				v56 = base.I64_extend_i32_u(base.B2i32(base.Ui32(v50) < base.Ui32(v40)))
 			}
 		}
 	}
-	return v55
+	return v56
 }
-func F_macaddr8_set7bit(m *base.Module, l0 int32) int32 {
+func F_macaddr8_set7bit(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -103,12 +103,12 @@ func F_macaddr8_set7bit(m *base.Module, l0 int32) int32 {
 	_ = v23
 	var v25 int32
 	_ = v25
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v5 = F_palloc0(m, int32(8))
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3))))
 		v11 = v9 | int32(2)
@@ -127,6 +127,6 @@ func F_macaddr8_set7bit(m *base.Module, l0 int32) int32 {
 		*(*uint8)(unsafe.Add(mBase, uint32(v5)+6)) = uint8(v23)
 		v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3)+7)))
 		*(*uint8)(unsafe.Add(mBase, uint32(v5)+7)) = uint8(v25)
-		return v5
+		return base.I64_extend_i32_u(v5)
 	}
 }

@@ -125,10 +125,10 @@ func F_HnswLoadElementFromTuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v110
 	var v112 int32
 	_ = v112
-	var v118 int32
-	_ = v118
-	var v119 int32
+	var v119 int64
 	_ = v119
+	var v120 int32
+	_ = v120
 	v5 = int32(0)
 	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+65)) = uint8(v6)
@@ -246,13 +246,13 @@ func F_HnswLoadElementFromTuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 		}
 	}
 	if l3 != 0 {
-		v118 = F_datumCopy(m, l1+int32(72), int32(0), int32(-1))
+		v119 = F_datumCopy(m, base.I64_extend_i32_u(l1+int32(72)), int32(0), int32(-1))
 		mBase = m.M
-		v119 = m.ExcPending
-		if v119 != 0 {
+		v120 = m.ExcPending
+		if v120 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+88)) = v118
+			*(*uint32)(unsafe.Add(mBase, uint32(l0)+88)) = uint32(v119)
 			return
 		}
 	} else {
@@ -314,7 +314,7 @@ func F_HnswLoadNeighborTids(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	if v13 != 0 {
 		return int32(0)
 	} else {
-		F_LockBuffer(m, v10, int32(1))
+		F_LockBufferInternal(m, v10, int32(1))
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
@@ -404,7 +404,7 @@ func F_HnswNewBuffer(m *base.Module, l0 int32, l1 int32) int32 {
 	if v9 != 0 {
 		return int32(0)
 	} else {
-		F_LockBuffer(m, v6, int32(2))
+		F_LockBufferInternal(m, v6, int32(3))
 		v12 = m.ExcPending
 		if v12 != 0 {
 			return int32(0)

@@ -5,19 +5,6 @@ import (
 	"unsafe"
 )
 
-func F_isQueryUsingTempRelation(m *base.Module, l0 int32) int32 {
-	var v3 int32
-	_ = v3
-	var v6 int32
-	_ = v6
-	v3 = F_isQueryUsingTempRelation_walker(m, l0, int32(0))
-	v6 = m.ExcPending
-	if v6 != 0 {
-		return int32(0)
-	} else {
-		return v3
-	}
-}
 func F_query_has_required_values(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -41,7 +28,7 @@ func F_query_has_required_values(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_query_to_xml(m *base.Module, l0 int32) int32 {
+func F_query_to_xml(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -56,7 +43,7 @@ func F_query_to_xml(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v11 int32
+	var v11 int64
 	_ = v11
 	var v14 int32
 	_ = v14
@@ -80,39 +67,39 @@ func F_query_to_xml(m *base.Module, l0 int32) int32 {
 	_ = v23
 	var v24 int32
 	_ = v24
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = F_pg_detoast_datum_packed(m, v2)
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v7 = F_text_to_cstring(m, v3)
 		mBase = m.M
 		v8 = m.ExcPending
 		if v8 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v9 = int32(0)
-			v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-			v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+			v11 = *(*int64)(unsafe.Add(mBase, uint32(l0)+56))
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 			v15 = F_pg_detoast_datum_packed(m, v14)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v17 = F_text_to_cstring(m, v15)
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
-					v19 = F_query_to_xml_internal(m, v7, v9, v9, base.B2i32(v11 != v9), v17)
+					v19 = F_query_to_xml_internal(m, v7, v9, v9, base.B2i32(v11 != int64(0)), v17)
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v21 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
 						v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+4))
@@ -120,9 +107,9 @@ func F_query_to_xml(m *base.Module, l0 int32) int32 {
 						mBase = m.M
 						v24 = m.ExcPending
 						if v24 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
-							return v23
+							return base.I64_extend_i32_u(v23)
 						}
 					}
 				}
@@ -528,7 +515,7 @@ L46:
 	}
 L47:
 	;
-	F_errfinish(m, int32(_a_F_query_to_xml_internal_10), int32(3019), int32(_a_F_query_to_xml_internal_11))
+	F_errfinish(m, int32(_a_F_query_to_xml_internal_10), int32(3062), int32(_a_F_query_to_xml_internal_11))
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {

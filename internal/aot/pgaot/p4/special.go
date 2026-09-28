@@ -23,12 +23,12 @@ func F_SpecialFURL(m *base.Module, l0 int32) {
 	var v12 int32
 	_ = v12
 	v3 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)) = uint8(v3)
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+21)) = uint8(v3)
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v5)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = v6 - v7
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v11 - v12
@@ -56,17 +56,17 @@ func F_SpecialVerVersion(m *base.Module, l0 int32) {
 	var v16 int32
 	_ = v16
 	v2 = int32(0)
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v3)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v3))) = v4 - v5
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v9 - v10
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = v2
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v2
 	return
 }

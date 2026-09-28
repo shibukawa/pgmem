@@ -323,6 +323,261 @@ func F_list_delete_first(m *base.Module, l0 int32) int32 {
 		return v33
 	}
 }
+func F_list_difference_oid(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v13 int32
+	_ = v13
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v36 int32
+	_ = v36
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v58 int32
+	_ = v58
+	var v61 int32
+	_ = v61
+	var v65 int32
+	_ = v65
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v82 int32
+	_ = v82
+	var v84 int32
+	_ = v84
+	var v87 int32
+	_ = v87
+	var v94 int32
+	_ = v94
+	var v96 int32
+	_ = v96
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
+	var v107 int32
+	_ = v107
+	var v110 int32
+	_ = v110
+	var v113 int32
+	_ = v113
+	var v119 int32
+	_ = v119
+	v3 = int32(0)
+	if l1 != 0 {
+		goto L2
+	} else {
+		goto L3
+	}
+L1:
+	;
+	return v119
+L2:
+	;
+	if l0 == int32(0) {
+		goto L5
+	} else {
+		goto L6
+	}
+L3:
+	;
+	goto L4
+L4:
+	;
+	if l0 == int32(0) {
+		goto L22
+	} else {
+		goto L23
+	}
+L5:
+	;
+	return int32(0)
+L6:
+	;
+	goto L7
+L7:
+	;
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v13 <= int32(0) {
+		v119 = v3
+		goto L1
+	} else {
+		goto L8
+	}
+L8:
+	;
+	v19 = v3
+	v20 = v3
+	goto L9
+L9:
+	;
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v24+v20<<(uint(int32(2))%32))))
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	if int32(0) < v29 {
+		goto L12
+	} else {
+		goto L13
+	}
+L10:
+	;
+	v119 = v65
+	goto L1
+L11:
+	;
+	v71 = v20 + int32(1)
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v71 < v72 {
+		v19 = v65
+		v20 = v71
+		goto L9
+	} else {
+		goto L21
+	}
+L12:
+	;
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+	v36 = int32(0)
+	goto L15
+L13:
+	;
+	goto L14
+L14:
+	;
+	v58 = F_lappend_oid(m, v19, v28)
+	mBase = m.M
+	v61 = m.ExcPending
+	if v61 != 0 {
+		goto L19
+	} else {
+		goto L20
+	}
+L15:
+	;
+	v45 = *(*int32)(unsafe.Add(mBase, uint32(v32+v36<<(uint(int32(2))%32))))
+	if v45 == v28 {
+		v65 = v19
+		goto L11
+	} else {
+		goto L17
+	}
+L16:
+	;
+	goto L14
+L17:
+	;
+	v48 = v36 + int32(1)
+	if v29 != v48 {
+		v36 = v48
+		goto L15
+	} else {
+		goto L18
+	}
+L18:
+	;
+	goto L16
+L19:
+	;
+	return int32(0)
+L20:
+	;
+	v65 = v58
+	goto L11
+L21:
+	;
+	goto L10
+L22:
+	;
+	return int32(0)
+L23:
+	;
+	goto L24
+L24:
+	;
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v81 = int32(8)
+	v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v84 = v82 + int32(4)
+	if v84 <= v81 {
+		goto L25
+	} else {
+		goto L26
+	}
+L25:
+	;
+	v87 = v81
+	goto L27
+L26:
+	;
+	v87 = v84
+	goto L27
+L27:
+	;
+	if v87&(v87-int32(1)) != 0 {
+		goto L28
+	} else {
+		goto L29
+	}
+L28:
+	;
+	v94 = int32(1) << (uint(int32(32)-base.I32_clz(v87)) % 32)
+	goto L30
+L29:
+	;
+	v94 = v87
+	goto L30
+L30:
+	;
+	v96 = v94 - int32(4)
+	v101 = F_palloc(m, v96<<(uint(int32(2))%32)+int32(16))
+	mBase = m.M
+	v102 = m.ExcPending
+	if v102 != 0 {
+		goto L19
+	} else {
+		goto L31
+	}
+L31:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v101)+8)) = v96
+	*(*int32)(unsafe.Add(mBase, uint32(v101)+4)) = v82
+	*(*int32)(unsafe.Add(mBase, uint32(v101))) = v78
+	v107 = v101 + int32(16)
+	*(*int32)(unsafe.Add(mBase, uint32(v101)+12)) = v107
+	v110 = v82 << (uint(int32(2)) % 32)
+	if v110 == int32(0) {
+		v119 = v101
+		goto L1
+	} else {
+		goto L32
+	}
+L32:
+	;
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	base.MemoryCopy(m, v107, v113, v110)
+	return v101
+}
 func F_list_make1_impl(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

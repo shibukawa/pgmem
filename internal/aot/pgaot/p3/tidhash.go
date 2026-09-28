@@ -528,7 +528,7 @@ L42:
 	}
 L43:
 	;
-	F_errfinish(m, int32(_a_F_tidhash_grow_1), int32(327), int32(_a_F_tidhash_grow_2))
+	F_errfinish(m, int32(_a_F_tidhash_grow_1), int32(332), int32(_a_F_tidhash_grow_2))
 	mBase = m.M
 	v224 = m.ExcPending
 	if v224 != 0 {

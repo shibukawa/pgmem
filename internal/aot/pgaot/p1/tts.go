@@ -40,7 +40,7 @@ func F_tts_buffer_heap_copy_heap_tuple(m *base.Module, l0 int32) int32 {
 	_ = v34
 	var v35 int32
 	_ = v35
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	if v4 != 0 {
 		v32 = v4
 		v34 = F_heap_copytuple(m, v32)
@@ -66,11 +66,11 @@ func F_tts_buffer_heap_copy_heap_tuple(m *base.Module, l0 int32) int32 {
 		} else {
 			v9 = int32(_a_F_tts_buffer_heap_copy_heap_tuple_0)
 			v10 = *(*int32)(unsafe.Add(mBase, _c_F_tts_buffer_heap_copy_heap_tuple[0]))
-			v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+			v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 			*(*int32)(unsafe.Add(mBase, _c_F_tts_buffer_heap_copy_heap_tuple[0])) = v12
 			v14 = int32(0)
 			*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)) = uint16(v14)
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v14
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+48)) = v14
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 			v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
@@ -80,7 +80,7 @@ func F_tts_buffer_heap_copy_heap_tuple(m *base.Module, l0 int32) int32 {
 			if v24 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v21
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v21
 				v26 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
 				v28 = v26 | int32(4)
 				*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v28)
@@ -103,7 +103,7 @@ func F_tts_heap_is_current_xact_tuple(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn14012(m, l0, int32(_a_F_tts_heap_is_current_xact_tuple_0), int32(391))
+	v4 = Fn14395(m, l0, int32(_a_F_tts_heap_is_current_xact_tuple_0), int32(391))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

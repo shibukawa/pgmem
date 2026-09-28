@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_pg_get_wal_replay_pause_state(m *base.Module, l0 int32) int32 {
+func F_pg_get_wal_replay_pause_state(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -30,20 +30,20 @@ func F_pg_get_wal_replay_pause_state(m *base.Module, l0 int32) int32 {
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v32 int32
-	_ = v32
-	var v35 int32
-	_ = v35
-	var v39 int32
-	_ = v39
-	var v43 int32
-	_ = v43
-	var v48 int32
-	_ = v48
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v40 int32
+	_ = v40
+	var v44 int32
+	_ = v44
+	var v49 int32
+	_ = v49
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_get_wal_replay_pause_state[0])))
 	if v4 == int32(1) {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_pg_get_wal_replay_pause_state[1]))
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+316))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+308))
 		v12 = base.B2i32(v10 != int32(2))
 		*(*uint8)(unsafe.Add(mBase, _c_F_pg_get_wal_replay_pause_state[0])) = uint8(v12)
 		v14 = v12
@@ -55,7 +55,7 @@ func F_pg_get_wal_replay_pause_state(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			if base.Ui32(v15) <= base.Ui32(int32(2)) {
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(v15<<(uint(int32(2))%32))+uint32(_c_F_pg_get_wal_replay_pause_state[2])))
@@ -67,41 +67,41 @@ func F_pg_get_wal_replay_pause_state(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
-				return v26
+				return base.I64_extend_i32_u(v26)
 			}
 		}
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v32 = m.ExcPending
-		if v32 != 0 {
-			return int32(0)
+		v33 = m.ExcPending
+		if v33 != 0 {
+			return int64(0)
 		} else {
 			F_errcode(m, int32(325))
 			mBase = m.M
-			v35 = m.ExcPending
-			if v35 != 0 {
-				return int32(0)
+			v36 = m.ExcPending
+			if v36 != 0 {
+				return int64(0)
 			} else {
 				F_errmsg(m, int32(_a_F_pg_get_wal_replay_pause_state_0), int32(0))
 				mBase = m.M
-				v39 = m.ExcPending
-				if v39 != 0 {
-					return int32(0)
+				v40 = m.ExcPending
+				if v40 != 0 {
+					return int64(0)
 				} else {
 					F_errhint(m, int32(_a_F_pg_get_wal_replay_pause_state_1), int32(0))
 					mBase = m.M
-					v43 = m.ExcPending
-					if v43 != 0 {
-						return int32(0)
+					v44 = m.ExcPending
+					if v44 != 0 {
+						return int64(0)
 					} else {
-						F_errfinish(m, int32(_a_F_pg_get_wal_replay_pause_state_2), int32(601), int32(_a_F_pg_get_wal_replay_pause_state_3))
+						F_errfinish(m, int32(_a_F_pg_get_wal_replay_pause_state_2), int32(632), int32(_a_F_pg_get_wal_replay_pause_state_3))
 						mBase = m.M
-						v48 = m.ExcPending
-						if v48 != 0 {
-							return int32(0)
+						v49 = m.ExcPending
+						if v49 != 0 {
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {
@@ -113,7 +113,7 @@ func F_pg_get_wal_replay_pause_state(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_pg_is_wal_replay_paused(m *base.Module, l0 int32) int32 {
+func F_pg_is_wal_replay_paused(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -143,7 +143,7 @@ func F_pg_is_wal_replay_paused(m *base.Module, l0 int32) int32 {
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_is_wal_replay_paused[0])))
 	if v4 == int32(1) {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_pg_is_wal_replay_paused[1]))
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+316))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+308))
 		v12 = base.B2i32(v10 != int32(2))
 		*(*uint8)(unsafe.Add(mBase, _c_F_pg_is_wal_replay_paused[0])) = uint8(v12)
 		v14 = v12
@@ -155,31 +155,31 @@ func F_pg_is_wal_replay_paused(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v22 = m.ExcPending
 		if v22 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			F_errcode(m, int32(325))
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				F_errmsg(m, int32(_a_F_pg_is_wal_replay_paused_0), int32(0))
 				mBase = m.M
 				v29 = m.ExcPending
 				if v29 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					F_errhint(m, int32(_a_F_pg_is_wal_replay_paused_1), int32(0))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
-						F_errfinish(m, int32(_a_F_pg_is_wal_replay_paused_2), int32(578), int32(_a_F_pg_is_wal_replay_paused_3))
+						F_errfinish(m, int32(_a_F_pg_is_wal_replay_paused_2), int32(609), int32(_a_F_pg_is_wal_replay_paused_3))
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {
@@ -194,30 +194,30 @@ func F_pg_is_wal_replay_paused(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v40 = m.ExcPending
 		if v40 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			return base.B2i32(v39 != int32(0))
+			return base.I64_extend_i32_u(base.B2i32(v39 != int32(0)))
 		}
 	}
 }
-func F_pg_wal_lsn_diff(m *base.Module, l0 int32) int32 {
+func F_pg_wal_lsn_diff(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(409), int32(0), v4, v5)
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v6 = F_DirectFunctionCall2Coll(m, int32(435), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v6
 	}

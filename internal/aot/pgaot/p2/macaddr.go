@@ -5,20 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_macaddr_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
-	v11 = Fn13942(m, l0, l1, int32(_a_F_macaddr_abbrev_abort_0), int32(462), int32(_a_F_macaddr_abbrev_abort_1), int32(_a_F_macaddr_abbrev_abort_2), int32(455), int32(_a_F_macaddr_abbrev_abort_3), int32(437), int32(_a_F_macaddr_abbrev_abort_4))
-	v14 = m.ExcPending
-	if v14 != 0 {
-		return int32(0)
-	} else {
-		return v11
-	}
-}
-func F_macaddr_and(m *base.Module, l0 int32) int32 {
+func F_macaddr_and(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -65,13 +52,13 @@ func F_macaddr_and(m *base.Module, l0 int32) int32 {
 	_ = v32
 	var v33 int32
 	_ = v33
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v7 = F_palloc(m, int32(6))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4))))
 		v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5))))
@@ -97,6 +84,6 @@ func F_macaddr_and(m *base.Module, l0 int32) int32 {
 		v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5)+5)))
 		v33 = v31 & v32
 		*(*uint8)(unsafe.Add(mBase, uint32(v7)+5)) = uint8(v33)
-		return v7
+		return base.I64_extend_i32_u(v7)
 	}
 }

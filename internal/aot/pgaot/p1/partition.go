@@ -139,112 +139,95 @@ func F__equalPartitionCmd(m *base.Module, l0 int32, l1 int32) int32 {
 func F_compute_partition_hash_value(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v6 int64
+	var v6 int32
 	_ = v6
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
-	var v22 int64
-	_ = v22
-	var v23 int32
-	_ = v23
+	var v7 int64
+	_ = v7
+	var v15 int32
+	_ = v15
+	var v16 int64
+	_ = v16
+	var v18 int32
+	_ = v18
 	var v27 int32
 	_ = v27
-	var v34 int32
-	_ = v34
+	var v31 int64
+	_ = v31
+	var v33 int64
+	_ = v33
 	var v36 int32
 	_ = v36
-	var v38 int32
-	_ = v38
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
-	var v41 int64
-	_ = v41
-	var v51 int64
-	_ = v51
-	var v54 int32
-	_ = v54
-	var v61 int64
-	_ = v61
-	v6 = int64(0)
-	v11 = F_Int64GetDatum(m, int64(8816678312871386365))
-	mBase = m.M
-	v14 = m.ExcPending
-	if v14 != 0 {
+	var v46 int64
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v56 int64
+	_ = v56
+	v6 = int32(0)
+	v7 = int64(0)
+	if v6 < l0 {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	return int64(0)
+	v15 = v6
+	v16 = v7
+	goto L4
 L2:
 	;
-	if int32(0) < l0 {
-		goto L3
-	} else {
-		goto L4
-	}
+	v56 = v7
+	goto L3
 L3:
 	;
-	v22 = v6
-	v23 = int32(0)
-	goto L6
+	return v56
 L4:
 	;
-	v61 = v6
-	goto L5
+	v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l4+v15))))
+	if v18 == int32(0) {
+		goto L6
+	} else {
+		goto L7
+	}
 L5:
 	;
-	return v61
+	v56 = v46
+	goto L3
 L6:
 	;
-	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l4+v23))))
-	if v27 == int32(0) {
-		goto L8
-	} else {
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(l2+v15<<(uint(int32(2))%32))))
+	v31 = *(*int64)(unsafe.Add(mBase, uint32(l3+v15<<(uint(int32(3))%32))))
+	v33 = F_FunctionCall2Coll(m, l1+v15*int32(28), v27, v31, int64(8816678312871386365))
+	mBase = m.M
+	v36 = m.ExcPending
+	if v36 != 0 {
 		goto L9
+	} else {
+		goto L10
 	}
 L7:
 	;
-	v61 = v51
-	goto L5
+	v46 = v16
+	goto L8
 L8:
 	;
-	v34 = v23 << (uint(int32(2)) % 32)
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(l2+v34)))
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(l3+v34)))
-	v39 = F_FunctionCall2Coll(m, l1+v23*int32(28), v36, v38, v11)
-	mBase = m.M
-	v40 = m.ExcPending
-	if v40 != 0 {
-		goto L1
+	v48 = v15 + int32(1)
+	if v48 != l0 {
+		v15 = v48
+		v16 = v46
+		goto L4
 	} else {
 		goto L11
 	}
 L9:
 	;
-	v51 = v22
-	goto L10
+	return int64(0)
 L10:
 	;
-	v54 = v23 + int32(1)
-	if v54 != l0 {
-		v22 = v51
-		v23 = v54
-		goto L6
-	} else {
-		goto L12
-	}
+	v46 = v33 + (v16<<(uint(int64(54))%64) + int64(base.Ui64(v16)>>(uint(int64(7))%64))) + int64(5305509591434766563) ^ v16
+	goto L8
 L11:
 	;
-	v41 = *(*int64)(unsafe.Add(mBase, uint32(v39)))
-	v51 = v41 + (v22<<(uint(int64(54))%64) + int64(base.Ui64(v22)>>(uint(int64(7))%64))) + int64(5305509591434766563) ^ v22
-	goto L10
-L12:
-	;
-	goto L7
+	goto L5
 }

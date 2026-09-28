@@ -92,7 +92,7 @@ L5:
 	}
 L6:
 	;
-	F_errfinish(m, int32(_a_F_StandbyReleaseAllLocks_1), int32(1111), int32(_a_F_StandbyReleaseAllLocks_2))
+	F_errfinish(m, int32(_a_F_StandbyReleaseAllLocks_1), int32(1113), int32(_a_F_StandbyReleaseAllLocks_2))
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {
@@ -182,43 +182,71 @@ func F_StandbyTransactionIdIsPrepared(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v5 int32
-	_ = v5
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	var v19 int32
+	var v7 int32
+	_ = v7
+	var v10 int64
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v19 int64
 	_ = v19
+	var v26 int64
+	_ = v26
+	var v31 int64
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
 	v2 = int32(0)
-	v5 = *(*int32)(unsafe.Add(mBase, _c_F_StandbyTransactionIdIsPrepared[0]))
-	if v5 <= v2 {
-		v19 = v2
-		return v19
+	v7 = *(*int32)(unsafe.Add(mBase, _c_F_StandbyTransactionIdIsPrepared[0]))
+	if v7 <= v2 {
+		v41 = v2
+		return v41
 	} else {
-		v9 = F_ReadTwoPhaseFile(m, l0, int32(1))
+		v10 = F_ReadNextFullTransactionId(m)
 		mBase = m.M
-		v12 = m.ExcPending
-		if v12 != 0 {
+		v13 = m.ExcPending
+		if v13 != 0 {
 			return int32(0)
 		} else {
-			if v9 == int32(0) {
-				v19 = v2
-				return v19
+			if base.Ui32(l0) <= base.Ui32(int32(2)) {
+				v31 = base.I64_extend_i32_u(l0)
 			} else {
-				v15 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
-				F_pfree(m, v9)
-				mBase = m.M
-				v17 = m.ExcPending
-				if v17 != 0 {
-					return int32(0)
+				v19 = int64(base.Ui64(v10) >> (uint(int64(32)) % 64))
+				if base.Ui32(base.I32_wrap_i64(v10)) < base.Ui32(l0) {
+					v26 = (v19 - int64(1)) & int64(4294967295)
 				} else {
-					v19 = base.B2i32(l0 == v15)
-					return v19
+					v26 = v19
+				}
+				v31 = base.I64_extend_i32_u(l0) | v26<<(uint(int64(32))%64)
+			}
+			v33 = F_ReadTwoPhaseFile(m, v31, int32(1))
+			mBase = m.M
+			v34 = m.ExcPending
+			if v34 != 0 {
+				return int32(0)
+			} else {
+				if v33 == int32(0) {
+					v41 = v2
+					return v41
+				} else {
+					v37 = *(*int32)(unsafe.Add(mBase, uint32(v33)+8))
+					F_pfree(m, v33)
+					mBase = m.M
+					v39 = m.ExcPending
+					if v39 != 0 {
+						return int32(0)
+					} else {
+						v41 = base.B2i32(l0 == v37)
+						return v41
+					}
 				}
 			}
 		}

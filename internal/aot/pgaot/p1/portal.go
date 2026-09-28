@@ -404,7 +404,7 @@ L21:
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+196)) = v38
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+200)) = v39
 	*(*uint8)(unsafe.Add(mBase, uint32(v22)+207)) = uint8(v47)
-	F_errfinish(m, int32(_a_F_PortalRun_3), int32(708), int32(_a_F_PortalRun_0))
+	F_errfinish(m, int32(_a_F_PortalRun_3), int32(704), int32(_a_F_PortalRun_0))
 	mBase = m.M
 	v107 = m.ExcPending
 	if v107 != 0 {
@@ -710,7 +710,7 @@ L52:
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+196)) = v162
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+200)) = v163
 	*(*uint8)(unsafe.Add(mBase, uint32(v22)+207)) = uint8(v260)
-	F_errfinish(m, int32(_a_F_PortalRun_3), int32(800), int32(_a_F_PortalRun_0))
+	F_errfinish(m, int32(_a_F_PortalRun_3), int32(796), int32(_a_F_PortalRun_0))
 	mBase = m.M
 	v293 = m.ExcPending
 	if v293 != 0 {

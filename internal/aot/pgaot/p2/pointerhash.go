@@ -414,7 +414,7 @@ L45:
 	}
 L46:
 	;
-	F_errfinish(m, int32(_a_F_pointerhash_insert_hash_internal_1), int32(630), int32(_a_F_pointerhash_insert_hash_internal_2))
+	F_errfinish(m, int32(_a_F_pointerhash_insert_hash_internal_1), int32(635), int32(_a_F_pointerhash_insert_hash_internal_2))
 	mBase = m.M
 	v198 = m.ExcPending
 	if v198 != 0 {

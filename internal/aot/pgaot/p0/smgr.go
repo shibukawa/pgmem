@@ -30,30 +30,30 @@ func F_smgrGetPendingDeletes(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v25
 	var v31 int32
 	_ = v31
-	var v37 int32
-	_ = v37
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
 	var v45 int32
 	_ = v45
-	var v46 int32
-	_ = v46
-	var v49 int32
-	_ = v49
-	var v51 int32
-	_ = v51
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v58 int64
-	_ = v58
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	var v57 int64
+	_ = v57
+	var v61 int32
+	_ = v61
 	var v62 int32
 	_ = v62
-	var v63 int32
-	_ = v63
 	v7 = *(*int32)(unsafe.Add(mBase, _c_F_smgrGetPendingDeletes[0]))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
 	v10 = *(*int32)(unsafe.Add(mBase, _c_F_smgrGetPendingDeletes[1]))
@@ -84,42 +84,42 @@ func F_smgrGetPendingDeletes(m *base.Module, l0 int32, l1 int32) int32 {
 			break
 		}
 		if v24 != 0 {
-			v37 = F_palloc(m, v24*int32(12))
+			v36 = F_palloc_mul(m, int32(12), v24)
 			mBase = m.M
-			v40 = m.ExcPending
-			if v40 != 0 {
+			v39 = m.ExcPending
+			if v39 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(l1))) = v37
-				v43 = *(*int32)(unsafe.Add(mBase, _c_F_smgrGetPendingDeletes[1]))
-				if v43 != 0 {
-					v45 = v37
-					v46 = v43
+				*(*int32)(unsafe.Add(mBase, uint32(l1))) = v36
+				v42 = *(*int32)(unsafe.Add(mBase, _c_F_smgrGetPendingDeletes[1]))
+				if v42 != 0 {
+					v44 = v36
+					v45 = v42
 					for {
-						v49 = *(*int32)(unsafe.Add(mBase, uint32(v46)+20))
-						if v49 < v8 {
-							v62 = v45
+						v48 = *(*int32)(unsafe.Add(mBase, uint32(v45)+20))
+						if v48 < v8 {
+							v61 = v44
 						} else {
-							v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46)+16)))
-							if v51 != l0 {
-								v62 = v45
+							v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45)+16)))
+							if v50 != l0 {
+								v61 = v44
 							} else {
-								v53 = *(*int32)(unsafe.Add(mBase, uint32(v46)+12))
-								if v53 != int32(-1) {
-									v62 = v45
+								v52 = *(*int32)(unsafe.Add(mBase, uint32(v45)+12))
+								if v52 != int32(-1) {
+									v61 = v44
 								} else {
-									v56 = *(*int32)(unsafe.Add(mBase, uint32(v46)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(v45)+8)) = v56
-									v58 = *(*int64)(unsafe.Add(mBase, uint32(v46)))
-									*(*int64)(unsafe.Add(mBase, uint32(v45))) = v58
-									v62 = v45 + int32(12)
+									v55 = *(*int32)(unsafe.Add(mBase, uint32(v45)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v44)+8)) = v55
+									v57 = *(*int64)(unsafe.Add(mBase, uint32(v45)))
+									*(*int64)(unsafe.Add(mBase, uint32(v44))) = v57
+									v61 = v44 + int32(12)
 								}
 							}
 						}
-						v63 = *(*int32)(unsafe.Add(mBase, uint32(v46)+24))
-						if v63 != 0 {
+						v62 = *(*int32)(unsafe.Add(mBase, uint32(v45)+24))
+						if v62 != 0 {
+							v44 = v61
 							v45 = v62
-							v46 = v63
 							continue
 						} else {
 							break
@@ -395,7 +395,7 @@ L6:
 	goto L7
 L7:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
 	v209 = m.ExcPending
 	if v209 != 0 {

@@ -12,18 +12,21 @@ func F_pgp_cfb_decrypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	_ = v7
 	var v8 int32
 	_ = v8
-	var v12 int32
-	_ = v12
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	if v7 != 0 {
 		v8 = int32(_a_F_pgp_cfb_decrypt_0)
 	} else {
 		v8 = int32(_a_F_pgp_cfb_decrypt_1)
 	}
-	F_cfb_process(m, l0, l1, l2, l3, v8)
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	F_cfb_process(m, l0, l1, l2, l3, v8, v9)
 	mBase = m.M
-	v12 = m.ExcPending
-	if v12 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		return int32(0)
 	} else {
 		return int32(0)
@@ -1038,8 +1041,8 @@ func F_pgp_set_symkey(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	if base.B2i32(l1 == v4)|base.B2i32(l2 <= v4) != 0 {
 		v15 = int32(-13)
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+128)) = l2
-		*(*int32)(unsafe.Add(mBase, uint32(l0)+124)) = l1
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+132)) = l2
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+128)) = l1
 		v15 = int32(0)
 	}
 	return v15

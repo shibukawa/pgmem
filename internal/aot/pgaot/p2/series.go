@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
+func F_generate_series_step_int4(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -56,52 +56,52 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 	_ = v67
 	var v71 int32
 	_ = v71
-	var v78 int32
-	_ = v78
-	var v81 int32
-	_ = v81
-	var v85 int32
-	_ = v85
-	var v90 int32
-	_ = v90
-	var v92 int32
-	_ = v92
+	var v79 int32
+	_ = v79
+	var v82 int32
+	_ = v82
+	var v86 int32
+	_ = v86
+	var v91 int32
+	_ = v91
 	var v93 int32
 	_ = v93
-	var v96 int32
-	_ = v96
+	var v94 int32
+	_ = v94
+	var v97 int32
+	_ = v97
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
 	if v9 == int32(0) {
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 		v15 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+18)))
 		if v15 == int32(3) {
-			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 			if v18 == int32(0) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v78 = m.ExcPending
-				if v78 != 0 {
-					return int32(0)
+				v79 = m.ExcPending
+				if v79 != 0 {
+					return int64(0)
 				} else {
 					F_errcode(m, int32(50856066))
 					mBase = m.M
-					v81 = m.ExcPending
-					if v81 != 0 {
-						return int32(0)
+					v82 = m.ExcPending
+					if v82 != 0 {
+						return int64(0)
 					} else {
 						F_errmsg(m, int32(_a_F_generate_series_step_int4_0), int32(0))
 						mBase = m.M
-						v85 = m.ExcPending
-						if v85 != 0 {
-							return int32(0)
+						v86 = m.ExcPending
+						if v86 != 0 {
+							return int64(0)
 						} else {
-							F_errfinish(m, int32(_a_F_generate_series_step_int4_1), int32(1558), int32(_a_F_generate_series_step_int4_2))
+							F_errfinish(m, int32(_a_F_generate_series_step_int4_1), int32(1559), int32(_a_F_generate_series_step_int4_2))
 							mBase = m.M
-							v90 = m.ExcPending
-							if v90 != 0 {
-								return int32(0)
+							v91 = m.ExcPending
+							if v91 != 0 {
+								return int64(0)
 							} else {
 								base.Wasm_trap_unreachable()
 								for {
@@ -116,7 +116,7 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v26 = int32(_a_F_generate_series_step_int4_3)
 					v27 = *(*int32)(unsafe.Add(mBase, _c_F_generate_series_step_int4[0]))
@@ -126,7 +126,7 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v32)+8)) = v21
 						*(*int32)(unsafe.Add(mBase, uint32(v32)+4)) = v12
@@ -151,49 +151,49 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 								*(*int64)(unsafe.Add(mBase, uint32(v47))) = v67 + int64(1)
 								v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 								*(*int32)(unsafe.Add(mBase, uint32(v71)+20)) = int32(1)
-								return v49
+								return base.I64_extend_i32_s(v49)
 							} else {
 								F_end_MultiFuncCall(m, l0)
 								mBase = m.M
-								v92 = m.ExcPending
-								if v92 != 0 {
-									return int32(0)
+								v93 = m.ExcPending
+								if v93 != 0 {
+									return int64(0)
 								} else {
-									v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(v93)+20)) = int32(2)
-									v96 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-									return int32(0)
+									v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v94)+20)) = int32(2)
+									v97 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v97)
+									return int64(0)
 								}
 							}
 						} else {
 							if int32(0) <= v50 {
 								F_end_MultiFuncCall(m, l0)
 								mBase = m.M
-								v92 = m.ExcPending
-								if v92 != 0 {
-									return int32(0)
+								v93 = m.ExcPending
+								if v93 != 0 {
+									return int64(0)
 								} else {
-									v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(v93)+20)) = int32(2)
-									v96 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-									return int32(0)
+									v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v94)+20)) = int32(2)
+									v97 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v97)
+									return int64(0)
 								}
 							} else {
 								v57 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
 								if v49 < v57 {
 									F_end_MultiFuncCall(m, l0)
 									mBase = m.M
-									v92 = m.ExcPending
-									if v92 != 0 {
-										return int32(0)
+									v93 = m.ExcPending
+									if v93 != 0 {
+										return int64(0)
 									} else {
-										v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(v93)+20)) = int32(2)
-										v96 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-										return int32(0)
+										v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v94)+20)) = int32(2)
+										v97 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v97)
+										return int64(0)
 									}
 								} else {
 									v59 = v49 + v50
@@ -206,7 +206,7 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 									*(*int64)(unsafe.Add(mBase, uint32(v47))) = v67 + int64(1)
 									v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 									*(*int32)(unsafe.Add(mBase, uint32(v71)+20)) = int32(1)
-									return v49
+									return base.I64_extend_i32_s(v49)
 								}
 							}
 						}
@@ -219,7 +219,7 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v26 = int32(_a_F_generate_series_step_int4_3)
 				v27 = *(*int32)(unsafe.Add(mBase, _c_F_generate_series_step_int4[0]))
@@ -229,7 +229,7 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				v33 = m.ExcPending
 				if v33 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v32)+8)) = v21
 					*(*int32)(unsafe.Add(mBase, uint32(v32)+4)) = v12
@@ -254,49 +254,49 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 							*(*int64)(unsafe.Add(mBase, uint32(v47))) = v67 + int64(1)
 							v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 							*(*int32)(unsafe.Add(mBase, uint32(v71)+20)) = int32(1)
-							return v49
+							return base.I64_extend_i32_s(v49)
 						} else {
 							F_end_MultiFuncCall(m, l0)
 							mBase = m.M
-							v92 = m.ExcPending
-							if v92 != 0 {
-								return int32(0)
+							v93 = m.ExcPending
+							if v93 != 0 {
+								return int64(0)
 							} else {
-								v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v93)+20)) = int32(2)
-								v96 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-								return int32(0)
+								v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v94)+20)) = int32(2)
+								v97 = int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v97)
+								return int64(0)
 							}
 						}
 					} else {
 						if int32(0) <= v50 {
 							F_end_MultiFuncCall(m, l0)
 							mBase = m.M
-							v92 = m.ExcPending
-							if v92 != 0 {
-								return int32(0)
+							v93 = m.ExcPending
+							if v93 != 0 {
+								return int64(0)
 							} else {
-								v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-								*(*int32)(unsafe.Add(mBase, uint32(v93)+20)) = int32(2)
-								v96 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-								return int32(0)
+								v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+								*(*int32)(unsafe.Add(mBase, uint32(v94)+20)) = int32(2)
+								v97 = int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v97)
+								return int64(0)
 							}
 						} else {
 							v57 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
 							if v49 < v57 {
 								F_end_MultiFuncCall(m, l0)
 								mBase = m.M
-								v92 = m.ExcPending
-								if v92 != 0 {
-									return int32(0)
+								v93 = m.ExcPending
+								if v93 != 0 {
+									return int64(0)
 								} else {
-									v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-									*(*int32)(unsafe.Add(mBase, uint32(v93)+20)) = int32(2)
-									v96 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-									return int32(0)
+									v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v94)+20)) = int32(2)
+									v97 = int32(1)
+									*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v97)
+									return int64(0)
 								}
 							} else {
 								v59 = v49 + v50
@@ -309,7 +309,7 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 								*(*int64)(unsafe.Add(mBase, uint32(v47))) = v67 + int64(1)
 								v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 								*(*int32)(unsafe.Add(mBase, uint32(v71)+20)) = int32(1)
-								return v49
+								return base.I64_extend_i32_s(v49)
 							}
 						}
 					}
@@ -335,49 +335,49 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 				*(*int64)(unsafe.Add(mBase, uint32(v47))) = v67 + int64(1)
 				v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 				*(*int32)(unsafe.Add(mBase, uint32(v71)+20)) = int32(1)
-				return v49
+				return base.I64_extend_i32_s(v49)
 			} else {
 				F_end_MultiFuncCall(m, l0)
 				mBase = m.M
-				v92 = m.ExcPending
-				if v92 != 0 {
-					return int32(0)
+				v93 = m.ExcPending
+				if v93 != 0 {
+					return int64(0)
 				} else {
-					v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(v93)+20)) = int32(2)
-					v96 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-					return int32(0)
+					v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+					*(*int32)(unsafe.Add(mBase, uint32(v94)+20)) = int32(2)
+					v97 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v97)
+					return int64(0)
 				}
 			}
 		} else {
 			if int32(0) <= v50 {
 				F_end_MultiFuncCall(m, l0)
 				mBase = m.M
-				v92 = m.ExcPending
-				if v92 != 0 {
-					return int32(0)
+				v93 = m.ExcPending
+				if v93 != 0 {
+					return int64(0)
 				} else {
-					v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(v93)+20)) = int32(2)
-					v96 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-					return int32(0)
+					v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+					*(*int32)(unsafe.Add(mBase, uint32(v94)+20)) = int32(2)
+					v97 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v97)
+					return int64(0)
 				}
 			} else {
 				v57 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
 				if v49 < v57 {
 					F_end_MultiFuncCall(m, l0)
 					mBase = m.M
-					v92 = m.ExcPending
-					if v92 != 0 {
-						return int32(0)
+					v93 = m.ExcPending
+					if v93 != 0 {
+						return int64(0)
 					} else {
-						v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(v93)+20)) = int32(2)
-						v96 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-						return int32(0)
+						v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+						*(*int32)(unsafe.Add(mBase, uint32(v94)+20)) = int32(2)
+						v97 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v97)
+						return int64(0)
 					}
 				} else {
 					v59 = v49 + v50
@@ -390,7 +390,7 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 					*(*int64)(unsafe.Add(mBase, uint32(v47))) = v67 + int64(1)
 					v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 					*(*int32)(unsafe.Add(mBase, uint32(v71)+20)) = int32(1)
-					return v49
+					return base.I64_extend_i32_s(v49)
 				}
 			}
 		}

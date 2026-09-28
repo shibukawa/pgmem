@@ -13,38 +13,35 @@ func F_GetRecoveryPauseState(m *base.Module) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
 	var v18 int32
 	_ = v18
-	var v20 int32
-	_ = v20
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
 	v7 = base.AtomicRmwXchg32(m, v4, int32(96), int32(1))
 	if v7 != 0 {
-		v9 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
-		F_s_lock(m, v9+int32(96), int32(_a_F_GetRecoveryPauseState_0), int32(3096), int32(_a_F_GetRecoveryPauseState_1))
+		F_s_lock(m, v4+int32(96), int32(_a_F_GetRecoveryPauseState_0))
 		mBase = m.M
-		v18 = m.ExcPending
-		if v18 != 0 {
+		v14 = m.ExcPending
+		if v14 != 0 {
 			return int32(0)
 		} else {
-			v20 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
-			v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+80))
-			v22 = int32(0)
-			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v20)+96)), uint32(v22))
-			return v21
+			v16 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+80))
+			v18 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v16)+96)), uint32(v18))
+			return v17
 		}
 	} else {
-		v20 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+80))
-		v22 = int32(0)
-		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v20)+96)), uint32(v22))
-		return v21
+		v16 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecoveryPauseState[0]))
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+80))
+		v18 = int32(0)
+		atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v16)+96)), uint32(v18))
+		return v17
 	}
 }
 func F_check_recovery_target_name(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
@@ -778,48 +775,46 @@ func F_recovery_create_dbdir(m *base.Module, l0 int32, l1 int32) {
 	_ = v74
 	var v76 int32
 	_ = v76
-	var v79 int32
-	_ = v79
-	var v80 int32
-	_ = v80
-	var v82 int32
-	_ = v82
+	var v78 int32
+	_ = v78
 	var v83 int32
 	_ = v83
+	var v85 int32
+	_ = v85
 	var v86 int32
 	_ = v86
+	var v87 int32
+	_ = v87
+	var v91 int32
+	_ = v91
 	var v94 int32
 	_ = v94
-	var v99 int32
-	_ = v99
-	var v100 int32
-	_ = v100
-	var v101 int32
-	_ = v101
+	var v95 int32
+	_ = v95
 	var v107 int32
 	_ = v107
-	var v116 int32
-	_ = v116
-	var v117 int32
-	_ = v117
-	var v128 int32
-	_ = v128
-	var v132 int32
-	_ = v132
-	var v137 int32
-	_ = v137
-	var v141 int32
-	_ = v141
-	var v147 int32
-	_ = v147
-	var v152 int32
-	_ = v152
-	var v156 int32
-	_ = v156
-	var v162 int32
-	_ = v162
-	var v167 int32
-	_ = v167
+	var v113 int32
+	_ = v113
+	var v115 int32
+	_ = v115
+	var v126 int32
+	_ = v126
+	var v130 int32
+	_ = v130
+	var v135 int32
+	_ = v135
+	var v139 int32
+	_ = v139
+	var v145 int32
+	_ = v145
+	var v150 int32
+	_ = v150
+	var v154 int32
+	_ = v154
+	var v160 int32
+	_ = v160
+	var v165 int32
+	_ = v165
 	v4 = m.G0
 	v6 = v4 - int32(160)
 	m.G0 = v6
@@ -828,33 +823,33 @@ func F_recovery_create_dbdir(m *base.Module, l0 int32, l1 int32) {
 	goto L4
 L1:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
-	v156 = m.ExcPending
-	if v156 != 0 {
+	v154 = m.ExcPending
+	if v154 != 0 {
 		goto L19
 	} else {
-		goto L61
+		goto L54
 	}
 L2:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v139 = m.ExcPending
+	if v139 != 0 {
 		goto L19
 	} else {
-		goto L58
+		goto L51
 	}
 L3:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
-	v128 = m.ExcPending
-	if v128 != 0 {
+	v126 = m.ExcPending
+	if v126 != 0 {
 		goto L19
 	} else {
-		goto L55
+		goto L48
 	}
 L4:
 	;
@@ -975,10 +970,10 @@ L23:
 	mBase = m.M
 	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	v66 = l0 + base.B2i32(v60 == int32(47))
-	goto L28
+	goto L27
 L24:
 	;
-	F_errfinish(m, int32(_a_F_recovery_create_dbdir_2), int32(3298), int32(_a_F_recovery_create_dbdir_3))
+	F_errfinish(m, int32(_a_F_recovery_create_dbdir_2), int32(3292), int32(_a_F_recovery_create_dbdir_3))
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -991,18 +986,12 @@ L25:
 	goto L23
 L26:
 	;
-	if v116 != 0 {
+	if v113 != 0 {
 		goto L1
 	} else {
-		goto L54
+		goto L47
 	}
 L27:
-	;
-	v117 = F_umask(m, v56)
-	mBase = m.M
-	m.G0 = v53 + int32(96)
-	goto L26
-L28:
 	;
 	v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v66))))
 	if v71 != int32(47) {
@@ -1010,36 +999,46 @@ L28:
 	} else {
 		goto L35
 	}
+L28:
+	;
+	v115 = F_umask(m, v56)
+	mBase = m.M
+	m.G0 = v53 + int32(96)
+	goto L26
 L29:
 	;
-	v116 = v100 >> (uint(int32(31)) % 32)
-	goto L27
+	goto L28
 L30:
 	;
-	goto L29
+	v66 = v66 + int32(1)
+	goto L27
 L31:
 	;
-	v66 = v66 + int32(1)
-	goto L28
+	if v85 == int32(0) {
+		goto L44
+	} else {
+		goto L45
+	}
 L32:
 	;
-	v83 = F_stat(m, l0, v53)
+	v87 = F_mkdir(m, l0, v86)
 	mBase = m.M
-	if v83 == int32(0) {
-		goto L40
+	if int32(0) <= v87 {
+		goto L31
 	} else {
-		goto L41
+		goto L39
 	}
 L33:
 	;
-	v80 = F_umask(m, v56)
+	v83 = F_umask(m, v56)
 	mBase = m.M
-	v82 = int32(0)
+	v85 = int32(0)
+	v86 = v45
 	goto L32
 L34:
 	;
 	if v71 != 0 {
-		goto L31
+		goto L30
 	} else {
 		goto L37
 	}
@@ -1050,10 +1049,9 @@ L36:
 	;
 	v76 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v66))) = uint8(v76)
-	v79 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v66)+1)))
-	if v79 != 0 {
-		v82 = int32(1)
-		goto L32
+	v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v66)+1)))
+	if v78 == v76 {
+		goto L33
 	} else {
 		goto L38
 	}
@@ -1064,162 +1062,131 @@ L37:
 	goto L33
 L38:
 	;
-	goto L33
+	v85 = int32(1)
+	v86 = int32(511)
+	goto L32
 L39:
 	;
-	v107 = int32(47)
-	*(*uint8)(unsafe.Add(mBase, uint32(v66))) = uint8(v107)
-	goto L31
+	v91 = *(*int32)(unsafe.Add(mBase, _c_F_recovery_create_dbdir[3]))
+	if v91 != int32(20) {
+		goto L40
+	} else {
+		goto L41
+	}
 L40:
 	;
-	v86 = *(*int32)(unsafe.Add(mBase, uint32(v53)+4))
-	if v86&int32(_a_F_recovery_create_dbdir_4) != int32(_a_F_recovery_create_dbdir_5) {
-		goto L43
-	} else {
-		goto L44
-	}
+	*(*int32)(unsafe.Add(mBase, _c_F_recovery_create_dbdir[3])) = v91
+	v113 = int32(-1)
+	goto L29
 L41:
 	;
-	goto L42
+	v94 = F_stat(m, l0, v53)
+	mBase = m.M
+	if v94 != 0 {
+		goto L40
+	} else {
+		goto L42
+	}
 L42:
 	;
-	if v82 != 0 {
-		goto L50
+	v95 = *(*int32)(unsafe.Add(mBase, uint32(v53)+4))
+	if v95&int32(_a_F_recovery_create_dbdir_4) == int32(_a_F_recovery_create_dbdir_5) {
+		goto L31
 	} else {
-		goto L51
+		goto L43
 	}
 L43:
 	;
-	if v82 != 0 {
-		goto L46
-	} else {
-		goto L47
-	}
+	goto L40
 L44:
 	;
-	goto L45
+	v113 = int32(0)
+	goto L29
 L45:
 	;
-	if v82 != 0 {
-		goto L39
+	goto L46
+L46:
+	;
+	v107 = int32(47)
+	*(*uint8)(unsafe.Add(mBase, uint32(v66))) = uint8(v107)
+	goto L30
+L47:
+	;
+	goto L7
+L48:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
+	F_errmsg_internal(m, int32(_a_F_recovery_create_dbdir_6), v6)
+	mBase = m.M
+	v130 = m.ExcPending
+	if v130 != 0 {
+		goto L19
 	} else {
 		goto L49
 	}
-L46:
-	;
-	v94 = int32(54)
-	goto L48
-L47:
-	;
-	v94 = int32(20)
-	goto L48
-L48:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_recovery_create_dbdir[3])) = v94
-	v116 = int32(-1)
-	goto L27
 L49:
 	;
-	v116 = int32(0)
-	goto L27
+	F_errfinish(m, int32(_a_F_recovery_create_dbdir_2), int32(3285), int32(_a_F_recovery_create_dbdir_3))
+	mBase = m.M
+	v135 = m.ExcPending
+	if v135 != 0 {
+		goto L19
+	} else {
+		goto L50
+	}
 L50:
 	;
-	v99 = int32(511)
-	goto L52
+	base.Wasm_trap_unreachable()
+	for {
+	}
 L51:
 	;
-	v99 = v45
-	goto L52
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+48)) = l0
+	F_errmsg(m, int32(_a_F_recovery_create_dbdir_7), v6+int32(48))
+	mBase = m.M
+	v145 = m.ExcPending
+	if v145 != 0 {
+		goto L19
+	} else {
+		goto L52
+	}
 L52:
 	;
-	v100 = F_mkdir(m, l0, v99)
+	F_errfinish(m, int32(_a_F_recovery_create_dbdir_2), int32(3289), int32(_a_F_recovery_create_dbdir_3))
 	mBase = m.M
-	v101 = int32(0)
-	if v82&base.B2i32(v101 <= v100) == v101 {
-		goto L30
+	v150 = m.ExcPending
+	if v150 != 0 {
+		goto L19
 	} else {
 		goto L53
 	}
 L53:
 	;
-	goto L39
+	base.Wasm_trap_unreachable()
+	for {
+	}
 L54:
 	;
-	goto L7
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = l0
+	F_errmsg(m, int32(_a_F_recovery_create_dbdir_8), v6+int32(16))
+	mBase = m.M
+	v160 = m.ExcPending
+	if v160 != 0 {
+		goto L19
+	} else {
+		goto L55
+	}
 L55:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-	F_errmsg_internal(m, int32(_a_F_recovery_create_dbdir_6), v6)
+	F_errfinish(m, int32(_a_F_recovery_create_dbdir_2), int32(3296), int32(_a_F_recovery_create_dbdir_3))
 	mBase = m.M
-	v132 = m.ExcPending
-	if v132 != 0 {
+	v165 = m.ExcPending
+	if v165 != 0 {
 		goto L19
 	} else {
 		goto L56
 	}
 L56:
-	;
-	F_errfinish(m, int32(_a_F_recovery_create_dbdir_2), int32(3291), int32(_a_F_recovery_create_dbdir_3))
-	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
-		goto L19
-	} else {
-		goto L57
-	}
-L57:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L58:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+48)) = l0
-	F_errmsg(m, int32(_a_F_recovery_create_dbdir_7), v6+int32(48))
-	mBase = m.M
-	v147 = m.ExcPending
-	if v147 != 0 {
-		goto L19
-	} else {
-		goto L59
-	}
-L59:
-	;
-	F_errfinish(m, int32(_a_F_recovery_create_dbdir_2), int32(3295), int32(_a_F_recovery_create_dbdir_3))
-	mBase = m.M
-	v152 = m.ExcPending
-	if v152 != 0 {
-		goto L19
-	} else {
-		goto L60
-	}
-L60:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L61:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = l0
-	F_errmsg(m, int32(_a_F_recovery_create_dbdir_8), v6+int32(16))
-	mBase = m.M
-	v162 = m.ExcPending
-	if v162 != 0 {
-		goto L19
-	} else {
-		goto L62
-	}
-L62:
-	;
-	F_errfinish(m, int32(_a_F_recovery_create_dbdir_2), int32(3302), int32(_a_F_recovery_create_dbdir_3))
-	mBase = m.M
-	v167 = m.ExcPending
-	if v167 != 0 {
-		goto L19
-	} else {
-		goto L63
-	}
-L63:
 	;
 	base.Wasm_trap_unreachable()
 	for {

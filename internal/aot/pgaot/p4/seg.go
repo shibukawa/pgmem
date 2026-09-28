@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_seg_out(m *base.Module, l0 int32) int32 {
+func F_seg_out(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
@@ -70,26 +70,24 @@ func F_seg_out(m *base.Module, l0 int32) int32 {
 	_ = v63
 	var v64 int32
 	_ = v64
-	var v67 int32
-	_ = v67
-	var v73 int32
-	_ = v73
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
 	var v74 int32
 	_ = v74
+	var v75 float32
+	_ = v75
 	var v76 int32
 	_ = v76
-	var v77 float32
+	var v77 int32
 	_ = v77
 	var v78 int32
 	_ = v78
-	var v79 int32
-	_ = v79
-	var v80 int32
-	_ = v80
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v13 = F_palloc(m, int32(40))
 	mBase = m.M
 	v16 = m.ExcPending
@@ -100,7 +98,7 @@ func F_seg_out(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
 	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+10)))
@@ -152,7 +150,7 @@ L7:
 L8:
 	;
 	m.G0 = v9 + int32(32)
-	return v13
+	return base.I64_extend_i32_u(v13)
 L9:
 	;
 	if v30 != int32(45) {
@@ -248,37 +246,39 @@ L20:
 	switch v64 - int32(60) {
 	case 0, 2:
 		goto L22
+	case 1:
+		v74 = v63
+		goto L21
 	default:
 		goto L23
 	}
 L21:
 	;
-	v77 = *(*float32)(unsafe.Add(mBase, uint32(v11)+4))
-	v78 = int32(*(*int8)(unsafe.Add(mBase, uint32(v11)+9)))
-	v79 = F_restore(m, v76, v77, v78)
+	v75 = *(*float32)(unsafe.Add(mBase, uint32(v11)+4))
+	v76 = int32(*(*int8)(unsafe.Add(mBase, uint32(v11)+9)))
+	v77 = F_restore(m, v74, v75, v76)
 	mBase = m.M
-	v80 = m.ExcPending
-	if v80 != 0 {
+	v78 = m.ExcPending
+	if v78 != 0 {
 		goto L1
 	} else {
 		goto L26
 	}
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = base.I32_extend8_s(v64)
-	v73 = F_pg_sprintf(m, v63, int32(_a_F_seg_out_0), v9)
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v64
+	v71 = F_pg_sprintf(m, v63, int32(_a_F_seg_out_0), v9)
 	mBase = m.M
-	v74 = m.ExcPending
-	if v74 != 0 {
+	v72 = m.ExcPending
+	if v72 != 0 {
 		goto L1
 	} else {
 		goto L25
 	}
 L23:
 	;
-	v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+10)))
-	if v67 != int32(126) {
-		v76 = v63
+	if v64 != int32(126) {
+		v74 = v63
 		goto L21
 	} else {
 		goto L24
@@ -288,13 +288,13 @@ L24:
 	goto L22
 L25:
 	;
-	v76 = v73 + v63
+	v74 = v71 + v63
 	goto L21
 L26:
 	;
 	goto L8
 }
-func F_seg_right(m *base.Module, l0 int32) int32 {
+func F_seg_right(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -305,32 +305,32 @@ func F_seg_right(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v5 float32
 	_ = v5
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = *(*float32)(unsafe.Add(mBase, uint32(v2)))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v5 = *(*float32)(unsafe.Add(mBase, uint32(v4)+4))
-	return base.F32_gt(v3, v5)
+	return base.I64_extend_i32_u(base.F32_gt(v3, v5))
 }
-func F_seg_same(m *base.Module, l0 int32) int32 {
+func F_seg_same(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F_seg_same_0), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return base.B2i32(v6 == int32(0))
+		return base.I64_extend_i32_u(base.B2i32(base.I32_wrap_i64(v6) == int32(0)))
 	}
 }
 func F_seg_yy_scan_string(m *base.Module, l0 int32, l1 int32) int32 {

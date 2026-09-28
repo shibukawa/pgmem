@@ -16,38 +16,40 @@ func F_GetPublicationSchemas(m *base.Module, l0 int32) int32 {
 	_ = v12
 	var v15 int32
 	_ = v15
-	var v20 int32
-	_ = v20
-	var v21 int32
-	_ = v21
+	var v17 int32
+	_ = v17
 	var v23 int32
 	_ = v23
+	var v24 int32
+	_ = v24
 	var v26 int32
 	_ = v26
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v33 int32
-	_ = v33
-	var v34 int32
-	_ = v34
-	var v35 int32
-	_ = v35
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
 	var v36 int32
 	_ = v36
+	var v37 int32
+	_ = v37
 	var v38 int32
 	_ = v38
 	var v39 int32
 	_ = v39
-	var v40 int32
-	_ = v40
+	var v41 int32
+	_ = v41
 	var v42 int32
 	_ = v42
+	var v43 int32
+	_ = v43
 	var v45 int32
 	_ = v45
+	var v48 int32
+	_ = v48
 	v6 = m.G0
-	v8 = v6 - int32(48)
+	v8 = v6 + int32(-64)
 	m.G0 = v8
 	v12 = F_table_open(m, int32(_a_F_GetPublicationSchemas_0), int32(1))
 	mBase = m.M
@@ -62,66 +64,67 @@ L1:
 	return int32(0)
 L2:
 	;
-	F_ScanKeyInit(m, v8, int32(2), int32(3), int32(184), l0)
+	v17 = v6 + int32(-56)
+	F_ScanKeyInit(m, v17, int32(2), int32(3), int32(184), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
+	v23 = m.ExcPending
+	if v23 != 0 {
 		goto L1
 	} else {
 		goto L3
 	}
 L3:
 	;
-	v21 = int32(0)
-	v23 = int32(1)
-	v26 = F_systable_beginscan(m, v12, int32(_a_F_GetPublicationSchemas_1), v23, v21, v23, v8)
+	v24 = int32(0)
+	v26 = int32(1)
+	v29 = F_systable_beginscan(m, v12, int32(_a_F_GetPublicationSchemas_1), v26, v24, v26, v17)
 	mBase = m.M
-	v27 = m.ExcPending
-	if v27 != 0 {
+	v30 = m.ExcPending
+	if v30 != 0 {
 		goto L1
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v28 = v21
+	v31 = v24
 	goto L5
 L5:
 	;
-	v33 = F_systable_getnext(m, v26)
+	v36 = F_systable_getnext(m, v29)
 	mBase = m.M
-	v34 = m.ExcPending
-	if v34 != 0 {
+	v37 = m.ExcPending
+	if v37 != 0 {
 		goto L1
 	} else {
 		goto L7
 	}
 L6:
 	;
-	F_systable_endscan(m, v26)
+	F_systable_endscan(m, v29)
 	mBase = m.M
-	v42 = m.ExcPending
-	if v42 != 0 {
+	v45 = m.ExcPending
+	if v45 != 0 {
 		goto L1
 	} else {
 		goto L12
 	}
 L7:
 	;
-	if v33 != 0 {
+	if v36 != 0 {
 		goto L8
 	} else {
 		goto L9
 	}
 L8:
 	;
-	v35 = *(*int32)(unsafe.Add(mBase, uint32(v33)+16))
-	v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+22)))
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v35+v36)+8))
-	v39 = F_lappend_oid(m, v28, v38)
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(v36)+16))
+	v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v38)+22)))
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v38+v39)+8))
+	v42 = F_lappend_oid(m, v31, v41)
 	mBase = m.M
-	v40 = m.ExcPending
-	if v40 != 0 {
+	v43 = m.ExcPending
+	if v43 != 0 {
 		goto L1
 	} else {
 		goto L11
@@ -134,93 +137,90 @@ L10:
 	goto L6
 L11:
 	;
-	v28 = v39
+	v31 = v42
 	goto L5
 L12:
 	;
 	F_relation_close(m, v12, int32(1))
 	mBase = m.M
-	v45 = m.ExcPending
-	if v45 != 0 {
+	v48 = m.ExcPending
+	if v48 != 0 {
 		goto L1
 	} else {
 		goto L13
 	}
 L13:
 	;
-	m.G0 = v8 + int32(48)
-	return v28
+	m.G0 = v8 - int32(-64)
+	return v31
 }
 func F_PublicationDropTables(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
 	var v9 int32
 	_ = v9
 	var v11 int32
 	_ = v11
 	var v15 int32
 	_ = v15
-	var v22 int32
-	_ = v22
-	var v26 int32
-	_ = v26
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
+	var v20 int32
+	_ = v20
+	var v28 int32
+	_ = v28
+	var v32 int32
+	_ = v32
 	var v33 int32
 	_ = v33
-	var v34 int32
-	_ = v34
 	var v35 int32
 	_ = v35
-	var v37 int32
+	var v36 int64
+	_ = v36
+	var v37 int64
 	_ = v37
-	var v38 int32
-	_ = v38
-	var v44 int32
-	_ = v44
-	var v47 int32
-	_ = v47
-	var v48 int32
-	_ = v48
-	var v54 int32
-	_ = v54
-	var v59 int32
-	_ = v59
-	var v60 int32
-	_ = v60
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
+	var v56 int32
+	_ = v56
 	var v61 int32
 	_ = v61
-	var v71 int32
-	_ = v71
+	var v62 int32
+	_ = v62
+	var v63 int32
+	_ = v63
 	var v73 int32
 	_ = v73
-	var v74 int32
-	_ = v74
-	var v90 int32
-	_ = v90
-	var v93 int32
-	_ = v93
-	var v97 int32
-	_ = v97
-	var v102 int32
-	_ = v102
-	var v106 int32
-	_ = v106
-	var v109 int32
-	_ = v109
-	var v113 int32
-	_ = v113
-	var v118 int32
-	_ = v118
-	v4 = int32(0)
+	var v75 int32
+	_ = v75
+	var v76 int32
+	_ = v76
+	var v92 int32
+	_ = v92
+	var v95 int32
+	_ = v95
+	var v99 int32
+	_ = v99
+	var v104 int32
+	_ = v104
+	var v108 int32
+	_ = v108
+	var v111 int32
+	_ = v111
+	var v115 int32
+	_ = v115
+	var v120 int32
+	_ = v120
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
-	if l1 == v4 {
+	if l1 == int32(0) {
 		goto L3
 	} else {
 		goto L4
@@ -229,8 +229,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v106 = m.ExcPending
-	if v106 != 0 {
+	v108 = m.ExcPending
+	if v108 != 0 {
 		goto L10
 	} else {
 		goto L27
@@ -239,8 +239,8 @@ L2:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v90 = m.ExcPending
-	if v90 != 0 {
+	v92 = m.ExcPending
+	if v92 != 0 {
 		goto L10
 	} else {
 		goto L23
@@ -259,14 +259,14 @@ L4:
 	}
 L5:
 	;
-	v22 = v4
+	v20 = int32(0)
 	goto L6
 L6:
 	;
-	v26 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-	v30 = *(*int32)(unsafe.Add(mBase, uint32(v26+v22<<(uint(int32(2))%32))))
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+8))
-	if v31 != 0 {
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v28+v20<<(uint(int32(2))%32))))
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+8))
+	if v33 != 0 {
 		goto L2
 	} else {
 		goto L8
@@ -276,23 +276,23 @@ L7:
 	goto L3
 L8:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
-	v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+56))
-	v35 = int32(0)
-	v37 = F_GetSysCacheOid(m, int32(53), v34, l0, v35, v35)
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v32)))
+	v36 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v35)+56)))
+	v37 = int64(0)
+	v39 = F_GetSysCacheOid(m, int32(53), v36, base.I64_extend_i32_u(l0), v37, v37)
 	mBase = m.M
-	v38 = m.ExcPending
-	if v38 != 0 {
+	v40 = m.ExcPending
+	if v40 != 0 {
 		goto L10
 	} else {
 		goto L11
 	}
 L9:
 	;
-	v73 = v22 + int32(1)
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	if v73 < v74 {
-		v22 = v73
+	v75 = v20 + int32(1)
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	if v75 < v76 {
+		v20 = v75
 		goto L6
 	} else {
 		goto L22
@@ -302,7 +302,7 @@ L10:
 	return
 L11:
 	;
-	if v37 == int32(0) {
+	if v39 == int32(0) {
 		goto L12
 	} else {
 		goto L13
@@ -319,8 +319,8 @@ L13:
 	goto L14
 L14:
 	;
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(v30)+4))
-	if v60 != 0 {
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v32)+4))
+	if v62 != 0 {
 		goto L1
 	} else {
 		goto L20
@@ -329,8 +329,8 @@ L15:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v44 = m.ExcPending
-	if v44 != 0 {
+	v46 = m.ExcPending
+	if v46 != 0 {
 		goto L10
 	} else {
 		goto L16
@@ -339,30 +339,30 @@ L16:
 	;
 	F_errcode(m, int32(67137668))
 	mBase = m.M
-	v47 = m.ExcPending
-	if v47 != 0 {
+	v49 = m.ExcPending
+	if v49 != 0 {
 		goto L10
 	} else {
 		goto L17
 	}
 L17:
 	;
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v33)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v48 + int32(4)
+	v50 = *(*int32)(unsafe.Add(mBase, uint32(v35)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v50 + int32(4)
 	F_errmsg(m, int32(_a_F_PublicationDropTables_0), v11)
 	mBase = m.M
-	v54 = m.ExcPending
-	if v54 != 0 {
+	v56 = m.ExcPending
+	if v56 != 0 {
 		goto L10
 	} else {
 		goto L18
 	}
 L18:
 	;
-	F_errfinish(m, int32(_a_F_PublicationDropTables_1), int32(1921), int32(_a_F_PublicationDropTables_2))
+	F_errfinish(m, int32(_a_F_PublicationDropTables_1), int32(2103), int32(_a_F_PublicationDropTables_2))
 	mBase = m.M
-	v59 = m.ExcPending
-	if v59 != 0 {
+	v61 = m.ExcPending
+	if v61 != 0 {
 		goto L10
 	} else {
 		goto L19
@@ -374,14 +374,14 @@ L19:
 	}
 L20:
 	;
-	v61 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v61
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v37
+	v63 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v63
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v39
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = int32(_a_F_PublicationDropTables_3)
-	F_performDeletion(m, v11+int32(4), int32(1), v61)
+	F_performDeletion(m, v11+int32(4), int32(1), v63)
 	mBase = m.M
-	v71 = m.ExcPending
-	if v71 != 0 {
+	v73 = m.ExcPending
+	if v73 != 0 {
 		goto L10
 	} else {
 		goto L21
@@ -396,8 +396,8 @@ L23:
 	;
 	F_errcode(m, int32(16801924))
 	mBase = m.M
-	v93 = m.ExcPending
-	if v93 != 0 {
+	v95 = m.ExcPending
+	if v95 != 0 {
 		goto L10
 	} else {
 		goto L24
@@ -406,18 +406,18 @@ L24:
 	;
 	F_errmsg(m, int32(_a_F_PublicationDropTables_4), int32(0))
 	mBase = m.M
-	v97 = m.ExcPending
-	if v97 != 0 {
+	v99 = m.ExcPending
+	if v99 != 0 {
 		goto L10
 	} else {
 		goto L25
 	}
 L25:
 	;
-	F_errfinish(m, int32(_a_F_PublicationDropTables_1), int32(1908), int32(_a_F_PublicationDropTables_2))
+	F_errfinish(m, int32(_a_F_PublicationDropTables_1), int32(2090), int32(_a_F_PublicationDropTables_2))
 	mBase = m.M
-	v102 = m.ExcPending
-	if v102 != 0 {
+	v104 = m.ExcPending
+	if v104 != 0 {
 		goto L10
 	} else {
 		goto L26
@@ -431,8 +431,8 @@ L27:
 	;
 	F_errcode(m, int32(16801924))
 	mBase = m.M
-	v109 = m.ExcPending
-	if v109 != 0 {
+	v111 = m.ExcPending
+	if v111 != 0 {
 		goto L10
 	} else {
 		goto L28
@@ -441,18 +441,18 @@ L28:
 	;
 	F_errmsg(m, int32(_a_F_PublicationDropTables_5), int32(0))
 	mBase = m.M
-	v113 = m.ExcPending
-	if v113 != 0 {
+	v115 = m.ExcPending
+	if v115 != 0 {
 		goto L10
 	} else {
 		goto L29
 	}
 L29:
 	;
-	F_errfinish(m, int32(_a_F_PublicationDropTables_1), int32(1927), int32(_a_F_PublicationDropTables_2))
+	F_errfinish(m, int32(_a_F_PublicationDropTables_1), int32(2109), int32(_a_F_PublicationDropTables_2))
 	mBase = m.M
-	v118 = m.ExcPending
-	if v118 != 0 {
+	v120 = m.ExcPending
+	if v120 != 0 {
 		goto L10
 	} else {
 		goto L30
@@ -468,7 +468,7 @@ func F_get_publication_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v9 = Fn13901(m, l0, l1, int32(_a_F_get_publication_oid_0), int32(3774), int32(_a_F_get_publication_oid_1), int32(_a_F_get_publication_oid_2), int32(67137668), int32(48))
+	v9 = Fn14290(m, l0, l1, int32(_a_F_get_publication_oid_0), int32(3968), int32(_a_F_get_publication_oid_1), int32(_a_F_get_publication_oid_2), int32(67137668), int32(48))
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)

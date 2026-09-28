@@ -5,6 +5,42 @@ import (
 	"unsafe"
 )
 
+func F_expression_has_grouping_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	if l0 != 0 {
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = l2
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l1
+		v15 = F_grouping_conflict_walker(m, l0, v7+int32(4))
+		mBase = m.M
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return int32(0)
+		} else {
+			v20 = v15
+			m.G0 = v7 + int32(16)
+			return v20
+		}
+	} else {
+		v20 = int32(0)
+		m.G0 = v7 + int32(16)
+		return v20
+	}
+}
 func F_expression_tree_walker_impl_x2especialized_x2e2(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -1037,7 +1073,7 @@ L20:
 		goto L57
 	case 3:
 		goto L58
-	case 5, 6, 7, 12, 33, 39, 55, 56, 57, 58, 62, 66, 105, 112, 377:
+	case 5, 6, 7, 12, 33, 39, 55, 56, 57, 58, 62, 66, 105, 112, 381:
 		goto L4
 	case 8:
 		goto L5
@@ -1155,15 +1191,15 @@ L20:
 		goto L54
 	case 141:
 		goto L67
-	case 280:
+	case 283:
 		goto L66
-	case 318:
+	case 320:
 		goto L65
-	case 321:
-		goto L62
 	case 323:
+		goto L62
+	case 325:
 		goto L61
-	case 376:
+	case 380:
 		goto L69
 	}
 L21:
@@ -1932,7 +1968,7 @@ L97:
 	}
 L98:
 	;
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(v16)+20))
+	v91 = *(*int32)(unsafe.Add(mBase, uint32(v16)+24))
 	v92 = F_expression_returns_set_walker(m, v91, l1)
 	mBase = m.M
 	v93 = m.ExcPending
@@ -1951,7 +1987,7 @@ L99:
 	}
 L100:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, uint32(v16)+24))
+	v94 = *(*int32)(unsafe.Add(mBase, uint32(v16)+28))
 	v95 = F_expression_returns_set_walker(m, v94, l1)
 	mBase = m.M
 	v96 = m.ExcPending
@@ -1970,7 +2006,7 @@ L101:
 	}
 L102:
 	;
-	v97 = *(*int32)(unsafe.Add(mBase, uint32(v16)+32))
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(v16)+36))
 	v98 = F_expression_returns_set_walker(m, v97, l1)
 	mBase = m.M
 	v99 = m.ExcPending
@@ -2340,7 +2376,7 @@ L150:
 	}
 L151:
 	;
-	F_errfinish(m, int32(_a_F_expression_tree_walker_impl_x2especialized_x2e2_1), int32(2669), int32(_a_F_expression_tree_walker_impl_x2especialized_x2e2_2))
+	F_errfinish(m, int32(_a_F_expression_tree_walker_impl_x2especialized_x2e2_1), int32(2683), int32(_a_F_expression_tree_walker_impl_x2especialized_x2e2_2))
 	mBase = m.M
 	v214 = m.ExcPending
 	if v214 != 0 {

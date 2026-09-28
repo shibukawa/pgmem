@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_ShutdownPostgres(m *base.Module, l0 int32, l1 int32) {
+func F_ShutdownPostgres(m *base.Module, l0 int32, l1 int64) {
 	var v4 int32
 	_ = v4
 	var v8 int32
@@ -45,9 +45,11 @@ func F_shutdown_validator_library(m *base.Module, l0 int32) {
 		if v8 != 0 {
 			return
 		} else {
+			*(*int32)(unsafe.Add(mBase, _c_F_shutdown_validator_library[2])) = int32(0)
 			return
 		}
 	} else {
+		*(*int32)(unsafe.Add(mBase, _c_F_shutdown_validator_library[2])) = int32(0)
 		return
 	}
 }

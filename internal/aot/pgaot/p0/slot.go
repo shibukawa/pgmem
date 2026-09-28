@@ -5,55 +5,72 @@ import (
 	"unsafe"
 )
 
-func F_CheckSlotRequirements(m *base.Module) {
+func F_CheckSlotRequirements(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
-	_ = v2
-	var v4 int32
-	_ = v4
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
 	var v10 int32
 	_ = v10
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v22 int32
-	_ = v22
-	var v26 int32
-	_ = v26
-	var v29 int32
-	_ = v29
-	var v33 int32
-	_ = v33
-	var v38 int32
-	_ = v38
-	v2 = *(*int32)(unsafe.Add(mBase, _c_F_CheckSlotRequirements[0]))
-	if v2 != 0 {
-		v4 = *(*int32)(unsafe.Add(mBase, _c_F_CheckSlotRequirements[1]))
-		if v4 <= int32(0) {
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v37 int32
+	_ = v37
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v54 int32
+	_ = v54
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v70 int32
+	_ = v70
+	var v75 int32
+	_ = v75
+	v3 = m.G0
+	v5 = v3 - int32(32)
+	m.G0 = v5
+	if l0 == int32(0) {
+		v10 = *(*int32)(unsafe.Add(mBase, _c_F_CheckSlotRequirements[0]))
+		if v10 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v26 = m.ExcPending
-			if v26 != 0 {
+			v27 = m.ExcPending
+			if v27 != 0 {
 				return
 			} else {
 				F_errcode(m, int32(325))
 				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
+				v30 = m.ExcPending
+				if v30 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(_a_F_CheckSlotRequirements_0), int32(0))
+					*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = int32(_a_F_CheckSlotRequirements_0)
+					F_errmsg(m, int32(_a_F_CheckSlotRequirements_1), v5+int32(16))
 					mBase = m.M
-					v33 = m.ExcPending
-					if v33 != 0 {
+					v37 = m.ExcPending
+					if v37 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_CheckSlotRequirements_1), int32(1539), int32(_a_F_CheckSlotRequirements_2))
+						F_errfinish(m, int32(_a_F_CheckSlotRequirements_2), int32(1674), int32(_a_F_CheckSlotRequirements_3))
 						mBase = m.M
-						v38 = m.ExcPending
-						if v38 != 0 {
+						v42 = m.ExcPending
+						if v42 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -64,38 +81,232 @@ func F_CheckSlotRequirements(m *base.Module) {
 				}
 			}
 		} else {
-			return
-		}
-	} else {
-		F_errstart_cold(m, int32(21), int32(0))
-		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return
-		} else {
-			F_errcode(m, int32(325))
-			mBase = m.M
-			v13 = m.ExcPending
-			if v13 != 0 {
-				return
-			} else {
-				F_errmsg(m, int32(_a_F_CheckSlotRequirements_3), int32(0))
-				mBase = m.M
-				v17 = m.ExcPending
-				if v17 != 0 {
-					return
-				} else {
-					F_errfinish(m, int32(_a_F_CheckSlotRequirements_1), int32(1534), int32(_a_F_CheckSlotRequirements_2))
+			if l0 != 0 {
+				v14 = *(*int32)(unsafe.Add(mBase, _c_F_CheckSlotRequirements[1]))
+				if v14 == int32(0) {
+					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v22 = m.ExcPending
-					if v22 != 0 {
+					v46 = m.ExcPending
+					if v46 != 0 {
 						return
 					} else {
-						base.Wasm_trap_unreachable()
-						for {
+						F_errcode(m, int32(325))
+						mBase = m.M
+						v49 = m.ExcPending
+						if v49 != 0 {
+							return
+						} else {
+							*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(_a_F_CheckSlotRequirements_4)
+							F_errmsg(m, int32(_a_F_CheckSlotRequirements_5), v5)
+							mBase = m.M
+							v54 = m.ExcPending
+							if v54 != 0 {
+								return
+							} else {
+								F_errfinish(m, int32(_a_F_CheckSlotRequirements_2), int32(1680), int32(_a_F_CheckSlotRequirements_3))
+								mBase = m.M
+								v59 = m.ExcPending
+								if v59 != 0 {
+									return
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v18 = *(*int32)(unsafe.Add(mBase, _c_F_CheckSlotRequirements[2]))
+					if v18 <= int32(0) {
+						F_errstart_cold(m, int32(21), int32(0))
+						mBase = m.M
+						v63 = m.ExcPending
+						if v63 != 0 {
+							return
+						} else {
+							F_errcode(m, int32(325))
+							mBase = m.M
+							v66 = m.ExcPending
+							if v66 != 0 {
+								return
+							} else {
+								F_errmsg(m, int32(_a_F_CheckSlotRequirements_6), int32(0))
+								mBase = m.M
+								v70 = m.ExcPending
+								if v70 != 0 {
+									return
+								} else {
+									F_errfinish(m, int32(_a_F_CheckSlotRequirements_2), int32(1685), int32(_a_F_CheckSlotRequirements_3))
+									mBase = m.M
+									v75 = m.ExcPending
+									if v75 != 0 {
+										return
+									} else {
+										base.Wasm_trap_unreachable()
+										for {
+										}
+									}
+								}
+							}
+						}
+					} else {
+						m.G0 = v5 + int32(32)
+						return
+					}
+				}
+			} else {
+				v18 = *(*int32)(unsafe.Add(mBase, _c_F_CheckSlotRequirements[2]))
+				if v18 <= int32(0) {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v63 = m.ExcPending
+					if v63 != 0 {
+						return
+					} else {
+						F_errcode(m, int32(325))
+						mBase = m.M
+						v66 = m.ExcPending
+						if v66 != 0 {
+							return
+						} else {
+							F_errmsg(m, int32(_a_F_CheckSlotRequirements_6), int32(0))
+							mBase = m.M
+							v70 = m.ExcPending
+							if v70 != 0 {
+								return
+							} else {
+								F_errfinish(m, int32(_a_F_CheckSlotRequirements_2), int32(1685), int32(_a_F_CheckSlotRequirements_3))
+								mBase = m.M
+								v75 = m.ExcPending
+								if v75 != 0 {
+									return
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					m.G0 = v5 + int32(32)
+					return
+				}
+			}
+		}
+	} else {
+		if l0 != 0 {
+			v14 = *(*int32)(unsafe.Add(mBase, _c_F_CheckSlotRequirements[1]))
+			if v14 == int32(0) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v46 = m.ExcPending
+				if v46 != 0 {
+					return
+				} else {
+					F_errcode(m, int32(325))
+					mBase = m.M
+					v49 = m.ExcPending
+					if v49 != 0 {
+						return
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(_a_F_CheckSlotRequirements_4)
+						F_errmsg(m, int32(_a_F_CheckSlotRequirements_5), v5)
+						mBase = m.M
+						v54 = m.ExcPending
+						if v54 != 0 {
+							return
+						} else {
+							F_errfinish(m, int32(_a_F_CheckSlotRequirements_2), int32(1680), int32(_a_F_CheckSlotRequirements_3))
+							mBase = m.M
+							v59 = m.ExcPending
+							if v59 != 0 {
+								return
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
 						}
 					}
 				}
+			} else {
+				v18 = *(*int32)(unsafe.Add(mBase, _c_F_CheckSlotRequirements[2]))
+				if v18 <= int32(0) {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v63 = m.ExcPending
+					if v63 != 0 {
+						return
+					} else {
+						F_errcode(m, int32(325))
+						mBase = m.M
+						v66 = m.ExcPending
+						if v66 != 0 {
+							return
+						} else {
+							F_errmsg(m, int32(_a_F_CheckSlotRequirements_6), int32(0))
+							mBase = m.M
+							v70 = m.ExcPending
+							if v70 != 0 {
+								return
+							} else {
+								F_errfinish(m, int32(_a_F_CheckSlotRequirements_2), int32(1685), int32(_a_F_CheckSlotRequirements_3))
+								mBase = m.M
+								v75 = m.ExcPending
+								if v75 != 0 {
+									return
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					m.G0 = v5 + int32(32)
+					return
+				}
+			}
+		} else {
+			v18 = *(*int32)(unsafe.Add(mBase, _c_F_CheckSlotRequirements[2]))
+			if v18 <= int32(0) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v63 = m.ExcPending
+				if v63 != 0 {
+					return
+				} else {
+					F_errcode(m, int32(325))
+					mBase = m.M
+					v66 = m.ExcPending
+					if v66 != 0 {
+						return
+					} else {
+						F_errmsg(m, int32(_a_F_CheckSlotRequirements_6), int32(0))
+						mBase = m.M
+						v70 = m.ExcPending
+						if v70 != 0 {
+							return
+						} else {
+							F_errfinish(m, int32(_a_F_CheckSlotRequirements_2), int32(1685), int32(_a_F_CheckSlotRequirements_3))
+							mBase = m.M
+							v75 = m.ExcPending
+							if v75 != 0 {
+								return
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			} else {
+				m.G0 = v5 + int32(32)
+				return
 			}
 		}
 	}

@@ -8,24 +8,21 @@ import (
 func F_SN_set_current(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
 	var v5 int32
 	_ = v5
-	var v7 int32
-	_ = v7
-	var v10 int32
-	_ = v10
-	v4 = int32(0)
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v7 = F_replace_s(m, l0, v4, v5, l1, l2, v4)
+	v6 = F_replace_s(m, l0, int32(0), v5, l1, l2)
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v9 = m.ExcPending
+	if v9 != 0 {
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = int32(0)
-		return v7
+		return v6
 	}
 }
 func F_sn_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

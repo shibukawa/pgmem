@@ -75,7 +75,7 @@ func F_GetNewObjectId(m *base.Module) int32 {
 	v5 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_GetNewObjectId[0])))
 	if v5 == int32(1) {
 		v10 = *(*int32)(unsafe.Add(mBase, _c_F_GetNewObjectId[1]))
-		v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+316))
+		v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+308))
 		v13 = base.B2i32(v11 != int32(2))
 		*(*uint8)(unsafe.Add(mBase, _c_F_GetNewObjectId[0])) = uint8(v13)
 		v15 = v13
@@ -184,7 +184,7 @@ func F_GetNewObjectId(m *base.Module) int32 {
 			if v101 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_GetNewObjectId_5), int32(561), int32(_a_F_GetNewObjectId_6))
+				F_errfinish(m, int32(_a_F_GetNewObjectId_5), int32(560), int32(_a_F_GetNewObjectId_6))
 				mBase = m.M
 				v106 = m.ExcPending
 				if v106 != 0 {
@@ -227,24 +227,22 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v27
 	var v29 int32
 	_ = v29
-	var v30 int32
-	_ = v30
 	var v31 int32
 	_ = v31
-	var v34 int32
-	_ = v34
+	var v32 int32
+	_ = v32
 	var v35 int32
 	_ = v35
-	var v37 int32
-	_ = v37
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
 	var v42 int32
 	_ = v42
-	var v45 int32
-	_ = v45
+	var v43 int32
+	_ = v43
 	var v46 int32
 	_ = v46
 	var v47 int32
@@ -253,14 +251,14 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v48
 	var v49 int32
 	_ = v49
-	var v51 int32
-	_ = v51
+	var v50 int32
+	_ = v50
 	var v52 int32
 	_ = v52
 	var v53 int32
 	_ = v53
-	var v55 int32
-	_ = v55
+	var v54 int32
+	_ = v54
 	var v56 int32
 	_ = v56
 	var v57 int32
@@ -269,10 +267,10 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v58
 	var v59 int32
 	_ = v59
-	var v61 int32
-	_ = v61
-	var v63 int32
-	_ = v63
+	var v60 int32
+	_ = v60
+	var v62 int32
+	_ = v62
 	var v64 int32
 	_ = v64
 	var v65 int32
@@ -281,14 +279,14 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v66
 	var v67 int32
 	_ = v67
-	var v69 int32
-	_ = v69
+	var v68 int32
+	_ = v68
 	var v70 int32
 	_ = v70
-	var v72 int32
-	_ = v72
-	var v74 int32
-	_ = v74
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
 	var v75 int32
 	_ = v75
 	var v76 int32
@@ -297,40 +295,40 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v77
 	var v78 int32
 	_ = v78
-	var v82 int32
-	_ = v82
-	var v85 int32
-	_ = v85
-	var v91 int32
-	_ = v91
-	var v96 int32
-	_ = v96
+	var v79 int32
+	_ = v79
+	var v83 int32
+	_ = v83
+	var v86 int32
+	_ = v86
+	var v92 int32
+	_ = v92
 	var v97 int32
 	_ = v97
 	var v98 int32
 	_ = v98
-	var v100 int32
-	_ = v100
+	var v99 int32
+	_ = v99
 	var v101 int32
 	_ = v101
 	var v102 int32
 	_ = v102
-	var v104 int32
-	_ = v104
+	var v103 int32
+	_ = v103
 	var v105 int32
 	_ = v105
-	var v107 int32
-	_ = v107
+	var v106 int32
+	_ = v106
 	var v108 int32
 	_ = v108
-	var v110 int32
-	_ = v110
+	var v109 int32
+	_ = v109
 	var v111 int32
 	_ = v111
-	var v115 int32
-	_ = v115
-	var v118 int32
-	_ = v118
+	var v112 int32
+	_ = v112
+	var v116 int32
+	_ = v116
 	var v119 int32
 	_ = v119
 	var v120 int32
@@ -339,12 +337,12 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v121
 	var v122 int32
 	_ = v122
-	var v129 int32
-	_ = v129
-	var v134 int32
-	_ = v134
-	var v137 int32
-	_ = v137
+	var v123 int32
+	_ = v123
+	var v130 int32
+	_ = v130
+	var v135 int32
+	_ = v135
 	var v138 int32
 	_ = v138
 	var v139 int32
@@ -355,8 +353,8 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v141
 	var v142 int32
 	_ = v142
-	var v145 int32
-	_ = v145
+	var v143 int32
+	_ = v143
 	var v146 int32
 	_ = v146
 	var v147 int32
@@ -367,109 +365,117 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v149
 	var v150 int32
 	_ = v150
-	var v154 int32
-	_ = v154
-	var v157 int32
-	_ = v157
-	var v161 int32
-	_ = v161
+	var v151 int32
+	_ = v151
+	var v155 int32
+	_ = v155
+	var v158 int32
+	_ = v158
+	var v162 int32
+	_ = v162
 	var v168 int32
 	_ = v168
-	var v173 int32
-	_ = v173
+	var v169 int32
+	_ = v169
 	var v174 int32
 	_ = v174
 	var v175 int32
 	_ = v175
-	var v178 int32
-	_ = v178
+	var v176 int32
+	_ = v176
 	var v179 int32
 	_ = v179
-	var v183 int32
-	_ = v183
-	var v186 int32
-	_ = v186
-	var v190 int32
-	_ = v190
-	var v192 int32
-	_ = v192
+	var v180 int32
+	_ = v180
+	var v184 int32
+	_ = v184
+	var v187 int32
+	_ = v187
+	var v191 int32
+	_ = v191
 	var v193 int32
 	_ = v193
+	var v194 int32
+	_ = v194
 	var v201 int32
 	_ = v201
-	var v206 int32
-	_ = v206
+	var v202 int32
+	_ = v202
 	var v207 int32
 	_ = v207
 	var v208 int32
 	_ = v208
-	var v212 int32
-	_ = v212
-	var v215 int32
-	_ = v215
-	var v219 int32
-	_ = v219
-	var v224 int32
-	_ = v224
-	var v228 int32
-	_ = v228
-	var v234 int32
-	_ = v234
-	var v239 int32
-	_ = v239
-	var v243 int32
-	_ = v243
-	var v247 int32
-	_ = v247
-	var v252 int32
-	_ = v252
-	var v256 int32
-	_ = v256
-	var v259 int32
-	_ = v259
-	var v263 int32
-	_ = v263
+	var v209 int32
+	_ = v209
+	var v213 int32
+	_ = v213
+	var v216 int32
+	_ = v216
+	var v220 int32
+	_ = v220
+	var v225 int32
+	_ = v225
+	var v229 int32
+	_ = v229
+	var v235 int32
+	_ = v235
+	var v240 int32
+	_ = v240
+	var v244 int32
+	_ = v244
+	var v248 int32
+	_ = v248
+	var v253 int32
+	_ = v253
+	var v257 int32
+	_ = v257
+	var v260 int32
+	_ = v260
+	var v264 int32
+	_ = v264
 	var v270 int32
 	_ = v270
-	var v275 int32
-	_ = v275
+	var v271 int32
+	_ = v271
+	var v276 int32
+	_ = v276
 	v7 = m.G0
 	v9 = v7 - int32(112)
 	m.G0 = v9
 	switch l1 {
-	case 0, 27, 47, 48:
-		v207 = F_superuser_arg(m, l0)
+	case 0, 27, 48, 49:
+		v208 = F_superuser_arg(m, l0)
 		mBase = m.M
-		v208 = m.ExcPending
-		if v208 != 0 {
+		v209 = m.ExcPending
+		if v209 != 0 {
 			return
 		} else {
-			if v207 != 0 {
+			if v208 != 0 {
 				m.G0 = v9 + int32(112)
 				return
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v212 = m.ExcPending
-				if v212 != 0 {
+				v213 = m.ExcPending
+				if v213 != 0 {
 					return
 				} else {
 					F_errcode(m, int32(16797828))
 					mBase = m.M
-					v215 = m.ExcPending
-					if v215 != 0 {
+					v216 = m.ExcPending
+					if v216 != 0 {
 						return
 					} else {
 						F_errmsg(m, int32(_a_F_check_object_ownership_0), int32(0))
 						mBase = m.M
-						v219 = m.ExcPending
-						if v219 != 0 {
+						v220 = m.ExcPending
+						if v220 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2551), int32(_a_F_check_object_ownership_2))
+							F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2600), int32(_a_F_check_object_ownership_2))
 							mBase = m.M
-							v224 = m.ExcPending
-							if v224 != 0 {
+							v225 = m.ExcPending
+							if v225 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -481,30 +487,30 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				}
 			}
 		}
-	case 1, 19, 25, 29, 34:
-		v46 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-		v47 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-		v48 = F_object_ownercheck(m, v46, v47, l0)
+	case 1, 19, 25, 29, 35:
+		v47 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+		v48 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
+		v49 = F_object_ownercheck(m, v47, v48, l0)
 		mBase = m.M
-		v49 = m.ExcPending
-		if v49 != 0 {
+		v50 = m.ExcPending
+		if v50 != 0 {
 			return
 		} else {
-			if v48 != 0 {
+			if v49 != 0 {
 				m.G0 = v9 + int32(112)
 				return
 			} else {
-				v51 = *(*int32)(unsafe.Add(mBase, uint32(l3)+4))
-				v52 = F_NameListToString(m, v51)
+				v52 = *(*int32)(unsafe.Add(mBase, uint32(l3)+4))
+				v53 = F_NameListToString(m, v52)
 				mBase = m.M
-				v53 = m.ExcPending
-				if v53 != 0 {
+				v54 = m.ExcPending
+				if v54 != 0 {
 					return
 				} else {
-					F_aclcheck_error(m, int32(2), l1, v52)
+					F_aclcheck_error(m, int32(2), l1, v53)
 					mBase = m.M
-					v55 = m.ExcPending
-					if v55 != 0 {
+					v56 = m.ExcPending
+					if v56 != 0 {
 						return
 					} else {
 						m.G0 = v9 + int32(112)
@@ -513,24 +519,24 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				}
 			}
 		}
-	case 2, 3, 10, 11, 31, 32, 50:
+	case 2, 3, 10, 11, 31, 32, 33, 51:
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v228 = m.ExcPending
-		if v228 != 0 {
+		v229 = m.ExcPending
+		if v229 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+96)) = l1
 			F_errmsg_internal(m, int32(_a_F_check_object_ownership_3), v9+int32(96))
 			mBase = m.M
-			v234 = m.ExcPending
-			if v234 != 0 {
+			v235 = m.ExcPending
+			if v235 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2561), int32(_a_F_check_object_ownership_2))
+				F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2611), int32(_a_F_check_object_ownership_2))
 				mBase = m.M
-				v239 = m.ExcPending
-				if v239 != 0 {
+				v240 = m.ExcPending
+				if v240 != 0 {
 					return
 				} else {
 					base.Wasm_trap_unreachable()
@@ -539,7 +545,7 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				}
 			}
 		}
-	case 4, 12, 49:
+	case 4, 12, 50:
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 		v22 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
 		v23 = F_object_ownercheck(m, v21, v22, l0)
@@ -564,77 +570,77 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			}
 		}
 	case 5:
-		v97 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
-		v98 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
-		v100 = *(*int32)(unsafe.Add(mBase, uint32(v97)))
-		v101 = F_typenameTypeId(m, int32(0), v100)
+		v98 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
+		v99 = *(*int32)(unsafe.Add(mBase, uint32(v98)+4))
+		v101 = *(*int32)(unsafe.Add(mBase, uint32(v98)))
+		v102 = F_typenameTypeId(m, int32(0), v101)
 		mBase = m.M
-		v102 = m.ExcPending
-		if v102 != 0 {
+		v103 = m.ExcPending
+		if v103 != 0 {
 			return
 		} else {
-			v104 = F_typenameTypeId(m, int32(0), v98)
+			v105 = F_typenameTypeId(m, int32(0), v99)
 			mBase = m.M
-			v105 = m.ExcPending
-			if v105 != 0 {
+			v106 = m.ExcPending
+			if v106 != 0 {
 				return
 			} else {
-				v107 = F_object_ownercheck(m, int32(1247), v101, l0)
+				v108 = F_object_ownercheck(m, int32(1247), v102, l0)
 				mBase = m.M
-				v108 = m.ExcPending
-				if v108 != 0 {
+				v109 = m.ExcPending
+				if v109 != 0 {
 					return
 				} else {
-					if v107 != 0 {
+					if v108 != 0 {
 						m.G0 = v9 + int32(112)
 						return
 					} else {
-						v110 = F_object_ownercheck(m, int32(1247), v104, l0)
+						v111 = F_object_ownercheck(m, int32(1247), v105, l0)
 						mBase = m.M
-						v111 = m.ExcPending
-						if v111 != 0 {
+						v112 = m.ExcPending
+						if v112 != 0 {
 							return
 						} else {
-							if v110 != 0 {
+							if v111 != 0 {
 								m.G0 = v9 + int32(112)
 								return
 							} else {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v115 = m.ExcPending
-								if v115 != 0 {
+								v116 = m.ExcPending
+								if v116 != 0 {
 									return
 								} else {
 									F_errcode(m, int32(16797828))
 									mBase = m.M
-									v118 = m.ExcPending
-									if v118 != 0 {
+									v119 = m.ExcPending
+									if v119 != 0 {
 										return
 									} else {
-										v119 = F_format_type_be(m, v101)
+										v120 = F_format_type_be(m, v102)
 										mBase = m.M
-										v120 = m.ExcPending
-										if v120 != 0 {
+										v121 = m.ExcPending
+										if v121 != 0 {
 											return
 										} else {
-											v121 = F_format_type_be(m, v104)
+											v122 = F_format_type_be(m, v105)
 											mBase = m.M
-											v122 = m.ExcPending
-											if v122 != 0 {
+											v123 = m.ExcPending
+											if v123 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v121
-												*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v119
+												*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v122
+												*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v120
 												F_errmsg(m, int32(_a_F_check_object_ownership_4), v9+int32(32))
 												mBase = m.M
-												v129 = m.ExcPending
-												if v129 != 0 {
+												v130 = m.ExcPending
+												if v130 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2496), int32(_a_F_check_object_ownership_2))
+													F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2545), int32(_a_F_check_object_ownership_2))
 													mBase = m.M
-													v134 = m.ExcPending
-													if v134 != 0 {
+													v135 = m.ExcPending
+													if v135 != 0 {
 														return
 													} else {
 														base.Wasm_trap_unreachable()
@@ -652,7 +658,7 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				}
 			}
 		}
-	case 6, 18, 20, 23, 28, 35, 37, 40, 41, 44, 51:
+	case 6, 18, 20, 23, 28, 36, 38, 41, 42, 45, 52:
 		v12 = *(*int32)(unsafe.Add(mBase, uint32(l4)+56))
 		v13 = F_object_ownercheck(m, int32(1259), v12, l0)
 		mBase = m.M
@@ -676,29 +682,29 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				}
 			}
 		}
-	case 7, 8, 24, 26, 39, 45, 46:
-		v64 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-		v65 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-		v66 = F_object_ownercheck(m, v64, v65, l0)
+	case 7, 8, 24, 26, 40, 46, 47:
+		v65 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+		v66 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
+		v67 = F_object_ownercheck(m, v65, v66, l0)
 		mBase = m.M
-		v67 = m.ExcPending
-		if v67 != 0 {
+		v68 = m.ExcPending
+		if v68 != 0 {
 			return
 		} else {
-			if v66 != 0 {
+			if v67 != 0 {
 				m.G0 = v9 + int32(112)
 				return
 			} else {
-				v69 = F_NameListToString(m, l3)
+				v70 = F_NameListToString(m, l3)
 				mBase = m.M
-				v70 = m.ExcPending
-				if v70 != 0 {
+				v71 = m.ExcPending
+				if v71 != 0 {
 					return
 				} else {
-					F_aclcheck_error(m, int32(2), l1, v69)
+					F_aclcheck_error(m, int32(2), l1, v70)
 					mBase = m.M
-					v72 = m.ExcPending
-					if v72 != 0 {
+					v73 = m.ExcPending
+					if v73 != 0 {
 						return
 					} else {
 						m.G0 = v9 + int32(112)
@@ -707,24 +713,24 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				}
 			}
 		}
-	case 9, 14, 15, 16, 17, 21, 30, 36, 38, 42:
-		v56 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-		v57 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-		v58 = F_object_ownercheck(m, v56, v57, l0)
+	case 9, 14, 15, 16, 17, 21, 30, 37, 39, 43:
+		v57 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+		v58 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
+		v59 = F_object_ownercheck(m, v57, v58, l0)
 		mBase = m.M
-		v59 = m.ExcPending
-		if v59 != 0 {
+		v60 = m.ExcPending
+		if v60 != 0 {
 			return
 		} else {
-			if v58 != 0 {
+			if v59 != 0 {
 				m.G0 = v9 + int32(112)
 				return
 			} else {
-				v61 = *(*int32)(unsafe.Add(mBase, uint32(l3)+4))
-				F_aclcheck_error(m, int32(2), l1, v61)
+				v62 = *(*int32)(unsafe.Add(mBase, uint32(l3)+4))
+				F_aclcheck_error(m, int32(2), l1, v62)
 				mBase = m.M
-				v63 = m.ExcPending
-				if v63 != 0 {
+				v64 = m.ExcPending
+				if v64 != 0 {
 					return
 				} else {
 					m.G0 = v9 + int32(112)
@@ -734,30 +740,30 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 		}
 	case 13:
 		v29 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-		v30 = F_SearchSysCache1(m, int32(19), v29)
+		v31 = F_SearchSysCache1(m, int32(19), base.I64_extend_i32_u(v29))
 		mBase = m.M
-		v31 = m.ExcPending
-		if v31 != 0 {
+		v32 = m.ExcPending
+		if v32 != 0 {
 			return
 		} else {
-			if v30 == int32(0) {
+			if v31 == int32(0) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v243 = m.ExcPending
-				if v243 != 0 {
+				v244 = m.ExcPending
+				if v244 != 0 {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v9))) = v29
 					F_errmsg_internal(m, int32(_a_F_check_object_ownership_5), v9)
 					mBase = m.M
-					v247 = m.ExcPending
-					if v247 != 0 {
+					v248 = m.ExcPending
+					if v248 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2426), int32(_a_F_check_object_ownership_2))
+						F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2475), int32(_a_F_check_object_ownership_2))
 						mBase = m.M
-						v252 = m.ExcPending
-						if v252 != 0 {
+						v253 = m.ExcPending
+						if v253 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -767,29 +773,29 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					}
 				}
 			} else {
-				v34 = *(*int32)(unsafe.Add(mBase, uint32(v30)+16))
-				v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+22)))
-				v37 = *(*int32)(unsafe.Add(mBase, uint32(v34+v35)+84))
-				F_ReleaseCatCache(m, v30)
+				v35 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
+				v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+22)))
+				v38 = *(*int32)(unsafe.Add(mBase, uint32(v35+v36)+84))
+				F_ReleaseCatCache(m, v31)
 				mBase = m.M
-				v39 = m.ExcPending
-				if v39 != 0 {
+				v40 = m.ExcPending
+				if v40 != 0 {
 					return
 				} else {
-					v41 = F_object_ownercheck(m, int32(1247), v37, l0)
+					v42 = F_object_ownercheck(m, int32(1247), v38, l0)
 					mBase = m.M
-					v42 = m.ExcPending
-					if v42 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
-						if v41 != 0 {
+						if v42 != 0 {
 							m.G0 = v9 + int32(112)
 							return
 						} else {
-							F_aclcheck_error_type(m, int32(2), v37)
+							F_aclcheck_error_type(m, int32(2), v38)
 							mBase = m.M
-							v45 = m.ExcPending
-							if v45 != 0 {
+							v46 = m.ExcPending
+							if v46 != 0 {
 								return
 							} else {
 								m.G0 = v9 + int32(112)
@@ -801,46 +807,46 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			}
 		}
 	case 22:
-		v74 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_check_object_ownership[0])))
-		if v74 != 0 {
+		v75 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_check_object_ownership[0])))
+		if v75 != 0 {
 			m.G0 = v9 + int32(112)
 			return
 		} else {
-			v75 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-			v76 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-			v77 = F_object_ownercheck(m, v75, v76, l0)
+			v76 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+			v77 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
+			v78 = F_object_ownercheck(m, v76, v77, l0)
 			mBase = m.M
-			v78 = m.ExcPending
-			if v78 != 0 {
+			v79 = m.ExcPending
+			if v79 != 0 {
 				return
 			} else {
-				if v77 != 0 {
+				if v78 != 0 {
 					m.G0 = v9 + int32(112)
 					return
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v82 = m.ExcPending
-					if v82 != 0 {
+					v83 = m.ExcPending
+					if v83 != 0 {
 						return
 					} else {
 						F_errcode(m, int32(16797828))
 						mBase = m.M
-						v85 = m.ExcPending
-						if v85 != 0 {
+						v86 = m.ExcPending
+						if v86 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v76
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v77
 							F_errmsg(m, int32(_a_F_check_object_ownership_6), v9+int32(16))
 							mBase = m.M
-							v91 = m.ExcPending
-							if v91 != 0 {
+							v92 = m.ExcPending
+							if v92 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2480), int32(_a_F_check_object_ownership_2))
+								F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2529), int32(_a_F_check_object_ownership_2))
 								mBase = m.M
-								v96 = m.ExcPending
-								if v96 != 0 {
+								v97 = m.ExcPending
+								if v97 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -853,54 +859,54 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				}
 			}
 		}
-	case 33:
-		v146 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-		v147 = F_superuser_arg(m, v146)
+	case 34:
+		v147 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
+		v148 = F_superuser_arg(m, v147)
 		mBase = m.M
-		v148 = m.ExcPending
-		if v148 != 0 {
+		v149 = m.ExcPending
+		if v149 != 0 {
 			return
 		} else {
-			if v147 != 0 {
-				v149 = F_superuser_arg(m, l0)
+			if v148 != 0 {
+				v150 = F_superuser_arg(m, l0)
 				mBase = m.M
-				v150 = m.ExcPending
-				if v150 != 0 {
+				v151 = m.ExcPending
+				if v151 != 0 {
 					return
 				} else {
-					if v149 != 0 {
+					if v150 != 0 {
 						m.G0 = v9 + int32(112)
 						return
 					} else {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v154 = m.ExcPending
-						if v154 != 0 {
+						v155 = m.ExcPending
+						if v155 != 0 {
 							return
 						} else {
 							F_errcode(m, int32(16797828))
 							mBase = m.M
-							v157 = m.ExcPending
-							if v157 != 0 {
+							v158 = m.ExcPending
+							if v158 != 0 {
 								return
 							} else {
 								F_errmsg(m, int32(_a_F_check_object_ownership_7), int32(0))
 								mBase = m.M
-								v161 = m.ExcPending
-								if v161 != 0 {
+								v162 = m.ExcPending
+								if v162 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = int32(_a_F_check_object_ownership_8)
-									F_errdetail(m, int32(_a_F_check_object_ownership_9), v9+int32(48))
+									v168 = F_errdetail(m, int32(_a_F_check_object_ownership_9), v9+int32(48))
 									mBase = m.M
-									v168 = m.ExcPending
-									if v168 != 0 {
+									v169 = m.ExcPending
+									if v169 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2523), int32(_a_F_check_object_ownership_2))
+										F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2572), int32(_a_F_check_object_ownership_2))
 										mBase = m.M
-										v173 = m.ExcPending
-										if v173 != 0 {
+										v174 = m.ExcPending
+										if v174 != 0 {
 											return
 										} else {
 											base.Wasm_trap_unreachable()
@@ -914,42 +920,42 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					}
 				}
 			} else {
-				v174 = F_has_createrole_privilege(m, l0)
+				v175 = F_has_createrole_privilege(m, l0)
 				mBase = m.M
-				v175 = m.ExcPending
-				if v175 != 0 {
+				v176 = m.ExcPending
+				if v176 != 0 {
 					return
 				} else {
-					if v174 == int32(0) {
+					if v175 == int32(0) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v256 = m.ExcPending
-						if v256 != 0 {
+						v257 = m.ExcPending
+						if v257 != 0 {
 							return
 						} else {
 							F_errcode(m, int32(16797828))
 							mBase = m.M
-							v259 = m.ExcPending
-							if v259 != 0 {
+							v260 = m.ExcPending
+							if v260 != 0 {
 								return
 							} else {
 								F_errmsg(m, int32(_a_F_check_object_ownership_7), int32(0))
 								mBase = m.M
-								v263 = m.ExcPending
-								if v263 != 0 {
+								v264 = m.ExcPending
+								if v264 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = int32(_a_F_check_object_ownership_10)
-									F_errdetail(m, int32(_a_F_check_object_ownership_9), v9+int32(80))
+									v270 = F_errdetail(m, int32(_a_F_check_object_ownership_9), v9+int32(80))
 									mBase = m.M
-									v270 = m.ExcPending
-									if v270 != 0 {
+									v271 = m.ExcPending
+									if v271 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2532), int32(_a_F_check_object_ownership_2))
+										F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2581), int32(_a_F_check_object_ownership_2))
 										mBase = m.M
-										v275 = m.ExcPending
-										if v275 != 0 {
+										v276 = m.ExcPending
+										if v276 != 0 {
 											return
 										} else {
 											base.Wasm_trap_unreachable()
@@ -961,52 +967,52 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							}
 						}
 					} else {
-						v178 = F_is_admin_of_role(m, l0, v146)
+						v179 = F_is_admin_of_role(m, l0, v147)
 						mBase = m.M
-						v179 = m.ExcPending
-						if v179 != 0 {
+						v180 = m.ExcPending
+						if v180 != 0 {
 							return
 						} else {
-							if v178 != 0 {
+							if v179 != 0 {
 								m.G0 = v9 + int32(112)
 								return
 							} else {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v183 = m.ExcPending
-								if v183 != 0 {
+								v184 = m.ExcPending
+								if v184 != 0 {
 									return
 								} else {
 									F_errcode(m, int32(16797828))
 									mBase = m.M
-									v186 = m.ExcPending
-									if v186 != 0 {
+									v187 = m.ExcPending
+									if v187 != 0 {
 										return
 									} else {
 										F_errmsg(m, int32(_a_F_check_object_ownership_7), int32(0))
 										mBase = m.M
-										v190 = m.ExcPending
-										if v190 != 0 {
+										v191 = m.ExcPending
+										if v191 != 0 {
 											return
 										} else {
-											v192 = F_GetUserNameFromId(m, v146, int32(1))
+											v193 = F_GetUserNameFromId(m, v147, int32(1))
 											mBase = m.M
-											v193 = m.ExcPending
-											if v193 != 0 {
+											v194 = m.ExcPending
+											if v194 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v9)+68)) = v192
+												*(*int32)(unsafe.Add(mBase, uint32(v9)+68)) = v193
 												*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = int32(_a_F_check_object_ownership_11)
-												F_errdetail(m, int32(_a_F_check_object_ownership_12), v9-int32(-64))
+												v201 = F_errdetail(m, int32(_a_F_check_object_ownership_12), v9-int32(-64))
 												mBase = m.M
-												v201 = m.ExcPending
-												if v201 != 0 {
+												v202 = m.ExcPending
+												if v202 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2540), int32(_a_F_check_object_ownership_2))
+													F_errfinish(m, int32(_a_F_check_object_ownership_1), int32(2589), int32(_a_F_check_object_ownership_2))
 													mBase = m.M
-													v206 = m.ExcPending
-													if v206 != 0 {
+													v207 = m.ExcPending
+													if v207 != 0 {
 														return
 													} else {
 														base.Wasm_trap_unreachable()
@@ -1024,29 +1030,29 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				}
 			}
 		}
-	case 43:
-		v137 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
-		v138 = *(*int32)(unsafe.Add(mBase, uint32(v137)))
-		v139 = F_typenameTypeId(m, int32(0), v138)
+	case 44:
+		v138 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
+		v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)))
+		v140 = F_typenameTypeId(m, int32(0), v139)
 		mBase = m.M
-		v140 = m.ExcPending
-		if v140 != 0 {
+		v141 = m.ExcPending
+		if v141 != 0 {
 			return
 		} else {
-			v141 = F_object_ownercheck(m, int32(1247), v139, l0)
+			v142 = F_object_ownercheck(m, int32(1247), v140, l0)
 			mBase = m.M
-			v142 = m.ExcPending
-			if v142 != 0 {
+			v143 = m.ExcPending
+			if v143 != 0 {
 				return
 			} else {
-				if v141 != 0 {
+				if v142 != 0 {
 					m.G0 = v9 + int32(112)
 					return
 				} else {
-					F_aclcheck_error_type(m, int32(2), v139)
+					F_aclcheck_error_type(m, int32(2), v140)
 					mBase = m.M
-					v145 = m.ExcPending
-					if v145 != 0 {
+					v146 = m.ExcPending
+					if v146 != 0 {
 						return
 					} else {
 						m.G0 = v9 + int32(112)
@@ -1151,7 +1157,7 @@ func F_get_object_address_type(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 							if v32 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_get_object_address_type_1), int32(1624), int32(_a_F_get_object_address_type_2))
+								F_errfinish(m, int32(_a_F_get_object_address_type_1), int32(1633), int32(_a_F_get_object_address_type_2))
 								mBase = m.M
 								v37 = m.ExcPending
 								if v37 != 0 {
@@ -1204,7 +1210,7 @@ func F_get_object_address_type(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 									if v70 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(_a_F_get_object_address_type_1), int32(1635), int32(_a_F_get_object_address_type_2))
+										F_errfinish(m, int32(_a_F_get_object_address_type_1), int32(1644), int32(_a_F_get_object_address_type_2))
 										mBase = m.M
 										v75 = m.ExcPending
 										if v75 != 0 {

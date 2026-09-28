@@ -248,7 +248,7 @@ L10:
 	return int32(0)
 L11:
 	;
-	F_LockBuffer(m, v54, int32(2))
+	F_LockBufferInternal(m, v54, int32(3))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {

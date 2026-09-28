@@ -29,6 +29,8 @@ func F_IvfflatAppendPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = v30
 	var v32 int32
 	_ = v32
+	var v33 int32
+	_ = v33
 	var v38 int32
 	_ = v38
 	var v39 int32
@@ -82,7 +84,7 @@ func F_IvfflatAppendPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	if v13 != 0 {
 		return
 	} else {
-		F_LockBuffer(m, v12, int32(2))
+		F_LockBufferInternal(m, v12, int32(3))
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
@@ -97,11 +99,12 @@ func F_IvfflatAppendPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 			} else {
 				if v12 < int32(0) {
 					v24 = *(*int32)(unsafe.Add(mBase, _c_F_IvfflatAppendPage[0]))
-					v30 = *(*int32)(unsafe.Add(mBase, uint32(v24+(v12^int32(-1))<<(uint(int32(6))%32))+16))
+					v30 = *(*int32)(unsafe.Add(mBase, uint32(v24+(v12^int32(-1))*int32(56))+16))
 					v39 = v30
 				} else {
 					v32 = *(*int32)(unsafe.Add(mBase, _c_F_IvfflatAppendPage[1]))
-					v38 = *(*int32)(unsafe.Add(mBase, uint32(v32+v12<<(uint(int32(6))%32)+int32(-64))+16))
+					v33 = int32(56)
+					v38 = *(*int32)(unsafe.Add(mBase, uint32(v32+v12*v33-v33)+16))
 					v39 = v38
 				}
 				v40 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
@@ -225,72 +228,72 @@ func F_IvfflatParallelScanAndSort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v63
 	var v66 int32
 	_ = v66
-	var v69 int32
-	_ = v69
 	var v70 int32
 	_ = v70
 	var v71 int32
 	_ = v71
 	var v72 int32
 	_ = v72
-	var v74 int32
-	_ = v74
-	var v80 int32
-	_ = v80
+	var v73 int32
+	_ = v73
+	var v75 int32
+	_ = v75
 	var v81 int32
 	_ = v81
-	var v82 float64
+	var v82 int32
 	_ = v82
-	var v83 int32
+	var v83 float64
 	_ = v83
 	var v84 int32
 	_ = v84
-	var v86 int32
-	_ = v86
-	var v89 int32
-	_ = v89
+	var v85 int32
+	_ = v85
+	var v87 int32
+	_ = v87
+	var v90 int32
+	_ = v90
+	var v95 int32
+	_ = v95
 	var v96 int32
 	_ = v96
-	var v97 int32
-	_ = v97
-	var v101 float64
-	_ = v101
+	var v100 float64
+	_ = v100
+	var v103 float64
+	_ = v103
 	var v104 float64
 	_ = v104
-	var v105 float64
-	_ = v105
-	var v108 int32
-	_ = v108
+	var v107 int32
+	_ = v107
+	var v112 int32
+	_ = v112
 	var v113 int32
 	_ = v113
-	var v114 int32
-	_ = v114
-	var v119 int32
-	_ = v119
-	var v121 int32
-	_ = v121
-	var v125 int32
-	_ = v125
-	var v128 int32
-	_ = v128
+	var v118 int32
+	_ = v118
+	var v120 int32
+	_ = v120
+	var v124 int32
+	_ = v124
+	var v127 int32
+	_ = v127
+	var v131 int32
+	_ = v131
 	var v132 int32
 	_ = v132
-	var v133 int32
-	_ = v133
+	var v134 int32
+	_ = v134
 	var v135 int32
 	_ = v135
-	var v136 int32
-	_ = v136
+	var v137 int32
+	_ = v137
 	var v138 int32
 	_ = v138
-	var v139 int32
-	_ = v139
+	var v140 int32
+	_ = v140
 	var v141 int32
 	_ = v141
-	var v142 int32
-	_ = v142
-	var v144 int32
-	_ = v144
+	var v143 int32
+	_ = v143
 	v12 = m.G0
 	v14 = v12 - int32(208)
 	m.G0 = v14
@@ -348,109 +351,109 @@ func F_IvfflatParallelScanAndSort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 					*(*int32)(unsafe.Add(mBase, uint32(l0))) = v62
 					*(*int32)(unsafe.Add(mBase, uint32(v14)+168)) = v62
 					v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-					v69 = F_table_beginscan_parallel(m, v66, l1-int32(-64))
+					v70 = F_table_beginscan_parallel(m, v66, l1-int32(-64), int32(0))
 					mBase = m.M
-					v70 = m.ExcPending
-					if v70 != 0 {
+					v71 = m.ExcPending
+					if v71 != 0 {
 						return
 					} else {
-						v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-						v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-						v74 = int32(0)
-						v80 = *(*int32)(unsafe.Add(mBase, uint32(v71)+188))
-						v81 = *(*int32)(unsafe.Add(mBase, uint32(v80)+140))
-						v82 = m.T0[v81].(func(*base.Module, int32, int32, int32, int32, int32, int32, int32, int32, int32, int32, int32) float64)(m, v71, v72, v25, int32(1), v74, l5, v74, int32(-1), int32(_a_F_IvfflatParallelScanAndSort_0), v14+int32(16), v69)
+						v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+						v73 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+						v75 = int32(0)
+						v81 = *(*int32)(unsafe.Add(mBase, uint32(v72)+188))
+						v82 = *(*int32)(unsafe.Add(mBase, uint32(v81)+140))
+						v83 = m.T0[v82].(func(*base.Module, int32, int32, int32, int32, int32, int32, int32, int32, int32, int32, int32) float64)(m, v72, v73, v25, int32(1), v75, l5, v75, int32(-1), int32(_a_F_IvfflatParallelScanAndSort_0), v14+int32(16), v70)
 						mBase = m.M
-						v83 = m.ExcPending
-						if v83 != 0 {
+						v84 = m.ExcPending
+						if v84 != 0 {
 							return
 						} else {
-							v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-							F_tuplesort_performsort(m, v84)
+							v85 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+							F_tuplesort_performsort(m, v85)
 							mBase = m.M
-							v86 = m.ExcPending
-							if v86 != 0 {
+							v87 = m.ExcPending
+							if v87 != 0 {
 								return
 							} else {
-								v89 = base.AtomicRmwXchg32(m, l1, int32(28), int32(1))
-								if v89 != 0 {
-									F_s_lock(m, l1+int32(28), int32(_a_F_IvfflatParallelScanAndSort_1), int32(692), int32(_a_F_IvfflatParallelScanAndSort_2))
+								v90 = base.AtomicRmwXchg32(m, l1, int32(28), int32(1))
+								if v90 != 0 {
+									F_s_lock(m, l1+int32(28), int32(_a_F_IvfflatParallelScanAndSort_1))
 									mBase = m.M
-									v96 = m.ExcPending
-									if v96 != 0 {
+									v95 = m.ExcPending
+									if v95 != 0 {
 										return
 									} else {
-										v97 = *(*int32)(unsafe.Add(mBase, uint32(l1)+32))
-										*(*int32)(unsafe.Add(mBase, uint32(l1)+32)) = v97 + int32(1)
-										v101 = *(*float64)(unsafe.Add(mBase, uint32(l1)+40))
-										*(*float64)(unsafe.Add(mBase, uint32(l1)+40)) = base.F64_add(v101, v82)
-										v104 = *(*float64)(unsafe.Add(mBase, uint32(l1)+48))
-										v105 = *(*float64)(unsafe.Add(mBase, uint32(v14)+48))
-										*(*float64)(unsafe.Add(mBase, uint32(l1)+48)) = base.F64_add(v104, v105)
-										v108 = int32(0)
-										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+28)), uint32(v108))
-										v113 = F_errstart(m, int32(14), v108)
+										v96 = *(*int32)(unsafe.Add(mBase, uint32(l1)+32))
+										*(*int32)(unsafe.Add(mBase, uint32(l1)+32)) = v96 + int32(1)
+										v100 = *(*float64)(unsafe.Add(mBase, uint32(l1)+40))
+										*(*float64)(unsafe.Add(mBase, uint32(l1)+40)) = base.F64_add(v100, v83)
+										v103 = *(*float64)(unsafe.Add(mBase, uint32(l1)+48))
+										v104 = *(*float64)(unsafe.Add(mBase, uint32(v14)+48))
+										*(*float64)(unsafe.Add(mBase, uint32(l1)+48)) = base.F64_add(v103, v104)
+										v107 = int32(0)
+										atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+28)), uint32(v107))
+										v112 = F_errstart(m, int32(14), v107)
 										mBase = m.M
-										v114 = m.ExcPending
-										if v114 != 0 {
+										v113 = m.ExcPending
+										if v113 != 0 {
 											return
 										} else {
-											if v113 != 0 {
-												*(*int64)(unsafe.Add(mBase, uint32(v14))) = base.I64_trunc_sat_f64_s(v82)
+											if v112 != 0 {
+												*(*int64)(unsafe.Add(mBase, uint32(v14))) = base.I64_trunc_sat_f64_s(v83)
 												if l5 != 0 {
-													v119 = int32(_a_F_IvfflatParallelScanAndSort_3)
+													v118 = int32(_a_F_IvfflatParallelScanAndSort_2)
 												} else {
-													v119 = int32(_a_F_IvfflatParallelScanAndSort_4)
+													v118 = int32(_a_F_IvfflatParallelScanAndSort_3)
 												}
-												F_errmsg(m, v119, v14)
+												F_errmsg(m, v118, v14)
 												mBase = m.M
-												v121 = m.ExcPending
-												if v121 != 0 {
+												v120 = m.ExcPending
+												if v120 != 0 {
 													return
 												} else {
 													if l5 != 0 {
-														v125 = int32(703)
+														v124 = int32(703)
 													} else {
-														v125 = int32(705)
+														v124 = int32(705)
 													}
-													F_errfinish(m, int32(_a_F_IvfflatParallelScanAndSort_1), v125, int32(_a_F_IvfflatParallelScanAndSort_2))
+													F_errfinish(m, int32(_a_F_IvfflatParallelScanAndSort_4), v124, int32(_a_F_IvfflatParallelScanAndSort_5))
 													mBase = m.M
-													v128 = m.ExcPending
-													if v128 != 0 {
+													v127 = m.ExcPending
+													if v127 != 0 {
 														return
 													} else {
 														F_ConditionVariableSignal(m, l1+int32(16))
 														mBase = m.M
-														v132 = m.ExcPending
-														if v132 != 0 {
+														v131 = m.ExcPending
+														if v131 != 0 {
 															return
 														} else {
-															v133 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-															F_tuplesort_end(m, v133)
+															v132 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+															F_tuplesort_end(m, v132)
 															mBase = m.M
-															v135 = m.ExcPending
-															if v135 != 0 {
+															v134 = m.ExcPending
+															if v134 != 0 {
 																return
 															} else {
-																v136 = *(*int32)(unsafe.Add(mBase, uint32(v14)+84))
-																F_VectorArrayFree(m, v136)
+																v135 = *(*int32)(unsafe.Add(mBase, uint32(v14)+84))
+																F_VectorArrayFree(m, v135)
 																mBase = m.M
-																v138 = m.ExcPending
-																if v138 != 0 {
+																v137 = m.ExcPending
+																if v137 != 0 {
 																	return
 																} else {
-																	v139 = *(*int32)(unsafe.Add(mBase, uint32(v14)+88))
-																	F_pfree(m, v139)
+																	v138 = *(*int32)(unsafe.Add(mBase, uint32(v14)+88))
+																	F_pfree(m, v138)
 																	mBase = m.M
-																	v141 = m.ExcPending
-																	if v141 != 0 {
+																	v140 = m.ExcPending
+																	if v140 != 0 {
 																		return
 																	} else {
-																		v142 = *(*int32)(unsafe.Add(mBase, uint32(v14)+184))
-																		F_MemoryContextDelete(m, v142)
+																		v141 = *(*int32)(unsafe.Add(mBase, uint32(v14)+184))
+																		F_MemoryContextDelete(m, v141)
 																		mBase = m.M
-																		v144 = m.ExcPending
-																		if v144 != 0 {
+																		v143 = m.ExcPending
+																		if v143 != 0 {
 																			return
 																		} else {
 																			m.G0 = v14 + int32(208)
@@ -465,36 +468,36 @@ func F_IvfflatParallelScanAndSort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 											} else {
 												F_ConditionVariableSignal(m, l1+int32(16))
 												mBase = m.M
-												v132 = m.ExcPending
-												if v132 != 0 {
+												v131 = m.ExcPending
+												if v131 != 0 {
 													return
 												} else {
-													v133 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-													F_tuplesort_end(m, v133)
+													v132 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+													F_tuplesort_end(m, v132)
 													mBase = m.M
-													v135 = m.ExcPending
-													if v135 != 0 {
+													v134 = m.ExcPending
+													if v134 != 0 {
 														return
 													} else {
-														v136 = *(*int32)(unsafe.Add(mBase, uint32(v14)+84))
-														F_VectorArrayFree(m, v136)
+														v135 = *(*int32)(unsafe.Add(mBase, uint32(v14)+84))
+														F_VectorArrayFree(m, v135)
 														mBase = m.M
-														v138 = m.ExcPending
-														if v138 != 0 {
+														v137 = m.ExcPending
+														if v137 != 0 {
 															return
 														} else {
-															v139 = *(*int32)(unsafe.Add(mBase, uint32(v14)+88))
-															F_pfree(m, v139)
+															v138 = *(*int32)(unsafe.Add(mBase, uint32(v14)+88))
+															F_pfree(m, v138)
 															mBase = m.M
-															v141 = m.ExcPending
-															if v141 != 0 {
+															v140 = m.ExcPending
+															if v140 != 0 {
 																return
 															} else {
-																v142 = *(*int32)(unsafe.Add(mBase, uint32(v14)+184))
-																F_MemoryContextDelete(m, v142)
+																v141 = *(*int32)(unsafe.Add(mBase, uint32(v14)+184))
+																F_MemoryContextDelete(m, v141)
 																mBase = m.M
-																v144 = m.ExcPending
-																if v144 != 0 {
+																v143 = m.ExcPending
+																if v143 != 0 {
 																	return
 																} else {
 																	m.G0 = v14 + int32(208)
@@ -508,77 +511,77 @@ func F_IvfflatParallelScanAndSort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 										}
 									}
 								} else {
-									v97 = *(*int32)(unsafe.Add(mBase, uint32(l1)+32))
-									*(*int32)(unsafe.Add(mBase, uint32(l1)+32)) = v97 + int32(1)
-									v101 = *(*float64)(unsafe.Add(mBase, uint32(l1)+40))
-									*(*float64)(unsafe.Add(mBase, uint32(l1)+40)) = base.F64_add(v101, v82)
-									v104 = *(*float64)(unsafe.Add(mBase, uint32(l1)+48))
-									v105 = *(*float64)(unsafe.Add(mBase, uint32(v14)+48))
-									*(*float64)(unsafe.Add(mBase, uint32(l1)+48)) = base.F64_add(v104, v105)
-									v108 = int32(0)
-									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+28)), uint32(v108))
-									v113 = F_errstart(m, int32(14), v108)
+									v96 = *(*int32)(unsafe.Add(mBase, uint32(l1)+32))
+									*(*int32)(unsafe.Add(mBase, uint32(l1)+32)) = v96 + int32(1)
+									v100 = *(*float64)(unsafe.Add(mBase, uint32(l1)+40))
+									*(*float64)(unsafe.Add(mBase, uint32(l1)+40)) = base.F64_add(v100, v83)
+									v103 = *(*float64)(unsafe.Add(mBase, uint32(l1)+48))
+									v104 = *(*float64)(unsafe.Add(mBase, uint32(v14)+48))
+									*(*float64)(unsafe.Add(mBase, uint32(l1)+48)) = base.F64_add(v103, v104)
+									v107 = int32(0)
+									atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l1)+28)), uint32(v107))
+									v112 = F_errstart(m, int32(14), v107)
 									mBase = m.M
-									v114 = m.ExcPending
-									if v114 != 0 {
+									v113 = m.ExcPending
+									if v113 != 0 {
 										return
 									} else {
-										if v113 != 0 {
-											*(*int64)(unsafe.Add(mBase, uint32(v14))) = base.I64_trunc_sat_f64_s(v82)
+										if v112 != 0 {
+											*(*int64)(unsafe.Add(mBase, uint32(v14))) = base.I64_trunc_sat_f64_s(v83)
 											if l5 != 0 {
-												v119 = int32(_a_F_IvfflatParallelScanAndSort_3)
+												v118 = int32(_a_F_IvfflatParallelScanAndSort_2)
 											} else {
-												v119 = int32(_a_F_IvfflatParallelScanAndSort_4)
+												v118 = int32(_a_F_IvfflatParallelScanAndSort_3)
 											}
-											F_errmsg(m, v119, v14)
+											F_errmsg(m, v118, v14)
 											mBase = m.M
-											v121 = m.ExcPending
-											if v121 != 0 {
+											v120 = m.ExcPending
+											if v120 != 0 {
 												return
 											} else {
 												if l5 != 0 {
-													v125 = int32(703)
+													v124 = int32(703)
 												} else {
-													v125 = int32(705)
+													v124 = int32(705)
 												}
-												F_errfinish(m, int32(_a_F_IvfflatParallelScanAndSort_1), v125, int32(_a_F_IvfflatParallelScanAndSort_2))
+												F_errfinish(m, int32(_a_F_IvfflatParallelScanAndSort_4), v124, int32(_a_F_IvfflatParallelScanAndSort_5))
 												mBase = m.M
-												v128 = m.ExcPending
-												if v128 != 0 {
+												v127 = m.ExcPending
+												if v127 != 0 {
 													return
 												} else {
 													F_ConditionVariableSignal(m, l1+int32(16))
 													mBase = m.M
-													v132 = m.ExcPending
-													if v132 != 0 {
+													v131 = m.ExcPending
+													if v131 != 0 {
 														return
 													} else {
-														v133 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-														F_tuplesort_end(m, v133)
+														v132 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														F_tuplesort_end(m, v132)
 														mBase = m.M
-														v135 = m.ExcPending
-														if v135 != 0 {
+														v134 = m.ExcPending
+														if v134 != 0 {
 															return
 														} else {
-															v136 = *(*int32)(unsafe.Add(mBase, uint32(v14)+84))
-															F_VectorArrayFree(m, v136)
+															v135 = *(*int32)(unsafe.Add(mBase, uint32(v14)+84))
+															F_VectorArrayFree(m, v135)
 															mBase = m.M
-															v138 = m.ExcPending
-															if v138 != 0 {
+															v137 = m.ExcPending
+															if v137 != 0 {
 																return
 															} else {
-																v139 = *(*int32)(unsafe.Add(mBase, uint32(v14)+88))
-																F_pfree(m, v139)
+																v138 = *(*int32)(unsafe.Add(mBase, uint32(v14)+88))
+																F_pfree(m, v138)
 																mBase = m.M
-																v141 = m.ExcPending
-																if v141 != 0 {
+																v140 = m.ExcPending
+																if v140 != 0 {
 																	return
 																} else {
-																	v142 = *(*int32)(unsafe.Add(mBase, uint32(v14)+184))
-																	F_MemoryContextDelete(m, v142)
+																	v141 = *(*int32)(unsafe.Add(mBase, uint32(v14)+184))
+																	F_MemoryContextDelete(m, v141)
 																	mBase = m.M
-																	v144 = m.ExcPending
-																	if v144 != 0 {
+																	v143 = m.ExcPending
+																	if v143 != 0 {
 																		return
 																	} else {
 																		m.G0 = v14 + int32(208)
@@ -593,36 +596,36 @@ func F_IvfflatParallelScanAndSort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 										} else {
 											F_ConditionVariableSignal(m, l1+int32(16))
 											mBase = m.M
-											v132 = m.ExcPending
-											if v132 != 0 {
+											v131 = m.ExcPending
+											if v131 != 0 {
 												return
 											} else {
-												v133 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-												F_tuplesort_end(m, v133)
+												v132 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												F_tuplesort_end(m, v132)
 												mBase = m.M
-												v135 = m.ExcPending
-												if v135 != 0 {
+												v134 = m.ExcPending
+												if v134 != 0 {
 													return
 												} else {
-													v136 = *(*int32)(unsafe.Add(mBase, uint32(v14)+84))
-													F_VectorArrayFree(m, v136)
+													v135 = *(*int32)(unsafe.Add(mBase, uint32(v14)+84))
+													F_VectorArrayFree(m, v135)
 													mBase = m.M
-													v138 = m.ExcPending
-													if v138 != 0 {
+													v137 = m.ExcPending
+													if v137 != 0 {
 														return
 													} else {
-														v139 = *(*int32)(unsafe.Add(mBase, uint32(v14)+88))
-														F_pfree(m, v139)
+														v138 = *(*int32)(unsafe.Add(mBase, uint32(v14)+88))
+														F_pfree(m, v138)
 														mBase = m.M
-														v141 = m.ExcPending
-														if v141 != 0 {
+														v140 = m.ExcPending
+														if v140 != 0 {
 															return
 														} else {
-															v142 = *(*int32)(unsafe.Add(mBase, uint32(v14)+184))
-															F_MemoryContextDelete(m, v142)
+															v141 = *(*int32)(unsafe.Add(mBase, uint32(v14)+184))
+															F_MemoryContextDelete(m, v141)
 															mBase = m.M
-															v144 = m.ExcPending
-															if v144 != 0 {
+															v143 = m.ExcPending
+															if v143 != 0 {
 																return
 															} else {
 																m.G0 = v14 + int32(208)

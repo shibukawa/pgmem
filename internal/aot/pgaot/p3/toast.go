@@ -78,7 +78,7 @@ func F_get_toast_snapshot(m *base.Module) int32 {
 			if v31 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_get_toast_snapshot_1), int32(653), int32(_a_F_get_toast_snapshot_2))
+				F_errfinish(m, int32(_a_F_get_toast_snapshot_1), int32(644), int32(_a_F_get_toast_snapshot_2))
 				mBase = m.M
 				v36 = m.ExcPending
 				if v36 != 0 {
@@ -239,10 +239,10 @@ func F_toast_tuple_find_biggest_attribute(m *base.Module, l0 int32, l1 int32, l2
 				v82 = v36
 			} else {
 				v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-				v48 = int32(2)
+				v48 = int32(3)
 				v51 = *(*int32)(unsafe.Add(mBase, uint32(v47+v33<<(uint(v48)%32))))
 				v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-				if v52&int32(3) == v48 {
+				if v52&v48 == int32(2) {
 					v60 = l1
 				} else {
 					v60 = int32(0)
@@ -251,7 +251,7 @@ func F_toast_tuple_find_biggest_attribute(m *base.Module, l0 int32, l1 int32, l2
 					v81 = v35
 					v82 = v36
 				} else {
-					v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14+v15<<(uint(int32(4))%32)+v33*int32(100))+104)))
+					v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14+v15<<(uint(int32(3))%32)+v33*int32(100))+112)))
 					if l2 != 0 {
 						if v65 != int32(109) {
 							v81 = v35

@@ -7048,7 +7048,7 @@ func F_PageIndexTupleDeleteNoCompact(m *base.Module, l0 int32, l1 int32) {
 				if v228 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1314), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
+					F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1317), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
 					mBase = m.M
 					v233 = m.ExcPending
 					if v233 != 0 {
@@ -7088,7 +7088,7 @@ func F_PageIndexTupleDeleteNoCompact(m *base.Module, l0 int32, l1 int32) {
 					if v228 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1314), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
+						F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1317), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
 						mBase = m.M
 						v233 = m.ExcPending
 						if v233 != 0 {
@@ -7128,7 +7128,7 @@ func F_PageIndexTupleDeleteNoCompact(m *base.Module, l0 int32, l1 int32) {
 						if v228 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1314), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
+							F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1317), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
 							mBase = m.M
 							v233 = m.ExcPending
 							if v233 != 0 {
@@ -7163,7 +7163,7 @@ func F_PageIndexTupleDeleteNoCompact(m *base.Module, l0 int32, l1 int32) {
 						if v243 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1318), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
+							F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1321), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
 							mBase = m.M
 							v248 = m.ExcPending
 							if v248 != 0 {
@@ -7202,7 +7202,7 @@ func F_PageIndexTupleDeleteNoCompact(m *base.Module, l0 int32, l1 int32) {
 								if v262 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1330), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
+									F_errfinish(m, int32(_a_F_PageIndexTupleDeleteNoCompact_1), int32(1333), int32(_a_F_PageIndexTupleDeleteNoCompact_2))
 									mBase = m.M
 									v267 = m.ExcPending
 									if v267 != 0 {
@@ -7332,6 +7332,8 @@ func F_get_page_from_raw(m *base.Module, l0 int32) int32 {
 	_ = v48
 	var v52 int32
 	_ = v52
+	var v57 int32
+	_ = v57
 	var v58 int32
 	_ = v58
 	var v63 int32
@@ -7383,13 +7385,13 @@ func F_get_page_from_raw(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v39
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(_a_F_get_page_from_raw_1)
-					F_errdetail(m, int32(_a_F_get_page_from_raw_2), v6)
+					v57 = F_errdetail(m, int32(_a_F_get_page_from_raw_2), v6)
 					mBase = m.M
 					v58 = m.ExcPending
 					if v58 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_get_page_from_raw_3), int32(230), int32(_a_F_get_page_from_raw_4))
+						F_errfinish(m, int32(_a_F_get_page_from_raw_3), int32(227), int32(_a_F_get_page_from_raw_4))
 						mBase = m.M
 						v63 = m.ExcPending
 						if v63 != 0 {
@@ -7427,13 +7429,13 @@ func F_get_page_from_raw(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v39
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(_a_F_get_page_from_raw_1)
-						F_errdetail(m, int32(_a_F_get_page_from_raw_2), v6)
+						v57 = F_errdetail(m, int32(_a_F_get_page_from_raw_2), v6)
 						mBase = m.M
 						v58 = m.ExcPending
 						if v58 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_get_page_from_raw_3), int32(230), int32(_a_F_get_page_from_raw_4))
+							F_errfinish(m, int32(_a_F_get_page_from_raw_3), int32(227), int32(_a_F_get_page_from_raw_4))
 							mBase = m.M
 							v63 = m.ExcPending
 							if v63 != 0 {
@@ -7490,13 +7492,13 @@ func F_get_page_from_raw(m *base.Module, l0 int32) int32 {
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v39
 							*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(_a_F_get_page_from_raw_1)
-							F_errdetail(m, int32(_a_F_get_page_from_raw_2), v6)
+							v57 = F_errdetail(m, int32(_a_F_get_page_from_raw_2), v6)
 							mBase = m.M
 							v58 = m.ExcPending
 							if v58 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_get_page_from_raw_3), int32(230), int32(_a_F_get_page_from_raw_4))
+								F_errfinish(m, int32(_a_F_get_page_from_raw_3), int32(227), int32(_a_F_get_page_from_raw_4))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {

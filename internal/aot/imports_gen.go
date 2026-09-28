@@ -514,12 +514,6 @@ func (a *imports) X__syscall_rmdir(m *base.Module, l0 int32) int32 {
 	return int32(uint32(fn_env___syscall_rmdir.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
 }
 
-var fn_env___syscall_poll = mustLookup("env", "__syscall_poll")
-
-func (a *imports) X__syscall_poll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
-	return int32(uint32(fn_env___syscall_poll.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
-}
-
 var fn_env__setitimer_js = mustLookup("env", "_setitimer_js")
 
 func (a *imports) X_setitimer_js(m *base.Module, l0 int32, l1 float64) int32 {
@@ -530,6 +524,12 @@ var fn_env___syscall_symlinkat = mustLookup("env", "__syscall_symlinkat")
 
 func (a *imports) X__syscall_symlinkat(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return int32(uint32(fn_env___syscall_symlinkat.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_emscripten_get_heap_max = mustLookup("env", "emscripten_get_heap_max")
+
+func (a *imports) Emscripten_get_heap_max(m *base.Module) int32 {
+	return int32(uint32(fn_env_emscripten_get_heap_max.Call(a.h, a.mem, []uint64{})))
 }
 
 var fn_env___syscall_truncate64 = mustLookup("env", "__syscall_truncate64")

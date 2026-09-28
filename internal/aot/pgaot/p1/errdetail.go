@@ -249,7 +249,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(_a_F_errdetail_log_3), int32(1258), int32(_a_F_errdetail_log_4))
+	F_errfinish(m, int32(_a_F_errdetail_log_3), int32(1449), int32(_a_F_errdetail_log_4))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -266,23 +266,18 @@ L23:
 func F_errdetail_recovery_conflict(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v8 int32
-	_ = v8
-	var v11 int32
-	_ = v11
-	v3 = l0 - int32(7)
-	if base.Ui32(v3) <= base.Ui32(int32(6)) {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(v3<<(uint(int32(2))%32))+uint32(_c_F_errdetail_recovery_conflict[0])))
-		F_errdetail(m, v8, int32(0))
-		mBase = m.M
-		v11 = m.ExcPending
-		if v11 != 0 {
-			return
-		} else {
-			return
-		}
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_c_F_errdetail_recovery_conflict[0])))
+	v6 = F_errdetail(m, v4, int32(0))
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return
 	} else {
 		return
 	}
@@ -302,6 +297,8 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 	_ = v31
 	var v33 int32
 	_ = v33
+	var v35 int32
+	_ = v35
 	var v36 int32
 	_ = v36
 	v4 = m.G0
@@ -310,7 +307,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 	switch l0 - int32(73) {
 	case 0:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_0)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -347,7 +344,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 		}
 	case 10:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_4)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -358,7 +355,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 		}
 	case 26:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_5)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -369,7 +366,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 		}
 	case 29:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_6)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -380,7 +377,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 		}
 	case 32:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_7)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -391,7 +388,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 		}
 	case 36:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_8)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -402,7 +399,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 		}
 	case 39:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_9)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -413,7 +410,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 		}
 	case 41:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_10)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -424,7 +421,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 		}
 	case 43:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_11)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -435,7 +432,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 		}
 	case 45:
 		v33 = int32(_a_F_errdetail_relkind_not_supported_12)
-		F_errdetail(m, v33, int32(0))
+		v35 = F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {

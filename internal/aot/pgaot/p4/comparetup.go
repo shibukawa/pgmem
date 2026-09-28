@@ -14,9 +14,9 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v16 int32
+	var v16 int64
 	_ = v16
-	var v17 int32
+	var v17 int64
 	_ = v17
 	var v18 int32
 	_ = v18
@@ -42,9 +42,9 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v40
 	var v41 int32
 	_ = v41
-	var v48 int32
+	var v48 int64
 	_ = v48
-	var v49 int32
+	var v49 int64
 	_ = v49
 	var v50 int32
 	_ = v50
@@ -73,8 +73,8 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	var v83 int32
 	_ = v83
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l2)+44))
-	v8 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
-	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+	v8 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 	if v9 == int32(1) {
 		if v8&int32(1) != 0 {
 			v33 = v7
@@ -84,8 +84,8 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				v64 = v36
 				return v64
 			} else {
-				v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
-				v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+				v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
+				v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 				if v41 == int32(1) {
 					if v40&int32(1) != 0 {
 						v64 = v36
@@ -111,10 +111,10 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						}
 						return v83
 					} else {
-						v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						v49 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+						v48 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0))))
+						v49 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l1))))
 						v50 = *(*int32)(unsafe.Add(mBase, uint32(v33)+32))
-						v51 = m.T0[v50].(func(*base.Module, int32, int32, int32) int32)(m, v48, v49, v33)
+						v51 = m.T0[v50].(func(*base.Module, int64, int64, int32) int32)(m, v48, v49, v33)
 						mBase = m.M
 						v52 = m.ExcPending
 						if v52 != 0 {
@@ -158,10 +158,10 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			}
 			return v83
 		} else {
-			v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+			v16 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
+			v17 = *(*int64)(unsafe.Add(mBase, uint32(l1)+8))
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
-			v19 = m.T0[v18].(func(*base.Module, int32, int32, int32) int32)(m, v16, v17, v7)
+			v19 = m.T0[v18].(func(*base.Module, int64, int64, int32) int32)(m, v16, v17, v7)
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
@@ -183,8 +183,8 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							v64 = v36
 							return v64
 						} else {
-							v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
-							v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+							v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
+							v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 							if v41 == int32(1) {
 								if v40&int32(1) != 0 {
 									v64 = v36
@@ -210,10 +210,10 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									}
 									return v83
 								} else {
-									v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									v49 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+									v48 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0))))
+									v49 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l1))))
 									v50 = *(*int32)(unsafe.Add(mBase, uint32(v33)+32))
-									v51 = m.T0[v50].(func(*base.Module, int32, int32, int32) int32)(m, v48, v49, v33)
+									v51 = m.T0[v50].(func(*base.Module, int64, int64, int32) int32)(m, v48, v49, v33)
 									mBase = m.M
 									v52 = m.ExcPending
 									if v52 != 0 {
@@ -255,8 +255,8 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								v64 = v36
 								return v64
 							} else {
-								v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
-								v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+								v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
+								v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 								if v41 == int32(1) {
 									if v40&int32(1) != 0 {
 										v64 = v36
@@ -282,10 +282,10 @@ func F_comparetup_datum(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										}
 										return v83
 									} else {
-										v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-										v49 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+										v48 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0))))
+										v49 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l1))))
 										v50 = *(*int32)(unsafe.Add(mBase, uint32(v33)+32))
-										v51 = m.T0[v50].(func(*base.Module, int32, int32, int32) int32)(m, v48, v49, v33)
+										v51 = m.T0[v50].(func(*base.Module, int64, int64, int32) int32)(m, v48, v49, v33)
 										mBase = m.M
 										v52 = m.ExcPending
 										if v52 != 0 {
@@ -336,9 +336,9 @@ func F_comparetup_datum_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	_ = v25
 	var v26 int32
 	_ = v26
-	var v28 int32
+	var v28 int64
 	_ = v28
-	var v29 int32
+	var v29 int64
 	_ = v29
 	var v30 int32
 	_ = v30
@@ -361,8 +361,8 @@ func F_comparetup_datum_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) i
 		v44 = v4
 		return v44
 	} else {
-		v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
-		v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+		v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
+		v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 		if v11 == int32(1) {
 			if v10&int32(1) != 0 {
 				v44 = v4
@@ -386,10 +386,10 @@ func F_comparetup_datum_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) i
 				}
 				return v26
 			} else {
-				v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-				v29 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+				v28 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0))))
+				v29 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l1))))
 				v30 = *(*int32)(unsafe.Add(mBase, uint32(v6)+32))
-				v31 = m.T0[v30].(func(*base.Module, int32, int32, int32) int32)(m, v28, v29, v6)
+				v31 = m.T0[v30].(func(*base.Module, int64, int64, int32) int32)(m, v28, v29, v6)
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {
@@ -430,9 +430,9 @@ func F_comparetup_index_btree(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	_ = v23
 	var v24 int32
 	_ = v24
-	var v26 int32
+	var v26 int64
 	_ = v26
-	var v27 int32
+	var v27 int64
 	_ = v27
 	var v28 int32
 	_ = v28
@@ -452,9 +452,9 @@ func F_comparetup_index_btree(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	_ = v45
 	var v47 int32
 	_ = v47
-	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
+	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l2)+44))
-	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 	if v9 == int32(1) {
 		if v7&int32(1) != 0 {
 			v44 = F_comparetup_index_btree_tiebreak(m, l0, l1, l2)
@@ -485,10 +485,10 @@ func F_comparetup_index_btree(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 			}
 			return v24
 		} else {
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-			v27 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+			v26 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
+			v27 = *(*int64)(unsafe.Add(mBase, uint32(l1)+8))
 			v28 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
-			v29 = m.T0[v28].(func(*base.Module, int32, int32, int32) int32)(m, v26, v27, v8)
+			v29 = m.T0[v28].(func(*base.Module, int64, int64, int32) int32)(m, v26, v27, v8)
 			mBase = m.M
 			v32 = m.ExcPending
 			if v32 != 0 {
@@ -561,11 +561,11 @@ func F_comparetup_index_btree_tiebreak(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = v24
 	var v25 int32
 	_ = v25
-	var v31 int32
+	var v31 int64
 	_ = v31
 	var v34 int32
 	_ = v34
-	var v38 int32
+	var v38 int64
 	_ = v38
 	var v39 int32
 	_ = v39
@@ -601,15 +601,15 @@ func F_comparetup_index_btree_tiebreak(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = v75
 	var v76 int32
 	_ = v76
-	var v83 int32
-	_ = v83
+	var v84 int32
+	_ = v84
 	var v88 int32
 	_ = v88
-	var v91 int32
+	var v91 int64
 	_ = v91
 	var v92 int32
 	_ = v92
-	var v95 int32
+	var v95 int64
 	_ = v95
 	var v96 int32
 	_ = v96
@@ -641,8 +641,8 @@ func F_comparetup_index_btree_tiebreak(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = v126
 	var v128 int32
 	_ = v128
-	var v139 int32
-	_ = v139
+	var v140 int32
+	_ = v140
 	var v143 int32
 	_ = v143
 	var v146 int32
@@ -651,62 +651,68 @@ func F_comparetup_index_btree_tiebreak(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = v153
 	var v155 int32
 	_ = v155
-	var v157 int32
-	_ = v157
 	var v158 int32
 	_ = v158
-	var v159 int32
-	_ = v159
-	var v160 int32
-	_ = v160
-	var v164 int32
-	_ = v164
-	var v167 int32
-	_ = v167
-	var v168 int32
-	_ = v168
+	var v162 int32
+	_ = v162
 	var v169 int32
 	_ = v169
-	var v177 int32
-	_ = v177
-	var v181 int32
-	_ = v181
-	var v185 int32
-	_ = v185
-	var v186 int32
-	_ = v186
-	var v187 int32
-	_ = v187
+	var v170 int32
+	_ = v170
+	var v171 int32
+	_ = v171
+	var v175 int32
+	_ = v175
+	var v178 int32
+	_ = v178
+	var v179 int32
+	_ = v179
+	var v180 int32
+	_ = v180
 	var v188 int32
 	_ = v188
+	var v191 int32
+	_ = v191
 	var v192 int32
 	_ = v192
+	var v195 int32
+	_ = v195
+	var v196 int32
+	_ = v196
 	var v197 int32
 	_ = v197
 	var v198 int32
 	_ = v198
 	var v199 int32
 	_ = v199
-	var v200 int32
-	_ = v200
-	var v202 int32
-	_ = v202
 	var v203 int32
 	_ = v203
-	var v204 int32
-	_ = v204
-	var v207 int32
-	_ = v207
-	var v212 int32
-	_ = v212
+	var v208 int32
+	_ = v208
+	var v209 int32
+	_ = v209
+	var v210 int32
+	_ = v210
+	var v211 int32
+	_ = v211
 	var v213 int32
 	_ = v213
 	var v214 int32
 	_ = v214
-	var v222 int32
-	_ = v222
+	var v215 int32
+	_ = v215
+	var v218 int32
+	_ = v218
+	var v223 int32
+	_ = v223
+	var v224 int32
+	_ = v224
+	var v225 int32
+	_ = v225
+	var v233 int32
+	_ = v233
 	v14 = m.G0
-	v16 = v14 - int32(208)
+	v16 = v14 - int32(336)
 	m.G0 = v16
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(l2)+40))
 	v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
@@ -723,12 +729,12 @@ func F_comparetup_index_btree_tiebreak(m *base.Module, l0 int32, l1 int32, l2 in
 	}
 L1:
 	;
-	m.G0 = v16 + int32(208)
-	return v222
+	m.G0 = v16 + int32(336)
+	return v233
 L2:
 	;
 	v70 = int32(2)
-	v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+	v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 	if v70 <= v18 {
 		goto L27
 	} else {
@@ -736,7 +742,7 @@ L2:
 	}
 L3:
 	;
-	v31 = F_index_getattr_2(m, v20, int32(1), v23, v16+int32(207))
+	v31 = F_index_getattr_2(m, v20, int32(1), v23, v16+int32(335))
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
@@ -749,7 +755,7 @@ L4:
 	return int32(0)
 L5:
 	;
-	v38 = F_index_getattr_2(m, v19, int32(1), v23, v16+int32(206))
+	v38 = F_index_getattr_2(m, v19, int32(1), v23, v16+int32(334))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -759,8 +765,8 @@ L5:
 	}
 L6:
 	;
-	v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+206)))
-	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+207)))
+	v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+334)))
+	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+335)))
 	if v41 == int32(1) {
 		goto L7
 	} else {
@@ -801,7 +807,7 @@ L12:
 	goto L13
 L13:
 	;
-	v222 = v49
+	v233 = v49
 	goto L1
 L14:
 	;
@@ -817,7 +823,7 @@ L15:
 L16:
 	;
 	v56 = *(*int32)(unsafe.Add(mBase, uint32(v24)+32))
-	v57 = m.T0[v56].(func(*base.Module, int32, int32, int32) int32)(m, v31, v38, v24)
+	v57 = m.T0[v56].(func(*base.Module, int64, int64, int32) int32)(m, v31, v38, v24)
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -835,7 +841,7 @@ L18:
 	goto L19
 L19:
 	;
-	v222 = v55
+	v233 = v55
 	goto L1
 L20:
 	;
@@ -853,7 +859,7 @@ L21:
 L22:
 	;
 	if v57 < int32(0) {
-		v222 = v59
+		v233 = v59
 		goto L1
 	} else {
 		goto L24
@@ -861,7 +867,7 @@ L22:
 L23:
 	;
 	if v67 != 0 {
-		v222 = v67
+		v233 = v67
 		goto L1
 	} else {
 		goto L25
@@ -875,17 +881,17 @@ L25:
 	goto L2
 L26:
 	;
-	v222 = int32(1)
+	v233 = int32(1)
 	goto L1
 L27:
 	;
 	v75 = v24
 	v76 = v70
-	v83 = v71
+	v84 = v71
 	goto L30
 L28:
 	;
-	v139 = v71
+	v140 = v71
 	goto L29
 L29:
 	;
@@ -898,7 +904,7 @@ L29:
 L30:
 	;
 	v88 = v75 + int32(36)
-	v91 = F_index_getattr_2(m, v20, v76, v23, v16+int32(207))
+	v91 = F_index_getattr_2(m, v20, v76, v23, v16+int32(335))
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {
@@ -908,11 +914,11 @@ L30:
 	}
 L31:
 	;
-	v139 = v126
+	v140 = v126
 	goto L29
 L32:
 	;
-	v95 = F_index_getattr_2(m, v19, v76, v23, v16+int32(206))
+	v95 = F_index_getattr_2(m, v19, v76, v23, v16+int32(334))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -922,8 +928,8 @@ L32:
 	}
 L33:
 	;
-	v97 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+206)))
-	v98 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+207)))
+	v97 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+334)))
+	v98 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+335)))
 	if v98 == int32(1) {
 		goto L35
 	} else {
@@ -935,7 +941,7 @@ L34:
 	if v128 <= v18 {
 		v75 = v88
 		v76 = v128
-		v83 = v126
+		v84 = v126
 		goto L30
 	} else {
 		goto L54
@@ -977,7 +983,7 @@ L40:
 	goto L41
 L41:
 	;
-	v222 = v107
+	v233 = v107
 	goto L1
 L42:
 	;
@@ -993,7 +999,7 @@ L43:
 L44:
 	;
 	v114 = *(*int32)(unsafe.Add(mBase, uint32(v75)+52))
-	v115 = m.T0[v114].(func(*base.Module, int32, int32, int32) int32)(m, v91, v95, v88)
+	v115 = m.T0[v114].(func(*base.Module, int64, int64, int32) int32)(m, v91, v95, v88)
 	mBase = m.M
 	v116 = m.ExcPending
 	if v116 != 0 {
@@ -1011,7 +1017,7 @@ L46:
 	goto L47
 L47:
 	;
-	v222 = v113
+	v233 = v113
 	goto L1
 L48:
 	;
@@ -1035,7 +1041,7 @@ L50:
 L51:
 	;
 	if v124 != 0 {
-		v222 = v124
+		v233 = v124
 		goto L1
 	} else {
 		goto L53
@@ -1046,29 +1052,29 @@ L52:
 	goto L51
 L53:
 	;
-	v126 = v83
+	v126 = v84
 	goto L34
 L54:
 	;
 	goto L31
 L55:
 	;
-	v198 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20)+2)))
-	v199 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20))))
-	v200 = int32(16)
-	v202 = v198 | v199<<(uint(v200)%32)
-	v203 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v19)+2)))
-	v204 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v19))))
-	v207 = v203 | v204<<(uint(v200)%32)
-	if v202 != v207 {
-		goto L71
+	v209 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20)+2)))
+	v210 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20))))
+	v211 = int32(16)
+	v213 = v209 | v210<<(uint(v211)%32)
+	v214 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v19)+2)))
+	v215 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v19))))
+	v218 = v214 | v215<<(uint(v211)%32)
+	if v213 != v218 {
+		goto L74
 	} else {
-		goto L72
+		goto L75
 	}
 L56:
 	;
 	v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21)+9)))
-	if (v146^int32(-1))&v139&int32(1) != 0 {
+	if (v146^int32(-1))&v140&int32(1) != 0 {
 		goto L55
 	} else {
 		goto L57
@@ -1077,149 +1083,160 @@ L57:
 	;
 	v153 = v16 - int32(-64)
 	v155 = v16 + int32(32)
-	F_index_deform_tuple(m, v20, v23, v153, v155)
-	mBase = m.M
-	v157 = m.ExcPending
-	if v157 != 0 {
-		goto L4
-	} else {
-		goto L58
-	}
-L58:
-	;
-	v158 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
-	v159 = F_BuildIndexValueDescription(m, v158, v153, v155)
-	mBase = m.M
-	v160 = m.ExcPending
-	if v160 != 0 {
-		goto L4
-	} else {
+	v158 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20)+6)))
+	if int32(0) <= base.I32_extend16_s(v158) {
 		goto L59
-	}
-L59:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v164 = m.ExcPending
-	if v164 != 0 {
-		goto L4
 	} else {
 		goto L60
 	}
-L60:
+L58:
 	;
-	F_errcode(m, int32(83906754))
+	v169 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
+	v170 = F_BuildIndexValueDescription(m, v169, v153, v155)
 	mBase = m.M
-	v167 = m.ExcPending
-	if v167 != 0 {
-		goto L4
-	} else {
-		goto L61
-	}
-L61:
-	;
-	v168 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
-	v169 = *(*int32)(unsafe.Add(mBase, uint32(v168)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v169 + int32(4)
-	F_errmsg(m, int32(_a_F_comparetup_index_btree_tiebreak_0), v16+int32(16))
-	mBase = m.M
-	v177 = m.ExcPending
-	if v177 != 0 {
+	v171 = m.ExcPending
+	if v171 != 0 {
 		goto L4
 	} else {
 		goto L62
 	}
+L59:
+	;
+	v162 = int32(8)
+	goto L61
+L60:
+	;
+	v162 = int32(16)
+	goto L61
+L61:
+	;
+	F_index_deform_tuple_internal(m, v23, v153, v155, v20+v162, v20+int32(8), int32(base.Ui32(v158)>>(uint(int32(15))%32)))
+	mBase = m.M
+	goto L58
 L62:
 	;
-	if v159 != 0 {
-		goto L64
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v175 = m.ExcPending
+	if v175 != 0 {
+		goto L4
 	} else {
-		goto L65
+		goto L63
 	}
 L63:
 	;
-	v186 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
-	v187 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
-	v188 = *(*int32)(unsafe.Add(mBase, uint32(v187)+48))
-	F_errtableconstraint(m, v186, v188+int32(4))
+	F_errcode(m, int32(83906754))
+	mBase = m.M
+	v178 = m.ExcPending
+	if v178 != 0 {
+		goto L4
+	} else {
+		goto L64
+	}
+L64:
+	;
+	v179 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
+	v180 = *(*int32)(unsafe.Add(mBase, uint32(v179)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v180 + int32(4)
+	F_errmsg(m, int32(_a_F_comparetup_index_btree_tiebreak_0), v16+int32(16))
+	mBase = m.M
+	v188 = m.ExcPending
+	if v188 != 0 {
+		goto L4
+	} else {
+		goto L65
+	}
+L65:
+	;
+	if v170 != 0 {
+		goto L67
+	} else {
+		goto L68
+	}
+L66:
+	;
+	v197 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+	v198 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
+	v199 = *(*int32)(unsafe.Add(mBase, uint32(v198)+48))
+	F_errtableconstraint(m, v197, v199+int32(4))
+	mBase = m.M
+	v203 = m.ExcPending
+	if v203 != 0 {
+		goto L4
+	} else {
+		goto L72
+	}
+L67:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v170
+	v191 = F_errdetail(m, int32(_a_F_comparetup_index_btree_tiebreak_1), v16)
 	mBase = m.M
 	v192 = m.ExcPending
 	if v192 != 0 {
 		goto L4
 	} else {
-		goto L69
+		goto L70
 	}
-L64:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v159
-	F_errdetail(m, int32(_a_F_comparetup_index_btree_tiebreak_1), v16)
-	mBase = m.M
-	v181 = m.ExcPending
-	if v181 != 0 {
-		goto L4
-	} else {
-		goto L67
-	}
-L65:
-	;
-	goto L66
-L66:
-	;
-	F_errdetail(m, int32(_a_F_comparetup_index_btree_tiebreak_2), int32(0))
-	mBase = m.M
-	v185 = m.ExcPending
-	if v185 != 0 {
-		goto L4
-	} else {
-		goto L68
-	}
-L67:
-	;
-	goto L63
 L68:
 	;
-	goto L63
+	goto L69
 L69:
+	;
+	v195 = F_errdetail(m, int32(_a_F_comparetup_index_btree_tiebreak_2), int32(0))
+	mBase = m.M
+	v196 = m.ExcPending
+	if v196 != 0 {
+		goto L4
+	} else {
+		goto L71
+	}
+L70:
+	;
+	goto L66
+L71:
+	;
+	goto L66
+L72:
 	;
 	F_errfinish(m, int32(_a_F_comparetup_index_btree_tiebreak_3), int32(1693), int32(_a_F_comparetup_index_btree_tiebreak_4))
 	mBase = m.M
-	v197 = m.ExcPending
-	if v197 != 0 {
+	v208 = m.ExcPending
+	if v208 != 0 {
 		goto L4
 	} else {
-		goto L70
+		goto L73
 	}
-L70:
+L73:
 	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L71:
-	;
-	if base.Ui32(v202) < base.Ui32(v207) {
-		goto L74
-	} else {
-		goto L75
-	}
-L72:
-	;
-	goto L73
-L73:
-	;
-	v213 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20)+4)))
-	v214 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v19)+4)))
-	v222 = base.B2i32(base.Ui32(v214) < base.Ui32(v213)) - base.B2i32(base.Ui32(v213) < base.Ui32(v214))
-	goto L1
 L74:
 	;
-	v212 = int32(-1)
-	goto L76
+	if base.Ui32(v213) < base.Ui32(v218) {
+		goto L77
+	} else {
+		goto L78
+	}
 L75:
 	;
-	v212 = int32(1)
 	goto L76
 L76:
 	;
-	v222 = v212
+	v224 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20)+4)))
+	v225 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v19)+4)))
+	v233 = base.B2i32(base.Ui32(v225) < base.Ui32(v224)) - base.B2i32(base.Ui32(v224) < base.Ui32(v225))
+	goto L1
+L77:
+	;
+	v223 = int32(-1)
+	goto L79
+L78:
+	;
+	v223 = int32(1)
+	goto L79
+L79:
+	;
+	v233 = v223
 	goto L1
 }

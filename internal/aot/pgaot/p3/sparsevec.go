@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_sparsevec_cmp(m *base.Module, l0 int32) int32 {
+func F_sparsevec_cmp(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -88,7 +88,7 @@ func F_sparsevec_cmp(m *base.Module, l0 int32) int32 {
 	_ = v136
 	var v155 int32
 	_ = v155
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = F_pg_detoast_datum(m, v2)
 	mBase = m.M
 	v6 = m.ExcPending
@@ -99,10 +99,10 @@ func F_sparsevec_cmp(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v8 = F_pg_detoast_datum(m, v7)
 	mBase = m.M
 	v9 = m.ExcPending
@@ -128,7 +128,7 @@ L3:
 	}
 L4:
 	;
-	return v155
+	return base.I64_extend_i32_s(v155)
 L5:
 	;
 	v36 = v31
@@ -669,7 +669,7 @@ L44:
 	;
 	return base.B2i32(v133 < v135)
 }
-func F_sparsevec_l2_squared_distance(m *base.Module, l0 int32) int32 {
+func F_sparsevec_l2_squared_distance(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 float32
@@ -812,16 +812,12 @@ func F_sparsevec_l2_squared_distance(m *base.Module, l0 int32) int32 {
 	_ = v263
 	var v267 float32
 	_ = v267
-	var v283 int32
-	_ = v283
-	var v284 int32
-	_ = v284
 	v2 = float32(0)
 	v4 = int32(0)
 	v18 = m.G0
 	v20 = v18 - int32(16)
 	m.G0 = v20
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v23 = F_pg_detoast_datum(m, v22)
 	mBase = m.M
 	v26 = m.ExcPending
@@ -832,10 +828,10 @@ func F_sparsevec_l2_squared_distance(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v28 = F_pg_detoast_datum(m, v27)
 	mBase = m.M
 	v29 = m.ExcPending
@@ -1066,14 +1062,8 @@ L32:
 	}
 L33:
 	;
-	v283 = F_Float8GetDatum(m, base.F64_promote_f32(v267))
-	mBase = m.M
-	v284 = m.ExcPending
-	if v284 != 0 {
-		goto L1
-	} else {
-		goto L46
-	}
+	m.G0 = v20 + int32(16)
+	return base.I64_reinterpret_f64(base.F64_promote_f32(v267))
 L34:
 	;
 	v178 = (v35 - v161) & int32(3)
@@ -1155,8 +1145,4 @@ L44:
 L45:
 	;
 	goto L44
-L46:
-	;
-	m.G0 = v20 + int32(16)
-	return v283
 }

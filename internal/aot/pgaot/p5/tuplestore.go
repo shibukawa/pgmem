@@ -281,7 +281,7 @@ func F_tuplestore_set_eflags(m *base.Module, l0 int32, l1 int32) {
 			if v98 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_tuplestore_set_eflags_1), int32(376), int32(_a_F_tuplestore_set_eflags_2))
+				F_errfinish(m, int32(_a_F_tuplestore_set_eflags_1), int32(377), int32(_a_F_tuplestore_set_eflags_2))
 				mBase = m.M
 				v103 = m.ExcPending
 				if v103 != 0 {
@@ -308,7 +308,7 @@ func F_tuplestore_set_eflags(m *base.Module, l0 int32, l1 int32) {
 				if v98 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_tuplestore_set_eflags_1), int32(376), int32(_a_F_tuplestore_set_eflags_2))
+					F_errfinish(m, int32(_a_F_tuplestore_set_eflags_1), int32(377), int32(_a_F_tuplestore_set_eflags_2))
 					mBase = m.M
 					v103 = m.ExcPending
 					if v103 != 0 {

@@ -1227,7 +1227,7 @@ L4:
 	switch v19 - int32(1) {
 	case 0:
 		goto L78
-	case 1, 12, 39, 41, 56, 57, 68, 69, 71, 76, 116, 464, 465, 466, 467, 468:
+	case 1, 12, 39, 41, 56, 57, 68, 69, 71, 76, 116, 472, 473, 474, 475, 476:
 		goto L5
 	case 2:
 		goto L77
@@ -4572,7 +4572,7 @@ L377:
 	}
 L378:
 	;
-	v647 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v647 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v648 = m.T0[l1].(func(*base.Module, int32, int32) int32)(m, v647, l2)
 	mBase = m.M
 	v649 = m.ExcPending
@@ -4591,7 +4591,7 @@ L379:
 	}
 L380:
 	;
-	v650 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	v650 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v651 = m.T0[l1].(func(*base.Module, int32, int32) int32)(m, v650, l2)
 	mBase = m.M
 	v652 = m.ExcPending

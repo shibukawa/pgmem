@@ -928,7 +928,7 @@ func F_get_table_am_oid(m *base.Module, l0 int32, l1 int32) int32 {
 		return v4
 	}
 }
-func F_has_table_privilege_id(m *base.Module, l0 int32) int32 {
+func F_has_table_privilege_id(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
@@ -959,18 +959,18 @@ func F_has_table_privilege_id(m *base.Module, l0 int32) int32 {
 	_ = v27
 	var v30 int32
 	_ = v30
-	var v34 int32
-	_ = v34
+	var v36 int64
+	_ = v36
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v12 = F_pg_detoast_datum_packed(m, v11)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v16 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
@@ -979,29 +979,29 @@ func F_has_table_privilege_id(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v22 = m.ExcPending
 		if v22 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v25 = F_pg_class_aclcheck_ext(m, v10, v19, v21, v8+int32(15))
 			mBase = m.M
 			v26 = m.ExcPending
 			if v26 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)))
 				if v27 == int32(1) {
 					v30 = int32(1)
 					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v30)
-					v34 = int32(0)
+					v36 = int64(0)
 				} else {
-					v34 = base.B2i32(v25 == int32(0))
+					v36 = base.I64_extend_i32_u(base.B2i32(v25 == int32(0)))
 				}
 				m.G0 = v8 + int32(16)
-				return v34
+				return v36
 			}
 		}
 	}
 }
-func F_has_table_privilege_id_id(m *base.Module, l0 int32) int32 {
+func F_has_table_privilege_id_id(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
@@ -1032,19 +1032,19 @@ func F_has_table_privilege_id_id(m *base.Module, l0 int32) int32 {
 	_ = v27
 	var v30 int32
 	_ = v30
-	var v34 int32
-	_ = v34
+	var v36 int64
+	_ = v36
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	v14 = F_pg_detoast_datum_packed(m, v13)
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
@@ -1052,29 +1052,29 @@ func F_has_table_privilege_id_id(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v22 = m.ExcPending
 		if v22 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v25 = F_pg_class_aclcheck_ext(m, v11, v12, v21, v9+int32(15))
 			mBase = m.M
 			v26 = m.ExcPending
 			if v26 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
 				if v27 == int32(1) {
 					v30 = int32(1)
 					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v30)
-					v34 = int32(0)
+					v36 = int64(0)
 				} else {
-					v34 = base.B2i32(v25 == int32(0))
+					v36 = base.I64_extend_i32_u(base.B2i32(v25 == int32(0)))
 				}
 				m.G0 = v9 + int32(16)
-				return v34
+				return v36
 			}
 		}
 	}
 }
-func F_has_table_privilege_id_name(m *base.Module, l0 int32) int32 {
+func F_has_table_privilege_id_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -1113,53 +1113,53 @@ func F_has_table_privilege_id_name(m *base.Module, l0 int32) int32 {
 	_ = v26
 	var v27 int32
 	_ = v27
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 		v11 = F_pg_detoast_datum_packed(m, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = F_textToQualifiedNameList(m, v6)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v15 = F_makeRangeVarFromNameList(m, v13)
 				mBase = m.M
 				v16 = m.ExcPending
 				if v16 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v17 = int32(0)
 					v21 = F_RangeVarGetRelidExtended(m, v15, v17, v17, v17, v17)
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v24 = F_convert_any_priv_string(m, v11, int32(_a_F_has_table_privilege_id_name_0))
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v26 = F_pg_class_aclcheck(m, v21, v4, v24)
 							mBase = m.M
 							v27 = m.ExcPending
 							if v27 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								return base.B2i32(v26 == int32(0))
+								return base.I64_extend_i32_u(base.B2i32(v26 == int32(0)))
 							}
 						}
 					}
@@ -1168,7 +1168,7 @@ func F_has_table_privilege_id_name(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_has_table_privilege_name(m *base.Module, l0 int32) int32 {
+func F_has_table_privilege_name(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -1207,53 +1207,53 @@ func F_has_table_privilege_name(m *base.Module, l0 int32) int32 {
 	_ = v27
 	var v28 int32
 	_ = v28
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v5 = F_pg_detoast_datum_packed(m, v4)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v10 = F_pg_detoast_datum_packed(m, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = *(*int32)(unsafe.Add(mBase, _c_F_has_table_privilege_name[0]))
 			v14 = F_textToQualifiedNameList(m, v5)
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v16 = F_makeRangeVarFromNameList(m, v14)
 				mBase = m.M
 				v17 = m.ExcPending
 				if v17 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v18 = int32(0)
 					v22 = F_RangeVarGetRelidExtended(m, v16, v18, v18, v18, v18)
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v25 = F_convert_any_priv_string(m, v10, int32(_a_F_has_table_privilege_name_0))
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v27 = F_pg_class_aclcheck(m, v22, v13, v25)
 							mBase = m.M
 							v28 = m.ExcPending
 							if v28 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								return base.B2i32(v27 == int32(0))
+								return base.I64_extend_i32_u(base.B2i32(v27 == int32(0)))
 							}
 						}
 					}
@@ -1265,126 +1265,89 @@ func F_has_table_privilege_name(m *base.Module, l0 int32) int32 {
 func F_table_beginscan_catalog(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
 	var v5 int32
 	_ = v5
-	var v8 int32
-	_ = v8
+	var v6 int32
+	_ = v6
 	var v9 int32
 	_ = v9
 	var v10 int32
 	_ = v10
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-	v5 = F_GetCatalogSnapshot(m, v4)
-	mBase = m.M
-	v8 = m.ExcPending
-	if v8 != 0 {
-		return int32(0)
-	} else {
-		v9 = F_RegisterSnapshot(m, v5)
-		mBase = m.M
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return int32(0)
-		} else {
-			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
-			v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
-			v15 = m.T0[v14].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, l0, v9, l1, l2, int32(0), int32(961))
-			mBase = m.M
-			v16 = m.ExcPending
-			if v16 != 0 {
-				return int32(0)
-			} else {
-				return v15
-			}
-		}
-	}
-}
-func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
 	var v11 int32
 	_ = v11
-	var v12 int32
-	_ = v12
 	var v13 int32
 	_ = v13
-	var v21 int32
-	_ = v21
-	var v24 int32
-	_ = v24
-	var v25 int32
-	_ = v25
-	var v31 int32
-	_ = v31
+	var v17 int32
+	_ = v17
+	var v23 int32
+	_ = v23
+	var v27 int32
+	_ = v27
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
 	var v35 int32
 	_ = v35
-	var v40 int32
-	_ = v40
-	v4 = m.G0
-	v6 = v4 - int32(16)
-	m.G0 = v6
-	v8 = F_relation_open(m, l0, l1)
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+	v6 = F_GetCatalogSnapshot(m, v5)
 	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
+	v9 = m.ExcPending
+	if v9 != 0 {
 		return int32(0)
 	} else {
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
-		v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+119)))
-		switch v13 - int32(99) {
-		case 0, 6:
-			F_errstart_cold(m, int32(21), int32(0))
-			mBase = m.M
-			v21 = m.ExcPending
-			if v21 != 0 {
-				return int32(0)
-			} else {
-				F_errcode(m, int32(151027844))
+		v10 = F_RegisterSnapshot(m, v6)
+		mBase = m.M
+		v11 = m.ExcPending
+		if v11 != 0 {
+			return int32(0)
+		} else {
+			v13 = *(*int32)(unsafe.Add(mBase, _c_F_table_beginscan_catalog[0]))
+			if v13 == int32(0) {
+				v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
+				v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+8))
+				v37 = m.T0[v36].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, l0, v10, l1, l2, int32(0), int32(961))
 				mBase = m.M
-				v24 = m.ExcPending
-				if v24 != 0 {
+				v38 = m.ExcPending
+				if v38 != 0 {
 					return int32(0)
 				} else {
-					v25 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
-					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25 + int32(4)
-					F_errmsg(m, int32(_a_F_table_open_0), v6)
+					return v37
+				}
+			} else {
+				v17 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_table_beginscan_catalog[1])))
+				if v17&int32(1) != 0 {
+					v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
+					v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+8))
+					v37 = m.T0[v36].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, l0, v10, l1, l2, int32(0), int32(961))
 					mBase = m.M
-					v31 = m.ExcPending
-					if v31 != 0 {
+					v38 = m.ExcPending
+					if v38 != 0 {
 						return int32(0)
 					} else {
-						v32 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
-						v33 = int32(*(*int8)(unsafe.Add(mBase, uint32(v32)+119)))
-						F_errdetail_relkind_not_supported(m, v33)
+						return v37
+					}
+				} else {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v23 = m.ExcPending
+					if v23 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg_internal(m, int32(_a_F_table_beginscan_catalog_0), int32(0))
 						mBase = m.M
-						v35 = m.ExcPending
-						if v35 != 0 {
+						v27 = m.ExcPending
+						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_table_open_1), int32(147), int32(_a_F_table_open_2))
+							F_errfinish(m, int32(_a_F_table_beginscan_catalog_1), int32(931), int32(_a_F_table_beginscan_catalog_2))
 							mBase = m.M
-							v40 = m.ExcPending
-							if v40 != 0 {
+							v32 = m.ExcPending
+							if v32 != 0 {
 								return int32(0)
 							} else {
 								base.Wasm_trap_unreachable()
@@ -1395,57 +1358,27 @@ func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 					}
 				}
 			}
-		case 1, 2, 3, 4, 5:
-			m.G0 = v6 + int32(16)
-			return v8
-		default:
-			if v13 != int32(73) {
-				m.G0 = v6 + int32(16)
-				return v8
-			} else {
-				F_errstart_cold(m, int32(21), int32(0))
-				mBase = m.M
-				v21 = m.ExcPending
-				if v21 != 0 {
-					return int32(0)
-				} else {
-					F_errcode(m, int32(151027844))
-					mBase = m.M
-					v24 = m.ExcPending
-					if v24 != 0 {
-						return int32(0)
-					} else {
-						v25 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
-						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25 + int32(4)
-						F_errmsg(m, int32(_a_F_table_open_0), v6)
-						mBase = m.M
-						v31 = m.ExcPending
-						if v31 != 0 {
-							return int32(0)
-						} else {
-							v32 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
-							v33 = int32(*(*int8)(unsafe.Add(mBase, uint32(v32)+119)))
-							F_errdetail_relkind_not_supported(m, v33)
-							mBase = m.M
-							v35 = m.ExcPending
-							if v35 != 0 {
-								return int32(0)
-							} else {
-								F_errfinish(m, int32(_a_F_table_open_1), int32(147), int32(_a_F_table_open_2))
-								mBase = m.M
-								v40 = m.ExcPending
-								if v40 != 0 {
-									return int32(0)
-								} else {
-									base.Wasm_trap_unreachable()
-									for {
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+		}
+	}
+}
+func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	v3 = F_relation_open(m, l0, l1)
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		F_validate_relation_as_table(m, v3)
+		v8 = m.ExcPending
+		if v8 != 0 {
+			return int32(0)
+		} else {
+			return v3
 		}
 	}
 }

@@ -841,7 +841,7 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							if v40 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_AtEOSubXact_cleanup_1), int32(3475), int32(_a_F_AtEOSubXact_cleanup_2))
+								F_errfinish(m, int32(_a_F_AtEOSubXact_cleanup_1), int32(3469), int32(_a_F_AtEOSubXact_cleanup_2))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -1089,7 +1089,7 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						if v40 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_AtEOSubXact_cleanup_1), int32(3475), int32(_a_F_AtEOSubXact_cleanup_2))
+							F_errfinish(m, int32(_a_F_AtEOSubXact_cleanup_1), int32(3469), int32(_a_F_AtEOSubXact_cleanup_2))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {

@@ -773,7 +773,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(4061), int32(_a_F_reindex_relation_2))
+	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_2), int32(_a_F_reindex_relation_3))
 	mBase = m.M
 	v156 = m.ExcPending
 	if v156 != 0 {
@@ -814,7 +814,7 @@ L66:
 	goto L63
 L67:
 	;
-	v169 = int32(_a_F_reindex_relation_3)
+	v169 = int32(_a_F_reindex_relation_4)
 	v171 = *(*int32)(unsafe.Add(mBase, _c_F_reindex_relation[0]))
 	v172 = F_list_delete_ptr(m, v171, v122)
 	mBase = m.M
@@ -864,16 +864,16 @@ L73:
 	}
 L74:
 	;
-	v192 = int32(_a_F_reindex_relation_4)
+	v192 = int32(_a_F_reindex_relation_5)
 	v194 = *(*int32)(unsafe.Add(mBase, _c_F_reindex_relation[5]))
 	v195 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _c_F_reindex_relation[5])) = v194 + v195
 	v198 = *(*int32)(unsafe.Add(mBase, uint32(v183)))
 	*(*int32)(unsafe.Add(mBase, uint32(v183))) = v198 + v195
 	v202 = int32(0)
-	v204 = int32(_a_F_reindex_relation_5)
+	v204 = int32(_a_F_reindex_relation_6)
 	v205 = base.AtomicRmwOr32(m, v202, v204, v202)
-	*(*int64)(unsafe.Add(mBase, uint32(v183+int32(56))+232)) = base.I64_extend_i32_s(v114)
+	*(*int64)(unsafe.Add(mBase, uint32(v183+int32(72))+232)) = base.I64_extend_i32_s(v114)
 	v213 = base.AtomicRmwOr32(m, v202, v204, v202)
 	v214 = *(*int32)(unsafe.Add(mBase, uint32(v183)))
 	*(*int32)(unsafe.Add(mBase, uint32(v183))) = v214 + v195
@@ -904,7 +904,7 @@ L78:
 	v277 = *(*int32)(unsafe.Add(mBase, uint32(v29)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v275
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = v277 + int32(4)
-	F_errmsg_internal(m, int32(_a_F_reindex_relation_6), v16)
+	F_errmsg_internal(m, int32(_a_F_reindex_relation_7), v16)
 	mBase = m.M
 	v284 = m.ExcPending
 	if v284 != 0 {
@@ -914,7 +914,7 @@ L78:
 	}
 L79:
 	;
-	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(3980), int32(_a_F_reindex_relation_2))
+	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_8), int32(_a_F_reindex_relation_3))
 	mBase = m.M
 	v289 = m.ExcPending
 	if v289 != 0 {
@@ -929,7 +929,7 @@ L80:
 	}
 L81:
 	;
-	F_errmsg_internal(m, int32(_a_F_reindex_relation_7), int32(0))
+	F_errmsg_internal(m, int32(_a_F_reindex_relation_9), int32(0))
 	mBase = m.M
 	v297 = m.ExcPending
 	if v297 != 0 {
@@ -939,7 +939,7 @@ L81:
 	}
 L82:
 	;
-	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_8), int32(_a_F_reindex_relation_9))
+	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_10), int32(_a_F_reindex_relation_11))
 	mBase = m.M
 	v302 = m.ExcPending
 	if v302 != 0 {
@@ -954,7 +954,7 @@ L83:
 	}
 L84:
 	;
-	F_errmsg_internal(m, int32(_a_F_reindex_relation_10), int32(0))
+	F_errmsg_internal(m, int32(_a_F_reindex_relation_12), int32(0))
 	mBase = m.M
 	v310 = m.ExcPending
 	if v310 != 0 {
@@ -964,7 +964,7 @@ L84:
 	}
 L85:
 	;
-	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_11), int32(_a_F_reindex_relation_9))
+	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_13), int32(_a_F_reindex_relation_11))
 	mBase = m.M
 	v315 = m.ExcPending
 	if v315 != 0 {
@@ -979,7 +979,7 @@ L86:
 	}
 L87:
 	;
-	F_errmsg_internal(m, int32(_a_F_reindex_relation_10), int32(0))
+	F_errmsg_internal(m, int32(_a_F_reindex_relation_12), int32(0))
 	mBase = m.M
 	v323 = m.ExcPending
 	if v323 != 0 {
@@ -989,7 +989,7 @@ L87:
 	}
 L88:
 	;
-	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_12), int32(_a_F_reindex_relation_13))
+	F_errfinish(m, int32(_a_F_reindex_relation_1), int32(_a_F_reindex_relation_14), int32(_a_F_reindex_relation_15))
 	mBase = m.M
 	v328 = m.ExcPending
 	if v328 != 0 {

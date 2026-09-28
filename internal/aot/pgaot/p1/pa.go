@@ -15,81 +15,78 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 	_ = v5
 	var v10 int32
 	_ = v10
-	var v12 int32
-	_ = v12
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
 	var v17 int32
 	_ = v17
-	var v19 int32
-	_ = v19
-	var v20 int32
-	_ = v20
-	var v21 int32
-	_ = v21
+	var v23 int32
+	_ = v23
 	var v27 int32
 	_ = v27
-	var v31 int32
-	_ = v31
-	var v36 int32
-	_ = v36
-	var v37 int32
-	_ = v37
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
 	var v39 int32
 	_ = v39
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
 	var v43 int32
 	_ = v43
-	var v44 int32
-	_ = v44
-	var v46 int32
-	_ = v46
 	var v47 int32
 	_ = v47
-	var v51 int32
-	_ = v51
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
 	var v53 int32
 	_ = v53
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
 	var v57 int32
 	_ = v57
-	var v61 int32
-	_ = v61
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+20))
 	if v5 == int32(0) {
 		v10 = base.AtomicRmwXchg32(m, v4, int32(0), int32(1))
 		if v10 != 0 {
-			v12 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
-			F_s_lock(m, v12, int32(_a_F_pa_decr_and_wait_stream_block_0), int32(1531), int32(_a_F_pa_decr_and_wait_stream_block_1))
+			F_s_lock(m, v4, int32(_a_F_pa_decr_and_wait_stream_block_0))
 			mBase = m.M
-			v17 = m.ExcPending
-			if v17 != 0 {
+			v13 = m.ExcPending
+			if v13 != 0 {
 				return
 			} else {
-				v19 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
-				v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+32))
-				v21 = int32(0)
-				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v19))), uint32(v21))
-				if v20 != 0 {
+				v15 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
+				v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+32))
+				v17 = int32(0)
+				atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v15))), uint32(v17))
+				if v16 != 0 {
 					return
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v27 = m.ExcPending
-					if v27 != 0 {
+					v23 = m.ExcPending
+					if v23 != 0 {
 						return
 					} else {
-						F_errmsg_internal(m, int32(_a_F_pa_decr_and_wait_stream_block_2), int32(0))
+						F_errmsg_internal(m, int32(_a_F_pa_decr_and_wait_stream_block_1), int32(0))
 						mBase = m.M
-						v31 = m.ExcPending
-						if v31 != 0 {
+						v27 = m.ExcPending
+						if v27 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(_a_F_pa_decr_and_wait_stream_block_0), int32(1611), int32(_a_F_pa_decr_and_wait_stream_block_3))
+							F_errfinish(m, int32(_a_F_pa_decr_and_wait_stream_block_2), int32(1623), int32(_a_F_pa_decr_and_wait_stream_block_3))
 							mBase = m.M
-							v36 = m.ExcPending
-							if v36 != 0 {
+							v32 = m.ExcPending
+							if v32 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -101,29 +98,29 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 				}
 			}
 		} else {
-			v19 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
-			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+32))
-			v21 = int32(0)
-			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v19))), uint32(v21))
-			if v20 != 0 {
+			v15 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+32))
+			v17 = int32(0)
+			atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(v15))), uint32(v17))
+			if v16 != 0 {
 				return
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v27 = m.ExcPending
-				if v27 != 0 {
+				v23 = m.ExcPending
+				if v23 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(_a_F_pa_decr_and_wait_stream_block_2), int32(0))
+					F_errmsg_internal(m, int32(_a_F_pa_decr_and_wait_stream_block_1), int32(0))
 					mBase = m.M
-					v31 = m.ExcPending
-					if v31 != 0 {
+					v27 = m.ExcPending
+					if v27 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_pa_decr_and_wait_stream_block_0), int32(1611), int32(_a_F_pa_decr_and_wait_stream_block_3))
+						F_errfinish(m, int32(_a_F_pa_decr_and_wait_stream_block_2), int32(1623), int32(_a_F_pa_decr_and_wait_stream_block_3))
 						mBase = m.M
-						v36 = m.ExcPending
-						if v36 != 0 {
+						v32 = m.ExcPending
+						if v32 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -135,29 +132,29 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 			}
 		}
 	} else {
-		v37 = int32(1)
-		v39 = base.AtomicRmwSub32(m, v4, int32(20), v37)
-		if v39 != v37 {
+		v33 = int32(1)
+		v35 = base.AtomicRmwSub32(m, v4, int32(20), v33)
+		if v35 != v33 {
 			return
 		} else {
-			v43 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[1]))
-			v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+32))
-			v46 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
-			v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)+4))
-			F_LockApplyTransactionForSession(m, v44, v47, int32(0), int32(1))
+			v39 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[1]))
+			v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+32))
+			v42 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
+			v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+4))
+			F_LockApplyTransactionForSession(m, v40, v43, int32(0), int32(1))
 			mBase = m.M
-			v51 = m.ExcPending
-			if v51 != 0 {
+			v47 = m.ExcPending
+			if v47 != 0 {
 				return
 			} else {
-				v53 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[1]))
-				v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+32))
-				v56 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
-				v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+4))
-				F_UnlockApplyTransactionForSession(m, v54, v57, int32(0), int32(1))
+				v49 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[1]))
+				v50 = *(*int32)(unsafe.Add(mBase, uint32(v49)+32))
+				v52 = *(*int32)(unsafe.Add(mBase, _c_F_pa_decr_and_wait_stream_block[0]))
+				v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+4))
+				F_UnlockApplyTransactionForSession(m, v50, v53, int32(0), int32(1))
 				mBase = m.M
-				v61 = m.ExcPending
-				if v61 != 0 {
+				v57 = m.ExcPending
+				if v57 != 0 {
 					return
 				} else {
 					return
@@ -306,7 +303,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(_a_F_pa_send_data_1), int32(1187), int32(_a_F_pa_send_data_2))
+	F_errfinish(m, int32(_a_F_pa_send_data_1), int32(1199), int32(_a_F_pa_send_data_2))
 	mBase = m.M
 	v40 = m.ExcPending
 	if v40 != 0 {

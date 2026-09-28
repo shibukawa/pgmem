@@ -18,40 +18,40 @@ func F_changeDependenciesOf(m *base.Module, l0 int32, l1 int32) {
 	_ = v15
 	var v21 int32
 	_ = v21
-	var v28 int32
-	_ = v28
-	var v34 int32
-	_ = v34
+	var v29 int32
+	_ = v29
 	var v35 int32
 	_ = v35
 	var v36 int32
 	_ = v36
 	var v37 int32
 	_ = v37
-	var v40 int32
-	_ = v40
-	var v45 int32
-	_ = v45
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
 	var v46 int32
 	_ = v46
 	var v47 int32
 	_ = v47
 	var v48 int32
 	_ = v48
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
-	var v59 int32
-	_ = v59
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	var v57 int32
+	_ = v57
 	var v60 int32
 	_ = v60
-	var v69 int32
-	_ = v69
-	var v72 int32
-	_ = v72
+	var v61 int32
+	_ = v61
+	var v70 int32
+	_ = v70
+	var v73 int32
+	_ = v73
 	v8 = m.G0
-	v10 = v8 - int32(96)
+	v10 = v8 - int32(112)
 	m.G0 = v10
 	v14 = F_table_open(m, int32(2608), int32(3))
 	mBase = m.M
@@ -66,7 +66,7 @@ L1:
 	return
 L2:
 	;
-	F_ScanKeyInit(m, v10, int32(1), int32(3), int32(184), int32(1259))
+	F_ScanKeyInit(m, v10, int32(1), int32(3), int32(184), int64(1259))
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
@@ -76,64 +76,64 @@ L2:
 	}
 L3:
 	;
-	F_ScanKeyInit(m, v10+int32(48), int32(2), int32(3), int32(184), l0)
+	F_ScanKeyInit(m, v10+int32(56), int32(2), int32(3), int32(184), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v28 = m.ExcPending
-	if v28 != 0 {
+	v29 = m.ExcPending
+	if v29 != 0 {
 		goto L1
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v34 = F_systable_beginscan(m, v14, int32(2673), int32(1), int32(0), int32(2), v10)
+	v35 = F_systable_beginscan(m, v14, int32(2673), int32(1), int32(0), int32(2), v10)
 	mBase = m.M
-	v35 = m.ExcPending
-	if v35 != 0 {
+	v36 = m.ExcPending
+	if v36 != 0 {
 		goto L1
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v36 = F_systable_getnext(m, v34)
+	v37 = F_systable_getnext(m, v35)
 	mBase = m.M
-	v37 = m.ExcPending
-	if v37 != 0 {
+	v38 = m.ExcPending
+	if v38 != 0 {
 		goto L1
 	} else {
 		goto L6
 	}
 L6:
 	;
-	if v36 != 0 {
+	if v37 != 0 {
 		goto L7
 	} else {
 		goto L8
 	}
 L7:
 	;
-	v40 = v36
+	v41 = v37
 	goto L10
 L8:
 	;
 	goto L9
 L9:
 	;
-	F_systable_endscan(m, v34)
+	F_systable_endscan(m, v35)
 	mBase = m.M
-	v69 = m.ExcPending
-	if v69 != 0 {
+	v70 = m.ExcPending
+	if v70 != 0 {
 		goto L1
 	} else {
 		goto L17
 	}
 L10:
 	;
-	v45 = F_heap_copytuple(m, v40)
+	v46 = F_heap_copytuple(m, v41)
 	mBase = m.M
-	v46 = m.ExcPending
-	if v46 != 0 {
+	v47 = m.ExcPending
+	if v47 != 0 {
 		goto L1
 	} else {
 		goto L12
@@ -143,41 +143,41 @@ L11:
 	goto L9
 L12:
 	;
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v45)+16))
-	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47)+22)))
-	*(*int32)(unsafe.Add(mBase, uint32(v47+v48)+4)) = l1
-	F_CatalogTupleUpdate(m, v14, v45+int32(4), v45)
+	v48 = *(*int32)(unsafe.Add(mBase, uint32(v46)+16))
+	v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48)+22)))
+	*(*int32)(unsafe.Add(mBase, uint32(v48+v49)+4)) = l1
+	F_CatalogTupleUpdate(m, v14, v46+int32(4), v46)
 	mBase = m.M
-	v54 = m.ExcPending
-	if v54 != 0 {
+	v55 = m.ExcPending
+	if v55 != 0 {
 		goto L1
 	} else {
 		goto L13
 	}
 L13:
 	;
-	F_pfree(m, v45)
+	F_pfree(m, v46)
 	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
+	v57 = m.ExcPending
+	if v57 != 0 {
 		goto L1
 	} else {
 		goto L14
 	}
 L14:
 	;
-	v59 = F_systable_getnext(m, v34)
+	v60 = F_systable_getnext(m, v35)
 	mBase = m.M
-	v60 = m.ExcPending
-	if v60 != 0 {
+	v61 = m.ExcPending
+	if v61 != 0 {
 		goto L1
 	} else {
 		goto L15
 	}
 L15:
 	;
-	if v59 != 0 {
-		v40 = v59
+	if v60 != 0 {
+		v41 = v60
 		goto L10
 	} else {
 		goto L16
@@ -189,15 +189,15 @@ L17:
 	;
 	F_relation_close(m, v14, int32(3))
 	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
+	v73 = m.ExcPending
+	if v73 != 0 {
 		goto L1
 	} else {
 		goto L18
 	}
 L18:
 	;
-	m.G0 = v10 + int32(96)
+	m.G0 = v10 + int32(112)
 	return
 }
 func F_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
@@ -237,7 +237,7 @@ func F_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(_a_F_change_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v12
 	v16 = *(*int64)(unsafe.Add(mBase, uint32(l3)))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = int32(993)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = int32(1058)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v16
 	v20 = int32(_a_F_change_cb_wrapper_1)
 	v21 = *(*int32)(unsafe.Add(mBase, _c_F_change_cb_wrapper[0]))

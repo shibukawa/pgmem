@@ -16,18 +16,14 @@ func F_GetAttrDefaultOid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v12
 	var v15 int32
 	_ = v15
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v33 int32
-	_ = v33
-	var v34 int32
-	_ = v34
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
 	var v35 int32
 	_ = v35
 	var v36 int32
@@ -36,16 +32,20 @@ func F_GetAttrDefaultOid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v37
 	var v38 int32
 	_ = v38
+	var v39 int32
+	_ = v39
 	var v40 int32
 	_ = v40
-	var v41 int32
-	_ = v41
+	var v42 int32
+	_ = v42
 	var v43 int32
 	_ = v43
-	var v46 int32
-	_ = v46
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
 	v6 = m.G0
-	v8 = v6 - int32(96)
+	v8 = v6 - int32(112)
 	m.G0 = v8
 	v12 = F_table_open(m, int32(2604), int32(1))
 	mBase = m.M
@@ -53,54 +53,54 @@ func F_GetAttrDefaultOid(m *base.Module, l0 int32, l1 int32) int32 {
 	if v15 != 0 {
 		return int32(0)
 	} else {
-		F_ScanKeyInit(m, v8, int32(2), int32(3), int32(184), l0)
+		F_ScanKeyInit(m, v8, int32(2), int32(3), int32(184), base.I64_extend_i32_u(l0))
 		mBase = m.M
-		v20 = m.ExcPending
-		if v20 != 0 {
+		v21 = m.ExcPending
+		if v21 != 0 {
 			return int32(0)
 		} else {
-			v23 = int32(3)
-			F_ScanKeyInit(m, v8+int32(48), v23, v23, int32(63), l1)
+			v24 = int32(3)
+			F_ScanKeyInit(m, v8+int32(56), v24, v24, int32(63), base.I64_extend_i32_s(l1))
 			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
+			v29 = m.ExcPending
+			if v29 != 0 {
 				return int32(0)
 			} else {
-				v28 = int32(0)
-				v33 = F_systable_beginscan(m, v12, int32(2656), int32(1), v28, int32(2), v8)
+				v30 = int32(0)
+				v35 = F_systable_beginscan(m, v12, int32(2656), int32(1), v30, int32(2), v8)
 				mBase = m.M
-				v34 = m.ExcPending
-				if v34 != 0 {
+				v36 = m.ExcPending
+				if v36 != 0 {
 					return int32(0)
 				} else {
-					v35 = F_systable_getnext(m, v33)
+					v37 = F_systable_getnext(m, v35)
 					mBase = m.M
-					v36 = m.ExcPending
-					if v36 != 0 {
+					v38 = m.ExcPending
+					if v38 != 0 {
 						return int32(0)
 					} else {
-						if v35 != 0 {
-							v37 = *(*int32)(unsafe.Add(mBase, uint32(v35)+16))
-							v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v37)+22)))
-							v40 = *(*int32)(unsafe.Add(mBase, uint32(v37+v38)))
-							v41 = v40
+						if v37 != 0 {
+							v39 = *(*int32)(unsafe.Add(mBase, uint32(v37)+16))
+							v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39)+22)))
+							v42 = *(*int32)(unsafe.Add(mBase, uint32(v39+v40)))
+							v43 = v42
 						} else {
-							v41 = v28
+							v43 = v30
 						}
-						F_systable_endscan(m, v33)
+						F_systable_endscan(m, v35)
 						mBase = m.M
-						v43 = m.ExcPending
-						if v43 != 0 {
+						v45 = m.ExcPending
+						if v45 != 0 {
 							return int32(0)
 						} else {
 							F_relation_close(m, v12, int32(1))
 							mBase = m.M
-							v46 = m.ExcPending
-							if v46 != 0 {
+							v48 = m.ExcPending
+							if v48 != 0 {
 								return int32(0)
 							} else {
-								m.G0 = v8 + int32(96)
-								return v41
+								m.G0 = v8 + int32(112)
+								return v43
 							}
 						}
 					}

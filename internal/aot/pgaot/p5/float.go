@@ -5,40 +5,42 @@ import (
 	"unsafe"
 )
 
-func F_FloatExceptionHandler(m *base.Module, l0 int32) {
-	var v5 int32
-	_ = v5
-	var v8 int32
-	_ = v8
-	var v12 int32
-	_ = v12
+func F_FloatExceptionHandler(m *base.Module, l0 int32, l1 int32) {
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
 	var v16 int32
 	_ = v16
-	var v21 int32
-	_ = v21
+	var v17 int32
+	_ = v17
+	var v22 int32
+	_ = v22
 	F_errstart_cold(m, int32(21), int32(0))
-	v5 = m.ExcPending
-	if v5 != 0 {
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return
 	} else {
 		F_errcode(m, int32(16908418))
-		v8 = m.ExcPending
-		if v8 != 0 {
+		v9 = m.ExcPending
+		if v9 != 0 {
 			return
 		} else {
 			F_errmsg(m, int32(_a_F_FloatExceptionHandler_0), int32(0))
-			v12 = m.ExcPending
-			if v12 != 0 {
+			v13 = m.ExcPending
+			if v13 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(_a_F_FloatExceptionHandler_1), int32(0))
-				v16 = m.ExcPending
-				if v16 != 0 {
+				v16 = F_errdetail(m, int32(_a_F_FloatExceptionHandler_1), int32(0))
+				v17 = m.ExcPending
+				if v17 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_FloatExceptionHandler_2), int32(3188), int32(_a_F_FloatExceptionHandler_3))
-					v21 = m.ExcPending
-					if v21 != 0 {
+					F_errfinish(m, int32(_a_F_FloatExceptionHandler_2), int32(3198), int32(_a_F_FloatExceptionHandler_3))
+					v22 = m.ExcPending
+					if v22 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()

@@ -6,27 +6,97 @@ import (
 )
 
 func F_XmlTableFetchRow(m *base.Module, l0 int32) int32 {
-	var v4 int32
-	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13842(m, l0, int32(_a_F_XmlTableFetchRow_0), int32(_a_F_XmlTableFetchRow_1))
+	var v10 int32
+	_ = v10
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v23 int32
+	_ = v23
+	F_errstart_cold(m, int32(21), int32(0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		return v4
+		F_errcode(m, int32(1088))
+		v10 = m.ExcPending
+		if v10 != 0 {
+			return int32(0)
+		} else {
+			F_errmsg(m, int32(_a_F_XmlTableFetchRow_0), int32(0))
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return int32(0)
+			} else {
+				v17 = F_errdetail(m, int32(_a_F_XmlTableFetchRow_1), int32(0))
+				v18 = m.ExcPending
+				if v18 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_XmlTableFetchRow_2), int32(_a_F_XmlTableFetchRow_3), int32(_a_F_XmlTableFetchRow_4))
+					v23 = m.ExcPending
+					if v23 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
 	}
 }
 func F_XmlTableSetRowFilter(m *base.Module, l0 int32, l1 int32) {
 	var v6 int32
 	_ = v6
-	Fn13843(m, l0, l1, int32(_a_F_XmlTableSetRowFilter_0), int32(_a_F_XmlTableSetRowFilter_1))
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v22 int32
+	_ = v22
+	F_errstart_cold(m, int32(21), int32(0))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return
 	} else {
-		return
+		F_errcode(m, int32(1088))
+		v9 = m.ExcPending
+		if v9 != 0 {
+			return
+		} else {
+			F_errmsg(m, int32(_a_F_XmlTableSetRowFilter_0), int32(0))
+			v13 = m.ExcPending
+			if v13 != 0 {
+				return
+			} else {
+				v16 = F_errdetail(m, int32(_a_F_XmlTableSetRowFilter_1), int32(0))
+				v17 = m.ExcPending
+				if v17 != 0 {
+					return
+				} else {
+					F_errfinish(m, int32(_a_F_XmlTableSetRowFilter_2), int32(_a_F_XmlTableSetRowFilter_3), int32(_a_F_XmlTableSetRowFilter_4))
+					v22 = m.ExcPending
+					if v22 != 0 {
+						return
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
 	}
 }
 func F_map_xml_name_to_sql_identifier(m *base.Module, l0 int32) int32 {
@@ -260,15 +330,15 @@ L27:
 	v14 = v116 + v114
 	goto L3
 }
-func F_xml_is_well_formed_document(m *base.Module, l0 int32) int32 {
-	var v4 int32
+func F_xml_is_well_formed_document(m *base.Module, l0 int32) int64 {
+	var v4 int64
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13842(m, l0, int32(_a_F_xml_is_well_formed_document_0), int32(_a_F_xml_is_well_formed_document_1))
+	v4 = Fn14411(m, l0, int32(_a_F_xml_is_well_formed_document_0), int32(_a_F_xml_is_well_formed_document_1))
 	v7 = m.ExcPending
 	if v7 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v4
 	}

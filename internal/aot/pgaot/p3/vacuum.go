@@ -10,7 +10,7 @@ func F_makeVacuumRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = Fn13945(m, l0, l1, l2, int32(240))
+	v5 = Fn14328(m, l0, l1, l2, int32(239))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -121,9 +121,9 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 									return v88
 								} else {
 									if v27 != 0 {
-										v50 = int32(856)
+										v50 = int32(841)
 									} else {
-										v50 = int32(851)
+										v50 = int32(836)
 									}
 									if v27 != 0 {
 										v53 = int32(_a_F_vacuum_open_relation_0)
@@ -183,9 +183,9 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 										return v88
 									} else {
 										if v27 != 0 {
-											v65 = int32(877)
+											v65 = int32(862)
 										} else {
-											v65 = int32(872)
+											v65 = int32(857)
 										}
 										if v27 != 0 {
 											v68 = int32(_a_F_vacuum_open_relation_4)
@@ -272,9 +272,9 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 									return v88
 								} else {
 									if v27 != 0 {
-										v50 = int32(856)
+										v50 = int32(841)
 									} else {
-										v50 = int32(851)
+										v50 = int32(836)
 									}
 									if v27 != 0 {
 										v53 = int32(_a_F_vacuum_open_relation_0)
@@ -334,9 +334,9 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 										return v88
 									} else {
 										if v27 != 0 {
-											v65 = int32(877)
+											v65 = int32(862)
 										} else {
-											v65 = int32(872)
+											v65 = int32(857)
 										}
 										if v27 != 0 {
 											v68 = int32(_a_F_vacuum_open_relation_4)
@@ -426,9 +426,9 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 											return v88
 										} else {
 											if v27 != 0 {
-												v50 = int32(856)
+												v50 = int32(841)
 											} else {
-												v50 = int32(851)
+												v50 = int32(836)
 											}
 											if v27 != 0 {
 												v53 = int32(_a_F_vacuum_open_relation_0)
@@ -488,9 +488,9 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 												return v88
 											} else {
 												if v27 != 0 {
-													v65 = int32(877)
+													v65 = int32(862)
 												} else {
-													v65 = int32(872)
+													v65 = int32(857)
 												}
 												if v27 != 0 {
 													v68 = int32(_a_F_vacuum_open_relation_4)

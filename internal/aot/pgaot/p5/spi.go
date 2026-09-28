@@ -118,7 +118,7 @@ func F_SPI_connect_ext(m *base.Module, l0 int32) {
 				if v138 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_SPI_connect_ext_1), int32(108), int32(_a_F_SPI_connect_ext_2))
+					F_errfinish(m, int32(_a_F_SPI_connect_ext_1), int32(109), int32(_a_F_SPI_connect_ext_2))
 					mBase = m.M
 					v143 = m.ExcPending
 					if v143 != 0 {
@@ -145,7 +145,7 @@ func F_SPI_connect_ext(m *base.Module, l0 int32) {
 					if v138 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_SPI_connect_ext_1), int32(108), int32(_a_F_SPI_connect_ext_2))
+						F_errfinish(m, int32(_a_F_SPI_connect_ext_1), int32(109), int32(_a_F_SPI_connect_ext_2))
 						mBase = m.M
 						v143 = m.ExcPending
 						if v143 != 0 {
@@ -255,7 +255,7 @@ func F_SPI_connect_ext(m *base.Module, l0 int32) {
 				if v152 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_SPI_connect_ext_1), int32(118), int32(_a_F_SPI_connect_ext_2))
+					F_errfinish(m, int32(_a_F_SPI_connect_ext_1), int32(119), int32(_a_F_SPI_connect_ext_2))
 					mBase = m.M
 					v157 = m.ExcPending
 					if v157 != 0 {
@@ -282,7 +282,7 @@ func F_SPI_connect_ext(m *base.Module, l0 int32) {
 					if v152 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_SPI_connect_ext_1), int32(118), int32(_a_F_SPI_connect_ext_2))
+						F_errfinish(m, int32(_a_F_SPI_connect_ext_1), int32(119), int32(_a_F_SPI_connect_ext_2))
 						mBase = m.M
 						v157 = m.ExcPending
 						if v157 != 0 {
@@ -699,46 +699,46 @@ func F_spi_dest_startup(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v33
 	var v34 int32
 	_ = v34
-	var v42 int32
-	_ = v42
 	var v43 int32
 	_ = v43
-	var v47 int32
-	_ = v47
+	var v44 int32
+	_ = v44
 	var v48 int32
 	_ = v48
-	var v55 int32
-	_ = v55
-	var v59 int32
-	_ = v59
-	var v64 int32
-	_ = v64
-	var v68 int32
-	_ = v68
-	var v72 int32
-	_ = v72
-	var v77 int32
-	_ = v77
+	var v49 int32
+	_ = v49
+	var v56 int32
+	_ = v56
+	var v60 int32
+	_ = v60
+	var v65 int32
+	_ = v65
+	var v69 int32
+	_ = v69
+	var v73 int32
+	_ = v73
+	var v78 int32
+	_ = v78
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_spi_dest_startup[0]))
 	if v6 != 0 {
 		v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+8))
 		if v7 != 0 {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v68 = m.ExcPending
-			if v68 != 0 {
+			v69 = m.ExcPending
+			if v69 != 0 {
 				return
 			} else {
 				F_errmsg_internal(m, int32(_a_F_spi_dest_startup_0), int32(0))
 				mBase = m.M
-				v72 = m.ExcPending
-				if v72 != 0 {
+				v73 = m.ExcPending
+				if v73 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_spi_dest_startup_1), int32(2133), int32(_a_F_spi_dest_startup_2))
+					F_errfinish(m, int32(_a_F_spi_dest_startup_1), int32(2134), int32(_a_F_spi_dest_startup_2))
 					mBase = m.M
-					v77 = m.ExcPending
-					if v77 != 0 {
+					v78 = m.ExcPending
+					if v78 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()
@@ -776,21 +776,21 @@ func F_spi_dest_startup(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					*(*int32)(unsafe.Add(mBase, uint32(v22)+28)) = v34
 					*(*int32)(unsafe.Add(mBase, uint32(v33)+16)) = v22 + int32(28)
 					*(*int64)(unsafe.Add(mBase, uint32(v22)+16)) = int64(128)
-					v42 = F_palloc(m, int32(512))
+					v43 = F_palloc_mul(m, int32(4), int32(128))
 					mBase = m.M
-					v43 = m.ExcPending
-					if v43 != 0 {
+					v44 = m.ExcPending
+					if v44 != 0 {
 						return
 					} else {
 						*(*int64)(unsafe.Add(mBase, uint32(v22)+8)) = int64(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v22)+4)) = v42
-						v47 = F_CreateTupleDescCopy(m, l2)
+						*(*int32)(unsafe.Add(mBase, uint32(v22)+4)) = v43
+						v48 = F_CreateTupleDescCopy(m, l2)
 						mBase = m.M
-						v48 = m.ExcPending
-						if v48 != 0 {
+						v49 = m.ExcPending
+						if v49 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v22))) = v47
+							*(*int32)(unsafe.Add(mBase, uint32(v22))) = v48
 							*(*int32)(unsafe.Add(mBase, _c_F_spi_dest_startup[1])) = v9
 							return
 						}
@@ -801,20 +801,20 @@ func F_spi_dest_startup(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v55 = m.ExcPending
-		if v55 != 0 {
+		v56 = m.ExcPending
+		if v56 != 0 {
 			return
 		} else {
 			F_errmsg_internal(m, int32(_a_F_spi_dest_startup_7), int32(0))
 			mBase = m.M
-			v59 = m.ExcPending
-			if v59 != 0 {
+			v60 = m.ExcPending
+			if v60 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_spi_dest_startup_1), int32(2130), int32(_a_F_spi_dest_startup_2))
+				F_errfinish(m, int32(_a_F_spi_dest_startup_1), int32(2131), int32(_a_F_spi_dest_startup_2))
 				mBase = m.M
-				v64 = m.ExcPending
-				if v64 != 0 {
+				v65 = m.ExcPending
+				if v65 != 0 {
 					return
 				} else {
 					base.Wasm_trap_unreachable()

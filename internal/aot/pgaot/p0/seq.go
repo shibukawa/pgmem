@@ -148,22 +148,24 @@ func F_seq_redo(m *base.Module, l0 int32) {
 	_ = v107
 	var v116 int32
 	_ = v116
-	var v118 int32
-	_ = v118
-	var v120 int32
-	_ = v120
-	var v127 int32
-	_ = v127
-	var v131 int32
-	_ = v131
-	var v136 int32
-	_ = v136
-	var v140 int32
-	_ = v140
-	var v144 int32
-	_ = v144
-	var v149 int32
-	_ = v149
+	var v119 int32
+	_ = v119
+	var v121 int32
+	_ = v121
+	var v123 int32
+	_ = v123
+	var v130 int32
+	_ = v130
+	var v134 int32
+	_ = v134
+	var v139 int32
+	_ = v139
+	var v143 int32
+	_ = v143
+	var v147 int32
+	_ = v147
+	var v152 int32
+	_ = v152
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
@@ -229,22 +231,22 @@ func F_seq_redo(m *base.Module, l0 int32) {
 					return
 				} else {
 					if v106 == int32(0) {
-						F_errstart_cold(m, int32(23), int32(0))
+						F_errstart_cold(m, int32(24), int32(0))
 						mBase = m.M
-						v140 = m.ExcPending
-						if v140 != 0 {
+						v143 = m.ExcPending
+						if v143 != 0 {
 							return
 						} else {
 							F_errmsg_internal(m, int32(_a_F_seq_redo_5), int32(0))
 							mBase = m.M
-							v144 = m.ExcPending
-							if v144 != 0 {
+							v147 = m.ExcPending
+							if v147 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_seq_redo_6), int32(1930), int32(_a_F_seq_redo_7))
+								F_errfinish(m, int32(_a_F_seq_redo_6), int32(60), int32(_a_F_seq_redo_7))
 								mBase = m.M
-								v149 = m.ExcPending
-								if v149 != 0 {
+								v152 = m.ExcPending
+								if v152 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -254,7 +256,7 @@ func F_seq_redo(m *base.Module, l0 int32) {
 							}
 						}
 					} else {
-						*(*int64)(unsafe.Add(mBase, uint32(v42))) = base.I64_rotr(v18, int64(32))
+						*(*int64)(unsafe.Add(mBase, uint32(v42))) = base.I64_rotl(v18, int64(32))
 						base.MemoryCopy(m, v40, v42, int32(_a_F_seq_redo_0))
 						F_MarkBufferDirty(m, v21)
 						mBase = m.M
@@ -262,20 +264,27 @@ func F_seq_redo(m *base.Module, l0 int32) {
 						if v116 != 0 {
 							return
 						} else {
-							F_UnlockReleaseBuffer(m, v21)
+							F_XLogFlushBufferForRedoIfInit(m, l0, int32(0), v21)
 							mBase = m.M
-							v118 = m.ExcPending
-							if v118 != 0 {
+							v119 = m.ExcPending
+							if v119 != 0 {
 								return
 							} else {
-								F_pfree(m, v42)
+								F_UnlockReleaseBuffer(m, v21)
 								mBase = m.M
-								v120 = m.ExcPending
-								if v120 != 0 {
+								v121 = m.ExcPending
+								if v121 != 0 {
 									return
 								} else {
-									m.G0 = v10 + int32(16)
-									return
+									F_pfree(m, v42)
+									mBase = m.M
+									v123 = m.ExcPending
+									if v123 != 0 {
+										return
+									} else {
+										m.G0 = v10 + int32(16)
+										return
+									}
 								}
 							}
 						}
@@ -284,23 +293,23 @@ func F_seq_redo(m *base.Module, l0 int32) {
 			}
 		}
 	} else {
-		F_errstart_cold(m, int32(23), int32(0))
+		F_errstart_cold(m, int32(24), int32(0))
 		mBase = m.M
-		v127 = m.ExcPending
-		if v127 != 0 {
+		v130 = m.ExcPending
+		if v130 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v10))) = v15
 			F_errmsg_internal(m, int32(_a_F_seq_redo_8), v10)
 			mBase = m.M
-			v131 = m.ExcPending
-			if v131 != 0 {
+			v134 = m.ExcPending
+			if v134 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_seq_redo_6), int32(1905), int32(_a_F_seq_redo_7))
+				F_errfinish(m, int32(_a_F_seq_redo_6), int32(36), int32(_a_F_seq_redo_7))
 				mBase = m.M
-				v136 = m.ExcPending
-				if v136 != 0 {
+				v139 = m.ExcPending
+				if v139 != 0 {
 					return
 				} else {
 					base.Wasm_trap_unreachable()

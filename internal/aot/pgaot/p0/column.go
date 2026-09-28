@@ -141,7 +141,7 @@ func F_GetColumnDefCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 				}
 			} else {
 				v26 = v11 + int32(12)
-				*(*int32)(unsafe.Add(mBase, uint32(v26)+12)) = int32(489)
+				*(*int32)(unsafe.Add(mBase, uint32(v26)+12)) = int32(524)
 				*(*int32)(unsafe.Add(mBase, uint32(v26)+4)) = v19
 				*(*int32)(unsafe.Add(mBase, uint32(v26))) = l0
 				*(*int32)(unsafe.Add(mBase, uint32(v26)+16)) = v26
@@ -274,6 +274,89 @@ func F_GetColumnDefCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 			} else {
 				m.G0 = v11 + int32(32)
 				return v49
+			}
+		}
+	}
+}
+func F_add_new_column_to_pathtarget(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v27 int32
+	_ = v27
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v5 = F_list_member(m, v4, l1)
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return
+	} else {
+		if v5 != 0 {
+			return
+		} else {
+			v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+			v8 = F_lappend(m, v7, l1)
+			mBase = m.M
+			v9 = m.ExcPending
+			if v9 != 0 {
+				return
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v8
+				v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+				if v11 != 0 {
+					if v8 != 0 {
+						v12 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
+						v14 = v12
+					} else {
+						v14 = int32(0)
+					}
+					v16 = v14 << (uint(int32(2)) % 32)
+					v17 = F_repalloc(m, v11, v16)
+					mBase = m.M
+					v18 = m.ExcPending
+					if v18 != 0 {
+						return
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v17
+						*(*int32)(unsafe.Add(mBase, uint32(v16+v17-int32(4)))) = int32(0)
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+						if v27 != int32(2) {
+						} else {
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(0)
+						}
+						return
+					}
+				} else {
+					v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+					if v27 != int32(2) {
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(0)
+					}
+					return
+				}
 			}
 		}
 	}

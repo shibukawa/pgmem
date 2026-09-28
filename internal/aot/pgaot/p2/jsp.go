@@ -48,14 +48,14 @@ func F_extract_jsp_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = v66
 	var v68 int32
 	_ = v68
+	var v72 int32
+	_ = v72
 	var v73 int32
 	_ = v73
-	var v74 int32
-	_ = v74
-	var v77 int32
-	_ = v77
-	var v79 int32
-	_ = v79
+	var v76 int32
+	_ = v76
+	var v78 int32
+	_ = v78
 	v6 = int32(0)
 	v8 = m.G0
 	v10 = v8 + int32(-64)
@@ -65,15 +65,15 @@ func F_extract_jsp_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = int64(0)
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if l2 != 0 {
-		v21 = int32(1321)
+		v21 = int32(1461)
 	} else {
-		v21 = int32(1322)
+		v21 = int32(1462)
 	}
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+56)) = v21
 	if l2 != 0 {
-		v25 = int32(1323)
+		v25 = int32(1463)
 	} else {
-		v25 = int32(1324)
+		v25 = int32(1464)
 	}
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+52)) = v25
 	v28 = int32(base.Ui32(v18) >> (uint(int32(31)) % 32))
@@ -98,9 +98,9 @@ func F_extract_jsp_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 				if v56 == int32(0) {
 					v59 = int32(0)
 					*(*int32)(unsafe.Add(mBase, uint32(l3))) = v59
-					v79 = v59
+					v78 = v59
 					m.G0 = v10 - int32(-64)
-					return v79
+					return v78
 				} else {
 					F_emit_jsp_gin_entries(m, v56, v8+int32(-56))
 					mBase = m.M
@@ -112,22 +112,22 @@ func F_extract_jsp_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 						*(*int32)(unsafe.Add(mBase, uint32(l3))) = v66
 						v68 = int32(0)
 						if v66 == v68 {
-							v79 = v68
+							v78 = v68
 							m.G0 = v10 - int32(-64)
-							return v79
+							return v78
 						} else {
-							v73 = F_palloc0(m, v66<<(uint(int32(2))%32))
+							v72 = F_palloc0_mul(m, int32(4), v66)
 							mBase = m.M
-							v74 = m.ExcPending
-							if v74 != 0 {
+							v73 = m.ExcPending
+							if v73 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l4))) = v73
-								*(*int32)(unsafe.Add(mBase, uint32(v73))) = v56
-								v77 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
-								v79 = v77
+								*(*int32)(unsafe.Add(mBase, uint32(l4))) = v72
+								*(*int32)(unsafe.Add(mBase, uint32(v72))) = v56
+								v76 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
+								v78 = v76
 								m.G0 = v10 - int32(-64)
-								return v79
+								return v78
 							}
 						}
 					}
@@ -146,9 +146,9 @@ func F_extract_jsp_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 				if v56 == int32(0) {
 					v59 = int32(0)
 					*(*int32)(unsafe.Add(mBase, uint32(l3))) = v59
-					v79 = v59
+					v78 = v59
 					m.G0 = v10 - int32(-64)
-					return v79
+					return v78
 				} else {
 					F_emit_jsp_gin_entries(m, v56, v8+int32(-56))
 					mBase = m.M
@@ -160,22 +160,22 @@ func F_extract_jsp_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 						*(*int32)(unsafe.Add(mBase, uint32(l3))) = v66
 						v68 = int32(0)
 						if v66 == v68 {
-							v79 = v68
+							v78 = v68
 							m.G0 = v10 - int32(-64)
-							return v79
+							return v78
 						} else {
-							v73 = F_palloc0(m, v66<<(uint(int32(2))%32))
+							v72 = F_palloc0_mul(m, int32(4), v66)
 							mBase = m.M
-							v74 = m.ExcPending
-							if v74 != 0 {
+							v73 = m.ExcPending
+							if v73 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l4))) = v73
-								*(*int32)(unsafe.Add(mBase, uint32(v73))) = v56
-								v77 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
-								v79 = v77
+								*(*int32)(unsafe.Add(mBase, uint32(l4))) = v72
+								*(*int32)(unsafe.Add(mBase, uint32(v72))) = v56
+								v76 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
+								v78 = v76
 								m.G0 = v10 - int32(-64)
-								return v79
+								return v78
 							}
 						}
 					}

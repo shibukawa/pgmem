@@ -311,7 +311,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(_a_F_get_database_list_2), int32(1842), int32(_a_F_get_database_list_3))
+	F_errfinish(m, int32(_a_F_get_database_list_2), int32(1870), int32(_a_F_get_database_list_3))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -407,12 +407,10 @@ func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v17
 	var v19 int32
 	_ = v19
-	var v24 int32
-	_ = v24
-	var v26 int32
-	_ = v26
-	var v29 int32
-	_ = v29
+	var v25 int32
+	_ = v25
+	var v27 int32
+	_ = v27
 	var v30 int32
 	_ = v30
 	var v31 int32
@@ -423,24 +421,26 @@ func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v33
 	var v34 int32
 	_ = v34
-	var v36 int32
-	_ = v36
+	var v35 int32
+	_ = v35
 	var v37 int32
 	_ = v37
-	var v39 int32
-	_ = v39
-	var v42 int32
-	_ = v42
-	var v49 int32
-	_ = v49
-	var v52 int32
-	_ = v52
-	var v56 int32
-	_ = v56
-	var v61 int32
-	_ = v61
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
+	var v50 int32
+	_ = v50
+	var v53 int32
+	_ = v53
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
 	v8 = m.G0
-	v10 = v8 + int32(-64)
+	v10 = v8 - int32(80)
 	m.G0 = v10
 	v14 = F_table_open(m, int32(1262), int32(1))
 	mBase = m.M
@@ -448,70 +448,70 @@ func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	if v17 != 0 {
 		return int32(0)
 	} else {
-		v19 = v8 + int32(-48)
-		F_ScanKeyInit(m, v19, int32(2), int32(3), int32(62), l0)
+		v19 = v10 + int32(16)
+		F_ScanKeyInit(m, v19, int32(2), int32(3), int32(62), base.I64_extend_i32_u(l0))
 		mBase = m.M
-		v24 = m.ExcPending
-		if v24 != 0 {
+		v25 = m.ExcPending
+		if v25 != 0 {
 			return int32(0)
 		} else {
-			v26 = int32(1)
-			v29 = F_systable_beginscan(m, v14, int32(2671), v26, int32(0), v26, v19)
+			v27 = int32(1)
+			v30 = F_systable_beginscan(m, v14, int32(2671), v27, int32(0), v27, v19)
 			mBase = m.M
-			v30 = m.ExcPending
-			if v30 != 0 {
+			v31 = m.ExcPending
+			if v31 != 0 {
 				return int32(0)
 			} else {
-				v31 = F_systable_getnext(m, v29)
+				v32 = F_systable_getnext(m, v30)
 				mBase = m.M
-				v32 = m.ExcPending
-				if v32 != 0 {
+				v33 = m.ExcPending
+				if v33 != 0 {
 					return int32(0)
 				} else {
-					if v31 != 0 {
-						v33 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
-						v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v33)+22)))
-						v36 = *(*int32)(unsafe.Add(mBase, uint32(v33+v34)))
-						v37 = v36
+					if v32 != 0 {
+						v34 = *(*int32)(unsafe.Add(mBase, uint32(v32)+16))
+						v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+22)))
+						v37 = *(*int32)(unsafe.Add(mBase, uint32(v34+v35)))
+						v38 = v37
 					} else {
-						v37 = int32(0)
+						v38 = int32(0)
 					}
-					F_systable_endscan(m, v29)
+					F_systable_endscan(m, v30)
 					mBase = m.M
-					v39 = m.ExcPending
-					if v39 != 0 {
+					v40 = m.ExcPending
+					if v40 != 0 {
 						return int32(0)
 					} else {
 						F_relation_close(m, v14, int32(1))
 						mBase = m.M
-						v42 = m.ExcPending
-						if v42 != 0 {
+						v43 = m.ExcPending
+						if v43 != 0 {
 							return int32(0)
 						} else {
-							if l1|v37 == int32(0) {
+							if l1|v38 == int32(0) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v49 = m.ExcPending
-								if v49 != 0 {
+								v50 = m.ExcPending
+								if v50 != 0 {
 									return int32(0)
 								} else {
 									F_errcode(m, int32(1283))
 									mBase = m.M
-									v52 = m.ExcPending
-									if v52 != 0 {
+									v53 = m.ExcPending
+									if v53 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
 										F_errmsg(m, int32(_a_F_get_database_oid_0), v10)
 										mBase = m.M
-										v56 = m.ExcPending
-										if v56 != 0 {
+										v57 = m.ExcPending
+										if v57 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_get_database_oid_1), int32(3202), int32(_a_F_get_database_oid_2))
+											F_errfinish(m, int32(_a_F_get_database_oid_1), int32(3220), int32(_a_F_get_database_oid_2))
 											mBase = m.M
-											v61 = m.ExcPending
-											if v61 != 0 {
+											v62 = m.ExcPending
+											if v62 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -522,8 +522,8 @@ func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 									}
 								}
 							} else {
-								m.G0 = v10 - int32(-64)
-								return v37
+								m.G0 = v10 + int32(80)
+								return v38
 							}
 						}
 					}

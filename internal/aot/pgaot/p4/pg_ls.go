@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_pg_ls_replslotdir(m *base.Module, l0 int32) int32 {
+func F_pg_ls_replslotdir(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -45,50 +45,50 @@ func F_pg_ls_replslotdir(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(1056)
 	m.G0 = v6
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v9 = F_pg_detoast_datum_packed(m, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v13 = F_text_to_cstring(m, v9)
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v16 = F_SearchNamedReplicationSlot(m, v13, int32(1))
 			mBase = m.M
 			v17 = m.ExcPending
 			if v17 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				if v16 == int32(0) {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						F_errcode(m, int32(67137668))
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v6))) = v13
 							F_errmsg(m, int32(_a_F_pg_ls_replslotdir_0), v6)
 							mBase = m.M
 							v30 = m.ExcPending
 							if v30 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
-								F_errfinish(m, int32(_a_F_pg_ls_replslotdir_1), int32(740), int32(_a_F_pg_ls_replslotdir_2))
+								F_errfinish(m, int32(_a_F_pg_ls_replslotdir_1), int32(741), int32(_a_F_pg_ls_replslotdir_2))
 								mBase = m.M
 								v35 = m.ExcPending
 								if v35 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									base.Wasm_trap_unreachable()
 									for {
@@ -105,16 +105,16 @@ func F_pg_ls_replslotdir(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v46 = m.ExcPending
 					if v46 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						F_pg_ls_dir_files(m, l0, v40, int32(0))
 						mBase = m.M
 						v49 = m.ExcPending
 						if v49 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							m.G0 = v6 + int32(1056)
-							return int32(0)
+							return int64(0)
 						}
 					}
 				}

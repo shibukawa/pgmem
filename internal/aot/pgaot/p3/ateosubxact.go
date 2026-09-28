@@ -99,7 +99,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(_a_F_AtEOSubXact_Parallel_2), int32(1271), int32(_a_F_AtEOSubXact_Parallel_3))
+	F_errfinish(m, int32(_a_F_AtEOSubXact_Parallel_2), int32(1273), int32(_a_F_AtEOSubXact_Parallel_3))
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {

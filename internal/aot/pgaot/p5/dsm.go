@@ -5,19 +5,38 @@ import (
 	"unsafe"
 )
 
+func F_DSMRegistryShmemInit(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	v2 = int32(_a_F_DSMRegistryShmemInit_0)
+	v3 = *(*int32)(unsafe.Add(mBase, _c_F_DSMRegistryShmemInit[0]))
+	v4 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v3))) = v4
+	v7 = *(*int32)(unsafe.Add(mBase, _c_F_DSMRegistryShmemInit[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v4
+	return
+}
 func F_dsm_pin_mapping(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v6 int32
-	_ = v6
+	var v7 int32
+	_ = v7
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v3 != 0 {
-		F_ResourceOwnerForget(m, v3, l0, int32(_a_F_dsm_pin_mapping_0))
+		F_ResourceOwnerForget(m, v3, base.I64_extend_i32_u(l0), int32(_a_F_dsm_pin_mapping_0))
 		mBase = m.M
-		v6 = m.ExcPending
-		if v6 != 0 {
+		v7 = m.ExcPending
+		if v7 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(0)
@@ -224,7 +243,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(_a_F_dsm_unpin_segment_2), int32(1016), int32(_a_F_dsm_unpin_segment_3))
+	F_errfinish(m, int32(_a_F_dsm_unpin_segment_2), int32(1024), int32(_a_F_dsm_unpin_segment_3))
 	mBase = m.M
 	v61 = m.ExcPending
 	if v61 != 0 {
@@ -397,7 +416,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(_a_F_dsm_unpin_segment_2), int32(1018), int32(_a_F_dsm_unpin_segment_3))
+	F_errfinish(m, int32(_a_F_dsm_unpin_segment_2), int32(1026), int32(_a_F_dsm_unpin_segment_3))
 	mBase = m.M
 	v164 = m.ExcPending
 	if v164 != 0 {

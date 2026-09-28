@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_box_poly(m *base.Module, l0 int32) int32 {
+func F_box_poly(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v7 int32
@@ -54,12 +54,12 @@ func F_box_poly(m *base.Module, l0 int32) int32 {
 	_ = v73
 	var v75 float64
 	_ = v75
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v9 = F_palloc(m, int32(104))
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		*(*int64)(unsafe.Add(mBase, uint32(v9))) = int64(17179869600)
 		v15 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
@@ -114,6 +114,6 @@ func F_box_poly(m *base.Module, l0 int32) int32 {
 		*(*float64)(unsafe.Add(mBase, uint32(v9)+16)) = v73
 		v75 = *(*float64)(unsafe.Add(mBase, uint32(v72)))
 		*(*float64)(unsafe.Add(mBase, uint32(v9)+32)) = v75
-		return v9
+		return base.I64_extend_i32_u(v9)
 	}
 }

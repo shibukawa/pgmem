@@ -38,11 +38,11 @@ func F_multi_sort_compare(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v48
 	var v49 int32
 	_ = v49
-	var v51 int32
+	var v51 int64
 	_ = v51
 	var v52 int32
 	_ = v52
-	var v54 int32
+	var v54 int64
 	_ = v54
 	var v55 int32
 	_ = v55
@@ -162,13 +162,13 @@ L17:
 	goto L18
 L18:
 	;
-	v48 = v18 << (uint(int32(2)) % 32)
+	v48 = v18 << (uint(int32(3)) % 32)
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(v48+v49)))
+	v51 = *(*int64)(unsafe.Add(mBase, uint32(v48+v49)))
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v54 = *(*int32)(unsafe.Add(mBase, uint32(v52+v48)))
+	v54 = *(*int64)(unsafe.Add(mBase, uint32(v52+v48)))
 	v55 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
-	v56 = m.T0[v55].(func(*base.Module, int32, int32, int32) int32)(m, v51, v54, v24)
+	v56 = m.T0[v55].(func(*base.Module, int64, int64, int32) int32)(m, v51, v54, v24)
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {

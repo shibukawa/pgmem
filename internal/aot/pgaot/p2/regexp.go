@@ -5,11 +5,13 @@ import (
 	"unsafe"
 )
 
-func F_regexp_instr(m *base.Module, l0 int32) int32 {
+func F_regexp_instr(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
+	var v11 int64
+	_ = v11
 	var v12 int32
 	_ = v12
 	var v14 int32
@@ -68,94 +70,93 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 	_ = v67
 	var v70 int32
 	_ = v70
-	var v72 int32
-	_ = v72
+	var v74 int32
+	_ = v74
 	var v75 int32
 	_ = v75
-	var v77 int32
-	_ = v77
+	var v76 int32
+	_ = v76
+	var v79 int32
+	_ = v79
 	var v80 int32
 	_ = v80
 	var v81 int32
 	_ = v81
-	var v82 int32
-	_ = v82
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v99 int32
-	_ = v99
-	var v102 int32
-	_ = v102
-	var v106 int32
-	_ = v106
-	var v115 int32
-	_ = v115
-	var v118 int32
-	_ = v118
-	var v124 int32
-	_ = v124
-	var v129 int32
-	_ = v129
-	var v133 int32
-	_ = v133
-	var v136 int32
-	_ = v136
-	var v144 int32
-	_ = v144
-	var v149 int32
-	_ = v149
-	var v153 int32
-	_ = v153
-	var v156 int32
-	_ = v156
-	var v164 int32
-	_ = v164
-	var v169 int32
-	_ = v169
-	var v173 int32
-	_ = v173
-	var v176 int32
-	_ = v176
-	var v184 int32
-	_ = v184
-	var v189 int32
-	_ = v189
-	var v193 int32
-	_ = v193
-	var v196 int32
-	_ = v196
-	var v203 int32
-	_ = v203
-	var v208 int32
-	_ = v208
+	var v83 int32
+	_ = v83
+	var v85 int32
+	_ = v85
+	var v97 int32
+	_ = v97
+	var v105 int64
+	_ = v105
+	var v113 int32
+	_ = v113
+	var v116 int32
+	_ = v116
+	var v122 int32
+	_ = v122
+	var v127 int32
+	_ = v127
+	var v131 int32
+	_ = v131
+	var v134 int32
+	_ = v134
+	var v142 int32
+	_ = v142
+	var v147 int32
+	_ = v147
+	var v151 int32
+	_ = v151
+	var v154 int32
+	_ = v154
+	var v162 int32
+	_ = v162
+	var v167 int32
+	_ = v167
+	var v171 int32
+	_ = v171
+	var v174 int32
+	_ = v174
+	var v182 int32
+	_ = v182
+	var v187 int32
+	_ = v187
+	var v191 int32
+	_ = v191
+	var v194 int32
+	_ = v194
+	var v201 int32
+	_ = v201
+	var v206 int32
+	_ = v206
 	v2 = int32(0)
+	v11 = int64(0)
 	v12 = m.G0
 	v14 = v12 - int32(80)
 	m.G0 = v14
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v17 = F_pg_detoast_datum_packed(m, v16)
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v22 = F_pg_detoast_datum_packed(m, v21)
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v24 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+18)))
 			if int32(6) <= v24 {
-				v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+				v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
 				v28 = F_pg_detoast_datum_packed(m, v27)
 				mBase = m.M
 				v29 = m.ExcPending
 				if v29 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					v30 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+18)))
 					v31 = v30
@@ -171,34 +172,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 						mBase = m.M
 						v66 = m.ExcPending
 						if v66 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 							if v67 == int32(1) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v193 = m.ExcPending
-								if v193 != 0 {
-									return int32(0)
+								v191 = m.ExcPending
+								if v191 != 0 {
+									return int64(0)
 								} else {
 									F_errcode(m, int32(50856066))
 									mBase = m.M
-									v196 = m.ExcPending
-									if v196 != 0 {
-										return int32(0)
+									v194 = m.ExcPending
+									if v194 != 0 {
+										return int64(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 										F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 										mBase = m.M
-										v203 = m.ExcPending
-										if v203 != 0 {
-											return int32(0)
+										v201 = m.ExcPending
+										if v201 != 0 {
+											return int64(0)
 										} else {
 											F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 											mBase = m.M
-											v208 = m.ExcPending
-											if v208 != 0 {
-												return int32(0)
+											v206 = m.ExcPending
+											if v206 != 0 {
+												return int64(0)
 											} else {
 												base.Wasm_trap_unreachable()
 												for {
@@ -210,66 +211,65 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 							} else {
 								v70 = int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-								v72 = int32(0)
-								v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-								v77 = base.B2i32(v61 != v72)
-								v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+								v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+								v75 = int32(0)
+								v76 = base.B2i32(v61 != v75)
+								v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 								mBase = m.M
-								v81 = m.ExcPending
-								if v81 != 0 {
-									return int32(0)
+								v80 = m.ExcPending
+								if v80 != 0 {
+									return int64(0)
 								} else {
-									v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-									if v82 < v60 {
-										v106 = v72
+									v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+									if v81 < v60 {
+										v105 = v11
 									} else {
-										v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-										if v84 < v61 {
-											v106 = v72
+										v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+										if v83 < v61 {
+											v105 = v11
 										} else {
-											v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-											v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-											if v99 < int32(0) {
-												v102 = int32(-1)
+											v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+											v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+											if v97 < int32(0) {
+												v105 = v11
 											} else {
-												v102 = v99
+												v105 = base.I64_extend_i32_s(v97 + int32(1))
 											}
-											v106 = v102 + int32(1)
 										}
 									}
 									m.G0 = v14 + int32(80)
-									return v106
+									return v105
 								}
 							}
 						}
 					} else {
-						v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+						v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 						if v38 <= int32(0) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v115 = m.ExcPending
-							if v115 != 0 {
-								return int32(0)
+							v113 = m.ExcPending
+							if v113 != 0 {
+								return int64(0)
 							} else {
 								F_errcode(m, int32(50856066))
 								mBase = m.M
-								v118 = m.ExcPending
-								if v118 != 0 {
-									return int32(0)
+								v116 = m.ExcPending
+								if v116 != 0 {
+									return int64(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v38
 									*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(_a_F_regexp_instr_4)
 									F_errmsg(m, int32(_a_F_regexp_instr_5), v14)
 									mBase = m.M
-									v124 = m.ExcPending
-									if v124 != 0 {
-										return int32(0)
+									v122 = m.ExcPending
+									if v122 != 0 {
+										return int64(0)
 									} else {
 										F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1219), int32(_a_F_regexp_instr_3))
 										mBase = m.M
-										v129 = m.ExcPending
-										if v129 != 0 {
-											return int32(0)
+										v127 = m.ExcPending
+										if v127 != 0 {
+											return int64(0)
 										} else {
 											base.Wasm_trap_unreachable()
 											for {
@@ -290,34 +290,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 								mBase = m.M
 								v66 = m.ExcPending
 								if v66 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 									if v67 == int32(1) {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v193 = m.ExcPending
-										if v193 != 0 {
-											return int32(0)
+										v191 = m.ExcPending
+										if v191 != 0 {
+											return int64(0)
 										} else {
 											F_errcode(m, int32(50856066))
 											mBase = m.M
-											v196 = m.ExcPending
-											if v196 != 0 {
-												return int32(0)
+											v194 = m.ExcPending
+											if v194 != 0 {
+												return int64(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 												F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 												mBase = m.M
-												v203 = m.ExcPending
-												if v203 != 0 {
-													return int32(0)
+												v201 = m.ExcPending
+												if v201 != 0 {
+													return int64(0)
 												} else {
 													F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 													mBase = m.M
-													v208 = m.ExcPending
-													if v208 != 0 {
-														return int32(0)
+													v206 = m.ExcPending
+													if v206 != 0 {
+														return int64(0)
 													} else {
 														base.Wasm_trap_unreachable()
 														for {
@@ -329,66 +329,65 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 									} else {
 										v70 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-										v72 = int32(0)
-										v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-										v77 = base.B2i32(v61 != v72)
-										v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+										v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+										v75 = int32(0)
+										v76 = base.B2i32(v61 != v75)
+										v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 										mBase = m.M
-										v81 = m.ExcPending
-										if v81 != 0 {
-											return int32(0)
+										v80 = m.ExcPending
+										if v80 != 0 {
+											return int64(0)
 										} else {
-											v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-											if v82 < v60 {
-												v106 = v72
+											v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+											if v81 < v60 {
+												v105 = v11
 											} else {
-												v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-												if v84 < v61 {
-													v106 = v72
+												v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+												if v83 < v61 {
+													v105 = v11
 												} else {
-													v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-													v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-													if v99 < int32(0) {
-														v102 = int32(-1)
+													v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+													v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+													if v97 < int32(0) {
+														v105 = v11
 													} else {
-														v102 = v99
+														v105 = base.I64_extend_i32_s(v97 + int32(1))
 													}
-													v106 = v102 + int32(1)
 												}
 											}
 											m.G0 = v14 + int32(80)
-											return v106
+											return v105
 										}
 									}
 								}
 							} else {
-								v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+								v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 								if v45 <= int32(0) {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v133 = m.ExcPending
-									if v133 != 0 {
-										return int32(0)
+									v131 = m.ExcPending
+									if v131 != 0 {
+										return int64(0)
 									} else {
 										F_errcode(m, int32(50856066))
 										mBase = m.M
-										v136 = m.ExcPending
-										if v136 != 0 {
-											return int32(0)
+										v134 = m.ExcPending
+										if v134 != 0 {
+											return int64(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v14)+36)) = v45
 											*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = int32(_a_F_regexp_instr_7)
 											F_errmsg(m, int32(_a_F_regexp_instr_5), v14+int32(32))
 											mBase = m.M
-											v144 = m.ExcPending
-											if v144 != 0 {
-												return int32(0)
+											v142 = m.ExcPending
+											if v142 != 0 {
+												return int64(0)
 											} else {
 												F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1228), int32(_a_F_regexp_instr_3))
 												mBase = m.M
-												v149 = m.ExcPending
-												if v149 != 0 {
-													return int32(0)
+												v147 = m.ExcPending
+												if v147 != 0 {
+													return int64(0)
 												} else {
 													base.Wasm_trap_unreachable()
 													for {
@@ -408,34 +407,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 										mBase = m.M
 										v66 = m.ExcPending
 										if v66 != 0 {
-											return int32(0)
+											return int64(0)
 										} else {
 											v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 											if v67 == int32(1) {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v193 = m.ExcPending
-												if v193 != 0 {
-													return int32(0)
+												v191 = m.ExcPending
+												if v191 != 0 {
+													return int64(0)
 												} else {
 													F_errcode(m, int32(50856066))
 													mBase = m.M
-													v196 = m.ExcPending
-													if v196 != 0 {
-														return int32(0)
+													v194 = m.ExcPending
+													if v194 != 0 {
+														return int64(0)
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 														F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 														mBase = m.M
-														v203 = m.ExcPending
-														if v203 != 0 {
-															return int32(0)
+														v201 = m.ExcPending
+														if v201 != 0 {
+															return int64(0)
 														} else {
 															F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 															mBase = m.M
-															v208 = m.ExcPending
-															if v208 != 0 {
-																return int32(0)
+															v206 = m.ExcPending
+															if v206 != 0 {
+																return int64(0)
 															} else {
 																base.Wasm_trap_unreachable()
 																for {
@@ -447,66 +446,65 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 											} else {
 												v70 = int32(1)
 												*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-												v72 = int32(0)
-												v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-												v77 = base.B2i32(v61 != v72)
-												v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+												v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+												v75 = int32(0)
+												v76 = base.B2i32(v61 != v75)
+												v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 												mBase = m.M
-												v81 = m.ExcPending
-												if v81 != 0 {
-													return int32(0)
+												v80 = m.ExcPending
+												if v80 != 0 {
+													return int64(0)
 												} else {
-													v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-													if v82 < v60 {
-														v106 = v72
+													v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+													if v81 < v60 {
+														v105 = v11
 													} else {
-														v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-														if v84 < v61 {
-															v106 = v72
+														v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+														if v83 < v61 {
+															v105 = v11
 														} else {
-															v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-															v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-															if v99 < int32(0) {
-																v102 = int32(-1)
+															v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+															v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+															if v97 < int32(0) {
+																v105 = v11
 															} else {
-																v102 = v99
+																v105 = base.I64_extend_i32_s(v97 + int32(1))
 															}
-															v106 = v102 + int32(1)
 														}
 													}
 													m.G0 = v14 + int32(80)
-													return v106
+													return v105
 												}
 											}
 										}
 									} else {
-										v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+										v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 										if base.Ui32(int32(2)) <= base.Ui32(v50) {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v153 = m.ExcPending
-											if v153 != 0 {
-												return int32(0)
+											v151 = m.ExcPending
+											if v151 != 0 {
+												return int64(0)
 											} else {
 												F_errcode(m, int32(50856066))
 												mBase = m.M
-												v156 = m.ExcPending
-												if v156 != 0 {
-													return int32(0)
+												v154 = m.ExcPending
+												if v154 != 0 {
+													return int64(0)
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v14)+52)) = v50
 													*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = int32(_a_F_regexp_instr_8)
 													F_errmsg(m, int32(_a_F_regexp_instr_5), v14+int32(48))
 													mBase = m.M
-													v164 = m.ExcPending
-													if v164 != 0 {
-														return int32(0)
+													v162 = m.ExcPending
+													if v162 != 0 {
+														return int64(0)
 													} else {
 														F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1237), int32(_a_F_regexp_instr_3))
 														mBase = m.M
-														v169 = m.ExcPending
-														if v169 != 0 {
-															return int32(0)
+														v167 = m.ExcPending
+														if v167 != 0 {
+															return int64(0)
 														} else {
 															base.Wasm_trap_unreachable()
 															for {
@@ -526,34 +524,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 												mBase = m.M
 												v66 = m.ExcPending
 												if v66 != 0 {
-													return int32(0)
+													return int64(0)
 												} else {
 													v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 													if v67 == int32(1) {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v193 = m.ExcPending
-														if v193 != 0 {
-															return int32(0)
+														v191 = m.ExcPending
+														if v191 != 0 {
+															return int64(0)
 														} else {
 															F_errcode(m, int32(50856066))
 															mBase = m.M
-															v196 = m.ExcPending
-															if v196 != 0 {
-																return int32(0)
+															v194 = m.ExcPending
+															if v194 != 0 {
+																return int64(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 																F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 																mBase = m.M
-																v203 = m.ExcPending
-																if v203 != 0 {
-																	return int32(0)
+																v201 = m.ExcPending
+																if v201 != 0 {
+																	return int64(0)
 																} else {
 																	F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 																	mBase = m.M
-																	v208 = m.ExcPending
-																	if v208 != 0 {
-																		return int32(0)
+																	v206 = m.ExcPending
+																	if v206 != 0 {
+																		return int64(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
 																		for {
@@ -565,66 +563,65 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 													} else {
 														v70 = int32(1)
 														*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-														v72 = int32(0)
-														v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-														v77 = base.B2i32(v61 != v72)
-														v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+														v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+														v75 = int32(0)
+														v76 = base.B2i32(v61 != v75)
+														v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 														mBase = m.M
-														v81 = m.ExcPending
-														if v81 != 0 {
-															return int32(0)
+														v80 = m.ExcPending
+														if v80 != 0 {
+															return int64(0)
 														} else {
-															v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-															if v82 < v60 {
-																v106 = v72
+															v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+															if v81 < v60 {
+																v105 = v11
 															} else {
-																v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-																if v84 < v61 {
-																	v106 = v72
+																v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+																if v83 < v61 {
+																	v105 = v11
 																} else {
-																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-																	v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-																	if v99 < int32(0) {
-																		v102 = int32(-1)
+																	v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+																	v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+																	if v97 < int32(0) {
+																		v105 = v11
 																	} else {
-																		v102 = v99
+																		v105 = base.I64_extend_i32_s(v97 + int32(1))
 																	}
-																	v106 = v102 + int32(1)
 																}
 															}
 															m.G0 = v14 + int32(80)
-															return v106
+															return v105
 														}
 													}
 												}
 											} else {
-												v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+												v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
 												if v55 < int32(0) {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v173 = m.ExcPending
-													if v173 != 0 {
-														return int32(0)
+													v171 = m.ExcPending
+													if v171 != 0 {
+														return int64(0)
 													} else {
 														F_errcode(m, int32(50856066))
 														mBase = m.M
-														v176 = m.ExcPending
-														if v176 != 0 {
-															return int32(0)
+														v174 = m.ExcPending
+														if v174 != 0 {
+															return int64(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+68)) = v55
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+64)) = int32(_a_F_regexp_instr_9)
 															F_errmsg(m, int32(_a_F_regexp_instr_5), v14-int32(-64))
 															mBase = m.M
-															v184 = m.ExcPending
-															if v184 != 0 {
-																return int32(0)
+															v182 = m.ExcPending
+															if v182 != 0 {
+																return int64(0)
 															} else {
 																F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1246), int32(_a_F_regexp_instr_3))
 																mBase = m.M
-																v189 = m.ExcPending
-																if v189 != 0 {
-																	return int32(0)
+																v187 = m.ExcPending
+																if v187 != 0 {
+																	return int64(0)
 																} else {
 																	base.Wasm_trap_unreachable()
 																	for {
@@ -643,34 +640,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 													mBase = m.M
 													v66 = m.ExcPending
 													if v66 != 0 {
-														return int32(0)
+														return int64(0)
 													} else {
 														v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 														if v67 == int32(1) {
 															F_errstart_cold(m, int32(21), int32(0))
 															mBase = m.M
-															v193 = m.ExcPending
-															if v193 != 0 {
-																return int32(0)
+															v191 = m.ExcPending
+															if v191 != 0 {
+																return int64(0)
 															} else {
 																F_errcode(m, int32(50856066))
 																mBase = m.M
-																v196 = m.ExcPending
-																if v196 != 0 {
-																	return int32(0)
+																v194 = m.ExcPending
+																if v194 != 0 {
+																	return int64(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 																	F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 																	mBase = m.M
-																	v203 = m.ExcPending
-																	if v203 != 0 {
-																		return int32(0)
+																	v201 = m.ExcPending
+																	if v201 != 0 {
+																		return int64(0)
 																	} else {
 																		F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 																		mBase = m.M
-																		v208 = m.ExcPending
-																		if v208 != 0 {
-																			return int32(0)
+																		v206 = m.ExcPending
+																		if v206 != 0 {
+																			return int64(0)
 																		} else {
 																			base.Wasm_trap_unreachable()
 																			for {
@@ -682,35 +679,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 														} else {
 															v70 = int32(1)
 															*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-															v72 = int32(0)
-															v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-															v77 = base.B2i32(v61 != v72)
-															v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+															v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+															v75 = int32(0)
+															v76 = base.B2i32(v61 != v75)
+															v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 															mBase = m.M
-															v81 = m.ExcPending
-															if v81 != 0 {
-																return int32(0)
+															v80 = m.ExcPending
+															if v80 != 0 {
+																return int64(0)
 															} else {
-																v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-																if v82 < v60 {
-																	v106 = v72
+																v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+																if v81 < v60 {
+																	v105 = v11
 																} else {
-																	v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-																	if v84 < v61 {
-																		v106 = v72
+																	v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+																	if v83 < v61 {
+																		v105 = v11
 																	} else {
-																		v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-																		v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-																		if v99 < int32(0) {
-																			v102 = int32(-1)
+																		v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+																		v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+																		if v97 < int32(0) {
+																			v105 = v11
 																		} else {
-																			v102 = v99
+																			v105 = base.I64_extend_i32_s(v97 + int32(1))
 																		}
-																		v106 = v102 + int32(1)
 																	}
 																}
 																m.G0 = v14 + int32(80)
-																return v106
+																return v105
 															}
 														}
 													}
@@ -737,34 +733,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 					mBase = m.M
 					v66 = m.ExcPending
 					if v66 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 						if v67 == int32(1) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v193 = m.ExcPending
-							if v193 != 0 {
-								return int32(0)
+							v191 = m.ExcPending
+							if v191 != 0 {
+								return int64(0)
 							} else {
 								F_errcode(m, int32(50856066))
 								mBase = m.M
-								v196 = m.ExcPending
-								if v196 != 0 {
-									return int32(0)
+								v194 = m.ExcPending
+								if v194 != 0 {
+									return int64(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 									F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 									mBase = m.M
-									v203 = m.ExcPending
-									if v203 != 0 {
-										return int32(0)
+									v201 = m.ExcPending
+									if v201 != 0 {
+										return int64(0)
 									} else {
 										F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 										mBase = m.M
-										v208 = m.ExcPending
-										if v208 != 0 {
-											return int32(0)
+										v206 = m.ExcPending
+										if v206 != 0 {
+											return int64(0)
 										} else {
 											base.Wasm_trap_unreachable()
 											for {
@@ -776,66 +772,65 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 						} else {
 							v70 = int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-							v72 = int32(0)
-							v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-							v77 = base.B2i32(v61 != v72)
-							v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+							v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+							v75 = int32(0)
+							v76 = base.B2i32(v61 != v75)
+							v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 							mBase = m.M
-							v81 = m.ExcPending
-							if v81 != 0 {
-								return int32(0)
+							v80 = m.ExcPending
+							if v80 != 0 {
+								return int64(0)
 							} else {
-								v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-								if v82 < v60 {
-									v106 = v72
+								v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+								if v81 < v60 {
+									v105 = v11
 								} else {
-									v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-									if v84 < v61 {
-										v106 = v72
+									v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+									if v83 < v61 {
+										v105 = v11
 									} else {
-										v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-										v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-										if v99 < int32(0) {
-											v102 = int32(-1)
+										v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+										v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+										if v97 < int32(0) {
+											v105 = v11
 										} else {
-											v102 = v99
+											v105 = base.I64_extend_i32_s(v97 + int32(1))
 										}
-										v106 = v102 + int32(1)
 									}
 								}
 								m.G0 = v14 + int32(80)
-								return v106
+								return v105
 							}
 						}
 					}
 				} else {
-					v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+					v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 					if v38 <= int32(0) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v115 = m.ExcPending
-						if v115 != 0 {
-							return int32(0)
+						v113 = m.ExcPending
+						if v113 != 0 {
+							return int64(0)
 						} else {
 							F_errcode(m, int32(50856066))
 							mBase = m.M
-							v118 = m.ExcPending
-							if v118 != 0 {
-								return int32(0)
+							v116 = m.ExcPending
+							if v116 != 0 {
+								return int64(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v38
 								*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(_a_F_regexp_instr_4)
 								F_errmsg(m, int32(_a_F_regexp_instr_5), v14)
 								mBase = m.M
-								v124 = m.ExcPending
-								if v124 != 0 {
-									return int32(0)
+								v122 = m.ExcPending
+								if v122 != 0 {
+									return int64(0)
 								} else {
 									F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1219), int32(_a_F_regexp_instr_3))
 									mBase = m.M
-									v129 = m.ExcPending
-									if v129 != 0 {
-										return int32(0)
+									v127 = m.ExcPending
+									if v127 != 0 {
+										return int64(0)
 									} else {
 										base.Wasm_trap_unreachable()
 										for {
@@ -856,34 +851,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 								if v67 == int32(1) {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v193 = m.ExcPending
-									if v193 != 0 {
-										return int32(0)
+									v191 = m.ExcPending
+									if v191 != 0 {
+										return int64(0)
 									} else {
 										F_errcode(m, int32(50856066))
 										mBase = m.M
-										v196 = m.ExcPending
-										if v196 != 0 {
-											return int32(0)
+										v194 = m.ExcPending
+										if v194 != 0 {
+											return int64(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 											F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 											mBase = m.M
-											v203 = m.ExcPending
-											if v203 != 0 {
-												return int32(0)
+											v201 = m.ExcPending
+											if v201 != 0 {
+												return int64(0)
 											} else {
 												F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 												mBase = m.M
-												v208 = m.ExcPending
-												if v208 != 0 {
-													return int32(0)
+												v206 = m.ExcPending
+												if v206 != 0 {
+													return int64(0)
 												} else {
 													base.Wasm_trap_unreachable()
 													for {
@@ -895,66 +890,65 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 								} else {
 									v70 = int32(1)
 									*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-									v72 = int32(0)
-									v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-									v77 = base.B2i32(v61 != v72)
-									v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+									v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+									v75 = int32(0)
+									v76 = base.B2i32(v61 != v75)
+									v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 									mBase = m.M
-									v81 = m.ExcPending
-									if v81 != 0 {
-										return int32(0)
+									v80 = m.ExcPending
+									if v80 != 0 {
+										return int64(0)
 									} else {
-										v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-										if v82 < v60 {
-											v106 = v72
+										v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+										if v81 < v60 {
+											v105 = v11
 										} else {
-											v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-											if v84 < v61 {
-												v106 = v72
+											v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+											if v83 < v61 {
+												v105 = v11
 											} else {
-												v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-												v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-												if v99 < int32(0) {
-													v102 = int32(-1)
+												v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+												v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+												if v97 < int32(0) {
+													v105 = v11
 												} else {
-													v102 = v99
+													v105 = base.I64_extend_i32_s(v97 + int32(1))
 												}
-												v106 = v102 + int32(1)
 											}
 										}
 										m.G0 = v14 + int32(80)
-										return v106
+										return v105
 									}
 								}
 							}
 						} else {
-							v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+							v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 							if v45 <= int32(0) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v133 = m.ExcPending
-								if v133 != 0 {
-									return int32(0)
+								v131 = m.ExcPending
+								if v131 != 0 {
+									return int64(0)
 								} else {
 									F_errcode(m, int32(50856066))
 									mBase = m.M
-									v136 = m.ExcPending
-									if v136 != 0 {
-										return int32(0)
+									v134 = m.ExcPending
+									if v134 != 0 {
+										return int64(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v14)+36)) = v45
 										*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = int32(_a_F_regexp_instr_7)
 										F_errmsg(m, int32(_a_F_regexp_instr_5), v14+int32(32))
 										mBase = m.M
-										v144 = m.ExcPending
-										if v144 != 0 {
-											return int32(0)
+										v142 = m.ExcPending
+										if v142 != 0 {
+											return int64(0)
 										} else {
 											F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1228), int32(_a_F_regexp_instr_3))
 											mBase = m.M
-											v149 = m.ExcPending
-											if v149 != 0 {
-												return int32(0)
+											v147 = m.ExcPending
+											if v147 != 0 {
+												return int64(0)
 											} else {
 												base.Wasm_trap_unreachable()
 												for {
@@ -974,34 +968,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 									mBase = m.M
 									v66 = m.ExcPending
 									if v66 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 										if v67 == int32(1) {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v193 = m.ExcPending
-											if v193 != 0 {
-												return int32(0)
+											v191 = m.ExcPending
+											if v191 != 0 {
+												return int64(0)
 											} else {
 												F_errcode(m, int32(50856066))
 												mBase = m.M
-												v196 = m.ExcPending
-												if v196 != 0 {
-													return int32(0)
+												v194 = m.ExcPending
+												if v194 != 0 {
+													return int64(0)
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 													F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 													mBase = m.M
-													v203 = m.ExcPending
-													if v203 != 0 {
-														return int32(0)
+													v201 = m.ExcPending
+													if v201 != 0 {
+														return int64(0)
 													} else {
 														F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 														mBase = m.M
-														v208 = m.ExcPending
-														if v208 != 0 {
-															return int32(0)
+														v206 = m.ExcPending
+														if v206 != 0 {
+															return int64(0)
 														} else {
 															base.Wasm_trap_unreachable()
 															for {
@@ -1013,66 +1007,65 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 										} else {
 											v70 = int32(1)
 											*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-											v72 = int32(0)
-											v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-											v77 = base.B2i32(v61 != v72)
-											v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+											v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+											v75 = int32(0)
+											v76 = base.B2i32(v61 != v75)
+											v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 											mBase = m.M
-											v81 = m.ExcPending
-											if v81 != 0 {
-												return int32(0)
+											v80 = m.ExcPending
+											if v80 != 0 {
+												return int64(0)
 											} else {
-												v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-												if v82 < v60 {
-													v106 = v72
+												v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+												if v81 < v60 {
+													v105 = v11
 												} else {
-													v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-													if v84 < v61 {
-														v106 = v72
+													v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+													if v83 < v61 {
+														v105 = v11
 													} else {
-														v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-														v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-														if v99 < int32(0) {
-															v102 = int32(-1)
+														v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+														v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+														if v97 < int32(0) {
+															v105 = v11
 														} else {
-															v102 = v99
+															v105 = base.I64_extend_i32_s(v97 + int32(1))
 														}
-														v106 = v102 + int32(1)
 													}
 												}
 												m.G0 = v14 + int32(80)
-												return v106
+												return v105
 											}
 										}
 									}
 								} else {
-									v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+									v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 									if base.Ui32(int32(2)) <= base.Ui32(v50) {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v153 = m.ExcPending
-										if v153 != 0 {
-											return int32(0)
+										v151 = m.ExcPending
+										if v151 != 0 {
+											return int64(0)
 										} else {
 											F_errcode(m, int32(50856066))
 											mBase = m.M
-											v156 = m.ExcPending
-											if v156 != 0 {
-												return int32(0)
+											v154 = m.ExcPending
+											if v154 != 0 {
+												return int64(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v14)+52)) = v50
 												*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = int32(_a_F_regexp_instr_8)
 												F_errmsg(m, int32(_a_F_regexp_instr_5), v14+int32(48))
 												mBase = m.M
-												v164 = m.ExcPending
-												if v164 != 0 {
-													return int32(0)
+												v162 = m.ExcPending
+												if v162 != 0 {
+													return int64(0)
 												} else {
 													F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1237), int32(_a_F_regexp_instr_3))
 													mBase = m.M
-													v169 = m.ExcPending
-													if v169 != 0 {
-														return int32(0)
+													v167 = m.ExcPending
+													if v167 != 0 {
+														return int64(0)
 													} else {
 														base.Wasm_trap_unreachable()
 														for {
@@ -1092,34 +1085,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 											mBase = m.M
 											v66 = m.ExcPending
 											if v66 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 												if v67 == int32(1) {
 													F_errstart_cold(m, int32(21), int32(0))
 													mBase = m.M
-													v193 = m.ExcPending
-													if v193 != 0 {
-														return int32(0)
+													v191 = m.ExcPending
+													if v191 != 0 {
+														return int64(0)
 													} else {
 														F_errcode(m, int32(50856066))
 														mBase = m.M
-														v196 = m.ExcPending
-														if v196 != 0 {
-															return int32(0)
+														v194 = m.ExcPending
+														if v194 != 0 {
+															return int64(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 															F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 															mBase = m.M
-															v203 = m.ExcPending
-															if v203 != 0 {
-																return int32(0)
+															v201 = m.ExcPending
+															if v201 != 0 {
+																return int64(0)
 															} else {
 																F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 																mBase = m.M
-																v208 = m.ExcPending
-																if v208 != 0 {
-																	return int32(0)
+																v206 = m.ExcPending
+																if v206 != 0 {
+																	return int64(0)
 																} else {
 																	base.Wasm_trap_unreachable()
 																	for {
@@ -1131,66 +1124,65 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 												} else {
 													v70 = int32(1)
 													*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-													v72 = int32(0)
-													v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-													v77 = base.B2i32(v61 != v72)
-													v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+													v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+													v75 = int32(0)
+													v76 = base.B2i32(v61 != v75)
+													v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 													mBase = m.M
-													v81 = m.ExcPending
-													if v81 != 0 {
-														return int32(0)
+													v80 = m.ExcPending
+													if v80 != 0 {
+														return int64(0)
 													} else {
-														v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-														if v82 < v60 {
-															v106 = v72
+														v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+														if v81 < v60 {
+															v105 = v11
 														} else {
-															v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-															if v84 < v61 {
-																v106 = v72
+															v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+															if v83 < v61 {
+																v105 = v11
 															} else {
-																v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-																v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-																if v99 < int32(0) {
-																	v102 = int32(-1)
+																v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+																v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+																if v97 < int32(0) {
+																	v105 = v11
 																} else {
-																	v102 = v99
+																	v105 = base.I64_extend_i32_s(v97 + int32(1))
 																}
-																v106 = v102 + int32(1)
 															}
 														}
 														m.G0 = v14 + int32(80)
-														return v106
+														return v105
 													}
 												}
 											}
 										} else {
-											v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+											v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
 											if v55 < int32(0) {
 												F_errstart_cold(m, int32(21), int32(0))
 												mBase = m.M
-												v173 = m.ExcPending
-												if v173 != 0 {
-													return int32(0)
+												v171 = m.ExcPending
+												if v171 != 0 {
+													return int64(0)
 												} else {
 													F_errcode(m, int32(50856066))
 													mBase = m.M
-													v176 = m.ExcPending
-													if v176 != 0 {
-														return int32(0)
+													v174 = m.ExcPending
+													if v174 != 0 {
+														return int64(0)
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v14)+68)) = v55
 														*(*int32)(unsafe.Add(mBase, uint32(v14)+64)) = int32(_a_F_regexp_instr_9)
 														F_errmsg(m, int32(_a_F_regexp_instr_5), v14-int32(-64))
 														mBase = m.M
-														v184 = m.ExcPending
-														if v184 != 0 {
-															return int32(0)
+														v182 = m.ExcPending
+														if v182 != 0 {
+															return int64(0)
 														} else {
 															F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1246), int32(_a_F_regexp_instr_3))
 															mBase = m.M
-															v189 = m.ExcPending
-															if v189 != 0 {
-																return int32(0)
+															v187 = m.ExcPending
+															if v187 != 0 {
+																return int64(0)
 															} else {
 																base.Wasm_trap_unreachable()
 																for {
@@ -1209,34 +1201,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 												mBase = m.M
 												v66 = m.ExcPending
 												if v66 != 0 {
-													return int32(0)
+													return int64(0)
 												} else {
 													v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)))
 													if v67 == int32(1) {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v193 = m.ExcPending
-														if v193 != 0 {
-															return int32(0)
+														v191 = m.ExcPending
+														if v191 != 0 {
+															return int64(0)
 														} else {
 															F_errcode(m, int32(50856066))
 															mBase = m.M
-															v196 = m.ExcPending
-															if v196 != 0 {
-																return int32(0)
+															v194 = m.ExcPending
+															if v194 != 0 {
+																return int64(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(_a_F_regexp_instr_0)
 																F_errmsg(m, int32(_a_F_regexp_instr_1), v14+int32(16))
 																mBase = m.M
-																v203 = m.ExcPending
-																if v203 != 0 {
-																	return int32(0)
+																v201 = m.ExcPending
+																if v201 != 0 {
+																	return int64(0)
 																} else {
 																	F_errfinish(m, int32(_a_F_regexp_instr_2), int32(1257), int32(_a_F_regexp_instr_3))
 																	mBase = m.M
-																	v208 = m.ExcPending
-																	if v208 != 0 {
-																		return int32(0)
+																	v206 = m.ExcPending
+																	if v206 != 0 {
+																		return int64(0)
 																	} else {
 																		base.Wasm_trap_unreachable()
 																		for {
@@ -1248,35 +1240,34 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 													} else {
 														v70 = int32(1)
 														*(*uint8)(unsafe.Add(mBase, uint32(v14)+76)) = uint8(v70)
-														v72 = int32(0)
-														v75 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-														v77 = base.B2i32(v61 != v72)
-														v80 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v75, v77, v72, v72)
+														v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+														v75 = int32(0)
+														v76 = base.B2i32(v61 != v75)
+														v79 = F_setup_regexp_matches(m, v17, v22, v64, v59-v70, v74, v76, v75, v75)
 														mBase = m.M
-														v81 = m.ExcPending
-														if v81 != 0 {
-															return int32(0)
+														v80 = m.ExcPending
+														if v80 != 0 {
+															return int64(0)
 														} else {
-															v82 = *(*int32)(unsafe.Add(mBase, uint32(v80)+4))
-															if v82 < v60 {
-																v106 = v72
+															v81 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
+															if v81 < v60 {
+																v105 = v11
 															} else {
-																v84 = *(*int32)(unsafe.Add(mBase, uint32(v80)+8))
-																if v84 < v61 {
-																	v106 = v72
+																v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)+8))
+																if v83 < v61 {
+																	v105 = v11
 																} else {
-																	v87 = *(*int32)(unsafe.Add(mBase, uint32(v80)+12))
-																	v99 = *(*int32)(unsafe.Add(mBase, uint32(v87+(v61-v77+v84*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
-																	if v99 < int32(0) {
-																		v102 = int32(-1)
+																	v85 = *(*int32)(unsafe.Add(mBase, uint32(v79)+12))
+																	v97 = *(*int32)(unsafe.Add(mBase, uint32(v85+(v61-v76+v83*(v60-int32(1)))<<(uint(int32(3))%32)+v62<<(uint(int32(2))%32))))
+																	if v97 < int32(0) {
+																		v105 = v11
 																	} else {
-																		v102 = v99
+																		v105 = base.I64_extend_i32_s(v97 + int32(1))
 																	}
-																	v106 = v102 + int32(1)
 																}
 															}
 															m.G0 = v14 + int32(80)
-															return v106
+															return v105
 														}
 													}
 												}
@@ -1292,15 +1283,15 @@ func F_regexp_instr(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_regexp_split_to_array_no_flags(m *base.Module, l0 int32) int32 {
-	var v2 int32
+func F_regexp_split_to_array_no_flags(m *base.Module, l0 int32) int64 {
+	var v2 int64
 	_ = v2
 	var v5 int32
 	_ = v5
 	v2 = F_regexp_split_to_array(m, l0)
 	v5 = m.ExcPending
 	if v5 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v2
 	}

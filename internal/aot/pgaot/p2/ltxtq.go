@@ -5,20 +5,20 @@ import (
 	"unsafe"
 )
 
-func F__ltxtq_extract_exec(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F__ltxtq_extract_exec(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13844(m, l0, int32(_a_F__ltxtq_extract_exec_0))
+	v3 = Fn14225(m, l0, int32(_a_F__ltxtq_extract_exec_0))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
 }
-func F_ltxtq_recv(m *base.Module, l0 int32) int32 {
+func F_ltxtq_recv(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -54,32 +54,32 @@ func F_ltxtq_recv(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v10 = F_pq_getmsgint(m, v8, int32(1))
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		if v10 != int32(1) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v10
 				F_errmsg_internal(m, int32(_a_F_ltxtq_recv_0), v6)
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
-					F_errfinish(m, int32(_a_F_ltxtq_recv_1), int32(437), int32(_a_F_ltxtq_recv_2))
+					F_errfinish(m, int32(_a_F_ltxtq_recv_1), int32(473), int32(_a_F_ltxtq_recv_2))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						base.Wasm_trap_unreachable()
 						for {
@@ -94,22 +94,22 @@ func F_ltxtq_recv(m *base.Module, l0 int32) int32 {
 			mBase = m.M
 			v35 = m.ExcPending
 			if v35 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v37 = F_queryin(m, v34, int32(0))
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					F_pfree(m, v34)
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						m.G0 = v6 + int32(16)
-						return v37
+						return base.I64_extend_i32_u(v37)
 					}
 				}
 			}

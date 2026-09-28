@@ -68,24 +68,24 @@ func F_sts_initialize(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 	_ = v101
 	var v105 int32
 	_ = v105
-	var v106 int32
-	_ = v106
-	var v112 int32
-	_ = v112
-	var v117 int32
-	_ = v117
+	var v110 int32
+	_ = v110
+	var v111 int32
+	_ = v111
+	var v116 int32
+	_ = v116
+	var v126 int32
+	_ = v126
 	var v127 int32
 	_ = v127
-	var v130 int32
-	_ = v130
-	var v135 int32
-	_ = v135
-	var v141 int32
-	_ = v141
-	var v145 int32
-	_ = v145
-	var v150 int32
-	_ = v150
+	var v132 int32
+	_ = v132
+	var v138 int32
+	_ = v138
+	var v142 int32
+	_ = v142
+	var v147 int32
+	_ = v147
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(4)
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = int32(1)
@@ -111,9 +111,9 @@ L3:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
-		goto L32
+	v138 = m.ExcPending
+	if v138 != 0 {
+		goto L30
 	} else {
 		goto L34
 	}
@@ -266,68 +266,71 @@ L26:
 	goto L27
 L27:
 	;
-	v127 = F_palloc0(m, int32(68))
+	v126 = F_palloc0(m, int32(64))
 	mBase = m.M
-	v130 = m.ExcPending
-	if v130 != 0 {
-		goto L32
+	v127 = m.ExcPending
+	if v127 != 0 {
+		goto L30
 	} else {
 		goto L33
 	}
 L28:
 	;
 	v105 = l0 + int32(76) + v101*int32(28)
-	v106 = int32(75)
-	*(*uint16)(unsafe.Add(mBase, uint32(v105))) = uint16(v106)
-	*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = int32(1073741824)
-	*(*int64)(unsafe.Add(mBase, uint32(v105)+8)) = int64(-1)
-	goto L30
+	F_LWLockInitialize(m, v105, int32(79))
+	mBase = m.M
+	v110 = m.ExcPending
+	if v110 != 0 {
+		goto L30
+	} else {
+		goto L31
+	}
 L29:
 	;
 	goto L27
 L30:
 	;
-	v112 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v105)+24)) = uint8(v112)
-	*(*int64)(unsafe.Add(mBase, uint32(v105)+16)) = int64(0)
-	v117 = v101 + int32(1)
-	if v117 != l1 {
-		v101 = v117
-		goto L28
-	} else {
-		goto L31
-	}
+	return int32(0)
 L31:
 	;
-	goto L29
+	v111 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v105)+24)) = uint8(v111)
+	*(*int64)(unsafe.Add(mBase, uint32(v105)+16)) = int64(0)
+	v116 = v101 + int32(1)
+	if v116 != l1 {
+		v101 = v116
+		goto L28
+	} else {
+		goto L32
+	}
 L32:
 	;
-	return int32(0)
+	goto L29
 L33:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v127)+8)) = l3
-	*(*int32)(unsafe.Add(mBase, uint32(v127)+4)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v127))) = l2
-	v135 = *(*int32)(unsafe.Add(mBase, _c_F_sts_initialize[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v127)+12)) = v135
-	return v127
+	*(*int32)(unsafe.Add(mBase, uint32(v126)+8)) = l3
+	*(*int32)(unsafe.Add(mBase, uint32(v126)+4)) = l0
+	*(*int32)(unsafe.Add(mBase, uint32(v126))) = l2
+	v132 = *(*int32)(unsafe.Add(mBase, _c_F_sts_initialize[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v126)+12)) = v132
+	return v126
 L34:
 	;
 	F_errmsg_internal(m, int32(_a_F_sts_initialize_0), int32(0))
 	mBase = m.M
-	v145 = m.ExcPending
-	if v145 != 0 {
-		goto L32
+	v142 = m.ExcPending
+	if v142 != 0 {
+		goto L30
 	} else {
 		goto L35
 	}
 L35:
 	;
-	F_errfinish(m, int32(_a_F_sts_initialize_1), int32(143), int32(_a_F_sts_initialize_2))
+	F_errfinish(m, int32(_a_F_sts_initialize_1), int32(142), int32(_a_F_sts_initialize_2))
 	mBase = m.M
-	v150 = m.ExcPending
-	if v150 != 0 {
-		goto L32
+	v147 = m.ExcPending
+	if v147 != 0 {
+		goto L30
 	} else {
 		goto L36
 	}

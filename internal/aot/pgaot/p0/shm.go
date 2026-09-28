@@ -11,46 +11,46 @@ func F_shm_mq_set_sender(m *base.Module, l0 int32, l1 int32) {
 	_ = mBase
 	var v5 int32
 	_ = v5
+	var v8 int32
+	_ = v8
 	var v10 int32
 	_ = v10
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
-	var v32 int32
-	_ = v32
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
 	var v36 int32
 	_ = v36
 	var v38 int32
 	_ = v38
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v46 int32
-	_ = v46
-	var v50 int32
-	_ = v50
-	var v54 int32
-	_ = v54
-	var v58 int32
-	_ = v58
-	var v66 int32
-	_ = v66
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v48 int32
+	_ = v48
+	var v52 int32
+	_ = v52
+	var v56 int32
+	_ = v56
+	var v64 int32
+	_ = v64
 	v5 = base.AtomicRmwXchg32(m, l0, int32(0), int32(1))
 	if v5 != 0 {
 		goto L1
@@ -59,10 +59,10 @@ func F_shm_mq_set_sender(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	F_s_lock(m, l0, int32(_a_F_shm_mq_set_sender_0), int32(228), int32(_a_F_shm_mq_set_sender_1))
+	F_s_lock(m, l0, int32(_a_F_shm_mq_set_sender_0))
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v8 = m.ExcPending
+	if v8 != 0 {
 		goto L4
 	} else {
 		goto L5
@@ -73,10 +73,10 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = l1
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v13 = int32(0)
-	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v13))
-	if v12 != 0 {
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v11 = int32(0)
+	atomic.StoreUint32((*uint32)(unsafe.Add(mBase, uint32(l0))), uint32(v11))
+	if v10 != 0 {
 		goto L6
 	} else {
 		goto L7
@@ -89,11 +89,11 @@ L5:
 	goto L3
 L6:
 	;
-	v17 = v12 + int32(20)
-	v18 = int32(0)
-	v21 = base.AtomicRmwOr32(m, v18, int32(_a_F_shm_mq_set_sender_2), v18)
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-	if v22 != 0 {
+	v15 = v10 + int32(316)
+	v16 = int32(0)
+	v19 = base.AtomicRmwOr32(m, v16, int32(_a_F_shm_mq_set_sender_1), v16)
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+	if v20 != 0 {
 		goto L10
 	} else {
 		goto L11
@@ -112,38 +112,38 @@ L10:
 	goto L9
 L11:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(1)
-	v25 = int32(0)
-	v28 = base.AtomicRmwOr32(m, v25, int32(_a_F_shm_mq_set_sender_2), v25)
-	v29 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
-	if v29 == v25 {
+	*(*int32)(unsafe.Add(mBase, uint32(v15))) = int32(1)
+	v23 = int32(0)
+	v26 = base.AtomicRmwOr32(m, v23, int32(_a_F_shm_mq_set_sender_1), v23)
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
+	if v27 == v23 {
 		goto L10
 	} else {
 		goto L12
 	}
 L12:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
-	if v32 == int32(0) {
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v15)+12))
+	if v30 == int32(0) {
 		goto L10
 	} else {
 		goto L13
 	}
 L13:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[0]))
-	if v36 == v32 {
+	v34 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[0]))
+	if v34 == v30 {
 		goto L14
 	} else {
 		goto L15
 	}
 L14:
 	;
-	v38 = m.G0
-	v40 = v38 - int32(16)
-	m.G0 = v40
-	v43 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[1]))
-	if v43 == int32(0) {
+	v36 = m.G0
+	v38 = v36 - int32(16)
+	m.G0 = v38
+	v41 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[1]))
+	if v41 == int32(0) {
 		goto L17
 	} else {
 		goto L18
@@ -153,24 +153,24 @@ L15:
 	goto L16
 L16:
 	;
-	v66 = F_pgmem_kill(m, v32, int32(23))
+	v64 = F_pgmem_kill(m, v30, int32(23))
 	mBase = m.M
 	goto L10
 L17:
 	;
-	m.G0 = v40 + int32(16)
+	m.G0 = v38 + int32(16)
 	goto L9
 L18:
 	;
-	v46 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v40)+15)) = uint8(v46)
+	v44 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v38)+15)) = uint8(v44)
 	goto L19
 L19:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[2]))
-	v54 = F_write(m, v50, v40+int32(15), int32(1))
+	v48 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[2]))
+	v52 = F_write(m, v48, v38+int32(15), int32(1))
 	mBase = m.M
-	if int32(0) <= v54 {
+	if int32(0) <= v52 {
 		goto L17
 	} else {
 		goto L21
@@ -180,8 +180,8 @@ L20:
 	goto L17
 L21:
 	;
-	v58 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[3]))
-	if v58 == int32(27) {
+	v56 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_set_sender[3]))
+	if v56 == int32(27) {
 		goto L19
 	} else {
 		goto L22
@@ -307,7 +307,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(_a_F_shm_toc_lookup_2), int32(254), int32(_a_F_shm_toc_lookup_3))
+	F_errfinish(m, int32(_a_F_shm_toc_lookup_2), int32(261), int32(_a_F_shm_toc_lookup_3))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {

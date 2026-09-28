@@ -1613,98 +1613,7 @@ L200:
 	v604 = v599
 	goto L67
 }
-func F_name_matches_visible_ENR(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v3 int32
-	_ = v3
-	var v4 int32
-	_ = v4
-	var v9 int32
-	_ = v9
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	var v25 int32
-	_ = v25
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v31 int32
-	_ = v31
-	var v36 int32
-	_ = v36
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
-	v4 = int32(0)
-	if v3 == v4 {
-		v36 = v4
-		goto L2
-	} else {
-		goto L3
-	}
-L1:
-	;
-	return base.B2i32(v36 != int32(0))
-L2:
-	;
-	goto L1
-L3:
-	;
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
-	if v9 == int32(0) {
-		v36 = v4
-		goto L2
-	} else {
-		goto L4
-	}
-L4:
-	;
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
-	if v12 <= int32(0) {
-		v36 = v4
-		goto L2
-	} else {
-		goto L5
-	}
-L5:
-	;
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
-	v17 = int32(0)
-	goto L6
-L6:
-	;
-	v25 = *(*int32)(unsafe.Add(mBase, uint32(v15+v17<<(uint(int32(2))%32))))
-	v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
-	v27 = F_strcmp(m, v26, l1)
-	mBase = m.M
-	if v27 == int32(0) {
-		v36 = v25
-		goto L2
-	} else {
-		goto L8
-	}
-L7:
-	;
-	v36 = int32(0)
-	goto L2
-L8:
-	;
-	v31 = v17 + int32(1)
-	if v12 != v31 {
-		v17 = v31
-		goto L6
-	} else {
-		goto L9
-	}
-L9:
-	;
-	goto L7
-}
-func F_nameeqtext(m *base.Module, l0 int32) int32 {
+func F_nameeqtext(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v8 int32
@@ -1809,8 +1718,8 @@ func F_nameeqtext(m *base.Module, l0 int32) int32 {
 	_ = v151
 	var v154 int32
 	_ = v154
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v10 = F_pg_detoast_datum_packed(m, v9)
 	mBase = m.M
 	v13 = m.ExcPending
@@ -1821,7 +1730,7 @@ func F_nameeqtext(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(0)
+	return int64(0)
 L2:
 	;
 	v14 = F_strlen(m, v8)
@@ -1894,7 +1803,7 @@ L13:
 	goto L3
 L14:
 	;
-	v151 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v151 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	if v151 != v10 {
 		goto L51
 	} else {
@@ -1968,7 +1877,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(_a_F_nameeqtext_2), int32(1648), int32(_a_F_nameeqtext_3))
+	F_errfinish(m, int32(_a_F_nameeqtext_2), int32(1337), int32(_a_F_nameeqtext_3))
 	mBase = m.M
 	v67 = m.ExcPending
 	if v67 != 0 {
@@ -2160,37 +2069,37 @@ L52:
 	goto L53
 L53:
 	;
-	return v150
+	return base.I64_extend_i32_u(v150)
 L54:
 	;
 	goto L53
 }
-func F_namegetext(m *base.Module, l0 int32) int32 {
+func F_namegetext(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1542), v3, v4, v5)
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v6 = F_DirectFunctionCall2Coll(m, int32(1755), v3, v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return int32(base.Ui32(v6^int32(-1)) >> (uint(int32(31)) % 32))
+		return int64(base.Ui64(v6^int64(-1))>>(uint(int64(31))%64)) & int64(1)
 	}
 }
-func F_namegt(m *base.Module, l0 int32) int32 {
+func F_namegt(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -2239,8 +2148,8 @@ func F_namegt(m *base.Module, l0 int32) int32 {
 	_ = v60
 	var v61 int32
 	_ = v61
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	if v6 == int32(950) {
 		goto L2
@@ -2249,7 +2158,7 @@ func F_namegt(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return base.B2i32(int32(0) < v61)
+	return base.I64_extend_i32_u(base.B2i32(int32(0) < v61))
 L2:
 	;
 	goto L7
@@ -2350,16 +2259,16 @@ L17:
 	goto L14
 L18:
 	;
-	return int32(0)
+	return int64(0)
 L19:
 	;
 	v61 = v57
 	goto L1
 }
-func F_nameiclike(m *base.Module, l0 int32) int32 {
+func F_nameiclike(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
 	var v5 int32
 	_ = v5
@@ -2367,12 +2276,10 @@ func F_nameiclike(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	var v12 int32
+	var v12 int64
 	_ = v12
 	var v13 int32
 	_ = v13
-	var v14 int32
-	_ = v14
 	var v15 int32
 	_ = v15
 	var v16 int32
@@ -2381,43 +2288,45 @@ func F_nameiclike(m *base.Module, l0 int32) int32 {
 	_ = v17
 	var v18 int32
 	_ = v18
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	var v19 int32
+	_ = v19
+	v4 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0)+24)))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v12 = F_DirectFunctionCall1Coll(m, int32(1436), int32(0), v4)
+		v12 = F_DirectFunctionCall1Coll(m, int32(1584), int32(0), v4)
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			v14 = F_pg_detoast_datum_packed(m, v12)
+			v15 = F_pg_detoast_datum_packed(m, base.I32_wrap_i64(v12))
 			mBase = m.M
-			v15 = m.ExcPending
-			if v15 != 0 {
-				return int32(0)
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return int64(0)
 			} else {
-				v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-				v17 = F_Generic_Text_IC_like(m, v14, v6, v16)
+				v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+				v18 = F_Generic_Text_IC_like(m, v15, v6, v17)
 				mBase = m.M
-				v18 = m.ExcPending
-				if v18 != 0 {
-					return int32(0)
+				v19 = m.ExcPending
+				if v19 != 0 {
+					return int64(0)
 				} else {
-					return base.B2i32(v17 == int32(1))
+					return base.I64_extend_i32_u(base.B2i32(v18 == int32(1)))
 				}
 			}
 		}
 	}
 }
-func F_nameicnlike(m *base.Module, l0 int32) int32 {
+func F_nameicnlike(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
 	var v5 int32
 	_ = v5
@@ -2425,12 +2334,10 @@ func F_nameicnlike(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	var v12 int32
+	var v12 int64
 	_ = v12
 	var v13 int32
 	_ = v13
-	var v14 int32
-	_ = v14
 	var v15 int32
 	_ = v15
 	var v16 int32
@@ -2439,53 +2346,55 @@ func F_nameicnlike(m *base.Module, l0 int32) int32 {
 	_ = v17
 	var v18 int32
 	_ = v18
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	var v19 int32
+	_ = v19
+	v4 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0)+24)))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v6 = F_pg_detoast_datum_packed(m, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v12 = F_DirectFunctionCall1Coll(m, int32(1436), int32(0), v4)
+		v12 = F_DirectFunctionCall1Coll(m, int32(1584), int32(0), v4)
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			v14 = F_pg_detoast_datum_packed(m, v12)
+			v15 = F_pg_detoast_datum_packed(m, base.I32_wrap_i64(v12))
 			mBase = m.M
-			v15 = m.ExcPending
-			if v15 != 0 {
-				return int32(0)
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return int64(0)
 			} else {
-				v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-				v17 = F_Generic_Text_IC_like(m, v14, v6, v16)
+				v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+				v18 = F_Generic_Text_IC_like(m, v15, v6, v17)
 				mBase = m.M
-				v18 = m.ExcPending
-				if v18 != 0 {
-					return int32(0)
+				v19 = m.ExcPending
+				if v19 != 0 {
+					return int64(0)
 				} else {
-					return base.B2i32(v17 != int32(1))
+					return base.I64_extend_i32_u(base.B2i32(v18 != int32(1)))
 				}
 			}
 		}
 	}
 }
-func F_nameicregexeq(m *base.Module, l0 int32) int32 {
-	var v3 int32
+func F_nameicregexeq(m *base.Module, l0 int32) int64 {
+	var v3 int64
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = Fn13949(m, l0, int32(27))
+	v3 = Fn14330(m, l0, int32(27))
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		return v3
 	}
 }
-func F_namein(m *base.Module, l0 int32) int32 {
+func F_namein(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -2502,7 +2411,7 @@ func F_namein(m *base.Module, l0 int32) int32 {
 	_ = v15
 	var v16 int32
 	_ = v16
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v5 = F_strlen(m, v4)
 	mBase = m.M
 	if int32(64) <= v5 {
@@ -2510,20 +2419,20 @@ func F_namein(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v13 = v9
 			v15 = F_palloc0(m, int32(64))
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				if v13 != 0 {
 					base.MemoryCopy(m, v15, v4, v13)
 				} else {
 				}
-				return v15
+				return base.I64_extend_i32_u(v15)
 			}
 		}
 	} else {
@@ -2532,42 +2441,42 @@ func F_namein(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			if v13 != 0 {
 				base.MemoryCopy(m, v15, v4, v13)
 			} else {
 			}
-			return v15
+			return base.I64_extend_i32_u(v15)
 		}
 	}
 }
-func F_namelttext(m *base.Module, l0 int32) int32 {
+func F_namelttext(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v4 int32
+	var v4 int64
 	_ = v4
-	var v5 int32
+	var v5 int64
 	_ = v5
-	var v6 int32
+	var v6 int64
 	_ = v6
 	var v9 int32
 	_ = v9
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1542), v3, v4, v5)
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+	v6 = F_DirectFunctionCall2Coll(m, int32(1755), v3, v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		return int32(base.Ui32(v6) >> (uint(int32(31)) % 32))
+		return int64(base.Ui64(v6)>>(uint(int64(31))%64)) & int64(1)
 	}
 }
-func F_namene(m *base.Module, l0 int32) int32 {
+func F_namene(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -2616,8 +2525,8 @@ func F_namene(m *base.Module, l0 int32) int32 {
 	_ = v60
 	var v61 int32
 	_ = v61
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	if v6 == int32(950) {
 		goto L2
@@ -2626,7 +2535,7 @@ func F_namene(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return base.B2i32(v61 != int32(0))
+	return base.I64_extend_i32_u(base.B2i32(v61 != int32(0)))
 L2:
 	;
 	goto L7
@@ -2727,102 +2636,96 @@ L17:
 	goto L14
 L18:
 	;
-	return int32(0)
+	return int64(0)
 L19:
 	;
 	v61 = v57
 	goto L1
 }
-func F_namenlike(m *base.Module, l0 int32) int32 {
+func F_namenlike(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
 	var v7 int32
 	_ = v7
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
+	var v9 int32
+	_ = v9
 	var v12 int32
 	_ = v12
 	var v13 int32
 	_ = v13
 	var v14 int32
 	_ = v14
-	var v17 int32
-	_ = v17
-	var v19 int32
-	_ = v19
 	var v20 int32
 	_ = v20
-	var v26 int32
-	_ = v26
-	var v29 int32
-	_ = v29
-	var v36 int32
-	_ = v36
+	var v23 int32
+	_ = v23
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
 	var v37 int32
 	_ = v37
-	var v41 int32
-	_ = v41
-	var v47 int32
-	_ = v47
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
 	var v48 int32
 	_ = v48
-	var v49 int32
-	_ = v49
 	var v50 int32
 	_ = v50
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v8 = F_pg_detoast_datum_packed(m, v7)
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v9 = F_pg_detoast_datum_packed(m, v8)
 	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
-		return int32(0)
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int64(0)
 	} else {
-		v12 = int32(1)
-		v13 = v8 + v12
-		v14 = F_strlen(m, v6)
+		v13 = F_strlen(m, v7)
 		mBase = m.M
-		v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8))))
-		v19 = v17 & v12
-		if v19 != 0 {
-			v20 = v13
-		} else {
-			v20 = v8 + int32(4)
-		}
-		if v17 == int32(1) {
-			v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13))))
-			if v26 == int32(18) {
-				v29 = int32(16)
+		v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9))))
+		if v14 == int32(1) {
+			v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+1)))
+			if v20 == int32(18) {
+				v23 = int32(16)
 			} else {
-				v29 = int32(0)
+				v23 = int32(0)
 			}
-			if base.Ui32((v26-int32(1))&int32(255)) < base.Ui32(int32(3)) {
-				v36 = int32(4)
+			if base.Ui32((v20-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+				v30 = int32(4)
 			} else {
-				v36 = v29
+				v30 = v23
 			}
-			v47 = v36
+			v43 = v30
 		} else {
-			v37 = int32(1)
-			if v19 != 0 {
-				v47 = int32(base.Ui32(v17)>>(uint(v37)%32)) - v37
+			v31 = int32(1)
+			if v14&v31 != 0 {
+				v43 = int32(base.Ui32(v14)>>(uint(v31)%32)) - v31
 			} else {
-				v41 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-				v47 = int32(base.Ui32(v41)>>(uint(int32(2))%32)) - int32(4)
+				v37 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
+				v43 = int32(base.Ui32(v37)>>(uint(int32(2))%32)) - int32(4)
 			}
 		}
-		v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-		v49 = F_GenericMatchText(m, v6, v14, v20, v47, v48)
-		mBase = m.M
-		v50 = m.ExcPending
-		if v50 != 0 {
-			return int32(0)
+		v44 = int32(1)
+		if v14&v44 != 0 {
+			v48 = v44
 		} else {
-			return base.B2i32(v49 != int32(1))
+			v48 = int32(4)
+		}
+		v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+		v51 = F_GenericMatchText(m, v7, v13, v9+v48, v43, v50)
+		mBase = m.M
+		v52 = m.ExcPending
+		if v52 != 0 {
+			return int64(0)
+		} else {
+			return base.I64_extend_i32_u(base.B2i32(v51 != int32(1)))
 		}
 	}
 }

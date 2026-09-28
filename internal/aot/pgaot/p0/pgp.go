@@ -24,7 +24,7 @@ func F_pgp_cfb_free(m *base.Module, l0 int32) {
 	if v6 != 0 {
 		return
 	} else {
-		base.MemoryFill(m, l0, int32(0), int32(116))
+		base.MemoryFill(m, l0, int32(0), int32(120))
 		F_pfree(m, l0)
 		mBase = m.M
 		v11 = m.ExcPending

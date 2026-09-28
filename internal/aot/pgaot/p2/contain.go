@@ -77,7 +77,7 @@ func F_contain_invalid_rfcolumn_walker(m *base.Module, l0 int32, l1 int32) int32
 								v41 = v12
 								return v41
 							} else {
-								v38 = F_expression_tree_walker_impl(m, l0, int32(567), l1)
+								v38 = F_expression_tree_walker_impl(m, l0, int32(609), l1)
 								mBase = m.M
 								v39 = m.ExcPending
 								if v39 != 0 {
@@ -103,7 +103,7 @@ func F_contain_invalid_rfcolumn_walker(m *base.Module, l0 int32, l1 int32) int32
 						v41 = v12
 						return v41
 					} else {
-						v38 = F_expression_tree_walker_impl(m, l0, int32(567), l1)
+						v38 = F_expression_tree_walker_impl(m, l0, int32(609), l1)
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
@@ -116,7 +116,7 @@ func F_contain_invalid_rfcolumn_walker(m *base.Module, l0 int32, l1 int32) int32
 				}
 			}
 		} else {
-			v38 = F_expression_tree_walker_impl(m, l0, int32(567), l1)
+			v38 = F_expression_tree_walker_impl(m, l0, int32(609), l1)
 			mBase = m.M
 			v39 = m.ExcPending
 			if v39 != 0 {
@@ -175,8 +175,8 @@ func F_contain_placeholder_references_walker(m *base.Module, l0 int32, l1 int32)
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		if v8 != int32(67) {
-			if v8 != int32(319) {
-				v37 = F_expression_tree_walker_impl(m, l0, int32(881), l1)
+			if v8 != int32(321) {
+				v37 = F_expression_tree_walker_impl(m, l0, int32(930), l1)
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
@@ -188,7 +188,7 @@ func F_contain_placeholder_references_walker(m *base.Module, l0 int32, l1 int32)
 				v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 				v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 				if v13 != v14 {
-					v37 = F_expression_tree_walker_impl(m, l0, int32(881), l1)
+					v37 = F_expression_tree_walker_impl(m, l0, int32(930), l1)
 					mBase = m.M
 					v38 = m.ExcPending
 					if v38 != 0 {
@@ -212,7 +212,7 @@ func F_contain_placeholder_references_walker(m *base.Module, l0 int32, l1 int32)
 		} else {
 			v23 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v23 + int32(1)
-			v29 = F_query_tree_walker_impl(m, l0, int32(881), l1, int32(0))
+			v29 = F_query_tree_walker_impl(m, l0, int32(930), l1, int32(0))
 			mBase = m.M
 			v30 = m.ExcPending
 			if v30 != 0 {
@@ -241,7 +241,7 @@ func F_contain_subplans_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		if base.Ui32(v7-int32(22)) < base.Ui32(int32(3)) {
 			return int32(1)
 		} else {
-			v15 = F_expression_tree_walker_impl(m, l0, int32(857), l1)
+			v15 = F_expression_tree_walker_impl(m, l0, int32(905), l1)
 			mBase = m.M
 			v18 = m.ExcPending
 			if v18 != 0 {
@@ -257,7 +257,7 @@ func F_contain_vars_of_level(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = Fn13867(m, l0, l1, int32(900))
+	v4 = Fn14250(m, l0, l1, int32(951))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -292,7 +292,7 @@ func F_contain_vars_returning_old_or_new_walker(m *base.Module, l0 int32, l1 int
 		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		if v7 != int32(61) {
 			if v7 != int32(6) {
-				v24 = F_expression_tree_walker_impl(m, l0, int32(901), l1)
+				v24 = F_expression_tree_walker_impl(m, l0, int32(952), l1)
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
@@ -350,7 +350,7 @@ func F_contain_windowfuncs(m *base.Module, l0 int32) int32 {
 	var v8 int32
 	_ = v8
 	v3 = int32(0)
-	v5 = F_query_or_expression_tree_walker_impl(m, l0, int32(1045), v3, v3)
+	v5 = F_query_or_expression_tree_walker_impl(m, l0, int32(1123), v3, v3)
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

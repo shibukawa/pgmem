@@ -54,7 +54,7 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v49 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(847), int32(_a_F_SlabRealloc_2))
+				F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(887), int32(_a_F_SlabRealloc_2))
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
@@ -68,7 +68,7 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		}
 	} else {
 		v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-		if v22 != int32(476) {
+		if v22 != int32(484) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
 			v45 = m.ExcPending
@@ -82,7 +82,7 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v49 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(847), int32(_a_F_SlabRealloc_2))
+					F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(887), int32(_a_F_SlabRealloc_2))
 					mBase = m.M
 					v54 = m.ExcPending
 					if v54 != 0 {
@@ -112,7 +112,7 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v36 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(854), int32(_a_F_SlabRealloc_2))
+						F_errfinish(m, int32(_a_F_SlabRealloc_1), int32(894), int32(_a_F_SlabRealloc_2))
 						mBase = m.M
 						v41 = m.ExcPending
 						if v41 != 0 {

@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_TwoPhaseGetDummyProcNumber(m *base.Module, l0 int32, l1 int32) int32 {
+func F_TwoPhaseGetDummyProcNumber(m *base.Module, l0 int64, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -24,14 +24,16 @@ func F_TwoPhaseGetDummyProcNumber(m *base.Module, l0 int32, l1 int32) int32 {
 		return v7
 	}
 }
-func F_TwoPhaseGetGXact(m *base.Module, l0 int32, l1 int32) int32 {
+func F_TwoPhaseGetGXact(m *base.Module, l0 int64, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v1 int64
+	_ = v1
 	var v8 int32
 	_ = v8
 	var v10 int32
 	_ = v10
-	var v13 int32
+	var v13 int64
 	_ = v13
 	var v16 int32
 	_ = v16
@@ -49,7 +51,7 @@ func F_TwoPhaseGetGXact(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v39
 	var v46 int32
 	_ = v46
-	var v47 int32
+	var v47 int64
 	_ = v47
 	var v50 int32
 	_ = v50
@@ -67,11 +69,12 @@ func F_TwoPhaseGetGXact(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v92
 	var v97 int32
 	_ = v97
+	v1 = l0
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
-	v13 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseGetGXact[0]))
-	if v13 == l0 {
+	v13 = *(*int64)(unsafe.Add(mBase, _c_F_TwoPhaseGetGXact[0]))
+	if v13 == v1 {
 		goto L3
 	} else {
 		goto L4
@@ -149,8 +152,8 @@ L12:
 L13:
 	;
 	v46 = *(*int32)(unsafe.Add(mBase, uint32(v29+int32(8)+v39<<(uint(int32(2))%32))))
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)+32))
-	if v47 == l0 {
+	v47 = *(*int64)(unsafe.Add(mBase, uint32(v46)+32))
+	if v47 == v1 {
 		v55 = v46
 		goto L11
 	} else {
@@ -199,12 +202,12 @@ L20:
 L21:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseGetGXact[1])) = v55
-	*(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseGetGXact[0])) = l0
+	*(*int64)(unsafe.Add(mBase, _c_F_TwoPhaseGetGXact[0])) = v1
 	v76 = v55
 	goto L2
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
+	*(*uint32)(unsafe.Add(mBase, uint32(v10))) = uint32(v1)
 	F_errmsg_internal(m, int32(_a_F_TwoPhaseGetGXact_0), v10)
 	mBase = m.M
 	v92 = m.ExcPending
@@ -215,7 +218,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(_a_F_TwoPhaseGetGXact_1), int32(835), int32(_a_F_TwoPhaseGetGXact_2))
+	F_errfinish(m, int32(_a_F_TwoPhaseGetGXact_1), int32(845), int32(_a_F_TwoPhaseGetGXact_2))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -227,5 +230,81 @@ L24:
 	;
 	base.Wasm_trap_unreachable()
 	for {
+	}
+}
+func F_TwoPhaseShmemRequest(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v34 int32
+	_ = v34
+	v3 = m.G0
+	v5 = v3 - int32(16)
+	m.G0 = v5
+	v9 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemRequest[0]))
+	v11 = F_mul_size(m, v9, int32(4))
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return
+	} else {
+		v13 = F_add_size(m, int32(8), v11)
+		mBase = m.M
+		v14 = m.ExcPending
+		if v14 != 0 {
+			return
+		} else {
+			v20 = *(*int32)(unsafe.Add(mBase, _c_F_TwoPhaseShmemRequest[0]))
+			v22 = F_mul_size(m, v20, int32(256))
+			mBase = m.M
+			v23 = m.ExcPending
+			if v23 != 0 {
+				return
+			} else {
+				v24 = F_add_size(m, (v13+int32(7))&int32(-8), v22)
+				mBase = m.M
+				v25 = m.ExcPending
+				if v25 != 0 {
+					return
+				} else {
+					*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = int32(_a_F_TwoPhaseShmemRequest_0)
+					*(*int32)(unsafe.Add(mBase, uint32(v5)+8)) = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v24
+					*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(_a_F_TwoPhaseShmemRequest_1)
+					F_ShmemRequestStructWithOpts(m, v5)
+					mBase = m.M
+					v34 = m.ExcPending
+					if v34 != 0 {
+						return
+					} else {
+						m.G0 = v5 + int32(16)
+						return
+					}
+				}
+			}
+		}
 	}
 }

@@ -226,14 +226,18 @@ func F_checkcondition_str_1(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	_ = v295
 	var v299 int32
 	_ = v299
-	var v307 int32
-	_ = v307
+	var v305 int32
+	_ = v305
 	var v308 int32
 	_ = v308
-	var v311 int32
-	_ = v311
+	var v309 int32
+	_ = v309
 	var v312 int32
 	_ = v312
+	var v313 int32
+	_ = v313
+	var v314 int32
+	_ = v314
 	var v315 int32
 	_ = v315
 	var v316 int32
@@ -1010,10 +1014,11 @@ L107:
 	}
 L108:
 	;
-	v307 = F_palloc(m, int32(512))
+	v305 = int32(256)
+	v308 = F_palloc_mul(m, int32(2), v305)
 	mBase = m.M
-	v308 = m.ExcPending
-	if v308 != 0 {
+	v309 = m.ExcPending
+	if v309 != 0 {
 		goto L50
 	} else {
 		goto L111
@@ -1023,23 +1028,24 @@ L109:
 	goto L110
 L110:
 	;
-	v311 = F_repalloc(m, v299, v295<<(uint(int32(2))%32))
+	v312 = v295 << (uint(int32(1)) % 32)
+	v313 = F_repalloc_mul(m, v299, int32(2), v312)
 	mBase = m.M
-	v312 = m.ExcPending
-	if v312 != 0 {
+	v314 = m.ExcPending
+	if v314 != 0 {
 		goto L50
 	} else {
 		goto L112
 	}
 L111:
 	;
-	v315 = int32(256)
-	v316 = v307
+	v315 = v305
+	v316 = v308
 	goto L107
 L112:
 	;
-	v315 = v295 << (uint(int32(1)) % 32)
-	v316 = v311
+	v315 = v312
+	v316 = v313
 	goto L107
 L113:
 	;
@@ -1134,7 +1140,7 @@ L128:
 L129:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v190
-	F_pg_qsort(m, v190, v187, int32(2), int32(1520))
+	F_pg_qsort(m, v190, v187, int32(2), int32(1733))
 	mBase = m.M
 	v389 = m.ExcPending
 	if v389 != 0 {

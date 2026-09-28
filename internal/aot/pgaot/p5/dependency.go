@@ -16,34 +16,34 @@ func F_deleteDependencyRecordsFor(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v14
 	var v17 int32
 	_ = v17
-	var v22 int32
-	_ = v22
-	var v29 int32
-	_ = v29
-	var v34 int32
-	_ = v34
-	var v35 int32
-	_ = v35
-	var v41 int32
-	_ = v41
+	var v23 int32
+	_ = v23
+	var v31 int32
+	_ = v31
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
 	var v43 int32
 	_ = v43
-	var v44 int32
-	_ = v44
 	var v45 int32
 	_ = v45
 	var v46 int32
 	_ = v46
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
-	var v55 int32
-	_ = v55
-	var v59 int32
-	_ = v59
-	var v62 int32
-	_ = v62
+	var v50 int32
+	_ = v50
+	var v57 int32
+	_ = v57
+	var v61 int32
+	_ = v61
+	var v64 int32
+	_ = v64
 	v8 = m.G0
-	v10 = v8 - int32(96)
+	v10 = v8 - int32(112)
 	m.G0 = v10
 	v14 = F_table_open(m, int32(2608), int32(3))
 	mBase = m.M
@@ -58,61 +58,61 @@ L1:
 	return int32(0)
 L2:
 	;
-	F_ScanKeyInit(m, v10, int32(1), int32(3), int32(184), l0)
+	F_ScanKeyInit(m, v10, int32(1), int32(3), int32(184), base.I64_extend_i32_u(l0))
 	mBase = m.M
-	v22 = m.ExcPending
-	if v22 != 0 {
+	v23 = m.ExcPending
+	if v23 != 0 {
 		goto L1
 	} else {
 		goto L3
 	}
 L3:
 	;
-	F_ScanKeyInit(m, v10+int32(48), int32(2), int32(3), int32(184), l1)
+	F_ScanKeyInit(m, v10+int32(56), int32(2), int32(3), int32(184), base.I64_extend_i32_u(l1))
 	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
+	v31 = m.ExcPending
+	if v31 != 0 {
 		goto L1
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v34 = F_systable_beginscan(m, v14, int32(2673), int32(1), int32(0), int32(2), v10)
+	v36 = F_systable_beginscan(m, v14, int32(2673), int32(1), int32(0), int32(2), v10)
 	mBase = m.M
-	v35 = m.ExcPending
-	if v35 != 0 {
+	v37 = m.ExcPending
+	if v37 != 0 {
 		goto L1
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v41 = int32(0)
+	v43 = int32(0)
 	goto L6
 L6:
 	;
-	v43 = F_systable_getnext(m, v34)
+	v45 = F_systable_getnext(m, v36)
 	mBase = m.M
-	v44 = m.ExcPending
-	if v44 != 0 {
+	v46 = m.ExcPending
+	if v46 != 0 {
 		goto L1
 	} else {
 		goto L8
 	}
 L7:
 	;
-	F_systable_endscan(m, v34)
+	F_systable_endscan(m, v36)
 	mBase = m.M
-	v59 = m.ExcPending
-	if v59 != 0 {
+	v61 = m.ExcPending
+	if v61 != 0 {
 		goto L1
 	} else {
 		goto L17
 	}
 L8:
 	;
-	if v43 != 0 {
+	if v45 != 0 {
 		goto L9
 	} else {
 		goto L10
@@ -132,10 +132,10 @@ L11:
 	goto L7
 L12:
 	;
-	v45 = *(*int32)(unsafe.Add(mBase, uint32(v43)+16))
-	v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45)+22)))
-	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45+v46)+24)))
-	if v48 == int32(101) {
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(v45)+16))
+	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47)+22)))
+	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47+v48)+24)))
+	if v50 == int32(101) {
 		goto L6
 	} else {
 		goto L15
@@ -145,10 +145,10 @@ L13:
 	goto L14
 L14:
 	;
-	F_simple_heap_delete(m, v14, v43+int32(4))
+	F_simple_heap_delete(m, v14, v45+int32(4))
 	mBase = m.M
-	v55 = m.ExcPending
-	if v55 != 0 {
+	v57 = m.ExcPending
+	if v57 != 0 {
 		goto L1
 	} else {
 		goto L16
@@ -158,22 +158,22 @@ L15:
 	goto L14
 L16:
 	;
-	v41 = v41 + int32(1)
+	v43 = v43 + int32(1)
 	goto L6
 L17:
 	;
 	F_relation_close(m, v14, int32(3))
 	mBase = m.M
-	v62 = m.ExcPending
-	if v62 != 0 {
+	v64 = m.ExcPending
+	if v64 != 0 {
 		goto L1
 	} else {
 		goto L18
 	}
 L18:
 	;
-	m.G0 = v10 + int32(96)
-	return v41
+	m.G0 = v10 + int32(112)
+	return v43
 }
 func F_dependency_is_compatible_clause(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
@@ -353,7 +353,7 @@ func F_dependency_is_compatible_clause(m *base.Module, l0 int32, l1 int32, l2 in
 	v10 = v8 - int32(16)
 	m.G0 = v10
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	if v12 == int32(318) {
+	if v12 == int32(320) {
 		goto L5
 	} else {
 		goto L6
@@ -920,6 +920,8 @@ func F_recordDependencyOnCurrentExtension(m *base.Module, l0 int32, l1 int32) {
 	_ = v56
 	var v61 int32
 	_ = v61
+	var v64 int32
+	_ = v64
 	var v65 int32
 	_ = v65
 	var v70 int32
@@ -983,7 +985,7 @@ func F_recordDependencyOnCurrentExtension(m *base.Module, l0 int32, l1 int32) {
 										if v37 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(_a_F_recordDependencyOnCurrentExtension_1), int32(227), int32(_a_F_recordDependencyOnCurrentExtension_2))
+											F_errfinish(m, int32(_a_F_recordDependencyOnCurrentExtension_1), int32(238), int32(_a_F_recordDependencyOnCurrentExtension_2))
 											mBase = m.M
 											v42 = m.ExcPending
 											if v42 != 0 {
@@ -1033,13 +1035,13 @@ func F_recordDependencyOnCurrentExtension(m *base.Module, l0 int32, l1 int32) {
 									if v61 != 0 {
 										return
 									} else {
-										F_errdetail(m, int32(_a_F_recordDependencyOnCurrentExtension_4), int32(0))
+										v64 = F_errdetail(m, int32(_a_F_recordDependencyOnCurrentExtension_4), int32(0))
 										mBase = m.M
 										v65 = m.ExcPending
 										if v65 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(_a_F_recordDependencyOnCurrentExtension_1), int32(235), int32(_a_F_recordDependencyOnCurrentExtension_2))
+											F_errfinish(m, int32(_a_F_recordDependencyOnCurrentExtension_1), int32(246), int32(_a_F_recordDependencyOnCurrentExtension_2))
 											mBase = m.M
 											v70 = m.ExcPending
 											if v70 != 0 {

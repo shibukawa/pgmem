@@ -299,9 +299,6 @@ func F_pg_finfo_iso_to_win866(m *base.Module) int32 {
 func F_pg_finfo_ivfflat_halfvec_support(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ivfflat_halfvec_support_0)
 }
-func F_pg_finfo_latin2_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_latin2_to_mic_0)
-}
 func F_pg_finfo_levenshtein_less_equal(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_levenshtein_less_equal_0)
 }
@@ -313,12 +310,6 @@ func F_pg_finfo_ltree_gist_in(m *base.Module) int32 {
 }
 func F_pg_finfo_ltree_in(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ltree_in_0)
-}
-func F_pg_finfo_mic_to_latin4(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_latin4_0)
-}
-func F_pg_finfo_mic_to_win1250(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_win1250_0)
 }
 func F_pg_finfo_pg_check_fipsmode(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_check_fipsmode_0)
@@ -404,15 +395,9 @@ func F_pg_finfo_vector_negative_inner_product(m *base.Module) int32 {
 func F_pg_finfo_vector_sub(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_vector_sub_0)
 }
-func F_pg_finfo_win1250_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_win1250_to_mic_0)
-}
 func F_pg_finfo_win866_to_iso(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_win866_to_iso_0)
 }
 func F_pg_finfo_win866_to_koi8r(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_win866_to_koi8r_0)
-}
-func F_pg_finfo_win866_to_mic(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_win866_to_mic_0)
 }

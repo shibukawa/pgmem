@@ -339,7 +339,7 @@ L36:
 	goto L37
 L37:
 	;
-	F_errstart_cold(m, int32(23), int32(0))
+	F_errstart_cold(m, int32(24), int32(0))
 	mBase = m.M
 	v129 = m.ExcPending
 	if v129 != 0 {
@@ -366,7 +366,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(_a_F_SpGistPageAddNewItem_4), int32(1274), int32(_a_F_SpGistPageAddNewItem_5))
+	F_errfinish(m, int32(_a_F_SpGistPageAddNewItem_4), int32(1273), int32(_a_F_SpGistPageAddNewItem_5))
 	mBase = m.M
 	v140 = m.ExcPending
 	if v140 != 0 {
@@ -410,7 +410,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(_a_F_SpGistPageAddNewItem_4), int32(1286), int32(_a_F_SpGistPageAddNewItem_5))
+	F_errfinish(m, int32(_a_F_SpGistPageAddNewItem_4), int32(1285), int32(_a_F_SpGistPageAddNewItem_5))
 	mBase = m.M
 	v169 = m.ExcPending
 	if v169 != 0 {

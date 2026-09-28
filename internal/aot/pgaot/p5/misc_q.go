@@ -268,7 +268,7 @@ L19:
 	goto L1
 L20:
 	;
-	v95 = F_palloc0(m, int32(140))
+	v95 = F_palloc0(m, int32(144))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -423,7 +423,7 @@ L38:
 	;
 	goto L33
 }
-func F_quote_ident(m *base.Module, l0 int32) int32 {
+func F_quote_ident(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -444,32 +444,32 @@ func F_quote_ident(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v12 int32
 	_ = v12
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = F_pg_detoast_datum_packed(m, v2)
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v7 = F_text_to_cstring(m, v3)
 		mBase = m.M
 		v8 = m.ExcPending
 		if v8 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v9 = F_quote_identifier(m, v7)
 			mBase = m.M
 			v10 = m.ExcPending
 			if v10 != 0 {
-				return int32(0)
+				return int64(0)
 			} else {
 				v11 = F_cstring_to_text(m, v9)
 				mBase = m.M
 				v12 = m.ExcPending
 				if v12 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
-					return v11
+					return base.I64_extend_i32_u(v11)
 				}
 			}
 		}

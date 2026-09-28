@@ -5,135 +5,104 @@ import (
 	"unsafe"
 )
 
-func F_CheckLogicalDecodingRequirements(m *base.Module) {
+func F_CheckLogicalDecodingRequirements(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
-	_ = v2
-	var v4 int32
-	_ = v4
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
 	var v8 int32
 	_ = v8
 	var v13 int32
 	_ = v13
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
 	var v18 int32
 	_ = v18
 	var v19 int32
 	_ = v19
-	var v21 int32
-	_ = v21
-	var v23 int32
-	_ = v23
-	var v25 int32
-	_ = v25
+	var v20 int32
+	_ = v20
 	var v26 int32
 	_ = v26
-	var v32 int32
-	_ = v32
-	var v35 int32
-	_ = v35
-	var v39 int32
-	_ = v39
-	var v44 int32
-	_ = v44
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	var v55 int32
-	_ = v55
-	var v60 int32
-	_ = v60
-	var v64 int32
-	_ = v64
-	var v67 int32
-	_ = v67
-	var v71 int32
-	_ = v71
-	var v76 int32
-	_ = v76
-	F_CheckSlotRequirements(m)
+	var v29 int32
+	_ = v29
+	var v33 int32
+	_ = v33
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
+	var v53 int32
+	_ = v53
+	var v58 int32
+	_ = v58
+	F_CheckSlotRequirements(m, l0)
 	mBase = m.M
-	v2 = m.ExcPending
-	if v2 != 0 {
+	v3 = m.ExcPending
+	if v3 != 0 {
 		return
 	} else {
-		v4 = *(*int32)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[0]))
-		if int32(1) < v4 {
-			v8 = *(*int32)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[1]))
-			if v8 == int32(0) {
-				F_errstart_cold(m, int32(21), int32(0))
+		v5 = *(*int32)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[0]))
+		if v5 != 0 {
+			v8 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[1])))
+			if v8 == int32(1) {
+				v13 = *(*int32)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[2]))
+				v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+308))
+				v16 = base.B2i32(v14 != int32(2))
+				*(*uint8)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[1])) = uint8(v16)
+				v18 = v16
+			} else {
+				v18 = int32(0)
+			}
+			if v18 != 0 {
+				v19 = F_IsLogicalDecodingEnabled(m)
 				mBase = m.M
-				v48 = m.ExcPending
-				if v48 != 0 {
+				v20 = m.ExcPending
+				if v20 != 0 {
 					return
 				} else {
-					F_errcode(m, int32(325))
-					mBase = m.M
-					v51 = m.ExcPending
-					if v51 != 0 {
-						return
-					} else {
-						F_errmsg(m, int32(_a_F_CheckLogicalDecodingRequirements_0), int32(0))
-						mBase = m.M
-						v55 = m.ExcPending
-						if v55 != 0 {
-							return
-						} else {
-							F_errfinish(m, int32(_a_F_CheckLogicalDecodingRequirements_1), int32(128), int32(_a_F_CheckLogicalDecodingRequirements_2))
-							mBase = m.M
-							v60 = m.ExcPending
-							if v60 != 0 {
-								return
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
-							}
-						}
-					}
-				}
-			} else {
-				v13 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[2])))
-				if v13 == int32(1) {
-					v18 = *(*int32)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[3]))
-					v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+316))
-					v21 = base.B2i32(v19 != int32(2))
-					*(*uint8)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[2])) = uint8(v21)
-					v23 = v21
-				} else {
-					v23 = int32(0)
-				}
-				if v23 != 0 {
-					v25 = *(*int32)(unsafe.Add(mBase, _c_F_CheckLogicalDecodingRequirements[4]))
-					v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+172))
-					if base.Ui32(v26) <= base.Ui32(int32(1)) {
+					if v19 == int32(0) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v64 = m.ExcPending
-						if v64 != 0 {
+						v42 = m.ExcPending
+						if v42 != 0 {
 							return
 						} else {
 							F_errcode(m, int32(325))
 							mBase = m.M
-							v67 = m.ExcPending
-							if v67 != 0 {
+							v45 = m.ExcPending
+							if v45 != 0 {
 								return
 							} else {
-								F_errmsg(m, int32(_a_F_CheckLogicalDecodingRequirements_3), int32(0))
+								F_errmsg(m, int32(_a_F_CheckLogicalDecodingRequirements_0), int32(0))
 								mBase = m.M
-								v71 = m.ExcPending
-								if v71 != 0 {
+								v49 = m.ExcPending
+								if v49 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_CheckLogicalDecodingRequirements_1), int32(143), int32(_a_F_CheckLogicalDecodingRequirements_2))
+									F_errhint(m, int32(_a_F_CheckLogicalDecodingRequirements_1), int32(0))
 									mBase = m.M
-									v76 = m.ExcPending
-									if v76 != 0 {
+									v53 = m.ExcPending
+									if v53 != 0 {
 										return
 									} else {
-										base.Wasm_trap_unreachable()
-										for {
+										F_errfinish(m, int32(_a_F_CheckLogicalDecodingRequirements_2), int32(139), int32(_a_F_CheckLogicalDecodingRequirements_3))
+										mBase = m.M
+										v58 = m.ExcPending
+										if v58 != 0 {
+											return
+										} else {
+											base.Wasm_trap_unreachable()
+											for {
+											}
 										}
 									}
 								}
@@ -142,33 +111,33 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 					} else {
 						return
 					}
-				} else {
-					return
 				}
+			} else {
+				return
 			}
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v32 = m.ExcPending
-			if v32 != 0 {
+			v26 = m.ExcPending
+			if v26 != 0 {
 				return
 			} else {
 				F_errcode(m, int32(325))
 				mBase = m.M
-				v35 = m.ExcPending
-				if v35 != 0 {
+				v29 = m.ExcPending
+				if v29 != 0 {
 					return
 				} else {
 					F_errmsg(m, int32(_a_F_CheckLogicalDecodingRequirements_4), int32(0))
 					mBase = m.M
-					v39 = m.ExcPending
-					if v39 != 0 {
+					v33 = m.ExcPending
+					if v33 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(_a_F_CheckLogicalDecodingRequirements_1), int32(123), int32(_a_F_CheckLogicalDecodingRequirements_2))
+						F_errfinish(m, int32(_a_F_CheckLogicalDecodingRequirements_2), int32(129), int32(_a_F_CheckLogicalDecodingRequirements_3))
 						mBase = m.M
-						v44 = m.ExcPending
-						if v44 != 0 {
+						v38 = m.ExcPending
+						if v38 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -378,7 +347,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(_a_F_logical_heap_rewrite_flush_mappings_1), int32(820), int32(_a_F_logical_heap_rewrite_flush_mappings_2))
+	F_errfinish(m, int32(_a_F_logical_heap_rewrite_flush_mappings_1), int32(823), int32(_a_F_logical_heap_rewrite_flush_mappings_2))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -488,7 +457,7 @@ L23:
 	v141 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+88)) = v77
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+92)) = v76
-	v148 = F_FileWriteV(m, v141, v15+int32(88), int32(1), v140, int32(167772199))
+	v148 = F_FileWriteV(m, v141, v15+int32(88), int32(1), v140, int32(167772201))
 	mBase = m.M
 	v149 = m.ExcPending
 	if v149 != 0 {
@@ -653,7 +622,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(_a_F_logical_heap_rewrite_flush_mappings_1), int32(886), int32(_a_F_logical_heap_rewrite_flush_mappings_2))
+	F_errfinish(m, int32(_a_F_logical_heap_rewrite_flush_mappings_1), int32(889), int32(_a_F_logical_heap_rewrite_flush_mappings_2))
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {

@@ -93,7 +93,7 @@ L4:
 	goto L6
 L5:
 	;
-	v41 = v34 + int32(40)
+	v41 = v34 + int32(44)
 	v43 = F_LWLockAcquire(m, v41, int32(1))
 	mBase = m.M
 	v44 = m.ExcPending
@@ -104,7 +104,7 @@ L5:
 	}
 L6:
 	;
-	v34 = v23 + v27*int32(56)
+	v34 = v23 + v27<<(uint(int32(6))%32)
 	v35 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v34))))
 	if v35 == l0 {
 		goto L5

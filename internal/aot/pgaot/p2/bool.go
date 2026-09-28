@@ -5,46 +5,48 @@ import (
 	"unsafe"
 )
 
-func F_bool_accum_inv(m *base.Module, l0 int32) int32 {
+func F_bool_accum_inv(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
 	var v4 int32
 	_ = v4
-	var v7 int32
-	_ = v7
-	var v8 int64
-	_ = v8
-	var v12 int32
+	var v5 int64
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v11 int32
+	_ = v11
+	var v12 int64
 	_ = v12
-	var v15 int64
-	_ = v15
-	var v26 int32
-	_ = v26
-	var v30 int32
-	_ = v30
+	var v16 int64
+	_ = v16
+	var v19 int64
+	_ = v19
+	var v31 int32
+	_ = v31
 	var v35 int32
 	_ = v35
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
-	if v3 != 0 {
+	var v40 int32
+	_ = v40
+	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
+	if v4 != 0 {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v26 = m.ExcPending
-		if v26 != 0 {
-			return int32(0)
+		v31 = m.ExcPending
+		if v31 != 0 {
+			return int64(0)
 		} else {
 			F_errmsg_internal(m, int32(_a_F_bool_accum_inv_0), int32(0))
 			mBase = m.M
-			v30 = m.ExcPending
-			if v30 != 0 {
-				return int32(0)
+			v35 = m.ExcPending
+			if v35 != 0 {
+				return int64(0)
 			} else {
 				F_errfinish(m, int32(_a_F_bool_accum_inv_1), int32(370), int32(_a_F_bool_accum_inv_2))
 				mBase = m.M
-				v35 = m.ExcPending
-				if v35 != 0 {
-					return int32(0)
+				v40 = m.ExcPending
+				if v40 != 0 {
+					return int64(0)
 				} else {
 					base.Wasm_trap_unreachable()
 					for {
@@ -53,25 +55,26 @@ func F_bool_accum_inv(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		if v4 == int32(0) {
+		v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+		v6 = base.I32_wrap_i64(v5)
+		if v6 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v26 = m.ExcPending
-			if v26 != 0 {
-				return int32(0)
+			v31 = m.ExcPending
+			if v31 != 0 {
+				return int64(0)
 			} else {
 				F_errmsg_internal(m, int32(_a_F_bool_accum_inv_0), int32(0))
 				mBase = m.M
-				v30 = m.ExcPending
-				if v30 != 0 {
-					return int32(0)
+				v35 = m.ExcPending
+				if v35 != 0 {
+					return int64(0)
 				} else {
 					F_errfinish(m, int32(_a_F_bool_accum_inv_1), int32(370), int32(_a_F_bool_accum_inv_2))
 					mBase = m.M
-					v35 = m.ExcPending
-					if v35 != 0 {
-						return int32(0)
+					v40 = m.ExcPending
+					if v40 != 0 {
+						return int64(0)
 					} else {
 						base.Wasm_trap_unreachable()
 						for {
@@ -80,30 +83,30 @@ func F_bool_accum_inv(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
-			if v7 != 0 {
+			v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)))
+			if v11 != 0 {
 			} else {
-				v8 = *(*int64)(unsafe.Add(mBase, uint32(v4)))
-				*(*int64)(unsafe.Add(mBase, uint32(v4))) = v8 - int64(1)
-				v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-				if v12 == int32(0) {
+				v12 = *(*int64)(unsafe.Add(mBase, uint32(v6)))
+				*(*int64)(unsafe.Add(mBase, uint32(v6))) = v12 - int64(1)
+				v16 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+				if v16 == int64(0) {
 				} else {
-					v15 = *(*int64)(unsafe.Add(mBase, uint32(v4)+8))
-					*(*int64)(unsafe.Add(mBase, uint32(v4)+8)) = v15 - int64(1)
+					v19 = *(*int64)(unsafe.Add(mBase, uint32(v6)+8))
+					*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = v19 - int64(1)
 				}
 			}
-			return v4
+			return v5 & int64(4294967295)
 		}
 	}
 }
-func F_bool_increment(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_bool_increment(m *base.Module, l0 int32, l1 int64, l2 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v4 int64
 	_ = v4
-	v4 = int32(0)
+	v4 = int64(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(base.B2i32(l1 != v4))
-	return base.B2i32(l1 == v4)
+	return base.I64_extend_i32_u(base.B2i32(l1 == v4))
 }
 func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
 	mBase := m.M
@@ -158,7 +161,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	v11 = v9 + int32(-64)
 	m.G0 = v11
 	v13 = int32(1)
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
 	if v14 == int32(0) {
 		v84 = v13
 		m.G0 = v11 - int32(-64)

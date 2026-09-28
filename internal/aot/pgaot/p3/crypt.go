@@ -136,7 +136,7 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v172 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F__crypt_gensalt_sha_2), int32(220), int32(_a_F__crypt_gensalt_sha_3))
+							F_errfinish(m, int32(_a_F__crypt_gensalt_sha_2), int32(222), int32(_a_F__crypt_gensalt_sha_3))
 							mBase = m.M
 							v177 = m.ExcPending
 							if v177 != 0 {
@@ -223,7 +223,7 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				if v156 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F__crypt_gensalt_sha_2), int32(213), int32(_a_F__crypt_gensalt_sha_3))
+					F_errfinish(m, int32(_a_F__crypt_gensalt_sha_2), int32(215), int32(_a_F__crypt_gensalt_sha_3))
 					mBase = m.M
 					v161 = m.ExcPending
 					if v161 != 0 {

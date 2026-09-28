@@ -78,7 +78,7 @@ func F_fix_param_node(m *base.Module, l0 int32, l1 int32) int32 {
 				if v66 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2135), int32(_a_F_fix_param_node_2))
+					F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2207), int32(_a_F_fix_param_node_2))
 					mBase = m.M
 					v71 = m.ExcPending
 					if v71 != 0 {
@@ -91,7 +91,7 @@ func F_fix_param_node(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
+			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 			if v18 == int32(0) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
@@ -107,7 +107,7 @@ func F_fix_param_node(m *base.Module, l0 int32, l1 int32) int32 {
 					if v66 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2135), int32(_a_F_fix_param_node_2))
+						F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2207), int32(_a_F_fix_param_node_2))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -136,7 +136,7 @@ func F_fix_param_node(m *base.Module, l0 int32, l1 int32) int32 {
 						if v66 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2135), int32(_a_F_fix_param_node_2))
+							F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2207), int32(_a_F_fix_param_node_2))
 							mBase = m.M
 							v71 = m.ExcPending
 							if v71 != 0 {
@@ -165,7 +165,7 @@ func F_fix_param_node(m *base.Module, l0 int32, l1 int32) int32 {
 							if v83 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2138), int32(_a_F_fix_param_node_2))
+								F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2210), int32(_a_F_fix_param_node_2))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
@@ -195,7 +195,7 @@ func F_fix_param_node(m *base.Module, l0 int32, l1 int32) int32 {
 								if v83 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2138), int32(_a_F_fix_param_node_2))
+									F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2210), int32(_a_F_fix_param_node_2))
 									mBase = m.M
 									v88 = m.ExcPending
 									if v88 != 0 {
@@ -224,7 +224,7 @@ func F_fix_param_node(m *base.Module, l0 int32, l1 int32) int32 {
 									if v83 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2138), int32(_a_F_fix_param_node_2))
+										F_errfinish(m, int32(_a_F_fix_param_node_1), int32(2210), int32(_a_F_fix_param_node_2))
 										mBase = m.M
 										v88 = m.ExcPending
 										if v88 != 0 {

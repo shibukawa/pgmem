@@ -9,8 +9,8 @@ func F_dsa_create_in_place_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	_ = v9
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
+	var v16 int32
+	_ = v16
 	v5 = int32(0)
 	v9 = F_create_internal(m, l0, l1, l2, v5, v5, int32(_a_F_dsa_create_in_place_ext_0), int32(134217728))
 	v12 = m.ExcPending
@@ -18,9 +18,9 @@ func F_dsa_create_in_place_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 		return int32(0)
 	} else {
 		if l3 != 0 {
-			F_on_dsm_detach(m, l3, int32(1770), l0)
-			v15 = m.ExcPending
-			if v15 != 0 {
+			F_on_dsm_detach(m, l3, int32(1993), base.I64_extend_i32_u(l0))
+			v16 = m.ExcPending
+			if v16 != 0 {
 				return int32(0)
 			} else {
 				return v9

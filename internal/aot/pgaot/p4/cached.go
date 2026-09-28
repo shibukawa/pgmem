@@ -307,7 +307,7 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 			if v84 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_SaveCachedPlan_2), int32(539), int32(_a_F_SaveCachedPlan_3))
+				F_errfinish(m, int32(_a_F_SaveCachedPlan_2), int32(565), int32(_a_F_SaveCachedPlan_3))
 				mBase = m.M
 				v89 = m.ExcPending
 				if v89 != 0 {
@@ -417,7 +417,7 @@ func F_get_cached_rowtype(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 								if v84 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(_a_F_get_cached_rowtype_1), int32(2504), int32(_a_F_get_cached_rowtype_2))
+									F_errfinish(m, int32(_a_F_get_cached_rowtype_1), int32(2514), int32(_a_F_get_cached_rowtype_2))
 									mBase = m.M
 									v89 = m.ExcPending
 									if v89 != 0 {
@@ -484,7 +484,7 @@ func F_get_cached_rowtype(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 									if v84 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_get_cached_rowtype_1), int32(2504), int32(_a_F_get_cached_rowtype_2))
+										F_errfinish(m, int32(_a_F_get_cached_rowtype_1), int32(2514), int32(_a_F_get_cached_rowtype_2))
 										mBase = m.M
 										v89 = m.ExcPending
 										if v89 != 0 {
@@ -557,7 +557,7 @@ func F_get_cached_rowtype(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										if v84 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_get_cached_rowtype_1), int32(2504), int32(_a_F_get_cached_rowtype_2))
+											F_errfinish(m, int32(_a_F_get_cached_rowtype_1), int32(2514), int32(_a_F_get_cached_rowtype_2))
 											mBase = m.M
 											v89 = m.ExcPending
 											if v89 != 0 {

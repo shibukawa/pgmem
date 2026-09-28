@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
+func F_int4_avg_accum_inv(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int64
@@ -46,13 +46,13 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 	_ = v73
 	var v77 int64
 	_ = v77
-	v4 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+28)))
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if v7 == int32(0) {
 		v35 = int32(0)
 	} else {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-		switch v10 - int32(429) {
+		switch v10 - int32(435) {
 		case 0:
 			v35 = int32(1)
 		case 1:
@@ -61,13 +61,13 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 			v35 = int32(0)
 		}
 	}
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	if v35 != 0 {
 		v37 = F_pg_detoast_datum(m, v36)
 		mBase = m.M
 		v40 = m.ExcPending
 		if v40 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v43 = v37
 			v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+8))
@@ -79,26 +79,26 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 					v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
 					*(*int64)(unsafe.Add(mBase, uint32(v72))) = v73 - int64(1)
 					v77 = *(*int64)(unsafe.Add(mBase, uint32(v72)+8))
-					*(*int64)(unsafe.Add(mBase, uint32(v72)+8)) = v77 - v4
-					return v43
+					*(*int64)(unsafe.Add(mBase, uint32(v72)+8)) = v77 - base.I64_extend32_s(v4)
+					return base.I64_extend_i32_u(v43)
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						F_errmsg_internal(m, int32(_a_F_int4_avg_accum_inv_0), int32(0))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							F_errfinish(m, int32(_a_F_int4_avg_accum_inv_1), int32(_a_F_int4_avg_accum_inv_2), int32(_a_F_int4_avg_accum_inv_3))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								base.Wasm_trap_unreachable()
 								for {
@@ -112,19 +112,19 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				v55 = m.ExcPending
 				if v55 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					F_errmsg_internal(m, int32(_a_F_int4_avg_accum_inv_0), int32(0))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						F_errfinish(m, int32(_a_F_int4_avg_accum_inv_1), int32(_a_F_int4_avg_accum_inv_2), int32(_a_F_int4_avg_accum_inv_3))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {
@@ -139,7 +139,7 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 		mBase = m.M
 		v42 = m.ExcPending
 		if v42 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v43 = v41
 			v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+8))
@@ -151,26 +151,26 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 					v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)))
 					*(*int64)(unsafe.Add(mBase, uint32(v72))) = v73 - int64(1)
 					v77 = *(*int64)(unsafe.Add(mBase, uint32(v72)+8))
-					*(*int64)(unsafe.Add(mBase, uint32(v72)+8)) = v77 - v4
-					return v43
+					*(*int64)(unsafe.Add(mBase, uint32(v72)+8)) = v77 - base.I64_extend32_s(v4)
+					return base.I64_extend_i32_u(v43)
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						F_errmsg_internal(m, int32(_a_F_int4_avg_accum_inv_0), int32(0))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							F_errfinish(m, int32(_a_F_int4_avg_accum_inv_1), int32(_a_F_int4_avg_accum_inv_2), int32(_a_F_int4_avg_accum_inv_3))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								base.Wasm_trap_unreachable()
 								for {
@@ -184,19 +184,19 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				v55 = m.ExcPending
 				if v55 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					F_errmsg_internal(m, int32(_a_F_int4_avg_accum_inv_0), int32(0))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						F_errfinish(m, int32(_a_F_int4_avg_accum_inv_1), int32(_a_F_int4_avg_accum_inv_2), int32(_a_F_int4_avg_accum_inv_3))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							base.Wasm_trap_unreachable()
 							for {
@@ -208,11 +208,11 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_int4_bool(m *base.Module, l0 int32) int32 {
+func F_int4_bool(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	return base.B2i32(v2 != int32(0))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	return base.I64_extend_i32_u(base.B2i32(v2 != int32(0)))
 }

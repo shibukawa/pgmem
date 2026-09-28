@@ -230,7 +230,7 @@ func F_CopyAttributeOutText(m *base.Module, l0 int32, l1 int32) {
 	_ = v293
 	var v296 int32
 	_ = v296
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
 	v8 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7))))
 	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+20)))
 	if v9 == int32(1) {
@@ -873,7 +873,7 @@ L99:
 	;
 	goto L6
 }
-func F_attribute_reloptions(m *base.Module, l0 int32, l1 int32) int32 {
+func F_attribute_reloptions(m *base.Module, l0 int64, l1 int32) int32 {
 	var v7 int32
 	_ = v7
 	var v10 int32
@@ -889,46 +889,42 @@ func F_attribute_reloptions(m *base.Module, l0 int32, l1 int32) int32 {
 func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v11 int32
-	_ = v11
-	var v24 int32
-	_ = v24
-	var v27 int32
-	_ = v27
-	var v30 int32
-	_ = v30
-	var v34 int32
-	_ = v34
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
 	var v42 int32
 	_ = v42
-	var v47 int32
-	_ = v47
-	var v49 int32
-	_ = v49
+	var v43 int32
+	_ = v43
+	var v48 int32
+	_ = v48
 	var v50 int32
 	_ = v50
 	var v51 int32
 	_ = v51
 	var v52 int32
 	_ = v52
-	var v55 int32
-	_ = v55
-	var v56 int32
-	_ = v56
-	var v61 int32
-	_ = v61
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
+	var v53 int32
+	_ = v53
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v64 int64
+	_ = v64
 	var v65 int32
 	_ = v65
 	var v66 int32
@@ -937,237 +933,241 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v68
 	var v69 int32
 	_ = v69
+	var v71 int32
+	_ = v71
 	var v72 int32
 	_ = v72
-	var v73 int32
-	_ = v73
-	var v74 int32
-	_ = v74
+	var v75 int32
+	_ = v75
 	var v76 int32
 	_ = v76
-	var v81 int32
-	_ = v81
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
 	var v84 int32
 	_ = v84
-	var v86 int32
-	_ = v86
+	var v87 int32
+	_ = v87
 	var v89 int32
 	_ = v89
-	var v94 int32
-	_ = v94
-	var v95 int32
-	_ = v95
+	var v93 int32
+	_ = v93
+	var v98 int32
+	_ = v98
 	var v99 int32
 	_ = v99
-	var v100 int32
-	_ = v100
+	var v103 int32
+	_ = v103
 	var v104 int32
 	_ = v104
-	var v107 int32
-	_ = v107
-	var v108 int32
-	_ = v108
 	var v109 int32
 	_ = v109
-	var v110 int32
-	_ = v110
 	var v112 int32
 	_ = v112
-	var v118 int32
-	_ = v118
-	v6 = m.G0
-	v8 = v6 + int32(-64)
-	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-	if v11 == int32(0) {
-		*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = int32(1556)
-		*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = int64(51539607560)
-		v24 = F_hash_create(m, int32(_a_F_get_attribute_options_0), int32(256), v6+int32(-48), int32(72))
+	var v113 int32
+	_ = v113
+	var v114 int32
+	_ = v114
+	var v115 int32
+	_ = v115
+	var v117 int32
+	_ = v117
+	var v123 int32
+	_ = v123
+	v7 = m.G0
+	v9 = v7 + int32(-64)
+	m.G0 = v9
+	v12 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+	if v12 == int32(0) {
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = int32(1769)
+		*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = int64(51539607560)
+		v25 = F_hash_create(m, int32(_a_F_get_attribute_options_0), int64(256), v7+int32(-48), int32(72))
 		mBase = m.M
-		v27 = m.ExcPending
-		if v27 != 0 {
+		v28 = m.ExcPending
+		if v28 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0])) = v24
-			v30 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[1]))
-			if v30 == int32(0) {
+			*(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0])) = v25
+			v31 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[1]))
+			if v31 == int32(0) {
 				F_CreateCacheMemoryContext(m)
 				mBase = m.M
-				v34 = m.ExcPending
-				if v34 != 0 {
+				v35 = m.ExcPending
+				if v35 != 0 {
 					return int32(0)
 				} else {
-					F_CacheRegisterSyscacheCallback(m, int32(7), int32(1557), int32(0))
+					F_CacheRegisterSyscacheCallback(m, int32(7), int32(1770), int64(0))
 					mBase = m.M
-					v39 = m.ExcPending
-					if v39 != 0 {
+					v40 = m.ExcPending
+					if v40 != 0 {
 						return int32(0)
 					} else {
-						v41 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-						v42 = v41
-						*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l1
-						*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l0
-						v47 = int32(0)
-						v49 = F_hash_search(m, v42, v6+int32(-48), v47, v47)
+						v42 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+						v43 = v42
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = l1
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l0
+						v48 = int32(0)
+						v50 = F_hash_search(m, v43, v7+int32(-48), v48, v48)
 						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
+						v51 = m.ExcPending
+						if v51 != 0 {
 							return int32(0)
 						} else {
-							if v49 != 0 {
-								v51 = *(*int32)(unsafe.Add(mBase, uint32(v49)+8))
-								v99 = v51
-								v100 = v49
-								if v99 == int32(0) {
-									v118 = int32(0)
-									m.G0 = v8 - int32(-64)
-									return v118
+							if v50 != 0 {
+								v52 = *(*int32)(unsafe.Add(mBase, uint32(v50)+8))
+								v103 = v52
+								v104 = v50
+								if v103 == int32(0) {
+									v123 = int32(0)
+									m.G0 = v9 - int32(-64)
+									return v123
 								} else {
-									v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-									v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+									v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+									v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 									mBase = m.M
-									v108 = m.ExcPending
-									if v108 != 0 {
+									v113 = m.ExcPending
+									if v113 != 0 {
 										return int32(0)
 									} else {
-										v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-										v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-										v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-										if v112 == int32(0) {
-											v118 = v107
+										v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+										v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+										v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+										if v117 == int32(0) {
+											v123 = v112
 										} else {
-											base.MemoryCopy(m, v107, v109, v112)
-											v118 = v107
+											base.MemoryCopy(m, v112, v114, v117)
+											v123 = v112
 										}
-										m.G0 = v8 - int32(-64)
-										return v118
+										m.G0 = v9 - int32(-64)
+										return v123
 									}
 								}
 							} else {
-								v52 = int32(0)
-								v55 = F_SearchSysCache2(m, int32(7), l0, base.I32_extend16_s(l1))
+								v53 = int32(0)
+								v58 = F_SearchSysCache2(m, int32(7), base.I64_extend_i32_u(l0), base.I64_extend16_s(base.I64_extend_i32_u(l1)))
 								mBase = m.M
-								v56 = m.ExcPending
-								if v56 != 0 {
+								v59 = m.ExcPending
+								if v59 != 0 {
 									return int32(0)
 								} else {
-									if v55 != 0 {
-										v61 = F_SysCacheGetAttr(m, int32(7), v55, int32(23), v6+int32(-49))
+									if v58 != 0 {
+										v64 = F_SysCacheGetAttr(m, int32(7), v58, int32(23), v7+int32(-49))
 										mBase = m.M
-										v62 = m.ExcPending
-										if v62 != 0 {
+										v65 = m.ExcPending
+										if v65 != 0 {
 											return int32(0)
 										} else {
-											v63 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)))
-											if v63 != 0 {
-												v81 = v52
-												F_ReleaseCatCache(m, v55)
+											v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
+											if v66 != 0 {
+												v84 = v53
+												F_ReleaseCatCache(m, v58)
 												mBase = m.M
-												v84 = m.ExcPending
-												if v84 != 0 {
+												v87 = m.ExcPending
+												if v87 != 0 {
 													return int32(0)
 												} else {
-													v86 = v81
-													v89 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-													v94 = F_hash_search(m, v89, v6+int32(-48), int32(1), int32(0))
+													v89 = v84
+													v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+													v98 = F_hash_search(m, v93, v7+int32(-48), int32(1), int32(0))
 													mBase = m.M
-													v95 = m.ExcPending
-													if v95 != 0 {
+													v99 = m.ExcPending
+													if v99 != 0 {
 														return int32(0)
 													} else {
-														*(*int32)(unsafe.Add(mBase, uint32(v94)+8)) = v86
-														v99 = v86
-														v100 = v94
-														if v99 == int32(0) {
-															v118 = int32(0)
-															m.G0 = v8 - int32(-64)
-															return v118
+														*(*int32)(unsafe.Add(mBase, uint32(v98)+8)) = v89
+														v103 = v89
+														v104 = v98
+														if v103 == int32(0) {
+															v123 = int32(0)
+															m.G0 = v9 - int32(-64)
+															return v123
 														} else {
-															v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-															v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+															v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+															v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 															mBase = m.M
-															v108 = m.ExcPending
-															if v108 != 0 {
+															v113 = m.ExcPending
+															if v113 != 0 {
 																return int32(0)
 															} else {
-																v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-																v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-																v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-																if v112 == int32(0) {
-																	v118 = v107
+																v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+																v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+																v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+																if v117 == int32(0) {
+																	v123 = v112
 																} else {
-																	base.MemoryCopy(m, v107, v109, v112)
-																	v118 = v107
+																	base.MemoryCopy(m, v112, v114, v117)
+																	v123 = v112
 																}
-																m.G0 = v8 - int32(-64)
-																return v118
+																m.G0 = v9 - int32(-64)
+																return v123
 															}
 														}
 													}
 												}
 											} else {
-												v65 = F_attribute_reloptions(m, v61, int32(0))
+												v68 = F_attribute_reloptions(m, v64, int32(0))
 												mBase = m.M
-												v66 = m.ExcPending
-												if v66 != 0 {
+												v69 = m.ExcPending
+												if v69 != 0 {
 													return int32(0)
 												} else {
-													v68 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[1]))
-													v69 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
-													v72 = F_MemoryContextAlloc(m, v68, int32(base.Ui32(v69)>>(uint(int32(2))%32)))
+													v71 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[1]))
+													v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)))
+													v75 = F_MemoryContextAlloc(m, v71, int32(base.Ui32(v72)>>(uint(int32(2))%32)))
 													mBase = m.M
-													v73 = m.ExcPending
-													if v73 != 0 {
+													v76 = m.ExcPending
+													if v76 != 0 {
 														return int32(0)
 													} else {
-														v74 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
-														v76 = int32(base.Ui32(v74) >> (uint(int32(2)) % 32))
-														if v76 == int32(0) {
-															v81 = v72
+														v77 = *(*int32)(unsafe.Add(mBase, uint32(v68)))
+														v79 = int32(base.Ui32(v77) >> (uint(int32(2)) % 32))
+														if v79 == int32(0) {
+															v84 = v75
 														} else {
-															base.MemoryCopy(m, v72, v65, v76)
-															v81 = v72
+															base.MemoryCopy(m, v75, v68, v79)
+															v84 = v75
 														}
-														F_ReleaseCatCache(m, v55)
+														F_ReleaseCatCache(m, v58)
 														mBase = m.M
-														v84 = m.ExcPending
-														if v84 != 0 {
+														v87 = m.ExcPending
+														if v87 != 0 {
 															return int32(0)
 														} else {
-															v86 = v81
-															v89 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-															v94 = F_hash_search(m, v89, v6+int32(-48), int32(1), int32(0))
+															v89 = v84
+															v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+															v98 = F_hash_search(m, v93, v7+int32(-48), int32(1), int32(0))
 															mBase = m.M
-															v95 = m.ExcPending
-															if v95 != 0 {
+															v99 = m.ExcPending
+															if v99 != 0 {
 																return int32(0)
 															} else {
-																*(*int32)(unsafe.Add(mBase, uint32(v94)+8)) = v86
-																v99 = v86
-																v100 = v94
-																if v99 == int32(0) {
-																	v118 = int32(0)
-																	m.G0 = v8 - int32(-64)
-																	return v118
+																*(*int32)(unsafe.Add(mBase, uint32(v98)+8)) = v89
+																v103 = v89
+																v104 = v98
+																if v103 == int32(0) {
+																	v123 = int32(0)
+																	m.G0 = v9 - int32(-64)
+																	return v123
 																} else {
-																	v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-																	v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+																	v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+																	v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 																	mBase = m.M
-																	v108 = m.ExcPending
-																	if v108 != 0 {
+																	v113 = m.ExcPending
+																	if v113 != 0 {
 																		return int32(0)
 																	} else {
-																		v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-																		v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-																		v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-																		if v112 == int32(0) {
-																			v118 = v107
+																		v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+																		v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+																		v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+																		if v117 == int32(0) {
+																			v123 = v112
 																		} else {
-																			base.MemoryCopy(m, v107, v109, v112)
-																			v118 = v107
+																			base.MemoryCopy(m, v112, v114, v117)
+																			v123 = v112
 																		}
-																		m.G0 = v8 - int32(-64)
-																		return v118
+																		m.G0 = v9 - int32(-64)
+																		return v123
 																	}
 																}
 															}
@@ -1177,40 +1177,40 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 											}
 										}
 									} else {
-										v86 = v52
-										v89 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-										v94 = F_hash_search(m, v89, v6+int32(-48), int32(1), int32(0))
+										v89 = v53
+										v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+										v98 = F_hash_search(m, v93, v7+int32(-48), int32(1), int32(0))
 										mBase = m.M
-										v95 = m.ExcPending
-										if v95 != 0 {
+										v99 = m.ExcPending
+										if v99 != 0 {
 											return int32(0)
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v94)+8)) = v86
-											v99 = v86
-											v100 = v94
-											if v99 == int32(0) {
-												v118 = int32(0)
-												m.G0 = v8 - int32(-64)
-												return v118
+											*(*int32)(unsafe.Add(mBase, uint32(v98)+8)) = v89
+											v103 = v89
+											v104 = v98
+											if v103 == int32(0) {
+												v123 = int32(0)
+												m.G0 = v9 - int32(-64)
+												return v123
 											} else {
-												v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-												v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+												v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+												v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 												mBase = m.M
-												v108 = m.ExcPending
-												if v108 != 0 {
+												v113 = m.ExcPending
+												if v113 != 0 {
 													return int32(0)
 												} else {
-													v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-													v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-													v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-													if v112 == int32(0) {
-														v118 = v107
+													v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+													v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+													v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+													if v117 == int32(0) {
+														v123 = v112
 													} else {
-														base.MemoryCopy(m, v107, v109, v112)
-														v118 = v107
+														base.MemoryCopy(m, v112, v114, v117)
+														v123 = v112
 													}
-													m.G0 = v8 - int32(-64)
-													return v118
+													m.G0 = v9 - int32(-64)
+													return v123
 												}
 											}
 										}
@@ -1221,177 +1221,177 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 					}
 				}
 			} else {
-				F_CacheRegisterSyscacheCallback(m, int32(7), int32(1557), int32(0))
+				F_CacheRegisterSyscacheCallback(m, int32(7), int32(1770), int64(0))
 				mBase = m.M
-				v39 = m.ExcPending
-				if v39 != 0 {
+				v40 = m.ExcPending
+				if v40 != 0 {
 					return int32(0)
 				} else {
-					v41 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-					v42 = v41
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l1
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l0
-					v47 = int32(0)
-					v49 = F_hash_search(m, v42, v6+int32(-48), v47, v47)
+					v42 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+					v43 = v42
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = l1
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l0
+					v48 = int32(0)
+					v50 = F_hash_search(m, v43, v7+int32(-48), v48, v48)
 					mBase = m.M
-					v50 = m.ExcPending
-					if v50 != 0 {
+					v51 = m.ExcPending
+					if v51 != 0 {
 						return int32(0)
 					} else {
-						if v49 != 0 {
-							v51 = *(*int32)(unsafe.Add(mBase, uint32(v49)+8))
-							v99 = v51
-							v100 = v49
-							if v99 == int32(0) {
-								v118 = int32(0)
-								m.G0 = v8 - int32(-64)
-								return v118
+						if v50 != 0 {
+							v52 = *(*int32)(unsafe.Add(mBase, uint32(v50)+8))
+							v103 = v52
+							v104 = v50
+							if v103 == int32(0) {
+								v123 = int32(0)
+								m.G0 = v9 - int32(-64)
+								return v123
 							} else {
-								v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-								v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+								v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+								v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 								mBase = m.M
-								v108 = m.ExcPending
-								if v108 != 0 {
+								v113 = m.ExcPending
+								if v113 != 0 {
 									return int32(0)
 								} else {
-									v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-									v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-									v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-									if v112 == int32(0) {
-										v118 = v107
+									v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+									v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+									v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+									if v117 == int32(0) {
+										v123 = v112
 									} else {
-										base.MemoryCopy(m, v107, v109, v112)
-										v118 = v107
+										base.MemoryCopy(m, v112, v114, v117)
+										v123 = v112
 									}
-									m.G0 = v8 - int32(-64)
-									return v118
+									m.G0 = v9 - int32(-64)
+									return v123
 								}
 							}
 						} else {
-							v52 = int32(0)
-							v55 = F_SearchSysCache2(m, int32(7), l0, base.I32_extend16_s(l1))
+							v53 = int32(0)
+							v58 = F_SearchSysCache2(m, int32(7), base.I64_extend_i32_u(l0), base.I64_extend16_s(base.I64_extend_i32_u(l1)))
 							mBase = m.M
-							v56 = m.ExcPending
-							if v56 != 0 {
+							v59 = m.ExcPending
+							if v59 != 0 {
 								return int32(0)
 							} else {
-								if v55 != 0 {
-									v61 = F_SysCacheGetAttr(m, int32(7), v55, int32(23), v6+int32(-49))
+								if v58 != 0 {
+									v64 = F_SysCacheGetAttr(m, int32(7), v58, int32(23), v7+int32(-49))
 									mBase = m.M
-									v62 = m.ExcPending
-									if v62 != 0 {
+									v65 = m.ExcPending
+									if v65 != 0 {
 										return int32(0)
 									} else {
-										v63 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)))
-										if v63 != 0 {
-											v81 = v52
-											F_ReleaseCatCache(m, v55)
+										v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
+										if v66 != 0 {
+											v84 = v53
+											F_ReleaseCatCache(m, v58)
 											mBase = m.M
-											v84 = m.ExcPending
-											if v84 != 0 {
+											v87 = m.ExcPending
+											if v87 != 0 {
 												return int32(0)
 											} else {
-												v86 = v81
-												v89 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-												v94 = F_hash_search(m, v89, v6+int32(-48), int32(1), int32(0))
+												v89 = v84
+												v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+												v98 = F_hash_search(m, v93, v7+int32(-48), int32(1), int32(0))
 												mBase = m.M
-												v95 = m.ExcPending
-												if v95 != 0 {
+												v99 = m.ExcPending
+												if v99 != 0 {
 													return int32(0)
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v94)+8)) = v86
-													v99 = v86
-													v100 = v94
-													if v99 == int32(0) {
-														v118 = int32(0)
-														m.G0 = v8 - int32(-64)
-														return v118
+													*(*int32)(unsafe.Add(mBase, uint32(v98)+8)) = v89
+													v103 = v89
+													v104 = v98
+													if v103 == int32(0) {
+														v123 = int32(0)
+														m.G0 = v9 - int32(-64)
+														return v123
 													} else {
-														v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-														v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+														v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+														v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 														mBase = m.M
-														v108 = m.ExcPending
-														if v108 != 0 {
+														v113 = m.ExcPending
+														if v113 != 0 {
 															return int32(0)
 														} else {
-															v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-															v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-															v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-															if v112 == int32(0) {
-																v118 = v107
+															v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+															v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+															v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+															if v117 == int32(0) {
+																v123 = v112
 															} else {
-																base.MemoryCopy(m, v107, v109, v112)
-																v118 = v107
+																base.MemoryCopy(m, v112, v114, v117)
+																v123 = v112
 															}
-															m.G0 = v8 - int32(-64)
-															return v118
+															m.G0 = v9 - int32(-64)
+															return v123
 														}
 													}
 												}
 											}
 										} else {
-											v65 = F_attribute_reloptions(m, v61, int32(0))
+											v68 = F_attribute_reloptions(m, v64, int32(0))
 											mBase = m.M
-											v66 = m.ExcPending
-											if v66 != 0 {
+											v69 = m.ExcPending
+											if v69 != 0 {
 												return int32(0)
 											} else {
-												v68 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[1]))
-												v69 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
-												v72 = F_MemoryContextAlloc(m, v68, int32(base.Ui32(v69)>>(uint(int32(2))%32)))
+												v71 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[1]))
+												v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)))
+												v75 = F_MemoryContextAlloc(m, v71, int32(base.Ui32(v72)>>(uint(int32(2))%32)))
 												mBase = m.M
-												v73 = m.ExcPending
-												if v73 != 0 {
+												v76 = m.ExcPending
+												if v76 != 0 {
 													return int32(0)
 												} else {
-													v74 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
-													v76 = int32(base.Ui32(v74) >> (uint(int32(2)) % 32))
-													if v76 == int32(0) {
-														v81 = v72
+													v77 = *(*int32)(unsafe.Add(mBase, uint32(v68)))
+													v79 = int32(base.Ui32(v77) >> (uint(int32(2)) % 32))
+													if v79 == int32(0) {
+														v84 = v75
 													} else {
-														base.MemoryCopy(m, v72, v65, v76)
-														v81 = v72
+														base.MemoryCopy(m, v75, v68, v79)
+														v84 = v75
 													}
-													F_ReleaseCatCache(m, v55)
+													F_ReleaseCatCache(m, v58)
 													mBase = m.M
-													v84 = m.ExcPending
-													if v84 != 0 {
+													v87 = m.ExcPending
+													if v87 != 0 {
 														return int32(0)
 													} else {
-														v86 = v81
-														v89 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-														v94 = F_hash_search(m, v89, v6+int32(-48), int32(1), int32(0))
+														v89 = v84
+														v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+														v98 = F_hash_search(m, v93, v7+int32(-48), int32(1), int32(0))
 														mBase = m.M
-														v95 = m.ExcPending
-														if v95 != 0 {
+														v99 = m.ExcPending
+														if v99 != 0 {
 															return int32(0)
 														} else {
-															*(*int32)(unsafe.Add(mBase, uint32(v94)+8)) = v86
-															v99 = v86
-															v100 = v94
-															if v99 == int32(0) {
-																v118 = int32(0)
-																m.G0 = v8 - int32(-64)
-																return v118
+															*(*int32)(unsafe.Add(mBase, uint32(v98)+8)) = v89
+															v103 = v89
+															v104 = v98
+															if v103 == int32(0) {
+																v123 = int32(0)
+																m.G0 = v9 - int32(-64)
+																return v123
 															} else {
-																v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-																v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+																v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+																v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 																mBase = m.M
-																v108 = m.ExcPending
-																if v108 != 0 {
+																v113 = m.ExcPending
+																if v113 != 0 {
 																	return int32(0)
 																} else {
-																	v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-																	v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-																	v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-																	if v112 == int32(0) {
-																		v118 = v107
+																	v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+																	v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+																	v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+																	if v117 == int32(0) {
+																		v123 = v112
 																	} else {
-																		base.MemoryCopy(m, v107, v109, v112)
-																		v118 = v107
+																		base.MemoryCopy(m, v112, v114, v117)
+																		v123 = v112
 																	}
-																	m.G0 = v8 - int32(-64)
-																	return v118
+																	m.G0 = v9 - int32(-64)
+																	return v123
 																}
 															}
 														}
@@ -1401,40 +1401,40 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 										}
 									}
 								} else {
-									v86 = v52
-									v89 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-									v94 = F_hash_search(m, v89, v6+int32(-48), int32(1), int32(0))
+									v89 = v53
+									v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+									v98 = F_hash_search(m, v93, v7+int32(-48), int32(1), int32(0))
 									mBase = m.M
-									v95 = m.ExcPending
-									if v95 != 0 {
+									v99 = m.ExcPending
+									if v99 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v94)+8)) = v86
-										v99 = v86
-										v100 = v94
-										if v99 == int32(0) {
-											v118 = int32(0)
-											m.G0 = v8 - int32(-64)
-											return v118
+										*(*int32)(unsafe.Add(mBase, uint32(v98)+8)) = v89
+										v103 = v89
+										v104 = v98
+										if v103 == int32(0) {
+											v123 = int32(0)
+											m.G0 = v9 - int32(-64)
+											return v123
 										} else {
-											v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-											v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+											v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+											v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 											mBase = m.M
-											v108 = m.ExcPending
-											if v108 != 0 {
+											v113 = m.ExcPending
+											if v113 != 0 {
 												return int32(0)
 											} else {
-												v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-												v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-												v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-												if v112 == int32(0) {
-													v118 = v107
+												v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+												v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+												v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+												if v117 == int32(0) {
+													v123 = v112
 												} else {
-													base.MemoryCopy(m, v107, v109, v112)
-													v118 = v107
+													base.MemoryCopy(m, v112, v114, v117)
+													v123 = v112
 												}
-												m.G0 = v8 - int32(-64)
-												return v118
+												m.G0 = v9 - int32(-64)
+												return v123
 											}
 										}
 									}
@@ -1446,170 +1446,170 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		}
 	} else {
-		v42 = v11
-		*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l1
-		*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l0
-		v47 = int32(0)
-		v49 = F_hash_search(m, v42, v6+int32(-48), v47, v47)
+		v43 = v12
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = l1
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l0
+		v48 = int32(0)
+		v50 = F_hash_search(m, v43, v7+int32(-48), v48, v48)
 		mBase = m.M
-		v50 = m.ExcPending
-		if v50 != 0 {
+		v51 = m.ExcPending
+		if v51 != 0 {
 			return int32(0)
 		} else {
-			if v49 != 0 {
-				v51 = *(*int32)(unsafe.Add(mBase, uint32(v49)+8))
-				v99 = v51
-				v100 = v49
-				if v99 == int32(0) {
-					v118 = int32(0)
-					m.G0 = v8 - int32(-64)
-					return v118
+			if v50 != 0 {
+				v52 = *(*int32)(unsafe.Add(mBase, uint32(v50)+8))
+				v103 = v52
+				v104 = v50
+				if v103 == int32(0) {
+					v123 = int32(0)
+					m.G0 = v9 - int32(-64)
+					return v123
 				} else {
-					v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-					v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+					v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+					v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 					mBase = m.M
-					v108 = m.ExcPending
-					if v108 != 0 {
+					v113 = m.ExcPending
+					if v113 != 0 {
 						return int32(0)
 					} else {
-						v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-						v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-						v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-						if v112 == int32(0) {
-							v118 = v107
+						v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+						v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+						v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+						if v117 == int32(0) {
+							v123 = v112
 						} else {
-							base.MemoryCopy(m, v107, v109, v112)
-							v118 = v107
+							base.MemoryCopy(m, v112, v114, v117)
+							v123 = v112
 						}
-						m.G0 = v8 - int32(-64)
-						return v118
+						m.G0 = v9 - int32(-64)
+						return v123
 					}
 				}
 			} else {
-				v52 = int32(0)
-				v55 = F_SearchSysCache2(m, int32(7), l0, base.I32_extend16_s(l1))
+				v53 = int32(0)
+				v58 = F_SearchSysCache2(m, int32(7), base.I64_extend_i32_u(l0), base.I64_extend16_s(base.I64_extend_i32_u(l1)))
 				mBase = m.M
-				v56 = m.ExcPending
-				if v56 != 0 {
+				v59 = m.ExcPending
+				if v59 != 0 {
 					return int32(0)
 				} else {
-					if v55 != 0 {
-						v61 = F_SysCacheGetAttr(m, int32(7), v55, int32(23), v6+int32(-49))
+					if v58 != 0 {
+						v64 = F_SysCacheGetAttr(m, int32(7), v58, int32(23), v7+int32(-49))
 						mBase = m.M
-						v62 = m.ExcPending
-						if v62 != 0 {
+						v65 = m.ExcPending
+						if v65 != 0 {
 							return int32(0)
 						} else {
-							v63 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)))
-							if v63 != 0 {
-								v81 = v52
-								F_ReleaseCatCache(m, v55)
+							v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
+							if v66 != 0 {
+								v84 = v53
+								F_ReleaseCatCache(m, v58)
 								mBase = m.M
-								v84 = m.ExcPending
-								if v84 != 0 {
+								v87 = m.ExcPending
+								if v87 != 0 {
 									return int32(0)
 								} else {
-									v86 = v81
-									v89 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-									v94 = F_hash_search(m, v89, v6+int32(-48), int32(1), int32(0))
+									v89 = v84
+									v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+									v98 = F_hash_search(m, v93, v7+int32(-48), int32(1), int32(0))
 									mBase = m.M
-									v95 = m.ExcPending
-									if v95 != 0 {
+									v99 = m.ExcPending
+									if v99 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v94)+8)) = v86
-										v99 = v86
-										v100 = v94
-										if v99 == int32(0) {
-											v118 = int32(0)
-											m.G0 = v8 - int32(-64)
-											return v118
+										*(*int32)(unsafe.Add(mBase, uint32(v98)+8)) = v89
+										v103 = v89
+										v104 = v98
+										if v103 == int32(0) {
+											v123 = int32(0)
+											m.G0 = v9 - int32(-64)
+											return v123
 										} else {
-											v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-											v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+											v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+											v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 											mBase = m.M
-											v108 = m.ExcPending
-											if v108 != 0 {
+											v113 = m.ExcPending
+											if v113 != 0 {
 												return int32(0)
 											} else {
-												v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-												v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-												v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-												if v112 == int32(0) {
-													v118 = v107
+												v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+												v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+												v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+												if v117 == int32(0) {
+													v123 = v112
 												} else {
-													base.MemoryCopy(m, v107, v109, v112)
-													v118 = v107
+													base.MemoryCopy(m, v112, v114, v117)
+													v123 = v112
 												}
-												m.G0 = v8 - int32(-64)
-												return v118
+												m.G0 = v9 - int32(-64)
+												return v123
 											}
 										}
 									}
 								}
 							} else {
-								v65 = F_attribute_reloptions(m, v61, int32(0))
+								v68 = F_attribute_reloptions(m, v64, int32(0))
 								mBase = m.M
-								v66 = m.ExcPending
-								if v66 != 0 {
+								v69 = m.ExcPending
+								if v69 != 0 {
 									return int32(0)
 								} else {
-									v68 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[1]))
-									v69 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
-									v72 = F_MemoryContextAlloc(m, v68, int32(base.Ui32(v69)>>(uint(int32(2))%32)))
+									v71 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[1]))
+									v72 = *(*int32)(unsafe.Add(mBase, uint32(v68)))
+									v75 = F_MemoryContextAlloc(m, v71, int32(base.Ui32(v72)>>(uint(int32(2))%32)))
 									mBase = m.M
-									v73 = m.ExcPending
-									if v73 != 0 {
+									v76 = m.ExcPending
+									if v76 != 0 {
 										return int32(0)
 									} else {
-										v74 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
-										v76 = int32(base.Ui32(v74) >> (uint(int32(2)) % 32))
-										if v76 == int32(0) {
-											v81 = v72
+										v77 = *(*int32)(unsafe.Add(mBase, uint32(v68)))
+										v79 = int32(base.Ui32(v77) >> (uint(int32(2)) % 32))
+										if v79 == int32(0) {
+											v84 = v75
 										} else {
-											base.MemoryCopy(m, v72, v65, v76)
-											v81 = v72
+											base.MemoryCopy(m, v75, v68, v79)
+											v84 = v75
 										}
-										F_ReleaseCatCache(m, v55)
+										F_ReleaseCatCache(m, v58)
 										mBase = m.M
-										v84 = m.ExcPending
-										if v84 != 0 {
+										v87 = m.ExcPending
+										if v87 != 0 {
 											return int32(0)
 										} else {
-											v86 = v81
-											v89 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-											v94 = F_hash_search(m, v89, v6+int32(-48), int32(1), int32(0))
+											v89 = v84
+											v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+											v98 = F_hash_search(m, v93, v7+int32(-48), int32(1), int32(0))
 											mBase = m.M
-											v95 = m.ExcPending
-											if v95 != 0 {
+											v99 = m.ExcPending
+											if v99 != 0 {
 												return int32(0)
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v94)+8)) = v86
-												v99 = v86
-												v100 = v94
-												if v99 == int32(0) {
-													v118 = int32(0)
-													m.G0 = v8 - int32(-64)
-													return v118
+												*(*int32)(unsafe.Add(mBase, uint32(v98)+8)) = v89
+												v103 = v89
+												v104 = v98
+												if v103 == int32(0) {
+													v123 = int32(0)
+													m.G0 = v9 - int32(-64)
+													return v123
 												} else {
-													v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-													v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+													v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+													v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 													mBase = m.M
-													v108 = m.ExcPending
-													if v108 != 0 {
+													v113 = m.ExcPending
+													if v113 != 0 {
 														return int32(0)
 													} else {
-														v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-														v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-														v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-														if v112 == int32(0) {
-															v118 = v107
+														v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+														v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+														v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+														if v117 == int32(0) {
+															v123 = v112
 														} else {
-															base.MemoryCopy(m, v107, v109, v112)
-															v118 = v107
+															base.MemoryCopy(m, v112, v114, v117)
+															v123 = v112
 														}
-														m.G0 = v8 - int32(-64)
-														return v118
+														m.G0 = v9 - int32(-64)
+														return v123
 													}
 												}
 											}
@@ -1619,40 +1619,40 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						}
 					} else {
-						v86 = v52
-						v89 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
-						v94 = F_hash_search(m, v89, v6+int32(-48), int32(1), int32(0))
+						v89 = v53
+						v93 = *(*int32)(unsafe.Add(mBase, _c_F_get_attribute_options[0]))
+						v98 = F_hash_search(m, v93, v7+int32(-48), int32(1), int32(0))
 						mBase = m.M
-						v95 = m.ExcPending
-						if v95 != 0 {
+						v99 = m.ExcPending
+						if v99 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v94)+8)) = v86
-							v99 = v86
-							v100 = v94
-							if v99 == int32(0) {
-								v118 = int32(0)
-								m.G0 = v8 - int32(-64)
-								return v118
+							*(*int32)(unsafe.Add(mBase, uint32(v98)+8)) = v89
+							v103 = v89
+							v104 = v98
+							if v103 == int32(0) {
+								v123 = int32(0)
+								m.G0 = v9 - int32(-64)
+								return v123
 							} else {
-								v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-								v107 = F_palloc(m, int32(base.Ui32(v104)>>(uint(int32(2))%32)))
+								v109 = *(*int32)(unsafe.Add(mBase, uint32(v103)))
+								v112 = F_palloc(m, int32(base.Ui32(v109)>>(uint(int32(2))%32)))
 								mBase = m.M
-								v108 = m.ExcPending
-								if v108 != 0 {
+								v113 = m.ExcPending
+								if v113 != 0 {
 									return int32(0)
 								} else {
-									v109 = *(*int32)(unsafe.Add(mBase, uint32(v100)+8))
-									v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)))
-									v112 = int32(base.Ui32(v110) >> (uint(int32(2)) % 32))
-									if v112 == int32(0) {
-										v118 = v107
+									v114 = *(*int32)(unsafe.Add(mBase, uint32(v104)+8))
+									v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+									v117 = int32(base.Ui32(v115) >> (uint(int32(2)) % 32))
+									if v117 == int32(0) {
+										v123 = v112
 									} else {
-										base.MemoryCopy(m, v107, v109, v112)
-										v118 = v107
+										base.MemoryCopy(m, v112, v114, v117)
+										v123 = v112
 									}
-									m.G0 = v8 - int32(-64)
-									return v118
+									m.G0 = v9 - int32(-64)
+									return v123
 								}
 							}
 						}

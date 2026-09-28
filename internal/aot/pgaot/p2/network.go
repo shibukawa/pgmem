@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_network_ne(m *base.Module, l0 int32) int32 {
+func F_network_ne(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -52,83 +52,85 @@ func F_network_ne(m *base.Module, l0 int32) int32 {
 	_ = v39
 	var v41 int32
 	_ = v41
-	var v43 int32
-	_ = v43
+	var v42 int32
+	_ = v42
 	var v44 int32
 	_ = v44
-	var v46 int32
-	_ = v46
-	var v50 int32
-	_ = v50
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
 	var v51 int32
 	_ = v51
 	var v52 int32
 	_ = v52
-	var v54 int32
-	_ = v54
-	var v60 int32
-	_ = v60
-	var v62 int32
-	_ = v62
+	var v53 int32
+	_ = v53
+	var v55 int32
+	_ = v55
+	var v61 int32
+	_ = v61
 	var v63 int32
 	_ = v63
-	var v71 int32
-	_ = v71
-	var v73 int32
-	_ = v73
+	var v64 int32
+	_ = v64
+	var v72 int32
+	_ = v72
 	var v74 int32
 	_ = v74
-	var v82 int32
-	_ = v82
-	var v84 int32
-	_ = v84
+	var v75 int32
+	_ = v75
+	var v83 int32
+	_ = v83
 	var v85 int32
 	_ = v85
-	var v93 int32
-	_ = v93
-	var v95 int32
-	_ = v95
+	var v86 int32
+	_ = v86
+	var v94 int32
+	_ = v94
 	var v96 int32
 	_ = v96
-	var v104 int32
-	_ = v104
-	var v106 int32
-	_ = v106
+	var v97 int32
+	_ = v97
+	var v105 int32
+	_ = v105
 	var v107 int32
 	_ = v107
-	var v115 int32
-	_ = v115
-	var v117 int32
-	_ = v117
+	var v108 int32
+	_ = v108
+	var v116 int32
+	_ = v116
 	var v118 int32
 	_ = v118
-	var v127 int32
-	_ = v127
-	var v132 int32
-	_ = v132
+	var v119 int32
+	_ = v119
+	var v128 int32
+	_ = v128
 	var v133 int32
 	_ = v133
-	var v136 int32
-	_ = v136
-	var v143 int32
-	_ = v143
-	var v146 int32
-	_ = v146
-	var v155 int32
-	_ = v155
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	var v134 int32
+	_ = v134
+	var v137 int32
+	_ = v137
+	var v144 int32
+	_ = v144
+	var v147 int32
+	_ = v147
+	var v156 int32
+	_ = v156
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v3 = F_pg_detoast_datum_packed(m, v2)
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
-		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v8 = F_pg_detoast_datum_packed(m, v7)
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
 			v17 = int32(1)
 			v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3))))
@@ -155,228 +157,229 @@ func F_network_ne(m *base.Module, l0 int32) int32 {
 				v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+1)))
 				v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+1)))
 				if base.Ui32(v38) < base.Ui32(v39) {
-					v41 = v38
+					v41 = v23
 				} else {
-					v41 = v39
+					v41 = v31
 				}
-				v43 = int32(base.Ui32(v41) >> (uint(int32(3)) % 32))
-				v44 = F_memcmp(m, v35, v37, v43)
+				v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41)+1)))
+				v44 = int32(base.Ui32(v42) >> (uint(int32(3)) % 32))
+				v45 = F_memcmp(m, v35, v37, v44)
 				mBase = m.M
-				if v44 != 0 {
-					v136 = v44
-					v155 = v136
+				if v45 != 0 {
+					v137 = v45
+					v156 = v137
 				} else {
-					v46 = v41 & int32(7)
-					if v46 == int32(0) {
-						v127 = v38 - v39
-						if v127 != 0 {
-							v136 = v127
-							v155 = v136
+					v47 = v42 & int32(7)
+					if v47 == int32(0) {
+						v128 = v38 - v39
+						if v128 != 0 {
+							v137 = v128
+							v156 = v137
 						} else {
 							if v24 == int32(2) {
-								v132 = int32(4)
+								v133 = int32(4)
 							} else {
-								v132 = int32(16)
+								v133 = int32(16)
 							}
-							v133 = F_memcmp(m, v35, v37, v132)
+							v134 = F_memcmp(m, v35, v37, v133)
 							mBase = m.M
-							v155 = v133
+							v156 = v134
 						}
 					} else {
-						v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43+v35))))
-						v51 = int32(128)
-						v52 = v50 & v51
-						v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43+v37))))
-						if v52 != v54&v51 {
-							v143 = v52
-							if v143 != 0 {
-								v146 = int32(1)
+						v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44+v35))))
+						v52 = int32(128)
+						v53 = v51 & v52
+						v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44+v37))))
+						if v53 != v55&v52 {
+							v144 = v53
+							if v144 != 0 {
+								v147 = int32(1)
 							} else {
-								v146 = int32(-1)
+								v147 = int32(-1)
 							}
-							v155 = v146
+							v156 = v147
 						} else {
-							if v46 == int32(1) {
-								v127 = v38 - v39
-								if v127 != 0 {
-									v136 = v127
-									v155 = v136
+							if v47 == int32(1) {
+								v128 = v38 - v39
+								if v128 != 0 {
+									v137 = v128
+									v156 = v137
 								} else {
 									if v24 == int32(2) {
-										v132 = int32(4)
+										v133 = int32(4)
 									} else {
-										v132 = int32(16)
+										v133 = int32(16)
 									}
-									v133 = F_memcmp(m, v35, v37, v132)
+									v134 = F_memcmp(m, v35, v37, v133)
 									mBase = m.M
-									v155 = v133
+									v156 = v134
 								}
 							} else {
-								v60 = int32(1)
-								v62 = int32(128)
-								v63 = v50 << (uint(v60) % 32) & v62
-								if v63 != v54<<(uint(v60)%32)&v62 {
-									v143 = v63
-									if v143 != 0 {
-										v146 = int32(1)
+								v61 = int32(1)
+								v63 = int32(128)
+								v64 = v51 << (uint(v61) % 32) & v63
+								if v64 != v55<<(uint(v61)%32)&v63 {
+									v144 = v64
+									if v144 != 0 {
+										v147 = int32(1)
 									} else {
-										v146 = int32(-1)
+										v147 = int32(-1)
 									}
-									v155 = v146
+									v156 = v147
 								} else {
-									if base.Ui32(v46) < base.Ui32(int32(3)) {
-										v127 = v38 - v39
-										if v127 != 0 {
-											v136 = v127
-											v155 = v136
+									if base.Ui32(v47) < base.Ui32(int32(3)) {
+										v128 = v38 - v39
+										if v128 != 0 {
+											v137 = v128
+											v156 = v137
 										} else {
 											if v24 == int32(2) {
-												v132 = int32(4)
+												v133 = int32(4)
 											} else {
-												v132 = int32(16)
+												v133 = int32(16)
 											}
-											v133 = F_memcmp(m, v35, v37, v132)
+											v134 = F_memcmp(m, v35, v37, v133)
 											mBase = m.M
-											v155 = v133
+											v156 = v134
 										}
 									} else {
-										v71 = int32(2)
-										v73 = int32(128)
-										v74 = v50 << (uint(v71) % 32) & v73
-										if v74 != v54<<(uint(v71)%32)&v73 {
-											v143 = v74
-											if v143 != 0 {
-												v146 = int32(1)
+										v72 = int32(2)
+										v74 = int32(128)
+										v75 = v51 << (uint(v72) % 32) & v74
+										if v75 != v55<<(uint(v72)%32)&v74 {
+											v144 = v75
+											if v144 != 0 {
+												v147 = int32(1)
 											} else {
-												v146 = int32(-1)
+												v147 = int32(-1)
 											}
-											v155 = v146
+											v156 = v147
 										} else {
-											if v46 == int32(3) {
-												v127 = v38 - v39
-												if v127 != 0 {
-													v136 = v127
-													v155 = v136
+											if v47 == int32(3) {
+												v128 = v38 - v39
+												if v128 != 0 {
+													v137 = v128
+													v156 = v137
 												} else {
 													if v24 == int32(2) {
-														v132 = int32(4)
+														v133 = int32(4)
 													} else {
-														v132 = int32(16)
+														v133 = int32(16)
 													}
-													v133 = F_memcmp(m, v35, v37, v132)
+													v134 = F_memcmp(m, v35, v37, v133)
 													mBase = m.M
-													v155 = v133
+													v156 = v134
 												}
 											} else {
-												v82 = int32(3)
-												v84 = int32(128)
-												v85 = v50 << (uint(v82) % 32) & v84
-												if v85 != v54<<(uint(v82)%32)&v84 {
-													v143 = v85
-													if v143 != 0 {
-														v146 = int32(1)
+												v83 = int32(3)
+												v85 = int32(128)
+												v86 = v51 << (uint(v83) % 32) & v85
+												if v86 != v55<<(uint(v83)%32)&v85 {
+													v144 = v86
+													if v144 != 0 {
+														v147 = int32(1)
 													} else {
-														v146 = int32(-1)
+														v147 = int32(-1)
 													}
-													v155 = v146
+													v156 = v147
 												} else {
-													if base.Ui32(v46) < base.Ui32(int32(5)) {
-														v127 = v38 - v39
-														if v127 != 0 {
-															v136 = v127
-															v155 = v136
+													if base.Ui32(v47) < base.Ui32(int32(5)) {
+														v128 = v38 - v39
+														if v128 != 0 {
+															v137 = v128
+															v156 = v137
 														} else {
 															if v24 == int32(2) {
-																v132 = int32(4)
+																v133 = int32(4)
 															} else {
-																v132 = int32(16)
+																v133 = int32(16)
 															}
-															v133 = F_memcmp(m, v35, v37, v132)
+															v134 = F_memcmp(m, v35, v37, v133)
 															mBase = m.M
-															v155 = v133
+															v156 = v134
 														}
 													} else {
-														v93 = int32(4)
-														v95 = int32(128)
-														v96 = v50 << (uint(v93) % 32) & v95
-														if v96 != v54<<(uint(v93)%32)&v95 {
-															v143 = v96
-															if v143 != 0 {
-																v146 = int32(1)
+														v94 = int32(4)
+														v96 = int32(128)
+														v97 = v51 << (uint(v94) % 32) & v96
+														if v97 != v55<<(uint(v94)%32)&v96 {
+															v144 = v97
+															if v144 != 0 {
+																v147 = int32(1)
 															} else {
-																v146 = int32(-1)
+																v147 = int32(-1)
 															}
-															v155 = v146
+															v156 = v147
 														} else {
-															if v46 == int32(5) {
-																v127 = v38 - v39
-																if v127 != 0 {
-																	v136 = v127
-																	v155 = v136
+															if v47 == int32(5) {
+																v128 = v38 - v39
+																if v128 != 0 {
+																	v137 = v128
+																	v156 = v137
 																} else {
 																	if v24 == int32(2) {
-																		v132 = int32(4)
+																		v133 = int32(4)
 																	} else {
-																		v132 = int32(16)
+																		v133 = int32(16)
 																	}
-																	v133 = F_memcmp(m, v35, v37, v132)
+																	v134 = F_memcmp(m, v35, v37, v133)
 																	mBase = m.M
-																	v155 = v133
+																	v156 = v134
 																}
 															} else {
-																v104 = int32(5)
-																v106 = int32(128)
-																v107 = v50 << (uint(v104) % 32) & v106
-																if v107 != v54<<(uint(v104)%32)&v106 {
-																	v143 = v107
-																	if v143 != 0 {
-																		v146 = int32(1)
+																v105 = int32(5)
+																v107 = int32(128)
+																v108 = v51 << (uint(v105) % 32) & v107
+																if v108 != v55<<(uint(v105)%32)&v107 {
+																	v144 = v108
+																	if v144 != 0 {
+																		v147 = int32(1)
 																	} else {
-																		v146 = int32(-1)
+																		v147 = int32(-1)
 																	}
-																	v155 = v146
+																	v156 = v147
 																} else {
-																	if v46 != int32(7) {
-																		v127 = v38 - v39
-																		if v127 != 0 {
-																			v136 = v127
-																			v155 = v136
+																	if v47 != int32(7) {
+																		v128 = v38 - v39
+																		if v128 != 0 {
+																			v137 = v128
+																			v156 = v137
 																		} else {
 																			if v24 == int32(2) {
-																				v132 = int32(4)
+																				v133 = int32(4)
 																			} else {
-																				v132 = int32(16)
+																				v133 = int32(16)
 																			}
-																			v133 = F_memcmp(m, v35, v37, v132)
+																			v134 = F_memcmp(m, v35, v37, v133)
 																			mBase = m.M
-																			v155 = v133
+																			v156 = v134
 																		}
 																	} else {
-																		v115 = int32(6)
-																		v117 = int32(128)
-																		v118 = v50 << (uint(v115) % 32) & v117
-																		if v118 != v54<<(uint(v115)%32)&v117 {
-																			v143 = v118
-																			if v143 != 0 {
-																				v146 = int32(1)
+																		v116 = int32(6)
+																		v118 = int32(128)
+																		v119 = v51 << (uint(v116) % 32) & v118
+																		if v119 != v55<<(uint(v116)%32)&v118 {
+																			v144 = v119
+																			if v144 != 0 {
+																				v147 = int32(1)
 																			} else {
-																				v146 = int32(-1)
+																				v147 = int32(-1)
 																			}
-																			v155 = v146
+																			v156 = v147
 																		} else {
-																			v127 = v38 - v39
-																			if v127 != 0 {
-																				v136 = v127
-																				v155 = v136
+																			v128 = v38 - v39
+																			if v128 != 0 {
+																				v137 = v128
+																				v156 = v137
 																			} else {
 																				if v24 == int32(2) {
-																					v132 = int32(4)
+																					v133 = int32(4)
 																				} else {
-																					v132 = int32(16)
+																					v133 = int32(16)
 																				}
-																				v133 = F_memcmp(m, v35, v37, v132)
+																				v134 = F_memcmp(m, v35, v37, v133)
 																				mBase = m.M
-																				v155 = v133
+																				v156 = v134
 																			}
 																		}
 																	}
@@ -394,10 +397,10 @@ func F_network_ne(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v136 = v24 - v32
-				v155 = v136
+				v137 = v24 - v32
+				v156 = v137
 			}
-			return base.B2i32(v155 != int32(0))
+			return base.I64_extend_i32_u(base.B2i32(v156 != int32(0)))
 		}
 	}
 }

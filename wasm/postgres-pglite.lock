@@ -1,6 +1,7 @@
-# PostgreSQL source used by wasm/build.sh: the PGlite fork, pinned to a
-# commit of branch REL_18_3-pglite. The archive is fetched from GitHub and
-# verified against the sha256 below before it is unpacked and patched.
-repo=electric-sql/postgres-pglite
-commit=6dab6d9c37607f32b56d4778b6de95ac0d7438fc
-sha256=62af596d0da73a2fa951364f2f6b9ab95266e892af2af69d72abf1612df139dd
+# PostgreSQL 19 Beta 4 source. The pinned PGlite port in
+# patches/postgres-19-pglite.patch adapts this upstream snapshot.
+repo=postgres/postgres
+commit=b73d13c32c834a2c8e1c60cb92f79530376cedf1
+sha256=7e042dfb4eae25c9dcdc95cad3f627c9e6de96c645db5800f8aee6d0b6dd6b60
+srcdir=postgres-19-beta4-pglite-r3
+port_patch=patches/postgres-19-pglite.patch

@@ -207,10 +207,10 @@ func F_entryIndexByFrequencyCmp(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v6 = int32(2)
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v4+v5<<(uint(v6)%32))))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+656))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+660))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v4+v11<<(uint(v6)%32))))
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+656))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+660))
 	return base.B2i32(base.Ui32(v16) < base.Ui32(v10)) - base.B2i32(base.Ui32(v10) < base.Ui32(v16))
 }
 func F_entryPrepareDownlink(m *base.Module, l0 int32, l1 int32) int32 {
@@ -230,6 +230,8 @@ func F_entryPrepareDownlink(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v33
 	var v35 int32
 	_ = v35
+	var v36 int32
+	_ = v36
 	var v41 int32
 	_ = v41
 	var v42 int32
@@ -292,11 +294,12 @@ func F_entryPrepareDownlink(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 	if l1 < int32(0) {
 		v27 = *(*int32)(unsafe.Add(mBase, _c_F_entryPrepareDownlink[2]))
-		v33 = *(*int32)(unsafe.Add(mBase, uint32(v27+(l1^int32(-1))<<(uint(int32(6))%32))+16))
+		v33 = *(*int32)(unsafe.Add(mBase, uint32(v27+(l1^int32(-1))*int32(56))+16))
 		v42 = v33
 	} else {
 		v35 = *(*int32)(unsafe.Add(mBase, _c_F_entryPrepareDownlink[3]))
-		v41 = *(*int32)(unsafe.Add(mBase, uint32(v35+l1<<(uint(int32(6))%32)+int32(-64))+16))
+		v36 = int32(56)
+		v41 = *(*int32)(unsafe.Add(mBase, uint32(v35+l1*v36-v36)+16))
 		v42 = v41
 	}
 	v43 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v23)+12)))

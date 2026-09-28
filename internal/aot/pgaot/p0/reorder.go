@@ -1084,7 +1084,7 @@ L38:
 	v199 = *(*int64)(unsafe.Add(mBase, uint32(l2)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+84)) = int32(72)
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v198
-	v207 = F_FileReadV(m, v197, v18+int32(80), int32(1), v199, int32(167772203))
+	v207 = F_FileReadV(m, v197, v18+int32(80), int32(1), v199, int32(167772205))
 	mBase = m.M
 	v208 = m.ExcPending
 	if v208 != 0 {
@@ -1204,7 +1204,7 @@ L53:
 	v250 = int32(72)
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+84)) = v247 - v250
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v246 + v250
-	v260 = F_FileReadV(m, v249, v18+int32(80), int32(1), v248, int32(167772203))
+	v260 = F_FileReadV(m, v249, v18+int32(80), int32(1), v248, int32(167772205))
 	mBase = m.M
 	v261 = m.ExcPending
 	if v261 != 0 {

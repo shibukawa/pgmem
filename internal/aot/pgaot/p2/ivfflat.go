@@ -234,9 +234,9 @@ func F_IvfflatParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 		}
 	}
 }
-func F_ivfflat_bit_support(m *base.Module, l0 int32) int32 {
-	return int32(_a_F_ivfflat_bit_support_0)
+func F_ivfflat_bit_support(m *base.Module, l0 int32) int64 {
+	return int64(4172144)
 }
-func F_ivfflat_halfvec_support(m *base.Module, l0 int32) int32 {
-	return int32(_a_F_ivfflat_halfvec_support_0)
+func F_ivfflat_halfvec_support(m *base.Module, l0 int32) int64 {
+	return int64(4172120)
 }

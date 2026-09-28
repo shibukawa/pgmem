@@ -57,7 +57,7 @@ func F_bms_make_singleton(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v30)+4)) = v25
-			*(*int32)(unsafe.Add(mBase, uint32(v30))) = int32(445)
+			*(*int32)(unsafe.Add(mBase, uint32(v30))) = int32(451)
 			*(*int32)(unsafe.Add(mBase, uint32(v30+v23<<(uint(int32(2))%32))+8)) = int32(1) << (uint(l0) % 32)
 			return v30
 		}
@@ -307,7 +307,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(_a_F_bms_overlap_list_1), int32(624), int32(_a_F_bms_overlap_list_2))
+	F_errfinish(m, int32(_a_F_bms_overlap_list_1), int32(617), int32(_a_F_bms_overlap_list_2))
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {

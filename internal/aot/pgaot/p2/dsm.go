@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_dsm_postmaster_shutdown(m *base.Module, l0 int32, l1 int32) {
+func F_dsm_postmaster_shutdown(m *base.Module, l0 int32, l1 int64) {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -62,24 +62,24 @@ func F_dsm_postmaster_shutdown(m *base.Module, l0 int32, l1 int32) {
 	_ = v100
 	var v105 int32
 	_ = v105
-	var v107 int32
-	_ = v107
-	var v111 int32
-	_ = v111
-	var v118 int32
-	_ = v118
+	var v108 int32
+	_ = v108
+	var v112 int32
+	_ = v112
 	var v119 int32
 	_ = v119
-	var v121 int32
-	_ = v121
-	var v130 int32
-	_ = v130
+	var v120 int32
+	_ = v120
+	var v122 int32
+	_ = v122
 	var v131 int32
 	_ = v131
-	var v137 int32
-	_ = v137
-	var v142 int32
-	_ = v142
+	var v132 int32
+	_ = v132
+	var v138 int32
+	_ = v138
+	var v143 int32
+	_ = v143
 	v3 = int32(0)
 	v7 = m.G0
 	v9 = v7 - int32(48)
@@ -99,10 +99,10 @@ L1:
 	return
 L2:
 	;
-	v130 = F_errstart(m, int32(15), int32(0))
+	v131 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v131 = m.ExcPending
-	if v131 != 0 {
+	v132 = m.ExcPending
+	if v132 != 0 {
 		goto L15
 	} else {
 		goto L31
@@ -235,7 +235,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(_a_F_dsm_postmaster_shutdown_1), int32(398), int32(_a_F_dsm_postmaster_shutdown_2))
+	F_errfinish(m, int32(_a_F_dsm_postmaster_shutdown_1), int32(408), int32(_a_F_dsm_postmaster_shutdown_2))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {
@@ -278,20 +278,20 @@ L26:
 	goto L27
 L27:
 	;
-	v107 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_postmaster_shutdown[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+44)) = v107
-	v111 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_postmaster_shutdown[2]))
-	v118 = F_dsm_impl_op(m, int32(3), v111, int32(0), int32(_a_F_dsm_postmaster_shutdown_4), v9+int32(44), int32(_a_F_dsm_postmaster_shutdown_5), int32(15))
+	v108 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_postmaster_shutdown[1]))
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+44)) = v108
+	v112 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_postmaster_shutdown[2]))
+	v119 = F_dsm_impl_op(m, int32(3), v112, int32(0), int32(_a_F_dsm_postmaster_shutdown_4), v9+int32(44), int32(_a_F_dsm_postmaster_shutdown_5), int32(15))
 	mBase = m.M
-	v119 = m.ExcPending
-	if v119 != 0 {
+	v120 = m.ExcPending
+	if v120 != 0 {
 		goto L15
 	} else {
 		goto L30
 	}
 L28:
 	;
-	F_errfinish(m, int32(_a_F_dsm_postmaster_shutdown_1), int32(408), int32(_a_F_dsm_postmaster_shutdown_2))
+	F_errfinish(m, int32(_a_F_dsm_postmaster_shutdown_1), int32(418), int32(_a_F_dsm_postmaster_shutdown_2))
 	mBase = m.M
 	v105 = m.ExcPending
 	if v105 != 0 {
@@ -304,13 +304,13 @@ L29:
 	goto L27
 L30:
 	;
-	v121 = *(*int32)(unsafe.Add(mBase, uint32(v9)+44))
-	*(*int32)(unsafe.Add(mBase, _c_F_dsm_postmaster_shutdown[1])) = v121
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(0)
+	v122 = *(*int32)(unsafe.Add(mBase, uint32(v9)+44))
+	*(*int32)(unsafe.Add(mBase, _c_F_dsm_postmaster_shutdown[1])) = v122
+	*(*int32)(unsafe.Add(mBase, uint32(base.I32_wrap_i64(l1))+16)) = int32(0)
 	goto L1
 L31:
 	;
-	if v130 == int32(0) {
+	if v131 == int32(0) {
 		goto L1
 	} else {
 		goto L32
@@ -319,18 +319,18 @@ L32:
 	;
 	F_errmsg(m, int32(_a_F_dsm_postmaster_shutdown_6), int32(0))
 	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
+	v138 = m.ExcPending
+	if v138 != 0 {
 		goto L15
 	} else {
 		goto L33
 	}
 L33:
 	;
-	F_errfinish(m, int32(_a_F_dsm_postmaster_shutdown_1), int32(379), int32(_a_F_dsm_postmaster_shutdown_2))
+	F_errfinish(m, int32(_a_F_dsm_postmaster_shutdown_1), int32(389), int32(_a_F_dsm_postmaster_shutdown_2))
 	mBase = m.M
-	v142 = m.ExcPending
-	if v142 != 0 {
+	v143 = m.ExcPending
+	if v143 != 0 {
 		goto L15
 	} else {
 		goto L34

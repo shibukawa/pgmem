@@ -56,12 +56,12 @@ func F_px_find_digest(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v87
 	var v98 int32
 	_ = v98
-	var v102 int32
-	_ = v102
-	var v104 int32
-	_ = v104
+	var v103 int32
+	_ = v103
 	var v105 int32
 	_ = v105
+	var v106 int32
+	_ = v106
 	v7 = int32(0)
 	goto L2
 L1:
@@ -244,10 +244,10 @@ L28:
 	*(*int32)(unsafe.Add(mBase, uint32(v73)+4)) = v82 & int32(_a_F_px_find_digest_0)
 	v98 = *(*int32)(unsafe.Add(mBase, _c_F_px_find_digest[0]))
 	*(*int32)(unsafe.Add(mBase, uint32(v73)+12)) = v98
-	F_ResourceOwnerRemember(m, v98, v73, int32(_a_F_px_find_digest_1))
+	F_ResourceOwnerRemember(m, v98, base.I64_extend_i32_u(v73), int32(_a_F_px_find_digest_1))
 	mBase = m.M
-	v102 = m.ExcPending
-	if v102 != 0 {
+	v103 = m.ExcPending
+	if v103 != 0 {
 		goto L19
 	} else {
 		goto L30
@@ -257,23 +257,23 @@ L29:
 	return int32(-8)
 L30:
 	;
-	v104 = F_palloc(m, int32(28))
+	v105 = F_palloc(m, int32(28))
 	mBase = m.M
-	v105 = m.ExcPending
-	if v105 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L19
 	} else {
 		goto L31
 	}
 L31:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v104)+24)) = v73
-	*(*int32)(unsafe.Add(mBase, uint32(v104)+20)) = int32(_a_F_px_find_digest_2)
-	*(*int32)(unsafe.Add(mBase, uint32(v104)+16)) = int32(_a_F_px_find_digest_3)
-	*(*int32)(unsafe.Add(mBase, uint32(v104)+12)) = int32(_a_F_px_find_digest_4)
-	*(*int32)(unsafe.Add(mBase, uint32(v104)+8)) = int32(_a_F_px_find_digest_5)
-	*(*int32)(unsafe.Add(mBase, uint32(v104)+4)) = int32(_a_F_px_find_digest_6)
-	*(*int32)(unsafe.Add(mBase, uint32(v104))) = int32(_a_F_px_find_digest_7)
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v104
+	*(*int32)(unsafe.Add(mBase, uint32(v105)+24)) = v73
+	*(*int32)(unsafe.Add(mBase, uint32(v105)+20)) = int32(_a_F_px_find_digest_2)
+	*(*int32)(unsafe.Add(mBase, uint32(v105)+16)) = int32(_a_F_px_find_digest_3)
+	*(*int32)(unsafe.Add(mBase, uint32(v105)+12)) = int32(_a_F_px_find_digest_4)
+	*(*int32)(unsafe.Add(mBase, uint32(v105)+8)) = int32(_a_F_px_find_digest_5)
+	*(*int32)(unsafe.Add(mBase, uint32(v105)+4)) = int32(_a_F_px_find_digest_6)
+	*(*int32)(unsafe.Add(mBase, uint32(v105))) = int32(_a_F_px_find_digest_7)
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v105
 	return int32(0)
 }

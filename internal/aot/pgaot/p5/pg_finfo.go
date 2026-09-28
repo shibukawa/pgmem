@@ -344,12 +344,6 @@ func F_pg_finfo_ltxtq_recv(m *base.Module) int32 {
 func F_pg_finfo_ltxtq_send(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ltxtq_send_0)
 }
-func F_pg_finfo_mic_to_euc_jp(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_euc_jp_0)
-}
-func F_pg_finfo_mic_to_win866(m *base.Module) int32 {
-	return int32(_a_F_pg_finfo_mic_to_win866_0)
-}
 func F_pg_finfo_pg_buffercache_evict(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_buffercache_evict_0)
 }
@@ -361,6 +355,9 @@ func F_pg_finfo_pg_crypt(m *base.Module) int32 {
 }
 func F_pg_finfo_pg_digest(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_digest_0)
+}
+func F_pg_finfo_pg_stat_statements_1_13(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_1_13_0)
 }
 func F_pg_finfo_pg_stat_statements_1_2(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_stat_statements_1_2_0)

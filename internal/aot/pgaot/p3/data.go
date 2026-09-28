@@ -13,7 +13,7 @@ func F_DataChecksumsEnabled(m *base.Module) int32 {
 	var v3 int32
 	_ = v3
 	v2 = *(*int32)(unsafe.Add(mBase, _c_F_DataChecksumsEnabled[0]))
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)+252))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)+268))
 	return base.B2i32(v3 != int32(0))
 }
 func F_SetDataDir(m *base.Module, l0 int32) {

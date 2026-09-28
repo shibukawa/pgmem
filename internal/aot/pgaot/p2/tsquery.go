@@ -5,18 +5,18 @@ import (
 	"unsafe"
 )
 
-func F_tsquery_numnode(m *base.Module, l0 int32) int32 {
+func F_tsquery_numnode(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v3 int32
+	var v3 int64
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)+4))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v3 = int64(*(*int32)(unsafe.Add(mBase, uint32(v2)+4)))
 	return v3
 }
-func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
+func F_tsquery_rewrite(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v9 int32
@@ -110,45 +110,45 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v14 = F_pg_detoast_datum_copy(m, v13)
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
-		return int32(0)
+		return int64(0)
 	} else {
 		v18 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
 		if v18 == int32(0) {
 			v99 = v14
 			m.G0 = v11 + int32(16)
-			return v99
+			return base.I64_extend_i32_u(v99)
 		} else {
-			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 			v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
 			if v22 == int32(0) {
 				v99 = v14
 				m.G0 = v11 + int32(16)
-				return v99
+				return base.I64_extend_i32_u(v99)
 			} else {
-				v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+				v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 				v27 = v14 + int32(8)
 				v31 = F_QT2QTN(m, v27, v27+v18*int32(12))
 				mBase = m.M
 				v32 = m.ExcPending
 				if v32 != 0 {
-					return int32(0)
+					return int64(0)
 				} else {
 					F_QTNTernary(m, v31)
 					mBase = m.M
 					v34 = m.ExcPending
 					if v34 != 0 {
-						return int32(0)
+						return int64(0)
 					} else {
 						F_QTNSort(m, v31)
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
-							return int32(0)
+							return int64(0)
 						} else {
 							v38 = v21 + int32(8)
 							v39 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
@@ -156,19 +156,19 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {
-								return int32(0)
+								return int64(0)
 							} else {
 								F_QTNTernary(m, v43)
 								mBase = m.M
 								v46 = m.ExcPending
 								if v46 != 0 {
-									return int32(0)
+									return int64(0)
 								} else {
 									F_QTNSort(m, v43)
 									mBase = m.M
 									v48 = m.ExcPending
 									if v48 != 0 {
-										return int32(0)
+										return int64(0)
 									} else {
 										v49 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
 										if v49 != 0 {
@@ -177,74 +177,74 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 											mBase = m.M
 											v56 = m.ExcPending
 											if v56 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												v59 = v55
 												v62 = F_dofindsubquery(m, v31, v43, v59, v11+int32(15))
 												mBase = m.M
 												v63 = m.ExcPending
 												if v63 != 0 {
-													return int32(0)
+													return int64(0)
 												} else {
 													F_QTNFree(m, v43)
 													mBase = m.M
 													v65 = m.ExcPending
 													if v65 != 0 {
-														return int32(0)
+														return int64(0)
 													} else {
 														F_QTNFree(m, v59)
 														mBase = m.M
 														v67 = m.ExcPending
 														if v67 != 0 {
-															return int32(0)
+															return int64(0)
 														} else {
 															if v62 == int32(0) {
 																*(*int64)(unsafe.Add(mBase, uint32(v14))) = int64(32)
-																v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+																v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 																if v72 != v21 {
 																	F_pfree(m, v21)
 																	mBase = m.M
 																	v75 = m.ExcPending
 																	if v75 != 0 {
-																		return int32(0)
+																		return int64(0)
 																	} else {
-																		v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																		v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																		if v25 != v76 {
 																			v94 = v14
 																			F_pfree(m, v25)
 																			mBase = m.M
 																			v96 = m.ExcPending
 																			if v96 != 0 {
-																				return int32(0)
+																				return int64(0)
 																			} else {
 																				v99 = v94
 																				m.G0 = v11 + int32(16)
-																				return v99
+																				return base.I64_extend_i32_u(v99)
 																			}
 																		} else {
 																			v99 = v14
 																			m.G0 = v11 + int32(16)
-																			return v99
+																			return base.I64_extend_i32_u(v99)
 																		}
 																	}
 																} else {
-																	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																	if v25 != v76 {
 																		v94 = v14
 																		F_pfree(m, v25)
 																		mBase = m.M
 																		v96 = m.ExcPending
 																		if v96 != 0 {
-																			return int32(0)
+																			return int64(0)
 																		} else {
 																			v99 = v94
 																			m.G0 = v11 + int32(16)
-																			return v99
+																			return base.I64_extend_i32_u(v99)
 																		}
 																	} else {
 																		v99 = v14
 																		m.G0 = v11 + int32(16)
-																		return v99
+																		return base.I64_extend_i32_u(v99)
 																	}
 																}
 															} else {
@@ -252,121 +252,121 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 																mBase = m.M
 																v79 = m.ExcPending
 																if v79 != 0 {
-																	return int32(0)
+																	return int64(0)
 																} else {
 																	v80 = F_QTN2QT(m, v62)
 																	mBase = m.M
 																	v81 = m.ExcPending
 																	if v81 != 0 {
-																		return int32(0)
+																		return int64(0)
 																	} else {
 																		F_QTNFree(m, v62)
 																		mBase = m.M
 																		v83 = m.ExcPending
 																		if v83 != 0 {
-																			return int32(0)
+																			return int64(0)
 																		} else {
-																			v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+																			v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 																			if v84 != v14 {
 																				F_pfree(m, v14)
 																				mBase = m.M
 																				v87 = m.ExcPending
 																				if v87 != 0 {
-																					return int32(0)
+																					return int64(0)
 																				} else {
-																					v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+																					v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 																					if v88 != v21 {
 																						F_pfree(m, v21)
 																						mBase = m.M
 																						v91 = m.ExcPending
 																						if v91 != 0 {
-																							return int32(0)
+																							return int64(0)
 																						} else {
-																							v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																							v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																							if v25 == v92 {
 																								v99 = v80
 																								m.G0 = v11 + int32(16)
-																								return v99
+																								return base.I64_extend_i32_u(v99)
 																							} else {
 																								v94 = v80
 																								F_pfree(m, v25)
 																								mBase = m.M
 																								v96 = m.ExcPending
 																								if v96 != 0 {
-																									return int32(0)
+																									return int64(0)
 																								} else {
 																									v99 = v94
 																									m.G0 = v11 + int32(16)
-																									return v99
+																									return base.I64_extend_i32_u(v99)
 																								}
 																							}
 																						}
 																					} else {
-																						v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																						v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																						if v25 == v92 {
 																							v99 = v80
 																							m.G0 = v11 + int32(16)
-																							return v99
+																							return base.I64_extend_i32_u(v99)
 																						} else {
 																							v94 = v80
 																							F_pfree(m, v25)
 																							mBase = m.M
 																							v96 = m.ExcPending
 																							if v96 != 0 {
-																								return int32(0)
+																								return int64(0)
 																							} else {
 																								v99 = v94
 																								m.G0 = v11 + int32(16)
-																								return v99
+																								return base.I64_extend_i32_u(v99)
 																							}
 																						}
 																					}
 																				}
 																			} else {
-																				v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+																				v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 																				if v88 != v21 {
 																					F_pfree(m, v21)
 																					mBase = m.M
 																					v91 = m.ExcPending
 																					if v91 != 0 {
-																						return int32(0)
+																						return int64(0)
 																					} else {
-																						v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																						v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																						if v25 == v92 {
 																							v99 = v80
 																							m.G0 = v11 + int32(16)
-																							return v99
+																							return base.I64_extend_i32_u(v99)
 																						} else {
 																							v94 = v80
 																							F_pfree(m, v25)
 																							mBase = m.M
 																							v96 = m.ExcPending
 																							if v96 != 0 {
-																								return int32(0)
+																								return int64(0)
 																							} else {
 																								v99 = v94
 																								m.G0 = v11 + int32(16)
-																								return v99
+																								return base.I64_extend_i32_u(v99)
 																							}
 																						}
 																					}
 																				} else {
-																					v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																					v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																					if v25 == v92 {
 																						v99 = v80
 																						m.G0 = v11 + int32(16)
-																						return v99
+																						return base.I64_extend_i32_u(v99)
 																					} else {
 																						v94 = v80
 																						F_pfree(m, v25)
 																						mBase = m.M
 																						v96 = m.ExcPending
 																						if v96 != 0 {
-																							return int32(0)
+																							return int64(0)
 																						} else {
 																							v99 = v94
 																							m.G0 = v11 + int32(16)
-																							return v99
+																							return base.I64_extend_i32_u(v99)
 																						}
 																					}
 																				}
@@ -385,67 +385,67 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 											mBase = m.M
 											v63 = m.ExcPending
 											if v63 != 0 {
-												return int32(0)
+												return int64(0)
 											} else {
 												F_QTNFree(m, v43)
 												mBase = m.M
 												v65 = m.ExcPending
 												if v65 != 0 {
-													return int32(0)
+													return int64(0)
 												} else {
 													F_QTNFree(m, v59)
 													mBase = m.M
 													v67 = m.ExcPending
 													if v67 != 0 {
-														return int32(0)
+														return int64(0)
 													} else {
 														if v62 == int32(0) {
 															*(*int64)(unsafe.Add(mBase, uint32(v14))) = int64(32)
-															v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+															v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 															if v72 != v21 {
 																F_pfree(m, v21)
 																mBase = m.M
 																v75 = m.ExcPending
 																if v75 != 0 {
-																	return int32(0)
+																	return int64(0)
 																} else {
-																	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																	v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																	if v25 != v76 {
 																		v94 = v14
 																		F_pfree(m, v25)
 																		mBase = m.M
 																		v96 = m.ExcPending
 																		if v96 != 0 {
-																			return int32(0)
+																			return int64(0)
 																		} else {
 																			v99 = v94
 																			m.G0 = v11 + int32(16)
-																			return v99
+																			return base.I64_extend_i32_u(v99)
 																		}
 																	} else {
 																		v99 = v14
 																		m.G0 = v11 + int32(16)
-																		return v99
+																		return base.I64_extend_i32_u(v99)
 																	}
 																}
 															} else {
-																v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																if v25 != v76 {
 																	v94 = v14
 																	F_pfree(m, v25)
 																	mBase = m.M
 																	v96 = m.ExcPending
 																	if v96 != 0 {
-																		return int32(0)
+																		return int64(0)
 																	} else {
 																		v99 = v94
 																		m.G0 = v11 + int32(16)
-																		return v99
+																		return base.I64_extend_i32_u(v99)
 																	}
 																} else {
 																	v99 = v14
 																	m.G0 = v11 + int32(16)
-																	return v99
+																	return base.I64_extend_i32_u(v99)
 																}
 															}
 														} else {
@@ -453,121 +453,121 @@ func F_tsquery_rewrite(m *base.Module, l0 int32) int32 {
 															mBase = m.M
 															v79 = m.ExcPending
 															if v79 != 0 {
-																return int32(0)
+																return int64(0)
 															} else {
 																v80 = F_QTN2QT(m, v62)
 																mBase = m.M
 																v81 = m.ExcPending
 																if v81 != 0 {
-																	return int32(0)
+																	return int64(0)
 																} else {
 																	F_QTNFree(m, v62)
 																	mBase = m.M
 																	v83 = m.ExcPending
 																	if v83 != 0 {
-																		return int32(0)
+																		return int64(0)
 																	} else {
-																		v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+																		v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 																		if v84 != v14 {
 																			F_pfree(m, v14)
 																			mBase = m.M
 																			v87 = m.ExcPending
 																			if v87 != 0 {
-																				return int32(0)
+																				return int64(0)
 																			} else {
-																				v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+																				v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 																				if v88 != v21 {
 																					F_pfree(m, v21)
 																					mBase = m.M
 																					v91 = m.ExcPending
 																					if v91 != 0 {
-																						return int32(0)
+																						return int64(0)
 																					} else {
-																						v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																						v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																						if v25 == v92 {
 																							v99 = v80
 																							m.G0 = v11 + int32(16)
-																							return v99
+																							return base.I64_extend_i32_u(v99)
 																						} else {
 																							v94 = v80
 																							F_pfree(m, v25)
 																							mBase = m.M
 																							v96 = m.ExcPending
 																							if v96 != 0 {
-																								return int32(0)
+																								return int64(0)
 																							} else {
 																								v99 = v94
 																								m.G0 = v11 + int32(16)
-																								return v99
+																								return base.I64_extend_i32_u(v99)
 																							}
 																						}
 																					}
 																				} else {
-																					v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																					v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																					if v25 == v92 {
 																						v99 = v80
 																						m.G0 = v11 + int32(16)
-																						return v99
+																						return base.I64_extend_i32_u(v99)
 																					} else {
 																						v94 = v80
 																						F_pfree(m, v25)
 																						mBase = m.M
 																						v96 = m.ExcPending
 																						if v96 != 0 {
-																							return int32(0)
+																							return int64(0)
 																						} else {
 																							v99 = v94
 																							m.G0 = v11 + int32(16)
-																							return v99
+																							return base.I64_extend_i32_u(v99)
 																						}
 																					}
 																				}
 																			}
 																		} else {
-																			v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+																			v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 																			if v88 != v21 {
 																				F_pfree(m, v21)
 																				mBase = m.M
 																				v91 = m.ExcPending
 																				if v91 != 0 {
-																					return int32(0)
+																					return int64(0)
 																				} else {
-																					v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																					v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																					if v25 == v92 {
 																						v99 = v80
 																						m.G0 = v11 + int32(16)
-																						return v99
+																						return base.I64_extend_i32_u(v99)
 																					} else {
 																						v94 = v80
 																						F_pfree(m, v25)
 																						mBase = m.M
 																						v96 = m.ExcPending
 																						if v96 != 0 {
-																							return int32(0)
+																							return int64(0)
 																						} else {
 																							v99 = v94
 																							m.G0 = v11 + int32(16)
-																							return v99
+																							return base.I64_extend_i32_u(v99)
 																						}
 																					}
 																				}
 																			} else {
-																				v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+																				v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 																				if v25 == v92 {
 																					v99 = v80
 																					m.G0 = v11 + int32(16)
-																					return v99
+																					return base.I64_extend_i32_u(v99)
 																				} else {
 																					v94 = v80
 																					F_pfree(m, v25)
 																					mBase = m.M
 																					v96 = m.ExcPending
 																					if v96 != 0 {
-																						return int32(0)
+																						return int64(0)
 																					} else {
 																						v99 = v94
 																						m.G0 = v11 + int32(16)
-																						return v99
+																						return base.I64_extend_i32_u(v99)
 																					}
 																				}
 																			}

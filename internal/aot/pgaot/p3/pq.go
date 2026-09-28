@@ -182,7 +182,7 @@ func F_pq_getmsgfloat4(m *base.Module, l0 int32) float32 {
 				if v21 != 0 {
 					return float32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_pq_getmsgfloat4_1), int32(533), int32(_a_F_pq_getmsgfloat4_2))
+					F_errfinish(m, int32(_a_F_pq_getmsgfloat4_1), int32(532), int32(_a_F_pq_getmsgfloat4_2))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
@@ -257,7 +257,7 @@ func F_pq_getmsgfloat8(m *base.Module, l0 int32) float64 {
 				if v21 != 0 {
 					return float64(0)
 				} else {
-					F_errfinish(m, int32(_a_F_pq_getmsgfloat8_1), int32(533), int32(_a_F_pq_getmsgfloat8_2))
+					F_errfinish(m, int32(_a_F_pq_getmsgfloat8_1), int32(532), int32(_a_F_pq_getmsgfloat8_2))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {

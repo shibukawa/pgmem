@@ -114,7 +114,7 @@ func F_SS_charge_for_initplans(m *base.Module, l0 int32, l1 int32) {
 	_ = v176
 	v3 = int32(0)
 	v10 = float64(0)
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
 	if v11 == v3 {
 		return
 	} else {
@@ -131,7 +131,7 @@ func F_SS_charge_for_initplans(m *base.Module, l0 int32, l1 int32) {
 				v75 = *(*int32)(unsafe.Add(mBase, uint32(v17+v62<<(uint(int32(2))%32))))
 				v76 = *(*float64)(unsafe.Add(mBase, uint32(v75)+56))
 				v77 = *(*float64)(unsafe.Add(mBase, uint32(v75)+64))
-				v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+38)))
+				v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+39)))
 				v87 = v80 ^ int32(1) | v65
 				v93 = base.F64_add(v71, base.F64_add(v76, v77))
 			} else {
@@ -149,8 +149,8 @@ func F_SS_charge_for_initplans(m *base.Module, l0 int32, l1 int32) {
 					v45 = *(*float64)(unsafe.Add(mBase, uint32(v44)+56))
 					v46 = *(*float64)(unsafe.Add(mBase, uint32(v44)+64))
 					v48 = base.F64_add(base.F64_add(v35, base.F64_add(v40, v41)), base.F64_add(v45, v46))
-					v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44)+38)))
-					v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39)+38)))
+					v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44)+39)))
+					v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39)+39)))
 					v54 = base.B2i32(v49&v50 == int32(0)) | v29
 					v56 = v26 + v36
 					v58 = v34 + v36
@@ -175,13 +175,13 @@ func F_SS_charge_for_initplans(m *base.Module, l0 int32, l1 int32) {
 					v75 = *(*int32)(unsafe.Add(mBase, uint32(v17+v62<<(uint(int32(2))%32))))
 					v76 = *(*float64)(unsafe.Add(mBase, uint32(v75)+56))
 					v77 = *(*float64)(unsafe.Add(mBase, uint32(v75)+64))
-					v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+38)))
+					v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+39)))
 					v87 = v80 ^ int32(1) | v65
 					v93 = base.F64_add(v71, base.F64_add(v76, v77))
 				}
 			}
 		}
-		v94 = *(*int32)(unsafe.Add(mBase, uint32(l1)+32))
+		v94 = *(*int32)(unsafe.Add(mBase, uint32(l1)+44))
 		if v94 == int32(0) {
 		} else {
 			v97 = *(*int32)(unsafe.Add(mBase, uint32(v94)+4))
@@ -215,10 +215,10 @@ func F_SS_charge_for_initplans(m *base.Module, l0 int32, l1 int32) {
 		if v87&int32(1) != 0 {
 			v142 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(l1)+26)) = uint8(v142)
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+40)) = v142
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+52)) = v142
 			return
 		} else {
-			v146 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+			v146 = *(*int32)(unsafe.Add(mBase, uint32(l1)+52))
 			if v146 == int32(0) {
 			} else {
 				v149 = *(*int32)(unsafe.Add(mBase, uint32(v146)+4))
@@ -340,7 +340,7 @@ func F_SS_compute_initplan_cost(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				v85 = *(*int32)(unsafe.Add(mBase, uint32(v81+v72<<(uint(int32(2))%32))))
 				v86 = *(*float64)(unsafe.Add(mBase, uint32(v85)+56))
 				v87 = *(*float64)(unsafe.Add(mBase, uint32(v85)+64))
-				v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v85)+38)))
+				v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v85)+39)))
 				v99 = v90 ^ int32(1) | v74
 				v105 = base.F64_add(v80, base.F64_add(v86, v87))
 			} else {
@@ -365,8 +365,8 @@ func F_SS_compute_initplan_cost(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					v52 = *(*float64)(unsafe.Add(mBase, uint32(v51)+56))
 					v53 = *(*float64)(unsafe.Add(mBase, uint32(v51)+64))
 					v55 = base.F64_add(base.F64_add(v42, base.F64_add(v47, v48)), base.F64_add(v52, v53))
-					v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+38)))
-					v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46)+38)))
+					v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+39)))
+					v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46)+39)))
 					v61 = base.B2i32(v56&v57 == int32(0)) | v36
 					v63 = v34 + v43
 					v65 = v41 + v43
@@ -392,7 +392,7 @@ func F_SS_compute_initplan_cost(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					v85 = *(*int32)(unsafe.Add(mBase, uint32(v81+v72<<(uint(int32(2))%32))))
 					v86 = *(*float64)(unsafe.Add(mBase, uint32(v85)+56))
 					v87 = *(*float64)(unsafe.Add(mBase, uint32(v85)+64))
-					v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v85)+38)))
+					v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v85)+39)))
 					v99 = v90 ^ int32(1) | v74
 					v105 = base.F64_add(v80, base.F64_add(v86, v87))
 				}
@@ -503,7 +503,7 @@ func F_SS_identify_outer_params(m *base.Module, l0 int32) {
 	_ = v123
 	v2 = int32(0)
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+64))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+72))
 	if v9 != 0 {
 		goto L1
 	} else {
@@ -534,11 +534,11 @@ L5:
 	goto L6
 L6:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v123
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v123
 	goto L3
 L7:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v15)+28))
 	if v18 == int32(0) {
 		v47 = v14
 		goto L9
@@ -551,7 +551,7 @@ L8:
 	goto L6
 L9:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(v15)+72))
+	v51 = *(*int32)(unsafe.Add(mBase, uint32(v15)+80))
 	if v51 == int32(0) {
 		v109 = v47
 		goto L17
@@ -609,7 +609,7 @@ L16:
 	goto L13
 L17:
 	;
-	v113 = *(*int32)(unsafe.Add(mBase, uint32(v15)+344))
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(v15)+360))
 	if int32(0) <= v113 {
 		goto L30
 	} else {

@@ -66,7 +66,7 @@ func F_populate_recordset_record(m *base.Module, l0 int32, l1 int32) {
 	_ = v58
 	var v59 int32
 	_ = v59
-	var v62 int32
+	var v62 int64
 	_ = v62
 	var v63 int32
 	_ = v63

@@ -13,7 +13,7 @@ func F_IsPostmasterChildWalSender(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v3 = *(*int32)(unsafe.Add(mBase, _c_F_IsPostmasterChildWalSender[0]))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(v3+l0<<(uint(int32(2))%32))+44))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v3+l0<<(uint(int32(2))%32))+48))
 	return base.B2i32(v7 == int32(3))
 }
 func F_PostmasterChildName(m *base.Module, l0 int32) int32 {
@@ -38,8 +38,8 @@ func F_RegisterPostmasterChildActive(m *base.Module) {
 	v2 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterPostmasterChildActive[0]))
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterPostmasterChildActive[1]))
 	v5 = int32(2)
-	*(*int32)(unsafe.Add(mBase, uint32(v2+v4<<(uint(v5)%32))+44)) = v5
-	F_on_shmem_exit(m, int32(1104), int32(0))
+	*(*int32)(unsafe.Add(mBase, uint32(v2+v4<<(uint(v5)%32))+48)) = v5
+	F_on_shmem_exit(m, int32(1197), int64(0))
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {

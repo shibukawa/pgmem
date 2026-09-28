@@ -49,7 +49,7 @@ func F_system_time_nextsampletuple(m *base.Module, l0 int32, l1 int32, l2 int32)
 	*(*uint16)(unsafe.Add(mBase, uint32(v4)+24)) = uint16(v12)
 	return v12 & int32(_a_F_system_time_nextsampletuple_0)
 }
-func F_system_user(m *base.Module, l0 int32) int32 {
+func F_system_user(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -58,21 +58,21 @@ func F_system_user(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	var v10 int32
-	_ = v10
+	var v11 int32
+	_ = v11
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_system_user[0]))
 	if v4 != 0 {
 		v5 = F_cstring_to_text(m, v4)
 		mBase = m.M
 		v8 = m.ExcPending
 		if v8 != 0 {
-			return int32(0)
+			return int64(0)
 		} else {
-			return v5
+			return base.I64_extend_i32_u(v5)
 		}
 	} else {
-		v10 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v10)
-		return int32(0)
+		v11 = int32(1)
+		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v11)
+		return int64(0)
 	}
 }

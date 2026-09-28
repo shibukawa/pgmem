@@ -46,48 +46,16 @@ func F_check_sql_fn_retval(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	}
 }
 func F_map_sql_identifier_to_xml_name(m *base.Module) int32 {
+	var v3 int32
+	_ = v3
 	var v6 int32
 	_ = v6
-	var v9 int32
-	_ = v9
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v22 int32
-	_ = v22
-	F_errstart_cold(m, int32(21), int32(0))
+	v3 = Fn14412(m, int32(_a_F_map_sql_identifier_to_xml_name_0), int32(2468))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
 	} else {
-		F_errcode(m, int32(1088))
-		v9 = m.ExcPending
-		if v9 != 0 {
-			return int32(0)
-		} else {
-			F_errmsg(m, int32(_a_F_map_sql_identifier_to_xml_name_0), int32(0))
-			v13 = m.ExcPending
-			if v13 != 0 {
-				return int32(0)
-			} else {
-				F_errdetail(m, int32(_a_F_map_sql_identifier_to_xml_name_1), int32(0))
-				v17 = m.ExcPending
-				if v17 != 0 {
-					return int32(0)
-				} else {
-					F_errfinish(m, int32(_a_F_map_sql_identifier_to_xml_name_2), int32(2425), int32(_a_F_map_sql_identifier_to_xml_name_3))
-					v22 = m.ExcPending
-					if v22 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
-			}
-		}
+		return v3
 	}
 }
 func F_sql_exec_error_callback(m *base.Module, l0 int32) {
@@ -317,7 +285,7 @@ func F_sql_fn_param_ref(m *base.Module, l0 int32, l1 int32) int32 {
 		v44 = v3
 		return v44
 	} else {
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+116))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 		if v10 < v6 {
 			v44 = v3
@@ -361,10 +329,10 @@ func F_sql_fn_param_ref(m *base.Module, l0 int32, l1 int32) int32 {
 func F_sql_fn_parser_setup(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(679)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(680)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+116)) = l1
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(725)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = int32(726)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = int32(0)
 	return
 }
 func F_sql_inline_error_callback(m *base.Module, l0 int32) {

@@ -764,7 +764,7 @@ L27:
 	goto L22
 L28:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(242), int32(_a_F_dsm_impl_op_6))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(243), int32(_a_F_dsm_impl_op_6))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -1015,7 +1015,7 @@ L66:
 	goto L61
 L67:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(266), int32(_a_F_dsm_impl_op_6))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(267), int32(_a_F_dsm_impl_op_6))
 	mBase = m.M
 	v213 = m.ExcPending
 	if v213 != 0 {
@@ -1160,7 +1160,7 @@ L87:
 	goto L82
 L88:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(291), int32(_a_F_dsm_impl_op_6))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(292), int32(_a_F_dsm_impl_op_6))
 	mBase = m.M
 	v270 = m.ExcPending
 	if v270 != 0 {
@@ -1188,7 +1188,7 @@ L91:
 L92:
 	;
 	v282 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_impl_op[4]))
-	*(*int32)(unsafe.Add(mBase, uint32(v282))) = int32(167772185)
+	*(*int32)(unsafe.Add(mBase, uint32(v282))) = int32(167772187)
 	goto L94
 L93:
 	;
@@ -1359,7 +1359,7 @@ L117:
 	goto L112
 L118:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(310), int32(_a_F_dsm_impl_op_6))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(311), int32(_a_F_dsm_impl_op_6))
 	mBase = m.M
 	v383 = m.ExcPending
 	if v383 != 0 {
@@ -1500,7 +1500,7 @@ L138:
 	goto L133
 L139:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(332), int32(_a_F_dsm_impl_op_6))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(333), int32(_a_F_dsm_impl_op_6))
 	mBase = m.M
 	v462 = m.ExcPending
 	if v462 != 0 {
@@ -1575,7 +1575,7 @@ L149:
 	}
 L150:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(470), int32(_a_F_dsm_impl_op_18))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(471), int32(_a_F_dsm_impl_op_18))
 	mBase = m.M
 	v499 = m.ExcPending
 	if v499 != 0 {
@@ -1750,7 +1750,7 @@ L175:
 	goto L170
 L176:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(519), int32(_a_F_dsm_impl_op_18))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(520), int32(_a_F_dsm_impl_op_18))
 	mBase = m.M
 	v560 = m.ExcPending
 	if v560 != 0 {
@@ -1881,7 +1881,7 @@ L192:
 	goto L187
 L193:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(538), int32(_a_F_dsm_impl_op_18))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(539), int32(_a_F_dsm_impl_op_18))
 	mBase = m.M
 	v611 = m.ExcPending
 	if v611 != 0 {
@@ -1978,7 +1978,7 @@ L206:
 	goto L201
 L207:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(548), int32(_a_F_dsm_impl_op_18))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(549), int32(_a_F_dsm_impl_op_18))
 	mBase = m.M
 	v656 = m.ExcPending
 	if v656 != 0 {
@@ -2088,7 +2088,7 @@ L222:
 	goto L217
 L223:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(564), int32(_a_F_dsm_impl_op_18))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(565), int32(_a_F_dsm_impl_op_18))
 	mBase = m.M
 	v695 = m.ExcPending
 	if v695 != 0 {
@@ -2195,7 +2195,7 @@ L238:
 	goto L233
 L239:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(585), int32(_a_F_dsm_impl_op_18))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(586), int32(_a_F_dsm_impl_op_18))
 	mBase = m.M
 	v742 = m.ExcPending
 	if v742 != 0 {
@@ -2329,7 +2329,7 @@ L257:
 	goto L252
 L258:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(823), int32(_a_F_dsm_impl_op_21))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(824), int32(_a_F_dsm_impl_op_21))
 	mBase = m.M
 	v805 = m.ExcPending
 	if v805 != 0 {
@@ -2466,7 +2466,7 @@ L278:
 	goto L273
 L279:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(837), int32(_a_F_dsm_impl_op_21))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(838), int32(_a_F_dsm_impl_op_21))
 	mBase = m.M
 	v852 = m.ExcPending
 	if v852 != 0 {
@@ -2615,7 +2615,7 @@ L299:
 	goto L294
 L300:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(861), int32(_a_F_dsm_impl_op_21))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(862), int32(_a_F_dsm_impl_op_21))
 	mBase = m.M
 	v904 = m.ExcPending
 	if v904 != 0 {
@@ -2648,7 +2648,7 @@ L305:
 L306:
 	;
 	v925 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_impl_op[4]))
-	*(*int32)(unsafe.Add(mBase, uint32(v925))) = int32(167772186)
+	*(*int32)(unsafe.Add(mBase, uint32(v925))) = int32(167772188)
 	v928 = int32(_a_F_dsm_impl_op_22)
 	if base.Ui32(v928) <= base.Ui32(v912) {
 		goto L309
@@ -2812,7 +2812,7 @@ L329:
 	goto L324
 L330:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(912), int32(_a_F_dsm_impl_op_21))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(913), int32(_a_F_dsm_impl_op_21))
 	mBase = m.M
 	v987 = m.ExcPending
 	if v987 != 0 {
@@ -2935,7 +2935,7 @@ L346:
 	goto L341
 L347:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(934), int32(_a_F_dsm_impl_op_21))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(935), int32(_a_F_dsm_impl_op_21))
 	mBase = m.M
 	v1050 = m.ExcPending
 	if v1050 != 0 {
@@ -2997,7 +2997,7 @@ L353:
 	}
 L354:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(945), int32(_a_F_dsm_impl_op_21))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(946), int32(_a_F_dsm_impl_op_21))
 	mBase = m.M
 	v1077 = m.ExcPending
 	if v1077 != 0 {
@@ -3023,7 +3023,7 @@ L356:
 	}
 L357:
 	;
-	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(191), int32(_a_F_dsm_impl_op_25))
+	F_errfinish(m, int32(_a_F_dsm_impl_op_5), int32(192), int32(_a_F_dsm_impl_op_25))
 	mBase = m.M
 	v1109 = m.ExcPending
 	if v1109 != 0 {
@@ -3035,5 +3035,43 @@ L358:
 	;
 	base.Wasm_trap_unreachable()
 	for {
+	}
+}
+func F_dsm_main_space_request(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v21 int32
+	_ = v21
+	v3 = m.G0
+	v5 = v3 - int32(16)
+	m.G0 = v5
+	v9 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_main_space_request[0]))
+	v11 = v9 << (uint(int32(20)) % 32)
+	*(*int32)(unsafe.Add(mBase, _c_F_dsm_main_space_request[1])) = v11
+	if v11 != 0 {
+		*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = int32(_a_F_dsm_main_space_request_0)
+		*(*int32)(unsafe.Add(mBase, uint32(v5)+8)) = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v11
+		*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(_a_F_dsm_main_space_request_1)
+		F_ShmemRequestStructWithOpts(m, v5)
+		mBase = m.M
+		v21 = m.ExcPending
+		if v21 != 0 {
+			return
+		} else {
+			m.G0 = v5 + int32(16)
+			return
+		}
+	} else {
+		m.G0 = v5 + int32(16)
+		return
 	}
 }

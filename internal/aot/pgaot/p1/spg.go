@@ -138,7 +138,7 @@ L7:
 L8:
 	;
 	v29 = v17 + int32(16)
-	F_pg_qsort(m, v29, l3, int32(2), int32(244))
+	F_pg_qsort(m, v29, l3, int32(2), int32(252))
 	mBase = m.M
 	v33 = m.ExcPending
 	if v33 != 0 {
@@ -331,7 +331,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(_a_F_spgPageIndexMultiDelete_2), int32(171), int32(_a_F_spgPageIndexMultiDelete_3))
+	F_errfinish(m, int32(_a_F_spgPageIndexMultiDelete_2), int32(170), int32(_a_F_spgPageIndexMultiDelete_3))
 	mBase = m.M
 	v156 = m.ExcPending
 	if v156 != 0 {
@@ -345,44 +345,44 @@ L38:
 	for {
 	}
 }
-func F_spg_quad_config(m *base.Module, l0 int32) int32 {
+func F_spg_quad_config(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
 	var v3 int32
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v3 = int32(1)
 	*(*uint16)(unsafe.Add(mBase, uint32(v2)+12)) = uint16(v3)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(9783935500888)
-	return int32(0)
+	return int64(0)
 }
-func F_spg_range_quad_config(m *base.Module, l0 int32) int32 {
+func F_spg_range_quad_config(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
 	var v3 int32
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v3 = int32(1)
 	*(*uint16)(unsafe.Add(mBase, uint32(v2)+12)) = uint16(v3)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(9783935504119)
-	return int32(0)
+	return int64(0)
 }
-func F_spg_text_config(m *base.Module, l0 int32) int32 {
+func F_spg_text_config(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
 	var v2 int32
 	_ = v2
 	var v3 int32
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v3 = int32(257)
 	*(*uint16)(unsafe.Add(mBase, uint32(v2)+12)) = uint16(v3)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(90194313241)
-	return int32(0)
+	return int64(0)
 }
 func F_spg_xlog_startup(m *base.Module) {
 	mBase := m.M

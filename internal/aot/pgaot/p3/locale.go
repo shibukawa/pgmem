@@ -364,7 +364,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(_a_F_check_locale_1), int32(312), int32(_a_F_check_locale_2))
+	F_errfinish(m, int32(_a_F_check_locale_1), int32(286), int32(_a_F_check_locale_2))
 	mBase = m.M
 	v44 = m.ExcPending
 	if v44 != 0 {
@@ -1067,7 +1067,7 @@ L135:
 	}
 L136:
 	;
-	F_errfinish(m, int32(_a_F_check_locale_1), int32(335), int32(_a_F_check_locale_2))
+	F_errfinish(m, int32(_a_F_check_locale_1), int32(309), int32(_a_F_check_locale_2))
 	mBase = m.M
 	v504 = m.ExcPending
 	if v504 != 0 {
@@ -1178,7 +1178,7 @@ L150:
 	}
 L151:
 	;
-	F_errfinish(m, int32(_a_F_check_locale_1), int32(344), int32(_a_F_check_locale_2))
+	F_errfinish(m, int32(_a_F_check_locale_1), int32(318), int32(_a_F_check_locale_2))
 	mBase = m.M
 	v541 = m.ExcPending
 	if v541 != 0 {

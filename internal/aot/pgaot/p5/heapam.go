@@ -32,10 +32,10 @@ func F_heapam_fetch_row_version(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	v8 = v6 - int32(16)
 	m.G0 = v8
 	v10 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+4)))
-	*(*uint16)(unsafe.Add(mBase, uint32(l3)+56)) = uint16(v10)
+	*(*uint16)(unsafe.Add(mBase, uint32(l3)+60)) = uint16(v10)
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	*(*int32)(unsafe.Add(mBase, uint32(l3)+52)) = v12
-	v15 = l3 + int32(48)
+	*(*int32)(unsafe.Add(mBase, uint32(l3)+56)) = v12
+	v15 = l3 + int32(52)
 	v19 = F_heap_fetch(m, l0, l2, v15, v8+int32(12), int32(0))
 	mBase = m.M
 	v22 = m.ExcPending
@@ -51,7 +51,7 @@ func F_heapam_fetch_row_version(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 				return int32(0)
 			} else {
 				v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-				*(*int32)(unsafe.Add(mBase, uint32(l3)+36)) = v26
+				*(*int32)(unsafe.Add(mBase, uint32(l3)+40)) = v26
 				m.G0 = v8 + int32(16)
 				return v19
 			}
@@ -135,12 +135,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v69
 	var v70 int32
 	_ = v70
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	if v5 == int32(0) {
 		return int32(0)
 	} else {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+124))
-		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
 		if v11 != 0 {
 			F_ReleaseBuffer(m, v11)
 			mBase = m.M
@@ -148,10 +148,10 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 			if v15 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = int32(0)
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = int32(0)
 				v18 = *(*int32)(unsafe.Add(mBase, uint32(v10)+24))
 				if v18 != 0 {
-					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 					v20 = m.T0[v18].(func(*base.Module, int32, int32) int32)(m, l1, v19)
 					mBase = m.M
 					v21 = m.ExcPending
@@ -159,10 +159,10 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						v46 = v20
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v46
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v46
 						if v46 == int32(-1) {
 							v50 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v50)
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v50)
 							return v50
 						} else {
 							v55 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_scan_sample_next_block[0]))
@@ -175,14 +175,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 								} else {
 									v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 									v59 = int32(0)
-									v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+									v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 									v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 									mBase = m.M
 									v63 = m.ExcPending
 									if v63 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+										*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 										v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 										if v65&int32(1) != 0 {
 											F_heap_prepare_pagescan(m, l0)
@@ -192,12 +192,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 												return int32(0)
 											} else {
 												v70 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+												*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 												return v70
 											}
 										} else {
 											v70 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 											return v70
 										}
 									}
@@ -205,14 +205,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 							} else {
 								v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 								v59 = int32(0)
-								v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+								v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 								v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 									v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 									if v65&int32(1) != 0 {
 										F_heap_prepare_pagescan(m, l0)
@@ -222,12 +222,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											v70 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 											return v70
 										}
 									} else {
 										v70 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 										return v70
 									}
 								}
@@ -235,14 +235,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+					v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 					if v22 == int32(-1) {
-						v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+						v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 						v46 = v25
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v46
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v46
 						if v46 == int32(-1) {
 							v50 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v50)
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v50)
 							return v50
 						} else {
 							v55 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_scan_sample_next_block[0]))
@@ -255,14 +255,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 								} else {
 									v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 									v59 = int32(0)
-									v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+									v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 									v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 									mBase = m.M
 									v63 = m.ExcPending
 									if v63 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+										*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 										v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 										if v65&int32(1) != 0 {
 											F_heap_prepare_pagescan(m, l0)
@@ -272,12 +272,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 												return int32(0)
 											} else {
 												v70 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+												*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 												return v70
 											}
 										} else {
 											v70 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 											return v70
 										}
 									}
@@ -285,14 +285,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 							} else {
 								v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 								v59 = int32(0)
-								v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+								v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 								v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 									v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 									if v65&int32(1) != 0 {
 										F_heap_prepare_pagescan(m, l0)
@@ -302,12 +302,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											v70 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 											return v70
 										}
 									} else {
 										v70 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 										return v70
 									}
 								}
@@ -315,7 +315,7 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					} else {
 						v27 = v22 + int32(1)
-						v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+						v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 						if base.Ui32(v27) < base.Ui32(v29) {
 							v31 = v27
 						} else {
@@ -330,13 +330,13 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 							if v37 != 0 {
 								return int32(0)
 							} else {
-								v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+								v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 								if v31 != v38 {
 									v46 = v31
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v46
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v46
 									if v46 == int32(-1) {
 										v50 = int32(0)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v50)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v50)
 										return v50
 									} else {
 										v55 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_scan_sample_next_block[0]))
@@ -349,14 +349,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 											} else {
 												v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 												v59 = int32(0)
-												v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+												v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 												v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 												mBase = m.M
 												v63 = m.ExcPending
 												if v63 != 0 {
 													return int32(0)
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+													*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 													v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 													if v65&int32(1) != 0 {
 														F_heap_prepare_pagescan(m, l0)
@@ -366,12 +366,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 															return int32(0)
 														} else {
 															v70 = int32(1)
-															*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+															*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 															return v70
 														}
 													} else {
 														v70 = int32(1)
-														*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+														*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 														return v70
 													}
 												}
@@ -379,14 +379,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 										} else {
 											v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											v59 = int32(0)
-											v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+											v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 											v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 											mBase = m.M
 											v63 = m.ExcPending
 											if v63 != 0 {
 												return int32(0)
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+												*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 												v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 												if v65&int32(1) != 0 {
 													F_heap_prepare_pagescan(m, l0)
@@ -396,32 +396,32 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 														return int32(0)
 													} else {
 														v70 = int32(1)
-														*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+														*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 														return v70
 													}
 												} else {
 													v70 = int32(1)
-													*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+													*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 													return v70
 												}
 											}
 										}
 									}
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = int32(-1)
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = int32(-1)
 									v42 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v42)
+									*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v42)
 									return v42
 								}
 							}
 						} else {
-							v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+							v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 							if v31 != v38 {
 								v46 = v31
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v46
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v46
 								if v46 == int32(-1) {
 									v50 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v50)
+									*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v50)
 									return v50
 								} else {
 									v55 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_scan_sample_next_block[0]))
@@ -434,14 +434,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 										} else {
 											v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											v59 = int32(0)
-											v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+											v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 											v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 											mBase = m.M
 											v63 = m.ExcPending
 											if v63 != 0 {
 												return int32(0)
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+												*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 												v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 												if v65&int32(1) != 0 {
 													F_heap_prepare_pagescan(m, l0)
@@ -451,12 +451,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 														return int32(0)
 													} else {
 														v70 = int32(1)
-														*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+														*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 														return v70
 													}
 												} else {
 													v70 = int32(1)
-													*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+													*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 													return v70
 												}
 											}
@@ -464,14 +464,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 									} else {
 										v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 										v59 = int32(0)
-										v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+										v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 										v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 										mBase = m.M
 										v63 = m.ExcPending
 										if v63 != 0 {
 											return int32(0)
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+											*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 											v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 											if v65&int32(1) != 0 {
 												F_heap_prepare_pagescan(m, l0)
@@ -481,21 +481,21 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 													return int32(0)
 												} else {
 													v70 = int32(1)
-													*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+													*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 													return v70
 												}
 											} else {
 												v70 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+												*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 												return v70
 											}
 										}
 									}
 								}
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = int32(-1)
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = int32(-1)
 								v42 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v42)
+								*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v42)
 								return v42
 							}
 						}
@@ -505,7 +505,7 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v10)+24))
 			if v18 != 0 {
-				v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+				v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 				v20 = m.T0[v18].(func(*base.Module, int32, int32) int32)(m, l1, v19)
 				mBase = m.M
 				v21 = m.ExcPending
@@ -513,10 +513,10 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 					return int32(0)
 				} else {
 					v46 = v20
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v46
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v46
 					if v46 == int32(-1) {
 						v50 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v50)
+						*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v50)
 						return v50
 					} else {
 						v55 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_scan_sample_next_block[0]))
@@ -529,14 +529,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 							} else {
 								v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 								v59 = int32(0)
-								v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+								v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 								v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 									v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 									if v65&int32(1) != 0 {
 										F_heap_prepare_pagescan(m, l0)
@@ -546,12 +546,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											v70 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 											return v70
 										}
 									} else {
 										v70 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 										return v70
 									}
 								}
@@ -559,14 +559,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 						} else {
 							v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 							v59 = int32(0)
-							v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+							v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 							v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 							mBase = m.M
 							v63 = m.ExcPending
 							if v63 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 								v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 								if v65&int32(1) != 0 {
 									F_heap_prepare_pagescan(m, l0)
@@ -576,12 +576,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 										return int32(0)
 									} else {
 										v70 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 										return v70
 									}
 								} else {
 									v70 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+									*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 									return v70
 								}
 							}
@@ -589,14 +589,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 					}
 				}
 			} else {
-				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 				if v22 == int32(-1) {
-					v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+					v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 					v46 = v25
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v46
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v46
 					if v46 == int32(-1) {
 						v50 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v50)
+						*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v50)
 						return v50
 					} else {
 						v55 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_scan_sample_next_block[0]))
@@ -609,14 +609,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 							} else {
 								v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 								v59 = int32(0)
-								v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+								v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 								v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 									v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 									if v65&int32(1) != 0 {
 										F_heap_prepare_pagescan(m, l0)
@@ -626,12 +626,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											v70 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 											return v70
 										}
 									} else {
 										v70 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 										return v70
 									}
 								}
@@ -639,14 +639,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 						} else {
 							v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 							v59 = int32(0)
-							v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+							v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 							v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 							mBase = m.M
 							v63 = m.ExcPending
 							if v63 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 								v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 								if v65&int32(1) != 0 {
 									F_heap_prepare_pagescan(m, l0)
@@ -656,12 +656,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 										return int32(0)
 									} else {
 										v70 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 										return v70
 									}
 								} else {
 									v70 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+									*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 									return v70
 								}
 							}
@@ -669,7 +669,7 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 					}
 				} else {
 					v27 = v22 + int32(1)
-					v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+					v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 					if base.Ui32(v27) < base.Ui32(v29) {
 						v31 = v27
 					} else {
@@ -684,13 +684,13 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 						if v37 != 0 {
 							return int32(0)
 						} else {
-							v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+							v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 							if v31 != v38 {
 								v46 = v31
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v46
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v46
 								if v46 == int32(-1) {
 									v50 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v50)
+									*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v50)
 									return v50
 								} else {
 									v55 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_scan_sample_next_block[0]))
@@ -703,14 +703,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 										} else {
 											v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											v59 = int32(0)
-											v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+											v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 											v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 											mBase = m.M
 											v63 = m.ExcPending
 											if v63 != 0 {
 												return int32(0)
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+												*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 												v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 												if v65&int32(1) != 0 {
 													F_heap_prepare_pagescan(m, l0)
@@ -720,12 +720,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 														return int32(0)
 													} else {
 														v70 = int32(1)
-														*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+														*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 														return v70
 													}
 												} else {
 													v70 = int32(1)
-													*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+													*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 													return v70
 												}
 											}
@@ -733,14 +733,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 									} else {
 										v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 										v59 = int32(0)
-										v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+										v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 										v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 										mBase = m.M
 										v63 = m.ExcPending
 										if v63 != 0 {
 											return int32(0)
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+											*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 											v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 											if v65&int32(1) != 0 {
 												F_heap_prepare_pagescan(m, l0)
@@ -750,32 +750,32 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 													return int32(0)
 												} else {
 													v70 = int32(1)
-													*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+													*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 													return v70
 												}
 											} else {
 												v70 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+												*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 												return v70
 											}
 										}
 									}
 								}
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = int32(-1)
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = int32(-1)
 								v42 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v42)
+								*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v42)
 								return v42
 							}
 						}
 					} else {
-						v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+						v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 						if v31 != v38 {
 							v46 = v31
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v46
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v46
 							if v46 == int32(-1) {
 								v50 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v50)
+								*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v50)
 								return v50
 							} else {
 								v55 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_scan_sample_next_block[0]))
@@ -788,14 +788,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 									} else {
 										v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 										v59 = int32(0)
-										v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+										v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 										v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 										mBase = m.M
 										v63 = m.ExcPending
 										if v63 != 0 {
 											return int32(0)
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+											*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 											v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 											if v65&int32(1) != 0 {
 												F_heap_prepare_pagescan(m, l0)
@@ -805,12 +805,12 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 													return int32(0)
 												} else {
 													v70 = int32(1)
-													*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+													*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 													return v70
 												}
 											} else {
 												v70 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+												*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 												return v70
 											}
 										}
@@ -818,14 +818,14 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 								} else {
 									v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 									v59 = int32(0)
-									v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+									v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
 									v62 = F_ReadBufferExtended(m, v58, v59, v46, v59, v61)
 									mBase = m.M
 									v63 = m.ExcPending
 									if v63 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v62
+										*(*int32)(unsafe.Add(mBase, uint32(l0)+60)) = v62
 										v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+29)))
 										if v65&int32(1) != 0 {
 											F_heap_prepare_pagescan(m, l0)
@@ -835,21 +835,21 @@ func F_heapam_scan_sample_next_block(m *base.Module, l0 int32, l1 int32) int32 {
 												return int32(0)
 											} else {
 												v70 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+												*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 												return v70
 											}
 										} else {
 											v70 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v70)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v70)
 											return v70
 										}
 									}
 								}
 							}
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = int32(-1)
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = int32(-1)
 							v42 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, uint32(l0)+48)) = uint8(v42)
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v42)
 							return v42
 						}
 					}
@@ -889,86 +889,92 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 	_ = v33
 	var v36 int32
 	_ = v36
-	var v37 int32
-	_ = v37
-	var v41 int32
-	_ = v41
-	var v47 int32
-	_ = v47
-	var v49 int32
-	_ = v49
+	var v40 int32
+	_ = v40
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v54 int32
+	_ = v54
 	var v55 int32
 	_ = v55
-	var v56 int32
-	_ = v56
-	var v64 int32
-	_ = v64
-	var v71 int32
-	_ = v71
-	var v76 int32
-	_ = v76
+	var v58 int32
+	_ = v58
+	var v66 int32
+	_ = v66
+	var v73 int32
+	_ = v73
 	var v78 int32
 	_ = v78
-	var v83 int32
-	_ = v83
-	var v86 int32
-	_ = v86
-	var v87 int32
-	_ = v87
+	var v80 int32
+	_ = v80
+	var v85 int32
+	_ = v85
+	var v88 int32
+	_ = v88
 	var v89 int32
 	_ = v89
 	var v91 int32
 	_ = v91
-	var v92 int32
-	_ = v92
-	var v96 int32
-	_ = v96
-	var v99 int32
-	_ = v99
-	var v100 int32
-	_ = v100
+	var v93 int32
+	_ = v93
+	var v94 int32
+	_ = v94
+	var v98 int32
+	_ = v98
 	var v101 int32
 	_ = v101
-	var v104 int32
-	_ = v104
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
 	var v106 int32
 	_ = v106
 	var v108 int32
 	_ = v108
-	var v109 int32
-	_ = v109
-	var v115 int32
-	_ = v115
-	var v119 int32
-	_ = v119
-	var v122 int64
-	_ = v122
-	var v123 int32
-	_ = v123
-	var v127 int32
-	_ = v127
+	var v110 int32
+	_ = v110
+	var v111 int32
+	_ = v111
+	var v117 int32
+	_ = v117
+	var v121 int32
+	_ = v121
+	var v124 int64
+	_ = v124
+	var v125 int32
+	_ = v125
 	var v129 int32
 	_ = v129
-	var v134 int32
-	_ = v134
-	var v142 int32
-	_ = v142
-	var v146 int32
-	_ = v146
-	var v151 int32
-	_ = v151
+	var v131 int32
+	_ = v131
+	var v136 int32
+	_ = v136
+	var v144 int32
+	_ = v144
+	var v148 int32
+	_ = v148
 	var v153 int32
 	_ = v153
-	var v159 int32
-	_ = v159
-	var v163 int32
-	_ = v163
+	var v157 int32
+	_ = v157
+	var v161 int32
+	_ = v161
+	var v166 int32
+	_ = v166
+	var v168 int32
+	_ = v168
+	var v174 int32
+	_ = v174
+	var v178 int32
+	_ = v178
 	v10 = m.G0
 	v12 = v10 - int32(16)
 	m.G0 = v12
 	v14 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)) = uint8(v14)
-	v17 = l1 + int32(28)
+	v17 = l1 + int32(32)
 	v21 = F_ExecFetchSlotHeapTuple(m, l1, v14, v12+int32(15))
 	mBase = m.M
 	v22 = m.ExcPending
@@ -988,44 +994,38 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 			if v33 != 0 {
 				return
 			} else {
-				F_LockBuffer(m, v32, int32(2))
+				F_LockBufferInternal(m, v32, int32(3))
 				mBase = m.M
 				v36 = m.ExcPending
 				if v36 != 0 {
 					return
 				} else {
-					v37 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
 					if v32 < int32(0) {
-						v41 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[0]))
-						v47 = *(*int32)(unsafe.Add(mBase, uint32(v41+(v32^int32(-1))<<(uint(int32(2))%32))))
-						v55 = v47
+						v40 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[0]))
+						v46 = *(*int32)(unsafe.Add(mBase, uint32(v40+(v32^int32(-1))<<(uint(int32(2))%32))))
+						v54 = v46
 					} else {
-						v49 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[1]))
-						v55 = v49 + v32<<(uint(int32(13))%32) + int32(-8192)
+						v48 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[1]))
+						v54 = v48 + v32<<(uint(int32(13))%32) + int32(-8192)
 					}
-					v56 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v55)+12)))
-					if base.Ui32(int32(25)) <= base.Ui32(v56) {
-						v64 = int32(base.Ui32(v56+int32(_a_F_heapam_tuple_complete_speculative_0)) >> (uint(int32(2)) % 32))
-					} else {
-						v64 = int32(0)
-					}
-					if base.Ui32(v64&int32(_a_F_heapam_tuple_complete_speculative_1)) < base.Ui32(v37) {
+					v55 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
+					if v55 == int32(0) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v142 = m.ExcPending
-						if v142 != 0 {
+						v144 = m.ExcPending
+						if v144 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(_a_F_heapam_tuple_complete_speculative_2), int32(0))
+							F_errmsg_internal(m, int32(_a_F_heapam_tuple_complete_speculative_0), int32(0))
 							mBase = m.M
-							v146 = m.ExcPending
-							if v146 != 0 {
+							v148 = m.ExcPending
+							if v148 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(_a_F_heapam_tuple_complete_speculative_3), int32(_a_F_heapam_tuple_complete_speculative_4), int32(_a_F_heapam_tuple_complete_speculative_5))
+								F_errfinish(m, int32(_a_F_heapam_tuple_complete_speculative_1), int32(_a_F_heapam_tuple_complete_speculative_2), int32(_a_F_heapam_tuple_complete_speculative_3))
 								mBase = m.M
-								v151 = m.ExcPending
-								if v151 != 0 {
+								v153 = m.ExcPending
+								if v153 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -1035,24 +1035,29 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 							}
 						}
 					} else {
-						v71 = *(*int32)(unsafe.Add(mBase, uint32(v55+v37<<(uint(int32(2))%32))+20))
-						if v71&int32(_a_F_heapam_tuple_complete_speculative_6) != int32(_a_F_heapam_tuple_complete_speculative_7) {
+						v58 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v54)+12)))
+						if base.Ui32(int32(25)) <= base.Ui32(v58) {
+							v66 = int32(base.Ui32(v58+int32(_a_F_heapam_tuple_complete_speculative_4)) >> (uint(int32(2)) % 32))
+						} else {
+							v66 = int32(0)
+						}
+						if base.Ui32(v66&int32(_a_F_heapam_tuple_complete_speculative_5)) < base.Ui32(v55) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v142 = m.ExcPending
-							if v142 != 0 {
+							v144 = m.ExcPending
+							if v144 != 0 {
 								return
 							} else {
-								F_errmsg_internal(m, int32(_a_F_heapam_tuple_complete_speculative_2), int32(0))
+								F_errmsg_internal(m, int32(_a_F_heapam_tuple_complete_speculative_0), int32(0))
 								mBase = m.M
-								v146 = m.ExcPending
-								if v146 != 0 {
+								v148 = m.ExcPending
+								if v148 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(_a_F_heapam_tuple_complete_speculative_3), int32(_a_F_heapam_tuple_complete_speculative_4), int32(_a_F_heapam_tuple_complete_speculative_5))
+									F_errfinish(m, int32(_a_F_heapam_tuple_complete_speculative_1), int32(_a_F_heapam_tuple_complete_speculative_2), int32(_a_F_heapam_tuple_complete_speculative_3))
 									mBase = m.M
-									v151 = m.ExcPending
-									if v151 != 0 {
+									v153 = m.ExcPending
+									if v153 != 0 {
 										return
 									} else {
 										base.Wasm_trap_unreachable()
@@ -1062,99 +1067,97 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 								}
 							}
 						} else {
-							v76 = int32(_a_F_heapam_tuple_complete_speculative_8)
-							v78 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
-							*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v78 + int32(1)
-							F_MarkBufferDirty(m, v32)
-							mBase = m.M
-							v83 = m.ExcPending
-							if v83 != 0 {
-								return
-							} else {
-								v86 = v55 + v71&int32(_a_F_heapam_tuple_complete_speculative_9)
-								v87 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
-								*(*uint16)(unsafe.Add(mBase, uint32(v86)+16)) = uint16(v87)
-								v89 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-								*(*int32)(unsafe.Add(mBase, uint32(v86)+12)) = v89
-								v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-								v92 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v91)+118)))
-								if v92 != int32(112) {
-									v127 = int32(_a_F_heapam_tuple_complete_speculative_8)
-									v129 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
-									*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v129 - int32(1)
-									F_UnlockReleaseBuffer(m, v32)
+							v73 = *(*int32)(unsafe.Add(mBase, uint32(v54+v55<<(uint(int32(2))%32))+20))
+							if v73&int32(_a_F_heapam_tuple_complete_speculative_6) != int32(_a_F_heapam_tuple_complete_speculative_7) {
+								F_errstart_cold(m, int32(21), int32(0))
+								mBase = m.M
+								v157 = m.ExcPending
+								if v157 != 0 {
+									return
+								} else {
+									F_errmsg_internal(m, int32(_a_F_heapam_tuple_complete_speculative_8), int32(0))
 									mBase = m.M
-									v134 = m.ExcPending
-									if v134 != 0 {
+									v161 = m.ExcPending
+									if v161 != 0 {
 										return
 									} else {
-										m.G0 = v25 + int32(16)
-										v159 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
-										if v159 == int32(1) {
-											F_pfree(m, v21)
-											mBase = m.M
-											v163 = m.ExcPending
-											if v163 != 0 {
-												return
-											} else {
-												m.G0 = v12 + int32(16)
-												return
-											}
-										} else {
-											m.G0 = v12 + int32(16)
+										F_errfinish(m, int32(_a_F_heapam_tuple_complete_speculative_1), int32(_a_F_heapam_tuple_complete_speculative_9), int32(_a_F_heapam_tuple_complete_speculative_3))
+										mBase = m.M
+										v166 = m.ExcPending
+										if v166 != 0 {
 											return
+										} else {
+											base.Wasm_trap_unreachable()
+											for {
+											}
 										}
 									}
+								}
+							} else {
+								v78 = int32(_a_F_heapam_tuple_complete_speculative_10)
+								v80 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
+								*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v80 + int32(1)
+								F_MarkBufferDirty(m, v32)
+								mBase = m.M
+								v85 = m.ExcPending
+								if v85 != 0 {
+									return
 								} else {
-									v96 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[3]))
-									if v96 <= int32(0) {
-										v99 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-										if v99 != 0 {
-											v127 = int32(_a_F_heapam_tuple_complete_speculative_8)
-											v129 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
-											*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v129 - int32(1)
-											F_UnlockReleaseBuffer(m, v32)
-											mBase = m.M
-											v134 = m.ExcPending
-											if v134 != 0 {
-												return
-											} else {
-												m.G0 = v25 + int32(16)
-												v159 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
-												if v159 == int32(1) {
-													F_pfree(m, v21)
-													mBase = m.M
-													v163 = m.ExcPending
-													if v163 != 0 {
-														return
-													} else {
-														m.G0 = v12 + int32(16)
-														return
-													}
+									v88 = v54 + v73&int32(_a_F_heapam_tuple_complete_speculative_11)
+									v89 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
+									*(*uint16)(unsafe.Add(mBase, uint32(v88)+16)) = uint16(v89)
+									v91 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+									*(*int32)(unsafe.Add(mBase, uint32(v88)+12)) = v91
+									v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+									v94 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v93)+118)))
+									if v94 != int32(112) {
+										v129 = int32(_a_F_heapam_tuple_complete_speculative_10)
+										v131 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
+										*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v131 - int32(1)
+										F_UnlockReleaseBuffer(m, v32)
+										mBase = m.M
+										v136 = m.ExcPending
+										if v136 != 0 {
+											return
+										} else {
+											m.G0 = v25 + int32(16)
+											v174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
+											if v174 == int32(1) {
+												F_pfree(m, v21)
+												mBase = m.M
+												v178 = m.ExcPending
+												if v178 != 0 {
+													return
 												} else {
 													m.G0 = v12 + int32(16)
 													return
 												}
+											} else {
+												m.G0 = v12 + int32(16)
+												return
 											}
-										} else {
-											v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-											if v100 != 0 {
-												v127 = int32(_a_F_heapam_tuple_complete_speculative_8)
-												v129 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
-												*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v129 - int32(1)
+										}
+									} else {
+										v98 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[3]))
+										if v98 <= int32(0) {
+											v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+											if v101 != 0 {
+												v129 = int32(_a_F_heapam_tuple_complete_speculative_10)
+												v131 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
+												*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v131 - int32(1)
 												F_UnlockReleaseBuffer(m, v32)
 												mBase = m.M
-												v134 = m.ExcPending
-												if v134 != 0 {
+												v136 = m.ExcPending
+												if v136 != 0 {
 													return
 												} else {
 													m.G0 = v25 + int32(16)
-													v159 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
-													if v159 == int32(1) {
+													v174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
+													if v174 == int32(1) {
 														F_pfree(m, v21)
 														mBase = m.M
-														v163 = m.ExcPending
-														if v163 != 0 {
+														v178 = m.ExcPending
+														if v178 != 0 {
 															return
 														} else {
 															m.G0 = v12 + int32(16)
@@ -1166,61 +1169,91 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 													}
 												}
 											} else {
-												v101 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
-												*(*uint16)(unsafe.Add(mBase, uint32(v25)+14)) = uint16(v101)
-												F_XLogBeginInsert(m)
-												mBase = m.M
-												v104 = m.ExcPending
-												if v104 != 0 {
-													return
-												} else {
-													v106 = int32(_a_F_heapam_tuple_complete_speculative_10)
-													v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[4])))
-													v109 = v108 | int32(1)
-													*(*uint8)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[4])) = uint8(v109)
-													F_XLogRegisterData(m, v25+int32(14), int32(2))
+												v102 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+												if v102 != 0 {
+													v129 = int32(_a_F_heapam_tuple_complete_speculative_10)
+													v131 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
+													*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v131 - int32(1)
+													F_UnlockReleaseBuffer(m, v32)
 													mBase = m.M
-													v115 = m.ExcPending
-													if v115 != 0 {
+													v136 = m.ExcPending
+													if v136 != 0 {
 														return
 													} else {
-														F_XLogRegisterBuffer(m, int32(0), v32, int32(8))
-														mBase = m.M
-														v119 = m.ExcPending
-														if v119 != 0 {
-															return
-														} else {
-															v122 = F_XLogInsert(m, int32(10), int32(80))
+														m.G0 = v25 + int32(16)
+														v174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
+														if v174 == int32(1) {
+															F_pfree(m, v21)
 															mBase = m.M
-															v123 = m.ExcPending
-															if v123 != 0 {
+															v178 = m.ExcPending
+															if v178 != 0 {
 																return
 															} else {
-																*(*int64)(unsafe.Add(mBase, uint32(v55))) = base.I64_rotr(v122, int64(32))
-																v127 = int32(_a_F_heapam_tuple_complete_speculative_8)
-																v129 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
-																*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v129 - int32(1)
-																F_UnlockReleaseBuffer(m, v32)
+																m.G0 = v12 + int32(16)
+																return
+															}
+														} else {
+															m.G0 = v12 + int32(16)
+															return
+														}
+													}
+												} else {
+													v103 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
+													*(*uint16)(unsafe.Add(mBase, uint32(v25)+14)) = uint16(v103)
+													F_XLogBeginInsert(m)
+													mBase = m.M
+													v106 = m.ExcPending
+													if v106 != 0 {
+														return
+													} else {
+														v108 = int32(_a_F_heapam_tuple_complete_speculative_12)
+														v110 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[4])))
+														v111 = v110 | int32(1)
+														*(*uint8)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[4])) = uint8(v111)
+														F_XLogRegisterData(m, v25+int32(14), int32(2))
+														mBase = m.M
+														v117 = m.ExcPending
+														if v117 != 0 {
+															return
+														} else {
+															F_XLogRegisterBuffer(m, int32(0), v32, int32(8))
+															mBase = m.M
+															v121 = m.ExcPending
+															if v121 != 0 {
+																return
+															} else {
+																v124 = F_XLogInsert(m, int32(10), int32(80))
 																mBase = m.M
-																v134 = m.ExcPending
-																if v134 != 0 {
+																v125 = m.ExcPending
+																if v125 != 0 {
 																	return
 																} else {
-																	m.G0 = v25 + int32(16)
-																	v159 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
-																	if v159 == int32(1) {
-																		F_pfree(m, v21)
-																		mBase = m.M
-																		v163 = m.ExcPending
-																		if v163 != 0 {
-																			return
+																	*(*int64)(unsafe.Add(mBase, uint32(v54))) = base.I64_rotl(v124, int64(32))
+																	v129 = int32(_a_F_heapam_tuple_complete_speculative_10)
+																	v131 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
+																	*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v131 - int32(1)
+																	F_UnlockReleaseBuffer(m, v32)
+																	mBase = m.M
+																	v136 = m.ExcPending
+																	if v136 != 0 {
+																		return
+																	} else {
+																		m.G0 = v25 + int32(16)
+																		v174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
+																		if v174 == int32(1) {
+																			F_pfree(m, v21)
+																			mBase = m.M
+																			v178 = m.ExcPending
+																			if v178 != 0 {
+																				return
+																			} else {
+																				m.G0 = v12 + int32(16)
+																				return
+																			}
 																		} else {
 																			m.G0 = v12 + int32(16)
 																			return
 																		}
-																	} else {
-																		m.G0 = v12 + int32(16)
-																		return
 																	}
 																}
 															}
@@ -1228,63 +1261,63 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 													}
 												}
 											}
-										}
-									} else {
-										v101 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
-										*(*uint16)(unsafe.Add(mBase, uint32(v25)+14)) = uint16(v101)
-										F_XLogBeginInsert(m)
-										mBase = m.M
-										v104 = m.ExcPending
-										if v104 != 0 {
-											return
 										} else {
-											v106 = int32(_a_F_heapam_tuple_complete_speculative_10)
-											v108 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[4])))
-											v109 = v108 | int32(1)
-											*(*uint8)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[4])) = uint8(v109)
-											F_XLogRegisterData(m, v25+int32(14), int32(2))
+											v103 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
+											*(*uint16)(unsafe.Add(mBase, uint32(v25)+14)) = uint16(v103)
+											F_XLogBeginInsert(m)
 											mBase = m.M
-											v115 = m.ExcPending
-											if v115 != 0 {
+											v106 = m.ExcPending
+											if v106 != 0 {
 												return
 											} else {
-												F_XLogRegisterBuffer(m, int32(0), v32, int32(8))
+												v108 = int32(_a_F_heapam_tuple_complete_speculative_12)
+												v110 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[4])))
+												v111 = v110 | int32(1)
+												*(*uint8)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[4])) = uint8(v111)
+												F_XLogRegisterData(m, v25+int32(14), int32(2))
 												mBase = m.M
-												v119 = m.ExcPending
-												if v119 != 0 {
+												v117 = m.ExcPending
+												if v117 != 0 {
 													return
 												} else {
-													v122 = F_XLogInsert(m, int32(10), int32(80))
+													F_XLogRegisterBuffer(m, int32(0), v32, int32(8))
 													mBase = m.M
-													v123 = m.ExcPending
-													if v123 != 0 {
+													v121 = m.ExcPending
+													if v121 != 0 {
 														return
 													} else {
-														*(*int64)(unsafe.Add(mBase, uint32(v55))) = base.I64_rotr(v122, int64(32))
-														v127 = int32(_a_F_heapam_tuple_complete_speculative_8)
-														v129 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
-														*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v129 - int32(1)
-														F_UnlockReleaseBuffer(m, v32)
+														v124 = F_XLogInsert(m, int32(10), int32(80))
 														mBase = m.M
-														v134 = m.ExcPending
-														if v134 != 0 {
+														v125 = m.ExcPending
+														if v125 != 0 {
 															return
 														} else {
-															m.G0 = v25 + int32(16)
-															v159 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
-															if v159 == int32(1) {
-																F_pfree(m, v21)
-																mBase = m.M
-																v163 = m.ExcPending
-																if v163 != 0 {
-																	return
+															*(*int64)(unsafe.Add(mBase, uint32(v54))) = base.I64_rotl(v124, int64(32))
+															v129 = int32(_a_F_heapam_tuple_complete_speculative_10)
+															v131 = *(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2]))
+															*(*int32)(unsafe.Add(mBase, _c_F_heapam_tuple_complete_speculative[2])) = v131 - int32(1)
+															F_UnlockReleaseBuffer(m, v32)
+															mBase = m.M
+															v136 = m.ExcPending
+															if v136 != 0 {
+																return
+															} else {
+																m.G0 = v25 + int32(16)
+																v174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
+																if v174 == int32(1) {
+																	F_pfree(m, v21)
+																	mBase = m.M
+																	v178 = m.ExcPending
+																	if v178 != 0 {
+																		return
+																	} else {
+																		m.G0 = v12 + int32(16)
+																		return
+																	}
 																} else {
 																	m.G0 = v12 + int32(16)
 																	return
 																}
-															} else {
-																m.G0 = v12 + int32(16)
-																return
 															}
 														}
 													}
@@ -1301,16 +1334,16 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 		} else {
 			F_heap_abort_speculative(m, l0, v17)
 			mBase = m.M
-			v153 = m.ExcPending
-			if v153 != 0 {
+			v168 = m.ExcPending
+			if v168 != 0 {
 				return
 			} else {
-				v159 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
-				if v159 == int32(1) {
+				v174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+15)))
+				if v174 == int32(1) {
 					F_pfree(m, v21)
 					mBase = m.M
-					v163 = m.ExcPending
-					if v163 != 0 {
+					v178 = m.ExcPending
+					if v178 != 0 {
 						return
 					} else {
 						m.G0 = v12 + int32(16)
@@ -1324,75 +1357,75 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 		}
 	}
 }
-func F_heapam_tuple_update(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32 {
+func F_heapam_tuple_update(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v13 int32
-	_ = v13
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	var v23 int32
+	_ = v23
 	var v26 int32
 	_ = v26
-	var v29 int32
-	_ = v29
+	var v27 int32
+	_ = v27
 	var v30 int32
 	_ = v30
 	var v31 int32
 	_ = v31
-	var v33 int32
-	_ = v33
-	var v37 int32
-	_ = v37
-	var v41 int32
-	_ = v41
-	v13 = m.G0
-	v15 = v13 - int32(16)
-	m.G0 = v15
-	v17 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v15)+15)) = uint8(v17)
-	v22 = F_ExecFetchSlotHeapTuple(m, l2, v17, v15+int32(15))
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
+	v14 = m.G0
+	v16 = v14 - int32(16)
+	m.G0 = v16
+	v18 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)) = uint8(v18)
+	v23 = F_ExecFetchSlotHeapTuple(m, l2, v18, v16+int32(15))
 	mBase = m.M
-	v25 = m.ExcPending
-	if v25 != 0 {
+	v26 = m.ExcPending
+	if v26 != 0 {
 		return int32(0)
 	} else {
-		v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-		*(*int32)(unsafe.Add(mBase, uint32(l2)+36)) = v26
-		*(*int32)(unsafe.Add(mBase, uint32(v22)+12)) = v26
-		v29 = F_heap_update(m, l0, l1, v22, l3, l5, l6, l7, l8, l9)
+		v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+		*(*int32)(unsafe.Add(mBase, uint32(l2)+40)) = v27
+		*(*int32)(unsafe.Add(mBase, uint32(v23)+12)) = v27
+		v30 = F_heap_update(m, l0, l1, v23, l3, l4, l6, l7, l8, l9, l10)
 		mBase = m.M
-		v30 = m.ExcPending
-		if v30 != 0 {
+		v31 = m.ExcPending
+		if v31 != 0 {
 			return int32(0)
 		} else {
-			v31 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v22)+8)))
-			*(*uint16)(unsafe.Add(mBase, uint32(l2)+32)) = uint16(v31)
-			v33 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
-			*(*int32)(unsafe.Add(mBase, uint32(l2)+28)) = v33
-			if v29 != 0 {
-				*(*int32)(unsafe.Add(mBase, uint32(l9))) = int32(0)
+			v32 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v23)+8)))
+			*(*uint16)(unsafe.Add(mBase, uint32(l2)+36)) = uint16(v32)
+			v34 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
+			*(*int32)(unsafe.Add(mBase, uint32(l2)+32)) = v34
+			if v30 != 0 {
+				*(*int32)(unsafe.Add(mBase, uint32(l10))) = int32(0)
 			} else {
 			}
-			v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+15)))
-			if v37 == int32(1) {
-				F_pfree(m, v22)
+			v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+15)))
+			if v38 == int32(1) {
+				F_pfree(m, v23)
 				mBase = m.M
-				v41 = m.ExcPending
-				if v41 != 0 {
+				v42 = m.ExcPending
+				if v42 != 0 {
 					return int32(0)
 				} else {
-					m.G0 = v15 + int32(16)
-					return v29
+					m.G0 = v16 + int32(16)
+					return v30
 				}
 			} else {
-				m.G0 = v15 + int32(16)
-				return v29
+				m.G0 = v16 + int32(16)
+				return v30
 			}
 		}
 	}

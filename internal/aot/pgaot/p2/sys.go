@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -91,7 +91,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					case 0:
 						v66 = v4
 						v67 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-						v68 = m.T0[v67].(func(*base.Module, int32) int32)(m, l1)
+						v68 = m.T0[v67].(func(*base.Module, int64) int32)(m, l1)
 						mBase = m.M
 						v69 = m.ExcPending
 						if v69 != 0 {
@@ -104,7 +104,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					case 1:
 						v59 = v4
 						v60 = *(*int32)(unsafe.Add(mBase, uint32(v16)+20))
-						v61 = m.T0[v60].(func(*base.Module, int32) int32)(m, l2)
+						v61 = m.T0[v60].(func(*base.Module, int64) int32)(m, l2)
 						mBase = m.M
 						v62 = m.ExcPending
 						if v62 != 0 {
@@ -112,7 +112,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						} else {
 							v66 = base.I32_rotl(v61, int32(8)) ^ v59
 							v67 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-							v68 = m.T0[v67].(func(*base.Module, int32) int32)(m, l1)
+							v68 = m.T0[v67].(func(*base.Module, int64) int32)(m, l1)
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {
@@ -126,7 +126,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					case 2:
 						v51 = v4
 						v53 = *(*int32)(unsafe.Add(mBase, uint32(v16)+24))
-						v54 = m.T0[v53].(func(*base.Module, int32) int32)(m, int32(0))
+						v54 = m.T0[v53].(func(*base.Module, int64) int32)(m, int64(0))
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
@@ -134,7 +134,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						} else {
 							v59 = base.I32_rotl(v54, int32(16)) ^ v51
 							v60 = *(*int32)(unsafe.Add(mBase, uint32(v16)+20))
-							v61 = m.T0[v60].(func(*base.Module, int32) int32)(m, l2)
+							v61 = m.T0[v60].(func(*base.Module, int64) int32)(m, l2)
 							mBase = m.M
 							v62 = m.ExcPending
 							if v62 != 0 {
@@ -142,7 +142,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 							} else {
 								v66 = base.I32_rotl(v61, int32(8)) ^ v59
 								v67 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-								v68 = m.T0[v67].(func(*base.Module, int32) int32)(m, l1)
+								v68 = m.T0[v67].(func(*base.Module, int64) int32)(m, l1)
 								mBase = m.M
 								v69 = m.ExcPending
 								if v69 != 0 {
@@ -156,7 +156,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						}
 					case 3:
 						v46 = *(*int32)(unsafe.Add(mBase, uint32(v16)+28))
-						v47 = m.T0[v46].(func(*base.Module, int32) int32)(m, int32(0))
+						v47 = m.T0[v46].(func(*base.Module, int64) int32)(m, int64(0))
 						mBase = m.M
 						v48 = m.ExcPending
 						if v48 != 0 {
@@ -164,7 +164,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						} else {
 							v51 = base.I32_rotl(v47, int32(24))
 							v53 = *(*int32)(unsafe.Add(mBase, uint32(v16)+24))
-							v54 = m.T0[v53].(func(*base.Module, int32) int32)(m, int32(0))
+							v54 = m.T0[v53].(func(*base.Module, int64) int32)(m, int64(0))
 							mBase = m.M
 							v55 = m.ExcPending
 							if v55 != 0 {
@@ -172,7 +172,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 							} else {
 								v59 = base.I32_rotl(v54, int32(16)) ^ v51
 								v60 = *(*int32)(unsafe.Add(mBase, uint32(v16)+20))
-								v61 = m.T0[v60].(func(*base.Module, int32) int32)(m, l2)
+								v61 = m.T0[v60].(func(*base.Module, int64) int32)(m, l2)
 								mBase = m.M
 								v62 = m.ExcPending
 								if v62 != 0 {
@@ -180,7 +180,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 								} else {
 									v66 = base.I32_rotl(v61, int32(8)) ^ v59
 									v67 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-									v68 = m.T0[v67].(func(*base.Module, int32) int32)(m, l1)
+									v68 = m.T0[v67].(func(*base.Module, int64) int32)(m, l1)
 									mBase = m.M
 									v69 = m.ExcPending
 									if v69 != 0 {
@@ -207,7 +207,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 							if v81 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(_a_F_GetSysCacheHashValue_1), int32(373), int32(_a_F_GetSysCacheHashValue_2))
+								F_errfinish(m, int32(_a_F_GetSysCacheHashValue_1), int32(385), int32(_a_F_GetSysCacheHashValue_2))
 								mBase = m.M
 								v86 = m.ExcPending
 								if v86 != 0 {
@@ -227,7 +227,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 				case 0:
 					v66 = v4
 					v67 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-					v68 = m.T0[v67].(func(*base.Module, int32) int32)(m, l1)
+					v68 = m.T0[v67].(func(*base.Module, int64) int32)(m, l1)
 					mBase = m.M
 					v69 = m.ExcPending
 					if v69 != 0 {
@@ -240,7 +240,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 				case 1:
 					v59 = v4
 					v60 = *(*int32)(unsafe.Add(mBase, uint32(v16)+20))
-					v61 = m.T0[v60].(func(*base.Module, int32) int32)(m, l2)
+					v61 = m.T0[v60].(func(*base.Module, int64) int32)(m, l2)
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {
@@ -248,7 +248,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					} else {
 						v66 = base.I32_rotl(v61, int32(8)) ^ v59
 						v67 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-						v68 = m.T0[v67].(func(*base.Module, int32) int32)(m, l1)
+						v68 = m.T0[v67].(func(*base.Module, int64) int32)(m, l1)
 						mBase = m.M
 						v69 = m.ExcPending
 						if v69 != 0 {
@@ -262,7 +262,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 				case 2:
 					v51 = v4
 					v53 = *(*int32)(unsafe.Add(mBase, uint32(v16)+24))
-					v54 = m.T0[v53].(func(*base.Module, int32) int32)(m, int32(0))
+					v54 = m.T0[v53].(func(*base.Module, int64) int32)(m, int64(0))
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {
@@ -270,7 +270,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					} else {
 						v59 = base.I32_rotl(v54, int32(16)) ^ v51
 						v60 = *(*int32)(unsafe.Add(mBase, uint32(v16)+20))
-						v61 = m.T0[v60].(func(*base.Module, int32) int32)(m, l2)
+						v61 = m.T0[v60].(func(*base.Module, int64) int32)(m, l2)
 						mBase = m.M
 						v62 = m.ExcPending
 						if v62 != 0 {
@@ -278,7 +278,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						} else {
 							v66 = base.I32_rotl(v61, int32(8)) ^ v59
 							v67 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-							v68 = m.T0[v67].(func(*base.Module, int32) int32)(m, l1)
+							v68 = m.T0[v67].(func(*base.Module, int64) int32)(m, l1)
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {
@@ -292,7 +292,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					}
 				case 3:
 					v46 = *(*int32)(unsafe.Add(mBase, uint32(v16)+28))
-					v47 = m.T0[v46].(func(*base.Module, int32) int32)(m, int32(0))
+					v47 = m.T0[v46].(func(*base.Module, int64) int32)(m, int64(0))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
@@ -300,7 +300,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					} else {
 						v51 = base.I32_rotl(v47, int32(24))
 						v53 = *(*int32)(unsafe.Add(mBase, uint32(v16)+24))
-						v54 = m.T0[v53].(func(*base.Module, int32) int32)(m, int32(0))
+						v54 = m.T0[v53].(func(*base.Module, int64) int32)(m, int64(0))
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
@@ -308,7 +308,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						} else {
 							v59 = base.I32_rotl(v54, int32(16)) ^ v51
 							v60 = *(*int32)(unsafe.Add(mBase, uint32(v16)+20))
-							v61 = m.T0[v60].(func(*base.Module, int32) int32)(m, l2)
+							v61 = m.T0[v60].(func(*base.Module, int64) int32)(m, l2)
 							mBase = m.M
 							v62 = m.ExcPending
 							if v62 != 0 {
@@ -316,7 +316,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 							} else {
 								v66 = base.I32_rotl(v61, int32(8)) ^ v59
 								v67 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
-								v68 = m.T0[v67].(func(*base.Module, int32) int32)(m, l1)
+								v68 = m.T0[v67].(func(*base.Module, int64) int32)(m, l1)
 								mBase = m.M
 								v69 = m.ExcPending
 								if v69 != 0 {
@@ -343,7 +343,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						if v81 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_GetSysCacheHashValue_1), int32(373), int32(_a_F_GetSysCacheHashValue_2))
+							F_errfinish(m, int32(_a_F_GetSysCacheHashValue_1), int32(385), int32(_a_F_GetSysCacheHashValue_2))
 							mBase = m.M
 							v86 = m.ExcPending
 							if v86 != 0 {
@@ -371,7 +371,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(_a_F_GetSysCacheHashValue_4), int32(669), int32(_a_F_GetSysCacheHashValue_5))
+					F_errfinish(m, int32(_a_F_GetSysCacheHashValue_4), int32(663), int32(_a_F_GetSysCacheHashValue_5))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {
@@ -398,7 +398,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 			if v27 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(_a_F_GetSysCacheHashValue_4), int32(669), int32(_a_F_GetSysCacheHashValue_5))
+				F_errfinish(m, int32(_a_F_GetSysCacheHashValue_4), int32(663), int32(_a_F_GetSysCacheHashValue_5))
 				mBase = m.M
 				v32 = m.ExcPending
 				if v32 != 0 {
@@ -412,7 +412,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 		}
 	}
 }
-func F_SearchSysCache3(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+func F_SearchSysCache3(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64) int32 {
 	mBase := m.M
 	_ = mBase
 	var v9 int32
@@ -422,7 +422,7 @@ func F_SearchSysCache3(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	var v15 int32
 	_ = v15
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_c_F_SearchSysCache3[0])))
-	v12 = F_SearchCatCacheInternal(m, v9, int32(3), l1, l2, l3, int32(0))
+	v12 = F_SearchCatCacheInternal(m, v9, int32(3), l1, l2, l3, int64(0))
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {

@@ -44,7 +44,7 @@ func F_cost_bitmap_tree_node(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v7 = v5 - int32(16)
 	m.G0 = v7
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	switch v9 - int32(280) {
+	switch v9 - int32(283) {
 	case 0:
 		v34 = *(*float64)(unsafe.Add(mBase, uint32(l0)+96))
 		*(*float64)(unsafe.Add(mBase, uint32(l1))) = v34
@@ -71,7 +71,7 @@ func F_cost_bitmap_tree_node(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v28 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_cost_bitmap_tree_node_1), int32(1149), int32(_a_F_cost_bitmap_tree_node_2))
+				F_errfinish(m, int32(_a_F_cost_bitmap_tree_node_1), int32(1142), int32(_a_F_cost_bitmap_tree_node_2))
 				mBase = m.M
 				v33 = m.ExcPending
 				if v33 != 0 {
@@ -125,8 +125,8 @@ func F_create_bitmap_heap_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = l1
-		*(*int64)(unsafe.Add(mBase, uint32(v10))) = int64(1477468750106)
-		v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
+		*(*int64)(unsafe.Add(mBase, uint32(v10))) = int64(1494648619293)
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+12)) = v17
 		v19 = F_get_baserel_parampathinfo(m, l0, l1, l3)
 		mBase = m.M

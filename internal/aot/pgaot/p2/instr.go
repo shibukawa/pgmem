@@ -108,22 +108,26 @@ func F_InstrEndParallelQuery(m *base.Module, l0 int32, l1 int32) {
 	_ = v115
 	var v119 int64
 	_ = v119
-	var v128 int64
-	_ = v128
 	var v130 int64
 	_ = v130
-	var v134 int64
-	_ = v134
+	var v132 int64
+	_ = v132
 	var v136 int64
 	_ = v136
-	var v140 int64
-	_ = v140
+	var v138 int64
+	_ = v138
 	var v142 int64
 	_ = v142
-	var v146 int64
-	_ = v146
+	var v144 int64
+	_ = v144
 	var v148 int64
 	_ = v148
+	var v150 int64
+	_ = v150
+	var v154 int64
+	_ = v154
+	var v156 int64
+	_ = v156
 	base.MemoryFill(m, l0, int32(0), int32(128))
 	v6 = int32(_a_F_InstrEndParallelQuery_0)
 	v7 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
@@ -191,25 +195,29 @@ func F_InstrEndParallelQuery(m *base.Module, l0 int32, l1 int32) {
 	v115 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[31]))
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+120)) = v112 + (v114 - v115)
 	v119 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(l1)+32)) = v119
 	*(*int64)(unsafe.Add(mBase, uint32(l1)+24)) = v119
 	*(*int64)(unsafe.Add(mBase, uint32(l1)+16)) = v119
 	*(*int64)(unsafe.Add(mBase, uint32(l1)+8)) = v119
 	*(*int64)(unsafe.Add(mBase, uint32(l1))) = v119
-	v128 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[32]))
-	v130 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[33]))
-	*(*int64)(unsafe.Add(mBase, uint32(l1)+16)) = v128 - v130
-	v134 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[34]))
-	v136 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[35]))
-	*(*int64)(unsafe.Add(mBase, uint32(l1))) = v134 - v136
-	v140 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[36]))
-	v142 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[37]))
-	*(*int64)(unsafe.Add(mBase, uint32(l1)+8)) = v140 - v142
-	v146 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[38]))
-	v148 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[39]))
-	*(*int64)(unsafe.Add(mBase, uint32(l1)+24)) = v146 - v148
+	v130 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[32]))
+	v132 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[33]))
+	*(*int64)(unsafe.Add(mBase, uint32(l1)+16)) = v130 - v132
+	v136 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[34]))
+	v138 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[35]))
+	*(*int64)(unsafe.Add(mBase, uint32(l1))) = v136 - v138
+	v142 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[36]))
+	v144 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[37]))
+	*(*int64)(unsafe.Add(mBase, uint32(l1)+8)) = v142 - v144
+	v148 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[38]))
+	v150 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[39]))
+	*(*int64)(unsafe.Add(mBase, uint32(l1)+24)) = v148 - v150
+	v154 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[40]))
+	v156 = *(*int64)(unsafe.Add(mBase, _c_F_InstrEndParallelQuery[41]))
+	*(*int64)(unsafe.Add(mBase, uint32(l1)+32)) = v154 - v156
 	return
 }
-func F_InstrStartNode(m *base.Module, l0 int32) {
+func F_InstrStart(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -236,12 +244,14 @@ func F_InstrStartNode(m *base.Module, l0 int32) {
 	_ = v39
 	var v42 int64
 	_ = v42
-	var v50 int32
-	_ = v50
-	var v54 int32
-	_ = v54
-	var v59 int32
-	_ = v59
+	var v45 int64
+	_ = v45
+	var v53 int32
+	_ = v53
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
@@ -251,20 +261,20 @@ func F_InstrStartNode(m *base.Module, l0 int32) {
 		if v10 != int64(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v50 = m.ExcPending
-			if v50 != 0 {
+			v53 = m.ExcPending
+			if v53 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(_a_F_InstrStartNode_0), int32(0))
+				F_errmsg_internal(m, int32(_a_F_InstrStart_0), int32(0))
 				mBase = m.M
-				v54 = m.ExcPending
-				if v54 != 0 {
+				v57 = m.ExcPending
+				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(_a_F_InstrStartNode_1), int32(72), int32(_a_F_InstrStartNode_2))
+					F_errfinish(m, int32(_a_F_InstrStart_1), int32(58), int32(_a_F_InstrStart_2))
 					mBase = m.M
-					v59 = m.ExcPending
-					if v59 != 0 {
+					v62 = m.ExcPending
+					if v62 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()
@@ -281,19 +291,21 @@ func F_InstrStartNode(m *base.Module, l0 int32) {
 			*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = v15 + v16*int64(1000000000)
 			v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
 			if v21 == int32(1) {
-				base.MemoryCopy(m, l0+int32(40), int32(_a_F_InstrStartNode_3), int32(128))
+				base.MemoryCopy(m, l0+int32(16), int32(_a_F_InstrStart_3), int32(128))
 			} else {
 			}
 			v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
 			if v29 == int32(1) {
-				v33 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartNode[0]))
-				*(*int64)(unsafe.Add(mBase, uint32(l0)+192)) = v33
-				v36 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartNode[1]))
-				*(*int64)(unsafe.Add(mBase, uint32(l0)+184)) = v36
-				v39 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartNode[2]))
-				*(*int64)(unsafe.Add(mBase, uint32(l0)+176)) = v39
-				v42 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartNode[3]))
-				*(*int64)(unsafe.Add(mBase, uint32(l0)+168)) = v42
+				v33 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[0]))
+				*(*int64)(unsafe.Add(mBase, uint32(l0)+176)) = v33
+				v36 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[1]))
+				*(*int64)(unsafe.Add(mBase, uint32(l0)+168)) = v36
+				v39 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[2]))
+				*(*int64)(unsafe.Add(mBase, uint32(l0)+160)) = v39
+				v42 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[3]))
+				*(*int64)(unsafe.Add(mBase, uint32(l0)+152)) = v42
+				v45 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[4]))
+				*(*int64)(unsafe.Add(mBase, uint32(l0)+144)) = v45
 			} else {
 			}
 			m.G0 = v5 + int32(16)
@@ -302,19 +314,21 @@ func F_InstrStartNode(m *base.Module, l0 int32) {
 	} else {
 		v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
 		if v21 == int32(1) {
-			base.MemoryCopy(m, l0+int32(40), int32(_a_F_InstrStartNode_3), int32(128))
+			base.MemoryCopy(m, l0+int32(16), int32(_a_F_InstrStart_3), int32(128))
 		} else {
 		}
 		v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
 		if v29 == int32(1) {
-			v33 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartNode[0]))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+192)) = v33
-			v36 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartNode[1]))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+184)) = v36
-			v39 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartNode[2]))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+176)) = v39
-			v42 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartNode[3]))
-			*(*int64)(unsafe.Add(mBase, uint32(l0)+168)) = v42
+			v33 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[0]))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+176)) = v33
+			v36 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[1]))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+168)) = v36
+			v39 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[2]))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+160)) = v39
+			v42 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[3]))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+152)) = v42
+			v45 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStart[4]))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+144)) = v45
 		} else {
 		}
 		m.G0 = v5 + int32(16)
