@@ -340,7 +340,7 @@ SIMD-in-Go lever there.
 Every artifact of a release carries one version, taken from a `vX.Y.Z`
 tag (the numbering is explained on the
 [versioning](https://shibukawa.github.io/pgmem/versioning/) page; the
-0.1.x releases bring the pipeline up before 1.18.0). Pushing the tag runs
+current PostgreSQL 18 stable line starts at 1.18.0). Pushing the tag runs
 `.github/workflows/release.yml`. It cross-compiles `cmd/pgmem` for five
 platforms (`scripts/build-binaries.sh`), stamps the version into every
 manifest (`scripts/set-version.sh`), packs the archives, npm packages,
@@ -357,7 +357,7 @@ runs `publish --dry-run`, and the Central Publisher Portal validates the
 Maven bundle, which is then dropped.
 
 ```bash
-gh workflow run release.yml -f version=0.1.0
+gh workflow run release.yml -f version=1.18.0
 ```
 
 The registries need a one-time setup:
@@ -386,7 +386,7 @@ To publish a tagged version to some registries again, for instance after
 a registry-side failure, run the workflow on the tag:
 
 ```bash
-gh workflow run release.yml --ref v0.1.0 -f version=0.1.0 -f registries=maven -f dry_run=false
+gh workflow run release.yml --ref v1.18.0 -f version=1.18.0 -f registries=maven -f dry_run=false
 ```
 
 ## Debugging

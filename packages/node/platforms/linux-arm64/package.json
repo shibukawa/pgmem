@@ -1,6 +1,6 @@
 {
   "name": "@pgmem/linux-arm64",
-  "version": "0.1.0",
+  "version": "1.18.0",
   "description": "pgmem binary for linux/arm64 (used by @pgmem/core)",
   "license": "MIT",
   "repository": {

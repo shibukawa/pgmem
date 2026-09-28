@@ -14,8 +14,8 @@ pgmem for the JVM is three artifacts: `io.github.shibukawa.pgmem:pgmem` (the cli
 
 ```kotlin title="build.gradle.kts"
 dependencies {
-    testImplementation("io.github.shibukawa.pgmem:pgmem-junit5:0.1.0")          // pulls in io.github.shibukawa.pgmem:pgmem
-    testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:0.1.0:darwin-arm64") // the binary for your platform
+    testImplementation("io.github.shibukawa.pgmem:pgmem-junit5:1.18.0")          // pulls in io.github.shibukawa.pgmem:pgmem
+    testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:1.18.0:darwin-arm64") // the binary for your platform
     testRuntimeOnly("org.postgresql:postgresql:42.7.7")
     testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
 }
@@ -30,8 +30,8 @@ tasks.test {
 
 ```groovy title="build.gradle"
 dependencies {
-    testImplementation 'io.github.shibukawa.pgmem:pgmem-junit5:0.1.0'           // pulls in io.github.shibukawa.pgmem:pgmem
-    testRuntimeOnly 'io.github.shibukawa.pgmem:pgmem-native:0.1.0:darwin-arm64' // the binary for your platform
+    testImplementation 'io.github.shibukawa.pgmem:pgmem-junit5:1.18.0'           // pulls in io.github.shibukawa.pgmem:pgmem
+    testRuntimeOnly 'io.github.shibukawa.pgmem:pgmem-native:1.18.0:darwin-arm64' // the binary for your platform
     testRuntimeOnly 'org.postgresql:postgresql:42.7.7'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
 }
@@ -49,13 +49,13 @@ test {
   <dependency>
     <groupId>io.github.shibukawa.pgmem</groupId>
     <artifactId>pgmem-junit5</artifactId>
-    <version>0.1.0</version>
+    <version>1.18.0</version>
     <scope>test</scope>
   </dependency>
   <dependency>
     <groupId>io.github.shibukawa.pgmem</groupId>
     <artifactId>pgmem-native</artifactId>
-    <version>0.1.0</version>
+    <version>1.18.0</version>
     <classifier>darwin-arm64</classifier>
     <scope>test</scope>
   </dependency>

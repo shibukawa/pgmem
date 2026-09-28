@@ -4,7 +4,7 @@
 # project and the Gradle build. The binary gets the same number through
 # VERSION in scripts/build-binaries.sh.
 #
-#   scripts/set-version.sh 0.1.0
+#   scripts/set-version.sh 1.18.0
 set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 - "${1:?usage: scripts/set-version.sh X.Y.Z}" <<'PY'

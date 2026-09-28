@@ -1,6 +1,6 @@
 {
   "name": "@pgmem/core",
-  "version": "0.1.0",
+  "version": "1.18.0",
   "description": "In-memory PostgreSQL 18 for tests: one DATABASE_URL per test file, reset in place per test, no Docker",
   "license": "MIT",
   "repository": {
@@ -45,11 +45,11 @@
     }
   },
   "optionalDependencies": {
-    "@pgmem/darwin-arm64": "0.1.0",
-    "@pgmem/linux-arm64": "0.1.0",
-    "@pgmem/linux-x64": "0.1.0",
-    "@pgmem/win32-arm64": "0.1.0",
-    "@pgmem/win32-x64": "0.1.0"
+    "@pgmem/darwin-arm64": "1.18.0",
+    "@pgmem/linux-arm64": "1.18.0",
+    "@pgmem/linux-x64": "1.18.0",
+    "@pgmem/win32-arm64": "1.18.0",
+    "@pgmem/win32-x64": "1.18.0"
   },
   "keywords": [
     "postgresql",

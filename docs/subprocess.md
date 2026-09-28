@@ -35,7 +35,7 @@ Behaviour that a wrapper can rely on:
   rest negotiates the control protocol:
 
   ```json
-  {"event":"ready","protocol":1,"version":"v0.1.0","pid":1234,
+  {"event":"ready","protocol":1,"version":"v1.18.0","pid":1234,
    "server":{"id":"template","host":"127.0.0.1","port":54321,"user":"postgres","database":"app","dsn":"postgres://postgres@127.0.0.1:54321/app?sslmode=disable"},
    "host":"127.0.0.1","port":54321,"user":"postgres","database":"app","dsn":"postgres://postgres@127.0.0.1:54321/app?sslmode=disable"}
   ```

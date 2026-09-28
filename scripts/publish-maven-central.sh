@@ -5,8 +5,8 @@
 # Portal's checks (namespace, POM, signatures) and drops the deployment
 # whether it passed or failed, so nothing is published or left behind.
 #
-#   scripts/publish-maven-central.sh dist/maven/pgmem-0.1.0-bundle.zip
-#   scripts/publish-maven-central.sh --validate-only dist/maven/pgmem-0.1.0-bundle.zip
+#   scripts/publish-maven-central.sh dist/maven/pgmem-1.18.0-bundle.zip
+#   scripts/publish-maven-central.sh --validate-only dist/maven/pgmem-1.18.0-bundle.zip
 set -euo pipefail
 validate_only=false
 if [ "${1:-}" = --validate-only ]; then

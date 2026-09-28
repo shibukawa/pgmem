@@ -1,6 +1,6 @@
 {
   "name": "@pgmem/win32-x64",
-  "version": "0.1.0",
+  "version": "1.18.0",
   "description": "pgmem binary for windows/amd64 (used by @pgmem/core)",
   "license": "MIT",
   "repository": {

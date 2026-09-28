@@ -17,8 +17,8 @@ name: Release
 # built, npm publish runs with --dry-run, and the Portal validates the Maven
 # bundle, which is then dropped), or, run on a tag, publishes that version to
 # some registries again:
-#   gh workflow run release.yml -f version=0.1.0
-#   gh workflow run release.yml --ref v0.1.0 -f version=0.1.0 -f registries=maven -f dry_run=false
+#   gh workflow run release.yml -f version=1.18.0
+#   gh workflow run release.yml --ref v1.18.0 -f version=1.18.0 -f registries=maven -f dry_run=false
 
 on:
   push:

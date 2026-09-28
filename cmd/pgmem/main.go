@@ -3,7 +3,7 @@
 //
 // It prints one JSON line on stdout once the server is ready, for example
 //
-//	{"event":"ready","protocol":1,"version":"v0.1.0","pid":1234,"server":{"id":"template","host":"127.0.0.1","port":54321,...},"port":54321,"host":"127.0.0.1","user":"postgres","database":"app","dsn":"postgres://postgres@127.0.0.1:54321/app?sslmode=disable"}
+//	{"event":"ready","protocol":1,"version":"v1.18.0","pid":1234,"server":{"id":"template","host":"127.0.0.1","port":54321,...},"port":54321,"host":"127.0.0.1","user":"postgres","database":"app","dsn":"postgres://postgres@127.0.0.1:54321/app?sslmode=disable"}
 //
 // and then serves the control protocol: one JSON request per line on stdin
 // (start, snapshot, fork, reset, close, shutdown), one JSON response per
@@ -89,7 +89,7 @@ func main() {
 	}
 }
 
-// version is stamped by release builds (-ldflags "-X main.version=v0.1.0",
+// version is stamped by release builds (-ldflags "-X main.version=v1.18.0",
 // scripts/build-binaries.sh). Other builds report the module version the go
 // command recorded, which is a real version only under go install pkg@version.
 var version string

@@ -3,7 +3,7 @@ id: rule:process-per-connection
 type: rule
 title: Process per Connection
 ---
-PostgreSQL runs its real multi-process model: a postmaster starts a backend process per connection plus the auxiliary processes, all sharing memory, so sessions, locks and their interactions are PostgreSQL's own. Replaced rule:single-session-per-backend on 2026-09-19.
+PostgreSQL runs its real multi-process model: a postmaster starts a backend process per connection plus the auxiliary processes, all sharing memory, so sessions, locks and their interactions are PostgreSQL's own. This supersedes the former single-session-per-backend model as of 2026-09-19.
 
 ```yaml
 rule:

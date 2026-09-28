@@ -6,7 +6,7 @@
 #
 #   scripts/build-binaries.sh                     # every release target
 #   scripts/build-binaries.sh host                # this machine only
-#   VERSION=0.1.0 scripts/build-binaries.sh linux-amd64 darwin-arm64
+#   VERSION=1.18.0 scripts/build-binaries.sh linux-amd64 darwin-arm64
 set -euo pipefail
 cd "$(dirname "$0")/.."
 

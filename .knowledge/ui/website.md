@@ -47,5 +47,5 @@ ui:
   numbers: website/src/data/benchmarks.json, copied by bench/alternatives/run.sh; BenchmarkTable.astro renders compact (top) and full (why, benchmarks) variants in both languages; website/src/data/modelcase.json, copied by bench/modelcase/run.sh, rendered by ModelCaseChart.astro
   deploy: .github/workflows/docs.yml builds website/ with withastro/action on pull requests and deploys to GitHub Pages (environment github-pages) on pushes to main that touch website/
   node_state: follows packages/node/core (index.d.ts, README) as merged 2026-09-13; install snippets assume the npm release made by flow:release
-  versions_in_snippets: 0.1.0 while the 0.1.x releases bring flow:release up (user, 2026-09-14); switch to 1.18.0 when it ships (policy:versioning)
+  versions_in_snippets: PostgreSQL 18 stable examples use 1.18.0; PostgreSQL 19 beta examples use 0.19.0 when the beta source is integrated (policy:versioning)
 ```

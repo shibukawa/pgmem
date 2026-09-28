@@ -17,8 +17,8 @@ try (Pgmem pg = Pgmem.builder().database("app").start()) {
 ## Dependencies
 
 ```kotlin
-testImplementation("io.github.shibukawa.pgmem:pgmem-junit5:0.1.0")           // pulls in io.github.shibukawa.pgmem:pgmem
-testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:0.1.0:darwin-arm64") // the binary for your platform
+testImplementation("io.github.shibukawa.pgmem:pgmem-junit5:1.18.0")           // pulls in io.github.shibukawa.pgmem:pgmem
+testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:1.18.0:darwin-arm64") // the binary for your platform
 testRuntimeOnly("org.postgresql:postgresql:42.7.7")                          // your usual driver
 ```
 

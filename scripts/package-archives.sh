@@ -3,7 +3,7 @@
 # dist/release/pgmem-<version>-<goos>-<goarch>.tar.gz (.zip for Windows),
 # each with LICENSE and NOTICE, and writes dist/release/SHA256SUMS.
 #
-#   VERSION=0.1.0 scripts/package-archives.sh
+#   VERSION=1.18.0 scripts/package-archives.sh
 set -euo pipefail
 cd "$(dirname "$0")/.."
 root=$PWD
