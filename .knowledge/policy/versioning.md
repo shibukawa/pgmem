@@ -19,6 +19,10 @@ policy:
   postgres_19_beta: PostgreSQL 19 Beta 4 is the requested beta input; its initial pgmem version is 0.19.0 (0.19 is shorthand for the beta line; tags and manifests keep X.Y.Z)
   postgres_19_stable: when PostgreSQL 19 is stable, start its pgmem stable line at 1.19.0
   minor_postgres_updates: a PostgreSQL 18.x point release only bumps Y; the exact 18.x is stated in the release notes and in the ready event
+  npm_dist_tags:  # evaluated independently for each npm package
+    beta: every 0.X.Y release uses beta
+    latest: among stable releases, latest points to the greatest published SemVer version; use it only when the incoming version is greater
+    older_stable: otherwise tag with postgresql-X, where X is the bundled PostgreSQL major version
   semver_note: not semantic versioning; the Go module tag v1.18.Y stays a v1 module path (no /v2), and breaking API changes are announced in release notes instead of a major bump
   same_number_everywhere:  # the tag is the source; scripts/set-version.sh stamps the manifests during flow:release
     - Go module tag vX.Y.Z

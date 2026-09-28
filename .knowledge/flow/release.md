@@ -7,10 +7,10 @@ How a vX.Y.Z tag becomes every published artifact at one version (policy:version
 
 ```yaml
 flow:
-  trigger: push of tag vX.Y.Z; v1.18.x tags come from postgresql/18, v0.19.x and v1.19.x tags from main; workflow_dispatch rehearses (dry_run, the default) or, run on a tag, republishes to chosen registries
+  trigger: push of tag vX.Y.Z; v1.18.x tags come from postgresql/18, v0.19.x and v1.19.x tags from main; workflow_dispatch rehearses by default or publishes selected registries from source_tag (default vX.Y.Z) without moving that tag
   steps:
     - id: prepare
-      action: version from the tag or input; refuse to publish unless the ref is tag vX.Y.Z
+      action: resolve version and source ref; publishing requires source tag vX.Y.Z reachable from its assigned branch; expose source SHA for all build jobs
     - id: binaries
       action: five ubuntu jobs, scripts/build-binaries.sh <goos>-<goarch> with Go 1.27.x (sets the macOS 13 wheel floor), -X main.version=vX.Y.Z; artifacts bin-<target>
     - id: packages
@@ -19,7 +19,7 @@ flow:
       action: GitHub Release with archives, wheels and npm tarballs
     - id: npm
       environment: release
-      action: npm publish of each tarball by trusted publishing (OIDC), platform packages before @pgmem/core, versions already on npm skipped; rehearsal uses --dry-run
+      action: trusted publish (OIDC), platform packages before @pgmem/core; per package, 0.X.Y uses beta, stable uses latest only if greater than its current latest, otherwise postgresql-X; verify the tag of existing versions and stop on mismatch because OIDC cannot run npm dist-tag add; rehearsal uses --dry-run
     - id: pypi
       environment: release
       action: pypa/gh-action-pypi-publish by trusted publishing with skip-existing; not run in rehearsal
