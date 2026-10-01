@@ -25,18 +25,23 @@ from ._client import (
 from ._binary import find_binary
 
 
-def shadow_pg(func=None, *, fork=True, prepare=False):
+def shadow_pg(func=None, *, fork=True, prepare=False, live=False):
     """Route a pytest test to a fork, or a preparation fixture to the template.
 
-    ``fork=False`` shares one fork for read-only tests. Construct database
-    clients after test setup; clients made during test-module import keep the
-    URL they captured at import time. ``prepare=True`` wraps a session-scoped
-    ``pgmem_prepare(pgmem_server)`` fixture before the snapshot is taken.
+    ``fork=False`` shares one fork for read-only tests. ``live=True`` resets a
+    stable endpoint before each in-process HTTP test. New psycopg and asyncpg
+    connections are routed without changing application configuration.
+    ``prepare=True`` wraps a session-scoped ``pgmem_prepare(pgmem_server)``
+    fixture before the snapshot is taken.
     """
     if not isinstance(fork, bool):
         raise TypeError("fork must be a bool")
     if not isinstance(prepare, bool):
         raise TypeError("prepare must be a bool")
+    if not isinstance(live, bool):
+        raise TypeError("live must be a bool")
+    if live and (prepare or not fork):
+        raise TypeError("live=True cannot be combined with prepare=True or fork=False")
     import pytest
 
     if prepare:
@@ -45,7 +50,7 @@ def shadow_pg(func=None, *, fork=True, prepare=False):
         import functools
         import inspect
 
-        from ._shadow import install_driver_routes, install_sqlalchemy_pool_guard, route_environment
+        from ._shadow import install_driver_routes, install_sqlalchemy_pool_guard
 
         def decorate_fixture(fn):
             signature = inspect.signature(fn)
@@ -58,7 +63,6 @@ def shadow_pg(func=None, *, fork=True, prepare=False):
             def wrapped(*args, **kwargs):
                 server = signature.bind(*args, **kwargs).arguments["pgmem_server"]
                 with pytest.MonkeyPatch.context() as patch:
-                    route_environment(patch, server)
                     install_driver_routes(patch, server)
                     remove_pool_guard = install_sqlalchemy_pool_guard(server)
                     try:
@@ -73,7 +77,7 @@ def shadow_pg(func=None, *, fork=True, prepare=False):
 
         return decorate_fixture(func) if func is not None else decorate_fixture
 
-    marker = pytest.mark.shadow_pg(fork=fork)
+    marker = pytest.mark.shadow_pg(fork=fork, live=live)
     return marker(func) if func is not None else marker
 
 __all__ = [

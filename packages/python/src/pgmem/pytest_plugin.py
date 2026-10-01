@@ -21,7 +21,7 @@ server parameters or logging. For a long-lived HTTP application,
 import pytest
 
 import pgmem as _pgmem
-from ._shadow import install_driver_routes, install_sqlalchemy_pool_guard, route_environment
+from ._shadow import install_driver_routes, install_sqlalchemy_pool_guard
 
 
 @pytest.fixture(scope="session")
@@ -116,13 +116,13 @@ def _shadow_pg_route(request, monkeypatch):
     if marker is None:
         yield
         return
-    if marker.args or set(marker.kwargs) - {"fork"}:
-        raise pytest.UsageError("shadow_pg accepts only fork=True or fork=False")
+    if marker.args or set(marker.kwargs) - {"fork", "live"}:
+        raise pytest.UsageError("shadow_pg accepts only fork and live options")
     fork_enabled = marker.kwargs.get("fork", True)
-    if not isinstance(fork_enabled, bool):
-        raise pytest.UsageError("shadow_pg fork must be a bool")
-    target = request.getfixturevalue("pgmem_fork" if fork_enabled else "pgmem_shared_fork")
-    route_environment(monkeypatch, target)
+    live = marker.kwargs.get("live", False)
+    if not isinstance(fork_enabled, bool) or not isinstance(live, bool) or (live and not fork_enabled):
+        raise pytest.UsageError("shadow_pg fork and live must be bool; live requires fork=True")
+    target = request.getfixturevalue("pgmem_live_db" if live else "pgmem_fork" if fork_enabled else "pgmem_shared_fork")
     install_driver_routes(monkeypatch, target)
     remove_pool_guard = install_sqlalchemy_pool_guard(target)
     try:
@@ -133,7 +133,7 @@ def _shadow_pg_route(request, monkeypatch):
 
 def pytest_configure(config):
     config.addinivalue_line(
-        "markers", "shadow_pg(fork=True): route this test to a prepared pgmem fork; fork=False shares a target for read-only tests"
+        "markers", "shadow_pg(fork=True, live=False): route this test to a prepared pgmem fork; live=True resets a stable endpoint for HTTP tests"
     )
     config.addinivalue_line(
         "markers", "pgmem_dataset(name): select a snapshot for pgmem_live_db before an HTTP test"
