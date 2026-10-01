@@ -92,6 +92,30 @@ class PgmemTest {
         }
     }
 
+    @Test void resetKeepsJdbcConnectionAndCanChooseSeedSnapshot() throws Exception {
+        try (Pgmem pg = Pgmem.builder().database("app").start()) {
+            exec(pg.template(), "CREATE TABLE t (id int); INSERT INTO t VALUES (1), (2)");
+            try (Snapshot base = pg.template().snapshot(); Fork fork = base.fork();
+                 Connection pooled = DriverManager.getConnection(fork.jdbcUrl())) {
+                String url = fork.jdbcUrl();
+                exec(fork, "INSERT INTO t VALUES (3)");
+                assertEquals(3, count(fork));
+                fork.reset();
+                assertEquals(url, fork.jdbcUrl());
+                try (ResultSet rs = pooled.createStatement().executeQuery("SELECT count(*) FROM t")) {
+                    rs.next();
+                    assertEquals(2, rs.getInt(1));
+                }
+                exec(fork, "INSERT INTO t VALUES (4)");
+                try (Snapshot seeded = fork.snapshot()) {
+                    exec(fork, "INSERT INTO t VALUES (5)");
+                    fork.reset(seeded);
+                    assertEquals(3, count(fork));
+                }
+            }
+        }
+    }
+
     @Test void startServerExtraTemplate() throws Exception {
         try (Pgmem pg = Pgmem.start()) {
             Server audit = pg.startServer("audit", "postgres", List.of("log_statement=all"));
