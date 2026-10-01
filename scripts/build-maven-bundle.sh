@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Builds the Maven Central bundle dist/maven/pgmem-<version>-bundle.zip:
-# io.github.shibukawa.pgmem:pgmem and pgmem-junit5 (jar, sources, javadoc) and pgmem-native
+# io.github.shibukawa.pgmem:pgmem, pgmem-junit5, and pgmem-micronaut
+# (jar, sources, javadoc) and pgmem-native
 # (one classifier jar per platform from dist/<goos>-<goarch>/), each file
 # with its POM, checksums and signature. GPG_PRIVATE_KEY (an armored secret
 # key) and GPG_PASSPHRASE sign it; the version is the one in
