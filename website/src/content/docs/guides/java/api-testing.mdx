@@ -83,3 +83,15 @@ Do not run tests that share this app and fork concurrently. A reset can overlap 
 </Aside>
 
 For browser automation over the same HTTP lifecycle, see [E2E tests](../e2e-testing/).
+
+## Safe parallel execution
+
+Keep methods that use one `@ShadowPg` Spring Boot or Micronaut app sequential: they share an HTTP server, pool, and fork, and each method resets that fork. Run different test classes concurrently only when each class has its own application context, pgmem fork, and HTTP port. In `src/test/resources/junit-platform.properties`, enable parallel classes while keeping methods sequential:
+
+```properties
+junit.jupiter.execution.parallel.enabled = true
+junit.jupiter.execution.parallel.mode.default = same_thread
+junit.jupiter.execution.parallel.mode.classes.default = concurrent
+```
+
+Do not share a static application or `DataSource` between these classes. Finish requests and background database work, and close transactions before the next method resets the fork. If every method needs to run concurrently, construct a separate app and fork per method instead of using the class-scoped annotation lifecycle.
