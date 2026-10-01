@@ -7,7 +7,7 @@ import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { createInterface } from "node:readline";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { PgmemClient, PgmemError, PgmemServer } from "../index.js";
+import { PgmemClient, PgmemError, PgmemServer, pgmemTest, withTestDatabase } from "../index.js";
 import { connectWire } from "./wire.js";
 
 const pkg = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -126,6 +126,110 @@ test("withFork closes the fork", async () => {
     url = fork.url;
   });
   assert.ok(await refused(url));
+});
+
+test("withTestDatabase routes and restores the URL", async () => {
+  const previousControl = process.env.PGMEM_CONTROL;
+  const previousSnapshot = process.env.PGMEM_SNAPSHOT;
+  const previousUrl = process.env.DATABASE_URL;
+  Object.assign(process.env, server.env());
+  process.env.DATABASE_URL = "outside";
+  try {
+    let freshUrl;
+    await withTestDatabase(async (target) => {
+      freshUrl = target.url;
+      assert.equal(process.env.DATABASE_URL, target.url);
+      assert.equal(await count(target.url), 2);
+      const db = await connectWire(target.url);
+      await db.query("INSERT INTO t VALUES (3)");
+      await db.close();
+    });
+    assert.equal(process.env.DATABASE_URL, "outside");
+    assert.ok(await refused(freshUrl));
+    await assert.rejects(withTestDatabase(async () => {
+      assert.notEqual(process.env.DATABASE_URL, "outside");
+      throw new Error("case failed");
+    }), /case failed/);
+    assert.equal(process.env.DATABASE_URL, "outside");
+    let sharedUrl;
+    await withTestDatabase(async (target) => { sharedUrl = target.url; assert.equal(await count(target.url), 2); }, { fork: false });
+    await withTestDatabase(async (target) => { assert.equal(target.url, sharedUrl); }, { fork: false });
+  } finally {
+    for (const [name, value] of Object.entries({ PGMEM_CONTROL: previousControl, PGMEM_SNAPSHOT: previousSnapshot, DATABASE_URL: previousUrl })) {
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
+});
+
+test("pgmemTest registers a callback with test context", async () => {
+  const oldControl = process.env.PGMEM_CONTROL;
+  const oldSnapshot = process.env.PGMEM_SNAPSHOT;
+  Object.assign(process.env, server.env());
+  try {
+    let registered;
+    pgmemTest((name, callback) => { assert.equal(name, "reads seed"); registered = callback; }, "reads seed", async (context) => {
+      assert.equal(context.id, 7);
+      assert.equal(await count(process.env.DATABASE_URL), 2);
+    });
+    await registered({ id: 7 });
+  } finally {
+    if (oldControl === undefined) delete process.env.PGMEM_CONTROL;
+    else process.env.PGMEM_CONTROL = oldControl;
+    if (oldSnapshot === undefined) delete process.env.PGMEM_SNAPSHOT;
+    else process.env.PGMEM_SNAPSHOT = oldSnapshot;
+  }
+});
+
+test("a long-lived HTTP process keeps its connection while tests reset the data", async () => {
+  const target = await server.fork();
+  const wireModule = pathToFileURL(join(pkg, "test", "wire.js")).href;
+  const script = `
+    import { createServer } from "node:http";
+    import { connectWire } from ${JSON.stringify(wireModule)};
+    const db = await connectWire(process.env.DATABASE_URL);
+    const app = createServer(async (_req, res) => {
+      try {
+        const rows = await db.query("SELECT count(*) FROM t");
+        res.setHeader("content-type", "application/json");
+        res.end(JSON.stringify({ count: Number(rows[0][0]) }));
+      } catch (err) {
+        res.statusCode = 500;
+        res.end(String(err));
+      }
+    });
+    app.listen(0, "127.0.0.1", () => console.log(app.address().port));
+  `;
+  const child = spawn(process.execPath, ["--input-type=module", "-e", script], {
+    env: { ...process.env, DATABASE_URL: target.url }, stdio: ["ignore", "pipe", "pipe"],
+  });
+  let stderr = "";
+  child.stderr.on("data", (data) => { stderr += data; });
+  try {
+    const port = await new Promise((resolve, reject) => {
+      createInterface({ input: child.stdout }).once("line", (line) => resolve(Number(line)));
+      child.once("exit", (code) => reject(new Error(`HTTP process exited with ${code}: ${stderr}`)));
+    });
+    const getCount = async () => {
+      const response = await fetch(`http://127.0.0.1:${port}/`);
+      const body = await response.text();
+      assert.equal(response.status, 200, body);
+      return JSON.parse(body).count;
+    };
+    assert.equal(await getCount(), 2);
+    const db = await connectWire(target.url);
+    await db.query("INSERT INTO t VALUES (3)");
+    await db.close();
+    assert.equal(await getCount(), 3);
+    await target.reset();
+    assert.equal(await getCount(), 2);
+  } finally {
+    child.kill();
+    if (child.exitCode === null && child.signalCode === null) {
+      await new Promise((resolve) => child.once("exit", resolve));
+    }
+    await target.close();
+  }
 });
 
 test("a worker process forks through the control socket and its fork ends with it", async () => {

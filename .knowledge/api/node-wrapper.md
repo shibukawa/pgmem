@@ -16,6 +16,8 @@ api:
     - 'PgmemClient.connect({controlUrl = PGMEM_CONTROL, snapshot = PGMEM_SNAPSHOT}); connect(), fork(), withFork(fn) use one process-wide client'
     - 'useFork({env}): fork once per process (reset when it already has one) and write env; PGMEM_ENV lists names'
     - 'currentFork(): globalThis[Symbol.for("pgmem.currentFork")], so it works across module instances and Jest realms'
+    - 'withTestDatabase(fn,{fork=true,env}): fresh fork per callback by default; fork=false shares one fork for read-only callbacks; temporarily routes env, serializes its callbacks, restores env and closes fresh fork; clients must be constructed inside callback'
+    - 'pgmemTest(test,name,fn,options): registers a runner case using withTestDatabase; accepts Vitest, Jest or node:test callback shape'
     - 'PgmemError.code carries the api:control-protocol error code'
   entries:
     register: ESM, top-level await useFork(); Vitest setupFiles, node --test --import, bun test --isolate --preload
@@ -23,5 +25,5 @@ api:
   format: implementation in index.cjs so Jest test files can require it (Jest vm has no dynamic import without experimental flags); index.js re-exports for ESM; one index.d.ts
   liveness: channel handles are referenced only while a request is pending, so the control socket never keeps a test process alive; api:control-socket closes a worker's forks when it exits
   binary: resolveBinary(option, PGMEM_BINARY, @pgmem/<platform>/bin/pgmem); scripts/build-npm.sh copies the built binaries into platforms/*/bin and packs every package (policy:binary-distribution)
-  docs: packages/node/core/README.md (Vitest, Jest, node:test, Bun, ORM prepare recipes); packages/node/examples/prisma (Prisma 7 with Vitest, migrate deploy in globalSetup, per-test reset, migrate dev through pgmem)
+  docs: packages/node/core/README.md and website unit/API/E2E guides (English/Japanese); packages/node/examples/prisma (Prisma 7 with Vitest, migrate deploy in globalSetup, per-test reset, migrate dev through pgmem)
 ```

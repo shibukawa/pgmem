@@ -443,6 +443,42 @@ function currentFork() {
   return current;
 }
 
+let sharedTestFork;
+let testRouteTail = Promise.resolve();
+
+/** Route a test callback to prepared state; constructs clients inside fn. */
+function withTestDatabase(fn, { fork: forkEnabled = true, env } = {}) {
+  if (typeof forkEnabled !== "boolean") throw new TypeError("pgmem: fork must be a boolean");
+  const run = async () => {
+    const target = forkEnabled ? await fork() : await (sharedTestFork ??= fork().catch((err) => {
+      sharedTestFork = undefined;
+      throw err;
+    }));
+    const names = env ?? process.env.PGMEM_ENV?.split(",").map((s) => s.trim()).filter(Boolean);
+    const values = target.env(names?.length ? names : undefined);
+    const previous = Object.fromEntries(Object.keys(values).map((name) => [name, process.env[name]]));
+    Object.assign(process.env, values);
+    try {
+      return await fn(target);
+    } finally {
+      for (const [name, value] of Object.entries(previous)) {
+        if (value === undefined) delete process.env[name];
+        else process.env[name] = value;
+      }
+      if (forkEnabled) await target.close();
+    }
+  };
+  // process.env is process-wide; serialize callbacks that change it.
+  const result = testRouteTail.then(run);
+  testRouteTail = result.catch(() => {});
+  return result;
+}
+
+/** Register a node:test, Vitest or Jest case with pgmem routing. */
+function pgmemTest(test, name, fn, options) {
+  return test(name, (...args) => withTestDatabase(() => fn(...args), options));
+}
+
 module.exports = {
   PROTOCOL,
   PgmemError,
@@ -455,5 +491,7 @@ module.exports = {
   withFork,
   useFork,
   currentFork,
+  withTestDatabase,
+  pgmemTest,
   resolveBinary,
 };
