@@ -15,30 +15,8 @@ HTTP アプリを起動したまま試す場合は [API テスト](../api-testin
 
 `UserRepository` がプールを持ち、コンストラクターで `DATABASE_URL` を読むとします。テストは切り替え対象のコールバック内でリポジトリを作り、公開メソッドの振る舞いを検証します。
 
-```ts title="src/user-repository.ts"
-import { Pool } from 'pg';
-
-export class UserRepository {
-  private pool = new Pool({ connectionString: process.env.DATABASE_URL });
-
-  async create(email: string, name: string) {
-    const { rows } = await this.pool.query(
-      'INSERT INTO users (email, name) VALUES ($1, $2) RETURNING id, email, name',
-      [email, name],
-    );
-    return rows[0];
-  }
-
-  async findByEmail(email: string) {
-    const { rows } = await this.pool.query(
-      'SELECT id, email, name FROM users WHERE email = $1', [email],
-    );
-    return rows[0] ?? null;
-  }
-
-  close() { return this.pool.end(); }
-}
-```
+<Tabs syncKey="node-unit-example">
+<TabItem label="テスト">
 
 ```ts title="test/user-repository.test.ts"
 import { test, expect } from 'vitest';
@@ -64,6 +42,37 @@ pgmemTest(test, '存在しないユーザーは null を返す', async () => {
   }
 }, { fork: false });
 ```
+
+</TabItem>
+<TabItem label="UserRepository">
+
+```ts title="src/user-repository.ts"
+import { Pool } from 'pg';
+
+export class UserRepository {
+  private pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+  async create(email: string, name: string) {
+    const { rows } = await this.pool.query(
+      'INSERT INTO users (email, name) VALUES ($1, $2) RETURNING id, email, name',
+      [email, name],
+    );
+    return rows[0];
+  }
+
+  async findByEmail(email: string) {
+    const { rows } = await this.pool.query(
+      'SELECT id, email, name FROM users WHERE email = $1', [email],
+    );
+    return rows[0] ?? null;
+  }
+
+  close() { return this.pool.end(); }
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## データベースのライフサイクル
 

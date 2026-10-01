@@ -15,30 +15,8 @@ For a long-lived HTTP app, see [API tests](../api-testing/) or [Playwright E2E t
 
 Suppose `UserRepository` owns its pool and reads `DATABASE_URL` in its constructor. The test constructs the repository inside the routed callback and checks its public behavior:
 
-```ts title="src/user-repository.ts"
-import { Pool } from 'pg';
-
-export class UserRepository {
-  private pool = new Pool({ connectionString: process.env.DATABASE_URL });
-
-  async create(email: string, name: string) {
-    const { rows } = await this.pool.query(
-      'INSERT INTO users (email, name) VALUES ($1, $2) RETURNING id, email, name',
-      [email, name],
-    );
-    return rows[0];
-  }
-
-  async findByEmail(email: string) {
-    const { rows } = await this.pool.query(
-      'SELECT id, email, name FROM users WHERE email = $1', [email],
-    );
-    return rows[0] ?? null;
-  }
-
-  close() { return this.pool.end(); }
-}
-```
+<Tabs syncKey="node-unit-example">
+<TabItem label="Test">
 
 ```ts title="test/user-repository.test.ts"
 import { test, expect } from 'vitest';
@@ -64,6 +42,37 @@ pgmemTest(test, 'returns null for an unknown user', async () => {
   }
 }, { fork: false });
 ```
+
+</TabItem>
+<TabItem label="UserRepository">
+
+```ts title="src/user-repository.ts"
+import { Pool } from 'pg';
+
+export class UserRepository {
+  private pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+  async create(email: string, name: string) {
+    const { rows } = await this.pool.query(
+      'INSERT INTO users (email, name) VALUES ($1, $2) RETURNING id, email, name',
+      [email, name],
+    );
+    return rows[0];
+  }
+
+  async findByEmail(email: string) {
+    const { rows } = await this.pool.query(
+      'SELECT id, email, name FROM users WHERE email = $1', [email],
+    );
+    return rows[0] ?? null;
+  }
+
+  close() { return this.pool.end(); }
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Database lifecycle strategy
 
