@@ -125,3 +125,25 @@ def test_snapshot_busy_while_transaction_open():
         conn.commit()
         conn.close()
         pg.template.snapshot(timeout=5).close()
+
+
+def test_reset_keeps_endpoint_and_connection_and_switches_dataset():
+    with pgmem.start(database="app") as pg:
+        with psycopg.connect(pg.template.dsn) as db:
+            db.execute("CREATE TABLE items (id integer)")
+            db.execute("INSERT INTO items VALUES (1)")
+        base = pg.template.snapshot()
+        with base.fork() as fork:
+            dsn = fork.dsn
+            with psycopg.connect(fork.dsn, autocommit=True) as db:
+                db.execute("INSERT INTO items VALUES (2)")
+                second = fork.snapshot()
+                db.execute("INSERT INTO items VALUES (3)")
+                fork.reset(snapshot=base)
+                assert fork.dsn == dsn
+                assert db.execute("SELECT count(*) FROM items").fetchone() == (1,)
+                fork.reset(snapshot=second)
+                assert db.execute("SELECT count(*) FROM items").fetchone() == (2,)
+                db.execute("INSERT INTO items VALUES (4)")
+                fork.reset()
+                assert db.execute("SELECT count(*) FROM items").fetchone() == (1,)

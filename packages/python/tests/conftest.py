@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from pgmem import shadow_pg
 
 REPO = Path(__file__).resolve().parents[3]
 BUILD_DIR = Path(__file__).resolve().parents[1] / "src" / "pgmem" / "_bin"
@@ -25,14 +26,15 @@ def pgmem_options():
 
 
 @pytest.fixture(scope="session")
-def pgmem_snapshot(pgmem_server):
-    import pg8000.dbapi
+@shadow_pg(prepare=True)
+def pgmem_prepare(pgmem_server):
+    import psycopg
 
-    conn = pg8000.dbapi.connect(user=pgmem_server.user, host=pgmem_server.host,
-                                port=pgmem_server.port, database=pgmem_server.database)
-    cur = conn.cursor()
-    cur.execute("CREATE TABLE t (id int)")
-    cur.execute("INSERT INTO t VALUES (1), (2)")
-    conn.commit()
-    conn.close()
-    return pgmem_server.snapshot(max_forks=2)
+    with psycopg.connect("postgresql://bad@127.0.0.1:1/production") as conn:
+        conn.execute("CREATE TABLE t (id int)")
+        conn.execute("INSERT INTO t VALUES (1), (2)")
+
+
+@pytest.fixture(scope="session")
+def pgmem_snapshot(pgmem_server, pgmem_prepare):
+    return pgmem_server.snapshot(max_forks=3)
