@@ -3,6 +3,9 @@ package pgmemtest_test
 import (
 	"context"
 	"database/sql"
+	"fmt"
+	"net/http"
+	"net/http/httptest"
 	"os"
 	"sync"
 	"testing"
@@ -111,5 +114,116 @@ func TestTemplateUntouched(t *testing.T) {
 	defer conn.Close()
 	if n := userCount(t, conn); n != 2 {
 		t.Fatalf("template has %d users, want 2", n)
+	}
+}
+
+// The application keeps its ordinary driver and environment-based config.
+type userRepository struct{ db *sql.DB }
+
+func openUserRepository() (*userRepository, error) {
+	db, err := sql.Open("pgx", os.Getenv("DATABASE_URL"))
+	if err != nil {
+		return nil, err
+	}
+	return &userRepository{db: db}, nil
+}
+
+func (r *userRepository) count() (int, error) {
+	var n int
+	err := r.db.QueryRow("SELECT count(*) FROM users").Scan(&n)
+	return n, err
+}
+
+func TestShadowPGRoutesUnchangedRepository(t *testing.T) {
+	t.Setenv("DATABASE_URL", "postgres://bad@127.0.0.1:1/production")
+	fx.ShadowPG(t)
+	repo, err := openUserRepository()
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer repo.db.Close()
+	if n, err := repo.count(); err != nil || n != 2 {
+		t.Fatalf("count = %d, %v; want 2", n, err)
+	}
+	if _, err := repo.db.Exec("INSERT INTO users(name) VALUES ('shadow')"); err != nil {
+		t.Fatal(err)
+	}
+}
+
+func TestShadowPGStartsFromPreparedSnapshot(t *testing.T) {
+	fx.ShadowPG(t)
+	repo, err := openUserRepository()
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer repo.db.Close()
+	if n, err := repo.count(); err != nil || n != 2 {
+		t.Fatalf("count = %d, %v; want 2", n, err)
+	}
+}
+
+func TestShadowPGUsesLibpqVariables(t *testing.T) {
+	fx.ShadowPG(t)
+	db, err := sql.Open("pgx", "")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer db.Close()
+	if n := userCount(t, db); n != 2 {
+		t.Fatalf("count = %d; want 2", n)
+	}
+}
+
+func TestShadowPGSharedReadOnlyTarget(t *testing.T) {
+	var port int
+	for _, name := range []string{"first", "second"} {
+		t.Run(name, func(t *testing.T) {
+			srv := fx.ShadowPG(t, pgmemtest.ShadowOptions{Shared: true})
+			if port != 0 && srv.Port() != port {
+				t.Fatalf("shared port = %d; want %d", srv.Port(), port)
+			}
+			port = srv.Port()
+			repo, err := openUserRepository()
+			if err != nil {
+				t.Fatal(err)
+			}
+			defer repo.db.Close()
+			if n, err := repo.count(); err != nil || n != 2 {
+				t.Fatalf("count = %d, %v; want 2", n, err)
+			}
+		})
+	}
+}
+
+func TestShadowPGAPIClientUsesUnchangedRepository(t *testing.T) {
+	fx.ShadowPG(t, pgmemtest.ShadowOptions{ExtraEnv: []string{"APP_DATABASE_URL"}})
+	if os.Getenv("APP_DATABASE_URL") != os.Getenv("DATABASE_URL") {
+		t.Fatal("custom application DSN was not routed")
+	}
+	repo, err := openUserRepository()
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer repo.db.Close()
+	app := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		n, err := repo.count()
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		fmt.Fprint(w, n)
+	}))
+	defer app.Close()
+	resp, err := app.Client().Get(app.URL)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		t.Fatalf("status = %d; want 200", resp.StatusCode)
+	}
+	var n int
+	if _, err := fmt.Fscan(resp.Body, &n); err != nil || n != 2 {
+		t.Fatalf("count = %d, %v; want 2", n, err)
 	}
 }
