@@ -157,7 +157,7 @@ async def test_create_order():
 
 どのタブでも、読み取り専用テストに `@shadow_pg(fork=False)` を使えば準備済みフォークを共有できます。`asyncpg.create_pool(...)` はテスト内でプールを作る場合に使えます。SQLAlchemy の既定の `postgresql://` URL は psycopg2 を使い、こちらも対象です。
 
-マーカーは `DATABASE_URL` と libpq の `PG*` 接続変数も設定し、テスト後に元へ戻します。テスト前に作った Engine は再利用でき、前のフォークのプール接続は取り出すときに無効化します。ただし、すでに取り出した接続、テスト前に作った asyncpg プール、マーカーが動く前に `from psycopg import connect` でコピーした関数の接続先は切り替えられません。その場合は `pgmem_dsn` を明示的に渡してください。共有フォークはデータベース側で書き込みを禁止していないため、`fork=False` のテストが書き込むと後続の共有テストに影響します。
+マーカーは既存の `DATABASE_URL` と libpq の `PG*` 接続変数を変更しません。psycopg、psycopg2、asyncpg の接続呼び出しをテスト中だけ pgmem へ向けます。テスト前に作った Engine は再利用でき、前のフォークのプール接続は取り出すときに無効化します。ただし、すでに取り出した接続、テスト前に作った asyncpg プール、マーカーが動く前に `from psycopg import connect` でコピーした関数の接続先は切り替えられません。その場合は `pgmem_dsn` を明示的に渡してください。共有フォークはデータベース側で書き込みを禁止していないため、`fork=False` のテストが書き込むと後続の共有テストに影響します。
 
 #### 読み取り専用のクラスで 1 つのフォークを共有する
 

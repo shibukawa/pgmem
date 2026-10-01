@@ -5,7 +5,7 @@ description: Keep one application and pgmem endpoint per pytest worker, and rest
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-For tests that send requests to an application, keep one pgmem fork and one application client alive per pytest worker. `pgmem_live_fork` supplies a stable DSN; `pgmem_live_db` restores its data before each test. The application's existing connection pool can keep the same destination. Tests in one worker must run sequentially. Separate pytest-xdist workers have separate pgmem processes and application clients.
+For tests that send requests to an application, keep one pgmem fork per pytest worker. `@shadow_pg(live=True)` restores its data before each test and routes new connections to that fork. Create the HTTP client for each test. Tests in one worker must run sequentially. Separate pytest-xdist workers have separate pgmem processes and application clients.
 
 Prepare schema and seed data once with `pgmem_prepare`, as in [unit tests](../testing/#prepare-once-for-the-session). The live fixtures are:
 
@@ -19,7 +19,7 @@ The live fork occupies one slot in `pgmem_snapshot.max_forks` for the whole sess
 
 ## Connect an HTTP test client
 
-Configure the app's existing database settings with `pgmem_live_fork.dsn` **before it creates a pool or opens a connection**. The factory names below stand for your application's own configuration entry point. No pgmem middleware or request header is needed.
+`@shadow_pg(live=True)` restores the stable pgmem endpoint before each test and routes new driver connections to it. Leave the application's datasource configuration unchanged. Keep the client fixture function-scoped so app lifespan and pool creation happen while the marker is active. The normal application configuration must still use a PostgreSQL driver.
 
 <Tabs syncKey="python-api-framework">
 <TabItem label="FastAPI">
@@ -29,13 +29,13 @@ import pytest
 from fastapi.testclient import TestClient
 from myapp import create_app
 
-@pytest.fixture(scope="session")
-def client(pgmem_live_fork):
-    with TestClient(create_app(database_url=pgmem_live_fork.dsn)) as client:
+@pytest.fixture
+def client():
+    with TestClient(create_app()) as client:
         yield client
 ```
 
-Using `TestClient` as a context manager runs the app's lifespan once for this fixture.
+Using `TestClient` as a context manager runs the app's lifespan for each test.
 
 </TabItem>
 <TabItem label="Starlette">
@@ -45,9 +45,9 @@ import pytest
 from starlette.testclient import TestClient
 from myapp import create_app
 
-@pytest.fixture(scope="session")
-def client(pgmem_live_fork):
-    with TestClient(create_app(database_url=pgmem_live_fork.dsn)) as client:
+@pytest.fixture
+def client():
+    with TestClient(create_app()) as client:
         yield client
 ```
 
@@ -58,9 +58,9 @@ def client(pgmem_live_fork):
 import pytest
 from myapp import create_app
 
-@pytest.fixture(scope="session")
-def client(pgmem_live_fork):
-    app = create_app(database_url=pgmem_live_fork.dsn)
+@pytest.fixture
+def client():
+    app = create_app()
     app.config.update(TESTING=True)
     with app.test_client() as client:
         yield client
@@ -75,20 +75,11 @@ Flask's test client calls the WSGI app directly; the database still uses the sam
 import os
 import pytest
 
-@pytest.fixture(scope="session")
-def client(pgmem_live_fork):
+@pytest.fixture
+def client():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myapp.settings")
-    from django.conf import settings
-
-    settings.DATABASES["default"] = {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": pgmem_live_fork.database,
-        "USER": pgmem_live_fork.user,
-        "HOST": pgmem_live_fork.host,
-        "PORT": pgmem_live_fork.port,
-    }
     import django
-    django.setup()  # configure the database before the first connection
+    django.setup()  # use the application's normal PostgreSQL settings
     from django.test import Client
     return Client()
 ```
@@ -98,18 +89,20 @@ Run plain pytest functions with Django's request `Client`. Do not use Django `Te
 </TabItem>
 </Tabs>
 
-The same test shape works for each client:
+Import `shadow_pg` from `pgmem` in the test module. The same test shape works for each client:
 
 ```python title="test_orders.py"
-def test_create_order(pgmem_live_db, client):
+@shadow_pg(live=True)
+def test_create_order(client):
     response = client.post("/orders", data={"sku": "A"})
     assert response.status_code == 201
 
-def test_list_starts_from_seed(pgmem_live_db, client):
+@shadow_pg(live=True)
+def test_list_starts_from_seed(client):
     assert client.get("/orders").status_code == 200
 ```
 
-Adapt request bodies to the application's API: FastAPI and Starlette often accept `json=`, while Flask and Django clients also support form data. The session-scoped client may start before `pgmem_live_db` runs; make no requests until the test body begins.
+Adapt request bodies to the application's API: FastAPI and Starlette often accept `json=`, while Flask and Django clients also support form data. The client starts while the marker is active and closes after the test.
 
 ## Select a dataset
 
@@ -124,7 +117,8 @@ def pgmem_live_snapshots(pgmem_server, pgmem_snapshot):
 
 ```python title="test_orders.py"
 @pytest.mark.pgmem_dataset("paid")
-def test_paid_orders(pgmem_live_db, client):
+@shadow_pg(live=True)
+def test_paid_orders(client):
     assert client.get("/orders/paid").status_code == 200
 ```
 
