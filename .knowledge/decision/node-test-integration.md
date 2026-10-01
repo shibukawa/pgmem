@@ -13,6 +13,8 @@ decision:
     run: PgmemServer.start({prepare}) runs migrations on the template, snapshots, exports PGMEM_CONTROL; env is the only channel that reaches workers in every runner
     file: setup entry (Vitest setupFiles, node:test --import, Bun --preload, Jest testEnvironment) forks via PGMEM_CONTROL and writes DATABASE_URL (names configurable) before test imports run
     test: fork.reset() in beforeEach keeps URL and pools; withFork(fn) hands a separate URL to code that accepts one
+    api: one registered file fork and long-lived app/pool; sequential cases reset the same fork before requests
+    e2e: Playwright worker fixture starts pgmem server, fork and app child with fork URL; automatic test fixture resets before each browser case
   composition: constructors plus close, never own the runner or its globalSetup, so pgmem sits next to osmem in one setup file; pgmem exec only as a fallback for runners without a global setup
   api_shape: mirrors @osmem/core (start, withClone, close) with pgmem's fork vocabulary
   rejected:
@@ -23,6 +25,8 @@ decision:
     - reset assumes tests in a file run sequentially (runner default); concurrent tests use withFork
     - data from beforeAll survives reset only if the file snapshots after beforeAll and resets to that snapshot
     - Vitest isolate false reuses workers and module caches, so the setup entry resets its fork instead of forking again
+    - withTestDatabase is for clients built inside its callback; it cannot move prebuilt pools and process.env routing is process-wide
+    - API/E2E cases sharing an app and fork must be sequential; parallel Playwright workers have independent app processes and forks
   poc: 2026-09-13 Vitest 5 with pre-forked servers per VITEST_POOL_ID; globalSetup env reached workers and app modules read the injected URL at import (4 files passed)
   verified: 2026-09-13 api:node-wrapper end to end; Vitest 5 run with Prisma, Drizzle and TypeORM schemas prepared in 1.9s, 4 files on separate forks, reset per test, 11 tests in 5.1s; Jest 30 environment 3 files passed
 ```
