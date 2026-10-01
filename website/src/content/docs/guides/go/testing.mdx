@@ -253,3 +253,7 @@ When the cap is full, `Fork(ctx)` waits until a fork closes. Its context can can
 <Aside>
 Connection pools on one fork work as on a server: every connection is its own backend process. Independent tests still get the best isolation on separate forks. See [limits](../../../limits/).
 </Aside>
+
+### Safe worker-level parallelism with `ShadowPG`
+
+`go test -p 4 ./...` runs different packages as separate test binaries, so each package has its own environment and `TestMain` fixture. Keep `ShadowPG` tests sequential within a package. To split one package across workers, launch separate `go test -run ... -count=1` processes with disjoint test selections; each process gets its own pgmem template and fork. `-parallel 1` does **not** make `t.Setenv` legal inside a test that calls `t.Parallel()`. For true in-process parallel tests, use per-test `fx.DB(t)` or `fx.PgxPool(t)` and inject the handle instead of using `ShadowPG`.

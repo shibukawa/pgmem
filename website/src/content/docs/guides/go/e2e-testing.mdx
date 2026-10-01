@@ -25,3 +25,7 @@ func TestBrowserCheckout(t *testing.T) {
 Import `os/exec` and `testing`. `app-test-server`, `waitForHealth`, and `appURL` represent your application's existing launch and readiness conventions. Start one app per test or keep a worker's app and fork alive, resetting that fork between sequential cases. Close database transactions before reset. Each concurrently running app should have its own fork and process.
 
 `ShadowPG` changes the test process's environment until test cleanup; Go forbids `t.Parallel()` in these tests. It cannot retarget a process that was already launched. If your launcher supplies an explicit `Cmd.Env`, copy `os.Environ()` after `ShadowPG` and add your app's port and other settings to that slice.
+
+## Safe parallel execution
+
+Use process-level workers: `go test -p 4 ./...` runs packages in separate test binaries, or launch disjoint `go test -run ... -count=1` processes for one package. Each worker calls `ShadowPG`, starts its own app child **after** the environment is set, and uses a distinct HTTP port and browser session. Do not share one app process or fork across workers. Within a worker, finish browser requests, background database jobs, and transactions before resetting or closing its fork. `t.Parallel()` remains incompatible with `ShadowPG`, even if `-parallel 1` is set.
