@@ -28,3 +28,7 @@ func TestCreateOrderAPI(t *testing.T) {
 この例では `net/http`、`net/http/httptest`、`strings`、`testing` を import します。アプリのコンストラクター、ハンドラー、終了メソッドは既存の API に置き換えてください。テストごとに `TestMain` で準備したスキーマとシードデータの新しいコピーを受け取ります。別の DSN 変数を読むアプリには `pgmemtest.ShadowOptions{ExtraEnv: []string{"APP_DATABASE_URL"}}` を渡します。
 
 環境変数はプロセス全体で共有されるため、`ShadowPG` を使うテストでは `t.Parallel()` を呼べません。アプリはテスト内で作って閉じてください。`ShadowPG` より前に作ったプールの接続先は変わりません。並列テストでは `fx.DB(t)` または `fx.PgxPool(t)` を受け取るアプリファクトリーを使います。
+
+## 安全な並列実行
+
+`ShadowPG` を使う API ケースは、各パッケージのテストプロセス内で逐次実行します。異なるパッケージは `go test -p 4 ./...` で並列化でき、それぞれ独自の fixture とアプリを作ります。1 パッケージを複数ワーカーに分けるなら、重複しない `-run` 条件で `go test -run ... -count=1` を別プロセスで起動します。プロセスごとにアプリと待受ポートを分けてください。`ShadowPG` は `t.Setenv` を使うため、`-parallel 1` でも `t.Parallel()` との併用はできません。1 プロセス内でメソッドを並列化するなら、テストごとに別の `httptest.Server`・フォーク・注入した `fx.DB(t)` または `fx.PgxPool(t)` を使います。

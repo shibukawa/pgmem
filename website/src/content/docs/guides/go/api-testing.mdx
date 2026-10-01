@@ -28,3 +28,7 @@ func TestCreateOrderAPI(t *testing.T) {
 Import `net/http`, `net/http/httptest`, `strings`, and `testing` in this example. The application constructor, handler, and close method stand for your existing API. Each test receives a new copy of the schema and seed data prepared in `TestMain`. For an app that reads a different DSN variable, pass `pgmemtest.ShadowOptions{ExtraEnv: []string{"APP_DATABASE_URL"}}`.
 
 The environment is process-wide, so tests using `ShadowPG` cannot use `t.Parallel()`. Construct and close each app inside its test. A pool created before `ShadowPG` keeps its earlier connection settings. For parallel tests, inject `fx.DB(t)` or `fx.PgxPool(t)` into an app factory that accepts a handle.
+
+## Safe parallel execution
+
+With `ShadowPG`, run API cases sequentially inside each package test process. Run different packages concurrently with `go test -p 4 ./...`; each process creates its own fixture and app. For multiple workers on one package, use separate `go test -run ... -count=1` processes with disjoint cases. Give every process its own app and listening port. `-parallel 1` is not a workaround for `t.Parallel()` because `ShadowPG` calls `t.Setenv`. If methods in one process must run in parallel, use a separate `httptest.Server`, fork, and injected `fx.DB(t)` or `fx.PgxPool(t)` per test instead.
