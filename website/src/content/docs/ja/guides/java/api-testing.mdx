@@ -70,6 +70,8 @@ class OrdersApiTest {
 
 アプリの通常のテスト用依存に加え、Spring Boot は `testImplementation("io.github.shibukawa.pgmem:pgmem-spring:1.18.0")`、Micronaut は `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` を追加します。それぞれ `io.github.shibukawa.pgmem.spring.ShadowPg` または `io.github.shibukawa.pgmem.micronaut.ShadowPg` をインポートします。このアノテーションがアプリの標準の DataSource 設定に pgmem の URL を渡し、アプリ起動後の状態を復元基準にします。起動時のマイグレーションを使う場合は `schema` を省略できます。追加の初期データは `seed = "db/seed.sql"` で指定します。クラスごとに別のフォークとサーバーを持ちます。
 
+PostgreSQL JDBC ドライバーとプラットフォーム用の `pgmem-native` も、[Java の基本設定](../basics/)に従ってテスト依存へ追加します。
+
 ## その他の構成とデータセット
 
 `DataSource` を直接受け取るフレームワークなら、リクエスト受付前に `pg.applicationFork().dataSource()` でアプリを構築します。別の JVM で動かす場合は、プールを作る前の起動設定へ `pg.applicationFork().jdbcUrl()` を渡します。同じアプリとフォークを逐次ケースで維持し、`@BeforeEach` で `reset()` を呼びます。

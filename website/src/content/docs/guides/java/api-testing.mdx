@@ -70,6 +70,8 @@ class OrdersApiTest {
 
 Add `testImplementation("io.github.shibukawa.pgmem:pgmem-spring:1.18.0")` for Spring Boot or `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` for Micronaut, alongside the app's normal framework test dependencies. Import `io.github.shibukawa.pgmem.spring.ShadowPg` or `io.github.shibukawa.pgmem.micronaut.ShadowPg`, respectively. The annotation supplies the fork URL through the framework's normal DataSource configuration and captures the application's post-startup state as the reset baseline. If the app runs its own migration at startup, omit `schema`. Add `seed = "db/seed.sql"` for initial data. Each test class owns a separate fork and server.
 
+Add the PostgreSQL JDBC driver and platform-specific `pgmem-native` test dependency shown in [Java basics](../basics/).
+
 ## Other setups and datasets
 
 For a framework that takes a `DataSource` directly, construct the app with `pg.applicationFork().dataSource()` before serving requests. For a child JVM, pass `pg.applicationFork().jdbcUrl()` in its startup configuration before it builds its pool. Keep the same app and fork for sequential cases and call `reset()` in `@BeforeEach`.
