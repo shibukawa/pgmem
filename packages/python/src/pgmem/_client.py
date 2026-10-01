@@ -178,6 +178,21 @@ class Server:
         res = self._pg._request("snapshot", **fields)
         return Snapshot(self._pg, res["snapshot"], self)
 
+    def reset(self, snapshot: Optional["Snapshot"] = None, timeout: Optional[float] = 5.0) -> None:
+        """Restore data in place, keeping the endpoint and client connections.
+
+        A fork defaults to the snapshot it came from. A template requires an
+        explicit snapshot. Open transactions must finish before the timeout.
+        """
+        fields = {"server": self.id}
+        if snapshot is not None:
+            if snapshot._pg is not self._pg:
+                raise ValueError("snapshot belongs to another pgmem process")
+            fields["snapshot"] = snapshot.id
+        if timeout is not None:
+            fields["timeout_ms"] = int(timeout * 1000)
+        self._pg._request("reset", **fields)
+
     def close(self):
         if self._closed:
             return
