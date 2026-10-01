@@ -266,3 +266,7 @@ def pgmem_fork(pgmem_snapshot):
 <Aside>
 A fork is a PostgreSQL cluster of its own, so a connection pool on one fork works as on a server. Commit or close connections to the template before `snapshot()`, or it fails with `busy` after 30 seconds.
 </Aside>
+
+### Safe parallel setup for `@shadow_pg`
+
+Run independent test cases in separate pytest-xdist **processes**, for example `pytest -n 4` (install `pytest-xdist` first). Each worker builds its own template and forks; cases inside that worker execute sequentially. The driver monkeypatch is process-wide, so a plugin that runs test cases concurrently in threads within one worker is not safe. Wait for database work started by a test to finish before its marker is removed. Use `fork=False` only for read-only cases because they share one fork. Size the worker count and `max_forks` together for available memory.

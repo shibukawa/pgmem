@@ -127,3 +127,7 @@ Reset happens **before** each test, including after a failed test. It waits for 
 <Aside>
 This fixture controls the database contents between sequential tests. If two tests send requests concurrently to the same application process, their data cannot be isolated by this reset; use separate workers and application processes.
 </Aside>
+
+## Safe parallel execution
+
+Use `pytest -n 4` with pytest-xdist to run API test cases in separate worker processes. Each worker owns its pgmem process and stable live fork; keep the HTTP client function-scoped as above. Within one worker, `@shadow_pg(live=True)` resets that fork before a case, so do not overlap two cases against its app or start a thread-based parallel test runner. Finish background jobs and close transactions before the next reset. A single external app server shared by all workers would defeat this isolation: each worker needs its own app instance and database target.

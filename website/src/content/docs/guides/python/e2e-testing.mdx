@@ -79,3 +79,7 @@ Only the application launch command and its database configuration change:
 Flask and Django do not read `DATABASE_URL` automatically. Configure their existing test settings to read the DSN or its host, port, user, and database fields **before** importing the app. For Django, point `DJANGO_SETTINGS_MODULE` at a test settings module that configures the normal PostgreSQL backend. Use plain pytest browser tests with `pgmem_live_db`; Django `TestCase` and pytest-django's `live_server` manage a different database lifecycle and should not be combined with this fixture.
 
 Before the next reset, finish HTTP requests and background jobs that still use the database, and commit or close open transactions. A reset waits for transactions and fails with `ProtocolError(code="busy")` after its timeout. If tests must send requests concurrently to one app process, this sequential reset model does not provide isolation; run each test in a separate worker and app process.
+
+## Safe parallel execution
+
+Run browser cases with `pytest -n 4` through pytest-xdist. Each worker must start its own pgmem process, live fork, application process, and distinct HTTP port, as the session fixtures above do. Cases sharing one worker run sequentially; restore data before navigation and wait for requests and database background jobs to finish before the next case. Do not point all workers at one already-running app or use multiple Uvicorn workers for that worker's app. Separate browser contexts alone do not isolate a shared database.
