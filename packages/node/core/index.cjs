@@ -479,6 +479,64 @@ function pgmemTest(test, name, fn, options) {
   return test(name, (...args) => withTestDatabase(() => fn(...args), options));
 }
 
+/** Bind a loopback socket to obtain an available port for an app child. */
+function freePort() {
+  return new Promise((resolve, reject) => {
+    const listener = net.createServer();
+    listener.once("error", reject);
+    listener.listen(0, "127.0.0.1", () => {
+      const port = listener.address().port;
+      listener.close((err) => err ? reject(err) : resolve(port));
+    });
+  });
+}
+
+/** Launch an HTTP app against a fork and wait until it is ready. */
+async function startTestApp({ fork: target, command = process.execPath, args = [], cwd, env = {}, healthPath = "/health", timeoutMs = 10000, portEnv = "PORT", databaseEnv = "DATABASE_URL", stdio = "inherit" }) {
+  if (!target?.url) throw new TypeError("pgmem: startTestApp requires a fork");
+  if (!Array.isArray(args)) throw new TypeError("pgmem: startTestApp args must be an array");
+  const port = await freePort();
+  const url = `http://127.0.0.1:${port}`;
+  const child = spawn(command, args, {
+    cwd,
+    env: { ...process.env, ...env, [databaseEnv]: target.url, [portEnv]: String(port) },
+    stdio,
+  });
+  let childError;
+  child.once("error", (err) => { childError = err; });
+  const stopped = new Promise((resolve) => child.once("close", resolve));
+  const close = async () => {
+    if (child.exitCode === null && child.signalCode === null && !childError) {
+      child.kill("SIGTERM");
+      let timer;
+      const result = await Promise.race([
+        stopped.then(() => "closed"),
+        new Promise((resolve) => { timer = setTimeout(() => resolve("timeout"), 5000); }),
+      ]);
+      clearTimeout(timer);
+      if (result === "timeout") child.kill("SIGKILL");
+    }
+    await stopped;
+  };
+  try {
+    const healthUrl = new URL(healthPath, url);
+    const deadline = Date.now() + timeoutMs;
+    while (Date.now() < deadline) {
+      if (childError) throw childError;
+      if (child.exitCode !== null || child.signalCode !== null) throw new Error(`pgmem: app exited before ${healthUrl} was ready`);
+      try {
+        const response = await fetch(healthUrl, { signal: AbortSignal.timeout(Math.min(1000, Math.max(1, deadline - Date.now()))) });
+        if (response.ok) return { url, port, process: child, close };
+      } catch { /* The app can still be starting. */ }
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+    throw new Error(`pgmem: app did not become ready at ${healthUrl} within ${timeoutMs} ms`);
+  } catch (err) {
+    await close();
+    throw err;
+  }
+}
+
 module.exports = {
   PROTOCOL,
   PgmemError,
@@ -493,5 +551,6 @@ module.exports = {
   currentFork,
   withTestDatabase,
   pgmemTest,
+  startTestApp,
   resolveBinary,
 };
