@@ -5,41 +5,20 @@ description: Spring Boot または Micronaut の HTTP サーバーを pgmem の�
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
-API テストは HTTP 経由でアプリを検証し、その間 DataSource と接続プールは維持します。`PgmemExtension.applicationFork()` はアプリ用の長寿命フォークを 1 つ作ります。JUnit が拡張の `beforeAll` を呼ぶ前でも、`@DynamicPropertySource` から取得できます。`Fork.reset()` は準備済みデータへその場で戻すため、JDBC URL と既存の接続は変わりません。
+API テストは HTTP 経由でアプリを検証します。`@ShadowPg` が pgmem の起動、アプリの接続設定、テストごとのデータ復元を処理します。既存の DataSource と接続プールはテスト中も維持されます。
 
 ## HTTP サーバーをランダムなポートで起動する
 
-以下はアプリに `POST /orders` と `GET /orders` がある想定です。`migrateAndSeed` はプロジェクトのマイグレーションとシード処理に置き換えてください。開いた接続は処理が戻る前にすべて閉じます。その直後に pgmem がテンプレートをスナップショットにします。
+以下はアプリに `POST /orders` と `GET /orders` がある想定です。`db/schema.sql` は `src/test/resources` に配置します。
 
 <Tabs syncKey="java-api-framework">
 <TabItem label="Spring Boot">
 
 ```java title="OrdersApiTest.java"
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+@ShadowPg(schema = "db/schema.sql")
 class OrdersApiTest {
-    @RegisterExtension
-    static PgmemExtension pg = PgmemExtension.builder()
-            .database("app")
-            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
-            .build();
-
-    @DynamicPropertySource
-    static void database(DynamicPropertyRegistry properties) {
-        Fork appDb = pg.applicationFork();
-        properties.add("spring.datasource.url", appDb::jdbcUrl);
-        properties.add("spring.datasource.username", appDb::user);
-        properties.add("spring.datasource.password", () -> "");
-        // スキーマは prepare で適用済み。
-        properties.add("spring.flyway.enabled", () -> false);
-    }
-
     @LocalServerPort int port;
     HttpClient http = HttpClient.newHttpClient();
-
-    @BeforeEach void restoreDatabase() {
-        pg.applicationFork().reset();
-    }
 
     @Test void createsOrderThroughHttp() throws Exception {
         HttpRequest request = HttpRequest.newBuilder(URI.create(baseUrl() + "/orders"))
@@ -53,7 +32,7 @@ class OrdersApiTest {
         HttpRequest request = HttpRequest.newBuilder(URI.create(baseUrl() + "/orders")).build();
         var response = http.send(request, HttpResponse.BodyHandlers.ofString());
         assertEquals(200, response.statusCode());
-        assertEquals("[]", response.body()); // 基準シードに注文がない場合
+        assertEquals("[]", response.body());
     }
 
     String baseUrl() { return "http://127.0.0.1:" + port; }
@@ -64,26 +43,13 @@ class OrdersApiTest {
 <TabItem label="Micronaut">
 
 ```java title="OrdersApiTest.java"
+@ShadowPg(schema = "db/schema.sql")
 class OrdersApiTest {
-    @RegisterExtension
-    static PgmemExtension pg = PgmemExtension.builder()
-            .database("app")
-            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
-            .build();
-
-    static MicronautTestApp app;
-
-    @BeforeAll static void startApp() {
-        app = MicronautTestApp.start(pg.applicationFork());
-    }
-
-    @AfterAll static void stopApp() { app.close(); }
-    @BeforeEach void restoreDatabase() { pg.applicationFork().reset(); }
-
+    @Inject EmbeddedServer app;
     HttpClient http = HttpClient.newHttpClient();
 
     @Test void createsOrderThroughHttp() throws Exception {
-        HttpRequest request = HttpRequest.newBuilder(app.uri().resolve("/orders"))
+        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders"))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString("{\"sku\":\"book\"}"))
                 .build();
@@ -91,7 +57,7 @@ class OrdersApiTest {
     }
 
     @Test void startsFromPreparedDataAgain() throws Exception {
-        HttpRequest request = HttpRequest.newBuilder(app.uri().resolve("/orders")).build();
+        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders")).build();
         var response = http.send(request, HttpResponse.BodyHandlers.ofString());
         assertEquals(200, response.statusCode());
         assertEquals("[]", response.body());
@@ -102,9 +68,7 @@ class OrdersApiTest {
 </TabItem>
 </Tabs>
 
-Spring Boot の例では、アプリは通常どおり DataSource を作ります。テストが `spring.datasource.url` を Spring の初期化前に渡します。`@DirtiesContext` は、pgmem のフォークを閉じた後に別のテストクラスがこのコンテキストを再利用するのを防ぎます。アプリが Liquibase や Hibernate のスキーマ生成を使う場合も、`prepare` ですでにスキーマを適用したなら無効化してください。
-
-Micronaut の例には `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` を追加します。`MicronautTestApp.start()` がフォークの JDBC URL、空きポート、PostgreSQL ドライバーを設定し、準備済みスキーマに対する Flyway の重複実行を無効にしてサーバーを起動します。追加の Micronaut 設定が必要なら第 2 引数にプロパティの `Map` を渡せます。`@AfterAll` でアプリを閉じてから pgmem 拡張がフォークを閉じます。[Micronaut Test のデフォルトのテスト用トランザクション](https://docs.micronaut.io/5.2.x/test/)には依存せず、`reset()` で DB を分離します。
+アプリの通常のテスト用依存に加え、Spring Boot は `testImplementation("io.github.shibukawa.pgmem:pgmem-spring:1.18.0")`、Micronaut は `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` を追加します。それぞれ `io.github.shibukawa.pgmem.spring.ShadowPg` または `io.github.shibukawa.pgmem.micronaut.ShadowPg` をインポートします。このアノテーションがアプリの標準の DataSource 設定に pgmem の URL を渡し、アプリ起動後の状態を復元基準にします。起動時のマイグレーションを使う場合は `schema` を省略できます。追加の初期データは `seed = "db/seed.sql"` で指定します。クラスごとに別のフォークとサーバーを持ちます。
 
 ## その他の構成とデータセット
 

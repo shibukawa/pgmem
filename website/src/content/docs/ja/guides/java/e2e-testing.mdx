@@ -5,40 +5,20 @@ description: Playwright Java から Spring Boot または Micronaut の HTTP サ
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
-E2E テストでは、ブラウザーから実際の HTTP サーバーにアクセスします。サーバーの接続プールは起動時に作られるため、アプリのコンテキストを起動する前に接続先となる pgmem のフォークを用意します。各ブラウザーテストの前に同じフォークをリセットします。サーバー、JDBC URL、プールの接続は維持されます。
+E2E テストでは、ブラウザーから実際の HTTP サーバーにアクセスします。`@ShadowPg` が pgmem のフォークへ接続するアプリを起動し、各ブラウザーテストの前に準備済みデータを復元します。HTTP サーバーと接続プールはテストクラスの間維持されます。
 
 ## Playwright Java と Spring Boot／Micronaut
 
-どちらの例も、テストごとに新しい `Page` を渡す [Playwright の JUnit 連携](https://playwright.dev/java/docs/junit)を使います。Spring Boot はランダムポートで起動し、[動的プロパティ](https://docs.spring.io/spring-framework/reference/testing/testcontext-framework/ctx-management/dynamic-property-sources.html)からフォーク URL を受け取ります。Micronaut はフォークを作ってから `EmbeddedServer` を起動し、pgmem より先にサーバーを閉じます。
+両方の例で [Playwright の JUnit 連携](https://playwright.dev/java/docs/junit)を使います。`@ShadowPg` がアプリの通常の接続設定を pgmem に切り替え、各テスト前にデータを復元します。
 
 <Tabs syncKey="java-e2e-framework">
 <TabItem label="Spring Boot">
 
 ```java title="OrdersE2ETest.java"
 @UsePlaywright
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+@ShadowPg(schema = "db/schema.sql")
 class OrdersE2ETest {
-    @RegisterExtension
-    static PgmemExtension pg = PgmemExtension.builder()
-            .database("app")
-            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
-            .build();
-
-    @DynamicPropertySource
-    static void database(DynamicPropertyRegistry properties) {
-        Fork appDb = pg.applicationFork();
-        properties.add("spring.datasource.url", appDb::jdbcUrl);
-        properties.add("spring.datasource.username", appDb::user);
-        properties.add("spring.datasource.password", () -> "");
-        properties.add("spring.flyway.enabled", () -> false);
-    }
-
     @LocalServerPort int port;
-
-    @BeforeEach void restoreDatabase() {
-        pg.applicationFork().reset();
-    }
 
     @Test void createsAnOrder(Page page) {
         page.navigate("http://127.0.0.1:" + port + "/orders");
@@ -58,30 +38,18 @@ class OrdersE2ETest {
 
 ```java title="OrdersE2ETest.java"
 @UsePlaywright
+@ShadowPg(schema = "db/schema.sql")
 class OrdersE2ETest {
-    @RegisterExtension
-    static PgmemExtension pg = PgmemExtension.builder()
-            .database("app")
-            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
-            .build();
-
-    static MicronautTestApp app;
-
-    @BeforeAll static void startApp() {
-        app = MicronautTestApp.start(pg.applicationFork());
-    }
-
-    @AfterAll static void stopApp() { app.close(); }
-    @BeforeEach void restoreDatabase() { pg.applicationFork().reset(); }
+    @Inject EmbeddedServer app;
 
     @Test void createsAnOrder(Page page) {
-        page.navigate(app.uri().resolve("/orders").toString());
+        page.navigate(app.getURI().resolve("/orders").toString());
         page.getByText("New order").click();
         assertThat(page.getByText("Order created")).isVisible();
     }
 
     @Test void startsFromPreparedDataAgain(Page page) {
-        page.navigate(app.uri().resolve("/orders").toString());
+        page.navigate(app.getURI().resolve("/orders").toString());
         assertThat(page.getByText("No orders")).isVisible();
     }
 }
@@ -90,13 +58,11 @@ class OrdersE2ETest {
 </TabItem>
 </Tabs>
 
-ルート、ラベル、`migrateAndSeed` はアプリに合わせて変更してください。`prepare` でマイグレーションする場合は、例のように起動時の重複実行を無効にします。Spring Boot の例では、`@DirtiesContext` がこのクラスの後でコンテキストを閉じ、閉じたフォークへのプール再利用を防ぎます。
-
-Micronaut の例には `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` を追加します。`MicronautTestApp.start()` がフォークの JDBC URL、空きポート、PostgreSQL ドライバーを設定し、準備済みスキーマに対する Flyway の重複実行を無効にして実 HTTP サーバーを起動します。追加設定は第 2 引数の `Map` で渡せます。JUnit の `@AfterAll` が pgmem 拡張より先に Micronaut を閉じます。Micronaut Test のメソッドごとの自動トランザクションを使わず、フォークのリセットで分離します。
+Spring Boot は `pgmem-spring`、Micronaut は `pgmem-micronaut` をテスト依存に追加してください。`db/schema.sql` は `src/test/resources` に置きます。アプリが起動時にマイグレーションするなら `schema` を省略できます。起動後の状態が復元基準になります。追加の初期データは `seed = "db/seed.sql"` で指定できます。テストクラスごとに独立したサーバーとフォークを作り、終了時に両方を閉じます。
 
 ## 分離と並列実行
 
-同じクラスの JUnit メソッドはアプリとフォークを共有するため、逐次実行してください。クラス間の並列実行では、それぞれに `PgmemExtension`、アプリのコンテキスト、HTTP ポート、ブラウザーの fixture を持たせます。アプリが別 JVM で動く場合も、プールの作成前に起動設定へフォークの JDBC URL を渡し、同じ `reset()` を使います。
+同じクラスの JUnit メソッドはアプリとフォークを共有するため、逐次実行してください。クラス間の並列実行では、それぞれにアプリのコンテキスト、pgmem フォーク、HTTP ポート、ブラウザーの fixture を持たせます。アプリが別 JVM で動く場合も、プールの作成前に起動設定へフォークの JDBC URL を渡し、同じ `reset()` を使います。
 
 <Aside type="caution">
 ブラウザーの分離だけでは DB は分離されません。Playwright の `Page` を新しくしても、フォークをリセットするまで前のケースの書き込みが見えます。アプリ側のトランザクションが残っていると、`reset()` は 5 秒後に `busy` で失敗します。

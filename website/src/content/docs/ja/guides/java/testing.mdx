@@ -7,6 +7,47 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 HTTP アプリを使う場合は [API テスト](../api-testing/) と [Playwright E2E テスト](../e2e-testing/) を参照してください。
 
+## アプリが管理するリポジトリをアノテーション 1 つでテストする
+
+Spring Boot または Micronaut が通常どおりリポジトリと DataSource を作る場合は、各フレームワークの `@ShadowPg` を付けます。以下は `OrderRepository` がアプリの Bean として登録されている想定です。テストは本番コードと同じ Bean を使い、アプリ側に pgmem 固有の変更は不要です。`db/schema.sql` を `src/test/resources` に置きます。アプリが起動時にマイグレーションするなら `schema` は省略できます。初期データは `seed = "db/seed.sql"` で指定します。各メソッドは同じ準備済みデータから始まります。
+
+<Tabs syncKey="java-unit-framework">
+<TabItem label="Spring Boot">
+
+```java
+@ShadowPg(schema = "db/schema.sql")
+class OrderRepositoryTest {
+    @Autowired OrderRepository orders;
+
+    @Test void createsAndFindsAnOrder() throws SQLException {
+        Order created = orders.create("book");
+        assertEquals(created, orders.findById(created.id()));
+    }
+}
+```
+
+`testImplementation("io.github.shibukawa.pgmem:pgmem-spring:1.18.0")` を追加し、`io.github.shibukawa.pgmem.spring.ShadowPg` をインポートします。このアノテーションは API テスト用にランダムポートの HTTP サーバーも起動します。
+
+</TabItem>
+<TabItem label="Micronaut">
+
+```java
+@ShadowPg(schema = "db/schema.sql")
+class OrderRepositoryTest {
+    @Inject OrderRepository orders;
+
+    @Test void createsAndFindsAnOrder() throws SQLException {
+        Order created = orders.create("book");
+        assertEquals(created, orders.findById(created.id()));
+    }
+}
+```
+
+`testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` を追加し、`io.github.shibukawa.pgmem.micronaut.ShadowPg` をインポートします。
+
+</TabItem>
+</Tabs>
+
 ## リポジトリの公開メソッドをテストする
 
 `PgmemExtension` でスキーマを一度準備します。`DataSource` パラメータはデフォルトでメソッドごとに新しいフォークを受け取り、書き込みは次のケースに残りません。`@PgmemTest(fork = false)` は読み取り専用メソッド用に準備済みフォークを共有します。リポジトリは注入された `DataSource` で作ります。作成済みプールの接続先は後から変更できません。この例の `migrateAndSeed` は `orders(id, sku)` テーブルを作ります。

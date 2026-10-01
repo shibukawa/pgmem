@@ -5,41 +5,20 @@ description: Run a Spring Boot or Micronaut HTTP server against one pgmem fork a
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
-An API test exercises the application through HTTP while its DataSource and connection pool stay alive. `PgmemExtension.applicationFork()` creates one long-lived fork for that app. It can be called from `@DynamicPropertySource`, even before JUnit invokes the extension's `beforeAll`. `Fork.reset()` restores the prepared database in place, so the JDBC URL and existing connections remain valid.
+An API test exercises the application through HTTP. `@ShadowPg` starts pgmem, directs the application's normal DataSource to it, and restores data before each test. The DataSource and pool remain alive throughout the class.
 
 ## Start an HTTP server on a random port
 
-This example assumes the application has `POST /orders` and `GET /orders` endpoints. Replace `migrateAndSeed` with your project's migration and seed function. Close all connections it opens before it returns; pgmem snapshots the template immediately afterward.
+These examples assume the application has `POST /orders` and `GET /orders` endpoints. Put `db/schema.sql` in `src/test/resources`.
 
 <Tabs syncKey="java-api-framework">
 <TabItem label="Spring Boot">
 
 ```java title="OrdersApiTest.java"
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+@ShadowPg(schema = "db/schema.sql")
 class OrdersApiTest {
-    @RegisterExtension
-    static PgmemExtension pg = PgmemExtension.builder()
-            .database("app")
-            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
-            .build();
-
-    @DynamicPropertySource
-    static void database(DynamicPropertyRegistry properties) {
-        Fork appDb = pg.applicationFork();
-        properties.add("spring.datasource.url", appDb::jdbcUrl);
-        properties.add("spring.datasource.username", appDb::user);
-        properties.add("spring.datasource.password", () -> "");
-        // The schema was already migrated in prepare.
-        properties.add("spring.flyway.enabled", () -> false);
-    }
-
     @LocalServerPort int port;
     HttpClient http = HttpClient.newHttpClient();
-
-    @BeforeEach void restoreDatabase() {
-        pg.applicationFork().reset();
-    }
 
     @Test void createsOrderThroughHttp() throws Exception {
         HttpRequest request = HttpRequest.newBuilder(URI.create(baseUrl() + "/orders"))
@@ -53,7 +32,7 @@ class OrdersApiTest {
         HttpRequest request = HttpRequest.newBuilder(URI.create(baseUrl() + "/orders")).build();
         var response = http.send(request, HttpResponse.BodyHandlers.ofString());
         assertEquals(200, response.statusCode());
-        assertEquals("[]", response.body()); // when the baseline seed has no orders
+        assertEquals("[]", response.body());
     }
 
     String baseUrl() { return "http://127.0.0.1:" + port; }
@@ -64,26 +43,13 @@ class OrdersApiTest {
 <TabItem label="Micronaut">
 
 ```java title="OrdersApiTest.java"
+@ShadowPg(schema = "db/schema.sql")
 class OrdersApiTest {
-    @RegisterExtension
-    static PgmemExtension pg = PgmemExtension.builder()
-            .database("app")
-            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
-            .build();
-
-    static MicronautTestApp app;
-
-    @BeforeAll static void startApp() {
-        app = MicronautTestApp.start(pg.applicationFork());
-    }
-
-    @AfterAll static void stopApp() { app.close(); }
-    @BeforeEach void restoreDatabase() { pg.applicationFork().reset(); }
-
+    @Inject EmbeddedServer app;
     HttpClient http = HttpClient.newHttpClient();
 
     @Test void createsOrderThroughHttp() throws Exception {
-        HttpRequest request = HttpRequest.newBuilder(app.uri().resolve("/orders"))
+        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders"))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString("{\"sku\":\"book\"}"))
                 .build();
@@ -91,7 +57,7 @@ class OrdersApiTest {
     }
 
     @Test void startsFromPreparedDataAgain() throws Exception {
-        HttpRequest request = HttpRequest.newBuilder(app.uri().resolve("/orders")).build();
+        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders")).build();
         var response = http.send(request, HttpResponse.BodyHandlers.ofString());
         assertEquals(200, response.statusCode());
         assertEquals("[]", response.body());
@@ -102,9 +68,7 @@ class OrdersApiTest {
 </TabItem>
 </Tabs>
 
-In the Spring Boot example, the application still creates its DataSource normally. The test supplies `spring.datasource.url` before Spring builds it. `@DirtiesContext` prevents another test class from reusing this context after pgmem has closed its fork. If your app uses Liquibase or Hibernate schema generation, disable those too when `prepare` already applied the schema.
-
-For Micronaut, add `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")`. `MicronautTestApp.start()` starts the server with the fork's JDBC URL, an available port, the PostgreSQL driver, and Flyway disabled for the already prepared schema. Pass a property `Map` as the second argument for application-specific settings. `@AfterAll` closes the app before the pgmem extension closes the fork. This lifecycle avoids [Micronaut Test's default test transaction](https://docs.micronaut.io/5.2.x/test/); `reset()` provides database isolation.
+Add `testImplementation("io.github.shibukawa.pgmem:pgmem-spring:1.18.0")` for Spring Boot or `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` for Micronaut, alongside the app's normal framework test dependencies. Import `io.github.shibukawa.pgmem.spring.ShadowPg` or `io.github.shibukawa.pgmem.micronaut.ShadowPg`, respectively. The annotation supplies the fork URL through the framework's normal DataSource configuration and captures the application's post-startup state as the reset baseline. If the app runs its own migration at startup, omit `schema`. Add `seed = "db/seed.sql"` for initial data. Each test class owns a separate fork and server.
 
 ## Other setups and datasets
 

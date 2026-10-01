@@ -67,6 +67,27 @@ available port, supplies the fork's JDBC URL, disables duplicate Flyway
 migrations, and exposes `uri()` and `close()`. Pass a property map as the
 second argument for application-specific settings.
 
+For Spring Boot or Micronaut tests with no manual connection setup, use the
+framework module's `@ShadowPg` annotation instead:
+
+```java
+@ShadowPg(schema = "db/schema.sql", seed = "db/seed.sql")
+class OrderRepositoryTest {
+    @Autowired OrderRepository orders; // use @Inject with Micronaut
+    @Test void createsOrder() { orders.create("book"); }
+}
+```
+
+Add `pgmem-spring` for Spring Boot or `pgmem-micronaut` for Micronaut as a test
+dependency alongside the application's usual Spring Boot test or Micronaut
+runtime dependencies. The SQL files are classpath resources in `src/test/resources`.
+The annotation starts the application with a pgmem JDBC URL before its
+DataSource is built, captures the post-startup state, and resets it before
+each method. Omit `schema` if the application runs its own migrations. The
+same annotation starts a random-port HTTP server for API or browser tests.
+Each class owns and closes its server and fork. Test methods in one class
+must run sequentially because they share the same application database.
+
 Each connection to a fork gets its own PostgreSQL backend, including pooled
 connections. Commit or close transactions before `snapshot()` or `reset()`:
 they wait for open transactions and fail with code `busy` after their timeout.
