@@ -57,8 +57,8 @@ SELECT calls, rows, query FROM pg_stat_statements ORDER BY query COLLATE "C";
      1 |    0 | COMMIT
      1 |    0 | DECLARE cursor_stats_1 CURSOR WITH HOLD FOR SELECT $1
      1 |    0 | DECLARE cursor_stats_2 CURSOR WITH HOLD FOR SELECT $1
-     1 |    1 | FETCH 1 IN cursor_stats_1
-     1 |    1 | FETCH 1 IN cursor_stats_2
+     1 |    1 | FETCH $1 IN cursor_stats_1
+     1 |    1 | FETCH $1 IN cursor_stats_2
      1 |    1 | SELECT pg_stat_statements_reset() IS NOT NULL AS t
 (9 rows)
 
