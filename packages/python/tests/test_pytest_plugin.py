@@ -70,20 +70,34 @@ class TestClassScoped:
 
 @shadow_pg
 def test_shadow_routes_to_fresh_fork(pgmem_fork):
-    assert os.environ["DATABASE_URL"] == pgmem_fork.dsn
-    assert int(os.environ["PGPORT"]) == pgmem_fork.port
-    assert count(pgmem_fork) == 2
+    assert os.environ.get("DATABASE_URL") != pgmem_fork.dsn
+    with psycopg.connect("postgresql://bad@127.0.0.1:1/production") as conn:
+        assert conn.execute("SELECT count(*) FROM t").fetchone() == (2,)
 
 
 @shadow_pg(fork=False)
 def test_shadow_can_share_prepared_target(pgmem_shared_fork):
-    assert os.environ["DATABASE_URL"] == pgmem_shared_fork.dsn
+    assert os.environ.get("DATABASE_URL") != pgmem_shared_fork.dsn
     with psycopg.connect("postgresql://bad@127.0.0.1:1/production") as conn:
         assert conn.execute("SELECT count(*) FROM t").fetchone() == (2,)
 
 
 @shadow_pg
 def test_shadow_intercepts_psycopg_without_application_dsn():
+    with psycopg.connect("postgresql://bad@127.0.0.1:1/production") as conn:
+        assert conn.execute("SELECT count(*) FROM t").fetchone() == (2,)
+
+
+@shadow_pg(live=True)
+def test_shadow_live_endpoint_without_application_dsn(pgmem_live_fork):
+    with psycopg.connect("postgresql://bad@127.0.0.1:1/production") as conn:
+        assert conn.execute("SELECT count(*) FROM t").fetchone() == (2,)
+        assert conn.info.port == pgmem_live_fork.port
+        conn.execute("INSERT INTO t VALUES (99)")
+
+
+@shadow_pg(live=True)
+def test_shadow_live_restores_before_next_test():
     with psycopg.connect("postgresql://bad@127.0.0.1:1/production") as conn:
         assert conn.execute("SELECT count(*) FROM t").fetchone() == (2,)
 
