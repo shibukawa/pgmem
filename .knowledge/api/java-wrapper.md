@@ -13,6 +13,7 @@ api:
   artifacts:
     pgmem: core client
     pgmem-junit5: JUnit 5 extension
+    pgmem-spring: '@ShadowPg composite SpringBootTest annotation, context customizer, and early TestExecutionListener reset; Spring Boot supplied by the application'
     pgmem-micronaut: MicronautTestApp helper for an HTTP test server on a pgmem application fork; Micronaut runtime is compileOnly
     pgmem-native: binary per classifier, built by the root buildBinary Exec task (go build, -Pgoos/-Pgoarch cross-compile, PGMEM_BINARY copies a prebuilt one) (policy:binary-distribution)
   core:
@@ -39,6 +40,11 @@ api:
   micronaut:
     helper: 'MicronautTestApp.start(Fork[, Map<String, ?> overrides]) starts ApplicationContext.run(EmbeddedServer.class, properties, "test") with a random port, fork JDBC URL and user, PostgreSQL driver, and Flyway disabled; uri(), server(), close()'
     lifecycle: 'Start once after applicationFork(); reset the same fork before each sequential API or browser test; close the app before the extension closes its fork'
+    shadow_pg: '@ShadowPg(schema=classpath SQL, seed=classpath SQL) JUnit annotation creates a pgmem fork, starts the app with its JDBC URL, injects the test instance, captures post-startup baseline, resets before each method, closes server before database'
+  spring:
+    shadow_pg: '@ShadowPg(schema=classpath SQL, seed=classpath SQL) meta SpringBootTest annotation with ContextCustomizerFactory; injects JDBC properties before DataSource creation, captures post-startup baseline, resets via early TestExecutionListener before test transaction starts, closes database on Spring context close; @DirtiesContext(AFTER_CLASS) prevents reuse'
+  shadow_pg_shared:
+    runtime: 'ShadowPgDatabase starts template and fork, runs schema and seed before snapshot; if schema omitted, seed is deferred until after app startup migrations; captures an application baseline and resets a stable fork without changing pooled connections'
   threads: one daemon reader thread; CompletableFuture per request id (rule:non-blocking-control-channel)
   later: Spring Boot test auto-configuration (zonky style), Testcontainers JdbcDatabaseContainer adapter
 ```

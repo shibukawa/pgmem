@@ -5,40 +5,20 @@ description: Drive a real Spring Boot or Micronaut HTTP server from Playwright J
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
-An E2E test uses a browser against an actual HTTP server. The server's connection pool is created at startup, so give it a stable pgmem fork before the application context starts. Reset that fork before each sequential browser test. The server, JDBC URL, and pooled connections stay alive.
+An E2E test uses a browser against an actual HTTP server. `@ShadowPg` starts the application with a pgmem fork and restores its prepared data before each browser test. The HTTP server and its connection pool stay alive throughout the class.
 
 ## Playwright Java with Spring Boot or Micronaut
 
-Both examples use [Playwright's JUnit integration](https://playwright.dev/java/docs/junit), which supplies a fresh `Page` for each test. Spring Boot starts on a random HTTP port and reads the fork URL through [dynamic properties](https://docs.spring.io/spring-framework/reference/testing/testcontext-framework/ctx-management/dynamic-property-sources.html). The Micronaut example starts an `EmbeddedServer` after creating the fork, then closes the server before pgmem.
+Both examples use [Playwright's JUnit integration](https://playwright.dev/java/docs/junit). `@ShadowPg` redirects the application's normal database configuration to pgmem and restores data before each test.
 
 <Tabs syncKey="java-e2e-framework">
 <TabItem label="Spring Boot">
 
 ```java title="OrdersE2ETest.java"
 @UsePlaywright
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+@ShadowPg(schema = "db/schema.sql")
 class OrdersE2ETest {
-    @RegisterExtension
-    static PgmemExtension pg = PgmemExtension.builder()
-            .database("app")
-            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
-            .build();
-
-    @DynamicPropertySource
-    static void database(DynamicPropertyRegistry properties) {
-        Fork appDb = pg.applicationFork();
-        properties.add("spring.datasource.url", appDb::jdbcUrl);
-        properties.add("spring.datasource.username", appDb::user);
-        properties.add("spring.datasource.password", () -> "");
-        properties.add("spring.flyway.enabled", () -> false);
-    }
-
     @LocalServerPort int port;
-
-    @BeforeEach void restoreDatabase() {
-        pg.applicationFork().reset();
-    }
 
     @Test void createsAnOrder(Page page) {
         page.navigate("http://127.0.0.1:" + port + "/orders");
@@ -58,30 +38,18 @@ class OrdersE2ETest {
 
 ```java title="OrdersE2ETest.java"
 @UsePlaywright
+@ShadowPg(schema = "db/schema.sql")
 class OrdersE2ETest {
-    @RegisterExtension
-    static PgmemExtension pg = PgmemExtension.builder()
-            .database("app")
-            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
-            .build();
-
-    static MicronautTestApp app;
-
-    @BeforeAll static void startApp() {
-        app = MicronautTestApp.start(pg.applicationFork());
-    }
-
-    @AfterAll static void stopApp() { app.close(); }
-    @BeforeEach void restoreDatabase() { pg.applicationFork().reset(); }
+    @Inject EmbeddedServer app;
 
     @Test void createsAnOrder(Page page) {
-        page.navigate(app.uri().resolve("/orders").toString());
+        page.navigate(app.getURI().resolve("/orders").toString());
         page.getByText("New order").click();
         assertThat(page.getByText("Order created")).isVisible();
     }
 
     @Test void startsFromPreparedDataAgain(Page page) {
-        page.navigate(app.uri().resolve("/orders").toString());
+        page.navigate(app.getURI().resolve("/orders").toString());
         assertThat(page.getByText("No orders")).isVisible();
     }
 }
@@ -90,13 +58,11 @@ class OrdersE2ETest {
 </TabItem>
 </Tabs>
 
-Replace the routes, labels, and `migrateAndSeed` with your application. When migrations run in `prepare`, disable duplicate startup migrations as shown. In the Spring Boot example, `@DirtiesContext` closes the context after this class so its pool is not reused with a closed fork.
-
-For Micronaut, add `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")`. `MicronautTestApp.start()` starts a real HTTP server with the fork's JDBC URL, an available port, the PostgreSQL driver, and Flyway disabled for the prepared schema. Pass application-specific settings as a second property `Map`. JUnit `@AfterAll` closes Micronaut before the pgmem extension closes its fork. This example uses fork reset for isolation instead of Micronaut Test's automatic per-method transaction.
+Add `pgmem-spring` for Spring Boot or `pgmem-micronaut` for Micronaut as a test dependency. Put `db/schema.sql` in `src/test/resources`. If the app runs its own startup migration, omit `schema`; the post-startup state becomes the reset baseline. Use `seed = "db/seed.sql"` for additional initial data. Each test class owns its server and fork, and both close after the class.
 
 ## Isolation and parallel runs
 
-JUnit methods in one class should run sequentially because they share the same app and fork. Parallel classes can each own a `PgmemExtension`, application context, HTTP port, and browser fixtures. If the app runs in a separate JVM, pass the fork's JDBC URL in its startup configuration before it builds a pool; use the same `reset()` lifecycle.
+JUnit methods in one class should run sequentially because they share the same app and fork. Parallel classes each own an application context, pgmem fork, HTTP port, and browser fixtures. If the app runs in a separate JVM, pass the fork's JDBC URL in its startup configuration before it builds a pool; use the same `reset()` lifecycle.
 
 <Aside type="caution">
 Browser isolation does not isolate the database: a fresh Playwright `Page` can still see writes from a previous case until the fork is reset. A long-running transaction in the app can make `reset()` fail with `busy` after five seconds.

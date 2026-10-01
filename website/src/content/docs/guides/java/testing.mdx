@@ -7,6 +7,47 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 For an HTTP application, see [API tests](../api-testing/) and [Playwright E2E tests](../e2e-testing/).
 
+## Test an application-managed repository with one annotation
+
+If Spring Boot or Micronaut normally creates the repository and its DataSource, use the framework's `@ShadowPg`. These examples assume `OrderRepository` is registered as an application bean. The test retrieves that same bean. The application needs no pgmem-specific changes. Put `db/schema.sql` in `src/test/resources`, or omit `schema` when the application runs its own startup migration. Add `seed = "db/seed.sql"` for initial rows. Each method starts from the same prepared data.
+
+<Tabs syncKey="java-unit-framework">
+<TabItem label="Spring Boot">
+
+```java
+@ShadowPg(schema = "db/schema.sql")
+class OrderRepositoryTest {
+    @Autowired OrderRepository orders;
+
+    @Test void createsAndFindsAnOrder() throws SQLException {
+        Order created = orders.create("book");
+        assertEquals(created, orders.findById(created.id()));
+    }
+}
+```
+
+Add `testImplementation("io.github.shibukawa.pgmem:pgmem-spring:1.18.0")` and import `io.github.shibukawa.pgmem.spring.ShadowPg`. This annotation also starts a random-port HTTP server for API tests.
+
+</TabItem>
+<TabItem label="Micronaut">
+
+```java
+@ShadowPg(schema = "db/schema.sql")
+class OrderRepositoryTest {
+    @Inject OrderRepository orders;
+
+    @Test void createsAndFindsAnOrder() throws SQLException {
+        Order created = orders.create("book");
+        assertEquals(created, orders.findById(created.id()));
+    }
+}
+```
+
+Add `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` and import `io.github.shibukawa.pgmem.micronaut.ShadowPg`.
+
+</TabItem>
+</Tabs>
+
 ## Test a repository through its public methods
 
 `PgmemExtension` prepares the schema once. A `DataSource` parameter receives a fresh fork by default, so a write in one method cannot affect the next. `@PgmemTest(fork = false)` shares a prepared fork for read-only methods. Create the repository with the injected `DataSource`; an existing pool cannot be redirected after construction. In this example, `migrateAndSeed` creates an `orders(id, sku)` table.
