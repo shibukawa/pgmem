@@ -1,0 +1,99 @@
+---
+title: Node.js API tests
+description: Keep an HTTP app and its database pool alive while restoring a pgmem fork before each request test.
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+An API test sends HTTP requests to an application created in the test process. Its database pool may be constructed when the app module is imported. Give that process a fork **before** importing the app, then reset the same fork between test cases. The URL and open connections remain valid across a reset.
+
+## Prepare the database and register the fork
+
+Use the [unit test global setup](../testing/#prepare-once-for-the-run) to run migrations and seed once. For Vitest, keep `@pgmem/core/register` first in `setupFiles` so it sets `DATABASE_URL` before the app is imported. The same setup works for Express and Fastify.
+
+```ts title="vitest.config.ts"
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    globalSetup: ['./test/global-setup.ts'],
+    setupFiles: ['@pgmem/core/register'],
+  },
+});
+```
+
+## Keep one app, restore its data per case
+
+Create the app once per test file. `beforeEach` restores the prepared snapshot before every case, including a case that follows a failed assertion. Close the app and its database pool in `afterAll`. These examples assume `src/app` exports an app and `src/db` exports its pool; adapt those imports to your project.
+
+<Tabs syncKey="node-api-framework">
+<TabItem label="Express + Supertest">
+
+```ts title="test/api.test.ts"
+import request from 'supertest';
+import { afterAll, beforeEach, expect, test } from 'vitest';
+import { currentFork } from '@pgmem/core';
+import { app } from '../src/app';
+import { pool } from '../src/db';
+
+beforeEach(() => currentFork().reset());
+afterAll(() => pool.end());
+
+test('creates an order through HTTP', async () => {
+  const created = await request(app).post('/orders').send({ sku: 'book' });
+  expect(created.status).toBe(201);
+  const list = await request(app).get('/orders');
+  expect(list.body).toHaveLength(1);
+});
+
+test('the next request sees the prepared seed', async () => {
+  const list = await request(app).get('/orders');
+  expect(list.body).toHaveLength(0);
+});
+```
+
+</TabItem>
+<TabItem label="Fastify inject">
+
+```ts title="test/api.test.ts"
+import { afterAll, beforeEach, expect, test } from 'vitest';
+import { currentFork } from '@pgmem/core';
+import { buildApp } from '../src/app';
+
+const app = buildApp();
+beforeEach(() => currentFork().reset());
+afterAll(() => app.close());
+
+test('creates an order through HTTP', async () => {
+  const created = await app.inject({ method: 'POST', url: '/orders', payload: { sku: 'book' } });
+  expect(created.statusCode).toBe(201);
+  const list = await app.inject({ method: 'GET', url: '/orders' });
+  expect(list.json()).toHaveLength(1);
+});
+```
+
+</TabItem>
+</Tabs>
+
+## Use a different seed for a suite
+
+Seed the file fork once, snapshot it, and restore that snapshot before each case. Keep the snapshot alive until the suite finishes.
+
+```ts
+import { beforeAll, beforeEach, afterAll } from 'vitest';
+import { currentFork, type PgmemSnapshot } from '@pgmem/core';
+
+let seeded: PgmemSnapshot;
+beforeAll(async () => {
+  await seedOrders(process.env.DATABASE_URL!);
+  seeded = await currentFork().snapshot();
+});
+beforeEach(() => currentFork().reset({ snapshot: seeded }));
+afterAll(() => seeded.close());
+```
+
+<Aside type="caution">
+Cases using one app and one fork must run sequentially. `test.concurrent` can overlap a reset with another request. Run concurrent files on separate worker forks, or create a separate app and fork for each concurrent case. A reset also waits for open transactions; a transaction left open by the app can cause a `busy` error.
+</Aside>
+
+For a browser and a separately running app process, use [E2E tests](../e2e-testing/).

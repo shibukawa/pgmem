@@ -1,11 +1,38 @@
 ---
-title: Testing with Vitest, Jest, node:test and Bun
+title: Node.js unit tests
 description: Choose a Node.js test database lifecycle with one prepared snapshot per run and extra reset or fork isolation only for tests that write.
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 Node.js test runners load each test file in a fresh worker or module context, and an ORM client reads `DATABASE_URL` once, when it is created. pgmem starts one process per run and gives each file one fork before its imports; test cases in the file share that fork. Read-only cases need no extra fork or reset. Add that isolation only around cases that write. Changing `DATABASE_URL` per test case would not help, because the client already holds the URL.
+
+For a long-lived HTTP app, see [API tests](../api-testing/) or [Playwright E2E tests](../e2e-testing/).
+
+## Per-case routing for clients built inside the test
+
+`pgmemTest` creates a fresh fork for each case by default and temporarily routes `DATABASE_URL` to it. Build the database client inside the callback; an already constructed client retains its original connection. `fork: false` reuses one shared fork and is suitable only for read-only cases. The helper serializes its callbacks because `process.env` is process-wide. Use the register hook and `reset()` below for clients made at import time.
+
+```ts title="test/users.test.ts"
+import { test, expect } from 'vitest';
+import { pgmemTest } from '@pgmem/core';
+import { Client } from 'pg';
+
+pgmemTest(test, 'creates a user', async () => {
+  const db = new Client({ connectionString: process.env.DATABASE_URL });
+  await db.connect();
+  try {
+    await db.query("INSERT INTO users (name) VALUES ('Ada')");
+    expect((await db.query('SELECT count(*) AS n FROM users')).rows[0].n).toBe('1');
+  } finally {
+    await db.end();
+  }
+});
+
+pgmemTest(test, 'reads the prepared seed', async () => {
+  // Create a client here and only read from it.
+}, { fork: false });
+```
 
 ## Database lifecycle strategy
 

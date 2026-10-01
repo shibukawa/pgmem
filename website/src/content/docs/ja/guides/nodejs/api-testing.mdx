@@ -1,0 +1,99 @@
+---
+title: Node.js API テスト
+description: HTTP アプリと DB プールを維持し、各リクエストテストの前に pgmem のフォークを復元します。
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+API テストでは、テストプロセス内で作ったアプリに HTTP リクエストを送ります。アプリの import 時に DB プールが作られることもあります。その前にプロセスへフォークを割り当て、ケース間では同じフォークをリセットします。リセット後も URL と既存の接続は使えます。
+
+## DB を準備してフォークを登録する
+
+[ユニットテストのグローバルセットアップ](../testing/#実行全体で一度だけ準備する)でマイグレーションとシードを一度だけ実行します。Vitest の `setupFiles` では `@pgmem/core/register` を先頭に置き、アプリの import より先に `DATABASE_URL` を設定します。Express と Fastify で同じ設定を使えます。
+
+```ts title="vitest.config.ts"
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    globalSetup: ['./test/global-setup.ts'],
+    setupFiles: ['@pgmem/core/register'],
+  },
+});
+```
+
+## アプリを維持し、ケースごとにデータを戻す
+
+テストファイルごとにアプリを一度だけ作ります。`beforeEach` は失敗したケースの次も含め、毎回準備済みスナップショットへ戻します。`afterAll` でアプリと DB プールを閉じます。以下は `src/app` がアプリを、`src/db` がプールを export する想定です。実際の構成に合わせて import を変更してください。
+
+<Tabs syncKey="node-api-framework">
+<TabItem label="Express + Supertest">
+
+```ts title="test/api.test.ts"
+import request from 'supertest';
+import { afterAll, beforeEach, expect, test } from 'vitest';
+import { currentFork } from '@pgmem/core';
+import { app } from '../src/app';
+import { pool } from '../src/db';
+
+beforeEach(() => currentFork().reset());
+afterAll(() => pool.end());
+
+test('HTTP 経由で注文を作成する', async () => {
+  const created = await request(app).post('/orders').send({ sku: 'book' });
+  expect(created.status).toBe(201);
+  const list = await request(app).get('/orders');
+  expect(list.body).toHaveLength(1);
+});
+
+test('次のケースは準備済みシードから始まる', async () => {
+  const list = await request(app).get('/orders');
+  expect(list.body).toHaveLength(0);
+});
+```
+
+</TabItem>
+<TabItem label="Fastify inject">
+
+```ts title="test/api.test.ts"
+import { afterAll, beforeEach, expect, test } from 'vitest';
+import { currentFork } from '@pgmem/core';
+import { buildApp } from '../src/app';
+
+const app = buildApp();
+beforeEach(() => currentFork().reset());
+afterAll(() => app.close());
+
+test('HTTP 経由で注文を作成する', async () => {
+  const created = await app.inject({ method: 'POST', url: '/orders', payload: { sku: 'book' } });
+  expect(created.statusCode).toBe(201);
+  const list = await app.inject({ method: 'GET', url: '/orders' });
+  expect(list.json()).toHaveLength(1);
+});
+```
+
+</TabItem>
+</Tabs>
+
+## スイートごとに別のシードを使う
+
+ファイルのフォークに一度シードを入れてスナップショットを作り、各ケースの前にそこへ戻します。スイートが終わるまでスナップショットを閉じないでください。
+
+```ts
+import { beforeAll, beforeEach, afterAll } from 'vitest';
+import { currentFork, type PgmemSnapshot } from '@pgmem/core';
+
+let seeded: PgmemSnapshot;
+beforeAll(async () => {
+  await seedOrders(process.env.DATABASE_URL!);
+  seeded = await currentFork().snapshot();
+});
+beforeEach(() => currentFork().reset({ snapshot: seeded }));
+afterAll(() => seeded.close());
+```
+
+<Aside type="caution">
+同じアプリとフォークを使うケースは逐次実行してください。`test.concurrent` では別のリクエスト中にリセットが走る可能性があります。ファイル単位の並列実行ならワーカーごとに別のフォークが使われます。ケース単位で並列化するなら各ケースにアプリとフォークを作ります。未終了のトランザクションがあるとリセットは待機し、`busy` エラーになることがあります。
+</Aside>
+
+ブラウザーと別プロセスのアプリを使う場合は [E2E テスト](../e2e-testing/) を参照してください。

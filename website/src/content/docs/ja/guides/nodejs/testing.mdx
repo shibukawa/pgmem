@@ -1,11 +1,38 @@
 ---
-title: Vitest、Jest、node:test、Bun への組み込み
+title: Node.js ユニットテスト
 description: Node.js のテストで使うデータベースのライフサイクル。実行ごとに 1 つ準備し、書き込みテストだけを追加のリセットやフォークで分離します。
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 Node.js のテストランナーはテストファイルごとに新しいワーカーやモジュールコンテキストで読み込みます。そして ORM のクライアントは、作られたときに一度だけ `DATABASE_URL` を読みます。pgmem は実行全体でプロセスを 1 つ起動し、テストファイルの import 前に、そのファイル用のフォークを `DATABASE_URL` として渡します。同じファイル内のテストケースはそのフォークを共有します。読み取り専用テストに追加のフォークやリセットは要りません。書き込みテストだけを追加で分離します。テストケースごとに `DATABASE_URL` を書き換えても、クライアントはもう URL を持っているので効きません。
+
+HTTP アプリを起動したまま試す場合は [API テスト](../api-testing/) と [Playwright E2E テスト](../e2e-testing/) を参照してください。
+
+## テスト内で作るクライアントのケース別切り替え
+
+`pgmemTest` はデフォルトでケースごとに新しいフォークを作り、一時的に `DATABASE_URL` を向けます。DB クライアントはコールバック内で作ってください。作成済みのクライアントは接続先を保持します。`fork: false` は共有フォークを再利用するため、読み取り専用ケースに限って使います。`process.env` はプロセス全体で共有されるので、ヘルパーはコールバックを逐次実行します。import 時に作るクライアントには、後述の register フックと `reset()` を使います。
+
+```ts title="test/users.test.ts"
+import { test, expect } from 'vitest';
+import { pgmemTest } from '@pgmem/core';
+import { Client } from 'pg';
+
+pgmemTest(test, 'ユーザーを作成する', async () => {
+  const db = new Client({ connectionString: process.env.DATABASE_URL });
+  await db.connect();
+  try {
+    await db.query("INSERT INTO users (name) VALUES ('Ada')");
+    expect((await db.query('SELECT count(*) AS n FROM users')).rows[0].n).toBe('1');
+  } finally {
+    await db.end();
+  }
+});
+
+pgmemTest(test, '準備済みのシードを読む', async () => {
+  // ここでクライアントを作り、読み取りだけ行う。
+}, { fork: false });
+```
 
 ## データベースのライフサイクル
 
