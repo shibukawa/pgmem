@@ -5,7 +5,7 @@ description: pytest ワーカーごとにアプリと pgmem の接続先を固�
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-アプリへ HTTP リクエストを送るテストでは、pytest ワーカーごとに pgmem の fork とアプリのクライアントを 1 つ維持します。`pgmem_live_fork` が固定 DSN を渡し、`pgmem_live_db` が各テストの前にデータを復元します。アプリの既存の接続プールは同じ接続先を使い続けられます。同じワーカー内のテストは逐次実行してください。pytest-xdist の各ワーカーは別の pgmem プロセスとアプリクライアントを持ちます。
+アプリへ HTTP リクエストを送るテストでは、pytest ワーカーごとに pgmem の fork を 1 つ維持します。`@shadow_pg(live=True)` が各テスト前にデータを復元し、新規接続をこの fork へ向けます。HTTP クライアントはテストごとに作ります。同じワーカー内のテストは逐次実行してください。pytest-xdist の各ワーカーは別の pgmem プロセスとアプリクライアントを持ちます。
 
 スキーマとシードデータは[ユニットテスト](../testing/#セッションで一度だけ準備する)と同様に `pgmem_prepare` で一度準備します。HTTP テストで使う fixture は次のとおりです。
 
@@ -19,7 +19,7 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 ## HTTP テストクライアントを接続する
 
-アプリが接続プールや DB 接続を作る**前に**、既存の DB 設定へ `pgmem_live_fork.dsn` を渡します。以下の `create_app` は各アプリの設定入口に置き換えてください。pgmem 専用のミドルウェアやリクエストヘッダーは不要です。
+`@shadow_pg(live=True)` は各テストの前に同じ pgmem エンドポイントを復元し、ドライバの新規接続をそこへ向けます。アプリのデータソース設定は変更しません。クライアント fixture を関数スコープにし、アプリの lifespan と接続プールの作成がマーカーの有効期間内に入るようにします。アプリの通常設定は PostgreSQL ドライバを使う必要があります。
 
 <Tabs syncKey="python-api-framework">
 <TabItem label="FastAPI">
@@ -29,13 +29,13 @@ import pytest
 from fastapi.testclient import TestClient
 from myapp import create_app
 
-@pytest.fixture(scope="session")
-def client(pgmem_live_fork):
-    with TestClient(create_app(database_url=pgmem_live_fork.dsn)) as client:
+@pytest.fixture
+def client():
+    with TestClient(create_app()) as client:
         yield client
 ```
 
-`TestClient` をコンテキストマネージャーとして使うと、アプリの lifespan をこの fixture で一度実行します。
+`TestClient` をコンテキストマネージャーとして使うと、各テストでアプリの lifespan が実行されます。
 
 </TabItem>
 <TabItem label="Starlette">
@@ -45,9 +45,9 @@ import pytest
 from starlette.testclient import TestClient
 from myapp import create_app
 
-@pytest.fixture(scope="session")
-def client(pgmem_live_fork):
-    with TestClient(create_app(database_url=pgmem_live_fork.dsn)) as client:
+@pytest.fixture
+def client():
+    with TestClient(create_app()) as client:
         yield client
 ```
 
@@ -58,9 +58,9 @@ def client(pgmem_live_fork):
 import pytest
 from myapp import create_app
 
-@pytest.fixture(scope="session")
-def client(pgmem_live_fork):
-    app = create_app(database_url=pgmem_live_fork.dsn)
+@pytest.fixture
+def client():
+    app = create_app()
     app.config.update(TESTING=True)
     with app.test_client() as client:
         yield client
@@ -75,20 +75,11 @@ Flask のテストクライアントは WSGI アプリを直接呼びます。DB
 import os
 import pytest
 
-@pytest.fixture(scope="session")
-def client(pgmem_live_fork):
+@pytest.fixture
+def client():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myapp.settings")
-    from django.conf import settings
-
-    settings.DATABASES["default"] = {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": pgmem_live_fork.database,
-        "USER": pgmem_live_fork.user,
-        "HOST": pgmem_live_fork.host,
-        "PORT": pgmem_live_fork.port,
-    }
     import django
-    django.setup()  # 最初の DB 接続より前に設定する
+    django.setup()  # アプリの通常の PostgreSQL 設定を使う
     from django.test import Client
     return Client()
 ```
@@ -98,18 +89,20 @@ Django のリクエスト `Client` と通常の pytest 関数を使います。�
 </TabItem>
 </Tabs>
 
-どのクライアントもテストの形は同じです。
+テストモジュールでは `from pgmem import shadow_pg` を追加します。どのクライアントもテストの形は同じです。
 
 ```python title="test_orders.py"
-def test_create_order(pgmem_live_db, client):
+@shadow_pg(live=True)
+def test_create_order(client):
     response = client.post("/orders", data={"sku": "A"})
     assert response.status_code == 201
 
-def test_list_starts_from_seed(pgmem_live_db, client):
+@shadow_pg(live=True)
+def test_list_starts_from_seed(client):
     assert client.get("/orders").status_code == 200
 ```
 
-リクエストの形式はアプリの API に合わせてください。FastAPI と Starlette では `json=`、Flask と Django ではフォームデータも使えます。session スコープのクライアントは `pgmem_live_db` より前に起動することがあります。テスト本体が始まるまでリクエストは送らないでください。
+リクエストの形式はアプリの API に合わせてください。FastAPI と Starlette では `json=`、Flask と Django ではフォームデータも使えます。クライアントはマーカーの有効期間内で起動し、テスト終了時に閉じます。
 
 ## データセットを選ぶ
 
@@ -124,7 +117,8 @@ def pgmem_live_snapshots(pgmem_server, pgmem_snapshot):
 
 ```python title="test_orders.py"
 @pytest.mark.pgmem_dataset("paid")
-def test_paid_orders(pgmem_live_db, client):
+@shadow_pg(live=True)
+def test_paid_orders(client):
     assert client.get("/orders/paid").status_code == 200
 ```
 

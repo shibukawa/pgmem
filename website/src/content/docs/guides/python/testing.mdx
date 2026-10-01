@@ -157,7 +157,7 @@ async def test_create_order():
 
 Use `@shadow_pg(fork=False)` in any tab for a read-only test that shares a prepared fork. `asyncpg.create_pool(...)` works when the pool is created inside the test. SQLAlchemy's default `postgresql://` dialect uses psycopg2 and is also covered.
 
-The marker also sets `DATABASE_URL` and libpq's `PG*` connection variables and restores them afterward. An Engine created before the test can be reused: pooled connections from an earlier fork are invalidated on checkout. Connections already checked out, asyncpg pools created before the test, and connection functions copied with `from psycopg import connect` before the marker runs cannot be rerouted. For those patterns, pass `pgmem_dsn` explicitly. The shared fork does not enforce read-only access, so a write from a `fork=False` test affects later shared tests.
+The marker leaves `DATABASE_URL` and libpq's `PG*` connection variables unchanged. It redirects psycopg, psycopg2, and asyncpg connection calls to pgmem only while the test runs. An Engine created before the test can be reused: pooled connections from an earlier fork are invalidated on checkout. Connections already checked out, asyncpg pools created before the test, and connection functions copied with `from psycopg import connect` before the marker runs cannot be rerouted. For those patterns, pass `pgmem_dsn` explicitly. The shared fork does not enforce read-only access, so a write from a `fork=False` test affects later shared tests.
 
 #### Share one fork across a read-only class
 
