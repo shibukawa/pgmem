@@ -1,0 +1,107 @@
+---
+title: Node.js Playwright E2E テスト
+description: Playwright のワーカーごとに pgmem のフォークと HTTP サーバーを持ち、ブラウザーテストの前にリセットします。
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+ブラウザーテストは別プロセスの HTTP サーバーへアクセスします。テストプロセスの `DATABASE_URL` を変更しても、サーバーが保持する DB プールの接続先は変わりません。Playwright のワーカーごとに pgmem サーバー、フォーク、アプリプロセスを持たせます。アプリの起動時にフォーク URL を渡し、各ケースの前に同じフォークをリセットします。アプリと DB 接続はワーカーの間ずっと維持されます。
+
+## ワーカー単位のアプリとケース単位のリセット
+
+以下の fixture は、pgmem とアプリをワーカーごとに一度起動します。`prepare` はフォーク前にプロジェクトのマイグレーションと基準シードを適用します。自動 fixture の `resetDb` は、ブラウザーテストの前に毎回その基準状態へ戻します。`appUrl` はワーカー単位なので、同じワーカーの `page` テストは同じアプリプロセスにアクセスします。
+
+```js title="test/fixtures.js"
+import { test as base, expect } from '@playwright/test';
+import { spawn } from 'node:child_process';
+import { createServer } from 'node:net';
+import { once } from 'node:events';
+import { PgmemServer } from '@pgmem/core';
+import { migrateAndSeed } from './prepare-db.js';
+
+async function freePort() {
+  const listener = createServer();
+  listener.listen(0, '127.0.0.1');
+  await once(listener, 'listening');
+  const port = listener.address().port;
+  listener.close();
+  await once(listener, 'close');
+  return port;
+}
+
+async function waitForApp(url, child) {
+  for (let attempt = 0; attempt < 100; attempt++) {
+    if (child.exitCode !== null) throw new Error('起動前にアプリが終了しました');
+    try {
+      const response = await fetch(`${url}/health`);
+      if (response.ok) return;
+    } catch { /* 起動中 */ }
+    await new Promise((resolve) => setTimeout(resolve, 100));
+  }
+  throw new Error('アプリが起動しませんでした');
+}
+
+export const test = base.extend({
+  pgmem: [async ({}, use) => {
+    const server = await PgmemServer.start({
+      database: 'app',
+      prepare: ({ url }) => migrateAndSeed(url),
+    });
+    try {
+      const fork = await server.fork();
+      try { await use(fork); }
+      finally { await fork.close(); }
+    } finally {
+      await server.close();
+    }
+  }, { scope: 'worker' }],
+
+  appUrl: [async ({ pgmem }, use) => {
+    const port = await freePort();
+    const url = `http://127.0.0.1:${port}`;
+    const child = spawn(process.execPath, ['./src/server.js'], {
+      env: { ...process.env, DATABASE_URL: pgmem.url, PORT: String(port) },
+      stdio: 'inherit',
+    });
+    try {
+      await waitForApp(url, child);
+      await use(url);
+    } finally {
+      if (child.exitCode === null && child.signalCode === null) {
+        child.kill('SIGTERM');
+        await once(child, 'exit');
+      }
+    }
+  }, { scope: 'worker' }],
+
+  resetDb: [async ({ pgmem, appUrl }, use) => {
+    await pgmem.reset();
+    await use();
+  }, { auto: true }],
+});
+
+export { expect };
+```
+
+`src/server.js` は `PORT` で待ち受け、プール作成時に `DATABASE_URL` を使い、準備完了後に `GET /health` に応答する必要があります。`migrateAndSeed(url)` は `prepare` から戻る前に、開いた DB 接続をすべて閉じてください。
+
+```js title="test/orders.spec.js"
+import { test, expect } from './fixtures.js';
+
+test('注文を作成する', async ({ page, appUrl }) => {
+  await page.goto(`${appUrl}/orders`);
+  await page.getByRole('button', { name: 'New order' }).click();
+  await expect(page.getByText('Order created')).toBeVisible();
+});
+
+test('次のケースは準備済みデータから始まる', async ({ page, appUrl }) => {
+  await page.goto(`${appUrl}/orders`);
+  await expect(page.getByText('No orders')).toBeVisible();
+});
+```
+
+<Aside type="caution">
+Playwright でファイル内の並列モードを有効にすると、同じワーカーのリクエストとリセットが重なる場合があります。この構成ではワーカー内のケースを逐次実行してください。ワーカー間では、それぞれ別の pgmem サーバー、フォーク、アプリプロセスを使います。マシンの容量に合わせて Playwright の `workers` 数を制限してください。
+</Aside>
+
+別のデータセットを使う場合は、ワーカーのフォークにシードを入れて `fork.snapshot()` を呼び、`fork.reset({ snapshot: seeded })` で戻します。ワーカー終了までスナップショットを保持してください。同一プロセス内の HTTP テストは [API テスト](../api-testing/) を参照してください。
