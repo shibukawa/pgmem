@@ -69,7 +69,11 @@ test('starts from the prepared database again', async ({ page, appUrl }) => {
 ```
 
 <Aside type="caution">
-Playwright can run test files concurrently within one worker only if you opt into parallel mode. Keep these tests sequential within each worker: one reset cannot isolate overlapping requests. Separate workers each have their own pgmem server, fork, and app process. Limit Playwright's `workers` count to what the machine can hold.
+Cases using one worker fork must not overlap a reset with another request. Separate Playwright workers each have their own pgmem server, fork, and app process.
 </Aside>
 
 To use a different dataset, seed the worker fork, call `fork.snapshot()`, and reset with `fork.reset({ snapshot: seeded })`. Keep the seeded snapshot open until the worker finishes. For in-process HTTP tests, use [API tests](../api-testing/).
+
+## Safe parallel execution
+
+Set a bounded Playwright worker count, for example `workers: 4`, and keep the worker-scoped `pgmem`, `fork`, and `appUrl` fixtures together. Each worker runs its own app process on a distinct port and resets only its own fork. Playwright's parallel mode can place tests from one file in different worker processes; that remains isolated when every worker creates its own fixtures. A shared external app URL or database fork breaks that guarantee. Within a worker, wait for HTTP requests, background jobs, and open transactions before the next test resets the fork. Choose the worker count with the memory cost of pgmem and the app in mind.

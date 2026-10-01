@@ -440,3 +440,7 @@ Each fork adds a separate data-directory copy and buffer cache. See [limits](../
 - **A fork is a PostgreSQL cluster of its own**: every connection gets a backend process, so pools, locks between connections and deadlock detection behave as on a server.
 - **`reset` waits for open transactions** and fails with code `busy` after `timeoutMs` (default 5 s).
 - **Forks belong to the process that made them** through `@pgmem/core/register`, `fork()` or `withFork()`, and close when it exits.
+
+## Safe parallel execution
+
+Run separate test files in separate runner workers; `@pgmem/core/register` gives each file its own fork. Within one file, writing cases that use its shared fork or one application Pool must run sequentially. `shadowPg` keeps a target in `AsyncLocalStorage`, but it cannot make an already checked-out connection from a shared Pool serve two forks at once; give concurrent cases separate application Pool instances, or move them to separate worker files. `pgmemTest` changes `process.env` and serializes its callbacks, so do not use it as a way to make shared application state concurrent. Never reset a fork while another case is using it; finish and close database work before case teardown.
