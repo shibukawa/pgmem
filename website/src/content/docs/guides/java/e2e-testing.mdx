@@ -60,6 +60,8 @@ class OrdersE2ETest {
 
 Add `pgmem-spring` for Spring Boot or `pgmem-micronaut` for Micronaut as a test dependency. Put `db/schema.sql` in `src/test/resources`. If the app runs its own startup migration, omit `schema`; the post-startup state becomes the reset baseline. Use `seed = "db/seed.sql"` for additional initial data. Each test class owns its server and fork, and both close after the class.
 
+Add the PostgreSQL JDBC driver and platform-specific `pgmem-native` dependency from [Java basics](../basics/) too.
+
 ## Isolation and parallel runs
 
 JUnit methods in one class should run sequentially because they share the same app and fork. Parallel classes each own an application context, pgmem fork, HTTP port, and browser fixtures. If the app runs in a separate JVM, pass the fork's JDBC URL in its startup configuration before it builds a pool; use the same `reset()` lifecycle.

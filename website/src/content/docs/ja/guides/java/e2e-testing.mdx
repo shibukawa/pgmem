@@ -60,6 +60,8 @@ class OrdersE2ETest {
 
 Spring Boot は `pgmem-spring`、Micronaut は `pgmem-micronaut` をテスト依存に追加してください。`db/schema.sql` は `src/test/resources` に置きます。アプリが起動時にマイグレーションするなら `schema` を省略できます。起動後の状態が復元基準になります。追加の初期データは `seed = "db/seed.sql"` で指定できます。テストクラスごとに独立したサーバーとフォークを作り、終了時に両方を閉じます。
 
+PostgreSQL JDBC ドライバーとプラットフォーム用の `pgmem-native` も、[Java の基本設定](../basics/)に従って追加します。
+
 ## 分離と並列実行
 
 同じクラスの JUnit メソッドはアプリとフォークを共有するため、逐次実行してください。クラス間の並列実行では、それぞれにアプリのコンテキスト、pgmem フォーク、HTTP ポート、ブラウザーの fixture を持たせます。アプリが別 JVM で動く場合も、プールの作成前に起動設定へフォークの JDBC URL を渡し、同じ `reset()` を使います。

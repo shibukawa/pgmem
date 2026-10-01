@@ -48,6 +48,8 @@ Add `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` and
 </TabItem>
 </Tabs>
 
+Add the PostgreSQL JDBC driver and platform-specific `pgmem-native` dependency from [Java basics](../basics/) for either framework.
+
 ## Test a repository through its public methods
 
 `PgmemExtension` prepares the schema once. A `DataSource` parameter receives a fresh fork by default, so a write in one method cannot affect the next. `@PgmemTest(fork = false)` shares a prepared fork for read-only methods. Create the repository with the injected `DataSource`; an existing pool cannot be redirected after construction. In this example, `migrateAndSeed` creates an `orders(id, sku)` table.

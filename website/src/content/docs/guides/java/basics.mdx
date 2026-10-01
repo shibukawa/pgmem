@@ -5,7 +5,7 @@ description: Add pgmem to a Gradle or Maven build, start it, migrate with Flyway
 
 import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 
-pgmem for the JVM is three artifacts: `io.github.shibukawa.pgmem:pgmem` (the client), `io.github.shibukawa.pgmem:pgmem-junit5` (the JUnit 5 extension) and `io.github.shibukawa.pgmem:pgmem-native` (the binary, one classifier per platform). The client has no third-party runtime dependencies; bring your JDBC driver.
+pgmem for the JVM has a core client (`io.github.shibukawa.pgmem:pgmem`), testing modules (`pgmem-junit5`, `pgmem-spring`, and `pgmem-micronaut`), and a platform-specific binary (`pgmem-native`). The client has no third-party runtime dependencies; bring your JDBC driver.
 
 ## Dependencies
 

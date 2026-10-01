@@ -48,6 +48,8 @@ class OrderRepositoryTest {
 </TabItem>
 </Tabs>
 
+どちらのフレームワークでも、[Java の基本設定](../basics/)に従って PostgreSQL JDBC ドライバーとプラットフォーム用の `pgmem-native` を追加します。
+
 ## リポジトリの公開メソッドをテストする
 
 `PgmemExtension` でスキーマを一度準備します。`DataSource` パラメータはデフォルトでメソッドごとに新しいフォークを受け取り、書き込みは次のケースに残りません。`@PgmemTest(fork = false)` は読み取り専用メソッド用に準備済みフォークを共有します。リポジトリは注入された `DataSource` で作ります。作成済みプールの接続先は後から変更できません。この例の `migrateAndSeed` は `orders(id, sku)` テーブルを作ります。

@@ -5,7 +5,7 @@ description: Gradle や Maven のビルドに pgmem を追加して起動し、F
 
 import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 
-JVM 向けの pgmem は 3 つのアーティファクトでできています。クライアントの `io.github.shibukawa.pgmem:pgmem`、JUnit 5 拡張の `io.github.shibukawa.pgmem:pgmem-junit5`、プラットフォームごとの classifier でバイナリを配る `io.github.shibukawa.pgmem:pgmem-native` です。クライアントはサードパーティの実行時依存を持たないので、JDBC ドライバは自分で追加してください。
+JVM 向けの pgmem には、クライアントの `io.github.shibukawa.pgmem:pgmem`、テスト用モジュールの `pgmem-junit5`、`pgmem-spring`、`pgmem-micronaut`、プラットフォームごとの classifier でバイナリを配る `pgmem-native` があります。クライアントはサードパーティの実行時依存を持たないので、JDBC ドライバは自分で追加してください。
 
 ## 依存関係
 
