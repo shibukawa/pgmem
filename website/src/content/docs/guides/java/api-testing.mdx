@@ -1,15 +1,18 @@
 ---
 title: Java API tests
-description: Run a Spring Boot HTTP server against one pgmem fork and restore data before each request test.
+description: Run a Spring Boot or Micronaut HTTP server against one pgmem fork and restore data before each request test.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 An API test exercises the application through HTTP while its DataSource and connection pool stay alive. `PgmemExtension.applicationFork()` creates one long-lived fork for that app. It can be called from `@DynamicPropertySource`, even before JUnit invokes the extension's `beforeAll`. `Fork.reset()` restores the prepared database in place, so the JDBC URL and existing connections remain valid.
 
-## Spring Boot on a random HTTP port
+## Start an HTTP server on a random port
 
 This example assumes the application has `POST /orders` and `GET /orders` endpoints. Replace `migrateAndSeed` with your project's migration and seed function. Close all connections it opens before it returns; pgmem snapshots the template immediately afterward.
+
+<Tabs syncKey="java-api-framework">
+<TabItem label="Spring Boot">
 
 ```java title="OrdersApiTest.java"
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -57,9 +60,61 @@ class OrdersApiTest {
 }
 ```
 
-The application still creates its DataSource normally. The test supplies `spring.datasource.url` before Spring builds it. `@DirtiesContext` prevents another test class from reusing this context after pgmem has closed its fork. If your app uses Liquibase or Hibernate schema generation, disable those too when `prepare` already applied the schema.
+</TabItem>
+<TabItem label="Micronaut">
 
-## Other HTTP frameworks and datasets
+```java title="OrdersApiTest.java"
+class OrdersApiTest {
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+            .database("app")
+            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
+            .build();
+
+    static EmbeddedServer app;
+
+    @BeforeAll static void startApp() {
+        Fork appDb = pg.applicationFork();
+        app = ApplicationContext.run(EmbeddedServer.class, Map.<String, Object>of(
+                "micronaut.server.port", -1,
+                "datasources.default.url", appDb.jdbcUrl(),
+                "datasources.default.username", appDb.user(),
+                "datasources.default.password", "",
+                "datasources.default.driverClassName", "org.postgresql.Driver",
+                "flyway.datasources.default.enabled", false
+        ), "test");
+    }
+
+    @AfterAll static void stopApp() { app.close(); }
+    @BeforeEach void restoreDatabase() { pg.applicationFork().reset(); }
+
+    HttpClient http = HttpClient.newHttpClient();
+
+    @Test void createsOrderThroughHttp() throws Exception {
+        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString("{\"sku\":\"book\"}"))
+                .build();
+        assertEquals(201, http.send(request, HttpResponse.BodyHandlers.ofString()).statusCode());
+    }
+
+    @Test void startsFromPreparedDataAgain() throws Exception {
+        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders")).build();
+        var response = http.send(request, HttpResponse.BodyHandlers.ofString());
+        assertEquals(200, response.statusCode());
+        assertEquals("[]", response.body());
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+In the Spring Boot example, the application still creates its DataSource normally. The test supplies `spring.datasource.url` before Spring builds it. `@DirtiesContext` prevents another test class from reusing this context after pgmem has closed its fork. If your app uses Liquibase or Hibernate schema generation, disable those too when `prepare` already applied the schema.
+
+The Micronaut example supplies `datasources.default.url` before starting its [embedded server](https://docs.micronaut.io/latest/api/io/micronaut/runtime/server/EmbeddedServer.html). Its `-1` port selects an available port. It closes the server in `@AfterAll` before the pgmem extension closes the fork. If your application runs Flyway at startup, disable the duplicate migration as shown. This explicit server lifecycle avoids [Micronaut Test's default test transaction](https://docs.micronaut.io/5.2.x/test/); `reset()` provides the database isolation.
+
+## Other setups and datasets
 
 For a framework that takes a `DataSource` directly, construct the app with `pg.applicationFork().dataSource()` before serving requests. For a child JVM, pass `pg.applicationFork().jdbcUrl()` in its startup configuration before it builds its pool. Keep the same app and fork for sequential cases and call `reset()` in `@BeforeEach`.
 
