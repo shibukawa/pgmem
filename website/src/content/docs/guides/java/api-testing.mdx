@@ -71,18 +71,10 @@ class OrdersApiTest {
             .prepare(t -> migrateAndSeed(t.jdbcUrl()))
             .build();
 
-    static EmbeddedServer app;
+    static MicronautTestApp app;
 
     @BeforeAll static void startApp() {
-        Fork appDb = pg.applicationFork();
-        app = ApplicationContext.run(EmbeddedServer.class, Map.<String, Object>of(
-                "micronaut.server.port", -1,
-                "datasources.default.url", appDb.jdbcUrl(),
-                "datasources.default.username", appDb.user(),
-                "datasources.default.password", "",
-                "datasources.default.driverClassName", "org.postgresql.Driver",
-                "flyway.datasources.default.enabled", false
-        ), "test");
+        app = MicronautTestApp.start(pg.applicationFork());
     }
 
     @AfterAll static void stopApp() { app.close(); }
@@ -91,7 +83,7 @@ class OrdersApiTest {
     HttpClient http = HttpClient.newHttpClient();
 
     @Test void createsOrderThroughHttp() throws Exception {
-        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders"))
+        HttpRequest request = HttpRequest.newBuilder(app.uri().resolve("/orders"))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString("{\"sku\":\"book\"}"))
                 .build();
@@ -99,7 +91,7 @@ class OrdersApiTest {
     }
 
     @Test void startsFromPreparedDataAgain() throws Exception {
-        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders")).build();
+        HttpRequest request = HttpRequest.newBuilder(app.uri().resolve("/orders")).build();
         var response = http.send(request, HttpResponse.BodyHandlers.ofString());
         assertEquals(200, response.statusCode());
         assertEquals("[]", response.body());
@@ -112,7 +104,7 @@ class OrdersApiTest {
 
 In the Spring Boot example, the application still creates its DataSource normally. The test supplies `spring.datasource.url` before Spring builds it. `@DirtiesContext` prevents another test class from reusing this context after pgmem has closed its fork. If your app uses Liquibase or Hibernate schema generation, disable those too when `prepare` already applied the schema.
 
-The Micronaut example supplies `datasources.default.url` before starting its [embedded server](https://docs.micronaut.io/latest/api/io/micronaut/runtime/server/EmbeddedServer.html). Its `-1` port selects an available port. It closes the server in `@AfterAll` before the pgmem extension closes the fork. If your application runs Flyway at startup, disable the duplicate migration as shown. This explicit server lifecycle avoids [Micronaut Test's default test transaction](https://docs.micronaut.io/5.2.x/test/); `reset()` provides the database isolation.
+For Micronaut, add `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")`. `MicronautTestApp.start()` starts the server with the fork's JDBC URL, an available port, the PostgreSQL driver, and Flyway disabled for the already prepared schema. Pass a property `Map` as the second argument for application-specific settings. `@AfterAll` closes the app before the pgmem extension closes the fork. This lifecycle avoids [Micronaut Test's default test transaction](https://docs.micronaut.io/5.2.x/test/); `reset()` provides database isolation.
 
 ## Other setups and datasets
 

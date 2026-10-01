@@ -65,31 +65,23 @@ class OrdersE2ETest {
             .prepare(t -> migrateAndSeed(t.jdbcUrl()))
             .build();
 
-    static EmbeddedServer app;
+    static MicronautTestApp app;
 
     @BeforeAll static void startApp() {
-        Fork appDb = pg.applicationFork();
-        app = ApplicationContext.run(EmbeddedServer.class, Map.<String, Object>of(
-                "micronaut.server.port", -1,
-                "datasources.default.url", appDb.jdbcUrl(),
-                "datasources.default.username", appDb.user(),
-                "datasources.default.password", "",
-                "datasources.default.driverClassName", "org.postgresql.Driver",
-                "flyway.datasources.default.enabled", false
-        ), "test");
+        app = MicronautTestApp.start(pg.applicationFork());
     }
 
     @AfterAll static void stopApp() { app.close(); }
     @BeforeEach void restoreDatabase() { pg.applicationFork().reset(); }
 
     @Test void createsAnOrder(Page page) {
-        page.navigate(app.getURI().resolve("/orders").toString());
+        page.navigate(app.uri().resolve("/orders").toString());
         page.getByText("New order").click();
         assertThat(page.getByText("Order created")).isVisible();
     }
 
     @Test void startsFromPreparedDataAgain(Page page) {
-        page.navigate(app.getURI().resolve("/orders").toString());
+        page.navigate(app.uri().resolve("/orders").toString());
         assertThat(page.getByText("No orders")).isVisible();
     }
 }
@@ -100,7 +92,7 @@ class OrdersE2ETest {
 
 Replace the routes, labels, and `migrateAndSeed` with your application. When migrations run in `prepare`, disable duplicate startup migrations as shown. In the Spring Boot example, `@DirtiesContext` closes the context after this class so its pool is not reused with a closed fork.
 
-For Micronaut, `ApplicationContext.run(EmbeddedServer.class, properties, "test")` starts the real HTTP server with the fork's JDBC URL and a random port. The JUnit `@AfterAll` method closes Micronaut before the pgmem extension closes its fork. This example does not use Micronaut Test's automatic per-method transaction; the fork reset provides isolation.
+For Micronaut, add `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")`. `MicronautTestApp.start()` starts a real HTTP server with the fork's JDBC URL, an available port, the PostgreSQL driver, and Flyway disabled for the prepared schema. Pass application-specific settings as a second property `Map`. JUnit `@AfterAll` closes Micronaut before the pgmem extension closes its fork. This example uses fork reset for isolation instead of Micronaut Test's automatic per-method transaction.
 
 ## Isolation and parallel runs
 
