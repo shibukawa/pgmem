@@ -1,9 +1,11 @@
 ---
-title: pytest への組み込み
-description: pytest で使うデータベースのライフサイクル。テストごとにサーバーを起動するか、準備済みスナップショットを読み取り専用テストで共有し、書き込み時だけフォークします。
+title: Python ユニットテスト
+description: pytest でデータ層をテストする。準備済みスナップショットをテストごとにフォークし、shadow_pg でドライバの接続先を切り替えます。
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+API やブラウザからテストする場合は [API テスト](../api-testing/) と [E2E テスト](../e2e-testing/) を参照してください。
 
 `pgmem` をインストールすると pytest プラグインが登録されます。準備済みデータベースを使う形はそのフィクスチャでまかなえるので、サーバーを用意するだけなら `conftest.py` に何も書く必要はありません。
 
@@ -12,9 +14,11 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 | `pgmem_options` | session | `pgmem.start()` に渡すキーワード引数。`database` や `params` を変えるときに上書きする |
 | `pgmem_process` | session | 起動したバイナリ |
 | `pgmem_server` | session | テンプレートサーバー |
-| `pgmem_snapshot` | session | テンプレートのスナップショット。マイグレーションを先に流すときに上書きする |
+| `pgmem_prepare` | session | スナップショット前にマイグレーションとシードを実行するときに上書きする |
+| `pgmem_snapshot` | session | 準備済みテンプレートのスナップショット。設定を変えるときに上書きする |
 | `pgmem_fork`、`pgmem_dsn` | function | 要求したテストごとのフォーク。teardown で閉じる |
 | `pgmem_class_fork`、`pgmem_class_dsn` | class | テストクラスで共有するフォーク |
+| `pgmem_shared_fork` | session | `@shadow_pg(fork=False)` のテストで共有する準備済みフォーク |
 
 ## データベースのライフサイクル
 
@@ -39,26 +43,121 @@ def fresh_dsn():
 
 ### セッションで一度だけ準備する
 
-`conftest.py` で `pgmem_options` と `pgmem_snapshot` を上書きします。マイグレーションとシードはセッションで一度だけ走り、そのスナップショットがすべてのフォークの出発点になります。
+`conftest.py` で `pgmem_options` と `pgmem_prepare` を定義します。`@shadow_pg(prepare=True)` は、このフィクスチャ内の通常の SDK 接続をテンプレートに向けます。フィクスチャが戻るとプラグインがスナップショットを作り、すべてのテスト用フォークはそこから始まります。
 
 ```python title="conftest.py"
 import pytest
 from alembic import command
 from alembic.config import Config
+from pgmem import shadow_pg
 
 @pytest.fixture(scope="session")
 def pgmem_options():
     return {"database": "app"}
 
 @pytest.fixture(scope="session")
-def pgmem_snapshot(pgmem_server):
-    url = pgmem_server.dsn.replace("postgres://", "postgresql+psycopg://", 1)
-    cfg = Config("alembic.ini")
-    cfg.set_main_option("sqlalchemy.url", url)
-    command.upgrade(cfg, "head")
-    load_seed(pgmem_server.dsn)
-    return pgmem_server.snapshot()
+@shadow_pg(prepare=True)
+def pgmem_prepare(pgmem_server):
+    command.upgrade(Config("alembic.ini"), "head")
+    load_seed()
 ```
+
+上のように `@pytest.fixture` を `@shadow_pg(prepare=True)` の外側に置いてください。`pgmem_server` パラメーターはデコレーターへテンプレートを渡すためのもので、フィクスチャ本体では使わなくてもかまいません。戻る前に準備用の接続をコミットまたはクローズしてください。フォーク数の上限やタイムアウトを変える場合は、別途 `pgmem_snapshot` を上書きします。
+
+#### `@shadow_pg` でテストの接続先を切り替える
+
+スナップショットを準備した後、テストにマーカーを付けると、新しく作る psycopg 3、psycopg2、asyncpg の接続先を pgmem に切り替えます。これらのドライバを使う SQLAlchemy の Engine も対象です。アプリケーション側の接続引数は普段のままで使えます。既定ではテストごとに新しいフォークを作り、終了後に閉じます。`fork=False` は同じ pytest セッションの読み取り専用テストで、準備済みフォークを 1 つ共有します。
+
+<Tabs syncKey="py-fake-driver">
+<TabItem label="psycopg 3">
+
+```python title="test_orders.py"
+import psycopg
+from pgmem import shadow_pg
+
+@shadow_pg
+def test_create_order():
+    with psycopg.connect("postgresql://app@db.example/app") as db:
+        create_order(db)  # 接続先はテスト専用の pgmem フォーク
+```
+
+</TabItem>
+<TabItem label="psycopg2">
+
+```python title="test_orders.py"
+import psycopg2
+from pgmem import shadow_pg
+
+@shadow_pg
+def test_create_order():
+    db = psycopg2.connect("postgresql://app@db.example/app")
+    try:
+        with db:
+            create_order(db)  # 接続先はテスト専用の pgmem フォーク
+    finally:
+        db.close()
+```
+
+</TabItem>
+<TabItem label="asyncpg">
+
+```python title="test_orders.py"
+import asyncpg
+import pytest
+from pgmem import shadow_pg
+
+@shadow_pg
+@pytest.mark.asyncio
+async def test_create_order():
+    db = await asyncpg.connect("postgresql://app@db.example/app")
+    try:
+        await create_order(db)
+    finally:
+        await db.close()
+```
+
+</TabItem>
+<TabItem label="SQLAlchemy + psycopg">
+
+```python title="test_orders.py"
+from sqlalchemy import create_engine
+from pgmem import shadow_pg
+
+@shadow_pg
+def test_create_order():
+    engine = create_engine("postgresql+psycopg://app@db.example/app")
+    try:
+        with engine.begin() as db:
+            create_order(db)
+    finally:
+        engine.dispose()
+```
+
+</TabItem>
+<TabItem label="SQLAlchemy + asyncpg">
+
+```python title="test_orders.py"
+import pytest
+from sqlalchemy.ext.asyncio import create_async_engine
+from pgmem import shadow_pg
+
+@shadow_pg
+@pytest.mark.asyncio
+async def test_create_order():
+    engine = create_async_engine("postgresql+asyncpg://app@db.example/app")
+    try:
+        async with engine.begin() as db:
+            await create_order(db)
+    finally:
+        await engine.dispose()
+```
+
+</TabItem>
+</Tabs>
+
+どのタブでも、読み取り専用テストに `@shadow_pg(fork=False)` を使えば準備済みフォークを共有できます。`asyncpg.create_pool(...)` はテスト内でプールを作る場合に使えます。SQLAlchemy の既定の `postgresql://` URL は psycopg2 を使い、こちらも対象です。
+
+マーカーは `DATABASE_URL` と libpq の `PG*` 接続変数も設定し、テスト後に元へ戻します。テスト前に作った Engine は再利用でき、前のフォークのプール接続は取り出すときに無効化します。ただし、すでに取り出した接続、テスト前に作った asyncpg プール、マーカーが動く前に `from psycopg import connect` でコピーした関数の接続先は切り替えられません。その場合は `pgmem_dsn` を明示的に渡してください。共有フォークはデータベース側で書き込みを禁止していないため、`fork=False` のテストが書き込むと後続の共有テストに影響します。
 
 #### 読み取り専用のクラスで 1 つのフォークを共有する
 
@@ -153,7 +252,7 @@ pytest-xdist では各ワーカーが別プロセスで、それぞれ pgmem バ
 
 ```python title="conftest.py"
 @pytest.fixture(scope="session")
-def pgmem_snapshot(pgmem_server):
+def pgmem_snapshot(pgmem_server, pgmem_prepare):
     return pgmem_server.snapshot(max_forks=4, timeout=30.0)
 
 @pytest.fixture

@@ -1,0 +1,135 @@
+---
+title: Python API テスト
+description: pytest ワーカーごとにアプリと pgmem の接続先を固定し、HTTP テストの前にデータセットを復元する。
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+アプリへ HTTP リクエストを送るテストでは、pytest ワーカーごとに pgmem の fork とアプリのクライアントを 1 つ維持します。`pgmem_live_fork` が固定 DSN を渡し、`pgmem_live_db` が各テストの前にデータを復元します。アプリの既存の接続プールは同じ接続先を使い続けられます。同じワーカー内のテストは逐次実行してください。pytest-xdist の各ワーカーは別の pgmem プロセスとアプリクライアントを持ちます。
+
+スキーマとシードデータは[ユニットテスト](../testing/#セッションで一度だけ準備する)と同様に `pgmem_prepare` で一度準備します。HTTP テストで使う fixture は次のとおりです。
+
+| fixture | スコープ | 用途 |
+|---|---|---|
+| `pgmem_live_fork` | session | アプリ用の固定サーバーと DSN |
+| `pgmem_live_snapshots` | session | データセット名から snapshot への対応。追加するときに上書きする |
+| `pgmem_live_db` | function | テスト前に選択した snapshot へ復元する |
+
+常駐する fork は `pgmem_snapshot.max_forks` の枠をセッション中 1 つ使います。同じワーカーでテスト単位の fork や `@shadow_pg(fork=False)` も使う場合は、その分の枠を確保してください。
+
+## HTTP テストクライアントを接続する
+
+アプリが接続プールや DB 接続を作る**前に**、既存の DB 設定へ `pgmem_live_fork.dsn` を渡します。以下の `create_app` は各アプリの設定入口に置き換えてください。pgmem 専用のミドルウェアやリクエストヘッダーは不要です。
+
+<Tabs syncKey="python-api-framework">
+<TabItem label="FastAPI">
+
+```python title="conftest.py"
+import pytest
+from fastapi.testclient import TestClient
+from myapp import create_app
+
+@pytest.fixture(scope="session")
+def client(pgmem_live_fork):
+    with TestClient(create_app(database_url=pgmem_live_fork.dsn)) as client:
+        yield client
+```
+
+`TestClient` をコンテキストマネージャーとして使うと、アプリの lifespan をこの fixture で一度実行します。
+
+</TabItem>
+<TabItem label="Starlette">
+
+```python title="conftest.py"
+import pytest
+from starlette.testclient import TestClient
+from myapp import create_app
+
+@pytest.fixture(scope="session")
+def client(pgmem_live_fork):
+    with TestClient(create_app(database_url=pgmem_live_fork.dsn)) as client:
+        yield client
+```
+
+</TabItem>
+<TabItem label="Flask">
+
+```python title="conftest.py"
+import pytest
+from myapp import create_app
+
+@pytest.fixture(scope="session")
+def client(pgmem_live_fork):
+    app = create_app(database_url=pgmem_live_fork.dsn)
+    app.config.update(TESTING=True)
+    with app.test_client() as client:
+        yield client
+```
+
+Flask のテストクライアントは WSGI アプリを直接呼びます。DB の接続先には同じ固定 pgmem サーバーを使います。
+
+</TabItem>
+<TabItem label="Django">
+
+```python title="conftest.py"
+import os
+import pytest
+
+@pytest.fixture(scope="session")
+def client(pgmem_live_fork):
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myapp.settings")
+    from django.conf import settings
+
+    settings.DATABASES["default"] = {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": pgmem_live_fork.database,
+        "USER": pgmem_live_fork.user,
+        "HOST": pgmem_live_fork.host,
+        "PORT": pgmem_live_fork.port,
+    }
+    import django
+    django.setup()  # 最初の DB 接続より前に設定する
+    from django.test import Client
+    return Client()
+```
+
+Django のリクエスト `Client` と通常の pytest 関数を使います。この方式では Django の `TestCase`、pytest-django の `db`・`transactional_db` fixture、`live_server` を併用しません。これらはテスト DB の作成、ロールバック、テーブルの消去を独自に管理します。アプリコード内の `transaction.atomic()` やセーブポイントは使えます。Django がまだ DB 接続を初期化していないテスト環境で設定してください。別プロセスの Django サーバーについては [E2E テスト](../e2e-testing/)を参照してください。
+
+</TabItem>
+</Tabs>
+
+どのクライアントもテストの形は同じです。
+
+```python title="test_orders.py"
+def test_create_order(pgmem_live_db, client):
+    response = client.post("/orders", data={"sku": "A"})
+    assert response.status_code == 201
+
+def test_list_starts_from_seed(pgmem_live_db, client):
+    assert client.get("/orders").status_code == 200
+```
+
+リクエストの形式はアプリの API に合わせてください。FastAPI と Starlette では `json=`、Flask と Django ではフォームデータも使えます。session スコープのクライアントは `pgmem_live_db` より前に起動することがあります。テスト本体が始まるまでリクエストは送らないでください。
+
+## データセットを選ぶ
+
+`pgmem_live_snapshots` を上書きし、同じ pgmem プロセス、データベース名、ユーザーの snapshot を追加します。シード投入用の接続は snapshot 作成前にコミットするか閉じてください。
+
+```python title="conftest.py"
+@pytest.fixture(scope="session")
+def pgmem_live_snapshots(pgmem_server, pgmem_snapshot):
+    load_paid_orders(pgmem_server.dsn)
+    return {"default": pgmem_snapshot, "paid": pgmem_server.snapshot()}
+```
+
+```python title="test_orders.py"
+@pytest.mark.pgmem_dataset("paid")
+def test_paid_orders(pgmem_live_db, client):
+    assert client.get("/orders/paid").status_code == 200
+```
+
+復元は失敗したテストの後も含め、**各テストの前**に行います。開いたトランザクションが残っていると待機し、期限に達すると `ProtocolError(code="busy")` で失敗します。次のテストまでにバックグラウンド処理を完了し、トランザクションをコミットまたは終了してください。接続先と接続自体は維持されますが、復元後の DB セッションは新しくなるため、セッション設定と一時テーブルは引き継がれません。
+
+<Aside>
+この fixture は逐次実行するテスト間の DB 内容を制御します。同じアプリプロセスへ複数のテストが同時にリクエストする場合は、この reset だけでは分離できません。別々のワーカーとアプリプロセスを使ってください。
+</Aside>

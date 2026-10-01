@@ -1,9 +1,11 @@
 ---
-title: Testing with pytest
-description: Choose a pytest database lifecycle with a fresh server per test or one prepared snapshot shared by read-only tests and forked only for writes.
+title: Python unit tests
+description: Test Python data access with pytest, prepared snapshots, per-test forks, and shadow_pg driver routing.
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+For HTTP or browser tests, see [API tests](../api-testing/) and [E2E tests](../e2e-testing/).
 
 Installing `pgmem` registers a pytest plugin. Its fixtures cover the prepared-database shapes; nothing needs to be added to `conftest.py` to get a server.
 
@@ -12,9 +14,11 @@ Installing `pgmem` registers a pytest plugin. Its fixtures cover the prepared-da
 | `pgmem_options` | session | keyword arguments for `pgmem.start()`; override to set `database` or `params` |
 | `pgmem_process` | session | the running binary |
 | `pgmem_server` | session | the template server |
-| `pgmem_snapshot` | session | a snapshot of the template; override it to run migrations first |
+| `pgmem_prepare` | session | override it to run migrations and seed data before the snapshot |
+| `pgmem_snapshot` | session | a snapshot of the prepared template; override for custom snapshot options |
 | `pgmem_fork`, `pgmem_dsn` | function | a fork per requesting test, closed at teardown |
 | `pgmem_class_fork`, `pgmem_class_dsn` | class | one fork shared by a test class |
+| `pgmem_shared_fork` | session | one prepared fork shared by `@shadow_pg(fork=False)` tests |
 
 ## Database lifecycle strategy
 
@@ -39,26 +43,121 @@ Each test pays a process start and its migrations.
 
 ### Prepare once for the session
 
-Override `pgmem_options` and `pgmem_snapshot` in `conftest.py`. Migrations and seed data run once per session; the snapshot is what every fork starts from.
+Override `pgmem_options` and define `pgmem_prepare` in `conftest.py`. `@shadow_pg(prepare=True)` sends ordinary SDK connections in this fixture to the template. When it returns, the plugin snapshots the prepared database; every test fork starts there.
 
 ```python title="conftest.py"
 import pytest
 from alembic import command
 from alembic.config import Config
+from pgmem import shadow_pg
 
 @pytest.fixture(scope="session")
 def pgmem_options():
     return {"database": "app"}
 
 @pytest.fixture(scope="session")
-def pgmem_snapshot(pgmem_server):
-    url = pgmem_server.dsn.replace("postgres://", "postgresql+psycopg://", 1)
-    cfg = Config("alembic.ini")
-    cfg.set_main_option("sqlalchemy.url", url)
-    command.upgrade(cfg, "head")
-    load_seed(pgmem_server.dsn)
-    return pgmem_server.snapshot()
+@shadow_pg(prepare=True)
+def pgmem_prepare(pgmem_server):
+    command.upgrade(Config("alembic.ini"), "head")
+    load_seed()
 ```
+
+Place `@pytest.fixture` outside `@shadow_pg(prepare=True)` as shown. The `pgmem_server` parameter gives the decorator its template target; the fixture body can ignore it. Commit or close every preparation connection before returning. To customize the snapshot limit or timeout, override `pgmem_snapshot` separately.
+
+#### Route a test with `@shadow_pg`
+
+After preparing the snapshot, mark a test to intercept new psycopg 3, psycopg2, and asyncpg connections. SQLAlchemy engines using these drivers follow the same route. The application can keep its usual connection arguments: pgmem replaces the destination while the test runs. The default creates a fresh fork and closes it after the test. Use `fork=False` to share one prepared fork across read-only tests in this pytest session.
+
+<Tabs syncKey="py-fake-driver">
+<TabItem label="psycopg 3">
+
+```python title="test_orders.py"
+import psycopg
+from pgmem import shadow_pg
+
+@shadow_pg
+def test_create_order():
+    with psycopg.connect("postgresql://app@db.example/app") as db:
+        create_order(db)  # connects to a fresh pgmem fork
+```
+
+</TabItem>
+<TabItem label="psycopg2">
+
+```python title="test_orders.py"
+import psycopg2
+from pgmem import shadow_pg
+
+@shadow_pg
+def test_create_order():
+    db = psycopg2.connect("postgresql://app@db.example/app")
+    try:
+        with db:
+            create_order(db)  # connects to a fresh pgmem fork
+    finally:
+        db.close()
+```
+
+</TabItem>
+<TabItem label="asyncpg">
+
+```python title="test_orders.py"
+import asyncpg
+import pytest
+from pgmem import shadow_pg
+
+@shadow_pg
+@pytest.mark.asyncio
+async def test_create_order():
+    db = await asyncpg.connect("postgresql://app@db.example/app")
+    try:
+        await create_order(db)
+    finally:
+        await db.close()
+```
+
+</TabItem>
+<TabItem label="SQLAlchemy + psycopg">
+
+```python title="test_orders.py"
+from sqlalchemy import create_engine
+from pgmem import shadow_pg
+
+@shadow_pg
+def test_create_order():
+    engine = create_engine("postgresql+psycopg://app@db.example/app")
+    try:
+        with engine.begin() as db:
+            create_order(db)
+    finally:
+        engine.dispose()
+```
+
+</TabItem>
+<TabItem label="SQLAlchemy + asyncpg">
+
+```python title="test_orders.py"
+import pytest
+from sqlalchemy.ext.asyncio import create_async_engine
+from pgmem import shadow_pg
+
+@shadow_pg
+@pytest.mark.asyncio
+async def test_create_order():
+    engine = create_async_engine("postgresql+asyncpg://app@db.example/app")
+    try:
+        async with engine.begin() as db:
+            await create_order(db)
+    finally:
+        await engine.dispose()
+```
+
+</TabItem>
+</Tabs>
+
+Use `@shadow_pg(fork=False)` in any tab for a read-only test that shares a prepared fork. `asyncpg.create_pool(...)` works when the pool is created inside the test. SQLAlchemy's default `postgresql://` dialect uses psycopg2 and is also covered.
+
+The marker also sets `DATABASE_URL` and libpq's `PG*` connection variables and restores them afterward. An Engine created before the test can be reused: pooled connections from an earlier fork are invalidated on checkout. Connections already checked out, asyncpg pools created before the test, and connection functions copied with `from psycopg import connect` before the marker runs cannot be rerouted. For those patterns, pass `pgmem_dsn` explicitly. The shared fork does not enforce read-only access, so a write from a `fork=False` test affects later shared tests.
 
 #### Share one fork across a read-only class
 
@@ -153,7 +252,7 @@ The built-in fixture waits indefinitely when the pool is full. To set a limit an
 
 ```python title="conftest.py"
 @pytest.fixture(scope="session")
-def pgmem_snapshot(pgmem_server):
+def pgmem_snapshot(pgmem_server, pgmem_prepare):
     return pgmem_server.snapshot(max_forks=4, timeout=30.0)
 
 @pytest.fixture
