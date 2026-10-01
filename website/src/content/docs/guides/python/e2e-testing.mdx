@@ -1,0 +1,81 @@
+---
+title: Python E2E tests
+description: Run a real HTTP server and Playwright browser with a stable pgmem endpoint, resetting a snapshot before each test.
+---
+
+With Playwright, the browser and application run separately from the pytest test function. Start one application server per pytest worker, point it to that worker's `pgmem_live_fork.dsn`, and keep both servers running. Each test requests `pgmem_live_db` before the browser navigates; it restores the selected snapshot at the same endpoint. No per-request token or test middleware is needed when tests in a worker run sequentially.
+
+Prepare the schema and seed data with `pgmem_prepare` as described in [unit tests](../testing/#prepare-once-for-the-session). The [API test guide](../api-testing/#select-a-dataset) explains named datasets and the reset rules.
+
+## Launch an application for Playwright
+
+This example starts a Uvicorn app once per worker. It assumes the application's existing test configuration reads `DATABASE_URL` when the server process starts. Adapt the command and configuration to the application. Start the app **after** obtaining `pgmem_live_fork.dsn`, and disable auto reload or extra worker processes.
+
+```python title="conftest.py"
+import os
+import socket
+import subprocess
+import sys
+import time
+import pytest
+
+def unused_port():
+    with socket.socket() as sock:
+        sock.bind(("127.0.0.1", 0))
+        return sock.getsockname()[1]
+
+@pytest.fixture(scope="session")
+def app_url(pgmem_live_fork):
+    port = unused_port()
+    env = {**os.environ, "DATABASE_URL": pgmem_live_fork.dsn}
+    process = subprocess.Popen(
+        [sys.executable, "-m", "uvicorn", "myapp.main:app",
+         "--host", "127.0.0.1", "--port", str(port)],
+        env=env,
+    )
+    try:
+        deadline = time.monotonic() + 15
+        while True:
+            if process.poll() is not None:
+                raise RuntimeError("application server exited during startup")
+            try:
+                with socket.create_connection(("127.0.0.1", port), timeout=0.2):
+                    break
+            except OSError:
+                if time.monotonic() >= deadline:
+                    raise RuntimeError("application server did not start")
+                time.sleep(0.05)
+        yield f"http://127.0.0.1:{port}"
+    finally:
+        process.terminate()
+        try:
+            process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            process.wait()
+```
+
+```python title="test_browser.py"
+def test_create_order(pgmem_live_db, app_url, page):
+    page.goto(f"{app_url}/orders")
+    page.get_by_role("button", name="New order").click()
+    page.get_by_label("SKU").fill("A")
+    page.get_by_role("button", name="Save").click()
+    assert page.get_by_text("Order created").is_visible()
+```
+
+The `page` fixture comes from `pytest-playwright`; install it and a browser separately. Replace selectors with those in your app. The test fixture resets data before navigation, including after a previous test failed. Each xdist worker receives a separate pgmem process and app server; the OS chooses a distinct port. The brief gap between reserving the port and starting Uvicorn can race with another process, so use a port supplied by your test infrastructure when that matters.
+
+## Other web frameworks
+
+Only the application launch command and its database configuration change:
+
+| Framework | Example launch command |
+|---|---|
+| FastAPI or Starlette | `python -m uvicorn myapp.main:app --host 127.0.0.1 --port PORT` |
+| Flask | `python -m flask --app myapp run --no-reload --host 127.0.0.1 --port PORT` |
+| Django | `python -m django runserver --noreload 127.0.0.1:PORT` |
+
+Flask and Django do not read `DATABASE_URL` automatically. Configure their existing test settings to read the DSN or its host, port, user, and database fields **before** importing the app. For Django, point `DJANGO_SETTINGS_MODULE` at a test settings module that configures the normal PostgreSQL backend. Use plain pytest browser tests with `pgmem_live_db`; Django `TestCase` and pytest-django's `live_server` manage a different database lifecycle and should not be combined with this fixture.
+
+Before the next reset, finish HTTP requests and background jobs that still use the database, and commit or close open transactions. A reset waits for transactions and fails with `ProtocolError(code="busy")` after its timeout. If tests must send requests concurrently to one app process, this sequential reset model does not provide isolation; run each test in a separate worker and app process.

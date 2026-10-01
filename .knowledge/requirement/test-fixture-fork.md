@@ -5,6 +5,8 @@ title: Per-Test Forked Fixture
 ---
 A test suite prepares schema and seed data once, then every test case receives an isolated copy of that prepared state that is discarded when the test ends.
 
+Declarative routing is specified in requirement:declarative-test-target; suite preparation is requirement:test-suite-preparation.
+
 ```yaml
 summary:
   prepare_once: TestMain runs migrations and seed loading against a template server (flow:test-lifecycle)

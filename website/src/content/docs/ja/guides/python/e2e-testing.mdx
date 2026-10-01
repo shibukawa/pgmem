@@ -1,0 +1,81 @@
+---
+title: Python E2E テスト
+description: 実際の HTTP サーバーと Playwright のブラウザを起動し、テスト前に pgmem の snapshot を復元する。
+---
+
+Playwright ではブラウザとアプリが pytest のテスト関数とは別に動きます。pytest ワーカーごとにアプリサーバーを 1 つ起動し、そのワーカーの `pgmem_live_fork.dsn` へ向け、両サーバーを起動したままにします。各テストがブラウザでページを開く前に `pgmem_live_db` を要求すると、同じ接続先のデータが選択した snapshot へ戻ります。ワーカー内で逐次実行するなら、リクエストごとのトークンや専用ミドルウェアは不要です。
+
+スキーマとシードデータは[ユニットテスト](../testing/#セッションで一度だけ準備する)にある `pgmem_prepare` で準備します。名前付きデータセットと reset の条件は [API テスト](../api-testing/#データセットを選ぶ)を参照してください。
+
+## Playwright 用のアプリを起動する
+
+次の例はワーカーごとに Uvicorn アプリを一度起動します。既存のアプリのテスト設定が、起動時に `DATABASE_URL` を読む想定です。コマンドと設定方法はアプリに合わせて変更してください。`pgmem_live_fork.dsn` を得た**後で**アプリを起動し、自動リロードと追加のワーカープロセスは使いません。
+
+```python title="conftest.py"
+import os
+import socket
+import subprocess
+import sys
+import time
+import pytest
+
+def unused_port():
+    with socket.socket() as sock:
+        sock.bind(("127.0.0.1", 0))
+        return sock.getsockname()[1]
+
+@pytest.fixture(scope="session")
+def app_url(pgmem_live_fork):
+    port = unused_port()
+    env = {**os.environ, "DATABASE_URL": pgmem_live_fork.dsn}
+    process = subprocess.Popen(
+        [sys.executable, "-m", "uvicorn", "myapp.main:app",
+         "--host", "127.0.0.1", "--port", str(port)],
+        env=env,
+    )
+    try:
+        deadline = time.monotonic() + 15
+        while True:
+            if process.poll() is not None:
+                raise RuntimeError("application server exited during startup")
+            try:
+                with socket.create_connection(("127.0.0.1", port), timeout=0.2):
+                    break
+            except OSError:
+                if time.monotonic() >= deadline:
+                    raise RuntimeError("application server did not start")
+                time.sleep(0.05)
+        yield f"http://127.0.0.1:{port}"
+    finally:
+        process.terminate()
+        try:
+            process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            process.wait()
+```
+
+```python title="test_browser.py"
+def test_create_order(pgmem_live_db, app_url, page):
+    page.goto(f"{app_url}/orders")
+    page.get_by_role("button", name="New order").click()
+    page.get_by_label("SKU").fill("A")
+    page.get_by_role("button", name="Save").click()
+    assert page.get_by_text("Order created").is_visible()
+```
+
+`page` fixture は `pytest-playwright` が提供します。プラグインとブラウザは別途インストールしてください。セレクターは実際の画面に合わせます。失敗したテストの後も、次のテストではページを開く前にデータを復元します。xdist の各ワーカーは別の pgmem プロセスとアプリサーバーを持ち、OS が別々のポートを選びます。ポートを予約してから Uvicorn が起動するまでの短い間に他プロセスと競合する可能性があるため、必要ならテスト基盤が割り当てたポートを使ってください。
+
+## ほかのウェブフレームワーク
+
+アプリの起動コマンドと DB 設定だけを変更します。
+
+| フレームワーク | 起動コマンドの例 |
+|---|---|
+| FastAPI / Starlette | `python -m uvicorn myapp.main:app --host 127.0.0.1 --port PORT` |
+| Flask | `python -m flask --app myapp run --no-reload --host 127.0.0.1 --port PORT` |
+| Django | `python -m django runserver --noreload 127.0.0.1:PORT` |
+
+Flask と Django は `DATABASE_URL` を自動では読みません。アプリを import する**前に**、既存のテスト設定で DSN、またはホスト・ポート・ユーザー・データベース名を読み取るようにします。Django では `DJANGO_SETTINGS_MODULE` をテスト用設定モジュールへ向け、通常の PostgreSQL バックエンドを設定します。ブラウザテストは通常の pytest 関数と `pgmem_live_db` を使います。Django の `TestCase` と pytest-django の `live_server` は独自の DB ライフサイクルを持つため、この fixture と併用しません。
+
+次の reset までに HTTP リクエストと DB を使うバックグラウンドジョブを完了し、開いたトランザクションをコミットまたは終了してください。reset はトランザクションが終わるのを待ち、期限に達すると `ProtocolError(code="busy")` で失敗します。複数テストから 1 つのアプリプロセスへ同時にリクエストする場合、この逐次 reset 方式では分離できません。テストごとに別のワーカーとアプリプロセスを使います。
