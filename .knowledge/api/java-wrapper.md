@@ -13,6 +13,7 @@ api:
   artifacts:
     pgmem: core client
     pgmem-junit5: JUnit 5 extension
+    pgmem-micronaut: MicronautTestApp helper for an HTTP test server on a pgmem application fork; Micronaut runtime is compileOnly
     pgmem-native: binary per classifier, built by the root buildBinary Exec task (go build, -Pgoos/-Pgoarch cross-compile, PGMEM_BINARY copies a prebuilt one) (policy:binary-distribution)
   core:
     - 'Pgmem.builder().database("app").user(..).param(k, v).log(bool).binary(path).start() -> Pgmem, AutoCloseable'
@@ -35,6 +36,9 @@ api:
     application: 'applicationFork([templateName]) lazily starts prepared templates even before BeforeAll (for Spring DynamicPropertySource), returns a stable fork that can reset before sequential HTTP/browser cases, closes after owner class'
     parallel: safe with junit.jupiter.execution.parallel; forks are independent (policy:fork-pool-limit, default from the server's memory budget)
     forked_jvms: each test JVM (Gradle maxParallelForks, surefire forkCount) spawns its own concept:server-process
+  micronaut:
+    helper: 'MicronautTestApp.start(Fork[, Map<String, ?> overrides]) starts ApplicationContext.run(EmbeddedServer.class, properties, "test") with a random port, fork JDBC URL and user, PostgreSQL driver, and Flyway disabled; uri(), server(), close()'
+    lifecycle: 'Start once after applicationFork(); reset the same fork before each sequential API or browser test; close the app before the extension closes its fork'
   threads: one daemon reader thread; CompletableFuture per request id (rule:non-blocking-control-channel)
   later: Spring Boot test auto-configuration (zonky style), Testcontainers JdbcDatabaseContainer adapter
 ```
