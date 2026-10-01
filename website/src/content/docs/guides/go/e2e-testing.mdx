@@ -1,0 +1,27 @@
+---
+title: Go E2E tests
+description: Launch an unchanged Go application process against a pgmem fork.
+---
+
+An application in another process does not receive Go test state directly. It does inherit environment variables when started with `exec.CommandContext` and a nil `Cmd.Env`. Call `fx.ShadowPG(t)` before starting the process. The child then receives the fork's `DATABASE_URL` and libpq `PG*` variables; application datasource code stays unchanged.
+
+```go title="e2e_test.go"
+func TestBrowserCheckout(t *testing.T) {
+	fx.ShadowPG(t)
+	cmd := exec.CommandContext(t.Context(), "./app-test-server")
+	// cmd.Env is nil, so os.Environ() is inherited at Start.
+	if err := cmd.Start(); err != nil { t.Fatal(err) }
+	t.Cleanup(func() {
+		if cmd.Process != nil { _ = cmd.Process.Kill() }
+		_ = cmd.Wait()
+	})
+
+	// Wait for the app's existing health endpoint, then drive its UI or API.
+	waitForHealth(t, appURL)
+	// browser.Navigate(appURL + "/checkout")
+}
+```
+
+Import `os/exec` and `testing`. `app-test-server`, `waitForHealth`, and `appURL` represent your application's existing launch and readiness conventions. Start one app per test or keep a worker's app and fork alive, resetting that fork between sequential cases. Close database transactions before reset. Each concurrently running app should have its own fork and process.
+
+`ShadowPG` changes the test process's environment until test cleanup; Go forbids `t.Parallel()` in these tests. It cannot retarget a process that was already launched. If your launcher supplies an explicit `Cmd.Env`, copy `os.Environ()` after `ShadowPG` and add your app's port and other settings to that slice.

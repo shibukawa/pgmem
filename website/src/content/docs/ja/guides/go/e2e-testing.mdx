@@ -1,0 +1,27 @@
+---
+title: Go E2E テスト
+description: Go アプリの別プロセスを、設定コードを変えずに pgmem フォークへ接続する。
+---
+
+別プロセスのアプリには Go テスト内の状態を直接渡せません。`exec.CommandContext` の `Cmd.Env` を nil にすると、起動時の環境変数を継承します。プロセス起動前に `fx.ShadowPG(t)` を呼べば、子プロセスにフォークの `DATABASE_URL` と libpq の `PG*` 変数が渡ります。アプリのデータソース設定コードは変更しません。
+
+```go title="e2e_test.go"
+func TestBrowserCheckout(t *testing.T) {
+	fx.ShadowPG(t)
+	cmd := exec.CommandContext(t.Context(), "./app-test-server")
+	// Cmd.Env が nil なので Start 時の os.Environ() を継承する
+	if err := cmd.Start(); err != nil { t.Fatal(err) }
+	t.Cleanup(func() {
+		if cmd.Process != nil { _ = cmd.Process.Kill() }
+		_ = cmd.Wait()
+	})
+
+	// アプリのヘルスチェックを待ってから UI や API を操作する
+	waitForHealth(t, appURL)
+	// browser.Navigate(appURL + "/checkout")
+}
+```
+
+この例では `os/exec` と `testing` を import します。`app-test-server`、`waitForHealth`、`appURL` は既存アプリの起動方法と準備完了判定に置き換えてください。テストごとにアプリを起動するか、ワーカーごとのアプリとフォークを維持して逐次テストの間にフォークを復元します。復元前に DB トランザクションを終了してください。並列実行するアプリには、それぞれ別のフォークとプロセスを用意します。
+
+`ShadowPG` はテスト終了までテストプロセスの環境を変更するため、`t.Parallel()` と併用できません。起動済みのプロセスを後から切り替えることもできません。起動コードが `Cmd.Env` を明示する場合は、`ShadowPG` の後で `os.Environ()` をコピーし、ポートなどの設定を追加してください。

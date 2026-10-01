@@ -15,6 +15,28 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 The first two use `Server.Dial` over `net.Pipe` and avoid TCP overhead; the DSN remains the portable option for tools that need a URL. Each helper closes its handle and fork when the test ends.
 
+## Keep application datasource code unchanged
+
+If the application normally reads `DATABASE_URL` or libpq's `PGHOST`, `PGPORT`, `PGUSER`, and `PGDATABASE`, call `fx.ShadowPG(t)` **before** constructing its repository or pool. It forks the prepared snapshot, sets those variables for the test, and restores them afterward. The application still constructs its usual driver and datasource.
+
+```go title="user_repository_test.go"
+func TestCreateUser(t *testing.T) {
+	fx.ShadowPG(t) // fresh fork; the repository's configuration is unchanged
+	repo, err := NewUserRepository() // reads DATABASE_URL as usual
+	if err != nil { t.Fatal(err) }
+	t.Cleanup(func() { repo.Close() })
+
+	if err := repo.Create(t.Context(), "ada@example.com"); err != nil { t.Fatal(err) }
+	if got, err := repo.FindByEmail(t.Context(), "ada@example.com"); err != nil || got == nil || got.Email != "ada@example.com" {
+		t.Fatalf("user = %v, %v", got, err)
+	}
+}
+```
+
+`fx.ShadowPG(t, pgmemtest.ShadowOptions{ExtraEnv: []string{"APP_DATABASE_URL"}})` also sets an application-specific DSN variable. `Shared: true` reuses one fork for read-only tests; writes on that fork persist into later tests. Because `testing.T.Setenv` changes process-wide state, these tests and their ancestors cannot call `t.Parallel()`. For parallel tests, use `fx.DB(t)` or `fx.PgxPool(t)` and pass the handle to the code under test.
+
+Go has no supported way to replace a driver already registered with `database/sql`, or to retarget an already-open `*sql.DB` or pgx pool. `ShadowPG` therefore takes effect when the application creates its connections after the call. See [API tests](../api-testing/) and [E2E tests](../e2e-testing/) for the same setup with an HTTP server.
+
 ## Database lifecycle strategy
 
 Use a fresh server when a test needs a different schema. When tests use the same schema and seed data, initialize a baseline once, then choose how each test uses it:

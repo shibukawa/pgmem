@@ -1,0 +1,30 @@
+---
+title: Go API テスト
+description: Go の HTTP アプリの設定を変えず、準備済みの pgmem フォークでテストする。
+---
+
+[ユニットテスト](../testing/#基準データベースを一度だけ準備する)の `pgmemtest.Fixture` を使います。`fx.ShadowPG(t)` は新しいフォークを作り、テスト中だけ `DATABASE_URL` と libpq の `PG*` 接続変数を設定します。この呼び出しの後でアプリを作ると、普段の DB 設定が一時的な接続先を読みます。
+
+```go title="api_test.go"
+func TestCreateOrderAPI(t *testing.T) {
+	fx.ShadowPG(t)
+
+	app, err := NewApp() // 通常どおり DATABASE_URL を読む
+	if err != nil { t.Fatal(err) }
+	t.Cleanup(func() { app.Close() })
+	server := httptest.NewServer(app.Handler())
+	t.Cleanup(server.Close)
+
+	body := strings.NewReader(`{"sku":"book"}`)
+	resp, err := server.Client().Post(server.URL+"/orders", "application/json", body)
+	if err != nil { t.Fatal(err) }
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusCreated {
+		t.Fatalf("status = %d", resp.StatusCode)
+	}
+}
+```
+
+この例では `net/http`、`net/http/httptest`、`strings`、`testing` を import します。アプリのコンストラクター、ハンドラー、終了メソッドは既存の API に置き換えてください。テストごとに `TestMain` で準備したスキーマとシードデータの新しいコピーを受け取ります。別の DSN 変数を読むアプリには `pgmemtest.ShadowOptions{ExtraEnv: []string{"APP_DATABASE_URL"}}` を渡します。
+
+環境変数はプロセス全体で共有されるため、`ShadowPG` を使うテストでは `t.Parallel()` を呼べません。アプリはテスト内で作って閉じてください。`ShadowPG` より前に作ったプールの接続先は変わりません。並列テストでは `fx.DB(t)` または `fx.PgxPool(t)` を受け取るアプリファクトリーを使います。
