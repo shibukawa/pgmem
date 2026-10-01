@@ -93,6 +93,20 @@ class PgmemExtensionTest {
         assertTrue(pg.pgmem().pid() > 0);
     }
 
+    static String sharedUrl;
+
+    @Test @Order(7) @PgmemTest(fork = false) void sharedPreparedTarget(Fork fork, DataSource ds) throws SQLException {
+        sharedUrl = fork.jdbcUrl();
+        assertEquals(2, count(sharedUrl, "t"));
+        try (Connection c = ds.getConnection()) {
+            assertEquals(2, count(c.getMetaData().getURL(), "t"));
+        }
+    }
+
+    @Test @Order(8) @PgmemTest(fork = false) void sharedTargetReused(Fork fork) {
+        assertEquals(sharedUrl, fork.jdbcUrl());
+    }
+
     @Nested
     class Inner {
         @Test void nestedClassUsesSameProcess(Fork fork) {

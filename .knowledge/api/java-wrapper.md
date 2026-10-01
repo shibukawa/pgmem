@@ -21,7 +21,7 @@ api:
     - 'Snapshot.fork(Duration timeout) -> pool_timeout instead of waiting forever'
     - 'BinaryLocator: pgmem.binary property, PGMEM_BINARY, classpath resource /io/github/shibukawa/pgmem/native/<classifier>/pgmem extracted to PGMEM_CACHE_DIR or ~/.cache/pgmem/<Implementation-Version>/, then PATH'
     - 'Snapshot: fork() -> Fork, AutoCloseable; close()'
-    - 'Fork: jdbcUrl(), dataSource(), close()'
+    - 'Fork: jdbcUrl(), dataSource(), reset(), reset(Snapshot), reset(Snapshot, Duration timeout=5s), close(); reset keeps JDBC URL and open connections valid'
     - 'dataSource(): javax.sql.DataSource over DriverManager so core does not compile against pgjdbc'
   junit5:
     registration: '@RegisterExtension static PgmemExtension pg = PgmemExtension.builder().prepare(url -> migrate(url)).build()'
@@ -31,6 +31,8 @@ api:
     store_gotcha: ExtensionContext.Store lookups fall through to parent contexts, so fork sets are keyed by the scope context's unique id, never by a shared class key
     registration_rule: static @RegisterExtension (or @ExtendWith for defaults); nested classes reuse the outer process and only the owner class's afterAll stops it
     injection: ParameterResolver for Fork, DataSource and String jdbcUrl; pg.fork() for manual use
+    declarative: '@PgmemTest(fork=true) method or class annotation selects fresh method fork by default; fork=false shares a prepared read-only fork for unannotated parameters'
+    application: 'applicationFork([templateName]) lazily starts prepared templates even before BeforeAll (for Spring DynamicPropertySource), returns a stable fork that can reset before sequential HTTP/browser cases, closes after owner class'
     parallel: safe with junit.jupiter.execution.parallel; forks are independent (policy:fork-pool-limit, default from the server's memory budget)
     forked_jvms: each test JVM (Gradle maxParallelForks, surefire forkCount) spawns its own concept:server-process
   threads: one daemon reader thread; CompletableFuture per request id (rule:non-blocking-control-channel)

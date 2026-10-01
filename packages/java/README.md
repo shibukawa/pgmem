@@ -1,6 +1,6 @@
 # pgmem for Java
 
-A real PostgreSQL 18 that runs entirely in memory, packaged as a single
+A real PostgreSQL that runs entirely in memory, packaged as a single
 binary and driven from the JVM. Prepare the schema once, then give every
 test its own fork of that state in about 20 ms.
 
@@ -40,7 +40,8 @@ static PgmemExtension pg = PgmemExtension.builder()
         .build();
 
 @Test void orders(Fork db) { ... }                                  // fresh copy per test
-@Test void report(@PgmemFork(scope = ForkScope.CLASS) DataSource ds) { ... } // shared by the class
+@Test @PgmemTest(fork = false) void report(DataSource ds) { ... }  // shared read-only copy
+@Test void classReport(@PgmemFork(scope = ForkScope.CLASS) DataSource ds) { ... } // shared by the class
 @Test void audit(@PgmemFork("audit") String jdbcUrl) { ... }        // a named template
 ```
 
@@ -50,10 +51,18 @@ parameters in one test share one fork. Forks are closed after each test
 `maxForks` bounds how many forks exist at once and `forkTimeout` turns a
 full pool into a test failure instead of a wait.
 
-The server is one PostgreSQL session per fork; pooled connections
-(HikariCP and friends) are serialized at transaction boundaries. Commit or
-close every connection before `snapshot()`: it waits for open transactions
-and fails with code `busy` after 30 s.
+For an API or browser test, call `pg.applicationFork()` before starting the
+HTTP application and give its JDBC URL to the app's pool. The extension may
+start early when Spring's `@DynamicPropertySource` requests that URL. Call
+`pg.applicationFork().reset()` before each sequential case: the JDBC URL
+and existing connections remain valid. A chosen dataset can be restored with
+`fork.reset(snapshot)`. See the [unit](https://shibukawa.github.io/pgmem/guides/java/testing/),
+[API](https://shibukawa.github.io/pgmem/guides/java/api-testing/), and
+[E2E](https://shibukawa.github.io/pgmem/guides/java/e2e-testing/) guides.
+
+Each connection to a fork gets its own PostgreSQL backend, including pooled
+connections. Commit or close transactions before `snapshot()` or `reset()`:
+they wait for open transactions and fail with code `busy` after their timeout.
 
 ## Building
 

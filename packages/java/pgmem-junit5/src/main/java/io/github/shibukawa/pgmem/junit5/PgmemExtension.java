@@ -69,6 +69,8 @@ public final class PgmemExtension
     private final Builder cfg;
     private final Map<String, Template> templates = new LinkedHashMap<>();
     private final ForkScope defaultScope;
+    private final Map<String, Fork> sharedReadOnly = new LinkedHashMap<>();
+    private final Map<String, Fork> applicationForks = new LinkedHashMap<>();
     private volatile Pgmem pgmem;
 
     /** Defaults: database {@code postgres}, no preparation, a fresh fork per test method. */
@@ -113,6 +115,16 @@ public final class PgmemExtension
 
     public Fork fork(String name) { return snapshot(name).fork(); }
 
+    /** One long-lived fork for an HTTP application or pooled DataSource; reset it before each sequential test. */
+    public synchronized Fork applicationFork() { return applicationFork(""); }
+
+    /** Long-lived fork from a named template. May be called before JUnit's BeforeAll, e.g. in DynamicPropertySource. */
+    public synchronized Fork applicationFork(String name) {
+        start();
+        Template t = get(name);
+        return applicationForks.computeIfAbsent(t.name, k -> t.snapshot.fork(cfg.forkTimeout));
+    }
+
     private String firstName() { return templates.keySet().iterator().next(); }
 
     private Template get(String name) {
@@ -124,7 +136,10 @@ public final class PgmemExtension
 
     // -- lifecycle -----------------------------------------------------------
 
-    @Override public void beforeAll(ExtensionContext context) {
+    @Override public void beforeAll(ExtensionContext context) { start(); }
+
+    /** Initialize the prepared templates once, including when applicationFork is requested during context bootstrap. */
+    private synchronized void start() {
         if (pgmem != null) return; // nested class or re-registration
         Template first = templates.values().iterator().next();
         Pgmem.Builder pb = Pgmem.builder().database(first.database).user(first.user).log(cfg.log).readyTimeout(cfg.readyTimeout);
@@ -155,6 +170,14 @@ public final class PgmemExtension
         if (forks != null) forks.close();
         Pgmem pg = pgmem;
         if (pg != null && context.getRequiredTestClass() == ownerClass(context)) {
+            synchronized (this) {
+                for (Fork fork : applicationForks.values()) fork.close();
+                applicationForks.clear();
+            }
+            synchronized (sharedReadOnly) {
+                for (Fork fork : sharedReadOnly.values()) fork.close();
+                sharedReadOnly.clear();
+            }
             pgmem = null;
             for (Template t : templates.values()) { t.server = null; t.snapshot = null; }
             pg.close();
@@ -190,12 +213,26 @@ public final class PgmemExtension
         PgmemFork ann = pc.findAnnotation(PgmemFork.class).orElse(null);
         String name = ann == null ? "" : ann.value();
         ForkScope scope = ann == null ? defaultScope : ann.scope();
-        Fork fork = forkFor(ec, name, scope);
+        Fork fork = ann == null && !forkEnabled(ec) ? sharedFor(name) : forkFor(ec, name, scope);
         Class<?> type = p.getType();
         if (type == Fork.class) return fork;
         if (type == DataSource.class) return fork.dataSource();
         if (type == String.class) return fork.jdbcUrl();
         throw new ParameterResolutionException("unsupported parameter " + p);
+    }
+
+    private static boolean forkEnabled(ExtensionContext ec) {
+        PgmemTest method = ec.getTestMethod().map(m -> m.getAnnotation(PgmemTest.class)).orElse(null);
+        if (method != null) return method.fork();
+        PgmemTest type = ec.getTestClass().map(c -> c.getAnnotation(PgmemTest.class)).orElse(null);
+        return type == null || type.fork();
+    }
+
+    private Fork sharedFor(String name) {
+        Template template = get(name);
+        synchronized (sharedReadOnly) {
+            return sharedReadOnly.computeIfAbsent(template.name, k -> template.snapshot.fork(cfg.forkTimeout));
+        }
     }
 
     /** One fork per (scope context, template); several parameters in one test share it. */
