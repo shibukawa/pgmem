@@ -60,6 +60,13 @@ and existing connections remain valid. A chosen dataset can be restored with
 [API](https://shibukawa.github.io/pgmem/guides/java/api-testing/), and
 [E2E](https://shibukawa.github.io/pgmem/guides/java/e2e-testing/) guides.
 
+For Micronaut HTTP tests, add `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")`
+alongside your application's Micronaut server dependencies. Then start the app
+with `MicronautTestApp.start(pg.applicationFork())`. The helper selects an
+available port, supplies the fork's JDBC URL, disables duplicate Flyway
+migrations, and exposes `uri()` and `close()`. Pass a property map as the
+second argument for application-specific settings.
+
 Each connection to a fork gets its own PostgreSQL backend, including pooled
 connections. Commit or close transactions before `snapshot()` or `reset()`:
 they wait for open transactions and fail with code `busy` after their timeout.
