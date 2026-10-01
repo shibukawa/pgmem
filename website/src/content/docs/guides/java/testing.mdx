@@ -1,9 +1,77 @@
 ---
-title: Testing with JUnit 5
+title: Java unit tests with JUnit 5
 description: Choose a JUnit 5 database lifecycle with a fresh server per test or one initialized template and class- or method-scoped forks.
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+For an HTTP application, see [API tests](../api-testing/) and [Playwright E2E tests](../e2e-testing/).
+
+## Test a repository through its public methods
+
+`PgmemExtension` prepares the schema once. A `DataSource` parameter receives a fresh fork by default, so a write in one method cannot affect the next. `@PgmemTest(fork = false)` shares a prepared fork for read-only methods. Create the repository with the injected `DataSource`; an existing pool cannot be redirected after construction. In this example, `migrateAndSeed` creates an `orders(id, sku)` table.
+
+<Tabs syncKey="java-unit-example">
+<TabItem label="Test">
+
+```java title="OrderRepositoryTest.java"
+class OrderRepositoryTest {
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+            .database("app")
+            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
+            .build();
+
+    @Test void createsAndFindsAnOrder(DataSource ds) throws SQLException {
+        OrderRepository orders = new OrderRepository(ds);
+        Order created = orders.create("book");
+        assertEquals(created, orders.findById(created.id()));
+    }
+
+    @Test @PgmemTest(fork = false)
+    void missingOrderReturnsNull(DataSource ds) throws SQLException {
+        assertNull(new OrderRepository(ds).findById(-1));
+    }
+}
+```
+
+</TabItem>
+<TabItem label="OrderRepository">
+
+```java title="OrderRepository.java"
+record Order(long id, String sku) {}
+
+final class OrderRepository {
+    private final DataSource db;
+    OrderRepository(DataSource db) { this.db = db; }
+
+    Order create(String sku) throws SQLException {
+        try (Connection c = db.getConnection();
+             PreparedStatement st = c.prepareStatement(
+                     "INSERT INTO orders (sku) VALUES (?) RETURNING id")) {
+            st.setString(1, sku);
+            try (ResultSet rs = st.executeQuery()) {
+                rs.next();
+                return new Order(rs.getLong(1), sku);
+            }
+        }
+    }
+
+    Order findById(long id) throws SQLException {
+        try (Connection c = db.getConnection();
+             PreparedStatement st = c.prepareStatement(
+                     "SELECT id, sku FROM orders WHERE id = ?")) {
+            st.setLong(1, id);
+            try (ResultSet rs = st.executeQuery()) {
+                return rs.next() ? new Order(rs.getLong(1), rs.getString(2)) : null;
+            }
+        }
+    }
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Database lifecycle strategies
 

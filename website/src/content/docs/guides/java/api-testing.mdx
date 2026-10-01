@@ -1,0 +1,72 @@
+---
+title: Java API tests
+description: Run a Spring Boot HTTP server against one pgmem fork and restore data before each request test.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+An API test exercises the application through HTTP while its DataSource and connection pool stay alive. `PgmemExtension.applicationFork()` creates one long-lived fork for that app. It can be called from `@DynamicPropertySource`, even before JUnit invokes the extension's `beforeAll`. `Fork.reset()` restores the prepared database in place, so the JDBC URL and existing connections remain valid.
+
+## Spring Boot on a random HTTP port
+
+This example assumes the application has `POST /orders` and `GET /orders` endpoints. Replace `migrateAndSeed` with your project's migration and seed function. Close all connections it opens before it returns; pgmem snapshots the template immediately afterward.
+
+```java title="OrdersApiTest.java"
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+class OrdersApiTest {
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+            .database("app")
+            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
+            .build();
+
+    @DynamicPropertySource
+    static void database(DynamicPropertyRegistry properties) {
+        Fork appDb = pg.applicationFork();
+        properties.add("spring.datasource.url", appDb::jdbcUrl);
+        properties.add("spring.datasource.username", appDb::user);
+        properties.add("spring.datasource.password", () -> "");
+        // The schema was already migrated in prepare.
+        properties.add("spring.flyway.enabled", () -> false);
+    }
+
+    @LocalServerPort int port;
+    HttpClient http = HttpClient.newHttpClient();
+
+    @BeforeEach void restoreDatabase() {
+        pg.applicationFork().reset();
+    }
+
+    @Test void createsOrderThroughHttp() throws Exception {
+        HttpRequest request = HttpRequest.newBuilder(URI.create(baseUrl() + "/orders"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString("{\"sku\":\"book\"}"))
+                .build();
+        assertEquals(201, http.send(request, HttpResponse.BodyHandlers.ofString()).statusCode());
+    }
+
+    @Test void startsFromPreparedDataAgain() throws Exception {
+        HttpRequest request = HttpRequest.newBuilder(URI.create(baseUrl() + "/orders")).build();
+        var response = http.send(request, HttpResponse.BodyHandlers.ofString());
+        assertEquals(200, response.statusCode());
+        assertEquals("[]", response.body()); // when the baseline seed has no orders
+    }
+
+    String baseUrl() { return "http://127.0.0.1:" + port; }
+}
+```
+
+The application still creates its DataSource normally. The test supplies `spring.datasource.url` before Spring builds it. `@DirtiesContext` prevents another test class from reusing this context after pgmem has closed its fork. If your app uses Liquibase or Hibernate schema generation, disable those too when `prepare` already applied the schema.
+
+## Other HTTP frameworks and datasets
+
+For a framework that takes a `DataSource` directly, construct the app with `pg.applicationFork().dataSource()` before serving requests. For a child JVM, pass `pg.applicationFork().jdbcUrl()` in its startup configuration before it builds its pool. Keep the same app and fork for sequential cases and call `reset()` in `@BeforeEach`.
+
+To create a suite-specific baseline, seed the application fork once, call `Snapshot seeded = pg.applicationFork().snapshot()`, then use `pg.applicationFork().reset(seeded)` before each case. Close `seeded` after the suite.
+
+<Aside type="caution">
+Do not run tests that share this app and fork concurrently. A reset can overlap another request, and an open transaction can make reset fail with `busy` after five seconds. Parallel test classes should use separate `PgmemExtension` instances and application forks.
+</Aside>
+
+For browser automation over the same HTTP lifecycle, see [E2E tests](../e2e-testing/).

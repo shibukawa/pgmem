@@ -1,0 +1,72 @@
+---
+title: Java API テスト
+description: Spring Boot の HTTP サーバーを pgmem のフォークにつなぎ、リクエストテストの前にデータを戻します。
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+API テストは HTTP 経由でアプリを検証し、その間 DataSource と接続プールは維持します。`PgmemExtension.applicationFork()` はアプリ用の長寿命フォークを 1 つ作ります。JUnit が拡張の `beforeAll` を呼ぶ前でも、`@DynamicPropertySource` から取得できます。`Fork.reset()` は準備済みデータへその場で戻すため、JDBC URL と既存の接続は変わりません。
+
+## Spring Boot をランダムな HTTP ポートで起動する
+
+以下はアプリに `POST /orders` と `GET /orders` がある想定です。`migrateAndSeed` はプロジェクトのマイグレーションとシード処理に置き換えてください。開いた接続は処理が戻る前にすべて閉じます。その直後に pgmem がテンプレートをスナップショットにします。
+
+```java title="OrdersApiTest.java"
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+class OrdersApiTest {
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+            .database("app")
+            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
+            .build();
+
+    @DynamicPropertySource
+    static void database(DynamicPropertyRegistry properties) {
+        Fork appDb = pg.applicationFork();
+        properties.add("spring.datasource.url", appDb::jdbcUrl);
+        properties.add("spring.datasource.username", appDb::user);
+        properties.add("spring.datasource.password", () -> "");
+        // スキーマは prepare で適用済み。
+        properties.add("spring.flyway.enabled", () -> false);
+    }
+
+    @LocalServerPort int port;
+    HttpClient http = HttpClient.newHttpClient();
+
+    @BeforeEach void restoreDatabase() {
+        pg.applicationFork().reset();
+    }
+
+    @Test void createsOrderThroughHttp() throws Exception {
+        HttpRequest request = HttpRequest.newBuilder(URI.create(baseUrl() + "/orders"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString("{\"sku\":\"book\"}"))
+                .build();
+        assertEquals(201, http.send(request, HttpResponse.BodyHandlers.ofString()).statusCode());
+    }
+
+    @Test void startsFromPreparedDataAgain() throws Exception {
+        HttpRequest request = HttpRequest.newBuilder(URI.create(baseUrl() + "/orders")).build();
+        var response = http.send(request, HttpResponse.BodyHandlers.ofString());
+        assertEquals(200, response.statusCode());
+        assertEquals("[]", response.body()); // 基準シードに注文がない場合
+    }
+
+    String baseUrl() { return "http://127.0.0.1:" + port; }
+}
+```
+
+アプリは通常どおり DataSource を作ります。テストが `spring.datasource.url` を Spring の初期化前に渡します。`@DirtiesContext` は、pgmem のフォークを閉じた後に別のテストクラスがこのコンテキストを再利用するのを防ぎます。アプリが Liquibase や Hibernate のスキーマ生成を使う場合も、`prepare` ですでにスキーマを適用したなら無効化してください。
+
+## 他の HTTP フレームワークとデータセット
+
+`DataSource` を直接受け取るフレームワークなら、リクエスト受付前に `pg.applicationFork().dataSource()` でアプリを構築します。別の JVM で動かす場合は、プールを作る前の起動設定へ `pg.applicationFork().jdbcUrl()` を渡します。同じアプリとフォークを逐次ケースで維持し、`@BeforeEach` で `reset()` を呼びます。
+
+スイート固有の基準データが必要なら、アプリ用フォークに一度シードを入れ、`Snapshot seeded = pg.applicationFork().snapshot()` を作ります。各ケースの前に `pg.applicationFork().reset(seeded)` で戻し、スイート終了後に `seeded` を閉じます。
+
+<Aside type="caution">
+同じアプリとフォークを共有するケースは並列実行しないでください。リクエスト中にリセットが重なる可能性があります。未終了のトランザクションがあると、リセットは 5 秒後に `busy` で失敗します。テストクラスを並列化する場合は、それぞれ別の `PgmemExtension` とアプリ用フォークを使います。
+</Aside>
+
+同じ HTTP ライフサイクルをブラウザーで試す場合は [E2E テスト](../e2e-testing/) を参照してください。

@@ -1,0 +1,63 @@
+---
+title: Java Playwright E2E テスト
+description: Playwright Java から実際の Spring Boot HTTP サーバーへアクセスし、ブラウザーテスト間で pgmem のデータを戻します。
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+E2E テストでは、ブラウザーから実際の HTTP サーバーにアクセスします。サーバーの接続プールは起動時に作られるため、Spring コンテキストの起動前に接続先となる pgmem のフォークを用意します。各ブラウザーテストの前に同じフォークをリセットします。サーバー、JDBC URL、プールの接続は維持されます。
+
+## Playwright Java と Spring Boot
+
+この例では、テストごとに新しい `Page` を渡す [Playwright の JUnit 連携](https://playwright.dev/java/docs/junit)と、Spring Boot のランダムポートの HTTP サーバーを使います。Spring が[動的プロパティ](https://docs.spring.io/spring-framework/reference/testing/testcontext-framework/ctx-management/dynamic-property-sources.html)を要求すると、`PgmemExtension.applicationFork()` が準備済み DB を早期に起動します。
+
+```java title="OrdersE2ETest.java"
+@UsePlaywright
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+class OrdersE2ETest {
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+            .database("app")
+            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
+            .build();
+
+    @DynamicPropertySource
+    static void database(DynamicPropertyRegistry properties) {
+        Fork appDb = pg.applicationFork();
+        properties.add("spring.datasource.url", appDb::jdbcUrl);
+        properties.add("spring.datasource.username", appDb::user);
+        properties.add("spring.datasource.password", () -> "");
+        properties.add("spring.flyway.enabled", () -> false);
+    }
+
+    @LocalServerPort int port;
+
+    @BeforeEach void restoreDatabase() {
+        pg.applicationFork().reset();
+    }
+
+    @Test void createsAnOrder(Page page) {
+        page.navigate("http://127.0.0.1:" + port + "/orders");
+        page.getByText("New order").click();
+        assertThat(page.getByText("Order created")).isVisible();
+    }
+
+    @Test void startsFromPreparedDataAgain(Page page) {
+        page.navigate("http://127.0.0.1:" + port + "/orders");
+        assertThat(page.getByText("No orders")).isVisible();
+    }
+}
+```
+
+ルート、ラベル、`migrateAndSeed` はアプリに合わせて変更してください。`prepare` でマイグレーションする場合は、例のように起動時の重複実行を無効にします。`@DirtiesContext` はこのクラスの後で Spring コンテキストを閉じ、閉じたフォークへのプール再利用を防ぎます。
+
+## 分離と並列実行
+
+同じクラスの JUnit メソッドはアプリとフォークを共有するため、逐次実行してください。クラス間の並列実行では、それぞれに `PgmemExtension`、Spring コンテキスト、HTTP ポート、ブラウザーの fixture を持たせます。アプリが別 JVM で動く場合も、プールの作成前に起動設定へフォークの JDBC URL を渡し、同じ `reset()` を使います。
+
+<Aside type="caution">
+ブラウザーの分離だけでは DB は分離されません。Playwright の `Page` を新しくしても、フォークをリセットするまで前のケースの書き込みが見えます。アプリ側のトランザクションが残っていると、`reset()` は 5 秒後に `busy` で失敗します。
+</Aside>
+
+ブラウザーを使わない HTTP テストは [API テスト](../api-testing/) を参照してください。

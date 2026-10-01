@@ -1,9 +1,77 @@
 ---
-title: JUnit 5 への組み込み
+title: Java ユニットテスト
 description: JUnit 5 で使うデータベースのライフサイクル。テストごとに新しいサーバーを起動するか、テンプレートを一度初期化してクラス単位・メソッド単位のフォークを渡します。
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+HTTP アプリを使う場合は [API テスト](../api-testing/) と [Playwright E2E テスト](../e2e-testing/) を参照してください。
+
+## リポジトリの公開メソッドをテストする
+
+`PgmemExtension` でスキーマを一度準備します。`DataSource` パラメータはデフォルトでメソッドごとに新しいフォークを受け取り、書き込みは次のケースに残りません。`@PgmemTest(fork = false)` は読み取り専用メソッド用に準備済みフォークを共有します。リポジトリは注入された `DataSource` で作ります。作成済みプールの接続先は後から変更できません。この例の `migrateAndSeed` は `orders(id, sku)` テーブルを作ります。
+
+<Tabs syncKey="java-unit-example">
+<TabItem label="テスト">
+
+```java title="OrderRepositoryTest.java"
+class OrderRepositoryTest {
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+            .database("app")
+            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
+            .build();
+
+    @Test void createsAndFindsAnOrder(DataSource ds) throws SQLException {
+        OrderRepository orders = new OrderRepository(ds);
+        Order created = orders.create("book");
+        assertEquals(created, orders.findById(created.id()));
+    }
+
+    @Test @PgmemTest(fork = false)
+    void missingOrderReturnsNull(DataSource ds) throws SQLException {
+        assertNull(new OrderRepository(ds).findById(-1));
+    }
+}
+```
+
+</TabItem>
+<TabItem label="OrderRepository">
+
+```java title="OrderRepository.java"
+record Order(long id, String sku) {}
+
+final class OrderRepository {
+    private final DataSource db;
+    OrderRepository(DataSource db) { this.db = db; }
+
+    Order create(String sku) throws SQLException {
+        try (Connection c = db.getConnection();
+             PreparedStatement st = c.prepareStatement(
+                     "INSERT INTO orders (sku) VALUES (?) RETURNING id")) {
+            st.setString(1, sku);
+            try (ResultSet rs = st.executeQuery()) {
+                rs.next();
+                return new Order(rs.getLong(1), sku);
+            }
+        }
+    }
+
+    Order findById(long id) throws SQLException {
+        try (Connection c = db.getConnection();
+             PreparedStatement st = c.prepareStatement(
+                     "SELECT id, sku FROM orders WHERE id = ?")) {
+            st.setLong(1, id);
+            try (ResultSet rs = st.executeQuery()) {
+                return rs.next() ? new Order(rs.getLong(1), rs.getString(2)) : null;
+            }
+        }
+    }
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## データベースのライフサイクル
 

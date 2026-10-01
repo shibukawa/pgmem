@@ -7,7 +7,7 @@ const guide = (lang, ja) => ({
 	translations: { ja },
 	items: [
 		{ label: 'Basics', translations: { ja: '基本' }, slug: `guides/${lang.toLowerCase().replace('.', '')}/basics` },
-		...(['Python', 'Node.js'].includes(lang) ? [
+		...(['Python', 'Node.js', 'Java'].includes(lang) ? [
 			{ label: 'Unit tests', translations: { ja: 'ユニットテスト' }, slug: `guides/${lang.toLowerCase().replace('.', '')}/testing` },
 			{ label: 'API tests', translations: { ja: 'API テスト' }, slug: `guides/${lang.toLowerCase().replace('.', '')}/api-testing` },
 			{ label: 'E2E tests', translations: { ja: 'E2E テスト' }, slug: `guides/${lang.toLowerCase().replace('.', '')}/e2e-testing` },
