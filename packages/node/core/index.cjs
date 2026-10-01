@@ -4,7 +4,10 @@
 // implementation is CommonJS so that Jest can load it inside test files;
 // index.js re-exports it for ESM.
 const { spawn } = require("node:child_process");
+const { AsyncLocalStorage } = require("node:async_hooks");
 const { existsSync } = require("node:fs");
+const Module = require("node:module");
+const { createRequire } = Module;
 const net = require("node:net");
 const { join } = require("node:path");
 const { createInterface } = require("node:readline");
@@ -13,6 +16,7 @@ const { createInterface } = require("node:readline");
 const PROTOCOL = 1;
 const asyncDispose = Symbol.asyncDispose ?? Symbol.for("Symbol.asyncDispose");
 const CURRENT = Symbol.for("pgmem.currentFork");
+const shadowContext = new AsyncLocalStorage();
 
 /** An error answered by pgmem; code is the protocol error code (busy, pool_timeout, ...). */
 class PgmemError extends Error {
@@ -479,6 +483,99 @@ function pgmemTest(test, name, fn, options) {
   return test(name, (...args) => withTestDatabase(() => fn(...args), options));
 }
 
+const patchedPg = new WeakSet();
+let shadowInstalled = false;
+let sharedShadowFork;
+
+/** Redirect new pg connections without changing the application's connection string. */
+function patchPg(pg) {
+  if (!pg || typeof pg.Client !== "function" || typeof pg.Pool !== "function" || patchedPg.has(pg)) return;
+  patchedPg.add(pg);
+  const clientConnect = pg.Client.prototype.connect;
+  pg.Client.prototype.connect = function (...args) {
+    const target = shadowContext.getStore();
+    if (target) {
+      const endpoint = new URL(target.url);
+      const params = this.connectionParameters;
+      if (!params) throw new Error("pgmem: unsupported pg Client without connectionParameters");
+      params.host = this.host = endpoint.hostname;
+      params.port = this.port = Number(endpoint.port);
+      params.user = this.user = decodeURIComponent(endpoint.username);
+      params.database = this.database = decodeURIComponent(endpoint.pathname.slice(1));
+      params.password = this.password = decodeURIComponent(endpoint.password);
+      params.ssl = this.ssl = false;
+      if (this.connection) this.connection.ssl = false;
+      this.__pgmemShadowTarget = target.id;
+    }
+    return clientConnect.apply(this, args);
+  };
+
+  const poolConnect = pg.Pool.prototype.connect;
+  pg.Pool.prototype.connect = function (...args) {
+    const target = shadowContext.getStore();
+    if (target && Array.isArray(this._clients) && Array.isArray(this._idle)) {
+      (target.__pgmemShadowPools ??= new Set()).add(this);
+      for (const idle of [...this._idle]) {
+        if (idle.client.__pgmemShadowTarget !== target.id) this._remove(idle.client);
+      }
+      const idleClients = new Set(this._idle.map((item) => item.client));
+      if (this._clients.some((client) => !idleClients.has(client) && client.__pgmemShadowTarget !== target.id)) {
+        throw new Error("pgmem: a pg Pool still has a checked-out connection from another target");
+      }
+    }
+    return poolConnect.apply(this, args);
+  };
+}
+
+/** Install a passive pg hook; outside withShadowPg, ordinary connections are unchanged. */
+function installPgShadow() {
+  if (shadowInstalled) return;
+  shadowInstalled = true;
+  // ESM imports of a CommonJS package can bypass Module._load (notably under
+  // Vitest), so patch the application's resolved pg export eagerly as well.
+  try { patchPg(createRequire(join(process.cwd(), "package.json"))("pg")); }
+  catch (error) { if (error.code !== "MODULE_NOT_FOUND") throw error; }
+  try { patchPg(require("pg")); }
+  catch (error) { if (error.code !== "MODULE_NOT_FOUND") throw error; }
+  for (const loaded of Object.values(require.cache)) patchPg(loaded?.exports);
+  const load = Module._load;
+  Module._load = function (request, parent, isMain) {
+    const exported = load.call(this, request, parent, isMain);
+    if (request === "pg") patchPg(exported);
+    return exported;
+  };
+}
+
+/** Run a test against a fork while pg Clients and Pools retain their normal configuration. */
+async function withShadowPg(fn, { fork: forkEnabled = true } = {}) {
+  if (typeof fn !== "function") throw new TypeError("pgmem: withShadowPg requires a function");
+  if (typeof forkEnabled !== "boolean") throw new TypeError("pgmem: fork must be a boolean");
+  installPgShadow();
+  const target = forkEnabled ? await fork() : await (sharedShadowFork ??= fork().catch((err) => {
+    sharedShadowFork = undefined;
+    throw err;
+  }));
+  try {
+    return await shadowContext.run(target, fn);
+  } finally {
+    if (forkEnabled) {
+      // Drain idle connections before closing the fork: otherwise pg reports
+      // the server shutdown as an asynchronous error on an application pool.
+      for (const pool of target.__pgmemShadowPools ?? []) {
+        await Promise.all([...pool._idle]
+          .filter((item) => item.client.__pgmemShadowTarget === target.id)
+          .map((item) => new Promise((resolve) => pool._remove(item.client, resolve))));
+      }
+      await target.close();
+    }
+  }
+}
+
+/** Register a node:test, Vitest or Jest case using pg driver interception. */
+function shadowPg(test, name, fn, options) {
+  return test(name, (...args) => withShadowPg(() => fn(...args), options));
+}
+
 /** Bind a loopback socket to obtain an available port for an app child. */
 function freePort() {
   return new Promise((resolve, reject) => {
@@ -551,6 +648,8 @@ module.exports = {
   currentFork,
   withTestDatabase,
   pgmemTest,
+  withShadowPg,
+  shadowPg,
   startTestApp,
   resolveBinary,
 };
