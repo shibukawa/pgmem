@@ -33,6 +33,8 @@ ui:
           - {kind: page, id: guides/python/testing, target: decision:fork-or-not, children: [api:python-wrapper, flow:wrapper-test-lifecycle]}
           - {kind: page, id: guides/java/basics, target: concept:java-guide, children: [api:java-wrapper, concept:migration-tools, concept:seeding]}
           - {kind: page, id: guides/java/testing, target: decision:fork-or-not, children: [api:java-wrapper, flow:wrapper-test-lifecycle]}
+          - {kind: page, id: guides/java/api-testing, target: api:java-wrapper, children: [api:reset, flow:wrapper-test-lifecycle]}
+          - {kind: page, id: guides/java/e2e-testing, target: api:java-wrapper, children: [api:reset, flow:wrapper-test-lifecycle]}
           - {kind: page, id: guides/nodejs/basics, target: api:node-wrapper, children: [system:node-orms, concept:migration-tools]}
           - {kind: page, id: guides/nodejs/testing, target: decision:node-test-integration, children: [api:node-wrapper, api:reset, api:control-socket, system:node-test-runners]}
           - {kind: page, id: guides/nodejs/api-testing, target: decision:node-test-integration, children: [api:node-wrapper, api:reset]}

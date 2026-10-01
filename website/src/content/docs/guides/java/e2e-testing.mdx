@@ -1,0 +1,63 @@
+---
+title: Java E2E tests with Playwright
+description: Drive a real Spring Boot HTTP server from Playwright Java while pgmem resets its database between browser tests.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+An E2E test uses a browser against an actual HTTP server. The server's connection pool is created at startup, so give it a stable pgmem fork before the Spring context starts. Reset that fork before each sequential browser test. The server, JDBC URL, and pooled connections stay alive.
+
+## Playwright Java and Spring Boot
+
+The example uses [Playwright's JUnit integration](https://playwright.dev/java/docs/junit), which supplies a fresh `Page` for each test, and Spring Boot's random-port HTTP server. `PgmemExtension.applicationFork()` starts the prepared database early when Spring requests its [dynamic properties](https://docs.spring.io/spring-framework/reference/testing/testcontext-framework/ctx-management/dynamic-property-sources.html).
+
+```java title="OrdersE2ETest.java"
+@UsePlaywright
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+class OrdersE2ETest {
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+            .database("app")
+            .prepare(t -> migrateAndSeed(t.jdbcUrl()))
+            .build();
+
+    @DynamicPropertySource
+    static void database(DynamicPropertyRegistry properties) {
+        Fork appDb = pg.applicationFork();
+        properties.add("spring.datasource.url", appDb::jdbcUrl);
+        properties.add("spring.datasource.username", appDb::user);
+        properties.add("spring.datasource.password", () -> "");
+        properties.add("spring.flyway.enabled", () -> false);
+    }
+
+    @LocalServerPort int port;
+
+    @BeforeEach void restoreDatabase() {
+        pg.applicationFork().reset();
+    }
+
+    @Test void createsAnOrder(Page page) {
+        page.navigate("http://127.0.0.1:" + port + "/orders");
+        page.getByText("New order").click();
+        assertThat(page.getByText("Order created")).isVisible();
+    }
+
+    @Test void startsFromPreparedDataAgain(Page page) {
+        page.navigate("http://127.0.0.1:" + port + "/orders");
+        assertThat(page.getByText("No orders")).isVisible();
+    }
+}
+```
+
+Replace the routes, labels, and `migrateAndSeed` with your application. When migrations run in `prepare`, disable duplicate startup migrations as shown. `@DirtiesContext` closes the Spring context after this class so its pool is not reused with a closed fork.
+
+## Isolation and parallel runs
+
+JUnit methods in one class should run sequentially because they share the same app and fork. Parallel classes can each own a `PgmemExtension`, Spring context, HTTP port, and browser fixtures. If the app runs in a separate JVM, pass the fork's JDBC URL in its startup configuration before it builds a pool; use the same `reset()` lifecycle.
+
+<Aside type="caution">
+Browser isolation does not isolate the database: a fresh Playwright `Page` can still see writes from a previous case until the fork is reset. A long-running transaction in the app can make `reset()` fail with `busy` after five seconds.
+</Aside>
+
+For HTTP-only checks without a browser, use [API tests](../api-testing/).
