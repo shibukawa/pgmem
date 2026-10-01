@@ -1,6 +1,6 @@
 # @pgmem/core
 
-A real PostgreSQL 18 that keeps everything in memory, packaged as a single
+A real PostgreSQL that keeps everything in memory, packaged as a single
 binary and driven from Node.js. Prepare the schema once per test run, give
 every test file its own copy through `DATABASE_URL`, and put that copy back
 between tests without reconnecting.
@@ -24,6 +24,22 @@ and `postgres` connect to the URL like to any PostgreSQL, pools included.
 
 Setting `DATABASE_URL` per test case would not help: an ORM client reads
 the URL once, when it is created, and keeps it.
+
+For a client built **inside** each test callback, `pgmemTest(test, name, fn)`
+routes the callback to a fresh fork by default and closes it afterwards.
+`withTestDatabase(fn, { fork: false })` reuses a shared fork for read-only
+cases. Both helpers temporarily change `process.env`, serialize their own
+callbacks, and require clients to be created inside the callback. They do
+not move an already connected pool or coordinate with unrelated concurrent
+code in the same process.
+
+For API tests, register a fork before importing the app, keep the app and
+its pool alive, and call `currentFork().reset()` before each sequential
+case. For Playwright E2E tests, start a pgmem server, fork, and app process
+per Playwright worker; pass the fork URL to the app at launch and reset it
+before each browser test. See the [unit](https://shibukawa.github.io/pgmem/guides/nodejs/testing/),
+[API](https://shibukawa.github.io/pgmem/guides/nodejs/api-testing/), and
+[E2E](https://shibukawa.github.io/pgmem/guides/nodejs/e2e-testing/) guides.
 
 ## Vitest
 
@@ -184,6 +200,8 @@ or commit what it opens: the snapshot waits for open transactions.
 | `server.fork()`, `server.withFork(fn)`, `server.close()` | |
 | `useFork()` | what `@pgmem/core/register` runs: fork (or reset) and write `DATABASE_URL`, or the names in `PGMEM_ENV` |
 | `currentFork()` | the fork of this test file |
+| `withTestDatabase(fn, { fork, env })` | route a callback to a fresh fork (default) or a shared read-only fork |
+| `pgmemTest(test, name, fn, options)` | register a test using `withTestDatabase` |
 | `fork()`, `withFork(fn)`, `connect()` | fork through `PGMEM_CONTROL` from any process |
 | `fork.url`, `fork.env(names)` | `DATABASE_URL` by default; `PGHOST`, `PGPORT`, `PGUSER`, `PGDATABASE` get the parts |
 | `fork.reset({ snapshot, timeoutMs })` | back to the snapshot in place |

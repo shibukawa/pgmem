@@ -151,6 +151,10 @@ export declare function withFork<T>(fn: (fork: PgmemFork) => T | Promise<T>, opt
 export declare function useFork(options?: { env?: readonly string[] }): Promise<PgmemFork>;
 /** The fork of this test file, made by @pgmem/core/register or @pgmem/core/jest-environment. */
 export declare function currentFork(): PgmemFork;
+/** Route clients constructed inside fn to prepared pgmem state; fork=false shares one target in this process. Calls are serialized while process.env changes. */
+export declare function withTestDatabase<T>(fn: (target: PgmemFork) => T | Promise<T>, options?: { fork?: boolean; env?: readonly string[] }): Promise<T>;
+/** Register a node:test, Vitest or Jest case whose callback uses pgmem routing. */
+export declare function pgmemTest<T>(test: (name: string, fn: (...args: any[]) => Promise<T>) => unknown, name: string, fn: (...args: any[]) => T | Promise<T>, options?: { fork?: boolean; env?: readonly string[] }): unknown;
 /** The pgmem binary: the argument, PGMEM_BINARY, then the @pgmem/<platform> package. */
 export declare function resolveBinary(binary?: string): string;
 
