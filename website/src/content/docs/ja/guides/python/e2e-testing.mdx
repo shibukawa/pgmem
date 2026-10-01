@@ -79,3 +79,7 @@ def test_create_order(pgmem_live_db, app_url, page):
 Flask と Django は `DATABASE_URL` を自動では読みません。アプリを import する**前に**、既存のテスト設定で DSN、またはホスト・ポート・ユーザー・データベース名を読み取るようにします。Django では `DJANGO_SETTINGS_MODULE` をテスト用設定モジュールへ向け、通常の PostgreSQL バックエンドを設定します。ブラウザテストは通常の pytest 関数と `pgmem_live_db` を使います。Django の `TestCase` と pytest-django の `live_server` は独自の DB ライフサイクルを持つため、この fixture と併用しません。
 
 次の reset までに HTTP リクエストと DB を使うバックグラウンドジョブを完了し、開いたトランザクションをコミットまたは終了してください。reset はトランザクションが終わるのを待ち、期限に達すると `ProtocolError(code="busy")` で失敗します。複数テストから 1 つのアプリプロセスへ同時にリクエストする場合、この逐次 reset 方式では分離できません。テストごとに別のワーカーとアプリプロセスを使います。
+
+## 安全な並列実行
+
+ブラウザーテストは pytest-xdist の `pytest -n 4` などで別ワーカープロセスに分けます。上のセッション fixture と同様に、ワーカーごとに pgmem プロセス、live fork、アプリプロセス、異なる HTTP ポートを用意します。同じワーカーのケースは逐次実行し、画面遷移前にデータを復元します。次のケースの前にリクエストと DB を使うバックグラウンド処理を完了させてください。全ワーカーを同じ起動済みアプリへ向けたり、1 ワーカーのアプリに複数の Uvicorn ワーカーを使ったりしないでください。ブラウザーコンテキストを分けるだけでは共有 DB は分離されません。
