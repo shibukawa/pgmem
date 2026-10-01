@@ -155,6 +155,10 @@ export declare function currentFork(): PgmemFork;
 export declare function withTestDatabase<T>(fn: (target: PgmemFork) => T | Promise<T>, options?: { fork?: boolean; env?: readonly string[] }): Promise<T>;
 /** Register a node:test, Vitest or Jest case whose callback uses pgmem routing. */
 export declare function pgmemTest<T>(test: (name: string, fn: (...args: any[]) => Promise<T>) => unknown, name: string, fn: (...args: any[]) => T | Promise<T>, options?: { fork?: boolean; env?: readonly string[] }): unknown;
+/** Route pg Client and Pool connections to a fork without modifying DATABASE_URL. A pre-existing pool's idle clients are replaced when the target changes. */
+export declare function withShadowPg<T>(fn: () => T | Promise<T>, options?: { fork?: boolean }): Promise<T>;
+/** Register a node:test, Vitest or Jest case using pg driver interception. */
+export declare function shadowPg<T>(test: (name: string, fn: (...args: any[]) => Promise<T>) => unknown, name: string, fn: (...args: any[]) => T | Promise<T>, options?: { fork?: boolean }): unknown;
 /** Start a long-lived HTTP app against a fork, wait for its health endpoint, and close it after testing. */
 export declare function startTestApp(options: {
   fork: PgmemFork;
