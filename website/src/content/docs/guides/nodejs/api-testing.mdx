@@ -123,3 +123,7 @@ Cases using one app and one fork must run sequentially. `test.concurrent` can ov
 </Aside>
 
 For a browser and a separately running app process, use [E2E tests](../e2e-testing/).
+
+## Safe parallel execution
+
+Use runner workers for file-level parallelism: each worker needs its own app instance and pgmem fork. Cases that share one Express or Fastify app and Pool must run sequentially, even when wrapped in `shadowPg`. Its asynchronous context routes new `pg` connections, while a checked-out connection still belongs to its current fork. `test.concurrent` is unsafe with the shared app/reset examples above. To parallelize individual cases, give each case a separate app and Pool and a fresh fork; otherwise split the cases into files handled by separate workers. Wait for request handlers, background jobs, and transactions to finish before resetting or closing the target.
