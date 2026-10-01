@@ -28,6 +28,9 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"net/url"
+	"strconv"
+	"sync"
 	"testing"
 
 	"github.com/jackc/pgx/v5"
@@ -58,6 +61,16 @@ type Options struct {
 type Fixture struct {
 	template *pgmem.Server
 	snap     *pgmem.Snapshot
+	sharedMu sync.Mutex
+	shared   *pgmem.Server
+}
+
+// ShadowOptions controls ShadowPG. The default is a fresh fork per test.
+type ShadowOptions struct {
+	// Shared reuses one fork. Use it only for read-only tests: writes persist.
+	Shared bool
+	// ExtraEnv sets additional application-specific DSN variables.
+	ExtraEnv []string
 }
 
 // New starts a template server, runs Options.Prepare against it and takes
@@ -103,7 +116,15 @@ func Run(m *testing.M, opts Options, setup func(*Fixture)) int {
 // Close releases the snapshot and the template server. Forks still alive
 // keep working until they are closed.
 func (f *Fixture) Close() error {
-	return errors.Join(f.snap.Close(), f.template.Close())
+	f.sharedMu.Lock()
+	shared := f.shared
+	f.shared = nil
+	f.sharedMu.Unlock()
+	var sharedErr error
+	if shared != nil {
+		sharedErr = shared.Close()
+	}
+	return errors.Join(sharedErr, f.snap.Close(), f.template.Close())
 }
 
 // Template is the server the snapshot was taken from. It keeps running;
@@ -175,6 +196,66 @@ func (f *Fixture) PgxPool(t testing.TB) *pgxpool.Pool {
 func (f *Fixture) DSN(t testing.TB) string {
 	t.Helper()
 	return f.Fork(t).DSN()
+}
+
+// ShadowPG routes applications that read DATABASE_URL or libpq's PG*
+// environment variables to pgmem without changing their datasource code.
+// Call it before constructing the application or its connection pool.
+// It uses testing.TB.Setenv, so the test and its ancestors cannot be parallel.
+// Go cannot replace an already-open *sql.DB or pgx pool through this helper.
+func (f *Fixture) ShadowPG(t testing.TB, options ...ShadowOptions) *pgmem.Server {
+	t.Helper()
+	if len(options) > 1 {
+		t.Fatal("pgmemtest: ShadowPG accepts at most one ShadowOptions")
+	}
+	var opts ShadowOptions
+	if len(options) == 1 {
+		opts = options[0]
+	}
+	var srv *pgmem.Server
+	if opts.Shared {
+		f.sharedMu.Lock()
+		if f.shared == nil {
+			var err error
+			f.shared, err = f.snap.Fork(t.Context())
+			if err != nil {
+				f.sharedMu.Unlock()
+				t.Fatalf("pgmemtest: shared shadow fork: %v", err)
+			}
+		}
+		srv = f.shared
+		f.sharedMu.Unlock()
+	} else {
+		srv = f.Fork(t)
+	}
+	u, err := url.Parse(srv.DSN())
+	if err != nil {
+		t.Fatalf("pgmemtest: shadow DSN: %v", err)
+	}
+	vars := map[string]string{
+		"DATABASE_URL": srv.DSN(),
+		"PGHOST":       u.Hostname(),
+		"PGHOSTADDR":   u.Hostname(),
+		"PGPORT":       strconv.Itoa(srv.Port()),
+		"PGUSER":       u.User.Username(),
+		"PGDATABASE":   u.Path[1:],
+		"PGPASSWORD":   "",
+		"PGSERVICE":    "",
+		"PGSSLMODE":    "disable",
+	}
+	for _, name := range opts.ExtraEnv {
+		if name == "" {
+			t.Fatal("pgmemtest: ExtraEnv contains an empty name")
+		}
+		if _, reserved := vars[name]; reserved {
+			t.Fatalf("pgmemtest: ExtraEnv duplicates built-in variable %q", name)
+		}
+		vars[name] = srv.DSN()
+	}
+	for name, value := range vars {
+		t.Setenv(name, value)
+	}
+	return srv
 }
 
 func openDB(srv *pgmem.Server) *sql.DB {
