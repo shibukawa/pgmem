@@ -49,7 +49,7 @@ jobs:
           node-version: 24
       - name: Node.js
         working-directory: packages/node/core
-        run: npm test
+        run: npm ci --omit=optional && npm test
 
       - uses: astral-sh/setup-uv@v10.1.0
       - name: Python

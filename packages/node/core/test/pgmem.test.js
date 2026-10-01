@@ -7,7 +7,8 @@ import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { createInterface } from "node:readline";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { PgmemClient, PgmemError, PgmemServer, pgmemTest, startTestApp, withTestDatabase } from "../index.js";
+import pg from "pg";
+import { PgmemClient, PgmemError, PgmemServer, pgmemTest, shadowPg, startTestApp, withShadowPg, withTestDatabase } from "../index.js";
 import { connectWire } from "./wire.js";
 
 const pkg = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -173,6 +174,54 @@ test("pgmemTest registers a callback with test context", async () => {
       assert.equal(await count(process.env.DATABASE_URL), 2);
     });
     await registered({ id: 7 });
+  } finally {
+    if (oldControl === undefined) delete process.env.PGMEM_CONTROL;
+    else process.env.PGMEM_CONTROL = oldControl;
+    if (oldSnapshot === undefined) delete process.env.PGMEM_SNAPSHOT;
+    else process.env.PGMEM_SNAPSHOT = oldSnapshot;
+  }
+});
+
+test("shadowPg redirects an existing pg Pool without changing DATABASE_URL", async () => {
+  const oldControl = process.env.PGMEM_CONTROL;
+  const oldSnapshot = process.env.PGMEM_SNAPSHOT;
+  const oldUrl = process.env.DATABASE_URL;
+  Object.assign(process.env, server.env());
+  process.env.DATABASE_URL = "postgres://bad@127.0.0.1:1/production";
+  const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 1 });
+  try {
+    await withShadowPg(async () => {
+      assert.equal((await pool.query("SELECT count(*) AS n FROM t")).rows[0].n, "2");
+      await pool.query("INSERT INTO t VALUES (3)");
+      assert.equal((await pool.query("SELECT count(*) AS n FROM t")).rows[0].n, "3");
+    });
+    await withShadowPg(async () => {
+      assert.equal(process.env.DATABASE_URL, "postgres://bad@127.0.0.1:1/production");
+      assert.equal((await pool.query("SELECT count(*) AS n FROM t")).rows[0].n, "2");
+    });
+  } finally {
+    await pool.end();
+    for (const [name, value] of Object.entries({ PGMEM_CONTROL: oldControl, PGMEM_SNAPSHOT: oldSnapshot, DATABASE_URL: oldUrl })) {
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
+});
+
+test("shadowPg registers a case and redirects pg Client", async () => {
+  const oldControl = process.env.PGMEM_CONTROL;
+  const oldSnapshot = process.env.PGMEM_SNAPSHOT;
+  Object.assign(process.env, server.env());
+  try {
+    let registered;
+    shadowPg((name, callback) => { assert.equal(name, "uses application client"); registered = callback; },
+      "uses application client", async () => {
+        const client = new pg.Client("postgres://bad@127.0.0.1:1/production");
+        await client.connect();
+        try { assert.equal((await client.query("SELECT count(*) AS n FROM t")).rows[0].n, "2"); }
+        finally { await client.end(); }
+      });
+    await registered();
   } finally {
     if (oldControl === undefined) delete process.env.PGMEM_CONTROL;
     else process.env.PGMEM_CONTROL = oldControl;
