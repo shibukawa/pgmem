@@ -83,3 +83,15 @@ PostgreSQL JDBC ドライバーとプラットフォーム用の `pgmem-native` 
 </Aside>
 
 同じ HTTP ライフサイクルをブラウザーで試す場合は [E2E テスト](../e2e-testing/) を参照してください。
+
+## 安全な並列実行
+
+1 つの `@ShadowPg` Spring Boot・Micronaut アプリを使うメソッドは逐次実行します。HTTP サーバー、Pool、フォークを共有し、各メソッドの前に同じフォークを reset するためです。異なるクラスは、それぞれ別のアプリコンテキスト、pgmem フォーク、HTTP ポートを持つ場合に並列化します。`src/test/resources/junit-platform.properties` ではクラスだけを並列化できます。
+
+```properties
+junit.jupiter.execution.parallel.enabled = true
+junit.jupiter.execution.parallel.mode.default = same_thread
+junit.jupiter.execution.parallel.mode.classes.default = concurrent
+```
+
+static なアプリや `DataSource` をクラス間で共有しないでください。次の reset 前にリクエストと DB を使うバックグラウンド処理を終え、トランザクションを閉じます。全メソッドを並列化するなら、クラス単位のアノテーション方式ではなくメソッドごとに別のアプリとフォークを作ります。

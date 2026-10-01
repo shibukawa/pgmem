@@ -71,3 +71,15 @@ Browser isolation does not isolate the database: a fresh Playwright `Page` can s
 </Aside>
 
 For HTTP-only checks without a browser, use [API tests](../api-testing/).
+
+### Safe JUnit configuration
+
+Run E2E methods that share one `@ShadowPg` HTTP app sequentially. Parallelize independent classes with a separate pgmem fork, application context, random HTTP port, and browser context for each class. A JUnit Jupiter configuration for that shape is:
+
+```properties
+junit.jupiter.execution.parallel.enabled = true
+junit.jupiter.execution.parallel.mode.default = same_thread
+junit.jupiter.execution.parallel.mode.classes.default = concurrent
+```
+
+Wait for browser-triggered requests and background database work to finish before the next method resets the fork. Separate browser contexts do not protect a shared database from an overlapping reset. Bound the number of parallel classes to available memory and browser capacity.

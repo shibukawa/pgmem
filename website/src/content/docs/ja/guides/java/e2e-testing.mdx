@@ -71,3 +71,15 @@ PostgreSQL JDBC ドライバーとプラットフォーム用の `pgmem-native` 
 </Aside>
 
 ブラウザーを使わない HTTP テストは [API テスト](../api-testing/) を参照してください。
+
+### 安全な JUnit 設定
+
+1 つの `@ShadowPg` HTTP アプリを共有する E2E メソッドは逐次実行します。独立したクラスを並列化する場合は、クラスごとに pgmem フォーク、アプリコンテキスト、ランダムな HTTP ポート、ブラウザーコンテキストを用意します。JUnit Jupiter の設定例です。
+
+```properties
+junit.jupiter.execution.parallel.enabled = true
+junit.jupiter.execution.parallel.mode.default = same_thread
+junit.jupiter.execution.parallel.mode.classes.default = concurrent
+```
+
+次のメソッドがフォークを reset する前に、ブラウザーから始まったリクエストと DB のバックグラウンド処理を完了させてください。ブラウザーコンテキストを分けるだけでは共有 DB の reset 競合は防げません。並列クラス数はメモリとブラウザーの容量に合わせて制限します。
