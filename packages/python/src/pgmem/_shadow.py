@@ -22,16 +22,6 @@ def _drop_target_options(kwargs, keys):
     return {key: value for key, value in kwargs.items() if key not in keys}
 
 
-def route_environment(monkeypatch, target):
-    """Set PostgreSQL URL and libpq variables for one target."""
-    monkeypatch.setenv("DATABASE_URL", target.dsn)
-    monkeypatch.setenv("PGHOST", target.host)
-    monkeypatch.setenv("PGPORT", str(target.port))
-    monkeypatch.setenv("PGUSER", target.user)
-    monkeypatch.setenv("PGDATABASE", target.database)
-    monkeypatch.setenv("PGSSLMODE", "disable")
-
-
 def install_driver_routes(monkeypatch, target):
     """Route newly created psycopg, psycopg2 and asyncpg connections to target."""
     try:
