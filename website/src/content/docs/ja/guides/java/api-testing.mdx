@@ -71,18 +71,10 @@ class OrdersApiTest {
             .prepare(t -> migrateAndSeed(t.jdbcUrl()))
             .build();
 
-    static EmbeddedServer app;
+    static MicronautTestApp app;
 
     @BeforeAll static void startApp() {
-        Fork appDb = pg.applicationFork();
-        app = ApplicationContext.run(EmbeddedServer.class, Map.<String, Object>of(
-                "micronaut.server.port", -1,
-                "datasources.default.url", appDb.jdbcUrl(),
-                "datasources.default.username", appDb.user(),
-                "datasources.default.password", "",
-                "datasources.default.driverClassName", "org.postgresql.Driver",
-                "flyway.datasources.default.enabled", false
-        ), "test");
+        app = MicronautTestApp.start(pg.applicationFork());
     }
 
     @AfterAll static void stopApp() { app.close(); }
@@ -91,7 +83,7 @@ class OrdersApiTest {
     HttpClient http = HttpClient.newHttpClient();
 
     @Test void createsOrderThroughHttp() throws Exception {
-        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders"))
+        HttpRequest request = HttpRequest.newBuilder(app.uri().resolve("/orders"))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString("{\"sku\":\"book\"}"))
                 .build();
@@ -99,7 +91,7 @@ class OrdersApiTest {
     }
 
     @Test void startsFromPreparedDataAgain() throws Exception {
-        HttpRequest request = HttpRequest.newBuilder(app.getURI().resolve("/orders")).build();
+        HttpRequest request = HttpRequest.newBuilder(app.uri().resolve("/orders")).build();
         var response = http.send(request, HttpResponse.BodyHandlers.ofString());
         assertEquals(200, response.statusCode());
         assertEquals("[]", response.body());
@@ -112,7 +104,7 @@ class OrdersApiTest {
 
 Spring Boot の例では、アプリは通常どおり DataSource を作ります。テストが `spring.datasource.url` を Spring の初期化前に渡します。`@DirtiesContext` は、pgmem のフォークを閉じた後に別のテストクラスがこのコンテキストを再利用するのを防ぎます。アプリが Liquibase や Hibernate のスキーマ生成を使う場合も、`prepare` ですでにスキーマを適用したなら無効化してください。
 
-Micronaut の例では、[組み込みサーバー](https://docs.micronaut.io/latest/api/io/micronaut/runtime/server/EmbeddedServer.html)を起動する前に `datasources.default.url` を渡します。ポート `-1` は空きポートを選びます。`@AfterAll` でサーバーを閉じてから pgmem 拡張がフォークを閉じます。アプリの起動時に Flyway が動く場合は、例のように重複したマイグレーションを無効にしてください。明示的にサーバーを起動するため、[Micronaut Test のデフォルトのテスト用トランザクション](https://docs.micronaut.io/5.2.x/test/)に依存せず、`reset()` で DB を分離できます。
+Micronaut の例には `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` を追加します。`MicronautTestApp.start()` がフォークの JDBC URL、空きポート、PostgreSQL ドライバーを設定し、準備済みスキーマに対する Flyway の重複実行を無効にしてサーバーを起動します。追加の Micronaut 設定が必要なら第 2 引数にプロパティの `Map` を渡せます。`@AfterAll` でアプリを閉じてから pgmem 拡張がフォークを閉じます。[Micronaut Test のデフォルトのテスト用トランザクション](https://docs.micronaut.io/5.2.x/test/)には依存せず、`reset()` で DB を分離します。
 
 ## その他の構成とデータセット
 

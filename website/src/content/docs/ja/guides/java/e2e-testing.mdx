@@ -65,31 +65,23 @@ class OrdersE2ETest {
             .prepare(t -> migrateAndSeed(t.jdbcUrl()))
             .build();
 
-    static EmbeddedServer app;
+    static MicronautTestApp app;
 
     @BeforeAll static void startApp() {
-        Fork appDb = pg.applicationFork();
-        app = ApplicationContext.run(EmbeddedServer.class, Map.<String, Object>of(
-                "micronaut.server.port", -1,
-                "datasources.default.url", appDb.jdbcUrl(),
-                "datasources.default.username", appDb.user(),
-                "datasources.default.password", "",
-                "datasources.default.driverClassName", "org.postgresql.Driver",
-                "flyway.datasources.default.enabled", false
-        ), "test");
+        app = MicronautTestApp.start(pg.applicationFork());
     }
 
     @AfterAll static void stopApp() { app.close(); }
     @BeforeEach void restoreDatabase() { pg.applicationFork().reset(); }
 
     @Test void createsAnOrder(Page page) {
-        page.navigate(app.getURI().resolve("/orders").toString());
+        page.navigate(app.uri().resolve("/orders").toString());
         page.getByText("New order").click();
         assertThat(page.getByText("Order created")).isVisible();
     }
 
     @Test void startsFromPreparedDataAgain(Page page) {
-        page.navigate(app.getURI().resolve("/orders").toString());
+        page.navigate(app.uri().resolve("/orders").toString());
         assertThat(page.getByText("No orders")).isVisible();
     }
 }
@@ -100,7 +92,7 @@ class OrdersE2ETest {
 
 ルート、ラベル、`migrateAndSeed` はアプリに合わせて変更してください。`prepare` でマイグレーションする場合は、例のように起動時の重複実行を無効にします。Spring Boot の例では、`@DirtiesContext` がこのクラスの後でコンテキストを閉じ、閉じたフォークへのプール再利用を防ぎます。
 
-Micronaut では `ApplicationContext.run(EmbeddedServer.class, properties, "test")` が、フォークの JDBC URL とランダムポートを使って実 HTTP サーバーを起動します。JUnit の `@AfterAll` が pgmem 拡張より先に Micronaut を閉じます。この例は Micronaut Test のメソッドごとの自動トランザクションを使わず、フォークのリセットで分離します。
+Micronaut の例には `testImplementation("io.github.shibukawa.pgmem:pgmem-micronaut:1.18.0")` を追加します。`MicronautTestApp.start()` がフォークの JDBC URL、空きポート、PostgreSQL ドライバーを設定し、準備済みスキーマに対する Flyway の重複実行を無効にして実 HTTP サーバーを起動します。追加設定は第 2 引数の `Map` で渡せます。JUnit の `@AfterAll` が pgmem 拡張より先に Micronaut を閉じます。Micronaut Test のメソッドごとの自動トランザクションを使わず、フォークのリセットで分離します。
 
 ## 分離と並列実行
 
