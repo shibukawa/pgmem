@@ -155,6 +155,19 @@ export declare function currentFork(): PgmemFork;
 export declare function withTestDatabase<T>(fn: (target: PgmemFork) => T | Promise<T>, options?: { fork?: boolean; env?: readonly string[] }): Promise<T>;
 /** Register a node:test, Vitest or Jest case whose callback uses pgmem routing. */
 export declare function pgmemTest<T>(test: (name: string, fn: (...args: any[]) => Promise<T>) => unknown, name: string, fn: (...args: any[]) => T | Promise<T>, options?: { fork?: boolean; env?: readonly string[] }): unknown;
+/** Start a long-lived HTTP app against a fork, wait for its health endpoint, and close it after testing. */
+export declare function startTestApp(options: {
+  fork: PgmemFork;
+  command?: string;
+  args?: readonly string[];
+  cwd?: string;
+  env?: Record<string, string>;
+  healthPath?: string;
+  timeoutMs?: number;
+  portEnv?: string;
+  databaseEnv?: string;
+  stdio?: import("node:child_process").StdioOptions;
+}): Promise<{ url: string; port: number; process: import("node:child_process").ChildProcess; close(): Promise<void> }>;
 /** The pgmem binary: the argument, PGMEM_BINARY, then the @pgmem/<platform> package. */
 export declare function resolveBinary(binary?: string): string;
 

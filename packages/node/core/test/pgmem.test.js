@@ -7,7 +7,7 @@ import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { createInterface } from "node:readline";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { PgmemClient, PgmemError, PgmemServer, pgmemTest, withTestDatabase } from "../index.js";
+import { PgmemClient, PgmemError, PgmemServer, pgmemTest, startTestApp, withTestDatabase } from "../index.js";
 import { connectWire } from "./wire.js";
 
 const pkg = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -198,20 +198,12 @@ test("a long-lived HTTP process keeps its connection while tests reset the data"
         res.end(String(err));
       }
     });
-    app.listen(0, "127.0.0.1", () => console.log(app.address().port));
+    app.listen(Number(process.env.PORT), "127.0.0.1");
   `;
-  const child = spawn(process.execPath, ["--input-type=module", "-e", script], {
-    env: { ...process.env, DATABASE_URL: target.url }, stdio: ["ignore", "pipe", "pipe"],
-  });
-  let stderr = "";
-  child.stderr.on("data", (data) => { stderr += data; });
+  const app = await startTestApp({ fork: target, args: ["--input-type=module", "-e", script], healthPath: "/" });
   try {
-    const port = await new Promise((resolve, reject) => {
-      createInterface({ input: child.stdout }).once("line", (line) => resolve(Number(line)));
-      child.once("exit", (code) => reject(new Error(`HTTP process exited with ${code}: ${stderr}`)));
-    });
     const getCount = async () => {
-      const response = await fetch(`http://127.0.0.1:${port}/`);
+      const response = await fetch(app.url);
       const body = await response.text();
       assert.equal(response.status, 200, body);
       return JSON.parse(body).count;
@@ -224,10 +216,19 @@ test("a long-lived HTTP process keeps its connection while tests reset the data"
     await target.reset();
     assert.equal(await getCount(), 2);
   } finally {
-    child.kill();
-    if (child.exitCode === null && child.signalCode === null) {
-      await new Promise((resolve) => child.once("exit", resolve));
-    }
+    await app.close();
+    await target.close();
+  }
+});
+
+test("startTestApp reports a child that exits before readiness", async () => {
+  const target = await server.fork();
+  try {
+    await assert.rejects(
+      startTestApp({ fork: target, args: ["-e", "process.exit(3)"], timeoutMs: 2000 }),
+      /app exited before/,
+    );
+  } finally {
     await target.close();
   }
 });

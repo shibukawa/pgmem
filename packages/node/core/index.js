@@ -16,6 +16,7 @@ export const {
   currentFork,
   withTestDatabase,
   pgmemTest,
+  startTestApp,
   resolveBinary,
 } = pgmem;
 

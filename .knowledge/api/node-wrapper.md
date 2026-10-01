@@ -18,6 +18,7 @@ api:
     - 'currentFork(): globalThis[Symbol.for("pgmem.currentFork")], so it works across module instances and Jest realms'
     - 'withTestDatabase(fn,{fork=true,env}): fresh fork per callback by default; fork=false shares one fork for read-only callbacks; temporarily routes env, serializes its callbacks, restores env and closes fresh fork; clients must be constructed inside callback'
     - 'pgmemTest(test,name,fn,options): registers a runner case using withTestDatabase; accepts Vitest, Jest or node:test callback shape'
+    - 'startTestApp({fork,command=process.execPath,args,cwd,env,healthPath=/health,timeoutMs=10000,portEnv=PORT,databaseEnv=DATABASE_URL,stdio}): find loopback port, spawn app with fork URL, wait for HTTP success, return {url,port,process,close}; stop child on startup failure or teardown; no Playwright dependency'
     - 'PgmemError.code carries the api:control-protocol error code'
   entries:
     register: ESM, top-level await useFork(); Vitest setupFiles, node --test --import, bun test --isolate --preload
