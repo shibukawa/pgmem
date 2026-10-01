@@ -5,7 +5,7 @@ description: Choose a Node.js test database lifecycle with one prepared snapshot
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-Node.js test runners load each test file in a fresh worker or module context, and an ORM client reads `DATABASE_URL` once, when it is created. pgmem starts one process per run and gives each file one fork before its imports; test cases in the file share that fork. Read-only cases need no extra fork or reset. Add that isolation only around cases that write. Changing `DATABASE_URL` per test case would not help, because the client already holds the URL.
+Node.js test runners load each test file in a fresh worker or module context, and an ORM client reads `DATABASE_URL` once, when it is created. pgmem starts one process per run and gives each file one fork before its imports; test cases in the file share that fork. Read-only cases need no extra fork or reset. Add that isolation only around cases that write. Changing `DATABASE_URL` per test case does not move a client that has already been created.
 
 For a long-lived HTTP app, see [API tests](../api-testing/) or [Playwright E2E tests](../e2e-testing/).
 
@@ -13,24 +13,55 @@ For a long-lived HTTP app, see [API tests](../api-testing/) or [Playwright E2E t
 
 `pgmemTest` creates a fresh fork for each case by default and temporarily routes `DATABASE_URL` to it. Build the database client inside the callback; an already constructed client retains its original connection. `fork: false` reuses one shared fork and is suitable only for read-only cases. The helper serializes its callbacks because `process.env` is process-wide. Use the register hook and `reset()` below for clients made at import time.
 
-```ts title="test/users.test.ts"
+Suppose `UserRepository` owns its pool and reads `DATABASE_URL` in its constructor. The test constructs the repository inside the routed callback and checks its public behavior:
+
+```ts title="src/user-repository.ts"
+import { Pool } from 'pg';
+
+export class UserRepository {
+  private pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+  async create(email: string, name: string) {
+    const { rows } = await this.pool.query(
+      'INSERT INTO users (email, name) VALUES ($1, $2) RETURNING id, email, name',
+      [email, name],
+    );
+    return rows[0];
+  }
+
+  async findByEmail(email: string) {
+    const { rows } = await this.pool.query(
+      'SELECT id, email, name FROM users WHERE email = $1', [email],
+    );
+    return rows[0] ?? null;
+  }
+
+  close() { return this.pool.end(); }
+}
+```
+
+```ts title="test/user-repository.test.ts"
 import { test, expect } from 'vitest';
 import { pgmemTest } from '@pgmem/core';
-import { Client } from 'pg';
+import { UserRepository } from '../src/user-repository';
 
-pgmemTest(test, 'creates a user', async () => {
-  const db = new Client({ connectionString: process.env.DATABASE_URL });
-  await db.connect();
+pgmemTest(test, 'creates and finds a user', async () => {
+  const users = new UserRepository();
   try {
-    await db.query("INSERT INTO users (name) VALUES ('Ada')");
-    expect((await db.query('SELECT count(*) AS n FROM users')).rows[0].n).toBe('1');
+    const created = await users.create('ada@example.com', 'Ada');
+    expect(await users.findByEmail('ada@example.com')).toEqual(created);
   } finally {
-    await db.end();
+    await users.close();
   }
 });
 
-pgmemTest(test, 'reads the prepared seed', async () => {
-  // Create a client here and only read from it.
+pgmemTest(test, 'returns null for an unknown user', async () => {
+  const users = new UserRepository();
+  try {
+    expect(await users.findByEmail('missing@example.com')).toBeNull();
+  } finally {
+    await users.close();
+  }
 }, { fork: false });
 ```
 
