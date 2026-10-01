@@ -13,33 +13,8 @@ import { Aside } from '@astrojs/starlight/components';
 
 ```js title="test/fixtures.js"
 import { test as base, expect } from '@playwright/test';
-import { spawn } from 'node:child_process';
-import { createServer } from 'node:net';
-import { once } from 'node:events';
-import { PgmemServer } from '@pgmem/core';
+import { PgmemServer, startTestApp } from '@pgmem/core';
 import { migrateAndSeed } from './prepare-db.js';
-
-async function freePort() {
-  const listener = createServer();
-  listener.listen(0, '127.0.0.1');
-  await once(listener, 'listening');
-  const port = listener.address().port;
-  listener.close();
-  await once(listener, 'close');
-  return port;
-}
-
-async function waitForApp(url, child) {
-  for (let attempt = 0; attempt < 100; attempt++) {
-    if (child.exitCode !== null) throw new Error('起動前にアプリが終了しました');
-    try {
-      const response = await fetch(`${url}/health`);
-      if (response.ok) return;
-    } catch { /* 起動中 */ }
-    await new Promise((resolve) => setTimeout(resolve, 100));
-  }
-  throw new Error('アプリが起動しませんでした');
-}
 
 export const test = base.extend({
   pgmem: [async ({}, use) => {
@@ -57,21 +32,14 @@ export const test = base.extend({
   }, { scope: 'worker' }],
 
   appUrl: [async ({ pgmem }, use) => {
-    const port = await freePort();
-    const url = `http://127.0.0.1:${port}`;
-    const child = spawn(process.execPath, ['./src/server.js'], {
-      env: { ...process.env, DATABASE_URL: pgmem.url, PORT: String(port) },
-      stdio: 'inherit',
+    const app = await startTestApp({
+      fork: pgmem,
+      args: ['./src/server.js'],
+      healthPath: '/health',
     });
     try {
-      await waitForApp(url, child);
-      await use(url);
-    } finally {
-      if (child.exitCode === null && child.signalCode === null) {
-        child.kill('SIGTERM');
-        await once(child, 'exit');
-      }
-    }
+      await use(app.url);
+    } finally { await app.close(); }
   }, { scope: 'worker' }],
 
   resetDb: [async ({ pgmem, appUrl }, use) => {
@@ -83,7 +51,7 @@ export const test = base.extend({
 export { expect };
 ```
 
-`src/server.js` は `PORT` で待ち受け、プール作成時に `DATABASE_URL` を使い、準備完了後に `GET /health` に応答する必要があります。`migrateAndSeed(url)` は `prepare` から戻る前に、開いた DB 接続をすべて閉じてください。
+`startTestApp` は利用可能なループバックポートを探し、フォークの `DATABASE_URL` と `PORT` を子プロセスに渡し、`GET /health` を待ってからアプリを渡します。終了処理も行います。`command`、`portEnv`、`databaseEnv`、`healthPath`、起動時の `timeoutMs` は変更できます。`src/server.js` は `PORT` で待ち受け、プール作成時に `DATABASE_URL` を使い、準備完了後に `GET /health` に応答する必要があります。`migrateAndSeed(url)` は `prepare` から戻る前に、開いた DB 接続をすべて閉じてください。
 
 ```js title="test/orders.spec.js"
 import { test, expect } from './fixtures.js';

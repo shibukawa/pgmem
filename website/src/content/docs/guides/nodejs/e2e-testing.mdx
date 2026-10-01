@@ -13,33 +13,8 @@ The fixture below starts pgmem and the app once per worker. `prepare` runs the p
 
 ```js title="test/fixtures.js"
 import { test as base, expect } from '@playwright/test';
-import { spawn } from 'node:child_process';
-import { createServer } from 'node:net';
-import { once } from 'node:events';
-import { PgmemServer } from '@pgmem/core';
+import { PgmemServer, startTestApp } from '@pgmem/core';
 import { migrateAndSeed } from './prepare-db.js';
-
-async function freePort() {
-  const listener = createServer();
-  listener.listen(0, '127.0.0.1');
-  await once(listener, 'listening');
-  const port = listener.address().port;
-  listener.close();
-  await once(listener, 'close');
-  return port;
-}
-
-async function waitForApp(url, child) {
-  for (let attempt = 0; attempt < 100; attempt++) {
-    if (child.exitCode !== null) throw new Error('app exited before it was ready');
-    try {
-      const response = await fetch(`${url}/health`);
-      if (response.ok) return;
-    } catch { /* still starting */ }
-    await new Promise((resolve) => setTimeout(resolve, 100));
-  }
-  throw new Error('app did not become ready');
-}
 
 export const test = base.extend({
   pgmem: [async ({}, use) => {
@@ -57,21 +32,14 @@ export const test = base.extend({
   }, { scope: 'worker' }],
 
   appUrl: [async ({ pgmem }, use) => {
-    const port = await freePort();
-    const url = `http://127.0.0.1:${port}`;
-    const child = spawn(process.execPath, ['./src/server.js'], {
-      env: { ...process.env, DATABASE_URL: pgmem.url, PORT: String(port) },
-      stdio: 'inherit',
+    const app = await startTestApp({
+      fork: pgmem,
+      args: ['./src/server.js'],
+      healthPath: '/health',
     });
     try {
-      await waitForApp(url, child);
-      await use(url);
-    } finally {
-      if (child.exitCode === null && child.signalCode === null) {
-        child.kill('SIGTERM');
-        await once(child, 'exit');
-      }
-    }
+      await use(app.url);
+    } finally { await app.close(); }
   }, { scope: 'worker' }],
 
   resetDb: [async ({ pgmem, appUrl }, use) => {
@@ -83,7 +51,7 @@ export const test = base.extend({
 export { expect };
 ```
 
-`src/server.js` must listen on `PORT`, use `DATABASE_URL` when constructing its pool, and respond to `GET /health` once ready. `migrateAndSeed(url)` must close every connection it opens before `prepare` returns.
+`startTestApp` finds an available loopback port, passes `PORT` and the fork's `DATABASE_URL` to the child, waits for `GET /health`, and shuts the child down afterward. You can override its `command`, `portEnv`, `databaseEnv`, `healthPath`, and startup `timeoutMs`. `src/server.js` must listen on `PORT`, use `DATABASE_URL` when constructing its pool, and respond to `GET /health` once ready. `migrateAndSeed(url)` must close every connection it opens before `prepare` returns.
 
 ```js title="test/orders.spec.js"
 import { test, expect } from './fixtures.js';
