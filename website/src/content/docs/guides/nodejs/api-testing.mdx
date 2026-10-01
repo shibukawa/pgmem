@@ -7,6 +7,32 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 An API test sends HTTP requests to an application created in the test process. Its database pool may be constructed when the app module is imported. Give that process a fork **before** importing the app, then reset the same fork between test cases. The URL and open connections remain valid across a reset.
 
+## API tests without changing the app datasource
+
+For in-process Express + Supertest or Fastify `inject`, the execution context flows from the test callback through the request to `pg`. Prepare the snapshot in global setup, then use the app's unchanged datasource. Its Pool may be constructed before the test.
+
+```ts title="test/api-shadow.test.ts"
+import request from 'supertest';
+import { afterAll, expect, test } from 'vitest';
+import { shadowPg } from '@pgmem/core';
+import { app } from '../src/app';
+import { pool } from '../src/db';
+
+afterAll(() => pool.end());
+
+shadowPg(test, 'creates an order', async () => {
+  const response = await request(app).post('/orders').send({ sku: 'book' });
+  expect(response.status).toBe(201);
+});
+
+shadowPg(test, 'starts from prepared data', async () => {
+  const response = await request(app).get('/orders');
+  expect(response.body).toHaveLength(0);
+});
+```
+
+For Fastify, replace `request(app)` with `app.inject(...)`. Run cases sequentially and close the app Pool at teardown. This test process's execution context does not cross into a separately running HTTP server.
+
 ## Prepare the database and register the fork
 
 Use the [unit test global setup](../testing/#prepare-once-for-the-run) to run migrations and seed once. For Vitest, keep `@pgmem/core/register` first in `setupFiles` so it sets `DATABASE_URL` before the app is imported. The same setup works for Express and Fastify.

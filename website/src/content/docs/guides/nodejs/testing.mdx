@@ -9,6 +9,61 @@ Node.js test runners load each test file in a fresh worker or module context, an
 
 For a long-lived HTTP app, see [API tests](../api-testing/) or [Playwright E2E tests](../e2e-testing/).
 
+## Route existing `pg` clients with `shadowPg`
+
+`shadowPg(test, name, callback)` redirects `pg` Client and Pool connections to a fresh pgmem fork for each case. The application's connection string and `DATABASE_URL` stay unchanged. A pool or Prisma client using `@prisma/adapter-pg` can be constructed before the test; its next connection is routed to the active fork. The prepared snapshot still comes from global setup. Use `{ fork: false }` only for read-only tests.
+
+<Tabs syncKey="node-shadow-example">
+<TabItem label="Test">
+
+```ts title="test/user-repository.test.ts"
+import { test, expect } from 'vitest';
+import { shadowPg } from '@pgmem/core';
+import { UserRepository } from '../src/user-repository';
+
+const users = new UserRepository(); // unchanged application configuration
+
+shadowPg(test, 'creates a user', async () => {
+  const created = await users.create('ada@example.com', 'Ada');
+  expect(await users.findByEmail('ada@example.com')).toEqual(created);
+});
+
+shadowPg(test, 'starts from the prepared snapshot', async () => {
+  expect(await users.findByEmail('ada@example.com')).toBeNull();
+});
+```
+
+</TabItem>
+<TabItem label="UserRepository">
+
+```ts title="src/user-repository.ts"
+import { Pool } from 'pg';
+
+export class UserRepository {
+  private pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+  async create(email: string, name: string) {
+    const { rows } = await this.pool.query(
+      'INSERT INTO users (email, name) VALUES ($1, $2) RETURNING id, email, name',
+      [email, name],
+    );
+    return rows[0];
+  }
+
+  async findByEmail(email: string) {
+    const { rows } = await this.pool.query(
+      'SELECT id, email, name FROM users WHERE email = $1', [email],
+    );
+    return rows[0] ?? null;
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+Close the application pool in runner teardown. Do not run tests that share one pool and fork concurrently. Connections checked out before the marker starts cannot be moved. This interception covers `pg` and clients built on it, including `@prisma/adapter-pg`; other PostgreSQL drivers need their own adapter.
+
 ## Per-case routing for clients built inside the test
 
 `pgmemTest` creates a fresh fork for each case by default and temporarily routes `DATABASE_URL` to it. Build the database client inside the callback; an already constructed client retains its original connection. `fork: false` reuses one shared fork and is suitable only for read-only cases. The helper serializes its callbacks because `process.env` is process-wide. Use the register hook and `reset()` below for clients made at import time.

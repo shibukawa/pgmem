@@ -9,6 +9,61 @@ Node.js のテストランナーはテストファイルごとに新しいワー
 
 HTTP アプリを起動したまま試す場合は [API テスト](../api-testing/) と [Playwright E2E テスト](../e2e-testing/) を参照してください。
 
+## `shadowPg` で既存の `pg` クライアントを切り替える
+
+`shadowPg(test, 名前, コールバック)` は、`pg` の Client と Pool の新しい接続をテストごとの pgmem フォークへ向けます。アプリの接続文字列や `DATABASE_URL` は変更しません。テスト前に作った Pool や `@prisma/adapter-pg` を使う Prisma クライアントでも、次の接続から切り替わります。スキーマとシードデータは global setup で準備した snapshot からコピーします。`{ fork: false }` は読み取り専用テストに限って使ってください。
+
+<Tabs syncKey="node-shadow-example">
+<TabItem label="テスト">
+
+```ts title="test/user-repository.test.ts"
+import { test, expect } from 'vitest';
+import { shadowPg } from '@pgmem/core';
+import { UserRepository } from '../src/user-repository';
+
+const users = new UserRepository(); // アプリの設定はそのまま
+
+shadowPg(test, 'ユーザーを作成する', async () => {
+  const created = await users.create('ada@example.com', 'Ada');
+  expect(await users.findByEmail('ada@example.com')).toEqual(created);
+});
+
+shadowPg(test, '準備済みデータから始まる', async () => {
+  expect(await users.findByEmail('ada@example.com')).toBeNull();
+});
+```
+
+</TabItem>
+<TabItem label="UserRepository">
+
+```ts title="src/user-repository.ts"
+import { Pool } from 'pg';
+
+export class UserRepository {
+  private pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+  async create(email: string, name: string) {
+    const { rows } = await this.pool.query(
+      'INSERT INTO users (email, name) VALUES ($1, $2) RETURNING id, email, name',
+      [email, name],
+    );
+    return rows[0];
+  }
+
+  async findByEmail(email: string) {
+    const { rows } = await this.pool.query(
+      'SELECT id, email, name FROM users WHERE email = $1', [email],
+    );
+    return rows[0] ?? null;
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+アプリの Pool はランナー終了時に閉じてください。同じ Pool を共有するテストを並列実行しないでください。マーカー開始前に取り出した接続は移せません。この切り替えは `pg` とその上に構築された `@prisma/adapter-pg` などが対象です。ほかの PostgreSQL ドライバには別のアダプターが必要です。
+
 ## テスト内で作るクライアントのケース別切り替え
 
 `pgmemTest` はデフォルトでケースごとに新しいフォークを作り、一時的に `DATABASE_URL` を向けます。DB クライアントはコールバック内で作ってください。作成済みのクライアントは接続先を保持します。`fork: false` は共有フォークを再利用するため、読み取り専用ケースに限って使います。`process.env` はプロセス全体で共有されるので、ヘルパーはコールバックを逐次実行します。import 時に作るクライアントには、後述の register フックと `reset()` を使います。

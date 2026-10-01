@@ -7,6 +7,32 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 API テストでは、テストプロセス内で作ったアプリに HTTP リクエストを送ります。アプリの import 時に DB プールが作られることもあります。その前にプロセスへフォークを割り当て、ケース間では同じフォークをリセットします。リセット後も URL と既存の接続は使えます。
 
+## `shadowPg` でアプリ設定を変えない API テスト
+
+同じプロセスの Express + Supertest や Fastify `inject` では、テストコールバック内のリクエストから `pg` まで実行コンテキストが伝わります。グローバルセットアップで snapshot を準備したら、アプリのデータソースを変えずにテストできます。アプリの Pool はテスト前に作って構いません。
+
+```ts title="test/api-shadow.test.ts"
+import request from 'supertest';
+import { afterAll, expect, test } from 'vitest';
+import { shadowPg } from '@pgmem/core';
+import { app } from '../src/app';
+import { pool } from '../src/db';
+
+afterAll(() => pool.end());
+
+shadowPg(test, '注文を作成する', async () => {
+  const response = await request(app).post('/orders').send({ sku: 'book' });
+  expect(response.status).toBe(201);
+});
+
+shadowPg(test, '次のケースは準備済みデータから始まる', async () => {
+  const response = await request(app).get('/orders');
+  expect(response.body).toHaveLength(0);
+});
+```
+
+Fastify では `request(app)` を `app.inject(...)` に置き換えます。ケースを逐次実行し、終了時にアプリの Pool を閉じてください。別プロセスの HTTP サーバーにはこのテストプロセスの実行コンテキストは届きません。
+
 ## DB を準備してフォークを登録する
 
 [ユニットテストのグローバルセットアップ](../testing/#実行全体で一度だけ準備する)でマイグレーションとシードを一度だけ実行します。Vitest の `setupFiles` では `@pgmem/core/register` を先頭に置き、アプリの import より先に `DATABASE_URL` を設定します。Express と Fastify で同じ設定を使えます。
