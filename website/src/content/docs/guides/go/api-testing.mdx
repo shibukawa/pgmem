@@ -1,0 +1,30 @@
+---
+title: Go API tests
+description: Test an unchanged Go HTTP application against a prepared pgmem fork.
+---
+
+Use the `pgmemtest.Fixture` setup from [unit tests](../testing/#prepare-the-baseline-once). `fx.ShadowPG(t)` creates a fresh fork and sets `DATABASE_URL` plus libpq's `PG*` connection variables for the test. Construct the application after this call so its normal database setup reads the temporary values.
+
+```go title="api_test.go"
+func TestCreateOrderAPI(t *testing.T) {
+	fx.ShadowPG(t)
+
+	app, err := NewApp() // unchanged code; reads its normal DATABASE_URL
+	if err != nil { t.Fatal(err) }
+	t.Cleanup(func() { app.Close() })
+	server := httptest.NewServer(app.Handler())
+	t.Cleanup(server.Close)
+
+	body := strings.NewReader(`{"sku":"book"}`)
+	resp, err := server.Client().Post(server.URL+"/orders", "application/json", body)
+	if err != nil { t.Fatal(err) }
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusCreated {
+		t.Fatalf("status = %d", resp.StatusCode)
+	}
+}
+```
+
+Import `net/http`, `net/http/httptest`, `strings`, and `testing` in this example. The application constructor, handler, and close method stand for your existing API. Each test receives a new copy of the schema and seed data prepared in `TestMain`. For an app that reads a different DSN variable, pass `pgmemtest.ShadowOptions{ExtraEnv: []string{"APP_DATABASE_URL"}}`.
+
+The environment is process-wide, so tests using `ShadowPG` cannot use `t.Parallel()`. Construct and close each app inside its test. A pool created before `ShadowPG` keeps its earlier connection settings. For parallel tests, inject `fx.DB(t)` or `fx.PgxPool(t)` into an app factory that accepts a handle.
