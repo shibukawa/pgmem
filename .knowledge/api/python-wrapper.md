@@ -16,18 +16,23 @@ api:
     - 'Server.reset(snapshot=None, timeout=5.0): restore data in place, retaining endpoint and connections; optional named snapshot for dataset switching (requirement:live-http-test-reset)'
     - 'Snapshot: fork(timeout=None) -> Fork; close(); context manager'
     - 'Fork: dsn, host, port; close(); context manager'
+    - 'Server.reset(snapshot=None, timeout=5.0): reset a fork to its origin or restore an explicit snapshot; keeps endpoint and pooled sockets'
     - 'binary lookup: argument, then PGMEM_BINARY env, then bundled pgmem/_bin/pgmem (policy:binary-distribution)'
   pytest_plugin:
     entry_point: pytest11 = pgmem.pytest_plugin
+    cleanup: context managers preserve original and close failures in CleanupError (primary_error, cleanup_errors); process shutdown uses EOF with a bounded wait
+    connection_guard: readonly_dsn(dsn); fixture option shared_read_only guards selected shared and class DSNs; reset-mode pgmem_shared_dsn remains writable
     fixtures:
       pgmem_options: session; kwargs for pgmem.start(); override to set database, params, log
       pgmem_process: session; the Pgmem process handle (not named pgmem, which would shadow the module)
       pgmem_server: session; pgmem_process.template; suites with several seed sets call start_server() in their own session fixtures
-      pgmem_prepare: session; default no-op; users override with @pytest.fixture(scope="session") outside @shadow_pg(prepare=True) to migrate/seed the template using normal SDK calls
-      pgmem_snapshot: session; depends on pgmem_prepare then snapshots the template; users override for custom snapshot options
+      pgmem_snapshot: session; default invokes pgmem_prepare then snapshots the template; advanced suites may override it directly
+      pgmem_prepare: session; callback receives template Server; default snapshot fixture invokes it once, then snapshots automatically
+      pgmem_fixture_options: session; isolation fork default, max_forks, fork_timeout 30s, snapshot_timeout 30s, reset_timeout 5s
       pgmem_fork / pgmem_dsn: function; fork then close in teardown (decision:fork-release-detection)
       pgmem_class_fork / pgmem_class_dsn: class; one fork shared by read-only tests in a class (parity with api:java-wrapper fork_scope CLASS)
-      pgmem_shared_fork: session; one shared fork for read-only shadow_pg(fork=False) tests
+      pgmem_test_dsn: function; isolated by default, @pytest.mark.pgmem(fork=False) selects the prepared template before application client fixtures connect (requirement:python-selective-isolation)
+      pgmem_shared_fork / pgmem_shared_dsn: session; stable fork for persistent clients; @pytest.mark.pgmem(isolation="reset") resets after each marked serial test, including setup or test failure
       pgmem_live_fork: session; stable endpoint for a long-lived HTTP application per pytest worker
       pgmem_live_snapshots: session; name-to-snapshot mapping, default prepared snapshot
       pgmem_live_db: function; restore selected snapshot before sequential HTTP test, chosen by pgmem_dataset(name) marker

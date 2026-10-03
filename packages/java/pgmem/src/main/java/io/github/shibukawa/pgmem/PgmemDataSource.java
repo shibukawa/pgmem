@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 /**
  * A {@link DataSource} over {@link DriverManager} for one server, so the core
  * artifact needs no compile-time dependency on pgjdbc. Wrap it in a pool if
- * you want one; pooled connections are serialized at transaction boundaries.
+ * you want one; every connection has its own PostgreSQL session.
  */
 final class PgmemDataSource implements DataSource {
     private final String url;

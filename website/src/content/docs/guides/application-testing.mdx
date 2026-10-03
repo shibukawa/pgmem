@@ -1,0 +1,87 @@
+---
+title: Test through the application
+description: Runnable applications and assertions sharing one fork in four languages.
+---
+
+import { Code, Tabs, TabItem } from '@astrojs/starlight/components';
+import goApp from '../../../../../examples/go-http/app.go?raw';
+import goTest from '../../../../../examples/go-http/app_test.go?raw';
+import nodeApp from '../../../../../examples/node-http/app.mjs?raw';
+import nodeSetup from '../../../../../examples/node-http/global-setup.mjs?raw';
+import nodeTest from '../../../../../examples/node-http/app.test.mjs?raw';
+import pythonApp from '../../../../../examples/python-sqlalchemy/app.py?raw';
+import pythonFixtures from '../../../../../examples/python-sqlalchemy/conftest.py?raw';
+import pythonTest from '../../../../../examples/python-sqlalchemy/test_app.py?raw';
+import javaTest from '../../../../../packages/java/pgmem-junit5/src/test/java/io/github/shibukawa/pgmem/junit5/examples/OrderApplicationTest.java?raw';
+
+Let the application write, then inspect the result through the same database. Calling `For(t)` separately for the application and assertions would inspect different forks. These examples select one endpoint and pass it to both.
+
+Build the binary from the repository root and export its absolute path. On Windows, choose an `.exe` output path and set the environment variable in your shell.
+
+```sh
+go build -o /tmp/pgmem-example ./cmd/pgmem
+export PGMEM_BINARY=/tmp/pgmem-example
+```
+
+<Tabs syncKey="application-language">
+<TabItem label="Go HTTP">
+
+The fixture owns a subprocess and connects over TCP. The HTTP handler receives a `sql.DB`; assertions use a pgx pool from the same `TestDB`. Stop the HTTP server before closing the database clients and fork.
+
+```sh
+go -C examples/go-http test -v
+```
+
+<Code code={goApp} lang="go" title="examples/go-http/app.go" />
+
+<Code code={goTest} lang="go" title="examples/go-http/app_test.go" />
+
+</TabItem>
+<TabItem label="Node HTTP">
+
+Use Node.js 24 or newer. Registration sets the endpoint before application imports. The application keeps its import-time pool; `withTestReset` restores the database after the serial writing case. The next case reads the baseline through that same pool.
+
+```sh
+npm --prefix examples/node-http ci --omit=optional --ignore-scripts
+npm --prefix examples/node-http test
+```
+
+<Code code={nodeApp} lang="js" title="examples/node-http/app.mjs" />
+
+<Code code={nodeSetup} lang="js" title="examples/node-http/global-setup.mjs" />
+
+<Code code={nodeTest} lang="js" title="examples/node-http/app.test.mjs" />
+
+</TabItem>
+<TabItem label="Python SQLAlchemy">
+
+Create the engine after marker selection and pass it into the application. The writing case gets a fork; the reading case selects a shared database with `fork=False`. Dispose the engine before releasing its fork.
+
+```sh
+uv run --project examples/python-sqlalchemy pytest examples/python-sqlalchemy -q
+```
+
+<Code code={pythonApp} lang="python" title="examples/python-sqlalchemy/app.py" />
+
+<Code code={pythonFixtures} lang="python" title="examples/python-sqlalchemy/conftest.py" />
+
+<Code code={pythonTest} lang="python" title="examples/python-sqlalchemy/test_app.py" />
+
+</TabItem>
+<TabItem label="Java DataSource">
+
+Inject one `TestDatabase` and obtain both application and assertion DataSources from it. Close each connection with try-with-resources. This example runs as part of the JUnit package tests.
+
+```sh
+cd packages/java
+./gradlew :pgmem-junit5:test --tests '*OrderApplicationTest'
+```
+
+<Code code={javaTest} lang="java" title="packages/java/pgmem-junit5/src/test/java/io/github/shibukawa/pgmem/junit5/examples/OrderApplicationTest.java" />
+
+</TabItem>
+</Tabs>
+
+Dependency manifests are included in each example directory. The Go `replace`, Node `file:` dependency and uv editable source point into this checkout. Replace them with published package dependencies when copying an example into another project. The code shown here is loaded from the files that CI executes.
+
+A reset restores database state. Each fixture owns its HTTP server or engine, application memory, Valkey keys and OpenSearch indexes. See [isolation choices and reset guarantees](../test-lifecycle/) for a strategy that matches client lifetime and concurrency.

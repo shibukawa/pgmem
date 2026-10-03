@@ -66,7 +66,7 @@ export async function connectWire(url) {
       text.copy(msg, 5);
       socket.write(msg);
     });
-  const params = Buffer.from(`user\0${decodeURIComponent(u.username)}\0database\0${u.pathname.slice(1)}\0\0`);
+  const params = Buffer.from(`user\0${decodeURIComponent(u.username)}\0database\0${u.pathname.slice(1)}\0${u.searchParams.has("options") ? `options\0${u.searchParams.get("options")}\0` : ""}\0`);
   const startup = Buffer.alloc(8 + params.length);
   startup.writeInt32BE(startup.length, 0);
   startup.writeInt32BE(196608, 4);

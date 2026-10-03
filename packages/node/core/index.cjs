@@ -16,6 +16,24 @@ const { createInterface } = require("node:readline");
 const PROTOCOL = 1;
 const asyncDispose = Symbol.asyncDispose ?? Symbol.for("Symbol.asyncDispose");
 const CURRENT = Symbol.for("pgmem.currentFork");
+const { installServiceEnv } = require("./environment.cjs");
+const { fixtureOptions } = require("./fixture-config.cjs");
+
+async function runWithCleanup(fn, cleanup, message) {
+  let failed = false;
+  let failure;
+  let result;
+  try { result = await fn(); }
+  catch (err) { failed = true; failure = err; }
+  try { await cleanup(); }
+  catch (err) {
+    if (failed) throw new AggregateError([failure, err], message);
+    throw err;
+  }
+  if (failed) throw failure;
+  return result;
+}
+
 const shadowContext = new AsyncLocalStorage();
 
 /** An error answered by pgmem; code is the protocol error code (busy, pool_timeout, ...). */
@@ -129,9 +147,13 @@ class Endpoint {
    * or the given names. PGHOST, PGPORT, PGUSER, PGDATABASE and PGSSLMODE get
    * the matching part; any other name gets the URL.
    */
-  env(names = ["DATABASE_URL"]) {
+  env(names = ["DATABASE_URL"], { readOnly = false } = {}) {
     const out = {};
-    for (const name of [].concat(names)) out[name] = envParts[name]?.(this) ?? this.url;
+    const url = new URL(this.url);
+    if (readOnly) url.searchParams.set("options", [url.searchParams.get("options"), "-c default_transaction_read_only=on"].filter(Boolean).join(" "));
+    if (readOnly) url.search = url.searchParams.toString().replace(/\+/g, "%20");
+    for (const name of [].concat(names)) out[name] = envParts[name]?.(this) ?? url.toString();
+    if (readOnly && Object.keys(out).some((name) => name in envParts)) out.PGOPTIONS = url.searchParams.get("options");
     return out;
   }
 }
@@ -154,11 +176,7 @@ class PgmemSnapshot {
   /** Run fn with a fresh fork and close the fork afterwards. */
   async withFork(fn, options) {
     const fork = await this.fork(options);
-    try {
-      return await fn(fork);
-    } finally {
-      await fork.close();
-    }
+    return runWithCleanup(() => fn(fork), () => fork.close(), "pgmem: callback and fork cleanup both failed");
   }
 
   /** Refuse further forks; running forks keep working. */
@@ -201,7 +219,10 @@ class PgmemFork extends Endpoint {
   async close() {
     if (this.#closed) return;
     this.#closed = true;
-    await this.#channel.request("close", { server: this.id }).catch(() => {});
+    await this.#channel.request("close", { server: this.id }).catch((err) => {
+      // A vanished child or already released id owns no resource to clean up.
+      if (err instanceof PgmemError && err.code !== "unknown_id") throw err;
+    });
   }
 
   [asyncDispose]() {
@@ -294,8 +315,7 @@ class PgmemServer {
       });
       server.snapshot = new PgmemSnapshot(server.#channel, res.snapshot);
     } catch (err) {
-      await server.close();
-      throw err;
+      return runWithCleanup(() => { throw err; }, () => server.close(), "pgmem: preparation and process cleanup both failed");
     }
     return server;
   }
@@ -323,11 +343,12 @@ class PgmemServer {
     const child = this.#child;
     if (child.exitCode !== null || child.signalCode !== null) return;
     [child, child.stdin, child.stdout].forEach((h) => h.ref?.());
-    await this.#channel.request("shutdown").catch(() => {});
     child.stdin.end();
-    const killer = setTimeout(() => child.kill("SIGKILL"), 10000);
+    let timedOut = false;
+    const killer = setTimeout(() => { timedOut = true; child.kill("SIGKILL"); }, 10000);
     await this.#exited;
     clearTimeout(killer);
+    if (timedOut) throw new Error("pgmem: process did not exit within 10000 ms; the child was killed");
   }
 
   [asyncDispose]() {
@@ -426,16 +447,21 @@ async function withFork(fn, options) {
  * already has one resets it instead, so a worker reused across test files
  * keeps the URL its modules captured.
  */
-async function useFork({ env } = {}) {
-  const names = env ?? process.env.PGMEM_ENV?.split(",").map((s) => s.trim()).filter(Boolean);
+async function useFork(options = {}) {
+  const cfg = fixtureOptions(options);
   let current = globalThis[CURRENT];
-  if (current) await current.reset();
-  else {
-    current = await fork();
+  const acquired = !current;
+  if (current) await current.reset({ timeoutMs: cfg.resetTimeoutMs });
+  else current = await fork({ timeoutMs: cfg.forkTimeoutMs });
+  try {
+    const release = installServiceEnv("pgmem", current.env(cfg.env?.length ? cfg.env : undefined, { readOnly: cfg.readOnly }));
+    globalThis[Symbol.for("pgmem.releaseEnv")] = release;
     globalThis[CURRENT] = current;
+    return current;
+  } catch (err) {
+    if (acquired) return runWithCleanup(() => { throw err; }, () => current.close(), "pgmem: environment and fork cleanup both failed");
+    throw err;
   }
-  Object.assign(process.env, current.env(names?.length ? names : undefined));
-  return current;
 }
 
 /** The fork of this test file, made by @pgmem/core/register or @pgmem/core/jest-environment. */
@@ -445,6 +471,22 @@ function currentFork() {
     throw new Error("pgmem: no fork for this test file: add @pgmem/core/register to the setup files (Jest: testEnvironment @pgmem/core/jest-environment)");
   }
   return current;
+}
+
+/** Reset the file fork after a sequential test; composes with other callback wrappers. */
+function withTestReset(fn, options) {
+  if (typeof fn !== "function") throw new TypeError("pgmem: withTestReset expects a test callback");
+  return async function (...args) {
+    const fork = currentFork();
+    const active = globalThis[Symbol.for("pgmem.resetActiveForks")] ??= new WeakSet();
+    if (active.has(fork)) throw new Error("pgmem: overlapping withTestReset callbacks share a fork; use withFork for concurrent tests");
+    active.add(fork);
+    try {
+      return await runWithCleanup(() => fn.apply(this, args), () => fork.reset(options), "pgmem: test and reset both failed");
+    } finally {
+      active.delete(fork);
+    }
+  };
 }
 
 let sharedTestFork;
@@ -646,6 +688,8 @@ module.exports = {
   withFork,
   useFork,
   currentFork,
+  withTestReset,
+
   withTestDatabase,
   pgmemTest,
   withShadowPg,

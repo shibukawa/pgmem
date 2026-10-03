@@ -1,0 +1,69 @@
+---
+title: Choose a test database lifecycle
+description: Choose fork, reset or shared reads from client lifetime and test concurrency.
+---
+
+An application and its assertions must connect to the same test database. Start by deciding when the application creates its clients, then choose how long that database lives.
+
+| Application shape | Strategy | Parallelism | Bind the application to |
+|---|---|---|---|
+| Creates clients for each test | Fork per test | Independent writing tests may overlap | One Go `fx.For(t)`, Python `pgmem_test_dsn`, Java `TestDatabase`, or Node `withFork` URL |
+| Keeps a client, pool or import-time ORM | Stable endpoint, reset after each writer | Serial cases within that endpoint, including readers | Python `pgmem_shared_dsn` plus reset markers, or Node file registration plus `withTestReset` |
+| Only reads the prepared baseline | Shared endpoint | Reads may overlap when no reset or writer uses that endpoint | Shared Go helpers, Python shared/class DSNs, Java CLASS scope, or a Node file fork |
+| Needs the network path used in deployment | TCP or Unix stream socket | Determined by isolation above | Go fixture `Transport`; `pgmemprocess` runs the database in an owned child process |
+
+Calling Go `For(t)` twice deliberately creates two databases. Keep the returned object and obtain both application and assertion handles from it. Python marker selection happens before a client fixture connects; a marker cannot redirect a client that already captured another DSN. Node registration must run before importing the application.
+
+Go execution and connection transport are separate choices. Embedded Go can use `net.Pipe`, TCP or Unix sockets. The lightweight subprocess client uses TCP or Unix sockets without importing the embedded engine. AF_UNIX stream sockets also work on supported Windows hosts.
+
+## Scope and ownership
+
+| Resource | Owner | When to release |
+|---|---|---|
+| Process, template and baseline snapshot | Test fixture / global setup | After all clients and test forks finish |
+| Isolated fork | Per-test fixture or explicit callback | After the test's clients close |
+| Shared fork | Class, file or suite fixture | After every user of the shared endpoint finishes |
+| HTTP server, driver pool, ORM engine/session | Application fixture | Stop requests, then close clients before releasing the fork |
+| Valkey/OpenSearch resources and application caches | Their own fixture | According to that service's isolation strategy |
+
+Cleanup attempts every owned release even after an earlier close fails. Go joins errors, Node uses `AggregateError`, Java uses suppressed exceptions, and Python context managers expose `CleanupError.primary_error` and `.cleanup_errors` on Python 3.9+. A test failure remains visible alongside teardown failures.
+
+## Defaults that bound automatic waits
+
+| Automatic operation | Default | Configuration |
+|---|---|---|
+| Go fixture fork acquisition, including direct helpers | 30 seconds | `ForkTimeout` |
+| Python function/class/shared fixture fork acquisition | 30 seconds | `pgmem_fixture_options["fork_timeout"]` |
+| Node register/useFork/Jest fork acquisition | 30 seconds | `forkTimeoutMs` or `PGMEM_FORK_TIMEOUT_MS` |
+| Python reset mode | 5 seconds | `reset_timeout` |
+| Node reused worker reset | 5 seconds | `resetTimeoutMs` or `PGMEM_RESET_TIMEOUT_MS` |
+| Java injected fork acquisition | Unbounded unless configured | `.forkTimeout(Duration)` |
+
+Manual snapshot fork APIs retain their unbounded-wait form; pass a context/deadline or timeout when using them. Fork acquisition waits for capacity. Snapshot and reset wait for open transactions to finish. Raising one timeout does not change the other operation. A shared fork also occupies a capacity slot.
+
+## Guard shared reads
+
+The guard sets `default_transaction_read_only=on` on new convenience connections. Ordinary persistent writes fail with SQLSTATE `25006`, while the prepared data remains readable.
+
+| Integration | Opt-in setting |
+|---|---|
+| Go embedded / subprocess shared helpers | `SharedReadOnly: true` |
+| Python selected shared and class DSNs | `pgmem_fixture_options` with `shared_read_only: True` |
+| Java CLASS-scoped or `@PgmemTest(fork = false)` TestDatabase, DataSource and JDBC URL injection | `.sharedReadOnly(true)` |
+| Node injected file connection URL | `useFork({ readOnly: true })`, Jest `readOnly: true`, or `PGMEM_READ_ONLY=true` |
+
+This is a guard against mistakes, not a privilege boundary: callers can change the session default, temporary-table writes remain possible, and raw server/fork URLs are available. Python reset clients and isolated writing fixtures remain writable. A Node guarded file should contain read cases; use a separate writable fork for writers. Enable the guard before constructing any application client.
+
+## What reset restores
+
+| State | Effect of pgmem reset | Application action |
+|---|---|---|
+| Database schema, rows and sequences | Restored from the selected snapshot | Commit/rollback open transactions first |
+| Endpoint and supported open client sockets | Kept stable | Keep a pool when using serial reset mode |
+| Driver or ORM identity caches | Not cleared by the server | Create a session per test or expire cached objects |
+| Application memory and memoized values | Not restored | Clear or recreate the application state |
+| Valkey keys | Not restored | Apply the Valkey fixture's cleanup/reset |
+| OpenSearch indexes | Not restored | Apply the OpenSearch fixture's cleanup/reset |
+| Already scheduled application work | Not cancelled | Await or stop background jobs before reset |
+
+A reset must run while no test sharing that endpoint is reading or writing. For concurrent writers, give each application its own fork and client. See the [application examples](../application-testing/) and [failure guide](../testing-troubleshooting/).

@@ -12,12 +12,14 @@ api:
   options:
     Database: served database name, created at startup by a standalone child (default postgres)
     User: initdb superuser name for the DSN (default postgres)
-    Port: 0 picks a free loopback port; always 127.0.0.1
+    Port: TCP 0 picks a free loopback port; Unix 0 uses socket identifier 5432
+    SocketDir: optional existing Unix socket parent; each server has a private child directory; requires AF_UNIX stream support, available on modern Windows; no datagrams; normal Close removes owned paths
     Params: extra postgres -c arguments, e.g. shared_buffers=128MB or log_statement=all; shared_buffers defaults to 32MB, io_method forced to sync
     Log: 'func(format string, args ...any) receives server log and host diagnostics; nil discards'
   server:
     - 'DSN() string  # postgres://user@127.0.0.1:port/db?sslmode=disable; any driver'
     - 'Dial  # api:in-process-dialer'
+    - 'Host() string; Addr() string  # TCP host/address or Unix directory/socket path; DSN carries the Unix directory as a host query parameter'
     - 'Snapshot(ctx, SnapshotOptions) (*Snapshot, error)  # api:snapshot'
     - 'Close() error  # frees the listener, backend and linear memory at once'
   cost: metric:server-footprint

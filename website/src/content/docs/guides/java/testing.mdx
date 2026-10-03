@@ -7,6 +7,52 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 For an HTTP application, see [API tests](../api-testing/) and [Playwright E2E tests](../e2e-testing/).
 
+See the [lifecycle guide](../../test-lifecycle/) and [runnable application examples](../../application-testing/).
+
+## Quickstart with JUnit 5
+
+Add the dependencies from [Java basics](../basics/#dependencies), save this test in your test source directory, and run `./gradlew test` or `mvn test`:
+
+```java title="OrderTest.java"
+import java.sql.Connection;
+import java.sql.DriverManager;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
+import io.github.shibukawa.pgmem.junit5.PgmemExtension;
+import io.github.shibukawa.pgmem.junit5.TestDatabase;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class OrderTest {
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+        .database("app")
+        .prepare(server -> {
+            try (Connection c = DriverManager.getConnection(server.jdbcUrl());
+                 var statement = c.createStatement()) {
+                statement.execute("CREATE TABLE orders(id int)");
+            } catch (java.sql.SQLException e) { throw new RuntimeException(e); }
+        }).build();
+
+    @Test
+    void createsOrder(TestDatabase db) throws Exception {
+        try (Connection c = db.dataSource().getConnection();
+             var statement = c.createStatement()) {
+            statement.execute("INSERT INTO orders VALUES (1)");
+            try (var rows = statement.executeQuery("SELECT count(*) FROM orders")) {
+                rows.next();
+                assertEquals(1, rows.getInt(1));
+            }
+        }
+    }
+}
+```
+
+`prepare` runs once per class. Each method receives a fresh fork and the extension closes it after the test. `TestDatabase` gives you its `dataSource()`, `jdbcUrl()`, `dsn()` and `fork()`; multiple injected pgmem parameters for the same template and scope share that fork. Use `@PgmemFork(scope = ForkScope.CLASS)` on `TestDatabase` for a shared read-only class.
+
+`TestDatabase.reset()` and `Server.reset()` restore a fork in place. `Server.reset(snapshot, timeout)` restores an explicitly seeded snapshot. End active transactions first. Keep your connection pools in application-owned fixtures and close them before the owning fork is released.
+
+
+
 ## Test an application-managed repository with one annotation
 
 If Spring Boot or Micronaut normally creates the repository and its DataSource, use the framework's `@ShadowPg`. These examples assume `OrderRepository` is registered as an application bean. The test retrieves that same bean. The application needs no pgmem-specific changes. Put `db/schema.sql` in `src/test/resources`, or omit `schema` when the application runs its own startup migration. Add `seed = "db/seed.sql"` for initial rows. Each method starts from the same prepared data.
@@ -348,3 +394,13 @@ junit.jupiter.execution.parallel.mode.classes.default = concurrent
 ```
 
 Each parallel `@ShadowPg` class must own its application context and fork. Do not share a static `DataSource` or a class-level writable fork across classes. Close or commit connections before a reset; increase JVM fork count only while memory can hold the resulting pgmem processes.
+
+## Guard CLASS-scoped reads
+
+Add `.sharedReadOnly(true)` to the builder to guard injected CLASS-scoped `TestDatabase`, `DataSource` and JDBC URLs, and shared targets selected with `@PgmemTest(fork = false)`. METHOD-scoped connections stay writable. Raw `Fork` injection and `database.fork()` expose the writable endpoint. The guard is a session default, so callers can deliberately disable it.
+
+```java
+@RegisterExtension static PgmemExtension pg = PgmemExtension.builder()
+        .forkScope(ForkScope.CLASS).sharedReadOnly(true)
+        .forkTimeout(Duration.ofSeconds(30)).build();
+```

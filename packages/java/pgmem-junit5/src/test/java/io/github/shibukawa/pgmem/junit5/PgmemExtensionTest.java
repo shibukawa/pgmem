@@ -93,6 +93,14 @@ class PgmemExtensionTest {
         assertTrue(pg.pgmem().pid() > 0);
     }
 
+    @Test @Order(9) void databaseObjectAndReset(TestDatabase db, Fork fork) {
+        assertEquals(db.jdbcUrl(), fork.jdbcUrl());
+        exec(db.jdbcUrl(), "INSERT INTO t VALUES (9)");
+        assertEquals(3, count(fork.jdbcUrl(), "t"));
+        db.reset();
+        assertEquals(2, count(db.jdbcUrl(), "t"));
+    }
+
     static String sharedUrl;
 
     @Test @Order(7) @PgmemTest(fork = false) void sharedPreparedTarget(Fork fork, DataSource ds) throws SQLException {

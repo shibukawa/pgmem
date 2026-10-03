@@ -15,7 +15,7 @@ export interface Endpoint {
    * or the given names. PGHOST, PGPORT, PGUSER, PGDATABASE and PGSSLMODE get
    * the matching part; any other name gets the URL.
    */
-  env(names?: string | readonly string[]): Record<string, string>;
+  env(names?: string | readonly string[], options?: { readOnly?: boolean }): Record<string, string>;
 }
 
 export interface StartOptions {
@@ -80,7 +80,7 @@ export declare class PgmemFork implements Endpoint {
   readonly port: number;
   readonly user: string;
   readonly database: string;
-  env(names?: string | readonly string[]): Record<string, string>;
+  env(names?: string | readonly string[], options?: { readOnly?: boolean }): Record<string, string>;
   /**
    * Put the data back to the snapshot the fork came from (or the given one)
    * in place. The URL and open connections stay valid; pooled connections
@@ -148,9 +148,20 @@ export declare function withFork<T>(fn: (fork: PgmemFork) => T | Promise<T>, opt
  * (DATABASE_URL, or the names in env or PGMEM_ENV). A process that already
  * has one resets it instead. @pgmem/core/register calls this.
  */
-export declare function useFork(options?: { env?: readonly string[] }): Promise<PgmemFork>;
+export interface TestFixtureOptions {
+  env?: readonly string[];
+  /** Automatic fork acquisition; default 30000 ms. */
+  forkTimeoutMs?: number;
+  /** Reset on worker reuse; default 5000 ms. */
+  resetTimeoutMs?: number;
+  /** Guard the injected connection URL against accidental writes. Default false. */
+  readOnly?: boolean;
+}
+export declare function useFork(options?: TestFixtureOptions): Promise<PgmemFork>;
 /** The fork of this test file, made by @pgmem/core/register or @pgmem/core/jest-environment. */
 export declare function currentFork(): PgmemFork;
+/** Reset the current file fork after a sequential test, including on failure. Composes with other callback wrappers. */
+export declare function withTestReset<TArgs extends unknown[], TResult>(fn: (...args: TArgs) => TResult | Promise<TResult>, options?: { snapshot?: PgmemSnapshot | string; timeoutMs?: number }): (...args: TArgs) => Promise<TResult>;
 /** Route clients constructed inside fn to prepared pgmem state; fork=false shares one target in this process. Calls are serialized while process.env changes. */
 export declare function withTestDatabase<T>(fn: (target: PgmemFork) => T | Promise<T>, options?: { fork?: boolean; env?: readonly string[] }): Promise<T>;
 /** Register a node:test, Vitest or Jest case whose callback uses pgmem routing. */

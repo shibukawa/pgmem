@@ -3,15 +3,23 @@ package pgmemtest_test
 import (
 	"context"
 	"database/sql"
+	"errors"
 	"fmt"
+	"net"
 	"net/http"
 	"net/http/httptest"
 	"os"
+	"os/exec"
+	"strings"
 	"sync"
 	"testing"
+	"time"
 
 	_ "github.com/jackc/pgx/v5/stdlib"
 
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgconn"
+	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/shibukawa/pgmem"
 	"github.com/shibukawa/pgmem/pgmemtest"
 )
@@ -114,6 +122,151 @@ func TestTemplateUntouched(t *testing.T) {
 	defer conn.Close()
 	if n := userCount(t, conn); n != 2 {
 		t.Fatalf("template has %d users, want 2", n)
+	}
+}
+
+func TestObjectHandlesShareOneFork(t *testing.T) {
+	d := fx.For(t)
+	db := d.DB()
+	if _, err := db.Exec("INSERT INTO users(name) VALUES ('shared-handles')"); err != nil {
+		t.Fatal(err)
+	}
+	var n int
+	if err := d.PgxPool().QueryRow(t.Context(), "SELECT count(*) FROM users").Scan(&n); err != nil || n != 3 {
+		t.Fatalf("different fork: %d %v", n, err)
+	}
+	if err := d.Reset(t.Context()); err != nil {
+		t.Fatal(err)
+	}
+	if userCount(t, db) != 2 {
+		t.Fatal("reset failed")
+	}
+}
+
+func TestSharedHandles(t *testing.T) {
+	db, err := fx.SharedDB()
+	if err != nil {
+		t.Fatal(err)
+	}
+	pool, err := fx.SharedPgxPool()
+	if err != nil {
+		t.Fatal(err)
+	}
+	var n int
+	if err := pool.QueryRow(t.Context(), "SELECT count(*) FROM users").Scan(&n); err != nil || n != userCount(t, db) {
+		t.Fatalf("shared handles: %d %v", n, err)
+	}
+}
+
+func TestNetworkHelpers(t *testing.T) {
+	for _, transport := range []string{"tcp", "unix"} {
+		t.Run(transport, func(t *testing.T) {
+			f, err := pgmemtest.New(t.Context(), pgmemtest.Options{Transport: transport})
+			if err != nil {
+				t.Fatal(err)
+			}
+			t.Cleanup(func() { f.Close() })
+			conn := f.For(t).PgxConn()
+			if got := conn.PgConn().Conn().RemoteAddr().Network(); got != transport {
+				t.Fatalf("transport %s, got %s", transport, got)
+			}
+		})
+	}
+}
+
+func TestDriverConfigurationKeepsForkAndTransport(t *testing.T) {
+	d := fx.For(t)
+	configure := func(cfg *pgx.ConnConfig) {
+		cfg.RuntimeParams["application_name"] = "configured"
+		cfg.Host = "wrong.invalid"
+		cfg.DialFunc = func(context.Context, string, string) (net.Conn, error) { return nil, errors.New("must be replaced") }
+	}
+	db := d.DB(configure)
+	var name string
+	if err := db.QueryRow("SHOW application_name").Scan(&name); err != nil || name != "configured" {
+		t.Fatalf("DB config: %q %v", name, err)
+	}
+	conn := d.PgxConn(configure)
+	if err := conn.QueryRow(t.Context(), "SHOW application_name").Scan(&name); err != nil || name != "configured" {
+		t.Fatalf("connection config: %q %v", name, err)
+	}
+	pool := d.PgxPool(func(cfg *pgxpool.Config) { cfg.MaxConns = 1; configure(cfg.ConnConfig) })
+	if pool.Config().MaxConns != 1 {
+		t.Fatal("pool configuration ignored")
+	}
+	if err := pool.QueryRow(t.Context(), "SHOW application_name").Scan(&name); err != nil || name != "configured" {
+		t.Fatalf("pool config: %q %v", name, err)
+	}
+	if _, err := db.Exec("INSERT INTO users(name) VALUES ('driver config')"); err != nil {
+		t.Fatal(err)
+	}
+	var n int
+	if err := pool.QueryRow(t.Context(), "SELECT count(*) FROM users").Scan(&n); err != nil || n != 3 {
+		t.Fatalf("handles no longer share fork: %d %v", n, err)
+	}
+}
+
+func TestSharedReadOnlyGuard(t *testing.T) {
+	f, err := pgmemtest.New(t.Context(), pgmemtest.Options{SharedReadOnly: true, Prepare: func(ctx context.Context, db *sql.DB, _ string) error {
+		_, err := db.ExecContext(ctx, "CREATE TABLE guarded(v int)")
+		return err
+	}})
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Cleanup(func() {
+		if err := f.Close(); err != nil {
+			t.Error(err)
+		}
+	})
+	db, err := f.SharedDB()
+	if err != nil {
+		t.Fatal(err)
+	}
+	_, err = db.Exec("INSERT INTO guarded VALUES (1)")
+	var pgerr *pgconn.PgError
+	if !errors.As(err, &pgerr) || pgerr.Code != "25006" {
+		t.Fatalf("shared DB write was not guarded: %v", err)
+	}
+	pool, err := f.SharedPgxPool()
+	if err != nil {
+		t.Fatal(err)
+	}
+	_, err = pool.Exec(t.Context(), "INSERT INTO guarded VALUES (2)")
+	if !errors.As(err, &pgerr) || pgerr.Code != "25006" {
+		t.Fatalf("shared pool write was not guarded: %v", err)
+	}
+	if _, err := f.For(t).DB().Exec("INSERT INTO guarded VALUES (3)"); err != nil {
+		t.Fatalf("isolated write was guarded: %v", err)
+	}
+}
+
+func TestDirectHelperForkDeadline(t *testing.T) {
+	if os.Getenv("PGMEM_FORK_DEADLINE_HELPER") == "true" {
+		f, err := pgmemtest.New(t.Context(), pgmemtest.Options{MaxForks: 1, ForkTimeout: 40 * time.Millisecond})
+		if err != nil {
+			t.Fatal(err)
+		}
+		t.Cleanup(func() { f.Close() })
+		occupied, err := f.Snapshot().Fork(t.Context())
+		if err != nil {
+			t.Fatal(err)
+		}
+		defer occupied.Close()
+		f.DB(t) // must fail through the direct helper's bounded fork acquisition
+		t.Fatal("full pool did not fail")
+	}
+	self, err := os.Executable()
+	if err != nil {
+		t.Fatal(err)
+	}
+	ctx, cancel := context.WithTimeout(t.Context(), 5*time.Second)
+	defer cancel()
+	cmd := exec.CommandContext(ctx, self, "-test.run=^TestDirectHelperForkDeadline$")
+	cmd.Env = append(os.Environ(), "PGMEM_FORK_DEADLINE_HELPER=true")
+	out, err := cmd.CombinedOutput()
+	if err == nil || ctx.Err() != nil || !strings.Contains(string(out), "context deadline exceeded") {
+		t.Fatalf("helper deadline not applied: %v %s", err, out)
 	}
 }
 
@@ -225,5 +378,38 @@ func TestShadowPGAPIClientUsesUnchangedRepository(t *testing.T) {
 	var n int
 	if _, err := fmt.Fscan(resp.Body, &n); err != nil || n != 2 {
 		t.Fatalf("count = %d, %v; want 2", n, err)
+	}
+}
+
+func TestSharedShadowUsesUnixTransportAndReadGuard(t *testing.T) {
+	f, err := pgmemtest.New(t.Context(), pgmemtest.Options{
+		Transport: "unix", SharedReadOnly: true,
+		Prepare: func(ctx context.Context, db *sql.DB, _ string) error {
+			_, err := db.ExecContext(ctx, "CREATE TABLE shadow_guarded(v int)")
+			return err
+		},
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Cleanup(func() {
+		if err := f.Close(); err != nil {
+			t.Error(err)
+		}
+	})
+	f.ShadowPG(t, pgmemtest.ShadowOptions{Shared: true})
+	db, err := sql.Open("pgx", "") // application uses ordinary libpq environment settings
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer db.Close()
+	var n int
+	if err := db.QueryRow("SELECT count(*) FROM shadow_guarded").Scan(&n); err != nil || n != 0 {
+		t.Fatalf("Unix shadow connection: %d %v", n, err)
+	}
+	_, err = db.Exec("INSERT INTO shadow_guarded VALUES (1)")
+	var failure *pgconn.PgError
+	if !errors.As(err, &failure) || failure.Code != "25006" {
+		t.Fatalf("shadow read guard: %v", err)
 	}
 }

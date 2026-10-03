@@ -19,6 +19,79 @@ Installing `pgmem` registers a pytest plugin. Its fixtures cover the prepared-da
 | `pgmem_fork`, `pgmem_dsn` | function | a fork per requesting test, closed at teardown |
 | `pgmem_class_fork`, `pgmem_class_dsn` | class | one fork shared by a test class |
 | `pgmem_shared_fork` | session | one prepared fork shared by `@shadow_pg(fork=False)` tests |
+| `pgmem_fixture_options` | session | isolation, capacity, deadlines and optional read guard |
+| `pgmem_test_dsn` | function | marker-selected fork, shared template or reset endpoint |
+| `pgmem_shared_dsn` | session | writable stable endpoint for reset mode |
+
+See the [lifecycle guide](../../test-lifecycle/) and [runnable application examples](../../application-testing/).
+
+## Quickstart: prepare once, select isolation with a marker
+
+```sh
+pip install pgmem pytest "psycopg[binary]"
+```
+
+Save these two files and run `pytest -q`:
+
+```python title="conftest.py"
+import psycopg
+import pytest
+
+@pytest.fixture(scope="session")
+def pgmem_prepare():
+    def prepare(server):
+        with psycopg.connect(server.dsn) as conn:
+            conn.execute("CREATE TABLE orders(id int)")
+    return prepare
+
+@pytest.fixture
+def db(pgmem_test_dsn):
+    with psycopg.connect(pgmem_test_dsn) as conn:
+        yield conn
+```
+
+```python title="test_orders.py"
+import pytest
+
+def test_create(db):
+    db.execute("INSERT INTO orders VALUES (1)")
+    assert db.execute("SELECT count(*) FROM orders").fetchone()[0] == 1
+
+@pytest.mark.pgmem(fork=False)
+def test_read(db):
+    assert db.execute("SELECT count(*) FROM orders").fetchone()[0] == 0
+```
+
+`pgmem_prepare` runs once before the plugin takes a snapshot. Write cases use isolated forks by default. `fork=False` selects the shared prepared template; a write there affects other shared tests. The same `db` fixture works in both cases, and selection happens before it connects.
+
+## Keep a client and reset its database
+
+If the application keeps a client for the session, build it against `pgmem_shared_dsn` and mark its serial tests with `isolation="reset"`:
+
+```python title="conftest.py"
+@pytest.fixture(scope="session")
+def app_db(pgmem_shared_dsn):
+    with psycopg.connect(pgmem_shared_dsn, autocommit=True) as conn:
+        yield conn
+```
+
+```python
+@pytest.mark.pgmem(isolation="reset")
+class TestOrders:
+    def test_create(self, app_db):
+        app_db.execute("INSERT INTO orders VALUES (1)")
+
+    def test_clean(self, app_db):
+        assert app_db.execute("SELECT count(*) FROM orders").fetchone()[0] == 0
+```
+
+The plugin resets the shared fork after each marked test, including test or fixture setup failures. The endpoint and sockets stay valid. Commit or roll back active transactions before teardown. This mode is for serial tests within one worker; pytest-xdist workers still have separate processes. Session fixtures cannot depend on the function-scoped `pgmem_test_dsn`.
+
+Override session-scoped `pgmem_fixture_options` to configure `isolation` (`fork`, `shared`, `reset`), `max_forks`, `fork_timeout` (30 s), `snapshot_timeout` (30 s) and `reset_timeout` (5 s) and `shared_read_only` (false). The closest marker overrides the default; specify either `fork=<bool>` or `isolation=<mode>`. Explicit `pgmem_dsn` always acquires a fork. Advanced suites can still override `pgmem_snapshot` directly; that replaces the default preparation hook.
+
+Installing `pgmem` registers a pytest plugin. Its fixtures cover the prepared-database shapes; nothing needs to be added to `conftest.py` to get a server.
+
+
 
 ## Database lifecycle strategy
 
@@ -270,3 +343,15 @@ A fork is a PostgreSQL cluster of its own, so a connection pool on one fork work
 ### Safe parallel setup for `@shadow_pg`
 
 Run independent test cases in separate pytest-xdist **processes**, for example `pytest -n 4` (install `pytest-xdist` first). Each worker builds its own template and forks; cases inside that worker execute sequentially. The driver monkeypatch is process-wide, so a plugin that runs test cases concurrently in threads within one worker is not safe. Wait for database work started by a test to finish before its marker is removed. Use `fork=False` only for read-only cases because they share one fork. Size the worker count and `max_forks` together for available memory.
+
+## Guard shared connections
+
+Set `shared_read_only` before constructing clients. It guards marker-selected shared DSNs and class DSNs; isolated forks and `pgmem_shared_dsn` for reset mode remain writable. Use `readonly_dsn(dsn)` when building a guarded URL yourself. Raw fork URLs bypass this guard.
+
+```python
+@pytest.fixture(scope="session")
+def pgmem_fixture_options():
+    return {"isolation": "shared", "shared_read_only": True}
+```
+
+`pgmem_prepare` can run setup directly, as above, or return a callback accepting a template `Server`, as in the quickstart. Do not apply the same migrations in both forms.

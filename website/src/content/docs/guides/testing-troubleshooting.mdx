@@ -1,0 +1,21 @@
+---
+title: Diagnose test database failures
+description: Find the failing lifecycle step, active transaction, fork capacity or connection scope.
+---
+
+A test that hangs or sees another test's data usually needs a lifecycle correction. Identify which operation failed before increasing a timeout.
+
+| Symptom | Check | Action |
+|---|---|---|
+| `busy` during snapshot | Migration or seed connection still has an open transaction | Commit or roll back before preparation returns; close unused connections |
+| `busy` during reset | Test leaves a transaction active | End that transaction before teardown; closing a pool is unnecessary if it has no active transaction |
+| `pool_timeout` | All fork slots are occupied, including shared forks | Close unused forks; avoid acquiring a second fork when one test DB object can provide both handles; then consider `max_forks` |
+| Application and assertions see different data | Handles came from separate acquisitions | Go: keep one `fx.For(t)` object; Java: use parameters from the same template and scope |
+| ORM connects to a real or old database | Client was created before endpoint injection | Node: load register before application imports; Python: build client fixtures from the selected DSN |
+| Shared read tests fail depending on order | A shared case wrote data | Move it to a fork or serial reset mode; markers and shared helpers do not enforce SQL permissions |
+| Overlapping `withTestReset` callbacks | Two wrapped callbacks use the same file fork | Use `withFork` and a client per URL for concurrent writes |
+| Unix socket startup fails | Unsupported host, missing parent or long path | Choose an existing short local `SocketDir`; check AF_UNIX stream support on the host |
+
+Enable logs while diagnosing: Go embedded `Options.Log`, Go subprocess `Options.Log` (an `io.Writer`), Python `log=True`, Java `.log(true)` or Node `log: true`. SQL session details remain available through `pg_stat_activity` and `pg_locks`.
+
+The test API owns the server or fork. Application fixtures own their driver clients and pools; close them before the fork is released. In reset mode the endpoint stays valid, so the same client may survive between serial tests. Use distinct environment variable names when combining services, and export all endpoints before importing clients.

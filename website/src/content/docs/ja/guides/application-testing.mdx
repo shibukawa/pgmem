@@ -1,0 +1,87 @@
+---
+title: アプリ経由で書き込みを検証する
+description: 同じフォークをアプリと検証に渡す、実行可能な 4 言語のサンプル。
+---
+
+import { Code, Tabs, TabItem } from '@astrojs/starlight/components';
+import goApp from '../../../../../../examples/go-http/app.go?raw';
+import goTest from '../../../../../../examples/go-http/app_test.go?raw';
+import nodeApp from '../../../../../../examples/node-http/app.mjs?raw';
+import nodeSetup from '../../../../../../examples/node-http/global-setup.mjs?raw';
+import nodeTest from '../../../../../../examples/node-http/app.test.mjs?raw';
+import pythonApp from '../../../../../../examples/python-sqlalchemy/app.py?raw';
+import pythonFixtures from '../../../../../../examples/python-sqlalchemy/conftest.py?raw';
+import pythonTest from '../../../../../../examples/python-sqlalchemy/test_app.py?raw';
+import javaTest from '../../../../../../packages/java/pgmem-junit5/src/test/java/io/github/shibukawa/pgmem/junit5/examples/OrderApplicationTest.java?raw';
+
+まずアプリが書き込み、テストが同じ DB で結果を確かめます。アプリと検証用に別々の `For(t)` を呼ぶと、異なるフォークを検証してしまいます。以下のサンプルは接続先を一度選び、両方へ渡します。
+
+リポジトリのルートでバイナリをビルドし、絶対パスを設定してください。Windows では `.exe` の出力先を選び、利用する shell で環境変数を設定します。
+
+```sh
+go build -o /tmp/pgmem-example ./cmd/pgmem
+export PGMEM_BINARY=/tmp/pgmem-example
+```
+
+<Tabs syncKey="application-language">
+<TabItem label="Go HTTP">
+
+外部プロセスの TCP 接続を使います。HTTP ハンドラに渡す `sql.DB` と、検証用の pgx pool は一つの `TestDB` から取得します。HTTP サーバーを止めてから DB の接続とフォークを閉じます。
+
+```sh
+go -C examples/go-http test -v
+```
+
+<Code code={goApp} lang="go" title="examples/go-http/app.go" />
+
+<Code code={goTest} lang="go" title="examples/go-http/app_test.go" />
+
+</TabItem>
+<TabItem label="Node HTTP">
+
+Node.js 24 以降が必要です。register が import 前に接続先を設定します。アプリは import 時の pool を維持し、直列の書き込みテストだけ `withTestReset` で戻します。次のテストは同じ pool から基準データを読みます。
+
+```sh
+npm --prefix examples/node-http ci --omit=optional --ignore-scripts
+npm --prefix examples/node-http test
+```
+
+<Code code={nodeApp} lang="js" title="examples/node-http/app.mjs" />
+
+<Code code={nodeSetup} lang="js" title="examples/node-http/global-setup.mjs" />
+
+<Code code={nodeTest} lang="js" title="examples/node-http/app.test.mjs" />
+
+</TabItem>
+<TabItem label="Python SQLAlchemy">
+
+マーカーによる選択後に engine を作り、その engine をアプリに渡します。書き込みケースはフォーク、読み取りケースは `fork=False` で共有 DB を使います。engine を閉じてからフォークを解放します。
+
+```sh
+uv run --project examples/python-sqlalchemy pytest examples/python-sqlalchemy -q
+```
+
+<Code code={pythonApp} lang="python" title="examples/python-sqlalchemy/app.py" />
+
+<Code code={pythonFixtures} lang="python" title="examples/python-sqlalchemy/conftest.py" />
+
+<Code code={pythonTest} lang="python" title="examples/python-sqlalchemy/test_app.py" />
+
+</TabItem>
+<TabItem label="Java DataSource">
+
+一つの `TestDatabase` を注入し、アプリと検証の両方がそこから DataSource を取得します。各 Connection は try-with-resources で閉じます。サンプルは JUnit パッケージのテストとして実行されます。
+
+```sh
+cd packages/java
+./gradlew :pgmem-junit5:test --tests '*OrderApplicationTest'
+```
+
+<Code code={javaTest} lang="java" title="packages/java/pgmem-junit5/src/test/java/io/github/shibukawa/pgmem/junit5/examples/OrderApplicationTest.java" />
+
+</TabItem>
+</Tabs>
+
+各ディレクトリには依存関係の設定も含まれています。Go の `replace`、Node の `file:`、uv の editable source はこの checkout を参照します。別のプロジェクトへ移すときは公開パッケージの依存に置き換えてください。表示しているコードは実際に CI で実行するファイルから読み込んでいます。
+
+reset が戻すのは DB の状態です。HTTP サーバーや engine、アプリのメモリ、Valkey のキー、OpenSearch の index は各 fixture が管理します。[分離方式と reset の保証範囲](../test-lifecycle/)で、クライアントの寿命と並列実行に合う方式を選べます。

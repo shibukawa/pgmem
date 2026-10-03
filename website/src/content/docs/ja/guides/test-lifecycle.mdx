@@ -1,0 +1,69 @@
+---
+title: テスト用 DB のライフサイクルを選ぶ
+description: クライアントの寿命と並列実行から、fork、reset、共有読み取りを選びます。
+---
+
+アプリと検証用の接続は、同じテスト用 DB に向けます。アプリがいつクライアントを作るかを決めると、その DB をいつまで維持するかも選べます。
+
+| アプリの形 | 分離方式 | 並列実行 | アプリに渡すもの |
+|---|---|---|---|
+| テストごとにクライアントを作る | テストごとの fork | 独立した書き込みテストを同時実行できる | Go の一つの `fx.For(t)`、Python の `pgmem_test_dsn`、Java の `TestDatabase`、Node の `withFork` の URL |
+| クライアント、pool、import 時の ORM を保持する | 固定接続先で、書き込みテスト後に reset | 読み取りも含め、その接続先では直列実行 | Python の `pgmem_shared_dsn` と reset マーカー、または Node のファイル登録と `withTestReset` |
+| 準備済みのデータを読むだけ | 接続先を共有 | 同じ接続先を reset・書き込みする処理がなければ同時実行できる | Go の共有 helper、Python の shared/class DSN、Java の CLASS スコープ、Node のファイル用 fork |
+| デプロイ先と同じネットワーク経路を通したい | TCP または Unix stream socket | 上で選んだ分離方式による | Go fixture の `Transport`。`pgmemprocess` は DB を所有する子プロセスで起動する |
+
+Go の `For(t)` を二度呼ぶと、意図的に二つの DB ができます。戻り値を保持し、アプリ用と検証用の handle をそこから取得します。Python のマーカーは client fixture が接続する前に適用され、既に別の DSN を保持したクライアントの接続先は変更できません。Node はアプリの import 前に register を実行します。
+
+Go の実行場所と接続方式は別々に選べます。組み込みでは `net.Pipe`、TCP、Unix socket を使えます。軽量な外部プロセスクライアントは組み込みエンジンを import せず、TCP または Unix socket で接続します。AF_UNIX の stream socket に対応する Windows でも使えます。
+
+## スコープと管理する側
+
+| リソース | 管理する側 | 解放するタイミング |
+|---|---|---|
+| プロセス、テンプレート、基準 snapshot | テスト fixture / global setup | 全クライアントとテスト用 fork の終了後 |
+| 独立した fork | テストごとの fixture または明示的な callback | テストのクライアントを閉じた後 |
+| 共有 fork | クラス、ファイル、スイート用 fixture | 共有接続先を使う処理がすべて終わった後 |
+| HTTP サーバー、driver pool、ORM engine/session | アプリの fixture | リクエストを止め、fork の解放前にクライアントを閉じる |
+| Valkey / OpenSearch のリソース、アプリのキャッシュ | 各サービスの fixture | そのサービスの分離方式に従う |
+
+先の close が失敗しても、管理する残りのリソースの解放を試みます。Go はエラーを結合し、Node は `AggregateError`、Java は suppressed exception を使います。Python の context manager は Python 3.9 以降で `CleanupError.primary_error` と `.cleanup_errors` を公開します。テスト本体の失敗と後片付けの失敗が両方残ります。
+
+## 自動待機の既定値
+
+| 自動で行う操作 | 既定値 | 設定 |
+|---|---|---|
+| Go fixture の fork 取得。直接取得する helper も含む | 30 秒 | `ForkTimeout` |
+| Python function/class/shared fixture の fork 取得 | 30 秒 | `pgmem_fixture_options["fork_timeout"]` |
+| Node register/useFork/Jest の fork 取得 | 30 秒 | `forkTimeoutMs` または `PGMEM_FORK_TIMEOUT_MS` |
+| Python reset モード | 5 秒 | `reset_timeout` |
+| Node のワーカー再利用時の reset | 5 秒 | `resetTimeoutMs` または `PGMEM_RESET_TIMEOUT_MS` |
+| Java の注入する fork の取得 | 指定しないと無期限 | `.forkTimeout(Duration)` |
+
+手動で snapshot から fork する API は、無期限に待つ形式も維持しています。使うときは context の期限や timeout を指定できます。fork 取得は空き枠を待ち、snapshot と reset は開いたトランザクションの終了を待ちます。一方の timeout を延ばしても、もう一方には影響しません。共有 fork も枠を占有します。
+
+## 共有する読み取りにガードを付ける
+
+ガードは convenience 接続の開始時に `default_transaction_read_only=on` を設定します。通常の永続データへの書き込みは SQLSTATE `25006` で失敗し、準備済みのデータは引き続き読めます。
+
+| 組み込み先 | 有効にする設定 |
+|---|---|
+| Go 組み込み / 外部プロセスの共有 helper | `SharedReadOnly: true` |
+| Python の選択された shared / class DSN | `pgmem_fixture_options` に `shared_read_only: True` |
+| Java CLASS スコープ／`@PgmemTest(fork = false)` の TestDatabase、DataSource、JDBC URL 注入 | `.sharedReadOnly(true)` |
+| Node の注入するファイル用接続 URL | `useFork({ readOnly: true })`、Jest の `readOnly: true`、または `PGMEM_READ_ONLY=true` |
+
+これは誤操作を検出するガードです。権限による境界ではなく、利用者はセッションの既定値を変更できます。一時テーブルへの書き込みもでき、素の server / fork URL も取得できます。Python の reset クライアントと、独立した書き込み fixture は書き込み可能なままです。Node のガード付きファイルでは読み取りテストを行い、書き込みには別の書き込み可能な fork を使います。アプリのクライアントを作る前に有効にしてください。
+
+## reset が戻す状態
+
+| 状態 | pgmem の reset の作用 | アプリ側の対応 |
+|---|---|---|
+| DB のスキーマ、行、sequence | 指定した snapshot に戻る | 開いたトランザクションを先に commit / rollback する |
+| 接続先と対応する開いたクライアント socket | 維持する | 直列の reset モードでは pool を保持できる |
+| driver / ORM の identity cache | サーバーからは消去しない | テストごとに session を作るか、キャッシュしたオブジェクトを expire する |
+| アプリのメモリやメモ化した値 | 戻さない | 状態を消すか、アプリを作り直す |
+| Valkey のキー | 戻さない | Valkey fixture の cleanup / reset を使う |
+| OpenSearch の index | 戻さない | OpenSearch fixture の cleanup / reset を使う |
+| 既に予約されたアプリの処理 | キャンセルしない | reset 前にバックグラウンド処理を待つか停止する |
+
+reset の間、その接続先を共有するテストは読み書きできません。同時に書き込むテストには、アプリごとに別の fork とクライアントを渡します。[アプリ経由のサンプル](../application-testing/)と[失敗の調べ方](../testing-troubleshooting/)も参照してください。

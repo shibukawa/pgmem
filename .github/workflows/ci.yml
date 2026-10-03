@@ -50,11 +50,21 @@ jobs:
       - name: Node.js
         working-directory: packages/node/core
         run: npm ci --omit=optional && npm test
+      - name: Go HTTP application example
+        run: go -C examples/go-http test ./...
+      - name: Install Node HTTP example dependencies
+        working-directory: examples/node-http
+        run: npm ci --omit=optional --ignore-scripts
+      - name: Node HTTP application example
+        working-directory: examples/node-http
+        run: npm test
 
       - uses: astral-sh/setup-uv@v10.1.0
       - name: Python
         working-directory: packages/python
         run: uv run pytest -q
+      - name: Python SQLAlchemy application example
+        run: uv run --project examples/python-sqlalchemy pytest examples/python-sqlalchemy -q
 
       - uses: actions/setup-java@v6
         with:

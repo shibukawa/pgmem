@@ -27,8 +27,11 @@ ui:
       - kind: section
         id: guides
         children:
+          - {kind: page, id: guides/test-lifecycle, target: concept:test-isolation-choice, children: [requirement:test-api-ergonomics]}
+          - {kind: page, id: guides/application-testing, target: requirement:test-api-ergonomics}
+          - {kind: page, id: guides/testing-troubleshooting, target: concept:limits, children: [api:reset, api:go-test-fixture, api:go-process]}
           - {kind: page, id: guides/go/basics, target: concept:go-guide, children: [api:go-server, api:in-process-dialer, concept:migration-tools, concept:seeding]}
-          - {kind: page, id: guides/go/testing, target: decision:fork-or-not, children: [api:clone, flow:test-lifecycle]}
+          - {kind: page, id: guides/go/testing, target: api:go-test-fixture, children: [api:go-process, api:clone, flow:test-lifecycle]}
           - {kind: page, id: guides/python/basics, target: concept:python-guide, children: [api:python-wrapper, concept:migration-tools, concept:seeding]}
           - {kind: page, id: guides/python/testing, target: decision:fork-or-not, children: [api:python-wrapper, flow:wrapper-test-lifecycle]}
           - {kind: page, id: guides/java/basics, target: concept:java-guide, children: [api:java-wrapper, concept:migration-tools, concept:seeding]}
@@ -41,7 +44,7 @@ ui:
           - {kind: page, id: guides/nodejs/e2e-testing, target: decision:node-test-integration, children: [api:node-wrapper, api:reset]}
   guide_story:  # every language, in this order
     basics: [install with the official client, start, register schema (raw SQL then popular migration tools), seed data (raw SQL, COPY, dbtestify / DbUnit / factory_boy / ORM seeders), connect with official drivers, snapshot and fork by hand]
-    testing: [fresh server per test, prepare once and share with read-only tests (class or file scope), fork or reset per test for writing tests, read-only files on the template with forks only for writing files (Node: vitest projects split), several templates, parallelism]
+    testing: [runnable quickstart first, execution and connection options, prepare once and share with read-only tests (class or file scope), fork or reset per test for writing tests, service composition, advanced schema variants and templates, parallelism and troubleshooting]
   tabs:
     syncKey: lang (Go, Python, Java, Node.js on the top page)
     jvm-build: [Gradle (Kotlin DSL), Gradle (Groovy DSL), Maven]

@@ -160,6 +160,26 @@ await pg.close();
 process.exit(run.status ?? 1);
 ```
 
+## Compose test services
+
+Wrap a sequential writing callback with `withTestReset(fn, { snapshot, timeoutMs })`.
+It restores the file fork after success or failure and preserves both errors
+if reset also fails. Compose it with other callback wrappers in your own helper.
+Overlapping wrapped callbacks on the shared fork fail explicitly; concurrent
+writing cases use `withFork` and their own clients.
+
+Jest can retain a custom environment:
+
+```js
+const { TestEnvironment } = require("jest-environment-node");
+const { withPgmemEnvironment } = require("@pgmem/core/jest-environment-factory");
+module.exports = withPgmemEnvironment(TestEnvironment);
+```
+
+Another service's environment can be the base class or wrap the returned class.
+Use distinct endpoint variable names and inject them before application imports.
+The factory accepts `{ env: ["APP_DATABASE_URL"], forkTimeoutMs: 30000, resetTimeoutMs: 5000, readOnly: false }`. `timeoutMs` is a deprecated alias for the reset deadline.
+
 ## Preparing the schema
 
 `prepare` receives the template server (`url`, `host`, `port`, ...). Close
@@ -201,6 +221,7 @@ or commit what it opens: the snapshot waits for open transactions.
 | `server.env()` | `{ PGMEM_CONTROL, PGMEM_SNAPSHOT }` for test processes |
 | `server.fork()`, `server.withFork(fn)`, `server.close()` | |
 | `useFork()` | what `@pgmem/core/register` runs: fork (or reset) and write `DATABASE_URL`, or the names in `PGMEM_ENV` |
+| `withTestReset(fn, options)` | restore after a sequential writing callback |
 | `currentFork()` | the fork of this test file |
 | `withTestDatabase(fn, { fork, env })` | route a callback to a fresh fork (default) or a shared read-only fork |
 | `pgmemTest(test, name, fn, options)` | register a test using `withTestDatabase` |
@@ -210,3 +231,41 @@ or commit what it opens: the snapshot waits for open transactions.
 | `fork.reset({ snapshot, timeoutMs })` | back to the snapshot in place |
 | `fork.snapshot()` | a snapshot of this fork to reset to later |
 | `fork.close()` | |
+
+## Automatic waits and service ownership / 自動待機とサービスの所有
+
+`useFork`, registration and Jest acquisition default to 30 seconds; set
+`forkTimeoutMs` or `PGMEM_FORK_TIMEOUT_MS`. Reused worker resets default to
+5 seconds; set `resetTimeoutMs` or `PGMEM_RESET_TIMEOUT_MS`. Explicit options
+take precedence over environment variables. Manual `fork()` remains unbounded
+when `timeoutMs` is omitted.
+
+`@pgmem/core/environment` exports `installServiceEnv(service, values, options)`
+and `ServiceEnvConflict`. Registered services cannot claim the same variable;
+installation rolls back partial changes and release restores prior values.
+Use `{ target: this.global.process.env, scope: this.global }` in a Jest realm.
+Direct assignments from unregistered services cannot be attributed.
+
+`readOnly: true` or `PGMEM_READ_ONLY=true` guards injected connection URLs with
+`default_transaction_read_only`. This session default can be deliberately
+changed; use writable forks for writing tests. Cleanup preserves failures from
+both the test and teardown with `AggregateError`.
+
+自動取得の期限は既定 30 秒で、`forkTimeoutMs` または
+`PGMEM_FORK_TIMEOUT_MS` で指定します。再利用する worker の reset は既定 5 秒で、
+`resetTimeoutMs` または `PGMEM_RESET_TIMEOUT_MS` を使います。明示した option が
+環境変数より優先します。手動の `fork()` は `timeoutMs` を省略すると無期限です。
+
+`@pgmem/core/environment` の `installServiceEnv(service, values, options)` で
+所有を登録すると、別の登録済みサービスによる同じ変数の取得を
+`ServiceEnvConflict` で拒否します。途中の変更は失敗時に戻し、解放時は元の値を
+復元します。Jest 内では `{ target: this.global.process.env, scope: this.global }`
+を使います。登録せず直接代入するサービスの所有は識別できません。
+
+`readOnly: true` または `PGMEM_READ_ONLY=true` は注入する URL に
+`default_transaction_read_only` を付けます。意図的に変更できるセッションの既定値
+なので、書き込みテストは書き込み可能なフォークを使います。テストと後片付けの
+両方の失敗は `AggregateError` に残します。
+
+Runnable application examples / 実行可能なアプリのサンプル:
+[examples](../../../examples/README.md).

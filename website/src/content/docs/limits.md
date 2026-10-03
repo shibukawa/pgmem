@@ -44,6 +44,8 @@ Each snapshot has its own pool of fork slots. `MaxForks` limits live forks from 
 
 The JUnit extension applies its cap to each registered template. A snapshot's `close()` refuses new forks but leaves live forks running; Go's `Snapshot.Wait()` waits for those forks to close.
 
+Automatic test fixtures have their own acquisition defaults: Go and Python use 30 seconds; Node registration/useFork/Jest also use 30 seconds. Java JUnit acquisition remains unbounded unless `.forkTimeout(Duration)` is set. See the [lifecycle guide](../guides/test-lifecycle/) for each setting.
+
 ## Timeouts govern different waits
 
 The timeout for a fork slot does not limit snapshot creation or server start-up. Those are separate waits with separate settings:
@@ -52,8 +54,8 @@ The timeout for a fork slot does not limit snapshot creation or server start-up.
 |---|---|---|
 | Snapshot creation waits for open transactions to finish | Go: the `Snapshot` context. Python: `server.snapshot(timeout=30.0)`. Java: `Server.snapshot(maxForks, timeout)` (30 seconds by default). Node.js: `snapshotTimeoutMs` (30,000 ms by default). | Snapshot creation fails with `busy`; commit or close connections to the template first. |
 | A server process starts | Python: `pgmem.start(timeout=30)`. Java: `.readyTimeout(Duration)` (30 seconds by default). Node.js: `startupTimeoutMs` (30,000 ms by default). Go: the `Start` context. | Startup fails if the process does not become ready in time. |
-| A fork is reset to a snapshot | Go: `Server.Reset(ctx)` or `Restore(ctx)`. Node.js: `fork.reset({ timeoutMs })` (5,000 ms by default). | Reset fails with `busy` if an open transaction does not finish. |
+| A fork is reset to a snapshot | Go: `Server.Reset(ctx)` or `Restore(ctx)`. Python: `server.reset(timeout=5.0)`. Java: `server.reset()` (5 seconds). Node.js: `fork.reset({ timeoutMs })` (5,000 ms by default). | Reset fails with `busy` if an open transaction does not finish. |
 
 ## Security
 
-There is no TLS and no password authentication. Every server listens on `127.0.0.1` only, and URLs carry `sslmode=disable`. ICU collations are not available.
+There is no TLS and no password authentication. TCP listeners bind only to `127.0.0.1`, and URLs carry `sslmode=disable`. Explicit Unix socket mode uses private local socket directories instead. ICU collations are not available.

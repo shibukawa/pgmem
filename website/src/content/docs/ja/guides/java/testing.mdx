@@ -7,6 +7,52 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 HTTP アプリを使う場合は [API テスト](../api-testing/) と [Playwright E2E テスト](../e2e-testing/) を参照してください。
 
+[分離方式の選択](../../test-lifecycle/)と[アプリ経由のサンプル](../../application-testing/)も参照してください。
+
+## JUnit 5 ですぐに試す
+
+[Java の基本](../basics/)の依存関係を追加し、テスト用ソースディレクトリに次のファイルを保存して、`./gradlew test` または `mvn test` を実行します。
+
+```java title="OrderTest.java"
+import java.sql.Connection;
+import java.sql.DriverManager;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
+import io.github.shibukawa.pgmem.junit5.PgmemExtension;
+import io.github.shibukawa.pgmem.junit5.TestDatabase;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class OrderTest {
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+        .database("app")
+        .prepare(server -> {
+            try (Connection c = DriverManager.getConnection(server.jdbcUrl());
+                 var statement = c.createStatement()) {
+                statement.execute("CREATE TABLE orders(id int)");
+            } catch (java.sql.SQLException e) { throw new RuntimeException(e); }
+        }).build();
+
+    @Test
+    void createsOrder(TestDatabase db) throws Exception {
+        try (Connection c = db.dataSource().getConnection();
+             var statement = c.createStatement()) {
+            statement.execute("INSERT INTO orders VALUES (1)");
+            try (var rows = statement.executeQuery("SELECT count(*) FROM orders")) {
+                rows.next();
+                assertEquals(1, rows.getInt(1));
+            }
+        }
+    }
+}
+```
+
+`prepare` はクラスごとに一度走ります。各メソッドには新しいフォークを渡し、テスト終了後に extension が閉じます。`TestDatabase` から `dataSource()`、`jdbcUrl()`、`dsn()`、`fork()` を取得でき、同じテンプレートとスコープの複数パラメータは同じフォークを使います。読み取り専用クラスで共有する場合は、`TestDatabase` に `@PgmemFork(scope = ForkScope.CLASS)` を指定してください。
+
+`TestDatabase.reset()` と `Server.reset()` はフォークを同じ接続先のまま戻します。seed 後に作った snapshot に戻す場合は `Server.reset(snapshot, timeout)` を使います。先に開いたトランザクションを終了させてください。接続 pool はアプリ側の fixture で管理し、所有するフォークが解放される前に閉じます。
+
+
+
 ## アプリが管理するリポジトリをアノテーション 1 つでテストする
 
 Spring Boot または Micronaut が通常どおりリポジトリと DataSource を作る場合は、各フレームワークの `@ShadowPg` を付けます。以下は `OrderRepository` がアプリの Bean として登録されている想定です。テストは本番コードと同じ Bean を使い、アプリ側に pgmem 固有の変更は不要です。`db/schema.sql` を `src/test/resources` に置きます。アプリが起動時にマイグレーションするなら `schema` は省略できます。初期データは `seed = "db/seed.sql"` で指定します。各メソッドは同じ準備済みデータから始まります。
@@ -348,3 +394,13 @@ junit.jupiter.execution.parallel.mode.classes.default = concurrent
 ```
 
 並列実行する `@ShadowPg` クラスは、それぞれ別のアプリコンテキストとフォークを持たせます。static な `DataSource` や書き込み可能なクラス単位フォークをクラス間で共有しないでください。reset 前に接続を閉じるかコミットし、pgmem プロセスの増加に見合うメモリを確保します。
+
+## CLASS スコープの読み取りを保護する
+
+Builder に `.sharedReadOnly(true)` を指定すると、CLASS スコープで注入する `TestDatabase`、`DataSource`、JDBC URL と、`@PgmemTest(fork = false)` が選ぶ共有接続先にガードを付けます。METHOD スコープは書き込み可能です。生の `Fork` 注入と `database.fork()` は書き込み可能な接続先を公開します。セッションの既定値によるガードなので、意図的に無効にすることは可能です。
+
+```java
+@RegisterExtension static PgmemExtension pg = PgmemExtension.builder()
+        .forkScope(ForkScope.CLASS).sharedReadOnly(true)
+        .forkTimeout(Duration.ofSeconds(30)).build();
+```

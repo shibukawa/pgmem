@@ -7,15 +7,16 @@ npm package driving concept:server-process, shaped like @osmem/core and implemen
 
 ```yaml
 api:
-  status: implemented 2026-09-13 in packages/node; flow:release packs and publishes it (set up 2026-09-14, the first version of each package goes up by hand); node --test suite in core/test (9 tests); end to end in a scratch project with Vitest 5 (Prisma 7.10, Drizzle 0.45 with postgres.js, TypeORM 1.1) and Jest 30
-  package: '@pgmem/core plus @pgmem/<platform> (darwin-arm64, linux-arm64, linux-x64, win32-arm64, win32-x64; darwin-x64 dropped 2026-09-14 at the user's request, so Intel Macs need PGMEM_BINARY); the npm org pgmem belongs to the user (confirmed 2026-09-13); unscoped pgmem is rejected by npm name similarity to pg-mem'
+  status: implemented 2026-09-13 in packages/node; flow:release packs and publishes it (set up 2026-09-14, the first version of each package goes up by hand); node --test suite in core/test; end to end in a scratch project with Vitest 5 (Prisma 7.10, Drizzle 0.45 with postgres.js, TypeORM 1.1) and Jest 30
+  package: '@pgmem/core plus @pgmem/<platform> (darwin-arm64, linux-arm64, linux-x64, win32-arm64, win32-x64; darwin-x64 dropped 2026-09-14 at the user''s request, so Intel Macs need PGMEM_BINARY); the npm org pgmem belongs to the user (confirmed 2026-09-13); unscoped pgmem is rejected by npm name similarity to pg-mem'
   core:
     - 'PgmemServer.start({database, user, params, prepare(template), maxForks, control=true, log, binary}) -> server (waitTimeoutMs is accepted and ignored since 2026-09-19); spawns pgmem -control 127.0.0.1:0, runs prepare, snapshots the template'
     - 'server: url, template, snapshot, controlUrl, env() -> {PGMEM_CONTROL, PGMEM_SNAPSHOT}, fork(), withFork(fn), close()'
     - 'fork: id, url, host, port, user, database, env(names = [DATABASE_URL]; PGHOST PGPORT PGUSER PGDATABASE PGSSLMODE get parts), reset({snapshot, timeoutMs = 5000}), snapshot(), close()'
     - 'PgmemClient.connect({controlUrl = PGMEM_CONTROL, snapshot = PGMEM_SNAPSHOT}); connect(), fork(), withFork(fn) use one process-wide client'
-    - 'useFork({env}): fork once per process (reset when it already has one) and write env; PGMEM_ENV lists names'
+    - 'useFork({env, forkTimeoutMs, resetTimeoutMs, readOnly}): fork once per process (reset when it already has one) and write env; PGMEM_ENV lists names'
     - 'currentFork(): globalThis[Symbol.for("pgmem.currentFork")], so it works across module instances and Jest realms'
+    - 'withTestReset(fn, {snapshot, timeoutMs}): sequential callback wrapper; resets after success/failure; AggregateError retains callback and reset errors; rejects overlapping wrapped callbacks sharing a fork (requirement:node-test-composition)'
     - 'withTestDatabase(fn,{fork=true,env}): fresh fork per callback by default; fork=false shares one fork for read-only callbacks; temporarily routes env, serializes its callbacks, restores env and closes fresh fork; clients must be constructed inside callback'
     - 'pgmemTest(test,name,fn,options): registers a runner case using withTestDatabase; accepts Vitest, Jest or node:test callback shape'
     - 'startTestApp({fork,command=process.execPath,args,cwd,env,healthPath=/health,timeoutMs=10000,portEnv=PORT,databaseEnv=DATABASE_URL,stdio}): find loopback port, spawn app with fork URL, wait for HTTP success, return {url,port,process,close}; stop child on startup failure or teardown; no Playwright dependency'
@@ -23,6 +24,10 @@ api:
   entries:
     register: ESM, top-level await useFork(); Vitest setupFiles, node --test --import, bun test --isolate --preload
     jest_environment: extends jest-environment-node TestEnvironment; one fork per Jest worker, reset between test files, URL written to this.global.process.env
+    jest_environment_factory: withPgmemEnvironment(BaseEnvironment, {env, forkTimeoutMs, resetTimeoutMs, readOnly}) from @pgmem/core/jest-environment-factory; composes with another service environment in either order; calls base cleanup on setup failure
+    environment: installServiceEnv(service, values, {target, scope}) plus ServiceEnvConflict; shared named claims preflight conflicts, rollback assignment, idempotent release restores originals; unregistered writes cannot be attributed
+  fixture_defaults: forkTimeoutMs 30000, resetTimeoutMs 5000; explicit options override PGMEM_FORK_TIMEOUT_MS/PGMEM_RESET_TIMEOUT_MS; deprecated Jest timeoutMs aliases reset only
+  guard: fixture readOnly or PGMEM_READ_ONLY guards injected URLs; Endpoint.env(names, {readOnly}) also returns PGOPTIONS for split fields
   format: implementation in index.cjs so Jest test files can require it (Jest vm has no dynamic import without experimental flags); index.js re-exports for ESM; one index.d.ts
   liveness: channel handles are referenced only while a request is pending, so the control socket never keeps a test process alive; api:control-socket closes a worker's forks when it exits
   binary: resolveBinary(option, PGMEM_BINARY, @pgmem/<platform>/bin/pgmem); scripts/build-npm.sh copies the built binaries into platforms/*/bin and packs every package (policy:binary-distribution)

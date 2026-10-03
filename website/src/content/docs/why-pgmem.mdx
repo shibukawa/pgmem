@@ -98,11 +98,12 @@ the script drops it. embedded-postgres downloads platform-specific binaries
 from Maven Central and writes them to disk, and a postmaster started by the
 Go port outlives a test process that was killed with SIGKILL.
 
-**PGlite and pgmem have nothing to install.** Both are a package that runs
-where the language runtime runs. pgmem writes nothing to disk, listens on
-`127.0.0.1` only, and the Python, Java and Node.js binaries shut down when
-the test process closes their stdin, so a crashed run cannot leave a server
-behind.
+**PGlite and pgmem need no database service installation.** Their packages run
+where the language runtime runs. pgmem keeps database files in memory and
+listens on loopback TCP by default. Unix sockets are optional and create private
+socket directories. The external binary, used by Python, Java, Node.js and
+optionally Go, shuts down when the parent closes stdin. Go subprocess users
+install that binary separately.
 
 pgmem has limits of its own, and they are the kind you hit at design time,
 not at random. It is PostgreSQL 18.3 and only that version. It has no TLS, no

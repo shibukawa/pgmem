@@ -42,7 +42,7 @@ import ModelCaseChart from '../../../components/ModelCaseChart.astro';
 		PostgreSQL 18.3 を WebAssembly にコンパイルし、Go に変換したものです。SQL の解釈もプランナの挙動もエラーコードも、エミュレータではなく PostgreSQL そのものです。
 	</Card>
 	<Card title="インストールするものがない" icon="rocket">
-		各言語で依存はひとつ。Docker デーモンも、CI 上のコンテナランタイムも要りません。ディスクにも書き込みません。
+		ライブラリと対応するプラットフォームのバイナリを導入するだけです。Docker デーモンも、CI 上のコンテナランタイムも要りません。データベースのファイルをディスクに書きません。
 	</Card>
 	<Card title="読み取りは共有、書き込みは分離" icon="random">
 		マイグレーションとシードは一度だけ。読み取り専用テストではフォークを共有し、書き込みテストには専用の複製を渡します。書き込みテスト同士も並列に走らせられます。
@@ -94,8 +94,12 @@ try (Pgmem pg = Pgmem.builder().database("app").start();
 import { PgmemServer } from '@pgmem/core';
 import pg from 'pg';
 
-await using server = await PgmemServer.start({ database: 'app' });
-const client = new pg.Client({ connectionString: server.url });
+const server = await PgmemServer.start({ database: 'app' });
+try {
+  const pool = new pg.Pool({ connectionString: server.url });
+  try { await pool.query('SELECT 1'); }
+  finally { await pool.end(); }
+} finally { await server.close(); }
 ```
 
 </TabItem>
