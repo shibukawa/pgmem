@@ -9,6 +9,100 @@ Node.js のテストランナーはテストファイルごとに新しいワー
 
 HTTP アプリを起動したまま試す場合は [API テスト](../api-testing/) と [Playwright E2E テスト](../e2e-testing/) を参照してください。
 
+[分離方式の選択](../../test-lifecycle/)と[アプリ経由のサンプル](../../application-testing/)も参照してください。
+
+## node:test ですぐに試す
+
+この global setup の例は Node.js 24 以降で使います。パッケージを追加し、次の 2 ファイルを保存して、末尾のコマンドを実行します。
+
+```sh
+npm install --save-dev @pgmem/core pg
+```
+
+```js title="test/global-setup.mjs"
+import pg from 'pg';
+import { PgmemServer } from '@pgmem/core';
+
+let server;
+export async function globalSetup() {
+    server = await PgmemServer.start({
+        async prepare({ url }) {
+            const pool = new pg.Pool({ connectionString: url });
+            try { await pool.query('CREATE TABLE orders(id int)'); }
+            finally { await pool.end(); }
+        },
+    });
+    Object.assign(process.env, server.env());
+}
+export async function globalTeardown() { await server.close(); }
+```
+
+```js title="test/orders.test.mjs"
+import { test, after } from 'node:test';
+import assert from 'node:assert/strict';
+import pg from 'pg';
+import { withTestReset } from '@pgmem/core';
+
+const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+after(() => pool.end());
+
+test('creates an order', withTestReset(async () => {
+    await pool.query('INSERT INTO orders VALUES (1)');
+    const { rows } = await pool.query('SELECT count(*)::int AS n FROM orders');
+    assert.equal(rows[0].n, 1);
+}));
+
+test('reads the prepared database', async () => {
+    const { rows } = await pool.query('SELECT count(*)::int AS n FROM orders');
+    assert.equal(rows[0].n, 0);
+});
+```
+
+```sh
+node --test --test-global-setup=./test/global-setup.mjs --import @pgmem/core/register test/*.test.mjs
+```
+
+pool はファイルごとに一度作り、書き込みテストだけリセットします。`withTestReset(fn, { snapshot, timeoutMs })` で seed 後の基準データも指定できます。テスト本体と reset が両方失敗した場合は、両方のエラーを残します。同じフォークで包んだテスト本体が重なって実行されるとエラーになります。同時に書き込むテストでは `withFork` を使い、それぞれの URL からクライアントを作ってください。
+
+## プロジェクト内で複数サービスを組み合わせる
+
+サービスのラッパーをアプリ側の helper にまとめると、各テストでは用途を一度指定するだけで済みます。
+
+```js title="test/helpers.mjs"
+import { withTestReset } from '@pgmem/core';
+
+export const writeTestBody = (fn) => withTestReset(fn);
+// When another service is available:
+// export const writeTestBody = (fn) => withValkeyTest(withTestReset(fn));
+```
+
+```js
+import { test } from 'node:test';
+import { writeTestBody } from './helpers.mjs';
+
+test('writes through the application', writeTestBody(async () => {
+    // exercise the application
+}));
+```
+
+各サービスが自身の接続先、準備、後片付けを受け持ちます。環境変数名は別々にしてください。pgmem 側は `PGMEM_ENV` または `useFork({ env: [...] })` で設定できます。アプリのクライアントを import する前に、すべての接続先を設定します。global setup で組み合わせる場合は、後続サービスの起動失敗時に、先に起動したサービスも終了させます。後片付けも、一つ失敗しただけで残りを省略しない形にしてください。
+
+Jest では既存 environment に factory で pgmem を追加できます。
+
+```js title="test/environment.cjs"
+const { TestEnvironment } = require('jest-environment-node');
+const { withPgmemEnvironment } = require('@pgmem/core/jest-environment-factory');
+
+module.exports = withPgmemEnvironment(TestEnvironment);
+// A second service can wrap this class or be passed as the base class.
+```
+
+Jest の設定に `testEnvironment: './test/environment.cjs'` を指定します。factory は基底 environment の準備と後片付けを呼び、セットアップが失敗した場合も後片付けを実行します。必要なら第 2 引数に `{ env: ['APP_DATABASE_URL'], forkTimeoutMs: 30000, resetTimeoutMs: 5000 }` を渡してください。既存の `@pgmem/core/jest-environment` は、Node 用 environment と組み合わせ済みのエントリです。
+
+Node.js のテストランナーはテストファイルごとに新しいワーカーやモジュールコンテキストで読み込みます。そして ORM のクライアントは、作られたときに一度だけ `DATABASE_URL` を読みます。pgmem は実行全体でプロセスを 1 つ起動し、テストファイルの import 前に、そのファイル用のフォークを `DATABASE_URL` として渡します。同じファイル内のテストケースはそのフォークを共有します。読み取り専用テストに追加のフォークやリセットは要りません。書き込みテストだけを追加で分離します。テストケースごとに `DATABASE_URL` を書き換えても、クライアントはもう URL を持っているので効きません。
+
+
+
 ## `shadowPg` で既存の `pg` クライアントを切り替える
 
 `shadowPg(test, 名前, コールバック)` は、`pg` の Client と Pool の新しい接続をテストごとの pgmem フォークへ向けます。アプリの接続文字列や `DATABASE_URL` は変更しません。テスト前に作った Pool や `@prisma/adapter-pg` を使う Prisma クライアントでも、次の接続から切り替わります。スキーマとシードデータは global setup で準備した snapshot からコピーします。`{ fork: false }` は読み取り専用テストに限って使ってください。
@@ -421,7 +515,7 @@ read 側のファイルからの書き込みはテンプレートに残り、そ
 
 ## フォーク数と待機
 
-`PgmemServer.start()` の `maxForks` は既定のスナップショットから作るフォーク数を制限します。既定値はメモリから決まり、サーバープロセスのメモリ上限の 4 分の 1 をフォーク 1 個のコスト（`shared_buffers` + 約 32MB）で割った値で、7GB の CI ランナーなら 28 です。`@pgmem/core/register` は各テストファイルの import 前に 1 つフォークするため、すべてのファイルが枠を使います。プールが満杯なら、ほかのファイルのフォークが閉じるまで register が待ちます。この自動待機に期限はありません。
+`PgmemServer.start()` の `maxForks` は既定のスナップショットから作るフォーク数を制限します。既定値はメモリから決まり、サーバープロセスのメモリ上限の 4 分の 1 をフォーク 1 個のコスト（`shared_buffers` + 約 32MB）で割った値で、7GB の CI ランナーなら 28 です。`@pgmem/core/register` は各テストファイルの import 前に 1 つフォークするため、すべてのファイルが枠を使います。プールが満杯なら、ほかのファイルのフォークが閉じるまで register が待ちます。自動取得の既定の期限は 30 秒で、`forkTimeoutMs` または `PGMEM_FORK_TIMEOUT_MS` で変更できます。再利用する worker の reset は別の既定値 5 秒で、`resetTimeoutMs` または `PGMEM_RESET_TIMEOUT_MS` を使います。
 
 明示的な `fork()` と `withFork()` には `timeoutMs` を指定できます。期限までに枠が空かなければ、`PgmemError` の code `pool_timeout` で失敗します。
 
@@ -444,3 +538,21 @@ await pg.withFork(async (fork) => {
 ## 安全な並列実行
 
 別ファイルのテストはランナーの別ワーカーで実行します。`@pgmem/core/register` がファイルごとにフォークを用意します。同じファイルで 1 つのフォークやアプリの Pool を共有する書き込みケースは逐次実行してください。`shadowPg` は `AsyncLocalStorage` に接続先を保持しますが、共有 Pool から取り出し中の 1 接続を同時に 2 つのフォークへ向けることはできません。ケースを並列化するなら別の Pool を作るか、別ワーカーファイルに分けます。`pgmemTest` は `process.env` を変更し、コールバックを逐次実行します。共有アプリ状態の並列化には使いません。他のケースが利用中のフォークを reset せず、ケース終了前に DB 作業を完了させてください。
+
+## サービスごとに環境変数の所有を宣言する
+
+`@pgmem/core/environment` は test runner に依存しない小さな helper で、各サービスが使えます。別サービスが同じ変数を取得しようとすると、値を変更する前に `ServiceEnvConflict` になります。直接代入するサービスは所有を識別できません。Jest の realm 内では同じ `target` と `scope` を渡してください。解放は元の値を戻し、繰り返し呼んでも安全です。
+
+```js
+import { installServiceEnv } from "@pgmem/core/environment";
+
+const releaseValkey = installServiceEnv("valkey", { VALKEY_URL: cache.url });
+const releaseSearch = installServiceEnv("opensearch", { OPENSEARCH_URL: search.url });
+// In a Jest environment:
+// installServiceEnv("valkey", values, {
+//   target: this.global.process.env, scope: this.global,
+// });
+// During teardown, attempt every release even if one throws.
+```
+
+`useFork({ readOnly: true })`、Jest の `readOnly: true`、`PGMEM_READ_ONLY=true` で、注入するファイル用 URL に永続データへの通常の書き込みを防ぐガードを付けます。クライアントを import する前に設定してください。書き込みケースには別の書き込み可能なフォークを使います。`fork.env(names, { readOnly: true })` は `PGHOST`／`PGPORT` などに分割する場合、`PGOPTIONS` も返します。

@@ -46,6 +46,30 @@ options such as `max_forks`.
 `pgmem_class_dsn` shares one fork across a test class for read-only tests.
 `pgmem_options` returns the keyword arguments passed to `pgmem.start`.
 
+Any driver works (psycopg, asyncpg, pg8000, SQLAlchemy): the wrapper only
+hands out DSNs. Each connection has its own PostgreSQL backend; pools, transactions and locks
+behave as on a server.
+
+## Select isolation without changing your application fixture
+
+Make a function-scoped application fixture depend on `pgmem_test_dsn`.
+It uses a fresh fork by default. `@pytest.mark.pgmem(fork=False)` selects
+the shared prepared template for a read-only test.
+
+Override session-scoped `pgmem_prepare` with a callback accepting the template
+server to migrate and seed once; the plugin then creates the snapshot.
+`pgmem_snapshot` remains available for custom snapshot management.
+
+For a session-scoped client, use `pgmem_shared_dsn` and mark its serial tests
+with `@pytest.mark.pgmem(isolation="reset")`. The plugin restores its shared
+fork after each marked test, including failed tests. Commit or roll back open
+transactions before reset. `Server.reset(snapshot=None, timeout=5.0)` is also
+available for manual lifecycles.
+
+`pgmem_fixture_options` configures isolation, `max_forks`, `fork_timeout`
+(default 30 seconds), `snapshot_timeout` (30 seconds) and `reset_timeout`
+(5 seconds). See the [complete pytest quickstart](../../website/src/content/docs/guides/python/testing.mdx).
+
 ### Route a test with `@shadow_pg`
 
 Prepare the schema and seeds once in `pgmem_prepare` as above. The marker
@@ -102,3 +126,22 @@ pytest-django database fixtures that manage rollback or flushing themselves.
 Platform wheels bundle the `pgmem` binary. `PGMEM_BINARY` overrides the
 lookup for platforms without a wheel or for local builds
 (`go build ./cmd/pgmem`).
+
+## Shared read guard and cleanup / 共有接続のガードと後片付け
+
+`pgmem_fixture_options` accepts `shared_read_only: True` to guard selected
+shared and class DSNs. Isolated writing forks and the stable `pgmem_shared_dsn`
+used by reset mode remain writable. `readonly_dsn(dsn)` creates a guarded URL
+explicitly. This sets a session default, which callers can deliberately disable.
+Context managers preserve a primary error and cleanup failures through
+`CleanupError.primary_error` and `.cleanup_errors` on Python 3.9+.
+
+`pgmem_fixture_options` に `shared_read_only: True` を指定すると、選択した共有 DSN
+とクラス用 DSN を保護します。独立した書き込み用フォークと reset 用の
+`pgmem_shared_dsn` は書き込み可能です。URL を自分で作る場合は `readonly_dsn(dsn)`
+を使えます。意図的に無効化できるセッションの既定値です。context manager は
+Python 3.9 以降で、元のエラーと解放時の失敗を `CleanupError.primary_error` と
+`.cleanup_errors` に残します。
+
+Runnable SQLAlchemy application / 実行可能な SQLAlchemy アプリ:
+[examples](../../examples/README.md).

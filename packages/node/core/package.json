@@ -19,7 +19,15 @@
     },
     "./register": "./register.js",
     "./jest-environment": "./jest-environment.cjs",
-    "./package.json": "./package.json"
+    "./jest-environment-factory": {
+      "types": "./jest-environment-factory.d.ts",
+      "default": "./jest-environment-factory.cjs"
+    },
+    "./package.json": "./package.json",
+    "./environment": {
+      "types": "./environment.d.ts",
+      "default": "./environment.cjs"
+    }
   },
   "files": [
     "index.js",
@@ -27,8 +35,13 @@
     "index.d.ts",
     "register.js",
     "jest-environment.cjs",
+    "jest-environment-factory.cjs",
+    "jest-environment-factory.d.ts",
     "README.md",
-    "NOTICE"
+    "NOTICE",
+    "environment.cjs",
+    "environment.d.ts",
+    "fixture-config.cjs"
   ],
   "engines": {
     "node": ">=20"

@@ -9,6 +9,100 @@ Node.js test runners load each test file in a fresh worker or module context, an
 
 For a long-lived HTTP app, see [API tests](../api-testing/) or [Playwright E2E tests](../e2e-testing/).
 
+See the [lifecycle guide](../../test-lifecycle/) and [runnable application examples](../../application-testing/).
+
+## Quickstart with node:test
+
+Use Node.js 24 or newer for this global setup example. Install the packages, save these two files, and run the command below:
+
+```sh
+npm install --save-dev @pgmem/core pg
+```
+
+```js title="test/global-setup.mjs"
+import pg from 'pg';
+import { PgmemServer } from '@pgmem/core';
+
+let server;
+export async function globalSetup() {
+    server = await PgmemServer.start({
+        async prepare({ url }) {
+            const pool = new pg.Pool({ connectionString: url });
+            try { await pool.query('CREATE TABLE orders(id int)'); }
+            finally { await pool.end(); }
+        },
+    });
+    Object.assign(process.env, server.env());
+}
+export async function globalTeardown() { await server.close(); }
+```
+
+```js title="test/orders.test.mjs"
+import { test, after } from 'node:test';
+import assert from 'node:assert/strict';
+import pg from 'pg';
+import { withTestReset } from '@pgmem/core';
+
+const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+after(() => pool.end());
+
+test('creates an order', withTestReset(async () => {
+    await pool.query('INSERT INTO orders VALUES (1)');
+    const { rows } = await pool.query('SELECT count(*)::int AS n FROM orders');
+    assert.equal(rows[0].n, 1);
+}));
+
+test('reads the prepared database', async () => {
+    const { rows } = await pool.query('SELECT count(*)::int AS n FROM orders');
+    assert.equal(rows[0].n, 0);
+});
+```
+
+```sh
+node --test --test-global-setup=./test/global-setup.mjs --import @pgmem/core/register test/*.test.mjs
+```
+
+The pool is built once per file. Only the writing test pays a reset. `withTestReset(fn, { snapshot, timeoutMs })` can restore a seeded baseline; it preserves both errors if the callback and reset fail. Overlapping wrapped callbacks on one fork are rejected. Concurrent writing tests need `withFork` and clients built from their own URLs.
+
+## Compose services in your project
+
+Keep service wrappers in one application-owned helper, so each test names its intent once:
+
+```js title="test/helpers.mjs"
+import { withTestReset } from '@pgmem/core';
+
+export const writeTestBody = (fn) => withTestReset(fn);
+// When another service is available:
+// export const writeTestBody = (fn) => withValkeyTest(withTestReset(fn));
+```
+
+```js
+import { test } from 'node:test';
+import { writeTestBody } from './helpers.mjs';
+
+test('writes through the application', writeTestBody(async () => {
+    // exercise the application
+}));
+```
+
+Each service owns its endpoint, setup and cleanup. Use distinct environment variable names; `PGMEM_ENV` or `useFork({ env: [...] })` controls pgmem's names. Set all service endpoints before importing application clients. A combined global setup should close previously started services if a later service fails, and run all cleanup functions even if one fails.
+
+For Jest, keep an existing environment and add pgmem with a factory:
+
+```js title="test/environment.cjs"
+const { TestEnvironment } = require('jest-environment-node');
+const { withPgmemEnvironment } = require('@pgmem/core/jest-environment-factory');
+
+module.exports = withPgmemEnvironment(TestEnvironment);
+// A second service can wrap this class or be passed as the base class.
+```
+
+Set `testEnvironment: './test/environment.cjs'` in Jest config. The factory calls the base environment's setup and cleanup; it also cleans up on setup failure. Pass `{ env: ['APP_DATABASE_URL'], forkTimeoutMs: 30000, resetTimeoutMs: 5000 }` as its second argument when needed. The existing `@pgmem/core/jest-environment` entry remains the ready-made Node environment.
+
+Node.js test runners load each test file in a fresh worker or module context, and an ORM client reads `DATABASE_URL` once, when it is created. pgmem starts one process per run and gives each file one fork before its imports; test cases in the file share that fork. Read-only cases need no extra fork or reset. Add that isolation only around cases that write. Changing `DATABASE_URL` per test case would not help, because the client already holds the URL.
+
+
+
 ## Route existing `pg` clients with `shadowPg`
 
 `shadowPg(test, name, callback)` redirects `pg` Client and Pool connections to a fresh pgmem fork for each case. The application's connection string and `DATABASE_URL` stay unchanged. A pool or Prisma client using `@prisma/adapter-pg` can be constructed before the test; its next connection is routed to the active fork. The prepared snapshot still comes from global setup. Use `{ fork: false }` only for read-only tests.
@@ -421,7 +515,7 @@ A write from a file in the read project stays in the template and is visible to 
 
 ## Fork capacity and waiting
 
-`maxForks` on `PgmemServer.start()` caps the default snapshot's live forks; the default comes from memory: a quarter of the server process's memory limit divided by a fork's cost (`shared_buffers` plus about 32 MB), 28 on a 7 GB CI runner. Every registered test file takes a slot because `@pgmem/core/register` creates one fork before import. If the pool is full, registration waits until another file's fork closes. That automatic wait has no deadline.
+`maxForks` on `PgmemServer.start()` caps the default snapshot's live forks; the default comes from memory: a quarter of the server process's memory limit divided by a fork's cost (`shared_buffers` plus about 32 MB), 28 on a 7 GB CI runner. Every registered test file takes a slot because `@pgmem/core/register` creates one fork before import. If the pool is full, registration waits until another file's fork closes. Automatic acquisition has a 30 second default, configured by `forkTimeoutMs` or `PGMEM_FORK_TIMEOUT_MS`. Reused worker resets have a separate 5 second default, configured by `resetTimeoutMs` or `PGMEM_RESET_TIMEOUT_MS`.
 
 Explicit `fork()` and `withFork()` calls accept `timeoutMs`; if the slot does not open in time, they fail with `PgmemError` code `pool_timeout`.
 
@@ -444,3 +538,21 @@ Each fork adds a separate data-directory copy and buffer cache. See [limits](../
 ## Safe parallel execution
 
 Run separate test files in separate runner workers; `@pgmem/core/register` gives each file its own fork. Within one file, writing cases that use its shared fork or one application Pool must run sequentially. `shadowPg` keeps a target in `AsyncLocalStorage`, but it cannot make an already checked-out connection from a shared Pool serve two forks at once; give concurrent cases separate application Pool instances, or move them to separate worker files. `pgmemTest` changes `process.env` and serializes its callbacks, so do not use it as a way to make shared application state concurrent. Never reset a fork while another case is using it; finish and close database work before case teardown.
+
+## Declare service environment ownership
+
+Every service can use `@pgmem/core/environment`, which is a small helper independent of test runners. A second service claiming the same variable fails with `ServiceEnvConflict` before any values change. Services using direct assignments cannot be identified by the registry. Use the same `target` and `scope` in a Jest realm. Release restores prior values and is idempotent.
+
+```js
+import { installServiceEnv } from "@pgmem/core/environment";
+
+const releaseValkey = installServiceEnv("valkey", { VALKEY_URL: cache.url });
+const releaseSearch = installServiceEnv("opensearch", { OPENSEARCH_URL: search.url });
+// In a Jest environment:
+// installServiceEnv("valkey", values, {
+//   target: this.global.process.env, scope: this.global,
+// });
+// During teardown, attempt every release even if one throws.
+```
+
+`useFork({ readOnly: true })`, Jest `readOnly: true`, or `PGMEM_READ_ONLY=true` guards the injected file URL against ordinary persistent writes. Enable it before importing clients. Use a separate writable fork for writing cases. `fork.env(names, { readOnly: true })` also includes `PGOPTIONS` when using split `PGHOST`/`PGPORT` fields.

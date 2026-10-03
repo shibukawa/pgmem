@@ -13,11 +13,28 @@ pgmem for the JVM has a core client (`io.github.shibukawa.pgmem:pgmem`), testing
 <TabItem label="Gradle (Kotlin DSL)">
 
 ```kotlin title="build.gradle.kts"
+val pgmemOs = System.getProperty("os.name").lowercase()
+val pgmemArch = System.getProperty("os.arch").lowercase()
+val pgmemPlatform = when {
+    pgmemOs.contains("mac") || pgmemOs.contains("darwin") -> "darwin"
+    pgmemOs.contains("win") -> "windows"
+    pgmemOs.contains("linux") -> "linux"
+    else -> error("Unsupported OS: $pgmemOs; use PGMEM_BINARY")
+}
+val pgmemCpu = when (pgmemArch) {
+    "amd64", "x86_64" -> "x86_64"
+    "aarch64", "arm64" -> "arm64"
+    else -> error("Unsupported architecture: $pgmemArch; use PGMEM_BINARY")
+}
+val pgmemNative = "$pgmemPlatform-$pgmemCpu"
+
 dependencies {
     testImplementation("io.github.shibukawa.pgmem:pgmem-junit5:1.18.0")          // pulls in io.github.shibukawa.pgmem:pgmem
-    testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:1.18.0:darwin-arm64") // the binary for your platform
+    testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:1.18.0:$pgmemNative") // the binary for your platform
     testRuntimeOnly("org.postgresql:postgresql:42.7.7")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
+    testImplementation(platform("org.junit:junit-bom:5.14.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.test {
@@ -29,11 +46,22 @@ tasks.test {
 <TabItem label="Gradle (Groovy DSL)">
 
 ```groovy title="build.gradle"
+def pgmemOs = System.getProperty('os.name').toLowerCase()
+def pgmemArch = System.getProperty('os.arch').toLowerCase()
+def pgmemPlatform = pgmemOs.contains('mac') || pgmemOs.contains('darwin') ? 'darwin' :
+    pgmemOs.contains('win') ? 'windows' : pgmemOs.contains('linux') ? 'linux' : null
+def pgmemCpu = ['amd64', 'x86_64'].contains(pgmemArch) ? 'x86_64' :
+    ['aarch64', 'arm64'].contains(pgmemArch) ? 'arm64' : null
+if (!pgmemPlatform || !pgmemCpu) throw new GradleException('Unsupported host; use PGMEM_BINARY')
+def pgmemNative = "${pgmemPlatform}-${pgmemCpu}"
+
 dependencies {
     testImplementation 'io.github.shibukawa.pgmem:pgmem-junit5:1.18.0'           // pulls in io.github.shibukawa.pgmem:pgmem
-    testRuntimeOnly 'io.github.shibukawa.pgmem:pgmem-native:1.18.0:darwin-arm64' // the binary for your platform
+    testRuntimeOnly "io.github.shibukawa.pgmem:pgmem-native:1.18.0:${pgmemNative}" // the binary for your platform
     testRuntimeOnly 'org.postgresql:postgresql:42.7.7'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
+    testImplementation platform('org.junit:junit-bom:5.14.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {
@@ -56,13 +84,19 @@ test {
     <groupId>io.github.shibukawa.pgmem</groupId>
     <artifactId>pgmem-native</artifactId>
     <version>1.18.0</version>
-    <classifier>darwin-arm64</classifier>
+    <classifier>${pgmem.native.classifier}</classifier>
     <scope>test</scope>
   </dependency>
   <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
     <version>42.7.7</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.14.0</version>
     <scope>test</scope>
   </dependency>
 </dependencies>
@@ -72,6 +106,90 @@ test {
 </Tabs>
 
 The classifiers are `linux-x86_64`, `linux-arm64`, `darwin-arm64`, `windows-x86_64` and `windows-arm64`. When a build runs on several platforms, pick one per platform with Maven profiles or a Gradle OS detection plugin rather than depending on all five. The binary is extracted once into `~/.cache/pgmem/<version>/`. Java 17 or newer.
+
+
+
+The Gradle examples select the classifier from the build host. With Maven, pass it explicitly, for example `mvn -Dpgmem.native.classifier=linux-x86_64 test`, or add the profiles below to select it automatically on multiple hosts. Intel Macs have no native artifact; omit the native dependency and use a local build through `PGMEM_BINARY`.
+
+If the existing Maven build does not already run JUnit 5 tests, add this build configuration as well.
+
+```xml
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.14.0</version>
+      <configuration><release>17</release></configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.5.4</version>
+    </plugin>
+  </plugins>
+</build>
+```
+
+<details>
+<summary>Maven profiles</summary>
+
+```xml
+<profiles>
+  <profile>
+    <id>pgmem-linux-amd64</id>
+    <activation><os><name>Linux</name><arch>amd64</arch></os></activation>
+    <properties><pgmem.native.classifier>linux-x86_64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-linux-x86_64</id>
+    <activation><os><name>Linux</name><arch>x86_64</arch></os></activation>
+    <properties><pgmem.native.classifier>linux-x86_64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-linux-aarch64</id>
+    <activation><os><name>Linux</name><arch>aarch64</arch></os></activation>
+    <properties><pgmem.native.classifier>linux-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-linux-arm64</id>
+    <activation><os><name>Linux</name><arch>arm64</arch></os></activation>
+    <properties><pgmem.native.classifier>linux-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-darwin-aarch64</id>
+    <activation><os><family>mac</family><arch>aarch64</arch></os></activation>
+    <properties><pgmem.native.classifier>darwin-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-darwin-arm64</id>
+    <activation><os><family>mac</family><arch>arm64</arch></os></activation>
+    <properties><pgmem.native.classifier>darwin-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-windows-amd64</id>
+    <activation><os><family>windows</family><arch>amd64</arch></os></activation>
+    <properties><pgmem.native.classifier>windows-x86_64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-windows-x86_64</id>
+    <activation><os><family>windows</family><arch>x86_64</arch></os></activation>
+    <properties><pgmem.native.classifier>windows-x86_64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-windows-aarch64</id>
+    <activation><os><family>windows</family><arch>aarch64</arch></os></activation>
+    <properties><pgmem.native.classifier>windows-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-windows-arm64</id>
+    <activation><os><family>windows</family><arch>arm64</arch></os></activation>
+    <properties><pgmem.native.classifier>windows-arm64</pgmem.native.classifier></properties>
+  </profile>
+</profiles>
+```
+
+</details>
 
 ## The basic flow
 

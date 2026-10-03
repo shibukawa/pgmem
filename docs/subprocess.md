@@ -22,7 +22,7 @@ Ready-made wrappers live in this repository:
 
 ```
 pgmem [-port N] [-database NAME] [-user NAME] [-params k=v,k=v] [-log] [-no-stdin]
-      [-control ADDR]
+      [-control ADDR] [-socket-dir DIR]
 ```
 
 Build it with `go build -ldflags="-s -w" ./cmd/pgmem` (about 37 MB, pure
@@ -40,10 +40,18 @@ Behaviour that a wrapper can rely on:
    "host":"127.0.0.1","port":54321,"user":"postgres","database":"app","dsn":"postgres://postgres@127.0.0.1:54321/app?sslmode=disable"}
   ```
 
-- Every server listens on `127.0.0.1` only (TCP; a free port unless
+- By default every server listens on `127.0.0.1` only (TCP; a free port unless
   `-port` is given for the template). Loopback TCP is the portable choice:
   JDBC has no built-in Unix domain socket support and Windows drivers
   differ.
+- `-socket-dir DIR` explicitly selects Unix sockets instead of TCP. Each
+  template and fork creates a private child directory with `.s.PGSQL.5432`;
+  `host` is that directory and the DSN carries it as a `host` query parameter.
+  Drivers supporting Unix sockets can use the DSN directly. Normal close
+  removes the owned socket and directory; reset preserves the endpoint.
+  This uses AF_UNIX stream sockets, supported on modern Windows too; an
+  unsupported host fails at listen time. No datagram support is required. Keep the parent path short (the complete socket
+  path must fit 103 bytes). No database files are written there.
 - It exits when its **stdin is closed** or on SIGINT/SIGTERM, closing
   every fork with it. Closing stdin is the mechanism that works on every
   platform and also ends the server when the parent process dies without
@@ -94,7 +102,7 @@ reader thread that dispatches responses by id.
 
 | op | fields | result |
 |---|---|---|
-| `snapshot` | `server` (default `template`), `max_forks` (0 = CPUs), `timeout_ms` | `snapshot` id. Waits for open transactions to end; commit or close every connection first. `busy` after the timeout. |
+| `snapshot` | `server` (default `template`), `max_forks` (0 = memory-derived default), `timeout_ms` | `snapshot` id. Waits for open transactions to end; commit or close every connection first. `busy` after the timeout. |
 | `fork` | `snapshot`, `timeout_ms` | `server` endpoint of a new server on a copy of the snapshot. Blocks while `max_forks` forks are alive; `pool_timeout` after the timeout. |
 | `close` | `server` or `snapshot` | Stops a fork or template, or rejects further forks from a snapshot. Idempotent. |
 | `reset` | `server`, `snapshot` (optional), `timeout_ms` | Puts a server back to a snapshot in place: a fork's own snapshot by default, the named one otherwise (a template needs it). The port and client connections survive; pooled connections keep their named prepared statements and LISTEN registrations. `busy` after the timeout. |

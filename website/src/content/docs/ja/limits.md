@@ -44,6 +44,8 @@ PostgreSQL は本番のサーバーと同じ形で動きます。postmaster が�
 
 JUnit 拡張で設定した上限は、登録したテンプレートごとに適用されます。スナップショットの `close()` は新しいフォークを拒否しますが、稼働中のフォークは止めません。Go の `Snapshot.Wait()` は、フォークがすべて閉じるまで待ちます。
 
+自動取得する fixture は個別の既定値を持ちます。Go と Python は 30 秒、Node の register／useFork／Jest も 30 秒です。Java JUnit は `.forkTimeout(Duration)` を指定しないと無期限です。各設定は[分離方式のガイド](../guides/test-lifecycle/)を参照してください。
+
 ## タイムアウトは待ちの種類ごとに異なる
 
 フォーク枠を待つ時間は、スナップショット作成やサーバー起動を待つ時間を制限しません。それぞれ別の設定です。
@@ -52,8 +54,8 @@ JUnit 拡張で設定した上限は、登録したテンプレートごとに�
 |---|---|---|
 | スナップショット作成時に、開いているトランザクションが終わるのを待つ | Go: `Snapshot` の context。Python: `server.snapshot(timeout=30.0)`。Java: `Server.snapshot(maxForks, timeout)`（既定 30 秒）。Node.js: `snapshotTimeoutMs`（既定 30,000 ms）。 | `busy` で失敗します。テンプレートへの接続をコミットするか閉じてください。 |
 | サーバープロセスの起動を待つ | Python: `pgmem.start(timeout=30)`。Java: `.readyTimeout(Duration)`（既定 30 秒）。Node.js: `startupTimeoutMs`（既定 30,000 ms）。Go: `Start` の context。 | 期限内にサーバーが ready にならなければ起動に失敗します。 |
-| フォークをスナップショットへ戻す | Go: `Server.Reset(ctx)` または `Restore(ctx)`。Node.js: `fork.reset({ timeoutMs })`（既定 5,000 ms）。 | 開いたトランザクションが終わらなければ `busy` で失敗します。 |
+| フォークをスナップショットへ戻す | Go: `Server.Reset(ctx)` または `Restore(ctx)`。Python: `server.reset(timeout=5.0)`。Java: `server.reset()`（5 秒）。Node.js: `fork.reset({ timeoutMs })`（既定 5,000 ms）。 | 開いたトランザクションが終わらなければ `busy` で失敗します。 |
 
 ## セキュリティ
 
-TLS もパスワード認証もありません。サーバーは `127.0.0.1` だけで待ち受け、URL には `sslmode=disable` が付きます。ICU の照合順序は使えません。
+TLS もパスワード認証もありません。TCP は `127.0.0.1` だけで待ち受け、URL には `sslmode=disable` が付きます。明示的な Unix socket モードでは、専用のローカル socket ディレクトリを使います。ICU の照合順序は使えません。

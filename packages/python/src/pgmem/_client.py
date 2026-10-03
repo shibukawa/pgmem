@@ -5,6 +5,7 @@ import os
 import subprocess
 import sys
 import threading
+from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 from typing import Dict, List, Optional
 
 from ._binary import find_binary
@@ -14,6 +15,32 @@ PROTOCOL = 1
 
 class PgmemError(Exception):
     """Base class for pgmem errors."""
+
+
+class CleanupError(PgmemError):
+    """An original failure and cleanup failures, preserved on Python 3.9+."""
+
+    def __init__(self, primary_error, cleanup_errors):
+        self.primary_error = primary_error
+        self.cleanup_errors = tuple(cleanup_errors)
+        super().__init__(f"{primary_error}; cleanup also failed: " + "; ".join(str(e) for e in cleanup_errors))
+
+
+def readonly_dsn(dsn):
+    """Guard new connections against accidental writes; not a privilege boundary."""
+    parts = urlsplit(dsn)
+    query = dict(parse_qsl(parts.query, keep_blank_values=True))
+    query["options"] = (query.get("options", "") + " -c default_transaction_read_only=on").strip()
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query, quote_via=quote), parts.fragment))
+
+
+def _close_preserving_failure(resource, primary):
+    try:
+        resource.close()
+    except Exception as cleanup:
+        if primary is not None:
+            raise CleanupError(primary, [cleanup]) from primary
+        raise
 
 
 class ProtocolError(PgmemError):
@@ -69,27 +96,23 @@ class Pgmem:
         if self._closed:
             return
         self._closed = True
+        # EOF starts shutdown without waiting on another control response.
         try:
-            if not self._exited:
-                self._request("shutdown")
-        except PgmemError:
+            self._proc.stdin.close()
+        except OSError:
             pass
-        finally:
-            try:
-                self._proc.stdin.close()
-            except OSError:
-                pass
-            try:
-                self._proc.wait(timeout=10)
-            except subprocess.TimeoutExpired:
-                self._proc.kill()
-                self._proc.wait()
+        try:
+            self._proc.wait(timeout=10)
+        except subprocess.TimeoutExpired:
+            self._proc.kill()
+            self._proc.wait()
+            raise PgmemError("pgmem did not exit within 10 seconds; the child was killed")
 
     def __enter__(self):
         return self
 
-    def __exit__(self, *exc):
-        self.close()
+    def __exit__(self, exc_type, exc, traceback):
+        _close_preserving_failure(self, exc)
 
     # -- protocol ----------------------------------------------------------
 
@@ -199,11 +222,26 @@ class Server:
         self._closed = True
         self._pg._request("close", server=self.id)
 
+    def reset(self, snapshot=None, timeout=5.0):
+        """Restore in place, keeping the endpoint and client sockets.
+
+        Forks default to their original snapshot. Templates require a snapshot.
+        Commit or roll back active transactions before resetting.
+        """
+        fields = {"server": self.id}
+        if snapshot is not None:
+            if snapshot._pg is not self._pg:
+                raise ValueError("snapshot belongs to another pgmem process")
+            fields["snapshot"] = snapshot.id
+        if timeout is not None:
+            fields["timeout_ms"] = int(timeout * 1000)
+        self._pg._request("reset", **fields)
+
     def __enter__(self):
         return self
 
-    def __exit__(self, *exc):
-        self.close()
+    def __exit__(self, exc_type, exc, traceback):
+        _close_preserving_failure(self, exc)
 
     def __repr__(self):
         return f"<pgmem.{type(self).__name__} {self.id} {self.dsn}>"
@@ -243,8 +281,8 @@ class Snapshot:
     def __enter__(self):
         return self
 
-    def __exit__(self, *exc):
-        self.close()
+    def __exit__(self, exc_type, exc, traceback):
+        _close_preserving_failure(self, exc)
 
 
 def start(database="postgres", user="postgres", params: Optional[List[str]] = None,

@@ -31,13 +31,14 @@ import (
 
 func main() {
 	var (
-		port     = flag.Int("port", 0, "TCP port on 127.0.0.1 for the template server (0 = pick a free one)")
-		database = flag.String("database", "postgres", "database to create and expose")
-		user     = flag.String("user", "postgres", "superuser name")
-		params   = flag.String("params", "", "extra postgres -c settings, comma separated (e.g. shared_buffers=32MB,log_statement=all)")
-		verbose  = flag.Bool("log", false, "print the server log to stderr")
-		noStdin  = flag.Bool("no-stdin", false, "do not read control requests from stdin and do not exit when it is closed")
-		control  = flag.String("control", "", "also serve the control protocol on this loopback address (e.g. 127.0.0.1:0) for other processes")
+		port      = flag.Int("port", 0, "template TCP port (0 = free) or Unix socket identifier (0 = 5432)")
+		database  = flag.String("database", "postgres", "database to create and expose")
+		user      = flag.String("user", "postgres", "superuser name")
+		params    = flag.String("params", "", "extra postgres -c settings, comma separated (e.g. shared_buffers=32MB,log_statement=all)")
+		verbose   = flag.Bool("log", false, "print the server log to stderr")
+		noStdin   = flag.Bool("no-stdin", false, "do not read control requests from stdin and do not exit when it is closed")
+		control   = flag.String("control", "", "also serve the control protocol on this loopback address (e.g. 127.0.0.1:0) for other processes")
+		socketDir = flag.String("socket-dir", "", "parent directory for private PostgreSQL Unix sockets instead of TCP")
 	)
 	// accepted for wrappers that still pass it: connections no longer share
 	// a session, so there is no wait to bound
@@ -45,6 +46,7 @@ func main() {
 	flag.Parse()
 
 	base := pgmem.Options{}
+	base.SocketDir = *socketDir
 	for _, p := range strings.Split(*params, ",") {
 		if p = strings.TrimSpace(p); p != "" {
 			base.Params = append(base.Params, "-c", p)

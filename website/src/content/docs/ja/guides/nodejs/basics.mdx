@@ -5,6 +5,8 @@ description: "@pgmem/core を PostgreSQL クライアントと一緒にインス
 
 import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 
+既存のテストに導入する場合は、[実行できる quickstart](../testing/)から始められます。
+
 `@pgmem/core` は pgmem バイナリを起動し、PostgreSQL の URL を渡してくれます。バイナリは npm がオプション依存としてインストールするプラットフォーム別パッケージに入っています。postinstall スクリプトはなく、実行時のダウンロードもありません。pgmem は PostgreSQL クライアントや ORM を置き換えるものではありません。Prisma、Drizzle、TypeORM、Kysely、`pg`、`postgres` は、ほかのサーバーと同じように URL へ接続するだけで、プールもそのまま使えます。
 
 ## インストール
@@ -53,7 +55,7 @@ bun add --dev @pgmem/core pg
    ```ts
    import { PgmemServer } from '@pgmem/core';
 
-   await using server = await PgmemServer.start({
+   const server = await PgmemServer.start({
      database: 'app',
      async prepare({ url }) {
        await migrate(url);
@@ -64,7 +66,7 @@ bun add --dev @pgmem/core pg
    console.log(server.url); // postgres://postgres@127.0.0.1:54321/app?sslmode=disable
    ```
 
-   `await using` はスコープの終わりでサーバーを閉じます。明示的なリソース管理が使えない環境では `server.close()` を自分で呼んでください。ほかのオプションは `user`、`params`（`{ log_statement: 'all' }` のような postgres の設定のオブジェクト）、`maxForks`、`waitTimeoutMs`、`log`、`binary` です。
+   クライアントを閉じた後に `await server.close()` を呼びます。スクリプトでは `finally` を使ってください。明示的なリソース管理が使える環境では `await using` も選べます。ほかのオプションは `user`、`params`（`{ log_statement: 'all' }` のような postgres の設定のオブジェクト）、`maxForks`、`startupTimeoutMs`、`snapshotTimeoutMs`、`log`、`binary` です。
 
 2. **スキーマを登録します。** `prepare` の中で行います。`prepare` にはテンプレートのサーバー（`url`、`host`、`port`、`user`、`database`）が渡されます。[マイグレーションツール](#マイグレーションツール)を参照してください。
 
@@ -266,16 +268,11 @@ await db.$client.end();
 ## フォークを直接使う
 
 ```ts
-await using fork = await server.fork();   // 準備済みデータベースの専用の複製
-await useDatabase(fork.url);
-
-// pgmem に閉じてもらう書き方
 await server.withFork(async (fork) => {
-  await useDatabase(fork.url);
+  console.log(fork.url);
+  // Create and close the application's clients inside this callback.
 });
-
-// URL を変えずにフォークをスナップショットの状態に戻す
-await fork.reset();
 ```
+
 
 生きているフォークが `maxForks` 個あると、次のフォークは空きが出るまで待ちます。フォークを閉じても、アイドル状態のプール接続はプールに任されます。`error` リスナーのないプールでもプロセスが落ちることはありません。[次のページ](../testing/)では、テストランナーからの使い方を紹介します。

@@ -50,7 +50,7 @@ The suite, the harness and every node's timing are described on the
 		PostgreSQL 18.3 compiled to WebAssembly and translated to Go. Your SQL, planner behaviour and error codes are PostgreSQL's, not an emulator's.
 	</Card>
 	<Card title="Nothing to install" icon="rocket">
-		One dependency per language. No Docker daemon, no container runtime on CI, no files written to disk.
+		Install the library and its platform binary. No Docker daemon, no container runtime on CI, no database files written to disk.
 	</Card>
 	<Card title="Share reads, isolate writes" icon="random">
 		Run migrations and seed data once, then share a fork across read-only tests and give writing tests isolated copies. Writing tests can run in parallel.
@@ -102,8 +102,12 @@ try (Pgmem pg = Pgmem.builder().database("app").start();
 import { PgmemServer } from '@pgmem/core';
 import pg from 'pg';
 
-await using server = await PgmemServer.start({ database: 'app' });
-const client = new pg.Client({ connectionString: server.url });
+const server = await PgmemServer.start({ database: 'app' });
+try {
+  const pool = new pg.Pool({ connectionString: server.url });
+  try { await pool.query('SELECT 1'); }
+  finally { await pool.end(); }
+} finally { await server.close(); }
 ```
 
 </TabItem>

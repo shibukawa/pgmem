@@ -97,3 +97,37 @@ they wait for open transactions and fail with code `busy` after their timeout.
 `./gradlew build` compiles the Go binary for the host (`-Pgoos=linux
 -Pgoarch=amd64` cross-compiles) into `pgmem-native`, and runs the tests
 against it. Java 17 or newer.
+
+## One database object per test
+
+JUnit methods can inject `TestDatabase` from `io.github.shibukawa.pgmem.junit5`.
+Its `dataSource()`, `jdbcUrl()`, `dsn()` and `fork()` refer to the same fork;
+other pgmem parameters with the same template and scope share it. The extension
+owns fork cleanup. `@PgmemFork(scope = ForkScope.CLASS)` shares it for read-only
+classes. `TestDatabase.reset()` or `Server.reset(snapshot, timeout)` restores it
+in place after active transactions end. Application pools should close before
+their owning fork.
+
+The [testing quickstart](../../website/src/content/docs/guides/java/testing.mdx)
+is a complete JUnit example. The [dependency guide](../../website/src/content/docs/guides/java/basics.mdx)
+includes Gradle host detection and Maven platform profiles for local/CI builds.
+
+## Shared read guard and cleanup / 共有接続のガードと後片付け
+
+`.sharedReadOnly(true)` guards CLASS-scoped `TestDatabase`, `DataSource` and
+JDBC URL injection. METHOD scope remains writable; raw `Fork` access bypasses
+the guard. Core `dsn(true)`, `jdbcUrl(true)` and `dataSource(true)` also expose
+guarded connection views. The setting is a session default that callers can
+change. Cleanup attempts all owned forks and the process, retaining test and
+cleanup failures as suppressed exceptions. Configure `.forkTimeout(Duration)`
+to bound automatic acquisition; it is unbounded by default.
+
+`.sharedReadOnly(true)` は CLASS スコープの `TestDatabase`、`DataSource`、JDBC URL
+注入を保護します。METHOD スコープと生の `Fork` は書き込み可能です。core の
+`dsn(true)`、`jdbcUrl(true)`、`dataSource(true)` でもガード付きの接続先を取得できます。
+呼び出し側が変更可能なセッションの既定値です。後片付けは管理するすべての
+フォークとプロセスの解放を試み、テストと解放の失敗を suppressed exception に
+残します。自動取得の期限は `.forkTimeout(Duration)` で指定します。既定は無期限です。
+
+Runnable DataSource application / 実行可能な DataSource アプリ:
+[examples](../../examples/README.md).

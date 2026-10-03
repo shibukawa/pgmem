@@ -1,6 +1,8 @@
 package io.github.shibukawa.pgmem;
 
 import java.util.Map;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 /** Where one server inside the pgmem process listens. */
 public final class Endpoint {
@@ -28,6 +30,17 @@ public final class Endpoint {
 
     /** libpq-style URL, e.g. {@code postgres://postgres@127.0.0.1:5432/app?sslmode=disable}. */
     public String dsn() { return dsn; }
+
+    /** A connection guard against accidental persistent writes, not a privilege boundary. */
+    public String dsn(boolean readOnly) { return guard(dsn(), readOnly); }
+
+    public String jdbcUrl(boolean readOnly) { return guard(jdbcUrl(), readOnly); }
+
+    private static String guard(String url, boolean readOnly) {
+        if (!readOnly) return url;
+        return url + (url.contains("?") ? "&" : "?") + "options="
+                + URLEncoder.encode("-c default_transaction_read_only=on", StandardCharsets.UTF_8).replace("+", "%20");
+    }
 
     /** pgjdbc URL with user and sslmode already set. */
     public String jdbcUrl() {

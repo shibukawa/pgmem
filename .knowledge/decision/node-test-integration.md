@@ -15,7 +15,7 @@ decision:
     test: fork.reset() in beforeEach keeps URL and pools; withFork(fn) hands a separate URL to code that accepts one
     api: one registered file fork and long-lived app/pool; sequential cases reset the same fork before requests
     e2e: Playwright worker fixture starts pgmem server, fork and app child with fork URL; automatic test fixture resets before each browser case
-  composition: constructors plus close, never own the runner or its globalSetup, so pgmem sits next to osmem in one setup file; pgmem exec only as a fallback for runners without a global setup
+  composition: requirement:node-test-composition; constructors plus close, never own the runner or its globalSetup, so pgmem sits next to other services in one setup file; pgmem exec only as a fallback for runners without a global setup
   api_shape: mirrors @osmem/core (start, withClone, close) with pgmem's fork vocabulary
   rejected:
     env_per_test_case: rewriting process.env after import does not reach built clients (verified Node 26.8); vi.resetModules plus re-import is slow and breaks concurrent tests

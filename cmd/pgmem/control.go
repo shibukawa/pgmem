@@ -36,7 +36,7 @@ type endpoint struct {
 }
 
 func newEndpoint(id string, s *pgmem.Server, user, database string) endpoint {
-	return endpoint{ID: id, Host: "127.0.0.1", Port: s.Port(), User: user, Database: database, DSN: s.DSN()}
+	return endpoint{ID: id, Host: s.Host(), Port: s.Port(), User: user, Database: database, DSN: s.DSN()}
 }
 
 // request is one line from a client. Fields not used by an op are ignored.
@@ -430,7 +430,7 @@ func (c *controller) opFork(cl *client, req request) (map[string]any, error) {
 	s, err := sn.snap.Fork(ctx)
 	if err != nil {
 		if errors.Is(err, context.DeadlineExceeded) {
-			return nil, perr("pool_timeout", "no fork slot became free within %dms", req.Timeout)
+			return nil, perr("pool_timeout", "no fork slot became free within %dms (limit %d); close unused forks or raise max_forks", req.Timeout, sn.snap.MaxForks())
 		}
 		if strings.Contains(err.Error(), "snapshot is closed") {
 			return nil, perr("snapshot_closed", "snapshot %q is closed", req.Snapshot)

@@ -40,7 +40,8 @@ func TestMain(m *testing.M) {
 
 func TestOrders(t *testing.T) {
     t.Parallel()
-    db := fx.DB(t) // fresh copy of the prepared database, closed when t ends
+    testDB := fx.For(t) // one fresh copy, closed when t ends
+    db := testDB.DB() // testDB.DSN() and testDB.PgxPool() use the same copy
     // fx.PgxConn(t), fx.PgxPool(t), fx.DSN(t) and fx.Fork(t) also exist
 }
 ```
@@ -86,6 +87,19 @@ Reference measurements and their conditions are in
 [docs/benchmarks.md](docs/benchmarks.md).
 
 Every server has its own filesystem and its own database state.
+
+## Go with an external process
+
+Use `github.com/shibukawa/pgmem/pgmemprocess` to own a `pgmem` subprocess and
+connect over TCP or Unix domain sockets. This package and `pgmemfixture` do not
+import the embedded PostgreSQL engine. `pgmemprocess.Run` prepares one snapshot,
+and `fx.For(t)` returns the same test database object used by embedded helpers.
+
+Install `cmd/pgmem` once, then select `Transport: "tcp"` or `"unix"`. Binary
+lookup is explicit `Binary`, `PGMEM_BINARY`, then `pgmem` on `PATH`; it never
+downloads a binary at run time. Unix mode creates private socket directories,
+removed at normal shutdown, while database files stay in memory. See the
+[Go subprocess guide](pgmemprocess/README.md) for a complete test.
 
 ## From other languages
 

@@ -19,6 +19,9 @@ import (
 	"fmt"
 	"io"
 	"net"
+	"net/url"
+	"os"
+	"path/filepath"
 	"runtime/debug"
 	"strconv"
 	"strings"
@@ -55,8 +58,13 @@ type Options struct {
 	// CREATE DATABASE).
 	Database string
 	User     string
-	// Port to listen on (0 = pick a free port). Always binds 127.0.0.1.
+	// TCP port to listen on (0 = pick a free port), or Unix socket identifier
+	// (0 = 5432). TCP always binds 127.0.0.1.
 	Port int
+	// SocketDir selects Unix domain sockets instead of TCP. Each server
+	// creates a private subdirectory here and removes it on Close.
+	// Empty selects TCP. Requires OS support for AF_UNIX stream sockets.
+	SocketDir string
 	// Params are extra "postgres" command-line arguments, e.g.
 	// []string{"-c", "log_statement=all"}. Unless it sets shared_buffers,
 	// pgmem uses 32MB instead of initdb's 128MB: a test database does not
@@ -69,10 +77,11 @@ type Options struct {
 
 // Server is a running in-memory PostgreSQL.
 type Server struct {
-	opts Options
-	e    *engine.Engine
-	ln   net.Listener
-	port int
+	opts      Options
+	e         *engine.Engine
+	ln        net.Listener
+	port      int
+	socketDir string
 
 	// fs is the data directory and cl the postmaster with its processes.
 	// Restore replaces them while holding bmu; Close takes bmu to stop cl.
@@ -172,15 +181,52 @@ func boot(e *engine.Engine, opts Options, fs *vfs.FS, origin *Snapshot, onClose 
 		return nil, err
 	}
 	s.cl, s.fs = cl, fs
-	ln, err := net.Listen("tcp", net.JoinHostPort("127.0.0.1", strconv.Itoa(opts.Port)))
+	ln, err := s.listen()
 	if err != nil {
 		s.stopEngine()
 		return nil, err
 	}
 	s.ln = ln
-	s.port = ln.Addr().(*net.TCPAddr).Port
 	go s.acceptLoop()
 	return s, nil
+}
+
+func (s *Server) listen() (net.Listener, error) {
+	if s.opts.SocketDir == "" {
+		ln, err := net.Listen("tcp", net.JoinHostPort("127.0.0.1", strconv.Itoa(s.opts.Port)))
+		if err == nil {
+			s.port = ln.Addr().(*net.TCPAddr).Port
+		}
+		return ln, err
+	}
+	parent, err := filepath.Abs(s.opts.SocketDir)
+	if err != nil {
+		return nil, err
+	}
+	dir, err := os.MkdirTemp(parent, "pgmem-")
+	if err != nil {
+		return nil, fmt.Errorf("pgmem: socket directory: %w", err)
+	}
+	s.port = s.opts.Port
+	if s.port == 0 {
+		s.port = 5432
+	}
+	if s.port < 1 || s.port > 65535 {
+		os.Remove(dir)
+		return nil, fmt.Errorf("pgmem: invalid Unix socket port identifier %d", s.port)
+	}
+	path := filepath.Join(dir, ".s.PGSQL."+strconv.Itoa(s.port))
+	if len(path) > 103 {
+		os.Remove(dir)
+		return nil, fmt.Errorf("pgmem: Unix socket path is too long (%d bytes); choose a shorter SocketDir", len(path))
+	}
+	ln, err := net.Listen("unix", path)
+	if err != nil {
+		os.Remove(dir)
+		return nil, fmt.Errorf("pgmem: listen on Unix stream socket (requires OS AF_UNIX support): %w", err)
+	}
+	s.socketDir = dir
+	return ln, nil
 }
 
 // startCluster boots a postmaster on fs with the server's options.
@@ -211,15 +257,34 @@ func (s *Server) Dial(ctx context.Context, network, addr string) (net.Conn, erro
 	return client, nil
 }
 
-// Port returns the TCP port the server listens on.
+// Port returns the TCP port or Unix socket identifier.
 func (s *Server) Port() int { return s.port }
 
-// Addr returns "127.0.0.1:port".
-func (s *Server) Addr() string { return net.JoinHostPort("127.0.0.1", strconv.Itoa(s.port)) }
+// Addr returns "127.0.0.1:port" or the Unix socket pathname.
+func (s *Server) Addr() string {
+	if s.socketDir != "" {
+		return filepath.Join(s.socketDir, ".s.PGSQL."+strconv.Itoa(s.port))
+	}
+	return net.JoinHostPort("127.0.0.1", strconv.Itoa(s.port))
+}
+
+// Host is the loopback IP or the Unix socket directory used by drivers.
+func (s *Server) Host() string {
+	if s.socketDir != "" {
+		return s.socketDir
+	}
+	return "127.0.0.1"
+}
 
 // DSN returns a connection URL for the server.
 func (s *Server) DSN() string {
-	return fmt.Sprintf("postgres://%s@127.0.0.1:%d/%s?sslmode=disable", s.opts.User, s.port, s.opts.Database)
+	u := url.URL{Scheme: "postgres", User: url.User(s.opts.User), Host: net.JoinHostPort("127.0.0.1", strconv.Itoa(s.port)), Path: "/" + s.opts.Database}
+	q := url.Values{"sslmode": {"disable"}}
+	if s.socketDir != "" {
+		q.Set("host", s.socketDir)
+	}
+	u.RawQuery = strings.ReplaceAll(q.Encode(), "+", "%20")
+	return u.String()
 }
 
 // closeGrace is how long a client connection of a closed server stays open
@@ -238,6 +303,9 @@ func (s *Server) Close() error {
 	}
 	close(s.done)
 	s.ln.Close()
+	if s.socketDir != "" {
+		defer os.Remove(s.socketDir)
+	}
 	s.connsMu.Lock()
 	for ss := range s.csessions {
 		ss.mute() // the backends' shutdown messages must not reach idle clients

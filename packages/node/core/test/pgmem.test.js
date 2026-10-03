@@ -1,7 +1,7 @@
 import { after, before, test } from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync, spawn } from "node:child_process";
-import { mkdtempSync } from "node:fs";
+import { mkdtempSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
@@ -98,6 +98,33 @@ test("forks are isolated and describe themselves as environment variables", asyn
   }
 });
 
+test('read-only connection URLs reject persistent writes and keep reads available', async () => {
+  await server.withFork(async (fork) => {
+    const db = await connectWire(fork.env(undefined, { readOnly: true }).DATABASE_URL);
+    try {
+      assert.equal((await db.query('SELECT count(*) FROM t'))[0][0], '2');
+      await assert.rejects(db.query('INSERT INTO t VALUES (99)'), (err) => err.code === '25006');
+      await fork.reset();
+      await assert.rejects(db.query('INSERT INTO t VALUES (100)'), (err) => err.code === '25006');
+      assert.match(fork.env(['PGHOST'], { readOnly: true }).PGOPTIONS, /default_transaction_read_only=on/);
+    } finally { await db.close(); }
+  });
+});
+
+test('register times out on a full fork pool using its configured acquisition deadline', async () => {
+  const limited = await PgmemServer.start({ maxForks: 1 });
+  const occupied = await limited.fork();
+  try {
+    const started = Date.now();
+    const result = await runNode(['--import', join(pkg, 'register.js'), '-e', 'console.log("should not run")'], {
+      ...limited.env(), PGMEM_FORK_TIMEOUT_MS: '40',
+    });
+    assert.notEqual(result.code, 0);
+    assert.match(result.stderr, /pool_timeout/);
+    assert.ok(Date.now() - started < 5000);
+  } finally { await occupied.close(); await limited.close(); }
+});
+
 test("reset restores the data under an open connection", async () => {
   await server.withFork(async (fork) => {
     const db = await connectWire(fork.url);
@@ -127,6 +154,17 @@ test("withFork closes the fork", async () => {
     url = fork.url;
   });
   assert.ok(await refused(url));
+});
+
+test("withFork retains a callback failure when its child exits before cleanup", async () => {
+  const pg = await PgmemServer.start();
+  const failure = new Error('application assertion');
+  try {
+    await assert.rejects(pg.withFork(async () => {
+      await pg.close();
+      throw failure;
+    }), (err) => err === failure);
+  } finally { await pg.close(); }
 });
 
 test("withTestDatabase routes and restores the URL", async () => {
@@ -311,6 +349,29 @@ test("the register entry sets DATABASE_URL before the entry point and lets the p
   assert.match(res.stdout.trim(), /^postgres:\/\/postgres@127\.0\.0\.1:\d+\/app\?sslmode=disable$/);
 });
 
+test("node:test wrappers compose in either order and both clean up", async () => {
+  const entry = pathToFileURL(join(pkg, "index.js")).href;
+  const script = `
+    import { test } from 'node:test';
+    import { withTestReset } from ${JSON.stringify(entry)};
+    let otherCleanups = 0;
+    const other = (fn) => async (...args) => { try { return await fn(...args); } finally { otherCleanups++; } };
+    let calls = 0;
+    const fork = (await import(${JSON.stringify(entry)})).currentFork();
+    const reset = fork.reset.bind(fork);
+    fork.reset = async (...args) => { calls++; return reset(...args); };
+    test('other outside pgmem', other(withTestReset(async () => {})));
+    test('pgmem outside other', withTestReset(other(async () => {})));
+    test('cleanup ran', () => {
+      if (calls !== 2 || otherCleanups !== 2) throw Error('cleanup counts: ' + calls + ', ' + otherCleanups);
+    });
+  `;
+  const file = join(mkdtempSync(join(tmpdir(), "pgmem-compose-")), "compose.test.mjs");
+  writeFileSync(file, script);
+  const res = await runNode(["--test", "--import", pathToFileURL(join(pkg, "register.js")).href, file], server.env());
+  assert.equal(res.code, 0, res.stderr);
+});
+
 test("the CommonJS entry works without the ESM one", async () => {
   const cjs = createRequire(import.meta.url)("../index.cjs");
   const client = await cjs.PgmemClient.connect({ controlUrl: server.controlUrl, snapshot: server.snapshot.id });
@@ -320,6 +381,42 @@ test("the CommonJS entry works without the ESM one", async () => {
     client.close();
   }
   assert.throws(() => cjs.currentFork(), /no fork for this test file/);
+});
+
+test("Jest environment factory composes around another service in either order", async () => {
+  const factory = pathToFileURL(join(pkg, 'jest-environment-factory.cjs')).href;
+  const environment = pathToFileURL(join(pkg, 'environment.cjs')).href;
+  const script = `
+    import assert from 'node:assert/strict';
+    import { withPgmemEnvironment } from ${JSON.stringify(factory)};
+    import { installServiceEnv } from ${JSON.stringify(environment)};
+    let cleaned = 0;
+    class Base {
+      global = { process: { env: {} } };
+      async setup() {}
+      async teardown() {}
+    }
+    const other = (Parent) => class extends Parent {
+      async setup() {
+        await super.setup();
+        this.releaseValkey = installServiceEnv('valkey', { VALKEY_URL: 'mock://valkey' }, {
+          target: this.global.process.env, scope: this.global,
+        });
+      }
+      async teardown() { cleaned++; try { this.releaseValkey?.(); } finally { await super.teardown(); } }
+    };
+    for (const Env of [other(withPgmemEnvironment(Base)), withPgmemEnvironment(other(Base))]) {
+      const env = new Env();
+      await env.setup();
+      assert.match(env.global.process.env.DATABASE_URL, /^postgres:/);
+      assert.equal(env.global.process.env.VALKEY_URL, 'mock://valkey');
+      await env.teardown();
+      assert.deepEqual(env.global.process.env, {});
+    }
+    assert.equal(cleaned, 2);
+  `;
+  const res = await runNode(['--input-type=module', '-e', script], server.env());
+  assert.equal(res.code, 0, res.stderr);
 });
 
 test("a wrong control token is refused", async () => {

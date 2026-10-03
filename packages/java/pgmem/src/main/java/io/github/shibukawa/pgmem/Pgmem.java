@@ -90,11 +90,7 @@ public final class Pgmem implements AutoCloseable {
     @Override public void close() {
         if (closed) return;
         closed = true;
-        try {
-            if (!exited) request("shutdown", Map.of());
-        } catch (PgmemException ignored) {
-            // exited meanwhile
-        }
+        // EOF starts shutdown without waiting on an unbounded control request.
         try {
             stdin.close();
         } catch (IOException ignored) {

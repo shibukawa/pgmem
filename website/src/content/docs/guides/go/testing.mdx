@@ -5,6 +5,99 @@ description: Choose a Go test database lifecycle with a fresh server per test or
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
+Use the [lifecycle guide](../../test-lifecycle/) to choose from client lifetime and concurrency. The [application examples](../../application-testing/) verify application writes through the same fork.
+
+## Quickstart: one prepared database, isolated tests
+
+Install the library, save this complete test file, and run it:
+
+```sh
+go get github.com/shibukawa/pgmem/pgmemtest
+go test ./...
+```
+
+```go title="store_test.go"
+package store_test
+
+import (
+    "context"
+    "database/sql"
+    "os"
+    "testing"
+
+    "github.com/shibukawa/pgmem/pgmemtest"
+)
+
+var fx *pgmemtest.Fixture
+
+func TestMain(m *testing.M) {
+    os.Exit(pgmemtest.Run(m, pgmemtest.Options{
+        Prepare: func(ctx context.Context, db *sql.DB, _ string) error {
+            _, err := db.ExecContext(ctx, "CREATE TABLE orders(id int)")
+            return err
+        },
+    }, func(f *pgmemtest.Fixture) { fx = f }))
+}
+
+func TestCreateOrder(t *testing.T) {
+    t.Parallel()
+    testDB := fx.For(t)
+    db := testDB.DB()
+    if _, err := db.Exec("INSERT INTO orders VALUES (1)"); err != nil {
+        t.Fatal(err)
+    }
+    // testDB.DSN() and testDB.PgxPool() use this same database.
+}
+```
+
+`fx.For(t)` acquires one fork. Keep the returned object when both the application and assertions need connections: `DB()`, `PgxConn()`, `PgxPool()` and `DSN()` all refer to that fork. A second `For(t)` deliberately acquires another database. The existing `fx.DB(t)` and other direct helpers still acquire a fresh fork on every call.
+
+## Choose where PostgreSQL runs
+
+| Execution | SQL connection | Package |
+|---|---|---|
+| Inside the test process | `net.Pipe` by default; `Transport: "tcp"` or `"unix"` for network helpers | `pgmemtest` |
+| Owned child process | TCP | `pgmemprocess` |
+| Owned child process | Unix domain socket | `pgmemprocess` with `Transport: "unix"` |
+
+For an external process, install the binary once:
+
+```sh
+go install github.com/shibukawa/pgmem/cmd/pgmem@latest
+go get github.com/shibukawa/pgmem/pgmemprocess
+```
+
+Put `pgmem` on `PATH`, set `PGMEM_BINARY`, or pass `Binary` explicitly. Replace the fixture import and `TestMain` in the quickstart with:
+
+```go
+import "github.com/shibukawa/pgmem/pgmemprocess"
+
+var fx *pgmemprocess.Fixture
+
+func TestMain(m *testing.M) {
+    os.Exit(pgmemprocess.Run(m, pgmemprocess.FixtureOptions{
+        Options: pgmemprocess.Options{
+            Database: "app",
+            Transport: "tcp", // "unix" where AF_UNIX stream sockets are supported
+        },
+        Prepare: func(ctx context.Context, db *sql.DB, _ string) error {
+            _, err := db.ExecContext(ctx, "CREATE TABLE orders(id int)")
+            return err
+        },
+    }, func(f *pgmemprocess.Fixture) { fx = f }))
+}
+```
+
+The test body stays the same. Importing `pgmemprocess` and `pgmemfixture` does not compile or link the embedded engine into your test executable. The child uses stdin/stdout for lifecycle commands; SQL uses the selected network transport.
+
+Unix mode creates private directories below `/tmp` on Unix, or `os.TempDir()` on Windows, by default. Set `SocketDir` to an existing short parent path when needed. Every template and fork has a distinct socket directory; reset preserves it and normal shutdown removes it. Only socket entries live on disk; database files remain in memory. AF_UNIX stream sockets work on supported Windows versions too. Datagram sockets are not used. A host without AF_UNIX support fails at listen time. A process killed without graceful cleanup may leave socket entries; remove only its abandoned private directory.
+
+Windows stream support and its datagram limitations are documented by [Microsoft](https://devblogs.microsoft.com/commandline/af_unix-comes-to-windows/) and [Go](https://go.dev/src/net/unixsock.go).
+
+`StartupTimeout`, `SnapshotTimeout` and `ForkTimeout` default to 30 seconds, and `ShutdownTimeout` to 10 seconds. A fork wait can time out when other tests occupy the pool; close unused forks or adjust `MaxForks`. A shared fork also occupies one slot.
+
+For read-only tests, `fx.SharedDB()` and `fx.SharedPgxPool()` share one prepared fork and are closed by the fixture. Acquire them during setup when possible. Set `SharedReadOnly: true` to guard ordinary persistent writes on these handles; the default permits writes, which affect other shared tests. Raw endpoints and isolated `For(t)` handles remain writable.
+
 `pgmemtest.Fixture` provides three common connection forms. Use its per-test helpers only for tests that need to write or otherwise need isolation; read-only tests can share one fork as described below. It also provides `PgxConn(t)` when code needs one standalone pgx connection:
 
 | Handle | Method | Transport | Best for |
@@ -13,7 +106,7 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 | `*sql.DB` | `fx.DB(t)` | In-process, no TCP | `database/sql`, ORMs and tools that accept a DB handle |
 | DSN | `fx.DSN(t)` | Loopback TCP | Drivers and tools that require a connection URL |
 
-The first two use `Server.Dial` over `net.Pipe` and avoid TCP overhead; the DSN remains the portable option for tools that need a URL. Each helper closes its handle and fork when the test ends.
+The table shows the default embedded transport: the first two use `Server.Dial` over `net.Pipe`. Setting `Transport` to `tcp` or `unix` also switches these helpers to that network path. The DSN serves tools that need a URL. Each helper closes its handle and fork when the test ends.
 
 ## Keep application datasource code unchanged
 
@@ -111,49 +204,12 @@ func TestMain(m *testing.M) {
 If every test in a package only reads, create one fork from the prepared snapshot and share it. The fork starts with the schema and seed data from `Prepare`:
 
 ```go
-var fx *pgmemtest.Fixture
-var shared *pgmem.Server
-var readOnly *sql.DB
-
-func TestMain(m *testing.M) {
-	code := pgmemtest.Run(m, pgmemtest.Options{
-		Options: pgmem.Options{Database: "app"},
-		Prepare: func(ctx context.Context, db *sql.DB, dsn string) error {
-			if err := migrateUp(dsn); err != nil {
-				return err
-			}
-			return seed(ctx, db)
-		},
-	}, func(f *pgmemtest.Fixture) {
-		fx = f
-		var err error
-		shared, err = f.Snapshot().Fork(context.Background())
-		if err != nil {
-			panic(err)
-		}
-		cfg, err := pgx.ParseConfig(shared.DSN())
-		if err != nil {
-			panic(err)
-		}
-		cfg.DialFunc = shared.Dial
-		readOnly = stdlib.OpenDB(*cfg)
-	})
-	if readOnly != nil {
-		_ = readOnly.Close()
-	}
-	if shared != nil {
-		_ = shared.Close()
-	}
-	os.Exit(code)
+readOnly, err := fx.SharedDB()
+if err != nil {
+    panic(err) // acquire during TestMain setup
 }
-
-func TestReportTotals(t *testing.T) {
-	t.Parallel()
-	var total int
-	if err := readOnly.QueryRow("SELECT sum(amount) FROM orders").Scan(&total); err != nil {
-		t.Fatal(err)
-	}
-}
+// Use readOnly in read-only tests; fx.Close() owns its pool and fork.
+// fx.SharedPgxPool() uses the same fork.
 ```
 
 <Aside type="caution">
@@ -248,11 +304,27 @@ Every live fork holds its own data-directory copy and buffer cache. `MaxForks` l
 pgmemtest.Options{MaxForks: 4, /* ... */}
 ```
 
-When the cap is full, `Fork(ctx)` waits until a fork closes. Its context can cancel or deadline that wait; the `pgmemtest` helpers use the test's context. With server logging enabled, a wait longer than five seconds is logged. See [limits](../../../limits/) for how this differs from snapshot and reset timeouts.
+When the cap is full, `Fork(ctx)` waits until a fork closes. Its context can cancel or deadline that wait; all `pgmemtest` fixture helpers, including direct helpers, apply `ForkTimeout` (30 seconds by default) on top of the test's context. With server logging enabled, a wait longer than five seconds is logged. See [limits](../../../limits/) for how this differs from snapshot and reset timeouts.
 
 <Aside>
 Connection pools on one fork work as on a server: every connection is its own backend process. Independent tests still get the best isolation on separate forks. See [limits](../../../limits/).
 </Aside>
+
+## Driver configuration on one fork
+
+Configure runtime parameters or pool limits through the `TestDB` callbacks. The fixture retains the chosen endpoint identity and dialer, including subprocess and Unix transport.
+
+```go
+testDB := fx.For(t)
+pool := testDB.PgxPool(func(cfg *pgxpool.Config) {
+    cfg.MaxConns = 4
+    cfg.ConnConfig.RuntimeParams["application_name"] = "orders-test"
+})
+db := testDB.DB(func(cfg *pgx.ConnConfig) {
+    cfg.RuntimeParams["statement_timeout"] = "1000"
+})
+// pool and db connect to the same fork.
+```
 
 ### Safe worker-level parallelism with `ShadowPG`
 

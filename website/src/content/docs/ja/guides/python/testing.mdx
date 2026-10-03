@@ -19,6 +19,79 @@ API やブラウザからテストする場合は [API テスト](../api-testing
 | `pgmem_fork`、`pgmem_dsn` | function | 要求したテストごとのフォーク。teardown で閉じる |
 | `pgmem_class_fork`、`pgmem_class_dsn` | class | テストクラスで共有するフォーク |
 | `pgmem_shared_fork` | session | `@shadow_pg(fork=False)` のテストで共有する準備済みフォーク |
+| `pgmem_fixture_options` | session | 分離方式、上限、期限、読み取りガード |
+| `pgmem_test_dsn` | function | マーカーで選ぶ fork、共有 template、reset 用の接続先 |
+| `pgmem_shared_dsn` | session | reset モード用の書き込み可能で固定した接続先 |
+
+[分離方式の選択](../../test-lifecycle/)と[アプリ経由のサンプル](../../application-testing/)も参照してください。
+
+## すぐに試す：一度準備してマーカーで分離を選ぶ
+
+```sh
+pip install pgmem pytest "psycopg[binary]"
+```
+
+次の 2 ファイルを保存し、`pytest -q` を実行します。
+
+```python title="conftest.py"
+import psycopg
+import pytest
+
+@pytest.fixture(scope="session")
+def pgmem_prepare():
+    def prepare(server):
+        with psycopg.connect(server.dsn) as conn:
+            conn.execute("CREATE TABLE orders(id int)")
+    return prepare
+
+@pytest.fixture
+def db(pgmem_test_dsn):
+    with psycopg.connect(pgmem_test_dsn) as conn:
+        yield conn
+```
+
+```python title="test_orders.py"
+import pytest
+
+def test_create(db):
+    db.execute("INSERT INTO orders VALUES (1)")
+    assert db.execute("SELECT count(*) FROM orders").fetchone()[0] == 1
+
+@pytest.mark.pgmem(fork=False)
+def test_read(db):
+    assert db.execute("SELECT count(*) FROM orders").fetchone()[0] == 0
+```
+
+`pgmem_prepare` が一度走り、その後 plugin がスナップショットを作ります。書き込みテストは既定で独立したフォークを使います。`fork=False` は準備済みテンプレートを共有します。そこで書き込むと、ほかの共有テストにも影響します。どちらも同じ `db` fixture を使え、接続前に接続先が決まります。
+
+## クライアントを維持してデータベースを戻す
+
+アプリがセッション中クライアントを保持する場合は、`pgmem_shared_dsn` で作り、直列実行するテストに `isolation="reset"` を指定します。
+
+```python title="conftest.py"
+@pytest.fixture(scope="session")
+def app_db(pgmem_shared_dsn):
+    with psycopg.connect(pgmem_shared_dsn, autocommit=True) as conn:
+        yield conn
+```
+
+```python
+@pytest.mark.pgmem(isolation="reset")
+class TestOrders:
+    def test_create(self, app_db):
+        app_db.execute("INSERT INTO orders VALUES (1)")
+
+    def test_clean(self, app_db):
+        assert app_db.execute("SELECT count(*) FROM orders").fetchone()[0] == 0
+```
+
+plugin はマーカー付きテストの後に共有フォークをリセットします。テスト本体や fixture のセットアップが失敗した場合も実行し、接続先と socket は維持します。teardown 前に、開いたトランザクションを commit または rollback してください。このモードはワーカー内で直列実行するテスト用です。pytest-xdist のワーカー同士は別プロセスになります。session fixture から function スコープの `pgmem_test_dsn` には依存できません。
+
+session スコープの `pgmem_fixture_options` を上書きすると、`isolation`（`fork`、`shared`、`reset`）、`max_forks`、`fork_timeout`（30 秒）、`snapshot_timeout`（30 秒）、`reset_timeout`（5 秒）、`shared_read_only`（False）を設定できます。最も近いマーカーが既定値より優先され、`fork=<bool>` と `isolation=<mode>` のどちらかを指定します。明示的な `pgmem_dsn` は常にフォークを取得します。高度な用途では `pgmem_snapshot` 自体も上書きできます。その場合、既定の準備 hook は置き換えられます。
+
+`pgmem` をインストールすると pytest プラグインが登録されます。準備済みデータベースを使う形はそのフィクスチャでまかなえるので、サーバーを用意するだけなら `conftest.py` に何も書く必要はありません。
+
+
 
 ## データベースのライフサイクル
 
@@ -270,3 +343,15 @@ def pgmem_fork(pgmem_snapshot):
 ### `@shadow_pg` を安全に並列実行する
 
 独立したテストケースは pytest-xdist の**別プロセス**で実行します。`pytest-xdist` をインストールした上で、例えば `pytest -n 4` を使います。各ワーカーは独自のテンプレートとフォークを持ち、ワーカー内のケースは逐次実行されます。ドライバのモンキーパッチはプロセス全体に効くため、1 ワーカー内でケースをスレッド並列に実行するプラグインとは併用しません。テストが開始した DB 作業はマーカーの解除前に完了させてください。`fork=False` はフォークを共有する読み取り専用ケースだけに使います。ワーカー数と `max_forks` はメモリ容量に合わせて調整します。
+
+## 共有接続の書き込みを防ぐ
+
+クライアントを作る前に `shared_read_only` を設定します。マーカーで shared を選んだ DSN とクラス用 DSN を保護します。独立したフォークと reset 用の `pgmem_shared_dsn` は書き込み可能です。自分で URL を作る場合は `readonly_dsn(dsn)` を使えます。生のフォーク URL にはガードを付けません。
+
+```python
+@pytest.fixture(scope="session")
+def pgmem_fixture_options():
+    return {"isolation": "shared", "shared_read_only": True}
+```
+
+`pgmem_prepare` は上のように fixture 内で準備を実行するか、quickstart のようにテンプレートの `Server` を受け取る callback を返せます。同じ migration を両方で実行しないでください。

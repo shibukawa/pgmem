@@ -24,9 +24,12 @@ public class Server implements AutoCloseable {
     public String database() { return endpoint.database(); }
     public String dsn() { return endpoint.dsn(); }
     public String jdbcUrl() { return endpoint.jdbcUrl(); }
+    public String dsn(boolean readOnly) { return endpoint.dsn(readOnly); }
+    public String jdbcUrl(boolean readOnly) { return endpoint.jdbcUrl(readOnly); }
 
     /** A DriverManager-backed DataSource for this server (needs pgjdbc on the classpath). */
-    public DataSource dataSource() { return new PgmemDataSource(jdbcUrl()); }
+    public DataSource dataSource() { return dataSource(false); }
+    public DataSource dataSource(boolean readOnly) { return new PgmemDataSource(jdbcUrl(readOnly)); }
 
     /** Checkpoints and copies this server's state; forks start from the copy. */
     public Snapshot snapshot() { return snapshot(0); }
@@ -48,6 +51,20 @@ public class Server implements AutoCloseable {
         if (timeout != null) req.put("timeout_ms", timeout.toMillis());
         Map<String, Object> res = pgmem.request("snapshot", req);
         return new Snapshot(pgmem, (String) res.get("snapshot"), this);
+    }
+
+    /** Restores a fork in place, keeping its endpoint and pooled client sockets. */
+    public void reset() { reset(null, Duration.ofSeconds(5)); }
+
+    public void reset(Snapshot snapshot, Duration timeout) {
+        Map<String, Object> req = new LinkedHashMap<>();
+        req.put("server", id());
+        if (snapshot != null) {
+            if (snapshot.origin().pgmem != pgmem) throw new IllegalArgumentException("snapshot belongs to another process");
+            req.put("snapshot", snapshot.id());
+        }
+        if (timeout != null) req.put("timeout_ms", timeout.toMillis());
+        pgmem.request("reset", req);
     }
 
     /** Stops this server. Idempotent. */

@@ -8,11 +8,13 @@
         with snap.fork() as fork:
             conn = psycopg.connect(fork.dsn)   # a private copy of the prepared database
 
-With pytest installed the ``pgmem_dsn`` fixture does the fork/close per
-test; override ``pgmem_snapshot`` to run migrations first.
+With pytest installed, ``pgmem_test_dsn`` selects the isolation mode per
+test. Override ``pgmem_prepare`` to run migrations once before snapshotting.
 """
 
 from ._client import (
+    CleanupError,
+    readonly_dsn,
     Fork,
     Pgmem,
     PgmemError,
@@ -81,6 +83,8 @@ def shadow_pg(func=None, *, fork=True, prepare=False, live=False):
     return marker(func) if func is not None else marker
 
 __all__ = [
+    "CleanupError",
+    "readonly_dsn",
     "Fork",
     "Pgmem",
     "PgmemError",

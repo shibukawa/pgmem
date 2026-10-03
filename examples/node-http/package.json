@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test --test-global-setup=./global-setup.mjs --import @pgmem/core/register app.test.mjs"
+  },
+  "dependencies": { "@pgmem/core": "file:../../packages/node/core", "pg": "^8.16.3" }
+}

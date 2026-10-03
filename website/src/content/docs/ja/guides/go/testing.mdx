@@ -5,6 +5,99 @@ description: Go のテストで使うデータベースのライフサイクル�
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
+クライアントの寿命や並列実行から方式を選ぶ場合は、[分離方式の選択](../../test-lifecycle/)を参照してください。[アプリ経由のサンプル](../../application-testing/)では、アプリが書いた結果を同じフォークから検証します。
+
+## すぐに試す：一度準備してテストを分離する
+
+ライブラリを追加し、次のテストファイルを保存して実行します。
+
+```sh
+go get github.com/shibukawa/pgmem/pgmemtest
+go test ./...
+```
+
+```go title="store_test.go"
+package store_test
+
+import (
+    "context"
+    "database/sql"
+    "os"
+    "testing"
+
+    "github.com/shibukawa/pgmem/pgmemtest"
+)
+
+var fx *pgmemtest.Fixture
+
+func TestMain(m *testing.M) {
+    os.Exit(pgmemtest.Run(m, pgmemtest.Options{
+        Prepare: func(ctx context.Context, db *sql.DB, _ string) error {
+            _, err := db.ExecContext(ctx, "CREATE TABLE orders(id int)")
+            return err
+        },
+    }, func(f *pgmemtest.Fixture) { fx = f }))
+}
+
+func TestCreateOrder(t *testing.T) {
+    t.Parallel()
+    testDB := fx.For(t)
+    db := testDB.DB()
+    if _, err := db.Exec("INSERT INTO orders VALUES (1)"); err != nil {
+        t.Fatal(err)
+    }
+    // testDB.DSN() and testDB.PgxPool() use this same database.
+}
+```
+
+`fx.For(t)` はフォークを 1 つ取得します。アプリと検証コードの両方で接続が必要なら、返されたオブジェクトを共有してください。`DB()`、`PgxConn()`、`PgxPool()`、`DSN()` はすべて同じフォークを指します。もう一度 `For(t)` を呼ぶと、別のデータベースを取得します。既存の `fx.DB(t)` などの直接呼び出すヘルパーは、呼ぶたびに新しいフォークを取得します。
+
+## PostgreSQL の起動場所を選ぶ
+
+| 起動方式 | SQL の接続方法 | パッケージ |
+|---|---|---|
+| テストプロセス内 | 既定は `net.Pipe`、ネットワーク接続は `Transport: "tcp"` / `"unix"` | `pgmemtest` |
+| 所有する子プロセス | TCP | `pgmemprocess` |
+| 所有する子プロセス | Unix domain socket | `pgmemprocess` の `Transport: "unix"` |
+
+外部プロセスを使う場合は、バイナリを一度インストールします。
+
+```sh
+go install github.com/shibukawa/pgmem/cmd/pgmem@latest
+go get github.com/shibukawa/pgmem/pgmemprocess
+```
+
+`pgmem` を `PATH` に置くか、`PGMEM_BINARY` または `Binary` でパスを指定します。上の quickstart の fixture の import と `TestMain` を次に置き換えてください。
+
+```go
+import "github.com/shibukawa/pgmem/pgmemprocess"
+
+var fx *pgmemprocess.Fixture
+
+func TestMain(m *testing.M) {
+    os.Exit(pgmemprocess.Run(m, pgmemprocess.FixtureOptions{
+        Options: pgmemprocess.Options{
+            Database: "app",
+            Transport: "tcp", // "unix" where AF_UNIX stream sockets are supported
+        },
+        Prepare: func(ctx context.Context, db *sql.DB, _ string) error {
+            _, err := db.ExecContext(ctx, "CREATE TABLE orders(id int)")
+            return err
+        },
+    }, func(f *pgmemprocess.Fixture) { fx = f }))
+}
+```
+
+テスト本体はそのまま使えます。`pgmemprocess` と `pgmemfixture` の import では、組み込みエンジンをテストバイナリにコンパイル・リンクしません。子プロセスの制御には標準入出力、SQL には選択した接続方式を使います。
+
+Unix モードでは、既定で Unix は `/tmp`、Windows は `os.TempDir()` の下に専用ディレクトリを作ります。必要なら、既に存在する短い親パスを `SocketDir` で指定してください。テンプレートと各フォークのディレクトリは別々です。reset では接続先を維持し、正常終了時に削除します。ディスクに置くのは socket のエントリだけで、データベースのファイルはメモリに保持します。AF_UNIX の stream socket に対応する Windows でも使えます。datagram socket は使いません。AF_UNIX 非対応ホストでは listen 時にエラーになります。強制終了時には socket が残る場合があるため、そのプロセスが使っていた専用ディレクトリだけを削除してください。
+
+Windows の stream 対応と datagram の制限は、[Microsoft](https://devblogs.microsoft.com/commandline/af_unix-comes-to-windows/) と [Go](https://go.dev/src/net/unixsock.go) の資料を参照してください。
+
+`StartupTimeout`、`SnapshotTimeout`、`ForkTimeout` は既定で 30 秒、`ShutdownTimeout` は 10 秒です。ほかのテストがプールを占有すると fork の取得がタイムアウトします。使い終えたフォークを閉じるか、`MaxForks` を調整してください。共有フォークも 1 枠使います。
+
+読み取り専用テストでは、`fx.SharedDB()` と `fx.SharedPgxPool()` が準備済みフォークを共有し、fixture が接続を閉じます。できればセットアップ時に取得してください。`SharedReadOnly: true` で、これらの接続からの通常の永続データへの書き込みを防げます。既定では書き込みが可能で、ほかの共有テストにも影響します。生の接続先と独立した `For(t)` の接続は書き込み可能です。
+
 `pgmemtest.Fixture` から、代表的な 3 種類の接続を取得できます。`fx.*(t)` のテストごとのヘルパーは、書き込みや分離が必要なテストだけで使います。読み取り専用のテストは、後述のように 1 つのフォークを共有できます。単独の pgx 接続が必要なら `PgxConn(t)` も使えます。
 
 | 取得するもの | メソッド | 接続方法 | 向いている用途 |
@@ -13,7 +106,7 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 | `*sql.DB` | `fx.DB(t)` | プロセス内、TCP なし | `database/sql`、ORM、DB ハンドルを受け取るツール |
 | DSN | `fx.DSN(t)` | ループバック TCP | 接続 URL を必要とするドライバやツール |
 
-最初の 2 つは `Server.Dial` と `net.Pipe` を使って TCP のオーバーヘッドを避けます。DSN は URL を必要とするツールに使える汎用的な方法です。どのヘルパーも、テスト終了時に接続とフォークを閉じます。
+表は組み込み実行の既定の接続方式を示しています。最初の 2 つは `Server.Dial` と `net.Pipe` を使います。`Transport` を `tcp` または `unix` に設定すると、これらのヘルパーも指定したネットワーク接続に切り替わります。DSN は URL を必要とするツールに使えます。どのヘルパーも、テスト終了時に接続とフォークを閉じます。
 
 ## アプリのデータソース設定を変えずに使う
 
@@ -111,49 +204,12 @@ func TestMain(m *testing.M) {
 パッケージ内のテストがすべて読み取り専用なら、準備済みスナップショットからフォークを 1 つ作り、共有できます。フォークには `Prepare` で用意したスキーマとシードデータが入っています。
 
 ```go
-var fx *pgmemtest.Fixture
-var shared *pgmem.Server
-var readOnly *sql.DB
-
-func TestMain(m *testing.M) {
-	code := pgmemtest.Run(m, pgmemtest.Options{
-		Options: pgmem.Options{Database: "app"},
-		Prepare: func(ctx context.Context, db *sql.DB, dsn string) error {
-			if err := migrateUp(dsn); err != nil {
-				return err
-			}
-			return seed(ctx, db)
-		},
-	}, func(f *pgmemtest.Fixture) {
-		fx = f
-		var err error
-		shared, err = f.Snapshot().Fork(context.Background())
-		if err != nil {
-			panic(err)
-		}
-		cfg, err := pgx.ParseConfig(shared.DSN())
-		if err != nil {
-			panic(err)
-		}
-		cfg.DialFunc = shared.Dial
-		readOnly = stdlib.OpenDB(*cfg)
-	})
-	if readOnly != nil {
-		_ = readOnly.Close()
-	}
-	if shared != nil {
-		_ = shared.Close()
-	}
-	os.Exit(code)
+readOnly, err := fx.SharedDB()
+if err != nil {
+    panic(err) // acquire during TestMain setup
 }
-
-func TestReportTotals(t *testing.T) {
-	t.Parallel()
-	var total int
-	if err := readOnly.QueryRow("SELECT sum(amount) FROM orders").Scan(&total); err != nil {
-		t.Fatal(err)
-	}
-}
+// Use readOnly in read-only tests; fx.Close() owns its pool and fork.
+// fx.SharedPgxPool() uses the same fork.
 ```
 
 <Aside type="caution">
@@ -248,11 +304,27 @@ func TestCancelOrder(t *testing.T) {
 pgmemtest.Options{MaxForks: 4, /* ... */}
 ```
 
-上限に達すると、`Fork(ctx)` はフォークが閉じて枠が空くまで待ちます。context のキャンセルや期限で待機を中断できます。`pgmemtest` のヘルパーはテストの context を使います。サーバーログを有効にしている場合、5 秒を超える待機はログに記録されます。スナップショット、リセット、接続待ちのタイムアウトとの違いは[制限事項](../../../limits/)を参照してください。
+上限に達すると、`Fork(ctx)` はフォークが閉じて枠が空くまで待ちます。context のキャンセルや期限で待機を中断できます。`pgmemtest` の fixture のヘルパーは直接取得するものも含め、テストの context に加えて `ForkTimeout`（既定 30 秒）を適用します。サーバーログを有効にしている場合、5 秒を超える待機はログに記録されます。スナップショット、リセット、接続待ちのタイムアウトとの違いは[制限事項](../../../limits/)を参照してください。
 
 <Aside>
 1 つのフォークの上でコネクションプールを使うこともできます。サーバーと同じく接続ごとにバックエンドプロセスが動きます。独立したテストは別々のフォークで並列に走らせるのが最も分離が確かです。[制限事項](../../../limits/) を参照してください。
 </Aside>
+
+## 同じフォークのドライバを設定する
+
+`TestDB` の callback で runtime parameter や pool の上限を指定できます。接続先の識別情報と dialer は fixture の設定を維持します。外部プロセスと Unix 接続でも同じです。
+
+```go
+testDB := fx.For(t)
+pool := testDB.PgxPool(func(cfg *pgxpool.Config) {
+    cfg.MaxConns = 4
+    cfg.ConnConfig.RuntimeParams["application_name"] = "orders-test"
+})
+db := testDB.DB(func(cfg *pgx.ConnConfig) {
+    cfg.RuntimeParams["statement_timeout"] = "1000"
+})
+// pool and db connect to the same fork.
+```
 
 ### `ShadowPG` の安全なワーカー並列化
 

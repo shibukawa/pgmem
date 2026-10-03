@@ -3,7 +3,7 @@ id: concept:python-guide
 type: concept
 title: Python Guide
 ---
-Using pgmem from Python tests: install the wheel, the pytest fixtures, migrations in the snapshot fixture, and fork styles.
+Using pgmem from Python tests: install the wheel, the pytest fixtures, prepare-once hooks and automatic snapshots, and fork styles.
 
 ```yaml
 summary:
@@ -14,14 +14,16 @@ summary:
         with psycopg.connect(pg.template.dsn) as conn:
             conn.execute("select 1")
   initialization:
-    fixture: override the session fixture pgmem_snapshot in conftest.py: run migrations on pgmem_server.dsn, then return pgmem_server.snapshot() (api:python-wrapper)
+    fixture: override session pgmem_prepare to return a callback accepting the template Server; run migrations and seed via its DSN; default pgmem_snapshot invokes it then snapshots automatically (api:python-wrapper)
+    advanced: override pgmem_snapshot for multiple snapshots or custom preparation
     raw_sql: conn.execute(open("schema.sql").read()) on the template DSN
     tools: Alembic, SQLAlchemy create_all, yoyo; Django to verify (concept:migration-tools); seed with factory_boy or plain SQL (concept:seeding)
   test_case_styles:
     fork_per_test: pgmem_dsn or pgmem_fork function fixtures; closed in teardown
     fork_per_class: pgmem_class_dsn for read-only test classes
-    no_fork: pgmem_server.dsn with a transaction rolled back per test; sequential
-    guidance: decision:fork-or-not
+    selective: pgmem_test_dsn uses @pytest.mark.pgmem(fork=False) or isolation=shared for read-only template access; default isolated fork
+    persistent_clients: pgmem_shared_dsn plus isolation=reset keeps a stable endpoint and resets in teardown; serial within worker
+    guidance: decision:fork-or-not; requirement:python-selective-isolation implemented without driver connection management
   drivers: psycopg, asyncpg, pg8000, SQLAlchemy all take the DSN (system:postgres-drivers); build a per-driver fixture on pgmem_dsn
   async: asyncpg works against the DSN; the client itself is sync and runs in a thread from asyncio fixtures
   parallel: pytest-xdist workers each spawn their own binary (concept:server-process); inside one worker forks are independent

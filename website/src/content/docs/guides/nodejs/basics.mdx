@@ -5,6 +5,8 @@ description: Install @pgmem/core with your PostgreSQL client, start a server, mi
 
 import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 
+To add pgmem to an existing test suite, start with the [runnable testing quickstart](../testing/).
+
 `@pgmem/core` starts the pgmem binary and hands you a PostgreSQL URL. The binary comes from a platform package that npm installs as an optional dependency; there is no postinstall script and nothing is downloaded at run time. pgmem does not replace your PostgreSQL client or ORM: Prisma, Drizzle, TypeORM, Kysely, `pg` and `postgres` connect to the URL as they would to any server, pools included.
 
 ## Install
@@ -53,7 +55,7 @@ bun add --dev @pgmem/core pg
    ```ts
    import { PgmemServer } from '@pgmem/core';
 
-   await using server = await PgmemServer.start({
+   const server = await PgmemServer.start({
      database: 'app',
      async prepare({ url }) {
        await migrate(url);
@@ -64,7 +66,7 @@ bun add --dev @pgmem/core pg
    console.log(server.url); // postgres://postgres@127.0.0.1:54321/app?sslmode=disable
    ```
 
-   `await using` closes the server at the end of the scope; call `server.close()` yourself where explicit resource management is not available. Other options are `user`, `params` (postgres settings as an object, such as `{ log_statement: 'all' }`), `maxForks`, `waitTimeoutMs`, `log` and `binary`.
+   Call `await server.close()` after the clients are closed, using `finally` in scripts. On runtimes with explicit resource management you can use `await using` instead. Other options are `user`, `params` (postgres settings as an object, such as `{ log_statement: 'all' }`), `maxForks`, `startupTimeoutMs`, `snapshotTimeoutMs`, `log` and `binary`.
 
 2. **Register the schema** in `prepare`. It receives the template server (`url`, `host`, `port`, `user`, `database`). See [migration tools](#migration-tools).
 
@@ -266,16 +268,11 @@ await db.$client.end();
 ## Forks by hand
 
 ```ts
-await using fork = await server.fork();   // a private copy of the prepared database
-await useDatabase(fork.url);
-
-// or let pgmem close it
 await server.withFork(async (fork) => {
-  await useDatabase(fork.url);
+  console.log(fork.url);
+  // Create and close the application's clients inside this callback.
 });
-
-// put a fork back to the snapshot without changing its URL
-await fork.reset();
 ```
+
 
 A fork waits for a free slot while `maxForks` forks are alive. Closing a fork leaves idle pooled connections to their pools, so a pool without an `error` listener does not crash the process. The [next page](../testing/) shows how the test runners use this.

@@ -13,11 +13,28 @@ JVM 向けの pgmem には、クライアントの `io.github.shibukawa.pgmem:pg
 <TabItem label="Gradle (Kotlin DSL)">
 
 ```kotlin title="build.gradle.kts"
+val pgmemOs = System.getProperty("os.name").lowercase()
+val pgmemArch = System.getProperty("os.arch").lowercase()
+val pgmemPlatform = when {
+    pgmemOs.contains("mac") || pgmemOs.contains("darwin") -> "darwin"
+    pgmemOs.contains("win") -> "windows"
+    pgmemOs.contains("linux") -> "linux"
+    else -> error("Unsupported OS: $pgmemOs; use PGMEM_BINARY")
+}
+val pgmemCpu = when (pgmemArch) {
+    "amd64", "x86_64" -> "x86_64"
+    "aarch64", "arm64" -> "arm64"
+    else -> error("Unsupported architecture: $pgmemArch; use PGMEM_BINARY")
+}
+val pgmemNative = "$pgmemPlatform-$pgmemCpu"
+
 dependencies {
     testImplementation("io.github.shibukawa.pgmem:pgmem-junit5:1.18.0")          // io.github.shibukawa.pgmem:pgmem も入る
-    testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:1.18.0:darwin-arm64") // 自分のプラットフォーム用のバイナリ
+    testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:1.18.0:$pgmemNative") // 自分のプラットフォーム用のバイナリ
     testRuntimeOnly("org.postgresql:postgresql:42.7.7")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
+    testImplementation(platform("org.junit:junit-bom:5.14.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.test {
@@ -29,11 +46,22 @@ tasks.test {
 <TabItem label="Gradle (Groovy DSL)">
 
 ```groovy title="build.gradle"
+def pgmemOs = System.getProperty('os.name').toLowerCase()
+def pgmemArch = System.getProperty('os.arch').toLowerCase()
+def pgmemPlatform = pgmemOs.contains('mac') || pgmemOs.contains('darwin') ? 'darwin' :
+    pgmemOs.contains('win') ? 'windows' : pgmemOs.contains('linux') ? 'linux' : null
+def pgmemCpu = ['amd64', 'x86_64'].contains(pgmemArch) ? 'x86_64' :
+    ['aarch64', 'arm64'].contains(pgmemArch) ? 'arm64' : null
+if (!pgmemPlatform || !pgmemCpu) throw new GradleException('Unsupported host; use PGMEM_BINARY')
+def pgmemNative = "${pgmemPlatform}-${pgmemCpu}"
+
 dependencies {
     testImplementation 'io.github.shibukawa.pgmem:pgmem-junit5:1.18.0'           // io.github.shibukawa.pgmem:pgmem も入る
-    testRuntimeOnly 'io.github.shibukawa.pgmem:pgmem-native:1.18.0:darwin-arm64' // 自分のプラットフォーム用のバイナリ
+    testRuntimeOnly "io.github.shibukawa.pgmem:pgmem-native:1.18.0:${pgmemNative}" // 自分のプラットフォーム用のバイナリ
     testRuntimeOnly 'org.postgresql:postgresql:42.7.7'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
+    testImplementation platform('org.junit:junit-bom:5.14.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {
@@ -56,13 +84,19 @@ test {
     <groupId>io.github.shibukawa.pgmem</groupId>
     <artifactId>pgmem-native</artifactId>
     <version>1.18.0</version>
-    <classifier>darwin-arm64</classifier>
+    <classifier>${pgmem.native.classifier}</classifier>
     <scope>test</scope>
   </dependency>
   <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
     <version>42.7.7</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.14.0</version>
     <scope>test</scope>
   </dependency>
 </dependencies>
@@ -72,6 +106,90 @@ test {
 </Tabs>
 
 classifier は `linux-x86_64`、`linux-arm64`、`darwin-arm64`、`windows-x86_64`、`windows-arm64` です。複数のプラットフォームでビルドするなら、5 つ全部に依存するのではなく、Maven のプロファイルや Gradle の OS 判定プラグインでプラットフォームごとに 1 つを選んでください。バイナリは初回に `~/.cache/pgmem/<version>/` へ展開されます。Java 17 以降が必要です。
+
+
+
+Gradle の例は実行ホストから classifier を選びます。Maven では `mvn -Dpgmem.native.classifier=linux-x86_64 test` のように指定してください。複数ホストで使う場合は、下の profiles を POM に追加すると自動選択できます。Intel Mac 向けの native artifact はありません。その場合は native 依存を省き、ローカルビルドの `PGMEM_BINARY` を指定します。
+
+Maven の既存設定が JUnit 5 に対応していない場合は、次の build 設定も追加します。
+
+```xml
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.14.0</version>
+      <configuration><release>17</release></configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.5.4</version>
+    </plugin>
+  </plugins>
+</build>
+```
+
+<details>
+<summary>Maven profiles</summary>
+
+```xml
+<profiles>
+  <profile>
+    <id>pgmem-linux-amd64</id>
+    <activation><os><name>Linux</name><arch>amd64</arch></os></activation>
+    <properties><pgmem.native.classifier>linux-x86_64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-linux-x86_64</id>
+    <activation><os><name>Linux</name><arch>x86_64</arch></os></activation>
+    <properties><pgmem.native.classifier>linux-x86_64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-linux-aarch64</id>
+    <activation><os><name>Linux</name><arch>aarch64</arch></os></activation>
+    <properties><pgmem.native.classifier>linux-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-linux-arm64</id>
+    <activation><os><name>Linux</name><arch>arm64</arch></os></activation>
+    <properties><pgmem.native.classifier>linux-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-darwin-aarch64</id>
+    <activation><os><family>mac</family><arch>aarch64</arch></os></activation>
+    <properties><pgmem.native.classifier>darwin-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-darwin-arm64</id>
+    <activation><os><family>mac</family><arch>arm64</arch></os></activation>
+    <properties><pgmem.native.classifier>darwin-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-windows-amd64</id>
+    <activation><os><family>windows</family><arch>amd64</arch></os></activation>
+    <properties><pgmem.native.classifier>windows-x86_64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-windows-x86_64</id>
+    <activation><os><family>windows</family><arch>x86_64</arch></os></activation>
+    <properties><pgmem.native.classifier>windows-x86_64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-windows-aarch64</id>
+    <activation><os><family>windows</family><arch>aarch64</arch></os></activation>
+    <properties><pgmem.native.classifier>windows-arm64</pgmem.native.classifier></properties>
+  </profile>
+  <profile>
+    <id>pgmem-windows-arm64</id>
+    <activation><os><family>windows</family><arch>arm64</arch></os></activation>
+    <properties><pgmem.native.classifier>windows-arm64</pgmem.native.classifier></properties>
+  </profile>
+</profiles>
+```
+
+</details>
 
 ## 基本の流れ
 

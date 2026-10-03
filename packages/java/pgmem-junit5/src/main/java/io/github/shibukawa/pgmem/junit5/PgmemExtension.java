@@ -157,31 +157,33 @@ public final class PgmemExtension
                 if (t.prepare != null) t.prepare.accept(t.server);
                 t.snapshot = t.server.snapshot(cfg.maxForks);
             }
-        } catch (RuntimeException e) {
-            pg.close();
+        } catch (RuntimeException | Error e) {
+            try { pg.close(); } catch (RuntimeException | Error cleanup) { e.addSuppressed(cleanup); }
             throw e;
         }
         pgmem = pg;
     }
 
     @Override public void afterAll(ExtensionContext context) {
-        // class-scoped forks first, then the process
         ForkSet forks = context.getStore(NS).remove(forkSetKey(context), ForkSet.class);
-        if (forks != null) forks.close();
         Pgmem pg = pgmem;
-        if (pg != null && context.getRequiredTestClass() == ownerClass(context)) {
+        boolean ownsProcess = pg != null && context.getRequiredTestClass() == ownerClass(context);
+        List<Runnable> actions = new ArrayList<>();
+        if (forks != null) actions.add(forks::close);
+        if (ownsProcess) {
             synchronized (this) {
-                for (Fork fork : applicationForks.values()) fork.close();
+                for (Fork fork : applicationForks.values()) actions.add(fork::close);
                 applicationForks.clear();
             }
             synchronized (sharedReadOnly) {
-                for (Fork fork : sharedReadOnly.values()) fork.close();
+                for (Fork fork : sharedReadOnly.values()) actions.add(fork::close);
                 sharedReadOnly.clear();
             }
             pgmem = null;
             for (Template t : templates.values()) { t.server = null; t.snapshot = null; }
-            pg.close();
+            actions.add(pg::close);
         }
+        cleanup(context.getExecutionException().orElse(null), actions.toArray(new Runnable[0]));
     }
 
     /** The outermost class whose BeforeAll started us, so nested classes do not stop the process. */
@@ -197,14 +199,28 @@ public final class PgmemExtension
 
     @Override public void afterEach(ExtensionContext context) {
         ForkSet forks = context.getStore(NS).remove(forkSetKey(context), ForkSet.class);
-        if (forks != null) forks.close();
+        cleanup(context.getExecutionException().orElse(null), () -> { if (forks != null) forks.close(); });
+    }
+
+    static void cleanup(Throwable primary, Runnable... actions) {
+        Throwable failure = null;
+        for (Runnable action : actions) {
+            try { action.run(); } catch (RuntimeException | Error e) {
+                if (failure == null) failure = e; else if (failure != e) failure.addSuppressed(e);
+            }
+        }
+        if (failure == null) return;
+        if (primary != null && primary != failure) { primary.addSuppressed(failure); failure = primary; }
+        if (failure instanceof Error) throw (Error) failure;
+        if (failure instanceof RuntimeException) throw (RuntimeException) failure;
+        throw new PgmemException("test and cleanup failed", failure);
     }
 
     // -- parameter injection -------------------------------------------------
 
     @Override public boolean supportsParameter(ParameterContext pc, ExtensionContext ec) {
         Class<?> type = pc.getParameter().getType();
-        if (type == Fork.class || type == DataSource.class) return true;
+        if (type == Fork.class || type == DataSource.class || type == TestDatabase.class) return true;
         return type == String.class && pc.isAnnotated(PgmemFork.class);
     }
 
@@ -216,8 +232,10 @@ public final class PgmemExtension
         Fork fork = ann == null && !forkEnabled(ec) ? sharedFor(name) : forkFor(ec, name, scope);
         Class<?> type = p.getType();
         if (type == Fork.class) return fork;
-        if (type == DataSource.class) return fork.dataSource();
-        if (type == String.class) return fork.jdbcUrl();
+        boolean readOnly = cfg.sharedReadOnly && (scope == ForkScope.CLASS || (ann == null && !forkEnabled(ec)));
+        if (type == TestDatabase.class) return new TestDatabase(fork, readOnly);
+        if (type == DataSource.class) return fork.dataSource(readOnly);
+        if (type == String.class) return fork.jdbcUrl(readOnly);
         throw new ParameterResolutionException("unsupported parameter " + p);
     }
 
@@ -260,12 +278,10 @@ public final class PgmemExtension
         }
 
         synchronized void close() {
-            PgmemException first = null;
-            for (Fork f : forks.values()) {
-                try { f.close(); } catch (PgmemException e) { if (first == null) first = e; }
-            }
+            List<Runnable> actions = new ArrayList<>();
+            for (Fork fork : forks.values()) actions.add(fork::close);
             forks.clear();
-            if (first != null) throw first;
+            cleanup(null, actions.toArray(new Runnable[0]));
         }
     }
 
@@ -281,6 +297,7 @@ public final class PgmemExtension
         private boolean log;
         private Path binary;
         private int maxForks;
+        private boolean sharedReadOnly;
         private ForkScope forkScope = ForkScope.METHOD;
         private Duration forkTimeout;
         private Duration readyTimeout = Duration.ofSeconds(30);
@@ -310,8 +327,11 @@ public final class PgmemExtension
         public Builder log(boolean log) { this.log = log; return this; }
         public Builder binary(Path binary) { this.binary = binary; return this; }
 
-        /** Forks alive at once per template before fork blocks; 0 = available processors. */
+        /** Forks alive at once per template before fork blocks; 0 = derived from available memory. */
         public Builder maxForks(int maxForks) { this.maxForks = maxForks; return this; }
+
+        /** Guard URLs and DataSources injected at CLASS scope against accidental writes. */
+        public Builder sharedReadOnly(boolean enabled) { this.sharedReadOnly = enabled; return this; }
 
         /** Default scope for parameters without {@link PgmemFork#scope()}. */
         public Builder forkScope(ForkScope scope) { this.forkScope = scope; return this; }
