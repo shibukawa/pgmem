@@ -66,6 +66,8 @@ def test_create_order(pgmem_live_db, app_url, page):
 
 The `page` fixture comes from `pytest-playwright`; install it and a browser separately. Replace selectors with those in your app. The test fixture resets data before navigation, including after a previous test failed. Each xdist worker receives a separate pgmem process and app server; the OS chooses a distinct port. The brief gap between reserving the port and starting Uvicorn can race with another process, so use a port supplied by your test infrastructure when that matters.
 
+If the application creates its schema while it starts, call `pgmem_live_baseline.capture()` in the `app_url` fixture once the server answers, so later resets keep that schema; see [capture application startup state](../api-testing/#capture-application-startup-state).
+
 ## Other web frameworks
 
 Only the application launch command and its database configuration change:

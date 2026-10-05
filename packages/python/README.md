@@ -115,6 +115,13 @@ restoring the prepared snapshot without changing the endpoint or client
 connections. Override `pgmem_live_snapshots` with a mapping of names to
 snapshots and select one with `@pytest.mark.pgmem_dataset("name")`.
 
+If the application creates its schema while it starts, with Alembic in a
+lifespan handler, Django `migrate`, or SQLAlchemy `create_all`, request
+`pgmem_live_baseline` where the application is started and call `capture()`
+once it is up. Later resets restore that state instead of the prepared
+snapshot, and named datasets keep their own snapshots. The captured snapshot
+holds one more copy of the data directory for the session.
+
 An open transaction blocks reset and raises `ProtocolError` with code `busy`
 after the timeout. The live fork holds one snapshot fork slot for the session;
 raise `max_forks` if other forks coexist. For Django, use plain pytest tests

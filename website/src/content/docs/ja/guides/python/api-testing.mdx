@@ -13,6 +13,7 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 |---|---|---|
 | `pgmem_live_fork` | session | アプリ用の固定サーバーと DSN |
 | `pgmem_live_snapshots` | session | データセット名から snapshot への対応。追加するときに上書きする |
+| `pgmem_live_baseline` | session | 既定データセット。`capture()` でアプリ起動時の書き込みを取り込む |
 | `pgmem_live_db` | function | テスト前に選択した snapshot へ復元する |
 
 常駐する fork は `pgmem_snapshot.max_forks` の枠をセッション中 1 つ使います。同じワーカーでテスト単位の fork や `@shadow_pg(fork=False)` も使う場合は、その分の枠を確保してください。
@@ -127,6 +128,25 @@ def test_paid_orders(client):
 <Aside>
 この fixture は逐次実行するテスト間の DB 内容を制御します。同じアプリプロセスへ複数のテストが同時にリクエストする場合は、この reset だけでは分離できません。別々のワーカーとアプリプロセスを使ってください。
 </Aside>
+
+## アプリ起動時の状態を取り込む
+
+アプリが起動時にスキーマを作る場合、その書き込みは `pgmem_snapshot` を取った後に行われるため、最初の復元で消えます。lifespan で動く Alembic、Django の `migrate`、SQLAlchemy の `create_all` などが該当します。アプリを起動する fixture で `pgmem_live_baseline` を要求し、起動を待ってから `capture()` を呼ぶと、以降の復元はその状態に戻ります。
+
+```python title="conftest.py"
+@pytest.fixture(scope="session")
+def app_url(pgmem_live_fork, pgmem_live_baseline):
+    process = start_app(dsn=pgmem_live_fork.dsn)  # ここで Alembic や create_all、migrate が走る
+    wait_until_ready(process)
+    pgmem_live_baseline.capture()  # アプリ自身が作ったスキーマが既定データセットになる
+    try:
+        yield "http://127.0.0.1:8000"
+    finally:
+        process.terminate()
+        process.wait()
+```
+
+`capture()` は最初に取った snapshot を使い続けます。取り直すときは `recapture()` を呼びます。`pgmem_live_snapshots` の名前付きデータセットには影響しません。取り込んだ snapshot はセッション中、データディレクトリのコピーを 1 つ増やします。ほかの snapshot と同じく開いたトランザクションを待ち、期限に達すると `ProtocolError(code="busy")` で失敗します。
 
 ## 安全な並列実行
 
