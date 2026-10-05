@@ -213,3 +213,86 @@ def test_shadow_intercepts_sqlalchemy_async_engine():
             await engine.dispose()
 
     asyncio.run(run())
+
+
+def test_live_baseline_captures_the_current_state(pgmem_snapshot):
+    from pgmem.pytest_plugin import LiveBaseline
+
+    with pgmem_snapshot.fork() as fork:
+        baseline = LiveBaseline(fork)
+        assert baseline.captured is None
+        with psycopg.connect(fork.dsn) as db:  # what an application writes while starting
+            db.execute("CREATE TABLE started (id int)")
+            db.execute("INSERT INTO t VALUES (3)")
+        captured = baseline.capture()
+        assert baseline.capture() is captured
+        with psycopg.connect(fork.dsn) as db:
+            db.execute("INSERT INTO t VALUES (4)")
+        assert count(fork) == 4
+        fork.reset(snapshot=baseline.captured)
+        assert count(fork) == 3
+        with psycopg.connect(fork.dsn) as db:
+            assert db.execute("SELECT count(*) FROM started").fetchone() == (0,)
+
+        with psycopg.connect(fork.dsn) as db:
+            db.execute("INSERT INTO t VALUES (5)")
+        baseline.recapture()
+        with psycopg.connect(fork.dsn) as db:
+            db.execute("INSERT INTO t VALUES (6)")
+        fork.reset(snapshot=baseline.captured)
+        assert count(fork) == 4
+
+        baseline.close()
+        assert baseline.captured is None
+        fork.reset()  # the snapshot the fork came from, without the application's schema
+        assert count(fork) == 2
+        with psycopg.connect(fork.dsn) as db:
+            assert db.execute("SELECT count(*) FROM pg_tables WHERE tablename = 'started'").fetchone() == (0,)
+
+
+def test_live_baseline_keeps_application_startup_schema(tmp_path):
+    (tmp_path / "conftest.py").write_text(
+        'import psycopg\n'
+        'import pytest\n'
+        '\n'
+        '@pytest.fixture(scope="session")\n'
+        'def pgmem_options():\n'
+        '    return {"database": "app"}\n'
+        '\n'
+        '@pytest.fixture(scope="session")\n'
+        'def pgmem_prepare(pgmem_server):\n'
+        '    with psycopg.connect(pgmem_server.dsn) as db:\n'
+        '        db.execute("CREATE TABLE prepared (id int)")\n'
+        '        db.execute("INSERT INTO prepared VALUES (1)")\n'
+        '\n'
+        '@pytest.fixture(scope="session", autouse=True)\n'
+        'def app(pgmem_live_fork, pgmem_live_baseline):\n'
+        '    with psycopg.connect(pgmem_live_fork.dsn) as db:\n'
+        '        db.execute("CREATE TABLE app_migrated (id int)")\n'
+        '        db.execute("INSERT INTO app_migrated VALUES (7)")\n'
+        '    pgmem_live_baseline.capture()\n'
+        '    return pgmem_live_fork\n'
+    )
+    (tmp_path / "test_live.py").write_text(
+        'import psycopg\n'
+        'from pgmem import shadow_pg\n'
+        '\n'
+        'def rows(dsn, table):\n'
+        '    with psycopg.connect(dsn) as db:\n'
+        '        return db.execute(f"SELECT count(*) FROM {table}").fetchone()[0]\n'
+        '\n'
+        '@shadow_pg(live=True)\n'
+        'def test_startup_schema_is_the_baseline(pgmem_live_fork):\n'
+        '    assert rows(pgmem_live_fork.dsn, "app_migrated") == 1\n'
+        '    assert rows(pgmem_live_fork.dsn, "prepared") == 1\n'
+        '    with psycopg.connect(pgmem_live_fork.dsn) as db:\n'
+        '        db.execute("INSERT INTO app_migrated VALUES (8)")\n'
+        '    assert rows(pgmem_live_fork.dsn, "app_migrated") == 2\n'
+        '\n'
+        '@shadow_pg(live=True)\n'
+        'def test_next_test_starts_from_the_captured_baseline(pgmem_live_fork):\n'
+        '    assert rows(pgmem_live_fork.dsn, "app_migrated") == 1\n'
+    )
+    result = subprocess.run([sys.executable, "-m", "pytest", "-q"],
+                            cwd=tmp_path, capture_output=True, text=True)
+    assert result.returncode == 0, result.stdout + result.stderr
