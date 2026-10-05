@@ -17,6 +17,11 @@ server parameters or logging.
 ``pgmem_test_dsn`` selects fork, shared or reset isolation using the pgmem
 marker. ``pgmem_shared_dsn`` keeps a stable endpoint for persistent clients
 in serial reset-mode tests. ``pgmem_fixture_options`` sets isolation and deadlines.
+
+For an application that outlives a test, ``pgmem_live_fork`` keeps one
+endpoint and ``pgmem_live_db`` restores it before each test.
+``pgmem_live_baseline.capture()`` adds what the application wrote while it
+started, such as its own migrations, to that restored state.
 """
 
 import pytest
@@ -176,8 +181,68 @@ def pgmem_live_snapshots(pgmem_snapshot):
     return {"default": pgmem_snapshot}
 
 
+class LiveBaseline:
+    """What ``pgmem_live_db`` restores for the default dataset.
+
+    An application that creates its schema while it starts, with Alembic in
+    a lifespan handler, Django ``migrate`` or SQLAlchemy ``create_all``,
+    writes into the live fork after ``pgmem_snapshot`` was taken, so the
+    first reset would undo it. Request this fixture where the application is
+    started, and call :meth:`capture` once it is up. Named datasets from
+    ``pgmem_live_snapshots`` keep their own snapshots.
+    """
+
+    def __init__(self, fork, snapshot_timeout=30.0):
+        self._fork = fork
+        self._snapshot_timeout = snapshot_timeout
+        self._captured = None
+
+    @property
+    def captured(self):
+        """The snapshot :meth:`capture` took, or None while nothing is captured."""
+        return self._captured
+
+    def capture(self, timeout=None):
+        """Snapshot the live fork as the default dataset; later calls keep the first one.
+
+        The application's transactions must be committed or closed: like
+        every snapshot this one waits for open transactions and raises
+        ``ProtocolError`` with code ``busy`` after the timeout.
+        """
+        if self._captured is None:
+            self._captured = self._fork.snapshot(
+                timeout=self._snapshot_timeout if timeout is None else timeout
+            )
+        return self._captured
+
+    def recapture(self, timeout=None):
+        """Capture the current state, releasing a snapshot captured before."""
+        previous, self._captured = self._captured, None
+        try:
+            return self.capture(timeout=timeout)
+        finally:
+            if previous is not None:
+                previous.close()
+
+    def close(self):
+        """Release the captured snapshot; the fork keeps the one it was forked from."""
+        if self._captured is not None:
+            captured, self._captured = self._captured, None
+            captured.close()
+
+
+@pytest.fixture(scope="session")
+def pgmem_live_baseline(pgmem_live_fork, pgmem_fixture_options):
+    """Default dataset of the live endpoint, re-based by :meth:`LiveBaseline.capture`."""
+    baseline = LiveBaseline(pgmem_live_fork, pgmem_fixture_options.get("snapshot_timeout", 30.0))
+    try:
+        yield baseline
+    finally:
+        baseline.close()
+
+
 @pytest.fixture
-def pgmem_live_db(request, pgmem_live_fork, pgmem_live_snapshots, pgmem_fixture_options):
+def pgmem_live_db(request, pgmem_live_fork, pgmem_live_snapshots, pgmem_live_baseline, pgmem_fixture_options):
     """Restore the selected dataset before a sequential HTTP test."""
     marker = request.node.get_closest_marker("pgmem_dataset")
     if marker is None:
@@ -186,10 +251,13 @@ def pgmem_live_db(request, pgmem_live_fork, pgmem_live_snapshots, pgmem_fixture_
         name = marker.args[0]
     else:
         raise pytest.UsageError("pgmem_dataset requires exactly one dataset name")
-    try:
-        snapshot = pgmem_live_snapshots[name]
-    except KeyError as exc:
-        raise pytest.UsageError(f"unknown pgmem dataset: {name}") from exc
+    if name == "default" and pgmem_live_baseline.captured is not None:
+        snapshot = pgmem_live_baseline.captured
+    else:
+        try:
+            snapshot = pgmem_live_snapshots[name]
+        except KeyError as exc:
+            raise pytest.UsageError(f"unknown pgmem dataset: {name}") from exc
     pgmem_live_fork.reset(snapshot=snapshot, timeout=pgmem_fixture_options.get("reset_timeout", 5.0))
     return pgmem_live_fork
 
