@@ -9,6 +9,7 @@ Long-lived API and browser tests keep one application and pgmem endpoint per pyt
 requirements:
   lifecycle: one session-scoped fork per worker; function-scoped reset before each HTTP test
   dataset: map names to snapshots; default is the prepared template snapshot; marker chooses another
+  application_startup: an application that migrates while it starts captures its own baseline (pgmem_live_baseline.capture in api:python-wrapper), matching captureApplicationBaseline in api:java-wrapper
   isolation: tests within one worker are sequential; xdist workers own independent pgmem processes and application servers
   connection: endpoint and pooled client connections survive restore; open transactions cause busy after timeout
   frameworks: API examples for FastAPI, Starlette, Flask, Django; Django uses ordinary PostgreSQL backend and plain pytest tests without Django TestCase or pytest-django DB lifecycle fixtures

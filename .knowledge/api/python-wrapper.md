@@ -35,7 +35,8 @@ api:
       pgmem_shared_fork / pgmem_shared_dsn: session; stable fork for persistent clients; @pytest.mark.pgmem(isolation="reset") resets after each marked serial test, including setup or test failure
       pgmem_live_fork: session; stable endpoint for a long-lived HTTP application per pytest worker
       pgmem_live_snapshots: session; name-to-snapshot mapping, default prepared snapshot
-      pgmem_live_db: function; restore selected snapshot before sequential HTTP test, chosen by pgmem_dataset(name) marker
+      pgmem_live_baseline: session; LiveBaseline of the live fork; capture() snapshots what the application wrote while starting (its own migrations) and becomes the default dataset, recapture() replaces it, closed with the session
+      pgmem_live_db: function; restore selected snapshot before sequential HTTP test, chosen by pgmem_dataset(name) marker; the default dataset is pgmem_live_baseline.captured once captured, else pgmem_live_snapshots default
     marker: 'pgmem.shadow_pg (pytest marker/decorator): default fresh pgmem_fork; fork=False selects pgmem_shared_fork; prepare=True wraps pgmem_prepare fixture while it targets the template before snapshot; routes DATABASE_URL and PG* variables plus newly created psycopg 3, psycopg2 and asyncpg connections (requirement:declarative-test-target)'
     sqlalchemy: 'PostgreSQL dialects using patched drivers route to pgmem; pooled connections from earlier forks are invalidated on checkout; already checked-out connections and prebuilt asyncpg pools do not switch'
     example: |

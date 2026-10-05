@@ -13,6 +13,7 @@ Prepare schema and seed data once with `pgmem_prepare`, as in [unit tests](../te
 |---|---|---|
 | `pgmem_live_fork` | session | stable server and DSN for the application |
 | `pgmem_live_snapshots` | session | mapping of dataset names to snapshots; override to add datasets |
+| `pgmem_live_baseline` | session | the default dataset; `capture()` adds what the application wrote while starting |
 | `pgmem_live_db` | function | reset the live server to the selected snapshot before the test |
 
 The live fork occupies one slot in `pgmem_snapshot.max_forks` for the whole session. Allow another slot if this worker also uses a per-test fork or `@shadow_pg(fork=False)`.
@@ -127,6 +128,25 @@ Reset happens **before** each test, including after a failed test. It waits for 
 <Aside>
 This fixture controls the database contents between sequential tests. If two tests send requests concurrently to the same application process, their data cannot be isolated by this reset; use separate workers and application processes.
 </Aside>
+
+## Capture application startup state
+
+An application that creates its schema while it starts writes into the live fork after `pgmem_snapshot` was taken, so the first reset would undo it. Request `pgmem_live_baseline` where the application is started and call `capture()` once it is up; later resets restore that state.
+
+```python title="conftest.py"
+@pytest.fixture(scope="session")
+def app_url(pgmem_live_fork, pgmem_live_baseline):
+    process = start_app(dsn=pgmem_live_fork.dsn)  # Alembic, create_all or migrate runs here
+    wait_until_ready(process)
+    pgmem_live_baseline.capture()  # the application's own schema becomes the default dataset
+    try:
+        yield "http://127.0.0.1:8000"
+    finally:
+        process.terminate()
+        process.wait()
+```
+
+`capture()` keeps the first snapshot it takes; `recapture()` replaces it. Named datasets from `pgmem_live_snapshots` are unaffected. The captured snapshot holds one more copy of the data directory for the session, and like every snapshot it waits for open transactions and raises `ProtocolError(code="busy")` after the timeout.
 
 ## Safe parallel execution
 
